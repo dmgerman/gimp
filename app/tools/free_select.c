@@ -118,15 +118,15 @@ begin_typedef
 DECL|typedef|FreeSelect
 typedef|typedef
 name|struct
-name|_free_select
+name|_FreeSelect
 name|FreeSelect
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_free_select
+DECL|struct|_FreeSelect
 struct|struct
-name|_free_select
+name|_FreeSelect
 block|{
 DECL|member|core
 name|DrawCore
@@ -2066,14 +2066,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|free_select_control (Tool * tool,int action,gpointer gdisp_ptr)
+DECL|function|free_select_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
 name|free_select_control
 parameter_list|(
 name|Tool
 modifier|*
 name|tool
 parameter_list|,
-name|int
+name|ToolAction
 name|action
 parameter_list|,
 name|gpointer
@@ -2137,6 +2137,8 @@ argument_list|,
 name|tool
 argument_list|)
 expr_stmt|;
+break|break;
+default|default:
 break|break;
 block|}
 block|}

@@ -145,12 +145,12 @@ DECL|member|target_x
 name|int
 name|target_x
 decl_stmt|;
-comment|/*  starting x coord          */
+comment|/*  starting x coord  */
 DECL|member|target_y
 name|int
 name|target_y
 decl_stmt|;
-comment|/*  starting y coord          */
+comment|/*  starting y coord  */
 block|}
 struct|;
 end_struct
@@ -310,7 +310,7 @@ parameter_list|(
 name|Tool
 modifier|*
 parameter_list|,
-name|int
+name|ToolAction
 parameter_list|,
 name|gpointer
 parameter_list|)
@@ -1561,14 +1561,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|bucket_fill_control (Tool * tool,int action,gpointer gdisp_ptr)
+DECL|function|bucket_fill_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
 name|bucket_fill_control
 parameter_list|(
 name|Tool
 modifier|*
 name|tool
 parameter_list|,
-name|int
+name|ToolAction
 name|action
 parameter_list|,
 name|gpointer

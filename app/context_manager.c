@@ -24,8 +24,8 @@ end_include
 begin_function
 specifier|static
 name|void
-DECL|function|user_context_display_changed (GimpContext * context,GDisplay * display,gpointer data)
-name|user_context_display_changed
+DECL|function|context_manager_display_changed (GimpContext * context,GDisplay * display,gpointer data)
+name|context_manager_display_changed
 parameter_list|(
 name|GimpContext
 modifier|*
@@ -54,8 +54,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|image_context_image_removed (GimpSet * set,GimpImage * gimage,GimpContext * user_context)
-name|image_context_image_removed
+DECL|function|context_manager_image_removed (GimpSet * set,GimpImage * gimage,GimpContext * user_context)
+name|context_manager_image_removed
 parameter_list|(
 name|GimpSet
 modifier|*
@@ -157,7 +157,7 @@ literal|"display_changed"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|user_context_display_changed
+name|context_manager_display_changed
 argument_list|)
 argument_list|,
 name|NULL
@@ -174,7 +174,7 @@ literal|"remove"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|image_context_image_removed
+name|context_manager_image_removed
 argument_list|)
 argument_list|,
 name|context

@@ -2643,14 +2643,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|paint_core_control (Tool * tool,int action,gpointer gdisp_ptr)
+DECL|function|paint_core_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
 name|paint_core_control
 parameter_list|(
 name|Tool
 modifier|*
 name|tool
 parameter_list|,
-name|int
+name|ToolAction
 name|action
 parameter_list|,
 name|gpointer
@@ -2738,6 +2738,8 @@ expr_stmt|;
 name|paint_core_cleanup
 argument_list|()
 expr_stmt|;
+break|break;
+default|default:
 break|break;
 block|}
 block|}

@@ -105,15 +105,15 @@ begin_typedef
 DECL|typedef|FuzzySelect
 typedef|typedef
 name|struct
-name|_fuzzy_select
+name|_FuzzySelect
 name|FuzzySelect
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_fuzzy_select
+DECL|struct|_FuzzySelect
 struct|struct
-name|_fuzzy_select
+name|_FuzzySelect
 block|{
 DECL|member|core
 name|DrawCore
@@ -274,7 +274,7 @@ parameter_list|(
 name|Tool
 modifier|*
 parameter_list|,
-name|int
+name|ToolAction
 parameter_list|,
 name|gpointer
 parameter_list|)
@@ -2718,14 +2718,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|fuzzy_select_control (Tool * tool,int action,gpointer gdisp_ptr)
+DECL|function|fuzzy_select_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
 name|fuzzy_select_control
 parameter_list|(
 name|Tool
 modifier|*
 name|tool
 parameter_list|,
-name|int
+name|ToolAction
 name|action
 parameter_list|,
 name|gpointer
@@ -2789,6 +2789,8 @@ argument_list|,
 name|tool
 argument_list|)
 expr_stmt|;
+break|break;
+default|default:
 break|break;
 block|}
 block|}

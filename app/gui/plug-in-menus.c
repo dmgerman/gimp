@@ -5370,6 +5370,12 @@ operator|=
 name|gdisplay_active
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gdisplay
+condition|)
+return|return;
 comment|/* construct the procedures arguments */
 name|args
 operator|=
@@ -10187,6 +10193,12 @@ operator|=
 name|gdisplay_active
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gdisplay
+condition|)
+return|return;
 name|proc_rec
 operator|=
 operator|(

@@ -204,13 +204,13 @@ name|DrawCore
 modifier|*
 name|core
 decl_stmt|;
-comment|/*  Core select object          */
+comment|/*  Core select object             */
 DECL|member|last_blob
 name|Blob
 modifier|*
 name|last_blob
 decl_stmt|;
-comment|/*  blob for last cursor position */
+comment|/*  blob for last cursor position  */
 DECL|member|x1
 DECL|member|y1
 name|int
@@ -218,7 +218,7 @@ name|x1
 decl_stmt|,
 name|y1
 decl_stmt|;
-comment|/*  image space coordinate      */
+comment|/*  image space coordinate         */
 DECL|member|x2
 DECL|member|y2
 name|int
@@ -226,7 +226,8 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-comment|/*  image space coords          */
+comment|/*  image space coords             */
+comment|/* circular distance history buffer */
 DECL|member|dt_buffer
 name|gdouble
 name|dt_buffer
@@ -234,11 +235,11 @@ index|[
 name|DIST_SMOOTHER_BUFFER
 index|]
 decl_stmt|;
-comment|/* circular distance history buffer */
 DECL|member|dt_index
 name|gint
 name|dt_index
 decl_stmt|;
+comment|/* circular timing history buffer */
 DECL|member|ts_buffer
 name|guint32
 name|ts_buffer
@@ -246,7 +247,6 @@ index|[
 name|TIME_SMOOTHER_BUFFER
 index|]
 decl_stmt|;
-comment|/* circular timing history buffer */
 DECL|member|ts_index
 name|gint
 name|ts_index
@@ -255,7 +255,7 @@ DECL|member|last_time
 name|gdouble
 name|last_time
 decl_stmt|;
-comment|/* previous time of a motion event     */
+comment|/*  previous time of a motion event      */
 DECL|member|lastx
 DECL|member|lasty
 name|gdouble
@@ -263,7 +263,7 @@ name|lastx
 decl_stmt|,
 name|lasty
 decl_stmt|;
-comment|/* previous position of a motion event */
+comment|/*  previous position of a motion event  */
 DECL|member|init_velocity
 name|gboolean
 name|init_velocity
@@ -564,7 +564,7 @@ parameter_list|(
 name|Tool
 modifier|*
 parameter_list|,
-name|int
+name|ToolAction
 parameter_list|,
 name|gpointer
 parameter_list|)
@@ -762,7 +762,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Rendering functions */
+comment|/*  Rendering functions  */
 end_comment
 
 begin_function_decl
@@ -870,7 +870,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Brush pseudo-widget callbacks */
+comment|/*  Brush pseudo-widget callbacks  */
 end_comment
 
 begin_function_decl
@@ -5932,14 +5932,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ink_control (Tool * tool,int action,gpointer gdisp_ptr)
+DECL|function|ink_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
 name|ink_control
 parameter_list|(
 name|Tool
 modifier|*
 name|tool
 parameter_list|,
-name|int
+name|ToolAction
 name|action
 parameter_list|,
 name|gpointer
@@ -6022,6 +6022,8 @@ case|:
 name|ink_cleanup
 argument_list|()
 expr_stmt|;
+break|break;
+default|default:
 break|break;
 block|}
 block|}
@@ -6454,7 +6456,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2a044a5c0103
+DECL|enum|__anon28fdf8130103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

@@ -471,7 +471,7 @@ parameter_list|(
 name|Tool
 modifier|*
 parameter_list|,
-name|int
+name|ToolAction
 parameter_list|,
 name|gpointer
 parameter_list|)
@@ -631,7 +631,7 @@ comment|/* Crop area-select functions */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2af12ffb0103
+DECL|enum|__anon2890f9fe0103
 typedef|typedef
 enum|enum
 block|{
@@ -950,7 +950,7 @@ operator|*
 operator|)
 name|options
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Crop& Resize Options"
 argument_list|)
@@ -3820,14 +3820,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|crop_control (Tool * tool,int action,gpointer gdisp_ptr)
+DECL|function|crop_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
 name|crop_control
 parameter_list|(
 name|Tool
 modifier|*
 name|tool
 parameter_list|,
-name|int
+name|ToolAction
 name|action
 parameter_list|,
 name|gpointer
@@ -3903,6 +3903,8 @@ argument_list|(
 name|crop_info
 argument_list|)
 expr_stmt|;
+break|break;
+default|default:
 break|break;
 block|}
 block|}

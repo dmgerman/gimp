@@ -258,32 +258,32 @@ name|DrawCore
 modifier|*
 name|core
 decl_stmt|;
-comment|/*  Core select object          */
+comment|/*  Core select object   */
 DECL|member|startx
 name|int
 name|startx
 decl_stmt|;
-comment|/*  starting x coord            */
+comment|/*  starting x coord     */
 DECL|member|starty
 name|int
 name|starty
 decl_stmt|;
-comment|/*  starting y coord            */
+comment|/*  starting y coord     */
 DECL|member|endx
 name|int
 name|endx
 decl_stmt|;
-comment|/*  ending x coord              */
+comment|/*  ending x coord       */
 DECL|member|endy
 name|int
 name|endy
 decl_stmt|;
-comment|/*  ending y coord              */
+comment|/*  ending y coord       */
 DECL|member|context_id
 name|guint
 name|context_id
 decl_stmt|;
-comment|/*  for the statusbar           */
+comment|/*  for the statusbar    */
 block|}
 struct|;
 end_struct
@@ -402,9 +402,9 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2ae7c49b0108
 typedef|typedef
 struct|struct
+DECL|struct|__anon2af58b4a0108
 block|{
 DECL|member|offset
 name|double
@@ -454,9 +454,9 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ae7c49b0208
 typedef|typedef
 struct|struct
+DECL|struct|__anon2af58b4a0208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -652,7 +652,7 @@ parameter_list|(
 name|Tool
 modifier|*
 parameter_list|,
-name|int
+name|ToolAction
 parameter_list|,
 name|gpointer
 parameter_list|)
@@ -4349,14 +4349,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|blend_control (Tool * tool,int action,gpointer gdisp_ptr)
+DECL|function|blend_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
 name|blend_control
 parameter_list|(
 name|Tool
 modifier|*
 name|tool
 parameter_list|,
-name|int
+name|ToolAction
 name|action
 parameter_list|,
 name|gpointer
@@ -4420,6 +4420,8 @@ argument_list|,
 name|tool
 argument_list|)
 expr_stmt|;
+break|break;
+default|default:
 break|break;
 block|}
 block|}

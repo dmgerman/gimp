@@ -37,7 +37,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be59a820103
+DECL|enum|__anon29f99d110103
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -141,7 +141,7 @@ parameter_list|(
 name|Tool
 modifier|*
 parameter_list|,
-name|int
+name|ToolAction
 parameter_list|,
 name|gpointer
 parameter_list|)

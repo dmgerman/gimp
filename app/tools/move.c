@@ -218,7 +218,7 @@ parameter_list|(
 name|Tool
 modifier|*
 parameter_list|,
-name|int
+name|ToolAction
 parameter_list|,
 name|gpointer
 parameter_list|)
@@ -1687,14 +1687,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|move_tool_control (Tool * tool,int action,gpointer gdisp_ptr)
+DECL|function|move_tool_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
 name|move_tool_control
 parameter_list|(
 name|Tool
 modifier|*
 name|tool
 parameter_list|,
-name|int
+name|ToolAction
 name|action
 parameter_list|,
 name|gpointer
@@ -1744,6 +1744,8 @@ break|break;
 case|case
 name|HALT
 case|:
+break|break;
+default|default:
 break|break;
 block|}
 block|}

@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpset.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gdisplay.h"
 end_include
 
@@ -203,12 +209,12 @@ DECL|member|threshold
 name|int
 name|threshold
 decl_stmt|;
-comment|/*  threshold value for color select  */
+comment|/*  threshold value for color select             */
 DECL|member|operation
 name|int
 name|operation
 decl_stmt|;
-comment|/*  Add, Subtract, Replace  */
+comment|/*  Add, Subtract, Replace                       */
 DECL|member|gimage
 name|GImage
 modifier|*
@@ -325,7 +331,7 @@ parameter_list|(
 name|Tool
 modifier|*
 parameter_list|,
-name|int
+name|ToolAction
 parameter_list|,
 name|gpointer
 parameter_list|)
@@ -1945,14 +1951,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|by_color_select_control (Tool * tool,int action,gpointer gdisp_ptr)
+DECL|function|by_color_select_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
 name|by_color_select_control
 parameter_list|(
 name|Tool
 modifier|*
 name|tool
 parameter_list|,
-name|int
+name|ToolAction
 name|action
 parameter_list|,
 name|gpointer
@@ -1999,6 +2005,15 @@ condition|(
 name|by_color_dialog
 operator|->
 name|gimage
+operator|&&
+name|gimp_set_have
+argument_list|(
+name|image_context
+argument_list|,
+name|by_color_dialog
+operator|->
+name|gimage
+argument_list|)
 condition|)
 name|by_color_dialog
 operator|->
@@ -2025,6 +2040,8 @@ name|by_color_dialog
 argument_list|)
 expr_stmt|;
 block|}
+break|break;
+default|default:
 break|break;
 block|}
 block|}

@@ -375,7 +375,7 @@ parameter_list|(
 name|Tool
 modifier|*
 parameter_list|,
-name|int
+name|ToolAction
 parameter_list|,
 name|gpointer
 parameter_list|)
@@ -651,14 +651,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|brightness_contrast_control (Tool * tool,int action,gpointer gdisp_ptr)
+DECL|function|brightness_contrast_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
 name|brightness_contrast_control
 parameter_list|(
 name|Tool
 modifier|*
 name|tool
 parameter_list|,
-name|int
+name|ToolAction
 name|action
 parameter_list|,
 name|gpointer
@@ -722,6 +722,8 @@ name|brightness_contrast_dialog
 argument_list|)
 expr_stmt|;
 block|}
+break|break;
+default|default:
 break|break;
 block|}
 block|}

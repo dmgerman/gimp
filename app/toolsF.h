@@ -28,10 +28,46 @@ directive|include
 file|"gdisplayF.h"
 end_include
 
+begin_comment
+comment|/*  Tool control actions  */
+end_comment
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aaa7afc0103
+DECL|enum|__anon28a549930103
+block|{
+DECL|enumerator|PAUSE
+name|PAUSE
+block|,
+DECL|enumerator|RESUME
+name|RESUME
+block|,
+DECL|enumerator|HALT
+name|HALT
+block|,
+DECL|enumerator|CURSOR_UPDATE
+name|CURSOR_UPDATE
+block|,
+DECL|enumerator|DESTROY
+name|DESTROY
+block|,
+DECL|enumerator|RECREATE
+name|RECREATE
+DECL|typedef|ToolAction
+block|}
+name|ToolAction
+typedef|;
+end_typedef
+
+begin_comment
+comment|/*  Tool types  */
+end_comment
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon28a549930203
 block|{
 DECL|enumerator|FIRST_TOOLBOX_TOOL
 name|FIRST_TOOLBOX_TOOL
@@ -159,7 +195,7 @@ begin_typedef
 DECL|typedef|Tool
 typedef|typedef
 name|struct
-name|_tool
+name|_Tool
 name|Tool
 typedef|;
 end_typedef
@@ -172,6 +208,10 @@ name|_ToolInfo
 name|ToolInfo
 typedef|;
 end_typedef
+
+begin_comment
+comment|/*  Tool action function declarations  */
+end_comment
 
 begin_typedef
 DECL|typedef|ButtonPressFunc
@@ -305,7 +345,7 @@ parameter_list|(
 name|Tool
 modifier|*
 parameter_list|,
-name|int
+name|ToolAction
 parameter_list|,
 name|gpointer
 parameter_list|)

@@ -1349,7 +1349,7 @@ operator|)
 name|gdisp
 argument_list|)
 expr_stmt|;
-comment|/*  clear out the pointer to this gdisp from the active tool */
+comment|/*  clear out the pointer to this gdisp from the active tool  */
 if|if
 condition|(
 name|active_tool
@@ -7710,6 +7710,27 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Image/Colors"
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Image/Channel Ops"
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Image/Alpha"
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -7751,6 +7772,20 @@ name|base_type
 operator|!=
 name|INDEXED
 operator|)
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Image/Histogram"
+argument_list|,
+name|lp
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Image/Colors"
+argument_list|,
+name|lp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -7865,6 +7900,13 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
+literal|"/Image/Alpha"
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
 literal|"/Image/Alpha/Add Alpha Channel"
 argument_list|,
 operator|!
@@ -7884,21 +7926,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Image/Colors"
-argument_list|,
-name|lp
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
 literal|"/Image/Channel Ops/Offset"
-argument_list|,
-name|lp
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/Image/Histogram"
 argument_list|,
 name|lp
 argument_list|)

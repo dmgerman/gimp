@@ -956,19 +956,6 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Select/Toggle"
-argument_list|)
-block|,
-literal|"<control>T"
-block|,
-name|select_toggle_cmd_callback
-block|,
-literal|0
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
 literal|"/Select/Invert"
 argument_list|)
 block|,
@@ -1278,6 +1265,34 @@ block|,
 literal|"<control><shift>I"
 block|,
 name|view_window_info_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+block|{
+name|N_
+argument_list|(
+literal|"/View/---"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|0
+block|,
+literal|"<Separator>"
+block|}
+block|,
+block|{
+name|N_
+argument_list|(
+literal|"/View/Toggle Selection"
+argument_list|)
+block|,
+literal|"<control>T"
+block|,
+name|view_toggle_selection_cmd_callback
 block|,
 literal|0
 block|}
@@ -1875,8 +1890,6 @@ block|,
 literal|"<Separator>"
 block|}
 block|,
-comment|/* these are built on the fly */
-comment|/*   { N_("/Tools/Ellipse Select"), "E", tools_select_cmd_callback, ELLIPSE_SELECT },   { N_("/Tools/Free Select"), "F", tools_select_cmd_callback, FREE_SELECT },   { N_("/Tools/Fuzzy Select"), "Z", tools_select_cmd_callback, FUZZY_SELECT },   { N_("/Tools/Bezier Select"), "B", tools_select_cmd_callback, BEZIER_SELECT },   { N_("/Tools/Intelligent Scissors"), "I", tools_select_cmd_callback, ISCISSORS },   { N_("/Tools/Move"), "M", tools_select_cmd_callback, MOVE },   { N_("/Tools/Magnify"), "<shift>M", tools_select_cmd_callback, MAGNIFY },   { N_("/Tools/Crop"), "<shift>C", tools_select_cmd_callback, CROP },   { N_("/Tools/Transform"), "<shift>T", tools_select_cmd_callback, ROTATE },   { N_("/Tools/Flip"), "<shift>F", tools_select_cmd_callback, FLIP },   { N_("/Tools/Text"), "T", tools_select_cmd_callback, TEXT },   { N_("/Tools/Color Picker"), "O", tools_select_cmd_callback, COLOR_PICKER },   { N_("/Tools/Bucket Fill"), "<shift>B", tools_select_cmd_callback, BUCKET_FILL },   { N_("/Tools/Blend"), "L", tools_select_cmd_callback, BLEND },   { N_("/Tools/Paintbrush"), "P", tools_select_cmd_callback, PAINTBRUSH },   { N_("/Tools/Pencil"), "<shift>P", tools_select_cmd_callback, PENCIL },   { N_("/Tools/Eraser"), "<shift>E", tools_select_cmd_callback, ERASER },   { N_("/Tools/Airbrush"), "A", tools_select_cmd_callback, AIRBRUSH },   { N_("/Tools/Clone"), "C", tools_select_cmd_callback, CLONE },   { N_("/Tools/Convolve"), "V", tools_select_cmd_callback, CONVOLVE },   { N_("/Tools/Ink"), "K", tools_select_cmd_callback, INK },   { N_("/Tools/Default Colors"), "D", tools_default_colors_cmd_callback, 0 },   { N_("/Tools/Toolbox"), NULL, toolbox_raise_callback, 0 },   { N_("/Tools/---"), NULL, NULL, 0, "<Separator>" },     { N_("/Tools/Default Colors"), "D", tools_default_colors_cmd_callback, 0 },   { N_("/Tools/Swap Colors"), "X", tools_swap_colors_cmd_callback, 0 }, */
 block|{
 name|N_
 argument_list|(
@@ -1946,6 +1959,7 @@ block|,
 literal|"<Separator>"
 block|}
 block|,
+comment|/*  the tool entries themselves are built on the fly  */
 block|{
 name|N_
 argument_list|(
@@ -2448,12 +2462,12 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Delete Layer"
+literal|"/Anchor Layer"
 argument_list|)
 block|,
-literal|"<control>X"
+literal|"<control>H"
 block|,
-name|layers_dialog_delete_layer_callback
+name|layers_dialog_anchor_layer_callback
 block|,
 literal|0
 block|}
@@ -2461,12 +2475,12 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Anchor Layer"
+literal|"/Delete Layer"
 argument_list|)
 block|,
-literal|"<control>H"
+literal|"<control>X"
 block|,
-name|layers_dialog_anchor_layer_callback
+name|layers_dialog_delete_layer_callback
 block|,
 literal|0
 block|}
@@ -2733,19 +2747,6 @@ literal|0
 block|}
 block|,
 block|{
-name|N_
-argument_list|(
-literal|"/Delete Channel"
-argument_list|)
-block|,
-literal|"<control>X"
-block|,
-name|channels_dialog_delete_channel_callback
-block|,
-literal|0
-block|}
-block|,
-block|{
 literal|"/---"
 block|,
 name|NULL
@@ -2805,6 +2806,31 @@ block|,
 name|NULL
 block|,
 name|channels_dialog_sub_channel_from_sel_callback
+block|,
+literal|0
+block|}
+block|,
+block|{
+literal|"/---"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|0
+block|,
+literal|"<Separator>"
+block|}
+block|,
+block|{
+name|N_
+argument_list|(
+literal|"/Delete Channel"
+argument_list|)
+block|,
+literal|"<control>X"
+block|,
+name|channels_dialog_delete_channel_callback
 block|,
 literal|0
 block|}
@@ -2881,19 +2907,6 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Delete Path"
-argument_list|)
-block|,
-literal|"<control>X"
-block|,
-name|paths_dialog_delete_path_callback
-block|,
-literal|0
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
 literal|"/Path to Selection"
 argument_list|)
 block|,
@@ -2913,6 +2926,19 @@ block|,
 literal|"<control>T"
 block|,
 name|paths_dialog_stroke_path_callback
+block|,
+literal|0
+block|}
+block|,
+block|{
+name|N_
+argument_list|(
+literal|"/Delete Path"
+argument_list|)
+block|,
+literal|"<control>X"
+block|,
+name|paths_dialog_delete_path_callback
 block|,
 literal|0
 block|}

@@ -50,81 +50,24 @@ begin_comment
 comment|/*  The possible states for tools  */
 end_comment
 
-begin_define
-DECL|macro|INACTIVE
-define|#
-directive|define
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2baad8f00103
+block|{
+DECL|enumerator|INACTIVE
 name|INACTIVE
-value|0
-end_define
-
-begin_define
-DECL|macro|ACTIVE
-define|#
-directive|define
+block|,
+DECL|enumerator|ACTIVE
 name|ACTIVE
-value|1
-end_define
-
-begin_define
-DECL|macro|PAUSED
-define|#
-directive|define
+block|,
+DECL|enumerator|PAUSED
 name|PAUSED
-value|2
-end_define
-
-begin_comment
-comment|/*  Tool control actions  */
-end_comment
-
-begin_define
-DECL|macro|PAUSE
-define|#
-directive|define
-name|PAUSE
-value|0
-end_define
-
-begin_define
-DECL|macro|RESUME
-define|#
-directive|define
-name|RESUME
-value|1
-end_define
-
-begin_define
-DECL|macro|HALT
-define|#
-directive|define
-name|HALT
-value|2
-end_define
-
-begin_define
-DECL|macro|CURSOR_UPDATE
-define|#
-directive|define
-name|CURSOR_UPDATE
-value|3
-end_define
-
-begin_define
-DECL|macro|DESTROY
-define|#
-directive|define
-name|DESTROY
-value|4
-end_define
-
-begin_define
-DECL|macro|RECREATE
-define|#
-directive|define
-name|RECREATE
-value|5
-end_define
+DECL|typedef|ToolState
+block|}
+name|ToolState
+typedef|;
+end_typedef
 
 begin_comment
 comment|/*  The possibilities for where the cursor lies  */
@@ -159,9 +102,9 @@ comment|/*  The types of tools...  */
 end_comment
 
 begin_struct
-DECL|struct|_tool
+DECL|struct|_Tool
 struct|struct
-name|_tool
+name|_Tool
 block|{
 comment|/*  Data  */
 DECL|member|type
@@ -170,7 +113,7 @@ name|type
 decl_stmt|;
 comment|/*  Tool type  */
 DECL|member|state
-name|int
+name|ToolState
 name|state
 decl_stmt|;
 comment|/*  state of tool activity  */
@@ -206,7 +149,7 @@ name|void
 modifier|*
 name|drawable
 decl_stmt|;
-comment|/*  pointer to the drawable that was 					   active when the tool was created */
+comment|/*  pointer to the drawable that was 				active when the tool was created */
 DECL|member|ID
 name|int
 name|ID
@@ -216,7 +159,7 @@ DECL|member|preserve
 name|int
 name|preserve
 decl_stmt|;
-comment|/*  Preserve this tool through the current image changes */
+comment|/*  Preserve this tool through the current 				image changes  */
 comment|/*  Action functions  */
 DECL|member|button_press_func
 name|ButtonPressFunc
@@ -334,14 +277,6 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|Layer
-modifier|*
-name|active_tool_layer
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
 name|ToolInfo
 name|tool_info
 index|[]
@@ -357,6 +292,7 @@ name|void
 name|tools_select
 parameter_list|(
 name|ToolType
+name|tool_type
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -366,9 +302,11 @@ name|void
 name|tools_initialize
 parameter_list|(
 name|ToolType
+name|tool_type
 parameter_list|,
 name|GDisplay
 modifier|*
+name|gdisplay
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -418,10 +356,12 @@ begin_function_decl
 name|void
 name|active_tool_control
 parameter_list|(
-name|int
+name|ToolAction
+name|action
 parameter_list|,
 name|void
 modifier|*
+name|gdisp_ptr
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -2557,14 +2557,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|rect_select_control (Tool * tool,int action,gpointer gdisp_ptr)
+DECL|function|rect_select_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
 name|rect_select_control
 parameter_list|(
 name|Tool
 modifier|*
 name|tool
 parameter_list|,
-name|int
+name|ToolAction
 name|action
 parameter_list|,
 name|gpointer
@@ -2628,6 +2628,8 @@ argument_list|,
 name|tool
 argument_list|)
 expr_stmt|;
+break|break;
+default|default:
 break|break;
 block|}
 block|}

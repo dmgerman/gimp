@@ -2432,14 +2432,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|transform_core_control (Tool * tool,int action,gpointer gdisp_ptr)
+DECL|function|transform_core_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
 name|transform_core_control
 parameter_list|(
 name|Tool
 modifier|*
 name|tool
 parameter_list|,
-name|int
+name|ToolAction
 name|action
 parameter_list|,
 name|gpointer
@@ -2524,6 +2524,8 @@ argument_list|,
 name|gdisp_ptr
 argument_list|)
 expr_stmt|;
+break|break;
+default|default:
 break|break;
 block|}
 block|}
@@ -7627,10 +7629,6 @@ name|tile_manager_destroy
 argument_list|(
 name|tiles
 argument_list|)
-expr_stmt|;
-name|active_tool_layer
-operator|=
-name|layer
 expr_stmt|;
 return|return
 name|layer

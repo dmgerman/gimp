@@ -630,7 +630,7 @@ name|allocation
 operator|.
 name|height
 expr_stmt|;
-comment|/*  create GC for scrolling */
+comment|/*  create GC for scrolling  */
 name|gdisp
 operator|->
 name|scroll_gc
@@ -699,7 +699,7 @@ name|gdisp
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* Find out what device the event occurred upon */
+comment|/*  Find out what device the event occurred upon  */
 if|if
 condition|(
 name|devices_check_change
@@ -998,18 +998,22 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
-comment|/* reset the current tool if we're changing gdisplays */
-comment|/* 		if (active_tool->gdisp_ptr) { 		  tool_gdisp = active_tool->gdisp_ptr; 		  if (tool_gdisp != gdisp) { 		    tools_initialize (active_tool->type, gdisp); 		    active_tool->drawable = gimage_active_drawable(gdisp->gimage); 		  } 		} else 		*/
-comment|/* reset the current tool if we're changing drawables */
+comment|/*  reset the current tool if ...  */
 if|if
 condition|(
+comment|/* it has no display */
+operator|!
+name|active_tool
+operator|->
+name|gdisp_ptr
+operator|||
+comment|/* or no drawable */
+operator|!
 name|active_tool
 operator|->
 name|drawable
-condition|)
-block|{
-if|if
-condition|(
+operator|||
+comment|/* or a drawable different from it's current one... */
 operator|(
 operator|(
 name|gimage_active_drawable
@@ -1018,18 +1022,20 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|)
-operator|)
 operator|!=
 name|active_tool
 operator|->
 name|drawable
 operator|)
 operator|&&
+comment|/* ...and doesn't want to preserve it */
 operator|!
 name|active_tool
 operator|->
 name|preserve
+operator|)
 condition|)
+block|{
 name|tools_initialize
 argument_list|(
 name|active_tool
@@ -1040,18 +1046,6 @@ name|gdisp
 argument_list|)
 expr_stmt|;
 block|}
-else|else
-name|active_tool
-operator|->
-name|drawable
-operator|=
-name|gimage_active_drawable
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|)
-expr_stmt|;
 call|(
 modifier|*
 name|active_tool

@@ -91,15 +91,15 @@ begin_typedef
 DECL|typedef|Magnify
 typedef|typedef
 name|struct
-name|_magnify
+name|_Magnify
 name|Magnify
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_magnify
+DECL|struct|_Magnify
 struct|struct
-name|_magnify
+name|_Magnify
 block|{
 DECL|member|core
 name|DrawCore
@@ -180,42 +180,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/*  magnify utility functions  */
-end_comment
-
-begin_function_decl
-specifier|static
-name|void
-name|zoom_in
-parameter_list|(
-name|int
-modifier|*
-parameter_list|,
-name|int
-modifier|*
-parameter_list|,
-name|int
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|zoom_out
-parameter_list|(
-name|int
-modifier|*
-parameter_list|,
-name|int
-modifier|*
-parameter_list|,
-name|int
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/*  magnify action functions  */
 end_comment
 
@@ -291,9 +255,45 @@ parameter_list|(
 name|Tool
 modifier|*
 parameter_list|,
-name|int
+name|ToolAction
 parameter_list|,
 name|gpointer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/*  magnify utility functions  */
+end_comment
+
+begin_function_decl
+specifier|static
+name|void
+name|zoom_in
+parameter_list|(
+name|int
+modifier|*
+parameter_list|,
+name|int
+modifier|*
+parameter_list|,
+name|int
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|zoom_out
+parameter_list|(
+name|int
+modifier|*
+parameter_list|,
+name|int
+modifier|*
+parameter_list|,
+name|int
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -375,7 +375,7 @@ operator|*
 operator|)
 name|options
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Magnify Options"
 argument_list|)
@@ -1519,14 +1519,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|magnify_control (Tool * tool,int action,gpointer gdisp_ptr)
+DECL|function|magnify_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
 name|magnify_control
 parameter_list|(
 name|Tool
 modifier|*
 name|tool
 parameter_list|,
-name|int
+name|ToolAction
 name|action
 parameter_list|,
 name|gpointer
@@ -1590,6 +1590,8 @@ argument_list|,
 name|tool
 argument_list|)
 expr_stmt|;
+break|break;
+default|default:
 break|break;
 block|}
 block|}

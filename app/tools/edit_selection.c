@@ -115,15 +115,15 @@ begin_typedef
 DECL|typedef|EditSelection
 typedef|typedef
 name|struct
-name|_edit_selection
+name|_EditSelection
 name|EditSelection
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_edit_selection
+DECL|struct|_EditSelection
 struct|struct
-name|_edit_selection
+name|_EditSelection
 block|{
 DECL|member|origx
 DECL|member|origy
@@ -2498,14 +2498,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_selection_control (Tool * tool,int action,gpointer gdisp_ptr)
+DECL|function|edit_selection_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
 name|edit_selection_control
 parameter_list|(
 name|Tool
 modifier|*
 name|tool
 parameter_list|,
-name|int
+name|ToolAction
 name|action
 parameter_list|,
 name|gpointer
@@ -2562,6 +2562,8 @@ operator|.
 name|core
 argument_list|)
 expr_stmt|;
+break|break;
+default|default:
 break|break;
 block|}
 block|}

@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29646d800103
+DECL|enum|__anon2bc987aa0103
 block|{
 DECL|enumerator|MaskTranslate
 name|MaskTranslate
@@ -85,7 +85,7 @@ parameter_list|(
 name|Tool
 modifier|*
 parameter_list|,
-name|int
+name|ToolAction
 parameter_list|,
 name|gpointer
 parameter_list|)

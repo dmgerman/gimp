@@ -328,7 +328,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon27bb981d0108
+DECL|struct|__anon2c5d5d420108
 typedef|typedef
 struct|struct
 block|{
@@ -365,7 +365,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27bb981d0208
+DECL|struct|__anon2c5d5d420208
 typedef|typedef
 struct|struct
 block|{
@@ -420,7 +420,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27bb981d0308
+DECL|struct|__anon2c5d5d420308
 typedef|typedef
 struct|struct
 block|{
@@ -652,7 +652,7 @@ parameter_list|(
 name|Tool
 modifier|*
 parameter_list|,
-name|int
+name|ToolAction
 parameter_list|,
 name|gpointer
 parameter_list|)
@@ -6675,14 +6675,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|bezier_select_control (Tool * tool,int action,gpointer gdisp_ptr)
+DECL|function|bezier_select_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
 name|bezier_select_control
 parameter_list|(
 name|Tool
 modifier|*
 name|tool
 parameter_list|,
-name|int
+name|ToolAction
 name|action
 parameter_list|,
 name|gpointer
@@ -10463,7 +10463,6 @@ name|gdisp_ptr
 operator|=
 name|gdisp
 expr_stmt|;
-empty_stmt|;
 name|active_tool
 operator|->
 name|drawable

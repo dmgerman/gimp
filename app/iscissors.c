@@ -181,15 +181,15 @@ begin_typedef
 DECL|typedef|Kink
 typedef|typedef
 name|struct
-name|_kink
+name|_Kink
 name|Kink
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_kink
+DECL|struct|_Kink
 struct|struct
-name|_kink
+name|_Kink
 block|{
 DECL|member|x
 DECL|member|y
@@ -225,15 +225,15 @@ begin_typedef
 DECL|typedef|Point
 typedef|typedef
 name|struct
-name|_point
+name|_Point
 name|Point
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_point
+DECL|struct|_Point
 struct|struct
-name|_point
+name|_Point
 block|{
 DECL|member|x
 DECL|member|y
@@ -282,15 +282,15 @@ begin_typedef
 DECL|typedef|Iscissors
 typedef|typedef
 name|struct
-name|_iscissors
+name|_Iscissors
 name|Iscissors
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_iscissors
+DECL|struct|_Iscissors
 struct|struct
-name|_iscissors
+name|_Iscissors
 block|{
 DECL|member|core
 name|DrawCore
@@ -1059,7 +1059,7 @@ parameter_list|(
 name|Tool
 modifier|*
 parameter_list|,
-name|int
+name|ToolAction
 parameter_list|,
 name|gpointer
 parameter_list|)
@@ -4841,14 +4841,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|iscissors_control (Tool * tool,int action,gpointer gdisp_ptr)
+DECL|function|iscissors_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
 name|iscissors_control
 parameter_list|(
 name|Tool
 modifier|*
 name|tool
 parameter_list|,
-name|int
+name|ToolAction
 name|action
 parameter_list|,
 name|gpointer
@@ -4917,6 +4917,8 @@ argument_list|(
 name|iscissors
 argument_list|)
 expr_stmt|;
+break|break;
+default|default:
 break|break;
 block|}
 block|}

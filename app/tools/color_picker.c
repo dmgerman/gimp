@@ -438,10 +438,9 @@ parameter_list|(
 name|Tool
 modifier|*
 parameter_list|,
-name|int
+name|ToolAction
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -593,7 +592,7 @@ operator|*
 operator|)
 name|options
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Color Picker Options"
 argument_list|)
@@ -2028,14 +2027,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_picker_control (Tool * tool,int action,gpointer gdisp_ptr)
+DECL|function|color_picker_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
 name|color_picker_control
 parameter_list|(
 name|Tool
 modifier|*
 name|tool
 parameter_list|,
-name|int
+name|ToolAction
 name|action
 parameter_list|,
 name|gpointer
@@ -2099,6 +2098,8 @@ argument_list|,
 name|tool
 argument_list|)
 expr_stmt|;
+break|break;
+default|default:
 break|break;
 block|}
 block|}
@@ -3502,12 +3503,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_picker_info_window_close_callback (GtkWidget * w,gpointer client_data)
+DECL|function|color_picker_info_window_close_callback (GtkWidget * widget,gpointer client_data)
 name|color_picker_info_window_close_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data

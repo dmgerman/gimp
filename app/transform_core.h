@@ -242,15 +242,15 @@ begin_typedef
 DECL|typedef|TransformCore
 typedef|typedef
 name|struct
-name|_transform_core
+name|_TransformCore
 name|TransformCore
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_transform_core
+DECL|struct|_TransformCore
 struct|struct
-name|_transform_core
+name|_TransformCore
 block|{
 DECL|member|core
 name|DrawCore
@@ -465,15 +465,15 @@ begin_typedef
 DECL|typedef|TransformUndo
 typedef|typedef
 name|struct
-name|_transform_undo
+name|_TransformUndo
 name|TransformUndo
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_transform_undo
+DECL|struct|_TransformUndo
 struct|struct
-name|_transform_undo
+name|_TransformUndo
 block|{
 DECL|member|tool_ID
 name|int
@@ -584,7 +584,7 @@ parameter_list|(
 name|Tool
 modifier|*
 parameter_list|,
-name|int
+name|ToolAction
 parameter_list|,
 name|gpointer
 parameter_list|)

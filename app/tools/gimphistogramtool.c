@@ -231,7 +231,7 @@ parameter_list|(
 name|Tool
 modifier|*
 parameter_list|,
-name|int
+name|ToolAction
 parameter_list|,
 name|gpointer
 parameter_list|)
@@ -890,14 +890,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|histogram_tool_control (Tool * tool,int action,gpointer gdisp_ptr)
+DECL|function|histogram_tool_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
 name|histogram_tool_control
 parameter_list|(
 name|Tool
 modifier|*
 name|tool
 parameter_list|,
-name|int
+name|ToolAction
 name|action
 parameter_list|,
 name|gpointer
@@ -934,6 +934,8 @@ operator|)
 name|histogram_tool_dialog
 argument_list|)
 expr_stmt|;
+break|break;
+default|default:
 break|break;
 block|}
 block|}

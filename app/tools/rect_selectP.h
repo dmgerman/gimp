@@ -23,7 +23,7 @@ DECL|typedef|RectSelect
 DECL|typedef|EllipseSelect
 typedef|typedef
 name|struct
-name|_rect_select
+name|_RectSelect
 name|RectSelect
 typedef|,
 name|EllipseSelect
@@ -31,9 +31,9 @@ typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_rect_select
+DECL|struct|_RectSelect
 struct|struct
-name|_rect_select
+name|_RectSelect
 block|{
 DECL|member|core
 name|DrawCore
