@@ -10966,6 +10966,12 @@ name|NULL
 expr_stmt|;
 name|entry
 operator|.
+name|quark_string
+operator|=
+name|NULL
+expr_stmt|;
+name|entry
+operator|.
 name|help_page
 operator|=
 name|help_page
