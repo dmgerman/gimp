@@ -321,6 +321,32 @@ end_function
 
 begin_function
 specifier|static
+name|void
+DECL|function|paintbrush_fade_update (GtkAdjustment * adjustment,PaintOptions * options)
+name|paintbrush_fade_update
+parameter_list|(
+name|GtkAdjustment
+modifier|*
+name|adjustment
+parameter_list|,
+name|PaintOptions
+modifier|*
+name|options
+parameter_list|)
+block|{
+name|options
+operator|->
+name|fade_out
+operator|=
+name|adjustment
+operator|->
+name|value
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|PaintOptions
 modifier|*
 DECL|function|create_paint_options (void)
@@ -572,12 +598,9 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|paintbrush_scale_update
+name|paintbrush_fade_update
 argument_list|,
-operator|&
 name|options
-operator|->
-name|fade_out
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
