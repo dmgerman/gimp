@@ -197,10 +197,13 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b656170103
+DECL|enum|__anon2acefcd80103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
+block|,
+DECL|enumerator|MIGRATION_PAGE
+name|MIGRATION_PAGE
 block|,
 DECL|enumerator|TREE_PAGE
 name|TREE_PAGE
@@ -219,7 +222,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b656170203
+DECL|enum|__anon2acefcd80203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -404,10 +407,31 @@ name|title_color
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|oldgimp
+specifier|static
+name|gchar
+modifier|*
+name|oldgimp
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|migrate
+specifier|static
+name|gboolean
+name|migrate
+init|=
+name|TRUE
+decl_stmt|;
+end_decl_stmt
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b656170303
+DECL|enum|__anon2acefcd80303
 block|{
 DECL|enumerator|TREE_ITEM_DO_NOTHING
 name|TREE_ITEM_DO_NOTHING
@@ -429,7 +453,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28b656170408
+DECL|struct|__anon2acefcd80408
 block|{
 DECL|member|directory
 name|gboolean
@@ -973,6 +997,33 @@ block|{
 case|case
 name|GPL_PAGE
 case|:
+if|if
+condition|(
+name|oldgimp
+condition|)
+name|notebook_index
+operator|+=
+literal|1
+expr_stmt|;
+else|else
+name|notebook_index
+operator|+=
+literal|2
+expr_stmt|;
+name|user_install_notebook_set_page
+argument_list|(
+name|GTK_NOTEBOOK
+argument_list|(
+name|notebook
+argument_list|)
+argument_list|,
+name|notebook_index
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|MIGRATION_PAGE
+case|:
 name|user_install_notebook_set_page
 argument_list|(
 name|GTK_NOTEBOOK
@@ -1133,7 +1184,7 @@ expr_stmt|;
 name|gtk_main_quit
 argument_list|()
 expr_stmt|;
-return|return;
+break|break;
 default|default:
 name|g_assert_not_reached
 argument_list|()
@@ -1819,9 +1870,66 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
+name|gchar
+modifier|*
+name|version
+decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|oldgimp
+operator|=
+name|g_strdup
+argument_list|(
+name|gimp_directory
+argument_list|()
+argument_list|)
+expr_stmt|;
+comment|/*  FIXME  */
+name|version
+operator|=
+name|strstr
+argument_list|(
+name|oldgimp
+argument_list|,
+literal|"2.2"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|version
+condition|)
+name|version
+index|[
+literal|2
+index|]
+operator|=
+literal|'0'
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|version
+operator|||
+operator|!
+name|g_file_test
+argument_list|(
+name|oldgimp
+argument_list|,
+name|G_FILE_TEST_IS_DIR
+argument_list|)
+condition|)
+block|{
+name|g_free
+argument_list|(
+name|oldgimp
+argument_list|)
+expr_stmt|;
+name|oldgimp
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 name|gimprc
 operator|=
 name|gimp_rc_new
@@ -2770,7 +2878,7 @@ argument_list|(
 name|vbox
 argument_list|)
 expr_stmt|;
-comment|/*  Page 1  */
+comment|/*  GPL_PAGE  */
 name|page
 operator|=
 name|user_install_notebook_append_page
@@ -2792,7 +2900,7 @@ literal|"Click \"Continue\" to enter "
 literal|"the GIMP user installation."
 argument_list|)
 argument_list|,
-literal|16
+literal|12
 argument_list|)
 expr_stmt|;
 name|add_label
@@ -2884,7 +2992,100 @@ literal|"MA 02111-1307, USA."
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  Page 2  */
+comment|/*  MIGRATION_PAGE  */
+block|{
+name|GtkWidget
+modifier|*
+name|box
+decl_stmt|;
+name|page
+operator|=
+name|user_install_notebook_append_page
+argument_list|(
+name|GTK_NOTEBOOK
+argument_list|(
+name|notebook
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Migrate User Settings"
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Click \"Continue\" to proceed "
+literal|"with the user installation."
+argument_list|)
+argument_list|,
+literal|12
+argument_list|)
+expr_stmt|;
+name|box
+operator|=
+name|gimp_int_radio_group_new
+argument_list|(
+name|TRUE
+argument_list|,
+name|_
+argument_list|(
+literal|"It seems you have a GIMP 2.0 installation."
+argument_list|)
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_radio_button_update
+argument_list|)
+argument_list|,
+operator|&
+name|migrate
+argument_list|,
+name|migrate
+argument_list|,
+name|_
+argument_list|(
+literal|"_Migrate user settings"
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Do a _fresh user installation"
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|page
+argument_list|)
+argument_list|,
+name|box
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|box
+argument_list|)
+expr_stmt|;
+block|}
+comment|/*  TREE_PAGE  */
 block|{
 name|GtkWidget
 modifier|*
@@ -2979,7 +3180,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|16
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3178,7 +3379,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|8
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3497,7 +3698,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|8
+literal|6
 argument_list|)
 expr_stmt|;
 name|foo
@@ -3718,7 +3919,7 @@ name|folder_pixbuf
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  Page 3  */
+comment|/*  LOG_PAGE  */
 name|page
 operator|=
 name|log_page
@@ -3744,7 +3945,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/*  Page 4  */
+comment|/*  TUNING_PAGE  */
 name|page
 operator|=
 name|tuning_page
@@ -4563,7 +4764,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|8
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4609,7 +4810,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|8
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
