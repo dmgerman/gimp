@@ -2635,7 +2635,7 @@ name|last_blob
 operator|=
 name|b
 expr_stmt|;
-name|gdisplay_flush
+name|gdisplay_flush_now
 argument_list|(
 name|gdisp
 argument_list|)
@@ -2895,7 +2895,7 @@ argument_list|(
 name|blob_union
 argument_list|)
 expr_stmt|;
-name|gdisplay_flush
+name|gdisplay_flush_now
 argument_list|(
 name|gdisp
 argument_list|)
@@ -3611,7 +3611,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2b88eb900103
+DECL|enum|__anon2921a8310103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

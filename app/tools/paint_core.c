@@ -1469,7 +1469,7 @@ argument_list|,
 name|MOTION_PAINT
 argument_list|)
 expr_stmt|;
-name|gdisplay_flush
+name|gdisplay_flush_now
 argument_list|(
 name|gdisp
 argument_list|)
@@ -1729,7 +1729,7 @@ name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gdisplay_flush
+name|gdisplay_flush_now
 argument_list|(
 name|gdisp
 argument_list|)
