@@ -153,11 +153,6 @@ name|GtkWidget
 modifier|*
 name|fixed_unit_w
 decl_stmt|;
-comment|/*  used by bezier selection  */
-DECL|member|extend
-name|gint
-name|extend
-decl_stmt|;
 comment|/*  used by iscissors */
 DECL|member|interactive
 name|gboolean

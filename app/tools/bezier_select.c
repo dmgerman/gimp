@@ -248,7 +248,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1597960108
+DECL|struct|__anon28a745400108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -284,7 +284,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1597960208
+DECL|struct|__anon28a745400208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1597960308
+DECL|struct|__anon28a745400308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -1886,6 +1886,13 @@ name|scanlines
 operator|=
 name|NULL
 expr_stmt|;
+name|bezier_sel
+operator|->
+name|extend
+operator|=
+literal|0
+expr_stmt|;
+comment|/* ??? */
 block|}
 end_function
 
@@ -3494,7 +3501,7 @@ name|FALSE
 expr_stmt|;
 if|if
 condition|(
-name|bezier_options
+name|bezier_sel
 operator|->
 name|extend
 condition|)
@@ -11045,7 +11052,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/*   if (!bezier_options->extend) */
+comment|/*   if (!bezier_sel->extend) */
 comment|/*     { */
 comment|/*       tool->state = INACTIVE; */
 comment|/*       bezier_sel->draw = BEZIER_DRAW_CURVE; */
