@@ -16,6 +16,12 @@ directive|define
 name|__PLUG_IN_DEF_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|<time.h>
+end_include
+
 begin_struct
 DECL|struct|_PlugInDef
 struct|struct

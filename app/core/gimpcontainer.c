@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib-object.h>
 end_include
 
@@ -65,7 +71,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad79c1e0103
+DECL|enum|__anon275594020103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -90,7 +96,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad79c1e0203
+DECL|enum|__anon275594020203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

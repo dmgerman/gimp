@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib-object.h>
 end_include
 
@@ -1131,7 +1137,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2941e1d80103
+DECL|enum|__anon2be4dba10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1183,7 +1189,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2941e1d80203
+DECL|enum|__anon2be4dba10203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -5741,7 +5747,7 @@ endif|#
 directive|endif
 typedef|typedef
 struct|struct
-DECL|struct|__anon2941e1d80308
+DECL|struct|__anon2be4dba10308
 block|{
 DECL|member|foo
 name|GimpObject

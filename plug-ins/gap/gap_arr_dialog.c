@@ -14,6 +14,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<config.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -102,7 +108,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcaeeec0108
+DECL|struct|__anon2af1c8420108
 block|{
 DECL|member|arr_ptr
 name|t_arr_arg
@@ -120,7 +126,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bcaeeec0208
+DECL|struct|__anon2af1c8420208
 typedef|typedef
 struct|struct
 block|{

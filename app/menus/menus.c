@@ -11364,12 +11364,6 @@ directive|ifdef
 name|ENABLE_DEBUG_ENTRIES
 end_ifdef
 
-begin_include
-include|#
-directive|include
-file|<unistd.h>
-end_include
-
 begin_function
 specifier|static
 name|void
@@ -11620,11 +11614,11 @@ literal|'\0'
 expr_stmt|;
 if|if
 condition|(
-name|access
+name|g_file_test
 argument_list|(
 name|help_path
 argument_list|,
-name|R_OK
+name|G_FILE_TEST_EXISTS
 argument_list|)
 condition|)
 block|{

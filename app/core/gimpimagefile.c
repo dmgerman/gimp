@@ -62,6 +62,39 @@ directive|include
 file|<gdk-pixbuf/gdk-pixbuf.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+end_ifdef
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|S_ISREG
+end_ifndef
+
+begin_define
+DECL|macro|S_ISREG (m)
+define|#
+directive|define
+name|S_ISREG
+parameter_list|(
+name|m
+parameter_list|)
+value|(((m)& _S_IFMT) == _S_IFREG)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include
@@ -89,7 +122,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b71b61f0108
+DECL|struct|__anon2b0e33c20108
 block|{
 DECL|member|dirname
 specifier|const

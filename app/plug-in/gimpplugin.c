@@ -158,28 +158,6 @@ directive|include
 file|<io.h>
 end_include
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|S_ISREG
-end_ifndef
-
-begin_define
-DECL|macro|S_ISREG (m)
-define|#
-directive|define
-name|S_ISREG
-parameter_list|(
-name|m
-parameter_list|)
-value|(((m)& _S_IFMT) == _S_IFREG)
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_endif
 endif|#
 directive|endif
