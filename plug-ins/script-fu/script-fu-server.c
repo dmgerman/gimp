@@ -325,7 +325,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294fe7f10108
+DECL|struct|__anon2afc2b600108
 block|{
 DECL|member|command
 name|gchar
@@ -349,7 +349,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294fe7f10208
+DECL|struct|__anon2afc2b600208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -1950,8 +1950,6 @@ parameter_list|)
 block|{
 name|va_list
 name|args
-decl_stmt|,
-name|args2
 decl_stmt|;
 name|char
 modifier|*

@@ -848,34 +848,17 @@ return|;
 block|}
 end_function
 
-begin_function
-specifier|static
-name|GSList
-modifier|*
-DECL|function|insert_brush_in_list (GSList * list,GimpBrush * brush)
-name|insert_brush_in_list
-parameter_list|(
-name|GSList
-modifier|*
-name|list
-parameter_list|,
-name|GimpBrush
-modifier|*
-name|brush
-parameter_list|)
-block|{
-return|return
-name|g_slist_insert_sorted
-argument_list|(
-name|list
-argument_list|,
-name|brush
-argument_list|,
-name|brush_compare_func
-argument_list|)
-return|;
-block|}
-end_function
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
+begin_endif
+unit|static GSList * insert_brush_in_list (GSList *list, GimpBrush * brush) {   return g_slist_insert_sorted (list, brush, brush_compare_func); }
+endif|#
+directive|endif
+end_endif
 
 begin_function
 specifier|static

@@ -3864,6 +3864,7 @@ name|type
 operator|==
 name|Auxillary
 condition|)
+block|{
 if|if
 condition|(
 operator|(
@@ -3914,6 +3915,7 @@ name|channel_widget
 operator|->
 name|ID
 expr_stmt|;
+block|}
 block|}
 break|break;
 case|case
