@@ -113,7 +113,7 @@ name|mask_data
 decl_stmt|;
 comment|/* local copy */
 DECL|member|pattern_popup_pnt
-name|void
+name|gchar
 modifier|*
 name|pattern_popup_pnt
 decl_stmt|;
@@ -1355,6 +1355,9 @@ modifier|*
 name|button
 decl_stmt|;
 name|gint
+name|length
+decl_stmt|;
+name|gint
 name|width
 decl_stmt|;
 name|gint
@@ -1363,7 +1366,7 @@ decl_stmt|;
 name|gint
 name|bytes
 decl_stmt|;
-name|gchar
+name|guint8
 modifier|*
 name|mask_data
 decl_stmt|;
@@ -1536,9 +1539,12 @@ expr_stmt|;
 comment|/* Do initial pattern setup */
 name|pattern_name
 operator|=
-name|gimp_pattern_get_pattern_data
+name|gimp_patterns_get_pattern_data
 argument_list|(
 name|ipattern
+argument_list|,
+operator|&
+name|length
 argument_list|,
 operator|&
 name|width
@@ -1690,7 +1696,7 @@ block|}
 end_function
 
 begin_function
-name|gboolean
+name|void
 DECL|function|gimp_pattern_select_widget_close_popup (GtkWidget * widget)
 name|gimp_pattern_select_widget_close_popup
 parameter_list|(
@@ -1699,11 +1705,6 @@ modifier|*
 name|widget
 parameter_list|)
 block|{
-name|gboolean
-name|ret_val
-init|=
-name|FALSE
-decl_stmt|;
 name|PSelect
 modifier|*
 name|psel
@@ -1733,9 +1734,7 @@ operator|->
 name|pattern_popup_pnt
 condition|)
 block|{
-name|ret_val
-operator|=
-name|gimp_pattern_close_popup
+name|gimp_patterns_close_popup
 argument_list|(
 name|psel
 operator|->
@@ -1749,14 +1748,11 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-return|return
-name|ret_val
-return|;
 block|}
 end_function
 
 begin_function
-name|gboolean
+name|void
 DECL|function|gimp_pattern_select_widget_set_popup (GtkWidget * widget,gchar * pname)
 name|gimp_pattern_select_widget_set_popup
 parameter_list|(
@@ -1769,10 +1765,8 @@ modifier|*
 name|pname
 parameter_list|)
 block|{
-name|gboolean
-name|ret_val
-init|=
-name|FALSE
+name|gint
+name|length
 decl_stmt|;
 name|gint
 name|width
@@ -1783,7 +1777,7 @@ decl_stmt|;
 name|gint
 name|bytes
 decl_stmt|;
-name|gchar
+name|guint8
 modifier|*
 name|mask_data
 decl_stmt|;
@@ -1818,9 +1812,12 @@ condition|)
 block|{
 name|pattern_name
 operator|=
-name|gimp_pattern_get_pattern_data
+name|gimp_patterns_get_pattern_data
 argument_list|(
 name|pname
+argument_list|,
+operator|&
+name|length
 argument_list|,
 operator|&
 name|width
@@ -1857,8 +1854,8 @@ condition|(
 name|psel
 operator|->
 name|pattern_popup_pnt
-operator|&&
-name|gimp_pattern_set_popup
+condition|)
+name|gimp_patterns_set_popup
 argument_list|(
 name|psel
 operator|->
@@ -1866,15 +1863,8 @@ name|pattern_popup_pnt
 argument_list|,
 name|pname
 argument_list|)
-condition|)
-name|ret_val
-operator|=
-name|TRUE
 expr_stmt|;
 block|}
-return|return
-name|ret_val
-return|;
 block|}
 end_function
 

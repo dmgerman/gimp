@@ -24,19 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpenums.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpexport.h"
+file|"gimpui.h"
 end_include
 
 begin_include
@@ -71,7 +59,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a31d4060108
+DECL|struct|__anon2a0d506f0108
 block|{
 DECL|member|default_action
 name|ExportFunc

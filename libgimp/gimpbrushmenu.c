@@ -1336,13 +1336,13 @@ decl_stmt|;
 name|gint
 name|init_spacing
 decl_stmt|;
-name|gint
+name|GimpLayerModeEffects
 name|init_paint_mode
 decl_stmt|;
 name|gdouble
 name|init_opacity
 decl_stmt|;
-name|gchar
+name|guint8
 modifier|*
 name|mask_data
 decl_stmt|;
@@ -1727,7 +1727,7 @@ block|}
 end_function
 
 begin_function
-name|gboolean
+name|void
 DECL|function|gimp_brush_select_widget_close_popup (GtkWidget * widget)
 name|gimp_brush_select_widget_close_popup
 parameter_list|(
@@ -1736,11 +1736,6 @@ modifier|*
 name|widget
 parameter_list|)
 block|{
-name|gboolean
-name|ret_val
-init|=
-name|FALSE
-decl_stmt|;
 name|BSelect
 modifier|*
 name|bsel
@@ -1770,9 +1765,7 @@ operator|->
 name|brush_popup_pnt
 condition|)
 block|{
-name|ret_val
-operator|=
-name|gimp_brush_close_popup
+name|gimp_brushes_close_popup
 argument_list|(
 name|bsel
 operator|->
@@ -1786,14 +1779,11 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-return|return
-name|ret_val
-return|;
 block|}
 end_function
 
 begin_function
-name|gboolean
+name|void
 DECL|function|gimp_brush_select_widget_set_popup (GtkWidget * widget,gchar * bname,gdouble opacity,gint spacing,gint paint_mode)
 name|gimp_brush_select_widget_set_popup
 parameter_list|(
@@ -1815,11 +1805,6 @@ name|gint
 name|paint_mode
 parameter_list|)
 block|{
-name|gboolean
-name|ret_val
-init|=
-name|FALSE
-decl_stmt|;
 name|gint
 name|width
 decl_stmt|;
@@ -1829,13 +1814,13 @@ decl_stmt|;
 name|gint
 name|init_spacing
 decl_stmt|;
-name|gint
+name|GimpLayerModeEffects
 name|init_paint_mode
 decl_stmt|;
 name|gdouble
 name|init_opacity
 decl_stmt|;
-name|gchar
+name|guint8
 modifier|*
 name|mask_data
 decl_stmt|;
@@ -1952,8 +1937,8 @@ condition|(
 name|bsel
 operator|->
 name|brush_popup_pnt
-operator|&&
-name|gimp_brush_set_popup
+condition|)
+name|gimp_brushes_set_popup
 argument_list|(
 name|bsel
 operator|->
@@ -1967,15 +1952,8 @@ name|spacing
 argument_list|,
 name|paint_mode
 argument_list|)
-condition|)
-name|ret_val
-operator|=
-name|TRUE
 expr_stmt|;
 block|}
-return|return
-name|ret_val
-return|;
 block|}
 end_function
 

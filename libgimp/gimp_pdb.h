@@ -19,7 +19,25 @@ end_define
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpbrushes_pdb.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpbrushselect_pdb.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpchannel_pdb.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpconvert_pdb.h>
 end_include
 
 begin_include
@@ -44,6 +62,12 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpgradient_pdb.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpgradientselect_pdb.h>
 end_include
 
 begin_include
@@ -86,6 +110,18 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpparasite_pdb.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimppatterns_pdb.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimppatternselect_pdb.h>
 end_include
 
 begin_include

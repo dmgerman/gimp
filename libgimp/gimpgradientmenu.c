@@ -74,7 +74,7 @@ modifier|*
 name|button
 decl_stmt|;
 DECL|member|gradient_popup_pnt
-name|GtkWidget
+name|gchar
 modifier|*
 name|gradient_popup_pnt
 decl_stmt|;
@@ -927,14 +927,14 @@ expr_stmt|;
 comment|/* Do initial gradient setup */
 name|gradient_name
 operator|=
-name|gimp_gradient_get_gradient_data
+name|gimp_gradients_get_gradient_data
 argument_list|(
 name|igradient
 argument_list|,
+name|CELL_SIZE_WIDTH
+argument_list|,
 operator|&
 name|width
-argument_list|,
-name|CELL_SIZE_WIDTH
 argument_list|,
 operator|&
 name|grad_data
@@ -1025,7 +1025,7 @@ block|}
 end_function
 
 begin_function
-name|gboolean
+name|void
 DECL|function|gimp_gradient_select_widget_close_popup (GtkWidget * widget)
 name|gimp_gradient_select_widget_close_popup
 parameter_list|(
@@ -1034,11 +1034,6 @@ modifier|*
 name|widget
 parameter_list|)
 block|{
-name|gboolean
-name|ret_val
-init|=
-name|FALSE
-decl_stmt|;
 name|GSelect
 modifier|*
 name|gsel
@@ -1068,9 +1063,7 @@ operator|->
 name|gradient_popup_pnt
 condition|)
 block|{
-name|ret_val
-operator|=
-name|gimp_gradient_close_popup
+name|gimp_gradients_close_popup
 argument_list|(
 name|gsel
 operator|->
@@ -1084,14 +1077,11 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-return|return
-name|ret_val
-return|;
 block|}
 end_function
 
 begin_function
-name|gboolean
+name|void
 DECL|function|gimp_gradient_select_widget_set_popup (GtkWidget * widget,gchar * gname)
 name|gimp_gradient_select_widget_set_popup
 parameter_list|(
@@ -1104,11 +1094,6 @@ modifier|*
 name|gname
 parameter_list|)
 block|{
-name|gboolean
-name|ret_val
-init|=
-name|FALSE
-decl_stmt|;
 name|gint
 name|width
 decl_stmt|;
@@ -1147,16 +1132,16 @@ condition|)
 block|{
 name|gradient_name
 operator|=
-name|gimp_gradient_get_gradient_data
+name|gimp_gradients_get_gradient_data
 argument_list|(
 name|gname
-argument_list|,
-operator|&
-name|width
 argument_list|,
 name|gsel
 operator|->
 name|sample_size
+argument_list|,
+operator|&
+name|width
 argument_list|,
 operator|&
 name|grad_data
@@ -1185,8 +1170,8 @@ condition|(
 name|gsel
 operator|->
 name|gradient_popup_pnt
-operator|&&
-name|gimp_gradient_set_popup
+condition|)
+name|gimp_gradients_set_popup
 argument_list|(
 name|gsel
 operator|->
@@ -1194,16 +1179,9 @@ name|gradient_popup_pnt
 argument_list|,
 name|gname
 argument_list|)
-condition|)
-name|ret_val
-operator|=
-name|TRUE
 expr_stmt|;
 block|}
 block|}
-return|return
-name|ret_val
-return|;
 block|}
 end_function
 
