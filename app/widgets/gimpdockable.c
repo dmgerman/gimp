@@ -3488,16 +3488,6 @@ argument_list|,
 name|src_dock
 argument_list|)
 expr_stmt|;
-name|gtk_window_set_position
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dock
-argument_list|)
-argument_list|,
-name|GTK_WIN_POS_MOUSE
-argument_list|)
-expr_stmt|;
 name|dockbook
 operator|=
 name|gimp_dockbook_new

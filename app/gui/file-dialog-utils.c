@@ -228,16 +228,6 @@ argument_list|,
 name|gimp
 argument_list|)
 expr_stmt|;
-name|gtk_window_set_position
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|filesel
-argument_list|)
-argument_list|,
-name|GTK_WIN_POS_MOUSE
-argument_list|)
-expr_stmt|;
 name|gtk_window_set_role
 argument_list|(
 name|GTK_WINDOW

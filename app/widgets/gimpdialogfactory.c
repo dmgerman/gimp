@@ -131,7 +131,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b31322b0103
+DECL|enum|__anon27afd4690103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -152,7 +152,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b31322b0203
+DECL|enum|__anon27afd4690203
 block|{
 DECL|enumerator|GIMP_DIALOG_SHOW_ALL
 name|GIMP_DIALOG_SHOW_ALL
@@ -2780,7 +2780,7 @@ name|toplevel_entry
 operator|=
 name|entry
 expr_stmt|;
-comment|/*  if we create a new session info, we never call                *  gimp_dialog_factory_set_window_geometry(), but still                *  the dialog needs GDK_HINT_USER_POS so it keeps its                *  position when hidden/shown within this(!) session.                */
+comment|/*  if we create a new session info, we never call                *  gimp_session_info_set_geometry(), but still the                *  dialog needs GDK_HINT_USER_POS so it keeps its                *  position when hidden/shown within this(!) session.                */
 if|if
 condition|(
 name|entry
@@ -2952,6 +2952,21 @@ name|info
 operator|->
 name|widget
 argument_list|)
+argument_list|)
+expr_stmt|;
+comment|/*  if we create a new session info, we never call            *  gimp_session_info_set_geometry(), but still the            *  dialog needs GDK_HINT_USER_POS so it keeps its            *  position when hidden/shown within this(!) session.            */
+name|g_signal_connect
+argument_list|(
+name|dialog
+argument_list|,
+literal|"configure_event"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_dialog_factory_set_user_pos
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|factory

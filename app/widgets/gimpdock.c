@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpdock.c  * Copyright (C) 2001 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpdock.c  * Copyright (C) 2001-2003 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -103,7 +103,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b68b8de0103
+DECL|enum|__anon2781d6620103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -119,7 +119,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b68b8de0203
+DECL|enum|__anon2781d6620203
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -2918,10 +2918,6 @@ name|FALSE
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/*  static gboolean gimp_dock_separator_button_press (GtkWidget      *widget, 				  GdkEventButton *bevent, 				  gpointer        data) {   if (bevent->type == GDK_BUTTON_PRESS)     {       if (bevent->button == 1)         {           gtk_grab_add (widget);         }     }    return TRUE; }  static gboolean gimp_dock_separator_button_release (GtkWidget      *widget, 				    GdkEventButton *bevent, 				    gpointer        data) {   if (bevent->button == 1)     {       gtk_grab_remove (widget);     }    return TRUE; }  static void gimp_dock_tab_drag_begin (GtkWidget      *widget, 			  GdkDragContext *context, 			  gpointer        data) {   GimpDockable *dockable;   GtkWidget    *window;   GtkWidget    *frame;   GtkWidget    *label;    dockable = GIMP_DOCKABLE (data);    window = gtk_window_new (GTK_WINDOW_POPUP);    frame = gtk_frame_new (NULL);   gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_OUT);   gtk_container_add (GTK_CONTAINER (window), frame);   gtk_widget_show (frame);    label = gtk_label_new (dockable->name);   gtk_misc_set_padding (GTK_MISC (label), 10, 5);   gtk_container_add (GTK_CONTAINER (frame), label);   gtk_widget_show (label);    gtk_widget_show (window);    g_object_set_data_full (G_OBJECT (dockable), "gimp-dock-drag-widget", 			  window, 			  (GDestroyNotify) gtk_widget_destroy);    gtk_drag_set_icon_widget (context, window, 			    -8, -8); }  static void gimp_dock_tab_drag_end (GtkWidget      *widget, 			GdkDragContext *context, 			gpointer        data) {   GimpDockable *dockable;   GtkWidget    *drag_widget;    dockable = GIMP_DOCKABLE (data);    drag_widget = g_object_get_data (G_OBJECT (dockable),                                    "gimp-dock-drag-widget");    if (drag_widget)     {       GtkWidget *dock;        g_object_set_data (G_OBJECT (dockable), "gimp-dock-drag-widget", NULL);        dock = gimp_dock_new ();        gtk_window_set_position (GTK_WINDOW (dock), GTK_WIN_POS_MOUSE);        g_object_ref (dockable);        gimp_dock_remove (dockable->dock, dockable);       gimp_dock_add (GIMP_DOCK (dock), dockable, -1, -1);        g_object_unref (dockable);        gtk_widget_show (dock);     } } */
-end_comment
 
 end_unit
 
