@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ec3e810103
+DECL|enum|__anon2b17c1780103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1933,6 +1933,8 @@ argument_list|,
 name|undo_desc
 argument_list|,
 name|layer
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|va_start
@@ -2017,6 +2019,8 @@ literal|"Discard Text Information"
 argument_list|)
 argument_list|,
 name|layer
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_text_layer_set_text

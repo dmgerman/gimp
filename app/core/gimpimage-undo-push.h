@@ -501,6 +501,11 @@ parameter_list|,
 name|GimpTextLayer
 modifier|*
 name|layer
+parameter_list|,
+specifier|const
+name|GParamSpec
+modifier|*
+name|pspec
 parameter_list|)
 function_decl|;
 end_function_decl
