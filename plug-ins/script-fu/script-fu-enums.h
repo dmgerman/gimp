@@ -23,7 +23,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd23baa0103
+DECL|enum|__anon2ac2c3670103
 block|{
 DECL|enumerator|SF_IMAGE
 name|SF_IMAGE
@@ -68,6 +68,9 @@ name|SF_GRADIENT
 block|,
 DECL|enumerator|SF_FILENAME
 name|SF_FILENAME
+block|,
+DECL|enumerator|SF_OPTION
+name|SF_OPTION
 DECL|typedef|SFArgType
 block|}
 name|SFArgType
@@ -77,7 +80,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd23baa0203
+DECL|enum|__anon2ac2c3670203
 block|{
 DECL|enumerator|SF_SLIDER
 name|SF_SLIDER
