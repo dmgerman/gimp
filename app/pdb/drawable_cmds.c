@@ -6447,7 +6447,7 @@ literal|"gimp_drawable_update"
 block|,
 literal|"Update the specified region of the drawable."
 block|,
-literal|"This procedure updates the specified region of the drawable. The (x, y) coordinate pair is relative to the drawable's origin, not to the image origin. Therefore, the entire drawable can be updated with: {x->0, y->0, w->width, h->height }."
+literal|"This procedure updates the specified region of the drawable. The (x, y) coordinate pair is relative to the drawable's origin, not to the image origin. Therefore, the entire drawable can be updated using (0, 0, width, height)."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

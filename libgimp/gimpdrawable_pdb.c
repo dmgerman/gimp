@@ -2274,7 +2274,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_update:  * @drawable_ID: The drawable.  * @x: x coordinate of upper left corner of update region.  * @y: y coordinate of upper left corner of update region.  * @width: Width of update region.  * @height: Height of update region.  *  * Update the specified region of the drawable.  *  * This procedure updates the specified region of the drawable. The (x,  * y) coordinate pair is relative to the drawable's origin, not to the  * image origin. Therefore, the entire drawable can be updated with:  * {x-&gt;0, y-&gt;0, w-&gt;width, h-&gt;height }.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_drawable_update:  * @drawable_ID: The drawable.  * @x: x coordinate of upper left corner of update region.  * @y: y coordinate of upper left corner of update region.  * @width: Width of update region.  * @height: Height of update region.  *  * Update the specified region of the drawable.  *  * This procedure updates the specified region of the drawable. The (x,  * y) coordinate pair is relative to the drawable's origin, not to the  * image origin. Therefore, the entire drawable can be updated using  * (0, 0, width, height).  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
