@@ -644,6 +644,7 @@ condition|)
 block|{
 name|success
 operator|=
+operator|(
 name|gimp_item_is_attached
 argument_list|(
 name|GIMP_ITEM
@@ -651,6 +652,13 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|)
+operator|&&
+name|gimp
+operator|->
+name|global_buffer
+operator|!=
+name|NULL
+operator|)
 expr_stmt|;
 if|if
 condition|(
