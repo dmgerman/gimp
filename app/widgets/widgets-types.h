@@ -444,6 +444,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpContainerEntry
+typedef|typedef
+name|struct
+name|_GimpContainerEntry
+name|GimpContainerEntry
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpContainerGridView
 typedef|typedef
 name|struct
