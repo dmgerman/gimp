@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5beb5c0103
+DECL|enum|__anon2b3b14640103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -1150,6 +1150,25 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
+if|if
+condition|(
+name|GIMP_VIEWABLE_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|invalidate_preview
+condition|)
+name|GIMP_VIEWABLE_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|invalidate_preview
+argument_list|(
+name|viewable
+argument_list|)
+expr_stmt|;
 name|drawable
 operator|=
 name|GIMP_DRAWABLE

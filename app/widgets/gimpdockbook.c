@@ -57,6 +57,30 @@ directive|include
 file|"gimpdnd.h"
 end_include
 
+begin_define
+DECL|macro|TAB_WIDGET_SIZE
+define|#
+directive|define
+name|TAB_WIDGET_SIZE
+value|24
+end_define
+
+begin_define
+DECL|macro|MENU_WIDGET_SIZE
+define|#
+directive|define
+name|MENU_WIDGET_SIZE
+value|16
+end_define
+
+begin_define
+DECL|macro|MENU_WIDGET_SPACING
+define|#
+directive|define
+name|MENU_WIDGET_SPACING
+value|4
+end_define
+
 begin_function_decl
 specifier|static
 name|void
@@ -601,7 +625,7 @@ argument_list|(
 name|source
 argument_list|)
 argument_list|,
-literal|"gimp_dockable"
+literal|"gimp-dockable"
 argument_list|)
 expr_stmt|;
 if|if
@@ -764,7 +788,7 @@ name|dockable
 argument_list|,
 name|dockbook
 argument_list|,
-literal|24
+name|TAB_WIDGET_SIZE
 argument_list|)
 expr_stmt|;
 if|if
@@ -822,7 +846,7 @@ argument_list|(
 name|tab_widget
 argument_list|)
 argument_list|,
-literal|"gimp_dockable"
+literal|"gimp-dockable"
 argument_list|,
 name|dockable
 argument_list|)
@@ -852,7 +876,7 @@ name|dockable
 argument_list|,
 name|dockbook
 argument_list|,
-literal|16
+name|MENU_WIDGET_SIZE
 argument_list|)
 expr_stmt|;
 if|if
@@ -878,7 +902,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+name|MENU_WIDGET_SPACING
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1289,6 +1313,13 @@ name|dockbook
 operator|=
 name|NULL
 expr_stmt|;
+name|gimp_dockable_set_context
+argument_list|(
+name|dockable
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gtk_container_remove
 argument_list|(
 name|GTK_CONTAINER
@@ -1566,8 +1597,6 @@ name|gtk_notebook_page_num
 argument_list|(
 name|GTK_NOTEBOOK
 argument_list|(
-name|dockable
-operator|->
 name|dockbook
 argument_list|)
 argument_list|,
@@ -1581,8 +1610,6 @@ name|gtk_notebook_set_page
 argument_list|(
 name|GTK_NOTEBOOK
 argument_list|(
-name|dockable
-operator|->
 name|dockbook
 argument_list|)
 argument_list|,
@@ -1902,7 +1929,7 @@ name|dockable
 operator|->
 name|dockbook
 argument_list|,
-literal|24
+name|TAB_WIDGET_SIZE
 argument_list|)
 expr_stmt|;
 if|if
@@ -2286,7 +2313,7 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-literal|"gimp_dockable"
+literal|"gimp-dockable"
 argument_list|)
 expr_stmt|;
 name|source
@@ -2298,6 +2325,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|dest_dockable
+operator|&&
 name|source
 condition|)
 block|{
@@ -2318,7 +2347,7 @@ argument_list|(
 name|source
 argument_list|)
 argument_list|,
-literal|"gimp_dockable"
+literal|"gimp-dockable"
 argument_list|)
 expr_stmt|;
 if|if
@@ -2327,9 +2356,9 @@ name|src_dockable
 condition|)
 block|{
 name|gint
-name|page_index
+name|dest_index
 decl_stmt|;
-name|page_index
+name|dest_index
 operator|=
 name|gtk_notebook_page_num
 argument_list|(
@@ -2394,7 +2423,7 @@ name|dockbook
 argument_list|,
 name|src_dockable
 argument_list|,
-name|page_index
+name|dest_index
 argument_list|)
 expr_stmt|;
 name|gtk_object_unref
@@ -2431,7 +2460,7 @@ argument_list|(
 name|src_dockable
 argument_list|)
 argument_list|,
-name|page_index
+name|dest_index
 argument_list|)
 expr_stmt|;
 return|return

@@ -18,7 +18,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b160440103
+DECL|enum|__anon2b87170c0103
 block|{
 DECL|enumerator|GIMP_DND_TYPE_URI_LIST
 name|GIMP_DND_TYPE_URI_LIST
@@ -70,25 +70,6 @@ name|GIMP_DND_TYPE_DIALOG
 block|}
 enum|;
 end_enum
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon29b160440203
-block|{
-DECL|enumerator|GIMP_DROP_NONE
-name|GIMP_DROP_NONE
-block|,
-DECL|enumerator|GIMP_DROP_ABOVE
-name|GIMP_DROP_ABOVE
-block|,
-DECL|enumerator|GIMP_DROP_BELOW
-name|GIMP_DROP_BELOW
-DECL|typedef|GimpDropType
-block|}
-name|GimpDropType
-typedef|;
-end_typedef
 
 begin_define
 DECL|macro|GIMP_TARGET_URI_LIST

@@ -35088,7 +35088,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdcc17b0108
+DECL|struct|__anon291bd0d70108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -35165,7 +35165,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdcc17b0208
+DECL|struct|__anon291bd0d70208
 block|{
 DECL|member|ncolors
 name|long
@@ -35356,7 +35356,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdcc17b0308
+DECL|struct|__anon291bd0d70308
 block|{
 DECL|member|used_count
 name|signed
@@ -37462,6 +37462,11 @@ name|gimage
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_image_mode_changed
+argument_list|(
+name|gimage
 argument_list|)
 expr_stmt|;
 name|gimp_remove_busy_cursors

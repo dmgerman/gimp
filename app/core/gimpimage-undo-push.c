@@ -239,7 +239,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b437d880103
+DECL|enum|__anon2c0696f70103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -1065,6 +1065,16 @@ name|dirties_image
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_decl_stmt
+DECL|variable|mode_changed
+specifier|static
+name|gboolean
+name|mode_changed
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|shrink_wrap
@@ -2175,6 +2185,22 @@ block|}
 name|gdisplays_flush
 argument_list|()
 expr_stmt|;
+comment|/*  If the mode_changed flag was set  */
+if|if
+condition|(
+name|mode_changed
+condition|)
+block|{
+name|gimp_image_mode_changed
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
+name|mode_changed
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
 comment|/*  If the shrink_wrap flag was set  */
 if|if
 condition|(
@@ -9348,6 +9374,21 @@ argument_list|,
 operator|-
 literal|1
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|data
+index|[
+literal|2
+index|]
+operator|!=
+name|gimage
+operator|->
+name|base_type
+condition|)
+name|mode_changed
+operator|=
+name|TRUE
 expr_stmt|;
 if|if
 condition|(
