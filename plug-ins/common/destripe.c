@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  *   Destripe filter for The GIMP -- an image manipulation  *   program  *  *   Copyright 1997 Marc Lehmann, heavily modified from a filter by  *   Michael Sweet.  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the filter...  *   destripe()                  - Destripe an image.  *   destripe_dialog()           - Popup a dialog window...  *   preview_init()              - Initialize the preview window...  *   preview_scroll_callback()   - Update the preview when a scrollbar is moved.  *   preview_update()            - Update the preview window.  *   preview_exit()              - Free all memory used by the preview window...  *   dialog_create_ivalue()      - Create an integer value control...  *   dialog_iscale_update()      - Update the value field using the scale.  *   dialog_ientry_update()      - Update the value field using the text entry.  *   dialog_histogram_callback()  *   dialog_ok_callback()        - Start the filter...  *   dialog_cancel_callback()    - Cancel the filter...  *   dialog_close_callback()     - Exit the filter dialog application.  *  *   1997/08/16 * Initial Revision.  */
+comment|/*  *   Destripe filter for The GIMP -- an image manipulation  *   program  *  *   Copyright 1997 Marc Lehmann, heavily modified from a filter by  *   Michael Sweet.  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the filter...  *   destripe()                  - Destripe an image.  *   destripe_dialog()           - Popup a dialog window...  *   preview_init()              - Initialize the preview window...  *   preview_scroll_callback()   - Update the preview when a scrollbar is moved.  *   preview_update()            - Update the preview window.  *   preview_exit()              - Free all memory used by the preview window...  *   dialog_create_ivalue()      - Create an integer value control...  *   dialog_iscale_update()      - Update the value field using the scale.  *   dialog_ientry_update()      - Update the value field using the text entry.  *   dialog_histogram_callback()  *   dialog_ok_callback()        - Start the filter...  *   dialog_cancel_callback()    - Cancel the filter...  *   dialog_close_callback()     - Exit the filter dialog application.  *  *   1997/08/16 * Initial Revision.  *   1998/02/06 * Minor changes.  */
 end_comment
 
 begin_include
@@ -93,7 +93,7 @@ DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
 name|PLUG_IN_VERSION
-value|"0.1"
+value|"0.2"
 end_define
 
 begin_define
@@ -125,7 +125,7 @@ DECL|macro|MAX_AVG
 define|#
 directive|define
 name|MAX_AVG
-value|400
+value|100
 end_define
 
 begin_comment
@@ -598,11 +598,11 @@ name|PLUG_IN_NAME
 argument_list|,
 literal|"Destripe filter, used to remove vertical stripes caused by cheap scanners."
 argument_list|,
-literal|"This plug-in selectively performs a median or adaptive box filter on an image."
+literal|"This plug-in tries to remove vertical stripes from an image."
 argument_list|,
-literal|"Marc Lehmann"
+literal|"Marc Lehmann<pcg@goof.com>"
 argument_list|,
-literal|"Marc Lehmann"
+literal|"Marc Lehmann<pcg@goof.com>"
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
