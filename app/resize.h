@@ -16,10 +16,16 @@ directive|define
 name|__RESIZE_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpunit.h"
+end_include
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27679ecd0103
+DECL|enum|__anon2c8234030103
 block|{
 DECL|enumerator|ScaleWidget
 name|ScaleWidget
@@ -35,7 +41,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27679ecd0203
+DECL|enum|__anon2c8234030203
 block|{
 DECL|enumerator|ResizeImage
 name|ResizeImage
@@ -72,6 +78,10 @@ DECL|member|type
 name|ResizeType
 name|type
 decl_stmt|;
+DECL|member|target
+name|ResizeTarget
+name|target
+decl_stmt|;
 DECL|member|width
 name|int
 name|width
@@ -88,6 +98,10 @@ DECL|member|resolution_y
 name|float
 name|resolution_y
 decl_stmt|;
+DECL|member|unit
+name|GUnit
+name|unit
+decl_stmt|;
 DECL|member|ratio_x
 name|double
 name|ratio_x
@@ -96,13 +110,13 @@ DECL|member|ratio_y
 name|double
 name|ratio_y
 decl_stmt|;
-DECL|member|off_x
+DECL|member|offset_x
 name|int
-name|off_x
+name|offset_x
 decl_stmt|;
-DECL|member|off_y
+DECL|member|offset_y
 name|int
-name|off_y
+name|offset_y
 decl_stmt|;
 comment|/*  Don't touch this :)  */
 DECL|member|private_part
@@ -144,6 +158,12 @@ name|resolution_x
 parameter_list|,
 name|float
 name|resolution_y
+parameter_list|,
+name|GUnit
+name|unit
+parameter_list|,
+name|gboolean
+name|dot_for_dot
 parameter_list|,
 name|GtkSignalFunc
 name|ok_cb

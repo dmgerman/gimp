@@ -6,12 +6,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -1274,6 +1268,9 @@ specifier|static
 name|void
 name|layers_dialog_scale_layer_query
 parameter_list|(
+name|GImage
+modifier|*
+parameter_list|,
 name|Layer
 modifier|*
 parameter_list|)
@@ -1285,6 +1282,9 @@ specifier|static
 name|void
 name|layers_dialog_resize_layer_query
 parameter_list|(
+name|GImage
+modifier|*
+parameter_list|,
 name|Layer
 modifier|*
 parameter_list|)
@@ -4576,7 +4576,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2bcd1f8e0108
+DECL|struct|__anon2c1d2f8b0108
 typedef|typedef
 struct|struct
 block|{
@@ -9345,6 +9345,8 @@ return|return;
 name|layers_dialog_scale_layer_query
 argument_list|(
 name|gimage
+argument_list|,
+name|gimage
 operator|->
 name|active_layer
 argument_list|)
@@ -9391,6 +9393,8 @@ condition|)
 return|return;
 name|layers_dialog_resize_layer_query
 argument_list|(
+name|gimage
+argument_list|,
 name|gimage
 operator|->
 name|active_layer
@@ -15851,9 +15855,11 @@ name|name_entry
 argument_list|)
 expr_stmt|;
 comment|/*  the xsize entry hbox, label and entry  */
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|size
+argument_list|,
+literal|12
 argument_list|,
 literal|"%d"
 argument_list|,
@@ -15987,9 +15993,11 @@ name|xsize_entry
 argument_list|)
 expr_stmt|;
 comment|/*  the ysize entry hbox, label and entry  */
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|size
+argument_list|,
+literal|12
 argument_list|,
 literal|"%d"
 argument_list|,
@@ -18515,9 +18523,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|layers_dialog_scale_layer_query (Layer * layer)
+DECL|function|layers_dialog_scale_layer_query (GImage * gimage,Layer * layer)
 name|layers_dialog_scale_layer_query
 parameter_list|(
+name|GImage
+modifier|*
+name|gimage
+parameter_list|,
 name|Layer
 modifier|*
 name|layer
@@ -18579,11 +18591,20 @@ name|layer
 argument_list|)
 argument_list|)
 argument_list|,
-literal|0.0
+name|gimage
+operator|->
+name|xresolution
 argument_list|,
-literal|0.0
+name|gimage
+operator|->
+name|yresolution
 argument_list|,
-comment|/* no resolution, please */
+name|gimage
+operator|->
+name|unit
+argument_list|,
+name|TRUE
+argument_list|,
 name|scale_layer_query_ok_callback
 argument_list|,
 name|scale_layer_query_cancel_callback
@@ -18757,13 +18778,13 @@ name|options
 operator|->
 name|resize
 operator|->
-name|off_x
+name|offset_x
 argument_list|,
 name|options
 operator|->
 name|resize
 operator|->
-name|off_y
+name|offset_y
 argument_list|)
 expr_stmt|;
 if|if
@@ -18889,9 +18910,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|layers_dialog_resize_layer_query (Layer * layer)
+DECL|function|layers_dialog_resize_layer_query (GImage * gimage,Layer * layer)
 name|layers_dialog_resize_layer_query
 parameter_list|(
+name|GImage
+modifier|*
+name|gimage
+parameter_list|,
 name|Layer
 modifier|*
 name|layer
@@ -18953,11 +18978,20 @@ name|layer
 argument_list|)
 argument_list|)
 argument_list|,
-literal|0.0
+name|gimage
+operator|->
+name|xresolution
 argument_list|,
-literal|0.0
+name|gimage
+operator|->
+name|yresolution
 argument_list|,
-comment|/* no resolution, please */
+name|gimage
+operator|->
+name|unit
+argument_list|,
+name|TRUE
+argument_list|,
 name|resize_layer_query_ok_callback
 argument_list|,
 name|resize_layer_query_cancel_callback
