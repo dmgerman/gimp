@@ -1172,7 +1172,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b1eb0390108
+DECL|struct|__anon28a148710108
 block|{
 DECL|member|stock_id
 specifier|const
@@ -1302,6 +1302,18 @@ block|{
 name|GIMP_STOCK_PATH_STROKE
 block|,
 name|stock_path_stroke_16
+block|}
+block|,
+block|{
+name|GIMP_STOCK_DEFAULT_COLORS
+block|,
+name|stock_default_colors_12
+block|}
+block|,
+block|{
+name|GIMP_STOCK_SWAP_COLORS
+block|,
+name|stock_swap_colors_12
 block|}
 block|,
 block|{
@@ -1556,7 +1568,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b1eb0390208
+DECL|struct|__anon28a148710208
 block|{
 DECL|member|stock_id
 specifier|const
