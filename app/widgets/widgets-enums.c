@@ -273,7 +273,7 @@ name|GIMP_VIEW_TYPE_LIST
 block|,
 name|N_
 argument_list|(
-literal|"View as list"
+literal|"View as List"
 argument_list|)
 block|,
 literal|"list"
@@ -284,7 +284,7 @@ name|GIMP_VIEW_TYPE_GRID
 block|,
 name|N_
 argument_list|(
-literal|"View as grid"
+literal|"View as Grid"
 argument_list|)
 block|,
 literal|"grid"

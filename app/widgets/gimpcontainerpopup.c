@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d7c5e70103
+DECL|enum|__anon296dfd8a0103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -1862,7 +1862,7 @@ name|GTK_STOCK_ZOOM_OUT
 argument_list|,
 name|_
 argument_list|(
-literal|"Smaller previews"
+literal|"Smaller Previews"
 argument_list|)
 argument_list|,
 name|NULL
@@ -1885,7 +1885,7 @@ name|GTK_STOCK_ZOOM_IN
 argument_list|,
 name|_
 argument_list|(
-literal|"Larger previews"
+literal|"Larger Previews"
 argument_list|)
 argument_list|,
 name|NULL
