@@ -2987,7 +2987,7 @@ name|GIMP_CURSOR_MOUSE
 expr_stmt|;
 name|tool_cursor
 operator|=
-name|GIMP_TOOL_CURSOR_RECT_SELECT
+name|GIMP_TOOL_CURSOR_MOVE
 expr_stmt|;
 name|modifier
 operator|=
