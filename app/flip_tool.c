@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -60,37 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"temp_buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"path_transform.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpintl.h"
 end_include
 
 begin_include
@@ -102,6 +78,12 @@ end_include
 begin_comment
 comment|/* ick. */
 end_comment
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
 
 begin_define
 DECL|macro|FLIP_INFO
@@ -596,7 +578,7 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|Drawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
@@ -618,7 +600,7 @@ condition|(
 operator|(
 name|drawable
 operator|=
-name|gimage_get_active_drawable
+name|gimage_active_drawable
 argument_list|(
 name|gdisp
 operator|->
