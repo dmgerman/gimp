@@ -44,6 +44,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpcolor/gimpcolor.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -34941,7 +34947,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296dbdb70108
+DECL|struct|__anon299b59be0108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -35018,7 +35024,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296dbdb70208
+DECL|struct|__anon299b59be0208
 block|{
 DECL|member|ncolors
 name|long
@@ -35037,7 +35043,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296dbdb70308
+DECL|struct|__anon299b59be0308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -38390,7 +38396,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296dbdb70408
+DECL|struct|__anon299b59be0408
 block|{
 DECL|member|used_count
 name|signed

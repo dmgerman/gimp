@@ -88,6 +88,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpcolor/gimpcolor.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -260,7 +266,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be09e4c0103
+DECL|enum|__anon275836350103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING

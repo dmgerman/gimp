@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpcolor/gimpcolor.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -675,7 +681,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c1bcb40103
+DECL|enum|__anon2b0fd7b40103
 block|{
 DECL|enumerator|CLEAN
 name|CLEAN

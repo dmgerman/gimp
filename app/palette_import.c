@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpcolor/gimpcolor.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -142,7 +148,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297513d40103
+DECL|enum|__anon29e76be80103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT

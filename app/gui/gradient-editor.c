@@ -61,6 +61,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpcolor/gimpcolor.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -307,7 +313,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2962ee220103
+DECL|enum|__anon28cb98570103
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -347,7 +353,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2962ee220203
+DECL|enum|__anon28cb98570203
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -371,7 +377,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2962ee220308
+DECL|struct|__anon28cb98570308
 block|{
 DECL|member|shell
 name|GtkWidget

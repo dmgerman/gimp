@@ -300,34 +300,6 @@ name|gdouble
 name|value
 parameter_list|)
 function_decl|;
-comment|/*  Map RGB to intensity  */
-DECL|macro|INTENSITY_RED
-define|#
-directive|define
-name|INTENSITY_RED
-value|0.30
-DECL|macro|INTENSITY_GREEN
-define|#
-directive|define
-name|INTENSITY_GREEN
-value|0.59
-DECL|macro|INTENSITY_BLUE
-define|#
-directive|define
-name|INTENSITY_BLUE
-value|0.11
-DECL|macro|INTENSITY (r,g,b)
-define|#
-directive|define
-name|INTENSITY
-parameter_list|(
-name|r
-parameter_list|,
-name|g
-parameter_list|,
-name|b
-parameter_list|)
-value|((r) * INTENSITY_RED   + \ 			  (g) * INTENSITY_GREEN + \ 			  (b) * INTENSITY_BLUE  + 0.001)
 ifdef|#
 directive|ifdef
 name|__cplusplus

@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_COLOR_H__
+name|__GIMP_RGB_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_COLOR_H__
+DECL|macro|__GIMP_RGB_H__
 define|#
 directive|define
-name|__GIMP_COLOR_H__
+name|__GIMP_RGB_H__
 end_define
 
 begin_ifdef
@@ -31,59 +31,9 @@ directive|endif
 comment|/* __cplusplus */
 comment|/* For information look into the C source or the html documentation */
 comment|/*  RGB and RGBA color types and operations taken from LibGCK  */
-DECL|typedef|GimpRGB
-typedef|typedef
-name|struct
-name|_GimpRGB
-name|GimpRGB
-typedef|;
-DECL|struct|_GimpRGB
-struct|struct
-name|_GimpRGB
-block|{
-DECL|member|r
-DECL|member|g
-DECL|member|b
-DECL|member|a
-name|gdouble
-name|r
-decl_stmt|,
-name|g
-decl_stmt|,
-name|b
-decl_stmt|,
-name|a
-decl_stmt|;
-block|}
-struct|;
-DECL|typedef|GimpHSV
-typedef|typedef
-name|struct
-name|_GimpHSV
-name|GimpHSV
-typedef|;
-DECL|struct|_GimpHSV
-struct|struct
-name|_GimpHSV
-block|{
-DECL|member|h
-DECL|member|s
-DECL|member|v
-DECL|member|a
-name|gdouble
-name|h
-decl_stmt|,
-name|s
-decl_stmt|,
-name|v
-decl_stmt|,
-name|a
-decl_stmt|;
-block|}
-struct|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8d88ec0103
+DECL|enum|__anon297e7ade0103
 block|{
 DECL|enumerator|GIMP_RGB_COMPOSITE_NONE
 name|GIMP_RGB_COMPOSITE_NONE
@@ -403,51 +353,34 @@ modifier|*
 name|rgba2
 parameter_list|)
 function_decl|;
-name|void
-name|gimp_hsv_set
+comment|/*  Map RGB to intensity  */
+DECL|macro|INTENSITY_RED
+define|#
+directive|define
+name|INTENSITY_RED
+value|0.30
+DECL|macro|INTENSITY_GREEN
+define|#
+directive|define
+name|INTENSITY_GREEN
+value|0.59
+DECL|macro|INTENSITY_BLUE
+define|#
+directive|define
+name|INTENSITY_BLUE
+value|0.11
+DECL|macro|INTENSITY (r,g,b)
+define|#
+directive|define
+name|INTENSITY
 parameter_list|(
-name|GimpHSV
-modifier|*
-name|hsv
+name|r
 parameter_list|,
-name|gdouble
-name|h
+name|g
 parameter_list|,
-name|gdouble
-name|s
-parameter_list|,
-name|gdouble
-name|v
+name|b
 parameter_list|)
-function_decl|;
-name|void
-name|gimp_hsv_clamp
-parameter_list|(
-name|GimpHSV
-modifier|*
-name|hsv
-parameter_list|)
-function_decl|;
-name|void
-name|gimp_hsva_set
-parameter_list|(
-name|GimpHSV
-modifier|*
-name|hsva
-parameter_list|,
-name|gdouble
-name|h
-parameter_list|,
-name|gdouble
-name|s
-parameter_list|,
-name|gdouble
-name|v
-parameter_list|,
-name|gdouble
-name|a
-parameter_list|)
-function_decl|;
+value|((r) * INTENSITY_RED   + \ 			  (g) * INTENSITY_GREEN + \ 			  (b) * INTENSITY_BLUE  + 0.001)
 ifdef|#
 directive|ifdef
 name|__cplusplus
@@ -469,7 +402,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_COLOR_H__ */
+comment|/* __GIMP_RGB_H__ */
 end_comment
 
 end_unit

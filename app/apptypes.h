@@ -19,18 +19,18 @@ end_define
 begin_include
 include|#
 directive|include
-file|"undo_types.h"
+file|"libgimpcolor/gimpcolortypes.h"
 end_include
-
-begin_comment
-comment|/*  these will go into a general purpose library  */
-end_comment
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpcolor.h"
+file|"libgimp/gimpuitypes.h"
 end_include
+
+begin_comment
+comment|/* stuff that will go to general-purpose libraries */
+end_comment
 
 begin_include
 include|#
@@ -53,7 +53,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpuitypes.h"
+file|"undo_types.h"
 end_include
 
 begin_include

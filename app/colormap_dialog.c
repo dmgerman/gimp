@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpcolor/gimpcolor.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -141,7 +147,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon274d6f3b0103
+DECL|enum|__anon27a119b10103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -5604,7 +5610,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274d6f3b0208
+DECL|struct|__anon27a119b10208
 block|{
 DECL|member|def
 name|GimpImage

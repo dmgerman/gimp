@@ -16,15 +16,15 @@ directive|define
 name|__GIMP_TYPES_H__
 end_define
 
-begin_comment
-comment|/*  these will go to a separate library soon  */
-end_comment
-
 begin_include
 include|#
 directive|include
-file|"gimpcolor.h"
+file|<libgimpcolor/gimpcolortypes.h>
 end_include
+
+begin_comment
+comment|/*  these will go to a separate library soon  */
+end_comment
 
 begin_include
 include|#

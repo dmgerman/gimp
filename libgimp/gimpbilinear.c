@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcolor.h"
+file|"libgimpcolor/gimpcolor.h"
 end_include
 
 begin_include

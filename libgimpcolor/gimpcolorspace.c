@@ -6,13 +6,19 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpcolor.h"
+file|"gimpcolortypes.h"
 end_include
 
 begin_include
@@ -24,7 +30,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpmath.h"
+file|"gimprgb.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimphsv.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpmath.h"
 end_include
 
 begin_define
