@@ -82,7 +82,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fb90d70108
+DECL|struct|__anon27cd31380108
 block|{
 DECL|member|scale
 name|gint
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29fb90d70203
+DECL|enum|__anon27cd31380203
 block|{
 DECL|enumerator|filter_uniform
 name|filter_uniform
@@ -171,7 +171,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fb90d70308
+DECL|struct|__anon27cd31380308
 block|{
 DECL|member|N
 name|gint
@@ -446,16 +446,15 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_expr_stmt
+begin_macro
+DECL|function|MAIN ()
 name|MAIN
 argument_list|()
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_function
 specifier|static
 name|void
-DECL|function|query (void)
 name|query
 parameter_list|(
 name|void

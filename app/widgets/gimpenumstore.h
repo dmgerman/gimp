@@ -146,10 +146,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_empty_stmt
-empty_stmt|;
-end_empty_stmt
-
 begin_function_decl
 name|GtkListStore
 modifier|*
