@@ -70,6 +70,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpchannel.h"
 end_include
 
@@ -131,12 +137,6 @@ begin_include
 include|#
 directive|include
 file|"floating_sel.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimage.h"
 end_include
 
 begin_include
@@ -1315,10 +1315,9 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/* create a new gimage */
 name|gimage
 operator|=
-name|gimage_new
+name|gimp_create_image
 argument_list|(
 name|gimp
 argument_list|,
@@ -1327,16 +1326,10 @@ argument_list|,
 name|height
 argument_list|,
 name|image_type
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|gimage
-condition|)
-return|return
-name|NULL
-return|;
 comment|/* read the image properties */
 if|if
 condition|(

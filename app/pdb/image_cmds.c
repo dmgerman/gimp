@@ -124,12 +124,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -1489,7 +1483,7 @@ operator|=
 operator|(
 name|gimage
 operator|=
-name|gimage_new
+name|gimp_create_image
 argument_list|(
 name|gimp
 argument_list|,
@@ -1498,6 +1492,8 @@ argument_list|,
 name|height
 argument_list|,
 name|type
+argument_list|,
+name|FALSE
 argument_list|)
 operator|)
 operator|!=

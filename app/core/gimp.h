@@ -262,6 +262,9 @@ name|height
 parameter_list|,
 name|GimpImageBaseType
 name|type
+parameter_list|,
+name|gboolean
+name|attach_comment
 parameter_list|)
 function_decl|;
 end_function_decl

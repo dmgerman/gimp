@@ -120,12 +120,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -148,7 +142,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1ef9ff0103
+DECL|enum|__anon2b9a0aa00103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT

@@ -772,7 +772,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon288db5550103
+DECL|enum|__anon28d6b7660103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -2034,6 +2034,11 @@ argument_list|(
 name|gimage
 operator|->
 name|guides
+argument_list|)
+expr_stmt|;
+name|undo_free
+argument_list|(
+name|gimage
 argument_list|)
 expr_stmt|;
 name|gtk_object_unref

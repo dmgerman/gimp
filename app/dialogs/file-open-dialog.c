@@ -112,6 +112,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontext.h"
 end_include
 
@@ -161,12 +167,6 @@ begin_include
 include|#
 directive|include
 file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimage.h"
 end_include
 
 begin_include
@@ -940,10 +940,6 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisplay
-decl_stmt|;
 name|gchar
 modifier|*
 name|absolute
@@ -992,31 +988,13 @@ name|gimage
 argument_list|)
 expr_stmt|;
 comment|/* display the image */
-name|gdisplay
-operator|=
-name|gdisplay_new
+name|gimp_create_display
 argument_list|(
 name|gimage
+operator|->
+name|gimp
 argument_list|,
-literal|0x0101
-argument_list|)
-expr_stmt|;
-comment|/* always activate the first display */
-if|if
-condition|(
-name|g_slist_length
-argument_list|(
-name|display_list
-argument_list|)
-operator|==
-literal|1
-condition|)
-name|gimp_context_set_display
-argument_list|(
-name|gimp_context_get_user
-argument_list|()
-argument_list|,
-name|gdisplay
+name|gimage
 argument_list|)
 expr_stmt|;
 name|absolute

@@ -347,18 +347,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_container_add
-argument_list|(
-name|gimp
-operator|->
-name|images
-argument_list|,
-name|GIMP_OBJECT
-argument_list|(
-name|gimage
-argument_list|)
-argument_list|)
-expr_stmt|;
 return|return
 name|gimage
 return|;
@@ -438,12 +426,6 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-comment|/*  free the undo list  */
-name|undo_free
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
 comment|/*  check if this is the last image  */
 if|if
 condition|(
