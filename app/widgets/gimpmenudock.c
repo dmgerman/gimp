@@ -829,7 +829,11 @@ name|dock
 operator|->
 name|auto_button
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"When enabled the dialog automatically "
+literal|"follows the image you are working on."
+argument_list|)
 argument_list|,
 name|GIMP_HELP_DOCK_AUTO_BUTTON
 argument_list|)
