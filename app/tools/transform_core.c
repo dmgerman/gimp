@@ -5652,6 +5652,18 @@ name|alpha
 operator|=
 literal|0
 expr_stmt|;
+comment|/*  turn interpolation off for simple transformations (e.g. rot90)  */
+if|if
+condition|(
+name|gimp_matrix_is_simple
+argument_list|(
+name|matrix
+argument_list|)
+condition|)
+name|interpolation
+operator|=
+name|FALSE
+expr_stmt|;
 comment|/*  Get the background color  */
 name|gimage_get_background
 argument_list|(
