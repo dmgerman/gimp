@@ -1820,7 +1820,7 @@ name|gtk_menu_item_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"None"
+literal|"(None)"
 argument_list|)
 argument_list|)
 expr_stmt|;
