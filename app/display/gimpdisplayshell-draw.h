@@ -388,7 +388,7 @@ name|GtkWidget
 modifier|*
 name|canvas
 decl_stmt|;
-comment|/*  canvas widget                      */
+comment|/*  GimpCanvas widget                  */
 DECL|member|hsb
 name|GtkWidget
 modifier|*
@@ -435,12 +435,6 @@ modifier|*
 name|render_buf
 decl_stmt|;
 comment|/*  buffer for rendering the image     */
-DECL|member|render_gc
-name|GdkGC
-modifier|*
-name|render_gc
-decl_stmt|;
-comment|/*  GC for rendering the image         */
 DECL|member|title_idle_id
 name|guint
 name|title_idle_id

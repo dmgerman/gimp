@@ -221,6 +221,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcanvas.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplay.h"
 end_include
 
@@ -316,7 +322,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fcea570103
+DECL|enum|__anon2c7d17ce0103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -968,12 +974,6 @@ argument_list|)
 expr_stmt|;
 name|shell
 operator|->
-name|render_gc
-operator|=
-name|NULL
-expr_stmt|;
-name|shell
-operator|->
 name|icon_size
 operator|=
 literal|32
@@ -1564,27 +1564,6 @@ expr_stmt|;
 name|shell
 operator|->
 name|render_buf
-operator|=
-name|NULL
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|shell
-operator|->
-name|render_gc
-condition|)
-block|{
-name|g_object_unref
-argument_list|(
-name|shell
-operator|->
-name|render_gc
-argument_list|)
-expr_stmt|;
-name|shell
-operator|->
-name|render_gc
 operator|=
 name|NULL
 expr_stmt|;
@@ -2897,7 +2876,7 @@ name|shell
 operator|->
 name|canvas
 operator|=
-name|gtk_drawing_area_new
+name|gimp_canvas_new
 argument_list|()
 expr_stmt|;
 comment|/*  the horizontal ruler  */
@@ -3049,15 +3028,6 @@ literal|"#ruler"
 argument_list|)
 expr_stmt|;
 comment|/*  the canvas  */
-name|gtk_widget_set_name
-argument_list|(
-name|shell
-operator|->
-name|canvas
-argument_list|,
-literal|"gimp-canvas"
-argument_list|)
-expr_stmt|;
 name|gtk_widget_set_size_request
 argument_list|(
 name|shell

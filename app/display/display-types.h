@@ -29,6 +29,15 @@ file|"display/display-enums.h"
 end_include
 
 begin_typedef
+DECL|typedef|GimpCanvas
+typedef|typedef
+name|struct
+name|_GimpCanvas
+name|GimpCanvas
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpDisplay
 typedef|typedef
 name|struct

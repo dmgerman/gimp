@@ -1031,29 +1031,6 @@ name|allocation
 operator|.
 name|height
 expr_stmt|;
-comment|/*  create GC for rendering  */
-name|shell
-operator|->
-name|render_gc
-operator|=
-name|gdk_gc_new
-argument_list|(
-name|shell
-operator|->
-name|canvas
-operator|->
-name|window
-argument_list|)
-expr_stmt|;
-name|gdk_gc_set_exposures
-argument_list|(
-name|shell
-operator|->
-name|render_gc
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
 comment|/*  set up the scrollbar observers  */
 name|g_signal_connect
 argument_list|(

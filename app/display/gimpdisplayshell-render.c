@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcanvas.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplay.h"
 end_include
 
@@ -1520,7 +1526,12 @@ name|canvas
 operator|->
 name|window
 argument_list|,
+name|GIMP_CANVAS
+argument_list|(
 name|shell
+operator|->
+name|canvas
+argument_list|)
 operator|->
 name|render_gc
 argument_list|,
