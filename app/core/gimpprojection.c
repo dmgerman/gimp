@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"draw_core.h"
 end_include
 
@@ -103,6 +97,12 @@ begin_include
 include|#
 directive|include
 file|"gimage_mask.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdrawable.h"
 end_include
 
 begin_include

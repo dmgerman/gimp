@@ -30,19 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
 end_include
 
 begin_include
@@ -60,13 +48,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontext.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimage.h"
+file|"gimprc.h"
 end_include
 
 begin_include

@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"boundary.h"
 end_include
 
@@ -43,12 +37,6 @@ begin_include
 include|#
 directive|include
 file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"layer.h"
 end_include
 
 begin_include
@@ -79,6 +67,12 @@ begin_include
 include|#
 directive|include
 file|"gimplayermask.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"layer.h"
 end_include
 
 begin_include

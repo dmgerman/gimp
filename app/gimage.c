@@ -42,13 +42,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable.h"
+file|"gdisplay.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"gimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdrawable.h"
 end_include
 
 begin_include
@@ -73,12 +79,6 @@ begin_include
 include|#
 directive|include
 file|"lc_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
 end_include
 
 begin_include
@@ -197,12 +197,16 @@ modifier|*
 name|gimage
 parameter_list|,
 name|gint
+name|x
 parameter_list|,
 name|gint
+name|y
 parameter_list|,
 name|gint
+name|w
 parameter_list|,
 name|gint
+name|h
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -57,19 +57,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimphistogram.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"pixel_region.h"
+file|"channel.h"
 end_include
 
 begin_include
@@ -81,7 +69,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"channel.h"
+file|"gimphistogram.h"
 end_include
 
 begin_include
@@ -102,6 +90,12 @@ directive|include
 file|"pixel_processor.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"pixel_region.h"
+end_include
+
 begin_struct
 DECL|struct|_GimpHistogram
 struct|struct
@@ -117,9 +111,9 @@ modifier|*
 modifier|*
 name|values
 decl_stmt|;
-DECL|member|nchannels
+DECL|member|n_channels
 name|gint
-name|nchannels
+name|n_channels
 decl_stmt|;
 ifdef|#
 directive|ifdef
@@ -187,7 +181,7 @@ name|NULL
 expr_stmt|;
 name|histogram
 operator|->
-name|nchannels
+name|n_channels
 operator|=
 literal|0
 expr_stmt|;
@@ -251,7 +245,7 @@ name|i
 operator|<
 name|histogram
 operator|->
-name|nchannels
+name|n_channels
 condition|;
 name|i
 operator|++
@@ -1236,7 +1230,7 @@ literal|1
 operator|!=
 name|histogram
 operator|->
-name|nchannels
+name|n_channels
 condition|)
 block|{
 if|if
@@ -1256,7 +1250,7 @@ name|i
 operator|<
 name|histogram
 operator|->
-name|nchannels
+name|n_channels
 condition|;
 name|i
 operator|++
@@ -1281,7 +1275,7 @@ expr_stmt|;
 block|}
 name|histogram
 operator|->
-name|nchannels
+name|n_channels
 operator|=
 name|bytes
 operator|+
@@ -1298,7 +1292,7 @@ operator|*
 argument_list|,
 name|histogram
 operator|->
-name|nchannels
+name|n_channels
 argument_list|)
 expr_stmt|;
 for|for
@@ -1311,7 +1305,7 @@ name|i
 operator|<
 name|histogram
 operator|->
-name|nchannels
+name|n_channels
 condition|;
 name|i
 operator|++
@@ -1439,7 +1433,7 @@ operator|*
 argument_list|,
 name|histogram
 operator|->
-name|nchannels
+name|n_channels
 argument_list|)
 expr_stmt|;
 name|histogram
@@ -1461,7 +1455,7 @@ name|j
 operator|<
 name|histogram
 operator|->
-name|nchannels
+name|n_channels
 condition|;
 name|j
 operator|++
@@ -1526,7 +1520,7 @@ name|i
 operator|<
 name|histogram
 operator|->
-name|nchannels
+name|n_channels
 condition|;
 name|i
 operator|++
@@ -1600,7 +1594,7 @@ name|j
 operator|<
 name|histogram
 operator|->
-name|nchannels
+name|n_channels
 condition|;
 name|j
 operator|++
@@ -1966,7 +1960,7 @@ name|channel
 operator|<
 name|histogram
 operator|->
-name|nchannels
+name|n_channels
 operator|&&
 name|bin
 operator|>=
@@ -2013,7 +2007,7 @@ if|if
 condition|(
 name|histogram
 operator|->
-name|nchannels
+name|n_channels
 operator|>
 literal|3
 condition|)
@@ -2056,7 +2050,7 @@ block|{
 return|return
 name|histogram
 operator|->
-name|nchannels
+name|n_channels
 operator|-
 literal|1
 return|;

@@ -24,19 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"invert.h"
 end_include
 
 begin_include
@@ -49,6 +37,12 @@ begin_include
 include|#
 directive|include
 file|"gimplut.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"invert.h"
 end_include
 
 begin_include

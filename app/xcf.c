@@ -112,12 +112,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"floating_sel.h"
 end_include
 
@@ -131,6 +125,12 @@ begin_include
 include|#
 directive|include
 file|"gimage_mask.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdrawable.h"
 end_include
 
 begin_include
@@ -224,7 +224,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a29f02b0103
+DECL|enum|__anon2c17ab520103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -359,7 +359,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a29f02b0203
+DECL|enum|__anon2c17ab520203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE

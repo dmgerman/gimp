@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"boundary.h"
 end_include
 
@@ -60,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimage_mask.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -67,12 +67,6 @@ begin_include
 include|#
 directive|include
 file|"gimplayermask.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimage_mask.h"
 end_include
 
 begin_include
@@ -596,17 +590,17 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimage_mask_value (GImage * gimage,int x,int y)
+DECL|function|gimage_mask_value (GImage * gimage,gint x,gint y)
 name|gimage_mask_value
 parameter_list|(
 name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|)
 block|{

@@ -80,12 +80,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"floating_sel.h"
 end_include
 
@@ -104,7 +98,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdrawable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimppalette.h"
 end_include
 
 begin_include
@@ -116,19 +122,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"palette.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimppalette.h"
 end_include
 
 begin_include
@@ -147,6 +141,12 @@ begin_include
 include|#
 directive|include
 file|"tile_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"undo.h"
 end_include
 
 begin_include
@@ -34929,7 +34929,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297b7a980108
+DECL|struct|__anon277b87290108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -35006,7 +35006,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297b7a980208
+DECL|struct|__anon277b87290208
 block|{
 DECL|member|ncolors
 name|long
@@ -35025,7 +35025,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297b7a980308
+DECL|struct|__anon277b87290308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -38378,7 +38378,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297b7a980408
+DECL|struct|__anon277b87290408
 block|{
 DECL|member|used_count
 name|signed

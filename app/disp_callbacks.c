@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"drawable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gdisplay.h"
 end_include
 
@@ -85,12 +91,6 @@ begin_include
 include|#
 directive|include
 file|"gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"drawable.h"
 end_include
 
 begin_include
@@ -214,8 +214,8 @@ end_function_decl
 begin_function
 specifier|static
 name|void
-DECL|function|redraw (GDisplay * gdisp,gint x,gint y,gint w,gint h)
-name|redraw
+DECL|function|gdisplay_redraw (GDisplay * gdisp,gint x,gint y,gint w,gint h)
+name|gdisplay_redraw
 parameter_list|(
 name|GDisplay
 modifier|*
@@ -796,7 +796,7 @@ operator|)
 name|event
 expr_stmt|;
 comment|/*printf(" EXP:%d,%d(%dx%d) ",eevent->area.x, eevent->area.y, 	eevent->area.width, eevent->area.height);fflush(stdout);*/
-name|redraw
+name|gdisplay_redraw
 argument_list|(
 name|gdisp
 argument_list|,

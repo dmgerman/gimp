@@ -40,25 +40,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimage_mask.h"
 end_include
 
 begin_include
 include|#
 directive|include
+file|"gimpdrawable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimprc.h"
 end_include
 
 begin_include
@@ -124,7 +124,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293e5b890108
+DECL|struct|__anon2bf97a2c0108
 block|{
 DECL|member|gimage
 name|GImage
@@ -175,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293e5b890208
+DECL|struct|__anon2bf97a2c0208
 block|{
 DECL|member|clist
 name|GtkCList

@@ -4693,7 +4693,6 @@ name|GimpChannel
 modifier|*
 name|mask
 decl_stmt|;
-comment|/*  first get the selection mask channel  */
 if|if
 condition|(
 operator|!
@@ -4726,6 +4725,7 @@ argument_list|,
 name|SelectionLayerOff
 argument_list|)
 expr_stmt|;
+comment|/*  get the selection mask channel  */
 name|mask
 operator|=
 name|gimp_image_get_mask

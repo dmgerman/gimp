@@ -126,12 +126,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"equalize.h"
 end_include
 
@@ -169,6 +163,12 @@ begin_include
 include|#
 directive|include
 file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdrawable.h"
 end_include
 
 begin_include

@@ -42,18 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"channel.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"fileops.h"
 end_include
 
@@ -90,13 +78,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdrawablepreview.h"
+file|"gimpdrawable.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimplayermask.h"
+file|"gimpdrawablepreview.h"
 end_include
 
 begin_include
@@ -115,12 +103,6 @@ begin_include
 include|#
 directive|include
 file|"gradient_header.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"layer.h"
 end_include
 
 begin_include
@@ -166,7 +148,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2880d6fc0103
+DECL|enum|__anon2a434a5a0103
 block|{
 DECL|enumerator|GIMP_DND_DATA_COLOR
 name|GIMP_DND_DATA_COLOR

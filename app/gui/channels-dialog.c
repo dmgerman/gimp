@@ -6935,7 +6935,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ca666d0108
+DECL|struct|__anon27efc9b20108
 block|{
 DECL|member|gimage
 name|GimpImage

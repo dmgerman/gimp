@@ -30,24 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimage.h"
 end_include
 
@@ -55,6 +37,12 @@ begin_include
 include|#
 directive|include
 file|"gimage_mask.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimphistogram.h"
 end_include
 
 begin_include
@@ -127,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2147690103
+DECL|enum|__anon27e78a3a0103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED

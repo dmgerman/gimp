@@ -408,17 +408,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gimp_channel_update
-parameter_list|(
-name|GimpChannel
-modifier|*
-name|channel
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|gboolean
 name|gimp_channel_toggle_visibility
 parameter_list|(

@@ -22,12 +22,6 @@ directive|include
 file|<gtk/gtkdrawingarea.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimphistogram.h"
-end_include
-
 begin_define
 DECL|macro|HISTOGRAM_WIDGET_TYPE
 define|#
@@ -48,17 +42,6 @@ value|GTK_CHECK_CAST (obj, histogram_widget_get_type (), HistogramWidget)
 end_define
 
 begin_define
-DECL|macro|HISTOGRAM_WIDGET_CLASS (klass)
-define|#
-directive|define
-name|HISTOGRAM_WIDGET_CLASS
-parameter_list|(
-name|klass
-parameter_list|)
-value|GTK_CHECK_CLASS_CAST (klass, histogram_widget_get_type (), HistogramWidget)
-end_define
-
-begin_define
 DECL|macro|IS_HISTOGRAM_WIDGET (obj)
 define|#
 directive|define
@@ -67,6 +50,17 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|GTK_CHECK_TYPE (obj, histogram_widget_get_type ())
+end_define
+
+begin_define
+DECL|macro|HISTOGRAM_WIDGET_CLASS (klass)
+define|#
+directive|define
+name|HISTOGRAM_WIDGET_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|GTK_CHECK_CLASS_CAST (klass, histogram_widget_get_type (), HistogramWidget)
 end_define
 
 begin_typedef
@@ -83,9 +77,9 @@ DECL|struct|_HistogramWidget
 struct|struct
 name|_HistogramWidget
 block|{
-DECL|member|drawingarea
+DECL|member|parent_instance
 name|GtkDrawingArea
-name|drawingarea
+name|parent_instance
 decl_stmt|;
 DECL|member|histogram
 name|GimpHistogram

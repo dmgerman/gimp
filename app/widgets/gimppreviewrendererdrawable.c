@@ -30,25 +30,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"boundary.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"channel.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"drawable.h"
+file|"gimpimage.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpimage.h"
+file|"gimpdrawable.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdrawablepreview.h"
 end_include
 
 begin_include
@@ -1210,6 +1210,7 @@ name|tot_frac
 expr_stmt|;
 block|}
 else|else
+block|{
 for|for
 control|(
 name|b
@@ -1235,6 +1236,7 @@ index|]
 operator|*
 name|tot_frac
 expr_stmt|;
+block|}
 comment|/*  increment the destination  */
 if|if
 condition|(
