@@ -1184,6 +1184,10 @@ block|,
 name|select_float_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_FLOATING_SELECTION
 block|}
 block|,
 name|NULL
@@ -7198,6 +7202,14 @@ name|fs
 operator|&&
 operator|!
 name|aux
+operator|&&
+name|lind
+operator|<
+operator|(
+name|lnum
+operator|-
+literal|1
+operator|)
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
