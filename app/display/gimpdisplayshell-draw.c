@@ -286,7 +286,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ee4bff0103
+DECL|enum|__anon28af16e40103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1457,6 +1457,8 @@ argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 literal|"image/image_window.html"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
