@@ -167,7 +167,7 @@ struct|struct
 name|Bitmap_Head_Struct
 block|{
 DECL|member|biWidth
-name|gulong
+name|glong
 name|biWidth
 decl_stmt|;
 comment|/* 12 */
