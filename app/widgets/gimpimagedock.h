@@ -121,15 +121,6 @@ DECL|member|auto_follow_active
 name|gboolean
 name|auto_follow_active
 decl_stmt|;
-DECL|member|ui_manager
-name|GimpUIManager
-modifier|*
-name|ui_manager
-decl_stmt|;
-DECL|member|image_flush_handler_id
-name|GQuark
-name|image_flush_handler_id
-decl_stmt|;
 DECL|member|image_combo
 name|GtkWidget
 modifier|*
