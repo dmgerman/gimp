@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d61ce00103
+DECL|enum|__anon2b7704da0103
 block|{
 DECL|enumerator|ImageClone
 name|ImageClone
@@ -134,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d61ce00203
+DECL|enum|__anon2b7704da0203
 block|{
 DECL|enumerator|AlignNo
 name|AlignNo
@@ -1188,7 +1188,7 @@ name|paint_core
 operator|->
 name|state
 operator|&
-name|ControlMask
+name|GDK_CONTROL_MASK
 condition|)
 block|{
 name|src_x
@@ -1305,7 +1305,7 @@ name|paint_core
 operator|->
 name|state
 operator|&
-name|ControlMask
+name|GDK_CONTROL_MASK
 condition|)
 block|{
 name|the_src_gdisp

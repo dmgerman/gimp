@@ -38,6 +38,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<math.h>
 end_include
 
@@ -59,11 +65,22 @@ directive|include
 file|<string.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -135,12 +152,6 @@ begin_include
 include|#
 directive|include
 file|"gradient_header.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config.h"
 end_include
 
 begin_include
@@ -28299,7 +28310,7 @@ argument_list|(
 operator|&
 name|first_token
 argument_list|,
-literal|":"
+name|G_SEARCHPATH_SEPARATOR_S
 argument_list|)
 expr_stmt|;
 name|filename
@@ -28319,6 +28330,14 @@ operator|==
 literal|'~'
 condition|)
 block|{
+if|if
+condition|(
+operator|!
+name|home
+condition|)
+return|return
+name|NULL
+return|;
 name|path
 operator|=
 name|g_strdup_printf
@@ -28348,7 +28367,9 @@ name|filename
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%s/%s"
+literal|"%s"
+name|G_DIR_SEPARATOR_S
+literal|"%s"
 argument_list|,
 name|path
 argument_list|,

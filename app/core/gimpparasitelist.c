@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpobjectP.h"
 end_include
 
@@ -41,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2785b1250103
+DECL|enum|__anon29c7ab690103
 block|{
 DECL|enumerator|ADD
 name|ADD

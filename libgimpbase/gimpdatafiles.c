@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -27,11 +33,22 @@ directive|include
 file|<sys/stat.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -39,11 +56,85 @@ directive|include
 file|<sys/types.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_DIRENT_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<dirent.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|_MSC_VER
+end_ifdef
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|S_ISDIR
+end_ifndef
+
+begin_define
+DECL|macro|S_ISDIR (m)
+define|#
+directive|define
+name|S_ISDIR
+parameter_list|(
+name|m
+parameter_list|)
+value|(((m)& _S_IFMT) == _S_IFDIR)
+end_define
+
+begin_define
+DECL|macro|S_ISREG (m)
+define|#
+directive|define
+name|S_ISREG
+parameter_list|(
+name|m
+parameter_list|)
+value|(((m)& _S_IFMT) == _S_IFREG)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|S_IXUSR
+end_ifndef
+
+begin_define
+DECL|macro|S_IXUSR
+define|#
+directive|define
+name|S_IXUSR
+value|_S_IEXEC
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -186,7 +277,7 @@ argument_list|(
 operator|&
 name|next_token
 argument_list|,
-literal|":"
+name|G_SEARCHPATH_SEPARATOR_S
 argument_list|)
 expr_stmt|;
 while|while
@@ -292,13 +383,13 @@ operator|-
 literal|1
 index|]
 operator|!=
-literal|'/'
+name|G_DIR_SEPARATOR
 condition|)
 name|strcat
 argument_list|(
 name|path
 argument_list|,
-literal|"/"
+name|G_DIR_SEPARATOR_S
 argument_list|)
 expr_stmt|;
 comment|/* Open directory */
@@ -434,7 +525,7 @@ argument_list|(
 operator|&
 name|next_token
 argument_list|,
-literal|":"
+name|G_SEARCHPATH_SEPARATOR_S
 argument_list|)
 expr_stmt|;
 block|}

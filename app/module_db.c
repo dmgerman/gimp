@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -21,10 +27,27 @@ directive|include
 file|<sys/stat.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_include
+include|#
+directive|include
+file|<time.h>
 end_include
 
 begin_include
@@ -82,7 +105,7 @@ file|"libgimp/gimpmodule.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon2a2389e50103
+DECL|enum|__anon28db179c0103
 typedef|typedef
 enum|enum
 block|{
@@ -140,7 +163,7 @@ comment|/* one of these objects is kept per-module */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a2389e50208
+DECL|struct|__anon28db179c0208
 typedef|typedef
 struct|struct
 block|{
@@ -252,7 +275,7 @@ value|7
 end_define
 
 begin_typedef
-DECL|struct|__anon2a2389e50308
+DECL|struct|__anon28db179c0308
 typedef|typedef
 struct|struct
 block|{
@@ -1219,7 +1242,7 @@ comment|/* module_info object glue */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a2389e50408
+DECL|struct|__anon28db179c0408
 typedef|typedef
 struct|struct
 block|{
@@ -1234,7 +1257,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2a2389e50503
+DECL|enum|__anon28db179c0503
 enum|enum
 block|{
 DECL|enumerator|MODIFIED
@@ -1546,11 +1569,7 @@ comment|/* helper functions */
 end_comment
 
 begin_comment
-comment|/* name must be of the form lib*.so */
-end_comment
-
-begin_comment
-comment|/* TODO: need support for WIN32-style dll names.  Maybe this function  * should live in libgmodule? */
+comment|/* name must be of the form lib*.so (Unix) or *.dll (Win32) */
 end_comment
 
 begin_function
@@ -1579,7 +1598,7 @@ name|strrchr
 argument_list|(
 name|filename
 argument_list|,
-literal|'/'
+name|G_DIR_SEPARATOR
 argument_list|)
 expr_stmt|;
 if|if
@@ -1601,6 +1620,9 @@ argument_list|(
 name|basename
 argument_list|)
 expr_stmt|;
+ifndef|#
+directive|ifndef
+name|WIN32
 if|if
 condition|(
 name|len
@@ -1644,6 +1666,26 @@ condition|)
 return|return
 name|FALSE
 return|;
+else|#
+directive|else
+if|if
+condition|(
+name|g_strcasecmp
+argument_list|(
+name|basename
+operator|+
+name|len
+operator|-
+literal|4
+argument_list|,
+literal|".dll"
+argument_list|)
+condition|)
+return|return
+name|FALSE
+return|;
+endif|#
+directive|endif
 return|return
 name|TRUE
 return|;
@@ -3593,7 +3635,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2a2389e50608
+DECL|struct|__anon28db179c0608
 typedef|typedef
 struct|struct
 block|{

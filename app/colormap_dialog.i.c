@@ -3062,8 +3062,15 @@ operator|->
 name|palette
 argument_list|)
 expr_stmt|;
+comment|/* Watch out for negative values (at least on Win32) */
 name|width
 operator|=
+operator|(
+name|int
+operator|)
+operator|(
+name|gint16
+operator|)
 name|palette
 operator|->
 name|allocation
@@ -3072,12 +3079,24 @@ name|width
 expr_stmt|;
 name|height
 operator|=
+operator|(
+name|int
+operator|)
+operator|(
+name|gint16
+operator|)
 name|palette
 operator|->
 name|allocation
 operator|.
 name|height
 expr_stmt|;
+if|if
+condition|(
+name|width
+operator|>
+literal|0
+condition|)
 name|row
 operator|=
 name|g_new
@@ -3226,6 +3245,12 @@ name|width
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|width
+operator|>
+literal|0
+condition|)
 name|g_free
 argument_list|(
 name|row
@@ -4792,7 +4817,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon28db67d60108
+DECL|struct|__anon29b3bcba0108
 typedef|typedef
 struct|struct
 block|{

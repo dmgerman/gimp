@@ -2773,7 +2773,7 @@ name|fopen
 argument_list|(
 name|filename
 argument_list|,
-literal|"wb"
+literal|"w"
 argument_list|)
 operator|)
 condition|)

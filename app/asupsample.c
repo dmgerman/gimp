@@ -16,6 +16,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<stdlib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -30,7 +36,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b269a270108
+DECL|struct|__anon2758bb070108
 typedef|typedef
 struct|struct
 block|{

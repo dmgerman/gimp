@@ -1569,7 +1569,7 @@ name|transform_core
 operator|->
 name|state
 operator|&
-name|ControlMask
+name|GDK_CONTROL_MASK
 condition|)
 name|transform_core
 operator|->

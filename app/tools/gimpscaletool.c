@@ -1659,7 +1659,7 @@ name|transform_core
 operator|->
 name|state
 operator|&
-name|ControlMask
+name|GDK_CONTROL_MASK
 operator|&&
 operator|!
 operator|(
@@ -1667,7 +1667,7 @@ name|transform_core
 operator|->
 name|state
 operator|&
-name|ShiftMask
+name|GDK_SHIFT_MASK
 operator|)
 condition|)
 name|diff_x
@@ -1682,7 +1682,7 @@ name|transform_core
 operator|->
 name|state
 operator|&
-name|ShiftMask
+name|GDK_SHIFT_MASK
 operator|&&
 operator|!
 operator|(
@@ -1690,7 +1690,7 @@ name|transform_core
 operator|->
 name|state
 operator|&
-name|ControlMask
+name|GDK_CONTROL_MASK
 operator|)
 condition|)
 name|diff_y

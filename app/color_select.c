@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -136,7 +142,7 @@ value|GDK_EXPOSURE_MASK | \                         GDK_BUTTON_PRESS_MASK | GDK_
 end_define
 
 begin_typedef
-DECL|enum|__anon2ad2e8870103
+DECL|enum|__anon296b972f0103
 typedef|typedef
 enum|enum
 block|{
@@ -184,7 +190,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2ad2e8870203
+DECL|enum|__anon296b972f0203
 typedef|typedef
 enum|enum
 block|{
@@ -10933,7 +10939,7 @@ comment|/* Colour notebook glue      */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2ad2e8870308
+DECL|struct|__anon296b972f0308
 typedef|typedef
 struct|struct
 block|{

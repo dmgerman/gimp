@@ -14,6 +14,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -3502,7 +3508,7 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon29ec957c0108
+DECL|struct|__anon27b3d9e30108
 specifier|static
 specifier|const
 struct|struct
@@ -3553,7 +3559,7 @@ operator|)
 block|}
 block|}
 struct|;
-DECL|struct|__anon29ec957c0208
+DECL|struct|__anon27b3d9e30208
 specifier|static
 specifier|const
 struct|struct
@@ -3645,7 +3651,7 @@ name|edit_plug_in_path
 block|}
 block|}
 struct|;
-DECL|struct|__anon29ec957c0308
+DECL|struct|__anon27b3d9e30308
 specifier|static
 specifier|const
 struct|struct

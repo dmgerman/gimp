@@ -45,17 +45,39 @@ directive|include
 file|<sys/types.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_SYS_WAIT_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<sys/wait.h>
 end_include
 
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -132,6 +154,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|SIGCHLD
+end_ifdef
+
 begin_function_decl
 specifier|static
 name|RETSIGTYPE
@@ -141,6 +169,11 @@ name|int
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function_decl
 specifier|static
@@ -505,9 +538,17 @@ name|no_splash_image
 operator|=
 name|FALSE
 expr_stmt|;
-ifdef|#
-directive|ifdef
+if|#
+directive|if
+name|defined
+argument_list|(
 name|HAVE_SHM_H
+argument_list|)
+operator|||
+name|defined
+argument_list|(
+name|NATIVE_WIN32
+argument_list|)
 name|use_shm
 operator|=
 name|TRUE
@@ -1215,7 +1256,7 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"\007Usage: %s [option ...] [files ...]\n"
+literal|"Usage: %s [option ...] [files ...]\n"
 argument_list|)
 argument_list|,
 name|argv
@@ -1381,6 +1422,9 @@ name|message_func
 argument_list|)
 expr_stmt|;
 comment|/* Handle some signals */
+ifdef|#
+directive|ifdef
+name|SIGHUP
 name|signal
 argument_list|(
 name|SIGHUP
@@ -1388,6 +1432,11 @@ argument_list|,
 name|on_signal
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
+ifdef|#
+directive|ifdef
+name|SIGINT
 name|signal
 argument_list|(
 name|SIGINT
@@ -1395,6 +1444,11 @@ argument_list|,
 name|on_signal
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
+ifdef|#
+directive|ifdef
+name|SIGQUIT
 name|signal
 argument_list|(
 name|SIGQUIT
@@ -1402,6 +1456,11 @@ argument_list|,
 name|on_signal
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
+ifdef|#
+directive|ifdef
+name|SIGABRT
 name|signal
 argument_list|(
 name|SIGABRT
@@ -1409,6 +1468,11 @@ argument_list|,
 name|on_signal
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
+ifdef|#
+directive|ifdef
+name|SIGBUS
 name|signal
 argument_list|(
 name|SIGBUS
@@ -1416,6 +1480,11 @@ argument_list|,
 name|on_signal
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
+ifdef|#
+directive|ifdef
+name|SIGSEGV
 name|signal
 argument_list|(
 name|SIGSEGV
@@ -1423,6 +1492,11 @@ argument_list|,
 name|on_signal
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
+ifdef|#
+directive|ifdef
+name|SIGPIPE
 name|signal
 argument_list|(
 name|SIGPIPE
@@ -1430,6 +1504,11 @@ argument_list|,
 name|on_signal
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
+ifdef|#
+directive|ifdef
+name|SIGTERM
 name|signal
 argument_list|(
 name|SIGTERM
@@ -1437,6 +1516,11 @@ argument_list|,
 name|on_signal
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
+ifdef|#
+directive|ifdef
+name|SIGFPE
 name|signal
 argument_list|(
 name|SIGFPE
@@ -1444,6 +1528,11 @@ argument_list|,
 name|on_signal
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
+ifdef|#
+directive|ifdef
+name|SIGCHLD
 comment|/* Handle child exits */
 name|signal
 argument_list|(
@@ -1452,6 +1541,8 @@ argument_list|,
 name|on_sig_child
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|g_log_set_handler
 argument_list|(
 name|NULL
@@ -1499,6 +1590,52 @@ literal|0
 return|;
 block|}
 end_function
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|NATIVE_WIN32
+end_ifdef
+
+begin_comment
+comment|/* In case we build this as a windowed application */
+end_comment
+
+begin_function
+name|int
+name|_stdcall
+DECL|function|WinMain (int hInstance,int hPrevInstance,char * lpszCmdLine,int nCmdShow)
+name|WinMain
+parameter_list|(
+name|int
+name|hInstance
+parameter_list|,
+name|int
+name|hPrevInstance
+parameter_list|,
+name|char
+modifier|*
+name|lpszCmdLine
+parameter_list|,
+name|int
+name|nCmdShow
+parameter_list|)
+block|{
+return|return
+name|main
+argument_list|(
+name|__argc
+argument_list|,
+name|__argv
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function
 specifier|static
@@ -1584,7 +1721,16 @@ if|if
 condition|(
 name|caught_fatal_sig
 condition|)
-comment|/*    raise (sig_num);*/
+ifdef|#
+directive|ifdef
+name|NATIVE_WIN32
+name|raise
+argument_list|(
+name|sig_num
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
 name|kill
 argument_list|(
 name|getpid
@@ -1593,6 +1739,8 @@ argument_list|,
 name|sig_num
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|caught_fatal_sig
 operator|=
 literal|1
@@ -1602,6 +1750,9 @@ condition|(
 name|sig_num
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|SIGHUP
 case|case
 name|SIGHUP
 case|:
@@ -1614,6 +1765,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
+endif|#
+directive|endif
+ifdef|#
+directive|ifdef
+name|SIGINT
 case|case
 name|SIGINT
 case|:
@@ -1626,6 +1782,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
+endif|#
+directive|endif
+ifdef|#
+directive|ifdef
+name|SIGQUIT
 case|case
 name|SIGQUIT
 case|:
@@ -1638,6 +1799,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
+endif|#
+directive|endif
+ifdef|#
+directive|ifdef
+name|SIGABRT
 case|case
 name|SIGABRT
 case|:
@@ -1650,6 +1816,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
+endif|#
+directive|endif
+ifdef|#
+directive|ifdef
+name|SIGBUS
 case|case
 name|SIGBUS
 case|:
@@ -1662,6 +1833,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
+endif|#
+directive|endif
+ifdef|#
+directive|ifdef
+name|SIGSEGV
 case|case
 name|SIGSEGV
 case|:
@@ -1674,6 +1850,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
+endif|#
+directive|endif
+ifdef|#
+directive|ifdef
+name|SIGPIPE
 case|case
 name|SIGPIPE
 case|:
@@ -1686,6 +1867,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
+endif|#
+directive|endif
+ifdef|#
+directive|ifdef
+name|SIGTERM
 case|case
 name|SIGTERM
 case|:
@@ -1698,6 +1884,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
+endif|#
+directive|endif
+ifdef|#
+directive|ifdef
+name|SIGFPE
 case|case
 name|SIGFPE
 case|:
@@ -1710,6 +1901,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
+endif|#
+directive|endif
 default|default:
 name|fatal_error
 argument_list|(
@@ -1723,6 +1916,12 @@ break|break;
 block|}
 block|}
 end_function
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|SIGCHLD
+end_ifdef
 
 begin_function
 specifier|static
@@ -1768,10 +1967,15 @@ block|}
 block|}
 end_function
 
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b436b990108
+DECL|struct|__anon28b055940108
 block|{
 DECL|member|test_gint32
 name|gint32

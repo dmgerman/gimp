@@ -2,6 +2,12 @@ begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<ctype.h>
 end_include
 
@@ -29,11 +35,22 @@ directive|include
 file|<string.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -184,6 +201,10 @@ operator|!
 name|read_from_stdin
 condition|)
 block|{
+ifndef|#
+directive|ifndef
+name|NATIVE_WIN32
+comment|/* for now */
 name|g_print
 argument_list|(
 name|_
@@ -208,6 +229,15 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
+else|#
+directive|else
+name|g_error
+argument_list|(
+literal|"Batch mode from standard input not implemented on Win32"
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 block|}
 else|else
 block|{

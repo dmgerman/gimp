@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<ctype.h>
 end_include
 
@@ -33,11 +39,22 @@ directive|include
 file|<sys/types.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_SYS_PARAM_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<sys/param.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -45,17 +62,72 @@ directive|include
 file|<sys/stat.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
 
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include
 file|<errno.h>
 end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|_MSC_VER
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<process.h>
+end_include
+
+begin_comment
+comment|/* For _getpid() */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|<direct.h>
+end_include
+
+begin_comment
+comment|/* For _mkdir() */
+end_comment
+
+begin_define
+DECL|macro|mkdir (path,mode)
+define|#
+directive|define
+name|mkdir
+parameter_list|(
+name|path
+parameter_list|,
+name|mode
+parameter_list|)
+value|_mkdir(path)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -2320,7 +2392,8 @@ argument_list|(
 name|fileload
 argument_list|)
 argument_list|,
-literal|"./"
+literal|"."
+name|G_DIR_SEPARATOR_S
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_title
@@ -3168,7 +3241,8 @@ argument_list|(
 name|filesave
 argument_list|)
 argument_list|,
-literal|"./"
+literal|"."
+name|G_DIR_SEPARATOR_S
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_title
@@ -6289,14 +6363,14 @@ operator|-
 literal|1
 index|]
 operator|!=
-literal|'/'
+name|G_DIR_SEPARATOR
 condition|)
 block|{
 name|g_string_append_c
 argument_list|(
 name|s
 argument_list|,
-literal|'/'
+name|G_DIR_SEPARATOR
 argument_list|)
 expr_stmt|;
 block|}
@@ -6785,7 +6859,7 @@ name|g_string_append_c
 argument_list|(
 name|s
 argument_list|,
-literal|'/'
+name|G_DIR_SEPARATOR
 argument_list|)
 expr_stmt|;
 name|gtk_file_selection_set_filename
@@ -9797,7 +9871,9 @@ name|g_string_sprintf
 argument_list|(
 name|s
 argument_list|,
-literal|"%s/gimp_temp.%d%d.%s"
+literal|"%s"
+name|G_DIR_SEPARATOR_S
+literal|"gimp_temp.%d%d.%s"
 argument_list|,
 name|temp_path
 argument_list|,

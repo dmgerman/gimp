@@ -45,6 +45,39 @@ directive|include
 file|<glib.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|_MSC_VER
+end_ifdef
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|S_ISREG
+end_ifndef
+
+begin_define
+DECL|macro|S_ISREG (m)
+define|#
+directive|define
+name|S_ISREG
+parameter_list|(
+name|m
+parameter_list|)
+value|(((m)& _S_IFMT) == _S_IFREG)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include
@@ -100,7 +133,7 @@ name|strtok
 argument_list|(
 name|local_path
 argument_list|,
-literal|":"
+name|G_SEARCHPATH_SEPARATOR_S
 argument_list|)
 expr_stmt|;
 while|while
@@ -129,13 +162,13 @@ operator|-
 literal|1
 index|]
 operator|!=
-literal|'/'
+name|G_DIR_SEPARATOR
 condition|)
 name|strcat
 argument_list|(
 name|path
 argument_list|,
-literal|"/"
+name|G_DIR_SEPARATOR_S
 argument_list|)
 expr_stmt|;
 name|strcat
@@ -180,7 +213,7 @@ name|strtok
 argument_list|(
 name|NULL
 argument_list|,
-literal|":"
+name|G_SEARCHPATH_SEPARATOR_S
 argument_list|)
 expr_stmt|;
 block|}

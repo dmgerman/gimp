@@ -268,7 +268,9 @@ operator|*
 operator|)
 name|g_strdup_printf
 argument_list|(
-literal|"%s/%s"
+literal|"%s"
+name|G_DIR_SEPARATOR_S
+literal|"%s"
 argument_list|,
 name|gimp_data_dir
 argument_list|,
@@ -284,7 +286,9 @@ operator|*
 operator|)
 name|g_strdup_printf
 argument_list|(
-literal|"%s/%s"
+literal|"%s"
+name|G_DIR_SEPARATOR_S
+literal|"%s"
 argument_list|,
 name|DATADIR
 argument_list|,
@@ -1201,7 +1205,7 @@ name|fopen
 argument_list|(
 name|filename
 argument_list|,
-literal|"rb"
+literal|"r"
 argument_list|)
 expr_stmt|;
 if|if

@@ -6,24 +6,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"docindexif.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"docindex.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -37,6 +19,24 @@ begin_include
 include|#
 directive|include
 file|<stdlib.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"docindexif.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"docindex.h"
 end_include
 
 begin_decl_stmt
@@ -91,7 +91,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon2b08788f0103
+DECL|enum|__anon27c48fe80103
 enum|enum
 block|{
 DECL|enumerator|TARGET_URI_LIST

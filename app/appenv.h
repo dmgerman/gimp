@@ -22,11 +22,26 @@ directive|include
 file|"glib.h"
 end_include
 
+begin_comment
+comment|/* The GIMP shouldn't need to know much about X11 (or Windows), so  * I'll remove this inclusion of gdkx.h. This will speed up compilations  * a bit, too. If some source file needs gdkx.h, it can include it.  */
+end_comment
+
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
 begin_include
 include|#
 directive|include
 file|"gdk/gdkx.h"
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -46,13 +61,27 @@ directive|include
 file|"colormap_dialog.t.h"
 end_include
 
+begin_comment
+comment|/* Without gdkx.h no GDK_DISPLAY() */
+end_comment
+
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
 begin_define
-DECL|macro|DISPLAY
 define|#
 directive|define
 name|DISPLAY
 value|((Display *) GDK_DISPLAY())
 end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_comment
 comment|/*   important macros - we reuse the ones from glib */
@@ -134,7 +163,7 @@ value|CLAMP(a,0,255)
 end_define
 
 begin_typedef
-DECL|enum|__anon29483a310103
+DECL|enum|__anon28f5f1e10103
 typedef|typedef
 enum|enum
 block|{

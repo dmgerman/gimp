@@ -1332,7 +1332,7 @@ name|mevent
 operator|->
 name|state
 operator|&
-name|Button1Mask
+name|GDK_BUTTON1_MASK
 operator|)
 operator|&&
 operator|!

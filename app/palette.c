@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -21,17 +27,39 @@ directive|include
 file|<string.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
 
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_DIRENT_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<dirent.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -260,7 +288,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27614e6d0103
+DECL|enum|__anon2b78fef80103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -4743,7 +4771,7 @@ argument_list|(
 operator|&
 name|first_token
 argument_list|,
-literal|":"
+name|G_SEARCHPATH_SEPARATOR_S
 argument_list|)
 expr_stmt|;
 if|if
@@ -4759,6 +4787,10 @@ operator|==
 literal|'~'
 condition|)
 block|{
+if|if
+condition|(
+name|home
+condition|)
 name|path
 operator|=
 name|g_strdup_printf
@@ -4767,6 +4799,17 @@ literal|"%s%s"
 argument_list|,
 name|home
 argument_list|,
+name|token
+operator|+
+literal|1
+argument_list|)
+expr_stmt|;
+else|else
+comment|/* Just ignore the ~ if no HOME ??? */
+name|path
+operator|=
+name|g_strdup
+argument_list|(
 name|token
 operator|+
 literal|1
@@ -4789,7 +4832,9 @@ name|filename
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%s/%s"
+literal|"%s"
+name|G_DIR_SEPARATOR_S
+literal|"%s"
 argument_list|,
 name|path
 argument_list|,

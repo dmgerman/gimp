@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<strings.h>
+file|<string.h>
 end_include
 
 begin_include
@@ -76,7 +76,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2c2bf3d10103
+DECL|enum|__anon2bdd68440103
 enum|enum
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
