@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* Print plug-in for the GIMP on Windows.  * Copyright 1999 Tor Lillqvist<tml@iki.fi>  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* Print plug-in for the GIMP on Windows.  * Copyright 1999 Tor Lillqvist<tml@iki.fi>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_comment
@@ -65,7 +65,7 @@ end_define
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28e8c42f0108
+DECL|struct|__anon2b26d8860108
 block|{
 DECL|member|prDlg
 name|PRINTDLG
@@ -1377,7 +1377,7 @@ operator|>=
 literal|3
 condition|)
 comment|/* Printer name? */
-block|{ 	       	    }
+block|{  	    }
 if|if
 condition|(
 name|nparams
@@ -1512,7 +1512,7 @@ name|GIMP_INDEXED
 condition|)
 name|cmap
 operator|=
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|param
 index|[
@@ -2767,7 +2767,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|g_message("vars.devmodeSize = %d, DeviceName = %.*s, Orientation = %s, PaperSize = %s, " 		"Scale = %d%%, Copies = %d, PrintQuality = %s, " 		"%s, ICMMethod = %s, ICMIntent = %s, MediaType = %s, " 		"DitherType = %s", 		vars.devmodeSize, 		CCHDEVICENAME, dmp->dmDeviceName, 		(dmp->dmOrientation == DMORIENT_PORTRAIT ? "PORTRAIT" : 		 (dmp->dmOrientation == DMORIENT_LANDSCAPE ? "LANDSCAPE" : 		  "?")), 		(dmp->dmPaperSize == DMPAPER_LETTER ? "LETTER" : 		 (dmp->dmPaperSize == DMPAPER_LEGAL ? "LEGAL" : 		  (dmp->dmPaperSize == DMPAPER_A3 ? "A3" : 		   (dmp->dmPaperSize == DMPAPER_A4 ? "A4" : 		    "?")))) 		, 		dmp->dmScale, dmp->dmCopies, 		(dmp->dmPrintQuality == DMRES_HIGH ? "HIGH" : 		 (dmp->dmPrintQuality == DMRES_MEDIUM ? "MEDIUM" : 		  (dmp->dmPrintQuality == DMRES_LOW ? "LOW" : 		   (dmp->dmPrintQuality == DMRES_DRAFT ? "DRAFT" : 		    "?")))), 		(dmp->dmColor == DMCOLOR_COLOR ? "COLOR" : 		 (dmp->dmColor == DMCOLOR_MONOCHROME ? "MONOCHROME" : 		  "?")), 		(dmp->dmICMMethod == DMICMMETHOD_NONE ? "NONE" : 		 (dmp->dmICMMethod == DMICMMETHOD_SYSTEM ? "SYSTEM" : 		  (dmp->dmICMMethod == DMICMMETHOD_DRIVER ? "DRIVER" : 		   (dmp->dmICMMethod == DMICMMETHOD_DEVICE ? "DEVICE" : 		    "?")))), 		(dmp->dmICMIntent == DMICM_CONTRAST ? "CONTRAST" : 		 (dmp->dmICMIntent == DMICM_SATURATE ? "SATURATE" : 		  "?")), 		(dmp->dmMediaType == DMMEDIA_STANDARD ? "STANDARD" : 		 (dmp->dmMediaType == DMMEDIA_GLOSSY ? "GLOSSY" : 		  (dmp->dmMediaType == DMMEDIA_TRANSPARENCY ? "TRANSPARENCY" : 		   "?"))), 		(dmp->dmDitherType == DMDITHER_NONE ? "NONE" : 		 (dmp->dmDitherType == DMDITHER_COARSE ? "COARSE" : 		  (dmp->dmDitherType == DMDITHER_FINE ? "FINE" : 		   (dmp->dmDitherType == DMDITHER_LINEART ? "LINEART" : 		    (dmp->dmDitherType == DMDITHER_ERRORDIFFUSION ? "ERRORDIFFUSION" : 		     (dmp->dmDitherType == DMDITHER_GRAYSCALE ? "GRAYSCALE" : 		      		      "?")))))));
+block|g_message("vars.devmodeSize = %d, DeviceName = %.*s, Orientation = %s, PaperSize = %s, " 		"Scale = %d%%, Copies = %d, PrintQuality = %s, " 		"%s, ICMMethod = %s, ICMIntent = %s, MediaType = %s, " 		"DitherType = %s", 		vars.devmodeSize, 		CCHDEVICENAME, dmp->dmDeviceName, 		(dmp->dmOrientation == DMORIENT_PORTRAIT ? "PORTRAIT" : 		 (dmp->dmOrientation == DMORIENT_LANDSCAPE ? "LANDSCAPE" : 		  "?")), 		(dmp->dmPaperSize == DMPAPER_LETTER ? "LETTER" : 		 (dmp->dmPaperSize == DMPAPER_LEGAL ? "LEGAL" : 		  (dmp->dmPaperSize == DMPAPER_A3 ? "A3" : 		   (dmp->dmPaperSize == DMPAPER_A4 ? "A4" : 		    "?")))) 		, 		dmp->dmScale, dmp->dmCopies, 		(dmp->dmPrintQuality == DMRES_HIGH ? "HIGH" : 		 (dmp->dmPrintQuality == DMRES_MEDIUM ? "MEDIUM" : 		  (dmp->dmPrintQuality == DMRES_LOW ? "LOW" : 		   (dmp->dmPrintQuality == DMRES_DRAFT ? "DRAFT" : 		    "?")))), 		(dmp->dmColor == DMCOLOR_COLOR ? "COLOR" : 		 (dmp->dmColor == DMCOLOR_MONOCHROME ? "MONOCHROME" : 		  "?")), 		(dmp->dmICMMethod == DMICMMETHOD_NONE ? "NONE" : 		 (dmp->dmICMMethod == DMICMMETHOD_SYSTEM ? "SYSTEM" : 		  (dmp->dmICMMethod == DMICMMETHOD_DRIVER ? "DRIVER" : 		   (dmp->dmICMMethod == DMICMMETHOD_DEVICE ? "DEVICE" : 		    "?")))), 		(dmp->dmICMIntent == DMICM_CONTRAST ? "CONTRAST" : 		 (dmp->dmICMIntent == DMICM_SATURATE ? "SATURATE" : 		  "?")), 		(dmp->dmMediaType == DMMEDIA_STANDARD ? "STANDARD" : 		 (dmp->dmMediaType == DMMEDIA_GLOSSY ? "GLOSSY" : 		  (dmp->dmMediaType == DMMEDIA_TRANSPARENCY ? "TRANSPARENCY" : 		   "?"))), 		(dmp->dmDitherType == DMDITHER_NONE ? "NONE" : 		 (dmp->dmDitherType == DMDITHER_COARSE ? "COARSE" : 		  (dmp->dmDitherType == DMDITHER_FINE ? "FINE" : 		   (dmp->dmDitherType == DMDITHER_LINEART ? "LINEART" : 		    (dmp->dmDitherType == DMDITHER_ERRORDIFFUSION ? "ERRORDIFFUSION" : 		     (dmp->dmDitherType == DMDITHER_GRAYSCALE ? "GRAYSCALE" :  		      "?")))))));
 endif|#
 directive|endif
 name|gimp_set_data

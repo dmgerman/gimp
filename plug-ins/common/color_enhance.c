@@ -851,7 +851,7 @@ literal|1.0
 decl_stmt|;
 name|cmap
 operator|=
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|image_ID
 argument_list|,
@@ -867,10 +867,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
-literal|"Color_Enhance: cmap was NULL!  Quitting...\n"
-argument_list|)
+literal|"colormap was NULL!  Quitting."
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -964,7 +961,7 @@ name|vhi
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_image_set_cmap
+name|gimp_image_set_colormap
 argument_list|(
 name|image_ID
 argument_list|,
@@ -977,7 +974,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2c4b093c0108
+DECL|struct|__anon2b31bed70108
 typedef|typedef
 struct|struct
 block|{

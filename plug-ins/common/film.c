@@ -113,7 +113,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6688d40108
+DECL|struct|__anon2ba253590108
 block|{
 DECL|member|film_height
 name|gint
@@ -217,7 +217,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6688d40208
+DECL|struct|__anon2ba253590208
 block|{
 DECL|member|advanced_adj
 name|GtkObject
@@ -2794,7 +2794,7 @@ name|GIMP_INDEXEDA_IMAGE
 case|:
 name|cmap
 operator|=
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|gimp_drawable_get_image
 argument_list|(

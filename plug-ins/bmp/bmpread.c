@@ -3794,7 +3794,7 @@ operator|<=
 literal|8
 operator|)
 condition|)
-name|gimp_image_set_cmap
+name|gimp_image_set_colormap
 argument_list|(
 name|image
 argument_list|,

@@ -132,7 +132,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29699b250108
+DECL|struct|__anon2c3da92b0108
 block|{
 DECL|member|threshold
 name|gint
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29699b250208
+DECL|struct|__anon2c3da92b0208
 block|{
 DECL|member|r
 name|guchar
@@ -2740,7 +2740,7 @@ name|guchar
 modifier|*
 name|cmap
 init|=
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|image_ID
 argument_list|,

@@ -1010,7 +1010,7 @@ expr_stmt|;
 comment|/* save colormap */
 name|cmap
 operator|=
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|image_ID
 argument_list|,

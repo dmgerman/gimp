@@ -514,7 +514,7 @@ operator|!
 name|promote_to_rgb
 condition|)
 block|{
-name|gimp_image_set_cmap
+name|gimp_image_set_colormap
 argument_list|(
 name|image_ID
 argument_list|,
@@ -720,7 +720,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29b17b180108
+DECL|struct|__anon28a318080108
 block|{
 DECL|member|Width
 name|unsigned
@@ -770,7 +770,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29b17b180208
+DECL|struct|__anon28a318080208
 block|{
 DECL|member|transparent
 name|int
@@ -3738,7 +3738,7 @@ name|i
 index|]
 expr_stmt|;
 block|}
-name|gimp_image_set_cmap
+name|gimp_image_set_colormap
 argument_list|(
 name|image_ID
 argument_list|,

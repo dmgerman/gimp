@@ -125,7 +125,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6522260103
+DECL|enum|__anon29d0c3b20103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -142,7 +142,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6522260208
+DECL|struct|__anon29d0c3b20208
 block|{
 DECL|member|interlace
 name|gint
@@ -2693,7 +2693,7 @@ name|GIMP_INDEXED_IMAGE
 case|:
 name|cmap
 operator|=
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|image_ID
 argument_list|,

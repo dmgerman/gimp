@@ -70,7 +70,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295a58660103
+DECL|enum|__anon29f9799b0103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -617,7 +617,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295a58660208
+DECL|struct|__anon29f9799b0208
 block|{
 DECL|member|x
 DECL|member|y
@@ -2446,7 +2446,7 @@ name|GIMP_INDEXED
 condition|)
 name|palette
 operator|=
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|image_id
 argument_list|,

@@ -604,7 +604,7 @@ operator|--
 expr_stmt|;
 name|cmap
 operator|=
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|gimp_drawable_get_image
 argument_list|(

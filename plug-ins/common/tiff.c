@@ -64,7 +64,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2981167a0108
+DECL|struct|__anon28883b390108
 block|{
 DECL|member|compression
 name|gint
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2981167a0208
+DECL|struct|__anon28883b390208
 block|{
 DECL|member|ID
 name|gint32
@@ -2804,7 +2804,7 @@ operator|>>
 literal|8
 expr_stmt|;
 block|}
-name|gimp_image_set_cmap
+name|gimp_image_set_colormap
 argument_list|(
 name|image
 argument_list|,
@@ -7736,7 +7736,7 @@ name|FALSE
 expr_stmt|;
 name|cmap
 operator|=
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|image
 argument_list|,

@@ -1069,7 +1069,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29251cf20108
+DECL|struct|__anon2c8abe090108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1527,7 +1527,7 @@ name|bytesperline
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_image_set_cmap
+name|gimp_image_set_colormap
 argument_list|(
 name|image
 argument_list|,
@@ -1584,7 +1584,7 @@ name|bytesperline
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_image_set_cmap
+name|gimp_image_set_colormap
 argument_list|(
 name|image
 argument_list|,
@@ -1664,7 +1664,7 @@ argument_list|,
 name|fd
 argument_list|)
 expr_stmt|;
-name|gimp_image_set_cmap
+name|gimp_image_set_colormap
 argument_list|(
 name|image
 argument_list|,
@@ -2621,7 +2621,7 @@ name|GIMP_INDEXED_IMAGE
 case|:
 name|cmap
 operator|=
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|image
 argument_list|,

@@ -225,7 +225,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29faca940103
+DECL|enum|__anon296b354b0103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -244,7 +244,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29faca940203
+DECL|enum|__anon296b354b0203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -1443,7 +1443,7 @@ name|pixel_rgn
 decl_stmt|;
 name|before
 operator|=
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|image_id
 argument_list|,
@@ -2575,7 +2575,7 @@ name|numcolors
 decl_stmt|;
 name|palette
 operator|=
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|image_id
 argument_list|,
@@ -3719,7 +3719,7 @@ operator|=
 operator|(
 name|png_colorp
 operator|)
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|image_id
 argument_list|,

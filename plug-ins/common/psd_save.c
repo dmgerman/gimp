@@ -3044,7 +3044,7 @@ argument_list|)
 decl_stmt|;
 name|cmap
 operator|=
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|image_id
 argument_list|,
@@ -3055,7 +3055,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Length of colormap returned by gimp_image_get_cmap: %d\n"
+literal|"      Length of colormap returned by gimp_image_get_colormap: %d\n"
 argument_list|,
 name|nColors
 argument_list|)

@@ -3343,8 +3343,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|img_get_cmap (PyGimpImage * self,void * closure)
-name|img_get_cmap
+DECL|function|img_get_colormap (PyGimpImage * self,void * closure)
+name|img_get_colormap
 parameter_list|(
 name|PyGimpImage
 modifier|*
@@ -3368,7 +3368,7 @@ name|ret
 decl_stmt|;
 name|cmap
 operator|=
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|self
 operator|->
@@ -3403,8 +3403,8 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|img_set_cmap (PyGimpImage * self,PyObject * value,void * closure)
-name|img_set_cmap
+DECL|function|img_set_colormap (PyGimpImage * self,PyObject * value,void * closure)
+name|img_set_colormap
 parameter_list|(
 name|PyGimpImage
 modifier|*
@@ -3459,7 +3459,7 @@ operator|-
 literal|1
 return|;
 block|}
-name|gimp_image_set_cmap
+name|gimp_image_set_colormap
 argument_list|(
 name|self
 operator|->
@@ -4424,17 +4424,17 @@ literal|0
 block|}
 block|,
 block|{
-literal|"cmap"
+literal|"colormap"
 block|,
 operator|(
 name|getter
 operator|)
-name|img_get_cmap
+name|img_get_colormap
 block|,
 operator|(
 name|setter
 operator|)
-name|img_set_cmap
+name|img_set_colormap
 block|}
 block|,
 block|{

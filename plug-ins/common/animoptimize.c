@@ -46,7 +46,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e056bb0103
+DECL|enum|__anon2ae699680103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -71,7 +71,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e056bb0203
+DECL|enum|__anon2ae699680203
 block|{
 DECL|enumerator|OPOPTIMIZE
 name|OPOPTIMIZE
@@ -1692,7 +1692,7 @@ condition|)
 block|{
 name|palette
 operator|=
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|image_id
 argument_list|,
@@ -1700,7 +1700,7 @@ operator|&
 name|ncolours
 argument_list|)
 expr_stmt|;
-name|gimp_image_set_cmap
+name|gimp_image_set_colormap
 argument_list|(
 name|new_image_id
 argument_list|,

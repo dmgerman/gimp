@@ -2081,7 +2081,7 @@ name|stp_set_cmap
 argument_list|(
 name|vars
 argument_list|,
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|image_ID
 argument_list|,

@@ -80,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277999630103
+DECL|enum|__anon2784164f0103
 block|{
 DECL|enumerator|RAW_RGB
 name|RAW_RGB
@@ -106,7 +106,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277999630203
+DECL|enum|__anon2784164f0203
 block|{
 DECL|enumerator|RAW_PALETTE_RGB
 name|RAW_PALETTE_RGB
@@ -124,7 +124,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277999630308
+DECL|struct|__anon2784164f0308
 block|{
 DECL|member|file_offset
 name|gint32
@@ -165,7 +165,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277999630408
+DECL|struct|__anon2784164f0408
 block|{
 DECL|member|fp
 name|FILE
@@ -2009,7 +2009,7 @@ name|i
 expr_stmt|;
 block|}
 block|}
-name|gimp_image_set_cmap
+name|gimp_image_set_colormap
 argument_list|(
 name|data
 operator|->
@@ -2153,7 +2153,7 @@ literal|1
 expr_stmt|;
 name|cmap
 operator|=
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|image_id
 argument_list|,

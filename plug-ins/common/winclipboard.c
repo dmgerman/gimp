@@ -1064,7 +1064,7 @@ name|drawable_type
 condition|)
 name|cmap
 operator|=
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|image_ID
 argument_list|,
@@ -2692,7 +2692,7 @@ operator|.
 name|rgbBlue
 expr_stmt|;
 block|}
-name|gimp_image_set_cmap
+name|gimp_image_set_colormap
 argument_list|(
 name|image_ID
 argument_list|,

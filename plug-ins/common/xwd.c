@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288f27180108
+DECL|struct|__anon2c7eed9c0108
 block|{
 DECL|member|l_header_size
 name|L_CARD32
@@ -254,7 +254,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288f27180208
+DECL|struct|__anon2c7eed9c0208
 block|{
 DECL|member|l_pixel
 name|L_CARD32
@@ -312,7 +312,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288f27180308
+DECL|struct|__anon2c7eed9c0308
 block|{
 DECL|member|pixel_val
 name|L_CARD32
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288f27180408
+DECL|struct|__anon2c7eed9c0408
 block|{
 DECL|member|npixel
 name|gint
@@ -4784,7 +4784,7 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-name|gimp_image_set_cmap
+name|gimp_image_set_colormap
 argument_list|(
 name|image_ID
 argument_list|,
@@ -5311,7 +5311,7 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-name|gimp_image_set_cmap
+name|gimp_image_set_colormap
 argument_list|(
 name|image_ID
 argument_list|,
@@ -10485,7 +10485,7 @@ literal|3
 expr_stmt|;
 name|cmap
 operator|=
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|image_ID
 argument_list|,

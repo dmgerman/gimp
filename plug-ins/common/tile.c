@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b0345c0108
+DECL|struct|__anon2acf90b90108
 block|{
 DECL|member|new_width
 name|gint
@@ -1337,7 +1337,7 @@ name|cmap
 decl_stmt|;
 name|cmap
 operator|=
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|image_id
 argument_list|,
@@ -1345,7 +1345,7 @@ operator|&
 name|ncols
 argument_list|)
 expr_stmt|;
-name|gimp_image_set_cmap
+name|gimp_image_set_colormap
 argument_list|(
 name|new_image_id
 argument_list|,

@@ -910,7 +910,7 @@ name|GIMP_INDEXED
 condition|)
 name|palette
 operator|=
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|image_id
 argument_list|,

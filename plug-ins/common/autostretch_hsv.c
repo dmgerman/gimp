@@ -430,7 +430,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon27d7f1610108
+DECL|struct|__anon2b17f87b0108
 typedef|typedef
 struct|struct
 block|{
@@ -721,7 +721,7 @@ name|i
 decl_stmt|;
 name|cmap
 operator|=
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|image_ID
 argument_list|,
@@ -817,7 +817,7 @@ name|data
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_image_set_cmap
+name|gimp_image_set_colormap
 argument_list|(
 name|image_ID
 argument_list|,

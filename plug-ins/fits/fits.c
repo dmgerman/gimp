@@ -85,7 +85,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c15f9c00108
+DECL|struct|__anon2b2859960108
 block|{
 DECL|member|replace
 name|gint
@@ -3824,7 +3824,7 @@ name|cmapptr
 operator|=
 name|cmap
 operator|=
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|image_ID
 argument_list|,

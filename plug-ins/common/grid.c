@@ -245,7 +245,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a2eddf0108
+DECL|struct|__anon27ec51440108
 block|{
 DECL|member|hwidth
 name|gint
@@ -1670,7 +1670,7 @@ name|GIMP_INDEXED
 case|:
 name|cmap
 operator|=
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|image_ID
 argument_list|,

@@ -3666,7 +3666,7 @@ name|colorMapType
 operator|==
 literal|1
 condition|)
-name|gimp_image_set_cmap
+name|gimp_image_set_colormap
 argument_list|(
 name|image_ID
 argument_list|,
@@ -4271,7 +4271,7 @@ condition|)
 block|{
 name|gimp_cmap
 operator|=
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|image_ID
 argument_list|,

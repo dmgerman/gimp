@@ -126,7 +126,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e946c20108
+DECL|struct|__anon2b0c885d0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e946c20208
+DECL|struct|__anon2b0c885d0208
 block|{
 DECL|member|run
 name|gboolean
@@ -3038,7 +3038,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_image_set_cmap
+name|gimp_image_set_colormap
 argument_list|(
 name|image
 argument_list|,
@@ -3064,7 +3064,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_image_set_cmap
+name|gimp_image_set_colormap
 argument_list|(
 name|image
 argument_list|,
@@ -3084,7 +3084,7 @@ expr_stmt|;
 block|}
 else|#
 directive|else
-name|gimp_image_set_cmap
+name|gimp_image_set_colormap
 argument_list|(
 name|image
 argument_list|,
@@ -4399,7 +4399,7 @@ operator|=
 operator|(
 name|png_colorp
 operator|)
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|image_ID
 argument_list|,
@@ -5498,7 +5498,7 @@ name|numpixels
 decl_stmt|;
 name|before
 operator|=
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|image_ID
 argument_list|,

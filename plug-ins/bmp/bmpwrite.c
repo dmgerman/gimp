@@ -650,7 +650,7 @@ name|GIMP_INDEXED_IMAGE
 case|:
 name|cmap
 operator|=
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|image
 argument_list|,

@@ -2120,7 +2120,7 @@ name|colours
 expr_stmt|;
 block|}
 block|}
-name|gimp_image_set_cmap
+name|gimp_image_set_colormap
 argument_list|(
 name|image
 argument_list|,
@@ -2686,7 +2686,7 @@ condition|)
 block|{
 name|g_free
 argument_list|(
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|image
 argument_list|,

@@ -241,7 +241,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27942f7d0108
+DECL|struct|__anon2a20d4480108
 block|{
 DECL|member|resolution
 name|guint
@@ -330,7 +330,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27942f7d0208
+DECL|struct|__anon2a20d4480208
 block|{
 DECL|member|width
 DECL|member|height
@@ -904,7 +904,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27942f7d0308
+DECL|struct|__anon2a20d4480308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1760,7 +1760,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27942f7d0408
+DECL|struct|__anon2a20d4480408
 block|{
 DECL|member|eol
 name|long
@@ -8344,7 +8344,7 @@ block|,
 literal|0
 block|}
 decl_stmt|;
-name|gimp_image_set_cmap
+name|gimp_image_set_colormap
 argument_list|(
 name|image_ID
 argument_list|,
@@ -10616,7 +10616,7 @@ operator|(
 name|guchar
 operator|*
 operator|)
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|gimp_drawable_get_image
 argument_list|(
@@ -11625,7 +11625,7 @@ operator|)
 decl_stmt|;
 name|cmap
 operator|=
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|image_ID
 argument_list|,
@@ -12317,7 +12317,7 @@ name|cmap
 operator|=
 name|cmap_start
 operator|=
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|image_ID
 argument_list|,

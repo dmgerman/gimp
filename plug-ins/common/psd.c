@@ -143,7 +143,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b75b5010103
+DECL|enum|__anon2c2814e50103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -331,7 +331,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b75b5010208
+DECL|struct|__anon2c2814e50208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -580,7 +580,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b75b5010308
+DECL|struct|__anon2c2814e50308
 block|{
 DECL|member|signature
 name|gchar
@@ -9180,7 +9180,7 @@ operator|.
 name|colmapdata
 argument_list|)
 expr_stmt|;
-name|gimp_image_set_cmap
+name|gimp_image_set_colormap
 argument_list|(
 name|image_ID
 argument_list|,

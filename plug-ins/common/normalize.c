@@ -475,7 +475,7 @@ literal|255
 decl_stmt|;
 name|cmap
 operator|=
-name|gimp_image_get_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|image_ID
 argument_list|,
@@ -773,7 +773,7 @@ name|lo
 operator|)
 expr_stmt|;
 block|}
-name|gimp_image_set_cmap
+name|gimp_image_set_colormap
 argument_list|(
 name|image_ID
 argument_list|,
@@ -786,9 +786,9 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2a28af590108
 typedef|typedef
 struct|struct
+DECL|struct|__anon2b6713fc0108
 block|{
 DECL|member|lut
 name|guchar
