@@ -5350,15 +5350,6 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|DODGY?
-endif|#
-directive|endif
-comment|/*__GNUC__ */
 name|gtk_widget_realize
 argument_list|(
 name|gdisp
