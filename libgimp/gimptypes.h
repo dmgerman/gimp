@@ -76,15 +76,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpParamColor
-typedef|typedef
-name|struct
-name|_GimpParamColor
-name|GimpParamColor
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpParamRegion
 typedef|typedef
 name|struct
