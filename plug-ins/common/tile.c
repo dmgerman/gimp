@@ -54,7 +54,7 @@ value|25
 end_define
 
 begin_typedef
-DECL|struct|__anon2bff8cab0108
+DECL|struct|__anon27aabe850108
 typedef|typedef
 struct|struct
 block|{
@@ -81,7 +81,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bff8cab0208
+DECL|struct|__anon27aabe850208
 typedef|typedef
 struct|struct
 block|{
@@ -401,15 +401,15 @@ name|PARAM_IMAGE
 block|,
 literal|"new_image"
 block|,
-literal|"Output image (N/A if new_image == TRUE)"
+literal|"Output image (N/A if new_image == FALSE)"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|PARAM_LAYER
 block|,
 literal|"new_layer"
 block|,
-literal|"Output layer (N/A if new_image == TRUE)"
+literal|"Output layer (N/A if new_image == FALSE)"
 block|}
 block|,   }
 decl_stmt|;
@@ -581,7 +581,7 @@ name|PARAM_IMAGE
 expr_stmt|;
 name|values
 index|[
-literal|1
+literal|2
 index|]
 operator|.
 name|type
