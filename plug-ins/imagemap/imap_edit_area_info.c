@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_browse.h"
 end_include
 
@@ -1299,7 +1305,10 @@ name|browse
 operator|=
 name|browse_widget_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Select HTML file"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|browse_widget_set_filter
@@ -1740,11 +1749,14 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|gettext
+argument_list|(
 name|obj
 operator|->
 name|class
 operator|->
 name|name
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_notebook_append_page

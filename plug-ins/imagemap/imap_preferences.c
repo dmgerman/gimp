@@ -24,7 +24,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_include
@@ -1080,7 +1092,10 @@ else|else
 block|{
 name|do_file_error_dialog
 argument_list|(
+name|_
+argument_list|(
 literal|"Couldn't save resource file:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -1995,7 +2010,10 @@ name|dialog
 init|=
 name|gtk_color_selection_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Select Color"
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|param
@@ -2418,7 +2436,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Default Map Type"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2612,7 +2633,10 @@ literal|1
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Prompt for area info"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|data
@@ -2627,7 +2651,10 @@ literal|2
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Require default URL"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|data
@@ -2642,7 +2669,10 @@ literal|3
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Show area handles"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|data
@@ -2657,7 +2687,10 @@ literal|4
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Keep NCSA circles true"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|data
@@ -2672,7 +2705,10 @@ literal|5
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Show area URL tip"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|data
@@ -2687,7 +2723,10 @@ literal|6
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Use double-sized grab handles"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2699,7 +2738,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"General"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_notebook_append_page
@@ -2828,7 +2870,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Number of Undo levels (1 - 99):"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|data
@@ -2858,7 +2903,10 @@ literal|1
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Number of MRU entries (1 - 16):"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|data
@@ -2884,7 +2932,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Menu"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_notebook_append_page
@@ -3113,7 +3164,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Normal:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|data
@@ -3164,7 +3218,10 @@ literal|1
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Selected:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|data
@@ -3211,7 +3268,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Colors"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_notebook_append_page
@@ -3322,7 +3382,10 @@ name|dialog
 operator|=
 name|make_default_dialog
 argument_list|(
+name|_
+argument_list|(
 literal|"General Preferences"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|default_dialog_set_ok_cb

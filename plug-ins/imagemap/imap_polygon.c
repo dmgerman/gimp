@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_cmd_delete_point.h"
 end_include
 
@@ -1684,7 +1690,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon276a9c7e0108
+DECL|struct|__anon2a203aa80108
 typedef|typedef
 struct|struct
 block|{
@@ -2355,6 +2361,9 @@ literal|"y (pixels)"
 argument_list|)
 block|}
 decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
 name|hbox
 operator|=
 name|gtk_hbox_new
@@ -2377,6 +2386,32 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|hbox
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+literal|2
+condition|;
+name|i
+operator|++
+control|)
+name|titles
+index|[
+name|i
+index|]
+operator|=
+name|gettext
+argument_list|(
+name|titles
+index|[
+name|i
+index|]
 argument_list|)
 expr_stmt|;
 name|props

@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_grid.h"
 end_include
 
@@ -52,7 +58,7 @@ file|"imap_toolbar.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon2c2c529b0103
+DECL|enum|__anon2b88403d0103
 DECL|enumerator|GRID_HIDDEN
 DECL|enumerator|GRID_LINES
 DECL|enumerator|GRID_CROSSES

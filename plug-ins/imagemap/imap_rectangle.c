@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -1919,7 +1925,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2ba81fa10108
+DECL|struct|__anon2a4570890108
 typedef|typedef
 struct|struct
 block|{

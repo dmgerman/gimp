@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -912,7 +918,10 @@ name|make_item_with_label
 argument_list|(
 name|file_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Quit"
+argument_list|)
 argument_list|,
 name|menu_command
 argument_list|,

@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -482,12 +488,12 @@ name|window
 argument_list|,
 name|save_xpm
 argument_list|,
+literal|"Save"
+argument_list|,
 name|_
 argument_list|(
 literal|"Save"
 argument_list|)
-argument_list|,
-literal|"Save"
 argument_list|,
 name|toolbar_command
 argument_list|,

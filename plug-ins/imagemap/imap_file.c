@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_default_dialog.h"
 end_include
 
@@ -495,7 +501,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2a10e7c60108
+DECL|struct|__anon295a1eaf0108
 typedef|typedef
 struct|struct
 block|{

@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gdk/gdkkeysyms.h"
 end_include
 
@@ -685,9 +691,6 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_imagemap"
@@ -2337,12 +2340,9 @@ name|filename
 parameter_list|)
 block|{
 name|char
+modifier|*
 name|title
-index|[
-literal|256
-index|]
-decl_stmt|;
-name|char
+decl_stmt|,
 modifier|*
 name|p
 decl_stmt|;
@@ -2370,10 +2370,10 @@ argument_list|(
 literal|"<Untitled>"
 argument_list|)
 expr_stmt|;
-name|sprintf
-argument_list|(
 name|title
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 literal|"%s - ImageMap 1.3"
 argument_list|,
 name|p
@@ -2386,6 +2386,11 @@ argument_list|(
 name|_dlg
 argument_list|)
 argument_list|,
+name|title
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
 name|title
 argument_list|)
 expr_stmt|;
@@ -4081,7 +4086,10 @@ else|else
 block|{
 name|do_file_error_dialog
 argument_list|(
+name|_
+argument_list|(
 literal|"Couldn't save file:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -4177,7 +4185,10 @@ name|dialog
 operator|=
 name|make_default_dialog
 argument_list|(
+name|_
+argument_list|(
 literal|"Image size changed"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|default_dialog_hide_apply_button
@@ -4189,8 +4200,11 @@ name|default_dialog_set_label
 argument_list|(
 name|dialog
 argument_list|,
+name|_
+argument_list|(
 literal|"   Image size has changed.   \n"
 literal|"Resize Area's?"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|default_dialog_set_ok_cb
@@ -4333,7 +4347,10 @@ else|else
 block|{
 name|do_file_error_dialog
 argument_list|(
+name|_
+argument_list|(
 literal|"Couldn't read file:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)

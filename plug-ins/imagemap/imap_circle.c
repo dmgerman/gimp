@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_circle.h"
 end_include
 
@@ -1289,7 +1295,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon296f7c8c0108
+DECL|struct|__anon28fd03a50108
 typedef|typedef
 struct|struct
 block|{

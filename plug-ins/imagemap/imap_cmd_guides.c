@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_cmd_create.h"
 end_include
 
@@ -52,7 +58,7 @@ file|"imap_table.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2a40fc630108
+DECL|struct|__anon27cb63620108
 typedef|typedef
 struct|struct
 block|{
@@ -1590,7 +1596,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2a40fc630208
+DECL|struct|__anon27cb63620208
 typedef|typedef
 struct|struct
 block|{

@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_cmd_edit_object.h"
 end_include
 
@@ -764,7 +770,10 @@ name|arrow_up_xpm
 argument_list|,
 literal|"MoveUp"
 argument_list|,
+name|_
+argument_list|(
 literal|"Move up"
+argument_list|)
 argument_list|,
 name|selection_command
 argument_list|,
@@ -788,7 +797,10 @@ name|arrow_down_xpm
 argument_list|,
 literal|"MoveDown"
 argument_list|,
+name|_
+argument_list|(
 literal|"Move down"
+argument_list|)
 argument_list|,
 name|selection_command
 argument_list|,
@@ -820,7 +832,10 @@ name|edit_xpm
 argument_list|,
 literal|"Edit"
 argument_list|,
+name|_
+argument_list|(
 literal|"Edit"
+argument_list|)
 argument_list|,
 name|selection_command
 argument_list|,
@@ -852,7 +867,10 @@ name|delete_xpm
 argument_list|,
 literal|"Delete"
 argument_list|,
+name|_
+argument_list|(
 literal|"Delete"
+argument_list|)
 argument_list|,
 name|selection_command
 argument_list|,
@@ -1865,6 +1883,9 @@ literal|"Comment"
 argument_list|)
 block|}
 decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
 name|data
 operator|->
 name|object_list
@@ -2004,6 +2025,32 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|frame
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+literal|4
+condition|;
+name|i
+operator|++
+control|)
+name|titles
+index|[
+name|i
+index|]
+operator|=
+name|gettext
+argument_list|(
+name|titles
+index|[
+name|i
+index|]
 argument_list|)
 expr_stmt|;
 name|data
