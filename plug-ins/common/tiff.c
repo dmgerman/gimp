@@ -64,7 +64,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2f8cf50108
+DECL|struct|__anon2b6e374b0108
 block|{
 DECL|member|compression
 name|gint
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2f8cf50208
+DECL|struct|__anon2b6e374b0208
 block|{
 DECL|member|ID
 name|gint32
@@ -1439,9 +1439,12 @@ literal|"unknown field with tag %d (0x%x) ignored"
 argument_list|)
 condition|)
 block|{
+name|G_VA_COPY
+argument_list|(
 name|ap_test
-operator|=
+argument_list|,
 name|ap
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
