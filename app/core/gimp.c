@@ -144,12 +144,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpparasite.h"
 end_include
 
@@ -1472,7 +1466,7 @@ argument_list|)
 expr_stmt|;
 name|gimage
 operator|=
-name|gimage_new
+name|gimp_image_new
 argument_list|(
 name|gimp
 argument_list|,
