@@ -206,7 +206,7 @@ literal|"rad/pi"
 return|;
 default|default:
 return|return
-literal|"(???)"
+literal|"(unknown)"
 return|;
 block|}
 block|}
@@ -1885,7 +1885,7 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|rcm_expose_event (GtkWidget * widget,GdkEvent * event,RcmCircle * circle)
 name|rcm_expose_event
 parameter_list|(
@@ -1913,7 +1913,7 @@ case|case
 name|DO_NOTHING
 case|:
 return|return
-literal|0
+name|FALSE
 return|;
 case|case
 name|VIRGIN
@@ -1957,7 +1957,7 @@ expr_stmt|;
 break|break;
 block|}
 return|return
-literal|1
+name|TRUE
 return|;
 block|}
 end_function
@@ -1967,7 +1967,7 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|rcm_button_press_event (GtkWidget * widget,GdkEvent * event,RcmCircle * circle)
 name|rcm_button_press_event
 parameter_list|(
@@ -2002,24 +2002,20 @@ decl_stmt|;
 name|alpha
 operator|=
 operator|&
-operator|(
 name|circle
 operator|->
 name|angle
 operator|->
 name|alpha
-operator|)
 expr_stmt|;
 name|beta
 operator|=
 operator|&
-operator|(
 name|circle
 operator|->
 name|angle
 operator|->
 name|beta
-operator|)
 expr_stmt|;
 name|bevent
 operator|=
@@ -2245,7 +2241,7 @@ operator|=
 name|BOTH
 expr_stmt|;
 return|return
-literal|1
+name|TRUE
 return|;
 block|}
 end_function
@@ -2255,7 +2251,7 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|rcm_release_event (GtkWidget * widget,GdkEvent * event,RcmCircle * circle)
 name|rcm_release_event
 parameter_list|(
@@ -2306,11 +2302,9 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-operator|(
 name|Current
 operator|.
 name|RealTime
-operator|)
 condition|)
 name|rcm_render_preview
 argument_list|(
@@ -2324,7 +2318,7 @@ name|CURRENT
 argument_list|)
 expr_stmt|;
 return|return
-literal|1
+name|TRUE
 return|;
 block|}
 end_function
@@ -2334,7 +2328,7 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|rcm_motion_notify_event (GtkWidget * widget,GdkEvent * event,RcmCircle * circle)
 name|rcm_motion_notify_event
 parameter_list|(
@@ -2679,7 +2673,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-literal|1
+name|TRUE
 return|;
 block|}
 end_function
@@ -2697,8 +2691,8 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
+name|gboolean
 DECL|function|rcm_gray_expose_event (GtkWidget * widget,GdkEvent * event,RcmGray * circle)
-name|gint
 name|rcm_gray_expose_event
 parameter_list|(
 name|GtkWidget
@@ -2781,7 +2775,7 @@ name|CURRENT
 argument_list|)
 expr_stmt|;
 return|return
-literal|1
+name|TRUE
 return|;
 block|}
 end_function
@@ -2791,7 +2785,7 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|rcm_gray_button_press_event (GtkWidget * widget,GdkEvent * event,RcmGray * circle)
 name|rcm_gray_button_press_event
 parameter_list|(
@@ -3000,7 +2994,7 @@ name|CURRENT
 argument_list|)
 expr_stmt|;
 return|return
-literal|1
+name|TRUE
 return|;
 block|}
 end_function
@@ -3010,7 +3004,7 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|rcm_gray_release_event (GtkWidget * widget,GdkEvent * event,RcmGray * circle)
 name|rcm_gray_release_event
 parameter_list|(
@@ -3065,11 +3059,9 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-operator|(
 name|Current
 operator|.
 name|RealTime
-operator|)
 condition|)
 name|rcm_render_preview
 argument_list|(
@@ -3083,7 +3075,7 @@ name|CURRENT
 argument_list|)
 expr_stmt|;
 return|return
-literal|1
+name|TRUE
 return|;
 block|}
 end_function
@@ -3093,7 +3085,7 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|rcm_gray_motion_notify_event (GtkWidget * widget,GdkEvent * event,RcmGray * circle)
 name|rcm_gray_motion_notify_event
 parameter_list|(
@@ -3369,7 +3361,7 @@ name|CURRENT
 argument_list|)
 expr_stmt|;
 return|return
-literal|1
+name|TRUE
 return|;
 block|}
 end_function

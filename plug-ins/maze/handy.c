@@ -29,58 +29,6 @@ begin_comment
 comment|/* get_colors Returns the current foreground and background colors in    nice little arrays.  It works nicely for RGB and grayscale images,    however handling of indexed images is somewhat broken.  Patches    appreciated. */
 end_comment
 
-begin_function_decl
-name|void
-name|get_colors
-parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|,
-name|guint8
-modifier|*
-name|fg
-parameter_list|,
-name|guint8
-modifier|*
-name|bg
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* drawbox draws a solid colored box in a GimpPixelRgn, hopefully fairly    quickly.  See comments below. */
-end_comment
-
-begin_function_decl
-name|void
-name|drawbox
-parameter_list|(
-name|GimpPixelRgn
-modifier|*
-name|dest_rgn
-parameter_list|,
-name|guint
-name|x
-parameter_list|,
-name|guint
-name|y
-parameter_list|,
-name|guint
-name|w
-parameter_list|,
-name|guint
-name|h
-parameter_list|,
-name|guint8
-name|clr
-index|[
-literal|4
-index|]
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_function
 name|void
 DECL|function|get_colors (GimpDrawable * drawable,guint8 * fg,guint8 * bg)
@@ -484,7 +432,6 @@ name|bpp
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* next xx */
 comment|/* Fill in the box in the region with rows... */
 for|for
 control|(
@@ -525,58 +472,8 @@ name|rowsize
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* next yy */
 block|}
 end_function
-
-begin_comment
-comment|/* Alternate ways of doing things if you don't like memcpy. */
-end_comment
-
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_if
-unit|for (xx= x * dest_rgn->bpp; 	     xx< bar; 	     xx+= dest_rgn->bpp) {
-if|#
-directive|if
-literal|0
-end_if
-
-begin_comment
-unit|for (bp=0; bp< dest_rgn->bpp; bp++) { 		dest_rgn->data[yy+xx+bp]=clr[bp]; 	    }
-comment|/* next bp */
-end_comment
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_endif
-unit|memcpy (&dest_rgn->data[yy+xx], clr, dest_rgn->bpp);
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-unit|}
-comment|/* next xx */
-end_comment
-
-begin_comment
-unit|}
-comment|/* next yy */
-end_comment
-
-begin_endif
-unit|}
-endif|#
-directive|endif
-end_endif
 
 end_unit
 

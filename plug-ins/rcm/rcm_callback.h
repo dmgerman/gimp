@@ -332,7 +332,7 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function_decl
-name|gint
+name|gboolean
 name|rcm_expose_event
 parameter_list|(
 name|GtkWidget
@@ -351,7 +351,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|gboolean
 name|rcm_button_press_event
 parameter_list|(
 name|GtkWidget
@@ -370,7 +370,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|gboolean
 name|rcm_release_event
 parameter_list|(
 name|GtkWidget
@@ -389,7 +389,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|gboolean
 name|rcm_motion_notify_event
 parameter_list|(
 name|GtkWidget
@@ -420,7 +420,7 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function_decl
-name|gint
+name|gboolean
 name|rcm_gray_expose_event
 parameter_list|(
 name|GtkWidget
@@ -439,7 +439,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|gboolean
 name|rcm_gray_button_press_event
 parameter_list|(
 name|GtkWidget
@@ -458,7 +458,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|gboolean
 name|rcm_gray_release_event
 parameter_list|(
 name|GtkWidget
@@ -477,7 +477,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|gboolean
 name|rcm_gray_motion_notify_event
 parameter_list|(
 name|GtkWidget

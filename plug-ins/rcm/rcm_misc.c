@@ -84,10 +84,6 @@ directive|include
 file|"rcm_gdk.h"
 end_include
 
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
-end_comment
-
 begin_function
 name|float
 DECL|function|arctg (float y,float x)
@@ -127,39 +123,6 @@ name|temp
 return|;
 block|}
 end_function
-
-begin_function
-specifier|inline
-DECL|function|sign (float x)
-name|float
-name|sign
-parameter_list|(
-name|float
-name|x
-parameter_list|)
-block|{
-return|return
-operator|(
-name|x
-operator|<
-literal|0
-operator|)
-condition|?
-operator|(
-operator|-
-literal|1
-operator|)
-else|:
-operator|(
-literal|1
-operator|)
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
-end_comment
 
 begin_function
 name|float
@@ -714,7 +677,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|rcm_is_gray (float s)
 name|rcm_is_gray
 parameter_list|(
@@ -722,8 +685,8 @@ name|float
 name|s
 parameter_list|)
 block|{
-if|if
-condition|(
+return|return
+operator|(
 name|s
 operator|<=
 name|Current
@@ -731,12 +694,7 @@ operator|.
 name|Gray
 operator|->
 name|gray_sat
-condition|)
-return|return
-literal|1
-return|;
-return|return
-literal|0
+operator|)
 return|;
 block|}
 end_function
@@ -2600,6 +2558,13 @@ name|guchar
 modifier|*
 name|a
 decl_stmt|;
+if|if
+condition|(
+name|preview
+operator|==
+name|NULL
+condition|)
+return|return;
 name|a
 operator|=
 name|g_new
@@ -2611,13 +2576,6 @@ operator|*
 name|sum
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|preview
-operator|==
-name|NULL
-condition|)
-return|return;
 for|for
 control|(
 name|j

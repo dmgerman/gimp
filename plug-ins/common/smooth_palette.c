@@ -222,7 +222,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"ntries"
 block|,
-literal|"Search Time"
+literal|"Search Depth"
 block|}
 block|,
 block|{
@@ -301,7 +301,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bcfc8450108
+DECL|struct|__anon28fb639d0108
 block|{
 DECL|member|width
 name|gint
@@ -2377,7 +2377,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"_Search Time:"
+literal|"_Search Depth:"
 argument_list|)
 argument_list|,
 literal|1.0
