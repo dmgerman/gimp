@@ -1649,7 +1649,7 @@ block|,
 operator|(
 name|guint
 operator|)
-name|FOREGROUND_FILL
+name|GIMP_FOREGROUND_FILL
 block|,
 literal|"<StockItem>"
 block|,
@@ -1677,7 +1677,7 @@ block|,
 operator|(
 name|guint
 operator|)
-name|BACKGROUND_FILL
+name|GIMP_BACKGROUND_FILL
 block|,
 literal|"<StockItem>"
 block|,

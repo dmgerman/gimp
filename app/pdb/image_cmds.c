@@ -6131,11 +6131,11 @@ if|if
 condition|(
 name|mode
 operator|<
-name|APPLY
+name|GIMP_MASK_APPLY
 operator|||
 name|mode
 operator|>
-name|DISCARD
+name|GIMP_MASK_DISCARD
 condition|)
 name|success
 operator|=
@@ -6195,7 +6195,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"mode"
 block|,
-literal|"Removal mode: { APPLY (0), DISCARD (1) }"
+literal|"Removal mode: { GIMP_MASK_APPLY (0), GIMP_MASK_DISCARD (1) }"
 block|}
 block|}
 decl_stmt|;

@@ -56,7 +56,7 @@ directive|define
 name|gimp_gradients_set_active
 value|gimp_gradients_set_gradient
 name|enum
-DECL|enum|__anon2c6c88370103
+DECL|enum|__anon27c780370103
 type|{
 DECL|enumerator|GIMP_WHITE_MASK
 name|GIMP_WHITE_MASK
@@ -97,7 +97,7 @@ end_decl_stmt
 begin_enum
 unit|};
 enum|enum
-DECL|enum|__anon2c6c88370203
+DECL|enum|__anon27c780370203
 block|{
 DECL|enumerator|GIMP_ADD
 name|GIMP_ADD
@@ -124,7 +124,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6c88370303
+DECL|enum|__anon27c780370303
 block|{
 DECL|enumerator|GIMP_FG_BG_RGB
 name|GIMP_FG_BG_RGB
@@ -151,7 +151,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6c88370403
+DECL|enum|__anon27c780370403
 block|{
 DECL|enumerator|GIMP_FG_IMAGE_FILL
 name|GIMP_FG_IMAGE_FILL
@@ -183,7 +183,24 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6c88370503
+DECL|enum|__anon27c780370503
+block|{
+DECL|enumerator|GIMP_APPLY
+name|GIMP_APPLY
+init|=
+name|GIMP_MASK_APPLY
+block|,
+DECL|enumerator|GIMP_DISCARD
+name|GIMP_DISCARD
+init|=
+name|GIMP_MASK_DISCARD
+block|}
+enum|;
+end_enum
+
+begin_enum
+enum|enum
+DECL|enum|__anon27c780370603
 block|{
 DECL|enumerator|GIMP_CONTINUOUS
 name|GIMP_CONTINUOUS

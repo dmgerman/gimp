@@ -52,12 +52,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpdrawable-blend.h"
 end_include
 
@@ -842,11 +836,11 @@ if|if
 condition|(
 name|fill_mode
 operator|<
-name|FG_BUCKET_FILL
+name|GIMP_FG_BUCKET_FILL
 operator|||
 name|fill_mode
 operator|>
-name|PATTERN_BUCKET_FILL
+name|GIMP_PATTERN_BUCKET_FILL
 condition|)
 name|success
 operator|=
@@ -1047,7 +1041,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"fill_mode"
 block|,
-literal|"The type of fill: { FG_BUCKET_FILL (0), BG_BUCKET_FILL (1), PATTERN_BUCKET_FILL (2) }"
+literal|"The type of fill: { GIMP_FG_BUCKET_FILL (0), GIMP_BG_BUCKET_FILL (1), GIMP_PATTERN_BUCKET_FILL (2) }"
 block|}
 block|,
 block|{

@@ -40,7 +40,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"core/core-enums.h"
 end_include
 
 begin_include
@@ -973,11 +973,11 @@ if|if
 condition|(
 name|fill_type
 operator|<
-name|FOREGROUND_FILL
+name|GIMP_FOREGROUND_FILL
 operator|||
 name|fill_type
 operator|>
-name|NO_FILL
+name|GIMP_NO_FILL
 condition|)
 name|success
 operator|=
@@ -1046,7 +1046,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"fill_type"
 block|,
-literal|"The type of fill: FOREGROUND_FILL (0), BACKGROUND_FILL (1), WHITE_FILL (2), TRANSPARENT_FILL (3), NO_FILL (4)"
+literal|"The type of fill: GIMP_FOREGROUND_FILL (0), GIMP_BACKGROUND_FILL (1), GIMP_WHITE_FILL (2), GIMP_TRANSPARENT_FILL (3), GIMP_NO_FILL (4)"
 block|}
 block|}
 decl_stmt|;

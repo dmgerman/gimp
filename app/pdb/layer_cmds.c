@@ -52,12 +52,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimp.h"
 end_include
 
@@ -1337,11 +1331,11 @@ if|if
 condition|(
 name|mask_type
 operator|<
-name|ADD_WHITE_MASK
+name|GIMP_ADD_WHITE_MASK
 operator|||
 name|mask_type
 operator|>
-name|ADD_INVERSE_COPY_MASK
+name|GIMP_ADD_INVERSE_COPY_MASK
 condition|)
 name|success
 operator|=
@@ -1361,7 +1355,7 @@ argument_list|(
 name|layer
 argument_list|,
 operator|(
-name|AddMaskType
+name|GimpAddMaskType
 operator|)
 name|mask_type
 argument_list|)
@@ -1427,7 +1421,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"mask_type"
 block|,
-literal|"The type of mask: { ADD_WHITE_MASK (0), ADD_BLACK_MASK (1), ADD_ALPHA_MASK (2), ADD_SELECTION_MASK (3), ADD_INVERSE_SELECTION_MASK (4), ADD_COPY_MASK (5), ADD_INVERSE_COPY_MASK (6) }"
+literal|"The type of mask: { GIMP_ADD_WHITE_MASK (0), GIMP_ADD_BLACK_MASK (1), GIMP_ADD_ALPHA_MASK (2), GIMP_ADD_SELECTION_MASK (3), GIMP_ADD_INVERSE_SELECTION_MASK (4), GIMP_ADD_COPY_MASK (5), GIMP_ADD_INVERSE_COPY_MASK (6) }"
 block|}
 block|}
 decl_stmt|;

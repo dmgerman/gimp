@@ -132,7 +132,7 @@ specifier|static
 name|void
 name|gimp_drawable_bucket_fill_region
 parameter_list|(
-name|BucketFillMode
+name|GimpBucketFillMode
 name|fill_mode
 parameter_list|,
 name|PixelRegion
@@ -233,14 +233,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_drawable_bucket_fill (GimpDrawable * drawable,BucketFillMode fill_mode,gint paint_mode,gdouble opacity,gboolean fill_transparent,gdouble threshold,gboolean sample_merged,gdouble x,gdouble y)
+DECL|function|gimp_drawable_bucket_fill (GimpDrawable * drawable,GimpBucketFillMode fill_mode,gint paint_mode,gdouble opacity,gboolean fill_transparent,gdouble threshold,gboolean sample_merged,gdouble x,gdouble y)
 name|gimp_drawable_bucket_fill
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|BucketFillMode
+name|GimpBucketFillMode
 name|fill_mode
 parameter_list|,
 name|gint
@@ -308,7 +308,7 @@ if|if
 condition|(
 name|fill_mode
 operator|==
-name|FG_BUCKET_FILL
+name|GIMP_FG_BUCKET_FILL
 condition|)
 block|{
 name|gimp_context_get_foreground
@@ -330,7 +330,7 @@ if|if
 condition|(
 name|fill_mode
 operator|==
-name|BG_BUCKET_FILL
+name|GIMP_BG_BUCKET_FILL
 condition|)
 block|{
 name|gimp_context_get_background
@@ -352,7 +352,7 @@ if|if
 condition|(
 name|fill_mode
 operator|==
-name|PATTERN_BUCKET_FILL
+name|GIMP_PATTERN_BUCKET_FILL
 condition|)
 block|{
 name|pattern
@@ -429,14 +429,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_bucket_fill_full (GimpDrawable * drawable,BucketFillMode fill_mode,const GimpRGB * color,GimpPattern * pattern,gint paint_mode,gdouble opacity,gboolean do_seed_fill,gboolean fill_transparent,gdouble threshold,gboolean sample_merged,gdouble x,gdouble y)
+DECL|function|gimp_drawable_bucket_fill_full (GimpDrawable * drawable,GimpBucketFillMode fill_mode,const GimpRGB * color,GimpPattern * pattern,gint paint_mode,gdouble opacity,gboolean do_seed_fill,gboolean fill_transparent,gdouble threshold,gboolean sample_merged,gdouble x,gdouble y)
 name|gimp_drawable_bucket_fill_full
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|BucketFillMode
+name|GimpBucketFillMode
 name|fill_mode
 parameter_list|,
 specifier|const
@@ -536,7 +536,7 @@ name|g_return_if_fail
 argument_list|(
 name|fill_mode
 operator|!=
-name|PATTERN_BUCKET_FILL
+name|GIMP_PATTERN_BUCKET_FILL
 operator|||
 name|GIMP_IS_PATTERN
 argument_list|(
@@ -549,11 +549,11 @@ argument_list|(
 operator|(
 name|fill_mode
 operator|!=
-name|FG_BUCKET_FILL
+name|GIMP_FG_BUCKET_FILL
 operator|&&
 name|fill_mode
 operator|!=
-name|BG_BUCKET_FILL
+name|GIMP_BG_BUCKET_FILL
 operator|)
 operator|||
 name|color
@@ -583,11 +583,11 @@ if|if
 condition|(
 name|fill_mode
 operator|==
-name|FG_BUCKET_FILL
+name|GIMP_FG_BUCKET_FILL
 operator|||
 name|fill_mode
 operator|==
-name|BG_BUCKET_FILL
+name|GIMP_BG_BUCKET_FILL
 condition|)
 block|{
 name|guchar
@@ -638,7 +638,7 @@ if|if
 condition|(
 name|fill_mode
 operator|==
-name|PATTERN_BUCKET_FILL
+name|GIMP_PATTERN_BUCKET_FILL
 condition|)
 block|{
 comment|/*  If the pattern doesn't match the image in terms of color type,        *  transform it.  (ie  pattern is RGB, image is indexed)        */
@@ -1355,10 +1355,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_bucket_fill_region (BucketFillMode fill_mode,PixelRegion * bufPR,PixelRegion * maskPR,guchar * col,TempBuf * pattern,gint off_x,gint off_y,gboolean has_alpha)
+DECL|function|gimp_drawable_bucket_fill_region (GimpBucketFillMode fill_mode,PixelRegion * bufPR,PixelRegion * maskPR,guchar * col,TempBuf * pattern,gint off_x,gint off_y,gboolean has_alpha)
 name|gimp_drawable_bucket_fill_region
 parameter_list|(
-name|BucketFillMode
+name|GimpBucketFillMode
 name|fill_mode
 parameter_list|,
 name|PixelRegion
@@ -1469,10 +1469,10 @@ name|fill_mode
 condition|)
 block|{
 case|case
-name|FG_BUCKET_FILL
+name|GIMP_FG_BUCKET_FILL
 case|:
 case|case
-name|BG_BUCKET_FILL
+name|GIMP_BG_BUCKET_FILL
 case|:
 name|gimp_drawable_bucket_fill_line_color
 argument_list|(
@@ -1495,7 +1495,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PATTERN_BUCKET_FILL
+name|GIMP_PATTERN_BUCKET_FILL
 case|:
 name|gimp_drawable_bucket_fill_line_pattern
 argument_list|(

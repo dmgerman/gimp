@@ -289,14 +289,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_bucket_fill (GimpImage * gimage,BucketFillMode fill_mode,const GimpRGB * color,GimpPattern * pattern)
+DECL|function|gimp_display_shell_bucket_fill (GimpImage * gimage,GimpBucketFillMode fill_mode,const GimpRGB * color,GimpPattern * pattern)
 name|gimp_display_shell_bucket_fill
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|BucketFillMode
+name|GimpBucketFillMode
 name|fill_mode
 parameter_list|,
 specifier|const
@@ -474,7 +474,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|PATTERN_BUCKET_FILL
+name|GIMP_PATTERN_BUCKET_FILL
 argument_list|,
 name|NULL
 argument_list|,
@@ -525,7 +525,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|FG_BUCKET_FILL
+name|GIMP_FG_BUCKET_FILL
 argument_list|,
 name|color
 argument_list|,

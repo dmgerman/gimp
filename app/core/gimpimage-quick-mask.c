@@ -256,7 +256,7 @@ operator|->
 name|gimp
 argument_list|)
 argument_list|,
-name|TRANSPARENT_FILL
+name|GIMP_TRANSPARENT_FILL
 argument_list|)
 expr_stmt|;
 block|}

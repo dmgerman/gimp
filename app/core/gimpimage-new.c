@@ -198,7 +198,7 @@ name|new_fill_type
 operator|->
 name|type
 operator|=
-name|FOREGROUND_FILL
+name|GIMP_FOREGROUND_FILL
 expr_stmt|;
 name|new_fill_type
 operator|->
@@ -235,7 +235,7 @@ name|new_fill_type
 operator|->
 name|type
 operator|=
-name|BACKGROUND_FILL
+name|GIMP_BACKGROUND_FILL
 expr_stmt|;
 name|new_fill_type
 operator|->
@@ -272,7 +272,7 @@ name|new_fill_type
 operator|->
 name|type
 operator|=
-name|WHITE_FILL
+name|GIMP_WHITE_FILL
 expr_stmt|;
 name|new_fill_type
 operator|->
@@ -309,7 +309,7 @@ name|new_fill_type
 operator|->
 name|type
 operator|=
-name|TRANSPARENT_FILL
+name|GIMP_TRANSPARENT_FILL
 expr_stmt|;
 name|new_fill_type
 operator|->
@@ -424,7 +424,7 @@ name|image_new_last_values
 operator|.
 name|fill_type
 operator|=
-name|BACKGROUND_FILL
+name|GIMP_BACKGROUND_FILL
 expr_stmt|;
 name|gimp
 operator|->
@@ -802,7 +802,7 @@ name|values
 operator|->
 name|fill_type
 operator|==
-name|TRANSPARENT_FILL
+name|GIMP_TRANSPARENT_FILL
 operator|)
 comment|/* alpha     */
 operator|+
@@ -1060,13 +1060,13 @@ name|fill_type
 condition|)
 block|{
 case|case
-name|FOREGROUND_FILL
+name|GIMP_FOREGROUND_FILL
 case|:
 case|case
-name|BACKGROUND_FILL
+name|GIMP_BACKGROUND_FILL
 case|:
 case|case
-name|WHITE_FILL
+name|GIMP_WHITE_FILL
 case|:
 name|type
 operator|=
@@ -1084,7 +1084,7 @@ name|GIMP_GRAY_IMAGE
 expr_stmt|;
 break|break;
 case|case
-name|TRANSPARENT_FILL
+name|GIMP_TRANSPARENT_FILL
 case|:
 name|type
 operator|=

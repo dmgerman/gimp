@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296c631b0103
+DECL|enum|__anon2c98ff0b0103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -2067,7 +2067,7 @@ name|fill_type
 condition|)
 block|{
 case|case
-name|FOREGROUND_FILL
+name|GIMP_FOREGROUND_FILL
 case|:
 name|gimp_context_get_foreground
 argument_list|(
@@ -2079,7 +2079,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|BACKGROUND_FILL
+name|GIMP_BACKGROUND_FILL
 case|:
 name|gimp_context_get_background
 argument_list|(
@@ -2091,7 +2091,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|WHITE_FILL
+name|GIMP_WHITE_FILL
 case|:
 name|gimp_rgb_set
 argument_list|(
@@ -2107,7 +2107,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|TRANSPARENT_FILL
+name|GIMP_TRANSPARENT_FILL
 case|:
 name|gimp_rgba_set
 argument_list|(
@@ -2125,7 +2125,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|NO_FILL
+name|GIMP_NO_FILL
 case|:
 return|return;
 default|default:

@@ -171,18 +171,18 @@ DECL|member|threshold
 name|gdouble
 name|threshold
 decl_stmt|;
-comment|/* gdouble        threshold_d; (from gimprc) */
+comment|/* gdouble          threshold_d; (from gimprc) */
 DECL|member|threshold_w
 name|GtkObject
 modifier|*
 name|threshold_w
 decl_stmt|;
 DECL|member|fill_mode
-name|BucketFillMode
+name|GimpBucketFillMode
 name|fill_mode
 decl_stmt|;
 DECL|member|fill_mode_d
-name|BucketFillMode
+name|GimpBucketFillMode
 name|fill_mode_d
 decl_stmt|;
 DECL|member|fill_mode_w
@@ -920,7 +920,7 @@ name|fill_mode
 condition|)
 block|{
 case|case
-name|FG_BUCKET_FILL
+name|GIMP_FG_BUCKET_FILL
 case|:
 name|gimp_radio_group_set_active
 argument_list|(
@@ -936,13 +936,13 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|BG_BUCKET_FILL
+name|GIMP_BG_BUCKET_FILL
 argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|BG_BUCKET_FILL
+name|GIMP_BG_BUCKET_FILL
 case|:
 name|gimp_radio_group_set_active
 argument_list|(
@@ -958,7 +958,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|FG_BUCKET_FILL
+name|GIMP_FG_BUCKET_FILL
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1131,7 +1131,7 @@ name|fill_mode
 condition|)
 block|{
 case|case
-name|FG_BUCKET_FILL
+name|GIMP_FG_BUCKET_FILL
 case|:
 name|cmodifier
 operator|=
@@ -1139,7 +1139,7 @@ name|GIMP_CURSOR_MODIFIER_FOREGROUND
 expr_stmt|;
 break|break;
 case|case
-name|BG_BUCKET_FILL
+name|GIMP_BG_BUCKET_FILL
 case|:
 name|cmodifier
 operator|=
@@ -1147,7 +1147,7 @@ name|GIMP_CURSOR_MODIFIER_BACKGROUND
 expr_stmt|;
 break|break;
 case|case
-name|PATTERN_BUCKET_FILL
+name|GIMP_PATTERN_BUCKET_FILL
 case|:
 name|cmodifier
 operator|=
@@ -1292,7 +1292,7 @@ name|options
 operator|->
 name|fill_mode_d
 operator|=
-name|FG_BUCKET_FILL
+name|GIMP_FG_BUCKET_FILL
 expr_stmt|;
 comment|/*  the main vbox  */
 name|vbox
@@ -1343,7 +1343,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|FG_BUCKET_FILL
+name|GIMP_FG_BUCKET_FILL
 argument_list|)
 argument_list|,
 operator|&
@@ -1361,7 +1361,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|BG_BUCKET_FILL
+name|GIMP_BG_BUCKET_FILL
 argument_list|)
 argument_list|,
 operator|&
@@ -1379,7 +1379,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|PATTERN_BUCKET_FILL
+name|GIMP_PATTERN_BUCKET_FILL
 argument_list|)
 argument_list|,
 operator|&

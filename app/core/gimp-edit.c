@@ -1329,7 +1329,7 @@ name|fill_type
 condition|)
 block|{
 case|case
-name|FOREGROUND_FILL
+name|GIMP_FOREGROUND_FILL
 case|:
 name|gimp_image_get_foreground
 argument_list|(
@@ -1342,7 +1342,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|BACKGROUND_FILL
+name|GIMP_BACKGROUND_FILL
 case|:
 name|gimp_image_get_background
 argument_list|(
@@ -1355,7 +1355,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|WHITE_FILL
+name|GIMP_WHITE_FILL
 case|:
 name|col
 index|[
@@ -1380,7 +1380,7 @@ literal|255
 expr_stmt|;
 break|break;
 case|case
-name|TRANSPARENT_FILL
+name|GIMP_TRANSPARENT_FILL
 case|:
 name|col
 index|[
@@ -1424,7 +1424,7 @@ name|TRANSPARENT_OPACITY
 expr_stmt|;
 break|break;
 case|case
-name|NO_FILL
+name|GIMP_NO_FILL
 case|:
 return|return
 name|TRUE

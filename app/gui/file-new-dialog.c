@@ -84,7 +84,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9b86170108
+DECL|struct|__anon2be213720108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -3115,7 +3115,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|BACKGROUND_FILL
+name|GIMP_BACKGROUND_FILL
 argument_list|)
 argument_list|)
 expr_stmt|;

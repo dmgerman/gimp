@@ -257,7 +257,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e1987c0103
+DECL|enum|__anon2b5fce700103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -7458,7 +7458,7 @@ name|lmu
 operator|->
 name|layer
 argument_list|,
-name|DISCARD
+name|GIMP_MASK_DISCARD
 argument_list|,
 name|FALSE
 argument_list|)

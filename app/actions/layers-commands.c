@@ -986,7 +986,7 @@ name|gimp_layer_apply_mask
 argument_list|(
 name|active_layer
 argument_list|,
-name|APPLY
+name|GIMP_MASK_APPLY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1059,7 +1059,7 @@ name|gimp_layer_apply_mask
 argument_list|(
 name|active_layer
 argument_list|,
-name|DISCARD
+name|GIMP_MASK_DISCARD
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1413,7 +1413,7 @@ specifier|static
 name|GimpFillType
 name|fill_type
 init|=
-name|TRANSPARENT_FILL
+name|GIMP_TRANSPARENT_FILL
 decl_stmt|;
 end_decl_stmt
 
@@ -1814,7 +1814,7 @@ operator|->
 name|gimp
 argument_list|)
 argument_list|,
-name|TRANSPARENT_FILL
+name|GIMP_TRANSPARENT_FILL
 argument_list|)
 expr_stmt|;
 name|gimp_layer_translate
@@ -2610,7 +2610,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|FOREGROUND_FILL
+name|GIMP_FOREGROUND_FILL
 argument_list|)
 argument_list|,
 name|NULL
@@ -2622,7 +2622,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|BACKGROUND_FILL
+name|GIMP_BACKGROUND_FILL
 argument_list|)
 argument_list|,
 name|NULL
@@ -2634,7 +2634,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|WHITE_FILL
+name|GIMP_WHITE_FILL
 argument_list|)
 argument_list|,
 name|NULL
@@ -2646,7 +2646,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|TRANSPARENT_FILL
+name|GIMP_TRANSPARENT_FILL
 argument_list|)
 argument_list|,
 name|NULL
@@ -3267,7 +3267,7 @@ modifier|*
 name|layer
 decl_stmt|;
 DECL|member|add_mask_type
-name|AddMaskType
+name|GimpAddMaskType
 name|add_mask_type
 decl_stmt|;
 block|}
@@ -3413,7 +3413,7 @@ name|options
 operator|->
 name|add_mask_type
 operator|=
-name|ADD_WHITE_MASK
+name|GIMP_ADD_WHITE_MASK
 expr_stmt|;
 name|gimage
 operator|=
@@ -3535,7 +3535,7 @@ name|options
 operator|->
 name|add_mask_type
 operator|=
-name|ADD_SELECTION_MASK
+name|GIMP_ADD_SELECTION_MASK
 expr_stmt|;
 name|frame
 operator|=
@@ -3572,7 +3572,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|ADD_SELECTION_MASK
+name|GIMP_ADD_SELECTION_MASK
 argument_list|)
 argument_list|,
 name|NULL
@@ -3584,7 +3584,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|ADD_INVERSE_SELECTION_MASK
+name|GIMP_ADD_INVERSE_SELECTION_MASK
 argument_list|)
 argument_list|,
 name|NULL
@@ -3596,7 +3596,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|ADD_COPY_MASK
+name|GIMP_ADD_COPY_MASK
 argument_list|)
 argument_list|,
 name|NULL
@@ -3608,7 +3608,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|ADD_INVERSE_COPY_MASK
+name|GIMP_ADD_INVERSE_COPY_MASK
 argument_list|)
 argument_list|,
 name|NULL
@@ -3620,7 +3620,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|ADD_WHITE_MASK
+name|GIMP_ADD_WHITE_MASK
 argument_list|)
 argument_list|,
 name|NULL
@@ -3632,7 +3632,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|ADD_BLACK_MASK
+name|GIMP_ADD_BLACK_MASK
 argument_list|)
 argument_list|,
 name|NULL
@@ -3644,7 +3644,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|ADD_ALPHA_MASK
+name|GIMP_ADD_ALPHA_MASK
 argument_list|)
 argument_list|,
 name|NULL
@@ -3690,7 +3690,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|ADD_COPY_MASK
+name|GIMP_ADD_COPY_MASK
 argument_list|)
 argument_list|,
 name|NULL
@@ -3702,7 +3702,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|ADD_INVERSE_COPY_MASK
+name|GIMP_ADD_INVERSE_COPY_MASK
 argument_list|)
 argument_list|,
 name|NULL
@@ -3714,7 +3714,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|ADD_WHITE_MASK
+name|GIMP_ADD_WHITE_MASK
 argument_list|)
 argument_list|,
 name|NULL
@@ -3726,7 +3726,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|ADD_BLACK_MASK
+name|GIMP_ADD_BLACK_MASK
 argument_list|)
 argument_list|,
 name|NULL
@@ -3738,7 +3738,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|ADD_ALPHA_MASK
+name|GIMP_ADD_ALPHA_MASK
 argument_list|)
 argument_list|,
 name|NULL

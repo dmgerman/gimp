@@ -1373,7 +1373,7 @@ name|drawable
 argument_list|)
 argument_list|)
 argument_list|,
-name|DISCARD
+name|GIMP_MASK_DISCARD
 argument_list|,
 name|TRUE
 argument_list|)

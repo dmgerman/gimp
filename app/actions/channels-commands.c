@@ -786,7 +786,7 @@ operator|->
 name|gimp
 argument_list|)
 argument_list|,
-name|TRANSPARENT_FILL
+name|GIMP_TRANSPARENT_FILL
 argument_list|)
 expr_stmt|;
 name|gimp_image_add_channel
@@ -961,7 +961,7 @@ operator|->
 name|gimp
 argument_list|)
 argument_list|,
-name|TRANSPARENT_FILL
+name|GIMP_TRANSPARENT_FILL
 argument_list|)
 expr_stmt|;
 name|gimp_channel_translate

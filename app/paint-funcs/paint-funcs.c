@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b27409b0103
+DECL|enum|__anon29c524430103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -12912,24 +12912,12 @@ decl_stmt|;
 name|gdouble
 name|position
 decl_stmt|;
-name|g_printerr
-argument_list|(
-literal|"shrink_line bytes=%d old_width=%d width=%d interp=%d "
-literal|"step=%f inv_step=%f\n"
-argument_list|,
-name|bytes
-argument_list|,
-name|old_width
-argument_list|,
-name|width
-argument_list|,
-name|interp
-argument_list|,
-name|step
-argument_list|,
-name|inv_step
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+block|g_printerr ("shrink_line bytes=%d old_width=%d width=%d interp=%d "               "step=%f inv_step=%f\n",               bytes, old_width, width, interp, step, inv_step);
+endif|#
+directive|endif
 for|for
 control|(
 name|b
@@ -13405,10 +13393,8 @@ name|destPR
 operator|->
 name|h
 expr_stmt|;
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"scale_region: (%d x %d) -> (%d x %d)\n"
 argument_list|,
 name|orig_width
@@ -13862,7 +13848,7 @@ operator|<=
 name|new_y
 condition|)
 block|{
-comment|/* get the necesary lines from the source image, scale them, 	   and put them into src[] */
+comment|/* get the necesary lines from the source image, scale them,                  and put them into src[] */
 name|get_scaled_row
 argument_list|(
 operator|(

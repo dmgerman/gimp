@@ -24,7 +24,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|BucketFillMode
+name|GimpBucketFillMode
 name|fill_mode
 parameter_list|,
 name|gint
@@ -59,7 +59,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|BucketFillMode
+name|GimpBucketFillMode
 name|fill_mode
 parameter_list|,
 specifier|const

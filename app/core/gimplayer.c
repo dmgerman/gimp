@@ -141,7 +141,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e12ca20103
+DECL|enum|__anon2ae6b7620103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -2285,7 +2285,7 @@ end_function
 begin_function
 name|GimpLayerMask
 modifier|*
-DECL|function|gimp_layer_create_mask (const GimpLayer * layer,AddMaskType add_mask_type)
+DECL|function|gimp_layer_create_mask (const GimpLayer * layer,GimpAddMaskType add_mask_type)
 name|gimp_layer_create_mask
 parameter_list|(
 specifier|const
@@ -2293,7 +2293,7 @@ name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
-name|AddMaskType
+name|GimpAddMaskType
 name|add_mask_type
 parameter_list|)
 block|{
@@ -2460,7 +2460,7 @@ name|add_mask_type
 condition|)
 block|{
 case|case
-name|ADD_WHITE_MASK
+name|GIMP_ADD_WHITE_MASK
 case|:
 block|{
 name|guchar
@@ -2480,7 +2480,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|ADD_BLACK_MASK
+name|GIMP_ADD_BLACK_MASK
 case|:
 block|{
 name|guchar
@@ -2500,7 +2500,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|ADD_ALPHA_MASK
+name|GIMP_ADD_ALPHA_MASK
 case|:
 if|if
 condition|(
@@ -2560,10 +2560,10 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|ADD_SELECTION_MASK
+name|GIMP_ADD_SELECTION_MASK
 case|:
 case|case
-name|ADD_INVERSE_SELECTION_MASK
+name|GIMP_ADD_INVERSE_SELECTION_MASK
 case|:
 block|{
 name|GimpDrawable
@@ -2634,10 +2634,10 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|ADD_COPY_MASK
+name|GIMP_ADD_COPY_MASK
 case|:
 case|case
-name|ADD_INVERSE_COPY_MASK
+name|GIMP_ADD_INVERSE_COPY_MASK
 case|:
 block|{
 name|TileManager
@@ -2801,26 +2801,26 @@ name|add_mask_type
 condition|)
 block|{
 case|case
-name|ADD_WHITE_MASK
+name|GIMP_ADD_WHITE_MASK
 case|:
 case|case
-name|ADD_BLACK_MASK
+name|GIMP_ADD_BLACK_MASK
 case|:
 case|case
-name|ADD_ALPHA_MASK
+name|GIMP_ADD_ALPHA_MASK
 case|:
 case|case
-name|ADD_SELECTION_MASK
+name|GIMP_ADD_SELECTION_MASK
 case|:
 case|case
-name|ADD_COPY_MASK
+name|GIMP_ADD_COPY_MASK
 case|:
 break|break;
 case|case
-name|ADD_INVERSE_SELECTION_MASK
+name|GIMP_ADD_INVERSE_SELECTION_MASK
 case|:
 case|case
-name|ADD_INVERSE_COPY_MASK
+name|GIMP_ADD_INVERSE_COPY_MASK
 case|:
 name|gimp_drawable_invert
 argument_list|(
@@ -2840,14 +2840,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_layer_apply_mask (GimpLayer * layer,MaskApplyMode mode,gboolean push_undo)
+DECL|function|gimp_layer_apply_mask (GimpLayer * layer,GimpMaskApplyMode mode,gboolean push_undo)
 name|gimp_layer_apply_mask
 parameter_list|(
 name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
-name|MaskApplyMode
+name|GimpMaskApplyMode
 name|mode
 parameter_list|,
 name|gboolean
@@ -2949,7 +2949,7 @@ condition|(
 operator|(
 name|mode
 operator|==
-name|APPLY
+name|GIMP_MASK_APPLY
 operator|&&
 operator|(
 operator|!
@@ -2970,7 +2970,7 @@ operator|||
 operator|(
 name|mode
 operator|==
-name|DISCARD
+name|GIMP_MASK_DISCARD
 operator|&&
 operator|(
 name|layer
@@ -2997,7 +2997,7 @@ if|if
 condition|(
 name|mode
 operator|==
-name|APPLY
+name|GIMP_MASK_APPLY
 condition|)
 block|{
 if|if
