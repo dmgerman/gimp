@@ -259,6 +259,12 @@ name|paint_func
 operator|=
 name|pencil_paint_func
 expr_stmt|;
+name|private
+operator|->
+name|pick_colors
+operator|=
+name|TRUE
+expr_stmt|;
 return|return
 name|tool
 return|;
