@@ -90,7 +90,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b03328d0108
+DECL|struct|__anon27ce94820108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -454,6 +454,9 @@ name|status
 init|=
 name|GIMP_PDB_SUCCESS
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|run_mode
 operator|=
 name|param
