@@ -179,38 +179,23 @@ value|((angle) * 360.0 / (2.0 * G_PI))
 ifdef|#
 directive|ifdef
 name|G_OS_WIN32
-DECL|macro|ISNAN (x)
+DECL|macro|FINITE (x)
 define|#
 directive|define
-name|ISNAN
+name|FINITE
 parameter_list|(
 name|x
 parameter_list|)
-value|_isnan(x)
-DECL|macro|ISINF (x)
-define|#
-directive|define
-name|ISINF
-parameter_list|(
-name|x
-parameter_list|)
-value|(_fpclass(x)& (_FPCLASS_NINF | _FPCLASS_PINF))
+value|_finite(x)
 else|#
 directive|else
 define|#
 directive|define
-name|ISNAN
+name|FINITE
 parameter_list|(
 name|x
 parameter_list|)
-value|isnan(x)
-define|#
-directive|define
-name|ISINF
-parameter_list|(
-name|x
-parameter_list|)
-value|isinf(x)
+value|finite(x)
 endif|#
 directive|endif
 ifdef|#

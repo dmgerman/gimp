@@ -82,12 +82,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpmath.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -95,6 +89,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimplimits.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpmath.h"
 end_include
 
 begin_decl_stmt
@@ -11568,7 +11568,8 @@ condition|)
 block|{
 if|if
 condition|(
-name|ISNAN
+operator|!
+name|FINITE
 argument_list|(
 name|xresolution
 argument_list|)
@@ -11576,17 +11577,13 @@ operator|||
 name|xresolution
 operator|<
 name|GIMP_MIN_RESOLUTION
-operator|||
-name|ISINF
-argument_list|(
-name|xresolution
-argument_list|)
 operator|||
 name|xresolution
 operator|>
 name|GIMP_MAX_RESOLUTION
 operator|||
-name|ISNAN
+operator|!
+name|FINITE
 argument_list|(
 name|yresolution
 argument_list|)
@@ -11594,11 +11591,6 @@ operator|||
 name|yresolution
 operator|<
 name|GIMP_MIN_RESOLUTION
-operator|||
-name|ISINF
-argument_list|(
-name|yresolution
-argument_list|)
 operator|||
 name|yresolution
 operator|>
