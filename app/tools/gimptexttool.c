@@ -1813,8 +1813,12 @@ name|image
 operator|=
 name|gimp_item_get_image
 argument_list|(
-argument|GIMP_ITEM (layer)
+name|GIMP_ITEM
+argument_list|(
+name|layer
 argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_size_entry_set_resolution
 argument_list|(
 name|GIMP_TEXT_OPTIONS
