@@ -3007,15 +3007,6 @@ break|break;
 default|default:
 break|break;
 block|}
-name|options
-operator|->
-name|pressure_options
-operator|=
-name|paint_pressure_options_new
-argument_list|(
-name|tool_type
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|options
@@ -3239,6 +3230,8 @@ block|{
 name|PaintPressureOptions
 modifier|*
 name|pressure
+init|=
+name|NULL
 decl_stmt|;
 name|GtkWidget
 modifier|*
