@@ -442,7 +442,7 @@ name|menu
 argument_list|,
 literal|2
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -1924,7 +1924,7 @@ name|combo
 argument_list|,
 literal|2
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
