@@ -85,6 +85,15 @@ parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_BEZIER_STROKE, GimpBezierStrokeClass))
 end_define
 
+begin_typedef
+DECL|typedef|GimpBezierStrokeClass
+typedef|typedef
+name|struct
+name|_GimpBezierStrokeClass
+name|GimpBezierStrokeClass
+typedef|;
+end_typedef
+
 begin_struct
 DECL|struct|_GimpBezierStroke
 struct|struct
