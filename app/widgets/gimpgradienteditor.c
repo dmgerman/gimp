@@ -340,7 +340,7 @@ comment|/* Gradient segment type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b8154100103
+DECL|enum|__anon2bcab69f0103
 typedef|typedef
 enum|enum
 block|{
@@ -367,7 +367,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b8154100203
+DECL|enum|__anon2bcab69f0203
 typedef|typedef
 enum|enum
 block|{
@@ -512,7 +512,7 @@ comment|/* Gradient editor type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b8154100303
+DECL|enum|__anon2bcab69f0303
 typedef|typedef
 enum|enum
 block|{
@@ -536,7 +536,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b8154100408
+DECL|struct|__anon2bcab69f0408
 typedef|typedef
 struct|struct
 block|{
@@ -816,7 +816,7 @@ name|int
 name|replicate_times
 decl_stmt|;
 comment|/* Saved colors */
-DECL|struct|__anon2b8154100508
+DECL|struct|__anon2bcab69f0508
 struct|struct
 block|{
 DECL|member|r
@@ -5276,6 +5276,18 @@ operator|=
 name|gtk_preview_new
 argument_list|(
 name|GTK_PREVIEW_COLOR
+argument_list|)
+expr_stmt|;
+name|gtk_preview_set_dither
+argument_list|(
+name|GTK_PREVIEW
+argument_list|(
+name|g_editor
+operator|->
+name|preview
+argument_list|)
+argument_list|,
+name|GDK_RGB_DITHER_MAX
 argument_list|)
 expr_stmt|;
 name|gtk_preview_size
@@ -14655,6 +14667,16 @@ operator|=
 name|gtk_preview_new
 argument_list|(
 name|GTK_PREVIEW_COLOR
+argument_list|)
+expr_stmt|;
+name|gtk_preview_set_dither
+argument_list|(
+name|GTK_PREVIEW
+argument_list|(
+name|wcolor_box
+argument_list|)
+argument_list|,
+name|GDK_RGB_DITHER_MAX
 argument_list|)
 expr_stmt|;
 name|gtk_preview_size
