@@ -87,16 +87,6 @@ name|parent
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_widget_grab_focus
-argument_list|(
-name|GTK_FILE_SELECTION
-argument_list|(
-name|dialog
-argument_list|)
-operator|->
-name|selection_entry
-argument_list|)
-expr_stmt|;
 name|gtk_window_present
 argument_list|(
 name|GTK_WINDOW

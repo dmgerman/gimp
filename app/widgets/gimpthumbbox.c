@@ -1179,6 +1179,15 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gtk_widget_set_no_show_all
+argument_list|(
+name|box
+operator|->
+name|progress
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 comment|/* don't gtk_widget_show (box->progress); */
 comment|/* eek */
 name|gtk_widget_size_request

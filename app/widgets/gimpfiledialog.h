@@ -98,7 +98,7 @@ struct|struct
 name|_GimpFileDialog
 block|{
 DECL|member|parent_instance
-name|GtkFileSelection
+name|GtkFileChooserDialog
 name|parent_instance
 decl_stmt|;
 DECL|member|gimp
@@ -144,7 +144,7 @@ struct|struct
 name|_GimpFileDialogClass
 block|{
 DECL|member|parent_class
-name|GtkFileSelectionClass
+name|GtkFileChooserDialogClass
 name|parent_class
 decl_stmt|;
 block|}
@@ -173,6 +173,9 @@ parameter_list|,
 name|GSList
 modifier|*
 name|file_procs
+parameter_list|,
+name|GtkFileChooserAction
+name|action
 parameter_list|,
 name|GimpMenuFactory
 modifier|*
