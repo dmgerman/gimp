@@ -250,7 +250,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d95efa0103
+DECL|enum|__anon2c4118430103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -7176,13 +7176,51 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_toggle_fullscreen (GimpDisplayShell * shell)
-name|gimp_display_shell_toggle_fullscreen
+DECL|function|gimp_display_shell_set_fullscreen (GimpDisplayShell * shell,gboolean fullscreen)
+name|gimp_display_shell_set_fullscreen
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
+parameter_list|,
+name|gboolean
+name|fullscreen
 parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|fullscreen
+condition|)
+block|{
+if|if
+condition|(
+operator|!
+operator|(
+name|shell
+operator|->
+name|window_state
+operator|&
+name|GDK_WINDOW_STATE_FULLSCREEN
+operator|)
+condition|)
+name|gtk_window_fullscreen
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|shell
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+else|else
 block|{
 if|if
 condition|(
@@ -7200,15 +7238,7 @@ name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;
-else|else
-name|gtk_window_fullscreen
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|shell
-argument_list|)
-argument_list|)
-expr_stmt|;
+block|}
 block|}
 end_function
 
