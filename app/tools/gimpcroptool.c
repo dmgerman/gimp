@@ -165,7 +165,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3dba950103
+DECL|enum|__anon279d61170103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -3690,6 +3690,11 @@ argument_list|,
 name|layer_only
 argument_list|,
 name|crop_layers
+argument_list|)
+expr_stmt|;
+name|gimp_image_flush
+argument_list|(
+name|gimage
 argument_list|)
 expr_stmt|;
 block|}
