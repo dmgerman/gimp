@@ -6,113 +6,106 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_COLOR_OPTIONS_H__
+name|__GIMP_IMAGE_MAP_OPTIONS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_COLOR_OPTIONS_H__
+DECL|macro|__GIMP_IMAGE_MAP_OPTIONS_H__
 define|#
 directive|define
-name|__GIMP_COLOR_OPTIONS_H__
+name|__GIMP_IMAGE_MAP_OPTIONS_H__
 end_define
 
 begin_include
 include|#
 directive|include
-file|"gimpimagemapoptions.h"
+file|"core/gimptooloptions.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_COLOR_OPTIONS
+DECL|macro|GIMP_TYPE_IMAGE_MAP_OPTIONS
 define|#
 directive|define
-name|GIMP_TYPE_COLOR_OPTIONS
-value|(gimp_color_options_get_type ())
+name|GIMP_TYPE_IMAGE_MAP_OPTIONS
+value|(gimp_image_map_options_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_COLOR_OPTIONS (obj)
+DECL|macro|GIMP_IMAGE_MAP_OPTIONS (obj)
 define|#
 directive|define
-name|GIMP_COLOR_OPTIONS
+name|GIMP_IMAGE_MAP_OPTIONS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_COLOR_OPTIONS, GimpColorOptions))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_IMAGE_MAP_OPTIONS, GimpImageMapOptions))
 end_define
 
 begin_define
-DECL|macro|GIMP_COLOR_OPTIONS_CLASS (klass)
+DECL|macro|GIMP_IMAGE_MAP_OPTIONS_CLASS (klass)
 define|#
 directive|define
-name|GIMP_COLOR_OPTIONS_CLASS
+name|GIMP_IMAGE_MAP_OPTIONS_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_COLOR_OPTIONS, GimpColorOptionsClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_IMAGE_MAP_OPTIONS, GimpImageMapOptionsClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_COLOR_OPTIONS (obj)
+DECL|macro|GIMP_IS_IMAGE_MAP_OPTIONS (obj)
 define|#
 directive|define
-name|GIMP_IS_COLOR_OPTIONS
+name|GIMP_IS_IMAGE_MAP_OPTIONS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_COLOR_OPTIONS))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_IMAGE_MAP_OPTIONS))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_COLOR_OPTIONS_CLASS (klass)
+DECL|macro|GIMP_IS_IMAGE_MAP_OPTIONS_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_COLOR_OPTIONS_CLASS
+name|GIMP_IS_IMAGE_MAP_OPTIONS_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_COLOR_OPTIONS))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_IMAGE_MAP_OPTIONS))
 end_define
 
 begin_define
-DECL|macro|GIMP_COLOR_OPTIONS_GET_CLASS (obj)
+DECL|macro|GIMP_IMAGE_MAP_OPTIONS_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_COLOR_OPTIONS_GET_CLASS
+name|GIMP_IMAGE_MAP_OPTIONS_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_COLOR_OPTIONS, GimpColorOptionsClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_IMAGE_MAP_OPTIONS, GimpImageMapOptionsClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpColorOptionsClass
+DECL|typedef|GimpImageMapOptionsClass
 typedef|typedef
+name|struct
+name|_GimpToolOptionsClass
 name|GimpImageMapOptionsClass
-name|GimpColorOptionsClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpColorOptions
+DECL|struct|_GimpImageMapOptions
 struct|struct
-name|_GimpColorOptions
+name|_GimpImageMapOptions
 block|{
 DECL|member|parent_instance
-name|GimpImageMapOptions
+name|GimpToolOptions
 name|parent_instance
 decl_stmt|;
-DECL|member|sample_merged
+DECL|member|preview
 name|gboolean
-name|sample_merged
-decl_stmt|;
-DECL|member|sample_average
-name|gboolean
-name|sample_average
-decl_stmt|;
-DECL|member|average_radius
-name|gdouble
-name|average_radius
+name|preview
 decl_stmt|;
 block|}
 struct|;
@@ -120,7 +113,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_color_options_get_type
+name|gimp_image_map_options_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -128,25 +121,13 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
-begin_function_decl
-name|GtkWidget
-modifier|*
-name|gimp_color_options_gui
-parameter_list|(
-name|GimpToolOptions
-modifier|*
-name|tool_options
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_COLOR_OPTIONS_H__ */
+comment|/* __GIMP_IMAGE_MAP_OPTIONS_H__ */
 end_comment
 
 end_unit

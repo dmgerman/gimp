@@ -110,6 +110,15 @@ name|GimpColorOptions
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpImageMapOptions
+typedef|typedef
+name|struct
+name|_GimpImageMapOptions
+name|GimpImageMapOptions
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  functions  */
 end_comment

@@ -113,10 +113,6 @@ name|GimpImageMap
 modifier|*
 name|image_map
 decl_stmt|;
-DECL|member|preview
-name|gboolean
-name|preview
-decl_stmt|;
 comment|/* the dialog */
 DECL|member|shell_desc
 specifier|const

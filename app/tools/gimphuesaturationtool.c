@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimagemapoptions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -443,7 +449,7 @@ call|)
 argument_list|(
 name|GIMP_TYPE_HUE_SATURATION_TOOL
 argument_list|,
-name|G_TYPE_NONE
+name|GIMP_TYPE_IMAGE_MAP_OPTIONS
 argument_list|,
 name|NULL
 argument_list|,
@@ -977,7 +983,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon27ddbc580108
+DECL|struct|__anon27caefdb0108
 block|{
 DECL|member|label
 specifier|const

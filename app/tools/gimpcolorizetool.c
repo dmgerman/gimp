@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimagemapoptions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -352,7 +358,7 @@ call|)
 argument_list|(
 name|GIMP_TYPE_COLORIZE_TOOL
 argument_list|,
-name|G_TYPE_NONE
+name|GIMP_TYPE_IMAGE_MAP_OPTIONS
 argument_list|,
 name|NULL
 argument_list|,

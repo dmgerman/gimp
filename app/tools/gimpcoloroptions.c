@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1872700103
+DECL|enum|__anon2c301d4a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -141,17 +141,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GimpToolOptionsClass
-modifier|*
-name|parent_class
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
 begin_function
 name|GType
 DECL|function|gimp_color_options_get_type (void)
@@ -220,7 +209,7 @@ name|type
 operator|=
 name|g_type_register_static
 argument_list|(
-name|GIMP_TYPE_TOOL_OPTIONS
+name|GIMP_TYPE_IMAGE_MAP_OPTIONS
 argument_list|,
 literal|"GimpColorOptions"
 argument_list|,
@@ -257,13 +246,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|parent_class
-operator|=
-name|g_type_class_peek_parent
-argument_list|(
-name|klass
-argument_list|)
-expr_stmt|;
 name|object_class
 operator|->
 name|set_property
