@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275b262f0103
+DECL|enum|__anon27bb8f650103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -72,7 +72,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon275b262f0203
+DECL|enum|__anon27bb8f650203
 block|{
 DECL|enumerator|UNIT_COLUMN
 name|UNIT_COLUMN
@@ -2236,24 +2236,6 @@ name|gimp_unit_menu_selection_response
 argument_list|)
 argument_list|,
 name|menu
-argument_list|)
-expr_stmt|;
-name|g_signal_connect_object
-argument_list|(
-name|menu
-argument_list|,
-literal|"destroy"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gtk_widget_destroy
-argument_list|)
-argument_list|,
-name|menu
-operator|->
-name|selection
-argument_list|,
-name|G_CONNECT_SWAPPED
 argument_list|)
 expr_stmt|;
 name|g_signal_connect_object
