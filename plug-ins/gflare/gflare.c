@@ -475,7 +475,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a401e00103
+DECL|enum|__anon298353cd0103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -502,7 +502,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a401e00203
+DECL|enum|__anon298353cd0203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -523,7 +523,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a401e00308
+DECL|struct|__anon298353cd0308
 block|{
 DECL|member|name
 name|gchar
@@ -660,7 +660,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a401e00408
+DECL|struct|__anon298353cd0408
 block|{
 DECL|member|fp
 name|FILE
@@ -680,7 +680,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a401e00503
+DECL|enum|__anon298353cd0503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -708,7 +708,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a401e00608
+DECL|struct|__anon298353cd0608
 block|{
 DECL|member|init
 name|gint
@@ -730,7 +730,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon28a401e00708
+DECL|struct|__anon298353cd0708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -804,7 +804,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a401e00808
+DECL|struct|__anon298353cd0808
 block|{
 DECL|member|init
 name|gint
@@ -874,7 +874,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a401e00908
+DECL|struct|__anon298353cd0908
 block|{
 DECL|member|x0
 name|gdouble
@@ -901,7 +901,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a401e00a08
+DECL|struct|__anon298353cd0a08
 block|{
 DECL|member|init
 name|gint
@@ -1071,7 +1071,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a401e00b08
+DECL|struct|__anon298353cd0b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1098,7 +1098,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a401e00c08
+DECL|struct|__anon298353cd0c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1133,38 +1133,6 @@ comment|/* these values don't belong to drawable, though. */
 DECL|typedef|DrawableInfo
 block|}
 name|DrawableInfo
-typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-struct|struct
-DECL|struct|__anon28a401e00d08
-block|{
-DECL|member|tile
-name|GimpTile
-modifier|*
-name|tile
-decl_stmt|;
-DECL|member|col
-name|gint
-name|col
-decl_stmt|;
-DECL|member|row
-name|gint
-name|row
-decl_stmt|;
-DECL|member|shadow
-name|gint
-name|shadow
-decl_stmt|;
-DECL|member|dirty
-name|gint
-name|dirty
-decl_stmt|;
-DECL|typedef|TileKeeper
-block|}
-name|TileKeeper
 typedef|;
 end_typedef
 
@@ -1365,7 +1333,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a401e00e08
+DECL|struct|__anon298353cd0d08
 block|{
 DECL|member|tag
 name|gint
@@ -1442,7 +1410,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a401e00f08
+DECL|struct|__anon298353cd0e08
 block|{
 DECL|member|xcenter
 name|gint
@@ -1500,7 +1468,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a401e01008
+DECL|struct|__anon298353cd0f08
 block|{
 DECL|member|run
 name|gint
@@ -8648,7 +8616,7 @@ DECL|function|calc_sample_one_gradient ()
 name|calc_sample_one_gradient
 parameter_list|()
 block|{
-DECL|struct|__anon28a401e01108
+DECL|struct|__anon298353cd1008
 specifier|static
 struct|struct
 block|{
@@ -14627,7 +14595,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon28a401e01208
+DECL|struct|__anon298353cd1108
 block|{
 DECL|member|label
 specifier|const
@@ -17222,7 +17190,7 @@ argument_list|)
 argument_list|,
 name|vbox
 argument_list|,
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
@@ -17854,7 +17822,7 @@ argument_list|)
 argument_list|,
 name|vbox
 argument_list|,
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
@@ -18651,7 +18619,7 @@ argument_list|)
 argument_list|,
 name|vbox
 argument_list|,
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
@@ -19841,7 +19809,7 @@ argument_list|)
 argument_list|,
 name|vbox
 argument_list|,
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
