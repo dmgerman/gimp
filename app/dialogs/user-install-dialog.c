@@ -71,16 +71,6 @@ end_ifdef
 begin_include
 include|#
 directive|include
-file|<direct.h>
-end_include
-
-begin_comment
-comment|/* _mkdir() */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|<libgimpbase/gimpwin32-io.h>
 end_include
 
@@ -149,36 +139,6 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|G_OS_WIN32
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<io.h>
-end_include
-
-begin_define
-DECL|macro|mkdir (path,mode)
-define|#
-directive|define
-name|mkdir
-parameter_list|(
-name|path
-parameter_list|,
-name|mode
-parameter_list|)
-value|_mkdir(path)
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_define
 DECL|macro|PAGE_STYLE (widget)
 define|#
@@ -203,7 +163,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c87e6830103
+DECL|enum|__anon2c75281e0103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -228,7 +188,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c87e6830203
+DECL|enum|__anon2c75281e0203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -440,7 +400,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c87e6830303
+DECL|enum|__anon2c75281e0303
 block|{
 DECL|enumerator|TREE_ITEM_DO_NOTHING
 name|TREE_ITEM_DO_NOTHING
@@ -462,7 +422,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c87e6830408
+DECL|struct|__anon2c75281e0408
 block|{
 DECL|member|directory
 name|gboolean

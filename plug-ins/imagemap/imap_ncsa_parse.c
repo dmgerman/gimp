@@ -180,6 +180,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib/gstdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -270,7 +276,7 @@ name|YYSTYPE
 end_ifndef
 
 begin_typedef
-DECL|union|__anon2af92214010a
+DECL|union|__anon27a163e9010a
 typedef|typedef
 union|union
 block|{
@@ -5721,7 +5727,7 @@ name|ncsa_in
 decl_stmt|;
 name|ncsa_in
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,

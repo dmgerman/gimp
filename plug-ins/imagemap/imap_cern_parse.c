@@ -172,6 +172,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib/gstdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -262,7 +268,7 @@ name|YYSTYPE
 end_ifndef
 
 begin_typedef
-DECL|union|__anon2c5e4558010a
+DECL|union|__anon28942ebc010a
 typedef|typedef
 union|union
 block|{
@@ -5632,7 +5638,7 @@ name|cern_in
 decl_stmt|;
 name|cern_in
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,

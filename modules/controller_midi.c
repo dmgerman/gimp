@@ -45,6 +45,12 @@ directive|include
 file|<time.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -108,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290adb890108
+DECL|struct|__anon291147d10108
 block|{
 DECL|member|name
 name|gchar
@@ -128,7 +134,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon290adb890203
+DECL|enum|__anon291147d10203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1969,20 +1975,22 @@ directive|ifdef
 name|G_OS_WIN32
 name|fd
 operator|=
-name|open
+name|g_open
 argument_list|(
 name|midi
 operator|->
 name|device
 argument_list|,
 name|O_RDONLY
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 else|#
 directive|else
 name|fd
 operator|=
-name|open
+name|g_open
 argument_list|(
 name|midi
 operator|->
@@ -1991,6 +1999,8 @@ argument_list|,
 name|O_RDONLY
 operator||
 name|O_NONBLOCK
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 endif|#

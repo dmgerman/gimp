@@ -306,6 +306,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib/gstdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -374,7 +380,7 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon28bd730f0103
+DECL|enum|__anon276c9b6d0103
 DECL|enumerator|UNDEFINED
 DECL|enumerator|RECTANGLE
 DECL|enumerator|CIRCLE
@@ -427,7 +433,7 @@ name|YYSTYPE
 end_ifndef
 
 begin_typedef
-DECL|union|__anon28bd730f020a
+DECL|union|__anon276c9b6d020a
 typedef|typedef
 union|union
 block|{
@@ -7382,7 +7388,7 @@ name|csim_in
 decl_stmt|;
 name|csim_in
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,

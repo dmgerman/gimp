@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib/gstdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -112,7 +118,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac5c9cc0103
+DECL|enum|__anon2b97e9f20103
 block|{
 DECL|enumerator|BUTTON_INDEX
 name|BUTTON_INDEX
@@ -128,7 +134,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac5c9cc0203
+DECL|enum|__anon2b97e9f20203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -2300,11 +2306,13 @@ name|fd
 decl_stmt|;
 name|fd
 operator|=
-name|open
+name|g_open
 argument_list|(
 name|filename
 argument_list|,
 name|O_RDONLY
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 if|if

@@ -53,13 +53,13 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<glib/gstdio.h>
+file|<glib.h>
 end_include
 
 begin_ifdef
@@ -1841,7 +1841,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon28c18b240108
+DECL|struct|__anon27fa4a570108
 block|{
 DECL|member|modifiers
 name|GdkModifierType
@@ -3187,7 +3187,7 @@ argument_list|)
 expr_stmt|;
 name|fd
 operator|=
-name|open
+name|g_open
 argument_list|(
 name|filename
 argument_list|,
@@ -3200,6 +3200,8 @@ argument_list|,
 name|S_IRUSR
 operator||
 name|S_IWUSR
+argument_list|,
+literal|0600
 argument_list|)
 expr_stmt|;
 if|if

@@ -229,7 +229,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac6fc1c0103
+DECL|enum|__anon2b60c0830103
 block|{
 DECL|enumerator|ENCAPSULATION_UUENCODE
 name|ENCAPSULATION_UUENCODE
@@ -267,7 +267,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac6fc1c0208
+DECL|struct|__anon2b60c0830208
 block|{
 DECL|member|receipt
 name|gchar
@@ -2431,7 +2431,7 @@ name|buf
 decl_stmt|;
 name|stat_res
 operator|=
-name|stat
+name|g_stat
 argument_list|(
 name|filename
 argument_list|,

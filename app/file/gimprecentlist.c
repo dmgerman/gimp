@@ -71,6 +71,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib/gstdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib-object.h>
 end_include
 
@@ -147,7 +153,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9483930108
+DECL|struct|__anon2b4a7b1b0108
 block|{
 DECL|member|states
 name|GSList
@@ -173,7 +179,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9483930203
+DECL|enum|__anon2b4a7b1b0203
 block|{
 DECL|enumerator|STATE_START
 name|STATE_START
@@ -1980,11 +1986,13 @@ argument_list|)
 expr_stmt|;
 name|fd
 operator|=
-name|open
+name|g_open
 argument_list|(
 name|filename
 argument_list|,
 name|O_RDWR
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 if|if

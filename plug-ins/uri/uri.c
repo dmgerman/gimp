@@ -51,6 +51,12 @@ end_endif
 begin_include
 include|#
 directive|include
+file|<glib/gstdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -866,7 +872,7 @@ name|error
 argument_list|)
 expr_stmt|;
 block|}
-name|unlink
+name|g_unlink
 argument_list|(
 name|tmpname
 argument_list|)
@@ -946,7 +952,7 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|unlink
+name|g_unlink
 argument_list|(
 name|tmpname
 argument_list|)
@@ -991,7 +997,7 @@ operator|&
 name|error
 argument_list|)
 expr_stmt|;
-name|unlink
+name|g_unlink
 argument_list|(
 name|tmpname
 argument_list|)
@@ -1005,7 +1011,7 @@ return|return
 name|GIMP_PDB_EXECUTION_ERROR
 return|;
 block|}
-name|unlink
+name|g_unlink
 argument_list|(
 name|tmpname
 argument_list|)
@@ -1150,7 +1156,7 @@ name|stat
 name|buf
 decl_stmt|;
 return|return
-name|stat
+name|g_stat
 argument_list|(
 name|filename
 argument_list|,

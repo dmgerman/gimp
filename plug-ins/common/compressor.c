@@ -2386,7 +2386,7 @@ name|stat
 name|buf
 decl_stmt|;
 return|return
-name|stat
+name|g_stat
 argument_list|(
 name|filename
 argument_list|,

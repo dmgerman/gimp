@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib/gstdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -91,7 +97,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2029a90108
+DECL|struct|__anon2c5128820108
 block|{
 DECL|member|code
 name|guint16
@@ -431,7 +437,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2029a90203
+DECL|enum|__anon2c5128820203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1475,13 +1481,15 @@ name|fd
 decl_stmt|;
 name|fd
 operator|=
-name|open
+name|g_open
 argument_list|(
 name|controller
 operator|->
 name|device
 argument_list|,
 name|O_RDONLY
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 if|if
