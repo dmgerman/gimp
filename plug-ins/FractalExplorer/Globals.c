@@ -691,7 +691,11 @@ block|,
 literal|1
 block|,
 literal|0
-block|, }
+block|,
+literal|256
+block|,
+literal|0
+block|}
 decl_stmt|;
 end_decl_stmt
 
@@ -748,7 +752,11 @@ block|,
 literal|1
 block|,
 literal|0
-block|, }
+block|,
+literal|256
+block|,
+literal|0
+block|}
 decl_stmt|;
 end_decl_stmt
 

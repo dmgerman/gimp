@@ -11,10 +11,10 @@ name|char
 modifier|*
 name|msg
 index|[
-literal|4
+name|NLANGUAGES
 index|]
 index|[
-literal|104
+name|NMESSAGES
 index|]
 init|=
 block|{
@@ -230,6 +230,14 @@ block|,
 literal|"Save settings"
 block|,
 literal|"This saves the currently selected language to the configuration file"
+block|,
+literal|"Number of colors"
+block|,
+literal|"Change the number of colors in the mapping"
+block|,
+literal|"Use loglog smoothing"
+block|,
+literal|"Use log log smoothing to eliminate \"banding\" in the result"
 block|, }
 block|,
 comment|/* Messages en français */
@@ -444,7 +452,20 @@ block|,
 literal|"Enregistrer langue"
 block|,
 literal|"Ceci enregistre la langue actuelle dans le fichier de configuration."
-block|, }
+block|,
+literal|"Number of colors"
+block|,
+comment|/* FIXME!! */
+literal|"Change the number of colors in the mapping"
+block|,
+comment|/* FIXME!! */
+literal|"Use loglog smoothing"
+block|,
+comment|/* FIXME!! */
+literal|"Use log log smoothing to eliminate \"banding\" in the result"
+block|,
+comment|/* FIXME!! */
+block|}
 block|,
 comment|/* Deutsche Mitteilungen */
 block|{
@@ -657,7 +678,20 @@ block|,
 literal|"Sprache abspeichern"
 block|,
 literal|"Klicken Sie hier, um die gewaehlte Sprache als Standard zu definieren und in die Konfigurationsdatei abzuspeichern."
-block|, }
+block|,
+literal|"Number of colors"
+block|,
+comment|/* FIXME!! */
+literal|"Change the number of colors in the mapping"
+block|,
+comment|/* FIXME!! */
+literal|"Use loglog smoothing"
+block|,
+comment|/* FIXME!! */
+literal|"Use log log smoothing to eliminate \"banding\" in the result"
+block|,
+comment|/* FIXME!! */
+block|}
 block|,
 comment|/* Schwedische Mitteilungen     ========================    Hier koenntest Du die schwedischen Texte einfuegen, d.h. die deutschen ueberschreiben. */
 block|{
@@ -870,7 +904,20 @@ block|,
 literal|"Sprache abspeichern"
 block|,
 literal|"Klicken Sie hier, um die gewaehlte Sprache als Standard zu definieren und in die Konfigurationsdatei abzuspeichern."
-block|, }
+block|,
+literal|"Number of colors"
+block|,
+comment|/* FIXME!! */
+literal|"Change the number of colors in the mapping"
+block|,
+comment|/* FIXME!! */
+literal|"Use loglog smoothing"
+block|,
+comment|/* FIXME!! */
+literal|"Use log log smoothing to eliminate \"banding\" in the result"
+block|,
+comment|/* FIXME!! */
+block|}
 block|,  }
 decl_stmt|;
 end_decl_stmt

@@ -82,7 +82,7 @@ parameter_list|,
 name|int
 name|row
 parameter_list|,
-name|gdouble
+name|int
 modifier|*
 name|value
 parameter_list|,

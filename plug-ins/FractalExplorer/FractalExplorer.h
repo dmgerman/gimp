@@ -81,11 +81,11 @@ value|325
 end_define
 
 begin_define
-DECL|macro|NCOLORS
+DECL|macro|MAXNCOLORS
 define|#
 directive|define
-name|NCOLORS
-value|256
+name|MAXNCOLORS
+value|8192
 end_define
 
 begin_define
@@ -141,7 +141,7 @@ comment|/********************************************************************** 
 end_comment
 
 begin_typedef
-DECL|struct|__anon2979e1310108
+DECL|struct|__anon297f3a4c0108
 typedef|typedef
 struct|struct
 block|{
@@ -225,6 +225,14 @@ DECL|member|language
 name|gint
 name|language
 decl_stmt|;
+DECL|member|ncolors
+name|gint
+name|ncolors
+decl_stmt|;
+DECL|member|useloglog
+name|gint
+name|useloglog
+decl_stmt|;
 DECL|typedef|explorer_vals_t
 block|}
 name|explorer_vals_t
@@ -232,7 +240,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2979e1310208
+DECL|struct|__anon297f3a4c0208
 typedef|typedef
 struct|struct
 block|{
@@ -273,13 +281,13 @@ typedef|typedef
 name|colorvalue
 name|clrmap
 index|[
-name|NCOLORS
+name|MAXNCOLORS
 index|]
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2979e1310308
+DECL|struct|__anon297f3a4c0308
 typedef|typedef
 struct|struct
 block|{
@@ -398,6 +406,10 @@ DECL|member|blue
 name|scaledata
 name|blue
 decl_stmt|;
+DECL|member|ncol
+name|scaledata
+name|ncol
+decl_stmt|;
 DECL|member|redmodecos
 name|GtkWidget
 modifier|*
@@ -467,6 +479,16 @@ DECL|member|colormode1
 name|GtkWidget
 modifier|*
 name|colormode1
+decl_stmt|;
+DECL|member|ncolors
+name|GtkWidget
+modifier|*
+name|ncolors
+decl_stmt|;
+DECL|member|useloglog
+name|GtkWidget
+modifier|*
+name|useloglog
 decl_stmt|;
 block|}
 struct|;
