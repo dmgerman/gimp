@@ -124,6 +124,10 @@ DECL|member|repeat
 name|GimpRepeatMode
 name|repeat
 decl_stmt|;
+DECL|member|dither
+name|gboolean
+name|dither
+decl_stmt|;
 DECL|member|supersample
 name|gboolean
 name|supersample

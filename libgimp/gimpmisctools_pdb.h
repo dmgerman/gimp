@@ -56,6 +56,9 @@ parameter_list|,
 name|gdouble
 name|threshold
 parameter_list|,
+name|gboolean
+name|dither
+parameter_list|,
 name|gdouble
 name|x1
 parameter_list|,

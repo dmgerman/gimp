@@ -908,6 +908,10 @@ name|options
 operator|->
 name|supersample_threshold
 argument_list|,
+name|options
+operator|->
+name|dither
+argument_list|,
 name|blend_tool
 operator|->
 name|startx

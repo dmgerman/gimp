@@ -51,6 +51,9 @@ parameter_list|,
 name|gdouble
 name|threshold
 parameter_list|,
+name|gboolean
+name|dither
+parameter_list|,
 name|gdouble
 name|startx
 parameter_list|,
