@@ -391,7 +391,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon29ea4f900108
+DECL|struct|__anon275c640e0108
 typedef|typedef
 struct|struct
 block|{
@@ -460,7 +460,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29ea4f900208
+DECL|struct|__anon275c640e0208
 typedef|typedef
 struct|struct
 block|{
@@ -578,7 +578,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29ea4f900308
+DECL|struct|__anon275c640e0308
 typedef|typedef
 struct|struct
 block|{
@@ -607,7 +607,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29ea4f900408
+DECL|struct|__anon275c640e0408
 typedef|typedef
 struct|struct
 block|{
@@ -634,7 +634,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29ea4f900508
+DECL|struct|__anon275c640e0508
 typedef|typedef
 struct|struct
 block|{
@@ -6654,20 +6654,6 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|GTK_STOCK_CLOSE
-argument_list|,
-name|gtk_widget_destroy
-argument_list|,
-name|NULL
-argument_list|,
-literal|1
-argument_list|,
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
 name|GIMP_STOCK_RESET
 argument_list|,
 name|p_smp_reset_callback
@@ -6698,6 +6684,20 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
+argument_list|,
+name|GTK_STOCK_CLOSE
+argument_list|,
+name|gtk_widget_destroy
+argument_list|,
+name|NULL
+argument_list|,
+literal|1
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
 argument_list|,
 name|_
 argument_list|(
