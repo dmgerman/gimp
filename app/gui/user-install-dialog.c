@@ -68,6 +68,27 @@ directive|include
 file|<gtk/gtk.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<direct.h>
+end_include
+
+begin_comment
+comment|/* _mkdir() */
+end_comment
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include
@@ -182,7 +203,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f05be00103
+DECL|enum|__anon2ad62ae10103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -210,7 +231,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f05be00203
+DECL|enum|__anon2ad62ae10203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -455,7 +476,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27f05be00303
+DECL|enum|__anon2ad62ae10303
 block|{
 DECL|enumerator|TREE_ITEM_DONT
 name|TREE_ITEM_DONT
@@ -481,7 +502,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27f05be00408
+DECL|struct|__anon2ad62ae10408
 block|{
 DECL|member|directory
 name|gboolean

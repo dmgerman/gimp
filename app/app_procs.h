@@ -22,11 +22,38 @@ directive|ifndef
 name|GIMP_APP_GLUE_COMPILATION
 end_ifndef
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
 begin_warning
 warning|#
 directive|warning
 warning|FIXME: Dont #include "app_procs.h"
 end_warning
+
+begin_elif
+elif|#
+directive|elif
+name|defined
+name|_MSC_VER
+end_elif
+
+begin_pragma
+pragma|#
+directive|pragma
+name|message
+name|(
+literal|"FIXME: Dont #include 'app_procs.h'"
+name|)
+end_pragma
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_endif
 endif|#

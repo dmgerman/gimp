@@ -204,6 +204,17 @@ operator|!
 name|fn
 condition|)
 block|{
+if|#
+directive|if
+name|defined
+argument_list|(
+name|LT_RELEASE
+argument_list|)
+operator|&&
+name|defined
+argument_list|(
+name|LT_CURRENT_MINUS_AGE
+argument_list|)
 comment|/* First try the libtool style name */
 operator|*
 name|hMod
@@ -217,6 +228,8 @@ name|LT_CURRENT_MINUS_AGE
 literal|".dll"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 comment|/* If that didn't work, try the name style used by Hans Breuer */
 if|if
 condition|(
