@@ -132,7 +132,7 @@ comment|/* Fileheader of SunRaster files */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2be3944a0108
+DECL|struct|__anon27964c680108
 typedef|typedef
 struct|struct
 block|{
@@ -221,7 +221,7 @@ comment|/* Runlength compression format */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2be3944a0208
+DECL|struct|__anon27964c680208
 typedef|typedef
 struct|struct
 block|{
@@ -809,6 +809,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|show_message
+parameter_list|(
+name|char
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/* Portability kludge */
 end_comment
@@ -864,7 +875,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be3944a0308
+DECL|struct|__anon27964c680308
 block|{
 DECL|member|rle
 name|gint
@@ -880,7 +891,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be3944a0408
+DECL|struct|__anon27964c680408
 block|{
 DECL|member|run
 name|gint
@@ -1657,7 +1668,7 @@ operator|!
 name|ifp
 condition|)
 block|{
-name|gimp_message
+name|show_message
 argument_list|(
 literal|"can't open file for reading"
 argument_list|)
@@ -1691,7 +1702,7 @@ operator|!=
 name|RAS_MAGIC
 condition|)
 block|{
-name|gimp_message
+name|show_message
 argument_list|(
 literal|"can't open file as SUN-raster-file"
 argument_list|)
@@ -1727,7 +1738,7 @@ literal|5
 operator|)
 condition|)
 block|{
-name|gimp_message
+name|show_message
 argument_list|(
 literal|"the type of this SUN-rasterfile\nis not supported"
 argument_list|)
@@ -1785,7 +1796,7 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|gimp_message
+name|show_message
 argument_list|(
 literal|"cant get memory for colour map"
 argument_list|)
@@ -1889,7 +1900,7 @@ operator|!=
 name|RAS_MAGIC
 condition|)
 block|{
-name|gimp_message
+name|show_message
 argument_list|(
 literal|"cant read colour entries"
 argument_list|)
@@ -1917,7 +1928,7 @@ operator|>
 literal|0
 condition|)
 block|{
-name|gimp_message
+name|show_message
 argument_list|(
 literal|"type of colourmap not supported"
 argument_list|)
@@ -2106,7 +2117,7 @@ operator|-
 literal|1
 condition|)
 block|{
-name|gimp_message
+name|show_message
 argument_list|(
 literal|"this image depth is not supported"
 argument_list|)
@@ -2173,7 +2184,7 @@ name|drawable_ID
 argument_list|)
 condition|)
 block|{
-name|gimp_message
+name|show_message
 argument_list|(
 literal|"SUNRAS save cannot handle images with alpha channels"
 argument_list|)
@@ -2198,7 +2209,7 @@ name|RGB_IMAGE
 case|:
 break|break;
 default|default:
-name|gimp_message
+name|show_message
 argument_list|(
 literal|"cannot operate on unknown image types"
 argument_list|)
@@ -2226,7 +2237,7 @@ operator|!
 name|ofp
 condition|)
 block|{
-name|gimp_message
+name|show_message
 argument_list|(
 literal|"cant open file for writing"
 argument_list|)
@@ -4966,7 +4977,7 @@ if|if
 condition|(
 name|err
 condition|)
-name|gimp_message
+name|show_message
 argument_list|(
 literal|"EOF encountered on reading"
 argument_list|)
@@ -5440,7 +5451,7 @@ if|if
 condition|(
 name|err
 condition|)
-name|gimp_message
+name|show_message
 argument_list|(
 literal|"EOF encountered on reading"
 argument_list|)
@@ -5877,7 +5888,7 @@ if|if
 condition|(
 name|err
 condition|)
-name|gimp_message
+name|show_message
 argument_list|(
 literal|"EOF encountered on reading"
 argument_list|)
@@ -6359,7 +6370,7 @@ if|if
 condition|(
 name|err
 condition|)
-name|gimp_message
+name|show_message
 argument_list|(
 literal|"EOF encountered on reading"
 argument_list|)
@@ -7248,7 +7259,7 @@ name|ofp
 argument_list|)
 condition|)
 block|{
-name|gimp_message
+name|show_message
 argument_list|(
 literal|"write error occured"
 argument_list|)
@@ -7848,7 +7859,7 @@ name|ofp
 argument_list|)
 condition|)
 block|{
-name|gimp_message
+name|show_message
 argument_list|(
 literal|"write error occured"
 argument_list|)
@@ -8511,6 +8522,45 @@ operator|*
 name|toggle_val
 operator|=
 name|FALSE
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/* Show a message. Where to show it, depends on the runmode */
+end_comment
+
+begin_function
+specifier|static
+name|void
+DECL|function|show_message (char * message)
+name|show_message
+parameter_list|(
+name|char
+modifier|*
+name|message
+parameter_list|)
+block|{
+if|if
+condition|(
+name|l_run_mode
+operator|==
+name|RUN_INTERACTIVE
+condition|)
+name|gimp_message
+argument_list|(
+name|message
+argument_list|)
+expr_stmt|;
+else|else
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+literal|"sunras: %s\n"
+argument_list|,
+name|message
+argument_list|)
 expr_stmt|;
 block|}
 end_function

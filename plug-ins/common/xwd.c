@@ -115,7 +115,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b20c1650108
+DECL|struct|__anon29e8593b0108
 typedef|typedef
 struct|struct
 block|{
@@ -249,7 +249,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b20c1650208
+DECL|struct|__anon29e8593b0208
 typedef|typedef
 struct|struct
 block|{
@@ -307,7 +307,7 @@ value|((1<< MAPPERBITS)-1)
 end_define
 
 begin_typedef
-DECL|struct|__anon2b20c1650308
+DECL|struct|__anon29e8593b0308
 typedef|typedef
 struct|struct
 block|{
@@ -333,7 +333,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b20c1650408
+DECL|struct|__anon29e8593b0408
 typedef|typedef
 struct|struct
 block|{
@@ -849,6 +849,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|show_message
+parameter_list|(
+name|char
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_decl_stmt
 DECL|variable|read_msb_first
 specifier|static
@@ -1111,7 +1122,7 @@ literal|"1996"
 argument_list|,
 literal|"<Save>/XWD"
 argument_list|,
-literal|"RGB*, GRAY*, INDEXED*"
+literal|"RGB, GRAY, INDEXED"
 argument_list|,
 name|PROC_PLUG_IN
 argument_list|,
@@ -1396,8 +1407,6 @@ operator||
 name|CAN_HANDLE_GRAY
 operator||
 name|CAN_HANDLE_INDEXED
-operator||
-name|CAN_HANDLE_ALPHA
 operator|)
 argument_list|)
 expr_stmt|;
@@ -1629,7 +1638,7 @@ operator|!
 name|ifp
 condition|)
 block|{
-name|gimp_message
+name|show_message
 argument_list|(
 name|_
 argument_list|(
@@ -1697,7 +1706,7 @@ operator|!=
 literal|7
 condition|)
 block|{
-name|gimp_message
+name|show_message
 argument_list|(
 name|_
 argument_list|(
@@ -1767,7 +1776,7 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|gimp_message
+name|show_message
 argument_list|(
 name|_
 argument_list|(
@@ -1893,7 +1902,7 @@ operator|!=
 literal|7
 condition|)
 block|{
-name|gimp_message
+name|show_message
 argument_list|(
 name|_
 argument_list|(
@@ -2237,7 +2246,7 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|gimp_message
+name|show_message
 argument_list|(
 name|_
 argument_list|(
@@ -2271,7 +2280,7 @@ argument_list|,
 name|bpp
 argument_list|)
 expr_stmt|;
-name|gimp_message
+name|show_message
 argument_list|(
 name|temp
 argument_list|)
@@ -2344,7 +2353,7 @@ name|drawable_ID
 argument_list|)
 condition|)
 block|{
-name|gimp_message
+name|show_message
 argument_list|(
 name|_
 argument_list|(
@@ -2372,7 +2381,7 @@ name|RGB_IMAGE
 case|:
 break|break;
 default|default:
-name|gimp_message
+name|show_message
 argument_list|(
 name|_
 argument_list|(
@@ -2403,7 +2412,7 @@ operator|!
 name|ofp
 condition|)
 block|{
-name|gimp_message
+name|show_message
 argument_list|(
 name|_
 argument_list|(
@@ -6333,7 +6342,7 @@ if|if
 condition|(
 name|err
 condition|)
-name|gimp_message
+name|show_message
 argument_list|(
 name|_
 argument_list|(
@@ -6833,7 +6842,7 @@ if|if
 condition|(
 name|err
 condition|)
-name|gimp_message
+name|show_message
 argument_list|(
 name|_
 argument_list|(
@@ -7072,7 +7081,7 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|gimp_message
+name|show_message
 argument_list|(
 name|_
 argument_list|(
@@ -7770,7 +7779,7 @@ if|if
 condition|(
 name|err
 condition|)
-name|gimp_message
+name|show_message
 argument_list|(
 name|_
 argument_list|(
@@ -8965,7 +8974,7 @@ if|if
 condition|(
 name|err
 condition|)
-name|gimp_message
+name|show_message
 argument_list|(
 name|_
 argument_list|(
@@ -10377,7 +10386,7 @@ if|if
 condition|(
 name|err
 condition|)
-name|gimp_message
+name|show_message
 argument_list|(
 name|_
 argument_list|(
@@ -11125,7 +11134,7 @@ name|ofp
 argument_list|)
 condition|)
 block|{
-name|gimp_message
+name|show_message
 argument_list|(
 name|_
 argument_list|(
@@ -11623,7 +11632,7 @@ name|ofp
 argument_list|)
 condition|)
 block|{
-name|gimp_message
+name|show_message
 argument_list|(
 name|_
 argument_list|(
@@ -11642,6 +11651,45 @@ operator|(
 name|TRUE
 operator|)
 return|;
+block|}
+end_function
+
+begin_comment
+comment|/* Show a message. Where to show it, depends on the runmode */
+end_comment
+
+begin_function
+specifier|static
+name|void
+DECL|function|show_message (char * message)
+name|show_message
+parameter_list|(
+name|char
+modifier|*
+name|message
+parameter_list|)
+block|{
+if|if
+condition|(
+name|l_run_mode
+operator|==
+name|RUN_INTERACTIVE
+condition|)
+name|gimp_message
+argument_list|(
+name|message
+argument_list|)
+expr_stmt|;
+else|else
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+literal|"sunras: %s\n"
+argument_list|,
+name|message
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
