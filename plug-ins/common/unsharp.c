@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* $Id$  *  * unsharp.c 0.10 -- This is a plug-in for the GIMP 1.0  *  http://www.steppe.com/~winston/gimp/unsharp.html  *  * Copyright (C) 1999 Winston Chang  *<wchang3@students.wisc.edu>  *<winston@steppe.com>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* $Id$  *  * unsharp.c 0.10 -- This is a plug-in for the GIMP 1.0  *  http://www.steppe.com/~winston/gimp/unsharp.html  *  * Copyright (C) 1999 Winston Chang  *<wchang3@students.wisc.edu>  *<winston@stdout.com>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -141,7 +141,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0340bb0108
+DECL|struct|__anon27acd54d0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -164,7 +164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0340bb0208
+DECL|struct|__anon27acd54d0208
 block|{
 DECL|member|run
 name|gint
@@ -729,7 +729,7 @@ literal|"plug_in_unsharp_mask"
 argument_list|,
 literal|"An unsharp mask filter"
 argument_list|,
-literal|""
+literal|"The unsharp mask is a sharpening filter that \ works by comparing using the difference of the image and a blurred version \ of the image.  It is commonly used on photographic images, and is provides \ a much more pleasing result than the standard sharpen filter."
 argument_list|,
 literal|"Winston Chang<wchang3@students.wisc.edu>"
 argument_list|,
@@ -1160,27 +1160,6 @@ name|_
 argument_list|(
 literal|"Blurring..."
 argument_list|)
-argument_list|)
-expr_stmt|;
-comment|/* generate convolution matrix */
-name|cmatrix_length
-operator|=
-name|gen_convolve_matrix
-argument_list|(
-name|radius
-argument_list|,
-operator|&
-name|cmatrix
-argument_list|)
-expr_stmt|;
-comment|/* generate lookup table */
-name|ctable
-operator|=
-name|gen_lookup_table
-argument_list|(
-name|cmatrix
-argument_list|,
-name|cmatrix_length
 argument_list|)
 expr_stmt|;
 name|width
@@ -2043,6 +2022,16 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|dest_col
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|cmatrix
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|ctable
 argument_list|)
 expr_stmt|;
 block|}
@@ -3317,7 +3306,7 @@ name|gdouble
 operator|*
 operator|)
 operator|(
-name|malloc
+name|g_malloc
 argument_list|(
 name|matrix_length
 operator|*
@@ -3617,7 +3606,7 @@ name|gdouble
 modifier|*
 name|lookup_table
 init|=
-name|malloc
+name|g_malloc
 argument_list|(
 name|cmatrix_length
 operator|*
