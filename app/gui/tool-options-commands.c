@@ -411,7 +411,7 @@ name|gimp_query_string_box
 argument_list|(
 name|_
 argument_list|(
-literal|"Rename Save Tool Options"
+literal|"Rename Saved Tool Options"
 argument_list|)
 argument_list|,
 name|gimp_standard_help_func
