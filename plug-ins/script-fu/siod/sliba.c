@@ -1012,8 +1012,6 @@ block|}
 if|if
 condition|(
 name|i
-operator|%
-name|TKBUFFERN
 condition|)
 name|gput_st
 argument_list|(
