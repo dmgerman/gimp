@@ -1848,7 +1848,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 name|yalign
 argument_list|)
@@ -1860,7 +1860,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-name|GTK_JUSTIFY_RIGHT
+name|GTK_JUSTIFY_LEFT
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach

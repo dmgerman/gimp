@@ -711,7 +711,7 @@ name|info_dialog
 argument_list|,
 name|_
 argument_list|(
-literal|"Height:"
+literal|"Current Height:"
 argument_list|)
 argument_list|,
 name|size_vals
@@ -789,7 +789,7 @@ name|info_dialog
 argument_list|,
 name|_
 argument_list|(
-literal|"Y:"
+literal|"Scale Ratio Y:"
 argument_list|)
 argument_list|,
 name|y_ratio_buf

@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b532cf60103
+DECL|enum|__anon27a0d9c30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1631,7 +1631,7 @@ argument_list|(
 literal|"_Font:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -1675,7 +1675,7 @@ argument_list|(
 literal|"_Size:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -1726,7 +1726,7 @@ argument_list|)
 argument_list|,
 name|button
 argument_list|,
-literal|1
+literal|0
 argument_list|,
 literal|3
 argument_list|,
@@ -1780,7 +1780,7 @@ argument_list|)
 argument_list|,
 name|auto_button
 argument_list|,
-literal|1
+literal|0
 argument_list|,
 literal|3
 argument_list|,
@@ -1855,7 +1855,7 @@ argument_list|)
 argument_list|,
 name|button
 argument_list|,
-literal|1
+literal|0
 argument_list|,
 literal|3
 argument_list|,
@@ -1937,7 +1937,7 @@ argument_list|(
 literal|"Color:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -1980,7 +1980,7 @@ argument_list|(
 literal|"Justify:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -2033,7 +2033,7 @@ argument_list|(
 literal|"Indent:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,

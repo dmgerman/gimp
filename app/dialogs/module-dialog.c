@@ -93,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4304d10103
+DECL|enum|__anon2af290e30103
 block|{
 DECL|enumerator|PATH_COLUMN
 name|PATH_COLUMN
@@ -2287,7 +2287,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|)

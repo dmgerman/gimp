@@ -211,7 +211,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a7969a0103
+DECL|enum|__anon2c0ba3cb0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -1626,7 +1626,7 @@ argument_list|(
 literal|"Color Index:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -1702,7 +1702,7 @@ argument_list|(
 literal|"He_x Triplet:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,

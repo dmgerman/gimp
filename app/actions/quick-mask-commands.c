@@ -755,7 +755,7 @@ argument_list|(
 literal|"Mask Opacity:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|1.0
 argument_list|,

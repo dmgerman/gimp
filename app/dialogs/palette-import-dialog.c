@@ -140,7 +140,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b02be4a0103
+DECL|enum|__anon2b5e38820103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -1125,7 +1125,7 @@ literal|0
 argument_list|,
 name|NULL
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -1171,7 +1171,7 @@ literal|1
 argument_list|,
 name|NULL
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -1216,7 +1216,7 @@ literal|2
 argument_list|,
 name|NULL
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -1448,7 +1448,7 @@ argument_list|(
 literal|"Palette _Name:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,

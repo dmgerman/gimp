@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2911ed230103
+DECL|enum|__anon296890a30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2341,7 +2341,7 @@ argument_list|(
 literal|"Width:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -2393,7 +2393,7 @@ argument_list|(
 literal|"Height:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,

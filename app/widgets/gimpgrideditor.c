@@ -81,7 +81,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d089a70103
+DECL|enum|__anon2a9aec330103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -790,7 +790,7 @@ argument_list|(
 literal|"Line _Style:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -842,7 +842,7 @@ argument_list|(
 literal|"_Foreground Color:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -894,7 +894,7 @@ argument_list|(
 literal|"_Background Color:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,

@@ -1228,7 +1228,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Original Width:"
+literal|"Current Width:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1239,7 +1239,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|)
@@ -1285,7 +1285,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Height:"
+literal|"Current Height:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1296,7 +1296,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|)
@@ -1478,7 +1478,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|)
@@ -1524,7 +1524,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Height:"
+literal|"New Height:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1535,7 +1535,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|)
@@ -1931,7 +1931,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Ratio X:"
+literal|"X Ratio:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1942,7 +1942,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|)
@@ -1988,7 +1988,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Y:"
+literal|"Y Ratio:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1999,7 +1999,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|)
@@ -2665,7 +2665,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_attach_label
@@ -2686,7 +2686,7 @@ literal|1
 argument_list|,
 literal|0
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3220,7 +3220,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|)
@@ -3266,7 +3266,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Height:"
+literal|"New Height:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3277,7 +3277,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|)
@@ -3675,7 +3675,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Resolution X:"
+literal|"X Resolution:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3686,7 +3686,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|)
@@ -3732,7 +3732,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Y:"
+literal|"Y Resolution:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3743,7 +3743,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|)

@@ -506,7 +506,7 @@ argument_list|(
 literal|"Mode:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -614,7 +614,7 @@ argument_list|(
 literal|"Brush:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -685,7 +685,7 @@ argument_list|(
 literal|"Pattern:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -850,7 +850,7 @@ argument_list|(
 literal|"Gradient:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -1800,7 +1800,7 @@ argument_list|(
 literal|"Length:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -2114,7 +2114,7 @@ argument_list|(
 literal|"Length:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -2214,7 +2214,7 @@ argument_list|(
 literal|"Repeat:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,

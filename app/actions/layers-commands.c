@@ -3003,7 +3003,7 @@ argument_list|(
 literal|"Layer _Name:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -3023,7 +3023,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Layer Width:"
+literal|"Width:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3034,7 +3034,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|)
@@ -3089,7 +3089,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|)

@@ -1415,7 +1415,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|)
@@ -2668,7 +2668,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad0899c0108
+DECL|struct|__anon286f1c770108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -3412,7 +3412,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_attach_label
@@ -3428,7 +3428,7 @@ literal|1
 argument_list|,
 literal|0
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|chainbutton

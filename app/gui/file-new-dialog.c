@@ -128,7 +128,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afa87b70108
+DECL|struct|__anon288bdeb20108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -505,7 +505,7 @@ argument_list|(
 literal|"_Template:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,

@@ -3073,7 +3073,7 @@ name|table_row
 argument_list|,
 name|label
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -3156,7 +3156,7 @@ name|table_row
 argument_list|,
 name|label
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -3243,7 +3243,7 @@ name|table_row
 argument_list|,
 name|label
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -3331,7 +3331,7 @@ name|table_row
 argument_list|,
 name|label
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -3404,7 +3404,7 @@ name|table_row
 argument_list|,
 name|label
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -4800,10 +4800,10 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"From _Template:"
+literal|"_Template:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -5951,7 +5951,7 @@ argument_list|(
 literal|"Web Browser to Use:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -6919,7 +6919,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27d895db0108
+DECL|struct|__anon2bbf2ad10108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9360,7 +9360,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27d895db0208
+DECL|struct|__anon2bbf2ad10208
 block|{
 DECL|member|label
 specifier|const
@@ -9499,7 +9499,7 @@ operator|.
 name|label
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -9519,7 +9519,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27d895db0308
+DECL|struct|__anon2bbf2ad10308
 block|{
 DECL|member|tree_label
 specifier|const

@@ -194,7 +194,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a54a4ea0103
+DECL|enum|__anon28b56b260103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -4675,7 +4675,7 @@ name|crop_info
 argument_list|,
 name|_
 argument_list|(
-literal|"Y:"
+literal|"Origin Y:"
 argument_list|)
 argument_list|,
 name|crop

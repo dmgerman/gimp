@@ -739,7 +739,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_attach_label
@@ -760,7 +760,7 @@ literal|1
 argument_list|,
 literal|0
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b858630103
+DECL|enum|__anon2b78ae200103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -942,7 +942,7 @@ argument_list|(
 literal|"_Cap Style:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -990,7 +990,7 @@ argument_list|(
 literal|"_Join Style:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -1261,7 +1261,7 @@ argument_list|(
 literal|"Dash Pattern:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -1340,7 +1340,7 @@ argument_list|(
 literal|"Dash Preset:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,

@@ -2210,7 +2210,7 @@ argument_list|(
 literal|"Zoom Ratio:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -2405,7 +2405,7 @@ argument_list|(
 literal|"Zoom:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
