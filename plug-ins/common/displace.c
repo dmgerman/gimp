@@ -54,7 +54,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c29b75c0103
+DECL|enum|__anon2bc18d820103
 block|{
 DECL|enumerator|CARTESIAN_MODE
 name|CARTESIAN_MODE
@@ -74,7 +74,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c29b75c0208
+DECL|struct|__anon2bc18d820208
 block|{
 DECL|member|amount_x
 name|gdouble
@@ -834,7 +834,7 @@ if|if
 condition|(
 name|nparams
 operator|==
-literal|10
+literal|11
 condition|)
 name|dvals
 operator|.
