@@ -1450,7 +1450,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_selection_data_set_svg (GtkSelectionData * selection,GdkAtom atom,const gchar * data,gint data_length)
+DECL|function|gimp_selection_data_set_svg (GtkSelectionData * selection,GdkAtom atom,const gchar * svg_data,gint svg_data_length)
 name|gimp_selection_data_set_svg
 parameter_list|(
 name|GtkSelectionData
@@ -1463,10 +1463,10 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|data
+name|svg_data
 parameter_list|,
 name|gint
-name|data_length
+name|svg_data_length
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1485,14 +1485,14 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|data
+name|svg_data
 operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|data_length
+name|svg_data_length
 operator|>
 literal|0
 argument_list|)
@@ -1509,18 +1509,19 @@ operator|(
 name|guchar
 operator|*
 operator|)
-name|data
+name|svg_data
 argument_list|,
-name|data_length
+name|svg_data_length
 argument_list|)
 expr_stmt|;
 block|}
 end_function
 
 begin_function
+specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_selection_data_get_svg (GtkSelectionData * selection,gint * length)
+DECL|function|gimp_selection_data_get_svg (GtkSelectionData * selection,gint * svg_data_length)
 name|gimp_selection_data_get_svg
 parameter_list|(
 name|GtkSelectionData
@@ -1529,7 +1530,7 @@ name|selection
 parameter_list|,
 name|gint
 modifier|*
-name|length
+name|svg_data_length
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -1543,7 +1544,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|length
+name|svg_data_length
 operator|!=
 name|NULL
 argument_list|,
@@ -1579,13 +1580,18 @@ name|NULL
 return|;
 block|}
 operator|*
-name|length
+name|svg_data_length
 operator|=
 name|selection
 operator|->
 name|length
 expr_stmt|;
 return|return
+operator|(
+specifier|const
+name|gchar
+operator|*
+operator|)
 name|selection
 operator|->
 name|data

@@ -106,15 +106,16 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|data
+name|svg_data
 parameter_list|,
 name|gint
-name|data_length
+name|svg_data_length
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
 name|gchar
 modifier|*
 name|gimp_selection_data_get_svg
@@ -125,7 +126,7 @@ name|selection
 parameter_list|,
 name|gint
 modifier|*
-name|length
+name|svg_data_length
 parameter_list|)
 function_decl|;
 end_function_decl

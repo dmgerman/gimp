@@ -1329,6 +1329,7 @@ operator|->
 name|drop_svg
 condition|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|svg_data

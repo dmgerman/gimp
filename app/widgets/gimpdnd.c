@@ -3551,6 +3551,7 @@ modifier|*
 name|selection
 parameter_list|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|svg_data
