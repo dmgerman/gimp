@@ -1006,6 +1006,13 @@ name|font
 operator|=
 name|font
 expr_stmt|;
+name|gdk_font_ref
+argument_list|(
+name|style
+operator|->
+name|font
+argument_list|)
+expr_stmt|;
 name|gtk_widget_push_style
 argument_list|(
 name|style

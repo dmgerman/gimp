@@ -565,33 +565,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|Layer
-modifier|*
-name|text_render
-parameter_list|(
-name|GImage
-modifier|*
-parameter_list|,
-name|GimpDrawable
-modifier|*
-parameter_list|,
-name|gint
-parameter_list|,
-name|gint
-parameter_list|,
-name|gchar
-modifier|*
-parameter_list|,
-name|gchar
-modifier|*
-parameter_list|,
-name|gint
-parameter_list|,
-name|gint
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_comment
+comment|/*  Layer       * text_render (GImage *, GimpDrawable *, */
+end_comment
+
+begin_comment
+comment|/*  			   gint, gint, gchar *, gchar *, gint, gint); */
+end_comment
 
 begin_comment
 comment|/*  functions  */
@@ -2202,14 +2182,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|text_gdk_image_to_region (GdkImage * image,int scale,PixelRegion * textPR)
+DECL|function|text_gdk_image_to_region (GdkImage * image,gint scale,PixelRegion * textPR)
 name|text_gdk_image_to_region
 parameter_list|(
 name|GdkImage
 modifier|*
 name|image
 parameter_list|,
-name|int
+name|gint
 name|scale
 parameter_list|,
 name|PixelRegion
@@ -2438,7 +2418,7 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|text_render (GimpImage * gimage,GimpDrawable * drawable,int text_x,int text_y,char * fontname,char * text,int border,int antialias)
+DECL|function|text_render (GimpImage * gimage,GimpDrawable * drawable,gint text_x,gint text_y,gchar * fontname,gchar * text,gint border,gint antialias)
 name|text_render
 parameter_list|(
 name|GimpImage
@@ -2449,24 +2429,24 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|gint
 name|text_x
 parameter_list|,
-name|int
+name|gint
 name|text_y
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|fontname
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|text
 parameter_list|,
-name|int
+name|gint
 name|border
 parameter_list|,
-name|int
+name|gint
 name|antialias
 parameter_list|)
 block|{
@@ -2523,7 +2503,7 @@ decl_stmt|;
 name|gint
 name|nstrs
 decl_stmt|;
-name|gint
+name|gboolean
 name|crop
 decl_stmt|;
 name|gint
@@ -2566,7 +2546,7 @@ name|xfs
 decl_stmt|;
 endif|#
 directive|endif
-name|char
+name|gchar
 modifier|*
 name|fname
 decl_stmt|;
@@ -2602,7 +2582,7 @@ expr_stmt|;
 else|else
 name|antialias
 operator|=
-name|TRUE
+literal|1
 expr_stmt|;
 comment|/* Dont crop the text if border is negative */
 name|crop
@@ -2749,6 +2729,8 @@ argument_list|,
 name|fontname
 argument_list|,
 name|antialias
+operator|>
+literal|1
 condition|?
 name|_
 argument_list|(
@@ -3510,31 +3492,31 @@ block|}
 end_function
 
 begin_function
-name|int
-DECL|function|text_get_extents (char * fontname,char * text,int * width,int * height,int * ascent,int * descent)
+name|gboolean
+DECL|function|text_get_extents (gchar * fontname,gchar * text,gint * width,gint * height,gint * ascent,gint * descent)
 name|text_get_extents
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|fontname
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|text
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|width
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|height
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|ascent
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|descent
 parameter_list|)

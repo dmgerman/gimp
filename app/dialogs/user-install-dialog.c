@@ -572,17 +572,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|large_font
-specifier|static
-name|GdkFont
-modifier|*
-name|large_font
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|page_style
 specifier|static
 name|GtkStyle
@@ -642,7 +631,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon292258260108
+DECL|struct|__anon2c525d520108
 block|{
 DECL|member|directory
 name|gboolean
@@ -1804,6 +1793,10 @@ name|GtkWidget
 modifier|*
 name|sep
 decl_stmt|;
+name|GdkFont
+modifier|*
+name|large_font
+decl_stmt|;
 name|dialog
 operator|=
 name|install_dialog
@@ -1979,6 +1972,13 @@ index|]
 operator|=
 name|white_color
 expr_stmt|;
+name|gdk_font_unref
+argument_list|(
+name|page_style
+operator|->
+name|font
+argument_list|)
+expr_stmt|;
 name|page_style
 operator|->
 name|font
@@ -1989,7 +1989,13 @@ name|style
 operator|->
 name|font
 expr_stmt|;
-comment|/*gdk_font_ref (page_style->font);*/
+name|gdk_font_ref
+argument_list|(
+name|page_style
+operator|->
+name|font
+argument_list|)
+expr_stmt|;
 comment|/*  B/Colored Style for the page title  */
 name|title_style
 operator|=
@@ -2042,12 +2048,32 @@ literal|"-*-helvetica-bold-r-normal-*-*-240-*-*-*-*-*-*,*"
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|large_font
+condition|)
+block|{
+name|gdk_font_unref
+argument_list|(
+name|title_style
+operator|->
+name|font
+argument_list|)
+expr_stmt|;
 name|title_style
 operator|->
 name|font
 operator|=
 name|large_font
 expr_stmt|;
+name|gdk_font_ref
+argument_list|(
+name|title_style
+operator|->
+name|font
+argument_list|)
+expr_stmt|;
+block|}
 comment|/*  W/W GC for the corner  */
 name|white_gc
 operator|=
