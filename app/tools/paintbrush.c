@@ -974,14 +974,6 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
-block|,
-literal|"image"
-block|,
-literal|"the image"
-block|}
-block|,
-block|{
 name|PDB_DRAWABLE
 block|,
 literal|"drawable"
@@ -1023,14 +1015,6 @@ name|paintbrush_extended_args
 index|[]
 init|=
 block|{
-block|{
-name|PDB_IMAGE
-block|,
-literal|"image"
-block|,
-literal|"the image"
-block|}
-block|,
 block|{
 name|PDB_DRAWABLE
 block|,
@@ -1095,7 +1079,7 @@ block|,
 name|PDB_INTERNAL
 block|,
 comment|/*  Input arguments  */
-literal|5
+literal|4
 block|,
 name|paintbrush_args
 block|,
@@ -1135,7 +1119,7 @@ block|,
 name|PDB_INTERNAL
 block|,
 comment|/*  Input arguments  */
-literal|6
+literal|5
 block|,
 name|paintbrush_extended_args
 block|,
@@ -1203,40 +1187,6 @@ name|num_strokes
 operator|=
 literal|0
 expr_stmt|;
-comment|/*  the gimage  */
-if|if
-condition|(
-name|success
-condition|)
-block|{
-name|int_value
-operator|=
-name|args
-index|[
-literal|0
-index|]
-operator|.
-name|value
-operator|.
-name|pdb_int
-expr_stmt|;
-if|if
-condition|(
-operator|!
-operator|(
-name|gimage
-operator|=
-name|gimage_get_ID
-argument_list|(
-name|int_value
-argument_list|)
-operator|)
-condition|)
-name|success
-operator|=
-name|FALSE
-expr_stmt|;
-block|}
 comment|/*  the drawable  */
 if|if
 condition|(
@@ -1247,7 +1197,7 @@ name|int_value
 operator|=
 name|args
 index|[
-literal|1
+literal|0
 index|]
 operator|.
 name|value
@@ -1266,17 +1216,18 @@ condition|(
 name|drawable
 operator|==
 name|NULL
-operator|||
-name|gimage
-operator|!=
-name|drawable_gimage
-argument_list|(
-name|drawable
-argument_list|)
 condition|)
 name|success
 operator|=
 name|FALSE
+expr_stmt|;
+else|else
+name|gimage
+operator|=
+name|drawable_gimage
+argument_list|(
+name|drawable
+argument_list|)
 expr_stmt|;
 block|}
 comment|/*  fade out  */
@@ -1289,7 +1240,7 @@ name|fp_value
 operator|=
 name|args
 index|[
-literal|2
+literal|1
 index|]
 operator|.
 name|value
@@ -1322,7 +1273,7 @@ name|int_value
 operator|=
 name|args
 index|[
-literal|3
+literal|2
 index|]
 operator|.
 name|value
@@ -1360,7 +1311,7 @@ operator|*
 operator|)
 name|args
 index|[
-literal|4
+literal|3
 index|]
 operator|.
 name|value
@@ -1593,40 +1544,6 @@ name|num_strokes
 operator|=
 literal|0
 expr_stmt|;
-comment|/*  the gimage  */
-if|if
-condition|(
-name|success
-condition|)
-block|{
-name|int_value
-operator|=
-name|args
-index|[
-literal|0
-index|]
-operator|.
-name|value
-operator|.
-name|pdb_int
-expr_stmt|;
-if|if
-condition|(
-operator|!
-operator|(
-name|gimage
-operator|=
-name|gimage_get_ID
-argument_list|(
-name|int_value
-argument_list|)
-operator|)
-condition|)
-name|success
-operator|=
-name|FALSE
-expr_stmt|;
-block|}
 comment|/*  the drawable  */
 if|if
 condition|(
@@ -1637,7 +1554,7 @@ name|int_value
 operator|=
 name|args
 index|[
-literal|1
+literal|0
 index|]
 operator|.
 name|value
@@ -1656,17 +1573,18 @@ condition|(
 name|drawable
 operator|==
 name|NULL
-operator|||
-name|gimage
-operator|!=
-name|drawable_gimage
-argument_list|(
-name|drawable
-argument_list|)
 condition|)
 name|success
 operator|=
 name|FALSE
+expr_stmt|;
+else|else
+name|gimage
+operator|=
+name|drawable_gimage
+argument_list|(
+name|drawable
+argument_list|)
 expr_stmt|;
 block|}
 comment|/*  fade out  */
@@ -1679,7 +1597,7 @@ name|fp_value
 operator|=
 name|args
 index|[
-literal|2
+literal|1
 index|]
 operator|.
 name|value
@@ -1712,7 +1630,7 @@ name|int_value
 operator|=
 name|args
 index|[
-literal|3
+literal|2
 index|]
 operator|.
 name|value
@@ -1750,7 +1668,7 @@ operator|*
 operator|)
 name|args
 index|[
-literal|4
+literal|3
 index|]
 operator|.
 name|value
@@ -1791,7 +1709,7 @@ name|non_gui_incremental
 operator|=
 name|args
 index|[
-literal|5
+literal|4
 index|]
 operator|.
 name|value

@@ -4857,17 +4857,6 @@ index|[]
 init|=
 block|{
 block|{
-name|PDB_IMAGE
-block|,
-literal|"image"
-block|,
-name|N_
-argument_list|(
-literal|"the image"
-argument_list|)
-block|}
-block|,
-block|{
 name|PDB_DRAWABLE
 block|,
 literal|"drawable"
@@ -4963,7 +4952,7 @@ block|,
 name|PDB_INTERNAL
 block|,
 comment|/*  Input arguments  */
-literal|7
+literal|6
 block|,
 name|color_balance_args
 block|,
@@ -5072,40 +5061,6 @@ name|yellow_blue
 operator|=
 literal|0
 expr_stmt|;
-comment|/*  the gimage  */
-if|if
-condition|(
-name|success
-condition|)
-block|{
-name|int_value
-operator|=
-name|args
-index|[
-literal|0
-index|]
-operator|.
-name|value
-operator|.
-name|pdb_int
-expr_stmt|;
-if|if
-condition|(
-operator|!
-operator|(
-name|gimage
-operator|=
-name|gimage_get_ID
-argument_list|(
-name|int_value
-argument_list|)
-operator|)
-condition|)
-name|success
-operator|=
-name|FALSE
-expr_stmt|;
-block|}
 comment|/*  the drawable  */
 if|if
 condition|(
@@ -5116,7 +5071,7 @@ name|int_value
 operator|=
 name|args
 index|[
-literal|1
+literal|0
 index|]
 operator|.
 name|value
@@ -5135,17 +5090,18 @@ condition|(
 name|drawable
 operator|==
 name|NULL
-operator|||
-name|gimage
-operator|!=
-name|drawable_gimage
-argument_list|(
-name|drawable
-argument_list|)
 condition|)
 name|success
 operator|=
 name|FALSE
+expr_stmt|;
+else|else
+name|gimage
+operator|=
+name|drawable_gimage
+argument_list|(
+name|drawable
+argument_list|)
 expr_stmt|;
 block|}
 comment|/*  make sure the drawable is not indexed color  */
@@ -5171,7 +5127,7 @@ name|int_value
 operator|=
 name|args
 index|[
-literal|2
+literal|1
 index|]
 operator|.
 name|value
@@ -5225,7 +5181,7 @@ name|int_value
 operator|=
 name|args
 index|[
-literal|3
+literal|2
 index|]
 operator|.
 name|value
@@ -5253,7 +5209,7 @@ name|fp_value
 operator|=
 name|args
 index|[
-literal|4
+literal|3
 index|]
 operator|.
 name|value
@@ -5291,7 +5247,7 @@ name|fp_value
 operator|=
 name|args
 index|[
-literal|5
+literal|4
 index|]
 operator|.
 name|value
@@ -5329,7 +5285,7 @@ name|fp_value
 operator|=
 name|args
 index|[
-literal|6
+literal|5
 index|]
 operator|.
 name|value
