@@ -20,12 +20,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<signal.h>
 end_include
 
@@ -70,56 +64,6 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
-begin_comment
-comment|/***** Magic numbers *****/
-end_comment
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|M_PI
-end_ifndef
-
-begin_define
-DECL|macro|M_PI
-define|#
-directive|define
-name|M_PI
-value|3.14159265358979323846
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* M_PI */
-end_comment
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|M_PI_2
-end_ifndef
-
-begin_define
-DECL|macro|M_PI_2
-define|#
-directive|define
-name|M_PI_2
-value|1.57079632679489661923
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* M_PI_2 */
-end_comment
-
 begin_define
 DECL|macro|PLUG_IN_NAME
 define|#
@@ -135,6 +79,10 @@ directive|define
 name|PLUG_IN_VERSION
 value|"May 1997, 2.09"
 end_define
+
+begin_comment
+comment|/***** Magic numbers *****/
+end_comment
 
 begin_define
 DECL|macro|PREVIEW_SIZE
@@ -189,7 +137,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c4ccdb70108
+DECL|struct|__anon278bc3640108
 typedef|typedef
 struct|struct
 block|{
@@ -212,7 +160,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c4ccdb70208
+DECL|struct|__anon278bc3640208
 typedef|typedef
 struct|struct
 block|{
@@ -252,7 +200,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c4ccdb70308
+DECL|struct|__anon278bc3640308
 typedef|typedef
 struct|struct
 block|{
@@ -1775,7 +1723,7 @@ name|wpvals
 operator|.
 name|whirl
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|180
 expr_stmt|;
@@ -2640,7 +2588,7 @@ name|pow
 argument_list|(
 name|sin
 argument_list|(
-name|M_PI_2
+name|G_PI_2
 operator|*
 name|dist
 argument_list|)
@@ -4709,7 +4657,7 @@ name|wpvals
 operator|.
 name|whirl
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|180.0
 expr_stmt|;

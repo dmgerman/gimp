@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdk/gdkkeysyms.h"
 end_include
 
@@ -228,6 +222,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pixmaps/new.xpm"
 end_include
 
@@ -322,7 +322,7 @@ value|150
 end_define
 
 begin_typedef
-DECL|struct|__anon2b9bebea0108
+DECL|struct|__anon276149090108
 typedef|typedef
 struct|struct
 block|{
@@ -451,7 +451,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b9bebea0208
+DECL|struct|__anon276149090208
 typedef|typedef
 struct|struct
 block|{
@@ -480,7 +480,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b9bebea0308
+DECL|struct|__anon276149090308
 typedef|typedef
 struct|struct
 block|{
@@ -499,7 +499,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b9bebea0408
+DECL|struct|__anon276149090408
 typedef|typedef
 struct|struct
 block|{

@@ -18,6 +18,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -25,12 +31,6 @@ begin_include
 include|#
 directive|include
 file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<math.h>
 end_include
 
 begin_include
@@ -48,37 +48,8 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|M_PI
-end_ifndef
-
-begin_define
-DECL|macro|M_PI
-define|#
-directive|define
-name|M_PI
-value|3.14159265358979323846
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* M_PI */
-end_comment
 
 begin_define
 DECL|macro|ENTRY_WIDTH
@@ -179,7 +150,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29be1e340108
+DECL|struct|__anon2adf704a0108
 block|{
 DECL|member|refraction
 name|gdouble
@@ -224,7 +195,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29be1e340208
+DECL|struct|__anon2adf704a0208
 block|{
 DECL|member|run
 name|gint
@@ -870,7 +841,7 @@ argument_list|)
 expr_stmt|;
 name|theta1
 operator|=
-name|M_PI
+name|G_PI
 operator|/
 literal|2
 operator|-
@@ -892,7 +863,7 @@ argument_list|)
 expr_stmt|;
 name|theta2
 operator|=
-name|M_PI
+name|G_PI
 operator|/
 literal|2
 operator|-
@@ -950,7 +921,7 @@ argument_list|)
 expr_stmt|;
 name|theta1
 operator|=
-name|M_PI
+name|G_PI
 operator|/
 literal|2
 operator|-
@@ -972,7 +943,7 @@ argument_list|)
 expr_stmt|;
 name|theta2
 operator|=
-name|M_PI
+name|G_PI
 operator|/
 literal|2
 operator|-

@@ -265,6 +265,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|NATIVE_WIN32
+end_ifndef
+
 begin_function_decl
 specifier|static
 name|RETSIGTYPE
@@ -275,6 +281,11 @@ name|signum
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function_decl
 specifier|static
@@ -901,6 +912,10 @@ index|[
 literal|0
 index|]
 expr_stmt|;
+ifndef|#
+directive|ifndef
+name|NATIVE_WIN32
+comment|/* No use catching these on Win32, the user won't get any meaningful    * stack trace from glib anyhow. It's better to let Windows inform    * about the program error, and offer debugging if the plug-in    * has been built with MSVC, and the user has MSVC installed.    */
 ifdef|#
 directive|ifdef
 name|SIGHUP
@@ -985,6 +1000,8 @@ argument_list|,
 name|gimp_signal
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 endif|#
 directive|endif
 ifndef|#
@@ -5007,6 +5024,12 @@ expr_stmt|;
 block|}
 end_function
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|NATIVE_WIN32
+end_ifndef
+
 begin_function
 specifier|static
 name|RETSIGTYPE
@@ -5122,6 +5145,11 @@ argument_list|()
 expr_stmt|;
 block|}
 end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function
 specifier|static

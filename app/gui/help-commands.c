@@ -258,7 +258,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b721560108
+DECL|struct|__anon299bc1b50108
 block|{
 DECL|member|resize
 name|Resize
@@ -605,7 +605,7 @@ parameter_list|)
 block|{
 name|app_exit
 argument_list|(
-literal|0
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

@@ -25,6 +25,12 @@ end_decl_stmt
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -44,12 +50,6 @@ begin_include
 include|#
 directive|include
 file|<ctype.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<math.h>
 end_include
 
 begin_include
@@ -127,7 +127,7 @@ comment|/* to film_height (i.e. it should be a value from 0.0 to 1.0) */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c844b1b0108
+DECL|struct|__anon2bd091e60108
 typedef|typedef
 struct|struct
 block|{
@@ -241,7 +241,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c844b1b0208
+DECL|struct|__anon2bd091e60208
 block|{
 DECL|member|activate
 name|GtkWidget
@@ -283,7 +283,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c844b1b0308
+DECL|struct|__anon2bd091e60308
 block|{
 DECL|member|dialog
 name|GtkWidget

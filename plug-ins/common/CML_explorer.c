@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gtk/gtk.h"
 end_include
 
@@ -19,12 +25,6 @@ begin_include
 include|#
 directive|include
 file|<errno.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<math.h>
 end_include
 
 begin_include
@@ -70,37 +70,8 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|M_PI
-end_ifndef
-
-begin_define
-DECL|macro|M_PI
-define|#
-directive|define
-name|M_PI
-value|3.14159265358979323846
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* M_PI */
-end_comment
 
 begin_ifndef
 ifndef|#
@@ -308,7 +279,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e5f5010108
+DECL|struct|__anon29b6dd0d0108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -336,7 +307,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e5f5010208
+DECL|struct|__anon29b6dd0d0208
 block|{
 DECL|member|name
 name|gchar
@@ -1706,7 +1677,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e5f5010308
+DECL|struct|__anon29b6dd0d0308
 block|{
 DECL|member|function
 name|gint
@@ -1779,7 +1750,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e5f5010408
+DECL|struct|__anon29b6dd0d0408
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -2566,7 +2537,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e5f5010508
+DECL|struct|__anon29b6dd0d0508
 block|{
 DECL|member|run
 name|gint
@@ -2614,7 +2585,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e5f5010608
+DECL|struct|__anon29b6dd0d0608
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -6935,7 +6906,7 @@ operator|*
 operator|(
 name|sin
 argument_list|(
-name|M_PI
+name|G_PI
 operator|*
 name|ABS
 argument_list|(
@@ -6949,7 +6920,7 @@ argument_list|)
 operator|/
 name|sin
 argument_list|(
-name|M_PI
+name|G_PI
 operator|*
 literal|0.5
 operator|/
@@ -6969,7 +6940,7 @@ name|pow
 argument_list|(
 name|sin
 argument_list|(
-name|M_PI
+name|G_PI
 operator|*
 name|ABS
 argument_list|(
@@ -7014,7 +6985,7 @@ operator|*
 operator|(
 name|sin
 argument_list|(
-name|M_PI
+name|G_PI
 operator|*
 name|ABS
 argument_list|(
@@ -7028,7 +6999,7 @@ argument_list|)
 operator|/
 name|sin
 argument_list|(
-name|M_PI
+name|G_PI
 operator|*
 literal|0.5
 operator|/
@@ -7048,7 +7019,7 @@ name|pow
 argument_list|(
 name|sin
 argument_list|(
-name|M_PI
+name|G_PI
 operator|*
 name|ABS
 argument_list|(

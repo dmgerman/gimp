@@ -185,28 +185,6 @@ endif|#
 directive|endif
 end_endif
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|HAVE_RINT
-end_ifndef
-
-begin_define
-DECL|macro|rint (x)
-define|#
-directive|define
-name|rint
-parameter_list|(
-name|x
-parameter_list|)
-value|floor (x + 0.5)
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_include
 include|#
 directive|include
@@ -392,71 +370,6 @@ directive|define
 name|GFIG_HEADER
 value|"GFIG Version 0.1\n"
 end_define
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|TRUE
-end_ifndef
-
-begin_define
-DECL|macro|TRUE
-define|#
-directive|define
-name|TRUE
-value|1
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* TRUE */
-end_comment
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|FALSE
-end_ifndef
-
-begin_define
-DECL|macro|FALSE
-define|#
-directive|define
-name|FALSE
-value|0
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* FALSE */
-end_comment
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|M_PI
-end_ifndef
-
-begin_define
-DECL|macro|M_PI
-define|#
-directive|define
-name|M_PI
-value|3.14159265358979323846
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_define
 DECL|macro|PREVIEW_MASK
@@ -8400,7 +8313,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274f25bd0108
+DECL|struct|__anon2c171bc90108
 block|{
 DECL|member|color_string
 name|gchar
@@ -34215,7 +34128,7 @@ call|(
 name|gint
 call|)
 argument_list|(
-name|rint
+name|RINT
 argument_list|(
 name|ang_radius
 operator|/
@@ -34287,7 +34200,7 @@ name|ang_grid
 operator|=
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 name|get_num_radials
 argument_list|()
@@ -34311,12 +34224,12 @@ name|real_angle
 operator|+=
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 expr_stmt|;
 name|rounded_angle
 operator|=
 operator|(
-name|rint
+name|RINT
 argument_list|(
 operator|(
 name|real_angle
@@ -34363,7 +34276,7 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 operator|(
 name|rounded_radius
@@ -34387,7 +34300,7 @@ operator|-
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 operator|(
 name|rounded_radius
@@ -34435,7 +34348,7 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 operator|(
 name|cons_radius
@@ -34459,7 +34372,7 @@ operator|-
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 operator|(
 name|cons_radius
@@ -34485,7 +34398,7 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 operator|(
 name|rounded_radius
@@ -34509,7 +34422,7 @@ operator|-
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 operator|(
 name|rounded_radius
@@ -36023,7 +35936,7 @@ name|ang_grid
 operator|=
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 name|get_num_radials
 argument_list|()
@@ -36078,7 +35991,7 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|ang_radius
 operator|*
@@ -36093,7 +36006,7 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|ang_radius
 operator|*
@@ -41166,7 +41079,7 @@ operator|-
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|radius
 argument_list|)
@@ -41183,7 +41096,7 @@ operator|-
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|radius
 argument_list|)
@@ -41194,7 +41107,7 @@ argument_list|(
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|radius
 argument_list|)
@@ -41207,7 +41120,7 @@ argument_list|(
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|radius
 argument_list|)
@@ -42029,7 +41942,7 @@ operator|-
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|radius
 argument_list|)
@@ -42043,7 +41956,7 @@ operator|-
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|radius
 argument_list|)
@@ -42051,7 +41964,7 @@ argument_list|,
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|radius
 argument_list|)
@@ -42061,7 +41974,7 @@ argument_list|,
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|radius
 argument_list|)
@@ -42199,7 +42112,7 @@ operator|-
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|radius
 argument_list|)
@@ -42213,7 +42126,7 @@ operator|-
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|radius
 argument_list|)
@@ -42221,7 +42134,7 @@ argument_list|,
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|radius
 argument_list|)
@@ -42231,7 +42144,7 @@ argument_list|,
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|radius
 argument_list|)
@@ -43075,7 +42988,7 @@ name|ang_grid
 operator|=
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 call|(
 name|gdouble
@@ -43179,7 +43092,7 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|lx
 operator|+
@@ -43197,7 +43110,7 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|ly
 operator|+
@@ -45385,7 +45298,7 @@ name|ang_grid
 operator|=
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 operator|(
 name|gdouble
@@ -45469,7 +45382,7 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|lx
 operator|+
@@ -45487,7 +45400,7 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|ly
 operator|+
@@ -45953,7 +45866,7 @@ name|ang_grid
 operator|=
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 operator|(
 name|gdouble
@@ -46037,7 +45950,7 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|lx
 operator|+
@@ -46055,7 +45968,7 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|ly
 operator|+
@@ -46702,7 +46615,7 @@ name|ang_grid
 operator|=
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 operator|(
 name|gdouble
@@ -46786,7 +46699,7 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|lx
 operator|+
@@ -46804,7 +46717,7 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|ly
 operator|+
@@ -47198,7 +47111,7 @@ name|ang_grid
 operator|=
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 operator|(
 literal|2.0
@@ -47362,7 +47275,7 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|lx
 operator|+
@@ -47380,7 +47293,7 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|ly
 operator|+
@@ -49290,7 +49203,7 @@ name|offset_angle
 operator|+=
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 expr_stmt|;
 return|return
 operator|(
@@ -49301,7 +49214,7 @@ operator|/
 operator|(
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|)
 operator|)
 return|;
@@ -50376,7 +50289,7 @@ name|ang_grid
 operator|=
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 operator|(
 name|gdouble
@@ -50408,7 +50321,7 @@ operator|*
 operator|(
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|360
 operator|)
@@ -50480,7 +50393,7 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|lx
 operator|+
@@ -50496,7 +50409,7 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|ly
 operator|+
@@ -52063,7 +51976,7 @@ name|ang_grid
 operator|=
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 operator|(
 literal|2.0
@@ -52227,7 +52140,7 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|lx
 operator|+
@@ -52245,7 +52158,7 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|ly
 operator|+
@@ -52760,7 +52673,7 @@ name|ang_grid
 operator|=
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 operator|(
 literal|2.0
@@ -52924,7 +52837,7 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|lx
 operator|+
@@ -52942,7 +52855,7 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|ly
 operator|+
@@ -54629,7 +54542,7 @@ name|offset_angle
 operator|+=
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 expr_stmt|;
 name|sp_cons
 operator|=
@@ -54645,7 +54558,7 @@ name|type_data
 operator|*
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|+
 name|offset_angle
 operator|)
@@ -54655,7 +54568,7 @@ name|ang_grid
 operator|=
 literal|2.0
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 operator|(
 name|gdouble
@@ -54689,7 +54602,7 @@ operator|*
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|offset_angle
 operator|/
@@ -54748,7 +54661,7 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|lx
 operator|+
@@ -54766,7 +54679,7 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|ly
 operator|+
@@ -55140,7 +55053,7 @@ name|offset_angle
 operator|+=
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 expr_stmt|;
 name|sp_cons
 operator|=
@@ -55156,7 +55069,7 @@ name|type_data
 operator|*
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|+
 name|offset_angle
 operator|)
@@ -55166,7 +55079,7 @@ name|ang_grid
 operator|=
 literal|2.0
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 operator|(
 name|gdouble
@@ -55195,7 +55108,7 @@ operator|*
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|offset_angle
 operator|/
@@ -55285,7 +55198,7 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|lx
 operator|+
@@ -55303,7 +55216,7 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|ly
 operator|+

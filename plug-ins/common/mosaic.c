@@ -10,7 +10,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<math.h>
+file|"config.h"
 end_include
 
 begin_include
@@ -70,46 +70,12 @@ begin_comment
 comment|/* RAND_MAX */
 end_comment
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|M_PI
-end_ifndef
-
-begin_define
-DECL|macro|M_PI
-define|#
-directive|define
-name|M_PI
-value|3.14159265358979323846
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* M_PI */
-end_comment
-
 begin_define
 DECL|macro|SCALE_WIDTH
 define|#
 directive|define
 name|SCALE_WIDTH
 value|150
-end_define
-
-begin_define
-DECL|macro|SQR (x)
-define|#
-directive|define
-name|SQR
-parameter_list|(
-name|x
-parameter_list|)
-value|((x) * (x))
 end_define
 
 begin_define
@@ -227,7 +193,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be1ef2b0108
+DECL|struct|__anon2b88d6dd0108
 block|{
 DECL|member|x
 DECL|member|y
@@ -245,7 +211,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be1ef2b0208
+DECL|struct|__anon2b88d6dd0208
 block|{
 DECL|member|npts
 name|gint
@@ -267,7 +233,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be1ef2b0308
+DECL|struct|__anon2b88d6dd0308
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -296,7 +262,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be1ef2b0408
+DECL|struct|__anon2b88d6dd0408
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -351,7 +317,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be1ef2b0508
+DECL|struct|__anon2b88d6dd0508
 block|{
 DECL|member|run
 name|gint
@@ -2360,7 +2326,7 @@ name|mvals
 operator|.
 name|light_dir
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|180.0
 argument_list|)
@@ -2373,7 +2339,7 @@ name|mvals
 operator|.
 name|light_dir
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|180.0
 argument_list|)

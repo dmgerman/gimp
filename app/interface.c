@@ -758,7 +758,7 @@ parameter_list|)
 block|{
 name|app_exit
 argument_list|(
-literal|0
+name|FALSE
 argument_list|)
 expr_stmt|;
 return|return

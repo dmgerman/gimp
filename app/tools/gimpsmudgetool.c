@@ -6,7 +6,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<math.h>
+file|"config.h"
 end_include
 
 begin_include
@@ -109,6 +109,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpmath.h"
 end_include
 
 begin_comment

@@ -22,12 +22,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<signal.h>
 end_include
 
@@ -59,29 +53,6 @@ include|#
 directive|include
 file|<libgimp/gimp.h>
 end_include
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|M_PI
-end_ifndef
-
-begin_define
-DECL|macro|M_PI
-define|#
-directive|define
-name|M_PI
-value|3.14159265358979323846
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* M_PI */
-end_comment
 
 begin_define
 DECL|macro|PLUG_IN_NAME
@@ -132,7 +103,7 @@ value|MBLUR_ZOOM
 end_define
 
 begin_typedef
-DECL|struct|__anon27e6e86d0108
+DECL|struct|__anon29a4ebaf0108
 typedef|typedef
 struct|struct
 block|{
@@ -155,7 +126,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27e6e86d0208
+DECL|struct|__anon29a4ebaf0208
 typedef|typedef
 struct|struct
 block|{
@@ -1370,7 +1341,7 @@ name|angle
 operator|/
 literal|180.0
 operator|*
-name|M_PI
+name|G_PI
 argument_list|)
 expr_stmt|;
 name|py
@@ -1385,7 +1356,7 @@ name|angle
 operator|/
 literal|180.0
 operator|*
-name|M_PI
+name|G_PI
 argument_list|)
 expr_stmt|;
 comment|/*    * Initialization for Bresenham algorithm:    * dx = abs(x2-x1), s1 = sign(x2-x1)    * dy = abs(y2-y1), s2 = sign(y2-y1)    */
@@ -2037,7 +2008,7 @@ operator|)
 operator|/
 literal|180.0
 operator|*
-name|M_PI
+name|G_PI
 expr_stmt|;
 name|w
 operator|=

@@ -2956,19 +2956,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|app_exit (int kill_it)
+DECL|function|app_exit (gboolean kill_it)
 name|app_exit
 parameter_list|(
-name|int
+name|gboolean
 name|kill_it
 parameter_list|)
 block|{
 comment|/*  If it's the user's perogative, and there are dirty images  */
 if|if
 condition|(
+operator|!
 name|kill_it
-operator|==
-name|FALSE
 operator|&&
 name|gdisplays_dirty
 argument_list|()

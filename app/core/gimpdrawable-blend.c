@@ -6,7 +6,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<math.h>
+file|"config.h"
 end_include
 
 begin_include
@@ -133,6 +133,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpmath.h"
 end_include
 
 begin_comment
@@ -346,7 +352,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2adfa4b40108
+DECL|struct|__anon276e42480108
 block|{
 DECL|member|offset
 name|double
@@ -398,7 +404,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2adfa4b40208
+DECL|struct|__anon276e42480208
 block|{
 DECL|member|PR
 name|PixelRegion

@@ -20,12 +20,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdio.h>
 end_include
 
@@ -69,40 +63,6 @@ include|#
 directive|include
 file|<libgimp/gimp.h>
 end_include
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|M_PI
-end_ifndef
-
-begin_define
-DECL|macro|M_PI
-define|#
-directive|define
-name|M_PI
-value|3.14159265358979323846
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* M_PI */
-end_comment
-
-begin_define
-DECL|macro|sqr (x)
-define|#
-directive|define
-name|sqr
-parameter_list|(
-name|x
-parameter_list|)
-value|((x) * (x))
-end_define
 
 begin_define
 DECL|macro|WITHIN (a,b,c)
@@ -192,7 +152,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b31dadb0108
+DECL|struct|__anon2bbeaa8a0108
 typedef|typedef
 struct|struct
 block|{
@@ -223,7 +183,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b31dadb0208
+DECL|struct|__anon2bbeaa8a0208
 typedef|typedef
 struct|struct
 block|{
@@ -263,7 +223,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b31dadb0308
+DECL|struct|__anon2bbeaa8a0308
 typedef|typedef
 struct|struct
 block|{
@@ -2323,7 +2283,7 @@ name|angle
 operator|/
 literal|180.0
 operator|*
-name|M_PI
+name|G_PI
 expr_stmt|;
 if|if
 condition|(
@@ -2348,7 +2308,7 @@ condition|)
 block|{
 name|phi
 operator|=
-name|M_PI
+name|G_PI
 operator|-
 name|atan
 argument_list|(
@@ -2379,14 +2339,14 @@ name|r
 operator|=
 name|sqrt
 argument_list|(
-name|sqr
+name|SQR
 argument_list|(
 name|wx
 operator|-
 name|cen_x
 argument_list|)
 operator|+
-name|sqr
+name|SQR
 argument_list|(
 name|wy
 operator|-
@@ -2434,14 +2394,14 @@ name|r
 operator|=
 name|sqrt
 argument_list|(
-name|sqr
+name|SQR
 argument_list|(
 name|wx
 operator|-
 name|cen_x
 argument_list|)
 operator|+
-name|sqr
+name|SQR
 argument_list|(
 name|cen_y
 operator|-
@@ -2454,7 +2414,7 @@ else|else
 block|{
 name|phi
 operator|=
-name|M_PI
+name|G_PI
 operator|/
 literal|2
 expr_stmt|;
@@ -2486,7 +2446,7 @@ name|phi
 operator|=
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|-
 name|atan
 argument_list|(
@@ -2517,14 +2477,14 @@ name|r
 operator|=
 name|sqrt
 argument_list|(
-name|sqr
+name|SQR
 argument_list|(
 name|cen_x
 operator|-
 name|wx
 argument_list|)
 operator|+
-name|sqr
+name|SQR
 argument_list|(
 name|cen_y
 operator|-
@@ -2543,7 +2503,7 @@ condition|)
 block|{
 name|phi
 operator|=
-name|M_PI
+name|G_PI
 operator|+
 name|atan
 argument_list|(
@@ -2574,14 +2534,14 @@ name|r
 operator|=
 name|sqrt
 argument_list|(
-name|sqr
+name|SQR
 argument_list|(
 name|cen_x
 operator|-
 name|wx
 argument_list|)
 operator|+
-name|sqr
+name|SQR
 argument_list|(
 name|wy
 operator|-
@@ -2596,7 +2556,7 @@ name|phi
 operator|=
 literal|1.5
 operator|*
-name|M_PI
+name|G_PI
 expr_stmt|;
 name|r
 operator|=
@@ -2731,12 +2691,12 @@ call|(
 name|double
 call|)
 argument_list|(
-name|sqr
+name|SQR
 argument_list|(
 name|xmax
 argument_list|)
 operator|+
-name|sqr
+name|SQR
 argument_list|(
 name|ymax
 argument_list|)
@@ -2799,7 +2759,7 @@ name|angl
 argument_list|,
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 argument_list|)
 expr_stmt|;
 if|if
@@ -2825,7 +2785,7 @@ operator|/
 operator|(
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|)
 operator|*
 name|phi
@@ -2844,7 +2804,7 @@ operator|/
 operator|(
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|)
 operator|*
 name|phi
@@ -2969,7 +2929,7 @@ operator|=
 operator|(
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|)
 operator|*
 operator|(
@@ -2986,7 +2946,7 @@ operator|=
 operator|(
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|)
 operator|*
 operator|(
@@ -3007,7 +2967,7 @@ name|angl
 argument_list|,
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 argument_list|)
 expr_stmt|;
 if|if
@@ -3016,13 +2976,13 @@ name|phi
 operator|>=
 literal|1.5
 operator|*
-name|M_PI
+name|G_PI
 condition|)
 name|phi2
 operator|=
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|-
 name|phi
 expr_stmt|;
@@ -3031,13 +2991,13 @@ if|if
 condition|(
 name|phi
 operator|>=
-name|M_PI
+name|G_PI
 condition|)
 name|phi2
 operator|=
 name|phi
 operator|-
-name|M_PI
+name|G_PI
 expr_stmt|;
 elseif|else
 if|if
@@ -3046,11 +3006,11 @@ name|phi
 operator|>=
 literal|0.5
 operator|*
-name|M_PI
+name|G_PI
 condition|)
 name|phi2
 operator|=
-name|M_PI
+name|G_PI
 operator|-
 name|phi
 expr_stmt|;
@@ -3164,12 +3124,12 @@ call|(
 name|double
 call|)
 argument_list|(
-name|sqr
+name|SQR
 argument_list|(
 name|xmax
 argument_list|)
 operator|+
-name|sqr
+name|SQR
 argument_list|(
 name|ymax
 argument_list|)
@@ -3297,7 +3257,7 @@ name|phi
 operator|>=
 literal|1.5
 operator|*
-name|M_PI
+name|G_PI
 condition|)
 block|{
 name|x_calc
@@ -3324,7 +3284,7 @@ if|if
 condition|(
 name|phi
 operator|>=
-name|M_PI
+name|G_PI
 condition|)
 block|{
 name|x_calc
@@ -3353,7 +3313,7 @@ name|phi
 operator|>=
 literal|0.5
 operator|*
-name|M_PI
+name|G_PI
 condition|)
 block|{
 name|x_calc

@@ -10,6 +10,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -17,12 +23,6 @@ begin_include
 include|#
 directive|include
 file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<math.h>
 end_include
 
 begin_include
@@ -67,29 +67,6 @@ end_endif
 
 begin_comment
 comment|/* Some useful macros */
-end_comment
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|M_PI
-end_ifndef
-
-begin_define
-DECL|macro|M_PI
-define|#
-directive|define
-name|M_PI
-value|3.14159265358979323846
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* M_PI */
 end_comment
 
 begin_ifndef
@@ -226,7 +203,7 @@ value|GDK_EXPOSURE_MASK | \ 		       GDK_BUTTON_PRESS_MASK | \ 		       GDK_BUTT
 end_define
 
 begin_typedef
-DECL|struct|__anon29f689f30108
+DECL|struct|__anon27dcf1f80108
 typedef|typedef
 struct|struct
 block|{
@@ -259,7 +236,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29f689f30208
+DECL|struct|__anon27dcf1f80208
 typedef|typedef
 struct|struct
 block|{
@@ -274,7 +251,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29f689f30308
+DECL|struct|__anon27dcf1f80308
 typedef|typedef
 struct|struct
 block|{
@@ -301,7 +278,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f689f30408
+DECL|struct|__anon27dcf1f80408
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -5502,7 +5479,7 @@ operator|/
 operator|(
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|)
 operator|+
 literal|.51

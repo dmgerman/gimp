@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"appenv.h"
 end_include
 
@@ -103,6 +97,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpmath.h"
 end_include
 
 begin_comment
@@ -277,7 +277,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon291ce94c0108
+DECL|struct|__anon2bf17a5c0108
 typedef|typedef
 struct|struct
 block|{
@@ -314,7 +314,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon291ce94c0208
+DECL|struct|__anon2bf17a5c0208
 typedef|typedef
 struct|struct
 block|{
@@ -369,7 +369,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon291ce94c0308
+DECL|struct|__anon2bf17a5c0308
 typedef|typedef
 struct|struct
 block|{

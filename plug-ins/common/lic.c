@@ -142,6 +142,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -149,12 +155,6 @@ begin_include
 include|#
 directive|include
 file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<math.h>
 end_include
 
 begin_include
@@ -198,25 +198,6 @@ end_comment
 begin_comment
 comment|/************/
 end_comment
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|M_PI
-end_ifndef
-
-begin_define
-DECL|macro|M_PI
-define|#
-directive|define
-name|M_PI
-value|3.14159265358979323846
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_define
 DECL|macro|CHECKBOUNDS (x,y)
@@ -299,7 +280,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c85cb2a0108
+DECL|struct|__anon29787e750108
 block|{
 DECL|member|r
 DECL|member|g
@@ -386,7 +367,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2c85cb2a0208
+DECL|struct|__anon29787e750208
 typedef|typedef
 struct|struct
 block|{
@@ -2238,7 +2219,7 @@ literal|1000
 argument_list|)
 operator|*
 operator|(
-name|M_PI
+name|G_PI
 operator|/
 literal|500.0
 operator|)

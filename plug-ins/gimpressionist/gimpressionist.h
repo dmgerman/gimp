@@ -5,6 +5,12 @@ directive|include
 file|<gtk/gtk.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpmath.h"
+end_include
+
 begin_define
 DECL|macro|PLUG_IN_NAME
 define|#
@@ -63,52 +69,6 @@ directive|define
 name|MAXSIZEVECT
 value|50
 end_define
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|M_PI
-end_ifndef
-
-begin_define
-DECL|macro|M_PI
-define|#
-directive|define
-name|M_PI
-value|3.14159265358979323846
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* M_PI */
-end_comment
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|M_PI_2
-end_ifndef
-
-begin_define
-DECL|macro|M_PI_2
-define|#
-directive|define
-name|M_PI_2
-value|(M_PI / 2.0)
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* M_PI_2 */
-end_comment
 
 begin_comment
 comment|/* Type declaration and definitions */
@@ -174,7 +134,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2952084f0108
+DECL|struct|__anon2a16691f0108
 typedef|typedef
 struct|struct
 block|{

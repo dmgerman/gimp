@@ -127,12 +127,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<glib.h>
 end_include
 
@@ -142,28 +136,6 @@ directive|include
 file|<libgimp/gimp.h>
 end_include
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|HAVE_RINT
-end_ifndef
-
-begin_define
-DECL|macro|rint (x)
-define|#
-directive|define
-name|rint
-parameter_list|(
-name|x
-parameter_list|)
-value|floor (x + 0.5)
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_comment
 comment|/* Local types etc  */
 end_comment
@@ -171,7 +143,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7817fa0103
+DECL|enum|__anon27aa1a2c0103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -543,7 +515,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon2c7817fa0208
+DECL|struct|__anon27aa1a2c0208
 specifier|static
 struct|struct
 block|{
@@ -3177,7 +3149,7 @@ index|]
 operator|.
 name|position
 operator|=
-name|rint
+name|RINT
 argument_list|(
 call|(
 name|double
@@ -3221,7 +3193,7 @@ index|]
 operator|.
 name|position
 operator|=
-name|rint
+name|RINT
 argument_list|(
 call|(
 name|double

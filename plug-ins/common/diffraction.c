@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<signal.h>
 end_include
 
@@ -70,29 +64,6 @@ end_include
 
 begin_comment
 comment|/***** Magic numbers *****/
-end_comment
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|M_PI
-end_ifndef
-
-begin_define
-DECL|macro|M_PI
-define|#
-directive|define
-name|M_PI
-value|3.14159265358979323846
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* M_PI */
 end_comment
 
 begin_define
@@ -166,7 +137,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a1aa8fa0108
+DECL|struct|__anon2bcbf2890108
 typedef|typedef
 struct|struct
 block|{
@@ -225,7 +196,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a1aa8fa0208
+DECL|struct|__anon2bcbf2890208
 typedef|typedef
 struct|struct
 block|{
@@ -1766,7 +1737,7 @@ decl_stmt|;
 name|a
 operator|=
 operator|-
-name|M_PI
+name|G_PI
 expr_stmt|;
 for|for
 control|(
@@ -1838,7 +1809,7 @@ operator|+=
 operator|(
 literal|2.0
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 name|ITERATIONS
 operator|)
@@ -2135,7 +2106,7 @@ operator|.
 name|polarization
 operator|*
 operator|(
-name|M_PI
+name|G_PI
 operator|/
 literal|2.0
 operator|)
@@ -2204,7 +2175,7 @@ comment|/* for */
 end_comment
 
 begin_comment
-unit|polpi2 = dvals.polarization * (M_PI / 2.0);  	cospolpi2 = cos(polpi2); 	sinpolpi2 = sin(polpi2);  	return s * ((cospolpi2 + sinpolpi2) * cxy * cxy + 		    (cospolpi2 - sinpolpi2) * sxy * sxy); }
+unit|polpi2 = dvals.polarization * (G_PI / 2.0);  	cospolpi2 = cos(polpi2); 	sinpolpi2 = sin(polpi2);  	return s * ((cospolpi2 + sinpolpi2) * cxy * cxy + 		    (cospolpi2 - sinpolpi2) * sxy * sxy); }
 comment|/* diff_intensity */
 end_comment
 

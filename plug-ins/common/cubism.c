@@ -6,7 +6,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<math.h>
+file|"config.h"
 end_include
 
 begin_include
@@ -36,52 +36,8 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
-
-begin_comment
-comment|/* Some useful macros */
-end_comment
-
-begin_define
-DECL|macro|SQR (a)
-define|#
-directive|define
-name|SQR
-parameter_list|(
-name|a
-parameter_list|)
-value|((a) * (a))
-end_define
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|M_PI
-end_ifndef
-
-begin_define
-DECL|macro|M_PI
-define|#
-directive|define
-name|M_PI
-value|3.14159265358979323846
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* M_PI */
-end_comment
 
 begin_ifndef
 ifndef|#
@@ -173,7 +129,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7939940108
+DECL|struct|__anon2abec1000108
 block|{
 DECL|member|x
 DECL|member|y
@@ -191,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7939940208
+DECL|struct|__anon2abec1000208
 block|{
 DECL|member|npts
 name|gint
@@ -213,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7939940308
+DECL|struct|__anon2abec1000308
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -236,7 +192,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7939940408
+DECL|struct|__anon2abec1000408
 block|{
 DECL|member|run
 name|gint
@@ -2620,7 +2576,7 @@ name|fp_rand
 argument_list|(
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 argument_list|)
 expr_stmt|;
 name|polygon_reset

@@ -34,12 +34,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -48,47 +42,6 @@ include|#
 directive|include
 file|<libgimp/gimp.h>
 end_include
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|HAVE_RINT
-end_ifndef
-
-begin_define
-DECL|macro|rint (x)
-define|#
-directive|define
-name|rint
-parameter_list|(
-name|x
-parameter_list|)
-value|floor((x)+0.5)
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|M_PI
-end_ifndef
-
-begin_define
-DECL|macro|M_PI
-define|#
-directive|define
-name|M_PI
-value|3.14159265358979323846
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_ifdef
 ifdef|#
@@ -392,7 +345,7 @@ name|DEG2RAD
 parameter_list|(
 name|d
 parameter_list|)
-value|((d) * M_PI / 180)
+value|((d) * G_PI / 180)
 end_define
 
 begin_define
@@ -587,7 +540,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon29c1b9ed0108
+DECL|struct|__anon27d5860a0108
 typedef|typedef
 struct|struct
 block|{
@@ -832,7 +785,7 @@ comment|/* Some of these are here merely to save them across calls.  They are  *
 end_comment
 
 begin_typedef
-DECL|struct|__anon29c1b9ed0208
+DECL|struct|__anon27d5860a0208
 typedef|typedef
 struct|struct
 block|{
@@ -905,7 +858,7 @@ comment|/* bits of state used by the UI, but not visible from the PDB */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29c1b9ed0308
+DECL|struct|__anon27d5860a0308
 typedef|typedef
 struct|struct
 block|{
@@ -931,7 +884,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29c1b9ed0408
+DECL|struct|__anon27d5860a0408
 typedef|typedef
 struct|struct
 block|{
@@ -964,7 +917,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon29c1b9ed0503
+DECL|enum|__anon27d5860a0503
 typedef|typedef
 enum|enum
 block|{
@@ -980,7 +933,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29c1b9ed0608
+DECL|struct|__anon27d5860a0608
 typedef|typedef
 struct|struct
 block|{
@@ -1038,7 +991,7 @@ comment|/* state for the preview widgets */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29c1b9ed0708
+DECL|struct|__anon27d5860a0708
 typedef|typedef
 struct|struct
 block|{
@@ -1140,7 +1093,7 @@ comment|/* State associated with the configuration dialog and passed to its  * c
 end_comment
 
 begin_typedef
-DECL|struct|__anon29c1b9ed0808
+DECL|struct|__anon27d5860a0808
 typedef|typedef
 struct|struct
 block|{
@@ -1328,7 +1281,7 @@ comment|/* channel templates */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29c1b9ed0908
+DECL|struct|__anon27d5860a0908
 typedef|typedef
 struct|struct
 block|{
@@ -3391,7 +3344,7 @@ argument_list|,
 operator|(
 name|int
 operator|)
-name|rint
+name|RINT
 argument_list|(
 name|spotfn_list
 index|[
@@ -7065,7 +7018,7 @@ comment|/* Spot functions define the order in which pixels should be whitened  *
 end_comment
 
 begin_comment
-comment|/* The classic growing dot spot function.  This one isn't tonally  * balanced.  It can be made so, but it's _really_ ugly.  Thanks to  * Richard Mortier for this one:  *  * #define a(r) \  *     ((r<=1)? M_PI * (r*r) : \  *	4 * sqrt(r*r - 1)  +  M_PI*r*r  -  4*r*r*acos(1/r))  *  *   radius = sqrt(x*x + y*y);  *  * return a(radius) / 4; */
+comment|/* The classic growing dot spot function.  This one isn't tonally  * balanced.  It can be made so, but it's _really_ ugly.  Thanks to  * Richard Mortier for this one:  *  * #define a(r) \  *     ((r<=1)? G_PI * (r*r) : \  *	4 * sqrt(r*r - 1)  +  G_PI*r*r  -  4*r*r*acos(1/r))  *  *   radius = sqrt(x*x + y*y);  *  * return a(radius) / 4; */
 end_comment
 
 begin_function
@@ -7410,7 +7363,7 @@ comment|/* Each call of the spot function results in one of these */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29c1b9ed0a08
+DECL|struct|__anon27d5860a0a08
 typedef|typedef
 struct|struct
 block|{
@@ -8916,7 +8869,7 @@ control|)
 block|{
 name|rx
 operator|=
-name|rint
+name|RINT
 argument_list|(
 name|r
 operator|*
@@ -8933,7 +8886,7 @@ argument_list|)
 expr_stmt|;
 name|ry
 operator|=
-name|rint
+name|RINT
 argument_list|(
 name|r
 operator|*

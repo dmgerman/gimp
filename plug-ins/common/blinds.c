@@ -10,6 +10,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -28,12 +34,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gtk/gtk.h"
 end_include
 
@@ -42,29 +42,6 @@ include|#
 directive|include
 file|"libgimp/gimp.h"
 end_include
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|M_PI
-end_ifndef
-
-begin_define
-DECL|macro|M_PI
-define|#
-directive|define
-name|M_PI
-value|3.14159265358979323846
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* M_PI */
-end_comment
 
 begin_comment
 comment|/***** Magic numbers *****/
@@ -183,7 +160,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a42b82e0108
+DECL|struct|__anon274ea9e80108
 typedef|typedef
 struct|struct
 block|{
@@ -3666,7 +3643,7 @@ name|angledsp
 operator|*
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|)
 operator|/
 literal|360

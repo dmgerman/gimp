@@ -6,7 +6,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<math.h>
+file|"config.h"
 end_include
 
 begin_include
@@ -97,6 +97,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpmath.h"
 end_include
 
 begin_include
@@ -6440,7 +6446,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2c64c3d50103
+DECL|enum|__anon2aa7e00d0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

@@ -46,7 +46,7 @@ begin_function_decl
 name|void
 name|app_exit
 parameter_list|(
-name|int
+name|gboolean
 parameter_list|)
 function_decl|;
 end_function_decl

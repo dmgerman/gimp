@@ -150,6 +150,12 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|NATIVE_WIN32
+end_ifndef
+
 begin_function_decl
 specifier|static
 name|RETSIGTYPE
@@ -175,6 +181,11 @@ name|int
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_endif
 endif|#
@@ -1443,6 +1454,10 @@ operator|)
 name|gimp_message_func
 argument_list|)
 expr_stmt|;
+ifndef|#
+directive|ifndef
+name|NATIVE_WIN32
+comment|/* No use catching these on Win32, the user won't get any     * stack trace from glib anyhow. It's better to let Windows inform    * about the program error, and offer debugging (if the use    * has installed MSVC or some other compiler that knows how to    * install itself as a handler for program errors).    */
 comment|/* Handle some signals */
 ifdef|#
 directive|ifdef
@@ -1563,6 +1578,8 @@ argument_list|,
 name|on_sig_child
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 endif|#
 directive|endif
 name|g_log_set_handler
@@ -1721,20 +1738,11 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-name|fprintf
+name|gimp_fatal_error
 argument_list|(
-name|stderr
-argument_list|,
-literal|"%s: fatal error: %s\n"
-argument_list|,
-name|prog_name
+literal|"%s"
 argument_list|,
 name|msg
-argument_list|)
-expr_stmt|;
-name|g_on_error_query
-argument_list|(
-name|prog_name
 argument_list|)
 expr_stmt|;
 block|}
@@ -1749,6 +1757,12 @@ init|=
 literal|0
 decl_stmt|;
 end_decl_stmt
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|NATIVE_WIN32
+end_ifndef
 
 begin_function
 specifier|static
@@ -2015,10 +2029,15 @@ endif|#
 directive|endif
 end_endif
 
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abf026d0108
+DECL|struct|__anon28c2a8010108
 block|{
 DECL|member|test_gint32
 name|gint32

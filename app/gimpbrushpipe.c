@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdio.h>
 end_include
 
@@ -105,6 +99,12 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpmath.h"
+end_include
+
 begin_comment
 comment|/* Code duplicated from plug-ins/common/gpb.c...  * The struct, and code to parse/build it probably should be in libgimp.  */
 end_comment
@@ -122,7 +122,7 @@ value|4
 end_define
 
 begin_struct
-DECL|struct|__anon2a3469f30108
+DECL|struct|__anon2a43d2a10108
 specifier|static
 struct|struct
 block|{

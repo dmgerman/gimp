@@ -40,12 +40,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<signal.h>
 end_include
 
@@ -110,29 +104,6 @@ end_include
 
 begin_comment
 comment|/***** Magic numbers *****/
-end_comment
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|M_PI
-end_ifndef
-
-begin_define
-DECL|macro|M_PI
-define|#
-directive|define
-name|M_PI
-value|3.14159265358979323846
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* M_PI */
 end_comment
 
 begin_define
@@ -204,7 +175,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_enum
-DECL|enum|__anon2b4c1db30103
+DECL|enum|__anon2c7d88550103
 enum|enum
 block|{
 DECL|enumerator|LINEAR
@@ -222,7 +193,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2b4c1db30203
+DECL|enum|__anon2c7d88550203
 enum|enum
 block|{
 DECL|enumerator|DRAG_NONE
@@ -240,7 +211,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon2b4c1db30308
+DECL|struct|__anon2c7d88550308
 typedef|typedef
 struct|struct
 block|{
@@ -295,7 +266,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b4c1db30408
+DECL|struct|__anon2c7d88550408
 typedef|typedef
 struct|struct
 block|{
@@ -340,7 +311,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b4c1db30508
+DECL|struct|__anon2c7d88550508
 typedef|typedef
 struct|struct
 block|{
@@ -2640,7 +2611,7 @@ decl_stmt|;
 comment|/* Convert to radians */
 name|azimuth
 operator|=
-name|M_PI
+name|G_PI
 operator|*
 name|bmvals
 operator|.
@@ -2650,7 +2621,7 @@ literal|180.0
 expr_stmt|;
 name|elevation
 operator|=
-name|M_PI
+name|G_PI
 operator|*
 name|bmvals
 operator|.
@@ -2832,12 +2803,12 @@ name|sin
 argument_list|(
 operator|(
 operator|-
-name|M_PI
+name|G_PI
 operator|/
 literal|2.0
 operator|)
 operator|+
-name|M_PI
+name|G_PI
 operator|*
 name|n
 argument_list|)

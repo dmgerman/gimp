@@ -10,7 +10,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<math.h>
+file|"config.h"
 end_include
 
 begin_include
@@ -54,29 +54,6 @@ include|#
 directive|include
 file|"ifscompose.h"
 end_include
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|M_PI
-end_ifndef
-
-begin_define
-DECL|macro|M_PI
-define|#
-directive|define
-name|M_PI
-value|3.14159265358979323846
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* M_PI */
-end_comment
 
 begin_define
 DECL|macro|SCALE_WIDTH
@@ -135,7 +112,7 @@ value|"plug_in_ifscompose"
 end_define
 
 begin_typedef
-DECL|enum|__anon275e704f0103
+DECL|enum|__anon2b61786c0103
 typedef|typedef
 enum|enum
 block|{
@@ -155,7 +132,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon275e704f0203
+DECL|enum|__anon2b61786c0203
 typedef|typedef
 enum|enum
 block|{
@@ -173,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275e704f0308
+DECL|struct|__anon2b61786c0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -194,7 +171,7 @@ DECL|member|type
 name|ValuePairType
 name|type
 decl_stmt|;
-DECL|union|__anon275e704f040a
+DECL|union|__anon2b61786c040a
 union|union
 block|{
 DECL|member|d
@@ -224,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275e704f0508
+DECL|struct|__anon2b61786c0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -254,7 +231,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275e704f0608
+DECL|struct|__anon2b61786c0608
 block|{
 DECL|member|color
 name|IfsColor
@@ -303,7 +280,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275e704f0708
+DECL|struct|__anon2b61786c0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -339,7 +316,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275e704f0808
+DECL|struct|__anon2b61786c0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -406,7 +383,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275e704f0908
+DECL|struct|__anon2b61786c0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -577,7 +554,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275e704f0a08
+DECL|struct|__anon2b61786c0a08
 block|{
 DECL|member|run
 name|gint
@@ -8544,7 +8521,7 @@ name|theta
 operator|*=
 literal|180
 operator|/
-name|M_PI
+name|G_PI
 expr_stmt|;
 name|value_pair_update
 argument_list|(
@@ -11208,7 +11185,7 @@ name|v
 operator|.
 name|theta
 operator|*=
-name|M_PI
+name|G_PI
 operator|/
 literal|180.0
 expr_stmt|;
@@ -12066,7 +12043,7 @@ name|v
 operator|.
 name|theta
 operator|*=
-name|M_PI
+name|G_PI
 operator|/
 literal|180.0
 expr_stmt|;

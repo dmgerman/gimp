@@ -6,7 +6,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<math.h>
+file|"config.h"
 end_include
 
 begin_include
@@ -24,37 +24,14 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libifs.h"
+file|"libgimp/gimpmath.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"config.h"
+file|"libifs.h"
 end_include
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|M_PI
-end_ifndef
-
-begin_define
-DECL|macro|M_PI
-define|#
-directive|define
-name|M_PI
-value|3.14159265358979323846
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* M_PI */
-end_comment
 
 begin_define
 DECL|macro|CHOOSE_XFORM_GRAIN
@@ -881,7 +858,7 @@ argument_list|,
 name|ty
 argument_list|)
 operator|/
-name|M_PI
+name|G_PI
 expr_stmt|;
 else|else
 name|nx
@@ -2572,14 +2549,14 @@ if|if
 condition|(
 name|d
 operator|>
-name|M_PI
+name|G_PI
 operator|+
 name|EPS
 operator|||
 operator|(
 name|d
 operator|>
-name|M_PI
+name|G_PI
 operator|-
 name|EPS
 operator|&&
@@ -2590,7 +2567,7 @@ name|y
 operator|+=
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 expr_stmt|;
 block|}
 else|else
@@ -2605,14 +2582,14 @@ if|if
 condition|(
 name|d
 operator|>
-name|M_PI
+name|G_PI
 operator|+
 name|EPS
 operator|||
 operator|(
 name|d
 operator|>
-name|M_PI
+name|G_PI
 operator|-
 name|EPS
 operator|&&
@@ -2623,7 +2600,7 @@ name|x
 operator|+=
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 expr_stmt|;
 block|}
 comment|/* unless we are supposed to avoid crossing */
@@ -2649,7 +2626,7 @@ name|y
 operator|-=
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 expr_stmt|;
 block|}
 else|else
@@ -2664,7 +2641,7 @@ name|y
 operator|+=
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 expr_stmt|;
 block|}
 block|}
@@ -3525,7 +3502,7 @@ name|c
 init|=
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|*
 name|i
 operator|/
@@ -4154,7 +4131,7 @@ name|time
 operator|*
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 operator|(
 literal|60.0
