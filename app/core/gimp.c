@@ -70,12 +70,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/internal_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"plug-in/plug-ins.h"
 end_include
 
@@ -261,7 +255,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b788b250103
+DECL|enum|__anon2b503f4c0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -2107,6 +2101,15 @@ argument_list|)
 expr_stmt|;
 name|memsize
 operator|+=
+name|gimp_g_hash_table_get_memsize
+argument_list|(
+name|gimp
+operator|->
+name|procedural_compat_ht
+argument_list|)
+expr_stmt|;
+name|memsize
+operator|+=
 name|gimp_g_list_get_memsize
 argument_list|(
 name|gimp
@@ -2663,7 +2666,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|internal_procs_init
+name|procedural_db_init_procs
 argument_list|(
 name|gimp
 argument_list|,

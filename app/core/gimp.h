@@ -746,6 +746,11 @@ name|GHashTable
 modifier|*
 name|procedural_ht
 decl_stmt|;
+DECL|member|procedural_compat_ht
+name|GHashTable
+modifier|*
+name|procedural_compat_ht
+decl_stmt|;
 DECL|member|procedural_db_data_list
 name|GList
 modifier|*

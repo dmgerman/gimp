@@ -378,6 +378,20 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|procedural_db_init_procs
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|GimpInitStatusFunc
+name|status_callback
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|procedural_db_register
 parameter_list|(
 name|Gimp
