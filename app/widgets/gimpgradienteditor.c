@@ -334,7 +334,7 @@ comment|/* Gradient segment type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a4d98b00103
+DECL|enum|__anon292714400103
 typedef|typedef
 enum|enum
 block|{
@@ -361,7 +361,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2a4d98b00203
+DECL|enum|__anon292714400203
 typedef|typedef
 enum|enum
 block|{
@@ -506,7 +506,7 @@ comment|/* Gradient editor type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a4d98b00303
+DECL|enum|__anon292714400303
 typedef|typedef
 enum|enum
 block|{
@@ -530,7 +530,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a4d98b00408
+DECL|struct|__anon292714400408
 typedef|typedef
 struct|struct
 block|{
@@ -810,7 +810,7 @@ name|int
 name|replicate_times
 decl_stmt|;
 comment|/* Saved colors */
-DECL|struct|__anon2a4d98b00508
+DECL|struct|__anon292714400508
 struct|struct
 block|{
 DECL|member|r
@@ -19394,20 +19394,6 @@ argument_list|,
 name|b
 argument_list|,
 name|a
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|csd
-argument_list|)
-argument_list|,
-literal|"destroy"
-argument_list|,
-name|cancel_callback
-argument_list|,
-name|window
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
