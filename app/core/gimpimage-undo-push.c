@@ -6158,24 +6158,12 @@ operator|)
 condition|)
 block|{
 comment|/*  remove layer  */
-name|g_print
-argument_list|(
-literal|"undo_pop_layer: taking ownership, size += "
-literal|"%"
-name|G_GINT64_FORMAT
-literal|"\n"
-argument_list|,
-name|gimp_object_get_memsize
-argument_list|(
-name|GIMP_OBJECT
-argument_list|(
-name|layer
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+block|g_printerr ("undo_pop_layer: taking ownership, size += "                   "%" G_GINT64_FORMAT "\n",                   gimp_object_get_memsize (GIMP_OBJECT (layer), NULL));
+endif|#
+directive|endif
 name|undo
 operator|->
 name|size
@@ -6348,24 +6336,12 @@ block|}
 else|else
 block|{
 comment|/*  restore layer  */
-name|g_print
-argument_list|(
-literal|"undo_pop_layer: dropping ownership, size -= "
-literal|"%"
-name|G_GINT64_FORMAT
-literal|"\n"
-argument_list|,
-name|gimp_object_get_memsize
-argument_list|(
-name|GIMP_OBJECT
-argument_list|(
-name|layer
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+block|g_printerr ("undo_pop_layer: dropping ownership, size -= "                   "%" G_GINT64_FORMAT "\n",                   gimp_object_get_memsize (GIMP_OBJECT (layer), NULL));
+endif|#
+directive|endif
 name|undo
 operator|->
 name|size

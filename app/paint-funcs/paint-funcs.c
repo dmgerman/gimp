@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29fc45bb0103
+DECL|enum|__anon2b35c3fc0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -13739,19 +13739,12 @@ name|destPR
 operator|->
 name|h
 expr_stmt|;
-name|g_printerr
-argument_list|(
-literal|"scale_region: (%d x %d) -> (%d x %d)\n"
-argument_list|,
-name|orig_width
-argument_list|,
-name|orig_height
-argument_list|,
-name|width
-argument_list|,
-name|height
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+block|g_printerr ("scale_region: (%d x %d) -> (%d x %d)\n",               orig_width, orig_height, width, height);
+endif|#
+directive|endif
 comment|/*  find the ratios of old y to new y  */
 name|y_rat
 operator|=
