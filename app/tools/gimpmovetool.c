@@ -152,7 +152,7 @@ DECL|macro|SNAP_WIDTH
 define|#
 directive|define
 name|SNAP_WIDTH
-value|5.0
+value|8.0
 end_define
 
 begin_comment

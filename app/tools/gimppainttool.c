@@ -1113,22 +1113,30 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_paint_tool_round_line:  * @core:  the #GimpPaintCore  * @state: the modifier state  *  * Adjusts core->last_coords and core_cur_coords in preparation to  * drawing a straight line. The rounding of the slope to 15 degree  * steps if ctrl is pressed happens, as does rounding the start and  * end coordinates (which may be fractional in high zoom modes) to  * the center of pixels.  **/
+comment|/**  * gimp_paint_tool_round_line:  * @core:          the #GimpPaintCore  * @center_pixels: push coordinates to pixel centers?  * @state:         the modifier state  *  * Adjusts core->last_coords and core_cur_coords in preparation to  * drawing a straight line. If @center_pixels is TRUE the endpoints  * get pushed to the center of the pixels. This avoids artefacts  * for e.g. the hard mode. The rounding of the slope to 15 degree  * steps if ctrl is pressed happens, as does rounding the start and  * end coordinates (which may be fractional in high zoom modes) to  * the center of pixels.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_paint_tool_round_line (GimpPaintCore * core,GdkModifierType state)
+DECL|function|gimp_paint_tool_round_line (GimpPaintCore * core,gboolean center_pixels,GdkModifierType state)
 name|gimp_paint_tool_round_line
 parameter_list|(
 name|GimpPaintCore
 modifier|*
 name|core
 parameter_list|,
+name|gboolean
+name|center_pixels
+parameter_list|,
 name|GdkModifierType
 name|state
 parameter_list|)
+block|{
+if|if
+condition|(
+name|center_pixels
+condition|)
 block|{
 name|core
 operator|->
@@ -1198,6 +1206,7 @@ argument_list|)
 operator|+
 literal|0.5
 expr_stmt|;
+block|}
 comment|/* Restrict to multiples of 15 degrees if ctrl is pressed */
 if|if
 condition|(
@@ -1488,6 +1497,9 @@ name|draw_line
 condition|)
 block|{
 comment|/*  If shift is down and this is not the first paint        *  stroke, then draw a line from the last coords to the pointer        */
+name|gboolean
+name|hard
+decl_stmt|;
 name|core
 operator|->
 name|start_coords
@@ -1496,9 +1508,22 @@ name|core
 operator|->
 name|last_coords
 expr_stmt|;
+name|hard
+operator|=
+operator|(
+name|gimp_paint_options_get_brush_mode
+argument_list|(
+name|paint_options
+argument_list|)
+operator|==
+name|GIMP_BRUSH_HARD
+operator|)
+expr_stmt|;
 name|gimp_paint_tool_round_line
 argument_list|(
 name|core
+argument_list|,
+name|hard
 argument_list|,
 name|state
 argument_list|)
@@ -2325,6 +2350,10 @@ name|GimpPaintTool
 modifier|*
 name|paint_tool
 decl_stmt|;
+name|GimpPaintOptions
+modifier|*
+name|paint_options
+decl_stmt|;
 name|GimpDrawTool
 modifier|*
 name|draw_tool
@@ -2353,6 +2382,17 @@ operator|=
 name|GIMP_DRAW_TOOL
 argument_list|(
 name|tool
+argument_list|)
+expr_stmt|;
+name|paint_options
+operator|=
+name|GIMP_PAINT_OPTIONS
+argument_list|(
+name|tool
+operator|->
+name|tool_info
+operator|->
+name|tool_options
 argument_list|)
 expr_stmt|;
 if|if
@@ -2528,6 +2568,9 @@ name|off_x
 decl_stmt|,
 name|off_y
 decl_stmt|;
+name|gboolean
+name|hard
+decl_stmt|;
 name|core
 operator|->
 name|cur_coords
@@ -2565,9 +2608,22 @@ name|y
 operator|-=
 name|off_y
 expr_stmt|;
+name|hard
+operator|=
+operator|(
+name|gimp_paint_options_get_brush_mode
+argument_list|(
+name|paint_options
+argument_list|)
+operator|==
+name|GIMP_BRUSH_HARD
+operator|)
+expr_stmt|;
 name|gimp_paint_tool_round_line
 argument_list|(
 name|core
+argument_list|,
+name|hard
 argument_list|,
 name|state
 argument_list|)
@@ -3174,9 +3230,12 @@ operator|)
 expr_stmt|;
 if|if
 condition|(
+name|gimp_paint_options_get_brush_mode
+argument_list|(
 name|paint_options
-operator|->
-name|hard
+argument_list|)
+operator|==
+name|GIMP_BRUSH_HARD
 condition|)
 block|{
 DECL|macro|EPSILON

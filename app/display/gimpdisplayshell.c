@@ -328,7 +328,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291399010103
+DECL|enum|__anon2c08a6d80103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -350,7 +350,7 @@ DECL|macro|SNAP_WIDTH
 define|#
 directive|define
 name|SNAP_WIDTH
-value|5.0
+value|8.0
 end_define
 
 begin_comment
