@@ -312,6 +312,10 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
+name|GimpImage
+modifier|*
+name|gimage
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
@@ -398,18 +402,23 @@ literal|0
 block|g_print ("%s: gimage->ref_count before unrefing: %d\n",            G_GNUC_FUNCTION, G_OBJECT (gdisp->gimage)->ref_count);
 endif|#
 directive|endif
-name|g_object_unref
-argument_list|(
+comment|/*  set gdisp->gimage to NULL before unrefing because there may be code    *  that listenes for image removals and then iterates the display list    *  to find a valid display.    */
+name|gimage
+operator|=
 name|gdisp
 operator|->
 name|gimage
-argument_list|)
 expr_stmt|;
 name|gdisp
 operator|->
 name|gimage
 operator|=
 name|NULL
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|gimage
+argument_list|)
 expr_stmt|;
 block|}
 end_function

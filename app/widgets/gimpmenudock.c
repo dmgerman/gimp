@@ -1897,14 +1897,16 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
 name|gimage
+operator|==
+name|NULL
 operator|&&
+name|gimp_container_num_children
+argument_list|(
 name|image_dock
 operator|->
 name|image_container
-operator|->
-name|num_children
+argument_list|)
 operator|>
 literal|0
 condition|)
@@ -1949,11 +1951,16 @@ block|}
 elseif|else
 if|if
 condition|(
+name|gimage
+operator|!=
+name|NULL
+operator|&&
+name|gimp_container_num_children
+argument_list|(
 name|image_dock
 operator|->
 name|display_container
-operator|->
-name|num_children
+argument_list|)
 operator|>
 literal|0
 condition|)
@@ -1961,6 +1968,10 @@ block|{
 name|GimpObject
 modifier|*
 name|gdisp
+decl_stmt|;
+name|GimpImage
+modifier|*
+name|gdisp_gimage
 decl_stmt|;
 name|gboolean
 name|find_display
@@ -1979,10 +1990,6 @@ condition|(
 name|gdisp
 condition|)
 block|{
-name|GimpImage
-modifier|*
-name|gdisp_gimage
-decl_stmt|;
 name|g_object_get
 argument_list|(
 name|gdisp
@@ -1995,6 +2002,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gdisp_gimage
+condition|)
+block|{
 name|g_object_unref
 argument_list|(
 name|gdisp_gimage
@@ -2010,6 +2022,7 @@ name|find_display
 operator|=
 name|FALSE
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
@@ -2043,10 +2056,6 @@ name|list
 argument_list|)
 control|)
 block|{
-name|GimpImage
-modifier|*
-name|gdisp_gimage
-decl_stmt|;
 name|gdisp
 operator|=
 name|GIMP_OBJECT
@@ -2068,6 +2077,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gdisp_gimage
+condition|)
+block|{
 name|g_object_unref
 argument_list|(
 name|gdisp_gimage
@@ -2080,7 +2094,7 @@ operator|==
 name|gimage
 condition|)
 block|{
-comment|/*  this invokes this function recursively but we don't enter                    *  the if(find_display) branch the second time                    */
+comment|/*  this invokes this function recursively but we                        *  don't enter the if(find_display) branch the                        *  second time                        */
 name|gimp_context_set_display
 argument_list|(
 name|context
@@ -2088,8 +2102,9 @@ argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
-comment|/*  don't stop signal emission here because the context's                    *  image was not changed by the recursive call                    */
+comment|/*  don't stop signal emission here because the                        *  context's image was not changed by the                        *  recursive call                        */
 break|break;
+block|}
 block|}
 block|}
 block|}
