@@ -4451,7 +4451,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2c2da3610108
+DECL|struct|__anon2969ae8a0108
 typedef|typedef
 struct|struct
 block|{
@@ -5033,6 +5033,23 @@ argument_list|,
 name|item_list
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_signal_connect
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|,
+literal|"destroy"
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|lc_dialog_update_cb
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|suspend_gimage_notify
