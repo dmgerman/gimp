@@ -92,7 +92,7 @@ name|min
 decl_stmt|,
 name|max
 decl_stmt|;
-name|gint
+name|gboolean
 name|has_alpha
 decl_stmt|;
 name|gpointer
@@ -109,14 +109,15 @@ name|y2
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_DRAWABLE
+argument_list|(
 name|drawable
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_DRAWABLE
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
 argument_list|)
