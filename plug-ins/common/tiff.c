@@ -64,7 +64,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa5766d0108
+DECL|struct|__anon2a2f8cf50108
 block|{
 DECL|member|compression
 name|gint
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa5766d0208
+DECL|struct|__anon2a2f8cf50208
 block|{
 DECL|member|ID
 name|gint32
@@ -1423,6 +1423,39 @@ name|va_list
 name|ap
 parameter_list|)
 block|{
+name|va_list
+name|ap_test
+decl_stmt|;
+comment|/* Workaround for: http://bugzilla.gnome.org/show_bug.cgi?id=131975 */
+comment|/* Ignore the warnings about unregistered private tags (>= 32768) */
+if|if
+condition|(
+operator|!
+name|strcmp
+argument_list|(
+name|fmt
+argument_list|,
+literal|"unknown field with tag %d (0x%x) ignored"
+argument_list|)
+condition|)
+block|{
+name|ap_test
+operator|=
+name|ap
+expr_stmt|;
+if|if
+condition|(
+name|va_arg
+argument_list|(
+name|ap_test
+argument_list|,
+name|int
+argument_list|)
+operator|>=
+literal|32768
+condition|)
+return|return;
+block|}
 name|g_logv
 argument_list|(
 name|G_LOG_DOMAIN
@@ -1457,6 +1490,19 @@ name|va_list
 name|ap
 parameter_list|)
 block|{
+comment|/* Workaround for: http://bugzilla.gnome.org/show_bug.cgi?id=132297 */
+comment|/* Ignore the errors related to random access and JPEG compression */
+if|if
+condition|(
+operator|!
+name|strcmp
+argument_list|(
+name|fmt
+argument_list|,
+literal|"Compression algorithm does not support random access"
+argument_list|)
+condition|)
+return|return;
 name|g_logv
 argument_list|(
 name|G_LOG_DOMAIN
