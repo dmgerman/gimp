@@ -405,7 +405,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2a1f6a470103
+DECL|enum|__anon29f635f70103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1433,7 +1433,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1f6a470208
+DECL|struct|__anon29f635f70208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1510,7 +1510,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1f6a470308
+DECL|struct|__anon29f635f70308
 block|{
 DECL|member|ncolors
 name|long
@@ -1670,7 +1670,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1f6a470408
+DECL|struct|__anon29f635f70408
 block|{
 DECL|member|used_count
 name|signed
@@ -3709,6 +3709,11 @@ comment|/*  shrink wrap and update all views  */
 block|gimp_image_invalidate_layer_previews (gimage);   gimp_viewable_invalidate_preview (GIMP_VIEWABLE (gimage));   gdisplays_update_title (gimage);   gdisplays_update_full (gimage);    gimp_image_colormap_changed (gimage, -1);
 endif|#
 directive|endif
+name|gimp_image_invalidate_layer_previews
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 name|gimp_image_mode_changed
 argument_list|(
 name|gimage

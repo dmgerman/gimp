@@ -240,7 +240,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aaff3660103
+DECL|enum|__anon2b8157870103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -3009,6 +3009,9 @@ name|bytes
 operator|=
 literal|0
 expr_stmt|;
+name|g_assert_not_reached
+argument_list|()
+expr_stmt|;
 break|break;
 block|}
 comment|/*  The construction buffer  */
@@ -3384,6 +3387,22 @@ argument_list|,
 name|w
 argument_list|,
 name|h
+argument_list|)
+expr_stmt|;
+name|g_assert
+argument_list|(
+name|layer_buf
+argument_list|)
+expr_stmt|;
+name|g_assert
+argument_list|(
+name|layer_buf
+operator|->
+name|bytes
+operator|<=
+name|comp
+operator|->
+name|bytes
 argument_list|)
 expr_stmt|;
 name|src2PR
