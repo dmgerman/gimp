@@ -1410,7 +1410,7 @@ name|bevent
 operator|->
 name|state
 expr_stmt|;
-comment|/*  ugly side consition: all operations which set busy cursors are        *  invoked on BUTTON_RELEASE, thus no new BUTTON_PRESS events are        *  accepted while Gimp is busy, thus it should be safe to block        *  BUTTON_RELEASE.  --Mitch        *        *  ugly: fuzzy_select sets busy cursors while ACTIVE.        */
+comment|/*  ugly side condition: all operations which set busy cursors are        *  invoked on BUTTON_RELEASE, thus no new BUTTON_PRESS events are        *  accepted while Gimp is busy, thus it should be safe to block        *  BUTTON_RELEASE.  --Mitch        *        *  ugly: fuzzy_select sets busy cursors while ACTIVE.        */
 if|if
 condition|(
 name|gimp_busy
@@ -2394,7 +2394,7 @@ break|break;
 default|default:
 break|break;
 block|}
-comment|/*  if re reached this point in gimp_busy mode, return now  */
+comment|/*  if we reached this point in gimp_busy mode, return now  */
 if|if
 condition|(
 name|gimp_busy
