@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * GimpText  * Copyright (C) 2002-2003  Sven Neumann<sven@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * GimpTextLayer  * Copyright (C) 2002-2003  Sven Neumann<sven@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -1006,7 +1006,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_from_layer:  * @layer: a #GimpLayer object  * @text: a #GimpText object  *   * Converts a standard #GimpLayer and a #GimpText object into a  * #GimpTextLayer. The new text layer takes ownership of the @text and  * @layer objects.  The @layer object is rendered unusable by this  * function. Don't even try to use if afterwards!  *  * This is a gross hack that is needed in order to load text layers  * from XCF files in a backwards-compatible way. Please don't use it  * for anything else!  *   * Return value: a newly allocated #GimpTextLayer object  **/
+comment|/**  * gimp_text_layer_from_layer:  * @layer: a #GimpLayer object  * @text: a #GimpText object  *  * Converts a standard #GimpLayer and a #GimpText object into a  * #GimpTextLayer. The new text layer takes ownership of the @text and  * @layer objects.  The @layer object is rendered unusable by this  * function. Don't even try to use if afterwards!  *  * This is a gross hack that is needed in order to load text layers  * from XCF files in a backwards-compatible way. Please don't use it  * for anything else!  *  * Return value: a newly allocated #GimpTextLayer object  **/
 end_comment
 
 begin_function
@@ -1653,7 +1653,10 @@ expr_stmt|;
 comment|/*  Make sure we're not caching any old selection info  */
 name|gimp_layer_invalidate_boundary
 argument_list|(
+name|GIMP_LAYER
+argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GIMP_ITEM
