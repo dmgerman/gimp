@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292251c60103
+DECL|enum|__anon2b74142d0103
 block|{
 DECL|enumerator|SESSION_INFO_POSITION
 name|SESSION_INFO_POSITION
@@ -539,12 +539,6 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|aux
-operator|->
-name|name
-condition|)
 name|g_free
 argument_list|(
 name|aux
@@ -552,12 +546,6 @@ operator|->
 name|name
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|aux
-operator|->
-name|value
-condition|)
 name|g_free
 argument_list|(
 name|aux
@@ -709,6 +697,15 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
+name|g_param_value_defaults
+argument_list|(
+name|pspec
+argument_list|,
+operator|&
+name|value
+argument_list|)
+operator|&&
 name|gimp_config_serialize_value
 argument_list|(
 operator|&
@@ -716,9 +713,10 @@ name|value
 argument_list|,
 name|str
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 condition|)
+block|{
 name|list
 operator|=
 name|g_list_prepend
@@ -735,6 +733,7 @@ name|str
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 name|g_value_unset
 argument_list|(
 operator|&
@@ -746,7 +745,7 @@ else|else
 block|{
 name|g_warning
 argument_list|(
-literal|"%s: no property names '%s' for %s"
+literal|"%s: no property named '%s' for %s"
 argument_list|,
 name|G_STRFUNC
 argument_list|,
@@ -1090,7 +1089,7 @@ else|else
 block|{
 name|g_warning
 argument_list|(
-literal|"%s: no property names '%s' for %s"
+literal|"%s: no property named '%s' for %s"
 argument_list|,
 name|G_STRFUNC
 argument_list|,
