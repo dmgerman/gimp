@@ -95,7 +95,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2800bec70108
+DECL|struct|__anon27c9e06b0108
 block|{
 DECL|member|amount_x
 name|gdouble
@@ -536,6 +536,12 @@ operator|.
 name|d_drawable
 argument_list|)
 expr_stmt|;
+comment|/*  set the tile cache size  */
+name|gimp_tile_cache_ntiles
+argument_list|(
+name|TILE_CACHE_SIZE
+argument_list|)
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -744,12 +750,6 @@ name|_
 argument_list|(
 literal|"Displacing..."
 argument_list|)
-argument_list|)
-expr_stmt|;
-comment|/*  set the tile cache size  */
-name|gimp_tile_cache_ntiles
-argument_list|(
-name|TILE_CACHE_SIZE
 argument_list|)
 expr_stmt|;
 comment|/*  run the displace effect  */

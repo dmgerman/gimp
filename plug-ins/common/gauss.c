@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb108380103
+DECL|enum|__anon2c753a0b0103
 block|{
 DECL|enumerator|BLUR_IIR
 name|BLUR_IIR
@@ -70,7 +70,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb108380208
+DECL|struct|__anon2c753a0b0208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -847,6 +847,30 @@ operator|.
 name|d_drawable
 argument_list|)
 expr_stmt|;
+comment|/*  set the tile cache size so that the gaussian blur works well  */
+name|gimp_tile_cache_ntiles
+argument_list|(
+literal|2
+operator|*
+operator|(
+name|MAX
+argument_list|(
+name|drawable
+operator|->
+name|width
+argument_list|,
+name|drawable
+operator|->
+name|height
+argument_list|)
+operator|/
+name|gimp_tile_width
+argument_list|()
+operator|+
+literal|1
+operator|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|strcmp
@@ -1462,30 +1486,6 @@ name|_
 argument_list|(
 literal|"Gaussian Blur..."
 argument_list|)
-argument_list|)
-expr_stmt|;
-comment|/*  set the tile cache size so that the gaussian blur works well  */
-name|gimp_tile_cache_ntiles
-argument_list|(
-literal|2
-operator|*
-operator|(
-name|MAX
-argument_list|(
-name|drawable
-operator|->
-name|width
-argument_list|,
-name|drawable
-operator|->
-name|height
-argument_list|)
-operator|/
-name|gimp_tile_width
-argument_list|()
-operator|+
-literal|1
-operator|)
 argument_list|)
 expr_stmt|;
 comment|/*  run the gaussian blur  */

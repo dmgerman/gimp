@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4729110108
+DECL|struct|__anon2c972ce80108
 block|{
 DECL|member|independent
 name|gboolean
@@ -101,7 +101,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4729110208
+DECL|struct|__anon2c972ce80208
 block|{
 DECL|member|channels
 name|gint
@@ -685,6 +685,11 @@ operator|.
 name|d_drawable
 argument_list|)
 expr_stmt|;
+name|gimp_tile_cache_ntiles
+argument_list|(
+name|TILE_CACHE_SIZE
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimp_drawable_is_gray
@@ -1044,11 +1049,6 @@ name|_
 argument_list|(
 literal|"Adding Noise..."
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_tile_cache_ntiles
-argument_list|(
-name|TILE_CACHE_SIZE
 argument_list|)
 expr_stmt|;
 comment|/*  compute the luminosity which exceeds the luminosity threshold  */

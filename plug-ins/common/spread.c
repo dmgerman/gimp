@@ -44,7 +44,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc0d7d80108
+DECL|struct|__anon278d0e4f0108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -401,6 +401,12 @@ operator|.
 name|d_drawable
 argument_list|)
 expr_stmt|;
+comment|/*  set the tile cache size  */
+name|gimp_tile_cache_ntiles
+argument_list|(
+name|TILE_CACHE_SIZE
+argument_list|)
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -596,12 +602,6 @@ literal|"Spreading..."
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  set the tile cache size  */
-name|gimp_tile_cache_ntiles
-argument_list|(
-name|TILE_CACHE_SIZE
-argument_list|)
-expr_stmt|;
 comment|/*  run the spread effect  */
 name|spread
 argument_list|(
@@ -669,7 +669,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc0d7d80208
+DECL|struct|__anon278d0e4f0208
 block|{
 DECL|member|pft
 name|GimpPixelFetcher

@@ -333,7 +333,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2eed070108
+DECL|struct|__anon27db734b0108
 block|{
 DECL|member|sharpen_percent
 name|gint
@@ -615,6 +615,15 @@ operator|.
 name|d_drawable
 argument_list|)
 expr_stmt|;
+name|gimp_tile_cache_ntiles
+argument_list|(
+literal|2
+operator|*
+name|drawable
+operator|->
+name|ntile_cols
+argument_list|)
+expr_stmt|;
 comment|/*    * See how we will run    */
 switch|switch
 condition|(
@@ -720,28 +729,6 @@ argument_list|)
 operator|)
 condition|)
 block|{
-comment|/*            * Set the tile cache size...            */
-name|gimp_tile_cache_ntiles
-argument_list|(
-literal|2
-operator|*
-operator|(
-name|drawable
-operator|->
-name|width
-operator|+
-name|gimp_tile_width
-argument_list|()
-operator|-
-literal|1
-operator|)
-operator|/
-name|gimp_tile_width
-argument_list|()
-operator|+
-literal|1
-argument_list|)
-expr_stmt|;
 comment|/*            * Run!            */
 name|sharpen
 argument_list|(

@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286e367c0108
+DECL|struct|__anon28dc01f70108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -504,7 +504,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon286e367c0203
+DECL|enum|__anon28dc01f70203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -523,7 +523,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286e367c0308
+DECL|struct|__anon28dc01f70308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -593,7 +593,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286e367c0408
+DECL|struct|__anon28dc01f70408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -958,6 +958,15 @@ operator|.
 name|d_drawable
 argument_list|)
 expr_stmt|;
+name|gimp_tile_cache_ntiles
+argument_list|(
+name|drawable
+operator|->
+name|ntile_cols
+operator|+
+literal|1
+argument_list|)
+expr_stmt|;
 name|has_alpha
 operator|=
 name|gimp_drawable_has_alpha
@@ -1159,23 +1168,6 @@ argument_list|)
 condition|)
 block|{
 comment|/* Set the tile cache size */
-name|gimp_tile_cache_ntiles
-argument_list|(
-operator|(
-name|drawable
-operator|->
-name|width
-operator|+
-name|gimp_tile_width
-argument_list|()
-operator|-
-literal|1
-operator|)
-operator|/
-name|gimp_tile_width
-argument_list|()
-argument_list|)
-expr_stmt|;
 name|gimp_progress_init
 argument_list|(
 name|_

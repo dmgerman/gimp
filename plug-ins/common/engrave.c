@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c23f9e0108
+DECL|struct|__anon2bf94c880108
 block|{
 DECL|member|height
 name|gint
@@ -455,6 +455,11 @@ operator|.
 name|d_drawable
 argument_list|)
 expr_stmt|;
+name|gimp_tile_cache_ntiles
+argument_list|(
+name|TILE_CACHE_SIZE
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|run_mode
@@ -592,11 +597,6 @@ name|_
 argument_list|(
 literal|"Engraving..."
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_tile_cache_ntiles
-argument_list|(
-name|TILE_CACHE_SIZE
 argument_list|)
 expr_stmt|;
 name|engrave
@@ -1137,7 +1137,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c23f9e0208
+DECL|struct|__anon2bf94c880208
 block|{
 DECL|member|x
 DECL|member|y

@@ -46,7 +46,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1e940a0108
+DECL|struct|__anon2c8749810108
 block|{
 DECL|member|inner
 name|gdouble
@@ -584,6 +584,30 @@ operator|.
 name|d_drawable
 argument_list|)
 expr_stmt|;
+comment|/*  set the tile cache size so that the gaussian blur works well  */
+name|gimp_tile_cache_ntiles
+argument_list|(
+literal|2
+operator|*
+operator|(
+name|MAX
+argument_list|(
+name|drawable
+operator|->
+name|width
+argument_list|,
+name|drawable
+operator|->
+name|height
+argument_list|)
+operator|/
+name|gimp_tile_width
+argument_list|()
+operator|+
+literal|1
+operator|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|strcmp
@@ -778,30 +802,6 @@ name|_
 argument_list|(
 literal|"DoG Edge Detect"
 argument_list|)
-argument_list|)
-expr_stmt|;
-comment|/*  set the tile cache size so that the gaussian blur works well  */
-name|gimp_tile_cache_ntiles
-argument_list|(
-literal|2
-operator|*
-operator|(
-name|MAX
-argument_list|(
-name|drawable
-operator|->
-name|width
-argument_list|,
-name|drawable
-operator|->
-name|height
-argument_list|)
-operator|/
-name|gimp_tile_width
-argument_list|()
-operator|+
-literal|1
-operator|)
 argument_list|)
 expr_stmt|;
 comment|/*  run the Difference of Gaussians  */

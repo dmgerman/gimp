@@ -40,7 +40,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3e00400108
+DECL|struct|__anon2b5cdd830108
 block|{
 DECL|member|radius
 name|gdouble
@@ -474,6 +474,25 @@ operator|.
 name|d_drawable
 argument_list|)
 expr_stmt|;
+comment|/*  set the tile cache size so that the gaussian blur works well  */
+name|gimp_tile_cache_ntiles
+argument_list|(
+literal|2
+operator|*
+operator|(
+name|MAX
+argument_list|(
+name|drawable
+operator|->
+name|ntile_rows
+argument_list|,
+name|drawable
+operator|->
+name|ntile_cols
+argument_list|)
+operator|)
+argument_list|)
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -624,30 +643,6 @@ name|_
 argument_list|(
 literal|"Neon..."
 argument_list|)
-argument_list|)
-expr_stmt|;
-comment|/*  set the tile cache size so that the gaussian blur works well  */
-name|gimp_tile_cache_ntiles
-argument_list|(
-literal|2
-operator|*
-operator|(
-name|MAX
-argument_list|(
-name|drawable
-operator|->
-name|width
-argument_list|,
-name|drawable
-operator|->
-name|height
-argument_list|)
-operator|/
-name|gimp_tile_width
-argument_list|()
-operator|+
-literal|1
-operator|)
 argument_list|)
 expr_stmt|;
 comment|/*  run the neon effect  */

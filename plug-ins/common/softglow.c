@@ -83,7 +83,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a6f1fa0108
+DECL|struct|__anon29dbbbe90108
 block|{
 DECL|member|glow_radius
 name|gdouble
@@ -494,6 +494,12 @@ operator|.
 name|d_drawable
 argument_list|)
 expr_stmt|;
+comment|/*  set the tile cache size  */
+name|gimp_tile_cache_ntiles
+argument_list|(
+name|TILE_CACHE_SIZE
+argument_list|)
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -642,12 +648,6 @@ block|{
 name|gimp_progress_init
 argument_list|(
 literal|"Softglow..."
-argument_list|)
-expr_stmt|;
-comment|/*  set the tile cache size  */
-name|gimp_tile_cache_ntiles
-argument_list|(
-name|TILE_CACHE_SIZE
 argument_list|)
 expr_stmt|;
 name|softglow

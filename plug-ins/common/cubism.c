@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf758df0108
+DECL|struct|__anon2bb937ad0108
 block|{
 DECL|member|npts
 name|gint
@@ -134,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf758df0208
+DECL|struct|__anon2bb937ad0208
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -689,6 +689,21 @@ operator|.
 name|d_drawable
 argument_list|)
 expr_stmt|;
+comment|/*  set cache size  */
+comment|/* asking for a lot here but seems to give a speedup -- WES 12-23-04 */
+name|gimp_tile_cache_ntiles
+argument_list|(
+literal|2
+operator|*
+name|drawable
+operator|->
+name|ntile_rows
+operator|*
+name|drawable
+operator|->
+name|ntile_cols
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|run_mode
@@ -845,29 +860,6 @@ argument_list|)
 operator|)
 condition|)
 block|{
-comment|/*  set cache size  */
-name|gimp_tile_cache_ntiles
-argument_list|(
-name|SQR
-argument_list|(
-literal|4
-operator|*
-name|cvals
-operator|.
-name|tile_size
-operator|*
-name|cvals
-operator|.
-name|tile_saturation
-argument_list|)
-operator|/
-name|SQR
-argument_list|(
-name|gimp_tile_width
-argument_list|()
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|cubism
 argument_list|(
 name|drawable

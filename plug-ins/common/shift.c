@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291223620108
+DECL|struct|__anon2bf11eef0108
 block|{
 DECL|member|shift_amount
 name|gint
@@ -442,6 +442,12 @@ operator|.
 name|d_drawable
 argument_list|)
 expr_stmt|;
+comment|/*  set the tile cache size  */
+name|gimp_tile_cache_ntiles
+argument_list|(
+name|TILE_CACHE_SIZE
+argument_list|)
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -619,12 +625,6 @@ name|_
 argument_list|(
 literal|"Shifting..."
 argument_list|)
-argument_list|)
-expr_stmt|;
-comment|/*  set the tile cache size  */
-name|gimp_tile_cache_ntiles
-argument_list|(
-name|TILE_CACHE_SIZE
 argument_list|)
 expr_stmt|;
 comment|/*  run the shift effect  */

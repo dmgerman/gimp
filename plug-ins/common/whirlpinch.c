@@ -121,7 +121,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcd97940108
+DECL|struct|__anon2a3371ba0108
 block|{
 DECL|member|whirl
 name|gdouble
@@ -652,6 +652,16 @@ operator|&
 name|sel_y2
 argument_list|)
 expr_stmt|;
+comment|/* Set the tile cache size */
+name|gimp_tile_cache_ntiles
+argument_list|(
+literal|2
+operator|*
+name|drawable
+operator|->
+name|ntile_cols
+argument_list|)
+expr_stmt|;
 comment|/* Calculate scaling parameters */
 name|sel_width
 operator|=
@@ -908,26 +918,6 @@ argument_list|)
 operator|)
 condition|)
 block|{
-comment|/* Set the tile cache size */
-name|gimp_tile_cache_ntiles
-argument_list|(
-literal|2
-operator|*
-operator|(
-name|drawable
-operator|->
-name|width
-operator|+
-name|gimp_tile_width
-argument_list|()
-operator|-
-literal|1
-operator|)
-operator|/
-name|gimp_tile_width
-argument_list|()
-argument_list|)
-expr_stmt|;
 comment|/* Run! */
 name|whirl_pinch
 argument_list|(

@@ -124,7 +124,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bf7bcc0108
+DECL|struct|__anon2ab33a440108
 block|{
 DECL|member|period
 name|gint
@@ -594,6 +594,12 @@ operator|.
 name|d_drawable
 argument_list|)
 expr_stmt|;
+comment|/*  set the tile cache size  */
+name|gimp_tile_cache_ntiles
+argument_list|(
+name|TILE_CACHE_SIZE
+argument_list|)
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -850,12 +856,6 @@ literal|"Rippling..."
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  set the tile cache size  */
-name|gimp_tile_cache_ntiles
-argument_list|(
-name|TILE_CACHE_SIZE
-argument_list|)
-expr_stmt|;
 comment|/*  run the ripple effect  */
 name|ripple
 argument_list|(
@@ -923,7 +923,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon29bf7bcc0208
+DECL|struct|__anon2ab33a440208
 typedef|typedef
 struct|struct
 block|{

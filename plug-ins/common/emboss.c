@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba81bd40103
+DECL|enum|__anon297f3f6b0103
 block|{
 DECL|enumerator|FUNCTION_BUMPMAP
 name|FUNCTION_BUMPMAP
@@ -77,7 +77,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba81bd40208
+DECL|struct|__anon297f3f6b0208
 block|{
 DECL|member|azimuth
 name|gdouble
@@ -506,6 +506,13 @@ operator|.
 name|data
 operator|.
 name|d_drawable
+argument_list|)
+expr_stmt|;
+name|gimp_tile_cache_ntiles
+argument_list|(
+name|drawable
+operator|->
+name|ntile_cols
 argument_list|)
 expr_stmt|;
 name|rvals
@@ -1563,21 +1570,6 @@ name|_
 argument_list|(
 literal|"Emboss"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_tile_cache_ntiles
-argument_list|(
-operator|(
-name|width
-operator|+
-name|gimp_tile_width
-argument_list|()
-operator|-
-literal|1
-operator|)
-operator|/
-name|gimp_tile_width
-argument_list|()
 argument_list|)
 expr_stmt|;
 comment|/* first row */

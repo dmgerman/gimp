@@ -97,7 +97,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d667910108
+DECL|struct|__anon2bd2bb1b0108
 block|{
 DECL|member|mask_size
 name|gdouble
@@ -448,6 +448,15 @@ operator|.
 name|d_drawable
 argument_list|)
 expr_stmt|;
+name|gimp_tile_cache_ntiles
+argument_list|(
+literal|2
+operator|*
+name|drawable
+operator|->
+name|ntile_cols
+argument_list|)
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -638,22 +647,6 @@ name|_
 argument_list|(
 literal|"Oil Painting..."
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_tile_cache_ntiles
-argument_list|(
-literal|2
-operator|*
-operator|(
-name|drawable
-operator|->
-name|width
-operator|/
-name|gimp_tile_width
-argument_list|()
-operator|+
-literal|1
-operator|)
 argument_list|)
 expr_stmt|;
 name|oilify

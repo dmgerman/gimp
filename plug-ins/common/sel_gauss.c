@@ -36,7 +36,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b52a1f10108
+DECL|struct|__anon28b6db6c0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -404,6 +404,15 @@ operator|.
 name|data
 operator|.
 name|d_drawable
+argument_list|)
+expr_stmt|;
+name|gimp_tile_cache_ntiles
+argument_list|(
+literal|2
+operator|*
+name|drawable
+operator|->
+name|ntile_cols
 argument_list|)
 expr_stmt|;
 switch|switch
