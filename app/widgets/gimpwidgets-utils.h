@@ -79,7 +79,8 @@ parameter_list|,
 name|GimpHelpFunc
 name|help_func
 parameter_list|,
-name|gpointer
+name|gchar
+modifier|*
 name|help_data
 parameter_list|,
 name|GtkWindowPosition
@@ -118,7 +119,8 @@ parameter_list|,
 name|GimpHelpFunc
 name|help_func
 parameter_list|,
-name|gpointer
+name|gchar
+modifier|*
 name|help_data
 parameter_list|,
 name|GtkWindowPosition
@@ -257,7 +259,8 @@ parameter_list|,
 name|GimpHelpFunc
 name|help_func
 parameter_list|,
-name|gpointer
+name|gchar
+modifier|*
 name|help_data
 parameter_list|,
 name|gchar
@@ -297,7 +300,8 @@ parameter_list|,
 name|GimpHelpFunc
 name|help_func
 parameter_list|,
-name|gpointer
+name|gchar
+modifier|*
 name|help_data
 parameter_list|,
 name|char
@@ -342,7 +346,8 @@ parameter_list|,
 name|GimpHelpFunc
 name|help_func
 parameter_list|,
-name|gpointer
+name|gchar
+modifier|*
 name|help_data
 parameter_list|,
 name|gchar
@@ -390,7 +395,8 @@ parameter_list|,
 name|GimpHelpFunc
 name|help_func
 parameter_list|,
-name|gpointer
+name|gchar
+modifier|*
 name|help_data
 parameter_list|,
 name|gchar

@@ -132,12 +132,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"interface.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"lc_dialogP.h"
 end_include
 
@@ -299,15 +293,15 @@ DECL|struct|_PathsDialog
 struct|struct
 name|_PathsDialog
 block|{
-DECL|member|paths_list
-name|GtkWidget
-modifier|*
-name|paths_list
-decl_stmt|;
 DECL|member|vbox
 name|GtkWidget
 modifier|*
 name|vbox
+decl_stmt|;
+DECL|member|paths_list
+name|GtkWidget
+modifier|*
+name|paths_list
 decl_stmt|;
 DECL|member|ops_menu
 name|GtkWidget
@@ -799,7 +793,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|to_path_ext_callbacks
 specifier|static
-name|OpsButtonCallback
+name|GtkSignalFunc
 name|to_path_ext_callbacks
 index|[]
 init|=
@@ -981,7 +975,7 @@ argument_list|(
 literal|"New Point"
 argument_list|)
 block|,
-name|NULL
+literal|"#new_point_button"
 block|,
 name|NULL
 block|,
@@ -1000,7 +994,7 @@ argument_list|(
 literal|"Add Point"
 argument_list|)
 block|,
-name|NULL
+literal|"#add_point_button"
 block|,
 name|NULL
 block|,
@@ -1019,7 +1013,7 @@ argument_list|(
 literal|"Delete Point"
 argument_list|)
 block|,
-name|NULL
+literal|"#delete_point_button"
 block|,
 name|NULL
 block|,
@@ -1038,7 +1032,7 @@ argument_list|(
 literal|"Edit Point"
 argument_list|)
 block|,
-name|NULL
+literal|"#edit_point_button"
 block|,
 name|NULL
 block|,
@@ -1425,6 +1419,20 @@ name|paths_dialog
 operator|->
 name|vbox
 operator|=
+name|gtk_event_box_new
+argument_list|()
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|paths_dialog
+operator|->
+name|vbox
+argument_list|,
+name|NULL
+argument_list|,
+literal|"dialogs/paths/paths.html"
+argument_list|)
+expr_stmt|;
 name|vbox
 operator|=
 name|gtk_vbox_new
@@ -1444,6 +1452,18 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
+name|gtk_container_add
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|paths_dialog
+operator|->
+name|vbox
+argument_list|)
+argument_list|,
+name|vbox
+argument_list|)
+expr_stmt|;
 comment|/* The point operations */
 name|button_box
 operator|=
@@ -1452,8 +1472,6 @@ argument_list|(
 name|lc_dialog
 operator|->
 name|shell
-argument_list|,
-name|tool_tips
 argument_list|,
 name|point_ops_buttons
 argument_list|,
@@ -1742,6 +1760,13 @@ argument_list|(
 name|vbox
 argument_list|)
 expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|paths_dialog
+operator|->
+name|vbox
+argument_list|)
+expr_stmt|;
 comment|/*  The ops buttons  */
 name|button_box
 operator|=
@@ -1750,8 +1775,6 @@ argument_list|(
 name|lc_dialog
 operator|->
 name|shell
-argument_list|,
-name|tool_tips
 argument_list|,
 name|paths_ops_buttons
 argument_list|,
@@ -9702,34 +9725,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|path_load_save_help_func (gpointer data)
-name|path_load_save_help_func
-parameter_list|(
-name|gpointer
-name|data
-parameter_list|)
-block|{
-if|if
-condition|(
-name|load_store
-condition|)
-name|gimp_help
-argument_list|(
-literal|"paths/dialogs/import_path.html"
-argument_list|)
-expr_stmt|;
-else|else
-name|gimp_help
-argument_list|(
-literal|"paths/dialogs/export_path.html"
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
 DECL|function|make_file_dlg (gpointer data)
 name|make_file_dlg
 parameter_list|(
@@ -9823,7 +9818,7 @@ name|gimp_help_connect_help_accel
 argument_list|(
 name|file_dlg
 argument_list|,
-name|path_load_save_help_func
+name|gimp_standard_help_func
 argument_list|,
 name|NULL
 argument_list|)
@@ -9868,6 +9863,15 @@ argument_list|)
 condition|)
 return|return;
 block|}
+name|gimp_help_set_help_data
+argument_list|(
+name|file_dlg
+argument_list|,
+name|NULL
+argument_list|,
+literal|"paths/dialogs/import_path.html"
+argument_list|)
+expr_stmt|;
 name|gtk_window_set_title
 argument_list|(
 name|GTK_WINDOW
@@ -9930,6 +9934,15 @@ argument_list|)
 condition|)
 return|return;
 block|}
+name|gimp_help_set_help_data
+argument_list|(
+name|file_dlg
+argument_list|,
+name|NULL
+argument_list|,
+literal|"paths/dialogs/export_path.html"
+argument_list|)
+expr_stmt|;
 name|gtk_window_set_title
 argument_list|(
 name|GTK_WINDOW

@@ -84,6 +84,11 @@ DECL|member|sample_size
 name|gint
 name|sample_size
 decl_stmt|;
+DECL|member|dnd_gradient
+name|gradient_t
+modifier|*
+name|dnd_gradient
+decl_stmt|;
 DECL|member|black
 name|GdkColor
 name|black

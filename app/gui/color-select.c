@@ -156,7 +156,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29fb7ffc0103
+DECL|enum|__anon2bf446c60103
 block|{
 DECL|enumerator|COLOR_SELECT_OK
 name|COLOR_SELECT_OK
@@ -175,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29fb7ffc0203
+DECL|enum|__anon2bf446c60203
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -223,7 +223,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29fb7ffc0303
+DECL|enum|__anon2bf446c60303
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -1880,7 +1880,7 @@ name|new_color
 argument_list|,
 name|GDK_BUTTON1_MASK
 operator||
-name|GDK_BUTTON3_MASK
+name|GDK_BUTTON2_MASK
 argument_list|,
 name|color_select_target_table
 argument_list|,
@@ -2028,7 +2028,7 @@ name|orig_color
 argument_list|,
 name|GDK_BUTTON1_MASK
 operator||
-name|GDK_BUTTON3_MASK
+name|GDK_BUTTON2_MASK
 argument_list|,
 name|color_select_target_table
 argument_list|,
@@ -10950,7 +10950,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fb7ffc0408
+DECL|struct|__anon2bf446c60408
 block|{
 DECL|member|callback
 name|GimpColorSelector_Callback

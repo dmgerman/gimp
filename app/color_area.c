@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b73b9e70103
+DECL|enum|__anon2b4b1dac0103
 block|{
 DECL|enumerator|FORE_AREA
 name|FORE_AREA
@@ -1754,7 +1754,7 @@ name|color_area
 argument_list|,
 name|GDK_BUTTON1_MASK
 operator||
-name|GDK_BUTTON3_MASK
+name|GDK_BUTTON2_MASK
 argument_list|,
 name|color_area_target_table
 argument_list|,

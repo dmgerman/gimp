@@ -158,6 +158,11 @@ DECL|member|spacing_value
 name|gint
 name|spacing_value
 decl_stmt|;
+DECL|member|dnd_brush
+name|GimpBrush
+modifier|*
+name|dnd_brush
+decl_stmt|;
 comment|/*  Some variables to keep the GUI consistent  */
 DECL|member|cell_width
 name|gint

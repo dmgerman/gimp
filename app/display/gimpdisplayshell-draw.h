@@ -29,27 +29,6 @@ file|"gdisplayF.h"
 end_include
 
 begin_comment
-comment|/*  externed variables  */
-end_comment
-
-begin_decl_stmt
-specifier|extern
-name|GtkWidget
-modifier|*
-name|tool_widgets
-index|[]
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|GtkTooltips
-modifier|*
-name|tool_tips
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
 comment|/*  function declarations  */
 end_comment
 
@@ -118,7 +97,7 @@ modifier|*
 name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl

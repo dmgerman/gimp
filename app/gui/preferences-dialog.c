@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"interface.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"lc_dialog.h"
 end_include
 
@@ -1316,16 +1310,12 @@ if|if
 condition|(
 name|show_tool_tips
 condition|)
-name|gtk_tooltips_enable
-argument_list|(
-name|tool_tips
-argument_list|)
+name|gimp_help_enable_tooltips
+argument_list|()
 expr_stmt|;
 else|else
-name|gtk_tooltips_disable
-argument_list|(
-name|tool_tips
-argument_list|)
+name|gimp_help_disable_tooltips
+argument_list|()
 expr_stmt|;
 comment|/* This needs modification to notify the user of which simply cannot be    * changed on the fly.  Currently it ignores these options if only OK is    * pressed.    */
 block|}
@@ -11252,7 +11242,7 @@ name|page_index
 operator|++
 expr_stmt|;
 block|{
-DECL|struct|__anon2aeed2250108
+DECL|struct|__anon2bae12b80108
 specifier|static
 specifier|const
 struct|struct
@@ -11477,7 +11467,7 @@ block|}
 block|}
 comment|/* Directories /<paths> */
 block|{
-DECL|struct|__anon2aeed2250208
+DECL|struct|__anon2bae12b80208
 specifier|static
 specifier|const
 struct|struct

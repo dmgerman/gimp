@@ -447,7 +447,7 @@ name|drawing_area
 argument_list|,
 name|GDK_BUTTON1_MASK
 operator||
-name|GDK_BUTTON3_MASK
+name|GDK_BUTTON2_MASK
 argument_list|,
 name|color_panel_target_table
 argument_list|,

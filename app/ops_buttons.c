@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphelp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"ops_buttons.h"
 end_include
 
@@ -59,16 +65,12 @@ end_function_decl
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|ops_button_box_new (GtkWidget * parent,GtkTooltips * tool_tips,OpsButton * ops_button,OpsButtonType ops_type)
+DECL|function|ops_button_box_new (GtkWidget * parent,OpsButton * ops_button,OpsButtonType ops_type)
 name|ops_button_box_new
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|parent
-parameter_list|,
-name|GtkTooltips
-modifier|*
-name|tool_tips
 parameter_list|,
 name|OpsButton
 modifier|*
@@ -315,16 +317,8 @@ name|ops_button
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|tool_tips
-operator|!=
-name|NULL
-condition|)
-name|gtk_tooltips_set_tip
+name|gimp_help_set_help_data
 argument_list|(
-name|tool_tips
-argument_list|,
 name|button
 argument_list|,
 name|gettext

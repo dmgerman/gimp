@@ -66,16 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"interface.h"
-end_include
-
-begin_comment
-comment|/* for tool_tips */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|"patterns.h"
 end_include
 
@@ -665,7 +655,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29cca63f0103
+DECL|enum|__anon28e5d3c80103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -1097,12 +1087,6 @@ name|show_tooltips
 operator|=
 name|FALSE
 expr_stmt|;
-name|gcp
-operator|->
-name|drag_source
-operator|=
-name|FALSE
-expr_stmt|;
 name|GTK_PREVIEW
 argument_list|(
 name|gcp
@@ -1222,7 +1206,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_context_preview_new (GimpContextPreviewType type,gint width,gint height,gboolean show_popup,gboolean show_tooltips,gboolean drag_source,GtkSignalFunc drop_data_callback,gpointer drop_data_data)
+DECL|function|gimp_context_preview_new (GimpContextPreviewType type,gint width,gint height,gboolean show_popup,gboolean show_tooltips,GtkSignalFunc drop_data_callback,gpointer drop_data_data)
 name|gimp_context_preview_new
 parameter_list|(
 name|GimpContextPreviewType
@@ -1239,9 +1223,6 @@ name|show_popup
 parameter_list|,
 name|gboolean
 name|show_tooltips
-parameter_list|,
-name|gboolean
-name|drag_source
 parameter_list|,
 name|GtkSignalFunc
 name|drop_data_callback
@@ -1310,9 +1291,6 @@ name|gcp
 operator|->
 name|show_popup
 operator|=
-operator|!
-name|drag_source
-operator|&&
 name|show_popup
 expr_stmt|;
 name|gcp
@@ -1320,12 +1298,6 @@ operator|->
 name|show_tooltips
 operator|=
 name|show_tooltips
-expr_stmt|;
-name|gcp
-operator|->
-name|drag_source
-operator|=
-name|drag_source
 expr_stmt|;
 name|gtk_preview_size
 argument_list|(
@@ -1474,13 +1446,36 @@ operator|!
 name|gcp
 operator|->
 name|data
-operator|&&
+condition|)
+block|{
+if|if
+condition|(
 name|gcp
 operator|->
-name|drag_source
+name|show_popup
 condition|)
-comment|/* first call  */
-block|{
+name|gtk_drag_source_set
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|gcp
+argument_list|)
+argument_list|,
+name|GDK_BUTTON2_MASK
+argument_list|,
+name|context_preview_target_table
+index|[
+name|gcp
+operator|->
+name|type
+index|]
+argument_list|,
+name|n_targets
+argument_list|,
+name|GDK_ACTION_COPY
+argument_list|)
+expr_stmt|;
+else|else
 name|gtk_drag_source_set
 argument_list|(
 name|GTK_WIDGET
@@ -1489,6 +1484,8 @@ name|gcp
 argument_list|)
 argument_list|,
 name|GDK_BUTTON1_MASK
+operator||
+name|GDK_BUTTON2_MASK
 argument_list|,
 name|context_preview_target_table
 index|[
@@ -1809,10 +1806,8 @@ break|break;
 default|default:
 break|break;
 block|}
-name|gtk_tooltips_set_tip
+name|gimp_help_set_help_data
 argument_list|(
-name|tool_tips
-argument_list|,
 name|GTK_WIDGET
 argument_list|(
 name|gcp
@@ -2630,9 +2625,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_context_preview_popup_close ()
+DECL|function|gimp_context_preview_popup_close (void)
 name|gimp_context_preview_popup_close
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -3798,10 +3795,8 @@ name|gcp
 operator|->
 name|show_tooltips
 condition|)
-name|gtk_tooltips_set_tip
+name|gimp_help_set_help_data
 argument_list|(
-name|tool_tips
-argument_list|,
 name|GTK_WIDGET
 argument_list|(
 name|gcp

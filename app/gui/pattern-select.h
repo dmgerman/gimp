@@ -105,6 +105,11 @@ name|GimpContext
 modifier|*
 name|context
 decl_stmt|;
+DECL|member|dnd_pattern
+name|GPattern
+modifier|*
+name|dnd_pattern
+decl_stmt|;
 comment|/*  Some variables to keep the GUI consistent  */
 DECL|member|cell_width
 name|gint

@@ -30,6 +30,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"devices.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"dialog_handler.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontextpreview.h"
 end_include
 
@@ -37,18 +49,6 @@ begin_include
 include|#
 directive|include
 file|"gimpdnd.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"devices.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"interface.h"
 end_include
 
 begin_include
@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"interface.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"session.h"
 end_include
 
@@ -97,12 +103,6 @@ begin_include
 include|#
 directive|include
 file|"tools.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"dialog_handler.h"
 end_include
 
 begin_include
@@ -3479,6 +3479,8 @@ name|i
 index|]
 argument_list|,
 name|GDK_BUTTON1_MASK
+operator||
+name|GDK_BUTTON2_MASK
 argument_list|,
 name|tool_target_table
 argument_list|,
@@ -3654,6 +3656,8 @@ name|i
 index|]
 argument_list|,
 name|GDK_BUTTON1_MASK
+operator||
+name|GDK_BUTTON2_MASK
 argument_list|,
 name|color_area_target_table
 argument_list|,
@@ -3777,8 +3781,6 @@ name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
-name|TRUE
-argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
 name|device_status_drop_brush
@@ -3844,8 +3846,6 @@ argument_list|,
 name|CELL_SIZE
 argument_list|,
 name|FALSE
-argument_list|,
-name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,
@@ -3916,8 +3916,6 @@ argument_list|,
 name|CELL_SIZE
 argument_list|,
 name|FALSE
-argument_list|,
-name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,
@@ -4550,10 +4548,8 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-name|gtk_tooltips_set_tip
+name|gimp_help_set_help_data
 argument_list|(
-name|tool_tips
-argument_list|,
 name|deviceD
 operator|->
 name|eventboxes
@@ -4564,7 +4560,7 @@ argument_list|,
 name|tool_info
 index|[
 operator|(
-name|int
+name|gint
 operator|)
 name|gimp_context_get_tool
 argument_list|(
@@ -4576,7 +4572,20 @@ index|]
 operator|.
 name|tool_desc
 argument_list|,
-name|NULL
+name|tool_info
+index|[
+operator|(
+name|gint
+operator|)
+name|gimp_context_get_tool
+argument_list|(
+name|device_info
+operator|->
+name|context
+argument_list|)
+index|]
+operator|.
+name|private_tip
 argument_list|)
 expr_stmt|;
 for|for
@@ -4709,10 +4718,8 @@ literal|2
 index|]
 argument_list|)
 expr_stmt|;
-name|gtk_tooltips_set_tip
+name|gimp_help_set_help_data
 argument_list|(
-name|tool_tips
-argument_list|,
 name|deviceD
 operator|->
 name|colors

@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"interface.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"layers_dialogP.h"
 end_include
 
@@ -953,7 +947,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|to_selection_ext_callbacks
 specifier|static
-name|OpsButtonCallback
+name|GtkSignalFunc
 name|to_selection_ext_callbacks
 index|[]
 init|=
@@ -1343,6 +1337,20 @@ name|channelsD
 operator|->
 name|vbox
 operator|=
+name|gtk_event_box_new
+argument_list|()
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|channelsD
+operator|->
+name|vbox
+argument_list|,
+name|NULL
+argument_list|,
+literal|"dialogs/channels/channels.html"
+argument_list|)
+expr_stmt|;
 name|vbox
 operator|=
 name|gtk_vbox_new
@@ -1360,6 +1368,18 @@ name|vbox
 argument_list|)
 argument_list|,
 literal|2
+argument_list|)
+expr_stmt|;
+name|gtk_container_add
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|channelsD
+operator|->
+name|vbox
+argument_list|)
+argument_list|,
+name|vbox
 argument_list|)
 expr_stmt|;
 comment|/*  The channels commands pulldown menu  */
@@ -1539,8 +1559,6 @@ argument_list|(
 name|lc_dialog
 operator|->
 name|shell
-argument_list|,
-name|tool_tips
 argument_list|,
 name|channels_ops_buttons
 argument_list|,
@@ -1773,6 +1791,13 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|vbox
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|channelsD
+operator|->
 name|vbox
 argument_list|)
 expr_stmt|;
@@ -6341,6 +6366,8 @@ argument_list|(
 name|list_item
 argument_list|,
 name|GDK_BUTTON1_MASK
+operator||
+name|GDK_BUTTON2_MASK
 argument_list|,
 name|channel_target_table
 argument_list|,
@@ -6392,6 +6419,8 @@ argument_list|(
 name|list_item
 argument_list|,
 name|GDK_BUTTON1_MASK
+operator||
+name|GDK_BUTTON2_MASK
 argument_list|,
 name|component_target_table
 argument_list|,

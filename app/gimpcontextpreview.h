@@ -104,7 +104,7 @@ name|GimpContextPreviewClass
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon273d6a760103
+DECL|enum|__anon28edb29d0103
 block|{
 DECL|enumerator|GCP_BRUSH
 name|GCP_BRUSH
@@ -172,11 +172,6 @@ name|gboolean
 name|show_tooltips
 decl_stmt|;
 comment|/*  install tooltips showing the name   */
-DECL|member|drag_source
-name|gboolean
-name|drag_source
-decl_stmt|;
-comment|/*  make the preview a drag_source      */
 block|}
 struct|;
 DECL|struct|_GimpContextPreviewClass
@@ -225,9 +220,6 @@ name|show_popup
 parameter_list|,
 name|gboolean
 name|show_tooltips
-parameter_list|,
-name|gboolean
-name|drag_source
 parameter_list|,
 name|GtkSignalFunc
 name|drop_data_callback

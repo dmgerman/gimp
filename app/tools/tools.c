@@ -2852,10 +2852,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_help_func (gpointer help_data)
+DECL|function|tools_help_func (gchar * help_data)
 name|tools_help_func
 parameter_list|(
-name|gpointer
+name|gchar
+modifier|*
 name|help_data
 parameter_list|)
 block|{
@@ -2999,7 +3000,7 @@ literal|"tool_options"
 argument_list|,
 name|tools_help_func
 argument_list|,
-name|NULL
+literal|"dialogs/tool_options.html"
 argument_list|,
 name|GTK_WIN_POS_NONE
 argument_list|,

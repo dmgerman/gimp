@@ -117,7 +117,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dialog_new (const gchar * title,const gchar * wmclass_name,GimpHelpFunc help_func,gpointer help_data,GtkWindowPosition position,gint allow_shrink,gint allow_grow,gint auto_shrink,...)
+DECL|function|gimp_dialog_new (const gchar * title,const gchar * wmclass_name,GimpHelpFunc help_func,gchar * help_data,GtkWindowPosition position,gint allow_shrink,gint allow_grow,gint auto_shrink,...)
 name|gimp_dialog_new
 parameter_list|(
 specifier|const
@@ -133,7 +133,8 @@ parameter_list|,
 name|GimpHelpFunc
 name|help_func
 parameter_list|,
-name|gpointer
+name|gchar
+modifier|*
 name|help_data
 parameter_list|,
 name|GtkWindowPosition
@@ -203,7 +204,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dialog_newv (const gchar * title,const gchar * wmclass_name,GimpHelpFunc help_func,gpointer help_data,GtkWindowPosition position,gint allow_shrink,gint allow_grow,gint auto_shrink,va_list args)
+DECL|function|gimp_dialog_newv (const gchar * title,const gchar * wmclass_name,GimpHelpFunc help_func,gchar * help_data,GtkWindowPosition position,gint allow_shrink,gint allow_grow,gint auto_shrink,va_list args)
 name|gimp_dialog_newv
 parameter_list|(
 specifier|const
@@ -219,7 +220,8 @@ parameter_list|,
 name|GimpHelpFunc
 name|help_func
 parameter_list|,
-name|gpointer
+name|gchar
+modifier|*
 name|help_data
 parameter_list|,
 name|GtkWindowPosition
@@ -1323,7 +1325,8 @@ modifier|*
 parameter_list|,
 name|GimpHelpFunc
 parameter_list|,
-name|gpointer
+name|gchar
+modifier|*
 parameter_list|,
 name|GtkSignalFunc
 parameter_list|,
@@ -1416,7 +1419,7 @@ begin_function
 specifier|static
 name|QueryBox
 modifier|*
-DECL|function|create_query_box (gchar * title,GimpHelpFunc help_func,gpointer help_data,GtkSignalFunc ok_callback,gchar * message,GtkObject * object,gchar * signal,GimpQueryFunc callback,gpointer data)
+DECL|function|create_query_box (gchar * title,GimpHelpFunc help_func,gchar * help_data,GtkSignalFunc ok_callback,gchar * message,GtkObject * object,gchar * signal,GimpQueryFunc callback,gpointer data)
 name|create_query_box
 parameter_list|(
 name|gchar
@@ -1426,7 +1429,8 @@ parameter_list|,
 name|GimpHelpFunc
 name|help_func
 parameter_list|,
-name|gpointer
+name|gchar
+modifier|*
 name|help_data
 parameter_list|,
 name|GtkSignalFunc
@@ -1675,7 +1679,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_query_string_box (gchar * title,GimpHelpFunc help_func,gpointer help_data,gchar * message,gchar * initial,GtkObject * object,gchar * signal,GimpQueryFunc callback,gpointer data)
+DECL|function|gimp_query_string_box (gchar * title,GimpHelpFunc help_func,gchar * help_data,gchar * message,gchar * initial,GtkObject * object,gchar * signal,GimpQueryFunc callback,gpointer data)
 name|gimp_query_string_box
 parameter_list|(
 name|gchar
@@ -1685,7 +1689,8 @@ parameter_list|,
 name|GimpHelpFunc
 name|help_func
 parameter_list|,
-name|gpointer
+name|gchar
+modifier|*
 name|help_data
 parameter_list|,
 name|gchar
@@ -1806,7 +1811,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_query_int_box (gchar * title,GimpHelpFunc help_func,gpointer help_data,gchar * message,gint initial,gint lower,gint upper,GtkObject * object,gchar * signal,GimpQueryFunc callback,gpointer data)
+DECL|function|gimp_query_int_box (gchar * title,GimpHelpFunc help_func,gchar * help_data,gchar * message,gint initial,gint lower,gint upper,GtkObject * object,gchar * signal,GimpQueryFunc callback,gpointer data)
 name|gimp_query_int_box
 parameter_list|(
 name|gchar
@@ -1816,7 +1821,8 @@ parameter_list|,
 name|GimpHelpFunc
 name|help_func
 parameter_list|,
-name|gpointer
+name|gchar
+modifier|*
 name|help_data
 parameter_list|,
 name|gchar
@@ -1958,7 +1964,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_query_double_box (gchar * title,GimpHelpFunc help_func,gpointer help_data,gchar * message,gdouble initial,gdouble lower,gdouble upper,gint digits,GtkObject * object,gchar * signal,GimpQueryFunc callback,gpointer data)
+DECL|function|gimp_query_double_box (gchar * title,GimpHelpFunc help_func,gchar * help_data,gchar * message,gdouble initial,gdouble lower,gdouble upper,gint digits,GtkObject * object,gchar * signal,GimpQueryFunc callback,gpointer data)
 name|gimp_query_double_box
 parameter_list|(
 name|gchar
@@ -1968,7 +1974,8 @@ parameter_list|,
 name|GimpHelpFunc
 name|help_func
 parameter_list|,
-name|gpointer
+name|gchar
+modifier|*
 name|help_data
 parameter_list|,
 name|gchar
@@ -2113,7 +2120,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_query_size_box (gchar * title,GimpHelpFunc help_func,gpointer help_data,gchar * message,gdouble initial,gdouble lower,gdouble upper,gint digits,GUnit unit,gdouble resolution,gboolean dot_for_dot,GtkObject * object,gchar * signal,GimpQueryFunc callback,gpointer data)
+DECL|function|gimp_query_size_box (gchar * title,GimpHelpFunc help_func,gchar * help_data,gchar * message,gdouble initial,gdouble lower,gdouble upper,gint digits,GUnit unit,gdouble resolution,gboolean dot_for_dot,GtkObject * object,gchar * signal,GimpQueryFunc callback,gpointer data)
 name|gimp_query_size_box
 parameter_list|(
 name|gchar
@@ -2123,7 +2130,8 @@ parameter_list|,
 name|GimpHelpFunc
 name|help_func
 parameter_list|,
-name|gpointer
+name|gchar
+modifier|*
 name|help_data
 parameter_list|,
 name|gchar

@@ -54,16 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"interface.h"
-end_include
-
-begin_comment
-comment|/*  for tool_tips  */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|"pattern_select.h"
 end_include
 
@@ -423,9 +413,11 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|indicator_area_create ()
+DECL|function|indicator_area_create (void)
 name|indicator_area_create
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GimpContext
 modifier|*
@@ -489,8 +481,6 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|FALSE
-argument_list|,
 operator|(
 name|GimpDndDropBrushFunc
 operator|)
@@ -499,10 +489,8 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_tooltips_set_tip
+name|gimp_help_set_help_data
 argument_list|(
-name|tool_tips
-argument_list|,
 name|brush_preview
 argument_list|,
 name|_
@@ -580,8 +568,6 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|FALSE
-argument_list|,
 operator|(
 name|GimpDndDropPatternFunc
 operator|)
@@ -590,10 +576,8 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_tooltips_set_tip
+name|gimp_help_set_help_data
 argument_list|(
-name|tool_tips
-argument_list|,
 name|pattern_preview
 argument_list|,
 name|_
@@ -671,8 +655,6 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|FALSE
-argument_list|,
 operator|(
 name|GimpDndDropGradientFunc
 operator|)
@@ -681,10 +663,8 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_tooltips_set_tip
+name|gimp_help_set_help_data
 argument_list|(
-name|tool_tips
-argument_list|,
 name|gradient_preview
 argument_list|,
 name|_

@@ -222,7 +222,8 @@ specifier|static
 name|void
 name|lc_dialog_help_func
 parameter_list|(
-name|gpointer
+name|gchar
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -425,7 +426,7 @@ literal|"layers_and_channels"
 argument_list|,
 name|lc_dialog_help_func
 argument_list|,
-name|NULL
+literal|"dialogs/layers_and_channels.html"
 argument_list|,
 name|GTK_WIN_POS_NONE
 argument_list|,
@@ -631,6 +632,17 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|lc_dialog
+operator|->
+name|image_option_menu
+argument_list|,
+name|NULL
+argument_list|,
+literal|"#image_menu"
+argument_list|)
+expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|lc_dialog
@@ -713,6 +725,15 @@ operator|)
 name|lc_dialog_auto_callback
 argument_list|,
 name|auto_button
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|auto_button
+argument_list|,
+name|NULL
+argument_list|,
+literal|"#auto_button"
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1655,7 +1676,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3b54e60108
+DECL|struct|__anon2c0b0f630108
 block|{
 DECL|member|def
 name|GImage
@@ -3080,11 +3101,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|lc_dialog_help_func (gpointer data)
+DECL|function|lc_dialog_help_func (gchar * help_data)
 name|lc_dialog_help_func
 parameter_list|(
-name|gpointer
-name|data
+name|gchar
+modifier|*
+name|help_data
 parameter_list|)
 block|{
 name|gchar

@@ -1589,7 +1589,7 @@ argument_list|)
 argument_list|,
 name|GDK_BUTTON1_MASK
 operator||
-name|GDK_BUTTON3_MASK
+name|GDK_BUTTON2_MASK
 argument_list|,
 name|color_palette_target_table
 argument_list|,
@@ -5171,7 +5171,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2746b0c20108
+DECL|struct|__anon2bf826a30108
 typedef|typedef
 struct|struct
 block|{
