@@ -216,7 +216,7 @@ DECL|macro|DEFAULT_OPTIMIZE
 define|#
 directive|define
 name|DEFAULT_OPTIMIZE
-value|1
+value|TRUE
 end_define
 
 begin_define
@@ -224,7 +224,7 @@ DECL|macro|DEFAULT_PROGRESSIVE
 define|#
 directive|define
 name|DEFAULT_PROGRESSIVE
-value|0
+value|FALSE
 end_define
 
 begin_define
@@ -232,7 +232,7 @@ DECL|macro|DEFAULT_BASELINE
 define|#
 directive|define
 name|DEFAULT_BASELINE
-value|1
+value|TRUE
 end_define
 
 begin_define
@@ -264,7 +264,7 @@ DECL|macro|DEFAULT_PREVIEW
 define|#
 directive|define
 name|DEFAULT_PREVIEW
-value|0
+value|FALSE
 end_define
 
 begin_define
@@ -272,7 +272,7 @@ DECL|macro|DEFAULT_EXIF
 define|#
 directive|define
 name|DEFAULT_EXIF
-value|1
+value|TRUE
 end_define
 
 begin_comment
@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a22ef690108
+DECL|struct|__anon27dd36ec0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -370,15 +370,15 @@ name|gdouble
 name|smoothing
 decl_stmt|;
 DECL|member|optimize
-name|gint
+name|gboolean
 name|optimize
 decl_stmt|;
 DECL|member|progressive
-name|gint
+name|gboolean
 name|progressive
 decl_stmt|;
 DECL|member|baseline
-name|gint
+name|gboolean
 name|baseline
 decl_stmt|;
 DECL|member|subsmp
@@ -394,11 +394,11 @@ name|gint
 name|dct
 decl_stmt|;
 DECL|member|preview
-name|gint
+name|gboolean
 name|preview
 decl_stmt|;
 DECL|member|save_exif
-name|gint
+name|gboolean
 name|save_exif
 decl_stmt|;
 DECL|typedef|JpegSaveVals
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a22ef690208
+DECL|struct|__anon27dd36ec0208
 block|{
 DECL|member|cinfo
 name|struct
@@ -2672,6 +2672,38 @@ end_function
 
 begin_function
 specifier|static
+name|void
+DECL|function|my_emit_message (j_common_ptr cinfo,int msg_level)
+name|my_emit_message
+parameter_list|(
+name|j_common_ptr
+name|cinfo
+parameter_list|,
+name|int
+name|msg_level
+parameter_list|)
+block|{
+if|if
+condition|(
+name|msg_level
+operator|==
+operator|-
+literal|1
+condition|)
+name|cinfo
+operator|->
+name|client_data
+operator|=
+name|GINT_TO_POINTER
+argument_list|(
+name|TRUE
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|gint32
 DECL|function|load_image (const gchar * filename,GimpRunMode runmode,gboolean preview)
 name|load_image
@@ -2794,6 +2826,31 @@ name|error_exit
 operator|=
 name|my_error_exit
 expr_stmt|;
+comment|/* flag warnings, so we try to ignore corrupt EXIF data */
+if|if
+condition|(
+operator|!
+name|preview
+condition|)
+block|{
+name|cinfo
+operator|.
+name|client_data
+operator|=
+name|GINT_TO_POINTER
+argument_list|(
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|jerr
+operator|.
+name|pub
+operator|.
+name|emit_message
+operator|=
+name|my_emit_message
+expr_stmt|;
+block|}
 if|if
 condition|(
 operator|(
@@ -3995,6 +4052,17 @@ define|#
 directive|define
 name|EXIF_HEADER_SIZE
 value|8
+if|if
+condition|(
+operator|!
+name|GPOINTER_TO_INT
+argument_list|(
+name|cinfo
+operator|.
+name|client_data
+argument_list|)
+condition|)
+block|{
 name|exif_data
 operator|=
 name|exif_data_new_from_file
@@ -4069,6 +4137,16 @@ name|exif_buf
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+else|else
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"JPEG loaded with warnings, EXIF data ignored"
+argument_list|)
+argument_list|)
+expr_stmt|;
 endif|#
 directive|endif
 block|}
