@@ -78,7 +78,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfa6db70108
+DECL|struct|__anon2c0b04ad0108
 block|{
 DECL|member|code
 name|__u16
@@ -418,7 +418,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfa6db70203
+DECL|enum|__anon2c0b04ad0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1663,6 +1663,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gboolean
 DECL|function|linux_input_read_event (GIOChannel * io,GIOCondition cond,gpointer data)
 name|linux_input_read_event
