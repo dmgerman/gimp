@@ -145,11 +145,9 @@ directive|include
 file|"widgets/gimpdialogfactory.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"tools/gimptool.h"
-end_include
+begin_comment
+comment|/*#include "tools/gimptool.h"*/
+end_comment
 
 begin_include
 include|#
@@ -244,7 +242,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3cc7050103
+DECL|enum|__anon2afc30130103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING

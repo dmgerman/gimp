@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995-2002 Spencer Kimball, Peter Mattis, and others  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
@@ -16,10 +16,26 @@ directive|define
 name|__GIMP_TOOL_H__
 end_define
 
+begin_comment
+comment|/* EEEEK! */
+end_comment
+
+begin_comment
+comment|/* #include "app/widgets/widgets-types.h" */
+end_comment
+
+begin_comment
+comment|/* FIXME: what should we do about gimpobject? */
+end_comment
+
+begin_comment
+comment|/*#include "gimpobject.h"*/
+end_comment
+
 begin_include
 include|#
 directive|include
-file|"core/gimpobject.h"
+file|"gimptoolcontrol.h"
 end_include
 
 begin_comment
@@ -141,16 +157,11 @@ name|gint
 name|ID
 decl_stmt|;
 comment|/*  unique tool ID                             */
-DECL|member|state
-name|GimpToolState
-name|state
+DECL|member|control
+name|GimpToolControl
+modifier|*
+name|control
 decl_stmt|;
-comment|/*  state of tool activity                     */
-DECL|member|paused_count
-name|gint
-name|paused_count
-decl_stmt|;
-comment|/*  paused control count                       */
 DECL|member|gdisp
 name|GimpDisplay
 modifier|*
@@ -163,59 +174,27 @@ modifier|*
 name|drawable
 decl_stmt|;
 comment|/*  pointer to the tool's current drawable     */
-DECL|member|scroll_lock
-name|gboolean
-name|scroll_lock
-decl_stmt|;
+comment|/* This will soon go away */
+if|#
+directive|if
+literal|0
+block|GimpToolState  state;
+comment|/*  state of tool activity                     */
+block|gint           paused_count;
+comment|/*  paused control count                       */
+block|gboolean       scroll_lock;
 comment|/*  allow scrolling or not               */
-DECL|member|auto_snap_to
-name|gboolean
-name|auto_snap_to
-decl_stmt|;
+block|gboolean       auto_snap_to;
 comment|/*  snap to guides automatically         */
-DECL|member|preserve
-name|gboolean
-name|preserve
-decl_stmt|;
+block|gboolean       preserve;
 comment|/*  Preserve this tool across drawable   *                                       *  changes                              */
-DECL|member|handle_empty_image
-name|gboolean
-name|handle_empty_image
-decl_stmt|;
+block|gboolean       handle_empty_image;
 comment|/*  invoke the tool on images without    *                                       *  active drawable                      */
-DECL|member|motion_mode
-name|GimpMotionMode
-name|motion_mode
-decl_stmt|;
-comment|/*  how to process motion events before  *                                       *  they are forwarded to the tool       */
-DECL|member|cursor
-name|GdkCursorType
-name|cursor
-decl_stmt|;
-DECL|member|tool_cursor
-name|GimpToolCursorType
-name|tool_cursor
-decl_stmt|;
-DECL|member|cursor_modifier
-name|GimpCursorModifier
-name|cursor_modifier
-decl_stmt|;
-DECL|member|toggle_cursor
-name|GdkCursorType
-name|toggle_cursor
-decl_stmt|;
-DECL|member|toggle_tool_cursor
-name|GimpToolCursorType
-name|toggle_tool_cursor
-decl_stmt|;
-DECL|member|toggle_cursor_modifier
-name|GimpCursorModifier
-name|toggle_cursor_modifier
-decl_stmt|;
-DECL|member|toggled
-name|gboolean
-name|toggled
-decl_stmt|;
+block|gboolean       perfectmouse;
+comment|/*  tool is affected by gimprc's         *                                       *  "prefectmouse" setting               */
+block|GdkCursorType      cursor;   GimpToolCursorType tool_cursor;   GimpCursorModifier cursor_modifier;    GdkCursorType      toggle_cursor;   GimpToolCursorType toggle_tool_cursor;   GimpCursorModifier toggle_cursor_modifier;    gboolean           toggled;
+endif|#
+directive|endif
 block|}
 struct|;
 end_struct

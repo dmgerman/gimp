@@ -30,6 +30,24 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/core-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/display-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimptool/gimptooltypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools-types.h"
 end_include
 
@@ -164,15 +182,15 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_ellipse_select_tool_register (Gimp * gimp,GimpToolRegisterCallback callback)
+DECL|function|gimp_ellipse_select_tool_register (GimpToolRegisterCallback callback,Gimp * gimp)
 name|gimp_ellipse_select_tool_register
 parameter_list|(
+name|GimpToolRegisterCallback
+name|callback
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|,
-name|GimpToolRegisterCallback
-name|callback
 parameter_list|)
 block|{
 call|(
@@ -180,8 +198,6 @@ modifier|*
 name|callback
 call|)
 argument_list|(
-name|gimp
-argument_list|,
 name|GIMP_TYPE_ELLIPSE_SELECT_TOOL
 argument_list|,
 name|selection_options_new
@@ -212,6 +228,8 @@ argument_list|,
 literal|"tools/ellipse_select.html"
 argument_list|,
 name|GIMP_STOCK_TOOL_ELLIPSE_SELECT
+argument_list|,
+name|gimp
 argument_list|)
 expr_stmt|;
 block|}
@@ -398,17 +416,44 @@ argument_list|)
 expr_stmt|;
 name|tool
 operator|->
-name|tool_cursor
+name|control
 operator|=
-name|GIMP_ELLIPSE_SELECT_TOOL_CURSOR
-expr_stmt|;
-name|tool
-operator|->
-name|preserve
-operator|=
+name|gimp_tool_control_new
+argument_list|(
 name|FALSE
+argument_list|,
+comment|/* scroll_lock */
+name|TRUE
+argument_list|,
+comment|/* auto_snap_to */
+name|FALSE
+argument_list|,
+comment|/* preserve */
+name|FALSE
+argument_list|,
+comment|/* handle_empty_image */
+name|FALSE
+argument_list|,
+comment|/* perfectmouse */
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+comment|/* cursor */
+name|GIMP_ELLIPSE_SELECT_TOOL_CURSOR
+argument_list|,
+comment|/* tool_cursor */
+name|GIMP_CURSOR_MODIFIER_NONE
+argument_list|,
+comment|/* cursor_modifier */
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+comment|/* toggle_cursor */
+name|GIMP_TOOL_CURSOR_NONE
+argument_list|,
+comment|/* toggle_tool_cursor */
+name|GIMP_CURSOR_MODIFIER_NONE
+comment|/* toggle_cursor_modifier */
+argument_list|)
 expr_stmt|;
-comment|/*  Don't preserve on drawable change  */
 block|}
 end_function
 

@@ -42,7 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools-types.h"
+file|"core/core-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimptool/gimptooltypes.h"
 end_include
 
 begin_include
@@ -580,12 +586,8 @@ argument_list|(
 name|paint_tool
 argument_list|)
 expr_stmt|;
-name|tool
-operator|->
-name|motion_mode
-operator|=
-name|GIMP_MOTION_MODE_EXACT
-expr_stmt|;
+comment|/* tool->perfectmouse      = TRUE; */
+comment|/* FIXME tool->motion_mode       = GIMP_MOTION_MODE_EXACT; */
 name|paint_tool
 operator|->
 name|pick_colors
@@ -1068,11 +1070,12 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|gimp_tool_control_activate
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|=
-name|ACTIVE
+name|control
+argument_list|)
 expr_stmt|;
 name|tool
 operator|->
@@ -1383,12 +1386,14 @@ name|GIMP_SELECTION_RESUME
 argument_list|)
 expr_stmt|;
 comment|/*  Set tool state to inactive -- no longer painting */
+name|gimp_tool_control_halt
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|=
-name|INACTIVE
+name|control
+argument_list|)
 expr_stmt|;
+comment|/* sets paused_count to 0 -- is this ok? */
 name|gimp_paint_core_finish
 argument_list|(
 name|core

@@ -202,12 +202,12 @@ begin_function_decl
 name|void
 name|gimp_threshold_tool_register
 parameter_list|(
+name|GimpToolRegisterCallback
+name|callback
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|,
-name|GimpToolRegisterCallback
-name|callback
 parameter_list|)
 function_decl|;
 end_function_decl

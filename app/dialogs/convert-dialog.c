@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/gimptool.h"
+file|"libgimptool/gimptool.h"
 end_include
 
 begin_include
@@ -102,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2993307f0108
+DECL|struct|__anon2ac6a8d90108
 block|{
 DECL|member|shell
 name|GtkWidget

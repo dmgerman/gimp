@@ -48,7 +48,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools-types.h"
+file|"core/core-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/display-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimptool/gimptooltypes.h"
 end_include
 
 begin_include
@@ -675,22 +687,45 @@ argument_list|)
 expr_stmt|;
 name|tool
 operator|->
-name|scroll_lock
+name|control
 operator|=
+name|gimp_tool_control_new
+argument_list|(
 name|EDIT_SELECT_SCROLL_LOCK
-expr_stmt|;
-name|tool
-operator|->
-name|auto_snap_to
-operator|=
+argument_list|,
+comment|/* scroll_lock */
 name|FALSE
+argument_list|,
+comment|/* auto_snap_to */
+name|TRUE
+argument_list|,
+comment|/* preserve */
+name|FALSE
+argument_list|,
+comment|/* handle_empty_image */
+name|FALSE
+argument_list|,
+comment|/* perfectmouse */
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+comment|/* cursor */
+name|GIMP_TOOL_CURSOR_NONE
+argument_list|,
+comment|/* tool_cursor */
+name|GIMP_CURSOR_MODIFIER_NONE
+argument_list|,
+comment|/* cursor_modifier */
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+comment|/* toggle_cursor */
+name|GIMP_TOOL_CURSOR_NONE
+argument_list|,
+comment|/* toggle_tool_cursor */
+name|GIMP_CURSOR_MODIFIER_NONE
+comment|/* toggle_cursor_modifier */
+argument_list|)
 expr_stmt|;
-name|tool
-operator|->
-name|motion_mode
-operator|=
-name|GIMP_MOTION_MODE_COMPRESS
-expr_stmt|;
+comment|/* FIXME!  tool->motion_mode               = GIMP_MOTION_MODE_COMPRESS; */
 name|edit_selection_tool
 operator|->
 name|origx
@@ -1174,14 +1209,15 @@ name|gdisp
 operator|=
 name|gdisp
 expr_stmt|;
+name|gimp_tool_control_activate
+argument_list|(
 name|GIMP_TOOL
 argument_list|(
 name|edit_select
 argument_list|)
 operator|->
-name|state
-operator|=
-name|ACTIVE
+name|control
+argument_list|)
 expr_stmt|;
 name|g_object_ref
 argument_list|(
@@ -1321,6 +1357,8 @@ operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_halt
+argument_list|(
 name|tool_manager_get_active
 argument_list|(
 name|gdisp
@@ -1330,10 +1368,10 @@ operator|->
 name|gimp
 argument_list|)
 operator|->
-name|state
-operator|=
-name|INACTIVE
+name|control
+argument_list|)
 expr_stmt|;
+comment|/* sets paused_count to 0 -- is this ok? */
 comment|/* EDIT_MASK_TRANSLATE is performed here at movement end, not 'live' like    *  the other translation types.    */
 if|if
 condition|(
@@ -1583,11 +1621,13 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
+name|gimp_tool_control_is_active
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|!=
-name|ACTIVE
+name|control
+argument_list|)
 condition|)
 block|{
 name|g_warning

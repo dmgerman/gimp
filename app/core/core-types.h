@@ -3,6 +3,10 @@ begin_comment
 comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
+begin_comment
+comment|/*< proxy-skip>*/
+end_comment
+
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -61,7 +65,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bca299b0103
+DECL|enum|__anon288099450103
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -81,7 +85,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2bca299b0203
+DECL|enum|__anon288099450203
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -102,7 +106,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2bca299b0303
+DECL|enum|__anon288099450303
 block|{
 comment|/* NOTE: If you change this list, please update the textual mapping at    *  the bottom of undo.c as well.    */
 comment|/* Type NO_UNDO_GROUP (0) is special - in the gimpimage structure it    * means there is no undo group currently being added to.    */
@@ -207,6 +211,11 @@ name|_GimpObject
 name|GimpObject
 typedef|;
 end_typedef
+
+begin_comment
+DECL|typedef|GimpObject
+comment|/*< proxy-include>*/
+end_comment
 
 begin_typedef
 DECL|typedef|Gimp
@@ -317,15 +326,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpToolInfo
-typedef|typedef
-name|struct
-name|_GimpToolInfo
-name|GimpToolInfo
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpImagefile
 typedef|typedef
 name|struct
@@ -346,6 +346,11 @@ name|_GimpDrawable
 name|GimpDrawable
 typedef|;
 end_typedef
+
+begin_comment
+DECL|typedef|GimpDrawable
+comment|/*< proxy-resume>*/
+end_comment
 
 begin_typedef
 DECL|typedef|GimpChannel
@@ -395,6 +400,11 @@ name|_GimpData
 name|GimpData
 typedef|;
 end_typedef
+
+begin_comment
+DECL|typedef|GimpData
+comment|/*< proxy-skip>*/
+end_comment
 
 begin_typedef
 DECL|typedef|GimpBrush
@@ -503,6 +513,11 @@ name|GimpCoords
 typedef|;
 end_typedef
 
+begin_comment
+DECL|typedef|GimpCoords
+comment|/*< proxy-include>*/
+end_comment
+
 begin_typedef
 DECL|typedef|GimpCoreConfig
 typedef|typedef
@@ -584,19 +599,6 @@ typedef|typedef
 name|struct
 name|_PathList
 name|PathList
-typedef|;
-end_typedef
-
-begin_comment
-comment|/*  stuff which is forward declared here so we don't need to cross-include it  */
-end_comment
-
-begin_typedef
-DECL|typedef|GimpToolOptions
-typedef|typedef
-name|struct
-name|_GimpToolOptions
-name|GimpToolOptions
 typedef|;
 end_typedef
 

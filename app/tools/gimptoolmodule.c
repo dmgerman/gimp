@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimptoolmodule.h"
+file|"libgimptool/gimptoolmodule.h"
 end_include
 
 begin_function_decl
@@ -459,7 +459,7 @@ end_function
 begin_function
 name|GimpToolModule
 modifier|*
-DECL|function|gimp_tool_module_new (const gchar * filename,Gimp * gimp,GimpToolRegisterCallback callback)
+DECL|function|gimp_tool_module_new (const gchar * filename,GimpToolRegisterCallback callback,gpointer data)
 name|gimp_tool_module_new
 parameter_list|(
 specifier|const
@@ -467,17 +467,22 @@ name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
 name|GimpToolRegisterCallback
 name|callback
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 block|{
 name|GimpToolModule
 modifier|*
 name|module
+decl_stmt|;
+name|Gimp
+modifier|*
+name|gimp
+init|=
+name|data
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -541,9 +546,9 @@ name|module
 operator|->
 name|register_tool
 argument_list|(
-name|gimp
-argument_list|,
 name|callback
+argument_list|,
+name|gimp
 argument_list|)
 expr_stmt|;
 name|gimp_tool_module_unload

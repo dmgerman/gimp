@@ -36,7 +36,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools-types.h"
+file|"core/core-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/display-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimptool/gimptooltypes.h"
 end_include
 
 begin_include
@@ -417,15 +429,15 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_color_balance_tool_register (Gimp * gimp,GimpToolRegisterCallback callback)
+DECL|function|gimp_color_balance_tool_register (GimpToolRegisterCallback callback,Gimp * gimp)
 name|gimp_color_balance_tool_register
 parameter_list|(
+name|GimpToolRegisterCallback
+name|callback
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|,
-name|GimpToolRegisterCallback
-name|callback
 parameter_list|)
 block|{
 call|(
@@ -433,8 +445,6 @@ modifier|*
 name|callback
 call|)
 argument_list|(
-name|gimp
-argument_list|,
 name|GIMP_TYPE_COLOR_BALANCE_TOOL
 argument_list|,
 name|NULL
@@ -465,6 +475,8 @@ argument_list|,
 literal|"tools/color_balance.html"
 argument_list|,
 name|GIMP_STOCK_TOOL_COLOR_BALANCE
+argument_list|,
+name|gimp
 argument_list|)
 expr_stmt|;
 block|}
@@ -614,7 +626,51 @@ name|GimpColorBalanceTool
 modifier|*
 name|bc_tool
 parameter_list|)
-block|{ }
+block|{
+name|GIMP_TOOL
+argument_list|(
+name|bc_tool
+argument_list|)
+operator|->
+name|control
+operator|=
+name|gimp_tool_control_new
+argument_list|(
+name|FALSE
+argument_list|,
+comment|/* scroll_lock */
+name|TRUE
+argument_list|,
+comment|/* auto_snap_to */
+name|TRUE
+argument_list|,
+comment|/* preserve */
+name|FALSE
+argument_list|,
+comment|/* handle_empty_image */
+name|FALSE
+argument_list|,
+comment|/* perfectmouse */
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+comment|/* cursor */
+name|GIMP_TOOL_CURSOR_NONE
+argument_list|,
+comment|/* tool_cursor */
+name|GIMP_CURSOR_MODIFIER_NONE
+argument_list|,
+comment|/* cursor_modifier */
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+comment|/* toggle_cursor */
+name|GIMP_TOOL_CURSOR_NONE
+argument_list|,
+comment|/* toggle_tool_cursor */
+name|GIMP_CURSOR_MODIFIER_NONE
+comment|/* toggle_cursor_modifier */
+argument_list|)
+expr_stmt|;
+block|}
 end_function
 
 begin_function
@@ -2712,11 +2768,14 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
+name|gimp_tool_control_set_preserve
+argument_list|(
 name|active_tool
 operator|->
-name|preserve
-operator|=
+name|control
+argument_list|,
 name|TRUE
+argument_list|)
 expr_stmt|;
 name|color_balance_create_lookup_tables
 argument_list|(
@@ -2738,11 +2797,14 @@ operator|)
 name|cbd
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_set_preserve
+argument_list|(
 name|active_tool
 operator|->
-name|preserve
-operator|=
+name|control
+argument_list|,
 name|FALSE
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -2871,11 +2933,14 @@ argument_list|(
 name|the_gimp
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_set_preserve
+argument_list|(
 name|active_tool
 operator|->
-name|preserve
-operator|=
+name|control
+argument_list|,
 name|TRUE
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -2912,11 +2977,14 @@ operator|->
 name|image_map
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_set_preserve
+argument_list|(
 name|active_tool
 operator|->
-name|preserve
-operator|=
+name|control
+argument_list|,
 name|FALSE
+argument_list|)
 expr_stmt|;
 name|cbd
 operator|->
@@ -2990,11 +3058,14 @@ operator|->
 name|image_map
 condition|)
 block|{
+name|gimp_tool_control_set_preserve
+argument_list|(
 name|active_tool
 operator|->
-name|preserve
-operator|=
+name|control
+argument_list|,
 name|TRUE
+argument_list|)
 expr_stmt|;
 name|image_map_abort
 argument_list|(
@@ -3003,11 +3074,14 @@ operator|->
 name|image_map
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_set_preserve
+argument_list|(
 name|active_tool
 operator|->
-name|preserve
-operator|=
+name|control
+argument_list|,
 name|FALSE
+argument_list|)
 expr_stmt|;
 name|gdisplays_flush
 argument_list|()
@@ -3214,11 +3288,14 @@ argument_list|(
 name|the_gimp
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_set_preserve
+argument_list|(
 name|active_tool
 operator|->
-name|preserve
-operator|=
+name|control
+argument_list|,
 name|TRUE
+argument_list|)
 expr_stmt|;
 name|image_map_clear
 argument_list|(
@@ -3227,11 +3304,14 @@ operator|->
 name|image_map
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_set_preserve
+argument_list|(
 name|active_tool
 operator|->
-name|preserve
-operator|=
+name|control
+argument_list|,
 name|FALSE
+argument_list|)
 expr_stmt|;
 name|gdisplays_flush
 argument_list|()

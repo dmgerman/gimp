@@ -52,6 +52,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimptool/gimptooltypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"base/tile.h"
 end_include
 

@@ -42,7 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools-types.h"
+file|"core/core-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimptool/gimptooltypes.h"
 end_include
 
 begin_include
@@ -165,7 +171,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27678e690103
+DECL|enum|__anon2c4d3ad30103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -751,15 +757,15 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_crop_tool_register (Gimp * gimp,GimpToolRegisterCallback callback)
+DECL|function|gimp_crop_tool_register (GimpToolRegisterCallback callback,Gimp * gimp)
 name|gimp_crop_tool_register
 parameter_list|(
+name|GimpToolRegisterCallback
+name|callback
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|,
-name|GimpToolRegisterCallback
-name|callback
 parameter_list|)
 block|{
 call|(
@@ -767,8 +773,6 @@ modifier|*
 name|callback
 call|)
 argument_list|(
-name|gimp
-argument_list|,
 name|GIMP_TYPE_CROP_TOOL
 argument_list|,
 name|crop_options_new
@@ -799,6 +803,8 @@ argument_list|,
 literal|"tools/crop_tool.html"
 argument_list|,
 name|GIMP_STOCK_TOOL_CROP
+argument_list|,
+name|gimp
 argument_list|)
 expr_stmt|;
 block|}
@@ -1023,17 +1029,44 @@ argument_list|)
 expr_stmt|;
 name|tool
 operator|->
-name|tool_cursor
+name|control
 operator|=
-name|GIMP_CROP_TOOL_CURSOR
-expr_stmt|;
-name|tool
-operator|->
-name|preserve
-operator|=
+name|gimp_tool_control_new
+argument_list|(
 name|FALSE
+argument_list|,
+comment|/* scroll_lock */
+name|TRUE
+argument_list|,
+comment|/* auto_snap_to */
+name|FALSE
+argument_list|,
+comment|/* preserve */
+name|FALSE
+argument_list|,
+comment|/* handle_empty_image */
+name|FALSE
+argument_list|,
+comment|/* perfectmouse */
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+comment|/* cursor */
+name|GIMP_CROP_TOOL_CURSOR
+argument_list|,
+comment|/* tool_cursor */
+name|GIMP_CURSOR_MODIFIER_NONE
+argument_list|,
+comment|/* cursor_modifier */
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+comment|/* toggle_cursor */
+name|GIMP_TOOL_CURSOR_NONE
+argument_list|,
+comment|/* toggle_tool_cursor */
+name|GIMP_CURSOR_MODIFIER_NONE
+comment|/* toggle_cursor_modifier */
+argument_list|)
 expr_stmt|;
-comment|/*  Don't preserve on drawable change  */
 block|}
 end_function
 
@@ -1205,11 +1238,13 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
+name|gimp_tool_control_is_active
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|==
-name|INACTIVE
+name|control
+argument_list|)
 operator|||
 name|gdisp
 operator|!=
@@ -1475,11 +1510,12 @@ condition|)
 block|{
 if|if
 condition|(
+name|gimp_tool_control_is_active
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|==
-name|ACTIVE
+name|control
+argument_list|)
 condition|)
 name|gimp_draw_tool_stop
 argument_list|(
@@ -1563,11 +1599,12 @@ operator|->
 name|y
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_activate
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|=
-name|ACTIVE
+name|control
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -2516,11 +2553,12 @@ name|tool_options
 expr_stmt|;
 if|if
 condition|(
+name|gimp_tool_control_is_active
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|==
-name|ACTIVE
+name|control
+argument_list|)
 condition|)
 block|{
 name|inc_x
@@ -3100,18 +3138,21 @@ name|tool_options
 expr_stmt|;
 if|if
 condition|(
+operator|!
+name|gimp_tool_control_is_active
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|==
-name|INACTIVE
+name|control
+argument_list|)
 operator|||
 operator|(
+name|gimp_tool_control_is_active
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|==
-name|ACTIVE
+name|control
+argument_list|)
 operator|&&
 name|tool
 operator|->
@@ -3120,6 +3161,7 @@ operator|!=
 name|gdisp
 operator|)
 condition|)
+comment|/* this expression can be simplified to !..._is_active() || t->g != g */
 block|{
 name|ctype
 operator|=
@@ -3336,16 +3378,21 @@ operator|=
 name|GIMP_CROSSHAIR_SMALL_CURSOR
 expr_stmt|;
 block|}
+name|gimp_tool_control_set_cursor
+argument_list|(
 name|tool
 operator|->
-name|cursor
-operator|=
+name|control
+argument_list|,
 name|ctype
+argument_list|)
 expr_stmt|;
+name|gimp_tool_control_set_tool_cursor
+argument_list|(
 name|tool
 operator|->
-name|tool_cursor
-operator|=
+name|control
+argument_list|,
 operator|(
 name|options
 operator|->
@@ -3357,12 +3404,16 @@ name|GIMP_CROP_TOOL_CURSOR
 else|:
 name|GIMP_RESIZE_TOOL_CURSOR
 operator|)
+argument_list|)
 expr_stmt|;
+name|gimp_tool_control_set_cursor_modifier
+argument_list|(
 name|tool
 operator|->
-name|cursor_modifier
-operator|=
+name|control
+argument_list|,
 name|cmodifier
+argument_list|)
 expr_stmt|;
 name|GIMP_TOOL_CLASS
 argument_list|(
@@ -5088,11 +5139,12 @@ condition|)
 block|{
 if|if
 condition|(
+name|gimp_tool_control_is_active
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|==
-name|ACTIVE
+name|control
+argument_list|)
 condition|)
 name|gimp_draw_tool_stop
 argument_list|(
@@ -5102,12 +5154,14 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_halt
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|=
-name|INACTIVE
+name|control
+argument_list|)
 expr_stmt|;
+comment|/* sets paused_count to 0 -- is this ok? */
 block|}
 name|info_dialog_popdown
 argument_list|(

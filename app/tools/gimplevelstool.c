@@ -83,7 +83,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools-types.h"
+file|"core/core-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/display-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimptool/gimptooltypes.h"
 end_include
 
 begin_include
@@ -505,9 +517,9 @@ specifier|static
 name|void
 name|gimp_levels_tool_init
 parameter_list|(
-name|GimpLevelsTool
+name|GimpTool
 modifier|*
-name|bc_tool
+name|tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -974,15 +986,15 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_levels_tool_register (Gimp * gimp,GimpToolRegisterCallback callback)
+DECL|function|gimp_levels_tool_register (GimpToolRegisterCallback callback,Gimp * gimp)
 name|gimp_levels_tool_register
 parameter_list|(
+name|GimpToolRegisterCallback
+name|callback
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|,
-name|GimpToolRegisterCallback
-name|callback
 parameter_list|)
 block|{
 call|(
@@ -990,8 +1002,6 @@ modifier|*
 name|callback
 call|)
 argument_list|(
-name|gimp
-argument_list|,
 name|GIMP_TYPE_LEVELS_TOOL
 argument_list|,
 name|NULL
@@ -1022,6 +1032,8 @@ argument_list|,
 literal|"tools/levels.html"
 argument_list|,
 name|GIMP_STOCK_TOOL_LEVELS
+argument_list|,
+name|gimp
 argument_list|)
 expr_stmt|;
 block|}
@@ -1161,14 +1173,55 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_levels_tool_init (GimpLevelsTool * bc_tool)
+DECL|function|gimp_levels_tool_init (GimpTool * tool)
 name|gimp_levels_tool_init
 parameter_list|(
-name|GimpLevelsTool
+name|GimpTool
 modifier|*
-name|bc_tool
+name|tool
 parameter_list|)
-block|{ }
+block|{
+name|tool
+operator|->
+name|control
+operator|=
+name|gimp_tool_control_new
+argument_list|(
+name|FALSE
+argument_list|,
+comment|/* scroll_lock */
+name|TRUE
+argument_list|,
+comment|/* auto_snap_to */
+name|TRUE
+argument_list|,
+comment|/* preserve */
+name|FALSE
+argument_list|,
+comment|/* handle_empty_image */
+name|FALSE
+argument_list|,
+comment|/* perfectmouse */
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+comment|/* cursor */
+name|GIMP_TOOL_CURSOR_NONE
+argument_list|,
+comment|/* tool_cursor */
+name|GIMP_CURSOR_MODIFIER_NONE
+argument_list|,
+comment|/* cursor_modifier */
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+comment|/* toggle_cursor */
+name|GIMP_TOOL_CURSOR_NONE
+argument_list|,
+comment|/* toggle_tool_cursor */
+name|GIMP_CURSOR_MODIFIER_NONE
+comment|/* toggle_cursor_modifier */
+argument_list|)
+expr_stmt|;
+block|}
 end_function
 
 begin_function
@@ -1537,11 +1590,14 @@ operator|->
 name|image_map
 condition|)
 block|{
+name|gimp_tool_control_set_preserve
+argument_list|(
 name|active_tool
 operator|->
-name|preserve
-operator|=
+name|control
+argument_list|,
 name|TRUE
+argument_list|)
 expr_stmt|;
 name|image_map_abort
 argument_list|(
@@ -1550,11 +1606,14 @@ operator|->
 name|image_map
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_set_preserve
+argument_list|(
 name|active_tool
 operator|->
-name|preserve
-operator|=
+name|control
+argument_list|,
 name|FALSE
+argument_list|)
 expr_stmt|;
 name|levels_dialog
 operator|->
@@ -5251,11 +5310,14 @@ operator|->
 name|preview
 condition|)
 return|return;
+name|gimp_tool_control_set_preserve
+argument_list|(
 name|active_tool
 operator|->
-name|preserve
-operator|=
+name|control
+argument_list|,
 name|TRUE
+argument_list|)
 expr_stmt|;
 name|image_map_apply
 argument_list|(
@@ -5277,11 +5339,14 @@ operator|->
 name|lut
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_set_preserve
+argument_list|(
 name|active_tool
 operator|->
-name|preserve
-operator|=
+name|control
+argument_list|,
 name|FALSE
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -5880,11 +5945,14 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_set_preserve
+argument_list|(
 name|active_tool
 operator|->
-name|preserve
-operator|=
+name|control
+argument_list|,
 name|TRUE
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -5962,11 +6030,14 @@ operator|->
 name|image_map
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_set_preserve
+argument_list|(
 name|active_tool
 operator|->
-name|preserve
-operator|=
+name|control
+argument_list|,
 name|FALSE
+argument_list|)
 expr_stmt|;
 name|ld
 operator|->
@@ -6040,11 +6111,14 @@ operator|->
 name|image_map
 condition|)
 block|{
+name|gimp_tool_control_set_preserve
+argument_list|(
 name|active_tool
 operator|->
-name|preserve
-operator|=
+name|control
+argument_list|,
 name|TRUE
+argument_list|)
 expr_stmt|;
 name|image_map_abort
 argument_list|(
@@ -6053,11 +6127,14 @@ operator|->
 name|image_map
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_set_preserve
+argument_list|(
 name|active_tool
 operator|->
-name|preserve
-operator|=
+name|control
+argument_list|,
 name|FALSE
+argument_list|)
 expr_stmt|;
 name|gdisplays_flush
 argument_list|()
@@ -6422,11 +6499,14 @@ argument_list|(
 name|the_gimp
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_set_preserve
+argument_list|(
 name|active_tool
 operator|->
-name|preserve
-operator|=
+name|control
+argument_list|,
 name|TRUE
+argument_list|)
 expr_stmt|;
 name|image_map_clear
 argument_list|(
@@ -6435,11 +6515,14 @@ operator|->
 name|image_map
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_set_preserve
+argument_list|(
 name|active_tool
 operator|->
-name|preserve
-operator|=
+name|control
+argument_list|,
 name|FALSE
+argument_list|)
 expr_stmt|;
 name|gdisplays_flush
 argument_list|()

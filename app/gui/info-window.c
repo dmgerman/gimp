@@ -93,11 +93,9 @@ directive|include
 file|"widgets/gimppreview.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"tools/gimptool.h"
-end_include
+begin_comment
+comment|/*#include "tools/gimptool.h"*/
+end_comment
 
 begin_include
 include|#

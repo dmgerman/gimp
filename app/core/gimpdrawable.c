@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimptool/gimptooltypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"base/pixel-region.h"
 end_include
 
@@ -173,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2997aed10103
+DECL|enum|__anon29441e160103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED

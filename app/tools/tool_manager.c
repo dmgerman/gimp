@@ -78,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimptool.h"
+file|"gimptoolcontrol-displayshell.h"
 end_include
 
 begin_include
@@ -1039,14 +1039,16 @@ operator|==
 name|HALT
 condition|)
 block|{
+name|gimp_tool_control_halt
+argument_list|(
 name|tool_manager
 operator|->
 name|active_tool
 operator|->
-name|state
-operator|=
-name|INACTIVE
+name|control
+argument_list|)
 expr_stmt|;
+comment|/* sets paused_count to 0 -- is this ok? */
 block|}
 block|}
 end_function
@@ -1515,13 +1517,9 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_manager_register_tool (Gimp * gimp,GType tool_type,GimpToolOptionsNewFunc options_new_func,gboolean tool_context,const gchar * identifier,const gchar * blurb,const gchar * help,const gchar * menu_path,const gchar * menu_accel,const gchar * help_domain,const gchar * help_data,const gchar * stock_id)
+DECL|function|tool_manager_register_tool (GType tool_type,GimpToolOptionsNewFunc options_new_func,gboolean tool_context,const gchar * identifier,const gchar * blurb,const gchar * help,const gchar * menu_path,const gchar * menu_accel,const gchar * help_domain,const gchar * help_data,const gchar * stock_id,Gimp * gimp)
 name|tool_manager_register_tool
 parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
 name|GType
 name|tool_type
 parameter_list|,
@@ -1570,6 +1568,10 @@ specifier|const
 name|gchar
 modifier|*
 name|stock_id
+parameter_list|,
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|GimpToolManager
@@ -2366,11 +2368,14 @@ operator|->
 name|active_tool
 operator|&&
 operator|!
+name|gimp_tool_control_preserve
+argument_list|(
 name|tool_manager
 operator|->
 name|active_tool
 operator|->
-name|preserve
+name|control
+argument_list|)
 condition|)
 block|{
 name|GimpDisplay

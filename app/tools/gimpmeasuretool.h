@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2afb82500103
+DECL|enum|__anon27c02cf90103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -216,12 +216,12 @@ begin_function_decl
 name|void
 name|gimp_measure_tool_register
 parameter_list|(
+name|GimpToolRegisterCallback
+name|callback
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|,
-name|GimpToolRegisterCallback
-name|callback
 parameter_list|)
 function_decl|;
 end_function_decl

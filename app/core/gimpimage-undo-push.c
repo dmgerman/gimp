@@ -36,7 +36,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/tools-types.h"
+file|"core/core-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimptool/gimptooltypes.h"
 end_include
 
 begin_include
@@ -159,11 +165,9 @@ directive|include
 file|"tools/gimpbycolorselecttool.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"tools/gimptool.h"
-end_include
+begin_comment
+comment|/*#include "tools/gimptool.h"*/
+end_comment
 
 begin_include
 include|#
@@ -257,7 +261,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5fce700103
+DECL|enum|__anon2794c83e0103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -12234,11 +12238,12 @@ operator|->
 name|original
 condition|)
 block|{
+name|gimp_tool_control_activate
+argument_list|(
 name|active_tool
 operator|->
-name|state
-operator|=
-name|ACTIVE
+name|control
+argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_resume
 argument_list|(

@@ -75,11 +75,9 @@ directive|include
 file|"gimpbycolorselecttool.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimptool.h"
-end_include
+begin_comment
+comment|/*#include "gimptool.h"*/
+end_comment
 
 begin_include
 include|#

@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimptool.h"
+file|"libgimptool/gimptool.h"
 end_include
 
 begin_define
@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2782861a0103
+DECL|enum|__anon2bc0b7950103
 block|{
 DECL|enumerator|PIXELS
 name|PIXELS
@@ -164,12 +164,12 @@ begin_function_decl
 name|void
 name|gimp_text_tool_register
 parameter_list|(
+name|GimpToolRegisterCallback
+name|callback
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|,
-name|GimpToolRegisterCallback
-name|callback
 parameter_list|)
 function_decl|;
 end_function_decl

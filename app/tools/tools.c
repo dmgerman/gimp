@@ -18,6 +18,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/core-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimptool/gimptooltypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools-types.h"
 end_include
 
@@ -50,7 +62,13 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"gimptool.h"
+file|"libgimptool/gimptool.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimptool/gimptoolmodule.h"
 end_include
 
 begin_include
@@ -290,12 +308,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimptoolmodule.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpvectortool.h"
 end_include
 
@@ -326,9 +338,9 @@ name|gimp_tool_module_new
 argument_list|(
 name|filename
 argument_list|,
-name|gimp
-argument_list|,
 name|tool_manager_register_tool
+argument_list|,
+name|gimp
 argument_list|)
 expr_stmt|;
 block|}
@@ -459,33 +471,20 @@ index|[
 name|i
 index|]
 operator|(
-name|gimp
-operator|,
 name|tool_manager_register_tool
+operator|,
+name|gimp
 operator|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|g_module_supported
-argument_list|()
-condition|)
-name|gimp_datafiles_read_directories
-argument_list|(
-name|gimp
-operator|->
-name|config
-operator|->
-name|tool_plug_in_path
-argument_list|,
+if|#
+directive|if
 literal|0
+block|if (g_module_supported ())     gimp_datafiles_read_directories (gimp->config->tool_plug_in_path,                                      0
 comment|/* no flags */
-argument_list|,
-name|cheesey_module_loading_hack
-argument_list|,
-name|gimp
-argument_list|)
-expr_stmt|;
+block|,                                      cheesey_module_loading_hack,                                      gimp);
+endif|#
+directive|endif
 block|}
 end_function
 

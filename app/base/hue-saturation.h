@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b526e910103
+DECL|enum|__anon2a4847ac0103
 block|{
 DECL|enumerator|ALL_HUES
 name|ALL_HUES
@@ -249,12 +249,12 @@ begin_function_decl
 name|void
 name|gimp_hue_saturation_tool_register
 parameter_list|(
+name|GimpToolRegisterCallback
+name|callback
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|,
-name|GimpToolRegisterCallback
-name|callback
 parameter_list|)
 function_decl|;
 end_function_decl

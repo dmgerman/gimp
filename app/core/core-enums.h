@@ -3,6 +3,10 @@ begin_comment
 comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
+begin_comment
+comment|/*< proxy-skip>*/
+end_comment
+
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -23,17 +27,17 @@ literal|0
 end_if
 
 begin_comment
-unit|This file is parsed by two scripts, enumgen.pl in tools/pdbgen    and gimp-mkenums. All enums that are not marked with
+unit|This file is parsed by three scripts, enumgen.pl in tools/pdbgen,    gimp-mkenums, and gimp-mkproxy. All enums that are not marked with
 comment|/*< pdb-skip>*/
 end_comment
 
 begin_comment
-unit|are exported to libgimp and the PDB. Enums that are not marked with
+unit|are exported to libgimp and the PDB. Enums that are    not marked with
 comment|/*< skip>*/
 end_comment
 
 begin_comment
-unit|are registered with the GType system. If you want the    enum to be skipped by both scripts, you have to use
+unit|are registered with the GType system.     If you want the enum to be skipped by both scripts, you have to use
 comment|/*< pdb-skip>*/
 end_comment
 
@@ -48,7 +52,7 @@ comment|/*< skip>*/
 end_comment
 
 begin_endif
-unit|are skipped for    both targets.
+unit|are skipped for    both targets.     Anything not between proxy-skip and proxy-resume     pairs will be copied into libgimpproxy by gimp-mkproxy.
 endif|#
 directive|endif
 end_endif
@@ -78,7 +82,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b32e1be0103
+DECL|enum|__anon2c6ecee20103
 block|{
 DECL|enumerator|GIMP_FG_BG_RGB_MODE
 name|GIMP_FG_BG_RGB_MODE
@@ -122,7 +126,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b32e1be0203
+DECL|enum|__anon2c6ecee20203
 block|{
 DECL|enumerator|GIMP_FG_BUCKET_FILL
 name|GIMP_FG_BUCKET_FILL
@@ -162,7 +166,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b32e1be0303
+DECL|enum|__anon2c6ecee20303
 block|{
 DECL|enumerator|GIMP_RED_CHANNEL
 name|GIMP_RED_CHANNEL
@@ -208,7 +212,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b32e1be0403
+DECL|enum|__anon2c6ecee20403
 block|{
 DECL|enumerator|GIMP_NO_DITHER
 name|GIMP_NO_DITHER
@@ -256,7 +260,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b32e1be0503
+DECL|enum|__anon2c6ecee20503
 block|{
 DECL|enumerator|GIMP_LINEAR
 name|GIMP_LINEAR
@@ -328,7 +332,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b32e1be0603
+DECL|enum|__anon2c6ecee20603
 block|{
 DECL|enumerator|GIMP_RGB
 name|GIMP_RGB
@@ -366,7 +370,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b32e1be0703
+DECL|enum|__anon2c6ecee20703
 block|{
 DECL|enumerator|GIMP_PREVIEW_SIZE_NONE
 name|GIMP_PREVIEW_SIZE_NONE
@@ -454,7 +458,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b32e1be0803
+DECL|enum|__anon2c6ecee20803
 block|{
 DECL|enumerator|GIMP_REPEAT_NONE
 name|GIMP_REPEAT_NONE
@@ -495,7 +499,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b32e1be0903
+DECL|enum|__anon2c6ecee20903
 block|{
 DECL|enumerator|GIMP_SELECTION_OFF
 name|GIMP_SELECTION_OFF
@@ -538,7 +542,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b32e1be0a03
+DECL|enum|__anon2c6ecee20a03
 block|{
 DECL|enumerator|GIMP_SHADOWS
 name|GIMP_SHADOWS
@@ -579,7 +583,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b32e1be0b03
+DECL|enum|__anon2c6ecee20b03
 block|{
 DECL|enumerator|GIMP_TRANSFORM_FORWARD
 name|GIMP_TRANSFORM_FORWARD
@@ -601,8 +605,9 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
+comment|/*< proxy-resume>*/
 comment|/*< skip>*/
-DECL|enum|__anon2b32e1be0c03
+DECL|enum|__anon2c6ecee20c03
 block|{
 DECL|enumerator|GIMP_CHANNEL_OP_ADD
 name|GIMP_CHANNEL_OP_ADD
@@ -624,8 +629,9 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
+comment|/*< proxy-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2b32e1be0d03
+DECL|enum|__anon2c6ecee20d03
 block|{
 DECL|enumerator|GIMP_MAKE_PALETTE
 name|GIMP_MAKE_PALETTE
@@ -651,7 +657,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b32e1be0e03
+DECL|enum|__anon2c6ecee20e03
 block|{
 DECL|enumerator|GIMP_FOREGROUND_FILL
 name|GIMP_FOREGROUND_FILL
@@ -678,7 +684,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2b32e1be0f03
+DECL|enum|__anon2c6ecee20f03
 block|{
 DECL|enumerator|GIMP_GRAD_LINEAR
 name|GIMP_GRAD_LINEAR
@@ -707,7 +713,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2b32e1be1003
+DECL|enum|__anon2c6ecee21003
 block|{
 DECL|enumerator|GIMP_GRAD_RGB
 name|GIMP_GRAD_RGB
@@ -730,7 +736,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b32e1be1103
+DECL|enum|__anon2c6ecee21103
 block|{
 DECL|enumerator|GIMP_RGB_IMAGE
 name|GIMP_RGB_IMAGE
@@ -759,7 +765,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b32e1be1203
+DECL|enum|__anon2c6ecee21203
 block|{
 DECL|enumerator|GIMP_ADD_WHITE_MASK
 name|GIMP_ADD_WHITE_MASK
@@ -791,7 +797,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b32e1be1303
+DECL|enum|__anon2c6ecee21303
 block|{
 DECL|enumerator|GIMP_MASK_APPLY
 name|GIMP_MASK_APPLY
@@ -808,7 +814,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b32e1be1403
+DECL|enum|__anon2c6ecee21403
 block|{
 DECL|enumerator|GIMP_EXPAND_AS_NECESSARY
 name|GIMP_EXPAND_AS_NECESSARY
@@ -831,7 +837,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b32e1be1503
+DECL|enum|__anon2c6ecee21503
 block|{
 DECL|enumerator|GIMP_OFFSET_BACKGROUND
 name|GIMP_OFFSET_BACKGROUND
@@ -850,7 +856,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __CORE_TYPES_H__ */
+comment|/* __CORE_ENUMS_H__ */
 end_comment
 
 end_unit

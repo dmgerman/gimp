@@ -42,6 +42,24 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/core-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/display-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimptool/gimptooltypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools-types.h"
 end_include
 
@@ -286,15 +304,15 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_free_select_tool_register (Gimp * gimp,GimpToolRegisterCallback callback)
+DECL|function|gimp_free_select_tool_register (GimpToolRegisterCallback callback,Gimp * gimp)
 name|gimp_free_select_tool_register
 parameter_list|(
+name|GimpToolRegisterCallback
+name|callback
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|,
-name|GimpToolRegisterCallback
-name|callback
 parameter_list|)
 block|{
 call|(
@@ -302,8 +320,6 @@ modifier|*
 name|callback
 call|)
 argument_list|(
-name|gimp
-argument_list|,
 name|GIMP_TYPE_FREE_SELECT_TOOL
 argument_list|,
 name|selection_options_new
@@ -334,6 +350,8 @@ argument_list|,
 literal|"tools/free_select.html"
 argument_list|,
 name|GIMP_STOCK_TOOL_FREE_SELECT
+argument_list|,
+name|gimp
 argument_list|)
 expr_stmt|;
 block|}
@@ -549,17 +567,33 @@ argument_list|)
 expr_stmt|;
 name|tool
 operator|->
-name|tool_cursor
+name|control
 operator|=
-name|GIMP_FREE_SELECT_TOOL_CURSOR
-expr_stmt|;
-name|tool
-operator|->
-name|scroll_lock
-operator|=
+name|gimp_tool_control_new
+argument_list|(
 name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+name|GIMP_FREE_SELECT_TOOL_CURSOR
+argument_list|,
+name|GIMP_CURSOR_MODIFIER_NONE
+argument_list|,
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+name|GIMP_TOOL_CURSOR_NONE
+argument_list|,
+name|GIMP_CURSOR_MODIFIER_NONE
+argument_list|)
 expr_stmt|;
-comment|/*  Do not allow scrolling  */
 name|free_select
 operator|->
 name|points
@@ -673,11 +707,12 @@ argument_list|(
 name|tool
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_activate
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|=
-name|ACTIVE
+name|control
+argument_list|)
 expr_stmt|;
 name|tool
 operator|->
@@ -820,12 +855,14 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_halt
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|=
-name|INACTIVE
+name|control
+argument_list|)
 expr_stmt|;
+comment|/* sets paused_count to 0 -- is this ok? */
 comment|/*  First take care of the case where the user "cancels" the action  */
 if|if
 condition|(
@@ -974,11 +1011,13 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
+name|gimp_tool_control_is_active
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|!=
-name|ACTIVE
+name|control
+argument_list|)
 condition|)
 return|return;
 if|if

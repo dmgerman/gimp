@@ -24,7 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools-types.h"
+file|"core/core-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimptool/gimptooltypes.h"
 end_include
 
 begin_include
@@ -167,15 +173,15 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|gimp_eraser_tool_register (Gimp * gimp,GimpToolRegisterCallback callback)
+DECL|function|gimp_eraser_tool_register (GimpToolRegisterCallback callback,Gimp * gimp)
 name|gimp_eraser_tool_register
 parameter_list|(
+name|GimpToolRegisterCallback
+name|callback
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|,
-name|GimpToolRegisterCallback
-name|callback
 parameter_list|)
 block|{
 call|(
@@ -183,8 +189,6 @@ modifier|*
 name|callback
 call|)
 argument_list|(
-name|gimp
-argument_list|,
 name|GIMP_TYPE_ERASER_TOOL
 argument_list|,
 name|gimp_eraser_tool_options_new
@@ -215,6 +219,8 @@ argument_list|,
 literal|"tools/eraser.html"
 argument_list|,
 name|GIMP_STOCK_TOOL_ERASER
+argument_list|,
+name|gimp
 argument_list|)
 expr_stmt|;
 block|}
@@ -386,27 +392,43 @@ argument_list|)
 expr_stmt|;
 name|tool
 operator|->
-name|tool_cursor
+name|control
 operator|=
+name|gimp_tool_control_new
+argument_list|(
+name|FALSE
+argument_list|,
+comment|/* scroll_lock */
+name|TRUE
+argument_list|,
+comment|/* auto_snap_to */
+name|TRUE
+argument_list|,
+comment|/* preserve */
+name|FALSE
+argument_list|,
+comment|/* handle_empty_image */
+name|FALSE
+argument_list|,
+comment|/* perfectmouse */
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+comment|/* cursor */
 name|GIMP_ERASER_TOOL_CURSOR
-expr_stmt|;
-name|tool
-operator|->
-name|cursor_modifier
-operator|=
+argument_list|,
+comment|/* tool_cursor */
 name|GIMP_CURSOR_MODIFIER_NONE
-expr_stmt|;
-name|tool
-operator|->
-name|toggle_tool_cursor
-operator|=
+argument_list|,
+comment|/* cursor_modifier */
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+comment|/* toggle_cursor */
 name|GIMP_ERASER_TOOL_CURSOR
-expr_stmt|;
-name|tool
-operator|->
-name|toggle_cursor_modifier
-operator|=
+argument_list|,
+comment|/* toggle_tool_cursor */
 name|GIMP_CURSOR_MODIFIER_MINUS
+comment|/* toggle_cursor_modifier */
+argument_list|)
 expr_stmt|;
 name|paint_tool
 operator|->
@@ -536,13 +558,16 @@ name|tool_info
 operator|->
 name|tool_options
 expr_stmt|;
+name|gimp_tool_control_set_toggle
+argument_list|(
 name|tool
 operator|->
-name|toggled
-operator|=
+name|control
+argument_list|,
 name|options
 operator|->
 name|anti_erase
+argument_list|)
 expr_stmt|;
 name|GIMP_TOOL_CLASS
 argument_list|(

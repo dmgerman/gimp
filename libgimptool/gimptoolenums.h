@@ -16,12 +16,6 @@ directive|define
 name|__TOOLS_ENUMS_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"core/core-enums.h"
-end_include
-
 begin_if
 if|#
 directive|if
@@ -71,21 +65,24 @@ name|GIMP_TYPE_CROP_TYPE
 value|(gimp_crop_type_get_type ())
 end_define
 
-begin_decl_stmt
+begin_function_decl
 name|GType
 name|gimp_crop_type_get_type
-argument_list|(
+parameter_list|(
 name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* G_GNUC_CONST;*/
+end_comment
 
 begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2ab134300103
+DECL|enum|__anon29d5eb0c0103
 block|{
 DECL|enumerator|GIMP_CROP
 name|GIMP_CROP
@@ -109,7 +106,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2ab134300203
+DECL|enum|__anon29d5eb0c0203
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -154,7 +151,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2ab134300303
+DECL|enum|__anon29d5eb0c0303
 block|{
 DECL|enumerator|INACTIVE
 name|INACTIVE
@@ -176,7 +173,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2ab134300403
+DECL|enum|__anon29d5eb0c0403
 block|{
 DECL|enumerator|PAUSE
 name|PAUSE
@@ -201,7 +198,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2ab134300503
+DECL|enum|__anon29d5eb0c0503
 block|{
 DECL|enumerator|GIMP_MOTION_MODE_EXACT
 name|GIMP_MOTION_MODE_EXACT
@@ -226,7 +223,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2ab134300603
+DECL|enum|__anon29d5eb0c0603
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -260,7 +257,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2ab134300703
+DECL|enum|__anon29d5eb0c0703
 block|{
 DECL|enumerator|TRANSFORM_INIT
 name|TRANSFORM_INIT

@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/gimptool.h"
+file|"libgimptool/gimptool.h"
 end_include
 
 begin_include

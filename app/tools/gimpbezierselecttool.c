@@ -42,6 +42,24 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/core-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/display-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimptool/gimptooltypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools-types.h"
 end_include
 
@@ -286,7 +304,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2991a4070108
+DECL|struct|__anon27c3be7d0108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -322,7 +340,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2991a4070208
+DECL|struct|__anon27c3be7d0208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -377,7 +395,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2991a4070308
+DECL|struct|__anon27c3be7d0308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -1196,15 +1214,15 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_bezier_select_tool_register (Gimp * gimp,GimpToolRegisterCallback callback)
+DECL|function|gimp_bezier_select_tool_register (GimpToolRegisterCallback callback,Gimp * gimp)
 name|gimp_bezier_select_tool_register
 parameter_list|(
+name|GimpToolRegisterCallback
+name|callback
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|,
-name|GimpToolRegisterCallback
-name|callback
 parameter_list|)
 block|{
 call|(
@@ -1212,8 +1230,6 @@ modifier|*
 name|callback
 call|)
 argument_list|(
-name|gimp
-argument_list|,
 name|GIMP_TYPE_BEZIER_SELECT_TOOL
 argument_list|,
 name|selection_options_new
@@ -1244,6 +1260,8 @@ argument_list|,
 literal|"tools/bezier_select.html"
 argument_list|,
 name|GIMP_STOCK_TOOL_BEZIER_SELECT
+argument_list|,
+name|gimp
 argument_list|)
 expr_stmt|;
 block|}
@@ -1488,17 +1506,44 @@ name|NULL
 expr_stmt|;
 name|tool
 operator|->
-name|tool_cursor
+name|control
 operator|=
-name|GIMP_BEZIER_SELECT_TOOL_CURSOR
-expr_stmt|;
-name|tool
-operator|->
-name|preserve
-operator|=
+name|gimp_tool_control_new
+argument_list|(
 name|FALSE
+argument_list|,
+comment|/* scroll_lock */
+name|TRUE
+argument_list|,
+comment|/* auto_snap_to */
+name|FALSE
+argument_list|,
+comment|/* preserve */
+name|FALSE
+argument_list|,
+comment|/* handle_empty_image */
+name|FALSE
+argument_list|,
+comment|/* perfectmouse */
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+comment|/* cursor */
+name|GIMP_BEZIER_SELECT_TOOL_CURSOR
+argument_list|,
+comment|/* tool_cursor */
+name|GIMP_CURSOR_MODIFIER_NONE
+argument_list|,
+comment|/* cursor_modifier */
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+comment|/* toggle_cursor */
+name|GIMP_TOOL_CURSOR_NONE
+argument_list|,
+comment|/* toggle_tool_cursor */
+name|GIMP_CURSOR_MODIFIER_NONE
+comment|/* toggle_cursor_modifier */
+argument_list|)
 expr_stmt|;
-comment|/*  Don't preserve on drawable change  */
 name|curCore
 operator|=
 name|draw_tool
@@ -1600,11 +1645,12 @@ expr_stmt|;
 comment|/*  If the tool was being used in another image...reset it  */
 if|if
 condition|(
+name|gimp_tool_control_is_active
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|==
-name|ACTIVE
+name|control
+argument_list|)
 operator|&&
 name|gdisp
 operator|!=
@@ -1693,11 +1739,12 @@ name|grab_pointer
 operator|=
 name|TRUE
 expr_stmt|;
+name|gimp_tool_control_activate
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|=
-name|ACTIVE
+name|control
+argument_list|)
 expr_stmt|;
 name|tool
 operator|->
@@ -2879,13 +2926,24 @@ decl_stmt|;
 name|gint
 name|offsety
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_BEZIER_SELECT_TOOL
+argument_list|(
+name|tool
+argument_list|)
+argument_list|)
+expr_stmt|;
+comment|/* never can be too careful */
 if|if
 condition|(
+operator|!
+name|gimp_tool_control_is_active
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|!=
-name|ACTIVE
+name|control
+argument_list|)
 condition|)
 return|return;
 name|bezier_sel
@@ -3528,12 +3586,6 @@ argument_list|)
 expr_stmt|;
 name|tool
 operator|->
-name|state
-operator|=
-name|ACTIVE
-expr_stmt|;
-name|tool
-operator|->
 name|gdisp
 operator|=
 name|gdisp
@@ -3545,6 +3597,13 @@ name|GimpBezierSelectTool
 operator|*
 operator|)
 name|tool
+expr_stmt|;
+name|gimp_tool_control_activate
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|)
 expr_stmt|;
 name|bezier_sel
 operator|->
@@ -10732,11 +10791,12 @@ argument_list|(
 name|tool
 argument_list|)
 operator|&&
+name|gimp_tool_control_is_active
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|==
-name|ACTIVE
+name|control
+argument_list|)
 operator|)
 return|;
 block|}
@@ -10799,11 +10859,12 @@ argument_list|(
 name|tool
 argument_list|)
 operator|&&
+name|gimp_tool_control_is_active
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|==
-name|ACTIVE
+name|control
+argument_list|)
 condition|)
 block|{
 name|GimpBezierSelectTool
@@ -10871,11 +10932,12 @@ operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_activate
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|=
-name|ACTIVE
+name|control
+argument_list|)
 expr_stmt|;
 name|tool
 operator|->

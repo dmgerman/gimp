@@ -866,20 +866,34 @@ name|info_dialog
 operator|=
 name|NULL
 expr_stmt|;
-name|tool
-operator|->
-name|scroll_lock
-operator|=
-name|TRUE
-expr_stmt|;
-comment|/*  Disallow scrolling  */
-name|tool
-operator|->
-name|preserve
-operator|=
-name|FALSE
-expr_stmt|;
-comment|/*  Don't preserve on drawable change  */
+if|#
+directive|if
+literal|0
+block|tool->control = gimp_tool_control_new  (TRUE,
+comment|/* scroll_lock */
+block|TRUE,
+comment|/* auto_snap_to */
+block|FALSE,
+comment|/* preserve */
+block|FALSE,
+comment|/* handle_empty_image */
+block|FALSE,
+comment|/* perfectmouse */
+block|GIMP_MOUSE_CURSOR,
+comment|/* cursor */
+block|GIMP_TOOL_CURSOR_NONE,
+comment|/* tool_cursor */
+block|GIMP_CURSOR_MODIFIER_NONE,
+comment|/* cursor_modifier */
+block|GIMP_MOUSE_CURSOR,
+comment|/* toggle_cursor */
+block|GIMP_TOOL_CURSOR_NONE,
+comment|/* toggle_tool_cursor */
+block|GIMP_CURSOR_MODIFIER_NONE
+comment|/* toggle_cursor_modifier */
+block|);
+endif|#
+directive|endif
 block|}
 end_function
 
@@ -1261,22 +1275,25 @@ literal|"layers that contain layer masks."
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_halt
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|=
-name|INACTIVE
+name|control
+argument_list|)
 expr_stmt|;
+comment|/* sets paused_count to 0 -- is this ok? */
 return|return;
 block|}
 comment|/*  If the tool is already active, clear the current state                *  and reset                */
 if|if
 condition|(
+name|gimp_tool_control_is_active
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|==
-name|ACTIVE
+name|control
+argument_list|)
 condition|)
 block|{
 name|g_warning
@@ -1307,11 +1324,12 @@ name|drawable
 operator|=
 name|drawable
 expr_stmt|;
+name|gimp_tool_control_activate
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|=
-name|ACTIVE
+name|control
+argument_list|)
 expr_stmt|;
 comment|/*  Find the transform bounds for some tools (like scale,                *  perspective) that actually need the bounds for                *  initializing                */
 name|gimp_transform_tool_bounds
@@ -1373,11 +1391,12 @@ name|function
 operator|==
 name|TRANSFORM_CREATING
 operator|&&
+name|gimp_tool_control_is_active
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|==
-name|ACTIVE
+name|control
+argument_list|)
 condition|)
 block|{
 name|gint
@@ -1447,11 +1466,12 @@ name|coords
 operator|->
 name|y
 expr_stmt|;
+name|gimp_tool_control_activate
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|=
-name|ACTIVE
+name|control
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -2295,17 +2315,23 @@ operator|=
 name|GIMP_CURSOR_MODIFIER_MOVE
 expr_stmt|;
 block|}
+name|gimp_tool_control_set_cursor
+argument_list|(
 name|tool
 operator|->
-name|cursor
-operator|=
+name|control
+argument_list|,
 name|ctype
+argument_list|)
 expr_stmt|;
+name|gimp_tool_control_set_cursor_modifier
+argument_list|(
 name|tool
 operator|->
-name|cursor_modifier
-operator|=
+name|control
+argument_list|,
 name|cmodifier
+argument_list|)
 expr_stmt|;
 name|GIMP_TOOL_CLASS
 argument_list|(
@@ -2857,11 +2883,14 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  We're going to dirty this image, but we want to keep the tool    *  around    */
+name|gimp_tool_control_set_preserve
+argument_list|(
 name|tool
 operator|->
-name|preserve
-operator|=
+name|control
+argument_list|,
 name|TRUE
+argument_list|)
 expr_stmt|;
 comment|/*  Start a transform undo group  */
 name|undo_push_group_start
@@ -3010,11 +3039,14 @@ name|gimage
 argument_list|)
 expr_stmt|;
 comment|/*  We're done dirtying the image, and would like to be restarted    *  if the image gets dirty while the tool exists    */
+name|gimp_tool_control_set_preserve
+argument_list|(
 name|tool
 operator|->
-name|preserve
-operator|=
+name|control
+argument_list|,
 name|FALSE
+argument_list|)
 expr_stmt|;
 name|gimp_unset_busy
 argument_list|(
@@ -3529,12 +3561,14 @@ operator|->
 name|info_dialog
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_halt
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|=
-name|INACTIVE
+name|control
+argument_list|)
 expr_stmt|;
+comment|/* sets paused_count to 0 -- is this ok? */
 name|tool
 operator|->
 name|gdisp

@@ -36,7 +36,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools-types.h"
+file|"core/core-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/display-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimptool/gimptooltypes.h"
 end_include
 
 begin_include
@@ -403,15 +415,15 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_magnify_tool_register (Gimp * gimp,GimpToolRegisterCallback callback)
+DECL|function|gimp_magnify_tool_register (GimpToolRegisterCallback callback,Gimp * gimp)
 name|gimp_magnify_tool_register
 parameter_list|(
+name|GimpToolRegisterCallback
+name|callback
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|,
-name|GimpToolRegisterCallback
-name|callback
 parameter_list|)
 block|{
 call|(
@@ -419,8 +431,6 @@ modifier|*
 name|callback
 call|)
 argument_list|(
-name|gimp
-argument_list|,
 name|GIMP_TYPE_MAGNIFY_TOOL
 argument_list|,
 name|magnify_options_new
@@ -451,6 +461,8 @@ argument_list|,
 literal|"tools/magnify.html"
 argument_list|,
 name|GIMP_STOCK_TOOL_ZOOM
+argument_list|,
+name|gimp
 argument_list|)
 expr_stmt|;
 block|}
@@ -674,54 +686,38 @@ literal|0
 expr_stmt|;
 name|tool
 operator|->
-name|cursor
+name|control
 operator|=
-name|GIMP_ZOOM_CURSOR
-expr_stmt|;
-name|tool
-operator|->
-name|tool_cursor
-operator|=
-name|GIMP_ZOOM_TOOL_CURSOR
-expr_stmt|;
-name|tool
-operator|->
-name|cursor_modifier
-operator|=
-name|GIMP_CURSOR_MODIFIER_PLUS
-expr_stmt|;
-name|tool
-operator|->
-name|toggle_cursor
-operator|=
-name|GIMP_ZOOM_CURSOR
-expr_stmt|;
-name|tool
-operator|->
-name|toggle_tool_cursor
-operator|=
-name|GIMP_ZOOM_TOOL_CURSOR
-expr_stmt|;
-name|tool
-operator|->
-name|toggle_cursor_modifier
-operator|=
-name|GIMP_CURSOR_MODIFIER_MINUS
-expr_stmt|;
-name|tool
-operator|->
-name|scroll_lock
-operator|=
+name|gimp_tool_control_new
+argument_list|(
 name|TRUE
-expr_stmt|;
-comment|/*  Disallow scrolling    */
-name|tool
-operator|->
-name|auto_snap_to
-operator|=
+argument_list|,
+comment|/* scroll_lock */
 name|FALSE
+argument_list|,
+comment|/* auto_snap_to */
+name|TRUE
+argument_list|,
+comment|/* preserve */
+name|FALSE
+argument_list|,
+comment|/* handle_empty_image */
+name|FALSE
+argument_list|,
+comment|/* perfectmouse */
+name|GIMP_ZOOM_CURSOR
+argument_list|,
+name|GIMP_ZOOM_TOOL_CURSOR
+argument_list|,
+name|GIMP_CURSOR_MODIFIER_PLUS
+argument_list|,
+name|GIMP_ZOOM_CURSOR
+argument_list|,
+name|GIMP_ZOOM_TOOL_CURSOR
+argument_list|,
+name|GIMP_CURSOR_MODIFIER_MINUS
+argument_list|)
 expr_stmt|;
-comment|/*  Don't snap to guides  */
 block|}
 end_function
 
@@ -789,11 +785,12 @@ name|h
 operator|=
 literal|0
 expr_stmt|;
+name|gimp_tool_control_activate
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|=
-name|ACTIVE
+name|control
+argument_list|)
 expr_stmt|;
 name|tool
 operator|->
@@ -920,12 +917,14 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_halt
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|=
-name|INACTIVE
+name|control
+argument_list|)
 expr_stmt|;
+comment|/* sets paused_count to 0 -- is this ok? */
 comment|/*  First take care of the case where the user "cancels" the action  */
 if|if
 condition|(
@@ -1275,11 +1274,13 @@ name|magnify
 decl_stmt|;
 if|if
 condition|(
+operator|!
+name|gimp_tool_control_is_active
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|!=
-name|ACTIVE
+name|control
+argument_list|)
 condition|)
 return|return;
 name|magnify
@@ -1473,10 +1474,12 @@ name|tool_info
 operator|->
 name|tool_options
 expr_stmt|;
+name|gimp_tool_control_set_toggle
+argument_list|(
 name|tool
 operator|->
-name|toggled
-operator|=
+name|control
+argument_list|,
 operator|(
 name|options
 operator|->
@@ -1484,6 +1487,7 @@ name|type
 operator|==
 name|GIMP_ZOOM_OUT
 operator|)
+argument_list|)
 expr_stmt|;
 name|GIMP_TOOL_CLASS
 argument_list|(

@@ -1180,15 +1180,15 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|gimp_iscissors_tool_register (Gimp * gimp,GimpToolRegisterCallback callback)
+DECL|function|gimp_iscissors_tool_register (GimpToolRegisterCallback callback,Gimp * gimp)
 name|gimp_iscissors_tool_register
 parameter_list|(
+name|GimpToolRegisterCallback
+name|callback
+parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|,
-name|GimpToolRegisterCallback
-name|callback
 parameter_list|)
 block|{
 call|(
@@ -1196,8 +1196,6 @@ modifier|*
 name|callback
 call|)
 argument_list|(
-name|gimp
-argument_list|,
 name|GIMP_TYPE_ISCISSORS_TOOL
 argument_list|,
 name|selection_options_new
@@ -1228,6 +1226,8 @@ argument_list|,
 literal|"tools/iscissors.html"
 argument_list|,
 name|GIMP_STOCK_TOOL_ISCISSORS
+argument_list|,
+name|gimp
 argument_list|)
 expr_stmt|;
 block|}
@@ -1494,17 +1494,44 @@ name|NULL
 expr_stmt|;
 name|tool
 operator|->
-name|tool_cursor
+name|control
 operator|=
-name|GIMP_SCISSORS_TOOL_CURSOR
-expr_stmt|;
-name|tool
-operator|->
-name|auto_snap_to
-operator|=
+name|gimp_tool_control_new
+argument_list|(
 name|FALSE
+argument_list|,
+comment|/* scroll_lock */
+name|FALSE
+argument_list|,
+comment|/* auto_snap_to */
+name|TRUE
+argument_list|,
+comment|/* preserve */
+name|FALSE
+argument_list|,
+comment|/* handle_empty_image */
+name|FALSE
+argument_list|,
+comment|/* perfectmouse */
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+comment|/* cursor */
+name|GIMP_SCISSORS_TOOL_CURSOR
+argument_list|,
+comment|/* tool_cursor */
+name|GIMP_CURSOR_MODIFIER_NONE
+argument_list|,
+comment|/* cursor_modifier */
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+comment|/* toggle_cursor */
+name|GIMP_TOOL_CURSOR_NONE
+argument_list|,
+comment|/* toggle_tool_cursor */
+name|GIMP_CURSOR_MODIFIER_NONE
+comment|/* toggle_cursor_modifier */
+argument_list|)
 expr_stmt|;
-comment|/*  Don't snap to guides   */
 name|gimp_iscissors_tool_reset
 argument_list|(
 name|iscissors
@@ -1738,11 +1765,12 @@ expr_stmt|;
 comment|/*  If the tool was being used in another image...reset it  */
 if|if
 condition|(
+name|gimp_tool_control_is_active
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|==
-name|ACTIVE
+name|control
+argument_list|)
 operator|&&
 name|gdisp
 operator|!=
@@ -1765,11 +1793,12 @@ name|iscissors
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_tool_control_activate
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|=
-name|ACTIVE
+name|control
+argument_list|)
 expr_stmt|;
 name|tool
 operator|->
@@ -1975,12 +2004,14 @@ argument_list|)
 condition|)
 block|{
 comment|/*  Undraw the curve  */
+name|gimp_tool_control_halt
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|=
-name|INACTIVE
+name|control
+argument_list|)
 expr_stmt|;
+comment|/* sets paused_count to 0 -- is this ok? */
 name|iscissors
 operator|->
 name|draw
@@ -2833,11 +2864,13 @@ name|tool_options
 expr_stmt|;
 if|if
 condition|(
+operator|!
+name|gimp_tool_control_is_active
+argument_list|(
 name|tool
 operator|->
-name|state
-operator|!=
-name|ACTIVE
+name|control
+argument_list|)
 operator|||
 name|iscissors
 operator|->
@@ -4133,9 +4166,8 @@ name|gdisp
 argument_list|,
 name|cursor
 argument_list|,
-name|tool
-operator|->
-name|tool_cursor
+name|GIMP_SCISSORS_TOOL_CURSOR
+comment|/* tool->tool_cursor*/
 argument_list|,
 name|cmodifier
 argument_list|)
