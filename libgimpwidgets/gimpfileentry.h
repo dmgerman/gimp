@@ -120,10 +120,10 @@ name|GtkWidget
 modifier|*
 name|browse_button
 decl_stmt|;
-DECL|member|file_selection
+DECL|member|file_dialog
 name|GtkWidget
 modifier|*
-name|file_selection
+name|file_dialog
 decl_stmt|;
 DECL|member|title
 name|gchar

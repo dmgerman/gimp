@@ -80,7 +80,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a313ad90103
+DECL|enum|__anon2c4bbc020103
 block|{
 DECL|enumerator|FILENAME_CHANGED
 name|FILENAME_CHANGED
@@ -402,7 +402,7 @@ name|NULL
 expr_stmt|;
 name|entry
 operator|->
-name|file_selection
+name|file_dialog
 operator|=
 name|NULL
 expr_stmt|;
@@ -579,19 +579,19 @@ if|if
 condition|(
 name|entry
 operator|->
-name|file_selection
+name|file_dialog
 condition|)
 block|{
 name|gtk_widget_destroy
 argument_list|(
 name|entry
 operator|->
-name|file_selection
+name|file_dialog
 argument_list|)
 expr_stmt|;
 name|entry
 operator|->
-name|file_selection
+name|file_dialog
 operator|=
 name|NULL
 expr_stmt|;
@@ -1053,7 +1053,7 @@ if|if
 condition|(
 name|entry
 operator|->
-name|file_selection
+name|file_dialog
 condition|)
 name|gtk_file_selection_set_filename
 argument_list|(
@@ -1061,7 +1061,7 @@ name|GTK_FILE_SELECTION
 argument_list|(
 name|entry
 operator|->
-name|file_selection
+name|file_dialog
 argument_list|)
 argument_list|,
 name|filename
@@ -1268,7 +1268,7 @@ condition|(
 operator|!
 name|entry
 operator|->
-name|file_selection
+name|file_dialog
 condition|)
 block|{
 name|GtkFileSelection
@@ -1284,7 +1284,7 @@ condition|)
 block|{
 name|entry
 operator|->
-name|file_selection
+name|file_dialog
 operator|=
 name|gtk_file_selection_new
 argument_list|(
@@ -1309,7 +1309,7 @@ name|GTK_FILE_SELECTION
 argument_list|(
 name|entry
 operator|->
-name|file_selection
+name|file_dialog
 argument_list|)
 operator|->
 name|fileop_del_file
@@ -1321,7 +1321,7 @@ name|GTK_FILE_SELECTION
 argument_list|(
 name|entry
 operator|->
-name|file_selection
+name|file_dialog
 argument_list|)
 operator|->
 name|file_list
@@ -1334,7 +1334,7 @@ else|else
 block|{
 name|entry
 operator|->
-name|file_selection
+name|file_dialog
 operator|=
 name|gtk_file_selection_new
 argument_list|(
@@ -1359,7 +1359,7 @@ name|GTK_FILE_SELECTION
 argument_list|(
 name|entry
 operator|->
-name|file_selection
+name|file_dialog
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_position
@@ -1368,7 +1368,7 @@ name|GTK_WINDOW
 argument_list|(
 name|entry
 operator|->
-name|file_selection
+name|file_dialog
 argument_list|)
 argument_list|,
 name|GTK_WIN_POS_MOUSE
@@ -1380,7 +1380,7 @@ name|GTK_WINDOW
 argument_list|(
 name|entry
 operator|->
-name|file_selection
+name|file_dialog
 argument_list|)
 argument_list|,
 literal|"gimp-file-entry-file-selection"
@@ -1457,7 +1457,7 @@ name|GTK_FILE_SELECTION
 argument_list|(
 name|entry
 operator|->
-name|file_selection
+name|file_dialog
 argument_list|)
 argument_list|,
 name|filename
@@ -1469,7 +1469,7 @@ name|GTK_WINDOW
 argument_list|(
 name|entry
 operator|->
-name|file_selection
+name|file_dialog
 argument_list|)
 argument_list|,
 name|gtk_widget_get_screen
@@ -1484,7 +1484,7 @@ name|GTK_WINDOW
 argument_list|(
 name|entry
 operator|->
-name|file_selection
+name|file_dialog
 argument_list|)
 argument_list|)
 expr_stmt|;
