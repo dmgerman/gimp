@@ -23,6 +23,10 @@ file|"gimpdrawable.h"
 end_include
 
 begin_comment
+comment|/*< proxy-skip>*/
+end_comment
+
+begin_comment
 comment|/*  Half way point where a region is no longer visible in a selection  */
 end_comment
 
@@ -106,6 +110,10 @@ name|GimpChannelClass
 typedef|;
 end_typedef
 
+begin_comment
+comment|/*< proxy-resume>*/
+end_comment
+
 begin_struct
 DECL|struct|_GimpChannel
 struct|struct
@@ -183,6 +191,10 @@ comment|/*  lower right hand coordinate    */
 block|}
 struct|;
 end_struct
+
+begin_comment
+comment|/*< proxy-skip>*/
+end_comment
 
 begin_struct
 DECL|struct|_GimpChannelClass
@@ -315,6 +327,35 @@ name|color
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_channel_get_show_masked
+parameter_list|(
+name|GimpChannel
+modifier|*
+name|channel
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_channel_set_show_masked
+parameter_list|(
+name|GimpChannel
+modifier|*
+name|channel
+parameter_list|,
+name|gboolean
+name|show_masked
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_empty_stmt
+empty_stmt|;
+end_empty_stmt
 
 begin_function_decl
 name|void
@@ -629,17 +670,9 @@ parameter_list|(
 name|GimpChannel
 modifier|*
 name|mask
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_channel_push_undo
-parameter_list|(
-name|GimpChannel
-modifier|*
-name|mask
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -651,6 +684,9 @@ parameter_list|(
 name|GimpChannel
 modifier|*
 name|mask
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -662,6 +698,9 @@ parameter_list|(
 name|GimpChannel
 modifier|*
 name|mask
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -693,6 +732,9 @@ name|radius_x
 parameter_list|,
 name|gint
 name|radius_y
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -710,6 +752,9 @@ name|radius_x
 parameter_list|,
 name|gint
 name|radius_y
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -730,6 +775,9 @@ name|radius_y
 parameter_list|,
 name|gboolean
 name|edge_lock
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -747,6 +795,9 @@ name|off_x
 parameter_list|,
 name|gint
 name|off_y
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -762,6 +813,9 @@ parameter_list|,
 name|GimpChannel
 modifier|*
 name|channel
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -777,6 +831,9 @@ parameter_list|,
 name|GimpLayer
 modifier|*
 name|layer
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -792,6 +849,9 @@ parameter_list|,
 name|GimpLayer
 modifier|*
 name|layer
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -141,7 +141,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b20dbb20108
+DECL|struct|__anon2c41c9e30108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -192,7 +192,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b20dbb20208
+DECL|struct|__anon2c41c9e30208
 block|{
 DECL|member|clist
 name|GtkCList
@@ -1129,7 +1129,7 @@ condition|(
 operator|(
 name|utype
 operator|!=
-name|IMAGE_MASK_UNDO
+name|MASK_UNDO
 operator|&&
 name|utype
 operator|!=

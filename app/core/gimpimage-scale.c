@@ -621,6 +621,11 @@ name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_image_mask_changed
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 name|gimp_unset_busy
 argument_list|(
 name|gimage

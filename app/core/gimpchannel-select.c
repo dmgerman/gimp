@@ -124,7 +124,7 @@ name|gimage
 argument_list|)
 expr_stmt|;
 else|else
-name|gimp_image_mask_undo
+name|gimp_image_mask_push_undo
 argument_list|(
 name|gimage
 argument_list|)
@@ -296,7 +296,7 @@ name|gimage
 argument_list|)
 expr_stmt|;
 else|else
-name|gimp_image_mask_undo
+name|gimp_image_mask_push_undo
 argument_list|(
 name|gimage
 argument_list|)
@@ -475,7 +475,7 @@ name|gimage
 argument_list|)
 expr_stmt|;
 else|else
-name|gimp_image_mask_undo
+name|gimp_image_mask_push_undo
 argument_list|(
 name|gimage
 argument_list|)
@@ -834,7 +834,7 @@ name|gimage
 argument_list|)
 expr_stmt|;
 else|else
-name|gimp_image_mask_undo
+name|gimp_image_mask_push_undo
 argument_list|(
 name|gimage
 argument_list|)

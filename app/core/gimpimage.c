@@ -234,7 +234,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon296d5c490103
+DECL|enum|__anon293e5cd60103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -7666,16 +7666,8 @@ if|if
 condition|(
 name|push_undo
 condition|)
-name|undo_push_image
+name|gimp_drawable_push_undo
 argument_list|(
-name|gimp_item_get_image
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|drawable
-argument_list|)
-argument_list|)
-argument_list|,
 name|drawable
 argument_list|,
 name|x1
@@ -7685,6 +7677,10 @@ argument_list|,
 name|x2
 argument_list|,
 name|y2
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* configure the pixel regions    *  If an alternative to using the drawable's data as src1 was provided...    */

@@ -102,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0b39070103
+DECL|enum|__anon2b3a6dd80103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -905,6 +905,11 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|gimage
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_image_mask_changed
+argument_list|(
+name|gimage
 argument_list|)
 expr_stmt|;
 name|gimp_unset_busy

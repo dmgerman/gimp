@@ -283,7 +283,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_image_mask_none
+name|gimp_image_mask_clear
 argument_list|(
 name|gimage
 argument_list|)

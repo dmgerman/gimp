@@ -763,12 +763,9 @@ operator|&&
 operator|!
 name|paste_into
 condition|)
-name|gimp_channel_clear
-argument_list|(
-name|gimp_image_get_mask
+name|gimp_image_mask_clear
 argument_list|(
 name|gimage
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  if there's a drawable, add a new floating selection  */

@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/temp-buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"base/tile.h"
 end_include
 
@@ -103,12 +97,6 @@ begin_include
 include|#
 directive|include
 file|"gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpimage-mask.h"
 end_include
 
 begin_include
@@ -185,6 +173,34 @@ parameter_list|(
 name|GimpObject
 modifier|*
 name|object
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_channel_push_undo
+parameter_list|(
+name|GimpChannel
+modifier|*
+name|mask
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_channel_validate
+parameter_list|(
+name|TileManager
+modifier|*
+name|tm
+parameter_list|,
+name|Tile
+modifier|*
+name|tile
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -598,6 +614,57 @@ end_function
 begin_function
 specifier|static
 name|void
+DECL|function|gimp_channel_push_undo (GimpChannel * mask)
+name|gimp_channel_push_undo
+parameter_list|(
+name|GimpChannel
+modifier|*
+name|mask
+parameter_list|)
+block|{
+name|GimpImage
+modifier|*
+name|gimage
+decl_stmt|;
+name|gimage
+operator|=
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|mask
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|undo_push_mask
+argument_list|(
+name|gimage
+argument_list|,
+name|mask
+argument_list|)
+expr_stmt|;
+name|mask
+operator|->
+name|boundary_known
+operator|=
+name|FALSE
+expr_stmt|;
+comment|/*  invalidate the preview  */
+name|GIMP_DRAWABLE
+argument_list|(
+name|mask
+argument_list|)
+operator|->
+name|preview_valid
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
 DECL|function|gimp_channel_validate (TileManager * tm,Tile * tile)
 name|gimp_channel_validate
 parameter_list|(
@@ -632,6 +699,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/*  public functions  */
+end_comment
 
 begin_function
 name|GimpChannel
@@ -1036,6 +1107,104 @@ name|a
 operator|=
 name|opacity
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|gboolean
+DECL|function|gimp_channel_get_show_masked (GimpChannel * channel)
+name|gimp_channel_get_show_masked
+parameter_list|(
+name|GimpChannel
+modifier|*
+name|channel
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CHANNEL
+argument_list|(
+name|channel
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+return|return
+name|channel
+operator|->
+name|show_masked
+return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_channel_set_show_masked (GimpChannel * channel,gboolean show_masked)
+name|gimp_channel_set_show_masked
+parameter_list|(
+name|GimpChannel
+modifier|*
+name|channel
+parameter_list|,
+name|gboolean
+name|show_masked
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_CHANNEL
+argument_list|(
+name|channel
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|show_masked
+operator|!=
+name|channel
+operator|->
+name|show_masked
+condition|)
+block|{
+name|channel
+operator|->
+name|show_masked
+operator|=
+name|show_masked
+condition|?
+name|TRUE
+else|:
+name|FALSE
+expr_stmt|;
+name|gimp_drawable_update
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|channel
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|GIMP_DRAWABLE
+argument_list|(
+name|channel
+argument_list|)
+operator|->
+name|width
+argument_list|,
+name|GIMP_DRAWABLE
+argument_list|(
+name|channel
+argument_list|)
+operator|->
+name|height
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -5735,12 +5904,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_sharpen (GimpChannel * mask)
+DECL|function|gimp_channel_sharpen (GimpChannel * mask,gboolean push_undo)
 name|gimp_channel_sharpen
 parameter_list|(
 name|GimpChannel
 modifier|*
 name|mask
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|PixelRegion
@@ -5758,7 +5930,10 @@ name|mask
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  push the current channel onto the undo stack  */
+if|if
+condition|(
+name|push_undo
+condition|)
 name|gimp_channel_push_undo
 argument_list|(
 name|mask
@@ -5831,194 +6006,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_push_undo (GimpChannel * mask)
-name|gimp_channel_push_undo
-parameter_list|(
-name|GimpChannel
-modifier|*
-name|mask
-parameter_list|)
-block|{
-name|gint
-name|x1
-decl_stmt|,
-name|y1
-decl_stmt|,
-name|x2
-decl_stmt|,
-name|y2
-decl_stmt|;
-name|TileManager
-modifier|*
-name|undo_tiles
-decl_stmt|;
-name|PixelRegion
-name|srcPR
-decl_stmt|,
-name|destPR
-decl_stmt|;
-name|GimpImage
-modifier|*
-name|gimage
-decl_stmt|;
-if|if
-condition|(
-name|gimp_channel_bounds
-argument_list|(
-name|mask
-argument_list|,
-operator|&
-name|x1
-argument_list|,
-operator|&
-name|y1
-argument_list|,
-operator|&
-name|x2
-argument_list|,
-operator|&
-name|y2
-argument_list|)
-condition|)
-block|{
-name|undo_tiles
-operator|=
-name|tile_manager_new
-argument_list|(
-operator|(
-name|x2
-operator|-
-name|x1
-operator|)
-argument_list|,
-operator|(
-name|y2
-operator|-
-name|y1
-operator|)
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|pixel_region_init
-argument_list|(
-operator|&
-name|srcPR
-argument_list|,
-name|GIMP_DRAWABLE
-argument_list|(
-name|mask
-argument_list|)
-operator|->
-name|tiles
-argument_list|,
-name|x1
-argument_list|,
-name|y1
-argument_list|,
-operator|(
-name|x2
-operator|-
-name|x1
-operator|)
-argument_list|,
-operator|(
-name|y2
-operator|-
-name|y1
-operator|)
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|pixel_region_init
-argument_list|(
-operator|&
-name|destPR
-argument_list|,
-name|undo_tiles
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-operator|(
-name|x2
-operator|-
-name|x1
-operator|)
-argument_list|,
-operator|(
-name|y2
-operator|-
-name|y1
-operator|)
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-name|copy_region
-argument_list|(
-operator|&
-name|srcPR
-argument_list|,
-operator|&
-name|destPR
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-name|undo_tiles
-operator|=
-name|NULL
-expr_stmt|;
-name|gimage
-operator|=
-name|gimp_item_get_image
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|mask
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|undo_push_image_mask
-argument_list|(
-name|gimage
-argument_list|,
-name|undo_tiles
-argument_list|,
-name|x1
-argument_list|,
-name|y1
-argument_list|)
-expr_stmt|;
-name|gimp_image_mask_invalidate
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
-comment|/*  invalidate the preview  */
-name|GIMP_DRAWABLE
-argument_list|(
-name|mask
-argument_list|)
-operator|->
-name|preview_valid
-operator|=
-name|FALSE
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|gimp_channel_clear (GimpChannel * mask)
+DECL|function|gimp_channel_clear (GimpChannel * mask,gboolean push_undo)
 name|gimp_channel_clear
 parameter_list|(
 name|GimpChannel
 modifier|*
 name|mask
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|PixelRegion
@@ -6037,7 +6033,10 @@ name|mask
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  push the current channel onto the undo stack  */
+if|if
+condition|(
+name|push_undo
+condition|)
 name|gimp_channel_push_undo
 argument_list|(
 name|mask
@@ -6206,12 +6205,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_all (GimpChannel * mask)
+DECL|function|gimp_channel_all (GimpChannel * mask,gboolean push_undo)
 name|gimp_channel_all
 parameter_list|(
 name|GimpChannel
 modifier|*
 name|mask
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|PixelRegion
@@ -6230,7 +6232,10 @@ name|mask
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  push the current channel onto the undo stack  */
+if|if
+condition|(
+name|push_undo
+condition|)
 name|gimp_channel_push_undo
 argument_list|(
 name|mask
@@ -6342,13 +6347,6 @@ name|gboolean
 name|push_undo
 parameter_list|)
 block|{
-name|PixelRegion
-name|maskPR
-decl_stmt|;
-name|GimpLut
-modifier|*
-name|lut
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_CHANNEL
@@ -6366,6 +6364,34 @@ argument_list|(
 name|mask
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|mask
+operator|->
+name|bounds_known
+operator|&&
+name|mask
+operator|->
+name|empty
+condition|)
+block|{
+name|gimp_channel_all
+argument_list|(
+name|mask
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|PixelRegion
+name|maskPR
+decl_stmt|;
+name|GimpLut
+modifier|*
+name|lut
+decl_stmt|;
 name|pixel_region_init
 argument_list|(
 operator|&
@@ -6433,11 +6459,12 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
+block|}
 end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_border (GimpChannel * mask,gint radius_x,gint radius_y)
+DECL|function|gimp_channel_border (GimpChannel * mask,gint radius_x,gint radius_y,gboolean push_undo)
 name|gimp_channel_border
 parameter_list|(
 name|GimpChannel
@@ -6449,6 +6476,9 @@ name|radius_x
 parameter_list|,
 name|gint
 name|radius_y
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|PixelRegion
@@ -6599,7 +6629,10 @@ name|y2
 operator|+=
 name|radius_y
 expr_stmt|;
-comment|/*  push the current channel onto the undo stack  */
+if|if
+condition|(
+name|push_undo
+condition|)
 name|gimp_channel_push_undo
 argument_list|(
 name|mask
@@ -6657,7 +6690,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_grow (GimpChannel * mask,gint radius_x,gint radius_y)
+DECL|function|gimp_channel_grow (GimpChannel * mask,gint radius_x,gint radius_y,gboolean push_undo)
 name|gimp_channel_grow
 parameter_list|(
 name|GimpChannel
@@ -6669,6 +6702,9 @@ name|radius_x
 parameter_list|,
 name|gint
 name|radius_y
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|PixelRegion
@@ -6724,6 +6760,8 @@ operator|-
 name|radius_y
 argument_list|,
 name|FALSE
+argument_list|,
+name|push_undo
 argument_list|)
 expr_stmt|;
 return|return;
@@ -6864,7 +6902,10 @@ argument_list|)
 operator|->
 name|height
 expr_stmt|;
-comment|/*  push the current channel onto the undo stack  */
+if|if
+condition|(
+name|push_undo
+condition|)
 name|gimp_channel_push_undo
 argument_list|(
 name|mask
@@ -6923,7 +6964,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_shrink (GimpChannel * mask,gint radius_x,gint radius_y,gboolean edge_lock)
+DECL|function|gimp_channel_shrink (GimpChannel * mask,gint radius_x,gint radius_y,gboolean edge_lock,gboolean push_undo)
 name|gimp_channel_shrink
 parameter_list|(
 name|GimpChannel
@@ -6938,6 +6979,9 @@ name|radius_y
 parameter_list|,
 name|gboolean
 name|edge_lock
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|PixelRegion
@@ -6991,6 +7035,8 @@ name|radius_x
 argument_list|,
 operator|-
 name|radius_y
+argument_list|,
+name|push_undo
 argument_list|)
 expr_stmt|;
 return|return;
@@ -7081,7 +7127,10 @@ condition|)
 name|y2
 operator|++
 expr_stmt|;
-comment|/*  push the current channel onto the undo stack  */
+if|if
+condition|(
+name|push_undo
+condition|)
 name|gimp_channel_push_undo
 argument_list|(
 name|mask
@@ -7141,7 +7190,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_translate (GimpChannel * mask,gint off_x,gint off_y)
+DECL|function|gimp_channel_translate (GimpChannel * mask,gint off_x,gint off_y,gboolean push_undo)
 name|gimp_channel_translate
 parameter_list|(
 name|GimpChannel
@@ -7153,6 +7202,9 @@ name|off_x
 parameter_list|,
 name|gint
 name|off_y
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|gint
@@ -7195,7 +7247,10 @@ name|tmp_mask
 operator|=
 name|NULL
 expr_stmt|;
-comment|/*  push the current channel onto the undo stack  */
+if|if
+condition|(
+name|push_undo
+condition|)
 name|gimp_channel_push_undo
 argument_list|(
 name|mask
@@ -7605,7 +7660,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_load (GimpChannel * mask,GimpChannel * channel)
+DECL|function|gimp_channel_load (GimpChannel * mask,GimpChannel * channel,gboolean push_undo)
 name|gimp_channel_load
 parameter_list|(
 name|GimpChannel
@@ -7615,6 +7670,9 @@ parameter_list|,
 name|GimpChannel
 modifier|*
 name|channel
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|PixelRegion
@@ -7638,7 +7696,10 @@ name|channel
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  push the current mask onto the undo stack  */
+if|if
+condition|(
+name|push_undo
+condition|)
 name|gimp_channel_push_undo
 argument_list|(
 name|mask
@@ -7731,7 +7792,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_layer_alpha (GimpChannel * mask,GimpLayer * layer)
+DECL|function|gimp_channel_layer_alpha (GimpChannel * mask,GimpLayer * layer,gboolean push_undo)
 name|gimp_channel_layer_alpha
 parameter_list|(
 name|GimpChannel
@@ -7741,17 +7802,15 @@ parameter_list|,
 name|GimpLayer
 modifier|*
 name|layer
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|PixelRegion
 name|srcPR
 decl_stmt|,
 name|destPR
-decl_stmt|;
-name|guchar
-name|empty
-init|=
-literal|0
 decl_stmt|;
 name|gint
 name|x1
@@ -7789,53 +7848,34 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  push the current mask onto the undo stack  */
+if|if
+condition|(
+name|push_undo
+condition|)
 name|gimp_channel_push_undo
 argument_list|(
 name|mask
 argument_list|)
 expr_stmt|;
-comment|/*  clear the mask  */
-name|pixel_region_init
-argument_list|(
-operator|&
-name|destPR
-argument_list|,
-name|GIMP_DRAWABLE
-argument_list|(
+comment|/*  clear the mask if it is not already known to be empty  */
+if|if
+condition|(
+operator|!
+operator|(
 name|mask
-argument_list|)
 operator|->
-name|tiles
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|GIMP_DRAWABLE
-argument_list|(
+name|bounds_known
+operator|&&
 name|mask
-argument_list|)
 operator|->
-name|width
-argument_list|,
-name|GIMP_DRAWABLE
-argument_list|(
-name|mask
-argument_list|)
-operator|->
-name|height
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-name|color_region
-argument_list|(
-operator|&
-name|destPR
-argument_list|,
-operator|&
 name|empty
+operator|)
+condition|)
+name|gimp_channel_clear
+argument_list|(
+name|mask
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|x1
@@ -8038,7 +8078,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_layer_mask (GimpChannel * mask,GimpLayer * layer)
+DECL|function|gimp_channel_layer_mask (GimpChannel * mask,GimpLayer * layer,gboolean push_undo)
 name|gimp_channel_layer_mask
 parameter_list|(
 name|GimpChannel
@@ -8048,17 +8088,15 @@ parameter_list|,
 name|GimpLayer
 modifier|*
 name|layer
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|PixelRegion
 name|srcPR
 decl_stmt|,
 name|destPR
-decl_stmt|;
-name|guchar
-name|empty
-init|=
-literal|0
 decl_stmt|;
 name|gint
 name|x1
@@ -8093,53 +8131,34 @@ name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  push the current mask onto the undo stack  */
+if|if
+condition|(
+name|push_undo
+condition|)
 name|gimp_channel_push_undo
 argument_list|(
 name|mask
 argument_list|)
 expr_stmt|;
-comment|/*  clear the mask  */
-name|pixel_region_init
-argument_list|(
-operator|&
-name|destPR
-argument_list|,
-name|GIMP_DRAWABLE
-argument_list|(
+comment|/*  clear the mask if it is not already known to be empty  */
+if|if
+condition|(
+operator|!
+operator|(
 name|mask
-argument_list|)
 operator|->
-name|tiles
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|GIMP_DRAWABLE
-argument_list|(
+name|bounds_known
+operator|&&
 name|mask
-argument_list|)
 operator|->
-name|width
-argument_list|,
-name|GIMP_DRAWABLE
-argument_list|(
-name|mask
-argument_list|)
-operator|->
-name|height
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-name|color_region
-argument_list|(
-operator|&
-name|destPR
-argument_list|,
-operator|&
 name|empty
+operator|)
+condition|)
+name|gimp_channel_clear
+argument_list|(
+name|mask
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|x1

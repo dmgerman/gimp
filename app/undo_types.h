@@ -23,7 +23,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275a98170103
+DECL|enum|__anon27c299640103
 block|{
 DECL|enumerator|IMAGE_UNDO
 name|IMAGE_UNDO
@@ -44,14 +44,14 @@ block|,
 DECL|enumerator|IMAGE_RESOLUTION_UNDO
 name|IMAGE_RESOLUTION_UNDO
 block|,
-DECL|enumerator|IMAGE_MASK_UNDO
-name|IMAGE_MASK_UNDO
-block|,
 DECL|enumerator|IMAGE_QMASK_UNDO
 name|IMAGE_QMASK_UNDO
 block|,
 DECL|enumerator|IMAGE_GUIDE_UNDO
 name|IMAGE_GUIDE_UNDO
+block|,
+DECL|enumerator|MASK_UNDO
+name|MASK_UNDO
 block|,
 DECL|enumerator|ITEM_RENAME_UNDO
 name|ITEM_RENAME_UNDO
