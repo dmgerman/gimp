@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history  * 1.1.8a;  1999/08/31   hof: accept anim framenames without underscore '_'  * 0.99.00; 1999/03/15   hof: prepared for win/dos filename conventions  * 0.96.00; 1998/07/08   hof: first release  */
+comment|/* revision history  * 1.1.11b; 1999/11/20   hof: Changed menunames AnimFrames to Video in menu hints  * 1.1.8a;  1999/08/31   hof: accept anim framenames without underscore '_'  * 0.99.00; 1999/03/15   hof: prepared for win/dos filename conventions  * 0.96.00; 1998/07/08   hof: first release  */
 end_comment
 
 begin_comment
@@ -545,7 +545,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"    (use 'Frames Convert' from the AnimFrames Menu"
+literal|"    (use 'Frames Convert' from the Video Menu"
 argument_list|)
 expr_stmt|;
 name|l_idx
@@ -571,7 +571,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"    or 'Split Img to Frames' from the AnimFrames Menu)"
+literal|"    or 'Split Img to Frames' from the Video Menu)"
 argument_list|)
 expr_stmt|;
 name|l_idx
@@ -656,7 +656,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"    (use Scale or Crop from the AnimFrames Menu)"
+literal|"    (use Scale or Crop from the Video Menu)"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1480,7 +1480,7 @@ index|]
 operator|.
 name|entry_width
 operator|=
-literal|140
+literal|250
 expr_stmt|;
 comment|/* pixel */
 name|argv
@@ -1553,7 +1553,7 @@ index|]
 operator|.
 name|entry_width
 operator|=
-literal|140
+literal|250
 expr_stmt|;
 comment|/* pixel */
 name|argv
@@ -1626,7 +1626,7 @@ index|]
 operator|.
 name|entry_width
 operator|=
-literal|140
+literal|250
 expr_stmt|;
 comment|/* pixel */
 name|argv
