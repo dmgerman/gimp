@@ -45,7 +45,7 @@ name|gimp_histogram_calculate
 parameter_list|(
 name|GimpHistogram
 modifier|*
-name|historgam
+name|histogram
 parameter_list|,
 name|PixelRegion
 modifier|*
