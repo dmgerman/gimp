@@ -1179,6 +1179,9 @@ argument_list|)
 operator|>
 literal|1
 condition|)
+block|{
+name|layer
+operator|=
 name|gimp_image_merge_visible_layers
 argument_list|(
 name|new_image
@@ -1188,6 +1191,9 @@ argument_list|,
 name|GIMP_CLIP_TO_IMAGE
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
 name|layer
 operator|=
 operator|(
@@ -1203,6 +1209,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|layer
@@ -1223,7 +1230,10 @@ argument_list|)
 argument_list|,
 name|gimage
 argument_list|,
-name|GIMP_TYPE_LAYER
+name|G_TYPE_FROM_INSTANCE
+argument_list|(
+name|layer
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|)
