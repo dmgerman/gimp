@@ -352,6 +352,13 @@ name|tool
 operator|->
 name|private
 expr_stmt|;
+name|transform_core
+operator|->
+name|bpressed
+operator|=
+name|TRUE
+expr_stmt|;
+comment|/* ALT */
 name|tool
 operator|->
 name|drawable
@@ -988,6 +995,13 @@ name|tool
 operator|->
 name|private
 expr_stmt|;
+name|transform_core
+operator|->
+name|bpressed
+operator|=
+name|FALSE
+expr_stmt|;
+comment|/* ALT */
 comment|/*  if we are creating, there is nothing to be done...exit  */
 if|if
 condition|(
@@ -1484,6 +1498,18 @@ name|tool
 operator|->
 name|private
 expr_stmt|;
+if|if
+condition|(
+name|transform_core
+operator|->
+name|bpressed
+operator|==
+name|FALSE
+condition|)
+block|{
+comment|/* hey we have not got the button press yet      * so go away.      */
+return|return;
+block|}
 comment|/*  if we are creating or this tool is non-interactive, there is    *  nothing to be done so exit.    */
 if|if
 condition|(
@@ -2524,6 +2550,12 @@ operator|->
 name|original
 operator|=
 name|NULL
+expr_stmt|;
+name|private
+operator|->
+name|bpressed
+operator|=
+name|FALSE
 expr_stmt|;
 for|for
 control|(
