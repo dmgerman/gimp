@@ -283,12 +283,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/menus.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"file-save.h"
 end_include
 
@@ -743,11 +737,6 @@ name|gimage
 operator|->
 name|gimp
 argument_list|,
-name|filename
-argument_list|)
-expr_stmt|;
-name|menus_last_opened_add
-argument_list|(
 name|filename
 argument_list|)
 expr_stmt|;

@@ -405,6 +405,8 @@ condition|)
 block|{
 name|gui_libs_init
 argument_list|(
+name|the_gimp
+argument_list|,
 operator|&
 name|gimp_argc
 argument_list|,
@@ -468,6 +470,27 @@ argument_list|,
 name|no_data
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|no_interface
+condition|)
+block|{
+ifdef|#
+directive|ifdef
+name|DISPLAY_FILTERS
+name|color_display_init
+argument_list|()
+expr_stmt|;
+endif|#
+directive|endif
+comment|/* DISPLAY_FILTERS */
+name|gui_init
+argument_list|(
+name|the_gimp
+argument_list|)
+expr_stmt|;
+block|}
 comment|/*  Initialize the plug-in structures    */
 name|plug_in_init
 argument_list|(
@@ -489,20 +512,6 @@ name|no_splash
 condition|)
 name|splash_destroy
 argument_list|()
-expr_stmt|;
-ifdef|#
-directive|ifdef
-name|DISPLAY_FILTERS
-name|color_display_init
-argument_list|()
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* DISPLAY_FILTERS */
-name|gui_init
-argument_list|(
-name|the_gimp
-argument_list|)
 expr_stmt|;
 comment|/*  FIXME: This needs to go in preferences  */
 name|message_handler

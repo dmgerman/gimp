@@ -20,7 +20,9 @@ begin_function_decl
 name|void
 name|session_init
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -29,7 +31,9 @@ begin_function_decl
 name|void
 name|session_restore
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -38,7 +42,9 @@ begin_function_decl
 name|void
 name|session_save
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl

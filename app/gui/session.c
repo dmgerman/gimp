@@ -40,6 +40,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdialogfactory.h"
 end_include
 
@@ -67,16 +73,26 @@ end_comment
 
 begin_function
 name|void
-DECL|function|session_init (void)
+DECL|function|session_init (Gimp * gimp)
 name|session_init
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|gchar
 modifier|*
 name|filename
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|filename
 operator|=
 name|gimp_personal_rc_file
@@ -106,12 +122,22 @@ end_function
 
 begin_function
 name|void
-DECL|function|session_restore (void)
+DECL|function|session_restore (Gimp * gimp)
 name|session_restore
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_dialog_factories_session_restore
 argument_list|()
 expr_stmt|;
@@ -120,10 +146,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|session_save (void)
+DECL|function|session_save (Gimp * gimp)
 name|session_save
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|gchar
@@ -134,6 +162,14 @@ name|FILE
 modifier|*
 name|fp
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|filename
 operator|=
 name|gimp_personal_rc_file

@@ -808,11 +808,6 @@ argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;
-name|menus_last_opened_add
-argument_list|(
-name|absolute
-argument_list|)
-expr_stmt|;
 name|g_free
 argument_list|(
 name|absolute
@@ -844,7 +839,7 @@ name|gtk_file_selection_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Load Image"
+literal|"Open Image"
 argument_list|)
 argument_list|)
 expr_stmt|;
