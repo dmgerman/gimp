@@ -96,7 +96,7 @@ comment|/* ick. */
 end_comment
 
 begin_enum
-DECL|enum|__anon2c762bb00103
+DECL|enum|__anon2b8d2e2a0103
 enum|enum
 block|{
 DECL|enumerator|LAST_SIGNAL
@@ -1639,20 +1639,10 @@ literal|0
 argument_list|,
 name|tiles
 operator|->
-name|levels
-index|[
-literal|0
-index|]
-operator|.
 name|width
 argument_list|,
 name|tiles
 operator|->
-name|levels
-index|[
-literal|0
-index|]
-operator|.
 name|height
 argument_list|,
 name|layer_type
@@ -1746,11 +1736,6 @@ condition|(
 operator|(
 name|tiles
 operator|->
-name|levels
-index|[
-literal|0
-index|]
-operator|.
 name|bpp
 operator|==
 literal|4
@@ -1768,11 +1753,6 @@ operator|||
 operator|(
 name|tiles
 operator|->
-name|levels
-index|[
-literal|0
-index|]
-operator|.
 name|bpp
 operator|==
 literal|2
@@ -1817,11 +1797,6 @@ argument_list|,
 operator|(
 name|tiles
 operator|->
-name|levels
-index|[
-literal|0
-index|]
-operator|.
 name|bpp
 operator|==
 literal|4
@@ -4675,8 +4650,6 @@ name|x
 argument_list|,
 name|y
 argument_list|,
-literal|0
-argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
@@ -4740,8 +4713,6 @@ argument_list|,
 name|x
 argument_list|,
 name|y
-argument_list|,
-literal|0
 argument_list|,
 name|TRUE
 argument_list|,

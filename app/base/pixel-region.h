@@ -49,6 +49,20 @@ modifier|*
 name|tiles
 decl_stmt|;
 comment|/*  pointer to tiles  */
+DECL|member|curtile
+name|Tile
+modifier|*
+name|curtile
+decl_stmt|;
+comment|/*  current tile  */
+DECL|member|offx
+DECL|member|offy
+name|int
+name|offx
+decl_stmt|,
+name|offy
+decl_stmt|;
+comment|/*  tile offsets */
 DECL|member|rowstride
 name|int
 name|rowstride

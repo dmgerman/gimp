@@ -3849,8 +3849,6 @@ name|srcPR
 operator|.
 name|y
 argument_list|,
-literal|0
-argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
@@ -3883,8 +3881,6 @@ argument_list|,
 name|srcPR
 operator|.
 name|y
-argument_list|,
-literal|0
 argument_list|,
 name|TRUE
 argument_list|,
@@ -6661,6 +6657,20 @@ name|Tile
 modifier|*
 name|dest_tile
 decl_stmt|;
+if|if
+condition|(
+name|undo_tiles
+operator|==
+name|NULL
+condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"set_undo_tiles: undo_tiles is null"
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
 for|for
 control|(
 name|i
@@ -6725,8 +6735,6 @@ name|j
 argument_list|,
 name|i
 argument_list|,
-literal|0
-argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
@@ -6755,8 +6763,6 @@ name|j
 argument_list|,
 name|i
 argument_list|,
-literal|0
-argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
@@ -6769,8 +6775,6 @@ argument_list|,
 name|j
 argument_list|,
 name|i
-argument_list|,
-literal|0
 argument_list|,
 name|src_tile
 argument_list|)
@@ -6886,8 +6890,6 @@ name|j
 argument_list|,
 name|i
 argument_list|,
-literal|0
-argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
@@ -6912,8 +6914,6 @@ argument_list|,
 name|j
 argument_list|,
 name|i
-argument_list|,
-literal|0
 argument_list|,
 name|TRUE
 argument_list|,

@@ -435,7 +435,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon275877780103
+DECL|enum|__anon2767b4350103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -1838,8 +1838,6 @@ argument_list|(
 name|gimage
 operator|->
 name|shadow
-argument_list|,
-literal|0
 argument_list|)
 operator|)
 operator|||
@@ -1851,8 +1849,6 @@ argument_list|(
 name|gimage
 operator|->
 name|shadow
-argument_list|,
-literal|0
 argument_list|)
 operator|)
 operator|||
@@ -1864,8 +1860,6 @@ argument_list|(
 name|gimage
 operator|->
 name|shadow
-argument_list|,
-literal|0
 argument_list|)
 operator|)
 operator|)
@@ -5878,8 +5872,6 @@ name|j
 argument_list|,
 name|i
 argument_list|,
-literal|0
-argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
@@ -5932,8 +5924,6 @@ argument_list|,
 name|j
 argument_list|,
 name|i
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 if|if
@@ -6006,8 +5996,6 @@ argument_list|,
 name|j
 argument_list|,
 name|i
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 if|if
@@ -6179,7 +6167,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_validate (TileManager * tm,Tile * tile,int level)
+DECL|function|gimp_image_validate (TileManager * tm,Tile * tile)
 name|gimp_image_validate
 parameter_list|(
 name|TileManager
@@ -6189,9 +6177,6 @@ parameter_list|,
 name|Tile
 modifier|*
 name|tile
-parameter_list|,
-name|int
-name|level
 parameter_list|)
 block|{
 name|GimpImage
@@ -11806,8 +11791,6 @@ argument_list|(
 name|gimage
 operator|->
 name|projection
-argument_list|,
-literal|0
 argument_list|)
 operator|!=
 name|gimage
@@ -11821,8 +11804,6 @@ argument_list|(
 name|gimage
 operator|->
 name|projection
-argument_list|,
-literal|0
 argument_list|)
 operator|!=
 name|gimage

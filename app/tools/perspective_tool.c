@@ -2259,11 +2259,6 @@ if|if
 condition|(
 name|float_tiles
 operator|->
-name|levels
-index|[
-literal|0
-index|]
-operator|.
 name|width
 condition|)
 name|scalex
@@ -2272,22 +2267,12 @@ literal|1.0
 operator|/
 name|float_tiles
 operator|->
-name|levels
-index|[
-literal|0
-index|]
-operator|.
 name|width
 expr_stmt|;
 if|if
 condition|(
 name|float_tiles
 operator|->
-name|levels
-index|[
-literal|0
-index|]
-operator|.
 name|height
 condition|)
 name|scaley
@@ -2296,11 +2281,6 @@ literal|1.0
 operator|/
 name|float_tiles
 operator|->
-name|levels
-index|[
-literal|0
-index|]
-operator|.
 name|height
 expr_stmt|;
 comment|/*  assemble the transformation matrix  */

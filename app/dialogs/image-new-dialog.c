@@ -84,7 +84,7 @@ file|"tile_manager_pvt.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon29da605d0108
+DECL|struct|__anon2c6ab3e90108
 typedef|typedef
 struct|struct
 block|{
@@ -2317,11 +2317,6 @@ name|width
 operator|=
 name|global_buf
 operator|->
-name|levels
-index|[
-literal|0
-index|]
-operator|.
 name|width
 expr_stmt|;
 name|vals
@@ -2330,11 +2325,6 @@ name|height
 operator|=
 name|global_buf
 operator|->
-name|levels
-index|[
-literal|0
-index|]
-operator|.
 name|height
 expr_stmt|;
 block|}

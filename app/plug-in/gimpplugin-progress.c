@@ -206,7 +206,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bec4edb0103
+DECL|enum|__anon2b7ac5c00103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -5670,8 +5670,6 @@ name|tile_info
 operator|->
 name|tile_num
 argument_list|,
-literal|0
-argument_list|,
 name|TRUE
 argument_list|,
 name|TRUE
@@ -5843,8 +5841,6 @@ argument_list|,
 name|tile_req
 operator|->
 name|tile_num
-argument_list|,
-literal|0
 argument_list|,
 name|TRUE
 argument_list|,

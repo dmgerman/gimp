@@ -23,15 +23,6 @@ file|"tile.h"
 end_include
 
 begin_typedef
-DECL|typedef|TileLevel
-typedef|typedef
-name|struct
-name|_TileLevel
-name|TileLevel
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|TileManager
 typedef|typedef
 name|struct
@@ -56,9 +47,6 @@ parameter_list|,
 name|Tile
 modifier|*
 name|tile
-parameter_list|,
-name|int
-name|level
 parameter_list|)
 function_decl|;
 end_typedef
@@ -100,41 +88,6 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Calculate the number of levels necessary to have a complete  *  hierarchy. This procedure is normally called twice with  *  the width and then height and the maximum value returned  *  is then used as the number of levels an image needs.  */
-end_comment
-
-begin_function_decl
-name|int
-name|tile_manager_calc_levels
-parameter_list|(
-name|int
-name|size
-parameter_list|,
-name|int
-name|tile_size
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* Set the number of levels this tile manager is managing.  *  This procedure may destroy unnecessary levels in the  *  tile manager if the new number of levels is less than  *  the old number of levels.  * Any newly added levels will consist of invalid tiles.  */
-end_comment
-
-begin_function_decl
-name|void
-name|tile_manager_set_nlevels
-parameter_list|(
-name|TileManager
-modifier|*
-name|tm
-parameter_list|,
-name|int
-name|nlevels
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/* Set the validate procedure for the tile manager.  *  The validate procedure is called when an invalid tile  *  is referenced. If the procedure is NULL, then the tile  *  is set to valid and its memory is allocated, but  *  not initialized.  */
 end_comment
 
@@ -153,7 +106,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Get a specified tile from a tile manager. The tile  *  is from the given level and contains the specified  *  pixel. Be aware that the pixel coordinates are  *  dependent on the level.  */
+comment|/* Get a specified tile from a tile manager.   */
 end_comment
 
 begin_function_decl
@@ -170,9 +123,6 @@ name|xpixel
 parameter_list|,
 name|int
 name|ypixel
-parameter_list|,
-name|int
-name|level
 parameter_list|,
 name|int
 name|wantread
@@ -200,9 +150,6 @@ name|int
 name|tile_num
 parameter_list|,
 name|int
-name|level
-parameter_list|,
-name|int
 name|wantread
 parameter_list|,
 name|int
@@ -212,7 +159,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Request that (if possible) the tile at x,y,layer be swapped  * in.  This is only a hint to improve performance; no guarantees.  * The tile may be swapped in or otherwise made more accessible  * if it is convenient...  */
+comment|/* Request that (if possible) the tile at x,y be swapped  * in.  This is only a hint to improve performance; no guarantees.  * The tile may be swapped in or otherwise made more accessible  * if it is convenient...  */
 end_comment
 
 begin_function_decl
@@ -228,9 +175,6 @@ name|xpixel
 parameter_list|,
 name|int
 name|ypixel
-parameter_list|,
-name|int
-name|level
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -249,9 +193,6 @@ parameter_list|,
 name|int
 name|ypixel
 parameter_list|,
-name|int
-name|level
-parameter_list|,
 name|Tile
 modifier|*
 name|srctile
@@ -269,9 +210,6 @@ name|tm
 parameter_list|,
 name|int
 name|time_num
-parameter_list|,
-name|int
-name|level
 parameter_list|,
 name|Tile
 modifier|*
@@ -336,15 +274,12 @@ name|xpixel
 parameter_list|,
 name|int
 name|ypixel
-parameter_list|,
-name|int
-name|level
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Given a toplevel tile, this procedure will invalidate  *  (set the dirty bit) for all tiles in lower levels which  *  contain this toplevel tile.  * Note: if a level hasn't been created then the tile for that  *       level won't be invalidated.  */
+comment|/* Given a toplevel tile, this procedure will invalidate  *  (set the dirty bit) for this toplevel tile.  */
 end_comment
 
 begin_function_decl
@@ -358,43 +293,6 @@ parameter_list|,
 name|Tile
 modifier|*
 name|toplevel_tile
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* Invalidates all the tiles in the sublevels.  */
-end_comment
-
-begin_function_decl
-name|void
-name|tile_manager_invalidate_sublevels
-parameter_list|(
-name|TileManager
-modifier|*
-name|tm
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* Update a portion lower level tile given a toplevel tile.  */
-end_comment
-
-begin_function_decl
-name|void
-name|tile_manager_update_tile
-parameter_list|(
-name|TileManager
-modifier|*
-name|tm
-parameter_list|,
-name|Tile
-modifier|*
-name|toplevel_tile
-parameter_list|,
-name|int
-name|level
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -433,9 +331,6 @@ parameter_list|(
 name|TileManager
 modifier|*
 name|tm
-parameter_list|,
-name|int
-name|level
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -447,9 +342,6 @@ parameter_list|(
 name|TileManager
 modifier|*
 name|tm
-parameter_list|,
-name|int
-name|level
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -461,9 +353,6 @@ parameter_list|(
 name|TileManager
 modifier|*
 name|tm
-parameter_list|,
-name|int
-name|level
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -487,6 +376,25 @@ parameter_list|,
 name|int
 modifier|*
 name|y
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|tile_manager_map_over_tile
+parameter_list|(
+name|TileManager
+modifier|*
+name|tm
+parameter_list|,
+name|Tile
+modifier|*
+name|tile
+parameter_list|,
+name|Tile
+modifier|*
+name|srctile
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -3599,7 +3599,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2c0a63f50103
+DECL|enum|__anon29d2e23d0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
@@ -5108,8 +5108,6 @@ name|j
 argument_list|,
 name|i
 argument_list|,
-literal|0
-argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
@@ -5138,8 +5136,6 @@ name|j
 argument_list|,
 name|i
 argument_list|,
-literal|0
-argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
@@ -5152,8 +5148,6 @@ argument_list|,
 name|j
 argument_list|,
 name|i
-argument_list|,
-literal|0
 argument_list|,
 name|src_tile
 argument_list|)
@@ -5269,8 +5263,6 @@ name|j
 argument_list|,
 name|i
 argument_list|,
-literal|0
-argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
@@ -5295,8 +5287,6 @@ argument_list|,
 name|j
 argument_list|,
 name|i
-argument_list|,
-literal|0
 argument_list|,
 name|TRUE
 argument_list|,

@@ -890,11 +890,6 @@ name|fs
 operator|.
 name|backing_store
 operator|->
-name|levels
-index|[
-literal|0
-index|]
-operator|.
 name|width
 operator|!=
 name|drawable_width
@@ -911,11 +906,6 @@ name|fs
 operator|.
 name|backing_store
 operator|->
-name|levels
-index|[
-literal|0
-index|]
-operator|.
 name|height
 operator|!=
 name|drawable_height
@@ -932,11 +922,6 @@ name|fs
 operator|.
 name|backing_store
 operator|->
-name|levels
-index|[
-literal|0
-index|]
-operator|.
 name|bpp
 operator|!=
 name|drawable_bytes

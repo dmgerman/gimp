@@ -23,10 +23,18 @@ file|"tile.h"
 end_include
 
 begin_struct
-DECL|struct|_TileLevel
+DECL|struct|_TileManager
 struct|struct
-name|_TileLevel
+name|_TileManager
 block|{
+DECL|member|x
+DECL|member|y
+name|int
+name|x
+decl_stmt|,
+name|y
+decl_stmt|;
+comment|/* tile manager offsets  */
 DECL|member|width
 name|int
 name|width
@@ -59,34 +67,6 @@ modifier|*
 name|tiles
 decl_stmt|;
 comment|/* the tiles for this level */
-block|}
-struct|;
-end_struct
-
-begin_struct
-DECL|struct|_TileManager
-struct|struct
-name|_TileManager
-block|{
-DECL|member|x
-DECL|member|y
-name|int
-name|x
-decl_stmt|,
-name|y
-decl_stmt|;
-comment|/* tile manager offsets  */
-DECL|member|nlevels
-name|int
-name|nlevels
-decl_stmt|;
-comment|/* the number of tile levels in the hierarchy */
-DECL|member|levels
-name|TileLevel
-modifier|*
-name|levels
-decl_stmt|;
-comment|/* the hierarchy */
 DECL|member|validate_proc
 name|TileValidateProc
 name|validate_proc

@@ -2098,11 +2098,6 @@ name|x
 operator|+
 name|float_tiles
 operator|->
-name|levels
-index|[
-literal|0
-index|]
-operator|.
 name|width
 operator|/
 literal|2.0
@@ -2115,11 +2110,6 @@ name|y
 operator|+
 name|float_tiles
 operator|->
-name|levels
-index|[
-literal|0
-index|]
-operator|.
 name|height
 operator|/
 literal|2.0

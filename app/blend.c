@@ -204,7 +204,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29368d3e0103
+DECL|enum|__anon2919e6ae0103
 block|{
 DECL|enumerator|Linear
 name|Linear
@@ -241,7 +241,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29368d3e0203
+DECL|enum|__anon2919e6ae0203
 block|{
 DECL|enumerator|FG_BG_RGB_MODE
 name|FG_BG_RGB_MODE
@@ -263,7 +263,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29368d3e0303
+DECL|enum|__anon2919e6ae0303
 block|{
 DECL|enumerator|REPEAT_NONE
 name|REPEAT_NONE
@@ -407,7 +407,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon29368d3e0408
+DECL|struct|__anon2919e6ae0408
 typedef|typedef
 struct|struct
 block|{
@@ -459,7 +459,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29368d3e0508
+DECL|struct|__anon2919e6ae0508
 typedef|typedef
 struct|struct
 block|{
@@ -5643,8 +5643,6 @@ name|ix
 argument_list|,
 name|iy
 argument_list|,
-literal|0
-argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
@@ -5755,8 +5753,6 @@ argument_list|,
 name|ix
 argument_list|,
 name|iy
-argument_list|,
-literal|0
 argument_list|,
 name|TRUE
 argument_list|,
@@ -5879,8 +5875,6 @@ argument_list|,
 name|ix
 argument_list|,
 name|iy
-argument_list|,
-literal|0
 argument_list|,
 name|TRUE
 argument_list|,

@@ -3690,8 +3690,6 @@ name|x
 argument_list|,
 name|y
 argument_list|,
-literal|0
-argument_list|,
 name|TRUE
 argument_list|,
 name|TRUE
@@ -4049,8 +4047,6 @@ argument_list|,
 name|x
 argument_list|,
 name|y
-argument_list|,
-literal|0
 argument_list|,
 name|TRUE
 argument_list|,

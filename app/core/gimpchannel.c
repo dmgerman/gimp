@@ -324,7 +324,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|channel_validate (TileManager * tm,Tile * tile,int level)
+DECL|function|channel_validate (TileManager * tm,Tile * tile)
 name|channel_validate
 parameter_list|(
 name|TileManager
@@ -334,9 +334,6 @@ parameter_list|,
 name|Tile
 modifier|*
 name|tile
-parameter_list|,
-name|int
-name|level
 parameter_list|)
 block|{
 comment|/*  Set the contents of the tile to empty  */
@@ -2567,8 +2564,6 @@ argument_list|,
 name|x
 argument_list|,
 name|y
-argument_list|,
-literal|0
 argument_list|,
 name|TRUE
 argument_list|,
