@@ -68,7 +68,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd4a5bb0108
+DECL|struct|__anon2b7b57860108
 block|{
 DECL|member|run
 name|gboolean
@@ -914,8 +914,8 @@ condition|(
 name|cvals
 operator|.
 name|size
-operator|==
-literal|0
+operator|<
+literal|1
 condition|)
 block|{
 comment|/* make size 1 to prevent division by zero */
@@ -1022,6 +1022,7 @@ comment|/* Psychobilly Mode */
 name|val
 operator|=
 operator|(
+operator|(
 name|inblock
 argument_list|(
 name|x
@@ -1044,6 +1045,7 @@ condition|?
 literal|0
 else|:
 literal|1
+operator|)
 expr_stmt|;
 block|}
 else|else

@@ -1426,6 +1426,28 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  Copy a component (indexed by pixel) to a 1-byte region  */
+end_comment
+
+begin_function_decl
+name|void
+name|copy_component
+parameter_list|(
+name|PixelRegion
+modifier|*
+name|src
+parameter_list|,
+name|PixelRegion
+modifier|*
+name|dest
+parameter_list|,
+name|guint
+name|pixel
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_function_decl
 name|void
 name|initial_region
