@@ -503,7 +503,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon27a83e390103
+DECL|enum|__anon2792d83c0103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -5686,7 +5686,7 @@ if|#
 directive|if
 literal|0
 comment|/*  If all channels are not visible, simply return  */
-block|switch (gimp_image_base_type (gimage))     {     case RGB:       if (! gimp_image_get_component_visible (gimage, Red)&& 	  ! gimp_image_get_component_visible (gimage, Green)&& 	  ! gimp_image_get_component_visible (gimage, Blue)) 	return;       break;     case GRAY:       if (! gimp_image_get_component_visible (gimage, Gray)) 	return;       break;     case INDEXED:       if (! gimp_image_get_component_visible (gimage, Indexed)) 	return;       break;     }
+block|switch (gimp_image_base_type (gimage))     {     case RGB:       if (! gimp_image_get_component_visible (gimage, RED_CHANNEL)&& 	  ! gimp_image_get_component_visible (gimage, GREEN_CHANNEL)&& 	  ! gimp_image_get_component_visible (gimage, BLUE_CHANNEL)) 	return;       break;     case GRAY:       if (! gimp_image_get_component_visible (gimage, GRAY_CHANNEL)) 	return;       break;     case INDEXED:       if (! gimp_image_get_component_visible (gimage, INDEXED_CHANNEL)) 	return;       break;     }
 endif|#
 directive|endif
 while|while
@@ -7841,7 +7841,7 @@ name|type
 condition|)
 block|{
 case|case
-name|Red
+name|RED_CHANNEL
 case|:
 return|return
 name|gimage
@@ -7853,7 +7853,7 @@ index|]
 return|;
 break|break;
 case|case
-name|Green
+name|GREEN_CHANNEL
 case|:
 return|return
 name|gimage
@@ -7865,7 +7865,7 @@ index|]
 return|;
 break|break;
 case|case
-name|Blue
+name|BLUE_CHANNEL
 case|:
 return|return
 name|gimage
@@ -7877,7 +7877,7 @@ index|]
 return|;
 break|break;
 case|case
-name|Gray
+name|GRAY_CHANNEL
 case|:
 return|return
 name|gimage
@@ -7889,7 +7889,7 @@ index|]
 return|;
 break|break;
 case|case
-name|Indexed
+name|INDEXED_CHANNEL
 case|:
 return|return
 name|gimage
@@ -7929,7 +7929,7 @@ name|type
 condition|)
 block|{
 case|case
-name|Red
+name|RED_CHANNEL
 case|:
 return|return
 name|gimage
@@ -7941,7 +7941,7 @@ index|]
 return|;
 break|break;
 case|case
-name|Green
+name|GREEN_CHANNEL
 case|:
 return|return
 name|gimage
@@ -7953,7 +7953,7 @@ index|]
 return|;
 break|break;
 case|case
-name|Blue
+name|BLUE_CHANNEL
 case|:
 return|return
 name|gimage
@@ -7965,7 +7965,7 @@ index|]
 return|;
 break|break;
 case|case
-name|Gray
+name|GRAY_CHANNEL
 case|:
 return|return
 name|gimage
@@ -7977,7 +7977,7 @@ index|]
 return|;
 break|break;
 case|case
-name|Indexed
+name|INDEXED_CHANNEL
 case|:
 return|return
 name|gimage
@@ -8349,7 +8349,7 @@ name|type
 condition|)
 block|{
 case|case
-name|Red
+name|RED_CHANNEL
 case|:
 name|gimage
 operator|->
@@ -8362,7 +8362,7 @@ name|value
 expr_stmt|;
 break|break;
 case|case
-name|Green
+name|GREEN_CHANNEL
 case|:
 name|gimage
 operator|->
@@ -8375,7 +8375,7 @@ name|value
 expr_stmt|;
 break|break;
 case|case
-name|Blue
+name|BLUE_CHANNEL
 case|:
 name|gimage
 operator|->
@@ -8388,7 +8388,7 @@ name|value
 expr_stmt|;
 break|break;
 case|case
-name|Gray
+name|GRAY_CHANNEL
 case|:
 name|gimage
 operator|->
@@ -8401,7 +8401,7 @@ name|value
 expr_stmt|;
 break|break;
 case|case
-name|Indexed
+name|INDEXED_CHANNEL
 case|:
 name|gimage
 operator|->
@@ -8414,7 +8414,7 @@ name|value
 expr_stmt|;
 break|break;
 case|case
-name|Auxillary
+name|AUXILLARY_CHANNEL
 case|:
 break|break;
 block|}
@@ -8423,7 +8423,7 @@ if|if
 condition|(
 name|type
 operator|!=
-name|Auxillary
+name|AUXILLARY_CHANNEL
 condition|)
 name|gimp_image_unset_active_channel
 argument_list|(
@@ -8456,7 +8456,7 @@ name|type
 condition|)
 block|{
 case|case
-name|Red
+name|RED_CHANNEL
 case|:
 name|gimage
 operator|->
@@ -8469,7 +8469,7 @@ name|value
 expr_stmt|;
 break|break;
 case|case
-name|Green
+name|GREEN_CHANNEL
 case|:
 name|gimage
 operator|->
@@ -8482,7 +8482,7 @@ name|value
 expr_stmt|;
 break|break;
 case|case
-name|Blue
+name|BLUE_CHANNEL
 case|:
 name|gimage
 operator|->
@@ -8495,7 +8495,7 @@ name|value
 expr_stmt|;
 break|break;
 case|case
-name|Gray
+name|GRAY_CHANNEL
 case|:
 name|gimage
 operator|->
@@ -8508,7 +8508,7 @@ name|value
 expr_stmt|;
 break|break;
 case|case
-name|Indexed
+name|INDEXED_CHANNEL
 case|:
 name|gimage
 operator|->
@@ -10057,7 +10057,7 @@ name|gimage
 argument_list|,
 name|merge_list
 argument_list|,
-name|FlattenImage
+name|FLATTEN_IMAGE
 argument_list|)
 expr_stmt|;
 name|g_slist_free
@@ -10449,10 +10449,10 @@ name|merge_type
 condition|)
 block|{
 case|case
-name|ExpandAsNecessary
+name|EXPAND_AS_NECESSARY
 case|:
 case|case
-name|ClipToImage
+name|CLIP_TO_IMAGE
 case|:
 if|if
 condition|(
@@ -10580,7 +10580,7 @@ if|if
 condition|(
 name|merge_type
 operator|==
-name|ClipToImage
+name|CLIP_TO_IMAGE
 condition|)
 block|{
 name|x1
@@ -10638,7 +10638,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|ClipToBottomLayer
+name|CLIP_TO_BOTTOM_LAYER
 case|:
 if|if
 condition|(
@@ -10684,7 +10684,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|FlattenImage
+name|FLATTEN_IMAGE
 case|:
 if|if
 condition|(
@@ -10771,7 +10771,7 @@ if|if
 condition|(
 name|merge_type
 operator|==
-name|FlattenImage
+name|FLATTEN_IMAGE
 operator|||
 name|drawable_type
 argument_list|(
@@ -11440,7 +11440,7 @@ if|if
 condition|(
 name|merge_type
 operator|==
-name|FlattenImage
+name|FLATTEN_IMAGE
 condition|)
 block|{
 name|merge_list
@@ -14726,7 +14726,7 @@ name|type
 condition|)
 block|{
 case|case
-name|Red
+name|RED_CHANNEL
 case|:
 name|channel
 operator|=
@@ -14734,7 +14734,7 @@ name|RED_PIX
 expr_stmt|;
 break|break;
 case|case
-name|Green
+name|GREEN_CHANNEL
 case|:
 name|channel
 operator|=
@@ -14742,7 +14742,7 @@ name|GREEN_PIX
 expr_stmt|;
 break|break;
 case|case
-name|Blue
+name|BLUE_CHANNEL
 case|:
 name|channel
 operator|=
@@ -14750,7 +14750,7 @@ name|BLUE_PIX
 expr_stmt|;
 break|break;
 case|case
-name|Gray
+name|GRAY_CHANNEL
 case|:
 name|channel
 operator|=
@@ -14758,7 +14758,7 @@ name|GRAY_PIX
 expr_stmt|;
 break|break;
 case|case
-name|Indexed
+name|INDEXED_CHANNEL
 case|:
 name|channel
 operator|=
@@ -14872,7 +14872,7 @@ name|type
 condition|)
 block|{
 case|case
-name|Red
+name|RED_CHANNEL
 case|:
 return|return
 name|gimage
@@ -14884,7 +14884,7 @@ index|]
 return|;
 break|break;
 case|case
-name|Green
+name|GREEN_CHANNEL
 case|:
 return|return
 name|gimage
@@ -14896,7 +14896,7 @@ index|]
 return|;
 break|break;
 case|case
-name|Blue
+name|BLUE_CHANNEL
 case|:
 return|return
 name|gimage
@@ -14908,7 +14908,7 @@ index|]
 return|;
 break|break;
 case|case
-name|Gray
+name|GRAY_CHANNEL
 case|:
 return|return
 name|gimage
@@ -14920,7 +14920,7 @@ index|]
 return|;
 break|break;
 case|case
-name|Indexed
+name|INDEXED_CHANNEL
 case|:
 return|return
 name|gimage

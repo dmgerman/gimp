@@ -162,12 +162,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimage_cmds.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimage_mask.h"
 end_include
 
@@ -318,7 +312,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f3c6c20108
+DECL|struct|__anon2bb17cb10108
 block|{
 DECL|member|resize
 name|Resize

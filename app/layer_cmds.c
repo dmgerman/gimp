@@ -861,7 +861,7 @@ name|PDB_INT32
 block|,
 literal|"mode"
 block|,
-literal|"The layer combination mode: { NORMAL (0), DISSOLVE (1), BEHIND (2), MULTIPLY/BURN (3), SCREEN (4), OVERLAY (5), DIFFERENCE (6), ADDITION (7), SUBTRACT (8), DARKEN-ONLY (9), LIGHTEN-ONLY (10), HUE (11), SATURATION (12), COLOR (13), VALUE (14), DIVIDE/DODGE (15) }"
+literal|"The layer combination mode: { NORMAL (0), DISSOLVE (1), BEHIND (2), MULTIPLY/BURN (3), SCREEN (4), OVERLAY (5), DIFFERENCE (6), ADDITION (7), SUBTRACT (8), DARKEN_ONLY (9), LIGHTEN_ONLY (10), HUE (11), SATURATION (12), COLOR (13), VALUE (14), DIVIDE/DODGE (15) }"
 block|}
 block|}
 decl_stmt|;
@@ -2853,20 +2853,6 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
-if|if
-condition|(
-name|success
-condition|)
-name|success
-operator|=
-name|layer
-operator|->
-name|mask
-condition|?
-name|TRUE
-else|:
-name|FALSE
-expr_stmt|;
 name|return_args
 operator|=
 name|procedural_db_return_args
@@ -2890,6 +2876,10 @@ name|value
 operator|.
 name|pdb_int
 operator|=
+name|layer
+operator|->
+name|mask
+condition|?
 name|drawable_ID
 argument_list|(
 name|GIMP_DRAWABLE
@@ -2899,6 +2889,9 @@ operator|->
 name|mask
 argument_list|)
 argument_list|)
+else|:
+operator|-
+literal|1
 expr_stmt|;
 return|return
 name|return_args
@@ -2955,7 +2948,7 @@ literal|"gimp_layer_mask"
 block|,
 literal|"Get the specified layer's mask if it exists."
 block|,
-literal|"This procedure returns the specified layer's mask. If there is no layer mask, the procedure fails."
+literal|"This procedure returns the specified layer's mask, or -1 if none exists."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

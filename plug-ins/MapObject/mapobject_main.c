@@ -2257,11 +2257,10 @@ expr_stmt|;
 block|}
 end_function
 
-begin_expr_stmt
+begin_macro
 name|MAIN
 argument_list|()
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 end_unit
 

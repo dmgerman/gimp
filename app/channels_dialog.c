@@ -1808,7 +1808,7 @@ name|cw
 operator|->
 name|type
 operator|==
-name|Auxillary
+name|AUXILLARY_CHANNEL
 condition|)
 comment|/*  will only be true for auxillary channels  */
 name|channels_dialog_remove_channel
@@ -1859,7 +1859,7 @@ name|cw
 operator|->
 name|type
 operator|==
-name|Auxillary
+name|AUXILLARY_CHANNEL
 condition|)
 if|if
 condition|(
@@ -2114,7 +2114,7 @@ name|gimage
 argument_list|,
 name|NULL
 argument_list|,
-name|Red
+name|RED_CHANNEL
 argument_list|)
 expr_stmt|;
 name|channelsD
@@ -2148,7 +2148,7 @@ index|[
 literal|0
 index|]
 operator|=
-name|Red
+name|RED_CHANNEL
 expr_stmt|;
 name|cw
 operator|=
@@ -2158,7 +2158,7 @@ name|gimage
 argument_list|,
 name|NULL
 argument_list|,
-name|Green
+name|GREEN_CHANNEL
 argument_list|)
 expr_stmt|;
 name|channelsD
@@ -2192,7 +2192,7 @@ index|[
 literal|1
 index|]
 operator|=
-name|Green
+name|GREEN_CHANNEL
 expr_stmt|;
 name|cw
 operator|=
@@ -2202,7 +2202,7 @@ name|gimage
 argument_list|,
 name|NULL
 argument_list|,
-name|Blue
+name|BLUE_CHANNEL
 argument_list|)
 expr_stmt|;
 name|channelsD
@@ -2236,7 +2236,7 @@ index|[
 literal|2
 index|]
 operator|=
-name|Blue
+name|BLUE_CHANNEL
 expr_stmt|;
 name|channelsD
 operator|->
@@ -2256,7 +2256,7 @@ name|gimage
 argument_list|,
 name|NULL
 argument_list|,
-name|Gray
+name|GRAY_CHANNEL
 argument_list|)
 expr_stmt|;
 name|channelsD
@@ -2290,7 +2290,7 @@ index|[
 literal|0
 index|]
 operator|=
-name|Gray
+name|GRAY_CHANNEL
 expr_stmt|;
 name|channelsD
 operator|->
@@ -2310,7 +2310,7 @@ name|gimage
 argument_list|,
 name|NULL
 argument_list|,
-name|Indexed
+name|INDEXED_CHANNEL
 argument_list|)
 expr_stmt|;
 name|channelsD
@@ -2344,7 +2344,7 @@ index|[
 literal|0
 index|]
 operator|=
-name|Indexed
+name|INDEXED_CHANNEL
 expr_stmt|;
 name|channelsD
 operator|->
@@ -2385,7 +2385,7 @@ name|gimage
 argument_list|,
 name|channel
 argument_list|,
-name|Auxillary
+name|AUXILLARY_CHANNEL
 argument_list|)
 expr_stmt|;
 name|channelsD
@@ -2837,7 +2837,7 @@ name|cw
 operator|->
 name|type
 operator|==
-name|Auxillary
+name|AUXILLARY_CHANNEL
 operator|)
 expr_stmt|;
 else|else
@@ -3095,7 +3095,7 @@ name|channel_widget
 operator|->
 name|type
 operator|==
-name|Auxillary
+name|AUXILLARY_CHANNEL
 condition|)
 block|{
 comment|/*  turn on the specified auxillary channel  */
@@ -3198,13 +3198,13 @@ name|type
 condition|)
 block|{
 case|case
-name|Red
+name|RED_CHANNEL
 case|:
 case|case
-name|Gray
+name|GRAY_CHANNEL
 case|:
 case|case
-name|Indexed
+name|INDEXED_CHANNEL
 case|:
 name|gtk_list_select_item
 argument_list|(
@@ -3220,7 +3220,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|Green
+name|GREEN_CHANNEL
 case|:
 name|gtk_list_select_item
 argument_list|(
@@ -3236,7 +3236,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|Blue
+name|BLUE_CHANNEL
 case|:
 name|gtk_list_select_item
 argument_list|(
@@ -3252,7 +3252,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|Auxillary
+name|AUXILLARY_CHANNEL
 case|:
 name|g_error
 argument_list|(
@@ -3333,7 +3333,7 @@ name|channel_widget
 operator|->
 name|type
 operator|==
-name|Auxillary
+name|AUXILLARY_CHANNEL
 condition|)
 block|{
 comment|/*  turn off the specified auxillary channel  */
@@ -3436,13 +3436,13 @@ name|type
 condition|)
 block|{
 case|case
-name|Red
+name|RED_CHANNEL
 case|:
 case|case
-name|Gray
+name|GRAY_CHANNEL
 case|:
 case|case
-name|Indexed
+name|INDEXED_CHANNEL
 case|:
 name|gtk_list_unselect_item
 argument_list|(
@@ -3458,7 +3458,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|Green
+name|GREEN_CHANNEL
 case|:
 name|gtk_list_unselect_item
 argument_list|(
@@ -3474,7 +3474,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|Blue
+name|BLUE_CHANNEL
 case|:
 name|gtk_list_unselect_item
 argument_list|(
@@ -3490,7 +3490,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|Auxillary
+name|AUXILLARY_CHANNEL
 case|:
 name|g_error
 argument_list|(
@@ -3699,7 +3699,7 @@ name|gimage
 argument_list|,
 name|channel
 argument_list|,
-name|Auxillary
+name|AUXILLARY_CHANNEL
 argument_list|)
 expr_stmt|;
 name|item_list
@@ -3961,7 +3961,7 @@ name|channel_widget
 operator|->
 name|type
 operator|==
-name|Auxillary
+name|AUXILLARY_CHANNEL
 condition|)
 name|channels_dialog_edit_channel_query
 argument_list|(
@@ -4851,7 +4851,7 @@ operator|=
 operator|(
 name|type
 operator|==
-name|Auxillary
+name|AUXILLARY_CHANNEL
 operator|)
 condition|?
 name|GIMP_DRAWABLE
@@ -5226,7 +5226,7 @@ name|type
 condition|)
 block|{
 case|case
-name|Red
+name|RED_CHANNEL
 case|:
 name|channel_widget
 operator|->
@@ -5242,7 +5242,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|Green
+name|GREEN_CHANNEL
 case|:
 name|channel_widget
 operator|->
@@ -5258,7 +5258,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|Blue
+name|BLUE_CHANNEL
 case|:
 name|channel_widget
 operator|->
@@ -5274,7 +5274,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|Gray
+name|GRAY_CHANNEL
 case|:
 name|channel_widget
 operator|->
@@ -5290,7 +5290,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|Indexed
+name|INDEXED_CHANNEL
 case|:
 name|channel_widget
 operator|->
@@ -5306,7 +5306,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|Auxillary
+name|AUXILLARY_CHANNEL
 case|:
 name|channel_widget
 operator|->
@@ -5475,7 +5475,7 @@ name|channel_widget
 operator|->
 name|type
 operator|==
-name|Auxillary
+name|AUXILLARY_CHANNEL
 condition|)
 block|{
 if|if
@@ -5518,7 +5518,7 @@ name|channel_widget
 operator|->
 name|type
 operator|!=
-name|Auxillary
+name|AUXILLARY_CHANNEL
 condition|)
 block|{
 if|if
@@ -5642,7 +5642,7 @@ name|type
 condition|)
 block|{
 case|case
-name|Auxillary
+name|AUXILLARY_CHANNEL
 case|:
 name|visible
 operator|=
@@ -5850,7 +5850,7 @@ name|channel_widget
 operator|->
 name|type
 operator|==
-name|Auxillary
+name|AUXILLARY_CHANNEL
 condition|)
 name|GIMP_DRAWABLE
 argument_list|(
@@ -6017,7 +6017,7 @@ name|channel_widget
 operator|->
 name|type
 operator|==
-name|Auxillary
+name|AUXILLARY_CHANNEL
 condition|)
 name|GIMP_DRAWABLE
 argument_list|(
@@ -6187,7 +6187,7 @@ name|type
 condition|)
 block|{
 case|case
-name|Auxillary
+name|AUXILLARY_CHANNEL
 case|:
 name|valid
 operator|=
@@ -6406,7 +6406,7 @@ name|type
 condition|)
 block|{
 case|case
-name|Auxillary
+name|AUXILLARY_CHANNEL
 case|:
 name|width
 operator|=
@@ -6556,7 +6556,7 @@ name|type
 condition|)
 block|{
 case|case
-name|Red
+name|RED_CHANNEL
 case|:
 name|channel
 operator|=
@@ -6564,7 +6564,7 @@ name|RED_PIX
 expr_stmt|;
 break|break;
 case|case
-name|Green
+name|GREEN_CHANNEL
 case|:
 name|channel
 operator|=
@@ -6572,7 +6572,7 @@ name|GREEN_PIX
 expr_stmt|;
 break|break;
 case|case
-name|Blue
+name|BLUE_CHANNEL
 case|:
 name|channel
 operator|=
@@ -6580,7 +6580,7 @@ name|BLUE_PIX
 expr_stmt|;
 break|break;
 case|case
-name|Gray
+name|GRAY_CHANNEL
 case|:
 name|channel
 operator|=
@@ -6588,7 +6588,7 @@ name|GRAY_PIX
 expr_stmt|;
 break|break;
 case|case
-name|Indexed
+name|INDEXED_CHANNEL
 case|:
 name|channel
 operator|=
@@ -6596,7 +6596,7 @@ name|INDEXED_PIX
 expr_stmt|;
 break|break;
 case|case
-name|Auxillary
+name|AUXILLARY_CHANNEL
 case|:
 name|channel
 operator|=
@@ -7137,7 +7137,7 @@ name|type
 condition|)
 block|{
 case|case
-name|Auxillary
+name|AUXILLARY_CHANNEL
 case|:
 name|visible
 operator|=
@@ -7486,7 +7486,7 @@ name|type
 condition|)
 block|{
 case|case
-name|Auxillary
+name|AUXILLARY_CHANNEL
 case|:
 name|visible
 operator||=
@@ -7561,7 +7561,7 @@ name|type
 condition|)
 block|{
 case|case
-name|Auxillary
+name|AUXILLARY_CHANNEL
 case|:
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7602,7 +7602,7 @@ name|type
 condition|)
 block|{
 case|case
-name|Auxillary
+name|AUXILLARY_CHANNEL
 case|:
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7701,7 +7701,7 @@ name|channel_widget
 operator|->
 name|type
 operator|==
-name|Auxillary
+name|AUXILLARY_CHANNEL
 condition|)
 block|{
 if|if
@@ -7756,7 +7756,7 @@ name|channel_widget
 operator|->
 name|type
 operator|!=
-name|Auxillary
+name|AUXILLARY_CHANNEL
 operator|&&
 name|channelsD
 operator|->
@@ -7816,7 +7816,7 @@ name|channel_widget
 operator|->
 name|type
 operator|==
-name|Auxillary
+name|AUXILLARY_CHANNEL
 condition|)
 block|{
 comment|/*  select if this is the active channel  */
@@ -7881,7 +7881,7 @@ name|type
 condition|)
 block|{
 case|case
-name|Auxillary
+name|AUXILLARY_CHANNEL
 case|:
 name|update_preview
 operator|=

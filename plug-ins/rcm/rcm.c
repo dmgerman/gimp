@@ -196,11 +196,11 @@ begin_comment
 comment|/*-----------------------------------------------------------------------------------*/
 end_comment
 
-begin_expr_stmt
+begin_macro
+DECL|function|MAIN ()
 name|MAIN
 argument_list|()
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_comment
 comment|/*-----------------------------------------------------------------------------------*/
@@ -215,7 +215,6 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|query (void)
 name|void
 name|query
 parameter_list|(

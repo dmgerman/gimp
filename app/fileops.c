@@ -4424,7 +4424,7 @@ name|gimp_image_preview_valid
 argument_list|(
 name|gimage
 argument_list|,
-name|Gray
+name|GRAY_CHANNEL
 argument_list|)
 condition|)
 block|{
@@ -4602,7 +4602,7 @@ name|gimp_image_composite_preview
 argument_list|(
 name|gimage
 argument_list|,
-name|Gray
+name|GRAY_CHANNEL
 argument_list|,
 name|w
 argument_list|,

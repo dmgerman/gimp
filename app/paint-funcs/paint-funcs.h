@@ -2816,7 +2816,7 @@ comment|/*  Layer Modes  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2af91d420103
+DECL|enum|__anon296deee70103
 typedef|typedef
 enum|enum
 block|{
@@ -2852,11 +2852,9 @@ block|,
 DECL|enumerator|DARKEN_ONLY_MODE
 name|DARKEN_ONLY_MODE
 block|,
-comment|/*< nick=DARKEN-ONLY>*/
 DECL|enumerator|LIGHTEN_ONLY_MODE
 name|LIGHTEN_ONLY_MODE
 block|,
-comment|/*< nick=LIGHTEN-ONLY>*/
 DECL|enumerator|HUE_MODE
 name|HUE_MODE
 block|,

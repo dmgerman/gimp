@@ -390,11 +390,10 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_expr_stmt
+begin_macro
 name|MAIN
 argument_list|()
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_ifdef
 ifdef|#
@@ -403,7 +402,6 @@ name|VERBOSE
 end_ifdef
 
 begin_decl_stmt
-DECL|variable|verbose
 specifier|static
 name|int
 name|verbose

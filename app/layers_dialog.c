@@ -4576,7 +4576,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon298eb1670108
+DECL|struct|__anon2bcd1f8e0108
 typedef|typedef
 struct|struct
 block|{
@@ -9663,7 +9663,7 @@ name|gimage
 operator|->
 name|active_layer
 argument_list|,
-name|ExpandAsNecessary
+name|EXPAND_AS_NECESSARY
 argument_list|)
 expr_stmt|;
 name|gdisplays_flush
@@ -19196,7 +19196,7 @@ name|options
 operator|->
 name|merge_type
 operator|=
-name|ExpandAsNecessary
+name|EXPAND_AS_NECESSARY
 expr_stmt|;
 block|}
 end_function
@@ -19231,7 +19231,7 @@ name|options
 operator|->
 name|merge_type
 operator|=
-name|ClipToImage
+name|CLIP_TO_IMAGE
 expr_stmt|;
 block|}
 end_function
@@ -19266,7 +19266,7 @@ name|options
 operator|->
 name|merge_type
 operator|=
-name|ClipToBottomLayer
+name|CLIP_TO_BOTTOM_LAYER
 expr_stmt|;
 block|}
 end_function
@@ -19422,7 +19422,7 @@ name|options
 operator|->
 name|merge_type
 operator|=
-name|ExpandAsNecessary
+name|EXPAND_AS_NECESSARY
 expr_stmt|;
 comment|/*  the dialog  */
 name|options

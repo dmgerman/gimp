@@ -46,21 +46,21 @@ directive|include
 file|"tile_manager.h"
 end_include
 
-begin_define
-DECL|macro|APPLY
-define|#
-directive|define
+begin_typedef
+DECL|enum|__anon2ad5f71c0103
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|APPLY
 name|APPLY
-value|0
-end_define
-
-begin_define
-DECL|macro|DISCARD
-define|#
-directive|define
+block|,
+DECL|enumerator|DISCARD
 name|DISCARD
-value|1
-end_define
+DECL|typedef|MaskApplyMode
+block|}
+name|MaskApplyMode
+typedef|;
+end_typedef
 
 begin_include
 include|#

@@ -16,6 +16,12 @@ directive|define
 name|__CURSORUTIL_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|<gdk/gdktypes.h>
+end_include
+
 begin_function_decl
 name|void
 name|change_win_cursor
