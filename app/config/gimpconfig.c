@@ -1239,7 +1239,7 @@ name|indent_level
 parameter_list|)
 block|{
 name|gint
-name|indent
+name|i
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -1257,22 +1257,24 @@ argument_list|)
 expr_stmt|;
 for|for
 control|(
-name|indent
+name|i
 operator|=
 literal|0
 init|;
-name|indent
+name|i
 operator|<
 name|indent_level
 condition|;
-name|indent
+name|i
 operator|++
 control|)
-name|g_string_append
+name|g_string_append_len
 argument_list|(
 name|string
 argument_list|,
 literal|"    "
+argument_list|,
+literal|4
 argument_list|)
 expr_stmt|;
 block|}
@@ -1495,7 +1497,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297e32000108
+DECL|struct|__anon29768ab90108
 block|{
 DECL|member|key
 name|gchar
