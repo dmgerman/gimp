@@ -131,7 +131,7 @@ decl_stmt|;
 comment|/*  possible layer mask        */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon28e52e120108
+DECL|struct|__anon27b07c3a0108
 block|{
 DECL|member|backing_store
 name|TileManager
@@ -289,25 +289,6 @@ name|opacity
 parameter_list|,
 name|GimpLayerModeEffects
 name|mode
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GimpLayer
-modifier|*
-name|gimp_layer_copy
-parameter_list|(
-specifier|const
-name|GimpLayer
-modifier|*
-name|layer
-parameter_list|,
-name|GType
-name|new_type
-parameter_list|,
-name|gboolean
-name|add_alpha
 parameter_list|)
 function_decl|;
 end_function_decl

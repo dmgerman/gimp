@@ -160,7 +160,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon294339460103
+DECL|enum|__anon2a28839e0103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -1086,7 +1086,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_item_list_view_new (gint preview_size,GimpImage * gimage,GType item_type,const gchar * signal_name,GimpGetContainerFunc get_container_func,GimpGetItemFunc get_item_func,GimpSetItemFunc set_item_func,GimpReorderItemFunc reorder_item_func,GimpAddItemFunc add_item_func,GimpRemoveItemFunc remove_item_func,GimpCopyItemFunc copy_item_func,GimpConvertItemFunc convert_item_func,GimpNewItemFunc new_item_func,GimpEditItemFunc edit_item_func,GimpActivateItemFunc activate_item_func,GimpMenuFactory * menu_factory,const gchar * menu_identifier)
+DECL|function|gimp_item_list_view_new (gint preview_size,GimpImage * gimage,GType item_type,const gchar * signal_name,GimpGetContainerFunc get_container_func,GimpGetItemFunc get_item_func,GimpSetItemFunc set_item_func,GimpReorderItemFunc reorder_item_func,GimpAddItemFunc add_item_func,GimpRemoveItemFunc remove_item_func,GimpConvertItemFunc convert_item_func,GimpNewItemFunc new_item_func,GimpEditItemFunc edit_item_func,GimpActivateItemFunc activate_item_func,GimpMenuFactory * menu_factory,const gchar * menu_identifier)
 name|gimp_item_list_view_new
 parameter_list|(
 name|gint
@@ -1121,9 +1121,6 @@ name|add_item_func
 parameter_list|,
 name|GimpRemoveItemFunc
 name|remove_item_func
-parameter_list|,
-name|GimpCopyItemFunc
-name|copy_item_func
 parameter_list|,
 name|GimpConvertItemFunc
 name|convert_item_func
@@ -1238,15 +1235,6 @@ expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|remove_item_func
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|copy_item_func
 operator|!=
 name|NULL
 argument_list|,
@@ -1452,12 +1440,6 @@ operator|->
 name|remove_item_func
 operator|=
 name|remove_item_func
-expr_stmt|;
-name|list_view
-operator|->
-name|copy_item_func
-operator|=
-name|copy_item_func
 expr_stmt|;
 name|list_view
 operator|->
@@ -2349,11 +2331,16 @@ argument_list|)
 expr_stmt|;
 name|new_viewable
 operator|=
-name|view
-operator|->
-name|copy_item_func
+operator|(
+name|GimpViewable
+operator|*
+operator|)
+name|gimp_item_duplicate
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|viewable
+argument_list|)
 argument_list|,
 name|G_TYPE_FROM_INSTANCE
 argument_list|(

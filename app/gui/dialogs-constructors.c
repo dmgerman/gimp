@@ -2473,11 +2473,6 @@ operator|)
 name|layers_remove_layer
 argument_list|,
 operator|(
-name|GimpCopyItemFunc
-operator|)
-name|gimp_layer_copy
-argument_list|,
-operator|(
 name|GimpConvertItemFunc
 operator|)
 name|gimp_layer_new_from_drawable
@@ -2636,11 +2631,6 @@ operator|)
 name|gimp_image_remove_channel
 argument_list|,
 operator|(
-name|GimpCopyItemFunc
-operator|)
-name|gimp_channel_copy
-argument_list|,
-operator|(
 name|GimpConvertItemFunc
 operator|)
 name|NULL
@@ -2788,11 +2778,6 @@ operator|(
 name|GimpRemoveItemFunc
 operator|)
 name|gimp_image_remove_vectors
-argument_list|,
-operator|(
-name|GimpCopyItemFunc
-operator|)
-name|gimp_vectors_copy
 argument_list|,
 operator|(
 name|GimpConvertItemFunc

@@ -355,9 +355,14 @@ argument_list|)
 expr_stmt|;
 name|new_vectors
 operator|=
-name|gimp_vectors_copy
+name|GIMP_VECTORS
+argument_list|(
+name|gimp_item_duplicate
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|active_vectors
+argument_list|)
 argument_list|,
 name|G_TYPE_FROM_INSTANCE
 argument_list|(
@@ -365,6 +370,7 @@ name|active_vectors
 argument_list|)
 argument_list|,
 name|TRUE
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_add_vectors

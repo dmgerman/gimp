@@ -1138,9 +1138,14 @@ operator|=
 operator|(
 name|copy
 operator|=
-name|gimp_layer_copy
+name|GIMP_LAYER
+argument_list|(
+name|gimp_item_duplicate
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|layer
+argument_list|)
 argument_list|,
 name|G_TYPE_FROM_INSTANCE
 argument_list|(
@@ -1148,6 +1153,7 @@ name|layer
 argument_list|)
 argument_list|,
 name|add_alpha
+argument_list|)
 argument_list|)
 operator|)
 operator|!=

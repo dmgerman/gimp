@@ -366,26 +366,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpVectors
-modifier|*
-name|gimp_vectors_copy
-parameter_list|(
-specifier|const
-name|GimpVectors
-modifier|*
-name|vectors
-parameter_list|,
-name|GType
-name|new_type
-parameter_list|,
-name|gboolean
-name|add_alpha
-comment|/* unused */
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gimp_vectors_copy_strokes
 parameter_list|(

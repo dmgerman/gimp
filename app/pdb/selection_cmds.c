@@ -3472,11 +3472,16 @@ condition|)
 block|{
 name|new_channel
 operator|=
-name|gimp_channel_copy
+name|GIMP_CHANNEL
+argument_list|(
+name|gimp_item_duplicate
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|)
 argument_list|,
 name|G_TYPE_FROM_INSTANCE
@@ -3487,7 +3492,8 @@ name|gimage
 argument_list|)
 argument_list|)
 argument_list|,
-name|TRUE
+name|FALSE
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_channel_combine_mask

@@ -236,24 +236,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpDrawable
-modifier|*
-name|gimp_drawable_copy
-parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|,
-name|GType
-name|new_type
-parameter_list|,
-name|gboolean
-name|add_alpha
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gimp_drawable_update
 parameter_list|(

@@ -138,6 +138,7 @@ DECL|member|parent_class
 name|GimpViewableClass
 name|parent_class
 decl_stmt|;
+comment|/*  signals  */
 DECL|member|removed
 name|void
 function_decl|(
@@ -148,6 +149,26 @@ parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|)
+function_decl|;
+comment|/*  virtual functions  */
+DECL|member|duplicate
+name|GimpItem
+modifier|*
+function_decl|(
+modifier|*
+name|duplicate
+function_decl|)
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|,
+name|GType
+name|new_type
+parameter_list|,
+name|gboolean
+name|add_alpha
 parameter_list|)
 function_decl|;
 block|}
@@ -198,7 +219,7 @@ end_function_decl
 begin_function_decl
 name|GimpItem
 modifier|*
-name|gimp_item_copy
+name|gimp_item_duplicate
 parameter_list|(
 name|GimpItem
 modifier|*

@@ -3664,9 +3664,11 @@ condition|)
 block|{
 name|new_layer
 operator|=
-name|gimp_layer_copy
-argument_list|(
 name|GIMP_LAYER
+argument_list|(
+name|gimp_item_duplicate
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
 argument_list|)
@@ -3678,6 +3680,7 @@ argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
+argument_list|)
 expr_stmt|;
 block|}
 else|else
@@ -3686,9 +3689,12 @@ name|new_layer
 operator|=
 name|GIMP_LAYER
 argument_list|(
-name|gimp_drawable_copy
+name|gimp_item_duplicate
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_LAYER
 argument_list|,

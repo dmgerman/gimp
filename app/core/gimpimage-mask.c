@@ -2314,9 +2314,14 @@ argument_list|)
 expr_stmt|;
 name|new_channel
 operator|=
-name|gimp_channel_copy
+name|GIMP_CHANNEL
+argument_list|(
+name|gimp_item_duplicate
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|mask
+argument_list|)
 argument_list|,
 name|G_TYPE_FROM_INSTANCE
 argument_list|(
@@ -2324,6 +2329,7 @@ name|mask
 argument_list|)
 argument_list|,
 name|FALSE
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  saved selections are not visible by default  */
