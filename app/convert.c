@@ -164,7 +164,7 @@ DECL|macro|PRECISION_B
 define|#
 directive|define
 name|PRECISION_B
-value|5
+value|6
 end_define
 
 begin_define
@@ -34887,7 +34887,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd14d2e0108
+DECL|struct|__anon292f32da0108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -34964,7 +34964,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd14d2e0208
+DECL|struct|__anon292f32da0208
 block|{
 DECL|member|ncolors
 name|long
@@ -34983,7 +34983,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd14d2e0308
+DECL|struct|__anon292f32da0308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -35599,9 +35599,6 @@ name|group
 init|=
 name|NULL
 decl_stmt|;
-name|gint
-name|maxval
-decl_stmt|;
 name|dialog
 operator|=
 name|g_new
@@ -36003,10 +36000,6 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|maxval
-operator|=
-literal|255
-expr_stmt|;
 name|dialog
 operator|->
 name|num_cols
@@ -36014,20 +36007,6 @@ operator|=
 literal|255
 expr_stmt|;
 block|}
-else|else
-block|{
-name|maxval
-operator|=
-literal|256
-expr_stmt|;
-block|}
-block|}
-else|else
-block|{
-name|maxval
-operator|=
-literal|256
-expr_stmt|;
 block|}
 name|spinbutton
 operator|=
@@ -36042,7 +36021,7 @@ name|num_cols
 argument_list|,
 literal|2
 argument_list|,
-name|maxval
+literal|256
 argument_list|,
 literal|1
 argument_list|,
@@ -38267,7 +38246,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd14d2e0408
+DECL|struct|__anon292f32da0408
 block|{
 DECL|member|used_count
 name|signed
