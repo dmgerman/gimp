@@ -129,7 +129,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c03a6030103
+DECL|enum|__anon289eaf880103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO
@@ -690,6 +690,11 @@ literal|"every time you quit the gimp. If this "
 literal|"file isn't found, defaults are used."
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 if|if

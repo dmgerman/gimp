@@ -164,6 +164,22 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpLayer
+modifier|*
+name|gimp_text_layer_from_layer
+parameter_list|(
+name|GimpLayer
+modifier|*
+name|layer
+parameter_list|,
+name|GimpText
+modifier|*
+name|text
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpText
 modifier|*
 name|gimp_text_layer_get_text
