@@ -6797,7 +6797,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c977d6f0108
+DECL|struct|__anon290d04090108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9238,7 +9238,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c977d6f0208
+DECL|struct|__anon290d04090208
 block|{
 DECL|member|label
 specifier|const
@@ -9397,7 +9397,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c977d6f0308
+DECL|struct|__anon290d04090308
 block|{
 DECL|member|tree_label
 specifier|const
@@ -9429,11 +9429,17 @@ name|gchar
 modifier|*
 name|fs_label
 decl_stmt|;
-DECL|member|property_name
+DECL|member|path_property_name
 specifier|const
 name|gchar
 modifier|*
-name|property_name
+name|path_property_name
+decl_stmt|;
+DECL|member|writable_property_name
+specifier|const
+name|gchar
+modifier|*
+name|writable_property_name
 decl_stmt|;
 block|}
 name|paths
@@ -9461,6 +9467,8 @@ literal|"Select Brush Folders"
 argument_list|)
 block|,
 literal|"brush-path"
+block|,
+literal|"brush-path-writable"
 block|}
 block|,
 block|{
@@ -9484,6 +9492,8 @@ literal|"Select Pattern Folders"
 argument_list|)
 block|,
 literal|"pattern-path"
+block|,
+literal|"pattern-path-writable"
 block|}
 block|,
 block|{
@@ -9507,6 +9517,8 @@ literal|"Select Palette Folders"
 argument_list|)
 block|,
 literal|"palette-path"
+block|,
+literal|"palette-path-writable"
 block|}
 block|,
 block|{
@@ -9530,6 +9542,8 @@ literal|"Select Gradient Folders"
 argument_list|)
 block|,
 literal|"gradient-path"
+block|,
+literal|"gradient-path-writable"
 block|}
 block|,
 block|{
@@ -9553,6 +9567,8 @@ literal|"Select Font Folders"
 argument_list|)
 block|,
 literal|"font-path"
+block|,
+literal|"font-path-writable"
 block|}
 block|,
 block|{
@@ -9576,6 +9592,8 @@ literal|"Select Plug-In Folders"
 argument_list|)
 block|,
 literal|"plug-in-path"
+block|,
+name|NULL
 block|}
 block|,
 block|{
@@ -9599,6 +9617,8 @@ literal|"Select Script-Fu Folders"
 argument_list|)
 block|,
 literal|"script-fu-path"
+block|,
+name|NULL
 block|}
 block|,
 block|{
@@ -9622,6 +9642,8 @@ literal|"Select Module Folders"
 argument_list|)
 block|,
 literal|"module-path"
+block|,
+name|NULL
 block|}
 block|,
 block|{
@@ -9645,6 +9667,8 @@ literal|"Select Environment Folders"
 argument_list|)
 block|,
 literal|"environ-path"
+block|,
+name|NULL
 block|}
 block|,
 block|{
@@ -9668,6 +9692,8 @@ literal|"Select Theme Folders"
 argument_list|)
 block|,
 literal|"theme-path"
+block|,
+name|NULL
 block|}
 block|}
 struct|;
@@ -9759,7 +9785,14 @@ index|[
 name|i
 index|]
 operator|.
-name|property_name
+name|path_property_name
+argument_list|,
+name|paths
+index|[
+name|i
+index|]
+operator|.
+name|writable_property_name
 argument_list|,
 name|gettext
 argument_list|(

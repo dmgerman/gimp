@@ -33,6 +33,12 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
+DECL|member|dirname
+specifier|const
+name|gchar
+modifier|*
+name|dirname
+decl_stmt|;
 DECL|member|basename
 specifier|const
 name|gchar

@@ -182,7 +182,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4a8fa70103
+DECL|enum|__anon27a57caa0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -1681,16 +1681,6 @@ condition|)
 return|return
 name|NULL
 return|;
-name|gimp_data_set_filename
-argument_list|(
-name|GIMP_DATA
-argument_list|(
-name|brush
-argument_list|)
-argument_list|,
-name|filename
-argument_list|)
-expr_stmt|;
 comment|/*  Swap the brush to disk (if we're being stingy with memory) */
 if|if
 condition|(
@@ -1718,15 +1708,6 @@ name|pixmap
 argument_list|)
 expr_stmt|;
 block|}
-name|GIMP_DATA
-argument_list|(
-name|brush
-argument_list|)
-operator|->
-name|dirty
-operator|=
-name|FALSE
-expr_stmt|;
 return|return
 name|GIMP_DATA
 argument_list|(
@@ -2751,7 +2732,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2c4a8fa7020a
+DECL|union|__anon27a57caa020a
 block|{
 DECL|member|u
 name|guint16

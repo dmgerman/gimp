@@ -255,7 +255,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3f72fc0103
+DECL|enum|__anon28ea36dd0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -2419,7 +2419,9 @@ name|gimp
 argument_list|,
 name|GIMP_TYPE_BRUSH
 argument_list|,
-literal|"brush_path"
+literal|"brush-path"
+argument_list|,
+literal|"brush-path-writable"
 argument_list|,
 name|brush_loader_entries
 argument_list|,
@@ -2455,7 +2457,9 @@ name|gimp
 argument_list|,
 name|GIMP_TYPE_PATTERN
 argument_list|,
-literal|"pattern_path"
+literal|"pattern-path"
+argument_list|,
+literal|"pattern-path-writable"
 argument_list|,
 name|pattern_loader_entries
 argument_list|,
@@ -2491,7 +2495,9 @@ name|gimp
 argument_list|,
 name|GIMP_TYPE_GRADIENT
 argument_list|,
-literal|"gradient_path"
+literal|"gradient-path"
+argument_list|,
+literal|"gradient-path-writable"
 argument_list|,
 name|gradient_loader_entries
 argument_list|,
@@ -2527,7 +2533,9 @@ name|gimp
 argument_list|,
 name|GIMP_TYPE_PALETTE
 argument_list|,
-literal|"palette_path"
+literal|"palette-path"
+argument_list|,
+literal|"palette-path-writable"
 argument_list|,
 name|palette_loader_entries
 argument_list|,

@@ -1921,16 +1921,6 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
-name|gimp_data_set_filename
-argument_list|(
-name|GIMP_DATA
-argument_list|(
-name|pattern
-argument_list|)
-argument_list|,
-name|filename
-argument_list|)
-expr_stmt|;
 comment|/*  Swap the pattern to disk (if we're being stingy with memory) */
 if|if
 condition|(
@@ -1942,15 +1932,6 @@ name|pattern
 operator|->
 name|mask
 argument_list|)
-expr_stmt|;
-name|GIMP_DATA
-argument_list|(
-name|pattern
-argument_list|)
-operator|->
-name|dirty
-operator|=
-name|FALSE
 expr_stmt|;
 return|return
 name|GIMP_DATA

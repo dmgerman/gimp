@@ -2456,6 +2456,11 @@ name|nbrushes
 operator|++
 expr_stmt|;
 block|}
+name|close
+argument_list|(
+name|fd
+argument_list|)
+expr_stmt|;
 comment|/* Current brush is the first one. */
 name|pipe
 operator|->
@@ -2467,16 +2472,6 @@ name|brushes
 index|[
 literal|0
 index|]
-expr_stmt|;
-name|gimp_data_set_filename
-argument_list|(
-name|GIMP_DATA
-argument_list|(
-name|pipe
-argument_list|)
-argument_list|,
-name|filename
-argument_list|)
 expr_stmt|;
 comment|/*  just to satisfy the code that relies on this crap  */
 name|GIMP_BRUSH
@@ -2543,20 +2538,6 @@ operator|->
 name|current
 operator|->
 name|pixmap
-expr_stmt|;
-name|close
-argument_list|(
-name|fd
-argument_list|)
-expr_stmt|;
-name|GIMP_DATA
-argument_list|(
-name|pipe
-argument_list|)
-operator|->
-name|dirty
-operator|=
-name|FALSE
 expr_stmt|;
 return|return
 name|GIMP_DATA

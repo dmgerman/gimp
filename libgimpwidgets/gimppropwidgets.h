@@ -457,7 +457,12 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|property_name
+name|path_property_name
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|writable_property_name
 parameter_list|,
 specifier|const
 name|gchar

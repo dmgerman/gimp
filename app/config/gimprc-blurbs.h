@@ -39,6 +39,14 @@ value|"Sets the brush search path."
 end_define
 
 begin_define
+DECL|macro|BRUSH_PATH_WRITABLE_BLURB
+define|#
+directive|define
+name|BRUSH_PATH_WRITABLE_BLURB
+value|""
+end_define
+
+begin_define
 DECL|macro|CANVAS_PADDING_MODE_BLURB
 define|#
 directive|define
@@ -267,12 +275,28 @@ value|"Sets the gradient search path."
 end_define
 
 begin_define
+DECL|macro|GRADIENT_PATH_WRITABLE_BLURB
+define|#
+directive|define
+name|GRADIENT_PATH_WRITABLE_BLURB
+value|""
+end_define
+
+begin_define
 DECL|macro|FONT_PATH_BLURB
 define|#
 directive|define
 name|FONT_PATH_BLURB
 define|\
 value|"Where to look for fonts."
+end_define
+
+begin_define
+DECL|macro|FONT_PATH_WRITABLE_BLURB
+define|#
+directive|define
+name|FONT_PATH_WRITABLE_BLURB
+value|""
 end_define
 
 begin_define
@@ -438,12 +462,28 @@ value|"Sets the palette search path."
 end_define
 
 begin_define
+DECL|macro|PALETTE_PATH_WRITABLE_BLURB
+define|#
+directive|define
+name|PALETTE_PATH_WRITABLE_BLURB
+value|""
+end_define
+
+begin_define
 DECL|macro|PATTERN_PATH_BLURB
 define|#
 directive|define
 name|PATTERN_PATH_BLURB
 define|\
 value|"Sets the pattern search path."
+end_define
+
+begin_define
+DECL|macro|PATTERN_PATH_WRITABLE_BLURB
+define|#
+directive|define
+name|PATTERN_PATH_WRITABLE_BLURB
+value|""
 end_define
 
 begin_define

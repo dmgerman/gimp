@@ -1523,6 +1523,33 @@ end_function
 begin_function
 name|gchar
 modifier|*
+DECL|function|gimp_config_build_writable_path (const gchar * name)
+name|gimp_config_build_writable_path
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|)
+block|{
+return|return
+name|g_strconcat
+argument_list|(
+literal|"${gimp_dir}"
+argument_list|,
+name|G_DIR_SEPARATOR_S
+argument_list|,
+name|name
+argument_list|,
+name|NULL
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+name|gchar
+modifier|*
 DECL|function|gimp_config_build_plug_in_path (const gchar * name)
 name|gimp_config_build_plug_in_path
 parameter_list|(
