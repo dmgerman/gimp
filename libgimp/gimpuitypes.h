@@ -32,7 +32,7 @@ comment|/* __cplusplus */
 comment|/* For information look into the html documentation */
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a54a4130103
+DECL|enum|__anon2ba9f76d0103
 block|{
 DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_NONE
 name|GIMP_SIZE_ENTRY_UPDATE_NONE
@@ -51,6 +51,12 @@ literal|2
 DECL|typedef|GimpSizeEntryUpdatePolicy
 block|}
 name|GimpSizeEntryUpdatePolicy
+typedef|;
+DECL|typedef|GimpColorArea
+typedef|typedef
+name|struct
+name|_GimpColorArea
+name|GimpColorArea
 typedef|;
 DECL|typedef|GimpColorButton
 typedef|typedef

@@ -87,7 +87,7 @@ name|rgb2
 parameter_list|)
 function_decl|;
 name|void
-name|gimp_rgb_sub
+name|gimp_rgb_subtract
 parameter_list|(
 name|GimpRGB
 modifier|*
@@ -100,7 +100,7 @@ name|rgb2
 parameter_list|)
 function_decl|;
 name|void
-name|gimp_rgb_mul
+name|gimp_rgb_multiply
 parameter_list|(
 name|GimpRGB
 modifier|*
@@ -111,7 +111,7 @@ name|factor
 parameter_list|)
 function_decl|;
 name|gdouble
-name|gimp_rgb_dist
+name|gimp_rgb_distance
 parameter_list|(
 specifier|const
 name|GimpRGB
@@ -195,7 +195,7 @@ name|rgba2
 parameter_list|)
 function_decl|;
 name|void
-name|gimp_rgba_sub
+name|gimp_rgba_subtract
 parameter_list|(
 name|GimpRGB
 modifier|*
@@ -208,7 +208,7 @@ name|rgba2
 parameter_list|)
 function_decl|;
 name|void
-name|gimp_rgba_mul
+name|gimp_rgba_multiply
 parameter_list|(
 name|GimpRGB
 modifier|*
@@ -219,7 +219,7 @@ name|factor
 parameter_list|)
 function_decl|;
 name|gdouble
-name|gimp_rgba_dist
+name|gimp_rgba_distance
 parameter_list|(
 specifier|const
 name|GimpRGB

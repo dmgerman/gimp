@@ -230,7 +230,7 @@ operator|=
 operator|*
 name|diff_col
 expr_stmt|;
-name|gimp_rgb_mul
+name|gimp_rgb_multiply
 argument_list|(
 operator|&
 name|ambient_color
@@ -379,7 +379,7 @@ operator|=
 operator|*
 name|diff_col
 expr_stmt|;
-name|gimp_rgb_mul
+name|gimp_rgb_multiply
 argument_list|(
 operator|&
 name|diffuse_color
@@ -391,7 +391,7 @@ operator|.
 name|diffuse_ref
 argument_list|)
 expr_stmt|;
-name|gimp_rgb_mul
+name|gimp_rgb_multiply
 argument_list|(
 operator|&
 name|diffuse_color
@@ -404,7 +404,7 @@ operator|=
 operator|*
 name|spec_col
 expr_stmt|;
-name|gimp_rgb_mul
+name|gimp_rgb_multiply
 argument_list|(
 operator|&
 name|specular_color
@@ -416,7 +416,7 @@ operator|.
 name|specular_ref
 argument_list|)
 expr_stmt|;
-name|gimp_rgb_mul
+name|gimp_rgb_multiply
 argument_list|(
 operator|&
 name|specular_color
@@ -433,7 +433,7 @@ operator|&
 name|specular_color
 argument_list|)
 expr_stmt|;
-name|gimp_rgb_mul
+name|gimp_rgb_multiply
 argument_list|(
 operator|&
 name|diffuse_color

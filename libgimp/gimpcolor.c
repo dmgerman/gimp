@@ -152,8 +152,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_rgb_sub (GimpRGB * rgb1,const GimpRGB * rgb2)
-name|gimp_rgb_sub
+DECL|function|gimp_rgb_subtract (GimpRGB * rgb1,const GimpRGB * rgb2)
+name|gimp_rgb_subtract
 parameter_list|(
 name|GimpRGB
 modifier|*
@@ -220,8 +220,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_rgb_mul (GimpRGB * rgb,gdouble factor)
-name|gimp_rgb_mul
+DECL|function|gimp_rgb_multiply (GimpRGB * rgb,gdouble factor)
+name|gimp_rgb_multiply
 parameter_list|(
 name|GimpRGB
 modifier|*
@@ -261,8 +261,8 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_rgb_dist (const GimpRGB * rgb1,const GimpRGB * rgb2)
-name|gimp_rgb_dist
+DECL|function|gimp_rgb_distance (const GimpRGB * rgb1,const GimpRGB * rgb2)
+name|gimp_rgb_distance
 parameter_list|(
 specifier|const
 name|GimpRGB
@@ -705,8 +705,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_rgba_sub (GimpRGB * rgba1,const GimpRGB * rgba2)
-name|gimp_rgba_sub
+DECL|function|gimp_rgba_subtract (GimpRGB * rgba1,const GimpRGB * rgba2)
+name|gimp_rgba_subtract
 parameter_list|(
 name|GimpRGB
 modifier|*
@@ -785,8 +785,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_rgba_mul (GimpRGB * rgba,gdouble factor)
-name|gimp_rgba_mul
+DECL|function|gimp_rgba_multiply (GimpRGB * rgba,gdouble factor)
+name|gimp_rgba_multiply
 parameter_list|(
 name|GimpRGB
 modifier|*
@@ -848,8 +848,8 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_rgba_dist (const GimpRGB * rgba1,const GimpRGB * rgba2)
-name|gimp_rgba_dist
+DECL|function|gimp_rgba_distance (const GimpRGB * rgba1,const GimpRGB * rgba2)
+name|gimp_rgba_distance
 parameter_list|(
 specifier|const
 name|GimpRGB

@@ -85,7 +85,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1937870108
+DECL|struct|__anon2ab8ebdc0108
 block|{
 DECL|member|u
 DECL|member|v
@@ -197,7 +197,7 @@ operator|=
 operator|*
 name|diff_col
 expr_stmt|;
-name|gimp_rgb_mul
+name|gimp_rgb_multiply
 argument_list|(
 operator|&
 name|ambientcolor
@@ -346,7 +346,7 @@ operator|=
 operator|*
 name|diff_col
 expr_stmt|;
-name|gimp_rgb_mul
+name|gimp_rgb_multiply
 argument_list|(
 operator|&
 name|diffusecolor
@@ -358,7 +358,7 @@ operator|.
 name|diffuse_ref
 argument_list|)
 expr_stmt|;
-name|gimp_rgb_mul
+name|gimp_rgb_multiply
 argument_list|(
 operator|&
 name|diffusecolor
@@ -371,7 +371,7 @@ operator|=
 operator|*
 name|spec_col
 expr_stmt|;
-name|gimp_rgb_mul
+name|gimp_rgb_multiply
 argument_list|(
 operator|&
 name|specularcolor
@@ -383,7 +383,7 @@ operator|.
 name|specular_ref
 argument_list|)
 expr_stmt|;
-name|gimp_rgb_mul
+name|gimp_rgb_multiply
 argument_list|(
 operator|&
 name|specularcolor
@@ -400,7 +400,7 @@ operator|&
 name|specularcolor
 argument_list|)
 expr_stmt|;
-name|gimp_rgb_mul
+name|gimp_rgb_multiply
 argument_list|(
 operator|&
 name|diffusecolor

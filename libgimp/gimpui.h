@@ -37,6 +37,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpcolorarea.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpcolorbutton.h>
 end_include
 

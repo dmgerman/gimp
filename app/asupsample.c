@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af42bce0108
+DECL|struct|__anon2ae0b2fe0108
 block|{
 DECL|member|ready
 name|gchar
@@ -1490,7 +1490,7 @@ comment|/* Check whether we have tu supersample */
 if|if
 condition|(
 operator|(
-name|gimp_rgba_dist
+name|gimp_rgba_distance
 argument_list|(
 operator|&
 name|c1
@@ -1503,7 +1503,7 @@ name|threshold
 operator|)
 operator|||
 operator|(
-name|gimp_rgba_dist
+name|gimp_rgba_distance
 argument_list|(
 operator|&
 name|c1
@@ -1516,7 +1516,7 @@ name|threshold
 operator|)
 operator|||
 operator|(
-name|gimp_rgba_dist
+name|gimp_rgba_distance
 argument_list|(
 operator|&
 name|c1
@@ -1529,7 +1529,7 @@ name|threshold
 operator|)
 operator|||
 operator|(
-name|gimp_rgba_dist
+name|gimp_rgba_distance
 argument_list|(
 operator|&
 name|c2
@@ -1542,7 +1542,7 @@ name|threshold
 operator|)
 operator|||
 operator|(
-name|gimp_rgba_dist
+name|gimp_rgba_distance
 argument_list|(
 operator|&
 name|c2
@@ -1555,7 +1555,7 @@ name|threshold
 operator|)
 operator|||
 operator|(
-name|gimp_rgba_dist
+name|gimp_rgba_distance
 argument_list|(
 operator|&
 name|c3

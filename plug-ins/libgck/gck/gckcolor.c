@@ -169,7 +169,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29eb75060108
+DECL|struct|__anon2973d9580108
 block|{
 DECL|member|ready
 name|guchar
@@ -8938,7 +8938,7 @@ comment|/* ==================================== */
 if|if
 condition|(
 operator|(
-name|gimp_rgba_dist
+name|gimp_rgba_distance
 argument_list|(
 operator|&
 name|c
@@ -8957,7 +8957,7 @@ name|threshold
 operator|)
 operator|||
 operator|(
-name|gimp_rgba_dist
+name|gimp_rgba_distance
 argument_list|(
 operator|&
 name|c
@@ -8976,7 +8976,7 @@ name|threshold
 operator|)
 operator|||
 operator|(
-name|gimp_rgba_dist
+name|gimp_rgba_distance
 argument_list|(
 operator|&
 name|c
@@ -8995,7 +8995,7 @@ name|threshold
 operator|)
 operator|||
 operator|(
-name|gimp_rgba_dist
+name|gimp_rgba_distance
 argument_list|(
 operator|&
 name|c
@@ -9014,7 +9014,7 @@ name|threshold
 operator|)
 operator|||
 operator|(
-name|gimp_rgba_dist
+name|gimp_rgba_distance
 argument_list|(
 operator|&
 name|c
@@ -9033,7 +9033,7 @@ name|threshold
 operator|)
 operator|||
 operator|(
-name|gimp_rgba_dist
+name|gimp_rgba_distance
 argument_list|(
 operator|&
 name|c

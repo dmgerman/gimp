@@ -751,7 +751,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_rgb_mul
+name|gimp_rgb_multiply
 argument_list|(
 operator|&
 name|color
@@ -765,7 +765,7 @@ name|temp
 operator|=
 name|lightcheck
 expr_stmt|;
-name|gimp_rgb_mul
+name|gimp_rgb_multiply
 argument_list|(
 operator|&
 name|temp
@@ -806,7 +806,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_rgb_mul
+name|gimp_rgb_multiply
 argument_list|(
 operator|&
 name|color
@@ -820,7 +820,7 @@ name|temp
 operator|=
 name|darkcheck
 expr_stmt|;
-name|gimp_rgb_mul
+name|gimp_rgb_multiply
 argument_list|(
 operator|&
 name|temp
