@@ -200,7 +200,8 @@ parameter_list|(
 name|Histogram
 modifier|*
 parameter_list|,
-name|int
+name|GimpDrawable
+modifier|*
 parameter_list|,
 name|HistogramInfoFunc
 parameter_list|,

@@ -19,6 +19,12 @@ end_define
 begin_include
 include|#
 directive|include
+file|"drawable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"boundary.h"
 end_include
 
@@ -86,159 +92,78 @@ begin_comment
 comment|/* structure declarations */
 end_comment
 
+begin_define
+DECL|macro|GIMP_CHANNEL (obj)
+define|#
+directive|define
+name|GIMP_CHANNEL
+parameter_list|(
+name|obj
+parameter_list|)
+value|GTK_CHECK_CAST (obj, gimp_channel_get_type (), GimpChannel)
+end_define
+
+begin_define
+DECL|macro|GIMP_CHANNEL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_CHANNEL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|GTK_CHECK_CLASS_CAST (klass, gimp_channel_get_type(), GimpChannelClass)
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_CHANNEL (obj)
+define|#
+directive|define
+name|GIMP_IS_CHANNEL
+parameter_list|(
+name|obj
+parameter_list|)
+value|GTK_CHECK_TYPE (obj, gimp_channel_get_type())
+end_define
+
+begin_typedef
+DECL|typedef|GimpChannel
+typedef|typedef
+name|struct
+name|_GimpChannel
+name|GimpChannel
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpChannelClass
+typedef|typedef
+name|struct
+name|_GimpChannelClass
+name|GimpChannelClass
+typedef|;
+end_typedef
+
 begin_typedef
 DECL|typedef|Channel
 typedef|typedef
-name|struct
-name|_Channel
+name|GimpChannel
 name|Channel
 typedef|;
 end_typedef
 
-begin_struct
-DECL|struct|_Channel
-struct|struct
-name|_Channel
-block|{
-DECL|member|name
-name|char
-modifier|*
-name|name
-decl_stmt|;
-comment|/*  name of the channel          */
-DECL|member|tiles
-name|TileManager
-modifier|*
-name|tiles
-decl_stmt|;
-comment|/*  tiles for channel data       */
-DECL|member|visible
-name|int
-name|visible
-decl_stmt|;
-comment|/*  controls visibility          */
-DECL|member|width
-DECL|member|height
-name|int
-name|width
-decl_stmt|,
-name|height
-decl_stmt|;
-comment|/*  size of channel              */
-DECL|member|bytes
-name|int
-name|bytes
-decl_stmt|;
-comment|/*  bytes per pixel              */
-DECL|member|col
-name|unsigned
-name|char
-name|col
-index|[
-literal|3
-index|]
-decl_stmt|;
-comment|/*  RGB triplet for channel color*/
-DECL|member|opacity
-name|int
-name|opacity
-decl_stmt|;
-comment|/*  Channel opacity              */
-DECL|member|show_masked
-name|int
-name|show_masked
-decl_stmt|;
-comment|/*  Show masked areas--as        */
-comment|/*  opposed to selected areas    */
-DECL|member|dirty
-name|int
-name|dirty
-decl_stmt|;
-comment|/*  dirty bit                    */
-DECL|member|ID
-name|int
-name|ID
-decl_stmt|;
-comment|/*  provides a unique ID         */
-DECL|member|layer_ID
-name|int
-name|layer_ID
-decl_stmt|;
-comment|/*  ID of layer-if a layer mask  */
-DECL|member|gimage_ID
-name|int
-name|gimage_ID
-decl_stmt|;
-comment|/*  ID of gimage owner           */
-comment|/*  Selection mask variables  */
-DECL|member|boundary_known
-name|int
-name|boundary_known
-decl_stmt|;
-comment|/*  is the current boundary valid*/
-DECL|member|segs_in
-name|BoundSeg
-modifier|*
-name|segs_in
-decl_stmt|;
-comment|/*  outline of selected region   */
-DECL|member|segs_out
-name|BoundSeg
-modifier|*
-name|segs_out
-decl_stmt|;
-comment|/*  outline of selected region   */
-DECL|member|num_segs_in
-name|int
-name|num_segs_in
-decl_stmt|;
-comment|/*  number of lines in boundary  */
-DECL|member|num_segs_out
-name|int
-name|num_segs_out
-decl_stmt|;
-comment|/*  number of lines in boundary  */
-DECL|member|empty
-name|int
-name|empty
-decl_stmt|;
-comment|/*  is the region empty?         */
-DECL|member|bounds_known
-name|int
-name|bounds_known
-decl_stmt|;
-comment|/*  recalculate the bounds?      */
-DECL|member|x1
-DECL|member|y1
-name|int
-name|x1
-decl_stmt|,
-name|y1
-decl_stmt|;
-comment|/*  coordinates for bounding box */
-DECL|member|x2
-DECL|member|y2
-name|int
-name|x2
-decl_stmt|,
-name|y2
-decl_stmt|;
-comment|/*  lower right hand coordinate  */
-comment|/*  Preview variables  */
-DECL|member|preview
-name|TempBuf
-modifier|*
-name|preview
-decl_stmt|;
-comment|/*  preview of the channel       */
-DECL|member|preview_valid
-name|int
-name|preview_valid
-decl_stmt|;
-comment|/*  is the preview valid?        */
-block|}
-struct|;
-end_struct
+begin_comment
+DECL|typedef|Channel
+comment|/* convenience */
+end_comment
+
+begin_function_decl
+name|guint
+name|gimp_channel_get_type
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_comment
 comment|/*  Special undo type  */
@@ -270,7 +195,8 @@ name|prev_position
 decl_stmt|;
 comment|/*  former position in list    */
 DECL|member|prev_channel
-name|int
+name|Channel
+modifier|*
 name|prev_channel
 decl_stmt|;
 comment|/*  previous active channel    */
@@ -325,30 +251,6 @@ comment|/* function declarations */
 end_comment
 
 begin_function_decl
-name|void
-name|channel_allocate
-parameter_list|(
-name|Channel
-modifier|*
-parameter_list|,
-name|int
-parameter_list|,
-name|int
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|channel_deallocate
-parameter_list|(
-name|Channel
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|Channel
 modifier|*
 name|channel_new
@@ -398,29 +300,6 @@ name|channel_delete
 parameter_list|(
 name|Channel
 modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|channel_apply_image
-parameter_list|(
-name|Channel
-modifier|*
-parameter_list|,
-name|int
-parameter_list|,
-name|int
-parameter_list|,
-name|int
-parameter_list|,
-name|int
-parameter_list|,
-name|TileManager
-modifier|*
-parameter_list|,
-name|int
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -841,36 +720,44 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|channel_layer_alpha
-parameter_list|(
-name|Channel
-modifier|*
-parameter_list|,
-name|int
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|channel_layer_mask
-parameter_list|(
-name|Channel
-modifier|*
-parameter_list|,
-name|int
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|channel_load
 parameter_list|(
 name|Channel
 modifier|*
 parameter_list|,
 name|Channel
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|channel_invalidate_bounds
+parameter_list|(
+name|Channel
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_decl_stmt
+specifier|extern
+name|int
+name|channel_get_count
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/* from drawable.c */
+end_comment
+
+begin_function_decl
+name|Channel
+modifier|*
+name|drawable_channel
+parameter_list|(
+name|GimpDrawable
 modifier|*
 parameter_list|)
 function_decl|;

@@ -93,6 +93,12 @@ directive|include
 file|"undo.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"tile_manager_pvt.h"
+end_include
+
 begin_comment
 comment|/*  index into trans_info array  */
 end_comment
@@ -200,7 +206,8 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|int
+name|GimpDrawable
+modifier|*
 parameter_list|,
 name|TileManager
 modifier|*
@@ -1149,12 +1156,12 @@ begin_function
 specifier|static
 name|void
 modifier|*
-DECL|function|shear_tool_shear (gimage,drawable_id,float_tiles,interpolation,matrix)
+DECL|function|shear_tool_shear (gimage,drawable,float_tiles,interpolation,matrix)
 name|shear_tool_shear
 parameter_list|(
 name|gimage
 parameter_list|,
-name|drawable_id
+name|drawable
 parameter_list|,
 name|float_tiles
 parameter_list|,
@@ -1166,8 +1173,9 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 name|TileManager
 modifier|*
@@ -1185,7 +1193,7 @@ name|transform_core_do
 argument_list|(
 name|gimage
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|float_tiles
 argument_list|,
@@ -1332,8 +1340,9 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 name|int
 name|interpolation
@@ -1369,10 +1378,9 @@ name|Argument
 modifier|*
 name|return_args
 decl_stmt|;
-name|drawable_id
+name|drawable
 operator|=
-operator|-
-literal|1
+name|NULL
 expr_stmt|;
 name|shear_type
 operator|=
@@ -1433,20 +1441,26 @@ name|value
 operator|.
 name|pdb_int
 expr_stmt|;
-if|if
-condition|(
-name|gimage
-operator|==
-name|drawable_gimage
+name|drawable
+operator|=
+name|drawable_get_ID
 argument_list|(
 name|int_value
 argument_list|)
-condition|)
-name|drawable_id
-operator|=
-name|int_value
 expr_stmt|;
-else|else
+if|if
+condition|(
+name|drawable
+operator|==
+name|NULL
+operator|||
+name|gimage
+operator|!=
+name|drawable_gimage
+argument_list|(
+name|drawable
+argument_list|)
+condition|)
 name|success
 operator|=
 name|FALSE
@@ -1569,7 +1583,7 @@ name|transform_core_cut
 argument_list|(
 name|gimage
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 operator|&
 name|new_layer
@@ -1689,7 +1703,7 @@ name|shear_tool_shear
 argument_list|(
 name|gimage
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|float_tiles
 argument_list|,
@@ -1717,7 +1731,7 @@ name|transform_core_paste
 argument_list|(
 name|gimage
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|new_tiles
 argument_list|,
@@ -1762,9 +1776,13 @@ name|value
 operator|.
 name|pdb_int
 operator|=
+name|drawable_ID
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
-operator|->
-name|ID
+argument_list|)
+argument_list|)
 expr_stmt|;
 return|return
 name|return_args

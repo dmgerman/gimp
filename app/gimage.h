@@ -25,6 +25,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"drawable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"channel.h"
 end_include
 
@@ -108,6 +114,17 @@ define|#
 directive|define
 name|INDEXEDA_GIMAGE
 value|5
+end_define
+
+begin_define
+DECL|macro|TYPE_HAS_ALPHA (t)
+define|#
+directive|define
+name|TYPE_HAS_ALPHA
+parameter_list|(
+name|t
+parameter_list|)
+value|((t)==RGBA_GIMAGE || (t)==GRAYA_GIMAGE || (t)==INDEXEDA_GIMAGE)
 end_define
 
 begin_define
@@ -269,7 +286,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad6e0830103
+DECL|enum|__anon2ae6c0d10103
 block|{
 DECL|enumerator|Red
 name|Red
@@ -297,7 +314,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad6e0830203
+DECL|enum|__anon2ae6c0d10203
 block|{
 DECL|enumerator|ExpandAsNecessary
 name|ExpandAsNecessary
@@ -483,17 +500,20 @@ name|layer_stack
 decl_stmt|;
 comment|/*  the layers in MRU order      */
 DECL|member|active_layer
-name|int
+name|Layer
+modifier|*
 name|active_layer
 decl_stmt|;
 comment|/*  ID of active layer           */
 DECL|member|active_channel
-name|int
+name|Channel
+modifier|*
 name|active_channel
 decl_stmt|;
 comment|/*  ID of active channel         */
 DECL|member|floating_sel
-name|int
+name|Layer
+modifier|*
 name|floating_sel
 decl_stmt|;
 comment|/*  ID of fs layer               */
@@ -698,7 +718,8 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|int
+name|GimpDrawable
+modifier|*
 parameter_list|,
 name|PixelRegion
 modifier|*
@@ -726,7 +747,8 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|int
+name|GimpDrawable
+modifier|*
 parameter_list|,
 name|PixelRegion
 modifier|*
@@ -752,7 +774,8 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|int
+name|GimpDrawable
+modifier|*
 parameter_list|,
 name|unsigned
 name|char
@@ -768,7 +791,8 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|int
+name|GimpDrawable
+modifier|*
 parameter_list|,
 name|unsigned
 name|char
@@ -804,7 +828,8 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|int
+name|GimpDrawable
+modifier|*
 parameter_list|,
 name|unsigned
 name|char
@@ -891,7 +916,8 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|int
+name|Layer
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -903,7 +929,8 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|int
+name|Channel
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -990,7 +1017,8 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|int
+name|Layer
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1003,7 +1031,8 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|int
+name|Channel
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1081,7 +1110,8 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|int
+name|Layer
+modifier|*
 parameter_list|,
 name|int
 parameter_list|)
@@ -1108,7 +1138,8 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|int
+name|Layer
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1121,7 +1152,8 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|int
+name|Layer
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1189,22 +1221,25 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|int
+name|Layer
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Channel
+name|LayerMask
 modifier|*
 name|gimage_add_layer_mask
 parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|int
+name|Layer
+modifier|*
 parameter_list|,
-name|int
+name|LayerMask
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1217,7 +1252,8 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|int
+name|Layer
+modifier|*
 parameter_list|,
 name|int
 parameter_list|)
@@ -1232,7 +1268,8 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|int
+name|Channel
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1245,7 +1282,8 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|int
+name|Channel
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1274,7 +1312,8 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|int
+name|Channel
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1383,7 +1422,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|GimpDrawable
+modifier|*
 name|gimage_active_drawable
 parameter_list|(
 name|GImage
@@ -1630,6 +1670,21 @@ name|void
 name|gimage_invalidate_previews
 parameter_list|(
 name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* from drawable.c */
+end_comment
+
+begin_function_decl
+name|GImage
+modifier|*
+name|drawable_gimage
+parameter_list|(
+name|GimpDrawable
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -554,8 +554,6 @@ operator|->
 name|gimage
 argument_list|,
 name|layer
-operator|->
-name|ID
 argument_list|)
 expr_stmt|;
 name|init_edit_selection
@@ -1672,8 +1670,6 @@ elseif|else
 if|if
 condition|(
 name|layer
-operator|->
-name|ID
 operator|==
 name|gdisp
 operator|->

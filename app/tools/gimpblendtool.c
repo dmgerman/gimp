@@ -167,7 +167,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287a71dc0103
+DECL|enum|__anon2756359e0103
 block|{
 DECL|enumerator|Linear
 name|Linear
@@ -204,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287a71dc0203
+DECL|enum|__anon2756359e0203
 block|{
 DECL|enumerator|FG_BG_RGB_MODE
 name|FG_BG_RGB_MODE
@@ -226,7 +226,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287a71dc0303
+DECL|enum|__anon2756359e0303
 block|{
 DECL|enumerator|REPEAT_NONE
 name|REPEAT_NONE
@@ -360,7 +360,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon287a71dc0408
+DECL|struct|__anon2756359e0408
 typedef|typedef
 struct|struct
 block|{
@@ -412,7 +412,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon287a71dc0508
+DECL|struct|__anon2756359e0508
 typedef|typedef
 struct|struct
 block|{
@@ -640,8 +640,9 @@ name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|BlendMode
 name|blend_mode
@@ -902,7 +903,9 @@ name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|PixelRegion
 modifier|*
@@ -966,7 +969,9 @@ name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|PixelRegion
 modifier|*
@@ -3573,9 +3578,12 @@ name|ID
 argument_list|,
 name|PDB_DRAWABLE
 argument_list|,
+name|drawable_ID
+argument_list|(
 name|gimage_active_drawable
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|)
 argument_list|,
 name|PDB_INT32
@@ -4249,15 +4257,16 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|blend (GImage * gimage,int drawable_id,BlendMode blend_mode,int paint_mode,GradientType gradient_type,double opacity,double offset,RepeatMode repeat,int supersample,int max_depth,double threshold,double startx,double starty,double endx,double endy)
+DECL|function|blend (GImage * gimage,GimpDrawable * drawable,BlendMode blend_mode,int paint_mode,GradientType gradient_type,double opacity,double offset,RepeatMode repeat,int supersample,int max_depth,double threshold,double startx,double starty,double endx,double endy)
 name|blend
 parameter_list|(
 name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|BlendMode
 name|blend_mode
@@ -4328,7 +4337,7 @@ name|has_selection
 operator|=
 name|drawable_mask_bounds
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 operator|&
 name|x1
@@ -4347,14 +4356,14 @@ name|has_alpha
 operator|=
 name|drawable_has_alpha
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|bytes
 operator|=
 name|drawable_bytes
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 comment|/*  Always create an alpha temp buf (for generality) */
@@ -4422,7 +4431,7 @@ name|gradient_fill_region
 argument_list|(
 name|gimage
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 operator|&
 name|bufPR
@@ -4508,7 +4517,7 @@ name|gimage_apply_image
 argument_list|(
 name|gimage
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 operator|&
 name|bufPR
@@ -4535,7 +4544,7 @@ expr_stmt|;
 comment|/*  update the image  */
 name|drawable_update
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 name|x1
 argument_list|,
@@ -5907,15 +5916,16 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_precalc_shapeburst (GImage * gimage,int drawable_id,PixelRegion * PR,double dist)
+DECL|function|gradient_precalc_shapeburst (GImage * gimage,GimpDrawable * drawable,PixelRegion * PR,double dist)
 name|gradient_precalc_shapeburst
 parameter_list|(
 name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|PixelRegion
 modifier|*
@@ -6062,7 +6072,7 @@ name|offy
 decl_stmt|;
 name|drawable_mask_bounds
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 operator|&
 name|x1
@@ -6079,7 +6089,7 @@ argument_list|)
 expr_stmt|;
 name|drawable_offsets
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 operator|&
 name|offx
@@ -6101,9 +6111,13 @@ argument_list|(
 operator|&
 name|maskR
 argument_list|,
+name|drawable_data
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|mask
-operator|->
-name|tiles
+argument_list|)
+argument_list|)
 argument_list|,
 name|x1
 operator|+
@@ -6147,7 +6161,7 @@ if|if
 condition|(
 name|drawable_has_alpha
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 condition|)
 block|{
@@ -6161,7 +6175,7 @@ name|drawableR
 argument_list|,
 name|drawable_data
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|,
 name|PR
@@ -7026,15 +7040,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_fill_region (GImage * gimage,int drawable_id,PixelRegion * PR,int width,int height,BlendMode blend_mode,GradientType gradient_type,double offset,RepeatMode repeat,int supersample,int max_depth,double threshold,double sx,double sy,double ex,double ey)
+DECL|function|gradient_fill_region (GImage * gimage,GimpDrawable * drawable,PixelRegion * PR,int width,int height,BlendMode blend_mode,GradientType gradient_type,double offset,RepeatMode repeat,int supersample,int max_depth,double threshold,double sx,double sy,double ex,double ey)
 name|gradient_fill_region
 parameter_list|(
 name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|PixelRegion
 modifier|*
@@ -7488,7 +7503,7 @@ name|gradient_precalc_shapeburst
 argument_list|(
 name|gimage
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|PR
 argument_list|,
@@ -8826,8 +8841,9 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 name|BlendMode
 name|blend_mode
@@ -8872,10 +8888,9 @@ decl_stmt|;
 name|double
 name|fp_value
 decl_stmt|;
-name|drawable_id
+name|drawable
 operator|=
-operator|-
-literal|1
+name|NULL
 expr_stmt|;
 name|blend_mode
 operator|=
@@ -8964,20 +8979,26 @@ name|value
 operator|.
 name|pdb_int
 expr_stmt|;
-if|if
-condition|(
-name|gimage
-operator|==
-name|drawable_gimage
+name|drawable
+operator|=
+name|drawable_get_ID
 argument_list|(
 name|int_value
 argument_list|)
-condition|)
-name|drawable_id
-operator|=
-name|int_value
 expr_stmt|;
-else|else
+if|if
+condition|(
+name|drawable
+operator|==
+name|NULL
+operator|||
+name|gimage
+operator|!=
+name|drawable_gimage
+argument_list|(
+name|drawable
+argument_list|)
+condition|)
 name|success
 operator|=
 name|FALSE
@@ -9486,7 +9507,7 @@ name|blend
 argument_list|(
 name|gimage
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|blend_mode
 argument_list|,

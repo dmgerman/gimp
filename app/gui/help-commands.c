@@ -144,6 +144,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimage_cmds.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimage_mask.h"
 end_include
 
@@ -301,7 +307,7 @@ empty_stmt|;
 end_empty_stmt
 
 begin_typedef
-DECL|struct|__anon29df644e0108
+DECL|struct|__anon2c60881c0108
 typedef|typedef
 struct|struct
 block|{
@@ -345,7 +351,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29df644e0208
+DECL|struct|__anon2c60881c0208
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -1279,9 +1285,10 @@ argument_list|)
 expr_stmt|;
 name|drawable_fill
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
-operator|->
-name|ID
+argument_list|)
 argument_list|,
 name|vals
 operator|->
@@ -4437,7 +4444,7 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon29df644e0308
+DECL|struct|__anon2c60881c0308
 struct|struct
 block|{
 DECL|member|label
@@ -4506,7 +4513,7 @@ name|edit_plug_in_path
 block|}
 block|}
 struct|;
-DECL|struct|__anon29df644e0408
+DECL|struct|__anon2c60881c0408
 struct|struct
 block|{
 DECL|member|label

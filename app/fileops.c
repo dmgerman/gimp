@@ -3422,9 +3422,12 @@ name|value
 operator|.
 name|pdb_int
 operator|=
+name|drawable_ID
+argument_list|(
 name|gimage_active_drawable
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|args

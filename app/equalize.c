@@ -45,6 +45,12 @@ directive|include
 file|"interface.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimage.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|void
@@ -53,7 +59,8 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|int
+name|GimpDrawable
+modifier|*
 parameter_list|,
 name|int
 parameter_list|)
@@ -117,8 +124,9 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 name|int
 name|mask_only
@@ -133,7 +141,7 @@ operator|*
 operator|)
 name|gimage_ptr
 expr_stmt|;
-name|drawable_id
+name|drawable
 operator|=
 name|gimage_active_drawable
 argument_list|(
@@ -144,7 +152,7 @@ if|if
 condition|(
 name|drawable_indexed
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 condition|)
 block|{
@@ -163,7 +171,7 @@ name|equalize
 argument_list|(
 name|gimage
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|mask_only
 argument_list|)
@@ -174,12 +182,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|equalize (gimage,drawable_id,mask_only)
+DECL|function|equalize (gimage,drawable,mask_only)
 name|equalize
 parameter_list|(
 name|gimage
 parameter_list|,
-name|drawable_id
+name|drawable
 parameter_list|,
 name|mask_only
 parameter_list|)
@@ -187,8 +195,9 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 name|int
 name|mask_only
@@ -303,7 +312,7 @@ argument_list|)
 expr_stmt|;
 name|drawable_offsets
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 operator|&
 name|off_x
@@ -316,14 +325,14 @@ name|bytes
 operator|=
 name|drawable_bytes
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|has_alpha
 operator|=
 name|drawable_has_alpha
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|alpha
@@ -348,7 +357,7 @@ operator|=
 operator|(
 name|drawable_mask_bounds
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 operator|&
 name|x1
@@ -373,7 +382,7 @@ name|srcPR
 argument_list|,
 name|drawable_data
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|,
 name|x1
@@ -414,9 +423,13 @@ name|pixel_region_init
 argument_list|(
 name|sel_maskPR
 argument_list|,
+name|drawable_data
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|sel_mask
-operator|->
-name|tiles
+argument_list|)
+argument_list|)
 argument_list|,
 name|x1
 operator|+
@@ -687,7 +700,7 @@ name|srcPR
 argument_list|,
 name|drawable_data
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|,
 name|x1
@@ -716,7 +729,7 @@ name|destPR
 argument_list|,
 name|drawable_shadow
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|,
 name|x1
@@ -881,14 +894,14 @@ block|}
 block|}
 name|drawable_merge_shadow
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
 name|drawable_update
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 name|x1
 argument_list|,
@@ -1330,13 +1343,13 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
-name|drawable_id
+name|drawable
 operator|=
-operator|-
-literal|1
+name|NULL
 expr_stmt|;
 comment|/*  the gimage  */
 if|if
@@ -1389,23 +1402,29 @@ name|value
 operator|.
 name|pdb_int
 expr_stmt|;
+name|drawable
+operator|=
+name|drawable_get_ID
+argument_list|(
+name|int_value
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
+name|drawable
+operator|==
+name|NULL
+operator|||
 name|gimage
 operator|!=
 name|drawable_gimage
 argument_list|(
-name|int_value
+name|drawable
 argument_list|)
 condition|)
 name|success
 operator|=
 name|FALSE
-expr_stmt|;
-else|else
-name|drawable_id
-operator|=
-name|int_value
 expr_stmt|;
 block|}
 comment|/*  the mask only option  */
@@ -1446,7 +1465,7 @@ operator|=
 operator|!
 name|drawable_indexed
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 if|if
@@ -1457,7 +1476,7 @@ name|equalize
 argument_list|(
 name|gimage
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|mask_only
 argument_list|)

@@ -28,16 +28,6 @@ end_comment
 
 begin_function_decl
 name|void
-name|channel_ops_duplicate
-parameter_list|(
-name|void
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|channel_ops_offset
 parameter_list|(
 name|void
@@ -49,13 +39,6 @@ end_function_decl
 begin_comment
 comment|/*  Procedure definition and marshalling function  */
 end_comment
-
-begin_decl_stmt
-specifier|extern
-name|ProcRecord
-name|channel_ops_duplicate_proc
-decl_stmt|;
-end_decl_stmt
 
 begin_decl_stmt
 specifier|extern

@@ -134,7 +134,8 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|int
+name|GimpDrawable
+modifier|*
 parameter_list|,
 name|int
 parameter_list|,
@@ -151,7 +152,8 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|int
+name|GimpDrawable
+modifier|*
 parameter_list|,
 name|int
 parameter_list|,
@@ -275,7 +277,8 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|int
+name|Layer
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -287,7 +290,8 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|int
+name|Layer
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -299,7 +303,8 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|int
+name|Channel
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -322,7 +327,8 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|int
+name|GimpDrawable
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl

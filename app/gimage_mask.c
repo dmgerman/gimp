@@ -93,6 +93,24 @@ directive|include
 file|"undo.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"layer_pvt.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tile_manager_pvt.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"drawable_pvt.h"
+end_include
+
 begin_comment
 comment|/*  feathering variables  */
 end_comment
@@ -155,7 +173,8 @@ parameter_list|(
 name|PaintCore
 modifier|*
 parameter_list|,
-name|int
+name|GimpDrawable
+modifier|*
 parameter_list|,
 name|int
 parameter_list|)
@@ -327,13 +346,30 @@ argument_list|)
 operator|)
 condition|)
 block|{
+name|int
+name|off_x
+decl_stmt|,
+name|off_y
+decl_stmt|;
+name|drawable_offsets
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|,
+operator|&
+name|off_x
+argument_list|,
+operator|&
+name|off_y
+argument_list|)
+expr_stmt|;
 name|x1
 operator|=
 name|BOUNDS
 argument_list|(
-name|layer
-operator|->
-name|offset_x
+name|off_x
 argument_list|,
 literal|0
 argument_list|,
@@ -346,9 +382,7 @@ name|y1
 operator|=
 name|BOUNDS
 argument_list|(
-name|layer
-operator|->
-name|offset_y
+name|off_y
 argument_list|,
 literal|0
 argument_list|,
@@ -361,13 +395,15 @@ name|x2
 operator|=
 name|BOUNDS
 argument_list|(
-name|layer
-operator|->
-name|offset_x
+name|off_x
 operator|+
+name|drawable_width
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
-operator|->
-name|width
+argument_list|)
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -380,13 +416,15 @@ name|y2
 operator|=
 name|BOUNDS
 argument_list|(
-name|layer
-operator|->
-name|offset_y
+name|off_y
 operator|+
+name|drawable_height
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
-operator|->
-name|height
+argument_list|)
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -568,19 +606,26 @@ argument_list|)
 condition|)
 name|drawable_update
 argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
-operator|->
-name|ID
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
 literal|0
 argument_list|,
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
+argument_list|)
 operator|->
 name|width
 argument_list|,
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
+argument_list|)
 operator|->
 name|height
 argument_list|)
@@ -698,12 +743,12 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|gimage_mask_extract (gimage,drawable_id,cut_gimage,keep_indexed)
+DECL|function|gimage_mask_extract (gimage,drawable,cut_gimage,keep_indexed)
 name|gimage_mask_extract
 parameter_list|(
 name|gimage
 parameter_list|,
-name|drawable_id
+name|drawable
 parameter_list|,
 name|cut_gimage
 parameter_list|,
@@ -713,8 +758,9 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 name|int
 name|cut_gimage
@@ -730,10 +776,6 @@ decl_stmt|;
 name|Channel
 modifier|*
 name|sel_mask
-decl_stmt|;
-name|Channel
-modifier|*
-name|channel
 decl_stmt|;
 name|PixelRegion
 name|srcPR
@@ -771,12 +813,20 @@ decl_stmt|;
 name|int
 name|non_empty
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|drawable
+condition|)
+return|return
+name|NULL
+return|;
 comment|/*  If there are no bounds, then just extract the entire image    *  This may not be the correct behavior, but after getting rid    *  of floating selections, it's still tempting to "cut" or "copy"    *  a small layer and expect it to work, even though there is no    *  actual selection mask    */
 name|non_empty
 operator|=
 name|drawable_mask_bounds
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 operator|&
 name|x1
@@ -830,7 +880,7 @@ switch|switch
 condition|(
 name|drawable_type
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 condition|)
 block|{
@@ -928,7 +978,7 @@ name|gimage_get_background
 argument_list|(
 name|gimage
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|bg
 argument_list|)
@@ -942,7 +992,7 @@ name|non_empty
 condition|)
 name|drawable_apply_image
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 name|x1
 argument_list|,
@@ -959,7 +1009,7 @@ argument_list|)
 expr_stmt|;
 name|drawable_offsets
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 operator|&
 name|off_x
@@ -1012,7 +1062,7 @@ name|srcPR
 argument_list|,
 name|drawable_data
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|,
 name|x1
@@ -1071,7 +1121,10 @@ argument_list|(
 operator|&
 name|maskPR
 argument_list|,
+name|GIMP_DRAWABLE
+argument_list|(
 name|sel_mask
+argument_list|)
 operator|->
 name|tiles
 argument_list|,
@@ -1115,7 +1168,7 @@ name|maskPR
 argument_list|,
 name|drawable_cmap
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|,
 name|bg
@@ -1124,7 +1177,7 @@ name|type
 argument_list|,
 name|drawable_has_alpha
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|,
 name|cut_gimage
@@ -1181,7 +1234,7 @@ expr_stmt|;
 comment|/*  Invalidate the preview  */
 name|drawable_invalidate_preview
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 block|}
@@ -1211,7 +1264,7 @@ name|NULL
 argument_list|,
 name|drawable_cmap
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|,
 name|bg
@@ -1220,7 +1273,7 @@ name|type
 argument_list|,
 name|drawable_has_alpha
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|,
 name|FALSE
@@ -1263,7 +1316,7 @@ name|cut_gimage
 operator|&&
 name|drawable_layer
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 condition|)
 block|{
@@ -1273,7 +1326,7 @@ name|layer_is_floating_sel
 argument_list|(
 name|drawable_layer
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|)
 condition|)
@@ -1281,7 +1334,7 @@ name|floating_sel_remove
 argument_list|(
 name|drawable_layer
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1290,7 +1343,10 @@ name|gimage_remove_layer
 argument_list|(
 name|gimage
 argument_list|,
-name|drawable_id
+name|GIMP_LAYER
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1301,28 +1357,20 @@ name|cut_gimage
 operator|&&
 name|drawable_layer_mask
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 condition|)
 block|{
-if|if
-condition|(
-operator|(
-name|channel
-operator|=
-name|channel_get_ID
-argument_list|(
-name|drawable_id
-argument_list|)
-operator|)
-condition|)
 name|gimage_remove_layer_mask
 argument_list|(
 name|gimage
 argument_list|,
-name|channel
+name|GIMP_LAYER_MASK
+argument_list|(
+name|drawable
+argument_list|)
 operator|->
-name|layer_ID
+name|layer
 argument_list|,
 name|DISCARD
 argument_list|)
@@ -1335,14 +1383,17 @@ name|cut_gimage
 operator|&&
 name|drawable_channel
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 condition|)
 name|gimage_remove_channel
 argument_list|(
 name|gimage
 argument_list|,
-name|drawable_id
+name|GIMP_CHANNEL
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1355,12 +1406,12 @@ end_function
 begin_function
 name|Layer
 modifier|*
-DECL|function|gimage_mask_float (gimage,drawable_id,off_x,off_y)
+DECL|function|gimage_mask_float (gimage,drawable,off_x,off_y)
 name|gimage_mask_float
 parameter_list|(
 name|gimage
 parameter_list|,
-name|drawable_id
+name|drawable
 parameter_list|,
 name|off_x
 parameter_list|,
@@ -1370,8 +1421,9 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 name|int
 name|off_x
@@ -1414,7 +1466,9 @@ name|non_empty
 operator|=
 name|drawable_mask_bounds
 argument_list|(
-name|drawable_id
+operator|(
+name|drawable
+operator|)
 argument_list|,
 operator|&
 name|x1
@@ -1479,7 +1533,7 @@ name|gimage_mask_extract
 argument_list|(
 name|gimage
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|TRUE
 argument_list|,
@@ -1493,7 +1547,7 @@ name|layer_from_tiles
 argument_list|(
 name|gimage
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|tiles
 argument_list|,
@@ -1505,7 +1559,10 @@ name|NORMAL
 argument_list|)
 expr_stmt|;
 comment|/*  Set the offsets  */
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
+argument_list|)
 operator|->
 name|offset_x
 operator|=
@@ -1515,7 +1572,10 @@ name|x
 operator|+
 name|off_x
 expr_stmt|;
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
+argument_list|)
 operator|->
 name|offset_y
 operator|=
@@ -1536,7 +1596,7 @@ name|floating_sel_attach
 argument_list|(
 name|layer
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 comment|/*  End an undo group  */
@@ -1859,19 +1919,20 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_layer_alpha (gimage,layer_id)
+DECL|function|gimage_mask_layer_alpha (gimage,layer)
 name|gimage_mask_layer_alpha
 parameter_list|(
 name|gimage
 parameter_list|,
-name|layer_id
+name|layer
 parameter_list|)
 name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|int
-name|layer_id
+name|Layer
+modifier|*
+name|layer
 decl_stmt|;
 block|{
 comment|/*  extract the layer's alpha channel  */
@@ -1879,7 +1940,10 @@ if|if
 condition|(
 name|drawable_has_alpha
 argument_list|(
-name|layer_id
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
 argument_list|)
 condition|)
 block|{
@@ -1891,7 +1955,7 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
-name|layer_id
+name|layer
 argument_list|)
 expr_stmt|;
 block|}
@@ -1913,39 +1977,22 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_layer_mask (gimage,layer_id)
+DECL|function|gimage_mask_layer_mask (gimage,layer)
 name|gimage_mask_layer_mask
 parameter_list|(
 name|gimage
 parameter_list|,
-name|layer_id
+name|layer
 parameter_list|)
 name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|int
-name|layer_id
-decl_stmt|;
-block|{
 name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-if|if
-condition|(
-operator|(
-name|layer
-operator|=
-name|layer_get_ID
-argument_list|(
-name|layer_id
-argument_list|)
-operator|)
-operator|==
-name|NULL
-condition|)
-return|return;
+block|{
 comment|/*  extract the layer's alpha channel  */
 if|if
 condition|(
@@ -1962,7 +2009,7 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
-name|layer_id
+name|layer
 argument_list|)
 expr_stmt|;
 block|}
@@ -1984,19 +2031,20 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_load (gimage,channel_id)
+DECL|function|gimage_mask_load (gimage,channel)
 name|gimage_mask_load
 parameter_list|(
 name|gimage
 parameter_list|,
-name|channel_id
+name|channel
 parameter_list|)
 name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|int
-name|channel_id
+name|Channel
+modifier|*
+name|channel
 decl_stmt|;
 block|{
 comment|/*  Load the specified channel to the gimage mask  */
@@ -2007,10 +2055,9 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
-name|channel_get_ID
-argument_list|(
-name|channel_id
-argument_list|)
+operator|(
+name|channel
+operator|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2044,7 +2091,10 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  saved selections are not visible by default  */
+name|GIMP_DRAWABLE
+argument_list|(
 name|new_channel
+argument_list|)
 operator|->
 name|visible
 operator|=
@@ -2068,19 +2118,20 @@ end_function
 
 begin_function
 name|int
-DECL|function|gimage_mask_stroke (gimage,drawable_id)
+DECL|function|gimage_mask_stroke (gimage,drawable)
 name|gimage_mask_stroke
 parameter_list|(
 name|gimage
 parameter_list|,
-name|drawable_id
+name|drawable
 parameter_list|)
 name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 block|{
 name|BoundSeg
@@ -2173,7 +2224,7 @@ return|;
 comment|/*  find the drawable offsets  */
 name|drawable_offsets
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 operator|&
 name|offx
@@ -2191,7 +2242,7 @@ argument_list|(
 operator|&
 name|non_gui_paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 operator|(
 name|stroke_segs
@@ -2334,7 +2385,7 @@ argument_list|(
 operator|&
 name|non_gui_paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|non_gui_paint_core
@@ -2405,7 +2456,7 @@ argument_list|(
 operator|&
 name|non_gui_paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 operator|-
 literal|1
@@ -2434,12 +2485,12 @@ begin_function
 specifier|static
 name|void
 modifier|*
-DECL|function|gimage_mask_stroke_paint_func (paint_core,drawable_id,state)
+DECL|function|gimage_mask_stroke_paint_func (paint_core,drawable,state)
 name|gimage_mask_stroke_paint_func
 parameter_list|(
 name|paint_core
 parameter_list|,
-name|drawable_id
+name|drawable
 parameter_list|,
 name|state
 parameter_list|)
@@ -2447,8 +2498,9 @@ name|PaintCore
 modifier|*
 name|paint_core
 decl_stmt|;
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 name|int
 name|state
@@ -2477,7 +2529,7 @@ name|gimage
 operator|=
 name|drawable_gimage
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 operator|)
 condition|)
@@ -2488,7 +2540,7 @@ name|gimage_get_foreground
 argument_list|(
 name|gimage
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|col
 argument_list|)
@@ -2504,7 +2556,7 @@ name|paint_core_get_paint_area
 argument_list|(
 name|paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|)
 operator|)
 condition|)
@@ -2551,7 +2603,7 @@ name|paint_core_paste_canvas
 argument_list|(
 name|paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|OPAQUE
 argument_list|,

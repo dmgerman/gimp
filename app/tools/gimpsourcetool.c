@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297458670103
+DECL|enum|__anon2c50f75a0103
 block|{
 DECL|enumerator|ImageClone
 name|ImageClone
@@ -148,9 +148,11 @@ parameter_list|(
 name|PaintCore
 modifier|*
 parameter_list|,
-name|int
+name|GimpDrawable
+modifier|*
 parameter_list|,
-name|int
+name|GimpDrawable
+modifier|*
 parameter_list|,
 name|CloneType
 parameter_list|,
@@ -172,9 +174,11 @@ parameter_list|,
 name|GImage
 modifier|*
 parameter_list|,
-name|int
+name|GimpDrawable
+modifier|*
 parameter_list|,
-name|int
+name|GimpDrawable
+modifier|*
 parameter_list|,
 name|unsigned
 name|char
@@ -203,7 +207,8 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|int
+name|GimpDrawable
+modifier|*
 parameter_list|,
 name|GPatternP
 parameter_list|,
@@ -237,7 +242,8 @@ end_function_decl
 begin_decl_stmt
 DECL|variable|non_gui_src_drawable
 specifier|static
-name|int
+name|GimpDrawable
+modifier|*
 name|non_gui_src_drawable
 decl_stmt|;
 end_decl_stmt
@@ -430,19 +436,19 @@ comment|/*  ID of source gdisplay  */
 end_comment
 
 begin_decl_stmt
-DECL|variable|src_drawable_ID
+DECL|variable|src_drawable_
 specifier|static
-name|int
-name|src_drawable_ID
+name|GimpDrawable
+modifier|*
+name|src_drawable_
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
 begin_comment
-DECL|variable|src_drawable_ID
-comment|/*  ID of source drawable  */
+DECL|variable|src_drawable_
+comment|/*  source drawable */
 end_comment
 
 begin_decl_stmt
@@ -873,15 +879,16 @@ end_function
 begin_function
 name|void
 modifier|*
-DECL|function|clone_paint_func (PaintCore * paint_core,int drawable_id,int state)
+DECL|function|clone_paint_func (PaintCore * paint_core,GimpDrawable * drawable,int state)
 name|clone_paint_func
 parameter_list|(
 name|PaintCore
 modifier|*
 name|paint_core
 parameter_list|,
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|int
 name|state
@@ -1021,9 +1028,9 @@ name|clone_motion
 argument_list|(
 name|paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
-name|src_drawable_ID
+name|src_drawable_
 argument_list|,
 name|clone_options
 operator|->
@@ -1063,9 +1070,9 @@ name|gdisp
 operator|->
 name|ID
 expr_stmt|;
-name|src_drawable_ID
+name|src_drawable_
 operator|=
-name|drawable_id
+name|drawable
 expr_stmt|;
 name|src_x
 operator|=
@@ -1421,18 +1428,20 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|clone_motion (PaintCore * paint_core,int drawable_id,int src_drawable_id,CloneType type,int offset_x,int offset_y)
+DECL|function|clone_motion (PaintCore * paint_core,GimpDrawable * drawable,GimpDrawable * src_drawable,CloneType type,int offset_x,int offset_y)
 name|clone_motion
 parameter_list|(
 name|PaintCore
 modifier|*
 name|paint_core
 parameter_list|,
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
-name|int
-name|src_drawable_id
+name|GimpDrawable
+modifier|*
+name|src_drawable
 parameter_list|,
 name|CloneType
 name|type
@@ -1515,7 +1524,7 @@ name|src_gimage
 operator|=
 name|drawable_gimage
 argument_list|(
-name|src_drawable_id
+name|src_drawable
 argument_list|)
 operator|)
 operator|&&
@@ -1530,7 +1539,7 @@ name|gimage
 operator|=
 name|drawable_gimage
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 operator|)
 condition|)
@@ -1546,7 +1555,7 @@ name|paint_core_get_paint_area
 argument_list|(
 name|paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|)
 operator|)
 condition|)
@@ -1556,7 +1565,7 @@ name|has_alpha
 operator|=
 name|drawable_has_alpha
 argument_list|(
-name|src_drawable_id
+name|src_drawable
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -1593,9 +1602,9 @@ expr_stmt|;
 comment|/*  If the source gimage is different from the destination,        *  then we should copy straight from the destination image        *  to the canvas.        *  Otherwise, we need a call to get_orig_image to make sure        *  we get a copy of the unblemished (offset) image        */
 if|if
 condition|(
-name|src_drawable_id
+name|src_drawable
 operator|!=
-name|drawable_id
+name|drawable
 condition|)
 block|{
 name|x1
@@ -1612,7 +1621,7 @@ literal|0
 argument_list|,
 name|drawable_width
 argument_list|(
-name|src_drawable_id
+name|src_drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1630,7 +1639,7 @@ literal|0
 argument_list|,
 name|drawable_height
 argument_list|(
-name|src_drawable_id
+name|src_drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1652,7 +1661,7 @@ literal|0
 argument_list|,
 name|drawable_width
 argument_list|(
-name|src_drawable_id
+name|src_drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1674,7 +1683,7 @@ literal|0
 argument_list|,
 name|drawable_height
 argument_list|(
-name|src_drawable_id
+name|src_drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1702,7 +1711,7 @@ name|srcPR
 argument_list|,
 name|drawable_data
 argument_list|(
-name|src_drawable_id
+name|src_drawable
 argument_list|)
 argument_list|,
 name|x1
@@ -1741,7 +1750,7 @@ literal|0
 argument_list|,
 name|drawable_width
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1759,7 +1768,7 @@ literal|0
 argument_list|,
 name|drawable_height
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1781,7 +1790,7 @@ literal|0
 argument_list|,
 name|drawable_width
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1803,7 +1812,7 @@ literal|0
 argument_list|,
 name|drawable_height
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1831,7 +1840,7 @@ name|paint_core_get_orig_image
 argument_list|(
 name|paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|x1
 argument_list|,
@@ -2148,9 +2157,9 @@ name|gimage
 argument_list|,
 name|src_gimage
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
-name|src_drawable_id
+name|src_drawable
 argument_list|,
 name|s
 argument_list|,
@@ -2185,7 +2194,7 @@ name|clone_line_pattern
 argument_list|(
 name|gimage
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|pattern
 argument_list|,
@@ -2229,7 +2238,7 @@ name|paint_core_paste_canvas
 argument_list|(
 name|paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|OPAQUE
 argument_list|,
@@ -2257,7 +2266,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|clone_line_image (GImage * dest,GImage * src,int d_drawable,int s_drawable,unsigned char * s,unsigned char * d,int has_alpha,int src_bytes,int dest_bytes,int width)
+DECL|function|clone_line_image (GImage * dest,GImage * src,GimpDrawable * d_drawable,GimpDrawable * s_drawable,unsigned char * s,unsigned char * d,int has_alpha,int src_bytes,int dest_bytes,int width)
 name|clone_line_image
 parameter_list|(
 name|GImage
@@ -2268,10 +2277,12 @@ name|GImage
 modifier|*
 name|src
 parameter_list|,
-name|int
+name|GimpDrawable
+modifier|*
 name|d_drawable
 parameter_list|,
-name|int
+name|GimpDrawable
+modifier|*
 name|s_drawable
 parameter_list|,
 name|unsigned
@@ -2391,15 +2402,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|clone_line_pattern (GImage * dest,int drawable_id,GPatternP pattern,unsigned char * d,int x,int y,int bytes,int width)
+DECL|function|clone_line_pattern (GImage * dest,GimpDrawable * drawable,GPatternP pattern,unsigned char * d,int x,int y,int bytes,int width)
 name|clone_line_pattern
 parameter_list|(
 name|GImage
 modifier|*
 name|dest
 parameter_list|,
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|GPatternP
 name|pattern
@@ -2563,7 +2575,7 @@ name|gimage_transform_color
 argument_list|(
 name|dest
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|p
 argument_list|,
@@ -2591,15 +2603,16 @@ begin_function
 specifier|static
 name|void
 modifier|*
-DECL|function|clone_non_gui_paint_func (PaintCore * paint_core,int drawable_id,int state)
+DECL|function|clone_non_gui_paint_func (PaintCore * paint_core,GimpDrawable * drawable,int state)
 name|clone_non_gui_paint_func
 parameter_list|(
 name|PaintCore
 modifier|*
 name|paint_core
 parameter_list|,
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|int
 name|state
@@ -2609,7 +2622,7 @@ name|clone_motion
 argument_list|(
 name|paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|non_gui_src_drawable
 argument_list|,
@@ -2765,8 +2778,13 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
+decl_stmt|;
+name|GimpDrawable
+modifier|*
+name|src_drawable
 decl_stmt|;
 name|double
 name|src_x
@@ -2786,10 +2804,9 @@ decl_stmt|;
 name|int
 name|i
 decl_stmt|;
-name|drawable_id
+name|drawable
 operator|=
-operator|-
-literal|1
+name|NULL
 expr_stmt|;
 name|num_strokes
 operator|=
@@ -2846,26 +2863,29 @@ name|value
 operator|.
 name|pdb_int
 expr_stmt|;
-if|if
-condition|(
-operator|!
-operator|(
-name|gimage
-operator|==
-name|drawable_gimage
+name|drawable
+operator|=
+name|drawable_get_ID
 argument_list|(
 name|int_value
 argument_list|)
-operator|)
+expr_stmt|;
+if|if
+condition|(
+name|drawable
+operator|==
+name|NULL
+operator|||
+name|gimage
+operator|!=
+name|drawable_gimage
+argument_list|(
+name|drawable
+argument_list|)
 condition|)
 name|success
 operator|=
 name|FALSE
-expr_stmt|;
-else|else
-name|drawable_id
-operator|=
-name|int_value
 expr_stmt|;
 block|}
 comment|/*  the src drawable  */
@@ -2885,12 +2905,24 @@ name|value
 operator|.
 name|pdb_int
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|drawable_gimage
+name|src_drawable
+operator|=
+name|drawable_get_ID
 argument_list|(
 name|int_value
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|src_drawable
+operator|==
+name|NULL
+operator|||
+name|gimage
+operator|!=
+name|drawable_gimage
+argument_list|(
+name|src_drawable
 argument_list|)
 condition|)
 name|success
@@ -2900,7 +2932,7 @@ expr_stmt|;
 else|else
 name|non_gui_src_drawable
 operator|=
-name|int_value
+name|src_drawable
 expr_stmt|;
 block|}
 comment|/*  the clone type  */
@@ -3044,7 +3076,7 @@ argument_list|(
 operator|&
 name|non_gui_paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|stroke_array
 index|[
@@ -3132,7 +3164,7 @@ argument_list|(
 operator|&
 name|non_gui_paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 literal|0
 argument_list|)
@@ -3182,7 +3214,7 @@ argument_list|(
 operator|&
 name|non_gui_paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|non_gui_paint_core
@@ -3208,7 +3240,7 @@ argument_list|(
 operator|&
 name|non_gui_paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 operator|-
 literal|1

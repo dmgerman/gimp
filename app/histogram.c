@@ -1117,15 +1117,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|histogram_update (Histogram * histogram,int drawable_id,HistogramInfoFunc info_func,void * user_data)
+DECL|function|histogram_update (Histogram * histogram,GimpDrawable * drawable,HistogramInfoFunc info_func,void * user_data)
 name|histogram_update
 parameter_list|(
 name|Histogram
 modifier|*
 name|histogram
 parameter_list|,
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|HistogramInfoFunc
 name|info_func
@@ -1197,7 +1198,9 @@ name|gimage
 operator|=
 name|drawable_gimage
 argument_list|(
-name|drawable_id
+operator|(
+name|drawable
+operator|)
 argument_list|)
 operator|)
 condition|)
@@ -1208,7 +1211,9 @@ operator|=
 operator|(
 name|drawable_mask_bounds
 argument_list|(
-name|drawable_id
+operator|(
+name|drawable
+operator|)
 argument_list|,
 operator|&
 name|x1
@@ -1228,7 +1233,9 @@ operator|)
 expr_stmt|;
 name|drawable_offsets
 argument_list|(
-name|drawable_id
+operator|(
+name|drawable
+operator|)
 argument_list|,
 operator|&
 name|off_x
@@ -1245,7 +1252,9 @@ name|srcPR
 argument_list|,
 name|drawable_data
 argument_list|(
-name|drawable_id
+operator|(
+name|drawable
+operator|)
 argument_list|)
 argument_list|,
 name|x1
@@ -1280,9 +1289,13 @@ argument_list|(
 operator|&
 name|maskPR
 argument_list|,
+name|drawable_data
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|mask
-operator|->
-name|tiles
+argument_list|)
+argument_list|)
 argument_list|,
 name|x1
 operator|+

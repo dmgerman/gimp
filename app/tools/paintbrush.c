@@ -93,7 +93,8 @@ parameter_list|(
 name|PaintCore
 modifier|*
 parameter_list|,
-name|int
+name|GimpDrawable
+modifier|*
 parameter_list|,
 name|double
 parameter_list|)
@@ -452,15 +453,16 @@ end_function
 begin_function
 name|void
 modifier|*
-DECL|function|paintbrush_paint_func (PaintCore * paint_core,int drawable_id,int state)
+DECL|function|paintbrush_paint_func (PaintCore * paint_core,GimpDrawable * drawable,int state)
 name|paintbrush_paint_func
 parameter_list|(
 name|PaintCore
 modifier|*
 name|paint_core
 parameter_list|,
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|int
 name|state
@@ -482,7 +484,7 @@ name|paintbrush_motion
 argument_list|(
 name|paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|paint_options
 operator|->
@@ -577,15 +579,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|paintbrush_motion (PaintCore * paint_core,int drawable_id,double fade_out)
+DECL|function|paintbrush_motion (PaintCore * paint_core,GimpDrawable * drawable,double fade_out)
 name|paintbrush_motion
 parameter_list|(
 name|PaintCore
 modifier|*
 name|paint_core
 parameter_list|,
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|double
 name|fade_out
@@ -625,7 +628,7 @@ name|gimage
 operator|=
 name|drawable_gimage
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 operator|)
 condition|)
@@ -634,7 +637,7 @@ name|gimage_get_foreground
 argument_list|(
 name|gimage
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|col
 argument_list|)
@@ -650,7 +653,7 @@ name|paint_core_get_paint_area
 argument_list|(
 name|paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|)
 operator|)
 condition|)
@@ -744,7 +747,7 @@ name|paint_core_paste_canvas
 argument_list|(
 name|paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|blend
 argument_list|,
@@ -774,15 +777,16 @@ begin_function
 specifier|static
 name|void
 modifier|*
-DECL|function|paintbrush_non_gui_paint_func (PaintCore * paint_core,int drawable_id,int state)
+DECL|function|paintbrush_non_gui_paint_func (PaintCore * paint_core,GimpDrawable * drawable,int state)
 name|paintbrush_non_gui_paint_func
 parameter_list|(
 name|PaintCore
 modifier|*
 name|paint_core
 parameter_list|,
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|int
 name|state
@@ -792,7 +796,7 @@ name|paintbrush_motion
 argument_list|(
 name|paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|non_gui_fade_out
 argument_list|)
@@ -918,8 +922,9 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 name|int
 name|num_strokes
@@ -937,10 +942,9 @@ decl_stmt|;
 name|int
 name|i
 decl_stmt|;
-name|drawable_id
+name|drawable
 operator|=
-operator|-
-literal|1
+name|NULL
 expr_stmt|;
 name|num_strokes
 operator|=
@@ -997,26 +1001,29 @@ name|value
 operator|.
 name|pdb_int
 expr_stmt|;
-if|if
-condition|(
-operator|!
-operator|(
-name|gimage
-operator|==
-name|drawable_gimage
+name|drawable
+operator|=
+name|drawable_get_ID
 argument_list|(
 name|int_value
 argument_list|)
-operator|)
+expr_stmt|;
+if|if
+condition|(
+name|drawable
+operator|==
+name|NULL
+operator|||
+name|gimage
+operator|!=
+name|drawable_gimage
+argument_list|(
+name|drawable
+argument_list|)
 condition|)
 name|success
 operator|=
 name|FALSE
-expr_stmt|;
-else|else
-name|drawable_id
-operator|=
-name|int_value
 expr_stmt|;
 block|}
 comment|/*  fade out  */
@@ -1119,7 +1126,7 @@ argument_list|(
 operator|&
 name|non_gui_paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|stroke_array
 index|[
@@ -1181,7 +1188,7 @@ argument_list|(
 operator|&
 name|non_gui_paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 literal|0
 argument_list|)
@@ -1231,7 +1238,7 @@ argument_list|(
 operator|&
 name|non_gui_paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|non_gui_paint_core
@@ -1257,7 +1264,7 @@ argument_list|(
 operator|&
 name|non_gui_paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 operator|-
 literal|1

@@ -99,6 +99,18 @@ directive|include
 file|"undo.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"tile_manager_pvt.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"drawable_pvt.h"
+end_include
+
 begin_comment
 comment|/*  The named paste dialog  */
 end_comment
@@ -867,15 +879,16 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|edit_cut (GImage * gimage,int drawable_id)
+DECL|function|edit_cut (GImage * gimage,GimpDrawable * drawable)
 name|edit_cut
 parameter_list|(
 name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 name|TileManager
@@ -894,10 +907,9 @@ condition|(
 operator|!
 name|gimage
 operator|||
-name|drawable_id
+name|drawable
 operator|==
-operator|-
-literal|1
+name|NULL
 condition|)
 return|return
 name|NULL
@@ -925,7 +937,7 @@ name|gimage_mask_extract
 argument_list|(
 name|gimage
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|TRUE
 argument_list|,
@@ -1017,15 +1029,16 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|edit_copy (GImage * gimage,int drawable_id)
+DECL|function|edit_copy (GImage * gimage,GimpDrawable * drawable)
 name|edit_copy
 parameter_list|(
 name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 name|TileManager
@@ -1044,10 +1057,9 @@ condition|(
 operator|!
 name|gimage
 operator|||
-name|drawable_id
+name|drawable
 operator|==
-operator|-
-literal|1
+name|NULL
 condition|)
 return|return
 name|NULL
@@ -1067,7 +1079,7 @@ name|gimage_mask_extract
 argument_list|(
 name|gimage
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1152,15 +1164,16 @@ end_function
 
 begin_function
 name|int
-DECL|function|edit_paste (GImage * gimage,int drawable_id,TileManager * paste,int paste_into)
+DECL|function|edit_paste (GImage * gimage,GimpDrawable * drawable,TileManager * paste,int paste_into)
 name|edit_paste
 parameter_list|(
 name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|TileManager
 modifier|*
@@ -1195,7 +1208,7 @@ name|layer_from_tiles
 argument_list|(
 name|gimage
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|paste
 argument_list|,
@@ -1222,7 +1235,9 @@ expr_stmt|;
 comment|/*  Set the offsets to the center of the image  */
 name|drawable_offsets
 argument_list|(
-name|drawable_id
+operator|(
+name|drawable
+operator|)
 argument_list|,
 operator|&
 name|cx
@@ -1233,7 +1248,9 @@ argument_list|)
 expr_stmt|;
 name|drawable_mask_bounds
 argument_list|(
-name|drawable_id
+operator|(
+name|drawable
+operator|)
 argument_list|,
 operator|&
 name|x1
@@ -1268,28 +1285,40 @@ operator|)
 operator|>>
 literal|1
 expr_stmt|;
+name|GIMP_DRAWABLE
+argument_list|(
 name|float_layer
+argument_list|)
 operator|->
 name|offset_x
 operator|=
 name|cx
 operator|-
 operator|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|float_layer
+argument_list|)
 operator|->
 name|width
 operator|>>
 literal|1
 operator|)
 expr_stmt|;
+name|GIMP_DRAWABLE
+argument_list|(
 name|float_layer
+argument_list|)
 operator|->
 name|offset_y
 operator|=
 name|cy
 operator|-
 operator|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|float_layer
+argument_list|)
 operator|->
 name|height
 operator|>>
@@ -1321,7 +1350,7 @@ name|floating_sel_attach
 argument_list|(
 name|float_layer
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 comment|/*  end the group undo  */
@@ -1331,7 +1360,10 @@ name|gimage
 argument_list|)
 expr_stmt|;
 return|return
+name|GIMP_DRAWABLE
+argument_list|(
 name|float_layer
+argument_list|)
 operator|->
 name|ID
 return|;
@@ -1345,15 +1377,16 @@ end_function
 
 begin_function
 name|int
-DECL|function|edit_clear (GImage * gimage,int drawable_id)
+DECL|function|edit_clear (GImage * gimage,GimpDrawable * drawable)
 name|edit_clear
 parameter_list|(
 name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 name|TileManager
@@ -1384,10 +1417,9 @@ condition|(
 operator|!
 name|gimage
 operator|||
-name|drawable_id
+name|drawable
 operator|==
-operator|-
-literal|1
+name|NULL
 condition|)
 return|return
 name|FALSE
@@ -1396,7 +1428,7 @@ name|gimage_get_background
 argument_list|(
 name|gimage
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|col
 argument_list|)
@@ -1405,14 +1437,14 @@ if|if
 condition|(
 name|drawable_has_alpha
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 condition|)
 name|col
 index|[
 name|drawable_bytes
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 operator|-
 literal|1
@@ -1422,7 +1454,7 @@ name|OPAQUE
 expr_stmt|;
 name|drawable_mask_bounds
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 operator|&
 name|x1
@@ -1474,7 +1506,7 @@ operator|)
 argument_list|,
 name|drawable_bytes
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1542,7 +1574,7 @@ name|gimage_apply_image
 argument_list|(
 name|gimage
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 operator|&
 name|bufPR
@@ -1563,7 +1595,7 @@ expr_stmt|;
 comment|/*  update the image  */
 name|drawable_update
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 name|x1
 argument_list|,
@@ -1596,15 +1628,16 @@ end_function
 
 begin_function
 name|int
-DECL|function|edit_fill (GImage * gimage,int drawable_id)
+DECL|function|edit_fill (GImage * gimage,GimpDrawable * drawable)
 name|edit_fill
 parameter_list|(
 name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 name|TileManager
@@ -1635,10 +1668,9 @@ condition|(
 operator|!
 name|gimage
 operator|||
-name|drawable_id
+name|drawable
 operator|==
-operator|-
-literal|1
+name|NULL
 condition|)
 return|return
 name|FALSE
@@ -1647,7 +1679,7 @@ name|gimage_get_background
 argument_list|(
 name|gimage
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|col
 argument_list|)
@@ -1656,14 +1688,14 @@ if|if
 condition|(
 name|drawable_has_alpha
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 condition|)
 name|col
 index|[
 name|drawable_bytes
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 operator|-
 literal|1
@@ -1673,7 +1705,7 @@ name|OPAQUE
 expr_stmt|;
 name|drawable_mask_bounds
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 operator|&
 name|x1
@@ -1725,7 +1757,7 @@ operator|)
 argument_list|,
 name|drawable_bytes
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1793,7 +1825,7 @@ name|gimage_apply_image
 argument_list|(
 name|gimage
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 operator|&
 name|bufPR
@@ -1814,7 +1846,7 @@ expr_stmt|;
 comment|/*  update the image  */
 name|drawable_update
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 name|x1
 argument_list|,

@@ -19,6 +19,12 @@ end_define
 begin_include
 include|#
 directive|include
+file|"drawable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"boundary.h"
 end_include
 
@@ -59,7 +65,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29015f6d0103
+DECL|enum|__anon2899a2780103
 block|{
 DECL|enumerator|WhiteMask
 name|WhiteMask
@@ -79,174 +85,151 @@ begin_comment
 comment|/* structure declarations */
 end_comment
 
+begin_define
+DECL|macro|GIMP_LAYER (obj)
+define|#
+directive|define
+name|GIMP_LAYER
+parameter_list|(
+name|obj
+parameter_list|)
+value|GTK_CHECK_CAST (obj, gimp_layer_get_type (), GimpLayer)
+end_define
+
+begin_define
+DECL|macro|GIMP_LAYER_CLASS (klass)
+define|#
+directive|define
+name|GIMP_LAYER_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|GTK_CHECK_CLASS_CAST (klass, gimp_layer_get_type(), GimpLayerClass)
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_LAYER (obj)
+define|#
+directive|define
+name|GIMP_IS_LAYER
+parameter_list|(
+name|obj
+parameter_list|)
+value|GTK_CHECK_TYPE (obj, gimp_layer_get_type())
+end_define
+
+begin_define
+DECL|macro|GIMP_LAYER_MASK (obj)
+define|#
+directive|define
+name|GIMP_LAYER_MASK
+parameter_list|(
+name|obj
+parameter_list|)
+value|GTK_CHECK_CAST (obj, gimp_layer_mask_get_type (), GimpLayerMask)
+end_define
+
+begin_define
+DECL|macro|GIMP_LAYER_MASK_CLASS (klass)
+define|#
+directive|define
+name|GIMP_LAYER_MASK_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|GTK_CHECK_CLASS_CAST (klass, gimp_layer_mask_get_type(), GimpLayerMaskClass)
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_LAYER_MASK (obj)
+define|#
+directive|define
+name|GIMP_IS_LAYER_MASK
+parameter_list|(
+name|obj
+parameter_list|)
+value|GTK_CHECK_TYPE (obj, gimp_layer_mask_get_type())
+end_define
+
+begin_typedef
+DECL|typedef|GimpLayer
+typedef|typedef
+name|struct
+name|_GimpLayer
+name|GimpLayer
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpLayerClass
+typedef|typedef
+name|struct
+name|_GimpLayerClass
+name|GimpLayerClass
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpLayerMask
+typedef|typedef
+name|struct
+name|_GimpLayerMask
+name|GimpLayerMask
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpLayerMaskClass
+typedef|typedef
+name|struct
+name|_GimpLayerMaskClass
+name|GimpLayerMaskClass
+typedef|;
+end_typedef
+
 begin_typedef
 DECL|typedef|Layer
 typedef|typedef
-name|struct
-name|_Layer
+name|GimpLayer
 name|Layer
 typedef|;
 end_typedef
 
-begin_struct
-DECL|struct|_Layer
-struct|struct
-name|_Layer
-block|{
-DECL|member|name
-name|char
-modifier|*
-name|name
-decl_stmt|;
-comment|/*  name of the layer            */
-DECL|member|tiles
-name|TileManager
-modifier|*
-name|tiles
-decl_stmt|;
-comment|/*  Tiles for layer data         */
-DECL|member|visible
-name|int
-name|visible
-decl_stmt|;
-comment|/*  controls visibility          */
-DECL|member|linked
-name|int
-name|linked
-decl_stmt|;
-comment|/*  control linkage              */
-DECL|member|preserve_trans
-name|int
-name|preserve_trans
-decl_stmt|;
-comment|/*  preserve transparency?       */
-DECL|member|mask
-name|Channel
-modifier|*
-name|mask
-decl_stmt|;
-comment|/*  possible layer mask          */
-DECL|member|apply_mask
-name|int
-name|apply_mask
-decl_stmt|;
-comment|/*  controls mask application    */
-DECL|member|edit_mask
-name|int
-name|edit_mask
-decl_stmt|;
-comment|/*  edit mask or layer?          */
-DECL|member|show_mask
-name|int
-name|show_mask
-decl_stmt|;
-comment|/*  show mask or layer?          */
-DECL|member|offset_x
-DECL|member|offset_y
-name|int
-name|offset_x
-decl_stmt|,
-name|offset_y
-decl_stmt|;
-comment|/*  offset of layer in image     */
-DECL|member|type
-name|int
-name|type
-decl_stmt|;
-comment|/*  type of image                */
-DECL|member|width
-DECL|member|height
-name|int
-name|width
-decl_stmt|,
-name|height
-decl_stmt|;
-comment|/*  size of layer                */
-DECL|member|bytes
-name|int
-name|bytes
-decl_stmt|;
-comment|/*  bytes per pixel              */
-DECL|member|opacity
-name|int
-name|opacity
-decl_stmt|;
-comment|/*  layer opacity                */
-DECL|member|mode
-name|int
-name|mode
-decl_stmt|;
-comment|/*  layer combination mode       */
-DECL|member|dirty
-name|int
-name|dirty
-decl_stmt|;
-comment|/*  dirty bit                    */
-DECL|member|ID
-name|int
-name|ID
-decl_stmt|;
-comment|/*  provides a unique ID         */
-DECL|member|gimage_ID
-name|int
-name|gimage_ID
-decl_stmt|;
-comment|/*  ID of gimage owner           */
-comment|/*  Preview variables  */
-DECL|member|preview
-name|TempBuf
-modifier|*
-name|preview
-decl_stmt|;
-comment|/*  preview of the channel       */
-DECL|member|preview_valid
-name|int
-name|preview_valid
-decl_stmt|;
-comment|/*  is the preview valid?        */
-comment|/*  Floating selections  */
-struct|struct
-DECL|struct|__anon29015f6d0208
-block|{
-DECL|member|backing_store
-name|TileManager
-modifier|*
-name|backing_store
-decl_stmt|;
-comment|/*  for obscured regions         */
-DECL|member|drawable
-name|int
-name|drawable
-decl_stmt|;
-comment|/*  floating sel is attached to  */
-DECL|member|initial
-name|int
-name|initial
-decl_stmt|;
-comment|/*  is fs composited yet?        */
-DECL|member|boundary_known
-name|int
-name|boundary_known
-decl_stmt|;
-comment|/*  is the current boundary valid*/
-DECL|member|segs
-name|BoundSeg
-modifier|*
-name|segs
-decl_stmt|;
-comment|/*  boundary of floating sel     */
-DECL|member|num_segs
-name|int
-name|num_segs
-decl_stmt|;
-comment|/*  number of segs in boundary   */
-DECL|member|fs
-block|}
-name|fs
-struct|;
-block|}
-struct|;
-end_struct
+begin_comment
+DECL|typedef|Layer
+comment|/* convenience */
+end_comment
+
+begin_typedef
+DECL|typedef|LayerMask
+typedef|typedef
+name|GimpLayerMask
+name|LayerMask
+typedef|;
+end_typedef
+
+begin_comment
+DECL|typedef|LayerMask
+comment|/* convenience */
+end_comment
+
+begin_function_decl
+name|guint
+name|gimp_layer_get_type
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|guint
+name|gimp_layer_mask_get_type
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_comment
 comment|/*  Special undo types  */
@@ -278,7 +261,8 @@ name|prev_position
 decl_stmt|;
 comment|/*  former position in list  */
 DECL|member|prev_layer
-name|int
+name|Layer
+modifier|*
 name|prev_layer
 decl_stmt|;
 comment|/*  previous active layer    */
@@ -328,7 +312,7 @@ name|show_mask
 decl_stmt|;
 comment|/*  show the mask?           */
 DECL|member|mask
-name|Channel
+name|LayerMask
 modifier|*
 name|mask
 decl_stmt|;
@@ -369,7 +353,8 @@ name|layer
 decl_stmt|;
 comment|/*  the layer                */
 DECL|member|drawable
-name|int
+name|GimpDrawable
+modifier|*
 name|drawable
 decl_stmt|;
 comment|/*  drawable of floating sel */
@@ -380,32 +365,6 @@ end_struct
 begin_comment
 comment|/* function declarations */
 end_comment
-
-begin_function_decl
-name|void
-name|layer_allocate
-parameter_list|(
-name|Layer
-modifier|*
-parameter_list|,
-name|int
-parameter_list|,
-name|int
-parameter_list|,
-name|int
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|layer_deallocate
-parameter_list|(
-name|Layer
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 name|Layer
@@ -451,7 +410,8 @@ parameter_list|(
 name|void
 modifier|*
 parameter_list|,
-name|int
+name|GimpDrawable
+modifier|*
 parameter_list|,
 name|TileManager
 modifier|*
@@ -467,20 +427,21 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Channel
+name|LayerMask
 modifier|*
 name|layer_add_mask
 parameter_list|(
 name|Layer
 modifier|*
 parameter_list|,
-name|int
+name|LayerMask
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Channel
+name|LayerMask
 modifier|*
 name|layer_create_mask
 parameter_list|(
@@ -532,29 +493,6 @@ name|Layer
 modifier|*
 parameter_list|,
 name|int
-parameter_list|,
-name|int
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|layer_apply_image
-parameter_list|(
-name|Layer
-modifier|*
-parameter_list|,
-name|int
-parameter_list|,
-name|int
-parameter_list|,
-name|int
-parameter_list|,
-name|int
-parameter_list|,
-name|TileManager
-modifier|*
 parameter_list|,
 name|int
 parameter_list|)
@@ -643,6 +581,60 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|LayerMask
+modifier|*
+name|layer_mask_new
+parameter_list|(
+name|int
+parameter_list|,
+name|int
+parameter_list|,
+name|int
+parameter_list|,
+name|char
+modifier|*
+parameter_list|,
+name|int
+parameter_list|,
+name|unsigned
+name|char
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|LayerMask
+modifier|*
+name|layer_mask_copy
+parameter_list|(
+name|LayerMask
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|layer_mask_delete
+parameter_list|(
+name|LayerMask
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|LayerMask
+modifier|*
+name|layer_mask_get_ID
+parameter_list|(
+name|int
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/* access functions */
 end_comment
@@ -660,7 +652,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Channel
+name|LayerMask
 modifier|*
 name|layer_mask
 parameter_list|(
@@ -683,6 +675,16 @@ end_function_decl
 begin_function_decl
 name|int
 name|layer_is_floating_sel
+parameter_list|(
+name|Layer
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|int
+name|layer_linked
 parameter_list|(
 name|Layer
 modifier|*
@@ -725,6 +727,62 @@ name|void
 name|layer_invalidate_previews
 parameter_list|(
 name|int
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* from drawable.c */
+end_comment
+
+begin_function_decl
+name|Layer
+modifier|*
+name|drawable_layer
+parameter_list|(
+name|GimpDrawable
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|LayerMask
+modifier|*
+name|drawable_layer_mask
+parameter_list|(
+name|GimpDrawable
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* from channel.c */
+end_comment
+
+begin_function_decl
+name|void
+name|channel_layer_alpha
+parameter_list|(
+name|Channel
+modifier|*
+parameter_list|,
+name|Layer
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|channel_layer_mask
+parameter_list|(
+name|Channel
+modifier|*
+parameter_list|,
+name|Layer
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl

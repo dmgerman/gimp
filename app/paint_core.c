@@ -186,7 +186,8 @@ parameter_list|,
 name|MaskBuf
 modifier|*
 parameter_list|,
-name|int
+name|GimpDrawable
+modifier|*
 parameter_list|,
 name|int
 parameter_list|,
@@ -210,7 +211,8 @@ parameter_list|,
 name|MaskBuf
 modifier|*
 parameter_list|,
-name|int
+name|GimpDrawable
+modifier|*
 parameter_list|,
 name|int
 parameter_list|,
@@ -258,7 +260,8 @@ specifier|static
 name|void
 name|set_undo_tiles
 parameter_list|(
-name|int
+name|GimpDrawable
+modifier|*
 parameter_list|,
 name|int
 parameter_list|,
@@ -834,9 +837,6 @@ modifier|*
 name|gdisp
 decl_stmt|;
 name|int
-name|drawable_id
-decl_stmt|;
-name|int
 name|draw_line
 init|=
 literal|0
@@ -845,6 +845,10 @@ name|double
 name|x
 decl_stmt|,
 name|y
+decl_stmt|;
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 name|gdisp
 operator|=
@@ -891,7 +895,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|drawable_id
+name|drawable
 operator|=
 name|gimage_active_drawable
 argument_list|(
@@ -907,7 +911,7 @@ name|paint_core_init
 argument_list|(
 name|paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|x
 argument_list|,
@@ -1098,7 +1102,7 @@ call|)
 argument_list|(
 name|paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|INIT_PAINT
 argument_list|)
@@ -1113,7 +1117,7 @@ name|paint_core_interpolate
 argument_list|(
 name|paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|paint_core
@@ -1143,7 +1147,7 @@ call|)
 argument_list|(
 name|paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|MOTION_PAINT
 argument_list|)
@@ -1495,42 +1499,62 @@ name|gimage
 argument_list|)
 operator|)
 condition|)
+block|{
+name|int
+name|off_x
+decl_stmt|,
+name|off_y
+decl_stmt|;
+name|drawable_offsets
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|,
+operator|&
+name|off_x
+argument_list|,
+operator|&
+name|off_y
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|x
 operator|>=
-name|layer
-operator|->
-name|offset_x
+name|off_x
 operator|&&
 name|y
 operator|>=
-name|layer
-operator|->
-name|offset_y
+name|off_y
 operator|&&
 name|x
 operator|<
 operator|(
-name|layer
-operator|->
-name|offset_x
+name|off_x
 operator|+
+name|drawable_width
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
-operator|->
-name|width
+argument_list|)
+argument_list|)
 operator|)
 operator|&&
 name|y
 operator|<
 operator|(
-name|layer
-operator|->
-name|offset_y
+name|off_y
 operator|+
+name|drawable_height
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
-operator|->
-name|height
+argument_list|)
+argument_list|)
 operator|)
 condition|)
 block|{
@@ -1566,6 +1590,7 @@ name|ctype
 operator|=
 name|GDK_PENCIL
 expr_stmt|;
+block|}
 block|}
 name|gdisplay_install_tool_cursor
 argument_list|(
@@ -1607,8 +1632,9 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 name|gdisp
 operator|=
@@ -1628,7 +1654,7 @@ name|tool
 operator|->
 name|private
 expr_stmt|;
-name|drawable_id
+name|drawable
 operator|=
 name|gimage_active_drawable
 argument_list|(
@@ -1680,7 +1706,7 @@ call|)
 argument_list|(
 name|paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|FINISH_PAINT
 argument_list|)
@@ -1926,12 +1952,12 @@ end_function
 
 begin_function
 name|int
-DECL|function|paint_core_init (paint_core,drawable_id,x,y)
+DECL|function|paint_core_init (paint_core,drawable,x,y)
 name|paint_core_init
 parameter_list|(
 name|paint_core
 parameter_list|,
-name|drawable_id
+name|drawable
 parameter_list|,
 name|x
 parameter_list|,
@@ -1941,8 +1967,9 @@ name|PaintCore
 modifier|*
 name|paint_core
 decl_stmt|;
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 name|double
 name|x
@@ -2066,17 +2093,17 @@ name|tile_manager_new
 argument_list|(
 name|drawable_width
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|,
 name|drawable_height
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|,
 name|drawable_bytes
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2087,12 +2114,12 @@ name|tile_manager_new
 argument_list|(
 name|drawable_width
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|,
 name|drawable_height
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|,
 literal|1
@@ -2137,19 +2164,20 @@ end_function
 
 begin_function
 name|void
-DECL|function|paint_core_interpolate (paint_core,drawable_id)
+DECL|function|paint_core_interpolate (paint_core,drawable)
 name|paint_core_interpolate
 parameter_list|(
 name|paint_core
 parameter_list|,
-name|drawable_id
+name|drawable
 parameter_list|)
 name|PaintCore
 modifier|*
 name|paint_core
 decl_stmt|;
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 block|{
 name|int
@@ -2333,7 +2361,7 @@ call|)
 argument_list|(
 name|paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|MOTION_PAINT
 argument_list|)
@@ -2371,12 +2399,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|paint_core_finish (paint_core,drawable_id,tool_id)
+DECL|function|paint_core_finish (paint_core,drawable,tool_id)
 name|paint_core_finish
 parameter_list|(
 name|paint_core
 parameter_list|,
-name|drawable_id
+name|drawable
 parameter_list|,
 name|tool_id
 parameter_list|)
@@ -2384,8 +2412,9 @@ name|PaintCore
 modifier|*
 name|paint_core
 decl_stmt|;
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 name|int
 name|tool_id
@@ -2407,7 +2436,7 @@ name|gimage
 operator|=
 name|drawable_gimage
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 operator|)
 condition|)
@@ -2490,7 +2519,7 @@ expr_stmt|;
 comment|/*  push an undo  */
 name|drawable_apply_image
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 name|paint_core
 operator|->
@@ -2526,7 +2555,7 @@ expr_stmt|;
 comment|/*  invalidate the drawable--have to do it here, because    *  it is not done during the actual painting.    */
 name|drawable_invalidate_preview
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 block|}
@@ -2593,19 +2622,20 @@ end_comment
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|paint_core_get_paint_area (paint_core,drawable_id)
+DECL|function|paint_core_get_paint_area (paint_core,drawable)
 name|paint_core_get_paint_area
 parameter_list|(
 name|paint_core
 parameter_list|,
-name|drawable_id
+name|drawable
 parameter_list|)
 name|PaintCore
 modifier|*
 name|paint_core
 decl_stmt|;
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 block|{
 name|int
@@ -2629,17 +2659,17 @@ name|bytes
 operator|=
 name|drawable_has_alpha
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 condition|?
 name|drawable_bytes
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 else|:
 name|drawable_bytes
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 operator|+
 literal|1
@@ -2695,7 +2725,7 @@ literal|0
 argument_list|,
 name|drawable_width
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2711,7 +2741,7 @@ literal|0
 argument_list|,
 name|drawable_height
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2733,7 +2763,7 @@ literal|0
 argument_list|,
 name|drawable_width
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2755,7 +2785,7 @@ literal|0
 argument_list|,
 name|drawable_height
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2812,12 +2842,12 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|paint_core_get_orig_image (paint_core,drawable_id,x1,y1,x2,y2)
+DECL|function|paint_core_get_orig_image (paint_core,drawable,x1,y1,x2,y2)
 name|paint_core_get_orig_image
 parameter_list|(
 name|paint_core
 parameter_list|,
-name|drawable_id
+name|drawable
 parameter_list|,
 name|x1
 parameter_list|,
@@ -2831,8 +2861,9 @@ name|PaintCore
 modifier|*
 name|paint_core
 decl_stmt|;
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 name|int
 name|x1
@@ -2883,7 +2914,7 @@ name|orig_buf
 argument_list|,
 name|drawable_bytes
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|,
 name|x1
@@ -2913,7 +2944,7 @@ literal|0
 argument_list|,
 name|drawable_width
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2927,7 +2958,7 @@ literal|0
 argument_list|,
 name|drawable_height
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2941,7 +2972,7 @@ literal|0
 argument_list|,
 name|drawable_width
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2955,7 +2986,7 @@ literal|0
 argument_list|,
 name|drawable_height
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2967,7 +2998,7 @@ name|srcPR
 argument_list|,
 name|drawable_data
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|,
 name|x1
@@ -3251,12 +3282,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|paint_core_paste_canvas (paint_core,drawable_id,brush_opacity,image_opacity,paint_mode,brush_hardness,mode)
+DECL|function|paint_core_paste_canvas (paint_core,drawable,brush_opacity,image_opacity,paint_mode,brush_hardness,mode)
 name|paint_core_paste_canvas
 parameter_list|(
 name|paint_core
 parameter_list|,
-name|drawable_id
+name|drawable
 parameter_list|,
 name|brush_opacity
 parameter_list|,
@@ -3272,8 +3303,9 @@ name|PaintCore
 modifier|*
 name|paint_core
 decl_stmt|;
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 name|int
 name|brush_opacity
@@ -3312,7 +3344,7 @@ name|paint_core
 argument_list|,
 name|brush_mask
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|brush_opacity
 argument_list|,
@@ -3332,12 +3364,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|paint_core_replace_canvas (paint_core,drawable_id,brush_opacity,image_opacity,brush_hardness,mode)
+DECL|function|paint_core_replace_canvas (paint_core,drawable,brush_opacity,image_opacity,brush_hardness,mode)
 name|paint_core_replace_canvas
 parameter_list|(
 name|paint_core
 parameter_list|,
-name|drawable_id
+name|drawable
 parameter_list|,
 name|brush_opacity
 parameter_list|,
@@ -3351,8 +3383,9 @@ name|PaintCore
 modifier|*
 name|paint_core
 decl_stmt|;
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 name|int
 name|brush_opacity
@@ -3388,7 +3421,7 @@ name|paint_core
 argument_list|,
 name|brush_mask
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|brush_opacity
 argument_list|,
@@ -4070,14 +4103,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|paint_core_paste (paint_core,brush_mask,drawable_id,brush_opacity,image_opacity,paint_mode,mode)
+DECL|function|paint_core_paste (paint_core,brush_mask,drawable,brush_opacity,image_opacity,paint_mode,mode)
 name|paint_core_paste
 parameter_list|(
 name|paint_core
 parameter_list|,
 name|brush_mask
 parameter_list|,
-name|drawable_id
+name|drawable
 parameter_list|,
 name|brush_opacity
 parameter_list|,
@@ -4095,8 +4128,9 @@ name|MaskBuf
 modifier|*
 name|brush_mask
 decl_stmt|;
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 name|int
 name|brush_opacity
@@ -4137,7 +4171,7 @@ name|gimage
 operator|=
 name|drawable_gimage
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 operator|)
 condition|)
@@ -4145,7 +4179,7 @@ return|return;
 comment|/*  set undo blocks  */
 name|set_undo_tiles
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 name|canvas_buf
 operator|->
@@ -4281,7 +4315,7 @@ name|gimage_apply_image
 argument_list|(
 name|gimage
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 operator|&
 name|srcPR
@@ -4380,7 +4414,7 @@ expr_stmt|;
 comment|/*  Update the gimage--it is important to call gdisplays_update_area    *  instead of drawable_update because we don't want the drawable    *  preview to be constantly invalidated    */
 name|drawable_offsets
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 operator|&
 name|offx
@@ -4426,14 +4460,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|paint_core_replace (paint_core,brush_mask,drawable_id,brush_opacity,image_opacity,mode)
+DECL|function|paint_core_replace (paint_core,brush_mask,drawable,brush_opacity,image_opacity,mode)
 name|paint_core_replace
 parameter_list|(
 name|paint_core
 parameter_list|,
 name|brush_mask
 parameter_list|,
-name|drawable_id
+name|drawable
 parameter_list|,
 name|brush_opacity
 parameter_list|,
@@ -4449,8 +4483,9 @@ name|MaskBuf
 modifier|*
 name|brush_mask
 decl_stmt|;
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 name|int
 name|brush_opacity
@@ -4481,7 +4516,7 @@ condition|(
 operator|!
 name|drawable_has_alpha
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 condition|)
 block|{
@@ -4491,7 +4526,7 @@ name|paint_core
 argument_list|,
 name|brush_mask
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|brush_opacity
 argument_list|,
@@ -4526,7 +4561,7 @@ name|gimage
 operator|=
 name|drawable_gimage
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 operator|)
 condition|)
@@ -4534,7 +4569,7 @@ return|return;
 comment|/*  set undo blocks  */
 name|set_undo_tiles
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 name|canvas_buf
 operator|->
@@ -4671,7 +4706,7 @@ name|gimage_replace_image
 argument_list|(
 name|gimage
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 operator|&
 name|srcPR
@@ -4768,7 +4803,7 @@ expr_stmt|;
 comment|/*  Update the gimage--it is important to call gdisplays_update_area    *  instead of drawable_update because we don't want the drawable    *  preview to be constantly invalidated    */
 name|drawable_offsets
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|,
 operator|&
 name|offx
@@ -5271,10 +5306,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|set_undo_tiles (drawable_id,x,y,w,h)
+DECL|function|set_undo_tiles (drawable,x,y,w,h)
 name|set_undo_tiles
 parameter_list|(
-name|drawable_id
+name|drawable
 parameter_list|,
 name|x
 parameter_list|,
@@ -5284,8 +5319,9 @@ name|w
 parameter_list|,
 name|h
 parameter_list|)
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 name|int
 name|x
@@ -5393,7 +5429,7 @@ name|tile_manager_get_tile
 argument_list|(
 name|drawable_data
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|,
 name|j

@@ -69,6 +69,12 @@ directive|include
 file|"tile_manager.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"tile_manager_pvt.h"
+end_include
+
 begin_define
 DECL|macro|WAITING
 define|#
@@ -108,9 +114,10 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-DECL|member|drawable_id
-name|int
-name|drawable_id
+DECL|member|drawable
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 DECL|member|undo_tiles
 name|TileManager
@@ -206,9 +213,11 @@ name|gimage
 operator|=
 name|drawable_gimage
 argument_list|(
+operator|(
 name|_image_map
 operator|->
-name|drawable_id
+name|drawable
+operator|)
 argument_list|)
 operator|)
 condition|)
@@ -305,7 +314,7 @@ name|gimage
 argument_list|,
 name|_image_map
 operator|->
-name|drawable_id
+name|drawable
 argument_list|,
 operator|&
 name|shadowPR
@@ -333,9 +342,11 @@ condition|)
 block|{
 name|drawable_update
 argument_list|(
+operator|(
 name|_image_map
 operator|->
-name|drawable_id
+name|drawable
+operator|)
 argument_list|,
 name|x
 argument_list|,
@@ -396,15 +407,16 @@ end_function
 
 begin_function
 name|ImageMap
-DECL|function|image_map_create (void * gdisp_ptr,int drawable_id)
+DECL|function|image_map_create (void * gdisp_ptr,GimpDrawable * drawable)
 name|image_map_create
 parameter_list|(
 name|void
 modifier|*
 name|gdisp_ptr
 parameter_list|,
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 name|_ImageMap
@@ -437,9 +449,9 @@ name|gdisp_ptr
 expr_stmt|;
 name|_image_map
 operator|->
-name|drawable_id
+name|drawable
 operator|=
-name|drawable_id
+name|drawable
 expr_stmt|;
 name|_image_map
 operator|->
@@ -548,18 +560,22 @@ condition|(
 operator|!
 name|drawable_gimage
 argument_list|(
+operator|(
 name|_image_map
 operator|->
-name|drawable_id
+name|drawable
+operator|)
 argument_list|)
 condition|)
 return|return;
 comment|/*  The application should occur only within selection bounds  */
 name|drawable_mask_bounds
 argument_list|(
+operator|(
 name|_image_map
 operator|->
-name|drawable_id
+name|drawable
+operator|)
 argument_list|,
 operator|&
 name|x1
@@ -691,9 +707,11 @@ name|destPR
 argument_list|,
 name|drawable_data
 argument_list|(
+operator|(
 name|_image_map
 operator|->
-name|drawable_id
+name|drawable
+operator|)
 argument_list|)
 argument_list|,
 name|_image_map
@@ -827,9 +845,11 @@ operator|)
 argument_list|,
 name|drawable_bytes
 argument_list|(
+operator|(
 name|_image_map
 operator|->
-name|drawable_id
+name|drawable
+operator|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -844,9 +864,11 @@ name|srcPR
 argument_list|,
 name|drawable_data
 argument_list|(
+operator|(
 name|_image_map
 operator|->
-name|drawable_id
+name|drawable
+operator|)
 argument_list|)
 argument_list|,
 name|x1
@@ -970,9 +992,11 @@ name|destPR
 argument_list|,
 name|drawable_shadow
 argument_list|(
+operator|(
 name|_image_map
 operator|->
-name|drawable_id
+name|drawable
+operator|)
 argument_list|)
 argument_list|,
 name|x1
@@ -1097,9 +1121,11 @@ condition|(
 operator|!
 name|drawable_gimage
 argument_list|(
+operator|(
 name|_image_map
 operator|->
-name|drawable_id
+name|drawable
+operator|)
 argument_list|)
 condition|)
 return|return;
@@ -1167,9 +1193,11 @@ name|height
 expr_stmt|;
 name|drawable_apply_image
 argument_list|(
+operator|(
 name|_image_map
 operator|->
-name|drawable_id
+name|drawable
+operator|)
 argument_list|,
 name|x1
 argument_list|,
@@ -1257,9 +1285,11 @@ condition|(
 operator|!
 name|drawable_gimage
 argument_list|(
+operator|(
 name|_image_map
 operator|->
-name|drawable_id
+name|drawable
+operator|)
 argument_list|)
 condition|)
 return|return;
@@ -1317,9 +1347,11 @@ name|destPR
 argument_list|,
 name|drawable_data
 argument_list|(
+operator|(
 name|_image_map
 operator|->
-name|drawable_id
+name|drawable
+operator|)
 argument_list|)
 argument_list|,
 name|_image_map
@@ -1402,9 +1434,11 @@ expr_stmt|;
 comment|/*  Update the area  */
 name|drawable_update
 argument_list|(
+operator|(
 name|_image_map
 operator|->
-name|drawable_id
+name|drawable
+operator|)
 argument_list|,
 name|_image_map
 operator|->

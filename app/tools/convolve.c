@@ -78,7 +78,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0911b20103
+DECL|enum|__anon29a0b2d00103
 block|{
 DECL|enumerator|Blur
 name|Blur
@@ -163,7 +163,8 @@ parameter_list|(
 name|PaintCore
 modifier|*
 parameter_list|,
-name|int
+name|GimpDrawable
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -972,15 +973,16 @@ end_function
 begin_function
 name|void
 modifier|*
-DECL|function|convolve_paint_func (PaintCore * paint_core,int drawable_id,int state)
+DECL|function|convolve_paint_func (PaintCore * paint_core,GimpDrawable * drawable,int state)
 name|convolve_paint_func
 parameter_list|(
 name|PaintCore
 modifier|*
 name|paint_core
 parameter_list|,
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|int
 name|state
@@ -1014,7 +1016,7 @@ name|convolve_motion
 argument_list|(
 name|paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1103,15 +1105,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|convolve_motion (PaintCore * paint_core,int drawable_id)
+DECL|function|convolve_motion (PaintCore * paint_core,GimpDrawable * drawable)
 name|convolve_motion
 parameter_list|(
 name|PaintCore
 modifier|*
 name|paint_core
 parameter_list|,
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
 name|GImage
@@ -1142,7 +1145,7 @@ name|gimage
 operator|=
 name|drawable_gimage
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 operator|)
 condition|)
@@ -1152,7 +1155,7 @@ if|if
 condition|(
 name|drawable_type
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 operator|==
 name|INDEXED_GIMAGE
@@ -1169,7 +1172,7 @@ name|paint_core_get_paint_area
 argument_list|(
 name|paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|)
 operator|)
 condition|)
@@ -1182,7 +1185,7 @@ name|srcPR
 argument_list|,
 name|drawable_data
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 argument_list|,
 name|area
@@ -1283,7 +1286,7 @@ condition|(
 operator|!
 name|drawable_has_alpha
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 condition|)
 block|{
@@ -1542,7 +1545,7 @@ if|if
 condition|(
 name|drawable_has_alpha
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 condition|)
 name|separate_alpha_region
@@ -1566,7 +1569,7 @@ condition|(
 operator|!
 name|drawable_has_alpha
 argument_list|(
-name|drawable_id
+name|drawable
 argument_list|)
 condition|)
 name|add_alpha_region
@@ -1594,7 +1597,7 @@ name|paint_core_replace_canvas
 argument_list|(
 name|paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|OPAQUE
 argument_list|,
@@ -1898,15 +1901,16 @@ begin_function
 specifier|static
 name|void
 modifier|*
-DECL|function|convolve_non_gui_paint_func (PaintCore * paint_core,int drawable_id,int state)
+DECL|function|convolve_non_gui_paint_func (PaintCore * paint_core,GimpDrawable * drawable,int state)
 name|convolve_non_gui_paint_func
 parameter_list|(
 name|PaintCore
 modifier|*
 name|paint_core
 parameter_list|,
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|,
 name|int
 name|state
@@ -1916,7 +1920,7 @@ name|convolve_motion
 argument_list|(
 name|paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 return|return
@@ -2048,8 +2052,9 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|int
-name|drawable_id
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 name|double
 name|pressure
@@ -2073,10 +2078,9 @@ decl_stmt|;
 name|int
 name|i
 decl_stmt|;
-name|drawable_id
+name|drawable
 operator|=
-operator|-
-literal|1
+name|NULL
 expr_stmt|;
 name|pressure
 operator|=
@@ -2141,26 +2145,29 @@ name|value
 operator|.
 name|pdb_int
 expr_stmt|;
-if|if
-condition|(
-operator|!
-operator|(
-name|gimage
-operator|==
-name|drawable_gimage
+name|drawable
+operator|=
+name|drawable_get_ID
 argument_list|(
 name|int_value
 argument_list|)
-operator|)
+expr_stmt|;
+if|if
+condition|(
+name|drawable
+operator|==
+name|NULL
+operator|||
+name|gimage
+operator|!=
+name|drawable_gimage
+argument_list|(
+name|drawable
+argument_list|)
 condition|)
 name|success
 operator|=
 name|FALSE
-expr_stmt|;
-else|else
-name|drawable_id
-operator|=
-name|int_value
 expr_stmt|;
 block|}
 comment|/*  the pressure  */
@@ -2321,7 +2328,7 @@ argument_list|(
 operator|&
 name|non_gui_paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 name|stroke_array
 index|[
@@ -2391,7 +2398,7 @@ argument_list|(
 operator|&
 name|non_gui_paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 literal|0
 argument_list|)
@@ -2441,7 +2448,7 @@ argument_list|(
 operator|&
 name|non_gui_paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|)
 expr_stmt|;
 name|non_gui_paint_core
@@ -2467,7 +2474,7 @@ argument_list|(
 operator|&
 name|non_gui_paint_core
 argument_list|,
-name|drawable_id
+name|drawable
 argument_list|,
 operator|-
 literal|1
