@@ -157,7 +157,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bf36dc20108
+DECL|struct|__anon275c5edd0108
 typedef|typedef
 struct|struct
 block|{
@@ -988,14 +988,6 @@ begin_function_decl
 name|void
 name|placechange
 parameter_list|(
-name|GtkWidget
-modifier|*
-name|wg
-parameter_list|,
-name|void
-modifier|*
-name|d
-parameter_list|,
 name|int
 name|num
 parameter_list|)
@@ -1006,14 +998,6 @@ begin_function_decl
 name|void
 name|colorchange
 parameter_list|(
-name|GtkWidget
-modifier|*
-name|wg
-parameter_list|,
-name|void
-modifier|*
-name|d
-parameter_list|,
 name|int
 name|num
 parameter_list|)

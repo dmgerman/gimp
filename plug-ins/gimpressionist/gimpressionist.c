@@ -756,10 +756,6 @@ argument_list|)
 expr_stmt|;
 name|placechange
 argument_list|(
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
 name|pcvals
 operator|.
 name|placetype
@@ -1007,10 +1003,6 @@ argument_list|)
 expr_stmt|;
 name|colorchange
 argument_list|(
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
 name|pcvals
 operator|.
 name|colortype
