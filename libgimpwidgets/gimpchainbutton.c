@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library   * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball                  *  * gimpchainbutton.c  * Copyright (C) 1999-2000 Sven Neumann<sven@gimp.org>   *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *   * This library is distributed in the hope that it will be useful,   * but WITHOUT ANY WARRANTY; without even the implied warranty of   * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU    * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpchainbutton.c  * Copyright (C) 1999-2000 Sven Neumann<sven@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0b80b10103
+DECL|enum|__anon28cbc31b0103
 block|{
 DECL|enumerator|TOGGLED
 name|TOGGLED
@@ -178,16 +178,12 @@ argument_list|(
 name|GimpChainButtonClass
 argument_list|)
 block|,
-operator|(
-name|GBaseInitFunc
-operator|)
 name|NULL
 block|,
-operator|(
-name|GBaseFinalizeFunc
-operator|)
+comment|/* base_init      */
 name|NULL
 block|,
+comment|/* base_finalize  */
 operator|(
 name|GClassInitFunc
 operator|)
@@ -431,7 +427,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_chain_button_new:  * @position: The position you are going to use for the button  *            with respect to the widgets you want to chain.  *   * Creates a new #GimpChainButton widget.  *  * This returns a button showing either a broken or a linked chain and  * small clamps attached to both sides that visually group the two widgets   * you want to connect. This widget looks best when attached  * to a table taking up two columns (or rows respectively) next  * to the widgets that it is supposed to connect. It may work  * for more than two widgets, but the look is optimized for two.  *  * Returns: Pointer to the new #GimpChainButton, which is inactive  *          by default. Use gimp_chain_button_set_active() to   *          change its state.  */
+comment|/**  * gimp_chain_button_new:  * @position: The position you are going to use for the button  *            with respect to the widgets you want to chain.  *  * Creates a new #GimpChainButton widget.  *  * This returns a button showing either a broken or a linked chain and  * small clamps attached to both sides that visually group the two widgets  * you want to connect. This widget looks best when attached  * to a table taking up two columns (or rows respectively) next  * to the widgets that it is supposed to connect. It may work  * for more than two widgets, but the look is optimized for two.  *  * Returns: Pointer to the new #GimpChainButton, which is inactive  *          by default. Use gimp_chain_button_set_active() to  *          change its state.  */
 end_comment
 
 begin_function
@@ -696,7 +692,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**   * gimp_chain_button_set_active:  * @button: Pointer to a #GimpChainButton.  * @active: The new state.  *   * Sets the state of the #GimpChainButton to be either locked (%TRUE) or   * unlocked (%FALSE) and changes the showed pixmap to reflect the new state.  */
+comment|/**  * gimp_chain_button_set_active:  * @button: Pointer to a #GimpChainButton.  * @active: The new state.  *  * Sets the state of the #GimpChainButton to be either locked (%TRUE) or  * unlocked (%FALSE) and changes the showed pixmap to reflect the new state.  */
 end_comment
 
 begin_function
@@ -786,7 +782,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_chain_button_get_active  * @button: Pointer to a #GimpChainButton.  *   * Checks the state of the #GimpChainButton.   *  * Returns: %TRUE if the #GimpChainButton is active (locked).  */
+comment|/**  * gimp_chain_button_get_active  * @button: Pointer to a #GimpChainButton.  *  * Checks the state of the #GimpChainButton.  *  * Returns: %TRUE if the #GimpChainButton is active (locked).  */
 end_comment
 
 begin_function
@@ -896,6 +892,9 @@ decl_stmt|;
 name|GtkShadowType
 name|shadow
 decl_stmt|;
+name|GimpChainPosition
+name|position
+decl_stmt|;
 name|gint
 name|which_line
 decl_stmt|;
@@ -904,7 +903,7 @@ define|#
 directive|define
 name|SHORT_LINE
 value|4
-comment|/* don't set this too high, there's no check against drawing outside       the widgets bounds yet (and probably never will be) */
+comment|/* don't set this too high, there's no check against drawing outside      the widgets bounds yet (and probably never will be) */
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_CHAIN_BUTTON
@@ -960,10 +959,47 @@ else|:
 operator|-
 literal|1
 expr_stmt|;
-switch|switch
-condition|(
+name|position
+operator|=
 name|button
 operator|->
+name|position
+expr_stmt|;
+if|if
+condition|(
+name|gtk_widget_get_direction
+argument_list|(
+name|widget
+argument_list|)
+operator|==
+name|GTK_TEXT_DIR_RTL
+condition|)
+switch|switch
+condition|(
+name|position
+condition|)
+block|{
+case|case
+name|GIMP_CHAIN_LEFT
+case|:
+name|position
+operator|=
+name|GIMP_CHAIN_RIGHT
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_CHAIN_RIGHT
+case|:
+name|position
+operator|=
+name|GIMP_CHAIN_LEFT
+expr_stmt|;
+break|break;
+default|default:
+break|break;
+block|}
+switch|switch
+condition|(
 name|position
 condition|)
 block|{
