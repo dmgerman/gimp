@@ -183,7 +183,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29fc40750103
+DECL|enum|__anon2b57a3f80103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -11730,6 +11730,9 @@ name|void
 modifier|*
 name|pr
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|COWSHOW
 name|fputc
 argument_list|(
 literal|'['
@@ -11737,6 +11740,8 @@ argument_list|,
 name|stderr
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 for|for
 control|(
 name|pr
@@ -11849,6 +11854,9 @@ name|curtile
 argument_list|)
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|COWSHOW
 name|fputc
 argument_list|(
 literal|'!'
@@ -11856,6 +11864,8 @@ argument_list|,
 name|stderr
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|tile_manager_map_over_tile
 argument_list|(
 name|dest
@@ -11874,6 +11884,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
+ifdef|#
+directive|ifdef
+name|COWSHOW
 name|fputc
 argument_list|(
 literal|'.'
@@ -11881,6 +11894,8 @@ argument_list|,
 name|stderr
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|pixelwidth
 operator|=
 name|src
@@ -11939,6 +11954,9 @@ expr_stmt|;
 block|}
 block|}
 block|}
+ifdef|#
+directive|ifdef
+name|COWSHOW
 name|fputc
 argument_list|(
 literal|']'
@@ -11953,6 +11971,8 @@ argument_list|,
 name|stderr
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 block|}
 end_function
 
