@@ -264,26 +264,6 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|init
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|quit
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|query
 parameter_list|(
 name|void
@@ -368,7 +348,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28d3e5100108
+DECL|struct|__anon2a4169930108
 typedef|typedef
 struct|struct
 block|{
@@ -415,7 +395,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28d3e5100208
+DECL|struct|__anon2a4169930208
 typedef|typedef
 struct|struct
 block|{
@@ -2934,7 +2914,7 @@ argument_list|,
 name|PLUG_IN_PRINT_NAME
 argument_list|)
 expr_stmt|;
-name|gtk_window_position
+name|gtk_window_set_position
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -3189,7 +3169,7 @@ argument_list|)
 expr_stmt|;
 name|radio_group
 operator|=
-name|gtk_radio_button_group
+name|gtk_radio_button_get_group
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(
@@ -3509,7 +3489,7 @@ argument_list|)
 expr_stmt|;
 name|radio_group
 operator|=
-name|gtk_radio_button_group
+name|gtk_radio_button_get_group
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(
