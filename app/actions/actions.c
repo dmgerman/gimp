@@ -793,7 +793,7 @@ argument_list|(
 literal|"View"
 argument_list|)
 block|,
-name|NULL
+name|GIMP_STOCK_VISIBLE
 block|,
 name|view_actions_setup
 block|,
