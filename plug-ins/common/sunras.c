@@ -75,6 +75,12 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpui.h"
+end_include
+
 begin_typedef
 DECL|typedef|FILE
 typedef|typedef
@@ -126,7 +132,7 @@ comment|/* Fileheader of SunRaster files */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27462c570108
+DECL|struct|__anon2be3944a0108
 typedef|typedef
 struct|struct
 block|{
@@ -215,7 +221,7 @@ comment|/* Runlength compression format */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27462c570208
+DECL|struct|__anon2be3944a0208
 typedef|typedef
 struct|struct
 block|{
@@ -740,6 +746,16 @@ end_comment
 
 begin_function_decl
 specifier|static
+name|void
+name|init_gtk
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|gint
 name|save_dialog
 parameter_list|(
@@ -789,17 +805,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|show_message
-parameter_list|(
-name|char
-modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -859,7 +864,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27462c570308
+DECL|struct|__anon2be3944a0308
 block|{
 DECL|member|rle
 name|gint
@@ -875,7 +880,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27462c570408
+DECL|struct|__anon2be3944a0408
 block|{
 DECL|member|run
 name|gint
@@ -1137,7 +1142,7 @@ literal|"1996"
 argument_list|,
 literal|"<Save>/SUNRAS"
 argument_list|,
-literal|"RGB*, GRAY*, INDEXED*"
+literal|"RGB, GRAY, INDEXED"
 argument_list|,
 name|PROC_PLUG_IN
 argument_list|,
@@ -1218,6 +1223,14 @@ name|STATUS_SUCCESS
 decl_stmt|;
 name|gint32
 name|image_ID
+decl_stmt|;
+name|gint32
+name|drawable_ID
+decl_stmt|;
+name|GimpExportReturnType
+name|export
+init|=
+name|EXPORT_CANCEL
 decl_stmt|;
 name|l_run_mode
 operator|=
@@ -1351,6 +1364,93 @@ operator|==
 literal|0
 condition|)
 block|{
+name|image_ID
+operator|=
+name|param
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|drawable_ID
+operator|=
+name|param
+index|[
+literal|2
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+comment|/*  eventually export the image */
+switch|switch
+condition|(
+name|run_mode
+condition|)
+block|{
+case|case
+name|RUN_INTERACTIVE
+case|:
+case|case
+name|RUN_WITH_LAST_VALS
+case|:
+name|init_gtk
+argument_list|()
+expr_stmt|;
+name|export
+operator|=
+name|gimp_export_image
+argument_list|(
+operator|&
+name|image_ID
+argument_list|,
+operator|&
+name|drawable_ID
+argument_list|,
+literal|"SUNRAS"
+argument_list|,
+operator|(
+name|CAN_HANDLE_RGB
+operator||
+name|CAN_HANDLE_GRAY
+operator||
+name|CAN_HANDLE_INDEXED
+operator|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|export
+operator|==
+name|EXPORT_CANCEL
+condition|)
+block|{
+operator|*
+name|nreturn_vals
+operator|=
+literal|1
+expr_stmt|;
+name|values
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|=
+name|STATUS_EXECUTION_ERROR
+expr_stmt|;
+return|return;
+block|}
+break|break;
+default|default:
+break|break;
+block|}
 switch|switch
 condition|(
 name|run_mode
@@ -1452,23 +1552,9 @@ name|data
 operator|.
 name|d_string
 argument_list|,
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
+name|image_ID
 argument_list|,
-name|param
-index|[
-literal|2
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
+name|drawable_ID
 argument_list|)
 condition|)
 block|{
@@ -1505,6 +1591,17 @@ operator|.
 name|d_status
 operator|=
 name|status
+expr_stmt|;
+if|if
+condition|(
+name|export
+operator|==
+name|EXPORT_EXPORT
+condition|)
+name|gimp_image_delete
+argument_list|(
+name|image_ID
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -1560,7 +1657,7 @@ operator|!
 name|ifp
 condition|)
 block|{
-name|show_message
+name|gimp_message
 argument_list|(
 literal|"can't open file for reading"
 argument_list|)
@@ -1594,7 +1691,7 @@ operator|!=
 name|RAS_MAGIC
 condition|)
 block|{
-name|show_message
+name|gimp_message
 argument_list|(
 literal|"can't open file as SUN-raster-file"
 argument_list|)
@@ -1630,7 +1727,7 @@ literal|5
 operator|)
 condition|)
 block|{
-name|show_message
+name|gimp_message
 argument_list|(
 literal|"the type of this SUN-rasterfile\nis not supported"
 argument_list|)
@@ -1688,7 +1785,7 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|show_message
+name|gimp_message
 argument_list|(
 literal|"cant get memory for colour map"
 argument_list|)
@@ -1792,7 +1889,7 @@ operator|!=
 name|RAS_MAGIC
 condition|)
 block|{
-name|show_message
+name|gimp_message
 argument_list|(
 literal|"cant read colour entries"
 argument_list|)
@@ -1820,7 +1917,7 @@ operator|>
 literal|0
 condition|)
 block|{
-name|show_message
+name|gimp_message
 argument_list|(
 literal|"type of colourmap not supported"
 argument_list|)
@@ -2009,7 +2106,7 @@ operator|-
 literal|1
 condition|)
 block|{
-name|show_message
+name|gimp_message
 argument_list|(
 literal|"this image depth is not supported"
 argument_list|)
@@ -2076,7 +2173,7 @@ name|drawable_ID
 argument_list|)
 condition|)
 block|{
-name|show_message
+name|gimp_message
 argument_list|(
 literal|"SUNRAS save cannot handle images with alpha channels"
 argument_list|)
@@ -2101,7 +2198,7 @@ name|RGB_IMAGE
 case|:
 break|break;
 default|default:
-name|show_message
+name|gimp_message
 argument_list|(
 literal|"cannot operate on unknown image types"
 argument_list|)
@@ -2129,7 +2226,7 @@ operator|!
 name|ofp
 condition|)
 block|{
-name|show_message
+name|gimp_message
 argument_list|(
 literal|"cant open file for writing"
 argument_list|)
@@ -2463,9 +2560,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|write_card32 (FILE * ofp,L_CARD32 c)
 specifier|static
 name|void
+DECL|function|write_card32 (FILE * ofp,L_CARD32 c)
 name|write_card32
 parameter_list|(
 name|FILE
@@ -2554,9 +2651,9 @@ comment|/* Convert n bytes of 0/1 to a line of bits */
 end_comment
 
 begin_function
-DECL|function|byte2bit (unsigned char * byteline,int width,unsigned char * bitline,int invert)
 specifier|static
 name|void
+DECL|function|byte2bit (unsigned char * byteline,int width,unsigned char * bitline,int invert)
 name|byte2bit
 parameter_list|(
 name|unsigned
@@ -2849,9 +2946,9 @@ comment|/* Start reading Runlength Encoded Data */
 end_comment
 
 begin_function
-DECL|function|rle_startread (FILE * ifp)
 specifier|static
 name|void
+DECL|function|rle_startread (FILE * ifp)
 name|rle_startread
 parameter_list|(
 name|FILE
@@ -2878,9 +2975,9 @@ comment|/* Read uncompressed elements from RLE-stream */
 end_comment
 
 begin_function
-DECL|function|rle_fread (char * ptr,int sz,int nelem,FILE * ifp)
 specifier|static
 name|int
+DECL|function|rle_fread (char * ptr,int sz,int nelem,FILE * ifp)
 name|rle_fread
 parameter_list|(
 name|char
@@ -2988,9 +3085,9 @@ comment|/* Get one byte of uncompressed data from RLE-stream */
 end_comment
 
 begin_function
-DECL|function|rle_fgetc (FILE * ifp)
 specifier|static
 name|int
+DECL|function|rle_fgetc (FILE * ifp)
 name|rle_fgetc
 parameter_list|(
 name|FILE
@@ -3138,9 +3235,9 @@ comment|/* Start writing Runlength Encoded Data */
 end_comment
 
 begin_function
-DECL|function|rle_startwrite (FILE * ofp)
 specifier|static
 name|void
+DECL|function|rle_startwrite (FILE * ofp)
 name|rle_startwrite
 parameter_list|(
 name|FILE
@@ -3167,9 +3264,9 @@ comment|/* Write uncompressed elements to RLE-stream */
 end_comment
 
 begin_function
-DECL|function|rle_fwrite (char * ptr,int sz,int nelem,FILE * ofp)
 specifier|static
 name|int
+DECL|function|rle_fwrite (char * ptr,int sz,int nelem,FILE * ofp)
 name|rle_fwrite
 parameter_list|(
 name|char
@@ -3284,9 +3381,9 @@ comment|/* Write uncompressed character to RLE-stream */
 end_comment
 
 begin_function
-DECL|function|rle_fputc (int val,FILE * ofp)
 specifier|static
 name|int
+DECL|function|rle_fputc (int val,FILE * ofp)
 name|rle_fputc
 parameter_list|(
 name|int
@@ -3442,9 +3539,9 @@ comment|/* Write out a run with 0< n< 257 */
 end_comment
 
 begin_function
-DECL|function|rle_putrun (int n,int val,FILE * ofp)
 specifier|static
 name|int
+DECL|function|rle_putrun (int n,int val,FILE * ofp)
 name|rle_putrun
 parameter_list|(
 name|int
@@ -3598,9 +3695,9 @@ comment|/* End writing Runlength Encoded Data */
 end_comment
 
 begin_function
-DECL|function|rle_endwrite (FILE * ofp)
 specifier|static
 name|void
+DECL|function|rle_endwrite (FILE * ofp)
 name|rle_endwrite
 parameter_list|(
 name|FILE
@@ -4869,7 +4966,7 @@ if|if
 condition|(
 name|err
 condition|)
-name|show_message
+name|gimp_message
 argument_list|(
 literal|"EOF encountered on reading"
 argument_list|)
@@ -5343,7 +5440,7 @@ if|if
 condition|(
 name|err
 condition|)
-name|show_message
+name|gimp_message
 argument_list|(
 literal|"EOF encountered on reading"
 argument_list|)
@@ -5780,7 +5877,7 @@ if|if
 condition|(
 name|err
 condition|)
-name|show_message
+name|gimp_message
 argument_list|(
 literal|"EOF encountered on reading"
 argument_list|)
@@ -6262,7 +6359,7 @@ if|if
 condition|(
 name|err
 condition|)
-name|show_message
+name|gimp_message
 argument_list|(
 literal|"EOF encountered on reading"
 argument_list|)
@@ -7151,7 +7248,7 @@ name|ofp
 argument_list|)
 condition|)
 block|{
-name|show_message
+name|gimp_message
 argument_list|(
 literal|"write error occured"
 argument_list|)
@@ -7751,7 +7848,7 @@ name|ofp
 argument_list|)
 condition|)
 block|{
-name|show_message
+name|gimp_message
 argument_list|(
 literal|"write error occured"
 argument_list|)
@@ -7776,6 +7873,63 @@ end_function
 begin_comment
 comment|/*  Save interface functions  */
 end_comment
+
+begin_function
+specifier|static
+name|void
+DECL|function|init_gtk ()
+name|init_gtk
+parameter_list|()
+block|{
+name|gchar
+modifier|*
+modifier|*
+name|argv
+decl_stmt|;
+name|gint
+name|argc
+decl_stmt|;
+name|argc
+operator|=
+literal|1
+expr_stmt|;
+name|argv
+operator|=
+name|g_new
+argument_list|(
+name|gchar
+operator|*
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+name|argv
+index|[
+literal|0
+index|]
+operator|=
+name|g_strdup
+argument_list|(
+literal|"sunras"
+argument_list|)
+expr_stmt|;
+name|gtk_init
+argument_list|(
+operator|&
+name|argc
+argument_list|,
+operator|&
+name|argv
+argument_list|)
+expr_stmt|;
+name|gtk_rc_parse
+argument_list|(
+name|gimp_gtkrc
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
+end_function
 
 begin_function
 specifier|static
@@ -7810,14 +7964,6 @@ name|GSList
 modifier|*
 name|group
 decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
 name|gint
 name|use_rle
 init|=
@@ -7840,45 +7986,6 @@ operator|==
 name|FALSE
 operator|)
 decl_stmt|;
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-operator|*
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
-argument_list|(
-literal|"save"
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
-argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
-argument_list|)
-expr_stmt|;
 name|dlg
 operator|=
 name|gtk_dialog_new
@@ -8408,56 +8515,10 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/* Show a message. Where to show it, depends on the runmode */
-end_comment
-
 begin_function
-DECL|function|show_message (char * message)
-specifier|static
-name|void
-name|show_message
-parameter_list|(
-name|char
-modifier|*
-name|message
-parameter_list|)
-block|{
-ifdef|#
-directive|ifdef
-name|Simple_Message_Box_Available
-comment|/* If there would be a simple message box like the one */
-comment|/* used in ../app/interface.h, I would like to use it. */
-if|if
-condition|(
-name|l_run_mode
-operator|==
-name|RUN_INTERACTIVE
-condition|)
-name|gtk_message_box
-argument_list|(
-name|message
-argument_list|)
-expr_stmt|;
-else|else
-endif|#
-directive|endif
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"sunras: %s\n"
-argument_list|,
-name|message
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-DECL|function|my_fwrite (void * ptr,int size,int nmemb,FILE * stream)
 specifier|static
 name|int
+DECL|function|my_fwrite (void * ptr,int size,int nmemb,FILE * stream)
 name|my_fwrite
 parameter_list|(
 name|void

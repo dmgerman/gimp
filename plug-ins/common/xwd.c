@@ -66,7 +66,19 @@ end_endif
 begin_include
 include|#
 directive|include
+file|"gtk/gtk.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpui.h"
 end_include
 
 begin_include
@@ -103,7 +115,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2adf0aca0108
+DECL|struct|__anon2b20c1650108
 typedef|typedef
 struct|struct
 block|{
@@ -237,7 +249,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2adf0aca0208
+DECL|struct|__anon2b20c1650208
 typedef|typedef
 struct|struct
 block|{
@@ -295,7 +307,7 @@ value|((1<< MAPPERBITS)-1)
 end_define
 
 begin_typedef
-DECL|struct|__anon2adf0aca0308
+DECL|struct|__anon2b20c1650308
 typedef|typedef
 struct|struct
 block|{
@@ -321,7 +333,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2adf0aca0408
+DECL|struct|__anon2b20c1650408
 typedef|typedef
 struct|struct
 block|{
@@ -417,6 +429,16 @@ name|GParam
 modifier|*
 modifier|*
 name|return_vals
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|init_gtk
+parameter_list|(
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -827,17 +849,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|show_message
-parameter_list|(
-name|char
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_decl_stmt
 DECL|variable|read_msb_first
 specifier|static
@@ -1181,6 +1192,14 @@ decl_stmt|;
 name|gint32
 name|image_ID
 decl_stmt|;
+name|gint32
+name|drawable_ID
+decl_stmt|;
+name|GimpExportReturnType
+name|export
+init|=
+name|EXPORT_CANCEL
+decl_stmt|;
 name|int
 name|ev
 decl_stmt|;
@@ -1322,6 +1341,95 @@ block|{
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
+name|image_ID
+operator|=
+name|param
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|drawable_ID
+operator|=
+name|param
+index|[
+literal|2
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+comment|/*  eventually export the image */
+switch|switch
+condition|(
+name|run_mode
+condition|)
+block|{
+case|case
+name|RUN_INTERACTIVE
+case|:
+case|case
+name|RUN_WITH_LAST_VALS
+case|:
+name|init_gtk
+argument_list|()
+expr_stmt|;
+name|export
+operator|=
+name|gimp_export_image
+argument_list|(
+operator|&
+name|image_ID
+argument_list|,
+operator|&
+name|drawable_ID
+argument_list|,
+literal|"XWD"
+argument_list|,
+operator|(
+name|CAN_HANDLE_RGB
+operator||
+name|CAN_HANDLE_GRAY
+operator||
+name|CAN_HANDLE_INDEXED
+operator||
+name|CAN_HANDLE_ALPHA
+operator|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|export
+operator|==
+name|EXPORT_CANCEL
+condition|)
+block|{
+operator|*
+name|nreturn_vals
+operator|=
+literal|1
+expr_stmt|;
+name|values
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|=
+name|STATUS_EXECUTION_ERROR
+expr_stmt|;
+return|return;
+block|}
+break|break;
+default|default:
+break|break;
+block|}
 switch|switch
 condition|(
 name|run_mode
@@ -1373,23 +1481,9 @@ name|data
 operator|.
 name|d_string
 argument_list|,
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
+name|image_ID
 argument_list|,
-name|param
-index|[
-literal|2
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
+name|drawable_ID
 argument_list|)
 expr_stmt|;
 name|status
@@ -1412,7 +1506,75 @@ name|d_status
 operator|=
 name|status
 expr_stmt|;
+if|if
+condition|(
+name|export
+operator|==
+name|EXPORT_EXPORT
+condition|)
+name|gimp_image_delete
+argument_list|(
+name|image_ID
+argument_list|)
+expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|init_gtk ()
+name|init_gtk
+parameter_list|()
+block|{
+name|gchar
+modifier|*
+modifier|*
+name|argv
+decl_stmt|;
+name|gint
+name|argc
+decl_stmt|;
+name|argc
+operator|=
+literal|1
+expr_stmt|;
+name|argv
+operator|=
+name|g_new
+argument_list|(
+name|gchar
+operator|*
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+name|argv
+index|[
+literal|0
+index|]
+operator|=
+name|g_strdup
+argument_list|(
+literal|"xwd"
+argument_list|)
+expr_stmt|;
+name|gtk_init
+argument_list|(
+operator|&
+name|argc
+argument_list|,
+operator|&
+name|argv
+argument_list|)
+expr_stmt|;
+name|gtk_rc_parse
+argument_list|(
+name|gimp_gtkrc
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -1467,7 +1629,7 @@ operator|!
 name|ifp
 condition|)
 block|{
-name|show_message
+name|gimp_message
 argument_list|(
 name|_
 argument_list|(
@@ -1535,7 +1697,7 @@ operator|!=
 literal|7
 condition|)
 block|{
-name|show_message
+name|gimp_message
 argument_list|(
 name|_
 argument_list|(
@@ -1605,7 +1767,7 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|show_message
+name|gimp_message
 argument_list|(
 name|_
 argument_list|(
@@ -1731,7 +1893,7 @@ operator|!=
 literal|7
 condition|)
 block|{
-name|show_message
+name|gimp_message
 argument_list|(
 name|_
 argument_list|(
@@ -2075,7 +2237,7 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|show_message
+name|gimp_message
 argument_list|(
 name|_
 argument_list|(
@@ -2109,7 +2271,7 @@ argument_list|,
 name|bpp
 argument_list|)
 expr_stmt|;
-name|show_message
+name|gimp_message
 argument_list|(
 name|temp
 argument_list|)
@@ -2182,7 +2344,7 @@ name|drawable_ID
 argument_list|)
 condition|)
 block|{
-name|show_message
+name|gimp_message
 argument_list|(
 name|_
 argument_list|(
@@ -2210,7 +2372,7 @@ name|RGB_IMAGE
 case|:
 break|break;
 default|default:
-name|show_message
+name|gimp_message
 argument_list|(
 name|_
 argument_list|(
@@ -2241,7 +2403,7 @@ operator|!
 name|ofp
 condition|)
 block|{
-name|show_message
+name|gimp_message
 argument_list|(
 name|_
 argument_list|(
@@ -2373,9 +2535,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|read_card32 (FILE * ifp,int * err)
 specifier|static
 name|L_CARD32
+DECL|function|read_card32 (FILE * ifp,int * err)
 name|read_card32
 parameter_list|(
 name|FILE
@@ -2560,9 +2722,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|read_card16 (FILE * ifp,int * err)
 specifier|static
 name|L_CARD16
+DECL|function|read_card16 (FILE * ifp,int * err)
 name|read_card16
 parameter_list|(
 name|FILE
@@ -2675,9 +2837,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|read_card8 (FILE * ifp,int * err)
 specifier|static
 name|L_CARD8
+DECL|function|read_card8 (FILE * ifp,int * err)
 name|read_card8
 parameter_list|(
 name|FILE
@@ -2728,9 +2890,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|write_card32 (FILE * ofp,L_CARD32 c)
 specifier|static
 name|void
+DECL|function|write_card32 (FILE * ofp,L_CARD32 c)
 name|write_card32
 parameter_list|(
 name|FILE
@@ -2815,9 +2977,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|write_card16 (FILE * ofp,L_CARD32 c)
 specifier|static
 name|void
+DECL|function|write_card16 (FILE * ofp,L_CARD32 c)
 name|write_card16
 parameter_list|(
 name|FILE
@@ -2866,9 +3028,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|write_card8 (FILE * ofp,L_CARD32 c)
 specifier|static
 name|void
+DECL|function|write_card8 (FILE * ofp,L_CARD32 c)
 name|write_card8
 parameter_list|(
 name|FILE
@@ -3282,8 +3444,6 @@ operator|&
 name|err
 argument_list|)
 expr_stmt|;
-comment|/* WindowMaker at 24bpp seems to insert a bogus value here.. we don't     * use flags, so just ignore it     */
-comment|/* if (colormap[j].l_flags> 7)      flag_is_bad++; */
 if|if
 condition|(
 name|indexed
@@ -3469,7 +3629,6 @@ operator|&
 name|err
 argument_list|)
 expr_stmt|;
-comment|/* if ((colormap[j].l_flags == 0) || (colormap[j].l_flags> 7))      flag_is_bad++; */
 if|if
 condition|(
 name|indexed
@@ -3655,7 +3814,7 @@ operator|&
 name|err
 argument_list|)
 expr_stmt|;
-comment|/* if ((colormap[j].l_flags == 0) || (colormap[j].l_flags> 7))      flag_is_bad++; */
+comment|/* if ((colormap[j].l_flags == 0) || (colormap[j].l_flags> 7)) 	 flag_is_bad++; */
 if|if
 condition|(
 name|indexed
@@ -3881,7 +4040,6 @@ operator|&
 name|err
 argument_list|)
 expr_stmt|;
-comment|/* if ((colormap[j].l_flags == 0) || (colormap[j].l_flags> 7))      flag_is_bad++; */
 if|if
 condition|(
 name|indexed
@@ -4752,9 +4910,9 @@ comment|/* pixelval was not found in map. Returns 1 if found. */
 end_comment
 
 begin_function
-DECL|function|get_pixelmap (L_CARD32 pixelval,PIXEL_MAP * pixelmap,unsigned char * red,unsigned char * green,unsigned char * blue)
 specifier|static
 name|int
+DECL|function|get_pixelmap (L_CARD32 pixelval,PIXEL_MAP * pixelmap,unsigned char * red,unsigned char * green,unsigned char * blue)
 name|get_pixelmap
 parameter_list|(
 name|L_CARD32
@@ -4938,9 +5096,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|set_bw_color_table (gint32 image_ID)
 specifier|static
 name|void
+DECL|function|set_bw_color_table (gint32 image_ID)
 name|set_bw_color_table
 parameter_list|(
 name|gint32
@@ -4994,9 +5152,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|set_color_table (gint32 image_ID,L_XWDFILEHEADER * xwdhdr,L_XWDCOLOR * xwdcolmap)
 specifier|static
 name|void
+DECL|function|set_color_table (gint32 image_ID,L_XWDFILEHEADER * xwdhdr,L_XWDCOLOR * xwdcolmap)
 name|set_color_table
 parameter_list|(
 name|gint32
@@ -6175,7 +6333,7 @@ if|if
 condition|(
 name|err
 condition|)
-name|show_message
+name|gimp_message
 argument_list|(
 name|_
 argument_list|(
@@ -6675,7 +6833,7 @@ if|if
 condition|(
 name|err
 condition|)
-name|show_message
+name|gimp_message
 argument_list|(
 name|_
 argument_list|(
@@ -6914,7 +7072,7 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|show_message
+name|gimp_message
 argument_list|(
 name|_
 argument_list|(
@@ -7612,7 +7770,7 @@ if|if
 condition|(
 name|err
 condition|)
-name|show_message
+name|gimp_message
 argument_list|(
 name|_
 argument_list|(
@@ -8807,7 +8965,7 @@ if|if
 condition|(
 name|err
 condition|)
-name|show_message
+name|gimp_message
 argument_list|(
 name|_
 argument_list|(
@@ -10219,7 +10377,7 @@ if|if
 condition|(
 name|err
 condition|)
-name|show_message
+name|gimp_message
 argument_list|(
 name|_
 argument_list|(
@@ -10967,7 +11125,7 @@ name|ofp
 argument_list|)
 condition|)
 block|{
-name|show_message
+name|gimp_message
 argument_list|(
 name|_
 argument_list|(
@@ -11465,7 +11623,7 @@ name|ofp
 argument_list|)
 condition|)
 block|{
-name|show_message
+name|gimp_message
 argument_list|(
 name|_
 argument_list|(
@@ -11484,47 +11642,6 @@ operator|(
 name|TRUE
 operator|)
 return|;
-block|}
-end_function
-
-begin_comment
-comment|/* Show a message. Where to show it, depends on the runmode */
-end_comment
-
-begin_function
-DECL|function|show_message (char * message)
-specifier|static
-name|void
-name|show_message
-parameter_list|(
-name|char
-modifier|*
-name|message
-parameter_list|)
-block|{
-comment|/* If there would be a simple message box like the one */
-comment|/* used in ../app/interface.h, I would like to use it. */
-if|if
-condition|(
-name|l_run_mode
-operator|==
-name|RUN_INTERACTIVE
-condition|)
-name|g_warning
-argument_list|(
-name|message
-argument_list|)
-expr_stmt|;
-else|else
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"xwd: %s\n"
-argument_list|,
-name|message
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
