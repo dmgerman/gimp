@@ -334,7 +334,7 @@ comment|/* Gradient segment type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2921dbfe0103
+DECL|enum|__anon2ac4b6ba0103
 typedef|typedef
 enum|enum
 block|{
@@ -361,7 +361,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2921dbfe0203
+DECL|enum|__anon2ac4b6ba0203
 typedef|typedef
 enum|enum
 block|{
@@ -506,7 +506,7 @@ comment|/* Gradient editor type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2921dbfe0303
+DECL|enum|__anon2ac4b6ba0303
 typedef|typedef
 enum|enum
 block|{
@@ -530,7 +530,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2921dbfe0408
+DECL|struct|__anon2ac4b6ba0408
 typedef|typedef
 struct|struct
 block|{
@@ -810,7 +810,7 @@ name|int
 name|replicate_times
 decl_stmt|;
 comment|/* Saved colors */
-DECL|struct|__anon2921dbfe0508
+DECL|struct|__anon2ac4b6ba0508
 struct|struct
 block|{
 DECL|member|r
@@ -8308,7 +8308,7 @@ name|fprintf
 argument_list|(
 name|file
 argument_list|,
-literal|"/* http://www.xcf.berkeley.edu/~gimp  */\n"
+literal|"/* http://www.gimp.org/               */\n"
 argument_list|)
 expr_stmt|;
 name|fprintf
