@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e333330103
+DECL|enum|__anon29e6f3d80103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -58,7 +58,31 @@ end_enum
 begin_function_decl
 specifier|static
 name|void
-name|parasite_list_destroy
+name|gimp_parasite_list_class_init
+parameter_list|(
+name|GimpParasiteListClass
+modifier|*
+name|klass
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_parasite_list_init
+parameter_list|(
+name|GimpParasiteList
+modifier|*
+name|list
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_parasite_list_destroy
 parameter_list|(
 name|GtkObject
 modifier|*
@@ -69,31 +93,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
-name|parasite_list_init
-parameter_list|(
-name|ParasiteList
-modifier|*
-name|list
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|parasite_list_class_init
-parameter_list|(
-name|ParasiteListClass
-modifier|*
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|int
+name|gint
 name|free_a_parasite
 parameter_list|(
 name|gpointer
@@ -126,30 +126,10 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|parasite_list_init (ParasiteList * list)
-name|parasite_list_init
+DECL|function|gimp_parasite_list_class_init (GimpParasiteListClass * klass)
+name|gimp_parasite_list_class_init
 parameter_list|(
-name|ParasiteList
-modifier|*
-name|list
-parameter_list|)
-block|{
-name|list
-operator|->
-name|table
-operator|=
-name|NULL
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|parasite_list_class_init (ParasiteListClass * klass)
-name|parasite_list_class_init
-parameter_list|(
-name|ParasiteListClass
+name|GimpParasiteListClass
 modifier|*
 name|klass
 parameter_list|)
@@ -183,7 +163,7 @@ name|type
 argument_list|,
 name|GTK_SIGNAL_OFFSET
 argument_list|(
-name|ParasiteListClass
+name|GimpParasiteListClass
 argument_list|,
 name|add
 argument_list|)
@@ -214,7 +194,7 @@ name|type
 argument_list|,
 name|GTK_SIGNAL_OFFSET
 argument_list|(
-name|ParasiteListClass
+name|GimpParasiteListClass
 argument_list|,
 name|remove
 argument_list|)
@@ -241,7 +221,7 @@ name|object_class
 operator|->
 name|destroy
 operator|=
-name|parasite_list_destroy
+name|gimp_parasite_list_destroy
 expr_stmt|;
 name|klass
 operator|->
@@ -259,9 +239,29 @@ block|}
 end_function
 
 begin_function
+specifier|static
+name|void
+DECL|function|gimp_parasite_list_init (GimpParasiteList * list)
+name|gimp_parasite_list_init
+parameter_list|(
+name|GimpParasiteList
+modifier|*
+name|list
+parameter_list|)
+block|{
+name|list
+operator|->
+name|table
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 name|GtkType
-DECL|function|parasite_list_get_type (void)
-name|parasite_list_get_type
+DECL|function|gimp_parasite_list_get_type (void)
+name|gimp_parasite_list_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -282,27 +282,27 @@ name|GtkTypeInfo
 name|info
 init|=
 block|{
-literal|"ParasiteList"
+literal|"GimpParasiteList"
 block|,
 sizeof|sizeof
 argument_list|(
-name|ParasiteList
+name|GimpParasiteList
 argument_list|)
 block|,
 sizeof|sizeof
 argument_list|(
-name|ParasiteListClass
+name|GimpParasiteListClass
 argument_list|)
 block|,
 operator|(
 name|GtkClassInitFunc
 operator|)
-name|parasite_list_class_init
+name|gimp_parasite_list_class_init
 block|,
 operator|(
 name|GtkObjectInitFunc
 operator|)
-name|parasite_list_init
+name|gimp_parasite_list_init
 block|,
 name|NULL
 block|,
@@ -332,15 +332,15 @@ block|}
 end_function
 
 begin_function
-name|ParasiteList
+name|GimpParasiteList
 modifier|*
-DECL|function|parasite_list_new (void)
-name|parasite_list_new
+DECL|function|gimp_parasite_list_new (void)
+name|gimp_parasite_list_new
 parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|ParasiteList
+name|GimpParasiteList
 modifier|*
 name|list
 init|=
@@ -350,10 +350,11 @@ name|GIMP_TYPE_PARASITE_LIST
 argument_list|)
 decl_stmt|;
 name|list
-operator|->
-name|table
 operator|=
-name|NULL
+name|gtk_type_new
+argument_list|(
+name|GIMP_TYPE_PARASITE_LIST
+argument_list|)
 expr_stmt|;
 return|return
 name|list
@@ -398,21 +399,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|parasite_list_destroy (GtkObject * obj)
-name|parasite_list_destroy
+DECL|function|gimp_parasite_list_destroy (GtkObject * object)
+name|gimp_parasite_list_destroy
 parameter_list|(
 name|GtkObject
 modifier|*
-name|obj
+name|object
 parameter_list|)
 block|{
-name|ParasiteList
+name|GimpParasiteList
 modifier|*
 name|list
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|obj
+name|object
 operator|!=
 name|NULL
 argument_list|)
@@ -421,17 +422,16 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_PARASITE_LIST
 argument_list|(
-name|obj
+name|object
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|list
 operator|=
-operator|(
-name|ParasiteList
-operator|*
-operator|)
-name|obj
+name|GIMP_PARASITE_LIST
+argument_list|(
+name|object
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -481,12 +481,12 @@ modifier|*
 name|data
 parameter_list|)
 block|{
-name|ParasiteList
+name|GimpParasiteList
 modifier|*
 name|list
 init|=
 operator|(
-name|ParasiteList
+name|GimpParasiteList
 operator|*
 operator|)
 name|data
@@ -501,7 +501,7 @@ operator|*
 operator|)
 name|p
 decl_stmt|;
-name|parasite_list_add
+name|gimp_parasite_list_add
 argument_list|(
 name|list
 argument_list|,
@@ -512,24 +512,24 @@ block|}
 end_function
 
 begin_function
-name|ParasiteList
+name|GimpParasiteList
 modifier|*
-DECL|function|parasite_list_copy (const ParasiteList * list)
-name|parasite_list_copy
+DECL|function|gimp_parasite_list_copy (const GimpParasiteList * list)
+name|gimp_parasite_list_copy
 parameter_list|(
 specifier|const
-name|ParasiteList
+name|GimpParasiteList
 modifier|*
 name|list
 parameter_list|)
 block|{
-name|ParasiteList
+name|GimpParasiteList
 modifier|*
 name|newlist
 decl_stmt|;
 name|newlist
 operator|=
-name|parasite_list_new
+name|gimp_parasite_list_new
 argument_list|()
 expr_stmt|;
 if|if
@@ -557,16 +557,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|parasite_list_add (ParasiteList * list,GimpParasite * p)
-name|parasite_list_add
+DECL|function|gimp_parasite_list_add (GimpParasiteList * list,GimpParasite * parasite)
+name|gimp_parasite_list_add
 parameter_list|(
-name|ParasiteList
+name|GimpParasiteList
 modifier|*
 name|list
 parameter_list|,
 name|GimpParasite
 modifier|*
-name|p
+name|parasite
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -597,34 +597,34 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|p
+name|parasite
 operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|p
+name|parasite
 operator|->
 name|name
 operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|parasite_list_remove
+name|gimp_parasite_list_remove
 argument_list|(
 name|list
 argument_list|,
-name|p
+name|parasite
 operator|->
 name|name
 argument_list|)
 expr_stmt|;
-name|p
+name|parasite
 operator|=
 name|gimp_parasite_copy
 argument_list|(
-name|p
+name|parasite
 argument_list|)
 expr_stmt|;
 name|g_hash_table_insert
@@ -633,11 +633,11 @@ name|list
 operator|->
 name|table
 argument_list|,
-name|p
+name|parasite
 operator|->
 name|name
 argument_list|,
-name|p
+name|parasite
 argument_list|)
 expr_stmt|;
 name|gtk_signal_emit
@@ -652,7 +652,7 @@ index|[
 name|ADD
 index|]
 argument_list|,
-name|p
+name|parasite
 argument_list|)
 expr_stmt|;
 block|}
@@ -660,10 +660,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|parasite_list_remove (ParasiteList * list,const gchar * name)
-name|parasite_list_remove
+DECL|function|gimp_parasite_list_remove (GimpParasiteList * list,const gchar * name)
+name|gimp_parasite_list_remove
 parameter_list|(
-name|ParasiteList
+name|GimpParasiteList
 modifier|*
 name|list
 parameter_list|,
@@ -675,7 +675,7 @@ parameter_list|)
 block|{
 name|GimpParasite
 modifier|*
-name|p
+name|parasite
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -691,9 +691,9 @@ operator|->
 name|table
 condition|)
 block|{
-name|p
+name|parasite
 operator|=
-name|parasite_list_find
+name|gimp_parasite_list_find
 argument_list|(
 name|list
 argument_list|,
@@ -702,7 +702,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|p
+name|parasite
 condition|)
 block|{
 name|g_hash_table_remove
@@ -726,12 +726,12 @@ index|[
 name|REMOVE
 index|]
 argument_list|,
-name|p
+name|parasite
 argument_list|)
 expr_stmt|;
 name|gimp_parasite_free
 argument_list|(
-name|p
+name|parasite
 argument_list|)
 expr_stmt|;
 block|}
@@ -741,10 +741,10 @@ end_function
 
 begin_function
 name|gint
-DECL|function|parasite_list_length (ParasiteList * list)
-name|parasite_list_length
+DECL|function|gimp_parasite_list_length (GimpParasiteList * list)
+name|gimp_parasite_list_length
 parameter_list|(
-name|ParasiteList
+name|GimpParasiteList
 modifier|*
 name|list
 parameter_list|)
@@ -818,10 +818,10 @@ end_function
 
 begin_function
 name|gint
-DECL|function|parasite_list_persistent_length (ParasiteList * list)
-name|parasite_list_persistent_length
+DECL|function|gimp_parasite_list_persistent_length (GimpParasiteList * list)
+name|gimp_parasite_list_persistent_length
 parameter_list|(
-name|ParasiteList
+name|GimpParasiteList
 modifier|*
 name|list
 parameter_list|)
@@ -850,7 +850,7 @@ condition|)
 return|return
 literal|0
 return|;
-name|parasite_list_foreach
+name|gimp_parasite_list_foreach
 argument_list|(
 name|list
 argument_list|,
@@ -871,10 +871,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|parasite_list_foreach (ParasiteList * list,GHFunc function,gpointer user_data)
-name|parasite_list_foreach
+DECL|function|gimp_parasite_list_foreach (GimpParasiteList * list,GHFunc function,gpointer user_data)
+name|gimp_parasite_list_foreach
 parameter_list|(
-name|ParasiteList
+name|GimpParasiteList
 modifier|*
 name|list
 parameter_list|,
@@ -917,10 +917,10 @@ end_function
 begin_function
 name|GimpParasite
 modifier|*
-DECL|function|parasite_list_find (ParasiteList * list,const gchar * name)
-name|parasite_list_find
+DECL|function|gimp_parasite_list_find (GimpParasiteList * list,const gchar * name)
+name|gimp_parasite_list_find
 parameter_list|(
-name|ParasiteList
+name|GimpParasiteList
 modifier|*
 name|list
 parameter_list|,
@@ -968,27 +968,27 @@ end_function
 
 begin_function
 name|void
-DECL|function|parasite_shift_parent (GimpParasite * p)
-name|parasite_shift_parent
+DECL|function|gimp_parasite_shift_parent (GimpParasite * parasite)
+name|gimp_parasite_shift_parent
 parameter_list|(
 name|GimpParasite
 modifier|*
-name|p
+name|parasite
 parameter_list|)
 block|{
 if|if
 condition|(
-name|p
+name|parasite
 operator|==
 name|NULL
 condition|)
 return|return;
-name|p
+name|parasite
 operator|->
 name|flags
 operator|=
 operator|(
-name|p
+name|parasite
 operator|->
 name|flags
 operator|>>

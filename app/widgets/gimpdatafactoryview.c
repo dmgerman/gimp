@@ -1699,6 +1699,13 @@ modifier|*
 name|view
 parameter_list|)
 block|{
+name|gimp_data_factory_data_save
+argument_list|(
+name|view
+operator|->
+name|factory
+argument_list|)
+expr_stmt|;
 name|gimp_data_factory_data_init
 argument_list|(
 name|view

@@ -772,7 +772,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a08a9fa0103
+DECL|enum|__anon288db5550103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -1738,7 +1738,7 @@ name|gimage
 operator|->
 name|parasites
 operator|=
-name|parasite_list_new
+name|gimp_parasite_list_new
 argument_list|()
 expr_stmt|;
 name|gimage
@@ -6321,7 +6321,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|parasite_list_find
+name|gimp_parasite_list_find
 argument_list|(
 name|gimage
 operator|->
@@ -6413,7 +6413,7 @@ expr_stmt|;
 operator|*
 name|count
 operator|=
-name|parasite_list_length
+name|gimp_parasite_list_length
 argument_list|(
 name|gimage
 operator|->
@@ -6433,7 +6433,7 @@ operator|*
 name|count
 argument_list|)
 expr_stmt|;
-name|parasite_list_foreach
+name|gimp_parasite_list_foreach
 argument_list|(
 name|gimage
 operator|->
@@ -6496,7 +6496,7 @@ name|parasite
 argument_list|)
 expr_stmt|;
 comment|/*  We used to push an cantundo on te stack here. This made the undo stack       unusable (NULL on the stack) and prevented people from undoing after a        save (since most save plug-ins attach an undoable comment parasite).       Now we simply attach the parasite without pushing an undo. That way it's       undoable but does not block the undo system.   --Sven    */
-name|parasite_list_add
+name|gimp_parasite_list_add
 argument_list|(
 name|gimage
 operator|->
@@ -6515,13 +6515,17 @@ name|GIMP_PARASITE_ATTACH_PARENT
 argument_list|)
 condition|)
 block|{
-name|parasite_shift_parent
+name|gimp_parasite_shift_parent
 argument_list|(
 name|parasite
 argument_list|)
 expr_stmt|;
 name|gimp_parasite_attach
 argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|,
 name|parasite
 argument_list|)
 expr_stmt|;
@@ -6566,7 +6570,7 @@ operator|!
 operator|(
 name|p
 operator|=
-name|parasite_list_find
+name|gimp_parasite_list_find
 argument_list|(
 name|gimage
 operator|->
@@ -6594,7 +6598,7 @@ name|p
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|parasite_list_remove
+name|gimp_parasite_list_remove
 argument_list|(
 name|gimage
 operator|->
@@ -13768,7 +13772,7 @@ argument_list|)
 operator|->
 name|parasites
 operator|=
-name|parasite_list_copy
+name|gimp_parasite_list_copy
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

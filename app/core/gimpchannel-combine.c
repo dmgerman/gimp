@@ -938,7 +938,7 @@ argument_list|)
 operator|->
 name|parasites
 operator|=
-name|parasite_list_copy
+name|gimp_parasite_list_copy
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

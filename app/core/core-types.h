@@ -33,7 +33,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6423150103
+DECL|enum|__anon29ffad040103
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -56,7 +56,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6423150203
+DECL|enum|__anon29ffad040203
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6423150303
+DECL|enum|__anon29ffad040303
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6423150403
+DECL|enum|__anon29ffad040403
 block|{
 DECL|enumerator|APPLY
 name|APPLY
@@ -142,7 +142,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6423150503
+DECL|enum|__anon29ffad040503
 block|{
 DECL|enumerator|FOREGROUND_FILL
 name|FOREGROUND_FILL
@@ -188,6 +188,15 @@ typedef|typedef
 name|struct
 name|_Gimp
 name|Gimp
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpParasiteList
+typedef|typedef
+name|struct
+name|_GimpParasiteList
+name|GimpParasiteList
 typedef|;
 end_typedef
 

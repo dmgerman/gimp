@@ -173,12 +173,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpparasite.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"plug_in.h"
 end_include
 
@@ -232,12 +226,6 @@ end_endif
 begin_comment
 comment|/* DISPLAY_FILTERS */
 end_comment
-
-begin_include
-include|#
-directive|include
-file|"gimpparasite.h"
-end_include
 
 begin_include
 include|#
@@ -538,8 +526,8 @@ name|the_gimp
 argument_list|)
 expr_stmt|;
 comment|/*  initialize the xcf file format routines */
-comment|/*  initialize the global gimp object  */
-name|gimp_initialize
+comment|/*  load all data files  */
+name|gimp_restore
 argument_list|(
 name|the_gimp
 argument_list|)
@@ -715,9 +703,6 @@ expr_stmt|;
 name|save_unitrc
 argument_list|()
 expr_stmt|;
-name|gimp_parasiterc_save
-argument_list|()
-expr_stmt|;
 name|tools_exit
 argument_list|()
 expr_stmt|;
@@ -733,6 +718,11 @@ expr_stmt|;
 block|}
 name|xcf_exit
 argument_list|()
+expr_stmt|;
+name|gimp_shutdown
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 name|gtk_object_unref
 argument_list|(

@@ -44,7 +44,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29fbfbee0103
+DECL|enum|__anon28ed127a0103
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -323,7 +323,7 @@ name|selection_mask
 decl_stmt|;
 comment|/*  the selection mask channel   */
 DECL|member|parasites
-name|ParasiteList
+name|GimpParasiteList
 modifier|*
 name|parasites
 decl_stmt|;

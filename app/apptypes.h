@@ -183,15 +183,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|ParasiteList
-typedef|typedef
-name|struct
-name|_ParasiteList
-name|ParasiteList
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|ProcArg
 typedef|typedef
 name|struct

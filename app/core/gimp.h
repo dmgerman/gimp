@@ -107,6 +107,11 @@ name|GimpContainer
 modifier|*
 name|named_buffers
 decl_stmt|;
+DECL|member|parasites
+name|GimpParasiteList
+modifier|*
+name|parasites
+decl_stmt|;
 DECL|member|brush_factory
 name|GimpDataFactory
 modifier|*
@@ -175,7 +180,18 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_initialize
+name|gimp_restore
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_shutdown
 parameter_list|(
 name|Gimp
 modifier|*

@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__PARASITE_LIST_H__
+name|__GIMP_PARASITE_LIST_H__
 end_ifndef
 
 begin_define
-DECL|macro|__PARASITE_LIST_H__
+DECL|macro|__GIMP_PARASITE_LIST_H__
 define|#
 directive|define
-name|__PARASITE_LIST_H__
+name|__GIMP_PARASITE_LIST_H__
 end_define
 
 begin_include
@@ -27,7 +27,7 @@ DECL|macro|GIMP_TYPE_PARASITE_LIST
 define|#
 directive|define
 name|GIMP_TYPE_PARASITE_LIST
-value|(parasite_list_get_type ())
+value|(gimp_parasite_list_get_type ())
 end_define
 
 begin_define
@@ -60,22 +60,22 @@ name|PARASITE_LIST_CLASS
 parameter_list|(
 name|class
 parameter_list|)
-value|GIMP_CHECK_CLASS_CAST (class, parasite_list_get_type(), ParasiteListClass)
+value|GIMP_CHECK_CLASS_CAST (class, GIMP_TYPE_PARASITE_LIST, GimpParasiteListClass)
 end_define
 
 begin_typedef
-DECL|typedef|ParasiteListClass
+DECL|typedef|GimpParasiteListClass
 typedef|typedef
 name|struct
-name|_ParasiteListClass
-name|ParasiteListClass
+name|_GimpParasiteListClass
+name|GimpParasiteListClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_ParasiteList
+DECL|struct|_GimpParasiteList
 struct|struct
-name|_ParasiteList
+name|_GimpParasiteList
 block|{
 DECL|member|object
 name|GimpObject
@@ -91,9 +91,9 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_ParasiteListClass
+DECL|struct|_GimpParasiteListClass
 struct|struct
-name|_ParasiteListClass
+name|_GimpParasiteListClass
 block|{
 DECL|member|parent_class
 name|GimpObjectClass
@@ -106,7 +106,7 @@ modifier|*
 name|add
 function_decl|)
 parameter_list|(
-name|ParasiteList
+name|GimpParasiteList
 modifier|*
 name|list
 parameter_list|,
@@ -122,7 +122,7 @@ modifier|*
 name|remove
 function_decl|)
 parameter_list|(
-name|ParasiteList
+name|GimpParasiteList
 modifier|*
 name|list
 parameter_list|,
@@ -135,13 +135,9 @@ block|}
 struct|;
 end_struct
 
-begin_comment
-comment|/* function declarations */
-end_comment
-
 begin_function_decl
 name|GtkType
-name|parasite_list_get_type
+name|gimp_parasite_list_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -149,9 +145,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|ParasiteList
+name|GimpParasiteList
 modifier|*
-name|parasite_list_new
+name|gimp_parasite_list_new
 parameter_list|(
 name|void
 parameter_list|)
@@ -159,12 +155,12 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|ParasiteList
+name|GimpParasiteList
 modifier|*
-name|parasite_list_copy
+name|gimp_parasite_list_copy
 parameter_list|(
 specifier|const
-name|ParasiteList
+name|GimpParasiteList
 modifier|*
 name|list
 parameter_list|)
@@ -173,9 +169,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|parasite_list_add
+name|gimp_parasite_list_add
 parameter_list|(
-name|ParasiteList
+name|GimpParasiteList
 modifier|*
 name|list
 parameter_list|,
@@ -188,9 +184,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|parasite_list_remove
+name|gimp_parasite_list_remove
 parameter_list|(
-name|ParasiteList
+name|GimpParasiteList
 modifier|*
 name|list
 parameter_list|,
@@ -204,9 +200,9 @@ end_function_decl
 
 begin_function_decl
 name|gint
-name|parasite_list_length
+name|gimp_parasite_list_length
 parameter_list|(
-name|ParasiteList
+name|GimpParasiteList
 modifier|*
 name|list
 parameter_list|)
@@ -215,9 +211,9 @@ end_function_decl
 
 begin_function_decl
 name|gint
-name|parasite_list_persistent_length
+name|gimp_parasite_list_persistent_length
 parameter_list|(
-name|ParasiteList
+name|GimpParasiteList
 modifier|*
 name|list
 parameter_list|)
@@ -226,9 +222,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|parasite_list_foreach
+name|gimp_parasite_list_foreach
 parameter_list|(
-name|ParasiteList
+name|GimpParasiteList
 modifier|*
 name|list
 parameter_list|,
@@ -244,9 +240,9 @@ end_function_decl
 begin_function_decl
 name|GimpParasite
 modifier|*
-name|parasite_list_find
+name|gimp_parasite_list_find
 parameter_list|(
-name|ParasiteList
+name|GimpParasiteList
 modifier|*
 name|list
 parameter_list|,
@@ -260,7 +256,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|parasite_shift_parent
+name|gimp_parasite_shift_parent
 parameter_list|(
 name|GimpParasite
 modifier|*
@@ -275,7 +271,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __PARASITE_LIST_H__  */
+comment|/*  __GIMP_PARASITE_LIST_H__  */
 end_comment
 
 end_unit

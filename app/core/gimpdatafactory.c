@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"datafiles.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdata.h"
 end_include
 
@@ -55,6 +49,12 @@ begin_include
 include|#
 directive|include
 file|"gimpmarshal.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"datafiles.h"
 end_include
 
 begin_include
@@ -514,6 +514,7 @@ name|factory
 parameter_list|,
 name|gboolean
 name|no_data
+comment|/* FIXME */
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -799,11 +800,6 @@ argument_list|(
 name|factory
 operator|->
 name|container
-argument_list|)
-expr_stmt|;
-name|gimp_data_factory_data_save
-argument_list|(
-name|factory
 argument_list|)
 expr_stmt|;
 while|while

@@ -1068,7 +1068,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|parasite_list_length
+name|gimp_parasite_list_length
 argument_list|(
 name|gimage
 operator|->
@@ -1385,7 +1385,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|parasite_list_length
+name|gimp_parasite_list_length
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1574,7 +1574,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|parasite_list_length
+name|gimp_parasite_list_length
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -3525,7 +3525,7 @@ case|case
 name|PROP_RESOLUTION
 case|:
 block|{
-name|float
+name|gfloat
 name|xresolution
 decl_stmt|,
 name|yresolution
@@ -3703,7 +3703,7 @@ case|case
 name|PROP_PARASITES
 case|:
 block|{
-name|ParasiteList
+name|GimpParasiteList
 modifier|*
 name|list
 decl_stmt|;
@@ -3721,13 +3721,13 @@ name|va_arg
 argument_list|(
 name|args
 argument_list|,
-name|ParasiteList
+name|GimpParasiteList
 operator|*
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|parasite_list_persistent_length
+name|gimp_parasite_list_persistent_length
 argument_list|(
 name|list
 argument_list|)
@@ -3787,7 +3787,7 @@ name|info
 operator|->
 name|cp
 expr_stmt|;
-name|parasite_list_foreach
+name|gimp_parasite_list_foreach
 argument_list|(
 name|list
 argument_list|,

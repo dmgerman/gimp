@@ -144,6 +144,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"app_procs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"drawable.h"
 end_include
 
@@ -245,7 +251,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276dd8bc0103
+DECL|enum|__anon275cc42d0103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -10870,7 +10876,7 @@ if|if
 condition|(
 name|tmp
 condition|)
-name|parasite_list_add
+name|gimp_parasite_list_add
 argument_list|(
 name|data
 operator|->
@@ -10882,7 +10888,7 @@ name|tmp
 argument_list|)
 expr_stmt|;
 else|else
-name|parasite_list_remove
+name|gimp_parasite_list_remove
 argument_list|(
 name|data
 operator|->
@@ -10926,7 +10932,7 @@ if|if
 condition|(
 name|tmp
 condition|)
-name|parasite_list_add
+name|gimp_parasite_list_add
 argument_list|(
 name|data
 operator|->
@@ -10938,7 +10944,7 @@ name|tmp
 argument_list|)
 expr_stmt|;
 else|else
-name|parasite_list_remove
+name|gimp_parasite_list_remove
 argument_list|(
 name|data
 operator|->
@@ -10962,6 +10968,10 @@ name|gimp_parasite_copy
 argument_list|(
 name|gimp_parasite_find
 argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|,
 name|data
 operator|->
 name|name
@@ -10974,12 +10984,20 @@ name|tmp
 condition|)
 name|gimp_parasite_attach
 argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|,
 name|tmp
 argument_list|)
 expr_stmt|;
 else|else
 name|gimp_parasite_detach
 argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|,
 name|data
 operator|->
 name|name

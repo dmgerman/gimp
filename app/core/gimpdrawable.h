@@ -151,7 +151,7 @@ name|has_alpha
 decl_stmt|;
 comment|/* drawable has alpha             */
 DECL|member|parasites
-name|ParasiteList
+name|GimpParasiteList
 modifier|*
 name|parasites
 decl_stmt|;

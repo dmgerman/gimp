@@ -539,6 +539,11 @@ name|named_buffers
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_parasites_init
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
 name|gimp
 operator|->
 name|brush_factory
@@ -945,6 +950,11 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+name|gimp_parasites_exit
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimp
@@ -1064,8 +1074,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_initialize (Gimp * gimp)
-name|gimp_initialize
+DECL|function|gimp_restore (Gimp * gimp)
+name|gimp_restore
 parameter_list|(
 name|Gimp
 modifier|*
@@ -1103,8 +1113,10 @@ argument_list|,
 literal|0.00
 argument_list|)
 expr_stmt|;
-name|gimp_init_parasites
-argument_list|()
+name|gimp_parasiterc_load
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 comment|/*  initialize the list of gimp brushes    */
 name|app_init_update_status
@@ -1201,6 +1213,52 @@ argument_list|,
 name|NULL
 argument_list|,
 literal|1.00
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_shutdown (Gimp * gimp)
+name|gimp_shutdown
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+block|{
+name|gimp_data_factory_data_save
+argument_list|(
+name|gimp
+operator|->
+name|brush_factory
+argument_list|)
+expr_stmt|;
+name|gimp_data_factory_data_save
+argument_list|(
+name|gimp
+operator|->
+name|pattern_factory
+argument_list|)
+expr_stmt|;
+name|gimp_data_factory_data_save
+argument_list|(
+name|gimp
+operator|->
+name|gradient_factory
+argument_list|)
+expr_stmt|;
+name|gimp_data_factory_data_save
+argument_list|(
+name|gimp
+operator|->
+name|palette_factory
+argument_list|)
+expr_stmt|;
+name|gimp_parasiterc_save
+argument_list|(
+name|gimp
 argument_list|)
 expr_stmt|;
 block|}

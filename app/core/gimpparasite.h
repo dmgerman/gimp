@@ -18,9 +18,22 @@ end_define
 
 begin_function_decl
 name|void
-name|gimp_init_parasites
+name|gimp_parasites_init
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
+name|gimp_parasites_exit
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -29,6 +42,10 @@ begin_function_decl
 name|void
 name|gimp_parasite_attach
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GimpParasite
 modifier|*
 name|parasite
@@ -40,6 +57,10 @@ begin_function_decl
 name|void
 name|gimp_parasite_detach
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -53,6 +74,10 @@ name|GimpParasite
 modifier|*
 name|gimp_parasite_find
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -67,6 +92,10 @@ modifier|*
 modifier|*
 name|gimp_parasite_list
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|gint
 modifier|*
 name|count
@@ -76,18 +105,22 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_parasiterc_save
+name|gimp_parasiterc_load
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_parasiterc_load
+name|gimp_parasiterc_save
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl

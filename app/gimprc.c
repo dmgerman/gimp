@@ -276,7 +276,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0d65c20103
+DECL|enum|__anon289bbc9e0103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -12838,6 +12838,8 @@ argument_list|)
 expr_stmt|;
 name|gimp_parasite_attach
 argument_list|(
+name|the_gimp
+argument_list|,
 name|parasite
 argument_list|)
 expr_stmt|;

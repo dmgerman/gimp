@@ -217,7 +217,7 @@ name|floating_sel_drawable
 init|=
 name|NULL
 decl_stmt|;
-name|ParasiteList
+name|GimpParasiteList
 modifier|*
 name|parasites
 decl_stmt|;
@@ -934,7 +934,7 @@ name|new_gimage
 operator|->
 name|parasites
 operator|=
-name|parasite_list_copy
+name|gimp_parasite_list_copy
 argument_list|(
 name|parasites
 argument_list|)

@@ -135,7 +135,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29df8d1e0103
+DECL|enum|__anon2c591f110103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -1593,7 +1593,7 @@ argument_list|)
 operator|->
 name|parasites
 operator|=
-name|parasite_list_copy
+name|gimp_parasite_list_copy
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3af3a90103
+DECL|enum|__anon27c1c06e0103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -610,7 +610,7 @@ name|drawable
 operator|->
 name|parasites
 operator|=
-name|parasite_list_new
+name|gimp_parasite_list_new
 argument_list|()
 expr_stmt|;
 name|drawable
@@ -2803,7 +2803,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|parasite_list_find
+name|gimp_parasite_list_find
 argument_list|(
 name|drawable
 operator|->
@@ -2913,7 +2913,7 @@ expr_stmt|;
 operator|*
 name|count
 operator|=
-name|parasite_list_length
+name|gimp_parasite_list_length
 argument_list|(
 name|drawable
 operator|->
@@ -2933,7 +2933,7 @@ operator|*
 name|count
 argument_list|)
 expr_stmt|;
-name|parasite_list_foreach
+name|gimp_parasite_list_foreach
 argument_list|(
 name|drawable
 operator|->
@@ -3045,7 +3045,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|parasite_list_add
+name|gimp_parasite_list_add
 argument_list|(
 name|drawable
 operator|->
@@ -3064,7 +3064,7 @@ name|GIMP_PARASITE_ATTACH_PARENT
 argument_list|)
 condition|)
 block|{
-name|parasite_shift_parent
+name|gimp_parasite_shift_parent
 argument_list|(
 name|parasite
 argument_list|)
@@ -3090,18 +3090,24 @@ name|GIMP_PARASITE_ATTACH_GRANDPARENT
 argument_list|)
 condition|)
 block|{
-name|parasite_shift_parent
+name|gimp_parasite_shift_parent
 argument_list|(
 name|parasite
 argument_list|)
 expr_stmt|;
-name|parasite_shift_parent
+name|gimp_parasite_shift_parent
 argument_list|(
 name|parasite
 argument_list|)
 expr_stmt|;
 name|gimp_parasite_attach
 argument_list|(
+name|drawable
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|,
 name|parasite
 argument_list|)
 expr_stmt|;
@@ -3158,7 +3164,7 @@ operator|!
 operator|(
 name|p
 operator|=
-name|parasite_list_find
+name|gimp_parasite_list_find
 argument_list|(
 name|drawable
 operator|->
@@ -3210,7 +3216,7 @@ literal|"detach parasite from drawable"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|parasite_list_remove
+name|gimp_parasite_list_remove
 argument_list|(
 name|drawable
 operator|->
