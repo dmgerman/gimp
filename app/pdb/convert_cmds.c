@@ -631,6 +631,17 @@ condition|(
 name|palette_name
 operator|==
 name|NULL
+operator|||
+operator|!
+name|g_utf8_validate
+argument_list|(
+name|palette_name
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+name|NULL
+argument_list|)
 condition|)
 name|success
 operator|=
