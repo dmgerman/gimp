@@ -58,6 +58,26 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|plug_in_actions_add_path
+parameter_list|(
+name|GimpActionGroup
+modifier|*
+name|group
+parameter_list|,
+name|PlugInProcDef
+modifier|*
+name|proc_def
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|menu_path
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|plug_in_actions_remove_proc
 parameter_list|(
 name|GimpActionGroup

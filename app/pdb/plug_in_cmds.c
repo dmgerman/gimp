@@ -1946,6 +1946,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
+name|gimp
+operator|->
+name|no_interface
+operator|&&
 name|proc_def
 operator|->
 name|db_info
@@ -1954,6 +1959,7 @@ name|proc_type
 operator|==
 name|GIMP_TEMPORARY
 condition|)
+block|{
 name|gimp_menus_create_entry
 argument_list|(
 name|gimp
@@ -1963,6 +1969,7 @@ argument_list|,
 name|menu_path
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
