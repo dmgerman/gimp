@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a2cf970103
+DECL|enum|__anon28b2016d0103
 block|{
 DECL|enumerator|MOVE_CURSOR
 name|MOVE_CURSOR
@@ -956,7 +956,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_container_grid_view_new (GimpContainer * container,GimpContext * context,gint preview_size,gboolean reorderable,gint min_items_x,gint min_items_y)
+DECL|function|gimp_container_grid_view_new (GimpContainer * container,GimpContext * context,gint preview_size,gint preview_border_width,gboolean reorderable)
 name|gimp_container_grid_view_new
 parameter_list|(
 name|GimpContainer
@@ -970,14 +970,11 @@ parameter_list|,
 name|gint
 name|preview_size
 parameter_list|,
+name|gint
+name|preview_border_width
+parameter_list|,
 name|gboolean
 name|reorderable
-parameter_list|,
-name|gint
-name|min_items_x
-parameter_list|,
-name|gint
-name|min_items_y
 parameter_list|)
 block|{
 name|GimpContainerGridView
@@ -1027,18 +1024,13 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|min_items_x
+name|preview_border_width
+operator|>=
+literal|0
+operator|&&
+name|preview_border_width
 operator|<=
-literal|64
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|min_items_y
-operator|<=
-literal|64
+name|GIMP_PREVIEW_MAX_BORDER_WIDTH
 argument_list|,
 name|NULL
 argument_list|)
@@ -1065,11 +1057,9 @@ name|context
 argument_list|,
 name|preview_size
 argument_list|,
+name|preview_border_width
+argument_list|,
 name|reorderable
-argument_list|,
-name|min_items_x
-argument_list|,
-name|min_items_y
 argument_list|)
 expr_stmt|;
 return|return

@@ -69,9 +69,15 @@ directive|include
 file|"gimpdnd.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimppreviewrenderer.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon2c6c847a0103
+DECL|enum|__anon2bd06b5d0103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -1287,7 +1293,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_container_view_construct (GimpContainerView * view,GimpContainer * container,GimpContext * context,gint preview_size,gboolean reorderable,gint min_items_x,gint min_items_y)
+DECL|function|gimp_container_view_construct (GimpContainerView * view,GimpContainer * container,GimpContext * context,gint preview_size,gint preview_border_width,gboolean reorderable)
 name|gimp_container_view_construct
 parameter_list|(
 name|GimpContainerView
@@ -1305,14 +1311,11 @@ parameter_list|,
 name|gint
 name|preview_size
 parameter_list|,
+name|gint
+name|preview_border_width
+parameter_list|,
 name|gboolean
 name|reorderable
-parameter_list|,
-name|gint
-name|min_items_x
-parameter_list|,
-name|gint
-name|min_items_y
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1360,16 +1363,13 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|min_items_x
+name|preview_border_width
+operator|>=
+literal|0
+operator|&&
+name|preview_border_width
 operator|<=
-literal|64
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|min_items_y
-operator|<=
-literal|64
+name|GIMP_PREVIEW_MAX_BORDER_WIDTH
 argument_list|)
 expr_stmt|;
 name|view
@@ -1387,27 +1387,8 @@ argument_list|(
 name|view
 argument_list|,
 name|preview_size
-argument_list|)
-expr_stmt|;
-name|gimp_container_view_set_size_request
-argument_list|(
-name|view
 argument_list|,
-operator|(
-name|preview_size
-operator|+
-literal|2
-operator|)
-operator|*
-name|min_items_x
-argument_list|,
-operator|(
-name|preview_size
-operator|+
-literal|2
-operator|)
-operator|*
-name|min_items_y
+name|preview_border_width
 argument_list|)
 expr_stmt|;
 if|if
@@ -1669,7 +1650,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_container_view_set_preview_size (GimpContainerView * view,gint preview_size)
+DECL|function|gimp_container_view_set_preview_size (GimpContainerView * view,gint preview_size,gint preview_border_width)
 name|gimp_container_view_set_preview_size
 parameter_list|(
 name|GimpContainerView
@@ -1678,6 +1659,9 @@ name|view
 parameter_list|,
 name|gint
 name|preview_size
+parameter_list|,
+name|gint
+name|preview_border_width
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1699,6 +1683,17 @@ operator|<=
 name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|preview_border_width
+operator|>=
+literal|0
+operator|&&
+name|preview_border_width
+operator|<=
+name|GIMP_PREVIEW_MAX_BORDER_WIDTH
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|view
@@ -1706,6 +1701,12 @@ operator|->
 name|preview_size
 operator|!=
 name|preview_size
+operator|||
+name|view
+operator|->
+name|preview_border_width
+operator|!=
+name|preview_border_width
 condition|)
 block|{
 name|view
@@ -1713,6 +1714,12 @@ operator|->
 name|preview_size
 operator|=
 name|preview_size
+expr_stmt|;
+name|view
+operator|->
+name|preview_border_width
+operator|=
+name|preview_border_width
 expr_stmt|;
 name|GIMP_CONTAINER_VIEW_GET_CLASS
 argument_list|(

@@ -75,6 +75,12 @@ directive|include
 file|"gimpmenufactory.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimppreviewrenderer.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|void
@@ -339,7 +345,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_container_editor_construct (GimpContainerEditor * editor,GimpViewType view_type,GimpContainer * container,GimpContext * context,gint preview_size,gboolean reorderable,gint min_items_x,gint min_items_y,GimpMenuFactory * menu_factory,const gchar * menu_identifier)
+DECL|function|gimp_container_editor_construct (GimpContainerEditor * editor,GimpViewType view_type,GimpContainer * container,GimpContext * context,gint preview_size,gint preview_border_width,gboolean reorderable,GimpMenuFactory * menu_factory,const gchar * menu_identifier)
 name|gimp_container_editor_construct
 parameter_list|(
 name|GimpContainerEditor
@@ -360,14 +366,11 @@ parameter_list|,
 name|gint
 name|preview_size
 parameter_list|,
+name|gint
+name|preview_border_width
+parameter_list|,
 name|gboolean
 name|reorderable
-parameter_list|,
-name|gint
-name|min_items_x
-parameter_list|,
-name|gint
-name|min_items_y
 parameter_list|,
 name|GimpMenuFactory
 modifier|*
@@ -424,18 +427,13 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|min_items_x
+name|preview_border_width
+operator|>=
+literal|0
+operator|&&
+name|preview_border_width
 operator|<=
-literal|64
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|min_items_y
-operator|<=
-literal|64
+name|GIMP_PREVIEW_MAX_BORDER_WIDTH
 argument_list|,
 name|FALSE
 argument_list|)
@@ -476,11 +474,9 @@ name|context
 argument_list|,
 name|preview_size
 argument_list|,
+name|preview_border_width
+argument_list|,
 name|reorderable
-argument_list|,
-name|min_items_x
-argument_list|,
-name|min_items_y
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -502,11 +498,9 @@ name|context
 argument_list|,
 name|preview_size
 argument_list|,
+name|preview_border_width
+argument_list|,
 name|reorderable
-argument_list|,
-name|min_items_x
-argument_list|,
-name|min_items_y
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -501,6 +501,9 @@ parameter_list|(
 name|gint
 name|preview_size
 parameter_list|,
+name|gint
+name|preview_border_width
+parameter_list|,
 name|GimpImage
 modifier|*
 name|gimage

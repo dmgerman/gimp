@@ -470,7 +470,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_data_factory_view_new (GimpViewType view_type,GimpDataFactory * factory,GimpDataEditFunc edit_func,GimpContext * context,gint preview_size,gint min_items_x,gint min_items_y,GimpMenuFactory * menu_factory,const gchar * menu_identifier)
+DECL|function|gimp_data_factory_view_new (GimpViewType view_type,GimpDataFactory * factory,GimpDataEditFunc edit_func,GimpContext * context,gint preview_size,gint preview_border_width,GimpMenuFactory * menu_factory,const gchar * menu_identifier)
 name|gimp_data_factory_view_new
 parameter_list|(
 name|GimpViewType
@@ -491,10 +491,7 @@ name|gint
 name|preview_size
 parameter_list|,
 name|gint
-name|min_items_x
-parameter_list|,
-name|gint
-name|min_items_y
+name|preview_border_width
 parameter_list|,
 name|GimpMenuFactory
 modifier|*
@@ -536,9 +533,7 @@ name|context
 argument_list|,
 name|preview_size
 argument_list|,
-name|min_items_x
-argument_list|,
-name|min_items_y
+name|preview_border_width
 argument_list|,
 name|menu_factory
 argument_list|,
@@ -566,7 +561,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_data_factory_view_construct (GimpDataFactoryView * factory_view,GimpViewType view_type,GimpDataFactory * factory,GimpDataEditFunc edit_func,GimpContext * context,gint preview_size,gint min_items_x,gint min_items_y,GimpMenuFactory * menu_factory,const gchar * menu_identifier)
+DECL|function|gimp_data_factory_view_construct (GimpDataFactoryView * factory_view,GimpViewType view_type,GimpDataFactory * factory,GimpDataEditFunc edit_func,GimpContext * context,gint preview_size,gint preview_border_width,GimpMenuFactory * menu_factory,const gchar * menu_identifier)
 name|gimp_data_factory_view_construct
 parameter_list|(
 name|GimpDataFactoryView
@@ -591,10 +586,7 @@ name|gint
 name|preview_size
 parameter_list|,
 name|gint
-name|min_items_x
-parameter_list|,
-name|gint
-name|min_items_y
+name|preview_border_width
 parameter_list|,
 name|GimpMenuFactory
 modifier|*
@@ -645,26 +637,13 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|min_items_x
-operator|>
+name|preview_border_width
+operator|>=
 literal|0
 operator|&&
-name|min_items_x
+name|preview_border_width
 operator|<=
-literal|64
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|min_items_y
-operator|>
-literal|0
-operator|&&
-name|min_items_y
-operator|<=
-literal|64
+name|GIMP_PREVIEW_MAX_BORDER_WIDTH
 argument_list|,
 name|FALSE
 argument_list|)
@@ -701,13 +680,11 @@ name|context
 argument_list|,
 name|preview_size
 argument_list|,
+name|preview_border_width
+argument_list|,
 name|FALSE
 argument_list|,
 comment|/* reorderable */
-name|min_items_x
-argument_list|,
-name|min_items_y
-argument_list|,
 name|menu_factory
 argument_list|,
 name|menu_identifier

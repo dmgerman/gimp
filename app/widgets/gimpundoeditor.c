@@ -358,11 +358,9 @@ name|NULL
 argument_list|,
 name|GIMP_UNDO_PREVIEW_SIZE
 argument_list|,
+literal|1
+argument_list|,
 name|FALSE
-argument_list|,
-literal|3
-argument_list|,
-literal|3
 argument_list|)
 expr_stmt|;
 name|gtk_container_add

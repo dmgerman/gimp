@@ -1097,15 +1097,6 @@ index|]
 operator|=
 name|G_TYPE_BOOLEAN
 expr_stmt|;
-name|GIMP_CONTAINER_VIEW
-argument_list|(
-name|view
-argument_list|)
-operator|->
-name|preview_border_width
-operator|=
-literal|2
-expr_stmt|;
 name|view
 operator|->
 name|options_box

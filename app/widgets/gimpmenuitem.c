@@ -520,8 +520,15 @@ name|menu_item
 operator|->
 name|preview_border_width
 argument_list|,
-operator|-
-literal|1
+name|menu_item
+operator|->
+name|preview_size
+operator|+
+literal|2
+operator|*
+name|menu_item
+operator|->
+name|preview_border_width
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

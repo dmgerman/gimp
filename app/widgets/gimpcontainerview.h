@@ -355,14 +355,11 @@ parameter_list|,
 name|gint
 name|preview_size
 parameter_list|,
+name|gint
+name|preview_border_width
+parameter_list|,
 name|gboolean
 name|reorderable
-parameter_list|,
-name|gint
-name|min_items_x
-parameter_list|,
-name|gint
-name|min_items_y
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -407,6 +404,9 @@ name|view
 parameter_list|,
 name|gint
 name|preview_size
+parameter_list|,
+name|gint
+name|preview_border_width
 parameter_list|)
 function_decl|;
 end_function_decl

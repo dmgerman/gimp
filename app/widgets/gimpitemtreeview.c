@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0ab1970103
+DECL|enum|__anon2892bd7d0103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -1380,11 +1380,14 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_item_tree_view_new (gint preview_size,GimpImage * gimage,GType item_type,const gchar * signal_name,GimpNewItemFunc new_item_func,GimpEditItemFunc edit_item_func,GimpActivateItemFunc activate_item_func,GimpMenuFactory * menu_factory,const gchar * menu_identifier)
+DECL|function|gimp_item_tree_view_new (gint preview_size,gint preview_border_width,GimpImage * gimage,GType item_type,const gchar * signal_name,GimpNewItemFunc new_item_func,GimpEditItemFunc edit_item_func,GimpActivateItemFunc activate_item_func,GimpMenuFactory * menu_factory,const gchar * menu_identifier)
 name|gimp_item_tree_view_new
 parameter_list|(
 name|gint
 name|preview_size
+parameter_list|,
+name|gint
+name|preview_border_width
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -1438,6 +1441,19 @@ operator|&&
 name|preview_size
 operator|<=
 name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|preview_border_width
+operator|>=
+literal|0
+operator|&&
+name|preview_border_width
+operator|<=
+name|GIMP_PREVIEW_MAX_BORDER_WIDTH
 argument_list|,
 name|NULL
 argument_list|)
@@ -1607,13 +1623,9 @@ name|NULL
 argument_list|,
 name|preview_size
 argument_list|,
+name|preview_border_width
+argument_list|,
 name|TRUE
-argument_list|,
-operator|-
-literal|1
-argument_list|,
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 name|view
@@ -3618,17 +3630,16 @@ modifier|*
 name|view
 parameter_list|)
 block|{
-name|gint
-name|preview_size
+name|GimpContainerView
+modifier|*
+name|container_view
 decl_stmt|;
-name|preview_size
+name|container_view
 operator|=
 name|GIMP_CONTAINER_VIEW
 argument_list|(
 name|view
 argument_list|)
-operator|->
-name|preview_size
 expr_stmt|;
 name|gimp_container_view_set_preview_size
 argument_list|(
@@ -3637,7 +3648,13 @@ argument_list|(
 name|view
 argument_list|)
 argument_list|,
+name|container_view
+operator|->
 name|preview_size
+argument_list|,
+name|container_view
+operator|->
+name|preview_border_width
 argument_list|)
 expr_stmt|;
 block|}

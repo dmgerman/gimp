@@ -471,7 +471,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_document_view_new (GimpViewType view_type,GimpContainer * container,GimpContext * context,gint preview_size,gint min_items_x,gint min_items_y,GimpFileOpenDialogFunc file_open_dialog_func,GimpMenuFactory * menu_factory)
+DECL|function|gimp_document_view_new (GimpViewType view_type,GimpContainer * container,GimpContext * context,gint preview_size,gint preview_border_width,GimpFileOpenDialogFunc file_open_dialog_func,GimpMenuFactory * menu_factory)
 name|gimp_document_view_new
 parameter_list|(
 name|GimpViewType
@@ -489,10 +489,7 @@ name|gint
 name|preview_size
 parameter_list|,
 name|gint
-name|min_items_x
-parameter_list|,
-name|gint
-name|min_items_y
+name|preview_border_width
 parameter_list|,
 name|GimpFileOpenDialogFunc
 name|file_open_dialog_func
@@ -550,13 +547,11 @@ name|context
 argument_list|,
 name|preview_size
 argument_list|,
+name|preview_border_width
+argument_list|,
 name|TRUE
 argument_list|,
 comment|/* reorderable */
-name|min_items_x
-argument_list|,
-name|min_items_y
-argument_list|,
 name|menu_factory
 argument_list|,
 literal|"<Documents>"

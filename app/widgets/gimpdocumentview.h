@@ -190,10 +190,7 @@ name|gint
 name|preview_size
 parameter_list|,
 name|gint
-name|min_items_x
-parameter_list|,
-name|gint
-name|min_items_y
+name|preview_border_width
 parameter_list|,
 name|GimpFileOpenDialogFunc
 name|file_open_dialog_func

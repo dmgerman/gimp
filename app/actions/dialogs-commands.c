@@ -817,6 +817,10 @@ argument_list|(
 name|view
 argument_list|,
 name|preview_size
+argument_list|,
+name|view
+operator|->
+name|preview_border_width
 argument_list|)
 expr_stmt|;
 block|}
