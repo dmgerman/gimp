@@ -3,19 +3,8 @@ begin_comment
 comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * IfsCompose is a interface for creating IFS fractals by  * direct manipulation.  * Copyright (C) 1997 Owen Taylor  *  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
-begin_define
-DECL|macro|SQR (x)
-define|#
-directive|define
-name|SQR
-parameter_list|(
-name|x
-parameter_list|)
-value|((x) * (x))
-end_define
-
 begin_typedef
-DECL|struct|__anon29bc46640108
+DECL|struct|__anon2b7888440108
 typedef|typedef
 struct|struct
 block|{
@@ -45,7 +34,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29bc46640208
+DECL|struct|__anon2b7888440208
 typedef|typedef
 struct|struct
 block|{
@@ -66,7 +55,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29bc46640308
+DECL|struct|__anon2b7888440308
 typedef|typedef
 struct|struct
 block|{
@@ -86,7 +75,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29bc46640408
+DECL|struct|__anon2b7888440408
 typedef|typedef
 struct|struct
 block|{
@@ -104,7 +93,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29bc46640508
+DECL|struct|__anon2b7888440508
 typedef|typedef
 struct|struct
 block|{
@@ -180,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bc46640608
+DECL|struct|__anon2b7888440608
 block|{
 DECL|member|num_elements
 name|gint
@@ -221,7 +210,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29bc46640708
+DECL|struct|__anon2b7888440708
 typedef|typedef
 struct|struct
 block|{
