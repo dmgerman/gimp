@@ -206,7 +206,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2bce8cc80103
+DECL|enum|__anon2917e0860103
 typedef|typedef
 enum|enum
 block|{
@@ -377,6 +377,16 @@ DECL|variable|brush_path
 name|char
 modifier|*
 name|brush_path
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|brush_vbr_path
+name|char
+modifier|*
+name|brush_vbr_path
 init|=
 name|NULL
 decl_stmt|;
@@ -1679,6 +1689,17 @@ name|TT_PATH
 block|,
 operator|&
 name|brush_path
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"brush-vbr-path"
+block|,
+name|TT_PATH
+block|,
+operator|&
+name|brush_vbr_path
 block|,
 name|NULL
 block|}

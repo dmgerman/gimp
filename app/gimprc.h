@@ -74,6 +74,14 @@ begin_decl_stmt
 specifier|extern
 name|char
 modifier|*
+name|brush_vbr_path
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|char
+modifier|*
 name|default_brush
 decl_stmt|;
 end_decl_stmt

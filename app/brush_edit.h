@@ -53,6 +53,11 @@ name|GtkWidget
 modifier|*
 name|options_box
 decl_stmt|;
+DECL|member|name
+name|GtkWidget
+modifier|*
+name|name
+decl_stmt|;
 DECL|member|radius_data
 name|GtkAdjustment
 modifier|*
