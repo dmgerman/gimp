@@ -110,7 +110,7 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|gimage_mask_feather_callback
+name|gimp_image_mask_feather_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -131,7 +131,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimage_mask_border_callback
+name|gimp_image_mask_border_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -152,7 +152,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimage_mask_grow_callback
+name|gimp_image_mask_grow_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -173,7 +173,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimage_mask_shrink_callback
+name|gimp_image_mask_shrink_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -269,7 +269,7 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|gimage_mask_invert
+name|gimp_image_mask_invert
 argument_list|(
 name|gimage
 argument_list|)
@@ -304,7 +304,7 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|gimage_mask_all
+name|gimp_image_mask_all
 argument_list|(
 name|gimage
 argument_list|)
@@ -339,7 +339,7 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|gimage_mask_none
+name|gimp_image_mask_none
 argument_list|(
 name|gimage
 argument_list|)
@@ -374,7 +374,7 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|gimage_mask_float
+name|gimp_image_mask_float
 argument_list|(
 name|gimage
 argument_list|,
@@ -482,7 +482,7 @@ argument_list|)
 argument_list|,
 literal|"disconnect"
 argument_list|,
-name|gimage_mask_feather_callback
+name|gimp_image_mask_feather_callback
 argument_list|,
 name|gdisp
 operator|->
@@ -521,7 +521,7 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|gimage_mask_sharpen
+name|gimp_image_mask_sharpen
 argument_list|(
 name|gimage
 argument_list|)
@@ -628,7 +628,7 @@ argument_list|)
 argument_list|,
 literal|"disconnect"
 argument_list|,
-name|gimage_mask_shrink_callback
+name|gimp_image_mask_shrink_callback
 argument_list|,
 name|gdisp
 operator|->
@@ -808,7 +808,7 @@ argument_list|)
 argument_list|,
 literal|"disconnect"
 argument_list|,
-name|gimage_mask_grow_callback
+name|gimp_image_mask_grow_callback
 argument_list|,
 name|gdisp
 operator|->
@@ -911,7 +911,7 @@ argument_list|)
 argument_list|,
 literal|"disconnect"
 argument_list|,
-name|gimage_mask_border_callback
+name|gimp_image_mask_border_callback
 argument_list|,
 name|gdisp
 operator|->
@@ -950,7 +950,7 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|gimage_mask_save
+name|gimp_image_mask_save
 argument_list|(
 name|gimage
 argument_list|)
@@ -968,8 +968,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimage_mask_feather_callback (GtkWidget * widget,gdouble size,GimpUnit unit,gpointer data)
-name|gimage_mask_feather_callback
+DECL|function|gimp_image_mask_feather_callback (GtkWidget * widget,gdouble size,GimpUnit unit,gpointer data)
+name|gimp_image_mask_feather_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1075,7 +1075,7 @@ operator|*=
 name|factor
 expr_stmt|;
 block|}
-name|gimage_mask_feather
+name|gimp_image_mask_feather
 argument_list|(
 name|gimage
 argument_list|,
@@ -1093,8 +1093,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimage_mask_border_callback (GtkWidget * widget,gdouble size,GimpUnit unit,gpointer data)
-name|gimage_mask_border_callback
+DECL|function|gimp_image_mask_border_callback (GtkWidget * widget,gdouble size,GimpUnit unit,gpointer data)
+name|gimp_image_mask_border_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1203,7 +1203,7 @@ operator|*=
 name|factor
 expr_stmt|;
 block|}
-name|gimage_mask_border
+name|gimp_image_mask_border
 argument_list|(
 name|gimage
 argument_list|,
@@ -1221,8 +1221,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimage_mask_grow_callback (GtkWidget * widget,gdouble size,GimpUnit unit,gpointer data)
-name|gimage_mask_grow_callback
+DECL|function|gimp_image_mask_grow_callback (GtkWidget * widget,gdouble size,GimpUnit unit,gpointer data)
+name|gimp_image_mask_grow_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1331,7 +1331,7 @@ operator|*=
 name|factor
 expr_stmt|;
 block|}
-name|gimage_mask_grow
+name|gimp_image_mask_grow
 argument_list|(
 name|gimage
 argument_list|,
@@ -1349,8 +1349,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimage_mask_shrink_callback (GtkWidget * widget,gdouble size,GimpUnit unit,gpointer data)
-name|gimage_mask_shrink_callback
+DECL|function|gimp_image_mask_shrink_callback (GtkWidget * widget,gdouble size,GimpUnit unit,gpointer data)
+name|gimp_image_mask_shrink_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1477,7 +1477,7 @@ operator|*=
 name|factor
 expr_stmt|;
 block|}
-name|gimage_mask_shrink
+name|gimp_image_mask_shrink
 argument_list|(
 name|gimage
 argument_list|,

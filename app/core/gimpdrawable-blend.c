@@ -116,7 +116,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbf307e0108
+DECL|struct|__anon291aa2b90108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbf307e0208
+DECL|struct|__anon291aa2b90208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -2642,7 +2642,7 @@ comment|/*  If the gimage mask is not empty, use it as the shape burst source  *
 if|if
 condition|(
 operator|!
-name|gimage_mask_is_empty
+name|gimp_image_mask_is_empty
 argument_list|(
 name|gimage
 argument_list|)

@@ -791,14 +791,14 @@ block|{
 comment|/*  Is there a selected region? If so, is cursor inside? */
 if|if
 condition|(
-name|gimage_mask_is_empty
+name|gimp_image_mask_is_empty
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
 argument_list|)
 operator|||
-name|gimage_mask_value
+name|gimp_image_mask_value
 argument_list|(
 name|gdisp
 operator|->

@@ -5638,7 +5638,7 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 return|return
-name|gimage_mask_value
+name|gimp_image_mask_value
 argument_list|(
 name|shell
 operator|->

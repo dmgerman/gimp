@@ -397,7 +397,7 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gimage_mask_load
+name|gimp_image_mask_load
 argument_list|(
 name|gimage
 argument_list|,
@@ -541,7 +541,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimage_mask_is_empty
+name|gimp_image_mask_is_empty
 argument_list|(
 name|gimage
 argument_list|)
@@ -655,7 +655,7 @@ argument_list|,
 literal|"Qmask"
 argument_list|)
 expr_stmt|;
-name|gimage_mask_none
+name|gimp_image_mask_none
 argument_list|(
 name|gimage
 argument_list|)

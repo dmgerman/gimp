@@ -2803,7 +2803,7 @@ comment|/*  extract the selected mask if there is a selection  */
 if|if
 condition|(
 operator|!
-name|gimage_mask_is_empty
+name|gimp_image_mask_is_empty
 argument_list|(
 name|gimage
 argument_list|)
@@ -2812,7 +2812,7 @@ block|{
 comment|/* set the keep_indexed flag to FALSE here, since we use        * gimp_layer_new_from_tiles() later which assumes that the tiles        * are either RGB or GRAY.  Eeek!!!              (Sven)        */
 name|tiles
 operator|=
-name|gimage_mask_extract
+name|gimp_image_mask_extract
 argument_list|(
 name|gimage
 argument_list|,
@@ -2843,7 +2843,7 @@ argument_list|)
 condition|)
 name|tiles
 operator|=
-name|gimage_mask_extract
+name|gimp_image_mask_extract
 argument_list|(
 name|gimage
 argument_list|,
@@ -2859,7 +2859,7 @@ expr_stmt|;
 else|else
 name|tiles
 operator|=
-name|gimage_mask_extract
+name|gimp_image_mask_extract
 argument_list|(
 name|gimage
 argument_list|,

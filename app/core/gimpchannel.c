@@ -6038,7 +6038,7 @@ argument_list|,
 name|mask_undo
 argument_list|)
 expr_stmt|;
-name|gimage_mask_invalidate
+name|gimp_image_mask_invalidate
 argument_list|(
 name|gimage
 argument_list|)

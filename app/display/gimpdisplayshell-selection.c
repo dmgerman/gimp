@@ -3084,7 +3084,7 @@ modifier|*
 name|segs_layer
 decl_stmt|;
 comment|/*  Ask the gimage for the boundary of its selected region...    *  Then transform that information into a new buffer of XSegments    */
-name|gimage_mask_boundary
+name|gimp_image_mask_boundary
 argument_list|(
 name|select
 operator|->

@@ -18,7 +18,7 @@ end_define
 
 begin_function_decl
 name|gboolean
-name|gimage_mask_boundary
+name|gimp_image_mask_boundary
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -47,7 +47,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimage_mask_bounds
+name|gimp_image_mask_bounds
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -74,7 +74,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimage_mask_invalidate
+name|gimp_image_mask_invalidate
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -85,7 +85,7 @@ end_function_decl
 
 begin_function_decl
 name|gint
-name|gimage_mask_value
+name|gimp_image_mask_value
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -102,7 +102,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimage_mask_is_empty
+name|gimp_image_mask_is_empty
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -113,7 +113,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimage_mask_translate
+name|gimp_image_mask_translate
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -131,7 +131,7 @@ end_function_decl
 begin_function_decl
 name|TileManager
 modifier|*
-name|gimage_mask_extract
+name|gimp_image_mask_extract
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -156,7 +156,7 @@ end_function_decl
 begin_function_decl
 name|GimpLayer
 modifier|*
-name|gimage_mask_float
+name|gimp_image_mask_float
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -177,7 +177,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimage_mask_clear
+name|gimp_image_mask_clear
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -188,7 +188,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimage_mask_undo
+name|gimp_image_mask_undo
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -199,7 +199,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimage_mask_invert
+name|gimp_image_mask_invert
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -210,7 +210,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimage_mask_sharpen
+name|gimp_image_mask_sharpen
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -221,7 +221,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimage_mask_all
+name|gimp_image_mask_all
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -232,7 +232,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimage_mask_none
+name|gimp_image_mask_none
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -243,7 +243,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimage_mask_feather
+name|gimp_image_mask_feather
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -260,7 +260,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimage_mask_border
+name|gimp_image_mask_border
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -277,7 +277,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimage_mask_grow
+name|gimp_image_mask_grow
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -294,7 +294,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimage_mask_shrink
+name|gimp_image_mask_shrink
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -314,7 +314,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimage_mask_layer_alpha
+name|gimp_image_mask_layer_alpha
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -329,7 +329,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimage_mask_layer_mask
+name|gimp_image_mask_layer_mask
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -344,7 +344,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimage_mask_load
+name|gimp_image_mask_load
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -360,7 +360,7 @@ end_function_decl
 begin_function_decl
 name|GimpChannel
 modifier|*
-name|gimage_mask_save
+name|gimp_image_mask_save
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -371,7 +371,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimage_mask_stroke
+name|gimp_image_mask_stroke
 parameter_list|(
 name|GimpImage
 modifier|*

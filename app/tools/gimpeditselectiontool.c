@@ -1033,7 +1033,7 @@ name|y
 operator|-
 name|off_y
 expr_stmt|;
-name|gimage_mask_boundary
+name|gimp_image_mask_boundary
 argument_list|(
 name|gdisp
 operator|->
@@ -1416,7 +1416,7 @@ name|y
 argument_list|)
 expr_stmt|;
 comment|/* move the selection -- whether there has been net movement or not!        * (to ensure that there's something on the undo stack)        */
-name|gimage_mask_translate
+name|gimp_image_mask_translate
 argument_list|(
 name|gdisp
 operator|->
@@ -1993,7 +1993,7 @@ case|:
 if|if
 condition|(
 operator|!
-name|gimage_mask_float
+name|gimp_image_mask_float
 argument_list|(
 name|gdisp
 operator|->
@@ -3738,7 +3738,7 @@ name|mask_inc_y
 operator|!=
 literal|0
 condition|)
-name|gimage_mask_translate
+name|gimp_image_mask_translate
 argument_list|(
 name|gdisp
 operator|->

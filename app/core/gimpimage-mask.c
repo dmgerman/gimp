@@ -122,10 +122,10 @@ comment|/*  local variables  */
 end_comment
 
 begin_decl_stmt
-DECL|variable|gimage_mask_stroking
+DECL|variable|gimp_image_mask_stroking
 specifier|static
 name|gboolean
-name|gimage_mask_stroking
+name|gimp_image_mask_stroking
 init|=
 name|FALSE
 decl_stmt|;
@@ -137,8 +137,8 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimage_mask_boundary (GimpImage * gimage,BoundSeg ** segs_in,BoundSeg ** segs_out,gint * num_segs_in,gint * num_segs_out)
-name|gimage_mask_boundary
+DECL|function|gimp_image_mask_boundary (GimpImage * gimage,BoundSeg ** segs_in,BoundSeg ** segs_out,gint * num_segs_in,gint * num_segs_out)
+name|gimp_image_mask_boundary
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -487,8 +487,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimage_mask_bounds (GimpImage * gimage,gint * x1,gint * y1,gint * x2,gint * y2)
-name|gimage_mask_bounds
+DECL|function|gimp_image_mask_bounds (GimpImage * gimage,gint * x1,gint * y1,gint * x2,gint * y2)
+name|gimp_image_mask_bounds
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -533,8 +533,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_invalidate (GimpImage * gimage)
-name|gimage_mask_invalidate
+DECL|function|gimp_image_mask_invalidate (GimpImage * gimage)
+name|gimp_image_mask_invalidate
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -624,8 +624,8 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimage_mask_value (GimpImage * gimage,gint x,gint y)
-name|gimage_mask_value
+DECL|function|gimp_image_mask_value (GimpImage * gimage,gint x,gint y)
+name|gimp_image_mask_value
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -656,8 +656,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimage_mask_is_empty (GimpImage * gimage)
-name|gimage_mask_is_empty
+DECL|function|gimp_image_mask_is_empty (GimpImage * gimage)
+name|gimp_image_mask_is_empty
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -667,7 +667,7 @@ block|{
 comment|/*  in order to allow stroking of selections, we need to pretend here    *  that the selection mask is empty so that it doesn't mask the paint    *  during the stroke operation.    */
 if|if
 condition|(
-name|gimage_mask_stroking
+name|gimp_image_mask_stroking
 condition|)
 return|return
 name|TRUE
@@ -687,8 +687,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_translate (GimpImage * gimage,gint off_x,gint off_y)
-name|gimage_mask_translate
+DECL|function|gimp_image_mask_translate (GimpImage * gimage,gint off_x,gint off_y)
+name|gimp_image_mask_translate
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -719,8 +719,8 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|gimage_mask_extract (GimpImage * gimage,GimpDrawable * drawable,gboolean cut_gimage,gboolean keep_indexed,gboolean add_alpha)
-name|gimage_mask_extract
+DECL|function|gimp_image_mask_extract (GimpImage * gimage,GimpDrawable * drawable,gboolean cut_gimage,gboolean keep_indexed,gboolean add_alpha)
+name|gimp_image_mask_extract
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -1396,8 +1396,8 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimage_mask_float (GimpImage * gimage,GimpDrawable * drawable,gint off_x,gint off_y)
-name|gimage_mask_float
+DECL|function|gimp_image_mask_float (GimpImage * gimage,GimpDrawable * drawable,gint off_x,gint off_y)
+name|gimp_image_mask_float
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -1512,7 +1512,7 @@ expr_stmt|;
 comment|/*  Cut the selected region  */
 name|tiles
 operator|=
-name|gimage_mask_extract
+name|gimp_image_mask_extract
 argument_list|(
 name|gimage
 argument_list|,
@@ -1618,8 +1618,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_clear (GimpImage * gimage)
-name|gimage_mask_clear
+DECL|function|gimp_image_mask_clear (GimpImage * gimage)
+name|gimp_image_mask_clear
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -1639,8 +1639,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_undo (GimpImage * gimage)
-name|gimage_mask_undo
+DECL|function|gimp_image_mask_undo (GimpImage * gimage)
+name|gimp_image_mask_undo
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -1660,8 +1660,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_invert (GimpImage * gimage)
-name|gimage_mask_invert
+DECL|function|gimp_image_mask_invert (GimpImage * gimage)
+name|gimp_image_mask_invert
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -1681,8 +1681,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_sharpen (GimpImage * gimage)
-name|gimage_mask_sharpen
+DECL|function|gimp_image_mask_sharpen (GimpImage * gimage)
+name|gimp_image_mask_sharpen
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -1703,8 +1703,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_all (GimpImage * gimage)
-name|gimage_mask_all
+DECL|function|gimp_image_mask_all (GimpImage * gimage)
+name|gimp_image_mask_all
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -1724,8 +1724,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_none (GimpImage * gimage)
-name|gimage_mask_none
+DECL|function|gimp_image_mask_none (GimpImage * gimage)
+name|gimp_image_mask_none
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -1745,8 +1745,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_feather (GimpImage * gimage,gdouble feather_radius_x,gdouble feather_radius_y)
-name|gimage_mask_feather
+DECL|function|gimp_image_mask_feather (GimpImage * gimage,gdouble feather_radius_x,gdouble feather_radius_y)
+name|gimp_image_mask_feather
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -1779,8 +1779,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_border (GimpImage * gimage,gint border_radius_x,gint border_radius_y)
-name|gimage_mask_border
+DECL|function|gimp_image_mask_border (GimpImage * gimage,gint border_radius_x,gint border_radius_y)
+name|gimp_image_mask_border
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -1810,17 +1810,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_grow (GimpImage * gimage,int grow_pixels_x,int grow_pixels_y)
-name|gimage_mask_grow
+DECL|function|gimp_image_mask_grow (GimpImage * gimage,gint grow_pixels_x,gint grow_pixels_y)
+name|gimp_image_mask_grow
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|gint
 name|grow_pixels_x
 parameter_list|,
-name|int
+name|gint
 name|grow_pixels_y
 parameter_list|)
 block|{
@@ -1841,8 +1841,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_shrink (GimpImage * gimage,gint shrink_pixels_x,gint shrink_pixels_y,gboolean edge_lock)
-name|gimage_mask_shrink
+DECL|function|gimp_image_mask_shrink (GimpImage * gimage,gint shrink_pixels_x,gint shrink_pixels_y,gboolean edge_lock)
+name|gimp_image_mask_shrink
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -1877,8 +1877,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_layer_alpha (GimpImage * gimage,GimpLayer * layer)
-name|gimage_mask_layer_alpha
+DECL|function|gimp_image_mask_layer_alpha (GimpImage * gimage,GimpLayer * layer)
+name|gimp_image_mask_layer_alpha
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -1931,8 +1931,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_layer_mask (GimpImage * gimage,GimpLayer * layer)
-name|gimage_mask_layer_mask
+DECL|function|gimp_image_mask_layer_mask (GimpImage * gimage,GimpLayer * layer)
+name|gimp_image_mask_layer_mask
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -1982,8 +1982,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_load (GimpImage * gimage,GimpChannel * channel)
-name|gimage_mask_load
+DECL|function|gimp_image_mask_load (GimpImage * gimage,GimpChannel * channel)
+name|gimp_image_mask_load
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -2013,8 +2013,8 @@ end_function
 begin_function
 name|GimpChannel
 modifier|*
-DECL|function|gimage_mask_save (GimpImage * gimage)
-name|gimage_mask_save
+DECL|function|gimp_image_mask_save (GimpImage * gimage)
+name|gimp_image_mask_save
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -2066,8 +2066,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimage_mask_stroke (GimpImage * gimage,GimpDrawable * drawable,GimpContext * context)
-name|gimage_mask_stroke
+DECL|function|gimp_image_mask_stroke (GimpImage * gimage,GimpDrawable * drawable,GimpContext * context)
+name|gimp_image_mask_stroke
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -2166,7 +2166,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimage_mask_boundary
+name|gimp_image_mask_boundary
 argument_list|(
 name|gimage
 argument_list|,
@@ -2238,7 +2238,7 @@ operator|&
 name|offy
 argument_list|)
 expr_stmt|;
-name|gimage_mask_stroking
+name|gimp_image_mask_stroking
 operator|=
 name|TRUE
 expr_stmt|;
@@ -2570,7 +2570,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  cleanup  */
-name|gimage_mask_stroking
+name|gimp_image_mask_stroking
 operator|=
 name|FALSE
 expr_stmt|;

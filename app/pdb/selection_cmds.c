@@ -452,7 +452,7 @@ name|success
 condition|)
 name|non_empty
 operator|=
-name|gimage_mask_bounds
+name|gimp_image_mask_bounds
 argument_list|(
 name|gimage
 argument_list|,
@@ -760,7 +760,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|gimage_mask_value
+name|gimp_image_mask_value
 argument_list|(
 name|gimage
 argument_list|,
@@ -945,7 +945,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|gimage_mask_is_empty
+name|gimp_image_mask_is_empty
 argument_list|(
 name|gimage
 argument_list|)
@@ -1115,7 +1115,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimage_mask_translate
+name|gimp_image_mask_translate
 argument_list|(
 name|gimage
 argument_list|,
@@ -1316,7 +1316,7 @@ argument_list|)
 expr_stmt|;
 name|layer
 operator|=
-name|gimage_mask_float
+name|gimp_image_mask_float
 argument_list|(
 name|gimage
 argument_list|,
@@ -1518,7 +1518,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimage_mask_clear
+name|gimp_image_mask_clear
 argument_list|(
 name|gimage
 argument_list|)
@@ -1647,7 +1647,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimage_mask_invert
+name|gimp_image_mask_invert
 argument_list|(
 name|gimage
 argument_list|)
@@ -1776,7 +1776,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimage_mask_sharpen
+name|gimp_image_mask_sharpen
 argument_list|(
 name|gimage
 argument_list|)
@@ -1905,7 +1905,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimage_mask_all
+name|gimp_image_mask_all
 argument_list|(
 name|gimage
 argument_list|)
@@ -2034,7 +2034,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimage_mask_none
+name|gimp_image_mask_none
 argument_list|(
 name|gimage
 argument_list|)
@@ -2187,7 +2187,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimage_mask_feather
+name|gimp_image_mask_feather
 argument_list|(
 name|gimage
 argument_list|,
@@ -2352,7 +2352,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimage_mask_border
+name|gimp_image_mask_border
 argument_list|(
 name|gimage
 argument_list|,
@@ -2517,7 +2517,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimage_mask_grow
+name|gimp_image_mask_grow
 argument_list|(
 name|gimage
 argument_list|,
@@ -2682,7 +2682,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimage_mask_shrink
+name|gimp_image_mask_shrink
 argument_list|(
 name|gimage
 argument_list|,
@@ -2844,7 +2844,7 @@ name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimage_mask_layer_alpha
+name|gimp_image_mask_layer_alpha
 argument_list|(
 name|gimage
 argument_list|,
@@ -3021,7 +3021,7 @@ name|gimage
 operator|->
 name|height
 condition|)
-name|gimage_mask_load
+name|gimp_image_mask_load
 argument_list|(
 name|gimage
 argument_list|,
@@ -3173,7 +3173,7 @@ operator|=
 operator|(
 name|channel
 operator|=
-name|gimage_mask_save
+name|gimp_image_mask_save
 argument_list|(
 name|gimage
 argument_list|)
@@ -3453,7 +3453,7 @@ literal|0
 argument_list|)
 expr_stmt|;
 comment|/* off x/y */
-name|gimage_mask_load
+name|gimp_image_mask_load
 argument_list|(
 name|gimage
 argument_list|,

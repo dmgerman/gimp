@@ -1368,7 +1368,7 @@ operator|!
 name|gimage
 condition|)
 return|return;
-name|gimage_mask_layer_alpha
+name|gimp_image_mask_layer_alpha
 argument_list|(
 name|gimage
 argument_list|,
@@ -1418,7 +1418,7 @@ operator|!
 name|gimage
 condition|)
 return|return;
-name|gimage_mask_layer_mask
+name|gimp_image_mask_layer_mask
 argument_list|(
 name|gimage
 argument_list|,

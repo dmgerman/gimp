@@ -118,7 +118,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f3d4e30108
+DECL|struct|__anon2a1ad3210108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -169,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f3d4e30208
+DECL|struct|__anon2a1ad3210208
 block|{
 DECL|member|clist
 name|GtkCList
@@ -538,7 +538,7 @@ block|}
 comment|/*  if the mask is empty, no need to scale and update again  */
 if|if
 condition|(
-name|gimage_mask_is_empty
+name|gimp_image_mask_is_empty
 argument_list|(
 name|gimage
 argument_list|)

@@ -2316,7 +2316,7 @@ block|{
 comment|/*  One more test--is there a selected region? 	   *  if so, is cursor inside? 	   */
 if|if
 condition|(
-name|gimage_mask_is_empty
+name|gimp_image_mask_is_empty
 argument_list|(
 name|gdisp
 operator|->
@@ -2330,7 +2330,7 @@ expr_stmt|;
 elseif|else
 if|if
 condition|(
-name|gimage_mask_value
+name|gimp_image_mask_value
 argument_list|(
 name|gdisp
 operator|->
@@ -4720,7 +4720,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2c54dacf0103
+DECL|enum|__anon29c889a10103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

@@ -651,7 +651,7 @@ name|GDK_MOD1_MASK
 operator|)
 operator|&&
 operator|!
-name|gimage_mask_is_empty
+name|gimp_image_mask_is_empty
 argument_list|(
 name|gdisp
 operator|->
@@ -689,7 +689,7 @@ operator|==
 name|floating_sel
 operator|||
 operator|(
-name|gimage_mask_value
+name|gimp_image_mask_value
 argument_list|(
 name|gdisp
 operator|->

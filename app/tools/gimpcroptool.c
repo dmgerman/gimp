@@ -167,7 +167,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cd9e500103
+DECL|enum|__anon2b79660d0103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -5448,7 +5448,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimage_mask_bounds
+name|gimp_image_mask_bounds
 argument_list|(
 name|gdisp
 operator|->

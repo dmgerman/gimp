@@ -251,7 +251,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a375f40103
+DECL|enum|__anon2bdca19d0103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -4538,7 +4538,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* invalidate the current bounds and boundary of the mask */
-name|gimage_mask_invalidate
+name|gimp_image_mask_invalidate
 argument_list|(
 name|gimage
 argument_list|)
@@ -9305,7 +9305,7 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gimage_mask_invalidate
+name|gimp_image_mask_invalidate
 argument_list|(
 name|gimage
 argument_list|)

@@ -178,7 +178,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7e3bc60103
+DECL|enum|__anon28ad8b170103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO
@@ -1681,7 +1681,7 @@ block|{
 comment|/*  One more test--is there a selected region? 	   *  if so, is cursor inside? 	   */
 if|if
 condition|(
-name|gimage_mask_is_empty
+name|gimp_image_mask_is_empty
 argument_list|(
 name|gdisp
 operator|->
@@ -1695,7 +1695,7 @@ expr_stmt|;
 elseif|else
 if|if
 condition|(
-name|gimage_mask_value
+name|gimp_image_mask_value
 argument_list|(
 name|gdisp
 operator|->

@@ -901,7 +901,7 @@ operator|->
 name|move_mask
 operator|&&
 operator|!
-name|gimage_mask_is_empty
+name|gimp_image_mask_is_empty
 argument_list|(
 name|gdisp
 operator|->
@@ -1913,7 +1913,7 @@ operator|->
 name|move_mask
 operator|&&
 operator|!
-name|gimage_mask_is_empty
+name|gimp_image_mask_is_empty
 argument_list|(
 name|gdisp
 operator|->

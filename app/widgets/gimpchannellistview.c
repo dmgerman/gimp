@@ -1157,7 +1157,7 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
-name|gimage_mask_load
+name|gimp_image_mask_load
 argument_list|(
 name|gimage
 argument_list|,

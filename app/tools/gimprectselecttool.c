@@ -1280,7 +1280,7 @@ argument_list|)
 expr_stmt|;
 comment|/*  Otherwise, clear the selection mask  */
 else|else
-name|gimage_mask_clear
+name|gimp_image_mask_clear
 argument_list|(
 name|gdisp
 operator|->

@@ -2044,7 +2044,7 @@ comment|/*  If there is a selection mask clear it--        *  this might not alw
 if|if
 condition|(
 operator|!
-name|gimage_mask_is_empty
+name|gimp_image_mask_is_empty
 argument_list|(
 name|gimage
 argument_list|)

@@ -364,7 +364,7 @@ argument_list|,
 name|new_height
 argument_list|)
 expr_stmt|;
-name|gimage_mask_invalidate
+name|gimp_image_mask_invalidate
 argument_list|(
 name|gimage
 argument_list|)

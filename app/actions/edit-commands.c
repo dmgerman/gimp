@@ -901,7 +901,7 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|gimage_mask_stroke
+name|gimp_image_mask_stroke
 argument_list|(
 name|gimage
 argument_list|,

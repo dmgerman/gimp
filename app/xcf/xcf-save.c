@@ -612,7 +612,7 @@ expr_stmt|;
 comment|/* check and see if we have to save out the selection */
 name|have_selection
 operator|=
-name|gimage_mask_bounds
+name|gimp_image_mask_bounds
 argument_list|(
 name|gimage
 argument_list|,

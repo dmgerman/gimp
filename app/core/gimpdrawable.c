@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab2bd7e0103
+DECL|enum|__anon296493d20103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -2505,7 +2505,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimage_mask_bounds
+name|gimp_image_mask_bounds
 argument_list|(
 name|gimage
 argument_list|,

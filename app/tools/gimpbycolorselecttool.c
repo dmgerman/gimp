@@ -2812,7 +2812,7 @@ expr_stmt|;
 comment|/*  if the mask is empty, no need to scale and update again  */
 if|if
 condition|(
-name|gimage_mask_is_empty
+name|gimp_image_mask_is_empty
 argument_list|(
 name|gimage
 argument_list|)
@@ -3317,7 +3317,7 @@ argument_list|)
 condition|)
 return|return;
 comment|/*  invert the mask  */
-name|gimage_mask_invert
+name|gimp_image_mask_invert
 argument_list|(
 name|bcd
 operator|->
@@ -3403,7 +3403,7 @@ argument_list|)
 condition|)
 return|return;
 comment|/*  fill the mask  */
-name|gimage_mask_all
+name|gimp_image_mask_all
 argument_list|(
 name|bcd
 operator|->
@@ -3489,7 +3489,7 @@ argument_list|)
 condition|)
 return|return;
 comment|/*  reset the mask  */
-name|gimage_mask_clear
+name|gimp_image_mask_clear
 argument_list|(
 name|bcd
 operator|->

@@ -222,7 +222,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon288e0e3b0103
+DECL|enum|__anon2c73e75d0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -6842,7 +6842,7 @@ comment|/*  get the selection mask if one exists  */
 name|mask
 operator|=
 operator|(
-name|gimage_mask_is_empty
+name|gimp_image_mask_is_empty
 argument_list|(
 name|gimage
 argument_list|)
@@ -7411,7 +7411,7 @@ comment|/*  get the selection mask if one exists  */
 name|mask
 operator|=
 operator|(
-name|gimage_mask_is_empty
+name|gimp_image_mask_is_empty
 argument_list|(
 name|gimage
 argument_list|)
