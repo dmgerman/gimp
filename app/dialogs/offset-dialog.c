@@ -628,7 +628,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Offset X:"
+literal|"Offset _X:"
 argument_list|)
 argument_list|,
 literal|0
@@ -649,7 +649,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Y:"
+literal|"_Y:"
 argument_list|)
 argument_list|,
 literal|1

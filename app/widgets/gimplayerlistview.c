@@ -721,7 +721,8 @@ argument_list|,
 operator|-
 literal|1
 argument_list|,
-literal|50
+operator|-
+literal|1
 argument_list|,
 literal|100.0
 argument_list|,
