@@ -91,15 +91,15 @@ name|GdkWindow
 modifier|*
 name|parent
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 modifier|*
 name|data
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|)
 function_decl|;
@@ -160,24 +160,24 @@ name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|title
 parameter_list|,
-name|int
+name|gint
 name|type
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  some simple query dialogs  *  if object != NULL then the query boxes will connect their cancel callback  *  to the provided signal of this object  */
+comment|/*  some simple query dialogs  *  if object != NULL then the query boxes will connect their cancel callback  *  to the provided signal of this object  *  *  it's the caller's job to show the returned widgets  */
 end_comment
 
 begin_function_decl
@@ -355,7 +355,7 @@ name|GtkWidget
 modifier|*
 name|message_box
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|message
 parameter_list|,
@@ -364,26 +364,6 @@ name|callback
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|tools_push_label
-parameter_list|(
-name|char
-modifier|*
-name|label
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|tools_pop_label
-parameter_list|(
-name|void
 parameter_list|)
 function_decl|;
 end_function_decl

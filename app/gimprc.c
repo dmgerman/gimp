@@ -206,7 +206,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2975ee8b0103
+DECL|enum|__anon29ea912d0103
 typedef|typedef
 enum|enum
 block|{
@@ -2816,7 +2816,10 @@ name|g_snprintf
 argument_list|(
 name|rfilename
 argument_list|,
-name|MAXPATHLEN
+sizeof|sizeof
+argument_list|(
+name|rfilename
+argument_list|)
 argument_list|,
 literal|"%s"
 name|G_DIR_SEPARATOR_S
@@ -8423,11 +8426,11 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|terminate
+name|gimp_terminate
 argument_list|(
 name|_
 argument_list|(
-literal|"gimprc token referenced but not defined: %s"
+literal|"transform_path(): gimprc token referenced but not defined: %s"
 argument_list|)
 argument_list|,
 name|token

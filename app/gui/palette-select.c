@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -59,19 +53,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"actionarea.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"buildmenu.h"
 end_include
 
 begin_include
@@ -101,37 +83,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"devices.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"errors.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"general.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gradient_header.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gradient.h"
 end_include
 
 begin_include
@@ -170,6 +128,10 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
+begin_comment
+comment|/*  List of active dialogs  */
+end_comment
+
 begin_decl_stmt
 DECL|variable|active_dialogs
 specifier|static
@@ -182,8 +144,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-DECL|variable|active_dialogs
-comment|/* List of active dialogs */
+comment|/*  local function prototypes  */
 end_comment
 
 begin_function_decl
@@ -193,10 +154,8 @@ name|palette_select_close_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
 parameter_list|,
 name|gpointer
-name|client_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -208,10 +167,8 @@ name|palette_select_edit_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
 parameter_list|,
 name|gpointer
-name|client_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -221,9 +178,7 @@ DECL|variable|action_items
 specifier|static
 name|ActionAreaItem
 name|action_items
-index|[
-literal|2
-index|]
+index|[]
 init|=
 block|{
 block|{
@@ -673,12 +628,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|palette_select_edit_callback (GtkWidget * w,gpointer client_data)
+DECL|function|palette_select_edit_callback (GtkWidget * widget,gpointer client_data)
 name|palette_select_edit_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -766,12 +721,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|palette_select_close_callback (GtkWidget * w,gpointer client_data)
+DECL|function|palette_select_close_callback (GtkWidget * widget,gpointer client_data)
 name|palette_select_close_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -828,16 +783,16 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|palette_select_delete_callback (GtkWidget * w,GdkEvent * e,gpointer client_data)
+DECL|function|palette_select_delete_callback (GtkWidget * widget,GdkEvent * event,gpointer client_data)
 name|palette_select_delete_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GdkEvent
 modifier|*
-name|e
+name|event
 parameter_list|,
 name|gpointer
 name|client_data
@@ -845,7 +800,7 @@ parameter_list|)
 block|{
 name|palette_select_close_callback
 argument_list|(
-name|w
+name|widget
 argument_list|,
 name|client_data
 argument_list|)
@@ -873,7 +828,7 @@ block|{
 name|PaletteSelectP
 name|psp
 decl_stmt|;
-comment|/*   gradient_t *grad = NULL; */
+comment|/* gradient_t *grad = NULL; */
 name|GSList
 modifier|*
 name|list
@@ -965,7 +920,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -1160,7 +1115,7 @@ argument_list|,
 literal|8
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(

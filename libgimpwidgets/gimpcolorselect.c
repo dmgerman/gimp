@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/color_selector.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"colormaps.h"
 end_include
 
@@ -84,6 +78,12 @@ end_include
 begin_comment
 comment|/* for color_area_draw_rect */
 end_comment
+
+begin_include
+include|#
+directive|include
+file|"libgimp/color_selector.h"
+end_include
 
 begin_include
 include|#
@@ -148,7 +148,7 @@ value|GDK_EXPOSURE_MASK | \                         GDK_BUTTON_PRESS_MASK | GDK_
 end_define
 
 begin_typedef
-DECL|enum|__anon29f5643d0103
+DECL|enum|__anon2b0e79830103
 typedef|typedef
 enum|enum
 block|{
@@ -196,7 +196,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon29f5643d0203
+DECL|enum|__anon2b0e79830203
 typedef|typedef
 enum|enum
 block|{
@@ -2097,7 +2097,7 @@ argument_list|,
 literal|3
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -2378,9 +2378,14 @@ operator|=
 name|gtk_entry_new
 argument_list|()
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buffer
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,
@@ -2528,9 +2533,14 @@ operator|=
 name|gtk_entry_new
 argument_list|()
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buffer
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"#%.2x%.2x%.2x"
 argument_list|,
@@ -10945,7 +10955,7 @@ comment|/* Colour notebook glue      */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29f5643d0308
+DECL|struct|__anon2b0e79830308
 typedef|typedef
 struct|struct
 block|{

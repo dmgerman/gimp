@@ -1790,7 +1790,7 @@ name|GdkColormap
 modifier|*
 name|colormap
 decl_stmt|;
-name|int
+name|gint
 name|select_pos
 decl_stmt|;
 comment|/* Load them if they are not already loaded */
@@ -1870,7 +1870,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -2033,7 +2033,7 @@ argument_list|,
 literal|8
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(

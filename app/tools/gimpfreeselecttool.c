@@ -262,9 +262,12 @@ condition|(
 operator|!
 name|global_pts
 condition|)
-name|fatal_error
+name|gimp_fatal_error
 argument_list|(
-literal|"Unable to reallocate points array in free_select."
+name|_
+argument_list|(
+literal|"add_point(): Unable to reallocate points array in free_select."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

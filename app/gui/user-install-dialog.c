@@ -77,12 +77,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"interface.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
 end_include
 
@@ -474,7 +468,7 @@ name|GdkFont
 modifier|*
 name|font
 decl_stmt|;
-DECL|struct|__anon2b3875960108
+DECL|struct|__anon28a6b5730108
 specifier|static
 specifier|const
 struct|struct
@@ -708,7 +702,11 @@ literal|0
 block|,
 name|N_
 argument_list|(
-literal|"\t\tThis is a subdirectory which can be used to store\n\t\tuser defined gradients.  The default gimprc file\n\t\tchecks this subdirectory in addition to the system-\n\t\twide gimp gradients installation when searching for\n\t\tgradients.\n"
+literal|"\t\tThis is a subdirectory which can be used to store\n"
+literal|"\t\tuser defined gradients.  The default gimprc file\n"
+literal|"\t\tchecks this subdirectory in addition to the system-\n"
+literal|"\t\twide gimp gradients installation when searching for\n"
+literal|"\t\tgradients.\n"
 argument_list|)
 block|}
 block|,
@@ -771,8 +769,8 @@ block|,
 name|N_
 argument_list|(
 literal|"\t\tThis is a subdirectory which can be used to store\n"
-literal|"\t\tuser defined fractals to be used by the FractalExplorer plug-in.\n"
-literal|"\t\tThe default gimprc file checks this subdirectory in\n"
+literal|"\t\tuser defined fractals to be used by the FractalExplorer\n"
+literal|"\t\tplug-in. The default gimprc file checks this subdirectory in\n"
 literal|"\t\taddition to the systemwide gimp FractalExplorer installation\n"
 literal|"\t\twhen searching for fractals.\n"
 argument_list|)
@@ -1206,7 +1204,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -1405,12 +1403,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|help_install_callback (GtkWidget * w,gpointer client_data)
+DECL|function|help_install_callback (GtkWidget * widget,gpointer client_data)
 name|help_install_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -1442,12 +1440,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|help_ignore_callback (GtkWidget * w,gpointer client_data)
+DECL|function|help_ignore_callback (GtkWidget * widget,gpointer client_data)
 name|help_ignore_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -1480,12 +1478,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|help_quit_callback (GtkWidget * w,gpointer client_data)
+DECL|function|help_quit_callback (GtkWidget * widget,gpointer client_data)
 name|help_quit_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -1995,7 +1993,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -2518,12 +2516,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|install_continue_callback (GtkWidget * w,gpointer client_data)
+DECL|function|install_continue_callback (GtkWidget * widget,gpointer client_data)
 name|install_continue_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -2564,12 +2562,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|install_quit_callback (GtkWidget * w,gpointer client_data)
+DECL|function|install_quit_callback (GtkWidget * widget,gpointer client_data)
 name|install_quit_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data

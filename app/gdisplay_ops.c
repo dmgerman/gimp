@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"general.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimage.h"
 end_include
 
@@ -1176,12 +1170,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_close_warning_callback (GtkWidget * w,gpointer client_data)
+DECL|function|gdisplay_close_warning_callback (GtkWidget * widget,gpointer client_data)
 name|gdisplay_close_warning_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -1247,12 +1241,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_cancel_warning_callback (GtkWidget * w,gpointer client_data)
+DECL|function|gdisplay_cancel_warning_callback (GtkWidget * widget,gpointer client_data)
 name|gdisplay_cancel_warning_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -1536,7 +1530,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(

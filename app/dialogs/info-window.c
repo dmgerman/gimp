@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"general.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gximage.h"
 end_include
 
@@ -233,12 +227,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|info_window_close_callback (GtkWidget * w,gpointer client_data)
+DECL|function|info_window_close_callback (GtkWidget * widget,gpointer client_data)
 name|info_window_close_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -771,7 +765,10 @@ name|g_snprintf
 argument_list|(
 name|format_buf
 argument_list|,
-literal|32
+sizeof|sizeof
+argument_list|(
+name|format_buf
+argument_list|)
 argument_list|,
 literal|"%%d x %%d pixels (%%.%df x %%.%df %s)"
 argument_list|,

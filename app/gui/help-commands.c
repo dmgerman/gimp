@@ -150,12 +150,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"general.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimage_mask.h"
 end_include
 
@@ -318,7 +312,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab3374f0108
+DECL|struct|__anon287b7de60108
 block|{
 DECL|member|resize
 name|Resize
@@ -513,6 +507,16 @@ name|gint
 name|selection_shrink_pixels
 init|=
 literal|1
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|selection_shrink_edge_lock
+specifier|static
+name|gboolean
+name|selection_shrink_edge_lock
+init|=
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
@@ -1303,14 +1307,16 @@ argument_list|(
 name|gdisp
 argument_list|)
 expr_stmt|;
+name|gtk_widget_show
+argument_list|(
 name|query_size_box
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"Border Selection"
 argument_list|)
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Border selection by:"
 argument_list|)
@@ -1363,6 +1369,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|)
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -1389,14 +1396,16 @@ argument_list|(
 name|gdisp
 argument_list|)
 expr_stmt|;
+name|gtk_widget_show
+argument_list|(
 name|query_size_box
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"Feather Selection"
 argument_list|)
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Feather selection by:"
 argument_list|)
@@ -1449,6 +1458,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|)
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -1475,14 +1485,16 @@ argument_list|(
 name|gdisp
 argument_list|)
 expr_stmt|;
+name|gtk_widget_show
+argument_list|(
 name|query_size_box
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"Grow Selection"
 argument_list|)
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Grow selection by:"
 argument_list|)
@@ -1535,6 +1547,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|)
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -1552,6 +1565,14 @@ name|gpointer
 name|client_data
 parameter_list|)
 block|{
+name|GtkWidget
+modifier|*
+name|edge_lock
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|shrink_dialog
+decl_stmt|;
 name|GDisplay
 modifier|*
 name|gdisp
@@ -1561,6 +1582,8 @@ argument_list|(
 name|gdisp
 argument_list|)
 expr_stmt|;
+name|shrink_dialog
+operator|=
 name|query_size_box
 argument_list|(
 name|N_
@@ -1620,6 +1643,82 @@ argument_list|,
 name|gdisp
 operator|->
 name|gimage
+argument_list|)
+expr_stmt|;
+name|edge_lock
+operator|=
+name|gtk_check_button_new_with_label
+argument_list|(
+name|_
+argument_list|(
+literal|"Shrink from image border"
+argument_list|)
+argument_list|)
+expr_stmt|;
+comment|/* eeek */
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|g_list_nth_data
+argument_list|(
+name|gtk_container_children
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|shrink_dialog
+argument_list|)
+operator|->
+name|vbox
+argument_list|)
+argument_list|)
+argument_list|,
+literal|0
+argument_list|)
+argument_list|)
+argument_list|,
+name|edge_lock
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_object_set_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|shrink_dialog
+argument_list|)
+argument_list|,
+literal|"edge_lock_toggle"
+argument_list|,
+name|edge_lock
+argument_list|)
+expr_stmt|;
+name|gtk_toggle_button_set_active
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|edge_lock
+argument_list|)
+argument_list|,
+operator|!
+name|selection_shrink_edge_lock
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|edge_lock
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|shrink_dialog
 argument_list|)
 expr_stmt|;
 block|}
@@ -4646,12 +4745,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimage_mask_feather_callback (GtkWidget * w,gpointer client_data,gpointer call_data)
+DECL|function|gimage_mask_feather_callback (GtkWidget * widget,gpointer client_data,gpointer call_data)
 name|gimage_mask_feather_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -4663,11 +4762,6 @@ block|{
 name|GImage
 modifier|*
 name|gimage
-init|=
-name|GIMP_IMAGE
-argument_list|(
-name|client_data
-argument_list|)
 decl_stmt|;
 name|GUnit
 name|unit
@@ -4678,11 +4772,18 @@ decl_stmt|;
 name|gdouble
 name|radius_y
 decl_stmt|;
+name|gimage
+operator|=
+name|GIMP_IMAGE
+argument_list|(
+name|client_data
+argument_list|)
+expr_stmt|;
 name|selection_feather_radius
 operator|=
 operator|*
 operator|(
-name|double
+name|gdouble
 operator|*
 operator|)
 name|call_data
@@ -4701,7 +4802,7 @@ name|gtk_object_get_data
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|w
+name|widget
 argument_list|)
 argument_list|,
 literal|"size_query_unit"
@@ -4720,7 +4821,7 @@ operator|!=
 name|UNIT_PIXEL
 condition|)
 block|{
-name|double
+name|gdouble
 name|factor
 decl_stmt|;
 name|factor
@@ -4794,12 +4895,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimage_mask_border_callback (GtkWidget * w,gpointer client_data,gpointer call_data)
+DECL|function|gimage_mask_border_callback (GtkWidget * widget,gpointer client_data,gpointer call_data)
 name|gimage_mask_border_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -4811,11 +4912,6 @@ block|{
 name|GImage
 modifier|*
 name|gimage
-init|=
-name|GIMP_IMAGE
-argument_list|(
-name|client_data
-argument_list|)
 decl_stmt|;
 name|GUnit
 name|unit
@@ -4826,6 +4922,13 @@ decl_stmt|;
 name|gdouble
 name|radius_y
 decl_stmt|;
+name|gimage
+operator|=
+name|GIMP_IMAGE
+argument_list|(
+name|client_data
+argument_list|)
+expr_stmt|;
 name|selection_border_radius
 operator|=
 call|(
@@ -4834,7 +4937,7 @@ call|)
 argument_list|(
 operator|*
 operator|(
-name|double
+name|gdouble
 operator|*
 operator|)
 name|call_data
@@ -4856,7 +4959,7 @@ name|gtk_object_get_data
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|w
+name|widget
 argument_list|)
 argument_list|,
 literal|"size_query_unit"
@@ -4875,7 +4978,7 @@ operator|!=
 name|UNIT_PIXEL
 condition|)
 block|{
-name|double
+name|gdouble
 name|factor
 decl_stmt|;
 name|factor
@@ -4949,12 +5052,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimage_mask_grow_callback (GtkWidget * w,gpointer client_data,gpointer call_data)
+DECL|function|gimage_mask_grow_callback (GtkWidget * widget,gpointer client_data,gpointer call_data)
 name|gimage_mask_grow_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -4966,11 +5069,6 @@ block|{
 name|GImage
 modifier|*
 name|gimage
-init|=
-name|GIMP_IMAGE
-argument_list|(
-name|client_data
-argument_list|)
 decl_stmt|;
 name|GUnit
 name|unit
@@ -4981,6 +5079,13 @@ decl_stmt|;
 name|gdouble
 name|radius_y
 decl_stmt|;
+name|gimage
+operator|=
+name|GIMP_IMAGE
+argument_list|(
+name|client_data
+argument_list|)
+expr_stmt|;
 name|selection_grow_pixels
 operator|=
 call|(
@@ -4989,7 +5094,7 @@ call|)
 argument_list|(
 operator|*
 operator|(
-name|double
+name|gdouble
 operator|*
 operator|)
 name|call_data
@@ -5011,7 +5116,7 @@ name|gtk_object_get_data
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|w
+name|widget
 argument_list|)
 argument_list|,
 literal|"size_query_unit"
@@ -5030,7 +5135,7 @@ operator|!=
 name|UNIT_PIXEL
 condition|)
 block|{
-name|double
+name|gdouble
 name|factor
 decl_stmt|;
 name|factor
@@ -5104,12 +5209,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimage_mask_shrink_callback (GtkWidget * w,gpointer client_data,gpointer call_data)
+DECL|function|gimage_mask_shrink_callback (GtkWidget * widget,gpointer client_data,gpointer call_data)
 name|gimage_mask_shrink_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -5121,11 +5226,6 @@ block|{
 name|GImage
 modifier|*
 name|gimage
-init|=
-name|GIMP_IMAGE
-argument_list|(
-name|client_data
-argument_list|)
 decl_stmt|;
 name|GUnit
 name|unit
@@ -5136,6 +5236,13 @@ decl_stmt|;
 name|gint
 name|radius_y
 decl_stmt|;
+name|gimage
+operator|=
+name|GIMP_IMAGE
+argument_list|(
+name|client_data
+argument_list|)
+expr_stmt|;
 name|selection_shrink_pixels
 operator|=
 call|(
@@ -5144,7 +5251,7 @@ call|)
 argument_list|(
 operator|*
 operator|(
-name|double
+name|gdouble
 operator|*
 operator|)
 name|call_data
@@ -5166,7 +5273,7 @@ name|gtk_object_get_data
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|w
+name|widget
 argument_list|)
 argument_list|,
 literal|"size_query_unit"
@@ -5178,6 +5285,24 @@ name|radius_y
 operator|=
 name|selection_shrink_pixels
 expr_stmt|;
+name|selection_shrink_edge_lock
+operator|=
+operator|!
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|gtk_object_get_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+literal|"edge_lock_toggle"
+argument_list|)
+argument_list|)
+operator|->
+name|active
+expr_stmt|;
 if|if
 condition|(
 name|unit
@@ -5185,7 +5310,7 @@ operator|!=
 name|UNIT_PIXEL
 condition|)
 block|{
-name|double
+name|gdouble
 name|factor
 decl_stmt|;
 name|factor
@@ -5249,7 +5374,7 @@ name|radius_x
 argument_list|,
 name|radius_y
 argument_list|,
-name|FALSE
+name|selection_shrink_edge_lock
 argument_list|)
 expr_stmt|;
 name|gdisplays_flush

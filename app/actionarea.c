@@ -6,19 +6,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"actionarea.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config.h"
 end_include
 
 begin_include
@@ -29,7 +17,7 @@ end_include
 
 begin_function
 name|void
-DECL|function|build_action_area (GtkDialog * dlg,ActionAreaItem * actions,int num_actions,int default_action)
+DECL|function|build_action_area (GtkDialog * dlg,ActionAreaItem * actions,gint num_actions,gint default_action)
 name|build_action_area
 parameter_list|(
 name|GtkDialog
@@ -40,19 +28,16 @@ name|ActionAreaItem
 modifier|*
 name|actions
 parameter_list|,
-name|int
+name|gint
 name|num_actions
 parameter_list|,
-name|int
+name|gint
 name|default_action
 parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
 name|button
-decl_stmt|;
-name|int
-name|i
 decl_stmt|;
 name|GList
 modifier|*
@@ -62,7 +47,10 @@ name|GtkWidget
 modifier|*
 name|hbbox
 decl_stmt|;
-name|gtk_container_border_width
+name|gint
+name|i
+decl_stmt|;
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(

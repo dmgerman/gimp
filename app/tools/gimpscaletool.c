@@ -1096,7 +1096,10 @@ name|g_snprintf
 argument_list|(
 name|format_buf
 argument_list|,
-literal|16
+sizeof|sizeof
+argument_list|(
+name|format_buf
+argument_list|)
 argument_list|,
 literal|"%%.%df %s"
 argument_list|,

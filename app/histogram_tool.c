@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"general.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdisplay.h"
 end_include
 
@@ -103,7 +97,7 @@ name|_HistogramTool
 block|{
 DECL|member|x
 DECL|member|y
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -262,9 +256,9 @@ parameter_list|(
 name|HistogramToolDialog
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -275,17 +269,17 @@ end_comment
 
 begin_function
 name|void
-DECL|function|histogram_tool_histogram_range (HistogramWidget * w,int start,int end,void * user_data)
+DECL|function|histogram_tool_histogram_range (HistogramWidget * widget,gint start,gint end,void * user_data)
 name|histogram_tool_histogram_range
 parameter_list|(
 name|HistogramWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
-name|int
+name|gint
 name|start
 parameter_list|,
-name|int
+name|gint
 name|end
 parameter_list|,
 name|void
@@ -297,10 +291,10 @@ name|HistogramToolDialog
 modifier|*
 name|htd
 decl_stmt|;
-name|double
+name|gdouble
 name|pixels
 decl_stmt|;
-name|double
+name|gdouble
 name|count
 decl_stmt|;
 name|htd
@@ -457,21 +451,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|histogram_tool_dialog_update (HistogramToolDialog * htd,int start,int end)
+DECL|function|histogram_tool_dialog_update (HistogramToolDialog * htd,gint start,gint end)
 name|histogram_tool_dialog_update
 parameter_list|(
 name|HistogramToolDialog
 modifier|*
 name|htd
 parameter_list|,
-name|int
+name|gint
 name|start
 parameter_list|,
-name|int
+name|gint
 name|end
 parameter_list|)
 block|{
-name|char
+name|gchar
 name|text
 index|[
 literal|12
@@ -482,7 +476,10 @@ name|g_snprintf
 argument_list|(
 name|text
 argument_list|,
-literal|12
+sizeof|sizeof
+argument_list|(
+name|text
+argument_list|)
 argument_list|,
 literal|"%3.1f"
 argument_list|,
@@ -511,7 +508,10 @@ name|g_snprintf
 argument_list|(
 name|text
 argument_list|,
-literal|12
+sizeof|sizeof
+argument_list|(
+name|text
+argument_list|)
 argument_list|,
 literal|"%3.1f"
 argument_list|,
@@ -540,7 +540,10 @@ name|g_snprintf
 argument_list|(
 name|text
 argument_list|,
-literal|12
+sizeof|sizeof
+argument_list|(
+name|text
+argument_list|)
 argument_list|,
 literal|"%3.1f"
 argument_list|,
@@ -569,7 +572,10 @@ name|g_snprintf
 argument_list|(
 name|text
 argument_list|,
-literal|12
+sizeof|sizeof
+argument_list|(
+name|text
+argument_list|)
 argument_list|,
 literal|"%8.1f"
 argument_list|,
@@ -604,7 +610,10 @@ name|g_snprintf
 argument_list|(
 name|text
 argument_list|,
-literal|12
+sizeof|sizeof
+argument_list|(
+name|text
+argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,
@@ -616,7 +625,10 @@ name|g_snprintf
 argument_list|(
 name|text
 argument_list|,
-literal|12
+sizeof|sizeof
+argument_list|(
+name|text
+argument_list|)
 argument_list|,
 literal|"%d..%d"
 argument_list|,
@@ -645,7 +657,10 @@ name|g_snprintf
 argument_list|(
 name|text
 argument_list|,
-literal|12
+sizeof|sizeof
+argument_list|(
+name|text
+argument_list|)
 argument_list|,
 literal|"%8.1f"
 argument_list|,
@@ -674,7 +689,10 @@ name|g_snprintf
 argument_list|(
 name|text
 argument_list|,
-literal|12
+sizeof|sizeof
+argument_list|(
+name|text
+argument_list|)
 argument_list|,
 literal|"%2.2f"
 argument_list|,
@@ -1132,10 +1150,10 @@ name|GtkWidget
 modifier|*
 name|menu
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -2029,12 +2047,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|histogram_tool_value_callback (GtkWidget * w,gpointer client_data)
+DECL|function|histogram_tool_value_callback (GtkWidget * widget,gpointer client_data)
 name|histogram_tool_value_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -2085,12 +2103,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|histogram_tool_red_callback (GtkWidget * w,gpointer client_data)
+DECL|function|histogram_tool_red_callback (GtkWidget * widget,gpointer client_data)
 name|histogram_tool_red_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -2141,12 +2159,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|histogram_tool_green_callback (GtkWidget * w,gpointer client_data)
+DECL|function|histogram_tool_green_callback (GtkWidget * widget,gpointer client_data)
 name|histogram_tool_green_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -2197,12 +2215,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|histogram_tool_blue_callback (GtkWidget * w,gpointer client_data)
+DECL|function|histogram_tool_blue_callback (GtkWidget * widget,gpointer client_data)
 name|histogram_tool_blue_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data

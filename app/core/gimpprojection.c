@@ -6,12 +6,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -25,12 +19,6 @@ begin_include
 include|#
 directive|include
 file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"buildmenu.h"
 end_include
 
 begin_include
@@ -79,12 +67,6 @@ begin_include
 include|#
 directive|include
 file|"gdisplay_ops.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"general.h"
 end_include
 
 begin_include
@@ -5102,7 +5084,7 @@ argument_list|,
 name|buffer
 argument_list|)
 expr_stmt|;
-comment|/* find out how many pixels the label's parent frame is bigger than    * the label itself */
+comment|/*  find out how many pixels the label's parent frame is bigger than    *  the label itself    */
 name|label_frame_size_difference
 operator|=
 name|gdisp

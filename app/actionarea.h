@@ -40,13 +40,22 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ab1fad60108
+DECL|typedef|ActionAreaItem
 typedef|typedef
+name|struct
+name|_ActionAreaItem
+name|ActionAreaItem
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_ActionAreaItem
 struct|struct
+name|_ActionAreaItem
 block|{
 DECL|member|label
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|label
 decl_stmt|;
@@ -63,11 +72,9 @@ name|GtkWidget
 modifier|*
 name|widget
 decl_stmt|;
-DECL|typedef|ActionAreaItem
 block|}
-name|ActionAreaItem
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_function_decl
 name|void
@@ -81,10 +88,10 @@ name|ActionAreaItem
 modifier|*
 name|actions
 parameter_list|,
-name|int
+name|gint
 name|num_actions
 parameter_list|,
-name|int
+name|gint
 name|default_action
 parameter_list|)
 function_decl|;

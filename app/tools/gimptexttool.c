@@ -3197,9 +3197,9 @@ condition|(
 operator|!
 name|image
 condition|)
-name|fatal_error
+name|gimp_fatal_error
 argument_list|(
-literal|"sanity check failed: could not get gdk image"
+literal|"text_render(): Sanity check failed: could not get gdk image"
 argument_list|)
 expr_stmt|;
 if|if
@@ -3210,9 +3210,9 @@ name|depth
 operator|!=
 literal|1
 condition|)
-name|fatal_error
+name|gimp_fatal_error
 argument_list|(
-literal|"sanity check failed: image should have 1 bit per pixel"
+literal|"text_render(): Sanity check failed: image should have 1 bit per pixel"
 argument_list|)
 expr_stmt|;
 comment|/* convert the GdkImage bitmap to a region */
@@ -3857,7 +3857,7 @@ parameter_list|(
 name|x
 parameter_list|)
 define|\
-value|{						\   if (x>= 0)					\       g_snprintf (new_ ## x, 16, "%d", x);	\   else						\       g_snprintf (new_ ## x, 16, "*");		\ }
+value|{ \   if (x>= 0) \     g_snprintf (new_ ## x, sizeof (new_ ## x), "%d", x); \   else \     g_snprintf (new_ ## x, sizeof (new_ ## x), "*"); \ }
 end_define
 
 begin_comment

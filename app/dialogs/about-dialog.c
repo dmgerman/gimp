@@ -81,7 +81,7 @@ end_define
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|about_dialog_load_logo
 parameter_list|(
 name|GtkWidget
@@ -113,7 +113,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|about_dialog_logo_expose
 parameter_list|(
 name|GtkWidget
@@ -129,7 +129,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|about_dialog_button
 parameter_list|(
 name|GtkWidget
@@ -145,7 +145,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|about_dialog_timer
 parameter_list|(
 name|gpointer
@@ -212,8 +212,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|dissolve_map
 specifier|static
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|dissolve_map
 init|=
@@ -224,7 +223,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|dissolve_width
 specifier|static
-name|int
+name|gint
 name|dissolve_width
 decl_stmt|;
 end_decl_stmt
@@ -232,7 +231,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|dissolve_height
 specifier|static
-name|int
+name|gint
 name|dissolve_height
 decl_stmt|;
 end_decl_stmt
@@ -240,7 +239,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|logo_width
 specifier|static
-name|int
+name|gint
 name|logo_width
 init|=
 literal|0
@@ -250,7 +249,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|logo_height
 specifier|static
-name|int
+name|gint
 name|logo_height
 init|=
 literal|0
@@ -260,7 +259,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|do_animation
 specifier|static
-name|int
+name|gint
 name|do_animation
 init|=
 literal|0
@@ -270,7 +269,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|do_scrolling
 specifier|static
-name|int
+name|gint
 name|do_scrolling
 init|=
 literal|0
@@ -280,7 +279,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|scroll_state
 specifier|static
-name|int
+name|gint
 name|scroll_state
 init|=
 literal|0
@@ -290,7 +289,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|frame
 specifier|static
-name|int
+name|gint
 name|frame
 init|=
 literal|0
@@ -300,7 +299,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|offset
 specifier|static
-name|int
+name|gint
 name|offset
 init|=
 literal|0
@@ -310,7 +309,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|timer
 specifier|static
-name|int
+name|gint
 name|timer
 init|=
 literal|0
@@ -320,7 +319,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|scroll_text
 specifier|static
-name|char
+name|gchar
 modifier|*
 name|scroll_text
 index|[]
@@ -470,7 +469,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|nscroll_texts
 specifier|static
-name|int
+name|gint
 name|nscroll_texts
 init|=
 sizeof|sizeof
@@ -491,7 +490,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|scroll_text_widths
 specifier|static
-name|int
+name|gint
 name|scroll_text_widths
 index|[
 literal|100
@@ -506,7 +505,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|cur_scroll_text
 specifier|static
-name|int
+name|gint
 name|cur_scroll_text
 init|=
 literal|0
@@ -516,7 +515,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|cur_scroll_index
 specifier|static
-name|int
+name|gint
 name|cur_scroll_index
 init|=
 literal|0
@@ -526,7 +525,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|shuffle_array
 specifier|static
-name|int
+name|gint
 name|shuffle_array
 index|[
 sizeof|sizeof
@@ -547,10 +546,10 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|about_dialog_create (int timeout)
+DECL|function|about_dialog_create (gint timeout)
 name|about_dialog_create
 parameter_list|(
-name|int
+name|gint
 name|timeout
 parameter_list|)
 block|{
@@ -733,7 +732,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -775,7 +774,7 @@ argument_list|,
 name|GTK_SHADOW_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -1051,7 +1050,7 @@ argument_list|,
 name|GTK_SHADOW_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -1373,7 +1372,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|about_dialog_load_logo (GtkWidget * window)
 name|about_dialog_load_logo
 parameter_list|(
@@ -1390,14 +1389,13 @@ name|GdkGC
 modifier|*
 name|gc
 decl_stmt|;
-name|char
+name|gchar
 name|buf
 index|[
 literal|1024
 index|]
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|pixelrow
 decl_stmt|;
@@ -1405,10 +1403,10 @@ name|FILE
 modifier|*
 name|fp
 decl_stmt|;
-name|int
+name|gint
 name|count
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -1887,7 +1885,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|about_dialog_logo_expose (GtkWidget * widget,GdkEventExpose * event)
 name|about_dialog_logo_expose
 parameter_list|(
@@ -1992,7 +1990,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|about_dialog_button (GtkWidget * widget,GdkEventButton * event)
 name|about_dialog_button
 parameter_list|(
@@ -2035,7 +2033,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|about_dialog_timer (gpointer data)
 name|about_dialog_timer
 parameter_list|(

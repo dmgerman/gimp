@@ -140,7 +140,7 @@ end_include
 
 begin_decl_stmt
 specifier|extern
-name|char
+name|gchar
 modifier|*
 name|prog_name
 decl_stmt|;
@@ -148,10 +148,10 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|message_func (char * str)
-name|message_func
+DECL|function|gimp_message_func (gchar * str)
+name|gimp_message_func
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|str
 parameter_list|)
@@ -220,10 +220,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|fatal_error (char * fmt,...)
-name|fatal_error
+DECL|function|gimp_fatal_error (gchar * fmt,...)
+name|gimp_fatal_error
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|fmt
 parameter_list|,
@@ -312,10 +312,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|terminate (char * fmt,...)
-name|terminate
+DECL|function|gimp_terminate (gchar * fmt,...)
+name|gimp_terminate
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|fmt
 parameter_list|,

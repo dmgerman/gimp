@@ -5040,9 +5040,12 @@ condition|(
 operator|!
 name|segs
 condition|)
-name|fatal_error
+name|gimp_fatal_error
 argument_list|(
-literal|"Unable to reallocate segment array in iscissors."
+name|_
+argument_list|(
+literal|"add_segment(): Unable to reallocate segment array in iscissors."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -5228,9 +5231,12 @@ condition|(
 operator|!
 name|pts
 condition|)
-name|fatal_error
+name|gimp_fatal_error
 argument_list|(
-literal|"Unable to reallocate points array in iscissors."
+name|_
+argument_list|(
+literal|"add_point(): Unable to reallocate points array in iscissors."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -307,7 +307,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|prog_name
-name|char
+name|gchar
 modifier|*
 name|prog_name
 decl_stmt|;
@@ -320,7 +320,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|alternate_gimprc
-name|char
+name|gchar
 modifier|*
 name|alternate_gimprc
 decl_stmt|;
@@ -328,7 +328,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|alternate_system_gimprc
-name|char
+name|gchar
 modifier|*
 name|alternate_system_gimprc
 decl_stmt|;
@@ -336,7 +336,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|batch_cmds
-name|char
+name|gchar
 modifier|*
 modifier|*
 name|batch_cmds
@@ -350,7 +350,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|gimp_argc
 specifier|static
-name|int
+name|gint
 name|gimp_argc
 decl_stmt|;
 end_decl_stmt
@@ -358,7 +358,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gimp_argv
 specifier|static
-name|char
+name|gchar
 modifier|*
 modifier|*
 name|gimp_argv
@@ -1433,7 +1433,7 @@ argument_list|(
 operator|(
 name|GPrintFunc
 operator|)
-name|message_func
+name|gimp_message_func
 argument_list|)
 expr_stmt|;
 comment|/* Handle some signals */
@@ -1792,7 +1792,7 @@ name|SIGHUP
 case|case
 name|SIGHUP
 case|:
-name|terminate
+name|gimp_terminate
 argument_list|(
 name|_
 argument_list|(
@@ -1809,7 +1809,7 @@ name|SIGINT
 case|case
 name|SIGINT
 case|:
-name|terminate
+name|gimp_terminate
 argument_list|(
 name|_
 argument_list|(
@@ -1826,7 +1826,7 @@ name|SIGQUIT
 case|case
 name|SIGQUIT
 case|:
-name|terminate
+name|gimp_terminate
 argument_list|(
 name|_
 argument_list|(
@@ -1843,7 +1843,7 @@ name|SIGABRT
 case|case
 name|SIGABRT
 case|:
-name|terminate
+name|gimp_terminate
 argument_list|(
 name|_
 argument_list|(
@@ -1860,7 +1860,7 @@ name|SIGBUS
 case|case
 name|SIGBUS
 case|:
-name|fatal_error
+name|gimp_fatal_error
 argument_list|(
 name|_
 argument_list|(
@@ -1877,7 +1877,7 @@ name|SIGSEGV
 case|case
 name|SIGSEGV
 case|:
-name|fatal_error
+name|gimp_fatal_error
 argument_list|(
 name|_
 argument_list|(
@@ -1894,7 +1894,7 @@ name|SIGPIPE
 case|case
 name|SIGPIPE
 case|:
-name|terminate
+name|gimp_terminate
 argument_list|(
 name|_
 argument_list|(
@@ -1911,7 +1911,7 @@ name|SIGTERM
 case|case
 name|SIGTERM
 case|:
-name|terminate
+name|gimp_terminate
 argument_list|(
 name|_
 argument_list|(
@@ -1928,7 +1928,7 @@ name|SIGFPE
 case|case
 name|SIGFPE
 case|:
-name|fatal_error
+name|gimp_fatal_error
 argument_list|(
 name|_
 argument_list|(
@@ -1940,7 +1940,7 @@ break|break;
 endif|#
 directive|endif
 default|default:
-name|fatal_error
+name|gimp_fatal_error
 argument_list|(
 name|_
 argument_list|(
@@ -2011,7 +2011,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2906ad730108
+DECL|struct|__anon2bf17ace0108
 block|{
 DECL|member|test_gint32
 name|gint32

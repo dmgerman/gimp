@@ -106,12 +106,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"buildmenu.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"colormaps.h"
 end_include
 
@@ -131,12 +125,6 @@ begin_include
 include|#
 directive|include
 file|"errors.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"general.h"
 end_include
 
 begin_include
@@ -866,11 +854,11 @@ condition|(
 operator|!
 name|active_brush
 condition|)
-name|fatal_error
+name|gimp_fatal_error
 argument_list|(
 name|_
 argument_list|(
-literal|"Specified default brush not found!"
+literal|"get_active_brush(): Specified default brush not found!"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -3192,7 +3192,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|brush_widget_active_rect (BrushWidget * brush_widget,GtkWidget * w,GdkRectangle * rect)
+DECL|function|brush_widget_active_rect (BrushWidget * brush_widget,GtkWidget * widget,GdkRectangle * rect)
 name|brush_widget_active_rect
 parameter_list|(
 name|BrushWidget
@@ -3201,7 +3201,7 @@ name|brush_widget
 parameter_list|,
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GdkRectangle
 modifier|*
@@ -3220,13 +3220,13 @@ name|r
 operator|=
 name|MIN
 argument_list|(
-name|w
+name|widget
 operator|->
 name|allocation
 operator|.
 name|width
 argument_list|,
-name|w
+name|widget
 operator|->
 name|allocation
 operator|.
@@ -3237,7 +3237,7 @@ literal|2
 expr_stmt|;
 name|x
 operator|=
-name|w
+name|widget
 operator|->
 name|allocation
 operator|.
@@ -3253,7 +3253,7 @@ name|ink_options
 operator|->
 name|aspect
 operator|/
-literal|10.
+literal|10.0
 operator|*
 name|cos
 argument_list|(
@@ -3264,7 +3264,7 @@ argument_list|)
 expr_stmt|;
 name|y
 operator|=
-name|w
+name|widget
 operator|->
 name|allocation
 operator|.
@@ -3280,7 +3280,7 @@ name|ink_options
 operator|->
 name|aspect
 operator|/
-literal|10.
+literal|10.0
 operator|*
 name|sin
 argument_list|(
@@ -3323,21 +3323,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|brush_widget_realize (GtkWidget * w)
+DECL|function|brush_widget_realize (GtkWidget * widget)
 name|brush_widget_realize
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|)
 block|{
 name|gtk_style_set_background
 argument_list|(
-name|w
+name|widget
 operator|->
 name|style
 argument_list|,
-name|w
+name|widget
 operator|->
 name|window
 argument_list|,
@@ -3350,7 +3350,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|brush_widget_draw_brush (BrushWidget * brush_widget,GtkWidget * w,double xc,double yc,double radius)
+DECL|function|brush_widget_draw_brush (BrushWidget * brush_widget,GtkWidget * widget,gdouble xc,gdouble yc,gdouble radius)
 name|brush_widget_draw_brush
 parameter_list|(
 name|BrushWidget
@@ -3359,23 +3359,23 @@ name|brush_widget
 parameter_list|,
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
-name|double
+name|gdouble
 name|xc
 parameter_list|,
-name|double
+name|gdouble
 name|yc
 parameter_list|,
-name|double
+name|gdouble
 name|radius
 parameter_list|)
 block|{
 name|Blob
 modifier|*
-name|b
+name|blob
 decl_stmt|;
-name|b
+name|blob
 operator|=
 name|ink_options
 operator|->
@@ -3403,6 +3403,7 @@ operator|->
 name|angle
 argument_list|)
 argument_list|,
+operator|(
 operator|-
 operator|(
 name|radius
@@ -3418,7 +3419,9 @@ name|ink_options
 operator|->
 name|angle
 argument_list|)
+operator|)
 argument_list|,
+operator|(
 operator|(
 name|radius
 operator|/
@@ -3433,31 +3436,32 @@ name|ink_options
 operator|->
 name|angle
 argument_list|)
+operator|)
 argument_list|)
 expr_stmt|;
 name|paint_blob
 argument_list|(
-name|w
+name|widget
 operator|->
 name|window
 argument_list|,
-name|w
+name|widget
 operator|->
 name|style
 operator|->
 name|fg_gc
 index|[
-name|w
+name|widget
 operator|->
 name|state
 index|]
 argument_list|,
-name|b
+name|blob
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|b
+name|blob
 argument_list|)
 expr_stmt|;
 block|}
@@ -3466,12 +3470,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|brush_widget_expose (GtkWidget * w,GdkEventExpose * event,BrushWidget * brush_widget)
+DECL|function|brush_widget_expose (GtkWidget * widget,GdkEventExpose * event,BrushWidget * brush_widget)
 name|brush_widget_expose
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GdkEventExpose
 modifier|*
@@ -3492,13 +3496,13 @@ name|r0
 operator|=
 name|MIN
 argument_list|(
-name|w
+name|widget
 operator|->
 name|allocation
 operator|.
 name|width
 argument_list|,
-name|w
+name|widget
 operator|->
 name|allocation
 operator|.
@@ -3516,7 +3520,7 @@ condition|)
 return|return;
 name|gdk_window_clear_area
 argument_list|(
-name|w
+name|widget
 operator|->
 name|window
 argument_list|,
@@ -3524,13 +3528,13 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|w
+name|widget
 operator|->
 name|allocation
 operator|.
 name|width
 argument_list|,
-name|w
+name|widget
 operator|->
 name|allocation
 operator|.
@@ -3541,9 +3545,9 @@ name|brush_widget_draw_brush
 argument_list|(
 name|brush_widget
 argument_list|,
-name|w
+name|widget
 argument_list|,
-name|w
+name|widget
 operator|->
 name|allocation
 operator|.
@@ -3551,7 +3555,7 @@ name|width
 operator|/
 literal|2
 argument_list|,
-name|w
+name|widget
 operator|->
 name|allocation
 operator|.
@@ -3568,7 +3572,7 @@ name|brush_widget_active_rect
 argument_list|(
 name|brush_widget
 argument_list|,
-name|w
+name|widget
 argument_list|,
 operator|&
 name|rect
@@ -3576,11 +3580,11 @@ argument_list|)
 expr_stmt|;
 name|gdk_draw_rectangle
 argument_list|(
-name|w
+name|widget
 operator|->
 name|window
 argument_list|,
-name|w
+name|widget
 operator|->
 name|style
 operator|->
@@ -3611,15 +3615,15 @@ argument_list|)
 expr_stmt|;
 name|gtk_draw_shadow
 argument_list|(
-name|w
+name|widget
 operator|->
 name|style
 argument_list|,
-name|w
+name|widget
 operator|->
 name|window
 argument_list|,
-name|w
+name|widget
 operator|->
 name|state
 argument_list|,
@@ -3648,12 +3652,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|brush_widget_button_press (GtkWidget * w,GdkEventButton * event,BrushWidget * brush_widget)
+DECL|function|brush_widget_button_press (GtkWidget * widget,GdkEventButton * event,BrushWidget * brush_widget)
 name|brush_widget_button_press
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GdkEventButton
 modifier|*
@@ -3671,7 +3675,7 @@ name|brush_widget_active_rect
 argument_list|(
 name|brush_widget
 argument_list|,
-name|w
+name|widget
 argument_list|,
 operator|&
 name|rect
@@ -3734,6 +3738,7 @@ name|state
 operator|=
 name|TRUE
 expr_stmt|;
+comment|/*  theoretically, this should work. Dunno why it doesn't --Michael       gdk_pointer_grab (brush_widget->widget->window, TRUE, 			GDK_POINTER_MOTION_HINT_MASK | 			GDK_BUTTON1_MOTION_MASK | 			GDK_BUTTON_RELEASE_MASK, 			NULL, NULL, event->time);       */
 block|}
 block|}
 end_function
@@ -3741,12 +3746,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|brush_widget_button_release (GtkWidget * w,GdkEventButton * event,BrushWidget * brush_widget)
+DECL|function|brush_widget_button_release (GtkWidget * widget,GdkEventButton * event,BrushWidget * brush_widget)
 name|brush_widget_button_release
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GdkEventButton
 modifier|*
@@ -3763,18 +3768,19 @@ name|state
 operator|=
 name|FALSE
 expr_stmt|;
+comment|/*   gdk_pointer_ungrab (event->time);   */
 block|}
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|brush_widget_motion_notify (GtkWidget * w,GdkEventMotion * event,BrushWidget * brush_widget)
+DECL|function|brush_widget_motion_notify (GtkWidget * widget,GdkEventMotion * event,BrushWidget * brush_widget)
 name|brush_widget_motion_notify
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GdkEventMotion
 modifier|*
@@ -3810,7 +3816,7 @@ name|event
 operator|->
 name|x
 operator|-
-name|w
+name|widget
 operator|->
 name|allocation
 operator|.
@@ -3824,7 +3830,7 @@ name|event
 operator|->
 name|y
 operator|-
-name|w
+name|widget
 operator|->
 name|allocation
 operator|.
@@ -3864,13 +3870,13 @@ name|r0
 operator|=
 name|MIN
 argument_list|(
-name|w
+name|widget
 operator|->
 name|allocation
 operator|.
 name|width
 argument_list|,
-name|w
+name|widget
 operator|->
 name|allocation
 operator|.
@@ -3883,7 +3889,7 @@ name|ink_options
 operator|->
 name|aspect
 operator|=
-literal|10.
+literal|10.0
 operator|*
 name|sqrt
 argument_list|(
@@ -3931,7 +3937,7 @@ literal|10.0
 expr_stmt|;
 name|gtk_widget_draw
 argument_list|(
-name|w
+name|widget
 argument_list|,
 name|NULL
 argument_list|)
@@ -6445,7 +6451,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2938b9e80103
+DECL|enum|__anon2a52b2490103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

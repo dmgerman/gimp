@@ -6,12 +6,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -36,13 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"tile.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tile.h"
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_comment
@@ -959,9 +953,12 @@ condition|(
 operator|!
 name|tmp_segs
 condition|)
-name|fatal_error
+name|gimp_fatal_error
 argument_list|(
-literal|"Unable to reallocate segments array for mask boundary."
+name|_
+argument_list|(
+literal|"make_seg(): Unable to reallocate segments array for mask boundary."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1190,9 +1187,12 @@ operator|||
 operator|!
 name|empty_segs_c
 condition|)
-name|fatal_error
+name|gimp_fatal_error
 argument_list|(
-literal|"Unable to reallocate empty segments array for mask boundary."
+name|_
+argument_list|(
+literal|"allocate_empty_segs(): Unable to reallocate empty segments array for mask boundary."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"buildmenu.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"colormaps.h"
 end_include
 
@@ -120,12 +114,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"general.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"indicator_area.h"
 end_include
 
@@ -162,12 +150,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpsizeentry.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"pixmaps.h"
 end_include
 
@@ -181,6 +163,12 @@ begin_include
 include|#
 directive|include
 file|"pixmaps/qmasknosel.xpm"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpsizeentry.h"
 end_include
 
 begin_include
@@ -536,7 +524,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon2bb82d3b0103
+DECL|enum|__anon2a03f5550103
 enum|enum
 block|{
 DECL|enumerator|TARGET_URI_LIST
@@ -612,12 +600,12 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|tools_select_update (GtkWidget * w,gpointer data)
+DECL|function|tools_select_update (GtkWidget * widget,gpointer data)
 name|tools_select_update
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|data
@@ -644,7 +632,7 @@ operator|)
 operator|&&
 name|GTK_TOGGLE_BUTTON
 argument_list|(
-name|w
+name|widget
 argument_list|)
 operator|->
 name|active
@@ -660,12 +648,12 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|tools_button_press (GtkWidget * w,GdkEventButton * event,gpointer data)
+DECL|function|tools_button_press (GtkWidget * widget,GdkEventButton * event,gpointer data)
 name|tools_button_press
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GdkEventButton
 modifier|*
@@ -705,16 +693,16 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|toolbox_delete (GtkWidget * w,GdkEvent * e,gpointer data)
+DECL|function|toolbox_delete (GtkWidget * widget,GdkEvent * event,gpointer data)
 name|toolbox_delete
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GdkEvent
 modifier|*
-name|e
+name|event
 parameter_list|,
 name|gpointer
 name|data
@@ -747,16 +735,16 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|toolbox_check_device (GtkWidget * w,GdkEvent * e,gpointer data)
+DECL|function|toolbox_check_device (GtkWidget * widget,GdkEvent * event,gpointer data)
 name|toolbox_check_device
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GdkEvent
 modifier|*
-name|e
+name|event
 parameter_list|,
 name|gpointer
 name|data
@@ -764,7 +752,7 @@ parameter_list|)
 block|{
 name|devices_check_change
 argument_list|(
-name|e
+name|event
 argument_list|)
 expr_stmt|;
 return|return
@@ -776,12 +764,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_destroy (GtkWidget * w,GDisplay * gdisp)
+DECL|function|gdisplay_destroy (GtkWidget * widget,GDisplay * gdisp)
 name|gdisplay_destroy
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GDisplay
 modifier|*
@@ -799,16 +787,16 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|gdisplay_delete (GtkWidget * w,GdkEvent * e,GDisplay * gdisp)
+DECL|function|gdisplay_delete (GtkWidget * widget,GdkEvent * event,GDisplay * gdisp)
 name|gdisplay_delete
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GdkEvent
 modifier|*
-name|e
+name|event
 parameter_list|,
 name|GDisplay
 modifier|*
@@ -2135,7 +2123,7 @@ begin_function
 specifier|static
 name|GdkPixmap
 modifier|*
-DECL|function|create_pixmap (GdkWindow * parent,GdkBitmap ** mask,char ** data,int width,int height)
+DECL|function|create_pixmap (GdkWindow * parent,GdkBitmap ** mask,gchar ** data,gint width,gint height)
 name|create_pixmap
 parameter_list|(
 name|GdkWindow
@@ -2147,15 +2135,15 @@ modifier|*
 modifier|*
 name|mask
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 modifier|*
 name|data
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|)
 block|{
@@ -2612,22 +2600,22 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|create_pixmap_widget (GdkWindow * parent,char ** data,int width,int height)
+DECL|function|create_pixmap_widget (GdkWindow * parent,gchar ** data,gint width,gint height)
 name|create_pixmap_widget
 parameter_list|(
 name|GdkWindow
 modifier|*
 name|parent
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 modifier|*
 name|data
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|)
 block|{
@@ -3170,24 +3158,24 @@ end_function
 
 begin_function
 name|void
-DECL|function|create_display_shell (GDisplay * gdisp,int width,int height,char * title,int type)
+DECL|function|create_display_shell (GDisplay * gdisp,gint width,gint height,gchar * title,gint type)
 name|create_display_shell
 parameter_list|(
 name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|title
 parameter_list|,
-name|int
+name|gint
 name|type
 parameter_list|)
 block|{
@@ -4188,16 +4176,16 @@ name|GtkStyle
 modifier|*
 name|style
 decl_stmt|;
-name|style
-operator|=
-name|gtk_widget_get_style
+name|gtk_widget_realize
 argument_list|(
 name|gdisp
 operator|->
 name|shell
 argument_list|)
 expr_stmt|;
-name|gtk_widget_realize
+name|style
+operator|=
+name|gtk_widget_get_style
 argument_list|(
 name|gdisp
 operator|->
@@ -5462,10 +5450,7 @@ argument_list|(
 name|qbox
 argument_list|)
 argument_list|,
-name|gettext
-argument_list|(
 name|title
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_wmclass
@@ -5571,7 +5556,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -5581,7 +5566,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|2
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -5608,10 +5593,7 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-name|gettext
-argument_list|(
 name|message
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5623,7 +5605,7 @@ argument_list|)
 argument_list|,
 name|label
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -5781,9 +5763,9 @@ argument_list|)
 argument_list|,
 name|entry
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -5799,10 +5781,7 @@ argument_list|(
 name|entry
 argument_list|)
 argument_list|,
-name|gettext
-argument_list|(
 name|initial
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_grab_focus
@@ -5820,13 +5799,6 @@ operator|->
 name|entry
 operator|=
 name|entry
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|query_box
-operator|->
-name|qbox
-argument_list|)
 expr_stmt|;
 return|return
 name|query_box
@@ -5964,9 +5936,9 @@ argument_list|)
 argument_list|,
 name|spinbutton
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -5986,13 +5958,6 @@ operator|->
 name|entry
 operator|=
 name|spinbutton
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|query_box
-operator|->
-name|qbox
-argument_list|)
 expr_stmt|;
 return|return
 name|query_box
@@ -6133,9 +6098,9 @@ argument_list|)
 argument_list|,
 name|spinbutton
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -6155,13 +6120,6 @@ operator|->
 name|entry
 operator|=
 name|spinbutton
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|query_box
-operator|->
-name|qbox
-argument_list|)
 expr_stmt|;
 return|return
 name|query_box
@@ -6363,9 +6321,9 @@ argument_list|)
 argument_list|,
 name|sizeentry
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -6389,13 +6347,6 @@ name|entry
 operator|=
 name|sizeentry
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|query_box
-operator|->
-name|qbox
-argument_list|)
-expr_stmt|;
 return|return
 name|query_box
 operator|->
@@ -6407,16 +6358,16 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|query_box_delete_callback (GtkWidget * w,GdkEvent * e,gpointer client_data)
+DECL|function|query_box_delete_callback (GtkWidget * widget,GdkEvent * event,gpointer client_data)
 name|query_box_delete_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GdkEvent
 modifier|*
-name|e
+name|event
 parameter_list|,
 name|gpointer
 name|client_data
@@ -6424,7 +6375,7 @@ parameter_list|)
 block|{
 name|query_box_cancel_callback
 argument_list|(
-name|w
+name|widget
 argument_list|,
 name|client_data
 argument_list|)
@@ -6438,12 +6389,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|query_box_cancel_callback (GtkWidget * w,gpointer client_data)
+DECL|function|query_box_cancel_callback (GtkWidget * widget,gpointer client_data)
 name|query_box_cancel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -6496,12 +6447,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|string_query_box_ok_callback (GtkWidget * w,gpointer client_data)
+DECL|function|string_query_box_ok_callback (GtkWidget * widget,gpointer client_data)
 name|string_query_box_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -6572,7 +6523,9 @@ operator|->
 name|callback
 call|)
 argument_list|(
-name|w
+name|query_box
+operator|->
+name|qbox
 argument_list|,
 name|query_box
 operator|->
@@ -6603,12 +6556,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|int_query_box_ok_callback (GtkWidget * w,gpointer client_data)
+DECL|function|int_query_box_ok_callback (GtkWidget * widget,gpointer client_data)
 name|int_query_box_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -6687,7 +6640,9 @@ operator|->
 name|callback
 call|)
 argument_list|(
-name|w
+name|query_box
+operator|->
+name|qbox
 argument_list|,
 name|query_box
 operator|->
@@ -6718,12 +6673,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|double_query_box_ok_callback (GtkWidget * w,gpointer client_data)
+DECL|function|double_query_box_ok_callback (GtkWidget * widget,gpointer client_data)
 name|double_query_box_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -6802,7 +6757,9 @@ operator|->
 name|callback
 call|)
 argument_list|(
-name|w
+name|query_box
+operator|->
+name|qbox
 argument_list|,
 name|query_box
 operator|->
@@ -6833,12 +6790,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|size_query_box_ok_callback (GtkWidget * w,gpointer client_data)
+DECL|function|size_query_box_ok_callback (GtkWidget * widget,gpointer client_data)
 name|size_query_box_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -6916,7 +6873,7 @@ name|gtk_object_set_data
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|w
+name|widget
 argument_list|)
 argument_list|,
 literal|"size_query_unit"
@@ -6943,7 +6900,9 @@ operator|->
 name|callback
 call|)
 argument_list|(
-name|w
+name|query_box
+operator|->
+name|qbox
 argument_list|,
 name|query_box
 operator|->
@@ -7038,10 +6997,10 @@ end_function_decl
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|message_box (char * message,GtkCallback callback,gpointer data)
+DECL|function|message_box (gchar * message,GtkCallback callback,gpointer data)
 name|message_box
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|message
 parameter_list|,
@@ -7066,37 +7025,17 @@ name|vbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|label_vbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|label
 decl_stmt|;
 name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
-name|char
-modifier|*
-name|str
-decl_stmt|,
-modifier|*
-name|orig
-decl_stmt|;
 if|if
 condition|(
+operator|!
 name|message
 condition|)
-name|message
-operator|=
-name|orig
-operator|=
-name|g_strdup
-argument_list|(
-name|message
-argument_list|)
-expr_stmt|;
-else|else
 return|return
 name|NULL
 return|;
@@ -7152,6 +7091,21 @@ name|mbox
 argument_list|)
 argument_list|,
 name|GTK_WIN_POS_MOUSE
+argument_list|)
+expr_stmt|;
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|mbox
+argument_list|)
+operator|->
+name|action_area
+argument_list|)
+argument_list|,
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -7252,7 +7206,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -7275,13 +7229,11 @@ argument_list|(
 name|vbox
 argument_list|)
 expr_stmt|;
-name|label_vbox
+name|label
 operator|=
-name|gtk_vbox_new
+name|gtk_label_new
 argument_list|(
-name|FALSE
-argument_list|,
-literal|1
+name|message
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -7291,59 +7243,6 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-name|label_vbox
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|label_vbox
-argument_list|)
-expr_stmt|;
-name|str
-operator|=
-name|message
-expr_stmt|;
-while|while
-condition|(
-operator|*
-name|str
-operator|!=
-literal|'\0'
-condition|)
-block|{
-if|if
-condition|(
-operator|*
-name|str
-operator|==
-literal|'\n'
-condition|)
-block|{
-operator|*
-name|str
-operator|=
-literal|'\0'
-expr_stmt|;
-name|label
-operator|=
-name|gtk_label_new
-argument_list|(
-name|message
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|label_vbox
-argument_list|)
-argument_list|,
 name|label
 argument_list|,
 name|TRUE
@@ -7356,59 +7255,6 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|label
-argument_list|)
-expr_stmt|;
-name|message
-operator|=
-name|str
-operator|+
-literal|1
-expr_stmt|;
-block|}
-name|str
-operator|++
-expr_stmt|;
-block|}
-if|if
-condition|(
-operator|*
-name|message
-operator|!=
-literal|'\0'
-condition|)
-block|{
-name|label
-operator|=
-name|gtk_label_new
-argument_list|(
-name|message
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|label_vbox
-argument_list|)
-argument_list|,
-name|label
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|label
-argument_list|)
-expr_stmt|;
-block|}
-name|g_free
-argument_list|(
-name|orig
 argument_list|)
 expr_stmt|;
 name|msg_box
@@ -7443,16 +7289,16 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|message_box_delete_callback (GtkWidget * w,GdkEvent * e,gpointer client_data)
+DECL|function|message_box_delete_callback (GtkWidget * widget,GdkEvent * event,gpointer client_data)
 name|message_box_delete_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GdkEvent
 modifier|*
-name|e
+name|event
 parameter_list|,
 name|gpointer
 name|client_data
@@ -7460,7 +7306,7 @@ parameter_list|)
 block|{
 name|message_box_close_callback
 argument_list|(
-name|w
+name|widget
 argument_list|,
 name|client_data
 argument_list|)
@@ -7474,12 +7320,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|message_box_close_callback (GtkWidget * w,gpointer client_data)
+DECL|function|message_box_close_callback (GtkWidget * widget,gpointer client_data)
 name|message_box_close_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -7511,7 +7357,7 @@ operator|->
 name|callback
 call|)
 argument_list|(
-name|w
+name|widget
 argument_list|,
 name|msg_box
 operator|->

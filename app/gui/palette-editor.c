@@ -306,7 +306,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291004520103
+DECL|enum|__anon2bab21800103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -4363,14 +4363,16 @@ name|gpointer
 name|client_data
 parameter_list|)
 block|{
+name|gtk_widget_show
+argument_list|(
 name|query_string_box
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"New Palette"
 argument_list|)
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Enter a name for new palette"
 argument_list|)
@@ -4384,6 +4386,7 @@ argument_list|,
 name|palette_add_entries_callback
 argument_list|,
 name|client_data
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -9484,7 +9487,7 @@ argument_list|(
 name|clist_scrolledwindow
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -9597,7 +9600,7 @@ argument_list|,
 name|vbuttonbox2
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -9950,7 +9953,7 @@ argument_list|(
 name|dialog_action_area3
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -10921,14 +10924,16 @@ name|gpointer
 name|client_data
 parameter_list|)
 block|{
+name|gtk_widget_show
+argument_list|(
 name|query_string_box
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"Merge Palette"
 argument_list|)
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Enter a name for merged palette"
 argument_list|)
@@ -10942,6 +10947,7 @@ argument_list|,
 name|palette_merge_entries_callback
 argument_list|,
 name|client_data
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -13551,7 +13557,7 @@ argument_list|)
 operator|->
 name|action_area
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -13631,7 +13637,7 @@ operator|)
 name|palette
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(

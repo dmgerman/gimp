@@ -12,13 +12,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
+file|<stdio.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<stdio.h>
+file|<stdlib.h>
 end_include
 
 begin_include
@@ -76,12 +76,6 @@ end_endif
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"colormaps.h"
 end_include
 
@@ -118,12 +112,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"buildmenu.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"colormaps.h"
 end_include
 
@@ -136,19 +124,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"general.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"menus.h"
 end_include
 
 begin_include
@@ -188,7 +164,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|num_patterns
-name|int
+name|gint
 name|num_patterns
 init|=
 literal|0
@@ -211,7 +187,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|have_default_pattern
 specifier|static
-name|int
+name|gint
 name|have_default_pattern
 init|=
 literal|0
@@ -241,9 +217,8 @@ specifier|static
 name|void
 name|load_pattern
 parameter_list|(
-name|char
+name|gchar
 modifier|*
-name|filename
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -288,10 +263,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|patterns_init (int no_data)
+DECL|function|patterns_init (gboolean no_data)
 name|patterns_init
 parameter_list|(
-name|int
+name|gboolean
 name|no_data
 parameter_list|)
 block|{
@@ -524,10 +499,11 @@ condition|(
 operator|!
 name|active_pattern
 condition|)
-name|fatal_error
+name|gimp_fatal_error
 argument_list|(
 name|_
 argument_list|(
+literal|"get_active_pattern(): "
 literal|"Specified default pattern not found!"
 argument_list|)
 argument_list|)
@@ -587,10 +563,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|load_pattern (char * filename)
+DECL|function|load_pattern (gchar * filename)
 name|load_pattern
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -602,11 +578,10 @@ name|FILE
 modifier|*
 name|fp
 decl_stmt|;
-name|int
+name|gint
 name|bn_size
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|buf
 index|[
 name|sz_PatternHeader
@@ -615,12 +590,11 @@ decl_stmt|;
 name|PatternHeader
 name|header
 decl_stmt|;
-name|unsigned
-name|int
+name|guint
 modifier|*
 name|hp
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|pattern
@@ -1068,20 +1042,19 @@ operator|=
 literal|1
 expr_stmt|;
 block|}
-comment|/* if */
 block|}
 end_function
 
 begin_function
 name|GPatternP
-DECL|function|pattern_list_get_pattern (GSList * list,char * name)
+DECL|function|pattern_list_get_pattern (GSList * list,gchar * name)
 name|pattern_list_get_pattern
 parameter_list|(
 name|GSList
 modifier|*
 name|list
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -1136,10 +1109,10 @@ end_function
 
 begin_function
 name|GPatternP
-DECL|function|get_pattern_by_index (int index)
+DECL|function|get_pattern_by_index (gint index)
 name|get_pattern_by_index
 parameter_list|(
-name|int
+name|gint
 name|index
 parameter_list|)
 block|{
@@ -1182,14 +1155,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|select_pattern (pattern)
+DECL|function|select_pattern (GPatternP pattern)
 name|select_pattern
 parameter_list|(
-name|pattern
-parameter_list|)
 name|GPatternP
 name|pattern
-decl_stmt|;
+parameter_list|)
 block|{
 comment|/*  Set the active pattern  */
 name|active_pattern
@@ -1290,14 +1261,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|free_pattern (pattern)
+DECL|function|free_pattern (GPatternP pattern)
 name|free_pattern
 parameter_list|(
-name|pattern
-parameter_list|)
 name|GPatternP
 name|pattern
-decl_stmt|;
+parameter_list|)
 block|{
 if|if
 condition|(

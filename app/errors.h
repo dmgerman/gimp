@@ -18,9 +18,9 @@ end_define
 
 begin_function_decl
 name|void
-name|message_func
+name|gimp_message_func
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 parameter_list|)
 function_decl|;
@@ -28,9 +28,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|fatal_error
+name|gimp_fatal_error
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 parameter_list|,
 modifier|...
@@ -40,9 +40,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|terminate
+name|gimp_terminate
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 parameter_list|,
 modifier|...

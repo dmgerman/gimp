@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"draw_core.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"buildmenu.h"
 end_include
 
@@ -96,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"general.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"image_render.h"
 end_include
 
@@ -139,18 +127,6 @@ begin_include
 include|#
 directive|include
 file|"ops_buttons.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint_funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"palette.h"
 end_include
 
 begin_include
@@ -406,19 +382,19 @@ modifier|*
 name|layer_preview
 decl_stmt|;
 DECL|member|ratio
-name|double
+name|gdouble
 name|ratio
 decl_stmt|;
 DECL|member|image_width
 DECL|member|image_height
-name|int
+name|gint
 name|image_width
 decl_stmt|,
 name|image_height
 decl_stmt|;
 DECL|member|gimage_width
 DECL|member|gimage_height
-name|int
+name|gint
 name|gimage_width
 decl_stmt|,
 name|gimage_height
@@ -523,35 +499,35 @@ modifier|*
 name|mask_pixmap
 decl_stmt|;
 DECL|member|active_preview
-name|int
+name|gint
 name|active_preview
 decl_stmt|;
 DECL|member|width
 DECL|member|height
-name|int
+name|gint
 name|width
 decl_stmt|,
 name|height
 decl_stmt|;
 comment|/*  state information  */
 DECL|member|layer_mask
-name|int
+name|gboolean
 name|layer_mask
 decl_stmt|;
 DECL|member|apply_mask
-name|int
+name|gboolean
 name|apply_mask
 decl_stmt|;
 DECL|member|edit_mask
-name|int
+name|gboolean
 name|edit_mask
 decl_stmt|;
 DECL|member|show_mask
-name|int
+name|gboolean
 name|show_mask
 decl_stmt|;
 DECL|member|visited
-name|int
+name|gboolean
 name|visited
 decl_stmt|;
 block|}
@@ -1111,7 +1087,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|suspend_gimage_notify
 specifier|static
-name|int
+name|gint
 name|suspend_gimage_notify
 init|=
 literal|0
@@ -1705,12 +1681,11 @@ condition|)
 block|{
 name|layersD
 operator|=
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|LayersDialog
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|layersD
@@ -2383,13 +2358,13 @@ DECL|function|layers_dialog_free ()
 name|layers_dialog_free
 parameter_list|()
 block|{
-name|GSList
-modifier|*
-name|list
-decl_stmt|;
 name|LayerWidget
 modifier|*
 name|lw
+decl_stmt|;
+name|GSList
+modifier|*
+name|list
 decl_stmt|;
 if|if
 condition|(
@@ -2548,8 +2523,7 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-comment|/* Invalidate all previews ... */
-comment|/* This is called during loading the image */
+comment|/*  Invalidate all previews ...    *  This is called during loading the image    */
 while|while
 condition|(
 name|list
@@ -2615,10 +2589,7 @@ if|if
 condition|(
 operator|!
 name|layersD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 name|layersD
 operator|->
 name|gimage
@@ -2848,10 +2819,7 @@ if|if
 condition|(
 operator|!
 name|layersD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|gimage
@@ -5165,11 +5133,31 @@ name|next_alpha
 operator|=
 name|FALSE
 expr_stmt|;
-name|menus_set_sensitive_locale
+DECL|macro|SET_SENSITIVE (menu,condition)
+define|#
+directive|define
+name|SET_SENSITIVE
+parameter_list|(
+name|menu
+parameter_list|,
+name|condition
+parameter_list|)
+define|\
+value|menus_set_sensitive_locale ("<Layers>", (menu), (condition) != 0)
+DECL|macro|SET_OPS_SENSITIVE (button,condition)
+define|#
+directive|define
+name|SET_OPS_SENSITIVE
+parameter_list|(
+name|button
+parameter_list|,
+name|condition
+parameter_list|)
+define|\
+value|gtk_widget_set_sensitive (layers_ops_buttons[(button)].widget, \                                  (condition) != 0)
+name|SET_SENSITIVE
 argument_list|(
-literal|"<Layers>"
-argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"/Stack/Previous Layer"
 argument_list|)
@@ -5185,11 +5173,9 @@ operator|&&
 name|prev
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|SET_SENSITIVE
 argument_list|(
-literal|"<Layers>"
-argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"/Stack/Next Layer"
 argument_list|)
@@ -5205,11 +5191,9 @@ operator|&&
 name|next
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|SET_SENSITIVE
 argument_list|(
-literal|"<Layers>"
-argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"/Stack/Raise Layer"
 argument_list|)
@@ -5227,14 +5211,9 @@ operator|&&
 name|prev
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_sensitive
+name|SET_OPS_SENSITIVE
 argument_list|(
-name|layers_ops_buttons
-index|[
 literal|1
-index|]
-operator|.
-name|widget
 argument_list|,
 name|fs
 operator|&&
@@ -5249,11 +5228,9 @@ operator|&&
 name|prev
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|SET_SENSITIVE
 argument_list|(
-literal|"<Layers>"
-argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"/Stack/Lower Layer"
 argument_list|)
@@ -5271,14 +5248,9 @@ operator|&&
 name|next_alpha
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_sensitive
+name|SET_OPS_SENSITIVE
 argument_list|(
-name|layers_ops_buttons
-index|[
 literal|2
-index|]
-operator|.
-name|widget
 argument_list|,
 name|fs
 operator|&&
@@ -5293,11 +5265,9 @@ operator|&&
 name|next_alpha
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|SET_SENSITIVE
 argument_list|(
-literal|"<Layers>"
-argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"/Stack/Layer to Top"
 argument_list|)
@@ -5315,11 +5285,9 @@ operator|&&
 name|prev
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|SET_SENSITIVE
 argument_list|(
-literal|"<Layers>"
-argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"/Stack/Layer to Bottom"
 argument_list|)
@@ -5337,11 +5305,9 @@ operator|&&
 name|next_alpha
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|SET_SENSITIVE
 argument_list|(
-literal|"<Layers>"
-argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"/New Layer"
 argument_list|)
@@ -5349,23 +5315,16 @@ argument_list|,
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_sensitive
+name|SET_OPS_SENSITIVE
 argument_list|(
-name|layers_ops_buttons
-index|[
 literal|0
-index|]
-operator|.
-name|widget
 argument_list|,
 name|gimage
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|SET_SENSITIVE
 argument_list|(
-literal|"<Layers>"
-argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"/Duplicate Layer"
 argument_list|)
@@ -5379,14 +5338,9 @@ operator|&&
 name|lp
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_sensitive
+name|SET_OPS_SENSITIVE
 argument_list|(
-name|layers_ops_buttons
-index|[
 literal|3
-index|]
-operator|.
-name|widget
 argument_list|,
 name|fs
 operator|&&
@@ -5397,11 +5351,9 @@ operator|&&
 name|lp
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|SET_SENSITIVE
 argument_list|(
-literal|"<Layers>"
-argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"/Anchor Layer"
 argument_list|)
@@ -5416,14 +5368,9 @@ operator|&&
 name|lp
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_sensitive
+name|SET_OPS_SENSITIVE
 argument_list|(
-name|layers_ops_buttons
-index|[
 literal|4
-index|]
-operator|.
-name|widget
 argument_list|,
 operator|!
 name|fs
@@ -5435,11 +5382,9 @@ operator|&&
 name|lp
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|SET_SENSITIVE
 argument_list|(
-literal|"<Layers>"
-argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"/Delete Layer"
 argument_list|)
@@ -5451,14 +5396,9 @@ operator|&&
 name|lp
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_sensitive
+name|SET_OPS_SENSITIVE
 argument_list|(
-name|layers_ops_buttons
-index|[
 literal|5
-index|]
-operator|.
-name|widget
 argument_list|,
 name|ac
 operator|&&
@@ -5467,11 +5407,9 @@ operator|&&
 name|lp
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|SET_SENSITIVE
 argument_list|(
-literal|"<Layers>"
-argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"/Scale Layer"
 argument_list|)
@@ -5483,11 +5421,9 @@ operator|&&
 name|lp
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|SET_SENSITIVE
 argument_list|(
-literal|"<Layers>"
-argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"/Resize Layer"
 argument_list|)
@@ -5499,11 +5435,9 @@ operator|&&
 name|lp
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|SET_SENSITIVE
 argument_list|(
-literal|"<Layers>"
-argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"/Merge Visible Layers"
 argument_list|)
@@ -5517,11 +5451,9 @@ operator|&&
 name|lp
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|SET_SENSITIVE
 argument_list|(
-literal|"<Layers>"
-argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"/Merge Down"
 argument_list|)
@@ -5535,11 +5467,9 @@ operator|&&
 name|lp
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|SET_SENSITIVE
 argument_list|(
-literal|"<Layers>"
-argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"/Flatten Image"
 argument_list|)
@@ -5553,11 +5483,9 @@ operator|&&
 name|lp
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|SET_SENSITIVE
 argument_list|(
-literal|"<Layers>"
-argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"/Add Layer Mask"
 argument_list|)
@@ -5576,11 +5504,9 @@ operator|&&
 name|alpha
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|SET_SENSITIVE
 argument_list|(
-literal|"<Layers>"
-argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"/Apply Layer Mask"
 argument_list|)
@@ -5596,11 +5522,9 @@ operator|&&
 name|lp
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|SET_SENSITIVE
 argument_list|(
-literal|"<Layers>"
-argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"/Alpha to Selection"
 argument_list|)
@@ -5616,11 +5540,9 @@ operator|&&
 name|alpha
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|SET_SENSITIVE
 argument_list|(
-literal|"<Layers>"
-argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"/Mask to Selection"
 argument_list|)
@@ -5636,11 +5558,9 @@ operator|&&
 name|lp
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|SET_SENSITIVE
 argument_list|(
-literal|"<Layers>"
-argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"/Add Alpha Channel"
 argument_list|)
@@ -5649,6 +5569,12 @@ operator|!
 name|alpha
 argument_list|)
 expr_stmt|;
+undef|#
+directive|undef
+name|SET_OPS_SENSITIVE
+undef|#
+directive|undef
+name|SET_SENSITIVE
 comment|/*  set mode, preserve transparency and opacity to insensitive    *  if there are no layers    */
 name|gtk_widget_set_sensitive
 argument_list|(
@@ -5698,7 +5624,7 @@ decl_stmt|;
 name|GtkStateType
 name|state
 decl_stmt|;
-name|int
+name|gint
 name|index
 decl_stmt|;
 name|layer_widget
@@ -5816,7 +5742,7 @@ decl_stmt|;
 name|GtkStateType
 name|state
 decl_stmt|;
-name|int
+name|gint
 name|index
 decl_stmt|;
 name|layer_widget
@@ -5919,14 +5845,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|layers_dialog_position_layer (Layer * layer,int new_index)
+DECL|function|layers_dialog_position_layer (Layer * layer,gint new_index)
 name|layers_dialog_position_layer
 parameter_list|(
 name|Layer
 modifier|*
 name|layer
 parameter_list|,
-name|int
+name|gint
 name|new_index
 parameter_list|)
 block|{
@@ -6044,6 +5970,10 @@ modifier|*
 name|layer
 parameter_list|)
 block|{
+name|LayerWidget
+modifier|*
+name|layer_widget
+decl_stmt|;
 name|GImage
 modifier|*
 name|gimage
@@ -6052,11 +5982,7 @@ name|GList
 modifier|*
 name|item_list
 decl_stmt|;
-name|LayerWidget
-modifier|*
-name|layer_widget
-decl_stmt|;
-name|int
+name|gint
 name|position
 decl_stmt|;
 if|if
@@ -6066,10 +5992,7 @@ name|layersD
 operator|||
 operator|!
 name|layer
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|gimage
@@ -6363,8 +6286,8 @@ name|gint
 name|mode
 parameter_list|)
 block|{
-comment|/*  FIXME this is an ugly hack that should stay around only until     *  the layers dialog is rewritten     */
-name|int
+comment|/*  FIXME: this is an ugly hack that should stay around only until     *         the layers dialog is rewritten     */
+name|gint
 name|i
 decl_stmt|;
 for|for
@@ -6421,12 +6344,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|paint_mode_menu_callback (GtkWidget * w,gpointer client_data)
+DECL|function|paint_mode_menu_callback (GtkWidget * widget,gpointer client_data)
 name|paint_mode_menu_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -6440,7 +6363,7 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-name|int
+name|gint
 name|mode
 decl_stmt|;
 if|if
@@ -6453,10 +6376,7 @@ name|layersD
 operator|->
 name|gimage
 operator|)
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|layer
@@ -6554,7 +6474,7 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-name|int
+name|gint
 name|opacity
 decl_stmt|;
 if|if
@@ -6567,10 +6487,7 @@ name|layersD
 operator|->
 name|gimage
 operator|)
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|layer
@@ -6648,12 +6565,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|preserve_trans_update (GtkWidget * w,gpointer data)
+DECL|function|preserve_trans_update (GtkWidget * widget,gpointer data)
 name|preserve_trans_update
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|data
@@ -6677,10 +6594,7 @@ name|layersD
 operator|->
 name|gimage
 operator|)
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|layer
@@ -6695,7 +6609,7 @@ if|if
 condition|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
-name|w
+name|widget
 argument_list|)
 operator|->
 name|active
@@ -6880,12 +6794,12 @@ block|{
 case|case
 name|GDK_Up
 case|:
-comment|/* printf ("up arrow\n"); */
+comment|/* g_print ("up arrow\n"); */
 break|break;
 case|case
 name|GDK_Down
 case|:
-comment|/* printf ("down arrow\n"); */
+comment|/* g_print ("down arrow\n"); */
 break|break;
 default|default:
 return|return
@@ -6920,12 +6834,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|layers_dialog_map_callback (GtkWidget * w,gpointer client_data)
+DECL|function|layers_dialog_map_callback (GtkWidget * widget,gpointer client_data)
 name|layers_dialog_map_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -6957,12 +6871,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|layers_dialog_unmap_callback (GtkWidget * w,gpointer client_data)
+DECL|function|layers_dialog_unmap_callback (GtkWidget * widget,gpointer client_data)
 name|layers_dialog_unmap_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -6993,12 +6907,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_dialog_previous_layer_callback (GtkWidget * w,gpointer client_data)
+DECL|function|layers_dialog_previous_layer_callback (GtkWidget * widget,gpointer client_data)
 name|layers_dialog_previous_layer_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -7008,21 +6922,18 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|int
-name|current_layer
-decl_stmt|;
 name|Layer
 modifier|*
 name|new_layer
+decl_stmt|;
+name|gint
+name|current_layer
 decl_stmt|;
 if|if
 condition|(
 operator|!
 name|layersD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|gimage
@@ -7083,12 +6994,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_dialog_next_layer_callback (GtkWidget * w,gpointer client_data)
+DECL|function|layers_dialog_next_layer_callback (GtkWidget * widget,gpointer client_data)
 name|layers_dialog_next_layer_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -7098,21 +7009,18 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|int
-name|current_layer
-decl_stmt|;
 name|Layer
 modifier|*
 name|new_layer
+decl_stmt|;
+name|gint
+name|current_layer
 decl_stmt|;
 if|if
 condition|(
 operator|!
 name|layersD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|gimage
@@ -7173,12 +7081,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_dialog_raise_layer_callback (GtkWidget * w,gpointer client_data)
+DECL|function|layers_dialog_raise_layer_callback (GtkWidget * widget,gpointer client_data)
 name|layers_dialog_raise_layer_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -7192,10 +7100,7 @@ if|if
 condition|(
 operator|!
 name|layersD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|gimage
@@ -7223,12 +7128,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_dialog_lower_layer_callback (GtkWidget * w,gpointer client_data)
+DECL|function|layers_dialog_lower_layer_callback (GtkWidget * widget,gpointer client_data)
 name|layers_dialog_lower_layer_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -7242,10 +7147,7 @@ if|if
 condition|(
 operator|!
 name|layersD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|gimage
@@ -7273,12 +7175,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_dialog_raise_layer_to_top_callback (GtkWidget * w,gpointer client_data)
+DECL|function|layers_dialog_raise_layer_to_top_callback (GtkWidget * widget,gpointer client_data)
 name|layers_dialog_raise_layer_to_top_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -7292,10 +7194,7 @@ if|if
 condition|(
 operator|!
 name|layersD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|gimage
@@ -7330,12 +7229,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_dialog_lower_layer_to_bottom_callback (GtkWidget * w,gpointer client_data)
+DECL|function|layers_dialog_lower_layer_to_bottom_callback (GtkWidget * widget,gpointer client_data)
 name|layers_dialog_lower_layer_to_bottom_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -7349,10 +7248,7 @@ if|if
 condition|(
 operator|!
 name|layersD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|gimage
@@ -7387,12 +7283,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_dialog_new_layer_callback (GtkWidget * w,gpointer client_data)
+DECL|function|layers_dialog_new_layer_callback (GtkWidget * widget,gpointer client_data)
 name|layers_dialog_new_layer_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -7406,15 +7302,11 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-comment|/*  if there is a currently selected gimage, request a new layer    */
 if|if
 condition|(
 operator|!
 name|layersD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|gimage
@@ -7460,12 +7352,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_dialog_duplicate_layer_callback (GtkWidget * w,gpointer client_data)
+DECL|function|layers_dialog_duplicate_layer_callback (GtkWidget * widget,gpointer client_data)
 name|layers_dialog_duplicate_layer_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -7483,15 +7375,11 @@ name|Layer
 modifier|*
 name|new_layer
 decl_stmt|;
-comment|/*  if there is a currently selected gimage, request a new layer    */
 if|if
 condition|(
 operator|!
 name|layersD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|gimage
@@ -7536,7 +7424,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/*  end the group undo  */
+comment|/*  End the group undo  */
 name|undo_push_group_end
 argument_list|(
 name|gimage
@@ -7550,12 +7438,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_dialog_delete_layer_callback (GtkWidget * w,gpointer client_data)
+DECL|function|layers_dialog_delete_layer_callback (GtkWidget * widget,gpointer client_data)
 name|layers_dialog_delete_layer_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -7569,15 +7457,11 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-comment|/*  if there is a currently selected gimage    */
 if|if
 condition|(
 operator|!
 name|layersD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|gimage
@@ -7586,10 +7470,7 @@ name|layersD
 operator|->
 name|gimage
 operator|)
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|layer
@@ -7632,12 +7513,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_dialog_scale_layer_callback (GtkWidget * w,gpointer client_data)
+DECL|function|layers_dialog_scale_layer_callback (GtkWidget * widget,gpointer client_data)
 name|layers_dialog_scale_layer_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -7647,15 +7528,11 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-comment|/*  if there is a currently selected gimage    */
 if|if
 condition|(
 operator|!
 name|layersD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|gimage
@@ -7680,12 +7557,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_dialog_resize_layer_callback (GtkWidget * w,gpointer client_data)
+DECL|function|layers_dialog_resize_layer_callback (GtkWidget * widget,gpointer client_data)
 name|layers_dialog_resize_layer_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -7695,15 +7572,11 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-comment|/*  if there is a currently selected gimage    */
 if|if
 condition|(
 operator|!
 name|layersD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|gimage
@@ -7728,12 +7601,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_dialog_add_layer_mask_callback (GtkWidget * w,gpointer client_data)
+DECL|function|layers_dialog_add_layer_mask_callback (GtkWidget * widget,gpointer client_data)
 name|layers_dialog_add_layer_mask_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -7743,15 +7616,11 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-comment|/*  if there is a currently selected gimage    */
 if|if
 condition|(
 operator|!
 name|layersD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|gimage
@@ -7774,12 +7643,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_dialog_apply_layer_mask_callback (GtkWidget * w,gpointer client_data)
+DECL|function|layers_dialog_apply_layer_mask_callback (GtkWidget * widget,gpointer client_data)
 name|layers_dialog_apply_layer_mask_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -7793,15 +7662,11 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-comment|/*  if there is a currently selected gimage    */
 if|if
 condition|(
 operator|!
 name|layersD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|gimage
@@ -7845,12 +7710,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_dialog_anchor_layer_callback (GtkWidget * w,gpointer client_data)
+DECL|function|layers_dialog_anchor_layer_callback (GtkWidget * widget,gpointer client_data)
 name|layers_dialog_anchor_layer_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -7860,15 +7725,11 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-comment|/*  if there is a currently selected gimage    */
 if|if
 condition|(
 operator|!
 name|layersD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|gimage
@@ -7895,12 +7756,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_dialog_merge_layers_callback (GtkWidget * w,gpointer client_data)
+DECL|function|layers_dialog_merge_layers_callback (GtkWidget * widget,gpointer client_data)
 name|layers_dialog_merge_layers_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -7910,15 +7771,11 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-comment|/*  if there is a currently selected gimage    */
 if|if
 condition|(
 operator|!
 name|layersD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|gimage
@@ -7941,12 +7798,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_dialog_merge_down_callback (GtkWidget * w,gpointer client_data)
+DECL|function|layers_dialog_merge_down_callback (GtkWidget * widget,gpointer client_data)
 name|layers_dialog_merge_down_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -7956,15 +7813,11 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-comment|/* if there is a currently selected gimage    */
 if|if
 condition|(
 operator|!
 name|layersD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|gimage
@@ -7994,12 +7847,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_dialog_flatten_image_callback (GtkWidget * w,gpointer client_data)
+DECL|function|layers_dialog_flatten_image_callback (GtkWidget * widget,gpointer client_data)
 name|layers_dialog_flatten_image_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -8009,15 +7862,11 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-comment|/*  if there is a currently selected gimage    */
 if|if
 condition|(
 operator|!
 name|layersD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|gimage
@@ -8041,12 +7890,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_dialog_alpha_select_callback (GtkWidget * w,gpointer client_data)
+DECL|function|layers_dialog_alpha_select_callback (GtkWidget * widget,gpointer client_data)
 name|layers_dialog_alpha_select_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -8056,15 +7905,11 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-comment|/*  if there is a currently selected gimage    */
 if|if
 condition|(
 operator|!
 name|layersD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|gimage
@@ -8092,12 +7937,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_dialog_mask_select_callback (GtkWidget * w,gpointer client_data)
+DECL|function|layers_dialog_mask_select_callback (GtkWidget * widget,gpointer client_data)
 name|layers_dialog_mask_select_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -8107,15 +7952,11 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-comment|/*  if there is a currently selected gimage    */
 if|if
 condition|(
 operator|!
 name|layersD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|gimage
@@ -8143,12 +7984,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_dialog_add_alpha_channel_callback (GtkWidget * w,gpointer client_data)
+DECL|function|layers_dialog_add_alpha_channel_callback (GtkWidget * widget,gpointer client_data)
 name|layers_dialog_add_alpha_channel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -8162,15 +8003,11 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-comment|/*  if there is a currently selected gimage    */
 if|if
 condition|(
 operator|!
 name|layersD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|gimage
@@ -8179,10 +8016,7 @@ name|layersD
 operator|->
 name|gimage
 operator|)
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|layer
@@ -8336,16 +8170,11 @@ expr_stmt|;
 comment|/*  create the layer widget and add it to the list  */
 name|layer_widget
 operator|=
-operator|(
-name|LayerWidget
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|LayerWidget
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|layer_widget
@@ -9281,12 +9110,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|layer_widget_select_update (GtkWidget * w,gpointer data)
+DECL|function|layer_widget_select_update (GtkWidget * widget,gpointer data)
 name|layer_widget_select_update
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|data
@@ -9313,7 +9142,7 @@ return|return;
 comment|/*  Is the list item being selected?  */
 if|if
 condition|(
-name|w
+name|widget
 operator|->
 name|state
 operator|!=
@@ -12832,12 +12661,15 @@ name|active_layer
 argument_list|)
 expr_stmt|;
 comment|/*  set the data widgets to reflect this layer's values        *  1)  The opacity slider        *  2)  The paint mode menu        *  3)  The preserve trans button        */
+name|gtk_adjustment_set_value
+argument_list|(
+name|GTK_ADJUSTMENT
+argument_list|(
 name|layersD
 operator|->
 name|opacity_data
-operator|->
-name|value
-operator|=
+argument_list|)
+argument_list|,
 operator|(
 name|gfloat
 operator|)
@@ -12848,17 +12680,6 @@ operator|->
 name|opacity
 operator|/
 literal|2.55
-expr_stmt|;
-name|gtk_signal_emit_by_name
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|layersD
-operator|->
-name|opacity_data
-argument_list|)
-argument_list|,
-literal|"value_changed"
 argument_list|)
 expr_stmt|;
 name|gtk_option_menu_set_history
@@ -13271,12 +13092,12 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|new_layer_query_ok_callback (GtkWidget * w,gpointer client_data)
+DECL|function|new_layer_query_ok_callback (GtkWidget * widget,gpointer client_data)
 name|new_layer_query_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -13464,7 +13285,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"new_layer_query_ok_callback: could not allocate new layer"
+literal|"new_layer_query_ok_callback():\n"
+literal|"could not allocate new layer"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -13488,12 +13310,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|new_layer_query_cancel_callback (GtkWidget * w,gpointer client_data)
+DECL|function|new_layer_query_cancel_callback (GtkWidget * widget,gpointer client_data)
 name|new_layer_query_cancel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -13529,16 +13351,16 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|new_layer_query_delete_callback (GtkWidget * w,GdkEvent * e,gpointer client_data)
+DECL|function|new_layer_query_delete_callback (GtkWidget * widget,GdkEvent * event,gpointer client_data)
 name|new_layer_query_delete_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GdkEvent
 modifier|*
-name|e
+name|event
 parameter_list|,
 name|gpointer
 name|client_data
@@ -13546,7 +13368,7 @@ parameter_list|)
 block|{
 name|new_layer_query_cancel_callback
 argument_list|(
-name|w
+name|widget
 argument_list|,
 name|client_data
 argument_list|)
@@ -13560,12 +13382,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|new_layer_query_fill_type_callback (GtkWidget * w,gpointer client_data)
+DECL|function|new_layer_query_fill_type_callback (GtkWidget * widget,gpointer client_data)
 name|new_layer_query_fill_type_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -13588,16 +13410,16 @@ operator|->
 name|fill_type
 operator|=
 operator|(
-name|int
+name|GimpFillType
 operator|)
 name|gtk_object_get_data
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|w
+name|widget
 argument_list|)
 argument_list|,
-literal|"layer_fill_type"
+literal|"fill_type"
 argument_list|)
 expr_stmt|;
 block|}
@@ -13654,53 +13476,8 @@ name|GSList
 modifier|*
 name|group
 decl_stmt|;
-name|int
-name|i
-decl_stmt|;
-specifier|static
-name|gchar
-modifier|*
-name|button_names
-index|[]
-init|=
-block|{
-name|N_
-argument_list|(
-literal|"Foreground"
-argument_list|)
-block|,
-name|N_
-argument_list|(
-literal|"Background"
-argument_list|)
-block|,
-name|N_
-argument_list|(
-literal|"White"
-argument_list|)
-block|,
-name|N_
-argument_list|(
-literal|"Transparent"
-argument_list|)
-block|}
-decl_stmt|;
-specifier|static
 name|gint
-name|nbutton_names
-init|=
-sizeof|sizeof
-argument_list|(
-name|button_names
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|button_names
-index|[
-literal|0
-index|]
-argument_list|)
+name|i
 decl_stmt|;
 specifier|static
 name|ActionAreaItem
@@ -13735,19 +13512,59 @@ name|NULL
 block|}
 block|}
 decl_stmt|;
-comment|/*  the new options structure  */
-name|options
-operator|=
-operator|(
-name|NewLayerOptions
-operator|*
-operator|)
-name|g_malloc
+specifier|static
+name|gchar
+modifier|*
+name|button_names
+index|[]
+init|=
+block|{
+name|N_
 argument_list|(
+literal|"Foreground"
+argument_list|)
+block|,
+name|N_
+argument_list|(
+literal|"Background"
+argument_list|)
+block|,
+name|N_
+argument_list|(
+literal|"White"
+argument_list|)
+block|,
+name|N_
+argument_list|(
+literal|"Transparent"
+argument_list|)
+block|}
+decl_stmt|;
+specifier|static
+name|gint
+name|n_buttons
+init|=
 sizeof|sizeof
 argument_list|(
+name|button_names
+argument_list|)
+operator|/
+sizeof|sizeof
+argument_list|(
+name|button_names
+index|[
+literal|0
+index|]
+argument_list|)
+decl_stmt|;
+comment|/*  The new options structure  */
+name|options
+operator|=
+name|g_new
+argument_list|(
 name|NewLayerOptions
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|options
@@ -13762,7 +13579,7 @@ name|gimage
 operator|=
 name|gimage
 expr_stmt|;
-comment|/*  the dialog  */
+comment|/*  The dialog  */
 name|options
 operator|->
 name|query_box
@@ -13811,7 +13628,7 @@ argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|)
 expr_stmt|;
-comment|/*  handle the wm close signal  */
+comment|/*  Handle the wm close signal  */
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -13831,7 +13648,7 @@ argument_list|,
 name|options
 argument_list|)
 expr_stmt|;
-comment|/*  the main vbox  */
+comment|/*  The main vbox  */
 name|vbox
 operator|=
 name|gtk_vbox_new
@@ -13848,12 +13665,12 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|2
+literal|4
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
+name|gtk_container_add
 argument_list|(
-name|GTK_BOX
+name|GTK_CONTAINER
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
@@ -13866,12 +13683,6 @@ name|vbox
 argument_list|)
 argument_list|,
 name|vbox
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|table
@@ -13925,7 +13736,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/*  the name label and entry  */
+comment|/*  The name label and entry  */
 name|label
 operator|=
 name|gtk_label_new
@@ -14047,7 +13858,7 @@ operator|->
 name|name_entry
 argument_list|)
 expr_stmt|;
-comment|/*  the size labels  */
+comment|/*  The size labels  */
 name|label
 operator|=
 name|gtk_label_new
@@ -14158,7 +13969,7 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
-comment|/*  the size sizeentry  */
+comment|/*  The size sizeentry  */
 name|adjustment
 operator|=
 name|gtk_adjustment_new
@@ -14478,7 +14289,7 @@ argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
-comment|/*  the radio frame and box  */
+comment|/*  The radio frame and box  */
 name|radio_frame
 operator|=
 name|gtk_frame_new
@@ -14514,6 +14325,16 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|radio_box
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
@@ -14524,7 +14345,7 @@ argument_list|,
 name|radio_box
 argument_list|)
 expr_stmt|;
-comment|/*  the radio buttons  */
+comment|/*  The radio buttons  */
 name|group
 operator|=
 name|NULL
@@ -14537,7 +14358,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|nbutton_names
+name|n_buttons
 condition|;
 name|i
 operator|++
@@ -14591,7 +14412,7 @@ argument_list|(
 name|radio_button
 argument_list|)
 argument_list|,
-literal|"layer_fill_type"
+literal|"fill_type"
 argument_list|,
 operator|(
 name|gpointer
@@ -14616,7 +14437,7 @@ argument_list|,
 name|options
 argument_list|)
 expr_stmt|;
-comment|/*  set the correct radio button  */
+comment|/*  Set the correct radio button  */
 if|if
 condition|(
 name|i
@@ -14745,12 +14566,12 @@ end_struct
 begin_function
 specifier|static
 name|void
-DECL|function|edit_layer_query_ok_callback (GtkWidget * w,gpointer client_data)
+DECL|function|edit_layer_query_ok_callback (GtkWidget * widget,gpointer client_data)
 name|edit_layer_query_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -14854,12 +14675,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|edit_layer_query_cancel_callback (GtkWidget * w,gpointer client_data)
+DECL|function|edit_layer_query_cancel_callback (GtkWidget * widget,gpointer client_data)
 name|edit_layer_query_cancel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -14895,16 +14716,16 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|edit_layer_query_delete_callback (GtkWidget * w,GdkEvent * e,gpointer client_data)
+DECL|function|edit_layer_query_delete_callback (GtkWidget * widget,GdkEvent * event,gpointer client_data)
 name|edit_layer_query_delete_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GdkEvent
 modifier|*
-name|e
+name|event
 parameter_list|,
 name|gpointer
 name|client_data
@@ -14912,7 +14733,7 @@ parameter_list|)
 block|{
 name|edit_layer_query_cancel_callback
 argument_list|(
-name|w
+name|widget
 argument_list|,
 name|client_data
 argument_list|)
@@ -14983,19 +14804,14 @@ name|NULL
 block|}
 block|}
 decl_stmt|;
-comment|/*  the new options structure  */
+comment|/*  The new options structure  */
 name|options
 operator|=
-operator|(
-name|EditLayerOptions
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|EditLayerOptions
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|options
@@ -15014,7 +14830,7 @@ name|layer_widget
 operator|->
 name|gimage
 expr_stmt|;
-comment|/*  the dialog  */
+comment|/*  The dialog  */
 name|options
 operator|->
 name|query_box
@@ -15063,7 +14879,7 @@ argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|)
 expr_stmt|;
-comment|/*  handle the wm close signal */
+comment|/*  Handle the wm close signal */
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -15083,14 +14899,14 @@ argument_list|,
 name|options
 argument_list|)
 expr_stmt|;
-comment|/*  the main vbox  */
+comment|/*  The main vbox  */
 name|vbox
 operator|=
 name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -15100,12 +14916,12 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|2
+literal|4
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
+name|gtk_container_add
 argument_list|(
-name|GTK_BOX
+name|GTK_CONTAINER
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
@@ -15118,22 +14934,16 @@ name|vbox
 argument_list|)
 argument_list|,
 name|vbox
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
-comment|/*  the name entry hbox, label and entry  */
+comment|/*  The name hbox, label and entry  */
 name|hbox
 operator|=
 name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -15158,7 +14968,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Layer name: "
+literal|"Layer name:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -15341,12 +15151,12 @@ end_struct
 begin_function
 specifier|static
 name|void
-DECL|function|add_mask_query_ok_callback (GtkWidget * w,gpointer client_data)
+DECL|function|add_mask_query_ok_callback (GtkWidget * widget,gpointer client_data)
 name|add_mask_query_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -15442,12 +15252,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|add_mask_query_cancel_callback (GtkWidget * w,gpointer client_data)
+DECL|function|add_mask_query_cancel_callback (GtkWidget * widget,gpointer client_data)
 name|add_mask_query_cancel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -15483,16 +15293,16 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|add_mask_query_delete_callback (GtkWidget * w,GdkEvent * e,gpointer client_data)
+DECL|function|add_mask_query_delete_callback (GtkWidget * widget,GdkEvent * event,gpointer client_data)
 name|add_mask_query_delete_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GdkEvent
 modifier|*
-name|e
+name|event
 parameter_list|,
 name|gpointer
 name|client_data
@@ -15500,7 +15310,7 @@ parameter_list|)
 block|{
 name|add_mask_query_cancel_callback
 argument_list|(
-name|w
+name|widget
 argument_list|,
 name|client_data
 argument_list|)
@@ -15514,12 +15324,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|fill_white_callback (GtkWidget * w,gpointer client_data)
-name|fill_white_callback
+DECL|function|add_mask_query_fill_type_callback (GtkWidget * widget,gpointer client_data)
+name|add_mask_query_fill_type_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -15541,77 +15351,18 @@ name|options
 operator|->
 name|add_mask_type
 operator|=
-name|ADD_WHITE_MASK
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|fill_black_callback (GtkWidget * w,gpointer client_data)
-name|fill_black_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|w
-parameter_list|,
-name|gpointer
-name|client_data
-parameter_list|)
-block|{
-name|AddMaskOptions
-modifier|*
-name|options
-decl_stmt|;
-name|options
-operator|=
 operator|(
-name|AddMaskOptions
-operator|*
+name|AddMaskType
 operator|)
-name|client_data
-expr_stmt|;
-name|options
-operator|->
-name|add_mask_type
-operator|=
-name|ADD_BLACK_MASK
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|fill_alpha_callback (GtkWidget * w,gpointer client_data)
-name|fill_alpha_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|w
-parameter_list|,
-name|gpointer
-name|client_data
-parameter_list|)
-block|{
-name|AddMaskOptions
-modifier|*
-name|options
-decl_stmt|;
-name|options
-operator|=
-operator|(
-name|AddMaskOptions
-operator|*
-operator|)
-name|client_data
-expr_stmt|;
-name|options
-operator|->
-name|add_mask_type
-operator|=
-name|ADD_ALPHA_MASK
+name|gtk_object_get_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+literal|"add_mask_type"
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -15627,12 +15378,39 @@ modifier|*
 name|layer
 parameter_list|)
 block|{
+name|AddMaskOptions
+modifier|*
+name|options
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|vbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|radio_frame
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|radio_box
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|radio_button
+decl_stmt|;
+name|GSList
+modifier|*
+name|group
+init|=
+name|NULL
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
 specifier|static
 name|ActionAreaItem
 name|action_items
-index|[
-literal|2
-index|]
+index|[]
 init|=
 block|{
 block|{
@@ -15662,45 +15440,11 @@ name|NULL
 block|}
 block|}
 decl_stmt|;
-name|AddMaskOptions
-modifier|*
-name|options
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|vbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|label
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|radio_frame
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|radio_box
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|radio_button
-decl_stmt|;
-name|GSList
-modifier|*
-name|group
-init|=
-name|NULL
-decl_stmt|;
-name|int
-name|i
-decl_stmt|;
-name|char
+specifier|static
+name|gchar
 modifier|*
 name|button_names
-index|[
-literal|3
-index|]
+index|[]
 init|=
 block|{
 name|N_
@@ -15719,33 +15463,31 @@ literal|"Layer's Alpha Channel"
 argument_list|)
 block|}
 decl_stmt|;
-name|ActionCallback
-name|button_callbacks
-index|[
-literal|3
-index|]
+specifier|static
+name|gint
+name|n_buttons
 init|=
-block|{
-name|fill_white_callback
-block|,
-name|fill_black_callback
-block|,
-name|fill_alpha_callback
-block|}
-decl_stmt|;
-comment|/*  the new options structure  */
-name|options
-operator|=
-operator|(
-name|AddMaskOptions
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
 sizeof|sizeof
 argument_list|(
-name|AddMaskOptions
+name|button_names
 argument_list|)
+operator|/
+sizeof|sizeof
+argument_list|(
+name|button_names
+index|[
+literal|0
+index|]
+argument_list|)
+decl_stmt|;
+comment|/*  The new options structure  */
+name|options
+operator|=
+name|g_new
+argument_list|(
+name|AddMaskOptions
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|options
@@ -15760,7 +15502,7 @@ name|add_mask_type
 operator|=
 name|ADD_WHITE_MASK
 expr_stmt|;
-comment|/*  the dialog  */
+comment|/*  The dialog  */
 name|options
 operator|->
 name|query_box
@@ -15809,7 +15551,7 @@ argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|)
 expr_stmt|;
-comment|/*  handle the wm close signal */
+comment|/*  Handle the wm close signal */
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -15829,14 +15571,14 @@ argument_list|,
 name|options
 argument_list|)
 expr_stmt|;
-comment|/*  the main vbox  */
+comment|/*  The main vbox  */
 name|vbox
 operator|=
 name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -15846,12 +15588,12 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|2
+literal|4
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
+name|gtk_container_add
 argument_list|(
-name|GTK_BOX
+name|GTK_CONTAINER
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
@@ -15864,52 +15606,17 @@ name|vbox
 argument_list|)
 argument_list|,
 name|vbox
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
-comment|/*  the name entry hbox, label and entry  */
-name|label
-operator|=
-name|gtk_label_new
-argument_list|(
-name|_
-argument_list|(
-literal|"Initialize Layer Mask To:"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-name|label
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|label
-argument_list|)
-expr_stmt|;
-comment|/*  the radio frame and box  */
+comment|/*  The radio frame and box  */
 name|radio_frame
 operator|=
 name|gtk_frame_new
 argument_list|(
-name|NULL
+name|_
+argument_list|(
+literal|"Initialize Layer Mask to:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -15937,6 +15644,16 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|radio_box
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
@@ -15947,7 +15664,7 @@ argument_list|,
 name|radio_box
 argument_list|)
 expr_stmt|;
-comment|/*  the radio buttons  */
+comment|/*  The radio buttons  */
 for|for
 control|(
 name|i
@@ -15956,7 +15673,7 @@ literal|0
 init|;
 name|i
 operator|<
-literal|3
+name|n_buttons
 condition|;
 name|i
 operator|++
@@ -16003,6 +15720,21 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gtk_object_set_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|radio_button
+argument_list|)
+argument_list|,
+literal|"add_mask_type"
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|i
+argument_list|)
+expr_stmt|;
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -16015,10 +15747,7 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|button_callbacks
-index|[
-name|i
-index|]
+name|add_mask_query_fill_type_callback
 argument_list|,
 name|options
 argument_list|)
@@ -16123,12 +15852,12 @@ end_struct
 begin_function
 specifier|static
 name|void
-DECL|function|apply_mask_query_apply_callback (GtkWidget * w,gpointer client_data)
+DECL|function|apply_mask_query_apply_callback (GtkWidget * widget,gpointer client_data)
 name|apply_mask_query_apply_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -16183,12 +15912,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|apply_mask_query_discard_callback (GtkWidget * w,gpointer client_data)
+DECL|function|apply_mask_query_discard_callback (GtkWidget * widget,gpointer client_data)
 name|apply_mask_query_discard_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -16243,12 +15972,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|apply_mask_query_cancel_callback (GtkWidget * w,gpointer client_data)
+DECL|function|apply_mask_query_cancel_callback (GtkWidget * widget,gpointer client_data)
 name|apply_mask_query_cancel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -16284,16 +16013,16 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|apply_mask_query_delete_callback (GtkWidget * w,GdkEvent * e,gpointer client_data)
+DECL|function|apply_mask_query_delete_callback (GtkWidget * widget,GdkEvent * event,gpointer client_data)
 name|apply_mask_query_delete_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GdkEvent
 modifier|*
-name|e
+name|event
 parameter_list|,
 name|gpointer
 name|client_data
@@ -16301,7 +16030,7 @@ parameter_list|)
 block|{
 name|apply_mask_query_cancel_callback
 argument_list|(
-name|w
+name|widget
 argument_list|,
 name|client_data
 argument_list|)
@@ -16323,12 +16052,22 @@ modifier|*
 name|layer
 parameter_list|)
 block|{
+name|ApplyMaskOptions
+modifier|*
+name|options
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|vbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|label
+decl_stmt|;
 specifier|static
 name|ActionAreaItem
 name|action_items
-index|[
-literal|3
-index|]
+index|[]
 init|=
 block|{
 block|{
@@ -16371,31 +16110,14 @@ name|NULL
 block|}
 block|}
 decl_stmt|;
-name|ApplyMaskOptions
-modifier|*
-name|options
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|vbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|label
-decl_stmt|;
-comment|/*  the new options structure  */
+comment|/*  The new options structure  */
 name|options
 operator|=
-operator|(
-name|ApplyMaskOptions
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|ApplyMaskOptions
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|options
@@ -16404,7 +16126,7 @@ name|layer
 operator|=
 name|layer
 expr_stmt|;
-comment|/*  the dialog  */
+comment|/*  The dialog  */
 name|options
 operator|->
 name|query_box
@@ -16453,7 +16175,7 @@ argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|)
 expr_stmt|;
-comment|/*  handle the wm close signal */
+comment|/*  Handle the wm close signal */
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -16473,14 +16195,14 @@ argument_list|,
 name|options
 argument_list|)
 expr_stmt|;
-comment|/*  the main vbox  */
+comment|/*  The main vbox  */
 name|vbox
 operator|=
 name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -16490,12 +16212,12 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|2
+literal|4
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
+name|gtk_container_add
 argument_list|(
-name|GTK_BOX
+name|GTK_CONTAINER
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
@@ -16508,15 +16230,9 @@ name|vbox
 argument_list|)
 argument_list|,
 name|vbox
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
-comment|/*  the name entry hbox, label and entry  */
+comment|/*  The name entry hbox, label and entry  */
 name|label
 operator|=
 name|gtk_label_new
@@ -16641,12 +16357,12 @@ end_struct
 begin_function
 specifier|static
 name|void
-DECL|function|scale_layer_query_ok_callback (GtkWidget * w,gpointer client_data)
+DECL|function|scale_layer_query_ok_callback (GtkWidget * widget,gpointer client_data)
 name|scale_layer_query_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -16798,7 +16514,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Invalid width or height.  Both must be positive."
+literal|"Invalid width or height.\n"
+literal|"Both must be positive."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -16808,12 +16525,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|scale_layer_query_cancel_callback (GtkWidget * w,gpointer client_data)
+DECL|function|scale_layer_query_cancel_callback (GtkWidget * widget,gpointer client_data)
 name|scale_layer_query_cancel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -16849,16 +16566,16 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|scale_layer_query_delete_callback (GtkWidget * w,GdkEvent * e,gpointer client_data)
+DECL|function|scale_layer_query_delete_callback (GtkWidget * widget,GdkEvent * event,gpointer client_data)
 name|scale_layer_query_delete_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GdkEvent
 modifier|*
-name|e
+name|event
 parameter_list|,
 name|gpointer
 name|client_data
@@ -16866,7 +16583,7 @@ parameter_list|)
 block|{
 name|scale_layer_query_cancel_callback
 argument_list|(
-name|w
+name|widget
 argument_list|,
 name|client_data
 argument_list|)
@@ -16899,16 +16616,11 @@ decl_stmt|;
 comment|/*  the new options structure  */
 name|options
 operator|=
-operator|(
-name|ScaleLayerOptions
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|ScaleLayerOptions
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|options
@@ -17018,12 +16730,12 @@ end_struct
 begin_function
 specifier|static
 name|void
-DECL|function|resize_layer_query_ok_callback (GtkWidget * w,gpointer client_data)
+DECL|function|resize_layer_query_ok_callback (GtkWidget * widget,gpointer client_data)
 name|resize_layer_query_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -17185,7 +16897,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Invalid width or height.  Both must be positive."
+literal|"Invalid width or height.\n"
+literal|"Both must be positive."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -17195,12 +16908,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|resize_layer_query_cancel_callback (GtkWidget * w,gpointer client_data)
+DECL|function|resize_layer_query_cancel_callback (GtkWidget * widget,gpointer client_data)
 name|resize_layer_query_cancel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -17236,16 +16949,16 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|resize_layer_query_delete_callback (GtkWidget * w,GdkEvent * e,gpointer client_data)
+DECL|function|resize_layer_query_delete_callback (GtkWidget * widget,GdkEvent * event,gpointer client_data)
 name|resize_layer_query_delete_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GdkEvent
 modifier|*
-name|e
+name|event
 parameter_list|,
 name|gpointer
 name|client_data
@@ -17253,7 +16966,7 @@ parameter_list|)
 block|{
 name|resize_layer_query_cancel_callback
 argument_list|(
-name|w
+name|widget
 argument_list|,
 name|client_data
 argument_list|)
@@ -17286,16 +16999,11 @@ decl_stmt|;
 comment|/*  the new options structure  */
 name|options
 operator|=
-operator|(
-name|ResizeLayerOptions
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|ResizeLayerOptions
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|options
@@ -17560,12 +17268,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|expand_as_necessary_callback (GtkWidget * w,gpointer client_data)
-name|expand_as_necessary_callback
+DECL|function|layer_merge_query_type_callback (GtkWidget * widget,gpointer client_data)
+name|layer_merge_query_type_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -17587,101 +17295,69 @@ name|options
 operator|->
 name|merge_type
 operator|=
-name|EXPAND_AS_NECESSARY
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|clip_to_image_callback (GtkWidget * w,gpointer client_data)
-name|clip_to_image_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|w
-parameter_list|,
-name|gpointer
-name|client_data
-parameter_list|)
-block|{
-name|LayerMergeOptions
-modifier|*
-name|options
-decl_stmt|;
-name|options
-operator|=
 operator|(
-name|LayerMergeOptions
-operator|*
+name|MergeType
 operator|)
-name|client_data
-expr_stmt|;
-name|options
-operator|->
-name|merge_type
-operator|=
-name|CLIP_TO_IMAGE
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|clip_to_bottom_layer_callback (GtkWidget * w,gpointer client_data)
-name|clip_to_bottom_layer_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|w
-parameter_list|,
-name|gpointer
-name|client_data
-parameter_list|)
-block|{
-name|LayerMergeOptions
-modifier|*
-name|options
-decl_stmt|;
-name|options
-operator|=
-operator|(
-name|LayerMergeOptions
-operator|*
-operator|)
-name|client_data
-expr_stmt|;
-name|options
-operator|->
-name|merge_type
-operator|=
-name|CLIP_TO_BOTTOM_LAYER
+name|gtk_object_get_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+literal|"merge_type"
+argument_list|)
 expr_stmt|;
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|layers_dialog_layer_merge_query (GImage * gimage,int merge_visible)
+DECL|function|layers_dialog_layer_merge_query (GImage * gimage,gint merge_visible)
 name|layers_dialog_layer_merge_query
 parameter_list|(
 name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+comment|/*  if 0, anchor active layer  */
+name|gint
 name|merge_visible
 parameter_list|)
-comment|/*  if 0, anchor active layer  */
 block|{
+name|LayerMergeOptions
+modifier|*
+name|options
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|vbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|radio_frame
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|radio_box
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|radio_button
+decl_stmt|;
+name|GSList
+modifier|*
+name|group
+init|=
+name|NULL
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
 specifier|static
 name|ActionAreaItem
 name|action_items
-index|[
-literal|2
-index|]
+index|[]
 init|=
 block|{
 block|{
@@ -17711,39 +17387,6 @@ name|NULL
 block|}
 block|}
 decl_stmt|;
-name|LayerMergeOptions
-modifier|*
-name|options
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|vbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|label
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|radio_frame
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|radio_box
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|radio_button
-decl_stmt|;
-name|GSList
-modifier|*
-name|group
-init|=
-name|NULL
-decl_stmt|;
-name|gint
-name|i
-decl_stmt|;
 specifier|static
 name|gchar
 modifier|*
@@ -17768,31 +17411,30 @@ argument_list|)
 block|}
 decl_stmt|;
 specifier|static
-name|ActionCallback
-name|button_callbacks
-index|[]
+name|gint
+name|n_buttons
 init|=
-block|{
-name|expand_as_necessary_callback
-block|,
-name|clip_to_image_callback
-block|,
-name|clip_to_bottom_layer_callback
-block|}
-decl_stmt|;
-comment|/*  the new options structure  */
-name|options
-operator|=
-operator|(
-name|LayerMergeOptions
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
 sizeof|sizeof
 argument_list|(
-name|LayerMergeOptions
+name|button_names
 argument_list|)
+operator|/
+sizeof|sizeof
+argument_list|(
+name|button_names
+index|[
+literal|0
+index|]
+argument_list|)
+decl_stmt|;
+comment|/*  The new options structure  */
+name|options
+operator|=
+name|g_new
+argument_list|(
+name|LayerMergeOptions
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|options
@@ -17813,7 +17455,7 @@ name|merge_type
 operator|=
 name|EXPAND_AS_NECESSARY
 expr_stmt|;
-comment|/*  the dialog  */
+comment|/* The dialog  */
 name|options
 operator|->
 name|query_box
@@ -17862,7 +17504,7 @@ argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|)
 expr_stmt|;
-comment|/* hadle the wm close signal */
+comment|/*  Handle the wm close signal  */
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -17882,31 +17524,29 @@ argument_list|,
 name|options
 argument_list|)
 expr_stmt|;
-comment|/*  the main vbox  */
+comment|/*  The main vbox  */
 name|vbox
 operator|=
 name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|options
-operator|->
-name|query_box
+name|vbox
 argument_list|)
 argument_list|,
-literal|2
+literal|4
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
+name|gtk_container_add
 argument_list|(
-name|GTK_BOX
+name|GTK_CONTAINER
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
@@ -17919,67 +17559,32 @@ name|vbox
 argument_list|)
 argument_list|,
 name|vbox
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
-comment|/*  the name entry hbox, label and entry  */
+comment|/*  The radio frame and box  */
 if|if
 condition|(
 name|merge_visible
 condition|)
-name|label
-operator|=
-name|gtk_label_new
-argument_list|(
-name|_
-argument_list|(
-literal|"Final, merged layer should be:"
-argument_list|)
-argument_list|)
-expr_stmt|;
-else|else
-name|label
-operator|=
-name|gtk_label_new
-argument_list|(
-name|_
-argument_list|(
-literal|"Final, anchored layer should be:"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-name|label
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|label
-argument_list|)
-expr_stmt|;
-comment|/*  the radio frame and box  */
 name|radio_frame
 operator|=
 name|gtk_frame_new
 argument_list|(
-name|NULL
+name|_
+argument_list|(
+literal|"Final, Merged Layer should be:"
+argument_list|)
+argument_list|)
+expr_stmt|;
+else|else
+name|radio_frame
+operator|=
+name|gtk_frame_new
+argument_list|(
+name|_
+argument_list|(
+literal|"Final, Anchored Layer should be:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -18007,6 +17612,16 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|radio_box
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
@@ -18017,7 +17632,7 @@ argument_list|,
 name|radio_box
 argument_list|)
 expr_stmt|;
-comment|/*  the radio buttons  */
+comment|/*  The radio buttons  */
 for|for
 control|(
 name|i
@@ -18026,7 +17641,7 @@ literal|0
 init|;
 name|i
 operator|<
-literal|3
+name|n_buttons
 condition|;
 name|i
 operator|++
@@ -18073,6 +17688,21 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gtk_object_set_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|radio_button
+argument_list|)
+argument_list|,
+literal|"merge_type"
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|i
+argument_list|)
+expr_stmt|;
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -18085,10 +17715,7 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|button_callbacks
-index|[
-name|i
-index|]
+name|layer_merge_query_type_callback
 argument_list|,
 name|options
 argument_list|)

@@ -47,19 +47,19 @@ struct|struct
 name|_GPattern
 block|{
 DECL|member|filename
-name|char
+name|gchar
 modifier|*
 name|filename
 decl_stmt|;
 comment|/*  actual filename--pattern's location on disk   */
 DECL|member|name
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
 comment|/*  pattern's name--for pattern selection dialog  */
 DECL|member|index
-name|int
+name|gint
 name|index
 decl_stmt|;
 comment|/*  pattern's index...                            */
@@ -81,7 +81,7 @@ begin_function_decl
 name|void
 name|patterns_init
 parameter_list|(
-name|int
+name|gboolean
 name|no_data
 parameter_list|)
 function_decl|;
@@ -98,18 +98,10 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|pattern_select_dialog_free
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|select_pattern
 parameter_list|(
 name|GPatternP
+name|pattern
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -118,7 +110,8 @@ begin_function_decl
 name|GPatternP
 name|get_pattern_by_index
 parameter_list|(
-name|int
+name|gint
+name|index
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -140,7 +133,7 @@ name|GSList
 modifier|*
 name|list
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -150,6 +143,15 @@ end_function_decl
 begin_function_decl
 name|void
 name|create_pattern_dialog
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|pattern_select_dialog_free
 parameter_list|(
 name|void
 parameter_list|)
@@ -170,7 +172,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gint
 name|num_patterns
 decl_stmt|;
 end_decl_stmt

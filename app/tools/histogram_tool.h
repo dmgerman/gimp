@@ -93,27 +93,27 @@ modifier|*
 name|hist
 decl_stmt|;
 DECL|member|mean
-name|double
+name|gdouble
 name|mean
 decl_stmt|;
 DECL|member|std_dev
-name|double
+name|gdouble
 name|std_dev
 decl_stmt|;
 DECL|member|median
-name|double
+name|gdouble
 name|median
 decl_stmt|;
 DECL|member|pixels
-name|double
+name|gdouble
 name|pixels
 decl_stmt|;
 DECL|member|count
-name|double
+name|gdouble
 name|count
 decl_stmt|;
 DECL|member|percentile
-name|double
+name|gdouble
 name|percentile
 decl_stmt|;
 DECL|member|drawable
@@ -126,11 +126,11 @@ name|ImageMap
 name|image_map
 decl_stmt|;
 DECL|member|channel
-name|int
+name|gint
 name|channel
 decl_stmt|;
 DECL|member|color
-name|int
+name|gint
 name|color
 decl_stmt|;
 block|}
@@ -187,9 +187,9 @@ parameter_list|(
 name|HistogramWidget
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
 name|void
 modifier|*
@@ -203,7 +203,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __HISTOGRAM_H__ */
+comment|/* __HISTOGRAM_TOOL_H__ */
 end_comment
 
 end_unit

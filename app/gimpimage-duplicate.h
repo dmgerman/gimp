@@ -19,12 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|"procedural_db.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpimageF.h"
 end_include
 
@@ -35,9 +29,9 @@ file|"gimpdrawableF.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon2b05e8de0103
 typedef|typedef
 enum|enum
+DECL|enum|__anon2ae903b30103
 block|{
 DECL|enumerator|OFFSET_BACKGROUND
 name|OFFSET_BACKGROUND
@@ -60,6 +54,7 @@ name|channel_ops_offset
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -70,6 +65,7 @@ name|channel_ops_duplicate
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -80,17 +76,23 @@ name|offset
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|,
 name|GimpDrawable
 modifier|*
+name|drawable
 parameter_list|,
 name|gboolean
+name|wrap_around
 parameter_list|,
-name|int
+name|gint
+name|fill_type
 parameter_list|,
-name|int
+name|gint
+name|offset_x
 parameter_list|,
-name|int
+name|gint
+name|offset_y
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -102,6 +104,7 @@ name|duplicate
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|)
 function_decl|;
 end_function_decl

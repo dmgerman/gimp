@@ -6,18 +6,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<math.h>
 end_include
 
@@ -43,12 +31,6 @@ begin_include
 include|#
 directive|include
 file|"brush_select.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"buildmenu.h"
 end_include
 
 begin_include
@@ -108,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint_funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paint_options.h"
 end_include
 
@@ -150,13 +126,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"tile.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tile.h"
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_comment
@@ -404,7 +380,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fdf6fe0108
+DECL|struct|__anon2bce8dde0108
 block|{
 DECL|member|offset
 name|double
@@ -456,7 +432,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fdf6fe0208
+DECL|struct|__anon2bce8dde0208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -1073,12 +1049,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|blend_mode_callback (GtkWidget * w,gpointer client_data)
+DECL|function|blend_mode_callback (GtkWidget * widget,gpointer client_data)
 name|blend_mode_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -1099,12 +1075,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_type_callback (GtkWidget * w,gpointer client_data)
+DECL|function|gradient_type_callback (GtkWidget * widget,gpointer client_data)
 name|gradient_type_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -3879,7 +3855,10 @@ name|g_snprintf
 argument_list|(
 name|vector
 argument_list|,
-name|STATUSBAR_SIZE
+sizeof|sizeof
+argument_list|(
+name|vector
+argument_list|)
 argument_list|,
 name|gdisp
 operator|->
@@ -3935,7 +3914,10 @@ name|g_snprintf
 argument_list|(
 name|vector
 argument_list|,
-name|STATUSBAR_SIZE
+sizeof|sizeof
+argument_list|(
+name|vector
+argument_list|)
 argument_list|,
 name|gdisp
 operator|->
@@ -7069,11 +7051,11 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|fatal_error
+name|gimp_fatal_error
 argument_list|(
 name|_
 argument_list|(
-literal|"gradient_render_pixel(): unknown gradient type %d"
+literal|"gradient_render_pixel(): Unknown gradient type %d"
 argument_list|)
 argument_list|,
 operator|(
@@ -7734,11 +7716,11 @@ name|CUSTOM_MODE
 case|:
 break|break;
 default|default:
-name|fatal_error
+name|gimp_fatal_error
 argument_list|(
 name|_
 argument_list|(
-literal|"gradient_fill_region(): unknown blend mode %d"
+literal|"gradient_fill_region(): Unknown blend mode %d"
 argument_list|)
 argument_list|,
 operator|(
@@ -7934,11 +7916,11 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|fatal_error
+name|gimp_fatal_error
 argument_list|(
 name|_
 argument_list|(
-literal|"gradient_fill_region(): unknown gradient type %d"
+literal|"gradient_fill_region(): Unknown gradient type %d"
 argument_list|)
 argument_list|,
 operator|(
@@ -7986,11 +7968,11 @@ name|gradient_repeat_triangular
 expr_stmt|;
 break|break;
 default|default:
-name|fatal_error
+name|gimp_fatal_error
 argument_list|(
 name|_
 argument_list|(
-literal|"gradient_fill_region(): unknown repeat mode %d"
+literal|"gradient_fill_region(): Unknown repeat mode %d"
 argument_list|)
 argument_list|,
 operator|(

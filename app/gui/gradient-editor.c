@@ -2796,11 +2796,11 @@ argument_list|,
 name|stderr
 argument_list|)
 expr_stmt|;
-name|fatal_error
+name|gimp_fatal_error
 argument_list|(
 name|_
 argument_list|(
-literal|"grad_get_color_at(): aieee, unknown gradient type %d"
+literal|"grad_get_color_at(): Unknown gradient type %d"
 argument_list|)
 argument_list|,
 operator|(
@@ -3111,11 +3111,11 @@ argument_list|,
 name|stderr
 argument_list|)
 expr_stmt|;
-name|fatal_error
+name|gimp_fatal_error
 argument_list|(
 name|_
 argument_list|(
-literal|"grad_get_color_at(): aieee, unknown coloring mode %d"
+literal|"grad_get_color_at(): Unknown coloring mode %d"
 argument_list|)
 argument_list|,
 operator|(
@@ -3219,10 +3219,10 @@ name|GdkColormap
 modifier|*
 name|colormap
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|int
+name|gint
 name|select_pos
 decl_stmt|;
 comment|/* If the editor already exists, just show it */
@@ -3249,7 +3249,7 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
-comment|/* Do this because os a proble with scrolling 			 * clists when not visible on screen. 			 */
+comment|/* Do this because os a proble with scrolling 	   * clists when not visible on screen. 	   */
 name|grad_set_grad_to_name
 argument_list|(
 name|curr_gradient
@@ -3270,7 +3270,6 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-comment|/* if */
 comment|/* Create editor */
 if|if
 condition|(
@@ -3315,7 +3314,7 @@ argument_list|,
 literal|"Gimp"
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -3371,7 +3370,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -3410,7 +3409,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -3612,7 +3611,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -3696,7 +3695,7 @@ argument_list|,
 literal|8
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -3937,7 +3936,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -4273,7 +4272,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -4609,7 +4608,7 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
-comment|/* hbox for that holds the frame for gradient preview and gradient control;             this is only here, because resizing the preview doesn't work (and is disabled)             to keep the preview and controls together */
+comment|/*  hbox for that holds the frame for gradient preview and gradient control;     *  this is only here, because resizing the preview doesn't work    *  (and is disabled) to keep the preview and controls together    */
 name|hbox
 operator|=
 name|gtk_hbox_new
@@ -7109,19 +7108,21 @@ name|gpointer
 name|client_data
 parameter_list|)
 block|{
+name|gtk_widget_show
+argument_list|(
 name|query_string_box
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"New gradient"
 argument_list|)
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Enter a name for the new gradient"
 argument_list|)
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"untitled"
 argument_list|)
@@ -7133,6 +7134,7 @@ argument_list|,
 name|ed_do_new_gradient_callback
 argument_list|,
 name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -7884,7 +7886,7 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|str
 decl_stmt|;
@@ -7923,7 +7925,7 @@ argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -7942,7 +7944,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -8340,11 +8342,11 @@ name|tmp
 operator|==
 name|NULL
 condition|)
-name|fatal_error
+name|gimp_fatal_error
 argument_list|(
 name|_
 argument_list|(
-literal|"ed_do_delete_gradient_callback(): aieee, could not find gradient to delete!"
+literal|"ed_do_delete_gradient_callback(): Could not find gradient to delete!"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -12332,9 +12334,12 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|fatal_error
+name|gimp_fatal_error
 argument_list|(
-literal|"control_motion(): aieee, attempt to move bogus handle %d"
+name|_
+argument_list|(
+literal|"control_motion(): Attempt to move bogus handle %d"
+argument_list|)
 argument_list|,
 operator|(
 name|int
@@ -21895,7 +21900,7 @@ argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -21914,7 +21919,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -23413,7 +23418,7 @@ argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -23432,7 +23437,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -27087,11 +27092,11 @@ argument_list|,
 name|stderr
 argument_list|)
 expr_stmt|;
-name|fatal_error
+name|gimp_fatal_error
 argument_list|(
 name|_
 argument_list|(
-literal|"seg_get_segment_at(): aieee, no matching segment for position %0.15f"
+literal|"seg_get_segment_at(): No matching segment for position %0.15f"
 argument_list|)
 argument_list|,
 name|pos

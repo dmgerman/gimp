@@ -223,10 +223,8 @@ name|unit_update
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
 parameter_list|,
 name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -264,10 +262,8 @@ name|orig_labels_update
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
 parameter_list|,
 name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -279,10 +275,8 @@ name|size_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
 parameter_list|,
 name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -294,10 +288,8 @@ name|ratio_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
 parameter_list|,
 name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -328,10 +320,8 @@ name|offset_update
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
 parameter_list|,
 name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -343,11 +333,9 @@ name|resize_events
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|area
 parameter_list|,
 name|GdkEvent
 modifier|*
-name|event
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -359,10 +347,8 @@ name|printsize_update
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
 parameter_list|,
 name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -374,10 +360,8 @@ name|resolution_update
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
 parameter_list|,
 name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -5013,12 +4997,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|orig_labels_update (GtkWidget * w,gpointer data)
+DECL|function|orig_labels_update (GtkWidget * widget,gpointer data)
 name|orig_labels_update
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|data
@@ -5077,7 +5061,7 @@ name|gimp_size_entry_get_unit
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|w
+name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5109,7 +5093,10 @@ name|g_snprintf
 argument_list|(
 name|format_buf
 argument_list|,
-literal|16
+sizeof|sizeof
+argument_list|(
+name|format_buf
+argument_list|)
 argument_list|,
 literal|"%%.%df %s"
 argument_list|,
@@ -5130,7 +5117,10 @@ name|g_snprintf
 argument_list|(
 name|buf
 argument_list|,
-literal|32
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 name|format_buf
 argument_list|,
@@ -5161,7 +5151,10 @@ name|g_snprintf
 argument_list|(
 name|buf
 argument_list|,
-literal|32
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 name|format_buf
 argument_list|,
@@ -5196,7 +5189,10 @@ name|g_snprintf
 argument_list|(
 name|buf
 argument_list|,
-literal|32
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,
@@ -5221,7 +5217,10 @@ name|g_snprintf
 argument_list|(
 name|buf
 argument_list|,
-literal|32
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,
@@ -5249,12 +5248,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|unit_update (GtkWidget * w,gpointer data)
+DECL|function|unit_update (GtkWidget * widget,gpointer data)
 name|unit_update
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|data
@@ -5280,7 +5279,7 @@ name|gimp_size_entry_get_unit
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|w
+name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5290,12 +5289,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|offset_update (GtkWidget * w,gpointer data)
+DECL|function|offset_update (GtkWidget * widget,gpointer data)
 name|offset_update
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|data
@@ -5436,12 +5435,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|size_callback (GtkWidget * w,gpointer data)
+DECL|function|size_callback (GtkWidget * widget,gpointer data)
 name|size_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|data
@@ -5633,12 +5632,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ratio_callback (GtkWidget * w,gpointer data)
+DECL|function|ratio_callback (GtkWidget * widget,gpointer data)
 name|ratio_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|data
@@ -6239,12 +6238,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|printsize_update (GtkWidget * w,gpointer data)
+DECL|function|printsize_update (GtkWidget * widget,gpointer data)
 name|printsize_update
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|data
@@ -6658,12 +6657,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|resolution_update (GtkWidget * w,gpointer data)
+DECL|function|resolution_update (GtkWidget * widget,gpointer data)
 name|resolution_update
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|data

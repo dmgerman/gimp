@@ -20,12 +20,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -1776,7 +1770,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5f3ca50108
+DECL|struct|__anon278c57e00108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1853,7 +1847,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5f3ca50208
+DECL|struct|__anon278c57e00208
 block|{
 DECL|member|ncolors
 name|long
@@ -1872,7 +1866,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5f3ca50308
+DECL|struct|__anon278c57e00308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -2888,9 +2882,14 @@ index|[
 literal|50
 index|]
 decl_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|tempstr
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|tempstr
+argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,
@@ -8853,7 +8852,7 @@ if|#
 directive|if
 literal|0
 comment|/* Select box to split.      * Current algorithm: by population for first half, then by volume.      */
-block|if (1 || numboxes*2<= desired_colors)       { 	printf("O "); 	b1 = find_biggest_color_pop (boxlist, numboxes);       }     else       { 	printf(". "); 	b1 = find_biggest_volume (boxlist, numboxes);       }
+block|if (1 || numboxes*2<= desired_colors)       { 	g_print ("O "); 	b1 = find_biggest_color_pop (boxlist, numboxes);       }     else       { 	g_print (". "); 	b1 = find_biggest_volume (boxlist, numboxes);       }
 endif|#
 directive|endif
 name|b1

@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<math.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<string.h>
 end_include
 
@@ -31,12 +37,6 @@ begin_include
 include|#
 directive|include
 file|"actionarea.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"math.h"
 end_include
 
 begin_include
@@ -628,7 +628,7 @@ name|y
 operator|++
 control|)
 block|{
-comment|/*  Invert the mask for display.      */
+comment|/*  Invert the mask for display.        */
 for|for
 control|(
 name|x
@@ -703,7 +703,7 @@ operator|!=
 name|scale
 condition|)
 block|{
-name|char
+name|gchar
 name|str
 index|[
 literal|255
@@ -719,7 +719,10 @@ name|g_snprintf
 argument_list|(
 name|str
 argument_list|,
-literal|200
+sizeof|sizeof
+argument_list|(
+name|str
+argument_list|)
 argument_list|,
 literal|"%d:1"
 argument_list|,
@@ -1097,7 +1100,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(

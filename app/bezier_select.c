@@ -12,18 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -85,12 +73,6 @@ begin_include
 include|#
 directive|include
 file|"interface.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"actionarea.h"
 end_include
 
 begin_include
@@ -328,7 +310,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon28b3f55b0108
+DECL|struct|__anon2c8042bd0108
 typedef|typedef
 struct|struct
 block|{
@@ -365,7 +347,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28b3f55b0208
+DECL|struct|__anon2c8042bd0208
 typedef|typedef
 struct|struct
 block|{
@@ -420,7 +402,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28b3f55b0308
+DECL|struct|__anon2c8042bd0308
 typedef|typedef
 struct|struct
 block|{
@@ -1657,7 +1639,7 @@ operator|&
 name|next_curve
 argument_list|)
 expr_stmt|;
-comment|/* 	  printf("next_anchor = %p\n",points); */
+comment|/* 	  g_print ("next_anchor = %p\n",points); */
 block|}
 do|while
 condition|(
@@ -2146,7 +2128,7 @@ return|return
 name|NULL
 return|;
 block|}
-comment|/*   printf("Returned start pnt of curve %p is %p\n",bsel->last_point,this_pnt); */
+comment|/*   g_print ("Returned start pnt of curve %p is %p\n",bsel->last_point,this_pnt); */
 return|return
 operator|(
 name|this_pnt
@@ -2204,7 +2186,7 @@ decl_stmt|;
 comment|/* shift and del means delete whole curve */
 comment|/* Three cases, this is first curve, middle curve     * or end curve.    */
 comment|/* Does this curve have another chained on the end?     * or is this curve pointed to another one?    */
-comment|/*   printf("delete_whole_curve::\n"); */
+comment|/*   g_print ("delete_whole_curve::\n"); */
 name|tmppnt
 operator|=
 name|start_pnt
@@ -2615,7 +2597,7 @@ name|prev
 condition|)
 block|{
 comment|/* This is the first point on the curve */
-comment|/* FIXME printf("Del first point\n"); */
+comment|/* FIXME g_print ("Del first point\n"); */
 block|}
 elseif|else
 if|if
@@ -2653,7 +2635,7 @@ operator|)
 condition|)
 block|{
 comment|/* This is the last point on the curve */
-comment|/* FIXME printf("Del last point\n"); */
+comment|/* FIXME g_print ("Del last point\n"); */
 block|}
 else|else
 block|{
@@ -2747,7 +2729,7 @@ operator|==
 name|finded
 condition|)
 block|{
-comment|/* 			  printf("Deleting first point %p\n",finded); */
+comment|/* 			  g_print ("Deleting first point %p\n",finded); */
 name|bezier_sel
 operator|->
 name|points
@@ -2772,7 +2754,7 @@ operator|->
 name|next_curve
 condition|)
 block|{
-comment|/* 		      printf("Moving curve on next_curve %p\n",finded->prev->next_curve); */
+comment|/* 		      g_print ("Moving curve on next_curve %p\n",finded->prev->next_curve); */
 comment|/* last point on closed multi-path */
 name|finded
 operator|->
@@ -2804,7 +2786,7 @@ operator|->
 name|prev
 condition|)
 block|{
-comment|/* 		      printf("Deleting last point %p\n",finded->prev); */
+comment|/* 		      g_print ("Deleting last point %p\n",finded->prev); */
 name|bezier_sel
 operator|->
 name|last_point
@@ -4120,11 +4102,11 @@ name|bezier_sel
 operator|->
 name|closed
 condition|)
-name|fatal_error
+name|gimp_fatal_error
 argument_list|(
 name|_
 argument_list|(
-literal|"tried to edit on open bezier curve in edit selection"
+literal|"bezier_select_button_press(): Tried to edit on open bezier curve in edit selection"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4673,7 +4655,7 @@ operator|->
 name|next_curve
 condition|)
 block|{
-comment|/* 	  printf("bezier_paste_bezierselect_to_current:: Close last curve off \n"); */
+comment|/* 	  g_print ("bezier_paste_bezierselect_to_current:: Close last curve off \n"); */
 name|tobez
 operator|->
 name|last_point
@@ -4973,7 +4955,7 @@ name|bezier_sel
 operator|->
 name|cur_anchor
 decl_stmt|;
-comment|/* 	  printf("moving only one curve\n"); */
+comment|/* 	  g_print ("moving only one curve\n"); */
 name|tmp
 operator|=
 name|start_pt
@@ -5304,11 +5286,11 @@ condition|(
 operator|!
 name|anchor
 condition|)
-name|fatal_error
+name|gimp_fatal_error
 argument_list|(
 name|_
 argument_list|(
-literal|"Encountered orphaned bezier control point"
+literal|"bezier_select_motion(): Encountered orphaned bezier control point"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5622,7 +5604,7 @@ name|y
 operator|+
 name|halfwidth
 expr_stmt|;
-comment|/*       printf("x,y = [%d,%d] halfwidth %d l,r,t,d [%d,%d,%d,%d]\n", */
+comment|/*       g_print ("x,y = [%d,%d] halfwidth %d l,r,t,d [%d,%d,%d,%d]\n", */
 comment|/* 	     points[loop].x, */
 comment|/* 	     points[loop].y, */
 comment|/* 	     halfwidth, */
@@ -6085,7 +6067,7 @@ operator|&
 name|next_curve
 argument_list|)
 expr_stmt|;
-comment|/* 	  printf("next_anchor = %p\n",points); */
+comment|/* 	  g_print ("next_anchor = %p\n",points); */
 block|}
 do|while
 condition|(
@@ -6492,7 +6474,7 @@ argument_list|,
 name|GIMP_MOUSE1CP_CURSOR
 argument_list|)
 expr_stmt|;
-comment|/* 	      printf("add to curve cursor\n"); */
+comment|/* 	      g_print ("add to curve cursor\n"); */
 block|}
 elseif|else
 if|if
@@ -6507,7 +6489,7 @@ argument_list|,
 name|GIMP_MOUSE1AP_CURSOR
 argument_list|)
 expr_stmt|;
-comment|/* 	      printf("edit control point cursor\n"); */
+comment|/* 	      g_print ("edit control point cursor\n"); */
 block|}
 else|else
 block|{
@@ -6535,7 +6517,7 @@ argument_list|,
 name|GIMP_MOUSE1P_CURSOR
 argument_list|)
 expr_stmt|;
-comment|/* 	      printf("add to curve cursor\n"); */
+comment|/* 	      g_print ("add to curve cursor\n"); */
 block|}
 else|else
 block|{
@@ -6546,7 +6528,7 @@ argument_list|,
 name|GIMP_MOUSE1_CURSOR
 argument_list|)
 expr_stmt|;
-comment|/* 	      printf("default no action cursor\n"); */
+comment|/* 	      g_print ("default no action cursor\n"); */
 block|}
 break|break;
 case|case
@@ -6564,7 +6546,7 @@ argument_list|,
 name|GIMP_MOUSE1CP_CURSOR
 argument_list|)
 expr_stmt|;
-comment|/* 	      printf("edit control point cursor\n"); */
+comment|/* 	      g_print ("edit control point cursor\n"); */
 block|}
 else|else
 block|{
@@ -6575,7 +6557,7 @@ argument_list|,
 name|GIMP_MOUSE1_CURSOR
 argument_list|)
 expr_stmt|;
-comment|/* 	      printf("default no action cursor\n"); */
+comment|/* 	      g_print ("default no action cursor\n"); */
 block|}
 break|break;
 case|case
@@ -6599,7 +6581,7 @@ argument_list|,
 name|GIMP_MOUSE1M_CURSOR
 argument_list|)
 expr_stmt|;
-name|printf
+name|g_print
 argument_list|(
 literal|"delete whole curve cursor\n"
 argument_list|)
@@ -6618,7 +6600,7 @@ argument_list|,
 name|GIMP_MOUSE1M_CURSOR
 argument_list|)
 expr_stmt|;
-comment|/* 	      printf("remove point cursor\n"); */
+comment|/* 	      g_print ("remove point cursor\n"); */
 block|}
 else|else
 block|{
@@ -6629,11 +6611,11 @@ argument_list|,
 name|GIMP_MOUSE1_CURSOR
 argument_list|)
 expr_stmt|;
-comment|/* 	      printf("default no action cursor\n"); */
+comment|/* 	      g_print ("default no action cursor\n"); */
 block|}
 break|break;
 default|default:
-name|printf
+name|g_print
 argument_list|(
 literal|"In default\n"
 argument_list|)
@@ -7048,7 +7030,7 @@ operator|->
 name|last_point
 condition|)
 block|{
-comment|/*       printf("Adding move point\n"); */
+comment|/*       g_print ("Adding move point\n"); */
 name|newpt
 operator|->
 name|type
@@ -7085,7 +7067,7 @@ name|type
 operator|=
 name|BEZIER_ANCHOR
 expr_stmt|;
-comment|/* 	  printf("Adding MOVE point to null curve\n"); */
+comment|/* 	  g_print ("Adding MOVE point to null curve\n"); */
 block|}
 if|if
 condition|(
@@ -7327,7 +7309,7 @@ decl_stmt|;
 name|int
 name|num_points
 decl_stmt|;
-comment|/*   printf("bezier_draw_handles cur_anchor = %p\n",bezier_sel->cur_anchor); */
+comment|/*   g_print ("bezier_draw_handles cur_anchor = %p\n",bezier_sel->cur_anchor); */
 name|points
 operator|=
 name|bezier_sel
@@ -7365,7 +7347,7 @@ operator|->
 name|cur_anchor
 condition|)
 block|{
-comment|/* 	printf("bezier_draw_handles:: found cur_anchor %p\n",points); */
+comment|/* 	g_print ("bezier_draw_handles:: found cur_anchor %p\n",points); */
 name|bezier_draw_point
 argument_list|(
 name|bezier_sel
@@ -7422,7 +7404,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* 	printf("bezier_draw_handles:: not found cur_anchor %p\n",points); */
+comment|/* 	g_print ("bezier_draw_handles:: not found cur_anchor %p\n",points); */
 if|if
 condition|(
 name|doAll
@@ -8057,11 +8039,11 @@ condition|(
 operator|!
 name|points
 condition|)
-name|fatal_error
+name|gimp_fatal_error
 argument_list|(
 name|_
 argument_list|(
-literal|"bad bezier segment"
+literal|"bezier_draw_segment(): Bad bezier segment"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8163,11 +8145,11 @@ name|sy
 expr_stmt|;
 break|break;
 default|default:
-name|fatal_error
+name|gimp_fatal_error
 argument_list|(
 name|_
 argument_list|(
-literal|"unknown coordinate space: %d"
+literal|"bezier_draw_segment(): Unknown coordinate space: %d"
 argument_list|)
 argument_list|,
 name|space
@@ -8970,11 +8952,11 @@ name|bezier_sel
 operator|->
 name|closed
 condition|)
-name|fatal_error
+name|gimp_fatal_error
 argument_list|(
 name|_
 argument_list|(
-literal|"tried to convert an open bezier curve"
+literal|"bezier_convert(): tried to convert an open bezier curve"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -10362,7 +10344,7 @@ name|need_move
 init|=
 literal|0
 decl_stmt|;
-comment|/*   printf("bezier_paste_bezierselect_to_current::\n"); */
+comment|/*   g_print ("bezier_paste_bezierselect_to_current::\n"); */
 comment|/*   printSel(bsel); */
 comment|/*  If the tool was being used before clear it */
 if|if
@@ -10571,7 +10553,7 @@ operator|->
 name|next_curve
 condition|)
 block|{
-comment|/* 	  printf("bezier_paste_bezierselect_to_current:: Close last curve off \n"); */
+comment|/* 	  g_print ("bezier_paste_bezierselect_to_current:: Close last curve off \n"); */
 name|curSel
 operator|->
 name|last_point
@@ -10692,7 +10674,7 @@ name|NO
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*   printf("After pasting...\n"); */
+comment|/*   g_print ("After pasting...\n"); */
 comment|/*   printSel(curSel); */
 if|if
 condition|(
@@ -11108,11 +11090,11 @@ name|sy
 expr_stmt|;
 break|break;
 default|default:
-name|fatal_error
+name|gimp_fatal_error
 argument_list|(
 name|_
 argument_list|(
-literal|"unknown coordinate space: %d"
+literal|"test_add_point_on_segment(): Unknown coordinate space: %d"
 argument_list|)
 argument_list|,
 name|space
@@ -12272,7 +12254,7 @@ name|start_pt
 operator|=
 name|pt
 expr_stmt|;
-name|printf
+name|g_print
 argument_list|(
 literal|"\n"
 argument_list|)
@@ -12293,7 +12275,7 @@ name|i
 operator|++
 control|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"%d(%p) x,y=%f,%f type=%d next=%p prev=%p next_curve=%p\n"
 argument_list|,
@@ -12338,7 +12320,7 @@ name|pt
 operator|->
 name|next_curve
 condition|)
-name|printf
+name|g_print
 argument_list|(
 literal|"Curve out a sync!!\n"
 argument_list|)
@@ -12369,7 +12351,7 @@ operator|->
 name|next
 expr_stmt|;
 block|}
-name|printf
+name|g_print
 argument_list|(
 literal|"core : %p\n"
 argument_list|,
@@ -12378,7 +12360,7 @@ operator|->
 name|core
 argument_list|)
 expr_stmt|;
-name|printf
+name|g_print
 argument_list|(
 literal|"closed : %d\n"
 argument_list|,
@@ -12387,7 +12369,7 @@ operator|->
 name|closed
 argument_list|)
 expr_stmt|;
-name|printf
+name|g_print
 argument_list|(
 literal|"draw : %d\n"
 argument_list|,
@@ -12396,7 +12378,7 @@ operator|->
 name|draw
 argument_list|)
 expr_stmt|;
-name|printf
+name|g_print
 argument_list|(
 literal|"state: %d\n"
 argument_list|,
@@ -14070,11 +14052,11 @@ condition|(
 operator|!
 name|points
 condition|)
-name|fatal_error
+name|gimp_fatal_error
 argument_list|(
 name|_
 argument_list|(
-literal|"bad bezier segment"
+literal|"bezier_draw_segment_for_distance(): Bad bezier segment"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -14465,7 +14447,7 @@ name|dy2
 operator|+=
 name|dy3
 expr_stmt|;
-comment|/*       printf("x = %g, y = %g\n",x,y); */
+comment|/*       g_print ("x = %g, y = %g\n",x,y); */
 comment|/* if this point is different than the last one...then draw it */
 comment|/* Note :        * It assumes the udata is the place we want the         * floating version of the coords to be stuffed.        * These are needed when we calculate the gradient of the         * curve.        */
 if|if
@@ -14603,7 +14585,7 @@ name|dy
 operator|/
 name|dx
 expr_stmt|;
-comment|/* 	      printf("found x = %d, y = %d\n",*(bdist->x),*(bdist->y)); */
+comment|/* 	      g_print ("found x = %d, y = %d\n",*(bdist->x),*(bdist->y)); */
 name|bdist
 operator|->
 name|found

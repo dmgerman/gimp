@@ -6,18 +6,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdk/gdkkeysyms.h"
 end_include
 
@@ -85,12 +73,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"general.h"
 end_include
 
 begin_include
@@ -299,11 +281,11 @@ modifier|*
 name|accel_group
 decl_stmt|;
 DECL|member|num_components
-name|int
+name|gint
 name|num_components
 decl_stmt|;
 DECL|member|base_type
-name|int
+name|gint
 name|base_type
 decl_stmt|;
 DECL|member|components
@@ -314,19 +296,19 @@ literal|3
 index|]
 decl_stmt|;
 DECL|member|ratio
-name|double
+name|gdouble
 name|ratio
 decl_stmt|;
 DECL|member|image_width
 DECL|member|image_height
-name|int
+name|gint
 name|image_width
 decl_stmt|,
 name|image_height
 decl_stmt|;
 DECL|member|gimage_width
 DECL|member|gimage_height
-name|int
+name|gint
 name|gimage_width
 decl_stmt|,
 name|gimage_height
@@ -415,18 +397,18 @@ name|ChannelType
 name|type
 decl_stmt|;
 DECL|member|ID
-name|int
+name|gint
 name|ID
 decl_stmt|;
 DECL|member|width
 DECL|member|height
-name|int
+name|gint
 name|width
 decl_stmt|,
 name|height
 decl_stmt|;
 DECL|member|visited
-name|int
+name|gboolean
 name|visited
 decl_stmt|;
 block|}
@@ -780,7 +762,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|suspend_gimage_notify
 specifier|static
-name|int
+name|gint
 name|suspend_gimage_notify
 init|=
 literal|0
@@ -984,12 +966,11 @@ condition|)
 block|{
 name|channelsD
 operator|=
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|ChannelsDialog
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|channelsD
@@ -1065,7 +1046,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -1312,13 +1293,13 @@ DECL|function|channels_dialog_free ()
 name|channels_dialog_free
 parameter_list|()
 block|{
-name|GSList
-modifier|*
-name|list
-decl_stmt|;
 name|ChannelWidget
 modifier|*
 name|cw
+decl_stmt|;
+name|GSList
+modifier|*
+name|list
 decl_stmt|;
 if|if
 condition|(
@@ -1458,10 +1439,7 @@ if|if
 condition|(
 operator|!
 name|channelsD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 name|channelsD
 operator|->
 name|gimage
@@ -1917,6 +1895,10 @@ DECL|function|channels_dialog_flush ()
 name|channels_dialog_flush
 parameter_list|()
 block|{
+name|ChannelWidget
+modifier|*
+name|cw
+decl_stmt|;
 name|GImage
 modifier|*
 name|gimage
@@ -1925,28 +1907,21 @@ name|Channel
 modifier|*
 name|channel
 decl_stmt|;
-name|ChannelWidget
-modifier|*
-name|cw
-decl_stmt|;
 name|GSList
 modifier|*
 name|list
 decl_stmt|;
-name|int
+name|gint
 name|gimage_pos
 decl_stmt|;
-name|int
+name|gint
 name|pos
 decl_stmt|;
 if|if
 condition|(
 operator|!
 name|channelsD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|gimage
@@ -2552,11 +2527,31 @@ name|aux_sens
 operator|=
 name|FALSE
 expr_stmt|;
-name|menus_set_sensitive_locale
+DECL|macro|SET_SENSITIVE (menu,condition)
+define|#
+directive|define
+name|SET_SENSITIVE
+parameter_list|(
+name|menu
+parameter_list|,
+name|condition
+parameter_list|)
+define|\
+value|menus_set_sensitive_locale ("<Channels>", (menu), (condition) != 0)
+DECL|macro|SET_OPS_SENSITIVE (button,condition)
+define|#
+directive|define
+name|SET_OPS_SENSITIVE
+parameter_list|(
+name|button
+parameter_list|,
+name|condition
+parameter_list|)
+define|\
+value|gtk_widget_set_sensitive (channels_ops_buttons[(button)].widget, \                                  (condition) != 0)
+name|SET_SENSITIVE
 argument_list|(
-literal|"<Channels>"
-argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"/New Channel"
 argument_list|)
@@ -2565,24 +2560,17 @@ operator|!
 name|fs_sens
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_sensitive
+name|SET_OPS_SENSITIVE
 argument_list|(
-name|channels_ops_buttons
-index|[
 literal|0
-index|]
-operator|.
-name|widget
 argument_list|,
 operator|!
 name|fs_sens
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|SET_SENSITIVE
 argument_list|(
-literal|"<Channels>"
-argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"/Raise Channel"
 argument_list|)
@@ -2593,14 +2581,9 @@ operator|&&
 name|aux_sens
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_sensitive
+name|SET_OPS_SENSITIVE
 argument_list|(
-name|channels_ops_buttons
-index|[
 literal|1
-index|]
-operator|.
-name|widget
 argument_list|,
 operator|!
 name|fs_sens
@@ -2608,11 +2591,9 @@ operator|&&
 name|aux_sens
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|SET_SENSITIVE
 argument_list|(
-literal|"<Channels>"
-argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"/Lower Channel"
 argument_list|)
@@ -2623,14 +2604,9 @@ operator|&&
 name|aux_sens
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_sensitive
+name|SET_OPS_SENSITIVE
 argument_list|(
-name|channels_ops_buttons
-index|[
 literal|2
-index|]
-operator|.
-name|widget
 argument_list|,
 operator|!
 name|fs_sens
@@ -2638,11 +2614,9 @@ operator|&&
 name|aux_sens
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|SET_SENSITIVE
 argument_list|(
-literal|"<Channels>"
-argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"/Duplicate Channel"
 argument_list|)
@@ -2653,14 +2627,9 @@ operator|&&
 name|aux_sens
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_sensitive
+name|SET_OPS_SENSITIVE
 argument_list|(
-name|channels_ops_buttons
-index|[
 literal|3
-index|]
-operator|.
-name|widget
 argument_list|,
 operator|!
 name|fs_sens
@@ -2668,11 +2637,9 @@ operator|&&
 name|aux_sens
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|SET_SENSITIVE
 argument_list|(
-literal|"<Channels>"
-argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"/Channel to Selection"
 argument_list|)
@@ -2680,23 +2647,46 @@ argument_list|,
 name|aux_sens
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_sensitive
+name|SET_OPS_SENSITIVE
 argument_list|(
-name|channels_ops_buttons
-index|[
 literal|4
-index|]
-operator|.
-name|widget
 argument_list|,
 name|aux_sens
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
+name|SET_SENSITIVE
 argument_list|(
-literal|"<Channels>"
+name|_
+argument_list|(
+literal|"/Add to Selection"
+argument_list|)
 argument_list|,
-name|N_
+name|aux_sens
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+name|_
+argument_list|(
+literal|"/Subtract From Selection"
+argument_list|)
+argument_list|,
+name|aux_sens
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+name|_
+argument_list|(
+literal|"/Intersect With Selection"
+argument_list|)
+argument_list|,
+name|aux_sens
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+name|_
 argument_list|(
 literal|"/Delete Channel"
 argument_list|)
@@ -2707,14 +2697,9 @@ operator|&&
 name|aux_sens
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_sensitive
+name|SET_OPS_SENSITIVE
 argument_list|(
-name|channels_ops_buttons
-index|[
 literal|5
-index|]
-operator|.
-name|widget
 argument_list|,
 operator|!
 name|fs_sens
@@ -2722,42 +2707,12 @@ operator|&&
 name|aux_sens
 argument_list|)
 expr_stmt|;
-name|menus_set_sensitive_locale
-argument_list|(
-literal|"<Channels>"
-argument_list|,
-name|N_
-argument_list|(
-literal|"/Add to Selection"
-argument_list|)
-argument_list|,
-name|aux_sens
-argument_list|)
-expr_stmt|;
-name|menus_set_sensitive_locale
-argument_list|(
-literal|"<Channels>"
-argument_list|,
-name|N_
-argument_list|(
-literal|"/Subtract From Selection"
-argument_list|)
-argument_list|,
-name|aux_sens
-argument_list|)
-expr_stmt|;
-name|menus_set_sensitive_locale
-argument_list|(
-literal|"<Channels>"
-argument_list|,
-name|N_
-argument_list|(
-literal|"/Intersect With Selection"
-argument_list|)
-argument_list|,
-name|aux_sens
-argument_list|)
-expr_stmt|;
+undef|#
+directive|undef
+name|SET_OPS_SENSITIVE
+undef|#
+directive|undef
+name|SET_SENSITIVE
 block|}
 end_function
 
@@ -2775,7 +2730,7 @@ block|{
 name|GtkStateType
 name|state
 decl_stmt|;
-name|int
+name|gint
 name|index
 decl_stmt|;
 if|if
@@ -3013,7 +2968,7 @@ block|{
 name|GtkStateType
 name|state
 decl_stmt|;
-name|int
+name|gint
 name|index
 decl_stmt|;
 if|if
@@ -3240,14 +3195,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|channels_dialog_position_channel (ChannelWidget * channel_widget,int new_index)
+DECL|function|channels_dialog_position_channel (ChannelWidget * channel_widget,gint new_index)
 name|channels_dialog_position_channel
 parameter_list|(
 name|ChannelWidget
 modifier|*
 name|channel_widget
 parameter_list|,
-name|int
+name|gint
 name|new_index
 parameter_list|)
 block|{
@@ -3362,6 +3317,10 @@ modifier|*
 name|channel
 parameter_list|)
 block|{
+name|ChannelWidget
+modifier|*
+name|channel_widget
+decl_stmt|;
 name|GImage
 modifier|*
 name|gimage
@@ -3370,11 +3329,7 @@ name|GList
 modifier|*
 name|item_list
 decl_stmt|;
-name|ChannelWidget
-modifier|*
-name|channel_widget
-decl_stmt|;
-name|int
+name|gint
 name|position
 decl_stmt|;
 if|if
@@ -3384,10 +3339,7 @@ name|channelsD
 operator|||
 operator|!
 name|channel
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|gimage
@@ -3704,12 +3656,12 @@ block|{
 case|case
 name|GDK_Up
 case|:
-comment|/* printf ("up arrow\n"); */
+comment|/* g_print ("up arrow\n"); */
 break|break;
 case|case
 name|GDK_Down
 case|:
-comment|/* printf ("down arrow\n"); */
+comment|/* g_print ("down arrow\n"); */
 break|break;
 default|default:
 return|return
@@ -3746,12 +3698,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|channels_dialog_map_callback (GtkWidget * w,gpointer client_data)
+DECL|function|channels_dialog_map_callback (GtkWidget * widget,gpointer client_data)
 name|channels_dialog_map_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -3783,12 +3735,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|channels_dialog_unmap_callback (GtkWidget * w,gpointer client_data)
+DECL|function|channels_dialog_unmap_callback (GtkWidget * widget,gpointer client_data)
 name|channels_dialog_unmap_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -3819,26 +3771,22 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_dialog_new_channel_callback (GtkWidget * w,gpointer client_data)
+DECL|function|channels_dialog_new_channel_callback (GtkWidget * widget,gpointer client_data)
 name|channels_dialog_new_channel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
 parameter_list|)
 block|{
-comment|/*  if there is a currently selected gimage, request a new channel    */
 if|if
 condition|(
 operator|!
 name|channelsD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 name|channelsD
 operator|->
 name|gimage
@@ -3858,12 +3806,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_dialog_raise_channel_callback (GtkWidget * w,gpointer client_data)
+DECL|function|channels_dialog_raise_channel_callback (GtkWidget * widget,gpointer client_data)
 name|channels_dialog_raise_channel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -3877,10 +3825,7 @@ if|if
 condition|(
 operator|!
 name|channelsD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|gimage
@@ -3918,12 +3863,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_dialog_lower_channel_callback (GtkWidget * w,gpointer client_data)
+DECL|function|channels_dialog_lower_channel_callback (GtkWidget * widget,gpointer client_data)
 name|channels_dialog_lower_channel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -3937,10 +3882,7 @@ if|if
 condition|(
 operator|!
 name|channelsD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|gimage
@@ -3978,12 +3920,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_dialog_duplicate_channel_callback (GtkWidget * w,gpointer client_data)
+DECL|function|channels_dialog_duplicate_channel_callback (GtkWidget * widget,gpointer client_data)
 name|channels_dialog_duplicate_channel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -4001,15 +3943,11 @@ name|Channel
 modifier|*
 name|new_channel
 decl_stmt|;
-comment|/*  if there is a currently selected gimage, request a new channel    */
 if|if
 condition|(
 operator|!
 name|channelsD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|gimage
@@ -4058,12 +3996,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_dialog_delete_channel_callback (GtkWidget * w,gpointer client_data)
+DECL|function|channels_dialog_delete_channel_callback (GtkWidget * widget,gpointer client_data)
 name|channels_dialog_delete_channel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -4073,15 +4011,11 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-comment|/*  if there is a currently selected gimage    */
 if|if
 condition|(
 operator|!
 name|channelsD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|gimage
@@ -4119,12 +4053,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_dialog_channel_to_sel_callback (GtkWidget * w,gpointer client_data)
+DECL|function|channels_dialog_channel_to_sel_callback (GtkWidget * widget,gpointer client_data)
 name|channels_dialog_channel_to_sel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -4134,15 +4068,11 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-comment|/*  if there is a currently selected gimage    */
 if|if
 condition|(
 operator|!
 name|channelsD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|gimage
@@ -4180,12 +4110,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_dialog_add_channel_to_sel_callback (GtkWidget * w,gpointer client_data)
+DECL|function|channels_dialog_add_channel_to_sel_callback (GtkWidget * widget,gpointer client_data)
 name|channels_dialog_add_channel_to_sel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -4203,15 +4133,11 @@ name|Channel
 modifier|*
 name|new_channel
 decl_stmt|;
-comment|/*  if there is a currently selected gimage    */
 if|if
 condition|(
 operator|!
 name|channelsD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|gimage
@@ -4279,12 +4205,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_dialog_sub_channel_from_sel_callback (GtkWidget * w,gpointer client_data)
+DECL|function|channels_dialog_sub_channel_from_sel_callback (GtkWidget * widget,gpointer client_data)
 name|channels_dialog_sub_channel_from_sel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -4302,15 +4228,11 @@ name|Channel
 modifier|*
 name|new_channel
 decl_stmt|;
-comment|/*  if there is a currently selected gimage    */
 if|if
 condition|(
 operator|!
 name|channelsD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|gimage
@@ -4378,12 +4300,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_dialog_intersect_channel_with_sel_callback (GtkWidget * w,gpointer client_data)
+DECL|function|channels_dialog_intersect_channel_with_sel_callback (GtkWidget * widget,gpointer client_data)
 name|channels_dialog_intersect_channel_with_sel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -4401,15 +4323,11 @@ name|Channel
 modifier|*
 name|new_channel
 decl_stmt|;
-comment|/*  if there is a currently selected gimage    */
 if|if
 condition|(
 operator|!
 name|channelsD
-condition|)
-return|return;
-if|if
-condition|(
+operator|||
 operator|!
 operator|(
 name|gimage
@@ -4605,19 +4523,14 @@ operator|=
 name|gtk_list_item_new
 argument_list|()
 expr_stmt|;
-comment|/*  create the channel widget and add it to the list  */
+comment|/*  Create the channel widget and add it to the list  */
 name|channel_widget
 operator|=
-operator|(
-name|ChannelWidget
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|ChannelWidget
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|channel_widget
@@ -4655,6 +4568,7 @@ operator|->
 name|ID
 operator|=
 operator|(
+operator|(
 name|type
 operator|==
 name|AUXILLARY_CHANNEL
@@ -4671,6 +4585,7 @@ operator|(
 name|COMPONENT_BASE_ID
 operator|+
 name|type
+operator|)
 operator|)
 expr_stmt|;
 name|channel_widget
@@ -4710,7 +4625,7 @@ argument_list|,
 name|channel_widget
 argument_list|)
 expr_stmt|;
-comment|/*  set up the list item observer  */
+comment|/*  Set up the list item observer  */
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -4789,7 +4704,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/* Create the visibility toggle button */
+comment|/*  Create the visibility toggle button  */
 name|alignment
 operator|=
 name|gtk_alignment_new
@@ -5023,7 +4938,7 @@ operator|->
 name|channel_preview
 argument_list|)
 expr_stmt|;
-comment|/*  the channel name label */
+comment|/*  The channel name label */
 switch|switch
 condition|(
 name|channel_widget
@@ -5238,12 +5153,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|channel_widget_select_update (GtkWidget * w,gpointer data)
+DECL|function|channel_widget_select_update (GtkWidget * widget,gpointer data)
 name|channel_widget_select_update
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|data
@@ -5286,7 +5201,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|w
+name|widget
 operator|->
 name|state
 operator|==
@@ -5329,7 +5244,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|w
+name|widget
 operator|->
 name|state
 operator|==
@@ -7774,7 +7689,7 @@ modifier|*
 name|gimage
 decl_stmt|;
 DECL|member|opacity
-name|double
+name|gdouble
 name|opacity
 decl_stmt|;
 block|}
@@ -7784,7 +7699,7 @@ end_struct
 begin_decl_stmt
 DECL|variable|channel_name
 specifier|static
-name|char
+name|gchar
 modifier|*
 name|channel_name
 init|=
@@ -7795,8 +7710,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|channel_color
 specifier|static
-name|unsigned
-name|char
+name|guchar
 name|channel_color
 index|[
 literal|3
@@ -7815,12 +7729,12 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|new_channel_query_ok_callback (GtkWidget * w,gpointer client_data)
+DECL|function|new_channel_query_ok_callback (GtkWidget * widget,gpointer client_data)
 name|new_channel_query_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -7838,7 +7752,7 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|options
@@ -7996,12 +7910,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|new_channel_query_cancel_callback (GtkWidget * w,gpointer client_data)
+DECL|function|new_channel_query_cancel_callback (GtkWidget * widget,gpointer client_data)
 name|new_channel_query_cancel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -8044,16 +7958,16 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|new_channel_query_delete_callback (GtkWidget * w,GdkEvent * e,gpointer client_data)
+DECL|function|new_channel_query_delete_callback (GtkWidget * widget,GdkEvent * event,gpointer client_data)
 name|new_channel_query_delete_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GdkEvent
 modifier|*
-name|e
+name|event
 parameter_list|,
 name|gpointer
 name|client_data
@@ -8061,7 +7975,7 @@ parameter_list|)
 block|{
 name|new_channel_query_cancel_callback
 argument_list|(
-name|w
+name|widget
 argument_list|,
 name|client_data
 argument_list|)
@@ -8075,14 +7989,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|new_channel_query_scale_update (GtkAdjustment * adjustment,double * scale_val)
+DECL|function|new_channel_query_scale_update (GtkAdjustment * adjustment,gdouble * scale_val)
 name|new_channel_query_scale_update
 parameter_list|(
 name|GtkAdjustment
 modifier|*
 name|adjustment
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|scale_val
 parameter_list|)
@@ -8108,12 +8022,38 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
+name|NewChannelOptions
+modifier|*
+name|options
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|hbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|vbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|table
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|label
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|opacity_scale
+decl_stmt|;
+name|GtkObject
+modifier|*
+name|opacity_scale_data
+decl_stmt|;
 specifier|static
 name|ActionAreaItem
 name|action_items
-index|[
-literal|2
-index|]
+index|[]
 init|=
 block|{
 block|{
@@ -8143,43 +8083,14 @@ name|NULL
 block|}
 block|}
 decl_stmt|;
-name|NewChannelOptions
-modifier|*
-name|options
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|vbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|table
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|label
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|opacity_scale
-decl_stmt|;
-name|GtkObject
-modifier|*
-name|opacity_scale_data
-decl_stmt|;
 comment|/*  the new options structure  */
 name|options
 operator|=
-operator|(
-name|NewChannelOptions
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|NewChannelOptions
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|options
@@ -8207,7 +8118,7 @@ argument_list|,
 literal|64
 argument_list|)
 expr_stmt|;
-comment|/*  the dialog  */
+comment|/*  The dialog  */
 name|options
 operator|->
 name|query_box
@@ -8256,7 +8167,7 @@ argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|)
 expr_stmt|;
-comment|/* handle the wm close signal */
+comment|/*  Handle the wm close signal */
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -8276,29 +8187,29 @@ argument_list|,
 name|options
 argument_list|)
 expr_stmt|;
-comment|/*  the main vbox  */
-name|vbox
+comment|/*  The main hbox  */
+name|hbox
 operator|=
-name|gtk_vbox_new
+name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
+literal|2
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|vbox
+name|hbox
 argument_list|)
 argument_list|,
-literal|1
+literal|4
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
+name|gtk_container_add
 argument_list|(
-name|GTK_BOX
+name|GTK_CONTAINER
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
@@ -8308,6 +8219,26 @@ name|query_box
 argument_list|)
 operator|->
 name|vbox
+argument_list|)
+argument_list|,
+name|hbox
+argument_list|)
+expr_stmt|;
+comment|/*  The vbox  */
+name|vbox
+operator|=
+name|gtk_vbox_new
+argument_list|(
+name|FALSE
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|hbox
 argument_list|)
 argument_list|,
 name|vbox
@@ -8331,6 +8262,16 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|gtk_table_set_col_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -8340,21 +8281,21 @@ argument_list|)
 argument_list|,
 name|table
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/*  the name entry hbox, label and entry  */
+comment|/*  The name entry hbox, label and entry  */
 name|label
 operator|=
 name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Channel name: "
+literal|"Channel name:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8365,7 +8306,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
 literal|0.5
 argument_list|)
@@ -8392,10 +8333,12 @@ operator||
 name|GTK_FILL
 argument_list|,
 name|GTK_SHRINK
+operator||
+name|GTK_FILL
 argument_list|,
 literal|0
 argument_list|,
-literal|1
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -8416,12 +8359,12 @@ name|options
 operator|->
 name|name_entry
 argument_list|,
-literal|75
+literal|150
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_table_attach
+name|gtk_table_attach_defaults
 argument_list|(
 name|GTK_TABLE
 argument_list|(
@@ -8437,18 +8380,6 @@ argument_list|,
 literal|2
 argument_list|,
 literal|0
-argument_list|,
-literal|1
-argument_list|,
-name|GTK_EXPAND
-operator||
-name|GTK_SHRINK
-operator||
-name|GTK_FILL
-argument_list|,
-name|GTK_SHRINK
-argument_list|,
-literal|1
 argument_list|,
 literal|1
 argument_list|)
@@ -8481,14 +8412,14 @@ operator|->
 name|name_entry
 argument_list|)
 expr_stmt|;
-comment|/*  the opacity scale  */
+comment|/*  The opacity scale  */
 name|label
 operator|=
 name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Fill Opacity: "
+literal|"Fill Opacity:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8499,9 +8430,9 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
-literal|0.5
+literal|1.0
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -8526,10 +8457,12 @@ operator||
 name|GTK_FILL
 argument_list|,
 name|GTK_SHRINK
+operator||
+name|GTK_FILL
 argument_list|,
 literal|0
 argument_list|,
-literal|1
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -8566,7 +8499,7 @@ name|opacity_scale_data
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_table_attach
+name|gtk_table_attach_defaults
 argument_list|(
 name|GTK_TABLE
 argument_list|(
@@ -8582,18 +8515,6 @@ argument_list|,
 literal|1
 argument_list|,
 literal|2
-argument_list|,
-name|GTK_EXPAND
-operator||
-name|GTK_SHRINK
-operator||
-name|GTK_FILL
-argument_list|,
-name|GTK_SHRINK
-argument_list|,
-literal|1
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_scale_set_value_pos
@@ -8641,12 +8562,12 @@ argument_list|(
 name|opacity_scale
 argument_list|)
 expr_stmt|;
-comment|/*  the color panel  */
-name|gtk_table_attach
+comment|/*  The color panel  */
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_TABLE
+name|GTK_BOX
 argument_list|(
-name|table
+name|hbox
 argument_list|)
 argument_list|,
 name|options
@@ -8655,21 +8576,11 @@ name|color_panel
 operator|->
 name|color_panel_widget
 argument_list|,
-literal|2
+name|TRUE
 argument_list|,
-literal|3
+name|TRUE
 argument_list|,
 literal|0
-argument_list|,
-literal|2
-argument_list|,
-name|GTK_EXPAND
-argument_list|,
-name|GTK_EXPAND
-argument_list|,
-literal|4
-argument_list|,
-literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -8723,6 +8634,11 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|vbox
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|hbox
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -8789,12 +8705,12 @@ end_struct
 begin_function
 specifier|static
 name|void
-DECL|function|edit_channel_query_ok_callback (GtkWidget * w,gpointer client_data)
+DECL|function|edit_channel_query_ok_callback (GtkWidget * widget,gpointer client_data)
 name|edit_channel_query_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -8808,15 +8724,15 @@ name|Channel
 modifier|*
 name|channel
 decl_stmt|;
-name|int
+name|gint
 name|opacity
 decl_stmt|;
-name|int
+name|gint
 name|update
 init|=
 name|FALSE
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|options
@@ -9024,12 +8940,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|edit_channel_query_cancel_callback (GtkWidget * w,gpointer client_data)
+DECL|function|edit_channel_query_cancel_callback (GtkWidget * widget,gpointer client_data)
 name|edit_channel_query_cancel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -9072,16 +8988,16 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|edit_channel_query_delete_callback (GtkWidget * w,GdkEvent * e,gpointer client_data)
+DECL|function|edit_channel_query_delete_callback (GtkWidget * widget,GdkEvent * event,gpointer client_data)
 name|edit_channel_query_delete_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GdkEvent
 modifier|*
-name|e
+name|event
 parameter_list|,
 name|gpointer
 name|client_data
@@ -9089,7 +9005,7 @@ parameter_list|)
 block|{
 name|edit_channel_query_cancel_callback
 argument_list|(
-name|w
+name|widget
 argument_list|,
 name|client_data
 argument_list|)
@@ -9117,11 +9033,11 @@ name|options
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|vbox
+name|hbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|hbox
+name|vbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -9139,7 +9055,7 @@ name|GtkObject
 modifier|*
 name|opacity_scale_data
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 specifier|static
@@ -9178,16 +9094,11 @@ decl_stmt|;
 comment|/*  the new options structure  */
 name|options
 operator|=
-operator|(
-name|EditChannelOptions
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|EditChannelOptions
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|options
@@ -9209,7 +9120,7 @@ operator|->
 name|opacity
 operator|=
 operator|(
-name|double
+name|gdouble
 operator|)
 name|channel_widget
 operator|->
@@ -9259,7 +9170,7 @@ argument_list|,
 literal|64
 argument_list|)
 expr_stmt|;
-comment|/*  the dialog  */
+comment|/*  The dialog  */
 name|options
 operator|->
 name|query_box
@@ -9308,7 +9219,7 @@ argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|)
 expr_stmt|;
-comment|/* deal with the wm close signal */
+comment|/*  Handle the wm close signal  */
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -9328,19 +9239,29 @@ argument_list|,
 name|options
 argument_list|)
 expr_stmt|;
-comment|/*  the main vbox  */
-name|vbox
+comment|/*  The main hbox  */
+name|hbox
 operator|=
-name|gtk_vbox_new
+name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
+literal|2
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
+name|gtk_container_set_border_width
 argument_list|(
-name|GTK_BOX
+name|GTK_CONTAINER
+argument_list|(
+name|hbox
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_container_add
+argument_list|(
+name|GTK_CONTAINER
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
@@ -9350,6 +9271,26 @@ name|query_box
 argument_list|)
 operator|->
 name|vbox
+argument_list|)
+argument_list|,
+name|hbox
+argument_list|)
+expr_stmt|;
+comment|/*  The vbox  */
+name|vbox
+operator|=
+name|gtk_vbox_new
+argument_list|(
+name|FALSE
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|hbox
 argument_list|)
 argument_list|,
 name|vbox
@@ -9368,9 +9309,19 @@ name|gtk_table_new
 argument_list|(
 literal|2
 argument_list|,
-literal|2
+literal|3
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+name|gtk_table_set_col_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -9382,21 +9333,34 @@ argument_list|)
 argument_list|,
 name|table
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/*  the name entry hbox, label and entry  */
-name|hbox
+comment|/*  The name entry  */
+name|label
 operator|=
-name|gtk_hbox_new
+name|gtk_label_new
 argument_list|(
-name|FALSE
+name|_
+argument_list|(
+literal|"Channel name:"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|label
+argument_list|)
 argument_list|,
-literal|1
+literal|1.0
+argument_list|,
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -9406,7 +9370,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-name|hbox
+name|label
 argument_list|,
 literal|0
 argument_list|,
@@ -9420,35 +9384,11 @@ name|GTK_EXPAND
 operator||
 name|GTK_FILL
 argument_list|,
+name|GTK_EXPAND
+operator||
+name|GTK_FILL
+argument_list|,
 literal|0
-argument_list|,
-literal|2
-argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
-name|label
-operator|=
-name|gtk_label_new
-argument_list|(
-name|_
-argument_list|(
-literal|"Channel name:"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|hbox
-argument_list|)
-argument_list|,
-name|label
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -9465,22 +9405,35 @@ operator|=
 name|gtk_entry_new
 argument_list|()
 expr_stmt|;
-name|gtk_box_pack_start
+name|gtk_widget_set_usize
 argument_list|(
-name|GTK_BOX
+name|options
+operator|->
+name|name_entry
+argument_list|,
+literal|150
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_table_attach_defaults
 argument_list|(
-name|hbox
+name|GTK_TABLE
+argument_list|(
+name|table
 argument_list|)
 argument_list|,
 name|options
 operator|->
 name|name_entry
 argument_list|,
-name|TRUE
+literal|1
 argument_list|,
-name|TRUE
+literal|2
 argument_list|,
 literal|0
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_entry_set_text
@@ -9507,19 +9460,27 @@ operator|->
 name|name_entry
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
+comment|/*  The opacity scale  */
+name|label
+operator|=
+name|gtk_label_new
 argument_list|(
-name|hbox
+name|_
+argument_list|(
+literal|"Fill Opacity:"
+argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  the opacity scale  */
-name|hbox
-operator|=
-name|gtk_hbox_new
+name|gtk_misc_set_alignment
 argument_list|(
-name|FALSE
+name|GTK_MISC
+argument_list|(
+name|label
+argument_list|)
 argument_list|,
-literal|1
+literal|1.0
+argument_list|,
+literal|1.0
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -9529,7 +9490,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-name|hbox
+name|label
 argument_list|,
 literal|0
 argument_list|,
@@ -9543,35 +9504,11 @@ name|GTK_EXPAND
 operator||
 name|GTK_FILL
 argument_list|,
+name|GTK_EXPAND
+operator||
+name|GTK_FILL
+argument_list|,
 literal|0
-argument_list|,
-literal|2
-argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
-name|label
-operator|=
-name|gtk_label_new
-argument_list|(
-name|_
-argument_list|(
-literal|"Fill Opacity"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|hbox
-argument_list|)
-argument_list|,
-name|label
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -9610,20 +9547,22 @@ name|opacity_scale_data
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
+name|gtk_table_attach_defaults
 argument_list|(
-name|GTK_BOX
+name|GTK_TABLE
 argument_list|(
-name|hbox
+name|table
 argument_list|)
 argument_list|,
 name|opacity_scale
 argument_list|,
-name|TRUE
+literal|1
 argument_list|,
-name|TRUE
+literal|2
 argument_list|,
-literal|0
+literal|1
+argument_list|,
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_scale_set_value_pos
@@ -9661,17 +9600,12 @@ argument_list|(
 name|opacity_scale
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
+comment|/*  The color panel  */
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
 argument_list|(
 name|hbox
-argument_list|)
-expr_stmt|;
-comment|/*  the color panel  */
-name|gtk_table_attach
-argument_list|(
-name|GTK_TABLE
-argument_list|(
-name|table
 argument_list|)
 argument_list|,
 name|options
@@ -9680,21 +9614,11 @@ name|color_panel
 operator|->
 name|color_panel_widget
 argument_list|,
-literal|1
+name|TRUE
 argument_list|,
-literal|2
+name|TRUE
 argument_list|,
 literal|0
-argument_list|,
-literal|2
-argument_list|,
-name|GTK_EXPAND
-argument_list|,
-name|GTK_EXPAND
-argument_list|,
-literal|4
-argument_list|,
-literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -9748,6 +9672,11 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|vbox
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|hbox
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

@@ -36,31 +36,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"buildmenu.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"colormaps.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"disp_callbacks.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"errors.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint_funcs.h"
 end_include
 
 begin_include
@@ -463,12 +445,11 @@ block|}
 decl_stmt|;
 name|psp
 operator|=
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|_PatternSelect
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|psp
@@ -1563,7 +1544,7 @@ comment|/*  *  Local functions  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon290a41c00108
+DECL|struct|__anon2a1fc1970108
 typedef|typedef
 struct|struct
 block|{
@@ -3621,7 +3602,7 @@ block|{
 name|GPatternP
 name|pattern
 decl_stmt|;
-name|char
+name|gchar
 name|buf
 index|[
 literal|32
@@ -3671,7 +3652,10 @@ name|g_snprintf
 argument_list|(
 name|buf
 argument_list|,
-literal|32
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 literal|"(%d X %d)"
 argument_list|,

@@ -3434,7 +3434,7 @@ comment|/*  *  Local functions  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2881ed0b0108
+DECL|struct|__anon298c33430108
 typedef|typedef
 struct|struct
 block|{
@@ -5498,7 +5498,10 @@ name|g_snprintf
 argument_list|(
 name|buf
 argument_list|,
-literal|32
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 literal|"(%d X %d)"
 argument_list|,
