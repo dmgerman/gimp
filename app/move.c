@@ -2060,6 +2060,12 @@ name|control_func
 operator|=
 name|move_tool_control
 expr_stmt|;
+name|tool
+operator|->
+name|preserve
+operator|=
+name|TRUE
+expr_stmt|;
 name|private
 operator|->
 name|layer

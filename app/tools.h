@@ -137,7 +137,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291e91fe0103
+DECL|enum|__anon2b92df730103
 block|{
 DECL|enumerator|RECT_SELECT
 name|RECT_SELECT
@@ -452,6 +452,11 @@ name|int
 name|ID
 decl_stmt|;
 comment|/*  unique tool ID  */
+DECL|member|preserve
+name|int
+name|preserve
+decl_stmt|;
+comment|/*  Perserve this tool through the current image changes */
 comment|/*  Action functions  */
 DECL|member|button_press_func
 name|ButtonPressFunc

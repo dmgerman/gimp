@@ -190,7 +190,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29809bc30103
+DECL|enum|__anon28fc78d00103
 block|{
 DECL|enumerator|Linear
 name|Linear
@@ -227,7 +227,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29809bc30203
+DECL|enum|__anon28fc78d00203
 block|{
 DECL|enumerator|FG_BG_RGB_MODE
 name|FG_BG_RGB_MODE
@@ -249,7 +249,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29809bc30303
+DECL|enum|__anon28fc78d00303
 block|{
 DECL|enumerator|REPEAT_NONE
 name|REPEAT_NONE
@@ -383,7 +383,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon29809bc30408
+DECL|struct|__anon28fc78d00408
 typedef|typedef
 struct|struct
 block|{
@@ -435,7 +435,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29809bc30508
+DECL|struct|__anon28fc78d00508
 typedef|typedef
 struct|struct
 block|{
@@ -8586,6 +8586,12 @@ operator|->
 name|control_func
 operator|=
 name|blend_control
+expr_stmt|;
+name|tool
+operator|->
+name|preserve
+operator|=
+name|TRUE
 expr_stmt|;
 return|return
 name|tool

@@ -2502,6 +2502,12 @@ name|control_func
 operator|=
 name|free_select_control
 expr_stmt|;
+name|tool
+operator|->
+name|preserve
+operator|=
+name|TRUE
+expr_stmt|;
 return|return
 name|tool
 return|;

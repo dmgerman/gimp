@@ -1015,6 +1015,13 @@ name|GDK_BUTTON3_MASK
 operator|)
 condition|)
 block|{
+comment|/*  We're going to dirty this image, but we want to keep the tool 	  around       */
+name|tool
+operator|->
+name|preserve
+operator|=
+name|TRUE
+expr_stmt|;
 comment|/*  Start a transform undo group  */
 name|undo_push_group_start
 argument_list|(
@@ -1199,6 +1206,13 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|)
+expr_stmt|;
+comment|/*  We're done dirtying the image, and would like to be restarted 	  if the image gets dirty while the tool exists       */
+name|tool
+operator|->
+name|preserve
+operator|=
+name|FALSE
 expr_stmt|;
 comment|/*  Flush the gdisplays  */
 if|if
@@ -2551,6 +2565,13 @@ operator|*
 operator|)
 name|private
 expr_stmt|;
+name|tool
+operator|->
+name|preserve
+operator|=
+name|FALSE
+expr_stmt|;
+comment|/*  Destroy when the image is dirtied. */
 name|tool
 operator|->
 name|button_press_func

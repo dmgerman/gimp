@@ -1714,6 +1714,12 @@ name|control_func
 operator|=
 name|histogram_tool_control
 expr_stmt|;
+name|tool
+operator|->
+name|preserve
+operator|=
+name|FALSE
+expr_stmt|;
 return|return
 name|tool
 return|;

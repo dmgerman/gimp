@@ -1975,6 +1975,12 @@ name|private
 expr_stmt|;
 name|tool
 operator|->
+name|preserve
+operator|=
+name|TRUE
+expr_stmt|;
+name|tool
+operator|->
 name|button_press_func
 operator|=
 name|paint_core_button_press

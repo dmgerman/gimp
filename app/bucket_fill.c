@@ -100,7 +100,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5cc87b0103
+DECL|enum|__anon28eaf5d30103
 block|{
 DECL|enumerator|FgColorFill
 name|FgColorFill
@@ -3506,6 +3506,12 @@ operator|->
 name|control_func
 operator|=
 name|bucket_fill_control
+expr_stmt|;
+name|tool
+operator|->
+name|preserve
+operator|=
+name|TRUE
 expr_stmt|;
 return|return
 name|tool

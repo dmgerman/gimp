@@ -3242,6 +3242,13 @@ name|control_func
 operator|=
 name|crop_control
 expr_stmt|;
+name|tool
+operator|->
+name|preserve
+operator|=
+name|TRUE
+expr_stmt|;
+comment|/* XXX Check me */
 return|return
 name|tool
 return|;
