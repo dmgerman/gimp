@@ -15,29 +15,6 @@ directive|include
 file|<stdlib.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|GTK_DISABLE_DEPRECATED
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_undef
-undef|#
-directive|undef
-name|GTK_DISABLE_DEPRECATED
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -109,7 +86,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_ui_init:  * @prog_name: The name of the plug-in which will be passed as argv[0] to  *             gtk_init(). It's a convention to use the name of the  *             executable and _not_ the PDB procedure name or something.  * @preview: %TRUE if the plug-in has some kind of preview in it's UI.  *           Note that passing %TRUE is recommended also if one of the  *           used GIMP Library widgets contains a preview (like the image  *           menu returned by gimp_image_menu_new()).  *  * This function initializes GTK+ with gtk_init() and initializes GDK's  * image rendering subsystem (GdkRGB) to follow the GIMP main program's  * colormap allocation/installation policy.  *  * The GIMP's colormap policy can be determinded by the user with the  * gimprc variables @min_colors and @install_cmap.  **/
+comment|/**  * gimp_ui_init:  * @prog_name: The name of the plug-in which will be passed as argv[0] to  *             gtk_init(). It's a convention to use the name of the  *             executable and _not_ the PDB procedure name or something.  * @preview:   This parameter is unused and exists for historical  *             reasons only.  *  * This function initializes GTK+ with gtk_init() and initializes GDK's  * image rendering subsystem (GdkRGB) to follow the GIMP main program's  * colormap allocation/installation policy.  *  * The GIMP's colormap policy can be determinded by the user with the  * gimprc variables @min_colors and @install_cmap.  **/
 end_comment
 
 begin_function
@@ -328,17 +305,6 @@ name|gdk_screen_get_rgb_colormap
 argument_list|(
 name|screen
 argument_list|)
-argument_list|)
-expr_stmt|;
-comment|/*  Set the gamma after installing the colormap because    *  gtk_preview_set_gamma() initializes GdkRGB if not already done    */
-if|if
-condition|(
-name|preview
-condition|)
-name|gtk_preview_set_gamma
-argument_list|(
-name|gimp_gamma
-argument_list|()
 argument_list|)
 expr_stmt|;
 comment|/*  Initialize the eeky vtable needed by libgimpwidgets  */
