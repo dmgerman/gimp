@@ -2100,8 +2100,6 @@ name|ac
 operator|&&
 operator|!
 name|mask
-operator|&&
-name|alpha
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
