@@ -115,6 +115,14 @@ DECL|member|font_size_unit
 name|GimpUnit
 name|font_size_unit
 decl_stmt|;
+DECL|member|hinting
+name|gboolean
+name|hinting
+decl_stmt|;
+DECL|member|antialias
+name|gboolean
+name|antialias
+decl_stmt|;
 DECL|member|language
 name|gchar
 modifier|*
@@ -140,9 +148,9 @@ DECL|member|letter_spacing
 name|gdouble
 name|letter_spacing
 decl_stmt|;
-DECL|member|fixed_width
+DECL|member|box_width
 name|gint
-name|fixed_width
+name|box_width
 decl_stmt|;
 comment|/* for historical reasons, don't use */
 DECL|member|border
