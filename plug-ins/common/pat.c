@@ -469,7 +469,7 @@ literal|"1997"
 argument_list|,
 literal|"<Save>/PAT"
 argument_list|,
-literal|"RGB, GRAY"
+literal|"RGB*, GRAY*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
@@ -742,6 +742,8 @@ argument_list|,
 name|GIMP_EXPORT_CAN_HANDLE_GRAY
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_RGB
+operator||
+name|GIMP_EXPORT_CAN_HANDLE_ALPHA
 argument_list|)
 expr_stmt|;
 if|if
@@ -1222,13 +1224,6 @@ name|image_type
 operator|=
 name|GIMP_GRAYA_IMAGE
 expr_stmt|;
-name|g_message
-argument_list|(
-literal|"Your pattern has an aplha channel,\n"
-literal|"please flatten and save it again to fix this.\n"
-literal|"Loading it anyway..."
-argument_list|)
-expr_stmt|;
 break|break;
 case|case
 literal|3
@@ -1252,13 +1247,6 @@ expr_stmt|;
 name|image_type
 operator|=
 name|GIMP_RGBA_IMAGE
-expr_stmt|;
-name|g_message
-argument_list|(
-literal|"Your pattern has an aplha channel,\n"
-literal|"please flatten and save it again to fix this.\n"
-literal|"Loading it anyway..."
-argument_list|)
 expr_stmt|;
 break|break;
 default|default:
