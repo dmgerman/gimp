@@ -49,6 +49,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_gradient_is_editable
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gchar
 modifier|*
 name|gimp_gradient_rename
