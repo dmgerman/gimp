@@ -584,7 +584,8 @@ name|gint
 name|mask_x1
 decl_stmt|,
 name|mask_y1
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|mask_x2
 decl_stmt|,
 name|mask_y2

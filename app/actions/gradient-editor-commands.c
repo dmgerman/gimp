@@ -3116,9 +3116,7 @@ block|{
 name|GimpGradient
 modifier|*
 name|gradient
-decl_stmt|;
-name|gradient
-operator|=
+init|=
 name|GIMP_GRADIENT
 argument_list|(
 name|GIMP_DATA_EDITOR
@@ -3128,7 +3126,7 @@ argument_list|)
 operator|->
 name|data
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gimp_gradient_segment_range_split_uniform
 argument_list|(
 name|gradient
@@ -3203,9 +3201,7 @@ block|{
 name|GimpGradient
 modifier|*
 name|gradient
-decl_stmt|;
-name|gradient
-operator|=
+init|=
 name|GIMP_GRADIENT
 argument_list|(
 name|GIMP_DATA_EDITOR
@@ -3215,7 +3211,7 @@ argument_list|)
 operator|->
 name|data
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gimp_gradient_segment_range_replicate
 argument_list|(
 name|gradient
