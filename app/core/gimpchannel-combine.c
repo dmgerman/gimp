@@ -1204,7 +1204,7 @@ block|}
 comment|/*  antialiasing  */
 else|else
 block|{
-comment|/** algorithm changed 7-18-04, because the previous one did not                * work well for eccentric ellipses.  The new algorithm                * measures the distance to the ellipse in the X and Y directions,                * and uses trigonometry to approximate the distance to the                * ellipse as the distance to the hypotenuse of a right triangle                * whose legs are the X and Y distances.  (WES)                **/
+comment|/* algorithm changed 7-18-04, because the previous one did not                * work well for eccentric ellipses.  The new algorithm                * measures the distance to the ellipse in the X and Y directions,                * and uses trigonometry to approximate the distance to the                * ellipse as the distance to the hypotenuse of a right triangle                * whose legs are the X and Y distances.  (WES)                */
 name|x0
 operator|=
 name|x
