@@ -926,6 +926,14 @@ block|{
 literal|0
 block|, }
 decl_stmt|;
+name|g_object_freeze_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|undo
 operator|=
 name|gimp_undo_stack_pop_undo
@@ -940,10 +948,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
 name|undo
 condition|)
-return|return;
+block|{
 if|if
 condition|(
 name|GIMP_IS_UNDO_STACK
@@ -1056,6 +1063,15 @@ else|:
 name|GIMP_UNDO_EVENT_REDO
 argument_list|,
 name|undo
+argument_list|)
+expr_stmt|;
+block|}
+name|g_object_thaw_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimage
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

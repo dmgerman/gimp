@@ -195,6 +195,14 @@ literal|1
 comment|/* selection */
 operator|)
 expr_stmt|;
+name|g_object_freeze_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
@@ -215,7 +223,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  Set the new width and height  */
 name|old_width
 operator|=
 name|gimage
@@ -227,18 +234,6 @@ operator|=
 name|gimage
 operator|->
 name|height
-expr_stmt|;
-name|gimage
-operator|->
-name|width
-operator|=
-name|new_width
-expr_stmt|;
-name|gimage
-operator|->
-name|height
-operator|=
-name|new_height
 expr_stmt|;
 name|img_scale_w
 operator|=
@@ -263,6 +258,22 @@ operator|(
 name|gdouble
 operator|)
 name|old_height
+expr_stmt|;
+comment|/*  Set the new width and height  */
+name|g_object_set
+argument_list|(
+name|gimage
+argument_list|,
+literal|"width"
+argument_list|,
+name|new_width
+argument_list|,
+literal|"height"
+argument_list|,
+name|new_height
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 comment|/*  Scale all channels  */
 for|for
@@ -684,6 +695,14 @@ expr_stmt|;
 name|gimp_viewable_size_changed
 argument_list|(
 name|GIMP_VIEWABLE
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_thaw_notify
+argument_list|(
+name|G_OBJECT
 argument_list|(
 name|gimage
 argument_list|)

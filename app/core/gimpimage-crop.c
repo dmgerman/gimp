@@ -102,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1611370103
+DECL|enum|__anon2ae21c030103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -383,6 +383,14 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
+name|g_object_freeze_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|crop_layers
@@ -421,17 +429,20 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  Set the new width and height  */
+name|g_object_set
+argument_list|(
 name|gimage
-operator|->
+argument_list|,
+literal|"width"
+argument_list|,
 name|width
-operator|=
-name|width
-expr_stmt|;
-name|gimage
-operator|->
+argument_list|,
+literal|"height"
+argument_list|,
 name|height
-operator|=
-name|height
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 comment|/*  Resize all channels  */
 for|for
@@ -928,6 +939,14 @@ expr_stmt|;
 name|gimp_viewable_size_changed
 argument_list|(
 name|GIMP_VIEWABLE
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_thaw_notify
+argument_list|(
+name|G_OBJECT
 argument_list|(
 name|gimage
 argument_list|)

@@ -405,7 +405,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon29af52280103
+DECL|enum|__anon2b1e30980103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1433,7 +1433,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29af52280208
+DECL|struct|__anon2b1e30980208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1510,7 +1510,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29af52280308
+DECL|struct|__anon2b1e30980308
 block|{
 DECL|member|ncolors
 name|long
@@ -1681,7 +1681,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29af52280408
+DECL|struct|__anon2b1e30980408
 block|{
 DECL|member|used_count
 name|signed
@@ -2854,6 +2854,14 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+name|g_object_freeze_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
@@ -2878,11 +2886,16 @@ name|gimage
 operator|->
 name|base_type
 expr_stmt|;
+name|g_object_set
+argument_list|(
 name|gimage
-operator|->
-name|base_type
-operator|=
+argument_list|,
+literal|"base-type"
+argument_list|,
 name|new_type
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 comment|/* initialize the colour conversion routines */
 name|cpercep_init_conversions
@@ -3839,6 +3852,14 @@ expr_stmt|;
 name|gimp_image_mode_changed
 argument_list|(
 name|gimage
+argument_list|)
+expr_stmt|;
+name|g_object_thaw_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimage
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_unset_busy
