@@ -16,18 +16,6 @@ directive|define
 name|__FILE_UTILS_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug-in/plug-in-types.h"
-end_include
-
 begin_function_decl
 name|gchar
 modifier|*
