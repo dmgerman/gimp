@@ -258,7 +258,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c26601a0103
+DECL|enum|__anon2937837b0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -6820,7 +6820,7 @@ comment|/*  NTSC conversion  */
 operator|*
 name|dest
 operator|=
-name|INTENSITY
+name|GIMP_RGB_INTENSITY
 argument_list|(
 name|src
 index|[

@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27df65c50103
+DECL|enum|__anon2c4095240103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -3167,7 +3167,7 @@ index|[
 name|GRAY_PIX
 index|]
 operator|=
-name|INTENSITY
+name|GIMP_RGB_INTENSITY
 argument_list|(
 name|c
 index|[

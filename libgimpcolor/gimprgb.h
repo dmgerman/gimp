@@ -31,7 +31,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2995c3770103
+DECL|enum|__anon2a42bebf0103
 block|{
 DECL|enumerator|GIMP_RGB_COMPOSITE_NONE
 name|GIMP_RGB_COMPOSITE_NONE
@@ -424,34 +424,34 @@ comment|/*  Map RGB to intensity  */
 end_comment
 
 begin_define
-DECL|macro|INTENSITY_RED
+DECL|macro|GIMP_RGB_INTENSITY_RED
 define|#
 directive|define
-name|INTENSITY_RED
+name|GIMP_RGB_INTENSITY_RED
 value|0.30
 end_define
 
 begin_define
-DECL|macro|INTENSITY_GREEN
+DECL|macro|GIMP_RGB_INTENSITY_GREEN
 define|#
 directive|define
-name|INTENSITY_GREEN
+name|GIMP_RGB_INTENSITY_GREEN
 value|0.59
 end_define
 
 begin_define
-DECL|macro|INTENSITY_BLUE
+DECL|macro|GIMP_RGB_INTENSITY_BLUE
 define|#
 directive|define
-name|INTENSITY_BLUE
+name|GIMP_RGB_INTENSITY_BLUE
 value|0.11
 end_define
 
 begin_define
-DECL|macro|INTENSITY (r,g,b)
+DECL|macro|GIMP_RGB_INTENSITY (r,g,b)
 define|#
 directive|define
-name|INTENSITY
+name|GIMP_RGB_INTENSITY
 parameter_list|(
 name|r
 parameter_list|,
@@ -459,7 +459,7 @@ name|g
 parameter_list|,
 name|b
 parameter_list|)
-value|((r) * INTENSITY_RED   + \ 			  (g) * INTENSITY_GREEN + \ 			  (b) * INTENSITY_BLUE  + 0.001)
+value|((r) * GIMP_RGB_INTENSITY_RED   + \ 			           (g) * GIMP_RGB_INTENSITY_GREEN + \ 			           (b) * GIMP_RGB_INTENSITY_BLUE  + 0.001)
 end_define
 
 begin_macro

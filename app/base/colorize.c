@@ -112,7 +112,7 @@ index|]
 operator|=
 name|i
 operator|*
-name|INTENSITY_RED
+name|GIMP_RGB_INTENSITY_RED
 expr_stmt|;
 name|colorize
 operator|->
@@ -123,7 +123,7 @@ index|]
 operator|=
 name|i
 operator|*
-name|INTENSITY_GREEN
+name|GIMP_RGB_INTENSITY_GREEN
 expr_stmt|;
 name|colorize
 operator|->
@@ -134,7 +134,7 @@ index|]
 operator|=
 name|i
 operator|*
-name|INTENSITY_BLUE
+name|GIMP_RGB_INTENSITY_BLUE
 expr_stmt|;
 block|}
 block|}

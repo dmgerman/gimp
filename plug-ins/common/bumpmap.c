@@ -161,7 +161,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8376690103
+DECL|enum|__anon2b27a68f0103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -179,7 +179,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8376690203
+DECL|enum|__anon2b27a68f0203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -198,7 +198,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8376690308
+DECL|struct|__anon2b27a68f0308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -257,7 +257,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8376690408
+DECL|struct|__anon2b27a68f0408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -302,7 +302,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8376690508
+DECL|struct|__anon2b27a68f0508
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -3393,7 +3393,7 @@ operator|=
 name|lut
 index|[
 call|(
-name|int
+name|gint
 call|)
 argument_list|(
 name|bmvals
@@ -3403,10 +3403,10 @@ operator|+
 operator|(
 operator|(
 call|(
-name|int
+name|gint
 call|)
 argument_list|(
-name|INTENSITY
+name|GIMP_RGB_INTENSITY
 argument_list|(
 name|row
 index|[
@@ -3450,10 +3450,10 @@ operator|=
 name|lut
 index|[
 call|(
-name|int
+name|gint
 call|)
 argument_list|(
-name|INTENSITY
+name|GIMP_RGB_INTENSITY
 argument_list|(
 name|row
 index|[

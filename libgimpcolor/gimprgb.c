@@ -832,7 +832,7 @@ argument_list|)
 expr_stmt|;
 name|intensity
 operator|=
-name|INTENSITY
+name|GIMP_RGB_INTENSITY
 argument_list|(
 name|rgb
 operator|->

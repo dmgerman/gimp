@@ -469,7 +469,7 @@ condition|)
 block|{
 name|pix
 operator|=
-name|INTENSITY
+name|GIMP_RGB_INTENSITY
 argument_list|(
 name|src
 index|[
@@ -522,7 +522,7 @@ condition|)
 block|{
 name|pix
 operator|=
-name|INTENSITY
+name|GIMP_RGB_INTENSITY
 argument_list|(
 name|src
 index|[

@@ -417,7 +417,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2c267c350103
+DECL|enum|__anon2c402f2b0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1445,7 +1445,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c267c350208
+DECL|struct|__anon2c402f2b0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1522,7 +1522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c267c350308
+DECL|struct|__anon2c402f2b0308
 block|{
 DECL|member|ncolors
 name|long
@@ -1682,7 +1682,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c267c350408
+DECL|struct|__anon2c402f2b0408
 block|{
 DECL|member|used_count
 name|signed
@@ -2663,7 +2663,7 @@ decl_stmt|;
 name|double
 name|v1
 init|=
-name|INTENSITY
+name|GIMP_RGB_INTENSITY
 argument_list|(
 name|color1
 operator|->
@@ -2681,7 +2681,7 @@ decl_stmt|;
 name|double
 name|v2
 init|=
-name|INTENSITY
+name|GIMP_RGB_INTENSITY
 argument_list|(
 name|color2
 operator|->
@@ -4605,7 +4605,7 @@ control|)
 block|{
 name|val
 operator|=
-name|INTENSITY
+name|GIMP_RGB_INTENSITY
 argument_list|(
 name|s
 index|[
@@ -4723,7 +4723,7 @@ literal|3
 expr_stmt|;
 name|val
 operator|=
-name|INTENSITY
+name|GIMP_RGB_INTENSITY
 argument_list|(
 name|cmap
 index|[

@@ -2504,7 +2504,7 @@ expr_stmt|;
 block|}
 name|bg
 operator|=
-name|INTENSITY
+name|GIMP_RGB_INTENSITY
 argument_list|(
 name|red
 argument_list|,

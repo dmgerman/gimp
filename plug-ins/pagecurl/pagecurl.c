@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4544fa0108
+DECL|struct|__anon2b4cf9750108
 block|{
 DECL|member|do_curl_shade
 name|gint
@@ -3621,7 +3621,7 @@ expr_stmt|;
 comment|/* Init shade_curl */
 name|fore_grayval
 operator|=
-name|INTENSITY
+name|GIMP_RGB_INTENSITY
 argument_list|(
 name|fore_color
 index|[
@@ -3641,7 +3641,7 @@ argument_list|)
 expr_stmt|;
 name|back_grayval
 operator|=
-name|INTENSITY
+name|GIMP_RGB_INTENSITY
 argument_list|(
 name|back_color
 index|[
@@ -5200,7 +5200,7 @@ index|[
 literal|0
 index|]
 operator|=
-name|INTENSITY
+name|GIMP_RGB_INTENSITY
 argument_list|(
 name|f_samp
 index|[

@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c08c8960108
+DECL|struct|__anon299b8f340108
 block|{
 DECL|member|height
 name|gint
@@ -1402,7 +1402,7 @@ expr_stmt|;
 else|else
 name|inten
 operator|=
-name|INTENSITY
+name|GIMP_RGB_INTENSITY
 argument_list|(
 name|average
 index|[
@@ -1636,7 +1636,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c08c8960208
+DECL|struct|__anon299b8f340208
 block|{
 DECL|member|x
 DECL|member|y
@@ -2328,7 +2328,7 @@ expr_stmt|;
 else|else
 name|inten
 operator|=
-name|INTENSITY
+name|GIMP_RGB_INTENSITY
 argument_list|(
 name|average
 index|[

@@ -455,7 +455,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297631980108
+DECL|struct|__anon29c633c20108
 block|{
 DECL|member|name
 specifier|const
@@ -715,7 +715,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297631980208
+DECL|struct|__anon29c633c20208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -788,7 +788,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297631980308
+DECL|struct|__anon29c633c20308
 block|{
 DECL|member|input_spi
 name|gint
@@ -818,7 +818,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297631980408
+DECL|struct|__anon29c633c20408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -925,7 +925,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297631980508
+DECL|struct|__anon29c633c20508
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1096,7 +1096,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297631980608
+DECL|struct|__anon29c633c20608
 block|{
 DECL|member|name
 specifier|const
@@ -6783,7 +6783,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297631980708
+DECL|struct|__anon29c633c20708
 block|{
 DECL|member|index
 name|gint
@@ -8173,7 +8173,7 @@ index|[
 literal|0
 index|]
 operator|=
-name|INTENSITY
+name|GIMP_RGB_INTENSITY
 argument_list|(
 name|data
 index|[

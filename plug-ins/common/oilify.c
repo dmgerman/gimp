@@ -83,12 +83,6 @@ name|MODE_INTEN
 value|1
 end_define
 
-begin_undef
-undef|#
-directive|undef
-name|INTENSITY
-end_undef
-
 begin_define
 DECL|macro|INTENSITY (p)
 define|#
@@ -103,7 +97,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c7aaf00108
+DECL|struct|__anon29a3c3290108
 block|{
 DECL|member|mask_size
 name|gdouble

@@ -1166,7 +1166,7 @@ name|x
 argument_list|,
 name|y
 argument_list|,
-name|INTENSITY
+name|GIMP_RGB_INTENSITY
 argument_list|(
 name|p
 index|[
@@ -1223,7 +1223,7 @@ operator|(
 operator|(
 name|guchar
 operator|)
-name|INTENSITY
+name|GIMP_RGB_INTENSITY
 argument_list|(
 name|p
 index|[
