@@ -185,7 +185,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c9b7540108
+DECL|struct|__anon2bce2da30108
 block|{
 DECL|member|console
 name|GtkWidget
@@ -676,6 +676,9 @@ argument_list|(
 literal|"script-fu"
 argument_list|)
 expr_stmt|;
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|gtk_init
 argument_list|(
 operator|&
@@ -690,9 +693,6 @@ argument_list|(
 name|gimp_gtkrc
 argument_list|()
 argument_list|)
-expr_stmt|;
-name|INIT_I18N_UI
-argument_list|()
 expr_stmt|;
 name|dlg
 operator|=
