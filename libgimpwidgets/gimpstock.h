@@ -461,6 +461,16 @@ define|#
 directive|define
 name|GIMP_STOCK_SCALE
 value|"gimp-scale"
+DECL|macro|GIMP_STOCK_LAYER
+define|#
+directive|define
+name|GIMP_STOCK_LAYER
+value|"gimp-layer"
+DECL|macro|GIMP_STOCK_CHANNEL
+define|#
+directive|define
+name|GIMP_STOCK_CHANNEL
+value|"gimp-channel"
 DECL|macro|GIMP_STOCK_IMAGES
 define|#
 directive|define

@@ -352,6 +352,10 @@ name|GimpObjectClass
 modifier|*
 name|gimp_object_class
 decl_stmt|;
+name|GimpViewableClass
+modifier|*
+name|viewable_class
+decl_stmt|;
 name|GimpItemClass
 modifier|*
 name|item_class
@@ -366,6 +370,13 @@ expr_stmt|;
 name|gimp_object_class
 operator|=
 name|GIMP_OBJECT_CLASS
+argument_list|(
+name|klass
+argument_list|)
+expr_stmt|;
+name|viewable_class
+operator|=
+name|GIMP_VIEWABLE_CLASS
 argument_list|(
 name|klass
 argument_list|)
@@ -395,6 +406,12 @@ operator|->
 name|get_memsize
 operator|=
 name|gimp_channel_get_memsize
+expr_stmt|;
+name|viewable_class
+operator|->
+name|default_stock_id
+operator|=
+literal|"gimp-channel"
 expr_stmt|;
 name|item_class
 operator|->
