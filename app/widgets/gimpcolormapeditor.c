@@ -205,7 +205,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae66faa0103
+DECL|enum|__anon2a4292970103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -4317,14 +4317,14 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Edit Indexed Color"
+literal|"Edit Colormap Entry"
 argument_list|)
 argument_list|,
 name|GIMP_STOCK_CONVERT_INDEXED
 argument_list|,
 name|_
 argument_list|(
-literal|"Edit indexed image palette color"
+literal|"Edit colormap entry"
 argument_list|)
 argument_list|,
 name|GTK_WIDGET

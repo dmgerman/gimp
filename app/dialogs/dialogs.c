@@ -817,10 +817,7 @@ argument_list|(
 literal|"Colormap"
 argument_list|)
 argument_list|,
-name|N_
-argument_list|(
-literal|"Indexed Palette"
-argument_list|)
+name|NULL
 argument_list|,
 name|GIMP_STOCK_INDEXED_PALETTE
 argument_list|,

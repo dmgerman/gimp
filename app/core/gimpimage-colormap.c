@@ -177,7 +177,7 @@ name|gimage
 argument_list|,
 name|_
 argument_list|(
-literal|"Set Indexed Palette"
+literal|"Set Colormap"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -420,7 +420,7 @@ name|gimage
 argument_list|,
 name|_
 argument_list|(
-literal|"Change Indexed Palette Entry"
+literal|"Change Colormap entry"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -527,7 +527,7 @@ name|gimage
 argument_list|,
 name|_
 argument_list|(
-literal|"Add Color to Indexed Palette"
+literal|"Add Color to Colormap"
 argument_list|)
 argument_list|)
 expr_stmt|;

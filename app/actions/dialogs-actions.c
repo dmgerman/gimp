@@ -287,7 +287,7 @@ name|GIMP_STOCK_INDEXED_PALETTE
 block|,
 name|N_
 argument_list|(
-literal|"Inde_xed Palette"
+literal|"Color_map"
 argument_list|)
 block|,
 name|NULL

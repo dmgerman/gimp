@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289a48860108
+DECL|struct|__anon2c77802e0108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -653,7 +653,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Palette"
+literal|"Colormap"
 argument_list|)
 argument_list|)
 argument_list|,
@@ -915,7 +915,7 @@ argument_list|(
 name|_
 argument_list|(
 literal|"_Remove unused colors "
-literal|"from final palette"
+literal|"from final palette."
 argument_list|)
 argument_list|)
 expr_stmt|;

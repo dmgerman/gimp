@@ -90,7 +90,7 @@ name|GIMP_STOCK_INDEXED_PALETTE
 block|,
 name|N_
 argument_list|(
-literal|"Indexed Palette Menu"
+literal|"Colormap Menu"
 argument_list|)
 block|,
 name|NULL
