@@ -986,8 +986,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_controller_wheel_scrolled (GimpControllerWheel * wheel,const GdkEventScroll * sevent)
-name|gimp_controller_wheel_scrolled
+DECL|function|gimp_controller_wheel_scroll (GimpControllerWheel * wheel,const GdkEventScroll * sevent)
+name|gimp_controller_wheel_scroll
 parameter_list|(
 name|GimpControllerWheel
 modifier|*

@@ -3195,7 +3195,7 @@ if|if
 condition|(
 name|wheel
 operator|&&
-name|gimp_controller_wheel_scrolled
+name|gimp_controller_wheel_scroll
 argument_list|(
 name|GIMP_CONTROLLER_WHEEL
 argument_list|(

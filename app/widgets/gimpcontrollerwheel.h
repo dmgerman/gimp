@@ -132,7 +132,7 @@ end_decl_stmt
 
 begin_function_decl
 name|gboolean
-name|gimp_controller_wheel_scrolled
+name|gimp_controller_wheel_scroll
 parameter_list|(
 name|GimpControllerWheel
 modifier|*
