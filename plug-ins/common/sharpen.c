@@ -333,7 +333,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9abaad0108
+DECL|struct|__anon293099af0108
 block|{
 DECL|member|sharpen_percent
 name|gint
@@ -2350,11 +2350,15 @@ operator|+
 name|width
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_preview_draw
+name|gimp_drawable_preview_draw_buffer
 argument_list|(
 name|preview
 argument_list|,
 name|preview_dst
+argument_list|,
+name|preview_width
+operator|*
+name|img_bpp
 argument_list|)
 expr_stmt|;
 name|g_free

@@ -3299,7 +3299,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*    * Update the screen...    */
-name|gimp_drawable_preview_draw
+name|gimp_drawable_preview_draw_buffer
 argument_list|(
 name|GIMP_DRAWABLE_PREVIEW
 argument_list|(
@@ -3307,6 +3307,12 @@ name|preview
 argument_list|)
 argument_list|,
 name|rgba
+argument_list|,
+name|preview
+operator|->
+name|width
+operator|*
+name|img_bpp
 argument_list|)
 expr_stmt|;
 name|g_free

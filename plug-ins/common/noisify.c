@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c25f2990108
+DECL|struct|__anon2a1841010108
 block|{
 DECL|member|independent
 name|gint
@@ -97,7 +97,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c25f2990208
+DECL|struct|__anon2a1841010208
 block|{
 DECL|member|channels
 name|gint
@@ -1190,11 +1190,15 @@ argument_list|,
 name|gr
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_preview_draw
+name|gimp_drawable_preview_draw_buffer
 argument_list|(
 name|preview
 argument_list|,
 name|dst
+argument_list|,
+name|width
+operator|*
+name|bpp
 argument_list|)
 expr_stmt|;
 name|g_free

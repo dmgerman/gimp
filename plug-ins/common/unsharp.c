@@ -86,7 +86,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2889eafd0108
+DECL|struct|__anon29f4f57b0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2889eafd0208
+DECL|struct|__anon29f4f57b0208
 block|{
 DECL|member|run
 name|gboolean
@@ -314,7 +314,7 @@ specifier|static
 name|void
 name|preview_update
 parameter_list|(
-name|GimpPreview
+name|GimpDrawablePreview
 modifier|*
 name|preview
 parameter_list|)
@@ -3341,10 +3341,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|preview_update (GimpPreview * preview)
+DECL|function|preview_update (GimpDrawablePreview * preview)
 name|preview_update
 parameter_list|(
-name|GimpPreview
+name|GimpDrawablePreview
 modifier|*
 name|preview
 parameter_list|)
@@ -3363,9 +3363,9 @@ decl_stmt|,
 name|y2
 decl_stmt|;
 comment|/* preview */
-name|GimpDrawablePreview
+name|GimpDrawable
 modifier|*
-name|drawable_preview
+name|drawable
 decl_stmt|;
 name|guchar
 modifier|*
@@ -3439,9 +3439,9 @@ operator|.
 name|update_preview
 condition|)
 return|return;
-name|drawable_preview
+name|drawable
 operator|=
-name|GIMP_DRAWABLE_PREVIEW
+name|gimp_drawable_preview_get_drawable
 argument_list|(
 name|preview
 argument_list|)
@@ -3449,8 +3449,6 @@ expr_stmt|;
 comment|/* Get drawable info */
 name|gimp_drawable_mask_bounds
 argument_list|(
-name|drawable_preview
-operator|->
 name|drawable
 operator|->
 name|drawable_id
@@ -3470,8 +3468,6 @@ argument_list|)
 expr_stmt|;
 name|bytes
 operator|=
-name|drawable_preview
-operator|->
 name|drawable
 operator|->
 name|bpp
@@ -3479,7 +3475,10 @@ expr_stmt|;
 comment|/*    * Setup for filter...    */
 name|gimp_preview_get_position
 argument_list|(
+name|GIMP_PREVIEW
+argument_list|(
 name|preview
+argument_list|)
 argument_list|,
 operator|&
 name|preview_x1
@@ -3488,21 +3487,27 @@ operator|&
 name|preview_y1
 argument_list|)
 expr_stmt|;
-name|preview_x2
-operator|=
-name|preview_x1
-operator|+
+name|gimp_preview_get_size
+argument_list|(
+name|GIMP_PREVIEW
+argument_list|(
 name|preview
-operator|->
-name|width
+argument_list|)
+argument_list|,
+operator|&
+name|preview_x2
+argument_list|,
+operator|&
+name|preview_y2
+argument_list|)
+expr_stmt|;
+name|preview_x2
+operator|+=
+name|preview_x1
 expr_stmt|;
 name|preview_y2
-operator|=
+operator|+=
 name|preview_y1
-operator|+
-name|preview
-operator|->
-name|height
 expr_stmt|;
 comment|/* Make buffer large enough to minimize disturbence */
 name|preview_buf_x1
@@ -3575,8 +3580,6 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|drawable_preview
-operator|->
 name|drawable
 argument_list|,
 name|preview_buf_x1
@@ -3611,8 +3614,6 @@ argument_list|(
 operator|&
 name|destPR
 argument_list|,
-name|drawable_preview
-operator|->
 name|drawable
 argument_list|,
 name|preview_buf_x1
@@ -3704,35 +3705,9 @@ operator|*
 name|bytes
 operator|)
 expr_stmt|;
-name|gimp_preview_area_draw
-argument_list|(
-name|GIMP_PREVIEW_AREA
+name|gimp_drawable_preview_draw_buffer
 argument_list|(
 name|preview
-operator|->
-name|area
-argument_list|)
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|preview
-operator|->
-name|width
-argument_list|,
-name|preview
-operator|->
-name|height
-argument_list|,
-name|gimp_drawable_type
-argument_list|(
-name|drawable_preview
-operator|->
-name|drawable
-operator|->
-name|drawable_id
-argument_list|)
 argument_list|,
 name|render_buffer
 operator|+

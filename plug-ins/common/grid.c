@@ -245,7 +245,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a90638d0108
+DECL|struct|__anon288bbfb50108
 block|{
 DECL|member|hwidth
 name|gint
@@ -2351,7 +2351,7 @@ condition|(
 name|preview
 condition|)
 block|{
-name|gimp_drawable_preview_draw
+name|gimp_drawable_preview_draw_buffer
 argument_list|(
 name|GIMP_DRAWABLE_PREVIEW
 argument_list|(
@@ -2359,6 +2359,14 @@ name|preview
 argument_list|)
 argument_list|,
 name|buffer
+argument_list|,
+name|bytes
+operator|*
+operator|(
+name|sx2
+operator|-
+name|sx1
+operator|)
 argument_list|)
 expr_stmt|;
 name|g_free

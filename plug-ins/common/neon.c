@@ -40,7 +40,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a802c20108
+DECL|struct|__anon27943c000108
 block|{
 DECL|member|radius
 name|gdouble
@@ -2236,7 +2236,7 @@ condition|(
 name|preview
 condition|)
 block|{
-name|gimp_drawable_preview_draw
+name|gimp_drawable_preview_draw_buffer
 argument_list|(
 name|GIMP_DRAWABLE_PREVIEW
 argument_list|(
@@ -2244,6 +2244,10 @@ name|preview
 argument_list|)
 argument_list|,
 name|preview_buffer2
+argument_list|,
+name|width
+operator|*
+name|bytes
 argument_list|)
 expr_stmt|;
 name|g_free

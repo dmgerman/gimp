@@ -56,7 +56,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b289db0108
+DECL|struct|__anon298003fe0108
 block|{
 DECL|member|horizontal
 name|gboolean
@@ -138,7 +138,7 @@ parameter_list|,
 name|gboolean
 name|keep_sign
 parameter_list|,
-name|GtkWidget
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -166,7 +166,7 @@ specifier|static
 name|void
 name|sobel_preview_update
 parameter_list|(
-name|GtkWidget
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -1112,22 +1112,23 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|sobel_preview_update (GtkWidget * preview)
+DECL|function|sobel_preview_update (GimpPreview * preview)
 name|sobel_preview_update
 parameter_list|(
-name|GtkWidget
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
 block|{
 name|sobel
 argument_list|(
+name|gimp_drawable_preview_get_drawable
+argument_list|(
 name|GIMP_DRAWABLE_PREVIEW
 argument_list|(
 name|preview
 argument_list|)
-operator|->
-name|drawable
+argument_list|)
 argument_list|,
 name|bvals
 operator|.
@@ -1283,7 +1284,7 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|sobel (GimpDrawable * drawable,gboolean do_horizontal,gboolean do_vertical,gboolean keep_sign,GtkWidget * preview)
+DECL|function|sobel (GimpDrawable * drawable,gboolean do_horizontal,gboolean do_vertical,gboolean keep_sign,GimpPreview * preview)
 name|sobel
 parameter_list|(
 name|GimpDrawable
@@ -1299,7 +1300,7 @@ parameter_list|,
 name|gboolean
 name|keep_sign
 parameter_list|,
-name|GtkWidget
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -1389,10 +1390,7 @@ condition|)
 block|{
 name|gimp_preview_get_position
 argument_list|(
-name|GIMP_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|x1
@@ -1403,10 +1401,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_preview_get_size
 argument_list|(
-name|GIMP_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|width
@@ -2045,7 +2040,7 @@ condition|(
 name|preview
 condition|)
 block|{
-name|gimp_drawable_preview_draw
+name|gimp_drawable_preview_draw_buffer
 argument_list|(
 name|GIMP_DRAWABLE_PREVIEW
 argument_list|(
@@ -2053,6 +2048,10 @@ name|preview
 argument_list|)
 argument_list|,
 name|preview_buffer
+argument_list|,
+name|width
+operator|*
+name|bytes
 argument_list|)
 expr_stmt|;
 name|g_free

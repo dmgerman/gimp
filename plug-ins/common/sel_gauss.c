@@ -36,7 +36,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2785c1750108
+DECL|struct|__anon274742610108
 block|{
 DECL|member|radius
 name|gdouble
@@ -2004,6 +2004,15 @@ modifier|*
 name|preview
 parameter_list|)
 block|{
+name|GimpDrawable
+modifier|*
+name|drawable
+init|=
+name|gimp_drawable_preview_get_drawable
+argument_list|(
+name|preview
+argument_list|)
+decl_stmt|;
 name|glong
 name|bytes
 decl_stmt|;
@@ -2052,8 +2061,6 @@ decl_stmt|;
 comment|/* Get drawable info */
 name|bytes
 operator|=
-name|preview
-operator|->
 name|drawable
 operator|->
 name|bpp
@@ -2093,8 +2100,6 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|preview
-operator|->
 name|drawable
 argument_list|,
 name|x1
@@ -2157,8 +2162,6 @@ name|has_alpha
 operator|=
 name|gimp_drawable_has_alpha
 argument_list|(
-name|preview
-operator|->
 name|drawable
 operator|->
 name|drawable_id
@@ -2287,11 +2290,15 @@ name|src
 argument_list|)
 expr_stmt|;
 comment|/*    * Draw the preview image on the screen...    */
-name|gimp_drawable_preview_draw
+name|gimp_drawable_preview_draw_buffer
 argument_list|(
 name|preview
 argument_list|,
 name|render_buffer
+argument_list|,
+name|width
+operator|*
+name|bytes
 argument_list|)
 expr_stmt|;
 name|g_free
