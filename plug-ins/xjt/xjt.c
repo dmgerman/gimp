@@ -243,7 +243,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294536770103
+DECL|enum|__anon29195e560103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -443,7 +443,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294536770203
+DECL|enum|__anon29195e560203
 block|{
 DECL|enumerator|PTYP_NOT_SUPPORTED
 name|PTYP_NOT_SUPPORTED
@@ -503,7 +503,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294536770303
+DECL|enum|__anon29195e560303
 block|{
 DECL|enumerator|XJT_IMAGE_PARASITE
 name|XJT_IMAGE_PARASITE
@@ -533,7 +533,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294536770403
+DECL|enum|__anon29195e560403
 block|{
 DECL|enumerator|XJT_RGB
 name|XJT_RGB
@@ -555,7 +555,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294536770503
+DECL|enum|__anon29195e560503
 block|{
 DECL|enumerator|XJT_PATHTYPE_UNDEF
 name|XJT_PATHTYPE_UNDEF
@@ -575,7 +575,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294536770603
+DECL|enum|__anon29195e560603
 block|{
 DECL|enumerator|XJT_UNIT_PIXEL
 name|XJT_UNIT_PIXEL
@@ -610,7 +610,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294536770703
+DECL|enum|__anon29195e560703
 block|{
 DECL|enumerator|XJT_NORMAL_MODE
 name|XJT_NORMAL_MODE
@@ -735,7 +735,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294536770808
+DECL|struct|__anon29195e560808
 block|{
 DECL|member|prop_id
 name|t_proptype
@@ -771,7 +771,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294536770908
+DECL|struct|__anon29195e560908
 block|{
 DECL|member|int_val1
 name|gint32
@@ -820,7 +820,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294536770a08
+DECL|struct|__anon29195e560a08
 block|{
 DECL|member|parasite_type
 name|t_parasitetype
@@ -857,7 +857,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294536770b08
+DECL|struct|__anon29195e560b08
 block|{
 DECL|member|path_type
 name|gint32
@@ -907,7 +907,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294536770c08
+DECL|struct|__anon29195e560c08
 block|{
 DECL|member|active_channel
 name|gint
@@ -981,7 +981,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294536770d08
+DECL|struct|__anon29195e560d08
 block|{
 DECL|member|active_layer
 name|gint
@@ -1066,7 +1066,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294536770e08
+DECL|struct|__anon29195e560e08
 block|{
 DECL|member|position
 name|gint32
@@ -1090,7 +1090,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294536770f08
+DECL|struct|__anon29195e560f08
 block|{
 DECL|member|version
 name|gchar
@@ -2076,7 +2076,10 @@ literal|"Wolfgang Hofer"
 argument_list|,
 literal|"2000-Mar-07"
 argument_list|,
-literal|"<Load>/xjt"
+name|N_
+argument_list|(
+literal|"GIMP compressed XJT image"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -2097,6 +2100,24 @@ argument_list|,
 name|load_return_vals
 argument_list|)
 expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"file_xjt_load"
+argument_list|,
+literal|"<Load>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_magic_load_handler
+argument_list|(
+literal|"file_xjt_load"
+argument_list|,
+literal|"xjt,xjtgz,xjtbz2"
+argument_list|,
+literal|""
+argument_list|,
+literal|""
+argument_list|)
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_xjt_save"
@@ -2111,7 +2132,10 @@ literal|"Wolfgang Hofer"
 argument_list|,
 literal|"2000-Mar-07"
 argument_list|,
-literal|"<Save>/xjt"
+name|N_
+argument_list|(
+literal|"GIMP compressed XJT image"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -2129,15 +2153,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_register_magic_load_handler
+name|gimp_plugin_menu_register
 argument_list|(
-literal|"file_xjt_load"
+literal|"file_xjt_save"
 argument_list|,
-literal|"xjt,xjtgz,xjtbz2"
-argument_list|,
-literal|""
-argument_list|,
-literal|""
+literal|"<Save>"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler

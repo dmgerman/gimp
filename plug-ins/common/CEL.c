@@ -394,7 +394,10 @@ literal|"Nick Lamb<njl195@zepler.org.uk>"
 argument_list|,
 literal|"May 1998"
 argument_list|,
-literal|"<Load>/CEL"
+name|N_
+argument_list|(
+literal|"KISS CEL"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -415,6 +418,24 @@ argument_list|,
 name|load_return_vals
 argument_list|)
 expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"file_cel_load"
+argument_list|,
+literal|"<Load>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_magic_load_handler
+argument_list|(
+literal|"file_cel_load"
+argument_list|,
+literal|"cel"
+argument_list|,
+literal|""
+argument_list|,
+literal|"0,string,KiSS\\040"
+argument_list|)
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_cel_save"
@@ -429,7 +450,10 @@ literal|"Nick Lamb<njl195@zepler.org.uk>"
 argument_list|,
 literal|"May 1998"
 argument_list|,
-literal|"<Save>/CEL"
+name|N_
+argument_list|(
+literal|"KISS CEL"
+argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*"
 argument_list|,
@@ -447,15 +471,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_register_magic_load_handler
+name|gimp_plugin_menu_register
 argument_list|(
-literal|"file_cel_load"
+literal|"file_cel_save"
 argument_list|,
-literal|"cel"
-argument_list|,
-literal|""
-argument_list|,
-literal|"0,string,KiSS\\040"
+literal|"<Save>"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler

@@ -1045,37 +1045,6 @@ argument_list|,
 name|context
 argument_list|)
 expr_stmt|;
-comment|/* sort file procs */
-name|gimp
-operator|->
-name|load_procs
-operator|=
-name|g_slist_sort_with_data
-argument_list|(
-name|gimp
-operator|->
-name|load_procs
-argument_list|,
-name|plug_in_proc_def_compare_menu_path
-argument_list|,
-name|gimp
-argument_list|)
-expr_stmt|;
-name|gimp
-operator|->
-name|save_procs
-operator|=
-name|g_slist_sort_with_data
-argument_list|(
-name|gimp
-operator|->
-name|save_procs
-argument_list|,
-name|plug_in_proc_def_compare_menu_path
-argument_list|,
-name|gimp
-argument_list|)
-expr_stmt|;
 comment|/* create help_path and locale_domain lists */
 for|for
 control|(

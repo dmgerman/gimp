@@ -458,7 +458,10 @@ literal|"Daniel Risacher, Spencer Kimball and Peter Mattis"
 argument_list|,
 literal|"1995-1997"
 argument_list|,
-literal|"<Load>/gzip"
+name|N_
+argument_list|(
+literal|"gzip archive"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -479,6 +482,31 @@ argument_list|,
 name|load_return_vals
 argument_list|)
 expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"file_gz_load"
+argument_list|,
+literal|"<Load>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_gz_load"
+argument_list|,
+literal|"application/x-gzip"
+argument_list|)
+expr_stmt|;
+name|gimp_register_magic_load_handler
+argument_list|(
+literal|"file_gz_load"
+argument_list|,
+literal|"xcf.gz,gz,xcfgz"
+argument_list|,
+literal|""
+argument_list|,
+literal|"0,string,\037\213"
+argument_list|)
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_gz_save"
@@ -493,7 +521,10 @@ literal|"Daniel Risacher, Spencer Kimball and Peter Mattis"
 argument_list|,
 literal|"1995-1997"
 argument_list|,
-literal|"<Save>/gzip"
+name|N_
+argument_list|(
+literal|"gzip archive"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
@@ -511,15 +542,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_register_magic_load_handler
+name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_gz_load"
+literal|"file_gz_save"
 argument_list|,
-literal|"xcf.gz,gz,xcfgz"
-argument_list|,
-literal|""
-argument_list|,
-literal|"0,string,\037\213"
+literal|"application/x-gzip"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler

@@ -117,6 +117,14 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
+name|file_proc
+operator|->
+name|menu_paths
+condition|)
+continue|continue;
+if|if
+condition|(
+operator|!
 name|strcmp
 argument_list|(
 name|file_proc

@@ -362,7 +362,10 @@ literal|"Nick Lamb<njl195@zepler.org.uk>"
 argument_list|,
 literal|"January 1997"
 argument_list|,
-literal|"<Load>/PCX"
+name|N_
+argument_list|(
+literal|"ZSoft PCX image"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -383,6 +386,31 @@ argument_list|,
 name|load_return_vals
 argument_list|)
 expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"file_pcx_load"
+argument_list|,
+literal|"<Load>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_pcx_load"
+argument_list|,
+literal|"image/x-pcx"
+argument_list|)
+expr_stmt|;
+name|gimp_register_magic_load_handler
+argument_list|(
+literal|"file_pcx_load"
+argument_list|,
+literal|"pcx,pcc"
+argument_list|,
+literal|""
+argument_list|,
+literal|"0&,byte,10,2&,byte,1,3&,byte,>0,3,byte,<9"
+argument_list|)
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_pcx_save"
@@ -397,7 +425,10 @@ literal|"Nick Lamb<njl195@zepler.org.uk>"
 argument_list|,
 literal|"January 1997"
 argument_list|,
-literal|"<Save>/PCX"
+name|N_
+argument_list|(
+literal|"ZSoft PCX image"
+argument_list|)
 argument_list|,
 literal|"INDEXED, RGB, GRAY"
 argument_list|,
@@ -415,15 +446,18 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_register_magic_load_handler
+name|gimp_plugin_menu_register
 argument_list|(
-literal|"file_pcx_load"
+literal|"file_pcx_save"
 argument_list|,
-literal|"pcx,pcc"
+literal|"<Save>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_pcx_save"
 argument_list|,
-literal|""
-argument_list|,
-literal|"0&,byte,10,2&,byte,1,3&,byte,>0,3,byte,<9"
+literal|"image/x-pcx"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
@@ -1049,7 +1083,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27cd858f0108
+DECL|struct|__anon2b98bf8a0108
 block|{
 DECL|member|manufacturer
 name|guint8

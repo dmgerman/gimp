@@ -396,7 +396,10 @@ literal|"Michael Taylor"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Load>/PIX"
+name|N_
+argument_list|(
+literal|"Alias|Wavefront PIX image"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -417,6 +420,22 @@ argument_list|,
 name|load_return_vals
 argument_list|)
 expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"file_pix_load"
+argument_list|,
+literal|"<Load>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_load_handler
+argument_list|(
+literal|"file_pix_load"
+argument_list|,
+literal|"pix,matte,mask,alpha,als"
+argument_list|,
+literal|""
+argument_list|)
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_pix_save"
@@ -431,7 +450,10 @@ literal|"Michael Taylor"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Save>/PIX"
+name|N_
+argument_list|(
+literal|"Alias|Wavefront PIX image"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -449,13 +471,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_register_load_handler
+name|gimp_plugin_menu_register
 argument_list|(
-literal|"file_pix_load"
+literal|"file_pix_save"
 argument_list|,
-literal|"pix,matte,mask,alpha,als"
-argument_list|,
-literal|""
+literal|"<Save>"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler

@@ -183,22 +183,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|gint
-name|plug_in_proc_def_compare_menu_path
-parameter_list|(
-name|gconstpointer
-name|a
-parameter_list|,
-name|gconstpointer
-name|b
-parameter_list|,
-name|gpointer
-name|user_data
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
