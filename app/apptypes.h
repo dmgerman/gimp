@@ -503,6 +503,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpDockbook
+typedef|typedef
+name|struct
+name|_GimpDockbook
+name|GimpDockbook
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|HistogramWidget
 typedef|typedef
 name|struct

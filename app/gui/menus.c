@@ -842,12 +842,31 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Test Dialogs/Dock..."
+literal|"/File/Test Dialogs/List Dock..."
 argument_list|)
 block|,
 name|NULL
 block|,
-name|test_dock_cmd_callback
+name|test_list_dock_cmd_callback
+block|,
+literal|1
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/File/Test Dialogs/Grid Dock..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|test_grid_dock_cmd_callback
 block|,
 literal|1
 block|}

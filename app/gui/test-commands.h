@@ -210,7 +210,19 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|test_dock_cmd_callback
+name|test_list_dock_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+parameter_list|,
+name|gpointer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|test_grid_dock_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
