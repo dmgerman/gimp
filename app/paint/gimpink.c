@@ -4107,6 +4107,11 @@ argument_list|,
 name|blob
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|blob
+argument_list|)
+expr_stmt|;
 name|gdk_gc_unref
 argument_list|(
 name|white_gc
@@ -6446,7 +6451,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2aa7e00d0103
+DECL|enum|__anon2bbd141c0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

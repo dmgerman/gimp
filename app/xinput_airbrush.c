@@ -2603,7 +2603,7 @@ name|gtk_adjustment_new
 argument_list|(
 name|options
 operator|->
-name|minheight_d
+name|height_d
 argument_list|,
 literal|5.0
 argument_list|,
