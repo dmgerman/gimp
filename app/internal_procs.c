@@ -932,6 +932,15 @@ expr_stmt|;
 name|procedural_db_register
 argument_list|(
 operator|&
+name|gimage_merge_down_proc
+argument_list|)
+expr_stmt|;
+name|pcount
+operator|++
+expr_stmt|;
+name|procedural_db_register
+argument_list|(
+operator|&
 name|gimage_flatten_proc
 argument_list|)
 expr_stmt|;
