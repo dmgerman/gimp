@@ -325,6 +325,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+specifier|const
 name|gchar
 modifier|*
 name|find_extension
@@ -1060,6 +1061,7 @@ name|gint32
 name|run_mode
 parameter_list|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|ext
@@ -1089,7 +1091,8 @@ directive|else
 name|FILE
 modifier|*
 name|in
-decl_stmt|,
+decl_stmt|;
+name|FILE
 modifier|*
 name|out
 decl_stmt|;
@@ -1190,7 +1193,7 @@ name|filename
 argument_list|,
 name|tmpname
 argument_list|,
-literal|"-cf"
+literal|"-cfn"
 argument_list|,
 operator|&
 name|pid
@@ -1330,7 +1333,7 @@ literal|"gzip"
 argument_list|,
 literal|"gzip"
 argument_list|,
-literal|"-cf"
+literal|"-cfn"
 argument_list|,
 name|tmpname
 argument_list|,
@@ -1633,6 +1636,7 @@ block|{
 name|gint32
 name|image_ID
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|ext
@@ -1691,9 +1695,14 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"No sensible extension, attempting to load with file magic"
+literal|"No sensible extension, "
+literal|"attempting to load with file magic"
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|ext
+operator|=
+literal|".foo"
 expr_stmt|;
 block|}
 comment|/* find a temp name */
@@ -2273,6 +2282,7 @@ end_function
 
 begin_function
 specifier|static
+specifier|const
 name|gchar
 modifier|*
 DECL|function|find_extension (const gchar * filename)
