@@ -232,7 +232,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_patterns_get_pattern:  * @width: The pattern width.  * @height: The pattern height.  *  * This procedure is deprecated! Use 'gimp_context_get_pattern'  * instead.  *  * This procedure is deprecated! Use 'gimp_context_get_pattern'  * instead.  *  * Returns: The pattern name.  */
+comment|/**  * gimp_patterns_get_pattern:  * @width: The pattern width.  * @height: The pattern height.  *  * This procedure is deprecated! Use gimp_context_get_pattern()  * instead.  *  * Returns: The pattern name.  */
 end_comment
 
 begin_function
@@ -342,7 +342,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_patterns_get_pattern_data:  * @name: The pattern name (\"\" means currently active pattern).  * @width: The pattern width.  * @height: The pattern height.  * @mask_bpp: Pattern bytes per pixel.  * @length: Length of pattern mask data.  * @mask_data: The pattern mask data.  *  * This procedure is deprecated! Use 'gimp_pattern_get_pixels' instead.  *  * This procedure is deprecated! Use 'gimp_pattern_get_pixels' instead.  *  * Returns: The pattern name.  */
+comment|/**  * gimp_patterns_get_pattern_data:  * @name: The pattern name (\"\" means currently active pattern).  * @width: The pattern width.  * @height: The pattern height.  * @mask_bpp: Pattern bytes per pixel.  * @length: Length of pattern mask data.  * @mask_data: The pattern mask data.  *  * This procedure is deprecated! Use gimp_pattern_get_pixels() instead.  *  * Returns: The pattern name.  */
 end_comment
 
 begin_function

@@ -22,7 +22,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_patterns_set_pattern:  * @name: The pattern name.  *  * Set the specified pattern as the active pattern.  *  * This procedure is deprecated! Use 'gimp_context_set_pattern' instead.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_patterns_set_pattern:  * @name: The pattern name.  *  * This procedure is deprecated! Use gimp_context_set_pattern() instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

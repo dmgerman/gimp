@@ -1910,17 +1910,17 @@ init|=
 block|{
 literal|"gimp_text"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_get_text_fontname' instead."
+literal|"This procedure is deprecated! Use 'gimp_text_fontname' instead."
 block|,
-literal|"This procedure is deprecated! Use 'gimp_get_text_fontname' instead."
-block|,
-literal|""
+literal|"This procedure is deprecated! Use 'gimp_text_fontname' instead."
 block|,
 literal|""
 block|,
 literal|""
 block|,
-literal|"gimp_get_text_fontname"
+literal|""
+block|,
+literal|"gimp_text_fontname"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -2577,17 +2577,17 @@ init|=
 block|{
 literal|"gimp_text_get_extents"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_get_text_extents_fontname' instead."
+literal|"This procedure is deprecated! Use 'gimp_text_get_extents_fontname' instead."
 block|,
-literal|"This procedure is deprecated! Use 'gimp_get_text_extents_fontname' instead."
-block|,
-literal|""
+literal|"This procedure is deprecated! Use 'gimp_text_get_extents_fontname' instead."
 block|,
 literal|""
 block|,
 literal|""
 block|,
-literal|"gimp_get_text_extents_fontname"
+literal|""
+block|,
+literal|"gimp_text_get_extents_fontname"
 block|,
 name|GIMP_INTERNAL
 block|,

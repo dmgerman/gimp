@@ -22,7 +22,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_gradients_get_gradient:  *  * Retrieve the name of the active gradient.  *  * This procedure is deprecated! Use 'gimp_context_get_gradient' instead.  *  * Returns: The name of the active gradient.  */
+comment|/**  * gimp_gradients_get_gradient:  *  * This procedure is deprecated! Use gimp_context_get_gradient() instead.  *  * Returns: The name of the active gradient.  */
 end_comment
 
 begin_function
@@ -42,7 +42,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradients_set_gradient:  * @name: The name of the gradient to set.  *  * Sets the specified gradient as the active gradient.  *  * This procedure is deprecated! Use 'gimp_context_set_gradient' instead.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_gradients_set_gradient:  * @name: The name of the gradient to set.  *  * This procedure is deprecated! Use gimp_context_set_gradient() instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

@@ -16,7 +16,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_palettes_set_palette:  * @name: The palette name.  *  * Set the specified palette as the active palette.  *  * This procedure is deprecated! Use 'gimp_context_set_palette' instead.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_palettes_set_palette:  * @name: The palette name.  *  * This procedure is deprecated! Use gimp_context_set_palette() instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
