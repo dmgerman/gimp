@@ -48,6 +48,9 @@ name|chn
 decl_stmt|;
 name|int
 name|pos
+init|=
+operator|-
+literal|1
 decl_stmt|;
 if|if
 condition|(
@@ -56,7 +59,7 @@ name|PyArg_ParseTuple
 argument_list|(
 name|args
 argument_list|,
-literal|"O!i:add_channel"
+literal|"O!|i:add_channel"
 argument_list|,
 operator|&
 name|PyGimpChannel_Type
@@ -113,6 +116,9 @@ name|lay
 decl_stmt|;
 name|int
 name|pos
+init|=
+operator|-
+literal|1
 decl_stmt|;
 if|if
 condition|(
@@ -121,7 +127,7 @@ name|PyArg_ParseTuple
 argument_list|(
 name|args
 argument_list|,
-literal|"O!i:add_layer"
+literal|"O!|i:add_layer"
 argument_list|,
 operator|&
 name|PyGimpLayer_Type
