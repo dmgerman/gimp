@@ -547,7 +547,7 @@ name|s
 operator|=
 literal|'_'
 expr_stmt|;
-comment|/*  Find the script description  */
+comment|/*  Find the script menu_path  */
 name|val
 operator|=
 name|get_c_string
@@ -560,7 +560,7 @@ argument_list|)
 expr_stmt|;
 name|script
 operator|->
-name|description
+name|menu_path
 operator|=
 name|g_strdup
 argument_list|(
@@ -3035,7 +3035,7 @@ name|gettext
 argument_list|(
 name|script
 operator|->
-name|description
+name|menu_path
 argument_list|)
 argument_list|,
 name|script
@@ -3210,7 +3210,7 @@ name|strncmp
 argument_list|(
 name|script
 operator|->
-name|description
+name|menu_path
 argument_list|,
 literal|"<None>"
 argument_list|,
@@ -3223,7 +3223,7 @@ name|menu_path
 operator|=
 name|script
 operator|->
-name|description
+name|menu_path
 expr_stmt|;
 name|gimp_install_temp_proc
 argument_list|(
@@ -3233,11 +3233,9 @@ name|pdb_name
 argument_list|,
 name|script
 operator|->
-name|description
-argument_list|,
-name|script
-operator|->
 name|help
+argument_list|,
+literal|""
 argument_list|,
 name|script
 operator|->
@@ -3443,7 +3441,7 @@ name|strncmp
 argument_list|(
 name|script
 operator|->
-name|description
+name|menu_path
 argument_list|,
 literal|"<Image>"
 argument_list|,
@@ -4104,7 +4102,7 @@ name|g_free
 argument_list|(
 name|script
 operator|->
-name|description
+name|menu_path
 argument_list|)
 expr_stmt|;
 name|g_free
