@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpset.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"interface.h"
 end_include
 
@@ -831,6 +837,16 @@ name|bevent
 operator|->
 name|state
 expr_stmt|;
+comment|/* Set the active Image to the image where the user clicked */
+name|gimp_set_set_active
+argument_list|(
+name|image_context
+argument_list|,
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|bevent
@@ -1558,6 +1574,16 @@ operator|=
 name|kevent
 operator|->
 name|state
+expr_stmt|;
+comment|/* Set the active Image to the image where the user typed */
+name|gimp_set_set_active
+argument_list|(
+name|image_context
+argument_list|,
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
 expr_stmt|;
 switch|switch
 condition|(

@@ -59,7 +59,7 @@ value|GTK_CHECK_TYPE (obj, gimp_set_get_type())
 end_define
 
 begin_comment
-comment|/* Signals:    add    remove    member_modified */
+comment|/* Signals:    add    remove    active_changed */
 end_comment
 
 begin_typedef
@@ -166,6 +166,31 @@ end_function_decl
 begin_function_decl
 name|gint
 name|gimp_set_size
+parameter_list|(
+name|GimpSet
+modifier|*
+name|gimpset
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_set_set_active
+parameter_list|(
+name|GimpSet
+modifier|*
+name|gimpset
+parameter_list|,
+name|gpointer
+name|ob
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gpointer
+name|gimp_set_get_active
 parameter_list|(
 name|GimpSet
 modifier|*

@@ -51,6 +51,10 @@ DECL|member|weak
 name|gboolean
 name|weak
 decl_stmt|;
+DECL|member|active_element
+name|gpointer
+name|active_element
+decl_stmt|;
 block|}
 struct|;
 end_struct
