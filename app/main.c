@@ -1353,7 +1353,7 @@ index|[
 name|i
 index|]
 argument_list|,
-literal|"--no-mmx"
+literal|"--no-cpu-accel"
 argument_list|)
 operator|==
 literal|0
@@ -1968,7 +1968,7 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"  --no-mmx                 Do not use MMX routines.\n"
+literal|"  --no-cpu-accel           Do not use special CPU accelerations.\n"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -590,7 +590,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon288d741d0108
+DECL|struct|__anon29b36f520108
 block|{
 DECL|member|announce_function
 name|gchar
@@ -1339,10 +1339,11 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_composite_init (void)
+DECL|function|gimp_composite_init (gboolean use_cpu_accel)
 name|gimp_composite_init
 parameter_list|(
-name|void
+name|gboolean
+name|use_cpu_accel
 parameter_list|)
 block|{
 specifier|const
@@ -1350,6 +1351,19 @@ name|gchar
 modifier|*
 name|p
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|use_cpu_accel
+condition|)
+block|{
+name|gimp_composite_options
+operator|.
+name|bits
+operator||=
+name|GIMP_COMPOSITE_OPTION_NOEXTENSIONS
+expr_stmt|;
+block|}
 if|if
 condition|(
 operator|(

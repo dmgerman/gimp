@@ -342,7 +342,9 @@ argument_list|)
 expr_stmt|;
 comment|/*  FIXME: pass use_cpu_accel to GimpComposite  */
 name|gimp_composite_init
-argument_list|()
+argument_list|(
+name|use_cpu_accel
+argument_list|)
 expr_stmt|;
 name|paint_funcs_setup
 argument_list|(
