@@ -772,20 +772,7 @@ name|file_proc
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* Write a thumbnail for the saved image, where appropriate */
-if|if
-condition|(
-name|gimage
-operator|->
-name|gimp
-operator|->
-name|config
-operator|->
-name|thumbnail_size
-operator|!=
-name|GIMP_THUMBNAIL_SIZE_NONE
-condition|)
-block|{
+comment|/* Write a thumbnail for the saved image */
 if|if
 condition|(
 name|set_uri_and_proc
@@ -843,7 +830,6 @@ name|name
 operator|=
 name|saved_uri
 expr_stmt|;
-block|}
 block|}
 block|}
 elseif|else

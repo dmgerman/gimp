@@ -2002,6 +2002,12 @@ operator|->
 name|thumbnail_size
 operator|!=
 name|GIMP_THUMBNAIL_SIZE_NONE
+operator|&&
+name|gimp
+operator|->
+name|config
+operator|->
+name|layer_previews
 condition|)
 block|{
 name|gchar
