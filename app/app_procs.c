@@ -774,10 +774,10 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Unable to open a test swap file. To avoid data loss "
-literal|"please check the location and permissions of the swap "
-literal|"directory defined in your Preferences "
-literal|"(currently \"%s\")."
+literal|"Unable to open a test swap file.\n\n"
+literal|"To avoid data loss, please check the location "
+literal|"and permissions of the swap directory defined in "
+literal|"your Preferences (currently \"%s\")."
 argument_list|)
 argument_list|,
 name|GIMP_BASE_CONFIG
