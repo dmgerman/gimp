@@ -12,7 +12,7 @@ comment|/*  * Revision history:  *  *  2004-02-12 / v3.0.14 / Adam D. Moss  *   
 end_comment
 
 begin_comment
-comment|/*  * TODO:  *  *      Crush 16bpp channels *  *	CMYK -> RGB *  *      * I don't think these should be done lossily -- wait for  *        GIMP to be able to support them natively.  *  *      Read in the paths.  *  *      File saving (someone has an alpha plugin for this)  */
+comment|/*  * TODO:  *  *      Crush 16bpp channels *  *	CMYK -> RGB *  *      * I don't think these should be done lossily -- wait for  *        GIMP to be able to support them natively.  *  *      Read in the paths.  *  */
 end_comment
 
 begin_comment
@@ -143,7 +143,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d1679e0103
+DECL|enum|__anon2be160010103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -331,7 +331,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d1679e0208
+DECL|struct|__anon2be160010208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -580,7 +580,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28d1679e0308
+DECL|struct|__anon2be160010308
 block|{
 DECL|member|signature
 name|gchar
@@ -1338,6 +1338,20 @@ operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
+block|}
+else|else
+block|{
+name|values
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|=
+name|GIMP_PDB_CALLING_ERROR
+expr_stmt|;
 block|}
 block|}
 end_function
@@ -2951,6 +2965,14 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
+literal|"\t\t\tSize: %d\n"
+argument_list|,
+name|Size
+argument_list|)
+decl_stmt|;
+name|IFDBG
+name|printf
+argument_list|(
 literal|"\t\t\tMagic: %d %d %d %d %d %d\n"
 argument_list|,
 name|magic1
@@ -3084,6 +3106,20 @@ argument_list|,
 literal|"guide"
 argument_list|)
 expr_stmt|;
+name|IFDBG
+name|printf
+argument_list|(
+literal|"Position: %d     %x\n"
+argument_list|,
+name|guide
+operator|->
+name|position
+argument_list|,
+name|guide
+operator|->
+name|position
+argument_list|)
+decl_stmt|;
 name|guide
 operator|->
 name|horizontal
@@ -4198,6 +4234,17 @@ condition|(
 name|layermaskdatasize
 condition|)
 block|{
+name|guchar
+name|color
+decl_stmt|;
+name|guchar
+name|flags
+decl_stmt|;
+name|int
+name|o
+init|=
+literal|0
+decl_stmt|;
 name|top
 operator|=
 name|getglong
@@ -4207,10 +4254,7 @@ argument_list|,
 literal|"lmask top"
 argument_list|)
 expr_stmt|;
-operator|(
-operator|*
-name|offset
-operator|)
+name|o
 operator|+=
 literal|4
 expr_stmt|;
@@ -4223,10 +4267,7 @@ argument_list|,
 literal|"lmask left"
 argument_list|)
 expr_stmt|;
-operator|(
-operator|*
-name|offset
-operator|)
+name|o
 operator|+=
 literal|4
 expr_stmt|;
@@ -4239,10 +4280,7 @@ argument_list|,
 literal|"lmask bottom"
 argument_list|)
 expr_stmt|;
-operator|(
-operator|*
-name|offset
-operator|)
+name|o
 operator|+=
 literal|4
 expr_stmt|;
@@ -4255,10 +4293,7 @@ argument_list|,
 literal|"lmask right"
 argument_list|)
 expr_stmt|;
-operator|(
-operator|*
-name|offset
-operator|)
+name|o
 operator|+=
 literal|4
 expr_stmt|;
@@ -4290,11 +4325,127 @@ name|bottom
 operator|-
 name|top
 expr_stmt|;
-name|getglong
+name|color
+operator|=
+name|getguchar
 argument_list|(
 name|fd
 argument_list|,
-literal|"lmask data throw"
+literal|"lmask color"
+argument_list|)
+expr_stmt|;
+name|flags
+operator|=
+name|getguchar
+argument_list|(
+name|fd
+argument_list|,
+literal|"lmask flags"
+argument_list|)
+expr_stmt|;
+name|o
+operator|+=
+literal|2
+expr_stmt|;
+name|IFDBG
+name|printf
+argument_list|(
+literal|"\t\t\t\t\t\ttop:    %d\n"
+argument_list|,
+name|top
+argument_list|)
+decl_stmt|;
+name|IFDBG
+name|printf
+argument_list|(
+literal|"\t\t\t\t\t\tleft:   %d\n"
+argument_list|,
+name|left
+argument_list|)
+decl_stmt|;
+name|IFDBG
+name|printf
+argument_list|(
+literal|"\t\t\t\t\t\tbottom: %d\n"
+argument_list|,
+name|bottom
+argument_list|)
+decl_stmt|;
+name|IFDBG
+name|printf
+argument_list|(
+literal|"\t\t\t\t\t\tright:  %d\n"
+argument_list|,
+name|right
+argument_list|)
+decl_stmt|;
+name|IFDBG
+name|printf
+argument_list|(
+literal|"\t\t\t\t\t\tcolor:  %d\n"
+argument_list|,
+name|color
+argument_list|)
+decl_stmt|;
+name|IFDBG
+name|printf
+argument_list|(
+literal|"\t\t\t\t\t\tflags:  %X\n"
+argument_list|,
+name|flags
+argument_list|)
+decl_stmt|;
+name|IFDBG
+name|printf
+argument_list|(
+literal|"\t\t\t\t\t\t\trelative: %d\n"
+argument_list|,
+name|flags
+operator|&
+literal|0x1
+argument_list|)
+decl_stmt|;
+name|IFDBG
+name|printf
+argument_list|(
+literal|"\t\t\t\t\t\t\tvisible:  %d\n"
+argument_list|,
+operator|(
+operator|(
+name|flags
+operator|&
+literal|0x2
+operator|)
+operator|>>
+literal|1
+operator|)
+argument_list|)
+decl_stmt|;
+name|IFDBG
+name|printf
+argument_list|(
+literal|"\t\t\t\t\t\t\tinvert:   %d\n"
+argument_list|,
+operator|(
+operator|(
+name|flags
+operator|&
+literal|0x4
+operator|)
+operator|>>
+literal|2
+operator|)
+argument_list|)
+decl_stmt|;
+name|throwchunk
+argument_list|(
+name|layermaskdatasize
+operator|-
+name|o
+argument_list|,
+name|fd
+argument_list|,
+literal|"extra layer mask data"
 argument_list|)
 expr_stmt|;
 operator|(
@@ -4302,9 +4453,8 @@ operator|*
 name|offset
 operator|)
 operator|+=
-literal|4
+name|layermaskdatasize
 expr_stmt|;
-comment|/*      throwchunk(layermaskdatasize, fd, "layer mask data throw");       (*offset) += layermaskdatasize;*/
 block|}
 name|layerrangesdatasize
 operator|=
@@ -8375,7 +8525,7 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
-literal|"YAH3m\n"
+literal|"Unpacking a layer mask!\n"
 argument_list|)
 decl_stmt|;
 name|lm_data
@@ -8525,6 +8675,19 @@ name|layer_ID
 argument_list|)
 expr_stmt|;
 comment|/* Add layer mask */
+endif|#
+directive|endif
+comment|/* PANOTOOLS_FIX */
+name|IFDBG
+name|printf
+argument_list|(
+literal|"Adding layer mask %d to layer %d\n"
+argument_list|,
+name|mask_id
+argument_list|,
+name|layer_ID
+argument_list|)
+decl_stmt|;
 name|gimp_layer_add_mask
 argument_list|(
 name|layer_ID
@@ -8532,9 +8695,6 @@ argument_list|,
 name|mask_id
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
-comment|/* PANOTOOLS_FIX */
 name|drawable
 operator|=
 name|gimp_drawable_get
