@@ -1784,7 +1784,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"GIMP_RGB_IMAGE"
+literal|"RGB_IMAGE"
 argument_list|)
 argument_list|,
 name|flocons
@@ -1799,7 +1799,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"GIMP_RGBA_IMAGE"
+literal|"RGBA_IMAGE"
 argument_list|)
 argument_list|,
 name|flocons
@@ -1814,7 +1814,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"GIMP_GRAY_IMAGE"
+literal|"GRAY_IMAGE"
 argument_list|)
 argument_list|,
 name|flocons
@@ -1829,7 +1829,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"GIMP_GRAYA_IMAGE"
+literal|"GRAYA_IMAGE"
 argument_list|)
 argument_list|,
 name|flocons
@@ -1844,7 +1844,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"GIMP_INDEXED_IMAGE"
+literal|"INDEXED_IMAGE"
 argument_list|)
 argument_list|,
 name|flocons
@@ -1859,7 +1859,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"GIMP_INDEXEDA_IMAGE"
+literal|"INDEXEDA_IMAGE"
 argument_list|)
 argument_list|,
 name|flocons
