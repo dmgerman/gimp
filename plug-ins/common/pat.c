@@ -490,10 +490,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_pat_load"
 argument_list|,
-name|_
-argument_list|(
 literal|"loads files of the .pat file format"
-argument_list|)
 argument_list|,
 literal|"FIXME: write help"
 argument_list|,
@@ -522,10 +519,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_pat_save"
 argument_list|,
-name|_
-argument_list|(
 literal|"saves files in the .pat file format"
-argument_list|)
 argument_list|,
 literal|"Yeah!"
 argument_list|,

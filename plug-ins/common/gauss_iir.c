@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295b0f0a0108
+DECL|struct|__anon2b9484110108
 block|{
 DECL|member|radius
 name|gdouble
@@ -77,7 +77,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295b0f0a0208
+DECL|struct|__anon2b9484110208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -96,7 +96,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295b0f0a0308
+DECL|struct|__anon2b9484110308
 block|{
 DECL|member|run
 name|gint
@@ -532,15 +532,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gauss_iir"
 argument_list|,
-name|_
-argument_list|(
 literal|"Applies a gaussian blur to the specified drawable."
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Applies a gaussian blur to the drawable, with specified radius of affect.  The standard deviation of the normal distribution used to modify pixel values is calculated based on the supplied radius.  Horizontal and vertical blurring can be independently invoked by specifying only one to run.  The IIR gaussian blurring works best for large radius values and for images which are not computer-generated.  Values for radius less than 1.0 are invalid as they will generate spurious results."
-argument_list|)
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -567,15 +561,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gauss_iir2"
 argument_list|,
-name|_
-argument_list|(
 literal|"Applies a gaussian blur to the specified drawable."
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Applies a gaussian blur to the drawable, with specified radius of affect.  The standard deviation of the normal distribution used to modify pixel values is calculated based on the supplied radius.  This radius can be specified indepently on for the horizontal and the vertical direction. The IIR gaussian blurring works best for large radius values and for images which are not computer-generated.  Values for radii less than 1.0 would generate spurious results. Therefore they are interpreted as 0.0, which means that the computation for this orientation is skipped."
-argument_list|)
 argument_list|,
 literal|"Spencer Kimball, Peter Mattis& Sven Neumann"
 argument_list|,

@@ -317,7 +317,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c58a9260108
+DECL|struct|__anon29f237390108
 block|{
 DECL|member|url
 name|char
@@ -443,15 +443,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"extension_web_browser"
 argument_list|,
-name|_
-argument_list|(
 literal|"open URL in Netscape"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"You need to have Netscape installed"
-argument_list|)
 argument_list|,
 literal|"Misha Dynin<misha@xcf.berkeley.edu>"
 argument_list|,

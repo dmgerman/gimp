@@ -386,15 +386,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_sgi_load"
 argument_list|,
-name|_
-argument_list|(
 literal|"Loads files in SGI image file format"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"This plug-in loads SGI image files."
-argument_list|)
 argument_list|,
 literal|"Michael Sweet<mike@easysw.com>"
 argument_list|,
@@ -421,15 +415,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_sgi_save"
 argument_list|,
-name|_
-argument_list|(
 literal|"Saves files in SGI image file format"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"This plug-in saves SGI image files."
-argument_list|)
 argument_list|,
 literal|"Michael Sweet<mike@easysw.com>"
 argument_list|,

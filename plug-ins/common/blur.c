@@ -135,7 +135,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9b2b7e0108
+DECL|struct|__anon2b44fe850108
 block|{
 DECL|member|blur_pct
 name|gdouble
@@ -184,7 +184,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9b2b7e0208
+DECL|struct|__anon2b44fe850208
 block|{
 DECL|member|run
 name|gint
@@ -504,20 +504,14 @@ name|gchar
 modifier|*
 name|blurb
 init|=
-name|_
-argument_list|(
 literal|"Apply a 3x3 blurring convolution kernel to the specified drawable."
-argument_list|)
 decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
 name|help
 init|=
-name|_
-argument_list|(
 literal|"This plug-in randomly blurs the specified drawable, using a 3x3 blur.  You control the percentage of the pixels that are blurred and the number of times blurring is applied.  Indexed images are not supported."
-argument_list|)
 decl_stmt|;
 specifier|const
 name|gchar

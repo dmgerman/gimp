@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7178ca0103
+DECL|enum|__anon274ad18d0103
 block|{
 DECL|enumerator|ODD_FIELDS
 name|ODD_FIELDS
@@ -238,15 +238,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_deinterlace"
 argument_list|,
-name|_
-argument_list|(
 literal|"Deinterlace"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Deinterlace is useful for processing images from video capture cards. When only the odd or even fields get captured, deinterlace can be used to interpolate between the existing fields to correct this."
-argument_list|)
 argument_list|,
 literal|"Andrew Kieschnick"
 argument_list|,

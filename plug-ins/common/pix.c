@@ -442,15 +442,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_pix_load"
 argument_list|,
-name|_
-argument_list|(
 literal|"loads files of the PIX file format"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"loads files of the PIX file format"
-argument_list|)
 argument_list|,
 literal|"Michael Taylor"
 argument_list|,
@@ -477,15 +471,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_pix_save"
 argument_list|,
-name|_
-argument_list|(
 literal|"save file in the Alias|Wavefront pix/matte file format"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"save file in the Alias|Wavefront pix/matte file format"
-argument_list|)
 argument_list|,
 literal|"Michael Taylor"
 argument_list|,

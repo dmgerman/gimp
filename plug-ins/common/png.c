@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac5dd550108
+DECL|struct|__anon295aa7ee0108
 block|{
 DECL|member|interlaced
 name|gint
@@ -476,15 +476,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_png_load"
 argument_list|,
-name|_
-argument_list|(
 literal|"Loads files in PNG file format"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"This plug-in loads Portable Network Graphics (PNG) files."
-argument_list|)
 argument_list|,
 literal|"Michael Sweet<mike@easysw.com>, Daniel Skarda<0rfelyus@atrey.karlin.mff.cuni.cz>"
 argument_list|,

@@ -126,7 +126,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287ddef60103
+DECL|enum|__anon2bd364ab0103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -146,7 +146,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287ddef60203
+DECL|enum|__anon2bd364ab0203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287ddef60308
+DECL|struct|__anon2bd364ab0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -184,7 +184,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon287ddef6040a
+DECL|union|__anon2bd364ab040a
 block|{
 DECL|member|d
 name|gdouble
@@ -213,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287ddef60508
+DECL|struct|__anon2bd364ab0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287ddef60608
+DECL|struct|__anon2bd364ab0608
 block|{
 DECL|member|color
 name|IfsColor
@@ -290,7 +290,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287ddef60708
+DECL|struct|__anon2bd364ab0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -326,7 +326,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287ddef60808
+DECL|struct|__anon2bd364ab0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -393,7 +393,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287ddef60908
+DECL|struct|__anon2bd364ab0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -565,7 +565,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287ddef60a08
+DECL|struct|__anon2bd364ab0a08
 block|{
 DECL|member|run
 name|gint
@@ -1583,13 +1583,8 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_ifs_compose"
 argument_list|,
-name|_
-argument_list|(
 literal|"Create an Iterated Function System Fractal"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Interactively create an Iterated Function System fractal."
 literal|"Use the window on the upper left to adjust the component"
 literal|"transformations of the fractal. The operation that is performed"
@@ -1597,7 +1592,6 @@ literal|"is selected by the buttons underneath the window, or from a"
 literal|"menu popped up by the right mouse button. The fractal will be"
 literal|"rendered with a transparent background if the current image has"
 literal|"a transparent background."
-argument_list|)
 argument_list|,
 literal|"Owen Taylor"
 argument_list|,

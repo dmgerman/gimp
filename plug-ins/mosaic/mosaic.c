@@ -182,7 +182,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8e3c6c0108
+DECL|struct|__anon279e0a730108
 block|{
 DECL|member|x
 DECL|member|y
@@ -200,7 +200,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8e3c6c0208
+DECL|struct|__anon279e0a730208
 block|{
 DECL|member|npts
 name|gint
@@ -222,7 +222,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8e3c6c0308
+DECL|struct|__anon279e0a730308
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -251,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8e3c6c0408
+DECL|struct|__anon279e0a730408
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -306,7 +306,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8e3c6c0508
+DECL|struct|__anon279e0a730508
 block|{
 DECL|member|run
 name|gint
@@ -1473,15 +1473,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_mosaic"
 argument_list|,
-name|_
-argument_list|(
 literal|"Convert the input drawable into a collection of tiles"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Help not yet written for this plug-in"
-argument_list|)
 argument_list|,
 literal|"Spencer Kimball"
 argument_list|,

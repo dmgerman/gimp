@@ -163,7 +163,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0c40e20108
+DECL|struct|__anon293e1cc10108
 block|{
 DECL|member|description
 name|gchar
@@ -532,15 +532,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_gbr_load"
 argument_list|,
-name|_
-argument_list|(
 literal|"loads files of the .gbr file format"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"FIXME: write help"
-argument_list|)
 argument_list|,
 literal|"Tim Newsome"
 argument_list|,
@@ -567,15 +561,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_gbr_save"
 argument_list|,
-name|_
-argument_list|(
 literal|"saves files in the .gbr file format"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Yeah!"
-argument_list|)
 argument_list|,
 literal|"Tim Newsome"
 argument_list|,

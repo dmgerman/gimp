@@ -4062,15 +4062,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gfig"
 argument_list|,
-name|_
-argument_list|(
 literal|"Create Geometrical shapes with the Gimp"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"More here later"
-argument_list|)
 argument_list|,
 literal|"Andy Thomas"
 argument_list|,
@@ -8403,7 +8397,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298eabd10108
+DECL|struct|__anon2c1e04bf0108
 block|{
 DECL|member|color_string
 name|gchar

@@ -52,7 +52,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ff85b50108
+DECL|struct|__anon288399670108
 block|{
 DECL|member|compression
 name|gint
@@ -71,7 +71,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ff85b50208
+DECL|struct|__anon288399670208
 block|{
 DECL|member|run
 name|gint
@@ -86,7 +86,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ff85b50308
+DECL|struct|__anon288399670308
 block|{
 DECL|member|ID
 name|gint32
@@ -714,10 +714,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_tiff_load"
 argument_list|,
-name|_
-argument_list|(
 literal|"loads files of the tiff file format"
-argument_list|)
 argument_list|,
 literal|"FIXME: write help for tiff_load"
 argument_list|,
@@ -746,10 +743,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_tiff_save"
 argument_list|,
-name|_
-argument_list|(
 literal|"saves files in the tiff file format"
-argument_list|)
 argument_list|,
 literal|"FIXME: write help for tiff_save"
 argument_list|,

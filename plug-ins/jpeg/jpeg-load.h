@@ -292,7 +292,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a3925f0108
+DECL|struct|__anon2c165b580108
 block|{
 DECL|member|quality
 name|gdouble
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a3925f0208
+DECL|struct|__anon2c165b580208
 block|{
 DECL|member|run
 name|gint
@@ -354,7 +354,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a3925f0308
+DECL|struct|__anon2c165b580308
 block|{
 DECL|member|cinfo
 name|struct
@@ -1075,15 +1075,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_jpeg_load"
 argument_list|,
-name|_
-argument_list|(
 literal|"loads files in the JPEG file format"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"loads files in the JPEG file format"
-argument_list|)
 argument_list|,
 literal|"Spencer Kimball, Peter Mattis& others"
 argument_list|,
@@ -1110,15 +1104,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_jpeg_save"
 argument_list|,
-name|_
-argument_list|(
 literal|"saves files in the JPEG file format"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"saves files in the lossy, widely supported JPEG format"
-argument_list|)
 argument_list|,
 literal|"Spencer Kimball, Peter Mattis& others"
 argument_list|,

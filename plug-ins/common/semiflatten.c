@@ -234,15 +234,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_semiflatten"
 argument_list|,
-name|_
-argument_list|(
 literal|"Flatten pixels in an RGBA image that aren't completely transparent against the current GIMP background color"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"This plugin flattens pixels in an RGBA image that aren't completely transparent against the current GIMP background color"
-argument_list|)
 argument_list|,
 literal|"Adam D. Moss (adam@foxbox.org)"
 argument_list|,

@@ -110,7 +110,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2f3bd20108
+DECL|struct|__anon28a5a7050108
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -161,7 +161,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2f3bd20208
+DECL|struct|__anon28a5a7050208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -831,24 +831,15 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_alienmap2"
 argument_list|,
-name|_
-argument_list|(
 literal|"AlienMap2 Color Transformation Plug-In"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"No help yet. Just try it and you'll see!"
-argument_list|)
 argument_list|,
 literal|"Martin Weber (martin.weber@usa.net, http://diverse.freepage.de/martin.weber)"
 argument_list|,
 literal|"Martin Weber (martin.weber@usa.net, http://diverse.freepage.de/martin.weber"
 argument_list|,
-name|_
-argument_list|(
 literal|"24th April 1998"
-argument_list|)
 argument_list|,
 name|N_
 argument_list|(

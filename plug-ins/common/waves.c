@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295b50950103
+DECL|enum|__anon2802f4e40103
 block|{
 DECL|enumerator|MODE_SMEAR
 name|MODE_SMEAR
@@ -518,10 +518,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_waves"
 argument_list|,
-name|_
-argument_list|(
 literal|"Distort the image with waves"
-argument_list|)
 argument_list|,
 literal|"none yet"
 argument_list|,

@@ -244,15 +244,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_clipboard_copy"
 argument_list|,
-name|_
-argument_list|(
 literal|"copy image to clipboard"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Copies the active drawable to the clipboard."
-argument_list|)
 argument_list|,
 literal|"Hans Breuer"
 argument_list|,
@@ -282,15 +276,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_clipboard_paste"
 argument_list|,
-name|_
-argument_list|(
 literal|"paste image from clipboard"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Paste image from clipboard into active image."
-argument_list|)
 argument_list|,
 literal|"Hans Breuer"
 argument_list|,
@@ -320,15 +308,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"extension_clipboard_paste"
 argument_list|,
-name|_
-argument_list|(
 literal|"Get image from clipboard"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Get an image from the Windows clipboard, creating a new image"
-argument_list|)
 argument_list|,
 literal|"Hans Breuer"
 argument_list|,

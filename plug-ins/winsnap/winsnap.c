@@ -92,7 +92,7 @@ DECL|macro|PLUG_IN_DESCRIPTION
 define|#
 directive|define
 name|PLUG_IN_DESCRIPTION
-value|_("Capture a Win32 window or desktop image")
+value|"Capture a Win32 window or desktop image"
 end_define
 
 begin_define
@@ -100,7 +100,7 @@ DECL|macro|PLUG_IN_HELP
 define|#
 directive|define
 name|PLUG_IN_HELP
-value|_("This plug-in will capture an image of a Win32 window or desktop")
+value|"This plug-in will capture an image of a Win32 window or desktop"
 end_define
 
 begin_define
@@ -370,7 +370,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2ac265f30108
+DECL|struct|__anon28ca0f840108
 typedef|typedef
 struct|struct
 block|{
@@ -411,7 +411,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2ac265f30208
+DECL|struct|__anon28ca0f840208
 typedef|typedef
 struct|struct
 block|{

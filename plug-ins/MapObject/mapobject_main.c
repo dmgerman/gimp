@@ -1172,7 +1172,10 @@ literal|"Tom Bech& Federico Mena Quintero"
 argument_list|,
 literal|"Version 1.2.0, July 16 1998"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Map/Map Object..."
+argument_list|)
 argument_list|,
 literal|"RGB*"
 argument_list|,

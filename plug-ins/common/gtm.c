@@ -62,7 +62,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277f2d230108
+DECL|struct|__anon2a0e27010108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -129,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277f2d230208
+DECL|struct|__anon2a0e27010208
 block|{
 DECL|member|run
 name|gint
@@ -467,15 +467,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_GTM_save"
 argument_list|,
-name|_
-argument_list|(
 literal|"GIMP Table Magic"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Allows you to draw an HTML table in GIMP. See help for more info."
-argument_list|)
 argument_list|,
 literal|"Daniel Dunbar"
 argument_list|,

@@ -265,15 +265,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gradmap"
 argument_list|,
-name|_
-argument_list|(
 literal|"Map the contents of the specified drawable with active gradient"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|" This plug-in maps the contents of the specified drawable with active gradient. It calculates luminosity of each pixel and replaces the pixel by the sample of active gradient at the position proportional to that luminosity. Complete black pixel becomes the leftmost color of the gradient, and complete white becomes the rightmost. Works on both Grayscale and RGB image with/without alpha channel."
-argument_list|)
 argument_list|,
 literal|"Eiichi Takamori"
 argument_list|,

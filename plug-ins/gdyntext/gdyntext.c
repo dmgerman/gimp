@@ -153,7 +153,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1401d10103
+DECL|enum|__anon29f832580103
 block|{
 DECL|enumerator|TEXT
 name|TEXT
@@ -655,10 +655,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_dynamic_text"
 argument_list|,
-name|_
-argument_list|(
 literal|"GIMP Dynamic Text"
-argument_list|)
 argument_list|,
 literal|""
 argument_list|,

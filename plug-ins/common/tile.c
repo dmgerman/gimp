@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279805dd0108
+DECL|struct|__anon2a2218640108
 block|{
 DECL|member|new_width
 name|gint
@@ -85,7 +85,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279805dd0208
+DECL|struct|__anon2a2218640208
 block|{
 DECL|member|width_adj
 name|GtkObject
@@ -436,15 +436,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_tile"
 argument_list|,
-name|_
-argument_list|(
 literal|"Create a new image which is a tiled version of the input drawable"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"This function creates a new image with a single layer sized to the specified 'new_width' and 'new_height' parameters.  The specified drawable is tiled into this layer.  The new layer will have the same type as the specified drawable and the new image will have a corresponding base type"
-argument_list|)
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,

@@ -414,15 +414,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_cel_load"
 argument_list|,
-name|_
-argument_list|(
 literal|"Loads files in KISS CEL file format"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"This plug-in loads individual KISS cell files."
-argument_list|)
 argument_list|,
 literal|"Nick Lamb"
 argument_list|,
@@ -449,15 +443,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_cel_save"
 argument_list|,
-name|_
-argument_list|(
 literal|"Saves files in KISS CEL file format"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"This plug-in saves individual KISS cell files."
-argument_list|)
 argument_list|,
 literal|"Nick Lamb"
 argument_list|,

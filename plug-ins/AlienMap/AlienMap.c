@@ -114,7 +114,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2977699c0108
+DECL|struct|__anon27e950000108
 block|{
 DECL|member|redstretch
 name|gdouble
@@ -149,7 +149,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2977699c0208
+DECL|struct|__anon27e950000208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -718,24 +718,15 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_alienmap"
 argument_list|,
-name|_
-argument_list|(
 literal|"AlienMap Color Transformation Plug-In"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"No help yet. Just try it and you'll see!"
-argument_list|)
 argument_list|,
 literal|"Daniel Cotting (cotting@mygale.org, http://www.mygale.org/~cotting)"
 argument_list|,
 literal|"Daniel Cotting (cotting@mygale.org, http://www.mygale.org/~cotting)"
 argument_list|,
-name|_
-argument_list|(
 literal|"1th May 1997"
-argument_list|)
 argument_list|,
 name|N_
 argument_list|(

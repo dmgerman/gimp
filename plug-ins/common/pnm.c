@@ -321,7 +321,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eb3ca60108
+DECL|struct|__anon29114ef40108
 block|{
 DECL|member|raw
 name|gint
@@ -337,7 +337,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eb3ca60208
+DECL|struct|__anon29114ef40208
 block|{
 DECL|member|run
 name|gint
@@ -1091,10 +1091,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_pnm_load"
 argument_list|,
-name|_
-argument_list|(
 literal|"loads files of the pnm file format"
-argument_list|)
 argument_list|,
 literal|"FIXME: write help for pnm_load"
 argument_list|,
@@ -1123,15 +1120,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_pnm_save"
 argument_list|,
-name|_
-argument_list|(
 literal|"saves files in the pnm file format"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"PNM saving handles all image types except those with alpha channels."
-argument_list|)
 argument_list|,
 literal|"Erik Nygren"
 argument_list|,

@@ -346,10 +346,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_xanim_decode"
 argument_list|,
-name|_
-argument_list|(
 literal|"This plugin calls xanim to split any video to anim frames. (xanim exporting edition must be installed on your system)"
-argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -381,10 +378,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"extension_gap_xanim_decode"
 argument_list|,
-name|_
-argument_list|(
 literal|"This plugin calls xanim to split any video to anim frames. (xanim exporting edition must be installed on your system)"
-argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -416,10 +410,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_mpeg_encode"
 argument_list|,
-name|_
-argument_list|(
 literal|"This plugin calls mpeg_encode to convert anim frames to MPEG1, or just generates a param file for mpeg_encode. (mpeg_encode must be installed on your system)"
-argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -451,10 +442,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_mpeg2encode"
 argument_list|,
-name|_
-argument_list|(
 literal|"This plugin calls mpeg2encode to convert anim frames to MPEG1 or MPEG2, or just generates a param file for mpeg2encode. (mpeg2encode must be installed on your system)"
-argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -518,7 +506,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4ba1170108
+DECL|struct|__anon2b95a5900108
 block|{
 DECL|member|lock
 name|long

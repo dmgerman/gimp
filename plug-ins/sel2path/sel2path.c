@@ -562,15 +562,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_sel2path_advanced"
 argument_list|,
-name|_
-argument_list|(
 literal|"Converts a selection to a path (with advanced user menu)"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Converts a selection to a path (with advanced user menu)"
-argument_list|)
 argument_list|,
 literal|"Andy Thomas"
 argument_list|,
@@ -671,15 +665,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_sel2path"
 argument_list|,
-name|_
-argument_list|(
 literal|"Converts a selection to a path"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Converts a selection to a path"
-argument_list|)
 argument_list|,
 literal|"Andy Thomas"
 argument_list|,

@@ -242,10 +242,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_mpeg_load"
 argument_list|,
-name|_
-argument_list|(
 literal|"Loads MPEG movies"
-argument_list|)
 argument_list|,
 literal|"FIXME: write help for mpeg_load"
 argument_list|,

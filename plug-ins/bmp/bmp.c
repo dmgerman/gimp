@@ -455,15 +455,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_bmp_load"
 argument_list|,
-name|_
-argument_list|(
 literal|"Loads files of Windows BMP file format"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Loads files of Windows BMP file format"
-argument_list|)
 argument_list|,
 literal|"Alexander Schulz"
 argument_list|,
@@ -490,15 +484,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_bmp_save"
 argument_list|,
-name|_
-argument_list|(
 literal|"Saves files in Windows BMP file format"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Saves files in Windows BMP file format"
-argument_list|)
 argument_list|,
 literal|"Alexander Schulz"
 argument_list|,

@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2883c9790108
+DECL|struct|__anon27caebd60108
 block|{
 DECL|member|color
 name|guchar
@@ -86,7 +86,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2883c9790208
+DECL|struct|__anon27caebd60208
 block|{
 DECL|member|run
 name|gint
@@ -101,7 +101,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2883c9790308
+DECL|struct|__anon27caebd60308
 block|{
 DECL|member|color_button
 name|GtkWidget
@@ -386,24 +386,15 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_colortoalpha"
 argument_list|,
-name|_
-argument_list|(
 literal|"Convert the color in an image to alpha"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"This replaces as much of a given color as possible in each pixel with a corresponding amount of alpha, then readjusts the color accordingly."
-argument_list|)
 argument_list|,
 literal|"Seth Burgess"
 argument_list|,
 literal|"Seth Burgess<sjburges@gimp.org>"
 argument_list|,
-name|_
-argument_list|(
 literal|"7th Aug 1999"
-argument_list|)
 argument_list|,
 name|N_
 argument_list|(

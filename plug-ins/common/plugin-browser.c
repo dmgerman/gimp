@@ -284,15 +284,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_details"
 argument_list|,
-name|_
-argument_list|(
 literal|"Displays plugin details"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Helps browse the plugin menus system. You can search for plugin names, sort by name or menu location and you can view a tree representation of the plugin menus. Can also be of help to find where new plugins have installed themselves in the menuing system"
-argument_list|)
 argument_list|,
 literal|"Andy Thomas"
 argument_list|,
@@ -452,7 +446,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c9eb9b0108
+DECL|struct|__anon2c5c22730108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -558,7 +552,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c9eb9b0208
+DECL|struct|__anon2c5c22730208
 block|{
 DECL|member|menu
 name|gchar

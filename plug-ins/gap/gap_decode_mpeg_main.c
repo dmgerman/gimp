@@ -521,15 +521,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_decode_mpeg"
 argument_list|,
-name|_
-argument_list|(
 literal|"Split MPEG1 movies into animframes and load 1st frame"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Split MPEG1 movies into single frames (image files on disk) and load 1st frame. audio tracks are ignored"
-argument_list|)
 argument_list|,
 literal|"Wolfgang Hofer (hof@hotbot.com)"
 argument_list|,
@@ -559,15 +553,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"extension_gap_decode_mpeg"
 argument_list|,
-name|_
-argument_list|(
 literal|"Split MPEG1 movies into animframes and load 1st frame"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Split MPEG1 movies into single frames (image files on disk) and load 1st frame. audio tracks are ignored"
-argument_list|)
 argument_list|,
 literal|"Wolfgang Hofer (hof@hotbot.com)"
 argument_list|,

@@ -286,7 +286,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291cbf290108
+DECL|struct|__anon29f3a5880108
 block|{
 DECL|member|r
 DECL|member|g
@@ -375,7 +375,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291cbf290208
+DECL|struct|__anon29f3a5880208
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -6174,10 +6174,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_lic"
 argument_list|,
-name|_
-argument_list|(
 literal|"Creates a Van Gogh effect (Line Integral Convolution)"
-argument_list|)
 argument_list|,
 literal|"No help yet"
 argument_list|,

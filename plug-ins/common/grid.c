@@ -200,7 +200,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd31edf0108
+DECL|struct|__anon289e27020108
 block|{
 DECL|member|hwidth
 name|gint
@@ -528,15 +528,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_grid"
 argument_list|,
-name|_
-argument_list|(
 literal|"Draws a grid."
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"no help available"
-argument_list|)
 argument_list|,
 literal|"Tim Newsome"
 argument_list|,

@@ -138,7 +138,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d3dfb10108
+DECL|struct|__anon2c145f820108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -583,15 +583,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_blinds"
 argument_list|,
-name|_
-argument_list|(
 literal|"Adds a blinds effect to the image. Rather like putting the image on a set of window blinds and the closing or opening the blinds"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"More here later"
-argument_list|)
 argument_list|,
 literal|"Andy Thomas"
 argument_list|,

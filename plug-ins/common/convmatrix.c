@@ -83,7 +83,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b45259d0103
+DECL|enum|__anon27c960870103
 block|{
 DECL|enumerator|EXTEND
 name|EXTEND
@@ -303,7 +303,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b45259d0208
+DECL|struct|__anon27c960870208
 block|{
 DECL|member|matrix
 name|gfloat
@@ -458,7 +458,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2b45259d0308
+DECL|struct|__anon27c960870308
 block|{
 DECL|member|matrix
 name|GtkWidget
@@ -607,10 +607,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_convmatrix"
 argument_list|,
-name|_
-argument_list|(
 literal|"A generic 5x5 convolution matrix"
-argument_list|)
 argument_list|,
 literal|""
 argument_list|,

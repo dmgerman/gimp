@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2add33980103
+DECL|enum|__anon2acf310f0103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -494,11 +494,8 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_animationoptimize"
 argument_list|,
-name|_
-argument_list|(
 literal|"This plugin applies various optimizations to"
 literal|" a GIMP layer-based animation."
-argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -530,14 +527,11 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_animationunoptimize"
 argument_list|,
-name|_
-argument_list|(
 literal|"This plugin 'simplifies' a GIMP layer-based"
 literal|" animation that has been AnimationOptimized.  This"
 literal|" makes the animation much easier to work with if,"
 literal|" for example, the optimized version is all you"
 literal|" have."
-argument_list|)
 argument_list|,
 literal|""
 argument_list|,

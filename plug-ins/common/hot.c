@@ -145,7 +145,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2d819e0103
+DECL|enum|__anon2a8bb98f0103
 block|{
 DECL|enumerator|act_lredux
 name|act_lredux
@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2d819e0203
+DECL|enum|__anon2a8bb98f0203
 block|{
 DECL|enumerator|mode_ntsc
 name|mode_ntsc
@@ -219,7 +219,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon2b2d819e0308
+DECL|struct|__anon2a8bb98f0308
 block|{
 DECL|member|pedestal
 name|gdouble
@@ -697,15 +697,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_hot"
 argument_list|,
-name|_
-argument_list|(
 literal|"Look for hot NTSC or PAL pixels "
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"hot scans an image for pixels that will give unsave values of chrominance or composite signale amplitude when encoded into an NTSC or PAL signal.  Three actions can be performed on these ``hot'' pixels. (0) reduce luminance, (1) reduce saturation, or (2) Blacken."
-argument_list|)
 argument_list|,
 literal|"Eric L. Hernes, Alan Wm Paeth"
 argument_list|,

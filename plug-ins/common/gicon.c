@@ -111,7 +111,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c74df410108
+DECL|struct|__anon2b28fc2b0108
 block|{
 DECL|member|icon_name
 name|gchar
@@ -129,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c74df410208
+DECL|struct|__anon2b28fc2b0208
 block|{
 DECL|member|run
 name|gint
@@ -486,15 +486,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_gicon_load"
 argument_list|,
-name|_
-argument_list|(
 literal|"loads files of the .ico file format"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"FIXME: write help"
-argument_list|)
 argument_list|,
 literal|"Spencer Kimball"
 argument_list|,
@@ -521,15 +515,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_gicon_save"
 argument_list|,
-name|_
-argument_list|(
 literal|"saves files in the .ico file format"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"FIXME: write help"
-argument_list|)
 argument_list|,
 literal|"Spencer Kimball"
 argument_list|,

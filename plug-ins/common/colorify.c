@@ -218,7 +218,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b52c8040108
+DECL|struct|__anon29c374f00108
 block|{
 DECL|member|color
 name|guchar
@@ -236,7 +236,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b52c8040208
+DECL|struct|__anon29c374f00208
 block|{
 DECL|member|run
 name|gint
@@ -251,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b52c8040308
+DECL|struct|__anon29c374f00308
 block|{
 DECL|member|red
 name|guchar
@@ -529,15 +529,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_colorify"
 argument_list|,
-name|_
-argument_list|(
 literal|"Similar to the \"Color\" mode for layers."
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Makes an average of the RGB channels and uses it to set the color"
-argument_list|)
 argument_list|,
 literal|"Francisco Bustamante"
 argument_list|,

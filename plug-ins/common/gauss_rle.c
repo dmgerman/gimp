@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf17b860108
+DECL|struct|__anon27605e990108
 block|{
 DECL|member|radius
 name|gdouble
@@ -71,7 +71,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf17b860208
+DECL|struct|__anon27605e990208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -90,7 +90,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf17b860308
+DECL|struct|__anon27605e990308
 block|{
 DECL|member|run
 name|gint
@@ -503,15 +503,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gauss_rle"
 argument_list|,
-name|_
-argument_list|(
 literal|"Applies a gaussian blur to the specified drawable."
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Applies a gaussian blur to the drawable, with specified radius of affect.  The standard deviation of the normal distribution used to modify pixel values is calculated based on the supplied radius.  Horizontal and vertical blurring can be independently invoked by specifying only one to run.  The RLE gaussian blurring performs most efficiently on computer-generated images or images with large areas of constant intensity.  Values for radii less than 1.0 are invalid as they would generate spurious results."
-argument_list|)
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -538,15 +532,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gauss_rle2"
 argument_list|,
-name|_
-argument_list|(
 literal|"Applies a gaussian blur to the specified drawable."
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Applies a gaussian blur to the drawable, with specified radius of affect.  The standard deviation of the normal distribution used to modify pixel values is calculated based on the supplied radius.  This radius can be specified indepently on for the horizontal and the vertical direction. The RLE gaussian blurring performs most efficiently on computer-generated images or images with large areas of constant intensity.  Values for radii less than 1.0 would generate spurious results. Therefore they are interpreted as 0.0, which means that the computation for this orientation is skipped."
-argument_list|)
 argument_list|,
 literal|"Spencer Kimball, Peter Mattis& Sven Neumann"
 argument_list|,

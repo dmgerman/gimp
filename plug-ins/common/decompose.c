@@ -696,7 +696,7 @@ comment|/* Description of an extraction */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29feca950108
+DECL|struct|__anon278047ef0108
 typedef|typedef
 struct|struct
 block|{
@@ -1167,7 +1167,7 @@ value|(sizeof (extract)/sizeof (extract[0]))
 end_define
 
 begin_typedef
-DECL|struct|__anon29feca950208
+DECL|struct|__anon278047ef0208
 typedef|typedef
 struct|struct
 block|{
@@ -1185,7 +1185,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29feca950308
+DECL|struct|__anon278047ef0308
 typedef|typedef
 struct|struct
 block|{
@@ -1400,15 +1400,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_decompose"
 argument_list|,
-name|_
-argument_list|(
 literal|"Decompose an image into different types of channels"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"This function creates new gray images with\  different channel information in each of them"
-argument_list|)
+literal|"This function creates new gray images with "
+literal|"different channel information in each of them"
 argument_list|,
 literal|"Peter Kirchgessner"
 argument_list|,

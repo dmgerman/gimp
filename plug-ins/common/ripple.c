@@ -130,7 +130,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon280280ae0108
+DECL|struct|__anon2c5e35040108
 block|{
 DECL|member|period
 name|gint
@@ -169,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon280280ae0208
+DECL|struct|__anon2c5e35040208
 block|{
 DECL|member|run
 name|gint
@@ -560,15 +560,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_ripple"
 argument_list|,
-name|_
-argument_list|(
 literal|"Ripple the contents of the specified drawable"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Ripples the pixels of the specified drawable. Each row or column will be displaced a certain number of pixels coinciding with the given wave form"
-argument_list|)
 argument_list|,
 literal|"Brian Degenhardt<bdegenha@ucsd.edu>"
 argument_list|,

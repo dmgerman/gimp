@@ -113,7 +113,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9efc8b0108
+DECL|struct|__anon2aaf9eca0108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -176,7 +176,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9efc8b0208
+DECL|struct|__anon2aaf9eca0208
 block|{
 DECL|member|run
 name|gint
@@ -694,10 +694,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_sparkle"
 argument_list|,
-name|_
-argument_list|(
 literal|"Simulates pixel bloom and diffraction effects"
-argument_list|)
 argument_list|,
 literal|"No help yet"
 argument_list|,

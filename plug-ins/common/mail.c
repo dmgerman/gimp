@@ -392,7 +392,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2913022e0108
+DECL|struct|__anon2c79152a0108
 block|{
 DECL|member|receipt
 name|gchar
@@ -615,15 +615,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_mail_image"
 argument_list|,
-name|_
-argument_list|(
 literal|"pipe files to uuencode then mail them"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"You need to have uuencode and mail installed"
-argument_list|)
 argument_list|,
 literal|"Adrian Likins, Reagan Blundell"
 argument_list|,

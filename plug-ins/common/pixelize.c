@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2791e40c0108
+DECL|struct|__anon2a10ce7e0108
 block|{
 DECL|member|pixelwidth
 name|gint
@@ -121,7 +121,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2791e40c0208
+DECL|struct|__anon2a10ce7e0208
 block|{
 DECL|member|run
 name|gint
@@ -136,7 +136,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2791e40c0308
+DECL|struct|__anon2a10ce7e0308
 block|{
 DECL|member|x
 DECL|member|y
@@ -444,15 +444,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_pixelize"
 argument_list|,
-name|_
-argument_list|(
 literal|"Pixelize the contents of the specified drawable"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Pixelize the contents of the specified drawable with speficied pixelizing width."
-argument_list|)
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis, Tracy Scott, (ported to 1.0 by) Eiichi Takamori"
 argument_list|,

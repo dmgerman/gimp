@@ -200,7 +200,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc15baf0108
+DECL|struct|__anon28f6ce010108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -249,7 +249,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc15baf0208
+DECL|struct|__anon28f6ce010208
 block|{
 DECL|member|run
 name|gint
@@ -521,60 +521,42 @@ name|gchar
 modifier|*
 name|hurl_blurb
 init|=
-name|_
-argument_list|(
 literal|"Add a random factor to the image by hurling random data at it."
-argument_list|)
 decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
 name|pick_blurb
 init|=
-name|_
-argument_list|(
 literal|"Add a random factor to the image by picking a random adjacent pixel."
-argument_list|)
 decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
 name|slur_blurb
 init|=
-name|_
-argument_list|(
 literal|"Add a random factor to the image by slurring (similar to melting)."
-argument_list|)
 decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
 name|hurl_help
 init|=
-name|_
-argument_list|(
 literal|"This plug-in ``hurls'' randomly-valued pixels onto the selection or image.  You may select the percentage of pixels to modify and the number of times to repeat the process."
-argument_list|)
 decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
 name|pick_help
 init|=
-name|_
-argument_list|(
 literal|"This plug-in replaces a pixel with a random adjacent pixel.  You may select the percentage of pixels to modify and the number of times to repeat the process."
-argument_list|)
 decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
 name|slur_help
 init|=
-name|_
-argument_list|(
 literal|"This plug-in slurs (melts like a bunch of icicles) an image.  You may select the percentage of pixels to modify and the number of times to repeat the process."
-argument_list|)
 decl_stmt|;
 specifier|const
 name|gchar

@@ -149,7 +149,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297aae1d0103
+DECL|enum|__anon27dd6a790103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297aae1d0208
+DECL|struct|__anon27dd6a790208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -587,7 +587,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon297aae1d0308
+DECL|struct|__anon27dd6a790308
 specifier|static
 struct|struct
 block|{
@@ -1197,15 +1197,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_psd_load"
 argument_list|,
-name|_
-argument_list|(
 literal|"loads files of the Photoshop(tm) PSD file format"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"This filter loads files of Adobe Photoshop(tm) native PSD format.  These files may be of any image type supported by GIMP, with or without layers, layer masks, aux channels and guides."
-argument_list|)
 argument_list|,
 literal|"Adam D. Moss& Torsten Martinsen"
 argument_list|,

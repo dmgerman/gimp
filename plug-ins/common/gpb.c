@@ -115,7 +115,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c4f40100108
+DECL|struct|__anon29bd9cd90108
 block|{
 comment|/* Use by both gpb and gih: */
 DECL|member|spacing
@@ -173,7 +173,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4f40100208
+DECL|struct|__anon29bd9cd90208
 block|{
 DECL|member|orientation
 name|GOrientation
@@ -507,15 +507,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_gpb_save"
 argument_list|,
-name|_
-argument_list|(
 literal|"saves images in GIMP pixmap brush format"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"This plug-in saves a layer of an image in the GIMP pixmap brush format. The image must have an alpha channel."
-argument_list|)
 argument_list|,
 literal|"Tor Lillqvist"
 argument_list|,
@@ -551,15 +545,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_gih_save"
 argument_list|,
-name|_
-argument_list|(
 literal|"saves images in GIMP pixmap brush pipe format"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"This plug-in saves an image in the GIMP pixmap brush pipe format. The image must have an alpha channel. The image can be multi-layered, and additionally the layers can be divided into a rectangular array of brushes."
-argument_list|)
 argument_list|,
 literal|"Tor Lillqvist"
 argument_list|,

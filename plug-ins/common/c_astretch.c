@@ -204,15 +204,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_c_astretch"
 argument_list|,
-name|_
-argument_list|(
 literal|"Automatically stretch the contrast of the specified drawable to cover all possible ranges."
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"This simple plug-in does an automatic contrast stretch.  For each channel in the image, it finds the minimum and maximum values... it uses those values to stretch the individual histograms to the full contrast range.  For some images it may do just what you want; for others it may be total crap :)"
-argument_list|)
 argument_list|,
 literal|"Federico Mena Quintero"
 argument_list|,

@@ -57,6 +57,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"arcball.h"
 end_include
 
@@ -109,7 +115,7 @@ comment|/* ======== */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29a51cab0103
+DECL|enum|__anon29089f7b0103
 typedef|typedef
 enum|enum
 block|{
@@ -128,7 +134,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon29a51cab0203
+DECL|enum|__anon29089f7b0203
 typedef|typedef
 enum|enum
 block|{
@@ -160,7 +166,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a51cab0308
+DECL|struct|__anon29089f7b0308
 block|{
 DECL|member|ambient_int
 name|gdouble
@@ -195,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a51cab0408
+DECL|struct|__anon29089f7b0408
 block|{
 DECL|member|type
 name|LightType
@@ -224,7 +230,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29a51cab0508
+DECL|struct|__anon29089f7b0508
 typedef|typedef
 struct|struct
 block|{

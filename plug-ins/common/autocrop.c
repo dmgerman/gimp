@@ -283,10 +283,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_autocrop"
 argument_list|,
-name|_
-argument_list|(
 literal|"Automagically crops a picture."
-argument_list|)
 argument_list|,
 literal|""
 argument_list|,

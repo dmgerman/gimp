@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6bd6780108
+DECL|struct|__anon28c8f6770108
 block|{
 DECL|member|height
 name|gint
@@ -91,7 +91,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6bd6780208
+DECL|struct|__anon28c8f6770208
 block|{
 DECL|member|run
 name|gint
@@ -382,15 +382,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_engrave"
 argument_list|,
-name|_
-argument_list|(
 literal|"Engrave the contents of the specified drawable"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Creates a black-and-white 'engraved' version of an image as seen in old illustrations"
-argument_list|)
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis, Eiichi Takamori, Torsten Martinsen"
 argument_list|,
@@ -1922,7 +1916,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6bd6780308
+DECL|struct|__anon28c8f6770308
 block|{
 DECL|member|x
 DECL|member|y

@@ -150,7 +150,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bccb9730103
+DECL|enum|__anon2a41bfeb0103
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -501,15 +501,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_nlfilt"
 argument_list|,
-name|_
-argument_list|(
 literal|"Nonlinear swiss army knife filter"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"This is the pnmnlfilt, in gimp's clothing.  See the pnmnlfilt manpage for details."
-argument_list|)
 argument_list|,
 literal|"Graeme W. Gill, gimp 0.99 plugin by Eric L. Hernes"
 argument_list|,

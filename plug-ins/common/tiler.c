@@ -226,15 +226,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_make_seamless"
 argument_list|,
-name|_
-argument_list|(
 literal|"Seamless tile creation"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"This plugin creates a seamless tileable from the input image"
-argument_list|)
 argument_list|,
 literal|"Tim Rowley"
 argument_list|,

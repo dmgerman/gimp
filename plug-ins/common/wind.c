@@ -104,7 +104,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c095cc10103
+DECL|enum|__anon2acf354e0103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c095cc10203
+DECL|enum|__anon2acf354e0203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -136,7 +136,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c095cc10303
+DECL|enum|__anon2acf354e0303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -655,15 +655,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_wind"
 argument_list|,
-name|_
-argument_list|(
 literal|"Renders a wind effect."
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Renders a wind effect."
-argument_list|)
 argument_list|,
 literal|"Nigel Wetten"
 argument_list|,

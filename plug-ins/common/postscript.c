@@ -134,7 +134,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd1cc8a0108
+DECL|struct|__anon2791cb760108
 block|{
 DECL|member|resolution
 name|guint
@@ -186,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd1cc8a0208
+DECL|struct|__anon2791cb760208
 block|{
 DECL|member|run
 name|gint
@@ -252,7 +252,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd1cc8a0308
+DECL|struct|__anon2791cb760308
 block|{
 DECL|member|width
 DECL|member|height
@@ -314,7 +314,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd1cc8a0408
+DECL|struct|__anon2791cb760408
 block|{
 DECL|member|run
 name|gint
@@ -860,7 +860,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd1cc8a0508
+DECL|struct|__anon2791cb760508
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1587,15 +1587,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_ps_load"
 argument_list|,
-name|_
-argument_list|(
 literal|"load file of PostScript/PDF file format"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"load file of PostScript/PDF file format"
-argument_list|)
 argument_list|,
 literal|"Peter Kirchgessner<peter@kirchgessner.net>"
 argument_list|,
@@ -1651,15 +1645,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_ps_save"
 argument_list|,
-name|_
-argument_list|(
 literal|"save file in PostScript file format"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"PostScript saving handles all image types except those with alpha channels."
-argument_list|)
 argument_list|,
 literal|"Peter Kirchgessner<pkirchg@aol.com>"
 argument_list|,

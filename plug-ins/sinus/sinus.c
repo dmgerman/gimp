@@ -174,7 +174,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7434250108
+DECL|struct|__anon2b4861320108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -283,7 +283,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7434250208
+DECL|struct|__anon2b4861320208
 block|{
 DECL|member|height
 DECL|member|width
@@ -918,10 +918,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_sinus"
 argument_list|,
-name|_
-argument_list|(
 literal|"Generates a texture with sinus functions"
-argument_list|)
 argument_list|,
 literal|"FIX ME: sinus help"
 argument_list|,
@@ -1528,7 +1525,7 @@ modifier|*
 name|p
 parameter_list|)
 block|{
-DECL|struct|__anon2b7434250308
+DECL|struct|__anon2b4861320308
 DECL|member|r
 DECL|member|g
 DECL|member|b

@@ -98,7 +98,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6666670108
+DECL|struct|__anon29d43f0e0108
 block|{
 DECL|member|threshold
 name|gdouble
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6666670208
+DECL|struct|__anon29d43f0e0208
 block|{
 DECL|member|run
 name|gint
@@ -128,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6666670308
+DECL|struct|__anon29d43f0e0308
 block|{
 DECL|member|r
 name|guchar
@@ -528,10 +528,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_xpm_load"
 argument_list|,
-name|_
-argument_list|(
 literal|"loads files of the xpm file format"
-argument_list|)
 argument_list|,
 literal|"FIXME: write help for xpm_load"
 argument_list|,
@@ -560,10 +557,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_xpm_save"
 argument_list|,
-name|_
-argument_list|(
 literal|"saves files in the xpm file format (if you're on a 16 bit display...)"
-argument_list|)
 argument_list|,
 literal|"FIXME: write help for xpm"
 argument_list|,

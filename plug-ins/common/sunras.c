@@ -140,7 +140,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d6df390108
+DECL|struct|__anon273bfeaf0108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -229,7 +229,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d6df390208
+DECL|struct|__anon273bfeaf0208
 block|{
 DECL|member|val
 name|int
@@ -840,7 +840,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d6df390308
+DECL|struct|__anon273bfeaf0308
 block|{
 DECL|member|rle
 name|gint
@@ -856,7 +856,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d6df390408
+DECL|struct|__anon273bfeaf0408
 block|{
 DECL|member|run
 name|gint
@@ -1082,15 +1082,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_sunras_load"
 argument_list|,
-name|_
-argument_list|(
 literal|"load file of the SunRaster file format"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"load file of the SunRaster file format"
-argument_list|)
 argument_list|,
 literal|"Peter Kirchgessner"
 argument_list|,
@@ -1117,15 +1111,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_sunras_save"
 argument_list|,
-name|_
-argument_list|(
 literal|"save file in the SunRaster file format"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"SUNRAS saving handles all image types except \ those with alpha channels."
-argument_list|)
+literal|"SUNRAS saving handles all image types except "
+literal|"those with alpha channels."
 argument_list|,
 literal|"Peter Kirchgessner"
 argument_list|,

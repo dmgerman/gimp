@@ -141,7 +141,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299b98ef0108
+DECL|struct|__anon29759ede0108
 block|{
 DECL|member|lam_r
 name|gdouble
@@ -200,7 +200,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299b98ef0208
+DECL|struct|__anon29759ede0208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -728,15 +728,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_diffraction"
 argument_list|,
-name|_
-argument_list|(
 literal|"Generate diffraction patterns"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Help?  What help?  Real men do not need help :-)"
-argument_list|)
 argument_list|,
 comment|/* FIXME */
 literal|"Federico Mena Quintero"

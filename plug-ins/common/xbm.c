@@ -607,15 +607,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_xbm_load"
 argument_list|,
-name|_
-argument_list|(
 literal|"Load a file in X10 or X11 bitmap (XBM) file format"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Load a file in X10 or X11 bitmap (XBM) file format.  XBM is a lossless format for flat black-and-white (two color indexed) images."
-argument_list|)
 argument_list|,
 literal|"Gordon Matzigkeit"
 argument_list|,

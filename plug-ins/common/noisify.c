@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4c039e0108
+DECL|struct|__anon2b17f46f0108
 block|{
 DECL|member|independent
 name|gint
@@ -97,7 +97,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4c039e0208
+DECL|struct|__anon2b17f46f0208
 block|{
 DECL|member|run
 name|gint
@@ -378,10 +378,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_noisify"
 argument_list|,
-name|_
-argument_list|(
 literal|"Adds random noise to a drawable's channels"
-argument_list|)
 argument_list|,
 literal|"More here later"
 argument_list|,

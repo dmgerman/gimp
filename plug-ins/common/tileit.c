@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6002100108
+DECL|struct|__anon28b6964e0108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -557,7 +557,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6002100203
+DECL|enum|__anon28b6964e0203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -576,7 +576,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6002100308
+DECL|struct|__anon28b6964e0308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -646,7 +646,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6002100408
+DECL|struct|__anon28b6964e0408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -876,10 +876,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_small_tiles"
 argument_list|,
-name|_
-argument_list|(
 literal|"Tiles image into smaller versions of the orginal"
-argument_list|)
 argument_list|,
 literal|"More here later"
 argument_list|,

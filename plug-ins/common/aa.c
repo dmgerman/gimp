@@ -348,15 +348,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_aa_save"
 argument_list|,
-name|_
-argument_list|(
 literal|"Saves files in various text formats"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Saves files in various text formats"
-argument_list|)
 argument_list|,
 literal|"Tim Newsome<nuisance@cmu.edu>"
 argument_list|,

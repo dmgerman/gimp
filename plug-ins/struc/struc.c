@@ -61,7 +61,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2964aa2f0103
+DECL|enum|__anon275e728c0103
 block|{
 DECL|enumerator|TOP_RIGHT
 name|TOP_RIGHT
@@ -81,7 +81,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2964aa2f0208
+DECL|struct|__anon275e728c0208
 block|{
 DECL|member|direction
 name|gint
@@ -100,7 +100,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2964aa2f0308
+DECL|struct|__anon275e728c0308
 block|{
 DECL|member|run
 name|gint
@@ -348,15 +348,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_apply_canvas"
 argument_list|,
-name|_
-argument_list|(
 literal|"Adds a canvas texture map to the picture"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"This function applies a canvas texture map to the drawable."
-argument_list|)
 argument_list|,
 literal|"Karl-Johan Andersson"
 argument_list|,

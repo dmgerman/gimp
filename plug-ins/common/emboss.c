@@ -70,7 +70,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon287f2a5c0103
+DECL|enum|__anon2b5083240103
 block|{
 DECL|enumerator|FUNCTION_BUMPMAP
 name|FUNCTION_BUMPMAP
@@ -568,15 +568,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_emboss"
 argument_list|,
-name|_
-argument_list|(
 literal|"Emboss filter"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Emboss or Bumpmap the given drawable, specifying the angle and elevation for the light source."
-argument_list|)
 argument_list|,
 literal|"Eric L. Hernes, John Schlag"
 argument_list|,

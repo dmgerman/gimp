@@ -46,7 +46,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon298e4c4b0103
+DECL|enum|__anon2a2c48dc0103
 DECL|enumerator|BEZIER_1
 DECL|enumerator|BEZIER_2
 DECL|typedef|style_t
@@ -62,7 +62,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon298e4c4b0203
+DECL|enum|__anon2a2c48dc0203
 DECL|enumerator|LEFT
 DECL|enumerator|RIGHT
 DECL|enumerator|UP
@@ -2005,15 +2005,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_jigsaw"
 argument_list|,
-name|_
-argument_list|(
 literal|"Renders a jigsaw puzzle look"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Jigsaw puzzle look"
-argument_list|)
 argument_list|,
 literal|"Nigel Wetten"
 argument_list|,

@@ -929,10 +929,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_fractalexplorer"
 argument_list|,
-name|_
-argument_list|(
 literal|"Chaos Fractal Explorer Plug-In"
-argument_list|)
 argument_list|,
 literal|"No help yet."
 argument_list|,

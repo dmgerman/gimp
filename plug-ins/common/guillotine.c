@@ -198,15 +198,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_guillotine"
 argument_list|,
-name|_
-argument_list|(
 literal|"Slice up the image into subimages, cutting along the image's Guides.  Fooey to you and your broccoli, Pokey."
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"This function takes an image and blah blah.  Hooray!"
-argument_list|)
 argument_list|,
 literal|"Adam D. Moss (adam@foxbox.org)"
 argument_list|,

@@ -119,7 +119,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3274f50108
+DECL|struct|__anon2af0a0000108
 block|{
 DECL|member|amount_x
 name|gdouble
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3274f50208
+DECL|struct|__anon2af0a0000208
 block|{
 DECL|member|run
 name|gint
@@ -597,15 +597,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_displace"
 argument_list|,
-name|_
-argument_list|(
 literal|"Displace the contents of the specified drawable"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Displaces the contents of the specified drawable by the amounts specified by 'amount_x' and 'amount_y' multiplied by the intensity of corresponding pixels in the 'displace_map' drawables.  Both 'displace_map' drawables must be of type GRAY_IMAGE for this operation to succeed."
-argument_list|)
 argument_list|,
 literal|"Stephen Robert Norris& (ported to 1.0 by) Spencer Kimball"
 argument_list|,

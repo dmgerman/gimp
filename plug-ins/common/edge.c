@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6f8a900103
+DECL|enum|__anon2a3ed1c70103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -112,7 +112,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6f8a900208
+DECL|struct|__anon2a3ed1c70208
 block|{
 DECL|member|amount
 name|gdouble
@@ -131,7 +131,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6f8a900308
+DECL|struct|__anon2a3ed1c70308
 block|{
 DECL|member|run
 name|gint
@@ -146,7 +146,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6f8a900408
+DECL|struct|__anon2a3ed1c70408
 block|{
 DECL|member|tile
 name|GTile
@@ -484,10 +484,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_edge"
 argument_list|,
-name|_
-argument_list|(
 literal|"Perform edge detection on the contents of the specified drawable"
-argument_list|)
 argument_list|,
 name|help_string
 argument_list|,

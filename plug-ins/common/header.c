@@ -228,10 +228,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_header_save"
 argument_list|,
-name|_
-argument_list|(
 literal|"saves files as C unsigned character array"
-argument_list|)
 argument_list|,
 literal|"FIXME: write help"
 argument_list|,

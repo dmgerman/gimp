@@ -50,7 +50,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b87ce120108
+DECL|struct|__anon29b639560108
 block|{
 DECL|member|xblock
 name|gint
@@ -69,7 +69,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b87ce120208
+DECL|struct|__anon29b639560208
 block|{
 DECL|member|run
 name|gint
@@ -317,15 +317,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_glasstile"
 argument_list|,
-name|_
-argument_list|(
 literal|"Divide the image into square glassblocks"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"More here later"
-argument_list|)
 argument_list|,
 literal|"Karl-Johan Andersson"
 argument_list|,

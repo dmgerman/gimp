@@ -176,7 +176,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3406230108
+DECL|struct|__anon2ae50d5c0108
 block|{
 DECL|member|run
 name|gint
@@ -195,7 +195,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3406230203
+DECL|enum|__anon2ae50d5c0203
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -390,7 +390,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3406230303
+DECL|enum|__anon2ae50d5c0303
 block|{
 DECL|enumerator|PTYP_NOT_SUPPORTED
 name|PTYP_NOT_SUPPORTED
@@ -450,7 +450,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3406230403
+DECL|enum|__anon2ae50d5c0403
 block|{
 DECL|enumerator|XJT_IMAGE_PARASITE
 name|XJT_IMAGE_PARASITE
@@ -480,7 +480,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3406230503
+DECL|enum|__anon2ae50d5c0503
 block|{
 DECL|enumerator|XJT_RGB
 name|XJT_RGB
@@ -502,7 +502,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3406230603
+DECL|enum|__anon2ae50d5c0603
 block|{
 DECL|enumerator|XJT_PATHTYPE_UNDEF
 name|XJT_PATHTYPE_UNDEF
@@ -522,7 +522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3406230703
+DECL|enum|__anon2ae50d5c0703
 block|{
 DECL|enumerator|XJT_NORMAL_MODE
 name|XJT_NORMAL_MODE
@@ -612,7 +612,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3406230808
+DECL|struct|__anon2ae50d5c0808
 block|{
 DECL|member|prop_id
 name|t_proptype
@@ -648,7 +648,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3406230908
+DECL|struct|__anon2ae50d5c0908
 block|{
 DECL|member|int_val1
 name|gint32
@@ -697,7 +697,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3406230a08
+DECL|struct|__anon2ae50d5c0a08
 block|{
 DECL|member|parasite_type
 name|t_parasitetype
@@ -734,7 +734,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3406230b08
+DECL|struct|__anon2ae50d5c0b08
 block|{
 DECL|member|path_type
 name|gint32
@@ -780,7 +780,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3406230c08
+DECL|struct|__anon2ae50d5c0c08
 block|{
 DECL|member|active_channel
 name|gint
@@ -854,7 +854,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3406230d08
+DECL|struct|__anon2ae50d5c0d08
 block|{
 DECL|member|active_layer
 name|gint
@@ -939,7 +939,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3406230e08
+DECL|struct|__anon2ae50d5c0e08
 block|{
 DECL|member|position
 name|gint32
@@ -963,7 +963,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3406230f08
+DECL|struct|__anon2ae50d5c0f08
 block|{
 DECL|member|version
 name|gchar
@@ -1987,15 +1987,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_xjt_load"
 argument_list|,
-name|_
-argument_list|(
 literal|"loads files of the jpeg-tar file format"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"loads files of the jpeg-tar file format"
-argument_list|)
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -2022,15 +2016,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_xjt_save"
 argument_list|,
-name|_
-argument_list|(
 literal|"saves files in the jpeg-tar file format"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"saves files in the jpeg-tar file format"
-argument_list|)
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,

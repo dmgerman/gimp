@@ -76,7 +76,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fdc8980108
+DECL|struct|__anon28c4ea680108
 block|{
 DECL|member|fromred
 DECL|member|fromgreen
@@ -579,15 +579,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_exchange"
 argument_list|,
-name|_
-argument_list|(
 literal|"Color Exchange"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Exchange one color with another, optionally setting a threshold to convert from one shade to another"
-argument_list|)
 argument_list|,
 literal|"robert@experimental.net"
 argument_list|,

@@ -1560,10 +1560,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_next"
 argument_list|,
-name|_
-argument_list|(
 literal|"This plugin exchanges current image with (next nubered) image from disk."
-argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -1595,10 +1592,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_prev"
 argument_list|,
-name|_
-argument_list|(
 literal|"This plugin exchanges current image with (previous nubered) image from disk."
-argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -1630,10 +1624,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_first"
 argument_list|,
-name|_
-argument_list|(
 literal|"This plugin exchanges current image with (lowest nubered) image from disk."
-argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -1665,10 +1656,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_last"
 argument_list|,
-name|_
-argument_list|(
 literal|"This plugin exchanges current image with (highest nubered) image from disk."
-argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -1700,10 +1688,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_goto"
 argument_list|,
-name|_
-argument_list|(
 literal|"This plugin exchanges current image with requested image (nr) from disk."
-argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -1735,10 +1720,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_del"
 argument_list|,
-name|_
-argument_list|(
 literal|"This plugin deletes the given number of frames from disk including the current frame."
-argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -1770,10 +1752,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_dup"
 argument_list|,
-name|_
-argument_list|(
 literal|"This plugin duplicates the current frames on disk n-times."
-argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -1805,10 +1784,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_exchg"
 argument_list|,
-name|_
-argument_list|(
 literal|"This plugin exchanges content of the current with destination frame."
-argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -1840,10 +1816,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_move"
 argument_list|,
-name|_
-argument_list|(
 literal|"This plugin copies layer(s) from one sourceimage to multiple frames on disk, varying position, size and opacity."
-argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -1875,10 +1848,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_range_to_multilayer"
 argument_list|,
-name|_
-argument_list|(
 literal|"This plugin creates a new image from the given range of frame-images. Each frame is converted to one layer in the new image, according to flatten_mode. (the frames on disk are not changed)."
-argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -1910,10 +1880,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_range_flatten"
 argument_list|,
-name|_
-argument_list|(
 literal|"This plugin flattens the given range of frame-images (on disk)"
-argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -1945,10 +1912,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_range_layer_del"
 argument_list|,
-name|_
-argument_list|(
 literal|"This plugin deletes one layer in the given range of frame-images (on disk). exception: the last remaining layer of a frame is not deleted"
-argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -1980,10 +1944,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_range_convert"
 argument_list|,
-name|_
-argument_list|(
 literal|"This plugin converts the given range of frame-images to other fileformats (on disk) depending on extension"
-argument_list|)
 argument_list|,
 literal|"WARNING this procedure is obsolete, please use plug_in_gap_range_convert2"
 argument_list|,
@@ -2013,10 +1974,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_range_convert2"
 argument_list|,
-name|_
-argument_list|(
 literal|"This plugin converts the given range of frame-images to other fileformats (on disk) depending on extension"
-argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -2048,10 +2006,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_anim_resize"
 argument_list|,
-name|_
-argument_list|(
 literal|"This plugin resizes all anim_frames (images on disk) to the given new_width/new_height"
-argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -2083,10 +2038,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_anim_crop"
 argument_list|,
-name|_
-argument_list|(
 literal|"This plugin crops all anim_frames (images on disk) to the given new_width/new_height"
-argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -2118,10 +2070,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_anim_scale"
 argument_list|,
-name|_
-argument_list|(
 literal|"This plugin scales all anim_frames (images on disk) to the given new_width/new_height"
-argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -2153,10 +2102,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_split"
 argument_list|,
-name|_
-argument_list|(
 literal|"This plugin splits the current image to anim frames (images on disk). Each layer is saved as one frame"
-argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -2188,10 +2134,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_shift"
 argument_list|,
-name|_
-argument_list|(
 literal|"This plugin exchanges frame numbers in the given range. (discfile frame_0001.xcf is renamed to frame_0002.xcf, 2->3, 3->4 ... n->1)"
-argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -2223,10 +2166,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_modify"
 argument_list|,
-name|_
-argument_list|(
 literal|"This plugin performs a modifying action on each selected layer in each selected framerange"
-argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -2290,7 +2230,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon280125630108
+DECL|struct|__anon2b3b5be30108
 block|{
 DECL|member|lock
 name|long

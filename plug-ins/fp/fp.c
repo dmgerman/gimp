@@ -248,15 +248,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_filter_pack"
 argument_list|,
-name|_
-argument_list|(
 literal|"Allows the user to change H, S, or C with many previews"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"No help available"
-argument_list|)
 argument_list|,
 literal|"Pavel Grinfeld (pavel@ml.com)"
 argument_list|,

@@ -520,15 +520,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_gz_load"
 argument_list|,
-name|_
-argument_list|(
 literal|"loads files compressed with gzip"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"You need to have gzip installed."
-argument_list|)
 argument_list|,
 literal|"Daniel Risacher"
 argument_list|,
@@ -555,15 +549,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_gz_save"
 argument_list|,
-name|_
-argument_list|(
 literal|"saves files compressed with gzip"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"You need to have gzip installed."
-argument_list|)
 argument_list|,
 literal|"Daniel Risacher"
 argument_list|,

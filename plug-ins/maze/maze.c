@@ -563,10 +563,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_maze"
 argument_list|,
-name|_
-argument_list|(
 literal|"Draws a maze."
-argument_list|)
 argument_list|,
 name|help
 argument_list|,

@@ -107,7 +107,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon290131db0103
+DECL|enum|__anon2bf8065d0103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -127,7 +127,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290131db0208
+DECL|struct|__anon2bf8065d0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -194,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290131db0308
+DECL|struct|__anon2bf8065d0308
 block|{
 DECL|member|run
 name|gint
@@ -940,15 +940,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_warp"
 argument_list|,
-name|_
-argument_list|(
 literal|"Twist or smear an image. (only first six arguments are required)"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Smears an image along vector paths calculated as the gradient of a separate control matrix. The effect can look like brushstrokes of acrylic or watercolor paint, in some cases."
-argument_list|)
 argument_list|,
 literal|"John P. Beale"
 argument_list|,

@@ -79,7 +79,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ec30460108
+DECL|struct|__anon2988bc650108
 block|{
 DECL|member|replace
 name|gint
@@ -105,7 +105,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ec30460208
+DECL|struct|__anon2988bc650208
 block|{
 DECL|member|run
 name|gint
@@ -596,15 +596,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_fits_load"
 argument_list|,
-name|_
-argument_list|(
 literal|"load file of the FITS file format"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"load file of the FITS file format (Flexible Image Transport System)"
-argument_list|)
 argument_list|,
 literal|"Peter Kirchgessner"
 argument_list|,
@@ -631,15 +625,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_fits_save"
 argument_list|,
-name|_
-argument_list|(
 literal|"save file in the FITS file format"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"FITS saving handles all image types except those with alpha channels."
-argument_list|)
 argument_list|,
 literal|"Peter Kirchgessner"
 argument_list|,

@@ -154,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2760e0950108
+DECL|struct|__anon2c7fd5d80108
 block|{
 DECL|member|posx
 name|gint
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2760e0950208
+DECL|struct|__anon2c7fd5d80208
 block|{
 DECL|member|run
 name|gint
@@ -244,7 +244,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2760e0950308
+DECL|struct|__anon2c7fd5d80308
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -932,15 +932,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_flarefx"
 argument_list|,
-name|_
-argument_list|(
 literal|"Add lens flare effects"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"More here later"
-argument_list|)
 argument_list|,
 literal|"Karl-Johan Andersson"
 argument_list|,

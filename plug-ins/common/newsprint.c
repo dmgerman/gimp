@@ -512,7 +512,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae824c40108
+DECL|struct|__anon298d98960108
 block|{
 DECL|member|name
 specifier|const
@@ -772,7 +772,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae824c40208
+DECL|struct|__anon298d98960208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -845,7 +845,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae824c40308
+DECL|struct|__anon298d98960308
 block|{
 DECL|member|input_spi
 name|gint
@@ -871,7 +871,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae824c40408
+DECL|struct|__anon298d98960408
 block|{
 DECL|member|run
 name|gint
@@ -890,7 +890,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae824c40508
+DECL|struct|__anon298d98960508
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -997,7 +997,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae824c40608
+DECL|struct|__anon298d98960608
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1181,7 +1181,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae824c40708
+DECL|struct|__anon298d98960708
 block|{
 DECL|member|name
 specifier|const
@@ -1932,15 +1932,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_newsprint"
 argument_list|,
-name|_
-argument_list|(
 literal|"Re-sample the image to give a newspaper-like effect"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Halftone the image, trading off resolution to represent colors or grey levels using the process described both in the PostScript language definition, and also by Robert Ulichney, \"Digital halftoning\", MIT Press, 1987."
-argument_list|)
 argument_list|,
 literal|"Austin Donnelly"
 argument_list|,
@@ -7006,7 +7000,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae824c40808
+DECL|struct|__anon298d98960808
 block|{
 DECL|member|index
 name|gint

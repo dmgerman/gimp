@@ -836,15 +836,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_lighting"
 argument_list|,
-name|_
-argument_list|(
 literal|"Apply various lighting effects to an image"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"No help yet"
-argument_list|)
 argument_list|,
 literal|"Tom Bech& Federico Mena Quintero"
 argument_list|,

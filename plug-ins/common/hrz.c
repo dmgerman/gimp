@@ -178,7 +178,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1937b70108
+DECL|struct|__anon2946374e0108
 block|{
 DECL|member|run
 name|gint
@@ -514,15 +514,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_hrz_load"
 argument_list|,
-name|_
-argument_list|(
 literal|"loads files of the hrz file format"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"FIXME: write help for hrz_load"
-argument_list|)
 argument_list|,
 literal|"Albert Cahalan"
 argument_list|,
@@ -549,15 +543,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_hrz_save"
 argument_list|,
-name|_
-argument_list|(
 literal|"saves files in the hrz file format"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"HRZ saving handles all image types except those with alpha channels."
-argument_list|)
 argument_list|,
 literal|"Albert Cahalan"
 argument_list|,

@@ -72,7 +72,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8458a40108
+DECL|struct|__anon2b0b39890108
 block|{
 DECL|member|run
 name|gint
@@ -319,10 +319,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_checkerboard"
 argument_list|,
-name|_
-argument_list|(
 literal|"Adds a checkerboard pattern to an image"
-argument_list|)
 argument_list|,
 literal|"More here later"
 argument_list|,

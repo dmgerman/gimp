@@ -452,7 +452,7 @@ value|(-4)
 end_define
 
 begin_struct
-DECL|struct|__anon27b791530108
+DECL|struct|__anon29bd73540108
 struct|struct
 block|{
 DECL|member|randomize
@@ -580,15 +580,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_flame"
 argument_list|,
-name|_
-argument_list|(
 literal|"Creates cosmic recursive fractal flames"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Creates cosmic recursive fractal flames"
-argument_list|)
 argument_list|,
 literal|"Scott Draves"
 argument_list|,
@@ -3762,7 +3756,7 @@ name|button
 argument_list|)
 expr_stmt|;
 block|{
-DECL|struct|__anon27b791530208
+DECL|struct|__anon29bd73540208
 specifier|static
 struct|struct
 block|{

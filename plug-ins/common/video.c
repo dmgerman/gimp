@@ -60902,7 +60902,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279c79490108
+DECL|struct|__anon2a32e4ed0108
 block|{
 DECL|member|pattern_number
 name|gint
@@ -60925,7 +60925,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279c79490208
+DECL|struct|__anon2a32e4ed0208
 block|{
 DECL|member|run
 name|gint
@@ -61270,15 +61270,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_video"
 argument_list|,
-name|_
-argument_list|(
 literal|"Apply low-dotpitch RGB simulation to the specified drawable"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"This function simulates the degradation of being on an old low-dotpitch RGB video monitor to the specified drawable."
-argument_list|)
 argument_list|,
 literal|"Adam D. Moss (adam@foxbox.org)"
 argument_list|,

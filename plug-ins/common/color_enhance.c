@@ -204,17 +204,11 @@ argument_list|()
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_Color_Enhance"
+literal|"plug_in_color_enhance"
 argument_list|,
-name|_
-argument_list|(
 literal|"Automatically stretch the saturation of the specified drawable to cover all possible ranges."
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"This simple plug-in does an automatic saturation stretch.  For each channel in the image, it finds the minimum and maximum values... it uses those values to stretch the individual histograms to the full range.  For some images it may do just what you want; for others it may be total crap :).  This version differs from Contrast Autostretch in that it works in HSV space, and preserves hue."
-argument_list|)
 argument_list|,
 literal|"Martin Weber"
 argument_list|,

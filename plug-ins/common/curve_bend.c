@@ -112,10 +112,10 @@ value|"Wolfgang Hofer"
 end_define
 
 begin_define
-DECL|macro|PLUG_IN_DESCRIBTION
+DECL|macro|PLUG_IN_DESCRIPTION
 define|#
 directive|define
-name|PLUG_IN_DESCRIBTION
+name|PLUG_IN_DESCRIPTION
 value|"Bends a layer using 2 spline-curves"
 end_define
 
@@ -779,7 +779,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8636cb0108
+DECL|struct|__anon287c9c000108
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -865,7 +865,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8636cb0208
+DECL|struct|__anon287c9c000208
 block|{
 DECL|member|y
 name|gint32
@@ -3012,7 +3012,7 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-name|PLUG_IN_DESCRIBTION
+name|PLUG_IN_DESCRIPTION
 argument_list|,
 literal|"This plug-in does bend the active layer "
 literal|"If there is a current selection it is copied to floating selection "

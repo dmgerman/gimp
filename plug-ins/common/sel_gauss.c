@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2946fb280108
+DECL|struct|__anon28d95ff30108
 block|{
 DECL|member|radius
 name|gdouble
@@ -67,7 +67,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2946fb280208
+DECL|struct|__anon28d95ff30208
 block|{
 DECL|member|run
 name|gint
@@ -313,15 +313,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_sel_gauss"
 argument_list|,
-name|_
-argument_list|(
 literal|"Applies a selective gaussian blur to the specified drawable."
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"This filter functions similar to the regular gaussian blur filter except that neighbouring pixels that differ more than the given maxdelta parameter will not be blended with. This way with the correct parameters, an image can be smoothed out without losing details. However, this filter can be rather slow."
-argument_list|)
 argument_list|,
 literal|"Thom van Os"
 argument_list|,

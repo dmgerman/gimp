@@ -264,15 +264,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_url_load"
 argument_list|,
-name|_
-argument_list|(
 literal|"loads files given a URL"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"You need to have GNU Wget installed."
-argument_list|)
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,

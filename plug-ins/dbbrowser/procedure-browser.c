@@ -152,10 +152,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"extension_db_browser"
 argument_list|,
-name|_
-argument_list|(
 literal|"List available procedures in the PDB"
-argument_list|)
 argument_list|,
 literal|""
 argument_list|,

@@ -291,17 +291,11 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug-in-rotate-colormap"
 argument_list|,
-name|_
-argument_list|(
 literal|"Colormap rotation as in xv"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Exchanges two color ranges. "
 literal|"Based on code from Pavel Grinfeld (pavel@ml.com). "
 literal|"This version written by Sven Anders (anderss@fmi.uni-passau.de)."
-argument_list|)
 argument_list|,
 literal|"Sven Anders (anderss@fmi.uni-passau.de) and Pavel Grinfeld (pavel@ml.com)"
 argument_list|,

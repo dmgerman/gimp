@@ -105,7 +105,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c7cb130108
+DECL|struct|__anon297fcedc0108
 block|{
 DECL|member|tilable
 name|gint
@@ -145,7 +145,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c7cb130208
+DECL|struct|__anon297fcedc0208
 block|{
 DECL|member|run
 name|gint
@@ -160,7 +160,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c7cb130308
+DECL|struct|__anon297fcedc0308
 block|{
 DECL|member|x
 DECL|member|y
@@ -554,15 +554,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_solid_noise"
 argument_list|,
-name|_
-argument_list|(
 literal|"Creates a grayscale noise texture"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Generates 2D textures using Perlin's classic solid noise function."
-argument_list|)
 argument_list|,
 literal|"Marcelo de Gomensoro Malheiros"
 argument_list|,

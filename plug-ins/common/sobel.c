@@ -64,7 +64,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2967dee10108
+DECL|struct|__anon2b0a398a0108
 block|{
 DECL|member|horizontal
 name|gint
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2967dee10208
+DECL|struct|__anon2b0a398a0208
 block|{
 DECL|member|run
 name|gint
@@ -395,15 +395,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_sobel"
 argument_list|,
-name|_
-argument_list|(
 literal|"Edge Detection with Sobel Operation"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"This plugin calculates the gradient with a sobel operator. The user can specify which direction to use. When both directions are used, the result is the RMS of the two gradients; if only one direction is used, the result either the absolut value of the gradient, or 127 + gradient (if the 'keep sign' switch is on). This way, information about the direction of the gradient is preserved. Resulting images are not autoscaled."
-argument_list|)
 argument_list|,
 literal|"Thorsten Schnier"
 argument_list|,

@@ -150,7 +150,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290d04670108
+DECL|struct|__anon288dacf50108
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -2349,15 +2349,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_print"
 argument_list|,
-name|_
-argument_list|(
 literal|"This plug-in prints images from The GIMP."
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Prints images to PostScript, PCL, or ESC/P2 printers."
-argument_list|)
 argument_list|,
 literal|"Michael Sweet<mike@easysw.com> and Robert Krawitz<rlk@alum.mit.edu>"
 argument_list|,

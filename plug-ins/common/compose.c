@@ -434,7 +434,7 @@ comment|/* Description of a composition */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c1a659a0108
+DECL|struct|__anon29019c560108
 typedef|typedef
 struct|struct
 block|{
@@ -710,7 +710,7 @@ value|(sizeof (compose_dsc) / sizeof (compose_dsc[0]))
 end_define
 
 begin_typedef
-DECL|struct|__anon2c1a659a0208
+DECL|struct|__anon29019c560208
 typedef|typedef
 struct|struct
 block|{
@@ -741,7 +741,7 @@ comment|/* Dialog structure */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c1a659a0308
+DECL|struct|__anon29019c560308
 typedef|typedef
 struct|struct
 block|{
@@ -1126,15 +1126,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_compose"
 argument_list|,
-name|_
-argument_list|(
 literal|"Compose an image from multiple gray images"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"This function creates a new image from\  multiple gray images"
-argument_list|)
+literal|"This function creates a new image from "
+literal|"multiple gray images"
 argument_list|,
 literal|"Peter Kirchgessner"
 argument_list|,
@@ -1164,15 +1159,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_drawable_compose"
 argument_list|,
-name|_
-argument_list|(
 literal|"Compose an image from multiple drawables of gray images"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"This function creates a new image from\  multiple drawables of gray images"
-argument_list|)
+literal|"This function creates a new image from "
+literal|"multiple drawables of gray images"
 argument_list|,
 literal|"Peter Kirchgessner"
 argument_list|,

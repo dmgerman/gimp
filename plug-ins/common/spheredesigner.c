@@ -285,7 +285,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon290dfc900103
+DECL|enum|__anon27ce0d010103
 enum|enum
 block|{
 DECL|enumerator|TRIANGLE
@@ -310,7 +310,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon290dfc900203
+DECL|enum|__anon27ce0d010203
 enum|enum
 block|{
 DECL|enumerator|SOLID
@@ -359,7 +359,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon290dfc900303
+DECL|enum|__anon27ce0d010303
 enum|enum
 block|{
 DECL|enumerator|PERSPECTIVE
@@ -375,7 +375,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon290dfc900403
+DECL|enum|__anon27ce0d010403
 enum|enum
 block|{
 DECL|enumerator|FOG
@@ -421,7 +421,7 @@ value|0x00000001
 end_define
 
 begin_typedef
-DECL|struct|__anon290dfc900508
+DECL|struct|__anon27ce0d010508
 typedef|typedef
 struct|struct
 block|{
@@ -445,7 +445,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon290dfc900608
+DECL|struct|__anon27ce0d010608
 typedef|typedef
 struct|struct
 block|{
@@ -469,7 +469,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon290dfc900708
+DECL|struct|__anon27ce0d010708
 typedef|typedef
 struct|struct
 block|{
@@ -498,7 +498,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon290dfc900808
+DECL|struct|__anon27ce0d010808
 typedef|typedef
 struct|struct
 block|{
@@ -594,7 +594,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon290dfc900908
+DECL|struct|__anon27ce0d010908
 typedef|typedef
 struct|struct
 block|{
@@ -621,7 +621,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon290dfc900a08
+DECL|struct|__anon27ce0d010a08
 typedef|typedef
 struct|struct
 block|{
@@ -663,7 +663,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon290dfc900b08
+DECL|struct|__anon27ce0d010b08
 typedef|typedef
 struct|struct
 block|{
@@ -688,7 +688,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon290dfc900c08
+DECL|struct|__anon27ce0d010c08
 typedef|typedef
 struct|struct
 block|{
@@ -714,7 +714,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon290dfc900d08
+DECL|struct|__anon27ce0d010d08
 typedef|typedef
 struct|struct
 block|{
@@ -737,7 +737,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon290dfc900e08
+DECL|struct|__anon27ce0d010e08
 typedef|typedef
 struct|struct
 block|{
@@ -762,7 +762,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon290dfc900f08
+DECL|struct|__anon27ce0d010f08
 typedef|typedef
 struct|struct
 block|{
@@ -785,7 +785,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon290dfc901008
+DECL|struct|__anon27ce0d011008
 typedef|typedef
 struct|struct
 block|{
@@ -808,7 +808,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon290dfc901108
+DECL|struct|__anon27ce0d011108
 typedef|typedef
 struct|struct
 block|{
@@ -834,7 +834,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|union|__anon290dfc90120a
+DECL|union|__anon27ce0d01120a
 typedef|typedef
 union|union
 block|{
@@ -1170,7 +1170,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon290dfc901308
+DECL|struct|__anon27ce0d011308
 struct|struct
 block|{
 DECL|member|solid
@@ -20604,15 +20604,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_spheredesigner"
 argument_list|,
-name|_
-argument_list|(
 literal|"Renders textures spheres"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"This plugin can be used to create textured and/or bumpmapped spheres, and uses a small lightweight raytracer to perform the task with good quality"
-argument_list|)
 argument_list|,
 literal|"Vidar Madsen"
 argument_list|,

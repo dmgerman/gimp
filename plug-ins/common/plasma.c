@@ -102,7 +102,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8a24090108
+DECL|struct|__anon2b4c09000108
 block|{
 DECL|member|seed
 name|gint
@@ -126,7 +126,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8a24090208
+DECL|struct|__anon2b4c09000208
 block|{
 DECL|member|run
 name|gint
@@ -520,10 +520,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_plasma"
 argument_list|,
-name|_
-argument_list|(
 literal|"Create a plasma cloud like image to the specified drawable"
-argument_list|)
 argument_list|,
 literal|"More help"
 argument_list|,

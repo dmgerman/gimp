@@ -319,15 +319,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_faxg3_load"
 argument_list|,
-name|_
-argument_list|(
 literal|"loads g3 fax files"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"This plug-in loads Fax G3 Image files."
-argument_list|)
 argument_list|,
 literal|"Jochen Friedrich"
 argument_list|,

@@ -144,7 +144,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2931b7640103
+DECL|enum|__anon293321130103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -161,7 +161,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2931b7640208
+DECL|struct|__anon293321130208
 block|{
 DECL|member|interlace
 name|gint
@@ -188,7 +188,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2931b7640308
+DECL|struct|__anon293321130308
 block|{
 DECL|member|run
 name|gint
@@ -585,10 +585,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_gif_save"
 argument_list|,
-name|_
-argument_list|(
 literal|"saves files in Compuserve GIF file format"
-argument_list|)
 argument_list|,
 literal|"FIXME: write help for gif_save"
 argument_list|,

@@ -411,10 +411,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_pcx_load"
 argument_list|,
-name|_
-argument_list|(
 literal|"Loads files in Zsoft PCX file format"
-argument_list|)
 argument_list|,
 literal|"FIXME: write help for pcx_load"
 argument_list|,
@@ -443,10 +440,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_pcx_save"
 argument_list|,
-name|_
-argument_list|(
 literal|"Saves files in ZSoft PCX file format"
-argument_list|)
 argument_list|,
 literal|"FIXME: write help for pcx_save"
 argument_list|,
@@ -1172,7 +1166,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon278496040108
+DECL|struct|__anon274251620108
 block|{
 DECL|member|manufacturer
 name|guint8

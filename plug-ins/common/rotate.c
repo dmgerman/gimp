@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fa512a0108
+DECL|struct|__anon2b06fcb90108
 block|{
 DECL|member|angle
 name|gint
@@ -97,7 +97,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fa512a0208
+DECL|struct|__anon2b06fcb90208
 block|{
 DECL|member|ID
 name|gint32
@@ -421,15 +421,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_rotate"
 argument_list|,
-name|_
-argument_list|(
 literal|"Rotates a layer or the whole image by 90, 180 or 270 degrees"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"This plug-in does rotate the active layer or the whole image clockwise by multiples of 90 degrees. When the whole image is choosen, the image is resized if necessary."
-argument_list|)
 argument_list|,
 name|PLUG_IN_AUTHOR
 argument_list|,
@@ -456,15 +450,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_layer_rot90"
 argument_list|,
-name|_
-argument_list|(
 literal|"Rotates the given layer 90 degrees clockwise."
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Rotates the given layer 90 degrees clockwise."
-argument_list|)
 argument_list|,
 name|PLUG_IN_AUTHOR
 argument_list|,
@@ -494,15 +482,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_layer_rot180"
 argument_list|,
-name|_
-argument_list|(
 literal|"Rotates the given layer 180 degrees."
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Rotates the given layer 180 degrees."
-argument_list|)
 argument_list|,
 name|PLUG_IN_AUTHOR
 argument_list|,
@@ -532,15 +514,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_layer_rot270"
 argument_list|,
-name|_
-argument_list|(
 literal|"Rotates the given layer 270 degrees clockwise."
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Rotates the given layer 270 degrees clockwise."
-argument_list|)
 argument_list|,
 name|PLUG_IN_AUTHOR
 argument_list|,
@@ -570,15 +546,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_image_rot90"
 argument_list|,
-name|_
-argument_list|(
 literal|"Rotates the given image 90 degrees clockwise."
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Rotates the given image 90 degrees clockwise."
-argument_list|)
 argument_list|,
 name|PLUG_IN_AUTHOR
 argument_list|,
@@ -608,15 +578,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_image_rot180"
 argument_list|,
-name|_
-argument_list|(
 literal|"Rotates the given image 180 degrees."
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Rotates the given image 180 degrees."
-argument_list|)
 argument_list|,
 name|PLUG_IN_AUTHOR
 argument_list|,
@@ -646,15 +610,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_image_rot270"
 argument_list|,
-name|_
-argument_list|(
 literal|"Rotates the given image 270 degrees clockwise."
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Rotates the given image 270 degrees clockwise."
-argument_list|)
 argument_list|,
 name|PLUG_IN_AUTHOR
 argument_list|,

@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af92d250108
+DECL|struct|__anon2a099cf90108
 block|{
 DECL|member|x
 DECL|member|y
@@ -130,7 +130,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af92d250208
+DECL|struct|__anon2a099cf90208
 block|{
 DECL|member|npts
 name|gint
@@ -152,7 +152,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af92d250308
+DECL|struct|__anon2a099cf90308
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -175,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af92d250408
+DECL|struct|__anon2a099cf90408
 block|{
 DECL|member|run
 name|gint
@@ -657,15 +657,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_cubism"
 argument_list|,
-name|_
-argument_list|(
 literal|"Convert the input drawable into a collection of rotated squares"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Help not yet written for this plug-in"
-argument_list|)
 argument_list|,
 literal|"Spencer Kimball& Tracy Scott"
 argument_list|,

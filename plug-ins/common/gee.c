@@ -578,15 +578,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_the_egg"
 argument_list|,
-name|_
-argument_list|(
 literal|"A big hello from the GIMP team!"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"FIXME: write help"
-argument_list|)
 argument_list|,
 literal|"Adam D. Moss<adam@gimp.org>"
 argument_list|,

@@ -97,7 +97,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afba3110108
+DECL|struct|__anon2b66cd410108
 block|{
 DECL|member|mask_size
 name|gdouble
@@ -116,7 +116,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afba3110208
+DECL|struct|__anon2b66cd410208
 block|{
 DECL|member|run
 name|gint
@@ -368,15 +368,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_oilify"
 argument_list|,
-name|_
-argument_list|(
 literal|"Modify the specified drawable to resemble an oil painting"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"This function performs the well-known oil-paint effect on the specified drawable.  The size of the input mask is specified by 'mask_size'."
-argument_list|)
 argument_list|,
 literal|"Torsten Martinsen"
 argument_list|,

@@ -62,7 +62,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298d571e0108
+DECL|struct|__anon294e052d0108
 block|{
 DECL|member|file_name
 name|gchar
@@ -347,10 +347,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_csource_save"
 argument_list|,
-name|_
-argument_list|(
 literal|"Dump image data in RGB(A) format for C source"
-argument_list|)
 argument_list|,
 literal|"FIXME: write help"
 argument_list|,

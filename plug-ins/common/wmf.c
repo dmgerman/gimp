@@ -4348,7 +4348,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3f11f50108
+DECL|struct|__anon29ffdd5c0108
 block|{
 DECL|member|scale
 name|double
@@ -4376,7 +4376,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3f11f50208
+DECL|struct|__anon29ffdd5c0208
 block|{
 DECL|member|run
 name|gint
@@ -4403,7 +4403,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3f11f50308
+DECL|struct|__anon29ffdd5c0308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -4424,7 +4424,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3f11f50403
+DECL|enum|__anon29ffdd5c0403
 block|{
 DECL|enumerator|OBJ_BITMAP
 name|OBJ_BITMAP
@@ -4455,7 +4455,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3f11f50508
+DECL|struct|__anon29ffdd5c0508
 block|{
 DECL|member|dummy
 name|int
@@ -4470,7 +4470,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3f11f50608
+DECL|struct|__anon29ffdd5c0608
 block|{
 DECL|member|color
 name|GdkColor
@@ -4497,7 +4497,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3f11f50708
+DECL|struct|__anon29ffdd5c0708
 block|{
 DECL|member|dummy
 name|int
@@ -4512,7 +4512,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3f11f50808
+DECL|struct|__anon29ffdd5c0808
 block|{
 DECL|member|color
 name|GdkColor
@@ -4539,7 +4539,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3f11f50908
+DECL|struct|__anon29ffdd5c0908
 block|{
 DECL|member|font
 name|GdkFont
@@ -4555,7 +4555,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3f11f50a08
+DECL|struct|__anon29ffdd5c0a08
 block|{
 DECL|member|dummy
 name|int
@@ -4570,14 +4570,14 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3f11f50b08
+DECL|struct|__anon29ffdd5c0b08
 block|{
 DECL|member|type
 name|ObjectType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2c3f11f50c0a
+DECL|union|__anon29ffdd5c0c0a
 block|{
 DECL|member|bitmap
 name|BitmapObject
@@ -4616,7 +4616,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3f11f50d08
+DECL|struct|__anon29ffdd5c0d08
 block|{
 DECL|member|gc
 name|GdkGC
@@ -4669,7 +4669,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3f11f50e08
+DECL|struct|__anon29ffdd5c0e08
 block|{
 DECL|member|pixmap
 name|GdkPixmap
@@ -4720,7 +4720,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3f11f50f08
+DECL|struct|__anon29ffdd5c0f08
 block|{
 DECL|member|valid
 name|gboolean
@@ -5601,10 +5601,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_wmf_load"
 argument_list|,
-name|_
-argument_list|(
 literal|"loads files of the Windows(tm) metafile file format"
-argument_list|)
 argument_list|,
 literal|"FIXME: write help for file_wmf_load"
 argument_list|,
@@ -5633,15 +5630,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_wmf_load_setargs"
 argument_list|,
-name|_
-argument_list|(
 literal|"set additional parameters for the procedure file_wmf_load"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"set additional parameters for the procedure file_wmf_load"
-argument_list|)
 argument_list|,
 literal|"Tor Lillqvist<tml@iki.fi>"
 argument_list|,

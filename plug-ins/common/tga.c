@@ -313,7 +313,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2ba654a70108
+DECL|struct|__anon2b3b8fa20108
 block|{
 DECL|member|extensionAreaOffset
 name|guint32
@@ -673,10 +673,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_tga_load"
 argument_list|,
-name|_
-argument_list|(
 literal|"Loads files of Targa file format"
-argument_list|)
 argument_list|,
 literal|"FIXME: write help for tga_load"
 argument_list|,
@@ -705,10 +702,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_tga_save"
 argument_list|,
-name|_
-argument_list|(
 literal|"saves files in the Targa file format"
-argument_list|)
 argument_list|,
 literal|"FIXME: write help for tga_save"
 argument_list|,

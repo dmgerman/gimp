@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b05a6a0108
+DECL|struct|__anon2c374e180108
 block|{
 DECL|member|shift_amount
 name|gint
@@ -117,7 +117,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b05a6a0208
+DECL|struct|__anon2c374e180208
 block|{
 DECL|member|run
 name|gint
@@ -412,15 +412,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_shift"
 argument_list|,
-name|_
-argument_list|(
 literal|"Shift the contents of the specified drawable"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Shifts the pixels of the specified drawable. Each row will be displaced a random value of pixels."
-argument_list|)
 argument_list|,
 literal|"Spencer Kimball and Peter Mattis, ported by Brian Degenhardt and Federico Mena Quintero"
 argument_list|,

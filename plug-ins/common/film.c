@@ -139,7 +139,7 @@ comment|/* to film_height (i.e. it should be a value from 0.0 to 1.0) */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b2766fa0108
+DECL|struct|__anon29acc3480108
 typedef|typedef
 struct|struct
 block|{
@@ -251,7 +251,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2766fa0208
+DECL|struct|__anon29acc3480208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -987,15 +987,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_film"
 argument_list|,
-name|_
-argument_list|(
 literal|"Compose several images to a roll film"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Compose several images to a roll film"
-argument_list|)
 argument_list|,
 literal|"Peter Kirchgessner"
 argument_list|,

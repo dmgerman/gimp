@@ -393,10 +393,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_gif_load"
 argument_list|,
-name|_
-argument_list|(
 literal|"loads files of Compuserve GIF file format"
-argument_list|)
 argument_list|,
 literal|"FIXME: write help for gif_load"
 argument_list|,
@@ -772,7 +769,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28bee3b90108
+DECL|struct|__anon296d87150108
 block|{
 DECL|member|Width
 name|unsigned
@@ -822,7 +819,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28bee3b90208
+DECL|struct|__anon296d87150208
 block|{
 DECL|member|transparent
 name|int

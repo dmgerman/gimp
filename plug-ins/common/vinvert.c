@@ -240,15 +240,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_vinvert"
 argument_list|,
-name|_
-argument_list|(
 literal|"Invert the 'value' component of an indexed/RGB image in HSV colorspace"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"This function takes an indexed/RGB image and inverts its 'value' in HSV space.  The upshot of this is that the color and saturation at any given point remains the same, but its brightness is effectively inverted.  Quite strange.  Sometimes produces unpleasant color artifacts on images from lossy sources (ie. JPEG)."
-argument_list|)
 argument_list|,
 literal|"Adam D. Moss (adam@foxbox.org)"
 argument_list|,

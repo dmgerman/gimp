@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274e046e0108
+DECL|struct|__anon2c06d9320108
 block|{
 DECL|member|x
 name|gfloat
@@ -117,7 +117,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274e046e0208
+DECL|struct|__anon2c06d9320208
 block|{
 DECL|member|run
 name|gint
@@ -132,7 +132,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274e046e0308
+DECL|struct|__anon2c06d9320308
 block|{
 DECL|member|deform_area_radius
 name|gint
@@ -1128,15 +1128,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_iwarp"
 argument_list|,
-name|_
-argument_list|(
 literal|"Interactive warping of the specified drawable"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Interactive warping of the specified drawable"
-argument_list|)
 argument_list|,
 literal|"Norbert Schmitz"
 argument_list|,

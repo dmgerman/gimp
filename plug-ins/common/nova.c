@@ -194,7 +194,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287ffab40108
+DECL|struct|__anon2b8d38d90108
 block|{
 DECL|member|xcenter
 DECL|member|ycenter
@@ -231,7 +231,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287ffab40208
+DECL|struct|__anon2b8d38d90208
 block|{
 DECL|member|run
 name|gint
@@ -246,7 +246,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287ffab40308
+DECL|struct|__anon2b8d38d90308
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -716,18 +716,12 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_nova"
 argument_list|,
-name|_
-argument_list|(
 literal|"Produce Supernova effect to the specified drawable"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"This plug-in produces an effect like a supernova burst. The "
 literal|"amount of the light effect is approximately in proportion to 1/r, "
 literal|"where r is the distance from the center of the star. It works with "
 literal|"RGB*, GRAY* image."
-argument_list|)
 argument_list|,
 literal|"Eiichi Takamori"
 argument_list|,

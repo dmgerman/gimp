@@ -121,7 +121,7 @@ DECL|macro|PLUG_IN_DESCRIPTION
 define|#
 directive|define
 name|PLUG_IN_DESCRIPTION
-value|_("Capture an image from a TWAIN datasource")
+value|"Capture an image from a TWAIN datasource"
 end_define
 
 begin_define
@@ -129,7 +129,7 @@ DECL|macro|PLUG_IN_HELP
 define|#
 directive|define
 name|PLUG_IN_HELP
-value|_("This plug-in will capture an image from a TWAIN datasource")
+value|"This plug-in will capture an image from a TWAIN datasource"
 end_define
 
 begin_define
@@ -510,7 +510,7 @@ comment|/* Currently unused... Eventually may be used  * to track dialog data.  
 end_comment
 
 begin_typedef
-DECL|struct|__anon279522740108
+DECL|struct|__anon27c95add0108
 typedef|typedef
 struct|struct
 block|{
@@ -1843,7 +1843,7 @@ comment|/* Data used to carry data between each of  * the callback function call
 end_comment
 
 begin_typedef
-DECL|struct|__anon279522740208
+DECL|struct|__anon27c95add0208
 typedef|typedef
 struct|struct
 block|{

@@ -141,7 +141,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4f5aee0108
+DECL|struct|__anon2c5a9a9c0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -164,7 +164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4f5aee0208
+DECL|struct|__anon2c5a9a9c0208
 block|{
 DECL|member|run
 name|gint
@@ -741,10 +741,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_unsharp_mask"
 argument_list|,
-name|_
-argument_list|(
 literal|"An unsharp mask filter"
-argument_list|)
 argument_list|,
 literal|""
 argument_list|,

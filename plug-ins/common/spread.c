@@ -82,7 +82,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3c5c9d0108
+DECL|struct|__anon2be181a40108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -101,7 +101,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3c5c9d0208
+DECL|struct|__anon2be181a40208
 block|{
 DECL|member|run
 name|gint
@@ -412,15 +412,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_spread"
 argument_list|,
-name|_
-argument_list|(
 literal|"Spread the contents of the specified drawable"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Spreads the pixels of the specified drawable.  Pixels are randomly moved to another location whose distance varies from the original by the horizontal and vertical spread amounts "
-argument_list|)
 argument_list|,
 literal|"Spencer Kimball and Peter Mattis, ported by Brian Degenhardt and Federico Mena Quintero"
 argument_list|,

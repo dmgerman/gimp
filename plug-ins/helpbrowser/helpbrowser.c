@@ -133,7 +133,7 @@ value|"help"
 end_define
 
 begin_enum
-DECL|enum|__anon2c2f45160103
+DECL|enum|__anon2bf45d620103
 enum|enum
 block|{
 DECL|enumerator|CONTENTS
@@ -149,7 +149,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2c2f45160203
+DECL|enum|__anon2bf45d620203
 enum|enum
 block|{
 DECL|enumerator|URL_UNKNOWN
@@ -181,7 +181,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2f45160308
+DECL|struct|__anon2bf45d620308
 block|{
 DECL|member|index
 name|gint
@@ -221,7 +221,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2f45160408
+DECL|struct|__anon2bf45d620408
 block|{
 DECL|member|title
 name|gchar
@@ -4972,16 +4972,10 @@ name|gimp_install_procedure
 argument_list|(
 name|GIMP_HELP_EXT_NAME
 argument_list|,
-name|_
-argument_list|(
 literal|"Browse the GIMP help pages"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"A small and simple HTML browser optimzed for "
 literal|"browsing the GIMP help pages."
-argument_list|)
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>, "
 literal|"Michael Natterer<mitschel@cs.tu-berlin.de>"

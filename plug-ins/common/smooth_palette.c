@@ -264,10 +264,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_smooth_palette"
 argument_list|,
-name|_
-argument_list|(
 literal|"derive smooth palette from image"
-argument_list|)
 argument_list|,
 literal|"help!"
 argument_list|,
@@ -299,7 +296,7 @@ block|}
 end_function
 
 begin_struct
-DECL|struct|__anon28e0cae90108
+DECL|struct|__anon27ce71ea0108
 specifier|static
 struct|struct
 block|{
