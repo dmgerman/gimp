@@ -6825,7 +6825,7 @@ condition|(
 operator|(
 name|kinks
 index|[
-name|i
+name|j
 index|]
 operator|.
 name|x
@@ -6863,8 +6863,8 @@ name|j
 expr_stmt|;
 block|}
 else|else
-operator|++
 name|j
+operator|++
 expr_stmt|;
 block|}
 name|iscissors
