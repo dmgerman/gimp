@@ -6466,7 +6466,7 @@ literal|"monitor-xresolution"
 argument_list|,
 literal|"monitor-yresolution"
 argument_list|,
-literal|"default-resolution_unit"
+name|NULL
 argument_list|,
 name|pixels_per_unit
 argument_list|,
@@ -7237,7 +7237,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27eab02c0108
+DECL|struct|__anon2b8b2b6b0108
 block|{
 DECL|member|label
 specifier|const
@@ -7394,7 +7394,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27eab02c0208
+DECL|struct|__anon2b8b2b6b0208
 block|{
 DECL|member|tree_label
 specifier|const
