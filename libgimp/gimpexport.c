@@ -59,7 +59,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0d506f0108
+DECL|struct|__anon29ead1120108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -619,6 +619,36 @@ name|N_
 argument_list|(
 literal|"Flatten Image"
 argument_list|)
+block|}
+block|,
+literal|0
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|export_action_merge_flat
+specifier|static
+name|ExportAction
+name|export_action_merge_flat
+init|=
+block|{
+name|export_flatten
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"can't Handle Layers"
+argument_list|)
+block|,
+block|{
+name|N_
+argument_list|(
+literal|"Flatten Image"
+argument_list|)
+block|,
+name|NULL
 block|}
 block|,
 literal|0
@@ -2046,7 +2076,7 @@ argument_list|(
 name|actions
 argument_list|,
 operator|&
-name|export_action_flatten
+name|export_action_merge_flat
 argument_list|)
 expr_stmt|;
 block|}
