@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"appenv.h"
 end_include
 
@@ -4772,9 +4766,14 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/*  Set the tip to be the RGB value  */
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|ttbuf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|ttbuf
+argument_list|)
 argument_list|,
 literal|"[%3d,%3d,%3d]"
 argument_list|,

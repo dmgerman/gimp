@@ -43,7 +43,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279bee590103
+DECL|enum|__anon2a3cadb00103
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -78,21 +78,6 @@ name|GtkWidget
 modifier|*
 name|shell
 decl_stmt|;
-DECL|member|cyan_red_text
-name|GtkWidget
-modifier|*
-name|cyan_red_text
-decl_stmt|;
-DECL|member|magenta_green_text
-name|GtkWidget
-modifier|*
-name|magenta_green_text
-decl_stmt|;
-DECL|member|yellow_blue_text
-name|GtkWidget
-modifier|*
-name|yellow_blue_text
-decl_stmt|;
 DECL|member|cyan_red_data
 name|GtkAdjustment
 modifier|*
@@ -118,21 +103,21 @@ name|ImageMap
 name|image_map
 decl_stmt|;
 DECL|member|cyan_red
-name|double
+name|gdouble
 name|cyan_red
 index|[
 literal|3
 index|]
 decl_stmt|;
 DECL|member|magenta_green
-name|double
+name|gdouble
 name|magenta_green
 index|[
 literal|3
 index|]
 decl_stmt|;
 DECL|member|yellow_blue
-name|double
+name|gdouble
 name|yellow_blue
 index|[
 literal|3
@@ -160,15 +145,15 @@ literal|256
 index|]
 decl_stmt|;
 DECL|member|preserve_luminosity
-name|gint
+name|gboolean
 name|preserve_luminosity
 decl_stmt|;
 DECL|member|preview
-name|gint
+name|gboolean
 name|preview
 decl_stmt|;
 DECL|member|application_mode
-name|gint
+name|TransferMode
 name|application_mode
 decl_stmt|;
 block|}
@@ -176,7 +161,7 @@ struct|;
 end_struct
 
 begin_comment
-comment|/*  by_color select functions  */
+comment|/*  color balance functions  */
 end_comment
 
 begin_function_decl
@@ -195,6 +180,7 @@ name|tools_free_color_balance
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -205,6 +191,7 @@ name|color_balance_initialize
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -215,12 +202,15 @@ name|color_balance
 parameter_list|(
 name|PixelRegion
 modifier|*
+name|srcPR
 parameter_list|,
 name|PixelRegion
 modifier|*
+name|destPR
 parameter_list|,
 name|void
 modifier|*
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -231,6 +221,7 @@ name|color_balance_create_lookup_tables
 parameter_list|(
 name|ColorBalanceDialog
 modifier|*
+name|cbd
 parameter_list|)
 function_decl|;
 end_function_decl
