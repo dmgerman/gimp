@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpconfig-params.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp.h"
 end_include
 
@@ -77,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5691860103
+DECL|enum|__anon2b37c2b50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -347,24 +353,19 @@ name|get_description
 operator|=
 name|gimp_tool_info_get_description
 expr_stmt|;
-name|g_object_class_install_property
+name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_VISIBLE
 argument_list|,
-name|g_param_spec_boolean
-argument_list|(
 literal|"visible"
-argument_list|,
-name|NULL
 argument_list|,
 name|NULL
 argument_list|,
 name|TRUE
 argument_list|,
-name|G_PARAM_READWRITE
-argument_list|)
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
