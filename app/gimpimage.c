@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpcolorspace.h"
 end_include
 
@@ -552,7 +558,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2944d0120103
+DECL|enum|__anon288ed5e20103
 enum|enum
 block|{
 DECL|enumerator|CLEAN

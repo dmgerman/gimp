@@ -50,6 +50,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -6140,7 +6146,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon29b80f310108
+DECL|struct|__anon2b78a8ab0108
 typedef|typedef
 struct|struct
 block|{
@@ -6525,7 +6531,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon29b80f310208
+DECL|struct|__anon2b78a8ab0208
 typedef|typedef
 struct|struct
 block|{
@@ -6877,7 +6883,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon29b80f310308
+DECL|struct|__anon2b78a8ab0308
 typedef|typedef
 struct|struct
 block|{
@@ -7207,7 +7213,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon29b80f310408
+DECL|struct|__anon2b78a8ab0408
 typedef|typedef
 struct|struct
 block|{
@@ -7365,7 +7371,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon29b80f310508
+DECL|struct|__anon2b78a8ab0508
 typedef|typedef
 struct|struct
 block|{

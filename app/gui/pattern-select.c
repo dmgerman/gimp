@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -2189,7 +2195,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae7205b0108
+DECL|struct|__anon2b9c0a380108
 block|{
 DECL|member|psp
 name|PatternSelect

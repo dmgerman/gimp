@@ -54,11 +54,17 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon27a402860103
+DECL|enum|__anon297bbd820103
 enum|enum
 block|{
 DECL|enumerator|DIRTY

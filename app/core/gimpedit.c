@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -108,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c502a180103
+DECL|enum|__anon2958100b0103
 block|{
 DECL|enumerator|PASTE
 name|PASTE

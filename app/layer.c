@@ -112,6 +112,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -144,7 +150,7 @@ comment|/* ick. */
 end_comment
 
 begin_enum
-DECL|enum|__anon2c3b43c30103
+DECL|enum|__anon2a439f9b0103
 enum|enum
 block|{
 DECL|enumerator|REMOVED

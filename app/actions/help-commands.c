@@ -246,6 +246,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -264,7 +270,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b32a7ce0108
+DECL|struct|__anon277ae8f00108
 block|{
 DECL|member|resize
 name|Resize

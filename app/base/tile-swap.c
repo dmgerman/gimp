@@ -136,12 +136,6 @@ endif|#
 directive|endif
 end_endif
 
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpintl.h"
-end_include
-
 begin_define
 DECL|macro|MAX_OPEN_SWAP_FILES
 define|#

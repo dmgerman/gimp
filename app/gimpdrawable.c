@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/parasite.h"
 end_include
 
@@ -76,7 +82,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon29d44a4b0103
+DECL|enum|__anon28c4cedb0103
 enum|enum
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW

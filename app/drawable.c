@@ -39,12 +39,6 @@ directive|include
 file|"undo.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpintl.h"
-end_include
-
 begin_function
 name|gint
 DECL|function|drawable_ID (GimpDrawable * drawable)

@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpchainbutton.h"
 end_include
 
@@ -54,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2964179a0108
+DECL|struct|__anon2c72f5f20108
 block|{
 DECL|member|dlg
 name|GtkWidget

@@ -57,12 +57,6 @@ directive|include
 file|"patterns.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpintl.h"
-end_include
-
 begin_define
 DECL|macro|context_return_if_fail (context)
 define|#
@@ -719,7 +713,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c74e4ca0103
+DECL|enum|__anon2952f6c40103
 block|{
 DECL|enumerator|ARG_0
 name|ARG_0
@@ -826,7 +820,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c74e4ca0203
+DECL|enum|__anon2952f6c40203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED

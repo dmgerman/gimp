@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -5204,7 +5210,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3bca8d0108
+DECL|struct|__anon28b65ca70108
 block|{
 DECL|member|bsp
 name|BrushSelect

@@ -75,12 +75,6 @@ directive|include
 file|"tile_manager_pvt.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpintl.h"
-end_include
-
 begin_define
 DECL|macro|WAITING
 define|#

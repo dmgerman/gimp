@@ -144,12 +144,6 @@ endif|#
 directive|endif
 end_endif
 
-begin_include
-include|#
-directive|include
-file|"libgimp/stdplugins-intl.h"
-end_include
-
 begin_comment
 comment|/* The `emacs' switch turns on certain matching commands    that make sense only in Emacs. */
 end_comment
@@ -1620,7 +1614,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bcc0d260103
+DECL|enum|__anon2779c3420103
 block|{
 DECL|enumerator|no_op
 name|no_op
@@ -3717,106 +3711,55 @@ name|re_error_msgid
 index|[]
 init|=
 block|{
-name|N_
-argument_list|(
 literal|"Success"
-argument_list|)
 block|,
 comment|/* REG_NOERROR */
-name|N_
-argument_list|(
 literal|"No match"
-argument_list|)
 block|,
 comment|/* REG_NOMATCH */
-name|N_
-argument_list|(
 literal|"Invalid regular expression"
-argument_list|)
 block|,
 comment|/* REG_BADPAT */
-name|N_
-argument_list|(
 literal|"Invalid collation character"
-argument_list|)
 block|,
 comment|/* REG_ECOLLATE */
-name|N_
-argument_list|(
 literal|"Invalid character class name"
-argument_list|)
 block|,
 comment|/* REG_ECTYPE */
-name|N_
-argument_list|(
 literal|"Trailing backslash"
-argument_list|)
 block|,
 comment|/* REG_EESCAPE */
-name|N_
-argument_list|(
 literal|"Invalid back reference"
-argument_list|)
 block|,
 comment|/* REG_ESUBREG */
-name|N_
-argument_list|(
 literal|"Unmatched [ or [^"
-argument_list|)
 block|,
 comment|/* REG_EBRACK */
-name|N_
-argument_list|(
 literal|"Unmatched ( or \\("
-argument_list|)
 block|,
 comment|/* REG_EPAREN */
-name|N_
-argument_list|(
 literal|"Unmatched \\{"
-argument_list|)
 block|,
 comment|/* REG_EBRACE */
-name|N_
-argument_list|(
 literal|"Invalid content of \\{\\}"
-argument_list|)
 block|,
 comment|/* REG_BADBR */
-name|N_
-argument_list|(
 literal|"Invalid range end"
-argument_list|)
 block|,
 comment|/* REG_ERANGE */
-name|N_
-argument_list|(
 literal|"Memory exhausted"
-argument_list|)
 block|,
 comment|/* REG_ESPACE */
-name|N_
-argument_list|(
 literal|"Invalid preceding regular expression"
-argument_list|)
 block|,
 comment|/* REG_BADRPT */
-name|N_
-argument_list|(
 literal|"Premature end of regular expression"
-argument_list|)
 block|,
 comment|/* REG_EEND */
-name|N_
-argument_list|(
 literal|"Regular expression too big"
-argument_list|)
 block|,
 comment|/* REG_ESIZE */
-name|N_
-argument_list|(
 literal|"Unmatched ) or \\)"
-argument_list|)
 block|,
 comment|/* REG_ERPAREN */
 block|}
@@ -4017,7 +3960,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcc0d260208
+DECL|struct|__anon2779c3420208
 block|{
 DECL|member|stack
 name|fail_stack_elt_t
@@ -4124,7 +4067,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcc0d260308
+DECL|struct|__anon2779c3420308
 block|{
 DECL|member|stack
 name|fail_stack_elt_t
@@ -4587,14 +4530,14 @@ end_comment
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2bcc0d26040a
+DECL|union|__anon2779c342040a
 block|{
 DECL|member|word
 name|fail_stack_elt_t
 name|word
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2bcc0d260508
+DECL|struct|__anon2779c3420508
 block|{
 comment|/* This field is one if this group can match the empty string,          zero if not.  If not yet determined,  `MATCH_NULL_UNSET_VALUE'.  */
 DECL|macro|MATCH_NULL_UNSET_VALUE
@@ -5339,7 +5282,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcc0d260608
+DECL|struct|__anon2779c3420608
 block|{
 DECL|member|begalt_offset
 name|pattern_offset_t
@@ -5370,7 +5313,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcc0d260708
+DECL|struct|__anon2779c3420708
 block|{
 DECL|member|stack
 name|compile_stack_elt_t
@@ -17920,8 +17863,6 @@ return|return
 name|NULL
 return|;
 return|return
-name|gettext
-argument_list|(
 name|re_error_msgid
 index|[
 operator|(
@@ -17929,7 +17870,6 @@ name|int
 operator|)
 name|ret
 index|]
-argument_list|)
 return|;
 block|}
 end_function
@@ -18006,13 +17946,7 @@ operator|.
 name|buffer
 condition|)
 return|return
-name|gettext
-argument_list|(
-name|_
-argument_list|(
 literal|"No previous regular expression"
-argument_list|)
-argument_list|)
 return|;
 return|return
 literal|0
@@ -18049,8 +17983,6 @@ operator|==
 name|NULL
 condition|)
 return|return
-name|gettext
-argument_list|(
 name|re_error_msgid
 index|[
 operator|(
@@ -18058,7 +17990,6 @@ name|int
 operator|)
 name|REG_ESPACE
 index|]
-argument_list|)
 return|;
 name|re_comp_buf
 operator|.
@@ -18090,8 +18021,6 @@ operator|==
 name|NULL
 condition|)
 return|return
-name|gettext
-argument_list|(
 name|re_error_msgid
 index|[
 operator|(
@@ -18099,7 +18028,6 @@ name|int
 operator|)
 name|REG_ESPACE
 index|]
-argument_list|)
 return|;
 block|}
 comment|/* Since `re_exec' always passes NULL for the `regs' argument, we      don't need to initialize the pattern buffer fields which affect it.  */
@@ -18141,8 +18069,6 @@ operator|(
 name|char
 operator|*
 operator|)
-name|gettext
-argument_list|(
 name|re_error_msgid
 index|[
 operator|(
@@ -18150,7 +18076,6 @@ name|int
 operator|)
 name|ret
 index|]
-argument_list|)
 return|;
 block|}
 end_function
@@ -18829,13 +18754,10 @@ argument_list|()
 expr_stmt|;
 name|msg
 operator|=
-name|gettext
-argument_list|(
 name|re_error_msgid
 index|[
 name|errcode
 index|]
-argument_list|)
 expr_stmt|;
 name|msg_size
 operator|=

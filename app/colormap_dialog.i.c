@@ -86,6 +86,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -5233,7 +5239,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fc85fb0108
+DECL|struct|__anon295310f90108
 block|{
 DECL|member|def
 name|GimpImage

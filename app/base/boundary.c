@@ -33,12 +33,6 @@ directive|include
 file|"tile.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpintl.h"
-end_include
-
 begin_comment
 comment|/* half intensity for mask */
 end_comment

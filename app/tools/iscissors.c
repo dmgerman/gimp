@@ -140,12 +140,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpmath.h"
 end_include
 
@@ -253,7 +247,7 @@ comment|/*  The possible states...  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon289650540103
+DECL|enum|__anon29c829fb0103
 typedef|typedef
 enum|enum
 block|{
@@ -279,7 +273,7 @@ comment|/*  The possible drawing states...  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon289650540203
+DECL|enum|__anon29c829fb0203
 typedef|typedef
 enum|enum
 block|{

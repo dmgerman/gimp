@@ -43,12 +43,6 @@ begin_comment
 comment|/* ick. */
 end_comment
 
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpintl.h"
-end_include
-
 begin_function_decl
 specifier|static
 name|int

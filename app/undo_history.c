@@ -52,6 +52,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -88,7 +94,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2945c1b70108
+DECL|struct|__anon29f418680108
 block|{
 DECL|member|gimage
 name|GImage
@@ -139,7 +145,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2945c1b70208
+DECL|struct|__anon29f418680208
 block|{
 DECL|member|clist
 name|GtkCList

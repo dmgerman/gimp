@@ -87,12 +87,6 @@ directive|include
 file|"tools.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpintl.h"
-end_include
-
 begin_comment
 comment|/*  the pencil tool options  */
 end_comment

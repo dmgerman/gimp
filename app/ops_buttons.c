@@ -27,12 +27,6 @@ directive|include
 file|"ops_buttons.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpintl.h"
-end_include
-
 begin_function_decl
 specifier|static
 name|void
