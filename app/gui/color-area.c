@@ -996,6 +996,16 @@ argument_list|(
 name|color_select
 argument_list|)
 expr_stmt|;
+else|else
+name|gdk_window_raise
+argument_list|(
+name|color_select
+operator|->
+name|shell
+operator|->
+name|window
+argument_list|)
+expr_stmt|;
 name|color_select_set_color
 argument_list|(
 name|color_select
