@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/widgets-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"paint-funcs/paint-funcs.h"
 end_include
 
@@ -10116,7 +10122,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2984e5e40108
+DECL|struct|__anon275a8de20108
 block|{
 DECL|member|gimage
 name|GimpImage

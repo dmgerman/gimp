@@ -29,6 +29,29 @@ file|"apptypes.h"
 end_include
 
 begin_comment
+comment|/*  enums  */
+end_comment
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2a4578340103
+block|{
+DECL|enumerator|GIMP_DROP_NONE
+name|GIMP_DROP_NONE
+block|,
+DECL|enumerator|GIMP_DROP_ABOVE
+name|GIMP_DROP_ABOVE
+block|,
+DECL|enumerator|GIMP_DROP_BELOW
+name|GIMP_DROP_BELOW
+DECL|typedef|GimpDropType
+block|}
+name|GimpDropType
+typedef|;
+end_typedef
+
+begin_comment
 comment|/*  non-widget objects  */
 end_comment
 
