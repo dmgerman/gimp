@@ -79,7 +79,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon292d48c00103
+DECL|enum|__anon2c2410e90103
 block|{
 DECL|enumerator|GIMP_INTERPOLATION_NONE
 name|GIMP_INTERPOLATION_NONE
@@ -119,7 +119,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292d48c00203
+DECL|enum|__anon2c2410e90203
 block|{
 DECL|enumerator|GIMP_NORMAL_MODE
 name|GIMP_NORMAL_MODE
@@ -220,7 +220,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon292d48c00303
+DECL|enum|__anon2c2410e90303
 block|{
 DECL|enumerator|GIMP_SMALL_CHECKS
 name|GIMP_SMALL_CHECKS
@@ -267,7 +267,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon292d48c00403
+DECL|enum|__anon2c2410e90403
 block|{
 DECL|enumerator|GIMP_LIGHT_CHECKS
 name|GIMP_LIGHT_CHECKS
@@ -332,7 +332,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon292d48c00503
+DECL|enum|__anon2c2410e90503
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE
@@ -369,6 +369,46 @@ name|GimpHistogramChannel
 typedef|;
 end_typedef
 
+begin_define
+DECL|macro|GIMP_TYPE_TRANSFER_MODE
+define|#
+directive|define
+name|GIMP_TYPE_TRANSFER_MODE
+value|(gimp_transfer_mode_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_transfer_mode_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2c2410e90603
+block|{
+DECL|enumerator|GIMP_SHADOWS
+name|GIMP_SHADOWS
+block|,
+comment|/*< desc="Shadows">*/
+DECL|enumerator|GIMP_MIDTONES
+name|GIMP_MIDTONES
+block|,
+comment|/*< desc="Midtones">*/
+DECL|enumerator|GIMP_HIGHLIGHTS
+name|GIMP_HIGHLIGHTS
+comment|/*< desc="Highlights">*/
+DECL|typedef|GimpTransferMode
+block|}
+name|GimpTransferMode
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  * non-registered enums; register them if needed  */
 end_comment
@@ -377,7 +417,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon292d48c00603
+DECL|enum|__anon2c2410e90703
 block|{
 DECL|enumerator|GIMP_NORMAL_CONVOL
 name|GIMP_NORMAL_CONVOL
@@ -400,7 +440,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon292d48c00703
+DECL|enum|__anon2c2410e90803
 block|{
 DECL|enumerator|GIMP_VALUE_LUT
 name|GIMP_VALUE_LUT
@@ -425,6 +465,38 @@ comment|/*< skip>*/
 DECL|typedef|GimpChannelLutType
 block|}
 name|GimpChannelLutType
+typedef|;
+end_typedef
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< skip>*/
+DECL|enum|__anon2c2410e90903
+block|{
+DECL|enumerator|GIMP_ALL_HUES
+name|GIMP_ALL_HUES
+block|,
+DECL|enumerator|GIMP_RED_HUES
+name|GIMP_RED_HUES
+block|,
+DECL|enumerator|GIMP_YELLOW_HUES
+name|GIMP_YELLOW_HUES
+block|,
+DECL|enumerator|GIMP_GREEN_HUES
+name|GIMP_GREEN_HUES
+block|,
+DECL|enumerator|GIMP_CYAN_HUES
+name|GIMP_CYAN_HUES
+block|,
+DECL|enumerator|GIMP_BLUE_HUES
+name|GIMP_BLUE_HUES
+block|,
+DECL|enumerator|GIMP_MAGENTA_HUES
+name|GIMP_MAGENTA_HUES
+DECL|typedef|GimpHueRange
+block|}
+name|GimpHueRange
 typedef|;
 end_typedef
 

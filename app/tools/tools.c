@@ -476,17 +476,7 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|)
-block|{
-name|hue_saturation_free
-argument_list|()
-expr_stmt|;
-name|curves_free
-argument_list|()
-expr_stmt|;
-name|levels_free
-argument_list|()
-expr_stmt|;
-block|}
+block|{ }
 end_function
 
 end_unit

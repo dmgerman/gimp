@@ -6,23 +6,29 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__IMAGE_MAP_H__
+name|__GIMP_IMAGE_MAP_H__
 end_ifndef
 
 begin_define
-DECL|macro|__IMAGE_MAP_H__
+DECL|macro|__GIMP_IMAGE_MAP_H__
 define|#
 directive|define
-name|__IMAGE_MAP_H__
+name|__GIMP_IMAGE_MAP_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"gimpobject.h"
+end_include
+
 begin_typedef
-DECL|typedef|ImageMapApplyFunc
+DECL|typedef|GimpImageMapApplyFunc
 typedef|typedef
 name|void
 function_decl|(
 modifier|*
-name|ImageMapApplyFunc
+name|GimpImageMapApplyFunc
 function_decl|)
 parameter_list|(
 name|PixelRegion
@@ -39,22 +45,128 @@ parameter_list|)
 function_decl|;
 end_typedef
 
+begin_define
+DECL|macro|GIMP_TYPE_IMAGE_MAP
+define|#
+directive|define
+name|GIMP_TYPE_IMAGE_MAP
+value|(gimp_image_map_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_IMAGE_MAP (obj)
+define|#
+directive|define
+name|GIMP_IMAGE_MAP
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_IMAGE_MAP, GimpImageMap))
+end_define
+
+begin_define
+DECL|macro|GIMP_IMAGE_MAP_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IMAGE_MAP_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_IMAGE_MAP, GimpImageMapClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_IMAGE_MAP (obj)
+define|#
+directive|define
+name|GIMP_IS_IMAGE_MAP
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_IMAGE_MAP))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_IMAGE_MAP_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_IMAGE_MAP_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_IMAGE_MAP))
+end_define
+
+begin_define
+DECL|macro|GIMP_IMAGE_MAP_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_IMAGE_MAP_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_IMAGE_MAP, GimpImageMapClass))
+end_define
+
+begin_typedef
+DECL|typedef|GimpImageMapClass
+typedef|typedef
+name|struct
+name|_GimpImageMapClass
+name|GimpImageMapClass
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpImageMapClass
+struct|struct
+name|_GimpImageMapClass
+block|{
+DECL|member|parent_class
+name|GimpObjectClass
+name|parent_class
+decl_stmt|;
+DECL|member|flush
+name|void
+function_decl|(
+modifier|*
+name|flush
+function_decl|)
+parameter_list|(
+name|GimpImageMap
+modifier|*
+name|image_map
+parameter_list|)
+function_decl|;
+block|}
+struct|;
+end_struct
+
 begin_comment
 comment|/*  Image Map functions  */
 end_comment
 
 begin_comment
-comment|/*  Successive image map apply functions can be called, but eventually  *  MUST be followed with an image_map_commit or an image_map_abort call  *  The image map is no longer valid after a call to commit or abort.  */
+comment|/*  Successive image_map_apply functions can be called, but eventually  *  MUST be followed with an image_map_commit or an image_map_abort call  *  The image map is no longer valid after a call to commit or abort.  */
 end_comment
 
+begin_decl_stmt
+name|GType
+name|gimp_image_map_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
 begin_function_decl
-name|ImageMap
+name|GimpImageMap
 modifier|*
-name|image_map_create
+name|gimp_image_map_new
 parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
+name|gboolean
+name|interactive
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -65,13 +177,13 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|image_map_apply
+name|gimp_image_map_apply
 parameter_list|(
-name|ImageMap
+name|GimpImageMap
 modifier|*
 name|image_map
 parameter_list|,
-name|ImageMapApplyFunc
+name|GimpImageMapApplyFunc
 name|apply_func
 parameter_list|,
 name|gpointer
@@ -82,9 +194,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|image_map_commit
+name|gimp_image_map_commit
 parameter_list|(
-name|ImageMap
+name|GimpImageMap
 modifier|*
 name|image_map
 parameter_list|)
@@ -93,9 +205,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|image_map_clear
+name|gimp_image_map_clear
 parameter_list|(
-name|ImageMap
+name|GimpImageMap
 modifier|*
 name|image_map
 parameter_list|)
@@ -104,9 +216,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|image_map_abort
+name|gimp_image_map_abort
 parameter_list|(
-name|ImageMap
+name|GimpImageMap
 modifier|*
 name|image_map
 parameter_list|)
@@ -116,9 +228,9 @@ end_function_decl
 begin_function_decl
 name|guchar
 modifier|*
-name|image_map_get_color_at
+name|gimp_image_map_get_color_at
 parameter_list|(
-name|ImageMap
+name|GimpImageMap
 modifier|*
 name|image_map
 parameter_list|,
@@ -137,7 +249,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __IMAGE_MAP_H__ */
+comment|/* __GIMP_IMAGE_MAP_H__ */
 end_comment
 
 end_unit

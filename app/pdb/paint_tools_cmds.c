@@ -40,7 +40,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-enums.h"
+file|"base/base-enums.h"
 end_include
 
 begin_include

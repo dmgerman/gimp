@@ -112,6 +112,21 @@ DECL|member|parent_instance
 name|GimpImageMapTool
 name|parent_instance
 decl_stmt|;
+DECL|member|levels
+name|gint
+name|levels
+decl_stmt|;
+DECL|member|lut
+name|GimpLut
+modifier|*
+name|lut
+decl_stmt|;
+comment|/*  dialog  */
+DECL|member|levels_data
+name|GtkAdjustment
+modifier|*
+name|levels_data
+decl_stmt|;
 block|}
 struct|;
 end_struct

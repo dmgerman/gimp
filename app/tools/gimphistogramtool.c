@@ -214,11 +214,6 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-DECL|member|image_map
-name|ImageMap
-modifier|*
-name|image_map
-decl_stmt|;
 DECL|member|channel
 name|gint
 name|channel
@@ -1736,7 +1731,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-name|GTK_SHADOW_ETCHED_IN
+name|GTK_SHADOW_IN
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1855,7 +1850,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-name|GTK_SHADOW_ETCHED_IN
+name|GTK_SHADOW_IN
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
