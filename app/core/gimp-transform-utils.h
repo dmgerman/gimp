@@ -18,6 +18,23 @@ end_define
 
 begin_function_decl
 name|void
+name|gimp_drawable_transform_matrix_flip
+parameter_list|(
+name|GimpOrientationType
+name|flip_type
+parameter_list|,
+name|gdouble
+name|axis
+parameter_list|,
+name|GimpMatrix3
+modifier|*
+name|result
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_drawable_transform_matrix_rotate
 parameter_list|(
 name|gint
