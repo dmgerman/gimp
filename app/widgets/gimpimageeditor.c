@@ -391,7 +391,7 @@ argument_list|)
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|NULL
 decl_stmt|;
@@ -422,6 +422,7 @@ if|if
 condition|(
 name|context
 condition|)
+block|{
 name|g_signal_connect_swapped
 argument_list|(
 name|context
@@ -436,11 +437,19 @@ argument_list|,
 name|editor
 argument_list|)
 expr_stmt|;
+name|image
+operator|=
+name|gimp_context_get_image
+argument_list|(
+name|context
+argument_list|)
+expr_stmt|;
+block|}
 name|gimp_image_editor_set_image
 argument_list|(
 name|editor
 argument_list|,
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 block|}
