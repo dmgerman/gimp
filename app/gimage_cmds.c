@@ -14509,9 +14509,9 @@ block|{
 block|{
 name|PDB_IMAGE
 block|,
-literal|"drawable"
+literal|"image"
 block|,
-literal|"the drawable"
+literal|"the image"
 block|}
 block|}
 decl_stmt|;
