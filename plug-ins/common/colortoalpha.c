@@ -66,7 +66,7 @@ value|20
 end_define
 
 begin_typedef
-DECL|struct|__anon28a1f4230108
+DECL|struct|__anon2bb2318c0108
 typedef|typedef
 struct|struct
 block|{
@@ -84,7 +84,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28a1f4230208
+DECL|struct|__anon2bb2318c0208
 typedef|typedef
 struct|struct
 block|{
@@ -99,7 +99,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28a1f4230308
+DECL|struct|__anon2bb2318c0308
 typedef|typedef
 struct|struct
 block|{
@@ -417,7 +417,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/Color To Alpha..."
+literal|"<Image>/Filters/Colors/Color to Alpha..."
 argument_list|)
 argument_list|,
 literal|"RGBA"
@@ -2003,6 +2003,16 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|gtk_table_set_col_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
 name|label
 operator|=
 name|gtk_label_new
@@ -2011,6 +2021,18 @@ name|_
 argument_list|(
 literal|"From:"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+literal|1.0
+argument_list|,
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach_defaults
@@ -2042,7 +2064,7 @@ name|gimp_color_button_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Color To Alpha Color Picker"
+literal|"Color to Alpha Color Picker"
 argument_list|)
 argument_list|,
 name|PRV_WIDTH
@@ -2073,7 +2095,7 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
-name|GTK_EXPAND
+name|GTK_FILL
 argument_list|,
 name|GTK_SHRINK
 argument_list|,
@@ -2101,6 +2123,18 @@ name|_
 argument_list|(
 literal|"to alpha"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach_defaults

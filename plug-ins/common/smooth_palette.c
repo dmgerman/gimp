@@ -255,7 +255,7 @@ literal|"Scott Draves"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Image>/Filters/Colors/SmoothPalette..."
+literal|"<Image>/Filters/Colors/Smooth Palette..."
 argument_list|,
 literal|"RGB*"
 argument_list|,
@@ -274,7 +274,7 @@ block|}
 end_function
 
 begin_struct
-DECL|struct|__anon2c829d9c0108
+DECL|struct|__anon2a247bac0108
 specifier|static
 struct|struct
 block|{

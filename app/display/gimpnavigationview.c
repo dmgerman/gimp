@@ -196,7 +196,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bab17ea0103
+DECL|enum|__anon2b0acaa70103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -6136,7 +6136,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Window Navigation:%s-%d.%d"
+literal|"Navigation: %s-%d.%d"
 argument_list|)
 argument_list|,
 name|title

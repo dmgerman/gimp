@@ -1670,7 +1670,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Window Info:%s-%d.%d"
+literal|"Info: %s-%d.%d"
 argument_list|)
 argument_list|,
 name|title
