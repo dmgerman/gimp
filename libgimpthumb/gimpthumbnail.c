@@ -244,7 +244,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b761440103
+DECL|enum|__anon2950f7620103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2138,15 +2138,11 @@ name|thumbnail
 operator|->
 name|image_filename
 operator|=
-name|g_filename_from_uri
+name|_gimp_thumb_filename_from_uri
 argument_list|(
 name|thumbnail
 operator|->
 name|image_uri
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -4253,15 +4249,11 @@ name|TRUE
 return|;
 name|filename
 operator|=
-name|g_filename_from_uri
+name|_gimp_thumb_filename_from_uri
 argument_list|(
 name|thumbnail
 operator|->
 name|image_uri
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 if|if

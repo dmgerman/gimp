@@ -213,6 +213,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gchar
+modifier|*
+name|_gimp_thumb_filename_from_uri
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|uri
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro

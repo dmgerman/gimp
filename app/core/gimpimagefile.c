@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298dc9330103
+DECL|enum|__anon2973caab0103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -2136,7 +2136,7 @@ name|description
 operator|=
 name|_
 argument_list|(
-literal|"Remote image"
+literal|"Remote File"
 argument_list|)
 expr_stmt|;
 name|imagefile

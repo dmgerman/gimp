@@ -2369,6 +2369,15 @@ operator|->
 name|idle_id
 condition|)
 return|return;
+if|if
+condition|(
+name|thumb
+operator|->
+name|image_state
+operator|==
+name|GIMP_THUMB_STATE_REMOTE
+condition|)
+return|return;
 switch|switch
 condition|(
 name|thumb
