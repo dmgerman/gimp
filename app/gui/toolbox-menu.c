@@ -1169,6 +1169,13 @@ argument_list|,
 name|ui_path
 argument_list|)
 expr_stmt|;
+name|plug_in_menus_create2
+argument_list|(
+name|manager
+argument_list|,
+name|ui_path
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

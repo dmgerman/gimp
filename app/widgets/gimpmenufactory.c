@@ -1257,6 +1257,10 @@ argument_list|(
 name|factory
 operator|->
 name|gimp
+argument_list|,
+name|entry
+operator|->
+name|identifier
 argument_list|)
 expr_stmt|;
 name|gtk_ui_manager_set_add_tearoffs
