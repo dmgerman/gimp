@@ -1342,7 +1342,7 @@ name|mode
 operator|=
 name|INCREMENTAL
 expr_stmt|;
-name|color_area_with_pixmap
+name|paint_core_color_area_with_pixmap
 argument_list|(
 name|paint_core
 argument_list|,
@@ -1351,6 +1351,8 @@ argument_list|,
 name|drawable
 argument_list|,
 name|area
+argument_list|,
+name|scale
 argument_list|,
 name|SOFT
 argument_list|)

@@ -542,7 +542,7 @@ argument_list|)
 condition|)
 block|{
 comment|/* if its a pixmap, do pixmap stuff */
-name|color_area_with_pixmap
+name|paint_core_color_area_with_pixmap
 argument_list|(
 name|paint_core
 argument_list|,
@@ -551,6 +551,8 @@ argument_list|,
 name|drawable
 argument_list|,
 name|area
+argument_list|,
+name|scale
 argument_list|,
 name|HARD
 argument_list|)
