@@ -2328,6 +2328,13 @@ name|PixelRegion
 modifier|*
 parameter_list|,
 name|gint16
+name|xradius
+parameter_list|,
+name|gint16
+name|yradius
+parameter_list|,
+name|int
+name|edge_lock
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2340,6 +2347,10 @@ name|PixelRegion
 modifier|*
 parameter_list|,
 name|gint16
+name|xradius
+parameter_list|,
+name|gint16
+name|yradius
 parameter_list|)
 function_decl|;
 end_function_decl
