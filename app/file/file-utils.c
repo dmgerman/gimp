@@ -2307,7 +2307,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Thumbnail doesn't have the 'P7 332' header."
+literal|"Thumbnail does not have the 'P7 332' header."
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -2492,7 +2492,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Thumbnail is of funky depth."
+literal|"Thumbnail depth is incorrect."
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -2537,7 +2537,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Thumbnail size bad.  Corrupted?"
+literal|"Thumbnail size is bad.  Corrupted?"
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -3283,7 +3283,9 @@ break|break;
 default|default:
 name|g_warning
 argument_list|(
-literal|"UNKNOWN GIMAGE TYPE IN THUMBNAIL SAVE"
+literal|"%s: Unknown image type."
+argument_list|,
+name|G_STRLOC
 argument_list|)
 expr_stmt|;
 break|break;
