@@ -314,21 +314,10 @@ name|GIMP_CURSOR_FORMAT_PIXBUF
 block|,
 name|N_
 argument_list|(
-literal|"RGBA"
+literal|"Fancy"
 argument_list|)
 block|,
 literal|"pixbuf"
-block|}
-block|,
-block|{
-name|GIMP_CURSOR_FORMAT_PIXBUF_PREMULTIPLY
-block|,
-name|N_
-argument_list|(
-literal|"RGBA Premultiplied"
-argument_list|)
-block|,
-literal|"pixbuf-premultiply"
 block|}
 block|,
 block|{

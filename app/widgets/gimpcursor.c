@@ -2290,11 +2290,25 @@ argument_list|,
 literal|200
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: remove this hack as soon as we depend on GTK+ 2.4.4
+endif|#
+directive|endif
+comment|/*  premultiply the cursor pixels manually for GTK+< 2.4.4  */
 if|if
 condition|(
-name|cursor_format
-operator|==
-name|GIMP_CURSOR_FORMAT_PIXBUF_PREMULTIPLY
+name|gtk_check_version
+argument_list|(
+literal|2
+argument_list|,
+literal|4
+argument_list|,
+literal|4
+argument_list|)
 condition|)
 block|{
 name|guint
