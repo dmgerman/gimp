@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27867a190103
+DECL|enum|__anon27ef37210103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -237,6 +237,18 @@ argument_list|)
 expr_stmt|;
 name|klass
 operator|->
+name|name
+operator|=
+literal|"EEK"
+expr_stmt|;
+name|klass
+operator|->
+name|help_page
+operator|=
+literal|"help_yourself.html"
+expr_stmt|;
+name|klass
+operator|->
 name|clone
 operator|=
 name|NULL
@@ -268,6 +280,12 @@ expr_stmt|;
 name|klass
 operator|->
 name|configure_reset
+operator|=
+name|NULL
+expr_stmt|;
+name|klass
+operator|->
+name|changed
 operator|=
 name|NULL
 expr_stmt|;
