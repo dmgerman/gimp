@@ -283,6 +283,10 @@ name|GtkWidget
 modifier|*
 name|image_view
 decl_stmt|;
+name|gchar
+modifier|*
+name|tooltip
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_TOOLBOX
@@ -359,9 +363,14 @@ argument_list|(
 name|image_view
 argument_list|)
 expr_stmt|;
-name|gimp_help_set_help_data
+ifdef|#
+directive|ifdef
+name|GDK_WINDOWING_X11
+name|tooltip
+operator|=
+name|g_strdup_printf
 argument_list|(
-name|image_view
+literal|"%s\n%s"
 argument_list|,
 name|_
 argument_list|(
@@ -369,7 +378,40 @@ literal|"The active image.\n"
 literal|"Click to open the Image Dialog."
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
+literal|"Drag to an XDS enabled file-manager to "
+literal|"save the image."
+argument_list|)
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
+name|tooltip
+operator|=
+name|g_strdup
+argument_list|(
+name|_
+argument_list|(
+literal|"The active image.\n"
+literal|"Click to open the Image Dialog."
+argument_list|)
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
+name|gimp_help_set_help_data
+argument_list|(
+name|image_view
+argument_list|,
+name|tooltip
+argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|tooltip
 argument_list|)
 expr_stmt|;
 name|g_signal_connect_object
