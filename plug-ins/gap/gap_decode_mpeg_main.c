@@ -1278,7 +1278,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"file alreay exists:"
+literal|"file already exists:"
 argument_list|)
 argument_list|,
 literal|1

@@ -559,7 +559,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"You need to have gzip installed"
+literal|"You need to have gzip installed."
 argument_list|)
 argument_list|,
 literal|"Daniel Risacher"
