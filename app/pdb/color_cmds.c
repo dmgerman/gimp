@@ -124,6 +124,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpdrawable-histogram.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable-invert.h"
 end_include
 
@@ -1507,11 +1513,14 @@ name|hist
 operator|=
 name|gimp_histogram_new
 argument_list|(
+name|GIMP_BASE_CONFIG
+argument_list|(
 name|image
 operator|->
 name|gimp
 operator|->
 name|config
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_calculate_histogram

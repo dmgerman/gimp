@@ -6218,7 +6218,7 @@ block|{
 comment|/*  remove layer  */
 name|g_print
 argument_list|(
-literal|"undo_pop_layer: taking ownership, size += %d\n"
+literal|"undo_pop_layer: taking ownership, size += %u\n"
 argument_list|,
 name|gimp_object_get_memsize
 argument_list|(
@@ -6456,7 +6456,7 @@ block|{
 comment|/*  restore layer  */
 name|g_print
 argument_list|(
-literal|"undo_pop_layer: dropping ownership, size -= %d\n"
+literal|"undo_pop_layer: dropping ownership, size -= %u\n"
 argument_list|,
 name|gimp_object_get_memsize
 argument_list|(
