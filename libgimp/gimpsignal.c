@@ -14,28 +14,22 @@ comment|/* Courtesy of Austin Donnelly 06-04-2000 to address bug #2742 */
 end_comment
 
 begin_comment
-comment|/**   * gimp_signal_private:   * @signum: Selects signal to be handled see man 5 signal  * @gimp_sighandler:  Handler that maps to signum. Invoked by O/S.   *                    Handler gets signal that caused invocation.   * @sa_flags: preferences. OR'ed SA_<xxx>. See signal.h   *  * This function furnishes a workalike for signal(2) but  * which internally invokes sigaction(2) after certain  * sa_flags are set; these primarily to ensure restarting  * of interrupted system calls. See sigaction(2)  It is a   * aid to transition and not new development: that effort   * should employ sigaction directly. [gosgood 18.04.2000]   *  * Cause handler to be run when signum is delivered.  We  * use sigaction(2) rather than signal(2) so that we can control the  * signal hander's environment completely via sa_flags: some signal(2)  * implementations differ in their sematics, so we need to nail down  * exactly what we want. [austin 06.04.2000]  *  * Returns: A reference to a signal handling function  */
+comment|/**   * gimp_signal_private:   * @signum: Selects signal to be handled see man 5 signal (or man 7 signal)  * @handler: Handler that maps to signum. Invoked by O/S.   *           Handler gets signal that caused invocation. Corresponds  *           to the @sa_handler field of the @sigaction struct.  * @flags: Preferences. OR'ed SA_<xxx>. See man sigaction. Corresponds  *         to the @sa_flags field of the @sigaction struct.  *  * This function furnishes a workalike for signal(2) but  * which internally invokes sigaction(2) after certain  * sa_flags are set; these primarily to ensure restarting  * of interrupted system calls. See sigaction(2)  It is a   * aid to transition and not new development: that effort   * should employ sigaction directly. [gosgood 18.04.2000]   *  * Cause @handler to be run when @signum is delivered.  We  * use sigaction(2) rather than signal(2) so that we can control the  * signal handler's environment completely via @flags: some signal(2)  * implementations differ in their sematics, so we need to nail down  * exactly what we want. [austin 06.04.2000]  *  * Returns: A reference to the signal handling function which was  *          active before the call to gimp_signal_private().  */
 end_comment
 
 begin_function
-name|GimpRetSigType
-DECL|function|gimp_signal_private (gint signum,void (* gimp_sighandler)(gint),gint sa_flags)
+name|GimpSignalHandlerFunc
+DECL|function|gimp_signal_private (gint signum,GimpSignalHandlerFunc handler,gint flags)
 name|gimp_signal_private
 parameter_list|(
 name|gint
 name|signum
 parameter_list|,
-name|void
-function_decl|(
-modifier|*
-name|gimp_sighandler
-function_decl|)
-parameter_list|(
-name|gint
-parameter_list|)
+name|GimpSignalHandlerFunc
+name|handler
 parameter_list|,
 name|gint
-name|sa_flags
+name|flags
 parameter_list|)
 block|{
 name|gint
@@ -55,7 +49,7 @@ name|sa
 operator|.
 name|sa_handler
 operator|=
-name|gimp_sighandler
+name|handler
 expr_stmt|;
 comment|/*  Mask all signals while handler runs to avoid re-entrancy    *  problems.    */
 name|sigfillset
@@ -70,7 +64,7 @@ name|sa
 operator|.
 name|sa_flags
 operator|=
-name|sa_flags
+name|flags
 expr_stmt|;
 name|ret
 operator|=
@@ -99,6 +93,9 @@ name|signum
 argument_list|)
 expr_stmt|;
 return|return
+operator|(
+name|GimpSignalHandlerFunc
+operator|)
 name|osa
 operator|.
 name|sa_handler
