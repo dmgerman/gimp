@@ -375,6 +375,19 @@ name|idle_help
 init|=
 name|data
 decl_stmt|;
+name|GimpGuiConfig
+modifier|*
+name|config
+init|=
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|idle_help
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
@@ -417,23 +430,15 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-switch|switch
+if|if
 condition|(
-name|GIMP_GUI_CONFIG
-argument_list|(
-name|idle_help
-operator|->
-name|gimp
-operator|->
 name|config
-argument_list|)
 operator|->
 name|help_browser
+operator|==
+name|GIMP_HELP_BROWSER_GIMP
 condition|)
 block|{
-case|case
-name|GIMP_HELP_BROWSER_GIMP
-case|:
 if|if
 condition|(
 name|gimp_help_internal
@@ -443,23 +448,30 @@ operator|->
 name|gimp
 argument_list|)
 condition|)
-block|{
 name|procedure
 operator|=
 literal|"extension_gimp_help_browser_temp"
 expr_stmt|;
-break|break;
 block|}
-case|case
+if|if
+condition|(
+name|config
+operator|->
+name|help_browser
+operator|==
 name|GIMP_HELP_BROWSER_WEB_BROWSER
-case|:
+condition|)
+block|{
 comment|/*  FIXME: should check for procedure availability  */
 name|procedure
 operator|=
 literal|"plug_in_web_browser"
 expr_stmt|;
-break|break;
 block|}
+if|if
+condition|(
+name|procedure
+condition|)
 name|gimp_help_call
 argument_list|(
 name|idle_help
@@ -573,15 +585,15 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|ProcRecord
-modifier|*
-name|proc_rec
-decl_stmt|;
 specifier|static
 name|gboolean
 name|busy
 init|=
 name|FALSE
+decl_stmt|;
+name|ProcRecord
+modifier|*
+name|proc_rec
 decl_stmt|;
 if|if
 condition|(
@@ -606,9 +618,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|proc_rec
-operator|==
-name|NULL
 condition|)
 block|{
 name|Argument
@@ -628,20 +639,19 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|proc_rec
-operator|==
-name|NULL
 condition|)
 block|{
 name|GtkWidget
 modifier|*
-name|not_found
+name|dialog
 init|=
 name|gimp_query_boolean_box
 argument_list|(
 name|_
 argument_list|(
-literal|"Could not find GIMP Help Browser"
+literal|"Help browser not found"
 argument_list|)
 argument_list|,
 name|NULL
@@ -650,19 +660,18 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|FALSE
+name|GIMP_STOCK_WARNING
 argument_list|,
 name|_
 argument_list|(
-literal|"Could not find the GIMP Help Browser "
-literal|"procedure. It probably was not compiled "
-literal|"because you don't have GtkHtml2 "
-literal|"installed."
+literal|"Could not find GIMP help browser.\n\n"
+literal|"The GIMP help browser plug-in appears "
+literal|"to be missing from your installation."
 argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Use web browser instead"
+literal|"Use _web browser instead"
 argument_list|)
 argument_list|,
 name|GTK_STOCK_CANCEL
@@ -678,7 +687,7 @@ argument_list|)
 decl_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|not_found
+name|dialog
 argument_list|)
 expr_stmt|;
 name|gtk_main
@@ -689,18 +698,7 @@ operator|=
 name|FALSE
 expr_stmt|;
 return|return
-operator|(
-name|GIMP_GUI_CONFIG
-argument_list|(
-name|gimp
-operator|->
-name|config
-argument_list|)
-operator|->
-name|help_browser
-operator|!=
-name|GIMP_HELP_BROWSER_WEB_BROWSER
-operator|)
+name|FALSE
 return|;
 block|}
 name|args
@@ -777,20 +775,19 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|proc_rec
-operator|==
-name|NULL
 condition|)
 block|{
 name|GtkWidget
 modifier|*
-name|not_found
+name|dialog
 init|=
 name|gimp_query_boolean_box
 argument_list|(
 name|_
 argument_list|(
-literal|"Could not start GIMP Help Browser"
+literal|"Help browser doesn't start"
 argument_list|)
 argument_list|,
 name|NULL
@@ -799,11 +796,12 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|FALSE
+name|GIMP_STOCK_WARNING
 argument_list|,
 name|_
 argument_list|(
-literal|"Could not start the GIMP Help Browser."
+literal|"Could not start the GIMP help browser "
+literal|"plug-in."
 argument_list|)
 argument_list|,
 name|_
@@ -824,7 +822,7 @@ argument_list|)
 decl_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|not_found
+name|dialog
 argument_list|)
 expr_stmt|;
 name|gtk_main
@@ -835,18 +833,7 @@ operator|=
 name|FALSE
 expr_stmt|;
 return|return
-operator|(
-name|GIMP_GUI_CONFIG
-argument_list|(
-name|gimp
-operator|->
-name|config
-argument_list|)
-operator|->
-name|help_browser
-operator|!=
-name|GIMP_HELP_BROWSER_WEB_BROWSER
-operator|)
+name|FALSE
 return|;
 block|}
 name|busy
@@ -906,9 +893,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|proc_rec
-operator|==
-name|NULL
 condition|)
 block|{
 name|Argument
@@ -947,14 +933,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|proc_rec
-operator|==
-name|NULL
 condition|)
-block|{
 comment|/*  FIXME: error msg  */
 return|return;
-block|}
 name|n_domains
 operator|=
 name|plug_ins_help_domains
@@ -1103,14 +1086,7 @@ expr_stmt|;
 if|if
 condition|(
 name|proc_rec
-operator|==
-name|NULL
 condition|)
-block|{
-comment|/*  FIXME: error msg  */
-return|return;
-block|}
-else|else
 block|{
 name|Argument
 modifier|*

@@ -1184,7 +1184,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumb_find_thumb:  * @uri: an escaped URI  * @size: pointer to a #GimpThumbSize  *  * This function attempts to locate a thumbnail for the given  * @url. First it tries the size that is stored at @size. If no  * thumbnail of that size is found, it will look for a larger  * thumbnail, then falling back to a smaller size.  *  * If the user's thumbnail repository doesn't provide a thumbnail but  * a local thumbnail repository exists for the folder the image is  * located in, the same search is done among the local thumbnails.  *  * If a thumbnail is found, it's size is written to the variable  * pointer to by @size and the file location is returned.  *  * Return value: a newly allocated string in the encoding of the  *               filesystem or %NULL if no thumbnail for @uri was found  **/
+comment|/**  * gimp_thumb_find_thumb:  * @uri: an escaped URI  * @size: pointer to a #GimpThumbSize  *  * This function attempts to locate a thumbnail for the given  * @uri. First it tries the size that is stored at @size. If no  * thumbnail of that size is found, it will look for a larger  * thumbnail, then falling back to a smaller size.  *  * If the user's thumbnail repository doesn't provide a thumbnail but  * a local thumbnail repository exists for the folder the image is  * located in, the same search is done among the local thumbnails (if  * there are any).  *  * If a thumbnail is found, it's size is written to the variable  * pointer to by @size and the file location is returned.  *  * Return value: a newly allocated string in the encoding of the  *               filesystem or %NULL if no thumbnail for @uri was found  **/
 end_comment
 
 begin_function

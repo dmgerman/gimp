@@ -219,7 +219,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b68a4740103
+DECL|enum|__anon29615aa70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1745,7 +1745,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumbnail_set_from_thumb:  * @thumbnail: a #GimpThumbnail object  * @filename: filename of a local thumbnail file  * @error: return location for possible errors  *  * This function tries to load the thumbnail file pointed to by  * @filename and retrieves the URI of the original image file from  * it. This allows you to find the image file associated with a  * thumbnail file.  *  * Return value: %TRUE if the pixbuf could be loaded, %FALSE otherwise  **/
+comment|/**  * gimp_thumbnail_set_from_thumb:  * @thumbnail: a #GimpThumbnail object  * @filename: filename of a local thumbnail file  * @error: return location for possible errors  *  * This function tries to load the thumbnail file pointed to by  * @filename and retrieves the URI of the original image file from  * it. This allows you to find the image file associated with a  * thumbnail file.  *  * This will only work with thumbnails from the global thumbnail  * directory that contain a valid Thumb::URI tag.  *  * Return value: %TRUE if the pixbuf could be loaded, %FALSE otherwise  **/
 end_comment
 
 begin_function
