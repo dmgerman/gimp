@@ -75,6 +75,9 @@ parameter_list|,
 name|GimpVector2
 modifier|*
 name|points
+parameter_list|,
+name|gboolean
+name|new_polygon
 parameter_list|)
 function_decl|;
 end_function_decl
