@@ -345,7 +345,7 @@ name|image
 operator|=
 name|gtk_image_new_from_stock
 argument_list|(
-name|GTK_STOCK_SELECT_FONT
+name|GIMP_STOCK_FONT
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
