@@ -621,7 +621,7 @@ name|name
 operator|=
 name|_
 argument_list|(
-literal|"Triangle"
+literal|"_Triangle"
 argument_list|)
 expr_stmt|;
 name|selector_class

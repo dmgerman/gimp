@@ -633,7 +633,7 @@ name|name
 operator|=
 name|_
 argument_list|(
-literal|"Watercolor"
+literal|"_Watercolor"
 argument_list|)
 expr_stmt|;
 name|selector_class

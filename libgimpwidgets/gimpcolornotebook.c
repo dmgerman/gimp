@@ -595,7 +595,7 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|GIMP_COLOR_SELECTOR_GET_CLASS
 argument_list|(

@@ -117,7 +117,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c12c1a70103
+DECL|enum|__anon2a4299640103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -168,7 +168,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c12c1a70203
+DECL|enum|__anon2a4299640203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -279,11 +279,11 @@ literal|3
 index|]
 decl_stmt|;
 DECL|member|z_color_fill
-name|gint
+name|ColorSelectFillType
 name|z_color_fill
 decl_stmt|;
 DECL|member|xy_color_fill
-name|gint
+name|ColorSelectFillType
 name|xy_color_fill
 decl_stmt|;
 DECL|member|gc
@@ -585,6 +585,7 @@ modifier|*
 name|widget
 parameter_list|,
 name|ColorSelectFillType
+name|fill_type
 parameter_list|,
 specifier|const
 name|GimpHSV
@@ -965,7 +966,7 @@ name|selector_class
 operator|->
 name|name
 operator|=
-literal|"GIMP"
+literal|"_GIMP"
 expr_stmt|;
 name|selector_class
 operator|->
@@ -2102,6 +2103,8 @@ operator|/
 literal|255.0
 expr_stmt|;
 break|break;
+default|default:
+break|break;
 block|}
 switch|switch
 condition|(
@@ -2155,6 +2158,8 @@ operator|->
 name|rgb
 argument_list|)
 expr_stmt|;
+break|break;
+default|default:
 break|break;
 block|}
 block|}
@@ -2572,6 +2577,8 @@ operator|*
 literal|255.999
 argument_list|)
 expr_stmt|;
+break|break;
+default|default:
 break|break;
 block|}
 block|}
@@ -3644,7 +3651,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_select_image_fill (GtkWidget * preview,ColorSelectFillType type,const GimpHSV * hsv,const GimpRGB * rgb)
+DECL|function|gimp_color_select_image_fill (GtkWidget * preview,ColorSelectFillType fill_type,const GimpHSV * hsv,const GimpRGB * rgb)
 name|gimp_color_select_image_fill
 parameter_list|(
 name|GtkWidget
@@ -3652,7 +3659,7 @@ modifier|*
 name|preview
 parameter_list|,
 name|ColorSelectFillType
-name|type
+name|fill_type
 parameter_list|,
 specifier|const
 name|GimpHSV
@@ -3692,7 +3699,7 @@ name|update
 operator|=
 name|update_procs
 index|[
-name|type
+name|fill_type
 index|]
 expr_stmt|;
 name|csf
