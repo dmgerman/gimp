@@ -6,6 +6,87 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|<stdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<setjmp.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<jpeglib.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<jerror.h>
+end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_EXIF
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<libexif/exif-data.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* HAVE_EXIF */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimp.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpui.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"jpeg.h"
 end_include
 
@@ -718,9 +799,8 @@ comment|/*fallthrough*/
 default|default:
 name|g_message
 argument_list|(
-literal|"Don't know how to load JPEGs\n"
-literal|"with %d color channels\n"
-literal|"using colorspace %d (%d)"
+literal|"Don't know how to load JPEG images "
+literal|"with %d color channels, using colorspace %d (%d)."
 argument_list|,
 name|cinfo
 operator|.
@@ -1031,7 +1111,7 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
-literal|"Unknown density unit %d\nassuming dots per inch"
+literal|"Unknown density unit %d, assuming dots per inch."
 argument_list|,
 name|cinfo
 operator|.
@@ -1264,7 +1344,8 @@ break|break;
 default|default:
 name|g_warning
 argument_list|(
-literal|"JPEG - shouldn't have gotten here.\nReport to http://bugzilla.gnome.org/"
+literal|"JPEG - shouldn't have gotten here.\n"
+literal|"Report to http://bugzilla.gnome.org/"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1567,7 +1648,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae79dab0108
+DECL|struct|__anon27e5f58d0108
 block|{
 DECL|member|pub
 name|struct
@@ -2262,9 +2343,8 @@ comment|/*fallthrough*/
 default|default:
 name|g_message
 argument_list|(
-literal|"Don't know how to load JPEGs\n"
-literal|"with %d color channels\n"
-literal|"using colorspace %d (%d)"
+literal|"Don't know how to load JPEG images "
+literal|"with %d color channels, using colorspace %d (%d)."
 argument_list|,
 name|cinfo
 operator|.
@@ -2512,7 +2592,7 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
-literal|"Unknown density unit %d\nassuming dots per inch"
+literal|"Unknown density unit %d, assuming dots per inch."
 argument_list|,
 name|cinfo
 operator|.
