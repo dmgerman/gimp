@@ -20,13 +20,13 @@ begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 comment|/* Increment every time the protocol changes  */
-DECL|macro|GP_VERSION
+DECL|macro|GIMP_PROTOCOL_VERSION
 define|#
 directive|define
-name|GP_VERSION
+name|GIMP_PROTOCOL_VERSION
 value|0x000F
 name|enum
-DECL|enum|__anon27dfbe190103
+DECL|enum|__anon2c13c7c20103
 type|{
 DECL|enumerator|GP_QUIT
 name|GP_QUIT
@@ -296,7 +296,7 @@ name|guint32
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon27dfbe19020a
+DECL|union|__anon2c13c7c2020a
 block|{
 DECL|member|d_int32
 name|gint32
@@ -350,7 +350,7 @@ name|GimpRGB
 name|d_color
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27dfbe190308
+DECL|struct|__anon2c13c7c20308
 block|{
 DECL|member|x
 name|gint32
@@ -405,7 +405,7 @@ name|gint32
 name|d_path
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27dfbe190408
+DECL|struct|__anon2c13c7c20408
 block|{
 DECL|member|name
 name|gchar

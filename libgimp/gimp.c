@@ -339,7 +339,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291b2a050103
+DECL|enum|__anon297de3890103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -5056,7 +5056,7 @@ name|config
 operator|->
 name|version
 operator|<
-name|GP_VERSION
+name|GIMP_PROTOCOL_VERSION
 condition|)
 block|{
 name|g_message
@@ -5082,7 +5082,7 @@ name|config
 operator|->
 name|version
 operator|>
-name|GP_VERSION
+name|GIMP_PROTOCOL_VERSION
 condition|)
 block|{
 name|g_message

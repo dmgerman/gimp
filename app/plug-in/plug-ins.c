@@ -318,6 +318,12 @@ decl_stmt|;
 name|gdouble
 name|nth
 decl_stmt|;
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_GIMP
@@ -458,13 +464,33 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
 name|plug_in_rc_parse
 argument_list|(
 name|gimp
 argument_list|,
 name|filename
+argument_list|,
+operator|&
+name|error
+argument_list|)
+condition|)
+block|{
+name|g_message
+argument_list|(
+name|error
+operator|->
+name|message
 argument_list|)
 expr_stmt|;
+name|g_error_free
+argument_list|(
+name|error
+argument_list|)
+expr_stmt|;
+block|}
 comment|/*  Query any plug-ins that have changed since we last wrote out    *  the pluginrc file.    */
 call|(
 modifier|*
@@ -691,7 +717,7 @@ operator|.
 name|name
 argument_list|)
 expr_stmt|;
-comment|/* search the plugin list to see if any plugins had references to                 * the overridden_proc_def.                */
+comment|/* search the plugin list to see if any plugins had references to                * the overridden_proc_def.                */
 for|for
 control|(
 name|tmp2
@@ -3044,7 +3070,7 @@ name|types
 init|=
 literal|0
 decl_stmt|;
-comment|/*     *  If the plug_in registers with image_type == NULL or "", return 0    *  By doing so it won't be touched by plug_in_set_menu_sensitivity()     */
+comment|/*    *  If the plug_in registers with image_type == NULL or "", return 0    *  By doing so it won't be touched by plug_in_set_menu_sensitivity()    */
 if|if
 condition|(
 operator|!

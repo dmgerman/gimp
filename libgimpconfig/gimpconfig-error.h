@@ -19,23 +19,27 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2acbecf10103
+DECL|enum|__anon2ae4fe470103
 block|{
 DECL|enumerator|GIMP_CONFIG_ERROR_OPEN
 name|GIMP_CONFIG_ERROR_OPEN
 block|,
-comment|/*  open failed          */
+comment|/*  open failed                            */
 DECL|enumerator|GIMP_CONFIG_ERROR_OPEN_ENOENT
 name|GIMP_CONFIG_ERROR_OPEN_ENOENT
 block|,
-comment|/*  file does not exist  */
+comment|/*  file does not exist                    */
 DECL|enumerator|GIMP_CONFIG_ERROR_WRITE
 name|GIMP_CONFIG_ERROR_WRITE
 block|,
-comment|/*  write failed         */
+comment|/*  write failed                           */
 DECL|enumerator|GIMP_CONFIG_ERROR_PARSE
 name|GIMP_CONFIG_ERROR_PARSE
-comment|/*  parser error         */
+block|,
+comment|/*  parser error                           */
+DECL|enumerator|GIMP_CONFIG_ERROR_VERSION
+name|GIMP_CONFIG_ERROR_VERSION
+comment|/*  parser failed due to version mismatch  */
 DECL|typedef|GimpConfigError
 block|}
 name|GimpConfigError

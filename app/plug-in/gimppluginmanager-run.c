@@ -309,7 +309,7 @@ name|config
 operator|.
 name|version
 operator|=
-name|GP_VERSION
+name|GIMP_PROTOCOL_VERSION
 expr_stmt|;
 name|config
 operator|.
