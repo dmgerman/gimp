@@ -44,12 +44,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpmath.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -240,7 +234,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2b2eed800108
+DECL|struct|__anon27ef44150108
 block|{
 DECL|member|bna
 name|GtkWidget

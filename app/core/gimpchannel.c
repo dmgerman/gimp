@@ -136,7 +136,7 @@ file|"lut_funcs.h"
 end_include
 
 begin_enum
-DECL|enum|__anon28b766660103
+DECL|enum|__anon2b84dc7b0103
 enum|enum
 block|{
 DECL|enumerator|REMOVED
@@ -1627,7 +1627,7 @@ condition|)
 return|return;
 name|x1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|offx
 argument_list|,
@@ -1638,7 +1638,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|offy
 argument_list|,
@@ -1649,7 +1649,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 operator|(
 name|offx
@@ -1669,7 +1669,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 operator|(
 name|offy
@@ -2802,7 +2802,7 @@ argument_list|)
 expr_stmt|;
 name|x1
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|x1
 argument_list|,
@@ -2811,7 +2811,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|y1
 argument_list|,
@@ -2820,7 +2820,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|x2
 argument_list|,
@@ -2829,7 +2829,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|y2
 argument_list|,
@@ -3599,7 +3599,7 @@ block|}
 block|}
 name|tx2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|tx2
 operator|+
@@ -3617,7 +3617,7 @@ argument_list|)
 expr_stmt|;
 name|ty2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|ty2
 operator|+
@@ -4524,7 +4524,7 @@ name|w
 expr_stmt|;
 name|x
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x
 argument_list|,
@@ -4540,7 +4540,7 @@ argument_list|)
 expr_stmt|;
 name|y
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y
 argument_list|,
@@ -4556,7 +4556,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x2
 argument_list|,
@@ -4572,7 +4572,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y2
 argument_list|,
@@ -4806,7 +4806,7 @@ name|mask
 operator|->
 name|x1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|mask
 operator|->
@@ -4826,7 +4826,7 @@ name|mask
 operator|->
 name|y1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|mask
 operator|->
@@ -4846,7 +4846,7 @@ name|mask
 operator|->
 name|x2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|mask
 operator|->
@@ -4866,7 +4866,7 @@ name|mask
 operator|->
 name|y2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|mask
 operator|->
@@ -5647,7 +5647,7 @@ name|mask
 operator|->
 name|x1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|mask
 operator|->
@@ -5667,7 +5667,7 @@ name|mask
 operator|->
 name|y1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|mask
 operator|->
@@ -5687,7 +5687,7 @@ name|mask
 operator|->
 name|x2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|mask
 operator|->
@@ -5707,7 +5707,7 @@ name|mask
 operator|->
 name|y2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|mask
 operator|->
@@ -6055,7 +6055,7 @@ index|[
 name|x
 index|]
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|dest
 index|[
@@ -6129,7 +6129,7 @@ name|h
 decl_stmt|;
 name|x1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|off_x
 argument_list|,
@@ -6145,7 +6145,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|off_y
 argument_list|,
@@ -6161,7 +6161,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|off_x
 operator|+
@@ -6184,7 +6184,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|off_y
 operator|+
@@ -6409,7 +6409,7 @@ name|srcPR
 decl_stmt|;
 name|x1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|off_x
 argument_list|,
@@ -6425,7 +6425,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|off_y
 argument_list|,
@@ -6441,7 +6441,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|off_x
 operator|+
@@ -6464,7 +6464,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|off_y
 operator|+
@@ -8006,7 +8006,7 @@ argument_list|)
 expr_stmt|;
 name|x1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 operator|(
 name|x1
@@ -8026,7 +8026,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 operator|(
 name|y1
@@ -8046,7 +8046,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 operator|(
 name|x2
@@ -8066,7 +8066,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 operator|(
 name|y2
@@ -8469,7 +8469,7 @@ argument_list|)
 expr_stmt|;
 name|x1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -8490,7 +8490,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -8511,7 +8511,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -8539,7 +8539,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

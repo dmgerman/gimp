@@ -56,12 +56,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpmath.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -111,7 +105,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b31d7fb0108
+DECL|struct|__anon27c7cb130108
 block|{
 DECL|member|tilable
 name|gint
@@ -151,7 +145,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b31d7fb0208
+DECL|struct|__anon27c7cb130208
 block|{
 DECL|member|run
 name|gint
@@ -166,7 +160,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b31d7fb0308
+DECL|struct|__anon27c7cb130308
 block|{
 DECL|member|x
 DECL|member|y

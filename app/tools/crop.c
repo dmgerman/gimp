@@ -633,7 +633,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad4ab130103
+DECL|enum|__anon27d242b30103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -1280,7 +1280,7 @@ name|bevent
 operator|->
 name|x
 operator|==
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|bevent
 operator|->
@@ -1303,7 +1303,7 @@ name|bevent
 operator|->
 name|y
 operator|==
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|bevent
 operator|->
@@ -1335,7 +1335,7 @@ name|bevent
 operator|->
 name|x
 operator|==
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|bevent
 operator|->
@@ -1358,7 +1358,7 @@ name|bevent
 operator|->
 name|y
 operator|==
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|bevent
 operator|->
@@ -1392,7 +1392,7 @@ name|bevent
 operator|->
 name|x
 operator|==
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|bevent
 operator|->
@@ -1415,7 +1415,7 @@ name|bevent
 operator|->
 name|y
 operator|==
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|bevent
 operator|->
@@ -1440,7 +1440,7 @@ name|bevent
 operator|->
 name|x
 operator|==
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|bevent
 operator|->
@@ -1463,7 +1463,7 @@ name|bevent
 operator|->
 name|y
 operator|==
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|bevent
 operator|->
@@ -2349,7 +2349,7 @@ condition|)
 block|{
 name|x1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x1
 argument_list|,
@@ -2360,7 +2360,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y1
 argument_list|,
@@ -2371,7 +2371,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x2
 argument_list|,
@@ -2382,7 +2382,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y2
 argument_list|,
@@ -2422,7 +2422,7 @@ condition|)
 block|{
 name|x1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x1
 argument_list|,
@@ -2433,7 +2433,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y1
 argument_list|,
@@ -2445,7 +2445,7 @@ expr_stmt|;
 block|}
 name|x2
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|x1
 argument_list|,
@@ -2456,7 +2456,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|y1
 argument_list|,
@@ -2507,7 +2507,7 @@ condition|)
 block|{
 name|x2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x2
 argument_list|,
@@ -2518,7 +2518,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y2
 argument_list|,
@@ -2530,7 +2530,7 @@ expr_stmt|;
 block|}
 name|x1
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|crop
 operator|->
@@ -2541,7 +2541,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|crop
 operator|->
@@ -2576,7 +2576,7 @@ condition|)
 block|{
 name|inc_x
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|inc_x
 argument_list|,
@@ -2595,7 +2595,7 @@ argument_list|)
 expr_stmt|;
 name|inc_y
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|inc_y
 argument_list|,
@@ -2664,7 +2664,7 @@ name|crop
 operator|->
 name|tx1
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|x1
 argument_list|,
@@ -2675,7 +2675,7 @@ name|crop
 operator|->
 name|ty1
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|y1
 argument_list|,
@@ -2686,7 +2686,7 @@ name|crop
 operator|->
 name|tx2
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|x1
 argument_list|,
@@ -2697,7 +2697,7 @@ name|crop
 operator|->
 name|ty2
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|y1
 argument_list|,
@@ -2990,7 +2990,7 @@ name|mevent
 operator|->
 name|x
 operator|==
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|mevent
 operator|->
@@ -3013,7 +3013,7 @@ name|mevent
 operator|->
 name|y
 operator|==
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|mevent
 operator|->
@@ -3043,7 +3043,7 @@ name|mevent
 operator|->
 name|x
 operator|==
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|mevent
 operator|->
@@ -3066,7 +3066,7 @@ name|mevent
 operator|->
 name|y
 operator|==
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|mevent
 operator|->
@@ -3096,7 +3096,7 @@ name|mevent
 operator|->
 name|x
 operator|==
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|mevent
 operator|->
@@ -3119,7 +3119,7 @@ name|mevent
 operator|->
 name|y
 operator|==
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|mevent
 operator|->
@@ -3149,7 +3149,7 @@ name|mevent
 operator|->
 name|x
 operator|==
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|mevent
 operator|->
@@ -3172,7 +3172,7 @@ name|mevent
 operator|->
 name|y
 operator|==
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|mevent
 operator|->
@@ -3534,7 +3534,7 @@ name|crop
 operator|->
 name|tx2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|crop
 operator|->
@@ -3549,7 +3549,7 @@ name|crop
 operator|->
 name|ty2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|crop
 operator|->
@@ -3565,7 +3565,7 @@ name|crop
 operator|->
 name|tx1
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|crop
 operator|->
@@ -3580,7 +3580,7 @@ name|crop
 operator|->
 name|ty1
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|crop
 operator|->
@@ -3604,7 +3604,7 @@ condition|)
 block|{
 name|inc_x
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|inc_x
 argument_list|,
@@ -3626,7 +3626,7 @@ argument_list|)
 expr_stmt|;
 name|inc_y
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|inc_y
 argument_list|,
@@ -4868,7 +4868,7 @@ argument_list|)
 expr_stmt|;
 name|lx1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|off_x
 argument_list|,
@@ -4881,7 +4881,7 @@ argument_list|)
 expr_stmt|;
 name|ly1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|off_y
 argument_list|,
@@ -4894,7 +4894,7 @@ argument_list|)
 expr_stmt|;
 name|lx2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 operator|(
 name|drawable_width
@@ -4917,7 +4917,7 @@ argument_list|)
 expr_stmt|;
 name|ly2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 operator|(
 name|drawable_height

@@ -132,7 +132,7 @@ value|0xF
 end_define
 
 begin_enum
-DECL|enum|__anon2934dfde0103
+DECL|enum|__anon297404120103
 enum|enum
 block|{
 DECL|enumerator|RANGED
@@ -838,7 +838,7 @@ name|histogram
 operator|->
 name|start
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 operator|(
 operator|(
@@ -966,7 +966,7 @@ name|histogram
 operator|->
 name|start
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 operator|(
 operator|(

@@ -667,7 +667,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* ---------------- intersect (MINIMUM(pixel, value)) ------------------ */
+comment|/* ---------------- intersect (MIN (pixel, value)) ------------------ */
 end_comment
 
 begin_function
@@ -943,7 +943,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1149b40108
+DECL|struct|__anon2b1d9bdd0108
 block|{
 DECL|member|gamma
 name|double

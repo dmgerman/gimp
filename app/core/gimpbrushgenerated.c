@@ -1183,7 +1183,7 @@ argument_list|)
 expr_stmt|;
 name|tx
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|fabs
 argument_list|(
@@ -1238,7 +1238,7 @@ argument_list|)
 expr_stmt|;
 name|ty
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|fabs
 argument_list|(

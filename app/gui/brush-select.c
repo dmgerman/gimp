@@ -5188,7 +5188,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b758530108
+DECL|struct|__anon2a0d3c0d0108
 block|{
 DECL|member|bsp
 name|BrushSelect
@@ -6401,7 +6401,7 @@ name|MARGIN_HEIGHT
 expr_stmt|;
 name|ystart
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|offset_y
 argument_list|,
@@ -6418,7 +6418,7 @@ argument_list|)
 expr_stmt|;
 name|yend
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|offset_y
 operator|+
@@ -7132,7 +7132,7 @@ name|scroll_offset
 expr_stmt|;
 name|ystart
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|offset_y
 argument_list|,
@@ -7149,7 +7149,7 @@ argument_list|)
 expr_stmt|;
 name|yend
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|offset_y
 operator|+
@@ -7352,7 +7352,7 @@ name|scroll_offset
 expr_stmt|;
 name|ystart
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|offset_y
 argument_list|,
@@ -7369,7 +7369,7 @@ argument_list|)
 expr_stmt|;
 name|yend
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|offset_y
 operator|+

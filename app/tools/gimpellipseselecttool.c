@@ -344,7 +344,7 @@ name|private
 expr_stmt|;
 name|x1
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|ellipse_sel
 operator|->
@@ -361,7 +361,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|ellipse_sel
 operator|->
@@ -378,7 +378,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|ellipse_sel
 operator|->
@@ -395,7 +395,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|ellipse_sel
 operator|->

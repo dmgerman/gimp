@@ -88,18 +88,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimplimits.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimpmath.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -146,7 +134,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb0824a0108
+DECL|struct|__anon2bd1cc8a0108
 block|{
 DECL|member|resolution
 name|guint
@@ -198,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb0824a0208
+DECL|struct|__anon2bd1cc8a0208
 block|{
 DECL|member|run
 name|gint
@@ -264,7 +252,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb0824a0308
+DECL|struct|__anon2bd1cc8a0308
 block|{
 DECL|member|width
 DECL|member|height
@@ -326,7 +314,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb0824a0408
+DECL|struct|__anon2bd1cc8a0408
 block|{
 DECL|member|run
 name|gint
@@ -872,7 +860,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb0824a0508
+DECL|struct|__anon2bd1cc8a0508
 block|{
 DECL|member|adjustment
 name|GtkObject

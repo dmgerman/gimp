@@ -52,12 +52,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimplimits.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -104,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd4aba70108
+DECL|struct|__anon274e046e0108
 block|{
 DECL|member|x
 name|gfloat
@@ -123,7 +117,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd4aba70208
+DECL|struct|__anon274e046e0208
 block|{
 DECL|member|run
 name|gint
@@ -138,7 +132,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd4aba70308
+DECL|struct|__anon274e046e0308
 block|{
 DECL|member|deform_area_radius
 name|gint

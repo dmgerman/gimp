@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"errors.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdisplay.h"
 end_include
 
@@ -67,7 +61,7 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|int
+name|gint
 name|sx
 decl_stmt|,
 name|sy
@@ -102,7 +96,7 @@ name|gdisp
 operator|->
 name|offset_x
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|gdisp
 operator|->
@@ -124,7 +118,7 @@ name|gdisp
 operator|->
 name|offset_y
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|gdisp
 operator|->
@@ -147,17 +141,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|resize_display (GDisplay * gdisp,int resize_window,int redisplay)
+DECL|function|resize_display (GDisplay * gdisp,gint resize_window,gint redisplay)
 name|resize_display
 parameter_list|(
 name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|int
+name|gint
 name|resize_window
 parameter_list|,
-name|int
+name|gint
 name|redisplay
 parameter_list|)
 block|{
@@ -289,29 +283,28 @@ end_function
 
 begin_function
 name|void
-DECL|function|change_scale (GDisplay * gdisp,int dir)
+DECL|function|change_scale (GDisplay * gdisp,gint dir)
 name|change_scale
 parameter_list|(
 name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|int
+name|gint
 name|dir
 parameter_list|)
 block|{
-name|unsigned
-name|char
+name|guchar
 name|scalesrc
 decl_stmt|,
 name|scaledest
 decl_stmt|;
-name|double
+name|gdouble
 name|offset_x
 decl_stmt|,
 name|offset_y
 decl_stmt|;
-name|long
+name|glong
 name|sx
 decl_stmt|,
 name|sy
@@ -959,7 +952,7 @@ name|gdisp
 argument_list|,
 name|TRUE
 argument_list|,
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|gdisp
 operator|->
@@ -1011,7 +1004,7 @@ name|gdisp
 argument_list|,
 name|FALSE
 argument_list|,
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|gdisp
 operator|->

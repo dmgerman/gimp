@@ -207,7 +207,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a222c270103
+DECL|enum|__anon29f40e3d0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -1826,7 +1826,7 @@ literal|0
 end_if
 
 begin_comment
-unit|static void draw_segments (PixelRegion *destPR, 	       BoundSeg    *bs, 	       int          num_segs, 	       int          off_x, 	       int          off_y, 	       int          opacity) {   int x1, y1, x2, y2;   int tmp, i, length;   unsigned char *line;    length = MAXIMUM (destPR->w, destPR->h);   line = paint_funcs_get_buffer (length);   memset (line, opacity, length);    for (i = 0; i< num_segs; i++)     {       x1 = bs[i].x1 + off_x;       y1 = bs[i].y1 + off_y;       x2 = bs[i].x2 + off_x;       y2 = bs[i].y2 + off_y;        if (bs[i].open == 0) 	{
+unit|static void draw_segments (PixelRegion *destPR, 	       BoundSeg    *bs, 	       int          num_segs, 	       int          off_x, 	       int          off_y, 	       int          opacity) {   int x1, y1, x2, y2;   int tmp, i, length;   unsigned char *line;    length = MAX (destPR->w, destPR->h);   line = paint_funcs_get_buffer (length);   memset (line, opacity, length);    for (i = 0; i< num_segs; i++)     {       x1 = bs[i].x1 + off_x;       y1 = bs[i].y1 + off_y;       x2 = bs[i].x2 + off_x;       y2 = bs[i].y2 + off_y;        if (bs[i].open == 0) 	{
 comment|/*  If it is vertical  */
 end_comment
 
@@ -1836,7 +1836,7 @@ comment|/*  render segment  */
 end_comment
 
 begin_endif
-unit|x1 = BOUNDS (x1, 0, destPR->w - 1);       y1 = BOUNDS (y1, 0, destPR->h - 1);       x2 = BOUNDS (x2, 0, destPR->w - 1);       y2 = BOUNDS (y2, 0, destPR->h - 1);        if (x1 == x2) 	{ 	  if (y2< y1) 	    { 	      tmp = y1; 	      y1 = y2; 	      y2 = tmp; 	    } 	  pixel_region_set_col (destPR, x1, y1, (y2 - y1), line); 	}       else 	{ 	  if (x2< x1) 	    { 	      tmp = x1; 	      x1 = x2; 	      x2 = tmp; 	    } 	  pixel_region_set_row (destPR, x1, y1, (x2 - x1), line); 	}     } }
+unit|x1 = CLAMP (x1, 0, destPR->w - 1);       y1 = CLAMP (y1, 0, destPR->h - 1);       x2 = CLAMP (x2, 0, destPR->w - 1);       y2 = CLAMP (y2, 0, destPR->h - 1);        if (x1 == x2) 	{ 	  if (y2< y1) 	    { 	      tmp = y1; 	      y1 = y2; 	      y2 = tmp; 	    } 	  pixel_region_set_col (destPR, x1, y1, (y2 - y1), line); 	}       else 	{ 	  if (x2< x1) 	    { 	      tmp = x1; 	      x1 = x2; 	      x2 = tmp; 	    } 	  pixel_region_set_row (destPR, x1, y1, (x2 - x1), line); 	}     } }
 endif|#
 directive|endif
 end_endif
@@ -2837,7 +2837,7 @@ operator|||
 name|has_alpha2
 operator|)
 condition|?
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|bytes1
 argument_list|,
@@ -3010,7 +3010,7 @@ operator|||
 name|has_alpha2
 operator|)
 condition|?
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|bytes1
 argument_list|,
@@ -3653,7 +3653,7 @@ operator|||
 name|has_alpha2
 operator|)
 condition|?
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|bytes1
 argument_list|,
@@ -3916,7 +3916,7 @@ operator|||
 name|has_alpha2
 operator|)
 condition|?
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|bytes1
 argument_list|,
@@ -3974,7 +3974,7 @@ index|[
 name|b
 index|]
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|result
 argument_list|,
@@ -4091,7 +4091,7 @@ operator|||
 name|has_alpha2
 operator|)
 condition|?
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|bytes1
 argument_list|,
@@ -4260,7 +4260,7 @@ operator|||
 name|has_alpha2
 operator|)
 condition|?
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|bytes1
 argument_list|,
@@ -4439,7 +4439,7 @@ operator|||
 name|has_alpha2
 operator|)
 condition|?
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|bytes1
 argument_list|,
@@ -4608,7 +4608,7 @@ operator|||
 name|has_alpha2
 operator|)
 condition|?
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|bytes1
 argument_list|,
@@ -4776,7 +4776,7 @@ operator|||
 name|has_alpha2
 operator|)
 condition|?
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|bytes1
 argument_list|,
@@ -11735,7 +11735,7 @@ name|no_mask
 expr_stmt|;
 name|bytes
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|bytes1
 argument_list|,
@@ -11933,7 +11933,7 @@ name|no_mask
 expr_stmt|;
 name|bytes
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|bytes1
 argument_list|,
@@ -15773,7 +15773,7 @@ comment|/* zero blur is a no-op */
 comment|/*  allocate the result buffer  */
 name|length
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|srcR
 operator|->
@@ -15840,7 +15840,7 @@ argument_list|(
 name|int
 argument_list|)
 operator|*
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|width
 argument_list|,
@@ -20106,7 +20106,7 @@ control|)
 block|{
 name|min_prev
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|distp_cur
 index|[
@@ -20123,7 +20123,7 @@ argument_list|)
 expr_stmt|;
 name|min_left
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 operator|(
 name|srcPR
@@ -20151,7 +20151,7 @@ operator|=
 operator|(
 name|int
 operator|)
-name|MINIMUM
+name|MIN
 argument_list|(
 name|min_left
 argument_list|,
@@ -20244,7 +20244,7 @@ argument_list|)
 expr_stmt|;
 name|boundary
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 operator|(
 name|y
@@ -20270,7 +20270,7 @@ argument_list|)
 expr_stmt|;
 name|boundary
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|boundary
 argument_list|,
@@ -20393,7 +20393,7 @@ literal|0
 expr_stmt|;
 name|fraction
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|fraction
 argument_list|,

@@ -253,7 +253,7 @@ comment|/*  The possible states...  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a3eaf0e0103
+DECL|enum|__anon289650540103
 typedef|typedef
 enum|enum
 block|{
@@ -279,7 +279,7 @@ comment|/*  The possible drawing states...  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a3eaf0e0203
+DECL|enum|__anon289650540203
 typedef|typedef
 enum|enum
 block|{
@@ -1933,7 +1933,7 @@ name|iscissors
 operator|->
 name|x
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|iscissors
 operator|->
@@ -1954,7 +1954,7 @@ name|iscissors
 operator|->
 name|y
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|iscissors
 operator|->
@@ -3204,7 +3204,7 @@ name|iscissors
 operator|->
 name|x
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|iscissors
 operator|->
@@ -3225,7 +3225,7 @@ name|iscissors
 operator|->
 name|y
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|iscissors
 operator|->
@@ -3305,7 +3305,7 @@ name|iscissors
 operator|->
 name|x
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|iscissors
 operator|->
@@ -3326,7 +3326,7 @@ name|iscissors
 operator|->
 name|y
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|iscissors
 operator|->
@@ -5308,7 +5308,7 @@ expr_stmt|;
 comment|/*  Get the bounding box  */
 name|xs
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|curve
 operator|->
@@ -5327,7 +5327,7 @@ argument_list|)
 expr_stmt|;
 name|ys
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|curve
 operator|->
@@ -5346,7 +5346,7 @@ argument_list|)
 expr_stmt|;
 name|xe
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|curve
 operator|->
@@ -5365,7 +5365,7 @@ argument_list|)
 expr_stmt|;
 name|ye
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|curve
 operator|->
@@ -5384,7 +5384,7 @@ argument_list|)
 expr_stmt|;
 name|x1
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|xs
 argument_list|,
@@ -5393,7 +5393,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|ys
 argument_list|,
@@ -5402,7 +5402,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|xs
 argument_list|,
@@ -5414,7 +5414,7 @@ expr_stmt|;
 comment|/*  +1 because if xe = 199& xs = 0, x2 - x1, width = 200  */
 name|y2
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|ys
 argument_list|,
@@ -5456,7 +5456,7 @@ name|xs
 condition|)
 name|x2
 operator|+=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|ewidth
 argument_list|,
@@ -5474,7 +5474,7 @@ expr_stmt|;
 else|else
 name|x1
 operator|-=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|ewidth
 argument_list|,
@@ -5491,7 +5491,7 @@ name|ys
 condition|)
 name|y2
 operator|+=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|eheight
 argument_list|,
@@ -5509,7 +5509,7 @@ expr_stmt|;
 else|else
 name|y1
 operator|-=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|eheight
 argument_list|,
@@ -8141,7 +8141,7 @@ expr_stmt|;
 comment|/*  calculate the extent of the search  */
 name|cx
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 operator|*
 name|x
@@ -8155,7 +8155,7 @@ argument_list|)
 expr_stmt|;
 name|cy
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 operator|*
 name|y
@@ -8181,7 +8181,7 @@ name|radius
 expr_stmt|;
 name|x1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|cx
 operator|-
@@ -8196,7 +8196,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|cy
 operator|-
@@ -8211,7 +8211,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|cx
 operator|+
@@ -8226,7 +8226,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|cy
 operator|+

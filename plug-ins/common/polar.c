@@ -73,12 +73,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimplimits.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -148,7 +142,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dca9100108
+DECL|struct|__anon290223ab0108
 block|{
 DECL|member|circle
 name|gdouble
@@ -179,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dca9100208
+DECL|struct|__anon290223ab0208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -219,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dca9100308
+DECL|struct|__anon290223ab0308
 block|{
 DECL|member|col
 DECL|member|row

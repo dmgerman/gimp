@@ -4769,7 +4769,7 @@ name|width
 condition|)
 name|off_x
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|off_x
 argument_list|,
@@ -4789,7 +4789,7 @@ expr_stmt|;
 else|else
 name|off_x
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|off_x
 argument_list|,
@@ -4852,7 +4852,7 @@ name|height
 condition|)
 name|off_y
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|off_y
 argument_list|,
@@ -4872,7 +4872,7 @@ expr_stmt|;
 else|else
 name|off_y
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|off_y
 argument_list|,
@@ -5474,7 +5474,7 @@ name|ratio_y
 expr_stmt|;
 name|height
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|height
 argument_list|,
@@ -5503,7 +5503,7 @@ name|ratio_x
 expr_stmt|;
 name|width
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|width
 argument_list|,
@@ -5669,7 +5669,7 @@ block|}
 block|}
 name|width
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|private
 operator|->
@@ -5684,7 +5684,7 @@ argument_list|)
 expr_stmt|;
 name|height
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|private
 operator|->
@@ -6253,7 +6253,7 @@ expr_stmt|;
 comment|/*  this is tricky: we use the sizes in pixels (which is otherwise    *  meaningless for the "print size" widgets) to calculate the new    *  resolution.    */
 name|res_x
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|resize
 operator|->
@@ -6270,7 +6270,7 @@ argument_list|)
 expr_stmt|;
 name|res_y
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|resize
 operator|->

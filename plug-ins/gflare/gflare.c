@@ -115,19 +115,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpmath.h>
+file|<libgimp/gimpui.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<libgimp/gimplimits.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimpcolorspace.h>
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_include
@@ -140,12 +134,6 @@ begin_include
 include|#
 directive|include
 file|"gtkmultioptionmenu.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
@@ -480,7 +468,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b1b0170103
+DECL|enum|__anon278f60ca0103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -507,7 +495,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b1b0170203
+DECL|enum|__anon278f60ca0203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -526,7 +514,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29b1b0170308
+DECL|struct|__anon278f60ca0308
 typedef|typedef
 struct|struct
 block|{
@@ -663,7 +651,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29b1b0170408
+DECL|struct|__anon278f60ca0408
 typedef|typedef
 struct|struct
 block|{
@@ -683,7 +671,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon29b1b0170503
+DECL|enum|__anon278f60ca0503
 typedef|typedef
 enum|enum
 block|{
@@ -711,7 +699,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29b1b0170608
+DECL|struct|__anon278f60ca0608
 typedef|typedef
 struct|struct
 block|{
@@ -734,7 +722,7 @@ name|Preview
 modifier|*
 name|preview
 decl_stmt|;
-DECL|struct|__anon29b1b0170708
+DECL|struct|__anon278f60ca0708
 struct|struct
 block|{
 DECL|member|x0
@@ -820,7 +808,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29b1b0170808
+DECL|struct|__anon278f60ca0808
 typedef|typedef
 struct|struct
 block|{
@@ -892,7 +880,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b1b0170908
+DECL|struct|__anon278f60ca0908
 block|{
 DECL|member|x0
 name|gdouble
@@ -919,7 +907,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b1b0170a08
+DECL|struct|__anon278f60ca0a08
 block|{
 DECL|member|init
 name|gint
@@ -1089,7 +1077,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b1b0170b08
+DECL|struct|__anon278f60ca0b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1116,7 +1104,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b1b0170c08
+DECL|struct|__anon278f60ca0c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1157,7 +1145,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b1b0170d08
+DECL|struct|__anon278f60ca0d08
 block|{
 DECL|member|tile
 name|GTile
@@ -1387,7 +1375,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b1b0170e08
+DECL|struct|__anon278f60ca0e08
 block|{
 DECL|member|tag
 name|gint
@@ -1462,7 +1450,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon29b1b0170f03
+DECL|enum|__anon278f60ca0f03
 typedef|typedef
 enum|enum
 block|{
@@ -1496,7 +1484,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29b1b0171008
+DECL|struct|__anon278f60ca1008
 typedef|typedef
 struct|struct
 block|{
@@ -1540,7 +1528,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29b1b0171108
+DECL|struct|__anon278f60ca1108
 typedef|typedef
 struct|struct
 block|{
@@ -1598,7 +1586,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29b1b0171208
+DECL|struct|__anon278f60ca1208
 typedef|typedef
 struct|struct
 block|{
@@ -9726,7 +9714,7 @@ DECL|function|calc_sample_one_gradient ()
 name|calc_sample_one_gradient
 parameter_list|()
 block|{
-DECL|struct|__anon29b1b0171308
+DECL|struct|__anon278f60ca1308
 specifier|static
 struct|struct
 block|{
@@ -16601,7 +16589,7 @@ decl_stmt|;
 name|int
 name|i
 decl_stmt|;
-DECL|struct|__anon29b1b0171408
+DECL|struct|__anon278f60ca1408
 specifier|static
 struct|struct
 block|{

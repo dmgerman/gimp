@@ -703,7 +703,7 @@ operator|)
 expr_stmt|;
 name|endx
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|end
 argument_list|,
@@ -1429,7 +1429,7 @@ operator|)
 condition|)
 name|process_horiz_seg
 argument_list|(
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|e_s
 argument_list|,
@@ -1438,7 +1438,7 @@ argument_list|)
 argument_list|,
 name|scanline
 argument_list|,
-name|MINIMUM
+name|MIN
 argument_list|(
 name|e_e
 argument_list|,

@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<time.h>
 end_include
 
@@ -49,12 +43,6 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpui.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimplimits.h>
 end_include
 
 begin_include
@@ -311,7 +299,7 @@ block|}
 end_function
 
 begin_struct
-DECL|struct|__anon2b27b9af0108
+DECL|struct|__anon28e0cae90108
 specifier|static
 struct|struct
 block|{

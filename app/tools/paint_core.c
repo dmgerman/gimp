@@ -5435,7 +5435,7 @@ argument_list|)
 expr_stmt|;
 name|x1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x
 operator|-
@@ -5448,7 +5448,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y
 operator|-
@@ -5461,7 +5461,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x
 operator|+
@@ -5476,7 +5476,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y
 operator|+
@@ -5645,7 +5645,7 @@ argument_list|)
 expr_stmt|;
 name|x1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x1
 argument_list|,
@@ -5656,7 +5656,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y1
 argument_list|,
@@ -5667,7 +5667,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x2
 argument_list|,
@@ -5678,7 +5678,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y2
 argument_list|,
@@ -6705,7 +6705,7 @@ operator|*
 name|d
 operator|++
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|new_val
 argument_list|,
@@ -7927,7 +7927,7 @@ name|paint_core
 operator|->
 name|x1
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|paint_core
 operator|->
@@ -7942,7 +7942,7 @@ name|paint_core
 operator|->
 name|y1
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|paint_core
 operator|->
@@ -7957,7 +7957,7 @@ name|paint_core
 operator|->
 name|x2
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|paint_core
 operator|->
@@ -7978,7 +7978,7 @@ name|paint_core
 operator|->
 name|y2
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|paint_core
 operator|->
@@ -8368,7 +8368,7 @@ name|paint_core
 operator|->
 name|x1
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|paint_core
 operator|->
@@ -8383,7 +8383,7 @@ name|paint_core
 operator|->
 name|y1
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|paint_core
 operator|->
@@ -8398,7 +8398,7 @@ name|paint_core
 operator|->
 name|x2
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|paint_core
 operator|->
@@ -8419,7 +8419,7 @@ name|paint_core
 operator|->
 name|y2
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|paint_core
 operator|->

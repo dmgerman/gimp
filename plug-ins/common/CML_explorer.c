@@ -76,18 +76,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpmath.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimpcolorspace.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -250,7 +238,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a360ede0108
+DECL|struct|__anon2b0d16e00108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -278,7 +266,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a360ede0208
+DECL|struct|__anon2b0d16e00208
 block|{
 DECL|member|name
 name|gchar
@@ -1579,7 +1567,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a360ede0308
+DECL|struct|__anon2b0d16e00308
 block|{
 DECL|member|function
 name|gint
@@ -1652,7 +1640,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a360ede0408
+DECL|struct|__anon2b0d16e00408
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -2399,7 +2387,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a360ede0508
+DECL|struct|__anon2b0d16e00508
 block|{
 DECL|member|run
 name|gint
@@ -2447,7 +2435,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a360ede0608
+DECL|struct|__anon2b0d16e00608
 block|{
 DECL|member|widget
 name|GtkWidget

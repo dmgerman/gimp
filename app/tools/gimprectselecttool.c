@@ -759,6 +759,8 @@ name|MaskToLayerTranslate
 argument_list|)
 expr_stmt|;
 return|return;
+default|default:
+break|break;
 block|}
 comment|/* initialize the statusbar display */
 name|rect_sel
@@ -1653,7 +1655,7 @@ condition|)
 block|{
 name|s
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|abs
 argument_list|(
@@ -2088,7 +2090,7 @@ name|private
 expr_stmt|;
 name|x1
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|rect_sel
 operator|->
@@ -2105,7 +2107,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|rect_sel
 operator|->
@@ -2122,7 +2124,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|rect_sel
 operator|->
@@ -2139,7 +2141,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|rect_sel
 operator|->

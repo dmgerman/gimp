@@ -58,18 +58,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpmath.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimpcolorspace.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -365,7 +353,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c65a4d0108
+DECL|struct|__anon2b53c7910108
 block|{
 comment|/* gint, gdouble, and so on */
 DECL|member|holdness
@@ -411,7 +399,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c65a4d0208
+DECL|struct|__anon2b53c7910208
 block|{
 DECL|member|run
 name|gint

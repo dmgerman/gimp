@@ -311,7 +311,7 @@ argument_list|)
 expr_stmt|;
 name|x1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|off_x
 argument_list|,
@@ -324,7 +324,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|off_y
 argument_list|,
@@ -337,7 +337,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|off_x
 operator|+
@@ -358,7 +358,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|off_y
 operator|+

@@ -283,7 +283,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon27ddcbfa0108
+DECL|struct|__anon2ac16a280108
 typedef|typedef
 struct|struct
 block|{
@@ -320,7 +320,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27ddcbfa0208
+DECL|struct|__anon2ac16a280208
 typedef|typedef
 struct|struct
 block|{
@@ -375,7 +375,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27ddcbfa0308
+DECL|struct|__anon2ac16a280308
 typedef|typedef
 struct|struct
 block|{
@@ -9362,7 +9362,7 @@ block|{
 comment|/*  bounds checking  */
 name|x
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x
 argument_list|,
@@ -9373,7 +9373,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 operator|(
 name|long

@@ -58,19 +58,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpmath.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a065ad10108
+DECL|struct|__anon2967dee10108
 block|{
 DECL|member|horizontal
 name|gint
@@ -93,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a065ad10208
+DECL|struct|__anon2967dee10208
 block|{
 DECL|member|run
 name|gint
@@ -567,16 +561,13 @@ name|nparams
 operator|!=
 literal|6
 condition|)
+block|{
 name|status
 operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
-if|if
-condition|(
-name|status
-operator|==
-name|STATUS_SUCCESS
-condition|)
+block|}
+else|else
 block|{
 name|bvals
 operator|.
@@ -1406,41 +1397,6 @@ parameter_list|)
 value|(sqrt (pow ((a),2) + pow ((b), 2)))
 end_define
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|MAX
-end_ifndef
-
-begin_define
-DECL|macro|MAX (a,b)
-define|#
-directive|define
-name|MAX
-parameter_list|(
-name|a
-parameter_list|,
-name|b
-parameter_list|)
-value|(((a)> (b)) ? (a) : (b))
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_define
-DECL|macro|ROUND_TO_INT (val)
-define|#
-directive|define
-name|ROUND_TO_INT
-parameter_list|(
-name|val
-parameter_list|)
-value|((val) + 0.5)
-end_define
-
 begin_function
 specifier|static
 name|void
@@ -1950,7 +1906,7 @@ name|do_horizontal
 operator|)
 condition|?
 operator|(
-name|ROUND_TO_INT
+name|ROUND
 argument_list|(
 name|RMS
 argument_list|(
@@ -1971,7 +1927,7 @@ operator|(
 literal|127
 operator|+
 operator|(
-name|ROUND_TO_INT
+name|ROUND
 argument_list|(
 operator|(
 name|hor_gradient
@@ -1985,7 +1941,7 @@ operator|)
 operator|)
 else|:
 operator|(
-name|ROUND_TO_INT
+name|ROUND
 argument_list|(
 name|abs
 argument_list|(

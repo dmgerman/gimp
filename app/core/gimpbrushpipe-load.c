@@ -691,7 +691,7 @@ index|[
 name|i
 index|]
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|ix
 argument_list|,
@@ -728,7 +728,7 @@ block|}
 comment|/* Make sure is inside bounds */
 name|brushix
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|brushix
 argument_list|,

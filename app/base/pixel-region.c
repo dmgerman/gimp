@@ -1953,7 +1953,7 @@ operator|)
 expr_stmt|;
 name|height
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|height
 argument_list|,
@@ -2128,7 +2128,7 @@ operator|)
 expr_stmt|;
 name|width
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|width
 argument_list|,

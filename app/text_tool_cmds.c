@@ -313,7 +313,7 @@ expr_stmt|;
 comment|/*  finally, if xres became invalid by the above calculations  */
 name|xresolution
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|xresolution
 argument_list|,

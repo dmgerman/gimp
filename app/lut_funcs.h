@@ -31,7 +31,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b69d550103
+DECL|enum|__anon2c419e300103
 block|{
 DECL|enumerator|VALUE_LUT
 name|VALUE_LUT
@@ -165,7 +165,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* intersect (MINIMUM(pixel, value)) */
+comment|/* intersect (MIN (pixel, value)) */
 end_comment
 
 begin_function_decl

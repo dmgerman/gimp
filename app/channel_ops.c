@@ -1193,7 +1193,7 @@ else|else
 block|{
 name|offset_x
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|offset_x
 argument_list|,
@@ -1205,7 +1205,7 @@ argument_list|)
 expr_stmt|;
 name|offset_y
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|offset_y
 argument_list|,
@@ -1258,7 +1258,7 @@ name|offset_x
 expr_stmt|;
 name|width
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 operator|(
 name|width
@@ -1285,7 +1285,7 @@ literal|0
 expr_stmt|;
 name|width
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 operator|(
 name|width
@@ -1316,7 +1316,7 @@ name|offset_y
 expr_stmt|;
 name|height
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 operator|(
 name|height
@@ -1343,7 +1343,7 @@ literal|0
 expr_stmt|;
 name|height
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 operator|(
 name|height

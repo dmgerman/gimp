@@ -315,7 +315,7 @@ control|)
 block|{
 name|max
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|s
 index|[
@@ -330,7 +330,7 @@ argument_list|)
 expr_stmt|;
 name|max
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|max
 argument_list|,
@@ -342,7 +342,7 @@ argument_list|)
 expr_stmt|;
 name|min
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|s
 index|[
@@ -357,7 +357,7 @@ argument_list|)
 expr_stmt|;
 name|min
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|min
 argument_list|,

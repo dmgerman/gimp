@@ -504,7 +504,7 @@ operator|)
 expr_stmt|;
 name|width
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|brush
 operator|->

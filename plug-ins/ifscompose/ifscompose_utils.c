@@ -36,17 +36,11 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpmath.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"ifscompose.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2c649e690108
+DECL|struct|__anon2c14f8d90108
 typedef|typedef
 struct|struct
 block|{

@@ -52,12 +52,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimplimits.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -144,7 +138,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b253b8d0108
+DECL|struct|__anon29d3dfb10108
 block|{
 DECL|member|preview
 name|GtkWidget

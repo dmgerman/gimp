@@ -107,12 +107,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpmath.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -291,7 +285,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon2b9e5a250103
+DECL|enum|__anon290dfc900103
 enum|enum
 block|{
 DECL|enumerator|TRIANGLE
@@ -316,7 +310,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2b9e5a250203
+DECL|enum|__anon290dfc900203
 enum|enum
 block|{
 DECL|enumerator|SOLID
@@ -365,7 +359,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2b9e5a250303
+DECL|enum|__anon290dfc900303
 enum|enum
 block|{
 DECL|enumerator|PERSPECTIVE
@@ -381,7 +375,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2b9e5a250403
+DECL|enum|__anon290dfc900403
 enum|enum
 block|{
 DECL|enumerator|FOG
@@ -427,7 +421,7 @@ value|0x00000001
 end_define
 
 begin_typedef
-DECL|struct|__anon2b9e5a250508
+DECL|struct|__anon290dfc900508
 typedef|typedef
 struct|struct
 block|{
@@ -451,7 +445,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b9e5a250608
+DECL|struct|__anon290dfc900608
 typedef|typedef
 struct|struct
 block|{
@@ -475,7 +469,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b9e5a250708
+DECL|struct|__anon290dfc900708
 typedef|typedef
 struct|struct
 block|{
@@ -504,7 +498,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b9e5a250808
+DECL|struct|__anon290dfc900808
 typedef|typedef
 struct|struct
 block|{
@@ -600,7 +594,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b9e5a250908
+DECL|struct|__anon290dfc900908
 typedef|typedef
 struct|struct
 block|{
@@ -627,7 +621,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b9e5a250a08
+DECL|struct|__anon290dfc900a08
 typedef|typedef
 struct|struct
 block|{
@@ -669,7 +663,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b9e5a250b08
+DECL|struct|__anon290dfc900b08
 typedef|typedef
 struct|struct
 block|{
@@ -694,7 +688,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b9e5a250c08
+DECL|struct|__anon290dfc900c08
 typedef|typedef
 struct|struct
 block|{
@@ -720,7 +714,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b9e5a250d08
+DECL|struct|__anon290dfc900d08
 typedef|typedef
 struct|struct
 block|{
@@ -743,7 +737,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b9e5a250e08
+DECL|struct|__anon290dfc900e08
 typedef|typedef
 struct|struct
 block|{
@@ -768,7 +762,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b9e5a250f08
+DECL|struct|__anon290dfc900f08
 typedef|typedef
 struct|struct
 block|{
@@ -791,7 +785,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b9e5a251008
+DECL|struct|__anon290dfc901008
 typedef|typedef
 struct|struct
 block|{
@@ -814,7 +808,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b9e5a251108
+DECL|struct|__anon290dfc901108
 typedef|typedef
 struct|struct
 block|{
@@ -840,7 +834,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|union|__anon2b9e5a25120a
+DECL|union|__anon290dfc90120a
 typedef|typedef
 union|union
 block|{
@@ -1176,7 +1170,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon2b9e5a251308
+DECL|struct|__anon290dfc901308
 struct|struct
 block|{
 DECL|member|solid

@@ -104,12 +104,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"errors.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdisplay.h"
 end_include
 
@@ -1181,7 +1175,7 @@ block|}
 comment|/*  some bounds checking  */
 name|x1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x
 argument_list|,
@@ -1194,7 +1188,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y
 argument_list|,
@@ -1207,7 +1201,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x
 operator|+
@@ -1222,7 +1216,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y
 operator|+

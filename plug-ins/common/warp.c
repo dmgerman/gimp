@@ -64,12 +64,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpmath.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -113,7 +107,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c9fd3a0103
+DECL|enum|__anon290131db0103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -133,7 +127,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c9fd3a0208
+DECL|struct|__anon290131db0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -200,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c9fd3a0308
+DECL|struct|__anon290131db0308
 block|{
 DECL|member|run
 name|gint

@@ -1177,7 +1177,7 @@ index|]
 expr_stmt|;
 name|maxval
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|color
 index|[
@@ -1197,7 +1197,7 @@ index|[
 name|HISTOGRAM_VALUE
 index|]
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|maxval
 argument_list|,
@@ -6056,7 +6056,7 @@ index|]
 expr_stmt|;
 name|lastx
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x
 argument_list|,
@@ -6067,7 +6067,7 @@ argument_list|)
 expr_stmt|;
 name|lasty
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y
 argument_list|,
@@ -7912,7 +7912,7 @@ argument_list|)
 expr_stmt|;
 name|x
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 operator|(
 name|tx
@@ -7927,7 +7927,7 @@ argument_list|)
 expr_stmt|;
 name|y
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 operator|(
 name|ty

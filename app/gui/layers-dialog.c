@@ -3873,7 +3873,7 @@ name|empty_buf
 expr_stmt|;
 name|x1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|preview_buf
 operator|->
@@ -3886,7 +3886,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|preview_buf
 operator|->
@@ -3899,7 +3899,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|preview_buf
 operator|->
@@ -3916,7 +3916,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|preview_buf
 operator|->

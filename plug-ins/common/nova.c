@@ -52,24 +52,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpmath.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimplimits.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimpcolorspace.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -212,7 +194,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8a5d260108
+DECL|struct|__anon287ffab40108
 block|{
 DECL|member|xcenter
 DECL|member|ycenter
@@ -249,7 +231,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8a5d260208
+DECL|struct|__anon287ffab40208
 block|{
 DECL|member|run
 name|gint
@@ -264,7 +246,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8a5d260308
+DECL|struct|__anon287ffab40308
 block|{
 DECL|member|drawable
 name|GDrawable

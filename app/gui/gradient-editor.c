@@ -338,7 +338,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aef35f70103
+DECL|enum|__anon2792a0bb0103
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -362,7 +362,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aef35f70208
+DECL|struct|__anon2792a0bb0208
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -645,7 +645,7 @@ name|replicate_times
 decl_stmt|;
 comment|/*  Saved colors  */
 struct|struct
-DECL|struct|__anon2aef35f70308
+DECL|struct|__anon2792a0bb0308
 block|{
 DECL|member|r
 DECL|member|g
@@ -13292,7 +13292,7 @@ name|seg
 operator|->
 name|left
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|pos
 argument_list|,
@@ -13361,7 +13361,7 @@ name|seg
 operator|->
 name|middle
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|pos
 argument_list|,
@@ -13761,7 +13761,7 @@ block|}
 comment|/* Calculate position */
 name|pos
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|pos
 argument_list|,
@@ -14861,7 +14861,7 @@ name|seg_get_closest_handle
 argument_list|(
 name|curr_gradient
 argument_list|,
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|g_pos
 argument_list|,
@@ -27246,7 +27246,7 @@ expr_stmt|;
 comment|/* handle FP imprecision at the edges of the gradient */
 name|pos
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|pos
 argument_list|,

@@ -62,18 +62,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpmath.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimplimits.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -203,7 +191,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon2a3599730103
+DECL|enum|__anon2a463c0d0103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -223,7 +211,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3599730208
+DECL|struct|__anon2a463c0d0208
 block|{
 DECL|member|x1
 name|gdouble
@@ -442,7 +430,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3599730308
+DECL|struct|__anon2a463c0d0308
 block|{
 DECL|member|x1
 name|gint
@@ -485,7 +473,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3599730408
+DECL|struct|__anon2a463c0d0408
 block|{
 DECL|member|width
 name|gint
@@ -1044,7 +1032,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3599730508
+DECL|struct|__anon2a463c0d0508
 block|{
 DECL|member|r
 name|guchar
@@ -2845,7 +2833,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3599730608
+DECL|struct|__anon2a463c0d0608
 block|{
 DECL|member|preview
 name|GtkWidget

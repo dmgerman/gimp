@@ -992,7 +992,7 @@ expr_stmt|;
 comment|/*  Find the minimum area we need to uncover -- in gimage space  */
 name|x1
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1006,7 +1006,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1020,7 +1020,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1050,7 +1050,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1080,7 +1080,7 @@ argument_list|)
 expr_stmt|;
 name|x1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x
 argument_list|,
@@ -1091,7 +1091,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y
 argument_list|,
@@ -1102,7 +1102,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x
 operator|+
@@ -1115,7 +1115,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y
 operator|+
@@ -1308,7 +1308,7 @@ argument_list|)
 expr_stmt|;
 name|x1
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1322,7 +1322,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1336,7 +1336,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1366,7 +1366,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1396,7 +1396,7 @@ argument_list|)
 expr_stmt|;
 name|x1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x
 argument_list|,
@@ -1407,7 +1407,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y
 argument_list|,
@@ -1418,7 +1418,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x
 operator|+
@@ -1431,7 +1431,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y
 operator|+
@@ -1897,7 +1897,7 @@ argument_list|)
 expr_stmt|;
 name|x1
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1911,7 +1911,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1925,7 +1925,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1955,7 +1955,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1985,7 +1985,7 @@ argument_list|)
 expr_stmt|;
 name|x1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x
 argument_list|,
@@ -1996,7 +1996,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y
 argument_list|,
@@ -2007,7 +2007,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x
 operator|+
@@ -2020,7 +2020,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y
 operator|+

@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -48,19 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpmath.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276133ff0108
+DECL|struct|__anon2946fb280108
 block|{
 DECL|member|radius
 name|gdouble
@@ -79,7 +67,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276133ff0208
+DECL|struct|__anon2946fb280208
 block|{
 DECL|member|run
 name|gint

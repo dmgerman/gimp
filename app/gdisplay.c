@@ -1831,7 +1831,7 @@ expr_stmt|;
 name|area3
 operator|=
 operator|(
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|ga2
 operator|->
@@ -1842,7 +1842,7 @@ operator|->
 name|x2
 argument_list|)
 operator|-
-name|MINIMUM
+name|MIN
 argument_list|(
 name|ga2
 operator|->
@@ -1855,7 +1855,7 @@ argument_list|)
 operator|)
 operator|*
 operator|(
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|ga2
 operator|->
@@ -1866,7 +1866,7 @@ operator|->
 name|y2
 argument_list|)
 operator|-
-name|MINIMUM
+name|MIN
 argument_list|(
 name|ga2
 operator|->
@@ -1905,7 +1905,7 @@ name|ga1
 operator|->
 name|x1
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|ga1
 operator|->
@@ -1920,7 +1920,7 @@ name|ga1
 operator|->
 name|y1
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|ga1
 operator|->
@@ -1935,7 +1935,7 @@ name|ga1
 operator|->
 name|x2
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|ga1
 operator|->
@@ -1950,7 +1950,7 @@ name|ga1
 operator|->
 name|y2
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|ga1
 operator|->
@@ -5386,7 +5386,7 @@ name|ga
 operator|->
 name|x1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x
 argument_list|,
@@ -5403,7 +5403,7 @@ name|ga
 operator|->
 name|y1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y
 argument_list|,
@@ -5420,7 +5420,7 @@ name|ga
 operator|->
 name|x2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x
 operator|+
@@ -5439,7 +5439,7 @@ name|ga
 operator|->
 name|y2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y
 operator|+
@@ -5515,7 +5515,7 @@ name|ga
 operator|->
 name|x1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x
 argument_list|,
@@ -5530,7 +5530,7 @@ name|ga
 operator|->
 name|y1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y
 argument_list|,
@@ -5545,7 +5545,7 @@ name|ga
 operator|->
 name|x2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x
 operator|+
@@ -5562,7 +5562,7 @@ name|ga
 operator|->
 name|y2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y
 operator|+
@@ -5626,7 +5626,7 @@ decl_stmt|;
 comment|/*  Bounds check  */
 name|x1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x
 argument_list|,
@@ -5641,7 +5641,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y
 argument_list|,
@@ -5656,7 +5656,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x
 operator|+
@@ -5673,7 +5673,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y
 operator|+
@@ -5946,7 +5946,7 @@ expr_stmt|;
 comment|/*  Bounds check  */
 name|x1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x
 argument_list|,
@@ -5959,7 +5959,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y
 argument_list|,
@@ -5972,7 +5972,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x
 operator|+
@@ -5987,7 +5987,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y
 operator|+
@@ -6577,7 +6577,7 @@ block|{
 operator|*
 name|x1
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|off_x
 argument_list|,
@@ -6588,7 +6588,7 @@ expr_stmt|;
 operator|*
 name|y1
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|off_y
 argument_list|,
@@ -6599,7 +6599,7 @@ expr_stmt|;
 operator|*
 name|x2
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|off_x
 operator|+
@@ -6618,7 +6618,7 @@ expr_stmt|;
 operator|*
 name|y2
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|off_y
 operator|+
@@ -6699,7 +6699,7 @@ comment|/*  Make sure the extents are within bounds  */
 operator|*
 name|x1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 operator|*
 name|x1
@@ -6714,7 +6714,7 @@ expr_stmt|;
 operator|*
 name|y1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 operator|*
 name|y1
@@ -6729,7 +6729,7 @@ expr_stmt|;
 operator|*
 name|x2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 operator|*
 name|x2
@@ -6744,7 +6744,7 @@ expr_stmt|;
 operator|*
 name|y2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 operator|*
 name|y2

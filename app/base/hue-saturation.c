@@ -678,7 +678,7 @@ literal|100.0
 expr_stmt|;
 name|value
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|value
 argument_list|,
@@ -776,7 +776,7 @@ literal|100.0
 expr_stmt|;
 name|value
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|value
 argument_list|,
@@ -795,7 +795,7 @@ index|[
 name|i
 index|]
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 operator|(
 name|i

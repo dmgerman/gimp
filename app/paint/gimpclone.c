@@ -154,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296980ea0103
+DECL|enum|__anon29ab42b50103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO
@@ -2069,7 +2069,7 @@ condition|)
 block|{
 name|x1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|area
 operator|->
@@ -2087,7 +2087,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|area
 operator|->
@@ -2105,7 +2105,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|area
 operator|->
@@ -2127,7 +2127,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|area
 operator|->
@@ -2198,7 +2198,7 @@ else|else
 block|{
 name|x1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|area
 operator|->
@@ -2216,7 +2216,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|area
 operator|->
@@ -2234,7 +2234,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|area
 operator|->
@@ -2256,7 +2256,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|area
 operator|->

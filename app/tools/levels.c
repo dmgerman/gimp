@@ -3963,7 +3963,7 @@ argument_list|)
 expr_stmt|;
 name|inten
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|inten
 argument_list|,
@@ -6586,7 +6586,7 @@ argument_list|)
 expr_stmt|;
 name|value
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|value
 argument_list|,
@@ -6786,7 +6786,7 @@ argument_list|)
 expr_stmt|;
 name|value
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|value
 argument_list|,
@@ -7368,7 +7368,7 @@ operator|->
 name|channel
 index|]
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|ld
 operator|->
@@ -7432,7 +7432,7 @@ name|width
 expr_stmt|;
 name|x
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x
 argument_list|,
@@ -7550,7 +7550,7 @@ operator|->
 name|channel
 index|]
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|ld
 operator|->
@@ -7875,7 +7875,7 @@ operator|->
 name|channel
 index|]
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|ld
 operator|->
@@ -7928,7 +7928,7 @@ operator|->
 name|channel
 index|]
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|ld
 operator|->

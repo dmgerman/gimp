@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpmath.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -110,7 +104,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8aec9d0103
+DECL|enum|__anon2c095cc10103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -126,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8aec9d0203
+DECL|enum|__anon2c095cc10203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -142,7 +136,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8aec9d0303
+DECL|enum|__anon2c095cc10303
 block|{
 DECL|enumerator|BOTH
 name|BOTH

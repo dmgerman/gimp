@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2976dde10103
+DECL|enum|__anon2c502a180103
 block|{
 DECL|enumerator|PASTE
 name|PASTE
@@ -509,7 +509,7 @@ block|}
 block|}
 name|x2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x2
 operator|+
@@ -524,7 +524,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y2
 operator|+

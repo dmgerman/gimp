@@ -28,12 +28,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<signal.h>
 end_include
 
@@ -53,12 +47,6 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpui.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimplimits.h>
 end_include
 
 begin_include
@@ -134,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c714d550108
+DECL|struct|__anon2c6002100108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -569,7 +557,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c714d550203
+DECL|enum|__anon2c6002100203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -588,7 +576,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c714d550308
+DECL|struct|__anon2c6002100308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -658,7 +646,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c714d550408
+DECL|struct|__anon2c6002100408
 block|{
 DECL|member|htoggle
 name|GtkWidget

@@ -352,7 +352,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ad8ac30108
+DECL|struct|__anon28bc96910108
 block|{
 DECL|member|offset
 name|gdouble
@@ -404,7 +404,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ad8ac30208
+DECL|struct|__anon28bc96910208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -4625,7 +4625,7 @@ argument_list|)
 expr_stmt|;
 name|rat
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|rat
 argument_list|,
@@ -4790,7 +4790,7 @@ argument_list|)
 expr_stmt|;
 name|rat
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|rat
 argument_list|,
@@ -4868,7 +4868,7 @@ literal|100.0
 expr_stmt|;
 name|r
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|abs
 argument_list|(
@@ -5537,7 +5537,7 @@ operator|=
 operator|(
 name|int
 operator|)
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x
 argument_list|,
@@ -5553,7 +5553,7 @@ operator|=
 operator|(
 name|int
 operator|)
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y
 argument_list|,
@@ -5648,7 +5648,7 @@ operator|=
 operator|(
 name|int
 operator|)
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x
 argument_list|,
@@ -5664,7 +5664,7 @@ operator|=
 operator|(
 name|int
 operator|)
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y
 argument_list|,
@@ -5770,7 +5770,7 @@ operator|=
 operator|(
 name|int
 operator|)
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x
 argument_list|,
@@ -5786,7 +5786,7 @@ operator|=
 operator|(
 name|int
 operator|)
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y
 argument_list|,
@@ -5871,7 +5871,7 @@ name|val
 parameter_list|)
 block|{
 return|return
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|val
 argument_list|,
@@ -7535,7 +7535,7 @@ name|rbd
 operator|.
 name|dist
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|fabs
 argument_list|(

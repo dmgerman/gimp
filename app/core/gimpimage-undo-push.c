@@ -217,7 +217,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|enum|__anon27949c8f0103
+DECL|enum|__anon2910dc600103
 typedef|typedef
 enum|enum
 block|{
@@ -3208,7 +3208,7 @@ name|destPR
 decl_stmt|;
 name|x1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x1
 argument_list|,
@@ -3222,7 +3222,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y1
 argument_list|,
@@ -3236,7 +3236,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x2
 argument_list|,
@@ -3250,7 +3250,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y2
 argument_list|,
@@ -3557,7 +3557,7 @@ argument_list|)
 expr_stmt|;
 name|x1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x1
 argument_list|,
@@ -3568,7 +3568,7 @@ argument_list|)
 expr_stmt|;
 name|y1
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y1
 argument_list|,
@@ -3579,7 +3579,7 @@ argument_list|)
 expr_stmt|;
 name|x2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|x2
 argument_list|,
@@ -3590,7 +3590,7 @@ argument_list|)
 expr_stmt|;
 name|y2
 operator|=
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|y2
 argument_list|,
@@ -11435,7 +11435,7 @@ comment|/* Layer re-position */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27949c8f0208
+DECL|struct|__anon2910dc600208
 typedef|typedef
 struct|struct
 block|{
@@ -11665,7 +11665,7 @@ comment|/* Layer name change */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27949c8f0308
+DECL|struct|__anon2910dc600308
 typedef|typedef
 struct|struct
 block|{
@@ -11928,7 +11928,7 @@ name|Undo
 modifier|*
 name|new
 decl_stmt|;
-comment|/* This is the sole purpose of this type of undo: the ability to      * mark an image as having been mutated, without really providing      * any adequate undo facility. */
+comment|/* This is the sole purpose of this type of undo: the ability to    * mark an image as having been mutated, without really providing    * any adequate undo facility. */
 name|new
 operator|=
 name|undo_push

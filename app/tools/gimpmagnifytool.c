@@ -1029,7 +1029,7 @@ expr_stmt|;
 else|else
 name|scale
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 operator|(
 name|width

@@ -31,6 +31,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpcolorspace.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpfeatures.h"
 end_include
 
@@ -38,6 +44,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimpenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimplimits.h"
 end_include
 
 begin_include

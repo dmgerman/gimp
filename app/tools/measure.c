@@ -100,7 +100,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba6ab8d0103
+DECL|enum|__anon27564d530103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -2750,7 +2750,7 @@ name|mevent
 operator|->
 name|x
 operator|==
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|mevent
 operator|->
@@ -2775,7 +2775,7 @@ name|mevent
 operator|->
 name|y
 operator|==
-name|BOUNDS
+name|CLAMP
 argument_list|(
 name|mevent
 operator|->

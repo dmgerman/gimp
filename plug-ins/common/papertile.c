@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpmath.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -80,7 +74,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd637ea0103
+DECL|enum|__anon289158420103
 block|{
 DECL|enumerator|BACKGROUND_TYPE_TRANSPARENT
 name|BACKGROUND_TYPE_TRANSPARENT
@@ -108,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd637ea0203
+DECL|enum|__anon289158420203
 block|{
 DECL|enumerator|FRACTIONAL_TYPE_BACKGROUND
 name|FRACTIONAL_TYPE_BACKGROUND
@@ -199,7 +193,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bd637ea0308
+DECL|struct|__anon289158420308
 block|{
 DECL|member|params
 name|PluginParams
@@ -219,7 +213,7 @@ name|gboolean
 name|drawable_has_alpha
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2bd637ea0408
+DECL|struct|__anon289158420408
 block|{
 DECL|member|x0
 name|gint
@@ -585,7 +579,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bd637ea0508
+DECL|struct|__anon289158420508
 block|{
 DECL|member|tile_size_adj
 name|GtkObject
