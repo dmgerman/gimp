@@ -108,11 +108,6 @@ name|Gimp
 modifier|*
 name|gimp
 decl_stmt|;
-DECL|member|translation_domain
-name|gchar
-modifier|*
-name|translation_domain
-decl_stmt|;
 DECL|member|update_func
 name|GimpActionGroupUpdateFunc
 name|update_func

@@ -1633,7 +1633,7 @@ name|action_path
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%s/file-menu/file-open-recent-menu/file-open-recent-placeholder"
+literal|"%s/File/Open Recent/file-open-recent-placeholder"
 argument_list|,
 name|ui_path
 argument_list|)
