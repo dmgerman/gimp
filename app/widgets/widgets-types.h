@@ -502,6 +502,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpContainerPopup
+typedef|typedef
+name|struct
+name|_GimpContainerPopup
+name|GimpContainerPopup
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpViewableDialog
 typedef|typedef
 name|struct

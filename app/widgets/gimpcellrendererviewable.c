@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be37c500103
+DECL|enum|__anon2abadb940103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be37c500203
+DECL|enum|__anon2abadb940203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1379,7 +1379,10 @@ expr_stmt|;
 if|if
 condition|(
 name|event
-operator|&&
+condition|)
+block|{
+if|if
+condition|(
 operator|(
 operator|(
 name|GdkEventAny
@@ -1438,6 +1441,12 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|gdk_event_free
+argument_list|(
+name|event
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 

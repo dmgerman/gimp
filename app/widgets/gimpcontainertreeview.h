@@ -167,6 +167,11 @@ name|GList
 modifier|*
 name|renderer_cells
 decl_stmt|;
+DECL|member|editable_cells
+name|GList
+modifier|*
+name|editable_cells
+decl_stmt|;
 DECL|member|preview_border_width
 name|gint
 name|preview_border_width

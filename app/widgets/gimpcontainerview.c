@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2935455a0103
+DECL|enum|__anon27e0d3200103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -1619,9 +1619,6 @@ modifier|*
 name|viewable
 parameter_list|)
 block|{
-name|gpointer
-name|insert_data
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_CONTAINER_VIEW
@@ -1641,6 +1638,16 @@ name|viewable
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|view
+operator|->
+name|hash_table
+condition|)
+block|{
+name|gpointer
+name|insert_data
+decl_stmt|;
 name|insert_data
 operator|=
 name|g_hash_table_lookup
@@ -1669,6 +1676,7 @@ name|insert_data
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 end_function
 
 begin_function
@@ -1685,9 +1693,6 @@ modifier|*
 name|viewable
 parameter_list|)
 block|{
-name|gpointer
-name|insert_data
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_CONTAINER_VIEW
@@ -1704,6 +1709,16 @@ name|viewable
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|view
+operator|->
+name|hash_table
+condition|)
+block|{
+name|gpointer
+name|insert_data
+decl_stmt|;
 name|insert_data
 operator|=
 name|g_hash_table_lookup
@@ -1732,6 +1747,7 @@ name|insert_data
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 end_function
 
 begin_function
@@ -1748,9 +1764,6 @@ modifier|*
 name|viewable
 parameter_list|)
 block|{
-name|gpointer
-name|insert_data
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_CONTAINER_VIEW
@@ -1767,6 +1780,16 @@ name|viewable
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|view
+operator|->
+name|hash_table
+condition|)
+block|{
+name|gpointer
+name|insert_data
+decl_stmt|;
 name|insert_data
 operator|=
 name|g_hash_table_lookup
@@ -1794,6 +1817,7 @@ argument_list|,
 name|insert_data
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -1827,6 +1851,13 @@ name|viewable
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_container_view_select_item
+argument_list|(
+name|view
+argument_list|,
+name|viewable
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|view
@@ -1837,10 +1868,32 @@ name|view
 operator|->
 name|context
 condition|)
-name|gimp_context_set_by_type
+block|{
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
+comment|/*  ref and remember the context because view->context may        *  become NULL by calling gimp_context_set_by_type()        */
+name|context
+operator|=
+name|g_object_ref
 argument_list|(
 name|view
 operator|->
+name|context
+argument_list|)
+expr_stmt|;
+name|g_signal_handlers_block_by_func
+argument_list|(
+name|context
+argument_list|,
+name|gimp_container_view_context_changed
+argument_list|,
+name|view
+argument_list|)
+expr_stmt|;
+name|gimp_context_set_by_type
+argument_list|(
 name|context
 argument_list|,
 name|view
@@ -1855,13 +1908,21 @@ name|viewable
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_container_view_select_item
+name|g_signal_handlers_unblock_by_func
 argument_list|(
-name|view
+name|context
 argument_list|,
-name|viewable
+name|gimp_container_view_context_changed
+argument_list|,
+name|view
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|context
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 

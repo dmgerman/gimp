@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0571210103
+DECL|enum|__anon29c6dc130103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -1270,6 +1270,21 @@ operator|->
 name|editable
 operator|=
 name|TRUE
+expr_stmt|;
+name|tree_view
+operator|->
+name|editable_cells
+operator|=
+name|g_list_prepend
+argument_list|(
+name|tree_view
+operator|->
+name|editable_cells
+argument_list|,
+name|tree_view
+operator|->
+name|name_cell
+argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
