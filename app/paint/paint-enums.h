@@ -78,7 +78,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d4ae300103
+DECL|enum|__anon2948a8080103
 block|{
 DECL|enumerator|GIMP_IMAGE_CLONE
 name|GIMP_IMAGE_CLONE
@@ -115,7 +115,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon27d4ae300203
+DECL|enum|__anon2948a8080203
 block|{
 DECL|enumerator|GIMP_CLONE_ALIGN_NO
 name|GIMP_CLONE_ALIGN_NO
@@ -155,7 +155,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d4ae300303
+DECL|enum|__anon2948a8080303
 block|{
 DECL|enumerator|GIMP_DODGE
 name|GIMP_DODGE
@@ -191,7 +191,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d4ae300403
+DECL|enum|__anon2948a8080403
 block|{
 DECL|enumerator|GIMP_GRADIENT_ONCE_FORWARD
 name|GIMP_GRADIENT_ONCE_FORWARD
@@ -235,7 +235,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d4ae300503
+DECL|enum|__anon2948a8080503
 block|{
 DECL|enumerator|GIMP_BLUR_CONVOLVE
 name|GIMP_BLUR_CONVOLVE
@@ -254,6 +254,44 @@ name|GimpConvolveType
 typedef|;
 end_typedef
 
+begin_define
+DECL|macro|GIMP_TYPE_INK_BLOB_TYPE
+define|#
+directive|define
+name|GIMP_TYPE_INK_BLOB_TYPE
+value|(gimp_ink_blob_type_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_ink_blob_type_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< pdb-skip>*/
+DECL|enum|__anon2948a8080603
+block|{
+DECL|enumerator|GIMP_INK_BLOB_TYPE_ELLIPSE
+name|GIMP_INK_BLOB_TYPE_ELLIPSE
+block|,
+DECL|enumerator|GIMP_INK_BLOB_TYPE_SQUARE
+name|GIMP_INK_BLOB_TYPE_SQUARE
+block|,
+DECL|enumerator|GIMP_INK_BLOB_TYPE_DIAMOND
+name|GIMP_INK_BLOB_TYPE_DIAMOND
+DECL|typedef|GimpInkBlobType
+block|}
+name|GimpInkBlobType
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  * non-registered enums; register them if needed  */
 end_comment
@@ -262,7 +300,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon27d4ae300603
+DECL|enum|__anon2948a8080703
 block|{
 DECL|enumerator|GIMP_BRUSH_HARD
 name|GIMP_BRUSH_HARD
@@ -283,7 +321,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon27d4ae300703
+DECL|enum|__anon2948a8080803
 block|{
 DECL|enumerator|GIMP_PAINT_CONSTANT
 name|GIMP_PAINT_CONSTANT
