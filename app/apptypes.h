@@ -412,11 +412,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|BitmapCursor
+DECL|typedef|GimpBitmapCursor
 typedef|typedef
 name|struct
-name|_BitmapCursor
-name|BitmapCursor
+name|_GimpBitmapCursor
+name|GimpBitmapCursor
 typedef|;
 end_typedef
 

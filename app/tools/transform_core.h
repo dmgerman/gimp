@@ -470,19 +470,9 @@ begin_comment
 comment|/*  transform tool functions  */
 end_comment
 
-begin_function_decl
-name|Tool
-modifier|*
-name|transform_core_new
-parameter_list|(
-name|ToolType
-name|tool_type
-parameter_list|,
-name|gboolean
-name|interactive
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_comment
+comment|/* make PDB compile: ToolType doesn't exist any more  Tool        * transform_core_new                    (ToolType        tool_type, 						     gboolean        interactive); */
+end_comment
 
 begin_function_decl
 name|void

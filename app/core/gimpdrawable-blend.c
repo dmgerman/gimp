@@ -400,7 +400,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2920beee0108
+DECL|struct|__anon2a4710f40108
 block|{
 DECL|member|offset
 name|gdouble
@@ -452,7 +452,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2920beee0208
+DECL|struct|__anon2a4710f40208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -3594,11 +3594,9 @@ name|gdisp
 argument_list|,
 name|GIMP_BAD_CURSOR
 argument_list|,
-name|BLEND
+name|GIMP_BLEND_TOOL_CURSOR
 argument_list|,
-name|CURSOR_MODIFIER_NONE
-argument_list|,
-name|FALSE
+name|GIMP_CURSOR_MODIFIER_NONE
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3609,11 +3607,9 @@ name|gdisp
 argument_list|,
 name|GIMP_MOUSE_CURSOR
 argument_list|,
-name|BLEND
+name|GIMP_BLEND_TOOL_CURSOR
 argument_list|,
-name|CURSOR_MODIFIER_NONE
-argument_list|,
-name|FALSE
+name|GIMP_CURSOR_MODIFIER_NONE
 argument_list|)
 expr_stmt|;
 break|break;

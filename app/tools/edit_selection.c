@@ -2756,11 +2756,9 @@ name|gdisp
 argument_list|,
 name|GIMP_MOUSE_CURSOR
 argument_list|,
-name|TOOL_TYPE_NONE
+name|GIMP_TOOL_CURSOR_NONE
 argument_list|,
-name|CURSOR_MODIFIER_MOVE
-argument_list|,
-name|FALSE
+name|GIMP_CURSOR_MODIFIER_MOVE
 argument_list|)
 expr_stmt|;
 block|}

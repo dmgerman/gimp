@@ -1242,10 +1242,10 @@ name|ctype
 init|=
 name|GDK_TOP_LEFT_ARROW
 decl_stmt|;
-name|CursorModifier
+name|GimpCursorModifier
 name|cmodifier
 init|=
-name|CURSOR_MODIFIER_NONE
+name|GIMP_CURSOR_MODIFIER_NONE
 decl_stmt|;
 name|gint
 name|x
@@ -1385,7 +1385,7 @@ name|FG_BUCKET_FILL
 case|:
 name|cmodifier
 operator|=
-name|CURSOR_MODIFIER_FOREGROUND
+name|GIMP_CURSOR_MODIFIER_FOREGROUND
 expr_stmt|;
 break|break;
 case|case
@@ -1393,7 +1393,7 @@ name|BG_BUCKET_FILL
 case|:
 name|cmodifier
 operator|=
-name|CURSOR_MODIFIER_BACKGROUND
+name|GIMP_CURSOR_MODIFIER_BACKGROUND
 expr_stmt|;
 break|break;
 case|case
@@ -1401,7 +1401,7 @@ name|PATTERN_BUCKET_FILL
 case|:
 name|cmodifier
 operator|=
-name|CURSOR_MODIFIER_PATTERN
+name|GIMP_CURSOR_MODIFIER_PATTERN
 expr_stmt|;
 break|break;
 block|}
@@ -1414,11 +1414,9 @@ name|gdisp
 argument_list|,
 name|ctype
 argument_list|,
-name|BUCKET_FILL
+name|GIMP_BUCKET_FILL_TOOL_CURSOR
 argument_list|,
 name|cmodifier
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

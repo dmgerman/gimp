@@ -194,7 +194,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27f0d2c30103
+DECL|enum|__anon2894c8a40103
 block|{
 DECL|enumerator|CONVOLVE_NCLIP
 name|CONVOLVE_NCLIP
@@ -1383,6 +1383,12 @@ name|paint_core_new
 argument_list|(
 name|CONVOLVE
 argument_list|)
+expr_stmt|;
+name|tool
+operator|->
+name|tool_cursor
+operator|=
+name|GIMP_BLUR_TOOL_CURSOR
 expr_stmt|;
 name|tool
 operator|->

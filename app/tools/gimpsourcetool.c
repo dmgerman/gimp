@@ -184,7 +184,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon280018390103
+DECL|enum|__anon28b713f30103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO
@@ -1670,13 +1670,11 @@ name|ctype
 operator|==
 name|GIMP_CROSSHAIR_SMALL_CURSOR
 condition|?
-name|TOOL_TYPE_NONE
+name|GIMP_TOOL_CURSOR_NONE
 else|:
-name|CLONE
+name|GIMP_CLONE_TOOL_CURSOR
 argument_list|,
-name|CURSOR_MODIFIER_NONE
-argument_list|,
-name|FALSE
+name|GIMP_CURSOR_MODIFIER_NONE
 argument_list|)
 expr_stmt|;
 block|}

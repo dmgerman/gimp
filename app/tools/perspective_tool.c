@@ -539,6 +539,12 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|tool
+operator|->
+name|tool_cursor
+operator|=
+name|GIMP_PERSPECTIVE_TOOL_CURSOR
+expr_stmt|;
 name|private
 operator|=
 name|tool

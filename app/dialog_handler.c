@@ -54,7 +54,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27e53b370103
+DECL|enum|__anon2bca47570103
 block|{
 DECL|enumerator|VISIBILITY_INVISIBLE
 name|VISIBILITY_INVISIBLE
@@ -104,7 +104,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27e53b370203
+DECL|enum|__anon2bca47570203
 block|{
 DECL|enumerator|SHOW_ALL
 name|SHOW_ALL
@@ -573,7 +573,7 @@ name|dialog
 argument_list|)
 condition|)
 block|{
-name|change_win_cursor
+name|gimp_change_win_cursor
 argument_list|(
 name|dstate
 operator|->
@@ -583,11 +583,9 @@ name|window
 argument_list|,
 name|GDK_WATCH
 argument_list|,
-name|TOOL_TYPE_NONE
+name|GIMP_TOOL_CURSOR_NONE
 argument_list|,
-name|CURSOR_MODIFIER_NONE
-argument_list|,
-name|FALSE
+name|GIMP_CURSOR_MODIFIER_NONE
 argument_list|)
 expr_stmt|;
 block|}
@@ -604,7 +602,7 @@ name|dialog
 argument_list|)
 condition|)
 block|{
-name|change_win_cursor
+name|gimp_change_win_cursor
 argument_list|(
 name|toolbox_shell
 operator|->
@@ -614,11 +612,9 @@ name|window
 argument_list|,
 name|GDK_WATCH
 argument_list|,
-name|TOOL_TYPE_NONE
+name|GIMP_TOOL_CURSOR_NONE
 argument_list|,
-name|CURSOR_MODIFIER_NONE
-argument_list|,
-name|FALSE
+name|GIMP_CURSOR_MODIFIER_NONE
 argument_list|)
 expr_stmt|;
 block|}
@@ -634,7 +630,7 @@ name|dialog
 argument_list|)
 condition|)
 block|{
-name|change_win_cursor
+name|gimp_change_win_cursor
 argument_list|(
 name|fileload_shell
 operator|->
@@ -644,11 +640,9 @@ name|window
 argument_list|,
 name|GDK_WATCH
 argument_list|,
-name|TOOL_TYPE_NONE
+name|GIMP_TOOL_CURSOR_NONE
 argument_list|,
-name|CURSOR_MODIFIER_NONE
-argument_list|,
-name|FALSE
+name|GIMP_CURSOR_MODIFIER_NONE
 argument_list|)
 expr_stmt|;
 block|}
@@ -772,7 +766,7 @@ name|dialog
 argument_list|)
 condition|)
 block|{
-name|unset_win_cursor
+name|gimp_unset_win_cursor
 argument_list|(
 name|dstate
 operator|->
@@ -795,7 +789,7 @@ name|dialog
 argument_list|)
 condition|)
 block|{
-name|unset_win_cursor
+name|gimp_unset_win_cursor
 argument_list|(
 name|toolbox_shell
 operator|->
@@ -817,7 +811,7 @@ name|dialog
 argument_list|)
 condition|)
 block|{
-name|unset_win_cursor
+name|gimp_unset_win_cursor
 argument_list|(
 name|fileload_shell
 operator|->

@@ -1792,11 +1792,9 @@ name|gdisp
 argument_list|,
 name|GDK_FLEUR
 argument_list|,
-name|MOVE
+name|GIMP_MOVE_TOOL_CURSOR
 argument_list|,
-name|CURSOR_MODIFIER_NONE
-argument_list|,
-name|FALSE
+name|GIMP_CURSOR_MODIFIER_NONE
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1807,11 +1805,9 @@ name|gdisp
 argument_list|,
 name|GDK_XTERM
 argument_list|,
-name|TEXT
+name|GIMP_TEXT_TOOL_CURSOR
 argument_list|,
-name|CURSOR_MODIFIER_NONE
-argument_list|,
-name|FALSE
+name|GIMP_CURSOR_MODIFIER_NONE
 argument_list|)
 expr_stmt|;
 block|}

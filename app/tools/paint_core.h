@@ -24,7 +24,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2bf749720103
+DECL|enum|__anon2c11cf0e0103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -63,7 +63,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2bf749720203
+DECL|enum|__anon2c11cf0e0203
 block|{
 DECL|enumerator|TOOL_CAN_HANDLE_CHANGING_BRUSH
 name|TOOL_CAN_HANDLE_CHANGING_BRUSH
@@ -469,16 +469,9 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|Tool
-modifier|*
-name|paint_core_new
-parameter_list|(
-name|ToolType
-name|type
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_comment
+comment|/* ToolType doesn't exist an more Tool *        paint_core_new             (ToolType             type); */
+end_comment
 
 begin_function_decl
 name|void

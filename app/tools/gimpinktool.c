@@ -5596,11 +5596,9 @@ name|gdisp
 argument_list|,
 name|ctype
 argument_list|,
-name|INK
+name|GIMP_INK_TOOL_CURSOR
 argument_list|,
-name|CURSOR_MODIFIER_NONE
-argument_list|,
-name|FALSE
+name|GIMP_CURSOR_MODIFIER_NONE
 argument_list|)
 expr_stmt|;
 block|}
@@ -6112,7 +6110,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2909f3c80103
+DECL|enum|__anon2c26494c0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

@@ -2899,11 +2899,9 @@ name|ctype
 argument_list|,
 name|tool
 operator|->
-name|type
+name|tool_cursor
 argument_list|,
-name|CURSOR_MODIFIER_NONE
-argument_list|,
-name|FALSE
+name|GIMP_CURSOR_MODIFIER_NONE
 argument_list|)
 expr_stmt|;
 block|}

@@ -285,6 +285,15 @@ modifier|*
 name|drawable
 decl_stmt|;
 comment|/*  pointer to the tool's current drawable      */
+DECL|member|tool_cursor
+name|GimpToolCursorType
+name|tool_cursor
+decl_stmt|;
+DECL|member|toggle_cursor
+name|GimpToolCursorType
+name|toggle_cursor
+decl_stmt|;
+comment|/* one of these or both will go 				      * away once all cursor_update 				      * functions are properly 				      * virtualized 				      */
 DECL|member|toggled
 name|gboolean
 name|toggled
@@ -314,16 +323,6 @@ DECL|member|pdb_string
 name|gchar
 modifier|*
 name|pdb_string
-decl_stmt|;
-DECL|member|tool_cursor
-name|BitmapCursor
-modifier|*
-name|tool_cursor
-decl_stmt|;
-DECL|member|toggle_cursor
-name|BitmapCursor
-modifier|*
-name|toggle_cursor
 decl_stmt|;
 DECL|member|initialize
 name|void

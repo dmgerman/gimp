@@ -1558,11 +1558,9 @@ name|gdisp
 argument_list|,
 name|GIMP_ZOOM_CURSOR
 argument_list|,
-name|MAGNIFY
+name|GIMP_MAGNIFY_TOOL_CURSOR
 argument_list|,
-name|CURSOR_MODIFIER_PLUS
-argument_list|,
-name|FALSE
+name|GIMP_CURSOR_MODIFIER_PLUS
 argument_list|)
 expr_stmt|;
 block|}
@@ -1574,11 +1572,9 @@ name|gdisp
 argument_list|,
 name|GIMP_ZOOM_CURSOR
 argument_list|,
-name|MAGNIFY
+name|GIMP_MAGNIFY_TOOL_CURSOR
 argument_list|,
-name|CURSOR_MODIFIER_MINUS
-argument_list|,
-name|FALSE
+name|GIMP_CURSOR_MODIFIER_MINUS
 argument_list|)
 expr_stmt|;
 block|}

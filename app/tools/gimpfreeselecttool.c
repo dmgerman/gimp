@@ -1438,6 +1438,12 @@ name|private
 expr_stmt|;
 name|tool
 operator|->
+name|tool_cursor
+operator|=
+name|GIMP_FREE_SELECT_TOOL_CURSOR
+expr_stmt|;
+name|tool
+operator|->
 name|button_press_func
 operator|=
 name|free_select_button_press

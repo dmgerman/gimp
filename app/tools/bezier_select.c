@@ -248,7 +248,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2add50be0108
+DECL|struct|__anon2c1add4a0108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -284,7 +284,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2add50be0208
+DECL|struct|__anon2c1add4a0208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2add50be0308
+DECL|struct|__anon2c1add4a0308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -6309,11 +6309,9 @@ name|gdisp
 argument_list|,
 name|GIMP_MOUSE_CURSOR
 argument_list|,
-name|BEZIER_SELECT
+name|GIMP_BEZIER_SELECT_TOOL_CURSOR
 argument_list|,
-name|CURSOR_MODIFIER_NONE
-argument_list|,
-name|FALSE
+name|GIMP_CURSOR_MODIFIER_NONE
 argument_list|)
 expr_stmt|;
 return|return;
@@ -6463,11 +6461,9 @@ name|gdisp
 argument_list|,
 name|GIMP_MOUSE_CURSOR
 argument_list|,
-name|RECT_SELECT
+name|GIMP_RECT_SELECT_TOOL_CURSOR
 argument_list|,
-name|CURSOR_MODIFIER_PLUS
-argument_list|,
-name|FALSE
+name|GIMP_CURSOR_MODIFIER_PLUS
 argument_list|)
 expr_stmt|;
 block|}
@@ -6498,11 +6494,9 @@ name|gdisp
 argument_list|,
 name|GIMP_MOUSE_CURSOR
 argument_list|,
-name|RECT_SELECT
+name|GIMP_RECT_SELECT_TOOL_CURSOR
 argument_list|,
-name|CURSOR_MODIFIER_MINUS
-argument_list|,
-name|FALSE
+name|GIMP_CURSOR_MODIFIER_MINUS
 argument_list|)
 expr_stmt|;
 block|}
@@ -6532,11 +6526,9 @@ name|gdisp
 argument_list|,
 name|GIMP_MOUSE_CURSOR
 argument_list|,
-name|RECT_SELECT
+name|GIMP_RECT_SELECT_TOOL_CURSOR
 argument_list|,
-name|CURSOR_MODIFIER_INTERSECT
-argument_list|,
-name|FALSE
+name|GIMP_CURSOR_MODIFIER_INTERSECT
 argument_list|)
 expr_stmt|;
 block|}
@@ -6548,11 +6540,9 @@ name|gdisp
 argument_list|,
 name|GIMP_MOUSE_CURSOR
 argument_list|,
-name|RECT_SELECT
+name|GIMP_RECT_SELECT_TOOL_CURSOR
 argument_list|,
-name|CURSOR_MODIFIER_NONE
-argument_list|,
-name|FALSE
+name|GIMP_CURSOR_MODIFIER_NONE
 argument_list|)
 expr_stmt|;
 block|}
@@ -6584,11 +6574,9 @@ name|gdisp
 argument_list|,
 name|GIMP_MOUSE_CURSOR
 argument_list|,
-name|BEZIER_SELECT
+name|GIMP_BEZIER_SELECT_TOOL_CURSOR
 argument_list|,
-name|CURSOR_MODIFIER_MOVE
-argument_list|,
-name|FALSE
+name|GIMP_CURSOR_MODIFIER_MOVE
 argument_list|)
 expr_stmt|;
 block|}
@@ -6600,11 +6588,9 @@ name|gdisp
 argument_list|,
 name|GIMP_MOUSE_CURSOR
 argument_list|,
-name|BEZIER_SELECT
+name|GIMP_BEZIER_SELECT_TOOL_CURSOR
 argument_list|,
-name|CURSOR_MODIFIER_MOVE
-argument_list|,
-name|FALSE
+name|GIMP_CURSOR_MODIFIER_MOVE
 argument_list|)
 expr_stmt|;
 block|}
@@ -6634,11 +6620,9 @@ name|gdisp
 argument_list|,
 name|GIMP_MOUSE_CURSOR
 argument_list|,
-name|BEZIER_SELECT
+name|GIMP_BEZIER_SELECT_TOOL_CURSOR
 argument_list|,
-name|CURSOR_MODIFIER_CONTROL
-argument_list|,
-name|FALSE
+name|GIMP_CURSOR_MODIFIER_CONTROL
 argument_list|)
 expr_stmt|;
 comment|/* 	      g_print ("add to curve cursor\n"); */
@@ -6655,11 +6639,9 @@ name|gdisp
 argument_list|,
 name|GIMP_MOUSE_CURSOR
 argument_list|,
-name|BEZIER_SELECT
+name|GIMP_BEZIER_SELECT_TOOL_CURSOR
 argument_list|,
-name|CURSOR_MODIFIER_NONE
-argument_list|,
-name|FALSE
+name|GIMP_CURSOR_MODIFIER_NONE
 argument_list|)
 expr_stmt|;
 comment|/* 	      g_print ("edit control point cursor\n"); */
@@ -6672,11 +6654,9 @@ name|gdisp
 argument_list|,
 name|GIMP_MOUSE_CURSOR
 argument_list|,
-name|BEZIER_SELECT
+name|GIMP_BEZIER_SELECT_TOOL_CURSOR
 argument_list|,
-name|CURSOR_MODIFIER_NONE
-argument_list|,
-name|FALSE
+name|GIMP_CURSOR_MODIFIER_NONE
 argument_list|)
 expr_stmt|;
 block|}
@@ -6695,11 +6675,9 @@ name|gdisp
 argument_list|,
 name|GIMP_MOUSE_CURSOR
 argument_list|,
-name|BEZIER_SELECT
+name|GIMP_BEZIER_SELECT_TOOL_CURSOR
 argument_list|,
-name|CURSOR_MODIFIER_PLUS
-argument_list|,
-name|FALSE
+name|GIMP_CURSOR_MODIFIER_PLUS
 argument_list|)
 expr_stmt|;
 comment|/* 	      g_print ("add to curve cursor\n"); */
@@ -6712,11 +6690,9 @@ name|gdisp
 argument_list|,
 name|GIMP_MOUSE_CURSOR
 argument_list|,
-name|BEZIER_SELECT
+name|GIMP_BEZIER_SELECT_TOOL_CURSOR
 argument_list|,
-name|CURSOR_MODIFIER_NONE
-argument_list|,
-name|FALSE
+name|GIMP_CURSOR_MODIFIER_NONE
 argument_list|)
 expr_stmt|;
 comment|/* 	      g_print ("default no action cursor\n"); */
@@ -6736,11 +6712,9 @@ name|gdisp
 argument_list|,
 name|GIMP_MOUSE_CURSOR
 argument_list|,
-name|BEZIER_SELECT
+name|GIMP_BEZIER_SELECT_TOOL_CURSOR
 argument_list|,
-name|CURSOR_MODIFIER_CONTROL
-argument_list|,
-name|FALSE
+name|GIMP_CURSOR_MODIFIER_CONTROL
 argument_list|)
 expr_stmt|;
 comment|/* 	      g_print ("edit control point cursor\n"); */
@@ -6753,11 +6727,9 @@ name|gdisp
 argument_list|,
 name|GIMP_MOUSE_CURSOR
 argument_list|,
-name|BEZIER_SELECT
+name|GIMP_BEZIER_SELECT_TOOL_CURSOR
 argument_list|,
-name|CURSOR_MODIFIER_NONE
-argument_list|,
-name|FALSE
+name|GIMP_CURSOR_MODIFIER_NONE
 argument_list|)
 expr_stmt|;
 comment|/* 	      g_print ("default no action cursor\n"); */
@@ -6783,11 +6755,9 @@ name|gdisp
 argument_list|,
 name|GIMP_MOUSE_CURSOR
 argument_list|,
-name|BEZIER_SELECT
+name|GIMP_BEZIER_SELECT_TOOL_CURSOR
 argument_list|,
-name|CURSOR_MODIFIER_MINUS
-argument_list|,
-name|FALSE
+name|GIMP_CURSOR_MODIFIER_MINUS
 argument_list|)
 expr_stmt|;
 comment|/*            g_print ("delete whole curve cursor\n"); */
@@ -6804,11 +6774,9 @@ name|gdisp
 argument_list|,
 name|GIMP_MOUSE_CURSOR
 argument_list|,
-name|BEZIER_SELECT
+name|GIMP_BEZIER_SELECT_TOOL_CURSOR
 argument_list|,
-name|CURSOR_MODIFIER_MINUS
-argument_list|,
-name|FALSE
+name|GIMP_CURSOR_MODIFIER_MINUS
 argument_list|)
 expr_stmt|;
 comment|/* 	      g_print ("remove point cursor\n"); */
@@ -6821,11 +6789,9 @@ name|gdisp
 argument_list|,
 name|GIMP_MOUSE_CURSOR
 argument_list|,
-name|BEZIER_SELECT
+name|GIMP_BEZIER_SELECT_TOOL_CURSOR
 argument_list|,
-name|CURSOR_MODIFIER_NONE
-argument_list|,
-name|FALSE
+name|GIMP_CURSOR_MODIFIER_NONE
 argument_list|)
 expr_stmt|;
 comment|/* 	      g_print ("default no action cursor\n"); */
@@ -6843,11 +6809,9 @@ name|gdisp
 argument_list|,
 name|GIMP_MOUSE_CURSOR
 argument_list|,
-name|BEZIER_SELECT
+name|GIMP_BEZIER_SELECT_TOOL_CURSOR
 argument_list|,
-name|CURSOR_MODIFIER_NONE
-argument_list|,
-name|FALSE
+name|GIMP_CURSOR_MODIFIER_NONE
 argument_list|)
 expr_stmt|;
 break|break;

@@ -17,9 +17,9 @@ name|__CURSORUTIL_H__
 end_define
 
 begin_struct
-DECL|struct|_BitmapCursor
+DECL|struct|_GimpBitmapCursor
 struct|struct
-name|_BitmapCursor
+name|_GimpBitmapCursor
 block|{
 DECL|member|bits
 name|guchar
@@ -67,7 +67,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f2fae60103
+DECL|enum|__anon2b71b78f0103
 block|{
 DECL|enumerator|GIMP_MOUSE_CURSOR
 name|GIMP_MOUSE_CURSOR
@@ -114,7 +114,7 @@ end_decl_stmt
 
 begin_function_decl
 name|void
-name|change_win_cursor
+name|gimp_change_win_cursor
 parameter_list|(
 name|GdkWindow
 modifier|*
@@ -123,21 +123,18 @@ parameter_list|,
 name|GdkCursorType
 name|curtype
 parameter_list|,
-name|ToolType
-name|tool_type
+name|GimpToolCursorType
+name|tool_cursor
 parameter_list|,
-name|CursorModifier
+name|GimpCursorModifier
 name|modifier
-parameter_list|,
-name|gboolean
-name|toggle_cursor
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|unset_win_cursor
+name|gimp_unset_win_cursor
 parameter_list|(
 name|GdkWindow
 modifier|*

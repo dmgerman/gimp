@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d38c300103
+DECL|enum|__anon27eb7bfa0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -919,6 +919,18 @@ name|NULL
 expr_stmt|;
 name|tool
 operator|->
+name|tool_cursor
+operator|=
+name|GIMP_TOOL_CURSOR_NONE
+expr_stmt|;
+name|tool
+operator|->
+name|toggle_cursor
+operator|=
+name|GIMP_TOOL_CURSOR_NONE
+expr_stmt|;
+name|tool
+operator|->
 name|toggled
 operator|=
 name|FALSE
@@ -1661,11 +1673,9 @@ name|gdisp
 argument_list|,
 name|GDK_TOP_LEFT_ARROW
 argument_list|,
-name|TOOL_TYPE_NONE
+name|GIMP_TOOL_CURSOR_NONE
 argument_list|,
-name|CURSOR_MODIFIER_NONE
-argument_list|,
-name|FALSE
+name|GIMP_CURSOR_MODIFIER_NONE
 argument_list|)
 expr_stmt|;
 block|}

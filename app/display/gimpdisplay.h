@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2891dac10103
+DECL|enum|__anon2a53fe900103
 block|{
 DECL|enumerator|SelectionOff
 name|SelectionOff
@@ -577,22 +577,17 @@ DECL|member|current_cursor
 name|GdkCursorType
 name|current_cursor
 decl_stmt|;
-comment|/*  Currently installed cursor              */
-DECL|member|cursor_tool
-name|ToolType
-name|cursor_tool
+comment|/*  Currently installed main cursor    */
+DECL|member|tool_cursor
+name|GimpToolCursorType
+name|tool_cursor
 decl_stmt|;
-comment|/*  Cursor for which tool?                  */
+comment|/*  Current Tool cursor                */
 DECL|member|cursor_modifier
-name|CursorModifier
+name|GimpCursorModifier
 name|cursor_modifier
 decl_stmt|;
-comment|/*  Cursor modifier (plus, minus, ...)      */
-DECL|member|toggle_cursor
-name|gboolean
-name|toggle_cursor
-decl_stmt|;
-comment|/*  Cursor toggled?                         */
+comment|/*  Cursor modifier (plus, minus, ...) */
 DECL|member|override_cursor
 name|GdkCursorType
 name|override_cursor
@@ -838,14 +833,11 @@ parameter_list|,
 name|GdkCursorType
 name|cursor_type
 parameter_list|,
-name|ToolType
-name|tool_type
+name|GimpToolCursorType
+name|tool_cursor
 parameter_list|,
-name|CursorModifier
+name|GimpCursorModifier
 name|modifier
-parameter_list|,
-name|gboolean
-name|toggle_cursor
 parameter_list|,
 name|gboolean
 name|always_install
@@ -864,14 +856,11 @@ parameter_list|,
 name|GdkCursorType
 name|cursor_type
 parameter_list|,
-name|ToolType
-name|tool_type
+name|GimpToolCursorType
+name|tool_cursor
 parameter_list|,
-name|CursorModifier
+name|GimpCursorModifier
 name|modifier
-parameter_list|,
-name|gboolean
-name|toggle_cursor
 parameter_list|)
 function_decl|;
 end_function_decl
