@@ -21,13 +21,13 @@ name|_GAP_MOV_DIALOG_H
 end_define
 
 begin_comment
-comment|/* revision history:  * version 0.96.02; 1998.07.25  hof: added clip_to_img  */
+comment|/* revision history:  * gimp    1.1.20a; 2000/04/25  hof: support for keyframes, anim_preview  * version 0.96.02; 1998.07.25  hof: added clip_to_img  */
 end_comment
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9a90210103
+DECL|enum|__anon2a5371fd0103
 block|{
 DECL|enumerator|GAP_STEP_LOOP
 name|GAP_STEP_LOOP
@@ -67,7 +67,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9a90210203
+DECL|enum|__anon2a5371fd0203
 block|{
 DECL|enumerator|GAP_HANDLE_LEFT_TOP
 name|GAP_HANDLE_LEFT_TOP
@@ -100,7 +100,32 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b9a90210308
+typedef|typedef
+enum|enum
+DECL|enum|__anon2a5371fd0303
+block|{
+DECL|enumerator|GAP_APV_EXACT
+name|GAP_APV_EXACT
+init|=
+literal|0
+block|,
+DECL|enumerator|GAP_APV_ONE_FRAME
+name|GAP_APV_ONE_FRAME
+init|=
+literal|1
+block|,
+DECL|enumerator|GAP_APV_QUICK
+name|GAP_APV_QUICK
+init|=
+literal|2
+DECL|typedef|t_apv_mode
+block|}
+name|t_apv_mode
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|struct|__anon2a5371fd0408
 typedef|typedef
 struct|struct
 block|{
@@ -186,7 +211,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b9a90210408
+DECL|struct|__anon2a5371fd0508
 typedef|typedef
 struct|struct
 block|{
@@ -218,6 +243,14 @@ name|gint
 name|rotation
 decl_stmt|;
 comment|/* rotatation +- degrees */
+DECL|member|keyframe_abs
+name|gint
+name|keyframe_abs
+decl_stmt|;
+DECL|member|keyframe
+name|gint
+name|keyframe
+decl_stmt|;
 DECL|typedef|t_mov_point
 block|}
 name|t_mov_point
@@ -237,7 +270,7 @@ comment|/*  * Notes:  * - exchange of frames (load replace)  *   keeps an images
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b9a90210508
+DECL|struct|__anon2a5371fd0608
 typedef|typedef
 struct|struct
 block|{
@@ -263,9 +296,9 @@ DECL|member|src_paintmode
 name|int
 name|src_paintmode
 decl_stmt|;
-DECL|member|src_only_visible
+DECL|member|src_force_visible
 name|gint
-name|src_only_visible
+name|src_force_visible
 decl_stmt|;
 comment|/* TRUE FALSE */
 DECL|member|clip_to_img
@@ -319,6 +352,39 @@ name|gint32
 name|tmp_image_id
 decl_stmt|;
 comment|/* temp. flattened preview image */
+comment|/* for generating animated preview only */
+DECL|member|apv_mode
+name|t_apv_mode
+name|apv_mode
+decl_stmt|;
+DECL|member|apv_src_frame
+name|gint32
+name|apv_src_frame
+decl_stmt|;
+comment|/* image_id of the (already scaled) baseframe                                      * or -1 in exact mode. 			             * (exact mode uses unscaled original frames) 			             */
+DECL|member|apv_mlayer_image
+name|gint32
+name|apv_mlayer_image
+decl_stmt|;
+comment|/* destination image_id for the animated preview                                      * -1 if we are not in anim_preview mode 				     */
+DECL|member|apv_gap_paste_buff
+name|gchar
+modifier|*
+name|apv_gap_paste_buff
+decl_stmt|;
+comment|/* Optional PasteBuffer (to store preview frames) 	                               * "/tmp/gimp_video_paste_buffer/gap_pasteframe_"  				       * NULL if we do not copy frames to a paste_buffer 				       */
+DECL|member|apv_framerate
+name|gdouble
+name|apv_framerate
+decl_stmt|;
+DECL|member|apv_scalex
+name|gdouble
+name|apv_scalex
+decl_stmt|;
+DECL|member|apv_scaley
+name|gdouble
+name|apv_scaley
+decl_stmt|;
 DECL|typedef|t_mov_values
 block|}
 name|t_mov_values
@@ -326,7 +392,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b9a90210608
+DECL|struct|__anon2a5371fd0708
 typedef|typedef
 struct|struct
 block|{

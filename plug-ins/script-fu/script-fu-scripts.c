@@ -295,7 +295,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd2722f0108
+DECL|struct|__anon2a9934ca0108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd2722f0208
+DECL|struct|__anon2a9934ca0208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -365,7 +365,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd2722f0308
+DECL|struct|__anon2a9934ca0308
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -386,7 +386,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd2722f0408
+DECL|struct|__anon2a9934ca0408
 block|{
 DECL|member|name
 name|gchar
@@ -414,7 +414,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd2722f0508
+DECL|struct|__anon2a9934ca0508
 block|{
 DECL|member|list
 name|GSList
@@ -434,7 +434,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2bd2722f060a
+DECL|union|__anon2a9934ca060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -507,7 +507,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd2722f0708
+DECL|struct|__anon2a9934ca0708
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -593,7 +593,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd2722f0808
+DECL|struct|__anon2a9934ca0808
 block|{
 DECL|member|status
 name|GtkWidget
@@ -962,7 +962,7 @@ name|gint
 name|closing
 parameter_list|,
 name|gpointer
-name|udata
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -987,7 +987,7 @@ name|gint
 name|closing
 parameter_list|,
 name|gpointer
-name|udata
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -999,32 +999,32 @@ name|script_fu_brush_preview
 parameter_list|(
 name|gchar
 modifier|*
+name|name
 parameter_list|,
-comment|/* Name */
 name|gdouble
+name|opacity
 parameter_list|,
-comment|/* opacity */
 name|gint
+name|spacing
 parameter_list|,
-comment|/* spacing */
 name|gint
+name|paint_mode
 parameter_list|,
-comment|/* paint_mode */
 name|gint
+name|width
 parameter_list|,
-comment|/* width */
 name|gint
+name|height
 parameter_list|,
-comment|/* height */
 name|gchar
 modifier|*
+name|mask_data
 parameter_list|,
-comment|/* mask data */
 name|gint
+name|closing
 parameter_list|,
-comment|/* dialog closing */
 name|gpointer
-comment|/* user data */
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -4897,9 +4897,14 @@ case|:
 case|case
 name|SF_CHANNEL
 case|:
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buffer
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,
@@ -4923,9 +4928,14 @@ break|break;
 case|case
 name|SF_COLOR
 case|:
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buffer
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"'(%d %d %d)"
 argument_list|,
@@ -5054,7 +5064,10 @@ name|g_snprintf
 argument_list|(
 name|buffer
 argument_list|,
-name|MAX_STRING_LENGTH
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"\"%s\""
 argument_list|,
@@ -5104,7 +5117,10 @@ name|g_snprintf
 argument_list|(
 name|buffer
 argument_list|,
-name|MAX_STRING_LENGTH
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"\"%s\""
 argument_list|,
@@ -5882,10 +5898,6 @@ decl_stmt|;
 name|guint
 name|j
 decl_stmt|;
-name|guchar
-modifier|*
-name|color_cube
-decl_stmt|;
 specifier|static
 name|gboolean
 name|gtk_initted
@@ -6077,10 +6089,10 @@ argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|script_fu_destroy_callback
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -8097,7 +8109,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_pattern_preview (gchar * name,gint width,gint height,gint bytes,gchar * mask_data,gint closing,gpointer udata)
+DECL|function|script_fu_pattern_preview (gchar * name,gint width,gint height,gint bytes,gchar * mask_data,gint closing,gpointer data)
 name|script_fu_pattern_preview
 parameter_list|(
 name|gchar
@@ -8121,21 +8133,23 @@ name|gint
 name|closing
 parameter_list|,
 name|gpointer
-name|udata
+name|data
 parameter_list|)
 block|{
 name|gchar
 modifier|*
 modifier|*
 name|pname
-init|=
+decl_stmt|;
+name|pname
+operator|=
 operator|(
 name|gchar
 operator|*
 operator|*
 operator|)
-name|udata
-decl_stmt|;
+name|data
+expr_stmt|;
 name|g_free
 argument_list|(
 operator|*
@@ -8156,7 +8170,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_gradient_preview (gchar * name,gint width,gdouble * mask_data,gint closing,gpointer udata)
+DECL|function|script_fu_gradient_preview (gchar * name,gint width,gdouble * mask_data,gint closing,gpointer data)
 name|script_fu_gradient_preview
 parameter_list|(
 name|gchar
@@ -8174,29 +8188,31 @@ name|gint
 name|closing
 parameter_list|,
 name|gpointer
-name|udata
+name|data
 parameter_list|)
 block|{
 name|gchar
 modifier|*
 modifier|*
-name|pname
-init|=
+name|gname
+decl_stmt|;
+name|gname
+operator|=
 operator|(
 name|gchar
 operator|*
 operator|*
 operator|)
-name|udata
-decl_stmt|;
+name|data
+expr_stmt|;
 name|g_free
 argument_list|(
 operator|*
-name|pname
+name|gname
 argument_list|)
 expr_stmt|;
 operator|*
-name|pname
+name|gname
 operator|=
 name|g_strdup
 argument_list|(
@@ -8209,58 +8225,51 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_brush_preview (gchar * name,gdouble opacity,gint spacing,gint paint_mode,gint width,gint height,gchar * mask_data,gint closing,gpointer udata)
+DECL|function|script_fu_brush_preview (gchar * name,gdouble opacity,gint spacing,gint paint_mode,gint width,gint height,gchar * mask_data,gint closing,gpointer data)
 name|script_fu_brush_preview
 parameter_list|(
 name|gchar
 modifier|*
 name|name
 parameter_list|,
-comment|/* Name */
 name|gdouble
 name|opacity
 parameter_list|,
-comment|/* opacity */
 name|gint
 name|spacing
 parameter_list|,
-comment|/* spacing */
 name|gint
 name|paint_mode
 parameter_list|,
-comment|/* paint_mode */
 name|gint
 name|width
 parameter_list|,
-comment|/* width */
 name|gint
 name|height
 parameter_list|,
-comment|/* height */
 name|gchar
 modifier|*
 name|mask_data
 parameter_list|,
-comment|/* mask data */
 name|gint
 name|closing
 parameter_list|,
-comment|/* dialog closing */
 name|gpointer
-name|udata
+name|data
 parameter_list|)
-comment|/* user data */
 block|{
 name|SFBrush
 modifier|*
 name|brush
-init|=
+decl_stmt|;
+name|brush
+operator|=
 operator|(
 name|SFBrush
 operator|*
 operator|)
-name|udata
-decl_stmt|;
+name|data
+expr_stmt|;
 name|g_free
 argument_list|(
 name|brush
@@ -9153,9 +9162,14 @@ break|break;
 case|case
 name|SF_TOGGLE
 case|:
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buffer
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"%s"
 argument_list|,
@@ -9348,7 +9362,10 @@ name|g_snprintf
 argument_list|(
 name|buffer
 argument_list|,
-literal|24
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"%f"
 argument_list|,
@@ -9400,7 +9417,10 @@ name|g_snprintf
 argument_list|(
 name|buffer
 argument_list|,
-literal|24
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"%f"
 argument_list|,
@@ -9448,7 +9468,10 @@ name|g_snprintf
 argument_list|(
 name|buffer
 argument_list|,
-name|MAX_STRING_LENGTH
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"\"%s\""
 argument_list|,
@@ -9472,7 +9495,10 @@ name|g_snprintf
 argument_list|(
 name|buffer
 argument_list|,
-name|MAX_STRING_LENGTH
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"\"%s\""
 argument_list|,
@@ -9500,7 +9526,10 @@ name|g_snprintf
 argument_list|(
 name|buffer
 argument_list|,
-name|MAX_STRING_LENGTH
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"\"%s\""
 argument_list|,
@@ -9526,7 +9555,10 @@ name|g_snprintf
 argument_list|(
 name|buffer
 argument_list|,
-name|MAX_STRING_LENGTH
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"\"%s\""
 argument_list|,
@@ -9552,7 +9584,10 @@ name|g_snprintf
 argument_list|(
 name|buffer
 argument_list|,
-name|MAX_STRING_LENGTH
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"'(\"%s\" %f %d %d)"
 argument_list|,

@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history:  * 0.96.00; 1998/06/27   hof: added gap animation sizechange plugins  *                            (moved range_ops to seperate .h file)  * 0.94.01; 1998/04/27   hof: added flatten_mode to plugin: gap_range_to_multilayer  * 0.90.00;              hof: 1.st (pre) release  */
+comment|/* revision history:  * gimp    1.1.20a; 2000/04/25  hof: support for keyframes, anim_preview  * 0.96.00; 1998/06/27   hof: added gap animation sizechange plugins  *                            (moved range_ops to seperate .h file)  * 0.94.01; 1998/04/27   hof: added flatten_mode to plugin: gap_range_to_multilayer  * 0.90.00;              hof: 1.st (pre) release  */
 end_comment
 
 begin_ifndef
@@ -30,6 +30,12 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gap_mov_dialog.h"
+end_include
+
 begin_function_decl
 name|int
 name|gap_move
@@ -39,6 +45,24 @@ name|run_mode
 parameter_list|,
 name|gint32
 name|image_id
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint32
+name|p_mov_anim_preview
+parameter_list|(
+name|t_mov_values
+modifier|*
+name|pvals_orig
+parameter_list|,
+name|t_anim_info
+modifier|*
+name|ainfo_ptr
+parameter_list|,
+name|gint
+name|preview_frame_nr
 parameter_list|)
 function_decl|;
 end_function_decl

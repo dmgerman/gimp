@@ -5981,29 +5981,9 @@ block|}
 block|}
 end_function
 
-begin_function
-specifier|static
-name|gint
-DECL|function|layer_dialog_idle_set_active_layer_focus (gpointer data)
-name|layer_dialog_idle_set_active_layer_focus
-parameter_list|(
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|gtk_widget_grab_focus
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|data
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return
-name|FALSE
-return|;
-block|}
-end_function
+begin_comment
+comment|/* Commented out because this piece of code produced strange segfaults static gint layer_dialog_idle_set_active_layer_focus (gpointer data) {   gtk_widget_grab_focus (GTK_WIDGET (data));    return FALSE; } */
+end_comment
 
 begin_function
 specifier|static
@@ -6105,18 +6085,7 @@ name|index
 argument_list|)
 expr_stmt|;
 comment|/*  let dnd finish it's work before setting the focus  */
-name|gtk_idle_add
-argument_list|(
-operator|(
-name|GtkFunction
-operator|)
-name|layer_dialog_idle_set_active_layer_focus
-argument_list|,
-name|layer_widget
-operator|->
-name|list_item
-argument_list|)
-expr_stmt|;
+comment|/* Commented out because this piece of code produced strange segfaults       gtk_idle_add ((GtkFunction) layer_dialog_idle_set_active_layer_focus, 		    layer_widget->list_item);       */
 name|gtk_object_set_user_data
 argument_list|(
 name|GTK_OBJECT
@@ -10813,7 +10782,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5e4a680108
+DECL|struct|__anon2a1fa2910108
 block|{
 DECL|member|gimage
 name|GimpImage

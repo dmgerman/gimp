@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history:  * 1.1.16a  2000/02/05   hof: handle path lockedstaus and image unit  * 1.1.15b  2000/01/30   hof: handle image specific parasites  * 1.1.15a  2000/01/25   hof: stopped gimp 1.0.x support (removed p_copy_content)  *                            handle pathes  * 0.98.00; 1998/11/30   hof: 1.st release  *                             (substitute for the procedure "gimp_duplicate_into"  *                              that was never part of the GIMP core)  */
+comment|/* revision history:  * 1.1.20a  2000/04/29   hof: bugfix in p_steal_content:  we must copy cmap before removing layers  *                            from src_image to avoid crash on indexed frames.  * 1.1.16a  2000/02/05   hof: handle path lockedstaus and image unit  * 1.1.15b  2000/01/30   hof: handle image specific parasites  * 1.1.15a  2000/01/25   hof: stopped gimp 1.0.x support (removed p_copy_content)  *                            handle pathes  * 0.98.00; 1998/11/30   hof: 1.st release  *                             (substitute for the procedure "gimp_duplicate_into"  *                              that was never part of the GIMP core)  */
 end_comment
 
 begin_comment
@@ -81,6 +81,12 @@ begin_include
 include|#
 directive|include
 file|"gap_exchange_image.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gap_lib.h"
 end_include
 
 begin_decl_stmt
@@ -280,6 +286,53 @@ operator|)
 name|src_image_id
 argument_list|)
 expr_stmt|;
+comment|/* gimp_image_undo_disable (src_image_id); */
+comment|/* does not work !! if active we can not steal layers */
+comment|/*  Copy the colormap if necessary  */
+if|if
+condition|(
+name|gimp_image_base_type
+argument_list|(
+name|src_image_id
+argument_list|)
+operator|==
+name|INDEXED
+condition|)
+block|{
+name|l_cmap
+operator|=
+name|gimp_image_get_cmap
+argument_list|(
+name|src_image_id
+argument_list|,
+operator|&
+name|l_ncolors
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gap_debug
+condition|)
+name|printf
+argument_list|(
+literal|"GAP-DEBUG: copy colormap ncolors %d\n"
+argument_list|,
+operator|(
+name|int
+operator|)
+name|l_ncolors
+argument_list|)
+expr_stmt|;
+name|gimp_image_set_cmap
+argument_list|(
+name|dst_image_id
+argument_list|,
+name|l_cmap
+argument_list|,
+name|l_ncolors
+argument_list|)
+expr_stmt|;
+block|}
 comment|/* check for floating selection */
 name|l_src_fsel_attached_to_id
 operator|=
@@ -370,7 +423,12 @@ name|gap_debug
 condition|)
 name|printf
 argument_list|(
-literal|"GAP-DEBUG: START p_steal_content layer_id=%d\n"
+literal|"GAP-DEBUG: START p_steal_content layer_id[%d]=%d\n"
+argument_list|,
+operator|(
+name|int
+operator|)
+name|l_idx
 argument_list|,
 operator|(
 name|int
@@ -847,51 +905,6 @@ name|l_active_layer_id
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  Copy the colormap if necessary  */
-if|if
-condition|(
-name|gimp_image_base_type
-argument_list|(
-name|src_image_id
-argument_list|)
-operator|==
-name|INDEXED
-condition|)
-block|{
-name|l_cmap
-operator|=
-name|gimp_image_get_cmap
-argument_list|(
-name|src_image_id
-argument_list|,
-operator|&
-name|l_ncolors
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|gap_debug
-condition|)
-name|printf
-argument_list|(
-literal|"GAP-DEBUG: copy colormap ncolors %d\n"
-argument_list|,
-operator|(
-name|int
-operator|)
-name|l_ncolors
-argument_list|)
-expr_stmt|;
-name|gimp_image_set_cmap
-argument_list|(
-name|dst_image_id
-argument_list|,
-name|l_cmap
-argument_list|,
-name|l_ncolors
-argument_list|)
-expr_stmt|;
-block|}
 comment|/* copy guides */
 name|l_guide_id
 operator|=
@@ -1301,7 +1314,7 @@ comment|/* end p_steal_content */
 end_comment
 
 begin_comment
-comment|/* ============================================================================  * p_replace_img  *     *   This procedure replaces the content of image_id   *     with the content from src_image_id.  *     By copying or stealing all its layers and channels.  *     (stealing is faster, but requres extensions to the GIMP-core).  * ============================================================================  */
+comment|/* ============================================================================  * p_replace_img  *     *   This procedure replaces the content of image_id   *     with the content from src_image_id.  *     By stealing all its layers and channels.  * ============================================================================  */
 end_comment
 
 begin_function

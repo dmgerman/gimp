@@ -14,12 +14,12 @@ name|char
 modifier|*
 name|gap_main_version
 init|=
-literal|"1.1.14a; 2000/01/01"
+literal|"1.1.20a; 2000/04/25"
 decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* revision history:  * gimp    1.1.14a; 2000/01/01  hof: bugfix params for gap_dup in noninteractive mode  * gimp    1.1.13a; 1999/11/26  hof: splitted frontends for external programs (mpeg encoders)  *                                   to gap_frontends_main.c  * gimp    1.1.11a; 1999/11/15  hof: changed Menunames (AnimFrames to Video, Submenu Encode)  * gimp    1.1.10a; 1999/10/22  hof: extended dither options for gap_range_convert  * gimp    1.1.8a;  1999/08/31  hof: updated main version  * version 0.99.00; 1999/03/17  hof: updated main version  * version 0.98.02; 1999/01/27  hof: updated main version  * version 0.98.01; 1998/12/21  hof: updated main version, e-mail adress  * version 0.98.00; 1998/11/27  hof: updated main version, started port to GIMP 1.1 interfaces  *                                   Use no '_' (underscore) in menunames. (has special function in 1.1)  * version 0.96.03; 1998/08/31  hof: updated main version,  *                                         gap_range_to_multilayer now returns image_id  *                                         gap_split_image now returns image_id  * version 0.96.02; 1998/08/05  hof: updated main version,   *                                   added gap_shift  * version 0.96.00; 1998/06/27  hof: added gap animation sizechange plugins  *                                         gap_split_image  *                                         gap_mpeg_encode  * version 0.94.01; 1998/04/28  hof: updated main version,  *                                   added flatten_mode to plugin: gap_range_to_multilayer  * version 0.94.00; 1998/04/25  hof: updated main version  * version 0.93.01; 1998/02/03  hof:  * version 0.92.00;             hof: set gap_debug from environment   * version 0.91.00; 1997/12/22  hof:   * version 0.90.00;             hof: 1.st (pre) release  */
+comment|/* revision history:  * gimp    1.1.20a; 2000/04/25  hof: NON_INTERACTIVE PDB-Interfaces video_edit_copy/paste/clear  * gimp    1.1.14a; 2000/01/01  hof: bugfix params for gap_dup in noninteractive mode  * gimp    1.1.13a; 1999/11/26  hof: splitted frontends for external programs (mpeg encoders)  *                                   to gap_frontends_main.c  * gimp    1.1.11a; 1999/11/15  hof: changed Menunames (AnimFrames to Video, Submenu Encode)  * gimp    1.1.10a; 1999/10/22  hof: extended dither options for gap_range_convert  * gimp    1.1.8a;  1999/08/31  hof: updated main version  * version 0.99.00; 1999/03/17  hof: updated main version  * version 0.98.02; 1999/01/27  hof: updated main version  * version 0.98.01; 1998/12/21  hof: updated main version, e-mail adress  * version 0.98.00; 1998/11/27  hof: updated main version, started port to GIMP 1.1 interfaces  *                                   Use no '_' (underscore) in menunames. (has special function in 1.1)  * version 0.96.03; 1998/08/31  hof: updated main version,  *                                         gap_range_to_multilayer now returns image_id  *                                         gap_split_image now returns image_id  * version 0.96.02; 1998/08/05  hof: updated main version,   *                                   added gap_shift  * version 0.96.00; 1998/06/27  hof: added gap animation sizechange plugins  *                                         gap_split_image  *                                         gap_mpeg_encode  * version 0.94.01; 1998/04/28  hof: updated main version,  *                                   added flatten_mode to plugin: gap_range_to_multilayer  * version 0.94.00; 1998/04/25  hof: updated main version  * version 0.93.01; 1998/02/03  hof:  * version 0.92.00;             hof: set gap_debug from environment   * version 0.91.00; 1997/12/22  hof:   * version 0.90.00;             hof: 1.st (pre) release  */
 end_comment
 
 begin_comment
@@ -1553,6 +1553,176 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+specifier|static
+name|GParamDef
+name|args_video_copy
+index|[]
+init|=
+block|{
+block|{
+name|PARAM_INT32
+block|,
+literal|"run_mode"
+block|,
+literal|"always non-interactive"
+block|}
+block|,
+block|{
+name|PARAM_IMAGE
+block|,
+literal|"image"
+block|,
+literal|"Input image (current one of the Anim Frames)"
+block|}
+block|,
+block|{
+name|PARAM_DRAWABLE
+block|,
+literal|"drawable"
+block|,
+literal|"Input drawable (unused)"
+block|}
+block|,
+block|{
+name|PARAM_INT32
+block|,
+literal|"range_from"
+block|,
+literal|"frame nr to start"
+block|}
+block|,
+block|{
+name|PARAM_INT32
+block|,
+literal|"range_to"
+block|,
+literal|"frame nr to stop"
+block|}
+block|,   }
+decl_stmt|;
+specifier|static
+name|int
+name|nargs_video_copy
+init|=
+sizeof|sizeof
+argument_list|(
+name|args_video_copy
+argument_list|)
+operator|/
+sizeof|sizeof
+argument_list|(
+name|args_video_copy
+index|[
+literal|0
+index|]
+argument_list|)
+decl_stmt|;
+specifier|static
+name|GParamDef
+name|args_video_paste
+index|[]
+init|=
+block|{
+block|{
+name|PARAM_INT32
+block|,
+literal|"run_mode"
+block|,
+literal|"always non-interactive"
+block|}
+block|,
+block|{
+name|PARAM_IMAGE
+block|,
+literal|"image"
+block|,
+literal|"Input image (current one of the Anim Frames)"
+block|}
+block|,
+block|{
+name|PARAM_DRAWABLE
+block|,
+literal|"drawable"
+block|,
+literal|"Input drawable (unused)"
+block|}
+block|,
+block|{
+name|PARAM_INT32
+block|,
+literal|"paste_mode"
+block|,
+literal|"0 .. paste at current frame (replacing current and following frames)"
+literal|"1 .. paste insert before current frame "
+literal|"2 .. paste insert after current frame"
+block|}
+block|,   }
+decl_stmt|;
+specifier|static
+name|int
+name|nargs_video_paste
+init|=
+sizeof|sizeof
+argument_list|(
+name|args_video_paste
+argument_list|)
+operator|/
+sizeof|sizeof
+argument_list|(
+name|args_video_paste
+index|[
+literal|0
+index|]
+argument_list|)
+decl_stmt|;
+specifier|static
+name|GParamDef
+name|args_video_clear
+index|[]
+init|=
+block|{
+block|{
+name|PARAM_INT32
+block|,
+literal|"run_mode"
+block|,
+literal|"always non-interactive"
+block|}
+block|,
+block|{
+name|PARAM_IMAGE
+block|,
+literal|"image"
+block|,
+literal|"Input image (is ignored)"
+block|}
+block|,
+block|{
+name|PARAM_DRAWABLE
+block|,
+literal|"drawable"
+block|,
+literal|"Input drawable (unused)"
+block|}
+block|,   }
+decl_stmt|;
+specifier|static
+name|int
+name|nargs_video_clear
+init|=
+sizeof|sizeof
+argument_list|(
+name|args_video_clear
+argument_list|)
+operator|/
+sizeof|sizeof
+argument_list|(
+name|args_video_clear
+index|[
+literal|0
+index|]
+argument_list|)
+decl_stmt|;
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
@@ -2194,6 +2364,107 @@ argument_list|,
 name|return_vals
 argument_list|)
 expr_stmt|;
+name|gimp_install_procedure
+argument_list|(
+literal|"plug_in_gap_video_edit_copy"
+argument_list|,
+literal|"This plugin appends the selected framerange to the video paste buffer"
+literal|"the video paste buffer is a directory configured by gimprc (video-paste-dir )"
+literal|"and a framefile basename configured by gimprc (video-paste-basename)"
+argument_list|,
+literal|""
+argument_list|,
+literal|"Wolfgang Hofer (hof@hotbot.com)"
+argument_list|,
+literal|"Wolfgang Hofer"
+argument_list|,
+name|gap_main_version
+argument_list|,
+name|NULL
+argument_list|,
+comment|/* do not appear in menus */
+literal|"RGB*, INDEXED*, GRAY*"
+argument_list|,
+name|PROC_PLUG_IN
+argument_list|,
+name|nargs_video_copy
+argument_list|,
+name|nreturn_vals
+argument_list|,
+name|args_video_copy
+argument_list|,
+name|return_vals
+argument_list|)
+expr_stmt|;
+name|gimp_install_procedure
+argument_list|(
+literal|"plug_in_gap_video_edit_paste"
+argument_list|,
+literal|"This plugin copies all frames from the video paste buffer"
+literal|"to the current video. Depending on the paste_mode parameter"
+literal|"the copied frames are replacing frames beginning at current frame"
+literal|"or are inserted before or after the current frame"
+literal|"the pasted frames are scaled to fit the current video size"
+literal|"and converted in Imagetype (RGB,GRAY,INDEXED) if necessary"
+literal|"the video paste buffer is a directory configured by gimprc (video-paste-dir )"
+literal|"and a framefile basename configured by gimprc (video-paste-basename)"
+argument_list|,
+literal|""
+argument_list|,
+literal|"Wolfgang Hofer (hof@hotbot.com)"
+argument_list|,
+literal|"Wolfgang Hofer"
+argument_list|,
+name|gap_main_version
+argument_list|,
+name|NULL
+argument_list|,
+comment|/* do not appear in menus */
+literal|"RGB*, INDEXED*, GRAY*"
+argument_list|,
+name|PROC_PLUG_IN
+argument_list|,
+name|nargs_video_paste
+argument_list|,
+name|nreturn_vals
+argument_list|,
+name|args_video_paste
+argument_list|,
+name|return_vals
+argument_list|)
+expr_stmt|;
+name|gimp_install_procedure
+argument_list|(
+literal|"plug_in_gap_video_edit_clear"
+argument_list|,
+literal|"clear the video paste buffer by deleting all framefiles"
+literal|"the video paste buffer is a directory configured by gimprc (video-paste-dir )"
+literal|"and a framefile basename configured by gimprc (video-paste-basename)"
+argument_list|,
+literal|""
+argument_list|,
+literal|"Wolfgang Hofer (hof@hotbot.com)"
+argument_list|,
+literal|"Wolfgang Hofer"
+argument_list|,
+name|gap_main_version
+argument_list|,
+name|NULL
+argument_list|,
+comment|/* do not appear in menus */
+literal|"RGB*, INDEXED*, GRAY*"
+argument_list|,
+name|PROC_PLUG_IN
+argument_list|,
+name|nargs_video_clear
+argument_list|,
+name|nreturn_vals
+argument_list|,
+name|args_video_clear
+argument_list|,
+name|return_vals
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -2230,7 +2501,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a997a40108
+DECL|struct|__anon2a1c607f0108
 block|{
 DECL|member|lock
 name|long
@@ -4694,6 +4965,199 @@ argument_list|,
 name|range_to
 argument_list|)
 expr_stmt|;
+block|}
+block|}
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+literal|"plug_in_gap_video_edit_copy"
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+if|if
+condition|(
+name|n_params
+operator|!=
+literal|5
+condition|)
+block|{
+name|status
+operator|=
+name|STATUS_CALLING_ERROR
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|status
+operator|==
+name|STATUS_SUCCESS
+condition|)
+block|{
+name|image_id
+operator|=
+name|param
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_image
+expr_stmt|;
+name|range_from
+operator|=
+name|param
+index|[
+literal|3
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+comment|/* frame nr to start */
+name|range_to
+operator|=
+name|param
+index|[
+literal|4
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+comment|/* frame nr to stop  */
+name|l_rc
+operator|=
+name|gap_vid_edit_copy
+argument_list|(
+name|run_mode
+argument_list|,
+name|image_id
+argument_list|,
+name|range_from
+argument_list|,
+name|range_to
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+literal|"plug_in_gap_video_edit_paste"
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+if|if
+condition|(
+name|n_params
+operator|!=
+literal|4
+condition|)
+block|{
+name|status
+operator|=
+name|STATUS_CALLING_ERROR
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|status
+operator|==
+name|STATUS_SUCCESS
+condition|)
+block|{
+name|image_id
+operator|=
+name|param
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_image
+expr_stmt|;
+name|nr
+operator|=
+name|param
+index|[
+literal|3
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+comment|/* paste_mode (0,1 or 2) */
+name|l_rc
+operator|=
+name|gap_vid_edit_paste
+argument_list|(
+name|run_mode
+argument_list|,
+name|image_id
+argument_list|,
+name|nr
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+literal|"plug_in_gap_video_edit_clear"
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+if|if
+condition|(
+name|status
+operator|==
+name|STATUS_SUCCESS
+condition|)
+block|{
+if|if
+condition|(
+name|p_vid_edit_clear
+argument_list|()
+operator|<
+literal|0
+condition|)
+block|{
+name|l_rc
+operator|=
+operator|-
+literal|1
+expr_stmt|;
+block|}
+else|else
+block|{
+name|l_rc
+operator|=
+literal|0
+expr_stmt|;
+block|}
 block|}
 block|}
 elseif|else
