@@ -1164,7 +1164,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"No font choosen or font invalid."
+literal|"No font chosen or font invalid."
 argument_list|)
 argument_list|)
 expr_stmt|;
