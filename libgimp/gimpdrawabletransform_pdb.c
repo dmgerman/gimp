@@ -20,12 +20,12 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_drawable_transform_flip:  * @drawable_ID: The affected drawable.  * @flip_type: Type of flip.  * @center: Whether to automatically position the axis in the image center.  * @axis: coord. of flip axis.  * @transform_direction: Direction of Transformation.  * @interpolation: Type of interpolation.  * @supersample: Whether to perform supersample.  * @recursion_level: Level of recursion (3 is a nice default).  * @clip_result: Whether to clip results.  *  * Flip the specified drawable either vertically or horizontally.  *  * This procedure flips the specified drawable if no selection exists.  * If a selection exists, the portion of the drawable which lies under  * the selection is cut from the drawable and made into a floating  * selection which is then flipped. If center is set to true, the flip  * is around the image center. Otherwise, the coordinate of the axis  * needs to be specified. The return value is the ID of the flipped  * drawable. If there was no selection, this will be equal to the  * drawable ID supplied as input. Otherwise, this will be the newly  * created and flipped drawable.  *  * Returns: The flipped drawable.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_drawable_transform_flip:  * @drawable_ID: The affected drawable.  * @flip_type: Type of flip.  * @center: Whether to automatically position the axis in the image center.  * @axis: coord. of flip axis.  * @transform_direction: Direction of Transformation.  * @clip_result: Whether to clip results.  *  * Flip the specified drawable either vertically or horizontally.  *  * This procedure flips the specified drawable if no selection exists.  * If a selection exists, the portion of the drawable which lies under  * the selection is cut from the drawable and made into a floating  * selection which is then flipped. If center is set to true, the flip  * is around the image center. Otherwise, the coordinate of the axis  * needs to be specified. The return value is the ID of the flipped  * drawable. If there was no selection, this will be equal to the  * drawable ID supplied as input. Otherwise, this will be the newly  * created and flipped drawable.  *  * Returns: The flipped drawable.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_drawable_transform_flip (gint32 drawable_ID,GimpOrientationType flip_type,gboolean center,gdouble axis,GimpTransformDirection transform_direction,GimpInterpolationType interpolation,gboolean supersample,gint recursion_level,gboolean clip_result)
+DECL|function|gimp_drawable_transform_flip (gint32 drawable_ID,GimpOrientationType flip_type,gboolean center,gdouble axis,GimpTransformDirection transform_direction,gboolean clip_result)
 name|gimp_drawable_transform_flip
 parameter_list|(
 name|gint32
@@ -42,15 +42,6 @@ name|axis
 parameter_list|,
 name|GimpTransformDirection
 name|transform_direction
-parameter_list|,
-name|GimpInterpolationType
-name|interpolation
-parameter_list|,
-name|gboolean
-name|supersample
-parameter_list|,
-name|gint
-name|recursion_level
 parameter_list|,
 name|gboolean
 name|clip_result
@@ -97,18 +88,6 @@ argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
 name|transform_direction
-argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|interpolation
-argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|supersample
-argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|recursion_level
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,

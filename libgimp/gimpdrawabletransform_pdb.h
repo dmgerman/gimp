@@ -41,15 +41,6 @@ parameter_list|,
 name|GimpTransformDirection
 name|transform_direction
 parameter_list|,
-name|GimpInterpolationType
-name|interpolation
-parameter_list|,
-name|gboolean
-name|supersample
-parameter_list|,
-name|gint
-name|recursion_level
-parameter_list|,
 name|gboolean
 name|clip_result
 parameter_list|)
