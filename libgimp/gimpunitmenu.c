@@ -65,7 +65,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e33b010103
+DECL|enum|__anon28e20cf50103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -1796,8 +1796,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_unit_menu_selection_select_callback (GtkWidget * widget,gpointer data)
-name|gimp_unit_menu_selection_select_callback
+DECL|function|gimp_unit_menu_selection_ok_callback (GtkWidget * widget,gpointer data)
+name|gimp_unit_menu_selection_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1899,6 +1899,50 @@ block|}
 block|}
 end_function
 
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_unit_menu_selection_select_row_callback (GtkWidget * widget,gint row,gint column,GdkEventButton * bevent,gpointer data)
+name|gimp_unit_menu_selection_select_row_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gint
+name|row
+parameter_list|,
+name|gint
+name|column
+parameter_list|,
+name|GdkEventButton
+modifier|*
+name|bevent
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+if|if
+condition|(
+name|bevent
+operator|&&
+name|bevent
+operator|->
+name|type
+operator|==
+name|GDK_2BUTTON_PRESS
+condition|)
+name|gimp_unit_menu_selection_ok_callback
+argument_list|(
+name|NULL
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
 begin_comment
 comment|/*  private function of gimp_unit_menu_callback ()  */
 end_comment
@@ -1975,10 +2019,10 @@ name|FALSE
 argument_list|,
 name|_
 argument_list|(
-literal|"Select"
+literal|"OK"
 argument_list|)
 argument_list|,
-name|gimp_unit_menu_selection_select_callback
+name|gimp_unit_menu_selection_ok_callback
 argument_list|,
 name|gum
 argument_list|,
@@ -1992,7 +2036,7 @@ name|FALSE
 argument_list|,
 name|_
 argument_list|(
-literal|"Close"
+literal|"Cancel"
 argument_list|)
 argument_list|,
 name|gtk_widget_destroy
@@ -2398,6 +2442,25 @@ argument_list|,
 name|gum
 operator|->
 name|clist
+argument_list|)
+expr_stmt|;
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|gum
+operator|->
+name|clist
+argument_list|)
+argument_list|,
+literal|"select_row"
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_unit_menu_selection_select_row_callback
+argument_list|)
+argument_list|,
+name|gum
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

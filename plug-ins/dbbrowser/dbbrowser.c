@@ -4,11 +4,11 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/*     dbbrowser     0.08 26th sept 97  by Thomas NOEL<thomas@minet.net>  */
+comment|/*   * dbbrowser   * 0.08 26th sept 97  by Thomas NOEL<thomas@minet.net>   */
 end_comment
 
 begin_comment
-comment|/*   This plugin gives you the list of available procedure, with the   name, description and parameters for each procedure.   You can do regexp search (by name and by description)   Useful for scripts development.    NOTE :   this is only a exercice for me (my first "plug-in" (extension))   so it's very (very) dirty.    Btw, hope it gives you some ideas about gimp possibilities.    The core of the plugin is not here. See dbbrowser_utils (shared   with script-fu-console).    TODO   - bug fixes... (my method : rewrite from scratch :) */
+comment|/*  * This plugin gives you the list of available procedure, with the  * name, description and parameters for each procedure.  * You can do regexp search (by name and by description)  * Useful for scripts development.  *  * NOTE :  * this is only a exercice for me (my first "plug-in" (extension))  * so it's very (very) dirty.   * Btw, hope it gives you some ideas about gimp possibilities.  *  * The core of the plugin is not here. See dbbrowser_utils (shared  * with script-fu-console).  *  * TODO  * - bug fixes... (my method : rewrite from scratch :)  */
 end_comment
 
 begin_include
@@ -32,7 +32,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dbbrowser.h"
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimp.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpui.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"dbbrowser_utils.h"
 end_include
 
 begin_include
@@ -56,18 +74,18 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -87,16 +105,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -111,7 +129,9 @@ begin_function
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -129,7 +149,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nargs
 init|=
 sizeof|sizeof
@@ -145,9 +165,6 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"extension_db_browser"
@@ -186,21 +203,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,

@@ -48,7 +48,7 @@ define|#
 directive|define
 name|INIT_I18N
 parameter_list|()
-value|G_STMT_START{			\   bindtextdomain("gimp-std-plugins", LOCALEDIR);	\   textdomain("gimp-std-plugins");			\   			}G_STMT_END
+value|G_STMT_START{			\   bindtextdomain("gimp-libgimp", LOCALEDIR);            \   bindtextdomain("gimp-std-plugins", LOCALEDIR);	\   textdomain("gimp-std-plugins");			\   			}G_STMT_END
 end_define
 
 begin_endif

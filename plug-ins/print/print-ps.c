@@ -1044,7 +1044,7 @@ decl_stmt|;
 comment|/* Number of commands */
 struct|struct
 comment|/* PostScript commands... */
-DECL|struct|__anon29fb67fc0108
+DECL|struct|__anon295c85500108
 block|{
 DECL|member|command
 name|char
@@ -2101,6 +2101,13 @@ name|i
 index|]
 operator|.
 name|command
+argument_list|,
+name|prn
+argument_list|)
+expr_stmt|;
+name|fputs
+argument_list|(
+literal|"\n"
 argument_list|,
 name|prn
 argument_list|)

@@ -42,13 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpui.h"
+file|<libgimp/gimpui.h>
 end_include
 
 begin_include
@@ -84,7 +84,7 @@ end_define
 begin_decl_stmt
 DECL|variable|proc_type_str
 specifier|static
-name|char
+name|gchar
 modifier|*
 name|proc_type_str
 index|[]
@@ -132,18 +132,18 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -160,7 +160,9 @@ specifier|static
 name|GtkWidget
 modifier|*
 name|gimp_plugin_desc
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 
@@ -219,16 +221,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -243,7 +245,9 @@ begin_function
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -261,7 +265,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nargs
 init|=
 sizeof|sizeof
@@ -277,9 +281,6 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_details"
@@ -318,21 +319,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -446,7 +447,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5c22730108
+DECL|struct|__anon27a661280108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -552,7 +553,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5c22730208
+DECL|struct|__anon27a661280208
 block|{
 DECL|member|menu
 name|gchar
@@ -797,7 +798,7 @@ name|lab
 argument_list|,
 name|_
 argument_list|(
-literal|" Details<<< "
+literal|"Details<<"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -882,7 +883,7 @@ name|lab
 argument_list|,
 name|_
 argument_list|(
-literal|" Details>>> "
+literal|"Details>>"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1063,6 +1064,10 @@ name|table_row
 init|=
 literal|0
 decl_stmt|;
+name|gchar
+modifier|*
+name|str
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|pdesc
@@ -1222,21 +1227,30 @@ literal|3
 argument_list|)
 expr_stmt|;
 comment|/* Number of plugins */
-name|label
+name|str
 operator|=
-name|gtk_label_new
-argument_list|(
 name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|" Number of plugin interfaces :%d"
+literal|" Number of Plugin Interfaces: %d"
 argument_list|)
 argument_list|,
 name|pdesc
 operator|->
 name|num_plugins
 argument_list|)
+expr_stmt|;
+name|label
+operator|=
+name|gtk_label_new
+argument_list|(
+name|str
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|str
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -1340,7 +1354,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Menu path :"
+literal|"Menu Path:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1504,7 +1518,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Name :"
+literal|"Name:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1671,7 +1685,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Blurb :"
+literal|"Blurb:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1846,7 +1860,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Help :"
+literal|"Help:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2182,7 +2196,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Type :"
+literal|"Type:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2621,7 +2635,7 @@ name|GtkCTreeNode
 modifier|*
 name|parent
 decl_stmt|;
-name|int
+name|gint
 name|sel_row
 decl_stmt|;
 comment|/* Make sure this is expanded */
@@ -3232,9 +3246,7 @@ condition|)
 block|{
 comment|/* found node */
 return|return
-operator|(
 name|parent
-operator|)
 return|;
 block|}
 comment|/* Next one up */
@@ -3599,7 +3611,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint
@@ -4312,10 +4324,8 @@ name|instime
 condition|)
 block|{
 return|return
-operator|(
 operator|-
 literal|1
-operator|)
 return|;
 block|}
 if|if
@@ -4330,15 +4340,11 @@ name|instime
 condition|)
 block|{
 return|return
-operator|(
 literal|1
-operator|)
 return|;
 block|}
 return|return
-operator|(
 literal|0
-operator|)
 return|;
 block|}
 end_function
@@ -4437,9 +4443,11 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_plugin_desc ()
+DECL|function|gimp_plugin_desc (void)
 name|gimp_plugin_desc
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
@@ -4537,7 +4545,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Plugin descriptions"
+literal|"Plugin Descriptions"
 argument_list|)
 argument_list|,
 literal|"plugindetails"
@@ -4901,7 +4909,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"List view"
+literal|"List View"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5055,7 +5063,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Tree view"
+literal|"Tree View"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5166,7 +5174,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|0
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5196,7 +5204,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Search : "
+literal|"Search:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5271,8 +5279,25 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|" Details>>> "
+literal|"Details>>"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_misc_set_padding
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|GTK_BIN
+argument_list|(
+name|button
+argument_list|)
+operator|->
+name|child
+argument_list|)
+argument_list|,
+literal|2
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

@@ -118,7 +118,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<plug-ins/dbbrowser/dbbrowser.h>
+file|<plug-ins/dbbrowser/dbbrowser_utils.h>
 end_include
 
 begin_ifdef
@@ -185,7 +185,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29310c940108
+DECL|struct|__anon28ed89d00108
 block|{
 DECL|member|console
 name|GtkWidget
