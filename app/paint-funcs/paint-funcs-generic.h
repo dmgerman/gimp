@@ -204,7 +204,7 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|color_pixels (guchar * dest,const guchar * color,gint w,gint bytes)
+DECL|function|color_pixels (guchar * dest,const guchar * color,guint w,guint bytes)
 name|color_pixels
 parameter_list|(
 name|guchar
@@ -216,10 +216,10 @@ name|guchar
 modifier|*
 name|color
 parameter_list|,
-name|gint
+name|guint
 name|w
 parameter_list|,
-name|gint
+name|guint
 name|bytes
 parameter_list|)
 block|{
@@ -235,7 +235,6 @@ name|defined
 argument_list|(
 name|__sparc__
 argument_list|)
-specifier|register
 name|guchar
 name|c0
 decl_stmt|,
@@ -247,7 +246,6 @@ name|c3
 decl_stmt|;
 else|#
 directive|else
-specifier|register
 name|guchar
 name|c0
 decl_stmt|,
@@ -255,14 +253,12 @@ name|c1
 decl_stmt|,
 name|c2
 decl_stmt|;
-specifier|register
 name|guint32
 modifier|*
 name|longd
 decl_stmt|,
 name|longc
 decl_stmt|;
-specifier|register
 name|guint16
 modifier|*
 name|shortd
@@ -593,7 +589,7 @@ end_function
 begin_function
 specifier|inline
 name|void
-DECL|function|blend_pixels (const guchar * src1,const guchar * src2,guchar * dest,gint blend,gint w,gint bytes,gint has_alpha)
+DECL|function|blend_pixels (const guchar * src1,const guchar * src2,guchar * dest,guchar blend,guint w,guint bytes,guint has_alpha)
 name|blend_pixels
 parameter_list|(
 specifier|const
@@ -610,22 +606,23 @@ name|guchar
 modifier|*
 name|dest
 parameter_list|,
-name|gint
+name|guchar
 name|blend
 parameter_list|,
-name|gint
+name|guint
 name|w
 parameter_list|,
-name|gint
+name|guint
 name|bytes
 parameter_list|,
-name|gint
+name|guint
 name|has_alpha
 parameter_list|)
 block|{
-name|gint
+name|guint
 name|b
 decl_stmt|;
+specifier|const
 name|guchar
 name|blend2
 init|=
@@ -696,7 +693,7 @@ end_function
 begin_function
 specifier|inline
 name|void
-DECL|function|shade_pixels (const guchar * src,guchar * dest,const guchar * col,gint blend,gint w,gint bytes,gint has_alpha)
+DECL|function|shade_pixels (const guchar * src,guchar * dest,const guchar * col,guchar blend,guint w,guint bytes,guint has_alpha)
 name|shade_pixels
 parameter_list|(
 specifier|const
@@ -713,24 +710,20 @@ name|guchar
 modifier|*
 name|col
 parameter_list|,
-name|gint
+name|guchar
 name|blend
 parameter_list|,
-name|gint
+name|guint
 name|w
 parameter_list|,
-name|gint
+name|guint
 name|bytes
 parameter_list|,
-name|gint
+name|guint
 name|has_alpha
 parameter_list|)
 block|{
-name|gint
-name|alpha
-decl_stmt|,
-name|b
-decl_stmt|;
+specifier|const
 name|guchar
 name|blend2
 init|=
@@ -740,8 +733,10 @@ operator|-
 name|blend
 operator|)
 decl_stmt|;
+specifier|const
+name|guint
 name|alpha
-operator|=
+init|=
 operator|(
 name|has_alpha
 operator|)
@@ -751,7 +746,10 @@ operator|-
 literal|1
 else|:
 name|bytes
-expr_stmt|;
+decl_stmt|;
+name|guint
+name|b
+decl_stmt|;
 while|while
 condition|(
 name|w
@@ -824,7 +822,7 @@ end_function
 begin_function
 specifier|inline
 name|void
-DECL|function|extract_alpha_pixels (const guchar * src,const guchar * mask,guchar * dest,gint w,gint bytes)
+DECL|function|extract_alpha_pixels (const guchar * src,const guchar * mask,guchar * dest,guint w,guint bytes)
 name|extract_alpha_pixels
 parameter_list|(
 specifier|const
@@ -841,38 +839,36 @@ name|guchar
 modifier|*
 name|dest
 parameter_list|,
-name|gint
+name|guint
 name|w
 parameter_list|,
-name|gint
+name|guint
 name|bytes
 parameter_list|)
 block|{
 specifier|const
-name|guchar
-modifier|*
-name|m
-decl_stmt|;
-name|gint
-name|tmp
-decl_stmt|;
-specifier|const
-name|gint
+name|guint
 name|alpha
 init|=
 name|bytes
 operator|-
 literal|1
 decl_stmt|;
+name|gint
+name|tmp
+decl_stmt|;
 if|if
 condition|(
 name|mask
 condition|)
 block|{
+specifier|const
+name|guchar
+modifier|*
 name|m
-operator|=
+init|=
 name|mask
-expr_stmt|;
+decl_stmt|;
 while|while
 condition|(
 name|w
@@ -907,11 +903,6 @@ block|}
 block|}
 else|else
 block|{
-name|m
-operator|=
-operator|&
-name|no_mask
-expr_stmt|;
 while|while
 condition|(
 name|w
@@ -929,8 +920,7 @@ index|[
 name|alpha
 index|]
 argument_list|,
-operator|*
-name|m
+name|OPAQUE_OPACITY
 argument_list|,
 name|tmp
 argument_list|)
@@ -1588,14 +1578,14 @@ argument_list|(
 name|bytes2
 argument_list|)
 decl_stmt|;
-name|gint
+name|guint
 name|r1
 decl_stmt|,
 name|g1
 decl_stmt|,
 name|b1
 decl_stmt|;
-name|gint
+name|guint
 name|r2
 decl_stmt|,
 name|g2
@@ -1817,14 +1807,14 @@ argument_list|(
 name|bytes2
 argument_list|)
 decl_stmt|;
-name|gint
+name|guint
 name|r1
 decl_stmt|,
 name|g1
 decl_stmt|,
 name|b1
 decl_stmt|;
-name|gint
+name|guint
 name|r2
 decl_stmt|,
 name|g2
@@ -2046,14 +2036,14 @@ argument_list|(
 name|bytes2
 argument_list|)
 decl_stmt|;
-name|gint
+name|guint
 name|r1
 decl_stmt|,
 name|g1
 decl_stmt|,
 name|b1
 decl_stmt|;
-name|gint
+name|guint
 name|r2
 decl_stmt|,
 name|g2
@@ -4992,7 +4982,7 @@ end_function
 begin_function
 specifier|inline
 name|void
-DECL|function|swap_pixels (guchar * src,guchar * dest,gint length)
+DECL|function|swap_pixels (guchar * src,guchar * dest,guint length)
 name|swap_pixels
 parameter_list|(
 name|guchar
@@ -5003,7 +4993,7 @@ name|guchar
 modifier|*
 name|dest
 parameter_list|,
-name|gint
+name|guint
 name|length
 parameter_list|)
 block|{
@@ -5053,7 +5043,7 @@ end_function
 begin_function
 specifier|inline
 name|void
-DECL|function|scale_pixels (const guchar * src,guchar * dest,gint length,gint scale)
+DECL|function|scale_pixels (const guchar * src,guchar * dest,guint length,gint scale)
 name|scale_pixels
 parameter_list|(
 specifier|const
@@ -5065,7 +5055,7 @@ name|guchar
 modifier|*
 name|dest
 parameter_list|,
-name|gint
+name|guint
 name|length
 parameter_list|,
 name|gint
@@ -5108,7 +5098,7 @@ end_function
 begin_function
 specifier|inline
 name|void
-DECL|function|add_alpha_pixels (const guchar * src,guchar * dest,gint length,gint bytes)
+DECL|function|add_alpha_pixels (const guchar * src,guchar * dest,guint length,guint bytes)
 name|add_alpha_pixels
 parameter_list|(
 specifier|const
@@ -5120,10 +5110,10 @@ name|guchar
 modifier|*
 name|dest
 parameter_list|,
-name|gint
+name|guint
 name|length
 parameter_list|,
-name|gint
+name|guint
 name|bytes
 parameter_list|)
 block|{
@@ -5189,7 +5179,7 @@ end_function
 begin_function
 specifier|inline
 name|void
-DECL|function|flatten_pixels (const guchar * src,guchar * dest,const guchar * bg,gint length,gint bytes)
+DECL|function|flatten_pixels (const guchar * src,guchar * dest,const guchar * bg,guint length,guint bytes)
 name|flatten_pixels
 parameter_list|(
 specifier|const
@@ -5206,10 +5196,10 @@ name|guchar
 modifier|*
 name|bg
 parameter_list|,
-name|gint
+name|guint
 name|length
 parameter_list|,
-name|gint
+name|guint
 name|bytes
 parameter_list|)
 block|{
@@ -5302,7 +5292,7 @@ end_function
 begin_function
 specifier|inline
 name|void
-DECL|function|gray_to_rgb_pixels (const guchar * src,guchar * dest,gint length,gint bytes)
+DECL|function|gray_to_rgb_pixels (const guchar * src,guchar * dest,guint length,guint bytes)
 name|gray_to_rgb_pixels
 parameter_list|(
 specifier|const
@@ -5314,10 +5304,10 @@ name|guchar
 modifier|*
 name|dest
 parameter_list|,
-name|gint
+name|guint
 name|length
 parameter_list|,
-name|gint
+name|guint
 name|bytes
 parameter_list|)
 block|{
@@ -5410,7 +5400,7 @@ end_function
 begin_function
 specifier|inline
 name|void
-DECL|function|apply_mask_to_alpha_channel (guchar * src,const guchar * mask,gint opacity,gint length,gint bytes)
+DECL|function|apply_mask_to_alpha_channel (guchar * src,const guchar * mask,guint opacity,guint length,guint bytes)
 name|apply_mask_to_alpha_channel
 parameter_list|(
 name|guchar
@@ -5422,13 +5412,13 @@ name|guchar
 modifier|*
 name|mask
 parameter_list|,
-name|gint
+name|guint
 name|opacity
 parameter_list|,
-name|gint
+name|guint
 name|length
 parameter_list|,
-name|gint
+name|guint
 name|bytes
 parameter_list|)
 block|{
@@ -5516,7 +5506,7 @@ end_function
 begin_function
 specifier|inline
 name|void
-DECL|function|combine_mask_and_alpha_channel (guchar * src,const guchar * mask,gint opacity,gint length,gint bytes)
+DECL|function|combine_mask_and_alpha_channel (guchar * src,const guchar * mask,guint opacity,guint length,guint bytes)
 name|combine_mask_and_alpha_channel
 parameter_list|(
 name|guchar
@@ -5528,13 +5518,13 @@ name|guchar
 modifier|*
 name|mask
 parameter_list|,
-name|gint
+name|guint
 name|opacity
 parameter_list|,
-name|gint
+name|guint
 name|length
 parameter_list|,
-name|gint
+name|guint
 name|bytes
 parameter_list|)
 block|{
@@ -5651,7 +5641,7 @@ end_function
 begin_function
 specifier|inline
 name|void
-DECL|function|copy_gray_to_inten_a_pixels (const guchar * src,guchar * dest,gint length,gint bytes)
+DECL|function|copy_gray_to_inten_a_pixels (const guchar * src,guchar * dest,guint length,guint bytes)
 name|copy_gray_to_inten_a_pixels
 parameter_list|(
 specifier|const
@@ -5663,10 +5653,10 @@ name|guchar
 modifier|*
 name|dest
 parameter_list|,
-name|gint
+name|guint
 name|length
 parameter_list|,
-name|gint
+name|guint
 name|bytes
 parameter_list|)
 block|{
@@ -5730,7 +5720,7 @@ end_function
 begin_function
 specifier|inline
 name|void
-DECL|function|initial_channel_pixels (const guchar * src,guchar * dest,gint length,gint bytes)
+DECL|function|initial_channel_pixels (const guchar * src,guchar * dest,guint length,guint bytes)
 name|initial_channel_pixels
 parameter_list|(
 specifier|const
@@ -5742,10 +5732,10 @@ name|guchar
 modifier|*
 name|dest
 parameter_list|,
-name|gint
+name|guint
 name|length
 parameter_list|,
-name|gint
+name|guint
 name|bytes
 parameter_list|)
 block|{
@@ -5810,7 +5800,7 @@ end_function
 begin_function
 specifier|inline
 name|void
-DECL|function|initial_indexed_pixels (const guchar * src,guchar * dest,const guchar * cmap,gint length)
+DECL|function|initial_indexed_pixels (const guchar * src,guchar * dest,const guchar * cmap,guint length)
 name|initial_indexed_pixels
 parameter_list|(
 specifier|const
@@ -5827,7 +5817,7 @@ name|guchar
 modifier|*
 name|cmap
 parameter_list|,
-name|gint
+name|guint
 name|length
 parameter_list|)
 block|{
@@ -5892,7 +5882,7 @@ end_function
 begin_function
 specifier|inline
 name|void
-DECL|function|initial_indexed_a_pixels (const guchar * src,guchar * dest,const guchar * mask,const guchar * cmap,gint opacity,gint length)
+DECL|function|initial_indexed_a_pixels (const guchar * src,guchar * dest,const guchar * mask,const guchar * cmap,guint opacity,guint length)
 name|initial_indexed_a_pixels
 parameter_list|(
 specifier|const
@@ -5914,10 +5904,10 @@ name|guchar
 modifier|*
 name|cmap
 parameter_list|,
-name|gint
+name|guint
 name|opacity
 parameter_list|,
-name|gint
+name|guint
 name|length
 parameter_list|)
 block|{
@@ -6040,7 +6030,7 @@ end_function
 begin_function
 specifier|inline
 name|void
-DECL|function|initial_inten_pixels (const guchar * src,guchar * dest,const guchar * mask,gint opacity,const gint * affect,gint length,gint bytes)
+DECL|function|initial_inten_pixels (const guchar * src,guchar * dest,const guchar * mask,guint opacity,const gint * affect,guint length,guint bytes)
 name|initial_inten_pixels
 parameter_list|(
 specifier|const
@@ -6057,7 +6047,7 @@ name|guchar
 modifier|*
 name|mask
 parameter_list|,
-name|gint
+name|guint
 name|opacity
 parameter_list|,
 specifier|const
@@ -6065,10 +6055,10 @@ name|gint
 modifier|*
 name|affect
 parameter_list|,
-name|gint
+name|guint
 name|length
 parameter_list|,
-name|gint
+name|guint
 name|bytes
 parameter_list|)
 block|{
@@ -6644,7 +6634,7 @@ end_function
 begin_function
 specifier|inline
 name|void
-DECL|function|initial_inten_a_pixels (const guchar * src,guchar * dest,const guchar * mask,gint opacity,const gboolean * affect,gint length,gint bytes)
+DECL|function|initial_inten_a_pixels (const guchar * src,guchar * dest,const guchar * mask,guint opacity,const gboolean * affect,guint length,guint bytes)
 name|initial_inten_a_pixels
 parameter_list|(
 specifier|const
@@ -6661,7 +6651,7 @@ name|guchar
 modifier|*
 name|mask
 parameter_list|,
-name|gint
+name|guint
 name|opacity
 parameter_list|,
 specifier|const
@@ -6669,10 +6659,10 @@ name|gboolean
 modifier|*
 name|affect
 parameter_list|,
-name|gint
+name|guint
 name|length
 parameter_list|,
-name|gint
+name|guint
 name|bytes
 parameter_list|)
 block|{
