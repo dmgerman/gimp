@@ -1970,16 +1970,19 @@ operator|*
 operator|)
 name|event
 expr_stmt|;
-comment|/*  in "click to focus" mode, the BUTTON_PRESS arrives before          *  FOCUS_IN, so we have to update the tool's modifier state here          */
 if|if
 condition|(
-name|state
-operator|&&
 operator|!
 name|GTK_WIDGET_HAS_FOCUS
 argument_list|(
 name|canvas
 argument_list|)
+condition|)
+block|{
+comment|/*  in "click to focus" mode, the BUTTON_PRESS arrives before              *  FOCUS_IN, so we have to update the tool's modifier state here              */
+if|if
+condition|(
+name|state
 condition|)
 block|{
 name|gimp_display_shell_update_tool_modifiers
@@ -2003,9 +2006,20 @@ argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
+block|}
 name|button_press_before_focus
 operator|=
 name|TRUE
+expr_stmt|;
+comment|/*  we expect a FOCUS_IN event to follow, but can't rely              *  on it, so force one              */
+name|gdk_window_focus
+argument_list|(
+name|canvas
+operator|->
+name|window
+argument_list|,
+name|time
+argument_list|)
 expr_stmt|;
 block|}
 comment|/*  ignore new mouse events  */
@@ -2119,6 +2133,17 @@ name|time
 argument_list|)
 expr_stmt|;
 block|}
+name|gdk_keyboard_grab
+argument_list|(
+name|canvas
+operator|->
+name|window
+argument_list|,
+name|FALSE
+argument_list|,
+name|time
+argument_list|)
+expr_stmt|;
 comment|/*  save the current modifier state because tools don't get              *  key events while BUTTON1 is down              */
 name|button_press_state
 operator|=
@@ -2514,6 +2539,11 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|gdk_keyboard_ungrab
+argument_list|(
+name|time
+argument_list|)
+expr_stmt|;
 name|gdk_pointer_ungrab
 argument_list|(
 name|time
@@ -4142,6 +4172,21 @@ operator|->
 name|time
 argument_list|)
 expr_stmt|;
+name|gdk_keyboard_grab
+argument_list|(
+name|shell
+operator|->
+name|canvas
+operator|->
+name|window
+argument_list|,
+name|FALSE
+argument_list|,
+name|event
+operator|->
+name|time
+argument_list|)
+expr_stmt|;
 name|gimp_move_tool_start_hguide
 argument_list|(
 name|active_tool
@@ -4295,6 +4340,21 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
+argument_list|,
+name|event
+operator|->
+name|time
+argument_list|)
+expr_stmt|;
+name|gdk_keyboard_grab
+argument_list|(
+name|shell
+operator|->
+name|canvas
+operator|->
+name|window
+argument_list|,
+name|FALSE
 argument_list|,
 name|event
 operator|->
