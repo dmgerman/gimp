@@ -747,6 +747,25 @@ block|{
 case|case
 name|INIT_PAINT
 case|:
+comment|//      timer_state = OFF;
+if|if
+condition|(
+name|timer_state
+operator|==
+name|ON
+condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"killing stray timer, please report to lewing@gimp.org"
+argument_list|)
+expr_stmt|;
+name|gtk_timeout_remove
+argument_list|(
+name|timer
+argument_list|)
+expr_stmt|;
+block|}
 name|timer_state
 operator|=
 name|OFF
@@ -917,11 +936,6 @@ modifier|*
 name|tool
 parameter_list|)
 block|{
-name|paint_core_free
-argument_list|(
-name|tool
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|timer_state
@@ -936,6 +950,11 @@ expr_stmt|;
 name|timer_state
 operator|=
 name|OFF
+expr_stmt|;
+name|paint_core_free
+argument_list|(
+name|tool
+argument_list|)
 expr_stmt|;
 block|}
 end_function
