@@ -3138,8 +3138,11 @@ index|]
 operator|.
 name|data
 operator|.
-name|d_int32
+name|d_int16
 operator|=
+operator|(
+name|gint16
+operator|)
 name|get_c_long
 argument_list|(
 name|car
@@ -3191,8 +3194,11 @@ index|]
 operator|.
 name|data
 operator|.
-name|d_int32
+name|d_int8
 operator|=
+operator|(
+name|gint8
+operator|)
 name|get_c_long
 argument_list|(
 name|car
@@ -3415,7 +3421,7 @@ operator|.
 name|d_int16array
 operator|=
 operator|(
-name|short
+name|gint16
 operator|*
 operator|)
 operator|(

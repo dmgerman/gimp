@@ -769,7 +769,7 @@ index|]
 operator|.
 name|data
 operator|.
-name|d_int32
+name|d_int16
 expr_stmt|;
 name|mvals
 operator|.
@@ -785,7 +785,7 @@ index|]
 operator|.
 name|data
 operator|.
-name|d_int32
+name|d_int16
 expr_stmt|;
 name|mvals
 operator|.
@@ -801,7 +801,7 @@ index|]
 operator|.
 name|data
 operator|.
-name|d_int32
+name|d_int8
 expr_stmt|;
 name|mvals
 operator|.
@@ -817,7 +817,7 @@ index|]
 operator|.
 name|data
 operator|.
-name|d_int32
+name|d_int8
 expr_stmt|;
 name|mvals
 operator|.
@@ -849,7 +849,7 @@ index|]
 operator|.
 name|data
 operator|.
-name|d_int32
+name|d_int16
 expr_stmt|;
 name|mvals
 operator|.
@@ -865,7 +865,7 @@ index|]
 operator|.
 name|data
 operator|.
-name|d_int32
+name|d_int16
 expr_stmt|;
 block|}
 break|break;
