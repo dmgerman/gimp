@@ -55,6 +55,18 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_progress_set_text
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|message
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|_gimp_progress_install
 parameter_list|(
 specifier|const
