@@ -76,7 +76,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2784498a0103
+DECL|enum|__anon29d829240103
 enum|enum
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
@@ -1279,6 +1279,13 @@ name|GIMP_IS_DRAWABLE
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|name
+operator|!=
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if

@@ -3349,6 +3349,16 @@ name|pdb_pointer
 expr_stmt|;
 if|if
 condition|(
+name|name
+operator|==
+name|NULL
+condition|)
+name|success
+operator|=
+name|FALSE
+expr_stmt|;
+if|if
+condition|(
 name|success
 condition|)
 name|layer_set_name
