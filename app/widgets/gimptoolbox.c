@@ -161,6 +161,14 @@ name|DEFAULT_TOOL_ICON_SIZE
 value|GTK_ICON_SIZE_BUTTON
 end_define
 
+begin_define
+DECL|macro|DEFAULT_BUTTON_RELIEF
+define|#
+directive|define
+name|DEFAULT_BUTTON_RELIEF
+value|GTK_RELIEF_NONE
+end_define
+
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
@@ -575,6 +583,26 @@ argument_list|,
 name|GTK_TYPE_ICON_SIZE
 argument_list|,
 name|DEFAULT_TOOL_ICON_SIZE
+argument_list|,
+name|G_PARAM_READABLE
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_widget_class_install_style_property
+argument_list|(
+name|widget_class
+argument_list|,
+name|g_param_spec_enum
+argument_list|(
+literal|"button_relief"
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|GTK_TYPE_RELIEF_STYLE
+argument_list|,
+name|DEFAULT_BUTTON_RELIEF
 argument_list|,
 name|G_PARAM_READABLE
 argument_list|)
@@ -1188,6 +1216,9 @@ decl_stmt|;
 name|GtkIconSize
 name|tool_icon_size
 decl_stmt|;
+name|GtkReliefStyle
+name|relief
+decl_stmt|;
 name|GList
 modifier|*
 name|list
@@ -1243,6 +1274,11 @@ literal|"tool_icon_size"
 argument_list|,
 operator|&
 name|tool_icon_size
+argument_list|,
+literal|"button_relief"
+argument_list|,
+operator|&
+name|relief
 argument_list|,
 name|NULL
 argument_list|)
@@ -1333,6 +1369,13 @@ argument_list|,
 name|stock_id
 argument_list|,
 name|tool_icon_size
+argument_list|)
+expr_stmt|;
+name|gtk_button_set_relief
+argument_list|(
+name|tool_button
+argument_list|,
+name|relief
 argument_list|)
 expr_stmt|;
 block|}
