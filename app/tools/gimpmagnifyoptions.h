@@ -112,9 +112,9 @@ DECL|member|parent_instance
 name|GimpToolOptions
 name|parent_instance
 decl_stmt|;
-DECL|member|allow_resize
+DECL|member|auto_resize
 name|gboolean
-name|allow_resize
+name|auto_resize
 decl_stmt|;
 DECL|member|zoom_type
 name|GimpZoomType

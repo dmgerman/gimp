@@ -1168,7 +1168,7 @@ name|offset_y
 argument_list|,
 name|options
 operator|->
-name|allow_resize
+name|auto_resize
 argument_list|)
 expr_stmt|;
 block|}

@@ -83,13 +83,13 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2907f4ca0103
+DECL|enum|__anon2a04841d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
 block|,
-DECL|enumerator|PROP_ALLOW_RESIZE
-name|PROP_ALLOW_RESIZE
+DECL|enumerator|PROP_AUTO_RESIZE
+name|PROP_AUTO_RESIZE
 block|,
 DECL|enumerator|PROP_ZOOM_TYPE
 name|PROP_ZOOM_TYPE
@@ -355,9 +355,9 @@ name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_ALLOW_RESIZE
+name|PROP_AUTO_RESIZE
 argument_list|,
-literal|"allow-resize"
+literal|"auto-resize"
 argument_list|,
 name|NULL
 argument_list|,
@@ -458,11 +458,11 @@ name|property_id
 condition|)
 block|{
 case|case
-name|PROP_ALLOW_RESIZE
+name|PROP_AUTO_RESIZE
 case|:
 name|options
 operator|->
-name|allow_resize
+name|auto_resize
 operator|=
 name|g_value_get_boolean
 argument_list|(
@@ -550,7 +550,7 @@ name|property_id
 condition|)
 block|{
 case|case
-name|PROP_ALLOW_RESIZE
+name|PROP_AUTO_RESIZE
 case|:
 name|g_value_set_boolean
 argument_list|(
@@ -558,7 +558,7 @@ name|value
 argument_list|,
 name|options
 operator|->
-name|allow_resize
+name|auto_resize
 argument_list|)
 expr_stmt|;
 break|break;
@@ -656,7 +656,7 @@ argument_list|(
 name|tool_options
 argument_list|)
 argument_list|,
-literal|"allow-resize"
+literal|"auto-resize"
 argument_list|)
 expr_stmt|;
 if|if
@@ -735,18 +735,18 @@ argument_list|(
 name|tool_options
 argument_list|)
 expr_stmt|;
-comment|/*  the allow_resize toggle button  */
+comment|/*  the auto_resize toggle button  */
 name|button
 operator|=
 name|gimp_prop_check_button_new
 argument_list|(
 name|config
 argument_list|,
-literal|"allow-resize"
+literal|"auto-resize"
 argument_list|,
 name|_
 argument_list|(
-literal|"Allow Window Resizing"
+literal|"Auto-Resize Window"
 argument_list|)
 argument_list|)
 expr_stmt|;
