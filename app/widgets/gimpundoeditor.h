@@ -113,6 +113,10 @@ name|GtkWidget
 modifier|*
 name|view
 decl_stmt|;
+DECL|member|preview_size
+name|GimpPreviewSize
+name|preview_size
+decl_stmt|;
 DECL|member|base_item
 name|GimpUndo
 modifier|*
@@ -160,9 +164,9 @@ name|GtkWidget
 modifier|*
 name|gimp_undo_editor_new
 parameter_list|(
-name|GimpImage
+name|GimpCoreConfig
 modifier|*
-name|gimage
+name|config
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -892,6 +892,15 @@ value|N_("Sets an upper limit to the memory that is used per image to keep " \  
 end_define
 
 begin_define
+DECL|macro|UNDO_PREVIEW_SIZE_BLURB
+define|#
+directive|define
+name|UNDO_PREVIEW_SIZE_BLURB
+define|\
+value|N_("Sets the size of the previews in the Undo History.")
+end_define
+
+begin_define
 DECL|macro|USE_HELP_BLURB
 define|#
 directive|define
