@@ -62,7 +62,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_drawable_preview_update
+name|gimp_drawable_preview_draw_original
 parameter_list|(
 name|GimpPreview
 modifier|*
@@ -196,9 +196,9 @@ argument_list|)
 expr_stmt|;
 name|preview_class
 operator|->
-name|update
+name|draw
 operator|=
-name|gimp_drawable_preview_update
+name|gimp_drawable_preview_draw_original
 expr_stmt|;
 block|}
 end_function
@@ -206,8 +206,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_preview_update (GimpPreview * preview)
-name|gimp_drawable_preview_update
+DECL|function|gimp_drawable_preview_draw_original (GimpPreview * preview)
+name|gimp_drawable_preview_draw_original
 parameter_list|(
 name|GimpPreview
 modifier|*
@@ -585,6 +585,10 @@ literal|0
 argument_list|,
 name|sel_width
 operator|-
+name|preview
+operator|->
+name|width
+operator|-
 literal|1
 argument_list|)
 expr_stmt|;
@@ -621,6 +625,10 @@ argument_list|,
 literal|0
 argument_list|,
 name|sel_height
+operator|-
+name|preview
+operator|->
+name|height
 operator|-
 literal|1
 argument_list|)
@@ -705,11 +713,11 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_DRAWABLE_PREVIEW
 argument_list|,
-literal|"show_toggle_preview"
+literal|"show_update_toggle"
 argument_list|,
 name|TRUE
 argument_list|,
-literal|"update_preview"
+literal|"update"
 argument_list|,
 operator|*
 name|toggle
@@ -833,6 +841,10 @@ literal|0
 argument_list|,
 name|sel_width
 operator|-
+name|preview
+operator|->
+name|width
+operator|-
 literal|1
 argument_list|)
 expr_stmt|;
@@ -869,6 +881,10 @@ argument_list|,
 literal|0
 argument_list|,
 name|sel_height
+operator|-
+name|preview
+operator|->
+name|height
 operator|-
 literal|1
 argument_list|)

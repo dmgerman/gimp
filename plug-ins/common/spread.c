@@ -44,7 +44,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279d53a70108
+DECL|struct|__anon2b660c0b0108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -668,7 +668,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon279d53a70208
+DECL|struct|__anon2b660c0b0208
 typedef|typedef
 struct|struct
 block|{
@@ -1156,18 +1156,15 @@ name|drawable
 operator|->
 name|height
 expr_stmt|;
+name|gimp_preview_get_size
+argument_list|(
+name|preview
+argument_list|,
+operator|&
 name|width
-operator|=
-name|gimp_preview_get_width
-argument_list|(
-name|preview
-argument_list|)
-expr_stmt|;
+argument_list|,
+operator|&
 name|height
-operator|=
-name|gimp_preview_get_height
-argument_list|(
-name|preview
 argument_list|)
 expr_stmt|;
 name|bpp
@@ -1635,7 +1632,7 @@ name|g_signal_connect
 argument_list|(
 name|preview
 argument_list|,
-literal|"updated"
+literal|"invalidated"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1653,7 +1650,7 @@ literal|"value_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|spread_updating_preview
+name|gimp_preview_invalidate
 argument_list|)
 argument_list|,
 name|preview

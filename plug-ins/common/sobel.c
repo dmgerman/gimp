@@ -56,7 +56,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be189510108
+DECL|struct|__anon2a9ccb270108
 block|{
 DECL|member|horizontal
 name|gboolean
@@ -886,7 +886,7 @@ name|g_signal_connect
 argument_list|(
 name|preview
 argument_list|,
-literal|"updated"
+literal|"invalidated"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -964,7 +964,7 @@ literal|"toggled"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|sobel_update_preview
+name|gimp_preview_invalidate
 argument_list|)
 argument_list|,
 name|preview
@@ -1038,7 +1038,7 @@ literal|"toggled"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|sobel_update_preview
+name|gimp_preview_invalidate
 argument_list|)
 argument_list|,
 name|preview
@@ -1112,7 +1112,7 @@ literal|"toggled"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|sobel_update_preview
+name|gimp_preview_invalidate
 argument_list|)
 argument_list|,
 name|preview
@@ -1440,29 +1440,31 @@ operator|&
 name|y1
 argument_list|)
 expr_stmt|;
-name|x2
-operator|=
-name|x1
-operator|+
-name|gimp_preview_get_width
+name|gimp_preview_get_size
 argument_list|(
 name|GIMP_PREVIEW
 argument_list|(
 name|preview
 argument_list|)
+argument_list|,
+operator|&
+name|width
+argument_list|,
+operator|&
+name|height
 argument_list|)
+expr_stmt|;
+name|x2
+operator|=
+name|x1
+operator|+
+name|width
 expr_stmt|;
 name|y2
 operator|=
 name|y1
 operator|+
-name|gimp_preview_get_height
-argument_list|(
-name|GIMP_PREVIEW
-argument_list|(
-name|preview
-argument_list|)
-argument_list|)
+name|height
 expr_stmt|;
 block|}
 else|else
@@ -1494,8 +1496,6 @@ literal|"Sobel Edge Detecting..."
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
-comment|/* Get the size of the input image. (This will/must be the same    *  as the size of the output image.    */
 name|width
 operator|=
 name|x2
@@ -1508,6 +1508,8 @@ name|y2
 operator|-
 name|y1
 expr_stmt|;
+block|}
+comment|/* Get the size of the input image. (This will/must be the same    *  as the size of the output image.    */
 name|bytes
 operator|=
 name|drawable

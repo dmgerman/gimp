@@ -86,7 +86,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae0b6530108
+DECL|struct|__anon276030070108
 block|{
 DECL|member|radius
 name|gdouble
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae0b6530208
+DECL|struct|__anon276030070208
 block|{
 DECL|member|run
 name|gboolean
@@ -3055,7 +3055,7 @@ name|g_signal_connect
 argument_list|(
 name|preview
 argument_list|,
-literal|"updated"
+literal|"invalidated"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3189,7 +3189,7 @@ literal|"value_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|preview_update
+name|gimp_preview_invalidate
 argument_list|)
 argument_list|,
 name|preview
@@ -3301,7 +3301,7 @@ literal|"value_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|preview_update
+name|gimp_preview_invalidate
 argument_list|)
 argument_list|,
 name|preview
@@ -3396,7 +3396,7 @@ literal|"value_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|preview_update
+name|gimp_preview_invalidate
 argument_list|)
 argument_list|,
 name|preview

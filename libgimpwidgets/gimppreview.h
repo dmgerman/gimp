@@ -202,11 +202,11 @@ name|GtkTableClass
 name|parent_class
 decl_stmt|;
 comment|/* virtuals */
-DECL|member|update
+DECL|member|draw
 name|void
 function_decl|(
 modifier|*
-name|update
+name|draw
 function_decl|)
 parameter_list|(
 name|GimpPreview
@@ -215,11 +215,11 @@ name|preview
 parameter_list|)
 function_decl|;
 comment|/* signal */
-DECL|member|updated
+DECL|member|invalidated
 name|void
 function_decl|(
 modifier|*
-name|updated
+name|invalidated
 function_decl|)
 parameter_list|(
 name|GimpPreview
@@ -242,23 +242,20 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
-name|gint
-name|gimp_preview_get_width
+name|void
+name|gimp_preview_get_size
 parameter_list|(
 name|GimpPreview
 modifier|*
 name|preview
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
+parameter_list|,
 name|gint
-name|gimp_preview_get_height
-parameter_list|(
-name|GimpPreview
 modifier|*
-name|preview
+name|width
+parameter_list|,
+name|gint
+modifier|*
+name|height
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -292,6 +289,17 @@ name|preview
 parameter_list|,
 name|gboolean
 name|show_update
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_preview_invalidate
+parameter_list|(
+name|GimpPreview
+modifier|*
+name|preview
 parameter_list|)
 function_decl|;
 end_function_decl
