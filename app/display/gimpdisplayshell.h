@@ -430,11 +430,11 @@ modifier|*
 name|render_gc
 decl_stmt|;
 comment|/*  GC for rendering the image         */
-DECL|member|title_dirty
-name|gboolean
-name|title_dirty
+DECL|member|title_idle_id
+name|guint
+name|title_idle_id
 decl_stmt|;
-comment|/*  checked by _flush()                */
+comment|/*  title update idle ID               */
 DECL|member|icon_size
 name|gint
 name|icon_size

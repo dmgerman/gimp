@@ -33,6 +33,29 @@ directive|include
 file|"display-types.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|FIXME #include "gui/gui-types.h"
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_include
+include|#
+directive|include
+file|"gui/gui-types.h"
+end_include
+
 begin_include
 include|#
 directive|include
@@ -61,6 +84,12 @@ begin_include
 include|#
 directive|include
 file|"file/file-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gui/info-window.h"
 end_include
 
 begin_include
@@ -103,6 +132,17 @@ end_define
 
 begin_function_decl
 specifier|static
+name|gboolean
+name|gimp_display_shell_update_title_idle
+parameter_list|(
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|void
 name|gimp_display_shell_format_title
 parameter_list|(
@@ -125,6 +165,10 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  public functions  */
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_display_shell_update_title (GimpDisplayShell * shell)
@@ -135,6 +179,59 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|shell
+operator|->
+name|title_idle_id
+condition|)
+name|g_source_remove
+argument_list|(
+name|shell
+operator|->
+name|title_idle_id
+argument_list|)
+expr_stmt|;
+name|shell
+operator|->
+name|title_idle_id
+operator|=
+name|g_idle_add
+argument_list|(
+name|gimp_display_shell_update_title_idle
+argument_list|,
+name|shell
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/*  private functions  */
+end_comment
+
+begin_function
+specifier|static
+name|gboolean
+DECL|function|gimp_display_shell_update_title_idle (gpointer data)
+name|gimp_display_shell_update_title_idle
+parameter_list|(
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|GimpDisplayConfig
 modifier|*
 name|config
@@ -145,12 +242,11 @@ index|[
 name|MAX_TITLE_BUF
 index|]
 decl_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_DISPLAY_SHELL
-argument_list|(
 name|shell
-argument_list|)
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|data
 argument_list|)
 expr_stmt|;
 name|config
@@ -167,6 +263,12 @@ name|gimp
 operator|->
 name|config
 argument_list|)
+expr_stmt|;
+name|shell
+operator|->
+name|title_idle_id
+operator|=
+literal|0
 expr_stmt|;
 comment|/* format the title */
 name|gimp_display_shell_format_title
@@ -255,6 +357,24 @@ argument_list|,
 name|title
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: dont call info_window_update() here.
+endif|#
+directive|endif
+name|info_window_update
+argument_list|(
+name|shell
+operator|->
+name|gdisp
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
 block|}
 end_function
 
@@ -1000,7 +1120,10 @@ name|i
 argument_list|,
 literal|"%s"
 argument_list|,
+name|_
+argument_list|(
 literal|"(none)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

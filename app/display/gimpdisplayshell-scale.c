@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-title.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpstatusbar.h"
 end_include
 
@@ -1734,25 +1740,11 @@ name|resize_window
 operator|||
 name|redisplay
 condition|)
-block|{
 name|gimp_display_shell_expose_full
 argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
-comment|/* title may have changed if it includes the zoom ratio */
-name|shell
-operator|->
-name|title_dirty
-operator|=
-name|TRUE
-expr_stmt|;
-name|gimp_display_shell_flush
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
-block|}
 comment|/* re-enable the active tool */
 name|tool_manager_control_active
 argument_list|(
