@@ -187,8 +187,9 @@ name|GtkAdjustment
 modifier|*
 name|adjustment
 parameter_list|,
-name|gpointer
-name|data
+name|GtkWidget
+modifier|*
+name|panel
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -202,8 +203,9 @@ name|GimpColorButton
 modifier|*
 name|button
 parameter_list|,
-name|gpointer
-name|data
+name|GtkAdjustment
+modifier|*
+name|adj
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -941,15 +943,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|qmask_query_scale_update (GtkAdjustment * adjustment,gpointer data)
+DECL|function|qmask_query_scale_update (GtkAdjustment * adjustment,GtkWidget * panel)
 name|qmask_query_scale_update
 parameter_list|(
 name|GtkAdjustment
 modifier|*
 name|adjustment
 parameter_list|,
-name|gpointer
-name|data
+name|GtkWidget
+modifier|*
+name|panel
 parameter_list|)
 block|{
 name|GimpRGB
@@ -959,7 +962,7 @@ name|gimp_color_button_get_color
 argument_list|(
 name|GIMP_COLOR_BUTTON
 argument_list|(
-name|data
+name|panel
 argument_list|)
 argument_list|,
 operator|&
@@ -982,7 +985,7 @@ name|gimp_color_button_set_color
 argument_list|(
 name|GIMP_COLOR_BUTTON
 argument_list|(
-name|data
+name|panel
 argument_list|)
 argument_list|,
 operator|&
@@ -995,26 +998,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|qmask_query_color_changed (GimpColorButton * button,gpointer data)
+DECL|function|qmask_query_color_changed (GimpColorButton * button,GtkAdjustment * adj)
 name|qmask_query_color_changed
 parameter_list|(
 name|GimpColorButton
 modifier|*
 name|button
 parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
 name|GtkAdjustment
 modifier|*
 name|adj
-init|=
-name|GTK_ADJUSTMENT
-argument_list|(
-name|data
-argument_list|)
-decl_stmt|;
+parameter_list|)
+block|{
 name|GimpRGB
 name|color
 decl_stmt|;
