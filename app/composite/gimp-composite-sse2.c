@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * -*- mode: c tab-width: 2; c-basic-indent: 2; indent-tabs-mode: nil -*-  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * Gimp image compositing  * Copyright (C) 2003  Helvetix Victorinox, a pseudonym,<helvetix@gimp.org>  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* -*- mode: c tab-width: 2; c-basic-indent: 2; indent-tabs-mode: nil -*-  *  * The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * -*- mode: c tab-width: 2; c-basic-indent: 2; indent-tabs-mode: nil -*-  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * Gimp image compositing  * Copyright (C) 2003  Helvetix Victorinox, a pseudonym,<helvetix@gimp.org>  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -57,6 +57,12 @@ directive|include
 file|"gimp-composite-sse2.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-composite-x86.h"
+end_include
+
 begin_if
 if|#
 directive|if
@@ -64,36 +70,6 @@ name|__GNUC__
 operator|>=
 literal|3
 end_if
-
-begin_define
-DECL|macro|pminub (src,dst,tmp)
-define|#
-directive|define
-name|pminub
-parameter_list|(
-name|src
-parameter_list|,
-name|dst
-parameter_list|,
-name|tmp
-parameter_list|)
-value|"pminub " "%%" #src ", %%" #dst
-end_define
-
-begin_define
-DECL|macro|pmaxub (src,dst,tmp)
-define|#
-directive|define
-name|pmaxub
-parameter_list|(
-name|src
-parameter_list|,
-name|dst
-parameter_list|,
-name|tmp
-parameter_list|)
-value|"pmaxub " "%%" #src ", %%" #dst
-end_define
 
 begin_decl_stmt
 DECL|variable|rgba8_alpha_mask_128
@@ -710,9 +686,9 @@ name|_op
 decl_stmt|;
 asm|asm
 specifier|volatile
-asm|("movdqu    %0,%%xmm0"                 :
+asm|("  movdqu    %0,%%xmm0\n"                 "\tmovq      %1,%%mm0"                     :
 comment|/* empty */
-asm|: "m" (*rgba8_alpha_mask_128)                 : "%xmm0");
+asm|: "m" (*rgba8_alpha_mask_128), "m" (*rgba8_alpha_mask_64)                 : "%xmm0", "%mm0");
 for|for
 control|(
 init|;
@@ -729,9 +705,7 @@ operator|-=
 literal|4
 control|)
 block|{
-asm|asm ("  movdqu  %0, %%xmm2\n"            "\tmovdqu  %1, %%xmm3\n"            "\tmovdqu  %%xmm2, %%xmm4\n"            "\tpaddusb %%xmm3, %%xmm4\n"             "\tmovdqu  %%xmm0, %%xmm1\n"            "\tpandn   %%xmm4, %%xmm1\n"            "\t" pminub(xmm3, xmm2, xmm4) "\n"            "\tpand    %%xmm0, %%xmm2\n"            "\tpor     %%xmm2, %%xmm1\n"            "\tmovdqu  %%xmm1, %2\n"            :
-comment|/* empty */
-asm|: "m" (*op.A), "m" (*op.B), "m" (*op.D)            : "0", "1", "2", "%xmm0", "%xmm1", "%xmm2", "%xmm3", "%xmm4", "%xmm5", "%xmm6", "%xmm7");
+asm|asm ("  movdqu      %1,%%xmm2\n"            "\tmovdqu      %2,%%xmm3\n"            "\tmovdqu  %%xmm2,%%xmm4\n"            "\tpaddusb %%xmm3,%%xmm4\n"                        "\tmovdqu  %%xmm0,%%xmm1\n"            "\tpandn   %%xmm4,%%xmm1\n"            "\tpminub  %%xmm3,%%xmm2\n"            "\tpand    %%xmm0,%%xmm2\n"            "\tpor     %%xmm2,%%xmm1\n"            "\tmovdqu  %%xmm1,%0\n"            : "+m" (*op.D)            : "m" (*op.A), "m" (*op.B)            : "%xmm0", "%xmm1", "%xmm2", "%xmm3", "%xmm4", "%xmm5", "%xmm6", "%xmm7");
 name|op
 operator|.
 name|A
@@ -751,11 +725,6 @@ operator|+=
 literal|16
 expr_stmt|;
 block|}
-asm|asm
-specifier|volatile
-asm|("movq    %0,%%mm0"                     :
-comment|/* empty */
-asm|: "m" (*rgba8_alpha_mask_64)                 : "%mm0");
 for|for
 control|(
 init|;
@@ -772,9 +741,153 @@ operator|-=
 literal|2
 control|)
 block|{
-asm|asm ("  movq       %0, %%mm2\n"            "\tmovq       %1, %%mm3\n"            "\tmovq    %%mm2, %%mm4\n"            "\tpaddusb %%mm3, %%mm4\n"            "\tmovq    %%mm0, %%mm1\n"            "\tpandn   %%mm4, %%mm1\n"            "\t" pminub(mm3, mm2, mm4) "\n"            "\tpand    %%mm0, %%mm2\n"            "\tpor     %%mm2, %%mm1\n"            "\tmovq    %%mm1, %2\n"            :
-comment|/* empty */
-asm|: "m" (*op.A), "m" (*op.B), "m" (*op.D)            : "0", "1", "2", "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
+asm|asm ("  movq       %1,%%mm2\n"            "\tmovq       %2,%%mm3\n"            "\tmovq    %%mm2,%%mm4\n"            "\tpaddusb %%mm3,%%mm4\n"            "\tmovq    %%mm0,%%mm1\n"            "\tpandn   %%mm4,%%mm1\n"            "\tpminub  %%mm3,%%mm2\n"            "\tpand    %%mm0,%%mm2\n"            "\tpor     %%mm2,%%mm1\n"            "\tmovq    %%mm1,%0\n"            : "+m" (*op.D)            : "m" (*op.A), "m" (*op.B)            : "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
+name|op
+operator|.
+name|A
+operator|+=
+literal|8
+expr_stmt|;
+name|op
+operator|.
+name|B
+operator|+=
+literal|8
+expr_stmt|;
+name|op
+operator|.
+name|D
+operator|+=
+literal|8
+expr_stmt|;
+block|}
+for|for
+control|(
+init|;
+name|op
+operator|.
+name|n_pixels
+operator|>=
+literal|1
+condition|;
+name|op
+operator|.
+name|n_pixels
+operator|-=
+literal|1
+control|)
+block|{
+asm|asm
+specifier|volatile
+asm|("  movd       %1,%%mm2\n"                     "\tmovd       %2,%%mm3\n"                     "\tmovq    %%mm2,%%mm4\n"                     "\tpaddusb %%mm3,%%mm4\n"                     "\tmovq    %%mm0,%%mm1\n"                     "\tpandn   %%mm4,%%mm1\n"                     "\tpminub  %%mm3,%%mm2\n"                     "\tpand    %%mm0,%%mm2\n"                     "\tpor     %%mm2,%%mm1\n"                     "\tmovd    %%mm1,%0\n"                     : "+m" (*op.D)                     : "m" (*op.A), "m" (*op.B)                     : "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
+name|op
+operator|.
+name|A
+operator|+=
+literal|4
+expr_stmt|;
+name|op
+operator|.
+name|B
+operator|+=
+literal|4
+expr_stmt|;
+name|op
+operator|.
+name|D
+operator|+=
+literal|4
+expr_stmt|;
+block|}
+asm|asm("emms");
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|xxxgimp_composite_burn_rgba8_rgba8_rgba8_sse2 (GimpCompositeContext * _op)
+name|xxxgimp_composite_burn_rgba8_rgba8_rgba8_sse2
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+name|_op
+parameter_list|)
+block|{    }
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_composite_darken_rgba8_rgba8_rgba8_sse2 (GimpCompositeContext * _op)
+name|gimp_composite_darken_rgba8_rgba8_rgba8_sse2
+parameter_list|(
+name|GimpCompositeContext
+modifier|*
+name|_op
+parameter_list|)
+block|{
+name|GimpCompositeContext
+name|op
+init|=
+operator|*
+name|_op
+decl_stmt|;
+for|for
+control|(
+init|;
+name|op
+operator|.
+name|n_pixels
+operator|>=
+literal|4
+condition|;
+name|op
+operator|.
+name|n_pixels
+operator|-=
+literal|4
+control|)
+block|{
+asm|asm
+specifier|volatile
+asm|("  movdqu          %1,%%xmm2\n"                     "\tmovdqu          %2,%%xmm3\n"                     "\tpminub      %%xmm3,%%xmm2\n"                     "\tmovdqu      %%xmm2,%0\n"                     : "=m" (*op.D)                     : "m" (*op.A), "m" (*op.B)                     : "%xmm1", "%xmm2", "%xmm3", "%xmm4");
+name|op
+operator|.
+name|A
+operator|+=
+literal|16
+expr_stmt|;
+name|op
+operator|.
+name|B
+operator|+=
+literal|16
+expr_stmt|;
+name|op
+operator|.
+name|D
+operator|+=
+literal|16
+expr_stmt|;
+block|}
+for|for
+control|(
+init|;
+name|op
+operator|.
+name|n_pixels
+operator|>=
+literal|2
+condition|;
+name|op
+operator|.
+name|n_pixels
+operator|-=
+literal|2
+control|)
+block|{
+asm|asm
+specifier|volatile
+asm|("  movq       %1, %%mm2\n"                     "\tpminub     %2, %%mm2\n"                     "\tmovq    %%mm2, %0\n"                     : "=m" (*op.D)                     : "m" (*op.A), "m" (*op.B)                     : "%mm1", "%mm2", "%mm3", "%mm4");
 name|op
 operator|.
 name|A
@@ -803,36 +916,10 @@ condition|)
 block|{
 asm|asm
 specifier|volatile
-asm|("  movd    (%0), %%mm2;\n"                     "\tmovd    (%1), %%mm3;\n"                     "\tmovq    %%mm2, %%mm4\n"                     "\tpaddusb %%mm3, %%mm4\n"                     "\tmovq    %%mm0, %%mm1\n"                     "\tpandn   %%mm4, %%mm1\n"                     "\t" pminub(mm3, mm2, mm4) "\n"                     "\tpand    %%mm0, %%mm2\n"                     "\tpor     %%mm2, %%mm1\n"                     "\tmovd    %%mm1, (%2);\n"                     :
-comment|/* empty */
-asm|: "r" (op.A), "r" (op.B), "r" (op.D)                     : "0", "1", "2", "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
+asm|("  movd       %1, %%mm2\n"                     "\tmovd       %2, %%mm3\n"                     "\tpminub  %%mm3, %%mm2\n"                     "\tmovd    %%mm2, %0\n"                     : "=m" (*op.D)                     : "m" (*op.A), "m" (*op.B)                     : "%mm2", "%mm3", "%mm4");
 block|}
 asm|asm("emms");
 block|}
-end_function
-
-begin_function
-name|void
-DECL|function|xxxgimp_composite_burn_rgba8_rgba8_rgba8_sse2 (GimpCompositeContext * _op)
-name|xxxgimp_composite_burn_rgba8_rgba8_rgba8_sse2
-parameter_list|(
-name|GimpCompositeContext
-modifier|*
-name|_op
-parameter_list|)
-block|{  }
-end_function
-
-begin_function
-name|void
-DECL|function|xxxgimp_composite_darken_rgba8_rgba8_rgba8_sse2 (GimpCompositeContext * _op)
-name|xxxgimp_composite_darken_rgba8_rgba8_rgba8_sse2
-parameter_list|(
-name|GimpCompositeContext
-modifier|*
-name|_op
-parameter_list|)
-block|{  }
 end_function
 
 begin_function
@@ -853,7 +940,7 @@ name|_op
 decl_stmt|;
 asm|asm
 specifier|volatile
-asm|("  movq   %0,%%mm0\n"                 "\tmovdqu %1,%%xmm0"                 :                 : "m" (*rgba8_alpha_mask_64), "m" (*rgba8_alpha_mask_128)                 : "%mm0");
+asm|("  movq   %0,%%mm0\n"                 "\tmovdqu %1,%%xmm0"                 :                 : "m" (*rgba8_alpha_mask_64), "m" (*rgba8_alpha_mask_128)                 : "%mm0", "%xmm0");
 for|for
 control|(
 init|;
@@ -872,9 +959,7 @@ control|)
 block|{
 asm|asm
 specifier|volatile
-asm|("  movdqu        %0,%%xmm2\n"                     "\tmovdqu        %1,%%xmm3\n"                     "\tmovdqu    %%xmm2,%%xmm4\n"                     "\tmovdqu    %%xmm3,%%xmm5\n"                     "\tpsubusb   %%xmm3,%%xmm4\n"                     "\tpsubusb   %%xmm2,%%xmm5\n"                     "\tpaddb     %%xmm5,%%xmm4\n"                     "\tmovdqu    %%xmm0,%%xmm1\n"                     "\tpandn     %%xmm4,%%xmm1\n"                     "\tpminub    %%xmm3,%%xmm2\n"                     "\tpand      %%xmm0,%%xmm2\n"                     "\tpor       %%xmm2,%%xmm1\n"                     "\tmovdqu    %%xmm1,%2\n"                     :
-comment|/* empty */
-asm|: "m" (*op.A), "m" (*op.B), "m" (*op.D)                     : "0", "1", "2", "%xmm1", "%xmm2", "%xmm3", "%xmm4", "%xmm5");
+asm|("  movdqu        %1,%%xmm2\n"                     "\tmovdqu        %2,%%xmm3\n"                     "\tmovdqu    %%xmm2,%%xmm4\n"                     "\tmovdqu    %%xmm3,%%xmm5\n"                     "\tpsubusb   %%xmm3,%%xmm4\n"                     "\tpsubusb   %%xmm2,%%xmm5\n"                     "\tpaddb     %%xmm5,%%xmm4\n"                     "\tmovdqu    %%xmm0,%%xmm1\n"                     "\tpandn     %%xmm4,%%xmm1\n"                     "\tpminub    %%xmm3,%%xmm2\n"                     "\tpand      %%xmm0,%%xmm2\n"                     "\tpor       %%xmm2,%%xmm1\n"                     "\tmovdqu    %%xmm1,%0\n"                     : "+m" (*op.D)                     : "m" (*op.A), "m" (*op.B)                     : "%xmm1", "%xmm2", "%xmm3", "%xmm4", "%xmm5");
 name|op
 operator|.
 name|A
@@ -912,9 +997,7 @@ control|)
 block|{
 asm|asm
 specifier|volatile
-asm|("  movq       %0, %%mm2\n"                     "\tmovq       %1, %%mm3\n"                     "\tmovq    %%mm2, %%mm4\n"                     "\tmovq    %%mm3, %%mm5\n"                     "\tpsubusb %%mm3, %%mm4\n"                     "\tpsubusb %%mm2, %%mm5\n"                     "\tpaddb   %%mm5, %%mm4\n"                     "\tmovq    %%mm0, %%mm1\n"                     "\tpandn   %%mm4, %%mm1\n"                     "\tpminub  %%mm3, %%mm2\n"                     "\tpand    %%mm0, %%mm2\n"                     "\tpor     %%mm2, %%mm1\n"                     "\tmovq    %%mm1, %2\n"                     :
-comment|/* empty */
-asm|: "m" (*op.A), "m" (*op.B), "m" (*op.D)                     : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
+asm|("  movq       %1, %%mm2\n"                     "\tmovq       %2, %%mm3\n"                     "\tmovq    %%mm2, %%mm4\n"                     "\tmovq    %%mm3, %%mm5\n"                     "\tpsubusb %%mm3, %%mm4\n"                     "\tpsubusb %%mm2, %%mm5\n"                     "\tpaddb   %%mm5, %%mm4\n"                     "\tmovq    %%mm0, %%mm1\n"                     "\tpandn   %%mm4, %%mm1\n"                     "\tpminub  %%mm3, %%mm2\n"                     "\tpand    %%mm0, %%mm2\n"                     "\tpor     %%mm2, %%mm1\n"                     "\tmovq    %%mm1, %0\n"                     : "+m" (*op.D)                     : "m" (*op.A), "m" (*op.B)                     : "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
 name|op
 operator|.
 name|A
@@ -943,9 +1026,7 @@ condition|)
 block|{
 asm|asm
 specifier|volatile
-asm|("  movd       %0, %%mm2\n"                     "\tmovd       %1, %%mm3\n"                     "\tmovq    %%mm2, %%mm4\n"                     "\tmovq    %%mm3, %%mm5\n"                     "\tpsubusb %%mm3, %%mm4\n"                     "\tpsubusb %%mm2, %%mm5\n"                     "\tpaddb   %%mm5, %%mm4\n"                     "\tmovq    %%mm0, %%mm1\n"                     "\tpandn   %%mm4, %%mm1\n"                     "\tpminub  %%mm3, %%mm2\n"                     "\tpand    %%mm0, %%mm2\n"                     "\tpor     %%mm2, %%mm1\n"                     "\tmovd    %%mm1, %2\n"                     :
-comment|/* empty */
-asm|: "m" (*op.A), "m" (*op.B), "m" (*op.D)                     : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
+asm|("  movd       %1, %%mm2\n"                     "\tmovd       %2, %%mm3\n"                     "\tmovq    %%mm2, %%mm4\n"                     "\tmovq    %%mm3, %%mm5\n"                     "\tpsubusb %%mm3, %%mm4\n"                     "\tpsubusb %%mm2, %%mm5\n"                     "\tpaddb   %%mm5, %%mm4\n"                     "\tmovq    %%mm0, %%mm1\n"                     "\tpandn   %%mm4, %%mm1\n"                     "\tpminub  %%mm3, %%mm2\n"                     "\tpand    %%mm0, %%mm2\n"                     "\tpor     %%mm2, %%mm1\n"                     "\tmovd    %%mm1, %0\n"                     : "+m" (*op.D)                     : "m" (*op.A), "m" (*op.B)                     : "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
 block|}
 asm|asm("emms");
 block|}
@@ -953,110 +1034,305 @@ end_function
 
 begin_function
 name|void
-DECL|function|xxxgimp_composite_divide_rgba8_rgba8_rgba8_sse2 (GimpCompositeContext * _op)
-name|xxxgimp_composite_divide_rgba8_rgba8_rgba8_sse2
+DECL|function|gimp_composite_dodge_rgba8_rgba8_rgba8_sse2 (GimpCompositeContext * _op)
+name|gimp_composite_dodge_rgba8_rgba8_rgba8_sse2
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
 name|_op
 parameter_list|)
-block|{ }
+block|{
+name|GimpCompositeContext
+name|op
+init|=
+operator|*
+name|_op
+decl_stmt|;
+if|#
+directive|if
+literal|0
+block|for (; op.n_pixels>= 4; op.n_pixels -= 4)     {       asm volatile ("  movdqu        %0,%%xmm0\n"                     "\tmovdqu        %1,%%xmm1\n"                     "\tmovdqu    %%xmm1,%%xmm3\n"                     "\tpxor      %%xmm2,%%xmm2\n"                     "\tpunpcklbw %%xmm2,%%xmm3\n"                     "\tpunpcklbw %%xmm0,%%xmm2\n"                                          "\tmovdqu        %3,%%xmm4\n"                     "\tpsubw     %%xmm3,%%xmm4\n"                                          "\t" xmm_pdivwuqX(xmm2,xmm4,xmm5,xmm6) "\n"                                          "\tmovdqu    %%xmm1,%%xmm3\n"                     "\tpxor      %%xmm2,%%xmm2\n"                     "\tpunpckhbw %%xmm2,%%xmm3\n"                     "\tpunpckhbw %%xmm0,%%xmm2\n"                                          "\tmovdqu        %3,%%xmm4\n"                     "\tpsubw     %%xmm3,%%xmm4\n"                                          "\t" xmm_pdivwuqX(xmm2,xmm4,xmm6,xmm7) "\n"                                          "\tpackuswb  %%xmm6,%%xmm5\n"                                          "\tmovdqu        %4,%%xmm6\n"                     "\tmovdqu    %%xmm1,%%xmm7\n"                     "\tpminub    %%xmm0,%%xmm7\n"                     "\tpand      %%xmm6,%%xmm7\n"                     "\tpandn     %%xmm5,%%xmm6\n"                                          "\tpor       %%xmm6,%%xmm7\n"                                          "\tmovdqu    %%xmm7,%2\n"                     :
+comment|/* empty */
+block|: "m" (*op.A), "m" (*op.B), "m" (*op.D), "m" (*rgba8_w256_128), "m" (*rgba8_alpha_mask_128)                     : "0", "1", "2", "%eax", "%ecx", "%edx", "%xmm0", "%xmm1", "%xmm2", "%xmm3", "%xmm4", "%xmm5", "%xmm6", "%xmm7");       op.A += 16;       op.B += 16;       op.D += 16;     }
+endif|#
+directive|endif
+for|for
+control|(
+init|;
+name|op
+operator|.
+name|n_pixels
+operator|>=
+literal|2
+condition|;
+name|op
+operator|.
+name|n_pixels
+operator|-=
+literal|2
+control|)
+block|{
+asm|asm
+specifier|volatile
+asm|("  movq         %0,%%mm0\n"                     "\tmovq         %1,%%mm1\n"                     "\tmovq      %%mm1,%%mm3\n"                     "\tpxor      %%mm2,%%mm2\n"                     "\tpunpcklbw %%mm2,%%mm3\n"                     "\tpunpcklbw %%mm0,%%mm2\n"                                          "\tmovq         %3,%%mm4\n"                     "\tpsubw     %%mm3,%%mm4\n"                                          "\t" pdivwuqX(mm2,mm4,mm5) "\n"                                          "\tmovq      %%mm1,%%mm3\n"                     "\tpxor      %%mm2,%%mm2\n"                     "\tpunpckhbw %%mm2,%%mm3\n"                     "\tpunpckhbw %%mm0,%%mm2\n"                                          "\tmovq         %3,%%mm4\n"                     "\tpsubw     %%mm3,%%mm4\n"                                          "\t" pdivwuqX(mm2,mm4,mm6) "\n"                                          "\tpackuswb  %%mm6,%%mm5\n"                                          "\tmovq         %4,%%mm6\n"                     "\tmovq      %%mm1,%%mm7\n"                     "\tpminub    %%mm0,%%mm7\n"                     "\tpand      %%mm6,%%mm7\n"                     "\tpandn     %%mm5,%%mm6\n"                                          "\tpor       %%mm6,%%mm7\n"                                          "\tmovq      %%mm7,%2\n"                     :
+comment|/* empty */
+asm|: "m" (*op.A), "m" (*op.B), "m" (*op.D), "m" (*rgba8_w256_64), "m" (*rgba8_alpha_mask_64)                     : "0", "1", "2", "%eax", "%ecx", "%edx", "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
+name|op
+operator|.
+name|A
+operator|+=
+literal|8
+expr_stmt|;
+name|op
+operator|.
+name|B
+operator|+=
+literal|8
+expr_stmt|;
+name|op
+operator|.
+name|D
+operator|+=
+literal|8
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|op
+operator|.
+name|n_pixels
+condition|)
+block|{
+asm|asm
+specifier|volatile
+asm|("  movd         %0,%%mm0\n"                     "\tmovq         %1,%%mm1\n"                     "\tmovq      %%mm1,%%mm3\n"                     "\tpxor      %%mm2,%%mm2\n"                     "\tpunpcklbw %%mm2,%%mm3\n"                     "\tpunpcklbw %%mm0,%%mm2\n"                                          "\tmovq         %3,%%mm4\n"                     "\tpsubw     %%mm3,%%mm4\n"                                          "\t" pdivwuqX(mm2,mm4,mm5) "\n"                                          "\tmovq      %%mm1,%%mm3\n"                     "\tpxor      %%mm2,%%mm2\n"                     "\tpunpckhbw %%mm2,%%mm3\n"                     "\tpunpckhbw %%mm0,%%mm2\n"                                          "\tmovq         %3,%%mm4\n"                     "\tpsubw     %%mm3,%%mm4\n"                                          "\t" pdivwuqX(mm2,mm4,mm6) "\n"                                          "\tpackuswb  %%mm6,%%mm5\n"                                          "\tmovq         %4,%%mm6\n"                     "\tmovq      %%mm1,%%mm7\n"                     "\tpminub    %%mm0,%%mm7\n"                     "\tpand      %%mm6,%%mm7\n"                     "\tpandn     %%mm5,%%mm6\n"                                          "\tpor       %%mm6,%%mm7\n"                                          "\tmovd      %%mm7,%2\n"                     :
+comment|/* empty */
+asm|: "m" (*op.A), "m" (*op.B), "m" (*op.D), "m" (*rgba8_w256_64), "m" (*rgba8_alpha_mask_64)                     : "0", "1", "2", "%eax", "%ecx", "%edx", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
+block|}
+asm|asm("emms");
+block|}
 end_function
 
 begin_function
 name|void
-DECL|function|xxxgimp_composite_dodge_rgba8_rgba8_rgba8_sse2 (GimpCompositeContext * _op)
-name|xxxgimp_composite_dodge_rgba8_rgba8_rgba8_sse2
+DECL|function|gimp_composite_grain_extract_rgba8_rgba8_rgba8_sse2 (GimpCompositeContext * _op)
+name|gimp_composite_grain_extract_rgba8_rgba8_rgba8_sse2
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
 name|_op
 parameter_list|)
-block|{ }
+block|{
+name|GimpCompositeContext
+name|op
+init|=
+operator|*
+name|_op
+decl_stmt|;
+asm|asm
+specifier|volatile
+asm|("  movq       %0,%%mm0\n"                 "\tpxor    %%mm6,%%mm6\n"                 "\tmovq       %1,%%mm7\n" 																"\tmovdqu     %2,%%xmm0\n"                 "\tpxor   %%xmm6,%%xmm6\n"                 "\tmovdqu     %3,%%xmm7\n"                 :
+comment|/* empty */
+asm|: "m" (*rgba8_alpha_mask_64), "m" (*rgba8_w128_64), "m" (*rgba8_alpha_mask_128), "m" (*rgba8_w128_128)                 : "%mm0", "%mm6", "%mm7", "%xmm0", "%xmm6", "%xmm7");
+for|for
+control|(
+init|;
+name|op
+operator|.
+name|n_pixels
+operator|>=
+literal|4
+condition|;
+name|op
+operator|.
+name|n_pixels
+operator|-=
+literal|4
+control|)
+block|{
+asm|asm
+specifier|volatile
+asm|("  movdqu       %1,%%xmm2\n"                     "\tmovdqu       %2,%%xmm3\n"                     xmm_low_bytes_to_words(xmm2,xmm4,xmm6)                     xmm_low_bytes_to_words(xmm3,xmm5,xmm6)                     "\tpsubw     %%xmm5,%%xmm4\n"                     "\tpaddw     %%xmm7,%%xmm4\n"                     "\tmovdqu    %%xmm4,%%xmm1\n"                                          xmm_high_bytes_to_words(xmm2,xmm4,xmm6)                     xmm_high_bytes_to_words(xmm3,xmm5,xmm6)                                          "\tpsubw     %%xmm5,%%xmm4\n"                     "\tpaddw     %%xmm7,%%xmm4\n"                                          "\tpackuswb  %%xmm4,%%xmm1\n"                     "\tmovdqu    %%xmm1,%%xmm4\n"                                          "\tmovdqu    %%xmm0,%%xmm1\n"                     "\tpandn     %%xmm4,%%xmm1\n"                                          "\tpminub    %%xmm3,%%xmm2\n"                     "\tpand      %%xmm0,%%xmm2\n"                                          "\tpor       %%xmm2,%%xmm1\n"                     "\tmovdqu    %%xmm1,%0\n"                     : "+m" (*op.D)                     : "m" (*op.A), "m" (*op.B)                     : "%xmm1", "%xmm2", "%xmm3", "%xmm4");
+name|op
+operator|.
+name|A
+operator|+=
+literal|16
+expr_stmt|;
+name|op
+operator|.
+name|B
+operator|+=
+literal|16
+expr_stmt|;
+name|op
+operator|.
+name|D
+operator|+=
+literal|16
+expr_stmt|;
+block|}
+for|for
+control|(
+init|;
+name|op
+operator|.
+name|n_pixels
+operator|>=
+literal|2
+condition|;
+name|op
+operator|.
+name|n_pixels
+operator|-=
+literal|2
+control|)
+block|{
+asm|asm
+specifier|volatile
+asm|("  movq         %1,%%mm2\n"                     "\tmovq         %2,%%mm3\n"                     mmx_low_bytes_to_words(mm2,mm4,mm6)                     mmx_low_bytes_to_words(mm3,mm5,mm6)                     "\tpsubw     %%mm5,%%mm4\n"                     "\tpaddw     %%mm7,%%mm4\n"                     "\tmovq      %%mm4,%%mm1\n"                                          mmx_high_bytes_to_words(mm2,mm4,mm6)                     mmx_high_bytes_to_words(mm3,mm5,mm6)                                          "\tpsubw     %%mm5,%%mm4\n"                     "\tpaddw     %%mm7,%%mm4\n"                                          "\tpackuswb  %%mm4,%%mm1\n"                     "\tmovq      %%mm1,%%mm4\n"                                          "\tmovq      %%mm0,%%mm1\n"                     "\tpandn     %%mm4,%%mm1\n"                                          "\tpminub    %%mm3,%%mm2\n"                     "\tpand      %%mm0,%%mm2\n"                                          "\tpor       %%mm2,%%mm1\n"                     "\tmovq      %%mm1,%0\n"                     : "+m" (*op.D)                     : "m" (*op.A), "m" (*op.B)                     : "%mm1", "%mm2", "%mm3", "%mm4");
+name|op
+operator|.
+name|A
+operator|+=
+literal|8
+expr_stmt|;
+name|op
+operator|.
+name|B
+operator|+=
+literal|8
+expr_stmt|;
+name|op
+operator|.
+name|D
+operator|+=
+literal|8
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|op
+operator|.
+name|n_pixels
+condition|)
+block|{
+asm|asm
+specifier|volatile
+asm|("  movd         %1, %%mm2\n"                     "\tmovd         %2, %%mm3\n"                     mmx_low_bytes_to_words(mm2,mm4,mm6)                     mmx_low_bytes_to_words(mm3,mm5,mm6)                     "\tpsubw     %%mm5, %%mm4\n"                     "\tpaddw     %%mm7, %%mm4\n"                     "\tmovq      %%mm4, %%mm1\n"                     "\tpackuswb  %%mm6, %%mm1\n"                     "\tmovq      %%mm1, %%mm4\n"                     "\tmovq      %%mm0, %%mm1\n"                     "\tpandn     %%mm4, %%mm1\n"                     "\tpminub    %%mm3, %%mm2\n"                     "\tpand      %%mm0, %%mm2\n"                     "\tpor       %%mm2, %%mm1\n"                     "\tmovd      %%mm1, %0\n"                     : "+m" (*op.D)                     : "m" (*op.A), "m" (*op.B)                     : "%mm1", "%mm2", "%mm3", "%mm4");
+block|}
+asm|asm("emms");
+block|}
 end_function
 
 begin_function
 name|void
-DECL|function|xxxgimp_composite_grain_extract_rgba8_rgba8_rgba8_sse2 (GimpCompositeContext * _op)
-name|xxxgimp_composite_grain_extract_rgba8_rgba8_rgba8_sse2
+DECL|function|gimp_composite_lighten_rgba8_rgba8_rgba8_sse2 (GimpCompositeContext * _op)
+name|gimp_composite_lighten_rgba8_rgba8_rgba8_sse2
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
 name|_op
 parameter_list|)
-block|{  }
-end_function
-
-begin_function
-name|void
-DECL|function|xxxgimp_composite_grain_merge_rgba8_rgba8_rgba8_sse2 (GimpCompositeContext * _op)
-name|xxxgimp_composite_grain_merge_rgba8_rgba8_rgba8_sse2
-parameter_list|(
+block|{
 name|GimpCompositeContext
-modifier|*
+name|op
+init|=
+operator|*
 name|_op
-parameter_list|)
-block|{  }
-end_function
-
-begin_function
-name|void
-DECL|function|xxxgimp_composite_lighten_rgba8_rgba8_rgba8_sse2 (GimpCompositeContext * _op)
-name|xxxgimp_composite_lighten_rgba8_rgba8_rgba8_sse2
-parameter_list|(
-name|GimpCompositeContext
-modifier|*
-name|_op
-parameter_list|)
-block|{ }
-end_function
-
-begin_function
-name|void
-DECL|function|xxxgimp_composite_multiply_rgba8_rgba8_rgba8_sse2 (GimpCompositeContext * _op)
-name|xxxgimp_composite_multiply_rgba8_rgba8_rgba8_sse2
-parameter_list|(
-name|GimpCompositeContext
-modifier|*
-name|_op
-parameter_list|)
-block|{ }
-end_function
-
-begin_function
-name|void
-DECL|function|xxxgimp_composite_overlay_rgba8_rgba8_rgba8_sse2 (GimpCompositeContext * _op)
-name|xxxgimp_composite_overlay_rgba8_rgba8_rgba8_sse2
-parameter_list|(
-name|GimpCompositeContext
-modifier|*
-name|_op
-parameter_list|)
-block|{ }
-end_function
-
-begin_function
-name|void
-DECL|function|xxxgimp_composite_scale_rgba8_rgba8_rgba8_sse2 (GimpCompositeContext * _op)
-name|xxxgimp_composite_scale_rgba8_rgba8_rgba8_sse2
-parameter_list|(
-name|GimpCompositeContext
-modifier|*
-name|_op
-parameter_list|)
-block|{ }
-end_function
-
-begin_function
-name|void
-DECL|function|xxxgimp_composite_screen_rgba8_rgba8_rgba8_sse2 (GimpCompositeContext * _op)
-name|xxxgimp_composite_screen_rgba8_rgba8_rgba8_sse2
-parameter_list|(
-name|GimpCompositeContext
-modifier|*
-name|_op
-parameter_list|)
-block|{ }
+decl_stmt|;
+asm|asm
+specifier|volatile
+asm|("movq    %0,%%mm0"     :  : "m" (*rgba8_alpha_mask_64) : "%mm0");
+for|for
+control|(
+init|;
+name|op
+operator|.
+name|n_pixels
+operator|>=
+literal|4
+condition|;
+name|op
+operator|.
+name|n_pixels
+operator|-=
+literal|4
+control|)
+block|{
+asm|asm
+specifier|volatile
+asm|("  movdqu      %1, %%xmm2\n"                     "\tmovdqu      %2, %%xmm3\n"                     "\tmovdqu  %%xmm2, %%xmm4\n"                     "\tpmaxub  %%xmm3, %%xmm4\n"                     "\tmovdqu  %%xmm0, %%xmm1\n"                     "\tpandn   %%xmm4, %%xmm1\n"                     "\tpminub  %%xmm2, %%xmm3\n"                     "\tpand    %%xmm0, %%xmm3\n"                     "\tpor     %%xmm3, %%xmm1\n"                     "\tmovdqu  %%xmm1, %0\n"                     : "=m" (*op.D)                     : "m" (*op.A), "m" (*op.B)                     : "%xmm1", "%xmm2", "%xmm3", "%xmm4");
+name|op
+operator|.
+name|A
+operator|+=
+literal|16
+expr_stmt|;
+name|op
+operator|.
+name|B
+operator|+=
+literal|16
+expr_stmt|;
+name|op
+operator|.
+name|D
+operator|+=
+literal|16
+expr_stmt|;
+block|}
+for|for
+control|(
+init|;
+name|op
+operator|.
+name|n_pixels
+operator|>=
+literal|2
+condition|;
+name|op
+operator|.
+name|n_pixels
+operator|-=
+literal|2
+control|)
+block|{
+asm|asm
+specifier|volatile
+asm|("  movq       %1, %%mm2\n"                     "\tmovq       %2, %%mm3\n"                     "\tmovq    %%mm2, %%mm4\n"                     "\tpmaxub  %%mm3, %%mm4\n"                     "\tmovq    %%mm0, %%mm1\n"                     "\tpandn   %%mm4, %%mm1\n"                     "\tpminub  %%mm2, %%mm3\n"                     "\tpand    %%mm0, %%mm3\n"                     "\tpor     %%mm3, %%mm1\n"                     "\tmovq    %%mm1, %0\n"                     : "=m" (*op.D)                     : "m" (*op.A), "m" (*op.B)                     : "%mm1", "%mm2", "%mm3", "%mm4");
+name|op
+operator|.
+name|A
+operator|+=
+literal|8
+expr_stmt|;
+name|op
+operator|.
+name|B
+operator|+=
+literal|8
+expr_stmt|;
+name|op
+operator|.
+name|D
+operator|+=
+literal|8
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|op
+operator|.
+name|n_pixels
+condition|)
+block|{
+asm|asm
+specifier|volatile
+asm|("  movd       %1, %%mm2\n"                     "\tmovd       %2, %%mm3\n"                     "\tmovq    %%mm2, %%mm4\n"                     "\tpmaxub  %%mm3, %%mm4\n"                     "\tmovq    %%mm0, %%mm1\n"                     "\tpandn   %%mm4, %%mm1\n"                     "\tpminub  %%mm2,%%mm3\n"                     "\tpand    %%mm0, %%mm3\n"                     "\tpor     %%mm3, %%mm1\n"                     "\tmovd    %%mm1, %0\n"                     : "=m" (*op.D)                     : "m" (*op.A), "m" (*op.B)                     : "%mm1", "%mm2", "%mm3", "%mm4");
+block|}
+asm|asm("emms");
+block|}
 end_function
 
 begin_function
@@ -1098,9 +1374,7 @@ control|)
 block|{
 asm|asm
 specifier|volatile
-asm|("  movdqu       %0,%%xmm2\n"                     "\tmovdqu       %1,%%xmm3\n"                     "\tmovdqu   %%xmm2,%%xmm4\n"                     "\tpsubusb  %%xmm3,%%xmm4\n"                                        "\tmovdqu   %%xmm0,%%xmm1\n"                     "\tpandn    %%xmm4,%%xmm1\n"                     "\t" pminub(xmm3,xmm2,xmm4) "\n"                     "\tpand     %%xmm0,%%xmm2\n"                     "\tpor      %%xmm2,%%xmm1\n"                     "\tmovdqu   %%xmm1,%2\n"                     :
-comment|/* empty */
-asm|: "m" (*op.A), "m" (*op.B), "m" (*op.D)                     : "0", "1", "2", "%xmm1", "%xmm2", "%xmm3", "%xmm4", "%xmm5");
+asm|("  movdqu       %1,%%xmm2\n"                     "\tmovdqu       %2,%%xmm3\n"                     "\tmovdqu   %%xmm2,%%xmm4\n"                     "\tpsubusb  %%xmm3,%%xmm4\n"                                          "\tmovdqu   %%xmm0,%%xmm1\n"                     "\tpandn    %%xmm4,%%xmm1\n"                     "\tpminub   %%xmm3,%%xmm2\n"                     "\tpand     %%xmm0,%%xmm2\n"                     "\tpor      %%xmm2,%%xmm1\n"                     "\tmovdqu   %%xmm1,%0\n"                     : "+m" (*op.D)                     : "m" (*op.A), "m" (*op.B)                     : "%xmm1", "%xmm2", "%xmm3", "%xmm4");
 name|op
 operator|.
 name|A
@@ -1138,9 +1412,7 @@ control|)
 block|{
 asm|asm
 specifier|volatile
-asm|("  movq       %0,%%mm2\n"                     "\tmovq       %1,%%mm3\n"                      "\tmovq    %%mm2,%%mm4\n"                     "\tpsubusb %%mm3,%%mm4\n"                                        "\tmovq    %%mm0,%%mm1\n"                     "\tpandn   %%mm4,%%mm1\n"                                          "\t" pminub(mm3,mm2,mm4) "\n"                                          "\tpand    %%mm0,%%mm2\n"                     "\tpor     %%mm2,%%mm1\n"                     "\tmovq    %%mm1,%2\n"                     :
-comment|/* empty */
-asm|: "m" (*op.A), "m" (*op.B), "m" (*op.D)                     : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
+asm|("  movq       %1,%%mm2\n"                     "\tmovq       %2,%%mm3\n"                     "\tmovq    %%mm2,%%mm4\n"                     "\tpsubusb %%mm3,%%mm4\n"                     "\tmovq    %%mm0,%%mm1\n"                     "\tpandn   %%mm4,%%mm1\n"                     "\tpminub  %%mm3,%%mm2\n"                     "\tpand    %%mm0,%%mm2\n"                     "\tpor     %%mm2,%%mm1\n"                     "\tmovq    %%mm1,%0\n"                     : "+m" (*op.D)                     : "m" (*op.A), "m" (*op.B)                     : "%mm1", "%mm2", "%mm3", "%mm4");
 name|op
 operator|.
 name|A
@@ -1169,9 +1441,7 @@ condition|)
 block|{
 asm|asm
 specifier|volatile
-asm|("  movd       %0,%%mm2\n"                     "\tmovd       %1,%%mm3\n"                      "\tmovq    %%mm2,%%mm4\n"                     "\tpsubusb %%mm3,%%mm4\n"                                        "\tmovq    %%mm0,%%mm1\n"                     "\tpandn   %%mm4,%%mm1\n"                                        "\t" pminub(mm3,mm2,mm4) "\n"                      "\tpand    %%mm0,%%mm2\n"                     "\tpor     %%mm2,%%mm1\n"                     "\tmovd    %%mm1,%2\n"                     :
-comment|/* empty */
-asm|: "m" (*op.A), "m" (*op.B), "m" (*op.D)                     : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
+asm|("  movd       %1,%%mm2\n"                     "\tmovd       %2,%%mm3\n"                     "\tmovq    %%mm2,%%mm4\n"                     "\tpsubusb %%mm3,%%mm4\n"                     "\tmovq    %%mm0,%%mm1\n"                     "\tpandn   %%mm4,%%mm1\n"                     "\tpminub  %%mm3,%%mm2\n"                     "\tpand    %%mm0,%%mm2\n"                     "\tpor     %%mm2,%%mm1\n"                     "\tmovd    %%mm1,%0\n"                     : "+m" (*op.D)                     : "m" (*op.A), "m" (*op.B)                     : "%mm1", "%mm2", "%mm3", "%mm4");
 block|}
 asm|asm("emms");
 block|}
@@ -1212,9 +1482,9 @@ control|)
 block|{
 asm|asm
 specifier|volatile
-asm|("  movdqu      %0,%%xmm0\n"                     "\tmovdqu      %1,%%xmm1\n"                     "\tmovdqu      %2,%%xmm2\n"                     "\tmovdqu      %3,%%xmm3\n"                     "\tmovdqu      %4,%%xmm4\n"                     "\tmovdqu      %5,%%xmm5\n"                     "\tmovdqu      %6,%%xmm6\n"                     "\tmovdqu      %7,%%xmm7\n"                      "\tmovdqu      %%xmm0,%1\n"                     "\tmovdqu      %%xmm1,%0\n"                     "\tmovdqu      %%xmm2,%3\n"                     "\tmovdqu      %%xmm3,%2\n"                     "\tmovdqu      %%xmm4,%5\n"                     "\tmovdqu      %%xmm5,%4\n"                     "\tmovdqu      %%xmm6,%7\n"                     "\tmovdqu      %%xmm7,%6\n"                     :
+asm|("  movdqu      %0,%%xmm0\n"                     "\tmovdqu      %1,%%xmm1\n"                     "\tmovdqu      %2,%%xmm2\n"                     "\tmovdqu      %3,%%xmm3\n"                     "\tmovdqu      %4,%%xmm4\n"                     "\tmovdqu      %5,%%xmm5\n"                     "\tmovdqu      %6,%%xmm6\n"                     "\tmovdqu      %7,%%xmm7\n"                                          "\tmovdqu      %%xmm0,%1\n"                     "\tmovdqu      %%xmm1,%0\n"                     "\tmovdqu      %%xmm2,%3\n"                     "\tmovdqu      %%xmm3,%2\n"                     "\tmovdqu      %%xmm4,%5\n"                     "\tmovdqu      %%xmm5,%4\n"                     "\tmovdqu      %%xmm6,%7\n"                     "\tmovdqu      %%xmm7,%6\n"                     : "+m" (op.A[0]), "+m" (op.B[0]),                       "+m" (op.A[1]), "+m" (op.B[1]),                       "+m" (op.A[2]), "+m" (op.B[2]),                       "+m" (op.A[3]), "+m" (op.B[3])                     :
 comment|/* empty */
-asm|: "m" (op.A[0]), "m" (op.B[0]),                     "m" (op.A[1]), "m" (op.B[1]),                     "m" (op.A[2]), "m" (op.B[2]),                     "m" (op.A[3]), "m" (op.B[3]) 																				);
+asm|: "%xmm0", "%xmm1", "%xmm2", "%xmm3", "%xmm4", "%xmm5", "%xmm6", "%xmm7"                     );
 name|op
 operator|.
 name|A
@@ -1246,9 +1516,9 @@ control|)
 block|{
 asm|asm
 specifier|volatile
-asm|("  movdqu      %0,%%xmm2\n"                   "\tmovdqu      %1,%%xmm3\n"                   "\tmovdqu  %%xmm3,%0\n"                   "\tmovdqu  %%xmm2,%1\n"                   :
+asm|("  movdqu      %0,%%xmm2\n"                     "\tmovdqu      %1,%%xmm3\n"                     "\tmovdqu  %%xmm3,%0\n"                     "\tmovdqu  %%xmm2,%1\n"                     : "+m" (*op.A), "+m" (*op.B)                     :
 comment|/* empty */
-asm|: "m" (*op.A), "m" (*op.B)                   : "0", "1", "%xmm1", "%xmm2", "%xmm3", "%xmm4");
+asm|: "%xmm2", "%xmm3");
 name|op
 operator|.
 name|A
@@ -1280,9 +1550,9 @@ control|)
 block|{
 asm|asm
 specifier|volatile
-asm|("  movq      %0,%%mm2\n"                   "\tmovq      %1,%%mm3\n"                   "\tmovq   %%mm3,%0\n"                   "\tmovq   %%mm2,%1\n"                   :
+asm|("  movq      %0,%%mm2\n"                     "\tmovq      %1,%%mm3\n"                     "\tmovq   %%mm3,%0\n"                     "\tmovq   %%mm2,%1\n"                     : "+m" (*op.A), "+m" (*op.B)                     :
 comment|/* empty */
-asm|: "m" (*op.A), "m" (*op.B)                   : "0", "1", "%mm1", "%mm2", "%mm3", "%mm4");
+asm|: "%mm2", "%mm3");
 name|op
 operator|.
 name|A
@@ -1305,9 +1575,9 @@ condition|)
 block|{
 asm|asm
 specifier|volatile
-asm|("  movd      %0,%%mm2\n"                   "\tmovd      %1,%%mm3\n"                   "\tmovd   %%mm3,%0\n"                   "\tmovd   %%mm2,%1\n"                                     :
+asm|("  movd      %0,%%mm2\n"                     "\tmovd      %1,%%mm3\n"                     "\tmovd   %%mm3,%0\n"                     "\tmovd   %%mm2,%1\n"                                       : "+m" (*op.A), "+m" (*op.B)                     :
 comment|/* empty */
-asm|: "m" (*op.A), "m" (*op.B)                   : "0", "1", "%mm1", "%mm2", "%mm3", "%mm4");
+asm|: "%mm1", "%mm2", "%mm3", "%mm4");
 block|}
 asm|asm("emms");
 block|}

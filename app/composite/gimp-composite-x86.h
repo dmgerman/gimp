@@ -1,0 +1,264 @@
+begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
+begin_if
+if|#
+directive|if
+name|__GNUC__
+operator|>=
+literal|3
+end_if
+
+begin_define
+DECL|macro|mmx_low_bytes_to_words (src,dst,zero)
+define|#
+directive|define
+name|mmx_low_bytes_to_words
+parameter_list|(
+name|src
+parameter_list|,
+name|dst
+parameter_list|,
+name|zero
+parameter_list|)
+define|\
+value|"\tmovq      %%"#src", %%"#dst"; " \          "\tpunpcklbw %%"#zero", %%"#dst"\n"
+end_define
+
+begin_define
+DECL|macro|mmx_high_bytes_to_words (src,dst,zero)
+define|#
+directive|define
+name|mmx_high_bytes_to_words
+parameter_list|(
+name|src
+parameter_list|,
+name|dst
+parameter_list|,
+name|zero
+parameter_list|)
+define|\
+value|"\tmovq      %%"#src", %%"#dst"; " \          "\tpunpckhbw %%"#zero", %%"#dst"\n"
+end_define
+
+begin_define
+DECL|macro|xmm_low_bytes_to_words (src,dst,zero)
+define|#
+directive|define
+name|xmm_low_bytes_to_words
+parameter_list|(
+name|src
+parameter_list|,
+name|dst
+parameter_list|,
+name|zero
+parameter_list|)
+define|\
+value|"\tmovdqu     %%"#src", %%"#dst"; " \          "\tpunpcklbw %%"#zero", %%"#dst"\n"
+end_define
+
+begin_define
+DECL|macro|xmm_high_bytes_to_words (src,dst,zero)
+define|#
+directive|define
+name|xmm_high_bytes_to_words
+parameter_list|(
+name|src
+parameter_list|,
+name|dst
+parameter_list|,
+name|zero
+parameter_list|)
+define|\
+value|"\tmovdqu     %%"#src", %%"#dst"; " \          "\tpunpckhbw %%"#zero", %%"#dst"\n"
+end_define
+
+begin_comment
+comment|/* a = INT_MULT(a,b) */
+end_comment
+
+begin_define
+DECL|macro|mmx_int_mult (a,b,w128)
+define|#
+directive|define
+name|mmx_int_mult
+parameter_list|(
+name|a
+parameter_list|,
+name|b
+parameter_list|,
+name|w128
+parameter_list|)
+define|\
+value|"\tpmullw    %%"#b",    %%"#a"; " \                   "\tpaddw     %%"#w128", %%"#a"; " \                   "\tmovq      %%"#a",    %%"#b"; " \                   "\tpsrlw     $8,        %%"#b"; " \                   "\tpaddw     %%"#a",    %%"#b"; " \                   "\tpsrlw     $8,        %%"#b"\n"
+end_define
+
+begin_define
+DECL|macro|sse2_int_mult (a,b,w128)
+define|#
+directive|define
+name|sse2_int_mult
+parameter_list|(
+name|a
+parameter_list|,
+name|b
+parameter_list|,
+name|w128
+parameter_list|)
+define|\
+value|"\tpmullw    %%"#b",    %%"#a"; " \                   "\tpaddw     %%"#w128", %%"#a"; " \                   "\tmovdqu    %%"#a",    %%"#b"; " \                   "\tpsrlw     $8,        %%"#b"; " \                   "\tpaddw     %%"#a",    %%"#b"; " \                   "\tpsrlw     $8,        %%"#b"\n"
+end_define
+
+begin_comment
+comment|/*  * Double-word divide.  Adjusted for subsequent unsigned packing  * (high-order bit of each word is cleared)  * Clobbers eax, ecx edx  */
+end_comment
+
+begin_define
+DECL|macro|pdivwX (dividend,divisor,quotient)
+define|#
+directive|define
+name|pdivwX
+parameter_list|(
+name|dividend
+parameter_list|,
+name|divisor
+parameter_list|,
+name|quotient
+parameter_list|)
+value|"movd %%" #dividend ",%%eax; " \                                           "movd %%" #divisor  ",%%ecx; " \                                           "xorl %%edx,%%edx; "           \                                           "divw %%cx; "                  \                                           "roll $16, %%eax; "            \                                           "roll $16, %%ecx; "            \                                           "xorl %%edx,%%edx; "           \                                           "divw %%cx; "                  \                                           "btr $15, %%eax; "             \                                           "roll $16, %%eax; "            \                                           "btr $15, %%eax; "             \                                           "movd %%eax,%%" #quotient ";"
+end_define
+
+begin_comment
+comment|/*  * Quadword divide.  No adjustment for subsequent unsigned packing  * (high-order bit of each word is left alone)  */
+end_comment
+
+begin_define
+DECL|macro|pdivwqX (dividend,divisor,quotient)
+define|#
+directive|define
+name|pdivwqX
+parameter_list|(
+name|dividend
+parameter_list|,
+name|divisor
+parameter_list|,
+name|quotient
+parameter_list|)
+value|"movd   %%" #dividend ",%%eax; " \                                           "movd   %%" #divisor  ",%%ecx; " \                                           "xorl   %%edx,%%edx; "           \                                           "divw   %%cx; "                  \                                           "roll   $16, %%eax; "            \                                           "roll   $16, %%ecx; "            \                                           "xorl   %%edx,%%edx; "           \                                           "divw   %%cx; "                  \                                           "roll   $16, %%eax; "            \                                           "movd   %%eax,%%" #quotient "; " \                                           "psrlq $32,%%" #dividend ";"     \                                           "psrlq $32,%%" #divisor ";"      \                                           "movd   %%" #dividend ",%%eax; " \                                           "movd   %%" #divisor  ",%%ecx; " \                                           "xorl   %%edx,%%edx; "           \                                           "divw   %%cx; "                  \                                           "roll   $16, %%eax; "            \                                           "roll   $16, %%ecx; "            \                                           "xorl   %%edx,%%edx; "           \                                           "divw   %%cx; "                  \                                           "roll   $16, %%eax; "            \                                           "movd   %%eax,%%" #divisor ";"   \                                           "psllq  $32,%%" #divisor ";"     \                                           "por    %%" #divisor ",%%" #quotient ";"
+end_define
+
+begin_comment
+comment|/*  * Quadword divide.  Adjusted for subsequent unsigned packing  * (high-order bit of each word is cleared)  */
+end_comment
+
+begin_define
+DECL|macro|pdivwuqX (dividend,divisor,quotient)
+define|#
+directive|define
+name|pdivwuqX
+parameter_list|(
+name|dividend
+parameter_list|,
+name|divisor
+parameter_list|,
+name|quotient
+parameter_list|)
+define|\
+value|pdivwX(dividend,divisor,quotient) \                                             "psrlq  $32,%%" #dividend ";"   \                                             "psrlq  $32,%%" #divisor ";"    \                                           pdivwX(dividend,divisor,quotient) \                                           "movd   %%eax,%%" #divisor ";"    \                                             "psllq  $32,%%" #divisor ";"    \                                             "por    %%" #divisor ",%%" #quotient ";"
+end_define
+
+begin_define
+DECL|macro|xmm_pdivwqX (dividend,divisor,quotient,scratch)
+define|#
+directive|define
+name|xmm_pdivwqX
+parameter_list|(
+name|dividend
+parameter_list|,
+name|divisor
+parameter_list|,
+name|quotient
+parameter_list|,
+name|scratch
+parameter_list|)
+value|"movd   %%" #dividend ",%%eax; " \                                                        "movd   %%" #divisor  ",%%ecx; " \                                                        "xorl   %%edx,%%edx; "           \                                                        "divw   %%cx; "                  \                                                        "roll   $16, %%eax; "            \                                                        "roll   $16, %%ecx; "            \                                                        "xorl   %%edx,%%edx; "           \                                                        "divw   %%cx; "                  \                                                        "roll   $16, %%eax; "            \                                                        "movd   %%eax,%%" #quotient "; " \                                                        "psrlq $32,%%" #divisor ";"      \                                                        "psrlq $32,%%" #dividend ";"     \                                                        "movd   %%" #dividend ",%%eax; " \                                                        "movd   %%" #divisor  ",%%ecx; " \                                                        "xorl   %%edx,%%edx; "           \                                                        "divw   %%cx; "                  \                                                        "roll   $16, %%eax; "            \                                                        "roll   $16, %%ecx; "            \                                                        "xorl   %%edx,%%edx; "           \                                                        "divw   %%cx; "                  \                                                        "roll   $16, %%eax; "            \                                                        "movd   %%eax,%%" #scratch ";"   \                                                        "psllq  $32,%%" #scratch ";"     \                                                        "psrlq $32,%%" #divisor ";"      \                                                        "psrlq $32,%%" #dividend ";"     \                                                        "movd   %%" #dividend ",%%eax; " \                                                        "movd   %%" #divisor  ",%%ecx; " \                                                        "xorl   %%edx,%%edx; "           \                                                        "divw   %%cx; "                  \                                                        "roll   $16, %%eax; "            \                                                        "roll   $16, %%ecx; "            \                                                        "xorl   %%edx,%%edx; "           \                                                        "divw   %%cx; "                  \                                                        "roll   $16, %%eax; "            \                                                        "movd   %%eax,%%" #scratch ";"   \                                                        "psllq  $64,%%" #scratch ";"     \                                                        "psrlq $32,%%" #divisor ";"      \                                                        "psrlq $32,%%" #dividend ";"     \                                                        "movd   %%" #dividend ",%%eax; " \                                                        "movd   %%" #divisor  ",%%ecx; " \                                                        "xorl   %%edx,%%edx; "           \                                                        "divw   %%cx; "                  \                                                        "roll   $16, %%eax; "            \                                                        "roll   $16, %%ecx; "            \                                                        "xorl   %%edx,%%edx; "           \                                                        "divw   %%cx; "                  \                                                        "roll   $16, %%eax; "            \                                                        "movd   %%eax,%%" #scratch ";"   \                                                        "psllq  $96,%%" #scratch ";"     \                                                        "por    %%" #scratch ",%%" #quotient ";"
+end_define
+
+begin_define
+DECL|macro|xmm_pdivwX (dividend,divisor,quotient)
+define|#
+directive|define
+name|xmm_pdivwX
+parameter_list|(
+name|dividend
+parameter_list|,
+name|divisor
+parameter_list|,
+name|quotient
+parameter_list|)
+value|"movd %%" #dividend ",%%eax; " \                                               "movd %%" #divisor  ",%%ecx; " \                                               "xorl %%edx,%%edx; "           \                                               "divw %%cx; "                  \                                               "roll $16, %%eax; "            \                                               "roll $16, %%ecx; "            \                                               "xorl %%edx,%%edx; "           \                                               "divw %%cx; "                  \                                               "btr $15, %%eax; "             \                                               "roll $16, %%eax; "            \                                               "btr $15, %%eax; "             \                                               "movd %%eax,%%" #quotient ";"
+end_define
+
+begin_define
+DECL|macro|xmm_pdivwuqX (dividend,divisor,quotient,scratch)
+define|#
+directive|define
+name|xmm_pdivwuqX
+parameter_list|(
+name|dividend
+parameter_list|,
+name|divisor
+parameter_list|,
+name|quotient
+parameter_list|,
+name|scratch
+parameter_list|)
+define|\
+value|xmm_pdivwX(dividend,divisor,scratch)      \                                             "movd   %%"#scratch ",%%"#quotient  ";" \                                           "psrlq  $32,%%"#dividend              ";" \                                           "psrlq  $32,%%"#divisor               ";" \                                           xmm_pdivwX(dividend,divisor,scratch)      \                                             "psllq  $32,%%"#scratch             ";" \                                             "por    %%"#scratch ",%%"#quotient  ";" \                                           "psrlq  $32,%%"#dividend              ";" \                                           "psrlq  $32,%%"#divisor               ";" \                                           xmm_pdivwX(dividend,divisor,scratch)      \                                             "psllq  $64,%%"#scratch             ";" \                                             "por    %%"#scratch ",%%"#quotient  ";" \                                           "psrlq  $32,%%"#dividend              ";" \                                           "psrlq  $32,%%"#divisor               ";" \                                           xmm_pdivwX(dividend,divisor,scratch)      \ 																																										  "psllq  $96,%%"#scratch             ";" \                                             "por    %%"#scratch ",%%"#quotient
+end_define
+
+begin_comment
+comment|/* equivalent to the INT_MULT() macro in gimp-composite-generic.c */
+end_comment
+
+begin_comment
+comment|/*  * opr2 = INT_MULT(opr1, opr2, t)  *  * Operates across quad-words using x86 word (16bit) value.  * Result is left in opr2  *  * opr1 = opr1 * opr2 + w128  * opr2 = opr1  * opr2 = ((opr2>> 8) + opr1)>> 8  */
+end_comment
+
+begin_define
+DECL|macro|pmulwX (opr1,opr2,w128)
+define|#
+directive|define
+name|pmulwX
+parameter_list|(
+name|opr1
+parameter_list|,
+name|opr2
+parameter_list|,
+name|w128
+parameter_list|)
+define|\
+value|"\tpmullw    %%"#opr2", %%"#opr1"; " \                   "\tpaddw     %%"#w128", %%"#opr1"; " \                   "\tmovq      %%"#opr1", %%"#opr2"; " \                   "\tpsrlw     $8,        %%"#opr2"; " \                   "\tpaddw     %%"#opr1", %%"#opr2"; " \                   "\tpsrlw     $8,        %%"#opr2"\n"
+end_define
+
+begin_define
+DECL|macro|xmm_pmulwX (opr1,opr2,w128)
+define|#
+directive|define
+name|xmm_pmulwX
+parameter_list|(
+name|opr1
+parameter_list|,
+name|opr2
+parameter_list|,
+name|w128
+parameter_list|)
+define|\
+value|"\tpmullw    %%"#opr2", %%"#opr1"; " \                   "\tpaddw     %%"#w128", %%"#opr1"; " \                   "\tmovdqu    %%"#opr1", %%"#opr2"; " \                   "\tpsrlw     $8,        %%"#opr2"; " \                   "\tpaddw     %%"#opr1", %%"#opr2"; " \                   "\tpsrlw     $8,        %%"#opr2"\n"
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+end_unit
+
