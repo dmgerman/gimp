@@ -469,7 +469,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|static
 name|void
 name|gimp_edit_selection_tool_arrow_key
 parameter_list|(
@@ -669,12 +668,6 @@ operator|->
 name|cursor_update
 operator|=
 name|gimp_edit_selection_tool_cursor_update
-expr_stmt|;
-name|tool_class
-operator|->
-name|arrow_key
-operator|=
-name|gimp_edit_selection_tool_arrow_key
 expr_stmt|;
 name|draw_class
 operator|->
@@ -3583,7 +3576,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|gimp_edit_selection_tool_arrow_key (GimpTool * tool,GdkEventKey * kevent,GDisplay * gdisp)
 name|gimp_edit_selection_tool_arrow_key
@@ -3601,10 +3593,6 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|GimpEditSelectionTool
-modifier|*
-name|edit_select
-decl_stmt|;
 name|gint
 name|inc_x
 decl_stmt|,
@@ -3629,13 +3617,6 @@ decl_stmt|;
 name|EditType
 name|edit_type
 decl_stmt|;
-name|edit_select
-operator|=
-name|GIMP_EDIT_SELECTION_TOOL
-argument_list|(
-name|tool
-argument_list|)
-expr_stmt|;
 name|layer
 operator|=
 name|NULL

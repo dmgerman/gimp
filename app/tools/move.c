@@ -513,6 +513,12 @@ name|cursor_update
 operator|=
 name|move_tool_cursor_update
 expr_stmt|;
+name|tool_class
+operator|->
+name|arrow_key
+operator|=
+name|gimp_edit_selection_tool_arrow_key
+expr_stmt|;
 block|}
 end_function
 

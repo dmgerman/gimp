@@ -42,6 +42,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tools/tool.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/tool_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -227,12 +239,6 @@ end_endif
 begin_comment
 comment|/* DISPLAY_FILTERS */
 end_comment
-
-begin_include
-include|#
-directive|include
-file|"tools/tool_manager.h"
-end_include
 
 begin_include
 include|#

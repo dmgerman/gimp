@@ -16,19 +16,25 @@ directive|define
 name|__TOOL_MANAGER_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"tool.h"
-end_include
-
 begin_comment
-comment|/* EEEEEEEEEEK */
+comment|/*  Global Data Structures  */
 end_comment
 
-begin_comment
-comment|/*  Function declarations  */
-end_comment
+begin_decl_stmt
+specifier|extern
+name|GimpTool
+modifier|*
+name|active_tool
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|GimpContainer
+modifier|*
+name|global_tool_info_list
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 name|void
@@ -91,13 +97,23 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|tool_manager_register
-parameter_list|(
-name|GimpToolClass
+specifier|const
+name|gchar
 modifier|*
-name|tool_type
-comment|/*, ToolOptions *tool_options*/
+name|tool_manager_active_get_PDB_string
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|const
+name|gchar
+modifier|*
+name|tool_manager_active_get_help_data
+parameter_list|(
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -203,28 +219,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|const
-name|gchar
-modifier|*
-name|tool_manager_active_get_PDB_string
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|const
-name|gchar
-modifier|*
-name|tool_manager_active_get_help_data
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|tool_manager_help_func
 parameter_list|(
@@ -235,26 +229,6 @@ name|help_data
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/*  Global Data Structures  */
-end_comment
-
-begin_decl_stmt
-specifier|extern
-name|GimpTool
-modifier|*
-name|active_tool
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|GimpContainer
-modifier|*
-name|global_tool_info_list
-decl_stmt|;
-end_decl_stmt
 
 begin_endif
 endif|#

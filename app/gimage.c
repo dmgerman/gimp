@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tools/tool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools/tool_manager.h"
 end_include
 
