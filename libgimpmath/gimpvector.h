@@ -272,7 +272,7 @@ end_function_decl
 
 begin_function_decl
 name|GimpVector2
-name|gimp_vector2_new_val
+name|gimp_vector2_new
 parameter_list|(
 name|gdouble
 name|x
