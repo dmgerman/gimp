@@ -12,6 +12,16 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib.h>
+end_include
+
+begin_comment
+comment|/* Include early for NATIVE_WIN32 */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|<setjmp.h>
 end_include
 
@@ -139,7 +149,7 @@ comment|/* Declare local data types  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2ba838a80108
+DECL|struct|__anon276c22cd0108
 typedef|typedef
 struct|struct
 block|{

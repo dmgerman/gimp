@@ -11,6 +11,25 @@ directive|include
 file|<locale.h>
 end_include
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|LOCALEDIR
+end_ifndef
+
+begin_define
+DECL|macro|LOCALEDIR
+define|#
+directive|define
+name|LOCALEDIR
+value|g_strconcat (gimp_data_directory (), \ 			       G_DIR_SEPARATOR_S, \ 			       "locale", \ 			       NULL)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_ifdef
 ifdef|#
 directive|ifdef

@@ -52,23 +52,6 @@ endif|#
 directive|endif
 end_endif
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|NATIVE_WIN32
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<io.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_include
 include|#
 directive|include
@@ -536,6 +519,12 @@ return|return;
 block|}
 end_function
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|NATIVE_WIN32
+end_ifndef
+
 begin_function
 specifier|static
 name|void
@@ -765,6 +754,15 @@ block|}
 block|}
 block|}
 end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* !NATIVE_WIN32 */
+end_comment
 
 begin_function
 specifier|static

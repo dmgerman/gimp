@@ -306,7 +306,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d0b1ea0103
+DECL|enum|__anon291004520103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -2032,7 +2032,7 @@ name|fopen
 argument_list|(
 name|filename
 argument_list|,
-literal|"wb"
+literal|"w"
 argument_list|)
 operator|)
 condition|)
@@ -2582,7 +2582,7 @@ name|fopen
 argument_list|(
 name|filename
 argument_list|,
-literal|"rb"
+literal|"r"
 argument_list|)
 operator|)
 condition|)

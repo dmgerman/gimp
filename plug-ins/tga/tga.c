@@ -27,6 +27,12 @@ begin_comment
 comment|/* #define VERBOSE 1 */
 end_comment
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -62,11 +68,22 @@ directive|include
 file|<string.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -285,7 +302,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28caec960108
+DECL|struct|__anon28eda1b10108
 block|{
 DECL|member|extensionAreaOffset
 name|guint32

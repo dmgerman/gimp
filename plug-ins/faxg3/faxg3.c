@@ -20,6 +20,16 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib.h>
+end_include
+
+begin_comment
+comment|/* For NATIVE_WIN32 */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 

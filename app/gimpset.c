@@ -42,7 +42,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28c9740a0108
+DECL|struct|__anon29b26b6f0108
 typedef|typedef
 struct|struct
 block|{
@@ -67,7 +67,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c9740a0203
+DECL|enum|__anon29b26b6f0203
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1169,11 +1169,6 @@ name|ob
 argument_list|)
 condition|)
 block|{
-name|g_warning
-argument_list|(
-literal|"Gimp_Set got new active element"
-argument_list|)
-expr_stmt|;
 name|set
 operator|->
 name|active_element
