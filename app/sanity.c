@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"sanity.h"
 end_include
 
@@ -180,15 +174,15 @@ DECL|macro|GLIB_REQUIRED_MINOR
 define|#
 directive|define
 name|GLIB_REQUIRED_MINOR
-value|4
+value|6
 DECL|macro|GLIB_REQUIRED_MICRO
 define|#
 directive|define
 name|GLIB_REQUIRED_MICRO
-value|5
+value|0
 name|mismatch
 operator|=
-name|gimp_check_glib_version
+name|glib_check_version
 argument_list|(
 name|GLIB_REQUIRED_MAJOR
 argument_list|,
