@@ -429,15 +429,6 @@ value|"Sets the module search path."
 end_define
 
 begin_define
-DECL|macro|MODULE_LOAD_INHIBIT_BLURB
-define|#
-directive|define
-name|MODULE_LOAD_INHIBIT_BLURB
-define|\
-value|"To inhibit loading of a module, add its name here."
-end_define
-
-begin_define
 DECL|macro|MONITOR_RES_FROM_GDK_BLURB
 define|#
 directive|define

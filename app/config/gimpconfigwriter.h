@@ -27,7 +27,7 @@ modifier|*
 name|filename
 parameter_list|,
 name|gboolean
-name|safe
+name|atomic
 parameter_list|,
 specifier|const
 name|gchar

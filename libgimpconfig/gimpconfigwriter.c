@@ -182,7 +182,7 @@ end_function_decl
 begin_function
 name|GimpConfigWriter
 modifier|*
-DECL|function|gimp_config_writer_new_file (const gchar * filename,gboolean safe,const gchar * header,GError ** error)
+DECL|function|gimp_config_writer_new_file (const gchar * filename,gboolean atomic,const gchar * header,GError ** error)
 name|gimp_config_writer_new_file
 parameter_list|(
 specifier|const
@@ -191,7 +191,7 @@ modifier|*
 name|filename
 parameter_list|,
 name|gboolean
-name|safe
+name|atomic
 parameter_list|,
 specifier|const
 name|gchar
@@ -242,7 +242,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|safe
+name|atomic
 condition|)
 block|{
 name|tmpname

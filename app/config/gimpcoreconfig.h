@@ -213,11 +213,6 @@ name|gchar
 modifier|*
 name|plug_in_rc_path
 decl_stmt|;
-DECL|member|module_load_inhibit
-name|gchar
-modifier|*
-name|module_load_inhibit
-decl_stmt|;
 DECL|member|layer_previews
 name|gboolean
 name|layer_previews
