@@ -2674,11 +2674,18 @@ operator|->
 name|name
 argument_list|)
 expr_stmt|;
+comment|/* Fixme: hard coded last tool....  see gimprc */
 if|if
 condition|(
 name|device_info
 operator|->
 name|tool
+operator|&&
+name|device_info
+operator|->
+name|tool
+operator|<=
+name|LAST_TOOLBOX_TOOL
 condition|)
 name|fprintf
 argument_list|(
