@@ -254,7 +254,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon293013e20103
+DECL|enum|__anon2ae6f75d0103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -6954,6 +6954,15 @@ operator|->
 name|name
 argument_list|)
 expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|palette
+operator|->
+name|color_name
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 comment|/*  palette_update_current_entry (palette); */
 if|if
 condition|(
@@ -8846,6 +8855,15 @@ name|_
 argument_list|(
 literal|"Undefined"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|palette
+operator|->
+name|color_name
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_signal_handler_unblock
