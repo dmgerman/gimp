@@ -77,7 +77,7 @@ name|void
 parameter_list|)
 block|{
 return|return
-literal|"http:,https:,ftp:"
+literal|"http:,https:,ftp:,sftp:,ssh:,smb:,dav:,davs:"
 return|;
 block|}
 end_function
@@ -184,6 +184,7 @@ modifier|*
 name|write_handle
 decl_stmt|;
 name|GnomeVFSFileInfo
+modifier|*
 name|src_info
 decl_stmt|;
 name|GnomeVFSFileSize
@@ -239,19 +240,23 @@ literal|"Connecting to server..."
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|src_info
+operator|=
+name|gnome_vfs_file_info_new
+argument_list|()
+expr_stmt|;
 name|result
 operator|=
 name|gnome_vfs_get_file_info
 argument_list|(
 name|src_uri
 argument_list|,
-operator|&
 name|src_info
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/*  ignore errors here, thes will be noticed below  */
+comment|/*  ignore errors here, they will be noticed below  */
 if|if
 condition|(
 name|result
@@ -260,7 +265,7 @@ name|GNOME_VFS_OK
 operator|&&
 operator|(
 name|src_info
-operator|.
+operator|->
 name|valid_fields
 operator|&
 name|GNOME_VFS_FILE_INFO_FIELDS_SIZE
@@ -270,10 +275,15 @@ block|{
 name|file_size
 operator|=
 name|src_info
-operator|.
+operator|->
 name|size
 expr_stmt|;
 block|}
+name|gnome_vfs_file_info_unref
+argument_list|(
+name|src_info
+argument_list|)
+expr_stmt|;
 name|result
 operator|=
 name|gnome_vfs_open
