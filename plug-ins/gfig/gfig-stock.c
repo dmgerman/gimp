@@ -550,6 +550,10 @@ name|gfig_stock_items
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|initialized
+operator|=
+name|TRUE
+expr_stmt|;
 block|}
 end_function
 
