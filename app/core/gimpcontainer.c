@@ -65,7 +65,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae3af2b0103
+DECL|enum|__anon277ba9db0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -90,7 +90,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae3af2b0203
+DECL|enum|__anon277ba9db0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2585,13 +2585,6 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|container
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_CONTAINER

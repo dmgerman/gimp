@@ -733,6 +733,20 @@ argument_list|(
 name|gtkrc
 argument_list|)
 expr_stmt|;
+comment|/*  tooltips  */
+name|gimp_help_init
+argument_list|()
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gimprc
+operator|.
+name|show_tool_tips
+condition|)
+name|gimp_help_disable_tooltips
+argument_list|()
+expr_stmt|;
 block|}
 end_function
 
@@ -876,20 +890,6 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
-comment|/*  tooltips  */
-name|gimp_help_init
-argument_list|()
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|gimprc
-operator|.
-name|show_tool_tips
-condition|)
-name|gimp_help_disable_tooltips
-argument_list|()
-expr_stmt|;
 name|menus_init
 argument_list|(
 name|gimp
@@ -977,6 +977,9 @@ argument_list|(
 name|global_dialog_factory
 argument_list|,
 literal|"gimp:toolbox"
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|color_select_init
@@ -1033,6 +1036,9 @@ argument_list|(
 name|global_dialog_factory
 argument_list|,
 literal|"gimp:tips-dialog"
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 block|}
@@ -1900,6 +1906,9 @@ argument_list|(
 name|global_dialog_factory
 argument_list|,
 literal|"gimp:toolbox"
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 block|}

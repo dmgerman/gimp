@@ -53,6 +53,19 @@ literal|4
 index|]
 decl_stmt|;
 comment|/*  4 radio buttons  */
+DECL|member|antialias
+name|gboolean
+name|antialias
+decl_stmt|;
+DECL|member|antialias_d
+name|gboolean
+name|antialias_d
+decl_stmt|;
+DECL|member|antialias_w
+name|GtkWidget
+modifier|*
+name|antialias_w
+decl_stmt|;
 DECL|member|feather
 name|gboolean
 name|feather
@@ -78,20 +91,6 @@ DECL|member|feather_radius_w
 name|GtkObject
 modifier|*
 name|feather_radius_w
-decl_stmt|;
-comment|/*  used by all selection tools except rect. select  */
-DECL|member|antialias
-name|gboolean
-name|antialias
-decl_stmt|;
-DECL|member|antialias_d
-name|gboolean
-name|antialias_d
-decl_stmt|;
-DECL|member|antialias_w
-name|GtkWidget
-modifier|*
-name|antialias_w
 decl_stmt|;
 comment|/*  used by fuzzy, by-color selection  */
 DECL|member|sample_merged

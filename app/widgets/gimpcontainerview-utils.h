@@ -17,6 +17,22 @@ name|__GIMP_CONTAINER_VIEW_UTILS_H__
 end_define
 
 begin_comment
+comment|/*  public  */
+end_comment
+
+begin_function_decl
+name|GimpContainerView
+modifier|*
+name|gimp_container_view_get_by_dockable
+parameter_list|(
+name|GimpDockable
+modifier|*
+name|dockable
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  private  */
 end_comment
 

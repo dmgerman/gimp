@@ -174,6 +174,9 @@ argument_list|(
 name|global_dock_factory
 argument_list|,
 literal|"gimp:error-console"
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|error_console_add

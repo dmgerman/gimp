@@ -963,6 +963,27 @@ block|,
 name|NULL
 block|}
 block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/File/Dialogs/Images..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|dialogs_create_dockable_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+literal|"gimp:image-list"
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
 name|SEPARATOR
 argument_list|(
 literal|"/File/Dialogs/---"
@@ -3651,7 +3672,28 @@ argument_list|(
 literal|"/Dialogs/Buffers..."
 argument_list|)
 block|,
-literal|"<control>P"
+name|NULL
+block|,
+name|dialogs_create_dockable_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+literal|"gimp:buffer-list"
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Dialogs/Images..."
+argument_list|)
+block|,
+name|NULL
 block|,
 name|dialogs_create_dockable_cmd_callback
 block|,
@@ -5248,7 +5290,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Add Tab/Layer List..."
+literal|"/Add Tab/Layers..."
 argument_list|)
 block|,
 name|NULL
@@ -5269,7 +5311,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Add Tab/Channel List..."
+literal|"/Add Tab/Channels..."
 argument_list|)
 block|,
 name|NULL
@@ -5290,7 +5332,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Add Tab/Path List..."
+literal|"/Add Tab/Paths..."
 argument_list|)
 block|,
 name|NULL
@@ -5301,31 +5343,6 @@ literal|0
 block|}
 block|,
 literal|"gimp:path-list"
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/Add Tab/Indexed Palette..."
-argument_list|)
-block|,
-name|NULL
-block|,
-name|dialogs_add_tab_cmd_callback
-block|,
-literal|0
-block|,
-literal|"<StockItem>"
-block|,
-name|GTK_STOCK_SELECT_COLOR
-block|}
-block|,
-literal|"gimp:indexed-palette"
 block|,
 name|NULL
 block|,
@@ -5383,28 +5400,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Add Tab/Brush List..."
-argument_list|)
-block|,
-name|NULL
-block|,
-name|dialogs_add_tab_cmd_callback
-block|,
-literal|0
-block|}
-block|,
-literal|"gimp:brush-list"
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/Add Tab/Brush Grid..."
+literal|"/Add Tab/Brushes..."
 argument_list|)
 block|,
 name|NULL
@@ -5421,37 +5417,11 @@ block|,
 name|NULL
 block|}
 block|,
-name|SEPARATOR
-argument_list|(
-literal|"/Add Tab/---"
-argument_list|)
-block|,
 block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Add Tab/Pattern List..."
-argument_list|)
-block|,
-name|NULL
-block|,
-name|dialogs_add_tab_cmd_callback
-block|,
-literal|0
-block|}
-block|,
-literal|"gimp:pattern-list"
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/Add Tab/Pattern Grid..."
+literal|"/Add Tab/Patterns..."
 argument_list|)
 block|,
 name|NULL
@@ -5468,16 +5438,11 @@ block|,
 name|NULL
 block|}
 block|,
-name|SEPARATOR
-argument_list|(
-literal|"/Add Tab/---"
-argument_list|)
-block|,
 block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Add Tab/Gradient List..."
+literal|"/Add Tab/Gradients..."
 argument_list|)
 block|,
 name|NULL
@@ -5498,33 +5463,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Add Tab/Gradient Grid..."
-argument_list|)
-block|,
-name|NULL
-block|,
-name|dialogs_add_tab_cmd_callback
-block|,
-literal|0
-block|}
-block|,
-literal|"gimp:gradient-grid"
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-name|SEPARATOR
-argument_list|(
-literal|"/Add Tab/---"
-argument_list|)
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/Add Tab/Palette List..."
+literal|"/Add Tab/Palettes..."
 argument_list|)
 block|,
 name|NULL
@@ -5549,7 +5488,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Add Tab/Palette Grid..."
+literal|"/Add Tab/Indexed Palette..."
 argument_list|)
 block|,
 name|NULL
@@ -5563,33 +5502,7 @@ block|,
 name|GTK_STOCK_SELECT_COLOR
 block|}
 block|,
-literal|"gimp:palette-grid"
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-name|SEPARATOR
-argument_list|(
-literal|"/Add Tab/---"
-argument_list|)
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/Add Tab/Tool List..."
-argument_list|)
-block|,
-name|NULL
-block|,
-name|dialogs_add_tab_cmd_callback
-block|,
-literal|0
-block|}
-block|,
-literal|"gimp:tool-list"
+literal|"gimp:indexed-palette"
 block|,
 name|NULL
 block|,
@@ -5600,80 +5513,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Add Tab/Tool Grid..."
-argument_list|)
-block|,
-name|NULL
-block|,
-name|dialogs_add_tab_cmd_callback
-block|,
-literal|0
-block|}
-block|,
-literal|"gimp:tool-grid"
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-name|SEPARATOR
-argument_list|(
-literal|"/Add Tab/---"
-argument_list|)
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/Add Tab/Image List..."
-argument_list|)
-block|,
-name|NULL
-block|,
-name|dialogs_add_tab_cmd_callback
-block|,
-literal|0
-block|}
-block|,
-literal|"gimp:image-list"
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/Add Tab/Image Grid..."
-argument_list|)
-block|,
-name|NULL
-block|,
-name|dialogs_add_tab_cmd_callback
-block|,
-literal|0
-block|}
-block|,
-literal|"gimp:image-grid"
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-name|SEPARATOR
-argument_list|(
-literal|"/Add Tab/---"
-argument_list|)
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/Add Tab/Buffer List..."
+literal|"/Add Tab/Buffers..."
 argument_list|)
 block|,
 name|NULL
@@ -5694,7 +5534,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Add Tab/Buffer Grid..."
+literal|"/Add Tab/Images..."
 argument_list|)
 block|,
 name|NULL
@@ -5704,12 +5544,43 @@ block|,
 literal|0
 block|}
 block|,
-literal|"gimp:buffer-grid"
+literal|"gimp:image-list"
 block|,
 name|NULL
 block|,
 name|NULL
 block|}
+block|,
+name|SEPARATOR
+argument_list|(
+literal|"/Add Tab/---"
+argument_list|)
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Add Tab/Tools..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|dialogs_add_tab_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+literal|"gimp:tool-list"
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+name|SEPARATOR
+argument_list|(
+literal|"/---"
+argument_list|)
 block|,
 block|{
 block|{
@@ -5723,6 +5594,190 @@ block|,
 name|dialogs_remove_tab_cmd_callback
 block|,
 literal|0
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Preview Size/Tiny"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|dialogs_preview_size_cmd_callback
+block|,
+literal|16
+block|,
+literal|"<RadioItem>"
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Preview Size/Small"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|dialogs_preview_size_cmd_callback
+block|,
+literal|24
+block|,
+literal|"/Preview Size/Tiny"
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Preview Size/Medium"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|dialogs_preview_size_cmd_callback
+block|,
+literal|32
+block|,
+literal|"/Preview Size/Tiny"
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Preview Size/Large"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|dialogs_preview_size_cmd_callback
+block|,
+literal|48
+block|,
+literal|"/Preview Size/Tiny"
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Preview Size/Huge"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|dialogs_preview_size_cmd_callback
+block|,
+literal|64
+block|,
+literal|"/Preview Size/Tiny"
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Preview Size/Enormous"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|dialogs_preview_size_cmd_callback
+block|,
+literal|128
+block|,
+literal|"/Preview Size/Tiny"
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/View as List"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|dialogs_toggle_view_cmd_callback
+block|,
+name|GIMP_VIEW_TYPE_LIST
+block|,
+literal|"<RadioItem>"
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/View as Grid"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|dialogs_toggle_view_cmd_callback
+block|,
+name|GIMP_VIEW_TYPE_GRID
+block|,
+literal|"/View as List"
 block|}
 block|,
 name|NULL

@@ -774,6 +774,9 @@ argument_list|(
 name|global_dock_factory
 argument_list|,
 literal|"gimp:buffer-list"
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 block|}

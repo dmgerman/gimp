@@ -12,12 +12,14 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
+file|<stdlib.h>
 end_include
 
-begin_comment
-comment|/* strcmp */
-end_comment
+begin_include
+include|#
+directive|include
+file|<string.h>
+end_include
 
 begin_include
 include|#
@@ -41,6 +43,18 @@ begin_include
 include|#
 directive|include
 file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpcontainerview.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpcontainerview-utils.h"
 end_include
 
 begin_include
@@ -82,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2adce5d30103
+DECL|enum|__anon2a9944a50103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -103,7 +117,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2adce5d30203
+DECL|enum|__anon2a9944a50203
 block|{
 DECL|enumerator|GIMP_DIALOG_SHOW_ALL
 name|GIMP_DIALOG_SHOW_ALL
@@ -878,7 +892,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_dialog_factory_register_entry (GimpDialogFactory * factory,const gchar * identifier,GimpDialogNewFunc new_func,gboolean singleton,gboolean session_managed,gboolean remember_size,gboolean remember_if_open)
+DECL|function|gimp_dialog_factory_register_entry (GimpDialogFactory * factory,const gchar * identifier,GimpDialogNewFunc new_func,gint preview_size,gboolean singleton,gboolean session_managed,gboolean remember_size,gboolean remember_if_open)
 name|gimp_dialog_factory_register_entry
 parameter_list|(
 name|GimpDialogFactory
@@ -892,6 +906,9 @@ name|identifier
 parameter_list|,
 name|GimpDialogNewFunc
 name|new_func
+parameter_list|,
+name|gint
+name|preview_size
 parameter_list|,
 name|gboolean
 name|singleton
@@ -948,6 +965,12 @@ operator|->
 name|new_func
 operator|=
 name|new_func
+expr_stmt|;
+name|entry
+operator|->
+name|preview_size
+operator|=
+name|preview_size
 expr_stmt|;
 name|entry
 operator|->
@@ -1225,7 +1248,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dialog_factory_dialog_new_internal (GimpDialogFactory * factory,GimpContext * context,const gchar * identifier,gboolean raise_if_found)
+DECL|function|gimp_dialog_factory_dialog_new_internal (GimpDialogFactory * factory,GimpContext * context,const gchar * identifier,gint preview_size,gboolean raise_if_found)
 name|gimp_dialog_factory_dialog_new_internal
 parameter_list|(
 name|GimpDialogFactory
@@ -1240,6 +1263,9 @@ specifier|const
 name|gchar
 modifier|*
 name|identifier
+parameter_list|,
+name|gint
+name|preview_size
 parameter_list|,
 name|gboolean
 name|raise_if_found
@@ -1418,6 +1444,18 @@ block|}
 comment|/*  Create the new dialog in the appropriate context which is        *  - the passed context if not NULL        *  - the newly created dock's context if we just created it        *  - the factory's context, which happens when raising a toplevel        *    dialog was the original request.        */
 if|if
 condition|(
+name|preview_size
+operator|<
+literal|16
+condition|)
+name|preview_size
+operator|=
+name|entry
+operator|->
+name|preview_size
+expr_stmt|;
+if|if
+condition|(
 name|context
 condition|)
 name|dialog
@@ -1429,6 +1467,8 @@ argument_list|(
 name|factory
 argument_list|,
 name|context
+argument_list|,
+name|preview_size
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -1450,6 +1490,8 @@ name|dock
 argument_list|)
 operator|->
 name|context
+argument_list|,
+name|preview_size
 argument_list|)
 expr_stmt|;
 else|else
@@ -1464,6 +1506,8 @@ argument_list|,
 name|factory
 operator|->
 name|context
+argument_list|,
+name|preview_size
 argument_list|)
 expr_stmt|;
 if|if
@@ -1761,7 +1805,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dialog_factory_dialog_new (GimpDialogFactory * factory,const gchar * identifier)
+DECL|function|gimp_dialog_factory_dialog_new (GimpDialogFactory * factory,const gchar * identifier,gint preview_size)
 name|gimp_dialog_factory_dialog_new
 parameter_list|(
 name|GimpDialogFactory
@@ -1772,6 +1816,9 @@ specifier|const
 name|gchar
 modifier|*
 name|identifier
+parameter_list|,
+name|gint
+name|preview_size
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -1804,6 +1851,8 @@ name|context
 argument_list|,
 name|identifier
 argument_list|,
+name|preview_size
+argument_list|,
 name|FALSE
 argument_list|)
 return|;
@@ -1817,7 +1866,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dialog_factory_dialog_raise (GimpDialogFactory * factory,const gchar * identifier)
+DECL|function|gimp_dialog_factory_dialog_raise (GimpDialogFactory * factory,const gchar * identifier,gint preview_size)
 name|gimp_dialog_factory_dialog_raise
 parameter_list|(
 name|GimpDialogFactory
@@ -1828,6 +1877,9 @@ specifier|const
 name|gchar
 modifier|*
 name|identifier
+parameter_list|,
+name|gint
+name|preview_size
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -1858,6 +1910,8 @@ name|NULL
 argument_list|,
 name|identifier
 argument_list|,
+name|preview_size
+argument_list|,
 name|TRUE
 argument_list|)
 return|;
@@ -1871,7 +1925,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dialog_factory_dockable_new (GimpDialogFactory * factory,GimpDock * dock,const gchar * identifier)
+DECL|function|gimp_dialog_factory_dockable_new (GimpDialogFactory * factory,GimpDock * dock,const gchar * identifier,gint preview_size)
 name|gimp_dialog_factory_dockable_new
 parameter_list|(
 name|GimpDialogFactory
@@ -1886,6 +1940,9 @@ specifier|const
 name|gchar
 modifier|*
 name|identifier
+parameter_list|,
+name|gint
+name|preview_size
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -1927,6 +1984,8 @@ operator|->
 name|context
 argument_list|,
 name|identifier
+argument_list|,
+name|preview_size
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1985,6 +2044,8 @@ argument_list|,
 name|factory
 operator|->
 name|context
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 if|if
@@ -2862,6 +2923,9 @@ argument_list|(
 name|toolbox_factory
 argument_list|,
 name|toolbox_identifier
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3413,25 +3477,97 @@ if|if
 condition|(
 name|entry
 condition|)
+block|{
+name|GimpContainerView
+modifier|*
+name|view
+decl_stmt|;
+name|gint
+name|preview_size
+init|=
+operator|-
+literal|1
+decl_stmt|;
+name|view
+operator|=
+name|gimp_container_view_get_by_dockable
+argument_list|(
+name|dockable
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|view
+operator|&&
+name|view
+operator|->
+name|preview_size
+operator|>=
+literal|16
+condition|)
+block|{
+name|preview_size
+operator|=
+name|view
+operator|->
+name|preview_size
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|preview_size
+operator|>
+literal|0
+operator|&&
+name|preview_size
+operator|!=
+name|entry
+operator|->
+name|preview_size
+condition|)
+block|{
 name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"\"%s\"%s"
+literal|"\"%s@%d\""
 argument_list|,
 name|entry
 operator|->
 name|identifier
 argument_list|,
+name|preview_size
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|fprintf
+argument_list|(
+name|fp
+argument_list|,
+literal|"\"%s\""
+argument_list|,
+name|entry
+operator|->
+name|identifier
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
 name|pages
 operator|->
 name|next
-condition|?
+condition|)
+name|fprintf
+argument_list|(
+name|fp
+argument_list|,
 literal|" "
-else|:
-literal|""
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|g_list_free
 argument_list|(
@@ -3563,6 +3699,12 @@ operator|->
 name|toplevel_entry
 operator|->
 name|identifier
+argument_list|,
+name|info
+operator|->
+name|toplevel_entry
+operator|->
+name|preview_size
 argument_list|)
 expr_stmt|;
 if|if
@@ -3689,6 +3831,16 @@ name|gchar
 modifier|*
 name|identifier
 decl_stmt|;
+name|gchar
+modifier|*
+name|substring
+decl_stmt|;
+name|gint
+name|preview_size
+init|=
+operator|-
+literal|1
+decl_stmt|;
 name|identifier
 operator|=
 operator|(
@@ -3699,6 +3851,46 @@ name|pages
 operator|->
 name|data
 expr_stmt|;
+if|if
+condition|(
+operator|(
+name|substring
+operator|=
+name|strstr
+argument_list|(
+name|identifier
+argument_list|,
+literal|"@"
+argument_list|)
+operator|)
+condition|)
+block|{
+operator|*
+name|substring
+operator|=
+literal|'\0'
+expr_stmt|;
+name|preview_size
+operator|=
+name|atoi
+argument_list|(
+name|substring
+operator|+
+literal|1
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|preview_size
+operator|<
+literal|16
+condition|)
+name|preview_size
+operator|=
+operator|-
+literal|1
+expr_stmt|;
+block|}
 name|dockable
 operator|=
 name|gimp_dialog_factory_dockable_new
@@ -3708,6 +3900,8 @@ argument_list|,
 name|dock
 argument_list|,
 name|identifier
+argument_list|,
+name|preview_size
 argument_list|)
 expr_stmt|;
 if|if

@@ -45,6 +45,9 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|gint
+name|preview_size
 parameter_list|)
 function_decl|;
 end_typedef
@@ -80,6 +83,10 @@ decl_stmt|;
 DECL|member|new_func
 name|GimpDialogNewFunc
 name|new_func
+decl_stmt|;
+DECL|member|preview_size
+name|gint
+name|preview_size
 decl_stmt|;
 DECL|member|singleton
 name|gboolean
@@ -355,6 +362,9 @@ parameter_list|,
 name|GimpDialogNewFunc
 name|new_func
 parameter_list|,
+name|gint
+name|preview_size
+parameter_list|,
 name|gboolean
 name|singleton
 parameter_list|,
@@ -417,6 +427,9 @@ specifier|const
 name|gchar
 modifier|*
 name|identifier
+parameter_list|,
+name|gint
+name|preview_size
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -434,6 +447,9 @@ specifier|const
 name|gchar
 modifier|*
 name|identifier
+parameter_list|,
+name|gint
+name|preview_size
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -455,6 +471,9 @@ specifier|const
 name|gchar
 modifier|*
 name|identifier
+parameter_list|,
+name|gint
+name|preview_size
 parameter_list|)
 function_decl|;
 end_function_decl

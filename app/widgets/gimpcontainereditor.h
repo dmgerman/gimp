@@ -38,22 +38,6 @@ parameter_list|)
 function_decl|;
 end_typedef
 
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon27b86a230103
-block|{
-DECL|enumerator|GIMP_VIEW_TYPE_GRID
-name|GIMP_VIEW_TYPE_GRID
-block|,
-DECL|enumerator|GIMP_VIEW_TYPE_LIST
-name|GIMP_VIEW_TYPE_LIST
-DECL|typedef|GimpViewType
-block|}
-name|GimpViewType
-typedef|;
-end_typedef
-
 begin_define
 DECL|macro|GIMP_TYPE_CONTAINER_EDITOR
 define|#

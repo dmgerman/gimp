@@ -201,6 +201,9 @@ argument_list|(
 name|global_dock_factory
 argument_list|,
 literal|"gimp:brush-grid"
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 block|}
@@ -267,6 +270,9 @@ argument_list|(
 name|global_dock_factory
 argument_list|,
 literal|"gimp:pattern-grid"
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 block|}
@@ -333,6 +339,9 @@ argument_list|(
 name|global_dock_factory
 argument_list|,
 literal|"gimp:gradient-list"
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 block|}

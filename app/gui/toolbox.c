@@ -508,6 +508,9 @@ argument_list|(
 name|global_dialog_factory
 argument_list|,
 literal|"gimp:tool-options-dialog"
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 block|}
