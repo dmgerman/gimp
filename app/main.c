@@ -2224,7 +2224,7 @@ argument_list|(
 name|_
 argument_list|(
 literal|"  --pdb-compat-mode<off | on | warn>\n"
-literal|"                           Procedural Database compat mode.\n"
+literal|"                           Procedural Database compatibility mode.\n"
 argument_list|)
 argument_list|)
 expr_stmt|;
