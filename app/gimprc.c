@@ -188,7 +188,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2a55c55d0103
+DECL|enum|__anon2880036d0103
 typedef|typedef
 enum|enum
 block|{
@@ -10697,49 +10697,20 @@ operator|==
 name|NULL
 condition|)
 block|{
-if|if
-condition|(
+return|return
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Can't open %s; %s"
+argument_list|)
+argument_list|,
+name|secondary_filename
+argument_list|,
+name|g_strerror
+argument_list|(
 name|errno
-operator|==
-name|EACCES
-condition|)
-return|return
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Can't open %s; permission problems"
 argument_list|)
-argument_list|,
-name|secondary_filename
-argument_list|)
-return|;
-if|if
-condition|(
-name|errno
-operator|==
-name|ENOENT
-condition|)
-return|return
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Can't open %s; file does not exist"
-argument_list|)
-argument_list|,
-name|secondary_filename
-argument_list|)
-return|;
-return|return
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Can't open %s; reason unknown"
-argument_list|)
-argument_list|,
-name|secondary_filename
 argument_list|)
 return|;
 block|}
