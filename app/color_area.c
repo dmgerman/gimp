@@ -98,7 +98,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ddb2390103
+DECL|enum|__anon29e12a260103
 block|{
 DECL|enumerator|FORE_AREA
 name|FORE_AREA
@@ -1682,8 +1682,6 @@ argument_list|,
 name|b
 argument_list|,
 literal|255
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -2418,8 +2416,6 @@ argument_list|,
 name|b
 argument_list|,
 literal|255
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 block|}

@@ -126,9 +126,6 @@ name|b
 parameter_list|,
 name|gint
 name|a
-parameter_list|,
-name|gboolean
-name|set_current
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -494,7 +491,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291463350108
+DECL|struct|__anon2aa577f70108
 block|{
 DECL|member|callback
 name|GimpColorSelectorCallback
@@ -3873,8 +3870,6 @@ argument_list|,
 name|b
 argument_list|,
 name|a
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|draw_all_buckets
@@ -3907,7 +3902,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|colorsel_water_setcolor (gpointer data,gint r,gint g,gint b,gint a,gboolean set_current)
+DECL|function|colorsel_water_setcolor (gpointer data,gint r,gint g,gint b,gint a)
 name|colorsel_water_setcolor
 parameter_list|(
 name|gpointer
@@ -3924,9 +3919,6 @@ name|b
 parameter_list|,
 name|gint
 name|a
-parameter_list|,
-name|gboolean
-name|set_current
 parameter_list|)
 block|{
 name|set_bucket

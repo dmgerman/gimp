@@ -336,7 +336,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba67c720103
+DECL|enum|__anon29d73de70103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -4578,8 +4578,6 @@ literal|2
 index|]
 argument_list|,
 literal|255
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 block|}

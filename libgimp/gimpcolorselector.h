@@ -123,9 +123,6 @@ name|b
 parameter_list|,
 name|gint
 name|a
-parameter_list|,
-name|gboolean
-name|set_current
 parameter_list|)
 function_decl|;
 DECL|typedef|GimpColorSelectorFinishedCB

@@ -672,8 +672,6 @@ argument_list|,
 name|b
 argument_list|,
 name|a
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 if|if
@@ -1127,8 +1125,6 @@ name|color
 index|[
 literal|3
 index|]
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1475,8 +1471,6 @@ argument_list|,
 name|b
 argument_list|,
 name|a
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|color_panel_draw

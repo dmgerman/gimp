@@ -141,7 +141,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon298b8df10103
+DECL|enum|__anon27a155ba0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -5131,8 +5131,6 @@ argument_list|,
 name|b
 argument_list|,
 literal|255
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -5661,7 +5659,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298b8df10208
+DECL|struct|__anon27a155ba0208
 block|{
 DECL|member|def
 name|GimpImage
