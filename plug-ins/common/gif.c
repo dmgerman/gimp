@@ -119,7 +119,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2f1d330103
+DECL|enum|__anon293f39480103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -136,7 +136,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2f1d330208
+DECL|struct|__anon293f39480208
 block|{
 DECL|member|interlace
 name|gint
@@ -167,7 +167,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2f1d330308
+DECL|struct|__anon293f39480308
 block|{
 DECL|member|run
 name|gint
@@ -1560,7 +1560,7 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|GIFDEBUG
-name|g_print
+name|g_printerr
 argument_list|(
 literal|"GIF: fuiac: Image claims to use %d/%d indices - finding free "
 literal|"index...\n"
@@ -1679,7 +1679,7 @@ block|{
 ifdef|#
 directive|ifdef
 name|GIFDEBUG
-name|g_print
+name|g_printerr
 argument_list|(
 literal|"GIF: Found unused colour index %d.\n"
 argument_list|,
@@ -1713,9 +1713,10 @@ name|colors
 operator|)
 operator|++
 expr_stmt|;
-name|g_print
+name|g_printerr
 argument_list|(
-literal|"GIF: 2nd pass - Increasing bounds and using colour index %d.\n"
+literal|"GIF: 2nd pass "
+literal|"- Increasing bounds and using colour index %d.\n"
 argument_list|,
 call|(
 name|int
@@ -2754,14 +2755,14 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Sorry, can't save RGB images as GIFs - convert to INDEXED\nor GRAY first."
+literal|"Sorry, can't save RGB images as GIFs. "
+literal|"Convert to Indexed or Grayscale first."
 argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
 name|FALSE
 return|;
-break|break;
 block|}
 comment|/* find earliest index in palette which is closest to the background      colour, and ATTEMPT to use that as the GIF's default background colour. */
 for|for
@@ -2968,7 +2969,7 @@ operator|==
 name|GIMP_INDEXEDA_IMAGE
 condition|)
 block|{
-name|g_print
+name|g_printerr
 argument_list|(
 literal|"GIF: Too many colours?\n"
 argument_list|)
@@ -3328,11 +3329,13 @@ endif|#
 directive|endif
 name|g_message
 argument_list|(
-literal|"GIF plugin: "
-literal|"Warning: "
-literal|"Transparent colour in written file *might* be "
+name|_
+argument_list|(
+literal|"Warning:\n"
+literal|"Transparent color in written file might be "
 literal|"incorrect on viewers which don't support "
 literal|"transparency."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|onceonly
@@ -3482,8 +3485,11 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"GIF plugin: Delay inserted to prevent evil "
-literal|"CPU-sucking anim.\n"
+name|_
+argument_list|(
+literal|"Delay inserted to prevent evil "
+literal|"CPU-sucking anim."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|onceonly
@@ -6275,9 +6281,10 @@ operator|>
 literal|240
 condition|)
 block|{
-name|g_print
+name|g_printerr
 argument_list|(
-literal|"GIF: warning: comment too large - comment block not written.\n"
+literal|"GIF: warning:"
+literal|"comment too large - comment block not written.\n"
 argument_list|)
 expr_stmt|;
 return|return;
