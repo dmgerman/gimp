@@ -254,7 +254,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
-name|G_GNUC_CONST
+name|G_END_DECLS
 end_macro
 
 begin_endif
