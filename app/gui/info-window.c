@@ -1979,6 +1979,7 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|basename
@@ -2186,16 +2187,16 @@ argument_list|(
 name|gdisp
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|context
 argument_list|)
 argument_list|,
 literal|"display_changed"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|info_window_change_display
 argument_list|)

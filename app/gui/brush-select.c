@@ -979,11 +979,11 @@ name|option_menu
 operator|=
 name|gimp_paint_mode_menu_new
 argument_list|(
+name|G_CALLBACK
+argument_list|(
 name|paint_mode_menu_callback
+argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|bsp
 argument_list|,
 name|TRUE
