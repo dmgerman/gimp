@@ -117,6 +117,10 @@ name|GimpData
 modifier|*
 name|data
 decl_stmt|;
+DECL|member|data_editable
+name|gboolean
+name|data_editable
+decl_stmt|;
 DECL|member|item_factory
 name|GimpItemFactory
 modifier|*

@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpgradient.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -61,6 +67,12 @@ begin_include
 include|#
 directive|include
 file|"gimppreviewrenderertextlayer.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimppreviewrenderergradient.h"
 end_include
 
 begin_include
@@ -156,6 +168,22 @@ block|{
 name|type
 operator|=
 name|GIMP_TYPE_PREVIEW_RENDERER_DRAWABLE
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|g_type_is_a
+argument_list|(
+name|viewable_type
+argument_list|,
+name|GIMP_TYPE_GRADIENT
+argument_list|)
+condition|)
+block|{
+name|type
+operator|=
+name|GIMP_TYPE_PREVIEW_RENDERER_GRADIENT
 expr_stmt|;
 block|}
 return|return

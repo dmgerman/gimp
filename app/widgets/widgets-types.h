@@ -111,6 +111,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpPreviewRendererGradient
+typedef|typedef
+name|struct
+name|_GimpPreviewRendererGradient
+name|GimpPreviewRendererGradient
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpPreviewRendererTextLayer
 typedef|typedef
 name|struct

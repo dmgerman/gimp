@@ -230,21 +230,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
-name|GtkWidget
-modifier|*
-name|gimp_navigation_preview_new
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
-name|gint
-name|size
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gimp_navigation_preview_set_marker
 parameter_list|(

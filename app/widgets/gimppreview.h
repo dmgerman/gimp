@@ -141,6 +141,10 @@ DECL|member|show_popup
 name|gboolean
 name|show_popup
 decl_stmt|;
+DECL|member|expand
+name|gboolean
+name|expand
+decl_stmt|;
 comment|/*< private>*/
 DECL|member|in_button
 name|gboolean
@@ -383,6 +387,20 @@ name|height
 parameter_list|,
 name|gint
 name|border_width
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_preview_set_expand
+parameter_list|(
+name|GimpPreview
+modifier|*
+name|preview
+parameter_list|,
+name|gboolean
+name|expand
 parameter_list|)
 function_decl|;
 end_function_decl

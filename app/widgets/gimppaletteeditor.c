@@ -1795,6 +1795,13 @@ operator|->
 name|button
 operator|==
 literal|3
+operator|&&
+name|GIMP_DATA_EDITOR
+argument_list|(
+name|editor
+argument_list|)
+operator|->
+name|data_editable
 condition|)
 block|{
 name|gimp_item_factory_popup_with_data
@@ -2184,7 +2191,12 @@ name|editor
 operator|->
 name|color_name
 argument_list|,
-name|TRUE
+name|GIMP_DATA_EDITOR
+argument_list|(
+name|editor
+argument_list|)
+operator|->
+name|data_editable
 argument_list|)
 expr_stmt|;
 comment|/* palette_update_current_entry (editor); */
@@ -2274,15 +2286,6 @@ name|GtkWidget
 modifier|*
 name|preview
 decl_stmt|;
-if|if
-condition|(
-operator|!
-name|palette_editor
-condition|)
-return|return
-operator|-
-literal|1
-return|;
 name|preview
 operator|=
 name|palette_editor
@@ -3410,13 +3413,9 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-operator|(
-name|palette_editor
-operator|&&
 name|palette_editor
 operator|->
 name|scrolled_window
-operator|)
 condition|)
 return|return;
 name|hadj
@@ -3534,11 +3533,9 @@ name|width
 expr_stmt|;
 if|if
 condition|(
-operator|(
 name|editor
 operator|->
 name|columns_valid
-operator|)
 operator|&&
 name|editor
 operator|->
@@ -4204,8 +4201,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|editor
-operator|&&
 name|GIMP_DATA_EDITOR
 argument_list|(
 name|editor
@@ -4286,7 +4281,7 @@ argument_list|(
 name|editor
 argument_list|)
 operator|->
-name|data
+name|data_editable
 condition|)
 block|{
 name|editor

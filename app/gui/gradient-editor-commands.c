@@ -618,13 +618,6 @@ name|gradient
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_gradient_editor_update
-argument_list|(
-name|editor
-argument_list|,
-name|GRAD_UPDATE_GRADIENT
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -1083,13 +1076,6 @@ name|gradient
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_gradient_editor_update
-argument_list|(
-name|editor
-argument_list|,
-name|GRAD_UPDATE_GRADIENT
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -1249,13 +1235,6 @@ name|gradient
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_gradient_editor_update
-argument_list|(
-name|editor
-argument_list|,
-name|GRAD_UPDATE_GRADIENT
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -1370,13 +1349,6 @@ name|GIMP_DATA
 argument_list|(
 name|gradient
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_gradient_editor_update
-argument_list|(
-name|editor
-argument_list|,
-name|GRAD_UPDATE_GRADIENT
 argument_list|)
 expr_stmt|;
 block|}
@@ -1805,10 +1777,6 @@ expr_stmt|;
 name|gimp_gradient_editor_update
 argument_list|(
 name|editor
-argument_list|,
-name|GRAD_UPDATE_GRADIENT
-operator||
-name|GRAD_UPDATE_CONTROL
 argument_list|)
 expr_stmt|;
 block|}
@@ -2285,10 +2253,6 @@ expr_stmt|;
 name|gimp_gradient_editor_update
 argument_list|(
 name|editor
-argument_list|,
-name|GRAD_UPDATE_GRADIENT
-operator||
-name|GRAD_UPDATE_CONTROL
 argument_list|)
 expr_stmt|;
 block|}
@@ -2952,10 +2916,6 @@ expr_stmt|;
 name|gimp_gradient_editor_update
 argument_list|(
 name|editor
-argument_list|,
-name|GRAD_UPDATE_GRADIENT
-operator||
-name|GRAD_UPDATE_CONTROL
 argument_list|)
 expr_stmt|;
 block|}
@@ -3066,10 +3026,6 @@ expr_stmt|;
 name|gimp_gradient_editor_update
 argument_list|(
 name|editor
-argument_list|,
-name|GRAD_UPDATE_GRADIENT
-operator||
-name|GRAD_UPDATE_CONTROL
 argument_list|)
 expr_stmt|;
 block|}
@@ -3298,10 +3254,6 @@ expr_stmt|;
 name|gimp_gradient_editor_update
 argument_list|(
 name|editor
-argument_list|,
-name|GRAD_UPDATE_GRADIENT
-operator||
-name|GRAD_UPDATE_CONTROL
 argument_list|)
 expr_stmt|;
 block|}
@@ -3373,13 +3325,6 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
-name|gimp_gradient_editor_update
-argument_list|(
-name|editor
-argument_list|,
-name|GRAD_UPDATE_GRADIENT
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -3447,13 +3392,6 @@ name|editor
 argument_list|)
 operator|->
 name|data
-argument_list|)
-expr_stmt|;
-name|gimp_gradient_editor_update
-argument_list|(
-name|editor
-argument_list|,
-name|GRAD_UPDATE_GRADIENT
 argument_list|)
 expr_stmt|;
 block|}
@@ -3649,11 +3587,12 @@ name|editor
 operator|->
 name|left_saved_dirty
 expr_stmt|;
-name|gimp_gradient_editor_update
+name|gimp_viewable_invalidate_preview
 argument_list|(
-name|editor
-argument_list|,
-name|GRAD_UPDATE_GRADIENT
+name|GIMP_VIEWABLE
+argument_list|(
+name|gradient
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|color_notebook_free
@@ -3679,13 +3618,6 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
-name|gimp_gradient_editor_update
-argument_list|(
-name|editor
-argument_list|,
-name|GRAD_UPDATE_GRADIENT
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -3875,6 +3807,14 @@ name|editor
 operator|->
 name|right_saved_dirty
 expr_stmt|;
+name|gimp_viewable_invalidate_preview
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|gradient
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|color_notebook_free
 argument_list|(
 name|cnb
@@ -3898,13 +3838,6 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
-name|gimp_gradient_editor_update
-argument_list|(
-name|editor
-argument_list|,
-name|GRAD_UPDATE_GRADIENT
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -4354,10 +4287,6 @@ expr_stmt|;
 name|gimp_gradient_editor_update
 argument_list|(
 name|editor
-argument_list|,
-name|GRAD_UPDATE_GRADIENT
-operator||
-name|GRAD_UPDATE_CONTROL
 argument_list|)
 expr_stmt|;
 block|}
@@ -4803,10 +4732,6 @@ expr_stmt|;
 name|gimp_gradient_editor_update
 argument_list|(
 name|editor
-argument_list|,
-name|GRAD_UPDATE_GRADIENT
-operator||
-name|GRAD_UPDATE_CONTROL
 argument_list|)
 expr_stmt|;
 block|}
