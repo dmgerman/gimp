@@ -139,7 +139,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28efc6f40103
+DECL|enum|__anon29b2f96d0103
 block|{
 DECL|enumerator|ST_MODULE_ERROR
 name|ST_MODULE_ERROR
@@ -341,7 +341,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28efc6f40208
+DECL|struct|__anon29b2f96d0208
 block|{
 DECL|member|object
 name|GtkObject
@@ -456,7 +456,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28efc6f40308
+DECL|struct|__anon29b2f96d0308
 block|{
 DECL|member|table
 name|GtkWidget
@@ -1754,7 +1754,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28efc6f40408
+DECL|struct|__anon29b2f96d0408
 block|{
 DECL|member|parent_class
 name|GtkObjectClass
@@ -1768,7 +1768,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28efc6f40503
+DECL|enum|__anon29b2f96d0503
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -2488,17 +2488,7 @@ condition|)
 block|{
 if|if
 condition|(
-operator|(
 name|be_verbose
-operator|==
-name|TRUE
-operator|)
-operator|||
-operator|(
-name|no_splash
-operator|==
-name|TRUE
-operator|)
 condition|)
 name|g_print
 argument_list|(
@@ -2522,17 +2512,7 @@ else|else
 block|{
 if|if
 condition|(
-operator|(
 name|be_verbose
-operator|==
-name|TRUE
-operator|)
-operator|||
-operator|(
-name|no_splash
-operator|==
-name|TRUE
-operator|)
 condition|)
 name|g_print
 argument_list|(
@@ -4614,7 +4594,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28efc6f40608
+DECL|struct|__anon29b2f96d0608
 block|{
 DECL|member|search_key
 specifier|const

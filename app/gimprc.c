@@ -236,7 +236,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2becbc400103
+DECL|enum|__anon2b9ed3e50103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -3266,17 +3266,7 @@ name|FALSE
 return|;
 if|if
 condition|(
-operator|(
 name|be_verbose
-operator|==
-name|TRUE
-operator|)
-operator|||
-operator|(
-name|no_splash
-operator|==
-name|TRUE
-operator|)
 condition|)
 name|g_print
 argument_list|(

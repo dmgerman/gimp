@@ -2314,8 +2314,6 @@ expr_stmt|;
 if|if
 condition|(
 name|be_verbose
-operator|||
-name|no_splash
 condition|)
 name|g_print
 argument_list|(
