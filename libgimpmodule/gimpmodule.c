@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon278c7a250103
+DECL|enum|__anon2c50a2000103
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -1025,7 +1025,7 @@ name|module
 operator|->
 name|verbose
 condition|)
-name|g_print
+name|g_message
 argument_list|(
 name|_
 argument_list|(
