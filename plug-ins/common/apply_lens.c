@@ -103,7 +103,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|lens_dialog
 parameter_list|(
 name|GimpDrawable
@@ -138,7 +138,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298d02370108
+DECL|struct|__anon27747b610108
 block|{
 DECL|member|refraction
 name|gdouble
@@ -1566,7 +1566,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|lens_dialog (GimpDrawable * drawable)
 name|lens_dialog
 parameter_list|(
@@ -1649,7 +1649,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|2
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -1909,7 +1909,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
