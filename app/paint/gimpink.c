@@ -3018,22 +3018,10 @@ argument_list|)
 expr_stmt|;
 name|bytes
 operator|=
-name|gimp_drawable_has_alpha
+name|gimp_drawable_bytes_with_alpha
 argument_list|(
 name|drawable
 argument_list|)
-condition|?
-name|gimp_drawable_bytes
-argument_list|(
-name|drawable
-argument_list|)
-else|:
-name|gimp_drawable_bytes
-argument_list|(
-name|drawable
-argument_list|)
-operator|+
-literal|1
 expr_stmt|;
 name|x1
 operator|=
@@ -3159,7 +3147,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2b27646d0103
+DECL|enum|__anon293683de0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
