@@ -268,6 +268,7 @@ operator|=
 operator|(
 name|G_CSET_a_2_z
 name|G_CSET_A_2_Z
+name|G_CSET_DIGITS
 literal|"-_"
 operator|)
 expr_stmt|;
@@ -718,7 +719,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon290ba6da0103
+DECL|enum|__anon29b356060103
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB
