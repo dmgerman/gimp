@@ -328,6 +328,8 @@ name|gchar
 modifier|*
 modifier|*
 name|gradient_list
+init|=
+name|NULL
 decl_stmt|;
 name|filter
 operator|=

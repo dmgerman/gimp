@@ -393,6 +393,8 @@ name|gchar
 modifier|*
 modifier|*
 name|brush_list
+init|=
+name|NULL
 decl_stmt|;
 name|filter
 operator|=

@@ -290,6 +290,8 @@ name|gchar
 modifier|*
 modifier|*
 name|palette_list
+init|=
+name|NULL
 decl_stmt|;
 name|filter
 operator|=

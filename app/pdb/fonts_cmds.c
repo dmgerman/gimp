@@ -213,6 +213,8 @@ name|gchar
 modifier|*
 modifier|*
 name|font_list
+init|=
+name|NULL
 decl_stmt|;
 name|filter
 operator|=

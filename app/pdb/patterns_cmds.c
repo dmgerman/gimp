@@ -296,6 +296,8 @@ name|gchar
 modifier|*
 modifier|*
 name|pattern_list
+init|=
+name|NULL
 decl_stmt|;
 name|filter
 operator|=
