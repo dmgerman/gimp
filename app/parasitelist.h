@@ -62,7 +62,7 @@ name|GIMP_PARASITE_LIST
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GIMP_CHECK_CAST ((obj), GIMP_TYPE_PARASITE_LIST, GimpParasiteList))
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_PARASITE_LIST, GimpParasiteList))
 end_define
 
 begin_define
@@ -73,7 +73,7 @@ name|GIMP_IS_PARASITE_LIST
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GIMP_CHECK_TYPE ((obj), GIMP_TYPE_PARASITE_LIST))
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_PARASITE_LIST))
 end_define
 
 begin_comment

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995-1997 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -22,12 +22,12 @@ file|"gimplistP.h"
 end_include
 
 begin_comment
-comment|/* code mostly ripped from nether's gimpset class  */
+comment|/*  code mostly ripped from nether's gimpset class  */
 end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2c306d0103
+DECL|enum|__anon2961bc910103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -49,6 +49,10 @@ name|gimp_list_signals
 index|[
 name|LAST_SIGNAL
 index|]
+init|=
+block|{
+literal|0
+block|}
 decl_stmt|;
 end_decl_stmt
 
@@ -58,6 +62,8 @@ specifier|static
 name|GimpObjectClass
 modifier|*
 name|parent_class
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -70,8 +76,8 @@ name|GimpList
 modifier|*
 name|list
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
+name|object
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -85,8 +91,8 @@ name|GimpList
 modifier|*
 name|list
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
+name|object
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -94,12 +100,12 @@ end_function_decl
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_list_destroy (GtkObject * ob)
+DECL|function|gimp_list_destroy (GtkObject * object)
 name|gimp_list_destroy
 parameter_list|(
 name|GtkObject
 modifier|*
-name|ob
+name|object
 parameter_list|)
 block|{
 name|GimpList
@@ -108,7 +114,7 @@ name|list
 init|=
 name|GIMP_LIST
 argument_list|(
-name|ob
+name|object
 argument_list|)
 decl_stmt|;
 while|while
@@ -138,6 +144,15 @@ operator|->
 name|list
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|GTK_OBJECT_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|destroy
+condition|)
 name|GTK_OBJECT_CLASS
 argument_list|(
 name|parent_class
@@ -145,7 +160,7 @@ argument_list|)
 operator|->
 name|destroy
 argument_list|(
-name|ob
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -356,12 +371,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_list_destroy_cb (GtkObject * ob,gpointer data)
+DECL|function|gimp_list_destroy_cb (GtkObject * object,gpointer data)
 name|gimp_list_destroy_cb
 parameter_list|(
 name|GtkObject
 modifier|*
-name|ob
+name|object
 parameter_list|,
 name|gpointer
 name|data
@@ -382,7 +397,7 @@ name|gimp_list_remove
 argument_list|(
 name|list
 argument_list|,
-name|ob
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -391,7 +406,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_list_add_func (GimpList * list,gpointer val)
+DECL|function|gimp_list_add_func (GimpList * list,gpointer object)
 name|gimp_list_add_func
 parameter_list|(
 name|GimpList
@@ -399,7 +414,7 @@ modifier|*
 name|list
 parameter_list|,
 name|gpointer
-name|val
+name|object
 parameter_list|)
 block|{
 name|list
@@ -412,7 +427,7 @@ name|list
 operator|->
 name|list
 argument_list|,
-name|val
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -421,7 +436,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_list_remove_func (GimpList * list,gpointer val)
+DECL|function|gimp_list_remove_func (GimpList * list,gpointer object)
 name|gimp_list_remove_func
 parameter_list|(
 name|GimpList
@@ -429,7 +444,7 @@ modifier|*
 name|list
 parameter_list|,
 name|gpointer
-name|val
+name|object
 parameter_list|)
 block|{
 name|list
@@ -442,7 +457,7 @@ name|list
 operator|->
 name|list
 argument_list|,
-name|val
+name|object
 argument_list|)
 expr_stmt|;
 block|}
@@ -450,7 +465,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_list_add (GimpList * list,gpointer val)
+DECL|function|gimp_list_add (GimpList * list,gpointer object)
 name|gimp_list_add
 parameter_list|(
 name|GimpList
@@ -458,7 +473,7 @@ modifier|*
 name|list
 parameter_list|,
 name|gpointer
-name|val
+name|object
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -472,7 +487,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GTK_CHECK_TYPE
 argument_list|(
-name|val
+name|object
 argument_list|,
 name|list
 operator|->
@@ -490,7 +505,7 @@ name|list
 operator|->
 name|list
 argument_list|,
-name|val
+name|object
 argument_list|)
 condition|)
 return|return
@@ -502,11 +517,12 @@ name|list
 operator|->
 name|weak
 condition|)
+block|{
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|val
+name|object
 argument_list|)
 argument_list|,
 literal|"destroy"
@@ -519,15 +535,26 @@ argument_list|,
 name|list
 argument_list|)
 expr_stmt|;
+block|}
 else|else
+block|{
 name|gtk_object_ref
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|val
+name|object
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gtk_object_sink
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|object
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 name|GIMP_LIST_CLASS
 argument_list|(
 name|GTK_OBJECT
@@ -542,7 +569,7 @@ name|add
 argument_list|(
 name|list
 argument_list|,
-name|val
+name|object
 argument_list|)
 expr_stmt|;
 name|gtk_signal_emit
@@ -557,7 +584,7 @@ index|[
 name|ADD
 index|]
 argument_list|,
-name|val
+name|object
 argument_list|)
 expr_stmt|;
 return|return
@@ -568,7 +595,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_list_remove (GimpList * list,gpointer val)
+DECL|function|gimp_list_remove (GimpList * list,gpointer object)
 name|gimp_list_remove
 parameter_list|(
 name|GimpList
@@ -576,7 +603,7 @@ modifier|*
 name|list
 parameter_list|,
 name|gpointer
-name|val
+name|object
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -595,15 +622,13 @@ name|list
 operator|->
 name|list
 argument_list|,
-name|val
+name|object
 argument_list|)
 condition|)
 block|{
-name|fprintf
+name|g_warning
 argument_list|(
-name|stderr
-argument_list|,
-literal|"gimp_list_remove: can't find val\n"
+literal|"gimp_list_remove: can't find val"
 argument_list|)
 expr_stmt|;
 return|return
@@ -624,7 +649,7 @@ name|remove
 argument_list|(
 name|list
 argument_list|,
-name|val
+name|object
 argument_list|)
 expr_stmt|;
 name|gtk_signal_emit
@@ -639,7 +664,7 @@ index|[
 name|REMOVE
 index|]
 argument_list|,
-name|val
+name|object
 argument_list|)
 expr_stmt|;
 if|if
@@ -648,11 +673,12 @@ name|list
 operator|->
 name|weak
 condition|)
+block|{
 name|gtk_signal_disconnect_by_func
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|val
+name|object
 argument_list|)
 argument_list|,
 name|GTK_SIGNAL_FUNC
@@ -663,15 +689,18 @@ argument_list|,
 name|list
 argument_list|)
 expr_stmt|;
+block|}
 else|else
+block|{
 name|gtk_object_unref
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|val
+name|object
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|TRUE
 return|;
@@ -680,7 +709,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_list_have (GimpList * list,gpointer val)
+DECL|function|gimp_list_have (GimpList * list,gpointer object)
 name|gimp_list_have
 parameter_list|(
 name|GimpList
@@ -688,7 +717,7 @@ modifier|*
 name|list
 parameter_list|,
 name|gpointer
-name|val
+name|object
 parameter_list|)
 block|{
 return|return
@@ -698,7 +727,7 @@ name|list
 operator|->
 name|list
 argument_list|,
-name|val
+name|object
 argument_list|)
 condition|?
 name|TRUE

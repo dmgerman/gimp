@@ -217,6 +217,8 @@ specifier|static
 name|GimpObjectClass
 modifier|*
 name|parent_class
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -492,10 +494,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|brushes_init (gint no_data)
+DECL|function|brushes_init (gboolean no_data)
 name|brushes_init
 parameter_list|(
-name|gint
+name|gboolean
 name|no_data
 parameter_list|)
 block|{
@@ -608,6 +610,14 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_object_ref
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|standard_brush
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_object_sink
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
@@ -1190,7 +1200,7 @@ modifier|*
 name|brush
 parameter_list|)
 block|{
-comment|/* fix me: make a gimp_list function that does this? */
+comment|/* FIXME: make a gimp_list function that does this? */
 return|return
 name|g_slist_index
 argument_list|(
@@ -1231,7 +1241,7 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
-comment|/* fix me: make a gimp_list function that does this? */
+comment|/* FIXME: make a gimp_list function that does this? */
 name|list
 operator|=
 name|g_slist_nth
@@ -1284,7 +1294,8 @@ block|{
 name|GSList
 modifier|*
 name|list
-decl_stmt|,
+decl_stmt|;
+name|GSList
 modifier|*
 name|listb
 decl_stmt|;
@@ -1694,14 +1705,6 @@ name|brush_list
 argument_list|)
 argument_list|,
 name|brush
-argument_list|)
-expr_stmt|;
-name|gtk_object_unref
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|brush
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect

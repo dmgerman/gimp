@@ -1,4 +1,8 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
+begin_comment
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995-1997 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+end_comment
+
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -29,7 +33,7 @@ DECL|macro|GIMP_TYPE_OBJECT
 define|#
 directive|define
 name|GIMP_TYPE_OBJECT
-value|gimp_object_get_type()
+value|gimp_object_get_type ()
 end_define
 
 begin_define
@@ -55,7 +59,7 @@ value|GTK_CHECK_TYPE (obj, GIMP_TYPE_OBJECT)
 end_define
 
 begin_function_decl
-name|guint
+name|GtkType
 name|gimp_object_get_type
 parameter_list|(
 name|void
@@ -63,71 +67,14 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/* hacks to fake a gimp object lib */
-end_comment
-
-begin_define
-DECL|macro|GIMP_CHECK_CAST
-define|#
-directive|define
-name|GIMP_CHECK_CAST
-value|GTK_CHECK_CAST
-end_define
-
-begin_define
-DECL|macro|GIMP_CHECK_TYPE
-define|#
-directive|define
-name|GIMP_CHECK_TYPE
-value|GTK_CHECK_TYPE
-end_define
-
-begin_define
-DECL|macro|gimp_type_new
-define|#
-directive|define
-name|gimp_type_new
-value|gtk_type_new
-end_define
-
-begin_define
-DECL|macro|gimp_object_destroy (obj)
-define|#
-directive|define
-name|gimp_object_destroy
-parameter_list|(
-name|obj
-parameter_list|)
-value|gtk_object_destroy(GTK_OBJECT(obj))
-end_define
-
-begin_define
-DECL|macro|gimp_object_ref (obj)
-define|#
-directive|define
-name|gimp_object_ref
-parameter_list|(
-name|obj
-parameter_list|)
-value|gtk_object_ref(GTK_OBJECT(obj))
-end_define
-
-begin_define
-DECL|macro|gimp_object_unref (obj)
-define|#
-directive|define
-name|gimp_object_unref
-parameter_list|(
-name|obj
-parameter_list|)
-value|gtk_object_unref(GTK_OBJECT(obj))
-end_define
-
 begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* __GIMP_OBJECT_H__ */
+end_comment
 
 end_unit
 

@@ -22,9 +22,56 @@ directive|include
 file|"gimpbrush.h"
 end_include
 
+begin_define
+DECL|macro|GIMP_TYPE_BRUSH_GENERATED
+define|#
+directive|define
+name|GIMP_TYPE_BRUSH_GENERATED
+value|(gimp_brush_generated_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_BRUSH_GENERATED (obj)
+define|#
+directive|define
+name|GIMP_BRUSH_GENERATED
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_BRUSH_GENERATED, GimpBrushGenerated))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_BRUSH_GENERATED (obj)
+define|#
+directive|define
+name|GIMP_IS_BRUSH_GENERATED
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_BRUSH_GENERATED))
+end_define
+
 begin_typedef
-DECL|struct|_GimpBrushGenerated
+DECL|typedef|GimpBrushGenerated
 typedef|typedef
+name|struct
+name|_GimpBrushGenerated
+name|GimpBrushGenerated
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpBrushGeneratedClass
+typedef|typedef
+name|struct
+name|_GimpBrushGeneratedClass
+name|GimpBrushGeneratedClass
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpBrushGenerated
 struct|struct
 name|_GimpBrushGenerated
 block|{
@@ -57,15 +104,12 @@ name|freeze
 decl_stmt|;
 comment|/*GSpline *profile_curve */
 comment|/* Some lazy day...  */
-DECL|typedef|GimpBrushGenerated
 block|}
-name|GimpBrushGenerated
-typedef|;
-end_typedef
+struct|;
+end_struct
 
-begin_typedef
+begin_struct
 DECL|struct|_GimpBrushGeneratedClass
-typedef|typedef
 struct|struct
 name|_GimpBrushGeneratedClass
 block|{
@@ -73,70 +117,18 @@ DECL|member|parent_class
 name|GimpBrushClass
 name|parent_class
 decl_stmt|;
-DECL|member|generate
-name|void
-function_decl|(
-modifier|*
-name|generate
-function_decl|)
-parameter_list|(
-name|GimpBrushGenerated
-modifier|*
-name|brush
-parameter_list|)
-function_decl|;
-DECL|typedef|GimpBrushGeneratedClass
 block|}
-name|GimpBrushGeneratedClass
-typedef|;
-end_typedef
-
-begin_comment
-comment|/* object stuff */
-end_comment
-
-begin_define
-DECL|macro|GIMP_TYPE_BRUSH_GENERATED
-define|#
-directive|define
-name|GIMP_TYPE_BRUSH_GENERATED
-value|(gimp_brush_generated_get_type ())
-end_define
-
-begin_define
-DECL|macro|GIMP_BRUSH_GENERATED (obj)
-define|#
-directive|define
-name|GIMP_BRUSH_GENERATED
-parameter_list|(
-name|obj
-parameter_list|)
-value|(GIMP_CHECK_CAST ((obj), GIMP_TYPE_BRUSH_GENERATED, GimpBrushGenerated))
-end_define
-
-begin_define
-DECL|macro|GIMP_IS_BRUSH_GENERATED (obj)
-define|#
-directive|define
-name|GIMP_IS_BRUSH_GENERATED
-parameter_list|(
-name|obj
-parameter_list|)
-value|(GIMP_CHECK_TYPE ((obj), GIMP_TYPE_BRUSH_GENERATED))
-end_define
+struct|;
+end_struct
 
 begin_function_decl
-name|guint
+name|GtkType
 name|gimp_brush_generated_get_type
 parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/* normal stuff */
-end_comment
 
 begin_function_decl
 name|GimpBrushGenerated

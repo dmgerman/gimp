@@ -6,7 +6,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<math.h>
+file|"config.h"
 end_include
 
 begin_include
@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
+file|"libgimp/gimpmath.h"
 end_include
 
 begin_include
@@ -58,8 +58,10 @@ name|brush_edit_close_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -706,6 +708,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|brush_renamed_callback (GtkWidget * widget,BrushEditGeneratedWindow * begw)
 name|brush_renamed_callback
@@ -760,8 +763,15 @@ name|GimpBrushGenerated
 modifier|*
 name|brush
 init|=
-literal|0
+name|NULL
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|begw
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|begw
@@ -777,8 +787,6 @@ condition|)
 return|return;
 if|if
 condition|(
-name|begw
-operator|&&
 name|begw
 operator|->
 name|brush
@@ -856,11 +864,6 @@ argument_list|(
 name|gbrush
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|begw
-condition|)
-block|{
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -1003,7 +1006,6 @@ name|begw
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 end_function
 
 begin_function
@@ -1104,18 +1106,12 @@ name|table
 decl_stmt|;
 name|begw
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|BrushEditGeneratedWindow
 argument_list|,
 literal|1
 argument_list|)
-expr_stmt|;
-name|begw
-operator|->
-name|brush
-operator|=
-name|NULL
 expr_stmt|;
 name|begw
 operator|->
@@ -1198,35 +1194,6 @@ argument_list|,
 name|vbox
 argument_list|)
 expr_stmt|;
-comment|/*  Populate the window with some widgets */
-comment|/* table for brush controlls */
-name|table
-operator|=
-name|gtk_table_new
-argument_list|(
-literal|5
-argument_list|,
-literal|4
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-name|table
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
 comment|/* Brush's name */
 name|begw
 operator|->
@@ -1246,9 +1213,9 @@ name|begw
 operator|->
 name|name
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -1264,10 +1231,10 @@ argument_list|)
 argument_list|,
 literal|"activate"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|name_changed_func
+argument_list|)
 argument_list|,
 name|begw
 argument_list|)
@@ -1283,10 +1250,10 @@ argument_list|)
 argument_list|,
 literal|"focus_out_event"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|focus_out_func
+argument_list|)
 argument_list|,
 name|begw
 argument_list|)
@@ -1372,10 +1339,10 @@ argument_list|)
 argument_list|,
 literal|"size_allocate"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|brush_edit_preview_resize
+argument_list|)
 argument_list|,
 name|begw
 argument_list|)
@@ -1436,13 +1403,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|begw
-operator|->
-name|scale
-operator|=
-operator|-
-literal|1
-expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|begw
@@ -1450,14 +1410,21 @@ operator|->
 name|scale_label
 argument_list|)
 expr_stmt|;
+name|begw
+operator|->
+name|scale
+operator|=
+operator|-
+literal|1
+expr_stmt|;
 comment|/* table for sliders/labels */
 name|table
 operator|=
 name|gtk_table_new
 argument_list|(
-literal|2
-argument_list|,
 literal|4
+argument_list|,
+literal|2
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1541,10 +1508,10 @@ argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|update_brush_callback
+argument_list|)
 argument_list|,
 name|begw
 argument_list|)
@@ -1639,10 +1606,10 @@ argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|update_brush_callback
+argument_list|)
 argument_list|,
 name|begw
 argument_list|)
@@ -1737,10 +1704,10 @@ argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|update_brush_callback
+argument_list|)
 argument_list|,
 name|begw
 argument_list|)
@@ -1835,10 +1802,10 @@ argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|update_brush_callback
+argument_list|)
 argument_list|,
 name|begw
 argument_list|)

@@ -47,8 +47,8 @@ typedef|;
 end_typedef
 
 begin_function
-DECL|function|gimp_signal_new (const gchar * name,GtkSignalRunType signal_flags,GtkType object_type,guint function_offset,GimpSignalType * sig_type)
 name|GimpSignalID
+DECL|function|gimp_signal_new (const gchar * name,GtkSignalRunType signal_flags,GtkType object_type,guint function_offset,GimpSignalType * sig_type)
 name|gimp_signal_new
 parameter_list|(
 specifier|const
@@ -106,6 +106,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/* void__void */
+end_comment
+
 begin_decl_stmt
 DECL|variable|sigtype_void
 specifier|static
@@ -135,6 +139,10 @@ operator|&
 name|sigtype_void
 decl_stmt|;
 end_decl_stmt
+
+begin_comment
+comment|/* void__pointer */
+end_comment
 
 begin_function
 specifier|static
@@ -223,6 +231,10 @@ name|sigtype_pointer
 decl_stmt|;
 end_decl_stmt
 
+begin_comment
+comment|/* void__int */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -310,6 +322,10 @@ name|sigtype_int
 decl_stmt|;
 end_decl_stmt
 
+begin_comment
+comment|/* void__double */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -396,6 +412,10 @@ operator|&
 name|sigtype_double
 decl_stmt|;
 end_decl_stmt
+
+begin_comment
+comment|/* void__int_int_int */
+end_comment
 
 begin_function
 specifier|static
@@ -503,6 +523,10 @@ operator|&
 name|sigtype_int_int_int
 decl_stmt|;
 end_decl_stmt
+
+begin_comment
+comment|/* void__int_int_int_int */
+end_comment
 
 begin_function
 specifier|static

@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMPBRUSHLIST_H__
+name|__GIMP_BRUSH_LIST_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMPBRUSHLIST_H__
+DECL|macro|__GIMP_BRUSH_LIST_H__
 define|#
 directive|define
-name|__GIMPBRUSHLIST_H__
+name|__GIMP_BRUSH_LIST_H__
 end_define
 
 begin_include
@@ -50,7 +50,7 @@ name|GIMP_BRUSH_LIST
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GIMP_CHECK_CAST ((obj), GIMP_TYPE_BRUSH_LIST, GimpBrushList))
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_BRUSH_LIST, GimpBrushList))
 end_define
 
 begin_define
@@ -61,7 +61,7 @@ name|GIMP_IS_BRUSH_LIST
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GIMP_CHECK_TYPE ((obj), GIMP_TYPE_BRUSH_LIST))
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_BRUSH_LIST))
 end_define
 
 begin_comment
@@ -190,7 +190,7 @@ begin_function_decl
 name|void
 name|brushes_init
 parameter_list|(
-name|gint
+name|gboolean
 name|no_data
 parameter_list|)
 function_decl|;
@@ -221,7 +221,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMPBRUSHLIST_H__  */
+comment|/*  __GIMP_BRUSH_LIST_H__  */
 end_comment
 
 end_unit

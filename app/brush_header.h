@@ -16,15 +16,6 @@ directive|define
 name|__BRUSH_HEADER_H__
 end_define
 
-begin_typedef
-DECL|typedef|BrushHeader
-typedef|typedef
-name|struct
-name|_BrushHeader
-name|BrushHeader
-typedef|;
-end_typedef
-
 begin_define
 DECL|macro|GBRUSH_FILE_VERSION
 define|#
@@ -41,17 +32,18 @@ name|GBRUSH_MAGIC
 value|(('G'<< 24) + ('I'<< 16) + ('M'<< 8) + ('P'<< 0))
 end_define
 
-begin_define
-DECL|macro|sz_BrushHeader
-define|#
-directive|define
-name|sz_BrushHeader
-value|(sizeof (BrushHeader))
-end_define
-
 begin_comment
 comment|/*  All field entries are MSB  */
 end_comment
+
+begin_typedef
+DECL|typedef|BrushHeader
+typedef|typedef
+name|struct
+name|_BrushHeader
+name|BrushHeader
+typedef|;
+end_typedef
 
 begin_struct
 DECL|struct|_BrushHeader
@@ -59,44 +51,37 @@ struct|struct
 name|_BrushHeader
 block|{
 DECL|member|header_size
-name|unsigned
-name|int
+name|guint
 name|header_size
 decl_stmt|;
-comment|/*  header_size = sz_BrushHeader + brush name  */
+comment|/*  header_size = sizeof (BrushHeader) + brush name  */
 DECL|member|version
-name|unsigned
-name|int
+name|guint
 name|version
 decl_stmt|;
 comment|/*  brush file version #  */
 DECL|member|width
-name|unsigned
-name|int
+name|guint
 name|width
 decl_stmt|;
 comment|/*  width of brush  */
 DECL|member|height
-name|unsigned
-name|int
+name|guint
 name|height
 decl_stmt|;
 comment|/*  height of brush  */
 DECL|member|bytes
-name|unsigned
-name|int
+name|guint
 name|bytes
 decl_stmt|;
 comment|/*  depth of brush in bytes--always 1 */
 DECL|member|magic_number
-name|unsigned
-name|int
+name|guint
 name|magic_number
 decl_stmt|;
 comment|/*  GIMP brush magic number  */
 DECL|member|spacing
-name|unsigned
-name|int
+name|guint
 name|spacing
 decl_stmt|;
 comment|/*  brush spacing  */
@@ -114,7 +99,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __BRUSH_HEADER_H__  */
+comment|/*  ! __BRUSH_HEADER_H__  */
 end_comment
 
 end_unit

@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMPBRUSHPIPE_H__
+name|__GIMP_BRUSH_PIPE_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMPBRUSHPIPE_H__
+DECL|macro|__GIMP_BRUSH_PIPE_H__
 define|#
 directive|define
-name|__GIMPBRUSHPIPE_H__
+name|__GIMP_BRUSH_PIPE_H__
 end_define
 
 begin_include
@@ -74,7 +74,7 @@ name|GIMP_BRUSH_PIXMAP
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GIMP_CHECK_CAST ((obj), GIMP_TYPE_BRUSH_PIXMAP, GimpBrushPixmap))
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_BRUSH_PIXMAP, GimpBrushPixmap))
 end_define
 
 begin_define
@@ -85,7 +85,7 @@ name|GIMP_IS_BRUSH_PIXMAP
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GIMP_CHECK_TYPE ((obj), GIMP_TYPE_BRUSH_PIXMAP))
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_BRUSH_PIXMAP))
 end_define
 
 begin_define
@@ -104,7 +104,7 @@ name|GIMP_BRUSH_PIPE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GIMP_CHECK_CAST ((obj), GIMP_TYPE_BRUSH_PIPE, GimpBrushPipe))
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_BRUSH_PIPE, GimpBrushPipe))
 end_define
 
 begin_define
@@ -115,7 +115,7 @@ name|GIMP_IS_BRUSH_PIPE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GIMP_CHECK_TYPE ((obj), GIMP_TYPE_BRUSH_PIPE))
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_BRUSH_PIPE))
 end_define
 
 begin_function_decl
@@ -193,7 +193,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMPBRUSHPIPE_H__ */
+comment|/* __GIMP_BRUSH_PIPE_H__ */
 end_comment
 
 end_unit

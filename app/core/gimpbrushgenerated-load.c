@@ -100,6 +100,8 @@ specifier|static
 name|GimpObjectClass
 modifier|*
 name|parent_class
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -324,7 +326,7 @@ name|brush
 operator|=
 name|GIMP_BRUSH_GENERATED
 argument_list|(
-name|gimp_type_new
+name|gtk_type_new
 argument_list|(
 name|gimp_brush_generated_get_type
 argument_list|()
@@ -499,7 +501,7 @@ name|brush
 operator|=
 name|GIMP_BRUSH_GENERATED
 argument_list|(
-name|gimp_type_new
+name|gtk_type_new
 argument_list|(
 name|gimp_brush_generated_get_type
 argument_list|()
@@ -1083,12 +1085,6 @@ name|guchar
 modifier|*
 name|lookup
 decl_stmt|;
-name|gdouble
-name|buffer
-index|[
-name|OVERSAMPLING
-index|]
-decl_stmt|;
 specifier|register
 name|gdouble
 name|sum
@@ -1100,6 +1096,12 @@ decl_stmt|,
 name|tx
 decl_stmt|,
 name|ty
+decl_stmt|;
+name|gdouble
+name|buffer
+index|[
+name|OVERSAMPLING
+index|]
 decl_stmt|;
 name|gint
 name|width
@@ -1568,12 +1570,12 @@ argument_list|(
 operator|(
 name|x
 operator|+
-literal|.5
+literal|0.5
 operator|)
 operator|/
 name|OVERSAMPLING
 operator|-
-literal|.5
+literal|0.5
 argument_list|)
 expr_stmt|;
 if|if
@@ -1634,7 +1636,7 @@ name|radius
 operator|||
 name|sum
 operator|>
-literal|.00001
+literal|0.00001
 condition|;
 name|d
 operator|+=
@@ -1819,7 +1821,7 @@ operator|=
 name|lookup
 index|[
 operator|(
-name|int
+name|gint
 operator|)
 name|RINT
 argument_list|(

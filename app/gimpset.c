@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995-1997 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -48,7 +48,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a05f8580108
+DECL|struct|__anon29c0922a0108
 block|{
 DECL|member|object
 name|gpointer
@@ -71,7 +71,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a05f8580203
+DECL|enum|__anon29c0922a0203
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -115,7 +115,7 @@ modifier|*
 name|set
 parameter_list|,
 name|gpointer
-name|obbject
+name|object
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -144,6 +144,10 @@ name|gimp_set_signals
 index|[
 name|LAST_SIGNAL
 index|]
+init|=
+block|{
+literal|0
+block|}
 decl_stmt|;
 end_decl_stmt
 
@@ -153,6 +157,8 @@ specifier|static
 name|GimpObjectClass
 modifier|*
 name|parent_class
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -230,18 +236,15 @@ argument_list|)
 operator|->
 name|destroy
 condition|)
-operator|(
-operator|*
 name|GTK_OBJECT_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
 name|destroy
-operator|)
-operator|(
+argument_list|(
 name|object
-operator|)
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -919,7 +922,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_set_add (GimpSet * set,gpointer val)
+DECL|function|gimp_set_add (GimpSet * set,gpointer object)
 name|gimp_set_add
 parameter_list|(
 name|GimpSet
@@ -927,7 +930,7 @@ modifier|*
 name|set
 parameter_list|,
 name|gpointer
-name|val
+name|object
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -949,7 +952,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GTK_CHECK_TYPE
 argument_list|(
-name|val
+name|object
 argument_list|,
 name|set
 operator|->
@@ -965,7 +968,7 @@ name|gimp_set_find_node
 argument_list|(
 name|set
 argument_list|,
-name|val
+name|object
 argument_list|)
 condition|)
 return|return
@@ -985,7 +988,7 @@ name|gimp_set_node_new
 argument_list|(
 name|set
 argument_list|,
-name|val
+name|object
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1001,7 +1004,7 @@ index|[
 name|ADD
 index|]
 argument_list|,
-name|val
+name|object
 argument_list|)
 expr_stmt|;
 return|return
@@ -1012,7 +1015,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_set_remove (GimpSet * set,gpointer val)
+DECL|function|gimp_set_remove (GimpSet * set,gpointer object)
 name|gimp_set_remove
 parameter_list|(
 name|GimpSet
@@ -1020,7 +1023,7 @@ modifier|*
 name|set
 parameter_list|,
 name|gpointer
-name|val
+name|object
 parameter_list|)
 block|{
 name|Node
@@ -1040,7 +1043,7 @@ name|gimp_set_find_node
 argument_list|(
 name|set
 argument_list|,
-name|val
+name|object
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -1082,7 +1085,7 @@ index|[
 name|REMOVE
 index|]
 argument_list|,
-name|val
+name|object
 argument_list|)
 expr_stmt|;
 return|return
@@ -1093,7 +1096,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_set_have (GimpSet * set,gpointer val)
+DECL|function|gimp_set_have (GimpSet * set,gpointer object)
 name|gimp_set_have
 parameter_list|(
 name|GimpSet
@@ -1101,7 +1104,7 @@ modifier|*
 name|set
 parameter_list|,
 name|gpointer
-name|val
+name|object
 parameter_list|)
 block|{
 return|return
@@ -1111,7 +1114,7 @@ name|gimp_set_find_node
 argument_list|(
 name|set
 argument_list|,
-name|val
+name|object
 argument_list|)
 return|;
 block|}
