@@ -185,6 +185,13 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|full_prog_name
+operator|==
+name|NULL
+argument_list|)
+expr_stmt|;
 if|#
 directive|if
 operator|(
@@ -196,7 +203,7 @@ operator|==
 literal|1
 name|g_printerr
 argument_list|(
-literal|"This is a development version of the GIMP\n"
+literal|"This is a development version of The GIMP.\n"
 literal|"Debug messages may appear here.\n\n"
 argument_list|)
 expr_stmt|;
