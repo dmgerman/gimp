@@ -379,7 +379,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|frame_title
 argument_list|)
@@ -689,7 +689,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|frame_title
 argument_list|)
@@ -1009,7 +1009,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|frame_title
 argument_list|)
@@ -2668,7 +2668,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c98e06f0108
+DECL|struct|__anon2ad0899c0108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
