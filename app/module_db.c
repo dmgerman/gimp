@@ -137,7 +137,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|enum|__anon2b82d9780103
+DECL|enum|__anon2abf345d0103
 typedef|typedef
 enum|enum
 block|{
@@ -243,6 +243,22 @@ parameter_list|()
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|extern
+name|void
+name|dialog_register
+parameter_list|()
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|extern
+name|void
+name|dialog_unregister
+parameter_list|()
+function_decl|;
+end_function_decl
+
 begin_struct
 DECL|struct|main_funcs_struc
 specifier|static
@@ -293,6 +309,18 @@ name|gimp_color_display_unregister
 block|}
 block|,
 block|{
+literal|"dialog_register"
+block|,
+name|dialog_register
+block|}
+block|,
+block|{
+literal|"dialog_unregister"
+block|,
+name|dialog_unregister
+block|}
+block|,
+block|{
 name|NULL
 block|,
 name|NULL
@@ -311,7 +339,7 @@ comment|/* one of these objects is kept per-module */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b82d9780208
+DECL|struct|__anon2abf345d0208
 typedef|typedef
 struct|struct
 block|{
@@ -428,7 +456,7 @@ value|7
 end_define
 
 begin_typedef
-DECL|struct|__anon2b82d9780308
+DECL|struct|__anon2abf345d0308
 typedef|typedef
 struct|struct
 block|{
@@ -1718,7 +1746,7 @@ comment|/* module_info object glue */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b82d9780408
+DECL|struct|__anon2abf345d0408
 typedef|typedef
 struct|struct
 block|{
@@ -1733,7 +1761,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2b82d9780503
+DECL|enum|__anon2abf345d0503
 enum|enum
 block|{
 DECL|enumerator|MODIFIED
@@ -4576,7 +4604,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2b82d9780608
+DECL|struct|__anon2abf345d0608
 typedef|typedef
 struct|struct
 block|{
