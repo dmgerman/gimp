@@ -47,22 +47,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|GimpPDBStatusType
-name|file_open_with_display
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|filename
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif

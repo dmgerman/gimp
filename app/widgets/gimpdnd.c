@@ -144,7 +144,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/file-open-dialog.h"
+file|"file/file-open.h"
 end_include
 
 begin_include

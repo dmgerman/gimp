@@ -83,7 +83,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/display-types.h"
+file|"gui-types.h"
 end_include
 
 begin_include
@@ -101,13 +101,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/gui.h"
+file|"gui.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gui/resolution-calibrate-dialog.h"
+file|"resolution-calibrate-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"user-install-dialog.h"
 end_include
 
 begin_include
@@ -120,12 +126,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"user_install.h"
 end_include
 
 begin_include
@@ -522,7 +522,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28ffdfd30108
+DECL|struct|__anon2b64a5280108
 block|{
 DECL|member|directory
 name|gboolean

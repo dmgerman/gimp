@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file/file-open.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 

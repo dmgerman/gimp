@@ -112,6 +112,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file/file-open.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay-foreach.h"
 end_include
 
@@ -124,12 +130,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/file-open-dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gui/gui.h"
 end_include
 
@@ -137,6 +137,12 @@ begin_include
 include|#
 directive|include
 file|"gui/splash.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gui/user-install-dialog.h"
 end_include
 
 begin_include
@@ -185,12 +191,6 @@ begin_include
 include|#
 directive|include
 file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"user_install.h"
 end_include
 
 begin_ifdef
