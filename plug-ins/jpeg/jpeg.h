@@ -279,7 +279,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274a93890108
+DECL|struct|__anon2c5492740108
 block|{
 DECL|member|quality
 name|gdouble
@@ -326,7 +326,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274a93890208
+DECL|struct|__anon2c5492740208
 block|{
 DECL|member|run
 name|gint
@@ -341,7 +341,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274a93890308
+DECL|struct|__anon2c5492740308
 block|{
 DECL|member|cinfo
 name|struct
@@ -7574,10 +7574,10 @@ name|menu
 argument_list|,
 name|_
 argument_list|(
-literal|"Integer"
+literal|"Fast integer"
 argument_list|)
 argument_list|,
-literal|0
+literal|1
 argument_list|,
 name|dct_callback
 argument_list|)
@@ -7588,10 +7588,10 @@ name|menu
 argument_list|,
 name|_
 argument_list|(
-literal|"Fast integer"
+literal|"Integer"
 argument_list|)
 argument_list|,
-literal|1
+literal|0
 argument_list|,
 name|dct_callback
 argument_list|)
@@ -7711,6 +7711,16 @@ name|dct_menu
 argument_list|)
 argument_list|,
 name|menu
+argument_list|)
+expr_stmt|;
+name|gtk_option_menu_set_history
+argument_list|(
+name|GTK_OPTION_MENU
+argument_list|(
+name|dct_menu
+argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|dtype

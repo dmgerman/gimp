@@ -7086,7 +7086,7 @@ name|interpolation_type
 argument_list|,
 name|_
 argument_list|(
-literal|"Nearest Neighbor"
+literal|"Nearest Neighbor (Fast)"
 argument_list|)
 argument_list|,
 operator|&
@@ -7112,7 +7112,7 @@ name|LINEAR_INTERPOLATION
 argument_list|,
 name|_
 argument_list|(
-literal|"Cubic"
+literal|"Cubic (Slow)"
 argument_list|)
 argument_list|,
 operator|&
@@ -11582,7 +11582,7 @@ name|page_index
 operator|++
 expr_stmt|;
 block|{
-DECL|struct|__anon2ab424090108
+DECL|struct|__anon29da11eb0108
 specifier|static
 specifier|const
 struct|struct
@@ -11807,7 +11807,7 @@ block|}
 block|}
 comment|/* Directories /<paths> */
 block|{
-DECL|struct|__anon2ab424090208
+DECL|struct|__anon29da11eb0208
 specifier|static
 specifier|const
 struct|struct
