@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1a54b50103
+DECL|enum|__anon27c615650103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -665,7 +665,7 @@ for|for
 control|(
 name|i
 operator|=
-literal|0
+literal|1
 init|;
 name|i
 operator|<
