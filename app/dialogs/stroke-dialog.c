@@ -540,6 +540,16 @@ operator|)
 name|g_object_unref
 argument_list|)
 expr_stmt|;
+name|gtk_window_set_resizable
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|main_vbox
 operator|=
 name|gtk_vbox_new
@@ -616,7 +626,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Stroke"
+literal|"Stroke Line"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -772,7 +782,7 @@ name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"Stroke Using a Paint Tool"
+literal|"Stroke With a Paint Tool"
 argument_list|)
 argument_list|)
 expr_stmt|;
