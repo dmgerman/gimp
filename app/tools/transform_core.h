@@ -620,7 +620,7 @@ name|Tool
 modifier|*
 name|transform_core_new
 parameter_list|(
-name|int
+name|ToolType
 parameter_list|,
 name|int
 parameter_list|)

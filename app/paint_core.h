@@ -91,7 +91,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a10e57a0103
+DECL|enum|__anon2b560e240103
 block|{
 DECL|enumerator|HARD
 name|HARD
@@ -117,7 +117,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a10e57a0203
+DECL|enum|__anon2b560e240203
 block|{
 DECL|enumerator|CONSTANT
 name|CONSTANT
@@ -138,7 +138,7 @@ comment|/* gradient paint modes */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a10e57a0303
+DECL|enum|__anon2b560e240303
 typedef|typedef
 enum|enum
 block|{
@@ -490,7 +490,7 @@ name|Tool
 modifier|*
 name|paint_core_new
 parameter_list|(
-name|int
+name|ToolType
 parameter_list|)
 function_decl|;
 end_function_decl

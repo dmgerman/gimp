@@ -7644,6 +7644,18 @@ argument_list|)
 expr_stmt|;
 name|SET_STATE
 argument_list|(
+literal|"/View/Toggle Selection"
+argument_list|,
+operator|!
+name|gdisp
+operator|->
+name|select
+operator|->
+name|hidden
+argument_list|)
+expr_stmt|;
+name|SET_STATE
+argument_list|(
 literal|"/View/Toggle Rulers"
 argument_list|,
 name|GTK_WIDGET_VISIBLE

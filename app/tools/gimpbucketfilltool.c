@@ -273,22 +273,6 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|bucket_fill_motion
-parameter_list|(
-name|Tool
-modifier|*
-parameter_list|,
-name|GdkEventMotion
-modifier|*
-parameter_list|,
-name|gpointer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|bucket_fill_cursor_update
 parameter_list|(
 name|Tool
@@ -296,21 +280,6 @@ modifier|*
 parameter_list|,
 name|GdkEventMotion
 modifier|*
-parameter_list|,
-name|gpointer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|bucket_fill_control
-parameter_list|(
-name|Tool
-modifier|*
-parameter_list|,
-name|ToolAction
 parameter_list|,
 name|gpointer
 parameter_list|)
@@ -1260,26 +1229,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|bucket_fill_motion (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
-name|bucket_fill_motion
-parameter_list|(
-name|Tool
-modifier|*
-name|tool
-parameter_list|,
-name|GdkEventMotion
-modifier|*
-name|mevent
-parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{ }
-end_function
-
-begin_function
-specifier|static
-name|void
 DECL|function|bucket_fill_cursor_update (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
 name|bucket_fill_cursor_update
 parameter_list|(
@@ -1556,25 +1505,6 @@ block|}
 break|break;
 block|}
 block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|bucket_fill_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
-name|bucket_fill_control
-parameter_list|(
-name|Tool
-modifier|*
-name|tool
-parameter_list|,
-name|ToolAction
-name|action
-parameter_list|,
-name|gpointer
-name|gdisp_ptr
-parameter_list|)
-block|{ }
 end_function
 
 begin_function
@@ -2906,15 +2836,15 @@ block|}
 end_function
 
 begin_comment
-comment|/*********************************/
+comment|/**********************************/
 end_comment
 
 begin_comment
-comment|/*  Global bucket fill functions */
+comment|/*  Global bucket fill functions  */
 end_comment
 
 begin_comment
-comment|/*********************************/
+comment|/**********************************/
 end_comment
 
 begin_function
@@ -2964,57 +2894,27 @@ expr_stmt|;
 block|}
 name|tool
 operator|=
-operator|(
-name|Tool
-operator|*
-operator|)
-name|g_malloc
+name|tools_new_tool
 argument_list|(
-sizeof|sizeof
-argument_list|(
-name|Tool
-argument_list|)
+name|BUCKET_FILL
 argument_list|)
 expr_stmt|;
 name|private
 operator|=
-operator|(
-name|BucketTool
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|BucketTool
+argument_list|,
+literal|1
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|tool
-operator|->
-name|type
-operator|=
-name|BUCKET_FILL
-expr_stmt|;
-name|tool
-operator|->
-name|state
-operator|=
-name|INACTIVE
 expr_stmt|;
 name|tool
 operator|->
 name|scroll_lock
 operator|=
-literal|1
-expr_stmt|;
-comment|/*  Disallow scrolling  */
-name|tool
-operator|->
-name|auto_snap_to
-operator|=
 name|TRUE
 expr_stmt|;
+comment|/*  Disallow scrolling  */
 name|tool
 operator|->
 name|private
@@ -3024,24 +2924,6 @@ name|void
 operator|*
 operator|)
 name|private
-expr_stmt|;
-name|tool
-operator|->
-name|preserve
-operator|=
-name|TRUE
-expr_stmt|;
-name|tool
-operator|->
-name|gdisp_ptr
-operator|=
-name|NULL
-expr_stmt|;
-name|tool
-operator|->
-name|drawable
-operator|=
-name|NULL
 expr_stmt|;
 name|tool
 operator|->
@@ -3057,18 +2939,6 @@ name|bucket_fill_button_release
 expr_stmt|;
 name|tool
 operator|->
-name|motion_func
-operator|=
-name|bucket_fill_motion
-expr_stmt|;
-name|tool
-operator|->
-name|arrow_keys_func
-operator|=
-name|standard_arrow_keys_func
-expr_stmt|;
-name|tool
-operator|->
 name|modifier_key_func
 operator|=
 name|bucket_fill_modifier_key_func
@@ -3078,12 +2948,6 @@ operator|->
 name|cursor_update_func
 operator|=
 name|bucket_fill_cursor_update
-expr_stmt|;
-name|tool
-operator|->
-name|control_func
-operator|=
-name|bucket_fill_control
 expr_stmt|;
 return|return
 name|tool

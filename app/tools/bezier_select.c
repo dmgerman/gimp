@@ -328,7 +328,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon28e2a5ef0108
+DECL|struct|__anon279448c30108
 typedef|typedef
 struct|struct
 block|{
@@ -365,7 +365,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28e2a5ef0208
+DECL|struct|__anon279448c30208
 typedef|typedef
 struct|struct
 block|{
@@ -420,7 +420,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28e2a5ef0308
+DECL|struct|__anon279448c30308
 typedef|typedef
 struct|struct
 block|{
@@ -1075,22 +1075,18 @@ expr_stmt|;
 block|}
 name|tool
 operator|=
-name|g_malloc
+name|tools_new_tool
 argument_list|(
-sizeof|sizeof
-argument_list|(
-name|Tool
-argument_list|)
+name|BEZIER_SELECT
 argument_list|)
 expr_stmt|;
 name|private
 operator|=
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|BezierSelect
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|private
@@ -1121,29 +1117,18 @@ argument_list|)
 expr_stmt|;
 name|tool
 operator|->
-name|type
-operator|=
-name|BEZIER_SELECT
-expr_stmt|;
-name|tool
-operator|->
-name|state
-operator|=
-name|INACTIVE
-expr_stmt|;
-name|tool
-operator|->
 name|scroll_lock
-operator|=
-literal|1
-expr_stmt|;
-comment|/*  Do not allow scrolling  */
-name|tool
-operator|->
-name|auto_snap_to
 operator|=
 name|TRUE
 expr_stmt|;
+comment|/*  Disallow scrolling  */
+name|tool
+operator|->
+name|preserve
+operator|=
+name|FALSE
+expr_stmt|;
+comment|/*  Don't preserve on drawable change  */
 name|tool
 operator|->
 name|private
@@ -1153,24 +1138,6 @@ name|void
 operator|*
 operator|)
 name|private
-expr_stmt|;
-name|tool
-operator|->
-name|preserve
-operator|=
-name|FALSE
-expr_stmt|;
-name|tool
-operator|->
-name|gdisp_ptr
-operator|=
-name|NULL
-expr_stmt|;
-name|tool
-operator|->
-name|drawable
-operator|=
-name|NULL
 expr_stmt|;
 name|tool
 operator|->
@@ -1189,18 +1156,6 @@ operator|->
 name|motion_func
 operator|=
 name|bezier_select_motion
-expr_stmt|;
-name|tool
-operator|->
-name|arrow_keys_func
-operator|=
-name|standard_arrow_keys_func
-expr_stmt|;
-name|tool
-operator|->
-name|modifier_key_func
-operator|=
-name|standard_modifier_key_func
 expr_stmt|;
 name|tool
 operator|->

@@ -457,13 +457,6 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-specifier|extern
-name|int
-name|num_tools
-decl_stmt|;
-end_decl_stmt
-
 begin_define
 DECL|macro|COLUMNS
 define|#
@@ -531,7 +524,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon2a2114740103
+DECL|enum|__anon29cec8970103
 enum|enum
 block|{
 DECL|enumerator|TARGET_URI_LIST

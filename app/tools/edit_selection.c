@@ -92,7 +92,7 @@ DECL|macro|EDIT_SELECT_SCROLL_LOCK
 define|#
 directive|define
 name|EDIT_SELECT_SCROLL_LOCK
-value|0
+value|FALSE
 end_define
 
 begin_define
@@ -196,12 +196,12 @@ name|old_cursor_update
 decl_stmt|;
 comment|/*  old cursor update function      */
 DECL|member|old_scroll_lock
-name|int
+name|gboolean
 name|old_scroll_lock
 decl_stmt|;
 comment|/*  old value of scroll lock        */
 DECL|member|old_auto_snap_to
-name|int
+name|gboolean
 name|old_auto_snap_to
 decl_stmt|;
 comment|/*  old value of auto snap to       */

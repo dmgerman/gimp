@@ -318,7 +318,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e1ba2e0108
+DECL|struct|__anon2af0fd770108
 block|{
 DECL|member|resize
 name|Resize
@@ -2061,11 +2061,35 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
+name|int
+name|new_val
+decl_stmt|;
 name|return_if_no_display
 argument_list|(
 name|gdisp
 argument_list|)
 expr_stmt|;
+name|new_val
+operator|=
+name|GTK_CHECK_MENU_ITEM
+argument_list|(
+name|widget
+argument_list|)
+operator|->
+name|active
+expr_stmt|;
+comment|/*  hidden == TRUE corresponds to the menu toggle being FALSE  */
+if|if
+condition|(
+name|new_val
+operator|==
+name|gdisp
+operator|->
+name|select
+operator|->
+name|hidden
+condition|)
+block|{
 name|selection_hide
 argument_list|(
 name|gdisp
@@ -2082,6 +2106,7 @@ expr_stmt|;
 name|gdisplays_flush
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 end_function
 

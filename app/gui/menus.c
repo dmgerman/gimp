@@ -1295,6 +1295,8 @@ block|,
 name|view_toggle_selection_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<ToggleItem>"
 block|}
 block|,
 block|{
@@ -3049,13 +3051,6 @@ name|int
 name|initialize
 init|=
 name|TRUE
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|int
-name|num_tools
 decl_stmt|;
 end_decl_stmt
 

@@ -31,6 +31,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tool_options.h"
 end_include
 
@@ -53,7 +59,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2baad8f00103
+DECL|enum|__anon2c2c9be50103
 block|{
 DECL|enumerator|INACTIVE
 name|INACTIVE
@@ -111,55 +117,55 @@ DECL|member|type
 name|ToolType
 name|type
 decl_stmt|;
-comment|/*  Tool type  */
+comment|/*  Tool type                                   */
+DECL|member|ID
+name|gint
+name|ID
+decl_stmt|;
+comment|/*  unique tool ID                              */
 DECL|member|state
 name|ToolState
 name|state
 decl_stmt|;
-comment|/*  state of tool activity  */
+comment|/*  state of tool activity                      */
 DECL|member|paused_count
-name|int
+name|gint
 name|paused_count
 decl_stmt|;
-comment|/*  paused control count  */
+comment|/*  paused control count                        */
 DECL|member|scroll_lock
-name|int
+name|gboolean
 name|scroll_lock
 decl_stmt|;
-comment|/*  allow scrolling or not  */
+comment|/*  allow scrolling or not                      */
 DECL|member|auto_snap_to
-name|int
+name|gboolean
 name|auto_snap_to
 decl_stmt|;
-comment|/*  should the mouse snap to guides automatically */
-DECL|member|private
-name|void
-modifier|*
-name|private
+comment|/*  snap to guides automatically                */
+DECL|member|preserve
+name|gboolean
+name|preserve
 decl_stmt|;
-comment|/*  Tool-specific information  */
+comment|/*  Preserve this tool across drawable changes  */
 DECL|member|gdisp_ptr
 name|void
 modifier|*
 name|gdisp_ptr
 decl_stmt|;
-comment|/*  pointer to currently active gdisp  */
+comment|/*  pointer to currently active gdisp           */
 DECL|member|drawable
 name|void
 modifier|*
 name|drawable
 decl_stmt|;
-comment|/*  pointer to the drawable that was 				active when the tool was created */
-DECL|member|ID
-name|int
-name|ID
+comment|/*  pointer to the tool's current drawable      */
+DECL|member|private
+name|void
+modifier|*
+name|private
 decl_stmt|;
-comment|/*  unique tool ID  */
-DECL|member|preserve
-name|int
-name|preserve
-decl_stmt|;
-comment|/*  Preserve this tool through the current 				image changes  */
+comment|/*  Tool-specific information                   */
 comment|/*  Action functions  */
 DECL|member|button_press_func
 name|ButtonPressFunc
@@ -259,12 +265,17 @@ name|GtkWidget
 modifier|*
 name|tool_widget
 decl_stmt|;
+DECL|member|tool_context
+name|GimpContext
+modifier|*
+name|tool_context
+decl_stmt|;
 block|}
 struct|;
 end_struct
 
 begin_comment
-comment|/*  Global Data Structure  */
+comment|/*  Global Data Structures  */
 end_comment
 
 begin_decl_stmt
@@ -283,9 +294,27 @@ index|[]
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+specifier|extern
+name|gint
+name|num_tools
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/*  Function declarations  */
 end_comment
+
+begin_function_decl
+name|Tool
+modifier|*
+name|tools_new_tool
+parameter_list|(
+name|ToolType
+name|tool_type
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|void
@@ -362,40 +391,6 @@ parameter_list|,
 name|void
 modifier|*
 name|gdisp_ptr
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/*  Standard member functions  */
-end_comment
-
-begin_function_decl
-name|void
-name|standard_arrow_keys_func
-parameter_list|(
-name|Tool
-modifier|*
-parameter_list|,
-name|GdkEventKey
-modifier|*
-parameter_list|,
-name|gpointer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|standard_modifier_key_func
-parameter_list|(
-name|Tool
-modifier|*
-parameter_list|,
-name|GdkEventKey
-modifier|*
-parameter_list|,
-name|gpointer
 parameter_list|)
 function_decl|;
 end_function_decl
