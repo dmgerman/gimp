@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpdrawable.h"
+file|"core/gimpchannel.h"
 end_include
 
 begin_include
@@ -675,10 +675,12 @@ name|gimage
 argument_list|,
 name|GIMP_UNDO_GROUP_TRANSFORM
 argument_list|,
-name|_
+name|GIMP_ITEM_GET_CLASS
 argument_list|(
-literal|"Flip Layer"
+name|item
 argument_list|)
+operator|->
+name|flip_desc
 argument_list|)
 expr_stmt|;
 name|gimp_item_flip
@@ -777,6 +779,11 @@ name|center_x
 decl_stmt|,
 name|center_y
 decl_stmt|;
+name|gboolean
+name|clip_result
+init|=
+name|FALSE
+decl_stmt|;
 name|return_if_no_drawable
 argument_list|(
 name|gimage
@@ -862,11 +869,24 @@ name|gimage
 argument_list|,
 name|GIMP_UNDO_GROUP_TRANSFORM
 argument_list|,
-name|_
+name|GIMP_ITEM_GET_CLASS
 argument_list|(
-literal|"Rotate Layer"
+name|item
 argument_list|)
+operator|->
+name|rotate_desc
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|GIMP_IS_CHANNEL
+argument_list|(
+name|item
+argument_list|)
+condition|)
+name|clip_result
+operator|=
+name|TRUE
 expr_stmt|;
 name|gimp_item_rotate
 argument_list|(
@@ -883,7 +903,7 @@ name|center_x
 argument_list|,
 name|center_y
 argument_list|,
-name|FALSE
+name|clip_result
 argument_list|)
 expr_stmt|;
 if|if
