@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279b66390103
+DECL|enum|__anon297d2b920103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -2312,6 +2312,13 @@ begin_macro
 name|STUB
 argument_list|(
 argument|convolve_non_gui_default
+argument_list|)
+end_macro
+
+begin_macro
+name|STUB
+argument_list|(
+argument|path_transform_xy
 argument_list|)
 end_macro
 

@@ -43,6 +43,26 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|tool_manager_push_tool
+parameter_list|(
+name|GimpTool
+modifier|*
+name|tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|tool_manager_pop_tool
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|tool_manager_initialize_tool
 parameter_list|(
 name|GimpTool

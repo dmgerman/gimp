@@ -1872,15 +1872,17 @@ name|layer
 argument_list|)
 condition|)
 block|{
-warning|#
-directive|warning
-warning|FIXME (edit_selection)
-if|#
-directive|if
-literal|0
-block|init_edit_selection (tool, gdisp, bevent, EDIT_LAYER_TRANSLATE);
-endif|#
-directive|endif
+name|init_edit_selection
+argument_list|(
+name|tool
+argument_list|,
+name|gdisp
+argument_list|,
+name|bevent
+argument_list|,
+name|EDIT_LAYER_TRANSLATE
+argument_list|)
+expr_stmt|;
 return|return;
 block|}
 if|if
