@@ -49,7 +49,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba9a1870103
+DECL|enum|__anon277102df0103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -170,7 +170,7 @@ end_macro
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba9a1870208
+DECL|struct|__anon277102df0208
 block|{
 DECL|member|title
 specifier|const
@@ -2362,7 +2362,7 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Create a new unit with the currently "
-literal|"seleted unit as template."
+literal|"selected unit as template."
 argument_list|)
 argument_list|,
 name|NULL

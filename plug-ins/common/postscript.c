@@ -241,7 +241,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299ff5b10108
+DECL|struct|__anon2c4258360108
 block|{
 DECL|member|resolution
 name|guint
@@ -330,7 +330,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299ff5b10208
+DECL|struct|__anon2c4258360208
 block|{
 DECL|member|width
 DECL|member|height
@@ -904,7 +904,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299ff5b10308
+DECL|struct|__anon2c4258360308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1760,7 +1760,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299ff5b10408
+DECL|struct|__anon2c4258360408
 block|{
 DECL|member|eol
 name|long
@@ -11494,7 +11494,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"write error occured"
+literal|"Write error occurred"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -12176,7 +12176,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"write error occured"
+literal|"Write error occurred"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -13067,7 +13067,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"write error occured"
+literal|"Write error occurred"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -13751,7 +13751,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"write error occured"
+literal|"Write error occurred"
 argument_list|)
 argument_list|)
 expr_stmt|;

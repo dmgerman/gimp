@@ -127,7 +127,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acb4e1c0108
+DECL|struct|__anon28b31bef0108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -1892,7 +1892,7 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Adjust the Spike Angle "
-literal|"(-1 means a Random Angle is choosen)"
+literal|"(-1 means a Random Angle is chosen)"
 argument_list|)
 argument_list|,
 name|NULL

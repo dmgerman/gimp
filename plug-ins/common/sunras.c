@@ -143,7 +143,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b71388b0108
+DECL|struct|__anon2c9bb5970108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -232,7 +232,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b71388b0208
+DECL|struct|__anon2c9bb5970208
 block|{
 DECL|member|val
 name|gint
@@ -827,7 +827,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b71388b0308
+DECL|struct|__anon2c9bb5970308
 block|{
 DECL|member|rle
 name|gboolean
@@ -7134,7 +7134,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Write error occured"
+literal|"Write error occurred"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7719,7 +7719,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Write error occured"
+literal|"Write error occurred"
 argument_list|)
 argument_list|)
 expr_stmt|;
