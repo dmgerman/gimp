@@ -267,6 +267,20 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|vectors_selection_to_vectors
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|gboolean
+name|advanced
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|vectors_vectors_tool
 parameter_list|(
 name|GimpVectors

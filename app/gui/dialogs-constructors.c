@@ -2818,6 +2818,12 @@ name|stroke_item_func
 operator|=
 name|vectors_stroke_vectors
 expr_stmt|;
+name|vectors_view
+operator|->
+name|selection_to_vectors_func
+operator|=
+name|vectors_selection_to_vectors
+expr_stmt|;
 name|dockable
 operator|=
 name|dialogs_dockable_new
