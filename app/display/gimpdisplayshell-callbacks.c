@@ -461,12 +461,6 @@ argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
-comment|/*  Always set the menu sensitivity to ensure the consitency of the        *  tear-off menus        */
-name|gdisplay_set_menu_sensitivity
-argument_list|(
-name|gdisp
-argument_list|)
-expr_stmt|;
 break|break;
 default|default:
 break|break;
@@ -1104,12 +1098,6 @@ case|:
 name|state
 operator||=
 name|GDK_BUTTON3_MASK
-expr_stmt|;
-name|popup_shell
-operator|=
-name|gdisp
-operator|->
-name|shell
 expr_stmt|;
 name|gtk_menu_popup
 argument_list|(
@@ -2225,12 +2213,6 @@ block|{
 name|gdisp
 operator|=
 name|data
-expr_stmt|;
-name|popup_shell
-operator|=
-name|gdisp
-operator|->
-name|shell
 expr_stmt|;
 name|gtk_menu_popup
 argument_list|(

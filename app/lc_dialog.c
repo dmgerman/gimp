@@ -341,6 +341,11 @@ name|window
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|gimage
+condition|)
+block|{
 name|lc_dialog_update
 argument_list|(
 name|gimage
@@ -349,6 +354,13 @@ expr_stmt|;
 name|lc_dialog_update_image_list
 argument_list|()
 expr_stmt|;
+block|}
+else|else
+block|{
+name|lc_dialog_update_image_list
+argument_list|()
+expr_stmt|;
+block|}
 return|return;
 block|}
 name|lc_dialog
@@ -1394,7 +1406,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b38e44d0108
+DECL|struct|__anon2a1bcb350108
 block|{
 DECL|member|def
 name|GImage

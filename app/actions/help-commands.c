@@ -318,7 +318,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277304340108
+DECL|struct|__anon29a458af0108
 block|{
 DECL|member|resize
 name|Resize
@@ -3658,6 +3658,11 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
+name|gdisp
+operator|=
+name|gdisplay_active
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -3684,11 +3689,6 @@ block|}
 else|else
 block|{
 comment|/* if the tool_info has an init_func */
-name|gdisp
-operator|=
-name|gdisplay_active
-argument_list|()
-expr_stmt|;
 name|gtk_widget_activate
 argument_list|(
 name|tool_info
@@ -3699,6 +3699,10 @@ operator|.
 name|tool_widget
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gdisp
+condition|)
 operator|(
 operator|*
 name|tool_info
@@ -3713,11 +3717,10 @@ name|gdisp
 operator|)
 expr_stmt|;
 block|}
+if|if
+condition|(
 name|gdisp
-operator|=
-name|gdisplay_active
-argument_list|()
-expr_stmt|;
+condition|)
 name|active_tool
 operator|->
 name|drawable

@@ -35,7 +35,7 @@ file|"libgimp/gimpunit.h"
 end_include
 
 begin_comment
-comment|/* typedefs */
+comment|/*  typedefs  */
 end_comment
 
 begin_typedef
@@ -58,7 +58,7 @@ function_decl|;
 end_typedef
 
 begin_comment
-comment|/* externed variables  */
+comment|/*  externed variables  */
 end_comment
 
 begin_decl_stmt
@@ -72,14 +72,6 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|GtkWidget
-modifier|*
-name|popup_shell
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
 name|GtkTooltips
 modifier|*
 name|tool_tips
@@ -87,7 +79,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* function declarations */
+comment|/*  function declarations  */
 end_comment
 
 begin_function_decl
@@ -185,11 +177,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* commented out because these functions are not in interface.c  * is this a bug or did I miss something?? -- michael  * void         position_dialog        (GtkWidget *, gpointer, gpointer);  * void         center_dialog          (GtkWidget *, gpointer, gpointer);  */
-end_comment
-
-begin_comment
-comment|/* some simple query dialogs  * if object != NULL then the query boxes will connect their cancel callback  * to the provided signal of this object  */
+comment|/*  some simple query dialogs  *  if object != NULL then the query boxes will connect their cancel callback  *  to the provided signal of this object  */
 end_comment
 
 begin_function_decl
@@ -359,7 +347,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* a simple message box */
+comment|/*  a simple message box  */
 end_comment
 
 begin_function_decl
@@ -406,7 +394,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* INTERFACE_H */
+comment|/* __INTERFACE_H__ */
 end_comment
 
 end_unit

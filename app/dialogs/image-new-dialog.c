@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b84bb00108
+DECL|struct|__anon29fa71f20108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -685,9 +685,13 @@ argument_list|,
 literal|0x0101
 argument_list|)
 expr_stmt|;
-comment|/*  Update L&C because the last automatic update at image creation        *  time happened when the new image had no layers at all        *        *  TODO: make L&C aware of the image's "repaint" signal        */
-name|lc_dialog_flush
+name|gimp_context_set_display
+argument_list|(
+name|gimp_context_get_user
 argument_list|()
+argument_list|,
+name|gdisplay
+argument_list|)
 expr_stmt|;
 block|}
 name|g_free

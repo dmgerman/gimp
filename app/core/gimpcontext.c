@@ -74,7 +74,7 @@ value|while (!((context)->field_defined)&& (context)->parent) \           (conte
 end_define
 
 begin_enum
-DECL|enum|__anon27492e8d0103
+DECL|enum|__anon29d5007f0103
 enum|enum
 block|{
 DECL|enumerator|ARG_0
@@ -96,7 +96,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon27492e8d0203
+DECL|enum|__anon29d5007f0203
 enum|enum
 block|{
 DECL|enumerator|OPACITY_CHANGED
@@ -1856,17 +1856,15 @@ operator|=
 name|display
 expr_stmt|;
 comment|/*  set the image _before_ emitting the display_changed signal  */
+if|if
+condition|(
+name|display
+condition|)
 name|gimp_context_set_image
 argument_list|(
 name|orig
 argument_list|,
 name|display
-condition|?
-name|display
-operator|->
-name|gimage
-else|:
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_signal_emit

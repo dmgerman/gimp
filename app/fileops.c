@@ -164,6 +164,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"fileops.h"
 end_include
 
@@ -732,6 +738,18 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+specifier|extern
+name|GSList
+modifier|*
+name|display_list
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/* from gdisplay.c */
+end_comment
+
 begin_define
 DECL|macro|FILE_ERR_MESSAGE (str)
 define|#
@@ -977,10 +995,6 @@ name|GtkWidget
 modifier|*
 name|open_options_genbutton
 decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisplay
-decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -1177,11 +1191,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|gdisplay
-operator|=
-name|gdisplay_active
-argument_list|()
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -1927,6 +1936,12 @@ operator|=
 name|gdisplay_active
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gdisplay
+condition|)
+return|return;
 comment|/*  Only save if the gimage has been modified  */
 if|if
 condition|(
@@ -1950,12 +1965,6 @@ operator|==
 name|FALSE
 condition|)
 block|{
-name|popup_shell
-operator|=
-name|gdisplay
-operator|->
-name|shell
-expr_stmt|;
 name|file_save_as_callback
 argument_list|(
 name|w
@@ -1965,6 +1974,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|file_save
 argument_list|(
 name|gdisplay
@@ -1991,6 +2001,7 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 end_function
@@ -2191,6 +2202,12 @@ operator|=
 name|gdisplay_active
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gdisplay
+condition|)
+return|return;
 name|the_gimage
 operator|=
 name|gdisplay
@@ -2443,6 +2460,12 @@ operator|=
 name|gdisplay_active
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gdisplay
+condition|)
+return|return;
 if|if
 condition|(
 name|gdisplay
@@ -3035,6 +3058,10 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
+name|GDisplay
+modifier|*
+name|gdisplay
+decl_stmt|;
 if|if
 condition|(
 operator|(
@@ -3066,11 +3093,31 @@ name|gimage
 argument_list|)
 expr_stmt|;
 comment|/* display the image */
+name|gdisplay
+operator|=
 name|gdisplay_new
 argument_list|(
 name|gimage
 argument_list|,
 literal|0x0101
+argument_list|)
+expr_stmt|;
+comment|/* always activate the first display */
+if|if
+condition|(
+name|g_slist_length
+argument_list|(
+name|display_list
+argument_list|)
+operator|==
+literal|1
+condition|)
+name|gimp_context_set_display
+argument_list|(
+name|gimp_context_get_user
+argument_list|()
+argument_list|,
+name|gdisplay
 argument_list|)
 expr_stmt|;
 name|idea_add
@@ -6860,6 +6907,12 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gdisplay_active
+argument_list|()
+condition|)
+block|{
 name|menus_set_sensitive_locale
 argument_list|(
 literal|"<Image>"
@@ -6884,6 +6937,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|TRUE
 return|;

@@ -408,6 +408,7 @@ operator|)
 operator|&&
 name|confirm_on_close
 condition|)
+block|{
 name|gdisplay_close_warning_dialog
 argument_list|(
 name|g_basename
@@ -423,21 +424,9 @@ argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
+block|}
 else|else
 block|{
-comment|/* If POPUP_SHELL references this shell, then reset it. */
-if|if
-condition|(
-name|popup_shell
-operator|==
-name|gdisp
-operator|->
-name|shell
-condition|)
-name|popup_shell
-operator|=
-name|NULL
-expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
 name|gdisp
@@ -1239,19 +1228,6 @@ argument_list|(
 name|mbox
 argument_list|)
 argument_list|)
-expr_stmt|;
-comment|/* If POPUP_SHELL references this shell, then reset it. */
-if|if
-condition|(
-name|popup_shell
-operator|==
-name|gdisp
-operator|->
-name|shell
-condition|)
-name|popup_shell
-operator|=
-name|NULL
 expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(

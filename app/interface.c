@@ -449,20 +449,6 @@ name|tool_tips
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  The popup shell is a pointer to the gdisplay shell that posted the latest  *  popup menu.  When this is null, and a command is invoked, then the  *  assumption is that the command was a result of a keyboard accelerator  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|popup_shell
-name|GtkWidget
-modifier|*
-name|popup_shell
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
 begin_decl_stmt
 DECL|variable|colors
 specifier|static
@@ -4580,6 +4566,7 @@ comment|/*  create a generic query box without any entry widget  */
 end_comment
 
 begin_function
+specifier|static
 name|QueryBox
 modifier|*
 DECL|function|create_query_box (gchar * title,gchar * message,GtkObject * object,gchar * signal,QueryFunc callback,gpointer data)
