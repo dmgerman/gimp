@@ -1019,11 +1019,11 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_drawable_attach_new_parasite (gint32 drawable,const gchar * name,gint flags,gint size,const gpointer data)
+DECL|function|gimp_drawable_attach_new_parasite (gint32 drawable_ID,const gchar * name,gint flags,gint size,const gpointer data)
 name|gimp_drawable_attach_new_parasite
 parameter_list|(
 name|gint32
-name|drawable
+name|drawable_ID
 parameter_list|,
 specifier|const
 name|gchar
@@ -1058,7 +1058,7 @@ argument_list|)
 decl_stmt|;
 name|gimp_drawable_parasite_attach
 argument_list|(
-name|drawable
+name|drawable_ID
 argument_list|,
 name|parasite
 argument_list|)
