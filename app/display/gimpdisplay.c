@@ -1284,6 +1284,8 @@ argument_list|(
 name|i
 argument_list|,
 name|title_len
+operator|-
+literal|1
 argument_list|)
 index|]
 operator|=

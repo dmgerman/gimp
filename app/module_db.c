@@ -82,7 +82,7 @@ file|"libgimp/gimpmodule.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon27cc66120103
+DECL|enum|__anon2a2389e50103
 typedef|typedef
 enum|enum
 block|{
@@ -140,7 +140,7 @@ comment|/* one of these objects is kept per-module */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27cc66120208
+DECL|struct|__anon2a2389e50208
 typedef|typedef
 struct|struct
 block|{
@@ -171,6 +171,11 @@ modifier|*
 name|info
 decl_stmt|;
 comment|/* returned values from module_init */
+DECL|member|refs
+name|gint
+name|refs
+decl_stmt|;
+comment|/* how many time we're running in the module */
 DECL|member|module
 name|GModule
 modifier|*
@@ -247,7 +252,7 @@ value|7
 end_define
 
 begin_typedef
-DECL|struct|__anon27cc66120308
+DECL|struct|__anon2a2389e50308
 typedef|typedef
 struct|struct
 block|{
@@ -542,6 +547,30 @@ name|data
 parameter_list|,
 name|gpointer
 name|user_data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_module_ref
+parameter_list|(
+name|module_info
+modifier|*
+name|mod
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_module_unref
+parameter_list|(
+name|module_info
+modifier|*
+name|mod
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1190,7 +1219,7 @@ comment|/* module_info object glue */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27cc66120408
+DECL|struct|__anon2a2389e50408
 typedef|typedef
 struct|struct
 block|{
@@ -1205,7 +1234,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon27cc66120503
+DECL|enum|__anon2a2389e50503
 enum|enum
 block|{
 DECL|enumerator|MODIFIED
@@ -2017,6 +2046,15 @@ operator|==
 name|ST_UNLOAD_REQUESTED
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|mod
+operator|->
+name|refs
+operator|==
+literal|0
+condition|)
+block|{
 name|g_module_close
 argument_list|(
 name|mod
@@ -2030,6 +2068,7 @@ name|module
 operator|=
 name|NULL
 expr_stmt|;
+block|}
 name|mod
 operator|->
 name|info
@@ -2097,7 +2136,12 @@ name|state
 operator|=
 name|ST_UNLOAD_REQUESTED
 expr_stmt|;
-comment|/* send the unload request */
+comment|/* send the unload request.  Need to ref the module so we don't    * accidentally unload it while this call is in progress (eg if the    * callback is called before the unload function returns). */
+name|gimp_module_ref
+argument_list|(
+name|mod
+argument_list|)
+expr_stmt|;
 name|mod
 operator|->
 name|unload
@@ -2110,6 +2154,11 @@ name|shutdown_data
 argument_list|,
 name|mod_unload_completed_callback
 argument_list|,
+name|mod
+argument_list|)
+expr_stmt|;
+name|gimp_module_unref
+argument_list|(
 name|mod
 argument_list|)
 expr_stmt|;
@@ -3544,7 +3593,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon27cc66120608
+DECL|struct|__anon2a2389e50608
 typedef|typedef
 struct|struct
 block|{
@@ -3721,6 +3770,107 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_module_ref (module_info * mod)
+name|gimp_module_ref
+parameter_list|(
+name|module_info
+modifier|*
+name|mod
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|mod
+operator|->
+name|refs
+operator|>=
+literal|0
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|mod
+operator|->
+name|module
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|mod
+operator|->
+name|refs
+operator|++
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_module_unref (module_info * mod)
+name|gimp_module_unref
+parameter_list|(
+name|module_info
+modifier|*
+name|mod
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|mod
+operator|->
+name|refs
+operator|>
+literal|0
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|mod
+operator|->
+name|module
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|mod
+operator|->
+name|refs
+operator|--
+expr_stmt|;
+if|if
+condition|(
+name|mod
+operator|->
+name|refs
+operator|==
+literal|0
+condition|)
+block|{
+name|g_module_close
+argument_list|(
+name|mod
+operator|->
+name|module
+argument_list|)
+expr_stmt|;
+name|mod
+operator|->
+name|module
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+block|}
+end_function
+
+begin_comment
+comment|/* End of module_db.c */
+end_comment
 
 end_unit
 
