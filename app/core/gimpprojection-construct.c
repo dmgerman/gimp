@@ -503,9 +503,12 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon29f4f2ab0103
+DECL|enum|__anon2c2914e80103
 enum|enum
 block|{
+DECL|enumerator|CLEAN
+name|CLEAN
+block|,
 DECL|enumerator|DIRTY
 name|DIRTY
 block|,
@@ -605,6 +608,24 @@ operator|->
 name|destroy
 operator|=
 name|gimp_image_destroy
+expr_stmt|;
+name|gimp_image_signals
+index|[
+name|CLEAN
+index|]
+operator|=
+name|gimp_signal_new
+argument_list|(
+literal|"clean"
+argument_list|,
+name|GTK_RUN_FIRST
+argument_list|,
+name|type
+argument_list|,
+literal|0
+argument_list|,
+name|gimp_sigtype_void
+argument_list|)
 expr_stmt|;
 name|gimp_image_signals
 index|[
@@ -848,6 +869,12 @@ expr_stmt|;
 name|gimage
 operator|->
 name|undo_levels
+operator|=
+literal|0
+expr_stmt|;
+name|gimage
+operator|->
+name|group_count
 operator|=
 literal|0
 expr_stmt|;
@@ -4864,9 +4891,14 @@ argument_list|)
 argument_list|)
 argument_list|)
 condition|)
-name|gimp_image_dirty
+name|undo_push_cantundo
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"attach parasite to image"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|parasite_list_add
@@ -4963,9 +4995,14 @@ argument_list|(
 name|p
 argument_list|)
 condition|)
-name|gimp_image_dirty
+name|undo_push_cantundo
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"detach parasite from image"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|parasite_list_remove
@@ -9088,9 +9125,15 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gimp_image_dirty
+comment|/* Dirty the image, but we're too lazy to provide a 	       * proper undo. */
+name|undo_push_cantundo
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"raise layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -9418,9 +9461,14 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gimp_image_dirty
+name|undo_push_cantundo
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"lower layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -9707,9 +9755,14 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gimp_image_dirty
+name|undo_push_cantundo
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"raise layer to top"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -10035,9 +10088,14 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gimp_image_dirty
+name|undo_push_cantundo
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"lower layer to bottom"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -10339,9 +10397,14 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gimp_image_dirty
+name|undo_push_cantundo
 argument_list|(
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"re-position layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -14267,6 +14330,14 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/* NOTE about the gimage->dirty counter:  *   If 0, then the image is clean (ie, copy on disk is the same as the one   *      in memory).  *   If positive, then that's the number of dirtying operations done  *       on the image since the last save.  *   If negative, then user has hit undo and gone back in time prior  *       to the saved copy.  Hitting redo will eventually come back to  *       the saved copy.  *  *   The image is dirty (ie, needs saving) if counter is non-zero.  *  *   If the counter is around 10000, this is due to undo-ing back  *   before a saved version, then mutating the image (thus destroying  *   the redo stack).  Once this has happened, it's impossible to get  *   the image back to the state on disk, since the redo info has been  *   freed.  See undo.c for the gorey details.  */
+end_comment
+
+begin_comment
+comment|/*  * NEVER CALL gimp_image_dirty() directly!  *  * If your code has just dirtied the image, push an undo instead.  * Failing that, push the trivial undo which tells the user the  * command is not undoable: undo_push_cantundo() (But really, it would  * be best to push a proper undo).  If you just dirty the image  * without pushing an undo then the dirty count is increased, but  * popping that many undo actions won't lead to a clean image.  */
+end_comment
+
 begin_function
 name|gint
 DECL|function|gimp_image_dirty (GimpImage * gimage)
@@ -14277,7 +14348,6 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-comment|/*  if (gimage->dirty< 0)     gimage->dirty = 2;   else */
 name|gimage
 operator|->
 name|dirty
@@ -14314,11 +14384,23 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-comment|/*  if (gimage->dirty<= 0)     gimage->dirty = 0;   else */
 name|gimage
 operator|->
 name|dirty
 operator|--
+expr_stmt|;
+name|gtk_signal_emit
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|,
+name|gimp_image_signals
+index|[
+name|CLEAN
+index|]
+argument_list|)
 expr_stmt|;
 return|return
 name|gimage
@@ -14343,6 +14425,19 @@ operator|->
 name|dirty
 operator|=
 literal|0
+expr_stmt|;
+name|gtk_signal_emit
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|,
+name|gimp_image_signals
+index|[
+name|CLEAN
+index|]
+argument_list|)
 expr_stmt|;
 block|}
 end_function

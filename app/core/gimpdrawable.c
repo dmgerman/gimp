@@ -76,7 +76,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon29bf8d230103
+DECL|enum|__anon294d8a920103
 enum|enum
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
@@ -2113,11 +2113,16 @@ argument_list|)
 argument_list|)
 argument_list|)
 condition|)
-name|gimp_image_dirty
+name|undo_push_cantundo
 argument_list|(
 name|drawable
 operator|->
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"parasite attach to drawable"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|parasite_list_add
@@ -2265,11 +2270,16 @@ argument_list|(
 name|p
 argument_list|)
 condition|)
-name|gimp_image_dirty
+name|undo_push_cantundo
 argument_list|(
 name|drawable
 operator|->
 name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"detach parasite from drawable"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|parasite_list_remove

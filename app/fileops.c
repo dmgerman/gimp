@@ -2532,6 +2532,11 @@ argument_list|,
 name|gimage
 argument_list|)
 expr_stmt|;
+name|gimp_image_clean_all
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 name|g_message

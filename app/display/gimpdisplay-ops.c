@@ -384,15 +384,11 @@ operator|==
 literal|1
 operator|)
 operator|&&
-operator|(
 name|gdisp
 operator|->
 name|gimage
 operator|->
 name|dirty
-operator|>
-literal|0
-operator|)
 operator|&&
 name|confirm_on_close
 condition|)

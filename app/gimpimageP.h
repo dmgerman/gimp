@@ -320,6 +320,11 @@ name|gint
 name|undo_levels
 decl_stmt|;
 comment|/*  levels in undo stack         */
+DECL|member|group_count
+name|gint
+name|group_count
+decl_stmt|;
+comment|/*  nested undo groups           */
 DECL|member|pushing_undo_group
 name|gint
 name|pushing_undo_group

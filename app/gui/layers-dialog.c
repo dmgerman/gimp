@@ -16738,23 +16738,32 @@ name|layer
 argument_list|)
 operator|->
 name|name
-condition|)
-block|{
-comment|/*  If the layer is a floating selection, make it a layer  */
-if|if
-condition|(
+operator|&&
 name|layer_is_floating_sel
 argument_list|(
 name|layer
 argument_list|)
 condition|)
 block|{
+comment|/*  If the layer is a floating selection, make it a layer  */
 name|floating_sel_to_layer
 argument_list|(
 name|layer
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+comment|/* We're doing a plain rename */
+name|undo_push_layer_rename
+argument_list|(
+name|options
+operator|->
+name|gimage
+argument_list|,
+name|layer
+argument_list|)
+expr_stmt|;
 block|}
 name|layer_set_name
 argument_list|(
@@ -16769,13 +16778,6 @@ operator|->
 name|name_entry
 argument_list|)
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimage_dirty
-argument_list|(
-name|options
-operator|->
-name|gimage
 argument_list|)
 expr_stmt|;
 block|}
