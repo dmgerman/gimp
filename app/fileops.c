@@ -4601,10 +4601,6 @@ condition|(
 name|return_val
 condition|)
 block|{
-name|TempBuf
-modifier|*
-name|tempbuf
-decl_stmt|;
 comment|/*  set this image to clean  */
 name|gimage_clean_all
 argument_list|(
@@ -4625,6 +4621,22 @@ expr_stmt|;
 comment|/*  use the same plug-in for this image next time  */
 comment|/* DISABLED - gets stuck on first saved format... needs 	 attention --Adam */
 comment|/* gimage_set_save_proc(gimage, file_proc); */
+comment|/* Write a thumbnail for the saved image, where appropriate */
+switch|switch
+condition|(
+name|thumbnail_mode
+condition|)
+block|{
+case|case
+literal|0
+case|:
+break|break;
+default|default:
+block|{
+name|TempBuf
+modifier|*
+name|tempbuf
+decl_stmt|;
 name|tempbuf
 operator|=
 name|make_thumb_tempbuf
@@ -4641,6 +4653,8 @@ argument_list|,
 name|tempbuf
 argument_list|)
 expr_stmt|;
+block|}
+block|}
 comment|/*  set the image title  */
 name|gimp_image_set_filename
 argument_list|(
@@ -5549,6 +5563,28 @@ expr_stmt|;
 block|}
 else|else
 block|{
+switch|switch
+condition|(
+name|thumbnail_mode
+condition|)
+block|{
+case|case
+literal|0
+case|:
+name|gtk_label_set_text
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|open_options_label
+argument_list|)
+argument_list|,
+literal|"(thumbnail saving is disabled)"
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+literal|1
+case|:
 name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
@@ -5559,6 +5595,19 @@ argument_list|,
 literal|"(could not write thumbnail file)"
 argument_list|)
 expr_stmt|;
+break|break;
+default|default:
+name|gtk_label_set_text
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|open_options_label
+argument_list|)
+argument_list|,
+literal|"(thumbnail file not written)"
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 name|gtk_widget_show
 argument_list|(
@@ -5821,6 +5870,16 @@ operator|&
 name|RGBbuf_h
 argument_list|)
 expr_stmt|;
+switch|switch
+condition|(
+name|thumbnail_mode
+condition|)
+block|{
+case|case
+literal|0
+case|:
+break|break;
+default|default:
 name|file_save_thumbnail
 argument_list|(
 name|gimage_to_be_thumbed
@@ -5830,6 +5889,7 @@ argument_list|,
 name|tempbuf
 argument_list|)
 expr_stmt|;
+block|}
 name|set_preview
 argument_list|(
 name|filename

@@ -206,7 +206,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2ad3c6fb0103
+DECL|enum|__anon29d8ca590103
 typedef|typedef
 enum|enum
 block|{
@@ -890,6 +890,15 @@ begin_comment
 DECL|variable|max_new_image_size
 comment|/* 32 MB */
 end_comment
+
+begin_decl_stmt
+DECL|variable|thumbnail_mode
+name|int
+name|thumbnail_mode
+init|=
+literal|1
+decl_stmt|;
+end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
@@ -2368,6 +2377,17 @@ name|TT_MEMSIZE
 block|,
 operator|&
 name|max_new_image_size
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"thumbnail-mode"
+block|,
+name|TT_INT
+block|,
+operator|&
+name|thumbnail_mode
 block|,
 name|NULL
 block|}
