@@ -1935,7 +1935,7 @@ condition|)
 block|{
 name|paint_core_name
 operator|=
-literal|"GimpPencil"
+literal|"GimpPaintbrush"
 expr_stmt|;
 block|}
 elseif|else

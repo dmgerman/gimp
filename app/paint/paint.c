@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppencil.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpsmudge.h"
 end_include
 
@@ -152,9 +146,7 @@ block|,
 name|gimp_eraser_register
 block|,
 name|gimp_paintbrush_register
-block|,
-name|gimp_pencil_register
-block|,   }
+block|}
 decl_stmt|;
 name|gint
 name|i
@@ -333,19 +325,6 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|paint_type
-operator|==
-name|GIMP_TYPE_PENCIL
-condition|)
-block|{
-name|pdb_string
-operator|=
-literal|"gimp_pencil"
-expr_stmt|;
-block|}
-elseif|else
 if|if
 condition|(
 name|paint_type

@@ -6,150 +6,106 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_PENCIL_H__
+name|__GIMP_PENCIL_OPTIONS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_PENCIL_H__
+DECL|macro|__GIMP_PENCIL_OPTIONS_H__
 define|#
 directive|define
-name|__GIMP_PENCIL_H__
+name|__GIMP_PENCIL_OPTIONS_H__
 end_define
-
-begin_comment
-comment|/* FIXME: This whole core should probably just be a paintbrush core that  *        has an option of hard edge.  It'll give the "pencil core" all the  *        flashy stuff the paintbrush core has, and not duplicate code.  */
-end_comment
 
 begin_include
 include|#
 directive|include
-file|"gimppaintcore.h"
+file|"gimppaintoptions.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_PENCIL
+DECL|macro|GIMP_TYPE_PENCIL_OPTIONS
 define|#
 directive|define
-name|GIMP_TYPE_PENCIL
-value|(gimp_pencil_get_type ())
+name|GIMP_TYPE_PENCIL_OPTIONS
+value|(gimp_pencil_options_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_PENCIL (obj)
+DECL|macro|GIMP_PENCIL_OPTIONS (obj)
 define|#
 directive|define
-name|GIMP_PENCIL
+name|GIMP_PENCIL_OPTIONS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_PENCIL, GimpPencil))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_PENCIL_OPTIONS, GimpPencilOptions))
 end_define
 
 begin_define
-DECL|macro|GIMP_PENCIL_CLASS (klass)
+DECL|macro|GIMP_PENCIL_OPTIONS_CLASS (klass)
 define|#
 directive|define
-name|GIMP_PENCIL_CLASS
+name|GIMP_PENCIL_OPTIONS_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_PENCIL, GimpPencilClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_PENCIL_OPTIONS, GimpPencilOptionsClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_PENCIL (obj)
+DECL|macro|GIMP_IS_PENCIL_OPTIONS (obj)
 define|#
 directive|define
-name|GIMP_IS_PENCIL
+name|GIMP_IS_PENCIL_OPTIONS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_PENCIL))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_PENCIL_OPTIONS))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_PENCIL_CLASS (klass)
+DECL|macro|GIMP_IS_PENCIL_OPTIONS_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_PENCIL_CLASS
+name|GIMP_IS_PENCIL_OPTIONS_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PENCIL))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PENCIL_OPTIONS))
 end_define
 
 begin_define
-DECL|macro|GIMP_PENCIL_GET_CLASS (obj)
+DECL|macro|GIMP_PENCIL_OPTIONS_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_PENCIL_GET_CLASS
+name|GIMP_PENCIL_OPTIONS_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_PENCIL, GimpPencilClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_PENCIL_OPTIONS, GimpPencilOptionsClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpPencil
+DECL|typedef|GimpPencilOptions
 typedef|typedef
 name|struct
-name|_GimpPencil
-name|GimpPencil
+name|_GimpPaintOptions
+name|GimpPencilOptions
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpPencilClass
+DECL|typedef|GimpPencilOptionsClass
 typedef|typedef
 name|struct
-name|_GimpPencilClass
-name|GimpPencilClass
+name|_GimpPaintOptionsClass
+name|GimpPencilOptionsClass
 typedef|;
 end_typedef
-
-begin_struct
-DECL|struct|_GimpPencil
-struct|struct
-name|_GimpPencil
-block|{
-DECL|member|parent_instance
-name|GimpPaintCore
-name|parent_instance
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
-begin_struct
-DECL|struct|_GimpPencilClass
-struct|struct
-name|_GimpPencilClass
-block|{
-DECL|member|parent_class
-name|GimpPaintCoreClass
-name|parent_class
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
-begin_function_decl
-name|void
-name|gimp_pencil_register
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
-name|GimpPaintRegisterCallback
-name|callback
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_decl_stmt
 name|GType
-name|gimp_pencil_get_type
+name|gimp_pencil_options_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -163,7 +119,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_PENCIL_H__  */
+comment|/*  __GIMP_PENCIL_OPTIONS_H__  */
 end_comment
 
 end_unit

@@ -30,13 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint/gimppencil.h"
+file|"paint/gimppaintbrush.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"paint/gimppaintoptions.h"
+file|"paint/gimppenciloptions.h"
 end_include
 
 begin_include
@@ -121,7 +121,7 @@ call|)
 argument_list|(
 name|GIMP_TYPE_PENCIL_TOOL
 argument_list|,
-name|GIMP_TYPE_PAINT_OPTIONS
+name|GIMP_TYPE_PENCIL_OPTIONS
 argument_list|,
 name|gimp_paint_options_gui
 argument_list|,
@@ -340,7 +340,7 @@ name|core
 operator|=
 name|g_object_new
 argument_list|(
-name|GIMP_TYPE_PENCIL
+name|GIMP_TYPE_PAINTBRUSH
 argument_list|,
 name|NULL
 argument_list|)
