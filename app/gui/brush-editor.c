@@ -1137,7 +1137,7 @@ literal|"generated_brush_editor"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/generated_brush_editor.html"
+literal|"dialogs/brush_editor.html"
 argument_list|,
 name|GTK_WIN_POS_NONE
 argument_list|,
