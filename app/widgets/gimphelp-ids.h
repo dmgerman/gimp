@@ -2497,6 +2497,14 @@ value|"gimp-prefs-monitor"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_PREFS_WINDOW_MANAGER
+define|#
+directive|define
+name|GIMP_HELP_PREFS_WINDOW_MANAGER
+value|"gimp-prefs-window-manager"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_PREFS_ENVIRONMENT
 define|#
 directive|define
