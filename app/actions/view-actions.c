@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"actions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"view-actions.h"
 end_include
 
@@ -266,7 +272,10 @@ argument_list|)
 block|,
 literal|"minus"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Zoom out"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -288,7 +297,10 @@ argument_list|)
 block|,
 literal|"plus"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Zoom in"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -310,7 +322,10 @@ argument_list|)
 block|,
 literal|"<control><shift>E"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Fit image in window"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -332,7 +347,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Fit image to window"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -411,7 +429,7 @@ block|,
 block|{
 literal|"view-shrink-wrap"
 block|,
-name|NULL
+name|GTK_STOCK_ZOOM_FIT
 block|,
 name|N_
 argument_list|(
@@ -420,7 +438,10 @@ argument_list|)
 block|,
 literal|"<control>E"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Shrink wrap"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -850,7 +871,10 @@ argument_list|)
 block|,
 literal|"1"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Zoom 1:1"
+argument_list|)
 block|,
 literal|10000
 block|,
@@ -1530,44 +1554,18 @@ name|n_screens
 init|=
 literal|1
 decl_stmt|;
+name|gdisp
+operator|=
+name|action_data_get_display
+argument_list|(
+name|data
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
-name|GIMP_IS_DISPLAY_SHELL
-argument_list|(
-name|data
-argument_list|)
+name|gdisp
 condition|)
 block|{
-name|shell
-operator|=
-name|GIMP_DISPLAY_SHELL
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
-name|gdisp
-operator|=
-name|shell
-operator|->
-name|gdisp
-expr_stmt|;
-block|}
-elseif|else
-if|if
-condition|(
-name|GIMP_IS_DISPLAY
-argument_list|(
-name|data
-argument_list|)
-condition|)
-block|{
-name|gdisp
-operator|=
-name|GIMP_DISPLAY
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
 name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
@@ -1577,12 +1575,6 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
-block|}
-if|if
-condition|(
-name|gdisp
-condition|)
-block|{
 name|gimage
 operator|=
 name|gdisp
