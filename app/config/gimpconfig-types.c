@@ -738,10 +738,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_empty_stmt
-empty_stmt|;
-end_empty_stmt
-
 begin_function
 specifier|static
 name|void
@@ -789,10 +785,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_empty_stmt
-empty_stmt|;
-end_empty_stmt
-
 begin_function
 specifier|static
 name|void
@@ -832,10 +824,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_empty_stmt
-empty_stmt|;
-end_empty_stmt
 
 begin_function
 specifier|static
@@ -942,10 +930,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_empty_stmt
-empty_stmt|;
-end_empty_stmt
 
 end_unit
 

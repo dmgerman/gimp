@@ -20,7 +20,7 @@ begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 name|enum
-DECL|enum|__anon2901475e0103
+DECL|enum|__anon2896701d0103
 type|{
 DECL|enumerator|PIXEL_WRAP
 name|PIXEL_WRAP
@@ -30,7 +30,6 @@ name|PIXEL_SMEAR
 decl_stmt|,
 DECL|enumerator|PIXEL_BLACK
 name|PIXEL_BLACK
-decl_stmt|,
 end_decl_stmt
 
 begin_typedef

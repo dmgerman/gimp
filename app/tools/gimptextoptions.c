@@ -137,14 +137,14 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2797ce740103
+DECL|enum|__anon275dd5340103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
 block|,
 DECL|enumerator|PROP_TEXT
 name|PROP_TEXT
-block|, }
+block|}
 enum|;
 end_enum
 

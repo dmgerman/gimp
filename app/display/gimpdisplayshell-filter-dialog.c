@@ -2478,7 +2478,7 @@ name|GType
 modifier|*
 name|filter_types
 decl_stmt|;
-name|gint
+name|guint
 name|n_filter_types
 decl_stmt|;
 name|gint

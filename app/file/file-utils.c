@@ -1350,7 +1350,7 @@ decl_stmt|,
 modifier|*
 name|tmpptr
 decl_stmt|;
-name|gint
+name|guint
 name|k
 decl_stmt|;
 while|while
@@ -1366,7 +1366,7 @@ operator|(
 operator|(
 operator|(
 operator|(
-name|char
+name|gchar
 operator|*
 operator|)
 name|uout
@@ -1512,7 +1512,7 @@ expr_stmt|;
 name|sscanf
 argument_list|(
 operator|(
-name|char
+name|gchar
 operator|*
 operator|)
 name|tmp
@@ -1943,7 +1943,7 @@ name|num_operator_ptr
 operator|+
 literal|1
 argument_list|,
-literal|"%ld"
+literal|"%lu"
 argument_list|,
 operator|&
 name|num_operatorval

@@ -3130,7 +3130,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2a9e95d60103
+DECL|enum|__anon277c29030103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
@@ -4033,7 +4033,7 @@ name|offx
 decl_stmt|,
 name|offy
 decl_stmt|;
-name|gchar
+name|guchar
 name|col
 index|[
 name|MAX_CHANNELS

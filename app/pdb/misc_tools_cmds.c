@@ -1368,8 +1368,6 @@ name|gimage
 argument_list|,
 name|drawable
 argument_list|,
-name|sample_merged
-argument_list|,
 operator|(
 name|gint
 operator|)
@@ -1380,14 +1378,16 @@ name|gint
 operator|)
 name|y
 argument_list|,
+name|sample_merged
+argument_list|,
 name|sample_average
 argument_list|,
 name|average_radius
 argument_list|,
+name|NULL
+argument_list|,
 operator|&
 name|color
-argument_list|,
-name|NULL
 argument_list|,
 name|NULL
 argument_list|)

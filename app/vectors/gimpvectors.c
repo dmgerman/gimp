@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4ca0b10103
+DECL|enum|__anon29c9a3d50103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -932,10 +932,6 @@ literal|0
 expr_stmt|;
 block|}
 end_function
-
-begin_empty_stmt
-empty_stmt|;
-end_empty_stmt
 
 begin_function
 specifier|static
@@ -3293,7 +3289,6 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-return|return
 name|GIMP_VECTORS_GET_CLASS
 argument_list|(
 name|vectors
@@ -3305,7 +3300,7 @@ name|vectors
 argument_list|,
 name|anchor
 argument_list|)
-return|;
+expr_stmt|;
 block|}
 end_function
 

@@ -34,15 +34,15 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad91eaf0103
+DECL|enum|__anon2a42ae050103
 block|{
 DECL|enumerator|GIMP_ANCHOR_ANCHOR
 name|GIMP_ANCHOR_ANCHOR
 block|,
 DECL|enumerator|GIMP_ANCHOR_CONTROL
 name|GIMP_ANCHOR_CONTROL
-block|, }
 DECL|typedef|GimpAnchorType
+block|}
 name|GimpAnchorType
 typedef|;
 end_typedef
@@ -50,7 +50,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad91eaf0203
+DECL|enum|__anon2a42ae050203
 block|{
 DECL|enumerator|GIMP_ANCHOR_FEATURE_NONE
 name|GIMP_ANCHOR_FEATURE_NONE
@@ -63,8 +63,8 @@ name|GIMP_ANCHOR_FEATURE_ALIGNED
 block|,
 DECL|enumerator|GIMP_ANCHOR_FEATURE_SYMMETRIC
 name|GIMP_ANCHOR_FEATURE_SYMMETRIC
-block|, }
 DECL|typedef|GimpAnchorFeatureType
+block|}
 name|GimpAnchorFeatureType
 typedef|;
 end_typedef
@@ -72,15 +72,15 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad91eaf0303
+DECL|enum|__anon2a42ae050303
 block|{
 DECL|enumerator|EXTEND_SIMPLE
 name|EXTEND_SIMPLE
 block|,
 DECL|enumerator|EXTEND_EDITABLE
 name|EXTEND_EDITABLE
-block|, }
 DECL|typedef|GimpVectorExtendMode
+block|}
 name|GimpVectorExtendMode
 typedef|;
 end_typedef

@@ -130,7 +130,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b86cadd0103
+DECL|enum|__anon28e443de0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -149,7 +149,7 @@ name|PROP_NUM_PROCESSORS
 block|,
 DECL|enumerator|PROP_TILE_CACHE_SIZE
 name|PROP_TILE_CACHE_SIZE
-block|, }
+block|}
 enum|;
 end_enum
 

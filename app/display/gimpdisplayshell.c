@@ -280,7 +280,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2948f9250103
+DECL|enum|__anon2a17b2540103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -5298,7 +5298,7 @@ name|GdkColor
 name|bg
 decl_stmt|;
 specifier|const
-name|gchar
+name|guchar
 name|stipple
 index|[]
 init|=
@@ -5389,6 +5389,7 @@ operator|->
 name|window
 argument_list|,
 operator|(
+specifier|const
 name|gchar
 operator|*
 operator|)
@@ -5452,6 +5453,7 @@ operator|->
 name|window
 argument_list|,
 operator|(
+specifier|const
 name|gchar
 operator|*
 operator|)
@@ -5553,6 +5555,7 @@ operator|->
 name|window
 argument_list|,
 operator|(
+specifier|const
 name|gchar
 operator|*
 operator|)
@@ -5616,6 +5619,7 @@ operator|->
 name|window
 argument_list|,
 operator|(
+specifier|const
 name|gchar
 operator|*
 operator|)
@@ -5961,10 +5965,9 @@ name|list
 condition|;
 name|list
 operator|=
-name|g_list_next
-argument_list|(
 name|list
-argument_list|)
+operator|->
+name|next
 control|)
 block|{
 name|guide

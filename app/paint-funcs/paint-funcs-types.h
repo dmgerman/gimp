@@ -50,7 +50,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon294083c80103
+DECL|enum|__anon2c2f0c930103
 block|{
 DECL|enumerator|INITIAL_CHANNEL_MASK
 name|INITIAL_CHANNEL_MASK
@@ -71,8 +71,8 @@ name|INITIAL_INTENSITY
 block|,
 DECL|enumerator|INITIAL_INTENSITY_ALPHA
 name|INITIAL_INTENSITY_ALPHA
-block|, }
 DECL|typedef|InitialMode
+block|}
 name|InitialMode
 typedef|;
 end_typedef
@@ -85,7 +85,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon294083c80203
+DECL|enum|__anon2c2f0c930203
 block|{
 DECL|enumerator|NO_COMBINATION
 name|NO_COMBINATION
@@ -149,8 +149,8 @@ name|ANTI_ERASE_INDEXED
 block|,
 DECL|enumerator|COLOR_ERASE_INTEN
 name|COLOR_ERASE_INTEN
-block|, }
 DECL|typedef|CombinationMode
+block|}
 name|CombinationMode
 typedef|;
 end_typedef

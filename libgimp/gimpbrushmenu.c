@@ -267,7 +267,7 @@ name|gint
 name|brush_height
 parameter_list|,
 specifier|const
-name|gchar
+name|guchar
 modifier|*
 name|mask_data
 parameter_list|)
@@ -1439,7 +1439,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_select_preview_update (GtkWidget * preview,gint brush_width,gint brush_height,const gchar * mask_data)
+DECL|function|gimp_brush_select_preview_update (GtkWidget * preview,gint brush_width,gint brush_height,const guchar * mask_data)
 name|gimp_brush_select_preview_update
 parameter_list|(
 name|GtkWidget
@@ -1453,7 +1453,7 @@ name|gint
 name|brush_height
 parameter_list|,
 specifier|const
-name|gchar
+name|guchar
 modifier|*
 name|mask_data
 parameter_list|)
