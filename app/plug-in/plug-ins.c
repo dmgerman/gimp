@@ -961,6 +961,9 @@ argument_list|,
 name|def
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|VERBOSE
 name|g_print
 argument_list|(
 literal|"added locale domain \"%s\" for path \"%s\"\n"
@@ -986,6 +989,8 @@ else|:
 literal|"(null)"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 block|}
 if|if
 condition|(
@@ -1053,6 +1058,9 @@ argument_list|,
 name|def
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|VERBOSE
 name|g_print
 argument_list|(
 literal|"added help domain \"%s\" for base uri \"%s\"\n"
@@ -1078,6 +1086,8 @@ else|:
 literal|"(null)"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 block|}
 block|}
 if|if
@@ -2239,7 +2249,7 @@ name|write_pluginrc
 operator|=
 name|TRUE
 expr_stmt|;
-name|g_print
+name|g_printerr
 argument_list|(
 literal|"executable not found: '%s'\n"
 argument_list|,
@@ -3545,7 +3555,7 @@ operator|==
 literal|0
 condition|)
 block|{
-name|g_print
+name|g_printerr
 argument_list|(
 literal|"skipping duplicate plug-in: '%s'\n"
 argument_list|,
