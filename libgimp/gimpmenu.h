@@ -328,7 +328,7 @@ name|widget
 parameter_list|,
 name|gchar
 modifier|*
-name|pname
+name|bname
 parameter_list|,
 name|gdouble
 name|opacity

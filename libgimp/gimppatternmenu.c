@@ -1350,6 +1350,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_pattern_select_widget:  * @dname: Title of the dialog to use.  NULL means to use the default title.  * @ipattern: Initial pattern name. NULL means to use current selection.   * @cback: a function to call when the selected pattern changes.  * @data: a pointer to arbitary data to be used in the call to @cback.  *  * Creates a new #GtkWidget that completely controls the selection of a   * pattern.  This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns:A #GtkWidget that you can use in your UI.  */
+end_comment
+
 begin_function
 name|GtkWidget
 modifier|*
@@ -1719,6 +1723,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_pattern_select_widget_close_popup:  * @widget: A pattern select widget.  *  * Closes the popup window associated with @widget.  */
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_pattern_select_widget_close_popup (GtkWidget * widget)
@@ -1774,6 +1782,10 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_pattern_select_widget_set_popup:  * @widget: A pattern select widget.  * @pname: Pattern name to set. NULL means no change.   *  * Sets the current pattern for the pattern  * select widget.  Calls the callback function if one was  * supplied in the call to gimp_pattern_select_widget().  */
+end_comment
 
 begin_function
 name|void
