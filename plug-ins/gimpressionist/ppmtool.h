@@ -5,8 +5,9 @@ directive|include
 file|<glib.h>
 end_include
 
-begin_struct
+begin_typedef
 DECL|struct|ppm
+typedef|typedef
 struct|struct
 name|ppm
 block|{
@@ -24,9 +25,11 @@ name|char
 modifier|*
 name|col
 decl_stmt|;
+DECL|typedef|ppm_t
 block|}
-struct|;
-end_struct
+name|ppm_t
+typedef|;
+end_typedef
 
 begin_function_decl
 name|void
@@ -43,8 +46,7 @@ begin_function_decl
 name|void
 name|killppm
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|)
@@ -55,8 +57,7 @@ begin_function_decl
 name|void
 name|newppm
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
@@ -73,8 +74,7 @@ begin_function_decl
 name|void
 name|getrgb
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|s
 parameter_list|,
@@ -96,8 +96,7 @@ begin_function_decl
 name|void
 name|resize
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
@@ -114,8 +113,7 @@ begin_function_decl
 name|void
 name|rescale
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
@@ -129,8 +127,7 @@ begin_function_decl
 name|void
 name|resize_fast
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
@@ -151,8 +148,7 @@ name|char
 modifier|*
 name|fn
 parameter_list|,
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|)
@@ -163,8 +159,7 @@ begin_function_decl
 name|void
 name|saveppm
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
@@ -180,13 +175,11 @@ begin_function_decl
 name|void
 name|copyppm
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|s
 parameter_list|,
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|)
@@ -197,8 +190,7 @@ begin_function_decl
 name|void
 name|fill
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
@@ -213,8 +205,7 @@ begin_function_decl
 name|void
 name|freerotate
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
@@ -228,8 +219,7 @@ begin_function_decl
 name|void
 name|pad
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
@@ -255,8 +245,7 @@ begin_function_decl
 name|void
 name|edgepad
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
@@ -279,8 +268,7 @@ begin_function_decl
 name|void
 name|autocrop
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
@@ -294,8 +282,7 @@ begin_function_decl
 name|void
 name|crop
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
@@ -318,8 +305,7 @@ begin_function_decl
 name|void
 name|ppmgamma
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
@@ -342,8 +328,7 @@ begin_function_decl
 name|void
 name|ppmbrightness
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
@@ -366,8 +351,7 @@ begin_function_decl
 name|void
 name|putrgb_fast
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|s
 parameter_list|,
@@ -388,8 +372,7 @@ begin_function_decl
 name|void
 name|putrgb
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|s
 parameter_list|,
@@ -410,8 +393,7 @@ begin_function_decl
 name|void
 name|drawline
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
@@ -438,13 +420,11 @@ begin_function_decl
 name|void
 name|repaint
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|a
 parameter_list|)
@@ -455,8 +435,7 @@ begin_function_decl
 name|void
 name|blur
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
@@ -473,8 +452,7 @@ begin_function_decl
 name|void
 name|mkgrayplasma
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,

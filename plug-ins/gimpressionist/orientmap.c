@@ -104,6 +104,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|vectorprev
+specifier|static
 name|GtkWidget
 modifier|*
 name|vectorprev
@@ -114,6 +115,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|ompreviewprev
+specifier|static
 name|GtkWidget
 modifier|*
 name|ompreviewprev
@@ -210,20 +212,8 @@ value|150
 end_define
 
 begin_decl_stmt
-DECL|variable|buffer
-name|char
-name|buffer
-index|[
-name|OMWIDTH
-operator|*
-name|OMHEIGHT
-index|]
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|vector
-name|struct
+specifier|static
 name|vector_t
 name|vector
 index|[
@@ -234,6 +224,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|numvect
+specifier|static
 name|int
 name|numvect
 init|=
@@ -243,6 +234,7 @@ end_decl_stmt
 
 begin_function
 DECL|function|degtorad (double d)
+specifier|static
 name|double
 name|degtorad
 parameter_list|(
@@ -295,89 +287,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|skipnum (char * s)
-name|char
-modifier|*
-name|skipnum
-parameter_list|(
-name|char
-modifier|*
-name|s
-parameter_list|)
-block|{
-while|while
-condition|(
-operator|(
-operator|*
-name|s
-operator|==
-literal|' '
-operator|)
-operator|||
-operator|(
-operator|*
-name|s
-operator|==
-literal|'\t'
-operator|)
-condition|)
-name|s
-operator|++
-expr_stmt|;
-while|while
-condition|(
-operator|(
-operator|(
-operator|*
-name|s
-operator|>=
-literal|'0'
-operator|)
-operator|&&
-operator|(
-operator|*
-name|s
-operator|<=
-literal|'9'
-operator|)
-operator|)
-operator|||
-operator|(
-operator|*
-name|s
-operator|==
-literal|'.'
-operator|)
-condition|)
-name|s
-operator|++
-expr_stmt|;
-while|while
-condition|(
-operator|(
-operator|*
-name|s
-operator|==
-literal|' '
-operator|)
-operator|||
-operator|(
-operator|*
-name|s
-operator|==
-literal|'\t'
-operator|)
-condition|)
-name|s
-operator|++
-expr_stmt|;
-return|return
-name|s
-return|;
-block|}
-end_function
-
-begin_function
 DECL|function|dist (double x,double y,double dx,double dy)
 name|double
 name|dist
@@ -398,37 +307,27 @@ block|{
 name|double
 name|ax
 init|=
-name|fabs
-argument_list|(
 name|dx
 operator|-
 name|x
-argument_list|)
 decl_stmt|;
 name|double
 name|ay
 init|=
-name|fabs
-argument_list|(
 name|dy
 operator|-
 name|y
-argument_list|)
 decl_stmt|;
 return|return
 name|sqrt
 argument_list|(
-operator|(
 name|ax
 operator|*
 name|ax
-operator|)
 operator|+
-operator|(
 name|ay
 operator|*
 name|ay
-operator|)
 argument_list|)
 return|;
 block|}
@@ -506,7 +405,6 @@ name|dy
 decl_stmt|,
 name|dst
 decl_stmt|;
-name|struct
 name|vector_t
 modifier|*
 name|vec
@@ -1090,6 +988,7 @@ end_function
 
 begin_function
 DECL|function|updateompreviewprev (void)
+specifier|static
 name|void
 name|updateompreviewprev
 parameter_list|(
@@ -1102,8 +1001,7 @@ decl_stmt|,
 name|y
 decl_stmt|;
 specifier|static
-name|struct
-name|ppm
+name|ppm_t
 name|nbuffer
 init|=
 block|{
@@ -1355,6 +1253,7 @@ end_function
 
 begin_decl_stmt
 DECL|variable|selectedvector
+specifier|static
 name|int
 name|selectedvector
 init|=
@@ -1364,6 +1263,7 @@ end_decl_stmt
 
 begin_function
 DECL|function|updatevectorprev (void)
+specifier|static
 name|void
 name|updatevectorprev
 parameter_list|(
@@ -1371,8 +1271,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|struct
-name|ppm
+name|ppm_t
 name|backup
 init|=
 block|{
@@ -1384,8 +1283,7 @@ name|NULL
 block|}
 decl_stmt|;
 specifier|static
-name|struct
-name|ppm
+name|ppm_t
 name|buffer
 init|=
 block|{
@@ -1803,15 +1701,17 @@ end_function
 
 begin_decl_stmt
 DECL|variable|adjignore
-name|int
+specifier|static
+name|gboolean
 name|adjignore
 init|=
-literal|0
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
 begin_function
 DECL|function|updatesliders (void)
+specifier|static
 name|void
 name|updatesliders
 parameter_list|(
@@ -1823,7 +1723,7 @@ name|i
 decl_stmt|;
 name|adjignore
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
@@ -1910,13 +1810,14 @@ expr_stmt|;
 block|}
 name|adjignore
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 block|}
 end_function
 
 begin_function
 DECL|function|prevclick (GtkWidget * w,gpointer data)
+specifier|static
 name|void
 name|prevclick
 parameter_list|(
@@ -1954,6 +1855,7 @@ end_function
 
 begin_function
 DECL|function|nextclick (GtkWidget * w,gpointer data)
+specifier|static
 name|void
 name|nextclick
 parameter_list|(
@@ -1989,6 +1891,7 @@ end_function
 
 begin_function
 DECL|function|addclick (GtkWidget * w,gpointer data)
+specifier|static
 name|void
 name|addclick
 parameter_list|(
@@ -2105,6 +2008,7 @@ end_function
 
 begin_function
 DECL|function|deleteclick (GtkWidget * w,gpointer data)
+specifier|static
 name|void
 name|deleteclick
 parameter_list|(
@@ -2160,7 +2064,6 @@ index|]
 argument_list|,
 sizeof|sizeof
 argument_list|(
-expr|struct
 name|vector_t
 argument_list|)
 argument_list|)
@@ -2452,6 +2355,7 @@ end_function
 
 begin_function
 DECL|function|angadjmove (GtkWidget * w,gpointer data)
+specifier|static
 name|void
 name|angadjmove
 parameter_list|(
@@ -2533,6 +2437,7 @@ end_function
 
 begin_function
 DECL|function|stradjmove (GtkWidget * w,gpointer data)
+specifier|static
 name|void
 name|stradjmove
 parameter_list|(
@@ -2574,6 +2479,7 @@ end_function
 
 begin_function
 DECL|function|strexpadjmove (GtkWidget * w,gpointer data)
+specifier|static
 name|void
 name|strexpadjmove
 parameter_list|(
@@ -2601,6 +2507,7 @@ end_function
 
 begin_function
 DECL|function|angoffadjmove (GtkWidget * w,gpointer data)
+specifier|static
 name|void
 name|angoffadjmove
 parameter_list|(
@@ -2628,6 +2535,7 @@ end_function
 
 begin_function
 DECL|function|vectypeclick (GtkWidget * w,gpointer data)
+specifier|static
 name|void
 name|vectypeclick
 parameter_list|(
@@ -2693,31 +2601,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|hidewin (GtkWidget * w,GtkWidget ** win)
-name|void
-name|hidewin
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|w
-parameter_list|,
-name|GtkWidget
-modifier|*
-modifier|*
-name|win
-parameter_list|)
-block|{
-name|gtk_widget_hide
-argument_list|(
-operator|*
-name|win
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
 DECL|function|omcancelclick (GtkWidget * w,GtkWidget * win)
+specifier|static
 name|void
 name|omcancelclick
 parameter_list|(
@@ -2744,6 +2629,7 @@ end_function
 
 begin_function
 DECL|function|omokclick (GtkWidget * w,GtkWidget * win)
+specifier|static
 name|void
 name|omokclick
 parameter_list|(
@@ -2773,28 +2659,17 @@ name|i
 operator|++
 control|)
 block|{
-name|memcpy
-argument_list|(
-operator|&
 name|pcvals
 operator|.
 name|orientvector
 index|[
 name|i
 index|]
-argument_list|,
-operator|&
+operator|=
 name|vector
 index|[
 name|i
 index|]
-argument_list|,
-sizeof|sizeof
-argument_list|(
-expr|struct
-name|vector_t
-argument_list|)
-argument_list|)
 expr_stmt|;
 block|}
 name|pcvals
@@ -2886,28 +2761,17 @@ name|i
 operator|++
 control|)
 block|{
-name|memcpy
-argument_list|(
-operator|&
 name|vector
 index|[
 name|i
 index|]
-argument_list|,
-operator|&
+operator|=
 name|pcvals
 operator|.
 name|orientvector
 index|[
 name|i
 index|]
-argument_list|,
-sizeof|sizeof
-argument_list|(
-expr|struct
-name|vector_t
-argument_list|)
-argument_list|)
 expr_stmt|;
 block|}
 block|}

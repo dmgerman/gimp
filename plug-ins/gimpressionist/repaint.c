@@ -108,18 +108,19 @@ end_include
 
 begin_decl_stmt
 DECL|variable|runningvals
+specifier|static
 name|gimpressionist_vals_t
 name|runningvals
 decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|prepbrush (struct ppm * p)
+DECL|function|prepbrush (ppm_t * p)
+specifier|static
 name|void
 name|prepbrush
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|)
@@ -291,12 +292,12 @@ block|}
 end_function
 
 begin_function
-DECL|function|sumbrush (struct ppm * p)
+DECL|function|sumbrush (ppm_t * p)
+specifier|static
 name|double
 name|sumbrush
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|)
@@ -348,6 +349,7 @@ end_function
 
 begin_function
 DECL|function|gethue (guchar * rgb)
+specifier|static
 name|int
 name|gethue
 parameter_list|(
@@ -586,17 +588,16 @@ block|}
 end_function
 
 begin_function
-DECL|function|bestbrush (struct ppm * p,struct ppm * a,int tx,int ty,struct ppm * brushes,int numbrush,double * brushsum,int start,int step)
+DECL|function|bestbrush (ppm_t * p,ppm_t * a,int tx,int ty,ppm_t * brushes,int numbrush,double * brushsum,int start,int step)
+specifier|static
 name|int
 name|bestbrush
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|a
 parameter_list|,
@@ -606,8 +607,7 @@ parameter_list|,
 name|int
 name|ty
 parameter_list|,
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|brushes
 parameter_list|,
@@ -679,8 +679,7 @@ operator|+=
 name|step
 control|)
 block|{
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|brush
 init|=
@@ -1185,27 +1184,24 @@ block|}
 end_function
 
 begin_function
-DECL|function|applybrush (struct ppm * brush,struct ppm * shadow,struct ppm * p,struct ppm * a,int tx,int ty,int r,int g,int b)
+DECL|function|applybrush (ppm_t * brush,ppm_t * shadow,ppm_t * p,ppm_t * a,int tx,int ty,int r,int g,int b)
+specifier|static
 name|void
 name|applybrush
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|brush
 parameter_list|,
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|shadow
 parameter_list|,
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|a
 parameter_list|,
@@ -1225,12 +1221,10 @@ name|int
 name|b
 parameter_list|)
 block|{
-name|struct
-name|ppm
+name|ppm_t
 name|tmp
 decl_stmt|;
-name|struct
-name|ppm
+name|ppm_t
 name|atmp
 decl_stmt|;
 name|double
@@ -1275,38 +1269,19 @@ name|pcvals
 operator|.
 name|generalshadowblur
 decl_stmt|;
-comment|/*   if((tx< 0) || (ty< 0)) {     fprintf(stderr, "applybrush: Huh!? tx=%d ty=%d\n",tx,ty);     return;   }   */
-name|memcpy
-argument_list|(
-operator|&
 name|tmp
-argument_list|,
+operator|=
+operator|*
 name|p
-argument_list|,
-sizeof|sizeof
-argument_list|(
-expr|struct
-name|ppm
-argument_list|)
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
 name|img_has_alpha
 condition|)
-name|memcpy
-argument_list|(
-operator|&
 name|atmp
-argument_list|,
+operator|=
+operator|*
 name|a
-argument_list|,
-sizeof|sizeof
-argument_list|(
-expr|struct
-name|ppm
-argument_list|)
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -2044,17 +2019,15 @@ block|}
 end_function
 
 begin_function
-DECL|function|repaint (struct ppm * p,struct ppm * a)
+DECL|function|repaint (ppm_t * p,ppm_t * a)
 name|void
 name|repaint
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|a
 parameter_list|)
@@ -2073,8 +2046,7 @@ name|ty
 init|=
 literal|0
 decl_stmt|;
-name|struct
-name|ppm
+name|ppm_t
 name|tmp
 init|=
 block|{
@@ -2085,8 +2057,7 @@ block|,
 name|NULL
 block|}
 decl_stmt|;
-name|struct
-name|ppm
+name|ppm_t
 name|atmp
 init|=
 block|{
@@ -2137,16 +2108,14 @@ block|,
 literal|0
 block|}
 decl_stmt|;
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|brushes
 decl_stmt|,
 modifier|*
 name|shadows
 decl_stmt|;
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|brush
 decl_stmt|,
@@ -2185,8 +2154,7 @@ decl_stmt|;
 name|int
 name|max_progress
 decl_stmt|;
-name|struct
-name|ppm
+name|ppm_t
 name|paperppm
 init|=
 block|{
@@ -2197,8 +2165,7 @@ block|,
 name|NULL
 block|}
 decl_stmt|;
-name|struct
-name|ppm
+name|ppm_t
 name|dirmap
 init|=
 block|{
@@ -2209,8 +2176,7 @@ block|,
 name|NULL
 block|}
 decl_stmt|;
-name|struct
-name|ppm
+name|ppm_t
 name|sizmap
 init|=
 block|{
@@ -2268,19 +2234,9 @@ return|return;
 name|running
 operator|++
 expr_stmt|;
-name|memcpy
-argument_list|(
-operator|&
 name|runningvals
-argument_list|,
-operator|&
+operator|=
 name|pcvals
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|pcvals
-argument_list|)
-argument_list|)
 expr_stmt|;
 comment|/* Shouldn't be necessary, but... */
 if|if
@@ -2381,8 +2337,7 @@ name|numbrush
 operator|*
 sizeof|sizeof
 argument_list|(
-expr|struct
-name|ppm
+name|ppm_t
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2410,8 +2365,7 @@ name|numbrush
 operator|*
 sizeof|sizeof
 argument_list|(
-expr|struct
-name|ppm
+name|ppm_t
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3286,16 +3240,30 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-name|memcpy
+name|gimp_rgb_get_uchar
 argument_list|(
 operator|&
-name|tmpcol
-argument_list|,
 name|runningvals
 operator|.
 name|color
 argument_list|,
-literal|3
+operator|&
+name|tmpcol
+index|[
+literal|0
+index|]
+argument_list|,
+operator|&
+name|tmpcol
+index|[
+literal|1
+index|]
+argument_list|,
+operator|&
+name|tmpcol
+index|[
+literal|2
+index|]
 argument_list|)
 expr_stmt|;
 name|fill
@@ -6811,10 +6779,6 @@ argument_list|(
 name|brushes
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|shadows
-condition|)
 name|g_free
 argument_list|(
 name|shadows
@@ -6825,19 +6789,11 @@ argument_list|(
 name|brushsum
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|xpos
-condition|)
 name|g_free
 argument_list|(
 name|xpos
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|ypos
-condition|)
 name|g_free
 argument_list|(
 name|ypos
@@ -6993,20 +6949,9 @@ operator|.
 name|col
 condition|)
 block|{
-name|memcpy
-argument_list|(
-operator|&
 name|tmp
-argument_list|,
-operator|&
+operator|=
 name|paperppm
-argument_list|,
-sizeof|sizeof
-argument_list|(
-expr|struct
-name|ppm
-argument_list|)
-argument_list|)
 expr_stmt|;
 name|paperppm
 operator|.

@@ -31,6 +31,7 @@ end_include
 
 begin_function
 DECL|function|pfix (int n)
+specifier|static
 name|int
 name|pfix
 parameter_list|(
@@ -78,12 +79,12 @@ value|p->col[(y)*rowstride+(x)*3+z]
 end_define
 
 begin_function
-DECL|function|mkplasma_sub (struct ppm * p,int x1,int x2,int y1,int y2,float turb)
+DECL|function|mkplasma_sub (ppm_t * p,int x1,int x2,int y1,int y2,float turb)
+specifier|static
 name|void
 name|mkplasma_sub
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
@@ -582,12 +583,12 @@ block|}
 end_function
 
 begin_function
-DECL|function|mkplasma_red (struct ppm * p,float turb)
+DECL|function|mkplasma_red (ppm_t * p,float turb)
+specifier|static
 name|void
 name|mkplasma_red
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
@@ -743,12 +744,11 @@ block|}
 end_function
 
 begin_function
-DECL|function|mkgrayplasma (struct ppm * p,float turb)
+DECL|function|mkgrayplasma (ppm_t * p,float turb)
 name|void
 name|mkgrayplasma
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,

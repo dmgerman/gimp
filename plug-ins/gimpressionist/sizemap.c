@@ -194,7 +194,6 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|smvector
-name|struct
 name|smvector_t
 name|smvector
 index|[
@@ -262,7 +261,6 @@ name|ssum
 decl_stmt|,
 name|dst
 decl_stmt|;
-name|struct
 name|smvector_t
 modifier|*
 name|vec
@@ -595,8 +593,7 @@ decl_stmt|,
 name|y
 decl_stmt|;
 specifier|static
-name|struct
-name|ppm
+name|ppm_t
 name|nsbuffer
 init|=
 block|{
@@ -885,8 +882,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|struct
-name|ppm
+name|ppm_t
 name|backup
 init|=
 block|{
@@ -898,8 +894,7 @@ name|NULL
 block|}
 decl_stmt|;
 specifier|static
-name|struct
-name|ppm
+name|ppm_t
 name|sbuffer
 init|=
 block|{
@@ -1285,10 +1280,11 @@ end_function
 
 begin_decl_stmt
 DECL|variable|smadjignore
-name|int
+specifier|static
+name|gboolean
 name|smadjignore
 init|=
-literal|0
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
@@ -1302,7 +1298,7 @@ parameter_list|)
 block|{
 name|smadjignore
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
@@ -1336,7 +1332,7 @@ argument_list|)
 expr_stmt|;
 name|smadjignore
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 block|}
 end_function
@@ -1415,6 +1411,7 @@ end_function
 
 begin_function
 DECL|function|smaddclick (GtkWidget * w,gpointer data)
+specifier|static
 name|void
 name|smaddclick
 parameter_list|(
@@ -1492,6 +1489,7 @@ end_function
 
 begin_function
 DECL|function|smdeleteclick (GtkWidget * w,gpointer data)
+specifier|static
 name|void
 name|smdeleteclick
 parameter_list|(
@@ -1529,28 +1527,17 @@ name|i
 operator|++
 control|)
 block|{
-name|memcpy
-argument_list|(
-operator|&
 name|smvector
 index|[
 name|i
 index|]
-argument_list|,
-operator|&
+operator|=
 name|smvector
 index|[
 name|i
 operator|+
 literal|1
 index|]
-argument_list|,
-sizeof|sizeof
-argument_list|(
-expr|struct
-name|smvector_t
-argument_list|)
-argument_list|)
 expr_stmt|;
 block|}
 name|numsmvect
@@ -1580,6 +1567,7 @@ end_function
 
 begin_function
 DECL|function|smmapclick (GtkWidget * w,GdkEventButton * event)
+specifier|static
 name|void
 name|smmapclick
 parameter_list|(
@@ -1726,6 +1714,7 @@ end_function
 
 begin_function
 DECL|function|angsmadjmove (GtkWidget * w,gpointer data)
+specifier|static
 name|void
 name|angsmadjmove
 parameter_list|(
@@ -1739,9 +1728,10 @@ parameter_list|)
 block|{
 if|if
 condition|(
+operator|!
 name|smadjignore
 condition|)
-return|return;
+block|{
 name|smvector
 index|[
 name|selectedsmvector
@@ -1763,10 +1753,12 @@ name|updatesmpreviewprev
 argument_list|()
 expr_stmt|;
 block|}
+block|}
 end_function
 
 begin_function
 DECL|function|strsmadjmove (GtkWidget * w,gpointer data)
+specifier|static
 name|void
 name|strsmadjmove
 parameter_list|(
@@ -1780,9 +1772,10 @@ parameter_list|)
 block|{
 if|if
 condition|(
+operator|!
 name|smadjignore
 condition|)
-return|return;
+block|{
 name|smvector
 index|[
 name|selectedsmvector
@@ -1804,10 +1797,12 @@ name|updatesmpreviewprev
 argument_list|()
 expr_stmt|;
 block|}
+block|}
 end_function
 
 begin_function
 DECL|function|smstrexpsmadjmove (GtkWidget * w,gpointer data)
+specifier|static
 name|void
 name|smstrexpsmadjmove
 parameter_list|(
@@ -1821,9 +1816,10 @@ parameter_list|)
 block|{
 if|if
 condition|(
+operator|!
 name|smadjignore
 condition|)
-return|return;
+block|{
 name|updatesmvectorprev
 argument_list|()
 expr_stmt|;
@@ -1831,26 +1827,12 @@ name|updatesmpreviewprev
 argument_list|()
 expr_stmt|;
 block|}
+block|}
 end_function
-
-begin_function_decl
-name|void
-name|hidewin
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|w
-parameter_list|,
-name|GtkWidget
-modifier|*
-modifier|*
-name|win
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function
 DECL|function|smcancelclick (GtkWidget * w,GtkWidget * win)
+specifier|static
 name|void
 name|smcancelclick
 parameter_list|(
@@ -1877,6 +1859,7 @@ end_function
 
 begin_function
 DECL|function|smokclick (GtkWidget * w,GtkWidget * win)
+specifier|static
 name|void
 name|smokclick
 parameter_list|(
@@ -1906,28 +1889,17 @@ name|i
 operator|++
 control|)
 block|{
-name|memcpy
-argument_list|(
-operator|&
 name|pcvals
 operator|.
 name|sizevector
 index|[
 name|i
 index|]
-argument_list|,
-operator|&
+operator|=
 name|smvector
 index|[
 name|i
 index|]
-argument_list|,
-sizeof|sizeof
-argument_list|(
-expr|struct
-name|smvector_t
-argument_list|)
-argument_list|)
 expr_stmt|;
 block|}
 name|pcvals
@@ -1978,9 +1950,6 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|int
-name|i
-decl_stmt|;
 if|if
 condition|(
 name|pcvals
@@ -1988,6 +1957,9 @@ operator|.
 name|numsizevector
 condition|)
 block|{
+name|int
+name|i
+decl_stmt|;
 name|numsmvect
 operator|=
 name|pcvals
@@ -2008,28 +1980,17 @@ name|i
 operator|++
 control|)
 block|{
-name|memcpy
-argument_list|(
-operator|&
 name|smvector
 index|[
 name|i
 index|]
-argument_list|,
-operator|&
+operator|=
 name|pcvals
 operator|.
 name|sizevector
 index|[
 name|i
 index|]
-argument_list|,
-sizeof|sizeof
-argument_list|(
-expr|struct
-name|smvector_t
-argument_list|)
-argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -2094,6 +2055,7 @@ end_function
 
 begin_function
 DECL|function|update_sizemap_dialog (void)
+specifier|static
 name|void
 name|update_sizemap_dialog
 parameter_list|(
@@ -2102,10 +2064,9 @@ parameter_list|)
 block|{
 if|if
 condition|(
-operator|!
 name|smwindow
 condition|)
-return|return;
+block|{
 name|initsmvectors
 argument_list|()
 expr_stmt|;
@@ -2139,6 +2100,7 @@ expr_stmt|;
 name|updatesmpreviewprev
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 end_function
 

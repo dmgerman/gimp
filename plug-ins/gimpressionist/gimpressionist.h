@@ -60,6 +60,12 @@ directive|include
 file|<gtk/gtk.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpui.h>
+end_include
+
 begin_define
 DECL|macro|PLUG_IN_NAME
 define|#
@@ -161,10 +167,11 @@ begin_comment
 comment|/* Type declaration and definitions */
 end_comment
 
-begin_struct
-DECL|struct|vector_t
+begin_typedef
+DECL|struct|vector
+typedef|typedef
 struct|struct
-name|vector_t
+name|vector
 block|{
 DECL|member|x
 DECL|member|y
@@ -192,14 +199,17 @@ DECL|member|type
 name|int
 name|type
 decl_stmt|;
+DECL|typedef|vector_t
 block|}
-struct|;
-end_struct
+name|vector_t
+typedef|;
+end_typedef
 
-begin_struct
-DECL|struct|smvector_t
+begin_typedef
+DECL|struct|smvector
+typedef|typedef
 struct|struct
-name|smvector_t
+name|smvector
 block|{
 DECL|member|x
 DECL|member|y
@@ -216,12 +226,14 @@ DECL|member|str
 name|double
 name|str
 decl_stmt|;
+DECL|typedef|smvector_t
 block|}
-struct|;
-end_struct
+name|smvector_t
+typedef|;
+end_typedef
 
 begin_typedef
-DECL|struct|__anon2aeaad400108
+DECL|struct|__anon2ad50f0d0108
 typedef|typedef
 struct|struct
 block|{
@@ -296,11 +308,8 @@ literal|100
 index|]
 decl_stmt|;
 DECL|member|color
-name|guchar
+name|GimpRGB
 name|color
-index|[
-literal|3
-index|]
 decl_stmt|;
 DECL|member|generalpaintedges
 name|int
@@ -311,7 +320,6 @@ name|int
 name|placetype
 decl_stmt|;
 DECL|member|orientvector
-name|struct
 name|vector_t
 name|orientvector
 index|[
@@ -383,7 +391,6 @@ name|double
 name|devthresh
 decl_stmt|;
 DECL|member|sizevector
-name|struct
 name|smvector_t
 name|sizevector
 index|[
@@ -724,6 +731,14 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
+name|GtkWidget
+modifier|*
+name|generalcolbutton
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
 name|GtkObject
 modifier|*
 name|generalshadowadjust
@@ -796,7 +811,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|gint
+name|gboolean
 name|img_has_alpha
 decl_stmt|;
 end_decl_stmt
@@ -809,15 +824,6 @@ begin_function_decl
 name|GList
 modifier|*
 name|parsepath
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|int
-name|create_dialog
 parameter_list|(
 name|void
 parameter_list|)
@@ -920,8 +926,7 @@ name|GtkWidget
 modifier|*
 name|wg
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|d
 parameter_list|)
 function_decl|;
@@ -1007,17 +1012,6 @@ parameter_list|,
 name|char
 modifier|*
 name|selected
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|drawcolor
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|w
 parameter_list|)
 function_decl|;
 end_function_decl

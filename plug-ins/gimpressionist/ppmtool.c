@@ -212,17 +212,16 @@ block|}
 end_function
 
 begin_function
-DECL|function|killppm (struct ppm * p)
+DECL|function|killppm (ppm_t * p)
 name|void
 name|killppm
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|)
 block|{
-name|free
+name|g_free
 argument_list|(
 name|p
 operator|->
@@ -249,12 +248,11 @@ block|}
 end_function
 
 begin_function
-DECL|function|newppm (struct ppm * p,int xs,int ys)
+DECL|function|newppm (ppm_t * p,int xs,int ys)
 name|void
 name|newppm
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
@@ -393,12 +391,11 @@ block|}
 end_function
 
 begin_function
-DECL|function|getrgb (struct ppm * s,float xo,float yo,guchar * d)
+DECL|function|getrgb (ppm_t * s,float xo,float yo,guchar * d)
 name|void
 name|getrgb
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|s
 parameter_list|,
@@ -952,12 +949,11 @@ block|}
 end_function
 
 begin_function
-DECL|function|resize (struct ppm * p,int nx,int ny)
+DECL|function|resize (ppm_t * p,int nx,int ny)
 name|void
 name|resize
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
@@ -997,8 +993,7 @@ name|float
 operator|)
 name|ny
 decl_stmt|;
-name|struct
-name|ppm
+name|ppm_t
 name|tmp
 init|=
 block|{
@@ -1119,12 +1114,11 @@ block|}
 end_function
 
 begin_function
-DECL|function|rescale (struct ppm * p,double sc)
+DECL|function|rescale (ppm_t * p,double sc)
 name|void
 name|rescale
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
@@ -1153,12 +1147,11 @@ block|}
 end_function
 
 begin_function
-DECL|function|resize_fast (struct ppm * p,int nx,int ny)
+DECL|function|resize_fast (ppm_t * p,int nx,int ny)
 name|void
 name|resize_fast
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
@@ -1198,8 +1191,7 @@ name|float
 operator|)
 name|ny
 decl_stmt|;
-name|struct
-name|ppm
+name|ppm_t
 name|tmp
 init|=
 block|{
@@ -1462,7 +1454,7 @@ block|}
 end_function
 
 begin_function
-DECL|function|loadgbr (char * fn,struct ppm * p)
+DECL|function|loadgbr (char * fn,ppm_t * p)
 name|void
 name|loadgbr
 parameter_list|(
@@ -1470,8 +1462,7 @@ name|char
 modifier|*
 name|fn
 parameter_list|,
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|)
@@ -1749,7 +1740,7 @@ block|}
 end_function
 
 begin_function
-DECL|function|loadppm (char * fn,struct ppm * p)
+DECL|function|loadppm (char * fn,ppm_t * p)
 name|void
 name|loadppm
 parameter_list|(
@@ -1757,8 +1748,7 @@ name|char
 modifier|*
 name|fn
 parameter_list|,
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|)
@@ -2137,12 +2127,11 @@ block|}
 end_function
 
 begin_function
-DECL|function|fill (struct ppm * p,guchar * c)
+DECL|function|fill (ppm_t * p,guchar * c)
 name|void
 name|fill
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
@@ -2332,17 +2321,15 @@ block|}
 end_function
 
 begin_function
-DECL|function|copyppm (struct ppm * s,struct ppm * p)
+DECL|function|copyppm (ppm_t * s,ppm_t * p)
 name|void
 name|copyppm
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|s
 parameter_list|,
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|)
@@ -2416,12 +2403,11 @@ block|}
 end_function
 
 begin_function
-DECL|function|freerotate (struct ppm * p,double amount)
+DECL|function|freerotate (ppm_t * p,double amount)
 name|void
 name|freerotate
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
@@ -2444,8 +2430,7 @@ name|R
 decl_stmt|,
 name|a
 decl_stmt|;
-name|struct
-name|ppm
+name|ppm_t
 name|tmp
 init|=
 block|{
@@ -2720,12 +2705,11 @@ block|}
 end_function
 
 begin_function
-DECL|function|crop (struct ppm * p,int lx,int ly,int hx,int hy)
+DECL|function|crop (ppm_t * p,int lx,int ly,int hx,int hy)
 name|void
 name|crop
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
@@ -2742,8 +2726,7 @@ name|int
 name|hy
 parameter_list|)
 block|{
-name|struct
-name|ppm
+name|ppm_t
 name|tmp
 init|=
 block|{
@@ -2893,12 +2876,11 @@ block|}
 end_function
 
 begin_function
-DECL|function|autocrop (struct ppm * p,int room)
+DECL|function|autocrop (ppm_t * p,int room)
 name|void
 name|autocrop
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
@@ -2942,8 +2924,7 @@ index|[
 literal|3
 index|]
 decl_stmt|;
-name|struct
-name|ppm
+name|ppm_t
 name|tmp
 init|=
 block|{
@@ -3596,12 +3577,11 @@ block|}
 end_function
 
 begin_function
-DECL|function|pad (struct ppm * p,int left,int right,int top,int bottom,guchar * bg)
+DECL|function|pad (ppm_t * p,int left,int right,int top,int bottom,guchar * bg)
 name|void
 name|pad
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
@@ -3627,8 +3607,7 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|struct
-name|ppm
+name|ppm_t
 name|tmp
 init|=
 block|{
@@ -4043,12 +4022,11 @@ block|}
 end_function
 
 begin_function
-DECL|function|saveppm (struct ppm * p,const char * fn)
+DECL|function|saveppm (ppm_t * p,const char * fn)
 name|void
 name|saveppm
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
@@ -4137,12 +4115,11 @@ block|}
 end_function
 
 begin_function
-DECL|function|edgepad (struct ppm * p,int left,int right,int top,int bottom)
+DECL|function|edgepad (ppm_t * p,int left,int right,int top,int bottom)
 name|void
 name|edgepad
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
@@ -4164,8 +4141,7 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|struct
-name|ppm
+name|ppm_t
 name|tmp
 init|=
 block|{
@@ -4546,12 +4522,11 @@ block|}
 end_function
 
 begin_function
-DECL|function|ppmgamma (struct ppm * p,float e,int r,int g,int b)
+DECL|function|ppmgamma (ppm_t * p,float e,int r,int g,int b)
 name|void
 name|ppmgamma
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
@@ -4808,12 +4783,11 @@ block|}
 end_function
 
 begin_function
-DECL|function|ppmbrightness (struct ppm * p,float e,int r,int g,int b)
+DECL|function|ppmbrightness (ppm_t * p,float e,int r,int g,int b)
 name|void
 name|ppmbrightness
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
@@ -4981,12 +4955,11 @@ block|}
 end_function
 
 begin_function
-DECL|function|blur (struct ppm * p,int xrad,int yrad)
+DECL|function|blur (ppm_t * p,int xrad,int yrad)
 name|void
 name|blur
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,
@@ -5009,8 +4982,7 @@ name|tx
 decl_stmt|,
 name|ty
 decl_stmt|;
-name|struct
-name|ppm
+name|ppm_t
 name|tmp
 init|=
 block|{
@@ -5295,12 +5267,11 @@ block|}
 end_function
 
 begin_function
-DECL|function|putrgb_fast (struct ppm * s,float xo,float yo,guchar * d)
+DECL|function|putrgb_fast (ppm_t * s,float xo,float yo,guchar * d)
 name|void
 name|putrgb_fast
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|s
 parameter_list|,
@@ -5385,12 +5356,11 @@ block|}
 end_function
 
 begin_function
-DECL|function|putrgb (struct ppm * s,float xo,float yo,guchar * d)
+DECL|function|putrgb (ppm_t * s,float xo,float yo,guchar * d)
 name|void
 name|putrgb
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|s
 parameter_list|,
@@ -5931,12 +5901,11 @@ block|}
 end_function
 
 begin_function
-DECL|function|drawline (struct ppm * p,float fx,float fy,float tx,float ty,guchar * col)
+DECL|function|drawline (ppm_t * p,float fx,float fy,float tx,float ty,guchar * col)
 name|void
 name|drawline
 parameter_list|(
-name|struct
-name|ppm
+name|ppm_t
 modifier|*
 name|p
 parameter_list|,

@@ -78,13 +78,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpressionist.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"ppmtool.h"
+file|"gimpressionist.h"
 end_include
 
 begin_include
@@ -345,6 +345,7 @@ end_function
 
 begin_function
 DECL|function|chop (char * buffer)
+specifier|static
 name|void
 name|chop
 parameter_list|(
@@ -389,6 +390,7 @@ end_function
 
 begin_function
 DECL|function|hexval (char c)
+specifier|static
 name|unsigned
 name|int
 name|hexval
@@ -452,6 +454,7 @@ end_function
 
 begin_function
 DECL|function|parsergbstring (char * s)
+specifier|static
 name|char
 modifier|*
 name|parsergbstring
@@ -551,6 +554,7 @@ end_function
 
 begin_function
 DECL|function|setorientvector (char * str)
+specifier|static
 name|void
 name|setorientvector
 parameter_list|(
@@ -559,7 +563,6 @@ modifier|*
 name|str
 parameter_list|)
 block|{
-comment|/* num,x,y,dir,dx,dy,str,type */
 name|char
 modifier|*
 name|tmps
@@ -803,6 +806,7 @@ end_function
 
 begin_function
 DECL|function|setsizevector (char * str)
+specifier|static
 name|void
 name|setsizevector
 parameter_list|(
@@ -961,6 +965,7 @@ end_function
 
 begin_function
 DECL|function|parsedesc (char * str,char * d)
+specifier|static
 name|void
 name|parsedesc
 parameter_list|(
@@ -1741,20 +1746,42 @@ argument_list|,
 literal|"color"
 argument_list|)
 condition|)
-name|memcpy
-argument_list|(
-name|pcvals
-operator|.
-name|color
-argument_list|,
+block|{
+name|char
+modifier|*
+name|c
+init|=
 name|parsergbstring
 argument_list|(
 name|val
 argument_list|)
+decl_stmt|;
+name|gimp_rgba_set_uchar
+argument_list|(
+operator|&
+name|pcvals
+operator|.
+name|color
 argument_list|,
-literal|3
+name|c
+index|[
+literal|0
+index|]
+argument_list|,
+name|c
+index|[
+literal|1
+index|]
+argument_list|,
+name|c
+index|[
+literal|2
+index|]
+argument_list|,
+literal|255
 argument_list|)
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -2204,19 +2231,9 @@ name|l
 argument_list|)
 expr_stmt|;
 comment|/* Restore defaults, in case of old/short Preset file */
-name|memcpy
-argument_list|(
-operator|&
 name|pcvals
-argument_list|,
-operator|&
+operator|=
 name|defaultpcvals
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|pcvals
-argument_list|)
-argument_list|)
 expr_stmt|;
 name|presetdesc
 index|[
@@ -2912,6 +2929,12 @@ index|[
 name|G_ASCII_DTOSTR_BUF_SIZE
 index|]
 decl_stmt|;
+name|guchar
+name|color
+index|[
+literal|3
+index|]
+decl_stmt|;
 name|int
 name|i
 decl_stmt|;
@@ -3425,28 +3448,48 @@ operator|.
 name|selectedpaper
 argument_list|)
 expr_stmt|;
+name|gimp_rgb_get_uchar
+argument_list|(
+operator|&
+name|pcvals
+operator|.
+name|color
+argument_list|,
+operator|&
+name|color
+index|[
+literal|0
+index|]
+argument_list|,
+operator|&
+name|color
+index|[
+literal|1
+index|]
+argument_list|,
+operator|&
+name|color
+index|[
+literal|2
+index|]
+argument_list|)
+expr_stmt|;
 name|fprintf
 argument_list|(
 name|f
 argument_list|,
 literal|"color=%02x%02x%02x\n"
 argument_list|,
-name|pcvals
-operator|.
 name|color
 index|[
 literal|0
 index|]
 argument_list|,
-name|pcvals
-operator|.
 name|color
 index|[
 literal|1
 index|]
 argument_list|,
-name|pcvals
-operator|.
 name|color
 index|[
 literal|2
@@ -4237,13 +4280,6 @@ name|box2
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|labelbox
-decl_stmt|,
-modifier|*
-name|menubox
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|scrolled_win
 decl_stmt|,
 modifier|*
@@ -4253,84 +4289,18 @@ name|GtkWidget
 modifier|*
 name|tmpw
 decl_stmt|;
-name|labelbox
+name|GtkWidget
+modifier|*
+name|label
+decl_stmt|;
+name|label
 operator|=
-name|gtk_hbox_new
-argument_list|(
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|tmpw
-operator|=
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Presets"
+literal|"_Presets"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|labelbox
-argument_list|)
-argument_list|,
-name|tmpw
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show_all
-argument_list|(
-name|labelbox
-argument_list|)
-expr_stmt|;
-name|menubox
-operator|=
-name|gtk_hbox_new
-argument_list|(
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|tmpw
-operator|=
-name|gtk_label_new
-argument_list|(
-name|_
-argument_list|(
-literal|"Presets"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|menubox
-argument_list|)
-argument_list|,
-name|tmpw
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show_all
-argument_list|(
-name|menubox
 argument_list|)
 expr_stmt|;
 name|presetlist
@@ -4417,7 +4387,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|tmpw
 argument_list|,
@@ -4571,7 +4541,7 @@ argument_list|(
 name|scrolled_win
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|scrolled_win
 argument_list|,
@@ -4581,8 +4551,6 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/* list = gtk_list_new (); */
-comment|/* Moved up */
 name|gtk_list_set_selection_mode
 argument_list|(
 name|GTK_LIST
@@ -4952,9 +4920,9 @@ name|notebook
 argument_list|,
 name|thispage
 argument_list|,
-name|labelbox
+name|label
 argument_list|,
-name|menubox
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
