@@ -325,6 +325,13 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|shell
+operator|->
+name|menubar
+condition|)
+block|{
+if|if
+condition|(
 name|show
 condition|)
 name|gtk_widget_show
@@ -342,6 +349,7 @@ operator|->
 name|menubar
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|options

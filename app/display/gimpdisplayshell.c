@@ -322,7 +322,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bdf9f00103
+DECL|enum|__anon29a3c9590103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -338,7 +338,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bdf9f00203
+DECL|enum|__anon29a3c9590203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2914,6 +2914,13 @@ argument_list|,
 literal|"/image-menubar"
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|shell
+operator|->
+name|menubar
+condition|)
+block|{
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -2955,7 +2962,7 @@ operator|->
 name|menubar
 argument_list|)
 expr_stmt|;
-comment|/*  make sure we can activate accels even if the menubar is invisible    *  (see http://bugzilla.gnome.org/show_bug.cgi?id=137151)    */
+comment|/*  make sure we can activate accels even if the menubar is invisible        *  (see http://bugzilla.gnome.org/show_bug.cgi?id=137151)        */
 name|g_signal_connect
 argument_list|(
 name|shell
@@ -3021,6 +3028,7 @@ argument_list|,
 name|shell
 argument_list|)
 expr_stmt|;
+block|}
 comment|/*  another vbox for everything except the statusbar  */
 name|disp_vbox
 operator|=

@@ -957,6 +957,13 @@ argument_list|,
 literal|"/toolbox-menubar"
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|toolbox
+operator|->
+name|menu_bar
+condition|)
+block|{
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -982,6 +989,7 @@ operator|->
 name|menu_bar
 argument_list|)
 expr_stmt|;
+block|}
 name|gtk_window_add_accel_group
 argument_list|(
 name|GTK_WINDOW
@@ -2331,6 +2339,12 @@ name|main_vbox
 decl_stmt|;
 name|GtkRequisition
 name|menubar_requisition
+init|=
+block|{
+literal|0
+block|,
+literal|0
+block|}
 decl_stmt|;
 name|GtkRequisition
 name|button_requisition
@@ -2350,6 +2364,12 @@ argument_list|)
 operator|->
 name|main_vbox
 expr_stmt|;
+if|if
+condition|(
+name|toolbox
+operator|->
+name|menu_bar
+condition|)
 name|gtk_widget_size_request
 argument_list|(
 name|toolbox

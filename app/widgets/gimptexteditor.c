@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b7cc5b0103
+DECL|enum|__anon277edc270103
 block|{
 DECL|enumerator|TEXT_CHANGED
 name|TEXT_CHANGED
@@ -523,6 +523,11 @@ argument_list|,
 literal|"/text-editor-toolbar"
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|toolbar
+condition|)
+block|{
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -549,6 +554,7 @@ argument_list|(
 name|toolbar
 argument_list|)
 expr_stmt|;
+block|}
 name|scrolled_window
 operator|=
 name|gtk_scrolled_window_new
