@@ -17,7 +17,7 @@ name|__WIDGETS_ENUMS_H__
 end_define
 
 begin_comment
-comment|/*   * these enums that are registered with the type system  */
+comment|/*  * these enums that are registered with the type system  */
 end_comment
 
 begin_define
@@ -41,7 +41,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e07d6b0103
+DECL|enum|__anon2b97c60f0103
 block|{
 DECL|enumerator|GIMP_ASPECT_SQUARE
 name|GIMP_ASPECT_SQUARE
@@ -80,15 +80,15 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e07d6b0203
+DECL|enum|__anon2b97c60f0203
 block|{
 DECL|enumerator|GIMP_HELP_BROWSER_GIMP
 name|GIMP_HELP_BROWSER_GIMP
 block|,
 comment|/*< desc="Internal">*/
-DECL|enumerator|GIMP_HELP_BROWSER_NETSCAPE
-name|GIMP_HELP_BROWSER_NETSCAPE
-comment|/*< desc="Netscape">*/
+DECL|enumerator|GIMP_HELP_BROWSER_WEBBROWSER
+name|GIMP_HELP_BROWSER_WEBBROWSER
+comment|/*< desc="Web Browser">*/
 DECL|typedef|GimpHelpBrowserType
 block|}
 name|GimpHelpBrowserType
@@ -116,7 +116,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e07d6b0303
+DECL|enum|__anon2b97c60f0303
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_SCALE_LINEAR
 name|GIMP_HISTOGRAM_SCALE_LINEAR
@@ -152,7 +152,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e07d6b0403
+DECL|enum|__anon2b97c60f0403
 block|{
 DECL|enumerator|GIMP_TAB_STYLE_ICON
 name|GIMP_TAB_STYLE_ICON
@@ -212,7 +212,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e07d6b0503
+DECL|enum|__anon2b97c60f0503
 block|{
 DECL|enumerator|GIMP_VIEW_TYPE_LIST
 name|GIMP_VIEW_TYPE_LIST
@@ -248,7 +248,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e07d6b0603
+DECL|enum|__anon2b97c60f0603
 block|{
 DECL|enumerator|GIMP_ZOOM_IN
 name|GIMP_ZOOM_IN
@@ -271,7 +271,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon29e07d6b0703
+DECL|enum|__anon2b97c60f0703
 block|{
 DECL|enumerator|GIMP_PREVIEW_BG_CHECKS
 name|GIMP_PREVIEW_BG_CHECKS
@@ -288,7 +288,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon29e07d6b0803
+DECL|enum|__anon2b97c60f0803
 block|{
 DECL|enumerator|GIMP_DROP_NONE
 name|GIMP_DROP_NONE
@@ -308,7 +308,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon29e07d6b0903
+DECL|enum|__anon2b97c60f0903
 block|{
 DECL|enumerator|GIMP_MOUSE_CURSOR
 name|GIMP_MOUSE_CURSOR
@@ -343,7 +343,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon29e07d6b0a03
+DECL|enum|__anon2b97c60f0a03
 block|{
 DECL|enumerator|GIMP_TOOL_CURSOR_NONE
 name|GIMP_TOOL_CURSOR_NONE
@@ -453,7 +453,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon29e07d6b0b03
+DECL|enum|__anon2b97c60f0b03
 block|{
 DECL|enumerator|GIMP_CURSOR_MODIFIER_NONE
 name|GIMP_CURSOR_MODIFIER_NONE
@@ -500,7 +500,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon29e07d6b0c03
+DECL|enum|__anon2b97c60f0c03
 block|{
 DECL|enumerator|GIMP_DEVICE_VALUE_MODE
 name|GIMP_DEVICE_VALUE_MODE

@@ -211,7 +211,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_help_netscape
+name|gimp_help_webbrowser
 parameter_list|(
 name|Gimp
 modifier|*
@@ -480,9 +480,9 @@ argument_list|)
 condition|)
 break|break;
 case|case
-name|GIMP_HELP_BROWSER_NETSCAPE
+name|GIMP_HELP_BROWSER_WEBBROWSER
 case|:
-name|gimp_help_netscape
+name|gimp_help_webbrowser
 argument_list|(
 name|idle_help
 operator|->
@@ -540,7 +540,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_help_internal_not_found_callback (GtkWidget * widget,gboolean use_netscape,gpointer data)
+DECL|function|gimp_help_internal_not_found_callback (GtkWidget * widget,gboolean use_webbrowser,gpointer data)
 name|gimp_help_internal_not_found_callback
 parameter_list|(
 name|GtkWidget
@@ -548,7 +548,7 @@ modifier|*
 name|widget
 parameter_list|,
 name|gboolean
-name|use_netscape
+name|use_webbrowser
 parameter_list|,
 name|gpointer
 name|data
@@ -565,7 +565,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|use_netscape
+name|use_webbrowser
 condition|)
 name|g_object_set
 argument_list|(
@@ -575,7 +575,7 @@ name|config
 argument_list|,
 literal|"help-browser"
 argument_list|,
-name|GIMP_HELP_BROWSER_NETSCAPE
+name|GIMP_HELP_BROWSER_WEBBROWSER
 argument_list|,
 name|NULL
 argument_list|)
@@ -717,7 +717,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Use Netscape instead"
+literal|"Use web browser instead"
 argument_list|)
 argument_list|,
 name|GTK_STOCK_CANCEL
@@ -754,7 +754,7 @@ argument_list|)
 operator|->
 name|help_browser
 operator|!=
-name|GIMP_HELP_BROWSER_NETSCAPE
+name|GIMP_HELP_BROWSER_WEBBROWSER
 operator|)
 return|;
 block|}
@@ -947,7 +947,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Use Netscape instead"
+literal|"Use web browser instead"
 argument_list|)
 argument_list|,
 name|GTK_STOCK_CANCEL
@@ -984,7 +984,7 @@ argument_list|)
 operator|->
 name|help_browser
 operator|!=
-name|GIMP_HELP_BROWSER_NETSCAPE
+name|GIMP_HELP_BROWSER_WEBBROWSER
 operator|)
 return|;
 block|}
@@ -1044,8 +1044,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_help_netscape (Gimp * gimp,const gchar * help_domain,const gchar * help_locale,const gchar * help_id)
-name|gimp_help_netscape
+DECL|function|gimp_help_webbrowser (Gimp * gimp,const gchar * help_domain,const gchar * help_locale,const gchar * help_id)
+name|gimp_help_webbrowser
 parameter_list|(
 name|Gimp
 modifier|*
@@ -1147,17 +1147,9 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|GIMP_RUN_NONINTERACTIVE
-argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
 name|url
-argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|FALSE
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)

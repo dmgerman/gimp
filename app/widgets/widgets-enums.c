@@ -136,14 +136,14 @@ literal|"gimp"
 block|}
 block|,
 block|{
-name|GIMP_HELP_BROWSER_NETSCAPE
+name|GIMP_HELP_BROWSER_WEBBROWSER
 block|,
 name|N_
 argument_list|(
-literal|"Netscape"
+literal|"Web Browser"
 argument_list|)
 block|,
-literal|"netscape"
+literal|"webbrowser"
 block|}
 block|,
 block|{

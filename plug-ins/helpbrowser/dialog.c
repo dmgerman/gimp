@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c75c3f10103
+DECL|enum|__anon28fa3ded0103
 block|{
 DECL|enumerator|BUTTON_HOME
 name|BUTTON_HOME
@@ -109,7 +109,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c75c3f10208
+DECL|struct|__anon28fa3ded0208
 block|{
 DECL|member|title
 specifier|const
@@ -2515,7 +2515,7 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
-comment|/*  try to call netscape through the web_browser interface */
+comment|/*  try to call the user specified web browser */
 name|return_vals
 operator|=
 name|gimp_run_procedure
@@ -2525,17 +2525,9 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|GIMP_RUN_NONINTERACTIVE
-argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
 name|ref
-argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|FALSE
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)

@@ -180,6 +180,11 @@ DECL|member|help_browser
 name|GimpHelpBrowserType
 name|help_browser
 decl_stmt|;
+DECL|member|web_browser
+name|gchar
+modifier|*
+name|web_browser
+decl_stmt|;
 DECL|member|last_tip
 name|gint
 name|last_tip

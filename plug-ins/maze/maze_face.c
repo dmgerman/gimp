@@ -4,7 +4,7 @@ comment|/* -*- mode: C; c-file-style: "gnu"; c-basic-offset: 2; -*- */
 end_comment
 
 begin_comment
-comment|/* $Id$  * User interface for plug-in-maze.  *   * Implemented as a GIMP 0.99 Plugin by   * Kevin Turner<acapnotic@users.sourceforge.net>  * http://gimp-plug-ins.sourceforge.net/maze/  */
+comment|/* $Id$  * User interface for plug-in-maze.  *  * Implemented as a GIMP 0.99 Plugin by  * Kevin Turner<acapnotic@users.sourceforge.net>  * http://gimp-plug-ins.sourceforge.net/maze/  */
 end_comment
 
 begin_comment
@@ -90,7 +90,7 @@ comment|/* entscale stuff begin */
 end_comment
 
 begin_comment
-comment|/* FIXME: Entry-Scale stuff is probably in libgimpui by now.             Should use that instead.*/
+comment|/* FIXME: Entry-Scale stuff is probably in libgimpui by now.           Should use that instead.*/
 end_comment
 
 begin_comment
@@ -150,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd66e9d0108
+DECL|struct|__anon2936081c0108
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -292,7 +292,7 @@ comment|/* Now, it goes like this:     To update entscale (width) when div_entry
 end_comment
 
 begin_comment
-comment|/* Questions:       Gosh that was dumb.  Is there a way to        signal_handler_block_by_name?      That would make life so much nicer.           You could pass the handler_id around and use           gtk_signal_handler_block ().   (Sven) */
+comment|/* Questions:       Gosh that was dumb.  Is there a way to        signal_handler_block_by_name?      That would make life so much nicer.           You could pass the handler_id around and use          gtk_signal_handler_block ().   (Sven) */
 end_comment
 
 begin_function_decl
@@ -2787,17 +2787,9 @@ argument_list|,
 operator|&
 name|baz
 argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|GIMP_RUN_NONINTERACTIVE
-argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
 name|MAZE_URL
-argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|HELP_OPENS_NEW_WINDOW
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)
@@ -2943,7 +2935,7 @@ comment|/* ==================================================================== 
 end_comment
 
 begin_comment
-comment|/* As found in pixelize.c,   * hacked to return a pointer to the entry widget. */
+comment|/* As found in pixelize.c,  * hacked to return a pointer to the entry widget. */
 end_comment
 
 begin_comment
