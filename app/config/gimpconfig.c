@@ -894,7 +894,7 @@ name|g_file_test
 argument_list|(
 name|filename
 argument_list|,
-name|G_FILE_TEST_EXIST
+name|G_FILE_TEST_EXISTS
 argument_list|)
 condition|)
 block|{
@@ -1710,7 +1710,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6600930108
+DECL|struct|__anon2a1e58e30108
 block|{
 DECL|member|key
 name|gchar
