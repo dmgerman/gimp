@@ -470,6 +470,8 @@ name|data
 decl_stmt|;
 if|if
 condition|(
+name|delete
+operator|&&
 name|gimp_container_have
 argument_list|(
 name|delete_data
