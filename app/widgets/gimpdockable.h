@@ -240,6 +240,20 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_dockable_set_tab_style
+parameter_list|(
+name|GimpDockable
+modifier|*
+name|dockable
+parameter_list|,
+name|GimpTabStyle
+name|tab_style
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_dockable_get_tab_widget

@@ -874,11 +874,12 @@ name|GtkWidget
 modifier|*
 name|tab_widget
 decl_stmt|;
+name|gimp_dockable_set_tab_style
+argument_list|(
 name|dockable
-operator|->
+argument_list|,
 name|tab_style
-operator|=
-name|tab_style
+argument_list|)
 expr_stmt|;
 name|tab_widget
 operator|=
