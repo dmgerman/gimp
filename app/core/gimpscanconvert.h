@@ -83,7 +83,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Add a polygon with "npoints" "points" that may be open or closed.  * It is not recommended to mix gimp_scan_convert_add_polyline with  * gimp_scan_convert_add_points.  *  * Please note that if you should use gimp_scan_convert_stroke() if you  * specify open polygons.  */
+comment|/* Add a polygon with "npoints" "points" that may be open or closed.  * It is not recommended to mix gimp_scan_convert_add_polyline with  * gimp_scan_convert_add_points.  *  * Please note that you should use gimp_scan_convert_stroke() if you  * specify open polygons.  */
 end_comment
 
 begin_function_decl
@@ -119,6 +119,9 @@ name|GimpScanConvert
 modifier|*
 name|sc
 parameter_list|,
+name|gdouble
+name|width
+parameter_list|,
 name|GimpJoinStyle
 name|join
 parameter_list|,
@@ -126,7 +129,14 @@ name|GimpCapStyle
 name|cap
 parameter_list|,
 name|gdouble
-name|width
+name|miter
+parameter_list|,
+name|gdouble
+name|dash_offset
+parameter_list|,
+name|GArray
+modifier|*
+name|dash_info
 parameter_list|)
 function_decl|;
 end_function_decl
