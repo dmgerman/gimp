@@ -4098,11 +4098,6 @@ return|;
 block|}
 else|else
 block|{
-name|printf
-argument_list|(
-literal|"HOF gimp_file_save returned GIMP_PDB_SUCCESS\n"
-argument_list|)
-expr_stmt|;
 name|g_free
 argument_list|(
 name|l_params
@@ -4456,11 +4451,6 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-name|printf
-argument_list|(
-literal|"HOF gimp_xcf_save returned GIMP_PDB_SUCCESS\n"
-argument_list|)
-expr_stmt|;
 name|l_rc
 operator|=
 name|image_id
