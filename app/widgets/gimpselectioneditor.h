@@ -128,6 +128,11 @@ name|GtkWidget
 modifier|*
 name|save_button
 decl_stmt|;
+DECL|member|stroke_button
+name|GtkWidget
+modifier|*
+name|stroke_button
+decl_stmt|;
 block|}
 struct|;
 end_struct
