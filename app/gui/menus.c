@@ -9841,12 +9841,24 @@ condition|)
 return|return
 name|menupath
 return|;
-name|retval
+comment|/*     * Work around a bug in GTK+ prior to 1.2.7 (similar workaround below)    */
+name|translation
 operator|=
 name|gettext
 argument_list|(
 name|menupath
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|*
+name|translation
+operator|==
+literal|'/'
+condition|)
+name|retval
+operator|=
+name|translation
 expr_stmt|;
 name|i
 operator|=
@@ -9885,7 +9897,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*         * We compare the start of the translated string with the original menu         * entry. This is not really necessary, but it helps to suppress badly        * translated menu_entries which tend to crash the app         */
+comment|/*         * We compare the start of the translated string with the original menu         * entry. This is not really necessary, but it helps to suppress badly        * translated menu_entries which tend to crash the app due to bug in         * GTK+.         */
 name|translation
 operator|=
 name|dgettext
