@@ -90,18 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"image_render.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"dialog_handler.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"colormap-dialog.h"
 end_include
 
@@ -114,13 +102,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
+file|"colormaps.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"colormaps.h"
+file|"image_render.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gdisplay.h"
 end_include
 
 begin_include
@@ -135,7 +129,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4220c00103
+DECL|enum|__anon2c1d65310103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED

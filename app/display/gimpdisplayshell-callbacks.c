@@ -144,7 +144,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdialogfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gui/dialogs.h"
 end_include
 
 begin_include
@@ -163,12 +175,6 @@ begin_include
 include|#
 directive|include
 file|"devices.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"dialog_handler.h"
 end_include
 
 begin_include
@@ -2283,8 +2289,12 @@ name|kevent
 operator|->
 name|state
 condition|)
-name|dialog_toggle
-argument_list|()
+name|gimp_dialog_factories_toggle
+argument_list|(
+name|global_dialog_factory
+argument_list|,
+literal|"gimp:toolbox"
+argument_list|)
 expr_stmt|;
 name|return_val
 operator|=

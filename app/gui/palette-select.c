@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialog_handler.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"dialogs-constructors.h"
 end_include
 
@@ -434,14 +428,6 @@ operator|=
 name|gimp_get_user_context
 argument_list|(
 name|the_gimp
-argument_list|)
-expr_stmt|;
-comment|/*       session_set_window_geometry (psp->shell,&palette_select_session_info, 				   TRUE);       */
-name|dialog_register
-argument_list|(
-name|psp
-operator|->
-name|shell
 argument_list|)
 expr_stmt|;
 block|}

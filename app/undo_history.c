@@ -76,12 +76,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialog_handler.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
 end_include
 
@@ -124,7 +118,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d3cee00108
+DECL|struct|__anon28b9636b0108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -175,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d3cee00208
+DECL|struct|__anon28b9636b0208
 block|{
 DECL|member|clist
 name|GtkCList
@@ -1954,13 +1948,6 @@ operator|=
 name|NULL
 expr_stmt|;
 comment|/* not allowed to use this any more */
-name|dialog_unregister
-argument_list|(
-name|st
-operator|->
-name|shell
-argument_list|)
-expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
 name|GTK_WIDGET
@@ -3406,13 +3393,6 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|dialog_register
-argument_list|(
-name|st
-operator|->
-name|shell
 argument_list|)
 expr_stmt|;
 name|g_free

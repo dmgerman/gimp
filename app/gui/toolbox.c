@@ -144,12 +144,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialog_handler.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"dialogs.h"
 end_include
 
@@ -1466,12 +1460,6 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
-argument_list|)
-expr_stmt|;
-comment|/* Register dialog */
-name|dialog_register_toolbox
-argument_list|(
-name|window
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect

@@ -167,12 +167,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialog_handler.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"appenv.h"
 end_include
 
@@ -1145,12 +1139,6 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-comment|/* register this one only */
-name|dialog_register
-argument_list|(
-name|error_console
 argument_list|)
 expr_stmt|;
 comment|/* The next line should disappear when setting the size works in SM */

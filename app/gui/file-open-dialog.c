@@ -160,12 +160,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialog_handler.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"docindex.h"
 end_include
 
@@ -861,11 +855,6 @@ name|button_area
 argument_list|)
 argument_list|,
 literal|2
-argument_list|)
-expr_stmt|;
-name|dialog_register_fileload
-argument_list|(
-name|fileload
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect_object

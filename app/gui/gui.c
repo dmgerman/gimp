@@ -204,12 +204,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialog_handler.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdisplay.h"
 end_include
 
@@ -1355,7 +1349,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* Dialogs */
-name|dialog_idle_all
+name|gimp_dialog_factories_idle
 argument_list|()
 expr_stmt|;
 name|gdk_flush
@@ -1417,7 +1411,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* Dialogs */
-name|dialog_unidle_all
+name|gimp_dialog_factories_unidle
 argument_list|()
 expr_stmt|;
 block|}
@@ -1776,8 +1770,12 @@ operator|==
 literal|1
 condition|)
 block|{
-name|dialog_show_toolbox
-argument_list|()
+name|gimp_dialog_factory_dialog_raise
+argument_list|(
+name|global_dialog_factory
+argument_list|,
+literal|"gimp:toolbox"
+argument_list|)
 expr_stmt|;
 block|}
 block|}

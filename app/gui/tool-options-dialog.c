@@ -102,12 +102,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialog_handler.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -425,12 +419,6 @@ argument_list|,
 literal|0
 argument_list|)
 argument_list|)
-argument_list|)
-expr_stmt|;
-comment|/*  Register dialog  */
-name|dialog_register
-argument_list|(
-name|options_shell
 argument_list|)
 expr_stmt|;
 comment|/*  The outer frame  */

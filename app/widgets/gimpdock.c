@@ -62,7 +62,7 @@ DECL|macro|GIMP_DOCK_MINIMAL_WIDTH
 define|#
 directive|define
 name|GIMP_DOCK_MINIMAL_WIDTH
-value|280
+value|250
 end_define
 
 begin_define

@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialog_handler.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"docindex.h"
 end_include
 
@@ -138,7 +132,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc6f1c50108
+DECL|struct|__anon2979f2390108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -159,7 +153,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc6f1c50208
+DECL|struct|__anon2979f2390208
 block|{
 DECL|member|boole
 name|gboolean
@@ -2988,13 +2982,6 @@ block|{
 name|create_idea_list
 argument_list|()
 expr_stmt|;
-name|dialog_unregister
-argument_list|(
-name|ideas
-operator|->
-name|window
-argument_list|)
-expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
 name|ideas
@@ -3258,13 +3245,6 @@ argument_list|,
 name|gimp_dnd_open_files
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|dialog_register
-argument_list|(
-name|ideas
-operator|->
-name|window
 argument_list|)
 expr_stmt|;
 name|main_vbox

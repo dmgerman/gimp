@@ -89,18 +89,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialog_handler.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"docindex.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"file-dialog-utils.h"
 end_include
 
@@ -120,6 +108,12 @@ begin_include
 include|#
 directive|include
 file|"app_procs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"docindex.h"
 end_include
 
 begin_include
