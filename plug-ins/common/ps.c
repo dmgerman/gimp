@@ -134,7 +134,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2967cded0108
+DECL|struct|__anon2c78b6870108
 block|{
 DECL|member|resolution
 name|guint
@@ -186,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2967cded0208
+DECL|struct|__anon2c78b6870208
 block|{
 DECL|member|run
 name|gint
@@ -252,7 +252,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2967cded0308
+DECL|struct|__anon2c78b6870308
 block|{
 DECL|member|width
 DECL|member|height
@@ -314,7 +314,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2967cded0408
+DECL|struct|__anon2c78b6870408
 block|{
 DECL|member|run
 name|gint
@@ -860,7 +860,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2967cded0508
+DECL|struct|__anon2c78b6870508
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1729,7 +1729,7 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|unit
 decl_stmt|;
 name|gimp_image_get_resolution

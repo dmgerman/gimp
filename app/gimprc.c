@@ -212,7 +212,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2755b0f40103
+DECL|enum|__anon2b30ae6e0103
 typedef|typedef
 enum|enum
 block|{
@@ -713,10 +713,10 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|default_units
-name|GUnit
+name|GimpUnit
 name|default_units
 init|=
-name|UNIT_INCH
+name|GIMP_UNIT_INCH
 decl_stmt|;
 end_decl_stmt
 
@@ -825,10 +825,10 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|default_resolution_units
-name|GUnit
+name|GimpUnit
 name|default_resolution_units
 init|=
-name|UNIT_INCH
+name|GIMP_UNIT_INCH
 decl_stmt|;
 end_decl_stmt
 
@@ -7163,19 +7163,19 @@ expr_stmt|;
 operator|*
 operator|(
 operator|(
-name|GUnit
+name|GimpUnit
 operator|*
 operator|)
 name|val1p
 operator|)
 operator|=
-name|UNIT_INCH
+name|GIMP_UNIT_INCH
 expr_stmt|;
 for|for
 control|(
 name|i
 operator|=
-name|UNIT_INCH
+name|GIMP_UNIT_INCH
 init|;
 name|i
 operator|<
@@ -7203,7 +7203,7 @@ block|{
 operator|*
 operator|(
 operator|(
-name|GUnit
+name|GimpUnit
 operator|*
 operator|)
 name|val1p
@@ -11202,7 +11202,7 @@ block|{
 name|gint
 name|token
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|unit
 decl_stmt|;
 name|gchar
@@ -13347,7 +13347,7 @@ argument_list|(
 operator|*
 operator|(
 operator|(
-name|GUnit
+name|GimpUnit
 operator|*
 operator|)
 name|val1p

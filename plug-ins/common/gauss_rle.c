@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2435050108
+DECL|struct|__anon28ea5bbd0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -71,7 +71,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2435050208
+DECL|struct|__anon28ea5bbd0208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -90,7 +90,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2435050308
+DECL|struct|__anon28ea5bbd0308
 block|{
 DECL|member|size
 name|GtkWidget
@@ -1753,7 +1753,7 @@ name|GtkWidget
 modifier|*
 name|size
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|unit
 decl_stmt|;
 name|gdouble

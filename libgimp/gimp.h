@@ -1694,11 +1694,11 @@ parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 function_decl|;
-name|GUnit
+name|GimpUnit
 name|gimp_image_get_unit
 parameter_list|(
 name|gint32

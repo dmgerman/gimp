@@ -174,7 +174,7 @@ DECL|macro|PAINTBRUSH_DEFAULT_FADE_UNIT
 define|#
 directive|define
 name|PAINTBRUSH_DEFAULT_FADE_UNIT
-value|UNIT_PIXEL
+value|GIMP_UNIT_PIXEL
 end_define
 
 begin_define
@@ -198,7 +198,7 @@ DECL|macro|PAINTBRUSH_DEFAULT_GRADIENT_UNIT
 define|#
 directive|define
 name|PAINTBRUSH_DEFAULT_GRADIENT_UNIT
-value|UNIT_PIXEL
+value|GIMP_UNIT_PIXEL
 end_define
 
 begin_define
@@ -258,11 +258,11 @@ modifier|*
 name|fade_out_w
 decl_stmt|;
 DECL|member|fade_unit
-name|GUnit
+name|GimpUnit
 name|fade_unit
 decl_stmt|;
 DECL|member|fade_unit_d
-name|GUnit
+name|GimpUnit
 name|fade_unit_d
 decl_stmt|;
 DECL|member|fade_unit_w
@@ -297,11 +297,11 @@ modifier|*
 name|gradient_length_w
 decl_stmt|;
 DECL|member|gradient_unit
-name|GUnit
+name|GimpUnit
 name|gradient_unit
 decl_stmt|;
 DECL|member|gradient_unit_d
-name|GUnit
+name|GimpUnit
 name|gradient_unit_d
 decl_stmt|;
 DECL|member|gradient_unit_w
@@ -380,7 +380,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|non_gui_fade_unit
 specifier|static
-name|GUnit
+name|GimpUnit
 name|non_gui_fade_unit
 decl_stmt|;
 end_decl_stmt
@@ -388,7 +388,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|non_gui_gradient_unit
 specifier|static
-name|GUnit
+name|GimpUnit
 name|non_gui_gradient_unit
 decl_stmt|;
 end_decl_stmt
@@ -620,7 +620,7 @@ name|options
 operator|->
 name|fade_unit_d
 operator|==
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 operator|)
 condition|?
 literal|0
@@ -631,7 +631,7 @@ name|options
 operator|->
 name|fade_unit_d
 operator|==
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 operator|)
 condition|?
 literal|2
@@ -731,7 +731,7 @@ name|options
 operator|->
 name|gradient_unit_d
 operator|==
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 operator|)
 condition|?
 literal|0
@@ -742,7 +742,7 @@ name|options
 operator|->
 name|gradient_unit_d
 operator|==
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 operator|)
 condition|?
 literal|2
@@ -2199,7 +2199,7 @@ name|fade_unit
 condition|)
 block|{
 case|case
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 case|:
 name|fade_out
 operator|=
@@ -2209,7 +2209,7 @@ name|fade_out
 expr_stmt|;
 break|break;
 case|case
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 case|:
 name|fade_out
 operator|=
@@ -2278,7 +2278,7 @@ name|gradient_unit
 condition|)
 block|{
 case|case
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 case|:
 name|gradient_length
 operator|=
@@ -2288,7 +2288,7 @@ name|gradient_length
 expr_stmt|;
 break|break;
 case|case
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 case|:
 name|gradient_length
 operator|=
@@ -3111,7 +3111,7 @@ name|non_gui_fade_unit
 condition|)
 block|{
 case|case
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 case|:
 name|fade_out
 operator|=
@@ -3119,7 +3119,7 @@ name|non_gui_fade_out
 expr_stmt|;
 break|break;
 case|case
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 case|:
 name|fade_out
 operator|=
@@ -3172,7 +3172,7 @@ name|non_gui_gradient_unit
 condition|)
 block|{
 case|case
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 case|:
 name|gradient_length
 operator|=
@@ -3180,7 +3180,7 @@ name|non_gui_gradient_length
 expr_stmt|;
 break|break;
 case|case
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 case|:
 name|gradient_length
 operator|=
@@ -3274,7 +3274,7 @@ name|options
 init|=
 name|paintbrush_options
 decl_stmt|;
-name|double
+name|gdouble
 name|fade_out
 init|=
 name|PAINTBRUSH_DEFAULT_FADE_OUT
@@ -3294,27 +3294,27 @@ name|use_fade
 init|=
 name|PAINTBRUSH_DEFAULT_USE_FADE
 decl_stmt|;
-name|double
+name|gdouble
 name|gradient_length
 init|=
 name|PAINTBRUSH_DEFAULT_GRADIENT_LENGTH
 decl_stmt|;
-name|int
+name|gint
 name|gradient_type
 init|=
 name|PAINTBRUSH_DEFAULT_GRADIENT_TYPE
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|fade_unit
 init|=
 name|PAINTBRUSH_DEFAULT_FADE_UNIT
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|gradient_unit
 init|=
 name|PAINTBRUSH_DEFAULT_GRADIENT_UNIT
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 if|if

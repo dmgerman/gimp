@@ -43,7 +43,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c402bf0103
+DECL|enum|__anon2b65eab20103
 block|{
 DECL|enumerator|INFO_LABEL
 name|INFO_LABEL
@@ -398,7 +398,7 @@ parameter_list|,
 name|gint
 name|nfields
 parameter_list|,
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|,
 name|gchar
@@ -414,7 +414,7 @@ parameter_list|,
 name|gboolean
 name|show_refval
 parameter_list|,
-name|GimpSizeEntryUP
+name|GimpSizeEntryUpdatePolicy
 name|update_policy
 parameter_list|,
 name|GtkSignalFunc

@@ -33,6 +33,7 @@ function_decl|)
 parameter_list|(
 name|gchar
 modifier|*
+name|help_data
 parameter_list|)
 function_decl|;
 end_typedef

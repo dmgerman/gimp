@@ -149,7 +149,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dd6a790103
+DECL|enum|__anon28b15a150103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dd6a790208
+DECL|struct|__anon28b15a150208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -470,18 +470,18 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -531,10 +531,10 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GUnit
+name|GimpUnit
 name|psd_unit_to_gimp_unit
 parameter_list|(
-name|int
+name|gint
 name|psdunit
 parameter_list|)
 function_decl|;
@@ -545,7 +545,7 @@ specifier|static
 name|gint32
 name|load_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -564,16 +564,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -587,7 +587,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon27dd6a790308
+DECL|struct|__anon28b15a150308
 specifier|static
 struct|struct
 block|{
@@ -1963,7 +1963,7 @@ end_function
 
 begin_function
 specifier|static
-name|GUnit
+name|GimpUnit
 DECL|function|psd_unit_to_gimp_unit (int psdunit)
 name|psd_unit_to_gimp_unit
 parameter_list|(
@@ -1980,26 +1980,26 @@ case|case
 literal|1
 case|:
 return|return
-name|UNIT_INCH
+name|GIMP_UNIT_INCH
 return|;
 case|case
 literal|2
 case|:
 comment|/* this means cm to PS, but MM is as close as we have */
 return|return
-name|UNIT_MM
+name|GIMP_UNIT_MM
 return|;
 case|case
 literal|3
 case|:
 return|return
-name|UNIT_POINT
+name|GIMP_UNIT_POINT
 return|;
 case|case
 literal|4
 case|:
 return|return
-name|UNIT_PICA
+name|GIMP_UNIT_PICA
 return|;
 case|case
 literal|5
@@ -2015,7 +2015,7 @@ name|psdunit
 argument_list|)
 decl_stmt|;
 return|return
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 return|;
 block|}
 block|}

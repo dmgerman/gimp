@@ -270,7 +270,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277ae8f00108
+DECL|struct|__anon2aa1f4830108
 block|{
 DECL|member|resize
 name|Resize
@@ -5060,7 +5060,7 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|unit
 decl_stmt|;
 name|gdouble
@@ -5093,7 +5093,7 @@ expr_stmt|;
 name|unit
 operator|=
 operator|(
-name|GUnit
+name|GimpUnit
 operator|)
 name|gtk_object_get_data
 argument_list|(
@@ -5115,7 +5115,7 @@ if|if
 condition|(
 name|unit
 operator|!=
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 condition|)
 block|{
 name|gdouble
@@ -5210,7 +5210,7 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|unit
 decl_stmt|;
 name|gdouble
@@ -5250,7 +5250,7 @@ expr_stmt|;
 name|unit
 operator|=
 operator|(
-name|GUnit
+name|GimpUnit
 operator|)
 name|gtk_object_get_data
 argument_list|(
@@ -5272,7 +5272,7 @@ if|if
 condition|(
 name|unit
 operator|!=
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 condition|)
 block|{
 name|gdouble
@@ -5367,7 +5367,7 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|unit
 decl_stmt|;
 name|gdouble
@@ -5407,7 +5407,7 @@ expr_stmt|;
 name|unit
 operator|=
 operator|(
-name|GUnit
+name|GimpUnit
 operator|)
 name|gtk_object_get_data
 argument_list|(
@@ -5429,7 +5429,7 @@ if|if
 condition|(
 name|unit
 operator|!=
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 condition|)
 block|{
 name|gdouble
@@ -5524,7 +5524,7 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|unit
 decl_stmt|;
 name|gint
@@ -5564,7 +5564,7 @@ expr_stmt|;
 name|unit
 operator|=
 operator|(
-name|GUnit
+name|GimpUnit
 operator|)
 name|gtk_object_get_data
 argument_list|(
@@ -5604,7 +5604,7 @@ if|if
 condition|(
 name|unit
 operator|!=
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 condition|)
 block|{
 name|gdouble

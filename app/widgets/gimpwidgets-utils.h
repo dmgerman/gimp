@@ -241,7 +241,7 @@ parameter_list|,
 name|gint
 name|digits
 parameter_list|,
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|,
 name|gdouble

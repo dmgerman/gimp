@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdio.h>
 end_include
 
@@ -25,12 +19,6 @@ begin_include
 include|#
 directive|include
 file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
 end_include
 
 begin_include
@@ -183,7 +171,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b88834b0103
+DECL|enum|__anon2b2c60d20103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -201,7 +189,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b88834b0208
+DECL|struct|__anon2b2c60d20208
 block|{
 DECL|member|max_p
 name|gint
@@ -217,7 +205,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b88834b0308
+DECL|struct|__anon2b2c60d20308
 block|{
 DECL|member|run
 name|gint
@@ -307,14 +295,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
-name|GParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
-name|int
+name|gint
 name|nargs
 init|=
 sizeof|sizeof
@@ -330,12 +311,6 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-specifier|static
-name|int
-name|nreturn_vals
-init|=
-literal|0
-decl_stmt|;
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
@@ -343,10 +318,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-name|_
-argument_list|(
-literal|"Return an image in which each pixel holds only the channel that has the maximum value in three (red, green, blue) channels, and other channels are zero-cleared"
-argument_list|)
+literal|"Return an image in which each pixel holds only "
+literal|"the channel that has the maximum value in three "
+literal|"(red, green, blue) channels, and other channels "
+literal|"are zero-cleared"
 argument_list|,
 literal|"the help is not yet written for this plug-in"
 argument_list|,
@@ -367,11 +342,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -380,21 +355,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -503,11 +478,11 @@ name|drawable_id
 argument_list|)
 condition|)
 block|{
-name|gimp_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"RGB drawable is not selected."
+literal|"MaxRGB: Can only operate on RBG drawables."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1052,12 +1027,12 @@ condition|)
 name|gimp_progress_update
 argument_list|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|processed
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|total
 argument_list|)

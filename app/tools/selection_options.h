@@ -152,11 +152,11 @@ modifier|*
 name|fixed_height_w
 decl_stmt|;
 DECL|member|fixed_unit
-name|GUnit
+name|GimpUnit
 name|fixed_unit
 decl_stmt|;
 DECL|member|fixed_unit_d
-name|GUnit
+name|GimpUnit
 name|fixed_unit_d
 decl_stmt|;
 DECL|member|fixed_unit_w

@@ -52,7 +52,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288399670108
+DECL|struct|__anon2990faa70108
 block|{
 DECL|member|compression
 name|gint
@@ -71,7 +71,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288399670208
+DECL|struct|__anon2990faa70208
 block|{
 DECL|member|run
 name|gint
@@ -86,7 +86,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288399670308
+DECL|struct|__anon2990faa70308
 block|{
 DECL|member|ID
 name|gint32
@@ -2053,10 +2053,10 @@ decl_stmt|;
 name|gushort
 name|read_unit
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|unit
 init|=
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 decl_stmt|;
 comment|/* invalid unit */
 if|if
@@ -2118,7 +2118,7 @@ name|RESUNIT_INCH
 case|:
 name|unit
 operator|=
-name|UNIT_INCH
+name|GIMP_UNIT_INCH
 expr_stmt|;
 break|break;
 case|case
@@ -2134,7 +2134,7 @@ literal|2.54
 expr_stmt|;
 name|unit
 operator|=
-name|UNIT_MM
+name|GIMP_UNIT_MM
 expr_stmt|;
 comment|/* as this is our default metric unit */
 break|break;
@@ -2197,7 +2197,7 @@ if|if
 condition|(
 name|unit
 operator|!=
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 condition|)
 name|gimp_image_set_unit
 argument_list|(
@@ -6340,22 +6340,21 @@ directive|ifdef
 name|GIMP_HAVE_RESOLUTION_INFO
 comment|/* resolution fields */
 block|{
-name|double
+name|gdouble
 name|xresolution
 decl_stmt|;
-name|double
+name|gdouble
 name|yresolution
 decl_stmt|;
-name|unsigned
-name|short
+name|gushort
 name|save_unit
 init|=
 name|RESUNIT_INCH
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|unit
 decl_stmt|;
-name|float
+name|gfloat
 name|factor
 decl_stmt|;
 name|gimp_image_get_resolution
@@ -6397,7 +6396,7 @@ operator|<
 literal|1e-5
 operator|)
 operator|||
-comment|/* m */
+comment|/* m  */
 operator|(
 name|ABS
 argument_list|(
@@ -6409,7 +6408,7 @@ operator|<
 literal|1e-5
 operator|)
 operator|||
-comment|/* why not ;) */
+comment|/* dm */
 operator|(
 name|ABS
 argument_list|(

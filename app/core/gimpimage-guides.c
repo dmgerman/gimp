@@ -558,7 +558,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon288ed5e20103
+DECL|enum|__anon2b69a0b60103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -1718,14 +1718,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_set_unit (GimpImage * gimage,GUnit unit)
+DECL|function|gimp_image_set_unit (GimpImage * gimage,GimpUnit unit)
 name|gimp_image_set_unit
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 block|{
@@ -1744,7 +1744,7 @@ block|}
 end_function
 
 begin_function
-name|GUnit
+name|GimpUnit
 DECL|function|gimp_image_get_unit (GimpImage * gimage)
 name|gimp_image_get_unit
 parameter_list|(

@@ -11497,7 +11497,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|unit
 decl_stmt|;
 name|gimage
@@ -11539,7 +11539,7 @@ if|if
 condition|(
 name|unit
 operator|<
-name|UNIT_INCH
+name|GIMP_UNIT_INCH
 operator|||
 name|unit
 operator|>=

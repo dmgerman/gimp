@@ -375,7 +375,7 @@ end_function_decl
 begin_function
 name|Resize
 modifier|*
-DECL|function|resize_widget_new (ResizeType type,ResizeTarget target,GtkObject * object,gint width,gint height,gdouble resolution_x,gdouble resolution_y,GUnit unit,gboolean dot_for_dot,GtkSignalFunc ok_cb,GtkSignalFunc cancel_cb,gpointer user_data)
+DECL|function|resize_widget_new (ResizeType type,ResizeTarget target,GtkObject * object,gint width,gint height,gdouble resolution_x,gdouble resolution_y,GimpUnit unit,gboolean dot_for_dot,GtkSignalFunc ok_cb,GtkSignalFunc cancel_cb,gpointer user_data)
 name|resize_widget_new
 parameter_list|(
 name|ResizeType
@@ -400,7 +400,7 @@ parameter_list|,
 name|gdouble
 name|resolution_y
 parameter_list|,
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|,
 name|gboolean
@@ -1641,7 +1641,7 @@ operator|->
 name|size_se
 argument_list|)
 argument_list|,
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_resolution
@@ -2781,7 +2781,7 @@ operator|->
 name|offset_se
 argument_list|)
 argument_list|,
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_resolution
@@ -4917,7 +4917,7 @@ name|ResizePrivate
 modifier|*
 name|private
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|unit
 decl_stmt|;
 name|gchar
@@ -4933,10 +4933,10 @@ literal|32
 index|]
 decl_stmt|;
 specifier|static
-name|GUnit
+name|GimpUnit
 name|label_unit
 init|=
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 decl_stmt|;
 name|resize
 operator|=
@@ -4970,7 +4970,7 @@ if|if
 condition|(
 name|unit
 operator|!=
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 condition|)
 name|label_unit
 operator|=
@@ -4980,9 +4980,9 @@ if|if
 condition|(
 name|label_unit
 condition|)
-comment|/* unit != UNIT_PIXEL */
+comment|/* unit != GIMP_UNIT_PIXEL */
 block|{
-name|double
+name|gdouble
 name|unit_factor
 init|=
 name|gimp_unit_get_factor
@@ -5084,7 +5084,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-comment|/* unit == UNIT_PIXEL */
+comment|/* unit == GIMP_UNIT_PIXEL */
 block|{
 name|g_snprintf
 argument_list|(

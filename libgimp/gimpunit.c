@@ -32,12 +32,12 @@ comment|/*  internal structures  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a0aa46a0108
 typedef|typedef
 struct|struct
+DECL|struct|__anon2b9ef2210108
 block|{
 DECL|member|delete_on_exit
-name|guint
+name|gboolean
 name|delete_on_exit
 decl_stmt|;
 DECL|member|factor
@@ -85,7 +85,7 @@ specifier|static
 name|GimpUnitDef
 name|gimp_unit_defs
 index|[
-name|UNIT_END
+name|GIMP_UNIT_END
 index|]
 init|=
 block|{
@@ -252,7 +252,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/*  public functions  */
+comment|/**  * gimp_unit_get_number_of_units:  *  * Returns the number of units which are known to the #GimpUnit system.  *  * Returns: The number of defined units.  *  */
 end_comment
 
 begin_function
@@ -267,10 +267,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|int
+name|gint
 name|number
 decl_stmt|;
 name|return_vals
@@ -287,7 +287,7 @@ argument_list|)
 expr_stmt|;
 name|number
 operator|=
-name|UNIT_END
+name|GIMP_UNIT_END
 expr_stmt|;
 if|if
 condition|(
@@ -326,6 +326,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_unit_get_number_of_built_in_units:  *  * Returns the number of #GimpUnit's which are hardcoded in the unit system  * (UNIT_INCH, UNIT_MM, UNIT_POINT, UNIT_PICA and the two "pseudo units"  *  UNIT_PIXEL and UNIT_PERCENT).  *  * Returns: The number of built-in units.  *  */
+end_comment
+
 begin_function
 name|gint
 DECL|function|gimp_unit_get_number_of_built_in_units (void)
@@ -335,13 +339,17 @@ name|void
 parameter_list|)
 block|{
 return|return
-name|UNIT_END
+name|GIMP_UNIT_END
 return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_unit_new:  * @identifier: The unit's identifier string.  * @factor: The unit's factor (how many units are in one inch).  * @digits: The unit's suggested number of digits (see gimp_unit_get_digits()).  * @symbol: The symbol of the unit (e.g. "''" for inch).  * @abbreviation: The abbreviation of the unit.  * @singular: The singular form of the unit.  * @plural: The plural form of the unit.  *  * Returns the integer ID of the new #GimpUnit.  *  * Note that a new unit is always created with it's deletion flag  * set to #TRUE. You will have to set it to #FALSE with  * gimp_unit_set_deletion_flag() to make the unit definition persistent.  *  * Returns: The ID of the new unit.  *  */
+end_comment
+
 begin_function
-name|GUnit
+name|GimpUnit
 DECL|function|gimp_unit_new (gchar * identifier,gdouble factor,gint digits,gchar * symbol,gchar * abbreviation,gchar * singular,gchar * plural)
 name|gimp_unit_new
 parameter_list|(
@@ -376,10 +384,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|unit
 decl_stmt|;
 name|return_vals
@@ -439,7 +447,7 @@ argument_list|)
 expr_stmt|;
 name|unit
 operator|=
-name|UNIT_INCH
+name|GIMP_UNIT_INCH
 expr_stmt|;
 if|if
 condition|(
@@ -478,12 +486,16 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_unit_get_deletion_flag:  * @unit: The unit you want to know the @deletion_flag of.  *  * Returns: The unit's @deletion_flag.  *  */
+end_comment
+
 begin_function
-name|guint
-DECL|function|gimp_unit_get_deletion_flag (GUnit unit)
+name|gboolean
+DECL|function|gimp_unit_get_deletion_flag (GimpUnit unit)
 name|gimp_unit_get_deletion_flag
 parameter_list|(
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 block|{
@@ -491,17 +503,17 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|guint
+name|gboolean
 name|flag
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|unit
 operator|>=
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 argument_list|,
 name|TRUE
 argument_list|)
@@ -510,7 +522,7 @@ if|if
 condition|(
 name|unit
 operator|<
-name|UNIT_END
+name|GIMP_UNIT_END
 condition|)
 return|return
 name|FALSE
@@ -558,6 +570,10 @@ operator|.
 name|data
 operator|.
 name|d_int32
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
@@ -572,15 +588,19 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_unit_set_deletion_flag:  * @unit: The unit you want to set the @deletion_flag for.  * @deletion_flag: The new deletion_flag.  *  * Sets a #GimpUnit's @deletion_flag. If the @deletion_flag of a unit is  * #TRUE when GIMP exits, this unit will not be saved in the uses's  * "unitrc" file.  *  * Trying to change the @deletion_flag of a built-in unit will be silently  * ignored.  *  */
+end_comment
+
 begin_function
 name|void
-DECL|function|gimp_unit_set_deletion_flag (GUnit unit,guint deletion_flag)
+DECL|function|gimp_unit_set_deletion_flag (GimpUnit unit,gboolean deletion_flag)
 name|gimp_unit_set_deletion_flag
 parameter_list|(
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|,
-name|guint
+name|gboolean
 name|deletion_flag
 parameter_list|)
 block|{
@@ -588,21 +608,21 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|unit
 operator|>=
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 name|unit
 operator|<
-name|UNIT_END
+name|GIMP_UNIT_END
 condition|)
 return|return;
 name|return_vals
@@ -635,12 +655,16 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_unit_get_factor:  * @unit: The unit you want to know the factor of.  *  * A #GimpUnit's @factor is defined to be:  *  * distance_in_units == (@factor * distance_in_inches)  *  * Returns 0 for @unit == GIMP_UNIT_PIXEL.  *  * Returns: The unit's factor.  *  */
+end_comment
+
 begin_function
 name|gdouble
-DECL|function|gimp_unit_get_factor (GUnit unit)
+DECL|function|gimp_unit_get_factor (GimpUnit unit)
 name|gimp_unit_get_factor
 parameter_list|(
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 block|{
@@ -648,7 +672,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gdouble
@@ -658,7 +682,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|unit
 operator|>=
-name|UNIT_INCH
+name|GIMP_UNIT_INCH
 argument_list|,
 literal|1.0
 argument_list|)
@@ -667,7 +691,7 @@ if|if
 condition|(
 name|unit
 operator|<
-name|UNIT_END
+name|GIMP_UNIT_END
 condition|)
 return|return
 name|gimp_unit_defs
@@ -734,12 +758,16 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_unit_get_digits:  * @unit: The unit you want to know the digits.  *  * Returns the number of digits an entry field should provide to get  * approximately the same accuracy as an inch input field with two digits.  *  * Returns 0 for @unit == GIMP_UNIT_PIXEL.  *  * Returns: The suggested number of digits.  *  */
+end_comment
+
 begin_function
 name|gint
-DECL|function|gimp_unit_get_digits (GUnit unit)
+DECL|function|gimp_unit_get_digits (GimpUnit unit)
 name|gimp_unit_get_digits
 parameter_list|(
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 block|{
@@ -747,7 +775,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint
@@ -766,7 +794,7 @@ if|if
 condition|(
 name|unit
 operator|<
-name|UNIT_END
+name|GIMP_UNIT_END
 condition|)
 return|return
 name|gimp_unit_defs
@@ -796,7 +824,7 @@ name|digits
 operator|=
 name|gimp_unit_defs
 index|[
-name|UNIT_INCH
+name|GIMP_UNIT_INCH
 index|]
 operator|.
 name|digits
@@ -838,13 +866,17 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_unit_get_identifier:  * @unit: The unit you want to know the identifier of.  *  * This is an unstranslated string.  *  * NOTE: This string has to be g_free()'d by plugins but is a pointer to a  *       constant string when this function is used from inside the GIMP.  *  * Returns: The unit's identifier.  *  */
+end_comment
+
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_unit_get_identifier (GUnit unit)
+DECL|function|gimp_unit_get_identifier (GimpUnit unit)
 name|gimp_unit_get_identifier
 parameter_list|(
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 block|{
@@ -852,7 +884,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gchar
@@ -863,7 +895,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|unit
 operator|>=
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 argument_list|,
 name|g_strdup
 argument_list|(
@@ -875,7 +907,7 @@ if|if
 condition|(
 name|unit
 operator|<
-name|UNIT_END
+name|GIMP_UNIT_END
 condition|)
 return|return
 name|g_strdup
@@ -892,7 +924,7 @@ if|if
 condition|(
 name|unit
 operator|==
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 condition|)
 return|return
 name|g_strdup
@@ -969,13 +1001,17 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_unit_get_symbol:  * @unit: The unit you want to know the symbol of.  *  * This is e.g. "''" for UNIT_INCH.  *  * NOTE: This string has to be g_free()'d by plugins but is a pointer to a  *       constant string when this function is used from inside the GIMP.  *  * Returns: The unit's symbol.  *  */
+end_comment
+
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_unit_get_symbol (GUnit unit)
+DECL|function|gimp_unit_get_symbol (GimpUnit unit)
 name|gimp_unit_get_symbol
 parameter_list|(
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 block|{
@@ -983,7 +1019,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gchar
@@ -994,7 +1030,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|unit
 operator|>=
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 argument_list|,
 name|g_strdup
 argument_list|(
@@ -1006,7 +1042,7 @@ if|if
 condition|(
 name|unit
 operator|<
-name|UNIT_END
+name|GIMP_UNIT_END
 condition|)
 return|return
 name|g_strdup
@@ -1023,7 +1059,7 @@ if|if
 condition|(
 name|unit
 operator|==
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 condition|)
 return|return
 name|g_strdup
@@ -1100,13 +1136,17 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_unit_get_abbreviation:  * @unit: The unit you want to know the abbreviation of.  *  * For built-in units, this function returns the translated abbreviation  * of the unit.  *  * NOTE: This string has to be g_free()'d by plugins but is a pointer to a  *       constant string when this function is used from inside the GIMP.  *  * Returns: The unit's abbreviation.  *  */
+end_comment
+
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_unit_get_abbreviation (GUnit unit)
+DECL|function|gimp_unit_get_abbreviation (GimpUnit unit)
 name|gimp_unit_get_abbreviation
 parameter_list|(
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 block|{
@@ -1114,7 +1154,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gchar
@@ -1125,7 +1165,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|unit
 operator|>=
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 argument_list|,
 name|g_strdup
 argument_list|(
@@ -1137,7 +1177,7 @@ if|if
 condition|(
 name|unit
 operator|<
-name|UNIT_END
+name|GIMP_UNIT_END
 condition|)
 return|return
 name|g_strdup
@@ -1154,7 +1194,7 @@ if|if
 condition|(
 name|unit
 operator|==
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 condition|)
 return|return
 name|g_strdup
@@ -1231,13 +1271,17 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_unit_get_singular:  * @unit: The unit you want to know the singular form of.  *  * For built-in units, this function returns the translated singular form  * of the unit's name.  *  * NOTE: This string has to be g_free()'d by plugins but is a pointer to a  *       constant string when this function is used from inside the GIMP.  *  * Returns: The unit's singular form.  *  */
+end_comment
+
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_unit_get_singular (GUnit unit)
+DECL|function|gimp_unit_get_singular (GimpUnit unit)
 name|gimp_unit_get_singular
 parameter_list|(
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 block|{
@@ -1245,7 +1289,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gchar
@@ -1256,7 +1300,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|unit
 operator|>=
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 argument_list|,
 name|g_strdup
 argument_list|(
@@ -1268,7 +1312,7 @@ if|if
 condition|(
 name|unit
 operator|<
-name|UNIT_END
+name|GIMP_UNIT_END
 condition|)
 return|return
 name|g_strdup
@@ -1288,7 +1332,7 @@ if|if
 condition|(
 name|unit
 operator|==
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 condition|)
 return|return
 name|g_strdup
@@ -1368,13 +1412,17 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_unit_get_plural:  * @unit: The unit you want to know the plural form of.  *  * For built-in units, this function returns the translated plural form  * of the unit's name.  *  * NOTE: This string has to be g_free()'d by plugins but is a pointer to a  *       constant string when this function is used from inside the GIMP.  *  * Returns: The unit's plural form.  *  */
+end_comment
+
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_unit_get_plural (GUnit unit)
+DECL|function|gimp_unit_get_plural (GimpUnit unit)
 name|gimp_unit_get_plural
 parameter_list|(
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 block|{
@@ -1382,7 +1430,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gchar
@@ -1393,7 +1441,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|unit
 operator|>=
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 argument_list|,
 name|g_strdup
 argument_list|(
@@ -1405,7 +1453,7 @@ if|if
 condition|(
 name|unit
 operator|<
-name|UNIT_END
+name|GIMP_UNIT_END
 condition|)
 return|return
 name|g_strdup
@@ -1425,7 +1473,7 @@ if|if
 condition|(
 name|unit
 operator|==
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 condition|)
 return|return
 name|g_strdup

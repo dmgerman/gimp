@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"gimplimits.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpsizeentry.h"
 end_include
 
@@ -68,13 +74,9 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/* static int  gimp_size_entry_focus_in_callback  (GtkWidget *widget, 						GdkEvent  *event, 						gpointer   data); static int  gimp_size_entry_focus_out_callback (GtkWidget *widget,                                                 GdkEvent  *event, 						gpointer   data); */
-end_comment
-
 begin_enum
-DECL|enum|__anon2baed8b20103
 enum|enum
+DECL|enum|__anon2a2999d60103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -479,7 +481,7 @@ name|gse
 operator|->
 name|unit
 operator|=
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 expr_stmt|;
 name|gse
 operator|->
@@ -510,9 +512,11 @@ end_function
 
 begin_function
 name|GtkType
-DECL|function|gimp_size_entry_get_type ()
+DECL|function|gimp_size_entry_get_type (void)
 name|gimp_size_entry_get_type
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|guint
@@ -582,16 +586,20 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_size_entry_new:  * @number_of_fields: The number of input fields.  * @unit: The initial unit.  * @unit_format: A printf-like unit-format string (see #GimpUnitMenu).  * @menu_show_pixels: #TRUE if the unit menu shold contain an item for  *                    GIMP_UNIT_PIXEL (ignored if the @update_policy is not  *                    GIMP_SIZE_ENTRY_UPDATE_NONE).  * @menu_show_percent: #TRUE if the unit menu shold contain an item for  *                     GIMP_UNIT_PERCENT.  * @show_refval: #TRUE if you want an extra "refenence value" spinbutton per                  input field.  * @spinbutton_usize: The minimal horizontal size of the #GtkSpinButton's.  * @update_policy: How the automatic pixel<-> real-world-unit calculations  *                 should be performed.  *  * Creates a new #GimpSizeEntry widget.  *  * To have all automatic calculations performed correctly, set up the  * widget in the following order:  *  * 1. gimp_size_entry_new()  *  * 2. (for each additional input field) gimp_size_entry_add_field()  *  * 3. gimp_size_entry_set_unit()  *  * For each input field:  *  * 4. gimp_size_entry_set_resolution()  *  * 5. gimp_size_entry_set_refval_boundaries()  *    (or gimp_size_entry_set_value_boundaries())  *  * 6. gimp_size_entry_set_size()  *  * 7. gimp_size_entry_set_refval() (or gimp_size_entry_set_value())  *  * The #GimpSizeEntry is derived from #GtkTable and will have  * an empty border of one cell width on each side plus an empty column left  * of the #GimpUnitMenu to allow the caller to add labels or a #GimpChainButton.  *  * Returns: A Pointer to the new #GimpSizeEntry widget.  *  */
+end_comment
+
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_size_entry_new (gint number_of_fields,GUnit unit,gchar * unit_format,gboolean menu_show_pixels,gboolean menu_show_percent,gboolean show_refval,gint spinbutton_usize,GimpSizeEntryUP update_policy)
+DECL|function|gimp_size_entry_new (gint number_of_fields,GimpUnit unit,gchar * unit_format,gboolean menu_show_pixels,gboolean menu_show_percent,gboolean show_refval,gint spinbutton_usize,GimpSizeEntryUpdatePolicy update_policy)
 name|gimp_size_entry_new
 parameter_list|(
 name|gint
 name|number_of_fields
 parameter_list|,
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|,
 name|gchar
@@ -610,7 +618,7 @@ parameter_list|,
 name|gint
 name|spinbutton_usize
 parameter_list|,
-name|GimpSizeEntryUP
+name|GimpSizeEntryUpdatePolicy
 name|update_policy
 parameter_list|)
 block|{
@@ -917,7 +925,7 @@ argument_list|,
 operator|(
 name|unit
 operator|==
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 operator|)
 condition|?
 literal|2
@@ -1011,7 +1019,6 @@ argument_list|,
 name|gsef
 argument_list|)
 expr_stmt|;
-comment|/* these callbacks are not used       gtk_signal_connect (GTK_OBJECT (gsef->value_spinbutton), 			  "focus_in_event", 			  (GdkEventFunc) gimp_size_entry_focus_in_callback, 			  gsef);       gtk_signal_connect (GTK_OBJECT (gsef->value_spinbutton), 			  "focus_out_event", 			  (GdkEventFunc) gimp_size_entry_focus_out_callback, 			  gsef);       */
 name|gtk_widget_show
 argument_list|(
 name|gsef
@@ -1137,7 +1144,6 @@ argument_list|,
 name|gsef
 argument_list|)
 expr_stmt|;
-comment|/* these callbacks are not used 	  gtk_signal_connect (GTK_OBJECT (gsef->refval_spinbutton), 			      "focus_in_event", 			      (GdkEventFunc) gimp_size_entry_focus_in_callback, 			      gsef); 	  gtk_signal_connect (GTK_OBJECT (gsef->refval_spinbutton), 			      "focus_out_event", 			      (GdkEventFunc) gimp_size_entry_focus_out_callback, 			      gsef); 	  */
 name|gtk_widget_show
 argument_list|(
 name|gsef
@@ -1160,7 +1166,7 @@ operator|&&
 operator|(
 name|unit
 operator|==
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 operator|)
 condition|)
 name|gtk_spin_button_set_digits
@@ -1279,7 +1285,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  add a field to the sizeentry  */
+comment|/**  * gimp_size_entry_add_field:  * @gse: The sizeentry you want to add a field to.  * @value_spinbutton: The spinbutton to display the field's value.  * @refval_spinbutton: The spinbutton to display the field's reference value.  *  * Adds an input field to the #GimpSizeEntry.  *  * The new input field will have the index 0. If you specified @show_refval  * as #TRUE in gimp_size_entry_new() you have to pass an additional  * #GtkSpinButton to hold the reference value. If @show_refval was #FALSE,  * @refval_spinbutton will be ignored.  *  */
 end_comment
 
 begin_function
@@ -1508,7 +1514,6 @@ argument_list|,
 name|gsef
 argument_list|)
 expr_stmt|;
-comment|/* these callbacks are not used      gtk_signal_connect (GTK_OBJECT (value_spinbutton),                          "focus_in_event", 			 (GdkEventFunc) gimp_size_entry_focus_in_callback, 			 gsef);      gtk_signal_connect (GTK_OBJECT (value_spinbutton), 			 "focus_out_event", 			 (GdkEventFunc) gimp_size_entry_focus_out_callback, 			 gsef);   */
 if|if
 condition|(
 name|gse
@@ -1556,7 +1561,6 @@ argument_list|,
 name|gsef
 argument_list|)
 expr_stmt|;
-comment|/* these callbacks are not used 	 gtk_signal_connect (GTK_OBJECT (refval_spinbutton), 			     "focus_in_event", 			     (GdkEventFunc) gimp_size_entry_focus_in_callback, 			     gsef); 	 gtk_signal_connect (GTK_OBJECT (refval_spinbutton), 			     "focus_out_event", 			     (GdkEventFunc) gimp_size_entry_focus_out_callback, 			     gsef);       */
 block|}
 name|gtk_spin_button_set_digits
 argument_list|(
@@ -1596,7 +1600,7 @@ name|gse
 operator|->
 name|unit
 operator|==
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 operator|)
 condition|)
 name|gtk_spin_button_set_digits
@@ -1617,7 +1621,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  convenience function for labeling the widget  ***********/
+comment|/**  * gimp_size_entry_attach_label:  * @gse: The sizeentry you want to add a label to.  * @text: The text of the label.  * @row: The row where the label will be attached.  * @column: The column where the label will be attached.  * @alignment: The horizontal alignment of the label.  *  * Attaches a #GtkLabel to the #GimpSizeEntry (which is a #GtkTable).  */
 end_comment
 
 begin_function
@@ -1724,12 +1728,12 @@ block|}
 end_function
 
 begin_comment
-comment|/*  resolution stuff  ***********/
+comment|/**  * gimp_size_entry_set_resolution:  * @gse: The sizeentry you want to set a resolution for.  * @field: The index of the field you want to set the resolution for.  * @resolution: The new resolution (in dpi) for the chosen @field.  * @keep_size: #TRUE if the @field's size in pixels should stay the same.  *             #FALSE if the @field's size in units should stay the same.  *  * Sets the resolution (in dpi) for field # @field of the #GimpSizeEntry.  *  * The @resolution passed will be clamped to fit in  * [#GIMP_MIN_RESOLUTION..#GIMP_MAX_RESOLUTION].  *  * This function does nothing if the #GimpSizeEntryUpdatePolicy specified in  * gimp_size_entry_new() doesn't equal to GIMP_SIZE_ENTRY_UPDATE_SIZE.  *  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_size_entry_set_resolution (GimpSizeEntry * gse,gint field,gdouble resolution,guint keep_size)
+DECL|function|gimp_size_entry_set_resolution (GimpSizeEntry * gse,gint field,gdouble resolution,gboolean keep_size)
 name|gimp_size_entry_set_resolution
 parameter_list|(
 name|GimpSizeEntry
@@ -1742,7 +1746,7 @@ parameter_list|,
 name|gdouble
 name|resolution
 parameter_list|,
-name|guint
+name|gboolean
 name|keep_size
 parameter_list|)
 block|{
@@ -1750,7 +1754,7 @@ name|GimpSizeEntryField
 modifier|*
 name|gsef
 decl_stmt|;
-name|float
+name|gfloat
 name|val
 decl_stmt|;
 name|g_return_if_fail
@@ -1785,11 +1789,15 @@ name|number_of_fields
 operator|)
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|resolution
+operator|=
+name|CLAMP
 argument_list|(
 name|resolution
-operator|>
-literal|0.0
+argument_list|,
+name|GIMP_MIN_RESOLUTION
+argument_list|,
+name|GIMP_MAX_RESOLUTION
 argument_list|)
 expr_stmt|;
 name|gsef
@@ -1858,7 +1866,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  percent stuff  ***********/
+comment|/**  * gimp_size_entry_set_size:  * @gse: The sizeentry you want to set a size for.  * @field: The index of the field you want to set the size for.  * @lower: The reference value which will be treated as 0%.  * @upper: The reference value which will be treated as 100%.  *  * Sets the pixel values for field # @field of the #GimpSizeEntry  * which will be treated as 0% and 100%.  *  * These values will be used if you specified @menu_show_percent as #TRUE  * in gimp_size_entry_new() and the user has selected GIMP_UNIT_PERCENT in  * the #GimpSizeEntry's #GimpUnitMenu.  *  * This function does nothing if the #GimpSizeEntryUpdatePolicy specified in  * gimp_size_entry_new() doesn't equal to GIMP_SIZE_ENTRY_UPDATE_SIZE.  *  */
 end_comment
 
 begin_function
@@ -1965,7 +1973,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  value stuff  ***********/
+comment|/**  * gimp_size_entry_set_value_boundaries:  * @gse: The sizeentry you want to set value boundaries for.  * @field: The index of the field you want to set value boundaries for.  * @lower: The new lower boundary of the value of the chosen @field.  * @upper: The new upper boundary of the value of the chosen @field.  *  * Limits the range of possible values which can be entered in field # @field  * of the #GimpSizeEntry.  *  * The current value of the @field will be clamped to fit in the @field's  * new boundaries.  *  * NOTE: In most cases you won't be interested in these values because the  *       #GimpSizeEntry's purpose is to shield the programmer from unit  *       calculations. Use gimp_size_entry_set_refval_boundaries() instead.  *  */
 end_comment
 
 begin_function
@@ -2120,7 +2128,7 @@ name|unit
 condition|)
 block|{
 case|case
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 case|:
 name|gimp_size_entry_set_refval_boundaries
 argument_list|(
@@ -2139,7 +2147,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 case|:
 name|gimp_size_entry_set_refval_boundaries
 argument_list|(
@@ -2285,6 +2293,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_size_entry_get_value;  * @gse: The sizeentry you want to know a value of.  * @field: The index of the filed you want to know the value of.  *  * Returns the value of field # @field of the #GimpSizeEntry.  *  * The @value returned is a distance or resolution  * in the #GimpUnit the user has selected in the #GimpSizeEntry's  * #GimpUnitMenu.  *  * NOTE: In most cases you won't be interested in this value because the  *       #GimpSizeEntry's purpose is to shield the programmer from unit  *       calculations. Use gimp_size_entry_get_refval() instead.  *  * Returns: The value of the chosen @field.  *  */
+end_comment
+
 begin_function
 name|gdouble
 DECL|function|gimp_size_entry_get_value (GimpSizeEntry * gse,gint field)
@@ -2418,7 +2430,7 @@ name|unit
 condition|)
 block|{
 case|case
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 case|:
 name|gsef
 operator|->
@@ -2428,7 +2440,7 @@ name|value
 expr_stmt|;
 break|break;
 case|case
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 case|:
 name|gsef
 operator|->
@@ -2577,6 +2589,10 @@ break|break;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_size_entry_set_value;  * @gse: The sizeentry you want to set a value for.  * @field: The index of the field you want to set a value for.  * @value: The new value for @field.  *  * Sets the value for field # @field of the #GimpSizeEntry.  *  * The @value passed is treated to be a distance or resolution  * in the #GimpUnit the user has selected in the #GimpSizeEntry's  * #GimpUnitMenu.  *  * NOTE: In most cases you won't be interested in this value because the  *       #GimpSizeEntry's purpose is to shield the programmer from unit  *       calculations. Use gimp_size_entry_set_refval() instead.  *  */
+end_comment
 
 begin_function
 name|void
@@ -2756,7 +2772,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  refval stuff  ***********/
+comment|/**  * gimp_size_entry_set_refval_boundaries:  * @gse: The sizeentry you want to set the reference value boundaries for.  * @field: The index of the field you want to set the reference value  *         boundaries for.  * @lower: The new lower boundary of the reference value of the chosen @field.  * @upper: The new upper boundary of the reference value of the chosen @field.  *  * Limits the range of possible reference values which can be entered in  * field # @field of the #GimpSizeEntry.  *  * The current reference value of the @field will be clamped to fit in the  * @field's new boundaries.  *  */
 end_comment
 
 begin_function
@@ -2919,7 +2935,7 @@ name|unit
 condition|)
 block|{
 case|case
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 case|:
 name|gimp_size_entry_set_value_boundaries
 argument_list|(
@@ -2938,7 +2954,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 case|:
 name|gimp_size_entry_set_value_boundaries
 argument_list|(
@@ -3088,6 +3104,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_size_entry_set_refval_digits:  * @gse: The sizeentry you want to set the reference value digits for.  * @field: The index of the field you want to set the reference value for.  * @digits: The new number of decimal digits for the #GtkSpinButton which  *          displays @field's reference value.  *  * Sets the decimal digits of field # @field of the #GimpSizeEntry to  * @digits.  *  * If you don't specify this value explicitly, the reference value's number  * of digits will equal to 0 for GIMP_SIZE_ENTRY_UPDATE_SIZE and to 2 for  * GIMP_SIZE_ENTRY_UPDATE_RESOLUTION.  *  */
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_size_entry_set_refval_digits (GimpSizeEntry * gse,gint field,gint digits)
@@ -3212,7 +3232,7 @@ name|gse
 operator|->
 name|unit
 operator|==
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 condition|)
 name|gtk_spin_button_set_digits
 argument_list|(
@@ -3231,6 +3251,10 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_size_entry_get_refval;  * @gse: The sizeentry you want to know a reference value of.  * @field: The index of the field you want to know the reference value of.  *  * Returns the reference value for field # @field of the #GimpSizeEntry.  *  * The reference value is either a distance in pixels or a resolution  * in dpi, depending on which #GimpSizeEntryUpdatePolicy you chose in  * gimp_size_entry_new().  *  * Returns: The reference value of the chosen @field.  *  */
+end_comment
 
 begin_function
 name|gdouble
@@ -3366,7 +3390,7 @@ name|unit
 condition|)
 block|{
 case|case
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 case|:
 name|gsef
 operator|->
@@ -3376,7 +3400,7 @@ name|refval
 expr_stmt|;
 break|break;
 case|case
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 case|:
 name|gsef
 operator|->
@@ -3511,6 +3535,10 @@ break|break;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_size_entry_set_refval;  * @gse: The sizeentry you want to set a reference value for.  * @field: The index of the field you want to set the reference value for.  * @refval: The new reference value for @field.  *  * Sets the reference value for field # @field of the #GimpSizeEntry.  *  * The @refval passed is either a distance in pixels or a resolution in dpi,  * depending on which #GimpSizeEntryUpdatePolicy you chose in  * gimp_size_entry_new().  *  */
+end_comment
 
 begin_function
 name|void
@@ -3698,11 +3726,11 @@ block|}
 end_function
 
 begin_comment
-comment|/*  unit stuff  ***********/
+comment|/**  * gimp_size_entry_get_unit:  * @gse: The sizeentry you want to know the unit of.  *  * Returns the #GimpUnit the user has selected in the #GimpSizeEntry's  * #GimpUnitMenu.   *  * Returns: The sizeentry's unit.  *  */
 end_comment
 
 begin_function
-name|GUnit
+name|GimpUnit
 DECL|function|gimp_size_entry_get_unit (GimpSizeEntry * gse)
 name|gimp_size_entry_get_unit
 parameter_list|(
@@ -3717,7 +3745,7 @@ name|gse
 operator|!=
 name|NULL
 argument_list|,
-name|UNIT_INCH
+name|GIMP_UNIT_INCH
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -3727,7 +3755,7 @@ argument_list|(
 name|gse
 argument_list|)
 argument_list|,
-name|UNIT_INCH
+name|GIMP_UNIT_INCH
 argument_list|)
 expr_stmt|;
 return|return
@@ -3741,14 +3769,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_size_entry_update_unit (GimpSizeEntry * gse,GUnit unit)
+DECL|function|gimp_size_entry_update_unit (GimpSizeEntry * gse,GimpUnit unit)
 name|gimp_size_entry_update_unit
 parameter_list|(
 name|GimpSizeEntry
 modifier|*
 name|gse
 parameter_list|,
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 block|{
@@ -3812,7 +3840,7 @@ if|if
 condition|(
 name|unit
 operator|==
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 condition|)
 name|gtk_spin_button_set_digits
 argument_list|(
@@ -3833,7 +3861,7 @@ if|if
 condition|(
 name|unit
 operator|==
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 condition|)
 name|gtk_spin_button_set_digits
 argument_list|(
@@ -3892,7 +3920,7 @@ argument_list|)
 operator|-
 name|gimp_unit_get_digits
 argument_list|(
-name|UNIT_INCH
+name|GIMP_UNIT_INCH
 argument_list|)
 operator|)
 expr_stmt|;
@@ -3979,16 +4007,20 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_size_entry_set_unit:  * @gse: The sizeentry you want to change the unit for.  * @unit: The new unit.  *  * Sets the #GimpSizeEntry's unit. The reference value for all fields will  * stay the same but the value in units or pixels per unit will change  * according to which #GimpSizeEntryUpdatePolicy you chose in  * gimp_size_entry_new().  *  */
+end_comment
+
 begin_function
 name|void
-DECL|function|gimp_size_entry_set_unit (GimpSizeEntry * gse,GUnit unit)
+DECL|function|gimp_size_entry_set_unit (GimpSizeEntry * gse,GimpUnit unit)
 name|gimp_size_entry_set_unit
 parameter_list|(
 name|GimpSizeEntry
 modifier|*
 name|gse
 parameter_list|,
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 block|{
@@ -4016,7 +4048,7 @@ operator|||
 operator|(
 name|unit
 operator|!=
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 operator|)
 argument_list|)
 expr_stmt|;
@@ -4029,7 +4061,7 @@ operator|||
 operator|(
 name|unit
 operator|!=
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 operator|)
 argument_list|)
 expr_stmt|;
@@ -4102,7 +4134,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  focus stuff  **********/
+comment|/**  * gimp_size_entry_grab_focus:  * @gse: The sizeentry you want to grab the keyboard focus.  *  * This function is rather ugly and just a workaround for the fact that  * it's impossible to implement gtk_widget_grab_focus() for a #GtkTable.  *  */
 end_comment
 
 begin_function
@@ -4163,10 +4195,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* static int gimp_size_entry_focus_in_callback (GtkWidget *widget, 				   GdkEvent  *event, 				   gpointer   data) {   gtk_editable_select_region (GTK_EDITABLE (widget), 0, -1);    return TRUE; }  static int gimp_size_entry_focus_out_callback (GtkWidget *widget, 				    GdkEvent  *event, 				    gpointer   data) {   gtk_editable_select_region (GTK_EDITABLE (widget), 0, 0);    return TRUE; } */
-end_comment
 
 end_unit
 

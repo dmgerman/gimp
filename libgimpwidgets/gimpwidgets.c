@@ -2190,7 +2190,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e7c02a0108
+DECL|struct|__anon29d2715e0108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -2530,10 +2530,10 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_coordinates_new (GUnit unit,gchar * unit_format,gboolean menu_show_pixels,gboolean menu_show_percent,gint spinbutton_usize,GimpSizeEntryUP update_policy,gboolean chainbutton_active,gboolean chain_constrains_ratio,GtkWidget ** chainbutton,gchar * xlabel,gdouble x,gdouble xres,gdouble lower_boundary_x,gdouble upper_boundary_x,gdouble xsize_0,gdouble xsize_100,gchar * ylabel,gdouble y,gdouble yres,gdouble lower_boundary_y,gdouble upper_boundary_y,gdouble ysize_0,gdouble ysize_100)
+DECL|function|gimp_coordinates_new (GimpUnit unit,gchar * unit_format,gboolean menu_show_pixels,gboolean menu_show_percent,gint spinbutton_usize,GimpSizeEntryUpdatePolicy update_policy,gboolean chainbutton_active,gboolean chain_constrains_ratio,GtkWidget ** chainbutton,gchar * xlabel,gdouble x,gdouble xres,gdouble lower_boundary_x,gdouble upper_boundary_x,gdouble xsize_0,gdouble xsize_100,gchar * ylabel,gdouble y,gdouble yres,gdouble lower_boundary_y,gdouble upper_boundary_y,gdouble ysize_0,gdouble ysize_100)
 name|gimp_coordinates_new
 parameter_list|(
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|,
 name|gchar
@@ -2549,7 +2549,7 @@ parameter_list|,
 name|gint
 name|spinbutton_usize
 parameter_list|,
-name|GimpSizeEntryUP
+name|GimpSizeEntryUpdatePolicy
 name|update_policy
 parameter_list|,
 name|gboolean
@@ -2747,7 +2747,7 @@ argument_list|(
 name|sizeentry
 argument_list|)
 argument_list|,
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_resolution
@@ -3446,7 +3446,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GUnit
+name|GimpUnit
 modifier|*
 name|val
 decl_stmt|;
@@ -3460,7 +3460,7 @@ decl_stmt|;
 name|val
 operator|=
 operator|(
-name|GUnit
+name|GimpUnit
 operator|*
 operator|)
 name|data
@@ -3483,7 +3483,7 @@ operator|(
 operator|*
 name|val
 operator|==
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 operator|)
 condition|?
 literal|0
@@ -3493,7 +3493,7 @@ operator|(
 operator|*
 name|val
 operator|==
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 operator|)
 condition|?
 literal|2

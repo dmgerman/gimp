@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library                                                     * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball                  *  * gimpunit.h  * Copyright (C) 1999 Michael Natterer<mitschel@cs.tu-berlin.de>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library                                                     * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball                  *  * gimpunit.h  * Copyright (C) 1999 Michael Natterer<mitch@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_comment
@@ -41,48 +41,47 @@ directive|endif
 comment|/* __cplusplus */
 typedef|typedef
 enum|enum
-DECL|enum|__anon279b48100103
+DECL|enum|__anon27804eec0103
 block|{
-DECL|enumerator|UNIT_PIXEL
-name|UNIT_PIXEL
+DECL|enumerator|GIMP_UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 init|=
 literal|0
 block|,
-DECL|enumerator|UNIT_INCH
-name|UNIT_INCH
+DECL|enumerator|GIMP_UNIT_INCH
+name|GIMP_UNIT_INCH
 init|=
 literal|1
 block|,
-DECL|enumerator|UNIT_MM
-name|UNIT_MM
+DECL|enumerator|GIMP_UNIT_MM
+name|GIMP_UNIT_MM
 init|=
 literal|2
 block|,
-DECL|enumerator|UNIT_POINT
-name|UNIT_POINT
+DECL|enumerator|GIMP_UNIT_POINT
+name|GIMP_UNIT_POINT
 init|=
 literal|3
 block|,
-DECL|enumerator|UNIT_PICA
-name|UNIT_PICA
+DECL|enumerator|GIMP_UNIT_PICA
+name|GIMP_UNIT_PICA
 init|=
 literal|4
 block|,
-DECL|enumerator|UNIT_END
-name|UNIT_END
+DECL|enumerator|GIMP_UNIT_END
+name|GIMP_UNIT_END
 init|=
 literal|5
 block|,
-comment|/*  never use UNIT_END but 			*  gimp_unit_get_number_of_units() instead 			*/
-DECL|enumerator|UNIT_PERCENT
-name|UNIT_PERCENT
+DECL|enumerator|GIMP_UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 init|=
 literal|65536
-comment|/*  this one does not really belong here but it's 			*  convenient to use the unit system for the 			*  various strings (symbol, singular, ...) 			* 			*  you can only ask it for it's strings, asking for 			*  factor, digits or deletion_flag will produce 			*  an error. 			*/
-DECL|typedef|GUnit
+DECL|typedef|GimpUnit
 block|}
-name|GUnit
+name|GimpUnit
 typedef|;
+comment|/* For information look into the C source or the html documentation */
 name|gint
 name|gimp_unit_get_number_of_units
 parameter_list|(
@@ -95,8 +94,7 @@ parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
-comment|/* Create a new user unit and returns it's ID.  *  * Note that a new unit is always created with it's deletion flag  * set to TRUE. You will have to set it to FALSE after creation to make  * the unit definition persistant.  */
-name|GUnit
+name|GimpUnit
 name|gimp_unit_new
 parameter_list|(
 name|gchar
@@ -126,48 +124,42 @@ modifier|*
 name|plural
 parameter_list|)
 function_decl|;
-comment|/* The following functions fall back to inch (not pixel, as pixel is not  * a 'real' unit) if the value passed is out of range.  *  * Trying to change the deletion flag of built-in units will be ignored.  */
-comment|/* If the deletion flag for a unit is TRUE on GIMP exit, this unit  * will not be saved in the user units database.  */
-name|guint
+name|gboolean
 name|gimp_unit_get_deletion_flag
 parameter_list|(
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 function_decl|;
 name|void
 name|gimp_unit_set_deletion_flag
 parameter_list|(
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|,
-name|guint
+name|gboolean
 name|deletion_flag
 parameter_list|)
 function_decl|;
-comment|/* The meaning of 'factor' is:  * distance_in_units == ( factor * distance_in_inches )  *  * Returns 0 for unit == UNIT_PIXEL as we don't have resolution info here  */
 name|gdouble
 name|gimp_unit_get_factor
 parameter_list|(
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 function_decl|;
-comment|/* The following function gives a hint how many digits a spinbutton  * should provide to get approximately the accuracy of an inch-spinbutton  * with two digits.  *  * Returns 0 for unit == UNIT_PIXEL as we don't have resolution info here.  */
 name|gint
 name|gimp_unit_get_digits
 parameter_list|(
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 function_decl|;
-comment|/* NOTE:  *  * the gchar pointer returned is constant in the gimp application but must  * be g_free()'d by plug-ins.  */
-comment|/* This one is an untranslated string for gimprc */
 name|gchar
 modifier|*
 name|gimp_unit_get_identifier
 parameter_list|(
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 function_decl|;
@@ -175,7 +167,7 @@ name|gchar
 modifier|*
 name|gimp_unit_get_symbol
 parameter_list|(
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 function_decl|;
@@ -183,7 +175,7 @@ name|gchar
 modifier|*
 name|gimp_unit_get_abbreviation
 parameter_list|(
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 function_decl|;
@@ -191,7 +183,7 @@ name|gchar
 modifier|*
 name|gimp_unit_get_singular
 parameter_list|(
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 function_decl|;
@@ -199,7 +191,7 @@ name|gchar
 modifier|*
 name|gimp_unit_get_plural
 parameter_list|(
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 function_decl|;

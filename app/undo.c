@@ -217,7 +217,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|enum|__anon2910dc600103
+DECL|enum|__anon2900b9700103
 typedef|typedef
 enum|enum
 block|{
@@ -10349,7 +10349,7 @@ name|gdouble
 name|yres
 decl_stmt|;
 DECL|member|unit
-name|GUnit
+name|GimpUnit
 name|unit
 decl_stmt|;
 block|}
@@ -10491,7 +10491,7 @@ decl_stmt|;
 name|gdouble
 name|tmpres
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|tmpunit
 decl_stmt|;
 name|data
@@ -11435,7 +11435,7 @@ comment|/* Layer re-position */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2910dc600208
+DECL|struct|__anon2900b9700208
 typedef|typedef
 struct|struct
 block|{
@@ -11665,7 +11665,7 @@ comment|/* Layer name change */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2910dc600308
+DECL|struct|__anon2900b9700308
 typedef|typedef
 struct|struct
 block|{
@@ -12072,12 +12072,12 @@ name|type
 decl_stmt|;
 DECL|member|name
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
-DECL|variable|undo_name
 block|}
+DECL|variable|undo_name
 name|undo_name
 index|[]
 init|=

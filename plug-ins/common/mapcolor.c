@@ -133,7 +133,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295535770108
+DECL|struct|__anon27aa27ae0108
 block|{
 DECL|member|colors
 name|guchar
@@ -228,7 +228,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
@@ -259,16 +259,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -303,13 +303,13 @@ specifier|static
 name|void
 name|add_color_button
 parameter_list|(
-name|int
+name|gint
 name|csel_index
 parameter_list|,
-name|int
+name|gint
 name|left
 parameter_list|,
-name|int
+name|gint
 name|top
 parameter_list|,
 name|GtkWidget
@@ -346,7 +346,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|csel_title
 specifier|static
-name|char
+name|gchar
 modifier|*
 name|csel_title
 index|[
@@ -356,22 +356,22 @@ init|=
 block|{
 name|N_
 argument_list|(
-literal|"First source color"
+literal|"First Source Color"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Second source color"
+literal|"Second Source Color"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"First destination color"
+literal|"First Destination Color"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Second destination color"
+literal|"Second Destination Color"
 argument_list|)
 block|}
 decl_stmt|;
@@ -423,7 +423,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nadjust_args
 init|=
 sizeof|sizeof
@@ -511,7 +511,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nmap_args
 init|=
 sizeof|sizeof
@@ -534,9 +534,11 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_color_adjust"
 argument_list|,
-literal|"Adjust current foreground/background color in the\  drawable to black/white"
+literal|"Adjust current foreground/background color in the "
+literal|"drawable to black/white"
 argument_list|,
-literal|"The current foreground color is mapped to black, \ the current background color is mapped to white."
+literal|"The current foreground color is mapped to black, "
+literal|"the current background color is mapped to white."
 argument_list|,
 literal|"Peter Kirchgessner"
 argument_list|,
@@ -566,9 +568,11 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_color_map"
 argument_list|,
-literal|"Map two source colors to two destination colors. \ Other colors are mapped by interpolation."
+literal|"Map two source colors to two destination colors. "
+literal|"Other colors are mapped by interpolation."
 argument_list|,
-literal|"Map two source colors to two destination colors. \ Other colors are mapped by interpolation."
+literal|"Map two source colors to two destination colors. "
+literal|"Other colors are mapped by interpolation."
 argument_list|,
 literal|"Peter Kirchgessner"
 argument_list|,
@@ -750,11 +754,11 @@ name|id
 argument_list|)
 condition|)
 block|{
-name|gimp_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Color Mapping / Adjust FG/BG:\nCannot operate on grey/indexed images"
+literal|"Color Mapping / Adjust FG/BG:\nCannot operate on gray/indexed images"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -897,7 +901,7 @@ literal|0
 index|]
 operator|)
 expr_stmt|;
-comment|/* second destination color */
+comment|/* Second destination color */
 name|c
 index|[
 literal|0
@@ -1605,9 +1609,9 @@ name|add_color_button
 argument_list|(
 literal|1
 argument_list|,
-literal|2
-argument_list|,
 literal|0
+argument_list|,
+literal|1
 argument_list|,
 name|table
 argument_list|)
@@ -1616,9 +1620,9 @@ name|add_color_button
 argument_list|(
 literal|2
 argument_list|,
-literal|0
+literal|2
 argument_list|,
-literal|1
+literal|0
 argument_list|,
 name|table
 argument_list|)

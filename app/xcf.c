@@ -234,7 +234,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0f0cd20103
+DECL|enum|__anon299dc1af0103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -369,7 +369,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0f0cd20203
+DECL|enum|__anon299dc1af0203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -6341,7 +6341,7 @@ case|case
 name|PROP_USER_UNIT
 case|:
 block|{
-name|GUnit
+name|GimpUnit
 name|unit
 decl_stmt|;
 name|gchar
@@ -6351,7 +6351,7 @@ index|[
 literal|5
 index|]
 decl_stmt|;
-name|float
+name|gfloat
 name|factor
 decl_stmt|;
 name|guint32
@@ -9516,6 +9516,12 @@ if|if
 condition|(
 operator|(
 name|unit
+operator|<=
+name|GIMP_UNIT_PIXEL
+operator|)
+operator|||
+operator|(
+name|unit
 operator|>=
 name|gimp_unit_get_number_of_units
 argument_list|()
@@ -9529,7 +9535,7 @@ argument_list|)
 expr_stmt|;
 name|unit
 operator|=
-name|UNIT_INCH
+name|GIMP_UNIT_INCH
 expr_stmt|;
 block|}
 name|gimage
@@ -9582,7 +9588,7 @@ decl_stmt|;
 name|guint32
 name|digits
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|unit
 decl_stmt|;
 name|gint

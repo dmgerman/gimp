@@ -332,7 +332,7 @@ name|gchar
 modifier|*
 name|plural
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|unit
 init|=
 literal|0
@@ -683,7 +683,7 @@ name|Argument
 modifier|*
 name|return_args
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|unit
 decl_stmt|;
 name|unit
@@ -701,7 +701,7 @@ if|if
 condition|(
 name|unit
 operator|<
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 operator|||
 name|unit
 operator|>=
@@ -839,7 +839,7 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|unit
 decl_stmt|;
 name|gboolean
@@ -860,7 +860,7 @@ if|if
 condition|(
 name|unit
 operator|<
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 operator|||
 name|unit
 operator|>=
@@ -995,7 +995,7 @@ name|Argument
 modifier|*
 name|return_args
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|unit
 decl_stmt|;
 name|unit
@@ -1013,7 +1013,7 @@ if|if
 condition|(
 name|unit
 operator|<
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 operator|||
 name|unit
 operator|>=
@@ -1158,7 +1158,7 @@ name|Argument
 modifier|*
 name|return_args
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|unit
 decl_stmt|;
 name|unit
@@ -1176,7 +1176,7 @@ if|if
 condition|(
 name|unit
 operator|<
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 operator|||
 name|unit
 operator|>=
@@ -1318,7 +1318,7 @@ name|Argument
 modifier|*
 name|return_args
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|unit
 decl_stmt|;
 name|unit
@@ -1336,7 +1336,7 @@ if|if
 condition|(
 name|unit
 operator|<
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 operator|||
 name|unit
 operator|>=
@@ -1478,7 +1478,7 @@ name|Argument
 modifier|*
 name|return_args
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|unit
 decl_stmt|;
 name|unit
@@ -1496,7 +1496,7 @@ if|if
 condition|(
 name|unit
 operator|<
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 operator|||
 name|unit
 operator|>=
@@ -1641,7 +1641,7 @@ name|Argument
 modifier|*
 name|return_args
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|unit
 decl_stmt|;
 name|unit
@@ -1659,7 +1659,7 @@ if|if
 condition|(
 name|unit
 operator|<
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 operator|||
 name|unit
 operator|>=
@@ -1804,7 +1804,7 @@ name|Argument
 modifier|*
 name|return_args
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|unit
 decl_stmt|;
 name|unit
@@ -1822,7 +1822,7 @@ if|if
 condition|(
 name|unit
 operator|<
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 operator|||
 name|unit
 operator|>=
@@ -1967,7 +1967,7 @@ name|Argument
 modifier|*
 name|return_args
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|unit
 decl_stmt|;
 name|unit
@@ -1985,7 +1985,7 @@ if|if
 condition|(
 name|unit
 operator|<
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 operator|||
 name|unit
 operator|>=

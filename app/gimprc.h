@@ -279,7 +279,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|GUnit
+name|GimpUnit
 name|default_units
 decl_stmt|;
 end_decl_stmt
@@ -330,7 +330,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|GUnit
+name|GimpUnit
 name|default_resolution_units
 decl_stmt|;
 end_decl_stmt

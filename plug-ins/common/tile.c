@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aefec590108
+DECL|struct|__anon2b176e950108
 block|{
 DECL|member|new_width
 name|gint
@@ -85,7 +85,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aefec590208
+DECL|struct|__anon2b176e950208
 block|{
 DECL|member|sizeentry
 name|GtkWidget
@@ -1516,7 +1516,7 @@ decl_stmt|;
 name|gdouble
 name|yres
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|unit
 decl_stmt|;
 name|gchar

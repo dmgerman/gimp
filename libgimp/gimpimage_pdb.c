@@ -3750,7 +3750,7 @@ block|}
 end_function
 
 begin_function
-name|GUnit
+name|GimpUnit
 DECL|function|gimp_image_get_unit (gint32 image_ID)
 name|gimp_image_get_unit
 parameter_list|(
@@ -3765,7 +3765,7 @@ decl_stmt|;
 name|int
 name|nreturn_vals
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|unit
 decl_stmt|;
 name|return_vals
@@ -3787,7 +3787,7 @@ expr_stmt|;
 comment|/* error return value */
 name|unit
 operator|=
-name|UNIT_INCH
+name|GIMP_UNIT_INCH
 expr_stmt|;
 if|if
 condition|(
@@ -3828,13 +3828,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_set_unit (gint32 image_ID,GUnit unit)
+DECL|function|gimp_image_set_unit (gint32 image_ID,GimpUnit unit)
 name|gimp_image_set_unit
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 block|{

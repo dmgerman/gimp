@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29fb8de70103
+DECL|enum|__anon275a138d0103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -544,7 +544,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|old_default_units
 specifier|static
-name|GUnit
+name|GimpUnit
 name|old_default_units
 decl_stmt|;
 end_decl_stmt
@@ -568,7 +568,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|old_default_resolution_units
 specifier|static
-name|GUnit
+name|GimpUnit
 name|old_default_resolution_units
 decl_stmt|;
 end_decl_stmt
@@ -1238,7 +1238,7 @@ if|if
 condition|(
 name|default_units
 operator|<
-name|UNIT_INCH
+name|GIMP_UNIT_INCH
 operator|||
 name|default_units
 operator|>=
@@ -1297,7 +1297,7 @@ if|if
 condition|(
 name|default_resolution_units
 operator|<
-name|UNIT_INCH
+name|GIMP_UNIT_INCH
 operator|||
 name|default_resolution_units
 operator|>=
@@ -11520,7 +11520,7 @@ name|gimp_size_entry_new
 argument_list|(
 literal|2
 argument_list|,
-name|UNIT_INCH
+name|GIMP_UNIT_INCH
 argument_list|,
 name|pixels_per_unit
 argument_list|,
@@ -11996,7 +11996,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29fb8de70208
+DECL|struct|__anon275a138d0208
 block|{
 DECL|member|label
 name|gchar
@@ -12051,7 +12051,7 @@ block|}
 block|,     }
 struct|;
 specifier|static
-name|int
+name|gint
 name|ndirs
 init|=
 sizeof|sizeof
@@ -12225,7 +12225,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29fb8de70308
+DECL|struct|__anon275a138d0308
 block|{
 DECL|member|tree_label
 name|gchar
@@ -12414,7 +12414,7 @@ block|}
 block|}
 struct|;
 specifier|static
-name|int
+name|gint
 name|npaths
 init|=
 sizeof|sizeof

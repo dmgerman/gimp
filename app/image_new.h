@@ -42,7 +42,7 @@ endif|#
 directive|endif
 typedef|typedef
 struct|struct
-DECL|struct|__anon2908ec2e0108
+DECL|struct|__anon2c6f0eac0108
 block|{
 DECL|member|type
 name|GimpImageBaseType
@@ -59,7 +59,7 @@ name|GimpImageBaseTypeName
 typedef|;
 typedef|typedef
 struct|struct
-DECL|struct|__anon2908ec2e0208
+DECL|struct|__anon2c6f0eac0208
 block|{
 DECL|member|type
 name|GimpFillType
@@ -76,7 +76,7 @@ name|GimpFillTypeName
 typedef|;
 typedef|typedef
 struct|struct
-DECL|struct|__anon2908ec2e0308
+DECL|struct|__anon2c6f0eac0308
 block|{
 DECL|member|width
 name|gint
@@ -87,7 +87,7 @@ name|gint
 name|height
 decl_stmt|;
 DECL|member|unit
-name|GUnit
+name|GimpUnit
 name|unit
 decl_stmt|;
 DECL|member|xresolution
@@ -99,7 +99,7 @@ name|gdouble
 name|yresolution
 decl_stmt|;
 DECL|member|res_unit
-name|GUnit
+name|GimpUnit
 name|res_unit
 decl_stmt|;
 DECL|member|type

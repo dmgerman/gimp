@@ -76,7 +76,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7815030108
+DECL|struct|__anon27fc49490108
 block|{
 DECL|member|fromred
 DECL|member|fromgreen
@@ -270,6 +270,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|drw
+specifier|static
 name|GDrawable
 modifier|*
 name|drw
@@ -278,6 +279,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|has_alpha
+specifier|static
 name|gboolean
 name|has_alpha
 decl_stmt|;
@@ -285,6 +287,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|xargs
+specifier|static
 name|myParams
 name|xargs
 init|=
@@ -312,6 +315,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|running
+specifier|static
 name|gint
 name|running
 init|=
@@ -321,6 +325,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|origregion
+specifier|static
 name|GPixelRgn
 name|origregion
 decl_stmt|;
@@ -328,6 +333,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|preview
+specifier|static
 name|GtkWidget
 modifier|*
 name|preview
@@ -336,6 +342,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|from_colorbutton
+specifier|static
 name|GtkWidget
 modifier|*
 name|from_colorbutton
@@ -344,6 +351,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|to_colorbutton
+specifier|static
 name|GtkWidget
 modifier|*
 name|to_colorbutton
@@ -355,6 +363,7 @@ DECL|variable|sel_x1
 DECL|variable|sel_y1
 DECL|variable|sel_x2
 DECL|variable|sel_y2
+specifier|static
 name|gint
 name|sel_x1
 decl_stmt|,
@@ -371,6 +380,7 @@ DECL|variable|prev_width
 DECL|variable|prev_height
 DECL|variable|sel_width
 DECL|variable|sel_height
+specifier|static
 name|gint
 name|prev_width
 decl_stmt|,
@@ -384,6 +394,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|lock_thres
+specifier|static
 name|gint
 name|lock_thres
 init|=
@@ -543,14 +554,7 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|GParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
-name|int
+name|gint
 name|nargs
 init|=
 sizeof|sizeof
@@ -565,12 +569,6 @@ index|[
 literal|0
 index|]
 argument_list|)
-decl_stmt|;
-specifier|static
-name|int
-name|nreturn_vals
-init|=
-literal|0
 decl_stmt|;
 name|INIT_I18N
 argument_list|()
@@ -600,11 +598,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -896,16 +894,13 @@ name|nparams
 operator|!=
 literal|10
 condition|)
+block|{
 name|status
 operator|=
 name|STATUS_EXECUTION_ERROR
 expr_stmt|;
-if|if
-condition|(
-name|status
-operator|==
-name|STATUS_SUCCESS
-condition|)
+block|}
+else|else
 block|{
 name|xargs
 operator|.

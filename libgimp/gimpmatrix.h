@@ -31,7 +31,7 @@ directive|endif
 comment|/* __cplusplus */
 DECL|typedef|GimpMatrix
 typedef|typedef
-name|double
+name|gdouble
 name|GimpMatrix
 index|[
 literal|3

@@ -200,7 +200,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289e27020108
+DECL|struct|__anon29f9b7450108
 block|{
 DECL|member|hwidth
 name|gint
@@ -2679,7 +2679,7 @@ name|GtkWidget
 modifier|*
 name|align
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|unit
 decl_stmt|;
 name|gdouble
@@ -2899,7 +2899,7 @@ argument_list|(
 name|width
 argument_list|)
 argument_list|,
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 argument_list|)
 expr_stmt|;
 comment|/*  set the resolution to the image resolution  */
@@ -3388,7 +3388,7 @@ argument_list|(
 name|space
 argument_list|)
 argument_list|,
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 argument_list|)
 expr_stmt|;
 comment|/*  set the resolution to the image resolution  */
@@ -3837,7 +3837,7 @@ argument_list|(
 name|offset
 argument_list|)
 argument_list|,
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 argument_list|)
 expr_stmt|;
 comment|/*  set the resolution to the image resolution  */

@@ -241,7 +241,7 @@ name|GtkWidget
 modifier|*
 name|gimp_coordinates_new
 parameter_list|(
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|,
 name|gchar
@@ -257,7 +257,7 @@ parameter_list|,
 name|gint
 name|spinbutton_usize
 parameter_list|,
-name|GimpSizeEntryUP
+name|GimpSizeEntryUpdatePolicy
 name|update_policy
 parameter_list|,
 name|gboolean

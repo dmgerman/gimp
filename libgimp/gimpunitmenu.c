@@ -42,7 +42,7 @@ name|gchar
 modifier|*
 name|format
 parameter_list|,
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 function_decl|;
@@ -65,7 +65,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon295cba930103
+DECL|enum|__anon2bd648a50103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -274,18 +274,6 @@ parameter_list|)
 block|{
 name|gum
 operator|->
-name|selection
-operator|=
-name|NULL
-expr_stmt|;
-name|gum
-operator|->
-name|clist
-operator|=
-name|NULL
-expr_stmt|;
-name|gum
-operator|->
 name|format
 operator|=
 name|NULL
@@ -294,7 +282,7 @@ name|gum
 operator|->
 name|unit
 operator|=
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 expr_stmt|;
 name|gum
 operator|->
@@ -307,6 +295,18 @@ operator|->
 name|show_percent
 operator|=
 name|FALSE
+expr_stmt|;
+name|gum
+operator|->
+name|selection
+operator|=
+name|NULL
+expr_stmt|;
+name|gum
+operator|->
+name|clist
+operator|=
+name|NULL
 expr_stmt|;
 block|}
 end_function
@@ -387,17 +387,21 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_unit_menu_new:  * @format: A printf-like format string which is used to create the unit  *          strings.  * @unit: The initially selected unit.  * @show_pixels: #TRUE if the unit menu should contain an item for  *               GIMP_UNIT_PIXEL.  * @show_percent: #TRUE in the unit menu should contain an item for  *                GIMP_UNIT_PERCENT.  * @show_custom: #TRUE if the unit menu should contain a "More..." item for  *               opening the user-defined-unit selection dialog.  *  * Creates a new #GimpUnitMenu widget.  *  * The @format string supports the following percent expansions:  *  * Returns: A pointer to the new #GimpUnitMenu widget.  *  */
+end_comment
+
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_unit_menu_new (gchar * format,GUnit unit,gboolean show_pixels,gboolean show_percent,gboolean show_custom)
+DECL|function|gimp_unit_menu_new (gchar * format,GimpUnit unit,gboolean show_pixels,gboolean show_percent,gboolean show_custom)
 name|gimp_unit_menu_new
 parameter_list|(
 name|gchar
 modifier|*
 name|format
 parameter_list|,
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|,
 name|gboolean
@@ -422,7 +426,7 @@ name|GtkWidget
 modifier|*
 name|menuitem
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|u
 decl_stmt|;
 name|g_return_val_if_fail
@@ -430,7 +434,7 @@ argument_list|(
 operator|(
 name|unit
 operator|>=
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 operator|)
 operator|&&
 operator|(
@@ -443,7 +447,7 @@ operator|||
 operator|(
 name|unit
 operator|==
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 operator|)
 argument_list|,
 name|NULL
@@ -461,7 +465,7 @@ operator|&&
 operator|(
 name|unit
 operator|!=
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 operator|)
 condition|)
 name|show_custom
@@ -508,9 +512,9 @@ name|u
 operator|=
 name|show_pixels
 condition|?
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 else|:
-name|UNIT_INCH
+name|GIMP_UNIT_INCH
 init|;
 name|u
 operator|<
@@ -526,7 +530,7 @@ if|if
 condition|(
 name|u
 operator|==
-name|UNIT_INCH
+name|GIMP_UNIT_INCH
 condition|)
 block|{
 if|if
@@ -542,7 +546,7 @@ name|gimp_unit_menu_build_string
 argument_list|(
 name|format
 argument_list|,
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -585,7 +589,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -695,7 +699,7 @@ operator|&&
 operator|(
 name|unit
 operator|!=
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 operator|)
 condition|)
 block|{
@@ -854,7 +858,7 @@ call|(
 name|gpointer
 call|)
 argument_list|(
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 operator|+
 literal|1
 argument_list|)
@@ -892,7 +896,7 @@ argument_list|,
 operator|(
 name|unit
 operator|==
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 operator|)
 condition|?
 literal|0
@@ -901,7 +905,7 @@ operator|(
 operator|(
 name|unit
 operator|==
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 operator|)
 condition|?
 operator|(
@@ -941,7 +945,7 @@ operator|(
 operator|(
 name|unit
 operator|<
-name|UNIT_END
+name|GIMP_UNIT_END
 operator|)
 condition|?
 operator|(
@@ -950,7 +954,7 @@ operator|-
 literal|1
 operator|)
 else|:
-name|UNIT_END
+name|GIMP_UNIT_END
 operator|)
 operator|)
 operator|)
@@ -965,16 +969,20 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_unit_menu_set_unit:  * @gum: The unit menu you want to set the unit for.  * @unit: The new unit.  *  * Sets a new #GimpUnit for the specified #GimpUnitMenu.  *  */
+end_comment
+
 begin_function
 name|void
-DECL|function|gimp_unit_menu_set_unit (GimpUnitMenu * gum,GUnit unit)
+DECL|function|gimp_unit_menu_set_unit (GimpUnitMenu * gum,GimpUnit unit)
 name|gimp_unit_menu_set_unit
 parameter_list|(
 name|GimpUnitMenu
 modifier|*
 name|gum
 parameter_list|,
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 block|{
@@ -1012,14 +1020,14 @@ operator|(
 operator|(
 name|unit
 operator|>=
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 operator|)
 operator|&&
 operator|(
 operator|(
 name|unit
 operator|>
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 operator|)
 operator|||
 name|gum
@@ -1039,7 +1047,7 @@ operator|(
 operator|(
 name|unit
 operator|==
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 operator|)
 operator|&&
 name|gum
@@ -1073,7 +1081,8 @@ name|children
 expr_stmt|;
 name|user_unit
 operator|=
-name|UNIT_END
+operator|(
+name|GIMP_UNIT_END
 operator|+
 operator|(
 operator|(
@@ -1108,19 +1117,20 @@ else|:
 literal|0
 operator|)
 operator|)
+operator|)
 expr_stmt|;
 if|if
 condition|(
 operator|(
 name|unit
 operator|>=
-name|UNIT_END
+name|GIMP_UNIT_END
 operator|)
 operator|&&
 operator|(
 name|unit
 operator|!=
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 operator|)
 condition|)
 block|{
@@ -1313,7 +1323,7 @@ argument_list|,
 operator|(
 name|unit
 operator|==
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 operator|)
 condition|?
 literal|0
@@ -1322,7 +1332,7 @@ operator|(
 operator|(
 name|unit
 operator|==
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 operator|)
 condition|?
 operator|(
@@ -1372,7 +1382,7 @@ operator|(
 operator|(
 name|unit
 operator|<
-name|UNIT_END
+name|GIMP_UNIT_END
 operator|)
 condition|?
 operator|(
@@ -1381,7 +1391,7 @@ operator|-
 literal|1
 operator|)
 else|:
-name|UNIT_END
+name|GIMP_UNIT_END
 operator|)
 operator|)
 operator|)
@@ -1390,8 +1400,12 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_unit_menu_get_unit:  * @gum: The unit menu you want to know the unit of.  *  * Returns the #GimpUnit the user has selected from the #GimpUnitMenu.  *  * Returns: The unit the user has selected.  *  */
+end_comment
+
 begin_function
-name|GUnit
+name|GimpUnit
 DECL|function|gimp_unit_menu_get_unit (GimpUnitMenu * gum)
 name|gimp_unit_menu_get_unit
 parameter_list|(
@@ -1406,7 +1420,7 @@ name|gum
 operator|!=
 name|NULL
 argument_list|,
-name|UNIT_INCH
+name|GIMP_UNIT_INCH
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -1416,7 +1430,7 @@ argument_list|(
 name|gum
 argument_list|)
 argument_list|,
-name|UNIT_INCH
+name|GIMP_UNIT_INCH
 argument_list|)
 expr_stmt|;
 return|return
@@ -1513,14 +1527,14 @@ specifier|static
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_unit_menu_build_string (gchar * format,GUnit unit)
+DECL|function|gimp_unit_menu_build_string (gchar * format,GimpUnit unit)
 name|gimp_unit_menu_build_string
 parameter_list|(
 name|gchar
 modifier|*
 name|format
 parameter_list|,
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 block|{
@@ -1725,7 +1739,9 @@ break|break;
 default|default:
 name|g_warning
 argument_list|(
-literal|"unit-menu-format contains unknown format sequence '%%%c'"
+literal|"gimp_unit_menu_build_string(): "
+literal|"unit-menu-format contains unknown format sequence "
+literal|"'%%%c'"
 argument_list|,
 operator|*
 name|format
@@ -1774,49 +1790,8 @@ block|}
 end_function
 
 begin_comment
-comment|/*  private callbacks of gimp_unit_menu_create_selection ()  */
+comment|/*  private callback of gimp_unit_menu_create_selection ()  */
 end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_unit_menu_selection_close_callback (GtkWidget * widget,gpointer data)
-name|gimp_unit_menu_selection_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|GimpUnitMenu
-modifier|*
-name|gum
-decl_stmt|;
-name|gum
-operator|=
-name|GIMP_UNIT_MENU
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|gum
-operator|->
-name|selection
-condition|)
-name|gtk_widget_destroy
-argument_list|(
-name|gum
-operator|->
-name|selection
-argument_list|)
-expr_stmt|;
-block|}
-end_function
 
 begin_function
 specifier|static
@@ -1836,7 +1811,7 @@ name|GimpUnitMenu
 modifier|*
 name|gum
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|unit
 decl_stmt|;
 name|gum
@@ -1865,7 +1840,7 @@ block|{
 name|unit
 operator|=
 operator|(
-name|GUnit
+name|GimpUnit
 operator|)
 name|gtk_clist_get_row_data
 argument_list|(
@@ -1913,45 +1888,14 @@ name|UNIT_CHANGED
 index|]
 argument_list|)
 expr_stmt|;
-name|gimp_unit_menu_selection_close_callback
+name|gtk_widget_destroy
 argument_list|(
-name|NULL
-argument_list|,
 name|gum
+operator|->
+name|selection
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-end_function
-
-begin_function
-specifier|static
-name|gint
-DECL|function|gimp_unit_menu_selection_delete_callback (GtkWidget * widget,GdkEvent * event,gpointer data)
-name|gimp_unit_menu_selection_delete_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GdkEvent
-modifier|*
-name|event
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|gimp_unit_menu_selection_close_callback
-argument_list|(
-name|NULL
-argument_list|,
-name|data
-argument_list|)
-expr_stmt|;
-return|return
-name|TRUE
-return|;
 block|}
 end_function
 
@@ -1992,7 +1936,7 @@ index|[
 literal|2
 index|]
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|unit
 decl_stmt|;
 name|gint
@@ -2051,11 +1995,11 @@ argument_list|(
 literal|"Close"
 argument_list|)
 argument_list|,
-name|gimp_unit_menu_selection_close_callback
-argument_list|,
-name|gum
+name|gtk_widget_destroy
 argument_list|,
 name|NULL
+argument_list|,
+literal|1
 argument_list|,
 name|NULL
 argument_list|,
@@ -2075,17 +2019,20 @@ operator|->
 name|selection
 argument_list|)
 argument_list|,
-literal|"delete_event"
+literal|"destroy"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|gimp_unit_menu_selection_delete_callback
+name|gtk_widget_destroyed
 argument_list|)
 argument_list|,
+operator|&
 name|gum
+operator|->
+name|selection
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|gtk_signal_connect_object
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
@@ -2096,13 +2043,18 @@ literal|"destroy"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|gimp_unit_menu_selection_close_callback
+name|gtk_widget_destroy
 argument_list|)
 argument_list|,
+name|GTK_OBJECT
+argument_list|(
 name|gum
+operator|->
+name|selection
+argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|gtk_signal_connect_object
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
@@ -2113,10 +2065,15 @@ literal|"unmap"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|gimp_unit_menu_selection_close_callback
+name|gtk_widget_destroy
 argument_list|)
 argument_list|,
+name|GTK_OBJECT
+argument_list|(
 name|gum
+operator|->
+name|selection
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  the main vbox  */
@@ -2273,7 +2230,7 @@ for|for
 control|(
 name|unit
 operator|=
-name|UNIT_END
+name|GIMP_UNIT_END
 init|;
 name|unit
 operator|<
@@ -2338,7 +2295,7 @@ argument_list|)
 argument_list|,
 name|unit
 operator|-
-name|UNIT_END
+name|GIMP_UNIT_END
 argument_list|,
 operator|(
 name|gpointer
@@ -2431,14 +2388,6 @@ argument_list|,
 literal|150
 argument_list|)
 expr_stmt|;
-comment|/*  now show the dialog  */
-name|gtk_widget_show
-argument_list|(
-name|gum
-operator|->
-name|clist
-argument_list|)
-expr_stmt|;
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
@@ -2451,26 +2400,11 @@ operator|->
 name|clist
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
+name|gtk_widget_show
 argument_list|(
 name|gum
 operator|->
-name|selection
-argument_list|)
-argument_list|,
-literal|"destroy"
-argument_list|,
-name|GTK_SIGNAL_FUNC
-argument_list|(
-name|gtk_widget_destroyed
-argument_list|)
-argument_list|,
-operator|&
-name|gum
-operator|->
-name|selection
+name|clist
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -2513,7 +2447,7 @@ name|gum
 operator|->
 name|unit
 operator|>=
-name|UNIT_END
+name|GIMP_UNIT_END
 condition|)
 block|{
 name|gtk_clist_select_row
@@ -2529,7 +2463,7 @@ name|gum
 operator|->
 name|unit
 operator|-
-name|UNIT_END
+name|GIMP_UNIT_END
 argument_list|,
 literal|0
 argument_list|)
@@ -2547,7 +2481,7 @@ name|gum
 operator|->
 name|unit
 operator|-
-name|UNIT_END
+name|GIMP_UNIT_END
 argument_list|,
 literal|0
 argument_list|,
@@ -2578,7 +2512,7 @@ name|GimpUnitMenu
 modifier|*
 name|gum
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|new_unit
 decl_stmt|;
 name|gum
@@ -2615,7 +2549,7 @@ condition|(
 name|new_unit
 operator|==
 operator|(
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 operator|+
 literal|1
 operator|)
@@ -2633,7 +2567,7 @@ name|gum
 operator|->
 name|unit
 operator|==
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 operator|)
 condition|?
 literal|0
@@ -2644,7 +2578,7 @@ name|gum
 operator|->
 name|unit
 operator|==
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 operator|)
 condition|?
 operator|(
@@ -2692,7 +2626,7 @@ name|gum
 operator|->
 name|unit
 operator|<
-name|UNIT_END
+name|GIMP_UNIT_END
 operator|)
 condition|?
 name|gum
@@ -2701,7 +2635,7 @@ name|unit
 operator|-
 literal|1
 else|:
-name|UNIT_END
+name|GIMP_UNIT_END
 operator|)
 operator|)
 operator|)

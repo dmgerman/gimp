@@ -66,12 +66,12 @@ comment|/* internal structures */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e554be0108
 typedef|typedef
 struct|struct
+DECL|struct|__anon27a59a3e0108
 block|{
 DECL|member|delete_on_exit
-name|guint
+name|gboolean
 name|delete_on_exit
 decl_stmt|;
 DECL|member|factor
@@ -123,7 +123,7 @@ specifier|static
 name|GimpUnitDef
 name|gimp_unit_defs
 index|[
-name|UNIT_END
+name|GIMP_UNIT_END
 index|]
 init|=
 block|{
@@ -318,10 +318,10 @@ begin_function
 specifier|static
 name|GimpUnitDef
 modifier|*
-DECL|function|gimp_unit_get_user_unit (GUnit unit)
+DECL|function|gimp_unit_get_user_unit (GimpUnit unit)
 name|gimp_unit_get_user_unit
 parameter_list|(
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 block|{
@@ -332,7 +332,7 @@ name|user_units
 argument_list|,
 name|unit
 operator|-
-name|UNIT_END
+name|GIMP_UNIT_END
 argument_list|)
 return|;
 block|}
@@ -351,7 +351,7 @@ name|void
 parameter_list|)
 block|{
 return|return
-name|UNIT_END
+name|GIMP_UNIT_END
 operator|+
 name|number_of_user_units
 return|;
@@ -367,13 +367,13 @@ name|void
 parameter_list|)
 block|{
 return|return
-name|UNIT_END
+name|GIMP_UNIT_END
 return|;
 block|}
 end_function
 
 begin_function
-name|GUnit
+name|GimpUnit
 DECL|function|gimp_unit_new (gchar * identifier,gdouble factor,gint digits,gchar * symbol,gchar * abbreviation,gchar * singular,gchar * plural)
 name|gimp_unit_new
 parameter_list|(
@@ -410,12 +410,11 @@ name|user_unit
 decl_stmt|;
 name|user_unit
 operator|=
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|GimpUnitDef
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|user_unit
@@ -494,7 +493,7 @@ name|number_of_user_units
 operator|++
 expr_stmt|;
 return|return
-name|UNIT_END
+name|GIMP_UNIT_END
 operator|+
 name|number_of_user_units
 operator|-
@@ -504,11 +503,11 @@ block|}
 end_function
 
 begin_function
-name|guint
-DECL|function|gimp_unit_get_deletion_flag (GUnit unit)
+name|gboolean
+DECL|function|gimp_unit_get_deletion_flag (GimpUnit unit)
 name|gimp_unit_get_deletion_flag
 parameter_list|(
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 block|{
@@ -517,14 +516,14 @@ argument_list|(
 operator|(
 name|unit
 operator|>=
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 operator|)
 operator|&&
 operator|(
 name|unit
 operator|<
 operator|(
-name|UNIT_END
+name|GIMP_UNIT_END
 operator|+
 name|number_of_user_units
 operator|)
@@ -537,7 +536,7 @@ if|if
 condition|(
 name|unit
 operator|<
-name|UNIT_END
+name|GIMP_UNIT_END
 condition|)
 return|return
 name|FALSE
@@ -555,13 +554,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_unit_set_deletion_flag (GUnit unit,guint deletion_flag)
+DECL|function|gimp_unit_set_deletion_flag (GimpUnit unit,gboolean deletion_flag)
 name|gimp_unit_set_deletion_flag
 parameter_list|(
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|,
-name|guint
+name|gboolean
 name|deletion_flag
 parameter_list|)
 block|{
@@ -570,14 +569,14 @@ argument_list|(
 operator|(
 name|unit
 operator|>=
-name|UNIT_END
+name|GIMP_UNIT_END
 operator|)
 operator|&&
 operator|(
 name|unit
 operator|<
 operator|(
-name|UNIT_END
+name|GIMP_UNIT_END
 operator|+
 name|number_of_user_units
 operator|)
@@ -602,10 +601,10 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_unit_get_factor (GUnit unit)
+DECL|function|gimp_unit_get_factor (GimpUnit unit)
 name|gimp_unit_get_factor
 parameter_list|(
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 block|{
@@ -614,14 +613,14 @@ argument_list|(
 operator|(
 name|unit
 operator|>=
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 operator|)
 operator|&&
 operator|(
 name|unit
 operator|<
 operator|(
-name|UNIT_END
+name|GIMP_UNIT_END
 operator|+
 name|number_of_user_units
 operator|)
@@ -629,7 +628,7 @@ operator|)
 argument_list|,
 name|gimp_unit_defs
 index|[
-name|UNIT_INCH
+name|GIMP_UNIT_INCH
 index|]
 operator|.
 name|factor
@@ -639,7 +638,7 @@ if|if
 condition|(
 name|unit
 operator|<
-name|UNIT_END
+name|GIMP_UNIT_END
 condition|)
 return|return
 name|gimp_unit_defs
@@ -662,10 +661,10 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_unit_get_digits (GUnit unit)
+DECL|function|gimp_unit_get_digits (GimpUnit unit)
 name|gimp_unit_get_digits
 parameter_list|(
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 block|{
@@ -674,14 +673,14 @@ argument_list|(
 operator|(
 name|unit
 operator|>=
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 operator|)
 operator|&&
 operator|(
 name|unit
 operator|<
 operator|(
-name|UNIT_END
+name|GIMP_UNIT_END
 operator|+
 name|number_of_user_units
 operator|)
@@ -689,7 +688,7 @@ operator|)
 argument_list|,
 name|gimp_unit_defs
 index|[
-name|UNIT_INCH
+name|GIMP_UNIT_INCH
 index|]
 operator|.
 name|digits
@@ -699,7 +698,7 @@ if|if
 condition|(
 name|unit
 operator|<
-name|UNIT_END
+name|GIMP_UNIT_END
 condition|)
 return|return
 name|gimp_unit_defs
@@ -723,10 +722,10 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_unit_get_identifier (GUnit unit)
+DECL|function|gimp_unit_get_identifier (GimpUnit unit)
 name|gimp_unit_get_identifier
 parameter_list|(
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 block|{
@@ -735,14 +734,14 @@ argument_list|(
 operator|(
 name|unit
 operator|>=
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 operator|)
 operator|&&
 operator|(
 name|unit
 operator|<
 operator|(
-name|UNIT_END
+name|GIMP_UNIT_END
 operator|+
 name|number_of_user_units
 operator|)
@@ -751,12 +750,12 @@ operator|||
 operator|(
 name|unit
 operator|==
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 operator|)
 argument_list|,
 name|gimp_unit_defs
 index|[
-name|UNIT_INCH
+name|GIMP_UNIT_INCH
 index|]
 operator|.
 name|identifier
@@ -766,7 +765,7 @@ if|if
 condition|(
 name|unit
 operator|<
-name|UNIT_END
+name|GIMP_UNIT_END
 condition|)
 return|return
 name|gimp_unit_defs
@@ -780,7 +779,7 @@ if|if
 condition|(
 name|unit
 operator|==
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 condition|)
 return|return
 name|gimp_unit_percent
@@ -801,10 +800,10 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_unit_get_symbol (GUnit unit)
+DECL|function|gimp_unit_get_symbol (GimpUnit unit)
 name|gimp_unit_get_symbol
 parameter_list|(
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 block|{
@@ -813,14 +812,14 @@ argument_list|(
 operator|(
 name|unit
 operator|>=
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 operator|)
 operator|&&
 operator|(
 name|unit
 operator|<
 operator|(
-name|UNIT_END
+name|GIMP_UNIT_END
 operator|+
 name|number_of_user_units
 operator|)
@@ -829,12 +828,12 @@ operator|||
 operator|(
 name|unit
 operator|==
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 operator|)
 argument_list|,
 name|gimp_unit_defs
 index|[
-name|UNIT_INCH
+name|GIMP_UNIT_INCH
 index|]
 operator|.
 name|symbol
@@ -844,7 +843,7 @@ if|if
 condition|(
 name|unit
 operator|<
-name|UNIT_END
+name|GIMP_UNIT_END
 condition|)
 return|return
 name|gimp_unit_defs
@@ -858,7 +857,7 @@ if|if
 condition|(
 name|unit
 operator|==
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 condition|)
 return|return
 name|gimp_unit_percent
@@ -879,10 +878,10 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_unit_get_abbreviation (GUnit unit)
+DECL|function|gimp_unit_get_abbreviation (GimpUnit unit)
 name|gimp_unit_get_abbreviation
 parameter_list|(
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 block|{
@@ -891,14 +890,14 @@ argument_list|(
 operator|(
 name|unit
 operator|>=
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 operator|)
 operator|&&
 operator|(
 name|unit
 operator|<
 operator|(
-name|UNIT_END
+name|GIMP_UNIT_END
 operator|+
 name|number_of_user_units
 operator|)
@@ -907,12 +906,12 @@ operator|||
 operator|(
 name|unit
 operator|==
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 operator|)
 argument_list|,
 name|gimp_unit_defs
 index|[
-name|UNIT_INCH
+name|GIMP_UNIT_INCH
 index|]
 operator|.
 name|abbreviation
@@ -922,7 +921,7 @@ if|if
 condition|(
 name|unit
 operator|<
-name|UNIT_END
+name|GIMP_UNIT_END
 condition|)
 return|return
 name|gimp_unit_defs
@@ -936,7 +935,7 @@ if|if
 condition|(
 name|unit
 operator|==
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 condition|)
 return|return
 name|gimp_unit_percent
@@ -957,10 +956,10 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_unit_get_singular (GUnit unit)
+DECL|function|gimp_unit_get_singular (GimpUnit unit)
 name|gimp_unit_get_singular
 parameter_list|(
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 block|{
@@ -969,14 +968,14 @@ argument_list|(
 operator|(
 name|unit
 operator|>=
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 operator|)
 operator|&&
 operator|(
 name|unit
 operator|<
 operator|(
-name|UNIT_END
+name|GIMP_UNIT_END
 operator|+
 name|number_of_user_units
 operator|)
@@ -985,14 +984,14 @@ operator|||
 operator|(
 name|unit
 operator|==
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 operator|)
 argument_list|,
 name|gettext
 argument_list|(
 name|gimp_unit_defs
 index|[
-name|UNIT_INCH
+name|GIMP_UNIT_INCH
 index|]
 operator|.
 name|singular
@@ -1003,7 +1002,7 @@ if|if
 condition|(
 name|unit
 operator|<
-name|UNIT_END
+name|GIMP_UNIT_END
 condition|)
 return|return
 name|gettext
@@ -1020,7 +1019,7 @@ if|if
 condition|(
 name|unit
 operator|==
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 condition|)
 return|return
 name|gettext
@@ -1047,10 +1046,10 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_unit_get_plural (GUnit unit)
+DECL|function|gimp_unit_get_plural (GimpUnit unit)
 name|gimp_unit_get_plural
 parameter_list|(
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 block|{
@@ -1059,14 +1058,14 @@ argument_list|(
 operator|(
 name|unit
 operator|>=
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 operator|)
 operator|&&
 operator|(
 name|unit
 operator|<
 operator|(
-name|UNIT_END
+name|GIMP_UNIT_END
 operator|+
 name|number_of_user_units
 operator|)
@@ -1075,14 +1074,14 @@ operator|||
 operator|(
 name|unit
 operator|==
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 operator|)
 argument_list|,
 name|gettext
 argument_list|(
 name|gimp_unit_defs
 index|[
-name|UNIT_INCH
+name|GIMP_UNIT_INCH
 index|]
 operator|.
 name|plural
@@ -1093,7 +1092,7 @@ if|if
 condition|(
 name|unit
 operator|<
-name|UNIT_END
+name|GIMP_UNIT_END
 condition|)
 return|return
 name|gettext
@@ -1110,7 +1109,7 @@ if|if
 condition|(
 name|unit
 operator|==
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 condition|)
 return|return
 name|gettext
@@ -1139,14 +1138,14 @@ comment|/*  unitrc functions  **********/
 end_comment
 
 begin_function
-DECL|function|parse_unitrc (void)
 name|void
+DECL|function|parse_unitrc (void)
 name|parse_unitrc
 parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|filename
 decl_stmt|;
@@ -1181,17 +1180,17 @@ block|}
 end_function
 
 begin_function
-DECL|function|save_unitrc (void)
 name|void
+DECL|function|save_unitrc (void)
 name|save_unitrc
 parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|filename
 decl_stmt|;

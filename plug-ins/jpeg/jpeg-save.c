@@ -292,7 +292,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c165b580108
+DECL|struct|__anon27de94610108
 block|{
 DECL|member|quality
 name|gdouble
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c165b580208
+DECL|struct|__anon27de94610208
 block|{
 DECL|member|run
 name|gint
@@ -354,7 +354,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c165b580308
+DECL|struct|__anon27de94610308
 block|{
 DECL|member|cinfo
 name|struct
@@ -3499,7 +3499,7 @@ name|gimp_image_set_unit
 argument_list|(
 name|image_ID
 argument_list|,
-name|UNIT_MM
+name|GIMP_UNIT_MM
 argument_list|)
 expr_stmt|;
 break|break;

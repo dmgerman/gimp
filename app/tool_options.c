@@ -585,7 +585,7 @@ name|options
 operator|->
 name|fixed_unit_d
 operator|=
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 expr_stmt|;
 name|options
 operator|->
@@ -2001,7 +2001,7 @@ name|options
 operator|->
 name|fixed_unit_d
 operator|==
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 operator|)
 condition|?
 literal|0
@@ -2012,7 +2012,7 @@ name|options
 operator|->
 name|fixed_unit_d
 operator|==
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 operator|)
 condition|?
 literal|2

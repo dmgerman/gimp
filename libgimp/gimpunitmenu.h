@@ -25,7 +25,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpunit.h"
+file|"gimpunit.h"
 end_include
 
 begin_ifdef
@@ -98,6 +98,24 @@ DECL|member|optionmenu
 name|GtkOptionMenu
 name|optionmenu
 decl_stmt|;
+comment|/* public (read only) */
+DECL|member|format
+name|gchar
+modifier|*
+name|format
+decl_stmt|;
+DECL|member|unit
+name|GimpUnit
+name|unit
+decl_stmt|;
+DECL|member|show_pixels
+name|gboolean
+name|show_pixels
+decl_stmt|;
+DECL|member|show_percent
+name|gboolean
+name|show_percent
+decl_stmt|;
 comment|/* private */
 DECL|member|selection
 name|GtkWidget
@@ -108,24 +126,6 @@ DECL|member|clist
 name|GtkWidget
 modifier|*
 name|clist
-decl_stmt|;
-comment|/* public */
-DECL|member|format
-name|gchar
-modifier|*
-name|format
-decl_stmt|;
-DECL|member|unit
-name|GUnit
-name|unit
-decl_stmt|;
-DECL|member|show_pixels
-name|gboolean
-name|show_pixels
-decl_stmt|;
-DECL|member|show_percent
-name|gboolean
-name|show_percent
 decl_stmt|;
 block|}
 struct|;
@@ -151,13 +151,13 @@ parameter_list|)
 function_decl|;
 block|}
 struct|;
+comment|/* For information look into the C source or the html documentation */
 name|GtkType
 name|gimp_unit_menu_get_type
 parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
-comment|/*  format       -- a printf-like format string for the menu items  *  unit         -- the unit selected on widget creation  *  show_pixels  -- should the menu contain 'pixels' ?  *  show_percent -- should the menu contain 'percent' ?  *  show_custom  -- should the menu contain an item 'More...' to pop up  *                  the custom unit browser (not yet implemented)  *  *            the format string supports the following percent expansions:  *  *            %f -- factor (how many units make up an inch)  *            %y -- symbol ("''" for inch)  *            %a -- abbreviation  *            %s -- singular  *            %p -- plural  *            %% -- literal percent  */
 name|GtkWidget
 modifier|*
 name|gimp_unit_menu_new
@@ -166,7 +166,7 @@ name|gchar
 modifier|*
 name|format
 parameter_list|,
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|,
 name|gboolean
@@ -186,11 +186,11 @@ name|GimpUnitMenu
 modifier|*
 name|gum
 parameter_list|,
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 function_decl|;
-name|GUnit
+name|GimpUnit
 name|gimp_unit_menu_get_unit
 parameter_list|(
 name|GimpUnitMenu

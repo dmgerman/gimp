@@ -16264,7 +16264,7 @@ operator|->
 name|size_se
 argument_list|)
 argument_list|,
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_resolution

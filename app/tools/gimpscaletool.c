@@ -543,7 +543,7 @@ argument_list|(
 name|sizeentry
 argument_list|)
 argument_list|,
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_resolution
@@ -988,7 +988,7 @@ name|x4
 decl_stmt|,
 name|y4
 decl_stmt|;
-name|GUnit
+name|GimpUnit
 name|unit
 decl_stmt|;
 name|gdouble
@@ -1001,10 +1001,10 @@ literal|16
 index|]
 decl_stmt|;
 specifier|static
-name|GUnit
+name|GimpUnit
 name|label_unit
 init|=
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 decl_stmt|;
 name|gdisp
 operator|=
@@ -1066,7 +1066,7 @@ if|if
 condition|(
 name|unit
 operator|!=
-name|UNIT_PERCENT
+name|GIMP_UNIT_PERCENT
 condition|)
 name|label_unit
 operator|=
@@ -1083,7 +1083,7 @@ if|if
 condition|(
 name|label_unit
 condition|)
-comment|/* unit != UNIT_PIXEL */
+comment|/* unit != GIMP_UNIT_PIXEL */
 block|{
 name|g_snprintf
 argument_list|(
@@ -1157,7 +1157,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-comment|/* unit == UNIT_PIXEL */
+comment|/* unit == GIMP_UNIT_PIXEL */
 block|{
 name|g_snprintf
 argument_list|(

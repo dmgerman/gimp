@@ -92,7 +92,7 @@ name|GimpSizeEntryClass
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1adc930103
+DECL|enum|__anon2a3cd8130103
 block|{
 DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_NONE
 name|GIMP_SIZE_ENTRY_UPDATE_NONE
@@ -108,9 +108,9 @@ DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_RESOLUTION
 name|GIMP_SIZE_ENTRY_UPDATE_RESOLUTION
 init|=
 literal|2
-DECL|typedef|GimpSizeEntryUP
+DECL|typedef|GimpSizeEntryUpdatePolicy
 block|}
-name|GimpSizeEntryUP
+name|GimpSizeEntryUpdatePolicy
 typedef|;
 DECL|typedef|GimpSizeEntryField
 typedef|typedef
@@ -141,7 +141,7 @@ modifier|*
 name|unitmenu
 decl_stmt|;
 DECL|member|unit
-name|GUnit
+name|GimpUnit
 name|unit
 decl_stmt|;
 DECL|member|menu_show_pixels
@@ -157,7 +157,7 @@ name|gboolean
 name|show_refval
 decl_stmt|;
 DECL|member|update_policy
-name|GimpSizeEntryUP
+name|GimpSizeEntryUpdatePolicy
 name|update_policy
 decl_stmt|;
 block|}
@@ -208,13 +208,13 @@ parameter_list|)
 function_decl|;
 block|}
 struct|;
+comment|/* For information look into the C source or the html documentation */
 name|GtkType
 name|gimp_size_entry_get_type
 parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
-comment|/* creates a new GimpSizeEntry widget  * number_of_fields  -- how many spinbuttons to show  * unit              -- unit to show initially  * unit_format       -- printf-like unit-format (see GimpUnitMenu)  * menu_show_pixels  -- should the unit menu contain 'pixels'  *                      this parameter is ignored if you select an update_policy  * show_refval       -- TRUE if you want the extra 'reference value' row  * spinbutton_usize  -- the minimal horizontal size the spinbuttons will have  * update_policy     -- how calculations should be performed  *                      GIMP_SIZE_ENTRY_UPDATE_NONE --> no calculations  *			GIMP_SIZE_ENTRY_UPDATE_SIZE --> consider the values to  *                        be distances. The reference value equals to pixels  *			GIMP_SIZE_ENTRY_UPDATE_RESOLUTION --> consider the values  *                        to be resolutions. The reference value equals to dpi  *  * to have all automatic calculations performed correctly, set up the  * widget in the following order:  * 1. gimp_size_entry_new  * 2. (for each additional input field) gimp_size_entry_add_field  * 3. gimp_size_entry_set_unit  * for each input field:  * 4. gimp_size_entry_set_resolution  * 5. gimp_size_entry_set_value_boundaries (or _set_refval_boundaries)  * 6. gimp_size_entry_set_size  * 7. gimp_size_entry_set_value (or _set_refval)  *  * the newly created GimpSizeEntry table will have an empty border  * of one cell width on each side plus an empty column left of the  * unit menu to allow the caller to add labels  */
 name|GtkWidget
 modifier|*
 name|gimp_size_entry_new
@@ -222,7 +222,7 @@ parameter_list|(
 name|gint
 name|number_of_fields
 parameter_list|,
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|,
 name|gchar
@@ -241,11 +241,10 @@ parameter_list|,
 name|gint
 name|spinbutton_usize
 parameter_list|,
-name|GimpSizeEntryUP
+name|GimpSizeEntryUpdatePolicy
 name|update_policy
 parameter_list|)
 function_decl|;
-comment|/* add a field to the sizeentry  * if show_refval if FALSE, then the refval pointers will be ignored  *  * the new field will have the index 0  */
 name|void
 name|gimp_size_entry_add_field
 parameter_list|(
@@ -262,7 +261,6 @@ modifier|*
 name|refval_spinbutton
 parameter_list|)
 function_decl|;
-comment|/* this one is just a convenience function if you want to add labels  * to the empty cells of the widget  */
 name|void
 name|gimp_size_entry_attach_label
 parameter_list|(
@@ -284,7 +282,6 @@ name|gfloat
 name|alignment
 parameter_list|)
 function_decl|;
-comment|/* this one sets the resolution (in dpi)  *  * does nothing if update_policy != GIMP_SIZE_ENTRY_UPDATE_SIZE  *  * keep_size is a boolean value. If TRUE, the size in pixels will stay  * the same, otherwise the size in units will stay the same.  */
 name|void
 name|gimp_size_entry_set_resolution
 parameter_list|(
@@ -298,11 +295,10 @@ parameter_list|,
 name|gdouble
 name|resolution
 parameter_list|,
-name|guint
+name|gboolean
 name|keep_size
 parameter_list|)
 function_decl|;
-comment|/* this one sets the values (in pixels) which will be treated as  * 0% and 100% when we want "percent" in the unit menu  *  * does nothing if update_policy != GIMP_SIZE_ENTRY_UPDATE_SIZE  */
 name|void
 name|gimp_size_entry_set_size
 parameter_list|(
@@ -320,7 +316,6 @@ name|gdouble
 name|upper
 parameter_list|)
 function_decl|;
-comment|/* these functions set/return the value in the units the user selected  * note that in some cases where the caller chooses not to have the  * reference value row and the user selected the reference unit  * the both values 'value' and 'refval' will be the same  */
 name|void
 name|gimp_size_entry_set_value_boundaries
 parameter_list|(
@@ -363,7 +358,6 @@ name|gdouble
 name|value
 parameter_list|)
 function_decl|;
-comment|/* these functions set/return the value in the 'reference unit' for the  * current update policy  * for GIMP_SIZE_ENTRY_UPDATE_SIZE       it's the value in pixels  * for GIMP_SIZE_ENTRY_UPDATE_RESOLUTION it's the resolution in dpi  * for GIMP_SIZE_ENTRY_UPDATE_NONE       it's up to the caller as he has to  *                                       provide a correct value<->refval  *                                       mapping  */
 name|void
 name|gimp_size_entry_set_refval_boundaries
 parameter_list|(
@@ -420,8 +414,7 @@ name|gdouble
 name|refval
 parameter_list|)
 function_decl|;
-comment|/* these functions set/return the currently used unit  * note that for GIMP_SIZE_ENTRY_UPDATE_SIZE a value of UNIT_PIXEL  * will be silently ignored if we have the extra refvalue line  */
-name|GUnit
+name|GimpUnit
 name|gimp_size_entry_get_unit
 parameter_list|(
 name|GimpSizeEntry
@@ -436,11 +429,10 @@ name|GimpSizeEntry
 modifier|*
 name|gse
 parameter_list|,
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|)
 function_decl|;
-comment|/* this makes the first spinbutton grab the focus  */
 name|void
 name|gimp_size_entry_grab_focus
 parameter_list|(

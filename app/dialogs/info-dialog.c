@@ -1842,7 +1842,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|info_dialog_add_sizeentry (InfoDialog * idialog,gchar * title,gdouble * value_ptr,gint nfields,GUnit unit,gchar * unit_format,gboolean menu_show_pixels,gboolean menu_show_percent,gboolean show_refval,GimpSizeEntryUP update_policy,GtkSignalFunc callback,gpointer data)
+DECL|function|info_dialog_add_sizeentry (InfoDialog * idialog,gchar * title,gdouble * value_ptr,gint nfields,GimpUnit unit,gchar * unit_format,gboolean menu_show_pixels,gboolean menu_show_percent,gboolean show_refval,GimpSizeEntryUpdatePolicy update_policy,GtkSignalFunc callback,gpointer data)
 name|info_dialog_add_sizeentry
 parameter_list|(
 name|InfoDialog
@@ -1860,7 +1860,7 @@ parameter_list|,
 name|gint
 name|nfields
 parameter_list|,
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|,
 name|gchar
@@ -1876,7 +1876,7 @@ parameter_list|,
 name|gboolean
 name|show_refval
 parameter_list|,
-name|GimpSizeEntryUP
+name|GimpSizeEntryUpdatePolicy
 name|update_policy
 parameter_list|,
 name|GtkSignalFunc

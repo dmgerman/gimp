@@ -639,7 +639,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be410490103
+DECL|enum|__anon28feddcb0103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -5456,7 +5456,7 @@ argument_list|(
 name|origin_sizeentry
 argument_list|)
 argument_list|,
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_unit
@@ -5466,7 +5466,7 @@ argument_list|(
 name|size_sizeentry
 argument_list|)
 argument_list|,
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 argument_list|)
 expr_stmt|;
 block|}
@@ -5730,7 +5730,7 @@ name|gdisp
 operator|->
 name|dot_for_dot
 condition|?
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 else|:
 name|gdisp
 operator|->
@@ -5850,7 +5850,7 @@ name|gdisp
 operator|->
 name|dot_for_dot
 condition|?
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 else|:
 name|gdisp
 operator|->

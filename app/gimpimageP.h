@@ -123,7 +123,7 @@ name|yresolution
 decl_stmt|;
 comment|/*  image y-res, in dpi          */
 DECL|member|unit
-name|GUnit
+name|GimpUnit
 name|unit
 decl_stmt|;
 comment|/*  image unit                   */

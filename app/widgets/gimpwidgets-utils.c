@@ -914,7 +914,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_query_size_box (gchar * title,GimpHelpFunc help_func,gchar * help_data,gchar * message,gdouble initial,gdouble lower,gdouble upper,gint digits,GUnit unit,gdouble resolution,gboolean dot_for_dot,GtkObject * object,gchar * signal,GimpQueryFunc callback,gpointer data)
+DECL|function|gimp_query_size_box (gchar * title,GimpHelpFunc help_func,gchar * help_data,gchar * message,gdouble initial,gdouble lower,gdouble upper,gint digits,GimpUnit unit,gdouble resolution,gboolean dot_for_dot,GtkObject * object,gchar * signal,GimpQueryFunc callback,gpointer data)
 name|gimp_query_size_box
 parameter_list|(
 name|gchar
@@ -944,7 +944,7 @@ parameter_list|,
 name|gint
 name|digits
 parameter_list|,
-name|GUnit
+name|GimpUnit
 name|unit
 parameter_list|,
 name|gdouble
@@ -1031,7 +1031,7 @@ argument_list|(
 name|sizeentry
 argument_list|)
 argument_list|,
-name|UNIT_PIXEL
+name|GIMP_UNIT_PIXEL
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_resolution
