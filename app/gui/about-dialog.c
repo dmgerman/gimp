@@ -42,16 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gdk/gdkconfig.h>
-end_include
-
-begin_comment
-comment|/* For GDK_USE_UTF8_MBS */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|<gdk/gdkkeysyms.h>
 end_include
 
@@ -1510,6 +1500,10 @@ if|if
 condition|(
 operator|!
 name|double_speed
+operator|&&
+name|hadja_state
+operator|!=
+literal|7
 condition|)
 block|{
 for|for
@@ -2333,6 +2327,15 @@ block|{
 name|gint
 name|i
 decl_stmt|;
+if|if
+condition|(
+name|hadja_state
+operator|==
+literal|7
+condition|)
+return|return
+name|FALSE
+return|;
 switch|switch
 condition|(
 name|event
@@ -2524,10 +2527,6 @@ expr_stmt|;
 name|offset
 operator|=
 literal|0
-expr_stmt|;
-name|double_speed
-operator|=
-name|TRUE
 expr_stmt|;
 block|}
 return|return
