@@ -184,7 +184,7 @@ DECL|macro|RECURSION_LEVEL
 define|#
 directive|define
 name|RECURSION_LEVEL
-value|3
+value|0
 end_define
 
 begin_comment
