@@ -1264,6 +1264,31 @@ block|{
 block|{
 name|N_
 argument_list|(
+literal|"/Select/Fr_om Path"
+argument_list|)
+block|,
+literal|"<shift>V"
+block|,
+name|select_from_vectors_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_SELECTION_REPLACE
+block|}
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_SELECTION_NONE
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
 literal|"/Select/_Float"
 argument_list|)
 block|,
@@ -6773,6 +6798,15 @@ argument_list|,
 name|lp
 operator|&&
 name|sel
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Select/From Path"
+argument_list|,
+name|lp
+operator|&&
+name|vectors
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE

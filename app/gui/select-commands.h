@@ -60,6 +60,20 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|select_from_vectors_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|select_float_cmd_callback
 parameter_list|(
 name|GtkWidget
