@@ -2203,7 +2203,7 @@ literal|"gimp_procedural_db_proc_info"
 block|,
 literal|"Queries the procedural database for information on the specified procedure."
 block|,
-literal|"This procedure returns information on the specified procedure. A short blurb, detailed help, author(s), copyright information, procedure type, number of input, and number of return values are returned. For specific information on each input argument and return value, use the 'gimp_procedural_db_query_proc_arg' and 'gimp_procedural_db_query_proc_val' procedures."
+literal|"This procedure returns information on the specified procedure. A short blurb, detailed help, author(s), copyright information, procedure type, number of input, and number of return values are returned. For specific information on each input argument and return value, use the 'gimp_procedural_db_proc_arg' and 'gimp_procedural_db_proc_val' procedures."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
