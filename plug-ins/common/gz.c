@@ -1696,7 +1696,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"gz: CreateProcess failed\n"
+literal|"gz: CreateProcess failed. Do you have gzip.exe in your PATH?\n"
 argument_list|)
 expr_stmt|;
 name|g_free

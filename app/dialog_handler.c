@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gmodule.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"cursorutil.h"
 end_include
 
@@ -28,7 +34,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27796af40103
+DECL|enum|__anon29486e0d0103
 block|{
 DECL|enumerator|INVISIBLE
 name|INVISIBLE
@@ -78,7 +84,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27796af40203
+DECL|enum|__anon29486e0d0203
 block|{
 DECL|enumerator|SHOW_ALL
 name|SHOW_ALL
@@ -651,6 +657,7 @@ comment|/*  Register a dialog that we can handle  */
 end_comment
 
 begin_function
+name|G_MODULE_EXPORT
 name|void
 DECL|function|dialog_register (GtkWidget * dialog)
 name|dialog_register
@@ -770,6 +777,7 @@ comment|/*  unregister dialog  */
 end_comment
 
 begin_function
+name|G_MODULE_EXPORT
 name|void
 DECL|function|dialog_unregister (GtkWidget * dialog)
 name|dialog_unregister
