@@ -5982,11 +5982,9 @@ argument_list|)
 expr_stmt|;
 name|new_layer
 operator|=
-name|layer_from_tiles
+name|layer_new_from_tiles
 argument_list|(
 name|new_gimage
-argument_list|,
-name|drawable
 argument_list|,
 name|tiles
 argument_list|,

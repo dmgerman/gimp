@@ -144,7 +144,7 @@ comment|/* ick. */
 end_comment
 
 begin_enum
-DECL|enum|__anon2c2627e60103
+DECL|enum|__anon2c3cf20f0103
 enum|enum
 block|{
 DECL|enumerator|REMOVED
@@ -1755,16 +1755,12 @@ end_function
 begin_function
 name|Layer
 modifier|*
-DECL|function|layer_from_tiles (void * gimage_ptr,GimpDrawable * drawable,TileManager * tiles,gchar * name,gint opacity,LayerModeEffects mode)
-name|layer_from_tiles
+DECL|function|layer_new_from_tiles (GimpImage * gimage,TileManager * tiles,gchar * name,gint opacity,LayerModeEffects mode)
+name|layer_new_from_tiles
 parameter_list|(
-name|void
+name|GimpImage
 modifier|*
-name|gimage_ptr
-parameter_list|,
-name|GimpDrawable
-modifier|*
-name|drawable
+name|gimage
 parameter_list|,
 name|TileManager
 modifier|*
@@ -1781,10 +1777,6 @@ name|LayerModeEffects
 name|mode
 parameter_list|)
 block|{
-name|GImage
-modifier|*
-name|gimage
-decl_stmt|;
 name|Layer
 modifier|*
 name|new_layer
@@ -1798,28 +1790,23 @@ decl_stmt|,
 name|bufPR
 decl_stmt|;
 comment|/*  Function copies buffer to a layer    *  taking into consideration the possibility of transforming    *  the contents to meet the requirements of the target image type    */
-comment|/*  If no tile manager, return NULL  */
+comment|/*  If no image or no tile manager, return NULL  */
 if|if
 condition|(
+operator|!
+name|gimage
+operator|||
 operator|!
 name|tiles
 condition|)
 return|return
 name|NULL
 return|;
-name|gimage
-operator|=
-operator|(
-name|GImage
-operator|*
-operator|)
-name|gimage_ptr
-expr_stmt|;
 name|layer_type
 operator|=
-name|drawable_type_with_alpha
+name|gimp_image_base_type_with_alpha
 argument_list|(
-name|drawable
+name|gimage
 argument_list|)
 expr_stmt|;
 comment|/*  Create the new layer  */
@@ -1854,7 +1841,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"layer_from_tiles: could not allocate new layer"
+literal|"layer_new_from_tiles: could not allocate new layer"
 argument_list|)
 expr_stmt|;
 return|return

@@ -7420,11 +7420,9 @@ condition|)
 block|{
 name|layer
 operator|=
-name|layer_from_tiles
+name|layer_new_from_tiles
 argument_list|(
 name|gimage
-argument_list|,
-name|drawable
 argument_list|,
 name|tiles
 argument_list|,

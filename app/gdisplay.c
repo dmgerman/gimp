@@ -3025,8 +3025,8 @@ comment|/* Force all gdisplays to finish their idlerender projection */
 end_comment
 
 begin_function
-DECL|function|gdisplays_finish_draw (void)
 name|void
+DECL|function|gdisplays_finish_draw (void)
 name|gdisplays_finish_draw
 parameter_list|(
 name|void
@@ -7847,27 +7847,6 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Edit/Paste"
-argument_list|,
-name|lp
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"Edit/Paste Into"
-argument_list|,
-name|lp
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"Edit/Paste as New"
-argument_list|,
-name|lp
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
 literal|"Edit/Buffer/Cut Named..."
 argument_list|,
 name|lp
@@ -7876,13 +7855,6 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"Edit/Buffer/Copy Named..."
-argument_list|,
-name|lp
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"Edit/Buffer/Paste Named..."
 argument_list|,
 name|lp
 argument_list|)

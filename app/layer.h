@@ -341,12 +341,9 @@ end_function_decl
 begin_function_decl
 name|Layer
 modifier|*
-name|layer_from_tiles
+name|layer_new_from_tiles
 parameter_list|(
-name|void
-modifier|*
-parameter_list|,
-name|GimpDrawable
+name|GimpImage
 modifier|*
 parameter_list|,
 name|TileManager
