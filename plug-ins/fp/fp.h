@@ -28,7 +28,7 @@ DECL|macro|PR_BX_BRDR
 define|#
 directive|define
 name|PR_BX_BRDR
-value|10
+value|4
 end_define
 
 begin_define
@@ -44,7 +44,7 @@ DECL|macro|MARGIN
 define|#
 directive|define
 name|MARGIN
-value|5
+value|4
 end_define
 
 begin_define
@@ -56,7 +56,7 @@ value|GDK_EXPOSURE_MASK | \                         GDK_ENTER_NOTIFY_MASK | \   
 end_define
 
 begin_typedef
-DECL|struct|__anon27d28af60108
+DECL|struct|__anon29eaabf30108
 typedef|typedef
 struct|struct
 block|{
@@ -79,7 +79,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27d28af60208
+DECL|struct|__anon29eaabf30208
 typedef|typedef
 struct|struct
 block|{
@@ -113,7 +113,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon27d28af60303
+DECL|enum|__anon29eaabf30303
 typedef|typedef
 enum|enum
 block|{
@@ -135,7 +135,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon27d28af60403
+DECL|enum|__anon29eaabf30403
 enum|enum
 block|{
 DECL|enumerator|NONEATALL
@@ -167,7 +167,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon27d28af60503
+DECL|enum|__anon29eaabf30503
 enum|enum
 block|{
 DECL|enumerator|RED
@@ -195,7 +195,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon27d28af60603
+DECL|enum|__anon29eaabf30603
 enum|enum
 block|{
 DECL|enumerator|DOWN
@@ -213,7 +213,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon27d28af60703
+DECL|enum|__anon29eaabf30703
 enum|enum
 block|{
 DECL|enumerator|BY_HUE
@@ -232,7 +232,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon27d28af60808
+DECL|struct|__anon29eaabf30808
 typedef|typedef
 struct|struct
 block|{
@@ -278,7 +278,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27d28af60908
+DECL|struct|__anon29eaabf30908
 typedef|typedef
 struct|struct
 block|{
@@ -968,16 +968,6 @@ parameter_list|,
 name|float
 modifier|*
 name|scale_val
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|ErrorMessage
-parameter_list|(
-name|guchar
-modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl

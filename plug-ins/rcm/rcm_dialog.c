@@ -40,7 +40,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpintl.h>
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_include
@@ -152,8 +152,8 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_create_one_preview (GtkWidget ** preview,GtkWidget ** frame,int previewWidth,int previewHeight)
 name|void
+DECL|function|rcm_create_one_preview (GtkWidget ** preview,GtkWidget ** frame,int previewWidth,int previewHeight)
 name|rcm_create_one_preview
 parameter_list|(
 name|GtkWidget
@@ -264,9 +264,9 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_create_previews (void)
 name|GtkWidget
 modifier|*
+DECL|function|rcm_create_previews (void)
 name|rcm_create_previews
 parameter_list|(
 name|void
@@ -370,7 +370,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|alabel
@@ -421,7 +421,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|10
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacings
@@ -441,7 +441,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|20
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -591,8 +591,8 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_create_pixmap_button (GtkWidget ** label,GtkWidget ** xpm_button,GtkWidget ** label_box,GtkSignalFunc callback,gpointer data,gchar * text,GtkWidget * parent,gint pos)
 name|void
+DECL|function|rcm_create_pixmap_button (GtkWidget ** label,GtkWidget ** xpm_button,GtkWidget ** label_box,GtkSignalFunc callback,gpointer data,gchar * text,GtkWidget * parent,gint pos)
 name|rcm_create_pixmap_button
 parameter_list|(
 name|GtkWidget
@@ -682,7 +682,7 @@ name|GTK_FILL
 argument_list|,
 name|GTK_FILL
 argument_list|,
-literal|5
+literal|4
 argument_list|,
 literal|2
 argument_list|)
@@ -767,8 +767,8 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_set_pixmaps (RcmCircle * circle)
 name|void
+DECL|function|rcm_set_pixmaps (RcmCircle * circle)
 name|rcm_set_pixmaps
 parameter_list|(
 name|RcmCircle
@@ -852,9 +852,9 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_create_one_circle (gint height,gchar * label_content)
 name|RcmCircle
 modifier|*
+DECL|function|rcm_create_one_circle (gint height,gchar * label_content)
 name|rcm_create_one_circle
 parameter_list|(
 name|gint
@@ -1481,7 +1481,7 @@ name|GTK_EXPAND
 argument_list|,
 literal|2
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 comment|/* label */
@@ -1529,9 +1529,9 @@ literal|0
 argument_list|,
 name|GTK_EXPAND
 argument_list|,
-literal|5
+literal|4
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 comment|/* spinbutton 2 */
@@ -1571,9 +1571,9 @@ literal|0
 argument_list|,
 name|GTK_EXPAND
 argument_list|,
-literal|5
+literal|4
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|st
@@ -1681,7 +1681,7 @@ name|GTK_EXPAND
 argument_list|,
 literal|2
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 comment|/* label */
@@ -1729,9 +1729,9 @@ literal|0
 argument_list|,
 name|GTK_EXPAND
 argument_list|,
-literal|5
+literal|4
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 comment|/* Main: Circle: create table for Preview / Buttons / Legend */
@@ -1875,9 +1875,9 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_create_main (void)
 name|GtkWidget
 modifier|*
+DECL|function|rcm_create_main (void)
 name|rcm_create_main
 parameter_list|(
 name|void
@@ -1885,39 +1885,8 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
-name|frame
-decl_stmt|,
-modifier|*
 name|table
 decl_stmt|;
-comment|/* Main: create frame */
-name|frame
-operator|=
-name|gtk_frame_new
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_frame_set_shadow_type
-argument_list|(
-name|GTK_FRAME
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|GTK_SHADOW_ETCHED_IN
-argument_list|)
-expr_stmt|;
-name|gtk_container_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-literal|5
-argument_list|)
-expr_stmt|;
 comment|/* Main: create previews */
 name|Current
 operator|.
@@ -1966,17 +1935,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|5
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|table
+literal|0
 argument_list|)
 expr_stmt|;
 comment|/* Main: insert previews in table */
@@ -2049,13 +2008,8 @@ argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
-argument_list|)
-expr_stmt|;
 return|return
-name|frame
+name|table
 return|;
 block|}
 end_function
@@ -2073,9 +2027,9 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_create_gray (void)
 name|RcmGray
 modifier|*
+DECL|function|rcm_create_gray (void)
 name|rcm_create_gray
 parameter_list|(
 name|void
@@ -2739,7 +2693,7 @@ argument_list|(
 name|as_or_to_frame
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2773,7 +2727,7 @@ argument_list|(
 name|radio_box
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2962,7 +2916,7 @@ argument_list|(
 name|gray_sat_frame
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -3113,6 +3067,15 @@ argument_list|,
 literal|4
 argument_list|)
 expr_stmt|;
+name|gtk_widget_set_usize
+argument_list|(
+name|entry
+argument_list|,
+literal|75
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|entry
@@ -3158,7 +3121,7 @@ name|GTK_FILL
 argument_list|,
 name|GTK_EXPAND
 argument_list|,
-literal|3
+literal|2
 argument_list|,
 literal|0
 argument_list|)
@@ -3393,18 +3356,15 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_create_misc (void)
 name|GtkWidget
 modifier|*
+DECL|function|rcm_create_misc (void)
 name|rcm_create_misc
 parameter_list|(
 name|void
 parameter_list|)
 block|{
 name|GtkWidget
-modifier|*
-name|frame
-decl_stmt|,
 modifier|*
 name|label
 decl_stmt|,
@@ -3454,34 +3414,6 @@ name|preview_group
 init|=
 name|NULL
 decl_stmt|;
-comment|/** Misc: Main frame **/
-name|frame
-operator|=
-name|gtk_frame_new
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_frame_set_shadow_type
-argument_list|(
-name|GTK_FRAME
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|GTK_SHADOW_ETCHED_IN
-argument_list|)
-expr_stmt|;
-name|gtk_container_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-literal|5
-argument_list|)
-expr_stmt|;
 comment|/** Misc: Gray circle **/
 name|Current
 operator|.
@@ -3532,7 +3464,7 @@ argument_list|(
 name|units_vbox
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -3777,7 +3709,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_border_width
@@ -3787,7 +3719,7 @@ argument_list|(
 name|preview_vbox
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -3885,7 +3817,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|3
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -3906,7 +3838,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|label
@@ -3937,7 +3869,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-literal|3
+literal|4
 argument_list|)
 expr_stmt|;
 comment|/* create menu entries */
@@ -4181,16 +4113,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|table
-argument_list|)
-expr_stmt|;
 comment|/** add frames (gray/preview/units) to table **/
 name|gtk_table_attach
 argument_list|(
@@ -4219,9 +4141,9 @@ name|GTK_FILL
 argument_list|,
 name|GTK_FILL
 argument_list|,
-literal|5
+literal|4
 argument_list|,
-literal|3
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -4247,9 +4169,9 @@ name|GTK_FILL
 argument_list|,
 name|GTK_FILL
 argument_list|,
-literal|5
+literal|4
 argument_list|,
-literal|3
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -4275,18 +4197,18 @@ name|GTK_FILL
 argument_list|,
 name|GTK_FILL
 argument_list|,
-literal|5
+literal|4
 argument_list|,
-literal|3
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|frame
+name|table
 argument_list|)
 expr_stmt|;
 return|return
-name|frame
+name|table
 return|;
 block|}
 end_function
@@ -4304,8 +4226,8 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_dialog (void)
 name|gint
+DECL|function|rcm_dialog (void)
 name|rcm_dialog
 parameter_list|(
 name|void
@@ -4577,7 +4499,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -4634,7 +4559,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -4815,7 +4743,7 @@ argument_list|(
 name|notebook
 argument_list|)
 argument_list|,
-literal|10
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_notebook_set_tab_pos
@@ -4890,7 +4818,7 @@ name|GTK_EXPAND
 operator||
 name|GTK_FILL
 argument_list|,
-literal|5
+literal|4
 argument_list|,
 literal|0
 argument_list|)

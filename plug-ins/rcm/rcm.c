@@ -40,7 +40,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpintl.h>
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_include
@@ -278,17 +278,24 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug-in-rotate-colormap"
 argument_list|,
+name|_
+argument_list|(
 literal|"Colormap rotation as in xv"
+argument_list|)
 argument_list|,
-literal|"Exchanges two color ranges. "
-expr|\
-literal|"Based on code from Pavel Grinfeld (pavel@ml.com). "
-expr|\
+name|_
+argument_list|(
+literal|"Exchanges two color ranges."
+literal|"Based on code from Pavel Grinfeld (pavel@ml.com)."
 literal|"This version written by Sven Anders (anderss@fmi.uni-passau.de)."
+argument_list|)
 argument_list|,
 literal|"Sven Anders (anderss@fmi.uni-passau.de) and Pavel Grinfeld (pavel@ml.com)"
 argument_list|,
@@ -296,7 +303,10 @@ literal|"Sven Anders (anderss@fmi.uni-passau.de)"
 argument_list|,
 literal|"04th April 1999"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Image/Colors/Colormap Rotation..."
+argument_list|)
 argument_list|,
 literal|"RGB*"
 argument_list|,
@@ -327,8 +337,8 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm_row (const guchar * src_row,guchar * dest_row,gint row,gint row_width,gint bytes)
 name|void
+DECL|function|rcm_row (const guchar * src_row,guchar * dest_row,gint row,gint row_width,gint bytes)
 name|rcm_row
 parameter_list|(
 specifier|const
@@ -728,8 +738,8 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|rcm (GDrawable * drawable)
 name|void
+DECL|function|rcm (GDrawable * drawable)
 name|rcm
 parameter_list|(
 name|GDrawable
@@ -1039,8 +1049,8 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
 name|void
+DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
 name|char
@@ -1170,6 +1180,9 @@ block|}
 else|else
 block|{
 comment|/* call dialog and rotate the colormap */
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|gimp_drawable_is_rgb

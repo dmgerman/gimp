@@ -38,6 +38,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"fp.h"
 end_include
 
@@ -228,7 +234,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon27c3ce8f0108
+DECL|struct|__anon29d62b8a0108
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -391,7 +397,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 comment|/* All the previews */
@@ -461,7 +467,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|10
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacings
@@ -764,7 +770,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -810,7 +816,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|3
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -954,7 +960,10 @@ name|rVbox
 argument_list|,
 name|rFrame
 argument_list|,
+name|N_
+argument_list|(
 literal|"Red:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|Create_A_Table_Entry
@@ -964,7 +973,10 @@ name|gVbox
 argument_list|,
 name|gFrame
 argument_list|,
+name|N_
+argument_list|(
 literal|"Green:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|Create_A_Table_Entry
@@ -974,7 +986,10 @@ name|bVbox
 argument_list|,
 name|bFrame
 argument_list|,
+name|N_
+argument_list|(
 literal|"Blue:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|Create_A_Table_Entry
@@ -984,7 +999,10 @@ name|cVbox
 argument_list|,
 name|cFrame
 argument_list|,
+name|N_
+argument_list|(
 literal|"Cyan:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|Create_A_Table_Entry
@@ -994,7 +1012,10 @@ name|yVbox
 argument_list|,
 name|yFrame
 argument_list|,
+name|N_
+argument_list|(
 literal|"Yellow:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|Create_A_Table_Entry
@@ -1004,7 +1025,10 @@ name|mVbox
 argument_list|,
 name|mFrame
 argument_list|,
+name|N_
+argument_list|(
 literal|"Magenta:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|Create_A_Table_Entry
@@ -1014,7 +1038,10 @@ name|centerVbox
 argument_list|,
 name|centerFrame
 argument_list|,
+name|N_
+argument_list|(
 literal|"Current:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -1213,7 +1240,10 @@ argument_list|(
 name|win
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Hue Variations"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -1276,7 +1306,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Roughness"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -1296,7 +1329,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1397,7 +1430,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1418,7 +1451,7 @@ name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -1463,7 +1496,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Affected Range"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -1483,7 +1519,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1498,7 +1534,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -1518,7 +1554,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1534,7 +1570,10 @@ name|vbox
 argument_list|,
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Shadows"
+argument_list|)
 argument_list|,
 operator|(
 name|GtkSignalFunc
@@ -1560,7 +1599,10 @@ name|vbox
 argument_list|,
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Midtones"
+argument_list|)
 argument_list|,
 operator|(
 name|GtkSignalFunc
@@ -1586,7 +1628,10 @@ name|vbox
 argument_list|,
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Highlights"
+argument_list|)
 argument_list|,
 operator|(
 name|GtkSignalFunc
@@ -1650,7 +1695,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Windows"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -1670,7 +1718,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1685,7 +1733,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -1705,7 +1753,7 @@ argument_list|(
 name|box
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1717,7 +1765,10 @@ name|Frames_Check_Button_In_A_Box
 argument_list|(
 name|box
 argument_list|,
+name|_
+argument_list|(
 literal|"Hue"
+argument_list|)
 argument_list|,
 operator|(
 name|GtkSignalFunc
@@ -1739,7 +1790,10 @@ name|Frames_Check_Button_In_A_Box
 argument_list|(
 name|box
 argument_list|,
+name|_
+argument_list|(
 literal|"Saturation"
+argument_list|)
 argument_list|,
 operator|(
 name|GtkSignalFunc
@@ -1761,7 +1815,10 @@ name|Frames_Check_Button_In_A_Box
 argument_list|(
 name|box
 argument_list|,
+name|_
+argument_list|(
 literal|"Value"
+argument_list|)
 argument_list|,
 operator|(
 name|GtkSignalFunc
@@ -1783,7 +1840,10 @@ name|Frames_Check_Button_In_A_Box
 argument_list|(
 name|box
 argument_list|,
+name|_
+argument_list|(
 literal|"Advanced"
+argument_list|)
 argument_list|,
 operator|(
 name|GtkSignalFunc
@@ -1898,7 +1958,10 @@ name|lighterVbox
 argument_list|,
 name|lighterFrame
 argument_list|,
+name|N_
+argument_list|(
 literal|"Lighter:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|Create_A_Table_Entry
@@ -1908,7 +1971,10 @@ name|middleVbox
 argument_list|,
 name|middleFrame
 argument_list|,
+name|N_
+argument_list|(
 literal|"Current:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|Create_A_Table_Entry
@@ -1918,7 +1984,10 @@ name|darkerVbox
 argument_list|,
 name|darkerFrame
 argument_list|,
+name|N_
+argument_list|(
 literal|"Darker:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|frame
@@ -1945,7 +2014,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1991,7 +2060,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|3
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2101,7 +2170,10 @@ argument_list|(
 name|win
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Value Variations"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -2232,7 +2304,10 @@ name|moreVbox
 argument_list|,
 name|moreFrame
 argument_list|,
+name|N_
+argument_list|(
 literal|"More Sat:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|Create_A_Table_Entry
@@ -2242,7 +2317,10 @@ name|middleVbox
 argument_list|,
 name|middleFrame
 argument_list|,
+name|N_
+argument_list|(
 literal|"Current:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|Create_A_Table_Entry
@@ -2252,7 +2330,10 @@ name|lessVbox
 argument_list|,
 name|lessFrame
 argument_list|,
+name|N_
+argument_list|(
 literal|"Less Sat:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|frame
@@ -2279,7 +2360,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2325,7 +2406,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|3
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2435,7 +2516,10 @@ argument_list|(
 name|win
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Saturation Variations"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -2495,7 +2579,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Select Pixels By"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -2515,7 +2602,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2529,7 +2616,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -2549,7 +2636,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2565,7 +2652,10 @@ name|vbox
 argument_list|,
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Hue"
+argument_list|)
 argument_list|,
 operator|(
 name|GtkSignalFunc
@@ -2591,7 +2681,10 @@ name|vbox
 argument_list|,
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Saturation"
+argument_list|)
 argument_list|,
 operator|(
 name|GtkSignalFunc
@@ -2617,7 +2710,10 @@ name|vbox
 argument_list|,
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Value"
+argument_list|)
 argument_list|,
 operator|(
 name|GtkSignalFunc
@@ -2665,7 +2761,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Show"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_border_width
@@ -2675,7 +2774,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2689,7 +2788,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -2709,7 +2808,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2725,7 +2824,10 @@ name|vbox
 argument_list|,
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Entire Image"
+argument_list|)
 argument_list|,
 operator|(
 name|GtkSignalFunc
@@ -2748,7 +2850,10 @@ name|vbox
 argument_list|,
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Selection Only"
+argument_list|)
 argument_list|,
 operator|(
 name|GtkSignalFunc
@@ -2771,7 +2876,10 @@ name|vbox
 argument_list|,
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Selection In Context"
+argument_list|)
 argument_list|,
 operator|(
 name|GtkSignalFunc
@@ -2816,7 +2924,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Display"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_border_width
@@ -2826,7 +2937,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2840,7 +2951,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|15
+literal|8
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -2860,7 +2971,7 @@ argument_list|(
 name|box
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2872,7 +2983,10 @@ name|Check_Button_In_A_Box
 argument_list|(
 name|box
 argument_list|,
+name|_
+argument_list|(
 literal|"CirclePalette"
+argument_list|)
 argument_list|,
 operator|(
 name|GtkSignalFunc
@@ -2890,7 +3004,10 @@ name|Check_Button_In_A_Box
 argument_list|(
 name|box
 argument_list|,
+name|_
+argument_list|(
 literal|"Lighter And Darker"
+argument_list|)
 argument_list|,
 operator|(
 name|GtkSignalFunc
@@ -2908,7 +3025,10 @@ name|Check_Button_In_A_Box
 argument_list|(
 name|box
 argument_list|,
+name|_
+argument_list|(
 literal|"Saturation"
+argument_list|)
 argument_list|,
 operator|(
 name|GtkSignalFunc
@@ -3388,7 +3508,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|gettext
+argument_list|(
 name|description
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -3547,7 +3670,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 block|}
@@ -3575,7 +3698,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 block|}
@@ -5112,7 +5235,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Filter Pack Simulation"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -5208,7 +5334,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -5265,7 +5394,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Reset"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -5317,7 +5449,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -5887,11 +6022,20 @@ name|rangeNames
 index|[]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Shadows:"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Midtones:"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Highlights:"
+argument_list|)
 block|}
 decl_stmt|;
 name|GtkWidget
@@ -5950,7 +6094,10 @@ operator|.
 name|window
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Advanced Filter Pack Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -6003,7 +6150,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Smoothness of Aliasing"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_border_width
@@ -6013,7 +6163,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|10
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -6116,9 +6266,9 @@ name|GTK_EXPAND
 argument_list|,
 literal|0
 argument_list|,
-literal|10
+literal|4
 argument_list|,
-literal|10
+literal|4
 argument_list|)
 expr_stmt|;
 name|vbox
@@ -6298,7 +6448,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-literal|15
+literal|8
 argument_list|)
 expr_stmt|;
 for|for
@@ -6346,12 +6496,15 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
+name|gettext
+argument_list|(
 name|rangeNames
 index|[
 name|i
 operator|/
 literal|4
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -6407,7 +6560,7 @@ name|GTK_FILL
 argument_list|,
 literal|0
 argument_list|,
-literal|5
+literal|4
 argument_list|,
 literal|0
 argument_list|)
@@ -6618,7 +6771,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-literal|15
+literal|8
 argument_list|)
 expr_stmt|;
 comment|/************************************************************/
@@ -6628,7 +6781,10 @@ name|optionsFrame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Miscellaneous Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_border_width
@@ -6638,7 +6794,7 @@ argument_list|(
 name|optionsFrame
 argument_list|)
 argument_list|,
-literal|10
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -6704,7 +6860,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|10
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -6733,16 +6889,19 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-literal|5
+literal|4
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|Check_Button_In_A_Box
 argument_list|(
 name|vbox
 argument_list|,
+name|_
+argument_list|(
 literal|"Preview As You Drag"
+argument_list|)
 argument_list|,
 operator|(
 name|GtkSignalFunc
@@ -6758,7 +6917,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Preview Size"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -6773,7 +6935,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|10
+literal|4
 argument_list|)
 expr_stmt|;
 name|smoothnessData
@@ -6904,9 +7066,9 @@ name|GTK_FILL
 argument_list|,
 literal|0
 argument_list|,
-literal|5
+literal|4
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 return|return
