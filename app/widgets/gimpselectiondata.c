@@ -2642,6 +2642,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+operator|!
 name|g_utf8_validate
 argument_list|(
 name|name
@@ -2652,9 +2653,13 @@ argument_list|,
 name|NULL
 argument_list|)
 condition|)
-return|return
-name|name
-return|;
+block|{
+name|g_warning
+argument_list|(
+literal|"Received invalid selection data "
+literal|"(doesn't validate as UTF-8)!"
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|name
@@ -2662,6 +2667,10 @@ argument_list|)
 expr_stmt|;
 return|return
 name|NULL
+return|;
+block|}
+return|return
+name|name
 return|;
 block|}
 end_function
