@@ -2796,6 +2796,17 @@ name|col
 argument_list|)
 expr_stmt|;
 comment|/*  Update the active color name  */
+name|g_print
+argument_list|(
+literal|"color name before:>>%s<<\n"
+argument_list|,
+name|palette_editor
+operator|->
+name|color
+operator|->
+name|name
+argument_list|)
+expr_stmt|;
 name|gtk_entry_set_text
 argument_list|(
 name|GTK_ENTRY
@@ -2804,6 +2815,17 @@ name|palette_editor
 operator|->
 name|color_name
 argument_list|)
+argument_list|,
+name|palette_editor
+operator|->
+name|color
+operator|->
+name|name
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|"color name after:>>%s<<\n"
 argument_list|,
 name|palette_editor
 operator|->
