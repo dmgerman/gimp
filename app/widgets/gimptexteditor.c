@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288c9b820103
+DECL|enum|__anon27977e0e0103
 block|{
 DECL|enumerator|TEXT_CHANGED
 name|TEXT_CHANGED
@@ -1239,6 +1239,13 @@ argument_list|,
 name|editor
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|editor
+operator|->
+name|view
+condition|)
+block|{
 switch|switch
 condition|(
 name|editor
@@ -1272,6 +1279,7 @@ name|GTK_TEXT_DIR_RTL
 argument_list|)
 expr_stmt|;
 break|break;
+block|}
 block|}
 name|g_signal_emit
 argument_list|(
