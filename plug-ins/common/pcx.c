@@ -445,7 +445,7 @@ name|gimp_register_magic_load_handler
 argument_list|(
 literal|"file_pcx_load"
 argument_list|,
-literal|"pcx"
+literal|"pcx,pcc"
 argument_list|,
 literal|""
 argument_list|,
@@ -456,7 +456,7 @@ name|gimp_register_save_handler
 argument_list|(
 literal|"file_pcx_save"
 argument_list|,
-literal|"pcx"
+literal|"pcx,pcc"
 argument_list|,
 literal|""
 argument_list|)
@@ -1146,7 +1146,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon2b36d88e0108
+DECL|struct|__anon2bcd0feb0108
 specifier|static
 struct|struct
 block|{
