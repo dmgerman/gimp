@@ -85,18 +85,10 @@ name|GRAD_CHECK_LIGHT
 value|(2.0 / 3.0)
 end_define
 
-begin_define
-DECL|macro|UNDO_HISTORY_PREVIEW_SIZE
-define|#
-directive|define
-name|UNDO_HISTORY_PREVIEW_SIZE
-value|24
-end_define
-
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b6b6ce0108
+DECL|struct|__anon28e8a72e0108
 block|{
 DECL|member|gimage
 name|GImage
@@ -133,6 +125,11 @@ name|int
 name|old_selection
 decl_stmt|;
 comment|/* previous selection in the clist */
+DECL|member|preview_size
+name|int
+name|preview_size
+decl_stmt|;
+comment|/* size of the previews (from preferences) */
 DECL|typedef|undo_history_st
 block|}
 name|undo_history_st
@@ -142,7 +139,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b6b6ce0208
+DECL|struct|__anon28e8a72e0208
 block|{
 DECL|member|clist
 name|GtkCList
@@ -152,6 +149,10 @@ decl_stmt|;
 DECL|member|row
 name|gint
 name|row
+decl_stmt|;
+DECL|member|size
+name|gint
+name|size
 decl_stmt|;
 DECL|member|gimage
 name|GImage
@@ -370,7 +371,9 @@ block|{
 name|height
 operator|=
 operator|(
-name|UNDO_HISTORY_PREVIEW_SIZE
+name|idle
+operator|->
+name|size
 operator|*
 name|height
 operator|)
@@ -379,7 +382,9 @@ name|width
 expr_stmt|;
 name|width
 operator|=
-name|UNDO_HISTORY_PREVIEW_SIZE
+name|idle
+operator|->
+name|size
 expr_stmt|;
 block|}
 else|else
@@ -387,7 +392,9 @@ block|{
 name|width
 operator|=
 operator|(
-name|UNDO_HISTORY_PREVIEW_SIZE
+name|idle
+operator|->
+name|size
 operator|*
 name|width
 operator|)
@@ -396,7 +403,9 @@ name|height
 expr_stmt|;
 name|height
 operator|=
-name|UNDO_HISTORY_PREVIEW_SIZE
+name|idle
+operator|->
+name|size
 expr_stmt|;
 block|}
 name|buf
@@ -1008,7 +1017,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|undo_history_set_pixmap (GtkCList * clist,gint row,GImage * gimage)
+DECL|function|undo_history_set_pixmap (GtkCList * clist,gint row,gint size,GImage * gimage)
 name|undo_history_set_pixmap
 parameter_list|(
 name|GtkCList
@@ -1017,6 +1026,9 @@ name|clist
 parameter_list|,
 name|gint
 name|row
+parameter_list|,
+name|gint
+name|size
 parameter_list|,
 name|GImage
 modifier|*
@@ -1037,6 +1049,9 @@ name|mask
 decl_stmt|;
 if|if
 condition|(
+operator|!
+name|size
+operator|||
 name|gtk_clist_get_pixmap
 argument_list|(
 name|clist
@@ -1064,6 +1079,12 @@ operator|.
 name|row
 operator|=
 name|row
+expr_stmt|;
+name|idle
+operator|.
+name|size
+operator|=
+name|size
 expr_stmt|;
 name|idle
 operator|.
@@ -1616,6 +1637,10 @@ name|row
 argument_list|,
 name|st
 operator|->
+name|preview_size
+argument_list|,
+name|st
+operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
@@ -1741,6 +1766,10 @@ name|cur_selection
 argument_list|,
 name|st
 operator|->
+name|preview_size
+argument_list|,
+name|st
+operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
@@ -1807,6 +1836,10 @@ argument_list|(
 name|clist
 argument_list|,
 name|cur_selection
+argument_list|,
+name|st
+operator|->
+name|preview_size
 argument_list|,
 name|st
 operator|->
@@ -2013,6 +2046,10 @@ name|widget
 argument_list|)
 argument_list|,
 name|cur_selection
+argument_list|,
+name|st
+operator|->
+name|preview_size
 argument_list|,
 name|st
 operator|->
@@ -2392,6 +2429,12 @@ name|gimage
 operator|=
 name|gimage
 expr_stmt|;
+name|st
+operator|->
+name|preview_size
+operator|=
+name|preview_size
+expr_stmt|;
 comment|/*  gimage signals  */
 name|gtk_signal_connect
 argument_list|(
@@ -2579,9 +2622,26 @@ argument_list|(
 name|scrolled_win
 argument_list|)
 argument_list|,
-literal|192
+literal|160
+operator|+
+name|st
+operator|->
+name|preview_size
 argument_list|,
-literal|112
+literal|4
+operator|*
+operator|(
+name|MAX
+argument_list|(
+name|st
+operator|->
+name|preview_size
+argument_list|,
+literal|16
+argument_list|)
+operator|+
+literal|4
+operator|)
 argument_list|)
 expr_stmt|;
 comment|/* clist of undo actions */
@@ -2627,7 +2687,14 @@ operator|->
 name|clist
 argument_list|)
 argument_list|,
-name|UNDO_HISTORY_PREVIEW_SIZE
+name|MAX
+argument_list|(
+name|st
+operator|->
+name|preview_size
+argument_list|,
+literal|16
+argument_list|)
 operator|+
 literal|2
 argument_list|)
@@ -2643,7 +2710,9 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-name|UNDO_HISTORY_PREVIEW_SIZE
+name|st
+operator|->
+name|preview_size
 operator|+
 literal|2
 argument_list|)
@@ -2865,6 +2934,10 @@ argument_list|,
 name|st
 operator|->
 name|old_selection
+argument_list|,
+name|st
+operator|->
+name|preview_size
 argument_list|,
 name|st
 operator|->
