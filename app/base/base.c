@@ -90,6 +90,12 @@ end_endif
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpversion.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"base-types.h"
 end_include
 
@@ -236,6 +242,31 @@ name|base_config
 operator|=
 name|config
 expr_stmt|;
+if|#
+directive|if
+operator|(
+name|GIMP_MINOR_VERSION
+operator|%
+literal|2
+operator|)
+operator|==
+literal|1
+name|g_printerr
+argument_list|(
+literal|"This is a development version of the GIMP\n"
+literal|"Debug messages may appear here.\n"
+argument_list|)
+expr_stmt|;
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+name|g_printerr
+argument_list|(
+literal|"You can minimize this window, but don't close it.\n"
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 name|use_mmx
@@ -358,6 +389,9 @@ literal|"\n"
 argument_list|)
 expr_stmt|;
 block|}
+endif|#
+directive|endif
+comment|/* odd minor version */
 name|tile_cache_init
 argument_list|(
 name|config
