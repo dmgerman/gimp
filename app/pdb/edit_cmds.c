@@ -70,6 +70,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimplayer.h"
 end_include
 
@@ -1141,6 +1147,13 @@ argument_list|(
 name|gimage
 argument_list|,
 name|drawable
+argument_list|,
+name|gimp_get_current_context
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -28,8 +28,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib-object.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
+
+begin_comment
+comment|/* EEK */
+end_comment
 
 begin_include
 include|#
@@ -115,6 +125,10 @@ directive|include
 file|"gdisplay.h"
 end_include
 
+begin_comment
+comment|/* EEK */
+end_comment
+
 begin_include
 include|#
 directive|include
@@ -129,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon273c76b30103
+DECL|enum|__anon29928e850103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED

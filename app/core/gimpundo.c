@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b1e5200103
+DECL|enum|__anon297ec1a90103
 block|{
 DECL|enumerator|PUSH
 name|PUSH

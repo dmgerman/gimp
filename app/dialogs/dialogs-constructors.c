@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/widgets-types.h"
+file|"tools/tools-types.h"
 end_include
 
 begin_include
@@ -391,7 +391,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ca4a050108
+DECL|struct|__anon28e2c5160108
 block|{
 DECL|member|shell
 name|GtkWidget

@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae6ccf90103
+DECL|enum|__anon2a0ec2890103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -319,7 +319,7 @@ name|G_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|GTK_TYPE_POINTER
+name|G_TYPE_POINTER
 argument_list|)
 expr_stmt|;
 name|object_class

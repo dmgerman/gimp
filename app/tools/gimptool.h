@@ -387,7 +387,7 @@ struct|;
 end_struct
 
 begin_function_decl
-name|GtkType
+name|GType
 name|gimp_tool_get_type
 parameter_list|(
 name|void

@@ -42,17 +42,6 @@ value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_BEZIER_SELECT_TOOL, GimpBezi
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_BEZIER_SELECT_TOOL (obj)
-define|#
-directive|define
-name|GIMP_IS_BEZIER_SELECT_TOOL
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_BEZIER_SELECT_TOOL))
-end_define
-
-begin_define
 DECL|macro|GIMP_BEZIER_SELECT_TOOL_CLASS (klass)
 define|#
 directive|define
@@ -64,6 +53,17 @@ value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_BEZIER_SELECT_TOOL, GimpBezie
 end_define
 
 begin_define
+DECL|macro|GIMP_IS_BEZIER_SELECT_TOOL (obj)
+define|#
+directive|define
+name|GIMP_IS_BEZIER_SELECT_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_BEZIER_SELECT_TOOL))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_BEZIER_SELECT_TOOL_CLASS (klass)
 define|#
 directive|define
@@ -72,6 +72,17 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_BEZIER_SELECT_TOOL))
+end_define
+
+begin_define
+DECL|macro|GIMP_BEZIER_SELECT_TOOL_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_BEZIER_SELECT_TOOL_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_BEZIER_SELECT_TOOL, GimpBezierSelectToolClass))
 end_define
 
 begin_define
@@ -163,7 +174,7 @@ value|1000
 end_define
 
 begin_enum
-DECL|enum|__anon2a2f88c20103
+DECL|enum|__anon2c1b39380103
 DECL|enumerator|EXTEND_EDIT
 DECL|enumerator|EXTEND_ADD
 DECL|enumerator|EXTEND_REMOVE
@@ -383,7 +394,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2f88c20208
+DECL|struct|__anon2c1b39380208
 block|{
 DECL|member|count
 name|gint
@@ -411,7 +422,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GtkType
+name|GType
 name|gimp_bezier_select_tool_get_type
 parameter_list|(
 name|void

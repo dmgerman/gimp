@@ -38,7 +38,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -35082,7 +35082,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d7213a0108
+DECL|struct|__anon29c8674f0108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -35159,7 +35159,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d7213a0208
+DECL|struct|__anon29c8674f0208
 block|{
 DECL|member|ncolors
 name|long
@@ -35350,7 +35350,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d7213a0308
+DECL|struct|__anon29c8674f0308
 block|{
 DECL|member|used_count
 name|signed

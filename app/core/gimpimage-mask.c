@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib-object.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -45,26 +51,16 @@ directive|include
 file|"paint-funcs/paint-funcs.h"
 end_include
 
-begin_comment
-comment|/* FIXME: move the "stroke" stuff into the core entirely */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"tools/tools-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/tool_manager.h"
-end_include
-
 begin_include
 include|#
 directive|include
 file|"gimpchannel.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpcontext.h"
 end_include
 
 begin_include
@@ -94,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptoolinfo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"floating_sel.h"
 end_include
 
@@ -102,6 +104,10 @@ include|#
 directive|include
 file|"gdisplay.h"
 end_include
+
+begin_comment
+comment|/* EEK */
+end_comment
 
 begin_include
 include|#
@@ -128,7 +134,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|gimage_mask_stroking
 specifier|static
-name|int
+name|gboolean
 name|gimage_mask_stroking
 init|=
 name|FALSE
@@ -1148,7 +1154,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Update the region  */
-name|gdisplays_update_area
+name|gimp_image_update
 argument_list|(
 name|gimage
 argument_list|,
@@ -2045,7 +2051,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimage_mask_stroke (GimpImage * gimage,GimpDrawable * drawable)
+DECL|function|gimage_mask_stroke (GimpImage * gimage,GimpDrawable * drawable,GimpContext * context)
 name|gimage_mask_stroke
 parameter_list|(
 name|GimpImage
@@ -2055,6 +2061,10 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|BoundSeg
@@ -2103,6 +2113,41 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|pdb_string
+decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DRAWABLE
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -2157,6 +2202,15 @@ condition|)
 return|return
 name|TRUE
 return|;
+name|pdb_string
+operator|=
+name|gimp_context_get_tool
+argument_list|(
+name|context
+argument_list|)
+operator|->
+name|pdb_string
+expr_stmt|;
 comment|/*  find the drawable offsets  */
 name|gimp_drawable_offsets
 argument_list|(
@@ -2392,12 +2446,7 @@ name|gimage
 operator|->
 name|gimp
 argument_list|,
-name|tool_manager_active_get_PDB_string
-argument_list|(
-name|gimage
-operator|->
-name|gimp
-argument_list|)
+name|pdb_string
 argument_list|,
 operator|&
 name|nreturn_vals

@@ -29,7 +29,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b26ca920103
+DECL|enum|__anon27e5ecfd0103
 block|{
 DECL|enumerator|SELECTION_OFF
 name|SELECTION_OFF
@@ -327,6 +327,19 @@ DECL|struct|_GDisplay
 struct|struct
 name|_GDisplay
 block|{
+DECL|member|shell
+name|GtkWidget
+modifier|*
+name|shell
+decl_stmt|;
+comment|/*  shell widget for this gdisplay          */
+DECL|member|gimage
+name|GimpImage
+modifier|*
+name|gimage
+decl_stmt|;
+comment|/*  pointer to the associated gimage struct */
+comment|/*   				   *  these need to be first in the sturuct 				   *  because of an ugly hack in 				   *  core/gimpcontext.c 				   */
 DECL|member|ID
 name|gint
 name|ID
@@ -338,12 +351,6 @@ modifier|*
 name|ifactory
 decl_stmt|;
 comment|/*  factory for popup menu                  */
-DECL|member|shell
-name|GtkWidget
-modifier|*
-name|shell
-decl_stmt|;
-comment|/*  shell widget for this gdisplay          */
 DECL|member|canvas
 name|GtkWidget
 modifier|*
@@ -500,12 +507,6 @@ name|guint
 name|icon_idle_id
 decl_stmt|;
 comment|/*  The ID of the idle-function             */
-DECL|member|gimage
-name|GimpImage
-modifier|*
-name|gimage
-decl_stmt|;
-comment|/*  pointer to the associated gimage struct */
 DECL|member|instance
 name|gint
 name|instance

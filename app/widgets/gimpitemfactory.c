@@ -10192,6 +10192,9 @@ argument_list|)
 argument_list|,
 literal|"help_page"
 argument_list|,
+operator|(
+name|gpointer
+operator|)
 name|entry
 operator|->
 name|help_page
@@ -10341,6 +10344,9 @@ argument_list|)
 argument_list|,
 literal|"factory_path"
 argument_list|,
+operator|(
+name|gpointer
+operator|)
 name|factory_path
 argument_list|)
 expr_stmt|;

@@ -176,7 +176,7 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GtkType
+name|GType
 name|tool_type
 parameter_list|,
 name|gboolean
@@ -229,7 +229,7 @@ begin_function_decl
 name|void
 name|tool_manager_register_tool_options
 parameter_list|(
-name|GtkType
+name|GType
 name|tool_type
 parameter_list|,
 name|GimpToolOptions
@@ -248,7 +248,7 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GtkType
+name|GType
 name|tool_type
 parameter_list|)
 function_decl|;

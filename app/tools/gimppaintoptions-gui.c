@@ -233,7 +233,7 @@ name|PaintPressureOptions
 modifier|*
 name|paint_pressure_options_new
 parameter_list|(
-name|GtkType
+name|GType
 name|tool_type
 parameter_list|,
 name|PaintOptions
@@ -265,7 +265,7 @@ name|PaintGradientOptions
 modifier|*
 name|paint_gradient_options_new
 parameter_list|(
-name|GtkType
+name|GType
 name|tool_type
 parameter_list|,
 name|PaintOptions
@@ -488,14 +488,14 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|paint_options_init (PaintOptions * options,GtkType tool_type,ToolOptionsResetFunc reset_func)
+DECL|function|paint_options_init (PaintOptions * options,GType tool_type,ToolOptionsResetFunc reset_func)
 name|paint_options_init
 parameter_list|(
 name|PaintOptions
 modifier|*
 name|options
 parameter_list|,
-name|GtkType
+name|GType
 name|tool_type
 parameter_list|,
 name|ToolOptionsResetFunc
@@ -543,7 +543,7 @@ literal|"%s(): no tool info registered for %s"
 argument_list|,
 name|G_GNUC_FUNCTION
 argument_list|,
-name|gtk_type_name
+name|g_type_name
 argument_list|(
 name|tool_type
 argument_list|)
@@ -1228,10 +1228,10 @@ end_function
 begin_function
 name|PaintOptions
 modifier|*
-DECL|function|paint_options_new (GtkType tool_type,ToolOptionsResetFunc reset_func)
+DECL|function|paint_options_new (GType tool_type,ToolOptionsResetFunc reset_func)
 name|paint_options_new
 parameter_list|(
-name|GtkType
+name|GType
 name|tool_type
 parameter_list|,
 name|ToolOptionsResetFunc
@@ -1573,10 +1573,10 @@ begin_function
 specifier|static
 name|PaintPressureOptions
 modifier|*
-DECL|function|paint_pressure_options_new (GtkType tool_type,PaintOptions * paint_options)
+DECL|function|paint_pressure_options_new (GType tool_type,PaintOptions * paint_options)
 name|paint_pressure_options_new
 parameter_list|(
-name|GtkType
+name|GType
 name|tool_type
 parameter_list|,
 name|PaintOptions
@@ -2369,10 +2369,10 @@ begin_function
 specifier|static
 name|PaintGradientOptions
 modifier|*
-DECL|function|paint_gradient_options_new (GtkType tool_type,PaintOptions * paint_options)
+DECL|function|paint_gradient_options_new (GType tool_type,PaintOptions * paint_options)
 name|paint_gradient_options_new
 parameter_list|(
-name|GtkType
+name|GType
 name|tool_type
 parameter_list|,
 name|PaintOptions

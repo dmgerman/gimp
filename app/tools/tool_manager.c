@@ -979,7 +979,7 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 decl_stmt|;
-name|GtkType
+name|GType
 name|tool_type
 decl_stmt|;
 name|tool_manager
@@ -1330,14 +1330,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_manager_register_tool (Gimp * gimp,GtkType tool_type,gboolean tool_context,const gchar * identifier,const gchar * blurb,const gchar * help,const gchar * menu_path,const gchar * menu_accel,const gchar * help_domain,const gchar * help_data,const gchar * stock_id)
+DECL|function|tool_manager_register_tool (Gimp * gimp,GType tool_type,gboolean tool_context,const gchar * identifier,const gchar * blurb,const gchar * help,const gchar * menu_path,const gchar * menu_accel,const gchar * help_domain,const gchar * help_data,const gchar * stock_id)
 name|tool_manager_register_tool
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GtkType
+name|GType
 name|tool_type
 parameter_list|,
 name|gboolean
@@ -1618,10 +1618,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_manager_register_tool_options (GtkType tool_type,GimpToolOptions * tool_options)
+DECL|function|tool_manager_register_tool_options (GType tool_type,GimpToolOptions * tool_options)
 name|tool_manager_register_tool_options
 parameter_list|(
-name|GtkType
+name|GType
 name|tool_type
 parameter_list|,
 name|GimpToolOptions
@@ -1654,7 +1654,7 @@ literal|"%s(): no tool info registered for %s"
 argument_list|,
 name|G_GNUC_FUNCTION
 argument_list|,
-name|gtk_type_name
+name|g_type_name
 argument_list|(
 name|tool_type
 argument_list|)
@@ -1674,14 +1674,14 @@ end_function
 begin_function
 name|GimpToolInfo
 modifier|*
-DECL|function|tool_manager_get_info_by_type (Gimp * gimp,GtkType tool_type)
+DECL|function|tool_manager_get_info_by_type (Gimp * gimp,GType tool_type)
 name|tool_manager_get_info_by_type
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GtkType
+name|GType
 name|tool_type
 parameter_list|)
 block|{
@@ -2243,7 +2243,7 @@ name|tool_info
 operator|->
 name|tool_type
 operator|!=
-name|GTK_TYPE_NONE
+name|G_TYPE_NONE
 condition|)
 block|{
 name|new_tool
@@ -2262,7 +2262,7 @@ else|else
 block|{
 name|g_warning
 argument_list|(
-literal|"%s(): tool_info contains no valid GtkType"
+literal|"%s(): tool_info contains no valid GType"
 argument_list|,
 name|G_GNUC_FUNCTION
 argument_list|)

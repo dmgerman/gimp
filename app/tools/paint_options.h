@@ -336,7 +336,7 @@ name|PaintOptions
 modifier|*
 name|paint_options_new
 parameter_list|(
-name|GtkType
+name|GType
 name|tool_type
 parameter_list|,
 name|ToolOptionsResetFunc
@@ -368,7 +368,7 @@ name|PaintOptions
 modifier|*
 name|options
 parameter_list|,
-name|GtkType
+name|GType
 name|tool_type
 parameter_list|,
 name|ToolOptionsResetFunc

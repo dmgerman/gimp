@@ -582,14 +582,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|transform_options_init (TransformOptions * options,GtkType tool_type,ToolOptionsResetFunc reset_func)
+DECL|function|transform_options_init (TransformOptions * options,GType tool_type,ToolOptionsResetFunc reset_func)
 name|transform_options_init
 parameter_list|(
 name|TransformOptions
 modifier|*
 name|options
 parameter_list|,
-name|GtkType
+name|GType
 name|tool_type
 parameter_list|,
 name|ToolOptionsResetFunc
@@ -1390,10 +1390,10 @@ end_function
 begin_function
 name|TransformOptions
 modifier|*
-DECL|function|transform_options_new (GtkType tool_type,ToolOptionsResetFunc reset_func)
+DECL|function|transform_options_new (GType tool_type,ToolOptionsResetFunc reset_func)
 name|transform_options_new
 parameter_list|(
-name|GtkType
+name|GType
 name|tool_type
 parameter_list|,
 name|ToolOptionsResetFunc

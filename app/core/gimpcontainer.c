@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -65,7 +65,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon278ed71b0103
+DECL|enum|__anon2bbc1b640103
 block|{
 DECL|enumerator|ADD
 name|ADD

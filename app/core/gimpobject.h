@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gtk/gtkobject.h>
+file|<gobject/gobject.h>
 end_include
 
 begin_define
@@ -100,7 +100,7 @@ struct|struct
 name|_GimpObject
 block|{
 DECL|member|parent_instance
-name|GtkObject
+name|GObject
 name|parent_instance
 decl_stmt|;
 DECL|member|name
@@ -118,7 +118,7 @@ struct|struct
 name|_GimpObjectClass
 block|{
 DECL|member|parent_class
-name|GtkObjectClass
+name|GObjectClass
 name|parent_class
 decl_stmt|;
 DECL|member|disconnect

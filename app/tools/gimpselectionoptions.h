@@ -180,7 +180,7 @@ name|SelectionOptions
 modifier|*
 name|selection_options_new
 parameter_list|(
-name|GtkType
+name|GType
 name|tool_type
 parameter_list|,
 name|ToolOptionsResetFunc
@@ -212,7 +212,7 @@ name|SelectionOptions
 modifier|*
 name|options
 parameter_list|,
-name|GtkType
+name|GType
 name|tool_type
 parameter_list|,
 name|ToolOptionsResetFunc

@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -416,7 +416,7 @@ name|stack
 operator|=
 name|GIMP_UNDO_STACK
 argument_list|(
-name|gtk_object_new
+name|g_object_new
 argument_list|(
 name|GIMP_TYPE_UNDO_STACK
 argument_list|,

@@ -47,7 +47,7 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -918,7 +918,7 @@ name|palette
 operator|=
 name|GIMP_PALETTE
 argument_list|(
-name|gtk_object_new
+name|g_object_new
 argument_list|(
 name|GIMP_TYPE_PALETTE
 argument_list|,

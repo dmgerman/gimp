@@ -16,6 +16,16 @@ directive|define
 name|__CORE_TYPES_H__
 end_define
 
+begin_comment
+comment|/* EEK */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|<gdk-pixbuf/gdk-pixbuf.h>
+end_include
+
 begin_include
 include|#
 directive|include
@@ -33,7 +43,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5c10400103
+DECL|enum|__anon29f76f920103
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -56,7 +66,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5c10400203
+DECL|enum|__anon29f76f920203
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -94,7 +104,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5c10400303
+DECL|enum|__anon29f76f920303
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -122,7 +132,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5c10400403
+DECL|enum|__anon29f76f920403
 block|{
 DECL|enumerator|APPLY
 name|APPLY
@@ -142,7 +152,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5c10400503
+DECL|enum|__anon29f76f920503
 block|{
 DECL|enumerator|FOREGROUND_FILL
 name|FOREGROUND_FILL
@@ -177,7 +187,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=GIMP_>*/
-DECL|enum|__anon2b5c10400603
+DECL|enum|__anon29f76f920603
 block|{
 DECL|enumerator|GIMP_SHADOWS
 name|GIMP_SHADOWS

@@ -65,7 +65,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib-object.h>
 end_include
 
 begin_ifdef
@@ -156,22 +156,6 @@ directive|include
 file|"gimpbrushgenerated.h"
 end_include
 
-begin_comment
-comment|/*  this needs to go away  */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"tools/tools-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/gimppainttool.h"
-end_include
-
 begin_include
 include|#
 directive|include
@@ -180,7 +164,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba6fe7e0103
+DECL|enum|__anon288345c30103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -259,30 +243,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|GimpBrush
-modifier|*
-name|gimp_brush_select_brush
-parameter_list|(
-name|GimpPaintTool
-modifier|*
-name|paint_tool
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_if
+if|#
+directive|if
+literal|0
+end_if
 
-begin_function_decl
-specifier|static
-name|gboolean
-name|gimp_brush_want_null_motion
-parameter_list|(
-name|GimpPaintTool
-modifier|*
-name|paint_tool
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_endif
+unit|static GimpBrush * gimp_brush_select_brush     (GimpPaintTool  *paint_tool); static gboolean    gimp_brush_want_null_motion (GimpPaintTool  *paint_tool);
+endif|#
+directive|endif
+end_endif
 
 begin_decl_stmt
 DECL|variable|brush_signals
@@ -500,18 +471,12 @@ name|get_extension
 operator|=
 name|gimp_brush_get_extension
 expr_stmt|;
-name|klass
-operator|->
-name|select_brush
-operator|=
-name|gimp_brush_select_brush
-expr_stmt|;
-name|klass
-operator|->
-name|want_null_motion
-operator|=
-name|gimp_brush_want_null_motion
-expr_stmt|;
+if|#
+directive|if
+literal|0
+block|klass->select_brush             = gimp_brush_select_brush;   klass->want_null_motion         = gimp_brush_want_null_motion;
+endif|#
+directive|endif
 block|}
 end_function
 
@@ -1431,42 +1396,17 @@ return|;
 block|}
 end_function
 
-begin_function
-specifier|static
-name|GimpBrush
-modifier|*
-DECL|function|gimp_brush_select_brush (GimpPaintTool * paint_core)
-name|gimp_brush_select_brush
-parameter_list|(
-name|GimpPaintTool
-modifier|*
-name|paint_core
-parameter_list|)
-block|{
-return|return
-name|paint_core
-operator|->
-name|brush
-return|;
-block|}
-end_function
+begin_if
+if|#
+directive|if
+literal|0
+end_if
 
-begin_function
-specifier|static
-name|gboolean
-DECL|function|gimp_brush_want_null_motion (GimpPaintTool * paint_core)
-name|gimp_brush_want_null_motion
-parameter_list|(
-name|GimpPaintTool
-modifier|*
-name|paint_core
-parameter_list|)
-block|{
-return|return
-name|TRUE
-return|;
-block|}
-end_function
+begin_endif
+unit|static GimpBrush * gimp_brush_select_brush (GimpPaintTool *paint_core) {   return paint_core->brush; }  static gboolean gimp_brush_want_null_motion (GimpPaintTool *paint_core) {   return TRUE; }
+endif|#
+directive|endif
+end_endif
 
 begin_function
 name|TempBuf

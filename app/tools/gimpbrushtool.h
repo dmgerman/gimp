@@ -30,7 +30,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon287680670103
+DECL|enum|__anon2b41a8090103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -69,7 +69,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon287680670203
+DECL|enum|__anon2b41a8090203
 block|{
 DECL|enumerator|TOOL_CAN_HANDLE_CHANGING_BRUSH
 name|TOOL_CAN_HANDLE_CHANGING_BRUSH
@@ -106,17 +106,6 @@ value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_PAINT_TOOL, GimpPaintTool))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_PAINT_TOOL (obj)
-define|#
-directive|define
-name|GIMP_IS_PAINT_TOOL
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_PAINT_TOOL))
-end_define
-
-begin_define
 DECL|macro|GIMP_PAINT_TOOL_CLASS (klass)
 define|#
 directive|define
@@ -128,6 +117,17 @@ value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_PAINT_TOOL, GimpPaintToolClas
 end_define
 
 begin_define
+DECL|macro|GIMP_IS_PAINT_TOOL (obj)
+define|#
+directive|define
+name|GIMP_IS_PAINT_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_PAINT_TOOL))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_PAINT_TOOL_CLASS (klass)
 define|#
 directive|define
@@ -136,6 +136,17 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PAINT_TOOL))
+end_define
+
+begin_define
+DECL|macro|GIMP_PAINT_TOOL_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_PAINT_TOOL_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_PAINT_TOOL, GimpPaintToolClass))
 end_define
 
 begin_typedef
@@ -352,7 +363,7 @@ name|gint
 name|tool_ID
 decl_stmt|;
 DECL|member|tool_type
-name|GtkType
+name|GType
 name|tool_type
 decl_stmt|;
 DECL|member|lastx
@@ -380,7 +391,7 @@ struct|;
 end_struct
 
 begin_function_decl
-name|GtkType
+name|GType
 name|gimp_paint_tool_get_type
 parameter_list|(
 name|void

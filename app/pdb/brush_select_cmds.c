@@ -40,6 +40,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/widgets-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"procedural_db.h"
 end_include
 

@@ -613,13 +613,6 @@ argument_list|)
 expr_stmt|;
 name|parent_class
 operator|=
-name|gtk_type_class
-argument_list|(
-name|GIMP_TYPE_TOOL
-argument_list|)
-expr_stmt|;
-name|parent_class
-operator|=
 name|g_type_class_peek_parent
 argument_list|(
 name|klass

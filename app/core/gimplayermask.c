@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon277042f60103
+DECL|enum|__anon2b38e0530103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED

@@ -101,14 +101,14 @@ end_include
 
 begin_function
 name|void
-DECL|function|selection_options_init (SelectionOptions * options,GtkType tool_type,ToolOptionsResetFunc reset_func)
+DECL|function|selection_options_init (SelectionOptions * options,GType tool_type,ToolOptionsResetFunc reset_func)
 name|selection_options_init
 parameter_list|(
 name|SelectionOptions
 modifier|*
 name|options
 parameter_list|,
-name|GtkType
+name|GType
 name|tool_type
 parameter_list|,
 name|ToolOptionsResetFunc
@@ -1682,10 +1682,10 @@ end_function
 begin_function
 name|SelectionOptions
 modifier|*
-DECL|function|selection_options_new (GtkType tool_type,ToolOptionsResetFunc reset_func)
+DECL|function|selection_options_new (GType tool_type,ToolOptionsResetFunc reset_func)
 name|selection_options_new
 parameter_list|(
-name|GtkType
+name|GType
 name|tool_type
 parameter_list|,
 name|ToolOptionsResetFunc

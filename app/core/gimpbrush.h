@@ -22,16 +22,6 @@ directive|include
 file|"gimpdata.h"
 end_include
 
-begin_comment
-comment|/* FIXME: remove the GimpPaintTool dependency  */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"tools/tools-types.h"
-end_include
-
 begin_define
 DECL|macro|GIMP_BRUSH_FILE_EXTENSION
 define|#
@@ -181,32 +171,13 @@ modifier|*
 name|brush
 parameter_list|)
 function_decl|;
+if|#
+directive|if
+literal|0
 comment|/* FIXME: these are no virtual function pointers but bad hacks: */
-DECL|member|select_brush
-name|GimpBrush
-modifier|*
-function_decl|(
-modifier|*
-name|select_brush
-function_decl|)
-parameter_list|(
-name|GimpPaintTool
-modifier|*
-name|paint_tool
-parameter_list|)
-function_decl|;
-DECL|member|want_null_motion
-name|gboolean
-function_decl|(
-modifier|*
-name|want_null_motion
-function_decl|)
-parameter_list|(
-name|GimpPaintTool
-modifier|*
-name|paint_tool
-parameter_list|)
-function_decl|;
+block|GimpBrush * (* select_brush)     (GimpPaintTool *paint_tool);   gboolean    (* want_null_motion) (GimpPaintTool *paint_tool);    maybe:    GimpBrush * (* select_brush)     (GimpBrush      *brush, 				    GimpValuators  *current, 				    GimpValuators  *new);
+endif|#
+directive|endif
 block|}
 struct|;
 end_struct

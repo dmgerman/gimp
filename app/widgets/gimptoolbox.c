@@ -1043,9 +1043,9 @@ name|toolbox_button
 decl_stmt|;
 name|toolbox_button
 operator|=
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|tool_info
 argument_list|)

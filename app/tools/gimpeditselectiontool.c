@@ -191,17 +191,6 @@ value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_EDIT_SELECTION_TOOL, GimpEditSelectionTo
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_EDIT_SELECTION_TOOL (obj)
-define|#
-directive|define
-name|GIMP_IS_EDIT_SELECTION_TOOL
-parameter_list|(
-name|obj
-parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_EDIT_SELECTION_TOOL))
-end_define
-
-begin_define
 DECL|macro|GIMP_EDIT_SELECTION_TOOL_CLASS (klass)
 define|#
 directive|define
@@ -210,6 +199,17 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_EDIT_SELECTION_TOOL, GimpEditSelectionToolClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_EDIT_SELECTION_TOOL (obj)
+define|#
+directive|define
+name|GIMP_IS_EDIT_SELECTION_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_EDIT_SELECTION_TOOL))
 end_define
 
 begin_define
@@ -345,7 +345,7 @@ end_struct
 
 begin_function_decl
 specifier|static
-name|GtkType
+name|GType
 name|gimp_edit_selection_tool_get_type
 parameter_list|(
 name|void
@@ -373,18 +373,6 @@ parameter_list|(
 name|GimpEditSelectionTool
 modifier|*
 name|edit_selection_tool
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_edit_selection_tool_destroy
-parameter_list|(
-name|GtkObject
-modifier|*
-name|object
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -511,7 +499,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-name|GtkType
+name|GType
 DECL|function|gimp_edit_selection_tool_get_type (void)
 name|gimp_edit_selection_tool_get_type
 parameter_list|(
@@ -519,7 +507,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GtkType
+name|GType
 name|tool_type
 init|=
 literal|0
@@ -530,52 +518,64 @@ operator|!
 name|tool_type
 condition|)
 block|{
-name|GtkTypeInfo
+specifier|static
+specifier|const
+name|GTypeInfo
 name|tool_info
 init|=
 block|{
-literal|"GimpEditSelectionTool"
-block|,
-sizeof|sizeof
-argument_list|(
-name|GimpEditSelectionTool
-argument_list|)
-block|,
 sizeof|sizeof
 argument_list|(
 name|GimpEditSelectionToolClass
 argument_list|)
 block|,
 operator|(
-name|GtkClassInitFunc
+name|GBaseInitFunc
+operator|)
+name|NULL
+block|,
+operator|(
+name|GBaseFinalizeFunc
+operator|)
+name|NULL
+block|,
+operator|(
+name|GClassInitFunc
 operator|)
 name|gimp_edit_selection_tool_class_init
 block|,
+name|NULL
+block|,
+comment|/* class_finalize */
+name|NULL
+block|,
+comment|/* class_data     */
+sizeof|sizeof
+argument_list|(
+name|GimpEditSelectionTool
+argument_list|)
+block|,
+literal|0
+block|,
+comment|/* n_preallocs    */
 operator|(
-name|GtkObjectInitFunc
+name|GInstanceInitFunc
 operator|)
 name|gimp_edit_selection_tool_init
-block|,
-comment|/* reserved_1 */
-name|NULL
-block|,
-comment|/* reserved_2 */
-name|NULL
-block|,
-operator|(
-name|GtkClassInitFunc
-operator|)
-name|NULL
 block|,       }
 decl_stmt|;
 name|tool_type
 operator|=
-name|gtk_type_unique
+name|g_type_register_static
 argument_list|(
 name|GIMP_TYPE_DRAW_TOOL
 argument_list|,
+literal|"GimpEditSelectionTool"
+argument_list|,
 operator|&
 name|tool_info
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
@@ -596,10 +596,6 @@ modifier|*
 name|klass
 parameter_list|)
 block|{
-name|GtkObjectClass
-modifier|*
-name|object_class
-decl_stmt|;
 name|GimpToolClass
 modifier|*
 name|tool_class
@@ -608,42 +604,26 @@ name|GimpDrawToolClass
 modifier|*
 name|draw_class
 decl_stmt|;
-name|object_class
-operator|=
-operator|(
-name|GtkObjectClass
-operator|*
-operator|)
-name|klass
-expr_stmt|;
 name|tool_class
 operator|=
-operator|(
-name|GimpToolClass
-operator|*
-operator|)
+name|GIMP_TOOL_CLASS
+argument_list|(
 name|klass
+argument_list|)
 expr_stmt|;
 name|draw_class
 operator|=
-operator|(
-name|GimpDrawToolClass
-operator|*
-operator|)
+name|GIMP_DRAW_TOOL_CLASS
+argument_list|(
 name|klass
+argument_list|)
 expr_stmt|;
 name|parent_class
 operator|=
-name|gtk_type_class
+name|g_type_class_peek_parent
 argument_list|(
-name|GIMP_TYPE_DRAW_TOOL
+name|klass
 argument_list|)
-expr_stmt|;
-name|object_class
-operator|->
-name|destroy
-operator|=
-name|gimp_edit_selection_tool_destroy
 expr_stmt|;
 name|tool_class
 operator|->
@@ -741,39 +721,6 @@ operator|->
 name|first_move
 operator|=
 name|TRUE
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_edit_selection_tool_destroy (GtkObject * object)
-name|gimp_edit_selection_tool_destroy
-parameter_list|(
-name|GtkObject
-modifier|*
-name|object
-parameter_list|)
-block|{
-if|if
-condition|(
-name|GTK_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|destroy
-condition|)
-name|GTK_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|destroy
-argument_list|(
-name|object
-argument_list|)
 expr_stmt|;
 block|}
 end_function

@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d095030103
+DECL|enum|__anon27815b0e0103
 block|{
 DECL|enumerator|DISCONNECT
 name|DISCONNECT
@@ -51,7 +51,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d095030203
+DECL|enum|__anon27815b0e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -175,7 +175,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
-name|GtkObjectClass
+name|GObjectClass
 modifier|*
 name|parent_class
 init|=
@@ -253,7 +253,7 @@ name|object_type
 operator|=
 name|g_type_register_static
 argument_list|(
-name|GTK_TYPE_OBJECT
+name|G_TYPE_OBJECT
 argument_list|,
 literal|"GimpObject"
 argument_list|,

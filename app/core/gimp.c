@@ -22,7 +22,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -2054,6 +2054,7 @@ name|gimp
 operator|->
 name|create_display_func
 condition|)
+block|{
 name|gimp
 operator|->
 name|create_display_func
@@ -2061,6 +2062,15 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 

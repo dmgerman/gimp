@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0ac80e0103
+DECL|enum|__anon27609f860103
 block|{
 DECL|enumerator|BLUR_CONVOLVE
 name|BLUR_CONVOLVE
@@ -61,17 +61,6 @@ value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_CONVOLVE_TOOL, GimpConvolveT
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_CONVOLVE_TOOL (obj)
-define|#
-directive|define
-name|GIMP_IS_CONVOLVE_TOOL
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_CONVOLVE_TOOL))
-end_define
-
-begin_define
 DECL|macro|GIMP_CONVOLVE_TOOL_CLASS (klass)
 define|#
 directive|define
@@ -83,6 +72,17 @@ value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_CONVOLVE_TOOL, GimpConvolveTo
 end_define
 
 begin_define
+DECL|macro|GIMP_IS_CONVOLVE_TOOL (obj)
+define|#
+directive|define
+name|GIMP_IS_CONVOLVE_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_CONVOLVE_TOOL))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_CONVOLVE_TOOL_CLASS (klass)
 define|#
 directive|define
@@ -91,6 +91,17 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CONVOLVE_TOOL))
+end_define
+
+begin_define
+DECL|macro|GIMP_CONVOLVE_TOOL_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_CONVOLVE_TOOL_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_CONVOLVE_TOOL, GimpConvolveToolClass))
 end_define
 
 begin_typedef
@@ -149,7 +160,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GtkType
+name|GType
 name|gimp_convolve_tool_get_type
 parameter_list|(
 name|void

@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2afc6c090103
+DECL|enum|__anon2954912d0103
 block|{
 DECL|enumerator|FG_BUCKET_FILL
 name|FG_BUCKET_FILL
@@ -61,17 +61,6 @@ value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_BUCKET_FILL_TOOL, GimpBucket
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_BUCKET_FILL_TOOL (obj)
-define|#
-directive|define
-name|GIMP_IS_BUCKET_FILL_TOOL
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_BUCKET_FILL_TOOL))
-end_define
-
-begin_define
 DECL|macro|GIMP_BUCKET_FILL_TOOL_CLASS (klass)
 define|#
 directive|define
@@ -83,6 +72,17 @@ value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_BUCKET_FILL_TOOL, GimpBucketF
 end_define
 
 begin_define
+DECL|macro|GIMP_IS_BUCKET_FILL_TOOL (obj)
+define|#
+directive|define
+name|GIMP_IS_BUCKET_FILL_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_BUCKET_FILL_TOOL))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_BUCKET_FILL_TOOL_CLASS (klass)
 define|#
 directive|define
@@ -91,6 +91,17 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_BUCKET_FILL_TOOL))
+end_define
+
+begin_define
+DECL|macro|GIMP_BUCKET_FILL_TOOL_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_BUCKET_FILL_TOOL_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_BUCKET_FILL_TOOL, GimpBucketFillToolClass))
 end_define
 
 begin_typedef
@@ -159,7 +170,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GtkType
+name|GType
 name|gimp_bucket_fill_tool_get_type
 parameter_list|(
 name|void

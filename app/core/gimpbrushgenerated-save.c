@@ -47,7 +47,7 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -78,16 +78,6 @@ begin_include
 include|#
 directive|include
 file|"gimpbrushgenerated.h"
-end_include
-
-begin_comment
-comment|/*  this needs to go away  */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"tools/gimppainttool.h"
 end_include
 
 begin_define

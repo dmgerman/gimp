@@ -455,7 +455,7 @@ block|}
 end_function
 
 begin_function
-name|GtkType
+name|GType
 DECL|function|gimp_smudge_tool_get_type (void)
 name|gimp_smudge_tool_get_type
 parameter_list|(
@@ -463,7 +463,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GtkType
+name|GType
 name|tool_type
 init|=
 literal|0
@@ -474,49 +474,64 @@ operator|!
 name|tool_type
 condition|)
 block|{
-name|GtkTypeInfo
+specifier|static
+specifier|const
+name|GTypeInfo
 name|tool_info
 init|=
 block|{
-literal|"GimpSmudgeTool"
-block|,
-sizeof|sizeof
-argument_list|(
-name|GimpSmudgeTool
-argument_list|)
-block|,
 sizeof|sizeof
 argument_list|(
 name|GimpSmudgeToolClass
 argument_list|)
 block|,
 operator|(
-name|GtkClassInitFunc
+name|GBaseInitFunc
+operator|)
+name|NULL
+block|,
+operator|(
+name|GBaseFinalizeFunc
+operator|)
+name|NULL
+block|,
+operator|(
+name|GClassInitFunc
 operator|)
 name|gimp_smudge_tool_class_init
 block|,
+name|NULL
+block|,
+comment|/* class_finalize */
+name|NULL
+block|,
+comment|/* class_data     */
+sizeof|sizeof
+argument_list|(
+name|GimpSmudgeTool
+argument_list|)
+block|,
+literal|0
+block|,
+comment|/* n_preallocs    */
 operator|(
-name|GtkObjectInitFunc
+name|GInstanceInitFunc
 operator|)
 name|gimp_smudge_tool_init
-block|,
-comment|/* reserved_1 */
-name|NULL
-block|,
-comment|/* reserved_2 */
-name|NULL
-block|,
-name|NULL
-block|}
+block|,       }
 decl_stmt|;
 name|tool_type
 operator|=
-name|gtk_type_unique
+name|g_type_register_static
 argument_list|(
 name|GIMP_TYPE_PAINT_TOOL
 argument_list|,
+literal|"GimpSmudgeTool"
+argument_list|,
 operator|&
 name|tool_info
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
@@ -543,17 +558,16 @@ name|paint_tool_class
 decl_stmt|;
 name|paint_tool_class
 operator|=
-operator|(
-name|GimpPaintToolClass
-operator|*
-operator|)
+name|GIMP_PAINT_TOOL_CLASS
+argument_list|(
 name|klass
+argument_list|)
 expr_stmt|;
 name|parent_class
 operator|=
-name|gtk_type_class
+name|g_type_class_peek_parent
 argument_list|(
-name|GIMP_TYPE_PAINT_TOOL
+name|klass
 argument_list|)
 expr_stmt|;
 name|paint_tool_class

@@ -913,6 +913,15 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|)
+argument_list|,
+name|gimp_get_current_context
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gdisplays_flush
