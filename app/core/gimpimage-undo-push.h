@@ -175,6 +175,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gboolean
+name|gimp_image_undo_push_image_colormap
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  mask undo  */
 end_comment

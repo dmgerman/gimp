@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-colormap.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage-projection.h"
 end_include
 
@@ -411,7 +417,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon289140e30103
+DECL|enum|__anon29c38f9e0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1439,7 +1445,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289140e30208
+DECL|struct|__anon29c38f9e0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1516,7 +1522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289140e30308
+DECL|struct|__anon29c38f9e0308
 block|{
 DECL|member|ncolors
 name|long
@@ -1676,7 +1682,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289140e30408
+DECL|struct|__anon29c38f9e0408
 block|{
 DECL|member|used_count
 name|signed
@@ -3351,14 +3357,11 @@ name|gimage
 operator|->
 name|cmap
 operator|=
-operator|(
-name|unsigned
-name|char
-operator|*
-operator|)
-name|g_malloc
+name|g_new0
 argument_list|(
-name|COLORMAP_SIZE
+name|guchar
+argument_list|,
+name|GIMP_IMAGE_COLORMAP_SIZE
 argument_list|)
 expr_stmt|;
 if|if
@@ -3380,13 +3383,12 @@ operator|)
 operator|)
 condition|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|old_palette
 index|[
 literal|256
@@ -3394,8 +3396,7 @@ operator|*
 literal|3
 index|]
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|new_palette
 index|[
 literal|256
@@ -3403,14 +3404,13 @@ operator|*
 literal|3
 index|]
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|remap_table
 index|[
 literal|256
 index|]
 decl_stmt|;
-name|int
+name|gint
 name|num_entries
 decl_stmt|;
 for|for

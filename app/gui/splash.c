@@ -12,13 +12,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_include
@@ -31,12 +31,6 @@ begin_include
 include|#
 directive|include
 file|"splash.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_include
@@ -120,6 +114,10 @@ name|gboolean
 name|show_image
 parameter_list|)
 block|{
+name|GtkWidget
+modifier|*
+name|frame
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|vbox
@@ -226,6 +224,38 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|frame
+operator|=
+name|gtk_frame_new
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_frame_set_shadow_type
+argument_list|(
+name|GTK_FRAME
+argument_list|(
+name|frame
+argument_list|)
+argument_list|,
+name|GTK_SHADOW_OUT
+argument_list|)
+expr_stmt|;
+name|gtk_container_add
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|win_initstatus
+argument_list|)
+argument_list|,
+name|frame
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|frame
+argument_list|)
+expr_stmt|;
 name|vbox
 operator|=
 name|gtk_vbox_new
@@ -239,7 +269,7 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|win_initstatus
+name|frame
 argument_list|)
 argument_list|,
 name|vbox

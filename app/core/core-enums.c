@@ -2406,6 +2406,17 @@ literal|"image-guide"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_IMAGE_COLORMAP
+block|,
+name|N_
+argument_list|(
+literal|"Change Indexed Palette"
+argument_list|)
+block|,
+literal|"image-colormap"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_MASK
 block|,
 name|N_

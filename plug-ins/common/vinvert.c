@@ -7,10 +7,6 @@ begin_comment
 comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
-begin_comment
-comment|/*  * BUGS:  *     Is not undoable when operating on indexed images - GIMP's fault.  */
-end_comment
-
 begin_include
 include|#
 directive|include
@@ -122,7 +118,6 @@ parameter_list|,
 name|gint
 name|row_width
 parameter_list|,
-specifier|const
 name|gint
 name|bpp
 parameter_list|)
@@ -652,7 +647,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|vinvert_render_row (guchar * src,guchar * dest,gint col,const gint bpp)
+DECL|function|vinvert_render_row (guchar * src,guchar * dest,gint row_width,gint bpp)
 name|vinvert_render_row
 parameter_list|(
 name|guchar
@@ -664,17 +659,16 @@ modifier|*
 name|dest
 parameter_list|,
 name|gint
-name|col
+name|row_width
 parameter_list|,
-comment|/* row width in pixels */
-specifier|const
+comment|/* in pixels */
 name|gint
 name|bpp
 parameter_list|)
 block|{
 while|while
 condition|(
-name|col
+name|row_width
 operator|--
 condition|)
 block|{
