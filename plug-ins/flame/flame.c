@@ -535,7 +535,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon2b8bbc4a0108
+DECL|struct|__anon2bd1d4780108
 block|{
 DECL|member|randomize
 name|gint
@@ -5475,15 +5475,15 @@ name|cp
 operator|.
 name|spatial_oversample
 argument_list|,
-literal|0
-argument_list|,
 literal|1
+argument_list|,
+literal|4
 argument_list|,
 literal|0.01
 argument_list|,
 literal|0.1
 argument_list|,
-literal|2
+literal|0
 argument_list|,
 name|TRUE
 argument_list|,
