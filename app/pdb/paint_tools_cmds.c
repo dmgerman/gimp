@@ -73,12 +73,6 @@ directive|include
 file|"paint/gimppaintoptions.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"paint/paint-types.h"
-end_include
-
 begin_decl_stmt
 DECL|variable|airbrush_proc
 specifier|static

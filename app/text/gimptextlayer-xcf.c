@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"text/text-types.h"
+file|"text-types.h"
 end_include
 
 begin_include
@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fd8e0f0103
+DECL|enum|__anon2c1c7b9d0103
 block|{
 DECL|enumerator|TEXT_LAYER_XCF_NONE
 name|TEXT_LAYER_XCF_NONE

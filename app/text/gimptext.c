@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"text/text-types.h"
+file|"text-types.h"
 end_include
 
 begin_include
@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf20dd30103
+DECL|enum|__anon2be448e80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

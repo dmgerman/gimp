@@ -49,7 +49,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"text/text-types.h"
+file|"text-types.h"
 end_include
 
 begin_include

@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"text/text-types.h"
+file|"text-types.h"
 end_include
 
 begin_include
@@ -65,7 +65,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac2c9740103
+DECL|enum|__anon2aae045a0103
 block|{
 DECL|enumerator|XLFD_FOUNDRY
 name|XLFD_FOUNDRY

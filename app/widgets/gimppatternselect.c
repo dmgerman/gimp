@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdatafactoryview.h"
+file|"gimppatternfactoryview.h"
 end_include
 
 begin_include
@@ -330,7 +330,7 @@ name|dialog
 operator|->
 name|view
 operator|=
-name|gimp_data_factory_view_new
+name|gimp_pattern_factory_view_new
 argument_list|(
 name|GIMP_VIEW_TYPE_GRID
 argument_list|,
@@ -353,12 +353,6 @@ argument_list|,
 name|dialog
 operator|->
 name|menu_factory
-argument_list|,
-literal|"<Patterns>"
-argument_list|,
-literal|"/patterns-popup"
-argument_list|,
-literal|"patterns"
 argument_list|)
 expr_stmt|;
 name|gimp_container_box_set_size_request

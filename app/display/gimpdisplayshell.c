@@ -138,12 +138,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"vectors/gimpstroke.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpdnd.h"
 end_include
 
@@ -322,7 +316,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7361e10103
+DECL|enum|__anon2b27afdf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -338,7 +332,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7361e10203
+DECL|enum|__anon2b27afdf0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
