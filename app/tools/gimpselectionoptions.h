@@ -36,6 +36,23 @@ name|GimpToolOptions
 name|tool_options
 decl_stmt|;
 comment|/*  options used by all selection tools  */
+DECL|member|op
+name|SelectOps
+name|op
+decl_stmt|;
+DECL|member|op_d
+name|SelectOps
+name|op_d
+decl_stmt|;
+DECL|member|op_w
+name|GtkWidget
+modifier|*
+name|op_w
+index|[
+literal|4
+index|]
+decl_stmt|;
+comment|/*  4 radio buttons  */
 DECL|member|feather
 name|gboolean
 name|feather

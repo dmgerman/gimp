@@ -124,11 +124,6 @@ decl_stmt|,
 name|y
 decl_stmt|;
 comment|/*  Point from which to execute seed fill  */
-DECL|member|operation
-name|SelectOps
-name|operation
-decl_stmt|;
-comment|/*  add, subtract, normal color selection  */
 block|}
 struct|;
 end_struct

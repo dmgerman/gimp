@@ -3314,7 +3314,7 @@ name|gimp
 argument_list|,
 name|key
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 name|state
 argument_list|,
@@ -3441,7 +3441,7 @@ name|gimp
 argument_list|,
 name|key
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|state
 argument_list|,

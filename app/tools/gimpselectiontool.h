@@ -117,6 +117,11 @@ name|SelectOps
 name|op
 decl_stmt|;
 comment|/*  selection operation (SELECTION_ADD etc.)  */
+DECL|member|saved_op
+name|SelectOps
+name|saved_op
+decl_stmt|;
+comment|/*  saved tool options state                  */
 block|}
 struct|;
 end_struct
