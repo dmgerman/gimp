@@ -982,6 +982,11 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gimp_image_flush
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_function
