@@ -139,7 +139,7 @@ name|cmap
 decl_stmt|;
 comment|/*  colormap--for indexed        */
 DECL|member|num_cols
-name|int
+name|gint
 name|num_cols
 decl_stmt|;
 comment|/*  number of cols--for indexed  */
@@ -350,7 +350,7 @@ name|comp_preview
 decl_stmt|;
 comment|/*  the composite preview        */
 DECL|member|comp_preview_valid
-name|gint
+name|gboolean
 name|comp_preview_valid
 index|[
 literal|3

@@ -614,6 +614,8 @@ name|MaskToLayerTranslate
 argument_list|)
 expr_stmt|;
 return|return;
+default|default:
+comment|/*  fallthrough  */
 block|}
 name|add_point
 argument_list|(

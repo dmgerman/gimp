@@ -558,7 +558,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon293ffcb30103
+DECL|enum|__anon29a2867a0103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -16208,7 +16208,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|gimp_image_preview_valid (GimpImage * gimage,ChannelType type)
 name|gimp_image_preview_valid
 parameter_list|(

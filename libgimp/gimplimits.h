@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library                                                     * Copyright (C) 1995-1999 Peter Mattis and Spencer Kimball                  *  * gimplimits.h  * Copyright (C) 1999 Michael Natterer<mitschel@cs.tu-berlin.de>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.               *                                                                                * This library is distributed in the hope that it will be useful,                * but WITHOUT ANY WARRANTY; without even the implied warranty of                 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU              * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1999 Peter Mattis and Spencer Kimball  *  * gimplimits.h  * Copyright (C) 1999 Michael Natterer<mitschel@cs.tu-berlin.de>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
@@ -37,6 +37,11 @@ value|16777216
 end_define
 
 begin_comment
+DECL|macro|GIMP_MAX_IMAGE_SIZE
+comment|/*  2^24  */
+end_comment
+
+begin_comment
 comment|/*  dots per inch  */
 end_comment
 
@@ -45,8 +50,13 @@ DECL|macro|GIMP_MIN_RESOLUTION
 define|#
 directive|define
 name|GIMP_MIN_RESOLUTION
-value|(1.0 / 65536.0)
+value|5e-3
 end_define
+
+begin_comment
+DECL|macro|GIMP_MIN_RESOLUTION
+comment|/*  shouldn't display as 0.000  */
+end_comment
 
 begin_define
 DECL|macro|GIMP_MAX_RESOLUTION
@@ -85,16 +95,26 @@ DECL|macro|GIMP_CHECK_DARK
 define|#
 directive|define
 name|GIMP_CHECK_DARK
-value|(1.0 / 3.0)
+value|0.4
 end_define
+
+begin_comment
+DECL|macro|GIMP_CHECK_DARK
+comment|/*  corresponds to GRAY_CHECKS as  */
+end_comment
 
 begin_define
 DECL|macro|GIMP_CHECK_LIGHT
 define|#
 directive|define
 name|GIMP_CHECK_LIGHT
-value|(2.0 / 3.0)
+value|0.6
 end_define
+
+begin_comment
+DECL|macro|GIMP_CHECK_LIGHT
+comment|/*  defined in app/image_render.c  */
+end_comment
 
 begin_endif
 endif|#

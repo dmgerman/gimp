@@ -3937,35 +3937,7 @@ return|return
 name|FALSE
 return|;
 block|}
-if|if
-condition|(
-name|gimp_image_preview_valid
-argument_list|(
-name|gimage
-argument_list|,
-name|GRAY_CHANNEL
-argument_list|)
-condition|)
-block|{
-comment|/* just for debugging */
-name|g_print
-argument_list|(
-literal|"(incidentally, gimage already has a valid preview - %dx%d)\n"
-argument_list|,
-name|gimage
-operator|->
-name|comp_preview
-operator|->
-name|width
-argument_list|,
-name|gimage
-operator|->
-name|comp_preview
-operator|->
-name|height
-argument_list|)
-expr_stmt|;
-block|}
+comment|/* just for debugging     *  if (gimp_image_preview_valid (gimage, GRAY_CHANNEL))    *   {    *     g_print ("(incidentally, gimage already has a valid preview - %dx%d)\n",    *	         gimage->comp_preview->width,    *	         gimage->comp_preview->height);    *   }    */
 name|pathname
 operator|=
 name|g_dirname
