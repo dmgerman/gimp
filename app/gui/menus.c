@@ -465,6 +465,10 @@ literal|"<Image>"
 argument_list|,
 literal|"file"
 argument_list|,
+literal|"debug"
+argument_list|,
+literal|"help"
+argument_list|,
 literal|"edit"
 argument_list|,
 literal|"select"
@@ -484,6 +488,8 @@ argument_list|,
 literal|"dialogs"
 argument_list|,
 literal|"plug-in"
+argument_list|,
+literal|"qmask"
 argument_list|,
 name|NULL
 argument_list|,
@@ -1154,7 +1160,7 @@ name|global_menu_factory
 argument_list|,
 literal|"<PaletteEditor>"
 argument_list|,
-literal|"pelette-editor"
+literal|"palette-editor"
 argument_list|,
 name|NULL
 argument_list|,
