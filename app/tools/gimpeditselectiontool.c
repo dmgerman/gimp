@@ -1604,20 +1604,6 @@ operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
-name|gimp_tool_control_halt
-argument_list|(
-name|tool_manager_get_active
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-operator|->
-name|gimp
-argument_list|)
-operator|->
-name|control
-argument_list|)
-expr_stmt|;
 comment|/* EDIT_MASK_TRANSLATE is performed here at movement end, not 'live' like    *  the other translation types.    */
 if|if
 condition|(
