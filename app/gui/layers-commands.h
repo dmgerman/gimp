@@ -362,6 +362,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|layers_show_context_menu
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|layers_layer_merge_query
 parameter_list|(
 name|GimpImage

@@ -238,6 +238,25 @@ name|gpointer
 name|insert_data
 parameter_list|)
 function_decl|;
+DECL|member|context_item
+name|void
+function_decl|(
+modifier|*
+name|context_item
+function_decl|)
+parameter_list|(
+name|GimpContainerView
+modifier|*
+name|view
+parameter_list|,
+name|GimpViewable
+modifier|*
+name|object
+parameter_list|,
+name|gpointer
+name|insert_data
+parameter_list|)
+function_decl|;
 DECL|member|clear_items
 name|void
 function_decl|(
@@ -349,8 +368,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_container_view_context_item
+parameter_list|(
+name|GimpContainerView
+modifier|*
+name|view
+parameter_list|,
+name|GimpViewable
+modifier|*
+name|viewable
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
-comment|/*  private  */
+comment|/*  protected  */
 end_comment
 
 begin_function_decl
@@ -371,6 +405,21 @@ end_function_decl
 begin_function_decl
 name|void
 name|gimp_container_view_item_activated
+parameter_list|(
+name|GimpContainerView
+modifier|*
+name|view
+parameter_list|,
+name|GimpViewable
+modifier|*
+name|item
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_container_view_item_context
 parameter_list|(
 name|GimpContainerView
 modifier|*

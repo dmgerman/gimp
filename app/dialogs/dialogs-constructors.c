@@ -120,6 +120,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"channels-commands.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"color-area.h"
 end_include
 
@@ -169,6 +175,12 @@ begin_include
 include|#
 directive|include
 file|"gradient-select.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"layers-commands.h"
 end_include
 
 begin_include
@@ -1098,6 +1110,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/*  list views  */
+end_comment
+
 begin_function
 name|GtkWidget
 modifier|*
@@ -1291,6 +1307,8 @@ argument_list|,
 name|context
 argument_list|,
 literal|32
+operator|/
+literal|2
 argument_list|,
 literal|5
 argument_list|,
@@ -1828,6 +1846,21 @@ operator|(
 name|GimpCopyDrawableFunc
 operator|)
 name|gimp_layer_copy
+argument_list|,
+operator|(
+name|GimpNewDrawableFunc
+operator|)
+name|layers_new_layer_query
+argument_list|,
+operator|(
+name|GimpEditDrawableFunc
+operator|)
+name|layers_edit_layer_query
+argument_list|,
+operator|(
+name|GimpDrawableContextFunc
+operator|)
+name|layers_show_context_menu
 argument_list|)
 expr_stmt|;
 name|dockable
@@ -1939,6 +1972,21 @@ operator|(
 name|GimpCopyDrawableFunc
 operator|)
 name|gimp_channel_copy
+argument_list|,
+operator|(
+name|GimpNewDrawableFunc
+operator|)
+name|channels_new_channel_query
+argument_list|,
+operator|(
+name|GimpEditDrawableFunc
+operator|)
+name|channels_edit_channel_query
+argument_list|,
+operator|(
+name|GimpDrawableContextFunc
+operator|)
+name|channels_show_context_menu
 argument_list|)
 expr_stmt|;
 name|dockable
