@@ -59,15 +59,31 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|__GLIBC__
-end_ifndef
-
 begin_comment
-comment|/* cbrt() is a GNU extension */
+comment|/* cbrt() is a GNU extension, which C99 accepted */
 end_comment
+
+begin_if
+if|#
+directive|if
+operator|!
+name|defined
+argument_list|(
+name|__GLIBC__
+argument_list|)
+operator|&&
+operator|!
+operator|(
+name|defined
+argument_list|(
+name|__STDC_VERSION__
+argument_list|)
+operator|&&
+name|__STDC_VERSION__
+operator|>=
+literal|199901L
+operator|)
+end_if
 
 begin_define
 DECL|macro|cbrt (x)
@@ -817,7 +833,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b15ca160108
+DECL|struct|__anon2af6b4580108
 block|{
 DECL|member|type
 name|gchar
@@ -1438,7 +1454,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b15ca160208
+DECL|struct|__anon2af6b4580208
 block|{
 DECL|member|extract_type
 name|gchar
@@ -1460,7 +1476,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b15ca160308
+DECL|struct|__anon2af6b4580308
 block|{
 DECL|member|extract_flag
 name|gint

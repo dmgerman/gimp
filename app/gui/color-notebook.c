@@ -674,12 +674,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|cnp
 operator|->
 name|selection
-argument_list|)
 argument_list|,
 literal|"color_changed"
 argument_list|,
