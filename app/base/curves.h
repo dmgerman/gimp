@@ -100,6 +100,11 @@ name|GdkPixmap
 modifier|*
 name|pixmap
 decl_stmt|;
+DECL|member|curve_type_menu
+name|GtkWidget
+modifier|*
+name|curve_type_menu
+decl_stmt|;
 DECL|member|drawable
 name|GimpDrawable
 modifier|*
@@ -140,6 +145,9 @@ decl_stmt|;
 DECL|member|curve_type
 name|gint
 name|curve_type
+index|[
+literal|5
+index|]
 decl_stmt|;
 DECL|member|points
 name|gint
