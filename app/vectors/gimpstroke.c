@@ -1655,6 +1655,25 @@ end_function
 
 begin_function
 name|void
+DECL|function|gimp_stroke_close (GimpStroke * stroke)
+name|gimp_stroke_close
+parameter_list|(
+name|GimpStroke
+modifier|*
+name|stroke
+parameter_list|)
+block|{
+name|stroke
+operator|->
+name|closed
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|gimp_stroke_anchor_convert (GimpStroke * stroke,GimpAnchor * anchor,GimpAnchorFeatureType feature)
 name|gimp_stroke_anchor_convert
 parameter_list|(

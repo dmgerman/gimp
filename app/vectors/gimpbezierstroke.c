@@ -847,6 +847,16 @@ argument_list|(
 name|bezier_stroke
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+operator|!
+name|stroke
+operator|->
+name|closed
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|stroke

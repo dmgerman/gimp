@@ -580,6 +580,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_stroke_close
+parameter_list|(
+name|GimpStroke
+modifier|*
+name|stroke
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_stroke_anchor_convert
 parameter_list|(
 name|GimpStroke
@@ -645,7 +656,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* returns the number of valid coordinates */
+comment|/* returns an array of valid coordinates */
 end_comment
 
 begin_function_decl
