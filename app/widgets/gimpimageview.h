@@ -22,6 +22,22 @@ directive|include
 file|"gimpcontainereditor.h"
 end_include
 
+begin_typedef
+DECL|typedef|GimpRaiseDisplaysFunc
+typedef|typedef
+name|void
+function_decl|(
+modifier|*
+name|GimpRaiseDisplaysFunc
+function_decl|)
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+function_decl|;
+end_typedef
+
 begin_define
 DECL|macro|GIMP_TYPE_IMAGE_VIEW
 define|#
@@ -102,6 +118,10 @@ block|{
 DECL|member|parent_instance
 name|GimpContainerEditor
 name|parent_instance
+decl_stmt|;
+DECL|member|raise_displays_func
+name|GimpRaiseDisplaysFunc
+name|raise_displays_func
 decl_stmt|;
 DECL|member|raise_button
 name|GtkWidget

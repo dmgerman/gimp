@@ -312,6 +312,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"images-commands.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"layers-commands.h"
 end_include
 
@@ -1017,6 +1023,15 @@ operator|->
 name|menu_factory
 argument_list|)
 expr_stmt|;
+name|GIMP_IMAGE_VIEW
+argument_list|(
+name|view
+argument_list|)
+operator|->
+name|raise_displays_func
+operator|=
+name|images_raise_views
+expr_stmt|;
 return|return
 name|dialogs_dockable_new
 argument_list|(
@@ -1719,6 +1734,15 @@ name|factory
 operator|->
 name|menu_factory
 argument_list|)
+expr_stmt|;
+name|GIMP_IMAGE_VIEW
+argument_list|(
+name|view
+argument_list|)
+operator|->
+name|raise_displays_func
+operator|=
+name|images_raise_views
 expr_stmt|;
 return|return
 name|dialogs_dockable_new
