@@ -1069,6 +1069,8 @@ decl_stmt|;
 name|GList
 modifier|*
 name|list
+init|=
+name|NULL
 decl_stmt|;
 name|int
 name|i
@@ -2221,6 +2223,8 @@ decl_stmt|;
 name|GList
 modifier|*
 name|list
+init|=
+name|NULL
 decl_stmt|;
 name|int
 name|i
@@ -2490,6 +2494,8 @@ decl_stmt|;
 name|GList
 modifier|*
 name|list
+init|=
+name|NULL
 decl_stmt|;
 name|int
 name|i
