@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/pixel-processor.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc-blurbs.h"
 end_include
 
@@ -124,7 +130,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d162f90103
+DECL|enum|__anon2a0cc5d50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -349,7 +355,7 @@ name|NUM_PROCESSORS_BLURB
 argument_list|,
 literal|1
 argument_list|,
-literal|16
+name|GIMP_MAX_NUM_THREADS
 argument_list|,
 literal|2
 argument_list|,

@@ -946,14 +946,6 @@ block|}
 end_function
 
 begin_define
-DECL|macro|MAX_THREADS
-define|#
-directive|define
-name|MAX_THREADS
-value|16
-end_define
-
-begin_define
 DECL|macro|TILES_PER_THREAD
 define|#
 directive|define
@@ -1013,7 +1005,7 @@ name|GThread
 modifier|*
 name|threads
 index|[
-name|MAX_THREADS
+name|GIMP_MAX_NUM_THREADS
 index|]
 decl_stmt|;
 name|gint
@@ -1420,7 +1412,7 @@ name|num_threads
 argument_list|,
 literal|1
 argument_list|,
-name|MAX_THREADS
+name|GIMP_MAX_NUM_THREADS
 argument_list|)
 expr_stmt|;
 block|}

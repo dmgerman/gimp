@@ -16,6 +16,14 @@ directive|define
 name|__PIXEL_PROCESSOR_H__
 end_define
 
+begin_define
+DECL|macro|GIMP_MAX_NUM_THREADS
+define|#
+directive|define
+name|GIMP_MAX_NUM_THREADS
+value|16
+end_define
+
 begin_typedef
 DECL|typedef|PixelProcessorFunc
 typedef|typedef
