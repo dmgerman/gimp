@@ -185,9 +185,6 @@ parameter_list|(
 name|GimpImagefile
 modifier|*
 name|imagefile
-parameter_list|,
-name|gint
-name|thumb_size
 parameter_list|)
 function_decl|;
 end_function_decl

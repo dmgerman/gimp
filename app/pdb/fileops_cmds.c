@@ -1041,14 +1041,6 @@ if|if
 condition|(
 name|imagefile
 condition|)
-block|{
-name|gimp_imagefile_update
-argument_list|(
-name|imagefile
-argument_list|,
-name|GIMP_THUMBNAIL_SIZE_NORMAL
-argument_list|)
-expr_stmt|;
 name|temp_buf
 operator|=
 name|gimp_viewable_get_preview
@@ -1063,7 +1055,6 @@ argument_list|,
 name|GIMP_THUMBNAIL_SIZE_NORMAL
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|temp_buf
