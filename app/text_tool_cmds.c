@@ -784,7 +784,7 @@ name|PDB_INT32
 block|,
 literal|"size_type"
 block|,
-literal|"The units of specified size: PIXELS (0), POINTS (1)"
+literal|"The units of specified size: PIXELS (0) or POINTS (1)"
 block|}
 block|,
 block|{
@@ -1142,7 +1142,7 @@ name|PDB_INT32
 block|,
 literal|"size_type"
 block|,
-literal|"The units of specified size: PIXELS (0), POINTS (1)"
+literal|"The units of specified size: PIXELS (0) or POINTS (1)"
 block|}
 block|,
 block|{
@@ -1655,7 +1655,7 @@ name|PDB_INT32
 block|,
 literal|"size_type"
 block|,
-literal|"The units of specified size: PIXELS (0), POINTS (1)"
+literal|"The units of specified size: PIXELS (0) or POINTS (1)"
 block|}
 block|,
 block|{
@@ -2153,7 +2153,7 @@ name|PDB_INT32
 block|,
 literal|"size_type"
 block|,
-literal|"The units of specified size: PIXELS (0), POINTS (1)"
+literal|"The units of specified size: PIXELS (0) or POINTS (1)"
 block|}
 block|,
 block|{

@@ -25,12 +25,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"procedural_db.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpunit.h"
 end_include
 
@@ -464,23 +458,32 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  procedural database procs  */
-end_comment
+begin_function_decl
+name|char
+modifier|*
+name|gimprc_find_token
+parameter_list|(
+name|char
+modifier|*
+name|token
+parameter_list|)
+function_decl|;
+end_function_decl
 
-begin_decl_stmt
-specifier|extern
-name|ProcRecord
-name|gimprc_query_proc
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|ProcRecord
-name|gimprc_set_proc
-decl_stmt|;
-end_decl_stmt
+begin_function_decl
+name|void
+name|save_gimprc_strings
+parameter_list|(
+name|gchar
+modifier|*
+name|token
+parameter_list|,
+name|gchar
+modifier|*
+name|value
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_endif
 endif|#

@@ -28,12 +28,6 @@ directive|include
 file|"tools.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"procedural_db.h"
-end_include
-
 begin_comment
 comment|/*  fuzzy select functions  */
 end_comment
@@ -67,7 +61,7 @@ name|Channel
 modifier|*
 name|find_contiguous_region
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 parameter_list|,
 name|GimpDrawable
@@ -86,14 +80,30 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  Procedure definition and marshalling function  */
-end_comment
+begin_function_decl
+name|void
+name|fuzzy_select
+parameter_list|(
+name|GimpImage
+modifier|*
+parameter_list|,
+name|GimpDrawable
+modifier|*
+parameter_list|,
+name|int
+parameter_list|,
+name|int
+parameter_list|,
+name|double
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_decl_stmt
 specifier|extern
-name|ProcRecord
-name|fuzzy_select_proc
+name|Channel
+modifier|*
+name|fuzzy_mask
 decl_stmt|;
 end_decl_stmt
 

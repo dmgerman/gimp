@@ -25,12 +25,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"procedural_db.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdisplayF.h"
 end_include
 
@@ -43,6 +37,34 @@ end_include
 begin_comment
 comment|/*  by_color select functions  */
 end_comment
+
+begin_function_decl
+name|void
+name|by_color_select
+parameter_list|(
+name|GimpImage
+modifier|*
+parameter_list|,
+name|GimpDrawable
+modifier|*
+parameter_list|,
+name|guchar
+modifier|*
+parameter_list|,
+name|int
+parameter_list|,
+name|int
+parameter_list|,
+name|int
+parameter_list|,
+name|int
+parameter_list|,
+name|double
+parameter_list|,
+name|int
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|Tool
@@ -83,17 +105,6 @@ modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/*  Procedure definition and marshalling function  */
-end_comment
-
-begin_decl_stmt
-specifier|extern
-name|ProcRecord
-name|by_color_select_proc
-decl_stmt|;
-end_decl_stmt
 
 begin_endif
 endif|#

@@ -19,7 +19,13 @@ end_define
 begin_include
 include|#
 directive|include
-file|"procedural_db.h"
+file|"gimpimageF.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdrawableF.h"
 end_include
 
 begin_include
@@ -27,6 +33,31 @@ include|#
 directive|include
 file|"tools.h"
 end_include
+
+begin_function_decl
+name|int
+name|pick_color
+parameter_list|(
+name|GimpImage
+modifier|*
+parameter_list|,
+name|GimpDrawable
+modifier|*
+parameter_list|,
+name|int
+parameter_list|,
+name|int
+parameter_list|,
+name|gboolean
+parameter_list|,
+name|gboolean
+parameter_list|,
+name|double
+parameter_list|,
+name|int
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|Tool
@@ -48,14 +79,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  Procedure definition and marshalling function  */
-end_comment
-
 begin_decl_stmt
 specifier|extern
-name|ProcRecord
-name|color_picker_proc
+name|int
+name|col_value
+index|[
+literal|5
+index|]
 decl_stmt|;
 end_decl_stmt
 

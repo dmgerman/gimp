@@ -120,18 +120,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|Argument
-modifier|*
-name|pencil_invoker
-parameter_list|(
-name|Argument
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/*  functions  */
 end_comment
@@ -190,9 +178,11 @@ end_function
 begin_function
 name|Tool
 modifier|*
-DECL|function|tools_new_pencil ()
+DECL|function|tools_new_pencil (void)
 name|tools_new_pencil
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|Tool
 modifier|*
@@ -439,235 +429,28 @@ return|;
 block|}
 end_function
 
-begin_comment
-comment|/*  The pencil procedure definition  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|pencil_args
-name|ProcArg
-name|pencil_args
-index|[]
-init|=
-block|{
-block|{
-name|PDB_DRAWABLE
-block|,
-literal|"drawable"
-block|,
-literal|"the drawable"
-block|}
-block|,
-block|{
-name|PDB_INT32
-block|,
-literal|"num_strokes"
-block|,
-literal|"number of stroke control points (count each coordinate as 2 points)"
-block|}
-block|,
-block|{
-name|PDB_FLOATARRAY
-block|,
-literal|"strokes"
-block|,
-literal|"array of stroke coordinates: {s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y}"
-block|}
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|pencil_proc
-name|ProcRecord
-name|pencil_proc
-init|=
-block|{
-literal|"gimp_pencil"
-block|,
-literal|"Paint in the current brush without sub-pixel sampling"
-block|,
-literal|"This tool is the standard pencil.  It draws linearly interpolated lines through the specified stroke coordinates.  It operates on the specified drawable in the foreground color with the active brush.  The brush mask is treated as though it contains only black and white values.  Any value below half is treated as black; any above half, as white."
-block|,
-literal|"Spencer Kimball& Peter Mattis"
-block|,
-literal|"Spencer Kimball& Peter Mattis"
-block|,
-literal|"1995-1996"
-block|,
-name|PDB_INTERNAL
-block|,
-comment|/*  Input arguments  */
-literal|3
-block|,
-name|pencil_args
-block|,
-comment|/*  Output arguments  */
-literal|0
-block|,
-name|NULL
-block|,
-comment|/*  Exec method  */
-block|{
-block|{
-name|pencil_invoker
-block|}
-block|}
-block|, }
-decl_stmt|;
-end_decl_stmt
-
 begin_function
-specifier|static
-name|Argument
-modifier|*
-DECL|function|pencil_invoker (Argument * args)
-name|pencil_invoker
+name|gboolean
+DECL|function|pencil_non_gui (GimpDrawable * drawable,int num_strokes,double * stroke_array)
+name|pencil_non_gui
 parameter_list|(
-name|Argument
-modifier|*
-name|args
-parameter_list|)
-block|{
-name|int
-name|success
-init|=
-name|TRUE
-decl_stmt|;
-name|GImage
-modifier|*
-name|gimage
-decl_stmt|;
 name|GimpDrawable
 modifier|*
 name|drawable
-decl_stmt|;
+parameter_list|,
 name|int
 name|num_strokes
-decl_stmt|;
+parameter_list|,
 name|double
 modifier|*
 name|stroke_array
-decl_stmt|;
-name|int
-name|int_value
-decl_stmt|;
+parameter_list|)
+block|{
 name|int
 name|i
 decl_stmt|;
-name|drawable
-operator|=
-name|NULL
-expr_stmt|;
-name|num_strokes
-operator|=
-literal|0
-expr_stmt|;
-comment|/*  the drawable  */
 if|if
 condition|(
-name|success
-condition|)
-block|{
-name|int_value
-operator|=
-name|args
-index|[
-literal|0
-index|]
-operator|.
-name|value
-operator|.
-name|pdb_int
-expr_stmt|;
-name|drawable
-operator|=
-name|drawable_get_ID
-argument_list|(
-name|int_value
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|drawable
-operator|==
-name|NULL
-condition|)
-name|success
-operator|=
-name|FALSE
-expr_stmt|;
-else|else
-name|gimage
-operator|=
-name|drawable_gimage
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
-block|}
-comment|/*  num strokes  */
-if|if
-condition|(
-name|success
-condition|)
-block|{
-name|int_value
-operator|=
-name|args
-index|[
-literal|1
-index|]
-operator|.
-name|value
-operator|.
-name|pdb_int
-expr_stmt|;
-if|if
-condition|(
-name|int_value
-operator|>
-literal|0
-condition|)
-name|num_strokes
-operator|=
-name|int_value
-operator|/
-literal|2
-expr_stmt|;
-else|else
-name|success
-operator|=
-name|FALSE
-expr_stmt|;
-block|}
-comment|/*  point array  */
-if|if
-condition|(
-name|success
-condition|)
-name|stroke_array
-operator|=
-operator|(
-name|double
-operator|*
-operator|)
-name|args
-index|[
-literal|2
-index|]
-operator|.
-name|value
-operator|.
-name|pdb_pointer
-expr_stmt|;
-if|if
-condition|(
-name|success
-condition|)
-comment|/*  init the paint core  */
-name|success
-operator|=
 name|paint_core_init
 argument_list|(
 operator|&
@@ -685,13 +468,9 @@ index|[
 literal|1
 index|]
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|success
 condition|)
 block|{
-comment|/*  set the paint core's paint func  */
+comment|/* Set the paint core's paint func */
 name|non_gui_paint_core
 operator|.
 name|paint_func
@@ -805,7 +584,7 @@ operator|.
 name|cury
 expr_stmt|;
 block|}
-comment|/*  finish the painting  */
+comment|/* Finish the painting */
 name|paint_core_finish
 argument_list|(
 operator|&
@@ -817,19 +596,17 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/*  cleanup  */
+comment|/* Cleanup */
 name|paint_core_cleanup
 argument_list|()
 expr_stmt|;
-block|}
 return|return
-name|procedural_db_return_args
-argument_list|(
-operator|&
-name|pencil_proc
-argument_list|,
-name|success
-argument_list|)
+name|TRUE
+return|;
+block|}
+else|else
+return|return
+name|FALSE
 return|;
 block|}
 end_function

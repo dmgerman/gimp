@@ -19,13 +19,13 @@ end_define
 begin_include
 include|#
 directive|include
-file|"tools.h"
+file|"gimpimageF.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"procedural_db.h"
+file|"tools.h"
 end_include
 
 begin_comment
@@ -38,6 +38,29 @@ name|crop_draw
 parameter_list|(
 name|Tool
 modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|crop_image
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|int
+parameter_list|,
+name|int
+parameter_list|,
+name|int
+parameter_list|,
+name|int
+parameter_list|,
+name|int
+parameter_list|,
+name|int
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -61,17 +84,6 @@ modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/*  Procedure definition and marshalling function  */
-end_comment
-
-begin_decl_stmt
-specifier|extern
-name|ProcRecord
-name|crop_proc
-decl_stmt|;
-end_decl_stmt
 
 begin_endif
 endif|#

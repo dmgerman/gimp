@@ -25,28 +25,23 @@ end_include
 begin_include
 include|#
 directive|include
-file|"procedural_db.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tools.h"
 end_include
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ca821d0103
+comment|/*< chop=_CONVOLVE>*/
+DECL|enum|__anon2b327a840103
 block|{
-DECL|enumerator|Blur
-name|Blur
+DECL|enumerator|BLUR_CONVOLVE
+name|BLUR_CONVOLVE
 block|,
-DECL|enumerator|Sharpen
-name|Sharpen
+DECL|enumerator|SHARPEN_CONVOLVE
+name|SHARPEN_CONVOLVE
 block|,
-DECL|enumerator|Custom
-name|Custom
+DECL|enumerator|CUSTOM_CONVOLVE
+name|CUSTOM_CONVOLVE
 DECL|typedef|ConvolveType
 block|}
 name|ConvolveType
@@ -70,6 +65,23 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|convolve_non_gui
+parameter_list|(
+name|GimpDrawable
+modifier|*
+parameter_list|,
+name|double
+parameter_list|,
+name|int
+parameter_list|,
+name|double
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|Tool
 modifier|*
 name|tools_new_convolve
@@ -88,17 +100,6 @@ modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/*  Procedure definition and marshalling function  */
-end_comment
-
-begin_decl_stmt
-specifier|extern
-name|ProcRecord
-name|convolve_proc
-decl_stmt|;
-end_decl_stmt
 
 begin_endif
 endif|#

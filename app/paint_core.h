@@ -91,7 +91,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27fdea370103
+DECL|enum|__anon2c03591e0103
 block|{
 DECL|enumerator|HARD
 name|HARD
@@ -117,7 +117,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27fdea370203
+DECL|enum|__anon2c03591e0203
 block|{
 DECL|enumerator|CONSTANT
 name|CONSTANT
@@ -137,70 +137,36 @@ begin_comment
 comment|/* gradient paint modes */
 end_comment
 
-begin_define
-DECL|macro|ONCE_FORWARD
-define|#
-directive|define
+begin_typedef
+DECL|enum|__anon2c03591e0303
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|ONCE_FORWARD
 name|ONCE_FORWARD
-value|0
-end_define
-
-begin_comment
-DECL|macro|ONCE_FORWARD
+block|,
 comment|/* paint through once, then stop */
-end_comment
-
-begin_define
-DECL|macro|ONCE_BACKWARDS
-define|#
-directive|define
+DECL|enumerator|ONCE_BACKWARDS
 name|ONCE_BACKWARDS
-value|1
-end_define
-
-begin_comment
-DECL|macro|ONCE_BACKWARDS
+block|,
 comment|/* paint once, then stop, but run the gradient the other way */
-end_comment
-
-begin_define
-DECL|macro|LOOP_SAWTOOTH
-define|#
-directive|define
+DECL|enumerator|LOOP_SAWTOOTH
 name|LOOP_SAWTOOTH
-value|2
-end_define
-
-begin_comment
-DECL|macro|LOOP_SAWTOOTH
+block|,
 comment|/* keep painting, looping through the grad start->end,start->end /|/|/| */
-end_comment
-
-begin_define
-DECL|macro|LOOP_TRIANGLE
-define|#
-directive|define
+DECL|enumerator|LOOP_TRIANGLE
 name|LOOP_TRIANGLE
-value|3
-end_define
-
-begin_comment
-DECL|macro|LOOP_TRIANGLE
+block|,
 comment|/* keep paiting, looping though the grad start->end,end->start /\/\/\/  */
-end_comment
-
-begin_define
-DECL|macro|ONCE_END_COLOR
-define|#
-directive|define
+DECL|enumerator|ONCE_END_COLOR
 name|ONCE_END_COLOR
-value|4
-end_define
-
-begin_comment
-DECL|macro|ONCE_END_COLOR
+block|,
 comment|/* paint once, but keep painting with the end color */
-end_comment
+DECL|typedef|GradientPaintMode
+block|}
+name|GradientPaintMode
+typedef|;
+end_typedef
 
 begin_typedef
 DECL|typedef|PaintCore

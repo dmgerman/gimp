@@ -28,12 +28,6 @@ directive|include
 file|"paint_core.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"procedural_db.h"
-end_include
-
 begin_function_decl
 name|void
 modifier|*
@@ -46,6 +40,21 @@ name|GimpDrawable
 modifier|*
 parameter_list|,
 name|int
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|pencil_non_gui
+parameter_list|(
+name|GimpDrawable
+modifier|*
+parameter_list|,
+name|int
+parameter_list|,
+name|double
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -69,17 +78,6 @@ modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/*  Procedure definition and marshalling function  */
-end_comment
-
-begin_decl_stmt
-specifier|extern
-name|ProcRecord
-name|pencil_proc
-decl_stmt|;
-end_decl_stmt
 
 begin_endif
 endif|#

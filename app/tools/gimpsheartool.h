@@ -22,11 +22,23 @@ directive|include
 file|"tools.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"procedural_db.h"
-end_include
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon290fa4e50103
+block|{
+DECL|enumerator|HORZ_SHEAR
+name|HORZ_SHEAR
+block|,
+comment|/*< nick=HORIZONTAL>*/
+DECL|enumerator|VERT_SHEAR
+name|VERT_SHEAR
+comment|/*< nick=VERTICAL>*/
+DECL|typedef|ShearType
+block|}
+name|ShearType
+typedef|;
+end_typedef
 
 begin_function_decl
 name|void
@@ -39,6 +51,30 @@ parameter_list|,
 name|gpointer
 parameter_list|,
 name|int
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+modifier|*
+name|shear_tool_shear
+parameter_list|(
+name|GimpImage
+modifier|*
+parameter_list|,
+name|GimpDrawable
+modifier|*
+parameter_list|,
+name|GDisplay
+modifier|*
+parameter_list|,
+name|TileManager
+modifier|*
+parameter_list|,
+name|int
+parameter_list|,
+name|GimpMatrix
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -62,17 +98,6 @@ modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/*  Procedure definition and marshalling function  */
-end_comment
-
-begin_decl_stmt
-specifier|extern
-name|ProcRecord
-name|shear_proc
-decl_stmt|;
-end_decl_stmt
 
 begin_endif
 endif|#
