@@ -1553,6 +1553,23 @@ expr_stmt|;
 comment|/* FIXME */
 name|memsize
 operator|+=
+operator|(
+name|g_list_length
+argument_list|(
+name|gimp
+operator|->
+name|procedural_db_data_list
+argument_list|)
+operator|*
+sizeof|sizeof
+argument_list|(
+name|GList
+argument_list|)
+operator|)
+expr_stmt|;
+comment|/* FIXME */
+name|memsize
+operator|+=
 name|g_slist_length
 argument_list|(
 name|gimp

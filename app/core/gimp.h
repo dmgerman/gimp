@@ -348,6 +348,11 @@ name|GHashTable
 modifier|*
 name|procedural_ht
 decl_stmt|;
+DECL|member|procedural_db_data_list
+name|GList
+modifier|*
+name|procedural_db_data_list
+decl_stmt|;
 DECL|member|load_procs
 name|GSList
 modifier|*

@@ -109,12 +109,6 @@ directive|include
 file|"core/gimplayermask.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"pdb_glue.h"
-end_include
-
 begin_decl_stmt
 DECL|variable|drawable_merge_shadow_proc
 specifier|static
@@ -3387,7 +3381,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|gimp_drawable_layer
+name|GIMP_IS_LAYER
 argument_list|(
 name|drawable
 argument_list|)
@@ -3562,7 +3556,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|gimp_drawable_layer_mask
+name|GIMP_IS_LAYER_MASK
 argument_list|(
 name|drawable
 argument_list|)
@@ -3737,7 +3731,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|gimp_drawable_channel
+name|GIMP_IS_CHANNEL
 argument_list|(
 name|drawable
 argument_list|)
