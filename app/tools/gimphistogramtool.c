@@ -379,7 +379,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
-name|GimpToolClass
+name|GimpImageMapToolClass
 modifier|*
 name|parent_class
 init|=
