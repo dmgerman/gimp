@@ -64,7 +64,7 @@ DECL|macro|SCALE_WIDTH
 define|#
 directive|define
 name|SCALE_WIDTH
-value|150
+value|120
 end_define
 
 begin_define
@@ -72,7 +72,7 @@ DECL|macro|ENTRY_WIDTH
 define|#
 directive|define
 name|ENTRY_WIDTH
-value|4
+value|5
 end_define
 
 begin_comment
@@ -86,7 +86,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8524b60108
+DECL|struct|__anon28ef5ecd0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8524b60208
+DECL|struct|__anon28ef5ecd0208
 block|{
 DECL|member|run
 name|gboolean
@@ -2929,7 +2929,7 @@ name|amount
 argument_list|,
 literal|0.0
 argument_list|,
-literal|5.0
+literal|10.0
 argument_list|,
 literal|0.01
 argument_list|,
