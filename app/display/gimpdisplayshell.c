@@ -322,7 +322,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2795fb990103
+DECL|enum|__anon2b038bbc0103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2885,7 +2885,7 @@ name|origin
 argument_list|,
 name|NULL
 argument_list|,
-literal|"#origin_button"
+name|GIMP_HELP_IMAGE_WINDOW_ORIGIN_BUTTON
 argument_list|)
 expr_stmt|;
 name|shell
@@ -2975,7 +2975,7 @@ name|hrule
 argument_list|,
 name|NULL
 argument_list|,
-literal|"#ruler"
+name|GIMP_HELP_IMAGE_WINDOW_RULER
 argument_list|)
 expr_stmt|;
 comment|/*  the vertical ruler  */
@@ -3049,7 +3049,7 @@ name|vrule
 argument_list|,
 name|NULL
 argument_list|,
-literal|"#ruler"
+name|GIMP_HELP_IMAGE_WINDOW_RULER
 argument_list|)
 expr_stmt|;
 comment|/*  the canvas  */
@@ -3237,7 +3237,7 @@ argument_list|(
 literal|"Set canvas padding color"
 argument_list|)
 argument_list|,
-literal|"#padding_button"
+name|GIMP_HELP_IMAGE_WINDOW_PADDING_BUTTON
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -3485,7 +3485,7 @@ argument_list|(
 literal|"Toggle QuickMask"
 argument_list|)
 argument_list|,
-literal|"#qmask_button"
+name|GIMP_HELP_IMAGE_WINDOW_QMASK_BUTTON
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -3578,7 +3578,7 @@ name|nav_ebox
 argument_list|,
 name|NULL
 argument_list|,
-literal|"#nav_window_button"
+name|GIMP_HELP_IMAGE_WINDOW_NAV_BUTTON
 argument_list|)
 expr_stmt|;
 comment|/*  create the contents of the status area *********************************/
@@ -3612,7 +3612,7 @@ name|statusbar
 argument_list|,
 name|NULL
 argument_list|,
-literal|"#status_area"
+name|GIMP_HELP_IMAGE_WINDOW_STATUS_BAR
 argument_list|)
 expr_stmt|;
 comment|/*  pack all the widgets  **************************************************/

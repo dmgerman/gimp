@@ -1326,7 +1326,7 @@ name|paint_mode_menu
 argument_list|,
 name|NULL
 argument_list|,
-literal|"#paint_mode_menu"
+name|GIMP_HELP_LAYER_DIALOG_PAINT_MODE_MENU
 argument_list|)
 expr_stmt|;
 comment|/*  Preserve transparency toggle  */
@@ -1383,7 +1383,7 @@ argument_list|(
 literal|"Keep Transparency"
 argument_list|)
 argument_list|,
-literal|"#keep_trans_button"
+name|GIMP_HELP_LAYER_DIALOG_KEEP_TRANS_BUTTON
 argument_list|)
 expr_stmt|;
 name|gtk_widget_style_get
@@ -1505,7 +1505,7 @@ literal|0.0
 argument_list|,
 name|NULL
 argument_list|,
-literal|"#opacity_sacle"
+name|GIMP_HELP_LAYER_DIALOG_OPACITY_SCALE
 argument_list|)
 argument_list|)
 expr_stmt|;
