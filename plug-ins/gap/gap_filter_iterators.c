@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Change Log:  * 1999.06.21 hof: removed Colorify iterator  * 1999.03.14 hof: added iterators for gimp 1.1.3 prerelease  *                 iterator code reorganized in _iter_ALT.inc Files  * 1998.06.12 hof: added p_delta_drawable (Iterate layers in the layerstack)  *                 this enables to apply an animated bumpmap.  * 1998.01.29 hof: 1st release  */
+comment|/* Change Log:  * 1999.11.16 hof: added p_delta_gintdrawable  * 1999.06.21 hof: removed Colorify iterator  * 1999.03.14 hof: added iterators for gimp 1.1.3 prerelease  *                 iterator code reorganized in _iter_ALT.inc Files  * 1998.06.12 hof: added p_delta_drawable (Iterate layers in the layerstack)  *                 this enables to apply an animated bumpmap.  * 1998.01.29 hof: 1st release  */
 end_comment
 
 begin_include
@@ -133,7 +133,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon28be4b8c0108
+DECL|struct|__anon2a0663150108
 typedef|typedef
 struct|struct
 block|{
@@ -151,7 +151,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28be4b8c0208
+DECL|struct|__anon2a0663150208
 typedef|typedef
 struct|struct
 block|{
@@ -1368,6 +1368,71 @@ block|}
 block|}
 end_function
 
+begin_function
+specifier|static
+name|void
+DECL|function|p_delta_gintdrawable (gint * val,gint val_from,gint val_to,gint32 total_steps,gdouble current_step)
+name|p_delta_gintdrawable
+parameter_list|(
+name|gint
+modifier|*
+name|val
+parameter_list|,
+name|gint
+name|val_from
+parameter_list|,
+name|gint
+name|val_to
+parameter_list|,
+name|gint32
+name|total_steps
+parameter_list|,
+name|gdouble
+name|current_step
+parameter_list|)
+block|{
+name|gint32
+name|l_val
+decl_stmt|,
+name|l_from
+decl_stmt|,
+name|l_to
+decl_stmt|;
+name|l_val
+operator|=
+operator|*
+name|val
+expr_stmt|;
+name|l_from
+operator|=
+name|val_from
+expr_stmt|;
+name|l_to
+operator|=
+name|val_to
+expr_stmt|;
+name|p_delta_drawable
+argument_list|(
+operator|&
+name|l_val
+argument_list|,
+name|l_from
+argument_list|,
+name|l_to
+argument_list|,
+name|total_steps
+argument_list|,
+name|current_step
+argument_list|)
+expr_stmt|;
+operator|*
+name|val
+operator|=
+name|l_val
+expr_stmt|;
+block|}
+end_function
+
 begin_comment
 comment|/* ----------------------------------------------------------------------  * iterator UTILITIES for Gck Vectors, Material and Light Sewttings  * ----------------------------------------------------------------------  */
 end_comment
@@ -1375,7 +1440,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28be4b8c0308
+DECL|struct|__anon2a0663150308
 block|{
 DECL|member|color
 name|double
@@ -1394,7 +1459,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28be4b8c0408
+DECL|struct|__anon2a0663150408
 block|{
 DECL|member|coord
 name|double
@@ -1411,7 +1476,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon28be4b8c0503
+DECL|enum|__anon2a0663150503
 typedef|typedef
 enum|enum
 block|{
@@ -1433,7 +1498,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon28be4b8c0603
+DECL|enum|__anon2a0663150603
 typedef|typedef
 enum|enum
 block|{
@@ -1451,7 +1516,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28be4b8c0708
+DECL|struct|__anon2a0663150708
 block|{
 DECL|member|ambient_int
 name|gdouble
@@ -1486,7 +1551,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28be4b8c0808
+DECL|struct|__anon2a0663150808
 block|{
 DECL|member|type
 name|t_LightType

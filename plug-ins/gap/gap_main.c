@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* gap_main.c  * 1997.11.05 hof (Wolfgang Hofer)  *  * GAP ... Gimp Animation Package  *  * This Module contains:  * - MAIN of all GAP_Plugins  * - query   registration of GAP Procedures (AnimFrames Menu) in the PDB  * - run     invoke the selected GAP procedure by its PDB name  *   *  * GAP provides Animation Functions for the gimp,  * working on a series of Images stored on disk in gimps .xcf Format.  *  * Frames are Images with naming convention like this:  * Imagename_<number>.<ext>  * Example:   snoopy_0001.xcf, snoopy_0002.xcf, snoopy_0003.xcf  *  * if gzip is installed on your system you may optional  * use gziped xcf frames with extensions ".xcfgz"  *  */
+comment|/* gap_main.c  * 1997.11.05 hof (Wolfgang Hofer)  *  * GAP ... Gimp Animation Package  *  * This Module contains:  * - MAIN of all GAP_Plugins  * - query   registration of GAP Procedures (Video Menu) in the PDB  * - run     invoke the selected GAP procedure by its PDB name  *   *  * GAP provides Animation Functions for the gimp,  * working on a series of Images stored on disk in gimps .xcf Format.  *  * Frames are Images with naming convention like this:  * Imagename_<number>.<ext>  * Example:   snoopy_0001.xcf, snoopy_0002.xcf, snoopy_0003.xcf  *  * if gzip is installed on your system you may optional  * use gziped xcf frames with extensions ".xcfgz"  *  */
 end_comment
 
 begin_comment
@@ -14,12 +14,12 @@ name|char
 modifier|*
 name|gap_main_version
 init|=
-literal|"1.1.10a; 1999/10/23"
+literal|"1.1.11a; 1999/11/16"
 decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* revision history:  * gimp    1.1.10a; 1999/10/22  hof: extended dither options for gap_range_convert  * gimp    1.1.8a;  1999/08/31  hof: updated main version  * version 0.99.00; 1999/03/17  hof: updated main version  * version 0.98.02; 1999/01/27  hof: updated main version  * version 0.98.01; 1998/12/21  hof: updated main version, e-mail adress  * version 0.98.00; 1998/11/27  hof: updated main version, started port to GIMP 1.1 interfaces  *                                   Use no '_' (underscore) in menunames. (has special function in 1.1)  * version 0.96.03; 1998/08/31  hof: updated main version,  *                                         gap_range_to_multilayer now returns image_id  *                                         gap_split_image now returns image_id  * version 0.96.02; 1998/08/05  hof: updated main version,   *                                   added gap_shift  * version 0.96.00; 1998/06/27  hof: added gap animation sizechange plugins  *                                         gap_split_image  *                                         gap_mpeg_encode  * version 0.94.01; 1998/04/28  hof: updated main version,  *                                   added flatten_mode to plugin: gap_range_to_multilayer  * version 0.94.00; 1998/04/25  hof: updated main version  * version 0.93.01; 1998/02/03  hof:  * version 0.92.00;             hof: set gap_debug from environment   * version 0.91.00; 1997/12/22  hof:   * version 0.90.00;             hof: 1.st (pre) release  */
+comment|/* revision history:  * gimp    1.1.11a; 1999/11/15  hof: changed Menunames (AnimFrames to Video, Submenu Encode)  * gimp    1.1.10a; 1999/10/22  hof: extended dither options for gap_range_convert  * gimp    1.1.8a;  1999/08/31  hof: updated main version  * version 0.99.00; 1999/03/17  hof: updated main version  * version 0.98.02; 1999/01/27  hof: updated main version  * version 0.98.01; 1998/12/21  hof: updated main version, e-mail adress  * version 0.98.00; 1998/11/27  hof: updated main version, started port to GIMP 1.1 interfaces  *                                   Use no '_' (underscore) in menunames. (has special function in 1.1)  * version 0.96.03; 1998/08/31  hof: updated main version,  *                                         gap_range_to_multilayer now returns image_id  *                                         gap_split_image now returns image_id  * version 0.96.02; 1998/08/05  hof: updated main version,   *                                   added gap_shift  * version 0.96.00; 1998/06/27  hof: added gap animation sizechange plugins  *                                         gap_split_image  *                                         gap_mpeg_encode  * version 0.94.01; 1998/04/28  hof: updated main version,  *                                   added flatten_mode to plugin: gap_range_to_multilayer  * version 0.94.00; 1998/04/25  hof: updated main version  * version 0.93.01; 1998/02/03  hof:  * version 0.92.00;             hof: set gap_debug from environment   * version 0.91.00; 1997/12/22  hof:   * version 0.90.00;             hof: 1.st (pre) release  */
 end_comment
 
 begin_comment
@@ -1629,7 +1629,7 @@ name|gap_main_version
 argument_list|,
 name|_
 argument_list|(
-literal|"<Image>/AnimFrames/Goto Next"
+literal|"<Image>/Video/Goto Next"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -1664,7 +1664,7 @@ name|gap_main_version
 argument_list|,
 name|_
 argument_list|(
-literal|"<Image>/AnimFrames/Goto Prev"
+literal|"<Image>/Video/Goto Prev"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -1699,7 +1699,7 @@ name|gap_main_version
 argument_list|,
 name|_
 argument_list|(
-literal|"<Image>/AnimFrames/Goto First"
+literal|"<Image>/Video/Goto First"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -1734,7 +1734,7 @@ name|gap_main_version
 argument_list|,
 name|_
 argument_list|(
-literal|"<Image>/AnimFrames/Goto Last"
+literal|"<Image>/Video/Goto Last"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -1769,7 +1769,7 @@ name|gap_main_version
 argument_list|,
 name|_
 argument_list|(
-literal|"<Image>/AnimFrames/Goto Any"
+literal|"<Image>/Video/Goto Any"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -1804,7 +1804,7 @@ name|gap_main_version
 argument_list|,
 name|_
 argument_list|(
-literal|"<Image>/AnimFrames/Delete Frames"
+literal|"<Image>/Video/Delete Frames"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -1839,7 +1839,7 @@ name|gap_main_version
 argument_list|,
 name|_
 argument_list|(
-literal|"<Image>/AnimFrames/Duplicate Frames"
+literal|"<Image>/Video/Duplicate Frames"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -1874,7 +1874,7 @@ name|gap_main_version
 argument_list|,
 name|_
 argument_list|(
-literal|"<Image>/AnimFrames/Exchange Frame"
+literal|"<Image>/Video/Exchange Frame"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -1909,7 +1909,7 @@ name|gap_main_version
 argument_list|,
 name|_
 argument_list|(
-literal|"<Image>/AnimFrames/Move Path"
+literal|"<Image>/Video/Move Path"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -1944,7 +1944,7 @@ name|gap_main_version
 argument_list|,
 name|_
 argument_list|(
-literal|"<Image>/AnimFrames/Frames to Image"
+literal|"<Image>/Video/Frames to Image"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -1979,7 +1979,7 @@ name|gap_main_version
 argument_list|,
 name|_
 argument_list|(
-literal|"<Image>/AnimFrames/Frames Flatten"
+literal|"<Image>/Video/Frames Flatten"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -2014,7 +2014,7 @@ name|gap_main_version
 argument_list|,
 name|_
 argument_list|(
-literal|"<Image>/AnimFrames/Frames LayerDel"
+literal|"<Image>/Video/Frames LayerDel"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -2082,7 +2082,7 @@ name|gap_main_version
 argument_list|,
 name|_
 argument_list|(
-literal|"<Image>/AnimFrames/Frames Convert"
+literal|"<Image>/Video/Frames Convert"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -2117,7 +2117,7 @@ name|gap_main_version
 argument_list|,
 name|_
 argument_list|(
-literal|"<Image>/AnimFrames/Frames Resize"
+literal|"<Image>/Video/Frames Resize"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -2152,7 +2152,7 @@ name|gap_main_version
 argument_list|,
 name|_
 argument_list|(
-literal|"<Image>/AnimFrames/Frames Crop"
+literal|"<Image>/Video/Frames Crop"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -2187,7 +2187,7 @@ name|gap_main_version
 argument_list|,
 name|_
 argument_list|(
-literal|"<Image>/AnimFrames/Frames Scale"
+literal|"<Image>/Video/Frames Scale"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -2222,7 +2222,7 @@ name|gap_main_version
 argument_list|,
 name|_
 argument_list|(
-literal|"<Image>/AnimFrames/Split Img to Frames"
+literal|"<Image>/Video/Split Img to Frames"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -2257,7 +2257,7 @@ name|gap_main_version
 argument_list|,
 name|_
 argument_list|(
-literal|"<Image>/AnimFrames/Frames MPEG1 encode"
+literal|"<Image>/Video/Encode/MPEG1"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -2292,7 +2292,7 @@ name|gap_main_version
 argument_list|,
 name|_
 argument_list|(
-literal|"<Image>/AnimFrames/Frames MPEG2 encode"
+literal|"<Image>/Video/Encode/MPEG2 mpeg2encode)"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -2327,7 +2327,7 @@ name|gap_main_version
 argument_list|,
 name|_
 argument_list|(
-literal|"<Image>/AnimFrames/Framesequence Shift"
+literal|"<Image>/Video/Framesequence Shift"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -2362,7 +2362,7 @@ name|gap_main_version
 argument_list|,
 name|_
 argument_list|(
-literal|"<Image>/AnimFrames/Frames Modify"
+literal|"<Image>/Video/Frames Modify"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -2414,7 +2414,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon29373df80108
+DECL|struct|__anon297408690108
 block|{
 DECL|member|lock
 name|long
