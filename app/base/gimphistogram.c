@@ -413,7 +413,7 @@ name|data
 expr_stmt|;
 name|msrc
 operator|=
-name|region
+name|mask
 operator|->
 name|data
 expr_stmt|;
@@ -2248,8 +2248,6 @@ control|)
 block|{
 name|sum
 operator|+=
-name|i
-operator|*
 name|histogram
 operator|->
 name|values
