@@ -246,7 +246,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f12ed50103
+DECL|enum|__anon2acfbb260103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -10544,6 +10544,12 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_ref
+argument_list|(
+name|layer
+argument_list|)
+expr_stmt|;
+comment|/*  Make sure we're not caching any old selection info  */
+name|gimp_layer_invalidate_boundary
 argument_list|(
 name|layer
 argument_list|)

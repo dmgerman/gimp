@@ -6206,6 +6206,12 @@ operator|)
 condition|)
 block|{
 comment|/*  remove layer  */
+comment|/*  Make sure we're not caching any old selection info  */
+name|gimp_layer_invalidate_boundary
+argument_list|(
+name|layer
+argument_list|)
+expr_stmt|;
 comment|/*  record the current position  */
 name|lu
 operator|->
@@ -6424,21 +6430,15 @@ expr_stmt|;
 comment|/*  hide the current selection--for all views  */
 if|if
 condition|(
-name|gimp_image_get_active_layer
-argument_list|(
-name|undo
+name|lu
 operator|->
-name|gimage
-argument_list|)
+name|prev_layer
 condition|)
 name|gimp_layer_invalidate_boundary
 argument_list|(
-name|gimp_image_get_active_layer
-argument_list|(
-name|undo
+name|lu
 operator|->
-name|gimage
-argument_list|)
+name|prev_layer
 argument_list|)
 expr_stmt|;
 comment|/*  if this is a floating selection, set the fs pointer  */
