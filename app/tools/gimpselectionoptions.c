@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c52371d0103
+DECL|enum|__anon2911ed230103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1525,7 +1525,7 @@ name|table
 decl_stmt|;
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|NULL
 argument_list|)
@@ -1771,7 +1771,7 @@ name|table
 decl_stmt|;
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -2033,7 +2033,7 @@ name|height_spinbutton
 decl_stmt|;
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|NULL
 argument_list|)
@@ -2180,7 +2180,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|NULL
 argument_list|)

@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295047310103
+DECL|enum|__anon291e3c870103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -889,7 +889,7 @@ expr_stmt|;
 comment|/* adjust sliders */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -1035,7 +1035,7 @@ expr_stmt|;
 comment|/* sens sliders */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -1397,7 +1397,7 @@ block|}
 comment|/* Brush shape widget */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(

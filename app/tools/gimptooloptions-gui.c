@@ -64,7 +64,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 return|return

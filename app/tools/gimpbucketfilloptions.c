@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288ca7e90103
+DECL|enum|__anon28b02ebb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -988,7 +988,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(

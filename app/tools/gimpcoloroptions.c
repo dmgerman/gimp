@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c301d4a0103
+DECL|enum|__anon293d7a800103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -552,7 +552,7 @@ expr_stmt|;
 comment|/*  the sample average options  */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|NULL
 argument_list|)

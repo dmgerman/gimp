@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27952dc80103
+DECL|enum|__anon27d9d78f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1409,7 +1409,7 @@ expr_stmt|;
 comment|/*  the grid frame  */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|NULL
 argument_list|)
@@ -1588,7 +1588,7 @@ decl_stmt|;
 comment|/*  the constraints frame  */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(

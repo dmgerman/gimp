@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7f53710103
+DECL|enum|__anon2a0e9e490103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1018,7 +1018,7 @@ expr_stmt|;
 comment|/*  frame for supersampling options  */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|NULL
 argument_list|)
