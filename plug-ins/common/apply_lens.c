@@ -152,7 +152,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8614cf0108
+DECL|struct|__anon2b3afeba0108
 block|{
 DECL|member|refraction
 name|gdouble
@@ -199,7 +199,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8614cf0208
+DECL|struct|__anon2b3afeba0208
 block|{
 DECL|member|run
 name|gint
@@ -2074,7 +2074,7 @@ argument_list|)
 else|:
 name|_
 argument_list|(
-literal|"Set Surroundings to Background Bolor"
+literal|"Set Surroundings to Background Color"
 argument_list|)
 argument_list|)
 expr_stmt|;

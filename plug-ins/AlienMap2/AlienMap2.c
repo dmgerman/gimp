@@ -116,7 +116,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6890800108
+DECL|struct|__anon28ad3a990108
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -167,7 +167,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6890800208
+DECL|struct|__anon28ad3a990208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -4013,7 +4013,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Modify Green/Caturation Channel"
+literal|"Modify Green/Saturation Channel"
 argument_list|)
 argument_list|)
 expr_stmt|;
