@@ -4458,16 +4458,16 @@ modifier|*
 name|drawable
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|n
 decl_stmt|;
-name|vector2d
+name|GimpVector2
 name|delta
 decl_stmt|;
 ifdef|#
 directive|ifdef
 name|GTK_HAVE_SIX_VALUATORS
-name|double
+name|gdouble
 name|dpressure
 decl_stmt|,
 name|dxtilt
@@ -4479,7 +4479,7 @@ decl_stmt|;
 else|#
 directive|else
 comment|/* !GTK_HAVE_SIX_VALUATORS */
-name|double
+name|gdouble
 name|dpressure
 decl_stmt|,
 name|dxtilt
@@ -4491,33 +4491,33 @@ directive|endif
 comment|/* GTK_HAVE_SIX_VALUATORS */
 comment|/*   double spacing; */
 comment|/*   double lastscale, curscale; */
-name|double
+name|gdouble
 name|left
 decl_stmt|;
-name|double
+name|gdouble
 name|t
 decl_stmt|;
-name|double
+name|gdouble
 name|initial
 decl_stmt|;
-name|double
+name|gdouble
 name|dist
 decl_stmt|;
-name|double
+name|gdouble
 name|total
 decl_stmt|;
-name|double
+name|gdouble
 name|pixel_dist
 decl_stmt|;
-name|double
+name|gdouble
 name|pixel_initial
 decl_stmt|;
-name|double
+name|gdouble
 name|xd
 decl_stmt|,
 name|yd
 decl_stmt|;
-name|double
+name|gdouble
 name|mag
 decl_stmt|;
 name|delta
@@ -4649,7 +4649,7 @@ return|return;
 comment|/* calculate the distance traveled in the coordinate space of the brush */
 name|mag
 operator|=
-name|vector2d_magnitude
+name|gimp_vector2_length
 argument_list|(
 operator|&
 operator|(
@@ -4663,7 +4663,7 @@ argument_list|)
 expr_stmt|;
 name|xd
 operator|=
-name|vector2d_dot_product
+name|gimp_vector2_inner_product
 argument_list|(
 operator|&
 name|delta
@@ -4686,7 +4686,7 @@ operator|)
 expr_stmt|;
 name|mag
 operator|=
-name|vector2d_magnitude
+name|gimp_vector2_length
 argument_list|(
 operator|&
 operator|(
@@ -4700,7 +4700,7 @@ argument_list|)
 expr_stmt|;
 name|yd
 operator|=
-name|vector2d_dot_product
+name|gimp_vector2_inner_product
 argument_list|(
 operator|&
 name|delta
@@ -4752,7 +4752,7 @@ name|distance
 expr_stmt|;
 name|pixel_dist
 operator|=
-name|vector2d_magnitude
+name|gimp_vector2_length
 argument_list|(
 operator|&
 name|delta
