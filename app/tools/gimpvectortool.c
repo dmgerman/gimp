@@ -1944,8 +1944,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_vectors_tool_set_vectors (GimpVectorTool * vector_tool,GimpVectors * vectors)
-name|gimp_vectors_tool_set_vectors
+DECL|function|gimp_vector_tool_set_vectors (GimpVectorTool * vector_tool,GimpVectors * vectors)
+name|gimp_vector_tool_set_vectors
 parameter_list|(
 name|GimpVectorTool
 modifier|*
@@ -2001,6 +2001,18 @@ operator|->
 name|vectors
 operator|=
 name|vectors
+expr_stmt|;
+name|vector_tool
+operator|->
+name|cur_stroke
+operator|=
+name|NULL
+expr_stmt|;
+name|vector_tool
+operator|->
+name|cur_anchor
+operator|=
+name|NULL
 expr_stmt|;
 if|if
 condition|(

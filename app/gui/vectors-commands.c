@@ -2139,7 +2139,7 @@ name|gimp
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_vectors_tool_set_vectors
+name|gimp_vector_tool_set_vectors
 argument_list|(
 name|GIMP_VECTOR_TOOL
 argument_list|(
