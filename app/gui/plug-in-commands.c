@@ -1171,7 +1171,7 @@ name|shmat
 argument_list|(
 name|shm_ID
 argument_list|,
-literal|0
+name|NULL
 argument_list|,
 literal|0
 argument_list|)
@@ -1191,6 +1191,15 @@ block|{
 name|g_message
 argument_list|(
 literal|"shmat failed...disabling shared memory tile transport"
+argument_list|)
+expr_stmt|;
+name|shmctl
+argument_list|(
+name|shm_ID
+argument_list|,
+name|IPC_RMID
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|shm_ID
@@ -1219,7 +1228,7 @@ name|shm_ID
 argument_list|,
 name|IPC_RMID
 argument_list|,
-literal|0
+name|NULL
 argument_list|)
 expr_stmt|;
 endif|#
@@ -2023,7 +2032,7 @@ block|{
 name|shmdt
 argument_list|(
 operator|(
-name|char
+name|gchar
 operator|*
 operator|)
 name|shm_addr
@@ -2035,7 +2044,7 @@ name|shm_ID
 argument_list|,
 name|IPC_RMID
 argument_list|,
-literal|0
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -2052,7 +2061,7 @@ condition|)
 name|shmdt
 argument_list|(
 operator|(
-name|char
+name|gchar
 operator|*
 operator|)
 name|shm_addr
