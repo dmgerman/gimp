@@ -525,7 +525,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|levels_auto_callback
+name|levels_stretch_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -3455,7 +3455,7 @@ literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|levels_auto_callback
+name|levels_stretch_callback
 argument_list|)
 argument_list|,
 name|tool
@@ -4796,8 +4796,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|levels_auto_callback (GtkWidget * widget,GimpLevelsTool * tool)
-name|levels_auto_callback
+DECL|function|levels_stretch_callback (GtkWidget * widget,GimpLevelsTool * tool)
+name|levels_stretch_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -4808,7 +4808,7 @@ modifier|*
 name|tool
 parameter_list|)
 block|{
-name|levels_auto
+name|levels_stretch
 argument_list|(
 name|tool
 operator|->

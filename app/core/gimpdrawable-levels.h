@@ -51,7 +51,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_drawable_levels_auto
+name|gimp_drawable_levels_stretch
 parameter_list|(
 name|GimpDrawable
 modifier|*

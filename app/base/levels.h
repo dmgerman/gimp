@@ -98,7 +98,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|levels_auto
+name|levels_stretch
 parameter_list|(
 name|Levels
 modifier|*
@@ -116,7 +116,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|levels_channel_auto
+name|levels_channel_stretch
 parameter_list|(
 name|Levels
 modifier|*

@@ -481,8 +481,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_levels_auto (GimpDrawable * drawable,GimpContext * context)
-name|gimp_drawable_levels_auto
+DECL|function|gimp_drawable_levels_stretch (GimpDrawable * drawable,GimpContext * context)
+name|gimp_drawable_levels_stretch
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -593,7 +593,7 @@ operator|&
 name|levels
 argument_list|)
 expr_stmt|;
-name|levels_auto
+name|levels_stretch
 argument_list|(
 operator|&
 name|levels

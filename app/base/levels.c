@@ -170,8 +170,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|levels_auto (Levels * levels,GimpHistogram * hist,gboolean is_color)
-name|levels_auto
+DECL|function|levels_stretch (Levels * levels,GimpHistogram * hist,gboolean is_color)
+name|levels_stretch
 parameter_list|(
 name|Levels
 modifier|*
@@ -228,7 +228,7 @@ condition|;
 name|channel
 operator|++
 control|)
-name|levels_channel_auto
+name|levels_channel_stretch
 argument_list|(
 name|levels
 argument_list|,
@@ -240,7 +240,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|levels_channel_auto
+name|levels_channel_stretch
 argument_list|(
 name|levels
 argument_list|,
@@ -255,8 +255,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|levels_channel_auto (Levels * levels,GimpHistogram * hist,GimpHistogramChannel channel)
-name|levels_channel_auto
+DECL|function|levels_channel_stretch (Levels * levels,GimpHistogram * hist,GimpHistogramChannel channel)
+name|levels_channel_stretch
 parameter_list|(
 name|Levels
 modifier|*

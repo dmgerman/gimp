@@ -1312,7 +1312,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_drawable_levels_auto
+name|gimp_drawable_levels_stretch
 argument_list|(
 name|drawable
 argument_list|,
@@ -1370,7 +1370,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|NULL
+literal|"gimp_levels_stretch"
 block|,
 name|GIMP_INTERNAL
 block|,
