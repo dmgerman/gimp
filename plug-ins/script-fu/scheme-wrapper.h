@@ -115,14 +115,24 @@ name|FILE
 modifier|*
 name|fp
 parameter_list|,
-name|char
+specifier|const
+name|gchar
 modifier|*
-name|string
+name|format
 parameter_list|,
 modifier|...
 parameter_list|)
-function_decl|;
+function_decl|G_GNUC_PRINTF
+parameter_list|(
+function_decl|2
+operator|,
+function_decl|3
 end_function_decl
+
+begin_empty_stmt
+unit|)
+empty_stmt|;
+end_empty_stmt
 
 begin_comment
 comment|/* if the return value is 0, success. error otherwise. */
