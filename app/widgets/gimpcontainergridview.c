@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c13d9b40103
+DECL|enum|__anon2c5e1a870103
 block|{
 DECL|enumerator|MOVE_CURSOR
 name|MOVE_CURSOR
@@ -268,15 +268,16 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_container_grid_view_item_selected
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkModifierType
-name|state
+name|GdkEventButton
+modifier|*
+name|bevent
 parameter_list|,
 name|gpointer
 name|data
@@ -1635,7 +1636,7 @@ name|g_signal_connect
 argument_list|(
 name|preview
 argument_list|,
-literal|"clicked"
+literal|"button_press_event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2016,20 +2017,36 @@ end_function
 
 begin_function
 specifier|static
-name|void
-DECL|function|gimp_container_grid_view_item_selected (GtkWidget * widget,GdkModifierType state,gpointer data)
+name|gboolean
+DECL|function|gimp_container_grid_view_item_selected (GtkWidget * widget,GdkEventButton * bevent,gpointer data)
 name|gimp_container_grid_view_item_selected
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkModifierType
-name|state
+name|GdkEventButton
+modifier|*
+name|bevent
 parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
+block|{
+if|if
+condition|(
+name|bevent
+operator|->
+name|type
+operator|==
+name|GDK_BUTTON_PRESS
+operator|&&
+name|bevent
+operator|->
+name|button
+operator|==
+literal|1
+condition|)
 block|{
 if|if
 condition|(
@@ -2067,6 +2084,10 @@ operator|->
 name|viewable
 argument_list|)
 expr_stmt|;
+block|}
+return|return
+name|FALSE
+return|;
 block|}
 end_function
 
