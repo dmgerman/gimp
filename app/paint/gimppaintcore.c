@@ -3777,9 +3777,6 @@ modifier|*
 name|current_brush
 decl_stmt|;
 name|gdouble
-name|pressure
-decl_stmt|;
-name|gdouble
 name|t
 init|=
 name|t0
@@ -3788,6 +3785,16 @@ name|n
 operator|*
 name|dt
 decl_stmt|;
+name|gdouble
+name|p
+init|=
+operator|(
+name|gdouble
+operator|)
+name|n
+operator|/
+name|num_points
+decl_stmt|;
 name|core
 operator|->
 name|cur_coords
@@ -3824,7 +3831,10 @@ name|delta_vec
 operator|.
 name|y
 expr_stmt|;
-comment|/*  avoid negative pressure, see bug #123811  */
+name|core
+operator|->
+name|cur_coords
+operator|.
 name|pressure
 operator|=
 name|core
@@ -3833,7 +3843,7 @@ name|last_coords
 operator|.
 name|pressure
 operator|+
-name|t
+name|p
 operator|*
 name|delta_pressure
 expr_stmt|;
@@ -3841,19 +3851,6 @@ name|core
 operator|->
 name|cur_coords
 operator|.
-name|pressure
-operator|=
-name|MAX
-argument_list|(
-name|pressure
-argument_list|,
-literal|0.0
-argument_list|)
-expr_stmt|;
-name|core
-operator|->
-name|cur_coords
-operator|.
 name|xtilt
 operator|=
 name|core
@@ -3862,7 +3859,7 @@ name|last_coords
 operator|.
 name|xtilt
 operator|+
-name|t
+name|p
 operator|*
 name|delta_xtilt
 expr_stmt|;
@@ -3878,7 +3875,7 @@ name|last_coords
 operator|.
 name|ytilt
 operator|+
-name|t
+name|p
 operator|*
 name|delta_ytilt
 expr_stmt|;
@@ -3894,7 +3891,7 @@ name|last_coords
 operator|.
 name|wheel
 operator|+
-name|t
+name|p
 operator|*
 name|delta_wheel
 expr_stmt|;
