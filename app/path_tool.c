@@ -5831,7 +5831,7 @@ argument_list|)
 expr_stmt|;
 name|private
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|PathTool
 argument_list|,
@@ -6142,7 +6142,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon27562bf10108
+DECL|struct|__anon29a305390108
 typedef|typedef
 struct|struct
 block|{
@@ -6527,7 +6527,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon27562bf10208
+DECL|struct|__anon29a305390208
 typedef|typedef
 struct|struct
 block|{
@@ -6879,7 +6879,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon27562bf10308
+DECL|struct|__anon29a305390308
 typedef|typedef
 struct|struct
 block|{
@@ -7209,7 +7209,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon27562bf10408
+DECL|struct|__anon29a305390408
 typedef|typedef
 struct|struct
 block|{
@@ -7367,7 +7367,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon27562bf10508
+DECL|struct|__anon29a305390508
 typedef|typedef
 struct|struct
 block|{

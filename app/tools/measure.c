@@ -100,7 +100,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b23ea600103
+DECL|enum|__anon2a958a730103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -4013,7 +4013,7 @@ argument_list|)
 expr_stmt|;
 name|private
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|MeasureTool
 argument_list|,

@@ -352,7 +352,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29111c7c0108
+DECL|struct|__anon29ff8f2c0108
 block|{
 DECL|member|offset
 name|gdouble
@@ -404,7 +404,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29111c7c0208
+DECL|struct|__anon29ff8f2c0208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -8037,7 +8037,7 @@ argument_list|)
 expr_stmt|;
 name|private
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|BlendTool
 argument_list|,

@@ -1224,7 +1224,7 @@ argument_list|)
 expr_stmt|;
 name|private
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|HueSaturation
 argument_list|,

@@ -492,7 +492,7 @@ name|NULL
 expr_stmt|;
 name|private
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|ResizePrivate
 argument_list|,

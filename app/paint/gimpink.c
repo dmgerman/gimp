@@ -6096,7 +6096,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2c2ddf9e0103
+DECL|enum|__anon2c618eb30103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
@@ -7894,7 +7894,7 @@ argument_list|)
 expr_stmt|;
 name|private
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|InkTool
 argument_list|,

@@ -231,7 +231,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276969600103
+DECL|enum|__anon28b6d6b70103
 block|{
 DECL|enumerator|NO_ACTION
 name|NO_ACTION
@@ -257,7 +257,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276969600203
+DECL|enum|__anon28b6d6b70203
 block|{
 DECL|enumerator|DRAW_NOTHING
 name|DRAW_NOTHING
@@ -1643,7 +1643,7 @@ argument_list|)
 expr_stmt|;
 name|private
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|Iscissors
 argument_list|,

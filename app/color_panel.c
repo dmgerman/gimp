@@ -277,7 +277,7 @@ name|i
 decl_stmt|;
 name|private
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|ColorPanelPrivate
 argument_list|,

@@ -277,7 +277,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2c8895d90108
+DECL|struct|__anon2c141c650108
 typedef|typedef
 struct|struct
 block|{
@@ -314,7 +314,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c8895d90208
+DECL|struct|__anon2c141c650208
 typedef|typedef
 struct|struct
 block|{
@@ -369,7 +369,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c8895d90308
+DECL|struct|__anon2c141c650308
 typedef|typedef
 struct|struct
 block|{
@@ -1031,7 +1031,7 @@ argument_list|)
 expr_stmt|;
 name|private
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|BezierSelect
 argument_list|,
