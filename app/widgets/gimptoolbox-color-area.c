@@ -101,10 +101,16 @@ begin_comment
 comment|/* DISPLAY_FILTERS */
 end_comment
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0891590103
+DECL|enum|__anon2c4955630103
 block|{
 DECL|enumerator|FORE_AREA
 name|FORE_AREA
@@ -1378,9 +1384,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_area_select_callback (const GimpRGB * color,ColorNotebookState state,gpointer client_data)
+DECL|function|color_area_select_callback (ColorNotebook * color_notebook,const GimpRGB * color,ColorNotebookState state,gpointer client_data)
 name|color_area_select_callback
 parameter_list|(
+name|ColorNotebook
+modifier|*
+name|color_notebook
+parameter_list|,
 specifier|const
 name|GimpRGB
 modifier|*
@@ -1559,6 +1569,11 @@ name|color_notebook
 operator|=
 name|color_notebook_new
 argument_list|(
+name|_
+argument_list|(
+literal|"Color Selection"
+argument_list|)
+argument_list|,
 operator|(
 specifier|const
 name|GimpRGB

@@ -120,6 +120,11 @@ modifier|*
 name|gimp_color_panel_new
 parameter_list|(
 specifier|const
+name|gchar
+modifier|*
+name|title
+parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color

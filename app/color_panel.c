@@ -136,6 +136,10 @@ specifier|static
 name|void
 name|gimp_color_panel_select_callback
 parameter_list|(
+name|ColorNotebook
+modifier|*
+name|notebook
+parameter_list|,
 specifier|const
 name|GimpRGB
 modifier|*
@@ -287,8 +291,7 @@ name|parent_class
 operator|=
 name|gtk_type_class
 argument_list|(
-name|gimp_color_button_get_type
-argument_list|()
+name|GIMP_TYPE_COLOR_BUTTON
 argument_list|)
 expr_stmt|;
 name|object_class
@@ -423,9 +426,14 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_color_panel_new (const GimpRGB * color,GimpColorAreaType type,gint width,gint height)
+DECL|function|gimp_color_panel_new (const gchar * title,const GimpRGB * color,GimpColorAreaType type,gint width,gint height)
 name|gimp_color_panel_new
 parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|title
+parameter_list|,
 specifier|const
 name|GimpRGB
 modifier|*
@@ -458,8 +466,19 @@ name|panel
 operator|=
 name|gtk_type_new
 argument_list|(
-name|gimp_color_panel_get_type
-argument_list|()
+name|GIMP_TYPE_COLOR_PANEL
+argument_list|)
+expr_stmt|;
+name|GIMP_COLOR_BUTTON
+argument_list|(
+name|panel
+argument_list|)
+operator|->
+name|title
+operator|=
+name|g_strdup
+argument_list|(
+name|title
 argument_list|)
 expr_stmt|;
 name|gimp_color_button_set_type
@@ -610,6 +629,13 @@ name|color_notebook
 operator|=
 name|color_notebook_new
 argument_list|(
+name|GIMP_COLOR_BUTTON
+argument_list|(
+name|button
+argument_list|)
+operator|->
+name|title
+argument_list|,
 operator|(
 specifier|const
 name|GimpRGB
@@ -681,9 +707,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_panel_select_callback (const GimpRGB * color,ColorNotebookState state,gpointer data)
+DECL|function|gimp_color_panel_select_callback (ColorNotebook * notebook,const GimpRGB * color,ColorNotebookState state,gpointer data)
 name|gimp_color_panel_select_callback
 parameter_list|(
+name|ColorNotebook
+modifier|*
+name|notebook
+parameter_list|,
 specifier|const
 name|GimpRGB
 modifier|*

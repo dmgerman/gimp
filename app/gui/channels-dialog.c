@@ -6914,7 +6914,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b192b960108
+DECL|struct|__anon290774540108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -10666,6 +10666,11 @@ name|color_panel
 operator|=
 name|gimp_color_panel_new
 argument_list|(
+name|_
+argument_list|(
+literal|"New Channel Color"
+argument_list|)
+argument_list|,
 operator|&
 name|channel_color
 argument_list|,
@@ -11500,6 +11505,11 @@ name|color_panel
 operator|=
 name|gimp_color_panel_new
 argument_list|(
+name|_
+argument_list|(
+literal|"Edit Channel Color"
+argument_list|)
+argument_list|,
 operator|&
 name|channel_color
 argument_list|,

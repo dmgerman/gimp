@@ -52,7 +52,60 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_comment
-comment|/*  List of active dialogs  */
+comment|/*  local function prototypes  */
+end_comment
+
+begin_function_decl
+specifier|static
+name|gint
+name|palette_select_button_press
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GdkEventButton
+modifier|*
+name|bevent
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|palette_select_close_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|palette_select_edit_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/*  list of active dialogs  */
 end_comment
 
 begin_decl_stmt
@@ -65,52 +118,6 @@ init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
-
-begin_comment
-comment|/*  local function prototypes  */
-end_comment
-
-begin_function_decl
-specifier|static
-name|gint
-name|palette_select_button_press
-parameter_list|(
-name|GtkWidget
-modifier|*
-parameter_list|,
-name|GdkEventButton
-modifier|*
-parameter_list|,
-name|gpointer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|palette_select_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-parameter_list|,
-name|gpointer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|palette_select_edit_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-parameter_list|,
-name|gpointer
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_comment
 comment|/*  public functions  */
@@ -992,9 +999,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|palette_select_refresh_all ()
+DECL|function|palette_select_refresh_all (void)
 name|palette_select_refresh_all
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|PaletteSelect
 modifier|*
@@ -1168,17 +1177,19 @@ decl_stmt|;
 name|PaletteSelect
 modifier|*
 name|psp
-init|=
-operator|(
-name|PaletteSelect
-operator|*
-operator|)
-name|data
 decl_stmt|;
 name|GList
 modifier|*
 name|sel_list
 decl_stmt|;
+name|psp
+operator|=
+operator|(
+name|PaletteSelect
+operator|*
+operator|)
+name|data
+expr_stmt|;
 name|sel_list
 operator|=
 name|GTK_CLIST

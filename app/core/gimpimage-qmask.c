@@ -1024,7 +1024,6 @@ name|GtkObject
 modifier|*
 name|opacity_scale_data
 decl_stmt|;
-comment|/* channel = gimp_image_get_channel_by_name (gdisp->gimage, "Qmask"); */
 comment|/*  the new options structure  */
 name|options
 operator|=
@@ -1049,6 +1048,11 @@ name|color_panel
 operator|=
 name|gimp_color_panel_new
 argument_list|(
+name|_
+argument_list|(
+literal|"Edit Qmask Color"
+argument_list|)
+argument_list|,
 operator|&
 name|options
 operator|->

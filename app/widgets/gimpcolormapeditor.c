@@ -141,7 +141,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9d48640103
+DECL|enum|__anon299c4d920103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -340,6 +340,10 @@ specifier|static
 name|void
 name|ipal_select_callback
 parameter_list|(
+name|ColorNotebook
+modifier|*
+name|color_notebook
+parameter_list|,
 specifier|const
 name|GimpRGB
 modifier|*
@@ -5033,6 +5037,11 @@ name|color_notebook
 operator|=
 name|color_notebook_new
 argument_list|(
+name|_
+argument_list|(
+literal|"Edit Indexed Color"
+argument_list|)
+argument_list|,
 operator|(
 specifier|const
 name|GimpRGB
@@ -5113,9 +5122,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ipal_select_callback (const GimpRGB * color,ColorNotebookState state,gpointer data)
+DECL|function|ipal_select_callback (ColorNotebook * color_notebook,const GimpRGB * color,ColorNotebookState state,gpointer data)
 name|ipal_select_callback
 parameter_list|(
+name|ColorNotebook
+modifier|*
+name|color_notebook
+parameter_list|,
 specifier|const
 name|GimpRGB
 modifier|*
@@ -5591,7 +5604,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9d48640208
+DECL|struct|__anon299c4d920208
 block|{
 DECL|member|def
 name|GimpImage

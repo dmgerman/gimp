@@ -59,11 +59,8 @@ struct|struct
 name|_PaletteEntry
 block|{
 DECL|member|color
-name|guchar
+name|GimpRGB
 name|color
-index|[
-literal|3
-index|]
 decl_stmt|;
 DECL|member|name
 name|gchar

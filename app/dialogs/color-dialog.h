@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275879db0103
+DECL|enum|__anon29e783920103
 block|{
 DECL|enumerator|COLOR_NOTEBOOK_OK
 name|COLOR_NOTEBOOK_OK
@@ -44,6 +44,10 @@ modifier|*
 name|ColorNotebookCallback
 function_decl|)
 parameter_list|(
+name|ColorNotebook
+modifier|*
+name|cnb
+parameter_list|,
 specifier|const
 name|GimpRGB
 modifier|*
@@ -58,20 +62,16 @@ parameter_list|)
 function_decl|;
 end_typedef
 
-begin_typedef
-DECL|typedef|ColorSelectorInstance
-typedef|typedef
-name|struct
-name|_ColorSelectorInstance
-name|ColorSelectorInstance
-typedef|;
-end_typedef
-
 begin_function_decl
 name|ColorNotebook
 modifier|*
 name|color_notebook_new
 parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|title
+parameter_list|,
 specifier|const
 name|GimpRGB
 modifier|*
@@ -140,6 +140,25 @@ name|color
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_function_decl
+name|void
+name|color_notebook_get_color
+parameter_list|(
+name|ColorNotebook
+modifier|*
+name|cnb
+parameter_list|,
+name|GimpRGB
+modifier|*
+name|color
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/*  color history functions  */
+end_comment
 
 begin_function_decl
 name|void
