@@ -4813,7 +4813,7 @@ decl_stmt|;
 name|GradientEditorDragMode
 name|handle
 decl_stmt|;
-name|double
+name|gdouble
 name|xpos
 decl_stmt|;
 name|gboolean
@@ -6128,6 +6128,12 @@ name|range_l
 expr_stmt|;
 do|do
 block|{
+if|if
+condition|(
+name|seg
+operator|->
+name|prev
+condition|)
 name|seg
 operator|->
 name|left
@@ -6160,6 +6166,12 @@ operator|)
 operator|*
 name|scale
 expr_stmt|;
+if|if
+condition|(
+name|seg
+operator|->
+name|next
+condition|)
 name|seg
 operator|->
 name|right
