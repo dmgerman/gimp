@@ -2189,6 +2189,12 @@ name|gdisp
 operator|->
 name|shell
 argument_list|)
+argument_list|,
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
 argument_list|)
 expr_stmt|;
 block|}

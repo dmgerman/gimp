@@ -78,6 +78,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdialogfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"dialogs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"info-dialog.h"
 end_include
 
@@ -406,8 +418,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_nav_window_cmd_callback (GtkWidget * widget,gpointer data)
-name|view_nav_window_cmd_callback
+DECL|function|view_navigation_window_cmd_callback (GtkWidget * widget,gpointer data)
+name|view_navigation_window_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -478,6 +490,56 @@ name|nav_dialog_follow_auto
 argument_list|()
 expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|view_display_filters_cmd_callback (GtkWidget * widget,gpointer data)
+name|view_display_filters_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|GimpDisplay
+modifier|*
+name|gdisp
+decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
+name|return_if_no_display
+argument_list|(
+name|gdisp
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
+argument_list|)
+expr_stmt|;
+name|gimp_dialog_factory_dialog_new
+argument_list|(
+name|global_dialog_factory
+argument_list|,
+literal|"gimp:display-filters-dialog"
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

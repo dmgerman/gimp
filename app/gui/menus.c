@@ -2328,12 +2328,12 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/View/Nav. Window..."
+literal|"/View/Navigation Window..."
 argument_list|)
 block|,
 literal|"<control><shift>N"
 block|,
-name|view_nav_window_cmd_callback
+name|view_navigation_window_cmd_callback
 block|,
 literal|0
 block|,
@@ -2358,12 +2358,12 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|dialogs_create_toplevel_cmd_callback
+name|view_display_filters_cmd_callback
 block|,
 literal|0
 block|}
 block|,
-literal|"gimp:display-filters-dialog"
+name|NULL
 block|,
 literal|"dialogs/display_filters/display_filters.html"
 block|,
