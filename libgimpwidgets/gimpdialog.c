@@ -547,6 +547,8 @@ block|{
 name|GtkWidget
 modifier|*
 name|hbbox
+init|=
+name|NULL
 decl_stmt|;
 name|GtkWidget
 modifier|*
