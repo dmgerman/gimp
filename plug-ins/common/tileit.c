@@ -102,22 +102,6 @@ value|6
 end_define
 
 begin_define
-DECL|macro|TRUE
-define|#
-directive|define
-name|TRUE
-value|1
-end_define
-
-begin_define
-DECL|macro|FALSE
-define|#
-directive|define
-name|FALSE
-value|0
-end_define
-
-begin_define
 DECL|macro|PREVIEW_MASK
 define|#
 directive|define
@@ -146,7 +130,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b6515ff0108
+DECL|struct|__anon2c40ae8b0108
 typedef|typedef
 struct|struct
 block|{
@@ -611,7 +595,7 @@ comment|/* The "explict tile"& family */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b6515ff0203
+DECL|enum|__anon2c40ae8b0203
 typedef|typedef
 enum|enum
 block|{
@@ -630,7 +614,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b6515ff0308
+DECL|struct|__anon2c40ae8b0308
 typedef|typedef
 struct|struct
 block|{
@@ -716,7 +700,7 @@ comment|/* The reset button needs to know some toggle widgets.. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6515ff0408
+DECL|struct|__anon2c40ae8b0408
 typedef|typedef
 struct|struct
 block|{

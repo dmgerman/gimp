@@ -6,22 +6,6 @@ file|<libgimp/gimp.h>
 end_include
 
 begin_define
-DECL|macro|TRUE
-define|#
-directive|define
-name|TRUE
-value|1
-end_define
-
-begin_define
-DECL|macro|FALSE
-define|#
-directive|define
-name|FALSE
-value|0
-end_define
-
-begin_define
 DECL|macro|MAXCOLORS
 define|#
 directive|define
@@ -313,7 +297,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2c40bf790108
+DECL|struct|__anon292a46ff0108
 block|{
 DECL|member|bfSize
 name|unsigned
@@ -347,7 +331,7 @@ end_struct
 
 begin_struct
 struct|struct
-DECL|struct|__anon2c40bf790208
+DECL|struct|__anon292a46ff0208
 block|{
 DECL|member|biWidth
 name|unsigned
@@ -418,7 +402,7 @@ end_struct
 
 begin_struct
 struct|struct
-DECL|struct|__anon2c40bf790308
+DECL|struct|__anon292a46ff0308
 block|{
 DECL|member|bcWidth
 name|unsigned

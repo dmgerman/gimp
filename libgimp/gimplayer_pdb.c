@@ -1705,7 +1705,7 @@ name|PARAM_LAYER
 argument_list|,
 name|layer_ID
 argument_list|,
-name|PARAM_INT32
+name|PARAM_FLOAT
 argument_list|,
 name|opacity
 argument_list|,

@@ -950,7 +950,7 @@ name|layer_ID
 operator|=
 name|return_vals
 index|[
-literal|0
+literal|1
 index|]
 operator|.
 name|data
@@ -1041,7 +1041,7 @@ name|layer_ID
 operator|=
 name|return_vals
 index|[
-literal|0
+literal|1
 index|]
 operator|.
 name|data

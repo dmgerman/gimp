@@ -113,22 +113,6 @@ value|((x) * (x))
 end_define
 
 begin_define
-DECL|macro|TRUE
-define|#
-directive|define
-name|TRUE
-value|1
-end_define
-
-begin_define
-DECL|macro|FALSE
-define|#
-directive|define
-name|FALSE
-value|0
-end_define
-
-begin_define
 DECL|macro|HORIZONTAL
 define|#
 directive|define
@@ -243,7 +227,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27601bb80108
+DECL|struct|__anon2b3f4a8e0108
 block|{
 DECL|member|x
 DECL|member|y
@@ -261,7 +245,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27601bb80208
+DECL|struct|__anon2b3f4a8e0208
 block|{
 DECL|member|npts
 name|gint
@@ -283,7 +267,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27601bb80308
+DECL|struct|__anon2b3f4a8e0308
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -312,7 +296,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27601bb80408
+DECL|struct|__anon2b3f4a8e0408
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -367,7 +351,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27601bb80508
+DECL|struct|__anon2b3f4a8e0508
 block|{
 DECL|member|run
 name|gint

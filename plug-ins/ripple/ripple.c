@@ -152,24 +152,8 @@ name|SINE
 value|1
 end_define
 
-begin_define
-DECL|macro|TRUE
-define|#
-directive|define
-name|TRUE
-value|1
-end_define
-
-begin_define
-DECL|macro|FALSE
-define|#
-directive|define
-name|FALSE
-value|0
-end_define
-
 begin_typedef
-DECL|struct|__anon28dd34560108
+DECL|struct|__anon2c642ec60108
 typedef|typedef
 struct|struct
 block|{
@@ -208,7 +192,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28dd34560208
+DECL|struct|__anon2c642ec60208
 typedef|typedef
 struct|struct
 block|{

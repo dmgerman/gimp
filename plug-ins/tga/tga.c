@@ -80,22 +80,6 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
-begin_define
-DECL|macro|FALSE
-define|#
-directive|define
-name|FALSE
-value|0
-end_define
-
-begin_define
-DECL|macro|TRUE
-define|#
-directive|define
-name|TRUE
-value|1
-end_define
-
 begin_comment
 comment|/* Round up a division to the nearest integer. */
 end_comment
@@ -301,7 +285,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28928ec20108
+DECL|struct|__anon287ef58b0108
 block|{
 DECL|member|extensionAreaOffset
 name|guint32
