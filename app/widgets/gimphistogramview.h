@@ -132,11 +132,6 @@ DECL|member|subdivisions
 name|gint
 name|subdivisions
 decl_stmt|;
-DECL|member|range_gc
-name|GdkGC
-modifier|*
-name|range_gc
-decl_stmt|;
 comment|/* hack */
 DECL|member|light_histogram
 name|gboolean
