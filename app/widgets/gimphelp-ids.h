@@ -1177,6 +1177,14 @@ value|"gimp-path-delete"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_PATH_MERGE_VISIBLE
+define|#
+directive|define
+name|GIMP_HELP_PATH_MERGE_VISIBLE
+value|"gimp-path-merge-visible"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_PATH_SELECTION_REPLACE
 define|#
 directive|define

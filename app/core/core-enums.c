@@ -2627,6 +2627,17 @@ literal|"group-image-layers-merge"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_GROUP_IMAGE_VECTORS_MERGE
+block|,
+name|N_
+argument_list|(
+literal|"Merge Vectors"
+argument_list|)
+block|,
+literal|"group-image-vectors-merge"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_GROUP_IMAGE_QMASK
 block|,
 name|N_

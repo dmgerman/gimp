@@ -432,6 +432,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_vectors_add_strokes
+parameter_list|(
+specifier|const
+name|GimpVectors
+modifier|*
+name|src_vectors
+parameter_list|,
+name|GimpVectors
+modifier|*
+name|dest_vectors
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/* accessing / modifying the anchors */
 end_comment
