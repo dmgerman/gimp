@@ -103,7 +103,7 @@ value|MBLUR_ZOOM
 end_define
 
 begin_typedef
-DECL|struct|__anon29a4ebaf0108
+DECL|struct|__anon279870980108
 typedef|typedef
 struct|struct
 block|{
@@ -126,7 +126,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29a4ebaf0208
+DECL|struct|__anon279870980208
 typedef|typedef
 struct|struct
 block|{
@@ -3042,7 +3042,7 @@ parameter_list|)
 block|{
 name|gimp_progress_init
 argument_list|(
-literal|"Bluring..."
+literal|"Blurring..."
 argument_list|)
 expr_stmt|;
 switch|switch
