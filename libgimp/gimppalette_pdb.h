@@ -108,6 +108,21 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_palette_set_num_columns
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|,
+name|gint
+name|columns
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_palette_add_entry
 parameter_list|(
 specifier|const

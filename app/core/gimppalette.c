@@ -3052,15 +3052,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_palette_set_n_columns (GimpPalette * palette,gint n_columns)
-name|gimp_palette_set_n_columns
+DECL|function|gimp_palette_set_num_columns (GimpPalette * palette,gint columns)
+name|gimp_palette_set_num_columns
 parameter_list|(
 name|GimpPalette
 modifier|*
 name|palette
 parameter_list|,
 name|gint
-name|n_columns
+name|columns
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -3071,11 +3071,11 @@ name|palette
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|n_columns
+name|columns
 operator|=
 name|CLAMP
 argument_list|(
-name|n_columns
+name|columns
 argument_list|,
 literal|0
 argument_list|,
@@ -3088,14 +3088,14 @@ name|palette
 operator|->
 name|n_columns
 operator|!=
-name|n_columns
+name|columns
 condition|)
 block|{
 name|palette
 operator|->
 name|n_columns
 operator|=
-name|n_columns
+name|columns
 expr_stmt|;
 name|gimp_data_dirty
 argument_list|(
@@ -3111,8 +3111,8 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_palette_get_n_columns (GimpPalette * palette)
-name|gimp_palette_get_n_columns
+DECL|function|gimp_palette_get_num_columns (GimpPalette * palette)
+name|gimp_palette_get_num_columns
 parameter_list|(
 name|GimpPalette
 modifier|*

@@ -140,7 +140,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2951ba560103
+DECL|enum|__anon2b9eaa680103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -2900,7 +2900,7 @@ name|import_dialog
 operator|->
 name|palette
 condition|)
-name|gimp_palette_set_n_columns
+name|gimp_palette_set_num_columns
 argument_list|(
 name|import_dialog
 operator|->

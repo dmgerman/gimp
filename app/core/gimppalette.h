@@ -263,21 +263,21 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_palette_set_n_columns
+name|gimp_palette_set_num_columns
 parameter_list|(
 name|GimpPalette
 modifier|*
 name|palette
 parameter_list|,
 name|gint
-name|n_columns
+name|columns
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|gint
-name|gimp_palette_get_n_columns
+name|gimp_palette_get_num_columns
 parameter_list|(
 name|GimpPalette
 modifier|*
