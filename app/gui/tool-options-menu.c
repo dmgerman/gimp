@@ -140,7 +140,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Save Options to/New Entry..."
+literal|"/_Save Options to/_New Entry..."
 argument_list|)
 block|,
 literal|""
@@ -163,7 +163,7 @@ block|}
 block|,
 block|{
 block|{
-literal|"/Save Options to/new-separator"
+literal|"/_Save Options to/new-separator"
 block|,
 literal|""
 block|,
@@ -187,7 +187,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Restore Options from/(None)"
+literal|"/_Restore Options from/(None)"
 argument_list|)
 block|,
 literal|""
@@ -212,7 +212,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Rename Saved Options/(None)"
+literal|"/Re_name Saved Options/(None)"
 argument_list|)
 block|,
 literal|""
@@ -237,7 +237,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Delete Saved Options/(None)"
+literal|"/_Delete Saved Options/(None)"
 argument_list|)
 block|,
 literal|""
@@ -284,7 +284,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Reset Tool Options"
+literal|"/R_eset Tool Options"
 argument_list|)
 block|,
 literal|""
@@ -309,7 +309,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Reset all Tool Options..."
+literal|"/Reset _all Tool Options..."
 argument_list|)
 block|,
 literal|""

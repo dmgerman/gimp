@@ -104,7 +104,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Edit Pattern..."
+literal|"/_Edit Pattern..."
 argument_list|)
 block|,
 name|NULL
@@ -134,7 +134,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/New Pattern"
+literal|"/_New Pattern"
 argument_list|)
 block|,
 literal|""
@@ -159,7 +159,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Duplicate Pattern"
+literal|"/D_uplicate Pattern"
 argument_list|)
 block|,
 name|NULL
@@ -184,7 +184,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Delete Pattern..."
+literal|"/_Delete Pattern..."
 argument_list|)
 block|,
 literal|""
@@ -214,7 +214,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Refresh Patterns"
+literal|"/_Refresh Patterns"
 argument_list|)
 block|,
 literal|""

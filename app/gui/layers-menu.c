@@ -621,7 +621,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Merge Visible Layers..."
+literal|"/Merge _Visible Layers..."
 argument_list|)
 block|,
 name|NULL
@@ -646,7 +646,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Flatten Image"
+literal|"/_Flatten Image"
 argument_list|)
 block|,
 name|NULL
