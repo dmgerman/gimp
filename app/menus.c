@@ -424,7 +424,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"file/open/dialogs/file_open.html"
+literal|"file/dialogs/file_open.html"
 block|,
 name|NULL
 block|}
@@ -1142,7 +1142,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"file/open/dialogs/file_open.html"
+literal|"file/dialogs/file_open.html"
 block|,
 name|NULL
 block|}
@@ -1161,7 +1161,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"file/save/dialogs/file_save.html"
+literal|"file/dialogs/file_save.html"
 block|,
 name|NULL
 block|}
@@ -1180,7 +1180,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"file/save/dialogs/file_save.html"
+literal|"file/dialogs/file_save.html"
 block|,
 name|NULL
 block|}
