@@ -1468,7 +1468,6 @@ name|y
 argument_list|)
 condition|)
 return|return
-operator|&
 name|MoveUpperLeftSash
 return|;
 elseif|else
@@ -1496,7 +1495,6 @@ name|y
 argument_list|)
 condition|)
 return|return
-operator|&
 name|MoveUpperSash
 return|;
 elseif|else
@@ -1522,7 +1520,6 @@ name|y
 argument_list|)
 condition|)
 return|return
-operator|&
 name|MoveUpperRightSash
 return|;
 elseif|else
@@ -1550,7 +1547,6 @@ name|y
 argument_list|)
 condition|)
 return|return
-operator|&
 name|MoveLeftSash
 return|;
 elseif|else
@@ -1582,7 +1578,6 @@ name|y
 argument_list|)
 condition|)
 return|return
-operator|&
 name|MoveRightSash
 return|;
 elseif|else
@@ -1608,7 +1603,6 @@ name|y
 argument_list|)
 condition|)
 return|return
-operator|&
 name|MoveLowerLeftSash
 return|;
 elseif|else
@@ -1640,7 +1634,6 @@ name|y
 argument_list|)
 condition|)
 return|return
-operator|&
 name|MoveLowerSash
 return|;
 elseif|else
@@ -1670,7 +1663,6 @@ name|y
 argument_list|)
 condition|)
 return|return
-operator|&
 name|MoveLowerRightSash
 return|;
 return|return
@@ -1927,7 +1919,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2b00ffd60108
+DECL|struct|__anon2ba81fa10108
 typedef|typedef
 struct|struct
 block|{

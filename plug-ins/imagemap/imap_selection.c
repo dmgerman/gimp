@@ -2117,16 +2117,7 @@ argument_list|,
 literal|64
 argument_list|)
 expr_stmt|;
-name|gtk_clist_set_reorderable
-argument_list|(
-name|GTK_CLIST
-argument_list|(
-name|list
-argument_list|)
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
+comment|/*   gtk_clist_set_reorderable(GTK_CLIST(list), TRUE); */
 comment|/* Create scrollable window */
 name|swin
 operator|=

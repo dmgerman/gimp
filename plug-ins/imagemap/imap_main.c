@@ -1944,6 +1944,18 @@ DECL|variable|_preview_redraw_blocked
 specifier|static
 name|gboolean
 name|_preview_redraw_blocked
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|_pending_redraw
+specifier|static
+name|gboolean
+name|_pending_redraw
+init|=
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
@@ -1974,9 +1986,19 @@ name|_preview_redraw_blocked
 operator|=
 name|FALSE
 expr_stmt|;
+if|if
+condition|(
+name|_pending_redraw
+condition|)
+block|{
+name|_pending_redraw
+operator|=
+name|FALSE
+expr_stmt|;
 name|redraw_preview
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -1990,9 +2012,13 @@ parameter_list|)
 block|{
 if|if
 condition|(
-operator|!
 name|_preview_redraw_blocked
 condition|)
+name|_pending_redraw
+operator|=
+name|TRUE
+expr_stmt|;
+else|else
 name|preview_redraw
 argument_list|(
 name|_preview

@@ -60,6 +60,11 @@ argument_list|(
 name|dialog
 argument_list|)
 expr_stmt|;
+name|default_dialog_hide_help_button
+argument_list|(
+name|dialog
+argument_list|)
+expr_stmt|;
 name|default_dialog_set_label
 argument_list|(
 name|dialog

@@ -362,7 +362,10 @@ name|ObjectClass_t
 name|circle_class
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Circle"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1286,7 +1289,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon29f57d5e0108
+DECL|struct|__anon296f7c8c0108
 typedef|typedef
 struct|struct
 block|{

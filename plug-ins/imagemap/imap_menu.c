@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_circle.h"
 end_include
 
@@ -209,7 +215,10 @@ else|else
 block|{
 name|do_file_error_dialog
 argument_list|(
+name|_
+argument_list|(
 literal|"Error opening file"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -753,7 +762,10 @@ name|make_menu_bar_item
 argument_list|(
 name|menu_bar
 argument_list|,
+name|_
+argument_list|(
 literal|"File"
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|GtkWidget
@@ -772,7 +784,10 @@ name|make_item_with_label
 argument_list|(
 name|file_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Open..."
+argument_list|)
 argument_list|,
 name|menu_command
 argument_list|,
@@ -797,7 +812,10 @@ name|make_item_with_label
 argument_list|(
 name|file_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Save"
+argument_list|)
 argument_list|,
 name|menu_command
 argument_list|,
@@ -820,7 +838,10 @@ name|make_item_with_label
 argument_list|(
 name|file_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Save As..."
+argument_list|)
 argument_list|,
 name|menu_command
 argument_list|,
@@ -839,7 +860,10 @@ name|make_item_with_label
 argument_list|(
 name|file_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Preferences..."
+argument_list|)
 argument_list|,
 name|menu_command
 argument_list|,
@@ -860,7 +884,10 @@ name|make_item_with_label
 argument_list|(
 name|file_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Close"
+argument_list|)
 argument_list|,
 name|menu_command
 argument_list|,
@@ -945,7 +972,10 @@ name|sprintf
 argument_list|(
 name|scratch
 argument_list|,
+name|_
+argument_list|(
 literal|"Undo %s"
+argument_list|)
 argument_list|,
 operator|(
 name|command
@@ -968,7 +998,7 @@ name|_menu
 operator|.
 name|edit_menu
 argument_list|,
-literal|0
+literal|1
 argument_list|,
 name|scratch
 argument_list|,
@@ -1027,7 +1057,10 @@ name|sprintf
 argument_list|(
 name|scratch
 argument_list|,
+name|_
+argument_list|(
 literal|"Redo %s"
+argument_list|)
 argument_list|,
 operator|(
 name|command
@@ -1050,7 +1083,7 @@ name|_menu
 operator|.
 name|edit_menu
 argument_list|,
-literal|1
+literal|2
 argument_list|,
 name|scratch
 argument_list|,
@@ -1164,7 +1197,10 @@ name|make_menu_bar_item
 argument_list|(
 name|menu_bar
 argument_list|,
+name|_
+argument_list|(
 literal|"Edit"
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|GtkWidget
@@ -1200,7 +1236,10 @@ name|make_item_with_label
 argument_list|(
 name|edit_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Cut"
+argument_list|)
 argument_list|,
 name|menu_command
 argument_list|,
@@ -1229,7 +1268,10 @@ name|make_item_with_label
 argument_list|(
 name|edit_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Copy"
+argument_list|)
 argument_list|,
 name|menu_command
 argument_list|,
@@ -1256,7 +1298,10 @@ name|make_item_with_label
 argument_list|(
 name|edit_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Paste"
+argument_list|)
 argument_list|,
 name|menu_command
 argument_list|,
@@ -1288,7 +1333,10 @@ name|make_item_with_label
 argument_list|(
 name|edit_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Select All"
+argument_list|)
 argument_list|,
 name|menu_command
 argument_list|,
@@ -1320,7 +1368,10 @@ name|make_item_with_label
 argument_list|(
 name|edit_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Clear"
+argument_list|)
 argument_list|,
 name|menu_command
 argument_list|,
@@ -1349,7 +1400,10 @@ name|make_item_with_label
 argument_list|(
 name|edit_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Edit Area Info..."
+argument_list|)
 argument_list|,
 name|menu_command
 argument_list|,
@@ -1408,7 +1462,10 @@ name|make_menu_bar_item
 argument_list|(
 name|menu_bar
 argument_list|,
+name|_
+argument_list|(
 literal|"View"
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|GtkWidget
@@ -1430,7 +1487,10 @@ name|make_check_item
 argument_list|(
 name|view_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Area List"
+argument_list|)
 argument_list|,
 name|menu_command
 argument_list|,
@@ -1453,7 +1513,10 @@ name|make_item_with_label
 argument_list|(
 name|view_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Source..."
+argument_list|)
 argument_list|,
 name|menu_command
 argument_list|,
@@ -1478,7 +1541,10 @@ name|view_menu
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Color"
+argument_list|)
 argument_list|,
 name|menu_command
 argument_list|,
@@ -1510,7 +1576,10 @@ name|view_menu
 argument_list|,
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Grayscale"
+argument_list|)
 argument_list|,
 name|menu_command
 argument_list|,
@@ -1587,7 +1656,10 @@ name|make_item_with_label
 argument_list|(
 name|view_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Zoom In"
+argument_list|)
 argument_list|,
 name|menu_command
 argument_list|,
@@ -1616,7 +1688,10 @@ name|make_item_with_label
 argument_list|(
 name|view_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Zoom Out"
+argument_list|)
 argument_list|,
 name|menu_command
 argument_list|,
@@ -1652,7 +1727,10 @@ name|make_sub_menu
 argument_list|(
 name|view_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Zoom To"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|_menu
@@ -1942,7 +2020,10 @@ name|make_menu_bar_item
 argument_list|(
 name|menu_bar
 argument_list|,
+name|_
+argument_list|(
 literal|"Mapping"
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|GSList
@@ -1959,7 +2040,10 @@ name|menu
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Arrow"
+argument_list|)
 argument_list|,
 name|menu_arrow
 argument_list|,
@@ -1988,7 +2072,10 @@ name|menu
 argument_list|,
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Rectangle"
+argument_list|)
 argument_list|,
 name|menu_rectangle
 argument_list|,
@@ -2017,7 +2104,10 @@ name|menu
 argument_list|,
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Circle"
+argument_list|)
 argument_list|,
 name|menu_circle
 argument_list|,
@@ -2046,7 +2136,10 @@ name|menu
 argument_list|,
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Polygon"
+argument_list|)
 argument_list|,
 name|menu_polygon
 argument_list|,
@@ -2062,7 +2155,10 @@ name|make_item_with_label
 argument_list|(
 name|menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Edit Map Info..."
+argument_list|)
 argument_list|,
 name|menu_command
 argument_list|,
@@ -2094,7 +2190,10 @@ name|make_menu_bar_item
 argument_list|(
 name|menu_bar
 argument_list|,
+name|_
+argument_list|(
 literal|"Goodies"
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|_menu
@@ -2105,7 +2204,10 @@ name|make_check_item
 argument_list|(
 name|goodies_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Grid"
+argument_list|)
 argument_list|,
 name|menu_grid
 argument_list|,
@@ -2116,7 +2218,10 @@ name|make_item_with_label
 argument_list|(
 name|goodies_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Grid Settings..."
+argument_list|)
 argument_list|,
 name|menu_command
 argument_list|,
@@ -2130,7 +2235,10 @@ name|make_item_with_label
 argument_list|(
 name|goodies_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Create Guides..."
+argument_list|)
 argument_list|,
 name|menu_command
 argument_list|,
@@ -2162,7 +2270,10 @@ name|make_menu_bar_item
 argument_list|(
 name|menu_bar
 argument_list|,
+name|_
+argument_list|(
 literal|"Help"
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|gtk_menu_item_right_justify
@@ -2183,7 +2294,10 @@ name|make_item_with_label
 argument_list|(
 name|help_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"About ImageMap..."
+argument_list|)
 argument_list|,
 name|menu_command
 argument_list|,
@@ -2303,7 +2417,7 @@ decl_stmt|;
 name|gint
 name|position
 init|=
-literal|6
+literal|7
 decl_stmt|;
 comment|/* Position of 'Close' entry */
 name|int
@@ -2403,6 +2517,10 @@ name|i
 operator|++
 control|)
 block|{
+name|GtkWidget
+modifier|*
+name|item
+init|=
 name|insert_item_with_label
 argument_list|(
 name|_menu
@@ -2426,7 +2544,31 @@ name|p
 operator|->
 name|data
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|i
+operator|<
+literal|9
+condition|)
+block|{
+name|guchar
+name|accelerator_key
+init|=
+literal|'1'
+operator|+
+name|i
+decl_stmt|;
+name|add_accelerator
+argument_list|(
+name|item
+argument_list|,
+name|accelerator_key
+argument_list|,
+name|GDK_CONTROL_MASK
+argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|insert_separator
 argument_list|(

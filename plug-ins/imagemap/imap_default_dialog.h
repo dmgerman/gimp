@@ -23,7 +23,7 @@ file|"gtk/gtk.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2bc1857b0108
+DECL|struct|__anon2a0922830108
 typedef|typedef
 struct|struct
 block|{
@@ -46,6 +46,11 @@ DECL|member|cancel
 name|GtkWidget
 modifier|*
 name|cancel
+decl_stmt|;
+DECL|member|help
+name|GtkWidget
+modifier|*
+name|help
 decl_stmt|;
 DECL|member|ok_cb
 name|void
@@ -165,6 +170,17 @@ end_function_decl
 begin_function_decl
 name|void
 name|default_dialog_hide_apply_button
+parameter_list|(
+name|DefaultDialog_t
+modifier|*
+name|dialog
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|default_dialog_hide_help_button
 parameter_list|(
 name|DefaultDialog_t
 modifier|*

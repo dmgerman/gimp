@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_edit_area_info.h"
 end_include
 
@@ -390,7 +396,10 @@ name|make_item_with_label
 argument_list|(
 name|popup_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Map Info..."
+argument_list|)
 argument_list|,
 name|menu_command
 argument_list|,
@@ -406,7 +415,10 @@ name|make_sub_menu
 argument_list|(
 name|popup_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Tools"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|_popup
@@ -419,7 +431,10 @@ name|sub_menu
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Arrow"
+argument_list|)
 argument_list|,
 name|popup_arrow
 argument_list|,
@@ -448,7 +463,10 @@ name|sub_menu
 argument_list|,
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Rectangle"
+argument_list|)
 argument_list|,
 name|popup_rectangle
 argument_list|,
@@ -477,7 +495,10 @@ name|sub_menu
 argument_list|,
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Circle"
+argument_list|)
 argument_list|,
 name|popup_circle
 argument_list|,
@@ -506,7 +527,10 @@ name|sub_menu
 argument_list|,
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Polygon"
+argument_list|)
 argument_list|,
 name|popup_polygon
 argument_list|,
@@ -519,7 +543,10 @@ name|make_sub_menu
 argument_list|(
 name|popup_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Zoom"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|_popup
@@ -530,7 +557,10 @@ name|make_item_with_label
 argument_list|(
 name|sub_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"In"
+argument_list|)
 argument_list|,
 name|menu_command
 argument_list|,
@@ -548,7 +578,10 @@ name|make_item_with_label
 argument_list|(
 name|sub_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Out"
+argument_list|)
 argument_list|,
 name|menu_command
 argument_list|,
@@ -575,7 +608,10 @@ name|make_check_item
 argument_list|(
 name|popup_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Grid"
+argument_list|)
 argument_list|,
 name|popup_grid
 argument_list|,
@@ -586,7 +622,10 @@ name|make_item_with_label
 argument_list|(
 name|popup_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Grid Settings..."
+argument_list|)
 argument_list|,
 name|menu_command
 argument_list|,
@@ -600,7 +639,10 @@ name|make_item_with_label
 argument_list|(
 name|popup_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Guides..."
+argument_list|)
 argument_list|,
 name|menu_command
 argument_list|,
@@ -616,7 +658,10 @@ name|make_item_with_label
 argument_list|(
 name|popup_menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Paste"
+argument_list|)
 argument_list|,
 name|menu_command
 argument_list|,
