@@ -2155,6 +2155,8 @@ name|maximum
 argument_list|,
 name|stock_prefix
 argument_list|,
+name|GTK_ICON_SIZE_MENU
+argument_list|,
 name|G_CALLBACK
 argument_list|(
 name|gimp_prop_radio_button_callback
@@ -2178,6 +2180,8 @@ operator|->
 name|value_type
 argument_list|,
 name|stock_prefix
+argument_list|,
+name|GTK_ICON_SIZE_MENU
 argument_list|,
 name|G_CALLBACK
 argument_list|(

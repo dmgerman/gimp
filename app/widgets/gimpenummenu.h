@@ -464,6 +464,9 @@ name|gchar
 modifier|*
 name|stock_prefix
 parameter_list|,
+name|GtkIconSize
+name|icon_size
+parameter_list|,
 name|GCallback
 name|callback
 parameter_list|,
@@ -496,6 +499,9 @@ specifier|const
 name|gchar
 modifier|*
 name|stock_prefix
+parameter_list|,
+name|GtkIconSize
+name|icon_size
 parameter_list|,
 name|GCallback
 name|callback

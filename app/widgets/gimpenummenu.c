@@ -1853,7 +1853,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_enum_stock_box_new (GType enum_type,const gchar * stock_prefix,GCallback callback,gpointer callback_data,GtkWidget ** first_button)
+DECL|function|gimp_enum_stock_box_new (GType enum_type,const gchar * stock_prefix,GtkIconSize icon_size,GCallback callback,gpointer callback_data,GtkWidget ** first_button)
 name|gimp_enum_stock_box_new
 parameter_list|(
 name|GType
@@ -1863,6 +1863,9 @@ specifier|const
 name|gchar
 modifier|*
 name|stock_prefix
+parameter_list|,
+name|GtkIconSize
+name|icon_size
 parameter_list|,
 name|GCallback
 name|callback
@@ -1917,6 +1920,8 @@ name|maximum
 argument_list|,
 name|stock_prefix
 argument_list|,
+name|icon_size
+argument_list|,
 name|callback
 argument_list|,
 name|callback_data
@@ -1938,7 +1943,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_enum_stock_box_new_with_range (GType enum_type,gint minimum,gint maximum,const gchar * stock_prefix,GCallback callback,gpointer callback_data,GtkWidget ** first_button)
+DECL|function|gimp_enum_stock_box_new_with_range (GType enum_type,gint minimum,gint maximum,const gchar * stock_prefix,GtkIconSize icon_size,GCallback callback,gpointer callback_data,GtkWidget ** first_button)
 name|gimp_enum_stock_box_new_with_range
 parameter_list|(
 name|GType
@@ -1954,6 +1959,9 @@ specifier|const
 name|gchar
 modifier|*
 name|stock_prefix
+parameter_list|,
+name|GtkIconSize
+name|icon_size
 parameter_list|,
 name|GCallback
 name|callback
@@ -2139,7 +2147,7 @@ name|gtk_image_new_from_stock
 argument_list|(
 name|stock_id
 argument_list|,
-name|GTK_ICON_SIZE_MENU
+name|icon_size
 argument_list|)
 expr_stmt|;
 name|g_free

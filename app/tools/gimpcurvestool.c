@@ -3332,6 +3332,8 @@ name|GIMP_TYPE_CURVE_TYPE
 argument_list|,
 literal|"gimp-curve"
 argument_list|,
+name|GTK_ICON_SIZE_MENU
+argument_list|,
 name|G_CALLBACK
 argument_list|(
 name|curves_curve_type_callback
