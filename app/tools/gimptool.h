@@ -55,14 +55,6 @@ value|GTK_TYPE_NONE
 end_define
 
 begin_define
-DECL|macro|GIMP_TYPE_DODGEBURN_TOOL
-define|#
-directive|define
-name|GIMP_TYPE_DODGEBURN_TOOL
-value|GTK_TYPE_NONE
-end_define
-
-begin_define
 DECL|macro|GIMP_TYPE_SMUDGE_TOOL
 define|#
 directive|define
