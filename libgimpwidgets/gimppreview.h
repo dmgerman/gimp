@@ -121,6 +121,11 @@ name|GtkWidget
 modifier|*
 name|area
 decl_stmt|;
+DECL|member|frame
+name|GtkWidget
+modifier|*
+name|frame
+decl_stmt|;
 DECL|member|hscr
 name|GtkWidget
 modifier|*
