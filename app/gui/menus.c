@@ -1998,8 +1998,11 @@ parameter_list|)
 block|{
 name|g_object_set
 argument_list|(
-name|gtk_settings_get_default
+name|gtk_settings_get_for_screen
+argument_list|(
+name|gdk_screen_get_default
 argument_list|()
+argument_list|)
 argument_list|,
 literal|"gtk-can-change-accels"
 argument_list|,

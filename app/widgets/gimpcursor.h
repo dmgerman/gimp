@@ -16,6 +16,23 @@ directive|define
 name|__GIMP_CURSOR_H__
 end_define
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|FIXME: need a new API that passes a display for gimp_cursor_new()
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_function_decl
 name|GdkCursor
 modifier|*

@@ -1747,8 +1747,11 @@ operator|<=
 name|GDK_LAST_CURSOR
 condition|)
 return|return
-name|gdk_cursor_new
+name|gdk_cursor_new_for_display
 argument_list|(
+name|gdk_display_get_default
+argument_list|()
+argument_list|,
 name|cursor_type
 argument_list|)
 return|;

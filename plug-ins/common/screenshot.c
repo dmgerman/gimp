@@ -134,7 +134,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295c212a0108
+DECL|struct|__anon2be5f2690108
 block|{
 DECL|member|root
 name|gboolean
@@ -1541,6 +1541,17 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|GdkDisplay
+modifier|*
+name|display
+decl_stmt|;
+name|display
+operator|=
+name|gdk_screen_get_display
+argument_list|(
+name|cur_screen
+argument_list|)
+expr_stmt|;
 comment|/* single window */
 if|if
 condition|(
@@ -1551,8 +1562,10 @@ condition|)
 block|{
 name|window
 operator|=
-name|gdk_window_foreign_new
+name|gdk_window_foreign_new_for_display
 argument_list|(
+name|display
+argument_list|,
 name|shootvals
 operator|.
 name|window_id
@@ -1563,8 +1576,10 @@ else|else
 block|{
 name|window
 operator|=
-name|gdk_window_foreign_new
+name|gdk_window_foreign_new_for_display
 argument_list|(
+name|display
+argument_list|,
 name|selected_native
 argument_list|)
 expr_stmt|;

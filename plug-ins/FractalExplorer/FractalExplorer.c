@@ -4468,8 +4468,13 @@ name|colormap
 decl_stmt|;
 name|colormap
 operator|=
-name|gtk_widget_get_default_colormap
-argument_list|()
+name|gdk_screen_get_default_colormap
+argument_list|(
+name|gtk_widget_get_screen
+argument_list|(
+name|list
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|pixmap
 operator|=

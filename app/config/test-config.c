@@ -613,10 +613,13 @@ return|;
 block|}
 name|g_print
 argument_list|(
-literal|"OK (%d bytes)\n"
+literal|"OK (%u bytes)\n"
 argument_list|,
 name|result
 condition|?
+operator|(
+name|guint
+operator|)
 name|strlen
 argument_list|(
 name|result

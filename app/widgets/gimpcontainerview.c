@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275f42710103
+DECL|enum|__anon27a57c280103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -3056,6 +3056,10 @@ name|GtkWidget
 modifier|*
 name|preview
 decl_stmt|;
+name|GdkScreen
+modifier|*
+name|screen
+decl_stmt|;
 name|gint
 name|width
 decl_stmt|;
@@ -3083,8 +3087,23 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_icon_size_lookup
+name|screen
+operator|=
+name|gtk_widget_get_screen
 argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|view
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_icon_size_lookup_for_settings
+argument_list|(
+name|gtk_settings_get_for_screen
+argument_list|(
+name|screen
+argument_list|)
+argument_list|,
 name|size
 argument_list|,
 operator|&

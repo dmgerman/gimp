@@ -96,6 +96,10 @@ name|gchar
 modifier|*
 name|user_gtkrc
 decl_stmt|;
+name|GdkScreen
+modifier|*
+name|screen
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|prog_name
@@ -176,10 +180,17 @@ name|gimp_install_cmap
 argument_list|()
 argument_list|)
 expr_stmt|;
+name|screen
+operator|=
+name|gdk_screen_get_default
+argument_list|()
+expr_stmt|;
 name|gtk_widget_set_default_colormap
 argument_list|(
-name|gdk_rgb_get_colormap
-argument_list|()
+name|gdk_screen_get_rgb_colormap
+argument_list|(
+name|screen
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Set the gamma after installing the colormap because    *  gtk_preview_set_gamma() initializes GdkRGB if not already done    */

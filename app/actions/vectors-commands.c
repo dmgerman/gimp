@@ -656,7 +656,7 @@ directive|ifdef
 name|__GNUC__
 warning|#
 directive|warning
-warning|FIXME: need vectors clipoard
+warning|FIXME: need vectors clipboard
 endif|#
 directive|endif
 block|}
@@ -691,7 +691,7 @@ directive|ifdef
 name|__GNUC__
 warning|#
 directive|warning
-warning|FIXME: need vectors clipoard
+warning|FIXME: need vectors clipboard
 endif|#
 directive|endif
 block|}
