@@ -4078,7 +4078,7 @@ literal|"Andy Thomas"
 argument_list|,
 literal|"1997"
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"<Image>/Filters/Render/Gfig..."
 argument_list|)
@@ -8403,7 +8403,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af72b820108
+DECL|struct|__anon2a02f8540108
 block|{
 DECL|member|color_string
 name|gchar
