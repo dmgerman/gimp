@@ -2335,6 +2335,13 @@ name|row
 decl_stmt|,
 name|col
 decl_stmt|;
+if|if
+condition|(
+name|index
+operator|<
+literal|0
+condition|)
+return|return;
 name|update_active_brush_field
 argument_list|(
 name|bsp
@@ -5181,6 +5188,13 @@ argument_list|,
 name|active
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|index
+operator|<
+literal|0
+condition|)
+return|return;
 name|row
 operator|=
 name|index

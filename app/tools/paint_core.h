@@ -28,6 +28,12 @@ directive|include
 file|"temp_buf.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpbrush.h"
+end_include
+
 begin_comment
 comment|/* the different states that the painting function can be called with  */
 end_comment
@@ -292,12 +298,12 @@ decl_stmt|,
 name|y2
 decl_stmt|;
 comment|/*  image space coords          */
-DECL|member|brush_mask
-name|MaskBuf
+DECL|member|brush
+name|GimpBrush
 modifier|*
-name|brush_mask
+name|brush
 decl_stmt|;
-comment|/*  mask for current brush      */
+comment|/*  current brush	        */
 DECL|member|paint_func
 name|PaintFunc
 name|paint_func

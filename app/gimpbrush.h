@@ -28,6 +28,12 @@ directive|include
 file|"temp_buf.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"vector2d.h"
+end_include
+
 begin_typedef
 DECL|typedef|GimpBrush
 DECL|typedef|GimpBrushP
@@ -67,6 +73,16 @@ name|int
 name|spacing
 decl_stmt|;
 comment|/*  brush's spacing                            */
+DECL|member|x_axis
+name|vector2d
+name|x_axis
+decl_stmt|;
+comment|/*  for calculating brush spacing              */
+DECL|member|y_axis
+name|vector2d
+name|y_axis
+decl_stmt|;
+comment|/*  for calculating brush spacing              */
 DECL|member|mask
 name|TempBuf
 modifier|*
