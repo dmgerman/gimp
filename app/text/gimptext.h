@@ -182,6 +182,10 @@ DECL|member|box_height
 name|gdouble
 name|box_height
 decl_stmt|;
+DECL|member|box_unit
+name|GimpUnit
+name|box_unit
+decl_stmt|;
 DECL|member|transformation
 name|GimpMatrix2
 name|transformation

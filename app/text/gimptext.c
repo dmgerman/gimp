@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27953ef00103
+DECL|enum|__anon2b31f4e00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -541,7 +541,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/*    *  We use the name "font-size-unit" for backward compatibility.    *  The unit is used for all lengths in the text object.    */
+comment|/*    *  We use the name "font-size-unit" for backward compatibility.    *  The unit is also used for other sizes in the text object.    */
 name|GIMP_CONFIG_INSTALL_PROP_UNIT
 argument_list|(
 name|object_class
@@ -837,6 +837,25 @@ argument_list|,
 name|GIMP_PARAM_DEFAULTS
 argument_list|)
 expr_stmt|;
+name|GIMP_CONFIG_INSTALL_PROP_UNIT
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_BOX_UNIT
+argument_list|,
+literal|"box-unit"
+argument_list|,
+name|NULL
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|GIMP_UNIT_PIXEL
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_MATRIX2
 argument_list|(
 name|object_class
@@ -891,26 +910,6 @@ argument_list|,
 literal|0.0
 argument_list|,
 name|GIMP_PARAM_DEFAULTS
-argument_list|)
-expr_stmt|;
-comment|/* "box-unit" existed for a while but was never used; ignore it */
-name|GIMP_CONFIG_INSTALL_PROP_UNIT
-argument_list|(
-name|object_class
-argument_list|,
-name|PROP_BOX_UNIT
-argument_list|,
-literal|"box-unit"
-argument_list|,
-name|NULL
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
-name|GIMP_UNIT_PIXEL
-argument_list|,
-name|GIMP_PARAM_IGNORE
 argument_list|)
 expr_stmt|;
 comment|/*  border does only exist to implement the old text API  */
@@ -1335,7 +1334,6 @@ break|break;
 case|case
 name|PROP_BOX_UNIT
 case|:
-comment|/* GIMP_PARAM_IGNORE */
 name|g_value_set_int
 argument_list|(
 name|value
@@ -1722,7 +1720,15 @@ break|break;
 case|case
 name|PROP_BOX_UNIT
 case|:
-comment|/* ignore */
+name|text
+operator|->
+name|box_unit
+operator|=
+name|g_value_get_int
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
 break|break;
 case|case
 name|PROP_TRANSFORMATION
