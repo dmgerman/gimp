@@ -153,7 +153,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_typedef
-DECL|struct|__anon27cd1e850108
+DECL|struct|__anon2b0e376d0108
 typedef|typedef
 struct|struct
 block|{
@@ -305,18 +305,17 @@ begin_comment
 comment|/******************************************************************************/
 end_comment
 
-begin_expr_stmt
+begin_macro
+DECL|function|MAIN ()
 name|MAIN
 argument_list|()
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_comment
 comment|/******************************************************************************/
 end_comment
 
 begin_function
-DECL|function|query (void)
 specifier|static
 name|void
 name|query

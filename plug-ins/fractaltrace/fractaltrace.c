@@ -196,18 +196,17 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_expr_stmt
+begin_macro
 name|MAIN
 argument_list|()
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_comment
 comment|/******************************************************************************/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c50ea900108
+DECL|struct|__anon2c0f6cd30108
 typedef|typedef
 struct|struct
 block|{
@@ -284,7 +283,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2c50ea900208
+DECL|struct|__anon2c0f6cd30208
 typedef|typedef
 struct|struct
 block|{
@@ -504,7 +503,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c50ea900308
+DECL|struct|__anon2c0f6cd30308
 typedef|typedef
 struct|struct
 block|{
@@ -547,7 +546,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c50ea900408
+DECL|struct|__anon2c0f6cd30408
 typedef|typedef
 struct|struct
 block|{
@@ -1097,7 +1096,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2c50ea900508
+DECL|struct|__anon2c0f6cd30508
 typedef|typedef
 struct|struct
 block|{
@@ -3622,7 +3621,7 @@ value|200
 end_define
 
 begin_typedef
-DECL|struct|__anon2c50ea900608
+DECL|struct|__anon2c0f6cd30608
 typedef|typedef
 struct|struct
 block|{

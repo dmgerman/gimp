@@ -433,7 +433,7 @@ value|(-4)
 end_define
 
 begin_struct
-DECL|struct|__anon2acea0b80108
+DECL|struct|__anon2acffab20108
 struct|struct
 block|{
 DECL|member|randomize
@@ -479,14 +479,13 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_expr_stmt
+begin_macro
+DECL|function|MAIN ()
 name|MAIN
 argument_list|()
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_function
-DECL|function|query ()
 specifier|static
 name|void
 name|query
@@ -3621,7 +3620,7 @@ name|button
 argument_list|)
 expr_stmt|;
 block|{
-DECL|struct|__anon2acea0b80208
+DECL|struct|__anon2acffab20208
 specifier|static
 struct|struct
 block|{

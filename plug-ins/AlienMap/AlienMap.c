@@ -48,10 +48,10 @@ comment|/***** Macros *****/
 end_comment
 
 begin_define
-DECL|macro|MIN (a,b)
+DECL|macro|ALIEN_MIN (a,b)
 define|#
 directive|define
-name|MIN
+name|ALIEN_MIN
 parameter_list|(
 name|a
 parameter_list|,
@@ -61,10 +61,10 @@ value|(((a)< (b)) ? (a) : (b))
 end_define
 
 begin_define
-DECL|macro|MAX (a,b)
+DECL|macro|ALIEN_MAX (a,b)
 define|#
 directive|define
-name|MAX
+name|ALIEN_MAX
 parameter_list|(
 name|a
 parameter_list|,
@@ -130,7 +130,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2991c1ec0108
+DECL|struct|__anon28b79f1a0108
 typedef|typedef
 struct|struct
 block|{
@@ -165,7 +165,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2991c1ec0208
+DECL|struct|__anon28b79f1a0208
 typedef|typedef
 struct|struct
 block|{
@@ -1535,7 +1535,7 @@ condition|)
 block|{
 name|pwidth
 operator|=
-name|MIN
+name|ALIEN_MIN
 argument_list|(
 name|sel_width
 argument_list|,
@@ -1555,7 +1555,7 @@ else|else
 block|{
 name|pheight
 operator|=
-name|MIN
+name|ALIEN_MIN
 argument_list|(
 name|sel_height
 argument_list|,
@@ -1574,7 +1574,7 @@ block|}
 comment|/* else */
 name|preview_width
 operator|=
-name|MAX
+name|ALIEN_MAX
 argument_list|(
 name|pwidth
 argument_list|,
@@ -1584,7 +1584,7 @@ expr_stmt|;
 comment|/* Min size is 2 */
 name|preview_height
 operator|=
-name|MAX
+name|ALIEN_MAX
 argument_list|(
 name|pheight
 argument_list|,
