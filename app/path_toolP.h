@@ -101,7 +101,7 @@ value|1000
 end_define
 
 begin_typedef
-DECL|enum|__anon2c2819d70103
+DECL|enum|__anon289ccf950103
 DECL|enumerator|SEGMENT_LINE
 DECL|enumerator|SEGMENT_BEZIER
 DECL|typedef|SegmentType
@@ -119,7 +119,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2c2819d70203
+DECL|enum|__anon289ccf950203
 DECL|enumerator|ON_ANCHOR
 DECL|enumerator|ON_HANDLE
 DECL|enumerator|ON_CURVE
@@ -362,7 +362,7 @@ name|PathSegment
 modifier|*
 name|single_active_segment
 decl_stmt|;
-comment|/* The only active segment */
+comment|/* The only active segment    */
 DECL|member|state
 name|gint
 name|state
@@ -397,9 +397,9 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|typedef|PathTraverseFunc
 typedef|typedef
 name|void
+DECL|typedef|PathTraverseFunc
 function_decl|(
 modifier|*
 name|PathTraverseFunc
@@ -417,9 +417,9 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|typedef|CurveTraverseFunc
 typedef|typedef
 name|void
+DECL|typedef|CurveTraverseFunc
 function_decl|(
 modifier|*
 name|CurveTraverseFunc
@@ -440,9 +440,9 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|typedef|SegmentTraverseFunc
 typedef|typedef
 name|void
+DECL|typedef|SegmentTraverseFunc
 function_decl|(
 modifier|*
 name|SegmentTraverseFunc

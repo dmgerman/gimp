@@ -173,7 +173,7 @@ block|}
 end_function
 
 begin_function
-name|gboolean
+name|gint
 DECL|function|path_bezier_on_handles (PathTool * path_tool,PathSegment * segment,gint x,gint y,gint halfwidth)
 name|path_bezier_on_handles
 parameter_list|(
@@ -203,7 +203,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|path_bezier_drag_handles (PathTool * path_tool,PathSegment * segment,gint x,gint y)
+DECL|function|path_bezier_drag_handles (PathTool * path_tool,PathSegment * segment,gint x,gint y,gint handle_id)
 name|path_bezier_drag_handles
 parameter_list|(
 name|PathTool
@@ -219,6 +219,9 @@ name|x
 parameter_list|,
 name|gint
 name|y
+parameter_list|,
+name|gint
+name|handle_id
 parameter_list|)
 block|{
 return|return;
@@ -271,6 +274,42 @@ begin_function
 name|void
 DECL|function|path_bezier_flip_segment (PathTool * path_tool,PathSegment * segment)
 name|path_bezier_flip_segment
+parameter_list|(
+name|PathTool
+modifier|*
+name|path_tool
+parameter_list|,
+name|PathSegment
+modifier|*
+name|segment
+parameter_list|)
+block|{
+return|return;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|path_bezier_init_segment (PathTool * path_tool,PathSegment * segment)
+name|path_bezier_init_segment
+parameter_list|(
+name|PathTool
+modifier|*
+name|path_tool
+parameter_list|,
+name|PathSegment
+modifier|*
+name|segment
+parameter_list|)
+block|{
+return|return;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|path_bezier_cleanup_segment (PathTool * path_tool,PathSegment * segment)
+name|path_bezier_cleanup_segment
 parameter_list|(
 name|PathTool
 modifier|*

@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  *   * This file Copyright 
 end_comment
 
 begin_comment
-comment|/*  * Complete new path-tool by Simon Budig<Simon.Budig@unix-ag.org>  *   * Currently vapor-ware.  *   * a path manipulation core independent of the underlying formula:  * implement bezier-curves, intelligent scissors-curves, splines...  *   * A Path is a collection of curves, which are constructed from  * segments between two anchors.  */
+comment|/*  * Complete new path-tool by Simon Budig<Simon.Budig@unix-ag.org>  *   * a path manipulation core independent of the underlying formula:  * implement bezier-curves, intelligent scissors-curves, splines...  *   * A Path is a collection of curves, which are constructed from  * segments between two anchors.  */
 end_comment
 
 begin_include
@@ -987,9 +987,9 @@ comment|/**************************************************************  * Helpe
 end_comment
 
 begin_function
-DECL|function|path_add_curve (Path * cur_path,gint x,gint y)
 name|PathCurve
 modifier|*
+DECL|function|path_add_curve (Path * cur_path,gint x,gint y)
 name|path_add_curve
 parameter_list|(
 name|Path
@@ -1133,9 +1133,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|path_append_segment (Path * cur_path,PathCurve * cur_curve,SegmentType type,gint x,gint y)
 name|PathSegment
 modifier|*
+DECL|function|path_append_segment (Path * cur_path,PathCurve * cur_curve,SegmentType type,gint x,gint y)
 name|path_append_segment
 parameter_list|(
 name|Path
@@ -1342,9 +1342,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|path_prepend_segment (Path * cur_path,PathCurve * cur_curve,SegmentType type,gint x,gint y)
 name|PathSegment
 modifier|*
+DECL|function|path_prepend_segment (Path * cur_path,PathCurve * cur_curve,SegmentType type,gint x,gint y)
 name|path_prepend_segment
 parameter_list|(
 name|Path
@@ -1533,9 +1533,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|path_split_segment (PathSegment * segment,gdouble position)
 name|PathSegment
 modifier|*
+DECL|function|path_split_segment (PathSegment * segment,gdouble position)
 name|path_split_segment
 parameter_list|(
 name|PathSegment
@@ -2824,9 +2824,6 @@ modifier|*
 name|positionP
 parameter_list|)
 block|{
-name|gint
-name|location
-decl_stmt|;
 name|gdouble
 name|pos
 decl_stmt|;
@@ -4106,10 +4103,6 @@ init|=
 name|path_tool
 operator|->
 name|cur_path
-decl_stmt|;
-name|PathCurve
-modifier|*
-name|cur_curve
 decl_stmt|;
 name|PathSegment
 modifier|*
@@ -5407,7 +5400,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon2924e2730108
+DECL|struct|__anon290b43fc0108
 typedef|typedef
 struct|struct
 block|{
@@ -5792,7 +5785,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon2924e2730208
+DECL|struct|__anon290b43fc0208
 typedef|typedef
 struct|struct
 block|{
@@ -6144,7 +6137,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon2924e2730308
+DECL|struct|__anon290b43fc0308
 typedef|typedef
 struct|struct
 block|{
@@ -6302,7 +6295,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon2924e2730408
+DECL|struct|__anon290b43fc0408
 typedef|typedef
 struct|struct
 block|{
@@ -6648,10 +6641,6 @@ name|gint
 name|x1
 decl_stmt|,
 name|y1
-decl_stmt|,
-name|x2
-decl_stmt|,
-name|y2
 decl_stmt|;
 name|gboolean
 name|draw
@@ -6893,10 +6882,6 @@ decl_stmt|;
 name|PathTool
 modifier|*
 name|path_tool
-decl_stmt|;
-name|PathCurve
-modifier|*
-name|cur_curve
 decl_stmt|;
 ifdef|#
 directive|ifdef
