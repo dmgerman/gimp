@@ -12,7 +12,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|<stdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<errno.h>
 end_include
 
 begin_include
@@ -25,12 +37,6 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpui.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<glib/gprintf.h>
 end_include
 
 begin_include
@@ -1479,9 +1485,14 @@ name|k
 operator|++
 control|)
 block|{
-name|g_sprintf
+name|g_snprintf
 argument_list|(
 name|label_text
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|label_text
+argument_list|)
 argument_list|,
 literal|"Light %d"
 argument_list|,
@@ -5670,14 +5681,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-specifier|const
-name|gchar
-modifier|*
-name|tmp
-init|=
-name|g_get_tmp_dir
-argument_list|()
-decl_stmt|;
 name|gtk_file_chooser_set_current_folder
 argument_list|(
 name|GTK_FILE_CHOOSER
@@ -5685,7 +5688,8 @@ argument_list|(
 name|window
 argument_list|)
 argument_list|,
-name|tmp
+name|g_get_tmp_dir
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -5766,14 +5770,12 @@ block|{
 name|gchar
 modifier|*
 name|filename
-decl_stmt|;
-name|filename
-operator|=
+init|=
 name|gtk_file_chooser_get_filename
 argument_list|(
 name|chooser
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|fp
 operator|=
 name|fopen
@@ -5788,13 +5790,23 @@ condition|(
 operator|!
 name|fp
 condition|)
+block|{
 name|g_message
 argument_list|(
-literal|"Cannot open file '%s' for saving"
+name|_
+argument_list|(
+literal|"Could not open '%s' for writing: %s"
+argument_list|)
 argument_list|,
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 else|else
 block|{
 for|for
@@ -5913,7 +5925,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|g_message
+name|g_warning
 argument_list|(
 literal|"Unknown light type: %d"
 argument_list|,
@@ -6267,14 +6279,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-specifier|const
-name|gchar
-modifier|*
-name|tmp
-init|=
-name|g_get_tmp_dir
-argument_list|()
-decl_stmt|;
 name|gtk_file_chooser_set_current_folder
 argument_list|(
 name|GTK_FILE_CHOOSER
@@ -6282,7 +6286,8 @@ argument_list|(
 name|window
 argument_list|)
 argument_list|,
-name|tmp
+name|g_get_tmp_dir
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -6366,14 +6371,12 @@ block|{
 name|gchar
 modifier|*
 name|filename
-decl_stmt|;
-name|filename
-operator|=
+init|=
 name|gtk_file_chooser_get_filename
 argument_list|(
 name|chooser
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|fp
 operator|=
 name|fopen
@@ -6388,13 +6391,23 @@ condition|(
 operator|!
 name|fp
 condition|)
+block|{
 name|g_message
 argument_list|(
-literal|"Cannot open file '%s' for reading"
+name|_
+argument_list|(
+literal|"Could not open '%s' for reading: %s"
+argument_list|)
 argument_list|,
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 else|else
 block|{
 name|fscanf
@@ -6492,7 +6505,7 @@ name|SPOT_LIGHT
 expr_stmt|;
 else|else
 block|{
-name|g_message
+name|g_warning
 argument_list|(
 literal|"Unknown light type: %s"
 argument_list|,
