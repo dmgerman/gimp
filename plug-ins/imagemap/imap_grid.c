@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"imap_popup.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"imap_preview.h"
 end_include
 
@@ -82,7 +76,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon2acb4f640103
+DECL|enum|__anon2c395a3d0103
 DECL|enumerator|GRID_HIDDEN
 DECL|enumerator|GRID_LINES
 DECL|enumerator|GRID_CROSSES
@@ -101,7 +95,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2acb4f640208
+DECL|struct|__anon2c395a3d0208
 typedef|typedef
 struct|struct
 block|{
@@ -352,16 +346,6 @@ block|{
 name|grid_snap
 operator|=
 name|new_snap
-expr_stmt|;
-name|main_toolbar_set_grid
-argument_list|(
-name|grid_snap
-argument_list|)
-expr_stmt|;
-name|popup_check_grid
-argument_list|(
-name|grid_snap
-argument_list|)
 expr_stmt|;
 name|menu_check_grid
 argument_list|(
