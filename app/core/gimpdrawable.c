@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a03a87f0103
+DECL|enum|__anon28f5e0460103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2599,6 +2599,13 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|src2PR
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|GIMP_DRAWABLE_GET_CLASS
 argument_list|(
 name|drawable
@@ -2669,6 +2676,20 @@ name|GIMP_IS_DRAWABLE
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|src2PR
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|maskPR
+operator|!=
+name|NULL
 argument_list|)
 expr_stmt|;
 name|GIMP_DRAWABLE_GET_CLASS
