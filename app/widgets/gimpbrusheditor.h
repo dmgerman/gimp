@@ -143,6 +143,11 @@ name|GtkAdjustment
 modifier|*
 name|aspect_ratio_data
 decl_stmt|;
+DECL|member|spacing_data
+name|GtkAdjustment
+modifier|*
+name|spacing_data
+decl_stmt|;
 block|}
 struct|;
 end_struct
