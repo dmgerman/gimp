@@ -170,7 +170,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac186e90103
+DECL|enum|__anon2c7877270103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -1302,13 +1302,16 @@ end_function
 begin_function
 name|GimpData
 modifier|*
-DECL|function|gimp_brush_new (const gchar * name)
+DECL|function|gimp_brush_new (const gchar * name,gboolean stingy_memory_use)
 name|gimp_brush_new
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|name
+parameter_list|,
+name|gboolean
+name|stingy_memory_use
 parameter_list|)
 block|{
 name|GimpBrush
@@ -1337,6 +1340,8 @@ argument_list|,
 literal|0.0
 argument_list|,
 literal|1.0
+argument_list|,
+name|stingy_memory_use
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1394,6 +1399,8 @@ argument_list|,
 literal|0.0
 argument_list|,
 literal|1.0
+argument_list|,
+name|FALSE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1429,13 +1436,16 @@ end_function
 begin_function
 name|GimpData
 modifier|*
-DECL|function|gimp_brush_load (const gchar * filename)
+DECL|function|gimp_brush_load (const gchar * filename,gboolean stingy_memory_use)
 name|gimp_brush_load
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|gboolean
+name|stingy_memory_use
 parameter_list|)
 block|{
 name|GimpBrush
@@ -1510,8 +1520,6 @@ expr_stmt|;
 comment|/*  Swap the brush to disk (if we're being stingy with memory) */
 if|if
 condition|(
-name|base_config
-operator|->
 name|stingy_memory_use
 condition|)
 block|{

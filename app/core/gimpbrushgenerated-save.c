@@ -156,6 +156,9 @@ parameter_list|(
 name|GimpData
 modifier|*
 name|data
+parameter_list|,
+name|gboolean
+name|stingy_memory_use
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -613,12 +616,15 @@ begin_function
 specifier|static
 name|GimpData
 modifier|*
-DECL|function|gimp_brush_generated_duplicate (GimpData * data)
+DECL|function|gimp_brush_generated_duplicate (GimpData * data,gboolean stingy_memory_use)
 name|gimp_brush_generated_duplicate
 parameter_list|(
 name|GimpData
 modifier|*
 name|data
+parameter_list|,
+name|gboolean
+name|stingy_memory_use
 parameter_list|)
 block|{
 name|GimpBrushGenerated
@@ -650,6 +656,8 @@ argument_list|,
 name|brush
 operator|->
 name|aspect_ratio
+argument_list|,
+name|stingy_memory_use
 argument_list|)
 return|;
 block|}
@@ -725,6 +733,31 @@ operator|)
 return|;
 block|}
 end_function
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|FIXME: extern GimpBaseConfig *base_config;
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_decl_stmt
+specifier|extern
+name|GimpBaseConfig
+modifier|*
+name|base_config
+decl_stmt|;
+end_decl_stmt
 
 begin_function
 specifier|static
@@ -1590,7 +1623,7 @@ end_function
 begin_function
 name|GimpData
 modifier|*
-DECL|function|gimp_brush_generated_new (gfloat radius,gfloat hardness,gfloat angle,gfloat aspect_ratio)
+DECL|function|gimp_brush_generated_new (gfloat radius,gfloat hardness,gfloat angle,gfloat aspect_ratio,gboolean stingy_memory_use)
 name|gimp_brush_generated_new
 parameter_list|(
 name|gfloat
@@ -1604,6 +1637,9 @@ name|angle
 parameter_list|,
 name|gfloat
 name|aspect_ratio
+parameter_list|,
+name|gboolean
+name|stingy_memory_use
 parameter_list|)
 block|{
 name|GimpBrushGenerated
@@ -1676,6 +1712,20 @@ name|brush
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|stingy_memory_use
+condition|)
+name|temp_buf_swap
+argument_list|(
+name|GIMP_BRUSH
+argument_list|(
+name|brush
+argument_list|)
+operator|->
+name|mask
+argument_list|)
+expr_stmt|;
 return|return
 name|GIMP_DATA
 argument_list|(
@@ -1688,13 +1738,16 @@ end_function
 begin_function
 name|GimpData
 modifier|*
-DECL|function|gimp_brush_generated_load (const gchar * filename)
+DECL|function|gimp_brush_generated_load (const gchar * filename,gboolean stingy_memory_use)
 name|gimp_brush_generated_load
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|gboolean
+name|stingy_memory_use
 parameter_list|)
 block|{
 name|GimpBrushGenerated
@@ -1986,8 +2039,6 @@ name|FALSE
 expr_stmt|;
 if|if
 condition|(
-name|base_config
-operator|->
 name|stingy_memory_use
 condition|)
 name|temp_buf_swap

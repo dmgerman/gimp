@@ -1274,13 +1274,16 @@ end_function
 begin_function
 name|GimpData
 modifier|*
-DECL|function|gimp_brush_pipe_load (const gchar * filename)
+DECL|function|gimp_brush_pipe_load (const gchar * filename,gboolean stingy_memory_use)
 name|gimp_brush_pipe_load
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|gboolean
+name|stingy_memory_use
 parameter_list|)
 block|{
 name|GimpBrushPipe

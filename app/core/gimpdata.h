@@ -177,6 +177,9 @@ parameter_list|(
 name|GimpData
 modifier|*
 name|data
+parameter_list|,
+name|gboolean
+name|stingy_memory_use
 parameter_list|)
 function_decl|;
 block|}
@@ -289,6 +292,9 @@ parameter_list|(
 name|GimpData
 modifier|*
 name|data
+parameter_list|,
+name|gboolean
+name|stingy_memory_use
 parameter_list|)
 function_decl|;
 end_function_decl

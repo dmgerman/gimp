@@ -96,7 +96,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b09d13f0103
+DECL|enum|__anon2c41472d0103
 block|{
 DECL|enumerator|PIPE_SELECT_CONSTANT
 name|PIPE_SELECT_CONSTANT
@@ -226,6 +226,9 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|gboolean
+name|stingy_memory_use
 parameter_list|)
 function_decl|;
 end_function_decl

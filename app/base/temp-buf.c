@@ -156,6 +156,31 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|FIXME: extern GimpBaseConfig *base_config;
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_decl_stmt
+specifier|extern
+name|GimpBaseConfig
+modifier|*
+name|base_config
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/*  Memory management  */
 end_comment
@@ -2502,10 +2527,13 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|generate_unique_filename (void)
+DECL|function|generate_unique_filename (const gchar * temp_path)
 name|generate_unique_filename
 parameter_list|(
-name|void
+specifier|const
+name|gchar
+modifier|*
+name|temp_path
 parameter_list|)
 block|{
 name|pid_t
@@ -2543,8 +2571,6 @@ name|path
 operator|=
 name|g_build_filename
 argument_list|(
-name|base_config
-operator|->
 name|temp_path
 argument_list|,
 name|swapfile
@@ -2636,7 +2662,11 @@ comment|/*  Get a unique filename for caching the data to a UNIX file  */
 name|filename
 operator|=
 name|generate_unique_filename
-argument_list|()
+argument_list|(
+name|base_config
+operator|->
+name|temp_path
+argument_list|)
 expr_stmt|;
 comment|/*  Check if generated filename is valid  */
 if|if

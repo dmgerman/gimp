@@ -241,6 +241,9 @@ parameter_list|(
 name|GimpData
 modifier|*
 name|data
+parameter_list|,
+name|gboolean
+name|stingy_memory_use
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -764,12 +767,15 @@ begin_function
 specifier|static
 name|GimpData
 modifier|*
-DECL|function|gimp_pattern_duplicate (GimpData * data)
+DECL|function|gimp_pattern_duplicate (GimpData * data,gboolean stingy_memory_use)
 name|gimp_pattern_duplicate
 parameter_list|(
 name|GimpData
 modifier|*
 name|data
+parameter_list|,
+name|gboolean
+name|stingy_memory_use
 parameter_list|)
 block|{
 name|GimpPattern
@@ -807,8 +813,6 @@ expr_stmt|;
 comment|/*  Swap the pattern to disk (if we're being stingy with memory) */
 if|if
 condition|(
-name|base_config
-operator|->
 name|stingy_memory_use
 condition|)
 name|temp_buf_swap
@@ -830,13 +834,16 @@ end_function
 begin_function
 name|GimpData
 modifier|*
-DECL|function|gimp_pattern_new (const gchar * name)
+DECL|function|gimp_pattern_new (const gchar * name,gboolean stingy_memory_use)
 name|gimp_pattern_new
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|name
+parameter_list|,
+name|gboolean
+name|stingy_memory_use
 parameter_list|)
 block|{
 name|GimpPattern
@@ -977,8 +984,6 @@ block|}
 comment|/*  Swap the pattern to disk (if we're being stingy with memory) */
 if|if
 condition|(
-name|base_config
-operator|->
 name|stingy_memory_use
 condition|)
 name|temp_buf_swap
@@ -1163,13 +1168,16 @@ end_function
 begin_function
 name|GimpData
 modifier|*
-DECL|function|gimp_pattern_load (const gchar * filename)
+DECL|function|gimp_pattern_load (const gchar * filename,gboolean stingy_memory_use)
 name|gimp_pattern_load
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|gboolean
+name|stingy_memory_use
 parameter_list|)
 block|{
 name|GimpPattern
@@ -1624,8 +1632,6 @@ expr_stmt|;
 comment|/*  Swap the pattern to disk (if we're being stingy with memory) */
 if|if
 condition|(
-name|base_config
-operator|->
 name|stingy_memory_use
 condition|)
 name|temp_buf_swap

@@ -135,12 +135,6 @@ directive|include
 file|"tile-swap.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"appenv.h"
-end_include
-
 begin_decl_stmt
 DECL|variable|base_config
 name|GimpBaseConfig
@@ -156,7 +150,9 @@ specifier|static
 name|void
 name|base_toast_old_temp_files
 parameter_list|(
-name|void
+name|GimpBaseConfig
+modifier|*
+name|config
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -186,12 +182,15 @@ end_comment
 
 begin_function
 name|void
-DECL|function|base_init (GimpBaseConfig * config)
+DECL|function|base_init (GimpBaseConfig * config,gboolean use_mmx)
 name|base_init
 parameter_list|(
 name|GimpBaseConfig
 modifier|*
 name|config
+parameter_list|,
+name|gboolean
+name|use_mmx
 parameter_list|)
 block|{
 name|gchar
@@ -286,13 +285,15 @@ name|NULL
 argument_list|)
 expr_stmt|;
 name|base_toast_old_temp_files
-argument_list|()
+argument_list|(
+name|config
+argument_list|)
 expr_stmt|;
 comment|/* Add the swap file */
 if|if
 condition|(
 operator|!
-name|base_config
+name|config
 operator|->
 name|swap_path
 condition|)
@@ -300,7 +301,7 @@ name|g_object_set
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|base_config
+name|config
 argument_list|)
 argument_list|,
 literal|"swap_path"
@@ -327,7 +328,7 @@ name|path
 operator|=
 name|g_build_filename
 argument_list|(
-name|base_config
+name|config
 operator|->
 name|swap_path
 argument_list|,
@@ -407,10 +408,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|base_toast_old_temp_files (void)
+DECL|function|base_toast_old_temp_files (GimpBaseConfig * config)
 name|base_toast_old_temp_files
 parameter_list|(
-name|void
+name|GimpBaseConfig
+modifier|*
+name|config
 parameter_list|)
 block|{
 name|GDir
@@ -426,7 +429,7 @@ name|entry
 decl_stmt|;
 if|if
 condition|(
-name|base_config
+name|config
 operator|->
 name|swap_path
 condition|)
@@ -434,7 +437,7 @@ name|dir
 operator|=
 name|g_dir_open
 argument_list|(
-name|base_config
+name|config
 operator|->
 name|swap_path
 argument_list|,
@@ -510,7 +513,7 @@ name|filename
 operator|=
 name|g_build_filename
 argument_list|(
-name|base_config
+name|config
 operator|->
 name|swap_path
 argument_list|,

@@ -518,6 +518,8 @@ argument_list|(
 name|gimp_palette_new
 argument_list|(
 name|palette_name
+argument_list|,
+name|FALSE
 argument_list|)
 argument_list|)
 expr_stmt|;

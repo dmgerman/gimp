@@ -121,18 +121,6 @@ value|1
 end_define
 
 begin_comment
-comment|/* global config variable (temporary) */
-end_comment
-
-begin_decl_stmt
-DECL|variable|base_config
-name|GimpBaseConfig
-modifier|*
-name|base_config
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
 comment|/* types */
 end_comment
 

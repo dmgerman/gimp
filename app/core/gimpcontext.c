@@ -1264,7 +1264,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a43bba80103
+DECL|enum|__anon299dbcb20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1316,7 +1316,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a43bba80203
+DECL|enum|__anon299dbcb20203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -8531,6 +8531,21 @@ operator|->
 name|brush
 condition|)
 block|{
+name|GimpBaseConfig
+modifier|*
+name|base_config
+decl_stmt|;
+name|base_config
+operator|=
+name|GIMP_BASE_CONFIG
+argument_list|(
+name|context
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+expr_stmt|;
 comment|/*  make sure the active brush is swapped before we get a new one...  */
 if|if
 condition|(
@@ -8602,6 +8617,21 @@ condition|(
 name|brush
 condition|)
 block|{
+name|GimpBaseConfig
+modifier|*
+name|base_config
+decl_stmt|;
+name|base_config
+operator|=
+name|GIMP_BASE_CONFIG
+argument_list|(
+name|context
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+expr_stmt|;
 name|g_object_ref
 argument_list|(
 name|G_OBJECT
@@ -9156,6 +9186,10 @@ modifier|*
 name|pattern
 parameter_list|)
 block|{
+name|GimpBaseConfig
+modifier|*
+name|base_config
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -9203,6 +9237,17 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+name|base_config
+operator|=
+name|GIMP_BASE_CONFIG
+argument_list|(
+name|context
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+expr_stmt|;
 comment|/*  make sure the active pattern is swapped before we get a new one...  */
 if|if
 condition|(
@@ -9284,6 +9329,21 @@ condition|(
 name|pattern
 condition|)
 block|{
+name|GimpBaseConfig
+modifier|*
+name|base_config
+decl_stmt|;
+name|base_config
+operator|=
+name|GIMP_BASE_CONFIG
+argument_list|(
+name|context
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+expr_stmt|;
 name|g_object_ref
 argument_list|(
 name|G_OBJECT

@@ -208,6 +208,9 @@ parameter_list|(
 name|GimpData
 modifier|*
 name|data
+parameter_list|,
+name|gboolean
+name|stingy_memory_use
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1051,12 +1054,15 @@ begin_function
 specifier|static
 name|GimpData
 modifier|*
-DECL|function|gimp_gradient_duplicate (GimpData * data)
+DECL|function|gimp_gradient_duplicate (GimpData * data,gboolean stingy_memory_use)
 name|gimp_gradient_duplicate
 parameter_list|(
 name|GimpData
 modifier|*
 name|data
+parameter_list|,
+name|gboolean
+name|stingy_memory_use
 parameter_list|)
 block|{
 name|GimpGradient
@@ -1187,13 +1193,16 @@ end_function
 begin_function
 name|GimpData
 modifier|*
-DECL|function|gimp_gradient_new (const gchar * name)
+DECL|function|gimp_gradient_new (const gchar * name,gboolean stingy_memory_use)
 name|gimp_gradient_new
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|name
+parameter_list|,
+name|gboolean
+name|stingy_memory_use
 parameter_list|)
 block|{
 name|GimpGradient
@@ -1276,6 +1285,8 @@ argument_list|(
 name|gimp_gradient_new
 argument_list|(
 literal|"Standard"
+argument_list|,
+name|FALSE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1300,13 +1311,16 @@ end_function
 begin_function
 name|GimpData
 modifier|*
-DECL|function|gimp_gradient_load (const gchar * filename)
+DECL|function|gimp_gradient_load (const gchar * filename,gboolean stingy_memory_use)
 name|gimp_gradient_load
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|gboolean
+name|stingy_memory_use
 parameter_list|)
 block|{
 name|GimpGradient

@@ -36,6 +36,9 @@ specifier|const
 name|gchar
 modifier|*
 name|name
+parameter_list|,
+name|gboolean
+name|stingy_memory_use
 parameter_list|)
 function_decl|;
 end_typedef
@@ -54,6 +57,9 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|gboolean
+name|stingy_memory_use
 parameter_list|)
 function_decl|;
 end_typedef
@@ -182,6 +188,11 @@ DECL|member|parent_instance
 name|GimpObject
 name|parent_instance
 decl_stmt|;
+DECL|member|gimp
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
 DECL|member|container
 name|GimpContainer
 modifier|*
@@ -244,6 +255,10 @@ name|GimpDataFactory
 modifier|*
 name|gimp_data_factory_new
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GType
 name|data_type
 parameter_list|,

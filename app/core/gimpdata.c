@@ -82,7 +82,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bad4cd90103
+DECL|enum|__anon29e8b2900103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -456,11 +456,13 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_POINTER__VOID
+name|gimp_marshal_OBJECT__BOOLEAN
 argument_list|,
-name|G_TYPE_POINTER
+name|GIMP_TYPE_DATA
 argument_list|,
-literal|0
+literal|1
+argument_list|,
+name|G_TYPE_BOOLEAN
 argument_list|)
 expr_stmt|;
 name|object_class
@@ -1347,12 +1349,15 @@ end_function
 begin_function
 name|GimpData
 modifier|*
-DECL|function|gimp_data_duplicate (GimpData * data)
+DECL|function|gimp_data_duplicate (GimpData * data,gboolean stingy_memory_use)
 name|gimp_data_duplicate
 parameter_list|(
 name|GimpData
 modifier|*
 name|data
+parameter_list|,
+name|gboolean
+name|stingy_memory_use
 parameter_list|)
 block|{
 name|GimpData
@@ -1374,6 +1379,8 @@ name|DUPLICATE
 index|]
 argument_list|,
 literal|0
+argument_list|,
+name|stingy_memory_use
 argument_list|,
 operator|&
 name|new_data

@@ -2446,6 +2446,8 @@ name|brush_factory
 operator|=
 name|gimp_data_factory_new
 argument_list|(
+name|gimp
+argument_list|,
 name|GIMP_TYPE_BRUSH
 argument_list|,
 operator|(
@@ -2491,6 +2493,8 @@ name|pattern_factory
 operator|=
 name|gimp_data_factory_new
 argument_list|(
+name|gimp
+argument_list|,
 name|GIMP_TYPE_PATTERN
 argument_list|,
 operator|(
@@ -2536,6 +2540,8 @@ name|gradient_factory
 operator|=
 name|gimp_data_factory_new
 argument_list|(
+name|gimp
+argument_list|,
 name|GIMP_TYPE_GRADIENT
 argument_list|,
 operator|(
@@ -2581,6 +2587,8 @@ name|palette_factory
 operator|=
 name|gimp_data_factory_new
 argument_list|(
+name|gimp
+argument_list|,
 name|GIMP_TYPE_PALETTE
 argument_list|,
 operator|(

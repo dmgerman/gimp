@@ -413,6 +413,8 @@ name|GIMP_BASE_CONFIG
 argument_list|(
 name|gimprc
 argument_list|)
+argument_list|,
+name|use_mmx
 argument_list|)
 expr_stmt|;
 name|gimp_set_config
