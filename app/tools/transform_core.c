@@ -1196,6 +1196,18 @@ name|original
 operator|=
 name|NULL
 expr_stmt|;
+comment|/* Make a note of the new current drawable (since we may have 	     a floating selection, etc now. */
+name|tool
+operator|->
+name|drawable
+operator|=
+name|gimage_active_drawable
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+expr_stmt|;
 name|undo_push_transform
 argument_list|(
 name|gdisp

@@ -2004,6 +2004,13 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
+else|else
+name|active_tool
+operator|->
+name|drawable
+operator|=
+name|NULL
+expr_stmt|;
 name|active_tool
 operator|->
 name|gdisp_ptr
