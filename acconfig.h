@@ -111,6 +111,12 @@ end_undef
 begin_undef
 undef|#
 directive|undef
+name|HAVE_VSNPRINTF
+end_undef
+
+begin_undef
+undef|#
+directive|undef
 name|HAVE_XSHM_H
 end_undef
 
