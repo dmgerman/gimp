@@ -34,22 +34,15 @@ directive|endif
 end_endif
 
 begin_function_decl
-name|gboolean
+name|void
 name|app_libs_init
 parameter_list|(
+name|GOptionContext
+modifier|*
+name|context
+parameter_list|,
 name|gboolean
-modifier|*
 name|no_interface
-parameter_list|,
-name|gint
-modifier|*
-name|gimp_argc
-parameter_list|,
-name|gchar
-modifier|*
-modifier|*
-modifier|*
-name|gimp_argv
 parameter_list|)
 function_decl|;
 end_function_decl
