@@ -49,14 +49,6 @@ value|"imap_dimension"
 end_define
 
 begin_define
-DECL|macro|IMAP_STOCK_GRID
-define|#
-directive|define
-name|IMAP_STOCK_GRID
-value|"imap_grid"
-end_define
-
-begin_define
 DECL|macro|IMAP_STOCK_JAVA
 define|#
 directive|define

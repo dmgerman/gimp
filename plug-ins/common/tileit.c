@@ -28,12 +28,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<signal.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -143,7 +137,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9b6c4f0108
+DECL|struct|__anon296a3b180108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -548,7 +542,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a9b6c4f0203
+DECL|enum|__anon296a3b180203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -567,7 +561,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9b6c4f0308
+DECL|struct|__anon296a3b180308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -637,7 +631,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9b6c4f0408
+DECL|struct|__anon296a3b180408
 block|{
 DECL|member|htoggle
 name|GtkWidget

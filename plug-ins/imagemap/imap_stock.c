@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"grid.xpm"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"java.xpm"
 end_include
 
@@ -113,21 +107,6 @@ block|,
 name|N_
 argument_list|(
 literal|"Edit Map Info..."
-argument_list|)
-block|,
-literal|0
-block|,
-literal|0
-block|,
-literal|"imap"
-block|}
-block|,
-block|{
-name|IMAP_STOCK_GRID
-block|,
-name|N_
-argument_list|(
-literal|"Grid"
 argument_list|)
 block|,
 literal|0
@@ -279,21 +258,6 @@ operator|*
 operator|*
 operator|)
 name|dimension_xpm
-argument_list|)
-expr_stmt|;
-name|add_stock_icon
-argument_list|(
-name|factory
-argument_list|,
-name|IMAP_STOCK_GRID
-argument_list|,
-operator|(
-specifier|const
-name|char
-operator|*
-operator|*
-operator|)
-name|grid_xpm
 argument_list|)
 expr_stmt|;
 name|add_stock_icon
