@@ -4315,7 +4315,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon28b384350108
+DECL|struct|__anon2761378e0108
 typedef|typedef
 struct|struct
 block|{
@@ -13980,32 +13980,11 @@ operator|->
 name|mode_option_menu
 argument_list|)
 argument_list|,
-comment|/*  Kludge to deal with the absence of behind */
-operator|(
-operator|(
 name|layer_widget
 operator|->
 name|layer
 operator|->
 name|mode
-operator|>
-name|BEHIND_MODE
-operator|)
-condition|?
-name|layer_widget
-operator|->
-name|layer
-operator|->
-name|mode
-operator|-
-literal|1
-else|:
-name|layer_widget
-operator|->
-name|layer
-operator|->
-name|mode
-operator|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_state

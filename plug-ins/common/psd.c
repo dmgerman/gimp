@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * PSD Plugin version 1.9.9.9e (BETA)  * This GIMP plug-in is designed to load Adobe Photoshop(tm) files (.PSD)  *  * Adam D. Moss<adam@gimp.org><adam@foxbox.org>  *  *     If this plug-in fails to load a file which you think it should,  *     please tell me what seemed to go wrong, and anything you know  *     about the image you tried to load.  Please don't send big PSD  *     files to me without asking first.  *  *          Copyright (C) 1997-98 Adam D. Moss  *          Copyright (C) 1996    Torsten Martinsen  * Portions Copyright (C) 1995    Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  */
+comment|/*  * PSD Plugin version 1.9.9.9f (BETA)  * This GIMP plug-in is designed to load Adobe Photoshop(tm) files (.PSD)  *  * Adam D. Moss<adam@gimp.org><adam@foxbox.org>  *  *     If this plug-in fails to load a file which you think it should,  *     please tell me what seemed to go wrong, and anything you know  *     about the image you tried to load.  Please don't send big PSD  *     files to me without asking first.  *  *          Copyright (C) 1997-98 Adam D. Moss  *          Copyright (C) 1996    Torsten Martinsen  * Portions Copyright (C) 1995    Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  */
 end_comment
 
 begin_comment
@@ -8,7 +8,7 @@ comment|/*  * Adobe and Adobe Photoshop are trademarks of Adobe Systems  * Incor
 end_comment
 
 begin_comment
-comment|/*  * Revision history:  *  *  98.07.31 / v1.9.9.9e / Adam D. Moss  *       Worked around some buggy PSD savers (suspect PS4 on Mac) - ugh.  *       Fixed a bug when loading layer masks of certain dimensions.  *  *  98.05.04 / v1.9.9.9b / Adam D. Moss  *       Changed the Pascal-style string-reading stuff.  That fixed  *       some file-padding problems.  Made all debugging output  *       compile-time optional (please leave it enabled for now).  *       Reduced memory requirements; still much room for improvement.  *  *  98.04.28 / v1.9.9.9 / Adam D. Moss  *       Fixed the correct channel interlacing of 'raw' flat images.  *       Thanks to Christian Kirsch and Jay Cox for spotting this.  *       Changed some of the I/O routines.  *  *  98.04.26 / v1.9.9.8 / Adam D. Moss  *       Implemented Aux-channels for layered files.  Got rid  *       of<endian.h> nonsense.  Improved Layer Mask padding.  *       Enforced num_layers/num_channels limit checks.  *  *  98.04.23 / v1.9.9.5 / Adam D. Moss  *       Got Layer Masks working, got Aux-channels working  *       for unlayered files, fixed 'raw' channel loading, fixed  *       some other mini-bugs, slightly better progress meters.  *       Thanks to everyone who is helping with the testing!  *  *  98.04.21 / v1.9.9.1 / Adam D. Moss  *       A little cleanup.  Implemented Layer Masks but disabled  *       them again - PS masks can be a different size to their  *       owning layer, unlike those in GIMP.  *  *  98.04.19 / v1.9.9.0 / Adam D. Moss  *       Much happier now.  *  *  97.03.13 / v1.9.0 / Adam D. Moss  *       Layers, channels and masks, oh my.  *       + Bugfixes& rearchitecturing.  *  *  97.01.30 / v1.0.12 / Torsten Martinsen  *       Flat PSD image loading.  */
+comment|/*  * Revision history:  *  *  98.07.31 / v1.9.9.9f / Adam D. Moss  *       Use OVERLAY_MODE if available.  *  *  98.07.31 / v1.9.9.9e / Adam D. Moss  *       Worked around some buggy PSD savers (suspect PS4 on Mac) - ugh.  *       Fixed a bug when loading layer masks of certain dimensions.  *  *  98.05.04 / v1.9.9.9b / Adam D. Moss  *       Changed the Pascal-style string-reading stuff.  That fixed  *       some file-padding problems.  Made all debugging output  *       compile-time optional (please leave it enabled for now).  *       Reduced memory requirements; still much room for improvement.  *  *  98.04.28 / v1.9.9.9 / Adam D. Moss  *       Fixed the correct channel interlacing of 'raw' flat images.  *       Thanks to Christian Kirsch and Jay Cox for spotting this.  *       Changed some of the I/O routines.  *  *  98.04.26 / v1.9.9.8 / Adam D. Moss  *       Implemented Aux-channels for layered files.  Got rid  *       of<endian.h> nonsense.  Improved Layer Mask padding.  *       Enforced num_layers/num_channels limit checks.  *  *  98.04.23 / v1.9.9.5 / Adam D. Moss  *       Got Layer Masks working, got Aux-channels working  *       for unlayered files, fixed 'raw' channel loading, fixed  *       some other mini-bugs, slightly better progress meters.  *       Thanks to everyone who is helping with the testing!  *  *  98.04.21 / v1.9.9.1 / Adam D. Moss  *       A little cleanup.  Implemented Layer Masks but disabled  *       them again - PS masks can be a different size to their  *       owning layer, unlike those in GIMP.  *  *  98.04.19 / v1.9.9.0 / Adam D. Moss  *       Much happier now.  *  *  97.03.13 / v1.9.0 / Adam D. Moss  *       Layers, channels and masks, oh my.  *       + Bugfixes& rearchitecturing.  *  *  97.01.30 / v1.0.12 / Torsten Martinsen  *       Flat PSD image loading.  */
 end_comment
 
 begin_comment
@@ -114,7 +114,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296ed99f0103
+DECL|enum|__anon2b29efa80103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -433,7 +433,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon296ed99f0208
+DECL|struct|__anon2b29efa80208
 specifier|static
 struct|struct
 block|{
@@ -1491,10 +1491,107 @@ operator|(
 name|VALUE_MODE
 operator|)
 return|;
-comment|/* ? */
+if|#
+directive|if
+operator|(
+name|GIMP_MAJOR_VERSION
+operator|>
+literal|0
+operator|)
+operator|&&
+operator|(
+name|GIMP_MINOR_VERSION
+operator|>
+literal|0
+operator|)
+if|if
+condition|(
+name|strncmp
+argument_list|(
+name|modekey
+argument_list|,
+literal|"over"
+argument_list|,
+literal|4
+argument_list|)
+operator|==
+literal|0
+condition|)
+return|return
+operator|(
+name|OVERLAY_MODE
+operator|)
+return|;
 name|printf
 argument_list|(
-literal|"PSD: Warning - unsupported layer-blend mode '%c%c%c%c', using 'addition' mode\n"
+literal|"PSD: Warning - unsupported layer-blend mode '%c%c%c%c', using "
+literal|"'overlay' mode\n"
+argument_list|,
+name|modekey
+index|[
+literal|0
+index|]
+argument_list|,
+name|modekey
+index|[
+literal|1
+index|]
+argument_list|,
+name|modekey
+index|[
+literal|2
+index|]
+argument_list|,
+name|modekey
+index|[
+literal|3
+index|]
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|strncmp
+argument_list|(
+name|modekey
+argument_list|,
+literal|"hLit"
+argument_list|,
+literal|4
+argument_list|)
+operator|==
+literal|0
+condition|)
+return|return
+operator|(
+comment|/**/
+name|OVERLAY_MODE
+operator|)
+return|;
+if|if
+condition|(
+name|strncmp
+argument_list|(
+name|modekey
+argument_list|,
+literal|"sLit"
+argument_list|,
+literal|4
+argument_list|)
+operator|==
+literal|0
+condition|)
+return|return
+operator|(
+comment|/**/
+name|OVERLAY_MODE
+operator|)
+return|;
+else|#
+directive|else
+name|printf
+argument_list|(
+literal|"PSD: Warning - unsupported layer-blend mode '%c%c%c%c', using "
+literal|"'addition' mode\n"
 argument_list|,
 name|modekey
 index|[
@@ -1574,6 +1671,8 @@ comment|/**/
 name|ADDITION_MODE
 operator|)
 return|;
+endif|#
+directive|endif
 name|printf
 argument_list|(
 literal|"PSD: Warning - UNKNOWN layer-blend mode, reverting to 'normal'\n"
@@ -4310,7 +4409,7 @@ name|gint
 name|blockread
 decl_stmt|;
 comment|/* we throw this away because in theory we can trust the 		   data to unpack to the right length... hmm... */
-name|dumpchunk
+name|throwchunk
 argument_list|(
 name|height
 operator|*
@@ -4337,19 +4436,7 @@ operator|*
 name|offset
 operator|)
 expr_stmt|;
-name|IFDBG
-block|{
-name|printf
-argument_list|(
-literal|"\nHere comes the guitar solo...\n"
-argument_list|)
-expr_stmt|;
-name|fflush
-argument_list|(
-name|stdout
-argument_list|)
-expr_stmt|;
-block|}
+comment|/*IFDBG {printf("\nHere comes the guitar solo...\n"); 		fflush(stdout);}*/
 for|for
 control|(
 name|linei
