@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-undo-push.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplayer.h"
 end_include
 
@@ -71,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3290330103
+DECL|enum|__anon29481ef30103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED

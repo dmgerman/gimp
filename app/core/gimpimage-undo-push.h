@@ -434,6 +434,9 @@ name|gchar
 modifier|*
 name|undo_desc
 parameter_list|,
+name|GimpUndoType
+name|undo_type
+parameter_list|,
 name|GimpLayer
 modifier|*
 name|layer
