@@ -562,7 +562,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -781,7 +781,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -996,7 +996,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1211,7 +1211,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1665,7 +1665,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -2110,7 +2110,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -2316,7 +2316,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -2736,7 +2736,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -3001,7 +3001,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -3243,7 +3243,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -3486,7 +3486,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -3751,7 +3751,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -3995,7 +3995,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1999"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -4360,7 +4360,7 @@ literal|"Joao S. O. Bueno"
 block|,
 literal|"2003"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -4603,7 +4603,7 @@ literal|"Sven Neumann"
 block|,
 literal|"2003"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,

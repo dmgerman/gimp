@@ -368,7 +368,7 @@ literal|"Michael Natterer"
 block|,
 literal|"2004"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -725,7 +725,7 @@ literal|"Michael Natterer"
 block|,
 literal|"2004"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,

@@ -763,7 +763,7 @@ literal|"Shlomi Fish"
 block|,
 literal|"2003"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1025,7 +1025,7 @@ literal|"Shlomi Fish"
 block|,
 literal|"2003"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1318,7 +1318,7 @@ literal|"Shlomi Fish"
 block|,
 literal|"2003"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1550,7 +1550,7 @@ literal|"Shlomi Fish"
 block|,
 literal|"2003"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1955,7 +1955,7 @@ literal|"Federico Mena Quintero"
 block|,
 literal|"1997"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -2371,7 +2371,7 @@ literal|"Federico Mena Quintero"
 block|,
 literal|"1997"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -2698,7 +2698,7 @@ literal|"Shlomi Fish"
 block|,
 literal|"2003"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -3012,7 +3012,7 @@ literal|"Shlomi Fish"
 block|,
 literal|"2003"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -3339,7 +3339,7 @@ literal|"Shlomi Fish"
 block|,
 literal|"2003"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -3653,7 +3653,7 @@ literal|"Shlomi Fish"
 block|,
 literal|"2003"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -3947,7 +3947,7 @@ literal|"Shlomi Fish"
 block|,
 literal|"2003"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -4279,7 +4279,7 @@ literal|"Shlomi Fish"
 block|,
 literal|"2003"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -4573,7 +4573,7 @@ literal|"Shlomi Fish"
 block|,
 literal|"2003"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -4905,7 +4905,7 @@ literal|"Shlomi Fish"
 block|,
 literal|"2003"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -5199,7 +5199,7 @@ literal|"Shlomi Fish"
 block|,
 literal|"2003"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -5531,7 +5531,7 @@ literal|"Shlomi Fish"
 block|,
 literal|"2003"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -5825,7 +5825,7 @@ literal|"Shlomi Fish"
 block|,
 literal|"2003"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -6119,7 +6119,7 @@ literal|"Shlomi Fish"
 block|,
 literal|"2003"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -6477,7 +6477,7 @@ literal|"Shlomi Fish"
 block|,
 literal|"2003"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -6835,7 +6835,7 @@ literal|"Shlomi Fish"
 block|,
 literal|"2003"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -7159,7 +7159,7 @@ literal|"Shlomi Fish"
 block|,
 literal|"2003"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -7521,7 +7521,7 @@ literal|"Shlomi Fish"
 block|,
 literal|"2003"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -7845,7 +7845,7 @@ literal|"Shlomi Fish"
 block|,
 literal|"2003"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -8207,7 +8207,7 @@ literal|"Shlomi Fish"
 block|,
 literal|"2003"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -8531,7 +8531,7 @@ literal|"Shlomi Fish"
 block|,
 literal|"2003"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -8851,7 +8851,7 @@ literal|"Shlomi Fish"
 block|,
 literal|"2003"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -9185,7 +9185,7 @@ literal|"Shlomi Fish"
 block|,
 literal|"2003"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -9519,7 +9519,7 @@ literal|"Shlomi Fish"
 block|,
 literal|"2003"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -9955,7 +9955,7 @@ literal|"Shlomi Fish"
 block|,
 literal|"2003"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,

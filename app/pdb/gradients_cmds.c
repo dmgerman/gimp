@@ -237,7 +237,7 @@ literal|"Michael Natterer"
 block|,
 literal|"2002"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -468,7 +468,7 @@ literal|"Federico Mena Quintero"
 block|,
 literal|"1997"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -807,7 +807,7 @@ literal|""
 block|,
 literal|""
 block|,
-name|TRUE
+literal|"gimp_gradient_get_uniform_samples"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1154,7 +1154,7 @@ literal|""
 block|,
 literal|""
 block|,
-name|TRUE
+literal|"gimp_gradient_get_custom_samples"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1614,7 +1614,7 @@ literal|""
 block|,
 literal|""
 block|,
-name|TRUE
+literal|"gimp_gradient_get_uniform_samples"
 block|,
 name|GIMP_INTERNAL
 block|,

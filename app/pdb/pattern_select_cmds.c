@@ -363,7 +363,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1998"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -541,7 +541,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1998"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -771,7 +771,7 @@ literal|"Andy Thomas"
 block|,
 literal|"1998"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,

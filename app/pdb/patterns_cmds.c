@@ -227,7 +227,7 @@ literal|"Michael Natterer"
 block|,
 literal|"2002"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -458,7 +458,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -654,7 +654,7 @@ literal|""
 block|,
 literal|""
 block|,
-name|TRUE
+literal|"gimp_context_get_pattern"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1047,17 +1047,17 @@ init|=
 block|{
 literal|"gimp_patterns_get_pattern_data"
 block|,
-literal|"This procedure is deprecated! Use 'gimp_pattern_get_data' instead."
+literal|"This procedure is deprecated! Use 'gimp_pattern_get_pixels' instead."
 block|,
-literal|"This procedure is deprecated! Use 'gimp_pattern_get_data' instead."
-block|,
-literal|""
+literal|"This procedure is deprecated! Use 'gimp_pattern_get_pixels' instead."
 block|,
 literal|""
 block|,
 literal|""
 block|,
-name|TRUE
+literal|""
+block|,
+literal|"gimp_pattern_get_pixels"
 block|,
 name|GIMP_INTERNAL
 block|,

@@ -227,7 +227,7 @@ literal|"Adrian Likins"
 block|,
 literal|"1998"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -458,7 +458,7 @@ literal|"Nathan Summers"
 block|,
 literal|"2001"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -629,7 +629,7 @@ literal|""
 block|,
 literal|""
 block|,
-name|TRUE
+literal|"gimp_context_get_palette"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -991,7 +991,7 @@ literal|""
 block|,
 literal|""
 block|,
-name|TRUE
+literal|"gimp_palette_entry_get_color"
 block|,
 name|GIMP_INTERNAL
 block|,

@@ -259,7 +259,7 @@ literal|"Seth Burgess"
 block|,
 literal|"1997"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -490,7 +490,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1995-1996"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -707,7 +707,7 @@ literal|""
 block|,
 literal|""
 block|,
-name|TRUE
+literal|"gimp_context_get_brush"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -827,7 +827,7 @@ literal|""
 block|,
 literal|""
 block|,
-name|TRUE
+literal|"gimp_brush_get_spacing"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -969,7 +969,7 @@ literal|""
 block|,
 literal|""
 block|,
-name|TRUE
+literal|"gimp_brush_set_spacing"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1402,7 +1402,7 @@ literal|""
 block|,
 literal|""
 block|,
-name|TRUE
+literal|"gimp_brush_get_pixels"
 block|,
 name|GIMP_INTERNAL
 block|,

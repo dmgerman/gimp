@@ -451,7 +451,7 @@ literal|"Jay Cox"
 block|,
 literal|"1998"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -610,7 +610,7 @@ literal|"Jay Cox"
 block|,
 literal|"1998"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -761,7 +761,7 @@ literal|"Jay Cox"
 block|,
 literal|"1998"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -912,7 +912,7 @@ literal|"Marc Lehmann"
 block|,
 literal|"1999"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1182,7 +1182,7 @@ literal|"Jay Cox"
 block|,
 literal|"1998"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1399,7 +1399,7 @@ literal|"Jay Cox"
 block|,
 literal|"1998"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1608,7 +1608,7 @@ literal|"Jay Cox"
 block|,
 literal|"1998"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1845,7 +1845,7 @@ literal|"Marc Lehmann"
 block|,
 literal|"1999"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -2097,7 +2097,7 @@ literal|"Jay Cox"
 block|,
 literal|"1998"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -2296,7 +2296,7 @@ literal|"Jay Cox"
 block|,
 literal|"1998"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -2487,7 +2487,7 @@ literal|"Jay Cox"
 block|,
 literal|"1998"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -2706,7 +2706,7 @@ literal|"Marc Lehmann"
 block|,
 literal|"1999"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,

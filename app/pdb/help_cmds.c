@@ -286,7 +286,7 @@ literal|"Michael Natterer<mitch@gimp.org>"
 block|,
 literal|"2000"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,

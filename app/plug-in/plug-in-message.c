@@ -1508,14 +1508,6 @@ operator|==
 name|GIMP_PDB_COMPAT_WARN
 condition|)
 block|{
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: say which proc to use as replacement for deprecated one.
-endif|#
-directive|endif
 name|g_message
 argument_list|(
 literal|"WARNING: Plug-In \"%s\"\n(%s)\n"
@@ -1540,7 +1532,9 @@ name|proc_run
 operator|->
 name|name
 argument_list|,
-literal|"FIXME"
+name|proc_rec
+operator|->
+name|deprecated
 argument_list|)
 expr_stmt|;
 block|}

@@ -685,7 +685,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1998- 2001"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1104,7 +1104,7 @@ literal|"Spencer Kimball& Peter Mattis"
 block|,
 literal|"1998- 2001"
 block|,
-name|FALSE
+name|NULL
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -1910,17 +1910,17 @@ init|=
 block|{
 literal|"gimp_text"
 block|,
-literal|"Add text at the specified location as a floating selection or a new layer."
+literal|"This procedure is deprecated! Use 'gimp_get_text_fontname' instead."
 block|,
-literal|"This function is deprecated, use gimp_get_text_fontname() instead."
+literal|"This procedure is deprecated! Use 'gimp_get_text_fontname' instead."
 block|,
-literal|"Martin Edlman"
+literal|""
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 block|,
-literal|"1998"
+literal|""
 block|,
-name|TRUE
+literal|"gimp_get_text_fontname"
 block|,
 name|GIMP_INTERNAL
 block|,
@@ -2577,17 +2577,17 @@ init|=
 block|{
 literal|"gimp_text_get_extents"
 block|,
-literal|"Get extents of the bounding box for the specified text."
+literal|"This procedure is deprecated! Use 'gimp_get_text_extents_fontname' instead."
 block|,
-literal|"This function is deprecated, use gimp_get_text_extents_fontname() instead."
+literal|"This procedure is deprecated! Use 'gimp_get_text_extents_fontname' instead."
 block|,
-literal|"Martin Edlman"
+literal|""
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 block|,
-literal|"1998"
+literal|""
 block|,
-name|TRUE
+literal|"gimp_get_text_extents_fontname"
 block|,
 name|GIMP_INTERNAL
 block|,
