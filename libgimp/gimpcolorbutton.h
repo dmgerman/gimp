@@ -113,10 +113,10 @@ name|gchar
 modifier|*
 name|title
 parameter_list|,
-name|guint
+name|gint
 name|width
 parameter_list|,
-name|guint
+name|gint
 name|height
 parameter_list|,
 name|GimpRGB

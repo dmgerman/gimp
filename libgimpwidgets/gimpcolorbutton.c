@@ -304,7 +304,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7ec5480103
+DECL|enum|__anon29beb01b0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -656,7 +656,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_color_button_new (const gchar * title,guint width,guint height,GimpRGB * color,gboolean alpha)
+DECL|function|gimp_color_button_new (const gchar * title,gint width,gint height,GimpRGB * color,gboolean alpha)
 name|gimp_color_button_new
 parameter_list|(
 specifier|const
@@ -664,10 +664,10 @@ name|gchar
 modifier|*
 name|title
 parameter_list|,
-name|guint
+name|gint
 name|width
 parameter_list|,
-name|guint
+name|gint
 name|height
 parameter_list|,
 name|GimpRGB
@@ -682,19 +682,6 @@ name|GimpColorButton
 modifier|*
 name|gcb
 decl_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|width
-operator|>
-literal|0
-operator|&&
-name|height
-operator|>
-literal|0
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|color
