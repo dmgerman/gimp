@@ -2419,6 +2419,17 @@ operator||
 name|DRAW
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|curves_dialog
+operator|->
+name|preview
+condition|)
+name|curves_preview
+argument_list|(
+name|curves_dialog
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

@@ -654,7 +654,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c622a8b0108
+DECL|struct|__anon27ba69c30108
 block|{
 DECL|member|directory
 name|gboolean
@@ -5645,6 +5645,10 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|swap_path
+operator|&&
+name|new_swap_path
+operator|&&
 name|strcmp
 argument_list|(
 name|swap_path

@@ -222,7 +222,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aad9f540103
+DECL|enum|__anon27712cde0103
 block|{
 DECL|enumerator|FILENAME_CHANGED
 name|FILENAME_CHANGED
@@ -958,6 +958,10 @@ name|entry
 argument_list|)
 argument_list|,
 name|filename
+condition|?
+name|filename
+else|:
+literal|""
 argument_list|)
 expr_stmt|;
 comment|/*  update everything    */
