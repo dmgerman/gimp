@@ -2354,10 +2354,6 @@ begin_comment
 comment|/***** Public functions *****/
 end_comment
 
-begin_comment
-comment|/*****/
-end_comment
-
 begin_function
 name|void
 DECL|function|gradients_init (int no_data)
@@ -3075,10 +3071,6 @@ end_function
 
 begin_comment
 comment|/***** The main gradient editor dialog *****/
-end_comment
-
-begin_comment
-comment|/*****/
 end_comment
 
 begin_function
@@ -5662,7 +5654,6 @@ operator|=
 name|GRAD_CHECK_LIGHT
 expr_stmt|;
 block|}
-comment|/* else */
 operator|*
 name|p0
 operator|++
@@ -5776,7 +5767,6 @@ operator|+=
 name|dx
 expr_stmt|;
 block|}
-comment|/* for */
 for|for
 control|(
 name|y
@@ -6149,10 +6139,6 @@ block|}
 end_function
 
 begin_comment
-comment|/* ed_insert_in_gradients_listbox */
-end_comment
-
-begin_comment
 comment|/*****/
 end_comment
 
@@ -6213,10 +6199,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* ed_list_item_update */
-end_comment
 
 begin_comment
 comment|/*****/
@@ -6289,7 +6271,6 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-comment|/* for */
 for|for
 control|(
 name|i
@@ -6341,7 +6322,6 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-comment|/* for */
 name|g_editor
 operator|->
 name|saved_colors
@@ -6794,10 +6774,6 @@ literal|1.0
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* ed_initialize_saved_colors */
-end_comment
 
 begin_comment
 comment|/***** Main gradient editor dialog callbacks *****/
@@ -18773,10 +18749,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
