@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a25ed10108
+DECL|struct|__anon2b430ba20108
 block|{
 DECL|member|pcl_name
 name|char
@@ -1118,7 +1118,7 @@ comment|/*  * Printer capability data  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29a25ed10208
+DECL|struct|__anon2b430ba20208
 typedef|typedef
 struct|struct
 block|{
@@ -2568,9 +2568,94 @@ literal|1
 block|,     }
 block|,   }
 block|,
-comment|/* Deskjet 1200C, 1600C */
+comment|/* Deskjet 1200C */
 block|{
 literal|1200
+block|,
+literal|17
+operator|*
+literal|72
+operator|/
+literal|2
+block|,
+literal|14
+operator|*
+literal|72
+block|,
+name|PCL_RES_150_150
+operator||
+name|PCL_RES_300_300
+block|,
+literal|12
+block|,
+literal|12
+block|,
+literal|18
+block|,
+literal|18
+block|,
+name|PCL_COLOR_CMY
+block|,
+name|PCL_PRINTER_DJ
+operator||
+name|PCL_PRINTER_NEW_ERG
+operator||
+name|PCL_PRINTER_TIFF
+operator||
+name|PCL_PRINTER_MEDIATYPE
+operator||
+name|PCL_PRINTER_CUSTOM_SIZE
+block|,
+block|{
+comment|/* This printer is not mentioned in the Comparison tables,    so I'll just pick some likely sizes... */
+name|PCL_PAPERSIZE_EXECUTIVE
+block|,
+name|PCL_PAPERSIZE_LETTER
+block|,
+name|PCL_PAPERSIZE_LEGAL
+block|,
+name|PCL_PAPERSIZE_A5
+block|,
+name|PCL_PAPERSIZE_A4
+block|,
+name|PCL_PAPERSIZE_4x6
+block|,
+name|PCL_PAPERSIZE_5x8
+block|,
+operator|-
+literal|1
+block|,     }
+block|,
+block|{
+name|PCL_PAPERTYPE_PLAIN
+block|,
+name|PCL_PAPERTYPE_BOND
+block|,
+name|PCL_PAPERTYPE_PREMIUM
+block|,
+name|PCL_PAPERTYPE_GLOSSY
+block|,
+name|PCL_PAPERTYPE_TRANS
+block|,
+operator|-
+literal|1
+block|,     }
+block|,
+block|{
+name|PCL_PAPERSOURCE_STANDARD
+block|,
+name|PCL_PAPERSOURCE_MANUAL
+block|,
+name|PCL_PAPERSOURCE_DJ_TRAY
+block|,
+operator|-
+literal|1
+block|,     }
+block|,   }
+block|,
+comment|/* Deskjet 1600C */
+block|{
+literal|1600
 block|,
 literal|17
 operator|*
