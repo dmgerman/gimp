@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"menus/menus.h"
+file|"widgets/gimpmenufactory.h"
 end_include
 
 begin_include
@@ -1151,12 +1151,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|dialogs_init (Gimp * gimp)
+DECL|function|dialogs_init (Gimp * gimp,GimpMenuFactory * menu_factory)
 name|dialogs_init
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpMenuFactory
+modifier|*
+name|menu_factory
 parameter_list|)
 block|{
 name|gint
@@ -1167,6 +1171,14 @@ argument_list|(
 name|GIMP_IS_GIMP
 argument_list|(
 name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_MENU_FACTORY
+argument_list|(
+name|menu_factory
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1197,7 +1209,7 @@ argument_list|(
 name|gimp
 argument_list|)
 argument_list|,
-name|global_menu_factory
+name|menu_factory
 argument_list|,
 name|dialogs_toolbox_get
 argument_list|)
@@ -1213,7 +1225,7 @@ argument_list|(
 name|gimp
 argument_list|)
 argument_list|,
-name|global_menu_factory
+name|menu_factory
 argument_list|,
 name|dialogs_dock_new
 argument_list|)

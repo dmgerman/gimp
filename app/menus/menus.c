@@ -82,13 +82,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpmenufactory.h"
+file|"widgets/gimpactionfactory.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"actions/actions.h"
+file|"widgets/gimpmenufactory.h"
 end_include
 
 begin_include
@@ -171,12 +171,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|menus_init (Gimp * gimp)
+DECL|function|menus_init (Gimp * gimp,GimpActionFactory * action_factory)
 name|menus_init
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpActionFactory
+modifier|*
+name|action_factory
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -184,6 +188,14 @@ argument_list|(
 name|GIMP_IS_GIMP
 argument_list|(
 name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_ACTION_FACTORY
+argument_list|(
+name|action_factory
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -232,7 +244,7 @@ name|gimp_menu_factory_new
 argument_list|(
 name|gimp
 argument_list|,
-name|global_action_factory
+name|action_factory
 argument_list|)
 expr_stmt|;
 name|gimp_menu_factory_manager_register

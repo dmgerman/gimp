@@ -1482,6 +1482,8 @@ expr_stmt|;
 name|menus_init
 argument_list|(
 name|gimp
+argument_list|,
+name|global_action_factory
 argument_list|)
 expr_stmt|;
 name|render_init
@@ -1492,6 +1494,8 @@ expr_stmt|;
 name|dialogs_init
 argument_list|(
 name|gimp
+argument_list|,
+name|global_menu_factory
 argument_list|)
 expr_stmt|;
 name|gimp_clipboard_init
