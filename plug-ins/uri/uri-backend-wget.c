@@ -416,6 +416,10 @@ name|FALSE
 decl_stmt|;
 name|gchar
 modifier|*
+name|memsize
+decl_stmt|;
+name|gchar
+modifier|*
 name|message
 decl_stmt|;
 name|gchar
@@ -461,7 +465,10 @@ name|fgets
 argument_list|(
 name|buf
 argument_list|,
-name|BUFSIZE
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 name|input
 argument_list|)
@@ -486,7 +493,10 @@ name|fgets
 argument_list|(
 name|buf
 argument_list|,
-name|BUFSIZE
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 name|input
 argument_list|)
@@ -564,7 +574,10 @@ name|fgets
 argument_list|(
 name|buf
 argument_list|,
-name|BUFSIZE
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 name|input
 argument_list|)
@@ -667,7 +680,10 @@ name|fgets
 argument_list|(
 name|buf
 argument_list|,
-name|BUFSIZE
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 name|input
 argument_list|)
@@ -739,7 +755,10 @@ name|fgets
 argument_list|(
 name|buf
 argument_list|,
-name|BUFSIZE
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 name|input
 argument_list|)
@@ -910,19 +929,23 @@ name|sizestr
 argument_list|)
 expr_stmt|;
 comment|/*  Start the actual download...  */
+name|memsize
+operator|=
+name|gimp_memsize_to_string
+argument_list|(
+name|size
+argument_list|)
+expr_stmt|;
 name|message
 operator|=
 name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Downloading %s of image data... "
+literal|"Downloading %s of image data..."
 argument_list|)
 argument_list|,
-name|gimp_memsize_to_string
-argument_list|(
-name|size
-argument_list|)
+name|memsize
 argument_list|)
 expr_stmt|;
 name|progress
@@ -949,6 +972,11 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|message
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|memsize
 argument_list|)
 expr_stmt|;
 comment|/*  Switch to byte parsing wget's output...  */
@@ -1032,7 +1060,10 @@ name|fgets
 argument_list|(
 name|buf
 argument_list|,
-name|BUFSIZE
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 name|input
 argument_list|)

@@ -32,7 +32,7 @@ DECL|macro|BUFSIZE
 define|#
 directive|define
 name|BUFSIZE
-value|1024
+value|4096
 end_define
 
 begin_comment
@@ -259,12 +259,12 @@ name|dest_uri
 argument_list|,
 name|_
 argument_list|(
-literal|"Downloading %llu bytes of image data..."
+literal|"Downloading %s of image data..."
 argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Downloaded %llu bytes of image data"
+literal|"Downloaded %s of image data"
 argument_list|)
 argument_list|,
 name|error
@@ -333,12 +333,12 @@ name|uri
 argument_list|,
 name|_
 argument_list|(
-literal|"Uploading %llu bytes of image data..."
+literal|"Uploading %s of image data..."
 argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Uploaded %llu bytes of image data"
+literal|"Uploaded %s of image data"
 argument_list|)
 argument_list|,
 name|error
@@ -568,6 +568,10 @@ name|result
 decl_stmt|;
 name|gchar
 modifier|*
+name|memsize
+decl_stmt|;
+name|gchar
+modifier|*
 name|message
 decl_stmt|;
 name|gimp_progress_init
@@ -719,6 +723,13 @@ return|return
 name|FALSE
 return|;
 block|}
+name|memsize
+operator|=
+name|gimp_memsize_to_string
+argument_list|(
+name|file_size
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|file_size
@@ -731,7 +742,7 @@ name|g_strdup_printf
 argument_list|(
 name|copying_format_str
 argument_list|,
-name|file_size
+name|memsize
 argument_list|)
 expr_stmt|;
 else|else
@@ -741,10 +752,12 @@ name|g_strdup_printf
 argument_list|(
 name|copied_format_str
 argument_list|,
-operator|(
-name|GnomeVFSFileSize
-operator|)
-literal|0
+name|memsize
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|memsize
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init
@@ -799,6 +812,16 @@ operator|!=
 name|GNOME_VFS_ERROR_EOF
 condition|)
 block|{
+name|memsize
+operator|=
+name|gimp_memsize_to_string
+argument_list|(
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|g_set_error
 argument_list|(
 name|error
@@ -809,13 +832,10 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Failed to read %d bytes from '%s': %s"
+literal|"Failed to read %s from '%s': %s"
 argument_list|)
 argument_list|,
-sizeof|sizeof
-argument_list|(
-name|buffer
-argument_list|)
+name|memsize
 argument_list|,
 name|src_uri
 argument_list|,
@@ -823,6 +843,11 @@ name|gnome_vfs_result_to_string
 argument_list|(
 name|result
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|memsize
 argument_list|)
 expr_stmt|;
 name|gnome_vfs_close
@@ -876,13 +901,25 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|memsize
+operator|=
+name|gimp_memsize_to_string
+argument_list|(
+name|bytes_read
+argument_list|)
+expr_stmt|;
 name|message
 operator|=
 name|g_strdup_printf
 argument_list|(
 name|copied_format_str
 argument_list|,
-name|bytes_read
+name|memsize
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|memsize
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init
@@ -917,6 +954,13 @@ operator|<
 name|chunk_read
 condition|)
 block|{
+name|memsize
+operator|=
+name|gimp_memsize_to_string
+argument_list|(
+name|chunk_read
+argument_list|)
+expr_stmt|;
 name|g_set_error
 argument_list|(
 name|error
@@ -927,10 +971,10 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Failed to write %llu bytes to '%s': %s"
+literal|"Failed to write %s to '%s': %s"
 argument_list|)
 argument_list|,
-name|chunk_read
+name|memsize
 argument_list|,
 name|dest_uri
 argument_list|,
@@ -938,6 +982,11 @@ name|gnome_vfs_result_to_string
 argument_list|(
 name|result
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|memsize
 argument_list|)
 expr_stmt|;
 name|gnome_vfs_close
