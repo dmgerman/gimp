@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ac4f8c0103
+DECL|enum|__anon2b94e0620103
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -546,7 +546,7 @@ name|GimpModule
 modifier|*
 name|gimp_module
 decl_stmt|;
-name|GimpModuleRegisterFunc
+name|gpointer
 name|func
 decl_stmt|;
 name|g_return_val_if_fail
@@ -643,10 +643,6 @@ name|module
 argument_list|,
 literal|"gimp_module_register"
 argument_list|,
-operator|(
-name|gpointer
-operator|*
-operator|)
 operator|&
 name|func
 argument_list|)
@@ -1010,7 +1006,7 @@ name|close_module
 init|=
 name|FALSE
 decl_stmt|;
-name|GimpModuleQueryFunc
+name|gpointer
 name|func
 decl_stmt|;
 name|g_return_val_if_fail
@@ -1059,10 +1055,6 @@ name|module
 argument_list|,
 literal|"gimp_module_query"
 argument_list|,
-operator|(
-name|gpointer
-operator|*
-operator|)
 operator|&
 name|func
 argument_list|)
