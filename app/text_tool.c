@@ -56,7 +56,7 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<gdkprivate.h>
+file|<gdk/gdkprivate.h>
 end_include
 
 begin_if
