@@ -91,15 +91,6 @@ name|GimpViewable
 modifier|*
 name|viewable
 decl_stmt|;
-DECL|member|context
-name|GimpContext
-modifier|*
-name|context
-decl_stmt|;
-DECL|member|is_popup
-name|gboolean
-name|is_popup
-decl_stmt|;
 DECL|member|width
 name|gint
 name|width
@@ -119,6 +110,10 @@ name|border_color
 index|[
 literal|3
 index|]
+decl_stmt|;
+DECL|member|is_popup
+name|gboolean
+name|is_popup
 decl_stmt|;
 DECL|member|clickable
 name|gboolean
@@ -295,18 +290,6 @@ parameter_list|,
 name|GimpViewable
 modifier|*
 name|viewable
-parameter_list|)
-function_decl|;
-name|void
-name|gimp_preview_set_context
-parameter_list|(
-name|GimpPreview
-modifier|*
-name|preview
-parameter_list|,
-name|GimpContext
-modifier|*
-name|context
 parameter_list|)
 function_decl|;
 comment|/*  private  */

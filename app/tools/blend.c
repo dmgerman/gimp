@@ -126,13 +126,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpprogress.h"
+file|"gimpgradient.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gradient.h"
+file|"gimpprogress.h"
 end_include
 
 begin_include
@@ -400,7 +400,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b76b90b0108
+DECL|struct|__anon2920beee0108
 block|{
 DECL|member|offset
 name|gdouble
@@ -452,7 +452,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b76b90b0208
+DECL|struct|__anon2920beee0208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -701,7 +701,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|,
@@ -3955,14 +3955,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|blend_options_drop_gradient (GtkWidget * widget,gradient_t * gradient,gpointer data)
+DECL|function|blend_options_drop_gradient (GtkWidget * widget,GimpGradient * gradient,gpointer data)
 name|blend_options_drop_gradient
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|,
@@ -6726,7 +6726,7 @@ operator|==
 name|CUSTOM_MODE
 condition|)
 block|{
-name|gradient_get_color_at
+name|gimp_gradient_get_color_at
 argument_list|(
 name|gimp_context_get_gradient
 argument_list|(

@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpgradient.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppattern.h"
 end_include
 
@@ -114,13 +120,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gradient.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gradient_header.h"
+file|"gradients.h"
 end_include
 
 begin_include
@@ -528,7 +528,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|,
@@ -2048,15 +2048,19 @@ operator|&
 name|DEVICE_GRADIENT
 condition|)
 block|{
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 decl_stmt|;
 name|gradient
 operator|=
-name|gradient_list_get_gradient
+operator|(
+name|GimpGradient
+operator|*
+operator|)
+name|gimp_container_get_child_by_name
 argument_list|(
-name|gradients_list
+name|global_gradient_list
 argument_list|,
 name|gradient_name
 argument_list|)
@@ -2919,11 +2923,14 @@ name|fp
 argument_list|,
 literal|"\n    (gradient \"%s\")"
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
 name|gimp_context_get_gradient
 argument_list|(
 name|device_info
 operator|->
 name|context
+argument_list|)
 argument_list|)
 operator|->
 name|name
@@ -5418,14 +5425,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|device_status_drop_gradient (GtkWidget * widget,gradient_t * gradient,gpointer data)
+DECL|function|device_status_drop_gradient (GtkWidget * widget,GimpGradient * gradient,gpointer data)
 name|device_status_drop_gradient
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|,

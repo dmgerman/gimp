@@ -466,7 +466,7 @@ operator|->
 name|gtk_list
 argument_list|)
 argument_list|,
-name|GTK_SELECTION_BROWSE
+name|GTK_SELECTION_SINGLE
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_focus_vadjustment

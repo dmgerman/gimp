@@ -73,7 +73,7 @@ name|gint
 name|sample_size
 decl_stmt|;
 DECL|member|dnd_gradient
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|dnd_gradient
 decl_stmt|;
@@ -143,9 +143,27 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gradient_select_freeze_all
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gradient_select_thaw_all
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gradient_select_rename_all
 parameter_list|(
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|)
@@ -159,7 +177,7 @@ parameter_list|(
 name|gint
 name|pos
 parameter_list|,
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|)
@@ -170,7 +188,7 @@ begin_function_decl
 name|void
 name|gradient_select_delete_all
 parameter_list|(
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|)
@@ -199,7 +217,7 @@ begin_function_decl
 name|void
 name|gradient_select_update_all
 parameter_list|(
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|)

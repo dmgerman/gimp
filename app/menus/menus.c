@@ -872,6 +872,22 @@ block|}
 block|,
 block|{
 block|{
+literal|"/File/Test Dialogs/List of all Gradients..."
+block|,
+name|NULL
+block|,
+name|dialogs_test_gradient_container_list_view_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
 literal|"/File/Test Dialogs/---"
 block|,
 name|NULL
@@ -927,6 +943,22 @@ block|,
 name|NULL
 block|,
 name|dialogs_test_pattern_container_grid_view_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+literal|"/File/Test Dialogs/Grid of all Gradients..."
+block|,
+name|NULL
+block|,
+name|dialogs_test_gradient_container_grid_view_cmd_callback
 block|,
 literal|0
 block|}

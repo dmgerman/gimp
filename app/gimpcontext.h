@@ -77,7 +77,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b51fde50103
+DECL|enum|__anon2c9aaa2d0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_ARG_IMAGE
 name|GIMP_CONTEXT_ARG_IMAGE
@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b51fde50203
+DECL|enum|__anon2c9aaa2d0203
 block|{
 DECL|enumerator|GIMP_CONTEXT_IMAGE_MASK
 name|GIMP_CONTEXT_IMAGE_MASK
@@ -304,7 +304,7 @@ modifier|*
 name|pattern_name
 decl_stmt|;
 DECL|member|gradient
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 decl_stmt|;
@@ -478,7 +478,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|)
@@ -1265,7 +1265,7 @@ comment|/*  gradient  */
 end_comment
 
 begin_function_decl
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gimp_context_get_gradient
 parameter_list|(
@@ -1284,7 +1284,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|)
@@ -1315,7 +1315,7 @@ begin_function_decl
 name|void
 name|gimp_context_update_gradients
 parameter_list|(
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|)

@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpgradient.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -73,18 +79,6 @@ begin_include
 include|#
 directive|include
 file|"gimppalette.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gradient.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gradient_header.h"
 end_include
 
 begin_include
@@ -156,7 +150,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bc151150103
+DECL|enum|__anon2c3912ec0103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -327,14 +321,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|palette_import_fill_grad_preview (GtkWidget * preview,gradient_t * gradient)
+DECL|function|palette_import_fill_grad_preview (GtkWidget * preview,GimpGradient * gradient)
 name|palette_import_fill_grad_preview
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|preview
 parameter_list|,
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|)
@@ -392,7 +386,7 @@ name|loop
 operator|++
 control|)
 block|{
-name|gradient_get_color_at
+name|gimp_gradient_get_color_at
 argument_list|(
 name|gradient
 argument_list|,
@@ -496,14 +490,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|palette_import_gradient_update (GimpContext * context,gradient_t * gradient,gpointer data)
+DECL|function|palette_import_gradient_update (GimpContext * context,GimpGradient * gradient,gpointer data)
 name|palette_import_gradient_update
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|,
@@ -541,7 +535,10 @@ operator|->
 name|entry
 argument_list|)
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
 name|gradient
+argument_list|)
 operator|->
 name|name
 argument_list|)
@@ -1735,7 +1732,7 @@ condition|(
 name|import_dialog
 condition|)
 block|{
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 decl_stmt|;
@@ -1806,7 +1803,10 @@ operator|->
 name|entry
 argument_list|)
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
 name|gradient
+argument_list|)
 operator|->
 name|name
 argument_list|)
@@ -2268,7 +2268,7 @@ name|GimpPalette
 modifier|*
 name|palette
 decl_stmt|;
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 decl_stmt|;
@@ -2346,7 +2346,7 @@ name|loop
 operator|++
 control|)
 block|{
-name|gradient_get_color_at
+name|gimp_gradient_get_color_at
 argument_list|(
 name|gradient
 argument_list|,
@@ -4245,7 +4245,7 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|{
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 decl_stmt|;
@@ -4266,7 +4266,10 @@ argument_list|)
 argument_list|,
 name|gradient
 condition|?
+name|GIMP_OBJECT
+argument_list|(
 name|gradient
+argument_list|)
 operator|->
 name|name
 else|:

@@ -54,18 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gradient.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpbrush.h"
 end_include
 
@@ -73,6 +61,18 @@ begin_include
 include|#
 directive|include
 file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpgradient.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpimage.h"
 end_include
 
 begin_include
@@ -1354,7 +1354,7 @@ block|{
 name|GimpRGB
 name|color
 decl_stmt|;
-name|gradient_get_color_at
+name|gimp_gradient_get_color_at
 argument_list|(
 name|gimp_context_get_gradient
 argument_list|(

@@ -56,6 +56,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontext.h"
 end_include
 
@@ -68,19 +74,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpgradient.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gradient.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gradient_header.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gradientP.h"
+file|"gradients.h"
 end_include
 
 begin_include
@@ -124,7 +130,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient_select_drag_gradient
 parameter_list|(
@@ -147,7 +153,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|,
@@ -166,7 +172,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|,
@@ -186,7 +192,7 @@ name|GradientSelect
 modifier|*
 name|gsp
 parameter_list|,
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|)
@@ -479,7 +485,7 @@ decl_stmt|;
 name|gint
 name|select_pos
 decl_stmt|;
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|active
 init|=
@@ -658,9 +664,13 @@ condition|)
 block|{
 name|active
 operator|=
-name|gradient_list_get_gradient
+operator|(
+name|GimpGradient
+operator|*
+operator|)
+name|gimp_container_get_child_by_name
 argument_list|(
-name|gradients_list
+name|global_gradient_list
 argument_list|,
 name|initial_gradient
 argument_list|)
@@ -1246,6 +1256,26 @@ expr_stmt|;
 block|}
 end_function
 
+begin_function
+name|void
+DECL|function|gradient_select_freeze_all (void)
+name|gradient_select_freeze_all
+parameter_list|(
+name|void
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+name|void
+DECL|function|gradient_select_thaw_all (void)
+name|gradient_select_thaw_all
+parameter_list|(
+name|void
+parameter_list|)
+block|{ }
+end_function
+
 begin_comment
 comment|/*  Call this dialog's PDB callback  */
 end_comment
@@ -1274,7 +1304,7 @@ name|prec
 init|=
 name|NULL
 decl_stmt|;
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 decl_stmt|;
@@ -1400,7 +1430,7 @@ name|i
 operator|--
 condition|)
 block|{
-name|gradient_get_color_at
+name|gimp_gradient_get_color_at
 argument_list|(
 name|gradient
 argument_list|,
@@ -1458,7 +1488,10 @@ name|nreturn_vals
 argument_list|,
 name|PDB_STRING
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
 name|gradient
+argument_list|)
 operator|->
 name|name
 argument_list|,
@@ -1617,10 +1650,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_select_rename_all (gradient_t * gradient)
+DECL|function|gradient_select_rename_all (GimpGradient * gradient)
 name|gradient_select_rename_all
 parameter_list|(
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|)
@@ -1696,7 +1729,10 @@ name|row
 argument_list|,
 literal|1
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
 name|gradient
+argument_list|)
 operator|->
 name|name
 argument_list|)
@@ -1707,13 +1743,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_select_insert_all (gint pos,gradient_t * gradient)
+DECL|function|gradient_select_insert_all (gint pos,GimpGradient * gradient)
 name|gradient_select_insert_all
 parameter_list|(
 name|gint
 name|pos
 parameter_list|,
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|)
@@ -1799,10 +1835,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_select_delete_all (gradient_t * gradient)
+DECL|function|gradient_select_delete_all (GimpGradient * gradient)
 name|gradient_select_delete_all
 parameter_list|(
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|)
@@ -2034,10 +2070,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_select_update_all (gradient_t * gradient)
+DECL|function|gradient_select_update_all (GimpGradient * gradient)
 name|gradient_select_update_all
 parameter_list|(
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|)
@@ -2113,7 +2149,10 @@ name|row
 argument_list|,
 literal|1
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
 name|gradient
+argument_list|)
 operator|->
 name|name
 argument_list|)
@@ -2128,7 +2167,7 @@ end_comment
 
 begin_function
 specifier|static
-name|gradient_t
+name|GimpGradient
 modifier|*
 DECL|function|gradient_select_drag_gradient (GtkWidget * widget,gpointer data)
 name|gradient_select_drag_gradient
@@ -2164,14 +2203,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_select_drop_gradient (GtkWidget * widget,gradient_t * gradient,gpointer data)
+DECL|function|gradient_select_drop_gradient (GtkWidget * widget,GimpGradient * gradient,gpointer data)
 name|gradient_select_drop_gradient
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|,
@@ -2206,14 +2245,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_select_gradient_changed (GimpContext * context,gradient_t * gradient,GradientSelect * gsp)
+DECL|function|gradient_select_gradient_changed (GimpContext * context,GimpGradient * gradient,GradientSelect * gsp)
 name|gradient_select_gradient_changed
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|,
@@ -2260,14 +2299,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_select_select (GradientSelect * gsp,gradient_t * gradient)
+DECL|function|gradient_select_select (GradientSelect * gsp,GimpGradient * gradient)
 name|gradient_select_select
 parameter_list|(
 name|GradientSelect
 modifier|*
 name|gsp
 parameter_list|,
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|)
@@ -2277,11 +2316,14 @@ name|index
 decl_stmt|;
 name|index
 operator|=
-name|gradient_list_get_gradient_index
+name|gimp_container_get_child_index
 argument_list|(
-name|gradients_list
+name|global_gradient_list
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
 name|gradient
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2418,12 +2460,6 @@ operator|==
 literal|2
 condition|)
 block|{
-name|GSList
-modifier|*
-name|list
-init|=
-name|NULL
-decl_stmt|;
 name|gint
 name|row
 decl_stmt|;
@@ -2454,41 +2490,20 @@ operator|&
 name|column
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gradients_list
-condition|)
-name|list
-operator|=
-name|g_slist_nth
-argument_list|(
-name|gradients_list
-argument_list|,
-name|row
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|list
-condition|)
 name|gsp
 operator|->
 name|dnd_gradient
 operator|=
 operator|(
-name|gradient_t
+name|GimpGradient
 operator|*
 operator|)
-name|list
-operator|->
-name|data
-expr_stmt|;
-else|else
-name|gsp
-operator|->
-name|dnd_gradient
-operator|=
-name|NULL
+name|gimp_container_get_child_by_index
+argument_list|(
+name|global_gradient_list
+argument_list|,
+name|row
+argument_list|)
 expr_stmt|;
 return|return
 name|TRUE
@@ -2528,10 +2543,6 @@ name|GradientSelect
 modifier|*
 name|gsp
 decl_stmt|;
-name|GSList
-modifier|*
-name|list
-decl_stmt|;
 name|gsp
 operator|=
 operator|(
@@ -2540,11 +2551,17 @@ operator|*
 operator|)
 name|data
 expr_stmt|;
-name|list
+name|gsp
+operator|->
+name|dnd_gradient
 operator|=
-name|g_slist_nth
+operator|(
+name|GimpGradient
+operator|*
+operator|)
+name|gimp_container_get_child_by_index
 argument_list|(
-name|gradients_list
+name|global_gradient_list
 argument_list|,
 name|row
 argument_list|)
@@ -2567,13 +2584,9 @@ name|gsp
 operator|->
 name|context
 argument_list|,
-operator|(
-name|gradient_t
-operator|*
-operator|)
-name|list
+name|gsp
 operator|->
-name|data
+name|dnd_gradient
 argument_list|)
 expr_stmt|;
 name|gtk_signal_handler_unblock_by_data
@@ -2587,18 +2600,6 @@ argument_list|)
 argument_list|,
 name|gsp
 argument_list|)
-expr_stmt|;
-name|gsp
-operator|->
-name|dnd_gradient
-operator|=
-operator|(
-name|gradient_t
-operator|*
-operator|)
-name|list
-operator|->
-name|data
 expr_stmt|;
 if|if
 condition|(

@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpgradient.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -90,13 +96,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gradient_header.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gradient.h"
+file|"gradients.h"
 end_include
 
 begin_include
@@ -669,7 +669,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|)
@@ -698,7 +698,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b6cf300103
+DECL|enum|__anon2bcfdc730103
 block|{
 DECL|enumerator|ARG_0
 name|ARG_0
@@ -738,7 +738,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b6cf300203
+DECL|enum|__anon2bcfdc730203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -865,7 +865,7 @@ literal|0
 block|,
 literal|0
 block|,
-name|GTK_TYPE_NONE
+literal|0
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1091,6 +1091,13 @@ name|GIMP_CONTEXT_ARG_PATTERN
 index|]
 operator|=
 name|GIMP_TYPE_PATTERN
+expr_stmt|;
+name|gimp_context_arg_types
+index|[
+name|GIMP_CONTEXT_ARG_GRADIENT
+index|]
+operator|=
+name|GIMP_TYPE_GRADIENT
 expr_stmt|;
 name|gtk_object_add_arg_type
 argument_list|(
@@ -6947,7 +6954,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|standard_gradient
 specifier|static
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|standard_gradient
 init|=
@@ -6956,7 +6963,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-name|gradient_t
+name|GimpGradient
 modifier|*
 DECL|function|gimp_context_get_gradient (GimpContext * context)
 name|gimp_context_get_gradient
@@ -6988,14 +6995,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_context_set_gradient (GimpContext * context,gradient_t * gradient)
+DECL|function|gimp_context_set_gradient (GimpContext * context,GimpGradient * gradient)
 name|gimp_context_set_gradient
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|)
@@ -7070,14 +7077,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_context_real_set_gradient (GimpContext * context,gradient_t * gradient)
+DECL|function|gimp_context_real_set_gradient (GimpContext * context,GimpGradient * gradient)
 name|gimp_context_real_set_gradient
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|)
@@ -7146,7 +7153,10 @@ name|gradient_name
 operator|=
 name|g_strdup
 argument_list|(
+name|GIMP_OBJECT
+argument_list|(
 name|gradient
+argument_list|)
 operator|->
 name|name
 argument_list|)
@@ -7239,7 +7249,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 decl_stmt|;
@@ -7259,20 +7269,24 @@ argument_list|(
 name|default_gradient
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|(
 name|gradient
 operator|=
-name|gradient_list_get_gradient
+operator|(
+name|GimpGradient
+operator|*
+operator|)
+name|gimp_container_get_child_by_name
 argument_list|(
-name|gradients_list
+name|global_gradient_list
 argument_list|,
 name|context
 operator|->
 name|gradient_name
 argument_list|)
-operator|)
+expr_stmt|;
+if|if
+condition|(
+name|gradient
 condition|)
 block|{
 name|gimp_context_real_set_gradient
@@ -7286,19 +7300,25 @@ return|return;
 block|}
 if|if
 condition|(
-name|gradients_list
+name|gimp_container_num_children
+argument_list|(
+name|global_gradient_list
+argument_list|)
 condition|)
 name|gimp_context_real_set_gradient
 argument_list|(
 name|context
 argument_list|,
 operator|(
-name|gradient_t
+name|GimpGradient
 operator|*
 operator|)
-name|gradients_list
-operator|->
-name|data
+name|gimp_container_get_child_by_index
+argument_list|(
+name|global_gradient_list
+argument_list|,
+literal|0
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -7339,14 +7359,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_context_update_gradient (GimpContext * context,gradient_t * gradient)
+DECL|function|gimp_context_update_gradient (GimpContext * context,GimpGradient * gradient)
 name|gimp_context_update_gradient
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|)
@@ -7379,7 +7399,10 @@ name|gradient_name
 operator|=
 name|g_strdup
 argument_list|(
+name|GIMP_OBJECT
+argument_list|(
 name|gradient
+argument_list|)
 operator|->
 name|name
 argument_list|)
@@ -7399,10 +7422,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_context_update_gradients (gradient_t * gradient)
+DECL|function|gimp_context_update_gradients (GimpGradient * gradient)
 name|gimp_context_update_gradients
 parameter_list|(
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|)

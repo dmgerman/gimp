@@ -18,7 +18,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7900ba0103
+DECL|enum|__anon2c2e56880103
 block|{
 DECL|enumerator|GIMP_DND_TYPE_URI_LIST
 name|GIMP_DND_TYPE_URI_LIST
@@ -71,7 +71,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7900ba0203
+DECL|enum|__anon2c2e56880203
 block|{
 DECL|enumerator|GIMP_DROP_NONE
 name|GIMP_DROP_NONE
@@ -600,7 +600,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|,
@@ -613,7 +613,7 @@ end_typedef
 begin_typedef
 DECL|typedef|GimpDndDragGradientFunc
 typedef|typedef
-name|gradient_t
+name|GimpGradient
 modifier|*
 function_decl|(
 modifier|*

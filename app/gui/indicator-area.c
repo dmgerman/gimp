@@ -349,14 +349,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_area_update (GimpContext * context,gradient_t * gradient,gpointer data)
+DECL|function|gradient_area_update (GimpContext * context,GimpGradient * gradient,gpointer data)
 name|gradient_area_update
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|,
@@ -404,14 +404,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_preview_drop_gradient (GtkWidget * widget,gradient_t * gradient,gpointer data)
+DECL|function|gradient_preview_drop_gradient (GtkWidget * widget,GimpGradient * gradient,gpointer data)
 name|gradient_preview_drop_gradient
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|,

@@ -66,19 +66,13 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpgradient.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppattern.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gradient.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gradient_header.h"
 end_include
 
 begin_include
@@ -699,7 +693,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6405970103
+DECL|enum|__anon2c400d230103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -1828,12 +1822,12 @@ case|case
 name|GCP_GRADIENT
 case|:
 block|{
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 init|=
 operator|(
-name|gradient_t
+name|GimpGradient
 operator|*
 operator|)
 operator|(
@@ -1844,7 +1838,10 @@ operator|)
 decl_stmt|;
 name|name
 operator|=
+name|GIMP_OBJECT
+argument_list|(
 name|gradient
+argument_list|)
 operator|->
 name|name
 expr_stmt|;
@@ -2055,7 +2052,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2b6405970208
+DECL|struct|__anon2c400d230208
 typedef|typedef
 struct|struct
 block|{
@@ -2926,24 +2923,30 @@ break|break;
 case|case
 name|GCP_PATTERN
 case|:
+name|match
+operator|=
+name|GIMP_IS_PATTERN
+argument_list|(
+name|data
+argument_list|)
+expr_stmt|;
+break|break;
 case|case
 name|GCP_GRADIENT
 case|:
 name|match
 operator|=
+name|GIMP_IS_GRADIENT
+argument_list|(
 name|data
-operator|!=
-name|NULL
+argument_list|)
 expr_stmt|;
-comment|/*  would be nicer if these were real gtk_objects  */
 break|break;
 default|default:
 break|break;
 block|}
 return|return
-operator|(
 name|match
-operator|)
 return|;
 block|}
 end_function
@@ -4408,14 +4411,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|draw_gradient (GtkPreview * preview,gradient_t * gradient,gint width,gint height)
+DECL|function|draw_gradient (GtkPreview * preview,GimpGradient * gradient,gint width,gint height)
 name|draw_gradient
 parameter_list|(
 name|GtkPreview
 modifier|*
 name|preview
 parameter_list|,
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|,
@@ -4511,7 +4514,7 @@ name|x
 operator|++
 control|)
 block|{
-name|gradient_get_color_at
+name|gimp_gradient_get_color_at
 argument_list|(
 name|gradient
 argument_list|,
@@ -4765,7 +4768,7 @@ modifier|*
 name|gcp
 parameter_list|)
 block|{
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 decl_stmt|;
@@ -4785,7 +4788,7 @@ expr_stmt|;
 name|gradient
 operator|=
 operator|(
-name|gradient_t
+name|GimpGradient
 operator|*
 operator|)
 operator|(
@@ -4826,7 +4829,7 @@ modifier|*
 name|gcp
 parameter_list|)
 block|{
-name|gradient_t
+name|GimpGradient
 modifier|*
 name|gradient
 decl_stmt|;
@@ -4846,7 +4849,7 @@ expr_stmt|;
 name|gradient
 operator|=
 operator|(
-name|gradient_t
+name|GimpGradient
 operator|*
 operator|)
 operator|(

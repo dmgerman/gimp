@@ -193,6 +193,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpGradient
+typedef|typedef
+name|struct
+name|_GimpGradient
+name|GimpGradient
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpPattern
 typedef|typedef
 name|struct
@@ -422,15 +431,6 @@ typedef|typedef
 name|struct
 name|_GimpProgress
 name|GimpProgress
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|gradient_t
-typedef|typedef
-name|struct
-name|_gradient_t
-name|gradient_t
 typedef|;
 end_typedef
 
