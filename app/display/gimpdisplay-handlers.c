@@ -206,22 +206,12 @@ operator|->
 name|disp_count
 operator|++
 expr_stmt|;
-name|g_print
-argument_list|(
-literal|"%s: gimage->ref_count before refing: %d\n"
-argument_list|,
-name|G_GNUC_FUNCTION
-argument_list|,
-name|G_OBJECT
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|)
-operator|->
-name|ref_count
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+block|g_print ("%s: gimage->ref_count before refing: %d\n",            G_GNUC_FUNCTION, G_OBJECT (gdisp->gimage)->ref_count);
+endif|#
+directive|endif
 name|g_object_ref
 argument_list|(
 name|G_OBJECT
@@ -423,22 +413,12 @@ operator|->
 name|disp_count
 operator|--
 expr_stmt|;
-name|g_print
-argument_list|(
-literal|"%s: gimage->ref_count before unrefing: %d\n"
-argument_list|,
-name|G_GNUC_FUNCTION
-argument_list|,
-name|G_OBJECT
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|)
-operator|->
-name|ref_count
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+block|g_print ("%s: gimage->ref_count before unrefing: %d\n",            G_GNUC_FUNCTION, G_OBJECT (gdisp->gimage)->ref_count);
+endif|#
+directive|endif
 name|g_object_unref
 argument_list|(
 name|G_OBJECT

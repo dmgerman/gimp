@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b1bfd70103
+DECL|enum|__anon2a0c5c1c0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -21011,27 +21011,12 @@ name|st
 operator|->
 name|type
 expr_stmt|;
-if|if
-condition|(
-name|src
-operator|->
-name|w
-operator|*
-operator|(
-name|src
-operator|->
-name|bytes
-operator|+
-literal|1
-operator|)
-operator|>
-literal|512
-condition|)
-name|g_printerr
-argument_list|(
-literal|"initial_sub_region:: error :: src->w * (src->bytes + 1)> 512\n"
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+block|if (src->w * (src->bytes + 1)> 512)     g_printerr ("initial_sub_region:: error :: src->w * (src->bytes + 1)> 512\n");
+endif|#
+directive|endif
 name|s
 operator|=
 name|src
@@ -21747,23 +21732,12 @@ name|data
 else|:
 name|NULL
 expr_stmt|;
-if|if
-condition|(
-name|src1
-operator|->
-name|w
-operator|>
-literal|128
-condition|)
-name|g_error
-argument_list|(
-literal|"combine_sub_region::src1->w = %d\n"
-argument_list|,
-name|src1
-operator|->
-name|w
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+block|if (src1->w> 128)     g_printerr ("combine_sub_region::src1->w = %d\n", src1->w);
+endif|#
+directive|endif
 if|if
 condition|(
 name|transparency_quickskip_possible

@@ -1156,7 +1156,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc430f20103
+DECL|enum|__anon2b0e83cc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1208,7 +1208,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc430f20203
+DECL|enum|__anon2b0e83cc0203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -5249,6 +5249,19 @@ operator|&
 name|object
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+comment|/*  g_object_get() refs the object, this function however is a getter,    *  which usually doesn't ref it's return value    */
+if|if
+condition|(
+name|object
+condition|)
+name|g_object_unref
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|object
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
