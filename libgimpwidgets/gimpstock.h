@@ -696,6 +696,11 @@ define|#
 directive|define
 name|GIMP_STOCK_MENU_RIGHT
 value|"gimp-menu-right"
+DECL|macro|GIMP_STOCK_MOVE_TO_SCREEN
+define|#
+directive|define
+name|GIMP_STOCK_MOVE_TO_SCREEN
+value|"gimp_move-to-screen"
 DECL|macro|GIMP_STOCK_DEFAULT_COLORS
 define|#
 directive|define

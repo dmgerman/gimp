@@ -2160,7 +2160,9 @@ name|view_change_screen_cmd_callback
 block|,
 literal|0
 block|,
-name|NULL
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_MOVE_TO_SCREEN
 block|}
 block|,
 name|NULL
