@@ -16,6 +16,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -592,7 +598,8 @@ name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|gint32
 name|image_ID
-decl_stmt|,
+decl_stmt|;
+name|gint32
 name|drawable_ID
 decl_stmt|;
 name|GimpExportReturn
@@ -747,30 +754,6 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-comment|/*  eventually export the image */
-name|image_ID
-operator|=
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
-name|drawable_ID
-operator|=
-name|param
-index|[
-literal|2
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
-comment|/*  eventually export the image */
 switch|switch
 condition|(
 name|run_mode
@@ -801,11 +784,9 @@ name|drawable_ID
 argument_list|,
 literal|"DICOM"
 argument_list|,
-operator|(
 name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_GRAY
-operator|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -1012,7 +993,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Loading %s:"
+literal|"Opening '%s'..."
 argument_list|)
 argument_list|,
 name|filename
@@ -1048,10 +1029,15 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open file '%s'."
+literal|"Can't open '%s':\n%s"
 argument_list|)
 argument_list|,
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1062,16 +1048,11 @@ block|}
 comment|/* allocate the necessary structures */
 name|dicominfo
 operator|=
-operator|(
-name|DicomInfo
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new0
 argument_list|(
 name|DicomInfo
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 comment|/* Parse the file */
@@ -2580,6 +2561,36 @@ argument_list|,
 literal|"wb"
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|DICOM
+condition|)
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Can't open '%s' for writing:\n%s"
+argument_list|)
+argument_list|,
+name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_drawable_detach
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
+block|}
 comment|/* Print dicom header */
 block|{
 name|guint8
