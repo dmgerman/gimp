@@ -14,13 +14,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gtk/gtk.h"
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -119,7 +113,7 @@ name|int
 name|xpos
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 for|for
@@ -765,16 +759,18 @@ default|default:
 break|break;
 block|}
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|update_range_labels ()
+DECL|function|update_range_labels (void)
 name|update_range_labels
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|guchar
 name|buffer
@@ -797,9 +793,14 @@ argument_list|,
 literal|"0"
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buffer
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,
@@ -841,9 +842,14 @@ argument_list|,
 name|buffer
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buffer
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,

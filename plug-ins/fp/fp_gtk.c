@@ -61,7 +61,7 @@ begin_decl_stmt
 DECL|variable|hue_red
 specifier|static
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|hue_red
 init|=
@@ -76,7 +76,7 @@ begin_decl_stmt
 DECL|variable|hue_green
 specifier|static
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|hue_green
 init|=
@@ -91,7 +91,7 @@ begin_decl_stmt
 DECL|variable|hue_blue
 specifier|static
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|hue_blue
 init|=
@@ -106,7 +106,7 @@ begin_decl_stmt
 DECL|variable|hue_cyan
 specifier|static
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|hue_cyan
 init|=
@@ -121,7 +121,7 @@ begin_decl_stmt
 DECL|variable|hue_yellow
 specifier|static
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|hue_yellow
 init|=
@@ -136,7 +136,7 @@ begin_decl_stmt
 DECL|variable|hue_magenta
 specifier|static
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|hue_magenta
 init|=
@@ -151,7 +151,7 @@ begin_decl_stmt
 DECL|variable|val_darker
 specifier|static
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|val_darker
 init|=
@@ -166,7 +166,7 @@ begin_decl_stmt
 DECL|variable|val_lighter
 specifier|static
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|val_lighter
 init|=
@@ -181,7 +181,7 @@ begin_decl_stmt
 DECL|variable|sat_more
 specifier|static
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|sat_more
 init|=
@@ -196,7 +196,7 @@ begin_decl_stmt
 DECL|variable|sat_less
 specifier|static
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|sat_less
 init|=
@@ -211,7 +211,7 @@ begin_decl_stmt
 DECL|variable|current_val
 specifier|static
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|current_val
 init|=
@@ -257,7 +257,12 @@ specifier|extern
 name|GimpDrawable
 modifier|*
 name|drawable
-decl_stmt|,
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|GimpDrawable
 modifier|*
 name|mask
 decl_stmt|;
@@ -281,7 +286,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|HueSatVal
-name|int
+name|gint
 name|HueSatVal
 index|[]
 init|=
@@ -403,42 +408,50 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2ae97a990108
+DECL|struct|__anon28b2eb190108
 block|{
 DECL|member|bna
 name|GtkWidget
 modifier|*
 name|bna
-decl_stmt|,
+decl_stmt|;
 DECL|member|palette
+name|GtkWidget
 modifier|*
 name|palette
-decl_stmt|,
+decl_stmt|;
 DECL|member|rough
+name|GtkWidget
 modifier|*
 name|rough
-decl_stmt|,
+decl_stmt|;
 DECL|member|range
+name|GtkWidget
 modifier|*
 name|range
-decl_stmt|,
+decl_stmt|;
 DECL|member|show
+name|GtkWidget
 modifier|*
 name|show
-decl_stmt|,
+decl_stmt|;
 DECL|member|lnd
+name|GtkWidget
 modifier|*
 name|lnd
-decl_stmt|,
+decl_stmt|;
 DECL|member|pixelsBy
+name|GtkWidget
 modifier|*
 name|pixelsBy
-decl_stmt|,
+decl_stmt|;
 DECL|member|frameSelect
+name|GtkWidget
 modifier|*
 name|frameSelect
-decl_stmt|,
+decl_stmt|;
 DECL|member|satur
+name|GtkWidget
 modifier|*
 name|satur
 decl_stmt|;
@@ -3701,6 +3714,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|gtk_table_attach
 argument_list|(
 name|GTK_TABLE
@@ -3727,6 +3741,7 @@ argument_list|,
 literal|4
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -3864,7 +3879,7 @@ name|data
 parameter_list|)
 block|{
 specifier|static
-name|int
+name|gint
 name|notFirstTime
 init|=
 literal|0
@@ -3951,7 +3966,7 @@ modifier|*
 name|frame
 parameter_list|)
 block|{
-name|int
+name|gint
 name|prev
 init|=
 name|Current
@@ -4751,10 +4766,10 @@ name|scale_val
 parameter_list|)
 block|{
 specifier|static
-name|float
+name|gfloat
 name|prevValue
 init|=
-literal|.25
+literal|0.25
 decl_stmt|;
 operator|*
 name|scale_val
@@ -4928,13 +4943,13 @@ modifier|*
 name|valueBy
 parameter_list|)
 block|{
-name|int
+name|gint
 name|prevValue
 init|=
 name|VALUE
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|notFirstTime
 init|=
 literal|0
@@ -5069,7 +5084,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gint
 DECL|function|fp_dialog (void)
 name|fp_dialog
 parameter_list|(
