@@ -102,7 +102,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29691d5b0108
+DECL|struct|__anon28b88bf40108
 block|{
 DECL|member|interlaced
 name|gint
@@ -2579,7 +2579,21 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-else|else
+elseif|else
+if|if
+condition|(
+name|g_utf8_validate
+argument_list|(
+name|text
+operator|->
+name|text
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+name|NULL
+argument_list|)
+condition|)
 block|{
 comment|/*  iTXt  */
 name|comment
