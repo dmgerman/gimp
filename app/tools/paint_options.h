@@ -17,7 +17,8 @@ name|__PAINT_OPTIONS_H__
 end_define
 
 begin_function_decl
-name|void
+name|GtkWidget
+modifier|*
 name|gimp_paint_options_gui
 parameter_list|(
 name|GimpToolOptions

@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5b9dbd0103
+DECL|enum|__anon2964c7bd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1277,7 +1277,8 @@ block|}
 end_function
 
 begin_function
-name|void
+name|GtkWidget
+modifier|*
 DECL|function|gimp_selection_options_gui (GimpToolOptions * tool_options)
 name|gimp_selection_options_gui
 parameter_list|(
@@ -1318,9 +1319,10 @@ argument_list|)
 expr_stmt|;
 name|vbox
 operator|=
+name|gimp_tool_options_gui
+argument_list|(
 name|tool_options
-operator|->
-name|main_vbox
+argument_list|)
 expr_stmt|;
 comment|/*  the selection operation radio buttons  */
 block|{
@@ -2459,6 +2461,9 @@ argument_list|(
 name|tool_options
 argument_list|)
 expr_stmt|;
+return|return
+name|vbox
+return|;
 block|}
 end_function
 

@@ -269,7 +269,8 @@ function_decl|;
 end_function_decl
 
 begin_function
-name|void
+name|GtkWidget
+modifier|*
 DECL|function|gimp_paint_options_gui (GimpToolOptions * tool_options)
 name|gimp_paint_options_gui
 parameter_list|(
@@ -339,9 +340,10 @@ argument_list|)
 expr_stmt|;
 name|vbox
 operator|=
+name|gimp_tool_options_gui
+argument_list|(
 name|tool_options
-operator|->
-name|main_vbox
+argument_list|)
 expr_stmt|;
 comment|/*  the main table  */
 name|table
@@ -917,6 +919,9 @@ name|frame
 argument_list|)
 expr_stmt|;
 block|}
+return|return
+name|vbox
+return|;
 block|}
 end_function
 

@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae149ec0103
+DECL|enum|__anon292c967b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -796,7 +796,8 @@ block|}
 end_function
 
 begin_function
-name|void
+name|GtkWidget
+modifier|*
 DECL|function|gimp_blend_options_gui (GimpToolOptions * tool_options)
 name|gimp_blend_options_gui
 parameter_list|(
@@ -836,16 +837,12 @@ argument_list|(
 name|tool_options
 argument_list|)
 expr_stmt|;
+name|vbox
+operator|=
 name|gimp_paint_options_gui
 argument_list|(
 name|tool_options
 argument_list|)
-expr_stmt|;
-name|vbox
-operator|=
-name|tool_options
-operator|->
-name|main_vbox
 expr_stmt|;
 name|gimp_dnd_viewable_dest_add
 argument_list|(
@@ -1393,6 +1390,9 @@ argument_list|,
 literal|0.0
 argument_list|)
 expr_stmt|;
+return|return
+name|vbox
+return|;
 block|}
 end_function
 

@@ -100,7 +100,8 @@ end_comment
 begin_typedef
 DECL|typedef|GimpToolOptionsGUIFunc
 typedef|typedef
-name|void
+name|GtkWidget
+modifier|*
 function_decl|(
 modifier|*
 name|GimpToolOptionsGUIFunc

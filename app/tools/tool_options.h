@@ -108,10 +108,6 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 decl_stmt|;
-DECL|member|main_vbox
-name|gpointer
-name|main_vbox
-decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -195,7 +191,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gpointer
 name|gimp_tool_options_gui
 parameter_list|(
 name|GimpToolOptions

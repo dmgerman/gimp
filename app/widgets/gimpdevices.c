@@ -778,12 +778,14 @@ name|new_device_info
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_context_unset_parent
+name|gimp_context_set_parent
 argument_list|(
 name|GIMP_CONTEXT
 argument_list|(
 name|current_device_info
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|manager

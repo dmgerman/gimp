@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1bc25c0103
+DECL|enum|__anon2a0fd9040103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -717,7 +717,8 @@ block|}
 end_function
 
 begin_function
-name|void
+name|GtkWidget
+modifier|*
 DECL|function|gimp_bucket_fill_options_gui (GimpToolOptions * tool_options)
 name|gimp_bucket_fill_options_gui
 parameter_list|(
@@ -761,16 +762,12 @@ argument_list|(
 name|tool_options
 argument_list|)
 expr_stmt|;
+name|vbox
+operator|=
 name|gimp_paint_options_gui
 argument_list|(
 name|tool_options
 argument_list|)
-expr_stmt|;
-name|vbox
-operator|=
-name|tool_options
-operator|->
-name|main_vbox
 expr_stmt|;
 comment|/*  fill type  */
 name|str
@@ -1045,6 +1042,9 @@ argument_list|(
 name|tool_options
 argument_list|)
 expr_stmt|;
+return|return
+name|vbox
+return|;
 block|}
 end_function
 

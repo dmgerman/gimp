@@ -149,7 +149,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|GtkWidget
+modifier|*
 name|gimp_eraser_options_gui
 parameter_list|(
 name|GimpToolOptions
@@ -581,7 +582,8 @@ end_comment
 
 begin_function
 specifier|static
-name|void
+name|GtkWidget
+modifier|*
 DECL|function|gimp_eraser_options_gui (GimpToolOptions * tool_options)
 name|gimp_eraser_options_gui
 parameter_list|(
@@ -613,16 +615,12 @@ argument_list|(
 name|tool_options
 argument_list|)
 expr_stmt|;
+name|vbox
+operator|=
 name|gimp_paint_options_gui
 argument_list|(
 name|tool_options
 argument_list|)
-expr_stmt|;
-name|vbox
-operator|=
-name|tool_options
-operator|->
-name|main_vbox
 expr_stmt|;
 comment|/* the anti_erase toggle */
 name|str
@@ -711,6 +709,9 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
+return|return
+name|vbox
+return|;
 block|}
 end_function
 

@@ -135,7 +135,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
-name|void
+name|GtkWidget
+modifier|*
 name|gimp_move_options_gui
 parameter_list|(
 name|GimpToolOptions

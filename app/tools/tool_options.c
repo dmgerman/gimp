@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c622e40103
+DECL|enum|__anon2937b21e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -333,17 +333,6 @@ operator|->
 name|tool_info
 operator|=
 name|NULL
-expr_stmt|;
-name|options
-operator|->
-name|main_vbox
-operator|=
-name|gtk_vbox_new
-argument_list|(
-name|FALSE
-argument_list|,
-literal|2
-argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -727,7 +716,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gpointer
 DECL|function|gimp_tool_options_gui (GimpToolOptions * tool_options)
 name|gimp_tool_options_gui
 parameter_list|(
@@ -738,41 +727,20 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
-name|label
+name|vbox
 decl_stmt|;
-name|label
+name|vbox
 operator|=
-name|gtk_label_new
+name|gtk_vbox_new
 argument_list|(
-name|_
-argument_list|(
-literal|"This tool has no options."
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|tool_options
-operator|->
-name|main_vbox
-argument_list|)
-argument_list|,
-name|label
-argument_list|,
 name|FALSE
 argument_list|,
-name|FALSE
-argument_list|,
-literal|6
+literal|2
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|label
-argument_list|)
-expr_stmt|;
+return|return
+name|vbox
+return|;
 block|}
 end_function
 
