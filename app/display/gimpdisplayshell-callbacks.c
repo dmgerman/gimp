@@ -1799,6 +1799,11 @@ name|update_cursor
 init|=
 name|FALSE
 decl_stmt|;
+name|gboolean
+name|force_cursor_updating
+init|=
+name|FALSE
+decl_stmt|;
 specifier|static
 name|GimpToolInfo
 modifier|*
@@ -2346,6 +2351,11 @@ name|state
 argument_list|,
 name|gdisp
 argument_list|)
+expr_stmt|;
+comment|/*  call the tool's update_cursor() method even though              *  GDK_BUTTON1_MASK is set              */
+name|force_cursor_updating
+operator|=
+name|TRUE
 expr_stmt|;
 name|shell
 operator|->
@@ -4378,6 +4388,9 @@ name|control
 argument_list|)
 operator|)
 operator|&&
+operator|(
+name|force_cursor_updating
+operator|||
 operator|!
 operator|(
 name|state
@@ -4388,6 +4401,7 @@ operator||
 name|GDK_BUTTON2_MASK
 operator||
 name|GDK_BUTTON3_MASK
+operator|)
 operator|)
 operator|)
 condition|)
