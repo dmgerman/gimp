@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history:  * 1.1.20a; 2000/04/25   hof: new: p_get_video_paste_name p_clear_video_paste  * 1.1.14a; 2000/01/02   hof: new: p_get_frame_nr  * 1.1.8a;  1999/08/31   hof: new: p_strdup_del_underscore and p_strdup_add_underscore  * 0.99.00; 1999/03/15   hof: prepared for win/dos filename conventions  * 0.96.02; 1998/08/05   hof: extended gap_dup (duplicate range instead of singele frame)  *                            added gap_shift (framesequence shift)  * 0.96.00; 1998/06/27   hof: added gap animation sizechange plugins  *                            (moved range_ops to seperate .h file)  * 0.94.01; 1998/04/27   hof: added flatten_mode to plugin: gap_range_to_multilayer  * 0.90.00;              hof: 1.st (pre) release  */
+comment|/* revision history:  * 1.1.29a; 2000/11/23   hof: gap locking (changed to procedures and placed here)  * 1.1.20a; 2000/04/25   hof: new: p_get_video_paste_name p_clear_video_paste  * 1.1.14a; 2000/01/02   hof: new: p_get_frame_nr  * 1.1.8a;  1999/08/31   hof: new: p_strdup_del_underscore and p_strdup_add_underscore  * 0.99.00; 1999/03/15   hof: prepared for win/dos filename conventions  * 0.96.02; 1998/08/05   hof: extended gap_dup (duplicate range instead of singele frame)  *                            added gap_shift (framesequence shift)  * 0.96.00; 1998/06/27   hof: added gap animation sizechange plugins  *                            (moved range_ops to seperate .h file)  * 0.94.01; 1998/04/27   hof: added flatten_mode to plugin: gap_range_to_multilayer  * 0.90.00;              hof: 1.st (pre) release  */
 end_comment
 
 begin_ifndef
@@ -119,6 +119,37 @@ end_endif
 begin_comment
 comment|/* !G_OS_WIN32 */
 end_comment
+
+begin_typedef
+typedef|typedef
+struct|struct
+DECL|struct|__anon29a20efc0108
+block|{
+DECL|member|key
+name|char
+name|key
+index|[
+literal|50
+index|]
+decl_stmt|;
+DECL|member|lock
+name|long
+name|lock
+decl_stmt|;
+comment|/* 0 ... NOT Locked, 1 ... locked */
+DECL|member|image_id
+name|gint32
+name|image_id
+decl_stmt|;
+DECL|member|pid
+name|gint32
+name|pid
+decl_stmt|;
+DECL|typedef|t_gap_lockdata
+block|}
+name|t_gap_lockdata
+typedef|;
+end_typedef
 
 begin_typedef
 DECL|struct|t_anim_info
@@ -698,6 +729,58 @@ name|image_id
 parameter_list|,
 name|long
 name|paste_mode
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint32
+name|p_getpid
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint
+name|p_pid_is_alive
+parameter_list|(
+name|gint32
+name|pid
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint
+name|p_gap_lock_is_locked
+parameter_list|(
+name|gint32
+name|image_id
+parameter_list|,
+name|GimpRunModeType
+name|run_mode
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|p_gap_lock_set
+parameter_list|(
+name|gint32
+name|image_id
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|p_gap_lock_remove
+parameter_list|(
+name|gint32
+name|image_id
 parameter_list|)
 function_decl|;
 end_function_decl

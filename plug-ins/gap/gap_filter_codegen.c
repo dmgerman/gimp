@@ -4,7 +4,7 @@ comment|/* gap_filter_codegen.c  *  * GAP ... Gimp Animation Plugins  *  * This 
 end_comment
 
 begin_comment
-comment|/* revision history:  * version 0.99.00  1999.03.14  hof: Codegeneration of File ./gen_filter_iter_code.c  *                                   splittet into single Files XX_iter_ALT.inc  *                                   bugfixes in code generation  * version 0.95.04  1998.06.12  hof: p_delta_drawable (enable use of layerstack anims in drawable iteration)  * version 0.93.00              hof: generate Iterator Source  *                                   in one single file (per plugin), ready to compile  * version 0.91.01; Tue Dec 23  hof: 1.st (pre) release  */
+comment|/* revision history:  * 1.1.29b;  2000/11/30  hof: used g_snprintf  * version 0.99.00  1999.03.14  hof: Codegeneration of File ./gen_filter_iter_code.c  *                                   splittet into single Files XX_iter_ALT.inc  *                                   bugfixes in code generation  * version 0.95.04  1998.06.12  hof: p_delta_drawable (enable use of layerstack anims in drawable iteration)  * version 0.93.00              hof: generate Iterator Source  *                                   in one single file (per plugin), ready to compile  * version 0.91.01; Tue Dec 23  hof: 1.st (pre) release  */
 end_comment
 
 begin_include
@@ -306,7 +306,7 @@ block|}
 end_function
 
 begin_function
-DECL|function|p_get_gendate (char * gendate)
+DECL|function|p_get_gendate (char * gendate,gint32 sizeof_gendate)
 specifier|static
 name|void
 name|p_get_gendate
@@ -314,6 +314,9 @@ parameter_list|(
 name|char
 modifier|*
 name|gendate
+parameter_list|,
+name|gint32
+name|sizeof_gendate
 parameter_list|)
 block|{
 name|struct
@@ -341,9 +344,11 @@ name|l_ti
 argument_list|)
 expr_stmt|;
 comment|/* konvert time to tm struct */
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|gendate
+argument_list|,
+name|sizeof_gendate
 argument_list|,
 literal|"%02d.%02d.%02d %02d:%02d"
 argument_list|,
@@ -697,6 +702,11 @@ name|l_gendate
 index|[
 literal|0
 index|]
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|l_gendate
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Query the gimp application's procedural database    *  regarding a particular procedure.    */
@@ -848,9 +858,14 @@ operator|-
 literal|1
 expr_stmt|;
 block|}
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|l_filename
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|l_filename
+argument_list|)
 argument_list|,
 literal|"%s_iter_ALT.inc"
 argument_list|,
@@ -1611,6 +1626,11 @@ name|l_gendate
 index|[
 literal|0
 index|]
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|l_gendate
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Query the gimp application's procedural database    *  regarding a particular procedure.    */
@@ -1758,9 +1778,14 @@ operator|-
 literal|1
 expr_stmt|;
 block|}
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|l_filename
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|l_filename
+argument_list|)
 argument_list|,
 literal|"%s_iter.c"
 argument_list|,
@@ -3511,7 +3536,7 @@ name|fprintf
 argument_list|(
 name|l_fp
 argument_list|,
-literal|"  sprintf(l_blurb_text, \"This extension calculates the modified values for one iterationstep for the call of %s\");\n"
+literal|"  g_snprintf(l_blurb_text, sizeof(l_blurb_text), \"This extension calculates the modified values for one iterationstep for the call of %s\");\n"
 argument_list|,
 name|l_clean_proc_name
 argument_list|)

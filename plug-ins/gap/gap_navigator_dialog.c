@@ -12,7 +12,7 @@ comment|/* TODO:  * - BUG  X11 deadlock if GAP Video Navigator runs another plug
 end_comment
 
 begin_comment
-comment|/* revision history:  * version 1.1.20a; 2000.04.25   hof: copy/cut/paste menu  * version 1.1.14a; 2000.01.08   hof: 1st release  */
+comment|/* revision history:  * version 1.1.29b; 2000.11.30   hof: new e-mail adress  * version 1.1.20a; 2000.04.25   hof: copy/cut/paste menu  * version 1.1.14a; 2000.01.08   hof: 1st release  */
 end_comment
 
 begin_decl_stmt
@@ -22,7 +22,7 @@ name|char
 modifier|*
 name|gap_navigator_version
 init|=
-literal|"1.1.19a; 2000/04/24"
+literal|"1.1.29b; 2000/11/30"
 decl_stmt|;
 end_decl_stmt
 
@@ -178,7 +178,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290d43bd0103
+DECL|enum|__anon2c4041f00103
 block|{
 DECL|enumerator|OPS_BUTTON_MODIFIER_NONE
 name|OPS_BUTTON_MODIFIER_NONE
@@ -206,7 +206,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290d43bd0203
+DECL|enum|__anon2c4041f00203
 block|{
 DECL|enumerator|OPS_BUTTON_NORMAL
 name|OPS_BUTTON_NORMAL
@@ -1894,7 +1894,7 @@ literal|"GAP video navigator dialog"
 argument_list|,
 literal|""
 argument_list|,
-literal|"Wolfgang Hofer (hof@hotbot.com)"
+literal|"Wolfgang Hofer (hof@gimp.org)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -3537,9 +3537,14 @@ operator|->
 name|framerange_number_label
 condition|)
 block|{
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|frame_nr_to_char
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|frame_nr_to_char
+argument_list|)
 argument_list|,
 literal|"%04d - %04d"
 argument_list|,
@@ -5636,9 +5641,14 @@ name|vin_ptr
 operator|->
 name|framerate
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|l_frame_name
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|l_frame_name
+argument_list|)
 argument_list|,
 literal|"frame_[####] (%dms)"
 argument_list|,
@@ -11328,7 +11338,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|navi_calc_frametiming (gint32 frame_nr,char * buf)
+DECL|function|navi_calc_frametiming (gint32 frame_nr,char * buf,gint32 sizeof_buf)
 name|navi_calc_frametiming
 parameter_list|(
 name|gint32
@@ -11337,6 +11347,9 @@ parameter_list|,
 name|char
 modifier|*
 name|buf
+parameter_list|,
+name|gint32
+name|sizeof_buf
 parameter_list|)
 block|{
 name|gint32
@@ -11386,9 +11399,11 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buf
+argument_list|,
+name|sizeof_buf
 argument_list|,
 literal|"min:sec:msec"
 argument_list|)
@@ -11406,9 +11421,11 @@ operator|<
 literal|1
 condition|)
 block|{
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buf
+argument_list|,
+name|sizeof_buf
 argument_list|,
 literal|"min:sec:msec"
 argument_list|)
@@ -11457,9 +11474,11 @@ name|tmsec
 operator|/
 literal|60000
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buf
+argument_list|,
+name|sizeof_buf
 argument_list|,
 literal|"%02d:%02d:%03d"
 argument_list|,
@@ -11506,6 +11525,11 @@ operator|->
 name|frame_nr
 argument_list|,
 name|frame_nr_to_time
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|frame_nr_to_time
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_text
@@ -11666,9 +11690,14 @@ operator|=
 name|TRUE
 expr_stmt|;
 comment|/* frame_widget->drop_type     = GIMP_DROP_NONE; */
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|frame_nr_to_char
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|frame_nr_to_char
+argument_list|)
 argument_list|,
 literal|"%04d"
 argument_list|,
@@ -11683,6 +11712,11 @@ argument_list|(
 name|frame_nr
 argument_list|,
 name|frame_nr_to_time
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|frame_nr_to_time
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Need to let the list item know about the frame_widget  */
@@ -12274,9 +12308,14 @@ name|l_basename
 operator|=
 name|NULL
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|frame_nr_to_char
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|frame_nr_to_char
+argument_list|)
 argument_list|,
 literal|"0000 - 0000"
 argument_list|)
@@ -12397,9 +12436,14 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|frame_nr_to_char
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|frame_nr_to_char
+argument_list|)
 argument_list|,
 literal|"%04d - %04d"
 argument_list|,

@@ -21,13 +21,13 @@ name|_GAP_MOV_DIALOG_H
 end_define
 
 begin_comment
-comment|/* revision history:  * gimp    1.1.20a; 2000/04/25  hof: support for keyframes, anim_preview  * version 0.96.02; 1998.07.25  hof: added clip_to_img  */
+comment|/* revision history:  * gimp    1.1.29b; 2000/11/19  hof: new feature: FRAME based Stepmodes,   *                                   increased controlpoint Limit GAP_MOV_MAX_POINT (from 256 -> 1024)  * gimp    1.1.20a; 2000/04/25  hof: support for keyframes, anim_preview  * version 0.96.02; 1998.07.25  hof: added clip_to_img  */
 end_comment
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a8d36900103
+DECL|enum|__anon27d5e7650103
 block|{
 DECL|enumerator|GAP_STEP_LOOP
 name|GAP_STEP_LOOP
@@ -58,16 +58,54 @@ DECL|enumerator|GAP_STEP_NONE
 name|GAP_STEP_NONE
 init|=
 literal|5
+block|,
+DECL|enumerator|GAP_STEP_FRAME_LOOP
+name|GAP_STEP_FRAME_LOOP
+init|=
+literal|100
+block|,
+DECL|enumerator|GAP_STEP_FRAME_LOOP_REV
+name|GAP_STEP_FRAME_LOOP_REV
+init|=
+literal|101
+block|,
+DECL|enumerator|GAP_STEP_FRAME_ONCE
+name|GAP_STEP_FRAME_ONCE
+init|=
+literal|102
+block|,
+DECL|enumerator|GAP_STEP_FRAME_ONCE_REV
+name|GAP_STEP_FRAME_ONCE_REV
+init|=
+literal|103
+block|,
+DECL|enumerator|GAP_STEP_FRAME_PING_PONG
+name|GAP_STEP_FRAME_PING_PONG
+init|=
+literal|104
+block|,
+DECL|enumerator|GAP_STEP_FRAME_NONE
+name|GAP_STEP_FRAME_NONE
+init|=
+literal|105
 DECL|typedef|t_mov_stepmodes
 block|}
 name|t_mov_stepmodes
 typedef|;
 end_typedef
 
+begin_define
+DECL|macro|GAP_STEP_FRAME
+define|#
+directive|define
+name|GAP_STEP_FRAME
+value|GAP_STEP_FRAME_LOOP
+end_define
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a8d36900203
+DECL|enum|__anon27d5e7650203
 block|{
 DECL|enumerator|GAP_HANDLE_LEFT_TOP
 name|GAP_HANDLE_LEFT_TOP
@@ -102,7 +140,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a8d36900303
+DECL|enum|__anon27d5e7650303
 block|{
 DECL|enumerator|GAP_APV_EXACT
 name|GAP_APV_EXACT
@@ -125,7 +163,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a8d36900408
+DECL|struct|__anon27d5e7650408
 typedef|typedef
 struct|struct
 block|{
@@ -138,31 +176,29 @@ DECL|member|src_layer_idx
 name|long
 name|src_layer_idx
 decl_stmt|;
-comment|/* index of current layer */
+comment|/* index of current layer (used for multilayer stepmodes) */
+DECL|member|src_frame_idx
+name|long
+name|src_frame_idx
+decl_stmt|;
+comment|/* current frame number (used for source frame stepmodes) */
 DECL|member|src_layers
 name|gint32
 modifier|*
 name|src_layers
 decl_stmt|;
-comment|/* array of source images layer id's */
+comment|/* array of source images layer id's (used for multilayer stepmodes) */
 DECL|member|src_last_layer
 name|long
 name|src_last_layer
 decl_stmt|;
-comment|/* index of last layer 0 upto n-1 */
+comment|/* index of last layer 0 upto n-1 (used for multilayer stepmodes) */
 DECL|member|currX
 DECL|member|currY
 name|gdouble
 name|currX
 decl_stmt|,
 name|currY
-decl_stmt|;
-DECL|member|deltaX
-DECL|member|deltaY
-name|gdouble
-name|deltaX
-decl_stmt|,
-name|deltaY
 decl_stmt|;
 DECL|member|l_handleX
 name|gint
@@ -176,33 +212,17 @@ DECL|member|currOpacity
 name|gdouble
 name|currOpacity
 decl_stmt|;
-DECL|member|deltaOpacity
-name|gdouble
-name|deltaOpacity
-decl_stmt|;
 DECL|member|currWidth
 name|gdouble
 name|currWidth
-decl_stmt|;
-DECL|member|deltaWidth
-name|gdouble
-name|deltaWidth
 decl_stmt|;
 DECL|member|currHeight
 name|gdouble
 name|currHeight
 decl_stmt|;
-DECL|member|deltaHeight
-name|gdouble
-name|deltaHeight
-decl_stmt|;
 DECL|member|currRotation
 name|gdouble
 name|currRotation
-decl_stmt|;
-DECL|member|deltaRotation
-name|gdouble
-name|deltaRotation
 decl_stmt|;
 DECL|typedef|t_mov_current
 block|}
@@ -211,7 +231,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a8d36900508
+DECL|struct|__anon27d5e7650508
 typedef|typedef
 struct|struct
 block|{
@@ -262,7 +282,7 @@ DECL|macro|GAP_MOV_MAX_POINT
 define|#
 directive|define
 name|GAP_MOV_MAX_POINT
-value|256
+value|1024
 end_define
 
 begin_comment
@@ -270,7 +290,7 @@ comment|/*  * Notes:  * - exchange of frames (load replace)  *   keeps an images
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a8d36900608
+DECL|struct|__anon27d5e7650608
 typedef|typedef
 struct|struct
 block|{
@@ -336,11 +356,6 @@ DECL|member|dst_layerstack
 name|gint
 name|dst_layerstack
 decl_stmt|;
-DECL|member|dst_combination_mode
-name|gint
-name|dst_combination_mode
-decl_stmt|;
-comment|/* GimpLayerModeEffects */
 comment|/* for dialog only */
 DECL|member|dst_image_id
 name|gint32
@@ -385,6 +400,31 @@ DECL|member|apv_scaley
 name|gdouble
 name|apv_scaley
 decl_stmt|;
+comment|/* for FRAME based stepmodes */
+DECL|member|cache_src_image_id
+name|gint32
+name|cache_src_image_id
+decl_stmt|;
+comment|/* id of the source image (from where cache image was copied) */
+DECL|member|cache_tmp_image_id
+name|gint32
+name|cache_tmp_image_id
+decl_stmt|;
+comment|/* id of a cached flattened copy of the src image */
+DECL|member|cache_tmp_layer_id
+name|gint32
+name|cache_tmp_layer_id
+decl_stmt|;
+comment|/* the only visible layer in the cached image */
+DECL|member|cache_frame_number
+name|gint32
+name|cache_frame_number
+decl_stmt|;
+DECL|member|cache_ainfo_ptr
+name|t_anim_info
+modifier|*
+name|cache_ainfo_ptr
+decl_stmt|;
 DECL|typedef|t_mov_values
 block|}
 name|t_mov_values
@@ -392,7 +432,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a8d36900708
+DECL|struct|__anon27d5e7650708
 typedef|typedef
 struct|struct
 block|{
@@ -453,6 +493,33 @@ parameter_list|,
 name|t_mov_current
 modifier|*
 name|cur_ptr
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint32
+name|p_get_flattened_layer
+parameter_list|(
+name|gint32
+name|image_id
+parameter_list|,
+name|GimpMergeType
+name|mergemode
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint
+name|p_fetch_src_frame
+parameter_list|(
+name|t_mov_values
+modifier|*
+name|pvals
+parameter_list|,
+name|gint32
+name|wanted_frame_nr
 parameter_list|)
 function_decl|;
 end_function_decl

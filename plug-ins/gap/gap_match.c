@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history:  * version 0.97.00  1998.10.14  hof: - created module   */
+comment|/* revision history:  * gimp   1.1.29b;   2000/11/30  hof: used g_snprintf  * version 0.97.00  1998.10.14  hof: - created module   */
 end_comment
 
 begin_include
@@ -291,7 +291,7 @@ block|{
 name|l_digits
 operator|--
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 operator|&
 name|l_fmt_str
@@ -299,18 +299,29 @@ index|[
 literal|2
 index|]
 argument_list|,
+sizeof|sizeof
+argument_list|(
+name|l_fmt_str
+argument_list|)
+operator|-
+literal|2
+argument_list|,
 literal|"%dd"
 argument_list|,
 name|l_digits
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 operator|&
 name|buffer
 index|[
 name|l_idx
 index|]
+argument_list|,
+name|buff_len
+operator|-
+name|l_idx
 argument_list|,
 name|l_fmt_str
 argument_list|,

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* gap_main.c  * 1997.11.05 hof (Wolfgang Hofer)  *  * GAP ... Gimp Animation Package  *  * This Module contains:  * - MAIN of all GAP_Plugins  * - query   registration of GAP Procedures (Video Menu) in the PDB  * - run     invoke the selected GAP procedure by its PDB name  *   *  * GAP provides Animation Functions for the gimp,  * working on a series of Images stored on disk in gimps .xcf Format.  *  * Frames are Images with naming convention like this:  * Imagename_<number>.<ext>  * Example:   snoopy_0001.xcf, snoopy_0002.xcf, snoopy_0003.xcf  *  * if gzip is installed on your system you may optional  * use gziped xcf frames with extensions ".xcfgz"  *  */
+comment|/* gap_main.c  * 1997.11.05 hof (Wolfgang Hofer)  *  * GAP ... Gimp Animation Package  *  * This Module contains:  * - MAIN of the most GAP_Plugins  * - query   registration of GAP Procedures (Video Menu) in the PDB  * - run     invoke the selected GAP procedure by its PDB name  *   *  * GAP provides Animation Functions for the gimp,  * working on a series of Images stored on disk in gimps .xcf Format.  *  * Frames are Images with naming convention like this:  * Imagename_<number>.<ext>  * Example:   snoopy_0001.xcf, snoopy_0002.xcf, snoopy_0003.xcf  *  * if gzip is installed on your system you may optional  * use gziped xcf frames with extensions ".xcfgz"  *  */
 end_comment
 
 begin_comment
@@ -14,12 +14,12 @@ name|char
 modifier|*
 name|gap_main_version
 init|=
-literal|"1.1.20a; 2000/04/25"
+literal|"1.1.29b; 2000/11/30"
 decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* revision history:  * gimp    1.1.20a; 2000/04/25  hof: NON_INTERACTIVE PDB-Interfaces video_edit_copy/paste/clear  * gimp    1.1.14a; 2000/01/01  hof: bugfix params for gap_dup in noninteractive mode  * gimp    1.1.13a; 1999/11/26  hof: splitted frontends for external programs (mpeg encoders)  *                                   to gap_frontends_main.c  * gimp    1.1.11a; 1999/11/15  hof: changed Menunames (AnimFrames to Video, Submenu Encode)  * gimp    1.1.10a; 1999/10/22  hof: extended dither options for gap_range_convert  * gimp    1.1.8a;  1999/08/31  hof: updated main version  * version 0.99.00; 1999/03/17  hof: updated main version  * version 0.98.02; 1999/01/27  hof: updated main version  * version 0.98.01; 1998/12/21  hof: updated main version, e-mail adress  * version 0.98.00; 1998/11/27  hof: updated main version, started port to GIMP 1.1 interfaces  *                                   Use no '_' (underscore) in menunames. (has special function in 1.1)  * version 0.96.03; 1998/08/31  hof: updated main version,  *                                         gap_range_to_multilayer now returns image_id  *                                         gap_split_image now returns image_id  * version 0.96.02; 1998/08/05  hof: updated main version,   *                                   added gap_shift  * version 0.96.00; 1998/06/27  hof: added gap animation sizechange plugins  *                                         gap_split_image  *                                         gap_mpeg_encode  * version 0.94.01; 1998/04/28  hof: updated main version,  *                                   added flatten_mode to plugin: gap_range_to_multilayer  * version 0.94.00; 1998/04/25  hof: updated main version  * version 0.93.01; 1998/02/03  hof:  * version 0.92.00;             hof: set gap_debug from environment   * version 0.91.00; 1997/12/22  hof:   * version 0.90.00;             hof: 1.st (pre) release  */
+comment|/* revision history:  * gimp    1.1.29b; 2000/11/30  hof: - GAP locks do check (only on UNIX) if locking Process is still alive  *                                   - NONINTERACTIVE PDB Interface(s) for MovePath  *                                      plug_in_gap_get_animinfo, plug_in_gap_set_framerate  *                                   - updated main version, e-mail adress  * gimp    1.1.20a; 2000/04/25  hof: NON_INTERACTIVE PDB-Interfaces video_edit_copy/paste/clear  * gimp    1.1.14a; 2000/01/01  hof: bugfix params for gap_dup in noninteractive mode  * gimp    1.1.13a; 1999/11/26  hof: splitted frontends for external programs (mpeg encoders)  *                                   to gap_frontends_main.c  * gimp    1.1.11a; 1999/11/15  hof: changed Menunames (AnimFrames to Video, Submenu Encode)  * gimp    1.1.10a; 1999/10/22  hof: extended dither options for gap_range_convert  * gimp    1.1.8a;  1999/08/31  hof: updated main version  * version 0.99.00; 1999/03/17  hof: updated main version  * version 0.98.02; 1999/01/27  hof: updated main version  * version 0.98.01; 1998/12/21  hof: updated main version, e-mail adress  * version 0.98.00; 1998/11/27  hof: updated main version, started port to GIMP 1.1 interfaces  *                                   Use no '_' (underscore) in menunames. (has special function in 1.1)  * version 0.96.03; 1998/08/31  hof: updated main version,  *                                         gap_range_to_multilayer now returns image_id  *                                         gap_split_image now returns image_id  * version 0.96.02; 1998/08/05  hof: updated main version,   *                                   added gap_shift  * version 0.96.00; 1998/06/27  hof: added gap animation sizechange plugins  *                                         gap_split_image  *                                         gap_mpeg_encode  * version 0.94.01; 1998/04/28  hof: updated main version,  *                                   added flatten_mode to plugin: gap_range_to_multilayer  * version 0.94.00; 1998/04/25  hof: updated main version  * version 0.93.01; 1998/02/03  hof:  * version 0.92.00;             hof: set gap_debug from environment   * version 0.91.00; 1997/12/22  hof:   * version 0.90.00;             hof: 1.st (pre) release  */
 end_comment
 
 begin_comment
@@ -118,6 +118,12 @@ directive|include
 file|"gap_arr_dialog.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gap_pdb_calls.h"
+end_include
+
 begin_comment
 comment|/* ------------------------  * global gap DEBUG switch  * ------------------------  */
 end_comment
@@ -207,18 +213,8 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_macro
-DECL|function|MAIN ()
-name|MAIN
-argument_list|()
-end_macro
-
-begin_function
-specifier|static
-name|void
-name|query
-parameter_list|()
-block|{
+begin_decl_stmt
+DECL|variable|args_std
 specifier|static
 name|GimpParamDef
 name|args_std
@@ -250,6 +246,10 @@ literal|"Input drawable (unused)"
 block|}
 block|,   }
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|nargs_std
 specifier|static
 name|int
 name|nargs_std
@@ -267,6 +267,10 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|args_goto
 specifier|static
 name|GimpParamDef
 name|args_goto
@@ -306,6 +310,10 @@ literal|"frame nr where to go"
 block|}
 block|,   }
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|nargs_goto
 specifier|static
 name|int
 name|nargs_goto
@@ -323,6 +331,10 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|args_del
 specifier|static
 name|GimpParamDef
 name|args_del
@@ -362,6 +374,10 @@ literal|"number of frames to delete (delete starts at current frame)"
 block|}
 block|,   }
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|nargs_del
 specifier|static
 name|int
 name|nargs_del
@@ -379,6 +395,10 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|args_dup
 specifier|static
 name|GimpParamDef
 name|args_dup
@@ -434,6 +454,10 @@ literal|"frame nr to stop (can be lower than range_from)"
 block|}
 block|,   }
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|nargs_dup
 specifier|static
 name|int
 name|nargs_dup
@@ -451,6 +475,10 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|args_exchg
 specifier|static
 name|GimpParamDef
 name|args_exchg
@@ -462,7 +490,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
-literal|"Interactive, non-interactive"
+literal|"non-interactive"
 block|}
 block|,
 block|{
@@ -490,6 +518,10 @@ literal|"nr of frame to exchange with current frame"
 block|}
 block|,   }
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|nargs_exchg
 specifier|static
 name|int
 name|nargs_exchg
@@ -507,6 +539,10 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|args_mov
 specifier|static
 name|GimpParamDef
 name|args_mov
@@ -518,7 +554,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
-literal|"Interactive, non-interactive"
+literal|"Interactive"
 block|}
 block|,
 block|{
@@ -538,13 +574,17 @@ literal|"Input drawable (unused)"
 block|}
 block|,   }
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|nargs_mov
 specifier|static
 name|int
 name|nargs_mov
 init|=
 sizeof|sizeof
 argument_list|(
-name|args_std
+name|args_mov
 argument_list|)
 operator|/
 sizeof|sizeof
@@ -555,6 +595,440 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|args_mov_path
+specifier|static
+name|GimpParamDef
+name|args_mov_path
+index|[]
+init|=
+block|{
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"run_mode"
+block|,
+literal|"Interactive, non-interactive"
+block|}
+block|,
+block|{
+name|GIMP_PDB_IMAGE
+block|,
+literal|"dst_image"
+block|,
+literal|"Destination image (one of the Anim Frames), where to insert the animated source layers"
+block|}
+block|,
+block|{
+name|GIMP_PDB_DRAWABLE
+block|,
+literal|"drawable"
+block|,
+literal|"drawable (unused)"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"range_from"
+block|,
+literal|"destination frame nr to start"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"range_to"
+block|,
+literal|"destination frame nr to stop (can be lower than range_from)"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"nr"
+block|,
+literal|"layerstack position where to insert source layer (0 == on top)"
+block|}
+block|,
+comment|/* source specs */
+block|{
+name|GIMP_PDB_LAYER
+block|,
+literal|"src_layer_id"
+block|,
+literal|"starting LayerID of SourceObject. (use any Multilayeranimated Image, or an AnimFrame of anoter Animation)"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"src_stepmode"
+block|,
+literal|"0-5     derive inserted object as copy of one layer from a multilayer src_image \n"
+literal|"100-105 derive inserted object as copy of merged visible layers of a source animframe \n"
+literal|"0:  Layer Loop  1: Layer Loop reverse  2: Layer Once  3: Layer Once reverse  4: Layer PingPong \n"
+literal|"5: None (use onle the selected src_layer)\n"
+literal|"100: Frame Loop  101: Frame Loop reverse  102: Frame Once  103: Frame Once reverse  104: Frame PingPong \n"
+literal|"105: Frame None (use onle the flat copy of the selected frame)\n"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"src_handle"
+block|,
+literal|"0: handle left top   1: handle left bottom \n"
+literal|"2: handle right top  3: handle right bottom \n"
+literal|"4: handle center"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"src_paintmode"
+block|,
+literal|"0: GIMP_NORMAL_MODE (see GimpLayerModeEffects -- libgimp/gimpenums.h -- for more information)"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"src_force_visible"
+block|,
+literal|"1: Set inserted layres visible, 0: insert layers as is"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"clip_to_img"
+block|,
+literal|"1: Clip inserted layers to Image size of the destination AnimFrame, 0: dont clip"
+block|}
+block|,
+comment|/* extras */
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"rotation_follow"
+block|,
+literal|"0: NO automatic calculation (use the rotation array parameters as it is) \n"
+literal|"1: Automatic calculation of rotation, following the path vectors, (Ignore rotation array parameters)\n"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"startangle"
+block|,
+literal|"start angle for the first contolpoint (only used if rotation-follow is on)"
+block|}
+block|,
+comment|/* CONTROLPOINT Arrays */
+block|{
+name|GIMP_PDB_INT32ARRAY
+block|,
+literal|"p_x"
+block|,
+literal|"Controlpoint x-koordinate"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"argc_p_x"
+block|,
+literal|"number of controlpoints"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32ARRAY
+block|,
+literal|"p_y"
+block|,
+literal|"Controlpoint y-koordinate"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"argc_p_y"
+block|,
+literal|"number of controlpoints"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32ARRAY
+block|,
+literal|"opacity"
+block|,
+literal|"Controlpoint opacity value 0<= value<= 100"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"argc_opacity"
+block|,
+literal|"number of controlpoints"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32ARRAY
+block|,
+literal|"w_resize"
+block|,
+literal|"width scaling in percent"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"argc_w_resize"
+block|,
+literal|"number of controlpoints"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32ARRAY
+block|,
+literal|"h_resize"
+block|,
+literal|"height scaling in percent"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"argc_h_resize"
+block|,
+literal|"number of controlpoints"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32ARRAY
+block|,
+literal|"rotation"
+block|,
+literal|"rotation in degrees"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"argc_rotation"
+block|,
+literal|"number of controlpoints"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32ARRAY
+block|,
+literal|"keyframe_abs"
+block|,
+literal|"n: fix controlpoint to this frame number, 0: for controlpoints that are not fixed to a frame."
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"argc_keyframe_abs"
+block|,
+literal|"number of controlpoints"
+block|}
+block|,   }
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|nargs_mov_path
+specifier|static
+name|int
+name|nargs_mov_path
+init|=
+sizeof|sizeof
+argument_list|(
+name|args_mov_path
+argument_list|)
+operator|/
+sizeof|sizeof
+argument_list|(
+name|args_mov_path
+index|[
+literal|0
+index|]
+argument_list|)
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|args_mov_path2
+specifier|static
+name|GimpParamDef
+name|args_mov_path2
+index|[]
+init|=
+block|{
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"run_mode"
+block|,
+literal|"Interactive, non-interactive"
+block|}
+block|,
+block|{
+name|GIMP_PDB_IMAGE
+block|,
+literal|"dst_image"
+block|,
+literal|"Destination image (one of the Anim Frames), where to insert the animated source layers"
+block|}
+block|,
+block|{
+name|GIMP_PDB_DRAWABLE
+block|,
+literal|"drawable"
+block|,
+literal|"drawable (unused)"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"range_from"
+block|,
+literal|"destination frame nr to start"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"range_to"
+block|,
+literal|"destination frame nr to stop (can be lower than range_from)"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"nr"
+block|,
+literal|"layerstack position where to insert source layer (0 == on top)"
+block|}
+block|,
+comment|/* source specs */
+block|{
+name|GIMP_PDB_LAYER
+block|,
+literal|"src_layer_id"
+block|,
+literal|"starting LayerID of SourceObject. (use any Multilayeranimated Image, or an AnimFrame of anoter Animation)"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"src_stepmode"
+block|,
+literal|"0-5     derive inserted object as copy of one layer from a multilayer src_image \n"
+literal|"100-105 derive inserted object as copy of merged visible layers of a source animframe \n"
+literal|"0:  Layer Loop  1: Layer Loop reverse  2: Layer Once  3: Layer Once reverse  4: Layer PingPong \n"
+literal|"5: None (use onle the selected src_layer)\n"
+literal|"100: Frame Loop  101: Frame Loop reverse  102: Frame Once  103: Frame Once reverse  104: Frame PingPong \n"
+literal|"105: Frame None (use onle the flat copy of the selected frame)\n"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"src_handle"
+block|,
+literal|"0: handle left top   1: handle left bottom \n"
+literal|"2: handle right top  3: handle right bottom \n"
+literal|"4: handle center"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"src_paintmode"
+block|,
+literal|"0: GIMP_NORMAL_MODE (see GimpLayerModeEffects -- libgimp/gimpenums.h -- for more information)"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"src_force_visible"
+block|,
+literal|"1: Set inserted layres visible, 0: insert layers as is"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"clip_to_img"
+block|,
+literal|"1: Clip inserted layers to Image size of the destination AnimFrame, 0: dont clip"
+block|}
+block|,
+comment|/* extras */
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"rotation_follow"
+block|,
+literal|"0: NO automatic calculation (use the rotation array parameters as it is) \n"
+literal|"1: Automatic calculation of rotation, following the path vectors, (Ignore rotation array parameters)\n"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"startangle"
+block|,
+literal|"start angle for the first contolpoint (only used if rotation-follow is on)"
+block|}
+block|,
+comment|/* CONTROLPOINTs from file */
+block|{
+name|GIMP_PDB_STRING
+block|,
+literal|"pointfile"
+block|,
+literal|"a file with contolpoints (readable text file with one line per controlpoint)"
+block|}
+block|,   }
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|nargs_mov_path2
+specifier|static
+name|int
+name|nargs_mov_path2
+init|=
+sizeof|sizeof
+argument_list|(
+name|args_mov_path2
+argument_list|)
+operator|/
+sizeof|sizeof
+argument_list|(
+name|args_mov_path2
+index|[
+literal|0
+index|]
+argument_list|)
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|args_f2multi
 specifier|static
 name|GimpParamDef
 name|args_f2multi
@@ -666,6 +1140,10 @@ literal|"string to match with layername (how to match is defined by select_mode)
 block|}
 block|,   }
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|nargs_f2multi
 specifier|static
 name|int
 name|nargs_f2multi
@@ -683,6 +1161,10 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|return_f2multi
 specifier|static
 name|GimpParamDef
 name|return_f2multi
@@ -698,6 +1180,10 @@ literal|"Output image"
 block|}
 block|}
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|nreturn_f2multi
 specifier|static
 name|int
 name|nreturn_f2multi
@@ -715,6 +1201,10 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|args_rflatt
 specifier|static
 name|GimpParamDef
 name|args_rflatt
@@ -762,6 +1252,10 @@ literal|"frame nr to stop (can be lower than range_from)"
 block|}
 block|,   }
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|nargs_rflatt
 specifier|static
 name|int
 name|nargs_rflatt
@@ -779,6 +1273,10 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|args_rlayerdel
 specifier|static
 name|GimpParamDef
 name|args_rlayerdel
@@ -834,6 +1332,10 @@ literal|"layerstack position (0 == on top)"
 block|}
 block|,   }
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|nargs_rlayerdel
 specifier|static
 name|int
 name|nargs_rlayerdel
@@ -851,6 +1353,10 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|args_rconv
 specifier|static
 name|GimpParamDef
 name|args_rconv
@@ -946,6 +1452,10 @@ literal|"(optional parameter) here you may specify the basename of the destinati
 block|}
 block|,   }
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|nargs_rconv
 specifier|static
 name|int
 name|nargs_rconv
@@ -963,6 +1473,10 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|args_rconv2
 specifier|static
 name|GimpParamDef
 name|args_rconv2
@@ -1090,6 +1604,10 @@ literal|"name of the cutom palette to use (used only for dest_type INDEXED and p
 block|}
 block|,   }
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|nargs_rconv2
 specifier|static
 name|int
 name|nargs_rconv2
@@ -1107,7 +1625,14 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+end_decl_stmt
+
+begin_comment
 comment|/* resize and crop share the same parameters */
+end_comment
+
+begin_decl_stmt
+DECL|variable|args_resize
 specifier|static
 name|GimpParamDef
 name|args_resize
@@ -1171,6 +1696,10 @@ literal|"Y offset in pixels"
 block|}
 block|,   }
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|nargs_resize
 specifier|static
 name|int
 name|nargs_resize
@@ -1188,6 +1717,10 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|args_scale
 specifier|static
 name|GimpParamDef
 name|args_scale
@@ -1235,6 +1768,10 @@ literal|"height of the resulting  anim_frame images in pixels"
 block|}
 block|,   }
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|nargs_scale
 specifier|static
 name|int
 name|nargs_scale
@@ -1252,6 +1789,10 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|args_split
 specifier|static
 name|GimpParamDef
 name|args_split
@@ -1307,6 +1848,10 @@ literal|"extension for the destination filetype (jpg, tif ...or any other gimp s
 block|}
 block|,   }
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|nargs_split
 specifier|static
 name|int
 name|nargs_split
@@ -1324,6 +1869,10 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|return_split
 specifier|static
 name|GimpParamDef
 name|return_split
@@ -1339,6 +1888,10 @@ literal|"Output image (first or last resulting frame)"
 block|}
 block|}
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|nreturn_split
 specifier|static
 name|int
 name|nreturn_split
@@ -1356,6 +1909,10 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|return_vals
 specifier|static
 name|GimpParamDef
 modifier|*
@@ -1363,12 +1920,20 @@ name|return_vals
 init|=
 name|NULL
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|nreturn_vals
 specifier|static
 name|int
 name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|args_shift
 specifier|static
 name|GimpParamDef
 name|args_shift
@@ -1424,6 +1989,10 @@ literal|"frame nr to stop"
 block|}
 block|,   }
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|nargs_shift
 specifier|static
 name|int
 name|nargs_shift
@@ -1441,6 +2010,10 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|args_modify
 specifier|static
 name|GimpParamDef
 name|args_modify
@@ -1536,6 +2109,10 @@ literal|"is only used at action rename. [####] is replaced by the framnumber"
 block|}
 block|,   }
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|nargs_modify
 specifier|static
 name|int
 name|nargs_modify
@@ -1553,6 +2130,10 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|args_video_copy
 specifier|static
 name|GimpParamDef
 name|args_video_copy
@@ -1600,6 +2181,10 @@ literal|"frame nr to stop"
 block|}
 block|,   }
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|nargs_video_copy
 specifier|static
 name|int
 name|nargs_video_copy
@@ -1617,6 +2202,10 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|args_video_paste
 specifier|static
 name|GimpParamDef
 name|args_video_paste
@@ -1658,6 +2247,10 @@ literal|"2 .. paste insert after current frame"
 block|}
 block|,   }
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|nargs_video_paste
 specifier|static
 name|int
 name|nargs_video_paste
@@ -1675,6 +2268,10 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|args_video_clear
 specifier|static
 name|GimpParamDef
 name|args_video_clear
@@ -1706,6 +2303,10 @@ literal|"Input drawable (unused)"
 block|}
 block|,   }
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|nargs_video_clear
 specifier|static
 name|int
 name|nargs_video_clear
@@ -1723,6 +2324,177 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|return_ainfo
+specifier|static
+name|GimpParamDef
+name|return_ainfo
+index|[]
+init|=
+block|{
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"first_frame_nr"
+block|,
+literal|"lowest frame number of all AnimFrame discfiles"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"last_frame_nr"
+block|,
+literal|"highest frame number of all AnimFrame discfiles"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"curr_frame_nr"
+block|,
+literal|"current frame number (extracted from the imagename)"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"frame_cnt"
+block|,
+literal|"total number of all AnimFrame discfiles that belong to the passed image"
+block|}
+block|,
+block|{
+name|GIMP_PDB_STRING
+block|,
+literal|"basename"
+block|,
+literal|"basename of the AnimFrame (without frame number and extension)\n"
+literal|" may also include path (depending how the current frame image was opened)"
+block|}
+block|,
+block|{
+name|GIMP_PDB_STRING
+block|,
+literal|"extension"
+block|,
+literal|"extension of the AnimFrames (.xcf)"
+block|}
+block|,
+block|{
+name|GIMP_PDB_FLOAT
+block|,
+literal|"framerate"
+block|,
+literal|"framerate in frames per second"
+block|}
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|nreturn_ainfo
+specifier|static
+name|int
+name|nreturn_ainfo
+init|=
+sizeof|sizeof
+argument_list|(
+name|return_ainfo
+argument_list|)
+operator|/
+sizeof|sizeof
+argument_list|(
+name|return_ainfo
+index|[
+literal|0
+index|]
+argument_list|)
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|args_setrate
+specifier|static
+name|GimpParamDef
+name|args_setrate
+index|[]
+init|=
+block|{
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"run_mode"
+block|,
+literal|"non-interactive"
+block|}
+block|,
+block|{
+name|GIMP_PDB_IMAGE
+block|,
+literal|"image"
+block|,
+literal|"Input image (current one of the Anim Frames)"
+block|}
+block|,
+block|{
+name|GIMP_PDB_DRAWABLE
+block|,
+literal|"drawable"
+block|,
+literal|"Input drawable (unused)"
+block|}
+block|,
+block|{
+name|GIMP_PDB_FLOAT
+block|,
+literal|"framerate"
+block|,
+literal|"framerate in frames per second"
+block|}
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|nargs_setrate
+specifier|static
+name|int
+name|nargs_setrate
+init|=
+sizeof|sizeof
+argument_list|(
+name|args_setrate
+argument_list|)
+operator|/
+sizeof|sizeof
+argument_list|(
+name|args_setrate
+index|[
+literal|0
+index|]
+argument_list|)
+decl_stmt|;
+end_decl_stmt
+
+begin_macro
+DECL|function|MAIN ()
+name|MAIN
+argument_list|()
+end_macro
+
+begin_function
+specifier|static
+name|void
+name|query
+parameter_list|()
+block|{
+name|gchar
+modifier|*
+name|l_help_str
+decl_stmt|;
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
@@ -1734,7 +2506,7 @@ literal|"This plugin exchanges current image with (next nubered) image from disk
 argument_list|,
 literal|""
 argument_list|,
-literal|"Wolfgang Hofer (hof@hotbot.com)"
+literal|"Wolfgang Hofer (hof@gimp.org)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -1766,7 +2538,7 @@ literal|"This plugin exchanges current image with (previous nubered) image from 
 argument_list|,
 literal|""
 argument_list|,
-literal|"Wolfgang Hofer (hof@hotbot.com)"
+literal|"Wolfgang Hofer (hof@gimp.org)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -1798,7 +2570,7 @@ literal|"This plugin exchanges current image with (lowest nubered) image from di
 argument_list|,
 literal|""
 argument_list|,
-literal|"Wolfgang Hofer (hof@hotbot.com)"
+literal|"Wolfgang Hofer (hof@gimp.org)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -1830,7 +2602,7 @@ literal|"This plugin exchanges current image with (highest nubered) image from d
 argument_list|,
 literal|""
 argument_list|,
-literal|"Wolfgang Hofer (hof@hotbot.com)"
+literal|"Wolfgang Hofer (hof@gimp.org)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -1862,7 +2634,7 @@ literal|"This plugin exchanges current image with requested image (nr) from disk
 argument_list|,
 literal|""
 argument_list|,
-literal|"Wolfgang Hofer (hof@hotbot.com)"
+literal|"Wolfgang Hofer (hof@gimp.org)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -1894,7 +2666,7 @@ literal|"This plugin deletes the given number of frames from disk including the 
 argument_list|,
 literal|""
 argument_list|,
-literal|"Wolfgang Hofer (hof@hotbot.com)"
+literal|"Wolfgang Hofer (hof@gimp.org)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -1926,7 +2698,7 @@ literal|"This plugin duplicates the current frames on disk n-times."
 argument_list|,
 literal|""
 argument_list|,
-literal|"Wolfgang Hofer (hof@hotbot.com)"
+literal|"Wolfgang Hofer (hof@gimp.org)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -1958,7 +2730,7 @@ literal|"This plugin exchanges content of the current with destination frame."
 argument_list|,
 literal|""
 argument_list|,
-literal|"Wolfgang Hofer (hof@hotbot.com)"
+literal|"Wolfgang Hofer (hof@gimp.org)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -1988,9 +2760,9 @@ literal|"plug_in_gap_move"
 argument_list|,
 literal|"This plugin copies layer(s) from one sourceimage to multiple frames on disk, varying position, size and opacity."
 argument_list|,
-literal|""
+literal|"For NONINTERACTIVE PDB interfaces see also (plug_in_gap_move_path, plug_in_gap_move_path2)"
 argument_list|,
-literal|"Wolfgang Hofer (hof@hotbot.com)"
+literal|"Wolfgang Hofer (hof@gimp.org)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -2014,6 +2786,111 @@ argument_list|,
 name|return_vals
 argument_list|)
 expr_stmt|;
+name|l_help_str
+operator|=
+name|g_strdup_printf
+argument_list|(
+literal|"This plugin inserts one layer in each frame of the selected frame range of an Animation\n"
+literal|" (specified by the dst_image parameter).\n"
+literal|" An Animation is a series of numbered AnimFrame Images on disk where only the current\n"
+literal|" Frame is opened in the gimp\n"
+literal|" The inserted layer is derived from another (multilayer)image\n"
+literal|" or from another Animation (as merged copy of the visible layers in a source frame)\n"
+literal|" the affected destination frame range is selected by the range_from and range_to parameters\n"
+literal|" the src_stepmode parameter controls how to derive the layer that is to be inserted.\n"
+literal|" With the Controlpoint Parameters you can control position (koordinates),\n"
+literal|" size, rotation and opacity values of the inserted layer\n"
+literal|" If you want to move an Object from position AX/AY to BX/BY in a straight line within the range of 24 frames\n"
+literal|" you need 2 Contolpoints, if you want the object to move folowing a path\n"
+literal|" you need some more Controlpoints to do that.\n"
+literal|" With the rotation_follow Parameter you can force automatic calculation of the rotation for the inserted\n"
+literal|" layer according to the path vectors it is moving along.\n"
+literal|" A controlpoint can be fixed to a special framenumber using the keyframe_abs controlpoint-parameter.\n"
+literal|" Restictions:\n"
+literal|" - keyframe_abs numbers must be 0 (== not fixed) or a frame_number within the affected frame range\n"
+literal|" - keyframes_abs must be in sequence (ascending or descending)\n"
+literal|" - the first and last controlpoint are always implicite keyframes, and should be passed with keyframe_abs = 0\n"
+literal|" - the number of controlpoints is limitied to a maximum of %d.\n"
+literal|"   the number of controlpoints must be passed in all argc_* parameters\n"
+literal|"See also (plug_in_gap_move_path, plug_in_gap_move)"
+argument_list|,
+operator|(
+name|int
+operator|)
+name|GAP_MOV_MAX_POINT
+argument_list|)
+expr_stmt|;
+name|gimp_install_procedure
+argument_list|(
+literal|"plug_in_gap_move_path"
+argument_list|,
+literal|"This plugin copies layer(s) from one sourceimage or source animation to multiple frames on disk,"
+literal|" varying position, size and opacity."
+argument_list|,
+name|l_help_str
+argument_list|,
+literal|"Wolfgang Hofer (hof@gimp.org)"
+argument_list|,
+literal|"Wolfgang Hofer"
+argument_list|,
+name|gap_main_version
+argument_list|,
+name|NULL
+argument_list|,
+comment|/* do not appear in menus */
+literal|"RGB*, INDEXED*, GRAY*"
+argument_list|,
+name|GIMP_PLUGIN
+argument_list|,
+name|nargs_mov_path
+argument_list|,
+name|nreturn_vals
+argument_list|,
+name|args_mov_path
+argument_list|,
+name|return_vals
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|l_help_str
+argument_list|)
+expr_stmt|;
+name|gimp_install_procedure
+argument_list|(
+literal|"plug_in_gap_move_path2"
+argument_list|,
+literal|"This plugin copies layer(s) from one sourceimage or source animation to multiple frames on disk,"
+literal|" varying position, size and opacity."
+argument_list|,
+literal|"This plugin is just another Interface for the MovePath (plug_in_gap_move_path)\n"
+literal|" using a File to specify Controlpoints (rather than Array parameters).\n"
+literal|" Notes:\n"
+literal|" - you can create a controlpoint file with in the MovePath Dialog (interactive call of plug_in_gap_move)\n"
+literal|" - for more infos about controlpoints see help of (plug_in_gap_move_path)\n"
+argument_list|,
+literal|"Wolfgang Hofer (hof@gimp.org)"
+argument_list|,
+literal|"Wolfgang Hofer"
+argument_list|,
+name|gap_main_version
+argument_list|,
+name|NULL
+argument_list|,
+comment|/* do not appear in menus */
+literal|"RGB*, INDEXED*, GRAY*"
+argument_list|,
+name|GIMP_PLUGIN
+argument_list|,
+name|nargs_mov_path2
+argument_list|,
+name|nreturn_vals
+argument_list|,
+name|args_mov_path2
+argument_list|,
+name|return_vals
+argument_list|)
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gap_range_to_multilayer"
@@ -2022,7 +2899,7 @@ literal|"This plugin creates a new image from the given range of frame-images. E
 argument_list|,
 literal|""
 argument_list|,
-literal|"Wolfgang Hofer (hof@hotbot.com)"
+literal|"Wolfgang Hofer (hof@gimp.org)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -2054,7 +2931,7 @@ literal|"This plugin flattens the given range of frame-images (on disk)"
 argument_list|,
 literal|""
 argument_list|,
-literal|"Wolfgang Hofer (hof@hotbot.com)"
+literal|"Wolfgang Hofer (hof@gimp.org)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -2086,7 +2963,7 @@ literal|"This plugin deletes one layer in the given range of frame-images (on di
 argument_list|,
 literal|""
 argument_list|,
-literal|"Wolfgang Hofer (hof@hotbot.com)"
+literal|"Wolfgang Hofer (hof@gimp.org)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -2118,7 +2995,7 @@ literal|"This plugin converts the given range of frame-images to other fileforma
 argument_list|,
 literal|"WARNING this procedure is obsolete, please use plug_in_gap_range_convert2"
 argument_list|,
-literal|"Wolfgang Hofer (hof@hotbot.com)"
+literal|"Wolfgang Hofer (hof@gimp.org)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -2148,7 +3025,7 @@ literal|"This plugin converts the given range of frame-images to other fileforma
 argument_list|,
 literal|""
 argument_list|,
-literal|"Wolfgang Hofer (hof@hotbot.com)"
+literal|"Wolfgang Hofer (hof@gimp.org)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -2180,7 +3057,7 @@ literal|"This plugin resizes all anim_frames (images on disk) to the given new_w
 argument_list|,
 literal|""
 argument_list|,
-literal|"Wolfgang Hofer (hof@hotbot.com)"
+literal|"Wolfgang Hofer (hof@gimp.org)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -2212,7 +3089,7 @@ literal|"This plugin crops all anim_frames (images on disk) to the given new_wid
 argument_list|,
 literal|""
 argument_list|,
-literal|"Wolfgang Hofer (hof@hotbot.com)"
+literal|"Wolfgang Hofer (hof@gimp.org)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -2244,7 +3121,7 @@ literal|"This plugin scales all anim_frames (images on disk) to the given new_wi
 argument_list|,
 literal|""
 argument_list|,
-literal|"Wolfgang Hofer (hof@hotbot.com)"
+literal|"Wolfgang Hofer (hof@gimp.org)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -2276,7 +3153,7 @@ literal|"This plugin splits the current image to anim frames (images on disk). E
 argument_list|,
 literal|""
 argument_list|,
-literal|"Wolfgang Hofer (hof@hotbot.com)"
+literal|"Wolfgang Hofer (hof@gimp.org)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -2308,7 +3185,7 @@ literal|"This plugin exchanges frame numbers in the given range. (discfile frame
 argument_list|,
 literal|""
 argument_list|,
-literal|"Wolfgang Hofer (hof@hotbot.com)"
+literal|"Wolfgang Hofer (hof@gimp.org)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -2340,7 +3217,7 @@ literal|"This plugin performs a modifying action on each selected layer in each 
 argument_list|,
 literal|""
 argument_list|,
-literal|"Wolfgang Hofer (hof@hotbot.com)"
+literal|"Wolfgang Hofer (hof@gimp.org)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -2374,7 +3251,7 @@ literal|"and a framefile basename configured by gimprc (video-paste-basename)"
 argument_list|,
 literal|""
 argument_list|,
-literal|"Wolfgang Hofer (hof@hotbot.com)"
+literal|"Wolfgang Hofer (hof@gimp.org)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -2411,7 +3288,7 @@ literal|"and a framefile basename configured by gimprc (video-paste-basename)"
 argument_list|,
 literal|""
 argument_list|,
-literal|"Wolfgang Hofer (hof@hotbot.com)"
+literal|"Wolfgang Hofer (hof@gimp.org)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -2443,7 +3320,7 @@ literal|"and a framefile basename configured by gimprc (video-paste-basename)"
 argument_list|,
 literal|""
 argument_list|,
-literal|"Wolfgang Hofer (hof@hotbot.com)"
+literal|"Wolfgang Hofer (hof@gimp.org)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -2461,6 +3338,73 @@ argument_list|,
 name|nreturn_vals
 argument_list|,
 name|args_video_clear
+argument_list|,
+name|return_vals
+argument_list|)
+expr_stmt|;
+name|gimp_install_procedure
+argument_list|(
+literal|"plug_in_gap_get_animinfo"
+argument_list|,
+literal|"This plugin gets animation infos about AnimFrames."
+argument_list|,
+literal|"Informations about the AnimFrames belonging to the\n"
+literal|" passed image_id are returned. (therefore the directory\n"
+literal|" is scanned and checked for AnimFrame discfiles.\n"
+literal|" If you call this plugin on images without a Name\n"
+literal|" You will get just default values."
+argument_list|,
+literal|"Wolfgang Hofer (hof@gimp.org)"
+argument_list|,
+literal|"Wolfgang Hofer"
+argument_list|,
+name|gap_main_version
+argument_list|,
+name|NULL
+argument_list|,
+comment|/* no menu */
+literal|"RGB*, INDEXED*, GRAY*"
+argument_list|,
+name|GIMP_PLUGIN
+argument_list|,
+name|nargs_std
+argument_list|,
+name|nreturn_ainfo
+argument_list|,
+name|args_std
+argument_list|,
+name|return_ainfo
+argument_list|)
+expr_stmt|;
+name|gimp_install_procedure
+argument_list|(
+literal|"plug_in_gap_set_framerate"
+argument_list|,
+literal|"This plugin sets the framerate for AnimFrames"
+argument_list|,
+literal|"The framerate is stored in a video info file"
+literal|" named like the basename of the AnimFrames"
+literal|" without a framenumber. The extension"
+literal|" of this video info file is .vin"
+argument_list|,
+literal|"Wolfgang Hofer (hof@gimp.org)"
+argument_list|,
+literal|"Wolfgang Hofer"
+argument_list|,
+name|gap_main_version
+argument_list|,
+name|NULL
+argument_list|,
+comment|/* no menu */
+literal|"RGB*, INDEXED*, GRAY*"
+argument_list|,
+name|GIMP_PLUGIN
+argument_list|,
+name|nargs_setrate
+argument_list|,
+name|nreturn_vals
+argument_list|,
+name|args_setrate
 argument_list|,
 name|return_vals
 argument_list|)
@@ -2499,38 +3443,6 @@ modifier|*
 name|return_vals
 parameter_list|)
 block|{
-typedef|typedef
-struct|struct
-DECL|struct|__anon28b6070c0108
-block|{
-DECL|member|lock
-name|long
-name|lock
-decl_stmt|;
-comment|/* 0 ... NOT Locked, 1 ... locked */
-DECL|member|image_id
-name|gint32
-name|image_id
-decl_stmt|;
-DECL|member|timestamp
-name|long
-name|timestamp
-decl_stmt|;
-comment|/* locktime not used for now */
-DECL|typedef|t_lockdata
-block|}
-name|t_lockdata
-typedef|;
-name|t_lockdata
-name|l_lock
-decl_stmt|;
-specifier|static
-name|char
-name|l_lockname
-index|[
-literal|50
-index|]
-decl_stmt|;
 name|char
 modifier|*
 name|l_env
@@ -2565,11 +3477,14 @@ specifier|static
 name|GimpParam
 name|values
 index|[
-literal|2
+literal|10
 index|]
 decl_stmt|;
 name|GimpRunModeType
 name|run_mode
+decl_stmt|;
+name|GimpRunModeType
+name|lock_run_mode
 decl_stmt|;
 name|GimpPDBStatusType
 name|status
@@ -2578,6 +3493,9 @@ name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|gint32
 name|image_id
+decl_stmt|;
+name|gint32
+name|lock_image_id
 decl_stmt|;
 name|gint32
 name|nr
@@ -2714,6 +3632,41 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|lock_run_mode
+operator|=
+name|run_mode
+expr_stmt|;
+if|if
+condition|(
+operator|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+literal|"plug_in_gap_prev"
+argument_list|)
+operator|==
+literal|0
+operator|)
+operator|||
+operator|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+literal|"plug_in_gap_next"
+argument_list|)
+operator|==
+literal|0
+operator|)
+condition|)
+block|{
+comment|/* stepping from frame to frame is often done      * in quick sequence via Shortcut Key, and should      * not open dialog windows if the previous GAP lock is still active.      * therefore i set NONINTERACTIVE run_mode to prevent      * p_gap_lock_is_locked from open a gimp_message window.      */
+name|lock_run_mode
+operator|=
+name|GIMP_RUN_NONINTERACTIVE
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|gap_debug
@@ -2727,6 +3680,15 @@ argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
+name|values
+index|[
+literal|0
+index|]
+operator|.
+name|type
+operator|=
+name|GIMP_PDB_STATUS
+expr_stmt|;
 name|image_id
 operator|=
 name|param
@@ -2738,73 +3700,438 @@ name|data
 operator|.
 name|d_image
 expr_stmt|;
-comment|/* check for locks */
-name|l_lock
-operator|.
-name|lock
+name|lock_image_id
 operator|=
-literal|0
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|l_lockname
-argument_list|,
-literal|"plug_in_gap_plugins_LOCK_%d"
-argument_list|,
-operator|(
-name|int
-operator|)
 name|image_id
-argument_list|)
 expr_stmt|;
-name|gimp_get_data
+comment|/* ---------------------------    * NON-LOCKING gap_plugins    * ---------------------------    */
+if|if
+condition|(
+name|strcmp
 argument_list|(
-name|l_lockname
+name|name
 argument_list|,
-operator|&
-name|l_lock
+literal|"plug_in_gap_get_animinfo"
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|t_anim_info
+modifier|*
+name|ainfo_ptr
+decl_stmt|;
+name|t_video_info
+modifier|*
+name|vin_ptr
+decl_stmt|;
+name|ainfo_ptr
+operator|=
+name|p_alloc_ainfo
+argument_list|(
+name|image_id
+argument_list|,
+name|GIMP_RUN_NONINTERACTIVE
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|(
-name|l_lock
-operator|.
-name|lock
-operator|!=
-literal|0
-operator|)
-operator|&&
-operator|(
-name|l_lock
-operator|.
-name|image_id
+name|ainfo_ptr
 operator|==
-name|image_id
-operator|)
+name|NULL
 condition|)
 block|{
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"gap_plugin is LOCKED for Image ID=%s\n"
-argument_list|,
-name|l_lockname
-argument_list|)
-expr_stmt|;
 name|status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+literal|0
+operator|!=
+name|p_dir_ainfo
+argument_list|(
+name|ainfo_ptr
+argument_list|)
+condition|)
+block|{
+name|status
+operator|=
+name|GIMP_PDB_EXECUTION_ERROR
+expr_stmt|;
+empty_stmt|;
+block|}
+comment|/* return the new generated image_id */
+operator|*
+name|nreturn_vals
+operator|=
+name|nreturn_ainfo
+operator|+
+literal|1
 expr_stmt|;
 name|values
 index|[
 literal|0
 index|]
 operator|.
+name|data
+operator|.
+name|d_status
+operator|=
+name|status
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
 name|type
 operator|=
-name|GIMP_PDB_STATUS
+name|GIMP_PDB_INT32
+expr_stmt|;
+name|values
+index|[
+literal|2
+index|]
+operator|.
+name|type
+operator|=
+name|GIMP_PDB_INT32
+expr_stmt|;
+name|values
+index|[
+literal|3
+index|]
+operator|.
+name|type
+operator|=
+name|GIMP_PDB_INT32
+expr_stmt|;
+name|values
+index|[
+literal|4
+index|]
+operator|.
+name|type
+operator|=
+name|GIMP_PDB_INT32
+expr_stmt|;
+name|values
+index|[
+literal|5
+index|]
+operator|.
+name|type
+operator|=
+name|GIMP_PDB_STRING
+expr_stmt|;
+name|values
+index|[
+literal|6
+index|]
+operator|.
+name|type
+operator|=
+name|GIMP_PDB_STRING
+expr_stmt|;
+name|values
+index|[
+literal|7
+index|]
+operator|.
+name|type
+operator|=
+name|GIMP_PDB_FLOAT
+expr_stmt|;
+if|if
+condition|(
+name|ainfo_ptr
+operator|!=
+name|NULL
+condition|)
+block|{
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+operator|=
+name|ainfo_ptr
+operator|->
+name|first_frame_nr
+expr_stmt|;
+name|values
+index|[
+literal|2
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+operator|=
+name|ainfo_ptr
+operator|->
+name|last_frame_nr
+expr_stmt|;
+name|values
+index|[
+literal|3
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+operator|=
+name|ainfo_ptr
+operator|->
+name|curr_frame_nr
+expr_stmt|;
+name|values
+index|[
+literal|4
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+operator|=
+name|ainfo_ptr
+operator|->
+name|frame_cnt
+expr_stmt|;
+name|values
+index|[
+literal|5
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+operator|=
+name|g_strdup
+argument_list|(
+name|ainfo_ptr
+operator|->
+name|basename
+argument_list|)
+expr_stmt|;
+name|values
+index|[
+literal|6
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+operator|=
+name|g_strdup
+argument_list|(
+name|ainfo_ptr
+operator|->
+name|extension
+argument_list|)
+expr_stmt|;
+name|values
+index|[
+literal|7
+index|]
+operator|.
+name|data
+operator|.
+name|d_float
+operator|=
+operator|-
+literal|1.0
+expr_stmt|;
+name|vin_ptr
+operator|=
+name|p_get_video_info
+argument_list|(
+name|ainfo_ptr
+operator|->
+name|basename
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|vin_ptr
+operator|!=
+name|NULL
+condition|)
+block|{
+name|values
+index|[
+literal|7
+index|]
+operator|.
+name|data
+operator|.
+name|d_float
+operator|=
+name|vin_ptr
+operator|->
+name|framerate
+expr_stmt|;
+block|}
+block|}
+return|return;
+block|}
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+literal|"plug_in_gap_set_framerate"
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|t_anim_info
+modifier|*
+name|ainfo_ptr
+decl_stmt|;
+name|t_video_info
+modifier|*
+name|vin_ptr
+decl_stmt|;
+if|if
+condition|(
+name|n_params
+operator|!=
+name|nargs_setrate
+condition|)
+block|{
+name|status
+operator|=
+name|GIMP_PDB_CALLING_ERROR
+expr_stmt|;
+block|}
+else|else
+block|{
+name|ainfo_ptr
+operator|=
+name|p_alloc_ainfo
+argument_list|(
+name|image_id
+argument_list|,
+name|GIMP_RUN_NONINTERACTIVE
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|ainfo_ptr
+operator|==
+name|NULL
+condition|)
+block|{
+name|status
+operator|=
+name|GIMP_PDB_EXECUTION_ERROR
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+literal|0
+operator|!=
+name|p_dir_ainfo
+argument_list|(
+name|ainfo_ptr
+argument_list|)
+condition|)
+block|{
+name|status
+operator|=
+name|GIMP_PDB_EXECUTION_ERROR
+expr_stmt|;
+empty_stmt|;
+block|}
+else|else
+block|{
+name|vin_ptr
+operator|=
+name|p_get_video_info
+argument_list|(
+name|ainfo_ptr
+operator|->
+name|basename
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|vin_ptr
+operator|==
+name|NULL
+condition|)
+block|{
+name|status
+operator|=
+name|GIMP_PDB_EXECUTION_ERROR
+expr_stmt|;
+empty_stmt|;
+block|}
+else|else
+block|{
+name|vin_ptr
+operator|->
+name|framerate
+operator|=
+name|param
+index|[
+literal|3
+index|]
+operator|.
+name|data
+operator|.
+name|d_float
+expr_stmt|;
+name|p_set_video_info
+argument_list|(
+name|vin_ptr
+argument_list|,
+name|ainfo_ptr
+operator|->
+name|basename
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+block|}
+name|values
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|=
+name|status
+expr_stmt|;
+return|return;
+block|}
+comment|/* ---------------------------    * check for LOCKS    * ---------------------------    */
+if|if
+condition|(
+name|p_gap_lock_is_locked
+argument_list|(
+name|lock_image_id
+argument_list|,
+name|lock_run_mode
+argument_list|)
+condition|)
+block|{
+name|status
+operator|=
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 name|values
 index|[
@@ -2820,29 +4147,9 @@ expr_stmt|;
 return|return ;
 block|}
 comment|/* set LOCK on current image (for all gap_plugins) */
-name|l_lock
-operator|.
-name|lock
-operator|=
-literal|1
-expr_stmt|;
-name|l_lock
-operator|.
-name|image_id
-operator|=
-name|image_id
-expr_stmt|;
-name|gimp_set_data
+name|p_gap_lock_set
 argument_list|(
-name|l_lockname
-argument_list|,
-operator|&
-name|l_lock
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|l_lock
-argument_list|)
+name|lock_image_id
 argument_list|)
 expr_stmt|;
 if|if
@@ -2862,6 +4169,7 @@ name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
 block|}
+comment|/* ---------------------------    * LOCKING gap_plugins    * ---------------------------    */
 if|if
 condition|(
 name|strcmp
@@ -2885,7 +4193,7 @@ if|if
 condition|(
 name|n_params
 operator|!=
-literal|3
+name|nargs_std
 condition|)
 block|{
 name|status
@@ -2901,17 +4209,6 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-name|image_id
-operator|=
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_image
-expr_stmt|;
 name|l_rc
 operator|=
 name|gap_next
@@ -2947,7 +4244,7 @@ if|if
 condition|(
 name|n_params
 operator|!=
-literal|3
+name|nargs_std
 condition|)
 block|{
 name|status
@@ -2963,17 +4260,6 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-name|image_id
-operator|=
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_image
-expr_stmt|;
 name|l_rc
 operator|=
 name|gap_prev
@@ -3009,7 +4295,7 @@ if|if
 condition|(
 name|n_params
 operator|!=
-literal|3
+name|nargs_std
 condition|)
 block|{
 name|status
@@ -3025,17 +4311,6 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-name|image_id
-operator|=
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_image
-expr_stmt|;
 name|l_rc
 operator|=
 name|gap_first
@@ -3071,7 +4346,7 @@ if|if
 condition|(
 name|n_params
 operator|!=
-literal|3
+name|nargs_std
 condition|)
 block|{
 name|status
@@ -3087,17 +4362,6 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-name|image_id
-operator|=
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_image
-expr_stmt|;
 name|l_rc
 operator|=
 name|gap_last
@@ -3133,7 +4397,7 @@ if|if
 condition|(
 name|n_params
 operator|!=
-literal|4
+name|nargs_goto
 condition|)
 block|{
 name|status
@@ -3149,17 +4413,6 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-name|image_id
-operator|=
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_image
-expr_stmt|;
 name|nr
 operator|=
 name|param
@@ -3209,7 +4462,7 @@ if|if
 condition|(
 name|n_params
 operator|!=
-literal|4
+name|nargs_del
 condition|)
 block|{
 name|status
@@ -3225,17 +4478,6 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-name|image_id
-operator|=
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_image
-expr_stmt|;
 name|nr
 operator|=
 name|param
@@ -3293,7 +4535,7 @@ operator|&&
 operator|(
 name|n_params
 operator|!=
-literal|6
+name|nargs_dup
 operator|)
 condition|)
 block|{
@@ -3310,17 +4552,6 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-name|image_id
-operator|=
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_image
-expr_stmt|;
 name|nr
 operator|=
 name|param
@@ -3419,7 +4650,7 @@ if|if
 condition|(
 name|n_params
 operator|!=
-literal|4
+name|nargs_exchg
 condition|)
 block|{
 name|status
@@ -3435,17 +4666,6 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-name|image_id
-operator|=
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_image
-expr_stmt|;
 name|nr
 operator|=
 name|param
@@ -3484,6 +4704,20 @@ operator|==
 literal|0
 condition|)
 block|{
+name|t_mov_values
+modifier|*
+name|pvals
+decl_stmt|;
+name|pvals
+operator|=
+name|g_malloc
+argument_list|(
+sizeof|sizeof
+argument_list|(
+name|t_mov_values
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|run_mode
@@ -3491,7 +4725,6 @@ operator|==
 name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
-comment|/* if (n_params != ?? ) */
 name|status
 operator|=
 name|GIMP_PDB_CALLING_ERROR
@@ -3504,27 +4737,762 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-name|image_id
-operator|=
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_image
-expr_stmt|;
 name|l_rc
 operator|=
-name|gap_move
+name|gap_move_path
 argument_list|(
 name|run_mode
 argument_list|,
 name|image_id
+argument_list|,
+name|pvals
+argument_list|,
+name|NULL
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
+name|g_free
+argument_list|(
+name|pvals
+argument_list|)
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+operator|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+literal|"plug_in_gap_move_path"
+argument_list|)
+operator|==
+literal|0
+operator|)
+operator|||
+operator|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+literal|"plug_in_gap_move_path2"
+argument_list|)
+operator|==
+literal|0
+operator|)
+condition|)
+block|{
+name|t_mov_values
+modifier|*
+name|pvals
+decl_stmt|;
+name|gchar
+modifier|*
+name|pointfile
+decl_stmt|;
+name|gint
+name|l_idx
+decl_stmt|;
+name|gint
+name|l_numpoints
+decl_stmt|;
+name|gint
+name|l_rotation_follow
+decl_stmt|;
+name|gint32
+name|l_startangle
+decl_stmt|;
+name|pointfile
+operator|=
+name|NULL
+expr_stmt|;
+name|pvals
+operator|=
+name|g_malloc
+argument_list|(
+sizeof|sizeof
+argument_list|(
+name|t_mov_values
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|l_rotation_follow
+operator|=
+literal|0
+expr_stmt|;
+name|l_startangle
+operator|=
+literal|0
+expr_stmt|;
+name|pvals
+operator|->
+name|dst_image_id
+operator|=
+name|image_id
+expr_stmt|;
+name|pvals
+operator|->
+name|tmp_image_id
+operator|=
+operator|-
+literal|1
+expr_stmt|;
+name|pvals
+operator|->
+name|apv_mode
+operator|=
+literal|0
+expr_stmt|;
+name|pvals
+operator|->
+name|apv_src_frame
+operator|=
+operator|-
+literal|1
+expr_stmt|;
+name|pvals
+operator|->
+name|apv_mlayer_image
+operator|=
+operator|-
+literal|1
+expr_stmt|;
+name|pvals
+operator|->
+name|apv_gap_paste_buff
+operator|=
+name|NULL
+expr_stmt|;
+name|pvals
+operator|->
+name|apv_framerate
+operator|=
+literal|24
+expr_stmt|;
+name|pvals
+operator|->
+name|apv_scalex
+operator|=
+literal|100.0
+expr_stmt|;
+name|pvals
+operator|->
+name|apv_scaley
+operator|=
+literal|100.0
+expr_stmt|;
+name|pvals
+operator|->
+name|cache_src_image_id
+operator|=
+operator|-
+literal|1
+expr_stmt|;
+name|pvals
+operator|->
+name|cache_tmp_image_id
+operator|=
+operator|-
+literal|1
+expr_stmt|;
+name|pvals
+operator|->
+name|cache_tmp_layer_id
+operator|=
+operator|-
+literal|1
+expr_stmt|;
+name|pvals
+operator|->
+name|cache_frame_number
+operator|=
+operator|-
+literal|1
+expr_stmt|;
+name|pvals
+operator|->
+name|cache_ainfo_ptr
+operator|=
+name|NULL
+expr_stmt|;
+name|pvals
+operator|->
+name|point_idx
+operator|=
+literal|0
+expr_stmt|;
+name|pvals
+operator|->
+name|point_idx_max
+operator|=
+literal|0
+expr_stmt|;
+if|if
+condition|(
+name|run_mode
+operator|==
+name|GIMP_RUN_NONINTERACTIVE
+condition|)
+block|{
+if|if
+condition|(
+operator|(
+operator|(
+name|n_params
+operator|!=
+name|nargs_mov_path
+operator|)
+operator|&&
+operator|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+literal|"plug_in_gap_move_path"
+argument_list|)
+operator|==
+literal|0
+operator|)
+operator|)
+operator|||
+operator|(
+operator|(
+name|n_params
+operator|!=
+name|nargs_mov_path2
+operator|)
+operator|&&
+operator|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+literal|"plug_in_gap_move_path2"
+argument_list|)
+operator|==
+literal|0
+operator|)
+operator|)
+condition|)
+block|{
+name|status
+operator|=
+name|GIMP_PDB_CALLING_ERROR
+expr_stmt|;
+block|}
+else|else
+block|{
+name|pvals
+operator|->
+name|dst_range_start
+operator|=
+name|param
+index|[
+literal|3
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|pvals
+operator|->
+name|dst_range_end
+operator|=
+name|param
+index|[
+literal|4
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|pvals
+operator|->
+name|dst_layerstack
+operator|=
+name|param
+index|[
+literal|5
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|pvals
+operator|->
+name|src_layer_id
+operator|=
+name|param
+index|[
+literal|6
+index|]
+operator|.
+name|data
+operator|.
+name|d_layer
+expr_stmt|;
+name|pvals
+operator|->
+name|src_stepmode
+operator|=
+name|param
+index|[
+literal|7
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|pvals
+operator|->
+name|src_handle
+operator|=
+name|param
+index|[
+literal|8
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|pvals
+operator|->
+name|src_paintmode
+operator|=
+name|param
+index|[
+literal|9
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|pvals
+operator|->
+name|src_force_visible
+operator|=
+name|param
+index|[
+literal|10
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|pvals
+operator|->
+name|clip_to_img
+operator|=
+name|param
+index|[
+literal|11
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|l_rotation_follow
+operator|=
+name|param
+index|[
+literal|12
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|l_startangle
+operator|=
+name|param
+index|[
+literal|13
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+literal|"plug_in_gap_move_path"
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+comment|/* "plug_in_gap_move_path" passes controlpoints as array parameters */
+name|l_numpoints
+operator|=
+name|param
+index|[
+literal|15
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+if|if
+condition|(
+operator|(
+name|l_numpoints
+operator|!=
+name|param
+index|[
+literal|17
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+operator|)
+operator|||
+operator|(
+name|l_numpoints
+operator|!=
+name|param
+index|[
+literal|19
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+operator|)
+operator|||
+operator|(
+name|l_numpoints
+operator|!=
+name|param
+index|[
+literal|21
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+operator|)
+operator|||
+operator|(
+name|l_numpoints
+operator|!=
+name|param
+index|[
+literal|23
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+operator|)
+operator|||
+operator|(
+name|l_numpoints
+operator|!=
+name|param
+index|[
+literal|25
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+operator|)
+operator|||
+operator|(
+name|l_numpoints
+operator|!=
+name|param
+index|[
+literal|27
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+operator|)
+condition|)
+block|{
+name|printf
+argument_list|(
+literal|"plug_in_gap_move_path: CallingError: different numbers in the controlpoint array argc parameters\n"
+argument_list|)
+expr_stmt|;
+name|status
+operator|=
+name|GIMP_PDB_CALLING_ERROR
+expr_stmt|;
+block|}
+else|else
+block|{
+name|pvals
+operator|->
+name|point_idx_max
+operator|=
+name|l_numpoints
+operator|-
+literal|1
+expr_stmt|;
+for|for
+control|(
+name|l_idx
+operator|=
+literal|0
+init|;
+name|l_idx
+operator|<
+name|l_numpoints
+condition|;
+name|l_idx
+operator|++
+control|)
+block|{
+name|pvals
+operator|->
+name|point
+index|[
+name|l_idx
+index|]
+operator|.
+name|p_x
+operator|=
+name|param
+index|[
+literal|14
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32array
+index|[
+name|l_idx
+index|]
+expr_stmt|;
+name|pvals
+operator|->
+name|point
+index|[
+name|l_idx
+index|]
+operator|.
+name|p_y
+operator|=
+name|param
+index|[
+literal|16
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32array
+index|[
+name|l_idx
+index|]
+expr_stmt|;
+name|pvals
+operator|->
+name|point
+index|[
+name|l_idx
+index|]
+operator|.
+name|opacity
+operator|=
+name|param
+index|[
+literal|18
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32array
+index|[
+name|l_idx
+index|]
+expr_stmt|;
+name|pvals
+operator|->
+name|point
+index|[
+name|l_idx
+index|]
+operator|.
+name|w_resize
+operator|=
+name|param
+index|[
+literal|20
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32array
+index|[
+name|l_idx
+index|]
+expr_stmt|;
+name|pvals
+operator|->
+name|point
+index|[
+name|l_idx
+index|]
+operator|.
+name|h_resize
+operator|=
+name|param
+index|[
+literal|22
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32array
+index|[
+name|l_idx
+index|]
+expr_stmt|;
+name|pvals
+operator|->
+name|point
+index|[
+name|l_idx
+index|]
+operator|.
+name|rotation
+operator|=
+name|param
+index|[
+literal|24
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32array
+index|[
+name|l_idx
+index|]
+expr_stmt|;
+name|pvals
+operator|->
+name|point
+index|[
+name|l_idx
+index|]
+operator|.
+name|keyframe_abs
+operator|=
+name|param
+index|[
+literal|26
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32array
+index|[
+name|l_idx
+index|]
+expr_stmt|;
+comment|/* pvals->point[l_idx].keyframe = ; */
+comment|/* relative keyframes are calculated later */
+block|}
+block|}
+block|}
+else|else
+block|{
+comment|/* "plug_in_gap_move_path2" operates with controlpoint file */
+if|if
+condition|(
+name|param
+index|[
+literal|14
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+operator|!=
+name|NULL
+condition|)
+block|{
+name|pointfile
+operator|=
+name|g_strdup
+argument_list|(
+name|param
+index|[
+literal|14
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+block|}
+block|}
+if|if
+condition|(
+name|status
+operator|==
+name|GIMP_PDB_SUCCESS
+condition|)
+block|{
+name|l_rc
+operator|=
+name|gap_move_path
+argument_list|(
+name|run_mode
+argument_list|,
+name|image_id
+argument_list|,
+name|pvals
+argument_list|,
+name|pointfile
+argument_list|,
+name|l_rotation_follow
+argument_list|,
+name|l_startangle
+argument_list|)
+expr_stmt|;
+block|}
+name|g_free
+argument_list|(
+name|pvals
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|pointfile
+operator|!=
+name|NULL
+condition|)
+name|g_free
+argument_list|(
+name|pointfile
+argument_list|)
+expr_stmt|;
 block|}
 elseif|else
 if|if
@@ -3568,7 +5536,7 @@ operator|&&
 operator|(
 name|n_params
 operator|!=
-literal|13
+name|nargs_f2multi
 operator|)
 condition|)
 block|{
@@ -3585,17 +5553,6 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-name|image_id
-operator|=
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_image
-expr_stmt|;
 name|range_from
 operator|=
 name|param
@@ -3901,7 +5858,7 @@ if|if
 condition|(
 name|n_params
 operator|!=
-literal|5
+name|nargs_rflatt
 condition|)
 block|{
 name|status
@@ -3917,17 +5874,6 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-name|image_id
-operator|=
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_image
-expr_stmt|;
 name|range_from
 operator|=
 name|param
@@ -3991,7 +5937,7 @@ if|if
 condition|(
 name|n_params
 operator|!=
-literal|6
+name|nargs_rlayerdel
 condition|)
 block|{
 name|status
@@ -4007,17 +5953,6 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-name|image_id
-operator|=
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_image
-expr_stmt|;
 name|range_from
 operator|=
 name|param
@@ -4135,13 +6070,13 @@ operator|&&
 operator|(
 name|n_params
 operator|!=
-literal|11
+name|nargs_rconv
 operator|)
 operator|&&
 operator|(
 name|n_params
 operator|!=
-literal|15
+name|nargs_rconv2
 operator|)
 condition|)
 block|{
@@ -4404,7 +6339,7 @@ if|if
 condition|(
 name|n_params
 operator|!=
-literal|7
+name|nargs_resize
 condition|)
 block|{
 name|status
@@ -4420,17 +6355,6 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-name|image_id
-operator|=
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_image
-expr_stmt|;
 name|new_width
 operator|=
 name|param
@@ -4536,17 +6460,6 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-name|image_id
-operator|=
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_image
-expr_stmt|;
 name|new_width
 operator|=
 name|param
@@ -4636,7 +6549,7 @@ if|if
 condition|(
 name|n_params
 operator|!=
-literal|5
+name|nargs_scale
 condition|)
 block|{
 name|status
@@ -4652,17 +6565,6 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-name|image_id
-operator|=
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_image
-expr_stmt|;
 name|new_width
 operator|=
 name|param
@@ -4735,7 +6637,7 @@ if|if
 condition|(
 name|n_params
 operator|!=
-literal|6
+name|nargs_split
 condition|)
 block|{
 name|status
@@ -4787,17 +6689,6 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-name|image_id
-operator|=
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_image
-expr_stmt|;
 name|inverse_order
 operator|=
 name|param
@@ -4887,7 +6778,7 @@ if|if
 condition|(
 name|n_params
 operator|!=
-literal|6
+name|nargs_shift
 condition|)
 block|{
 name|status
@@ -4903,17 +6794,6 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-name|image_id
-operator|=
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_image
-expr_stmt|;
 name|nr
 operator|=
 name|param
@@ -4984,7 +6864,7 @@ if|if
 condition|(
 name|n_params
 operator|!=
-literal|5
+name|nargs_video_copy
 condition|)
 block|{
 name|status
@@ -4999,17 +6879,6 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-name|image_id
-operator|=
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_image
-expr_stmt|;
 name|range_from
 operator|=
 name|param
@@ -5066,7 +6935,7 @@ if|if
 condition|(
 name|n_params
 operator|!=
-literal|4
+name|nargs_video_paste
 condition|)
 block|{
 name|status
@@ -5081,17 +6950,6 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-name|image_id
-operator|=
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_image
-expr_stmt|;
 name|nr
 operator|=
 name|param
@@ -5184,7 +7042,7 @@ if|if
 condition|(
 name|n_params
 operator|!=
-literal|11
+name|nargs_modify
 condition|)
 block|{
 name|status
@@ -5299,17 +7157,6 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-name|image_id
-operator|=
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_image
-expr_stmt|;
 name|range_from
 operator|=
 name|param
@@ -5433,15 +7280,6 @@ index|[
 literal|0
 index|]
 operator|.
-name|type
-operator|=
-name|GIMP_PDB_STATUS
-expr_stmt|;
-name|values
-index|[
-literal|0
-index|]
-operator|.
 name|data
 operator|.
 name|d_status
@@ -5449,30 +7287,9 @@ operator|=
 name|status
 expr_stmt|;
 comment|/* remove LOCK on this image for all gap_plugins */
-name|l_lock
-operator|.
-name|lock
-operator|=
-literal|0
-expr_stmt|;
-name|l_lock
-operator|.
-name|image_id
-operator|=
-operator|-
-literal|1
-expr_stmt|;
-name|gimp_set_data
+name|p_gap_lock_remove
 argument_list|(
-name|l_lockname
-argument_list|,
-operator|&
-name|l_lock
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|l_lock
-argument_list|)
+name|lock_image_id
 argument_list|)
 expr_stmt|;
 block|}

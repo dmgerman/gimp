@@ -16,7 +16,7 @@ comment|/******************************************************************* ***
 end_comment
 
 begin_comment
-comment|/*  * Changelog:  *  * 2000/02/07 v1.1.16a:  hof: replaced sprintf by g_strdup_printf  * 2000/01/06 v1.1.14a:  hof: save thumbnails .xvpics p_gimp_file_save_thumbnail  *                       store framerate in video_info file  * 1999/11/25 v1.1.11.b: Initial release. [hof]   *                       (based on plug-ins/common/mpeg.c v1.1 99/05/31 by Adam D. Moss)  */
+comment|/*  * Changelog:  *  * 2000/11/30 v1.1.29b:  hof: new e-mail adress  * 2000/02/07 v1.1.16a:  hof: used g_strdup_printf  * 2000/01/06 v1.1.14a:  hof: save thumbnails .xvpics p_gimp_file_save_thumbnail  *                       store framerate in video_info file  * 1999/11/25 v1.1.11.b: Initial release. [hof]   *                       (based on plug-ins/common/mpeg.c v1.1 99/05/31 by Adam D. Moss)  */
 end_comment
 
 begin_comment
@@ -525,11 +525,11 @@ literal|"Split MPEG1 movies into animframes and load 1st frame"
 argument_list|,
 literal|"Split MPEG1 movies into single frames (image files on disk) and load 1st frame. audio tracks are ignored"
 argument_list|,
-literal|"Wolfgang Hofer (hof@hotbot.com)"
+literal|"Wolfgang Hofer (hof@gimp.org)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
-literal|"2000/01/01"
+literal|"2000/11/30"
 argument_list|,
 name|N_
 argument_list|(
@@ -557,11 +557,11 @@ literal|"Split MPEG1 movies into animframes and load 1st frame"
 argument_list|,
 literal|"Split MPEG1 movies into single frames (image files on disk) and load 1st frame. audio tracks are ignored"
 argument_list|,
-literal|"Wolfgang Hofer (hof@hotbot.com)"
+literal|"Wolfgang Hofer (hof@gimp.org)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
-literal|"2000/01/01"
+literal|"2000/11/30"
 argument_list|,
 name|N_
 argument_list|(

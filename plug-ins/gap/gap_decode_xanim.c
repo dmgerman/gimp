@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history  * 1.1.17b;  2000/02/26  hof: bugfixes  * 1.1.14a;  1999/11/22  hof: fixed gcc warning (too many arguments for format)  * 1.1.13a;  1999/11/22  hof: first release  */
+comment|/* revision history  * 1.1.29b;  2000/11/30  hof: used g_snprintf  * 1.1.17b;  2000/02/26  hof: bugfixes  * 1.1.14a;  1999/11/22  hof: fixed gcc warning (too many arguments for format)  * 1.1.13a;  1999/11/22  hof: first release  */
 end_comment
 
 begin_comment
@@ -1842,12 +1842,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|p_build_xanim_framename (char * framename,gint32 frame_nr,char * ext)
+DECL|function|p_build_xanim_framename (char * framename,gint32 sizeof_framename,gint32 frame_nr,char * ext)
 name|p_build_xanim_framename
 parameter_list|(
 name|char
 modifier|*
 name|framename
+parameter_list|,
+name|gint32
+name|sizeof_framename
 parameter_list|,
 name|gint32
 name|frame_nr
@@ -1857,9 +1860,11 @@ modifier|*
 name|ext
 parameter_list|)
 block|{
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|framename
+argument_list|,
+name|sizeof_framename
 argument_list|,
 literal|"%s/frame%d.%s"
 argument_list|,
@@ -1879,12 +1884,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|p_build_gap_framename (char * framename,gint32 frame_nr,char * basename,char * ext)
+DECL|function|p_build_gap_framename (char * framename,gint32 sizeof_framename,gint32 frame_nr,char * basename,char * ext)
 name|p_build_gap_framename
 parameter_list|(
 name|char
 modifier|*
 name|framename
+parameter_list|,
+name|gint32
+name|sizeof_framename
 parameter_list|,
 name|gint32
 name|frame_nr
@@ -1898,9 +1906,11 @@ modifier|*
 name|ext
 parameter_list|)
 block|{
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|framename
+argument_list|,
+name|sizeof_framename
 argument_list|,
 literal|"%s%04d.%s"
 argument_list|,
@@ -2131,6 +2141,11 @@ name|p_build_xanim_framename
 argument_list|(
 name|l_first_xa_frame
 argument_list|,
+sizeof|sizeof
+argument_list|(
+name|l_first_xa_frame
+argument_list|)
+argument_list|,
 name|frame_from
 argument_list|,
 name|ext
@@ -2318,6 +2333,11 @@ block|{
 name|p_build_xanim_framename
 argument_list|(
 name|l_frame
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|l_frame
+argument_list|)
 argument_list|,
 name|l_nr
 argument_list|,
@@ -2540,6 +2560,11 @@ name|p_build_xanim_framename
 argument_list|(
 name|l_src_frame
 argument_list|,
+sizeof|sizeof
+argument_list|(
+name|l_src_frame
+argument_list|)
+argument_list|,
 name|l_frame_nr
 argument_list|,
 name|ext
@@ -2548,6 +2573,11 @@ expr_stmt|;
 name|p_build_gap_framename
 argument_list|(
 name|l_dst_frame
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|l_dst_frame
+argument_list|)
 argument_list|,
 name|l_frame_nr
 argument_list|,
@@ -2833,6 +2863,11 @@ name|p_build_xanim_framename
 argument_list|(
 name|l_framename
 argument_list|,
+sizeof|sizeof
+argument_list|(
+name|l_framename
+argument_list|)
+argument_list|,
 name|l_next_number
 argument_list|,
 name|ext
@@ -2850,6 +2885,11 @@ comment|/* if xanim has already written the next frame 	 * we can delete the pre
 name|p_build_xanim_framename
 argument_list|(
 name|l_framename
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|l_framename
+argument_list|)
 argument_list|,
 name|global_delete_number
 argument_list|,
@@ -3443,9 +3483,14 @@ operator|-
 literal|1
 expr_stmt|;
 comment|/* allocate and prepare args for the xanim call */
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|l_cmd
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|l_cmd
+argument_list|)
 argument_list|,
 literal|"%s +f "
 argument_list|,
@@ -3498,9 +3543,14 @@ break|break;
 case|case
 name|XAENC_JPEG
 case|:
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|l_buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|l_buf
+argument_list|)
 argument_list|,
 literal|"+Eq%d "
 argument_list|,
@@ -3534,9 +3584,14 @@ condition|(
 name|run_xanim_asynchron
 condition|)
 block|{
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|l_buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|l_buf
+argument_list|)
 argument_list|,
 literal|"+Zp%d "
 argument_list|,
@@ -3937,9 +3992,14 @@ break|break;
 case|case
 name|XAENC_JPEG
 case|:
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|l_buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|l_buf
+argument_list|)
 argument_list|,
 literal|"+Eq%d"
 argument_list|,
@@ -3977,9 +4037,14 @@ comment|/* additional option "Pause after N Frames" is used,       * to stop xan
 name|l_idx
 operator|++
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|l_buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|l_buf
+argument_list|)
 argument_list|,
 literal|"+Zp%d"
 argument_list|,
@@ -4360,6 +4425,11 @@ name|p_build_xanim_framename
 argument_list|(
 name|l_one_past_last_frame
 argument_list|,
+sizeof|sizeof
+argument_list|(
+name|l_one_past_last_frame
+argument_list|)
+argument_list|,
 name|last_frame
 operator|+
 literal|1
@@ -4382,9 +4452,14 @@ argument_list|)
 condition|)
 block|{
 comment|/* the input directory already exists,             * remove frames             */
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|l_cmd
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|l_cmd
+argument_list|)
 argument_list|,
 literal|"rm -f %s/*.%s"
 argument_list|,
@@ -4716,9 +4791,14 @@ literal|0
 condition|)
 block|{
 comment|/* remove input dir with all files */
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|l_cmd
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|l_cmd
+argument_list|)
 argument_list|,
 literal|"rm -rf \"%s\""
 argument_list|,
@@ -4789,6 +4869,11 @@ comment|/* load first frame and add a display */
 name|p_build_gap_framename
 argument_list|(
 name|l_first_to_laod
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|l_first_to_laod
+argument_list|)
 argument_list|,
 name|first_frame
 argument_list|,

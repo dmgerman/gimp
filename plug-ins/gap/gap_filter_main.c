@@ -74,12 +74,12 @@ name|char
 modifier|*
 name|gap_filter_version
 init|=
-literal|"0.92.00; 1998/01/16"
+literal|"0.92.01; 2000/11/30"
 decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* revision history:  * version 0.92.00              hof: set gap_debug from environment   * version 0.91.01; Tue Dec 23  hof: 1.st (pre) release  */
+comment|/* revision history:  * 2000/11/30 v1.1.29b:  hof: new e-mail adress  * version 0.92.00              hof: set gap_debug from environment   * version 0.91.01; Tue Dec 23  hof: 1.st (pre) release  */
 end_comment
 
 begin_comment
@@ -263,7 +263,7 @@ literal|"This plugin calls another plugin for each layer of an image, varying it
 argument_list|,
 literal|""
 argument_list|,
-literal|"Wolfgang Hofer (hof@hotbot.com)"
+literal|"Wolfgang Hofer (hof@gimp.org)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,

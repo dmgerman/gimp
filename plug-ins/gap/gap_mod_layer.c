@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history:  * 1.1.28a; 2000/11/05   hof: check for GIMP_PDB_SUCCESS (not for FALSE)  * gimp   1.1.6;     1999/06/21  hof: bugix: wrong iterator total_steps and direction  * gimp   1.1.15.1;  1999/05/08  hof: bugix (dont mix GimpImageType with GimpImageBaseType)  * version 0.98.00   1998.11.27  hof: - use new module gap_pdb_calls.h  * version 0.97.00   1998.10.19  hof: - created module  */
+comment|/* revision history:  * gimp   1.1.29b;   2000/11/30  hof: use g_snprintf  * gimp   1.1.28a;   2000/11/05  hof: check for GIMP_PDB_SUCCESS (not for FALSE)  * gimp   1.1.6;     1999/06/21  hof: bugix: wrong iterator total_steps and direction  * gimp   1.1.15.1;  1999/05/08  hof: bugix (dont mix GimpImageType with GimpImageBaseType)  * version 0.98.00   1998.11.27  hof: - use new module gap_pdb_calls.h  * version 0.97.00   1998.10.19  hof: - created module  */
 end_comment
 
 begin_comment
@@ -737,12 +737,19 @@ operator|=
 literal|4
 expr_stmt|;
 comment|/* Layer select pattern string */
-name|sprintf
-argument_list|(
 name|sel_pattern
-argument_list|,
-literal|"0"
-argument_list|)
+index|[
+literal|0
+index|]
+operator|=
+literal|'0'
+expr_stmt|;
+name|sel_pattern
+index|[
+literal|1
+index|]
+operator|=
+literal|'\0'
 expr_stmt|;
 name|p_init_arr_arg
 argument_list|(
@@ -2917,9 +2924,14 @@ operator|>
 literal|0
 condition|)
 block|{
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|l_key_from
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|l_key_from
+argument_list|)
 argument_list|,
 literal|"%s_ITER_FROM"
 argument_list|,
@@ -3231,9 +3243,14 @@ condition|)
 goto|goto
 name|cleanup
 goto|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|l_key_to
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|l_key_to
+argument_list|)
 argument_list|,
 literal|"%s_ITER_TO"
 argument_list|,
@@ -3248,9 +3265,14 @@ name|l_plugin_data_len
 argument_list|)
 expr_stmt|;
 comment|/* get FROM values */
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|l_key_from
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|l_key_from
+argument_list|)
 argument_list|,
 literal|"%s_ITER_FROM"
 argument_list|,

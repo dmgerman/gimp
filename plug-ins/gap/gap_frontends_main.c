@@ -14,12 +14,12 @@ name|char
 modifier|*
 name|gap_main_version
 init|=
-literal|"1.1.11b; 1999/11/20"
+literal|"1.1.29b; 2000/11/25"
 decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* revision history:  * gimp    1.1.11b; 1999/11/20  hof: added gap_decode_xanim, fixed typo in mpeg encoder menu path  *                                   based on parts that were found in gap_main.c before.  */
+comment|/* revision history:  * gimp    1.1.29b; 2000/11/25  hof: use gap lock procedures, update e-mail adress + main version  * gimp    1.1.11b; 1999/11/20  hof: added gap_decode_xanim, fixed typo in mpeg encoder menu path  *                                   based on parts that were found in gap_main.c before.  */
 end_comment
 
 begin_comment
@@ -350,7 +350,7 @@ literal|"This plugin calls xanim to split any video to anim frames. (xanim expor
 argument_list|,
 literal|""
 argument_list|,
-literal|"Wolfgang Hofer (hof@hotbot.com)"
+literal|"Wolfgang Hofer (hof@gimp.org)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -382,7 +382,7 @@ literal|"This plugin calls xanim to split any video to anim frames. (xanim expor
 argument_list|,
 literal|""
 argument_list|,
-literal|"Wolfgang Hofer (hof@hotbot.com)"
+literal|"Wolfgang Hofer (hof@gimp.org)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -414,7 +414,7 @@ literal|"This plugin calls mpeg_encode to convert anim frames to MPEG1, or just 
 argument_list|,
 literal|""
 argument_list|,
-literal|"Wolfgang Hofer (hof@hotbot.com)"
+literal|"Wolfgang Hofer (hof@gimp.org)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -446,7 +446,7 @@ literal|"This plugin calls mpeg2encode to convert anim frames to MPEG1 or MPEG2,
 argument_list|,
 literal|""
 argument_list|,
-literal|"Wolfgang Hofer (hof@hotbot.com)"
+literal|"Wolfgang Hofer (hof@gimp.org)"
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -504,38 +504,6 @@ modifier|*
 name|return_vals
 parameter_list|)
 block|{
-typedef|typedef
-struct|struct
-DECL|struct|__anon2b6792f30108
-block|{
-DECL|member|lock
-name|long
-name|lock
-decl_stmt|;
-comment|/* 0 ... NOT Locked, 1 ... locked */
-DECL|member|image_id
-name|gint32
-name|image_id
-decl_stmt|;
-DECL|member|timestamp
-name|long
-name|timestamp
-decl_stmt|;
-comment|/* locktime not used for now */
-DECL|typedef|t_lockdata
-block|}
-name|t_lockdata
-typedef|;
-name|t_lockdata
-name|l_lock
-decl_stmt|;
-specifier|static
-name|char
-name|l_lockname
-index|[
-literal|50
-index|]
-decl_stmt|;
 name|char
 modifier|*
 name|l_env
@@ -563,6 +531,9 @@ name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|gint32
 name|image_id
+decl_stmt|;
+name|gint32
+name|lock_image_id
 decl_stmt|;
 name|gint32
 name|nr
@@ -639,6 +610,10 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
+name|lock_image_id
+operator|=
+name|image_id
+expr_stmt|;
 if|if
 condition|(
 name|gap_debug
@@ -675,61 +650,21 @@ name|data
 operator|.
 name|d_image
 expr_stmt|;
-comment|/* check for locks */
-name|l_lock
-operator|.
-name|lock
+name|lock_image_id
 operator|=
-literal|0
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|l_lockname
-argument_list|,
-literal|"plug_in_gap_plugins_LOCK_%d"
-argument_list|,
-operator|(
-name|int
-operator|)
 name|image_id
-argument_list|)
 expr_stmt|;
-name|gimp_get_data
-argument_list|(
-name|l_lockname
-argument_list|,
-operator|&
-name|l_lock
-argument_list|)
-expr_stmt|;
+comment|/* check for locks */
 if|if
 condition|(
-operator|(
-name|l_lock
-operator|.
-name|lock
-operator|!=
-literal|0
-operator|)
-operator|&&
-operator|(
-name|l_lock
-operator|.
-name|image_id
-operator|==
-name|image_id
-operator|)
+name|p_gap_lock_is_locked
+argument_list|(
+name|lock_image_id
+argument_list|,
+name|run_mode
+argument_list|)
 condition|)
 block|{
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"gap_plugin is LOCKED for Image ID=%s\n"
-argument_list|,
-name|l_lockname
-argument_list|)
-expr_stmt|;
 name|status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
@@ -757,29 +692,9 @@ expr_stmt|;
 return|return ;
 block|}
 comment|/* set LOCK on current image (for all gap_plugins) */
-name|l_lock
-operator|.
-name|lock
-operator|=
-literal|1
-expr_stmt|;
-name|l_lock
-operator|.
-name|image_id
-operator|=
-name|image_id
-expr_stmt|;
-name|gimp_set_data
+name|p_gap_lock_set
 argument_list|(
-name|l_lockname
-argument_list|,
-operator|&
-name|l_lock
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|l_lock
-argument_list|)
+name|lock_image_id
 argument_list|)
 expr_stmt|;
 block|}
@@ -1075,30 +990,9 @@ literal|0
 condition|)
 block|{
 comment|/* remove LOCK on this image for all gap_plugins */
-name|l_lock
-operator|.
-name|lock
-operator|=
-literal|0
-expr_stmt|;
-name|l_lock
-operator|.
-name|image_id
-operator|=
-operator|-
-literal|1
-expr_stmt|;
-name|gimp_set_data
+name|p_gap_lock_remove
 argument_list|(
-name|l_lockname
-argument_list|,
-operator|&
-name|l_lock
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|l_lock
-argument_list|)
+name|lock_image_id
 argument_list|)
 expr_stmt|;
 block|}
