@@ -892,9 +892,12 @@ operator|)
 operator|)
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
-literal|"ZealousCrop(tm): Nothing to be done.\n"
+name|_
+argument_list|(
+literal|"ZealousCrop(tm): Nothing to crop."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1085,7 +1088,6 @@ name|total_area
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  printf("dc: %d, lc: %d  - - - dr: %d, lr: %d\n",destcol, livingcols, destrow, livingrows);*/
 name|g_free
 argument_list|(
 name|buffer

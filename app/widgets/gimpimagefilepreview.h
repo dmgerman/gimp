@@ -103,6 +103,11 @@ DECL|member|parent_instance
 name|GimpPreview
 name|parent_instance
 decl_stmt|;
+DECL|member|no_preview_pixbuf
+name|GdkPixbuf
+modifier|*
+name|no_preview_pixbuf
+decl_stmt|;
 block|}
 struct|;
 end_struct
