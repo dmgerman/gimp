@@ -205,6 +205,26 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/* Retreive a plug-ins proc_def from its ProcRecord */
+end_comment
+
+begin_function_decl
+name|PlugInProcDef
+modifier|*
+name|plug_ins_proc_def_find
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|ProcRecord
+modifier|*
+name|proc_rec
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_function_decl
 name|GSList
 modifier|*

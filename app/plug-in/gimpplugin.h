@@ -48,6 +48,12 @@ DECL|member|ref_count
 name|gint
 name|ref_count
 decl_stmt|;
+DECL|member|proc_rec
+name|ProcRecord
+modifier|*
+name|proc_rec
+decl_stmt|;
+comment|/*  The procedure the plug-in is running    */
 DECL|member|open
 name|guint
 name|open
@@ -83,13 +89,6 @@ range|:
 literal|1
 decl_stmt|;
 comment|/*  Do we have an own GMainLoop?            */
-DECL|member|in_temp_proc
-name|guint
-name|in_temp_proc
-range|:
-literal|1
-decl_stmt|;
-comment|/*  Is the plug-in busy with a temp proc?   */
 DECL|member|starting_ext
 name|guint
 name|starting_ext
@@ -160,6 +159,12 @@ modifier|*
 name|temp_proc_defs
 decl_stmt|;
 comment|/*  Temporary procedures                    */
+DECL|member|current_temp_proc
+name|ProcRecord
+modifier|*
+name|current_temp_proc
+decl_stmt|;
+comment|/*  The temp proc the plug-in is busy with  */
 DECL|member|main_loops
 name|GList
 modifier|*
@@ -252,6 +257,10 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|ProcRecord
+modifier|*
+name|proc_rec
 parameter_list|,
 specifier|const
 name|gchar
@@ -348,6 +357,18 @@ end_function_decl
 begin_function_decl
 name|void
 name|plug_in_main_loop_quit
+parameter_list|(
+name|PlugIn
+modifier|*
+name|plug_in
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gchar
+modifier|*
+name|plug_in_get_undo_desc
 parameter_list|(
 name|PlugIn
 modifier|*

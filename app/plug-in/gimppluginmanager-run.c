@@ -248,6 +248,8 @@ argument_list|(
 name|gimp
 argument_list|,
 name|proc_rec
+argument_list|,
+name|proc_rec
 operator|->
 name|exec_method
 operator|.
@@ -784,7 +786,7 @@ if|if
 condition|(
 name|plug_in
 operator|->
-name|in_temp_proc
+name|current_temp_proc
 condition|)
 block|{
 name|return_vals
@@ -802,9 +804,9 @@ goto|;
 block|}
 name|plug_in
 operator|->
-name|in_temp_proc
+name|current_temp_proc
 operator|=
-name|TRUE
+name|proc_rec
 expr_stmt|;
 name|proc_run
 operator|.
@@ -938,9 +940,9 @@ name|old_recurse
 expr_stmt|;
 name|plug_in
 operator|->
-name|in_temp_proc
+name|current_temp_proc
 operator|=
-name|FALSE
+name|NULL
 expr_stmt|;
 ifdef|#
 directive|ifdef
