@@ -1115,6 +1115,12 @@ name|startx
 argument_list|,
 operator|(
 name|j
+operator|-
+operator|(
+name|j
+operator|%
+name|TILE_WIDTH
+operator|)
 operator|+
 name|tile_ewidth
 argument_list|(
@@ -1187,6 +1193,12 @@ name|starty
 argument_list|,
 operator|(
 name|i
+operator|-
+operator|(
+name|i
+operator|%
+name|TILE_HEIGHT
+operator|)
 operator|+
 name|tile_eheight
 argument_list|(
