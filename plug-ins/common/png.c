@@ -84,7 +84,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4ae70c0108
+DECL|struct|__anon29725cf20108
 block|{
 DECL|member|interlaced
 name|gint
@@ -2405,6 +2405,10 @@ operator|=
 literal|1
 expr_stmt|;
 break|break;
+default|default:
+name|abort
+argument_list|()
+expr_stmt|;
 block|}
 empty_stmt|;
 name|png_write_info
