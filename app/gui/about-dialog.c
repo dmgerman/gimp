@@ -417,6 +417,8 @@ block|,
 literal|"James Wang"
 block|,
 literal|"Kris Wehner"
+block|,
+literal|"Matthew Wilson"
 block|, }
 decl_stmt|;
 end_decl_stmt

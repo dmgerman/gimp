@@ -337,7 +337,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|int
 name|file_dialog_hide
 parameter_list|(
 name|GtkWidget
@@ -1999,7 +1999,7 @@ literal|"clicked"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|gtk_widget_hide
+name|file_dialog_hide
 argument_list|)
 argument_list|,
 name|GTK_OBJECT
@@ -2019,7 +2019,7 @@ literal|"delete_event"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|gtk_widget_hide_on_delete
+name|file_dialog_hide
 argument_list|)
 argument_list|,
 name|NULL
@@ -2043,6 +2043,18 @@ operator|(
 name|GtkSignalFunc
 operator|)
 name|file_open_ok_callback
+argument_list|,
+name|fileload
+argument_list|)
+expr_stmt|;
+name|gtk_quit_add
+argument_list|(
+literal|1
+argument_list|,
+operator|(
+name|GtkFunction
+operator|)
+name|gtk_widget_destroy
 argument_list|,
 name|fileload
 argument_list|)
@@ -2420,7 +2432,7 @@ literal|"clicked"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|gtk_widget_hide
+name|file_dialog_hide
 argument_list|)
 argument_list|,
 name|GTK_OBJECT
@@ -2440,7 +2452,7 @@ literal|"delete_event"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|gtk_widget_hide_on_delete
+name|file_dialog_hide
 argument_list|)
 argument_list|,
 name|NULL
@@ -2464,6 +2476,18 @@ operator|(
 name|GtkSignalFunc
 operator|)
 name|file_save_ok_callback
+argument_list|,
+name|filesave
+argument_list|)
+expr_stmt|;
+name|gtk_quit_add
+argument_list|(
+literal|1
+argument_list|,
+operator|(
+name|GtkFunction
+operator|)
+name|gtk_widget_destroy
 argument_list|,
 name|filesave
 argument_list|)
@@ -4003,7 +4027,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|int
 DECL|function|file_dialog_hide (GtkWidget * filesel)
 name|file_dialog_hide
 parameter_list|(
@@ -4045,6 +4069,9 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
