@@ -883,6 +883,19 @@ operator|->
 name|select
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gdisp
+operator|->
+name|scroll_gc
+condition|)
+name|gdk_gc_destroy
+argument_list|(
+name|gdisp
+operator|->
+name|scroll_gc
+argument_list|)
+expr_stmt|;
 comment|/*  free the area lists  */
 name|gdisplay_free_area_list
 argument_list|(
@@ -5513,6 +5526,7 @@ modifier|*
 name|toplevel_widget
 decl_stmt|;
 name|GdkEvent
+modifier|*
 name|event
 decl_stmt|;
 name|GDisplay
@@ -5520,17 +5534,20 @@ modifier|*
 name|gdisp
 decl_stmt|;
 comment|/*  If the popup shell is valid, then get the gdisplay associated with that shell  */
-name|gtk_get_current_event
-argument_list|(
-operator|&
 name|event
-argument_list|)
+operator|=
+name|gtk_get_current_event
+argument_list|()
 expr_stmt|;
 name|event_widget
 operator|=
 name|gtk_get_event_widget
 argument_list|(
-operator|&
+name|event
+argument_list|)
+expr_stmt|;
+name|gdk_event_free
+argument_list|(
 name|event
 argument_list|)
 expr_stmt|;

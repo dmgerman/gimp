@@ -403,6 +403,13 @@ name|swap_width
 decl_stmt|,
 name|swap_height
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|color_area_pixmap
+condition|)
+comment|/* we haven't gotten initial expose yet,                                * no point in drawing anything */
+return|return;
 name|gdk_window_get_size
 argument_list|(
 name|color_area_pixmap

@@ -313,7 +313,7 @@ comment|/* Gradient segment type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d9064c0103
+DECL|enum|__anon29462f850103
 typedef|typedef
 enum|enum
 block|{
@@ -340,7 +340,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon27d9064c0203
+DECL|enum|__anon29462f850203
 typedef|typedef
 enum|enum
 block|{
@@ -485,7 +485,7 @@ comment|/* Gradient editor type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d9064c0303
+DECL|enum|__anon29462f850303
 typedef|typedef
 enum|enum
 block|{
@@ -509,7 +509,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27d9064c0408
+DECL|struct|__anon29462f850408
 typedef|typedef
 struct|struct
 block|{
@@ -789,7 +789,7 @@ name|int
 name|replicate_times
 decl_stmt|;
 comment|/* Saved colors */
-DECL|struct|__anon27d9064c0508
+DECL|struct|__anon29462f850508
 struct|struct
 block|{
 DECL|member|r
@@ -12288,7 +12288,7 @@ name|g_editor
 operator|->
 name|control_pixmap
 condition|)
-name|gdk_pixmap_destroy
+name|gdk_pixmap_unref
 argument_list|(
 name|g_editor
 operator|->

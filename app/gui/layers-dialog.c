@@ -9814,7 +9814,7 @@ name|layer_widget
 operator|->
 name|layer_pixmap
 condition|)
-name|gdk_pixmap_destroy
+name|gdk_pixmap_unref
 argument_list|(
 name|layer_widget
 operator|->
@@ -9827,7 +9827,7 @@ name|layer_widget
 operator|->
 name|mask_pixmap
 condition|)
-name|gdk_pixmap_destroy
+name|gdk_pixmap_unref
 argument_list|(
 name|layer_widget
 operator|->

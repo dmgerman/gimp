@@ -826,7 +826,7 @@ operator|=
 name|gtk_style_new
 argument_list|()
 expr_stmt|;
-name|gdk_font_free
+name|gdk_font_unref
 argument_list|(
 name|style
 operator|->

@@ -169,7 +169,7 @@ value|((val) + 0.5)
 end_define
 
 begin_typedef
-DECL|struct|__anon2c63a2a00108
+DECL|struct|__anon29af8fd40108
 typedef|typedef
 struct|struct
 block|{
@@ -8975,7 +8975,7 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gdk_colormap_destroy
+name|gdk_colormap_unref
 argument_list|(
 name|visinfo
 operator|->

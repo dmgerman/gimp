@@ -4744,7 +4744,7 @@ name|channel_widget
 operator|->
 name|channel_pixmap
 condition|)
-name|gdk_pixmap_destroy
+name|gdk_pixmap_unref
 argument_list|(
 name|channel_widget
 operator|->

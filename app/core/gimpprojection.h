@@ -123,7 +123,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1d510e0103
+DECL|enum|__anon27e631d30103
 block|{
 DECL|enumerator|SelectionOff
 name|SelectionOff
@@ -295,6 +295,12 @@ modifier|*
 name|select
 decl_stmt|;
 comment|/*  Selection object                        */
+DECL|member|scroll_gc
+name|GdkGC
+modifier|*
+name|scroll_gc
+decl_stmt|;
+comment|/*  GC for scrolling */
 DECL|member|update_areas
 name|link_ptr
 name|update_areas

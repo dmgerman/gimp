@@ -1347,7 +1347,7 @@ operator|->
 name|layer_pixmap
 condition|)
 block|{
-name|gdk_pixmap_destroy
+name|gdk_pixmap_unref
 argument_list|(
 name|layer_select
 operator|->

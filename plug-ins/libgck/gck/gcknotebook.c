@@ -2903,7 +2903,7 @@ name|pixmap
 operator|!=
 name|NULL
 condition|)
-name|gdk_pixmap_destroy
+name|gdk_pixmap_unref
 argument_list|(
 name|page
 operator|->

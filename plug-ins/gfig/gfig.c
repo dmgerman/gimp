@@ -8004,7 +8004,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b33021b0108
+DECL|struct|__anon2c7424a50108
 block|{
 DECL|member|color_string
 name|gchar
@@ -9627,7 +9627,7 @@ name|blank_xpm
 argument_list|)
 expr_stmt|;
 comment|/* Remove old */
-name|gdk_pixmap_destroy
+name|gdk_pixmap_unref
 argument_list|(
 name|gdk_pix
 argument_list|)

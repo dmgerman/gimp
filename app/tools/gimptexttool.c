@@ -1955,7 +1955,7 @@ operator|=
 name|gtk_style_new
 argument_list|()
 expr_stmt|;
-name|gdk_font_free
+name|gdk_font_unref
 argument_list|(
 name|style
 operator|->
@@ -7829,7 +7829,7 @@ name|text_tool
 operator|->
 name|font
 condition|)
-name|gdk_font_free
+name|gdk_font_unref
 argument_list|(
 name|text_tool
 operator|->
@@ -9206,7 +9206,7 @@ name|NULL
 expr_stmt|;
 block|}
 comment|/* free the pixmap */
-name|gdk_pixmap_destroy
+name|gdk_pixmap_unref
 argument_list|(
 name|pixmap
 argument_list|)
@@ -9218,7 +9218,7 @@ name|gc
 argument_list|)
 expr_stmt|;
 comment|/* free the font */
-name|gdk_font_free
+name|gdk_font_unref
 argument_list|(
 name|font
 argument_list|)
