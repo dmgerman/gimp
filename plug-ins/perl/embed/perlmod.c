@@ -167,7 +167,7 @@ name|perl_eval_pv
 argument_list|(
 literal|"require Gimp::Module"
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
