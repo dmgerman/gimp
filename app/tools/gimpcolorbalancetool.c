@@ -1602,19 +1602,16 @@ name|cb_tool
 argument_list|)
 expr_stmt|;
 comment|/*  set range after everything is in place  */
-name|gimp_radio_group_set_active
+name|gimp_int_radio_group_set_active
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(
 name|toggle
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|cb_tool
 operator|->
 name|transfer_mode
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

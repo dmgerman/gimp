@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon294235d00103
+DECL|enum|__anon2c6d0bad0103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -2081,17 +2081,14 @@ argument_list|,
 name|popup
 argument_list|)
 expr_stmt|;
-name|gimp_radio_group_set_active
+name|gimp_int_radio_group_set_active
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(
 name|button
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|view_type
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

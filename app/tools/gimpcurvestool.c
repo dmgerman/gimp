@@ -503,8 +503,8 @@ specifier|static
 name|gboolean
 name|curves_set_sensitive_callback
 parameter_list|(
-name|gpointer
-name|item_data
+name|GimpHistogramChannel
+name|channel
 parameter_list|,
 name|GimpCurvesTool
 modifier|*
@@ -1278,7 +1278,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* set the sensitivity of the channel menu based on the drawable type */
-name|gimp_option_menu_set_sensitive
+name|gimp_int_option_menu_set_sensitive
 argument_list|(
 name|GTK_OPTION_MENU
 argument_list|(
@@ -1288,7 +1288,7 @@ name|channel_menu
 argument_list|)
 argument_list|,
 operator|(
-name|GimpOptionMenuSensitivityCallback
+name|GimpIntOptionMenuSensitivityCallback
 operator|)
 name|curves_set_sensitive_callback
 argument_list|,
@@ -3728,7 +3728,7 @@ operator|=
 literal|1
 expr_stmt|;
 block|}
-name|gimp_radio_group_set_active
+name|gimp_int_radio_group_set_active
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(
@@ -3737,8 +3737,6 @@ operator|->
 name|curve_type
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|c_tool
 operator|->
 name|curves
@@ -3749,7 +3747,6 @@ name|c_tool
 operator|->
 name|channel
 index|]
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|curves_update
@@ -3832,25 +3829,17 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|curves_set_sensitive_callback (gpointer item_data,GimpCurvesTool * c_tool)
+DECL|function|curves_set_sensitive_callback (GimpHistogramChannel channel,GimpCurvesTool * c_tool)
 name|curves_set_sensitive_callback
 parameter_list|(
-name|gpointer
-name|item_data
+name|GimpHistogramChannel
+name|channel
 parameter_list|,
 name|GimpCurvesTool
 modifier|*
 name|c_tool
 parameter_list|)
 block|{
-name|GimpHistogramChannel
-name|channel
-init|=
-name|GPOINTER_TO_INT
-argument_list|(
-name|item_data
-argument_list|)
-decl_stmt|;
 switch|switch
 condition|(
 name|channel
@@ -6739,7 +6728,7 @@ operator|->
 name|graph
 argument_list|)
 expr_stmt|;
-name|gimp_radio_group_set_active
+name|gimp_int_radio_group_set_active
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(
@@ -6748,10 +6737,7 @@ operator|->
 name|curve_type
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|GIMP_CURVE_SMOOTH
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_map_tool_preview

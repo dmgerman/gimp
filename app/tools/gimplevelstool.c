@@ -488,8 +488,8 @@ specifier|static
 name|gboolean
 name|levels_set_sensitive_callback
 parameter_list|(
-name|gpointer
-name|item_data
+name|GimpHistogramChannel
+name|channel
 parameter_list|,
 name|GimpLevelsTool
 modifier|*
@@ -1322,7 +1322,7 @@ name|gdisp
 argument_list|)
 expr_stmt|;
 comment|/* set the sensitivity of the channel menu based on the drawable type */
-name|gimp_option_menu_set_sensitive
+name|gimp_int_option_menu_set_sensitive
 argument_list|(
 name|GTK_OPTION_MENU
 argument_list|(
@@ -1332,7 +1332,7 @@ name|channel_menu
 argument_list|)
 argument_list|,
 operator|(
-name|GimpOptionMenuSensitivityCallback
+name|GimpIntOptionMenuSensitivityCallback
 operator|)
 name|levels_set_sensitive_callback
 argument_list|,
@@ -5428,25 +5428,17 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|levels_set_sensitive_callback (gpointer item_data,GimpLevelsTool * l_tool)
+DECL|function|levels_set_sensitive_callback (GimpHistogramChannel channel,GimpLevelsTool * l_tool)
 name|levels_set_sensitive_callback
 parameter_list|(
-name|gpointer
-name|item_data
+name|GimpHistogramChannel
+name|channel
 parameter_list|,
 name|GimpLevelsTool
 modifier|*
 name|l_tool
 parameter_list|)
 block|{
-name|GimpHistogramChannel
-name|channel
-init|=
-name|GPOINTER_TO_INT
-argument_list|(
-name|item_data
-argument_list|)
-decl_stmt|;
 switch|switch
 condition|(
 name|channel

@@ -1643,25 +1643,17 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_histogram_editor_item_sensitive (gpointer item_data,GimpDrawable * drawable)
+DECL|function|gimp_histogram_editor_item_sensitive (GimpHistogramChannel channel,GimpDrawable * drawable)
 name|gimp_histogram_editor_item_sensitive
 parameter_list|(
-name|gpointer
-name|item_data
+name|GimpHistogramChannel
+name|channel
 parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
 block|{
-name|GimpHistogramChannel
-name|channel
-init|=
-name|GPOINTER_TO_INT
-argument_list|(
-name|item_data
-argument_list|)
-decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -1749,10 +1741,7 @@ condition|(
 operator|!
 name|gimp_histogram_editor_item_sensitive
 argument_list|(
-name|GINT_TO_POINTER
-argument_list|(
 name|channel
-argument_list|)
 argument_list|,
 name|editor
 operator|->
@@ -1768,7 +1757,7 @@ name|GIMP_HISTOGRAM_VALUE
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_option_menu_set_sensitive
+name|gimp_int_option_menu_set_sensitive
 argument_list|(
 name|GTK_OPTION_MENU
 argument_list|(
@@ -1778,7 +1767,7 @@ name|menu
 argument_list|)
 argument_list|,
 operator|(
-name|GimpOptionMenuSensitivityCallback
+name|GimpIntOptionMenuSensitivityCallback
 operator|)
 name|gimp_histogram_editor_item_sensitive
 argument_list|,

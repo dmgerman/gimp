@@ -134,7 +134,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon279517da0103
+DECL|enum|__anon28f63e1c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3394,7 +3394,7 @@ name|block_aspect
 operator|=
 name|TRUE
 expr_stmt|;
-name|gimp_radio_group_set_active
+name|gimp_int_radio_group_set_active
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(
@@ -3403,10 +3403,7 @@ operator|->
 name|aspect_button
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|GIMP_ASPECT_SQUARE
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|editor
@@ -3671,7 +3668,7 @@ name|block_aspect
 operator|=
 name|TRUE
 expr_stmt|;
-name|gimp_radio_group_set_active
+name|gimp_int_radio_group_set_active
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(
@@ -3680,10 +3677,7 @@ operator|->
 name|aspect_button
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|aspect
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|editor

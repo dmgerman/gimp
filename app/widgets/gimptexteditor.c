@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2faa2c0103
+DECL|enum|__anon27b127a00103
 block|{
 DECL|enumerator|DIR_CHANGED
 name|DIR_CHANGED
@@ -759,7 +759,7 @@ operator|->
 name|group
 argument_list|)
 expr_stmt|;
-name|gimp_radio_group_set_active
+name|gimp_int_radio_group_set_active
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(
@@ -768,12 +768,9 @@ operator|->
 name|group
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|editor
 operator|->
 name|base_dir
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|children
@@ -1054,7 +1051,7 @@ argument_list|,
 name|editor
 argument_list|)
 expr_stmt|;
-name|gimp_radio_group_set_active
+name|gimp_int_radio_group_set_active
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(
@@ -1063,10 +1060,7 @@ operator|->
 name|group
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|base_dir
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func

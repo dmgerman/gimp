@@ -1114,7 +1114,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_int_option_menu_set_history:  * @option_menu: A #GtkOptionMenu as returned by gimp_int_option_menu_new().  * @item_data:   The @item_data of the menu item you want to select.  *  * Iterates over all entries in a #GtkOptionMenu and selects the one with the  * matching @item_data. Probably only makes sense to use with a #GtkOptionMenu  * that was created using gimp_int_option_menu_new(). This just mirrors  * gimp_option_menu_set_history() like gimp_int_option_menu_new() mirrors  * gimp_option_menu_new2().  **/
+comment|/**  * gimp_int_option_menu_set_history:  * @option_menu: A #GtkOptionMenu as returned by gimp_int_option_menu_new().  * @item_data:   The @item_data of the menu item you want to select.  *  * Iterates over all entries in a #GtkOptionMenu and selects the one with the  * matching @item_data. Probably only makes sense to use with a #GtkOptionMenu  * that was created using gimp_int_option_menu_new(). This function does the  * same thing as gimp_option_menu_set_history(), but takes integers as  * @item_data instead of pointers.  **/
 end_comment
 
 begin_function
@@ -1152,7 +1152,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_option_menu_set_sensitive:  * @option_menu: a #GtkOptionMenu as returned by gimp_option_menu_new() or  *            gimp_option_menu_new2().  * @callback: a function called for each item in the menu to determine the  *            the sensitivity state.  * @callback_data: data to pass to the @callback function.  *  * Calls the given @callback for each item in the menu and passes it the  * item_data and the @callback_data. The menu item's sensitivity is set  * according to the return value of this function.  **/
+comment|/**  * gimp_option_menu_set_sensitive:  * @option_menu: a #GtkOptionMenu as returned by gimp_option_menu_new() or  *            gimp_option_menu_new2().  * @callback: a function called for each item in the menu to determine the  *            the sensitivity state.  * @callback_data: data to pass to the @callback function.  *  * DEPRECATED. Use gimp_int_option_menu_set_sensitive() instead.  *  * Calls the given @callback for each item in the menu and passes it the  * item_data and the @callback_data. The menu item's sensitivity is set  * according to the return value of this function.  **/
 end_comment
 
 begin_function
@@ -1255,6 +1255,136 @@ name|menu_item
 argument_list|)
 argument_list|,
 literal|"gimp-item-data"
+argument_list|)
+expr_stmt|;
+name|sensitive
+operator|=
+name|callback
+argument_list|(
+name|item_data
+argument_list|,
+name|callback_data
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|menu_item
+argument_list|,
+name|sensitive
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_int_option_menu_set_sensitive:  * @option_menu: a #GtkOptionMenu as returned by gimp_option_menu_new() or  *            gimp_option_menu_new2().  * @callback: a function called for each item in the menu to determine the  *            the sensitivity state.  * @callback_data: data to pass to the @callback function.  *  * Calls the given @callback for each item in the menu and passes it the  * item_data and the @callback_data. The menu item's sensitivity is set  * according to the return value of this function. This function does the  * same thing as gimp_option_menu_set_sensitive(), but takes integers as  * @item_data instead of pointers.  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_int_option_menu_set_sensitive (GtkOptionMenu * option_menu,GimpIntOptionMenuSensitivityCallback callback,gpointer callback_data)
+name|gimp_int_option_menu_set_sensitive
+parameter_list|(
+name|GtkOptionMenu
+modifier|*
+name|option_menu
+parameter_list|,
+name|GimpIntOptionMenuSensitivityCallback
+name|callback
+parameter_list|,
+name|gpointer
+name|callback_data
+parameter_list|)
+block|{
+name|GtkWidget
+modifier|*
+name|menu_item
+decl_stmt|;
+name|GList
+modifier|*
+name|list
+decl_stmt|;
+name|gint
+name|item_data
+decl_stmt|;
+name|gboolean
+name|sensitive
+decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GTK_IS_OPTION_MENU
+argument_list|(
+name|option_menu
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|callback
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|list
+operator|=
+name|GTK_MENU_SHELL
+argument_list|(
+name|option_menu
+operator|->
+name|menu
+argument_list|)
+operator|->
+name|children
+init|;
+name|list
+condition|;
+name|list
+operator|=
+name|g_list_next
+argument_list|(
+name|list
+argument_list|)
+control|)
+block|{
+name|menu_item
+operator|=
+name|GTK_WIDGET
+argument_list|(
+name|list
+operator|->
+name|data
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|GTK_IS_LABEL
+argument_list|(
+name|GTK_BIN
+argument_list|(
+name|menu_item
+argument_list|)
+operator|->
+name|child
+argument_list|)
+condition|)
+block|{
+name|item_data
+operator|=
+name|GPOINTER_TO_INT
+argument_list|(
+name|g_object_get_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|menu_item
+argument_list|)
+argument_list|,
+literal|"gimp-item-data"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|sensitive
@@ -2243,7 +2373,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_radio_group_set_active:  * @radio_button: Pointer to a #GtkRadioButton.  * @item_data: The @item_data of the radio button you want to select.  *  * Calls gtk_toggle_button_set_active() with the radio button that was created  * with a matching @item_data.  **/
+comment|/**  * gimp_radio_group_set_active:  * @radio_button: Pointer to a #GtkRadioButton.  * @item_data: The @item_data of the radio button you want to select.  *  * DEPRECATED. Use gimp_int_radio_group_set_active() instead.  *  * Calls gtk_toggle_button_set_active() with the radio button that was created  * with a matching @item_data.  **/
 end_comment
 
 begin_function
@@ -2331,6 +2461,44 @@ expr_stmt|;
 return|return;
 block|}
 block|}
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_int_radio_group_set_active:  * @radio_button: Pointer to a #GtkRadioButton.  * @item_data: The @item_data of the radio button you want to select.  *  * Calls gtk_toggle_button_set_active() with the radio button that was created  * with a matching @item_data. This function does the same thing as  * gimp_radio_group_set_active(), but takes integers as @item_data instead  * of pointers.  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_int_radio_group_set_active (GtkRadioButton * radio_button,gint item_data)
+name|gimp_int_radio_group_set_active
+parameter_list|(
+name|GtkRadioButton
+modifier|*
+name|radio_button
+parameter_list|,
+name|gint
+name|item_data
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GTK_IS_RADIO_BUTTON
+argument_list|(
+name|radio_button
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_radio_group_set_active
+argument_list|(
+name|radio_button
+argument_list|,
+name|GINT_TO_POINTER
+argument_list|(
+name|item_data
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -3579,7 +3747,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292e5f650108
+DECL|struct|__anon288eb0950108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
