@@ -112,10 +112,10 @@ value|2
 end_define
 
 begin_define
-DECL|macro|PNG_GIMPRC_TOKEN
+DECL|macro|PNG_DEFAULTS_PARASITE
 define|#
 directive|define
-name|PNG_GIMPRC_TOKEN
+name|PNG_DEFAULTS_PARASITE
 value|"png-save-defaults"
 end_define
 
@@ -126,7 +126,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bb93fb0108
+DECL|struct|__anon2b883a830108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bb93fb0208
+DECL|struct|__anon2b883a830208
 block|{
 DECL|member|run
 name|gboolean
@@ -709,7 +709,7 @@ literal|"file_png_save_defaults"
 argument_list|,
 literal|"Saves files in PNG file format"
 argument_list|,
-literal|"This plug-in saves Portable Network Graphics (PNG) files, using the default settings stored in the gimprc."
+literal|"This plug-in saves Portable Network Graphics (PNG) files, using the default settings stored as a parasite."
 argument_list|,
 literal|"Michael Sweet<mike@easysw.com>, Daniel Skarda<0rfelyus@atrey.karlin.mff.cuni.cz>"
 argument_list|,
@@ -741,7 +741,7 @@ literal|"file_png_get_defaults"
 argument_list|,
 literal|"Get the current set of defaults used by the PNG file save plug-in"
 argument_list|,
-literal|"This procedure returns the current set of defaults stored in the gimprc for the PNG save plug-in. "
+literal|"This procedure returns the current set of defaults stored as a parasite for the PNG save plug-in. "
 literal|"These defaults are used to seed the UI, by the file_png_save_defaults procedure, and by gimp_file_save when it detects to use PNG."
 argument_list|,
 literal|"Michael Sweet<mike@easysw.com>, Daniel Skarda<0rfelyus@atrey.karlin.mff.cuni.cz>"
@@ -774,7 +774,7 @@ literal|"file_png_set_defaults"
 argument_list|,
 literal|"Set the current set of defaults used by the PNG file save plug-in"
 argument_list|,
-literal|"This procedure set the current set of defaults stored in the gimprc for the PNG save plug-in. "
+literal|"This procedure set the current set of defaults stored as a parasite for the PNG save plug-in. "
 literal|"These defaults are used to seed the UI, by the file_png_save_defaults procedure, and by gimp_file_save when it detects to use PNG."
 argument_list|,
 literal|"Michael Sweet<mike@easysw.com>, Daniel Skarda<0rfelyus@atrey.karlin.mff.cuni.cz>"
@@ -6681,6 +6681,10 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+name|GimpParasite
+modifier|*
+name|parasite
+decl_stmt|;
 name|gchar
 modifier|*
 name|def_str
@@ -6691,21 +6695,41 @@ decl_stmt|;
 name|gint
 name|num_fields
 decl_stmt|;
-name|def_str
+name|parasite
 operator|=
-name|gimp_gimprc_query
+name|gimp_parasite_find
 argument_list|(
-name|PNG_GIMPRC_TOKEN
+name|PNG_DEFAULTS_PARASITE
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 operator|!
-name|def_str
+name|parasite
 condition|)
 return|return
 name|FALSE
 return|;
+name|def_str
+operator|=
+name|g_strndup
+argument_list|(
+name|gimp_parasite_data
+argument_list|(
+name|parasite
+argument_list|)
+argument_list|,
+name|gimp_parasite_data_size
+argument_list|(
+name|parasite
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_parasite_free
+argument_list|(
+name|parasite
+argument_list|)
+expr_stmt|;
 name|num_fields
 operator|=
 name|sscanf
@@ -6791,9 +6815,11 @@ name|TRUE
 return|;
 block|}
 else|else
+block|{
 return|return
 name|FALSE
 return|;
+block|}
 block|}
 end_function
 
@@ -6806,6 +6832,10 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+name|GimpParasite
+modifier|*
+name|parasite
+decl_stmt|;
 name|gchar
 modifier|*
 name|def_str
@@ -6853,11 +6883,30 @@ operator|.
 name|compression_level
 argument_list|)
 expr_stmt|;
-name|gimp_gimprc_set
+name|parasite
+operator|=
+name|gimp_parasite_new
 argument_list|(
-name|PNG_GIMPRC_TOKEN
+name|PNG_DEFAULTS_PARASITE
+argument_list|,
+name|GIMP_PARASITE_PERSISTENT
+argument_list|,
+name|strlen
+argument_list|(
+name|def_str
+argument_list|)
 argument_list|,
 name|def_str
+argument_list|)
+expr_stmt|;
+name|gimp_parasite_attach
+argument_list|(
+name|parasite
+argument_list|)
+expr_stmt|;
+name|gimp_parasite_free
+argument_list|(
+name|parasite
 argument_list|)
 expr_stmt|;
 name|g_free
