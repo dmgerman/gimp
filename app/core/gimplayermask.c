@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29481ef30103
+DECL|enum|__anon2c74cf1b0103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED
@@ -998,7 +998,7 @@ if|if
 condition|(
 name|push_undo
 condition|)
-name|gimp_image_undo_push_layer_mask_properties
+name|gimp_image_undo_push_layer_mask_apply
 argument_list|(
 name|gimage
 argument_list|,
@@ -1006,12 +1006,6 @@ name|_
 argument_list|(
 literal|"Apply Layer Mask"
 argument_list|)
-argument_list|,
-name|GIMP_UNDO_LAYER_MASK_APPLY
-argument_list|,
-name|layer_mask
-operator|->
-name|layer
 argument_list|,
 name|layer_mask
 argument_list|)
@@ -1163,7 +1157,7 @@ if|if
 condition|(
 name|push_undo
 condition|)
-name|gimp_image_undo_push_layer_mask_properties
+name|gimp_image_undo_push_layer_mask_edit
 argument_list|(
 name|gimage
 argument_list|,
@@ -1171,12 +1165,6 @@ name|_
 argument_list|(
 literal|"Edit Layer Mask"
 argument_list|)
-argument_list|,
-name|GIMP_UNDO_LAYER_MASK_EDIT
-argument_list|,
-name|layer_mask
-operator|->
-name|layer
 argument_list|,
 name|layer_mask
 argument_list|)
@@ -1284,7 +1272,7 @@ if|if
 condition|(
 name|push_undo
 condition|)
-name|gimp_image_undo_push_layer_mask_properties
+name|gimp_image_undo_push_layer_mask_show
 argument_list|(
 name|gimage
 argument_list|,
@@ -1292,12 +1280,6 @@ name|_
 argument_list|(
 literal|"Show Layer Mask"
 argument_list|)
-argument_list|,
-name|GIMP_UNDO_LAYER_MASK_SHOW
-argument_list|,
-name|layer_mask
-operator|->
-name|layer
 argument_list|,
 name|layer_mask
 argument_list|)
