@@ -72,7 +72,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c08deae0103
+DECL|enum|__anon298855520103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -628,6 +628,13 @@ argument_list|,
 name|menuitem
 argument_list|)
 expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|menuitem
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|menuitem
@@ -726,6 +733,13 @@ argument_list|,
 name|menuitem
 argument_list|)
 expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|menuitem
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|menuitem
@@ -809,6 +823,13 @@ name|menu
 argument_list|)
 argument_list|,
 name|menuitem
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|menuitem
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
