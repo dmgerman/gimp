@@ -558,6 +558,7 @@ condition|(
 operator|!
 name|header_root
 condition|)
+block|{
 if|if
 condition|(
 operator|!
@@ -585,6 +586,7 @@ name|header_root
 operator|=
 literal|"."
 expr_stmt|;
+block|}
 name|foreach_def
 argument_list|(
 name|output_cb
