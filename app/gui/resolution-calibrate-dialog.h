@@ -24,11 +24,11 @@ name|GtkWidget
 modifier|*
 name|resolution_entry
 parameter_list|,
-name|GtkStyle
+name|GtkRcStyle
 modifier|*
 name|dialog_style
 parameter_list|,
-name|GtkStyle
+name|GtkRcStyle
 modifier|*
 name|ruler_style
 parameter_list|,

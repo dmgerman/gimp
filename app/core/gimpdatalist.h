@@ -110,7 +110,7 @@ struct|;
 end_struct
 
 begin_function_decl
-name|GtkType
+name|GType
 name|gimp_data_list_get_type
 parameter_list|(
 name|void
@@ -123,7 +123,7 @@ name|GimpContainer
 modifier|*
 name|gimp_data_list_new
 parameter_list|(
-name|GtkType
+name|GType
 name|children_type
 parameter_list|)
 function_decl|;

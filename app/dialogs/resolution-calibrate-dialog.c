@@ -55,7 +55,7 @@ name|widget
 parameter_list|,
 name|style
 parameter_list|)
-value|if (style) gtk_widget_set_style (widget, style)
+value|if (style) gtk_widget_modify_style (widget, style)
 end_define
 
 begin_decl_stmt
@@ -268,18 +268,18 @@ end_comment
 
 begin_function
 name|void
-DECL|function|resolution_calibrate_dialog (GtkWidget * resolution_entry,GtkStyle * dialog_style,GtkStyle * ruler_style,GtkSignalFunc expose_callback)
+DECL|function|resolution_calibrate_dialog (GtkWidget * resolution_entry,GtkRcStyle * dialog_style,GtkRcStyle * ruler_style,GtkSignalFunc expose_callback)
 name|resolution_calibrate_dialog
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|resolution_entry
 parameter_list|,
-name|GtkStyle
+name|GtkRcStyle
 modifier|*
 name|dialog_style
 parameter_list|,
-name|GtkStyle
+name|GtkRcStyle
 modifier|*
 name|ruler_style
 parameter_list|,

@@ -356,7 +356,7 @@ name|the_gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  Check if the usesr's gimp_directory exists    */
+comment|/*  Check if the user's gimp_directory exists    */
 name|gimp_dir
 operator|=
 name|gimp_directory

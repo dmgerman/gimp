@@ -171,7 +171,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-name|GtkType
+name|GType
 DECL|function|gimp_data_list_get_type (void)
 name|gimp_data_list_get_type
 parameter_list|(
@@ -179,7 +179,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GtkType
+name|GType
 name|type
 init|=
 literal|0
@@ -354,16 +354,16 @@ argument_list|,
 name|gimp_data_list_data_compare_func
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|object
 argument_list|)
 argument_list|,
 literal|"name_changed"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_data_list_object_renamed_callback
 argument_list|)
@@ -400,17 +400,14 @@ argument_list|(
 name|container
 argument_list|)
 expr_stmt|;
-name|gtk_signal_disconnect_by_func
+name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|object
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|gimp_data_list_object_renamed_callback
-argument_list|)
 argument_list|,
 name|container
 argument_list|)
@@ -434,10 +431,10 @@ end_function
 begin_function
 name|GimpContainer
 modifier|*
-DECL|function|gimp_data_list_new (GtkType children_type)
+DECL|function|gimp_data_list_new (GType children_type)
 name|gimp_data_list_new
 parameter_list|(
-name|GtkType
+name|GType
 name|children_type
 parameter_list|)
 block|{
@@ -447,7 +444,7 @@ name|list
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|gtk_type_is_a
+name|g_type_is_a
 argument_list|(
 name|children_type
 argument_list|,
@@ -790,17 +787,14 @@ if|if
 condition|(
 name|have
 condition|)
-name|gtk_signal_handler_block_by_func
+name|g_signal_handlers_block_by_func
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|object
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|gimp_data_list_object_renamed_callback
-argument_list|)
 argument_list|,
 name|data_list
 argument_list|)
@@ -816,17 +810,14 @@ if|if
 condition|(
 name|have
 condition|)
-name|gtk_signal_handler_unblock_by_func
+name|g_signal_handlers_unblock_by_func
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|object
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|gimp_data_list_object_renamed_callback
-argument_list|)
 argument_list|,
 name|data_list
 argument_list|)
