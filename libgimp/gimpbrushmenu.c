@@ -1827,7 +1827,6 @@ name|gdouble
 name|init_opacity
 decl_stmt|;
 name|gint
-modifier|*
 name|mask_data_size
 decl_stmt|;
 name|guint8

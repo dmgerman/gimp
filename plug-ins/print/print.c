@@ -75,7 +75,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299c0c160108
+DECL|struct|__anon2ba3a7a70108
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -4223,7 +4223,16 @@ name|line
 index|[
 literal|129
 index|]
-decl_stmt|,
+decl_stmt|;
+endif|#
+directive|endif
+if|#
+directive|if
+name|defined
+argument_list|(
+name|LPSTAT_COMMAND
+argument_list|)
+name|char
 name|name
 index|[
 literal|17

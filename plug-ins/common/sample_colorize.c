@@ -370,7 +370,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon2c96eb9e0108
+DECL|struct|__anon2c7788a60108
 typedef|typedef
 struct|struct
 block|{
@@ -439,7 +439,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c96eb9e0208
+DECL|struct|__anon2c7788a60208
 typedef|typedef
 struct|struct
 block|{
@@ -557,7 +557,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c96eb9e0308
+DECL|struct|__anon2c7788a60308
 typedef|typedef
 struct|struct
 block|{
@@ -586,7 +586,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c96eb9e0408
+DECL|struct|__anon2c7788a60408
 typedef|typedef
 struct|struct
 block|{
@@ -613,7 +613,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c96eb9e0508
+DECL|struct|__anon2c7788a60508
 typedef|typedef
 struct|struct
 block|{
@@ -9312,100 +9312,6 @@ comment|/* end p_smp_dialog */
 end_comment
 
 begin_comment
-comment|/* ============================================================================  * p_gimp_convert_rgb  *   PDB Call  * ============================================================================  */
-end_comment
-
-begin_function
-name|gint
-DECL|function|p_gimp_convert_rgb (gint32 image_id)
-name|p_gimp_convert_rgb
-parameter_list|(
-name|gint32
-name|image_id
-parameter_list|)
-block|{
-specifier|static
-name|gchar
-modifier|*
-name|l_gimp_convert_rgb_proc
-init|=
-literal|"gimp_convert_rgb"
-decl_stmt|;
-name|GParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-name|l_gimp_convert_rgb_proc
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|PARAM_IMAGE
-argument_list|,
-name|image_id
-argument_list|,
-name|PARAM_END
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|STATUS_SUCCESS
-condition|)
-block|{
-return|return
-operator|(
-name|TRUE
-operator|)
-return|;
-block|}
-name|printf
-argument_list|(
-literal|"Error: PDB call of %s failed staus=%d\n"
-argument_list|,
-name|l_gimp_convert_rgb_proc
-argument_list|,
-operator|(
-name|int
-operator|)
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-argument_list|)
-expr_stmt|;
-return|return
-operator|(
-name|FALSE
-operator|)
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/* end p_gimp_convert_rgb */
-end_comment
-
-begin_comment
 comment|/* -----------------------------  * DEBUG print procedures START  * -----------------------------  */
 end_comment
 
@@ -16515,7 +16421,7 @@ operator|&
 name|MC_DST_REMAP
 condition|)
 block|{
-name|p_gimp_convert_rgb
+name|gimp_convert_rgb
 argument_list|(
 name|gimp_layer_get_image_id
 argument_list|(

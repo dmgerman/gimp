@@ -3048,7 +3048,7 @@ name|scaling
 argument_list|,
 literal|36.0
 argument_list|,
-literal|1201.0
+literal|1200.0
 argument_list|,
 literal|1.0
 argument_list|,
@@ -4703,7 +4703,7 @@ argument_list|)
 operator|->
 name|upper
 operator|=
-literal|1201.0
+literal|1200.0
 expr_stmt|;
 name|GTK_ADJUSTMENT
 argument_list|(
@@ -5228,7 +5228,7 @@ argument_list|)
 operator|->
 name|upper
 operator|=
-literal|1201.0
+literal|1200.0
 expr_stmt|;
 name|GTK_ADJUSTMENT
 argument_list|(
@@ -5294,7 +5294,7 @@ argument_list|)
 operator|->
 name|upper
 operator|=
-literal|101.0
+literal|100.0
 expr_stmt|;
 name|GTK_ADJUSTMENT
 argument_list|(

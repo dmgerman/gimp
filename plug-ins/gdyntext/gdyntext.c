@@ -314,7 +314,7 @@ literal|"Marco Lamberto"
 argument_list|,
 literal|"Jan 1999"
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"<Image>/Filters/Render/Dynamic Text..."
 argument_list|)
