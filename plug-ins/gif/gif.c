@@ -145,7 +145,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d2cabe0108
+DECL|struct|__anon29cec5d40108
 block|{
 DECL|member|interlace
 name|int
@@ -172,7 +172,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d2cabe0208
+DECL|struct|__anon29cec5d40208
 block|{
 DECL|member|run
 name|gint
@@ -1610,7 +1610,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29d2cabe0308
+DECL|struct|__anon29cec5d40308
 block|{
 DECL|member|Width
 name|unsigned
@@ -1660,7 +1660,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29d2cabe0408
+DECL|struct|__anon29cec5d40408
 block|{
 DECL|member|transparent
 name|int
@@ -8731,11 +8731,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
-name|parasite_is_error
-argument_list|(
 name|GIF2_CMNT
-argument_list|)
 condition|)
 block|{
 name|globalcomment

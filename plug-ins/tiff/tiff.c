@@ -40,7 +40,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2773e1000108
+DECL|struct|__anon2bd3b0340108
 block|{
 DECL|member|compression
 name|gint
@@ -59,7 +59,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2773e1000208
+DECL|struct|__anon2bd3b0340208
 block|{
 DECL|member|run
 name|gint
@@ -72,7 +72,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2773e1000308
+DECL|struct|__anon2bd3b0340308
 typedef|typedef
 struct|struct
 block|{
@@ -911,11 +911,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
-name|parasite_is_error
-argument_list|(
 name|parasite
-argument_list|)
 condition|)
 name|image_comment
 operator|=
@@ -978,11 +974,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
-name|parasite_is_error
-argument_list|(
 name|parasite
-argument_list|)
 condition|)
 block|{
 name|tsvals
@@ -1173,11 +1165,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
-name|parasite_is_error
-argument_list|(
 name|parasite
-argument_list|)
 condition|)
 block|{
 name|tsvals
@@ -5713,7 +5701,7 @@ block|}
 block|}
 endif|#
 directive|endif
-endif|GIMP_HAVE_RESOLUTION_INFO
+comment|/* GIMP_HAVE_RESOLUTION_INFO */
 comment|/* do we have a comment?  If so, create a new parasite to hold it,    * and attach it to the image. The attach function automatically    * detaches a previous incarnation of the parasite. */
 ifdef|#
 directive|ifdef

@@ -1692,7 +1692,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3ad9290108
+DECL|struct|__anon2ba8c42e0108
 block|{
 DECL|member|test_gint32
 name|gint32
@@ -1964,7 +1964,7 @@ name|test_gint32
 condition|)
 name|g_message
 argument_list|(
-literal|"gint32 test failed: %d\n"
+literal|"gint32 test failed (please email your system configuration to jaycox@earthlink.net): %d\n"
 argument_list|,
 name|to
 operator|->
@@ -1983,7 +1983,7 @@ name|test_float
 condition|)
 name|g_message
 argument_list|(
-literal|"float test failed: %f\n"
+literal|"float test failed (please email your system configuration to jaycox@earthlink.net): %f\n"
 argument_list|,
 name|to
 operator|->
@@ -2007,7 +2007,7 @@ literal|0
 condition|)
 name|g_message
 argument_list|(
-literal|"string test failed: %s\n"
+literal|"string test failed (please email your system configuration to jaycox@earthlink.net): %s\n"
 argument_list|,
 name|to
 operator|->
@@ -2026,7 +2026,7 @@ name|test_length
 condition|)
 name|g_message
 argument_list|(
-literal|"array length test failed: %d\n"
+literal|"array length test failed(please email your system configuration to jaycox@earthlink.net): %d\n"
 argument_list|,
 name|to
 operator|->
@@ -2051,7 +2051,7 @@ index|]
 condition|)
 name|g_message
 argument_list|(
-literal|"int16array value 0 test failed: %d\n"
+literal|"int16array value 0 test failed(please email your system configuration to jaycox@earthlink.net): %d\n"
 argument_list|,
 name|to
 operator|->
@@ -2096,7 +2096,7 @@ index|]
 condition|)
 name|g_message
 argument_list|(
-literal|"int16array value 1 test failed: %d\n"
+literal|"int16array value 1 test failed(please email your system configuration to jaycox@earthlink.net): %d\n"
 argument_list|,
 name|to
 operator|->
