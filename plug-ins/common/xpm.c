@@ -4,11 +4,11 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* XPM plugin version 1.2.4 */
+comment|/* XPM plugin version 1.2.5 */
 end_comment
 
 begin_comment
-comment|/* 1.2.4 displays an error message if saving fails (bug #87588)  1.2.3 fixes bug when running in noninteractive mode changes alpha_threshold range from [0, 1] to [0,255] for consistency with the threshold_alpha plugin  1.2.2 fixes bug that generated bad digits on images with more than 20000 colors. (thanks, yanele) parses gtkrc (thanks, yosh) doesn't load parameter screen on images that don't have alpha  1.2.1 fixes some minor bugs -- spaces in #XXXXXX strings, small typos in code.  1.2 compute color indexes so that we don't have to use XpmSaveXImage*  Previous...Inherited code from Ray Lehtiniemi, who inherited it from S& P. */
+comment|/* 1.2.5 only creates a "None" color entry if the image has alpha (bug #108034)  1.2.4 displays an error message if saving fails (bug #87588)  1.2.3 fixes bug when running in noninteractive mode changes alpha_threshold range from [0, 1] to [0,255] for consistency with the threshold_alpha plugin  1.2.2 fixes bug that generated bad digits on images with more than 20000 colors. (thanks, yanele) parses gtkrc (thanks, yosh) doesn't load parameter screen on images that don't have alpha  1.2.1 fixes some minor bugs -- spaces in #XXXXXX strings, small typos in code.  1.2 compute color indexes so that we don't have to use XpmSaveXImage*  Previous...Inherited code from Ray Lehtiniemi, who inherited it from S& P. */
 end_comment
 
 begin_include
@@ -98,7 +98,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27742fa10108
+DECL|struct|__anon296806d50108
 block|{
 DECL|member|threshold
 name|gint
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27742fa10208
+DECL|struct|__anon296806d50208
 block|{
 DECL|member|run
 name|gint
@@ -128,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27742fa10308
+DECL|struct|__anon296806d50308
 block|{
 DECL|member|r
 name|guchar
@@ -1995,7 +1995,7 @@ name|string
 init|=
 name|g_new
 argument_list|(
-name|char
+name|gchar
 argument_list|,
 literal|8
 argument_list|)
@@ -2068,6 +2068,9 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
+name|GimpPixelRgn
+name|pixel_rgn
+decl_stmt|;
 name|gint
 name|width
 decl_stmt|;
@@ -2102,10 +2105,6 @@ modifier|*
 name|ibuff
 init|=
 name|NULL
-decl_stmt|;
-comment|/*guint   *mbuff   = NULL;*/
-name|GimpPixelRgn
-name|pixel_rgn
 decl_stmt|;
 name|guchar
 modifier|*
@@ -2182,7 +2181,7 @@ name|drawable
 operator|->
 name|height
 expr_stmt|;
-comment|/* allocate buffers making the assumption that ibuff and mbuff      are 32 bit aligned... */
+comment|/* allocate buffer making the assumption that ibuff is 32 bit aligned... */
 if|if
 condition|(
 operator|(
@@ -2203,7 +2202,6 @@ condition|)
 goto|goto
 name|cleanup
 goto|;
-comment|/*if ((mbuff = g_new(guint, width*height)) == NULL)     goto cleanup;*/
 if|if
 condition|(
 operator|(
@@ -2257,6 +2255,14 @@ name|name
 argument_list|)
 expr_stmt|;
 block|}
+name|ncolors
+operator|=
+name|alpha
+condition|?
+literal|1
+else|:
+literal|0
+expr_stmt|;
 comment|/* allocate a pixel region to work with */
 name|buffer
 operator|=
@@ -2377,7 +2383,6 @@ operator|)
 operator|*
 name|width
 decl_stmt|;
-comment|/*guint *mdata = mbuff + (i+j) * width;*/
 comment|/* do each pixel in the row */
 for|for
 control|(
@@ -2503,7 +2508,13 @@ operator|->
 name|r
 operator|)
 operator|+
+operator|(
+name|alpha
+condition|?
 literal|1
+else|:
+literal|0
+operator|)
 expr_stmt|;
 block|}
 else|else
@@ -2602,9 +2613,7 @@ block|{
 name|guchar
 modifier|*
 name|cmap
-decl_stmt|;
-name|cmap
-operator|=
+init|=
 name|gimp_image_get_cmap
 argument_list|(
 name|image_ID
@@ -2612,11 +2621,14 @@ argument_list|,
 operator|&
 name|ncolors
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+if|if
+condition|(
+name|alpha
+condition|)
 name|ncolors
 operator|++
 expr_stmt|;
-comment|/* for transparency */
 name|colormap
 operator|=
 name|g_new
@@ -2628,10 +2640,7 @@ argument_list|)
 expr_stmt|;
 name|cpp
 operator|=
-operator|(
-name|gdouble
-operator|)
-literal|1.0
+literal|1
 operator|+
 operator|(
 name|gdouble
@@ -2642,7 +2651,7 @@ name|ncolors
 argument_list|)
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|log
 argument_list|(
@@ -2654,6 +2663,10 @@ operator|-
 literal|1.0
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|alpha
+condition|)
 name|set_XpmImage
 argument_list|(
 name|colormap
@@ -2667,13 +2680,15 @@ for|for
 control|(
 name|i
 operator|=
+name|alpha
+condition|?
+literal|1
+else|:
 literal|0
 init|;
 name|i
 operator|<
 name|ncolors
-operator|-
-literal|1
 condition|;
 name|i
 operator|++
@@ -2750,13 +2765,16 @@ argument_list|(
 name|colormap
 argument_list|,
 name|i
-operator|+
-literal|1
 argument_list|,
 name|string
 argument_list|)
 expr_stmt|;
 block|}
+name|g_free
+argument_list|(
+name|cmap
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -2771,10 +2789,7 @@ argument_list|)
 expr_stmt|;
 name|cpp
 operator|=
-operator|(
-name|gdouble
-operator|)
-literal|1.0
+literal|1
 operator|+
 operator|(
 name|gdouble
@@ -2797,6 +2812,10 @@ operator|-
 literal|1.0
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|alpha
+condition|)
 name|set_XpmImage
 argument_list|(
 name|colormap
@@ -2890,7 +2909,6 @@ argument_list|(
 name|ibuff
 argument_list|)
 expr_stmt|;
-comment|/*if (mbuff) g_free(mbuff);*/
 if|if
 condition|(
 name|hash
