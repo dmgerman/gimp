@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-guides.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage-mask.h"
 end_include
 
@@ -245,7 +251,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2abda7340103
+DECL|enum|__anon27a375f40103
 block|{
 DECL|enumerator|UNDO
 name|UNDO

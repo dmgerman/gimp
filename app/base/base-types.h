@@ -16,6 +16,12 @@ directive|define
 name|__BASE_TYPES_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"paint-funcs/paint-funcs-types.h"
+end_include
+
 begin_comment
 comment|/*  magic constants  */
 end_comment
@@ -103,7 +109,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290028600103
+DECL|enum|__anon277199650103
 block|{
 DECL|enumerator|NORMAL_MODE
 name|NORMAL_MODE
@@ -189,7 +195,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290028600203
+DECL|enum|__anon277199650203
 block|{
 DECL|enumerator|NORMAL_CONVOL
 name|NORMAL_CONVOL
@@ -211,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290028600303
+DECL|enum|__anon277199650303
 block|{
 DECL|enumerator|LINEAR_INTERPOLATION
 name|LINEAR_INTERPOLATION
@@ -230,7 +236,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290028600403
+DECL|enum|__anon277199650403
 block|{
 DECL|enumerator|VALUE_LUT
 name|VALUE_LUT
@@ -266,7 +272,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon290028600503
+DECL|enum|__anon277199650503
 block|{
 DECL|enumerator|LIGHT_CHECKS
 name|LIGHT_CHECKS
@@ -307,7 +313,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon290028600603
+DECL|enum|__anon277199650603
 block|{
 DECL|enumerator|SMALL_CHECKS
 name|SMALL_CHECKS
@@ -333,7 +339,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon290028600703
+DECL|enum|__anon277199650703
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE

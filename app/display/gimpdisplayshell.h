@@ -295,33 +295,11 @@ modifier|*
 name|scroll_gc
 decl_stmt|;
 comment|/*  GC for scrolling    */
-DECL|member|icon
-name|GdkPixmap
-modifier|*
-name|icon
-decl_stmt|;
-comment|/*  Pixmap for the icon                */
-DECL|member|iconmask
-name|GdkBitmap
-modifier|*
-name|iconmask
-decl_stmt|;
-comment|/*  Bitmap for the icon mask           */
-DECL|member|iconsize
-name|guint
-name|iconsize
+DECL|member|icon_size
+name|gint
+name|icon_size
 decl_stmt|;
 comment|/*  size of the icon pixmap            */
-DECL|member|icon_needs_update
-name|gboolean
-name|icon_needs_update
-decl_stmt|;
-comment|/*  Do we need to render a new icon?   */
-DECL|member|icon_timeout_id
-name|guint
-name|icon_timeout_id
-decl_stmt|;
-comment|/*  ID of the timeout-function         */
 DECL|member|icon_idle_id
 name|guint
 name|icon_idle_id

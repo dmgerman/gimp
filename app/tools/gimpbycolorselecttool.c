@@ -3192,7 +3192,7 @@ name|basename
 operator|=
 name|g_path_get_basename
 argument_list|(
-name|gimp_image_filename
+name|gimp_image_get_filename
 argument_list|(
 name|gimage
 argument_list|)

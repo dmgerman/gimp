@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core-types.h"
 end_include
 
@@ -55,6 +49,12 @@ begin_include
 include|#
 directive|include
 file|"paint-funcs/paint-funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pdb/procedural_db.h"
 end_include
 
 begin_include
@@ -114,12 +114,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/procedural_db.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -138,7 +132,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/*  functions  */
+comment|/*  public functions  */
 end_comment
 
 begin_function

@@ -106,6 +106,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-guides.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimplayer.h"
 end_include
 

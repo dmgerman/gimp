@@ -19,14 +19,14 @@ end_define
 begin_include
 include|#
 directive|include
-file|"tools/tools-types.h"
+file|"widgets/widgets-types.h"
 end_include
 
 begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon297ad9ff0103
+DECL|enum|__anon2743dfca0103
 block|{
 DECL|enumerator|CURSOR_MODE_TOOL_ICON
 name|CURSOR_MODE_TOOL_ICON

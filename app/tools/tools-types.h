@@ -19,18 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/widgets-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"display/display-types.h"
 end_include
 
@@ -246,7 +234,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d1a7bb0103
+DECL|enum|__anon2a0ac9520103
 block|{
 DECL|enumerator|HARD
 name|HARD
@@ -272,7 +260,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d1a7bb0203
+DECL|enum|__anon2a0ac9520203
 block|{
 DECL|enumerator|CONSTANT
 name|CONSTANT
@@ -295,7 +283,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d1a7bb0303
+DECL|enum|__anon2a0ac9520303
 block|{
 DECL|enumerator|ONCE_FORWARD
 name|ONCE_FORWARD
@@ -326,7 +314,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon27d1a7bb0403
+DECL|enum|__anon2a0ac9520403
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -370,7 +358,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon27d1a7bb0503
+DECL|enum|__anon2a0ac9520503
 block|{
 DECL|enumerator|INACTIVE
 name|INACTIVE
@@ -394,7 +382,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon27d1a7bb0603
+DECL|enum|__anon2a0ac9520603
 block|{
 DECL|enumerator|PAUSE
 name|PAUSE
@@ -418,7 +406,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon27d1a7bb0703
+DECL|enum|__anon2a0ac9520703
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -451,7 +439,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon27d1a7bb0803
+DECL|enum|__anon2a0ac9520803
 block|{
 DECL|enumerator|TRANSFORM_INIT
 name|TRANSFORM_INIT

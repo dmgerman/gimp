@@ -136,7 +136,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b414c790103
+DECL|enum|__anon2b8d3f780103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -1123,7 +1123,7 @@ name|basename
 operator|=
 name|g_path_get_basename
 argument_list|(
-name|gimp_image_filename
+name|gimp_image_get_filename
 argument_list|(
 name|import_dialog
 operator|->
@@ -1199,7 +1199,7 @@ name|basename
 operator|=
 name|g_path_get_basename
 argument_list|(
-name|gimp_image_filename
+name|gimp_image_get_filename
 argument_list|(
 name|gimage
 argument_list|)
@@ -1657,7 +1657,7 @@ name|basename
 operator|=
 name|g_path_get_basename
 argument_list|(
-name|gimp_image_filename
+name|gimp_image_get_filename
 argument_list|(
 name|import_dialog
 operator|->
@@ -1724,7 +1724,7 @@ name|basename
 operator|=
 name|g_path_get_basename
 argument_list|(
-name|gimp_image_filename
+name|gimp_image_get_filename
 argument_list|(
 name|import_dialog
 operator|->

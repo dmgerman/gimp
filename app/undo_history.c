@@ -118,7 +118,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a101f2a0108
+DECL|struct|__anon29f3d4e30108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -169,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a101f2a0208
+DECL|struct|__anon29f3d4e30208
 block|{
 DECL|member|clist
 name|GtkCList
@@ -1944,7 +1944,7 @@ name|basename
 operator|=
 name|g_path_get_basename
 argument_list|(
-name|gimp_image_filename
+name|gimp_image_get_filename
 argument_list|(
 name|gimage
 argument_list|)
@@ -3465,7 +3465,7 @@ name|basename
 operator|=
 name|g_path_get_basename
 argument_list|(
-name|gimp_image_filename
+name|gimp_image_get_filename
 argument_list|(
 name|gimage
 argument_list|)

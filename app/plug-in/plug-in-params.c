@@ -6415,6 +6415,80 @@ operator|)
 operator|)
 condition|)
 block|{
+name|gchar
+modifier|*
+name|basename
+decl_stmt|;
+name|gchar
+modifier|*
+name|repeat
+decl_stmt|;
+name|gchar
+modifier|*
+name|reshow
+decl_stmt|;
+name|basename
+operator|=
+name|g_path_get_basename
+argument_list|(
+name|proc_def
+operator|->
+name|menu_path
+argument_list|)
+expr_stmt|;
+name|repeat
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Repeat \"%s\""
+argument_list|)
+argument_list|,
+name|basename
+argument_list|)
+expr_stmt|;
+name|reshow
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Re-show \"%s\""
+argument_list|)
+argument_list|,
+name|basename
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|basename
+argument_list|)
+expr_stmt|;
+name|gimp_menu_item_set_label
+argument_list|(
+literal|"<Image>/Filters/Repeat Last"
+argument_list|,
+name|repeat
+argument_list|)
+expr_stmt|;
+name|gimp_menu_item_set_label
+argument_list|(
+literal|"<Image>/Filters/Re-Show Last"
+argument_list|,
+name|reshow
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|repeat
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|reshow
+argument_list|)
+expr_stmt|;
 name|gimp_menu_item_set_sensitive
 argument_list|(
 literal|"<Image>/Filters/Repeat Last"
@@ -6438,6 +6512,26 @@ operator|!
 name|last_plug_in
 condition|)
 block|{
+name|gimp_menu_item_set_label
+argument_list|(
+literal|"<Image>/Filters/Repeat Last"
+argument_list|,
+name|_
+argument_list|(
+literal|"Repeat Last"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_menu_item_set_label
+argument_list|(
+literal|"<Image>/Filters/Re-Show Last"
+argument_list|,
+name|_
+argument_list|(
+literal|"Re-Show Last"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_menu_item_set_sensitive
 argument_list|(
 literal|"<Image>/Filters/Repeat Last"

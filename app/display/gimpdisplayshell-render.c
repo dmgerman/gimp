@@ -1244,7 +1244,7 @@ name|step
 decl_stmt|;
 name|cmap
 operator|=
-name|gimp_image_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|info
 operator|->
@@ -1582,7 +1582,7 @@ name|step
 decl_stmt|;
 name|cmap
 operator|=
-name|gimp_image_cmap
+name|gimp_image_get_colormap
 argument_list|(
 name|info
 operator|->

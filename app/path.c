@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/display-types.h"
+file|"tools/tools-types.h"
 end_include
 
 begin_include

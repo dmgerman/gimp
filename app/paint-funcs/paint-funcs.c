@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/base-types.h"
+file|"paint-funcs-types.h"
 end_include
 
 begin_include
@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e9adac0103
+DECL|enum|__anon2c1f44940103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY

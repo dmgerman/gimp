@@ -72,6 +72,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-resize.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpimage-scale.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb/procedural_db.h"
 end_include
 
@@ -126,7 +138,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c8db930108
+DECL|struct|__anon29631e800108
 block|{
 DECL|member|resize
 name|Resize

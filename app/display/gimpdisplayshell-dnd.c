@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontext.h"
 end_include
 
@@ -97,18 +103,6 @@ begin_include
 include|#
 directive|include
 file|"paint-funcs/paint-funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/gimpbucketfilltool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/tool_manager.h"
 end_include
 
 begin_include
@@ -658,13 +652,19 @@ return|return;
 comment|/*  Get the bucket fill context  */
 name|tool_info
 operator|=
-name|tool_manager_get_info_by_type
+operator|(
+name|GimpToolInfo
+operator|*
+operator|)
+name|gimp_container_get_child_by_name
 argument_list|(
 name|gimage
 operator|->
 name|gimp
+operator|->
+name|tool_info_list
 argument_list|,
-name|GIMP_TYPE_BUCKET_FILL_TOOL
+literal|"gimp:bucket_fill_tool"
 argument_list|)
 expr_stmt|;
 if|if

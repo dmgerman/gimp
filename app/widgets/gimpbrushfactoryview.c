@@ -716,6 +716,10 @@ argument_list|(
 name|factory_view
 argument_list|)
 expr_stmt|;
+name|factory_view
+operator|->
+name|spacing_changed_handler_id
+operator|=
 name|gimp_container_add_handler
 argument_list|(
 name|editor

@@ -65,7 +65,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fb4a9d0103
+DECL|enum|__anon296b847b0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -90,7 +90,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fb4a9d0203
+DECL|enum|__anon296b847b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2342,6 +2342,12 @@ name|gchar
 modifier|*
 name|key
 decl_stmt|;
+specifier|static
+name|gint
+name|handler_id
+init|=
+literal|0
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_CONTAINER
@@ -2398,11 +2404,12 @@ name|key
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%s-%p"
+literal|"%s-%d"
 argument_list|,
 name|signame
 argument_list|,
-name|handler
+name|handler_id
+operator|++
 argument_list|)
 expr_stmt|;
 name|handler
@@ -2433,6 +2440,19 @@ operator|=
 name|g_quark_from_string
 argument_list|(
 name|key
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|"%s: key = %s, id = %d\n"
+argument_list|,
+name|G_GNUC_FUNCTION
+argument_list|,
+name|key
+argument_list|,
+name|handler
+operator|->
+name|quark
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -2623,11 +2643,26 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"tried to disconnect handler which is not connected"
+literal|"%s: tried to unhandler which id %d"
+argument_list|,
+name|G_STRLOC
+argument_list|,
+name|id
 argument_list|)
 expr_stmt|;
 return|return;
 block|}
+name|g_print
+argument_list|(
+literal|"%s: id = %d\n"
+argument_list|,
+name|G_GNUC_FUNCTION
+argument_list|,
+name|handler
+operator|->
+name|quark
+argument_list|)
+expr_stmt|;
 name|gimp_container_foreach
 argument_list|(
 name|container

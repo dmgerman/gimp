@@ -64,6 +64,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tools/tools-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools/gimptool.h"
 end_include
 
