@@ -32,12 +32,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"arcball.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"mapobject_main.h"
 end_include
 
