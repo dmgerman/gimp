@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b6226800103
+DECL|enum|__anon2c4c82bc0103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -70,7 +70,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b6226800203
+DECL|enum|__anon2c4c82bc0203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -203,6 +203,9 @@ modifier|*
 name|buffer
 parameter_list|,
 name|gint
+name|bufsize
+parameter_list|,
+name|gint
 name|width
 parameter_list|,
 name|gint
@@ -225,6 +228,9 @@ parameter_list|(
 name|guchar
 modifier|*
 name|buffer
+parameter_list|,
+name|gint
+name|bufsize
 parameter_list|,
 name|gint
 name|width
@@ -263,6 +269,9 @@ modifier|*
 name|buffer
 parameter_list|,
 name|gint
+name|bufsize
+parameter_list|,
+name|gint
 name|width
 parameter_list|,
 name|gint
@@ -294,6 +303,9 @@ parameter_list|(
 name|guchar
 modifier|*
 name|buffer
+parameter_list|,
+name|gint
+name|bufsize
 parameter_list|,
 name|gint
 name|width
@@ -329,6 +341,9 @@ modifier|*
 name|buffer
 parameter_list|,
 name|gint
+name|bufsize
+parameter_list|,
+name|gint
 name|width
 parameter_list|,
 name|gint
@@ -360,6 +375,9 @@ parameter_list|(
 name|guchar
 modifier|*
 name|buffer
+parameter_list|,
+name|gint
+name|bufsize
 parameter_list|,
 name|gint
 name|width
@@ -394,6 +412,9 @@ modifier|*
 name|buffer
 parameter_list|,
 name|gint
+name|bufsize
+parameter_list|,
+name|gint
 name|width
 parameter_list|,
 name|gint
@@ -424,6 +445,9 @@ parameter_list|(
 name|guchar
 modifier|*
 name|buffer
+parameter_list|,
+name|gint
+name|bufsize
 parameter_list|,
 name|gint
 name|width
@@ -458,6 +482,9 @@ modifier|*
 name|buffer
 parameter_list|,
 name|gint
+name|bufsize
+parameter_list|,
+name|gint
 name|width
 parameter_list|,
 name|gint
@@ -490,6 +517,9 @@ modifier|*
 name|buffer
 parameter_list|,
 name|gint
+name|bufsize
+parameter_list|,
+name|gint
 name|width
 parameter_list|,
 name|gint
@@ -518,6 +548,9 @@ parameter_list|(
 name|guchar
 modifier|*
 name|buffer
+parameter_list|,
+name|gint
+name|bufsize
 parameter_list|,
 name|gint
 name|width
@@ -550,6 +583,9 @@ modifier|*
 name|buffer
 parameter_list|,
 name|gint
+name|bufsize
+parameter_list|,
+name|gint
 name|width
 parameter_list|,
 name|gint
@@ -580,6 +616,9 @@ modifier|*
 name|buffer
 parameter_list|,
 name|gint
+name|bufsize
+parameter_list|,
+name|gint
 name|width
 parameter_list|,
 name|gint
@@ -608,6 +647,9 @@ parameter_list|(
 name|guchar
 modifier|*
 name|buffer
+parameter_list|,
+name|gint
+name|bufsize
 parameter_list|,
 name|gint
 name|width
@@ -646,6 +688,9 @@ modifier|*
 name|buffer
 parameter_list|,
 name|gint
+name|bufsize
+parameter_list|,
+name|gint
 name|width
 parameter_list|,
 name|gint
@@ -680,6 +725,9 @@ parameter_list|(
 name|guchar
 modifier|*
 name|buffer
+parameter_list|,
+name|gint
+name|bufsize
 parameter_list|,
 name|gint
 name|width
@@ -718,6 +766,9 @@ modifier|*
 name|buffer
 parameter_list|,
 name|gint
+name|bufsize
+parameter_list|,
+name|gint
 name|width
 parameter_list|,
 name|gint
@@ -752,6 +803,9 @@ parameter_list|(
 name|guchar
 modifier|*
 name|buffer
+parameter_list|,
+name|gint
+name|bufsize
 parameter_list|,
 name|gint
 name|width
@@ -790,6 +844,9 @@ modifier|*
 name|buffer
 parameter_list|,
 name|gint
+name|bufsize
+parameter_list|,
+name|gint
 name|width
 parameter_list|,
 name|gint
@@ -826,6 +883,9 @@ modifier|*
 name|buffer
 parameter_list|,
 name|gint
+name|bufsize
+parameter_list|,
+name|gint
 name|width
 parameter_list|,
 name|gint
@@ -860,6 +920,9 @@ parameter_list|(
 name|guchar
 modifier|*
 name|buffer
+parameter_list|,
+name|gint
+name|bufsize
 parameter_list|,
 name|gint
 name|width
@@ -1033,6 +1096,9 @@ modifier|*
 name|buffer
 parameter_list|,
 name|gint
+name|bufsize
+parameter_list|,
+name|gint
 name|width
 parameter_list|,
 name|gint
@@ -1063,6 +1129,9 @@ parameter_list|(
 name|guchar
 modifier|*
 name|buffer
+parameter_list|,
+name|gint
+name|bufsize
 parameter_list|,
 name|gint
 name|width
@@ -1106,6 +1175,9 @@ modifier|*
 name|buffer
 parameter_list|,
 name|gint
+name|bufsize
+parameter_list|,
+name|gint
 name|width
 parameter_list|,
 name|gint
@@ -1145,6 +1217,9 @@ parameter_list|(
 name|guchar
 modifier|*
 name|buffer
+parameter_list|,
+name|gint
+name|bufsize
 parameter_list|,
 name|gint
 name|width
@@ -1187,6 +1262,9 @@ parameter_list|(
 name|guchar
 modifier|*
 name|buffer
+parameter_list|,
+name|gint
+name|bufsize
 parameter_list|,
 name|gint
 name|width
@@ -1540,27 +1618,31 @@ value|200
 end_define
 
 begin_define
-DECL|macro|DRAW_POINT (buffer,index)
+DECL|macro|DRAW_POINT (buffer,bufsize,index)
 define|#
 directive|define
 name|DRAW_POINT
 parameter_list|(
 name|buffer
 parameter_list|,
+name|bufsize
+parameter_list|,
 name|index
 parameter_list|)
 define|\
-value|do {						\   buffer[index] = BLACK_R;			\   buffer[index+1] = BLACK_G;			\   buffer[index+2] = BLACK_B;			\ } while (0)
+value|do                                               \     {                                              \       if ((index)>= 0&& (index) + 2< (bufsize)) \         {                                          \           buffer[(index) + 0] = BLACK_R;           \           buffer[(index) + 1] = BLACK_G;           \           buffer[(index) + 2] = BLACK_B;           \         }                                          \     }                                              \   while (0)
 end_define
 
 begin_define
-DECL|macro|DARKEN_POINT (buffer,index,delta,temp)
+DECL|macro|DARKEN_POINT (buffer,bufsize,index,delta,temp)
 define|#
 directive|define
 name|DARKEN_POINT
 parameter_list|(
 name|buffer
 parameter_list|,
+name|bufsize
+parameter_list|,
 name|index
 parameter_list|,
 name|delta
@@ -1568,17 +1650,19 @@ parameter_list|,
 name|temp
 parameter_list|)
 define|\
-value|do {							\   temp = buffer[index];					\   temp -= buffer[index] * delta;			\   if (temp< MIN_VALUE) temp = MIN_VALUE;		\   buffer[index] = temp;					\   temp = buffer[index+1];				\   temp -= buffer[index+1] * delta;			\   if (temp< MIN_VALUE) temp = MIN_VALUE;		\   buffer[index+1] = temp;				\   temp = buffer[index+2];				\   temp -= buffer[index+2] * delta;			\   if (temp< MIN_VALUE) temp = MIN_VALUE;		\   buffer[index+2] = temp;				\ } while (0)
+value|do                                                                     \     {                                                                    \       if ((index)>= 0&& (index) + 2< (bufsize))                       \         {                                                                \           temp = MAX (buffer[(index) + 0] * (1.0 - (delta)), MIN_VALUE); \           buffer[(index) + 0] = temp;                                    \           temp = MAX (buffer[(index) + 1] * (1.0 - (delta)), MIN_VALUE); \           buffer[(index) + 1] = temp;                                    \           temp = MAX (buffer[(index) + 2] * (1.0 - (delta)), MIN_VALUE); \           buffer[(index) + 2] = temp;                                    \         }                                                                \     }                                                                    \   while (0)
 end_define
 
 begin_define
-DECL|macro|LIGHTEN_POINT (buffer,index,delta,temp)
+DECL|macro|LIGHTEN_POINT (buffer,bufsize,index,delta,temp)
 define|#
 directive|define
 name|LIGHTEN_POINT
 parameter_list|(
 name|buffer
 parameter_list|,
+name|bufsize
+parameter_list|,
 name|index
 parameter_list|,
 name|delta
@@ -1586,7 +1670,7 @@ parameter_list|,
 name|temp
 parameter_list|)
 define|\
-value|do {							\   temp = buffer[index] * delta;				\   temp += buffer[index];				\   if (temp> MAX_VALUE)	temp = MAX_VALUE;		\   buffer[index] = temp;					\   temp = buffer[index+1] * delta;			\   temp += buffer[index+1];				\   if (temp> MAX_VALUE) temp = MAX_VALUE;		\   buffer[index+1] = temp;				\   temp = buffer[index+2] * delta;			\   temp += buffer[index+2];				\   if (temp> MAX_VALUE) temp = MAX_VALUE;		\   buffer[index+2] = temp;				\ } while (0)
+value|do                                                                     \     {                                                                    \       if ((index)>= 0&& (index) + 2< (bufsize))                       \         {                                                                \           temp = MIN (buffer[(index) + 0] * (1.0 + (delta)), MAX_VALUE); \           buffer[(index) + 0] = temp;                                    \           temp = MIN (buffer[(index) + 1] * (1.0 + (delta)), MAX_VALUE); \           buffer[(index) + 1] = temp;                                    \           temp = MIN (buffer[(index) + 2] * (1.0 + (delta)), MAX_VALUE); \           buffer[(index) + 2] = temp;                                    \         }                                                                \     }                                                                    \   while (0)
 end_define
 
 begin_decl_stmt
@@ -2701,6 +2785,8 @@ name|draw_jigsaw
 argument_list|(
 name|buffer
 argument_list|,
+name|buffer_size
+argument_list|,
 name|width
 argument_list|,
 name|height
@@ -3066,12 +3152,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|draw_jigsaw (guchar * buffer,gint width,gint height,gint bytes,gboolean preview_mode)
+DECL|function|draw_jigsaw (guchar * buffer,gint bufsize,gint width,gint height,gint bytes,gboolean preview_mode)
 name|draw_jigsaw
 parameter_list|(
 name|guchar
 modifier|*
 name|buffer
+parameter_list|,
+name|gint
+name|bufsize
 parameter_list|,
 name|gint
 name|width
@@ -3277,6 +3366,8 @@ name|draw_vertical_border
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|width
 argument_list|,
 name|height
@@ -3333,6 +3424,8 @@ block|{
 name|draw_horizontal_border
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|width
 argument_list|,
@@ -3402,6 +3495,8 @@ name|draw_bezier_vertical_border
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|width
 argument_list|,
 name|height
@@ -3462,6 +3557,8 @@ block|{
 name|draw_bezier_horizontal_border
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|width
 argument_list|,
@@ -3545,12 +3642,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|draw_vertical_border (guchar * buffer,gint width,gint height,gint bytes,gint x_offset,gint ytiles,gint blend_lines,gdouble blend_amount,gboolean preview_mode)
+DECL|function|draw_vertical_border (guchar * buffer,gint bufsize,gint width,gint height,gint bytes,gint x_offset,gint ytiles,gint blend_lines,gdouble blend_amount,gboolean preview_mode)
 name|draw_vertical_border
 parameter_list|(
 name|guchar
 modifier|*
 name|buffer
+parameter_list|,
+name|gint
+name|bufsize
 parameter_list|,
 name|gint
 name|width
@@ -3730,6 +3830,8 @@ name|draw_vertical_line
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|width
 argument_list|,
 name|bytes
@@ -3844,6 +3946,8 @@ name|darken_vertical_line
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|width
 argument_list|,
 name|bytes
@@ -3872,6 +3976,8 @@ name|lighten_vertical_line
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|width
 argument_list|,
 name|bytes
@@ -3899,6 +4005,8 @@ block|{
 name|draw_right_bump
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|width
 argument_list|,
@@ -3943,6 +4051,8 @@ name|darken_right_bump
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|width
 argument_list|,
 name|bytes
@@ -3971,6 +4081,8 @@ comment|/* use to be +j + 1 */
 name|lighten_right_bump
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|width
 argument_list|,
@@ -4007,6 +4119,8 @@ block|{
 name|draw_left_bump
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|width
 argument_list|,
@@ -4051,6 +4165,8 @@ name|darken_left_bump
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|width
 argument_list|,
 name|bytes
@@ -4079,6 +4195,8 @@ comment|/* use to be -j - 1 */
 name|lighten_left_bump
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|width
 argument_list|,
@@ -4147,6 +4265,8 @@ expr_stmt|;
 name|draw_vertical_line
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|width
 argument_list|,
@@ -4261,6 +4381,8 @@ name|darken_vertical_line
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|width
 argument_list|,
 name|bytes
@@ -4288,6 +4410,8 @@ expr_stmt|;
 name|lighten_vertical_line
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|width
 argument_list|,
@@ -4329,12 +4453,15 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|draw_horizontal_border (guchar * buffer,gint width,gint bytes,gint y_offset,gint xtiles,gint blend_lines,gdouble blend_amount,gboolean preview_mode)
+DECL|function|draw_horizontal_border (guchar * buffer,gint bufsize,gint width,gint bytes,gint y_offset,gint xtiles,gint blend_lines,gdouble blend_amount,gboolean preview_mode)
 name|draw_horizontal_border
 parameter_list|(
 name|guchar
 modifier|*
 name|buffer
+parameter_list|,
+name|gint
+name|bufsize
 parameter_list|,
 name|gint
 name|width
@@ -4491,6 +4618,8 @@ name|draw_horizontal_line
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|width
 argument_list|,
 name|bytes
@@ -4604,6 +4733,8 @@ name|darken_horizontal_line
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|width
 argument_list|,
 name|bytes
@@ -4632,6 +4763,8 @@ name|lighten_horizontal_line
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|width
 argument_list|,
 name|bytes
@@ -4658,6 +4791,8 @@ block|{
 name|draw_up_bump
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|width
 argument_list|,
@@ -4702,6 +4837,8 @@ name|darken_up_bump
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|width
 argument_list|,
 name|bytes
@@ -4730,6 +4867,8 @@ comment|/* use to be +j + 1 */
 name|lighten_up_bump
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|width
 argument_list|,
@@ -4766,6 +4905,8 @@ block|{
 name|draw_down_bump
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|width
 argument_list|,
@@ -4810,6 +4951,8 @@ name|darken_down_bump
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|width
 argument_list|,
 name|bytes
@@ -4838,6 +4981,8 @@ comment|/* use to be -j -1 */
 name|lighten_down_bump
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|width
 argument_list|,
@@ -4906,6 +5051,8 @@ expr_stmt|;
 name|draw_horizontal_line
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|width
 argument_list|,
@@ -5021,6 +5168,8 @@ name|darken_horizontal_line
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|width
 argument_list|,
 name|bytes
@@ -5048,6 +5197,8 @@ expr_stmt|;
 name|lighten_horizontal_line
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|width
 argument_list|,
@@ -5088,12 +5239,15 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|draw_vertical_line (guchar * buffer,gint width,gint bytes,gint px[2],gint py[2],gboolean preview_mode)
+DECL|function|draw_vertical_line (guchar * buffer,gint bufsize,gint width,gint bytes,gint px[2],gint py[2],gboolean preview_mode)
 name|draw_vertical_line
 parameter_list|(
 name|guchar
 modifier|*
 name|buffer
+parameter_list|,
+name|gint
+name|bufsize
 parameter_list|,
 name|gint
 name|width
@@ -5188,6 +5342,8 @@ block|{
 name|DRAW_POINT
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|index
 argument_list|)
@@ -5207,12 +5363,15 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|draw_horizontal_line (guchar * buffer,gint width,gint bytes,gint px[2],gint py[2],gboolean preview_mode)
+DECL|function|draw_horizontal_line (guchar * buffer,gint bufsize,gint width,gint bytes,gint px[2],gint py[2],gboolean preview_mode)
 name|draw_horizontal_line
 parameter_list|(
 name|guchar
 modifier|*
 name|buffer
+parameter_list|,
+name|gint
+name|bufsize
 parameter_list|,
 name|gint
 name|width
@@ -5308,6 +5467,8 @@ name|DRAW_POINT
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|index
 argument_list|)
 expr_stmt|;
@@ -5322,7 +5483,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|draw_right_bump (guchar * buffer,gint width,gint bytes,gint x_offset,gint curve_start_offset,gint steps,gboolean preview_mode)
+DECL|function|draw_right_bump (guchar * buffer,gint bufsize,gint width,gint bytes,gint x_offset,gint curve_start_offset,gint steps,gboolean preview_mode)
 name|draw_right_bump
 parameter_list|(
 name|guchar
@@ -5330,6 +5491,9 @@ modifier|*
 name|buffer
 parameter_list|,
 name|gint
+name|bufsize
+parameter_list|,
+name|gint
 name|width
 parameter_list|,
 name|gint
@@ -5430,6 +5594,8 @@ name|DRAW_POINT
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|index
 argument_list|)
 expr_stmt|;
@@ -5475,6 +5641,8 @@ name|DRAW_POINT
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|index
 argument_list|)
 expr_stmt|;
@@ -5485,7 +5653,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|draw_left_bump (guchar * buffer,gint width,gint bytes,gint x_offset,gint curve_start_offset,gint steps,gboolean preview_mode)
+DECL|function|draw_left_bump (guchar * buffer,gint bufsize,gint width,gint bytes,gint x_offset,gint curve_start_offset,gint steps,gboolean preview_mode)
 name|draw_left_bump
 parameter_list|(
 name|guchar
@@ -5493,6 +5661,9 @@ modifier|*
 name|buffer
 parameter_list|,
 name|gint
+name|bufsize
+parameter_list|,
+name|gint
 name|width
 parameter_list|,
 name|gint
@@ -5593,6 +5764,8 @@ name|DRAW_POINT
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|index
 argument_list|)
 expr_stmt|;
@@ -5638,6 +5811,8 @@ name|DRAW_POINT
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|index
 argument_list|)
 expr_stmt|;
@@ -5648,7 +5823,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|draw_up_bump (guchar * buffer,gint width,gint bytes,gint y_offset,gint curve_start_offset,gint steps,gboolean preview_mode)
+DECL|function|draw_up_bump (guchar * buffer,gint bufsize,gint width,gint bytes,gint y_offset,gint curve_start_offset,gint steps,gboolean preview_mode)
 name|draw_up_bump
 parameter_list|(
 name|guchar
@@ -5656,6 +5831,9 @@ modifier|*
 name|buffer
 parameter_list|,
 name|gint
+name|bufsize
+parameter_list|,
+name|gint
 name|width
 parameter_list|,
 name|gint
@@ -5756,6 +5934,8 @@ name|DRAW_POINT
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|index
 argument_list|)
 expr_stmt|;
@@ -5800,6 +5980,8 @@ expr_stmt|;
 name|DRAW_POINT
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|index
 argument_list|)
@@ -5811,12 +5993,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|draw_down_bump (guchar * buffer,gint width,gint bytes,gint y_offset,gint curve_start_offset,gint steps,gboolean preview_mode)
+DECL|function|draw_down_bump (guchar * buffer,gint bufsize,gint width,gint bytes,gint y_offset,gint curve_start_offset,gint steps,gboolean preview_mode)
 name|draw_down_bump
 parameter_list|(
 name|guchar
 modifier|*
 name|buffer
+parameter_list|,
+name|gint
+name|bufsize
 parameter_list|,
 name|gint
 name|width
@@ -5919,6 +6104,8 @@ name|DRAW_POINT
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|index
 argument_list|)
 expr_stmt|;
@@ -5963,6 +6150,8 @@ expr_stmt|;
 name|DRAW_POINT
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|index
 argument_list|)
@@ -9435,12 +9624,15 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|darken_vertical_line (guchar * buffer,gint width,gint bytes,gint px[2],gint py[2],gdouble delta,gboolean preview_mode)
+DECL|function|darken_vertical_line (guchar * buffer,gint bufsize,gint width,gint bytes,gint px[2],gint py[2],gdouble delta,gboolean preview_mode)
 name|darken_vertical_line
 parameter_list|(
 name|guchar
 modifier|*
 name|buffer
+parameter_list|,
+name|gint
+name|bufsize
 parameter_list|,
 name|gint
 name|width
@@ -9541,6 +9733,8 @@ block|{
 name|DARKEN_POINT
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|index
 argument_list|,
@@ -9568,7 +9762,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|lighten_vertical_line (guchar * buffer,gint width,gint bytes,gint px[2],gint py[2],gdouble delta,gboolean preview_mode)
+DECL|function|lighten_vertical_line (guchar * buffer,gint bufsize,gint width,gint bytes,gint px[2],gint py[2],gdouble delta,gboolean preview_mode)
 name|lighten_vertical_line
 parameter_list|(
 name|guchar
@@ -9576,6 +9770,9 @@ modifier|*
 name|buffer
 parameter_list|,
 name|gint
+name|bufsize
+parameter_list|,
+name|gint
 name|width
 parameter_list|,
 name|gint
@@ -9675,6 +9872,8 @@ name|LIGHTEN_POINT
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|index
 argument_list|,
 name|delta
@@ -9701,7 +9900,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|darken_horizontal_line (guchar * buffer,gint width,gint bytes,gint px[2],gint py[2],gdouble delta,gboolean preview_mode)
+DECL|function|darken_horizontal_line (guchar * buffer,gint bufsize,gint width,gint bytes,gint px[2],gint py[2],gdouble delta,gboolean preview_mode)
 name|darken_horizontal_line
 parameter_list|(
 name|guchar
@@ -9709,6 +9908,9 @@ modifier|*
 name|buffer
 parameter_list|,
 name|gint
+name|bufsize
+parameter_list|,
+name|gint
 name|width
 parameter_list|,
 name|gint
@@ -9807,6 +10009,8 @@ block|{
 name|DARKEN_POINT
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|index
 argument_list|,
@@ -9834,12 +10038,15 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|lighten_horizontal_line (guchar * buffer,gint width,gint bytes,gint px[2],gint py[2],gdouble delta,gboolean preview_mode)
+DECL|function|lighten_horizontal_line (guchar * buffer,gint bufsize,gint width,gint bytes,gint px[2],gint py[2],gdouble delta,gboolean preview_mode)
 name|lighten_horizontal_line
 parameter_list|(
 name|guchar
 modifier|*
 name|buffer
+parameter_list|,
+name|gint
+name|bufsize
 parameter_list|,
 name|gint
 name|width
@@ -9940,6 +10147,8 @@ block|{
 name|LIGHTEN_POINT
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|index
 argument_list|,
@@ -9959,7 +10168,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|darken_right_bump (guchar * buffer,gint width,gint bytes,gint x_offset,gint curve_start_offset,gint steps,gdouble delta,gint counter,gboolean preview_mode)
+DECL|function|darken_right_bump (guchar * buffer,gint bufsize,gint width,gint bytes,gint x_offset,gint curve_start_offset,gint steps,gdouble delta,gint counter,gboolean preview_mode)
 name|darken_right_bump
 parameter_list|(
 name|guchar
@@ -9967,6 +10176,9 @@ modifier|*
 name|buffer
 parameter_list|,
 name|gint
+name|bufsize
+parameter_list|,
+name|gint
 name|width
 parameter_list|,
 name|gint
@@ -10115,6 +10327,8 @@ name|LIGHTEN_POINT
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|index
 argument_list|,
 name|delta
@@ -10128,6 +10342,8 @@ block|{
 name|DARKEN_POINT
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|index
 argument_list|,
@@ -10197,6 +10413,8 @@ name|DARKEN_POINT
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|index
 argument_list|,
 name|delta
@@ -10216,7 +10434,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|lighten_right_bump (guchar * buffer,gint width,gint bytes,gint x_offset,gint curve_start_offset,gint steps,gdouble delta,gint counter,gboolean preview_mode)
+DECL|function|lighten_right_bump (guchar * buffer,gint bufsize,gint width,gint bytes,gint x_offset,gint curve_start_offset,gint steps,gdouble delta,gint counter,gboolean preview_mode)
 name|lighten_right_bump
 parameter_list|(
 name|guchar
@@ -10224,6 +10442,9 @@ modifier|*
 name|buffer
 parameter_list|,
 name|gint
+name|bufsize
+parameter_list|,
+name|gint
 name|width
 parameter_list|,
 name|gint
@@ -10372,6 +10593,8 @@ name|DARKEN_POINT
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|index
 argument_list|,
 name|delta
@@ -10385,6 +10608,8 @@ block|{
 name|LIGHTEN_POINT
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|index
 argument_list|,
@@ -10454,6 +10679,8 @@ name|LIGHTEN_POINT
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|index
 argument_list|,
 name|delta
@@ -10473,7 +10700,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|darken_left_bump (guchar * buffer,gint width,gint bytes,gint x_offset,gint curve_start_offset,gint steps,gdouble delta,gint counter,gboolean preview_mode)
+DECL|function|darken_left_bump (guchar * buffer,gint bufsize,gint width,gint bytes,gint x_offset,gint curve_start_offset,gint steps,gdouble delta,gint counter,gboolean preview_mode)
 name|darken_left_bump
 parameter_list|(
 name|guchar
@@ -10481,6 +10708,9 @@ modifier|*
 name|buffer
 parameter_list|,
 name|gint
+name|bufsize
+parameter_list|,
+name|gint
 name|width
 parameter_list|,
 name|gint
@@ -10620,6 +10850,8 @@ name|DARKEN_POINT
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|index
 argument_list|,
 name|delta
@@ -10696,6 +10928,8 @@ name|DARKEN_POINT
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|index
 argument_list|,
 name|delta
@@ -10709,6 +10943,8 @@ block|{
 name|LIGHTEN_POINT
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|index
 argument_list|,
@@ -10730,7 +10966,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|lighten_left_bump (guchar * buffer,gint width,gint bytes,gint x_offset,gint curve_start_offset,gint steps,gdouble delta,gint counter,gboolean preview_mode)
+DECL|function|lighten_left_bump (guchar * buffer,gint bufsize,gint width,gint bytes,gint x_offset,gint curve_start_offset,gint steps,gdouble delta,gint counter,gboolean preview_mode)
 name|lighten_left_bump
 parameter_list|(
 name|guchar
@@ -10738,6 +10974,9 @@ modifier|*
 name|buffer
 parameter_list|,
 name|gint
+name|bufsize
+parameter_list|,
+name|gint
 name|width
 parameter_list|,
 name|gint
@@ -10877,6 +11116,8 @@ name|LIGHTEN_POINT
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|index
 argument_list|,
 name|delta
@@ -10953,6 +11194,8 @@ name|LIGHTEN_POINT
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|index
 argument_list|,
 name|delta
@@ -10966,6 +11209,8 @@ block|{
 name|DARKEN_POINT
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|index
 argument_list|,
@@ -10987,7 +11232,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|darken_up_bump (guchar * buffer,gint width,gint bytes,gint y_offset,gint curve_start_offset,gint steps,gdouble delta,gint counter,gboolean preview_mode)
+DECL|function|darken_up_bump (guchar * buffer,gint bufsize,gint width,gint bytes,gint y_offset,gint curve_start_offset,gint steps,gdouble delta,gint counter,gboolean preview_mode)
 name|darken_up_bump
 parameter_list|(
 name|guchar
@@ -10995,6 +11240,9 @@ modifier|*
 name|buffer
 parameter_list|,
 name|gint
+name|bufsize
+parameter_list|,
+name|gint
 name|width
 parameter_list|,
 name|gint
@@ -11134,6 +11382,8 @@ name|DARKEN_POINT
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|index
 argument_list|,
 name|delta
@@ -11210,6 +11460,8 @@ name|DARKEN_POINT
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|index
 argument_list|,
 name|delta
@@ -11223,6 +11475,8 @@ block|{
 name|LIGHTEN_POINT
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|index
 argument_list|,
@@ -11244,7 +11498,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|lighten_up_bump (guchar * buffer,gint width,gint bytes,gint y_offset,gint curve_start_offset,gint steps,gdouble delta,gint counter,gboolean preview_mode)
+DECL|function|lighten_up_bump (guchar * buffer,gint bufsize,gint width,gint bytes,gint y_offset,gint curve_start_offset,gint steps,gdouble delta,gint counter,gboolean preview_mode)
 name|lighten_up_bump
 parameter_list|(
 name|guchar
@@ -11252,6 +11506,9 @@ modifier|*
 name|buffer
 parameter_list|,
 name|gint
+name|bufsize
+parameter_list|,
+name|gint
 name|width
 parameter_list|,
 name|gint
@@ -11391,6 +11648,8 @@ name|LIGHTEN_POINT
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|index
 argument_list|,
 name|delta
@@ -11467,6 +11726,8 @@ name|LIGHTEN_POINT
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|index
 argument_list|,
 name|delta
@@ -11480,6 +11741,8 @@ block|{
 name|DARKEN_POINT
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|index
 argument_list|,
@@ -11501,12 +11764,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|darken_down_bump (guchar * buffer,gint width,gint bytes,gint y_offset,gint curve_start_offset,gint steps,gdouble delta,gint counter,gboolean preview_mode)
+DECL|function|darken_down_bump (guchar * buffer,gint bufsize,gint width,gint bytes,gint y_offset,gint curve_start_offset,gint steps,gdouble delta,gint counter,gboolean preview_mode)
 name|darken_down_bump
 parameter_list|(
 name|guchar
 modifier|*
 name|buffer
+parameter_list|,
+name|gint
+name|bufsize
 parameter_list|,
 name|gint
 name|width
@@ -11657,6 +11923,8 @@ name|LIGHTEN_POINT
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|index
 argument_list|,
 name|delta
@@ -11670,6 +11938,8 @@ block|{
 name|DARKEN_POINT
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|index
 argument_list|,
@@ -11739,6 +12009,8 @@ name|DARKEN_POINT
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|index
 argument_list|,
 name|delta
@@ -11758,12 +12030,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|lighten_down_bump (guchar * buffer,gint width,gint bytes,gint y_offset,gint curve_start_offset,gint steps,gdouble delta,gint counter,gboolean preview_mode)
+DECL|function|lighten_down_bump (guchar * buffer,gint bufsize,gint width,gint bytes,gint y_offset,gint curve_start_offset,gint steps,gdouble delta,gint counter,gboolean preview_mode)
 name|lighten_down_bump
 parameter_list|(
 name|guchar
 modifier|*
 name|buffer
+parameter_list|,
+name|gint
+name|bufsize
 parameter_list|,
 name|gint
 name|width
@@ -11914,6 +12189,8 @@ name|DARKEN_POINT
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|index
 argument_list|,
 name|delta
@@ -11927,6 +12204,8 @@ block|{
 name|LIGHTEN_POINT
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|index
 argument_list|,
@@ -11996,6 +12275,8 @@ name|LIGHTEN_POINT
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|index
 argument_list|,
 name|delta
@@ -12015,12 +12296,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|draw_bezier_line (guchar * buffer,gint width,gint bytes,gint steps,gint * cx,gint * cy,gboolean preview_mode)
+DECL|function|draw_bezier_line (guchar * buffer,gint bufsize,gint width,gint bytes,gint steps,gint * cx,gint * cy,gboolean preview_mode)
 name|draw_bezier_line
 parameter_list|(
 name|guchar
 modifier|*
 name|buffer
+parameter_list|,
+name|gint
+name|bufsize
 parameter_list|,
 name|gint
 name|width
@@ -12111,6 +12395,8 @@ name|DRAW_POINT
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|index
 argument_list|)
 expr_stmt|;
@@ -12121,12 +12407,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|darken_bezier_line (guchar * buffer,gint width,gint bytes,gint x_offset,gint y_offset,gint steps,gint * cx,gint * cy,gdouble delta,gboolean preview_mode)
+DECL|function|darken_bezier_line (guchar * buffer,gint bufsize,gint width,gint bytes,gint x_offset,gint y_offset,gint steps,gint * cx,gint * cy,gdouble delta,gboolean preview_mode)
 name|darken_bezier_line
 parameter_list|(
 name|guchar
 modifier|*
 name|buffer
+parameter_list|,
+name|gint
+name|bufsize
 parameter_list|,
 name|gint
 name|width
@@ -12246,6 +12535,8 @@ name|DARKEN_POINT
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|index
 argument_list|,
 name|delta
@@ -12265,12 +12556,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|lighten_bezier_line (guchar * buffer,gint width,gint bytes,gint x_offset,gint y_offset,gint steps,gint * cx,gint * cy,gdouble delta,gboolean preview_mode)
+DECL|function|lighten_bezier_line (guchar * buffer,gint bufsize,gint width,gint bytes,gint x_offset,gint y_offset,gint steps,gint * cx,gint * cy,gdouble delta,gboolean preview_mode)
 name|lighten_bezier_line
 parameter_list|(
 name|guchar
 modifier|*
 name|buffer
+parameter_list|,
+name|gint
+name|bufsize
 parameter_list|,
 name|gint
 name|width
@@ -12390,6 +12684,8 @@ name|LIGHTEN_POINT
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|index
 argument_list|,
 name|delta
@@ -12409,12 +12705,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|draw_bezier_vertical_border (guchar * buffer,gint width,gint height,gint bytes,gint x_offset,gint xtiles,gint ytiles,gint blend_lines,gdouble blend_amount,gint steps,gboolean preview_mode)
+DECL|function|draw_bezier_vertical_border (guchar * buffer,gint bufsize,gint width,gint height,gint bytes,gint x_offset,gint xtiles,gint ytiles,gint blend_lines,gdouble blend_amount,gint steps,gboolean preview_mode)
 name|draw_bezier_vertical_border
 parameter_list|(
 name|guchar
 modifier|*
 name|buffer
+parameter_list|,
+name|gint
+name|bufsize
 parameter_list|,
 name|gint
 name|width
@@ -12707,6 +13006,8 @@ name|draw_bezier_line
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|width
 argument_list|,
 name|bytes
@@ -12752,6 +13053,8 @@ name|darken_bezier_line
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|width
 argument_list|,
 name|bytes
@@ -12786,6 +13089,8 @@ expr_stmt|;
 name|lighten_bezier_line
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|width
 argument_list|,
@@ -12822,6 +13127,8 @@ block|{
 name|draw_right_bump
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|width
 argument_list|,
@@ -12866,6 +13173,8 @@ name|darken_right_bump
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|width
 argument_list|,
 name|bytes
@@ -12894,6 +13203,8 @@ comment|/* use to be +j + 1 */
 name|lighten_right_bump
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|width
 argument_list|,
@@ -12930,6 +13241,8 @@ block|{
 name|draw_left_bump
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|width
 argument_list|,
@@ -12974,6 +13287,8 @@ name|darken_left_bump
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|width
 argument_list|,
 name|bytes
@@ -13002,6 +13317,8 @@ comment|/* use to be -j - 1 */
 name|lighten_left_bump
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|width
 argument_list|,
@@ -13163,6 +13480,8 @@ name|draw_bezier_line
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|width
 argument_list|,
 name|bytes
@@ -13208,6 +13527,8 @@ name|darken_bezier_line
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|width
 argument_list|,
 name|bytes
@@ -13242,6 +13563,8 @@ expr_stmt|;
 name|lighten_bezier_line
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|width
 argument_list|,
@@ -13297,12 +13620,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|draw_bezier_horizontal_border (guchar * buffer,gint width,gint height,gint bytes,gint y_offset,gint xtiles,gint ytiles,gint blend_lines,gdouble blend_amount,gint steps,gboolean preview_mode)
+DECL|function|draw_bezier_horizontal_border (guchar * buffer,gint bufsize,gint width,gint height,gint bytes,gint y_offset,gint xtiles,gint ytiles,gint blend_lines,gdouble blend_amount,gint steps,gboolean preview_mode)
 name|draw_bezier_horizontal_border
 parameter_list|(
 name|guchar
 modifier|*
 name|buffer
+parameter_list|,
+name|gint
+name|bufsize
 parameter_list|,
 name|gint
 name|width
@@ -13596,6 +13922,8 @@ name|draw_bezier_line
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|width
 argument_list|,
 name|bytes
@@ -13641,6 +13969,8 @@ name|darken_bezier_line
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|width
 argument_list|,
 name|bytes
@@ -13675,6 +14005,8 @@ expr_stmt|;
 name|lighten_bezier_line
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|width
 argument_list|,
@@ -13712,6 +14044,8 @@ block|{
 name|draw_up_bump
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|width
 argument_list|,
@@ -13756,6 +14090,8 @@ name|darken_up_bump
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|width
 argument_list|,
 name|bytes
@@ -13784,6 +14120,8 @@ comment|/* use to be +j + 1 */
 name|lighten_up_bump
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|width
 argument_list|,
@@ -13820,6 +14158,8 @@ block|{
 name|draw_down_bump
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|width
 argument_list|,
@@ -13864,6 +14204,8 @@ name|darken_down_bump
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|width
 argument_list|,
 name|bytes
@@ -13892,6 +14234,8 @@ comment|/* use to be -j -1 */
 name|lighten_down_bump
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|width
 argument_list|,
@@ -14055,6 +14399,8 @@ name|draw_bezier_line
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|width
 argument_list|,
 name|bytes
@@ -14100,6 +14446,8 @@ name|darken_bezier_line
 argument_list|(
 name|buffer
 argument_list|,
+name|bufsize
+argument_list|,
 name|width
 argument_list|,
 name|bytes
@@ -14134,6 +14482,8 @@ expr_stmt|;
 name|lighten_bezier_line
 argument_list|(
 name|buffer
+argument_list|,
+name|bufsize
 argument_list|,
 name|width
 argument_list|,
