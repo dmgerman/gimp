@@ -280,6 +280,9 @@ name|gimp_palette_add_entry
 argument_list|(
 name|palette
 argument_list|,
+operator|-
+literal|1
+argument_list|,
 name|NULL
 argument_list|,
 operator|&
@@ -953,6 +956,9 @@ name|gimp_palette_add_entry
 argument_list|(
 name|palette
 argument_list|,
+operator|-
+literal|1
+argument_list|,
 name|lab
 argument_list|,
 operator|&
@@ -1590,6 +1596,9 @@ name|gimp_palette_add_entry
 argument_list|(
 name|palette
 argument_list|,
+operator|-
+literal|1
+argument_list|,
 name|NULL
 argument_list|,
 operator|&
@@ -1610,7 +1619,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4c264f0103
+DECL|enum|__anon2a3d91ec0103
 block|{
 DECL|enumerator|GIMP_PALETTE_FILE_FORMAT_UNKNOWN
 name|GIMP_PALETTE_FILE_FORMAT_UNKNOWN
@@ -2006,6 +2015,9 @@ name|gimp_palette_add_entry
 argument_list|(
 name|palette
 argument_list|,
+operator|-
+literal|1
+argument_list|,
 name|NULL
 argument_list|,
 operator|&
@@ -2084,6 +2096,9 @@ expr_stmt|;
 name|gimp_palette_add_entry
 argument_list|(
 name|palette
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 name|NULL
 argument_list|,

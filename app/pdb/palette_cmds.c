@@ -1919,6 +1919,9 @@ name|gimp_palette_add_entry
 argument_list|(
 name|palette
 argument_list|,
+operator|-
+literal|1
+argument_list|,
 name|entry_name
 argument_list|,
 operator|&
