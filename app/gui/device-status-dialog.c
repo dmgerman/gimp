@@ -1149,7 +1149,7 @@ name|num_keys
 operator|=
 name|device
 operator|->
-name|num_axes
+name|num_keys
 expr_stmt|;
 name|device_info
 operator|->

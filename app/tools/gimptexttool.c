@@ -3774,7 +3774,7 @@ name|NULL
 expr_stmt|;
 block|}
 comment|/* free the pixmap */
-name|gdk_pixmap_unref
+name|gdk_drawable_unref
 argument_list|(
 name|pixmap
 argument_list|)

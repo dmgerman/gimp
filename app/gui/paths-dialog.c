@@ -1787,7 +1787,7 @@ name|pwidget
 operator|->
 name|paths_pixmap
 condition|)
-name|gdk_pixmap_unref
+name|gdk_drawable_unref
 argument_list|(
 name|pwidget
 operator|->

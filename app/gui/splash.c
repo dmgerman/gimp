@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4af5a30103
+DECL|enum|__anon2b0a5d700103
 block|{
 DECL|enumerator|SPLASH_SHOW_LOGO_NEVER
 name|SPLASH_SHOW_LOGO_NEVER
@@ -661,7 +661,7 @@ name|logo_pixmap
 operator|!=
 name|NULL
 condition|)
-name|gdk_pixmap_unref
+name|gdk_drawable_unref
 argument_list|(
 name|logo_pixmap
 argument_list|)

@@ -1625,9 +1625,9 @@ literal|"XCF: This file is corrupt!  I could not even\n"
 literal|"salvage any partial image data from it."
 argument_list|)
 expr_stmt|;
-name|gtk_object_unref
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gimage
 argument_list|)
@@ -3319,9 +3319,9 @@ break|break;
 case|case
 name|PROP_SELECTION
 case|:
-name|gtk_object_unref
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gimage
 operator|->
@@ -4120,9 +4120,9 @@ name|layer
 return|;
 name|error
 label|:
-name|gtk_object_unref
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|layer
 argument_list|)
@@ -4374,9 +4374,9 @@ name|channel
 return|;
 name|error
 label|:
-name|gtk_object_unref
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|channel
 argument_list|)
@@ -4631,9 +4631,9 @@ name|layer_mask
 return|;
 name|error
 label|:
-name|gtk_object_unref
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|layer_mask
 argument_list|)

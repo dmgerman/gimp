@@ -2603,7 +2603,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gdk_pixmap_unref
+name|gdk_drawable_unref
 argument_list|(
 name|pixmap
 argument_list|)
@@ -2708,7 +2708,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gdk_pixmap_unref
+name|gdk_drawable_unref
 argument_list|(
 name|pixmap
 argument_list|)
@@ -2816,7 +2816,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gdk_pixmap_unref
+name|gdk_drawable_unref
 argument_list|(
 name|pixmap
 argument_list|)
@@ -6389,7 +6389,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2b0684c80103
+DECL|enum|__anon29e9b1470103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

@@ -2004,14 +2004,14 @@ operator|->
 name|icon_idle_id
 argument_list|)
 expr_stmt|;
-name|gdk_pixmap_unref
+name|gdk_drawable_unref
 argument_list|(
 name|gdisp
 operator|->
 name|icon
 argument_list|)
 expr_stmt|;
-name|gdk_pixmap_unref
+name|gdk_drawable_unref
 argument_list|(
 name|gdisp
 operator|->

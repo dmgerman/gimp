@@ -1627,12 +1627,12 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
-name|gdk_pixmap_unref
+name|gdk_drawable_unref
 argument_list|(
 name|pixmap
 argument_list|)
 expr_stmt|;
-name|gdk_bitmap_unref
+name|gdk_drawable_unref
 argument_list|(
 name|mask
 argument_list|)

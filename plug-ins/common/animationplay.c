@@ -51,11 +51,14 @@ directive|include
 file|<gtk/gtk.h>
 end_include
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|GDK_WINDOWING_WIN32
-end_ifndef
+begin_if
+if|#
+directive|if
+name|defined
+argument_list|(
+name|GDK_WINDOWING_X11
+argument_list|)
+end_if
 
 begin_include
 include|#
@@ -63,15 +66,49 @@ directive|include
 file|<gdk/gdkx.h>
 end_include
 
-begin_else
-else|#
-directive|else
-end_else
+begin_elif
+elif|#
+directive|elif
+name|defined
+argument_list|(
+name|GDK_WINDOWING_WIN32
+argument_list|)
+end_elif
 
 begin_include
 include|#
 directive|include
-file|<gdk/win32/gdkwin32.h>
+file|<gdk/gdkwin32.h>
+end_include
+
+begin_elif
+elif|#
+directive|elif
+name|defined
+argument_list|(
+name|GDK_WINDOWING_DIRECTFB
+argument_list|)
+end_elif
+
+begin_include
+include|#
+directive|include
+file|<gdk/gdkdirectfb.h>
+end_include
+
+begin_elif
+elif|#
+directive|elif
+name|defined
+argument_list|(
+name|GDK_WINDOWING_FB
+argument_list|)
+end_elif
+
+begin_include
+include|#
+directive|include
+file|<gdk/gdkfb.h>
 end_include
 
 begin_endif
@@ -139,7 +176,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c554d1a0103
+DECL|enum|__anon27d709bc0103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED

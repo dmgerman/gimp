@@ -269,7 +269,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c3dc7f0103
+DECL|enum|__anon29c423b20103
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -309,7 +309,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c3dc7f0203
+DECL|enum|__anon29c423b20203
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -9399,7 +9399,7 @@ name|gradient_editor
 operator|->
 name|control_pixmap
 condition|)
-name|gdk_pixmap_unref
+name|gdk_drawable_unref
 argument_list|(
 name|gradient_editor
 operator|->
