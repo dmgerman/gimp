@@ -700,20 +700,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gimp_display_shell_menu_update
-parameter_list|(
-name|GtkItemFactory
-modifier|*
-name|item_factory
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|GimpGuide
 modifier|*
 name|gimp_display_shell_find_guide

@@ -6,19 +6,34 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__PATTERNS_COMMANDS_H__
+name|__DOCUMENTS_MENU_H__
 end_ifndef
 
 begin_define
-DECL|macro|__PATTERNS_COMMANDS_H__
+DECL|macro|__DOCUMENTS_MENU_H__
 define|#
 directive|define
-name|__PATTERNS_COMMANDS_H__
+name|__DOCUMENTS_MENU_H__
 end_define
+
+begin_decl_stmt
+specifier|extern
+name|GimpItemFactoryEntry
+name|documents_menu_entries
+index|[]
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|gint
+name|n_documents_menu_entries
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 name|void
-name|patterns_menu_update
+name|documents_menu_update
 parameter_list|(
 name|GtkItemFactory
 modifier|*
@@ -36,7 +51,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __PATTERNS_COMMANDS_H__ */
+comment|/* __DOCUMENTS_MENU_H__ */
 end_comment
 
 end_unit

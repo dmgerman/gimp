@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpbrushgenerated.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpchannel.h"
 end_include
 
@@ -168,12 +162,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpitemfactory.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpitemlistview.h"
 end_include
 
@@ -282,18 +270,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"brushes-commands.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"buffers-commands.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"channels-commands.h"
 end_include
 
@@ -318,12 +294,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"documents-commands.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"error-console-dialog.h"
 end_include
 
@@ -331,12 +301,6 @@ begin_include
 include|#
 directive|include
 file|"file-commands.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gradients-commands.h"
 end_include
 
 begin_include
@@ -354,19 +318,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"palettes-commands.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paths-dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"patterns-commands.h"
 end_include
 
 begin_include

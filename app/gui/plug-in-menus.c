@@ -178,10 +178,6 @@ modifier|*
 name|std_plugins_domain
 parameter_list|)
 block|{
-name|PlugInDef
-modifier|*
-name|plug_in_def
-decl_stmt|;
 name|GSList
 modifier|*
 name|domains
@@ -242,6 +238,10 @@ name|tmp
 argument_list|)
 control|)
 block|{
+name|PlugInDef
+modifier|*
+name|plug_in_def
+decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
@@ -258,6 +258,10 @@ name|list
 decl_stmt|;
 name|plug_in_def
 operator|=
+operator|(
+name|PlugInDef
+operator|*
+operator|)
 name|tmp
 operator|->
 name|data
@@ -945,8 +949,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_set_menu_sensitivity (GimpItemFactory * item_factory,GimpImageType type)
-name|plug_in_set_menu_sensitivity
+DECL|function|plug_in_menus_update (GimpItemFactory * item_factory,GimpImageType type)
+name|plug_in_menus_update
 parameter_list|(
 name|GimpItemFactory
 modifier|*

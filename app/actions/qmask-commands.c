@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpitemfactory.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpviewabledialog.h"
 end_include
 
@@ -391,113 +385,6 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|qmask_menu_update (GtkItemFactory * factory,gpointer data)
-name|qmask_menu_update
-parameter_list|(
-name|GtkItemFactory
-modifier|*
-name|factory
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|GimpDisplayShell
-modifier|*
-name|shell
-decl_stmt|;
-name|shell
-operator|=
-name|GIMP_DISPLAY_SHELL
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
-DECL|macro|SET_ACTIVE (menu,active)
-define|#
-directive|define
-name|SET_ACTIVE
-parameter_list|(
-name|menu
-parameter_list|,
-name|active
-parameter_list|)
-define|\
-value|gimp_item_factory_set_active (factory, "/" menu, (active))
-DECL|macro|SET_COLOR (menu,color)
-define|#
-directive|define
-name|SET_COLOR
-parameter_list|(
-name|menu
-parameter_list|,
-name|color
-parameter_list|)
-define|\
-value|gimp_item_factory_set_color (factory, "/" menu, (color), FALSE)
-name|SET_ACTIVE
-argument_list|(
-literal|"QMask Active"
-argument_list|,
-name|shell
-operator|->
-name|gdisp
-operator|->
-name|gimage
-operator|->
-name|qmask_state
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|shell
-operator|->
-name|gdisp
-operator|->
-name|gimage
-operator|->
-name|qmask_inverted
-condition|)
-name|SET_ACTIVE
-argument_list|(
-literal|"Mask Selected Areas"
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-else|else
-name|SET_ACTIVE
-argument_list|(
-literal|"Mask Unselected Areas"
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-name|SET_COLOR
-argument_list|(
-literal|"Configure Color and Opacity..."
-argument_list|,
-operator|&
-name|shell
-operator|->
-name|gdisp
-operator|->
-name|gimage
-operator|->
-name|qmask_color
-argument_list|)
-expr_stmt|;
-undef|#
-directive|undef
-name|SET_SENSITIVE
-undef|#
-directive|undef
-name|SET_COLOR
 block|}
 end_function
 

@@ -326,20 +326,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|layers_menu_update
-parameter_list|(
-name|GtkItemFactory
-modifier|*
-name|factory
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|layers_remove_layer
 parameter_list|(
 name|GimpImage

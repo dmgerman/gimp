@@ -55,6 +55,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_decl_stmt
+specifier|extern
+name|GimpItemFactoryEntry
+name|paths_menu_entries
+index|[]
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|gint
+name|n_paths_menu_entries
+decl_stmt|;
+end_decl_stmt
+
 begin_function_decl
 name|void
 name|paths_dialog_new_path_callback

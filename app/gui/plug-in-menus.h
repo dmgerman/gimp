@@ -86,7 +86,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|plug_in_set_menu_sensitivity
+name|plug_in_menus_update
 parameter_list|(
 name|GimpItemFactory
 modifier|*

@@ -16,6 +16,30 @@ directive|define
 name|__MENUS_H__
 end_define
 
+begin_define
+DECL|macro|MENU_SEPARATOR (path)
+define|#
+directive|define
+name|MENU_SEPARATOR
+parameter_list|(
+name|path
+parameter_list|)
+define|\
+value|{ { (path), NULL, NULL, 0, "<Separator>" }, NULL, NULL, NULL }
+end_define
+
+begin_define
+DECL|macro|MENU_BRANCH (path)
+define|#
+directive|define
+name|MENU_BRANCH
+parameter_list|(
+name|path
+parameter_list|)
+define|\
+value|{ { (path), NULL, NULL, 0, "<Branch>" }, NULL, NULL, NULL }
+end_define
+
 begin_decl_stmt
 specifier|extern
 name|GimpMenuFactory
@@ -42,6 +66,32 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|menus_last_opened_add
+parameter_list|(
+name|GimpItemFactory
+modifier|*
+name|item_factory
+parameter_list|,
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|menus_filters_subdirs_to_top
+parameter_list|(
+name|GtkMenu
+modifier|*
+name|menu
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpitemfactory.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimptoolbox-color-area.h"
 end_include
 
@@ -458,72 +452,6 @@ operator|->
 name|color
 argument_list|)
 expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|palette_editor_menu_update (GtkItemFactory * factory,gpointer data)
-name|palette_editor_menu_update
-parameter_list|(
-name|GtkItemFactory
-modifier|*
-name|factory
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|GimpPaletteEditor
-modifier|*
-name|editor
-decl_stmt|;
-name|editor
-operator|=
-name|GIMP_PALETTE_EDITOR
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
-DECL|macro|SET_SENSITIVE (menu,condition)
-define|#
-directive|define
-name|SET_SENSITIVE
-parameter_list|(
-name|menu
-parameter_list|,
-name|condition
-parameter_list|)
-define|\
-value|gimp_item_factory_set_sensitive (factory, menu, (condition) != 0)
-name|SET_SENSITIVE
-argument_list|(
-literal|"/New Color"
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/Edit Color..."
-argument_list|,
-name|editor
-operator|->
-name|color
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/Delete Color"
-argument_list|,
-name|editor
-operator|->
-name|color
-argument_list|)
-expr_stmt|;
-undef|#
-directive|undef
-name|SET_SENSITIVE
 block|}
 end_function
 

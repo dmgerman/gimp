@@ -18,19 +18,31 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gui-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimppattern.h"
+file|"core/gimpcontext.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpcontext.h"
+file|"core/gimpdata.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"widgets/gimpcontainereditor.h"
 end_include
 
 begin_include
@@ -54,7 +66,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"patterns-commands.h"
+file|"brushes-menu.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"data-commands.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"menus.h"
 end_include
 
 begin_include
@@ -63,14 +87,161 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
-begin_comment
-comment|/*  public functions  */
-end_comment
+begin_decl_stmt
+DECL|variable|brushes_menu_entries
+name|GimpItemFactoryEntry
+name|brushes_menu_entries
+index|[]
+init|=
+block|{
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/New Brush"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|data_new_data_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GTK_STOCK_NEW
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Duplicate Brush"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|data_duplicate_data_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_DUPLICATE
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Edit Brush..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|data_edit_data_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_EDIT
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Delete Brush..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|data_delete_data_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GTK_STOCK_DELETE
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+name|MENU_SEPARATOR
+argument_list|(
+literal|"/---"
+argument_list|)
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Refresh Brushes"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|data_refresh_data_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GTK_STOCK_REFRESH
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+name|gint
+name|n_brushes_menu_entries
+init|=
+name|G_N_ELEMENTS
+argument_list|(
+name|brushes_menu_entries
+argument_list|)
+decl_stmt|;
+end_decl_stmt
 
 begin_function
 name|void
-DECL|function|patterns_menu_update (GtkItemFactory * factory,gpointer data)
-name|patterns_menu_update
+DECL|function|brushes_menu_update (GtkItemFactory * factory,gpointer data)
+name|brushes_menu_update
 parameter_list|(
 name|GtkItemFactory
 modifier|*
@@ -84,9 +255,9 @@ name|GimpContainerEditor
 modifier|*
 name|editor
 decl_stmt|;
-name|GimpPattern
+name|GimpBrush
 modifier|*
-name|pattern
+name|brush
 decl_stmt|;
 name|gboolean
 name|internal
@@ -100,9 +271,9 @@ argument_list|(
 name|data
 argument_list|)
 expr_stmt|;
-name|pattern
+name|brush
 operator|=
-name|gimp_context_get_pattern
+name|gimp_context_get_brush
 argument_list|(
 name|editor
 operator|->
@@ -113,13 +284,13 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|pattern
+name|brush
 condition|)
 name|internal
 operator|=
 name|GIMP_DATA
 argument_list|(
-name|pattern
+name|brush
 argument_list|)
 operator|->
 name|internal
@@ -137,13 +308,13 @@ define|\
 value|gimp_item_factory_set_sensitive (factory, menu, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Duplicate Pattern"
+literal|"/Duplicate Brush"
 argument_list|,
-name|pattern
+name|brush
 operator|&&
 name|GIMP_DATA_GET_CLASS
 argument_list|(
-name|pattern
+name|brush
 argument_list|)
 operator|->
 name|duplicate
@@ -151,9 +322,9 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Edit Pattern..."
+literal|"/Edit Brush..."
 argument_list|,
-name|pattern
+name|brush
 operator|&&
 name|GIMP_DATA_FACTORY_VIEW
 argument_list|(
@@ -165,9 +336,9 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Delete Pattern..."
+literal|"/Delete Brush..."
 argument_list|,
-name|pattern
+name|brush
 operator|&&
 operator|!
 name|internal
