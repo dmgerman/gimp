@@ -3543,7 +3543,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Pressure"
+literal|"Hardness"
 argument_list|)
 argument_list|)
 expr_stmt|;

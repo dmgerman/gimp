@@ -208,7 +208,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2bb4ddec0108
+DECL|struct|__anon2b720d330108
 typedef|typedef
 struct|struct
 block|{
@@ -226,7 +226,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bb4ddec0208
+DECL|struct|__anon2b720d330208
 typedef|typedef
 struct|struct
 block|{
@@ -1505,7 +1505,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb4ddec0308
+DECL|struct|__anon2b720d330308
 block|{
 DECL|member|color
 name|double
@@ -1524,7 +1524,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb4ddec0408
+DECL|struct|__anon2b720d330408
 block|{
 DECL|member|coord
 name|double
@@ -1541,7 +1541,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2bb4ddec0503
+DECL|enum|__anon2b720d330503
 typedef|typedef
 enum|enum
 block|{
@@ -1563,7 +1563,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2bb4ddec0603
+DECL|enum|__anon2b720d330603
 typedef|typedef
 enum|enum
 block|{
@@ -1581,7 +1581,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb4ddec0708
+DECL|struct|__anon2b720d330708
 block|{
 DECL|member|ambient_int
 name|gdouble
@@ -1616,7 +1616,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb4ddec0808
+DECL|struct|__anon2b720d330808
 block|{
 DECL|member|type
 name|t_LightType
@@ -2158,6 +2158,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"iter_ALT/mod/plug_in_bump_map_iter_ALT.inc"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"iter_ALT/mod/plug_in_convmatrix_iter_ALT.inc"
 end_include
 
@@ -2393,12 +2399,6 @@ begin_include
 include|#
 directive|include
 file|"iter_ALT/gen/plug_in_borderaverage_iter_ALT.inc"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"iter_ALT/gen/plug_in_bump_map_iter_ALT.inc"
 end_include
 
 begin_include
