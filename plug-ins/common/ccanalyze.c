@@ -101,7 +101,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2770a1480103
+DECL|enum|__anon2b91186c0103
 block|{
 DECL|enumerator|RED
 name|RED
@@ -2398,9 +2398,9 @@ argument_list|(
 name|dialog
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dialog
 argument_list|)

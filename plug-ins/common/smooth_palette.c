@@ -289,7 +289,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2beeb2570108
+DECL|struct|__anon278f49300108
 block|{
 DECL|member|width
 name|gint
@@ -2235,9 +2235,9 @@ expr_stmt|;
 name|run
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dlg
 argument_list|)

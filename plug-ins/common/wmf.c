@@ -76,7 +76,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29eb12e80108
+DECL|struct|__anon276c7c6c0108
 block|{
 DECL|member|scale
 name|gdouble
@@ -915,9 +915,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dialog
 argument_list|)

@@ -115,7 +115,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c21e170108
+DECL|struct|__anon2b11d6bc0108
 block|{
 DECL|member|film_height
 name|gint
@@ -219,7 +219,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c21e170208
+DECL|struct|__anon2b11d6bc0208
 block|{
 DECL|member|advanced_adj
 name|GtkObject
@@ -7284,9 +7284,9 @@ expr_stmt|;
 name|run
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dlg
 argument_list|)

@@ -162,7 +162,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0a03160108
+DECL|struct|__anon2b42ecb20108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -265,7 +265,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0a03160208
+DECL|struct|__anon2b42ecb20208
 block|{
 DECL|member|height
 DECL|member|width
@@ -347,7 +347,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0a03160308
+DECL|struct|__anon2b42ecb20308
 block|{
 DECL|member|width
 name|gint
@@ -5259,9 +5259,9 @@ expr_stmt|;
 name|run
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dlg
 argument_list|)

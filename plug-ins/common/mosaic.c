@@ -172,7 +172,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288e05e50108
+DECL|struct|__anon278afdd00108
 block|{
 DECL|member|x
 DECL|member|y
@@ -190,7 +190,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288e05e50208
+DECL|struct|__anon278afdd00208
 block|{
 DECL|member|npts
 name|gint
@@ -212,7 +212,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288e05e50308
+DECL|struct|__anon278afdd00308
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -241,7 +241,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288e05e50408
+DECL|struct|__anon278afdd00408
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -3447,9 +3447,9 @@ expr_stmt|;
 name|run
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dlg
 argument_list|)

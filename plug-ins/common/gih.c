@@ -185,7 +185,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2934f63d0108
+DECL|struct|__anon2a0f8c800108
 block|{
 DECL|member|spacing
 name|guint
@@ -232,7 +232,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2934f63d0208
+DECL|struct|__anon2a0f8c800208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -5192,9 +5192,9 @@ expr_stmt|;
 name|run
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dlg
 argument_list|)

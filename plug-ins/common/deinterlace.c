@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf196990103
+DECL|enum|__anon2c3c237c0103
 block|{
 DECL|enumerator|ODD_FIELDS
 name|ODD_FIELDS
@@ -1289,9 +1289,9 @@ expr_stmt|;
 name|run
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dlg
 argument_list|)

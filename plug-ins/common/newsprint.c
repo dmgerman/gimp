@@ -455,7 +455,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279c8bd10108
+DECL|struct|__anon297631980108
 block|{
 DECL|member|name
 specifier|const
@@ -715,7 +715,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279c8bd10208
+DECL|struct|__anon297631980208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -788,7 +788,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279c8bd10308
+DECL|struct|__anon297631980308
 block|{
 DECL|member|input_spi
 name|gint
@@ -818,7 +818,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279c8bd10408
+DECL|struct|__anon297631980408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -925,7 +925,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279c8bd10508
+DECL|struct|__anon297631980508
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1096,7 +1096,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279c8bd10608
+DECL|struct|__anon297631980608
 block|{
 DECL|member|name
 specifier|const
@@ -6211,9 +6211,9 @@ expr_stmt|;
 name|run
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|st
 operator|.
@@ -6783,7 +6783,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279c8bd10708
+DECL|struct|__anon297631980708
 block|{
 DECL|member|index
 name|gint

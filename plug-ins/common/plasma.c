@@ -92,7 +92,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b65f5270108
+DECL|struct|__anon27dda63e0108
 block|{
 DECL|member|seed
 name|guint32
@@ -1253,9 +1253,9 @@ expr_stmt|;
 name|run
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dlg
 argument_list|)

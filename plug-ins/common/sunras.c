@@ -143,7 +143,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b737160108
+DECL|struct|__anon2c5cce450108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -232,7 +232,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b737160208
+DECL|struct|__anon2c5cce450208
 block|{
 DECL|member|val
 name|gint
@@ -827,7 +827,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b737160308
+DECL|struct|__anon2c5cce450308
 block|{
 DECL|member|rle
 name|gboolean
@@ -7839,9 +7839,9 @@ expr_stmt|;
 name|run
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dlg
 argument_list|)

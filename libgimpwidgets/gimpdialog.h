@@ -223,6 +223,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gint
+name|gimp_dialog_run
+parameter_list|(
+name|GimpDialog
+modifier|*
+name|dialog
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro

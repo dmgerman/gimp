@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297de51c0103
+DECL|enum|__anon2c7e32e80103
 block|{
 DECL|enumerator|MODE_SMEAR
 name|MODE_SMEAR
@@ -61,7 +61,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297de51c0208
+DECL|struct|__anon2c7e32e80208
 block|{
 DECL|member|amplitude
 name|gdouble
@@ -1714,9 +1714,9 @@ expr_stmt|;
 name|run
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dlg
 argument_list|)

@@ -49,7 +49,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a1fd510103
+DECL|enum|__anon28dc1a3c0103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -170,7 +170,7 @@ end_macro
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a1fd510208
+DECL|struct|__anon28dc1a3c0208
 block|{
 DECL|member|title
 specifier|const
@@ -1198,9 +1198,9 @@ name|plural
 decl_stmt|;
 if|if
 condition|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dialog
 argument_list|)

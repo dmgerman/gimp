@@ -161,7 +161,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon279442870103
+DECL|enum|__anon275b3c330103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -179,7 +179,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon279442870203
+DECL|enum|__anon275b3c330203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -198,7 +198,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279442870308
+DECL|struct|__anon275b3c330308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -257,7 +257,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279442870408
+DECL|struct|__anon275b3c330408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -302,7 +302,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279442870508
+DECL|struct|__anon275b3c330508
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -5172,9 +5172,9 @@ expr_stmt|;
 name|run
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dialog
 argument_list|)

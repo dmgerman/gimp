@@ -131,7 +131,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon274bab970103
+DECL|enum|__anon2797e1500103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -148,7 +148,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274bab970208
+DECL|struct|__anon2797e1500208
 block|{
 DECL|member|interlace
 name|gint
@@ -3866,9 +3866,9 @@ expr_stmt|;
 name|crop
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dlg
 argument_list|)
@@ -4963,9 +4963,9 @@ expr_stmt|;
 name|run
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dlg
 argument_list|)

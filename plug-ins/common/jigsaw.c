@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c14ea350103
+DECL|enum|__anon2944af6a0103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -70,7 +70,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c14ea350203
+DECL|enum|__anon2944af6a0203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -15526,9 +15526,9 @@ expr_stmt|;
 name|run
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dlg
 argument_list|)

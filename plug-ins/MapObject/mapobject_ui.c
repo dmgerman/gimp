@@ -7900,9 +7900,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|appwin
 argument_list|)

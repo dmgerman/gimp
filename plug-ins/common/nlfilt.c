@@ -75,7 +75,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f691bf0108
+DECL|struct|__anon27a033180108
 block|{
 DECL|member|img
 name|gint32
@@ -106,7 +106,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f691bf0203
+DECL|enum|__anon27a033180203
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -1791,9 +1791,9 @@ expr_stmt|;
 name|run
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dlg
 argument_list|)

@@ -170,7 +170,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afb0db60108
+DECL|struct|__anon2b3ae3e40108
 block|{
 DECL|member|resolution
 name|guint
@@ -259,7 +259,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afb0db60208
+DECL|struct|__anon2b3ae3e40208
 block|{
 DECL|member|width
 DECL|member|height
@@ -851,7 +851,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afb0db60308
+DECL|struct|__anon2b3ae3e40308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1707,7 +1707,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afb0db60408
+DECL|struct|__anon2b3ae3e40408
 block|{
 DECL|member|eol
 name|long
@@ -14200,9 +14200,9 @@ expr_stmt|;
 name|run
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
@@ -15620,9 +15620,9 @@ expr_stmt|;
 name|run
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dialog
 argument_list|)

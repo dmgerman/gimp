@@ -488,7 +488,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon29ebfee30108
+DECL|struct|__anon28ec82220108
 block|{
 DECL|member|randomize
 name|gint
@@ -6350,9 +6350,9 @@ expr_stmt|;
 name|run
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dlg
 argument_list|)

@@ -161,7 +161,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dd18530108
+DECL|struct|__anon28ad0b790108
 block|{
 DECL|member|xcenter
 name|gint
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dd18530208
+DECL|struct|__anon28ad0b790208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -1461,9 +1461,9 @@ expr_stmt|;
 name|run
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dlg
 argument_list|)

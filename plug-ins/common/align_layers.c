@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f8c2f70103
+DECL|enum|__anon2c107ead0103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f8c2f70203
+DECL|enum|__anon2c107ead0203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -115,7 +115,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f8c2f70303
+DECL|enum|__anon2c107ead0303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f8c2f70403
+DECL|enum|__anon2c107ead0403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -260,7 +260,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f8c2f70508
+DECL|struct|__anon2c107ead0508
 block|{
 DECL|member|h_style
 name|gint
@@ -2184,9 +2184,9 @@ expr_stmt|;
 name|run
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dlg
 argument_list|)

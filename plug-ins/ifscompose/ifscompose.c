@@ -167,7 +167,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29097e5e0103
+DECL|enum|__anon29db08b50103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -187,7 +187,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29097e5e0203
+DECL|enum|__anon29db08b50203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -203,7 +203,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29097e5e0308
+DECL|struct|__anon29db08b50308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -225,7 +225,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon29097e5e040a
+DECL|union|__anon29db08b5040a
 block|{
 DECL|member|d
 name|gdouble
@@ -254,7 +254,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29097e5e0508
+DECL|struct|__anon29db08b50508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -284,7 +284,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29097e5e0608
+DECL|struct|__anon29db08b50608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -319,7 +319,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29097e5e0708
+DECL|struct|__anon29db08b50708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -355,7 +355,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29097e5e0808
+DECL|struct|__anon29db08b50808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -422,7 +422,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29097e5e0908
+DECL|struct|__anon29db08b50908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -624,7 +624,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29097e5e0a08
+DECL|struct|__anon29db08b50a08
 block|{
 DECL|member|run
 name|gboolean
@@ -13756,9 +13756,9 @@ argument_list|,
 literal|"ifscompose-message"
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dlg
 argument_list|)

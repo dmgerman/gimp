@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e9ac200108
+DECL|struct|__anon2b9b1b110108
 block|{
 DECL|member|npts
 name|gint
@@ -134,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e9ac200208
+DECL|struct|__anon2b9b1b110208
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -1210,9 +1210,9 @@ expr_stmt|;
 name|run
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dlg
 argument_list|)

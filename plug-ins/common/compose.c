@@ -519,7 +519,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbfef270108
+DECL|struct|__anon2a0f94c10108
 block|{
 DECL|member|compose_type
 specifier|const
@@ -1013,7 +1013,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbfef270208
+DECL|struct|__anon2a0f94c10208
 block|{
 DECL|member|compose_ID
 name|gint32
@@ -1044,7 +1044,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbfef270308
+DECL|struct|__anon2a0f94c10308
 block|{
 DECL|member|width
 DECL|member|height
@@ -6801,9 +6801,9 @@ expr_stmt|;
 name|run
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dlg
 argument_list|)

@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3b91610108
+DECL|struct|__anon28826a570108
 block|{
 DECL|member|independent
 name|gint
@@ -97,7 +97,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3b91610208
+DECL|struct|__anon28826a570208
 block|{
 DECL|member|channels
 name|gint
@@ -1625,9 +1625,9 @@ expr_stmt|;
 name|run
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dlg
 argument_list|)

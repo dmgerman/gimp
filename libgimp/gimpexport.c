@@ -59,7 +59,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1c8b520108
+DECL|struct|__anon277b904f0108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -1401,7 +1401,7 @@ switch|switch
 condition|(
 name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
@@ -2268,7 +2268,7 @@ switch|switch
 condition|(
 name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dialog
 argument_list|)

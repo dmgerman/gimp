@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bab87e10103
+DECL|enum|__anon29660efc0103
 block|{
 DECL|enumerator|PROJECTION
 name|PROJECTION
@@ -225,7 +225,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bab87e10208
+DECL|struct|__anon29660efc0208
 block|{
 DECL|member|transformSequence
 name|TransformType
@@ -264,7 +264,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bab87e10308
+DECL|struct|__anon29660efc0308
 block|{
 DECL|member|info
 name|ExpInfo
@@ -4562,9 +4562,9 @@ expr_stmt|;
 name|run
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dialog
 argument_list|)

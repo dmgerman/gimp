@@ -40878,7 +40878,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd2bd6c0103
+DECL|enum|__anon2c7601fd0103
 block|{
 DECL|enumerator|TOP_RIGHT
 name|TOP_RIGHT
@@ -40898,7 +40898,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd2bd6c0208
+DECL|struct|__anon2c7601fd0208
 block|{
 DECL|member|direction
 name|gint
@@ -41782,9 +41782,9 @@ expr_stmt|;
 name|run
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dlg
 argument_list|)

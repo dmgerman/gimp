@@ -134,7 +134,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc1484a0108
+DECL|struct|__anon29c88c6c0108
 block|{
 DECL|member|root
 name|gboolean
@@ -2278,9 +2278,9 @@ expr_stmt|;
 name|run
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dialog
 argument_list|)

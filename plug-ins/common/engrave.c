@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29db13100108
+DECL|struct|__anon2c08c8960108
 block|{
 DECL|member|height
 name|gint
@@ -868,9 +868,9 @@ expr_stmt|;
 name|run
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dlg
 argument_list|)
@@ -1636,7 +1636,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29db13100208
+DECL|struct|__anon2c08c8960208
 block|{
 DECL|member|x
 DECL|member|y

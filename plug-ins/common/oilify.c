@@ -103,7 +103,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad8824e0108
+DECL|struct|__anon29c7aaf00108
 block|{
 DECL|member|mask_size
 name|gdouble
@@ -2247,9 +2247,9 @@ expr_stmt|;
 name|run
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dlg
 argument_list|)

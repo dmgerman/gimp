@@ -214,7 +214,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291eebec0108
+DECL|struct|__anon28dbaa720108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -241,7 +241,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon291eebec0203
+DECL|enum|__anon28dbaa720203
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -364,7 +364,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon291eebec0303
+DECL|enum|__anon28dbaa720303
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -503,7 +503,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon291eebec0403
+DECL|enum|__anon28dbaa720403
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -602,7 +602,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon291eebec0503
+DECL|enum|__anon28dbaa720503
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -694,7 +694,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291eebec0608
+DECL|struct|__anon28dbaa720608
 block|{
 DECL|member|function
 name|gint
@@ -767,7 +767,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291eebec0708
+DECL|struct|__anon28dbaa720708
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1538,7 +1538,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291eebec0808
+DECL|struct|__anon28dbaa720808
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -8703,9 +8703,9 @@ expr_stmt|;
 name|run
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dlg
 argument_list|)
@@ -11287,9 +11287,9 @@ argument_list|(
 name|dlg
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dlg
 argument_list|)
@@ -12772,9 +12772,9 @@ expr_stmt|;
 name|overwrite
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dlg
 argument_list|)

@@ -163,7 +163,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2959b7ea0108
+DECL|struct|__anon2c5e93490108
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -4119,9 +4119,9 @@ expr_stmt|;
 name|run
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dialog
 argument_list|)

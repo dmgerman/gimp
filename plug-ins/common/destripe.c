@@ -347,7 +347,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288885ed0108
+DECL|struct|__anon273cf8b60108
 block|{
 DECL|member|histogram
 name|gboolean
@@ -2647,9 +2647,9 @@ expr_stmt|;
 name|run
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dialog
 argument_list|)

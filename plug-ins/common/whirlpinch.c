@@ -144,7 +144,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad65aa20108
+DECL|struct|__anon275d34a00108
 block|{
 DECL|member|whirl
 name|gdouble
@@ -167,7 +167,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad65aa20208
+DECL|struct|__anon275d34a00208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -3102,9 +3102,9 @@ expr_stmt|;
 name|run
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dialog
 argument_list|)

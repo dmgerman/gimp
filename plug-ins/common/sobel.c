@@ -64,7 +64,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2e047e0108
+DECL|struct|__anon2bb9e31c0108
 block|{
 DECL|member|horizontal
 name|gint
@@ -947,9 +947,9 @@ expr_stmt|;
 name|run
 operator|=
 operator|(
-name|gtk_dialog_run
+name|gimp_dialog_run
 argument_list|(
-name|GTK_DIALOG
+name|GIMP_DIALOG
 argument_list|(
 name|dlg
 argument_list|)
