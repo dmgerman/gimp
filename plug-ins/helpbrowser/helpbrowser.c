@@ -142,7 +142,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28841dec0103
+DECL|enum|__anon28c7a5ec0103
 block|{
 DECL|enumerator|BUTTON_HOME
 name|BUTTON_HOME
@@ -162,7 +162,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28841dec0208
+DECL|struct|__anon28c7a5ec0208
 block|{
 DECL|member|title
 specifier|const
@@ -1884,6 +1884,16 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|html_stream_close
+argument_list|(
+name|stream
+argument_list|)
+expr_stmt|;
+name|g_io_channel_unref
+argument_list|(
+name|io
+argument_list|)
+expr_stmt|;
 return|return
 name|FALSE
 return|;
@@ -3305,7 +3315,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"locale"
 block|,
-literal|"Langusge to use"
+literal|"Language to use"
 block|}
 block|,
 block|{
