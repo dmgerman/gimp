@@ -180,6 +180,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"color-history.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"dialogs.h"
 end_include
 
@@ -1509,6 +1515,9 @@ condition|)
 name|splash_destroy
 argument_list|()
 expr_stmt|;
+name|color_history_restore
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|gui_config
@@ -1657,6 +1666,9 @@ name|session_save
 argument_list|(
 name|gimp
 argument_list|)
+expr_stmt|;
+name|color_history_save
+argument_list|()
 expr_stmt|;
 if|if
 condition|(
