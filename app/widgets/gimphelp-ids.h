@@ -433,11 +433,11 @@ value|"gimp-view-show-guides"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_VIEW_SNAP_TO_GUIDES
+DECL|macro|GIMP_HELP_VIEW_SHOW_GRID
 define|#
 directive|define
-name|GIMP_HELP_VIEW_SNAP_TO_GUIDES
-value|"gimp-view-snap-to-guides"
+name|GIMP_HELP_VIEW_SHOW_GRID
+value|"gimp-view-show-grid"
 end_define
 
 begin_define
@@ -449,11 +449,11 @@ value|"gimp-view-show-sample-points"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_VIEW_SHOW_GRID
+DECL|macro|GIMP_HELP_VIEW_SNAP_TO_GUIDES
 define|#
 directive|define
-name|GIMP_HELP_VIEW_SHOW_GRID
-value|"gimp-view-show-grid"
+name|GIMP_HELP_VIEW_SNAP_TO_GUIDES
+value|"gimp-view-snap-to-guides"
 end_define
 
 begin_define

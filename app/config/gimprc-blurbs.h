@@ -784,21 +784,21 @@ value|N_("When enabled, the guides are visible by default. This can also be " \ 
 end_define
 
 begin_define
-DECL|macro|SHOW_SAMPLE_POINTS_BLURB
-define|#
-directive|define
-name|SHOW_SAMPLE_POINTS_BLURB
-define|\
-value|N_("When enabled, the sample points are visible by default. This can also be " \    "toggled with the \"View->Show Sample Points\" command.")
-end_define
-
-begin_define
 DECL|macro|SHOW_GRID_BLURB
 define|#
 directive|define
 name|SHOW_GRID_BLURB
 define|\
 value|N_("When enabled, the grid is visible by default. This can also be toggled " \    "with the \"View->Show Grid\" command.")
+end_define
+
+begin_define
+DECL|macro|SHOW_SAMPLE_POINTS_BLURB
+define|#
+directive|define
+name|SHOW_SAMPLE_POINTS_BLURB
+define|\
+value|N_("When enabled, the sample points are visible by default. This can also be " \    "toggled with the \"View->Show Sample Points\" command.")
 end_define
 
 begin_define

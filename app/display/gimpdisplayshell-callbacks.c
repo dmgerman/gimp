@@ -801,15 +801,6 @@ operator|->
 name|show_guides
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_set_show_sample_points
-argument_list|(
-name|shell
-argument_list|,
-name|options
-operator|->
-name|show_sample_points
-argument_list|)
-expr_stmt|;
 name|gimp_display_shell_set_show_grid
 argument_list|(
 name|shell
@@ -817,6 +808,15 @@ argument_list|,
 name|options
 operator|->
 name|show_grid
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_set_show_sample_points
+argument_list|(
+name|shell
+argument_list|,
+name|options
+operator|->
+name|show_sample_points
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_set_padding
@@ -1582,12 +1582,6 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
-comment|/* draw the sample points */
-name|gimp_display_shell_draw_sample_points
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
 comment|/* draw the grid */
 name|gimp_display_shell_draw_grid
 argument_list|(
@@ -1597,6 +1591,12 @@ operator|&
 name|eevent
 operator|->
 name|area
+argument_list|)
+expr_stmt|;
+comment|/* draw the sample points */
+name|gimp_display_shell_draw_sample_points
+argument_list|(
+name|shell
 argument_list|)
 expr_stmt|;
 comment|/* and the cursor (if we have a software cursor) */

@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4346ee0103
+DECL|enum|__anon296f24200103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
