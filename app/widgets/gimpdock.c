@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab134d60103
+DECL|enum|__anon276e55540103
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -2131,9 +2131,24 @@ condition|)
 block|{
 name|GimpDockable
 modifier|*
-name|src_dockable
+name|dockable
 decl_stmt|;
-name|src_dockable
+if|if
+condition|(
+name|GIMP_IS_DOCKABLE
+argument_list|(
+name|source
+argument_list|)
+condition|)
+name|dockable
+operator|=
+name|GIMP_DOCKABLE
+argument_list|(
+name|source
+argument_list|)
+expr_stmt|;
+else|else
+name|dockable
 operator|=
 operator|(
 name|GimpDockable
@@ -2151,7 +2166,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|src_dockable
+name|dockable
 condition|)
 block|{
 name|GtkWidget
@@ -2169,7 +2184,7 @@ name|g_object_set_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|src_dockable
+name|dockable
 argument_list|)
 argument_list|,
 literal|"gimp-dock-drag-widget"
@@ -2228,7 +2243,7 @@ expr_stmt|;
 comment|/*  if dropping to the same dock, take care that we don't try            *  to reorder the *only* dockable in the dock            */
 if|if
 condition|(
-name|src_dockable
+name|dockable
 operator|->
 name|dockbook
 operator|->
@@ -2258,7 +2273,7 @@ name|gtk_container_get_children
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|src_dockable
+name|dockable
 operator|->
 name|dockbook
 argument_list|)
@@ -2293,16 +2308,16 @@ comment|/* successfully do nothing */
 block|}
 name|g_object_ref
 argument_list|(
-name|src_dockable
+name|dockable
 argument_list|)
 expr_stmt|;
 name|gimp_dockbook_remove
 argument_list|(
-name|src_dockable
+name|dockable
 operator|->
 name|dockbook
 argument_list|,
-name|src_dockable
+name|dockable
 argument_list|)
 expr_stmt|;
 name|dockbook
@@ -2335,7 +2350,7 @@ argument_list|(
 name|dockbook
 argument_list|)
 argument_list|,
-name|src_dockable
+name|dockable
 argument_list|,
 operator|-
 literal|1
@@ -2343,7 +2358,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|src_dockable
+name|dockable
 argument_list|)
 expr_stmt|;
 return|return
@@ -2358,7 +2373,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  static gboolean gimp_dock_separator_button_press (GtkWidget      *widget, 				  GdkEventButton *bevent, 				  gpointer        data) {   if (bevent->type == GDK_BUTTON_PRESS)     {       if (bevent->button == 1)         {           gtk_grab_add (widget);         }     }    return TRUE; }  static gboolean gimp_dock_separator_button_release (GtkWidget      *widget, 				    GdkEventButton *bevent, 				    gpointer        data) {   if (bevent->button == 1)     {       gtk_grab_remove (widget);     }    return TRUE; }  static void gimp_dock_tab_drag_begin (GtkWidget      *widget, 			  GdkDragContext *context, 			  gpointer        data) {   GimpDockable *dockable;   GtkWidget    *window;   GtkWidget    *frame;   GtkWidget    *label;    dockable = GIMP_DOCKABLE (data);    window = gtk_window_new (GTK_WINDOW_POPUP);    frame = gtk_frame_new (NULL);   gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_OUT);   gtk_container_add (GTK_CONTAINER (window), frame);   gtk_widget_show (frame);    label = gtk_label_new (dockable->name);   gtk_misc_set_padding (GTK_MISC (label), 10, 5);   gtk_container_add (GTK_CONTAINER (frame), label);   gtk_widget_show (label);    gtk_widget_show (window);    g_object_set_data_full (G_OBJECT (dockable), "gimp-dock-drag-widget", 			  window, 			  (GDestroyNotify) gtk_widget_destroy);    gtk_drag_set_icon_widget (context, window, 			    -8, -8); }  static void gimp_dock_tab_drag_end (GtkWidget      *widget, 			GdkDragContext *context, 			gpointer        data) {   GimpDockable *dockable;   GtkWidget    *drag_widget;    dockable = GIMP_DOCKABLE (data);    drag_widget = g_object_get_data (G_OBJECT (dockable), 				     "gimp-dock-drag-widget");    if (drag_widget)     {       GtkWidget *dock;        g_object_set_data (G_OBJECT (dockable), "gimp-dock-drag-widget", NULL);        dock = gimp_dock_new ();        gtk_window_set_position (GTK_WINDOW (dock), GTK_WIN_POS_MOUSE);        g_object_ref (dockable);        gimp_dock_remove (dockable->dock, dockable);       gimp_dock_add (GIMP_DOCK (dock), dockable, -1, -1);        g_object_unref (dockable);        gtk_widget_show (dock);     } } */
+comment|/*  static gboolean gimp_dock_separator_button_press (GtkWidget      *widget, 				  GdkEventButton *bevent, 				  gpointer        data) {   if (bevent->type == GDK_BUTTON_PRESS)     {       if (bevent->button == 1)         {           gtk_grab_add (widget);         }     }    return TRUE; }  static gboolean gimp_dock_separator_button_release (GtkWidget      *widget, 				    GdkEventButton *bevent, 				    gpointer        data) {   if (bevent->button == 1)     {       gtk_grab_remove (widget);     }    return TRUE; }  static void gimp_dock_tab_drag_begin (GtkWidget      *widget, 			  GdkDragContext *context, 			  gpointer        data) {   GimpDockable *dockable;   GtkWidget    *window;   GtkWidget    *frame;   GtkWidget    *label;    dockable = GIMP_DOCKABLE (data);    window = gtk_window_new (GTK_WINDOW_POPUP);    frame = gtk_frame_new (NULL);   gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_OUT);   gtk_container_add (GTK_CONTAINER (window), frame);   gtk_widget_show (frame);    label = gtk_label_new (dockable->name);   gtk_misc_set_padding (GTK_MISC (label), 10, 5);   gtk_container_add (GTK_CONTAINER (frame), label);   gtk_widget_show (label);    gtk_widget_show (window);    g_object_set_data_full (G_OBJECT (dockable), "gimp-dock-drag-widget", 			  window, 			  (GDestroyNotify) gtk_widget_destroy);    gtk_drag_set_icon_widget (context, window, 			    -8, -8); }  static void gimp_dock_tab_drag_end (GtkWidget      *widget, 			GdkDragContext *context, 			gpointer        data) {   GimpDockable *dockable;   GtkWidget    *drag_widget;    dockable = GIMP_DOCKABLE (data);    drag_widget = g_object_get_data (G_OBJECT (dockable),                                    "gimp-dock-drag-widget");    if (drag_widget)     {       GtkWidget *dock;        g_object_set_data (G_OBJECT (dockable), "gimp-dock-drag-widget", NULL);        dock = gimp_dock_new ();        gtk_window_set_position (GTK_WINDOW (dock), GTK_WIN_POS_MOUSE);        g_object_ref (dockable);        gimp_dock_remove (dockable->dock, dockable);       gimp_dock_add (GIMP_DOCK (dock), dockable, -1, -1);        g_object_unref (dockable);        gtk_widget_show (dock);     } } */
 end_comment
 
 end_unit
