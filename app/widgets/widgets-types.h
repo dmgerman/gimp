@@ -529,6 +529,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpPatternFactoryView
+typedef|typedef
+name|struct
+name|_GimpPatternFactoryView
+name|GimpPatternFactoryView
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpDock
 typedef|typedef
 name|struct

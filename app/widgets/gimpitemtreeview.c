@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c75cf290103
+DECL|enum|__anon2a2d404f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -171,7 +171,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c75cf290203
+DECL|enum|__anon2a2d404f0203
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -1443,7 +1443,7 @@ argument_list|(
 name|_
 argument_list|(
 literal|"%s\n"
-literal|"%s  use defaults"
+literal|"%s  %s Dialog"
 argument_list|)
 argument_list|,
 name|view_class
@@ -1452,6 +1452,10 @@ name|new_desc
 argument_list|,
 name|gimp_get_mod_name_shift
 argument_list|()
+argument_list|,
+name|view_class
+operator|->
+name|new_desc
 argument_list|)
 expr_stmt|;
 name|view
@@ -4081,7 +4085,7 @@ name|gimage
 argument_list|,
 name|NULL
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|GTK_WIDGET
 argument_list|(
@@ -4120,7 +4124,7 @@ name|gimage
 argument_list|,
 name|NULL
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 name|GTK_WIDGET
 argument_list|(

@@ -416,7 +416,7 @@ name|g_utf8_collate
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|g_free
 argument_list|,
 name|g_free
 argument_list|)
@@ -489,6 +489,10 @@ name|gchar
 modifier|*
 name|help_domain
 decl_stmt|;
+name|gchar
+modifier|*
+name|key
+decl_stmt|;
 name|progname
 operator|=
 name|plug_in_proc_def_get_progname
@@ -549,10 +553,10 @@ name|help_domain
 operator|=
 name|help_domain
 expr_stmt|;
-name|g_tree_insert
+name|key
+operator|=
+name|gimp_strip_uline
 argument_list|(
-name|menu_entries
-argument_list|,
 name|dgettext
 argument_list|(
 name|locale_domain
@@ -561,6 +565,13 @@ name|proc_def
 operator|->
 name|menu_path
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_tree_insert
+argument_list|(
+name|menu_entries
+argument_list|,
+name|key
 argument_list|,
 name|menu_entry
 argument_list|)

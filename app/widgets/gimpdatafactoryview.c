@@ -779,8 +779,6 @@ block|}
 if|if
 condition|(
 name|edit_func
-operator|!=
-name|NULL
 condition|)
 block|{
 name|factory_view
@@ -816,6 +814,15 @@ name|editor
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|factory_view
+operator|->
+name|factory
+operator|->
+name|data_new_func
+condition|)
+block|{
 name|factory_view
 operator|->
 name|new_button
@@ -848,6 +855,7 @@ argument_list|,
 name|editor
 argument_list|)
 expr_stmt|;
+block|}
 name|factory_view
 operator|->
 name|duplicate_button

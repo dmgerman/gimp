@@ -255,7 +255,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5334f30103
+DECL|enum|__anon2c418c260103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -2470,7 +2470,7 @@ argument_list|(
 name|pattern_loader_entries
 argument_list|)
 argument_list|,
-name|gimp_pattern_new
+name|NULL
 argument_list|,
 name|gimp_pattern_get_standard
 argument_list|)
