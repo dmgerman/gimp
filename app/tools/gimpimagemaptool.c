@@ -2522,12 +2522,10 @@ argument_list|)
 operator|->
 name|settings_name
 argument_list|,
-name|G_DIR_SEPARATOR_S
-argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_file_chooser_set_filename
+name|gtk_file_chooser_set_current_folder
 argument_list|(
 name|chooser
 argument_list|,
