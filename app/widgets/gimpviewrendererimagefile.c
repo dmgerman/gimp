@@ -15,10 +15,6 @@ directive|include
 file|<string.h>
 end_include
 
-begin_comment
-comment|/* #define ENABLE_FILE_SYSTEM_ICONS 1 */
-end_comment
-
 begin_include
 include|#
 directive|include
@@ -268,12 +264,17 @@ modifier|*
 name|renderer
 parameter_list|)
 block|{
+ifdef|#
+directive|ifdef
+name|ENABLE_FILE_SYSTEM_ICONS
 name|renderer
 operator|->
 name|file_system
 operator|=
 name|NULL
 expr_stmt|;
+endif|#
+directive|endif
 block|}
 end_function
 
