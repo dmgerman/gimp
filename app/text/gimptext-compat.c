@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpchannel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontext.h"
 end_include
 
@@ -67,12 +73,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpimage-mask.h"
 end_include
 
 begin_include
@@ -381,16 +381,24 @@ comment|/*  If there is a selection mask clear it--    *  this might not always 
 if|if
 condition|(
 operator|!
-name|gimp_image_mask_is_empty
+name|gimp_channel_is_empty
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
+argument_list|)
 condition|)
-name|gimp_image_mask_clear
+name|gimp_channel_clear
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|,
 name|NULL
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  If the drawable is NULL, create a new layer  */
