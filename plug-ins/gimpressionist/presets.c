@@ -8,12 +8,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<ctype.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdio.h>
 end_include
 
@@ -56,6 +50,12 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimp.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpui.h>
 end_include
 
 begin_include
@@ -368,7 +368,7 @@ parameter_list|)
 block|{
 name|c
 operator|=
-name|tolower
+name|g_ascii_tolower
 argument_list|(
 name|c
 argument_list|)
