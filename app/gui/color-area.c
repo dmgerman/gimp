@@ -1263,6 +1263,10 @@ argument_list|,
 name|GDK_EXPOSURE_MASK
 operator||
 name|GDK_BUTTON_PRESS_MASK
+operator||
+name|GDK_ENTER_NOTIFY_MASK
+operator||
+name|GDK_LEAVE_NOTIFY_MASK
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect

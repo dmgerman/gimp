@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<stdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpsignal.h"
 end_include
 
@@ -21,7 +27,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4e71550103
+DECL|enum|__anon2bce1c410103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -589,9 +595,11 @@ name|val
 argument_list|)
 condition|)
 block|{
-name|printf
+name|fprintf
 argument_list|(
-literal|"can't find val\n"
+name|stderr
+argument_list|,
+literal|"gimp_list_remove: can't find val\n"
 argument_list|)
 expr_stmt|;
 return|return
