@@ -75,7 +75,7 @@ value|(r * 0.30 + g * 0.59 + b * 0.11)
 end_define
 
 begin_typedef
-DECL|struct|__anon2af3aa380108
+DECL|struct|__anon2a21cd2a0108
 typedef|typedef
 struct|struct
 block|{
@@ -94,7 +94,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2af3aa380208
+DECL|struct|__anon2a21cd2a0208
 typedef|typedef
 struct|struct
 block|{
@@ -475,7 +475,7 @@ literal|"plug_in_engrave"
 argument_list|,
 literal|"Engrave the contents of the specified drawable"
 argument_list|,
-literal|"More help"
+literal|"Creates a black-and-white 'engraved' version of an image as seen in old illustrations"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis, Eiichi Takamori, Torsten Martinsen"
 argument_list|,
@@ -485,7 +485,7 @@ literal|"1995,1996,1997"
 argument_list|,
 literal|"<Image>/Filters/Distorts/Engrave"
 argument_list|,
-literal|"RGB, GRAY"
+literal|"RGBA, GRAYA"
 argument_list|,
 name|PROC_PLUG_IN
 argument_list|,
@@ -2030,7 +2030,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2af3aa380308
+DECL|struct|__anon2a21cd2a0308
 typedef|typedef
 struct|struct
 block|{
