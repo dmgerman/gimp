@@ -2114,7 +2114,7 @@ decl_stmt|;
 name|gint32
 name|num_points
 decl_stmt|;
-name|guint8
+name|gint8
 modifier|*
 name|control_pts
 decl_stmt|;
@@ -2217,7 +2217,7 @@ expr_stmt|;
 name|control_pts
 operator|=
 operator|(
-name|guint8
+name|gint8
 operator|*
 operator|)
 name|args
