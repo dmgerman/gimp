@@ -1215,6 +1215,16 @@ argument_list|)
 expr_stmt|;
 name|DESTROY
 argument_list|(
+literal|"/Select/By Color"
+argument_list|)
+expr_stmt|;
+name|DESTROY
+argument_list|(
+literal|"/Select/Toggle QuickMask"
+argument_list|)
+expr_stmt|;
+name|DESTROY
+argument_list|(
 literal|"/Tools/Toolbox"
 argument_list|)
 expr_stmt|;

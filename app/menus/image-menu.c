@@ -6739,6 +6739,10 @@ operator|&&
 name|sel
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|display_items
+condition|)
 name|SET_SENSITIVE
 argument_list|(
 literal|"/Select/By Color"
@@ -6791,6 +6795,10 @@ operator|&&
 name|sel
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|display_items
+condition|)
 name|SET_SENSITIVE
 argument_list|(
 literal|"/Select/Toggle QuickMask"

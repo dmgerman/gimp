@@ -3170,17 +3170,6 @@ literal|"image-resolution"
 block|}
 block|,
 block|{
-name|GIMP_UNDO_IMAGE_QMASK
-block|,
-name|N_
-argument_list|(
-literal|"QuickMask"
-argument_list|)
-block|,
-literal|"image-qmask"
-block|}
-block|,
-block|{
 name|GIMP_UNDO_IMAGE_GRID
 block|,
 name|N_

@@ -5271,6 +5271,25 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
+if|if
+condition|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|widget
+argument_list|)
+operator|->
+name|active
+operator|!=
+name|gimp_image_get_qmask_state
+argument_list|(
+name|shell
+operator|->
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+condition|)
+block|{
 name|gimp_image_set_qmask_state
 argument_list|(
 name|shell
@@ -5296,6 +5315,7 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

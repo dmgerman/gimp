@@ -16,6 +16,14 @@ directive|define
 name|__GIMP_IMAGE_QMASK_H__
 end_define
 
+begin_define
+DECL|macro|GIMP_IMAGE_QMASK_NAME
+define|#
+directive|define
+name|GIMP_IMAGE_QMASK_NAME
+value|"Qmask"
+end_define
+
 begin_function_decl
 name|void
 name|gimp_image_set_qmask_state

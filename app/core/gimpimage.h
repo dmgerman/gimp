@@ -387,6 +387,10 @@ DECL|member|channel_visible_handler
 name|GQuark
 name|channel_visible_handler
 decl_stmt|;
+DECL|member|channel_name_changed_handler
+name|GQuark
+name|channel_name_changed_handler
+decl_stmt|;
 DECL|member|active_layer
 name|GimpLayer
 modifier|*
