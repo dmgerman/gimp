@@ -91,7 +91,7 @@ DECL|macro|PREVIEW_MASK
 define|#
 directive|define
 name|PREVIEW_MASK
-value|(GDK_EXPOSURE_MASK       | \ 		       GDK_POINTER_MOTION_MASK | \                        GDK_BUTTON_PRESS_MASK   | \ 		       GDK_BUTTON_RELEASE_MASK | \ 		       GDK_BUTTON_MOTION_MASK  | \ 		       GDK_KEY_PRESS_MASK      | \ 		       GDK_KEY_RELEASE_MASK)
+value|(GDK_EXPOSURE_MASK       | \                        GDK_POINTER_MOTION_MASK | \                        GDK_BUTTON_PRESS_MASK   | \                        GDK_BUTTON_RELEASE_MASK | \                        GDK_BUTTON_MOTION_MASK  | \                        GDK_KEY_PRESS_MASK      | \                        GDK_KEY_RELEASE_MASK)
 end_define
 
 begin_decl_stmt
@@ -180,22 +180,6 @@ name|gint
 name|img_bpp
 decl_stmt|;
 end_decl_stmt
-
-begin_function_decl
-specifier|static
-name|gboolean
-name|gfig_preview_expose
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GdkEvent
-modifier|*
-name|event
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 specifier|static
@@ -1624,6 +1608,57 @@ end_function
 
 begin_function
 specifier|static
+name|void
+DECL|function|draw_background ()
+name|draw_background
+parameter_list|()
+block|{
+if|if
+condition|(
+name|back_pixbuf
+condition|)
+name|gdk_draw_pixbuf
+argument_list|(
+name|gfig_preview
+operator|->
+name|window
+argument_list|,
+name|gfig_preview
+operator|->
+name|style
+operator|->
+name|fg_gc
+index|[
+name|GTK_STATE_NORMAL
+index|]
+argument_list|,
+name|back_pixbuf
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+name|GDK_RGB_DITHER_NONE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 name|gboolean
 DECL|function|gfig_preview_expose (GtkWidget * widget,GdkEvent * event)
 name|gfig_preview_expose
@@ -1637,6 +1672,22 @@ modifier|*
 name|event
 parameter_list|)
 block|{
+name|gdk_window_clear
+argument_list|(
+name|gfig_preview
+operator|->
+name|window
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gfig_context
+operator|->
+name|show_background
+condition|)
+name|draw_background
+argument_list|()
+expr_stmt|;
 name|draw_grid
 argument_list|()
 expr_stmt|;

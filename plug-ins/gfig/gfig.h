@@ -109,6 +109,14 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
+name|GdkPixbuf
+modifier|*
+name|back_pixbuf
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
 name|GtkWidget
 modifier|*
 name|gfig_preview
@@ -141,7 +149,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dd8d3c0103
+DECL|enum|__anon2b9488b20103
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -162,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dd8d3c0208
+DECL|struct|__anon2b9488b20208
 block|{
 DECL|member|gridspacing
 name|gint
@@ -197,7 +205,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dd8d3c0303
+DECL|enum|__anon2b9488b20303
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -221,7 +229,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dd8d3c0403
+DECL|enum|__anon2b9488b20403
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -239,7 +247,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dd8d3c0503
+DECL|enum|__anon2b9488b20503
 block|{
 DECL|enumerator|FILL_FOREGROUND
 name|FILL_FOREGROUND
@@ -260,7 +268,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dd8d3c0603
+DECL|enum|__anon2b9488b20603
 block|{
 DECL|enumerator|FILL_EACH
 name|FILL_EACH
@@ -278,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dd8d3c0708
+DECL|struct|__anon2b9488b20708
 block|{
 DECL|member|type
 name|SelectionType
@@ -329,7 +337,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dd8d3c0803
+DECL|enum|__anon2b9488b20803
 block|{
 DECL|enumerator|ORIGINAL_LAYER
 name|ORIGINAL_LAYER
@@ -350,7 +358,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dd8d3c0903
+DECL|enum|__anon2b9488b20903
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -377,7 +385,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dd8d3c0a03
+DECL|enum|__anon2b9488b20a03
 block|{
 DECL|enumerator|PAINT_BRUSH_TYPE
 name|PAINT_BRUSH_TYPE
@@ -398,7 +406,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dd8d3c0b03
+DECL|enum|__anon2b9488b20b03
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -422,7 +430,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dd8d3c0c08
+DECL|struct|__anon2b9488b20c08
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -559,6 +567,29 @@ block|}
 name|GFigObj
 typedef|;
 end_typedef
+
+begin_typedef
+typedef|typedef
+struct|struct
+DECL|struct|__anon2b9488b20d08
+block|{
+DECL|member|show_background
+name|gboolean
+name|show_background
+decl_stmt|;
+DECL|typedef|GFigContext
+block|}
+name|GFigContext
+typedef|;
+end_typedef
+
+begin_decl_stmt
+DECL|variable|gfig_context
+name|GFigContext
+modifier|*
+name|gfig_context
+decl_stmt|;
+end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
@@ -834,6 +865,21 @@ name|x1
 parameter_list|,
 name|gint
 name|y1
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gfig_preview_expose
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GdkEvent
+modifier|*
+name|event
 parameter_list|)
 function_decl|;
 end_function_decl
