@@ -5640,7 +5640,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
-literal|"Preview options"
+name|_
+argument_list|(
+literal|"Preview Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
