@@ -385,7 +385,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4271070108
+DECL|struct|__anon29c9fcd70108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -2663,7 +2663,7 @@ name|documents
 argument_list|,
 name|context
 argument_list|,
-literal|32
+literal|48
 argument_list|,
 literal|5
 argument_list|,
