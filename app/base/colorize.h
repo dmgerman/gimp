@@ -25,13 +25,13 @@ DECL|member|hue
 name|gdouble
 name|hue
 decl_stmt|;
-DECL|member|lightness
-name|gdouble
-name|lightness
-decl_stmt|;
 DECL|member|saturation
 name|gdouble
 name|saturation
+decl_stmt|;
+DECL|member|lightness
+name|gdouble
+name|lightness
 decl_stmt|;
 DECL|member|lum_red_lookup
 name|gint
