@@ -480,7 +480,7 @@ literal|0.0
 argument_list|,
 literal|1.0
 argument_list|,
-literal|100.0
+literal|1000.0
 argument_list|,
 literal|0.1
 argument_list|,
