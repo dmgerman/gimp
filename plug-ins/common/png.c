@@ -102,7 +102,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a19ace30108
+DECL|struct|__anon29b5ed400108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -3870,6 +3870,8 @@ decl_stmt|;
 name|gdouble
 name|gamma
 init|=
+literal|1.0
+operator|/
 name|DEFAULT_GAMMA
 decl_stmt|;
 name|parasite
