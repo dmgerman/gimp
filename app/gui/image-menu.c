@@ -192,6 +192,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"vectors-commands.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"view-commands.h"
 end_include
 
@@ -604,7 +610,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Edit/Undo"
+literal|"/Edit/_Undo"
 argument_list|)
 block|,
 literal|"<control>Z"
@@ -629,7 +635,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Edit/Redo"
+literal|"/Edit/_Redo"
 argument_list|)
 block|,
 literal|"<control>R"
@@ -954,7 +960,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Edit/Fill with Pattern"
+literal|"/Edit/Fill with P_attern"
 argument_list|)
 block|,
 name|NULL
@@ -982,7 +988,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Edit/_Stroke"
+literal|"/Edit/_Stroke Selection"
 argument_list|)
 block|,
 name|NULL
@@ -994,6 +1000,31 @@ block|,
 literal|"<StockItem>"
 block|,
 name|GIMP_STOCK_SELECTION_STROKE
+block|}
+block|,
+name|NULL
+block|,
+literal|"edit/stroke.html"
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Edit/St_roke Active Path"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|vectors_stroke_vectors_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_PATH_STROKE
 block|}
 block|,
 name|NULL
@@ -5506,6 +5537,12 @@ name|layer
 init|=
 name|NULL
 decl_stmt|;
+name|GimpVectors
+modifier|*
+name|vectors
+init|=
+name|NULL
+decl_stmt|;
 name|GimpImageType
 name|drawable_type
 init|=
@@ -5773,6 +5810,13 @@ name|layers
 argument_list|)
 expr_stmt|;
 block|}
+name|vectors
+operator|=
+name|gimp_image_get_active_vectors
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 name|fullscreen
 operator|=
 name|gimp_display_shell_get_fullscreen
@@ -6016,7 +6060,7 @@ name|undo_name
 else|:
 name|_
 argument_list|(
-literal|"Undo"
+literal|"_Undo"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6030,7 +6074,7 @@ name|redo_name
 else|:
 name|_
 argument_list|(
-literal|"Redo"
+literal|"_Redo"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6148,11 +6192,27 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Edit/Stroke"
+literal|"/Edit/Fill with Pattern"
+argument_list|,
+name|lp
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Edit/Stroke Selection"
 argument_list|,
 name|lp
 operator|&&
 name|sel
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Edit/Stroke Active Path"
+argument_list|,
+name|lp
+operator|&&
+name|vectors
 argument_list|)
 expr_stmt|;
 comment|/*  Select  */
