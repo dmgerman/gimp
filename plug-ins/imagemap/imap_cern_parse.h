@@ -194,7 +194,7 @@ end_if
 begin_line
 line|#
 directive|line
-number|46
+number|45
 file|"imap_cern.y"
 end_line
 

@@ -402,7 +402,7 @@ end_if
 begin_line
 line|#
 directive|line
-number|49
+number|47
 file|"imap_csim.y"
 end_line
 
