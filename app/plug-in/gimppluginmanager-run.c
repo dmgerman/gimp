@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3ad5c90103
+DECL|enum|__anon279adbaa0103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -1606,6 +1606,9 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|TRUE
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 block|}
@@ -4165,7 +4168,7 @@ end_function
 begin_function
 name|Argument
 modifier|*
-DECL|function|plug_in_run (ProcRecord * proc_rec,Argument * args,int synchronous,int destroy_values)
+DECL|function|plug_in_run (ProcRecord * proc_rec,Argument * args,int synchronous,int destroy_values,int gdisp_ID)
 name|plug_in_run
 parameter_list|(
 name|ProcRecord
@@ -4181,6 +4184,9 @@ name|synchronous
 parameter_list|,
 name|int
 name|destroy_values
+parameter_list|,
+name|int
+name|gdisp_ID
 parameter_list|)
 block|{
 name|GPConfig
@@ -4350,6 +4356,12 @@ name|color_cube_shades
 index|[
 literal|3
 index|]
+expr_stmt|;
+name|config
+operator|.
+name|gdisp_ID
+operator|=
+name|gdisp_ID
 expr_stmt|;
 name|proc_run
 operator|.
@@ -4663,6 +4675,10 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|TRUE
+argument_list|,
+name|gdisplay
+operator|->
+name|ID
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -9161,6 +9177,12 @@ decl_stmt|;
 name|int
 name|i
 decl_stmt|;
+name|int
+name|gdisp_ID
+init|=
+operator|-
+literal|1
+decl_stmt|;
 comment|/* get the active gdisplay */
 name|gdisplay
 operator|=
@@ -9268,6 +9290,12 @@ condition|(
 name|gdisplay
 condition|)
 block|{
+name|gdisp_ID
+operator|=
+name|gdisplay
+operator|->
+name|ID
+expr_stmt|;
 comment|/* initialize the first 3 plug-in arguments  */
 name|args
 index|[
@@ -9380,6 +9408,12 @@ condition|(
 name|gdisplay
 condition|)
 block|{
+name|gdisp_ID
+operator|=
+name|gdisplay
+operator|->
+name|ID
+expr_stmt|;
 name|args
 index|[
 literal|1
@@ -9449,6 +9483,8 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|TRUE
+argument_list|,
+name|gdisp_ID
 argument_list|)
 expr_stmt|;
 if|if

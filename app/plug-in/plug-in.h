@@ -547,6 +547,9 @@ name|synchronous
 parameter_list|,
 name|int
 name|destroy_values
+parameter_list|,
+name|int
+name|gdisp_ID
 parameter_list|)
 function_decl|;
 end_function_decl

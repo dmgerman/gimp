@@ -315,6 +315,17 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|_gdisp_ID
+specifier|static
+name|gint
+name|_gdisp_ID
+init|=
+operator|-
+literal|1
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|progname
 specifier|static
 name|char
@@ -794,6 +805,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/* Snorfle - check for valid _gdisp_ID (!= -1) here and use it */
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_progress_init (char * message)
@@ -811,6 +826,7 @@ decl_stmt|;
 name|int
 name|nreturn_vals
 decl_stmt|;
+comment|/* g_print ("%d\n", _gdisp_ID); */
 name|return_vals
 operator|=
 name|gimp_run_procedure
@@ -3606,9 +3622,11 @@ name|sprintf
 argument_list|(
 name|filename
 argument_list|,
-literal|"%s/.gimp/gtkrc"
+literal|"%s/%s/gtkrc"
 argument_list|,
 name|home_dir
+argument_list|,
+name|GIMPDIR
 argument_list|)
 expr_stmt|;
 return|return
@@ -4424,6 +4442,12 @@ name|color_cube
 index|[
 literal|3
 index|]
+expr_stmt|;
+name|_gdisp_ID
+operator|=
+name|config
+operator|->
+name|gdisp_ID
 expr_stmt|;
 if|if
 condition|(
