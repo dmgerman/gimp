@@ -24,6 +24,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpcolor/gimpcolortypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimpcolor/gimprgb.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"base-types.h"
 end_include
 
@@ -698,6 +710,33 @@ decl_stmt|;
 name|gdouble
 name|inten
 decl_stmt|;
+name|gdouble
+name|out_light
+decl_stmt|;
+name|guchar
+name|lightness
+decl_stmt|;
+comment|/* Calculate lightness value */
+name|lightness
+operator|=
+name|GIMP_RGB_INTENSITY
+argument_list|(
+name|gray
+index|[
+literal|0
+index|]
+argument_list|,
+name|gray
+index|[
+literal|1
+index|]
+argument_list|,
+name|gray
+index|[
+literal|2
+index|]
+argument_list|)
+expr_stmt|;
 name|input
 operator|=
 name|levels_input_from_color
@@ -746,6 +785,7 @@ operator|<
 literal|0
 condition|)
 return|return;
+comment|/* Normalize input and lightness */
 name|inten
 operator|=
 operator|(
@@ -758,6 +798,26 @@ name|gdouble
 operator|)
 name|range
 expr_stmt|;
+name|out_light
+operator|=
+operator|(
+name|gdouble
+operator|)
+name|lightness
+operator|/
+operator|(
+name|gdouble
+operator|)
+name|range
+expr_stmt|;
+if|if
+condition|(
+name|out_light
+operator|<=
+literal|0
+condition|)
+return|return;
+comment|/* Map selected color to corresponding lightness */
 name|levels
 operator|->
 name|gamma
@@ -772,7 +832,7 @@ argument_list|)
 operator|/
 name|log
 argument_list|(
-literal|0.5
+name|out_light
 argument_list|)
 expr_stmt|;
 block|}
