@@ -142,7 +142,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|PaintOptions
+name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
@@ -169,7 +169,7 @@ name|GimpDrawable
 modifier|*
 name|src_drawable
 parameter_list|,
-name|PaintPressureOptions
+name|GimpPressureOptions
 modifier|*
 name|pressure_options
 parameter_list|,
@@ -581,7 +581,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_clone_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,PaintOptions * paint_options,GimpPaintCoreState paint_state)
+DECL|function|gimp_clone_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state)
 name|gimp_clone_paint
 parameter_list|(
 name|GimpPaintCore
@@ -592,7 +592,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|PaintOptions
+name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
@@ -616,7 +616,7 @@ name|GimpClone
 modifier|*
 name|clone
 decl_stmt|;
-name|CloneOptions
+name|GimpCloneOptions
 modifier|*
 name|options
 decl_stmt|;
@@ -634,7 +634,7 @@ expr_stmt|;
 name|options
 operator|=
 operator|(
-name|CloneOptions
+name|GimpCloneOptions
 operator|*
 operator|)
 name|paint_options
@@ -1006,7 +1006,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_clone_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpDrawable * src_drawable,PaintPressureOptions * pressure_options,CloneType type,gint offset_x,gint offset_y)
+DECL|function|gimp_clone_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpDrawable * src_drawable,GimpPressureOptions * pressure_options,CloneType type,gint offset_x,gint offset_y)
 name|gimp_clone_motion
 parameter_list|(
 name|GimpPaintCore
@@ -1021,7 +1021,7 @@ name|GimpDrawable
 modifier|*
 name|src_drawable
 parameter_list|,
-name|PaintPressureOptions
+name|GimpPressureOptions
 modifier|*
 name|pressure_options
 parameter_list|,
@@ -2368,6 +2368,83 @@ name|clone
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_comment
+comment|/*  paint options stuff  */
+end_comment
+
+begin_define
+DECL|macro|CLONE_DEFAULT_TYPE
+define|#
+directive|define
+name|CLONE_DEFAULT_TYPE
+value|IMAGE_CLONE
+end_define
+
+begin_define
+DECL|macro|CLONE_DEFAULT_ALIGNED
+define|#
+directive|define
+name|CLONE_DEFAULT_ALIGNED
+value|ALIGN_NO
+end_define
+
+begin_function
+name|GimpCloneOptions
+modifier|*
+DECL|function|gimp_clone_options_new (void)
+name|gimp_clone_options_new
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|GimpCloneOptions
+modifier|*
+name|options
+decl_stmt|;
+name|options
+operator|=
+name|g_new0
+argument_list|(
+name|GimpCloneOptions
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_paint_options_init
+argument_list|(
+operator|(
+name|GimpPaintOptions
+operator|*
+operator|)
+name|options
+argument_list|)
+expr_stmt|;
+name|options
+operator|->
+name|type
+operator|=
+name|options
+operator|->
+name|type_d
+operator|=
+name|CLONE_DEFAULT_TYPE
+expr_stmt|;
+name|options
+operator|->
+name|aligned
+operator|=
+name|options
+operator|->
+name|aligned_d
+operator|=
+name|CLONE_DEFAULT_ALIGNED
+expr_stmt|;
+return|return
+name|options
+return|;
 block|}
 end_function
 

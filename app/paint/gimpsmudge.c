@@ -118,7 +118,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|PaintOptions
+name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
@@ -157,7 +157,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|PaintPressureOptions
+name|GimpPressureOptions
 modifier|*
 name|pressure_options
 parameter_list|,
@@ -421,7 +421,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_smudge_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,PaintOptions * paint_options,GimpPaintCoreState paint_state)
+DECL|function|gimp_smudge_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state)
 name|gimp_smudge_paint
 parameter_list|(
 name|GimpPaintCore
@@ -432,7 +432,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|PaintOptions
+name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
@@ -440,7 +440,7 @@ name|GimpPaintCoreState
 name|paint_state
 parameter_list|)
 block|{
-name|SmudgeOptions
+name|GimpSmudgeOptions
 modifier|*
 name|options
 decl_stmt|;
@@ -454,7 +454,7 @@ decl_stmt|;
 name|options
 operator|=
 operator|(
-name|SmudgeOptions
+name|GimpSmudgeOptions
 operator|*
 operator|)
 name|paint_options
@@ -926,7 +926,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_smudge_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,PaintPressureOptions * pressure_options,gdouble smudge_rate)
+DECL|function|gimp_smudge_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPressureOptions * pressure_options,gdouble smudge_rate)
 name|gimp_smudge_motion
 parameter_list|(
 name|GimpPaintCore
@@ -937,7 +937,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|PaintPressureOptions
+name|GimpPressureOptions
 modifier|*
 name|pressure_options
 parameter_list|,
@@ -1661,6 +1661,65 @@ name|do_fill
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_comment
+comment|/*  paint options stuff  */
+end_comment
+
+begin_define
+DECL|macro|SMUDGE_DEFAULT_RATE
+define|#
+directive|define
+name|SMUDGE_DEFAULT_RATE
+value|50.0
+end_define
+
+begin_function
+name|GimpSmudgeOptions
+modifier|*
+DECL|function|gimp_smudge_options_new (void)
+name|gimp_smudge_options_new
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|GimpSmudgeOptions
+modifier|*
+name|options
+decl_stmt|;
+name|options
+operator|=
+name|g_new0
+argument_list|(
+name|GimpSmudgeOptions
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_paint_options_init
+argument_list|(
+operator|(
+name|GimpPaintOptions
+operator|*
+operator|)
+name|options
+argument_list|)
+expr_stmt|;
+name|options
+operator|->
+name|rate
+operator|=
+name|options
+operator|->
+name|rate_d
+operator|=
+name|SMUDGE_DEFAULT_RATE
+expr_stmt|;
+return|return
+name|options
+return|;
 block|}
 end_function
 

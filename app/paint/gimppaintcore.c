@@ -1224,7 +1224,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_paint_core_paint (GimpPaintCore * core,GimpDrawable * drawable,PaintOptions * paint_options,GimpPaintCoreState paint_state)
+DECL|function|gimp_paint_core_paint (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state)
 name|gimp_paint_core_paint
 parameter_list|(
 name|GimpPaintCore
@@ -1235,7 +1235,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|PaintOptions
+name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
@@ -2232,7 +2232,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_paint_core_interpolate (GimpPaintCore * core,GimpDrawable * drawable,PaintOptions * paint_options)
+DECL|function|gimp_paint_core_interpolate (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options)
 name|gimp_paint_core_interpolate
 parameter_list|(
 name|GimpPaintCore
@@ -2243,7 +2243,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|PaintOptions
+name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|)

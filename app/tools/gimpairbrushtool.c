@@ -71,30 +71,6 @@ name|MAX_PRESSURE
 value|0.075
 end_define
 
-begin_define
-DECL|macro|AIRBRUSH_DEFAULT_RATE
-define|#
-directive|define
-name|AIRBRUSH_DEFAULT_RATE
-value|0.0
-end_define
-
-begin_define
-DECL|macro|AIRBRUSH_DEFAULT_PRESSURE
-define|#
-directive|define
-name|AIRBRUSH_DEFAULT_PRESSURE
-value|10.0
-end_define
-
-begin_define
-DECL|macro|AIRBRUSH_DEFAULT_INCREMENTAL
-define|#
-directive|define
-name|AIRBRUSH_DEFAULT_INCREMENTAL
-value|FALSE
-end_define
-
 begin_function_decl
 specifier|static
 name|void
@@ -392,17 +368,9 @@ expr_stmt|;
 block|}
 end_function
 
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_endif
-unit|gboolean airbrush_non_gui_default (GimpDrawable *drawable, 			  gint          num_strokes, 			  gdouble      *stroke_array) {   GimpToolInfo    *tool_info;   AirbrushOptions *options;    gdouble pressure = AIRBRUSH_DEFAULT_PRESSURE;    tool_info = tool_manager_get_info_by_type (drawable->gimage->gimp,                                              GIMP_TYPE_AIRBRUSH_TOOL);    options = (AirbrushOptions *) tool_info->tool_options;    if (options)     pressure = options->pressure;    return airbrush_non_gui (drawable, pressure, num_strokes, stroke_array); }  gboolean airbrush_non_gui (GimpDrawable *drawable,     		  gdouble       pressure, 		  gint          num_strokes, 		  gdouble      *stroke_array) {   static GimpAirbrushTool *non_gui_airbrush = NULL;    GimpPaintTool *paint_tool;   gint           i;    if (! non_gui_airbrush)     {       non_gui_airbrush = g_object_new (GIMP_TYPE_AIRBRUSH_TOOL, NULL);     }    paint_tool = GIMP_PAINT_TOOL (non_gui_airbrush);    if (gimp_paint_tool_start (paint_tool, drawable,                              stroke_array[0],                              stroke_array[1]))     {       non_gui_rate        = AIRBRUSH_DEFAULT_RATE;       non_gui_pressure    = pressure;       non_gui_incremental = AIRBRUSH_DEFAULT_INCREMENTAL;        paint_tool->start_coords.x = paint_tool->last_coords.x = stroke_array[0];       paint_tool->start_coords.y = paint_tool->last_coords.y = stroke_array[1];        gimp_airbrush_tool_paint (paint_tool, drawable, MOTION_PAINT);        for (i = 1; i< num_strokes; i++) 	{ 	  paint_tool->cur_coords.x = stroke_array[i * 2 + 0]; 	  paint_tool->cur_coords.y = stroke_array[i * 2 + 1];  	  gimp_paint_tool_interpolate (paint_tool, drawable);  	  paint_tool->last_coords.x = paint_tool->cur_coords.x; 	  paint_tool->last_coords.y = paint_tool->cur_coords.y; 	}        gimp_paint_tool_finish (paint_tool, drawable);        return TRUE;     }    return FALSE; }
-endif|#
-directive|endif
-end_endif
+begin_comment
+comment|/*  tool options stuff  */
+end_comment
 
 begin_function
 specifier|static
@@ -416,7 +384,7 @@ modifier|*
 name|tool_info
 parameter_list|)
 block|{
-name|AirbrushOptions
+name|GimpAirbrushOptions
 modifier|*
 name|options
 decl_stmt|;
@@ -434,17 +402,13 @@ name|scale
 decl_stmt|;
 name|options
 operator|=
-name|g_new0
-argument_list|(
-name|AirbrushOptions
-argument_list|,
-literal|1
-argument_list|)
+name|gimp_airbrush_options_new
+argument_list|()
 expr_stmt|;
 name|paint_options_init
 argument_list|(
 operator|(
-name|PaintOptions
+name|GimpPaintOptions
 operator|*
 operator|)
 name|options
@@ -463,26 +427,6 @@ operator|->
 name|reset_func
 operator|=
 name|airbrush_options_reset
-expr_stmt|;
-name|options
-operator|->
-name|rate
-operator|=
-name|options
-operator|->
-name|rate_d
-operator|=
-literal|80.0
-expr_stmt|;
-name|options
-operator|->
-name|pressure
-operator|=
-name|options
-operator|->
-name|pressure_d
-operator|=
-name|AIRBRUSH_DEFAULT_PRESSURE
 expr_stmt|;
 comment|/*  the main vbox  */
 name|vbox
@@ -778,14 +722,14 @@ modifier|*
 name|tool_options
 parameter_list|)
 block|{
-name|AirbrushOptions
+name|GimpAirbrushOptions
 modifier|*
 name|options
 decl_stmt|;
 name|options
 operator|=
 operator|(
-name|AirbrushOptions
+name|GimpAirbrushOptions
 operator|*
 operator|)
 name|tool_options

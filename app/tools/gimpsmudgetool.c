@@ -57,14 +57,6 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
-begin_define
-DECL|macro|SMUDGE_DEFAULT_RATE
-define|#
-directive|define
-name|SMUDGE_DEFAULT_RATE
-value|50.0
-end_define
-
 begin_function_decl
 specifier|static
 name|void
@@ -362,18 +354,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_endif
-unit|static GimpSmudgeTool *non_gui_smudge = NULL;  gboolean gimp_smudge_tool_non_gui_default (GimpDrawable *drawable, 				  gint          num_strokes, 				  gdouble      *stroke_array) {   GimpToolInfo  *tool_info;   SmudgeOptions *options;   gdouble        rate = SMUDGE_DEFAULT_RATE;    tool_info = tool_manager_get_info_by_type (drawable->gimage->gimp,                                              GIMP_TYPE_SMUDGE_TOOL);    options = (SmudgeOptions *) tool_info->tool_options;    if (options)     rate = options->rate;    return gimp_smudge_tool_non_gui (drawable, rate, num_strokes, stroke_array); }  gboolean gimp_smudge_tool_non_gui (GimpDrawable *drawable, 			  gdouble       rate, 			  gint          num_strokes, 			  gdouble      *stroke_array) {   GimpPaintTool *paint_tool;   gint           i;    if (! non_gui_smudge)     {       non_gui_smudge = g_object_new (GIMP_TYPE_SMUDGE_TOOL, NULL);     }    paint_tool = GIMP_PAINT_TOOL (non_gui_smudge);    if (gimp_paint_tool_start (paint_tool, drawable, 			    stroke_array[0], stroke_array[1]))     {       gimp_smudge_tool_start (paint_tool, drawable);        non_gui_rate = rate;        paint_tool->cur_coords.x = paint_tool->start_coords.x =  	paint_tool->last_coords.x = stroke_array[0];       paint_tool->cur_coords.y = paint_tool->start_coords.y =  	paint_tool->last_coords.y = stroke_array[1];        gimp_smudge_tool_paint (paint_tool, drawable, 0);         for (i = 1; i< num_strokes; i++) 	{ 	  paint_tool->cur_coords.x = stroke_array[i * 2 + 0]; 	  paint_tool->cur_coords.y = stroke_array[i * 2 + 1];  	  gimp_paint_tool_interpolate (paint_tool, drawable);  	  paint_tool->last_coords.x = paint_tool->cur_coords.x; 	  paint_tool->last_coords.y = paint_tool->cur_coords.y; 	}        gimp_paint_tool_finish (paint_tool, drawable);        gimp_paint_tool_cleanup (paint_tool);        gimp_smudge_tool_finish (paint_tool, drawable);        return TRUE;     }    return FALSE; }
-endif|#
-directive|endif
-end_endif
-
 begin_comment
 comment|/*  tool options stuff  */
 end_comment
@@ -390,7 +370,7 @@ modifier|*
 name|tool_info
 parameter_list|)
 block|{
-name|SmudgeOptions
+name|GimpSmudgeOptions
 modifier|*
 name|options
 decl_stmt|;
@@ -412,17 +392,13 @@ name|scale
 decl_stmt|;
 name|options
 operator|=
-name|g_new0
-argument_list|(
-name|SmudgeOptions
-argument_list|,
-literal|1
-argument_list|)
+name|gimp_smudge_options_new
+argument_list|()
 expr_stmt|;
 name|paint_options_init
 argument_list|(
 operator|(
-name|PaintOptions
+name|GimpPaintOptions
 operator|*
 operator|)
 name|options
@@ -441,16 +417,6 @@ operator|->
 name|reset_func
 operator|=
 name|smudge_options_reset
-expr_stmt|;
-name|options
-operator|->
-name|rate
-operator|=
-name|options
-operator|->
-name|rate_d
-operator|=
-name|SMUDGE_DEFAULT_RATE
 expr_stmt|;
 comment|/*  the main vbox  */
 name|vbox
@@ -656,14 +622,14 @@ modifier|*
 name|tool_options
 parameter_list|)
 block|{
-name|SmudgeOptions
+name|GimpSmudgeOptions
 modifier|*
 name|options
 decl_stmt|;
 name|options
 operator|=
 operator|(
-name|SmudgeOptions
+name|GimpSmudgeOptions
 operator|*
 operator|)
 name|tool_options

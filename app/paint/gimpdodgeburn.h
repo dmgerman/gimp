@@ -22,6 +22,12 @@ directive|include
 file|"gimppaintcore.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimppaintoptions.h"
+end_include
+
 begin_define
 DECL|macro|GIMP_TYPE_DODGEBURN
 define|#
@@ -119,21 +125,21 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|typedef|DodgeBurnOptions
+DECL|typedef|GimpDodgeBurnOptions
 typedef|typedef
 name|struct
-name|_DodgeBurnOptions
-name|DodgeBurnOptions
+name|_GimpDodgeBurnOptions
+name|GimpDodgeBurnOptions
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_DodgeBurnOptions
+DECL|struct|_GimpDodgeBurnOptions
 struct|struct
-name|_DodgeBurnOptions
+name|_GimpDodgeBurnOptions
 block|{
 DECL|member|paint_options
-name|PaintOptions
+name|GimpPaintOptions
 name|paint_options
 decl_stmt|;
 DECL|member|type
@@ -200,6 +206,16 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|GimpDodgeBurnOptions
+modifier|*
+name|gimp_dodgeburn_options_new
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_endif
 endif|#

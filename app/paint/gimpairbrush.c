@@ -81,6 +81,22 @@ directive|include
 file|"gimpairbrush.h"
 end_include
 
+begin_define
+DECL|macro|AIRBRUSH_DEFAULT_RATE
+define|#
+directive|define
+name|AIRBRUSH_DEFAULT_RATE
+value|80.0
+end_define
+
+begin_define
+DECL|macro|AIRBRUSH_DEFAULT_PRESSURE
+define|#
+directive|define
+name|AIRBRUSH_DEFAULT_PRESSURE
+value|10.0
+end_define
+
 begin_typedef
 DECL|typedef|AirbrushTimeout
 typedef|typedef
@@ -106,7 +122,7 @@ modifier|*
 name|drawable
 decl_stmt|;
 DECL|member|paint_options
-name|PaintOptions
+name|GimpPaintOptions
 modifier|*
 name|paint_options
 decl_stmt|;
@@ -163,7 +179,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|PaintOptions
+name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
@@ -186,7 +202,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|PaintOptions
+name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|)
@@ -448,7 +464,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_airbrush_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,PaintOptions * paint_options,GimpPaintCoreState paint_state)
+DECL|function|gimp_airbrush_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state)
 name|gimp_airbrush_paint
 parameter_list|(
 name|GimpPaintCore
@@ -459,7 +475,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|PaintOptions
+name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
@@ -467,14 +483,14 @@ name|GimpPaintCoreState
 name|paint_state
 parameter_list|)
 block|{
-name|AirbrushOptions
+name|GimpAirbrushOptions
 modifier|*
 name|options
 decl_stmt|;
 name|options
 operator|=
 operator|(
-name|AirbrushOptions
+name|GimpAirbrushOptions
 operator|*
 operator|)
 name|paint_options
@@ -682,7 +698,7 @@ name|rate
 operator|=
 operator|(
 operator|(
-name|AirbrushOptions
+name|GimpAirbrushOptions
 operator|*
 operator|)
 name|airbrush_timeout
@@ -764,7 +780,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_airbrush_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,PaintOptions * paint_options)
+DECL|function|gimp_airbrush_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options)
 name|gimp_airbrush_motion
 parameter_list|(
 name|GimpPaintCore
@@ -775,7 +791,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|PaintOptions
+name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|)
@@ -843,7 +859,7 @@ name|pressure
 operator|=
 operator|(
 operator|(
-name|AirbrushOptions
+name|GimpAirbrushOptions
 operator|*
 operator|)
 name|paint_options
@@ -1108,6 +1124,67 @@ argument_list|,
 name|paint_appl_mode
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/*  paint options stuff  */
+end_comment
+
+begin_function
+name|GimpAirbrushOptions
+modifier|*
+DECL|function|gimp_airbrush_options_new (void)
+name|gimp_airbrush_options_new
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|GimpAirbrushOptions
+modifier|*
+name|options
+decl_stmt|;
+name|options
+operator|=
+name|g_new0
+argument_list|(
+name|GimpAirbrushOptions
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_paint_options_init
+argument_list|(
+operator|(
+name|GimpPaintOptions
+operator|*
+operator|)
+name|options
+argument_list|)
+expr_stmt|;
+name|options
+operator|->
+name|rate
+operator|=
+name|options
+operator|->
+name|rate_d
+operator|=
+name|AIRBRUSH_DEFAULT_RATE
+expr_stmt|;
+name|options
+operator|->
+name|pressure
+operator|=
+name|options
+operator|->
+name|pressure_d
+operator|=
+name|AIRBRUSH_DEFAULT_PRESSURE
+expr_stmt|;
+return|return
+name|options
+return|;
 block|}
 end_function
 

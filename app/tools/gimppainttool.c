@@ -727,7 +727,7 @@ argument_list|,
 name|drawable
 argument_list|,
 operator|(
-name|PaintOptions
+name|GimpPaintOptions
 operator|*
 operator|)
 name|tool
@@ -813,7 +813,7 @@ name|GimpPaintCore
 modifier|*
 name|core
 decl_stmt|;
-name|PaintOptions
+name|GimpPaintOptions
 modifier|*
 name|paint_options
 decl_stmt|;
@@ -856,7 +856,7 @@ expr_stmt|;
 name|paint_options
 operator|=
 operator|(
-name|PaintOptions
+name|GimpPaintOptions
 operator|*
 operator|)
 name|tool
@@ -1296,7 +1296,7 @@ name|GimpPaintCore
 modifier|*
 name|core
 decl_stmt|;
-name|PaintOptions
+name|GimpPaintOptions
 modifier|*
 name|paint_options
 decl_stmt|;
@@ -1320,7 +1320,7 @@ expr_stmt|;
 name|paint_options
 operator|=
 operator|(
-name|PaintOptions
+name|GimpPaintOptions
 operator|*
 operator|)
 name|tool
@@ -1435,7 +1435,7 @@ name|GimpPaintCore
 modifier|*
 name|core
 decl_stmt|;
-name|PaintOptions
+name|GimpPaintOptions
 modifier|*
 name|paint_options
 decl_stmt|;
@@ -1459,7 +1459,7 @@ expr_stmt|;
 name|paint_options
 operator|=
 operator|(
-name|PaintOptions
+name|GimpPaintOptions
 operator|*
 operator|)
 name|tool

@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppaintoptions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppencil.h"
 end_include
 
@@ -118,7 +124,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|PaintOptions
+name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
@@ -141,7 +147,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|PaintOptions
+name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|)
@@ -318,7 +324,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_pencil_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,PaintOptions * paint_options,GimpPaintCoreState paint_state)
+DECL|function|gimp_pencil_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state)
 name|gimp_pencil_paint
 parameter_list|(
 name|GimpPaintCore
@@ -329,7 +335,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|PaintOptions
+name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
@@ -372,7 +378,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_pencil_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,PaintOptions * paint_options)
+DECL|function|gimp_pencil_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options)
 name|gimp_pencil_motion
 parameter_list|(
 name|GimpPaintCore
@@ -383,7 +389,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|PaintOptions
+name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|)

@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint/gimppaintoptions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -132,7 +138,7 @@ struct|struct
 name|_BucketOptions
 block|{
 DECL|member|paint_options
-name|PaintOptions
+name|GimpPaintOptions
 name|paint_options
 decl_stmt|;
 DECL|member|fill_transparent
@@ -165,7 +171,7 @@ DECL|member|threshold
 name|gdouble
 name|threshold
 decl_stmt|;
-comment|/* gdouble      threshold_d; (from gimprc) */
+comment|/* gdouble        threshold_d; (from gimprc) */
 DECL|member|threshold_w
 name|GtkObject
 modifier|*
@@ -1226,10 +1232,19 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
+name|gimp_paint_options_init
+argument_list|(
+operator|(
+name|GimpPaintOptions
+operator|*
+operator|)
+name|options
+argument_list|)
+expr_stmt|;
 name|paint_options_init
 argument_list|(
 operator|(
-name|PaintOptions
+name|GimpPaintOptions
 operator|*
 operator|)
 name|options

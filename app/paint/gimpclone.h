@@ -22,12 +22,18 @@ directive|include
 file|"gimppaintcore.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimppaintoptions.h"
+end_include
+
 begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2738ed7f0103
+DECL|enum|__anon292747ac0103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO
@@ -232,21 +238,21 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|typedef|CloneOptions
+DECL|typedef|GimpCloneOptions
 typedef|typedef
 name|struct
-name|_CloneOptions
-name|CloneOptions
+name|_GimpCloneOptions
+name|GimpCloneOptions
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_CloneOptions
+DECL|struct|_GimpCloneOptions
 struct|struct
-name|_CloneOptions
+name|_GimpCloneOptions
 block|{
 DECL|member|paint_options
-name|PaintOptions
+name|GimpPaintOptions
 name|paint_options
 decl_stmt|;
 DECL|member|type
@@ -296,6 +302,16 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|GimpCloneOptions
+modifier|*
+name|gimp_clone_options_new
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_endif
 endif|#

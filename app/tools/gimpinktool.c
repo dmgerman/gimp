@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint/gimppaintoptions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -252,7 +258,7 @@ struct|struct
 name|_InkOptions
 block|{
 DECL|member|paint_options
-name|PaintOptions
+name|GimpPaintOptions
 name|paint_options
 decl_stmt|;
 DECL|member|size
@@ -4639,7 +4645,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2a954f5f0103
+DECL|enum|__anon291ce78c0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
@@ -6436,10 +6442,19 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
+name|gimp_paint_options_init
+argument_list|(
+operator|(
+name|GimpPaintOptions
+operator|*
+operator|)
+name|options
+argument_list|)
+expr_stmt|;
 name|paint_options_init
 argument_list|(
 operator|(
-name|PaintOptions
+name|GimpPaintOptions
 operator|*
 operator|)
 name|options

@@ -251,7 +251,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3a39200103
+DECL|enum|__anon27dec9bf0103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -5676,7 +5676,10 @@ expr_stmt|;
 comment|/* Can't have ANY tool selected - maybe a plugin running */
 if|if
 condition|(
+name|GIMP_IS_PAINT_TOOL
+argument_list|(
 name|active_tool
+argument_list|)
 condition|)
 block|{
 name|GimpPaintTool

@@ -51,22 +51,6 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
-begin_define
-DECL|macro|PAINT_LEFT_THRESHOLD
-define|#
-directive|define
-name|PAINT_LEFT_THRESHOLD
-value|0.05
-end_define
-
-begin_define
-DECL|macro|PAINTBRUSH_DEFAULT_INCREMENTAL
-define|#
-directive|define
-name|PAINTBRUSH_DEFAULT_INCREMENTAL
-value|FALSE
-end_define
-
 begin_function_decl
 specifier|static
 name|void
@@ -342,28 +326,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_comment
-unit|static GimpPaintbrushTool *non_gui_paintbrush = NULL;  gboolean gimp_paintbrush_tool_non_gui_default (GimpDrawable *drawable, 				      gint          num_strokes, 				      gdouble      *stroke_array) {   GimpPaintTool *paint_tool;   gint           i;    if (! non_gui_paintbrush)     {       non_gui_paintbrush = g_object_new (GIMP_TYPE_PAINTBRUSH_TOOL, NULL);     }    paint_tool = GIMP_PAINT_TOOL (non_gui_paintbrush);
-comment|/* Hmmm... PDB paintbrush should have gradient type added to it!    * thats why the code below is duplicated.    */
-end_comment
-
-begin_comment
-unit|if (gimp_paint_tool_start (paint_tool, drawable, 			     stroke_array[0], 			     stroke_array[1]))     {       paint_tool->start_coords.x = paint_tool->last_coords.x = stroke_array[0];       paint_tool->start_coords.y = paint_tool->last_coords.y = stroke_array[1];        gimp_paint_tool_paint (paint_tool, drawable, MOTION_PAINT);        for (i = 1; i< num_strokes; i++) 	{ 	  paint_tool->cur_coords.x = stroke_array[i * 2 + 0]; 	  paint_tool->cur_coords.y = stroke_array[i * 2 + 1];  	  gimp_paint_tool_interpolate (paint_tool, drawable);  	  paint_tool->last_coords.x = paint_tool->cur_coords.x; 	  paint_tool->last_coords.y = paint_tool->cur_coords.y; 	}        gimp_paint_tool_finish (paint_tool, drawable);        return TRUE;     }    return FALSE; }  gboolean gimp_paintbrush_tool_non_gui (GimpDrawable *drawable, 			      gint          num_strokes, 			      gdouble      *stroke_array, 			      gdouble       fade_out, 			      gint          method, 			      gdouble       gradient_length) {   GimpPaintTool *paint_tool;   gint           i;    if (! non_gui_paintbrush)     {       non_gui_paintbrush = g_object_new (GIMP_TYPE_PAINTBRUSH_TOOL, NULL);     }    paint_tool = GIMP_PAINT_TOOL (non_gui_paintbrush);
-comment|/* Code duplicated above */
-end_comment
-
-begin_endif
-unit|if (gimp_paint_tool_start (paint_tool, drawable, 			     stroke_array[0], 			     stroke_array[1]))     {       non_gui_gradient_options.fade_out        = fade_out;       non_gui_gradient_options.gradient_length = gradient_length;       non_gui_gradient_options.gradient_type   = LOOP_TRIANGLE;       non_gui_incremental                      = method;        paint_tool->start_coords.x = paint_tool->last_coords.x = stroke_array[0];       paint_tool->start_coords.y = paint_tool->last_coords.y = stroke_array[1];        gimp_paint_tool_paint (paint_tool, drawable, MOTION_PAINT);        for (i = 1; i< num_strokes; i++)        {          paint_tool->cur_coords.x = stroke_array[i * 2 + 0];          paint_tool->cur_coords.y = stroke_array[i * 2 + 1];           gimp_paint_tool_interpolate (paint_tool, drawable);  	 paint_tool->last_coords.x = paint_tool->cur_coords.x;          paint_tool->last_coords.y = paint_tool->cur_coords.y;        }        gimp_paint_tool_finish (paint_tool, drawable);        return TRUE;     }    return FALSE; }
-endif|#
-directive|endif
-end_endif
 
 end_unit
 

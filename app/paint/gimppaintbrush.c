@@ -93,6 +93,12 @@ directive|include
 file|"gimppaintbrush.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimppaintoptions.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|void
@@ -130,7 +136,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|PaintOptions
+name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
@@ -153,11 +159,11 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|PaintPressureOptions
+name|GimpPressureOptions
 modifier|*
 name|pressure_options
 parameter_list|,
-name|PaintGradientOptions
+name|GimpGradientOptions
 modifier|*
 name|gradient_options
 parameter_list|,
@@ -346,7 +352,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_paintbrush_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,PaintOptions * paint_options,GimpPaintCoreState paint_state)
+DECL|function|gimp_paintbrush_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state)
 name|gimp_paintbrush_paint
 parameter_list|(
 name|GimpPaintCore
@@ -357,7 +363,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|PaintOptions
+name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
@@ -365,11 +371,11 @@ name|GimpPaintCoreState
 name|paint_state
 parameter_list|)
 block|{
-name|PaintPressureOptions
+name|GimpPressureOptions
 modifier|*
 name|pressure_options
 decl_stmt|;
-name|PaintGradientOptions
+name|GimpGradientOptions
 modifier|*
 name|gradient_options
 decl_stmt|;
@@ -629,7 +635,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_paintbrush_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,PaintPressureOptions * pressure_options,PaintGradientOptions * gradient_options,gdouble fade_out,gdouble gradient_length,gboolean incremental,GradientPaintMode gradient_type)
+DECL|function|gimp_paintbrush_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPressureOptions * pressure_options,GimpGradientOptions * gradient_options,gdouble fade_out,gdouble gradient_length,gboolean incremental,GradientPaintMode gradient_type)
 name|gimp_paintbrush_motion
 parameter_list|(
 name|GimpPaintCore
@@ -640,11 +646,11 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|PaintPressureOptions
+name|GimpPressureOptions
 modifier|*
 name|pressure_options
 parameter_list|,
-name|PaintGradientOptions
+name|GimpGradientOptions
 modifier|*
 name|gradient_options
 parameter_list|,

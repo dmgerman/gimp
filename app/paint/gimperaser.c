@@ -106,7 +106,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|PaintOptions
+name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
@@ -129,7 +129,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|PaintOptions
+name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|)
@@ -306,7 +306,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_eraser_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,PaintOptions * paint_options,GimpPaintCoreState paint_state)
+DECL|function|gimp_eraser_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state)
 name|gimp_eraser_paint
 parameter_list|(
 name|GimpPaintCore
@@ -317,7 +317,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|PaintOptions
+name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
@@ -360,7 +360,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_eraser_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,PaintOptions * paint_options)
+DECL|function|gimp_eraser_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options)
 name|gimp_eraser_motion
 parameter_list|(
 name|GimpPaintCore
@@ -371,16 +371,16 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|PaintOptions
+name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|)
 block|{
-name|EraserOptions
+name|GimpEraserOptions
 modifier|*
 name|options
 decl_stmt|;
-name|PaintPressureOptions
+name|GimpPressureOptions
 modifier|*
 name|pressure_options
 decl_stmt|;
@@ -424,7 +424,7 @@ return|return;
 name|options
 operator|=
 operator|(
-name|EraserOptions
+name|GimpEraserOptions
 operator|*
 operator|)
 name|paint_options
@@ -608,6 +608,83 @@ else|:
 name|CONSTANT
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/*  paint options stuff  */
+end_comment
+
+begin_define
+DECL|macro|ERASER_DEFAULT_HARD
+define|#
+directive|define
+name|ERASER_DEFAULT_HARD
+value|FALSE
+end_define
+
+begin_define
+DECL|macro|ERASER_DEFAULT_ANTI_ERASE
+define|#
+directive|define
+name|ERASER_DEFAULT_ANTI_ERASE
+value|FALSE
+end_define
+
+begin_function
+name|GimpEraserOptions
+modifier|*
+DECL|function|gimp_eraser_options_new (void)
+name|gimp_eraser_options_new
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|GimpEraserOptions
+modifier|*
+name|options
+decl_stmt|;
+name|options
+operator|=
+name|g_new0
+argument_list|(
+name|GimpEraserOptions
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_paint_options_init
+argument_list|(
+operator|(
+name|GimpPaintOptions
+operator|*
+operator|)
+name|options
+argument_list|)
+expr_stmt|;
+name|options
+operator|->
+name|hard
+operator|=
+name|options
+operator|->
+name|hard_d
+operator|=
+name|ERASER_DEFAULT_HARD
+expr_stmt|;
+name|options
+operator|->
+name|anti_erase
+operator|=
+name|options
+operator|->
+name|anti_erase_d
+operator|=
+name|ERASER_DEFAULT_ANTI_ERASE
+expr_stmt|;
+return|return
+name|options
+return|;
 block|}
 end_function
 

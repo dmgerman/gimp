@@ -23,7 +23,7 @@ file|"core/core-types.h"
 end_include
 
 begin_comment
-comment|/*  tools  */
+comment|/*  objects  */
 end_comment
 
 begin_typedef
@@ -32,6 +32,15 @@ typedef|typedef
 name|struct
 name|_GimpPaintCore
 name|GimpPaintCore
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpPaintOptions
+typedef|typedef
+name|struct
+name|_GimpPaintOptions
+name|GimpPaintOptions
 typedef|;
 end_typedef
 
@@ -46,7 +55,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28db532f0103
+DECL|enum|__anon2b2ba1450103
 block|{
 DECL|enumerator|HARD
 name|HARD
@@ -72,7 +81,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28db532f0203
+DECL|enum|__anon2b2ba1450203
 block|{
 DECL|enumerator|CONSTANT
 name|CONSTANT
@@ -95,7 +104,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28db532f0303
+DECL|enum|__anon2b2ba1450303
 block|{
 DECL|enumerator|ONCE_FORWARD
 name|ONCE_FORWARD
@@ -125,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28db532f0403
+DECL|enum|__anon2b2ba1450403
 block|{
 DECL|enumerator|DODGE
 name|DODGE
@@ -141,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28db532f0503
+DECL|enum|__anon2b2ba1450503
 block|{
 DECL|enumerator|BLUR_CONVOLVE
 name|BLUR_CONVOLVE
@@ -160,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28db532f0603
+DECL|enum|__anon2b2ba1450603
 block|{
 DECL|enumerator|IMAGE_CLONE
 name|IMAGE_CLONE

@@ -22,6 +22,12 @@ directive|include
 file|"gimppaintcore.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimppaintoptions.h"
+end_include
+
 begin_define
 DECL|macro|GIMP_TYPE_ERASER
 define|#
@@ -130,21 +136,21 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|typedef|EraserOptions
+DECL|typedef|GimpEraserOptions
 typedef|typedef
 name|struct
-name|_EraserOptions
-name|EraserOptions
+name|_GimpEraserOptions
+name|GimpEraserOptions
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_EraserOptions
+DECL|struct|_GimpEraserOptions
 struct|struct
-name|_EraserOptions
+name|_GimpEraserOptions
 block|{
 DECL|member|paint_options
-name|PaintOptions
+name|GimpPaintOptions
 name|paint_options
 decl_stmt|;
 DECL|member|hard
@@ -186,6 +192,16 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|GimpEraserOptions
+modifier|*
+name|gimp_eraser_options_new
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_endif
 endif|#

@@ -22,6 +22,12 @@ directive|include
 file|"gimppaintcore.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimppaintoptions.h"
+end_include
+
 begin_define
 DECL|macro|GIMP_TYPE_SMUDGE
 define|#
@@ -130,21 +136,21 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|typedef|SmudgeOptions
+DECL|typedef|GimpSmudgeOptions
 typedef|typedef
 name|struct
-name|_SmudgeOptions
-name|SmudgeOptions
+name|_GimpSmudgeOptions
+name|GimpSmudgeOptions
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_SmudgeOptions
+DECL|struct|_GimpSmudgeOptions
 struct|struct
-name|_SmudgeOptions
+name|_GimpSmudgeOptions
 block|{
 DECL|member|paint_options
-name|PaintOptions
+name|GimpPaintOptions
 name|paint_options
 decl_stmt|;
 DECL|member|rate
@@ -173,6 +179,16 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|GimpSmudgeOptions
+modifier|*
+name|gimp_smudge_options_new
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_endif
 endif|#

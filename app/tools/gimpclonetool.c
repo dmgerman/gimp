@@ -97,22 +97,6 @@ name|TARGET_HEIGHT
 value|15
 end_define
 
-begin_define
-DECL|macro|CLONE_DEFAULT_TYPE
-define|#
-directive|define
-name|CLONE_DEFAULT_TYPE
-value|IMAGE_CLONE
-end_define
-
-begin_define
-DECL|macro|CLONE_DEFAULT_ALIGNED
-define|#
-directive|define
-name|CLONE_DEFAULT_ALIGNED
-value|ALIGN_NO
-end_define
-
 begin_function_decl
 specifier|static
 name|void
@@ -830,7 +814,7 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|CloneOptions
+name|GimpCloneOptions
 modifier|*
 name|options
 decl_stmt|;
@@ -846,7 +830,7 @@ decl_stmt|;
 name|options
 operator|=
 operator|(
-name|CloneOptions
+name|GimpCloneOptions
 operator|*
 operator|)
 name|tool
@@ -1069,14 +1053,14 @@ operator|==
 name|ACTIVE
 condition|)
 block|{
-name|CloneOptions
+name|GimpCloneOptions
 modifier|*
 name|options
 decl_stmt|;
 name|options
 operator|=
 operator|(
-name|CloneOptions
+name|GimpCloneOptions
 operator|*
 operator|)
 name|tool
@@ -1306,35 +1290,8 @@ expr_stmt|;
 block|}
 end_function
 
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
 begin_comment
-unit|static gpointer gimp_clone_tool_non_gui_paint_func (GimpPaintTool    *paint_tool, 				    GimpDrawable     *drawable, 				    PaintState        state) {   gimp_clone_tool_motion (paint_tool, drawable, non_gui_src_drawable,&non_gui_pressure_options, 			  non_gui_type, non_gui_offset_x, non_gui_offset_y);    return NULL; }  gboolean gimp_clone_tool_non_gui_default (GimpDrawable *drawable, 				 gint          num_strokes, 				 gdouble      *stroke_array) {   GimpDrawable *src_drawable = NULL;   CloneType     clone_type = CLONE_DEFAULT_TYPE;   gdouble       local_src_x = 0.0;   gdouble       local_src_y = 0.0;   CloneOptions *options = clone_options;    if (options)     {       clone_type   = options->type;       src_drawable = the_src_drawable;       local_src_x  = src_x;       local_src_y  = src_y;     }      return gimp_clone_tool_non_gui (drawable, 				  src_drawable, 				  clone_type, 				  local_src_x,local_src_y, 				  num_strokes, stroke_array); }  gboolean gimp_clone_tool_non_gui (GimpDrawable *drawable, 			 GimpDrawable *src_drawable, 			 CloneType     clone_type, 			 gdouble       src_x, 			 gdouble       src_y, 			 gint          num_strokes, 			 gdouble      *stroke_array) {   gint i;    if (gimp_paint_tool_start (&non_gui_paint_tool, drawable, 			     stroke_array[0], stroke_array[1]))     {
-comment|/* Set the paint core's paint func */
-end_comment
-
-begin_comment
-unit|non_gui_paint_core.paint_func = clone_non_gui_paint_func;              non_gui_type = clone_type;        non_gui_src_drawable = src_drawable;        non_gui_paint_core.startx = non_gui_paint_core.lastx = stroke_array[0];       non_gui_paint_core.starty = non_gui_paint_core.lasty = stroke_array[1];        non_gui_offset_x = (int) (src_x - non_gui_paint_core.start_coords.x);       non_gui_offset_y = (int) (src_y - non_gui_paint_core.start_coords.y);        clone_non_gui_paint_func (&non_gui_paint_core, drawable, 0);        for (i = 1; i< num_strokes; i++) 	{ 	  non_gui_paint_core.cur_coords.x = stroke_array[i * 2 + 0]; 	  non_gui_paint_core.cur_coords.y = stroke_array[i * 2 + 1];  	  paint_core_interpolate (&non_gui_paint_core, drawable);  	  non_gui_paint_core.last_coords.x = non_gui_paint_core.cur_coords.x; 	  non_gui_paint_core.last_coords.y = non_gui_paint_core.cur_coords.y; 	}
-comment|/* Finish the painting */
-end_comment
-
-begin_comment
-unit|paint_core_finish (&non_gui_paint_core, drawable, -1);
-comment|/* Cleanup */
-end_comment
-
-begin_endif
-unit|paint_core_cleanup ();       return TRUE;     }   else     return FALSE; }
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/*  too options stuff  */
+comment|/*  tool options stuff  */
 end_comment
 
 begin_function
@@ -1349,7 +1306,7 @@ modifier|*
 name|tool_info
 parameter_list|)
 block|{
-name|CloneOptions
+name|GimpCloneOptions
 modifier|*
 name|options
 decl_stmt|;
@@ -1363,17 +1320,13 @@ name|frame
 decl_stmt|;
 name|options
 operator|=
-name|g_new0
-argument_list|(
-name|CloneOptions
-argument_list|,
-literal|1
-argument_list|)
+name|gimp_clone_options_new
+argument_list|()
 expr_stmt|;
 name|paint_options_init
 argument_list|(
 operator|(
-name|PaintOptions
+name|GimpPaintOptions
 operator|*
 operator|)
 name|options
@@ -1392,26 +1345,6 @@ operator|->
 name|reset_func
 operator|=
 name|clone_options_reset
-expr_stmt|;
-name|options
-operator|->
-name|type
-operator|=
-name|options
-operator|->
-name|type_d
-operator|=
-name|CLONE_DEFAULT_TYPE
-expr_stmt|;
-name|options
-operator|->
-name|aligned
-operator|=
-name|options
-operator|->
-name|aligned_d
-operator|=
-name|CLONE_DEFAULT_ALIGNED
 expr_stmt|;
 comment|/*  the main vbox  */
 name|vbox
@@ -1641,14 +1574,14 @@ modifier|*
 name|tool_options
 parameter_list|)
 block|{
-name|CloneOptions
+name|GimpCloneOptions
 modifier|*
 name|options
 decl_stmt|;
 name|options
 operator|=
 operator|(
-name|CloneOptions
+name|GimpCloneOptions
 operator|*
 operator|)
 name|tool_options
