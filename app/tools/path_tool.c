@@ -3919,10 +3919,6 @@ name|path_tool
 operator|->
 name|cur_path
 decl_stmt|;
-name|PathSegment
-modifier|*
-name|p_sas
-decl_stmt|;
 name|gint
 name|grab_pointer
 decl_stmt|;
@@ -6146,7 +6142,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b78a8ab0108
+DECL|struct|__anon27562bf10108
 typedef|typedef
 struct|struct
 block|{
@@ -6531,7 +6527,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b78a8ab0208
+DECL|struct|__anon27562bf10208
 typedef|typedef
 struct|struct
 block|{
@@ -6883,7 +6879,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b78a8ab0308
+DECL|struct|__anon27562bf10308
 typedef|typedef
 struct|struct
 block|{
@@ -7213,7 +7209,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b78a8ab0408
+DECL|struct|__anon27562bf10408
 typedef|typedef
 struct|struct
 block|{
@@ -7371,7 +7367,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b78a8ab0508
+DECL|struct|__anon27562bf10508
 typedef|typedef
 struct|struct
 block|{

@@ -41,6 +41,12 @@ directive|include
 file|"config.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+end_ifdef
+
 begin_include
 include|#
 directive|include
@@ -50,12 +56,6 @@ end_include
 begin_comment
 comment|/* For G_OS_WIN32 */
 end_comment
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|G_OS_WIN32
-end_ifdef
 
 begin_define
 DECL|macro|STRICT

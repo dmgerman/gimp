@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/**********************************************************************  *  AlienMap2 (Co-)sine color transformation plug-in (Version 1.01)  *  Martin Weber (martin.weber@usa.net)  **********************************************************************  *  Official Homepage: http://diverse.freepage.de/martin.weber  **********************************************************************  *  Most code taken from AlienMap by Daniel Cotting  *  This is not a replacement for AlienMap!  **********************************************************************      */
+comment|/**********************************************************************  *  AlienMap2 (Co-)sine color transformation plug-in (Version 1.01)  *  Martin Weber (martweb@gmx.net)  **********************************************************************  *  Official Homepage: http://diverse.freepage.de/martin.weber  **********************************************************************  *  Most code taken from AlienMap by Daniel Cotting  *  This is not a replacement for AlienMap!  **********************************************************************      */
 end_comment
 
 begin_comment
@@ -110,7 +110,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae7c4970108
+DECL|struct|__anon2baa8d260108
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -161,7 +161,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae7c4970208
+DECL|struct|__anon2baa8d260208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -835,9 +835,9 @@ literal|"AlienMap2 Color Transformation Plug-In"
 argument_list|,
 literal|"No help yet. Just try it and you'll see!"
 argument_list|,
-literal|"Martin Weber (martin.weber@usa.net, http://diverse.freepage.de/martin.weber)"
+literal|"Martin Weber (martweb@gmx.net, http://diverse.freepage.de/martin.weber)"
 argument_list|,
-literal|"Martin Weber (martin.weber@usa.net, http://diverse.freepage.de/martin.weber"
+literal|"Martin Weber (martweb@gmx.net, http://diverse.freepage.de/martin.weber"
 argument_list|,
 literal|"24th April 1998"
 argument_list|,
@@ -5136,7 +5136,7 @@ name|text
 operator|=
 operator|(
 literal|"\nMartin Weber\n"
-literal|"martin.weber@usa.net\n"
+literal|"martweb@gmx.net\n"
 literal|"http://diverse.freepage.de/martin.weber\n\n"
 literal|"AlienMap2 Plug-In for the GIMP\n"
 literal|"Version 1.0\n"

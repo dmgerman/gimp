@@ -40,17 +40,6 @@ file|"airbrush_blob.h"
 end_include
 
 begin_define
-DECL|macro|ROUND (A)
-define|#
-directive|define
-name|ROUND
-parameter_list|(
-name|A
-parameter_list|)
-value|floor((A)+0.5)
-end_define
-
-begin_define
 DECL|macro|SUBSAMPLE
 define|#
 directive|define
@@ -186,7 +175,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|enum|__anon2c9ca46d0103
+DECL|enum|__anon28bf57800103
 typedef|typedef
 enum|enum
 block|{

@@ -196,7 +196,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ab031af0103
+DECL|enum|__anon27cb68080103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -1935,19 +1935,6 @@ operator|->
 name|dot_for_dot
 condition|)
 comment|/* here */
-block|{
-name|gdouble
-name|unit_factor
-init|=
-name|gimp_unit_get_factor
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-operator|->
-name|unit
-argument_list|)
-decl_stmt|;
 name|xpnt
 operator|=
 operator|(
@@ -1971,7 +1958,6 @@ name|yresolution
 operator|+
 literal|0.5
 expr_stmt|;
-block|}
 name|xoffset
 operator|=
 name|xpnt

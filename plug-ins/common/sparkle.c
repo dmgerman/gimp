@@ -28,6 +28,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -113,7 +119,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c11cbf40108
+DECL|struct|__anon29886be30108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -176,7 +182,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c11cbf40208
+DECL|struct|__anon29886be30208
 block|{
 DECL|member|run
 name|gint

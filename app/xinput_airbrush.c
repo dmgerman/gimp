@@ -4207,7 +4207,9 @@ decl_stmt|;
 name|gboolean
 name|turn_around
 decl_stmt|;
-comment|/*test*/
+ifdef|#
+directive|ifdef
+name|GTK_HAVE_SIX_VALUATORS
 name|double
 name|min_height
 decl_stmt|;
@@ -4217,6 +4219,9 @@ decl_stmt|;
 name|double
 name|inter_height
 decl_stmt|;
+endif|#
+directive|endif
+comment|/* GTK_HAVE_SIX_VALUATORS */
 name|double
 name|height
 decl_stmt|;

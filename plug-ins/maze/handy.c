@@ -93,13 +93,6 @@ modifier|*
 name|bg
 parameter_list|)
 block|{
-name|GParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
 switch|switch
 condition|(
 name|gimp_drawable_type
