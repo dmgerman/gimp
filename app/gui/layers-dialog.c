@@ -372,7 +372,8 @@ modifier|*
 name|floating_sel
 decl_stmt|;
 DECL|member|layer_widgets
-name|link_ptr
+name|GSList
+modifier|*
 name|layer_widgets
 decl_stmt|;
 block|}
@@ -2673,7 +2674,8 @@ name|LayerWidget
 modifier|*
 name|lw
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 name|int
@@ -2772,7 +2774,7 @@ name|FALSE
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -2828,7 +2830,7 @@ name|TRUE
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -2858,7 +2860,7 @@ name|data
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -2909,7 +2911,7 @@ name|data
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -3065,7 +3067,8 @@ DECL|function|layers_dialog_free ()
 name|layers_dialog_free
 parameter_list|()
 block|{
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 name|LayerWidget
@@ -3118,7 +3121,7 @@ name|data
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -3891,7 +3894,8 @@ name|callback
 parameter_list|)
 block|{
 specifier|extern
-name|link_ptr
+name|GSList
+modifier|*
 name|image_list
 decl_stmt|;
 name|GImage
@@ -3914,7 +3918,8 @@ name|char
 modifier|*
 name|image_name
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|tmp
 decl_stmt|;
 name|int
@@ -3958,7 +3963,7 @@ name|data
 expr_stmt|;
 name|tmp
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|tmp
 argument_list|)
@@ -4164,7 +4169,8 @@ name|LayerWidget
 modifier|*
 name|lw
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 name|GList
@@ -4234,7 +4240,7 @@ name|data
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -4245,7 +4251,7 @@ name|lw
 argument_list|)
 expr_stmt|;
 block|}
-name|free_list
+name|g_slist_free
 argument_list|(
 name|layersD
 operator|->
@@ -4334,7 +4340,7 @@ name|layersD
 operator|->
 name|layer_widgets
 operator|=
-name|append_to_list
+name|g_slist_append
 argument_list|(
 name|layersD
 operator|->
@@ -4356,7 +4362,7 @@ argument_list|)
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -6827,7 +6833,7 @@ name|layersD
 operator|->
 name|layer_widgets
 operator|=
-name|remove_from_list
+name|g_slist_remove
 argument_list|(
 name|layersD
 operator|->
@@ -6858,7 +6864,7 @@ name|layersD
 operator|->
 name|layer_widgets
 operator|=
-name|insert_in_list
+name|g_slist_insert
 argument_list|(
 name|layersD
 operator|->
@@ -6959,7 +6965,7 @@ name|layersD
 operator|->
 name|layer_widgets
 operator|=
-name|insert_in_list
+name|g_slist_insert
 argument_list|(
 name|layersD
 operator|->
@@ -8843,7 +8849,8 @@ name|LayerWidget
 modifier|*
 name|lw
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 if|if
@@ -8888,7 +8895,7 @@ name|lw
 return|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -9853,7 +9860,7 @@ name|layersD
 operator|->
 name|layer_widgets
 operator|=
-name|remove_from_list
+name|g_slist_remove
 argument_list|(
 name|layersD
 operator|->
@@ -12978,7 +12985,8 @@ modifier|*
 name|layer_widget
 parameter_list|)
 block|{
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 name|LayerWidget
@@ -13037,7 +13045,7 @@ name|visible
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -13102,7 +13110,7 @@ argument_list|)
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)

@@ -22,12 +22,6 @@ directive|include
 file|"gtk/gtk.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"linked.h"
-end_include
-
 begin_typedef
 DECL|typedef|InfoField
 typedef|typedef
@@ -96,7 +90,8 @@ modifier|*
 name|values
 decl_stmt|;
 DECL|member|field_list
-name|link_ptr
+name|GSList
+modifier|*
 name|field_list
 decl_stmt|;
 DECL|member|user_data

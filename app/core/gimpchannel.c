@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"linked.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paint_funcs.h"
 end_include
 
@@ -100,7 +94,7 @@ file|"channel_pvt.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2bb4d55e0103
+DECL|enum|__anon2baa00a20103
 enum|enum
 block|{
 DECL|enumerator|LAST_SIGNAL
@@ -1938,7 +1932,8 @@ name|int
 name|gimage_id
 parameter_list|)
 block|{
-name|link_ptr
+name|GSList
+modifier|*
 name|tmp
 decl_stmt|;
 name|Channel
@@ -1993,7 +1988,7 @@ argument_list|)
 expr_stmt|;
 name|tmp
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|tmp
 argument_list|)

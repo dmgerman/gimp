@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"linked.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"rect_select.h"
 end_include
 
@@ -328,7 +322,8 @@ name|mask
 decl_stmt|;
 comment|/* null if the curve is open         */
 DECL|member|scanlines
-name|link_ptr
+name|GSList
+modifier|*
 modifier|*
 name|scanlines
 decl_stmt|;
@@ -626,7 +621,8 @@ specifier|static
 name|void
 name|bezier_convert_line
 parameter_list|(
-name|link_ptr
+name|GSList
+modifier|*
 modifier|*
 parameter_list|,
 name|int
@@ -642,10 +638,12 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|link_ptr
+name|GSList
+modifier|*
 name|bezier_insert_in_list
 parameter_list|(
-name|link_ptr
+name|GSList
+modifier|*
 parameter_list|,
 name|int
 parameter_list|)
@@ -4972,7 +4970,8 @@ name|BezierPoint
 modifier|*
 name|start_pt
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 name|unsigned
@@ -5169,7 +5168,8 @@ name|g_malloc
 argument_list|(
 sizeof|sizeof
 argument_list|(
-name|link_ptr
+name|GSList
+operator|*
 argument_list|)
 operator|*
 name|height
@@ -5516,7 +5516,7 @@ literal|255
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -5634,7 +5634,7 @@ name|buf
 argument_list|)
 expr_stmt|;
 block|}
-name|free_list
+name|g_slist_free
 argument_list|(
 name|bezier_sel
 operator|->
@@ -5825,10 +5825,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|bezier_convert_line (link_ptr * scanlines,int x1,int y1,int x2,int y2)
+DECL|function|bezier_convert_line (GSList ** scanlines,int x1,int y1,int x2,int y2)
 name|bezier_convert_line
 parameter_list|(
-name|link_ptr
+name|GSList
+modifier|*
 modifier|*
 name|scanlines
 parameter_list|,
@@ -6246,23 +6247,27 @@ end_function
 
 begin_function
 specifier|static
-name|link_ptr
-DECL|function|bezier_insert_in_list (link_ptr list,int x)
+name|GSList
+modifier|*
+DECL|function|bezier_insert_in_list (GSList * list,int x)
 name|bezier_insert_in_list
 parameter_list|(
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 parameter_list|,
 name|int
 name|x
 parameter_list|)
 block|{
-name|link_ptr
+name|GSList
+modifier|*
 name|orig
 init|=
 name|list
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|rest
 decl_stmt|;
 if|if
@@ -6271,7 +6276,7 @@ operator|!
 name|list
 condition|)
 return|return
-name|add_to_list
+name|g_slist_prepend
 argument_list|(
 name|list
 argument_list|,
@@ -6294,7 +6299,7 @@ condition|)
 block|{
 name|rest
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -6313,7 +6318,7 @@ condition|)
 block|{
 name|rest
 operator|=
-name|add_to_list
+name|g_slist_prepend
 argument_list|(
 name|rest
 argument_list|,
@@ -6354,7 +6359,7 @@ operator|!
 name|rest
 condition|)
 block|{
-name|append_to_list
+name|g_slist_append
 argument_list|(
 name|list
 argument_list|,
@@ -6376,7 +6381,7 @@ return|;
 block|}
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)

@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"linked.h"
+file|<glib.h>
 end_include
 
 begin_include
@@ -152,7 +152,8 @@ end_comment
 
 begin_decl_stmt
 specifier|extern
-name|link_ptr
+name|GSList
+modifier|*
 name|pattern_list
 decl_stmt|;
 end_decl_stmt

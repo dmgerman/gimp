@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"linked.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"rect_select.h"
 end_include
 
@@ -317,23 +311,27 @@ end_comment
 
 begin_function
 specifier|static
-name|link_ptr
-DECL|function|insert_into_sorted_list (link_ptr list,int x)
+name|GSList
+modifier|*
+DECL|function|insert_into_sorted_list (GSList * list,int x)
 name|insert_into_sorted_list
 parameter_list|(
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 parameter_list|,
 name|int
 name|x
 parameter_list|)
 block|{
-name|link_ptr
+name|GSList
+modifier|*
 name|orig
 init|=
 name|list
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|rest
 decl_stmt|;
 if|if
@@ -342,7 +340,7 @@ operator|!
 name|list
 condition|)
 return|return
-name|add_to_list
+name|g_slist_prepend
 argument_list|(
 name|list
 argument_list|,
@@ -364,7 +362,7 @@ condition|)
 block|{
 name|rest
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -383,7 +381,7 @@ condition|)
 block|{
 name|rest
 operator|=
-name|add_to_list
+name|g_slist_prepend
 argument_list|(
 name|rest
 argument_list|,
@@ -423,7 +421,7 @@ operator|!
 name|rest
 condition|)
 block|{
-name|append_to_list
+name|g_slist_append
 argument_list|(
 name|list
 argument_list|,
@@ -444,7 +442,7 @@ return|;
 block|}
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -459,10 +457,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|convert_segment (link_ptr * scanlines,int width,int height,int x1,int y1,int x2,int y2)
+DECL|function|convert_segment (GSList ** scanlines,int width,int height,int x1,int y1,int x2,int y2)
 name|convert_segment
 parameter_list|(
-name|link_ptr
+name|GSList
+modifier|*
 modifier|*
 name|scanlines
 parameter_list|,
@@ -651,11 +650,13 @@ name|Channel
 modifier|*
 name|mask
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 modifier|*
 name|scanlines
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 name|unsigned
@@ -763,14 +764,16 @@ block|}
 name|scanlines
 operator|=
 operator|(
-name|link_ptr
+name|GSList
+operator|*
 operator|*
 operator|)
 name|g_malloc
 argument_list|(
 sizeof|sizeof
 argument_list|(
-name|link_ptr
+name|GSList
+operator|*
 argument_list|)
 operator|*
 name|height
@@ -1189,7 +1192,7 @@ name|data
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -1291,7 +1294,7 @@ expr_stmt|;
 block|}
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -1407,7 +1410,7 @@ name|buf
 argument_list|)
 expr_stmt|;
 block|}
-name|free_list
+name|g_slist_free
 argument_list|(
 name|scanlines
 index|[

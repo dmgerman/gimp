@@ -886,10 +886,12 @@ decl_stmt|;
 name|int
 name|count
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|nth
 decl_stmt|;
 name|Layer
@@ -955,7 +957,7 @@ operator|++
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -963,7 +965,7 @@ expr_stmt|;
 block|}
 name|length
 operator|=
-name|list_length
+name|g_slist_length
 argument_list|(
 name|layer_select
 operator|->
@@ -1019,7 +1021,7 @@ operator|)
 expr_stmt|;
 name|nth
 operator|=
-name|nth_item
+name|g_slist_nth
 argument_list|(
 name|layer_select
 operator|->

@@ -43,12 +43,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"linked.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paint_funcs.h"
 end_include
 
@@ -286,7 +280,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae6c0d10103
+DECL|enum|__anon2a19a4d30103
 block|{
 DECL|enumerator|Red
 name|Red
@@ -314,7 +308,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae6c0d10203
+DECL|enum|__anon2a19a4d30203
 block|{
 DECL|enumerator|ExpandAsNecessary
 name|ExpandAsNecessary
@@ -485,17 +479,20 @@ decl_stmt|;
 comment|/*  guides                       */
 comment|/*  Layer/Channel attributes  */
 DECL|member|layers
-name|link_ptr
+name|GSList
+modifier|*
 name|layers
 decl_stmt|;
 comment|/*  the list of layers           */
 DECL|member|channels
-name|link_ptr
+name|GSList
+modifier|*
 name|channels
 decl_stmt|;
 comment|/*  the list of masks            */
 DECL|member|layer_stack
-name|link_ptr
+name|GSList
+modifier|*
 name|layer_stack
 decl_stmt|;
 comment|/*  the layers in MRU order      */
@@ -547,12 +544,14 @@ comment|/*  TRUE if there's an active    */
 comment|/*  "by color" selection dialog  */
 comment|/*  Undo apparatus  */
 DECL|member|undo_stack
-name|link_ptr
+name|GSList
+modifier|*
 name|undo_stack
 decl_stmt|;
 comment|/*  stack for undo operations    */
 DECL|member|redo_stack
-name|link_ptr
+name|GSList
+modifier|*
 name|redo_stack
 decl_stmt|;
 comment|/*  stack for redo operations    */
@@ -1190,7 +1189,8 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|link_ptr
+name|GSList
+modifier|*
 parameter_list|,
 name|MergeType
 parameter_list|)

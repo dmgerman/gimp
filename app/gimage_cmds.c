@@ -110,7 +110,8 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|link_ptr
+name|GSList
+modifier|*
 name|image_list
 decl_stmt|;
 end_decl_stmt
@@ -161,7 +162,8 @@ modifier|*
 name|args
 parameter_list|)
 block|{
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 name|int
@@ -200,7 +202,7 @@ name|image_list
 expr_stmt|;
 name|num_images
 operator|=
-name|list_length
+name|g_slist_length
 argument_list|(
 name|list
 argument_list|)
@@ -248,7 +250,7 @@ operator|++
 operator|,
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -1444,7 +1446,8 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|layer_list
 decl_stmt|;
 name|int
@@ -1517,7 +1520,7 @@ name|layers
 expr_stmt|;
 name|num_layers
 operator|=
-name|list_length
+name|g_slist_length
 argument_list|(
 name|layer_list
 argument_list|)
@@ -1565,7 +1568,7 @@ operator|++
 operator|,
 name|layer_list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|layer_list
 argument_list|)
@@ -1740,7 +1743,8 @@ name|int
 modifier|*
 name|channel_ids
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|channel_list
 decl_stmt|;
 name|Argument
@@ -1806,7 +1810,7 @@ name|channels
 expr_stmt|;
 name|num_channels
 operator|=
-name|list_length
+name|g_slist_length
 argument_list|(
 name|channel_list
 argument_list|)
@@ -1854,7 +1858,7 @@ operator|++
 operator|,
 name|channel_list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|channel_list
 argument_list|)
@@ -9842,7 +9846,8 @@ decl_stmt|,
 modifier|*
 name|new_channel
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 name|Layer
@@ -9959,7 +9964,7 @@ name|data
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -10144,7 +10149,7 @@ name|data
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)

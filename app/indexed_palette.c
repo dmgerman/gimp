@@ -2476,7 +2476,8 @@ name|callback
 parameter_list|)
 block|{
 specifier|extern
-name|link_ptr
+name|GSList
+modifier|*
 name|image_list
 decl_stmt|;
 name|GImage
@@ -2499,7 +2500,8 @@ name|char
 modifier|*
 name|image_name
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|tmp
 decl_stmt|;
 name|int
@@ -2543,7 +2545,7 @@ name|data
 expr_stmt|;
 name|tmp
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|tmp
 argument_list|)

@@ -118,12 +118,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"linked.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"palette.h"
 end_include
 
@@ -313,7 +307,7 @@ comment|/* Gradient segment type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2ad0bed20103
+DECL|enum|__anon2b9cc03b0103
 typedef|typedef
 enum|enum
 block|{
@@ -340,7 +334,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2ad0bed20203
+DECL|enum|__anon2b9cc03b0203
 typedef|typedef
 enum|enum
 block|{
@@ -485,7 +479,7 @@ comment|/* Gradient editor type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2ad0bed20303
+DECL|enum|__anon2b9cc03b0303
 typedef|typedef
 enum|enum
 block|{
@@ -509,7 +503,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ad0bed20408
+DECL|struct|__anon2b9cc03b0408
 typedef|typedef
 struct|struct
 block|{
@@ -789,7 +783,7 @@ name|int
 name|replicate_times
 decl_stmt|;
 comment|/* Saved colors */
-DECL|struct|__anon2ad0bed20508
+DECL|struct|__anon2b9cc03b0508
 struct|struct
 block|{
 DECL|member|r
@@ -2966,7 +2960,8 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradients_list
 specifier|static
-name|link_ptr
+name|GSList
+modifier|*
 name|gradients_list
 init|=
 name|NULL
@@ -5780,7 +5775,8 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 name|gradient_t
@@ -5836,7 +5832,7 @@ argument_list|)
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -7493,7 +7489,8 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|tmp
 decl_stmt|;
 name|int
@@ -7573,7 +7570,7 @@ expr_stmt|;
 comment|/* Next gradient */
 name|tmp
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|tmp
 argument_list|)
@@ -7601,7 +7598,7 @@ expr_stmt|;
 comment|/* Remember list item to delete it later */
 name|gradients_list
 operator|=
-name|remove_from_list
+name|g_slist_remove
 argument_list|(
 name|gradients_list
 argument_list|,
@@ -7646,7 +7643,7 @@ expr_stmt|;
 comment|/* Select new gradient */
 name|curr_gradient
 operator|=
-name|nth_item
+name|g_slist_nth
 argument_list|(
 name|gradients_list
 argument_list|,
@@ -7846,7 +7843,8 @@ name|gpointer
 name|client_data
 parameter_list|)
 block|{
-name|link_ptr
+name|GSList
+modifier|*
 name|node
 decl_stmt|;
 name|gradient_t
@@ -7871,7 +7869,7 @@ name|node
 condition|;
 name|node
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|node
 argument_list|)
@@ -24017,7 +24015,8 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|link_ptr
+name|GSList
+modifier|*
 name|node
 decl_stmt|;
 name|gradient_t
@@ -24062,14 +24061,14 @@ argument_list|)
 expr_stmt|;
 name|node
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|node
 argument_list|)
 expr_stmt|;
 block|}
 comment|/* while */
-name|free_list
+name|g_slist_free
 argument_list|(
 name|gradients_list
 argument_list|)
@@ -24747,7 +24746,8 @@ modifier|*
 name|grad
 parameter_list|)
 block|{
-name|link_ptr
+name|GSList
+modifier|*
 name|tmp
 decl_stmt|;
 name|gradient_t
@@ -24799,7 +24799,7 @@ operator|++
 expr_stmt|;
 name|tmp
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|tmp
 argument_list|)
@@ -24811,7 +24811,7 @@ operator|++
 expr_stmt|;
 name|gradients_list
 operator|=
-name|insert_in_list
+name|g_slist_insert
 argument_list|(
 name|gradients_list
 argument_list|,
@@ -26713,7 +26713,8 @@ name|gradient_t
 modifier|*
 name|grad
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 name|char
@@ -26782,7 +26783,7 @@ argument_list|)
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -27090,7 +27091,8 @@ name|char
 modifier|*
 name|name
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 name|gradient_t
@@ -27197,7 +27199,7 @@ block|}
 comment|/* if */
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)

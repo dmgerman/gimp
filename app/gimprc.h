@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"linked.h"
+file|<glib.h>
 end_include
 
 begin_include

@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"linked.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"pixel_region.h"
 end_include
 
@@ -106,7 +100,8 @@ struct|struct
 name|_PixelRegionIterator
 block|{
 DECL|member|pixel_regions
-name|link_ptr
+name|GSList
+modifier|*
 name|pixel_regions
 decl_stmt|;
 DECL|member|region_width
@@ -1386,7 +1381,7 @@ name|PRI
 operator|->
 name|pixel_regions
 operator|=
-name|add_to_list
+name|g_slist_prepend
 argument_list|(
 name|PRI
 operator|->
@@ -1423,7 +1418,8 @@ modifier|*
 name|PRI_ptr
 decl_stmt|;
 block|{
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 name|PixelRegionHolder
@@ -1602,7 +1598,7 @@ block|}
 block|}
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -1629,7 +1625,8 @@ modifier|*
 name|PRI_ptr
 decl_stmt|;
 block|{
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 name|PixelRegionHolder
@@ -1758,7 +1755,7 @@ block|}
 block|}
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -1791,13 +1788,13 @@ argument_list|)
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
 expr_stmt|;
 block|}
-name|free_list
+name|g_slist_free
 argument_list|(
 name|PRI
 operator|->
@@ -1834,7 +1831,8 @@ modifier|*
 name|PRI
 decl_stmt|;
 block|{
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 name|PixelRegionHolder
@@ -1985,7 +1983,7 @@ expr_stmt|;
 block|}
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -2010,7 +2008,8 @@ modifier|*
 name|PRI
 decl_stmt|;
 block|{
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 name|PixelRegionHolder
@@ -2161,7 +2160,7 @@ expr_stmt|;
 block|}
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -2191,7 +2190,8 @@ name|PixelRegionHolder
 modifier|*
 name|PRH
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 comment|/*  Determine the portion width and height  */
@@ -2256,13 +2256,13 @@ argument_list|)
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
 expr_stmt|;
 block|}
-name|free_list
+name|g_slist_free
 argument_list|(
 name|PRI
 operator|->
@@ -2345,7 +2345,7 @@ expr_stmt|;
 block|}
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)

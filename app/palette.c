@@ -108,12 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"linked.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"interface.h"
 end_include
 
@@ -347,10 +341,12 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|link_ptr
+name|GSList
+modifier|*
 name|palette_entries_insert_list
 parameter_list|(
-name|link_ptr
+name|GSList
+modifier|*
 parameter_list|,
 name|PaletteEntriesP
 parameter_list|)
@@ -648,7 +644,8 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|palette_entries_list
-name|link_ptr
+name|GSList
+modifier|*
 name|palette_entries_list
 init|=
 name|NULL
@@ -2135,7 +2132,8 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 name|PaletteEntriesP
@@ -2183,13 +2181,13 @@ argument_list|)
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
 expr_stmt|;
 block|}
-name|free_list
+name|g_slist_free
 argument_list|(
 name|palette_entries_list
 argument_list|)
@@ -2270,7 +2268,8 @@ name|GtkWidget
 modifier|*
 name|menu_item
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 name|PaletteEntriesP
@@ -2321,7 +2320,7 @@ name|data
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -2891,11 +2890,13 @@ end_function
 
 begin_function
 specifier|static
-name|link_ptr
-DECL|function|palette_entries_insert_list (link_ptr list,PaletteEntriesP entries)
+name|GSList
+modifier|*
+DECL|function|palette_entries_insert_list (GSList * list,PaletteEntriesP entries)
 name|palette_entries_insert_list
 parameter_list|(
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 parameter_list|,
 name|PaletteEntriesP
@@ -2907,7 +2908,7 @@ name|num_palette_entries
 operator|++
 expr_stmt|;
 return|return
-name|append_to_list
+name|g_slist_append
 argument_list|(
 name|list
 argument_list|,
@@ -2939,7 +2940,8 @@ name|FILE
 modifier|*
 name|fp
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 name|PaletteEntryP
@@ -3048,7 +3050,7 @@ argument_list|)
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -3076,7 +3078,8 @@ block|{
 name|PaletteEntryP
 name|entry
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 name|list
@@ -3520,7 +3523,8 @@ name|GdkEventButton
 modifier|*
 name|bevent
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|tmp_link
 decl_stmt|;
 name|int
@@ -3682,7 +3686,7 @@ name|col
 expr_stmt|;
 name|tmp_link
 operator|=
-name|nth_item
+name|g_slist_nth
 argument_list|(
 name|palette
 operator|->
@@ -5467,7 +5471,8 @@ index|[
 name|COLUMNS
 index|]
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|tmp_link
 decl_stmt|;
 name|int
@@ -6102,7 +6107,7 @@ name|entries
 operator|->
 name|colors
 operator|=
-name|append_to_list
+name|g_slist_append
 argument_list|(
 name|entries
 operator|->
@@ -6146,7 +6151,8 @@ block|{
 name|PaletteEntryP
 name|entry
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|tmp_link
 decl_stmt|;
 name|int
@@ -6177,7 +6183,7 @@ name|entries
 operator|->
 name|colors
 operator|=
-name|remove_from_list
+name|g_slist_remove
 argument_list|(
 name|palette
 operator|->
@@ -6216,7 +6222,7 @@ argument_list|)
 expr_stmt|;
 name|tmp_link
 operator|=
-name|nth_item
+name|g_slist_nth
 argument_list|(
 name|palette
 operator|->
@@ -6270,7 +6276,7 @@ else|else
 block|{
 name|tmp_link
 operator|=
-name|nth_item
+name|g_slist_nth
 argument_list|(
 name|palette
 operator|->

@@ -156,7 +156,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c181ceb0103
+DECL|enum|__anon294a4eb70103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -261,7 +261,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c181ceb0203
+DECL|enum|__anon294a4eb70203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -1873,7 +1873,8 @@ decl_stmt|;
 name|guint
 name|nchannels
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 name|int
@@ -2036,7 +2037,7 @@ operator|=
 operator|(
 name|guint
 operator|)
-name|list_length
+name|g_slist_length
 argument_list|(
 name|gimage
 operator|->
@@ -2048,7 +2049,7 @@ operator|=
 operator|(
 name|guint
 operator|)
-name|list_length
+name|g_slist_length
 argument_list|(
 name|gimage
 operator|->
@@ -4046,7 +4047,7 @@ argument_list|)
 expr_stmt|;
 name|nguides
 operator|=
-name|g_list_length
+name|g_slist_length
 argument_list|(
 name|guides
 argument_list|)
@@ -6094,7 +6095,7 @@ name|gimage
 argument_list|,
 name|layer
 argument_list|,
-name|list_length
+name|g_slist_length
 argument_list|(
 name|gimage
 operator|->

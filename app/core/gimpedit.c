@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"linked.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paint_funcs.h"
 end_include
 
@@ -190,7 +184,8 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|named_buffers
-name|link_ptr
+name|GSList
+modifier|*
 name|named_buffers
 init|=
 name|NULL
@@ -2100,7 +2095,8 @@ modifier|*
 name|list_widget
 parameter_list|)
 block|{
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 name|NamedBuffer
@@ -2145,7 +2141,7 @@ name|data
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -2386,7 +2382,7 @@ argument_list|)
 expr_stmt|;
 name|named_buffers
 operator|=
-name|remove_from_list
+name|g_slist_remove
 argument_list|(
 name|named_buffers
 argument_list|,
@@ -3194,7 +3190,7 @@ argument_list|)
 expr_stmt|;
 name|named_buffers
 operator|=
-name|append_to_list
+name|g_slist_append
 argument_list|(
 name|named_buffers
 argument_list|,
@@ -3409,7 +3405,8 @@ DECL|function|named_buffers_free ()
 name|named_buffers_free
 parameter_list|()
 block|{
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 name|NamedBuffer
@@ -3456,13 +3453,13 @@ argument_list|)
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
 expr_stmt|;
 block|}
-name|free_list
+name|g_slist_free
 argument_list|(
 name|named_buffers
 argument_list|)

@@ -31,12 +31,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"linked.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"selection.h"
 end_include
 
@@ -123,7 +117,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27e631d30103
+DECL|enum|__anon28d818b90103
 block|{
 DECL|enumerator|SelectionOff
 name|SelectionOff
@@ -302,12 +296,14 @@ name|scroll_gc
 decl_stmt|;
 comment|/*  GC for scrolling */
 DECL|member|update_areas
-name|link_ptr
+name|GSList
+modifier|*
 name|update_areas
 decl_stmt|;
 comment|/*  Update areas list                       */
 DECL|member|display_areas
-name|link_ptr
+name|GSList
+modifier|*
 name|display_areas
 decl_stmt|;
 comment|/*  Display areas list                      */

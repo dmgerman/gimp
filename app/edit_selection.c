@@ -712,7 +712,8 @@ name|Layer
 modifier|*
 name|floating_layer
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|layer_list
 decl_stmt|;
 name|gdisp
@@ -1036,7 +1037,7 @@ argument_list|)
 expr_stmt|;
 name|layer_list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|layer_list
 argument_list|)
@@ -1301,7 +1302,8 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|layer_list
 decl_stmt|;
 name|int
@@ -1972,7 +1974,7 @@ expr_stmt|;
 block|}
 name|layer_list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|layer_list
 argument_list|)
@@ -2297,7 +2299,8 @@ name|Layer
 modifier|*
 name|floating_layer
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|layer_list
 decl_stmt|;
 name|EditType
@@ -2552,7 +2555,7 @@ argument_list|)
 expr_stmt|;
 name|layer_list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|layer_list
 argument_list|)

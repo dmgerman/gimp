@@ -2900,7 +2900,8 @@ name|BrushSelectP
 name|bsp
 parameter_list|)
 block|{
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 init|=
 name|brush_list
@@ -3001,7 +3002,7 @@ expr_stmt|;
 block|}
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)

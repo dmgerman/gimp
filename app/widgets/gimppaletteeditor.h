@@ -16,6 +16,18 @@ directive|define
 name|__PALETTE_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|<glib.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"procedural_db.h"
+end_include
+
 begin_define
 DECL|macro|FOREGROUND
 define|#
@@ -191,7 +203,8 @@ modifier|*
 name|filename
 decl_stmt|;
 DECL|member|colors
-name|link_ptr
+name|GSList
+modifier|*
 name|colors
 decl_stmt|;
 DECL|member|n_colors
@@ -260,7 +273,8 @@ end_typedef
 
 begin_decl_stmt
 specifier|extern
-name|link_ptr
+name|GSList
+modifier|*
 name|palette_entries_list
 decl_stmt|;
 end_decl_stmt
@@ -282,12 +296,6 @@ name|void
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_include
-include|#
-directive|include
-file|"procedural_db.h"
-end_include
 
 begin_comment
 comment|/*  Procedure definition and marshalling function  */

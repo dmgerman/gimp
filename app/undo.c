@@ -96,12 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"linked.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paint_core.h"
 end_include
 
@@ -873,7 +867,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|undo_free_list (GImage * gimage,int state,link_ptr list)
+DECL|function|undo_free_list (GImage * gimage,int state,GSList * list)
 name|undo_free_list
 parameter_list|(
 name|GImage
@@ -883,11 +877,13 @@ parameter_list|,
 name|int
 name|state
 parameter_list|,
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 parameter_list|)
 block|{
-name|link_ptr
+name|GSList
+modifier|*
 name|orig
 decl_stmt|;
 name|Undo
@@ -948,13 +944,13 @@ expr_stmt|;
 block|}
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
 expr_stmt|;
 block|}
-name|free_list
+name|g_slist_free
 argument_list|(
 name|orig
 argument_list|)
@@ -964,7 +960,8 @@ end_function
 
 begin_function
 specifier|static
-name|link_ptr
+name|GSList
+modifier|*
 DECL|function|remove_stack_bottom (GImage * gimage)
 name|remove_stack_bottom
 parameter_list|(
@@ -973,9 +970,12 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|link_ptr
+name|GSList
+modifier|*
 name|list
-decl_stmt|,
+decl_stmt|;
+name|GSList
+modifier|*
 name|last
 decl_stmt|;
 name|int
@@ -1100,7 +1100,7 @@ name|list
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -1310,7 +1310,7 @@ name|gimage
 operator|->
 name|undo_stack
 operator|=
-name|add_to_list
+name|g_slist_prepend
 argument_list|(
 name|gimage
 operator|->
@@ -1332,18 +1332,20 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|pop_stack (GImage * gimage,link_ptr * stack_ptr,link_ptr * unstack_ptr,int state)
+DECL|function|pop_stack (GImage * gimage,GSList ** stack_ptr,GSList ** unstack_ptr,int state)
 name|pop_stack
 parameter_list|(
 name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|link_ptr
+name|GSList
+modifier|*
 modifier|*
 name|stack_ptr
 parameter_list|,
-name|link_ptr
+name|GSList
+modifier|*
 modifier|*
 name|unstack_ptr
 parameter_list|,
@@ -1355,10 +1357,12 @@ name|Undo
 modifier|*
 name|object
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|stack
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|tmp
 decl_stmt|;
 name|int
@@ -1494,7 +1498,7 @@ block|}
 operator|*
 name|unstack_ptr
 operator|=
-name|add_to_list
+name|g_slist_prepend
 argument_list|(
 operator|*
 name|unstack_ptr
@@ -1513,7 +1517,7 @@ expr_stmt|;
 operator|*
 name|stack_ptr
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 operator|*
 name|stack_ptr
@@ -1525,7 +1529,7 @@ name|next
 operator|=
 name|NULL
 expr_stmt|;
-name|free_list
+name|g_slist_free
 argument_list|(
 name|tmp
 argument_list|)
@@ -1782,7 +1786,7 @@ name|gimage
 operator|->
 name|undo_stack
 operator|=
-name|add_to_list
+name|g_slist_prepend
 argument_list|(
 name|gimage
 operator|->
@@ -1842,7 +1846,7 @@ name|gimage
 operator|->
 name|undo_stack
 operator|=
-name|add_to_list
+name|g_slist_prepend
 argument_list|(
 name|gimage
 operator|->
@@ -4833,7 +4837,7 @@ name|gimage
 operator|->
 name|layers
 operator|=
-name|remove_from_list
+name|g_slist_remove
 argument_list|(
 name|gimage
 operator|->
@@ -4848,7 +4852,7 @@ name|gimage
 operator|->
 name|layer_stack
 operator|=
-name|remove_from_list
+name|g_slist_remove
 argument_list|(
 name|gimage
 operator|->
@@ -4971,7 +4975,7 @@ name|gimage
 operator|->
 name|layers
 operator|=
-name|insert_in_list
+name|g_slist_insert
 argument_list|(
 name|gimage
 operator|->
@@ -4990,7 +4994,7 @@ name|gimage
 operator|->
 name|layer_stack
 operator|=
-name|add_to_list
+name|g_slist_prepend
 argument_list|(
 name|gimage
 operator|->
@@ -6571,7 +6575,7 @@ name|gimage
 operator|->
 name|channels
 operator|=
-name|remove_from_list
+name|g_slist_remove
 argument_list|(
 name|gimage
 operator|->
@@ -6643,7 +6647,7 @@ name|gimage
 operator|->
 name|channels
 operator|=
-name|insert_in_list
+name|g_slist_insert
 argument_list|(
 name|gimage
 operator|->

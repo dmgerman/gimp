@@ -1937,7 +1937,8 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|layer_list
 decl_stmt|;
 name|int
@@ -2109,7 +2110,7 @@ argument_list|)
 expr_stmt|;
 name|layer_list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|layer_list
 argument_list|)

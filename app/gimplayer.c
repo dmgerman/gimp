@@ -94,12 +94,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"linked.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paint_funcs.h"
 end_include
 
@@ -128,7 +122,7 @@ file|"tile_manager_pvt.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2956e9f00103
+DECL|enum|__anon28fd67c40103
 enum|enum
 block|{
 DECL|enumerator|LAST_SIGNAL
@@ -5736,7 +5730,8 @@ name|int
 name|gimage_id
 decl_stmt|;
 block|{
-name|link_ptr
+name|GSList
+modifier|*
 name|tmp
 decl_stmt|;
 name|Layer
@@ -5791,7 +5786,7 @@ argument_list|)
 expr_stmt|;
 name|tmp
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|tmp
 argument_list|)

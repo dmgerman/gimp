@@ -126,12 +126,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"linked.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"menus.h"
 end_include
 
@@ -208,7 +202,8 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|display_list
-name|link_ptr
+name|GSList
+modifier|*
 name|display_list
 init|=
 name|NULL
@@ -309,20 +304,24 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|link_ptr
+name|GSList
+modifier|*
 name|gdisplay_free_area_list
 parameter_list|(
-name|link_ptr
+name|GSList
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 specifier|static
-name|link_ptr
+name|GSList
+modifier|*
 name|gdisplay_process_area_list
 parameter_list|(
-name|link_ptr
+name|GSList
+modifier|*
 parameter_list|,
 name|GArea
 modifier|*
@@ -604,7 +603,7 @@ expr_stmt|;
 comment|/*  add the new display to the list so that it isn't lost  */
 name|display_list
 operator|=
-name|append_to_list
+name|g_slist_append
 argument_list|(
 name|display_list
 argument_list|,
@@ -966,15 +965,18 @@ end_function
 
 begin_function
 specifier|static
-name|link_ptr
-DECL|function|gdisplay_free_area_list (link_ptr list)
+name|GSList
+modifier|*
+DECL|function|gdisplay_free_area_list (GSList * list)
 name|gdisplay_free_area_list
 parameter_list|(
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 parameter_list|)
 block|{
-name|link_ptr
+name|GSList
+modifier|*
 name|l
 init|=
 name|list
@@ -1006,7 +1008,7 @@ argument_list|)
 expr_stmt|;
 name|l
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|l
 argument_list|)
@@ -1016,7 +1018,7 @@ if|if
 condition|(
 name|list
 condition|)
-name|free_list
+name|g_slist_free
 argument_list|(
 name|list
 argument_list|)
@@ -1029,11 +1031,13 @@ end_function
 
 begin_function
 specifier|static
-name|link_ptr
-DECL|function|gdisplay_process_area_list (link_ptr list,GArea * ga1)
+name|GSList
+modifier|*
+DECL|function|gdisplay_process_area_list (GSList * list,GArea * ga1)
 name|gdisplay_process_area_list
 parameter_list|(
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 parameter_list|,
 name|GArea
@@ -1041,10 +1045,12 @@ modifier|*
 name|ga1
 parameter_list|)
 block|{
-name|link_ptr
+name|GSList
+modifier|*
 name|new_list
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|l
 init|=
 name|list
@@ -1063,7 +1069,7 @@ decl_stmt|;
 comment|/*  start new list off  */
 name|new_list
 operator|=
-name|add_to_list
+name|g_slist_prepend
 argument_list|(
 name|NULL
 argument_list|,
@@ -1198,7 +1204,7 @@ name|area3
 condition|)
 name|new_list
 operator|=
-name|add_to_list
+name|g_slist_prepend
 argument_list|(
 name|new_list
 argument_list|,
@@ -1275,7 +1281,7 @@ expr_stmt|;
 block|}
 name|l
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|l
 argument_list|)
@@ -1285,7 +1291,7 @@ if|if
 condition|(
 name|list
 condition|)
-name|free_list
+name|g_slist_free
 argument_list|(
 name|list
 argument_list|)
@@ -1310,7 +1316,8 @@ name|GArea
 modifier|*
 name|ga
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 comment|/*  Flush the items in the displays and updates lists--    *  but only if gdisplay has been mapped and exposed    */
@@ -1380,7 +1387,7 @@ argument_list|)
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -1473,7 +1480,7 @@ argument_list|)
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -2877,7 +2884,7 @@ block|{
 comment|/* remove the display from the list */
 name|display_list
 operator|=
-name|remove_from_list
+name|g_slist_remove
 argument_list|(
 name|display_list
 argument_list|,
@@ -5753,7 +5760,8 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 init|=
 name|display_list
@@ -5788,7 +5796,7 @@ name|gdisp
 return|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -5813,7 +5821,8 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 init|=
 name|display_list
@@ -5875,7 +5884,7 @@ expr_stmt|;
 block|}
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -5909,7 +5918,8 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 init|=
 name|display_list
@@ -6042,7 +6052,7 @@ expr_stmt|;
 block|}
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -6068,7 +6078,8 @@ name|GList
 modifier|*
 name|tmp_list
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 comment|/*  traverse the linked list of displays, handling each one  */
@@ -6134,7 +6145,7 @@ block|}
 block|}
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -6160,7 +6171,8 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 comment|/*  traverse the linked list of displays, handling each one  */
@@ -6202,7 +6214,7 @@ argument_list|)
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -6224,7 +6236,8 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 init|=
 name|display_list
@@ -6311,7 +6324,7 @@ expr_stmt|;
 block|}
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -6333,7 +6346,8 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 init|=
 name|display_list
@@ -6371,7 +6385,7 @@ argument_list|)
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -6390,7 +6404,8 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 init|=
 name|display_list
@@ -6418,7 +6433,7 @@ argument_list|)
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -6443,7 +6458,8 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 init|=
 name|display_list
@@ -6553,7 +6569,7 @@ expr_stmt|;
 block|}
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -6573,7 +6589,8 @@ name|dirty
 init|=
 literal|0
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 init|=
 name|display_list
@@ -6608,7 +6625,7 @@ literal|1
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -6626,7 +6643,8 @@ DECL|function|gdisplays_delete ()
 name|gdisplays_delete
 parameter_list|()
 block|{
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 init|=
 name|display_list
@@ -6650,14 +6668,14 @@ argument_list|)
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
 expr_stmt|;
 block|}
 comment|/*  free up linked list data  */
-name|free_list
+name|g_slist_free
 argument_list|(
 name|display_list
 argument_list|)
@@ -6677,7 +6695,8 @@ name|flushing
 init|=
 name|FALSE
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 init|=
 name|display_list
@@ -6719,7 +6738,7 @@ argument_list|)
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)

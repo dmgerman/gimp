@@ -604,7 +604,8 @@ modifier|*
 name|idialog
 parameter_list|)
 block|{
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 if|if
@@ -634,14 +635,14 @@ argument_list|)
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
 expr_stmt|;
 block|}
 comment|/*  Free the actual field linked list  */
-name|free_list
+name|g_slist_free
 argument_list|(
 name|idialog
 operator|->
@@ -708,7 +709,7 @@ name|idialog
 operator|->
 name|field_list
 operator|=
-name|add_to_list
+name|g_slist_prepend
 argument_list|(
 name|idialog
 operator|->
@@ -805,7 +806,8 @@ modifier|*
 name|idialog
 parameter_list|)
 block|{
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 if|if
@@ -838,7 +840,7 @@ argument_list|)
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)

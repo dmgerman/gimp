@@ -1816,7 +1816,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a99b6370108
+DECL|struct|__anon2a3c65710108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1863,7 +1863,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a99b6370208
+DECL|struct|__anon2a3c65710208
 block|{
 DECL|member|ncolors
 name|long
@@ -1882,7 +1882,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a99b6370308
+DECL|struct|__anon2a3c65710308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -3618,7 +3618,8 @@ name|GtkWidget
 modifier|*
 name|menu_item
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 name|PaletteEntriesP
@@ -3678,7 +3679,7 @@ operator|++
 operator|,
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -4202,7 +4203,8 @@ decl_stmt|;
 name|int
 name|old_type
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 name|int
@@ -4386,7 +4388,7 @@ name|data
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -4681,7 +4683,7 @@ name|data
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -10694,7 +10696,8 @@ block|{
 name|int
 name|i
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 name|PaletteEntryP
@@ -10720,7 +10723,7 @@ operator|++
 operator|,
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -15255,7 +15258,8 @@ name|the_palette
 init|=
 name|NULL
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 name|palette_type
@@ -15348,7 +15352,7 @@ name|list
 condition|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)

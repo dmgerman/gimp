@@ -376,7 +376,8 @@ modifier|*
 name|floating_sel
 decl_stmt|;
 DECL|member|channel_widgets
-name|link_ptr
+name|GSList
+modifier|*
 name|channel_widgets
 decl_stmt|;
 block|}
@@ -1257,7 +1258,8 @@ name|ChannelWidget
 modifier|*
 name|cw
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 name|int
@@ -1367,7 +1369,7 @@ name|FALSE
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -1423,7 +1425,7 @@ name|TRUE
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -1453,7 +1455,7 @@ name|data
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -1510,7 +1512,7 @@ name|data
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -1642,7 +1644,8 @@ name|Channel
 modifier|*
 name|channel
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 name|GList
@@ -1715,7 +1718,7 @@ name|data
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -1800,7 +1803,7 @@ name|channelsD
 operator|->
 name|channel_widgets
 operator|=
-name|append_to_list
+name|g_slist_append
 argument_list|(
 name|channelsD
 operator|->
@@ -1844,7 +1847,7 @@ name|channelsD
 operator|->
 name|channel_widgets
 operator|=
-name|append_to_list
+name|g_slist_append
 argument_list|(
 name|channelsD
 operator|->
@@ -1888,7 +1891,7 @@ name|channelsD
 operator|->
 name|channel_widgets
 operator|=
-name|append_to_list
+name|g_slist_append
 argument_list|(
 name|channelsD
 operator|->
@@ -1942,7 +1945,7 @@ name|channelsD
 operator|->
 name|channel_widgets
 operator|=
-name|append_to_list
+name|g_slist_append
 argument_list|(
 name|channelsD
 operator|->
@@ -1996,7 +1999,7 @@ name|channelsD
 operator|->
 name|channel_widgets
 operator|=
-name|append_to_list
+name|g_slist_append
 argument_list|(
 name|channelsD
 operator|->
@@ -2071,7 +2074,7 @@ name|channelsD
 operator|->
 name|channel_widgets
 operator|=
-name|append_to_list
+name|g_slist_append
 argument_list|(
 name|channelsD
 operator|->
@@ -2093,7 +2096,7 @@ argument_list|)
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -2157,7 +2160,8 @@ DECL|function|channels_dialog_free ()
 name|channels_dialog_free
 parameter_list|()
 block|{
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 name|ChannelWidget
@@ -2216,7 +2220,7 @@ name|data
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -3239,7 +3243,7 @@ name|channelsD
 operator|->
 name|channel_widgets
 operator|=
-name|insert_in_list
+name|g_slist_insert
 argument_list|(
 name|channelsD
 operator|->
@@ -4032,7 +4036,8 @@ name|ChannelWidget
 modifier|*
 name|lw
 decl_stmt|;
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 if|if
@@ -4077,7 +4082,7 @@ name|lw
 return|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -4718,7 +4723,7 @@ name|channelsD
 operator|->
 name|channel_widgets
 operator|=
-name|remove_from_list
+name|g_slist_remove
 argument_list|(
 name|channelsD
 operator|->
@@ -6639,7 +6644,8 @@ modifier|*
 name|channel_widget
 parameter_list|)
 block|{
-name|link_ptr
+name|GSList
+modifier|*
 name|list
 decl_stmt|;
 name|ChannelWidget
@@ -6727,7 +6733,7 @@ block|}
 block|}
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
@@ -6847,7 +6853,7 @@ argument_list|)
 expr_stmt|;
 name|list
 operator|=
-name|next_item
+name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
