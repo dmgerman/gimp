@@ -168,7 +168,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294313840103
+DECL|enum|__anon27d7bcc00103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -793,6 +793,15 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|old_theme_path
+specifier|static
+name|gchar
+modifier|*
+name|old_theme_path
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|old_monitor_xres
 specifier|static
 name|gdouble
@@ -1088,6 +1097,17 @@ specifier|static
 name|gchar
 modifier|*
 name|edit_gradient_path
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|edit_theme_path
+specifier|static
+name|gchar
+modifier|*
+name|edit_theme_path
 init|=
 name|NULL
 decl_stmt|;
@@ -1686,6 +1706,13 @@ name|old_gradient_path
 argument_list|,
 name|edit_gradient_path
 argument_list|)
+operator|||
+name|prefs_strcmp
+argument_list|(
+name|old_theme_path
+argument_list|,
+name|edit_theme_path
+argument_list|)
 condition|)
 block|{
 return|return
@@ -2110,6 +2137,10 @@ name|gchar
 modifier|*
 name|save_gradient_path
 decl_stmt|;
+name|gchar
+modifier|*
+name|save_theme_path
+decl_stmt|;
 name|state
 operator|=
 name|prefs_check_settings
@@ -2293,6 +2324,12 @@ operator|->
 name|config
 operator|->
 name|gradient_path
+expr_stmt|;
+name|save_theme_path
+operator|=
+name|gimprc
+operator|.
+name|theme_path
 expr_stmt|;
 if|if
 condition|(
@@ -3673,6 +3710,32 @@ literal|"gradient-path"
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|prefs_strcmp
+argument_list|(
+name|old_theme_path
+argument_list|,
+name|edit_theme_path
+argument_list|)
+condition|)
+block|{
+name|gimprc
+operator|.
+name|theme_path
+operator|=
+name|edit_theme_path
+expr_stmt|;
+name|update
+operator|=
+name|g_list_append
+argument_list|(
+name|update
+argument_list|,
+literal|"theme-path"
+argument_list|)
+expr_stmt|;
+block|}
 comment|/*  values which are changed on "OK" or "Save"  */
 if|if
 condition|(
@@ -3833,6 +3896,12 @@ operator|->
 name|gradient_path
 operator|=
 name|save_gradient_path
+expr_stmt|;
+name|gimprc
+operator|.
+name|theme_path
+operator|=
+name|save_theme_path
 expr_stmt|;
 comment|/*  no need to restore values which are only changed on "OK" and "Save"  */
 name|g_list_free
@@ -4308,6 +4377,14 @@ operator|&
 name|edit_gradient_path
 argument_list|,
 name|old_gradient_path
+argument_list|)
+expr_stmt|;
+name|prefs_strset
+argument_list|(
+operator|&
+name|edit_theme_path
+argument_list|,
+name|old_theme_path
 argument_list|)
 expr_stmt|;
 comment|/*  no need to restore values which are only changed on "OK" and "Save"  */
@@ -6510,6 +6587,15 @@ operator|->
 name|gradient_path
 argument_list|)
 expr_stmt|;
+name|edit_theme_path
+operator|=
+name|prefs_strdup
+argument_list|(
+name|gimprc
+operator|.
+name|theme_path
+argument_list|)
+expr_stmt|;
 block|}
 comment|/*  assign edit variables for values which get changed on "OK" and "Save"    *  but not on the fly.    */
 name|edit_tile_cache_size
@@ -6886,6 +6972,14 @@ operator|&
 name|old_gradient_path
 argument_list|,
 name|edit_gradient_path
+argument_list|)
+expr_stmt|;
+name|prefs_strset
+argument_list|(
+operator|&
+name|old_theme_path
+argument_list|,
+name|edit_theme_path
 argument_list|)
 expr_stmt|;
 comment|/*  values which will be changed on "OK" and "Save"  */
@@ -13432,7 +13526,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon294313840208
+DECL|struct|__anon27d7bcc00208
 block|{
 DECL|member|label
 name|gchar
@@ -13661,7 +13755,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon294313840308
+DECL|struct|__anon27d7bcc00308
 block|{
 DECL|member|tree_label
 name|gchar
@@ -13824,6 +13918,28 @@ argument_list|)
 block|,
 operator|&
 name|edit_module_path
+block|}
+block|,
+block|{
+name|N_
+argument_list|(
+literal|"Themes"
+argument_list|)
+block|,
+name|N_
+argument_list|(
+literal|"Themes Directories"
+argument_list|)
+block|,
+literal|"dialogs/preferences/directories.html#themes"
+block|,
+name|N_
+argument_list|(
+literal|"Select Themes Dir"
+argument_list|)
+block|,
+operator|&
+name|edit_theme_path
 block|}
 block|}
 struct|;

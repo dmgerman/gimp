@@ -781,7 +781,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Crop Tool"
+literal|"/Tools/Transform Tools/Crop Tool"
 argument_list|)
 argument_list|,
 literal|"<shift>C"

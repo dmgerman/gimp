@@ -191,6 +191,16 @@ DECL|member|disable_tearoff_menus
 name|gboolean
 name|disable_tearoff_menus
 decl_stmt|;
+DECL|member|theme_path
+name|gchar
+modifier|*
+name|theme_path
+decl_stmt|;
+DECL|member|theme
+name|gchar
+modifier|*
+name|theme
+decl_stmt|;
 block|}
 struct|;
 end_struct

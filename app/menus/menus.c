@@ -3307,6 +3307,30 @@ argument_list|(
 literal|"/Tools/---"
 argument_list|)
 block|,
+name|BRANCH
+argument_list|(
+name|N_
+argument_list|(
+literal|"/Tools/Selection Tools"
+argument_list|)
+argument_list|)
+block|,
+name|BRANCH
+argument_list|(
+name|N_
+argument_list|(
+literal|"/Tools/Paint Tools"
+argument_list|)
+argument_list|)
+block|,
+name|BRANCH
+argument_list|(
+name|N_
+argument_list|(
+literal|"/Tools/Transform Tools"
+argument_list|)
+argument_list|)
+block|,
 comment|/*<Image>/Dialogs  */
 block|{
 block|{

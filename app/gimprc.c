@@ -288,7 +288,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0d22bf0103
+DECL|enum|__anon2c1313fc0103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -1369,6 +1369,12 @@ name|CURSOR_MODE_TOOL_ICON
 block|,
 comment|/* disable_tearoff_menus     */
 name|FALSE
+block|,
+comment|/* theme_path                */
+name|NULL
+block|,
+comment|/* theme                     */
+name|NULL
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -2267,6 +2273,36 @@ operator|(
 name|gimprc
 operator|.
 name|disable_tearoff_menus
+operator|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"theme-path"
+block|,
+name|TT_PATH
+block|,
+operator|&
+operator|(
+name|gimprc
+operator|.
+name|theme_path
+operator|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"theme"
+block|,
+name|TT_STRING
+block|,
+operator|&
+operator|(
+name|gimprc
+operator|.
+name|theme
 operator|)
 block|,
 name|NULL

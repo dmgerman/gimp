@@ -976,8 +976,16 @@ name|gimp_gtkrc_filename
 operator|=
 name|g_strconcat
 argument_list|(
-name|gimp_sysconf_directory
+name|gimp_data_directory
 argument_list|()
+argument_list|,
+name|G_DIR_SEPARATOR_S
+argument_list|,
+literal|"themes"
+argument_list|,
+name|G_DIR_SEPARATOR_S
+argument_list|,
+literal|"Default"
 argument_list|,
 name|G_DIR_SEPARATOR_S
 argument_list|,
