@@ -338,9 +338,6 @@ decl_stmt|;
 name|GOrientation
 name|rtn_guide_orientation
 decl_stmt|;
-name|gint32
-name|pdb_orientation
-decl_stmt|;
 name|return_vals
 operator|=
 name|gimp_run_procedure
