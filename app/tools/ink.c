@@ -5051,6 +5051,20 @@ name|state
 operator|=
 name|INACTIVE
 expr_stmt|;
+comment|/*  free the last blob  */
+name|g_free
+argument_list|(
+name|ink_tool
+operator|->
+name|last_blob
+argument_list|)
+expr_stmt|;
+name|ink_tool
+operator|->
+name|last_blob
+operator|=
+name|NULL
+expr_stmt|;
 name|ink_finish
 argument_list|(
 name|ink_tool
@@ -6431,7 +6445,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon27ef02ea0103
+DECL|enum|__anon2b8388170103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
@@ -8353,7 +8367,7 @@ operator|->
 name|core
 argument_list|)
 expr_stmt|;
-comment|/*  Free the last blob, if any */
+comment|/*  Free the last blob, if any  */
 if|if
 condition|(
 name|ink_tool
