@@ -1065,10 +1065,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_message (char * message)
+DECL|function|gimp_message (const gchar * message)
 name|gimp_message
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|message
 parameter_list|)
@@ -2235,10 +2236,10 @@ name|g_hash_table_insert
 argument_list|(
 name|temp_proc_ht
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|g_strdup
+argument_list|(
 name|name
+argument_list|)
 argument_list|,
 operator|(
 name|gpointer
@@ -2262,6 +2263,9 @@ block|{
 name|GPProcUninstall
 name|proc_uninstall
 decl_stmt|;
+name|gpointer
+name|hash_name
+decl_stmt|;
 name|proc_uninstall
 operator|.
 name|name
@@ -2281,6 +2285,23 @@ argument_list|)
 condition|)
 name|gimp_quit
 argument_list|()
+expr_stmt|;
+name|g_hash_table_lookup_extended
+argument_list|(
+name|temp_proc_ht
+argument_list|,
+name|name
+argument_list|,
+operator|&
+name|hash_name
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|hash_name
+argument_list|)
 expr_stmt|;
 name|g_hash_table_remove
 argument_list|(
