@@ -39,7 +39,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1bd6230103
+DECL|enum|__anon2b9e3d170103
 block|{
 DECL|enumerator|POINT_LIGHT
 name|POINT_LIGHT
@@ -60,7 +60,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1bd6230203
+DECL|enum|__anon2b9e3d170203
 block|{
 DECL|enumerator|LINEAR_MAP
 name|LINEAR_MAP
@@ -79,7 +79,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1bd6230303
+DECL|enum|__anon2b9e3d170303
 block|{
 DECL|enumerator|IMAGE_BUMP
 name|IMAGE_BUMP
@@ -93,7 +93,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1bd6230408
+DECL|struct|__anon2b9e3d170408
 block|{
 DECL|member|ambient_int
 name|gdouble
@@ -128,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1bd6230508
+DECL|struct|__anon2b9e3d170508
 block|{
 DECL|member|type
 name|LightType
@@ -159,7 +159,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1bd6230608
+DECL|struct|__anon2b9e3d170608
 block|{
 DECL|member|drawable_id
 name|gint32
@@ -229,10 +229,6 @@ decl_stmt|;
 DECL|member|transparent_background
 name|gint
 name|transparent_background
-decl_stmt|;
-DECL|member|tooltips_enabled
-name|gint
-name|tooltips_enabled
 decl_stmt|;
 DECL|member|bump_mapped
 name|gint

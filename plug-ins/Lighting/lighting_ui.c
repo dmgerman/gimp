@@ -1,14 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/**************************************************************/
-end_comment
-
-begin_comment
-comment|/* Dialog creation and updaters, callbacks and event-handlers */
-end_comment
-
-begin_comment
-comment|/**************************************************************/
+comment|/* Lighting Effects - A plug-in for GIMP  *  * Dialog creation and updaters, callbacks and event-handlers  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -137,17 +129,9 @@ directive|include
 file|"high2.xpm"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"pixmaps/zoom_in.xpm"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"pixmaps/zoom_out.xpm"
-end_include
+begin_comment
+comment|/* #include "pixmaps/zoom_in.xpm" #include "pixmaps/zoom_out.xpm" */
+end_comment
 
 begin_decl_stmt
 specifier|extern
@@ -389,21 +373,6 @@ begin_function_decl
 specifier|static
 name|void
 name|toggleenvironment_update
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|toggletips_update
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -718,7 +687,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Bump"
+literal|"Bumpmap"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -814,7 +783,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Env"
+literal|"Environment"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -843,55 +812,6 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
-block|}
-end_function
-
-begin_comment
-comment|/**************************/
-end_comment
-
-begin_comment
-comment|/* Tooltips toggle update */
-end_comment
-
-begin_comment
-comment|/**************************/
-end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|toggletips_update (GtkWidget * widget,gpointer data)
-name|toggletips_update
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|gimp_toggle_button_update
-argument_list|(
-name|widget
-argument_list|,
-name|data
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|mapvals
-operator|.
-name|tooltips_enabled
-condition|)
-name|gimp_help_enable_tooltips
-argument_list|()
-expr_stmt|;
-else|else
-name|gimp_help_disable_tooltips
-argument_list|()
-expr_stmt|;
 block|}
 end_function
 
@@ -1061,30 +981,9 @@ begin_comment
 comment|/*********************************************/
 end_comment
 
-begin_function
-specifier|static
-name|void
-DECL|function|zoomout_callback (GtkWidget * widget)
-name|zoomout_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|)
-block|{
-name|mapvals
-operator|.
-name|preview_zoom_factor
-operator|*=
-literal|0.5
-expr_stmt|;
-name|draw_preview_image
-argument_list|(
-name|TRUE
-argument_list|)
-expr_stmt|;
-block|}
-end_function
+begin_comment
+comment|/* static void zoomout_callback (GtkWidget *widget) {   mapvals.preview_zoom_factor *= 0.5;   draw_preview_image (TRUE); } */
+end_comment
 
 begin_comment
 comment|/*********************************************/
@@ -1098,30 +997,9 @@ begin_comment
 comment|/*********************************************/
 end_comment
 
-begin_function
-specifier|static
-name|void
-DECL|function|zoomin_callback (GtkWidget * widget)
-name|zoomin_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|)
-block|{
-name|mapvals
-operator|.
-name|preview_zoom_factor
-operator|*=
-literal|2.0
-expr_stmt|;
-name|draw_preview_image
-argument_list|(
-name|TRUE
-argument_list|)
-expr_stmt|;
-block|}
-end_function
+begin_comment
+comment|/* static void zoomin_callback (GtkWidget *widget) {   mapvals.preview_zoom_factor *= 2.0;   draw_preview_image (TRUE); } */
+end_comment
 
 begin_comment
 comment|/**********************************************/
@@ -1536,10 +1414,7 @@ name|GtkWidget
 modifier|*
 name|table
 decl_stmt|;
-name|GtkWidget
-modifier|*
-name|spinbutton
-decl_stmt|;
+comment|// GtkWidget *spinbutton;
 name|GtkObject
 modifier|*
 name|adj
@@ -1936,7 +1811,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"High Preview Quality"
+literal|"High Quality Preview"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1999,73 +1874,10 @@ name|toggle
 argument_list|,
 name|_
 argument_list|(
-literal|"Enable/disable high quality previews"
+literal|"Enable/disable high quality preview"
 argument_list|)
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|toggle
-operator|=
-name|gtk_check_button_new_with_label
-argument_list|(
-name|_
-argument_list|(
-literal|"Enable Tooltips"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_toggle_button_set_active
-argument_list|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|toggle
-argument_list|)
-argument_list|,
-name|mapvals
-operator|.
-name|tooltips_enabled
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-name|toggle
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|toggle
-argument_list|)
-argument_list|,
-literal|"toggled"
-argument_list|,
-name|GTK_SIGNAL_FUNC
-argument_list|(
-name|toggletips_update
-argument_list|)
-argument_list|,
-operator|&
-name|mapvals
-operator|.
-name|tooltips_enabled
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|toggle
 argument_list|)
 expr_stmt|;
 name|gimp_help_set_help_data
@@ -2215,7 +2027,7 @@ name|toggle
 argument_list|,
 name|_
 argument_list|(
-literal|"Enable/disable jagged edges removal "
+literal|"Enable/disable jagged edges removal"
 literal|"(antialiasing)"
 argument_list|)
 argument_list|,
@@ -2366,30 +2178,55 @@ operator|.
 name|max_depth
 argument_list|)
 expr_stmt|;
-name|spinbutton
-operator|=
-name|gimp_spin_button_new
-argument_list|(
-operator|&
 name|adj
+operator|=
+name|gimp_scale_entry_new
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+literal|1
+argument_list|,
+name|_
+argument_list|(
+literal|"Threshold:"
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|,
 name|mapvals
 operator|.
 name|pixel_treshold
 argument_list|,
-literal|0.001
+literal|0.01
 argument_list|,
-literal|1000
+literal|1000.0
 argument_list|,
-literal|0.1
+literal|1.0
 argument_list|,
-literal|1
+literal|15.0
 argument_list|,
-literal|1
+literal|2
+argument_list|,
+name|TRUE
 argument_list|,
 literal|0
 argument_list|,
-literal|3
+literal|0
+argument_list|,
+name|_
+argument_list|(
+literal|"Stop when pixel differences are smaller than "
+literal|"this value"
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -2412,46 +2249,7 @@ operator|.
 name|pixel_treshold
 argument_list|)
 expr_stmt|;
-name|gimp_table_attach_aligned
-argument_list|(
-name|GTK_TABLE
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|0
-argument_list|,
-literal|1
-argument_list|,
-name|_
-argument_list|(
-literal|"Threshold:"
-argument_list|)
-argument_list|,
-literal|1.0
-argument_list|,
-literal|1.0
-argument_list|,
-name|spinbutton
-argument_list|,
-literal|1
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-name|gimp_help_set_help_data
-argument_list|(
-name|spinbutton
-argument_list|,
-name|_
-argument_list|(
-literal|"Stop when pixel differences are smaller than "
-literal|"this value"
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
+comment|/*   spinbutton = gimp_spin_button_new (&adj, mapvals.pixel_treshold, 				     0.001, 1000, 0.1, 1, 1, 0, 3);   gtk_signal_connect (GTK_OBJECT (adj), "value_changed", 		      GTK_SIGNAL_FUNC (gimp_double_adjustment_update),&mapvals.pixel_treshold);   gimp_table_attach_aligned (GTK_TABLE (table), 0, 1, 			     _("Threshold:"), 1.0, 1.0, 			     spinbutton, 1, TRUE);    gimp_help_set_help_data (spinbutton, 			   _("Stop when pixel differences are smaller than " 			     "this value"), NULL);   */
 name|gtk_widget_show
 argument_list|(
 name|page
@@ -2645,19 +2443,19 @@ name|type
 argument_list|,
 name|_
 argument_list|(
-literal|"Point Light"
+literal|"None"
 argument_list|)
 argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|POINT_LIGHT
+name|NO_LIGHT
 argument_list|,
 name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Directional Light"
+literal|"Directional"
 argument_list|)
 argument_list|,
 operator|(
@@ -2669,25 +2467,25 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Spot Light"
+literal|"Point"
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|POINT_LIGHT
+argument_list|,
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Spot"
 argument_list|)
 argument_list|,
 operator|(
 name|gpointer
 operator|)
 name|SPOT_LIGHT
-argument_list|,
-name|NULL
-argument_list|,
-name|_
-argument_list|(
-literal|"No Light"
-argument_list|)
-argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|NO_LIGHT
 argument_list|,
 name|NULL
 argument_list|,
@@ -2707,7 +2505,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Lightsource Type:"
+literal|"Light Type:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -2771,7 +2569,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Lightsource Color:"
+literal|"Light Color:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -4829,7 +4627,7 @@ name|table
 operator|=
 name|gtk_table_new
 argument_list|(
-literal|5
+literal|6
 argument_list|,
 literal|2
 argument_list|,
@@ -5470,15 +5268,15 @@ block|}
 end_function
 
 begin_comment
-comment|/****************************/
+comment|/*****************************/
 end_comment
 
 begin_comment
-comment|/* Create notbook and pages */
+comment|/* Create notebook and pages */
 end_comment
 
 begin_comment
-comment|/****************************/
+comment|/*****************************/
 end_comment
 
 begin_function
@@ -5610,7 +5408,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Bump"
+literal|"Bumpmap"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -5649,7 +5447,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Env"
+literal|"Environment"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -6094,7 +5892,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Preview!"
+literal|"Update Preview"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6153,136 +5951,7 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
-name|gimp_help_set_help_data
-argument_list|(
-name|button
-argument_list|,
-name|_
-argument_list|(
-literal|"Recompute preview image"
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|button
-operator|=
-name|gimp_pixmap_button_new
-argument_list|(
-name|zoom_out_xpm
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_end
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|hbox
-argument_list|)
-argument_list|,
-name|button
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-literal|"clicked"
-argument_list|,
-name|GTK_SIGNAL_FUNC
-argument_list|(
-name|zoomout_callback
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
-name|gimp_help_set_help_data
-argument_list|(
-name|button
-argument_list|,
-name|_
-argument_list|(
-literal|"Zoom out (make image smaller)"
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|button
-operator|=
-name|gimp_pixmap_button_new
-argument_list|(
-name|zoom_in_xpm
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_end
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|hbox
-argument_list|)
-argument_list|,
-name|button
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-literal|"clicked"
-argument_list|,
-name|GTK_SIGNAL_FUNC
-argument_list|(
-name|zoomin_callback
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
-name|gimp_help_set_help_data
-argument_list|(
-name|button
-argument_list|,
-name|_
-argument_list|(
-literal|"Zoom in (make image bigger)"
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
+comment|/*   gimp_help_set_help_data (button, _("Recompute preview image"), NULL);    button = gimp_pixmap_button_new (zoom_out_xpm, NULL);   gtk_box_pack_end (GTK_BOX (hbox), button, FALSE, FALSE, 0);   gtk_signal_connect (GTK_OBJECT (button), "clicked", 		      GTK_SIGNAL_FUNC (zoomout_callback), 		      NULL);   gtk_widget_show (button);    gimp_help_set_help_data (button, _("Zoom out (make image smaller)"), NULL);    button = gimp_pixmap_button_new (zoom_in_xpm, NULL);   gtk_box_pack_end (GTK_BOX (hbox), button, FALSE, FALSE, 0);   gtk_signal_connect (GTK_OBJECT (button), "clicked", 		      GTK_SIGNAL_FUNC (zoomin_callback), 		      NULL);   gtk_widget_show (button);    gimp_help_set_help_data (button, _("Zoom in (make image bigger)"), NULL); */
 name|create_main_notebook
 argument_list|(
 name|main_hbox
@@ -6323,16 +5992,6 @@ name|gdk_flush
 argument_list|()
 expr_stmt|;
 block|}
-if|if
-condition|(
-operator|!
-name|mapvals
-operator|.
-name|tooltips_enabled
-condition|)
-name|gimp_help_disable_tooltips
-argument_list|()
-expr_stmt|;
 name|image_setup
 argument_list|(
 name|drawable

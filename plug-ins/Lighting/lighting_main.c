@@ -299,12 +299,6 @@ name|FALSE
 expr_stmt|;
 name|mapvals
 operator|.
-name|tooltips_enabled
-operator|=
-name|FALSE
-expr_stmt|;
-name|mapvals
-operator|.
 name|bump_mapped
 operator|=
 name|FALSE
