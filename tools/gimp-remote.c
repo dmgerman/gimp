@@ -1346,7 +1346,7 @@ argument_list|)
 decl_stmt|;
 name|file_uri
 operator|=
-name|g_strconcat
+name|g_filename_to_uri
 argument_list|(
 name|abs
 argument_list|,
@@ -1375,6 +1375,11 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|file_uri
+condition|)
+block|{
 if|if
 condition|(
 name|file_list
@@ -1406,6 +1411,7 @@ argument_list|(
 name|file_uri
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|display
 operator|=
