@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27827c230103
+DECL|enum|__anon2901a8920103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -611,11 +611,37 @@ name|EV_REL
 block|,
 name|REL_WHEEL
 block|,
-literal|"wheel-rurn-right"
+literal|"wheel-turn-right"
 block|,
 name|N_
 argument_list|(
 literal|"Wheel Turn Right"
+argument_list|)
+block|}
+block|,
+block|{
+name|EV_REL
+block|,
+name|REL_DIAL
+block|,
+literal|"dial-turn-left"
+block|,
+name|N_
+argument_list|(
+literal|"Dial Turn Left"
+argument_list|)
+block|}
+block|,
+block|{
+name|EV_REL
+block|,
+name|REL_DIAL
+block|,
+literal|"dial-turn-right"
+block|,
+name|N_
+argument_list|(
+literal|"Dial Turn Right"
 argument_list|)
 block|}
 block|, }
@@ -1457,6 +1483,12 @@ operator|.
 name|code
 operator|==
 name|REL_WHEEL
+operator|||
+name|ev
+operator|.
+name|code
+operator|==
+name|REL_DIAL
 condition|)
 block|{
 name|gint
