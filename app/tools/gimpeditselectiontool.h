@@ -34,6 +34,9 @@ name|coords
 parameter_list|,
 name|GimpTranslateMode
 name|edit_mode
+parameter_list|,
+name|gboolean
+name|propagate_release
 parameter_list|)
 function_decl|;
 end_function_decl

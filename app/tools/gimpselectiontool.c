@@ -1078,6 +1078,8 @@ argument_list|,
 name|coords
 argument_list|,
 name|GIMP_TRANSLATE_MODE_MASK
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 return|return
@@ -1097,6 +1099,8 @@ argument_list|,
 name|coords
 argument_list|,
 name|GIMP_TRANSLATE_MODE_MASK_TO_LAYER
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 return|return
@@ -1116,6 +1120,8 @@ argument_list|,
 name|coords
 argument_list|,
 name|GIMP_TRANSLATE_MODE_MASK_COPY_TO_LAYER
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 return|return

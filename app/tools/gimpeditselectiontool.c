@@ -355,6 +355,10 @@ name|gboolean
 name|first_move
 decl_stmt|;
 comment|/*  Don't push undos after the first  */
+DECL|member|propagate_release
+name|gboolean
+name|propagate_release
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -823,7 +827,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_edit_selection_tool_start (GimpTool * parent_tool,GimpDisplay * gdisp,GimpCoords * coords,GimpTranslateMode edit_mode)
+DECL|function|gimp_edit_selection_tool_start (GimpTool * parent_tool,GimpDisplay * gdisp,GimpCoords * coords,GimpTranslateMode edit_mode,gboolean propagate_release)
 name|gimp_edit_selection_tool_start
 parameter_list|(
 name|GimpTool
@@ -840,6 +844,9 @@ name|coords
 parameter_list|,
 name|GimpTranslateMode
 name|edit_mode
+parameter_list|,
+name|gboolean
+name|propagate_release
 parameter_list|)
 block|{
 name|GimpEditSelectionTool
@@ -872,6 +879,12 @@ name|GIMP_TYPE_EDIT_SELECTION_TOOL
 argument_list|,
 name|NULL
 argument_list|)
+expr_stmt|;
+name|edit_select
+operator|->
+name|propagate_release
+operator|=
+name|propagate_release
 expr_stmt|;
 name|shell
 operator|=
@@ -2320,6 +2333,40 @@ name|num_segs_out
 operator|=
 literal|0
 expr_stmt|;
+if|if
+condition|(
+name|edit_select
+operator|->
+name|propagate_release
+operator|&&
+name|tool_manager_get_active
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|)
+condition|)
+block|{
+name|tool_manager_button_release_active
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|,
+name|coords
+argument_list|,
+name|time
+argument_list|,
+name|state
+argument_list|,
+name|gdisp
+argument_list|)
+expr_stmt|;
+block|}
 name|g_object_unref
 argument_list|(
 name|edit_select
@@ -2813,6 +2860,12 @@ literal|"esm / BAD FALLTHROUGH"
 argument_list|)
 expr_stmt|;
 block|}
+name|edit_select
+operator|->
+name|first_move
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 name|gimp_projection_flush
 argument_list|(
@@ -2826,12 +2879,6 @@ expr_stmt|;
 block|}
 comment|/********************************************************************/
 comment|/********************************************************************/
-name|edit_select
-operator|->
-name|first_move
-operator|=
-name|FALSE
-expr_stmt|;
 name|gimp_tool_pop_status
 argument_list|(
 name|tool
