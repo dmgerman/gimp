@@ -82,13 +82,19 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"gimpthumbbox.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpview.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpthumbbox.h"
+file|"gimpviewrenderer-frame.h"
 end_include
 
 begin_include
@@ -1075,6 +1081,11 @@ name|gchar
 modifier|*
 name|str
 decl_stmt|;
+name|gint
+name|h
+decl_stmt|,
+name|v
+decl_stmt|;
 name|GtkRequisition
 name|info_requisition
 decl_stmt|;
@@ -1402,6 +1413,15 @@ argument_list|,
 name|box
 argument_list|)
 expr_stmt|;
+name|gimp_view_renderer_get_frame_size
+argument_list|(
+operator|&
+name|h
+argument_list|,
+operator|&
+name|v
+argument_list|)
+expr_stmt|;
 name|box
 operator|->
 name|preview
@@ -1415,14 +1435,19 @@ operator|->
 name|imagefile
 argument_list|)
 argument_list|,
-comment|/* add some padding here for the shadow frame */
+comment|/* add padding for the shadow frame */
 name|gimp
 operator|->
 name|config
 operator|->
 name|thumbnail_size
 operator|+
-literal|16
+name|MAX
+argument_list|(
+name|h
+argument_list|,
+name|v
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,

@@ -219,7 +219,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon276a4bbe0103
+DECL|enum|__anon28b2c6d80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2674,6 +2674,20 @@ condition|)
 return|return
 name|NULL
 return|;
+ifdef|#
+directive|ifdef
+name|GIMP_THUMB_DEBUG
+name|g_printerr
+argument_list|(
+literal|"thumbnail loaded from %s\n"
+argument_list|,
+name|thumbnail
+operator|->
+name|thumb_filename
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 name|g_object_freeze_notify
 argument_list|(
 name|G_OBJECT
@@ -3408,6 +3422,18 @@ condition|(
 name|success
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|GIMP_THUMB_DEBUG
+name|g_printerr
+argument_list|(
+literal|"thumbnail saved to file %s\n"
+argument_list|,
+name|name
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 name|success
 operator|=
 operator|(
