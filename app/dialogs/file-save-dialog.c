@@ -957,16 +957,6 @@ argument_list|,
 name|filesave
 argument_list|)
 expr_stmt|;
-name|gtk_quit_add_destroy
-argument_list|(
-literal|1
-argument_list|,
-name|GTK_OBJECT
-argument_list|(
-name|filesave
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/*  Connect the "F1" help key  */
 name|gimp_help_connect
 argument_list|(

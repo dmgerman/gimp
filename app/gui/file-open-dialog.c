@@ -856,16 +856,6 @@ argument_list|,
 name|fileload
 argument_list|)
 expr_stmt|;
-name|gtk_quit_add_destroy
-argument_list|(
-literal|1
-argument_list|,
-name|GTK_OBJECT
-argument_list|(
-name|fileload
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gtk_file_selection_set_select_multiple
 argument_list|(
 name|GTK_FILE_SELECTION
