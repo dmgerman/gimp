@@ -3864,6 +3864,45 @@ name|NULL
 block|,
 name|NULL
 block|}
+block|,
+block|{
+block|{
+literal|"/Filters/---"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|0
+block|,
+literal|"<Separator>"
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Filters/Toys"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|0
+block|,
+literal|"<Branch>"
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
 block|, }
 decl_stmt|;
 end_decl_stmt
@@ -6868,7 +6907,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/*  Move all submenus which registered after "<Image>/Filters/Combine"    *  before the separator after "<Image>/Filters/Web"    */
+comment|/*  Move all submenus which registered after "<Image>/Filters/Toys"    *  before the separator after "<Image>/Filters/Web"    */
 name|menu_item
 operator|=
 name|gtk_item_factory_get_widget
@@ -6920,7 +6959,7 @@ name|gtk_item_factory_get_widget
 argument_list|(
 name|image_factory
 argument_list|,
-literal|"/Filters/Combine"
+literal|"/Filters/Toys"
 argument_list|)
 expr_stmt|;
 if|if
