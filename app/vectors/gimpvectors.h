@@ -113,6 +113,10 @@ DECL|member|freeze_count
 name|gint
 name|freeze_count
 decl_stmt|;
+DECL|member|precision
+name|gdouble
+name|precision
+decl_stmt|;
 comment|/* Stuff missing */
 block|}
 struct|;

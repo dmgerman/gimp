@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b39d8740103
+DECL|enum|__anon27ff13340103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -1189,6 +1189,12 @@ operator|->
 name|freeze_count
 operator|=
 literal|0
+expr_stmt|;
+name|vectors
+operator|->
+name|precision
+operator|=
+literal|0.2
 expr_stmt|;
 block|}
 end_function
@@ -3387,7 +3393,7 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_vectors_stroke_get_length (const GimpVectors * vectors,const GimpStroke * prev)
+DECL|function|gimp_vectors_stroke_get_length (const GimpVectors * vectors,const GimpStroke * stroke)
 name|gimp_vectors_stroke_get_length
 parameter_list|(
 specifier|const
@@ -3398,7 +3404,7 @@ parameter_list|,
 specifier|const
 name|GimpStroke
 modifier|*
-name|prev
+name|stroke
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -3406,6 +3412,16 @@ argument_list|(
 name|GIMP_IS_VECTORS
 argument_list|(
 name|vectors
+argument_list|)
+argument_list|,
+literal|0.0
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_STROKE
+argument_list|(
+name|stroke
 argument_list|)
 argument_list|,
 literal|0.0
@@ -3421,7 +3437,7 @@ name|stroke_get_length
 argument_list|(
 name|vectors
 argument_list|,
-name|prev
+name|stroke
 argument_list|)
 return|;
 block|}
@@ -3430,7 +3446,7 @@ end_function
 begin_function
 specifier|static
 name|gdouble
-DECL|function|gimp_vectors_real_stroke_get_length (const GimpVectors * vectors,const GimpStroke * prev)
+DECL|function|gimp_vectors_real_stroke_get_length (const GimpVectors * vectors,const GimpStroke * stroke)
 name|gimp_vectors_real_stroke_get_length
 parameter_list|(
 specifier|const
@@ -3441,14 +3457,41 @@ parameter_list|,
 specifier|const
 name|GimpStroke
 modifier|*
-name|prev
+name|stroke
 parameter_list|)
 block|{
-name|g_printerr
+name|g_return_val_if_fail
 argument_list|(
-literal|"gimp_vectors_stroke_get_length: default implementation\n"
+name|GIMP_IS_VECTORS
+argument_list|(
+name|vectors
+argument_list|)
+argument_list|,
+literal|0.0
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_STROKE
+argument_list|(
+name|stroke
+argument_list|)
+argument_list|,
+literal|0.0
+argument_list|)
+expr_stmt|;
+return|return
+operator|(
+name|gimp_stroke_get_length
+argument_list|(
+name|stroke
+argument_list|,
+name|vectors
+operator|->
+name|precision
+argument_list|)
+operator|)
+return|;
 return|return
 literal|0.0
 return|;
