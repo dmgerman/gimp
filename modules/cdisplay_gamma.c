@@ -383,6 +383,7 @@ end_function_decl
 begin_decl_stmt
 DECL|variable|cdisplay_gamma_info
 specifier|static
+specifier|const
 name|GimpModuleInfo
 name|cdisplay_gamma_info
 init|=
@@ -426,34 +427,39 @@ end_decl_stmt
 
 begin_function
 name|G_MODULE_EXPORT
+specifier|const
+name|GimpModuleInfo
+modifier|*
+DECL|function|gimp_module_query (GTypeModule * module)
+name|gimp_module_query
+parameter_list|(
+name|GTypeModule
+modifier|*
+name|module
+parameter_list|)
+block|{
+return|return
+operator|&
+name|cdisplay_gamma_info
+return|;
+block|}
+end_function
+
+begin_function
+name|G_MODULE_EXPORT
 name|gboolean
-DECL|function|gimp_module_register (GTypeModule * module,GimpModuleInfo ** inforet)
+DECL|function|gimp_module_register (GTypeModule * module)
 name|gimp_module_register
 parameter_list|(
 name|GTypeModule
 modifier|*
 name|module
-parameter_list|,
-name|GimpModuleInfo
-modifier|*
-modifier|*
-name|inforet
 parameter_list|)
 block|{
 name|cdisplay_gamma_get_type
 argument_list|(
 name|module
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|inforet
-condition|)
-operator|*
-name|inforet
-operator|=
-operator|&
-name|cdisplay_gamma_info
 expr_stmt|;
 return|return
 name|TRUE

@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bae21f30103
+DECL|enum|__anon2b89f4ef0103
 block|{
 DECL|enumerator|GIMP_MODULE_STATE_ERROR
 name|GIMP_MODULE_STATE_ERROR
@@ -168,15 +168,28 @@ decl_stmt|;
 comment|/* handle on the module                      */
 DECL|member|info
 name|GimpModuleInfo
-modifier|*
 name|info
 decl_stmt|;
-comment|/* returned values from module_register      */
+comment|/* returned values from module_query         */
 DECL|member|last_module_error
 name|gchar
 modifier|*
 name|last_module_error
 decl_stmt|;
+DECL|member|query_module
+specifier|const
+name|GimpModuleInfo
+modifier|*
+function_decl|(
+modifier|*
+name|query_module
+function_decl|)
+parameter_list|(
+name|GTypeModule
+modifier|*
+name|module
+parameter_list|)
+function_decl|;
 DECL|member|register_module
 name|gboolean
 function_decl|(
@@ -187,11 +200,6 @@ parameter_list|(
 name|GTypeModule
 modifier|*
 name|module
-parameter_list|,
-name|GimpModuleInfo
-modifier|*
-modifier|*
-name|module_info
 parameter_list|)
 function_decl|;
 block|}

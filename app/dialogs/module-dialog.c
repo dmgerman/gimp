@@ -72,7 +72,7 @@ value|7
 end_define
 
 begin_enum
-DECL|enum|__anon2a22a50c0103
+DECL|enum|__anon298ae8ad0103
 enum|enum
 block|{
 DECL|enumerator|PATH_COLUMN
@@ -90,7 +90,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a22a50c0208
+DECL|struct|__anon298ae8ad0208
 block|{
 DECL|member|table
 name|GtkWidget
@@ -1719,6 +1719,8 @@ condition|(
 name|mod
 operator|->
 name|info
+operator|.
+name|purpose
 condition|)
 block|{
 name|text
@@ -1729,7 +1731,7 @@ operator|=
 name|mod
 operator|->
 name|info
-operator|->
+operator|.
 name|purpose
 expr_stmt|;
 name|text
@@ -1740,7 +1742,7 @@ operator|=
 name|mod
 operator|->
 name|info
-operator|->
+operator|.
 name|author
 expr_stmt|;
 name|text
@@ -1751,7 +1753,7 @@ operator|=
 name|mod
 operator|->
 name|info
-operator|->
+operator|.
 name|version
 expr_stmt|;
 name|text
@@ -1762,7 +1764,7 @@ operator|=
 name|mod
 operator|->
 name|info
-operator|->
+operator|.
 name|copyright
 expr_stmt|;
 name|text
@@ -1773,7 +1775,7 @@ operator|=
 name|mod
 operator|->
 name|info
-operator|->
+operator|.
 name|date
 expr_stmt|;
 name|text

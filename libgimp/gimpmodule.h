@@ -79,6 +79,24 @@ struct|;
 end_struct
 
 begin_typedef
+DECL|typedef|GimpModuleQueryFunc
+typedef|typedef
+specifier|const
+name|GimpModuleInfo
+modifier|*
+function_decl|(
+modifier|*
+name|GimpModuleQueryFunc
+function_decl|)
+parameter_list|(
+name|GTypeModule
+modifier|*
+name|module
+parameter_list|)
+function_decl|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpModuleRegisterFunc
 typedef|typedef
 name|gboolean
@@ -90,11 +108,6 @@ parameter_list|(
 name|GTypeModule
 modifier|*
 name|module
-parameter_list|,
-name|GimpModuleInfo
-modifier|*
-modifier|*
-name|module_info
 parameter_list|)
 function_decl|;
 end_typedef
