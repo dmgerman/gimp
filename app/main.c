@@ -231,6 +231,14 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|alternate_system_gimprc
+name|char
+modifier|*
+name|alternate_system_gimprc
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|batch_cmds
 name|char
 modifier|*
@@ -442,6 +450,10 @@ name|alternate_gimprc
 operator|=
 name|NULL
 expr_stmt|;
+name|alternate_system_gimprc
+operator|=
+name|NULL
+expr_stmt|;
 name|show_version
 operator|=
 name|FALSE
@@ -591,6 +603,46 @@ index|]
 operator|=
 name|NULL
 expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|argv
+index|[
+name|i
+index|]
+argument_list|,
+literal|"--system-gimprc"
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+if|if
+condition|(
+name|argc
+operator|<=
+operator|++
+name|i
+condition|)
+block|{
+name|show_help
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
+else|else
+block|{
+name|alternate_system_gimprc
+operator|=
+name|argv
+index|[
+name|i
+index|]
+expr_stmt|;
+block|}
 block|}
 elseif|else
 if|if
@@ -919,72 +971,77 @@ argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"  -h --help              Output this help.\n"
+literal|"  -h --help                Output this help.\n"
 argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"  -v --version           Output version info.\n"
+literal|"  -v --version             Output version info.\n"
 argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"  -b --batch<commands>  Run in batch mode.\n"
+literal|"  -b --batch<commands>    Run in batch mode.\n"
 argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"  -g --gimprc<gimprc>   Use an alternate gimprc file\n"
+literal|"  -g --gimprc<gimprc>     Use an alternate gimprc file.\n"
 argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"  -n --no-interface      Run without a user interface.\n"
+literal|"  -n --no-interface        Run without a user interface.\n"
 argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"  --no-data              Do not load patterns, gradients, palettes, brushes.\n"
+literal|"  --no-data                Do not load patterns, gradients, palettes, brushes.\n"
 argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"  --verbose              Show startup messages.\n"
+literal|"  --verbose                Show startup messages.\n"
 argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"  --no-splash            Do not show the startup window.\n"
+literal|"  --no-splash              Do not show the startup window.\n"
 argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"  --no-splash-image      Do not add an image to the startup window.\n"
+literal|"  --no-splash-image        Do not add an image to the startup window.\n"
 argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"  --no-shm               Do not use shared memory between GIMP and its plugins.\n"
+literal|"  --no-shm                 Do not use shared memory between GIMP and its plugins.\n"
 argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"  --no-xshm              Do not use the X Shared Memory extension.\n"
+literal|"  --no-xshm                Do not use the X Shared Memory extension.\n"
 argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"  --console-messages     Display warnings to console instead of a dialog box.\n"
+literal|"  --console-messages       Display warnings to console instead of a dialog box.\n"
 argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"  --debug-handlers       Enable debugging signal handlers.\n"
+literal|"  --debug-handlers         Enable debugging signal handlers.\n"
 argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"  --display<display>    Use the designated X display.\n\n"
+literal|"  --display<display>      Use the designated X display.\n\n"
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|"  --system-gimprc<gimprc> Use an alternate system gimprc file.\n"
 argument_list|)
 expr_stmt|;
 block|}
