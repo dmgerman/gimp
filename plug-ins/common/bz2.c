@@ -1421,7 +1421,7 @@ expr_stmt|;
 ifndef|#
 directive|ifndef
 name|__EMX__
-comment|/* fork off a g(un)zip and wait for it */
+comment|/* fork off a bzip2 and wait for it */
 if|if
 condition|(
 operator|(
