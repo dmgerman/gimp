@@ -237,7 +237,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon277105280103
+DECL|enum|__anon2b0c421e0103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -1666,6 +1666,10 @@ name|icon_data_length
 decl_stmt|;
 name|gchar
 modifier|*
+name|icon_name
+decl_stmt|;
+name|guint8
+modifier|*
 name|icon_data
 decl_stmt|;
 if|if
@@ -1895,12 +1899,16 @@ argument_list|(
 name|scanner
 argument_list|,
 operator|&
-name|icon_data
+name|icon_name
 argument_list|)
 condition|)
 return|return
 name|G_TOKEN_STRING
 return|;
+name|icon_data
+operator|=
+name|icon_name
+expr_stmt|;
 break|break;
 case|case
 name|GIMP_ICON_TYPE_INLINE_PIXBUF

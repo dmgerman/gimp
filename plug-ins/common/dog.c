@@ -46,7 +46,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba6957e0108
+DECL|struct|__anon29b14c360108
 block|{
 DECL|member|inner
 name|gdouble
@@ -89,7 +89,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba6957e0208
+DECL|struct|__anon29b14c360208
 block|{
 DECL|member|gimpimageid
 name|gint32
@@ -1349,9 +1349,6 @@ argument_list|(
 name|change_radius_callback
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|preview
 argument_list|)
 expr_stmt|;
@@ -1421,9 +1418,6 @@ argument_list|(
 name|preview_update_preview
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|preview
 argument_list|)
 expr_stmt|;
@@ -1498,9 +1492,6 @@ argument_list|(
 name|preview_update_preview
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|preview
 argument_list|)
 expr_stmt|;
@@ -1828,6 +1819,10 @@ name|drawable2
 decl_stmt|;
 name|gint32
 name|drawable_id
+init|=
+name|drawable
+operator|->
+name|drawable_id
 decl_stmt|;
 name|gint32
 name|layer1
@@ -1854,12 +1849,6 @@ name|maxval
 init|=
 literal|255
 decl_stmt|;
-name|drawable_id
-operator|=
-name|drawable
-operator|->
-name|drawable_id
-expr_stmt|;
 name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable_id
@@ -2583,7 +2572,7 @@ return|return;
 else|else
 name|factor
 operator|=
-literal|255.
+literal|255.0
 operator|/
 name|maxval
 expr_stmt|;
@@ -5535,7 +5524,6 @@ if|if
 condition|(
 name|has_alpha
 condition|)
-block|{
 operator|*
 operator|(
 name|pixdata
@@ -5548,7 +5536,6 @@ name|src
 operator|++
 operator|)
 expr_stmt|;
-block|}
 block|}
 block|}
 else|else
