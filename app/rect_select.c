@@ -891,7 +891,7 @@ name|options
 operator|->
 name|fixed_width
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
 literal|32767.0
 argument_list|,
@@ -1053,7 +1053,7 @@ name|options
 operator|->
 name|fixed_height
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
 literal|32767.0
 argument_list|,
