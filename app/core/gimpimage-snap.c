@@ -344,6 +344,8 @@ argument_list|(
 name|i
 operator|-
 name|x
+operator|-
+literal|0.5
 argument_list|)
 expr_stmt|;
 if|if
@@ -655,6 +657,8 @@ argument_list|(
 name|i
 operator|-
 name|y
+operator|-
+literal|0.5
 argument_list|)
 expr_stmt|;
 if|if
@@ -1071,6 +1075,8 @@ argument_list|(
 name|i
 operator|-
 name|x
+operator|-
+literal|0.5
 argument_list|)
 expr_stmt|;
 if|if
@@ -1131,6 +1137,8 @@ argument_list|(
 name|i
 operator|-
 name|y
+operator|-
+literal|0.5
 argument_list|)
 expr_stmt|;
 if|if
