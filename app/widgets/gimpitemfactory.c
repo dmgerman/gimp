@@ -3803,13 +3803,6 @@ name|complete
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_print
-argument_list|(
-literal|"moving plug-in translation to trash: %s\n"
-argument_list|,
-name|translation
-argument_list|)
-expr_stmt|;
 name|gimp_factory
 operator|->
 name|translation_trash
@@ -3976,13 +3969,6 @@ name|gettext
 argument_list|(
 name|complete
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"moving core translation to trash: %s\n"
-argument_list|,
-name|translation
 argument_list|)
 expr_stmt|;
 name|gimp_factory
