@@ -28,6 +28,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<sys/param.h>
 end_include
 
@@ -37,11 +49,11 @@ directive|include
 file|<sys/wait.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
 
 begin_include
 include|#
@@ -49,11 +61,10 @@ directive|include
 file|<unistd.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|<errno.h>
-end_include
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -521,15 +532,6 @@ name|name_image
 init|=
 name|FALSE
 decl_stmt|;
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"Loading URL: %s\n"
-argument_list|,
-name|filename
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -549,6 +551,7 @@ argument_list|,
 literal|'/'
 argument_list|)
 condition|)
+block|{
 name|tmpname
 operator|=
 name|gimp_temp_name
@@ -556,6 +559,7 @@ argument_list|(
 literal|"xxx"
 argument_list|)
 expr_stmt|;
+block|}
 else|else
 block|{
 name|tmpname
@@ -814,7 +818,7 @@ name|DEBUG
 parameter_list|(
 name|x
 parameter_list|)
-value|if (debug) fprintf (stderr, (x))
+value|if (debug) g_printerr (x)
 name|close
 argument_list|(
 name|p
