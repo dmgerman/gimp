@@ -23,23 +23,18 @@ literal|0
 end_if
 
 begin_comment
-unit|This file is parsed by two scripts, enumgen.pl in tools/pdbgen    and gimp-mkenums. All enums that are not marked with
+unit|This file is parsed by two scripts, enumgen.pl in tools/pdbgen,    and gimp-mkenums. All enums that are not marked with
 comment|/*< pdb-skip>*/
 end_comment
 
 begin_comment
-unit|are exported to libgimp and the PDB. Enums that are not marked with
+unit|are exported to libgimp and the PDB. Enums that are    not marked with
 comment|/*< skip>*/
 end_comment
 
 begin_comment
-unit|are registered with the GType system. If you want the    enum to be skipped by both scripts, you have to use
-comment|/*< pdb-skip>*/
-end_comment
-
-begin_comment
-unit|_before_
-comment|/*< skip>*/
+unit|are registered with the GType system.     If you want the enum to be skipped by both scripts, you have to use
+comment|/*< pdb-skip, skip>*/
 end_comment
 
 begin_comment
@@ -79,7 +74,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon28a20b390103
+DECL|enum|__anon2c3a741b0103
 block|{
 DECL|enumerator|GIMP_SMALL_CHECKS
 name|GIMP_SMALL_CHECKS
@@ -126,7 +121,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon28a20b390203
+DECL|enum|__anon2c3a741b0203
 block|{
 DECL|enumerator|GIMP_LIGHT_CHECKS
 name|GIMP_LIGHT_CHECKS
@@ -191,7 +186,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon28a20b390303
+DECL|enum|__anon2c3a741b0303
 block|{
 DECL|enumerator|GIMP_CURVE_SMOOTH
 name|GIMP_CURVE_SMOOTH
@@ -228,7 +223,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon28a20b390403
+DECL|enum|__anon2c3a741b0403
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE
@@ -287,7 +282,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon28a20b390503
+DECL|enum|__anon2c3a741b0503
 block|{
 DECL|enumerator|GIMP_INTERPOLATION_NONE
 name|GIMP_INTERPOLATION_NONE
@@ -327,7 +322,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a20b390603
+DECL|enum|__anon2c3a741b0603
 block|{
 DECL|enumerator|GIMP_NORMAL_MODE
 name|GIMP_NORMAL_MODE
@@ -436,7 +431,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a20b390703
+DECL|enum|__anon2c3a741b0703
 block|{
 DECL|enumerator|GIMP_SHADOWS
 name|GIMP_SHADOWS
@@ -463,7 +458,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28a20b390803
+DECL|enum|__anon2c3a741b0803
 block|{
 DECL|enumerator|GIMP_NORMAL_CONVOL
 name|GIMP_NORMAL_CONVOL
@@ -486,7 +481,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28a20b390903
+DECL|enum|__anon2c3a741b0903
 block|{
 DECL|enumerator|GIMP_VALUE_LUT
 name|GIMP_VALUE_LUT
@@ -518,7 +513,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28a20b390a03
+DECL|enum|__anon2c3a741b0a03
 block|{
 DECL|enumerator|GIMP_ALL_HUES
 name|GIMP_ALL_HUES

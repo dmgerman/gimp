@@ -23,23 +23,18 @@ literal|0
 end_if
 
 begin_comment
-unit|This file is parsed by two scripts, enumgen.pl in tools/pdbgen    and gimp-mkenums. All enums that are not marked with
+unit|This file is parsed by two scripts, enumgen.pl in tools/pdbgen,    and gimp-mkenums. All enums that are not marked with
 comment|/*< pdb-skip>*/
 end_comment
 
 begin_comment
-unit|are exported to libgimp and the PDB. Enums that are not marked with
+unit|are exported to libgimp and the PDB. Enums that are    not marked with
 comment|/*< skip>*/
 end_comment
 
 begin_comment
-unit|are registered with the GType system. If you want the    enum to be skipped by both scripts, you have to use
-comment|/*< pdb-skip>*/
-end_comment
-
-begin_comment
-unit|_before_
-comment|/*< skip>*/
+unit|are registered with the GType system.     If you want the enum to be skipped by both scripts, you have to use
+comment|/*< pdb-skip, skip>*/
 end_comment
 
 begin_comment
@@ -78,7 +73,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28cb40c30103
+DECL|enum|__anon2c272ebf0103
 block|{
 DECL|enumerator|GIMP_IMAGE_CLONE
 name|GIMP_IMAGE_CLONE
@@ -115,7 +110,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon28cb40c30203
+DECL|enum|__anon2c272ebf0203
 block|{
 DECL|enumerator|GIMP_CLONE_ALIGN_NO
 name|GIMP_CLONE_ALIGN_NO
@@ -155,7 +150,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28cb40c30303
+DECL|enum|__anon2c272ebf0303
 block|{
 DECL|enumerator|GIMP_DODGE
 name|GIMP_DODGE
@@ -191,7 +186,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28cb40c30403
+DECL|enum|__anon2c272ebf0403
 block|{
 DECL|enumerator|GIMP_GRADIENT_ONCE_FORWARD
 name|GIMP_GRADIENT_ONCE_FORWARD
@@ -235,7 +230,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28cb40c30503
+DECL|enum|__anon2c272ebf0503
 block|{
 DECL|enumerator|GIMP_BLUR_CONVOLVE
 name|GIMP_BLUR_CONVOLVE
@@ -276,7 +271,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon28cb40c30603
+DECL|enum|__anon2c272ebf0603
 block|{
 DECL|enumerator|GIMP_INK_BLOB_TYPE_ELLIPSE
 name|GIMP_INK_BLOB_TYPE_ELLIPSE
@@ -313,7 +308,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28cb40c30703
+DECL|enum|__anon2c272ebf0703
 block|{
 DECL|enumerator|GIMP_PAINT_CONSTANT
 name|GIMP_PAINT_CONSTANT
@@ -336,7 +331,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28cb40c30803
+DECL|enum|__anon2c272ebf0803
 block|{
 DECL|enumerator|GIMP_BRUSH_HARD
 name|GIMP_BRUSH_HARD

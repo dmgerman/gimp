@@ -23,23 +23,18 @@ literal|0
 end_if
 
 begin_comment
-unit|This file is parsed by two scripts, enumgen.pl in tools/pdbgen    and gimp-mkenums. All enums that are not marked with
+unit|This file is parsed by two scripts, enumgen.pl in tools/pdbgen,    and gimp-mkenums. All enums that are not marked with
 comment|/*< pdb-skip>*/
 end_comment
 
 begin_comment
-unit|are exported to libgimp and the PDB. Enums that are not marked with
+unit|are exported to libgimp and the PDB. Enums that are    not marked with
 comment|/*< skip>*/
 end_comment
 
 begin_comment
-unit|are registered with the GType system. If you want the    enum to be skipped by both scripts, you have to use
-comment|/*< pdb-skip>*/
-end_comment
-
-begin_comment
-unit|_before_
-comment|/*< skip>*/
+unit|are registered with the GType system.     If you want the enum to be skipped by both scripts, you have to use
+comment|/*< pdb-skip, skip>*/
 end_comment
 
 begin_comment
@@ -79,7 +74,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b065e1d0103
+DECL|enum|__anon2b6d9dc10103
 block|{
 DECL|enumerator|GIMP_CROP
 name|GIMP_CROP
@@ -101,9 +96,8 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< pdb-skip>*/
-comment|/*< skip>*/
-DECL|enum|__anon2b065e1d0203
+comment|/*< pdb-skip, skip>*/
+DECL|enum|__anon2b6d9dc10203
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -149,9 +143,8 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< pdb-skip>*/
-comment|/*< skip>*/
-DECL|enum|__anon2b065e1d0303
+comment|/*< pdb-skip, skip>*/
+DECL|enum|__anon2b6d9dc10303
 block|{
 DECL|enumerator|PAUSE
 name|PAUSE
@@ -174,9 +167,8 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< pdb-skip>*/
-comment|/*< skip>*/
-DECL|enum|__anon2b065e1d0403
+comment|/*< pdb-skip, skip>*/
+DECL|enum|__anon2b6d9dc10403
 block|{
 DECL|enumerator|GIMP_MOTION_MODE_EXACT
 name|GIMP_MOTION_MODE_EXACT
@@ -214,7 +206,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b065e1d0503
+DECL|enum|__anon2b6d9dc10503
 block|{
 DECL|enumerator|GIMP_RECT_SELECT_MODE_FREE
 name|GIMP_RECT_SELECT_MODE_FREE
@@ -255,7 +247,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b065e1d0603
+DECL|enum|__anon2b6d9dc10603
 block|{
 DECL|enumerator|GIMP_TRANSFORM_TYPE_LAYER
 name|GIMP_TRANSFORM_TYPE_LAYER
@@ -296,7 +288,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b065e1d0703
+DECL|enum|__anon2b6d9dc10703
 block|{
 DECL|enumerator|GIMP_TRANSFORM_GRID_TYPE_NONE
 name|GIMP_TRANSFORM_GRID_TYPE_NONE
@@ -322,9 +314,8 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< pdb-skip>*/
-comment|/*< skip>*/
-DECL|enum|__anon2b065e1d0803
+comment|/*< pdb-skip, skip>*/
+DECL|enum|__anon2b6d9dc10803
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
