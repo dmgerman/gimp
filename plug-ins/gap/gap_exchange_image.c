@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* gap_exchange_image.c  *   by hof (Wolfgang Hofer)  *  * GAP ... Gimp Animation Plugins  *  * basic anim functions:  *   This Plugin drops the content of the destination  *   image (all layers,channels& guides)  *   and then moves (steal) the content of a source image to dst. image  *  */
+comment|/* gap_exchange_image.c  *   by hof (Wolfgang Hofer)  *  * GAP ... Gimp Animation Plugins  *  * basic anim functions:  *   This Plugin drops the content of the destination  *   image (all layers,channels, paths, parasites& guides)  *   and then moves (steal) the content of a source image to dst. image  *  */
 end_comment
 
 begin_comment
@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history:  * 1.1.15b  2000/01/30   hof: handle image specific parasites  * 1.1.15a  2000/01/25   hof: stopped gimp 1.0.x support (removed p_copy_content)  *                            handle pathes  * 0.98.00; 1998/11/30   hof: 1.st release  *                             (substitute for the procedure "gimp_duplicate_into"  *                              that was never part of the GIMP core)  */
+comment|/* revision history:  * 1.1.16a  2000/02/05   hof: handle path lockedstaus and image unit  * 1.1.15b  2000/01/30   hof: handle image specific parasites  * 1.1.15a  2000/01/25   hof: stopped gimp 1.0.x support (removed p_copy_content)  *                            handle pathes  * 0.98.00; 1998/11/30   hof: 1.st release  *                             (substitute for the procedure "gimp_duplicate_into"  *                              that was never part of the GIMP core)  */
 end_comment
 
 begin_comment
@@ -1041,6 +1041,26 @@ argument_list|,
 name|l_path_points
 argument_list|)
 expr_stmt|;
+name|p_gimp_path_set_locked
+argument_list|(
+name|dst_image_id
+argument_list|,
+name|l_path_names
+index|[
+name|l_idx
+index|]
+argument_list|,
+name|p_gimp_path_get_locked
+argument_list|(
+name|src_image_id
+argument_list|,
+name|l_path_names
+index|[
+name|l_idx
+index|]
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 if|if
 condition|(
@@ -1209,6 +1229,17 @@ block|}
 name|g_free
 argument_list|(
 name|l_parasite_names
+argument_list|)
+expr_stmt|;
+comment|/* copy the image unit */
+name|gimp_image_set_unit
+argument_list|(
+name|dst_image_id
+argument_list|,
+name|gimp_image_get_unit
+argument_list|(
+name|src_image_id
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|l_rc

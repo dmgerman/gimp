@@ -16,7 +16,7 @@ comment|/******************************************************************* ***
 end_comment
 
 begin_comment
-comment|/*  * Changelog:  *  * 2000/01/06 v1.1.14a:  hof: save thumbnails .xvpics p_gimp_file_save_thumbnail  *                       store framerate in video_info file  * 1999/11/25 v1.1.11.b: Initial release. [hof]   *                       (based on plug-ins/common/mpeg.c v1.1 99/05/31 by Adam D. Moss)  */
+comment|/*  * Changelog:  *  * 2000/02/07 v1.1.16a:  hof: replaced sprintf by g_strdup_printf  * 2000/01/06 v1.1.14a:  hof: save thumbnails .xvpics p_gimp_file_save_thumbnail  *                       store framerate in video_info file  * 1999/11/25 v1.1.11.b: Initial release. [hof]   *                       (based on plug-ins/common/mpeg.c v1.1 99/05/31 by Adam D. Moss)  */
 end_comment
 
 begin_comment
@@ -1360,6 +1360,10 @@ name|l_rc
 operator|=
 literal|0
 expr_stmt|;
+name|l_framerate
+operator|=
+literal|24.0
+expr_stmt|;
 switch|switch
 condition|(
 name|mpeg_rate_code
@@ -1513,14 +1517,11 @@ end_function
 
 begin_function
 specifier|static
-name|void
-DECL|function|p_build_gap_framename (char * framename,gint32 frame_nr,char * basename,char * ext)
-name|p_build_gap_framename
-parameter_list|(
 name|char
 modifier|*
-name|framename
-parameter_list|,
+DECL|function|p_build_gap_framename (gint32 frame_nr,char * basename,char * ext)
+name|p_build_gap_framename
+parameter_list|(
 name|gint32
 name|frame_nr
 parameter_list|,
@@ -1533,10 +1534,14 @@ modifier|*
 name|ext
 parameter_list|)
 block|{
-name|sprintf
-argument_list|(
+name|char
+modifier|*
 name|framename
-argument_list|,
+decl_stmt|;
+name|framename
+operator|=
+name|g_strdup_printf
+argument_list|(
 literal|"%s%04d.%s"
 argument_list|,
 name|basename
@@ -1549,6 +1554,11 @@ argument_list|,
 name|ext
 argument_list|)
 expr_stmt|;
+return|return
+operator|(
+name|framename
+operator|)
+return|;
 block|}
 end_function
 
@@ -1630,17 +1640,16 @@ name|ImageDesc
 name|img
 decl_stmt|;
 name|gchar
+modifier|*
 name|layername
-index|[
-literal|200
-index|]
+init|=
+name|NULL
 decl_stmt|;
-comment|/* FIXME? */
 name|gchar
+modifier|*
 name|framename
-index|[
-literal|500
-index|]
+init|=
+name|NULL
 decl_stmt|;
 name|first_image_ID
 operator|=
@@ -1674,10 +1683,10 @@ literal|1
 operator|)
 return|;
 block|}
+name|framename
+operator|=
 name|p_build_gap_framename
 argument_list|(
-name|framename
-argument_list|,
 name|first_frame
 argument_list|,
 name|basename
@@ -1878,10 +1887,15 @@ condition|(
 name|moreframes
 condition|)
 block|{
-name|p_build_gap_framename
+name|g_free
 argument_list|(
 name|framename
-argument_list|,
+argument_list|)
+expr_stmt|;
+name|framename
+operator|=
+name|p_build_gap_framename
+argument_list|(
 name|framenumber
 argument_list|,
 name|basename
@@ -2005,10 +2019,10 @@ name|delay
 operator|>
 literal|0
 condition|)
-name|sprintf
-argument_list|(
 name|layername
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 literal|"Frame %d (%dms)"
 argument_list|,
 name|framenumber
@@ -2017,10 +2031,10 @@ name|delay
 argument_list|)
 expr_stmt|;
 else|else
-name|sprintf
-argument_list|(
 name|layername
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 literal|"Frame %d"
 argument_list|,
 name|framenumber
@@ -2043,6 +2057,11 @@ argument_list|,
 literal|100
 argument_list|,
 name|NORMAL_MODE
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|layername
 argument_list|)
 expr_stmt|;
 name|gimp_image_add_layer

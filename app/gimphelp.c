@@ -252,6 +252,10 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|DEBUG_HELP
+if|if
+condition|(
+name|help_data
+condition|)
 name|g_print
 argument_list|(
 literal|"Help Page: %s\n"
@@ -261,6 +265,12 @@ name|gchar
 operator|*
 operator|)
 name|help_data
+argument_list|)
+expr_stmt|;
+else|else
+name|g_print
+argument_list|(
+literal|"Help Page: NULL\n"
 argument_list|)
 expr_stmt|;
 endif|#
