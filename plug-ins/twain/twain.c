@@ -156,14 +156,6 @@ name|PLUG_IN_VERSION
 value|"v0.5 (03/31/1999)"
 end_define
 
-begin_define
-DECL|macro|PLUG_IN_MENU_PATH
-define|#
-directive|define
-name|PLUG_IN_MENU_PATH
-value|N_("<Toolbox>/File/Acquire/TWAIN...")
-end_define
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -510,7 +502,7 @@ comment|/* Currently unused... Eventually may be used  * to track dialog data.  
 end_comment
 
 begin_typedef
-DECL|struct|__anon27c95add0108
+DECL|struct|__anon28b7ad350108
 typedef|typedef
 struct|struct
 block|{
@@ -1514,7 +1506,10 @@ name|PLUG_IN_COPYRIGHT
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
-name|PLUG_IN_MENU_PATH
+name|N_
+argument_list|(
+literal|"<Toolbox>/File/Acquire/TWAIN..."
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -1843,7 +1838,7 @@ comment|/* Data used to carry data between each of  * the callback function call
 end_comment
 
 begin_typedef
-DECL|struct|__anon27c95add0208
+DECL|struct|__anon28b7ad350208
 typedef|typedef
 struct|struct
 block|{

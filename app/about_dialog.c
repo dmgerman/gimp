@@ -986,7 +986,10 @@ name|font
 operator|=
 name|gdk_font_load
 argument_list|(
-literal|"-Adobe-Helvetica-Medium-R-Normal--*-140-*-*-*-*-*-*"
+name|_
+argument_list|(
+literal|"-*-helvetica-medium-r-normal--*-140-*-*-*-*-*-*"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_push_style

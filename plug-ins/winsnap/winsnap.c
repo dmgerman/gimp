@@ -127,14 +127,6 @@ name|PLUG_IN_VERSION
 value|"v0.70 (07/16/1999)"
 end_define
 
-begin_define
-DECL|macro|PLUG_IN_MENU_PATH
-define|#
-directive|define
-name|PLUG_IN_MENU_PATH
-value|N_("<Toolbox>/File/Acquire/Screen Shot...")
-end_define
-
 begin_comment
 comment|/*  * Application definitions  */
 end_comment
@@ -370,7 +362,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28ca0f840108
+DECL|struct|__anon2a08b1ea0108
 typedef|typedef
 struct|struct
 block|{
@@ -411,7 +403,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28ca0f840208
+DECL|struct|__anon2a08b1ea0208
 typedef|typedef
 struct|struct
 block|{
@@ -3749,7 +3741,10 @@ name|PLUG_IN_COPYRIGHT
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
-name|PLUG_IN_MENU_PATH
+name|N_
+argument_list|(
+literal|"<Toolbox>/File/Acquire/Screen Shot..."
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

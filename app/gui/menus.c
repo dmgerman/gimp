@@ -152,7 +152,7 @@ DECL|macro|MRU_MENU_ENTRY_SIZE
 define|#
 directive|define
 name|MRU_MENU_ENTRY_SIZE
-value|(strlen (_("/File/MRU00 ")) + 1)
+value|(strlen ("/File/MRU00 ") + 1)
 end_define
 
 begin_define

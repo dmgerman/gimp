@@ -85,14 +85,6 @@ block|}
 struct|;
 end_struct
 
-begin_define
-DECL|macro|DEFAULT_PROGRESS_MESSAGE
-define|#
-directive|define
-name|DEFAULT_PROGRESS_MESSAGE
-value|_("Please wait...")
-end_define
-
 begin_comment
 comment|/* prototypes */
 end_comment
@@ -383,7 +375,10 @@ name|message
 condition|?
 name|message
 else|:
-name|DEFAULT_PROGRESS_MESSAGE
+name|_
+argument_list|(
+literal|"Please wait..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -615,7 +610,10 @@ name|message
 condition|?
 name|message
 else|:
-name|DEFAULT_PROGRESS_MESSAGE
+name|_
+argument_list|(
+literal|"Please wait..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|bar

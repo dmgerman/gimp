@@ -470,27 +470,11 @@ value|110
 end_define
 
 begin_define
-DECL|macro|NAME
-define|#
-directive|define
-name|NAME
-value|_("The GIMP")
-end_define
-
-begin_define
-DECL|macro|BROUGHT
-define|#
-directive|define
-name|BROUGHT
-value|_("brought to you by")
-end_define
-
-begin_define
 DECL|macro|AUTHORS
 define|#
 directive|define
 name|AUTHORS
-value|"Spencer Kimball and Peter Mattis"
+value|"Spencer Kimball& Peter Mattis"
 end_define
 
 begin_define
@@ -1325,7 +1309,10 @@ name|font
 operator|=
 name|gdk_font_load
 argument_list|(
-literal|"-Adobe-Helvetica-Bold-R-Normal--*-140-*-*-*-*-*-*"
+name|_
+argument_list|(
+literal|"-*-helvetica-bold-r-normal--*-140-*-*-*-*-*-*"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gdk_draw_string
@@ -1353,7 +1340,10 @@ name|gdk_string_width
 argument_list|(
 name|font
 argument_list|,
-name|NAME
+name|_
+argument_list|(
+literal|"The GIMP"
+argument_list|)
 argument_list|)
 operator|)
 operator|/
@@ -1366,7 +1356,10 @@ operator|*
 name|logo_area_height
 operator|)
 argument_list|,
-name|NAME
+name|_
+argument_list|(
+literal|"The GIMP"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gdk_font_unref
@@ -1378,7 +1371,10 @@ name|font
 operator|=
 name|gdk_font_load
 argument_list|(
-literal|"-Adobe-Helvetica-Bold-R-Normal--*-120-*-*-*-*-*-*"
+name|_
+argument_list|(
+literal|"-*-helvetica-bold-r-normal--*-120-*-*-*-*-*-*"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gdk_draw_string
@@ -1447,7 +1443,10 @@ name|gdk_string_width
 argument_list|(
 name|font
 argument_list|,
-name|BROUGHT
+name|_
+argument_list|(
+literal|"brought to you by"
+argument_list|)
 argument_list|)
 operator|)
 operator|/
@@ -1460,7 +1459,10 @@ operator|*
 name|logo_area_height
 operator|)
 argument_list|,
-name|BROUGHT
+name|_
+argument_list|(
+literal|"brought to you by"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gdk_draw_string
