@@ -546,7 +546,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon29e3db0e0103
+DECL|enum|__anon292c2a410103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -844,7 +844,12 @@ name|cmap
 operator|=
 name|NULL
 expr_stmt|;
-comment|/* ID and ref_count handled in gimage.c */
+name|gimage
+operator|->
+name|disp_count
+operator|=
+literal|0
+expr_stmt|;
 name|gimage
 operator|->
 name|instance_count
@@ -863,6 +868,7 @@ name|dirty
 operator|=
 literal|1
 expr_stmt|;
+comment|/* Why is that? I doubt this is correct. --Sven */
 name|gimage
 operator|->
 name|undo_on
@@ -12397,7 +12403,7 @@ argument_list|,
 name|mode
 argument_list|)
 expr_stmt|;
-comment|/*  Push the undo--Important to do it here, AFTER the call    *   to layer_apply_mask, in case the undo push fails and the    *   mask is delete : NULL)d    */
+comment|/*  Push the undo--Important to do it here, AFTER the call    *   to layer_apply_mask, in case the undo push fails and the    *   mask is deleted    */
 name|undo_push_layer_mask
 argument_list|(
 name|gimage

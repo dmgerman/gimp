@@ -158,11 +158,11 @@ name|gint
 name|instance_count
 decl_stmt|;
 comment|/*  number of instances          */
-DECL|member|ref_count
+DECL|member|disp_count
 name|gint
-name|ref_count
+name|disp_count
 decl_stmt|;
-comment|/*  number of references         */
+comment|/*  number of displays           */
 DECL|member|tattoo_state
 name|Tattoo
 name|tattoo_state

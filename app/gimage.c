@@ -384,7 +384,11 @@ block|}
 end_function
 
 begin_comment
-comment|/* Ack! GImages have their own ref counts! This is going to cause    trouble.. It should be pretty easy to convert to proper GtkObject    ref counting, though. */
+comment|/* Ack, GImages have their own ref counts! This is going to cause    trouble.. It should be pretty easy to convert to proper GtkObject    ref counting, though. */
+end_comment
+
+begin_comment
+comment|/* This caused trouble indeed. The ref_count was only used by the    displays showing the image, so I renamed it to disp_count to     make clear that it should only be used for display references.                                                (Sven, 23.01.2000) */
 end_comment
 
 begin_function
@@ -397,16 +401,11 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|gimage
-operator|->
-name|ref_count
-operator|--
-expr_stmt|;
 if|if
 condition|(
 name|gimage
 operator|->
-name|ref_count
+name|disp_count
 operator|<=
 literal|0
 condition|)

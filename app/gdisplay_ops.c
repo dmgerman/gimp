@@ -338,7 +338,7 @@ name|int
 name|kill_it
 parameter_list|)
 block|{
-comment|/*  If the image has been modified, give the user a chance to save    *  it before nuking it--this only applies if its the last view    *  to an image canvas.  (a gimage with ref_count = 1)    */
+comment|/*  If the image has been modified, give the user a chance to save    *  it before nuking it--this only applies if its the last view    *  to an image canvas.  (a gimage with disp_count = 1)    */
 if|if
 condition|(
 operator|!
@@ -349,7 +349,7 @@ name|gdisp
 operator|->
 name|gimage
 operator|->
-name|ref_count
+name|disp_count
 operator|==
 literal|1
 operator|)

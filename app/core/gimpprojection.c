@@ -810,9 +810,10 @@ operator|->
 name|instance_count
 operator|++
 expr_stmt|;
+comment|/* this is obsolete */
 name|gimage
 operator|->
-name|ref_count
+name|disp_count
 operator|++
 expr_stmt|;
 name|lc_dialog_preview_update
@@ -1604,6 +1605,13 @@ name|window_nav_dialog
 argument_list|)
 expr_stmt|;
 comment|/*  free the gimage  */
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|disp_count
+operator|--
+expr_stmt|;
 name|gimage_delete
 argument_list|(
 name|gdisp
@@ -10122,6 +10130,13 @@ argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|disp_count
+operator|--
+expr_stmt|;
 name|gimage_delete
 argument_list|(
 name|gdisp
@@ -10142,7 +10157,7 @@ operator|++
 expr_stmt|;
 name|gimage
 operator|->
-name|ref_count
+name|disp_count
 operator|++
 expr_stmt|;
 name|gdisp

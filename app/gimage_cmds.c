@@ -1920,7 +1920,7 @@ literal|"gimp_image_delete"
 block|,
 literal|"Delete the specified image."
 block|,
-literal|"If there are no other references to this image it will be deleted. Other references are possible when more than one view to an image exists."
+literal|"If there are no displays associated with this image it will be deleted. This means that you can not delete an image through the PDB that was created by the user. If the associated display was however created through the PDB and you know the display ID, you may delete the display. Removal of the last associated display will then delete the image."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
