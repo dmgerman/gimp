@@ -138,7 +138,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2afc91f60103
+DECL|enum|__anon2945830b0103
 block|{
 DECL|enumerator|FORE_AREA
 name|FORE_AREA
@@ -159,6 +159,22 @@ block|}
 name|ColorAreaTarget
 typedef|;
 end_typedef
+
+begin_define
+DECL|macro|FOREGROUND
+define|#
+directive|define
+name|FOREGROUND
+value|0
+end_define
+
+begin_define
+DECL|macro|BACKGROUND
+define|#
+directive|define
+name|BACKGROUND
+value|1
+end_define
 
 begin_comment
 comment|/*  local function prototypes  */
@@ -325,15 +341,6 @@ comment|/*  Global variables  */
 end_comment
 
 begin_decl_stmt
-DECL|variable|active_color
-name|gint
-name|active_color
-init|=
-name|FOREGROUND
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|color_area_gdisp
 name|GimpDisplay
 modifier|*
@@ -376,6 +383,16 @@ name|gboolean
 name|color_notebook_active
 init|=
 name|FALSE
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|active_color
+specifier|static
+name|gint
+name|active_color
+init|=
+name|FOREGROUND
 decl_stmt|;
 end_decl_stmt
 

@@ -115,6 +115,10 @@ DECL|member|center_y
 name|gint
 name|center_y
 decl_stmt|;
+DECL|member|pick_mode
+name|GimpColorPickMode
+name|pick_mode
+decl_stmt|;
 DECL|member|options
 name|GimpColorOptions
 modifier|*

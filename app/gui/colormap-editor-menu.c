@@ -105,7 +105,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/_Add Color"
+literal|"/_Add Color from FG"
 argument_list|)
 block|,
 literal|""
@@ -113,6 +113,31 @@ block|,
 name|colormap_editor_add_color_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GTK_STOCK_ADD
+block|}
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_INDEXED_PALETTE_ADD
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/_Add Color from BG"
+argument_list|)
+block|,
+literal|""
+block|,
+name|colormap_editor_add_color_cmd_callback
+block|,
+name|TRUE
 block|,
 literal|"<StockItem>"
 block|,
@@ -230,7 +255,20 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Add Color"
+literal|"/Add Color from FG"
+argument_list|,
+name|gimage
+operator|&&
+name|indexed
+operator|&&
+name|num_colors
+operator|<
+literal|256
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Add Color from BG"
 argument_list|,
 name|gimage
 operator|&&

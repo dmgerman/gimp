@@ -18,7 +18,7 @@ end_define
 
 begin_function_decl
 name|void
-name|palette_editor_new_color_cmd_callback
+name|palette_editor_edit_color_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -35,7 +35,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|palette_editor_edit_color_cmd_callback
+name|palette_editor_new_color_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*

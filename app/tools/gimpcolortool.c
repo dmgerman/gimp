@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2794c5d10103
+DECL|enum|__anon292c9bf20103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -637,6 +637,12 @@ literal|0
 expr_stmt|;
 name|color_tool
 operator|->
+name|pick_mode
+operator|=
+name|GIMP_COLOR_PICK_MODE_FOREGROUND
+expr_stmt|;
+name|color_tool
+operator|->
 name|options
 operator|=
 name|NULL
@@ -995,10 +1001,6 @@ name|GIMP_BAD_CURSOR
 decl_stmt|;
 if|if
 condition|(
-name|gdisp
-operator|->
-name|gimage
-operator|&&
 name|coords
 operator|->
 name|x
@@ -1062,7 +1064,15 @@ name|cursor
 argument_list|,
 name|GIMP_COLOR_PICKER_TOOL_CURSOR
 argument_list|,
-name|GIMP_CURSOR_MODIFIER_NONE
+name|color_tool
+operator|->
+name|pick_mode
+operator|==
+name|GIMP_COLOR_PICK_MODE_FOREGROUND
+condition|?
+name|GIMP_CURSOR_MODIFIER_FOREGROUND
+else|:
+name|GIMP_CURSOR_MODIFIER_BACKGROUND
 argument_list|)
 expr_stmt|;
 return|return;

@@ -33,12 +33,12 @@ comment|/*< skip>*/
 end_comment
 
 begin_comment
-unit|are registered with the GType system.     If you want the enum to be skipped by both scripts, you have to use
+unit|are registered with the GType system.    If you want the enum to be skipped by both scripts, you have to use
 comment|/*< pdb-skip, skip>*/
 end_comment
 
 begin_comment
-unit|.      All enum values that are marked with
+unit|.     All enum values that are marked with
 comment|/*< skip>*/
 end_comment
 
@@ -49,8 +49,45 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*   * these enums that are registered with the type system  */
+comment|/*  * these enums that are registered with the type system  */
 end_comment
+
+begin_define
+DECL|macro|GIMP_TYPE_COLOR_PICK_MODE
+define|#
+directive|define
+name|GIMP_TYPE_COLOR_PICK_MODE
+value|(gimp_color_pick_mode_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_color_pick_mode_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< pdb-skip>*/
+DECL|enum|__anon2b972ae80103
+block|{
+DECL|enumerator|GIMP_COLOR_PICK_MODE_FOREGROUND
+name|GIMP_COLOR_PICK_MODE_FOREGROUND
+block|,
+comment|/*< desc="Pick Foreground Color">*/
+DECL|enumerator|GIMP_COLOR_PICK_MODE_BACKGROUND
+name|GIMP_COLOR_PICK_MODE_BACKGROUND
+comment|/*< desc="Pick Background Color">*/
+DECL|typedef|GimpColorPickMode
+block|}
+name|GimpColorPickMode
+typedef|;
+end_typedef
 
 begin_define
 DECL|macro|GIMP_TYPE_CROP_TYPE
@@ -74,7 +111,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon274c81980103
+DECL|enum|__anon2b972ae80203
 block|{
 DECL|enumerator|GIMP_CROP
 name|GIMP_CROP
@@ -89,6 +126,171 @@ name|GimpCropType
 typedef|;
 end_typedef
 
+begin_define
+DECL|macro|GIMP_TYPE_RECT_SELECT_MODE
+define|#
+directive|define
+name|GIMP_TYPE_RECT_SELECT_MODE
+value|(gimp_rect_select_mode_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_rect_select_mode_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< pdb-skip>*/
+DECL|enum|__anon2b972ae80303
+block|{
+DECL|enumerator|GIMP_RECT_SELECT_MODE_FREE
+name|GIMP_RECT_SELECT_MODE_FREE
+block|,
+comment|/*< desc="Free Select">*/
+DECL|enumerator|GIMP_RECT_SELECT_MODE_FIXED_SIZE
+name|GIMP_RECT_SELECT_MODE_FIXED_SIZE
+block|,
+comment|/*< desc="Fixed Size">*/
+DECL|enumerator|GIMP_RECT_SELECT_MODE_FIXED_RATIO
+name|GIMP_RECT_SELECT_MODE_FIXED_RATIO
+comment|/*< desc="Fixed Aspect Ratio">*/
+DECL|typedef|GimpRectSelectMode
+block|}
+name|GimpRectSelectMode
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_TRANSFORM_TYPE
+define|#
+directive|define
+name|GIMP_TYPE_TRANSFORM_TYPE
+value|(gimp_transform_type_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_transform_type_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< pdb-skip>*/
+DECL|enum|__anon2b972ae80403
+block|{
+DECL|enumerator|GIMP_TRANSFORM_TYPE_LAYER
+name|GIMP_TRANSFORM_TYPE_LAYER
+block|,
+comment|/*< desc="Transform Active Layer">*/
+DECL|enumerator|GIMP_TRANSFORM_TYPE_SELECTION
+name|GIMP_TRANSFORM_TYPE_SELECTION
+block|,
+comment|/*< desc="Transform Selection">*/
+DECL|enumerator|GIMP_TRANSFORM_TYPE_PATH
+name|GIMP_TRANSFORM_TYPE_PATH
+comment|/*< desc="Transform Active Path">*/
+DECL|typedef|GimpTransformType
+block|}
+name|GimpTransformType
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_VECTOR_MODE
+define|#
+directive|define
+name|GIMP_TYPE_VECTOR_MODE
+value|(gimp_vector_mode_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_vector_mode_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< pdb-skip>*/
+DECL|enum|__anon2b972ae80503
+block|{
+DECL|enumerator|GIMP_VECTOR_MODE_DESIGN
+name|GIMP_VECTOR_MODE_DESIGN
+block|,
+comment|/*< desc="Design">*/
+DECL|enumerator|GIMP_VECTOR_MODE_EDIT
+name|GIMP_VECTOR_MODE_EDIT
+block|,
+comment|/*< desc="Edit">*/
+DECL|enumerator|GIMP_VECTOR_MODE_MOVE
+name|GIMP_VECTOR_MODE_MOVE
+block|,
+comment|/*< desc="Move">*/
+DECL|typedef|GimpVectorMode
+block|}
+name|GimpVectorMode
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_TRANSFORM_GRID_TYPE
+define|#
+directive|define
+name|GIMP_TYPE_TRANSFORM_GRID_TYPE
+value|(gimp_transform_grid_type_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_transform_grid_type_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< pdb-skip>*/
+DECL|enum|__anon2b972ae80603
+block|{
+DECL|enumerator|GIMP_TRANSFORM_GRID_TYPE_NONE
+name|GIMP_TRANSFORM_GRID_TYPE_NONE
+block|,
+comment|/*< desc="Don't Show Grid">*/
+DECL|enumerator|GIMP_TRANSFORM_GRID_TYPE_N_LINES
+name|GIMP_TRANSFORM_GRID_TYPE_N_LINES
+block|,
+comment|/*< desc="Number of Grid Lines">*/
+DECL|enumerator|GIMP_TRANSFORM_GRID_TYPE_SPACING
+name|GIMP_TRANSFORM_GRID_TYPE_SPACING
+comment|/*< desc="Grid Line Spacing">*/
+DECL|typedef|GimpTransformGridType
+block|}
+name|GimpTransformGridType
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  * non-registered enums; register them if needed  */
 end_comment
@@ -97,7 +299,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon274c81980203
+DECL|enum|__anon2b972ae80703
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -144,7 +346,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon274c81980303
+DECL|enum|__anon2b972ae80803
 block|{
 DECL|enumerator|PAUSE
 name|PAUSE
@@ -168,7 +370,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon274c81980403
+DECL|enum|__anon2b972ae80903
 block|{
 DECL|enumerator|GIMP_MOTION_MODE_EXACT
 name|GIMP_MOTION_MODE_EXACT
@@ -184,171 +386,6 @@ name|GimpMotionMode
 typedef|;
 end_typedef
 
-begin_define
-DECL|macro|GIMP_TYPE_RECT_SELECT_MODE
-define|#
-directive|define
-name|GIMP_TYPE_RECT_SELECT_MODE
-value|(gimp_rect_select_mode_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_rect_select_mode_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-comment|/*< pdb-skip>*/
-DECL|enum|__anon274c81980503
-block|{
-DECL|enumerator|GIMP_RECT_SELECT_MODE_FREE
-name|GIMP_RECT_SELECT_MODE_FREE
-block|,
-comment|/*< desc="Free Select">*/
-DECL|enumerator|GIMP_RECT_SELECT_MODE_FIXED_SIZE
-name|GIMP_RECT_SELECT_MODE_FIXED_SIZE
-block|,
-comment|/*< desc="Fixed Size">*/
-DECL|enumerator|GIMP_RECT_SELECT_MODE_FIXED_RATIO
-name|GIMP_RECT_SELECT_MODE_FIXED_RATIO
-comment|/*< desc="Fixed Aspect Ratio">*/
-DECL|typedef|GimpRectSelectMode
-block|}
-name|GimpRectSelectMode
-typedef|;
-end_typedef
-
-begin_define
-DECL|macro|GIMP_TYPE_TRANSFORM_TYPE
-define|#
-directive|define
-name|GIMP_TYPE_TRANSFORM_TYPE
-value|(gimp_transform_type_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_transform_type_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-comment|/*< pdb-skip>*/
-DECL|enum|__anon274c81980603
-block|{
-DECL|enumerator|GIMP_TRANSFORM_TYPE_LAYER
-name|GIMP_TRANSFORM_TYPE_LAYER
-block|,
-comment|/*< desc="Transform Active Layer">*/
-DECL|enumerator|GIMP_TRANSFORM_TYPE_SELECTION
-name|GIMP_TRANSFORM_TYPE_SELECTION
-block|,
-comment|/*< desc="Transform Selection">*/
-DECL|enumerator|GIMP_TRANSFORM_TYPE_PATH
-name|GIMP_TRANSFORM_TYPE_PATH
-comment|/*< desc="Transform Active Path">*/
-DECL|typedef|GimpTransformType
-block|}
-name|GimpTransformType
-typedef|;
-end_typedef
-
-begin_define
-DECL|macro|GIMP_TYPE_VECTOR_MODE
-define|#
-directive|define
-name|GIMP_TYPE_VECTOR_MODE
-value|(gimp_vector_mode_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_vector_mode_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-comment|/*< pdb-skip>*/
-DECL|enum|__anon274c81980703
-block|{
-DECL|enumerator|GIMP_VECTOR_MODE_DESIGN
-name|GIMP_VECTOR_MODE_DESIGN
-block|,
-comment|/*< desc="Design">*/
-DECL|enumerator|GIMP_VECTOR_MODE_EDIT
-name|GIMP_VECTOR_MODE_EDIT
-block|,
-comment|/*< desc="Edit">*/
-DECL|enumerator|GIMP_VECTOR_MODE_MOVE
-name|GIMP_VECTOR_MODE_MOVE
-block|,
-comment|/*< desc="Move">*/
-DECL|typedef|GimpVectorMode
-block|}
-name|GimpVectorMode
-typedef|;
-end_typedef
-
-begin_define
-DECL|macro|GIMP_TYPE_TRANSFORM_GRID_TYPE
-define|#
-directive|define
-name|GIMP_TYPE_TRANSFORM_GRID_TYPE
-value|(gimp_transform_grid_type_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_transform_grid_type_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-comment|/*< pdb-skip>*/
-DECL|enum|__anon274c81980803
-block|{
-DECL|enumerator|GIMP_TRANSFORM_GRID_TYPE_NONE
-name|GIMP_TRANSFORM_GRID_TYPE_NONE
-block|,
-comment|/*< desc="Don't Show Grid">*/
-DECL|enumerator|GIMP_TRANSFORM_GRID_TYPE_N_LINES
-name|GIMP_TRANSFORM_GRID_TYPE_N_LINES
-block|,
-comment|/*< desc="Number of Grid Lines">*/
-DECL|enumerator|GIMP_TRANSFORM_GRID_TYPE_SPACING
-name|GIMP_TRANSFORM_GRID_TYPE_SPACING
-comment|/*< desc="Grid Line Spacing">*/
-DECL|typedef|GimpTransformGridType
-block|}
-name|GimpTransformGridType
-typedef|;
-end_typedef
-
 begin_comment
 comment|/*  Possible transform functions  */
 end_comment
@@ -357,7 +394,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip, skip>*/
-DECL|enum|__anon274c81980903
+DECL|enum|__anon2b972ae80a03
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING

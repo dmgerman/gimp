@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gui-types.h"
 end_include
 
@@ -118,14 +124,20 @@ operator|->
 name|add_button
 argument_list|)
 condition|)
-name|gtk_button_clicked
+name|gimp_button_extended_clicked
 argument_list|(
-name|GTK_BUTTON
+name|GIMP_BUTTON
 argument_list|(
 name|editor
 operator|->
 name|add_button
 argument_list|)
+argument_list|,
+name|action
+condition|?
+name|GDK_CONTROL_MASK
+else|:
+literal|0
 argument_list|)
 expr_stmt|;
 block|}

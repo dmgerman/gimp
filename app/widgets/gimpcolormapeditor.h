@@ -191,6 +191,9 @@ parameter_list|(
 name|GimpColormapEditor
 modifier|*
 name|editor
+parameter_list|,
+name|GdkModifierType
+name|state
 parameter_list|)
 function_decl|;
 block|}
@@ -230,6 +233,9 @@ parameter_list|(
 name|GimpColormapEditor
 modifier|*
 name|editor
+parameter_list|,
+name|GdkModifierType
+name|state
 parameter_list|)
 function_decl|;
 end_function_decl

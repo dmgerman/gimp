@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gui-types.h"
 end_include
 
@@ -39,8 +45,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|palette_editor_new_color_cmd_callback (GtkWidget * widget,gpointer data,guint action)
-name|palette_editor_new_color_cmd_callback
+DECL|function|palette_editor_edit_color_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+name|palette_editor_edit_color_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -86,8 +92,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|palette_editor_edit_color_cmd_callback (GtkWidget * widget,gpointer data,guint action)
-name|palette_editor_edit_color_cmd_callback
+DECL|function|palette_editor_new_color_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+name|palette_editor_new_color_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -115,17 +121,23 @@ name|GTK_WIDGET_SENSITIVE
 argument_list|(
 name|editor
 operator|->
-name|edit_button
+name|new_button
 argument_list|)
 condition|)
-name|gtk_button_clicked
+name|gimp_button_extended_clicked
 argument_list|(
-name|GTK_BUTTON
+name|GIMP_BUTTON
 argument_list|(
 name|editor
 operator|->
-name|edit_button
+name|new_button
 argument_list|)
+argument_list|,
+name|action
+condition|?
+name|GDK_CONTROL_MASK
+else|:
+literal|0
 argument_list|)
 expr_stmt|;
 block|}

@@ -16,37 +16,6 @@ directive|define
 name|__GIMP_TOOLBOX_COLOR_AREA_H__
 end_define
 
-begin_define
-DECL|macro|FOREGROUND
-define|#
-directive|define
-name|FOREGROUND
-value|0
-end_define
-
-begin_define
-DECL|macro|BACKGROUND
-define|#
-directive|define
-name|BACKGROUND
-value|1
-end_define
-
-begin_comment
-comment|/*  *  Global variables  */
-end_comment
-
-begin_decl_stmt
-specifier|extern
-name|gint
-name|active_color
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/* foreground (= 0) or background (= 1) */
-end_comment
-
 begin_ifdef
 ifdef|#
 directive|ifdef

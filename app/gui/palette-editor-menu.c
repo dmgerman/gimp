@@ -110,7 +110,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/_New Color"
+literal|"/_New Color from FG"
 argument_list|)
 block|,
 literal|""
@@ -118,6 +118,31 @@ block|,
 name|palette_editor_new_color_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GTK_STOCK_NEW
+block|}
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_PALETTE_EDITOR_NEW
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/_New Color from BG"
+argument_list|)
+block|,
+literal|""
+block|,
+name|palette_editor_new_color_cmd_callback
+block|,
+name|TRUE
 block|,
 literal|"<StockItem>"
 block|,
@@ -328,7 +353,14 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/New Color"
+literal|"/New Color from FG"
+argument_list|,
+name|editable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/New Color from BG"
 argument_list|,
 name|editable
 argument_list|)
