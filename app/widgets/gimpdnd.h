@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf602650103
+DECL|enum|__anon2b8a67000103
 block|{
 DECL|enumerator|GIMP_DND_TYPE_NONE
 name|GIMP_DND_TYPE_NONE
@@ -46,85 +46,95 @@ name|GIMP_DND_TYPE_COLOR
 init|=
 literal|4
 block|,
+DECL|enumerator|GIMP_DND_TYPE_SVG
+name|GIMP_DND_TYPE_SVG
+init|=
+literal|5
+block|,
+DECL|enumerator|GIMP_DND_TYPE_SVG_XML
+name|GIMP_DND_TYPE_SVG_XML
+init|=
+literal|6
+block|,
 DECL|enumerator|GIMP_DND_TYPE_IMAGE
 name|GIMP_DND_TYPE_IMAGE
 init|=
-literal|5
+literal|7
 block|,
 DECL|enumerator|GIMP_DND_TYPE_LAYER
 name|GIMP_DND_TYPE_LAYER
 init|=
-literal|6
+literal|8
 block|,
 DECL|enumerator|GIMP_DND_TYPE_CHANNEL
 name|GIMP_DND_TYPE_CHANNEL
 init|=
-literal|7
+literal|9
 block|,
 DECL|enumerator|GIMP_DND_TYPE_LAYER_MASK
 name|GIMP_DND_TYPE_LAYER_MASK
 init|=
-literal|8
+literal|10
 block|,
 DECL|enumerator|GIMP_DND_TYPE_COMPONENT
 name|GIMP_DND_TYPE_COMPONENT
 init|=
-literal|9
+literal|11
 block|,
 DECL|enumerator|GIMP_DND_TYPE_VECTORS
 name|GIMP_DND_TYPE_VECTORS
 init|=
-literal|10
+literal|12
 block|,
 DECL|enumerator|GIMP_DND_TYPE_BRUSH
 name|GIMP_DND_TYPE_BRUSH
 init|=
-literal|11
+literal|13
 block|,
 DECL|enumerator|GIMP_DND_TYPE_PATTERN
 name|GIMP_DND_TYPE_PATTERN
 init|=
-literal|12
+literal|14
 block|,
 DECL|enumerator|GIMP_DND_TYPE_GRADIENT
 name|GIMP_DND_TYPE_GRADIENT
 init|=
-literal|13
+literal|15
 block|,
 DECL|enumerator|GIMP_DND_TYPE_PALETTE
 name|GIMP_DND_TYPE_PALETTE
 init|=
-literal|14
+literal|16
 block|,
 DECL|enumerator|GIMP_DND_TYPE_FONT
 name|GIMP_DND_TYPE_FONT
 init|=
-literal|15
+literal|17
 block|,
 DECL|enumerator|GIMP_DND_TYPE_BUFFER
 name|GIMP_DND_TYPE_BUFFER
 init|=
-literal|16
+literal|18
 block|,
 DECL|enumerator|GIMP_DND_TYPE_IMAGEFILE
 name|GIMP_DND_TYPE_IMAGEFILE
 init|=
-literal|17
+literal|19
 block|,
 DECL|enumerator|GIMP_DND_TYPE_TEMPLATE
 name|GIMP_DND_TYPE_TEMPLATE
 init|=
-literal|18
+literal|20
 block|,
 DECL|enumerator|GIMP_DND_TYPE_TOOL
 name|GIMP_DND_TYPE_TOOL
 init|=
-literal|19
+literal|21
 block|,
 DECL|enumerator|GIMP_DND_TYPE_DIALOG
 name|GIMP_DND_TYPE_DIALOG
 init|=
-literal|20
+literal|22
 block|,
 DECL|enumerator|GIMP_DND_TYPE_LAST
 name|GIMP_DND_TYPE_LAST
@@ -164,60 +174,6 @@ value|{ "_NETSCAPE_URL", 0, GIMP_DND_TYPE_NETSCAPE_URL }
 end_define
 
 begin_define
-DECL|macro|GIMP_TARGET_IMAGE
-define|#
-directive|define
-name|GIMP_TARGET_IMAGE
-define|\
-value|{ "GIMP_IMAGE", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_IMAGE }
-end_define
-
-begin_define
-DECL|macro|GIMP_TARGET_LAYER
-define|#
-directive|define
-name|GIMP_TARGET_LAYER
-define|\
-value|{ "GIMP_LAYER", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_LAYER }
-end_define
-
-begin_define
-DECL|macro|GIMP_TARGET_CHANNEL
-define|#
-directive|define
-name|GIMP_TARGET_CHANNEL
-define|\
-value|{ "GIMP_CHANNEL", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_CHANNEL }
-end_define
-
-begin_define
-DECL|macro|GIMP_TARGET_LAYER_MASK
-define|#
-directive|define
-name|GIMP_TARGET_LAYER_MASK
-define|\
-value|{ "GIMP_LAYER_MASK", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_LAYER_MASK }
-end_define
-
-begin_define
-DECL|macro|GIMP_TARGET_COMPONENT
-define|#
-directive|define
-name|GIMP_TARGET_COMPONENT
-define|\
-value|{ "GIMP_COMPONENT", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_COMPONENT }
-end_define
-
-begin_define
-DECL|macro|GIMP_TARGET_VECTORS
-define|#
-directive|define
-name|GIMP_TARGET_VECTORS
-define|\
-value|{ "GIMP_VECTORS", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_VECTORS }
-end_define
-
-begin_define
 DECL|macro|GIMP_TARGET_COLOR
 define|#
 directive|define
@@ -227,12 +183,84 @@ value|{ "application/x-color", 0, GIMP_DND_TYPE_COLOR }
 end_define
 
 begin_define
+DECL|macro|GIMP_TARGET_SVG
+define|#
+directive|define
+name|GIMP_TARGET_SVG
+define|\
+value|{ "image/svg", 0, GIMP_DND_TYPE_SVG }
+end_define
+
+begin_define
+DECL|macro|GIMP_TARGET_SVG_XML
+define|#
+directive|define
+name|GIMP_TARGET_SVG_XML
+define|\
+value|{ "image/svg+xml", 0, GIMP_DND_TYPE_SVG_XML }
+end_define
+
+begin_define
+DECL|macro|GIMP_TARGET_IMAGE
+define|#
+directive|define
+name|GIMP_TARGET_IMAGE
+define|\
+value|{ "application/x-gimp-image-id", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_IMAGE }
+end_define
+
+begin_define
+DECL|macro|GIMP_TARGET_LAYER
+define|#
+directive|define
+name|GIMP_TARGET_LAYER
+define|\
+value|{ "application/x-gimp-layer-id", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_LAYER }
+end_define
+
+begin_define
+DECL|macro|GIMP_TARGET_CHANNEL
+define|#
+directive|define
+name|GIMP_TARGET_CHANNEL
+define|\
+value|{ "application/x-gimp-channel-id", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_CHANNEL }
+end_define
+
+begin_define
+DECL|macro|GIMP_TARGET_LAYER_MASK
+define|#
+directive|define
+name|GIMP_TARGET_LAYER_MASK
+define|\
+value|{ "application/x-gimp-layer-mask-id", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_LAYER_MASK }
+end_define
+
+begin_define
+DECL|macro|GIMP_TARGET_COMPONENT
+define|#
+directive|define
+name|GIMP_TARGET_COMPONENT
+define|\
+value|{ "application/x-gimp-component", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_COMPONENT }
+end_define
+
+begin_define
+DECL|macro|GIMP_TARGET_VECTORS
+define|#
+directive|define
+name|GIMP_TARGET_VECTORS
+define|\
+value|{ "application/x-gimp-vectors-id", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_VECTORS }
+end_define
+
+begin_define
 DECL|macro|GIMP_TARGET_BRUSH
 define|#
 directive|define
 name|GIMP_TARGET_BRUSH
 define|\
-value|{ "GIMP_BRUSH", 0, GIMP_DND_TYPE_BRUSH }
+value|{ "application/x-gimp-brush-name", 0, GIMP_DND_TYPE_BRUSH }
 end_define
 
 begin_define
@@ -241,7 +269,7 @@ define|#
 directive|define
 name|GIMP_TARGET_PATTERN
 define|\
-value|{ "GIMP_PATTERN", 0, GIMP_DND_TYPE_PATTERN }
+value|{ "application/x-gimp-pattern-name", 0, GIMP_DND_TYPE_PATTERN }
 end_define
 
 begin_define
@@ -250,7 +278,7 @@ define|#
 directive|define
 name|GIMP_TARGET_GRADIENT
 define|\
-value|{ "GIMP_GRADIENT", 0, GIMP_DND_TYPE_GRADIENT }
+value|{ "application/x-gimp-gradient-name", 0, GIMP_DND_TYPE_GRADIENT }
 end_define
 
 begin_define
@@ -259,7 +287,7 @@ define|#
 directive|define
 name|GIMP_TARGET_PALETTE
 define|\
-value|{ "GIMP_PALETTE", 0, GIMP_DND_TYPE_PALETTE }
+value|{ "application/x-gimp-palette-name", 0, GIMP_DND_TYPE_PALETTE }
 end_define
 
 begin_define
@@ -268,7 +296,7 @@ define|#
 directive|define
 name|GIMP_TARGET_FONT
 define|\
-value|{ "GIMP_FONT", 0, GIMP_DND_TYPE_FONT }
+value|{ "application/x-gimp-font-name", 0, GIMP_DND_TYPE_FONT }
 end_define
 
 begin_define
@@ -277,7 +305,7 @@ define|#
 directive|define
 name|GIMP_TARGET_BUFFER
 define|\
-value|{ "GIMP_BUFFER", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_BUFFER }
+value|{ "application/x-gimp-buffer-name", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_BUFFER }
 end_define
 
 begin_define
@@ -286,7 +314,7 @@ define|#
 directive|define
 name|GIMP_TARGET_IMAGEFILE
 define|\
-value|{ "GIMP_IMAGEFILE", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_IMAGEFILE }
+value|{ "application/x-gimp-imagefile-name", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_IMAGEFILE }
 end_define
 
 begin_define
@@ -295,7 +323,7 @@ define|#
 directive|define
 name|GIMP_TARGET_TEMPLATE
 define|\
-value|{ "GIMP_TEMPLATE", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_TEMPLATE }
+value|{ "application/x-gimp-template-name", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_TEMPLATE }
 end_define
 
 begin_define
@@ -304,7 +332,7 @@ define|#
 directive|define
 name|GIMP_TARGET_TOOL
 define|\
-value|{ "GIMP_TOOL", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_TOOL }
+value|{ "application/x-gimp-tool-name", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_TOOL }
 end_define
 
 begin_define
@@ -313,7 +341,7 @@ define|#
 directive|define
 name|GIMP_TARGET_DIALOG
 define|\
-value|{ "GIMP_DIALOG", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_DIALOG }
+value|{ "application/x-gimp-dialog", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_DIALOG }
 end_define
 
 begin_comment
@@ -555,6 +583,109 @@ end_function_decl
 begin_function_decl
 name|void
 name|gimp_dnd_color_dest_remove
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/*  svg dnd functions  */
+end_comment
+
+begin_typedef
+DECL|typedef|GimpDndDragSvgFunc
+typedef|typedef
+name|GimpVectors
+modifier|*
+function_decl|(
+modifier|*
+name|GimpDndDragSvgFunc
+function_decl|)
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpDndDropSvgFunc
+typedef|typedef
+name|void
+function_decl|(
+modifier|*
+name|GimpDndDropSvgFunc
+function_decl|)
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GimpVectors
+modifier|*
+name|vectors
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_typedef
+
+begin_function_decl
+name|void
+name|gimp_dnd_svg_source_add
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GimpDndDragSvgFunc
+name|get_svg_func
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_dnd_svg_source_remove
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_dnd_svg_dest_add
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GimpDndDropSvgFunc
+name|set_svg_func
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_dnd_svg_dest_remove
 parameter_list|(
 name|GtkWidget
 modifier|*
