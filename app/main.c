@@ -786,7 +786,12 @@ if|#
 directive|if
 name|defined
 argument_list|(
-name|HAVE_SHM_H
+name|USE_SYSV_SHM
+argument_list|)
+operator|||
+name|defined
+argument_list|(
+name|USE_POSIX_SHM
 argument_list|)
 operator|||
 name|defined
