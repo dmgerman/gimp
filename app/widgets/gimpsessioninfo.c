@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2babf6910103
+DECL|enum|__anon2ab0c1d00103
 block|{
 DECL|enumerator|SESSION_INFO_POSITION
 name|SESSION_INFO_POSITION
@@ -2732,7 +2732,7 @@ argument_list|,
 operator|(
 name|GFunc
 operator|)
-name|g_free
+name|gimp_session_info_aux_free
 argument_list|,
 name|NULL
 argument_list|)
