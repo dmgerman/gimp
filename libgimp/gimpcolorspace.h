@@ -31,8 +31,9 @@ directive|endif
 comment|/* __cplusplus */
 comment|/* For information look into the C source or the html documentation */
 comment|/*  Color conversion routines  */
+comment|/*  gint functions  */
 name|void
-name|gimp_rgb_to_hsv
+name|gimp_rgb_to_hsv_int
 parameter_list|(
 name|gint
 modifier|*
@@ -51,7 +52,7 @@ comment|/* returns value      */
 parameter_list|)
 function_decl|;
 name|void
-name|gimp_hsv_to_rgb
+name|gimp_hsv_to_rgb_int
 parameter_list|(
 name|gint
 modifier|*
@@ -70,7 +71,7 @@ comment|/* returns blue       */
 parameter_list|)
 function_decl|;
 name|void
-name|gimp_rgb_to_hls
+name|gimp_rgb_to_hls_int
 parameter_list|(
 name|gint
 modifier|*
@@ -89,7 +90,7 @@ comment|/* returns saturation */
 parameter_list|)
 function_decl|;
 name|gint
-name|gimp_rgb_to_l
+name|gimp_rgb_to_l_int
 parameter_list|(
 name|gint
 name|red
@@ -102,7 +103,7 @@ name|blue
 parameter_list|)
 function_decl|;
 name|void
-name|gimp_hls_to_rgb
+name|gimp_hls_to_rgb_int
 parameter_list|(
 name|gint
 modifier|*
@@ -120,6 +121,7 @@ name|saturation
 comment|/* returns blue       */
 parameter_list|)
 function_decl|;
+comment|/*  gdouble functions  */
 name|void
 name|gimp_rgb_to_hsv_double
 parameter_list|(

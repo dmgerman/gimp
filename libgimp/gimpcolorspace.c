@@ -21,8 +21,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_rgb_to_hsv (gint * red,gint * green,gint * blue)
-name|gimp_rgb_to_hsv
+DECL|function|gimp_rgb_to_hsv_int (gint * red,gint * green,gint * blue)
+name|gimp_rgb_to_hsv_int
 parameter_list|(
 name|gint
 modifier|*
@@ -283,8 +283,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_hsv_to_rgb (gint * hue,gint * saturation,gint * value)
-name|gimp_hsv_to_rgb
+DECL|function|gimp_hsv_to_rgb_int (gint * hue,gint * saturation,gint * value)
+name|gimp_hsv_to_rgb_int
 parameter_list|(
 name|gint
 modifier|*
@@ -583,8 +583,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_rgb_to_hls (gint * red,gint * green,gint * blue)
-name|gimp_rgb_to_hls
+DECL|function|gimp_rgb_to_hls_int (gint * red,gint * green,gint * blue)
+name|gimp_rgb_to_hls_int
 parameter_list|(
 name|gint
 modifier|*
@@ -869,8 +869,8 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_rgb_to_l (gint red,gint green,gint blue)
-name|gimp_rgb_to_l
+DECL|function|gimp_rgb_to_l_int (gint red,gint green,gint blue)
+name|gimp_rgb_to_l_int
 parameter_list|(
 name|gint
 name|red
@@ -1066,8 +1066,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_hls_to_rgb (gint * hue,gint * lightness,gint * saturation)
-name|gimp_hls_to_rgb
+DECL|function|gimp_hls_to_rgb_int (gint * hue,gint * lightness,gint * saturation)
+name|gimp_hls_to_rgb_int
 parameter_list|(
 name|gint
 modifier|*

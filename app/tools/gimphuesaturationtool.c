@@ -987,7 +987,7 @@ index|[
 name|BLUE_PIX
 index|]
 expr_stmt|;
-name|gimp_rgb_to_hls
+name|gimp_rgb_to_hls_int
 argument_list|(
 operator|&
 name|r
@@ -1088,7 +1088,7 @@ index|[
 name|b
 index|]
 expr_stmt|;
-name|gimp_hls_to_rgb
+name|gimp_hls_to_rgb_int
 argument_list|(
 operator|&
 name|r
@@ -3471,7 +3471,7 @@ index|[
 name|BLUE_PIX
 index|]
 expr_stmt|;
-name|gimp_rgb_to_hls
+name|gimp_rgb_to_hls_int
 argument_list|(
 name|rgb
 argument_list|,
@@ -3532,7 +3532,7 @@ name|BLUE_PIX
 index|]
 index|]
 expr_stmt|;
-name|gimp_hls_to_rgb
+name|gimp_hls_to_rgb_int
 argument_list|(
 name|rgb
 argument_list|,

@@ -209,7 +209,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bce5c350108
+DECL|struct|__anon28ae13c80108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -236,7 +236,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bce5c350203
+DECL|enum|__anon28ae13c80203
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -359,7 +359,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bce5c350303
+DECL|enum|__anon28ae13c80303
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -498,7 +498,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bce5c350403
+DECL|enum|__anon28ae13c80403
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -597,7 +597,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bce5c350503
+DECL|enum|__anon28ae13c80503
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -689,7 +689,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bce5c350608
+DECL|struct|__anon28ae13c80608
 block|{
 DECL|member|function
 name|gint
@@ -762,7 +762,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bce5c350708
+DECL|struct|__anon28ae13c80708
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1538,7 +1538,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bce5c350808
+DECL|struct|__anon28ae13c80808
 block|{
 DECL|member|run
 name|gint
@@ -1588,7 +1588,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bce5c350908
+DECL|struct|__anon28ae13c80908
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -3392,7 +3392,7 @@ index|[
 name|i
 index|]
 expr_stmt|;
-name|gimp_rgb_to_hsv
+name|gimp_rgb_to_hsv_int
 argument_list|(
 name|rgbi
 argument_list|,
@@ -3728,7 +3728,7 @@ condition|(
 operator|!
 name|dest_is_gray
 condition|)
-name|gimp_hsv_to_rgb
+name|gimp_hsv_to_rgb_int
 argument_list|(
 operator|&
 name|r
@@ -3900,7 +3900,7 @@ index|]
 expr_stmt|;
 else|else
 block|{
-name|gimp_rgb_to_hsv
+name|gimp_rgb_to_hsv_int
 argument_list|(
 name|rgbi
 argument_list|,
@@ -3970,7 +3970,7 @@ index|]
 else|:
 name|v
 expr_stmt|;
-name|gimp_hsv_to_rgb
+name|gimp_hsv_to_rgb_int
 argument_list|(
 operator|&
 name|r
@@ -11366,7 +11366,7 @@ literal|255
 operator|)
 argument_list|)
 expr_stmt|;
-name|gimp_hsv_to_rgb
+name|gimp_hsv_to_rgb_int
 argument_list|(
 name|rgbi
 argument_list|,

@@ -302,7 +302,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ebf5e90108
+DECL|struct|__anon2c15d3550108
 block|{
 comment|/* gint, gdouble, and so on */
 DECL|member|holdness
@@ -348,7 +348,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ebf5e90208
+DECL|struct|__anon2c15d3550208
 block|{
 DECL|member|run
 name|gint
@@ -1610,7 +1610,7 @@ operator|=
 operator|*
 name|b
 expr_stmt|;
-name|gimp_rgb_to_hsv
+name|gimp_rgb_to_hsv_int
 argument_list|(
 operator|&
 name|h
@@ -1713,7 +1713,7 @@ name|v1
 operator|=
 name|v
 expr_stmt|;
-name|gimp_hsv_to_rgb
+name|gimp_hsv_to_rgb_int
 argument_list|(
 operator|&
 name|h
@@ -1738,7 +1738,7 @@ name|v2
 operator|=
 name|v
 expr_stmt|;
-name|gimp_rgb_to_hsv
+name|gimp_rgb_to_hsv_int
 argument_list|(
 operator|&
 name|h2

@@ -329,7 +329,7 @@ value|GDK_EXPOSURE_MASK | \                        GDK_BUTTON_PRESS_MASK | \    
 end_define
 
 begin_typedef
-DECL|enum|__anon297e42340103
+DECL|enum|__anon2a39ffe30103
 typedef|typedef
 enum|enum
 block|{
@@ -1125,7 +1125,7 @@ operator|*
 literal|255
 argument_list|)
 expr_stmt|;
-name|gimp_hsv_to_rgb
+name|gimp_hsv_to_rgb_int
 argument_list|(
 operator|&
 operator|(
