@@ -252,7 +252,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2767c5730103
+DECL|enum|__anon2a18a0c40103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -3726,6 +3726,11 @@ expr_stmt|;
 if|if
 condition|(
 name|filename
+operator|&&
+name|strlen
+argument_list|(
+name|filename
+argument_list|)
 condition|)
 block|{
 name|gchar
