@@ -438,6 +438,22 @@ value|gimp_image_lower_layer
 end_define
 
 begin_define
+DECL|macro|gimage_raise_layer_to_top
+define|#
+directive|define
+name|gimage_raise_layer_to_top
+value|gimp_image_raise_layer_to_top
+end_define
+
+begin_define
+DECL|macro|gimage_lower_layer_to_bottom
+define|#
+directive|define
+name|gimage_lower_layer_to_bottom
+value|gimp_image_lower_layer_to_bottom
+end_define
+
+begin_define
 DECL|macro|gimage_merge_visible_layers
 define|#
 directive|define

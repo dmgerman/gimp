@@ -218,6 +218,20 @@ name|layer_get_tattoo_proc
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+specifier|extern
+name|ProcRecord
+name|layer_get_linked_proc
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|ProcRecord
+name|layer_set_linked_proc
+decl_stmt|;
+end_decl_stmt
+
 begin_endif
 endif|#
 directive|endif

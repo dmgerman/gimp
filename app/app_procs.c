@@ -1379,6 +1379,8 @@ expr_stmt|;
 comment|/*    *  This is a hack: we try to compute a good guess for the maximum number    *  of charcters that will fit into the splash-screen using the given font    */
 name|max_label_length
 operator|=
+literal|0.92
+operator|*
 operator|(
 name|float
 operator|)
