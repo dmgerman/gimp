@@ -969,6 +969,13 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+name|gimp_image_flush
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+expr_stmt|;
 name|vector_tool
 operator|->
 name|vectors
