@@ -48,7 +48,7 @@ comment|/* __cplusplus */
 comment|/* For information look into the html documentation */
 typedef|typedef
 enum|enum
-DECL|enum|__anon277332dc0103
+DECL|enum|__anon299298e80103
 block|{
 DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_NONE
 name|GIMP_SIZE_ENTRY_UPDATE_NONE
@@ -68,6 +68,18 @@ DECL|typedef|GimpSizeEntryUpdatePolicy
 block|}
 name|GimpSizeEntryUpdatePolicy
 typedef|;
+DECL|typedef|GimpButton
+typedef|typedef
+name|struct
+name|_GimpButton
+name|GimpButton
+typedef|;
+DECL|typedef|GimpChainButton
+typedef|typedef
+name|struct
+name|_GimpChainButton
+name|GimpChainButton
+typedef|;
 DECL|typedef|GimpColorArea
 typedef|typedef
 name|struct
@@ -85,6 +97,12 @@ typedef|typedef
 name|struct
 name|_GimpPathEditor
 name|GimpPathEditor
+typedef|;
+DECL|typedef|GimpPixmap
+typedef|typedef
+name|struct
+name|_GimpPixmap
+name|GimpPixmap
 typedef|;
 DECL|typedef|GimpSizeEntry
 typedef|typedef

@@ -25,6 +25,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpwidgets/gimpbutton.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpwidgets/gimpchainbutton.h>
 end_include
 

@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpwidgetstypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpchainbutton.h"
 end_include
 
@@ -147,7 +153,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b64be910103
+DECL|enum|__anon2c0547dd0103
 block|{
 DECL|enumerator|TOGGLED
 name|TOGGLED

@@ -70,12 +70,6 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CHAIN_BUTTON))
-DECL|typedef|GimpChainButton
-typedef|typedef
-name|struct
-name|_GimpChainButton
-name|GimpChainButton
-typedef|;
 DECL|typedef|GimpChainButtonClass
 typedef|typedef
 name|struct
@@ -84,7 +78,7 @@ name|GimpChainButtonClass
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a593960103
+DECL|enum|__anon2a4d7e0c0103
 block|{
 DECL|enumerator|GIMP_CHAIN_TOP
 name|GIMP_CHAIN_TOP

@@ -67,12 +67,6 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PIXMAP))
-DECL|typedef|GimpPixmap
-typedef|typedef
-name|struct
-name|_GimpPixmap
-name|GimpPixmap
-typedef|;
 DECL|typedef|GimpPixmapClass
 typedef|typedef
 name|struct
