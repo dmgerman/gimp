@@ -132,7 +132,7 @@ comment|/* ick. */
 end_comment
 
 begin_enum
-DECL|enum|__anon276f776d0103
+DECL|enum|__anon2c0960e10103
 enum|enum
 block|{
 DECL|enumerator|REMOVED
@@ -230,7 +230,7 @@ end_function_decl
 begin_decl_stmt
 DECL|variable|layer_signals
 specifier|static
-name|gint
+name|guint
 name|layer_signals
 index|[
 name|LAST_SIGNAL
