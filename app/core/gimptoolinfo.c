@@ -875,6 +875,16 @@ operator|->
 name|paint_options_type
 condition|)
 block|{
+name|gimp_viewable_set_stock_id
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|paint_info
+argument_list|)
+argument_list|,
+name|stock_id
+argument_list|)
+expr_stmt|;
 name|tool_info
 operator|->
 name|tool_options

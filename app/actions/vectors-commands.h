@@ -217,6 +217,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|vectors_stroke_vectors
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|vectors_selection_to_vectors
 parameter_list|(
 name|GimpImage

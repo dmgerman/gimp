@@ -103,6 +103,10 @@ DECL|member|parent_instance
 name|GimpItemTreeView
 name|parent_instance
 decl_stmt|;
+DECL|member|stroke_item_func
+name|GimpStrokeItemFunc
+name|stroke_item_func
+decl_stmt|;
 DECL|member|selection_to_vectors_func
 name|GimpSelectionToVectorsFunc
 name|selection_to_vectors_func

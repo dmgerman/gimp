@@ -32,6 +32,16 @@ parameter_list|,
 name|GimpStrokeOptions
 modifier|*
 name|stroke_options
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|stock_id
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|help_id
 parameter_list|)
 function_decl|;
 end_function_decl
