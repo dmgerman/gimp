@@ -296,7 +296,7 @@ literal|"Sven Anders (anderss@fmi.uni-passau.de)"
 argument_list|,
 literal|"04th April 1999"
 argument_list|,
-literal|"<Image>/Filters/Darkroom/Colormap Rotation"
+literal|"<Image>/Image/Colors/Colormap Rotation..."
 argument_list|,
 literal|"RGB*"
 argument_list|,

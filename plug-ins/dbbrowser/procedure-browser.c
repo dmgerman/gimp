@@ -147,7 +147,7 @@ literal|"Thomas Noel"
 argument_list|,
 literal|"23th june 1997"
 argument_list|,
-literal|"<Toolbox>/Xtns/DB Browser"
+literal|"<Toolbox>/Xtns/DB Browser..."
 argument_list|,
 literal|""
 argument_list|,

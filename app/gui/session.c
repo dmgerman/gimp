@@ -327,7 +327,7 @@ block|,
 operator|(
 name|GtkItemFactoryCallback
 operator|)
-name|dialogs_gradient_cmd_callback
+name|dialogs_gradients_cmd_callback
 block|,
 literal|170
 block|,

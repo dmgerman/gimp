@@ -477,7 +477,7 @@ comment|/* Description of a composition */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27dfde570108
+DECL|struct|__anon2b0936030108
 typedef|typedef
 struct|struct
 block|{
@@ -753,7 +753,7 @@ value|(sizeof (compose_dsc) / sizeof (compose_dsc[0]))
 end_define
 
 begin_typedef
-DECL|struct|__anon27dfde570208
+DECL|struct|__anon2b0936030208
 typedef|typedef
 struct|struct
 block|{
@@ -784,7 +784,7 @@ comment|/* Dialog structure */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27dfde570308
+DECL|struct|__anon2b0936030308
 typedef|typedef
 struct|struct
 block|{
@@ -1187,7 +1187,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Image/Channels/Compose"
+literal|"<Image>/Image/Mode/Compose..."
 argument_list|)
 argument_list|,
 literal|"GRAY*"

@@ -466,7 +466,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab080910108
+DECL|struct|__anon2952090d0108
 block|{
 DECL|member|receipt
 name|char
@@ -705,7 +705,7 @@ literal|"1995-1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/File/Mail image"
+literal|"<Image>/File/Mail Image..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"

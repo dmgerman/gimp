@@ -5592,6 +5592,23 @@ name|SET_SENSITIVE
 argument_list|(
 name|N_
 argument_list|(
+literal|"/New Layer..."
+argument_list|)
+argument_list|,
+name|gimage
+argument_list|)
+expr_stmt|;
+name|SET_OPS_SENSITIVE
+argument_list|(
+literal|0
+argument_list|,
+name|gimage
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+name|N_
+argument_list|(
 literal|"/Stack/Previous Layer"
 argument_list|)
 argument_list|,
@@ -5742,23 +5759,6 @@ name|SET_SENSITIVE
 argument_list|(
 name|N_
 argument_list|(
-literal|"/New Layer"
-argument_list|)
-argument_list|,
-name|gimage
-argument_list|)
-expr_stmt|;
-name|SET_OPS_SENSITIVE
-argument_list|(
-literal|0
-argument_list|,
-name|gimage
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-name|N_
-argument_list|(
 literal|"/Duplicate Layer"
 argument_list|)
 argument_list|,
@@ -5844,7 +5844,7 @@ name|SET_SENSITIVE
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Scale Layer"
+literal|"/Layer Boundary Size..."
 argument_list|)
 argument_list|,
 name|ac
@@ -5858,7 +5858,7 @@ name|SET_SENSITIVE
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Resize Layer"
+literal|"/Scale Layer..."
 argument_list|)
 argument_list|,
 name|ac
@@ -5872,7 +5872,7 @@ name|SET_SENSITIVE
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Merge Visible Layers"
+literal|"/Merge Visible Layers..."
 argument_list|)
 argument_list|,
 name|fs
@@ -5920,7 +5920,7 @@ name|SET_SENSITIVE
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Layer Mask"
+literal|"/Add Layer Mask..."
 argument_list|)
 argument_list|,
 name|fs
@@ -5941,7 +5941,7 @@ name|SET_SENSITIVE
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Apply Layer Mask"
+literal|"/Apply Layer Mask..."
 argument_list|)
 argument_list|,
 name|fs
@@ -5953,24 +5953,6 @@ operator|&&
 name|lm
 operator|&&
 name|lp
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-name|N_
-argument_list|(
-literal|"/Alpha to Selection"
-argument_list|)
-argument_list|,
-name|fs
-operator|&&
-name|ac
-operator|&&
-name|gimage
-operator|&&
-name|lp
-operator|&&
-name|alpha
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -5999,6 +5981,24 @@ literal|"/Add Alpha Channel"
 argument_list|)
 argument_list|,
 operator|!
+name|alpha
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+name|N_
+argument_list|(
+literal|"/Alpha to Selection"
+argument_list|)
+argument_list|,
+name|fs
+operator|&&
+name|ac
+operator|&&
+name|gimage
+operator|&&
+name|lp
+operator|&&
 name|alpha
 argument_list|)
 expr_stmt|;
@@ -7343,12 +7343,6 @@ operator|->
 name|button
 operator|==
 literal|3
-operator|||
-name|bevent
-operator|->
-name|button
-operator|==
-literal|2
 condition|)
 block|{
 name|gtk_menu_popup

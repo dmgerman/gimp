@@ -142,6 +142,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  activate the context help inspector  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_context_help
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

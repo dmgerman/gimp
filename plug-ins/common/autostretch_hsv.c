@@ -267,7 +267,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Image/Colors/Auto-Stretch HSV"
+literal|"<Image>/Image/Colors/Auto/Stretch HSV"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*"

@@ -731,13 +731,13 @@ name|ResizeImage
 case|:
 name|wmclass
 operator|=
-literal|"image_scale"
+literal|"scale_image"
 expr_stmt|;
 name|window_title
 operator|=
 name|_
 argument_list|(
-literal|"Image Scale"
+literal|"Scale Image"
 argument_list|)
 expr_stmt|;
 name|help_page
@@ -776,7 +776,7 @@ name|window_title
 operator|=
 name|_
 argument_list|(
-literal|"Resize Layer"
+literal|"Set Layer Boundary Size"
 argument_list|)
 expr_stmt|;
 name|help_page
@@ -789,13 +789,13 @@ name|ResizeImage
 case|:
 name|wmclass
 operator|=
-literal|"image_resize"
+literal|"resize_image"
 expr_stmt|;
 name|window_title
 operator|=
 name|_
 argument_list|(
-literal|"Image Resize"
+literal|"Set Canvas Size"
 argument_list|)
 expr_stmt|;
 name|help_page

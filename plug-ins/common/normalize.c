@@ -222,7 +222,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Image/Colors/Normalize"
+literal|"<Image>/Image/Colors/Auto/Normalize"
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"

@@ -7255,7 +7255,7 @@ literal|"<Toolbox>"
 argument_list|,
 name|N_
 argument_list|(
-literal|"/File/Open"
+literal|"/File/Open..."
 argument_list|)
 argument_list|,
 name|FALSE
@@ -7267,7 +7267,7 @@ literal|"<Image>"
 argument_list|,
 name|N_
 argument_list|(
-literal|"/File/Open"
+literal|"/File/Open..."
 argument_list|)
 argument_list|,
 name|FALSE
@@ -7291,7 +7291,7 @@ literal|"<Image>"
 argument_list|,
 name|N_
 argument_list|(
-literal|"/File/Save as"
+literal|"/File/Save as..."
 argument_list|)
 argument_list|,
 name|FALSE
@@ -7327,7 +7327,7 @@ literal|"<Toolbox>"
 argument_list|,
 name|N_
 argument_list|(
-literal|"/File/Open"
+literal|"/File/Open..."
 argument_list|)
 argument_list|,
 name|TRUE
@@ -7339,7 +7339,7 @@ literal|"<Image>"
 argument_list|,
 name|N_
 argument_list|(
-literal|"/File/Open"
+literal|"/File/Open..."
 argument_list|)
 argument_list|,
 name|TRUE
@@ -7369,7 +7369,7 @@ literal|"<Image>"
 argument_list|,
 name|N_
 argument_list|(
-literal|"/File/Save as"
+literal|"/File/Save as..."
 argument_list|)
 argument_list|,
 name|TRUE

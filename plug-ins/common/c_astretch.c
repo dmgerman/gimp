@@ -222,7 +222,7 @@ literal|"1996"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Image/Colors/Auto-Stretch Contrast"
+literal|"<Image>/Image/Colors/Auto/Stretch Contrast"
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"

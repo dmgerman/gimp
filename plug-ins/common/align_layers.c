@@ -68,7 +68,7 @@ DECL|macro|MENU_POSITION
 define|#
 directive|define
 name|MENU_POSITION
-value|"<Image>/Layers/Align Visible Layers"
+value|"<Image>/Layers/Align Visible Layers..."
 end_define
 
 begin_define
@@ -411,7 +411,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b75a04c0108
+DECL|struct|__anon2c53e70a0108
 block|{
 DECL|member|name
 name|gchar
@@ -900,7 +900,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b75a04c0208
+DECL|struct|__anon2c53e70a0208
 block|{
 DECL|member|h_style
 name|gint
@@ -963,7 +963,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b75a04c0308
+DECL|struct|__anon2c53e70a0308
 block|{
 DECL|member|run
 name|gint

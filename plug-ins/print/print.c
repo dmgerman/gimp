@@ -113,7 +113,7 @@ begin_typedef
 typedef|typedef
 struct|struct
 comment|/**** Printer List ****/
-DECL|struct|__anon29b280920108
+DECL|struct|__anon29d2e1b60108
 block|{
 DECL|member|name
 name|char
@@ -613,7 +613,7 @@ end_decl_stmt
 begin_struct
 struct|struct
 comment|/* Plug-in variables */
-DECL|struct|__anon29b280920208
+DECL|struct|__anon29d2e1b60208
 block|{
 DECL|member|output_to
 name|char
@@ -2022,7 +2022,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/File/Print"
+literal|"<Image>/File/Print..."
 argument_list|)
 argument_list|,
 literal|"RGB*,GRAY*,INDEXED*"

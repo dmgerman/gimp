@@ -1722,7 +1722,7 @@ literal|28
 block|,
 name|N_
 argument_list|(
-literal|"/Image/Colors/Color Balance"
+literal|"/Image/Colors/Color Balance..."
 argument_list|)
 block|,
 name|NULL
@@ -1761,7 +1761,7 @@ literal|29
 block|,
 name|N_
 argument_list|(
-literal|"/Image/Colors/Brightness-Contrast"
+literal|"/Image/Colors/Brightness-Contrast..."
 argument_list|)
 block|,
 name|NULL
@@ -1800,7 +1800,7 @@ literal|30
 block|,
 name|N_
 argument_list|(
-literal|"/Image/Colors/Hue-Saturation"
+literal|"/Image/Colors/Hue-Saturation..."
 argument_list|)
 block|,
 name|NULL
@@ -1839,7 +1839,7 @@ literal|31
 block|,
 name|N_
 argument_list|(
-literal|"/Image/Colors/Posterize"
+literal|"/Image/Colors/Posterize..."
 argument_list|)
 block|,
 name|NULL
@@ -1878,7 +1878,7 @@ literal|32
 block|,
 name|N_
 argument_list|(
-literal|"/Image/Colors/Threshold"
+literal|"/Image/Colors/Threshold..."
 argument_list|)
 block|,
 name|NULL
@@ -1917,7 +1917,7 @@ literal|33
 block|,
 name|N_
 argument_list|(
-literal|"/Image/Colors/Curves"
+literal|"/Image/Colors/Curves..."
 argument_list|)
 block|,
 name|NULL
@@ -1956,7 +1956,7 @@ literal|34
 block|,
 name|N_
 argument_list|(
-literal|"/Image/Colors/Levels"
+literal|"/Image/Colors/Levels..."
 argument_list|)
 block|,
 name|NULL
@@ -1995,7 +1995,7 @@ literal|35
 block|,
 name|N_
 argument_list|(
-literal|"/Image/Histogram"
+literal|"/Image/Histogram..."
 argument_list|)
 block|,
 name|NULL

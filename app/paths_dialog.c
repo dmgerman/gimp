@@ -1285,7 +1285,7 @@ name|SET_SENSITIVE
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Import Path"
+literal|"/Import Path..."
 argument_list|)
 argument_list|,
 name|gimage
@@ -1295,7 +1295,7 @@ name|SET_SENSITIVE
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Export Path"
+literal|"/Export Path..."
 argument_list|)
 argument_list|,
 name|pp
@@ -5477,12 +5477,6 @@ operator|->
 name|button
 operator|==
 literal|3
-operator|||
-name|bevent
-operator|->
-name|button
-operator|==
-literal|2
 condition|)
 name|gtk_menu_popup
 argument_list|(

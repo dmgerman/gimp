@@ -189,6 +189,15 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|menus_reorder_plugins
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|menus_destroy
 parameter_list|(
 name|gchar
@@ -235,20 +244,6 @@ name|path
 parameter_list|,
 name|gboolean
 name|sensitive
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|menus_set_state
-parameter_list|(
-name|gchar
-modifier|*
-name|path
-parameter_list|,
-name|gboolean
-name|state
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -3053,7 +3053,7 @@ name|SET_SENSITIVE
 argument_list|(
 name|N_
 argument_list|(
-literal|"/New Channel"
+literal|"/New Channel..."
 argument_list|)
 argument_list|,
 operator|!
@@ -4232,12 +4232,6 @@ operator|->
 name|button
 operator|==
 literal|3
-operator|||
-name|bevent
-operator|->
-name|button
-operator|==
-literal|2
 condition|)
 block|{
 name|gtk_menu_popup

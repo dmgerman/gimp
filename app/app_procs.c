@@ -2563,18 +2563,22 @@ expr_stmt|;
 name|plug_in_init
 argument_list|()
 expr_stmt|;
-comment|/*  initialize the plug in structures   */
+comment|/*  initialize the plug in structures  */
 name|module_db_init
 argument_list|()
 expr_stmt|;
-comment|/*  load any modules we need            */
+comment|/*  load any modules we need           */
 name|RESET_BAR
 argument_list|()
 expr_stmt|;
 name|file_ops_post_init
 argument_list|()
 expr_stmt|;
-comment|/*  post-initialize the file types      */
+comment|/*  post-initialize the file types     */
+name|menus_reorder_plugins
+argument_list|()
+expr_stmt|;
+comment|/*  beautify some menus                */
 comment|/* Add the swap file  */
 if|if
 condition|(
