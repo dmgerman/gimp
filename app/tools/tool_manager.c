@@ -1960,10 +1960,6 @@ name|gimp
 argument_list|,
 name|HALT
 argument_list|,
-name|tool_manager
-operator|->
-name|active_tool
-operator|->
 name|gdisp
 argument_list|)
 expr_stmt|;
