@@ -1317,14 +1317,11 @@ name|void
 parameter_list|)
 block|{
 return|return
-name|GTK_WIDGET
-argument_list|(
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_HISTOGRAM_BOX
 argument_list|,
 name|NULL
-argument_list|)
 argument_list|)
 return|;
 block|}

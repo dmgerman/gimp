@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e70bd10103
+DECL|enum|__anon28ad79370103
 block|{
 DECL|enumerator|ACCEL_EDITED
 name|ACCEL_EDITED
@@ -72,7 +72,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e70bd10203
+DECL|enum|__anon28ad79370203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1210,12 +1210,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|accel
 operator|->
 name|grab_widget
-argument_list|)
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1527,10 +1524,7 @@ name|widget
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|widget
-argument_list|)
 argument_list|,
 literal|"key_press_event"
 argument_list|,
@@ -1704,12 +1698,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|accel
 operator|->
 name|edit_widget
-argument_list|)
 argument_list|,
 literal|"unrealize"
 argument_list|,

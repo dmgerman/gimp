@@ -487,7 +487,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2797a15c0108
+DECL|struct|__anon2c17a66b0108
 block|{
 DECL|member|gridspacing
 name|void
@@ -1508,10 +1508,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|menuitem
-argument_list|)
 argument_list|,
 literal|"activate"
 argument_list|,
@@ -1547,10 +1544,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|menuitem
-argument_list|)
 argument_list|,
 literal|"activate"
 argument_list|,
@@ -1586,10 +1580,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|menuitem
-argument_list|)
 argument_list|,
 literal|"activate"
 argument_list|,
@@ -1668,10 +1659,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|menuitem
-argument_list|)
 argument_list|,
 literal|"activate"
 argument_list|,
@@ -1707,10 +1695,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|menuitem
-argument_list|)
 argument_list|,
 literal|"activate"
 argument_list|,
