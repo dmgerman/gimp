@@ -282,24 +282,39 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|paintbrush_scale_update (GtkAdjustment * adjustment,double * scale_val)
+DECL|function|paintbrush_scale_update (GtkAdjustment * adjustment,PaintOptions * options)
 name|paintbrush_scale_update
 parameter_list|(
 name|GtkAdjustment
 modifier|*
 name|adjustment
 parameter_list|,
-name|double
+name|PaintOptions
 modifier|*
-name|scale_val
+name|options
 parameter_list|)
 block|{
-operator|*
-name|scale_val
+name|options
+operator|->
+name|gradient_length
 operator|=
 name|adjustment
 operator|->
 name|value
+expr_stmt|;
+if|if
+condition|(
+name|options
+operator|->
+name|gradient_length
+operator|>
+literal|0.0
+condition|)
+name|options
+operator|->
+name|incremental
+operator|=
+name|INCREMENTAL
 expr_stmt|;
 block|}
 end_function
@@ -579,31 +594,9 @@ comment|/*              gradient thingamajig */
 comment|/* this is a little unintuitive, probabaly put the slider */
 comment|/* in a frame later with a checkbutton for "use gradients" */
 comment|/* and default the gradient length to 10 or something */
-name|hbox
-operator|=
-name|gtk_hbox_new
-argument_list|(
-name|FALSE
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-name|hbox
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
+comment|//  hbox = gtk_hbox_new (FALSE, 1);
+comment|//gtk_box_pack_start (GTK_BOX (vbox), hbox, FALSE, FALSE, 0);
+comment|//gtk_widget_show(hbox);
 name|label
 operator|=
 name|gtk_label_new
@@ -618,7 +611,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|hbox
+name|vbox
 argument_list|)
 argument_list|,
 name|label
@@ -666,7 +659,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|hbox
+name|vbox
 argument_list|)
 argument_list|,
 name|gradient_length_scale
@@ -712,10 +705,7 @@ name|GtkSignalFunc
 operator|)
 name|paintbrush_scale_update
 argument_list|,
-operator|&
 name|options
-operator|->
-name|gradient_length
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1092,13 +1082,11 @@ decl_stmt|,
 name|paint_left
 decl_stmt|;
 name|double
-name|y
-decl_stmt|,
 name|position
 decl_stmt|;
 name|unsigned
 name|char
-name|blend
+name|local_blend
 init|=
 name|OPAQUE_OPACITY
 decl_stmt|;
@@ -1124,8 +1112,8 @@ name|b
 decl_stmt|,
 name|a
 decl_stmt|;
-name|double
-name|distance
+name|int
+name|mode
 decl_stmt|;
 name|position
 operator|=
@@ -1153,7 +1141,7 @@ argument_list|,
 name|col
 argument_list|)
 expr_stmt|;
-comment|/*  Get a region which can be used to paint to  */
+comment|/*  Get a region which can be used to p\\aint to  */
 if|if
 condition|(
 operator|!
@@ -1201,7 +1189,7 @@ operator|*
 literal|0.5
 argument_list|)
 expr_stmt|;
-name|blend
+name|local_blend
 operator|=
 call|(
 name|int
@@ -1215,45 +1203,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|gradient_length
-condition|)
-block|{
-name|distance
-operator|=
-name|paint_core
-operator|->
-name|distance
-expr_stmt|;
-name|y
-operator|=
-operator|(
-operator|(
-name|double
-operator|)
-name|distance
-operator|/
-name|gradient_length
-operator|)
-expr_stmt|;
-comment|/* not sure if this makes sense for grads, but it seems to work */
-comment|/* if anyone has a good suggest on how to make the grad repeat */
-comment|/* let me know  */
-name|position
-operator|=
-name|exp
-argument_list|(
-operator|-
-name|y
-operator|*
-name|y
-operator|*
-literal|0.5
-argument_list|)
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|blend
+name|local_blend
 condition|)
 block|{
 comment|/*  set the alpha channel  */
@@ -1270,17 +1220,24 @@ name|OPAQUE_OPACITY
 expr_stmt|;
 name|temp_blend
 operator|=
-name|blend
+name|local_blend
 expr_stmt|;
-comment|/* keep going unless we hit the end, or the end is near 0 */
+comment|/* hard core to mode LOOP_TRIANGLE */
+comment|/* need to maek a gui to handle this */
+name|mode
+operator|=
+name|LOOP_TRIANGLE
+expr_stmt|;
 if|if
 condition|(
 name|gradient_length
 condition|)
 block|{
-name|grad_get_color_at
+name|paint_core_get_color_from_gradient
 argument_list|(
-name|position
+name|paint_core
+argument_list|,
+name|gradient_length
 argument_list|,
 operator|&
 name|r
@@ -1293,6 +1250,8 @@ name|b
 argument_list|,
 operator|&
 name|a
+argument_list|,
+name|mode
 argument_list|)
 expr_stmt|;
 name|r
@@ -1318,6 +1277,21 @@ operator|=
 name|a
 operator|*
 literal|255.0
+expr_stmt|;
+name|temp_blend
+operator|=
+call|(
+name|gint
+call|)
+argument_list|(
+operator|(
+name|a
+operator|*
+name|local_blend
+operator|)
+operator|/
+literal|255
+argument_list|)
 expr_stmt|;
 name|col
 index|[
@@ -1349,39 +1323,15 @@ name|gint
 operator|)
 name|b
 expr_stmt|;
-name|temp_blend
+comment|/* always use incremental mode with gradients */
+comment|/* make the gui cool later */
+name|incremental
 operator|=
-call|(
-name|gint
-call|)
-argument_list|(
-operator|(
-name|a
-operator|*
-name|blend
-operator|)
-operator|/
-literal|255
-argument_list|)
-expr_stmt|;
-comment|/* if you remove this, it will keep painting with the end color */
-comment|/* perhaps something to make optional later */
-if|if
-condition|(
-name|position
-operator|<
-literal|0.001
-condition|)
-name|temp_blend
-operator|=
-operator|(
-name|int
-operator|)
-literal|0
+name|INCREMENTAL
 expr_stmt|;
 block|}
 comment|/* just leave this because I know as soon as i delete it i'll find a bug */
-comment|/*     printf("position: %f  y: %f  temp_blend: %u grad_len: %f distance: %f \n", position, y, temp_blend, gradient_length, distance); */
+comment|/*          printf("temp_blend: %u grad_len: %f distance: %f \n",temp_blend, gradient_length, distance); */
 comment|/*  color the pixels  */
 name|color_pixels
 argument_list|(
