@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c94a7da0103
+DECL|enum|__anon2c1c6f520103
 block|{
 DECL|enumerator|BUTTON_HOME
 name|BUTTON_HOME
@@ -108,7 +108,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c94a7da0203
+DECL|enum|__anon2c1c6f520203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -881,8 +881,6 @@ argument_list|(
 name|help_dnd_target_table
 argument_list|)
 argument_list|,
-name|GDK_ACTION_MOVE
-operator||
 name|GDK_ACTION_COPY
 argument_list|)
 expr_stmt|;
