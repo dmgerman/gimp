@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -31,18 +37,6 @@ begin_include
 include|#
 directive|include
 file|"actions-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfig-utils.h"
 end_include
 
 begin_include

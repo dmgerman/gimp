@@ -30,25 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"config-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpconfig-deserialize.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpconfig-params.h"
 end_include
 
 begin_include
@@ -61,12 +49,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc-unknown.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpscanner.h"
 end_include
 
 begin_include

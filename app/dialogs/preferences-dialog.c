@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -43,24 +49,6 @@ begin_include
 include|#
 directive|include
 file|"dialogs-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfig-params.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfig-utils.h"
 end_include
 
 begin_include
@@ -7948,7 +7936,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c2a3e480108
+DECL|struct|__anon2c0828d00108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10072,7 +10060,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c2a3e480208
+DECL|struct|__anon2c0828d00208
 block|{
 DECL|member|label
 specifier|const
@@ -10229,7 +10217,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c2a3e480308
+DECL|struct|__anon2c0828d00308
 block|{
 DECL|member|tree_label
 specifier|const

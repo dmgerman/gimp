@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -44,30 +50,6 @@ begin_include
 include|#
 directive|include
 file|"widgets-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfig-params.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfigwriter.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpscanner.h"
 end_include
 
 begin_include
@@ -96,7 +78,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2999af8c0103
+DECL|enum|__anon2b0dbc920103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -118,7 +100,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2999af8c0203
+DECL|enum|__anon2b0dbc920203
 block|{
 DECL|enumerator|EVENT_MAPPED
 name|EVENT_MAPPED

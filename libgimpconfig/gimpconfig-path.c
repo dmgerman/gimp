@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp-intl.h"
+file|"libgimp/libgimp-intl.h"
 end_include
 
 begin_function_decl

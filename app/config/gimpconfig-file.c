@@ -45,6 +45,12 @@ directive|include
 file|"libgimpbase/gimpbase.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -66,12 +72,6 @@ begin_include
 include|#
 directive|include
 file|"config-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpconfig-file.h"
 end_include
 
 begin_include

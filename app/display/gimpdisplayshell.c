@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -43,24 +49,6 @@ begin_include
 include|#
 directive|include
 file|"tools/tools-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfig-params.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfig-utils.h"
 end_include
 
 begin_include
@@ -286,7 +274,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2988d5670103
+DECL|enum|__anon27820f850103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -302,7 +290,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2988d5670203
+DECL|enum|__anon27820f850203
 block|{
 DECL|enumerator|SCALED
 name|SCALED

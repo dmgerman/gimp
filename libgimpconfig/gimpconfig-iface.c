@@ -30,13 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config-types.h"
+file|"gimpconfigwriter.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpconfig.h"
+file|"gimpconfig-iface.h"
 end_include
 
 begin_include
@@ -66,19 +66,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpconfigwriter.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpscanner.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimp-intl.h"
+file|"libgimp/libgimp-intl.h"
 end_include
 
 begin_comment

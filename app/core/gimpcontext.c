@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core-types.h"
 end_include
 
@@ -48,37 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfig-params.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfig-serialize.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfigwriter.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"config/gimpcoreconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpscanner.h"
 end_include
 
 begin_include
@@ -1275,7 +1251,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b31b5d70103
+DECL|enum|__anon29c6de740103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1289,7 +1265,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b31b5d70203
+DECL|enum|__anon29c6de740203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0

@@ -28,6 +28,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpmodule/gimpmodule.h"
 end_include
 
@@ -41,12 +47,6 @@ begin_include
 include|#
 directive|include
 file|"procedural_db.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfig.h"
 end_include
 
 begin_include

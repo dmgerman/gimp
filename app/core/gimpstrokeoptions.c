@@ -24,13 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core-types.h"
+file|"libgimpconfig/gimpconfig.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"config/gimpconfig-params.h"
+file|"core-types.h"
 end_include
 
 begin_include
@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd42ff40103
+DECL|enum|__anon2c35508d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -87,7 +87,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd42ff40203
+DECL|enum|__anon2c35508d0203
 block|{
 DECL|enumerator|DASH_INFO_CHANGED
 name|DASH_INFO_CHANGED

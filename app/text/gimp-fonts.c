@@ -40,13 +40,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"text-types.h"
+file|"libgimpconfig/gimpconfig.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"config/gimpconfig-path.h"
+file|"text-types.h"
 end_include
 
 begin_include

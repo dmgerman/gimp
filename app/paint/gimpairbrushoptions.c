@@ -18,13 +18,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint-types.h"
+file|"libgimpconfig/gimpconfig.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"config/gimpconfig-params.h"
+file|"paint-types.h"
 end_include
 
 begin_include
@@ -51,7 +51,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon297bfd660103
+DECL|enum|__anon2c1184b90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core-types.h"
 end_include
 
@@ -61,18 +67,6 @@ begin_include
 include|#
 directive|include
 file|"base/tile-manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfig-utils.h"
 end_include
 
 begin_include
@@ -276,7 +270,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0fccf70103
+DECL|enum|__anon2bc91ae20103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -346,7 +340,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0fccf70203
+DECL|enum|__anon2bc91ae20203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

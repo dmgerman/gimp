@@ -24,13 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config-types.h"
+file|"libgimpconfig/gimpconfig.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpconfig-params.h"
+file|"config-types.h"
 end_include
 
 begin_include
@@ -186,7 +186,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6249ed0103
+DECL|enum|__anon2a21a0770103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

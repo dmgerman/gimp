@@ -30,25 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gui-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfig-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfigwriter.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpscanner.h"
 end_include
 
 begin_include
@@ -59,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8e8ad10103
+DECL|enum|__anon29e3d68a0103
 block|{
 DECL|enumerator|COLOR_HISTORY
 name|COLOR_HISTORY

@@ -18,19 +18,13 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfig-params.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfig-utils.h"
 end_include
 
 begin_include
@@ -65,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf77dc10103
+DECL|enum|__anon290f6cb30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -194,7 +200,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9d99c10103
+DECL|enum|__anon2c98bb9d0103
 block|{
 DECL|enumerator|CREATING
 name|CREATING

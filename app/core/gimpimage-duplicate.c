@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paint-funcs/paint-funcs.h"
 end_include
 

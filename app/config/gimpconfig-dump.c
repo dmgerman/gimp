@@ -56,6 +56,12 @@ directive|include
 file|"libgimpcolor/gimpcolor.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -82,31 +88,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpconfig-dump.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpconfig-params.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpconfig-serialize.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpconfigwriter.h"
 end_include
 
 begin_include

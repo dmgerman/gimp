@@ -19,13 +19,19 @@ end_define
 begin_include
 include|#
 directive|include
-file|<libgimpconfig/gimpconfig-main.h>
+file|<libgimpbase/gimpbase.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<libgimpconfig/gimpconfig-writer.h>
+file|<libgimpconfig/gimpconfigwriter.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimpconfig/gimpconfig-iface.h>
 end_include
 
 begin_include
@@ -68,12 +74,6 @@ begin_include
 include|#
 directive|include
 file|<libgimpconfig/gimpscanner.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimpconfig/gimpversion.h>
 end_include
 
 begin_endif

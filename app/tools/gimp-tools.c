@@ -24,13 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools-types.h"
+file|"libgimpconfig/gimpconfig.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"config/gimpconfig.h"
+file|"tools-types.h"
 end_include
 
 begin_include

@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core-types.h"
 end_include
 
@@ -31,12 +37,6 @@ begin_include
 include|#
 directive|include
 file|"base/temp-buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfig-params.h"
 end_include
 
 begin_include
@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b165290103
+DECL|enum|__anon2b8a134e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in-types.h"
 end_include
 
@@ -49,18 +55,6 @@ begin_include
 include|#
 directive|include
 file|"config/gimpcoreconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfig-error.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfig-path.h"
 end_include
 
 begin_include

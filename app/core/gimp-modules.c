@@ -30,31 +30,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"config/gimpconfig-path.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfigwriter.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"config/gimpcoreconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpscanner.h"
 end_include
 
 begin_include

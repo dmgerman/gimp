@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core-types.h"
 end_include
 
@@ -43,30 +49,6 @@ begin_include
 include|#
 directive|include
 file|"gimpmarshal.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfig-deserialize.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfigwriter.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpscanner.h"
 end_include
 
 begin_comment
@@ -142,7 +124,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6d7d7b0103
+DECL|enum|__anon294dfed80103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -167,7 +149,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6d7d7b0203
+DECL|enum|__anon294dfed80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1279,7 +1261,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6d7d7b0308
+DECL|struct|__anon294dfed80308
 block|{
 DECL|member|writer
 name|GimpConfigWriter

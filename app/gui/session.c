@@ -56,6 +56,12 @@ directive|include
 file|"libgimpbase/gimpbase.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -82,31 +88,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpconfig-error.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"config/gimpconfig-file.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"config/gimpconfigwriter.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"config/gimpguiconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpscanner.h"
 end_include
 
 begin_include
@@ -141,7 +129,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4ba20f0103
+DECL|enum|__anon2afcddc50103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO

@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/core-types.h"
 end_include
 
@@ -43,24 +49,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpgrid.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpconfig-serialize.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpconfig-utils.h"
 end_include
 
 begin_include

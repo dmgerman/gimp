@@ -17,20 +17,6 @@ name|__CONFIG_TYPES_H__
 end_define
 
 begin_typedef
-DECL|typedef|GimpConfig
-typedef|typedef
-name|struct
-name|_GimpConfig
-name|GimpConfig
-typedef|;
-end_typedef
-
-begin_comment
-DECL|typedef|GimpConfig
-comment|/* dummy typedef */
-end_comment
-
-begin_typedef
 DECL|typedef|GimpBaseConfig
 typedef|typedef
 name|struct
@@ -81,15 +67,6 @@ typedef|typedef
 name|struct
 name|_GimpRc
 name|GimpRc
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpConfigWriter
-typedef|typedef
-name|struct
-name|_GimpConfigWriter
-name|GimpConfigWriter
 typedef|;
 end_typedef
 

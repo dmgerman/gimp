@@ -42,13 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui-types.h"
+file|"libgimpconfig/gimpconfig.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"config/gimpconfig-path.h"
+file|"gui-types.h"
 end_include
 
 begin_include

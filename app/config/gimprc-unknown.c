@@ -24,13 +24,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config-types.h"
+file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpconfig.h"
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"config-types.h"
 end_include
 
 begin_include
@@ -54,7 +60,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bff8e710108
+DECL|struct|__anon2a526c2b0108
 block|{
 DECL|member|key
 name|gchar

@@ -98,6 +98,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"base-types.h"
 end_include
 
@@ -105,12 +111,6 @@ begin_include
 include|#
 directive|include
 file|"config/gimpbaseconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfig-path.h"
 end_include
 
 begin_include

@@ -30,25 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfig-error.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfigwriter.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpscanner.h"
 end_include
 
 begin_include
@@ -237,7 +225,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon29369f750103
+DECL|enum|__anon28db10ad0103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION

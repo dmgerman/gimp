@@ -42,19 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"text-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfig-params.h"
 end_include
 
 begin_include
@@ -77,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be448e80103
+DECL|enum|__anon27733a580103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

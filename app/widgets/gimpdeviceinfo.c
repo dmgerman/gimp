@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets-types.h"
 end_include
 
@@ -54,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpconfig-params.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdeviceinfo.h"
 end_include
 
@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b694bb00103
+DECL|enum|__anon2912a3070103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b694bb00203
+DECL|enum|__anon2912a3070203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
