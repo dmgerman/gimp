@@ -306,9 +306,11 @@ end_function_decl
 begin_function
 specifier|static
 name|void
-DECL|function|set_app_colors ()
+DECL|function|set_app_colors (void)
 name|set_app_colors
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|cycled_marching_ants
 operator|=

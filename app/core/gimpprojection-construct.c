@@ -491,7 +491,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2c7643140103
+DECL|enum|__anon27e1090e0103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -12736,21 +12736,7 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-if|if
-condition|(
-name|gimage
-operator|->
-name|dirty
-operator|<
-literal|0
-condition|)
-name|gimage
-operator|->
-name|dirty
-operator|=
-literal|2
-expr_stmt|;
-else|else
+comment|/*  if (gimage->dirty< 0)     gimage->dirty = 2;   else */
 name|gimage
 operator|->
 name|dirty
@@ -12787,21 +12773,7 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-if|if
-condition|(
-name|gimage
-operator|->
-name|dirty
-operator|<=
-literal|0
-condition|)
-name|gimage
-operator|->
-name|dirty
-operator|=
-literal|0
-expr_stmt|;
-else|else
+comment|/*  if (gimage->dirty<= 0)     gimage->dirty = 0;   else */
 name|gimage
 operator|->
 name|dirty

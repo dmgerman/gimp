@@ -15,7 +15,9 @@ end_define
 begin_function_decl
 name|void
 name|tips_dialog_create
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 

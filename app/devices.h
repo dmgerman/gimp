@@ -23,7 +23,7 @@ file|"tools.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon295d049b0103
+DECL|enum|__anon275ae2c10103
 typedef|typedef
 enum|enum
 block|{
@@ -233,7 +233,9 @@ end_comment
 begin_function_decl
 name|void
 name|devices_restore
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 
