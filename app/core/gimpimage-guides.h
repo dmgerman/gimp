@@ -91,7 +91,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3956de0103
+DECL|enum|__anon2aea516f0103
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -194,7 +194,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3956de0203
+DECL|enum|__anon2aea516f0203
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -209,42 +209,6 @@ block|}
 name|GimpImageBaseType
 typedef|;
 end_typedef
-
-begin_comment
-comment|/* the image fill types */
-end_comment
-
-begin_define
-DECL|macro|BACKGROUND_FILL
-define|#
-directive|define
-name|BACKGROUND_FILL
-value|0
-end_define
-
-begin_define
-DECL|macro|WHITE_FILL
-define|#
-directive|define
-name|WHITE_FILL
-value|1
-end_define
-
-begin_define
-DECL|macro|TRANSPARENT_FILL
-define|#
-directive|define
-name|TRANSPARENT_FILL
-value|2
-end_define
-
-begin_define
-DECL|macro|NO_FILL
-define|#
-directive|define
-name|NO_FILL
-value|3
-end_define
 
 begin_define
 DECL|macro|COLORMAP_SIZE
@@ -273,7 +237,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3956de0303
+DECL|enum|__anon2aea516f0303
 block|{
 DECL|enumerator|Red
 name|Red
@@ -301,7 +265,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3956de0403
+DECL|enum|__anon2aea516f0403
 block|{
 DECL|enumerator|ExpandAsNecessary
 name|ExpandAsNecessary
@@ -1458,25 +1422,6 @@ name|void
 name|gimp_image_invalidate_previews
 parameter_list|(
 name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* from drawable.c */
-end_comment
-
-begin_comment
-comment|/* Ugly! */
-end_comment
-
-begin_function_decl
-name|GimpImage
-modifier|*
-name|drawable_gimage
-parameter_list|(
-name|GimpDrawable
-modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl

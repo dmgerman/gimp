@@ -2635,11 +2635,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|create_display_shell (int gdisp_id,int width,int height,char * title,int type)
+DECL|function|create_display_shell (GDisplay * gdisp,int width,int height,char * title,int type)
 name|create_display_shell
 parameter_list|(
-name|int
-name|gdisp_id
+name|GDisplay
+modifier|*
+name|gdisp
 parameter_list|,
 name|int
 name|width
@@ -2668,10 +2669,6 @@ modifier|*
 name|image_accel_group
 init|=
 name|NULL
-decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisp
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -2711,20 +2708,6 @@ decl_stmt|;
 name|int
 name|contextid
 decl_stmt|;
-comment|/*  Get the gdisplay  */
-if|if
-condition|(
-operator|!
-operator|(
-name|gdisp
-operator|=
-name|gdisplay_get_ID
-argument_list|(
-name|gdisp_id
-argument_list|)
-operator|)
-condition|)
-return|return;
 comment|/*  adjust the initial scale -- so that window fits on screen */
 block|{
 name|s_width

@@ -22,6 +22,12 @@ directive|include
 file|"tools.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gdisplay.h"
+end_include
+
 begin_comment
 comment|/* typedefs */
 end_comment
@@ -144,7 +150,8 @@ begin_function_decl
 name|void
 name|create_display_shell
 parameter_list|(
-name|int
+name|GDisplay
+modifier|*
 parameter_list|,
 name|int
 parameter_list|,

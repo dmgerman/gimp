@@ -1316,7 +1316,7 @@ if|if
 condition|(
 name|layer_is_floating_sel
 argument_list|(
-name|drawable_layer
+name|GIMP_LAYER
 argument_list|(
 name|drawable
 argument_list|)
@@ -1324,7 +1324,7 @@ argument_list|)
 condition|)
 name|floating_sel_remove
 argument_list|(
-name|drawable_layer
+name|GIMP_LAYER
 argument_list|(
 name|drawable
 argument_list|)

@@ -863,7 +863,7 @@ name|ty
 expr_stmt|;
 block|}
 comment|/* reset the current tool if we're changing gdisplays */
-comment|/* 		if (active_tool->gdisp_ptr) { 		  tool_gdisp = active_tool->gdisp_ptr; 		  if (tool_gdisp->ID != gdisp->ID) { 		    tools_initialize (active_tool->type, gdisp); 		    active_tool->drawable = gimage_active_drawable(gdisp->gimage); 		  } 		} else 		*/
+comment|/* 		if (active_tool->gdisp_ptr) { 		  tool_gdisp = active_tool->gdisp_ptr; 		  if (tool_gdisp != gdisp) { 		    tools_initialize (active_tool->type, gdisp); 		    active_tool->drawable = gimage_active_drawable(gdisp->gimage); 		  } 		} else 		*/
 comment|/* reset the current tool if we're changing drawables */
 if|if
 condition|(

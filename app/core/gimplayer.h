@@ -65,7 +65,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29489b990103
+DECL|enum|__anon2bb062450103
 block|{
 DECL|enumerator|WhiteMask
 name|WhiteMask
@@ -815,30 +815,24 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* from drawable.c */
+comment|/* temp thingies.. dynamic downcast. GTK_NO_CHECK_CASTS must not be    defined */
 end_comment
 
-begin_function_decl
-name|Layer
-modifier|*
+begin_define
+DECL|macro|drawable_layer
+define|#
+directive|define
 name|drawable_layer
-parameter_list|(
-name|GimpDrawable
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
+value|GIMP_IS_LAYER
+end_define
 
-begin_function_decl
-name|LayerMask
-modifier|*
+begin_define
+DECL|macro|drawable_layer_mask
+define|#
+directive|define
 name|drawable_layer_mask
-parameter_list|(
-name|GimpDrawable
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
+value|GIMP_IS_LAYER_MASK
+end_define
 
 begin_comment
 comment|/* from channel.c */

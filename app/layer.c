@@ -86,7 +86,7 @@ file|"tile_manager_pvt.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2944557c0103
+DECL|enum|__anon2a587ae80103
 enum|enum
 block|{
 DECL|enumerator|LAST_SIGNAL
@@ -3017,15 +3017,20 @@ argument_list|(
 name|type
 argument_list|)
 expr_stmt|;
-comment|/*  update gdisplay titles to reflect the possibility of    *  this layer being the only layer in the gimage    */
-name|gdisplays_update_title
+name|gtk_signal_emit_by_name
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|gimp_drawable_gimage
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|layer
 argument_list|)
-operator|->
-name|gimage
+argument_list|)
+argument_list|)
+argument_list|,
+literal|"restructure"
 argument_list|)
 expr_stmt|;
 block|}
@@ -4492,12 +4497,13 @@ operator|!
 operator|(
 name|gimage
 operator|=
+name|drawable_gimage
+argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|layer
 argument_list|)
-operator|->
-name|gimage
+argument_list|)
 operator|)
 condition|)
 return|return;
@@ -4540,18 +4546,7 @@ name|FALSE
 expr_stmt|;
 block|}
 comment|/*  clear the affected region surrounding the layer  */
-name|gdisplays_selection_visibility
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
-operator|->
-name|gimage
-argument_list|,
-name|SelectionLayerOff
-argument_list|)
-expr_stmt|;
+comment|/* gdisplays_selection_visibility (GIMP_DRAWABLE(layer)->gimage,      SelectionLayerOff); */
 block|}
 end_function
 

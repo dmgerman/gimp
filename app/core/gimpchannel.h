@@ -797,20 +797,13 @@ name|channel_get_count
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/* from drawable.c */
-end_comment
-
-begin_function_decl
-name|Channel
-modifier|*
+begin_define
+DECL|macro|drawable_channel
+define|#
+directive|define
 name|drawable_channel
-parameter_list|(
-name|GimpDrawable
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
+value|GIMP_IS_CHANNEL
+end_define
 
 begin_endif
 endif|#

@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c387f5e0103
+DECL|enum|__anon2ae963a00103
 block|{
 DECL|enumerator|ImageClone
 name|ImageClone
@@ -420,18 +420,18 @@ comment|/*  transformed target  */
 end_comment
 
 begin_decl_stmt
-DECL|variable|src_gdisp_ID
+DECL|variable|the_src_gdisp
 specifier|static
-name|int
-name|src_gdisp_ID
+name|GDisplay
+modifier|*
+name|the_src_gdisp
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
 begin_comment
-DECL|variable|src_gdisp_ID
+DECL|variable|the_src_gdisp
 comment|/*  ID of source gdisplay  */
 end_comment
 
@@ -1064,11 +1064,9 @@ operator|&
 name|ControlMask
 condition|)
 block|{
-name|src_gdisp_ID
+name|the_src_gdisp
 operator|=
 name|gdisp
-operator|->
-name|ID
 expr_stmt|;
 name|src_drawable_
 operator|=
@@ -1146,10 +1144,7 @@ block|}
 comment|/*  Calculate the coordinates of the target  */
 name|src_gdisp
 operator|=
-name|gdisplay_get_ID
-argument_list|(
-name|src_gdisp_ID
-argument_list|)
+name|the_src_gdisp
 expr_stmt|;
 if|if
 condition|(
@@ -1157,18 +1152,13 @@ operator|!
 name|src_gdisp
 condition|)
 block|{
-name|src_gdisp_ID
+name|the_src_gdisp
 operator|=
 name|gdisp
-operator|->
-name|ID
 expr_stmt|;
 name|src_gdisp
 operator|=
-name|gdisplay_get_ID
-argument_list|(
-name|src_gdisp_ID
-argument_list|)
+name|the_src_gdisp
 expr_stmt|;
 block|}
 comment|/*  Find the target cursor's location onscreen  */

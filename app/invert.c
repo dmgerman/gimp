@@ -142,9 +142,10 @@ name|nreturn_vals
 argument_list|,
 name|PDB_IMAGE
 argument_list|,
+name|pdb_image_to_id
+argument_list|(
 name|gimage
-operator|->
-name|ID
+argument_list|)
 argument_list|,
 name|PDB_DRAWABLE
 argument_list|,

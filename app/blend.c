@@ -190,7 +190,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f318340103
+DECL|enum|__anon29395f740103
 block|{
 DECL|enumerator|Linear
 name|Linear
@@ -227,7 +227,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f318340203
+DECL|enum|__anon29395f740203
 block|{
 DECL|enumerator|FG_BG_RGB_MODE
 name|FG_BG_RGB_MODE
@@ -249,7 +249,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f318340303
+DECL|enum|__anon29395f740303
 block|{
 DECL|enumerator|REPEAT_NONE
 name|REPEAT_NONE
@@ -388,7 +388,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon28f318340408
+DECL|struct|__anon29395f740408
 typedef|typedef
 struct|struct
 block|{
@@ -440,7 +440,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28f318340508
+DECL|struct|__anon29395f740508
 typedef|typedef
 struct|struct
 block|{
@@ -3617,9 +3617,10 @@ name|nreturn_vals
 argument_list|,
 name|PDB_IMAGE
 argument_list|,
+name|pdb_image_to_id
+argument_list|(
 name|gimage
-operator|->
-name|ID
+argument_list|)
 argument_list|,
 name|PDB_DRAWABLE
 argument_list|,

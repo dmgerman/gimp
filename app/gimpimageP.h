@@ -127,11 +127,6 @@ modifier|*
 name|shadow
 decl_stmt|;
 comment|/*  shadow buffer tiles          */
-DECL|member|ID
-name|int
-name|ID
-decl_stmt|;
-comment|/*  Unique gimp_image identifier     */
 comment|/*  Projection attributes  */
 DECL|member|flat
 name|int

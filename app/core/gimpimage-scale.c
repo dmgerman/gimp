@@ -433,7 +433,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon29b2835c0103
+DECL|enum|__anon2ae9e8e80103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -5574,12 +5574,10 @@ expr_stmt|;
 comment|/*  If the drawable is a channel (a saved selection, etc.)    *  make sure that the alpha channel is not valid    */
 if|if
 condition|(
-name|drawable_channel
+name|GIMP_IS_CHANNEL
 argument_list|(
 name|drawable
 argument_list|)
-operator|!=
-name|NULL
 condition|)
 name|active
 index|[
@@ -5594,15 +5592,19 @@ block|{
 comment|/*  otherwise, check whether preserve transparency is        *  enabled in the layer and if the layer has alpha        */
 if|if
 condition|(
-operator|(
-name|layer
-operator|=
-name|drawable_layer
+name|GIMP_IS_LAYER
 argument_list|(
 name|drawable
 argument_list|)
-operator|)
 condition|)
+block|{
+name|layer
+operator|=
+name|GIMP_LAYER
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|layer_has_alpha
@@ -5618,10 +5620,7 @@ name|active
 index|[
 name|drawable_bytes
 argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
+name|drawable
 argument_list|)
 operator|-
 literal|1
@@ -5629,6 +5628,7 @@ index|]
 operator|=
 literal|0
 expr_stmt|;
+block|}
 block|}
 block|}
 end_function

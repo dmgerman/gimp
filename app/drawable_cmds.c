@@ -1031,9 +1031,10 @@ name|value
 operator|.
 name|pdb_int
 operator|=
+name|pdb_image_to_id
+argument_list|(
 name|gimage
-operator|->
-name|ID
+argument_list|)
 expr_stmt|;
 return|return
 name|return_args
