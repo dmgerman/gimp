@@ -324,6 +324,8 @@ literal|"Ed Connel"
 block|,
 literal|"Andreas Dilger"
 block|,
+literal|"Misha Dynin"
+block|,
 literal|"Larry Ewing"
 block|,
 literal|"David Forsyth"
