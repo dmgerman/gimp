@@ -64,7 +64,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b6aa530108
+DECL|struct|__anon27ef07810108
 block|{
 DECL|member|compression
 name|gint
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b6aa530208
+DECL|struct|__anon27ef07810208
 block|{
 DECL|member|ID
 name|gint32
@@ -7808,6 +7808,11 @@ break|break;
 case|case
 name|GIMP_INDEXEDA_IMAGE
 case|:
+name|g_message
+argument_list|(
+literal|"TIFF save cannot handle indexed images with alpha channel."
+argument_list|)
+expr_stmt|;
 default|default:
 return|return
 name|FALSE
