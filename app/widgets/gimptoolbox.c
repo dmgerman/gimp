@@ -1813,7 +1813,7 @@ decl_stmt|;
 name|gint
 name|area_columns
 decl_stmt|;
-name|gtk_widget_get_child_requisition
+name|gtk_widget_size_request
 argument_list|(
 name|toolbox
 operator|->
@@ -1823,7 +1823,7 @@ operator|&
 name|color_requisition
 argument_list|)
 expr_stmt|;
-name|gtk_widget_get_child_requisition
+name|gtk_widget_size_request
 argument_list|(
 name|toolbox
 operator|->
@@ -1833,7 +1833,7 @@ operator|&
 name|foo_requisition
 argument_list|)
 expr_stmt|;
-name|gtk_widget_get_child_requisition
+name|gtk_widget_size_request
 argument_list|(
 name|toolbox
 operator|->
