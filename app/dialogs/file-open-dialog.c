@@ -371,15 +371,11 @@ name|gchar
 modifier|*
 name|filename
 init|=
-name|g_filename_from_uri
+name|file_utils_filename_from_uri
 argument_list|(
 name|list
 operator|->
 name|data
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 decl_stmt|;
 if|if

@@ -858,6 +858,10 @@ name|filename
 decl_stmt|;
 name|gchar
 modifier|*
+name|hostname
+decl_stmt|;
+name|gchar
+modifier|*
 name|uri
 init|=
 name|NULL
@@ -886,7 +890,7 @@ name|g_filename_from_uri
 argument_list|(
 name|dnd_crap
 argument_list|,
-name|NULL
+name|hostname
 argument_list|,
 name|NULL
 argument_list|)
@@ -903,9 +907,14 @@ name|g_filename_to_uri
 argument_list|(
 name|filename
 argument_list|,
-name|NULL
+name|hostname
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|hostname
 argument_list|)
 expr_stmt|;
 name|g_free
