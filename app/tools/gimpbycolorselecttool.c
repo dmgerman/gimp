@@ -1305,6 +1305,20 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|by_color_dialog
+condition|)
+name|by_color_select_close_callback
+argument_list|(
+name|NULL
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|by_color_dialog
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
