@@ -112,6 +112,10 @@ DECL|member|dirty
 name|gboolean
 name|dirty
 decl_stmt|;
+DECL|member|internal
+name|gboolean
+name|internal
+decl_stmt|;
 block|}
 struct|;
 end_struct

@@ -76,7 +76,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3ee26a0103
+DECL|enum|__anon2c7441f90103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -525,6 +525,12 @@ name|dirty
 operator|=
 name|FALSE
 expr_stmt|;
+name|data
+operator|->
+name|internal
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 end_function
 
@@ -712,6 +718,23 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|data
+operator|->
+name|internal
+condition|)
+block|{
+name|data
+operator|->
+name|dirty
+operator|=
+name|FALSE
+expr_stmt|;
+return|return
+name|TRUE
+return|;
+block|}
+if|if
+condition|(
 operator|!
 name|data
 operator|->
@@ -860,6 +883,15 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|data
+operator|->
+name|internal
+condition|)
+return|return
+name|TRUE
+return|;
+if|if
+condition|(
 name|unlink
 argument_list|(
 name|data
@@ -973,6 +1005,13 @@ name|data
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|data
+operator|->
+name|internal
+condition|)
+return|return;
 name|g_free
 argument_list|(
 name|data

@@ -1561,6 +1561,11 @@ if|if
 condition|(
 name|data
 operator|&&
+operator|!
+name|data
+operator|->
+name|internal
+operator|&&
 name|gimp_container_have
 argument_list|(
 name|view
@@ -1806,6 +1811,17 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
+name|GimpData
+modifier|*
+name|data
+decl_stmt|;
+name|data
+operator|=
+name|GIMP_DATA
+argument_list|(
+name|viewable
+argument_list|)
+expr_stmt|;
 name|duplicate_sensitive
 operator|=
 operator|(
@@ -1831,7 +1847,10 @@ operator|)
 expr_stmt|;
 name|delete_sensitive
 operator|=
-name|TRUE
+operator|!
+name|data
+operator|->
+name|internal
 expr_stmt|;
 comment|/* TODO: check permissions */
 block|}

@@ -76,6 +76,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-gradients.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-parasites.h"
 end_include
 
@@ -891,12 +897,6 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gimp
-operator|->
-name|current_context
-condition|)
 name|gimp_set_current_context
 argument_list|(
 name|gimp
@@ -904,12 +904,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gimp
-operator|->
-name|user_context
-condition|)
 name|gimp_set_user_context
 argument_list|(
 name|gimp
@@ -917,12 +911,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gimp
-operator|->
-name|default_context
-condition|)
 name|gimp_set_default_context
 argument_list|(
 name|gimp
@@ -2236,6 +2224,12 @@ argument_list|(
 name|gimp
 argument_list|,
 name|context
+argument_list|)
+expr_stmt|;
+comment|/*  add the builtin FG -> BG etc. gradients  */
+name|gimp_gradients_init
+argument_list|(
+name|gimp
 argument_list|)
 expr_stmt|;
 comment|/*  register all internal procedures  */

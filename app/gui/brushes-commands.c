@@ -36,13 +36,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpcontainereditor.h"
+file|"widgets/gimpcontainerview.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"widgets/gimpcontainerview.h"
+file|"widgets/gimpdatafactoryview.h"
 end_include
 
 begin_include
@@ -88,6 +88,11 @@ name|GimpBrush
 modifier|*
 name|brush
 decl_stmt|;
+name|gboolean
+name|internal
+init|=
+name|FALSE
+decl_stmt|;
 name|editor
 operator|=
 name|GIMP_CONTAINER_EDITOR
@@ -105,6 +110,19 @@ name|view
 operator|->
 name|context
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|brush
+condition|)
+name|internal
+operator|=
+name|GIMP_DATA
+argument_list|(
+name|brush
+argument_list|)
+operator|->
+name|internal
 expr_stmt|;
 DECL|macro|SET_SENSITIVE (menu,condition)
 define|#
@@ -137,10 +155,12 @@ literal|"/Edit Brush..."
 argument_list|,
 name|brush
 operator|&&
-name|GIMP_IS_BRUSH_GENERATED
+name|GIMP_DATA_FACTORY_VIEW
 argument_list|(
-name|brush
+name|editor
 argument_list|)
+operator|->
+name|data_edit_func
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -148,6 +168,9 @@ argument_list|(
 literal|"/Delete Brush..."
 argument_list|,
 name|brush
+operator|&&
+operator|!
+name|internal
 argument_list|)
 expr_stmt|;
 undef|#

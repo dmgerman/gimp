@@ -94,6 +94,11 @@ name|GimpPattern
 modifier|*
 name|pattern
 decl_stmt|;
+name|gboolean
+name|internal
+init|=
+name|FALSE
+decl_stmt|;
 name|editor
 operator|=
 name|GIMP_CONTAINER_EDITOR
@@ -111,6 +116,19 @@ name|view
 operator|->
 name|context
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|pattern
+condition|)
+name|internal
+operator|=
+name|GIMP_DATA
+argument_list|(
+name|pattern
+argument_list|)
+operator|->
+name|internal
 expr_stmt|;
 DECL|macro|SET_SENSITIVE (menu,condition)
 define|#
@@ -156,6 +174,9 @@ argument_list|(
 literal|"/Delete Pattern..."
 argument_list|,
 name|pattern
+operator|&&
+operator|!
+name|internal
 argument_list|)
 expr_stmt|;
 undef|#

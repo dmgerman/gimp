@@ -180,6 +180,11 @@ name|GimpGradient
 modifier|*
 name|gradient
 decl_stmt|;
+name|gboolean
+name|internal
+init|=
+name|FALSE
+decl_stmt|;
 name|editor
 operator|=
 name|GIMP_CONTAINER_EDITOR
@@ -197,6 +202,19 @@ name|view
 operator|->
 name|context
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gradient
+condition|)
+name|internal
+operator|=
+name|GIMP_DATA
+argument_list|(
+name|gradient
+argument_list|)
+operator|->
+name|internal
 expr_stmt|;
 DECL|macro|SET_SENSITIVE (menu,condition)
 define|#
@@ -242,6 +260,9 @@ argument_list|(
 literal|"/Delete Gradient..."
 argument_list|,
 name|gradient
+operator|&&
+operator|!
+name|internal
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
