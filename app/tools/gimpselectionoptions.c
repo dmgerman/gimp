@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afc22410103
+DECL|enum|__anon2bc2653b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -599,9 +599,9 @@ literal|"fixed-width"
 argument_list|,
 name|NULL
 argument_list|,
-literal|1e-5
+literal|0.0
 argument_list|,
-literal|32767.0
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|1.0
 argument_list|,
@@ -618,9 +618,9 @@ literal|"fixed-height"
 argument_list|,
 name|NULL
 argument_list|,
-literal|1e-5
+literal|0.0
 argument_list|,
-literal|32767.0
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|1.0
 argument_list|,
