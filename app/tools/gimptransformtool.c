@@ -4038,11 +4038,14 @@ condition|(
 name|new_tiles
 condition|)
 block|{
-name|gimp_image_mask_push_undo
+name|gimp_channel_push_undo
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

@@ -1833,11 +1833,17 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gimp_image_mask_invalidate
+name|gimp_drawable_invalidate_boundary
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|undo
 operator|->
 name|gimage
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -4313,11 +4319,17 @@ argument_list|)
 condition|)
 block|{
 comment|/* invalidate the current bounds and boundary of the mask */
-name|gimp_image_mask_invalidate
+name|gimp_drawable_invalidate_boundary
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|undo
 operator|->
 name|gimage
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -9693,11 +9705,17 @@ block|}
 else|else
 block|{
 comment|/* invalidate the current bounds and boundary of the mask */
-name|gimp_image_mask_invalidate
+name|gimp_drawable_invalidate_boundary
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|undo
 operator|->
 name|gimage
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

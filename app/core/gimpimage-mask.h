@@ -18,37 +18,6 @@ name|__GIMP_IMAGE_MASK_H__
 end_define
 
 begin_comment
-comment|/*  pure wrappers around the resp. GimpSelection functions:  */
-end_comment
-
-begin_function_decl
-name|void
-name|gimp_image_mask_push_undo
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|undo_desc
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_image_mask_invalidate
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/*  really implemented here:  */
 end_comment
 

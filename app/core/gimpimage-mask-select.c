@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage-mask.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpimage-mask-select.h"
 end_include
 
@@ -160,9 +154,9 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 else|else
-name|gimp_image_mask_push_undo
+name|gimp_channel_push_undo
 argument_list|(
-name|gimage
+name|selection
 argument_list|,
 name|_
 argument_list|(
@@ -351,9 +345,9 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 else|else
-name|gimp_image_mask_push_undo
+name|gimp_channel_push_undo
 argument_list|(
-name|gimage
+name|selection
 argument_list|,
 name|_
 argument_list|(
@@ -551,9 +545,9 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 else|else
-name|gimp_image_mask_push_undo
+name|gimp_channel_push_undo
 argument_list|(
-name|gimage
+name|selection
 argument_list|,
 name|undo_desc
 argument_list|)
@@ -764,9 +758,9 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 else|else
-name|gimp_image_mask_push_undo
+name|gimp_channel_push_undo
 argument_list|(
-name|gimage
+name|selection
 argument_list|,
 name|undo_desc
 argument_list|)
@@ -1085,9 +1079,9 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 else|else
-name|gimp_image_mask_push_undo
+name|gimp_channel_push_undo
 argument_list|(
-name|gimage
+name|selection
 argument_list|,
 name|undo_desc
 argument_list|)
