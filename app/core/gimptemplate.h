@@ -146,12 +146,8 @@ modifier|*
 name|filename
 decl_stmt|;
 DECL|member|initial_size
-name|gulong
+name|guint64
 name|initial_size
-decl_stmt|;
-DECL|member|initial_size_too_large
-name|gboolean
-name|initial_size_too_large
 decl_stmt|;
 block|}
 struct|;

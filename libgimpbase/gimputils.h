@@ -69,7 +69,7 @@ name|gchar
 modifier|*
 name|gimp_memsize_to_string
 parameter_list|(
-name|gulong
+name|guint64
 name|memsize
 parameter_list|)
 function_decl|;

@@ -108,10 +108,6 @@ name|GimpTemplate
 modifier|*
 name|template
 decl_stmt|;
-DECL|member|memsize
-name|gulong
-name|memsize
-decl_stmt|;
 DECL|member|stock_id_container
 name|GimpContainer
 modifier|*

@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bde9a830103
+DECL|enum|__anon2babf6910103
 block|{
 DECL|enumerator|SESSION_INFO_POSITION
 name|SESSION_INFO_POSITION
@@ -1873,7 +1873,7 @@ name|open
 operator|=
 name|TRUE
 expr_stmt|;
-comment|/*  for backward compatibility  */
+comment|/*  the screen number is optional  */
 if|if
 condition|(
 name|g_scanner_peek_next_token
