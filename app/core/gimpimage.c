@@ -270,7 +270,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2797f0510103
+DECL|enum|__anon28fceae40103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -6486,6 +6486,14 @@ operator|->
 name|undo_freeze_count
 operator|++
 expr_stmt|;
+if|if
+condition|(
+name|gimage
+operator|->
+name|undo_freeze_count
+operator|==
+literal|1
+condition|)
 name|gimp_image_undo_event
 argument_list|(
 name|gimage
@@ -6537,6 +6545,14 @@ operator|->
 name|undo_freeze_count
 operator|--
 expr_stmt|;
+if|if
+condition|(
+name|gimage
+operator|->
+name|undo_freeze_count
+operator|==
+literal|0
+condition|)
 name|gimp_image_undo_event
 argument_list|(
 name|gimage

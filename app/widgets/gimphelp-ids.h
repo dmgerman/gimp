@@ -185,6 +185,14 @@ value|"gimp-edit-redo"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_EDIT_UNDO_CLEAR
+define|#
+directive|define
+name|GIMP_HELP_EDIT_UNDO_CLEAR
+value|"gimp-edit-undo-clear"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_EDIT_CUT
 define|#
 directive|define

@@ -132,6 +132,11 @@ name|GtkWidget
 modifier|*
 name|redo_button
 decl_stmt|;
+DECL|member|clear_button
+name|GtkWidget
+modifier|*
+name|clear_button
+decl_stmt|;
 block|}
 struct|;
 end_struct
