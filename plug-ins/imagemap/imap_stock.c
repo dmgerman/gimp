@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2004 Maurits Rijk  m.rijk@chello.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2005 Maurits Rijk  m.rijk@chello.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_include
@@ -53,18 +53,6 @@ index|[]
 init|=
 block|{
 block|{
-name|IMAP_STOCK_ARROW
-block|,
-name|NULL
-block|,
-literal|0
-block|,
-literal|0
-block|,
-name|NULL
-block|}
-block|,
-block|{
 name|IMAP_STOCK_CIRCLE
 block|,
 name|NULL
@@ -102,18 +90,6 @@ block|}
 block|,
 block|{
 name|IMAP_STOCK_JAVA
-block|,
-name|NULL
-block|,
-literal|0
-block|,
-literal|0
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|IMAP_STOCK_LINK
 block|,
 name|NULL
 block|,
@@ -314,13 +290,6 @@ argument_list|()
 expr_stmt|;
 name|add_stock_icon
 argument_list|(
-name|IMAP_STOCK_ARROW
-argument_list|,
-name|stock_arrow
-argument_list|)
-expr_stmt|;
-name|add_stock_icon
-argument_list|(
 name|IMAP_STOCK_CIRCLE
 argument_list|,
 name|stock_circle
@@ -345,13 +314,6 @@ argument_list|(
 name|IMAP_STOCK_JAVA
 argument_list|,
 name|stock_java
-argument_list|)
-expr_stmt|;
-name|add_stock_icon
-argument_list|(
-name|IMAP_STOCK_LINK
-argument_list|,
-name|stock_link
 argument_list|)
 expr_stmt|;
 name|add_stock_icon

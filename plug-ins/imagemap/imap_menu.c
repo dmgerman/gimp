@@ -1337,7 +1337,7 @@ block|{
 block|{
 literal|"Arrow"
 block|,
-name|IMAP_STOCK_ARROW
+name|GIMP_STOCK_CURSOR
 block|,
 literal|"Arrow"
 block|,
