@@ -4315,7 +4315,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon27b266050108
+DECL|struct|__anon28b384350108
 typedef|typedef
 struct|struct
 block|{
@@ -14905,13 +14905,13 @@ literal|4
 index|]
 init|=
 block|{
+literal|"Foreground"
+block|,
 literal|"Background"
 block|,
 literal|"White"
 block|,
 literal|"Transparent"
-block|,
-literal|"Foreground"
 block|}
 decl_stmt|;
 name|ActionCallback
@@ -14921,13 +14921,13 @@ literal|4
 index|]
 init|=
 block|{
+name|new_layer_foreground_callback
+block|,
 name|new_layer_background_callback
 block|,
 name|new_layer_white_callback
 block|,
 name|new_layer_transparent_callback
-block|,
-name|new_layer_foreground_callback
 block|}
 decl_stmt|;
 comment|/*  the new options structure  */
