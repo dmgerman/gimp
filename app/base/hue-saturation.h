@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2cf1bf0103
+DECL|enum|__anon2bffde440103
 block|{
 DECL|enumerator|ALL_HUES
 name|ALL_HUES
@@ -96,6 +96,7 @@ name|drawable
 decl_stmt|;
 DECL|member|image_map
 name|ImageMap
+modifier|*
 name|image_map
 decl_stmt|;
 DECL|member|hue

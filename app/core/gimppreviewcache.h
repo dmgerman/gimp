@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMPPREVIEWCACHE_H__
+name|__GIMP_PREVIEW_CACHE_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMPPREVIEWCACHE_H__
+DECL|macro|__GIMP_PREVIEW_CACHE_H__
 define|#
 directive|define
-name|__GIMPPREVIEWCACHE_H__
+name|__GIMP_PREVIEW_CACHE_H__
 end_define
 
 begin_define
@@ -85,7 +85,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMPPREVIEWCACHE_H__ */
+comment|/* __GIMP_PREVIEW_CACHE_H__ */
 end_comment
 
 end_unit

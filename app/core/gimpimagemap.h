@@ -26,6 +26,7 @@ end_comment
 
 begin_function_decl
 name|ImageMap
+modifier|*
 name|image_map_create
 parameter_list|(
 name|GDisplay
@@ -44,11 +45,14 @@ name|void
 name|image_map_apply
 parameter_list|(
 name|ImageMap
+modifier|*
+name|image_map
 parameter_list|,
 name|ImageMapApplyFunc
+name|apply_func
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
+name|apply_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -58,6 +62,8 @@ name|void
 name|image_map_commit
 parameter_list|(
 name|ImageMap
+modifier|*
+name|image_map
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -67,6 +73,8 @@ name|void
 name|image_map_clear
 parameter_list|(
 name|ImageMap
+modifier|*
+name|image_map
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -76,6 +84,8 @@ name|void
 name|image_map_abort
 parameter_list|(
 name|ImageMap
+modifier|*
+name|image_map
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -86,10 +96,14 @@ modifier|*
 name|image_map_get_color_at
 parameter_list|(
 name|ImageMap
+modifier|*
+name|image_map
 parameter_list|,
 name|gint
+name|x
 parameter_list|,
 name|gint
+name|y
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c16d36c0103
+DECL|enum|__anon2b0209230103
 block|{
 DECL|enumerator|EXTENDED_CLICKED
 name|EXTENDED_CLICKED
@@ -434,6 +434,7 @@ argument_list|)
 operator|->
 name|button_press_event
 condition|)
+return|return
 name|GTK_WIDGET_CLASS
 argument_list|(
 name|parent_class
@@ -445,7 +446,7 @@ name|widget
 argument_list|,
 name|bevent
 argument_list|)
-expr_stmt|;
+return|;
 return|return
 name|TRUE
 return|;
@@ -472,9 +473,14 @@ modifier|*
 name|button
 decl_stmt|;
 name|gboolean
-name|in_button
+name|extended_clicked
 init|=
 name|FALSE
+decl_stmt|;
+name|gboolean
+name|retval
+init|=
+name|TRUE
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -520,14 +526,10 @@ operator|==
 literal|1
 condition|)
 block|{
-name|in_button
-operator|=
-name|button
-operator|->
-name|in_button
-expr_stmt|;
 if|if
 condition|(
+name|button
+operator|->
 name|in_button
 operator|&&
 operator|(
@@ -568,6 +570,11 @@ operator|->
 name|press_state
 argument_list|)
 expr_stmt|;
+name|extended_clicked
+operator|=
+name|TRUE
+expr_stmt|;
+comment|/* HACK: don't let GtkButton emit "clicked" by telling it that 	   * the mouse pointer is outside the widget 	   */
 name|button
 operator|->
 name|in_button
@@ -585,6 +592,8 @@ argument_list|)
 operator|->
 name|button_release_event
 condition|)
+name|retval
+operator|=
 name|GTK_WIDGET_CLASS
 argument_list|(
 name|parent_class
@@ -599,15 +608,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|bevent
-operator|->
-name|button
-operator|==
-literal|1
-operator|&&
-name|in_button
+name|extended_clicked
 condition|)
 block|{
+comment|/* revert the above HACK and let the button draw itself in the        * correct state, because upchaining with "in_button" == FALSE        * messed it up        */
 name|button
 operator|->
 name|in_button
@@ -630,7 +634,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|TRUE
+name|retval
 return|;
 block|}
 end_function

@@ -104,7 +104,8 @@ end_typedef
 begin_typedef
 DECL|typedef|ImageMap
 typedef|typedef
-name|gpointer
+name|struct
+name|_ImageMap
 name|ImageMap
 typedef|;
 end_typedef

@@ -45,7 +45,7 @@ typedef|;
 typedef|typedef
 enum|enum
 comment|/*< chop=GIMP_>*/
-DECL|enum|__anon2948acce0103
+DECL|enum|__anon276856720103
 block|{
 DECL|enumerator|GIMP_UNIT_PIXEL
 name|GIMP_UNIT_PIXEL
@@ -81,6 +81,7 @@ DECL|enumerator|GIMP_UNIT_PERCENT
 name|GIMP_UNIT_PERCENT
 init|=
 literal|65536
+comment|/*< skip>*/
 DECL|typedef|GimpUnit
 block|}
 name|GimpUnit
@@ -88,7 +89,7 @@ typedef|;
 typedef|typedef
 enum|enum
 comment|/*< chop=GIMP_>*/
-DECL|enum|__anon2948acce0203
+DECL|enum|__anon276856720203
 block|{
 DECL|enumerator|GIMP_PDB_INT32
 name|GIMP_PDB_INT32
@@ -165,7 +166,7 @@ typedef|;
 typedef|typedef
 enum|enum
 comment|/*< chop=GIMP_>*/
-DECL|enum|__anon2948acce0303
+DECL|enum|__anon276856720303
 block|{
 DECL|enumerator|GIMP_INTERNAL
 name|GIMP_INTERNAL
@@ -185,7 +186,7 @@ typedef|;
 typedef|typedef
 enum|enum
 comment|/*< chop=GIMP_>*/
-DECL|enum|__anon2948acce0403
+DECL|enum|__anon276856720403
 block|{
 DECL|enumerator|GIMP_PDB_EXECUTION_ERROR
 name|GIMP_PDB_EXECUTION_ERROR

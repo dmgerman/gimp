@@ -88,6 +88,7 @@ name|drawable
 decl_stmt|;
 DECL|member|image_map
 name|ImageMap
+modifier|*
 name|image_map
 decl_stmt|;
 DECL|member|color

@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae17c920103
+DECL|enum|__anon2779bf8c0103
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -76,6 +76,7 @@ name|drawable
 decl_stmt|;
 DECL|member|image_map
 name|ImageMap
+modifier|*
 name|image_map
 decl_stmt|;
 DECL|member|cyan_red
