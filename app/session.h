@@ -104,13 +104,6 @@ end_decl_stmt
 begin_decl_stmt
 specifier|extern
 name|SessionInfo
-name|info_dialog_session_info
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|SessionInfo
 name|tool_options_session_info
 decl_stmt|;
 end_decl_stmt
@@ -118,7 +111,7 @@ end_decl_stmt
 begin_decl_stmt
 specifier|extern
 name|SessionInfo
-name|palette_session_info
+name|device_status_session_info
 decl_stmt|;
 end_decl_stmt
 
@@ -146,7 +139,14 @@ end_decl_stmt
 begin_decl_stmt
 specifier|extern
 name|SessionInfo
-name|device_status_session_info
+name|palette_session_info
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|SessionInfo
+name|info_dialog_session_info
 decl_stmt|;
 end_decl_stmt
 

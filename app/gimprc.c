@@ -228,7 +228,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c64c9230103
+DECL|enum|__anon27dd14e00103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -787,7 +787,7 @@ DECL|variable|always_restore_session
 name|gboolean
 name|always_restore_session
 init|=
-name|FALSE
+name|TRUE
 decl_stmt|;
 end_decl_stmt
 
