@@ -10,6 +10,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -40,8 +46,49 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
+file|<libgimp/gimp.h>
 end_include
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|HAVE_RINT
+end_ifndef
+
+begin_define
+DECL|macro|rint (x)
+define|#
+directive|define
+name|rint
+parameter_list|(
+name|x
+parameter_list|)
+value|floor((x)+0.5)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|M_PI
+end_ifndef
+
+begin_define
+DECL|macro|M_PI
+define|#
+directive|define
+name|M_PI
+value|3.14159265358979323846
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_ifdef
 ifdef|#
@@ -540,7 +587,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2a1ce9640108
+DECL|struct|__anon29c1b9ed0108
 typedef|typedef
 struct|struct
 block|{
@@ -785,7 +832,7 @@ comment|/* Some of these are here merely to save them across calls.  They are  *
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a1ce9640208
+DECL|struct|__anon29c1b9ed0208
 typedef|typedef
 struct|struct
 block|{
@@ -858,7 +905,7 @@ comment|/* bits of state used by the UI, but not visible from the PDB */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a1ce9640308
+DECL|struct|__anon29c1b9ed0308
 typedef|typedef
 struct|struct
 block|{
@@ -884,7 +931,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a1ce9640408
+DECL|struct|__anon29c1b9ed0408
 typedef|typedef
 struct|struct
 block|{
@@ -917,7 +964,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2a1ce9640503
+DECL|enum|__anon29c1b9ed0503
 typedef|typedef
 enum|enum
 block|{
@@ -933,7 +980,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a1ce9640608
+DECL|struct|__anon29c1b9ed0608
 typedef|typedef
 struct|struct
 block|{
@@ -991,7 +1038,7 @@ comment|/* state for the preview widgets */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a1ce9640708
+DECL|struct|__anon29c1b9ed0708
 typedef|typedef
 struct|struct
 block|{
@@ -1093,7 +1140,7 @@ comment|/* State associated with the configuration dialog and passed to its  * c
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a1ce9640808
+DECL|struct|__anon29c1b9ed0808
 typedef|typedef
 struct|struct
 block|{
@@ -1281,7 +1328,7 @@ comment|/* channel templates */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a1ce9640908
+DECL|struct|__anon29c1b9ed0908
 typedef|typedef
 struct|struct
 block|{
@@ -7363,7 +7410,7 @@ comment|/* Each call of the spot function results in one of these */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a1ce9640a08
+DECL|struct|__anon29c1b9ed0a08
 typedef|typedef
 struct|struct
 block|{

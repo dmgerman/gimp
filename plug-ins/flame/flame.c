@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -15,11 +21,22 @@ directive|include
 file|<stdio.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -61,12 +78,6 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimpwire.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config.h"
 end_include
 
 begin_include
@@ -433,7 +444,7 @@ value|(-4)
 end_define
 
 begin_struct
-DECL|struct|__anon2bd3da460108
+DECL|struct|__anon2c24be330108
 struct|struct
 block|{
 DECL|member|randomize
@@ -1437,28 +1448,6 @@ operator|*
 literal|4
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|tmp
-operator|==
-name|NULL
-condition|)
-block|{
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"cannot malloc %d bytes.\n"
-argument_list|,
-name|width
-operator|*
-name|height
-operator|*
-name|bytes
-argument_list|)
-expr_stmt|;
-return|return;
-block|}
 comment|/* render */
 name|config
 operator|.
@@ -1599,26 +1588,6 @@ operator|*
 name|width
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|sl
-operator|==
-name|NULL
-condition|)
-block|{
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"cannot malloc %d bytes.\n"
-argument_list|,
-name|width
-operator|*
-literal|3
-argument_list|)
-expr_stmt|;
-return|return;
-block|}
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -3622,7 +3591,7 @@ name|button
 argument_list|)
 expr_stmt|;
 block|{
-DECL|struct|__anon2bd3da460208
+DECL|struct|__anon2c24be330208
 specifier|static
 struct|struct
 block|{

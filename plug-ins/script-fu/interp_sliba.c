@@ -4037,6 +4037,14 @@ name|c
 condition|)
 block|{
 case|case
+literal|'\\'
+case|:
+name|c
+operator|=
+literal|'\\'
+expr_stmt|;
+break|break;
+case|case
 literal|'n'
 case|:
 name|c

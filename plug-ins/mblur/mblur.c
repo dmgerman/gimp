@@ -10,6 +10,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -25,11 +31,22 @@ directive|include
 file|<signal.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -115,7 +132,7 @@ value|MBLUR_ZOOM
 end_define
 
 begin_typedef
-DECL|struct|__anon29be5b850108
+DECL|struct|__anon27e6e86d0108
 typedef|typedef
 struct|struct
 block|{
@@ -138,7 +155,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29be5b850208
+DECL|struct|__anon27e6e86d0208
 typedef|typedef
 struct|struct
 block|{

@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -30,6 +36,29 @@ end_include
 begin_include
 include|#
 directive|include
+file|<sys/types.h>
+end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<unistd.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
 end_include
 
@@ -39,26 +68,8 @@ directive|include
 file|"gtk/gtk.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|<sys/types.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<signal.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<unistd.h>
-end_include
-
 begin_typedef
-DECL|enum|__anon2a46199d0103
+DECL|enum|__anon2a1547900103
 typedef|typedef
 enum|enum
 block|{
@@ -252,7 +263,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2a46199d0208
+DECL|struct|__anon2a1547900208
 typedef|typedef
 struct|struct
 block|{
@@ -408,7 +419,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon2a46199d0308
+DECL|struct|__anon2a1547900308
 struct|struct
 block|{
 DECL|member|matrix

@@ -14,6 +14,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<math.h>
 end_include
 
@@ -222,7 +228,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon275ecc750108
+DECL|struct|__anon2a50386a0108
 block|{
 DECL|member|bna
 name|GtkWidget

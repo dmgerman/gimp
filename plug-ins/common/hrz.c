@@ -14,6 +14,18 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|<glib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<setjmp.h>
 end_include
 
@@ -35,11 +47,22 @@ directive|include
 file|<fcntl.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -71,23 +94,53 @@ directive|include
 file|<math.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|<unistd.h>
-end_include
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|__EMX__
-end_ifndef
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_MMAP
+end_ifdef
 
 begin_include
 include|#
 directive|include
 file|<sys/mman.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|NATIVE_WIN32
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<io.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|_O_BINARY
+end_ifndef
+
+begin_define
+DECL|macro|_O_BINARY
+define|#
+directive|define
+name|_O_BINARY
+value|0
+end_define
 
 begin_endif
 endif|#
@@ -113,7 +166,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2bf0980108
+DECL|struct|__anon2c6deff70108
 block|{
 DECL|member|run
 name|gint
@@ -1135,6 +1188,8 @@ argument_list|(
 name|filename
 argument_list|,
 name|O_RDONLY
+operator||
+name|_O_BINARY
 argument_list|)
 expr_stmt|;
 if|if
@@ -1186,9 +1241,9 @@ operator|-
 literal|1
 return|;
 block|}
-ifndef|#
-directive|ifndef
-name|__EMX__
+ifdef|#
+directive|ifdef
+name|HAVE_MMAP
 name|mapped
 operator|=
 name|mmap
@@ -1249,25 +1304,6 @@ operator|*
 literal|3
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|mapped
-operator|==
-name|NULL
-condition|)
-block|{
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"hrz filter: could not allocate memory\n"
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
-block|}
 if|if
 condition|(
 name|read
@@ -1397,13 +1433,9 @@ name|pixel_rgn
 argument_list|)
 expr_stmt|;
 comment|/* close the file */
-ifndef|#
-directive|ifndef
-name|NeXT
-comment|/* @#%@! NeXTStep */
-ifndef|#
-directive|ifndef
-name|__EMX__
+ifdef|#
+directive|ifdef
+name|HAVE_MMAP
 name|munmap
 argument_list|(
 name|mapped
@@ -1422,8 +1454,6 @@ argument_list|(
 name|mapped
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 endif|#
 directive|endif
 comment|/* Tell the GIMP to display the image.    */

@@ -14,6 +14,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<math.h>
 end_include
 
@@ -35,22 +41,33 @@ directive|include
 file|<stdlib.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
 
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include
-file|"gtk/gtk.h"
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_ifndef
@@ -175,7 +192,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a3435230108
+DECL|struct|__anon2b31dadb0108
 typedef|typedef
 struct|struct
 block|{
@@ -206,7 +223,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a3435230208
+DECL|struct|__anon2b31dadb0208
 typedef|typedef
 struct|struct
 block|{
@@ -246,7 +263,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a3435230308
+DECL|struct|__anon2b31dadb0308
 typedef|typedef
 struct|struct
 block|{

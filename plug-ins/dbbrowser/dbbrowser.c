@@ -26,12 +26,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<X11/Xlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"dbbrowser.h"
 end_include
 

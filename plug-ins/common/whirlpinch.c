@@ -14,6 +14,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<math.h>
 end_include
 
@@ -35,11 +41,22 @@ directive|include
 file|<stdio.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -172,7 +189,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b8dabcd0108
+DECL|struct|__anon2c4ccdb70108
 typedef|typedef
 struct|struct
 block|{
@@ -195,7 +212,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b8dabcd0208
+DECL|struct|__anon2c4ccdb70208
 typedef|typedef
 struct|struct
 block|{
@@ -235,7 +252,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b8dabcd0308
+DECL|struct|__anon2c4ccdb70308
 typedef|typedef
 struct|struct
 block|{

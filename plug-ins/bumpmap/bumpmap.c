@@ -34,6 +34,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<math.h>
 end_include
 
@@ -55,11 +61,22 @@ directive|include
 file|<stdlib.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -175,7 +192,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_enum
-DECL|enum|__anon2b21300e0103
+DECL|enum|__anon2ba5cc550103
 enum|enum
 block|{
 DECL|enumerator|LINEAR
@@ -193,7 +210,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2b21300e0203
+DECL|enum|__anon2ba5cc550203
 enum|enum
 block|{
 DECL|enumerator|DRAG_NONE
@@ -211,7 +228,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon2b21300e0308
+DECL|struct|__anon2ba5cc550308
 typedef|typedef
 struct|struct
 block|{
@@ -266,7 +283,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b21300e0408
+DECL|struct|__anon2ba5cc550408
 typedef|typedef
 struct|struct
 block|{
@@ -311,7 +328,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b21300e0508
+DECL|struct|__anon2ba5cc550508
 typedef|typedef
 struct|struct
 block|{

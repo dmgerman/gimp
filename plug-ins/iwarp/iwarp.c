@@ -16,6 +16,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<math.h>
 end_include
 
@@ -127,7 +133,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a526f020108
+DECL|struct|__anon2bd4fbc70108
 block|{
 DECL|member|x
 name|gfloat
@@ -146,7 +152,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a526f020208
+DECL|struct|__anon2bd4fbc70208
 block|{
 DECL|member|run
 name|gint
@@ -161,7 +167,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a526f020308
+DECL|struct|__anon2bd4fbc70308
 block|{
 DECL|member|deform_area_radius
 name|gint

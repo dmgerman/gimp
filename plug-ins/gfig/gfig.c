@@ -10,6 +10,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -31,11 +37,22 @@ directive|include
 file|<sys/stat.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -43,11 +60,22 @@ directive|include
 file|<string.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_DIRENT_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<dirent.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -66,6 +94,108 @@ include|#
 directive|include
 file|<gtk/gtk.h>
 end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|NATIVE_WIN32
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<io.h>
+end_include
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|W_OK
+end_ifndef
+
+begin_define
+DECL|macro|W_OK
+define|#
+directive|define
+name|W_OK
+value|2
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|S_ISDIR
+end_ifndef
+
+begin_define
+DECL|macro|S_ISDIR (m)
+define|#
+directive|define
+name|S_ISDIR
+parameter_list|(
+name|m
+parameter_list|)
+value|((m)& _S_IFDIR)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|S_ISREG
+end_ifndef
+
+begin_define
+DECL|macro|S_ISREG (m)
+define|#
+directive|define
+name|S_ISREG
+parameter_list|(
+name|m
+parameter_list|)
+value|((m)& _S_IFREG)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|HAVE_RINT
+end_ifndef
+
+begin_define
+DECL|macro|rint (x)
+define|#
+directive|define
+name|rint
+parameter_list|(
+name|x
+parameter_list|)
+value|floor (x + 0.5)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -8260,7 +8390,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2937f2470108
+DECL|struct|__anon2bad23ea0108
 block|{
 DECL|member|color_string
 name|gchar

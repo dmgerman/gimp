@@ -67,6 +67,28 @@ directive|include
 file|"config.h"
 end_include
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|HAVE_RINT
+end_ifndef
+
+begin_define
+DECL|macro|rint (x)
+define|#
+directive|define
+name|rint
+parameter_list|(
+name|x
+parameter_list|)
+value|floor ((x) + 0.5)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_comment
 comment|/* Test for GTK1.2-style gdkrgb code, else use old 'preview' code. */
 end_comment

@@ -2203,6 +2203,9 @@ name|gimp_use_xshm
 argument_list|()
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|SIGBUS
 name|signal
 argument_list|(
 name|SIGBUS
@@ -2210,6 +2213,8 @@ argument_list|,
 name|SIG_DFL
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|signal
 argument_list|(
 name|SIGSEGV

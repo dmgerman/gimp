@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<setjmp.h>
 end_include
 
@@ -27,11 +33,22 @@ directive|include
 file|<fcntl.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -63,6 +80,42 @@ directive|include
 file|<math.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|NATIVE_WIN32
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<io.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|_O_BINARY
+end_ifndef
+
+begin_define
+DECL|macro|_O_BINARY
+define|#
+directive|define
+name|_O_BINARY
+value|0
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include
@@ -81,18 +134,12 @@ directive|include
 file|"app/brush_header.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|<netinet/in.h>
-end_include
-
 begin_comment
 comment|/* Declare local data types  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c0b16460108
+DECL|struct|__anon2ba838a80108
 typedef|typedef
 struct|struct
 block|{
@@ -983,6 +1030,8 @@ argument_list|(
 name|filename
 argument_list|,
 name|O_RDONLY
+operator||
+name|_O_BINARY
 argument_list|)
 expr_stmt|;
 if|if
@@ -1034,7 +1083,7 @@ name|ph
 operator|.
 name|header_size
 operator|=
-name|ntohl
+name|g_ntohl
 argument_list|(
 name|ph
 operator|.
@@ -1045,7 +1094,7 @@ name|ph
 operator|.
 name|version
 operator|=
-name|ntohl
+name|g_ntohl
 argument_list|(
 name|ph
 operator|.
@@ -1056,7 +1105,7 @@ name|ph
 operator|.
 name|width
 operator|=
-name|ntohl
+name|g_ntohl
 argument_list|(
 name|ph
 operator|.
@@ -1067,7 +1116,7 @@ name|ph
 operator|.
 name|height
 operator|=
-name|ntohl
+name|g_ntohl
 argument_list|(
 name|ph
 operator|.
@@ -1078,7 +1127,7 @@ name|ph
 operator|.
 name|bytes
 operator|=
-name|ntohl
+name|g_ntohl
 argument_list|(
 name|ph
 operator|.
@@ -1089,7 +1138,7 @@ name|ph
 operator|.
 name|magic_number
 operator|=
-name|ntohl
+name|g_ntohl
 argument_list|(
 name|ph
 operator|.
@@ -1100,7 +1149,7 @@ name|ph
 operator|.
 name|spacing
 operator|=
-name|ntohl
+name|g_ntohl
 argument_list|(
 name|ph
 operator|.
@@ -1575,6 +1624,8 @@ operator||
 name|O_TRUNC
 operator||
 name|O_WRONLY
+operator||
+name|_O_BINARY
 argument_list|,
 literal|0644
 argument_list|)
@@ -1602,7 +1653,7 @@ name|ph
 operator|.
 name|header_size
 operator|=
-name|htonl
+name|g_htonl
 argument_list|(
 sizeof|sizeof
 argument_list|(
@@ -1623,7 +1674,7 @@ name|ph
 operator|.
 name|version
 operator|=
-name|htonl
+name|g_htonl
 argument_list|(
 literal|2
 argument_list|)
@@ -1632,7 +1683,7 @@ name|ph
 operator|.
 name|width
 operator|=
-name|htonl
+name|g_htonl
 argument_list|(
 name|drawable
 operator|->
@@ -1643,7 +1694,7 @@ name|ph
 operator|.
 name|height
 operator|=
-name|htonl
+name|g_htonl
 argument_list|(
 name|drawable
 operator|->
@@ -1654,7 +1705,7 @@ name|ph
 operator|.
 name|bytes
 operator|=
-name|htonl
+name|g_htonl
 argument_list|(
 name|drawable
 operator|->
@@ -1665,7 +1716,7 @@ name|ph
 operator|.
 name|magic_number
 operator|=
-name|htonl
+name|g_htonl
 argument_list|(
 name|GBRUSH_MAGIC
 argument_list|)
@@ -1674,7 +1725,7 @@ name|ph
 operator|.
 name|spacing
 operator|=
-name|htonl
+name|g_htonl
 argument_list|(
 name|info
 operator|.

@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -21,11 +27,22 @@ directive|include
 file|<string.h>
 end_include
 
+begin_if
+if|#
+directive|if
+name|HAVE_UNISTD_H
+end_if
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -617,6 +634,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+ifndef|#
+directive|ifndef
+name|NATIVE_WIN32
 name|gimp_install_procedure
 argument_list|(
 literal|"extension_script_fu_console"
@@ -675,6 +695,8 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|gimp_install_procedure
 argument_list|(
 literal|"extension_script_fu_eval"
@@ -802,6 +824,10 @@ comment|/*  Acknowledge that the extension is properly initialized  */
 name|gimp_extension_ack
 argument_list|()
 expr_stmt|;
+comment|/* We need wakeups (on Win32) when getting callbacks from the GIMP */
+name|gimp_request_wakeups
+argument_list|()
+expr_stmt|;
 while|while
 condition|(
 literal|1
@@ -842,6 +868,9 @@ operator|=
 name|status
 expr_stmt|;
 block|}
+ifndef|#
+directive|ifndef
+name|NATIVE_WIN32
 comment|/*    *  The script-fu console for interactive SIOD development    */
 elseif|else
 if|if
@@ -898,6 +927,8 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 block|}
+endif|#
+directive|endif
 comment|/*    *  A non-interactive "console" (for batch mode)    */
 elseif|else
 if|if
@@ -5885,6 +5916,9 @@ argument_list|(
 name|return_val
 argument_list|)
 expr_stmt|;
+ifndef|#
+directive|ifndef
+name|NATIVE_WIN32
 comment|/*  if we're in server mode, listen for additional commands for 10 ms  */
 if|if
 condition|(
@@ -5895,6 +5929,8 @@ argument_list|(
 literal|10
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 return|return
 name|return_val
 return|;

@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -27,17 +33,39 @@ directive|include
 file|<sys/types.h>
 end_include
 
+begin_if
+if|#
+directive|if
+name|HAVE_DIRENT_H
+end_if
+
 begin_include
 include|#
 directive|include
 file|<dirent.h>
 end_include
 
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_if
+if|#
+directive|if
+name|HAVE_UNISTD_H
+end_if
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -87,6 +115,35 @@ directive|include
 file|<plug-ins/dbbrowser/dbbrowser.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|NATIVE_WIN32
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<fcntl.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<io.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|NATIVE_WIN32
+end_ifndef
+
 begin_define
 DECL|macro|TEXT_WIDTH
 define|#
@@ -122,7 +179,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291ca02a0108
+DECL|struct|__anon2c64d1020108
 block|{
 DECL|member|console
 name|GtkWidget
@@ -2933,6 +2990,15 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* !NATIVE_WIN32 */
+end_comment
 
 begin_function
 name|void

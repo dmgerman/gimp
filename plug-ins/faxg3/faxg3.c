@@ -14,6 +14,12 @@ end_define
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -23,16 +29,27 @@ directive|include
 file|<stdlib.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|<sys/types.h>
-end_include
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
 
 begin_include
 include|#
 directive|include
 file|<unistd.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_include
+include|#
+directive|include
+file|<sys/types.h>
 end_include
 
 begin_include
@@ -46,6 +63,42 @@ include|#
 directive|include
 file|<fcntl.h>
 end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|NATIVE_WIN32
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<io.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|_O_BINARY
+end_ifndef
+
+begin_define
+DECL|macro|_O_BINARY
+define|#
+directive|define
+name|_O_BINARY
+value|0
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -805,6 +858,8 @@ argument_list|(
 name|filename
 argument_list|,
 name|O_RDONLY
+operator||
+name|_O_BINARY
 argument_list|)
 expr_stmt|;
 name|hibit

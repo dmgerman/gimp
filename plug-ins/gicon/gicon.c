@@ -10,6 +10,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<setjmp.h>
 end_include
 
@@ -31,11 +37,22 @@ directive|include
 file|<fcntl.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -79,16 +96,10 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|<netinet/in.h>
-end_include
-
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b3e9430108
+DECL|struct|__anon2962e1350108
 block|{
 DECL|member|icon_name
 name|gchar
@@ -106,7 +117,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b3e9430208
+DECL|struct|__anon2962e1350208
 block|{
 DECL|member|run
 name|gint

@@ -14,6 +14,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<setjmp.h>
 end_include
 
@@ -35,11 +41,22 @@ directive|include
 file|<fcntl.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -74,14 +91,50 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gtk/gtk.h"
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
+file|<libgimp/gimp.h>
 end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|NATIVE_WIN32
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<io.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|_O_BINARY
+end_ifndef
+
+begin_define
+DECL|macro|_O_BINARY
+define|#
+directive|define
+name|_O_BINARY
+value|0
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_comment
 comment|/* Declare local data types  */
@@ -259,7 +312,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b44384d0108
+DECL|struct|__anon28f993c20108
 block|{
 DECL|member|raw
 name|gint
@@ -275,7 +328,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b44384d0208
+DECL|struct|__anon28f993c20208
 block|{
 DECL|member|run
 name|gint
@@ -1524,20 +1577,8 @@ name|ctr
 decl_stmt|;
 name|temp
 operator|=
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
-argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|11
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|temp
-argument_list|,
 literal|"Loading %s:"
 argument_list|,
 name|filename
@@ -1561,6 +1602,8 @@ argument_list|(
 name|filename
 argument_list|,
 name|O_RDONLY
+operator||
+name|_O_BINARY
 argument_list|)
 expr_stmt|;
 if|if
@@ -1592,22 +1635,6 @@ name|PNMInfo
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|pnminfo
-condition|)
-block|{
-name|close
-argument_list|(
-name|fd
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
-block|}
 name|scan
 operator|=
 name|NULL
@@ -2897,12 +2924,6 @@ operator|->
 name|xres
 argument_list|)
 expr_stmt|;
-name|CHECK_FOR_ERROR
-argument_list|(
-operator|(
-name|NULL
-operator|==
-operator|(
 name|buf
 operator|=
 name|g_malloc
@@ -2914,15 +2935,6 @@ operator|(
 name|unsigned
 name|char
 operator|)
-argument_list|)
-operator|)
-operator|)
-argument_list|,
-name|info
-operator|->
-name|jmpbuf
-argument_list|,
-literal|"pnm filter: malloc failed\n"
 argument_list|)
 expr_stmt|;
 for|for
@@ -3712,20 +3724,8 @@ return|;
 block|}
 name|temp
 operator|=
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
-argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|11
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|temp
-argument_list|,
 literal|"Saving %s:"
 argument_list|,
 name|filename
@@ -3753,6 +3753,8 @@ operator||
 name|O_CREAT
 operator||
 name|O_TRUNC
+operator||
+name|_O_BINARY
 argument_list|,
 literal|0644
 argument_list|)
@@ -3767,7 +3769,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"pnm: can't open \"%s\"\n"
+literal|"pnm: can't open \"%s\""
 argument_list|,
 name|filename
 argument_list|)
@@ -4881,16 +4883,6 @@ name|PNMScanner
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|s
-condition|)
-return|return
-operator|(
-name|NULL
-operator|)
-return|;
 name|s
 operator|->
 name|fd

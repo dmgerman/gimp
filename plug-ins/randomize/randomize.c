@@ -22,6 +22,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<time.h>
 end_include
 
@@ -185,7 +191,7 @@ comment|/*********************************  *  *  PLUGIN-SPECIFIC STRUCTURES AND
 end_comment
 
 begin_typedef
-DECL|struct|__anon29d4f3930108
+DECL|struct|__anon2b750a640108
 typedef|typedef
 struct|struct
 block|{
@@ -234,7 +240,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon29d4f3930208
+DECL|struct|__anon2b750a640208
 typedef|typedef
 struct|struct
 block|{
