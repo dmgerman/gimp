@@ -107,7 +107,7 @@ begin_typedef
 typedef|typedef
 struct|struct
 comment|/**** Printer List ****/
-DECL|struct|__anon29358f360108
+DECL|struct|__anon2bcbaf0d0108
 block|{
 DECL|member|name
 name|char
@@ -597,7 +597,7 @@ end_decl_stmt
 begin_struct
 struct|struct
 comment|/* Plug-in variables */
-DECL|struct|__anon29358f360208
+DECL|struct|__anon2bcbaf0d0208
 block|{
 DECL|member|output_to
 name|char
@@ -9957,6 +9957,11 @@ name|fp
 decl_stmt|;
 comment|/* Printrc file */
 name|char
+modifier|*
+name|filename
+decl_stmt|;
+comment|/* Its name */
+name|char
 name|line
 index|[
 literal|1024
@@ -9984,33 +9989,11 @@ name|get_printers
 argument_list|()
 expr_stmt|;
 comment|/*   * Generate the filename for the current user...   */
-if|if
-condition|(
-name|getenv
+name|filename
+operator|=
+name|gimp_personal_rc_file
 argument_list|(
-literal|"HOME"
-argument_list|)
-operator|==
-name|NULL
-condition|)
-name|strcpy
-argument_list|(
-name|line
-argument_list|,
-literal|"/.gimp/printrc"
-argument_list|)
-expr_stmt|;
-else|else
-name|sprintf
-argument_list|(
-name|line
-argument_list|,
-literal|"%s/.gimp/printrc"
-argument_list|,
-name|getenv
-argument_list|(
-literal|"HOME"
-argument_list|)
+literal|"printrc"
 argument_list|)
 expr_stmt|;
 ifdef|#
@@ -10018,7 +10001,7 @@ directive|ifdef
 name|__EMX__
 name|_fnslashify
 argument_list|(
-name|line
+name|filename
 argument_list|)
 expr_stmt|;
 endif|#
@@ -10033,7 +10016,7 @@ name|fp
 operator|=
 name|fopen
 argument_list|(
-name|line
+name|filename
 argument_list|,
 literal|"r"
 argument_list|)
@@ -10050,7 +10033,7 @@ name|fp
 operator|=
 name|fopen
 argument_list|(
-name|line
+name|filename
 argument_list|,
 literal|"rt"
 argument_list|)
@@ -10543,7 +10526,11 @@ name|fp
 argument_list|)
 expr_stmt|;
 block|}
-empty_stmt|;
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 comment|/*   * Select the current printer as necessary...   */
 if|if
 condition|(
@@ -10623,10 +10610,8 @@ name|fp
 decl_stmt|;
 comment|/* Printrc file */
 name|char
+modifier|*
 name|filename
-index|[
-literal|1024
-index|]
 decl_stmt|;
 comment|/* Printrc filename */
 name|int
@@ -10639,33 +10624,11 @@ name|p
 decl_stmt|;
 comment|/* Current printer */
 comment|/*   * Generate the filename for the current user...   */
-if|if
-condition|(
-name|getenv
-argument_list|(
-literal|"HOME"
-argument_list|)
-operator|==
-name|NULL
-condition|)
-name|strcpy
-argument_list|(
 name|filename
-argument_list|,
-literal|"/.gimp/printrc"
-argument_list|)
-expr_stmt|;
-else|else
-name|sprintf
+operator|=
+name|gimp_personal_rc_file
 argument_list|(
-name|filename
-argument_list|,
-literal|"%s/.gimp/printrc"
-argument_list|,
-name|getenv
-argument_list|(
-literal|"HOME"
-argument_list|)
+literal|"printrc"
 argument_list|)
 expr_stmt|;
 ifdef|#
@@ -10797,7 +10760,11 @@ name|fp
 argument_list|)
 expr_stmt|;
 block|}
-empty_stmt|;
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

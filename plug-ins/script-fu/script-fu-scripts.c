@@ -209,6 +209,51 @@ begin_comment
 comment|/* NATIVE_WIN32 */
 end_comment
 
+begin_if
+if|#
+directive|if
+name|GLIB_CHECK_VERSION
+argument_list|(
+literal|1
+operator|,
+literal|3
+operator|,
+literal|1
+argument_list|)
+end_if
+
+begin_define
+DECL|macro|ESCAPE (string)
+define|#
+directive|define
+name|ESCAPE
+parameter_list|(
+name|string
+parameter_list|)
+value|g_strescape (string, NULL)
+end_define
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_define
+DECL|macro|ESCAPE (string)
+define|#
+directive|define
+name|ESCAPE
+parameter_list|(
+name|string
+parameter_list|)
+value|g_strescape (string)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_define
 DECL|macro|TEXT_WIDTH
 define|#
@@ -292,7 +337,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b82ca940108
+DECL|struct|__anon2b68c2180108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -327,7 +372,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b82ca940208
+DECL|struct|__anon2b68c2180208
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -371,7 +416,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b82ca940308
+DECL|struct|__anon2b68c2180308
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -397,7 +442,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b82ca940408
+DECL|struct|__anon2b68c2180408
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -418,7 +463,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b82ca940508
+DECL|struct|__anon2b68c2180508
 block|{
 DECL|member|name
 name|gchar
@@ -446,7 +491,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2b82ca94060a
+DECL|union|__anon2b68c218060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -512,7 +557,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b82ca940708
+DECL|struct|__anon2b68c2180708
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -593,7 +638,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b82ca940808
+DECL|struct|__anon2b68c2180808
 block|{
 DECL|member|status
 name|GtkWidget
@@ -1621,7 +1666,7 @@ name|char
 modifier|*
 name|qf
 init|=
-name|g_strescape
+name|ESCAPE
 argument_list|(
 name|filename
 argument_list|)
@@ -4627,7 +4672,7 @@ name|SF_FILENAME
 case|:
 name|escaped
 operator|=
-name|g_strescape
+name|ESCAPE
 argument_list|(
 name|params
 index|[
@@ -4981,7 +5026,7 @@ name|SF_FILENAME
 case|:
 name|escaped
 operator|=
-name|g_strescape
+name|ESCAPE
 argument_list|(
 name|params
 index|[
@@ -9005,7 +9050,7 @@ name|SF_STRING
 case|:
 name|escaped
 operator|=
-name|g_strescape
+name|ESCAPE
 argument_list|(
 name|gtk_entry_get_text
 argument_list|(
@@ -9050,7 +9095,7 @@ name|SF_FILENAME
 case|:
 name|escaped
 operator|=
-name|g_strescape
+name|ESCAPE
 argument_list|(
 name|script
 operator|->
@@ -9462,7 +9507,7 @@ argument_list|)
 expr_stmt|;
 name|escaped
 operator|=
-name|g_strescape
+name|ESCAPE
 argument_list|(
 name|text
 argument_list|)
@@ -9618,7 +9663,7 @@ name|SF_FILENAME
 case|:
 name|escaped
 operator|=
-name|g_strescape
+name|ESCAPE
 argument_list|(
 name|script
 operator|->
