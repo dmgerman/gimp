@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290c70cf0108
+DECL|struct|__anon2be0cd7e0108
 block|{
 DECL|member|file_name
 name|gchar
@@ -2182,6 +2182,9 @@ argument_list|(
 name|config
 operator|->
 name|prefixed_name
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|basename

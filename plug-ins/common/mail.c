@@ -392,7 +392,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1018e60108
+DECL|struct|__anon2a1c289b0108
 block|{
 DECL|member|receipt
 name|gchar
@@ -2941,10 +2941,6 @@ name|start_iter
 decl_stmt|;
 name|GtkTextIter
 name|end_iter
-decl_stmt|;
-name|gchar
-modifier|*
-name|text
 decl_stmt|;
 name|gtk_text_buffer_get_bounds
 argument_list|(

@@ -505,6 +505,9 @@ operator|=
 name|g_ascii_strdown
 argument_list|(
 name|basename
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|g_free
