@@ -1349,6 +1349,11 @@ block|}
 elseif|else
 if|if
 condition|(
+name|fill_mode
+operator|==
+name|GIMP_PATTERN_BUCKET_FILL
+operator|&&
+operator|(
 name|pat_buf
 operator|->
 name|bytes
@@ -1360,6 +1365,7 @@ operator|->
 name|bytes
 operator|==
 literal|4
+operator|)
 condition|)
 block|{
 comment|/* If pattern being applied has an alpha channel,         * add one to the temp buffer from the image too.        */
