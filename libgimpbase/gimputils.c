@@ -93,6 +93,7 @@ name|p
 operator|=
 name|str
 init|;
+operator|*
 name|p
 condition|;
 name|p
