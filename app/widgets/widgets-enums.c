@@ -509,7 +509,7 @@ name|GIMP_HELP_BROWSER_GIMP
 block|,
 name|N_
 argument_list|(
-literal|"Internal"
+literal|"GIMP help browser"
 argument_list|)
 block|,
 literal|"gimp"
