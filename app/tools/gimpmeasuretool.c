@@ -106,7 +106,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5ec9ef0103
+DECL|enum|__anon2c11f6e60103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -225,11 +225,11 @@ name|ToolOptions
 name|tool_options
 decl_stmt|;
 DECL|member|use_info_window
-name|gint
+name|gboolean
 name|use_info_window
 decl_stmt|;
 DECL|member|use_info_window_d
-name|gint
+name|gboolean
 name|use_info_window_d
 decl_stmt|;
 DECL|member|use_info_window_w

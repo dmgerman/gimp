@@ -891,7 +891,7 @@ argument_list|(
 literal|"Selection to Path"
 argument_list|)
 block|,
-literal|"paths/selection_to_path.html"
+literal|"filters/sel2path.html"
 block|,
 name|NULL
 block|,

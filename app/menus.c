@@ -3053,7 +3053,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"image/dialogs/canvas_size.html"
+literal|"image/dialogs/set_canvas_size.html"
 block|,
 name|NULL
 block|}
@@ -3345,7 +3345,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"layers/resize_to_image.html"
+literal|"layers/layer_to_image_size.html"
 block|,
 name|NULL
 block|}
@@ -4929,7 +4929,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"resize_to_image.html"
+literal|"layer_to_image_size.html"
 block|,
 name|NULL
 block|}
@@ -5535,7 +5535,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"selection_to_path.html"
+literal|"filters/sel2path.html"
 block|,
 name|NULL
 block|}
