@@ -3897,9 +3897,9 @@ name|xsvals
 operator|.
 name|x10_format
 condition|?
-literal|"short"
+literal|"unsigned short"
 else|:
-literal|"char"
+literal|"unsigned char"
 argument_list|,
 name|prefix
 argument_list|)
