@@ -75,7 +75,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b8311a0108
+DECL|struct|__anon2bfa172e0108
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -4289,6 +4289,11 @@ name|char
 name|line
 index|[
 literal|129
+index|]
+decl_stmt|,
+name|name
+index|[
+literal|17
 index|]
 decl_stmt|;
 endif|#
