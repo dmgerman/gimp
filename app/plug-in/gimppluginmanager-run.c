@@ -297,12 +297,6 @@ end_endif
 begin_include
 include|#
 directive|include
-file|"regex.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/parasite.h"
 end_include
 

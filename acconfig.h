@@ -135,6 +135,12 @@ end_undef
 begin_undef
 undef|#
 directive|undef
+name|HAVE_REGEX_H
+end_undef
+
+begin_undef
+undef|#
+directive|undef
 name|HAVE_UNISTD_H
 end_undef
 
@@ -154,6 +160,12 @@ begin_undef
 undef|#
 directive|undef
 name|IPC_RMID_DEFERRED_RELEASE
+end_undef
+
+begin_undef
+undef|#
+directive|undef
+name|HAVE_NATIVE_REGEX
 end_undef
 
 begin_undef
