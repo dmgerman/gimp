@@ -782,10 +782,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Set Defaults"
-argument_list|)
+name|GIMP_STOCK_RESET
 argument_list|,
 name|gimp_set_color_defaults
 argument_list|,
@@ -799,10 +796,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Close"
-argument_list|)
+name|GTK_STOCK_CLOSE
 argument_list|,
 name|gtk_widget_hide
 argument_list|,
@@ -1001,7 +995,7 @@ name|event_box
 argument_list|,
 name|_
 argument_list|(
-literal|"Image preview"
+literal|"Image Preview"
 argument_list|)
 argument_list|,
 name|NULL
