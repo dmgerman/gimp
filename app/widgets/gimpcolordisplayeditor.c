@@ -990,6 +990,13 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
+name|dialog_unregister
+argument_list|(
+name|cdd
+operator|->
+name|shell
+argument_list|)
+expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
 name|GTK_WIDGET
@@ -1106,6 +1113,13 @@ name|GList
 modifier|*
 name|next
 decl_stmt|;
+name|dialog_unregister
+argument_list|(
+name|cdd
+operator|->
+name|shell
+argument_list|)
+expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
 name|GTK_WIDGET
