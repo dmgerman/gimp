@@ -1308,7 +1308,7 @@ name|list
 init|=
 name|NULL
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|gimp_container_foreach
@@ -1519,7 +1519,7 @@ name|type
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|gimage
+name|image
 init|=
 name|NULL
 decl_stmt|;
@@ -1594,10 +1594,8 @@ if|if
 condition|(
 name|success
 condition|)
-name|success
-operator|=
-operator|(
-name|gimage
+block|{
+name|image
 operator|=
 name|gimp_create_image
 argument_list|(
@@ -1611,10 +1609,16 @@ name|type
 argument_list|,
 name|FALSE
 argument_list|)
-operator|)
+expr_stmt|;
+name|success
+operator|=
+operator|(
+name|image
 operator|!=
 name|NULL
+operator|)
 expr_stmt|;
+block|}
 name|return_args
 operator|=
 name|procedural_db_return_args
@@ -1640,7 +1644,7 @@ name|pdb_int
 operator|=
 name|gimp_image_get_ID
 argument_list|(
-name|gimage
+name|image
 argument_list|)
 expr_stmt|;
 return|return
@@ -3199,7 +3203,7 @@ name|list
 init|=
 name|NULL
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|gimage
@@ -3478,7 +3482,7 @@ name|list
 init|=
 name|NULL
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|gimage
@@ -9308,7 +9312,7 @@ name|gimage
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|new_gimage
+name|new_image
 init|=
 name|NULL
 decl_stmt|;
@@ -9347,7 +9351,7 @@ condition|)
 name|success
 operator|=
 operator|(
-name|new_gimage
+name|new_image
 operator|=
 name|gimp_image_duplicate
 argument_list|(
@@ -9382,7 +9386,7 @@ name|pdb_int
 operator|=
 name|gimp_image_get_ID
 argument_list|(
-name|new_gimage
+name|new_image
 argument_list|)
 expr_stmt|;
 return|return
