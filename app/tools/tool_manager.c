@@ -57,16 +57,6 @@ directive|include
 file|"core/gimptoolinfo.h"
 end_include
 
-begin_comment
-comment|/* FIXME: let the tool options dialog update itself */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"gui/tool-options-dialog.h"
-end_include
-
 begin_include
 include|#
 directive|include
@@ -143,12 +133,6 @@ begin_include
 include|#
 directive|include
 file|"context_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"dialog_handler.h"
 end_include
 
 begin_include
@@ -906,11 +890,6 @@ operator|->
 name|tool_options
 operator|=
 name|tool_options
-expr_stmt|;
-name|tool_options_dialog_add
-argument_list|(
-name|tool_options
-argument_list|)
 expr_stmt|;
 block|}
 end_function

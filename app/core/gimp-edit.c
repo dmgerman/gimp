@@ -150,7 +150,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291a60ad0103
+DECL|enum|__anon27b852ea0103
 block|{
 DECL|enumerator|PASTE
 name|PASTE
@@ -978,7 +978,7 @@ name|crop_buffer
 argument_list|(
 name|cut
 argument_list|,
-literal|0
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -1129,7 +1129,7 @@ name|crop_buffer
 argument_list|(
 name|copy
 argument_list|,
-literal|0
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if

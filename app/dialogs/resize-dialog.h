@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c76d6e50103
+DECL|enum|__anon2a9d0b250103
 block|{
 DECL|enumerator|ScaleWidget
 name|ScaleWidget
@@ -35,7 +35,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c76d6e50203
+DECL|enum|__anon2a9d0b250203
 block|{
 DECL|enumerator|ResizeImage
 name|ResizeImage
@@ -111,12 +111,6 @@ DECL|member|offset_y
 name|gint
 name|offset_y
 decl_stmt|;
-comment|/*  Don't touch this :)  */
-DECL|member|private_part
-name|void
-modifier|*
-name|private_part
-decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -124,7 +118,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c76d6e50308
+DECL|struct|__anon2a9d0b250308
 block|{
 DECL|member|resize
 name|Resize
@@ -191,32 +185,6 @@ name|cancel_cb
 parameter_list|,
 name|gpointer
 name|user_data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* Layer scaling sanity check and warning dialogs */
-end_comment
-
-begin_function_decl
-name|gboolean
-name|resize_check_layer_scaling
-parameter_list|(
-name|ImageResize
-modifier|*
-name|image_resize
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|resize_scale_implement
-parameter_list|(
-name|ImageResize
-modifier|*
-name|image_resize
 parameter_list|)
 function_decl|;
 end_function_decl

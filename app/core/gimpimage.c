@@ -754,7 +754,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c775670103
+DECL|enum|__anon2bc179b40103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -3604,6 +3604,7 @@ name|data
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|gimp_layer_scale_by_factors
 argument_list|(
 name|layer
@@ -3612,8 +3613,6 @@ name|img_scale_w
 argument_list|,
 name|img_scale_h
 argument_list|)
-operator|==
-name|FALSE
 condition|)
 block|{
 comment|/* Since 0< img_scale_w, img_scale_h, failure due to one or more 	   * vanishing scaled layer dimensions. Implicit delete implemented 	   * here. Upstream warning implemented in resize_check_layer_scaling() 	   * [resize.c line 1295], which offers the user the chance to bail out. 	   */
@@ -3628,9 +3627,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/* We defer removing layers lost to scaling until now            */
-comment|/* so as not to mix the operations of iterating over and removal */
-comment|/* from gimage->layers.                                          */
+comment|/* We defer removing layers lost to scaling until now so as not to mix    * the operations of iterating over and removal from gimage->layers.    */
 for|for
 control|(
 name|slist
@@ -3791,6 +3788,109 @@ expr_stmt|;
 name|gimp_unset_busy
 argument_list|()
 expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_image_check_scaling:  * @gimage:     A #GimpImage.  * @new_width:  The new width.  * @new_height: The new height.  *   * Inventory the layer list in gimage and return #TRUE if, after  * scaling, they all retain positive x and y pixel dimensions.  *   * Return value: #TRUE if scaling the image will shrink none of it's  *               layers completely away.  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_image_check_scaling (const GimpImage * gimage,gint new_width,gint new_height)
+name|gimp_image_check_scaling
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|gint
+name|new_width
+parameter_list|,
+name|gint
+name|new_height
+parameter_list|)
+block|{
+name|GList
+modifier|*
+name|list
+decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|gimage
+operator|!=
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|list
+operator|=
+name|GIMP_LIST
+argument_list|(
+name|gimage
+operator|->
+name|layers
+argument_list|)
+operator|->
+name|list
+init|;
+name|list
+condition|;
+name|list
+operator|=
+name|g_list_next
+argument_list|(
+name|list
+argument_list|)
+control|)
+block|{
+name|GimpLayer
+modifier|*
+name|layer
+decl_stmt|;
+name|layer
+operator|=
+operator|(
+name|GimpLayer
+operator|*
+operator|)
+name|list
+operator|->
+name|data
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gimp_layer_check_scaling
+argument_list|(
+name|layer
+argument_list|,
+name|new_width
+argument_list|,
+name|new_height
+argument_list|)
+condition|)
+return|return
+name|FALSE
+return|;
+block|}
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
