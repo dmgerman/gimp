@@ -1,127 +1,110 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpvectors.h  * Copyright (C) 2002 Simon Budig<simon@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpstroke.h  * Copyright (C) 2002 Simon Budig<simon@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_VECTORS_H__
+name|__GIMP_STROKE_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_VECTORS_H__
+DECL|macro|__GIMP_STROKE_H__
 define|#
 directive|define
-name|__GIMP_VECTORS_H__
-end_define
-
-begin_include
-include|#
-directive|include
-file|"core/gimpviewable.h"
-end_include
-
-begin_define
-DECL|macro|GIMP_TYPE_VECTORS
-define|#
-directive|define
-name|GIMP_TYPE_VECTORS
-value|(gimp_vectors_get_type ())
+name|__GIMP_STROKE_H__
 end_define
 
 begin_define
-DECL|macro|GIMP_VECTORS (obj)
+DECL|macro|GIMP_TYPE_STROKE
 define|#
 directive|define
-name|GIMP_VECTORS
+name|GIMP_TYPE_STROKE
+value|(gimp_stroke_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_STROKE (obj)
+define|#
+directive|define
+name|GIMP_STROKE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_VECTORS, GimpVectors))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_STROKE, GimpStroke))
 end_define
 
 begin_define
-DECL|macro|GIMP_VECTORS_CLASS (klass)
+DECL|macro|GIMP_STROKE_CLASS (klass)
 define|#
 directive|define
-name|GIMP_VECTORS_CLASS
+name|GIMP_STROKE_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_VECTORS, GimpVectorsClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_STROKE, GimpStrokeClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_VECTORS (obj)
+DECL|macro|GIMP_IS_STROKE (obj)
 define|#
 directive|define
-name|GIMP_IS_VECTORS
+name|GIMP_IS_STROKE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_VECTORS))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_STROKE))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_VECTORS_CLASS (klass)
+DECL|macro|GIMP_IS_STROKE_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_VECTORS_CLASS
+name|GIMP_IS_STROKE_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_VECTORS))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_STROKE))
 end_define
 
 begin_define
-DECL|macro|GIMP_VECTORS_GET_CLASS (obj)
+DECL|macro|GIMP_STROKE_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_VECTORS_GET_CLASS
+name|GIMP_STROKE_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_VECTORS, GimpVectorsClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_STROKE, GimpStrokeClass))
 end_define
 
 begin_struct
-DECL|struct|_GimpVectors
+DECL|struct|_GimpStroke
 struct|struct
-name|_GimpVectors
+name|_GimpStroke
 block|{
 DECL|member|parent_instance
-name|GimpViewable
+name|GObject
 name|parent_instance
 decl_stmt|;
-DECL|member|visible
-name|gboolean
-name|visible
-decl_stmt|;
-comment|/* controls visibility            */
-DECL|member|locked
-name|gboolean
-name|locked
-decl_stmt|;
-comment|/* transformation locking         */
-DECL|member|strokes
+DECL|member|anchors
 name|GList
 modifier|*
-name|strokes
+name|anchors
 decl_stmt|;
-comment|/* The vectors components         */
 comment|/* Stuff missing */
 block|}
 struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpVectorsClass
+DECL|struct|_GimpStrokeClass
 struct|struct
-name|_GimpVectorsClass
+name|_GimpStrokeClass
 block|{
 DECL|member|parent_class
-name|GimpViewableClass
+name|GObject
 name|parent_class
 decl_stmt|;
 DECL|member|changed
@@ -131,9 +114,9 @@ modifier|*
 name|changed
 function_decl|)
 parameter_list|(
-name|GimpVectors
+name|GimpStroke
 modifier|*
-name|vectors
+name|stroke
 parameter_list|)
 function_decl|;
 DECL|member|removed
@@ -143,79 +126,6 @@ modifier|*
 name|removed
 function_decl|)
 parameter_list|(
-name|GimpVectors
-modifier|*
-name|vectors
-parameter_list|)
-function_decl|;
-DECL|member|stroke_add
-name|void
-function_decl|(
-modifier|*
-name|stroke_add
-function_decl|)
-parameter_list|(
-name|GimpVectors
-modifier|*
-name|vectors
-parameter_list|,
-specifier|const
-name|GimpStroke
-modifier|*
-name|stroke
-parameter_list|)
-function_decl|;
-DECL|member|stroke_get
-name|GimpStroke
-modifier|*
-function_decl|(
-modifier|*
-name|stroke_get
-function_decl|)
-parameter_list|(
-specifier|const
-name|GimpVectors
-modifier|*
-name|vectors
-parameter_list|,
-specifier|const
-name|GimpCoords
-modifier|*
-name|coord
-parameter_list|)
-function_decl|;
-DECL|member|stroke_get_next
-name|GimpStroke
-modifier|*
-function_decl|(
-modifier|*
-name|stroke_get_next
-function_decl|)
-parameter_list|(
-specifier|const
-name|GimpVectors
-modifier|*
-name|vectors
-parameter_list|,
-specifier|const
-name|GimpStroke
-modifier|*
-name|prev
-parameter_list|)
-function_decl|;
-DECL|member|stroke_get_length
-name|gdouble
-function_decl|(
-modifier|*
-name|stroke_get_length
-function_decl|)
-parameter_list|(
-specifier|const
-name|GimpVectors
-modifier|*
-name|vectors
-parameter_list|,
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -230,14 +140,33 @@ name|anchor_get
 function_decl|)
 parameter_list|(
 specifier|const
-name|GimpVectors
+name|GimpStroke
 modifier|*
-name|vectors
+name|stroke
 parameter_list|,
 specifier|const
 name|GimpCoords
 modifier|*
 name|coord
+parameter_list|)
+function_decl|;
+DECL|member|anchor_get_next
+name|GimpAnchor
+modifier|*
+function_decl|(
+modifier|*
+name|anchor_get_next
+function_decl|)
+parameter_list|(
+specifier|const
+name|GimpStroke
+modifier|*
+name|stroke
+parameter_list|,
+specifier|const
+name|GimpAnchor
+modifier|*
+name|prev
 parameter_list|)
 function_decl|;
 DECL|member|anchor_move_relative
@@ -247,9 +176,9 @@ modifier|*
 name|anchor_move_relative
 function_decl|)
 parameter_list|(
-name|GimpVectors
+name|GimpStroke
 modifier|*
-name|vectors
+name|stroke
 parameter_list|,
 name|GimpAnchor
 modifier|*
@@ -272,9 +201,9 @@ modifier|*
 name|anchor_move_absolute
 function_decl|)
 parameter_list|(
-name|GimpVectors
+name|GimpStroke
 modifier|*
-name|vectors
+name|stroke
 parameter_list|,
 name|GimpAnchor
 modifier|*
@@ -297,9 +226,9 @@ modifier|*
 name|anchor_delete
 function_decl|)
 parameter_list|(
-name|GimpVectors
+name|GimpStroke
 modifier|*
-name|vectors
+name|stroke
 parameter_list|,
 name|GimpAnchor
 modifier|*
@@ -314,14 +243,9 @@ name|get_length
 function_decl|)
 parameter_list|(
 specifier|const
-name|GimpVectors
+name|GimpStroke
 modifier|*
-name|vectors
-parameter_list|,
-specifier|const
-name|GimpAnchor
-modifier|*
-name|start
+name|stroke
 parameter_list|)
 function_decl|;
 DECL|member|get_distance
@@ -332,9 +256,9 @@ name|get_distance
 function_decl|)
 parameter_list|(
 specifier|const
-name|GimpVectors
+name|GimpStroke
 modifier|*
-name|vectors
+name|stroke
 parameter_list|,
 specifier|const
 name|GimpCoords
@@ -349,11 +273,6 @@ modifier|*
 name|interpolate
 function_decl|)
 parameter_list|(
-specifier|const
-name|GimpVectors
-modifier|*
-name|vectors
-parameter_list|,
 specifier|const
 name|GimpStroke
 modifier|*
@@ -381,9 +300,9 @@ name|temp_anchor_get
 function_decl|)
 parameter_list|(
 specifier|const
-name|GimpVectors
+name|GimpStroke
 modifier|*
-name|vectors
+name|stroke
 parameter_list|)
 function_decl|;
 DECL|member|temp_anchor_set
@@ -394,9 +313,9 @@ modifier|*
 name|temp_anchor_set
 function_decl|)
 parameter_list|(
-name|GimpVectors
+name|GimpStroke
 modifier|*
-name|vectors
+name|stroke
 parameter_list|,
 specifier|const
 name|GimpCoords
@@ -411,13 +330,13 @@ modifier|*
 name|temp_anchor_fix
 function_decl|)
 parameter_list|(
-name|GimpVectors
+name|GimpStroke
 modifier|*
-name|vectors
+name|stroke
 parameter_list|)
 function_decl|;
 DECL|member|make_bezier
-name|GimpVectors
+name|GimpStroke
 modifier|*
 function_decl|(
 modifier|*
@@ -425,9 +344,9 @@ name|make_bezier
 function_decl|)
 parameter_list|(
 specifier|const
-name|GimpVectors
+name|GimpStroke
 modifier|*
-name|vectors
+name|stroke
 parameter_list|)
 function_decl|;
 block|}
@@ -435,12 +354,12 @@ struct|;
 end_struct
 
 begin_comment
-comment|/*  vectors utility functions  */
+comment|/*  stroke utility functions  */
 end_comment
 
 begin_decl_stmt
 name|GType
-name|gimp_vectors_get_type
+name|gimp_stroke_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -455,12 +374,12 @@ end_comment
 begin_function_decl
 name|GimpAnchor
 modifier|*
-name|gimp_vectors_anchor_get
+name|gimp_stroke_anchor_get
 parameter_list|(
 specifier|const
-name|GimpVectors
+name|GimpStroke
 modifier|*
-name|vectors
+name|stroke
 parameter_list|,
 specifier|const
 name|GimpCoords
@@ -477,12 +396,12 @@ end_comment
 begin_function_decl
 name|GimpAnchor
 modifier|*
-name|gimp_vectors_anchor_get_next
+name|gimp_stroke_anchor_get_next
 parameter_list|(
 specifier|const
-name|GimpVectors
+name|GimpStroke
 modifier|*
-name|vectors
+name|stroke
 parameter_list|,
 specifier|const
 name|GimpAnchor
@@ -498,11 +417,11 @@ end_comment
 
 begin_function_decl
 name|void
-name|gimp_vectors_anchor_move_relative
+name|gimp_stroke_anchor_move_relative
 parameter_list|(
-name|GimpVectors
+name|GimpStroke
 modifier|*
-name|vectors
+name|stroke
 parameter_list|,
 name|GimpAnchor
 modifier|*
@@ -522,11 +441,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_vectors_anchor_move_absolute
+name|gimp_stroke_anchor_move_absolute
 parameter_list|(
-name|GimpVectors
+name|GimpStroke
 modifier|*
-name|vectors
+name|stroke
 parameter_list|,
 name|GimpAnchor
 modifier|*
@@ -546,91 +465,15 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_vectors_anchor_delete
+name|gimp_stroke_anchor_delete
 parameter_list|(
-name|GimpVectors
+name|GimpStroke
 modifier|*
-name|vectors
+name|stroke
 parameter_list|,
 name|GimpAnchor
 modifier|*
 name|anchor
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* GimpStroke is a connected component of a GimpVectors object */
-end_comment
-
-begin_function_decl
-name|void
-name|gimp_vectors_stroke_add
-parameter_list|(
-name|GimpVectors
-modifier|*
-name|vectors
-parameter_list|,
-name|GimpStroke
-modifier|*
-name|stroke
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GimpStroke
-modifier|*
-name|gimp_vectors_stroke_get
-parameter_list|(
-specifier|const
-name|GimpVectors
-modifier|*
-name|vectors
-parameter_list|,
-specifier|const
-name|GimpCoords
-modifier|*
-name|coord
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* prev == NULL: "first" stroke */
-end_comment
-
-begin_function_decl
-name|GimpStroke
-modifier|*
-name|gimp_vectors_stroke_get_next
-parameter_list|(
-specifier|const
-name|GimpVectors
-modifier|*
-name|vectors
-parameter_list|,
-specifier|const
-name|GimpStroke
-modifier|*
-name|prev
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gdouble
-name|gimp_vectors_stroke_get_length
-parameter_list|(
-specifier|const
-name|GimpVectors
-modifier|*
-name|vectors
-parameter_list|,
-specifier|const
-name|GimpStroke
-modifier|*
-name|stroke
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -641,29 +484,24 @@ end_comment
 
 begin_function_decl
 name|gdouble
-name|gimp_vectors_get_length
+name|gimp_stroke_get_length
 parameter_list|(
 specifier|const
-name|GimpVectors
+name|GimpStroke
 modifier|*
-name|vectors
-parameter_list|,
-specifier|const
-name|GimpAnchor
-modifier|*
-name|start
+name|stroke
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|gdouble
-name|gimp_vectors_get_distance
+name|gimp_stroke_get_distance
 parameter_list|(
 specifier|const
-name|GimpVectors
+name|GimpStroke
 modifier|*
-name|vectors
+name|stroke
 parameter_list|,
 specifier|const
 name|GimpCoords
@@ -679,13 +517,8 @@ end_comment
 
 begin_function_decl
 name|gint
-name|gimp_vectors_interpolate
+name|gimp_stroke_interpolate
 parameter_list|(
-specifier|const
-name|GimpVectors
-modifier|*
-name|vectors
-parameter_list|,
 specifier|const
 name|GimpStroke
 modifier|*
@@ -713,12 +546,12 @@ end_comment
 begin_function_decl
 name|GimpAnchor
 modifier|*
-name|gimp_vectors_temp_anchor_get
+name|gimp_stroke_temp_anchor_get
 parameter_list|(
 specifier|const
-name|GimpVectors
+name|GimpStroke
 modifier|*
-name|vectors
+name|stroke
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -726,11 +559,11 @@ end_function_decl
 begin_function_decl
 name|GimpAnchor
 modifier|*
-name|gimp_vectors_temp_anchor_set
+name|gimp_stroke_temp_anchor_set
 parameter_list|(
-name|GimpVectors
+name|GimpStroke
 modifier|*
-name|vectors
+name|stroke
 parameter_list|,
 specifier|const
 name|GimpCoords
@@ -742,11 +575,11 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_vectors_temp_anchor_fix
+name|gimp_stroke_temp_anchor_fix
 parameter_list|(
-name|GimpVectors
+name|GimpStroke
 modifier|*
-name|vectors
+name|stroke
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -760,14 +593,14 @@ comment|/* creates a bezier approximation. */
 end_comment
 
 begin_function_decl
-name|GimpVectors
+name|GimpStroke
 modifier|*
-name|gimp_vectors_make_bezier
+name|gimp_stroke_make_bezier
 parameter_list|(
 specifier|const
-name|GimpVectors
+name|GimpStroke
 modifier|*
-name|vectors
+name|stroke
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -778,7 +611,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_VECTORS_H__ */
+comment|/* __GIMP_STROKE_H__ */
 end_comment
 
 end_unit
