@@ -79,6 +79,23 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_CONFIG_H
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_define
 DECL|macro|STR_LENGTH
 define|#
@@ -94,7 +111,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27909ff40108
+DECL|struct|__anon2b4bed370108
 block|{
 DECL|member|resolution
 name|guint
@@ -146,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27909ff40208
+DECL|struct|__anon2b4bed370208
 block|{
 DECL|member|run
 name|gint
@@ -212,7 +229,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27909ff40308
+DECL|struct|__anon2b4bed370308
 block|{
 DECL|member|width
 DECL|member|height
@@ -269,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27909ff40408
+DECL|struct|__anon2b4bed370408
 block|{
 DECL|member|run
 name|gint
@@ -762,7 +779,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27909ff40508
+DECL|struct|__anon2b4bed370508
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -866,7 +883,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27909ff40608
+DECL|struct|__anon2b4bed370608
 block|{
 DECL|member|dialog
 name|GtkWidget

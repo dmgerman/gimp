@@ -138,14 +138,6 @@ directive|undef
 name|USE_PTHREADS
 end_undef
 
-begin_comment
-comment|/* #undef PACKAGE */
-end_comment
-
-begin_comment
-comment|/* #undef VERSION */
-end_comment
-
 begin_escape
 end_escape
 

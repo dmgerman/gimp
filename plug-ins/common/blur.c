@@ -43,6 +43,23 @@ directive|include
 file|<plug-ins/gpc/gpc.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_CONFIG_H
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_comment
 comment|/*********************************  *  *  PLUGIN-SPECIFIC CONSTANTS  *  ********************************/
 end_comment
@@ -112,7 +129,7 @@ comment|/*********************************  *  *  PLUGIN-SPECIFIC STRUCTURES AND
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c29b7b30108
+DECL|struct|__anon29d2d4f80108
 typedef|typedef
 struct|struct
 block|{
@@ -161,7 +178,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2c29b7b30208
+DECL|struct|__anon29d2d4f80208
 typedef|typedef
 struct|struct
 block|{

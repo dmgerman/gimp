@@ -43,22 +43,17 @@ directive|include
 file|<plug-ins/gpc/gpc.h>
 end_include
 
-begin_if
-if|#
-directive|if
-operator|!
-name|defined
-argument_list|(
-name|__GNUC__
-argument_list|)
-end_if
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_CONFIG_H
+end_ifdef
 
-begin_define
-DECL|macro|inline
-define|#
-directive|define
-name|inline
-end_define
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
 
 begin_endif
 endif|#
@@ -190,7 +185,7 @@ comment|/*********************************  *  *  PLUGIN-SPECIFIC STRUCTURES AND
 end_comment
 
 begin_typedef
-DECL|struct|__anon29921b6e0108
+DECL|struct|__anon29d4f3930108
 typedef|typedef
 struct|struct
 block|{
@@ -239,7 +234,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon29921b6e0208
+DECL|struct|__anon29d4f3930208
 typedef|typedef
 struct|struct
 block|{

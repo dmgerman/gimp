@@ -63,6 +63,23 @@ end_include
 begin_ifdef
 ifdef|#
 directive|ifdef
+name|HAVE_CONFIG_H
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifdef
+ifdef|#
+directive|ifdef
 name|USE_LOGO
 end_ifdef
 
@@ -229,7 +246,7 @@ value|1L
 end_define
 
 begin_typedef
-DECL|struct|__anon2c51d1c00108
+DECL|struct|__anon2be38fe00108
 typedef|typedef
 struct|struct
 block|{
@@ -330,7 +347,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2c51d1c00208
+DECL|struct|__anon2be38fe00208
 typedef|typedef
 struct|struct
 block|{
@@ -1478,7 +1495,7 @@ modifier|*
 name|p
 parameter_list|)
 block|{
-DECL|struct|__anon2c51d1c00308
+DECL|struct|__anon2be38fe00308
 DECL|member|r
 DECL|member|g
 DECL|member|b

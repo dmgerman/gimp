@@ -49,6 +49,23 @@ directive|include
 file|<plug-ins/megawidget/megawidget.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_CONFIG_H
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_decl_stmt
 DECL|variable|nlfilt_do_preview
 specifier|static
@@ -133,7 +150,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon2c18bcfe0103
+DECL|enum|__anon298a60b20103
 typedef|typedef
 enum|enum
 block|{
