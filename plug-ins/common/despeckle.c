@@ -606,7 +606,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"black"
 block|,
-literal|"Black level (0 to 255)"
+literal|"Black level (-1 to 255)"
 block|}
 block|,
 block|{
@@ -614,7 +614,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"white"
 block|,
-literal|"White level (0 to 255)"
+literal|"White level (0 to 256)"
 block|}
 block|}
 decl_stmt|;
