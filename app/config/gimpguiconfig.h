@@ -133,10 +133,6 @@ DECL|member|info_window_per_display
 name|gboolean
 name|info_window_per_display
 decl_stmt|;
-DECL|member|global_paint_options
-name|gboolean
-name|global_paint_options
-decl_stmt|;
 DECL|member|trust_dirty_flag
 name|gboolean
 name|trust_dirty_flag
