@@ -21,17 +21,9 @@ name|GtkWidget
 modifier|*
 name|stroke_dialog_new
 parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|,
 name|GimpItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpStrokeOptions
-modifier|*
-name|stroke_options
 parameter_list|,
 specifier|const
 name|gchar

@@ -912,11 +912,7 @@ name|dialog
 operator|=
 name|stroke_dialog_new
 argument_list|(
-name|active_drawable
-argument_list|,
 name|item
-argument_list|,
-name|NULL
 argument_list|,
 name|GIMP_STOCK_PATH_STROKE
 argument_list|,
@@ -928,7 +924,6 @@ argument_list|(
 name|dialog
 argument_list|)
 expr_stmt|;
-comment|/*   tool_info = gimp_context_get_tool (gimp_get_current_context (gimage->gimp));    gimp_item_stroke (GIMP_ITEM (active_vectors), active_drawable,                     GIMP_OBJECT (tool_info->paint_info));   gimp_image_flush (gimage);   */
 block|}
 end_function
 
