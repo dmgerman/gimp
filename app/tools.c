@@ -207,11 +207,9 @@ directive|include
 file|"paintbrush.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"path_tool.h"
-end_include
+begin_comment
+comment|/* #include "path_tool.h" */
+end_comment
 
 begin_include
 include|#
@@ -243,11 +241,9 @@ directive|include
 file|"smudge.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"xinput_airbrush.h"
-end_include
+begin_comment
+comment|/* #include "xinput_airbrush.h" */
+end_comment
 
 begin_include
 include|#
