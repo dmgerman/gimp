@@ -49,52 +49,17 @@ directive|include
 file|"gimp-composite-mmx.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|COMPILE_MMX_IS_OKAY
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|"gimp-composite-x86.h"
 end_include
-
-begin_if
-if|#
-directive|if
-name|defined
-argument_list|(
-name|USE_MMX
-argument_list|)
-end_if
-
-begin_if
-if|#
-directive|if
-name|defined
-argument_list|(
-name|ARCH_X86
-argument_list|)
-end_if
-
-begin_if
-if|#
-directive|if
-name|__GNUC__
-operator|>=
-literal|3
-end_if
-
-begin_if
-if|#
-directive|if
-name|defined
-argument_list|(
-name|ARCH_X86_64
-argument_list|)
-operator|||
-operator|!
-name|defined
-argument_list|(
-name|PIC
-argument_list|)
-end_if
 
 begin_define
 DECL|macro|pminub (src,dst,tmp)
@@ -479,6 +444,18 @@ init|=
 operator|*
 name|_op
 decl_stmt|;
+name|uint64
+modifier|*
+name|d
+init|=
+operator|(
+name|uint64
+operator|*
+operator|)
+name|op
+operator|.
+name|D
+decl_stmt|;
 asm|asm
 specifier|volatile
 asm|("movq    %0,%%mm0"                 :
@@ -500,9 +477,9 @@ operator|-=
 literal|2
 control|)
 block|{
-asm|asm ("  movq    %0, %%mm2\n"            "\tmovq    %1, %%mm3\n"            "\tmovq    %%mm2, %%mm4\n"            "\tpaddusb %%mm3, %%mm4\n"            "\tmovq    %%mm0, %%mm1\n"            "\tpandn   %%mm4, %%mm1\n"            "\t" pminub(mm3, mm2, mm4) "\n"            "\tpand    %%mm0, %%mm2\n"            "\tpor     %%mm2, %%mm1\n"            "\tmovq    %%mm1, %2\n"            :
-comment|/* empty */
-asm|: "m" (*op.A), "m" (*op.B), "m" (*op.D)            : "0", "1", "2", "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
+asm|asm
+specifier|volatile
+asm|("  movq    %1, %%mm2\n"                     "\tmovq    %2, %%mm3\n"                     "\tmovq    %%mm2, %%mm4\n"                     "\tpaddusb %%mm3, %%mm4\n"                     "\tmovq    %%mm0, %%mm1\n"                     "\tpandn   %%mm4, %%mm1\n"                     "\t" pminub(mm3, mm2, mm4) "\n"                     "\tpand    %%mm0, %%mm2\n"                     "\tpor     %%mm2, %%mm1\n"                     "\tmovq    %%mm1, %0\n"                     : "=m" (*d)                     : "m" (*op.A), "m" (*op.B)                     : "%mm0", "%mm1", "%mm2", "%mm3", "%mm4");
 name|op
 operator|.
 name|A
@@ -515,11 +492,9 @@ name|B
 operator|+=
 literal|8
 expr_stmt|;
-name|op
-operator|.
-name|D
-operator|+=
-literal|8
+comment|/*op.D += 8;*/
+name|d
+operator|++
 expr_stmt|;
 block|}
 if|if
@@ -531,9 +506,7 @@ condition|)
 block|{
 asm|asm
 specifier|volatile
-asm|("  movd    %0, %%mm2\n"                     "\tmovd    %1, %%mm3\n"                     "\tmovq    %%mm2, %%mm4\n"                     "\tpaddusb %%mm3, %%mm4\n"                     "\tmovq    %%mm0, %%mm1\n"                     "\tpandn   %%mm4, %%mm1\n"                     "\t" pminub(mm3, mm2, mm4) "\n"                     "\tpand    %%mm0, %%mm2\n"                     "\tpor     %%mm2, %%mm1\n"                     "\tmovd    %%mm1, %2\n"                     :
-comment|/* empty */
-asm|: "m" (*op.A), "m" (*op.B), "m" (*op.D)                     : "0", "1", "2", "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
+asm|("  movd    %1, %%mm2\n"                     "\tmovd    %2, %%mm3\n"                     "\tmovq    %%mm2, %%mm4\n"                     "\tpaddusb %%mm3, %%mm4\n"                     "\tmovq    %%mm0, %%mm1\n"                     "\tpandn   %%mm4, %%mm1\n"                     "\t" pminub(mm3, mm2, mm4) "\n"                     "\tpand    %%mm0, %%mm2\n"                     "\tpor     %%mm2, %%mm1\n"                     "\tmovd    %%mm1, %0\n"                     : "=m" (*d)                     : "m" (*op.A), "m" (*op.B)                     : "%mm0", "%mm1", "%mm2", "%mm3", "%mm4");
 block|}
 asm|asm("emms");
 block|}
@@ -1891,34 +1864,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* ARCH_X86_64 || !PIC */
-end_comment
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __GNUC__> 3 */
-end_comment
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* ARCH_X86 */
-end_comment
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* USE_MMX */
+comment|/* COMPILE_IS_OKAY */
 end_comment
 
 begin_function
@@ -1929,30 +1875,9 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-if|#
-directive|if
-name|defined
-argument_list|(
-name|USE_MMX
-argument_list|)
-operator|&&
-name|defined
-argument_list|(
-name|ARCH_X86
-argument_list|)
-operator|&&
-operator|(
-name|defined
-argument_list|(
-name|ARCH_X86_64
-argument_list|)
-operator|||
-operator|!
-name|defined
-argument_list|(
-name|PIC
-argument_list|)
-operator|)
+ifdef|#
+directive|ifdef
+name|COMPILE_MMX_IS_OKAY
 if|if
 condition|(
 name|cpu_accel

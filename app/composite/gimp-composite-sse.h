@@ -36,17 +36,33 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|USE_MMX
-end_ifdef
+begin_if
+if|#
+directive|if
+operator|!
+name|defined
+argument_list|(
+name|__INTEL_COMPILER
+argument_list|)
+end_if
 
-begin_ifdef
-ifdef|#
-directive|ifdef
+begin_if
+if|#
+directive|if
+name|defined
+argument_list|(
+name|USE_SSE
+argument_list|)
+end_if
+
+begin_if
+if|#
+directive|if
+name|defined
+argument_list|(
 name|ARCH_X86
-end_ifdef
+argument_list|)
+end_if
 
 begin_if
 if|#
@@ -55,6 +71,79 @@ name|__GNUC__
 operator|>=
 literal|3
 end_if
+
+begin_if
+if|#
+directive|if
+name|defined
+argument_list|(
+name|ARCH_X86_64
+argument_list|)
+operator|||
+operator|!
+name|defined
+argument_list|(
+name|PIC
+argument_list|)
+end_if
+
+begin_define
+DECL|macro|COMPILE_SSE_IS_OKAY
+define|#
+directive|define
+name|COMPILE_SSE_IS_OKAY
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* defined(ARCH_X86_64) || !defined(PIC) */
+end_comment
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* __GNUC__>= 3 */
+end_comment
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/*  */
+end_comment
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/*  */
+end_comment
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/*  */
+end_comment
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|COMPILE_SSE_IS_OKAY
+end_ifdef
 
 begin_comment
 comment|/*  *  */
@@ -342,25 +431,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GNUC__> 3 */
-end_comment
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* ARCH_X86 */
-end_comment
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* USE_MMX */
+comment|/* COMPILE_SSE_IS_OKAY */
 end_comment
 
 begin_endif

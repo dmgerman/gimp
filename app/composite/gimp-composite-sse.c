@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* -*- mode: c tab-width: 2; c-basic-indent: 2; indent-tabs-mode: nil -*-  *  * The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  *  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* -*- mode: c tab-width: 2; c-basic-indent: 2; indent-tabs-mode: nil -*-  *  * The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_comment
@@ -49,52 +49,17 @@ directive|include
 file|"gimp-composite-sse.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|COMPILE_SSE_IS_OKAY
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|"gimp-composite-x86.h"
 end_include
-
-begin_if
-if|#
-directive|if
-name|defined
-argument_list|(
-name|USE_SSE
-argument_list|)
-end_if
-
-begin_if
-if|#
-directive|if
-name|defined
-argument_list|(
-name|ARCH_X86
-argument_list|)
-end_if
-
-begin_if
-if|#
-directive|if
-name|__GNUC__
-operator|>=
-literal|3
-end_if
-
-begin_if
-if|#
-directive|if
-name|defined
-argument_list|(
-name|ARCH_X86_64
-argument_list|)
-operator|||
-operator|!
-name|defined
-argument_list|(
-name|PIC
-argument_list|)
-end_if
 
 begin_define
 DECL|macro|pminub (src,dst,tmp)
@@ -1837,34 +1802,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* ARCH_X86_64 || !PIC */
-end_comment
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __GNUC__> 3 */
-end_comment
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* ARCH_X86 */
-end_comment
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* USE_SSE */
+comment|/* COMPILE_SSE_IS_OKAY */
 end_comment
 
 begin_function
@@ -1875,30 +1813,9 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-if|#
-directive|if
-name|defined
-argument_list|(
-name|USE_SSE
-argument_list|)
-operator|&&
-name|defined
-argument_list|(
-name|ARCH_X86
-argument_list|)
-operator|&&
-operator|(
-name|defined
-argument_list|(
-name|ARCH_X86_64
-argument_list|)
-operator|||
-operator|!
-name|defined
-argument_list|(
-name|PIC
-argument_list|)
-operator|)
+ifdef|#
+directive|ifdef
+name|COMPILE_SSE_IS_OKAY
 name|guint32
 name|cpu
 init|=
