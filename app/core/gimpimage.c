@@ -240,7 +240,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2135560103
+DECL|enum|__anon2a40d7bd0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -11178,7 +11178,7 @@ name|gimage
 argument_list|,
 name|_
 argument_list|(
-literal|"Add Layer to Image"
+literal|"Add Layer"
 argument_list|)
 argument_list|,
 name|layer
@@ -11493,7 +11493,7 @@ name|gimage
 argument_list|,
 name|_
 argument_list|(
-literal|"Remove Layer from Image"
+literal|"Remove Layer"
 argument_list|)
 argument_list|,
 name|layer
@@ -11510,7 +11510,10 @@ name|layer
 argument_list|)
 argument_list|)
 argument_list|,
-name|layer
+name|gimp_image_get_active_layer
+argument_list|(
+name|gimage
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_ref
@@ -12510,7 +12513,7 @@ name|gimage
 argument_list|,
 name|_
 argument_list|(
-literal|"Add Channel to Image"
+literal|"Add Channel"
 argument_list|)
 argument_list|,
 name|channel
@@ -12715,7 +12718,7 @@ name|gimage
 argument_list|,
 name|_
 argument_list|(
-literal|"Remove Layer from Image"
+literal|"Remove Layer"
 argument_list|)
 argument_list|,
 name|channel
@@ -13304,7 +13307,7 @@ name|gimage
 argument_list|,
 name|_
 argument_list|(
-literal|"Add Path to Image"
+literal|"Add Path"
 argument_list|)
 argument_list|,
 name|vectors
@@ -13480,7 +13483,7 @@ name|gimage
 argument_list|,
 name|_
 argument_list|(
-literal|"Remove Path from Image"
+literal|"Remove Path"
 argument_list|)
 argument_list|,
 name|vectors

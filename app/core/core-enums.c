@@ -2120,6 +2120,17 @@ literal|"group-image-guide"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_GROUP_MASK
+block|,
+name|N_
+argument_list|(
+literal|"Selection Mask"
+argument_list|)
+block|,
+literal|"group-mask"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_GROUP_ITEM_PROPERTIES
 block|,
 name|N_

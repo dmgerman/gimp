@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f0ec720103
+DECL|enum|__anon27d5e64d0103
 block|{
 DECL|enumerator|POP
 name|POP
@@ -1380,6 +1380,9 @@ condition|)
 block|{
 case|case
 name|GIMP_UNDO_GROUP_IMAGE_QMASK
+case|:
+case|case
+name|GIMP_UNDO_GROUP_MASK
 case|:
 case|case
 name|GIMP_UNDO_IMAGE_QMASK
