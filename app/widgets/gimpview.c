@@ -103,7 +103,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bee043c0103
+DECL|enum|__anon2c6c1df50103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -1914,6 +1914,10 @@ condition|(
 name|preview
 operator|->
 name|show_popup
+operator|&&
+name|preview
+operator|->
+name|viewable
 condition|)
 block|{
 name|bevent
