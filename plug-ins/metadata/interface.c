@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -71,13 +65,13 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<glib/gstdio.h>
+file|<glib.h>
 end_include
 
 begin_ifdef
@@ -115,12 +109,6 @@ begin_endif
 endif|#
 directive|endif
 end_endif
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
 
 begin_include
 include|#
@@ -177,7 +165,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b522fd0108
+DECL|struct|__anon2774ea210108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -237,10 +225,6 @@ name|GtkTreeModel
 modifier|*
 name|model
 init|=
-operator|(
-name|GtkTreeModel
-operator|*
-operator|)
 name|data
 decl_stmt|;
 name|GtkTreePath
@@ -961,7 +945,9 @@ name|gtk_text_buffer_set_text
 argument_list|(
 name|text_buffer
 argument_list|,
-literal|"FIXME:\nThese widgets are currently disconnected from the XMP model.\nPlease use the Advanced tab."
+literal|"FIXME:\n"
+literal|"These widgets are currently disconnected from the XMP model.\n"
+literal|"Please use the Advanced tab."
 argument_list|,
 operator|-
 literal|1
@@ -1808,6 +1794,18 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gtk_dialog_set_alternative_button_order
+argument_list|(
+name|dlg
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|,
+name|GTK_RESPONSE_CANCEL
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
 comment|/* FIXME: gimp_help_connect? */
 name|gtk_dialog_set_default_response
 argument_list|(
@@ -2195,6 +2193,18 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gtk_dialog_set_alternative_button_order
+argument_list|(
+name|dlg
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|,
+name|GTK_RESPONSE_CANCEL
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
 comment|/* FIXME: gimp_help_connect? */
 name|gtk_dialog_set_default_response
 argument_list|(
@@ -2396,6 +2406,24 @@ argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_dialog_set_alternative_button_order
+argument_list|(
+name|mgui
+operator|.
+name|dlg
+argument_list|,
+name|RESPONSE_IMPORT
+argument_list|,
+name|RESPONSE_EXPORT
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|,
+name|GTK_RESPONSE_CANCEL
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
