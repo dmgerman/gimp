@@ -5217,7 +5217,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|{
@@ -6770,7 +6770,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b021add0108
+DECL|struct|__anon29fc0cd50108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9020,7 +9020,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b021add0208
+DECL|struct|__anon29fc0cd50208
 block|{
 DECL|member|label
 specifier|const
@@ -9177,7 +9177,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b021add0308
+DECL|struct|__anon29fc0cd50308
 block|{
 DECL|member|tree_label
 specifier|const
