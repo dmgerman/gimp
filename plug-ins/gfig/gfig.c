@@ -928,11 +928,7 @@ name|d_status
 operator|=
 name|status
 expr_stmt|;
-name|gimp_drawable_detach
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
+comment|/* gimp_drawable_detach (drawable) already done above, don't do it twice */
 block|}
 end_function
 

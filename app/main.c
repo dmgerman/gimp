@@ -1765,26 +1765,6 @@ name|TRUE
 expr_stmt|;
 block|}
 block|}
-ifdef|#
-directive|ifdef
-name|G_OS_WIN32
-comment|/* Common windoze apps don't have a console at all. So does Gimp    * - if appropiate. This allows to compile as console application    * with all it's benefits (like inheriting the console) but hide    * it, if the user doesn't want it.    */
-if|if
-condition|(
-operator|!
-name|show_help
-operator|&&
-operator|!
-name|be_verbose
-operator|&&
-operator|!
-name|console_messages
-condition|)
-name|FreeConsole
-argument_list|()
-expr_stmt|;
-endif|#
-directive|endif
 if|if
 condition|(
 name|show_help

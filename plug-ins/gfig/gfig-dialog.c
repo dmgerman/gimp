@@ -487,7 +487,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f6b54f0108
+DECL|struct|__anon2797a15c0108
 block|{
 DECL|member|gridspacing
 name|void
@@ -3065,6 +3065,14 @@ decl_stmt|;
 comment|/* Must update which object we are editing */
 comment|/* Get the list and which item is selected */
 comment|/* Only allow single selections */
+comment|/* apparently this function (call) is all broken at the moment */
+name|g_return_if_fail
+argument_list|(
+name|list
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|sellist
 operator|=
 name|GTK_LIST
