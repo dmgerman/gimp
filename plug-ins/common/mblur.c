@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Version 1.2  *  *      Everything is new - no changes  *  * TODO:  *     Bilinear interpolation from original mblur for 0.54  *     Speed all things up  *              ? better caching scheme  *              - while bluring along long trajektory do not averrage all  *                pixels but averrage only few samples  *     Function for weight of samples along trajectory  *     Preview  *     Support paths in GiMP 1.1 :-)  *     Smash all bugs :-)  */
+comment|/* Version 1.2  *  *      Everything is new - no changes  *  * TODO:  *     Bilinear interpolation from original mblur for 0.54  *     Speed all things up  *              ? better caching scheme  *              - while blurring along long trajectory do not average all  *                pixels but average only few samples  *     Function for weight of samples along trajectory  *     Preview  *     Support paths in GiMP 1.1 :-)  *     Smash all bugs :-)  */
 end_comment
 
 begin_include
@@ -87,7 +87,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b6d6c140103
+DECL|enum|__anon2b398ce50103
 block|{
 DECL|enumerator|MBLUR_LINEAR
 name|MBLUR_LINEAR
@@ -111,7 +111,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6d6c140208
+DECL|struct|__anon2b398ce50208
 block|{
 DECL|member|mblur_type
 name|gint32
