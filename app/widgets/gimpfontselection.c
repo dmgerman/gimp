@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library   * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpfontselection.c  * Copyright (C) 2001  Sven Neumann<sven@gimp.org>  *  * Partially based on code from GtkFontSelection.  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *   * This library is distributed in the hope that it will be useful,   * but WITHOUT ANY WARRANTY; without even the implied warranty of   * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU   * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpfontselection.c  * Copyright (C) 2001  Sven Neumann<sven@gimp.org>  *  * Partially based on code from GtkFontSelection.  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -49,6 +49,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimpmarshal.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimphelp-ids.h"
 end_include
 
 begin_include
@@ -215,7 +221,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3e637e0103
+DECL|enum|__anon28ad98cd0103
 block|{
 DECL|enumerator|FONT_CHANGED
 name|FONT_CHANGED
@@ -639,7 +645,7 @@ argument_list|(
 literal|"Click to open the Font Selection Dialog"
 argument_list|)
 argument_list|,
-literal|"dialogs/font_selection.html"
+name|GIMP_HELP_FONT_DIALOG
 argument_list|)
 expr_stmt|;
 name|image
@@ -930,7 +936,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_font_selection_set_fontname:  * @fontsel:   * @fontname:   *   * This function expects a @fontname in the format "[FAMILY-LIST]  * [STYLE-OPTIONS]". It causes the font selector to emit the  * "font_changed" signal.  **/
+comment|/**  * gimp_font_selection_set_fontname:  * @fontsel:  * @fontname:  *  * This function expects a @fontname in the format "[FAMILY-LIST]  * [STYLE-OPTIONS]". It causes the font selector to emit the  * "font_changed" signal.  **/
 end_comment
 
 begin_function
@@ -1055,7 +1061,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_font_selection_set_font_desc:  * @fontsel:   * @font_desc:   *   * This function does not check if there is a font matching the   * new font description. It should only be used with validated  * font descriptions.  **/
+comment|/**  * gimp_font_selection_set_font_desc:  * @fontsel:  * @font_desc:  *  * This function does not check if there is a font matching the  * new font description. It should only be used with validated  * font descriptions.  **/
 end_comment
 
 begin_function

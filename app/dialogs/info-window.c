@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpviewabledialog.h"
 end_include
 
@@ -2263,7 +2269,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/info_window.html"
+name|GIMP_HELP_INFO_DIALOG
 argument_list|)
 expr_stmt|;
 name|gimp_dialog_create_action_area
