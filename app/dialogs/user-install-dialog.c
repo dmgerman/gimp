@@ -642,7 +642,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29d7570b0108
+DECL|struct|__anon28a7d89b0108
 block|{
 DECL|member|directory
 name|gboolean
@@ -6068,8 +6068,8 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"GIMP can obtain this information from your X-server.\n"
-literal|"However, most X-servers do not return useful values."
+literal|"GIMP can obtain this information from the windowing system.\n"
+literal|"However, usually this does not give useful values."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6109,7 +6109,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Get Resolution from X-server (Currently %d x %d dpi)"
+literal|"Get Resolution from windowing system (Currently %d x %d dpi)"
 argument_list|)
 argument_list|,
 name|ROUND
