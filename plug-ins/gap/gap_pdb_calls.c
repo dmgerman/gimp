@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history:  * version 1.1.15a; 2000/01/26  hof: pathes  *                                   removed old gimp 1.0.x PDB Interfaces  * version 1.1.14a; 2000/01/09  hof: thumbnail save/load,  *                              Procedures for video_info file  * version 0.98.00; 1998/11/28  hof: 1.st (pre) release (GAP port to GIMP 1.1)  */
+comment|/* revision history:  * version 1.1.15b; 2000/01/30  hof: image parasites  * version 1.1.15a; 2000/01/26  hof: pathes  *                                   removed old gimp 1.0.x PDB Interfaces  * version 1.1.14a; 2000/01/09  hof: thumbnail save/load,  *                              Procedures for video_info file  * version 0.98.00; 1998/11/28  hof: 1.st (pre) release (GAP port to GIMP 1.1)  */
 end_comment
 
 begin_include
@@ -3039,6 +3039,119 @@ end_function
 
 begin_comment
 comment|/* end p_gimp_path_set_current */
+end_comment
+
+begin_comment
+comment|/* ============================================================================  * p_gimp_image_parasite_list  * ============================================================================  */
+end_comment
+
+begin_function
+name|gchar
+modifier|*
+modifier|*
+DECL|function|p_gimp_image_parasite_list (gint32 image_id,gint32 * num_parasites)
+name|p_gimp_image_parasite_list
+parameter_list|(
+name|gint32
+name|image_id
+parameter_list|,
+name|gint32
+modifier|*
+name|num_parasites
+parameter_list|)
+block|{
+specifier|static
+name|gchar
+modifier|*
+name|l_procname
+init|=
+literal|"gimp_image_parasite_list"
+decl_stmt|;
+name|GParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|int
+name|nreturn_vals
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+name|l_procname
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|PARAM_IMAGE
+argument_list|,
+name|image_id
+argument_list|,
+name|PARAM_END
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|STATUS_SUCCESS
+condition|)
+block|{
+operator|*
+name|num_parasites
+operator|=
+name|return_vals
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+return|return
+operator|(
+name|return_vals
+index|[
+literal|2
+index|]
+operator|.
+name|data
+operator|.
+name|d_stringarray
+operator|)
+return|;
+comment|/* OK, return name list */
+block|}
+name|printf
+argument_list|(
+literal|"GAP: Error: PDB call of %s failed\n"
+argument_list|,
+name|l_procname
+argument_list|)
+expr_stmt|;
+operator|*
+name|num_parasites
+operator|=
+literal|0
+expr_stmt|;
+return|return
+operator|(
+name|NULL
+operator|)
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/* end p_gimp_image_parasite_list */
 end_comment
 
 begin_comment

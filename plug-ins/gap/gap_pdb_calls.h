@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history:  * version 1.1.15a; 2000/01/26  hof: pathes, removed gimp 1.0.x support  * version 1.1.14a; 2000/01/06  hof: thumbnail save/load,  *                              Procedures for video_info file  * version 0.98.00; 1998/11/30  hof: all PDB-calls of GIMP PDB-Procedures  */
+comment|/* revision history:  * version 1.1.15b; 2000/01/30  hof: image parasites  * version 1.1.15a; 2000/01/26  hof: pathes, removed gimp 1.0.x support  * version 1.1.14a; 2000/01/06  hof: thumbnail save/load,  *                              Procedures for video_info file  * version 0.98.00; 1998/11/30  hof: all PDB-calls of GIMP PDB-Procedures  */
 end_comment
 
 begin_ifndef
@@ -478,6 +478,22 @@ name|p_gimp_path_get_current
 parameter_list|(
 name|gint32
 name|image_id
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gchar
+modifier|*
+modifier|*
+name|p_gimp_image_parasite_list
+parameter_list|(
+name|gint32
+name|image_id
+parameter_list|,
+name|gint32
+modifier|*
+name|num_parasites
 parameter_list|)
 function_decl|;
 end_function_decl
