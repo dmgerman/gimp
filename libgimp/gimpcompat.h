@@ -437,7 +437,7 @@ directive|define
 name|GIMP_IS_FILE_SELECTION
 value|GIMP_IS_FILE_ENTRY
 name|enum
-DECL|enum|__anon29c088ef0103
+DECL|enum|__anon2c3d71080103
 type|{
 DECL|enumerator|GIMP_WHITE_MASK
 name|GIMP_WHITE_MASK
@@ -469,7 +469,7 @@ end_decl_stmt
 begin_enum
 unit|};
 enum|enum
-DECL|enum|__anon29c088ef0203
+DECL|enum|__anon2c3d71080203
 block|{
 DECL|enumerator|GIMP_ADD
 name|GIMP_ADD
@@ -496,7 +496,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c088ef0303
+DECL|enum|__anon2c3d71080303
 block|{
 DECL|enumerator|GIMP_FG_BG_RGB
 name|GIMP_FG_BG_RGB
@@ -523,7 +523,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c088ef0403
+DECL|enum|__anon2c3d71080403
 block|{
 DECL|enumerator|GIMP_FG_IMAGE_FILL
 name|GIMP_FG_IMAGE_FILL
@@ -550,7 +550,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c088ef0503
+DECL|enum|__anon2c3d71080503
 block|{
 DECL|enumerator|GIMP_APPLY
 name|GIMP_APPLY
@@ -567,7 +567,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c088ef0603
+DECL|enum|__anon2c3d71080603
 block|{
 DECL|enumerator|GIMP_HARD
 name|GIMP_HARD
@@ -584,7 +584,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c088ef0703
+DECL|enum|__anon2c3d71080703
 block|{
 DECL|enumerator|GIMP_CONTINUOUS
 name|GIMP_CONTINUOUS
@@ -601,7 +601,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c088ef0803
+DECL|enum|__anon2c3d71080803
 block|{
 DECL|enumerator|GIMP_HORIZONTAL
 name|GIMP_HORIZONTAL
@@ -623,7 +623,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c088ef0903
+DECL|enum|__anon2c3d71080903
 block|{
 DECL|enumerator|GIMP_LINEAR
 name|GIMP_LINEAR
@@ -679,6 +679,38 @@ DECL|enumerator|GIMP_SPIRAL_ANTICLOCKWISE
 name|GIMP_SPIRAL_ANTICLOCKWISE
 init|=
 name|GIMP_GRADIENT_SPIRAL_ANTICLOCKWISE
+block|}
+enum|;
+end_enum
+
+begin_enum
+enum|enum
+DECL|enum|__anon2c3d71080a03
+block|{
+DECL|enumerator|GIMP_VALUE_LUT
+name|GIMP_VALUE_LUT
+init|=
+name|GIMP_HISTOGRAM_VALUE
+block|,
+DECL|enumerator|GIMP_RED_LUT
+name|GIMP_RED_LUT
+init|=
+name|GIMP_HISTOGRAM_RED
+block|,
+DECL|enumerator|GIMP_GREEN_LUT
+name|GIMP_GREEN_LUT
+init|=
+name|GIMP_HISTOGRAM_GREEN
+block|,
+DECL|enumerator|GIMP_BLUE_LUT
+name|GIMP_BLUE_LUT
+init|=
+name|GIMP_HISTOGRAM_BLUE
+block|,
+DECL|enumerator|GIMP_ALPHA_LUT
+name|GIMP_ALPHA_LUT
+init|=
+name|GIMP_HISTOGRAM_ALPHA
 block|}
 enum|;
 end_enum

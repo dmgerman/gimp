@@ -45,7 +45,7 @@ parameter_list|(
 name|gint32
 name|drawable_ID
 parameter_list|,
-name|GimpChannelLutType
+name|GimpHistogramChannel
 name|channel
 parameter_list|,
 name|gint
@@ -129,7 +129,7 @@ parameter_list|(
 name|gint32
 name|drawable_ID
 parameter_list|,
-name|GimpChannelLutType
+name|GimpHistogramChannel
 name|channel
 parameter_list|,
 name|gint
@@ -150,7 +150,7 @@ parameter_list|(
 name|gint32
 name|drawable_ID
 parameter_list|,
-name|GimpChannelLutType
+name|GimpHistogramChannel
 name|channel
 parameter_list|,
 name|gint
@@ -196,7 +196,7 @@ parameter_list|(
 name|gint32
 name|drawable_ID
 parameter_list|,
-name|GimpChannelLutType
+name|GimpHistogramChannel
 name|channel
 parameter_list|,
 name|gint

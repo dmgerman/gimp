@@ -106,13 +106,13 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_levels (gint32 drawable_ID,GimpChannelLutType channel,gint low_input,gint high_input,gdouble gamma,gint low_output,gint high_output)
+DECL|function|gimp_levels (gint32 drawable_ID,GimpHistogramChannel channel,gint low_input,gint high_input,gdouble gamma,gint low_output,gint high_output)
 name|gimp_levels
 parameter_list|(
 name|gint32
 name|drawable_ID
 parameter_list|,
-name|GimpChannelLutType
+name|GimpHistogramChannel
 name|channel
 parameter_list|,
 name|gint
@@ -564,13 +564,13 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_curves_spline (gint32 drawable_ID,GimpChannelLutType channel,gint num_points,const guint8 * control_pts)
+DECL|function|gimp_curves_spline (gint32 drawable_ID,GimpHistogramChannel channel,gint num_points,const guint8 * control_pts)
 name|gimp_curves_spline
 parameter_list|(
 name|gint32
 name|drawable_ID
 parameter_list|,
-name|GimpChannelLutType
+name|GimpHistogramChannel
 name|channel
 parameter_list|,
 name|gint
@@ -654,13 +654,13 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_curves_explicit (gint32 drawable_ID,GimpChannelLutType channel,gint num_bytes,const guint8 * curve)
+DECL|function|gimp_curves_explicit (gint32 drawable_ID,GimpHistogramChannel channel,gint num_bytes,const guint8 * curve)
 name|gimp_curves_explicit
 parameter_list|(
 name|gint32
 name|drawable_ID
 parameter_list|,
-name|GimpChannelLutType
+name|GimpHistogramChannel
 name|channel
 parameter_list|,
 name|gint
@@ -846,13 +846,13 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_histogram (gint32 drawable_ID,GimpChannelLutType channel,gint start_range,gint end_range,gdouble * mean,gdouble * std_dev,gdouble * median,gdouble * pixels,gdouble * count,gdouble * percentile)
+DECL|function|gimp_histogram (gint32 drawable_ID,GimpHistogramChannel channel,gint start_range,gint end_range,gdouble * mean,gdouble * std_dev,gdouble * median,gdouble * pixels,gdouble * count,gdouble * percentile)
 name|gimp_histogram
 parameter_list|(
 name|gint32
 name|drawable_ID
 parameter_list|,
-name|GimpChannelLutType
+name|GimpHistogramChannel
 name|channel
 parameter_list|,
 name|gint
