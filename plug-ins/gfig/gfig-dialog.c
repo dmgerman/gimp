@@ -462,7 +462,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2778eada0108
+DECL|struct|__anon2b70e1f10108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment
@@ -1043,7 +1043,7 @@ name|gfig_list
 operator|=
 name|NULL
 expr_stmt|;
-name|undo_water_mark
+name|undo_level
 operator|=
 operator|-
 literal|1
@@ -1498,7 +1498,7 @@ name|gfig_dialog_action_set_sensitive
 argument_list|(
 literal|"undo"
 argument_list|,
-name|undo_water_mark
+name|undo_level
 operator|>=
 literal|0
 argument_list|)
@@ -3308,7 +3308,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|undo_water_mark
+name|undo_level
 operator|>=
 literal|0
 condition|)
@@ -3347,10 +3347,30 @@ name|obj_list
 operator|=
 name|undo_table
 index|[
-name|undo_water_mark
+name|undo_level
 index|]
 expr_stmt|;
-name|undo_water_mark
+comment|/* FIXME: this only work when undoing the only object in the list */
+if|if
+condition|(
+name|gfig_context
+operator|->
+name|current_obj
+operator|->
+name|obj_list
+operator|==
+name|NULL
+condition|)
+name|gfig_context
+operator|->
+name|current_style
+operator|=
+operator|&
+name|gfig_context
+operator|->
+name|default_style
+expr_stmt|;
+name|undo_level
 operator|--
 expr_stmt|;
 comment|/* Update the screen */
@@ -3375,7 +3395,7 @@ name|gfig_dialog_action_set_sensitive
 argument_list|(
 literal|"undo"
 argument_list|,
-name|undo_water_mark
+name|undo_level
 operator|>=
 literal|0
 argument_list|)
@@ -3431,6 +3451,15 @@ operator|->
 name|obj_list
 operator|=
 name|NULL
+expr_stmt|;
+name|gfig_context
+operator|->
+name|current_style
+operator|=
+operator|&
+name|gfig_context
+operator|->
+name|default_style
 expr_stmt|;
 name|obj_creating
 operator|=

@@ -3497,7 +3497,7 @@ for|for
 control|(
 name|lv
 operator|=
-name|undo_water_mark
+name|undo_level
 init|;
 name|lv
 operator|>=
@@ -3523,7 +3523,7 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-name|undo_water_mark
+name|undo_level
 operator|=
 operator|-
 literal|1
@@ -3554,7 +3554,7 @@ name|printf
 argument_list|(
 literal|"setup undo level [%d]\n"
 argument_list|,
-name|undo_water_mark
+name|undo_level
 argument_list|)
 expr_stmt|;
 endif|#
@@ -3573,7 +3573,7 @@ return|return;
 block|}
 if|if
 condition|(
-name|undo_water_mark
+name|undo_level
 operator|>=
 name|selvals
 operator|.
@@ -3611,7 +3611,7 @@ literal|0
 init|;
 name|loop
 operator|<
-name|undo_water_mark
+name|undo_level
 condition|;
 name|loop
 operator|++
@@ -3633,13 +3633,13 @@ block|}
 block|}
 else|else
 block|{
-name|undo_water_mark
+name|undo_level
 operator|++
 expr_stmt|;
 block|}
 name|undo_table
 index|[
-name|undo_water_mark
+name|undo_level
 index|]
 operator|=
 name|copy_all_objs
