@@ -591,6 +591,11 @@ define|#
 directive|define
 name|GIMP_STOCK_CHANNEL_ALPHA
 value|"gimp-channel-alpha"
+DECL|macro|GIMP_STOCK_LAYER_MASK
+define|#
+directive|define
+name|GIMP_STOCK_LAYER_MASK
+value|"gimp-layer-mask"
 DECL|macro|GIMP_STOCK_PATH
 define|#
 directive|define
@@ -651,6 +656,11 @@ define|#
 directive|define
 name|GIMP_STOCK_SELECTION_SHRINK
 value|"gimp-selection-shrink"
+DECL|macro|GIMP_STOCK_SELECTION_BORDER
+define|#
+directive|define
+name|GIMP_STOCK_SELECTION_BORDER
+value|"gimp-selection-border"
 DECL|macro|GIMP_STOCK_NAVIGATION
 define|#
 directive|define

@@ -1331,6 +1331,10 @@ block|,
 name|select_border_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_SELECTION_BORDER
 block|}
 block|,
 name|NULL

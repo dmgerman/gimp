@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ed3b090103
+DECL|enum|__anon28dde1310103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED
@@ -271,9 +271,20 @@ name|GimpItemClass
 modifier|*
 name|item_class
 decl_stmt|;
+name|GimpViewableClass
+modifier|*
+name|viewable_class
+decl_stmt|;
 name|item_class
 operator|=
 name|GIMP_ITEM_CLASS
+argument_list|(
+name|klass
+argument_list|)
+expr_stmt|;
+name|viewable_class
+operator|=
+name|GIMP_VIEWABLE_CLASS
 argument_list|(
 name|klass
 argument_list|)
@@ -386,6 +397,12 @@ name|G_TYPE_NONE
 argument_list|,
 literal|0
 argument_list|)
+expr_stmt|;
+name|viewable_class
+operator|->
+name|default_stock_id
+operator|=
+literal|"gimp-layer-mask"
 expr_stmt|;
 name|item_class
 operator|->
