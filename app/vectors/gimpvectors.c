@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297e74020103
+DECL|enum|__anon2bf8f62c0103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -2495,14 +2495,27 @@ operator|->
 name|strokes
 condition|)
 block|{
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: free old dest_vectors->strokes
-endif|#
-directive|endif
+name|g_list_foreach
+argument_list|(
+name|dest_vectors
+operator|->
+name|strokes
+argument_list|,
+operator|(
+name|Gfunc
+operator|)
+name|g_object_unref
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_list_free
+argument_list|(
+name|dest_vectors
+operator|->
+name|strokes
+argument_list|)
+expr_stmt|;
 block|}
 name|dest_vectors
 operator|->
