@@ -6,7 +6,7 @@ file|"output.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon296c52020108
+DECL|struct|__anon278187220108
 typedef|typedef
 struct|struct
 block|{
@@ -147,7 +147,7 @@ name|t
 argument_list|,
 name|NULL
 argument_list|,
-literal|"LAST"
+literal|"last"
 argument_list|)
 argument_list|,
 name|p_macro_name
@@ -354,7 +354,7 @@ operator|*
 operator|)
 name|d
 decl_stmt|;
-name|pr_add
+name|pr_put
 argument_list|(
 name|out
 argument_list|,

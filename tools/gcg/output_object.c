@@ -710,7 +710,7 @@ argument_list|)
 argument_list|,
 name|p_fmt
 argument_list|(
-literal|"~ handler, gpointer user_data"
+literal|"\n\t~ handler,\n\tgpointer user_data"
 argument_list|,
 name|p_signal_handler_type
 argument_list|(
@@ -1100,7 +1100,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|pr_add
+name|pr_put
 argument_list|(
 name|out
 argument_list|,
@@ -1108,7 +1108,9 @@ literal|"functions"
 argument_list|,
 name|p_fmt
 argument_list|(
-literal|"typedef ~ (*~)(~, gpointer);\n"
+literal|"typedef ~ (*~)("
+literal|"~,\n"
+literal|"\tgpointer);\n"
 argument_list|,
 name|p_type
 argument_list|(
@@ -1178,7 +1180,7 @@ name|types
 operator|=
 name|TRUE
 expr_stmt|;
-name|pr_add
+name|pr_put
 argument_list|(
 name|out
 argument_list|,
@@ -1774,12 +1776,13 @@ return|return
 name|p_fmt
 argument_list|(
 literal|"#define ~(o) GTK_CHECK_TYPE(o, ~)\n"
+literal|"#define ~(o) GTK_CHECK_CAST(o, ~, ~)\n"
 argument_list|,
 name|p_macro_name
 argument_list|(
 name|t
 argument_list|,
-literal|"IS"
+literal|"is"
 argument_list|,
 name|NULL
 argument_list|)
@@ -1788,9 +1791,32 @@ name|p_macro_name
 argument_list|(
 name|t
 argument_list|,
-literal|"TYPE"
+literal|"type"
 argument_list|,
 name|NULL
+argument_list|)
+argument_list|,
+name|p_macro_name
+argument_list|(
+name|t
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+argument_list|,
+name|p_macro_name
+argument_list|(
+name|t
+argument_list|,
+literal|"type"
+argument_list|,
+name|NULL
+argument_list|)
+argument_list|,
+name|p_primtype
+argument_list|(
+name|t
 argument_list|)
 argument_list|)
 return|;
@@ -1918,7 +1944,7 @@ name|o
 operator|->
 name|parent
 argument_list|,
-literal|"TYPE"
+literal|"type"
 argument_list|,
 name|NULL
 argument_list|)
@@ -1944,35 +1970,7 @@ modifier|*
 name|o
 parameter_list|)
 block|{
-name|pr_add
-argument_list|(
-name|out
-argument_list|,
-literal|"prot_deps"
-argument_list|,
-name|p_col
-argument_list|(
-literal|"prot_depends"
-argument_list|,
-name|p_type_include
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|pr_add
-argument_list|(
-name|out
-argument_list|,
-literal|"func_deps"
-argument_list|,
-name|p_col
-argument_list|(
-literal|"func_depends"
-argument_list|,
-name|p_type_include
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|pr_add
+name|pr_put
 argument_list|(
 name|out
 argument_list|,
@@ -2125,7 +2123,7 @@ modifier|*
 name|o
 parameter_list|)
 block|{
-name|pr_add
+name|pr_put
 argument_list|(
 name|out
 argument_list|,
@@ -2206,6 +2204,7 @@ name|p_fmt
 argument_list|(
 literal|"\tGtkObjectClass* obklass = "
 literal|"(GtkObjectClass*) klass;\n"
+literal|"\t(void) obklass;\n"
 literal|"~"
 literal|"~"
 literal|"\t~ (klass);\n"
@@ -2268,6 +2267,58 @@ operator|*
 operator|)
 name|d
 decl_stmt|;
+name|pr_put
+argument_list|(
+name|out
+argument_list|,
+literal|"func_parent_depends"
+argument_list|,
+name|o
+operator|->
+name|parent
+operator|->
+name|module
+argument_list|)
+expr_stmt|;
+name|pr_put
+argument_list|(
+name|out
+argument_list|,
+literal|"prot_depends"
+argument_list|,
+name|d
+operator|->
+name|type
+operator|->
+name|module
+argument_list|)
+expr_stmt|;
+name|pr_put
+argument_list|(
+name|out
+argument_list|,
+literal|"prot_parent_depends"
+argument_list|,
+name|o
+operator|->
+name|parent
+operator|->
+name|module
+argument_list|)
+expr_stmt|;
+name|pr_put
+argument_list|(
+name|out
+argument_list|,
+literal|"source_prot_depends"
+argument_list|,
+name|d
+operator|->
+name|type
+operator|->
+name|module
+argument_list|)
+expr_stmt|;
 name|output_object_type_init
 argument_list|(
 name|out
@@ -2289,7 +2340,7 @@ argument_list|,
 name|o
 argument_list|)
 expr_stmt|;
-name|pr_add
+name|pr_put
 argument_list|(
 name|out
 argument_list|,
@@ -2301,7 +2352,7 @@ name|o
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|pr_add
+name|pr_put
 argument_list|(
 name|out
 argument_list|,
@@ -2313,7 +2364,7 @@ name|o
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|pr_add
+name|pr_put
 argument_list|(
 name|out
 argument_list|,
@@ -2325,7 +2376,7 @@ name|o
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|pr_add
+name|pr_put
 argument_list|(
 name|out
 argument_list|,
@@ -2337,7 +2388,7 @@ name|o
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|pr_add
+name|pr_put
 argument_list|(
 name|out
 argument_list|,

@@ -84,7 +84,7 @@ name|t
 argument_list|,
 name|NULL
 argument_list|,
-literal|"LAST"
+literal|"last"
 argument_list|)
 argument_list|,
 name|p_macro_name
@@ -301,7 +301,7 @@ argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
-name|pr_add
+name|pr_put
 argument_list|(
 name|out
 argument_list|,

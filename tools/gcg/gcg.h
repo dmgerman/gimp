@@ -183,7 +183,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2bdf1bf10103
+DECL|enum|__anon2acc1d320103
 typedef|typedef
 enum|enum
 block|{
@@ -213,6 +213,12 @@ name|TYPE_FOREIGN
 block|,
 DECL|enumerator|TYPE_OBJECT
 name|TYPE_OBJECT
+block|,
+DECL|enumerator|TYPE_BOXED
+name|TYPE_BOXED
+block|,
+DECL|enumerator|TYPE_CHAR
+name|TYPE_CHAR
 DECL|typedef|TypeKind
 block|}
 name|TypeKind
@@ -227,6 +233,10 @@ block|{
 DECL|member|name
 name|Id
 name|name
+decl_stmt|;
+DECL|member|headerbase
+name|Id
+name|headerbase
 decl_stmt|;
 DECL|member|type_hash
 name|GHashTable
@@ -467,7 +477,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon2bdf1bf10203
+DECL|enum|__anon2acc1d320203
 typedef|typedef
 enum|enum
 block|{
@@ -486,7 +496,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2bdf1bf10303
+DECL|enum|__anon2acc1d320303
 typedef|typedef
 enum|enum
 block|{
