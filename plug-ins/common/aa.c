@@ -350,7 +350,7 @@ name|gimp_register_save_handler
 argument_list|(
 literal|"file_aa_save"
 argument_list|,
-literal|"ansi,txt,text,html"
+literal|"ansi,txt,text"
 argument_list|,
 literal|""
 argument_list|)
