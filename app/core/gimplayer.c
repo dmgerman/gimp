@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1972fd0103
+DECL|enum|__anon276ad0540103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -2326,7 +2326,7 @@ name|gimage
 argument_list|,
 name|_
 argument_list|(
-literal|"Add Mask to Layer"
+literal|"Add Layer Mask"
 argument_list|)
 argument_list|,
 name|layer
