@@ -365,6 +365,7 @@ argument_list|)
 operator|->
 name|file_system
 expr_stmt|;
+literal|2
 name|path
 operator|=
 name|gtk_file_system_uri_to_path
@@ -417,6 +418,11 @@ name|gimp_view_renderer_render_pixbuf
 argument_list|(
 name|renderer
 argument_list|,
+name|pixbuf
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
 name|pixbuf
 argument_list|)
 expr_stmt|;

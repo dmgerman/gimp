@@ -998,6 +998,7 @@ condition|)
 return|return
 name|NULL
 return|;
+comment|/*  as fallback, render the preview with a 1 pixel wide black border  */
 name|x
 operator|=
 literal|1
