@@ -322,7 +322,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon299124670103
+DECL|enum|__anon29881adf0103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1600,7 +1600,7 @@ name|shell
 operator|->
 name|filter_idle_id
 operator|=
-name|NULL
+literal|0
 expr_stmt|;
 block|}
 if|if
