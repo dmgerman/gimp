@@ -4547,7 +4547,7 @@ name|left_color
 operator|=
 name|oseg
 operator|->
-name|right_color
+name|left_color
 expr_stmt|;
 name|seg
 operator|->
