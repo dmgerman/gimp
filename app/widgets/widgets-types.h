@@ -160,6 +160,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpCursorView
+typedef|typedef
+name|struct
+name|_GimpCursorView
+name|GimpCursorView
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpDeviceStatus
 typedef|typedef
 name|struct
@@ -263,6 +272,15 @@ typedef|typedef
 name|struct
 name|_GimpHistogramEditor
 name|GimpHistogramEditor
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpSamplePointEditor
+typedef|typedef
+name|struct
+name|_GimpSamplePointEditor
+name|GimpSamplePointEditor
 typedef|;
 end_typedef
 

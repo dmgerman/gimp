@@ -470,7 +470,7 @@ name|GIMP_COLOR_FRAME_MODE_PIXEL
 block|,
 name|N_
 argument_list|(
-literal|"Pixel values"
+literal|"Pixel"
 argument_list|)
 block|,
 name|NULL

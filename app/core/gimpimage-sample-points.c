@@ -363,6 +363,13 @@ argument_list|(
 name|sample_point
 argument_list|)
 expr_stmt|;
+name|gimp_image_sample_point_added
+argument_list|(
+name|gimage
+argument_list|,
+name|sample_point
+argument_list|)
+expr_stmt|;
 name|gimp_image_update_sample_point
 argument_list|(
 name|gimage
@@ -463,6 +470,13 @@ argument_list|(
 name|gimage
 operator|->
 name|sample_points
+argument_list|,
+name|sample_point
+argument_list|)
+expr_stmt|;
+name|gimp_image_sample_point_removed
+argument_list|(
+name|gimage
 argument_list|,
 name|sample_point
 argument_list|)

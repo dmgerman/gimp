@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpcursorview.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdataeditor.h"
 end_include
 
@@ -205,6 +211,12 @@ begin_include
 include|#
 directive|include
 file|"widgets/gimppatternfactoryview.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"widgets/gimpsamplepointeditor.h"
 end_include
 
 begin_include
@@ -849,8 +861,8 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_tool_options_get (GimpDialogFactory * factory,GimpContext * context,gint preview_size)
-name|dialogs_tool_options_get
+DECL|function|dialogs_tool_options_new (GimpDialogFactory * factory,GimpContext * context,gint preview_size)
+name|dialogs_tool_options_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
@@ -882,8 +894,8 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_device_status_get (GimpDialogFactory * factory,GimpContext * context,gint preview_size)
-name|dialogs_device_status_get
+DECL|function|dialogs_device_status_new (GimpDialogFactory * factory,GimpContext * context,gint preview_size)
+name|dialogs_device_status_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
@@ -911,8 +923,8 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_error_console_get (GimpDialogFactory * factory,GimpContext * context,gint preview_size)
-name|dialogs_error_console_get
+DECL|function|dialogs_error_console_new (GimpDialogFactory * factory,GimpContext * context,gint preview_size)
+name|dialogs_error_console_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
@@ -936,6 +948,33 @@ argument_list|,
 name|factory
 operator|->
 name|menu_factory
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+name|GtkWidget
+modifier|*
+DECL|function|dialogs_cursor_view_new (GimpDialogFactory * factory,GimpContext * context,gint preview_size)
+name|dialogs_cursor_view_new
+parameter_list|(
+name|GimpDialogFactory
+modifier|*
+name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
+name|gint
+name|preview_size
+parameter_list|)
+block|{
+return|return
+name|gimp_cursor_view_new
+argument_list|(
+name|context
 argument_list|)
 return|;
 block|}
@@ -2153,6 +2192,35 @@ name|gimp
 operator|->
 name|config
 argument_list|,
+name|factory
+operator|->
+name|menu_factory
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+name|GtkWidget
+modifier|*
+DECL|function|dialogs_sample_point_editor_new (GimpDialogFactory * factory,GimpContext * context,gint preview_size)
+name|dialogs_sample_point_editor_new
+parameter_list|(
+name|GimpDialogFactory
+modifier|*
+name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
+name|gint
+name|preview_size
+parameter_list|)
+block|{
+return|return
+name|gimp_sample_point_editor_new
+argument_list|(
 name|factory
 operator|->
 name|menu_factory

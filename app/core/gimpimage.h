@@ -769,6 +769,38 @@ modifier|*
 name|sample_point
 parameter_list|)
 function_decl|;
+DECL|member|sample_point_added
+name|void
+function_decl|(
+modifier|*
+name|sample_point_added
+function_decl|)
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|GimpSamplePoint
+modifier|*
+name|sample_point
+parameter_list|)
+function_decl|;
+DECL|member|sample_point_removed
+name|void
+function_decl|(
+modifier|*
+name|sample_point_removed
+function_decl|)
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|GimpSamplePoint
+modifier|*
+name|sample_point
+parameter_list|)
+function_decl|;
 DECL|member|colormap_changed
 name|void
 function_decl|(
@@ -1338,6 +1370,36 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_image_sample_point_added
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|GimpSamplePoint
+modifier|*
+name|sample_point
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_image_sample_point_removed
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|GimpSamplePoint
+modifier|*
+name|sample_point
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_image_colormap_changed
 parameter_list|(
 name|GimpImage
@@ -1814,7 +1876,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  layers / channels / vectors / old paths  */
+comment|/*  layers / channels / vectors  */
 end_comment
 
 begin_function_decl

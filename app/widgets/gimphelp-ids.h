@@ -3001,6 +3001,22 @@ value|"gimp-info-dialog"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_CURSOR_DIALOG
+define|#
+directive|define
+name|GIMP_HELP_CURSOR_DIALOG
+value|"gimp-cursor-dialog"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_SAMPLE_POINT_DIALOG
+define|#
+directive|define
+name|GIMP_HELP_SAMPLE_POINT_DIALOG
+value|"gimp-sample-point-dialog"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_MODULE_DIALOG
 define|#
 directive|define
