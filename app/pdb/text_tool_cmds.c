@@ -596,7 +596,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"text"
 block|,
-literal|"The text to generate"
+literal|"The text to generate (in UTF-8 encoding)"
 block|}
 block|,
 block|{
@@ -1007,7 +1007,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"text"
 block|,
-literal|"The text to generate"
+literal|"The text to generate (in UTF-8 encoding)"
 block|}
 block|,
 block|{
@@ -1770,7 +1770,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"text"
 block|,
-literal|"The text to generate"
+literal|"The text to generate (in UTF-8 encoding)"
 block|}
 block|,
 block|{
@@ -2429,7 +2429,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"text"
 block|,
-literal|"The text to generate"
+literal|"The text to generate (in UTF-8 encoding)"
 block|}
 block|,
 block|{
