@@ -443,6 +443,13 @@ argument_list|,
 name|LOCALEDIR
 argument_list|)
 expr_stmt|;
+name|bindtextdomain
+argument_list|(
+literal|"gimp-perl"
+argument_list|,
+name|LOCALEDIR
+argument_list|)
+expr_stmt|;
 name|gtk_init
 argument_list|(
 operator|&
@@ -1990,7 +1997,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bddfdec0108
+DECL|struct|__anon2943d55b0108
 block|{
 DECL|member|test_gint32
 name|gint32
