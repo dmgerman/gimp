@@ -203,7 +203,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad5862a0103
+DECL|enum|__anon2ae961150103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -231,7 +231,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad5862a0203
+DECL|enum|__anon2ae961150203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -442,7 +442,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad5862a0303
+DECL|enum|__anon2ae961150303
 block|{
 DECL|enumerator|TREE_ITEM_DO_NOTHING
 name|TREE_ITEM_DO_NOTHING
@@ -465,7 +465,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2ad5862a0408
+DECL|struct|__anon2ae961150408
 block|{
 DECL|member|directory
 name|gboolean
@@ -498,10 +498,10 @@ literal|"gimprc"
 block|,
 name|N_
 argument_list|(
-literal|"The gimprc is used to store personal preferences\n"
-literal|"that affect GIMP's default behavior.\n"
-literal|"Paths to search for brushes, palettes, gradients,\n"
-literal|"patterns, plug-ins and modules can also configured\n"
+literal|"The gimprc is used to store personal preferences "
+literal|"that affect GIMP's default behavior.  "
+literal|"Paths to search for brushes, palettes, gradients, "
+literal|"patterns, plug-ins and modules can also configured "
 literal|"here."
 argument_list|)
 block|,
@@ -515,7 +515,7 @@ literal|"gtkrc"
 block|,
 name|N_
 argument_list|(
-literal|"GIMP uses an additional gtkrc file so you can\n"
+literal|"GIMP uses an additional gtkrc file so you can "
 literal|"configure it to look differently than other GTK apps."
 argument_list|)
 block|,
@@ -529,11 +529,11 @@ literal|"pluginrc"
 block|,
 name|N_
 argument_list|(
-literal|"Plug-ins and extensions are external programs run\n"
-literal|"by the GIMP which provide additional functionality.\n"
-literal|"These programs are searched for at run-time and\n"
-literal|"information about their functionality and mod-times\n"
-literal|"is cached in this file.  This file is intended to\n"
+literal|"Plug-ins and extensions are external programs run "
+literal|"by the GIMP which provide additional functionality.  "
+literal|"These programs are searched for at run-time and "
+literal|"information about their functionality and mod-times "
+literal|"is cached in this file.  This file is intended to "
 literal|"be GIMP-readable only, and should not be edited."
 argument_list|)
 block|,
@@ -547,11 +547,11 @@ literal|"menurc"
 block|,
 name|N_
 argument_list|(
-literal|"Key shortcuts can be dynamically redefined in The GIMP.\n"
-literal|"The menurc is a dump of your configuration so it can.\n"
-literal|"be remembered for the next session.  You may edit this\n"
-literal|"file if you wish, but it is much easier to define the\n"
-literal|"keys from within The GIMP.  Deleting this file will\n"
+literal|"Key shortcuts can be dynamically redefined in The GIMP. "
+literal|"The menurc is a dump of your configuration so it can. "
+literal|"be remembered for the next session.  You may edit this "
+literal|"file if you wish, but it is much easier to define the "
+literal|"keys from within The GIMP.  Deleting this file will "
 literal|"restore the default shortcuts."
 argument_list|)
 block|,
@@ -565,8 +565,8 @@ literal|"sessionrc"
 block|,
 name|N_
 argument_list|(
-literal|"The sessionrc is used to store what dialog windows were\n"
-literal|"open the last time you quit The GIMP.  You can configure\n"
+literal|"The sessionrc is used to store what dialog windows were "
+literal|"open the last time you quit The GIMP.  You can configure "
 literal|"The GIMP to reopen these dialogs at the saved position."
 argument_list|)
 block|,
@@ -580,7 +580,7 @@ literal|"templaterc"
 block|,
 name|N_
 argument_list|(
-literal|"This file holds a collection of standard media sizes that\n"
+literal|"This file holds a collection of standard media sizes that "
 literal|"serve as image templates."
 argument_list|)
 block|,
@@ -594,10 +594,10 @@ literal|"unitrc"
 block|,
 name|N_
 argument_list|(
-literal|"The unitrc is used to store your user units database.\n"
-literal|"You can define additional units and use them just\n"
-literal|"like you use the built-in units inches, millimeters,\n"
-literal|"points and picas.  This file is overwritten each time\n"
+literal|"The unitrc is used to store your user units database.  "
+literal|"You can define additional units and use them just "
+literal|"like you use the built-in units inches, millimeters, "
+literal|"points and picas.  This file is overwritten each time "
 literal|"you quit the GIMP."
 argument_list|)
 block|,
@@ -611,9 +611,9 @@ literal|"brushes"
 block|,
 name|N_
 argument_list|(
-literal|"This folder is used to store user defined brushes.\n"
-literal|"The GIMP checks this folder in addition to the system-\n"
-literal|"wide GIMP brushes installation when searching for\n"
+literal|"This folder is used to store user defined brushes. "
+literal|"The GIMP checks this folder in addition to the system-wide "
+literal|"GIMP brushes installation when searching for "
 literal|"brushes."
 argument_list|)
 block|,
@@ -627,11 +627,11 @@ literal|"fonts"
 block|,
 name|N_
 argument_list|(
-literal|"This folder is used to store fonts you only want\n"
-literal|"visible in the GIMP. The GIMP checks this folder in\n"
-literal|"addition to the system-wide GIMP fonts installation\n"
-literal|"when searching for fonts. Use this only if you really\n"
-literal|"want to have GIMP-only fonts, otherwise put things\n"
+literal|"This folder is used to store fonts you only want "
+literal|"visible in the GIMP. The GIMP checks this folder in "
+literal|"addition to the system-wide GIMP fonts installation "
+literal|"when searching for fonts. Use this only if you really "
+literal|"want to have GIMP-only fonts, otherwise put things "
 literal|"in your global font directory."
 argument_list|)
 block|,
@@ -645,10 +645,9 @@ literal|"gradients"
 block|,
 name|N_
 argument_list|(
-literal|"This folder is used to store user defined gradients.\n"
-literal|"The GIMP checks this folder in addition to the system-\n"
-literal|"wide GIMP gradients installation when searching for\n"
-literal|"gradients."
+literal|"This folder is used to store user defined gradients.  "
+literal|"The GIMP checks this folder in addition to the system-wide "
+literal|"GIMP gradients installation when searching for gradients."
 argument_list|)
 block|,
 name|TREE_ITEM_MKDIR
@@ -661,10 +660,9 @@ literal|"palettes"
 block|,
 name|N_
 argument_list|(
-literal|"This folder is used to store user defined palettes.\n"
-literal|"The GIMP checks this folder in addition to the system-\n"
-literal|"wide GIMP palettes installation when searching for\n"
-literal|"palettes."
+literal|"This folder is used to store user defined palettes.  "
+literal|"The GIMP checks this folder in addition to the system-wide "
+literal|"GIMP palettes installation when searching for palettes."
 argument_list|)
 block|,
 name|TREE_ITEM_MKDIR
@@ -677,10 +675,9 @@ literal|"patterns"
 block|,
 name|N_
 argument_list|(
-literal|"This folder is used to store user defined patterns.\n"
-literal|"The GIMP checks this folder in addition to the system-\n"
-literal|"wide GIMP patterns installation when searching for\n"
-literal|"patterns."
+literal|"This folder is used to store user defined patterns.  "
+literal|"The GIMP checks this folder in addition to the system-wide "
+literal|"GIMP patterns installation when searching for patterns."
 argument_list|)
 block|,
 name|TREE_ITEM_MKDIR
@@ -693,9 +690,9 @@ literal|"plug-ins"
 block|,
 name|N_
 argument_list|(
-literal|"This folder is used to store user created, temporary,\n"
-literal|"or otherwise non-system-supported plug-ins.  The GIMP\n"
-literal|"checks this folder in addition to the system-wide\n"
+literal|"This folder is used to store user created, temporary, "
+literal|"or otherwise non-system-supported plug-ins.  The GIMP "
+literal|"checks this folder in addition to the system-wide "
 literal|"GIMP plug-in folder when searching for plug-ins."
 argument_list|)
 block|,
@@ -709,10 +706,10 @@ literal|"modules"
 block|,
 name|N_
 argument_list|(
-literal|"This folder is used to store user created, temporary,\n"
-literal|"or otherwise non-system-supported DLL modules.  The\n"
-literal|"GIMP checks this folder in addition to the system-wide\n"
-literal|"GIMP module folder when searching for modules to load\n"
+literal|"This folder is used to store user created, temporary, "
+literal|"or otherwise non-system-supported DLL modules.  The "
+literal|"GIMP checks this folder in addition to the system-wide "
+literal|"GIMP module folder when searching for modules to load "
 literal|"during initialization."
 argument_list|)
 block|,
@@ -726,11 +723,11 @@ literal|"environ"
 block|,
 name|N_
 argument_list|(
-literal|"This folder is used to store user created, temporary,\n"
-literal|"or otherwise non-system-supported additions to the\n"
-literal|"plug-in environment.  The GIMP checks this folder in\n"
-literal|"addition to the system-wide GIMP environment folder\n"
-literal|"when searching for plug-in environment modification\n"
+literal|"This folder is used to store user created, temporary, "
+literal|"or otherwise non-system-supported additions to the "
+literal|"plug-in environment.  The GIMP checks this folder in "
+literal|"addition to the system-wide GIMP environment folder "
+literal|"when searching for plug-in environment modification "
 literal|"files."
 argument_list|)
 block|,
@@ -744,9 +741,9 @@ literal|"scripts"
 block|,
 name|N_
 argument_list|(
-literal|"This folder is used to store user created and installed\n"
-literal|"scripts.  The GIMP checks this folder in addition to\n"
-literal|"the systemwide GIMP scripts folder when searching for\n"
+literal|"This folder is used to store user created and installed "
+literal|"scripts.  The GIMP checks this folder in addition to "
+literal|"the systemwide GIMP scripts folder when searching for "
 literal|"scripts."
 argument_list|)
 block|,
@@ -786,10 +783,10 @@ literal|"tmp"
 block|,
 name|N_
 argument_list|(
-literal|"This folder is used to temporarily store undo buffers\n"
-literal|"to reduce memory usage.  If The GIMP is unceremoniously\n"
-literal|"killed, files of the form: gimp<#>.<#> may persist in\n"
-literal|"this folder.  These files are useless across GIMP\n"
+literal|"This folder is used to temporarily store undo buffers "
+literal|"to reduce memory usage.  If The GIMP is unceremoniously "
+literal|"killed, files of the form: gimp<#>.<#> may persist in "
+literal|"this folder.  These files are useless across GIMP "
 literal|"sessions and can be destroyed with impunity."
 argument_list|)
 block|,
@@ -816,8 +813,7 @@ literal|"curves"
 block|,
 name|N_
 argument_list|(
-literal|"This folder is used to store parameter files for the\n"
-literal|"Curves tool."
+literal|"This folder is used to store parameter files for the Curves tool."
 argument_list|)
 block|,
 name|TREE_ITEM_MKDIR
@@ -830,8 +826,7 @@ literal|"levels"
 block|,
 name|N_
 argument_list|(
-literal|"This folder is used to store parameter files for the\n"
-literal|"Levels tool."
+literal|"This folder is used to store parameter files for the Levels tool."
 argument_list|)
 block|,
 name|TREE_ITEM_MKDIR
@@ -1185,7 +1180,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Installation successful.\n"
+literal|"Installation successful.  "
 literal|"Click \"Continue\" to proceed."
 argument_list|)
 argument_list|)
@@ -1202,7 +1197,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Installation failed.\n"
+literal|"Installation failed.  "
 literal|"Contact system administrator."
 argument_list|)
 argument_list|)
@@ -1747,6 +1742,16 @@ name|label
 argument_list|)
 argument_list|,
 name|GTK_JUSTIFY_LEFT
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_line_wrap
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2337,6 +2342,16 @@ argument_list|,
 name|GTK_JUSTIFY_RIGHT
 argument_list|)
 expr_stmt|;
+name|gtk_label_set_line_wrap
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|footer_label
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gtk_box_pack_end
 argument_list|(
 name|GTK_BOX
@@ -2541,6 +2556,16 @@ name|title_label
 argument_list|)
 argument_list|,
 name|GTK_JUSTIFY_LEFT
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_line_wrap
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|title_label
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2926,7 +2951,7 @@ argument_list|,
 name|_
 argument_list|(
 literal|"<b>The GIMP - GNU Image Manipulation Program</b>\n"
-literal|"Copyright (C) 1995-2003\n"
+literal|"Copyright (C) 1995-2004\n"
 literal|"Spencer Kimball, Peter Mattis and the GIMP Development Team."
 argument_list|)
 argument_list|)
@@ -2966,9 +2991,9 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"This program is free software; you can redistribute it and/or modify\n"
-literal|"it under the terms of the GNU General Public License as published by\n"
-literal|"the Free Software Foundation; either version 2 of the License, or\n"
+literal|"This program is free software; you can redistribute it and/or modify "
+literal|"it under the terms of the GNU General Public License as published by "
+literal|"the Free Software Foundation; either version 2 of the License, or "
 literal|"(at your option) any later version."
 argument_list|)
 argument_list|)
@@ -2982,9 +3007,9 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"This program is distributed in the hope that it will be useful,\n"
-literal|"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
-literal|"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
+literal|"This program is distributed in the hope that it will be useful, "
+literal|"but WITHOUT ANY WARRANTY; without even the implied warranty of "
+literal|"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. "
 literal|"See the GNU General Public License for more details."
 argument_list|)
 argument_list|)
@@ -2998,9 +3023,9 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"You should have received a copy of the GNU General Public License\n"
-literal|"along with this program; if not, write to the Free Software\n"
-literal|"Foundation, Inc., 59 Temple Place - Suite 330, Boston,\n"
+literal|"You should have received a copy of the GNU General Public License "
+literal|"along with this program; if not, write to the Free Software "
+literal|"Foundation, Inc., 59 Temple Place - Suite 330, Boston, "
 literal|"MA 02111-1307, USA."
 argument_list|)
 argument_list|)
@@ -3329,7 +3354,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"For a proper GIMP installation, a folder named\n"
+literal|"For a proper GIMP installation, a folder named "
 literal|"'<b>%s</b>' needs to be created."
 argument_list|)
 argument_list|,
@@ -3361,8 +3386,8 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"This folder will contain a number of important files.\n"
-literal|"Click on one of the files or folders in the tree\n"
+literal|"This folder will contain a number of important files.  "
+literal|"Click on one of the files or folders in the tree "
 literal|"to get more information about the selected item."
 argument_list|)
 argument_list|)
@@ -3666,6 +3691,16 @@ argument_list|,
 name|GTK_JUSTIFY_LEFT
 argument_list|)
 expr_stmt|;
+name|gtk_label_set_line_wrap
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gtk_misc_set_alignment
 argument_list|(
 name|GTK_MISC
@@ -3727,6 +3762,16 @@ name|label
 argument_list|)
 argument_list|,
 name|GTK_JUSTIFY_LEFT
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_line_wrap
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -3832,7 +3877,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Please wait while your personal\n"
+literal|"Please wait while your personal "
 literal|"GIMP folder is being created..."
 argument_list|)
 argument_list|,
@@ -3858,7 +3903,8 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Click \"Continue\" to accept the settings above."
+literal|"Click \"Continue\" to accept the "
+literal|"settings above."
 argument_list|)
 argument_list|,
 literal|24
@@ -3873,7 +3919,8 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"<b>For optimal GIMP performance, some settings may have to be adjusted.</b>"
+literal|"<b>For optimal GIMP performance, some settings may have to "
+literal|"be adjusted.</b>"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3896,7 +3943,8 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Click \"Continue\" to start The GIMP."
+literal|"Click \"Continue\" to start "
+literal|"The GIMP."
 argument_list|)
 argument_list|,
 literal|24
@@ -4728,9 +4776,10 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"GIMP uses a limited amount of memory to store image data, the so-called\n"
-literal|"\"Tile Cache\". You should adjust its size to fit into memory. Consider\n"
-literal|"the amount of memory used by other running processes."
+literal|"GIMP uses a limited amount of memory to store image data, "
+literal|"the so-called \"Tile Cache\".  You should adjust its size "
+literal|"to fit into memory.  Consider the amount of memory used by "
+literal|"other running processes."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4873,10 +4922,11 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"All image and undo data which doesn't fit into the Tile Cache will be\n"
-literal|"written to a swap file. This file should be located on a local filesystem\n"
-literal|"with enough free space (several hundred MB). On a UNIX system, you\n"
-literal|"may want to use the system-wide temp-dir (\"/tmp\" or \"/var/tmp\")."
+literal|"All image and undo data which doesn't fit into the Tile Cache "
+literal|"will be written to a swap file.  This file should be located "
+literal|"on a local filesystem with enough free space (several hundred "
+literal|"MB). On a UNIX system, you may want to use the system-wide "
+literal|"temp-dir (\"/tmp\" or \"/var/tmp\")."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5189,7 +5239,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"GIMP can obtain this information from the windowing system.\n"
+literal|"GIMP can obtain this information from the windowing system.  "
 literal|"However, usually this does not give useful values."
 argument_list|)
 argument_list|)
@@ -5295,6 +5345,49 @@ name|toggle
 argument_list|)
 expr_stmt|;
 comment|/*  manually  */
+name|vbox
+operator|=
+name|gtk_vbox_new
+argument_list|(
+name|FALSE
+argument_list|,
+literal|8
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|resolution_page
+argument_list|)
+argument_list|,
+name|vbox
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|vbox
+argument_list|)
+expr_stmt|;
+name|add_label
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Alternatively, you can set the monitor resolution manually."
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|hbox
 operator|=
 name|gtk_hbox_new
@@ -5308,7 +5401,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|resolution_page
+name|vbox
 argument_list|)
 argument_list|,
 name|hbox
@@ -5323,19 +5416,6 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|hbox
-argument_list|)
-expr_stmt|;
-name|add_label
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|hbox
-argument_list|)
-argument_list|,
-name|_
-argument_list|(
-literal|"Alternatively, you can set\nthe monitor resolution manually."
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|pixels_per_unit
@@ -5613,8 +5693,9 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"You can also press the \"Calibrate\" button to open a window\n"
-literal|"which lets you determine your monitor resolution interactively."
+literal|"You can also press the \"Calibrate\" button to open a window "
+literal|"which lets you determine your monitor resolution "
+literal|"interactively."
 argument_list|)
 argument_list|)
 expr_stmt|;
