@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* Sparkle --- image filter plug-in for The Gimp image manipulation program  * Copyright (C) 1996 by John Beale;  ported to Gimp by Michael J. Hammel;  * It has been optimized a little, bugfixed and modified by Martin Weber  * for additional functionality.  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * You can contact Michael at mjhammel@csn.net  * You can contact Martin at martin.weber@usa.net  * Note: set tabstops to 3 to make this more readable.  */
+comment|/* Sparkle --- image filter plug-in for The Gimp image manipulation program  * Copyright (C) 1996 by John Beale;  ported to Gimp by Michael J. Hammel;  * It has been optimized a little, bugfixed and modified by Martin Weber  * for additional functionality.  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * You can contact Michael at mjhammel@csn.net  * You can contact Martin at martweb@gmx.net  * Note: set tabstops to 3 to make this more readable.  */
 end_comment
 
 begin_comment
@@ -105,17 +105,6 @@ value|0.001
 end_define
 
 begin_define
-DECL|macro|SQR (a)
-define|#
-directive|define
-name|SQR
-parameter_list|(
-name|a
-parameter_list|)
-value|((a) * (a))
-end_define
-
-begin_define
 DECL|macro|NATURAL
 define|#
 directive|define
@@ -142,7 +131,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ace9b4d0108
+DECL|struct|__anon2b7707d40108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -205,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ace9b4d0208
+DECL|struct|__anon2b7707d40208
 block|{
 DECL|member|run
 name|gint
@@ -339,6 +328,10 @@ name|fspike
 parameter_list|(
 name|GPixelRgn
 modifier|*
+name|src_rgn
+parameter_list|,
+name|GPixelRgn
+modifier|*
 name|dest_rgn
 parameter_list|,
 name|gint
@@ -356,10 +349,10 @@ parameter_list|,
 name|gint
 name|y2
 parameter_list|,
-name|gdouble
+name|gint
 name|xr
 parameter_list|,
-name|gdouble
+name|gint
 name|yr
 parameter_list|,
 name|gint
@@ -488,7 +481,7 @@ comment|/* spike angle */
 literal|1.0
 block|,
 comment|/* spike density */
-literal|1.0
+literal|0.0
 block|,
 comment|/* opacity */
 literal|0.0
@@ -3560,13 +3553,13 @@ operator|(
 name|gdouble
 operator|)
 name|sum
-operator|/
+operator|>
+name|percentile
+operator|*
 operator|(
 name|gdouble
 operator|)
 name|total
-operator|>
-name|percentile
 condition|)
 block|{
 name|num_sparkles
@@ -4178,12 +4171,8 @@ name|svals
 operator|.
 name|flare_inten
 operator|*
-name|pow
-argument_list|(
 name|nfrac
-argument_list|,
-literal|1.0
-argument_list|)
+comment|/* pow (nfrac, 1.0) */
 expr_stmt|;
 comment|/* fspike im x,y intens rlength angle */
 if|if
@@ -4236,6 +4225,9 @@ block|{
 name|fspike
 argument_list|(
 operator|&
+name|src_rgn
+argument_list|,
+operator|&
 name|dest_rgn
 argument_list|,
 name|gray
@@ -4274,6 +4266,9 @@ expr_stmt|;
 comment|/* minor spikes */
 name|fspike
 argument_list|(
+operator|&
+name|src_rgn
+argument_list|,
 operator|&
 name|dest_rgn
 argument_list|,
@@ -4741,9 +4736,13 @@ literal|1.0
 operator|-
 name|val
 operator|*
+operator|(
+literal|1.0
+operator|-
 name|svals
 operator|.
 name|opacity
+operator|)
 operator|)
 expr_stmt|;
 else|else
@@ -4757,9 +4756,13 @@ index|[
 name|b
 index|]
 operator|*
+operator|(
+literal|1.0
+operator|-
 name|svals
 operator|.
 name|opacity
+operator|)
 expr_stmt|;
 if|if
 condition|(
@@ -4779,13 +4782,9 @@ literal|1.0
 operator|-
 name|val
 operator|*
-operator|(
-literal|1.0
-operator|-
 name|svals
 operator|.
 name|opacity
-operator|)
 expr_stmt|;
 name|new
 operator|+=
@@ -4842,9 +4841,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|fspike (GPixelRgn * dest_rgn,gint gray,gint x1,gint y1,gint x2,gint y2,gdouble xr,gdouble yr,gint tile_width,gint tile_height,gdouble inten,gdouble length,gdouble angle)
+DECL|function|fspike (GPixelRgn * src_rgn,GPixelRgn * dest_rgn,gint gray,gint x1,gint y1,gint x2,gint y2,gint xr,gint yr,gint tile_width,gint tile_height,gdouble inten,gdouble length,gdouble angle)
 name|fspike
 parameter_list|(
+name|GPixelRgn
+modifier|*
+name|src_rgn
+parameter_list|,
 name|GPixelRgn
 modifier|*
 name|dest_rgn
@@ -4864,10 +4867,10 @@ parameter_list|,
 name|gint
 name|y2
 parameter_list|,
-name|gdouble
+name|gint
 name|xr
 parameter_list|,
-name|gdouble
+name|gint
 name|yr
 parameter_list|,
 name|gint
@@ -4938,11 +4941,6 @@ name|gint
 name|bytes
 decl_stmt|;
 name|gint
-name|x
-decl_stmt|,
-name|y
-decl_stmt|;
-name|gint
 name|ok
 decl_stmt|;
 name|guchar
@@ -4994,37 +4992,15 @@ name|i
 operator|++
 control|)
 block|{
-name|x
-operator|=
-call|(
-name|int
-call|)
-argument_list|(
-name|xr
-operator|+
-literal|0.5
-argument_list|)
-expr_stmt|;
-name|y
-operator|=
-call|(
-name|int
-call|)
-argument_list|(
-name|yr
-operator|+
-literal|0.5
-argument_list|)
-expr_stmt|;
 name|gimp_pixel_rgn_get_pixel
 argument_list|(
 name|dest_rgn
 argument_list|,
 name|pixel
 argument_list|,
-name|x
+name|xr
 argument_list|,
-name|y
+name|yr
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -5178,6 +5154,8 @@ condition|)
 block|{
 name|r
 operator|=
+literal|255
+operator|-
 name|color
 index|[
 literal|0
@@ -5185,6 +5163,8 @@ index|]
 expr_stmt|;
 name|g
 operator|=
+literal|255
+operator|-
 name|color
 index|[
 literal|1
@@ -5192,12 +5172,14 @@ index|]
 expr_stmt|;
 name|b
 operator|=
+literal|255
+operator|-
 name|color
 index|[
 literal|2
 index|]
 expr_stmt|;
-name|gimp_rgb_to_hls
+name|gimp_rgb_to_hsv
 argument_list|(
 operator|&
 name|r
@@ -5238,11 +5220,11 @@ if|if
 condition|(
 name|r
 operator|>=
-literal|255.0
+literal|255
 condition|)
 name|r
 operator|-=
-literal|255.0
+literal|255
 expr_stmt|;
 elseif|else
 if|if
@@ -5253,7 +5235,7 @@ literal|0
 condition|)
 name|r
 operator|+=
-literal|255.0
+literal|255
 expr_stmt|;
 name|b
 operator|+=
@@ -5263,7 +5245,7 @@ operator|.
 name|random_saturation
 operator|*
 operator|(
-literal|2
+literal|2.0
 operator|*
 operator|(
 name|gdouble
@@ -5286,13 +5268,13 @@ if|if
 condition|(
 name|b
 operator|>
-literal|1.0
+literal|255
 condition|)
 name|b
 operator|=
-literal|1.0
+literal|255
 expr_stmt|;
-name|gimp_hls_to_rgb
+name|gimp_hsv_to_rgb
 argument_list|(
 operator|&
 name|r
@@ -5309,6 +5291,8 @@ index|[
 literal|0
 index|]
 operator|=
+literal|255
+operator|-
 name|r
 expr_stmt|;
 name|color
@@ -5316,6 +5300,8 @@ index|[
 literal|1
 index|]
 operator|=
+literal|255
+operator|-
 name|g
 expr_stmt|;
 name|color
@@ -5323,6 +5309,8 @@ index|[
 literal|2
 index|]
 operator|=
+literal|255
+operator|-
 name|b
 expr_stmt|;
 block|}
@@ -5354,12 +5342,20 @@ argument_list|)
 expr_stmt|;
 name|xrt
 operator|=
+operator|(
+name|gdouble
+operator|)
 name|xr
 expr_stmt|;
+comment|/* (gdouble) is needed because some */
 name|yrt
 operator|=
+operator|(
+name|gdouble
+operator|)
 name|yr
 expr_stmt|;
+comment|/* compilers optimize too much otherwise */
 name|rpos
 operator|=
 literal|0.2
@@ -5462,7 +5458,7 @@ name|y2
 argument_list|,
 name|xrt
 operator|+
-literal|1
+literal|1.0
 argument_list|,
 name|yrt
 argument_list|,
@@ -5503,11 +5499,11 @@ name|y2
 argument_list|,
 name|xrt
 operator|+
-literal|1
+literal|1.0
 argument_list|,
 name|yrt
 operator|+
-literal|1
+literal|1.0
 argument_list|,
 name|tile_width
 argument_list|,
@@ -5548,7 +5544,7 @@ name|xrt
 argument_list|,
 name|yrt
 operator|+
-literal|1
+literal|1.0
 argument_list|,
 name|tile_width
 argument_list|,

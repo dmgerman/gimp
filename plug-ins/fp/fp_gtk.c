@@ -59,12 +59,6 @@ directive|include
 file|"fp.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"fp_hsv.h"
-end_include
-
 begin_decl_stmt
 DECL|variable|AW
 name|AdvancedWindow
@@ -246,7 +240,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon292b22fb0108
+DECL|struct|__anon2b2eed800108
 block|{
 DECL|member|bna
 name|GtkWidget

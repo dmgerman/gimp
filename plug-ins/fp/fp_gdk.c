@@ -35,12 +35,6 @@ directive|include
 file|"fp.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"fp_hsv.h"
-end_include
-
 begin_decl_stmt
 specifier|extern
 name|AdvancedWindow
