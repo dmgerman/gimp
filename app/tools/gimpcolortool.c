@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291aa58f0103
+DECL|enum|__anon2c62f5850103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -1307,6 +1307,8 @@ operator|(
 name|x
 operator|+
 name|width
+operator|-
+literal|1
 operator|)
 operator|||
 name|color_tool
@@ -1323,6 +1325,8 @@ operator|(
 name|y
 operator|+
 name|height
+operator|-
+literal|1
 operator|)
 operator|)
 condition|)
@@ -1583,7 +1587,7 @@ operator|<
 literal|0
 operator|||
 name|tx
-operator|>=
+operator|>
 name|shell
 operator|->
 name|disp_width
@@ -1593,7 +1597,7 @@ operator|<
 literal|0
 operator|||
 name|ty
-operator|>=
+operator|>
 name|shell
 operator|->
 name|disp_height
@@ -1633,7 +1637,7 @@ name|color_tool
 operator|->
 name|sample_point_x
 operator|=
-name|RINT
+name|floor
 argument_list|(
 name|coords
 operator|->
@@ -1644,7 +1648,7 @@ name|color_tool
 operator|->
 name|sample_point_y
 operator|=
-name|RINT
+name|floor
 argument_list|(
 name|coords
 operator|->
@@ -1685,6 +1689,8 @@ operator|(
 name|x
 operator|+
 name|width
+operator|-
+literal|1
 operator|)
 operator|||
 name|color_tool
@@ -1701,6 +1707,8 @@ operator|(
 name|y
 operator|+
 name|height
+operator|-
+literal|1
 operator|)
 operator|)
 condition|)
@@ -2282,6 +2290,8 @@ argument_list|,
 name|color_tool
 operator|->
 name|sample_point_y
+operator|+
+literal|0.5
 argument_list|,
 name|draw_tool
 operator|->
@@ -2294,6 +2304,8 @@ argument_list|,
 name|color_tool
 operator|->
 name|sample_point_y
+operator|+
+literal|0.5
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2305,12 +2317,16 @@ argument_list|,
 name|color_tool
 operator|->
 name|sample_point_x
+operator|+
+literal|0.5
 argument_list|,
 literal|0
 argument_list|,
 name|color_tool
 operator|->
 name|sample_point_x
+operator|+
+literal|0.5
 argument_list|,
 name|draw_tool
 operator|->
