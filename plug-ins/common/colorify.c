@@ -240,7 +240,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fc8cd20108
+DECL|struct|__anon2a9985530108
 block|{
 DECL|member|color
 name|guchar
@@ -258,7 +258,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fc8cd20208
+DECL|struct|__anon2a9985530208
 block|{
 DECL|member|run
 name|gint
@@ -273,7 +273,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fc8cd20308
+DECL|struct|__anon2a9985530308
 block|{
 DECL|member|red
 name|guchar
@@ -1140,6 +1140,20 @@ operator|*
 name|bpp
 argument_list|)
 expr_stmt|;
+name|gimp_tile_cache_ntiles
+argument_list|(
+literal|2
+operator|*
+operator|(
+name|sel_width
+operator|/
+name|gimp_tile_width
+argument_list|()
+operator|)
+operator|+
+literal|1
+argument_list|)
+expr_stmt|;
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -1239,6 +1253,9 @@ operator|)
 operator|++
 name|progress
 operator|/
+operator|(
+name|double
+operator|)
 name|sel_height
 argument_list|)
 expr_stmt|;

@@ -286,7 +286,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6931d40108
+DECL|struct|__anon291cbf290108
 block|{
 DECL|member|r
 DECL|member|g
@@ -375,7 +375,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6931d40208
+DECL|struct|__anon291cbf290208
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -4630,6 +4630,11 @@ argument_list|,
 name|RGB
 argument_list|)
 expr_stmt|;
+name|gimp_image_undo_disable
+argument_list|(
+name|new_image_id
+argument_list|)
+expr_stmt|;
 comment|/* Create a "normal" layer */
 comment|/* ======================= */
 name|new_layer_id
@@ -4902,6 +4907,11 @@ expr_stmt|;
 name|gimp_drawable_detach
 argument_list|(
 name|output_drawable
+argument_list|)
+expr_stmt|;
+name|gimp_image_undo_enable
+argument_list|(
+name|new_image_id
 argument_list|)
 expr_stmt|;
 block|}
