@@ -59,7 +59,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimp.h>
+file|"gtk/gtk.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpui.h"
 end_include
 
 begin_comment
@@ -119,7 +131,9 @@ begin_function_decl
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 
@@ -214,24 +228,10 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|guint32
-name|get_long
+name|void
+name|init_gtk
 parameter_list|(
-name|FILE
-modifier|*
-name|file
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|gchar
-name|get_char
-parameter_list|(
-name|FILE
-modifier|*
-name|file
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -304,22 +304,7 @@ literal|"raw_filename"
 block|,
 literal|"The name entered"
 block|}
-block|, 	}
-decl_stmt|;
-specifier|static
-name|GParamDef
-name|load_return_vals
-index|[]
-init|=
-block|{
-block|{
-name|PARAM_IMAGE
-block|,
-literal|"image"
-block|,
-literal|"Output image"
-block|}
-block|, 	}
+block|,   }
 decl_stmt|;
 specifier|static
 name|int
@@ -337,6 +322,21 @@ index|[
 literal|0
 index|]
 argument_list|)
+decl_stmt|;
+specifier|static
+name|GParamDef
+name|load_return_vals
+index|[]
+init|=
+block|{
+block|{
+name|PARAM_IMAGE
+block|,
+literal|"image"
+block|,
+literal|"Output image"
+block|}
+block|,   }
 decl_stmt|;
 specifier|static
 name|int
@@ -499,9 +499,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
 specifier|static
 name|void
+DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
 name|char
@@ -543,6 +543,14 @@ name|STATUS_SUCCESS
 decl_stmt|;
 name|gint32
 name|image_ID
+decl_stmt|;
+name|gint32
+name|drawable_ID
+decl_stmt|;
+name|GimpExportReturnType
+name|export
+init|=
+name|EXPORT_CANCEL
 decl_stmt|;
 name|run_mode
 operator|=
@@ -687,6 +695,88 @@ operator|==
 literal|0
 condition|)
 block|{
+name|image_ID
+operator|=
+name|param
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|drawable_ID
+operator|=
+name|param
+index|[
+literal|2
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+comment|/*  eventually export the image */
+switch|switch
+condition|(
+name|run_mode
+condition|)
+block|{
+case|case
+name|RUN_INTERACTIVE
+case|:
+case|case
+name|RUN_WITH_LAST_VALS
+case|:
+name|init_gtk
+argument_list|()
+expr_stmt|;
+name|export
+operator|=
+name|gimp_export_image
+argument_list|(
+operator|&
+name|image_ID
+argument_list|,
+operator|&
+name|drawable_ID
+argument_list|,
+literal|"PIX"
+argument_list|,
+operator|(
+name|CAN_HANDLE_RGB
+operator||
+name|CAN_HANDLE_GRAY
+operator||
+name|CAN_HANDLE_ALPHA
+operator|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|export
+operator|==
+name|EXPORT_CANCEL
+condition|)
+block|{
+name|values
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|=
+name|STATUS_EXECUTION_ERROR
+expr_stmt|;
+return|return;
+block|}
+break|break;
+default|default:
+break|break;
+block|}
 if|if
 condition|(
 name|status
@@ -708,23 +798,9 @@ name|data
 operator|.
 name|d_string
 argument_list|,
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
+name|image_ID
 argument_list|,
-name|param
-index|[
-literal|2
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
+name|drawable_ID
 argument_list|)
 condition|)
 block|{
@@ -745,6 +821,17 @@ name|d_status
 operator|=
 name|status
 expr_stmt|;
+if|if
+condition|(
+name|export
+operator|==
+name|EXPORT_EXPORT
+condition|)
+name|gimp_image_delete
+argument_list|(
+name|image_ID
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -758,9 +845,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|get_short (FILE * file)
 specifier|static
 name|guint16
+DECL|function|get_short (FILE * file)
 name|get_short
 parameter_list|(
 name|FILE
@@ -809,9 +896,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|put_short (guint16 value,FILE * file)
 specifier|static
 name|void
+DECL|function|put_short (guint16 value,FILE * file)
 name|put_short
 parameter_list|(
 name|guint16
@@ -872,111 +959,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|get_long (FILE * file)
-specifier|static
-name|guint32
-name|get_long
-parameter_list|(
-name|FILE
-modifier|*
-name|file
-parameter_list|)
-comment|/*   * Description:  *     Reads a 16-bit integer from a file in such a way that the machine's  *     bit ordering should not matter   */
-block|{
-name|guchar
-name|buf
-index|[
-literal|4
-index|]
-decl_stmt|;
-name|fread
-argument_list|(
-name|buf
-argument_list|,
-literal|4
-argument_list|,
-literal|1
-argument_list|,
-name|file
-argument_list|)
-expr_stmt|;
-return|return
-operator|(
-name|buf
-index|[
-literal|0
-index|]
-operator|<<
-literal|24
-operator|)
-operator|+
-operator|(
-name|buf
-index|[
-literal|1
-index|]
-operator|<<
-literal|16
-operator|)
-operator|+
-operator|(
-name|buf
-index|[
-literal|2
-index|]
-operator|<<
-literal|8
-operator|)
-operator|+
-operator|(
-name|buf
-index|[
-literal|3
-index|]
-operator|<<
-literal|0
-operator|)
-return|;
-block|}
-end_function
-
-begin_function
-DECL|function|get_char (FILE * file)
-specifier|static
-name|gchar
-name|get_char
-parameter_list|(
-name|FILE
-modifier|*
-name|file
-parameter_list|)
-comment|/*   * Description:  *     Reads a byte from a file.  Provided for convenience;   */
-block|{
-name|gchar
-name|result
-decl_stmt|;
-name|fread
-argument_list|(
-operator|&
-name|result
-argument_list|,
-literal|1
-argument_list|,
-literal|1
-argument_list|,
-name|file
-argument_list|)
-expr_stmt|;
-return|return
-name|result
-return|;
-block|}
-end_function
-
-begin_function
-DECL|function|load_image (char * filename)
 specifier|static
 name|gint32
+DECL|function|load_image (char * filename)
 name|load_image
 parameter_list|(
 name|char
@@ -1701,9 +1686,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|save_image (char * filename,gint32 image_ID,gint32 drawable_ID)
 specifier|static
 name|gint
+DECL|function|save_image (char * filename,gint32 image_ID,gint32 drawable_ID)
 name|save_image
 parameter_list|(
 name|char
@@ -2572,6 +2557,65 @@ operator|(
 literal|1
 operator|)
 return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|init_gtk (void)
+name|init_gtk
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|gchar
+modifier|*
+modifier|*
+name|argv
+decl_stmt|;
+name|gint
+name|argc
+decl_stmt|;
+name|argc
+operator|=
+literal|1
+expr_stmt|;
+name|argv
+operator|=
+name|g_new
+argument_list|(
+name|gchar
+operator|*
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+name|argv
+index|[
+literal|0
+index|]
+operator|=
+name|g_strdup
+argument_list|(
+literal|"pix"
+argument_list|)
+expr_stmt|;
+name|gtk_init
+argument_list|(
+operator|&
+name|argc
+argument_list|,
+operator|&
+name|argv
+argument_list|)
+expr_stmt|;
+name|gtk_rc_parse
+argument_list|(
+name|gimp_gtkrc
+argument_list|()
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
