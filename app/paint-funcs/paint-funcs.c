@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5f28ac0103
+DECL|enum|__anon2af29a9f0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -21677,6 +21677,8 @@ name|buf
 index|[
 name|MAX
 argument_list|(
+name|MAX
+argument_list|(
 name|src1
 operator|->
 name|w
@@ -21684,6 +21686,15 @@ operator|*
 name|src1
 operator|->
 name|bytes
+argument_list|,
+name|src2
+operator|->
+name|w
+operator|*
+name|src2
+operator|->
+name|bytes
+argument_list|)
 argument_list|,
 name|dest
 operator|->
