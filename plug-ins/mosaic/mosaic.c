@@ -182,7 +182,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3857fc0108
+DECL|struct|__anon2afbaa700108
 block|{
 DECL|member|x
 DECL|member|y
@@ -200,7 +200,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3857fc0208
+DECL|struct|__anon2afbaa700208
 block|{
 DECL|member|npts
 name|gint
@@ -222,7 +222,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3857fc0308
+DECL|struct|__anon2afbaa700308
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -251,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3857fc0408
+DECL|struct|__anon2afbaa700408
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -310,7 +310,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3857fc0508
+DECL|struct|__anon2afbaa700508
 block|{
 DECL|member|run
 name|gint
@@ -3279,7 +3279,10 @@ argument_list|(
 literal|"Tiling Primitives"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|mvals

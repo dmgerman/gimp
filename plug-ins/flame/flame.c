@@ -524,7 +524,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon292132df0108
+DECL|struct|__anon2c072c650108
 block|{
 DECL|member|randomize
 name|gint
@@ -2009,6 +2009,7 @@ name|GtkFileSelection
 modifier|*
 name|fs
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -3633,7 +3634,10 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|menu_cb
+argument_list|)
 argument_list|,
 operator|&
 name|config
@@ -5971,9 +5975,9 @@ operator|)
 name|d
 argument_list|)
 expr_stmt|;
-name|gtk_menu_prepend
+name|gtk_menu_shell_prepend
 argument_list|(
-name|GTK_MENU
+name|GTK_MENU_SHELL
 argument_list|(
 name|menu
 argument_list|)
@@ -6034,9 +6038,9 @@ operator|)
 name|GRADIENT_DRAWABLE
 argument_list|)
 expr_stmt|;
-name|gtk_menu_prepend
+name|gtk_menu_shell_prepend
 argument_list|(
-name|GTK_MENU
+name|GTK_MENU_SHELL
 argument_list|(
 name|menu
 argument_list|)

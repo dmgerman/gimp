@@ -126,7 +126,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1481440103
+DECL|enum|__anon274e92780103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -146,7 +146,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1481440203
+DECL|enum|__anon274e92780203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1481440308
+DECL|struct|__anon274e92780308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -184,7 +184,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2b148144040a
+DECL|union|__anon274e9278040a
 block|{
 DECL|member|d
 name|gdouble
@@ -213,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1481440508
+DECL|struct|__anon274e92780508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1481440608
+DECL|struct|__anon274e92780608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -278,7 +278,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1481440708
+DECL|struct|__anon274e92780708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -314,7 +314,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1481440808
+DECL|struct|__anon274e92780808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -381,7 +381,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1481440908
+DECL|struct|__anon274e92780908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -553,7 +553,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1481440a08
+DECL|struct|__anon274e92780a08
 block|{
 DECL|member|run
 name|gint
@@ -6105,9 +6105,9 @@ literal|"Move"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_menu_append
+name|gtk_menu_shell_append
 argument_list|(
-name|GTK_MENU
+name|GTK_MENU_SHELL
 argument_list|(
 name|ifsDesign
 operator|->
@@ -6174,9 +6174,9 @@ literal|"Rotate/Scale"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_menu_append
+name|gtk_menu_shell_append
 argument_list|(
-name|GTK_MENU
+name|GTK_MENU_SHELL
 argument_list|(
 name|ifsDesign
 operator|->
@@ -6243,9 +6243,9 @@ literal|"Stretch"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_menu_append
+name|gtk_menu_shell_append
 argument_list|(
-name|GTK_MENU
+name|GTK_MENU_SHELL
 argument_list|(
 name|ifsDesign
 operator|->
@@ -6308,9 +6308,9 @@ operator|=
 name|gtk_menu_item_new
 argument_list|()
 expr_stmt|;
-name|gtk_menu_append
+name|gtk_menu_shell_append
 argument_list|(
-name|GTK_MENU
+name|GTK_MENU_SHELL
 argument_list|(
 name|ifsDesign
 operator|->
@@ -6335,9 +6335,9 @@ literal|"Select All"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_menu_append
+name|gtk_menu_shell_append
 argument_list|(
-name|GTK_MENU
+name|GTK_MENU_SHELL
 argument_list|(
 name|ifsDesign
 operator|->
@@ -6396,9 +6396,9 @@ literal|"Recompute Center"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_menu_append
+name|gtk_menu_shell_append
 argument_list|(
-name|GTK_MENU
+name|GTK_MENU_SHELL
 argument_list|(
 name|ifsDesign
 operator|->
@@ -6457,9 +6457,9 @@ literal|"Undo"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_menu_append
+name|gtk_menu_shell_append
 argument_list|(
-name|GTK_MENU
+name|GTK_MENU_SHELL
 argument_list|(
 name|ifsDesign
 operator|->
@@ -6518,9 +6518,9 @@ literal|"Redo"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_menu_append
+name|gtk_menu_shell_append
 argument_list|(
-name|GTK_MENU
+name|GTK_MENU_SHELL
 argument_list|(
 name|ifsDesign
 operator|->

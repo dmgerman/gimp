@@ -2920,7 +2920,10 @@ name|FALSE
 argument_list|,
 name|NULL
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|explorer_radio_update
+argument_list|)
 argument_list|,
 operator|&
 name|wvals
@@ -4108,7 +4111,10 @@ argument_list|(
 literal|"Red"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|explorer_radio_update
+argument_list|)
 argument_list|,
 operator|&
 name|wvals
@@ -4356,7 +4362,10 @@ argument_list|(
 literal|"Green"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|explorer_radio_update
+argument_list|)
 argument_list|,
 operator|&
 name|wvals
@@ -4604,7 +4613,10 @@ argument_list|(
 literal|"Blue"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|explorer_radio_update
+argument_list|)
 argument_list|,
 operator|&
 name|wvals
@@ -8728,6 +8740,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|filenamebuf
@@ -8752,6 +8765,9 @@ expr_stmt|;
 comment|/* Get the name */
 if|if
 condition|(
+operator|!
+name|filenamebuf
+operator|||
 name|strlen
 argument_list|(
 name|filenamebuf

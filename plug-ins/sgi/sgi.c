@@ -2403,7 +2403,10 @@ argument_list|(
 literal|"Compression Type"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|compression

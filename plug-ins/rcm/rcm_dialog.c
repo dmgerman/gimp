@@ -170,8 +170,9 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
+specifier|static
 name|void
-DECL|function|rcm_create_one_preview (GtkWidget ** preview,GtkWidget ** frame,int previewWidth,int previewHeight)
+DECL|function|rcm_create_one_preview (GtkWidget ** preview,GtkWidget ** frame,gint previewWidth,gint previewHeight)
 name|rcm_create_one_preview
 parameter_list|(
 name|GtkWidget
@@ -184,10 +185,10 @@ modifier|*
 modifier|*
 name|frame
 parameter_list|,
-name|int
+name|gint
 name|previewWidth
 parameter_list|,
-name|int
+name|gint
 name|previewHeight
 parameter_list|)
 block|{
@@ -282,6 +283,7 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
+specifier|static
 name|GtkWidget
 modifier|*
 DECL|function|rcm_create_previews (void)
@@ -589,8 +591,9 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
+specifier|static
 name|void
-DECL|function|rcm_create_pixmap_button (GtkWidget ** label,GtkWidget ** xpm_button,GtkWidget ** label_box,GtkSignalFunc callback,gpointer data,gchar * text,GtkWidget * parent,gint pos)
+DECL|function|rcm_create_pixmap_button (GtkWidget ** label,GtkWidget ** xpm_button,GtkWidget ** label_box,GCallback callback,gpointer data,const gchar * text,GtkWidget * parent,gint pos)
 name|rcm_create_pixmap_button
 parameter_list|(
 name|GtkWidget
@@ -608,12 +611,13 @@ modifier|*
 modifier|*
 name|label_box
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|callback
 parameter_list|,
 name|gpointer
 name|data
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|text
@@ -765,6 +769,7 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|rcm_set_pixmaps (RcmCircle * circle)
 name|rcm_set_pixmaps
@@ -850,6 +855,7 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
+specifier|static
 name|RcmCircle
 modifier|*
 DECL|function|rcm_create_one_circle (gint height,gchar * label_content)
@@ -1176,7 +1182,10 @@ argument_list|,
 operator|&
 name|label_box
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|rcm_cw_ccw
+argument_list|)
 argument_list|,
 name|st
 argument_list|,
@@ -1240,7 +1249,10 @@ argument_list|,
 operator|&
 name|label_box
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|rcm_a_to_b
+argument_list|)
 argument_list|,
 name|st
 argument_list|,
@@ -1283,7 +1295,10 @@ argument_list|,
 operator|&
 name|label_box
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|rcm_360_degrees
+argument_list|)
 argument_list|,
 name|st
 argument_list|,
@@ -1873,6 +1888,7 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
+specifier|static
 name|GtkWidget
 modifier|*
 DECL|function|rcm_create_main (void)
@@ -1986,6 +2002,7 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
+specifier|static
 name|RcmGray
 modifier|*
 DECL|function|rcm_create_gray (void)
@@ -3383,6 +3400,7 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
+specifier|static
 name|GtkWidget
 modifier|*
 DECL|function|rcm_create_misc (void)
@@ -3927,9 +3945,9 @@ name|item
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_menu_append
+name|gtk_menu_shell_append
 argument_list|(
-name|GTK_MENU
+name|GTK_MENU_SHELL
 argument_list|(
 name|menu
 argument_list|)
@@ -3981,9 +3999,9 @@ name|item
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_menu_append
+name|gtk_menu_shell_append
 argument_list|(
-name|GTK_MENU
+name|GTK_MENU_SHELL
 argument_list|(
 name|menu
 argument_list|)
@@ -4040,9 +4058,9 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
-name|gtk_menu_append
+name|gtk_menu_shell_append
 argument_list|(
-name|GTK_MENU
+name|GTK_MENU_SHELL
 argument_list|(
 name|menu
 argument_list|)

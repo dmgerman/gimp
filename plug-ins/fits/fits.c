@@ -79,7 +79,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d8cbe40108
+DECL|struct|__anon291314700108
 block|{
 DECL|member|replace
 name|gint
@@ -105,7 +105,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d8cbe40208
+DECL|struct|__anon291314700208
 block|{
 DECL|member|run
 name|gint
@@ -4561,7 +4561,10 @@ argument_list|(
 literal|"BLANK/NaN Pixel Replacement"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|plvals
@@ -4634,7 +4637,10 @@ argument_list|(
 literal|"Pixel Value Scaling"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|plvals
@@ -4707,7 +4713,10 @@ argument_list|(
 literal|"Image Composing"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|plvals

@@ -2016,7 +2016,10 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|lightmenu_callback
+argument_list|)
 argument_list|,
 operator|&
 name|mapvals
@@ -4489,7 +4492,10 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|mapmenu2_callback
+argument_list|)
 argument_list|,
 operator|&
 name|mapvals
