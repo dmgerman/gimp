@@ -66,7 +66,7 @@ comment|/* internal structures */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b424c590108
+DECL|struct|__anon2743f9630108
 typedef|typedef
 struct|struct
 block|{
@@ -1233,55 +1233,10 @@ argument_list|,
 name|_
 argument_list|(
 literal|"# GIMP unitrc\n"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|fprintf
-argument_list|(
-name|fp
-argument_list|,
-name|_
-argument_list|(
 literal|"# This file contains your user unit database. You can\n"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|fprintf
-argument_list|(
-name|fp
-argument_list|,
-name|_
-argument_list|(
 literal|"# modify this list with the unit editor. You are not\n"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|fprintf
-argument_list|(
-name|fp
-argument_list|,
-name|_
-argument_list|(
 literal|"# supposed to edit it manually, but of course you can do.\n"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|fprintf
-argument_list|(
-name|fp
-argument_list|,
-name|_
-argument_list|(
 literal|"# This file will be entirely rewritten every time you\n"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|fprintf
-argument_list|(
-name|fp
-argument_list|,
-name|_
-argument_list|(
 literal|"# quit the gimp.\n\n"
 argument_list|)
 argument_list|)

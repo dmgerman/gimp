@@ -483,15 +483,6 @@ argument_list|,
 name|_
 argument_list|(
 literal|"# GIMP parasiterc\n"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|fprintf
-argument_list|(
-name|fp
-argument_list|,
-name|_
-argument_list|(
 literal|"# This file will be entirely rewritten every time you quit the gimp.\n\n"
 argument_list|)
 argument_list|)
