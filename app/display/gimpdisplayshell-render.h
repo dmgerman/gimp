@@ -6,14 +6,30 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_DISPLAY_RENDER_H__
+name|__GIMP_DISPLAY_SHELL_RENDER_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_DISPLAY_RENDER_H__
+DECL|macro|__GIMP_DISPLAY_SHELL_RENDER_H__
 define|#
 directive|define
-name|__GIMP_DISPLAY_RENDER_H__
+name|__GIMP_DISPLAY_SHELL_RENDER_H__
+end_define
+
+begin_define
+DECL|macro|GIMP_DISPLAY_SHELL_RENDER_BUF_WIDTH
+define|#
+directive|define
+name|GIMP_DISPLAY_SHELL_RENDER_BUF_WIDTH
+value|256
+end_define
+
+begin_define
+DECL|macro|GIMP_DISPLAY_SHELL_RENDER_BUF_HEIGHT
+define|#
+directive|define
+name|GIMP_DISPLAY_SHELL_RENDER_BUF_HEIGHT
+value|256
 end_define
 
 begin_comment
@@ -44,11 +60,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|render_image
+name|gimp_display_shell_render
 parameter_list|(
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 parameter_list|,
 name|gint
 name|x
@@ -115,7 +131,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_DISPLAY_RENDER_H__  */
+comment|/*  __GIMP_DISPLAY_SHELL_RENDER_H__  */
 end_comment
 
 end_unit

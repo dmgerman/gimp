@@ -78,27 +78,8 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gximage.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
 end_include
-
-begin_define
-DECL|macro|MAX_PREVIEW_SIZE
-define|#
-directive|define
-name|MAX_PREVIEW_SIZE
-value|256
-end_define
-
-begin_comment
-DECL|macro|MAX_PREVIEW_SIZE
-comment|/* EEK */
-end_comment
 
 begin_typedef
 DECL|typedef|RenderInfo
@@ -130,10 +111,10 @@ DECL|struct|_RenderInfo
 struct|struct
 name|_RenderInfo
 block|{
-DECL|member|gdisp
-name|GimpDisplay
+DECL|member|shell
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 decl_stmt|;
 DECL|member|src_tiles
 name|TileManager
@@ -441,7 +422,7 @@ name|g_new
 argument_list|(
 name|guchar
 argument_list|,
-name|GXIMAGE_WIDTH
+name|GIMP_DISPLAY_SHELL_RENDER_BUF_WIDTH
 operator|*
 name|MAX_CHANNELS
 argument_list|)
@@ -635,6 +616,12 @@ argument_list|(
 name|render_temp_buf
 argument_list|)
 expr_stmt|;
+DECL|macro|MAX_PREVIEW_SIZE
+define|#
+directive|define
+name|MAX_PREVIEW_SIZE
+value|256
+comment|/* EEK */
 comment|/*  calculate check buffer for previews  */
 if|if
 condition|(
@@ -926,9 +913,9 @@ name|RenderInfo
 modifier|*
 name|info
 parameter_list|,
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 parameter_list|,
 name|gint
 name|x
@@ -1039,12 +1026,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|render_image (GimpDisplay * gdisp,gint x,gint y,gint w,gint h)
-name|render_image
+DECL|function|gimp_display_shell_render (GimpDisplayShell * shell,gint x,gint y,gint w,gint h)
+name|gimp_display_shell_render
 parameter_list|(
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 parameter_list|,
 name|gint
 name|x
@@ -1065,12 +1052,21 @@ decl_stmt|;
 name|gint
 name|image_type
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|DISPLAY_FILTERS
+name|GList
+modifier|*
+name|list
+decl_stmt|;
+endif|#
+directive|endif
 name|render_image_init_info
 argument_list|(
 operator|&
 name|info
 argument_list|,
-name|gdisp
+name|shell
 argument_list|,
 name|x
 argument_list|,
@@ -1085,6 +1081,8 @@ name|image_type
 operator|=
 name|gimp_image_projection_type
 argument_list|(
+name|shell
+operator|->
 name|gdisp
 operator|->
 name|gimage
@@ -1111,6 +1109,8 @@ literal|"unknown gimage projection type: %d"
 argument_list|,
 name|gimp_image_projection_type
 argument_list|(
+name|shell
+operator|->
 name|gdisp
 operator|->
 name|gimage
@@ -1177,6 +1177,67 @@ call|)
 argument_list|(
 operator|&
 name|info
+argument_list|)
+expr_stmt|;
+if|#
+directive|if
+literal|0
+ifdef|#
+directive|ifdef
+name|DISPLAY_FILTERS
+comment|/*  apply filters to the rendered projection  */
+block|for (list = shell->cd_list; list; list = g_list_next (list))     {       ColorDisplayNode *node = (ColorDisplayNode *) list->data;        node->cd_convert (node->cd_ID,                         shell->render_buf,                         w, h,                         3,                         3 * GIMP_DISPLAY_SHELL_RENDER_BUF_WIDTH);     }
+endif|#
+directive|endif
+comment|/* DISPLAY_FILTERS */
+endif|#
+directive|endif
+comment|/*  put it to the screen  */
+name|gdk_draw_rgb_image_dithalign
+argument_list|(
+name|shell
+operator|->
+name|canvas
+operator|->
+name|window
+argument_list|,
+name|shell
+operator|->
+name|render_gc
+argument_list|,
+name|x
+operator|+
+name|shell
+operator|->
+name|disp_xoffset
+argument_list|,
+name|y
+operator|+
+name|shell
+operator|->
+name|disp_yoffset
+argument_list|,
+name|w
+argument_list|,
+name|h
+argument_list|,
+name|GDK_RGB_DITHER_MAX
+argument_list|,
+name|shell
+operator|->
+name|render_buf
+argument_list|,
+literal|3
+operator|*
+name|GIMP_DISPLAY_SHELL_RENDER_BUF_WIDTH
+argument_list|,
+name|shell
+operator|->
+name|offset_x
+argument_list|,
+name|shell
+operator|->
+name|offset_y
 argument_list|)
 expr_stmt|;
 block|}
@@ -1247,6 +1308,8 @@ operator|=
 name|gimp_image_get_colormap
 argument_list|(
 name|info
+operator|->
+name|shell
 operator|->
 name|gdisp
 operator|->
@@ -1585,6 +1648,8 @@ operator|=
 name|gimp_image_get_colormap
 argument_list|(
 name|info
+operator|->
+name|shell
 operator|->
 name|gdisp
 operator|->
@@ -3410,16 +3475,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|render_image_init_info (RenderInfo * info,GimpDisplay * gdisp,gint x,gint y,gint w,gint h)
+DECL|function|render_image_init_info (RenderInfo * info,GimpDisplayShell * shell,gint x,gint y,gint w,gint h)
 name|render_image_init_info
 parameter_list|(
 name|RenderInfo
 modifier|*
 name|info
 parameter_list|,
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 parameter_list|,
 name|gint
 name|x
@@ -3436,9 +3501,9 @@ parameter_list|)
 block|{
 name|info
 operator|->
-name|gdisp
+name|shell
 operator|=
-name|gdisp
+name|shell
 expr_stmt|;
 name|info
 operator|->
@@ -3446,6 +3511,8 @@ name|src_tiles
 operator|=
 name|gimp_image_projection
 argument_list|(
+name|shell
+operator|->
 name|gdisp
 operator|->
 name|gimage
@@ -3457,12 +3524,7 @@ name|x
 operator|=
 name|x
 operator|+
-name|GIMP_DISPLAY_SHELL
-argument_list|(
-name|gdisp
-operator|->
 name|shell
-argument_list|)
 operator|->
 name|offset_x
 expr_stmt|;
@@ -3472,12 +3534,7 @@ name|y
 operator|=
 name|y
 operator|+
-name|GIMP_DISPLAY_SHELL
-argument_list|(
-name|gdisp
-operator|->
 name|shell
-argument_list|)
 operator|->
 name|offset_y
 expr_stmt|;
@@ -3499,6 +3556,8 @@ name|scalex
 operator|=
 name|SCALEFACTOR_X
 argument_list|(
+name|shell
+operator|->
 name|gdisp
 argument_list|)
 expr_stmt|;
@@ -3508,6 +3567,8 @@ name|scaley
 operator|=
 name|SCALEFACTOR_Y
 argument_list|(
+name|shell
+operator|->
 name|gdisp
 argument_list|)
 expr_stmt|;
@@ -3517,6 +3578,8 @@ name|src_x
 operator|=
 name|UNSCALEX
 argument_list|(
+name|shell
+operator|->
 name|gdisp
 argument_list|,
 name|info
@@ -3530,6 +3593,8 @@ name|src_y
 operator|=
 name|UNSCALEY
 argument_list|(
+name|shell
+operator|->
 name|gdisp
 argument_list|,
 name|info
@@ -3543,6 +3608,8 @@ name|src_bpp
 operator|=
 name|gimp_image_projection_bytes
 argument_list|(
+name|shell
+operator|->
 name|gdisp
 operator|->
 name|gimage
@@ -3552,22 +3619,25 @@ name|info
 operator|->
 name|dest
 operator|=
-name|gximage_get_data
-argument_list|()
+name|shell
+operator|->
+name|render_buf
 expr_stmt|;
 name|info
 operator|->
 name|dest_bpp
 operator|=
-name|gximage_get_bpp
-argument_list|()
+literal|3
 expr_stmt|;
 name|info
 operator|->
 name|dest_bpl
 operator|=
-name|gximage_get_bpl
-argument_list|()
+name|info
+operator|->
+name|dest_bpp
+operator|*
+name|GIMP_DISPLAY_SHELL_RENDER_BUF_WIDTH
 expr_stmt|;
 name|info
 operator|->
@@ -3585,8 +3655,7 @@ name|info
 operator|->
 name|byte_order
 operator|=
-name|gximage_get_byte_order
-argument_list|()
+name|GDK_MSB_FIRST
 expr_stmt|;
 name|info
 operator|->
@@ -3615,6 +3684,8 @@ switch|switch
 condition|(
 name|gimp_image_projection_type
 argument_list|(
+name|shell
+operator|->
 name|gdisp
 operator|->
 name|gimage
@@ -3638,6 +3709,8 @@ name|render_image_init_alpha
 argument_list|(
 name|gimp_image_projection_opacity
 argument_list|(
+name|shell
+operator|->
 name|gdisp
 operator|->
 name|gimage
@@ -3786,7 +3859,7 @@ name|g_new
 argument_list|(
 name|guchar
 argument_list|,
-name|GXIMAGE_WIDTH
+name|GIMP_DISPLAY_SHELL_RENDER_BUF_WIDTH
 operator|+
 literal|1
 argument_list|)
@@ -3807,7 +3880,7 @@ name|error
 operator|-=
 operator|(
 operator|(
-name|int
+name|gint
 operator|)
 name|error
 operator|)
@@ -3835,7 +3908,7 @@ index|]
 operator|=
 operator|(
 operator|(
-name|int
+name|gint
 operator|)
 name|error
 operator|)
@@ -3845,7 +3918,7 @@ operator|+=
 name|step
 operator|-
 operator|(
-name|int
+name|gint
 operator|)
 name|error
 expr_stmt|;

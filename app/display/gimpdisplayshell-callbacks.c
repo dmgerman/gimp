@@ -723,10 +723,10 @@ name|allocation
 operator|.
 name|height
 expr_stmt|;
-comment|/*  create GC for scrolling  */
+comment|/*  create GC for rendering  */
 name|shell
 operator|->
-name|scroll_gc
+name|render_gc
 operator|=
 name|gdk_gc_new
 argument_list|(
@@ -741,7 +741,7 @@ name|gdk_gc_set_exposures
 argument_list|(
 name|shell
 operator|->
-name|scroll_gc
+name|render_gc
 argument_list|,
 name|TRUE
 argument_list|)

@@ -299,7 +299,7 @@ name|window
 argument_list|,
 name|shell
 operator|->
-name|scroll_gc
+name|render_gc
 argument_list|,
 name|shell
 operator|->

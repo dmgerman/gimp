@@ -102,12 +102,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gximage.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpdialogfactory.h"
 end_include
 
@@ -945,9 +939,6 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/* DISPLAY_FILTERS */
-name|gximage_init
-argument_list|()
-expr_stmt|;
 name|render_setup
 argument_list|(
 name|gimprc
@@ -1152,9 +1143,6 @@ name|menus_exit
 argument_list|(
 name|gimp
 argument_list|)
-expr_stmt|;
-name|gximage_free
-argument_list|()
 expr_stmt|;
 name|render_free
 argument_list|()

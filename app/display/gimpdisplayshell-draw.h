@@ -284,12 +284,18 @@ modifier|*
 name|cancelbutton
 decl_stmt|;
 comment|/*  cancel button       */
-DECL|member|scroll_gc
+DECL|member|render_buf
+name|guchar
+modifier|*
+name|render_buf
+decl_stmt|;
+comment|/*  buffer for rendering the image     */
+DECL|member|render_gc
 name|GdkGC
 modifier|*
-name|scroll_gc
+name|render_gc
 decl_stmt|;
-comment|/*  GC for scrolling    */
+comment|/*  GC for rendering the image         */
 DECL|member|icon_size
 name|gint
 name|icon_size
