@@ -705,12 +705,12 @@ name|color
 argument_list|,
 name|pattern
 argument_list|,
-name|gimp_context_get_opacity
+name|gimp_context_get_paint_mode
 argument_list|(
 name|context
 argument_list|)
 argument_list|,
-name|gimp_context_get_paint_mode
+name|gimp_context_get_opacity
 argument_list|(
 name|context
 argument_list|)

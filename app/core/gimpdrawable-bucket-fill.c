@@ -1262,13 +1262,9 @@ name|bufPR
 argument_list|,
 name|TRUE
 argument_list|,
-operator|(
 name|opacity
 operator|*
 literal|255
-operator|)
-operator|/
-literal|100
 argument_list|,
 name|paint_mode
 argument_list|,

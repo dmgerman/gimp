@@ -1420,8 +1420,6 @@ operator|->
 name|gimp
 argument_list|)
 argument_list|)
-operator|*
-literal|100
 argument_list|,
 name|blend_options
 operator|->

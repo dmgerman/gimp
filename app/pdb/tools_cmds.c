@@ -1423,6 +1423,8 @@ argument_list|,
 name|gradient_type
 argument_list|,
 name|opacity
+operator|/
+literal|100.0
 argument_list|,
 name|offset
 argument_list|,
@@ -1864,6 +1866,8 @@ argument_list|,
 name|paint_mode
 argument_list|,
 name|opacity
+operator|/
+literal|100.0
 argument_list|,
 name|threshold
 argument_list|,
