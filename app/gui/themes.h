@@ -74,6 +74,25 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gchar
+modifier|*
+name|themes_get_theme_file
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|first_component
+parameter_list|,
+modifier|...
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|themes_apply_theme
 parameter_list|(
