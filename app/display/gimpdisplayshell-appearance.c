@@ -1596,9 +1596,6 @@ name|options
 decl_stmt|;
 name|GimpRGB
 name|color
-init|=
-operator|*
-name|padding_color
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -1621,6 +1618,11 @@ name|GET_OPTIONS
 argument_list|(
 name|shell
 argument_list|)
+expr_stmt|;
+name|color
+operator|=
+operator|*
+name|padding_color
 expr_stmt|;
 switch|switch
 condition|(
