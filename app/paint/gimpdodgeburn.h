@@ -171,9 +171,6 @@ DECL|member|mode_w
 name|GtkWidget
 modifier|*
 name|mode_w
-index|[
-literal|3
-index|]
 decl_stmt|;
 DECL|member|exposure
 name|gdouble

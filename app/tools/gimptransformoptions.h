@@ -52,11 +52,7 @@ DECL|member|direction_w
 name|GtkWidget
 modifier|*
 name|direction_w
-index|[
-literal|2
-index|]
 decl_stmt|;
-comment|/* 2 radio buttons */
 DECL|member|interpolation
 name|GimpInterpolationType
 name|interpolation

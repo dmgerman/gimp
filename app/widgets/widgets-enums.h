@@ -41,13 +41,15 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29cd28e20103
+DECL|enum|__anon279941bb0103
 block|{
 DECL|enumerator|GIMP_ZOOM_IN
 name|GIMP_ZOOM_IN
 block|,
+comment|/*< desc="Zoom in">*/
 DECL|enumerator|GIMP_ZOOM_OUT
 name|GIMP_ZOOM_OUT
+comment|/*< desc="Zoom out">*/
 DECL|typedef|GimpZoomType
 block|}
 name|GimpZoomType
@@ -62,7 +64,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon29cd28e20203
+DECL|enum|__anon279941bb0203
 block|{
 DECL|enumerator|GIMP_VIEW_TYPE_GRID
 name|GIMP_VIEW_TYPE_GRID
@@ -79,7 +81,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon29cd28e20303
+DECL|enum|__anon279941bb0303
 block|{
 DECL|enumerator|GIMP_DROP_NONE
 name|GIMP_DROP_NONE
@@ -99,7 +101,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon29cd28e20403
+DECL|enum|__anon279941bb0403
 block|{
 DECL|enumerator|GIMP_MOUSE_CURSOR
 name|GIMP_MOUSE_CURSOR
@@ -137,7 +139,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon29cd28e20503
+DECL|enum|__anon279941bb0503
 block|{
 DECL|enumerator|GIMP_TOOL_CURSOR_NONE
 name|GIMP_TOOL_CURSOR_NONE
@@ -244,7 +246,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon29cd28e20603
+DECL|enum|__anon279941bb0603
 block|{
 DECL|enumerator|GIMP_CURSOR_MODIFIER_NONE
 name|GIMP_CURSOR_MODIFIER_NONE
@@ -294,7 +296,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon29cd28e20703
+DECL|enum|__anon279941bb0703
 block|{
 DECL|enumerator|GIMP_DEVICE_VALUE_MODE
 name|GIMP_DEVICE_VALUE_MODE
