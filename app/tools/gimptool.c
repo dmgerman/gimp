@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27eb7bfa0103
+DECL|enum|__anon2bb4f3ae0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -5079,20 +5079,6 @@ begin_macro
 name|STUB
 argument_list|(
 argument|path_delete_path
-argument_list|)
-end_macro
-
-begin_macro
-name|STUB
-argument_list|(
-argument|text_render
-argument_list|)
-end_macro
-
-begin_macro
-name|STUB
-argument_list|(
-argument|text_get_extents
 argument_list|)
 end_macro
 

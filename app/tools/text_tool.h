@@ -6,15 +6,21 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__TEXT_TOOL_H__
+name|__GIMP_TEXT_TOOL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__TEXT_TOOL_H__
+DECL|macro|__GIMP_TEXT_TOOL_H__
 define|#
 directive|define
-name|__TEXT_TOOL_H__
+name|__GIMP_TEXT_TOOL_H__
 end_define
+
+begin_include
+include|#
+directive|include
+file|"tool.h"
+end_include
 
 begin_define
 DECL|macro|SUPERSAMPLE
@@ -27,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c24cbc90103
+DECL|enum|__anon2b95a0b10103
 block|{
 DECL|enumerator|PIXELS
 name|PIXELS
@@ -40,10 +46,118 @@ name|SizeType
 typedef|;
 end_typedef
 
-begin_function_decl
-name|Tool
+begin_define
+DECL|macro|GIMP_TYPE_TEXT_TOOL
+define|#
+directive|define
+name|GIMP_TYPE_TEXT_TOOL
+value|(gimp_text_tool_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_TEXT_TOOL (obj)
+define|#
+directive|define
+name|GIMP_TEXT_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_TEXT_TOOL, GimpTextTool))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_TEXT_TOOL (obj)
+define|#
+directive|define
+name|GIMP_IS_TEXT_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_TEXT_TOOL))
+end_define
+
+begin_define
+DECL|macro|GIMP_TEXT_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_TEXT_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_TEXT_TOOL, GimpTextToolClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_TEXT_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_TEXT_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_TEXT_TOOL))
+end_define
+
+begin_typedef
+DECL|typedef|GimpTextTool
+typedef|typedef
+name|struct
+name|_GimpTextTool
+name|GimpTextTool
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpTextToolClass
+typedef|typedef
+name|struct
+name|_GimpTextToolClass
+name|GimpTextToolClass
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpTextTool
+struct|struct
+name|_GimpTextTool
+block|{
+DECL|member|parent_instance
+name|GimpTool
+name|parent_instance
+decl_stmt|;
+DECL|member|click_x
+name|gint
+name|click_x
+decl_stmt|;
+DECL|member|click_y
+name|gint
+name|click_y
+decl_stmt|;
+DECL|member|gdisp
+name|GDisplay
 modifier|*
-name|tools_new_text
+name|gdisp
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpTextToolClass
+struct|struct
+name|_GimpTextToolClass
+block|{
+DECL|member|parent_class
+name|GimpToolClass
+name|parent_class
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_function_decl
+name|GtkType
+name|gimp_text_tool_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -52,11 +166,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|tools_free_text
+name|gimp_text_tool_register
 parameter_list|(
-name|Tool
-modifier|*
-name|tool
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -134,7 +246,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __TEXT_TOOL_H__ */
+comment|/* __GIMP_TEXT_TOOL_H__ */
 end_comment
 
 end_unit

@@ -1679,21 +1679,9 @@ begin_comment
 comment|/*  Image name: text  */
 end_comment
 
-begin_define
-DECL|macro|text_width
-define|#
-directive|define
-name|text_width
-value|22
-end_define
-
-begin_define
-DECL|macro|text_height
-define|#
-directive|define
-name|text_height
-value|22
-end_define
+begin_comment
+comment|/* FIXME name clash in text_tool.c #define text_width 22 #define text_height 22 */
+end_comment
 
 begin_decl_stmt
 DECL|variable|text_bits
