@@ -2481,9 +2481,12 @@ argument_list|)
 argument_list|)
 operator|&&
 operator|!
-name|gimp_layer_has_alpha
+name|gimp_drawable_has_alpha
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 operator|&&
 operator|(
@@ -2617,7 +2620,7 @@ block|gimage->construct_flag = FALSE;    if (gimage->layers)     {       gimp_dr
 comment|/* There's a layer.      */
 block|(! g_slist_next (gimage->layers))&&
 comment|/* It's the only layer.  */
-block|(gimp_layer_has_alpha ((GimpLayer *) (gimage->layers->data)))&&
+block|(gimp_drawable_has_alpha (GIMP_DRAWABLE (gimage->layers->data)))&&
 comment|/* It's !flat.           */
 block|(gimp_drawable_get_visible (GIMP_DRAWABLE (gimage->layers->data)))&&
 comment|/* It's visible.         */

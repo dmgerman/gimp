@@ -131,7 +131,7 @@ decl_stmt|;
 comment|/*  possible layer mask        */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon2c3549140108
+DECL|struct|__anon2bf8a40e0108
 block|{
 DECL|member|backing_store
 name|TileManager
@@ -623,18 +623,6 @@ begin_function_decl
 name|GimpLayerMask
 modifier|*
 name|gimp_layer_get_mask
-parameter_list|(
-specifier|const
-name|GimpLayer
-modifier|*
-name|layer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gimp_layer_has_alpha
 parameter_list|(
 specifier|const
 name|GimpLayer

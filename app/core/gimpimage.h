@@ -1041,6 +1041,18 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_image_has_alpha
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_image_is_empty
 parameter_list|(
 specifier|const

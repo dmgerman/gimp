@@ -4050,9 +4050,12 @@ name|FALSE
 expr_stmt|;
 name|alpha
 operator|=
-name|gimp_layer_has_alpha
+name|gimp_drawable_has_alpha
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|lind
