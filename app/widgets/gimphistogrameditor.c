@@ -1167,6 +1167,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_histogram_editor_layer_changed
 argument_list|(
 name|gimage
@@ -1174,7 +1175,6 @@ argument_list|,
 name|editor
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -1350,6 +1350,10 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|gimage
+condition|)
 name|editor
 operator|->
 name|drawable
@@ -1438,6 +1442,13 @@ argument_list|(
 literal|"(None)"
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|editor
+operator|->
+name|histogram
+condition|)
+block|{
 name|gimp_histogram_calculate
 argument_list|(
 name|editor
@@ -1462,6 +1473,7 @@ argument_list|(
 name|editor
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|gtk_label_set_text
 argument_list|(
