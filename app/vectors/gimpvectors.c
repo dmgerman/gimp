@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon299224ff0103
+DECL|enum|__anon2c6286650103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -1053,6 +1053,21 @@ modifier|*
 name|vectors
 parameter_list|)
 block|{
+name|GimpItem
+modifier|*
+name|item
+init|=
+name|GIMP_ITEM
+argument_list|(
+name|vectors
+argument_list|)
+decl_stmt|;
+name|item
+operator|->
+name|visible
+operator|=
+name|FALSE
+expr_stmt|;
 name|vectors
 operator|->
 name|strokes
