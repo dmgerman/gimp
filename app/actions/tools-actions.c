@@ -214,7 +214,7 @@ block|{
 block|{
 literal|"tools-visibility"
 block|,
-name|NULL
+name|GIMP_STOCK_VISIBLE
 block|,
 name|N_
 argument_list|(
