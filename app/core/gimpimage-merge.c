@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tile_manager.h"
 end_include
 
@@ -473,7 +479,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2abd24bf0103
+DECL|enum|__anon27e823820103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -2326,7 +2332,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"gimp_image_apply_image sent illegal parameters"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2885,7 +2894,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"gimp_image_apply_image sent illegal parameters"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -4263,7 +4275,10 @@ literal|0
 condition|)
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"Tattoo state has become corrupt (2.1 billion operation limit exceded)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -4528,7 +4543,10 @@ expr_stmt|;
 else|else
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Unable to project indexed image."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -7930,7 +7948,10 @@ else|else
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Layer cannot be raised any further"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -8252,7 +8273,10 @@ else|else
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Layer cannot be lowered any further"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -8346,7 +8370,10 @@ block|{
 comment|/* layer_arg is already the top_layer */
 name|g_message
 argument_list|(
-literal|"Layer is  already on top"
+name|_
+argument_list|(
+literal|"Layer is already on top"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -8364,7 +8391,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"cant raise Layer without alpha"
+name|_
+argument_list|(
+literal|"Can't raise Layer without alpha"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -8680,7 +8710,10 @@ block|{
 comment|/* there is no next layer below layer_arg */
 name|g_message
 argument_list|(
-literal|"Layer is  already on bottom"
+name|_
+argument_list|(
+literal|"Layer is already on bottom"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -8714,7 +8747,10 @@ else|else
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"BG has no alpha, layer was placed above"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -8951,7 +8987,10 @@ else|else
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"There are not enough visible layers for a merge.\nThere must be at least two."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_slist_free
@@ -9233,7 +9272,10 @@ else|else
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"There are not enough visible layers for a merge down."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_slist_free
@@ -9834,7 +9876,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"gimp_image_merge_layers: could not allocate merge layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -9965,7 +10010,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"gimp_image_merge_layers: could not allocate merge layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -10119,7 +10167,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"gimp_image_merge_layers attempting to merge incompatible layers\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -10589,7 +10640,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"gimp_image_add_layer: attempt to add layer to wrong image"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -10621,7 +10675,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"gimp_image_add_layer: trying to add layer to image twice"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -11112,13 +11169,6 @@ name|LayerMaskUndo
 modifier|*
 name|lmu
 decl_stmt|;
-name|char
-modifier|*
-name|error
-init|=
-name|NULL
-decl_stmt|;
-empty_stmt|;
 if|if
 condition|(
 name|layer
@@ -11127,10 +11177,16 @@ name|mask
 operator|!=
 name|NULL
 condition|)
-name|error
-operator|=
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
 literal|"Unable to add a layer mask since\nthe layer already has one."
+argument_list|)
+argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|drawable_indexed
@@ -11141,10 +11197,16 @@ name|layer
 argument_list|)
 argument_list|)
 condition|)
-name|error
-operator|=
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
 literal|"Unable to add a layer mask to a\nlayer in an indexed image."
+argument_list|)
+argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 operator|!
@@ -11153,10 +11215,16 @@ argument_list|(
 name|layer
 argument_list|)
 condition|)
-name|error
-operator|=
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
 literal|"Cannot add layer mask to a layer\nwith no alpha channel."
+argument_list|)
+argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|drawable_width
@@ -11191,18 +11259,13 @@ name|mask
 argument_list|)
 argument_list|)
 condition|)
-name|error
-operator|=
-literal|"Cannot add layer mask of different dimensions than specified layer."
-expr_stmt|;
-if|if
-condition|(
-name|error
-condition|)
 block|{
 name|g_message
 argument_list|(
-name|error
+name|_
+argument_list|(
+literal|"Cannot add layer mask of different dimensions than specified layer."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -11637,7 +11700,10 @@ else|else
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Channel cannot be raised any further"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -11811,7 +11877,10 @@ else|else
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Channel cannot be lowered any further"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -11875,7 +11944,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"gimp_image_add_channel: attempt to add channel to wrong image"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -11907,7 +11979,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"gimp_image_add_channel: trying to add channel to image twice"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -12420,7 +12495,10 @@ name|filename
 return|;
 else|else
 return|return
+name|_
+argument_list|(
 literal|"Untitled"
+argument_list|)
 return|;
 block|}
 end_function

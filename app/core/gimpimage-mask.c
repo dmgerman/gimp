@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"layer_pvt.h"
 end_include
 
@@ -872,7 +878,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Unable to cut/copy because the selected\nregion is empty."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1499,7 +1508,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Float Selection: No selection to float."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1539,7 +1551,10 @@ name|drawable
 argument_list|,
 name|tiles
 argument_list|,
+name|_
+argument_list|(
 literal|"Floated Layer"
+argument_list|)
 argument_list|,
 name|OPAQUE_OPACITY
 argument_list|,
@@ -1951,7 +1966,10 @@ else|else
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"The active layer has no alpha channel\nto convert to a selection."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2001,7 +2019,10 @@ else|else
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"The active layer has no mask\nto convert to a selection."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2169,7 +2190,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"No selection to stroke!"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

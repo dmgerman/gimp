@@ -290,13 +290,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2b08530108
+DECL|struct|__anon2c9c3d6a0108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -3058,7 +3064,7 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon2a2b08530208
+DECL|struct|__anon2c9c3d6a0208
 struct|struct
 block|{
 DECL|member|label
@@ -3107,7 +3113,7 @@ operator|)
 block|}
 block|}
 struct|;
-DECL|struct|__anon2a2b08530308
+DECL|struct|__anon2c9c3d6a0308
 struct|struct
 block|{
 DECL|member|label
@@ -3197,7 +3203,7 @@ name|edit_plug_in_path
 block|}
 block|}
 struct|;
-DECL|struct|__anon2a2b08530408
+DECL|struct|__anon2c9c3d6a0408
 struct|struct
 block|{
 DECL|member|label
@@ -4110,7 +4116,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Width:"
+literal|"Width: "
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4163,7 +4169,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Height:"
+literal|"Height: "
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4709,7 +4715,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Preview size:"
+literal|"Preview size: "
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5059,10 +5065,13 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|gettext
+argument_list|(
 name|transparencies
 index|[
 name|i
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -5244,10 +5253,13 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|gettext
+argument_list|(
 name|checks
 index|[
 name|i
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -6600,12 +6612,15 @@ name|menuitem
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|gettext
+argument_list|(
 name|mem_size_units
 index|[
 name|i
 index|]
 operator|.
 name|label
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_menu_append
@@ -7397,12 +7412,15 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|gettext
+argument_list|(
 name|dirs
 index|[
 name|i
 index|]
 operator|.
 name|label
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment

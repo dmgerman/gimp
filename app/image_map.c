@@ -75,6 +75,12 @@ directive|include
 file|"tile_manager_pvt.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_define
 DECL|macro|WAITING
 define|#
@@ -1335,7 +1341,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"image depth change, unable to restore original image"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|tile_manager_destroy

@@ -164,7 +164,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Equalize does not operate on indexed drawables."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;

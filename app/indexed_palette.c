@@ -123,6 +123,12 @@ directive|include
 file|"undo.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_define
 DECL|macro|EVENT_MASK
 define|#
@@ -396,7 +402,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Close"
+argument_list|)
 block|,
 name|indexed_palette_close_callback
 block|,
@@ -417,7 +426,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Close"
+argument_list|)
 block|,
 literal|'W'
 block|,
@@ -602,7 +614,10 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Indexed Color Palette"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_add_accel_group
@@ -725,7 +740,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Image:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -908,7 +926,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-literal|"Ops"
+name|_
+argument_list|(
+literal|"Operations"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|arrow
@@ -1205,7 +1226,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-literal|" Click to select color.  Right-click to edit color"
+name|_
+argument_list|(
+literal|"Click to select color.  Right-click to edit color"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2445,7 +2469,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2af8acbb0108
+DECL|struct|__anon2c40c8b60108
 typedef|typedef
 struct|struct
 block|{
@@ -2789,7 +2813,10 @@ name|menu_item
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"none"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_add

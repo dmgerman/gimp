@@ -106,7 +106,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297641230103
+DECL|enum|__anon291c01ed0103
 block|{
 DECL|enumerator|FgColorFill
 name|FgColorFill
@@ -760,7 +760,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Fill Opacity"
+literal|"Fill Opacity: "
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -910,7 +910,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Fill Threshold"
+literal|"Fill Threshold: "
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1070,7 +1070,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Mode:"
+literal|"Mode: "
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1142,7 +1142,7 @@ name|gtk_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Fill Type"
+literal|"Fill Type: "
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1212,10 +1212,13 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|gettext
+argument_list|(
 name|button_names
 index|[
 name|i
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group

@@ -168,6 +168,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools/eye.xbm"
 end_include
 
@@ -1429,7 +1435,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"New Layer"
+argument_list|)
 block|,
 literal|'N'
 block|,
@@ -1445,7 +1454,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Raise Layer"
+argument_list|)
 block|,
 literal|'F'
 block|,
@@ -1461,7 +1473,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Lower Layer"
+argument_list|)
 block|,
 literal|'B'
 block|,
@@ -1477,7 +1492,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Duplicate Layer"
+argument_list|)
 block|,
 literal|'C'
 block|,
@@ -1493,7 +1511,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Delete Layer"
+argument_list|)
 block|,
 literal|'X'
 block|,
@@ -1509,7 +1530,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Scale Layer"
+argument_list|)
 block|,
 literal|'S'
 block|,
@@ -1525,7 +1549,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Resize Layer"
+argument_list|)
 block|,
 literal|'R'
 block|,
@@ -1541,7 +1568,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Add Layer Mask"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1557,7 +1587,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Apply Layer Mask"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1573,7 +1606,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Anchor Layer"
+argument_list|)
 block|,
 literal|'H'
 block|,
@@ -1589,7 +1625,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Merge Visible Layers"
+argument_list|)
 block|,
 literal|'M'
 block|,
@@ -1605,7 +1644,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Merge Down"
+argument_list|)
 block|,
 literal|'M'
 block|,
@@ -1621,7 +1663,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Flatten Image"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1637,7 +1682,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Alpha To Selection"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1653,7 +1701,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Mask To Selection"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1669,7 +1720,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Add Alpha Channel"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1685,7 +1739,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Layer to Top"
+argument_list|)
 block|,
 literal|'T'
 block|,
@@ -1701,7 +1758,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Layer to Bottom"
+argument_list|)
 block|,
 literal|'U'
 block|,
@@ -1748,7 +1808,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Normal"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1767,7 +1830,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Dissolve"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1786,7 +1852,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Multiply (Burn)"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1805,7 +1874,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Divide (Dodge)"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1824,7 +1896,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Screen"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1843,7 +1918,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Overlay"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1862,7 +1940,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Difference"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1881,7 +1962,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Addition"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1900,7 +1984,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Subtract"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1919,7 +2006,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Darken Only"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1938,7 +2028,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Lighten Only"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1957,7 +2050,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Hue"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1976,7 +2072,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Saturation"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1995,7 +2094,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Color"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -2014,7 +2116,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Value"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -2068,7 +2173,10 @@ name|new_xpm
 block|,
 name|layers_dialog_new_layer_callback
 block|,
+name|N_
+argument_list|(
 literal|"New Layer"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -2078,7 +2186,10 @@ name|raise_xpm
 block|,
 name|layers_dialog_raise_layer_callback
 block|,
+name|N_
+argument_list|(
 literal|"Raise Layer"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -2088,7 +2199,10 @@ name|lower_xpm
 block|,
 name|layers_dialog_lower_layer_callback
 block|,
+name|N_
+argument_list|(
 literal|"Lower Layer"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -2098,7 +2212,10 @@ name|duplicate_xpm
 block|,
 name|layers_dialog_duplicate_layer_callback
 block|,
+name|N_
+argument_list|(
 literal|"Duplicate Layer"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -2108,7 +2225,10 @@ name|delete_xpm
 block|,
 name|layers_dialog_delete_layer_callback
 block|,
+name|N_
+argument_list|(
 literal|"Delete Layer"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -2118,7 +2238,10 @@ name|anchor_xpm
 block|,
 name|layers_dialog_anchor_layer_callback
 block|,
+name|N_
+argument_list|(
 literal|"Anchor Layer"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -2200,7 +2323,10 @@ argument_list|(
 name|lc_shell
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Layers& Channels"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_wmclass
@@ -2346,7 +2472,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Image:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2493,7 +2622,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Layers"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_notebook_append_page
@@ -2518,7 +2650,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Channels"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_notebook_append_page
@@ -2574,7 +2709,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Close"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3789,7 +3927,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Mode:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3872,7 +4013,10 @@ name|preserve_trans
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Keep Trans."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3958,7 +4102,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Opacity:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4292,7 +4439,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2bd4928f0108
+DECL|struct|__anon29fc01260108
 typedef|typedef
 struct|struct
 block|{
@@ -4625,7 +4772,10 @@ name|menu_item
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"none"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -4769,7 +4919,10 @@ name|layer_widgets
 condition|)
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"layersD->layer_widgets not empty!"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|layersD
@@ -7916,7 +8069,10 @@ expr_stmt|;
 block|}
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Unknown layer mode"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -10500,7 +10656,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Floating Selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -14335,7 +14494,10 @@ argument_list|)
 condition|)
 name|name
 operator|=
+name|_
+argument_list|(
 literal|"Floating Selection"
+argument_list|)
 expr_stmt|;
 else|else
 name|name
@@ -14873,7 +15035,10 @@ else|else
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"new_layer_query_ok_callback: could not allocate new layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -15125,7 +15290,10 @@ index|]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"OK"
+argument_list|)
 block|,
 name|new_layer_query_ok_callback
 block|,
@@ -15135,7 +15303,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 block|,
 name|new_layer_query_cancel_callback
 block|,
@@ -15196,13 +15367,25 @@ literal|4
 index|]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Foreground"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Background"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"White"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Transparent"
+argument_list|)
 block|}
 decl_stmt|;
 name|ActionCallback
@@ -15279,7 +15462,10 @@ operator|->
 name|query_box
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"New Layer Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -15389,7 +15575,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Layer name:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -15501,7 +15690,10 @@ name|layer_name
 condition|?
 name|layer_name
 else|:
+name|_
+argument_list|(
 literal|"New Layer"
+argument_list|)
 operator|)
 argument_list|)
 expr_stmt|;
@@ -15528,7 +15720,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-literal|"Layer width:"
+name|_
+argument_list|(
+literal|"Layer width: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -15661,7 +15856,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-literal|"Layer height:"
+name|_
+argument_list|(
+literal|"Layer height: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -15788,7 +15986,10 @@ name|radio_frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Layer Fill Type"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -15847,10 +16048,13 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|gettext
+argument_list|(
 name|button_names
 index|[
 name|i
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -16214,7 +16418,10 @@ index|]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"OK"
+argument_list|)
 block|,
 name|edit_layer_query_ok_callback
 block|,
@@ -16224,7 +16431,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 block|,
 name|edit_layer_query_cancel_callback
 block|,
@@ -16304,7 +16514,10 @@ operator|->
 name|query_box
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Edit Layer Attributes"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -16412,7 +16625,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-literal|"Layer name:"
+name|_
+argument_list|(
+literal|"Layer name: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -16479,7 +16695,10 @@ operator|->
 name|layer
 argument_list|)
 condition|?
+name|_
+argument_list|(
 literal|"Floating Selection"
+argument_list|)
 else|:
 name|layer_get_name
 argument_list|(
@@ -16886,7 +17105,10 @@ index|]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"OK"
+argument_list|)
 block|,
 name|add_mask_query_ok_callback
 block|,
@@ -16896,7 +17118,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 block|,
 name|add_mask_query_cancel_callback
 block|,
@@ -16947,11 +17172,20 @@ literal|3
 index|]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"White (Full Opacity)"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Black (Full Transparency)"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Layer's Alpha Channel"
+argument_list|)
 block|}
 decl_stmt|;
 name|ActionCallback
@@ -17026,7 +17260,10 @@ operator|->
 name|query_box
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Add Mask Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -17109,7 +17346,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Initialize Layer Mask To:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -17197,10 +17437,13 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|gettext
+argument_list|(
 name|button_names
 index|[
 name|i
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -17558,7 +17801,10 @@ index|]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Apply"
+argument_list|)
 block|,
 name|apply_mask_query_apply_callback
 block|,
@@ -17568,7 +17814,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Discard"
+argument_list|)
 block|,
 name|apply_mask_query_discard_callback
 block|,
@@ -17578,7 +17827,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 block|,
 name|apply_mask_query_cancel_callback
 block|,
@@ -17652,7 +17904,10 @@ operator|->
 name|query_box
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Layer Mask Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -17735,7 +17990,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Apply layer mask?"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -18019,7 +18277,10 @@ block|}
 else|else
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Invalid width or height.  Both must be positive."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -18124,7 +18385,10 @@ index|]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"OK"
+argument_list|)
 block|,
 name|scale_layer_query_ok_callback
 block|,
@@ -18134,7 +18398,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 block|,
 name|scale_layer_query_cancel_callback
 block|,
@@ -18229,7 +18496,10 @@ operator|->
 name|query_box
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Scale Layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_policy
@@ -18613,7 +18883,10 @@ block|}
 else|else
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Invalid width or height.  Both must be positive."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -18718,7 +18991,10 @@ index|]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"OK"
+argument_list|)
 block|,
 name|resize_layer_query_ok_callback
 block|,
@@ -18728,7 +19004,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 block|,
 name|resize_layer_query_cancel_callback
 block|,
@@ -18823,7 +19102,10 @@ operator|->
 name|query_box
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Resize Layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_policy
@@ -19326,7 +19608,10 @@ index|]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"OK"
+argument_list|)
 block|,
 name|layer_merge_query_ok_callback
 block|,
@@ -19336,7 +19621,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 block|,
 name|layer_merge_query_cancel_callback
 block|,
@@ -19387,11 +19675,20 @@ literal|3
 index|]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Expanded as necessary"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Clipped to image"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Clipped to bottom layer"
+argument_list|)
 block|}
 decl_stmt|;
 name|ActionCallback
@@ -19472,7 +19769,10 @@ operator|->
 name|query_box
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Layer Merge Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -19561,7 +19861,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Final, merged layer should be:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -19569,7 +19872,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Final, anchored layer should be:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -19657,10 +19963,13 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|gettext
+argument_list|(
 name|button_names
 index|[
 name|i
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group

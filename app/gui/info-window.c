@@ -75,6 +75,12 @@ directive|include
 file|"interface.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_define
 DECL|macro|MAX_BUF
 define|#
@@ -163,17 +169,35 @@ name|visual_classes
 index|[]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Static Gray"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Grayscale"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Static Color"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Pseudo Color"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"True Color"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Direct Color"
+argument_list|)
 block|, }
 decl_stmt|;
 end_decl_stmt
@@ -248,7 +272,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Close"
+argument_list|)
 block|,
 name|info_window_close_callback
 block|,
@@ -350,7 +377,10 @@ name|sprintf
 argument_list|(
 name|title_buf
 argument_list|,
+name|_
+argument_list|(
 literal|"%s: Window Info"
+argument_list|)
 argument_list|,
 name|title
 argument_list|)
@@ -456,7 +486,10 @@ name|info_dialog_add_field
 argument_list|(
 name|info_win
 argument_list|,
+name|_
+argument_list|(
 literal|"Dimensions (w x h): "
+argument_list|)
 argument_list|,
 name|iwd
 operator|->
@@ -471,7 +504,10 @@ name|info_dialog_add_field
 argument_list|(
 name|info_win
 argument_list|,
+name|_
+argument_list|(
 literal|"Resolution: "
+argument_list|)
 argument_list|,
 name|iwd
 operator|->
@@ -486,7 +522,10 @@ name|info_dialog_add_field
 argument_list|(
 name|info_win
 argument_list|,
+name|_
+argument_list|(
 literal|"Scale Ratio: "
+argument_list|)
 argument_list|,
 name|iwd
 operator|->
@@ -501,7 +540,10 @@ name|info_dialog_add_field
 argument_list|(
 name|info_win
 argument_list|,
+name|_
+argument_list|(
 literal|"Display Type: "
+argument_list|)
 argument_list|,
 name|iwd
 operator|->
@@ -516,7 +558,10 @@ name|info_dialog_add_field
 argument_list|(
 name|info_win
 argument_list|,
+name|_
+argument_list|(
 literal|"Visual Class: "
+argument_list|)
 argument_list|,
 name|iwd
 operator|->
@@ -531,7 +576,10 @@ name|info_dialog_add_field
 argument_list|(
 name|info_win
 argument_list|,
+name|_
+argument_list|(
 literal|"Visual Depth: "
+argument_list|)
 argument_list|,
 name|iwd
 operator|->
@@ -552,7 +600,10 @@ name|info_dialog_add_field
 argument_list|(
 name|info_win
 argument_list|,
+name|_
+argument_list|(
 literal|"Shades of Color: "
+argument_list|)
 argument_list|,
 name|iwd
 operator|->
@@ -574,7 +625,10 @@ name|info_dialog_add_field
 argument_list|(
 name|info_win
 argument_list|,
+name|_
+argument_list|(
 literal|"Shades: "
+argument_list|)
 argument_list|,
 name|iwd
 operator|->
@@ -596,7 +650,10 @@ name|info_dialog_add_field
 argument_list|(
 name|info_win
 argument_list|,
+name|_
+argument_list|(
 literal|"Shades of Gray: "
+argument_list|)
 argument_list|,
 name|iwd
 operator|->
@@ -809,7 +866,10 @@ name|color_type_str
 argument_list|,
 literal|"%s"
 argument_list|,
+name|_
+argument_list|(
 literal|"RGB Color"
+argument_list|)
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -827,7 +887,10 @@ name|color_type_str
 argument_list|,
 literal|"%s"
 argument_list|,
+name|_
+argument_list|(
 literal|"Grayscale"
+argument_list|)
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -845,7 +908,10 @@ name|color_type_str
 argument_list|,
 literal|"%s"
 argument_list|,
+name|_
+argument_list|(
 literal|"Indexed Color"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  visual class  */

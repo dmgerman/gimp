@@ -51,6 +51,12 @@ directive|include
 file|"gimage.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|void
@@ -126,7 +132,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Invert does not operate on indexed drawables."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -165,7 +174,10 @@ name|PDB_SUCCESS
 condition|)
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Invert operation failed."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|procedural_db_destroy_args

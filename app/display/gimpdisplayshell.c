@@ -129,6 +129,12 @@ directive|include
 file|"pixmaps.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_comment
 comment|/*  local functions  */
 end_comment
@@ -1086,9 +1092,12 @@ name|tool_tips
 argument_list|,
 name|col_area
 argument_list|,
+name|_
+argument_list|(
 literal|"Foreground& background colors.  The small black "
 literal|"and white squares reset colors.  The small arrows swap colors.  Double "
 literal|"click to change colors."
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1540,12 +1549,15 @@ name|tool_tips
 argument_list|,
 name|button
 argument_list|,
+name|gettext
+argument_list|(
 name|tool_info
 index|[
 name|j
 index|]
 operator|.
 name|tool_desc
+argument_list|)
 argument_list|,
 name|tool_info
 index|[
@@ -2226,7 +2238,10 @@ argument_list|(
 name|window
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"The GIMP"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|session_set_window_geometry
@@ -3944,7 +3959,10 @@ name|cancelbutton
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4379,7 +4397,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -4441,7 +4462,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -4958,7 +4982,10 @@ argument_list|(
 name|mbox
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"GIMP Message"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -5007,7 +5034,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS

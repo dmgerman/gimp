@@ -90,7 +90,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277cc0390103
+DECL|enum|__anon2b54d57c0103
 block|{
 DECL|enumerator|Blur
 name|Blur
@@ -751,7 +751,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Pressure"
+literal|"Pressure: "
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -915,10 +915,13 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|gettext
+argument_list|(
 name|button_names
 index|[
 name|i
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group

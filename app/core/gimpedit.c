@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tile_manager_pvt.h"
 end_include
 
@@ -1183,7 +1189,10 @@ name|drawable
 argument_list|,
 name|paste
 argument_list|,
+name|_
+argument_list|(
 literal|"Pasted Layer"
+argument_list|)
 argument_list|,
 name|OPAQUE_OPACITY
 argument_list|,
@@ -2586,7 +2595,10 @@ index|]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Paste"
+argument_list|)
 block|,
 name|named_buffer_paste_callback
 block|,
@@ -2596,7 +2608,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Delete"
+argument_list|)
 block|,
 name|named_buffer_delete_callback
 block|,
@@ -2606,7 +2621,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 block|,
 name|named_buffer_cancel_callback
 block|,
@@ -2686,7 +2704,10 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Paste Named Buffer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -2771,7 +2792,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Select a buffer to paste:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2895,7 +2919,10 @@ name|paste_into
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Replace Current Selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3249,9 +3276,15 @@ argument_list|)
 expr_stmt|;
 name|query_string_box
 argument_list|(
+name|_
+argument_list|(
 literal|"Cut Named"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Enter a name for this buffer"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -3368,9 +3401,15 @@ name|gdisp_ptr
 expr_stmt|;
 name|query_string_box
 argument_list|(
+name|_
+argument_list|(
 literal|"Copy Named"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Enter a name for this buffer"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

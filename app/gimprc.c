@@ -117,6 +117,18 @@ directive|include
 file|"tools.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_define
 DECL|macro|ERROR
 define|#
@@ -142,7 +154,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2ae61f670103
+DECL|enum|__anon2a1b4ba10103
 typedef|typedef
 enum|enum
 block|{
@@ -2238,7 +2250,10 @@ block|}
 else|else
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"warning: no home directory."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|strncpy
@@ -2291,7 +2306,10 @@ block|}
 else|else
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"warning: no home directory."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|strncpy
@@ -2430,7 +2448,10 @@ argument_list|)
 expr_stmt|;
 name|app_init_update_status
 argument_list|(
+name|_
+argument_list|(
 literal|"Resource configuration"
+argument_list|)
 argument_list|,
 name|libfilename
 argument_list|,
@@ -2619,7 +2640,10 @@ operator|)
 condition|)
 name|g_print
 argument_list|(
+name|_
+argument_list|(
 literal|"parsing \"%s\"\n"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -2697,14 +2721,20 @@ condition|)
 block|{
 name|g_print
 argument_list|(
+name|_
+argument_list|(
 literal|"error parsing: \"%s\"\n"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
+name|_
+argument_list|(
 literal|"  at line %d column %d\n"
+argument_list|)
 argument_list|,
 name|parse_info
 operator|.
@@ -2717,7 +2747,10 @@ argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
+name|_
+argument_list|(
 literal|"  unexpected token: %s\n"
+argument_list|)
 argument_list|,
 name|token_sym
 argument_list|)
@@ -5832,7 +5865,10 @@ name|error
 label|:
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"error parsing pluginrc"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|tmp_list
@@ -7450,7 +7486,10 @@ else|else
 block|{
 name|terminate
 argument_list|(
+name|_
+argument_list|(
 literal|"gimprc token referenced but not defined: %s"
+argument_list|)
 argument_list|,
 name|token
 argument_list|)
@@ -10515,7 +10554,10 @@ operator|==
 name|EACCES
 condition|)
 return|return
+name|_
+argument_list|(
 literal|"Can't open gimprc; permission problems"
+argument_list|)
 return|;
 if|if
 condition|(
@@ -10524,10 +10566,16 @@ operator|==
 name|ENOENT
 condition|)
 return|return
+name|_
+argument_list|(
 literal|"Can't open gimprc; file does not exist"
+argument_list|)
 return|;
 return|return
+name|_
+argument_list|(
 literal|"Can't open gimprc, reason unknown"
+argument_list|)
 return|;
 block|}
 name|oldfilename
@@ -10575,7 +10623,10 @@ operator|==
 name|EACCES
 condition|)
 return|return
+name|_
+argument_list|(
 literal|"Can't rename gimprc to gimprc.old; permission problems"
+argument_list|)
 return|;
 if|if
 condition|(
@@ -10584,10 +10635,16 @@ operator|==
 name|EISDIR
 condition|)
 return|return
+name|_
+argument_list|(
 literal|"Can't rename gimprc to gimprc.old; gimprc.old is a directory"
+argument_list|)
 return|;
 return|return
+name|_
+argument_list|(
 literal|"Can't rename gimprc to gimprc.old, reason unknown"
+argument_list|)
 return|;
 block|}
 if|if
@@ -10629,10 +10686,16 @@ operator|==
 name|EACCES
 condition|)
 return|return
+name|_
+argument_list|(
 literal|"Can't write to gimprc; permission problems"
+argument_list|)
 return|;
 return|return
+name|_
+argument_list|(
 literal|"Can't write to gimprc, reason unknown"
+argument_list|)
 return|;
 block|}
 name|g_free

@@ -129,6 +129,12 @@ directive|include
 file|"session.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_define
 DECL|macro|ENTRY_WIDTH
 define|#
@@ -755,7 +761,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"New"
+argument_list|)
 block|,
 name|palette_new_callback
 block|,
@@ -765,7 +774,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Edit"
+argument_list|)
 block|,
 name|palette_edit_callback
 block|,
@@ -775,7 +787,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Delete"
+argument_list|)
 block|,
 name|palette_delete_callback
 block|,
@@ -785,7 +800,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Close"
+argument_list|)
 block|,
 name|palette_close_callback
 block|,
@@ -806,7 +824,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"New Palette"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -822,7 +843,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Delete Palette"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -838,7 +862,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Refresh Palettes"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -854,7 +881,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Close"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -1083,7 +1113,10 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Color Palette"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|vbox
@@ -1283,7 +1316,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Ops"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|arrow
@@ -1431,7 +1467,10 @@ operator|->
 name|color_name
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Active Color Name"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2553,7 +2592,10 @@ name|menu_item
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"none"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -3105,7 +3147,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"can't save palette \"%s\"\n"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -3446,7 +3491,10 @@ name|palette
 operator|->
 name|entries
 argument_list|,
+name|_
+argument_list|(
 literal|"Untitled"
+argument_list|)
 argument_list|,
 name|r
 argument_list|,
@@ -4028,7 +4076,10 @@ name|palette
 operator|->
 name|entries
 argument_list|,
+name|_
+argument_list|(
 literal|"Untitled"
+argument_list|)
 argument_list|,
 name|foreground
 index|[
@@ -4063,7 +4114,10 @@ name|palette
 operator|->
 name|entries
 argument_list|,
+name|_
+argument_list|(
 literal|"Untitled"
+argument_list|)
 argument_list|,
 name|background
 index|[
@@ -4461,9 +4515,15 @@ parameter_list|)
 block|{
 name|query_string_box
 argument_list|(
+name|_
+argument_list|(
 literal|"New Palette"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Enter a name for new palette"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -6273,7 +6333,10 @@ name|name
 operator|=
 name|g_strdup
 argument_list|(
+name|_
+argument_list|(
 literal|"Untitled"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|entry
@@ -6503,7 +6566,10 @@ name|palette
 operator|->
 name|entries
 argument_list|,
+name|_
+argument_list|(
 literal|"Black"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,

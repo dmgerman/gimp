@@ -137,6 +137,18 @@ directive|include
 file|"gradient_header.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_comment
 comment|/***** Magic numbers *****/
 end_comment
@@ -2399,15 +2411,30 @@ name|blending_types
 index|[]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Linear"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Curved"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Sinusoidal"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Spherical (increasing)"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Spherical (decreasing)"
+argument_list|)
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -2425,11 +2452,20 @@ name|coloring_types
 index|[]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Plain RGB"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"HSV (counter-clockwise hue)"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"HSV (clockwise hue)"
+argument_list|)
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -2509,7 +2545,10 @@ name|name
 operator|=
 name|g_strdup
 argument_list|(
+name|_
+argument_list|(
 literal|"Default"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|curr_gradient
@@ -2816,7 +2855,10 @@ argument_list|)
 expr_stmt|;
 name|fatal_error
 argument_list|(
+name|_
+argument_list|(
 literal|"grad_get_color_at(): aieee, unknown gradient type %d"
+argument_list|)
 argument_list|,
 operator|(
 name|int
@@ -3128,7 +3170,10 @@ argument_list|)
 expr_stmt|;
 name|fatal_error
 argument_list|(
+name|_
+argument_list|(
 literal|"grad_get_color_at(): aieee, unknown coloring mode %d"
+argument_list|)
 argument_list|,
 operator|(
 name|int
@@ -3348,7 +3393,10 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Gradient Editor"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* handle window manager close signals */
@@ -3552,7 +3600,10 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
+name|N_
+argument_list|(
 literal|"Close"
+argument_list|)
 argument_list|,
 literal|0.5
 argument_list|,
@@ -3654,7 +3705,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-literal|"Gradients"
+name|_
+argument_list|(
+literal|"Gradients: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -3798,7 +3852,10 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Gradient"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_clist_set_column_title
@@ -3812,7 +3869,10 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|,
+name|_
+argument_list|(
 literal|"Name"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_clist_column_titles_show
@@ -3970,7 +4030,10 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
+name|N_
+argument_list|(
 literal|"New gradient"
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
@@ -4009,7 +4072,10 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
+name|N_
+argument_list|(
 literal|"Copy gradient"
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
@@ -4048,7 +4114,10 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
+name|N_
+argument_list|(
 literal|"Delete gradient"
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
@@ -4087,7 +4156,10 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
+name|N_
+argument_list|(
 literal|"Save as POV-Ray"
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
@@ -4126,7 +4198,10 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
+name|N_
+argument_list|(
 literal|"Save Gradients"
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
@@ -4165,7 +4240,10 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
+name|N_
+argument_list|(
 literal|"Rename Gradient"
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
@@ -4204,7 +4282,10 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
+name|N_
+argument_list|(
 literal|"Refresh gradients"
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
@@ -4285,7 +4366,10 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
+name|N_
+argument_list|(
 literal|"Zoom all"
+argument_list|)
 argument_list|,
 literal|0.5
 argument_list|,
@@ -4324,7 +4408,10 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
+name|N_
+argument_list|(
 literal|"Zoom -"
+argument_list|)
 argument_list|,
 literal|0.5
 argument_list|,
@@ -4363,7 +4450,10 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
+name|N_
+argument_list|(
 literal|"Zoom +"
+argument_list|)
 argument_list|,
 literal|0.5
 argument_list|,
@@ -4522,7 +4612,10 @@ name|button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Instant update"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end
@@ -5440,7 +5533,10 @@ name|text
 operator|=
 name|gtk_label_new
 argument_list|(
+name|gettext
+argument_list|(
 name|label
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -7069,11 +7165,20 @@ parameter_list|)
 block|{
 name|query_string_box
 argument_list|(
+name|_
+argument_list|(
 literal|"New gradient"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Enter a name for the new gradient"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"untitled"
+argument_list|)
 argument_list|,
 name|ed_do_new_gradient_callback
 argument_list|,
@@ -7135,7 +7240,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"ed_do_new_gradient_callback(): oops, received NULL in call_data"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -7324,7 +7432,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"ed_do_rename_gradient_callback(): oops, received NULL in call_data"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -7379,7 +7490,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"ed_do_rename_gradient_callback(): oops, can't find gradient to rename"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -7513,7 +7627,10 @@ name|sprintf
 argument_list|(
 name|name
 argument_list|,
+name|_
+argument_list|(
 literal|"%s copy"
+argument_list|)
 argument_list|,
 name|curr_gradient
 operator|->
@@ -7522,9 +7639,15 @@ argument_list|)
 expr_stmt|;
 name|query_string_box
 argument_list|(
+name|_
+argument_list|(
 literal|"Copy gradient"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Enter a name for the copied gradient"
+argument_list|)
 argument_list|,
 name|name
 argument_list|,
@@ -7606,7 +7729,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"ed_do_copy_gradient_callback(): oops, received NULL in call_data"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -7848,7 +7974,10 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Delete gradient"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -7921,7 +8050,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Are you sure you want to delete"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -7982,7 +8114,10 @@ name|sprintf
 argument_list|(
 name|str
 argument_list|,
+name|_
+argument_list|(
 literal|"\"%s\" from the list and from disk?"
+argument_list|)
 argument_list|,
 name|curr_gradient
 operator|->
@@ -8039,7 +8174,10 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
+name|N_
+argument_list|(
 literal|"Delete"
+argument_list|)
 argument_list|,
 literal|0.5
 argument_list|,
@@ -8098,7 +8236,10 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
+name|N_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|,
 literal|0.5
 argument_list|,
@@ -8289,7 +8430,10 @@ name|NULL
 condition|)
 name|fatal_error
 argument_list|(
+name|_
+argument_list|(
 literal|"ed_do_delete_gradient_callback(): aieee, could not find gradient to delete!"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Delete gradient from gradients list */
@@ -8488,9 +8632,15 @@ condition|)
 return|return;
 name|query_string_box
 argument_list|(
+name|_
+argument_list|(
 literal|"Rename gradient"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Enter a new name for the gradient"
+argument_list|)
 argument_list|,
 name|curr_gradient
 operator|->
@@ -8537,7 +8687,10 @@ name|window
 operator|=
 name|gtk_file_selection_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Save as POV-Ray"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -8790,7 +8943,10 @@ name|file
 condition|)
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"ed_do_save_pov_callback(): oops, could not open \"%s\""
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -9068,7 +9224,10 @@ name|sprintf
 argument_list|(
 name|str
 argument_list|,
+name|_
+argument_list|(
 literal|"Zoom factor: %d:1    Displaying [%0.6f, %0.6f]"
+argument_list|)
 argument_list|,
 name|g_editor
 operator|->
@@ -9867,10 +10026,13 @@ name|sprintf
 argument_list|(
 name|str
 argument_list|,
+name|_
+argument_list|(
 literal|"Position: %0.6f    "
 literal|"RGB (%0.3f, %0.3f, %0.3f)    "
 literal|"HSV (%0.3f, %0.3f, %0.3f)    "
 literal|"Opacity: %0.3f"
+argument_list|)
 argument_list|,
 name|xpos
 argument_list|,
@@ -9978,7 +10140,10 @@ name|sprintf
 argument_list|(
 name|str
 argument_list|,
+name|_
+argument_list|(
 literal|"Foreground color set to RGB (%d, %d, %d)<-> (%0.3f, %0.3f, %0.3f)"
+argument_list|)
 argument_list|,
 call|(
 name|int
@@ -11270,20 +11435,29 @@ name|NULL
 condition|)
 name|ed_set_hint
 argument_list|(
+name|_
+argument_list|(
 literal|"Drag: move    Shift+drag: move& compress"
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
 name|ed_set_hint
 argument_list|(
+name|_
+argument_list|(
 literal|"Click: select    Shift+click: extend selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
 else|else
 name|ed_set_hint
 argument_list|(
+name|_
+argument_list|(
 literal|"Click: select    Shift+click: extend selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -11292,16 +11466,22 @@ name|GRAD_DRAG_MIDDLE
 case|:
 name|ed_set_hint
 argument_list|(
+name|_
+argument_list|(
 literal|"Click: select    Shift+click: extend selection    "
 literal|"Drag: move"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
 default|default:
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"control_do_hint: oops, in_handle is true "
 literal|"yet we got handle type %d"
+argument_list|)
 argument_list|,
 operator|(
 name|int
@@ -11316,8 +11496,11 @@ block|}
 else|else
 name|ed_set_hint
 argument_list|(
+name|_
+argument_list|(
 literal|"Click: select    Shift+click: extend selection    "
 literal|"Drag: move    Shift+drag: move& compress"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -11623,8 +11806,11 @@ return|return;
 default|default:
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"control_button_press(): oops, in_handle is true "
 literal|"yet we got handle type %d"
+argument_list|)
 argument_list|,
 operator|(
 name|int
@@ -11779,7 +11965,10 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"control_point_in_handle(): oops, can not handle drag mode %d"
+argument_list|)
 argument_list|,
 operator|(
 name|int
@@ -12037,7 +12226,10 @@ name|sprintf
 argument_list|(
 name|str
 argument_list|,
+name|_
+argument_list|(
 literal|"Handle position: %0.6f"
+argument_list|)
 argument_list|,
 name|seg
 operator|->
@@ -12085,7 +12277,10 @@ name|sprintf
 argument_list|(
 name|str
 argument_list|,
+name|_
+argument_list|(
 literal|"Handle position: %0.6f"
+argument_list|)
 argument_list|,
 name|seg
 operator|->
@@ -12179,7 +12374,10 @@ name|sprintf
 argument_list|(
 name|str
 argument_list|,
+name|_
+argument_list|(
 literal|"Distance: %0.6f"
+argument_list|)
 argument_list|,
 name|g_editor
 operator|->
@@ -12199,7 +12397,10 @@ break|break;
 default|default:
 name|fatal_error
 argument_list|(
+name|_
+argument_list|(
 literal|"control_motion(): aieee, attempt to move bogus handle %d"
+argument_list|)
 argument_list|,
 operator|(
 name|int
@@ -14176,7 +14377,10 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Left endpoint's color"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -14232,7 +14436,10 @@ name|menuitem
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Load from"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_editor
@@ -14249,9 +14456,15 @@ name|g_editor
 operator|->
 name|left_load_labels
 argument_list|,
+name|_
+argument_list|(
 literal|"Left neighbor's right endpoint"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Right endpoint"
+argument_list|)
 argument_list|,
 operator|(
 name|GtkSignalFunc
@@ -14302,7 +14515,10 @@ name|menuitem
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Save to"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_editor
@@ -14393,7 +14609,10 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Right endpoint's color"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -14449,7 +14668,10 @@ name|menuitem
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Load from"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_editor
@@ -14466,9 +14688,15 @@ name|g_editor
 operator|->
 name|right_load_labels
 argument_list|,
+name|_
+argument_list|(
 literal|"Right neighbor's left endpoint"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Left endpoint"
+argument_list|)
 argument_list|,
 operator|(
 name|GtkSignalFunc
@@ -14519,7 +14747,10 @@ name|menuitem
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Save to"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_editor
@@ -15045,7 +15276,10 @@ name|menuitem
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Selection operations"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_editor
@@ -15779,7 +16013,10 @@ operator|->
 name|control_blending_label
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Blending function for segment"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_label_set
@@ -15791,7 +16028,10 @@ operator|->
 name|control_coloring_label
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Coloring type for segment"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_label_set
@@ -15803,7 +16043,10 @@ operator|->
 name|control_splitm_label
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Split segment at midpoint"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_label_set
@@ -15815,7 +16058,10 @@ operator|->
 name|control_splitu_label
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Split segment uniformly"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_label_set
@@ -15827,7 +16073,10 @@ operator|->
 name|control_delete_label
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Delete segment"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_label_set
@@ -15839,7 +16088,10 @@ operator|->
 name|control_recenter_label
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Re-center segment's midpoint"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_label_set
@@ -15851,7 +16103,10 @@ operator|->
 name|control_redistribute_label
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Re-distribute handles in segment"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_label_set
@@ -15863,7 +16118,10 @@ operator|->
 name|control_flip_label
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Flip segment"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_label_set
@@ -15875,7 +16133,10 @@ operator|->
 name|control_replicate_label
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Replicate segment"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -15890,7 +16151,10 @@ operator|->
 name|control_blending_label
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Blending function for selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_label_set
@@ -15902,7 +16166,10 @@ operator|->
 name|control_coloring_label
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Coloring type for selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_label_set
@@ -15914,7 +16181,10 @@ operator|->
 name|control_splitm_label
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Split segments at midpoints"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_label_set
@@ -15926,7 +16196,10 @@ operator|->
 name|control_splitu_label
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Split segments uniformly"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_label_set
@@ -15938,7 +16211,10 @@ operator|->
 name|control_delete_label
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Delete selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_label_set
@@ -15950,7 +16226,10 @@ operator|->
 name|control_recenter_label
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Re-center midpoints in selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_label_set
@@ -15962,7 +16241,10 @@ operator|->
 name|control_redistribute_label
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Re-distribute handles in selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_label_set
@@ -15974,7 +16256,10 @@ operator|->
 name|control_flip_label
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Flip selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_label_set
@@ -15986,7 +16271,10 @@ operator|->
 name|control_replicate_label
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Replicate selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -17501,7 +17789,10 @@ literal|2
 index|]
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"FG color"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -17760,7 +18051,10 @@ name|sprintf
 argument_list|(
 name|str
 argument_list|,
+name|_
+argument_list|(
 literal|"RGBA (%0.3f, %0.3f, %0.3f, %0.3f)"
+argument_list|)
 argument_list|,
 name|r
 argument_list|,
@@ -19157,7 +19451,10 @@ name|gtk_radio_menu_item_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"(Varies)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -19167,10 +19464,13 @@ name|gtk_radio_menu_item_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|gettext
+argument_list|(
 name|coloring_types
 index|[
 name|i
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -19555,7 +19855,10 @@ name|menuitem
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Blend endpoints' colors"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -19617,7 +19920,10 @@ name|menuitem
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Blend endpoints' opacity"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -20545,7 +20851,10 @@ argument_list|()
 expr_stmt|;
 name|cpopup_create_color_dialog
 argument_list|(
+name|_
+argument_list|(
 literal|"Left endpoint color"
+argument_list|)
 argument_list|,
 name|g_editor
 operator|->
@@ -21018,7 +21327,10 @@ argument_list|()
 expr_stmt|;
 name|cpopup_create_color_dialog
 argument_list|(
+name|_
+argument_list|(
 literal|"Right endpoint color"
+argument_list|)
 argument_list|,
 name|g_editor
 operator|->
@@ -21617,9 +21929,15 @@ operator|->
 name|control_sel_r
 operator|)
 condition|?
+name|_
+argument_list|(
 literal|"Split segment uniformly"
+argument_list|)
 else|:
+name|_
+argument_list|(
 literal|"Split segments uniformly"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -21692,7 +22010,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Please select the number of uniform parts"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -21742,9 +22063,15 @@ operator|->
 name|control_sel_r
 operator|)
 condition|?
+name|_
+argument_list|(
 literal|"in which you want to split the selected segment"
+argument_list|)
 else|:
+name|_
+argument_list|(
 literal|"in which you want to split the segments in the selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -21874,7 +22201,10 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
+name|N_
+argument_list|(
 literal|"Split"
+argument_list|)
 argument_list|,
 literal|0.5
 argument_list|,
@@ -21933,7 +22263,10 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
+name|N_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|,
 literal|0.5
 argument_list|,
@@ -23114,9 +23447,15 @@ operator|->
 name|control_sel_r
 operator|)
 condition|?
+name|_
+argument_list|(
 literal|"Replicate segment"
+argument_list|)
 else|:
+name|_
+argument_list|(
 literal|"Replicate selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -23189,7 +23528,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Please select the number of times"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -23239,9 +23581,15 @@ operator|->
 name|control_sel_r
 operator|)
 condition|?
+name|_
+argument_list|(
 literal|"you want to replicate the selected segment"
+argument_list|)
 else|:
+name|_
+argument_list|(
 literal|"you want to replicate the selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -23371,7 +23719,10 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
+name|N_
+argument_list|(
 literal|"Replicate"
+argument_list|)
 argument_list|,
 literal|0.5
 argument_list|,
@@ -23430,7 +23781,10 @@ name|button
 operator|=
 name|ed_create_button
 argument_list|(
+name|N_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|,
 literal|0.5
 argument_list|,
@@ -25686,7 +26040,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"grad_load_gradient(): invalid number of segments in \"%s\""
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -25851,9 +26208,12 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"grad_load_gradient(): badly formatted "
 literal|"gradient segment %d in \"%s\" --- bad things may "
 literal|"happen soon"
+argument_list|)
 argument_list|,
 name|i
 argument_list|,
@@ -25969,7 +26329,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"grad_save_gradient(): can not save gradient with NULL filename"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -25992,7 +26355,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"grad_save_gradient(): can't open \"%s\""
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -26778,7 +27144,10 @@ argument_list|)
 expr_stmt|;
 name|fatal_error
 argument_list|(
+name|_
+argument_list|(
 literal|"seg_get_segment_at(): aieee, no matching segment for position %0.15f"
+argument_list|)
 argument_list|,
 name|pos
 argument_list|)

@@ -159,6 +159,12 @@ directive|include
 file|"gimpbrushlistP.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_comment
 comment|/*  global variables  */
 end_comment
@@ -813,7 +819,10 @@ name|active_brush
 condition|)
 name|fatal_error
 argument_list|(
+name|_
+argument_list|(
 literal|"Specified default brush not found!"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

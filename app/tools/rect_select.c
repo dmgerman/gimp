@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -903,7 +909,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|" Width: "
+literal|"Width: "
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1068,7 +1074,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|" Height: "
+literal|"Height: "
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1299,7 +1305,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Feather Radius"
+literal|"Feather Radius: "
 argument_list|)
 argument_list|)
 expr_stmt|;

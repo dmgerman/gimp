@@ -443,7 +443,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Rate"
+literal|"Rate: "
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -593,7 +593,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Pressure"
+literal|"Pressure: "
 argument_list|)
 argument_list|)
 expr_stmt|;

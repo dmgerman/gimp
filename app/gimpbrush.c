@@ -51,8 +51,14 @@ directive|include
 file|"brush_header.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_enum
-DECL|enum|__anon2923ce070103
+DECL|enum|__anon2b1fd03d0103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -863,7 +869,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Error in GIMP brush file...aborting."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -886,7 +895,10 @@ name|name
 operator|=
 name|g_strdup
 argument_list|(
+name|_
+argument_list|(
 literal|"Unnamed"
+argument_list|)
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -1014,14 +1026,20 @@ name|height
 condition|)
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GIMP brush file appears to be truncated."
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
 default|default:
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Unknown brush format version #%d in \"%s\"\n"
+argument_list|)
 argument_list|,
 name|header
 operator|.

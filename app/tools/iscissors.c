@@ -115,6 +115,12 @@ directive|include
 file|"tools.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -1872,7 +1878,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Intelligent Scissors Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1901,7 +1910,10 @@ name|antialias_toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Antialiasing"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_state
@@ -1962,7 +1974,10 @@ name|feather_toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Feather"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_state
@@ -2048,7 +2063,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-literal|"Feather Radius"
+name|_
+argument_list|(
+literal|"Feather Radius: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2197,7 +2215,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-literal|"Curve Resolution"
+name|_
+argument_list|(
+literal|"Curve Resolution: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2346,7 +2367,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-literal|"Edge Detect Thresh."
+name|_
+argument_list|(
+literal|"Edge Detect Threshold: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2495,7 +2519,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-literal|"Elasticity."
+name|_
+argument_list|(
+literal|"Elasticity: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2619,7 +2646,10 @@ name|convert_button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Convert to Bezier Curve"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5066,7 +5096,10 @@ name|segs
 condition|)
 name|fatal_error
 argument_list|(
+name|_
+argument_list|(
 literal|"Unable to reallocate segment array in iscissors."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -5254,7 +5287,10 @@ name|pts
 condition|)
 name|fatal_error
 argument_list|(
+name|_
+argument_list|(
 literal|"Unable to reallocate points array in iscissors."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -9771,7 +9807,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Boundary contains< 4 points!  Cannot bezierify."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;

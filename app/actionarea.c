@@ -15,6 +15,18 @@ directive|include
 file|"actionarea.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_function
 name|void
 DECL|function|build_action_area (GtkDialog * dlg,ActionAreaItem * actions,int num_actions,int default_action)
@@ -72,12 +84,15 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|gettext
+argument_list|(
 name|actions
 index|[
 name|i
 index|]
 operator|.
 name|label
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS

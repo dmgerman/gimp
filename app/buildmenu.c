@@ -21,6 +21,18 @@ directive|include
 file|"interface.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_function
 name|GtkWidget
 modifier|*
@@ -100,9 +112,12 @@ name|menu_item
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|gettext
+argument_list|(
 name|items
 operator|->
 name|label
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_add

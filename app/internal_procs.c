@@ -351,6 +351,12 @@ directive|include
 file|"procedural_db.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_function
 name|void
 DECL|function|internal_procs_init ()
@@ -370,9 +376,15 @@ literal|257
 decl_stmt|;
 name|app_init_update_status
 argument_list|(
+name|_
+argument_list|(
 literal|"Internal Procedures"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Tool procedures"
+argument_list|)
 argument_list|,
 name|pcount
 operator|/
@@ -636,7 +648,10 @@ name|app_init_update_status
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"GDisplay procedures"
+argument_list|)
 argument_list|,
 name|pcount
 operator|/
@@ -675,7 +690,10 @@ name|app_init_update_status
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Edit procedures"
+argument_list|)
 argument_list|,
 name|pcount
 operator|/
@@ -741,7 +759,10 @@ name|app_init_update_status
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"GImage procedures"
+argument_list|)
 argument_list|,
 name|pcount
 operator|/
@@ -1293,7 +1314,10 @@ name|app_init_update_status
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"GImage mask procedures"
+argument_list|)
 argument_list|,
 name|pcount
 operator|/
@@ -1458,7 +1482,10 @@ name|app_init_update_status
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Layer procedures"
+argument_list|)
 argument_list|,
 name|pcount
 operator|/
@@ -1740,7 +1767,10 @@ name|app_init_update_status
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Channel procedures"
+argument_list|)
 argument_list|,
 name|pcount
 operator|/
@@ -1878,7 +1908,10 @@ name|app_init_update_status
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Drawable procedures"
+argument_list|)
 argument_list|,
 name|pcount
 operator|/
@@ -2097,7 +2130,10 @@ name|app_init_update_status
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Floating selections"
+argument_list|)
 argument_list|,
 name|pcount
 operator|/
@@ -2163,7 +2199,10 @@ name|app_init_update_status
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Undo"
+argument_list|)
 argument_list|,
 name|pcount
 operator|/
@@ -2193,7 +2232,10 @@ name|app_init_update_status
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Palette"
+argument_list|)
 argument_list|,
 name|pcount
 operator|/
@@ -2268,7 +2310,10 @@ name|app_init_update_status
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Interface procedures"
+argument_list|)
 argument_list|,
 name|pcount
 operator|/
@@ -2550,7 +2595,10 @@ name|app_init_update_status
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Image procedures"
+argument_list|)
 argument_list|,
 name|pcount
 operator|/
@@ -2706,7 +2754,10 @@ name|app_init_update_status
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Channel ops"
+argument_list|)
 argument_list|,
 name|pcount
 operator|/
@@ -2736,7 +2787,10 @@ name|app_init_update_status
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"gimprc ops"
+argument_list|)
 argument_list|,
 name|pcount
 operator|/
@@ -2757,7 +2811,10 @@ name|app_init_update_status
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"parasites"
+argument_list|)
 argument_list|,
 name|pcount
 operator|/
@@ -2805,7 +2862,10 @@ name|app_init_update_status
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Procedural database"
+argument_list|)
 argument_list|,
 name|pcount
 operator|/

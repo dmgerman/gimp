@@ -81,6 +81,12 @@ directive|include
 file|"interface.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_define
 DECL|macro|HUE_PARTITION_MASK
 define|#
@@ -1773,7 +1779,10 @@ name|tools_register_no_options
 argument_list|(
 name|HUE_SATURATION
 argument_list|,
+name|_
+argument_list|(
 literal|"Hue-Saturation Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|tool
@@ -1975,7 +1984,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Hue-Saturation operates only on RGB color drawables."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2165,7 +2177,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"OK"
+argument_list|)
 block|,
 name|hue_saturation_ok_callback
 block|,
@@ -2175,7 +2190,10 @@ name|NULL
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 block|,
 name|hue_saturation_cancel_callback
 block|,
@@ -2260,19 +2278,40 @@ literal|7
 index|]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Master"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"R"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Y"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"G"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"C"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"B"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"M"
+argument_list|)
 block|}
 decl_stmt|;
 name|ActionCallback
@@ -2350,7 +2389,10 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Hue-Saturation"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* handle the wm close signal */
@@ -2793,7 +2835,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Hue / Lightness / Saturation Adjustments"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2862,7 +2907,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Hue"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -3125,7 +3173,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Lightness"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -3388,7 +3439,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Saturation"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -3605,7 +3659,7 @@ name|GTK_SHRINK
 operator||
 name|GTK_FILL
 argument_list|,
-literal|2
+literal|3
 argument_list|,
 literal|2
 argument_list|)
@@ -3677,7 +3731,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Preview"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_state
@@ -4310,7 +4367,10 @@ name|image_map
 condition|)
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"hue_saturation_preview(): No image map"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|active_tool

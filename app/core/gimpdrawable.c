@@ -57,8 +57,14 @@ directive|include
 file|"parasitelist.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_enum
-DECL|enum|__anon27f665620103
+DECL|enum|__anon2b8aa5720103
 enum|enum
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
@@ -634,7 +640,10 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Can't fill unknown image type."
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2463,7 +2472,10 @@ name|name
 condition|)
 name|name
 operator|=
+name|_
+argument_list|(
 literal|"unnamed"
+argument_list|)
 expr_stmt|;
 switch|switch
 condition|(
@@ -2545,7 +2557,10 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Layer type %d not supported."
+argument_list|)
 argument_list|,
 name|type
 argument_list|)
