@@ -16,6 +16,12 @@ directive|define
 name|__PATTERN_SELECT_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"patterns.h"
+end_include
+
 begin_typedef
 DECL|typedef|_PatternSelect
 DECL|typedef|PatternSelectP
@@ -103,6 +109,38 @@ name|GtkWidget
 modifier|*
 name|pattern_preview
 decl_stmt|;
+comment|/* Call back function name */
+DECL|member|callback_name
+name|gchar
+modifier|*
+name|callback_name
+decl_stmt|;
+DECL|member|old_row
+name|gint
+name|old_row
+decl_stmt|;
+DECL|member|old_col
+name|gint
+name|old_col
+decl_stmt|;
+comment|/* Current pattern */
+DECL|member|pattern
+name|GPatternP
+name|pattern
+decl_stmt|;
+comment|/* To calc column pos. */
+DECL|member|NUM_PATTERN_COLUMNS
+name|gint
+name|NUM_PATTERN_COLUMNS
+decl_stmt|;
+DECL|member|NUM_PATTERN_ROWS
+name|gint
+name|NUM_PATTERN_ROWS
+decl_stmt|;
+DECL|member|STD_CELL_SIZE
+name|gint
+name|STD_CELL_SIZE
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -111,7 +149,11 @@ begin_function_decl
 name|PatternSelectP
 name|pattern_select_new
 parameter_list|(
-name|void
+name|gchar
+modifier|*
+parameter_list|,
+name|gchar
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -135,6 +177,40 @@ name|PatternSelectP
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_function_decl
+name|void
+name|patterns_check_dialogs
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* PDB entry */
+end_comment
+
+begin_decl_stmt
+specifier|extern
+name|ProcRecord
+name|patterns_popup_proc
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|ProcRecord
+name|patterns_close_popup_proc
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|ProcRecord
+name|patterns_set_popup_proc
+decl_stmt|;
+end_decl_stmt
 
 begin_endif
 endif|#

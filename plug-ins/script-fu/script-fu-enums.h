@@ -23,7 +23,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b632ee0103
+DECL|enum|__anon279430a70103
 block|{
 DECL|enumerator|SF_IMAGE
 name|SF_IMAGE
@@ -56,6 +56,9 @@ name|SF_ADJUSTMENT
 block|,
 DECL|enumerator|SF_FONT
 name|SF_FONT
+block|,
+DECL|enumerator|SF_PATTERN
+name|SF_PATTERN
 DECL|typedef|SFArgType
 block|}
 name|SFArgType
@@ -65,7 +68,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b632ee0203
+DECL|enum|__anon279430a70203
 block|{
 DECL|enumerator|SF_SLIDER
 name|SF_SLIDER

@@ -8250,7 +8250,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cec4b60108
+DECL|struct|__anon28b137650108
 block|{
 DECL|member|color_string
 name|gchar
@@ -17171,7 +17171,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gfig_brush_invoker (gchar * name,gdouble opacity,gint spacing,gint paint_mode,gint width,gint height,gchar * mask_data,gint closing)
+DECL|function|gfig_brush_invoker (gchar * name,gdouble opacity,gint spacing,gint paint_mode,gint width,gint height,gchar * mask_data,gint closing,gpointer udata)
 name|gfig_brush_invoker
 parameter_list|(
 name|gchar
@@ -17199,6 +17199,9 @@ name|mask_data
 parameter_list|,
 name|gint
 name|closing
+parameter_list|,
+name|gpointer
+name|udata
 parameter_list|)
 block|{
 name|BRUSHDESC
@@ -17291,6 +17294,8 @@ name|mygimp_brush_get
 argument_list|()
 argument_list|,
 name|gfig_brush_invoker
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|bdesc

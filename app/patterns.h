@@ -206,6 +206,13 @@ name|patterns_list_proc
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+specifier|extern
+name|ProcRecord
+name|patterns_get_pattern_data_proc
+decl_stmt|;
+end_decl_stmt
+
 begin_endif
 endif|#
 directive|endif

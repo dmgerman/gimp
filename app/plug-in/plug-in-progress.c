@@ -206,6 +206,16 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pattern_select.h"
+end_include
+
+begin_comment
+comment|/* Needed for closing pattern dialogs */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|"plug_in.h"
 end_include
 
@@ -238,7 +248,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29fd16c00103
+DECL|enum|__anon2a28f7b20103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -4426,6 +4436,9 @@ expr_stmt|;
 block|}
 comment|/* Close any dialogs that this plugin might have opened */
 name|brushes_check_dialogs
+argument_list|()
+expr_stmt|;
+name|patterns_check_dialogs
 argument_list|()
 expr_stmt|;
 name|open_plug_ins
