@@ -2820,7 +2820,10 @@ name|segment_start
 decl_stmt|,
 modifier|*
 name|segment_end
-decl_stmt|,
+init|=
+name|NULL
+decl_stmt|;
+name|GimpAnchor
 modifier|*
 name|anchor
 decl_stmt|;
