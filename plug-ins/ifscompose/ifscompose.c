@@ -143,7 +143,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c705a490103
+DECL|enum|__anon2c2338740103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -163,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c705a490203
+DECL|enum|__anon2c2338740203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -179,7 +179,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c705a490308
+DECL|struct|__anon2c2338740308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -201,7 +201,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2c705a49040a
+DECL|union|__anon2c233874040a
 block|{
 DECL|member|d
 name|gdouble
@@ -230,7 +230,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c705a490508
+DECL|struct|__anon2c2338740508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -260,7 +260,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c705a490608
+DECL|struct|__anon2c2338740608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -295,7 +295,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c705a490708
+DECL|struct|__anon2c2338740708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -331,7 +331,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c705a490808
+DECL|struct|__anon2c2338740808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -398,7 +398,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c705a490908
+DECL|struct|__anon2c2338740908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -600,7 +600,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c705a490a08
+DECL|struct|__anon2c2338740a08
 block|{
 DECL|member|run
 name|gboolean
@@ -1675,6 +1675,9 @@ name|parasite
 init|=
 name|NULL
 decl_stmt|;
+name|guint32
+name|image_id
+decl_stmt|;
 name|gboolean
 name|found_parasite
 decl_stmt|;
@@ -1722,7 +1725,17 @@ expr_stmt|;
 name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
-comment|/*  Get the active drawable  */
+name|image_id
+operator|=
+name|param
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_image
+expr_stmt|;
 name|active_drawable
 operator|=
 name|gimp_drawable_get
@@ -1797,10 +1810,6 @@ block|{
 name|gint
 name|length
 decl_stmt|;
-name|gchar
-modifier|*
-name|data
-decl_stmt|;
 name|length
 operator|=
 name|gimp_get_data_size
@@ -1813,15 +1822,17 @@ condition|(
 name|length
 condition|)
 block|{
+name|gchar
+modifier|*
 name|data
-operator|=
+init|=
 name|g_new
 argument_list|(
 name|gchar
 argument_list|,
 name|length
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gimp_get_data
 argument_list|(
 name|IFSCOMPOSE_DATA
@@ -1882,10 +1893,6 @@ block|{
 name|gint
 name|length
 decl_stmt|;
-name|gchar
-modifier|*
-name|data
-decl_stmt|;
 name|length
 operator|=
 name|gimp_get_data_size
@@ -1898,15 +1905,17 @@ condition|(
 name|length
 condition|)
 block|{
+name|gchar
+modifier|*
 name|data
-operator|=
+init|=
 name|g_new
 argument_list|(
 name|gchar
 argument_list|,
 name|length
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gimp_get_data
 argument_list|(
 name|IFSCOMPOSE_DATA
@@ -1932,9 +1941,11 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|ifs_compose_set_defaults
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 break|break;
 default|default:
@@ -1990,23 +2001,6 @@ literal|1
 operator|)
 argument_list|)
 expr_stmt|;
-comment|/*  run the effect  */
-name|ifs_compose
-argument_list|(
-name|active_drawable
-argument_list|)
-expr_stmt|;
-comment|/*  If the run mode is interactive, flush the displays  */
-if|if
-condition|(
-name|run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-condition|)
-name|gimp_displays_flush
-argument_list|()
-expr_stmt|;
-comment|/*  Store data for next invocation - both globally and        *  as a parasite on this layer        */
 if|if
 condition|(
 name|run_mode
@@ -2017,7 +2011,25 @@ block|{
 name|gchar
 modifier|*
 name|str
-init|=
+decl_stmt|;
+name|GimpParasite
+modifier|*
+name|parasite
+decl_stmt|;
+name|gimp_undo_push_group_start
+argument_list|(
+name|image_id
+argument_list|)
+expr_stmt|;
+comment|/*  run the effect  */
+name|ifs_compose
+argument_list|(
+name|active_drawable
+argument_list|)
+expr_stmt|;
+comment|/*  Store data for next invocation - both globally and            *  as a parasite on this layer            */
+name|str
+operator|=
 name|ifsvals_stringify
 argument_list|(
 operator|&
@@ -2025,11 +2037,7 @@ name|ifsvals
 argument_list|,
 name|elements
 argument_list|)
-decl_stmt|;
-name|GimpParasite
-modifier|*
-name|parasite
-decl_stmt|;
+expr_stmt|;
 name|gimp_set_data
 argument_list|(
 name|IFSCOMPOSE_DATA
@@ -2083,7 +2091,31 @@ argument_list|(
 name|str
 argument_list|)
 expr_stmt|;
+name|gimp_undo_push_group_end
+argument_list|(
+name|image_id
+argument_list|)
+expr_stmt|;
 block|}
+else|else
+block|{
+comment|/*  run the effect  */
+name|ifs_compose
+argument_list|(
+name|active_drawable
+argument_list|)
+expr_stmt|;
+block|}
+comment|/*  If the run mode is interactive, flush the displays  */
+if|if
+condition|(
+name|run_mode
+operator|!=
+name|GIMP_RUN_NONINTERACTIVE
+condition|)
+name|gimp_displays_flush
+argument_list|()
+expr_stmt|;
 block|}
 elseif|else
 if|if
