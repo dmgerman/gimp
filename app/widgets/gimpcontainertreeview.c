@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreview.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimppreviewrenderer.h"
 end_include
 
@@ -95,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2895db150103
+DECL|enum|__anon2ae02ea20103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
