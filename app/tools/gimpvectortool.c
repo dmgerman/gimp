@@ -3460,6 +3460,11 @@ expr_stmt|;
 if|if
 condition|(
 name|coords
+condition|)
+block|{
+if|if
+condition|(
+name|coords
 operator|->
 name|len
 operator|%
@@ -3516,6 +3521,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+block|}
 comment|/* the stroke itself */
 name|coords
 operator|=

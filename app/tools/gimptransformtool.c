@@ -3131,6 +3131,11 @@ operator|&
 name|closed
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|coords
+condition|)
+block|{
 for|for
 control|(
 name|i
@@ -3222,6 +3227,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
