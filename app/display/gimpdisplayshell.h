@@ -343,7 +343,7 @@ DECL|member|proximity
 name|gboolean
 name|proximity
 decl_stmt|;
-comment|/* is a device in proximity            */
+comment|/*  is a device in proximity           */
 DECL|member|snap_to_guides
 name|gboolean
 name|snap_to_guides
@@ -360,17 +360,6 @@ modifier|*
 name|select
 decl_stmt|;
 comment|/*  Selection object                   */
-DECL|member|hsbdata
-name|GtkAdjustment
-modifier|*
-name|hsbdata
-decl_stmt|;
-comment|/*  adjustments                        */
-DECL|member|vsbdata
-name|GtkAdjustment
-modifier|*
-name|vsbdata
-decl_stmt|;
 DECL|member|canvas
 name|GtkWidget
 modifier|*
@@ -383,6 +372,17 @@ modifier|*
 name|grid_gc
 decl_stmt|;
 comment|/*  GC for grid drawing                */
+DECL|member|hsbdata
+name|GtkAdjustment
+modifier|*
+name|hsbdata
+decl_stmt|;
+comment|/*  adjustments                        */
+DECL|member|vsbdata
+name|GtkAdjustment
+modifier|*
+name|vsbdata
+decl_stmt|;
 DECL|member|hsb
 name|GtkWidget
 modifier|*
@@ -394,12 +394,6 @@ name|GtkWidget
 modifier|*
 name|vsb
 decl_stmt|;
-DECL|member|qmask
-name|GtkWidget
-modifier|*
-name|qmask
-decl_stmt|;
-comment|/*  qmask button                       */
 DECL|member|hrule
 name|GtkWidget
 modifier|*
@@ -411,12 +405,30 @@ name|GtkWidget
 modifier|*
 name|vrule
 decl_stmt|;
-DECL|member|origin
+DECL|member|origin_button
 name|GtkWidget
 modifier|*
-name|origin
+name|origin_button
 decl_stmt|;
-comment|/*  origin button                      */
+comment|/*  NW: origin button                  */
+DECL|member|qmask_button
+name|GtkWidget
+modifier|*
+name|qmask_button
+decl_stmt|;
+comment|/*  SW: qmask button                   */
+DECL|member|zoom_button
+name|GtkWidget
+modifier|*
+name|zoom_button
+decl_stmt|;
+comment|/*  NE: zoom toggle button             */
+DECL|member|nav_ebox
+name|GtkWidget
+modifier|*
+name|nav_ebox
+decl_stmt|;
+comment|/*  SE: navigation event box           */
 DECL|member|menubar
 name|GtkWidget
 modifier|*
@@ -500,22 +512,6 @@ name|gint
 name|cursor_y
 decl_stmt|;
 comment|/* software cursor Y value             */
-DECL|member|show_transform_preview
-name|gboolean
-name|show_transform_preview
-decl_stmt|;
-DECL|member|padding_button
-name|GtkWidget
-modifier|*
-name|padding_button
-decl_stmt|;
-comment|/* GimpColorPanel in the NE corner     */
-DECL|member|nav_ebox
-name|GtkWidget
-modifier|*
-name|nav_ebox
-decl_stmt|;
-comment|/* GtkEventBox on the SE corner        */
 DECL|member|warning_dialog
 name|GtkWidget
 modifier|*
@@ -562,11 +558,6 @@ modifier|*
 name|filters_dialog
 decl_stmt|;
 comment|/* color display filter dialog         */
-DECL|member|window_state
-name|GdkWindowState
-name|window_state
-decl_stmt|;
-comment|/* for fullscreen display              */
 DECL|member|paused_count
 name|gint
 name|paused_count
@@ -582,6 +573,19 @@ decl_stmt|;
 DECL|member|vectors_visible_handler
 name|GQuark
 name|vectors_visible_handler
+decl_stmt|;
+DECL|member|window_state
+name|GdkWindowState
+name|window_state
+decl_stmt|;
+comment|/* for fullscreen display              */
+DECL|member|zoom_on_resize
+name|gboolean
+name|zoom_on_resize
+decl_stmt|;
+DECL|member|show_transform_preview
+name|gboolean
+name|show_transform_preview
 decl_stmt|;
 DECL|member|options
 name|GimpDisplayOptions

@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf6233a0103
+DECL|enum|__anon28eff21a0103
 block|{
 DECL|enumerator|GIMP_CURSOR_MODE_TOOL_ICON
 name|GIMP_CURSOR_MODE_TOOL_ICON
@@ -77,7 +77,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf6233a0203
+DECL|enum|__anon28eff21a0203
 block|{
 DECL|enumerator|GIMP_CANVAS_PADDING_MODE_DEFAULT
 name|GIMP_CANVAS_PADDING_MODE_DEFAULT
@@ -93,7 +93,14 @@ block|,
 comment|/*< desc="Dark Check Color">*/
 DECL|enumerator|GIMP_CANVAS_PADDING_MODE_CUSTOM
 name|GIMP_CANVAS_PADDING_MODE_CUSTOM
+block|,
 comment|/*< desc="Custom Color">*/
+DECL|enumerator|GIMP_CANVAS_PADDING_MODE_RESET
+name|GIMP_CANVAS_PADDING_MODE_RESET
+init|=
+operator|-
+literal|1
+comment|/*< skip>*/
 DECL|typedef|GimpCanvasPaddingMode
 block|}
 name|GimpCanvasPaddingMode

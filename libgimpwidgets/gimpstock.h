@@ -726,6 +726,11 @@ define|#
 directive|define
 name|GIMP_STOCK_SWAP_COLORS
 value|"gimp-swap-colors"
+DECL|macro|GIMP_STOCK_ZOOM_FOLLOW_WINDOW
+define|#
+directive|define
+name|GIMP_STOCK_ZOOM_FOLLOW_WINDOW
+value|"gimp-zoom-follow-window"
 DECL|macro|GIMP_STOCK_TOOLS
 define|#
 directive|define

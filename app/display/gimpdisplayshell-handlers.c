@@ -1689,7 +1689,7 @@ name|GTK_BIN
 argument_list|(
 name|shell
 operator|->
-name|qmask
+name|qmask_button
 argument_list|)
 operator|->
 name|child
@@ -1699,7 +1699,7 @@ name|g_signal_handlers_block_by_func
 argument_list|(
 name|shell
 operator|->
-name|qmask
+name|qmask_button
 argument_list|,
 name|gimp_display_shell_qmask_toggled
 argument_list|,
@@ -1712,7 +1712,7 @@ name|GTK_TOGGLE_BUTTON
 argument_list|(
 name|shell
 operator|->
-name|qmask
+name|qmask_button
 argument_list|)
 argument_list|,
 name|shell
@@ -1757,7 +1757,7 @@ name|g_signal_handlers_unblock_by_func
 argument_list|(
 name|shell
 operator|->
-name|qmask
+name|qmask_button
 argument_list|,
 name|gimp_display_shell_qmask_toggled
 argument_list|,

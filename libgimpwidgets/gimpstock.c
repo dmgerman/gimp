@@ -2289,7 +2289,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon289d55d00108
+DECL|struct|__anon2b6544ef0108
 block|{
 DECL|member|stock_id
 specifier|const
@@ -2967,7 +2967,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon289d55d00208
+DECL|struct|__anon2b6544ef0208
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3352,6 +3352,12 @@ name|stock_swap_colors_12
 block|}
 block|,
 block|{
+name|GIMP_STOCK_ZOOM_FOLLOW_WINDOW
+block|,
+name|stock_zoom_follow_window_12
+block|}
+block|,
+block|{
 name|GIMP_STOCK_GRADIENT_LINEAR
 block|,
 name|stock_gradient_linear_16
@@ -3717,7 +3723,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon289d55d00308
+DECL|struct|__anon2b6544ef0308
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3813,7 +3819,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon289d55d00408
+DECL|struct|__anon2b6544ef0408
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3951,7 +3957,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon289d55d00508
+DECL|struct|__anon2b6544ef0508
 block|{
 DECL|member|stock_id
 specifier|const

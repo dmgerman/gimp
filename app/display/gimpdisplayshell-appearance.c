@@ -130,21 +130,35 @@ value|(gimp_display_shell_get_fullscreen (shell) ? \    shell->fullscreen_option
 end_define
 
 begin_define
-DECL|macro|SET_ACTIVE (manager,group_name,action_name,active)
+DECL|macro|SET_ACTIVE (manager,action_name,active)
 define|#
 directive|define
 name|SET_ACTIVE
 parameter_list|(
 name|manager
 parameter_list|,
-name|group_name
-parameter_list|,
 name|action_name
 parameter_list|,
 name|active
 parameter_list|)
 define|\
-value|{ GimpActionGroup *group = \       gimp_ui_manager_get_action_group (manager, group_name); \     gimp_action_group_set_action_active (group, action_name, active); }
+value|{ GimpActionGroup *group = \       gimp_ui_manager_get_action_group (manager, "view"); \     gimp_action_group_set_action_active (group, action_name, active); }
+end_define
+
+begin_define
+DECL|macro|SET_COLOR (manager,action_name,color)
+define|#
+directive|define
+name|SET_COLOR
+parameter_list|(
+name|manager
+parameter_list|,
+name|action_name
+parameter_list|,
+name|color
+parameter_list|)
+define|\
+value|{ GimpActionGroup *group = \       gimp_ui_manager_get_action_group (manager, "view"); \     gimp_action_group_set_action_color (group, action_name, color, FALSE); }
 end_define
 
 begin_define
@@ -302,7 +316,7 @@ name|GTK_CONTAINER
 argument_list|(
 name|shell
 operator|->
-name|qmask
+name|qmask_button
 operator|->
 name|parent
 operator|->
@@ -359,8 +373,6 @@ name|shell
 operator|->
 name|menubar_manager
 argument_list|,
-literal|"view"
-argument_list|,
 literal|"view-show-menubar"
 argument_list|,
 name|show
@@ -378,8 +390,6 @@ argument_list|(
 name|shell
 operator|->
 name|popup_manager
-argument_list|,
-literal|"view"
 argument_list|,
 literal|"view-show-menubar"
 argument_list|,
@@ -490,7 +500,7 @@ name|gtk_widget_show
 argument_list|(
 name|shell
 operator|->
-name|origin
+name|origin_button
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -532,7 +542,7 @@ name|gtk_widget_hide
 argument_list|(
 name|shell
 operator|->
-name|origin
+name|origin_button
 argument_list|)
 expr_stmt|;
 name|gtk_widget_hide
@@ -574,8 +584,6 @@ name|shell
 operator|->
 name|menubar_manager
 argument_list|,
-literal|"view"
-argument_list|,
 literal|"view-show-rulers"
 argument_list|,
 name|show
@@ -593,8 +601,6 @@ argument_list|(
 name|shell
 operator|->
 name|popup_manager
-argument_list|,
-literal|"view"
 argument_list|,
 literal|"view-show-rulers"
 argument_list|,
@@ -742,14 +748,14 @@ name|gtk_widget_show
 argument_list|(
 name|shell
 operator|->
-name|qmask
+name|qmask_button
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|shell
 operator|->
-name|padding_button
+name|zoom_button
 argument_list|)
 expr_stmt|;
 name|gtk_box_set_spacing
@@ -794,14 +800,14 @@ name|gtk_widget_hide
 argument_list|(
 name|shell
 operator|->
-name|qmask
+name|qmask_button
 argument_list|)
 expr_stmt|;
 name|gtk_widget_hide
 argument_list|(
 name|shell
 operator|->
-name|padding_button
+name|zoom_button
 argument_list|)
 expr_stmt|;
 name|gtk_box_set_spacing
@@ -825,8 +831,6 @@ name|shell
 operator|->
 name|menubar_manager
 argument_list|,
-literal|"view"
-argument_list|,
 literal|"view-show-scrollbars"
 argument_list|,
 name|show
@@ -844,8 +848,6 @@ argument_list|(
 name|shell
 operator|->
 name|popup_manager
-argument_list|,
-literal|"view"
 argument_list|,
 literal|"view-show-scrollbars"
 argument_list|,
@@ -939,7 +941,7 @@ name|GTK_CONTAINER
 argument_list|(
 name|shell
 operator|->
-name|qmask
+name|qmask_button
 operator|->
 name|parent
 operator|->
@@ -996,8 +998,6 @@ name|shell
 operator|->
 name|menubar_manager
 argument_list|,
-literal|"view"
-argument_list|,
 literal|"view-show-statusbar"
 argument_list|,
 name|show
@@ -1015,8 +1015,6 @@ argument_list|(
 name|shell
 operator|->
 name|popup_manager
-argument_list|,
-literal|"view"
 argument_list|,
 literal|"view-show-statusbar"
 argument_list|,
@@ -1122,8 +1120,6 @@ name|shell
 operator|->
 name|menubar_manager
 argument_list|,
-literal|"view"
-argument_list|,
 literal|"view-show-selection"
 argument_list|,
 name|show
@@ -1141,8 +1137,6 @@ argument_list|(
 name|shell
 operator|->
 name|popup_manager
-argument_list|,
-literal|"view"
 argument_list|,
 literal|"view-show-selection"
 argument_list|,
@@ -1248,8 +1242,6 @@ name|shell
 operator|->
 name|menubar_manager
 argument_list|,
-literal|"view"
-argument_list|,
 literal|"view-show-layer-boundary"
 argument_list|,
 name|show
@@ -1267,8 +1259,6 @@ argument_list|(
 name|shell
 operator|->
 name|popup_manager
-argument_list|,
-literal|"view"
 argument_list|,
 literal|"view-show-layer-boundary"
 argument_list|,
@@ -1431,8 +1421,6 @@ name|shell
 operator|->
 name|menubar_manager
 argument_list|,
-literal|"view"
-argument_list|,
 literal|"view-show-grid"
 argument_list|,
 name|show
@@ -1450,8 +1438,6 @@ argument_list|(
 name|shell
 operator|->
 name|popup_manager
-argument_list|,
-literal|"view"
 argument_list|,
 literal|"view-show-grid"
 argument_list|,
@@ -1538,8 +1524,6 @@ name|shell
 operator|->
 name|menubar_manager
 argument_list|,
-literal|"view"
-argument_list|,
 literal|"view-snap-to-grid"
 argument_list|,
 name|snap
@@ -1557,8 +1541,6 @@ argument_list|(
 name|shell
 operator|->
 name|popup_manager
-argument_list|,
-literal|"view"
 argument_list|,
 literal|"view-snap-to-grid"
 argument_list|,
@@ -1661,8 +1643,6 @@ name|shell
 operator|->
 name|menubar_manager
 argument_list|,
-literal|"view"
-argument_list|,
 literal|"view-show-guides"
 argument_list|,
 name|show
@@ -1680,8 +1660,6 @@ argument_list|(
 name|shell
 operator|->
 name|popup_manager
-argument_list|,
-literal|"view"
 argument_list|,
 literal|"view-show-guides"
 argument_list|,
@@ -1768,8 +1746,6 @@ name|shell
 operator|->
 name|menubar_manager
 argument_list|,
-literal|"view"
-argument_list|,
 literal|"view-snap-to-guides"
 argument_list|,
 name|snap
@@ -1787,8 +1763,6 @@ argument_list|(
 name|shell
 operator|->
 name|popup_manager
-argument_list|,
-literal|"view"
 argument_list|,
 literal|"view-snap-to-guides"
 argument_list|,
@@ -1972,6 +1946,9 @@ break|break;
 case|case
 name|GIMP_CANVAS_PADDING_MODE_CUSTOM
 case|:
+case|case
+name|GIMP_CANVAS_PADDING_MODE_RESET
+case|:
 break|break;
 block|}
 name|g_object_set
@@ -2003,49 +1980,41 @@ operator|&
 name|color
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|shell
-operator|->
-name|padding_button
-condition|)
-block|{
-name|g_signal_handlers_block_by_func
+name|SET_COLOR
 argument_list|(
 name|shell
 operator|->
-name|padding_button
+name|menubar_manager
 argument_list|,
-name|gimp_display_shell_color_button_changed
-argument_list|,
-name|shell
-argument_list|)
-expr_stmt|;
-name|gimp_color_button_set_color
-argument_list|(
-name|GIMP_COLOR_BUTTON
-argument_list|(
-name|shell
-operator|->
-name|padding_button
-argument_list|)
+literal|"view-padding-color-menu"
 argument_list|,
 operator|&
-name|color
+name|options
+operator|->
+name|padding_color
 argument_list|)
 expr_stmt|;
-name|g_signal_handlers_unblock_by_func
+if|if
+condition|(
+name|IS_ACTIVE_DISPLAY
+argument_list|(
+name|shell
+argument_list|)
+condition|)
+name|SET_COLOR
 argument_list|(
 name|shell
 operator|->
-name|padding_button
+name|popup_manager
 argument_list|,
-name|gimp_display_shell_color_button_changed
+literal|"view-padding-color-menu"
 argument_list|,
-name|shell
+operator|&
+name|options
+operator|->
+name|padding_color
 argument_list|)
 expr_stmt|;
-block|}
 name|gimp_display_shell_expose_full
 argument_list|(
 name|shell

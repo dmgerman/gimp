@@ -521,6 +521,14 @@ value|"gimp-view-show-statusbar"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_VIEW_PADDING_COLOR
+define|#
+directive|define
+name|GIMP_HELP_VIEW_PADDING_COLOR
+value|"gimp-view-padding-color"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_VIEW_SHRINK_WRAP
 define|#
 directive|define
@@ -566,6 +574,14 @@ define|#
 directive|define
 name|GIMP_HELP_IMAGE_WINDOW_PADDING_BUTTON
 value|"gimp-image-window-padding-button"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_IMAGE_WINDOW_ZOOM_FOLLOW_BUTTON
+define|#
+directive|define
+name|GIMP_HELP_IMAGE_WINDOW_ZOOM_FOLLOW_BUTTON
+value|"gimp-image-window-zoom-follow-button"
 end_define
 
 begin_define
