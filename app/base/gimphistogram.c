@@ -2038,7 +2038,7 @@ name|masked
 expr_stmt|;
 name|s
 operator|+=
-literal|3
+literal|4
 expr_stmt|;
 name|m
 operator|+=
