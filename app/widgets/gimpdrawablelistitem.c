@@ -921,9 +921,43 @@ name|widget
 operator|->
 name|parent
 operator|&&
+comment|/* EEK */
+name|widget
+operator|->
+name|parent
+operator|->
+name|parent
+operator|&&
+comment|/* EEEEK */
+name|widget
+operator|->
+name|parent
+operator|->
+name|parent
+operator|->
+name|parent
+operator|&&
+comment|/* EEEEEEK */
+name|widget
+operator|->
+name|parent
+operator|->
+name|parent
+operator|->
+name|parent
+operator|->
+name|parent
+operator|&&
+comment|/* EEEEEEEEK */
 name|GIMP_IS_DRAWABLE_LIST_VIEW
 argument_list|(
 name|widget
+operator|->
+name|parent
+operator|->
+name|parent
+operator|->
+name|parent
 operator|->
 name|parent
 argument_list|)
@@ -938,6 +972,12 @@ operator|=
 name|GIMP_DRAWABLE_LIST_VIEW
 argument_list|(
 name|widget
+operator|->
+name|parent
+operator|->
+name|parent
+operator|->
+name|parent
 operator|->
 name|parent
 argument_list|)

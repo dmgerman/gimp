@@ -2809,10 +2809,10 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"Raise Channel"
 argument_list|,
-name|channel
-operator|&&
 operator|!
 name|fs
+operator|&&
+name|channel
 operator|&&
 name|prev
 argument_list|)
@@ -2821,10 +2821,10 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"Lower Channel"
 argument_list|,
-name|channel
-operator|&&
 operator|!
 name|fs
+operator|&&
+name|channel
 operator|&&
 name|next
 argument_list|)
@@ -2833,16 +2833,19 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"Duplicate Channel"
 argument_list|,
-name|channel
-operator|&&
 operator|!
 name|fs
+operator|&&
+name|channel
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"Channel to Selection"
 argument_list|,
+operator|!
+name|fs
+operator|&&
 name|channel
 argument_list|)
 expr_stmt|;
@@ -2850,6 +2853,9 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"Add to Selection"
 argument_list|,
+operator|!
+name|fs
+operator|&&
 name|channel
 argument_list|)
 expr_stmt|;
@@ -2857,6 +2863,9 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"Subtract from Selection"
 argument_list|,
+operator|!
+name|fs
+operator|&&
 name|channel
 argument_list|)
 expr_stmt|;
@@ -2864,6 +2873,9 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"Intersect with Selection"
 argument_list|,
+operator|!
+name|fs
+operator|&&
 name|channel
 argument_list|)
 expr_stmt|;
@@ -2871,20 +2883,20 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"Delete Channel"
 argument_list|,
-name|channel
-operator|&&
 operator|!
 name|fs
+operator|&&
+name|channel
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"Edit Channel Attributes..."
 argument_list|,
-name|channel
-operator|&&
 operator|!
 name|fs
+operator|&&
+name|channel
 argument_list|)
 expr_stmt|;
 undef|#

@@ -1511,7 +1511,7 @@ name|tiles
 argument_list|,
 name|_
 argument_list|(
-literal|"Floated Layer"
+literal|"Floating Selection"
 argument_list|)
 argument_list|,
 name|OPAQUE_OPACITY

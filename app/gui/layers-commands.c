@@ -4976,13 +4976,13 @@ name|fs
 init|=
 name|FALSE
 decl_stmt|;
-comment|/*  no floating sel        */
+comment|/*  floating sel           */
 name|gboolean
 name|ac
 init|=
 name|FALSE
 decl_stmt|;
-comment|/*  no active channel      */
+comment|/*  active channel         */
 name|gboolean
 name|lm
 init|=
@@ -5074,7 +5074,7 @@ name|gimp_image_floating_sel
 argument_list|(
 name|gimage
 argument_list|)
-operator|==
+operator|!=
 name|NULL
 operator|)
 expr_stmt|;
@@ -5085,7 +5085,7 @@ name|gimp_image_get_active_channel
 argument_list|(
 name|gimage
 argument_list|)
-operator|==
+operator|!=
 name|NULL
 operator|)
 expr_stmt|;
@@ -5213,8 +5213,10 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"Stack/Raise Layer"
 argument_list|,
+operator|!
 name|fs
 operator|&&
+operator|!
 name|ac
 operator|&&
 name|gimage
@@ -5230,8 +5232,10 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"Stack/Lower Layer"
 argument_list|,
+operator|!
 name|fs
 operator|&&
+operator|!
 name|ac
 operator|&&
 name|gimage
@@ -5247,8 +5251,10 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"Stack/Layer to Top"
 argument_list|,
+operator|!
 name|fs
 operator|&&
+operator|!
 name|ac
 operator|&&
 name|gimage
@@ -5264,8 +5270,10 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"Stack/Layer to Bottom"
 argument_list|,
+operator|!
 name|fs
 operator|&&
+operator|!
 name|ac
 operator|&&
 name|gimage
@@ -5281,8 +5289,10 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"Duplicate Layer"
 argument_list|,
+operator|!
 name|fs
 operator|&&
+operator|!
 name|ac
 operator|&&
 name|gimage
@@ -5297,6 +5307,7 @@ argument_list|,
 operator|!
 name|fs
 operator|&&
+operator|!
 name|ac
 operator|&&
 name|gimage
@@ -5308,6 +5319,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"Delete Layer"
 argument_list|,
+operator|!
 name|ac
 operator|&&
 name|gimage
@@ -5319,6 +5331,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"Layer Boundary Size..."
 argument_list|,
+operator|!
 name|ac
 operator|&&
 name|gimage
@@ -5330,6 +5343,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"Layer to Imagesize"
 argument_list|,
+operator|!
 name|ac
 operator|&&
 name|gimage
@@ -5341,6 +5355,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"Scale Layer..."
 argument_list|,
+operator|!
 name|ac
 operator|&&
 name|gimage
@@ -5352,8 +5367,10 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"Merge Visible Layers..."
 argument_list|,
+operator|!
 name|fs
 operator|&&
+operator|!
 name|ac
 operator|&&
 name|gimage
@@ -5365,8 +5382,10 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"Merge Down"
 argument_list|,
+operator|!
 name|fs
 operator|&&
+operator|!
 name|ac
 operator|&&
 name|gimage
@@ -5380,8 +5399,10 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"Flatten Image"
 argument_list|,
+operator|!
 name|fs
 operator|&&
+operator|!
 name|ac
 operator|&&
 name|gimage
@@ -5393,8 +5414,10 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"Add Layer Mask..."
 argument_list|,
+operator|!
 name|fs
 operator|&&
+operator|!
 name|ac
 operator|&&
 name|gimage
@@ -5414,8 +5437,10 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"Apply Layer Mask"
 argument_list|,
+operator|!
 name|fs
 operator|&&
+operator|!
 name|ac
 operator|&&
 name|gimage
@@ -5429,8 +5454,10 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"Delete Layer Mask"
 argument_list|,
+operator|!
 name|fs
 operator|&&
+operator|!
 name|ac
 operator|&&
 name|gimage
@@ -5444,8 +5471,10 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"Mask to Selection"
 argument_list|,
+operator|!
 name|fs
 operator|&&
+operator|!
 name|ac
 operator|&&
 name|gimage
@@ -5460,6 +5489,9 @@ argument_list|(
 literal|"Add Alpha Channel"
 argument_list|,
 operator|!
+name|fs
+operator|&&
+operator|!
 name|alpha
 argument_list|)
 expr_stmt|;
@@ -5467,8 +5499,10 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"Alpha to Selection"
 argument_list|,
+operator|!
 name|fs
 operator|&&
+operator|!
 name|ac
 operator|&&
 name|gimage
@@ -5482,6 +5516,10 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"Edit Layer Attributes..."
 argument_list|,
+operator|!
+name|fs
+operator|&&
+operator|!
 name|ac
 operator|&&
 name|gimage

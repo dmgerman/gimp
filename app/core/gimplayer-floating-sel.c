@@ -257,6 +257,11 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|gimp_image_floating_selection_changed
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -314,6 +319,11 @@ argument_list|(
 name|gimage
 argument_list|,
 name|layer
+argument_list|)
+expr_stmt|;
+name|gimp_image_floating_selection_changed
+argument_list|(
+name|gimage
 argument_list|)
 expr_stmt|;
 block|}
@@ -449,6 +459,11 @@ argument_list|)
 expr_stmt|;
 comment|/*  invalidate the boundaries  */
 name|gimage_mask_invalidate
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
+name|gimp_image_floating_selection_changed
 argument_list|(
 name|gimage
 argument_list|)
@@ -819,6 +834,11 @@ argument_list|)
 expr_stmt|;
 comment|/* This may be undesirable when invoked non-interactively... we'll see. */
 comment|/*reinit_layer_idlerender (gimage, layer);*/
+name|gimp_image_floating_selection_changed
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

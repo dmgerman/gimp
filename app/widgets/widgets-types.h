@@ -205,6 +205,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpChannelListItem
+typedef|typedef
+name|struct
+name|_GimpChannelListItem
+name|GimpChannelListItem
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpDrawableListItem
 typedef|typedef
 name|struct
