@@ -404,6 +404,12 @@ name|GimpInterpolationType
 name|interpolation_type
 parameter_list|,
 name|gboolean
+name|supersample
+parameter_list|,
+name|gint
+name|recursion_level
+parameter_list|,
+name|gboolean
 name|clip_result
 parameter_list|,
 name|GimpProgressFunc
@@ -2671,7 +2677,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_transform (GimpItem * item,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gimp_channel_transform (GimpItem * item,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
 name|gimp_channel_transform
 parameter_list|(
 name|GimpItem
@@ -2688,6 +2694,12 @@ name|direction
 parameter_list|,
 name|GimpInterpolationType
 name|interpolation_type
+parameter_list|,
+name|gboolean
+name|supersample
+parameter_list|,
+name|gint
+name|recursion_level
 parameter_list|,
 name|gboolean
 name|clip_result
@@ -2760,6 +2772,10 @@ argument_list|,
 name|direction
 argument_list|,
 name|interpolation_type
+argument_list|,
+name|supersample
+argument_list|,
+name|recursion_level
 argument_list|,
 name|clip_result
 argument_list|,

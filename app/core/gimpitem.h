@@ -429,6 +429,12 @@ name|GimpInterpolationType
 name|interpolation_type
 parameter_list|,
 name|gboolean
+name|supersample
+parameter_list|,
+name|gint
+name|recursion_level
+parameter_list|,
+name|gboolean
 name|clip_result
 parameter_list|,
 name|GimpProgressFunc
@@ -884,6 +890,12 @@ name|direction
 parameter_list|,
 name|GimpInterpolationType
 name|interpolation_type
+parameter_list|,
+name|gboolean
+name|supersample
+parameter_list|,
+name|gint
+name|recursion_level
 parameter_list|,
 name|gboolean
 name|clip_result

@@ -128,6 +128,10 @@ DECL|member|supersample
 name|gboolean
 name|supersample
 decl_stmt|;
+DECL|member|recursion_level
+name|gint
+name|recursion_level
+decl_stmt|;
 DECL|member|clip
 name|gboolean
 name|clip

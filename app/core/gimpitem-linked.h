@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf406c60103
+DECL|enum|__anon2c92801b0103
 block|{
 DECL|enumerator|GIMP_ITEM_LINKED_LAYERS
 name|GIMP_ITEM_LINKED_LAYERS
@@ -139,6 +139,12 @@ name|direction
 parameter_list|,
 name|GimpInterpolationType
 name|interpolation_type
+parameter_list|,
+name|gboolean
+name|supersample
+parameter_list|,
+name|gint
+name|recursion_level
 parameter_list|,
 name|gboolean
 name|clip_result

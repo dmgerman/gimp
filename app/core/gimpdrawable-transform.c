@@ -176,18 +176,6 @@ value|MAX(MAX(a,b),MAX(c,d))
 end_define
 
 begin_comment
-comment|/* recursion level should be a usersettable parameter,    3 seems to be a reasonable default */
-end_comment
-
-begin_define
-DECL|macro|RECURSION_LEVEL
-define|#
-directive|define
-name|RECURSION_LEVEL
-value|3
-end_define
-
-begin_comment
 comment|/*  forward function prototypes  */
 end_comment
 
@@ -345,7 +333,7 @@ end_comment
 begin_function
 name|TileManager
 modifier|*
-DECL|function|gimp_drawable_transform_tiles_affine (GimpDrawable * drawable,TileManager * orig_tiles,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gimp_drawable_transform_tiles_affine (GimpDrawable * drawable,TileManager * orig_tiles,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
 name|gimp_drawable_transform_tiles_affine
 parameter_list|(
 name|GimpDrawable
@@ -370,6 +358,9 @@ parameter_list|,
 name|gboolean
 name|supersample
 parameter_list|,
+name|gint
+name|recursion_level
+parameter_list|,
 name|gboolean
 name|clip_result
 parameter_list|,
@@ -393,15 +384,9 @@ name|new_tiles
 decl_stmt|;
 name|GimpMatrix3
 name|m
-init|=
-operator|*
-name|matrix
 decl_stmt|;
 name|GimpMatrix3
 name|inv
-init|=
-operator|*
-name|matrix
 decl_stmt|;
 name|PixelSurround
 name|surround
@@ -541,6 +526,16 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
+expr_stmt|;
+name|m
+operator|=
+operator|*
+name|matrix
+expr_stmt|;
+name|inv
+operator|=
+operator|*
+name|matrix
 expr_stmt|;
 name|alpha
 operator|=
@@ -2243,7 +2238,7 @@ index|]
 operator|-
 name|v1
 argument_list|,
-name|RECURSION_LEVEL
+name|recursion_level
 argument_list|,
 name|color
 argument_list|,
@@ -4118,7 +4113,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_transform_affine (GimpDrawable * drawable,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gboolean clip_result)
+DECL|function|gimp_drawable_transform_affine (GimpDrawable * drawable,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,gboolean clip_result)
 name|gimp_drawable_transform_affine
 parameter_list|(
 name|GimpDrawable
@@ -4138,6 +4133,9 @@ name|interpolation_type
 parameter_list|,
 name|gboolean
 name|supersample
+parameter_list|,
+name|gint
+name|recursion_level
 parameter_list|,
 name|gboolean
 name|clip_result
@@ -4269,6 +4267,8 @@ argument_list|,
 name|interpolation_type
 argument_list|,
 name|supersample
+argument_list|,
+name|recursion_level
 argument_list|,
 name|FALSE
 argument_list|,
