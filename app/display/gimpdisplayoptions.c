@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a41fb40103
+DECL|enum|__anon295d66b80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -690,7 +690,7 @@ name|PROP_SHOW_MENUBAR
 argument_list|,
 literal|"show-menubar"
 argument_list|,
-name|FS_SHOW_MENUBAR_BLURB
+name|SHOW_MENUBAR_BLURB
 argument_list|,
 name|FALSE
 argument_list|,
@@ -705,7 +705,7 @@ name|PROP_SHOW_RULERS
 argument_list|,
 literal|"show-rulers"
 argument_list|,
-name|FS_SHOW_RULERS_BLURB
+name|SHOW_RULERS_BLURB
 argument_list|,
 name|FALSE
 argument_list|,
@@ -720,7 +720,7 @@ name|PROP_SHOW_SCROLLBARS
 argument_list|,
 literal|"show-scrollbars"
 argument_list|,
-name|FS_SHOW_SCROLLBARS_BLURB
+name|SHOW_SCROLLBARS_BLURB
 argument_list|,
 name|FALSE
 argument_list|,
@@ -735,7 +735,7 @@ name|PROP_SHOW_STATUSBAR
 argument_list|,
 literal|"show-statusbar"
 argument_list|,
-name|FS_SHOW_STATUSBAR_BLURB
+name|SHOW_STATUSBAR_BLURB
 argument_list|,
 name|FALSE
 argument_list|,
@@ -810,7 +810,7 @@ name|PROP_PADDING_MODE
 argument_list|,
 literal|"padding-mode"
 argument_list|,
-name|FS_CANVAS_PADDING_MODE_BLURB
+name|CANVAS_PADDING_MODE_BLURB
 argument_list|,
 name|GIMP_TYPE_CANVAS_PADDING_MODE
 argument_list|,
@@ -827,7 +827,7 @@ name|PROP_PADDING_COLOR
 argument_list|,
 literal|"padding-color"
 argument_list|,
-name|FS_CANVAS_PADDING_COLOR_BLURB
+name|CANVAS_PADDING_COLOR_BLURB
 argument_list|,
 operator|&
 name|black

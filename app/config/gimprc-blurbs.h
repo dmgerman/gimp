@@ -48,24 +48,6 @@ value|N_("Sets the canvas padding color used if the padding mode is set to " \  
 end_define
 
 begin_define
-DECL|macro|FS_CANVAS_PADDING_MODE_BLURB
-define|#
-directive|define
-name|FS_CANVAS_PADDING_MODE_BLURB
-define|\
-value|N_("Specifies how the area around the image should be drawn when in " \    "fullscreen mode.")
-end_define
-
-begin_define
-DECL|macro|FS_CANVAS_PADDING_COLOR_BLURB
-define|#
-directive|define
-name|FS_CANVAS_PADDING_COLOR_BLURB
-define|\
-value|N_("Sets the canvas padding color used when in fullscreen mode and " \    "the padding mode is set to custom color.")
-end_define
-
-begin_define
 DECL|macro|COLORMAP_CYCLING_BLURB
 define|#
 directive|define
@@ -597,42 +579,6 @@ directive|define
 name|SHOW_STATUSBAR_BLURB
 define|\
 value|N_("When enabled, the statusbar is visible by default. This can also be " \    "toggled with the \"View->Show Statusbar\" command.")
-end_define
-
-begin_define
-DECL|macro|FS_SHOW_MENUBAR_BLURB
-define|#
-directive|define
-name|FS_SHOW_MENUBAR_BLURB
-define|\
-value|N_("When enabled, the menubar is visible by default in fullscreen mode. "\    "This can also be toggled with the \"View->Show Menubar\" command.")
-end_define
-
-begin_define
-DECL|macro|FS_SHOW_RULERS_BLURB
-define|#
-directive|define
-name|FS_SHOW_RULERS_BLURB
-define|\
-value|N_("When enabled, the rulers are visible by default in fullscreen mode. "\    "This can also be toggled with the \"View->Show Rulers\" command.")
-end_define
-
-begin_define
-DECL|macro|FS_SHOW_SCROLLBARS_BLURB
-define|#
-directive|define
-name|FS_SHOW_SCROLLBARS_BLURB
-define|\
-value|N_("When enabled, the scrollbars are visible by default in fullscreen mode. "\    "This can also be toggled with the \"View->Show Scrollbars\" command.")
-end_define
-
-begin_define
-DECL|macro|FS_SHOW_STATUSBAR_BLURB
-define|#
-directive|define
-name|FS_SHOW_STATUSBAR_BLURB
-define|\
-value|N_("When enabled, the statusbar is visible by default in fullscreen mode. "\    "This can also be toggled with the \"View->Show Statusbar\" command.")
 end_define
 
 begin_define
