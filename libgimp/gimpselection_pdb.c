@@ -13,6 +13,10 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_comment
+comment|/**  * gimp_selection_bounds:  * @image_ID: The image.  * @non_empty: True if there is a selection.  * @x1: x coordinate of upper left corner of selection bounds.  * @y1: y coordinate of upper left corner of selection bounds.  * @x2: x coordinate of lower right corner of selection bounds.  * @y2: y coordinate of lower right corner of selection bounds.  *  * Find the bounding box of the current selection.  *  * This procedure returns whether there is a selection for the  * specified image. If there is one, the upper left and lower right  * corners of the bounding box are returned. These coordinates are  * relative to the image.  *  * Returns: TRUE on success.  */
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_selection_bounds (gint32 image_ID,gboolean * non_empty,gint * x1,gint * y1,gint * x2,gint * y2)
@@ -187,6 +191,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_selection_is_empty:  * @image_ID: The image.  *  * Determine whether the selection is empty.  *  * This procedure returns non-zero if the selection for the specified  * image is not empty.  *  * Returns: Is the selection empty?  */
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_selection_is_empty (gint32 image_ID)
@@ -260,6 +268,10 @@ name|is_empty
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * _gimp_selection_float:  * @drawable_ID: The drawable from which to float selection.  * @offx: x offset for translation.  * @offy: y offset for translation.  *  * Float the selection from the specified drawable with initial offsets  * as specified.  *  * This procedure determines the region of the specified drawable that  * lies beneath the current selection. The region is then cut from the  * drawable and the resulting data is made into a new layer which is  * instantiated as a floating selection. The offsets allow initial  * positioning of the new floating selection.  *  * Returns: The floated layer.  */
+end_comment
 
 begin_function
 name|gint32
@@ -349,6 +361,10 @@ name|layer_ID
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_selection_none:  * @image_ID: The image.  *  * Deselect the entire image.  *  * This procedure deselects the entire image. Every pixel in the  * selection channel is set to 0.  *  * Returns: TRUE on success.  */
+end_comment
 
 begin_function
 name|gboolean

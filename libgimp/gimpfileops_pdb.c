@@ -13,6 +13,10 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_comment
+comment|/**  * gimp_register_magic_load_handler:  * @procedure_name: The name of the procedure to be used for loading.  * @extensions: comma separated list of extensions this handler can load (i.e. \"jpg,jpeg\").  * @prefixes: comma separated list of prefixes this handler can load (i.e. \"http:,ftp:\").  * @magics: comma separated list of magic file information this handler can load (i.e. \"0,string,GIF\").  *  * Registers a file load handler procedure.  *  * Registers a procedural database procedure to be called to load files  * of a particular file format using magic file information.  *  * Returns: TRUE on success.  */
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_register_magic_load_handler (gchar * procedure_name,gchar * extensions,gchar * prefixes,gchar * magics)
@@ -101,6 +105,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_register_load_handler:  * @procedure_name: The name of the procedure to be used for loading.  * @extensions: comma separated list of extensions this handler can load (i.e. \"jpg,jpeg\").  * @prefixes: comma separated list of prefixes this handler can load (i.e. \"http:,ftp:\").  *  * Registers a file load handler procedure.  *  * Registers a procedural database procedure to be called to load files  * of a particular file format.  *  * Returns: TRUE on success.  */
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_register_load_handler (gchar * procedure_name,gchar * extensions,gchar * prefixes)
@@ -180,6 +188,10 @@ name|success
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_register_save_handler:  * @procedure_name: The name of the procedure to be used for saving.  * @extensions: comma separated list of extensions this handler can save (i.e. \"jpg,jpeg\").  * @prefixes: comma separated list of prefixes this handler can save (i.e. \"http:,ftp:\").  *  * Registers a file save handler procedure.  *  * Registers a procedural database procedure to be called to save files  * in a particular file format.  *  * Returns: TRUE on success.  */
+end_comment
 
 begin_function
 name|gboolean

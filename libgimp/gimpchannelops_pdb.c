@@ -13,6 +13,10 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_comment
+comment|/**  * gimp_channel_ops_offset:  * @drawable_ID: The drawable to offset.  * @wrap_around: wrap image around or fill vacated regions.  * @fill_type: fill vacated regions of drawable with background or transparent.  * @offset_x: offset by this amount in X direction.  * @offset_y: offset by this amount in Y direction.  *  * Offset the drawable by the specified amounts in the X and Y  * directions  *  * This procedure offsets the specified drawable by the amounts  * specified by 'offset_x' and 'offset_y'. If 'wrap_around' is set to  * TRUE, then portions of the drawable which are offset out of bounds  * are wrapped around. Alternatively, the undefined regions of the  * drawable can be filled with transparency or the background color, as  * specified by the 'fill_type' parameter.  *  * Returns: TRUE on success.  */
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_channel_ops_offset (gint32 drawable_ID,gboolean wrap_around,GimpChannelOffsetType fill_type,gint offset_x,gint offset_y)
@@ -103,6 +107,10 @@ name|success
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_channel_ops_duplicate:  * @image_ID: The image.  *  * Duplicate the specified image  *  * This procedure duplicates the specified image, copying all layers,  * channels, and image information.  *  * Returns: The new, duplicated image.  */
+end_comment
 
 begin_function
 name|gint32

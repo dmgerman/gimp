@@ -13,6 +13,10 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_comment
+comment|/**  * gimp_text_fontname:  * @image_ID: The image.  * @drawable_ID: The affected drawable: (-1 for a new text layer).  * @x: The x coordinate for the left of the text bounding box.  * @y: The y coordinate for the top of the text bounding box.  * @text: The text to generate.  * @border: The size of the border.  * @antialias: Antialiasing.  * @size: The size of text in either pixels or points.  * @size_type: The units of specified size.  * @fontname: The fontname (conforming to the X Logical Font Description Conventions).  *  * Add text at the specified location as a floating selection or a new  * layer.  *  * This tool requires font information as a fontname conforming to the  * 'X Logical Font Description Conventions'. You can specify the  * fontsize in units of pixels or points, and the appropriate metric is  * specified using the size_type argument. The x and y parameters  * together control the placement of the new text by specifying the  * upper left corner of the text bounding box. If the antialias  * parameter is non-zero, the generated text will blend more smoothly  * with underlying layers. This option requires more time and memory to  * compute than non-antialiased text; the resulting floating selection  * or layer, however, will require the same amount of memory with or  * without antialiasing. If the specified drawable parameter is valid,  * the text will be created as a floating selection attached to the  * drawable. If the drawable parameter is not valid (-1), the text will  * appear as a new layer. Finally, a border can be specified around the  * final rendered text. The border is measured in pixels. If the border  * is specified as -1, empty spaces around the text will not be  * cropped.  *  * Returns: The new text layer.  */
+end_comment
+
 begin_function
 name|gint32
 DECL|function|gimp_text_fontname (gint32 image_ID,gint32 drawable_ID,gdouble x,gdouble y,gchar * text,gint border,gboolean antialias,gdouble size,GimpSizeType size_type,gchar * fontname)
@@ -152,6 +156,10 @@ name|text_layer_ID
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_text_get_extents_fontname:  * @text: The text to generate.  * @size: The size of text in either pixels or points.  * @size_type: The units of specified size.  * @fontname: The fontname (conforming to the X Logical Font Description Conventions).  * @width: The width of the specified font.  * @height: The height of the specified font.  * @ascent: The ascent of the specified font.  * @descent: The descent of the specified font.  *  * Get extents of the bounding box for the specified text.  *  * This tool returns the width and height of a bounding box for the  * specified text string with the specified font information. Ascent  * and descent for the specified font are returned as well.  *  * Returns: TRUE on success.  */
+end_comment
 
 begin_function
 name|gboolean
@@ -328,6 +336,10 @@ name|success
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_text:  * @image_ID: The image.  * @drawable_ID: The affected drawable: (-1 for a new text layer).  * @x: The x coordinate for the left of the text bounding box.  * @y: The y coordinate for the top of the text bounding box.  * @text: The text to generate.  * @border: The size of the border.  * @antialias: Antialiasing.  * @size: The size of text in either pixels or points.  * @size_type: The units of specified size.  * @foundry: The font foundry, \"*\" for any.  * @family: The font family, \"*\" for any.  * @weight: The font weight, \"*\" for any.  * @slant: The font slant, \"*\" for any.  * @set_width: The font set-width, \"*\" for any.  * @spacing: The font spacing, \"*\" for any.  * @registry: The font registry, \"*\" for any.  * @encoding: The font encoding, \"*\" for any.  *  * Add text at the specified location as a floating selection or a new  * layer.  *  * This tool requires font information in the form of nine parameters:  * size, foundry, family, weight, slant, set_width, spacing, registry,  * encoding. The font size can either be specified in units of pixels  * or points, and the appropriate metric is specified using the  * size_type argument. The x and y parameters together control the  * placement of the new text by specifying the upper left corner of the  * text bounding box. If the antialias parameter is non-zero, the  * generated text will blend more smoothly with underlying layers. This  * option requires more time and memory to compute than non-antialiased  * text; the resulting floating selection or layer, however, will  * require the same amount of memory with or without antialiasing. If  * the specified drawable parameter is valid, the text will be created  * as a floating selection attached to the drawable. If the drawable  * parameter is not valid (-1), the text will appear as a new layer.  * Finally, a border can be specified around the final rendered text.  * The border is measured in pixels. If the border is specified as -1,  * empty spaces around the text will not be cropped.  *  * Returns: The new text layer.  */
+end_comment
 
 begin_function
 name|gint32
@@ -524,6 +536,10 @@ name|text_layer_ID
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_text_get_extents:  * @text: The text to generate.  * @size: The size of text in either pixels or points.  * @size_type: The units of specified size.  * @foundry: The font foundry, \"*\" for any.  * @family: The font family, \"*\" for any.  * @weight: The font weight, \"*\" for any.  * @slant: The font slant, \"*\" for any.  * @set_width: The font set-width, \"*\" for any.  * @spacing: The font spacing, \"*\" for any.  * @registry: The font registry, \"*\" for any.  * @encoding: The font encoding, \"*\" for any.  * @width: The width of the specified font.  * @height: The height of the specified font.  * @ascent: The ascent of the specified font.  * @descent: The descent of the specified font.  *  * Get extents of the bounding box for the specified text.  *  * This tool returns the width and height of a bounding box for the  * specified text string with the specified font information. Ascent  * and descent for the specified font are returned as well.  *  * Returns: TRUE on success.  */
+end_comment
 
 begin_function
 name|gboolean

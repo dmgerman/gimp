@@ -13,6 +13,10 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_comment
+comment|/**  * _gimp_channel_new:  * @image_ID: The image to which to add the channel.  * @width: The channel width.  * @height: The channel height.  * @name: The channel name.  * @opacity: The channel opacity.  * @red:  * @green:  * @blue: The channel compositing color.  *  * Create a new channel.  *  * This procedure creates a new channel with the specified width and  * height. Name, opacity, and color are also supplied parameters. The  * new channel still needs to be added to the image, as this is not  * automatic. Add the new channel with the 'gimp_image_add_channel'  * command. Other attributes such as channel show masked, should be set  * with explicit procedure calls. The channel's contents are undefined  * initially.  *  * Returns: The newly created channel.  */
+end_comment
+
 begin_function
 name|gint32
 DECL|function|_gimp_channel_new (gint32 image_ID,gint width,gint height,gchar * name,gdouble opacity,guchar red,guchar green,guchar blue)
@@ -157,6 +161,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_channel_copy:  * @channel_ID: The channel to copy.  *  * Copy a channel.  *  * This procedure copies the specified channel and returns the copy.  *  * Returns: The newly copied channel.  */
+end_comment
+
 begin_function
 name|gint32
 DECL|function|gimp_channel_copy (gint32 channel_ID)
@@ -232,6 +240,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_channel_delete:  * @channel_ID: The channel to delete.  *  * Delete a channel.  *  * This procedure deletes the specified channel. This does not need to  * be done if a gimage containing this channel was already deleted.  *  * Returns: TRUE on success.  */
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_channel_delete (gint32 channel_ID)
@@ -294,6 +306,10 @@ name|success
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_channel_get_name:  * @channel_ID: The channel.  *  * Get the name of the specified channel.  *  * This procedure returns the specified channel's name.  *  * Returns: The channel name.  */
+end_comment
 
 begin_function
 name|gchar
@@ -374,6 +390,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_channel_set_name:  * @channel_ID: The channel.  * @name: The new channel name.  *  * Set the name of the specified channel.  *  * This procedure sets the specified channel's name.  *  * Returns: TRUE on success.  */
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_channel_set_name (gint32 channel_ID,gchar * name)
@@ -444,6 +464,10 @@ name|success
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_channel_get_visible:  * @channel_ID: The channel.  *  * Get the visibility of the specified channel.  *  * This procedure returns the specified channel's visibility.  *  * Returns: The channel visibility.  */
+end_comment
 
 begin_function
 name|gboolean
@@ -519,6 +543,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_channel_set_visible:  * @channel_ID: The channel.  * @visible: The new channel visibility.  *  * Set the visibility of the specified channel.  *  * This procedure sets the specified channel's visibility.  *  * Returns: TRUE on success.  */
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_channel_set_visible (gint32 channel_ID,gboolean visible)
@@ -588,6 +616,10 @@ name|success
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_channel_get_show_masked:  * @channel_ID: The channel.  *  * Get the composite method of the specified channel.  *  * This procedure returns the specified channel's composite method. If  * it is non-zero, then the channel is composited with the image so  * that masked regions are shown. Otherwise, selected regions are  * shown.  *  * Returns: The channel composite method.  */
+end_comment
 
 begin_function
 name|gboolean
@@ -663,6 +695,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_channel_set_show_masked:  * @channel_ID: The channel.  * @show_masked: The new channel composite method.  *  * Set the composite method of the specified channel.  *  * This procedure sets the specified channel's composite method. If it  * is non-zero, then the channel is composited with the image so that  * masked regions are shown. Otherwise, selected regions are shown.  *  * Returns: TRUE on success.  */
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_channel_set_show_masked (gint32 channel_ID,gboolean show_masked)
@@ -732,6 +768,10 @@ name|success
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_channel_get_opacity:  * @channel_ID: The channel.  *  * Get the opacity of the specified channel.  *  * This procedure returns the specified channel's opacity.  *  * Returns: The channel opacity.  */
+end_comment
 
 begin_function
 name|gdouble
@@ -807,6 +847,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_channel_set_opacity:  * @channel_ID: The channel.  * @opacity: The new channel opacity.  *  * Set the opacity of the specified channel.  *  * This procedure sets the specified channel's opacity.  *  * Returns: TRUE on success.  */
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_channel_set_opacity (gint32 channel_ID,gdouble opacity)
@@ -876,6 +920,10 @@ name|success
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_channel_get_color:  * @channel_ID: The channel.  * @red:  * @green:  * @blue: The channel compositing color.  *  * Get the compositing color of the specified channel.  *  * This procedure returns the specified channel's compositing color.  *  * Returns: TRUE on success.  */
+end_comment
 
 begin_function
 name|gboolean
@@ -1000,6 +1048,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_channel_set_color:  * @channel_ID: The channel.  * @red:  * @green:  * @blue: The new channel compositing color.  *  * Set the compositing color of the specified channel.  *  * This procedure sets the specified channel's compositing color.  *  * Returns: TRUE on success.  */
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_channel_set_color (gint32 channel_ID,guchar red,guchar green,guchar blue)
@@ -1103,6 +1155,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_channel_get_tattoo:  * @channel_ID: The channel.  *  * Get the tattoo of the specified channel.  *  * This procedure returns the specified channel's tattoo. A tattoo is a  * unique and permanent identifier attached to a channel that can be  * used to uniquely identify a channel within an image even between  * sessions.  *  * Returns: The channel tattoo.  */
+end_comment
+
 begin_function
 name|gint
 DECL|function|gimp_channel_get_tattoo (gint32 channel_ID)
@@ -1176,6 +1232,10 @@ name|tattoo
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_channel_set_tattoo:  * @channel_ID: The channel.  * @tattoo: The new channel tattoo.  *  * Set the tattoo of the specified channel.  *  * This procedure sets the specified channel's tattoo. A tattoo is a  * unique and permanent identifier attached to a channel that can be  * used to uniquely identify a channel within an image even between  * sessions.  *  * Returns: TRUE on success.  */
+end_comment
 
 begin_function
 name|gboolean

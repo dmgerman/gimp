@@ -13,6 +13,10 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_comment
+comment|/**  * gimp_version:  *  * Returns the host gimp version.  *  * This procedure returns the version number of the currently running  * gimp.  *  * Returns: The gimp version.  */
+end_comment
+
 begin_function
 name|gchar
 modifier|*

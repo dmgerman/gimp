@@ -13,6 +13,10 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_comment
+comment|/**  * gimp_parasite_find:  * @name: The name of the parasite to find.  *  * Finds the named parasite.  *  * Finds and returns the named parasite that was previously attached to  * the gimp.  *  * Returns: The found parasite.  */
+end_comment
+
 begin_function
 name|GimpParasite
 modifier|*
@@ -94,6 +98,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_parasite_attach:  * @parasite: The parasite to attach to the gimp.  *  * Add a parasite to the gimp.  *  * This procedure attaches a parasite to the gimp. It has no return  * values.  *  * Returns: TRUE on success.  */
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_parasite_attach (GimpParasite * parasite)
@@ -158,6 +166,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_parasite_detach:  * @name: The name of the parasite to detach from the gimp.  *  * Removes a parasite from the gimp.  *  * This procedure detaches a parasite from the gimp. It has no return  * values.  *  * Returns: TRUE on success.  */
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_parasite_detach (gchar * name)
@@ -221,6 +233,10 @@ name|success
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_parasite_list:  * @num_parasites: The number of attached parasites.  * @parasites: The names of currently attached parasites.  *  * List all parasites.  *  * Returns a list of all currently attached parasites.  *  * Returns: TRUE on success.  */
+end_comment
 
 begin_function
 name|gboolean
@@ -368,6 +384,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_drawable_parasite_find:  * @drawable_ID: The drawable.  * @name: The name of the parasite to find.  *  * Finds the named parasite in a drawable  *  * Finds and returns the named parasite that was previously attached to  * a drawable.  *  * Returns: The found parasite.  */
+end_comment
+
 begin_function
 name|GimpParasite
 modifier|*
@@ -456,6 +476,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_drawable_parasite_attach:  * @drawable_ID: The drawable.  * @parasite: The parasite to attach to a drawable.  *  * Add a parasite to a drawable.  *  * This procedure attaches a parasite to a drawable. It has no return  * values.  *  * Returns: TRUE on success.  */
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_drawable_parasite_attach (gint32 drawable_ID,GimpParasite * parasite)
@@ -527,6 +551,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_drawable_parasite_detach:  * @drawable_ID: The drawable.  * @name: The name of the parasite to detach from a drawable.  *  * Removes a parasite from a drawable.  *  * This procedure detaches a parasite from a drawable. It has no return  * values.  *  * Returns: TRUE on success.  */
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_drawable_parasite_detach (gint32 drawable_ID,gchar * name)
@@ -597,6 +625,10 @@ name|success
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_drawable_parasite_list:  * @drawable_ID: The drawable.  * @num_parasites: The number of attached parasites.  * @parasites: The names of currently attached parasites.  *  * List all parasites.  *  * Returns a list of all currently attached parasites.  *  * Returns: TRUE on success.  */
+end_comment
 
 begin_function
 name|gboolean
@@ -751,6 +783,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_image_parasite_find:  * @image_ID: The image.  * @name: The name of the parasite to find.  *  * Finds the named parasite in an image  *  * Finds and returns the named parasite that was previously attached to  * an image.  *  * Returns: The found parasite.  */
+end_comment
+
 begin_function
 name|GimpParasite
 modifier|*
@@ -839,6 +875,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_image_parasite_attach:  * @image_ID: The image.  * @parasite: The parasite to attach to an image.  *  * Add a parasite to an image.  *  * This procedure attaches a parasite to an image. It has no return  * values.  *  * Returns: TRUE on success.  */
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_image_parasite_attach (gint32 image_ID,GimpParasite * parasite)
@@ -910,6 +950,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_image_parasite_detach:  * @image_ID: The image.  * @name: The name of the parasite to detach from an image.  *  * Removes a parasite from an image.  *  * This procedure detaches a parasite from an image. It has no return  * values.  *  * Returns: TRUE on success.  */
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_image_parasite_detach (gint32 image_ID,gchar * name)
@@ -980,6 +1024,10 @@ name|success
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_image_parasite_list:  * @image_ID: The image.  * @num_parasites: The number of attached parasites.  * @parasites: The names of currently attached parasites.  *  * List all parasites.  *  * Returns a list of all currently attached parasites.  *  * Returns: TRUE on success.  */
+end_comment
 
 begin_function
 name|gboolean

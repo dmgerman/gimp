@@ -13,6 +13,10 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_comment
+comment|/**  * gimp_brushes_popup:  * @brush_callback: The callback PDB proc to call when brush selection is made.  * @popup_title: Title to give the brush popup window.  * @initial_brush: The name of the brush to set as the first selected.  * @opacity: The initial opacity of the brush.  * @spacing: The initial spacing of the brush (if< 0 then use brush default spacing).  * @paint_mode: The initial paint mode.  *  * Invokes the Gimp brush selection.  *  * This procedure popups the brush selection dialog.  *  * Returns: TRUE on success.  */
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_brushes_popup (gchar * brush_callback,gchar * popup_title,gchar * initial_brush,gdouble opacity,gint spacing,GimpLayerModeEffects paint_mode)
@@ -114,6 +118,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_brushes_close_popup:  * @brush_callback: The name of the callback registered for this popup.  *  * Popdown the Gimp brush selection.  *  * This procedure closes an opened brush selection dialog.  *  * Returns: TRUE on success.  */
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_brushes_close_popup (gchar * brush_callback)
@@ -177,6 +185,10 @@ name|success
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_brushes_set_popup:  * @brush_callback: The name of the callback registered for this popup.  * @brush_name: The name of the brush to set as selected.  * @opacity: The initial opacity of the brush.  * @spacing: The initial spacing of the brush (if< 0 then use brush default spacing).  * @paint_mode: The initial paint mode.  *  * Sets the current brush selection in a popup.  *  * Sets the current brush selection in a popup.  *  * Returns: TRUE on success.  */
+end_comment
 
 begin_function
 name|gboolean

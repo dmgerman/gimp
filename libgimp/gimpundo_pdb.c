@@ -13,6 +13,10 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_comment
+comment|/**  * gimp_undo_push_group_start:  * @image_ID: The ID of the image in which to pop an undo group.  *  * Starts a group undo.  *  * This function is used to start a group undo--necessary for logically  * combining two or more undo operations into a single operation. This  * call must be used in conjunction with a 'gimp-undo-push-group-end'  * call.  *  * Returns: TRUE on success.  */
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_undo_push_group_start (gint32 image_ID)
@@ -75,6 +79,10 @@ name|success
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_undo_push_group_end:  * @image_ID: The ID of the image in which to pop an undo group.  *  * Finish a group undo.  *  * This function must be called once for each gimp-undo-push-group call  * that is made.  *  * Returns: TRUE on success.  */
+end_comment
 
 begin_function
 name|gboolean

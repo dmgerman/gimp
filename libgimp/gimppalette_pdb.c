@@ -13,6 +13,10 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_comment
+comment|/**  * gimp_palette_get_foreground:  * @red:  * @green:  * @blue: The foreground color.  *  * Get the current GIMP foreground color.  *  * This procedure retrieves the current GIMP foreground color. The  * foreground color is used in a variety of tools such as paint tools,  * blending, and bucket fill.  *  * Returns: TRUE on success.  */
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_palette_get_foreground (guchar * red,guchar * green,guchar * blue)
@@ -128,6 +132,10 @@ name|success
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_palette_get_background:  * @red:  * @green:  * @blue: The background color.  *  * Get the current GIMP background color.  *  * This procedure retrieves the current GIMP background color. The  * background color is used in a variety of tools such as blending,  * erasing (with non-alpha images), and image filling.  *  * Returns: TRUE on success.  */
+end_comment
 
 begin_function
 name|gboolean
@@ -245,6 +253,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_palette_set_foreground:  * @red:  * @green:  * @blue: The foreground color.  *  * Set the current GIMP foreground color.  *  * This procedure sets the current GIMP foreground color. After this is  * set, operations which use foreground such as paint tools, blending,  * and bucket fill will use the new value.  *  * Returns: TRUE on success.  */
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_palette_set_foreground (guchar red,guchar green,guchar blue)
@@ -340,6 +352,10 @@ name|success
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_palette_set_background:  * @red:  * @green:  * @blue: The background color.  *  * Set the current GIMP background color.  *  * This procedure sets the current GIMP background color. After this is  * set, operations which use background such as blending, filling  * images, clearing, and erasing (in non-alpha images) will use the new  * value.  *  * Returns: TRUE on success.  */
+end_comment
 
 begin_function
 name|gboolean
@@ -437,6 +453,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_palette_set_default_colors:  *  * Set the current GIMP foreground and background colors to black and  * white.  *  * This procedure sets the current GIMP foreground and background  * colors to their initial default values, black and white.  *  * Returns: TRUE on success.  */
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_palette_set_default_colors (void)
@@ -495,6 +515,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_palette_swap_colors:  *  * Swap the current GIMP foreground and background colors.  *  * This procedure swaps the current GIMP foreground and background  * colors, so that the new foreground color becomes the old background  * color and vice versa.  *  * Returns: TRUE on success.  */
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_palette_swap_colors (void)
@@ -552,6 +576,10 @@ name|success
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_palette_refresh:  *  * Refreshes current palettes.  *  * This procedure incorporates all palettes currently in the users  * palette path.  *  * Returns: TRUE on success.  */
+end_comment
 
 begin_function
 name|gboolean

@@ -13,6 +13,10 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_comment
+comment|/**  * gimp_floating_sel_remove:  * @floating_sel_ID: The floating selection.  *  * Remove the specified floating selection from its associated  * drawable.  *  * This procedure removes the floating selection completely, without  * any side effects. The associated drawable is then set to active.  *  * Returns: TRUE on success.  */
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_floating_sel_remove (gint32 floating_sel_ID)
@@ -75,6 +79,10 @@ name|success
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_floating_sel_anchor:  * @floating_sel_ID: The floating selection.  *  * Anchor the specified floating selection to its associated drawable.  *  * This procedure anchors the floating selection to its associated  * drawable. This is similar to merging with a merge type of  * ClipToBottomLayer. The floating selection layer is no longer valid  * after this operation.  *  * Returns: TRUE on success.  */
+end_comment
 
 begin_function
 name|gboolean
@@ -139,6 +147,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_floating_sel_to_layer:  * @floating_sel_ID: The floating selection.  *  * Transforms the specified floating selection into a layer.  *  * This procedure transforms the specified floating selection into a  * layer with the same offsets and extents. The composited image will  * look precisely the same, but the floating selection layer will no  * longer be clipped to the extents of the drawable it was attached to.  * The floating selection will become the active layer. This procedure  * will not work if the floating selection has a different base type  * from the underlying image. This might be the case if the floating  * selection is above an auxillary channel or a layer mask.  *  * Returns: TRUE on success.  */
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_floating_sel_to_layer (gint32 floating_sel_ID)
@@ -201,6 +213,10 @@ name|success
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_floating_sel_attach:  * @layer_ID: The layer (is attached as floating selection).  * @drawable_ID: The drawable (where to attach the floating selection).  *  * Attach the specified layer as floating to the specified drawable.  *  * This procedure attaches the layer as floating selection to the  * drawable.  *  * Returns: TRUE on success.  */
+end_comment
 
 begin_function
 name|gboolean
@@ -272,6 +288,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_floating_sel_rigor:  * @floating_sel_ID: The floating selection.  * @undo: %%desc%%.  *  * Rigor the floating selection.  *  * This procedure rigors the floating selection.  *  * Returns: TRUE on success.  */
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_floating_sel_rigor (gint32 floating_sel_ID,gboolean undo)
@@ -341,6 +361,10 @@ name|success
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_floating_sel_relax:  * @floating_sel_ID: The floating selection.  * @undo: %%desc%%.  *  * Relax the floating selection.  *  * This procedure relaxes the floating selection.  *  * Returns: TRUE on success.  */
+end_comment
 
 begin_function
 name|gboolean
