@@ -483,12 +483,6 @@ if|if
 condition|(
 name|options
 operator|->
-name|resolution
-operator|>
-literal|0.0
-operator|&&
-name|options
-operator|->
 name|unit
 operator|!=
 name|GIMP_UNIT_PIXEL
@@ -509,9 +503,10 @@ argument_list|)
 expr_stmt|;
 name|width
 operator|*=
-name|options
+operator|(
+name|gimage
 operator|->
-name|resolution
+name|xresolution
 operator|/
 name|_gimp_unit_get_factor
 argument_list|(
@@ -523,6 +518,7 @@ name|options
 operator|->
 name|unit
 argument_list|)
+operator|)
 expr_stmt|;
 block|}
 name|gimp_scan_convert_stroke

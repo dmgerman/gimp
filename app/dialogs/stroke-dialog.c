@@ -260,15 +260,6 @@ name|image
 operator|->
 name|gimp
 argument_list|,
-literal|"resolution"
-argument_list|,
-name|gimp_item_get_image
-argument_list|(
-name|item
-argument_list|)
-operator|->
-name|xresolution
-argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
