@@ -2071,6 +2071,18 @@ argument_list|,
 name|dialog
 argument_list|)
 expr_stmt|;
+name|gimp_dialog_factory_add_foreign
+argument_list|(
+name|gimp_dialog_factory_from_name
+argument_list|(
+literal|"toplevel"
+argument_list|)
+argument_list|,
+literal|"gimp-keyboard-shortcuts-dialog"
+argument_list|,
+name|dialog
+argument_list|)
+expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|dialog
@@ -7691,7 +7703,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27dea3dc0108
+DECL|struct|__anon275f80cd0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9793,7 +9805,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27dea3dc0208
+DECL|struct|__anon275f80cd0208
 block|{
 DECL|member|label
 specifier|const
@@ -9950,7 +9962,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27dea3dc0308
+DECL|struct|__anon275f80cd0308
 block|{
 DECL|member|tree_label
 specifier|const

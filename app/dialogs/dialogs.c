@@ -289,6 +289,20 @@ argument_list|,
 name|FALSE
 argument_list|)
 block|,
+name|FOREIGN
+argument_list|(
+literal|"gimp-keyboard-shortcuts-dialog"
+argument_list|,
+name|TRUE
+argument_list|)
+block|,
+name|FOREIGN
+argument_list|(
+literal|"gimp-controller-action-dialog"
+argument_list|,
+name|TRUE
+argument_list|)
+block|,
 comment|/*  ordinary toplevels  */
 name|TOPLEVEL
 argument_list|(
