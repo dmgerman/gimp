@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* gap_range_ops.c  * 1997.11.06 hof (Wolfgang Hofer)  *  * GAP ... Gimp Animation Plugins  *  * This Module contains   * - gap_split_image  *  */
+comment|/* gap_split.c  * 1997.11.06 hof (Wolfgang Hofer)  *  * GAP ... Gimp Animation Plugins  *  * This Module contains   * - gap_split_image  *  */
 end_comment
 
 begin_comment
@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history  * 1.1.8a;  1999/08/31   hof: accept anim framenames without underscore '_'  * 1.1.5a;  1999/05/08   hof: bugix (dont mix GDrawableType with GImageType)  * 0.96.00; 1998/07/01   hof: - added scale, resize and crop   *                              (affects full range == all anim frames)  *                            - now using gap_arr_dialog.h  * 0.94.01; 1998/04/28   hof: added flatten_mode to plugin: gap_range_to_multilayer  * 0.92.00  1998.01.10   hof: bugfix in p_frames_to_multilayer  *                            layers need alpha (to be raise/lower able)   * 0.90.00               first development release  */
+comment|/* revision history  * 1.1.9a;  1999/09/21   hof: bugfix RUN_NONINTERACTIVE mode did not work  * 1.1.8a;  1999/08/31   hof: accept anim framenames without underscore '_'  * 1.1.5a;  1999/05/08   hof: bugix (dont mix GDrawableType with GImageType)  * 0.96.00; 1998/07/01   hof: - added scale, resize and crop   *                              (affects full range == all anim frames)  *                            - now using gap_arr_dialog.h  * 0.94.01; 1998/04/28   hof: added flatten_mode to plugin: gap_range_to_multilayer  * 0.92.00  1998.01.10   hof: bugfix in p_frames_to_multilayer  *                            layers need alpha (to be raise/lower able)   * 0.90.00               first development release  */
 end_comment
 
 begin_comment
@@ -180,6 +180,27 @@ decl_stmt|;
 name|long
 name|l_layer_idx
 decl_stmt|;
+if|if
+condition|(
+name|gap_debug
+condition|)
+name|printf
+argument_list|(
+literal|"DEBUG: p_split_image inv:%d no_alpha:%d ext:%s\n"
+argument_list|,
+operator|(
+name|int
+operator|)
+name|invers
+argument_list|,
+operator|(
+name|int
+operator|)
+name|no_alpha
+argument_list|,
+name|new_extension
+argument_list|)
+expr_stmt|;
 name|l_rc
 operator|=
 operator|-
@@ -982,6 +1003,10 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|l_rc
+operator|=
+literal|0
+expr_stmt|;
 name|l_inverse_order
 operator|=
 name|inverse_order

@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history  * 1.1.8    1999/08/31   hof: frames convert: save subsequent frames  *                            with rumode RUN_WITH_LAST_VALS   * 0.97.00; 1998/10/19   hof: gap_range_to_multilayer: extended layer selection  * 0.96.03; 1998/08/31   hof: gap_range_to_multilayer: all params available  *                            in non-interactive runmode  * 0.96.02; 1998/08/05   hof: - p_frames_to_multilayer added framerate support  * 0.96.00; 1998/07/01   hof: - added scale, resize and crop   *                              (affects full range == all anim frames)  *                            - now using gap_arr_dialog.h  * 0.94.01; 1998/04/28   hof: added flatten_mode to plugin: gap_range_to_multilayer  * 0.92.00  1998.01.10   hof: bugfix in p_frames_to_multilayer  *                            layers need alpha (to be raise/lower able)   * 0.90.00               first development release  */
+comment|/* revision history  * 1.1.9a   1999/09/21   hof: bugfix RUN_NONINTERACTIVE did not work in  *                            plug_in_gap_range_convert  *                            plug_in_gap_range_layer_del  *                            plug_in_gap_range_flatten  * 1.1.8    1999/08/31   hof: frames convert: save subsequent frames  *                            with rumode RUN_WITH_LAST_VALS   * 0.97.00; 1998/10/19   hof: gap_range_to_multilayer: extended layer selection  * 0.96.03; 1998/08/31   hof: gap_range_to_multilayer: all params available  *                            in non-interactive runmode  * 0.96.02; 1998/08/05   hof: - p_frames_to_multilayer added framerate support  * 0.96.00; 1998/07/01   hof: - added scale, resize and crop   *                              (affects full range == all anim frames)  *                            - now using gap_arr_dialog.h  * 0.94.01; 1998/04/28   hof: added flatten_mode to plugin: gap_range_to_multilayer  * 0.92.00  1998.01.10   hof: bugfix in p_frames_to_multilayer  *                            layers need alpha (to be raise/lower able)   * 0.90.00               first development release  */
 end_comment
 
 begin_comment
@@ -5308,6 +5308,10 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|l_rc
+operator|=
+literal|0
+expr_stmt|;
 name|l_from
 operator|=
 name|range_from
@@ -5937,6 +5941,10 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|l_rc
+operator|=
+literal|0
+expr_stmt|;
 name|l_from
 operator|=
 name|range_from
@@ -6249,6 +6257,10 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|l_rc
+operator|=
+literal|0
+expr_stmt|;
 name|l_from
 operator|=
 name|range_from
