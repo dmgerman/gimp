@@ -2089,13 +2089,12 @@ name|TRUE
 argument_list|,
 name|GIMP_PDB_IMAGE
 argument_list|,
-literal|0
+name|image_ID
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
-name|_drawable
-operator|->
-name|drawable_id
+operator|-
+literal|1
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)

@@ -206,9 +206,6 @@ name|gboolean
 name|do_sel2path
 parameter_list|(
 name|gint32
-name|drawable_ID
-parameter_list|,
-name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
@@ -329,7 +326,7 @@ name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
-literal|"Input image (unused)"
+literal|"Input image"
 block|}
 block|,
 block|{
@@ -337,7 +334,7 @@ name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-literal|"Input drawable"
+literal|"Input drawable (unused)"
 block|}
 block|,   }
 decl_stmt|;
@@ -360,7 +357,7 @@ name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
-literal|"Input image (unused)"
+literal|"Input image"
 block|}
 block|,
 block|{
@@ -368,7 +365,7 @@ name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-literal|"Input drawable"
+literal|"Input drawable (unused)"
 block|}
 block|,
 block|{
@@ -635,13 +632,6 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-name|GimpDrawable
-modifier|*
-name|drawable
-decl_stmt|;
-name|gint32
-name|drawable_ID
-decl_stmt|;
 name|gint32
 name|image_ID
 decl_stmt|;
@@ -713,31 +703,31 @@ name|d_status
 operator|=
 name|status
 expr_stmt|;
-name|drawable_ID
+name|image_ID
 operator|=
 name|param
 index|[
-literal|2
+literal|1
 index|]
 operator|.
 name|data
 operator|.
-name|d_drawable
+name|d_image
 expr_stmt|;
-name|drawable
-operator|=
-name|gimp_drawable_get
-argument_list|(
-name|drawable_ID
-argument_list|)
-expr_stmt|;
+if|if
+condition|(
 name|image_ID
-operator|=
-name|gimp_drawable_image_id
+operator|<
+literal|0
+condition|)
+block|{
+name|g_warning
 argument_list|(
-name|drawable_ID
+literal|"plug_in_sel2path needs a valid image ID"
 argument_list|)
 expr_stmt|;
+return|return;
+block|}
 if|if
 condition|(
 name|gimp_selection_is_empty
@@ -752,11 +742,6 @@ name|_
 argument_list|(
 literal|"No selection to convert"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_drawable_detach
-argument_list|(
-name|drawable
 argument_list|)
 expr_stmt|;
 return|return;
@@ -809,14 +794,7 @@ operator|&
 name|selVals
 argument_list|)
 condition|)
-block|{
-name|gimp_drawable_detach
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
 return|return;
-block|}
 comment|/* Get the current settings */
 name|fit_set_params
 argument_list|(
@@ -1149,8 +1127,6 @@ block|}
 block|}
 name|do_sel2path
 argument_list|(
-name|drawable_ID
-argument_list|,
 name|image_ID
 argument_list|)
 expr_stmt|;
@@ -1201,11 +1177,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_drawable_detach
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -2171,12 +2142,9 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|do_sel2path (gint32 drawable_ID,gint32 image_ID)
+DECL|function|do_sel2path (gint32 image_ID)
 name|do_sel2path
 parameter_list|(
-name|gint32
-name|drawable_ID
-parameter_list|,
 name|gint32
 name|image_ID
 parameter_list|)
@@ -2240,16 +2208,9 @@ name|selection_ID
 operator|<
 literal|0
 condition|)
-block|{
-name|g_warning
-argument_list|(
-literal|"gimp_image_get_selection failed"
-argument_list|)
-expr_stmt|;
 return|return
 name|FALSE
 return|;
-block|}
 name|sel_drawable
 operator|=
 name|gimp_drawable_get
@@ -2332,6 +2293,11 @@ argument_list|(
 name|splines
 argument_list|,
 name|image_ID
+argument_list|)
+expr_stmt|;
+name|gimp_drawable_detach
+argument_list|(
+name|sel_drawable
 argument_list|)
 expr_stmt|;
 name|gimp_displays_flush
