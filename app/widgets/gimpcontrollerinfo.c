@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c2f6250103
+DECL|enum|__anon2c075f8b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c2f6250203
+DECL|enum|__anon2c075f8b0203
 block|{
 DECL|enumerator|EVENT_MAPPED
 name|EVENT_MAPPED
@@ -605,7 +605,22 @@ name|info
 operator|->
 name|mapping
 operator|=
-name|NULL
+name|g_hash_table_new_full
+argument_list|(
+name|g_str_hash
+argument_list|,
+name|g_str_equal
+argument_list|,
+operator|(
+name|GDestroyNotify
+operator|)
+name|g_free
+argument_list|,
+operator|(
+name|GDestroyNotify
+operator|)
+name|g_free
+argument_list|)
 expr_stmt|;
 block|}
 end_function
