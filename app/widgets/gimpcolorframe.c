@@ -1288,7 +1288,7 @@ index|]
 operator|=
 name|_
 argument_list|(
-literal|"Yellow:"
+literal|"Magenta:"
 argument_list|)
 expr_stmt|;
 name|names
@@ -1298,7 +1298,7 @@ index|]
 operator|=
 name|_
 argument_list|(
-literal|"Magenta:"
+literal|"Yellow:"
 argument_list|)
 expr_stmt|;
 name|names
