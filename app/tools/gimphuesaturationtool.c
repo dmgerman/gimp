@@ -974,7 +974,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon296a2fcd0108
+DECL|struct|__anon2b45fa530108
 block|{
 DECL|member|label
 specifier|const
@@ -1006,7 +1006,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"_Master"
+literal|"M_aster"
 argument_list|)
 block|,
 literal|2
