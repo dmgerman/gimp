@@ -304,7 +304,7 @@ value|150
 end_define
 
 begin_typedef
-DECL|struct|__anon2a3430c40108
+DECL|struct|__anon2bbe15700108
 typedef|typedef
 struct|struct
 block|{
@@ -428,7 +428,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2a3430c40208
+DECL|struct|__anon2bbe15700208
 typedef|typedef
 struct|struct
 block|{
@@ -457,7 +457,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a3430c40308
+DECL|struct|__anon2bbe15700308
 typedef|typedef
 struct|struct
 block|{
@@ -476,7 +476,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a3430c40408
+DECL|struct|__anon2bbe15700408
 typedef|typedef
 struct|struct
 block|{
@@ -8521,6 +8521,78 @@ argument_list|(
 name|EXTEND_EDIT
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|paths_dialog_flush ()
+name|paths_dialog_flush
+parameter_list|()
+block|{
+name|GImage
+modifier|*
+name|gimage
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|paths_dialog
+condition|)
+return|return;
+if|if
+condition|(
+operator|!
+operator|(
+name|gimage
+operator|=
+name|paths_dialog
+operator|->
+name|gimage
+operator|)
+condition|)
+return|return;
+name|gimage
+operator|=
+name|paths_dialog
+operator|->
+name|gimage
+expr_stmt|;
+if|if
+condition|(
+operator|(
+name|gimage
+operator|->
+name|width
+operator|!=
+name|paths_dialog
+operator|->
+name|gimage_width
+operator|)
+operator|||
+operator|(
+name|gimage
+operator|->
+name|height
+operator|!=
+name|paths_dialog
+operator|->
+name|gimage_height
+operator|)
+condition|)
+block|{
+name|paths_dialog
+operator|->
+name|gimage
+operator|=
+name|NULL
+expr_stmt|;
+name|paths_dialog_update
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 

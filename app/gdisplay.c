@@ -138,6 +138,24 @@ end_include
 begin_include
 include|#
 directive|include
+file|"draw_core.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"bezier_selectP.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paths_dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug_in.h"
 end_include
 
@@ -9472,6 +9490,10 @@ argument_list|()
 expr_stmt|;
 comment|/*  for convenience, we call the channels dialog flush here  */
 name|channels_dialog_flush
+argument_list|()
+expr_stmt|;
+comment|/*  for convenience, we call the paths dialog flush here  */
+name|paths_dialog_flush
 argument_list|()
 expr_stmt|;
 name|flushing
