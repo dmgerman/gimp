@@ -279,7 +279,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd30f760108
+DECL|struct|__anon2c7431360108
 block|{
 DECL|member|quality
 name|gdouble
@@ -326,7 +326,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd30f760208
+DECL|struct|__anon2c7431360208
 block|{
 DECL|member|run
 name|gint
@@ -341,7 +341,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd30f760308
+DECL|struct|__anon2c7431360308
 block|{
 DECL|member|cinfo
 name|struct
@@ -1462,6 +1462,16 @@ operator|=
 name|gimp_display_new
 argument_list|(
 name|image_ID
+argument_list|)
+expr_stmt|;
+name|gimp_image_set_filename
+argument_list|(
+name|image_ID
+argument_list|,
+name|_
+argument_list|(
+literal|"Export Preview"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_displays_flush

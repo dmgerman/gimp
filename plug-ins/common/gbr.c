@@ -141,6 +141,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"app/brush_header.h"
 end_include
 
@@ -149,7 +155,7 @@ comment|/* Declare local data types  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a066d810108
+DECL|struct|__anon2b2f1c9e0108
 typedef|typedef
 struct|struct
 block|{
@@ -268,9 +274,21 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+name|void
+name|init_gtk
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|gint
 name|save_dialog
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 
@@ -385,21 +403,6 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|GParamDef
-name|load_return_vals
-index|[]
-init|=
-block|{
-block|{
-name|PARAM_IMAGE
-block|,
-literal|"image"
-block|,
-literal|"Output image"
-block|}
-block|,   }
-decl_stmt|;
-specifier|static
 name|int
 name|nload_args
 init|=
@@ -415,6 +418,21 @@ index|[
 literal|0
 index|]
 argument_list|)
+decl_stmt|;
+specifier|static
+name|GParamDef
+name|load_return_vals
+index|[]
+init|=
+block|{
+block|{
+name|PARAM_IMAGE
+block|,
+literal|"image"
+block|,
+literal|"Output image"
+block|}
+block|,   }
 decl_stmt|;
 specifier|static
 name|int
@@ -634,10 +652,18 @@ decl_stmt|;
 name|gint32
 name|image_ID
 decl_stmt|;
+name|gint32
+name|drawable_ID
+decl_stmt|;
 name|GStatusType
 name|status
 init|=
 name|STATUS_SUCCESS
+decl_stmt|;
+name|GimpExportReturnType
+name|export
+init|=
+name|EXPORT_CANCEL
 decl_stmt|;
 name|run_mode
 operator|=
@@ -786,6 +812,87 @@ operator|==
 literal|0
 condition|)
 block|{
+name|image_ID
+operator|=
+name|param
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|drawable_ID
+operator|=
+name|param
+index|[
+literal|2
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+comment|/*  eventually export the image */
+switch|switch
+condition|(
+name|run_mode
+condition|)
+block|{
+case|case
+name|RUN_INTERACTIVE
+case|:
+case|case
+name|RUN_WITH_LAST_VALS
+case|:
+name|init_gtk
+argument_list|()
+expr_stmt|;
+name|export
+operator|=
+name|gimp_export_image
+argument_list|(
+operator|&
+name|image_ID
+argument_list|,
+operator|&
+name|drawable_ID
+argument_list|,
+literal|"GBR"
+argument_list|,
+name|CAN_HANDLE_GRAY
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|export
+operator|==
+name|EXPORT_CANCEL
+condition|)
+block|{
+operator|*
+name|nreturn_vals
+operator|=
+literal|1
+expr_stmt|;
+name|values
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|=
+name|STATUS_EXECUTION_ERROR
+expr_stmt|;
+return|return;
+block|}
+break|break;
+default|default:
+break|break;
+block|}
 switch|switch
 condition|(
 name|run_mode
@@ -880,6 +987,11 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+operator|*
+name|nreturn_vals
+operator|=
+literal|1
+expr_stmt|;
 if|if
 condition|(
 name|save_image
@@ -893,23 +1005,9 @@ name|data
 operator|.
 name|d_string
 argument_list|,
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
+name|image_ID
 argument_list|,
-name|param
-index|[
-literal|2
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
+name|drawable_ID
 argument_list|)
 condition|)
 block|{
@@ -950,19 +1048,25 @@ name|d_status
 operator|=
 name|STATUS_EXECUTION_ERROR
 expr_stmt|;
-operator|*
-name|nreturn_vals
-operator|=
-literal|1
+if|if
+condition|(
+name|export
+operator|==
+name|EXPORT_EXPORT
+condition|)
+name|gimp_image_delete
+argument_list|(
+name|image_ID
+argument_list|)
 expr_stmt|;
 block|}
 block|}
 end_function
 
 begin_function
-DECL|function|load_image (char * filename)
 specifier|static
 name|gint32
+DECL|function|load_image (char * filename)
 name|load_image
 parameter_list|(
 name|char
@@ -1284,7 +1388,7 @@ literal|1
 return|;
 block|}
 comment|/* Now there's just raw data left. */
-comment|/* 	  * Create a new image of the proper size and            * associate the filename with it. 	  */
+comment|/*    * Create a new image of the proper size and     * associate the filename with it.    */
 name|image_ID
 operator|=
 name|gimp_image_new
@@ -1508,9 +1612,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|save_image (char * filename,gint32 image_ID,gint32 drawable_ID)
 specifier|static
 name|gint
+DECL|function|save_image (char * filename,gint32 image_ID,gint32 drawable_ID)
 name|save_image
 parameter_list|(
 name|char
@@ -1924,32 +2028,12 @@ block|}
 end_function
 
 begin_function
-DECL|function|save_dialog ()
 specifier|static
-name|gint
-name|save_dialog
+name|void
+DECL|function|init_gtk ()
+name|init_gtk
 parameter_list|()
 block|{
-name|GtkWidget
-modifier|*
-name|dlg
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|button
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|label
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|entry
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|table
-decl_stmt|;
 name|gchar
 modifier|*
 modifier|*
@@ -1957,12 +2041,6 @@ name|argv
 decl_stmt|;
 name|gint
 name|argc
-decl_stmt|;
-name|gchar
-name|buffer
-index|[
-literal|12
-index|]
 decl_stmt|;
 name|argc
 operator|=
@@ -1985,7 +2063,7 @@ index|]
 operator|=
 name|g_strdup
 argument_list|(
-literal|"plasma"
+literal|"gbr"
 argument_list|)
 expr_stmt|;
 name|gtk_init
@@ -2003,6 +2081,44 @@ name|gimp_gtkrc
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gint
+DECL|function|save_dialog (void)
+name|save_dialog
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|GtkWidget
+modifier|*
+name|dlg
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|button
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|label
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|entry
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|table
+decl_stmt|;
+name|gchar
+name|buffer
+index|[
+literal|12
+index|]
+decl_stmt|;
 name|dlg
 operator|=
 name|gtk_dialog_new
@@ -2237,7 +2353,7 @@ argument_list|,
 literal|10
 argument_list|)
 expr_stmt|;
-comment|/********************** 	 * label 	 **********************/
+comment|/**********************    * label    **********************/
 name|label
 operator|=
 name|gtk_label_new
@@ -2288,7 +2404,7 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
-comment|/************************ 	 * The entry 	 ************************/
+comment|/************************    * The entry    ************************/
 name|entry
 operator|=
 name|gtk_entry_new
@@ -2379,7 +2495,7 @@ argument_list|(
 name|entry
 argument_list|)
 expr_stmt|;
-comment|/********************** 	 * label 	 **********************/
+comment|/**********************    * label    **********************/
 name|label
 operator|=
 name|gtk_label_new
@@ -2430,7 +2546,7 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
-comment|/************************ 	 * The entry 	 ************************/
+comment|/************************    * The entry    ************************/
 name|entry
 operator|=
 name|gtk_entry_new
@@ -2529,9 +2645,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|close_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|close_callback (GtkWidget * widget,gpointer data)
 name|close_callback
 parameter_list|(
 name|GtkWidget
@@ -2549,9 +2665,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|ok_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|ok_callback (GtkWidget * widget,gpointer data)
 name|ok_callback
 parameter_list|(
 name|GtkWidget
@@ -2578,9 +2694,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|entry_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|entry_callback (GtkWidget * widget,gpointer data)
 name|entry_callback
 parameter_list|(
 name|GtkWidget

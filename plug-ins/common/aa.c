@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpui.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -77,6 +83,16 @@ name|GParam
 modifier|*
 modifier|*
 name|return_vals
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|init_gtk
+parameter_list|(
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -377,9 +393,9 @@ comment|/**  * Searches aa_formats defined by aalib to find the index of the typ
 end_comment
 
 begin_function
-DECL|function|get_type_from_string (char * string)
 specifier|static
 name|int
+DECL|function|get_type_from_string (char * string)
 name|get_type_from_string
 parameter_list|(
 name|char
@@ -446,9 +462,9 @@ comment|/**  * Called by the GIMP to run the actual plugin.  */
 end_comment
 
 begin_function
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
 specifier|static
 name|void
+DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
 name|char
@@ -497,6 +513,17 @@ name|int
 name|last_type
 init|=
 literal|0
+decl_stmt|;
+name|gint32
+name|image_ID
+decl_stmt|;
+name|gint32
+name|drawable_ID
+decl_stmt|;
+name|GimpExportReturnType
+name|export
+init|=
+name|EXPORT_CANCEL
 decl_stmt|;
 comment|/* Set us up to return a status. */
 operator|*
@@ -569,6 +596,91 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|image_ID
+operator|=
+name|param
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|drawable_ID
+operator|=
+name|param
+index|[
+literal|2
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+comment|/*  eventually export the image */
+switch|switch
+condition|(
+name|run_mode
+condition|)
+block|{
+case|case
+name|RUN_INTERACTIVE
+case|:
+case|case
+name|RUN_WITH_LAST_VALS
+case|:
+name|init_gtk
+argument_list|()
+expr_stmt|;
+name|export
+operator|=
+name|gimp_export_image
+argument_list|(
+operator|&
+name|image_ID
+argument_list|,
+operator|&
+name|drawable_ID
+argument_list|,
+literal|"AA"
+argument_list|,
+operator|(
+name|CAN_HANDLE_GRAY
+operator||
+name|CAN_HANDLE_ALPHA
+operator|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|export
+operator|==
+name|EXPORT_CANCEL
+condition|)
+block|{
+operator|*
+name|nreturn_vals
+operator|=
+literal|1
+expr_stmt|;
+name|values
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|=
+name|STATUS_EXECUTION_ERROR
+expr_stmt|;
+return|return;
+block|}
+break|break;
+default|default:
+break|break;
+block|}
 switch|switch
 condition|(
 name|run_mode
@@ -670,25 +782,12 @@ name|data
 operator|.
 name|d_string
 argument_list|,
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
+name|image_ID
 argument_list|,
-name|param
-index|[
-literal|2
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
+name|drawable_ID
 argument_list|)
 condition|)
+block|{
 name|values
 index|[
 literal|0
@@ -699,18 +798,6 @@ operator|.
 name|d_status
 operator|=
 name|STATUS_EXECUTION_ERROR
-expr_stmt|;
-else|else
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|=
-name|STATUS_SUCCESS
 expr_stmt|;
 name|last_type
 operator|=
@@ -730,6 +817,30 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+name|values
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|=
+name|STATUS_SUCCESS
+expr_stmt|;
+if|if
+condition|(
+name|export
+operator|==
+name|EXPORT_EXPORT
+condition|)
+name|gimp_image_delete
+argument_list|(
+name|image_ID
+argument_list|)
+expr_stmt|;
+block|}
 end_function
 
 begin_comment
@@ -737,9 +848,9 @@ comment|/**  * The actual save function. What it's all about.  * The image type 
 end_comment
 
 begin_function
-DECL|function|save_aa (int output_type,char * filename,gint32 image,gint32 drawable_ID)
 specifier|static
 name|gint
+DECL|function|save_aa (int output_type,char * filename,gint32 image,gint32 drawable_ID)
 name|save_aa
 parameter_list|(
 name|int
@@ -771,14 +882,14 @@ name|context
 init|=
 name|NULL
 decl_stmt|;
-name|aa_format
-name|format
-decl_stmt|;
 name|GDrawable
 modifier|*
 name|drawable
 init|=
 name|NULL
+decl_stmt|;
+name|aa_format
+name|format
 decl_stmt|;
 comment|/*fprintf(stderr, "save %s\n", filename); */
 name|drawable
@@ -889,9 +1000,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|gimp2aa (gint32 image,gint32 drawable_ID,aa_context * context)
 specifier|static
 name|gint
+DECL|function|gimp2aa (gint32 image,gint32 drawable_ID,aa_context * context)
 name|gimp2aa
 parameter_list|(
 name|gint32
@@ -1050,7 +1161,7 @@ name|x
 operator|++
 control|)
 block|{
-comment|/* Just copy one byte. If it's indexed that's all we need. Otherwise 			 * it'll be the most significant one. */
+comment|/* Just copy one byte. If it's indexed that's all we need. Otherwise 	   * it'll be the most significant one. */
 name|aa_putpixel
 argument_list|(
 name|context
@@ -1108,9 +1219,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|aa_savable (gint32 drawable_ID)
 specifier|static
 name|gint
+DECL|function|aa_savable (gint32 drawable_ID)
 name|aa_savable
 parameter_list|(
 name|gint32
@@ -1151,39 +1262,12 @@ comment|/*   * User Interface dialog thingie.  */
 end_comment
 
 begin_function
-DECL|function|type_dialog (int selected)
 specifier|static
-name|gint
-name|type_dialog
-parameter_list|(
-name|int
-name|selected
-parameter_list|)
+name|void
+DECL|function|init_gtk ()
+name|init_gtk
+parameter_list|()
 block|{
-name|GtkWidget
-modifier|*
-name|dlg
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|button
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|toggle
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|frame
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|toggle_vbox
-decl_stmt|;
-name|GSList
-modifier|*
-name|group
-decl_stmt|;
 name|gchar
 modifier|*
 modifier|*
@@ -1231,6 +1315,43 @@ name|gimp_gtkrc
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gint
+DECL|function|type_dialog (int selected)
+name|type_dialog
+parameter_list|(
+name|int
+name|selected
+parameter_list|)
+block|{
+name|GtkWidget
+modifier|*
+name|dlg
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|button
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|toggle
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|frame
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|toggle_vbox
+decl_stmt|;
+name|GSList
+modifier|*
+name|group
+decl_stmt|;
 comment|/* Create the actual window. */
 name|dlg
 operator|=
@@ -1634,9 +1755,9 @@ comment|/*  * Callbacks for the dialog.  */
 end_comment
 
 begin_function
-DECL|function|type_dialog_close_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|type_dialog_close_callback (GtkWidget * widget,gpointer data)
 name|type_dialog_close_callback
 parameter_list|(
 name|GtkWidget
@@ -1654,9 +1775,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|type_dialog_ok_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|type_dialog_ok_callback (GtkWidget * widget,gpointer data)
 name|type_dialog_ok_callback
 parameter_list|(
 name|GtkWidget
@@ -1679,9 +1800,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|type_dialog_cancel_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|type_dialog_cancel_callback (GtkWidget * widget,gpointer data)
 name|type_dialog_cancel_callback
 parameter_list|(
 name|GtkWidget
@@ -1709,9 +1830,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|type_dialog_toggle_update (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|type_dialog_toggle_update (GtkWidget * widget,gpointer data)
 name|type_dialog_toggle_update
 parameter_list|(
 name|GtkWidget
