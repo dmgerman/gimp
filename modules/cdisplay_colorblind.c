@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac6224c0103
+DECL|enum|__anon27984b1f0103
 block|{
 DECL|enumerator|COLORBLIND_DEFICIENCY_FIRST
 name|COLORBLIND_DEFICIENCY_FIRST
@@ -305,7 +305,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|cdisplay_colorblind_finalize
+name|cdisplay_colorblind_dispose
 parameter_list|(
 name|GObject
 modifier|*
@@ -626,25 +626,21 @@ block|{
 name|GObjectClass
 modifier|*
 name|object_class
-decl_stmt|;
-name|GimpColorDisplayClass
-modifier|*
-name|display_class
-decl_stmt|;
-name|object_class
-operator|=
+init|=
 name|G_OBJECT_CLASS
 argument_list|(
 name|klass
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|GimpColorDisplayClass
+modifier|*
 name|display_class
-operator|=
+init|=
 name|GIMP_COLOR_DISPLAY_CLASS
 argument_list|(
 name|klass
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|parent_class
 operator|=
 name|g_type_class_peek_parent
@@ -654,9 +650,9 @@ argument_list|)
 expr_stmt|;
 name|object_class
 operator|->
-name|finalize
+name|dispose
 operator|=
-name|cdisplay_colorblind_finalize
+name|cdisplay_colorblind_dispose
 expr_stmt|;
 name|display_class
 operator|->
@@ -945,8 +941,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|cdisplay_colorblind_finalize (GObject * object)
-name|cdisplay_colorblind_finalize
+DECL|function|cdisplay_colorblind_dispose (GObject * object)
+name|cdisplay_colorblind_dispose
 parameter_list|(
 name|GObject
 modifier|*
@@ -980,7 +976,7 @@ argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|finalize
+name|dispose
 argument_list|(
 name|object
 argument_list|)
@@ -1073,6 +1069,11 @@ block|{
 name|CdisplayColorblind
 modifier|*
 name|colorblind
+init|=
+name|CDISPLAY_COLORBLIND
+argument_list|(
+name|display
+argument_list|)
 decl_stmt|;
 name|guchar
 modifier|*
@@ -1129,13 +1130,6 @@ operator|!=
 literal|3
 condition|)
 return|return;
-name|colorblind
-operator|=
-name|CDISPLAY_COLORBLIND
-argument_list|(
-name|display
-argument_list|)
-expr_stmt|;
 comment|/* to improve readability, copy the parameters into local variables */
 name|memcpy
 argument_list|(
