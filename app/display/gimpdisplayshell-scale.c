@@ -461,6 +461,9 @@ argument_list|,
 literal|256.0
 argument_list|)
 return|;
+undef|#
+directive|undef
+name|ZOOM_MIN_STEP
 block|}
 end_function
 
