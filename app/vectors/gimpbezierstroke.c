@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpstroke.c  * Copyright (C) 2002 Simon Budig<simon@gimp.org>  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpstroke.c  * Copyright (C) 2002 Simon Budig<simon@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -868,25 +868,12 @@ argument_list|)
 expr_stmt|;
 name|anchor
 operator|=
-name|g_new0
+name|gimp_anchor_new
 argument_list|(
-name|GimpAnchor
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|anchor
-operator|->
-name|position
-operator|=
-operator|*
-name|coords
-expr_stmt|;
-name|anchor
-operator|->
-name|type
-operator|=
 name|GIMP_ANCHOR_CONTROL
+argument_list|,
+name|coords
+argument_list|)
 expr_stmt|;
 name|stroke
 operator|->
@@ -1191,6 +1178,9 @@ condition|(
 name|loose_end
 condition|)
 block|{
+name|GimpAnchorType
+name|type
+decl_stmt|;
 comment|/* We have to detect the type of the point to add... */
 name|control_count
 operator|=
@@ -1273,22 +1263,6 @@ block|{
 case|case
 name|EXTEND_SIMPLE
 case|:
-name|anchor
-operator|=
-name|g_new0
-argument_list|(
-name|GimpAnchor
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|anchor
-operator|->
-name|position
-operator|=
-operator|*
-name|coords
-expr_stmt|;
 switch|switch
 condition|(
 name|control_count
@@ -1297,8 +1271,6 @@ block|{
 case|case
 literal|0
 case|:
-name|anchor
-operator|->
 name|type
 operator|=
 name|GIMP_ANCHOR_CONTROL
@@ -1312,15 +1284,11 @@ condition|(
 name|listneighbor
 condition|)
 comment|/* only one handle in the path? */
-name|anchor
-operator|->
 name|type
 operator|=
 name|GIMP_ANCHOR_CONTROL
 expr_stmt|;
 else|else
-name|anchor
-operator|->
 name|type
 operator|=
 name|GIMP_ANCHOR_ANCHOR
@@ -1329,15 +1297,13 @@ break|break;
 case|case
 literal|2
 case|:
-name|anchor
-operator|->
 name|type
 operator|=
 name|GIMP_ANCHOR_ANCHOR
 expr_stmt|;
 break|break;
 default|default:
-name|g_printerr
+name|g_warning
 argument_list|(
 literal|"inconsistent bezier curve: "
 literal|"%d successive control handles"
@@ -1345,7 +1311,20 @@ argument_list|,
 name|control_count
 argument_list|)
 expr_stmt|;
+name|type
+operator|=
+name|GIMP_ANCHOR_ANCHOR
+expr_stmt|;
 block|}
+name|anchor
+operator|=
+name|gimp_anchor_new
+argument_list|(
+name|type
+argument_list|,
+name|coords
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|loose_end
@@ -1471,7 +1450,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|g_printerr
+name|g_warning
 argument_list|(
 literal|"inconsistent bezier curve: "
 literal|"%d successive control handles"
@@ -2153,7 +2132,7 @@ expr_stmt|;
 block|}
 break|break;
 default|default:
-name|g_printerr
+name|g_warning
 argument_list|(
 literal|"gimp_bezier_stroke_anchor_convert: "
 literal|"unimplemented anchor conversion %d\n"
@@ -3022,7 +3001,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * a helper function that determines if a bezier segment is "straight  * enough" to be approximated by a line.  *   * Needs four GimpCoords in an array.  */
+comment|/*  * a helper function that determines if a bezier segment is "straight  * enough" to be approximated by a line.  *  * Needs four GimpCoords in an array.  */
 end_comment
 
 begin_function
