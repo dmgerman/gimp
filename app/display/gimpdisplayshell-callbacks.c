@@ -855,6 +855,14 @@ argument_list|(
 name|canvas
 argument_list|)
 expr_stmt|;
+name|gdk_pointer_ungrab
+argument_list|(
+name|bevent
+operator|->
+name|time
+argument_list|)
+expr_stmt|;
+comment|/* fixes pointer grab bug */
 if|if
 condition|(
 name|active_tool
