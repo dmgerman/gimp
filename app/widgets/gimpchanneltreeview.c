@@ -609,7 +609,6 @@ name|gimp_get_mod_name_control
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|/*  To Selection button  */
 name|view
 operator|->
 name|toselection_button

@@ -660,9 +660,9 @@ break|break;
 default|default:
 name|g_warning
 argument_list|(
-literal|"%s(): unknown GimpViewType passed"
+literal|"%s: unknown GimpViewType passed"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return
@@ -809,14 +809,12 @@ block|{
 name|GimpContainerEditorClass
 modifier|*
 name|klass
-decl_stmt|;
-name|klass
-operator|=
+init|=
 name|GIMP_CONTAINER_EDITOR_GET_CLASS
 argument_list|(
 name|editor
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|klass
@@ -863,14 +861,12 @@ block|{
 name|GimpContainerEditorClass
 modifier|*
 name|klass
-decl_stmt|;
-name|klass
-operator|=
+init|=
 name|GIMP_CONTAINER_EDITOR_GET_CLASS
 argument_list|(
 name|editor
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|klass
@@ -914,14 +910,12 @@ block|{
 name|GimpContainerEditorClass
 modifier|*
 name|klass
-decl_stmt|;
-name|klass
-operator|=
+init|=
 name|GIMP_CONTAINER_EDITOR_GET_CLASS
 argument_list|(
 name|editor
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|klass

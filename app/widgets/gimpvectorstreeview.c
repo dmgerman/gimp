@@ -631,18 +631,16 @@ block|{
 name|GimpEditor
 modifier|*
 name|editor
+init|=
+name|GIMP_EDITOR
+argument_list|(
+name|view
+argument_list|)
 decl_stmt|;
 name|gchar
 modifier|*
 name|str
 decl_stmt|;
-name|editor
-operator|=
-name|GIMP_EDITOR
-argument_list|(
-name|view
-argument_list|)
-expr_stmt|;
 comment|/*  Hide basically useless Edit button  */
 name|gtk_widget_hide
 argument_list|(

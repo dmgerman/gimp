@@ -255,14 +255,12 @@ block|{
 name|GimpContainerEditorClass
 modifier|*
 name|editor_class
-decl_stmt|;
-name|editor_class
-operator|=
+init|=
 name|GIMP_CONTAINER_EDITOR_CLASS
 argument_list|(
 name|klass
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|parent_class
 operator|=
 name|g_type_class_peek_parent
