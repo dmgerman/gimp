@@ -97,7 +97,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon276145610103
+DECL|enum|__anon2b2c3a1d0103
 block|{
 DECL|enumerator|FAMILY_COLUMN
 name|FAMILY_COLUMN
@@ -110,7 +110,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon276145610203
+DECL|enum|__anon2b2c3a1d0203
 block|{
 DECL|enumerator|FACE_COLUMN
 name|FACE_COLUMN
@@ -1564,12 +1564,6 @@ modifier|*
 name|desc
 parameter_list|)
 block|{
-name|PangoFontFamily
-modifier|*
-name|new_family
-init|=
-name|NULL
-decl_stmt|;
 name|GtkTreeModel
 modifier|*
 name|model
@@ -1583,6 +1577,11 @@ name|iter
 decl_stmt|;
 name|gboolean
 name|valid
+decl_stmt|;
+name|gboolean
+name|found
+init|=
+name|FALSE
 decl_stmt|;
 specifier|const
 name|gchar
@@ -1641,9 +1640,6 @@ name|iter
 argument_list|)
 init|;
 name|valid
-operator|&&
-operator|!
-name|new_family
 condition|;
 name|valid
 operator|=
@@ -1690,10 +1686,18 @@ argument_list|)
 operator|==
 literal|0
 condition|)
-name|new_family
+block|{
+name|found
 operator|=
-name|family
+name|TRUE
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|family
+argument_list|)
+expr_stmt|;
+break|break;
+block|}
 name|g_object_unref
 argument_list|(
 name|family
@@ -1703,7 +1707,7 @@ block|}
 if|if
 condition|(
 operator|!
-name|new_family
+name|found
 operator|&&
 operator|!
 name|gtk_tree_model_get_iter_root
