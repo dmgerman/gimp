@@ -771,7 +771,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aeaf23a0108
+DECL|struct|__anon2894cf5b0108
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -857,7 +857,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aeaf23a0208
+DECL|struct|__anon2894cf5b0208
 block|{
 DECL|member|y
 name|gint32
@@ -7473,14 +7473,14 @@ argument_list|(
 name|toggle
 argument_list|)
 expr_stmt|;
-comment|/*  The antialias toggle  */
+comment|/*  The antialiasing toggle  */
 name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Antialias"
+literal|"Antialiasing"
 argument_list|)
 argument_list|)
 expr_stmt|;
