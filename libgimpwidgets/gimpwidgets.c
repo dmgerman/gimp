@@ -258,6 +258,13 @@ operator|=
 name|gtk_menu_item_new
 argument_list|()
 expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|menuitem
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 block|}
 name|gtk_menu_append
 argument_list|(
@@ -525,6 +532,13 @@ name|menuitem
 operator|=
 name|gtk_menu_item_new
 argument_list|()
+expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|menuitem
+argument_list|,
+name|FALSE
+argument_list|)
 expr_stmt|;
 block|}
 name|gtk_menu_append
@@ -2377,7 +2391,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9652cc0108
+DECL|struct|__anon288bdfeb0108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -3261,7 +3275,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9652cc0208
+DECL|struct|__anon288bdfeb0208
 block|{
 DECL|member|adjustment
 name|GtkAdjustment

@@ -5235,11 +5235,11 @@ block|{
 name|gboolean
 name|fs
 decl_stmt|;
-comment|/*  floating sel  */
+comment|/*  no floating sel  */
 name|gboolean
 name|ac
 decl_stmt|;
-comment|/*  active channel  */
+comment|/*  no active channel  */
 name|gboolean
 name|lm
 decl_stmt|;
@@ -5260,7 +5260,7 @@ name|gboolean
 name|indexed
 decl_stmt|;
 comment|/*  is indexed  */
-name|gint
+name|gboolean
 name|next_alpha
 decl_stmt|;
 name|GSList
@@ -5757,6 +5757,8 @@ operator|&&
 name|gimage
 operator|&&
 name|lp
+operator|&&
+name|next
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -10891,7 +10893,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2979ddfe0108
+DECL|struct|__anon28cea7ac0108
 block|{
 DECL|member|gimage
 name|GimpImage

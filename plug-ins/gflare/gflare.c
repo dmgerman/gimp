@@ -506,7 +506,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d8dc140103
+DECL|enum|__anon2c049ce50103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -533,7 +533,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d8dc140203
+DECL|enum|__anon2c049ce50203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -554,7 +554,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d8dc140308
+DECL|struct|__anon2c049ce50308
 block|{
 DECL|member|name
 name|gchar
@@ -695,7 +695,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d8dc140408
+DECL|struct|__anon2c049ce50408
 block|{
 DECL|member|fp
 name|FILE
@@ -715,7 +715,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d8dc140503
+DECL|enum|__anon2c049ce50503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -743,7 +743,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d8dc140608
+DECL|struct|__anon2c049ce50608
 block|{
 DECL|member|init
 name|gint
@@ -765,7 +765,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon29d8dc140708
+DECL|struct|__anon2c049ce50708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -839,7 +839,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d8dc140808
+DECL|struct|__anon2c049ce50808
 block|{
 DECL|member|init
 name|gint
@@ -909,7 +909,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d8dc140908
+DECL|struct|__anon2c049ce50908
 block|{
 DECL|member|x0
 name|gdouble
@@ -936,7 +936,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d8dc140a08
+DECL|struct|__anon2c049ce50a08
 block|{
 DECL|member|init
 name|gint
@@ -1106,7 +1106,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d8dc140b08
+DECL|struct|__anon2c049ce50b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1133,7 +1133,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d8dc140c08
+DECL|struct|__anon2c049ce50c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1174,7 +1174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d8dc140d08
+DECL|struct|__anon2c049ce50d08
 block|{
 DECL|member|tile
 name|GimpTile
@@ -1400,7 +1400,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d8dc140e08
+DECL|struct|__anon2c049ce50e08
 block|{
 DECL|member|tag
 name|gint
@@ -1477,7 +1477,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d8dc140f08
+DECL|struct|__anon2c049ce50f08
 block|{
 DECL|member|xcenter
 name|gint
@@ -1535,7 +1535,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d8dc141008
+DECL|struct|__anon2c049ce51008
 block|{
 DECL|member|run
 name|gint
@@ -9331,7 +9331,7 @@ DECL|function|calc_sample_one_gradient ()
 name|calc_sample_one_gradient
 parameter_list|()
 block|{
-DECL|struct|__anon29d8dc141108
+DECL|struct|__anon2c049ce51108
 specifier|static
 struct|struct
 block|{
@@ -15799,7 +15799,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon29d8dc141208
+DECL|struct|__anon2c049ce51208
 block|{
 DECL|member|label
 name|gchar
@@ -21329,10 +21329,10 @@ argument_list|(
 name|menuitem
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|i
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -21344,10 +21344,10 @@ argument_list|)
 argument_list|,
 literal|"activate"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|ed_mode_menu_callback
+argument_list|)
 argument_list|,
 name|mode_var
 argument_list|)
@@ -24037,10 +24037,10 @@ argument_list|)
 argument_list|,
 literal|"activate"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|gm_menu_item_callback
+argument_list|)
 argument_list|,
 name|name
 argument_list|)
@@ -24090,6 +24090,13 @@ name|menuitem
 operator|=
 name|gtk_menu_item_new
 argument_list|()
+expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|menuitem
+argument_list|,
+name|FALSE
+argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
@@ -24327,7 +24334,7 @@ name|nvalues
 init|=
 name|GM_PREVIEW_WIDTH
 decl_stmt|;
-name|int
+name|gint
 name|row
 decl_stmt|,
 name|irow
@@ -24346,17 +24353,18 @@ decl_stmt|;
 name|guchar
 modifier|*
 name|dest
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|src
 decl_stmt|;
-name|int
+name|gint
 name|check
 decl_stmt|,
 name|b
 decl_stmt|;
 specifier|const
-name|int
+name|gint
 name|alpha
 init|=
 literal|3
@@ -24727,7 +24735,7 @@ modifier|*
 name|src
 parameter_list|)
 block|{
-name|int
+name|gint
 name|cnt
 init|=
 name|GRADIENT_NAME_MAX
@@ -24815,14 +24823,14 @@ modifier|*
 name|src
 parameter_list|)
 block|{
-name|int
+name|gint
 name|cnt
 init|=
 name|GRADIENT_NAME_MAX
 operator|-
 literal|1
 decl_stmt|;
-name|int
+name|gint
 name|tmp
 decl_stmt|;
 while|while
@@ -24906,9 +24914,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_init ()
+DECL|function|gradient_init (void)
 name|gradient_init
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|gradient_cache_head
 operator|=
@@ -24923,9 +24933,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_free ()
+DECL|function|gradient_free (void)
 name|gradient_free
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|gradient_cache_flush
 argument_list|()
@@ -24934,7 +24946,7 @@ block|}
 end_function
 
 begin_function
-name|char
+name|gchar
 modifier|*
 modifier|*
 DECL|function|gradient_get_list (gint * num_gradients)
@@ -25399,9 +25411,10 @@ block|{
 name|gdouble
 name|x
 decl_stmt|;
-name|int
+name|gint
 name|i
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|j
 decl_stmt|;
 name|guchar
@@ -25489,12 +25502,13 @@ name|gint
 name|nvalues
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|j
 decl_stmt|;
-name|int
+name|gint
 name|inten
 decl_stmt|;
 name|guchar
@@ -25577,18 +25591,19 @@ name|gint
 name|nvalues
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|e
 index|[
 literal|3
 index|]
 decl_stmt|;
-name|double
+name|gdouble
 name|x
 decl_stmt|;
-name|int
+name|gint
 name|i
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|j
 decl_stmt|;
 name|guchar
@@ -25994,9 +26009,10 @@ name|gdouble
 modifier|*
 name|tmp_values
 decl_stmt|;
-name|int
+name|gint
 name|i
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|j
 decl_stmt|;
 name|old_name
@@ -26087,14 +26103,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_cache_flush ()
+DECL|function|gradient_cache_flush (void)
 name|gradient_cache_flush
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GradientCacheItem
 modifier|*
 name|ci
-decl_stmt|,
+decl_stmt|;
+name|GradientCacheItem
 modifier|*
 name|tmp
 decl_stmt|;
@@ -26341,9 +26360,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_cache_zorch ()
+DECL|function|gradient_cache_zorch (void)
 name|gradient_cache_zorch
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GradientCacheItem
 modifier|*
@@ -26420,9 +26441,11 @@ end_ifdef
 
 begin_function
 name|void
-DECL|function|gradient_report ()
+DECL|function|gradient_report (void)
 name|gradient_report
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|double
 name|total
