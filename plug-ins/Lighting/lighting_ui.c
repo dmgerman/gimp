@@ -1397,7 +1397,7 @@ name|combo
 argument_list|,
 literal|1
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_help_set_help_data
@@ -1492,7 +1492,7 @@ name|colorbutton
 argument_list|,
 literal|1
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_help_set_help_data
@@ -3923,7 +3923,7 @@ name|combo
 argument_list|,
 literal|1
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|combo
@@ -4014,7 +4014,7 @@ name|combo
 argument_list|,
 literal|1
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|spinbutton
@@ -4400,7 +4400,7 @@ name|combo
 argument_list|,
 literal|1
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_help_set_help_data
