@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history:  * 1.1.29a; 2000/11/23   hof: gap locking (changed to procedures and placed here)  * 1.1.28a; 2000/11/05   hof: check for GIMP_PDB_SUCCESS (not for FALSE)  * 1.1.20a; 2000/04/25   hof: new: p_get_video_paste_name p_vid_edit_clear  * 1.1.17b; 2000/02/27   hof: bug/style fixes  * 1.1.14a; 1999/12/18   hof: handle .xvpics on fileops (copy, rename and delete)  *                            new: p_get_frame_nr,  * 1.1.9a;  1999/09/14   hof: handle frame filenames with framenumbers  *                            that are not the 4digit style. (like frame1.xcf)  * 1.1.8a;  1999/08/31   hof: for AnimFrame Filtypes != XCF:  *                            p_decide_save_as does save INTERACTIVE at 1.st time  *                            and uses GIMP_RUN_WITH_LAST_VALS for subsequent calls  *                            (this enables to set Fileformat specific save-Parameters  *                            at least at the 1.st call, using the save dialog  *                            of the selected (by gimp_file_save) file_save procedure.  *                            in NONINTERACTIVE mode we have no access to  *                            the Fileformat specific save-Parameters  *          1999/07/22   hof: accept anim framenames without underscore '_'  *                            (suggested by Samuel Meder)  * 0.99.00; 1999/03/15   hof: prepared for win/dos filename conventions  * 0.98.00; 1998/11/30   hof: started Port to GIMP 1.1:  *                               exchange of Images (by next frame) is now handled in the  *                               new module: gap_exchange_image.c  * 0.96.02; 1998/07/30   hof: extended gap_dup (duplicate range instead of singele frame)  *                            added gap_shift  * 0.96.00               hof: - now using gap_arr_dialog.h  * 0.95.00               hof:  increased duplicate frames limit from 50 to 99  * 0.93.01               hof: fixup bug when frames are not in the current directory  * 0.90.00;              hof: 1.st (pre) release  */
+comment|/* revision history:  * 1.2.1a;  2001/07/07   hof: p_file_copy use binary modes in fopen (hope that fixes bug #52890 in video/duplicate)  * 1.1.29a; 2000/11/23   hof: gap locking (changed to procedures and placed here)  * 1.1.28a; 2000/11/05   hof: check for GIMP_PDB_SUCCESS (not for FALSE)  * 1.1.20a; 2000/04/25   hof: new: p_get_video_paste_name p_vid_edit_clear  * 1.1.17b; 2000/02/27   hof: bug/style fixes  * 1.1.14a; 1999/12/18   hof: handle .xvpics on fileops (copy, rename and delete)  *                            new: p_get_frame_nr,  * 1.1.9a;  1999/09/14   hof: handle frame filenames with framenumbers  *                            that are not the 4digit style. (like frame1.xcf)  * 1.1.8a;  1999/08/31   hof: for AnimFrame Filtypes != XCF:  *                            p_decide_save_as does save INTERACTIVE at 1.st time  *                            and uses GIMP_RUN_WITH_LAST_VALS for subsequent calls  *                            (this enables to set Fileformat specific save-Parameters  *                            at least at the 1.st call, using the save dialog  *                            of the selected (by gimp_file_save) file_save procedure.  *                            in NONINTERACTIVE mode we have no access to  *                            the Fileformat specific save-Parameters  *          1999/07/22   hof: accept anim framenames without underscore '_'  *                            (suggested by Samuel Meder)  * 0.99.00; 1999/03/15   hof: prepared for win/dos filename conventions  * 0.98.00; 1998/11/30   hof: started Port to GIMP 1.1:  *                               exchange of Images (by next frame) is now handled in the  *                               new module: gap_exchange_image.c  * 0.96.02; 1998/07/30   hof: extended gap_dup (duplicate range instead of singele frame)  *                            added gap_shift  * 0.96.00               hof: - now using gap_arr_dialog.h  * 0.95.00               hof:  increased duplicate frames limit from 50 to 99  * 0.93.01               hof: fixup bug when frames are not in the current directory  * 0.90.00;              hof: 1.st (pre) release  */
 end_comment
 
 begin_include
@@ -1185,7 +1185,7 @@ name|fopen
 argument_list|(
 name|fname
 argument_list|,
-literal|"r"
+literal|"rb"
 argument_list|)
 expr_stmt|;
 comment|/* open read */
@@ -1240,7 +1240,7 @@ name|fopen
 argument_list|(
 name|fname_copy
 argument_list|,
-literal|"w"
+literal|"wb"
 argument_list|)
 expr_stmt|;
 comment|/* open write */

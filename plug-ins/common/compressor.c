@@ -2327,20 +2327,8 @@ decl_stmt|;
 comment|/* we never free this copy - aren't we evil! */
 name|filename_copy
 operator|=
-name|g_malloc
+name|g_strdup
 argument_list|(
-name|strlen
-argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|1
-argument_list|)
-expr_stmt|;
-name|strcpy
-argument_list|(
-name|filename_copy
-argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;
@@ -2356,7 +2344,7 @@ argument_list|)
 expr_stmt|;
 while|while
 condition|(
-literal|1
+name|TRUE
 condition|)
 block|{
 if|if
@@ -2369,7 +2357,7 @@ index|[
 literal|1
 index|]
 operator|==
-literal|0
+literal|'\0'
 operator|||
 name|strchr
 argument_list|(
@@ -2387,7 +2375,7 @@ if|if
 condition|(
 literal|0
 operator|==
-name|strcmp
+name|g_strcasecmp
 argument_list|(
 name|ext
 argument_list|,
@@ -2404,7 +2392,7 @@ if|if
 condition|(
 literal|0
 operator|!=
-name|strcmp
+name|g_strcasecmp
 argument_list|(
 name|ext
 argument_list|,
@@ -2422,7 +2410,7 @@ comment|/* we found ".gz" so strip it, loop back, and look again */
 operator|*
 name|ext
 operator|=
-literal|0
+literal|'\0'
 expr_stmt|;
 name|ext
 operator|=
