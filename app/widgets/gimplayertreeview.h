@@ -141,6 +141,16 @@ name|GtkCellRenderer
 modifier|*
 name|mask_cell
 decl_stmt|;
+DECL|member|italic_attrs
+name|PangoAttrList
+modifier|*
+name|italic_attrs
+decl_stmt|;
+DECL|member|bold_attrs
+name|PangoAttrList
+modifier|*
+name|bold_attrs
+decl_stmt|;
 comment|/*< private>*/
 DECL|member|mode_changed_handler_id
 name|GQuark
