@@ -90,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint/gimpconvolve.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paint/gimpconvolveoptions.h"
 end_include
 
@@ -538,17 +532,6 @@ operator|->
 name|control
 argument_list|,
 name|GIMP_CURSOR_MODIFIER_MINUS
-argument_list|)
-expr_stmt|;
-name|paint_tool
-operator|->
-name|core
-operator|=
-name|g_object_new
-argument_list|(
-name|GIMP_TYPE_CONVOLVE
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}

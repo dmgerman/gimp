@@ -295,10 +295,6 @@ modifier|*
 name|tgrid_coords
 decl_stmt|;
 comment|/*  transformed grid_coords          */
-DECL|member|notify_connected
-name|gboolean
-name|notify_connected
-decl_stmt|;
 DECL|member|type
 name|GimpTransformType
 name|type

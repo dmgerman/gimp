@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint/gimpairbrush.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paint/gimpairbrushoptions.h"
 end_include
 
@@ -84,18 +78,6 @@ end_include
 begin_function_decl
 specifier|static
 name|void
-name|gimp_airbrush_tool_class_init
-parameter_list|(
-name|GimpAirbrushToolClass
-modifier|*
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|gimp_airbrush_tool_init
 parameter_list|(
 name|GimpAirbrushTool
@@ -117,17 +99,6 @@ name|tool_options
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GimpPaintbrushToolClass
-modifier|*
-name|parent_class
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
 
 begin_comment
 comment|/*  functions  */
@@ -230,11 +201,9 @@ name|GBaseFinalizeFunc
 operator|)
 name|NULL
 block|,
-operator|(
-name|GClassInitFunc
-operator|)
-name|gimp_airbrush_tool_class_init
+name|NULL
 block|,
+comment|/* class_init     */
 name|NULL
 block|,
 comment|/* class_finalize */
@@ -273,38 +242,6 @@ block|}
 return|return
 name|tool_type
 return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_airbrush_tool_class_init (GimpAirbrushToolClass * klass)
-name|gimp_airbrush_tool_class_init
-parameter_list|(
-name|GimpAirbrushToolClass
-modifier|*
-name|klass
-parameter_list|)
-block|{
-name|GObjectClass
-modifier|*
-name|object_class
-decl_stmt|;
-name|object_class
-operator|=
-name|G_OBJECT_CLASS
-argument_list|(
-name|klass
-argument_list|)
-expr_stmt|;
-name|parent_class
-operator|=
-name|g_type_class_peek_parent
-argument_list|(
-name|klass
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -355,17 +292,6 @@ operator|->
 name|pick_colors
 operator|=
 name|TRUE
-expr_stmt|;
-name|paint_tool
-operator|->
-name|core
-operator|=
-name|g_object_new
-argument_list|(
-name|GIMP_TYPE_AIRBRUSH
-argument_list|,
-name|NULL
-argument_list|)
 expr_stmt|;
 block|}
 end_function

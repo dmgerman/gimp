@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint/gimppaintbrush.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paint/gimppaintoptions.h"
 end_include
 
@@ -72,18 +66,6 @@ end_include
 begin_function_decl
 specifier|static
 name|void
-name|gimp_paintbrush_tool_class_init
-parameter_list|(
-name|GimpPaintbrushToolClass
-modifier|*
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|gimp_paintbrush_tool_init
 parameter_list|(
 name|GimpPaintbrushTool
@@ -92,17 +74,6 @@ name|tool
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GimpPaintToolClass
-modifier|*
-name|parent_class
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
 
 begin_comment
 comment|/*  public functions  */
@@ -207,11 +178,9 @@ name|GBaseFinalizeFunc
 operator|)
 name|NULL
 block|,
-operator|(
-name|GClassInitFunc
-operator|)
-name|gimp_paintbrush_tool_class_init
+name|NULL
 block|,
+comment|/* class_init     */
 name|NULL
 block|,
 comment|/* class_finalize */
@@ -260,38 +229,6 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_paintbrush_tool_class_init (GimpPaintbrushToolClass * klass)
-name|gimp_paintbrush_tool_class_init
-parameter_list|(
-name|GimpPaintbrushToolClass
-modifier|*
-name|klass
-parameter_list|)
-block|{
-name|GimpPaintToolClass
-modifier|*
-name|paint_tool_class
-decl_stmt|;
-name|paint_tool_class
-operator|=
-name|GIMP_PAINT_TOOL_CLASS
-argument_list|(
-name|klass
-argument_list|)
-expr_stmt|;
-name|parent_class
-operator|=
-name|g_type_class_peek_parent
-argument_list|(
-name|klass
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
 DECL|function|gimp_paintbrush_tool_init (GimpPaintbrushTool * paintbrush)
 name|gimp_paintbrush_tool_init
 parameter_list|(
@@ -336,17 +273,6 @@ operator|->
 name|pick_colors
 operator|=
 name|TRUE
-expr_stmt|;
-name|paint_tool
-operator|->
-name|core
-operator|=
-name|g_object_new
-argument_list|(
-name|GIMP_TYPE_PAINTBRUSH
-argument_list|,
-name|NULL
-argument_list|)
 expr_stmt|;
 block|}
 end_function

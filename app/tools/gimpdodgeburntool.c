@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint/gimpdodgeburn.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paint/gimpdodgeburnoptions.h"
 end_include
 
@@ -419,17 +413,6 @@ operator|->
 name|control
 argument_list|,
 name|GIMP_BURN_TOOL_CURSOR
-argument_list|)
-expr_stmt|;
-name|paint_tool
-operator|->
-name|core
-operator|=
-name|g_object_new
-argument_list|(
-name|GIMP_TYPE_DODGE_BURN
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}
