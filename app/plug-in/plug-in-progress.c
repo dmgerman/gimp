@@ -320,7 +320,11 @@ if|if
 condition|(
 name|plug_in
 operator|->
-name|recurse
+name|recurse_main_loop
+operator|||
+name|plug_in
+operator|->
+name|temp_main_loops
 condition|)
 block|{
 name|plug_in

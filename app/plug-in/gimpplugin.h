@@ -82,20 +82,6 @@ range|:
 literal|1
 decl_stmt|;
 comment|/*  Is the plug-in running synchronously?   */
-DECL|member|recurse
-name|guint
-name|recurse
-range|:
-literal|1
-decl_stmt|;
-comment|/*  Do we have an own GMainLoop?            */
-DECL|member|starting_ext
-name|guint
-name|starting_ext
-range|:
-literal|1
-decl_stmt|;
-comment|/*  Does the plug-in wait for extension_ack?*/
 DECL|member|pid
 name|pid_t
 name|pid
@@ -165,12 +151,24 @@ modifier|*
 name|current_temp_proc
 decl_stmt|;
 comment|/*  The temp proc the plug-in is busy with  */
-DECL|member|main_loops
+DECL|member|ext_main_loop
+name|GMainLoop
+modifier|*
+name|ext_main_loop
+decl_stmt|;
+comment|/*  for waiting for extension_ack           */
+DECL|member|recurse_main_loop
+name|GMainLoop
+modifier|*
+name|recurse_main_loop
+decl_stmt|;
+comment|/*  for waiting for proc_return             */
+DECL|member|temp_main_loops
 name|GList
 modifier|*
-name|main_loops
+name|temp_main_loops
 decl_stmt|;
-comment|/*  Stack of recursive main loops           */
+comment|/*  for waiting for temp_proc_returns       */
 DECL|member|return_vals
 name|Argument
 modifier|*
