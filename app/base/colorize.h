@@ -105,6 +105,10 @@ begin_function_decl
 name|void
 name|colorize
 parameter_list|(
+name|Colorize
+modifier|*
+name|colorize
+parameter_list|,
 name|PixelRegion
 modifier|*
 name|srcPR
@@ -112,10 +116,6 @@ parameter_list|,
 name|PixelRegion
 modifier|*
 name|destPR
-parameter_list|,
-name|Colorize
-modifier|*
-name|colorize
 parameter_list|)
 function_decl|;
 end_function_decl

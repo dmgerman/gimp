@@ -111,6 +111,10 @@ begin_function_decl
 name|void
 name|color_balance
 parameter_list|(
+name|ColorBalance
+modifier|*
+name|cb
+parameter_list|,
 name|PixelRegion
 modifier|*
 name|srcPR
@@ -118,9 +122,6 @@ parameter_list|,
 name|PixelRegion
 modifier|*
 name|destPR
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl

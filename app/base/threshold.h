@@ -37,32 +37,14 @@ block|}
 struct|;
 end_struct
 
-begin_comment
-comment|/*  this function just re-orders the arguments so we can use   *  pixel_regions_process_paralell  */
-end_comment
-
-begin_function_decl
-name|void
-name|threshold_2
-parameter_list|(
-name|gpointer
-name|data
-parameter_list|,
-name|PixelRegion
-modifier|*
-name|srcPR
-parameter_list|,
-name|PixelRegion
-modifier|*
-name|destPR
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_function_decl
 name|void
 name|threshold
 parameter_list|(
+name|Threshold
+modifier|*
+name|tr
+parameter_list|,
 name|PixelRegion
 modifier|*
 name|srcPR
@@ -70,9 +52,6 @@ parameter_list|,
 name|PixelRegion
 modifier|*
 name|destPR
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl

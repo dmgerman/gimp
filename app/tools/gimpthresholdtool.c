@@ -867,6 +867,9 @@ name|image_map_tool
 operator|->
 name|image_map
 argument_list|,
+operator|(
+name|GimpImageMapApplyFunc
+operator|)
 name|threshold
 argument_list|,
 name|t_tool

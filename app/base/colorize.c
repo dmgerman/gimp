@@ -260,9 +260,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|colorize (PixelRegion * srcPR,PixelRegion * destPR,Colorize * colorize)
+DECL|function|colorize (Colorize * colorize,PixelRegion * srcPR,PixelRegion * destPR)
 name|colorize
 parameter_list|(
+name|Colorize
+modifier|*
+name|colorize
+parameter_list|,
 name|PixelRegion
 modifier|*
 name|srcPR
@@ -270,12 +274,9 @@ parameter_list|,
 name|PixelRegion
 modifier|*
 name|destPR
-parameter_list|,
-name|Colorize
-modifier|*
-name|colorize
 parameter_list|)
 block|{
+specifier|const
 name|guchar
 modifier|*
 name|src

@@ -755,7 +755,7 @@ argument_list|,
 operator|(
 name|GimpImageMapApplyFunc
 operator|)
-name|gimp_lut_process_2
+name|gimp_lut_process
 argument_list|,
 name|bc_tool
 operator|->

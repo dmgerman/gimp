@@ -459,9 +459,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|hue_saturation (PixelRegion * srcPR,PixelRegion * destPR,HueSaturation * hs)
+DECL|function|hue_saturation (HueSaturation * hs,PixelRegion * srcPR,PixelRegion * destPR)
 name|hue_saturation
 parameter_list|(
+name|HueSaturation
+modifier|*
+name|hs
+parameter_list|,
 name|PixelRegion
 modifier|*
 name|srcPR
@@ -469,12 +473,9 @@ parameter_list|,
 name|PixelRegion
 modifier|*
 name|destPR
-parameter_list|,
-name|HueSaturation
-modifier|*
-name|hs
 parameter_list|)
 block|{
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -489,7 +490,7 @@ decl_stmt|,
 modifier|*
 name|d
 decl_stmt|;
-name|gint
+name|gboolean
 name|alpha
 decl_stmt|;
 name|gint

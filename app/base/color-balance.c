@@ -792,9 +792,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|color_balance (PixelRegion * srcPR,PixelRegion * destPR,gpointer data)
+DECL|function|color_balance (ColorBalance * cb,PixelRegion * srcPR,PixelRegion * destPR)
 name|color_balance
 parameter_list|(
+name|ColorBalance
+modifier|*
+name|cb
+parameter_list|,
 name|PixelRegion
 modifier|*
 name|srcPR
@@ -802,15 +806,9 @@ parameter_list|,
 name|PixelRegion
 modifier|*
 name|destPR
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 block|{
-name|ColorBalance
-modifier|*
-name|cb
-decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -847,14 +845,6 @@ name|w
 decl_stmt|,
 name|h
 decl_stmt|;
-name|cb
-operator|=
-operator|(
-name|ColorBalance
-operator|*
-operator|)
-name|data
-expr_stmt|;
 name|h
 operator|=
 name|srcPR
