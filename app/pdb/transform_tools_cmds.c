@@ -761,8 +761,17 @@ init|=
 name|GIMP_INTERPOLATION_NONE
 decl_stmt|;
 comment|/* Assemble the transformation matrix */
+name|gimp_matrix3_identity
+argument_list|(
+operator|&
+name|matrix
+argument_list|)
+expr_stmt|;
 name|gimp_transform_matrix_perspective
 argument_list|(
+operator|&
+name|matrix
+argument_list|,
 name|x
 argument_list|,
 name|y
@@ -810,9 +819,6 @@ name|trans_info
 index|[
 name|Y3
 index|]
-argument_list|,
-operator|&
-name|matrix
 argument_list|)
 expr_stmt|;
 if|if
@@ -1233,8 +1239,17 @@ init|=
 name|GIMP_INTERPOLATION_NONE
 decl_stmt|;
 comment|/* Assemble the transformation matrix */
-name|gimp_transform_matrix_rotate
+name|gimp_matrix3_identity
 argument_list|(
+operator|&
+name|matrix
+argument_list|)
+expr_stmt|;
+name|gimp_transform_matrix_rotate_rect
+argument_list|(
+operator|&
+name|matrix
+argument_list|,
 name|x
 argument_list|,
 name|y
@@ -1244,9 +1259,6 @@ argument_list|,
 name|height
 argument_list|,
 name|angle
-argument_list|,
-operator|&
-name|matrix
 argument_list|)
 expr_stmt|;
 if|if
@@ -1681,8 +1693,17 @@ init|=
 name|GIMP_INTERPOLATION_NONE
 decl_stmt|;
 comment|/* Assemble the transformation matrix */
+name|gimp_matrix3_identity
+argument_list|(
+operator|&
+name|matrix
+argument_list|)
+expr_stmt|;
 name|gimp_transform_matrix_scale
 argument_list|(
+operator|&
+name|matrix
+argument_list|,
 name|x
 argument_list|,
 name|y
@@ -1720,9 +1741,6 @@ name|trans_info
 index|[
 name|Y0
 index|]
-argument_list|,
-operator|&
-name|matrix
 argument_list|)
 expr_stmt|;
 if|if
@@ -2139,8 +2157,17 @@ init|=
 name|GIMP_INTERPOLATION_NONE
 decl_stmt|;
 comment|/* Assemble the transformation matrix */
+name|gimp_matrix3_identity
+argument_list|(
+operator|&
+name|matrix
+argument_list|)
+expr_stmt|;
 name|gimp_transform_matrix_shear
 argument_list|(
+operator|&
+name|matrix
+argument_list|,
 name|x
 argument_list|,
 name|y
@@ -2152,9 +2179,6 @@ argument_list|,
 name|shear_type
 argument_list|,
 name|magnitude
-argument_list|,
-operator|&
-name|matrix
 argument_list|)
 expr_stmt|;
 if|if
