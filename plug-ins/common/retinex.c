@@ -24,19 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimpmath/gimpmath.h>
+file|"libgimp/gimp.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|<libgimp/gimp.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimpui.h>
+file|"libgimp/gimpui.h"
 end_include
 
 begin_include
@@ -88,7 +82,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acd86920108
+DECL|struct|__anon2767964e0108
 block|{
 DECL|member|scale
 name|gint
@@ -119,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2acd86920203
+DECL|enum|__anon2767964e0203
 block|{
 DECL|enumerator|filter_uniform
 name|filter_uniform
@@ -177,22 +171,22 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acd86920308
+DECL|struct|__anon2767964e0308
 block|{
 DECL|member|N
-name|int
+name|gint
 name|N
 decl_stmt|;
 DECL|member|sigma
-name|float
+name|gfloat
 name|sigma
 decl_stmt|;
 DECL|member|B
-name|double
+name|gdouble
 name|B
 decl_stmt|;
 DECL|member|b
-name|double
+name|gdouble
 name|b
 index|[
 literal|4
@@ -203,35 +197,6 @@ block|}
 name|gauss3_coefs
 typedef|;
 end_typedef
-
-begin_comment
-comment|/*   Variables globales. */
-end_comment
-
-begin_decl_stmt
-DECL|variable|rvals
-specifier|static
-name|RetinexParams
-name|rvals
-init|=
-block|{
-literal|240
-block|,
-comment|/* Scale */
-literal|3
-block|,
-comment|/* Scales */
-name|RETINEX_UNIFORM
-block|,
-comment|/* Echelles reparties uniformement */
-literal|1.2
-block|,
-comment|/* A voir */
-name|TRUE
-comment|/* default is to update the preview */
-block|}
-decl_stmt|;
-end_decl_stmt
 
 begin_comment
 comment|/*  * Declare local functions.  */
@@ -283,7 +248,7 @@ end_comment
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|retinex_dialog
 parameter_list|(
 name|GimpDrawable
@@ -399,7 +364,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*    MSRCR = MultiScale Retinex with Color Restoration  */
+comment|/*  * MSRCR = MultiScale Retinex with Color Restoration  */
 end_comment
 
 begin_function_decl
@@ -426,8 +391,38 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  * Private variables.  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|rvals
+specifier|static
+name|RetinexParams
+name|rvals
+init|=
+block|{
+literal|240
+block|,
+comment|/* Scale */
+literal|3
+block|,
+comment|/* Scales */
+name|RETINEX_UNIFORM
+block|,
+comment|/* Echelles reparties uniformement */
+literal|1.2
+block|,
+comment|/* A voir */
+name|TRUE
+comment|/* default is to update the preview */
+block|}
+decl_stmt|;
+end_decl_stmt
+
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
+specifier|static
 name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
@@ -526,30 +521,18 @@ literal|"variance value"
 block|}
 block|}
 decl_stmt|;
-specifier|static
-name|GimpParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
-name|int
-name|nreturn_vals
-init|=
-literal|0
-decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_retinex"
 argument_list|,
-literal|"Retinex Image Enhancement Algorithm "
+literal|"Retinex Image Enhancement Algorithm"
 argument_list|,
-literal|"The Retinex Image Enhancement Algorithm is an automatic "
-literal|"image enhancement method that enhances a digital image "
-literal|"in terms of dynamic range compression, color independence "
-literal|"from the spectral distribution of the scene illuminant, "
-literal|"and color/lightness rendition."
+literal|"The Retinex Image Enhancement Algorithm is an "
+literal|"automatic image enhancement method that enhances "
+literal|"a digital image in terms of dynamic range "
+literal|"compression, color independence from the spectral "
+literal|"distribution of the scene illuminant, and "
+literal|"color/lightness rendition."
 argument_list|,
 literal|"Fabien Pelisson"
 argument_list|,
@@ -571,21 +554,18 @@ argument_list|(
 name|args
 argument_list|)
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug_in_retinex"
 argument_list|,
-name|N_
-argument_list|(
 literal|"<Image>/Filters/Colors"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -640,15 +620,10 @@ init|=
 name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|gint
-name|x1
+name|x
 decl_stmt|,
-name|y1
+name|y
 decl_stmt|,
-name|x2
-decl_stmt|,
-name|y2
-decl_stmt|;
-name|gint
 name|width
 decl_stmt|,
 name|height
@@ -697,11 +672,6 @@ name|d_status
 operator|=
 name|status
 expr_stmt|;
-name|status
-operator|=
-name|GIMP_PDB_SUCCESS
-expr_stmt|;
-comment|/*      Get the identifier of the current image.      This information is provided to us directly by GIMP.    */
 name|drawable
 operator|=
 name|gimp_drawable_get
@@ -716,43 +686,28 @@ operator|.
 name|d_drawable
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_mask_bounds
+if|if
+condition|(
+operator|!
+name|gimp_drawable_mask_intersect
 argument_list|(
 name|drawable
 operator|->
 name|drawable_id
 argument_list|,
 operator|&
-name|x1
+name|x
 argument_list|,
 operator|&
-name|y1
+name|y
 argument_list|,
 operator|&
-name|x2
-argument_list|,
-operator|&
-name|y2
-argument_list|)
-expr_stmt|;
 name|width
-operator|=
-operator|(
-name|x2
-operator|-
-name|x1
-operator|)
-expr_stmt|;
+argument_list|,
+operator|&
 name|height
-operator|=
-operator|(
-name|y2
-operator|-
-name|y1
-operator|)
-expr_stmt|;
-if|if
-condition|(
+argument_list|)
+operator|||
 name|width
 operator|<
 name|MIN_GAUSSIAN_SCALE
@@ -980,7 +935,6 @@ name|run_mode
 operator|==
 name|GIMP_RUN_INTERACTIVE
 condition|)
-block|{
 name|gimp_set_data
 argument_list|(
 literal|"plug_in_retinex"
@@ -994,7 +948,6 @@ name|RetinexParams
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 else|else
 block|{
@@ -1024,7 +977,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|retinex_dialog (GimpDrawable * drawable)
 name|retinex_dialog
 parameter_list|(
@@ -1069,12 +1022,12 @@ name|GtkObject
 modifier|*
 name|adj
 decl_stmt|;
-name|gboolean
-name|run
-decl_stmt|;
 name|GtkWidget
 modifier|*
 name|frame
+decl_stmt|;
+name|gboolean
+name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
@@ -1682,7 +1635,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*   Applies the algorithm  */
+comment|/*  * Applies the algorithm  */
 end_comment
 
 begin_function
@@ -1701,15 +1654,10 @@ name|preview
 parameter_list|)
 block|{
 name|gint
-name|x1
+name|x
 decl_stmt|,
-name|y1
+name|y
 decl_stmt|,
-name|x2
-decl_stmt|,
-name|y2
-decl_stmt|;
-name|gint
 name|width
 decl_stmt|,
 name|height
@@ -1736,7 +1684,7 @@ name|dst_rgn
 decl_stmt|,
 name|src_rgn
 decl_stmt|;
-comment|/*      Get the size of the current image or its selection.   */
+comment|/*    * Get the size of the current image or its selection.    */
 if|if
 condition|(
 name|preview
@@ -1747,10 +1695,10 @@ argument_list|(
 name|preview
 argument_list|,
 operator|&
-name|x1
+name|x
 argument_list|,
 operator|&
-name|y1
+name|y
 argument_list|)
 expr_stmt|;
 name|gimp_preview_get_size
@@ -1764,56 +1712,32 @@ operator|&
 name|height
 argument_list|)
 expr_stmt|;
-name|x2
-operator|=
-name|x1
-operator|+
-name|width
-expr_stmt|;
-name|y2
-operator|=
-name|y1
-operator|+
-name|height
-expr_stmt|;
 block|}
-else|else
-block|{
-name|gimp_drawable_mask_bounds
+elseif|else
+if|if
+condition|(
+operator|!
+name|gimp_drawable_mask_intersect
 argument_list|(
 name|drawable
 operator|->
 name|drawable_id
 argument_list|,
 operator|&
-name|x1
+name|x
 argument_list|,
 operator|&
-name|y1
+name|y
 argument_list|,
 operator|&
-name|x2
-argument_list|,
-operator|&
-name|y2
-argument_list|)
-expr_stmt|;
 name|width
-operator|=
-operator|(
-name|x2
-operator|-
-name|x1
-operator|)
-expr_stmt|;
+argument_list|,
+operator|&
 name|height
-operator|=
-operator|(
-name|y2
-operator|-
-name|y1
-operator|)
-expr_stmt|;
+argument_list|)
+condition|)
+block|{
+return|return;
 block|}
 name|bytes
 operator|=
@@ -1878,9 +1802,9 @@ name|src_rgn
 argument_list|,
 name|drawable
 argument_list|,
-name|x1
+name|x
 argument_list|,
-name|y1
+name|y
 argument_list|,
 name|width
 argument_list|,
@@ -1898,9 +1822,9 @@ name|src_rgn
 argument_list|,
 name|src
 argument_list|,
-name|x1
+name|x
 argument_list|,
-name|y1
+name|y
 argument_list|,
 name|width
 argument_list|,
@@ -1953,9 +1877,9 @@ name|dst_rgn
 argument_list|,
 name|drawable
 argument_list|,
-name|x1
+name|x
 argument_list|,
-name|y1
+name|y
 argument_list|,
 name|width
 argument_list|,
@@ -1973,9 +1897,9 @@ name|dst_rgn
 argument_list|,
 name|psrc
 argument_list|,
-name|x1
+name|x
 argument_list|,
-name|y1
+name|y
 argument_list|,
 name|width
 argument_list|,
@@ -2007,9 +1931,9 @@ name|drawable
 operator|->
 name|drawable_id
 argument_list|,
-name|x1
+name|x
 argument_list|,
-name|y1
+name|y
 argument_list|,
 name|width
 argument_list|,
@@ -2026,7 +1950,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*   calculate scale values for desired distribution. */
+comment|/*  * calculate scale values for desired distribution.  */
 end_comment
 
 begin_function
@@ -2278,7 +2202,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*   Calculate the coefficients for the recursive filter algorithm   Fast Computation of gaussian blurring.  */
+comment|/*  * Calculate the coefficients for the recursive filter algorithm  * Fast Computation of gaussian blurring.  */
 end_comment
 
 begin_function
@@ -2896,7 +2820,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*   This function is the heart of the algo.   (a)  Filterings at several scales and sumarize the results.   (b)  Calculation of the final values.  */
+comment|/*  * This function is the heart of the algo.  * (a)  Filterings at several scales and sumarize the results.  * (b)  Calculation of the final values.  */
 end_comment
 
 begin_function
@@ -3819,7 +3743,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*   Calculate the average and variance in one go.  */
+comment|/*  * Calculate the average and variance in one go.  */
 end_comment
 
 begin_function
