@@ -535,7 +535,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2792033c0103
+DECL|enum|__anon28c1e4530103
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -563,7 +563,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2792033c0203
+DECL|enum|__anon28c1e4530203
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY

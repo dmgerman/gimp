@@ -675,7 +675,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7651af0103
+DECL|enum|__anon287f40280103
 block|{
 DECL|enumerator|CLEAN
 name|CLEAN
@@ -12661,7 +12661,7 @@ operator|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* set the name after the original layers have been removed so we don't      end up with #2 appended to the name */
+comment|/* set the name after the original layers have been removed so we    * don't end up with #2 appended to the name    */
 name|gimp_object_set_name
 argument_list|(
 name|GIMP_OBJECT
@@ -13244,11 +13244,12 @@ name|NULL
 expr_stmt|;
 block|}
 comment|/* Send out REMOVED signal from layer */
-name|layer_removed
+name|gimp_drawable_removed
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|layer
-argument_list|,
-name|gimage
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Push the layer undo--It is important it goes here since layer might        *   be immediately destroyed if the undo push fails        */
@@ -14691,9 +14692,12 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Send out REMOVED signal from channel */
-name|channel_removed
+name|gimp_drawable_removed
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|channel
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Important to push the undo here in case the push fails  */
