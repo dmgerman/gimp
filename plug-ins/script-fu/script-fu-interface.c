@@ -342,7 +342,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fd8e650108
+DECL|struct|__anon2b7ba3f80108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -386,7 +386,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fd8e650208
+DECL|struct|__anon2b7ba3f80208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -412,7 +412,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fd8e650308
+DECL|struct|__anon2b7ba3f80308
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -433,7 +433,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fd8e650408
+DECL|struct|__anon2b7ba3f80408
 block|{
 DECL|member|name
 name|gchar
@@ -461,7 +461,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon29fd8e65050a
+DECL|union|__anon2b7ba3f8050a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -530,7 +530,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fd8e650608
+DECL|struct|__anon2b7ba3f80608
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -542,6 +542,11 @@ DECL|member|script_name
 name|gchar
 modifier|*
 name|script_name
+decl_stmt|;
+DECL|member|pdb_name
+name|gchar
+modifier|*
+name|pdb_name
 decl_stmt|;
 DECL|member|description
 name|gchar
@@ -611,7 +616,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fd8e650708
+DECL|struct|__anon2b7ba3f80708
 block|{
 DECL|member|status
 name|GtkWidget
@@ -1719,6 +1724,9 @@ name|brush_list
 decl_stmt|;
 name|gchar
 modifier|*
+name|s
+decl_stmt|,
+modifier|*
 name|menu_path
 init|=
 name|NULL
@@ -1777,6 +1785,42 @@ name|cdr
 argument_list|(
 name|a
 argument_list|)
+expr_stmt|;
+comment|/* transform the function name into a name containing "_" for each "-".    * this does not hurt anybody, yet improves the life of many... ;)    */
+name|script
+operator|->
+name|pdb_name
+operator|=
+name|g_strdup
+argument_list|(
+name|val
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|s
+operator|=
+name|script
+operator|->
+name|pdb_name
+init|;
+operator|*
+name|s
+condition|;
+name|s
+operator|++
+control|)
+if|if
+condition|(
+operator|*
+name|s
+operator|==
+literal|'-'
+condition|)
+operator|*
+name|s
+operator|=
+literal|'_'
 expr_stmt|;
 comment|/*  Find the script description  */
 name|val
@@ -4004,7 +4048,7 @@ name|gimp_install_temp_proc
 argument_list|(
 name|script
 operator|->
-name|script_name
+name|pdb_name
 argument_list|,
 name|script
 operator|->
@@ -5212,12 +5256,12 @@ begin_function
 specifier|static
 name|SFScript
 modifier|*
-DECL|function|script_fu_find_script (gchar * script_name)
+DECL|function|script_fu_find_script (gchar * pdb_name)
 name|script_fu_find_script
 parameter_list|(
 name|gchar
 modifier|*
-name|script_name
+name|pdb_name
 parameter_list|)
 block|{
 name|GList
@@ -5254,9 +5298,9 @@ name|strcmp
 argument_list|(
 name|script
 operator|->
-name|script_name
+name|pdb_name
 argument_list|,
-name|script_name
+name|pdb_name
 argument_list|)
 condition|)
 return|return
