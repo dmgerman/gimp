@@ -687,7 +687,7 @@ argument_list|)
 expr_stmt|;
 name|editor
 operator|->
-name|preview
+name|view
 operator|=
 name|gimp_view_new_by_types
 argument_list|(
@@ -711,21 +711,21 @@ argument_list|)
 argument_list|,
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|,
 literal|"marker_changed"
 argument_list|,
@@ -741,7 +741,7 @@ name|g_signal_connect
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|,
 literal|"zoom"
 argument_list|,
@@ -757,7 +757,7 @@ name|g_signal_connect
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|,
 literal|"scroll"
 argument_list|,
@@ -1158,7 +1158,7 @@ name|GIMP_VIEW
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|)
 argument_list|,
 name|GIMP_VIEWABLE
@@ -1237,7 +1237,7 @@ name|GIMP_VIEW
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|)
 argument_list|,
 name|NULL
@@ -1428,7 +1428,7 @@ name|g_signal_connect
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|,
 literal|"button_release_event"
 argument_list|,
@@ -1488,7 +1488,7 @@ name|GIMP_NAVIGATION_PREVIEW
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|)
 expr_stmt|;
 comment|/* decide where to put the popup */
@@ -1781,18 +1781,18 @@ condition|)
 block|{
 name|GimpView
 modifier|*
-name|preview
+name|view
 init|=
 name|GIMP_VIEW
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|)
 decl_stmt|;
 name|gimp_preview_renderer_set_size
 argument_list|(
-name|preview
+name|view
 operator|->
 name|renderer
 argument_list|,
@@ -1802,7 +1802,7 @@ name|nav_preview_size
 operator|*
 literal|3
 argument_list|,
-name|preview
+name|view
 operator|->
 name|renderer
 operator|->
@@ -1820,7 +1820,7 @@ name|gtk_widget_set_size_request
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|,
 name|GIMP_PREVIEW_SIZE_HUGE
 argument_list|,
@@ -1833,7 +1833,7 @@ name|GIMP_VIEW
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|)
 argument_list|,
 name|TRUE
@@ -2209,7 +2209,7 @@ name|GIMP_VIEW
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|)
 operator|->
 name|renderer
@@ -2987,7 +2987,7 @@ name|GIMP_VIEW
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|)
 argument_list|,
 name|GIMP_VIEWABLE
@@ -3030,7 +3030,7 @@ name|GIMP_VIEW
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|)
 operator|->
 name|renderer
@@ -3082,7 +3082,7 @@ name|GIMP_NAVIGATION_PREVIEW
 argument_list|(
 name|editor
 operator|->
-name|preview
+name|view
 argument_list|)
 argument_list|,
 name|editor

@@ -113,10 +113,10 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 decl_stmt|;
-DECL|member|preview
+DECL|member|view
 name|GtkWidget
 modifier|*
-name|preview
+name|view
 decl_stmt|;
 DECL|member|zoom_label
 name|GtkWidget
