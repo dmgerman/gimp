@@ -28,6 +28,25 @@ directive|include
 file|"procedural_db.h"
 end_include
 
+begin_typedef
+DECL|struct|__anon28dc05dd0108
+typedef|typedef
+struct|struct
+block|{
+DECL|member|antialias
+name|int
+name|antialias
+decl_stmt|;
+DECL|member|border
+name|int
+name|border
+decl_stmt|;
+DECL|typedef|TextToolOptions
+block|}
+name|TextToolOptions
+typedef|;
+end_typedef
+
 begin_function_decl
 name|Tool
 modifier|*

@@ -344,7 +344,11 @@ literal|"Francisco Bustamante"
 block|,
 literal|"Ed Connel"
 block|,
+literal|"Jay Cox"
+block|,
 literal|"Andreas Dilger"
+block|,
+literal|"Austin Donnelly"
 block|,
 literal|"Misha Dynin"
 block|,
