@@ -179,6 +179,7 @@ directive|else
 end_else
 
 begin_function_decl
+specifier|static
 name|void
 name|on_signal
 parameter_list|(
@@ -188,6 +189,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|void
 name|on_sig_child
 parameter_list|(
@@ -241,7 +243,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|no_interface
-name|gint
+name|gboolean
 name|no_interface
 init|=
 name|FALSE
@@ -250,7 +252,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|no_data
-name|gint
+name|gboolean
 name|no_data
 init|=
 name|FALSE
@@ -259,7 +261,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|no_splash
-name|gint
+name|gboolean
 name|no_splash
 init|=
 name|FALSE
@@ -268,7 +270,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|no_splash_image
-name|gint
+name|gboolean
 name|no_splash_image
 init|=
 name|FALSE
@@ -277,7 +279,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|be_verbose
-name|gint
+name|gboolean
 name|be_verbose
 init|=
 name|FALSE
@@ -286,7 +288,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|use_shm
-name|gint
+name|gboolean
 name|use_shm
 init|=
 name|FALSE
@@ -295,7 +297,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|use_debug_handler
-name|gint
+name|gboolean
 name|use_debug_handler
 init|=
 name|FALSE
@@ -304,7 +306,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|console_messages
-name|gint
+name|gboolean
 name|console_messages
 init|=
 name|FALSE
@@ -313,7 +315,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|restore_session
-name|gint
+name|gboolean
 name|restore_session
 init|=
 name|FALSE
@@ -429,12 +431,12 @@ modifier|*
 name|argv
 parameter_list|)
 block|{
-name|gint
+name|gboolean
 name|show_version
 init|=
 name|FALSE
 decl_stmt|;
-name|gint
+name|gboolean
 name|show_help
 init|=
 name|FALSE

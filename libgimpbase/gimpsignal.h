@@ -45,16 +45,16 @@ file|<glib.h>
 end_include
 
 begin_comment
-comment|/* RETSIGTYPE is a reference to a   * (signal handler) function that  * takes a signal ID and returns  * void. signal(2) returns such   * references; so does   * gimp_signal_private.  */
+comment|/* GimpRetSigType is a reference   * to a (signal handler) function   * that takes a signal ID and   * returns void.   * signal(2) returns such references;   * so does gimp_signal_private.  */
 end_comment
 
 begin_typedef
-DECL|typedef|RetSigType
+DECL|typedef|GimpRetSigType
 typedef|typedef
 name|void
 function_decl|(
 modifier|*
-name|RetSigType
+name|GimpRetSigType
 function_decl|)
 parameter_list|(
 name|gint
@@ -75,7 +75,7 @@ comment|/* signal(2) lookalikes.               */
 end_comment
 
 begin_function_decl
-name|RetSigType
+name|GimpRetSigType
 name|gimp_signal_private
 parameter_list|(
 name|gint
