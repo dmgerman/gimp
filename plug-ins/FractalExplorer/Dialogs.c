@@ -8687,7 +8687,7 @@ name|fopen
 argument_list|(
 name|savename
 argument_list|,
-literal|"w+"
+literal|"wt+"
 argument_list|)
 expr_stmt|;
 if|if
@@ -10393,7 +10393,7 @@ name|fopen
 argument_list|(
 name|filename
 argument_list|,
-literal|"r"
+literal|"rt"
 argument_list|)
 expr_stmt|;
 if|if
