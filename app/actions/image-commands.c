@@ -442,6 +442,19 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|dialog
+condition|)
+name|file_new_dialog_set
+argument_list|(
+name|dialog
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
