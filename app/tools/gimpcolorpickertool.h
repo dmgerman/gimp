@@ -112,16 +112,26 @@ DECL|member|parent_instance
 name|GimpColorTool
 name|parent_instance
 decl_stmt|;
-DECL|member|centerx
-name|gint
-name|centerx
+DECL|member|dialog
+name|GtkWidget
+modifier|*
+name|dialog
 decl_stmt|;
-comment|/*  starting x coord    */
-DECL|member|centery
-name|gint
-name|centery
+DECL|member|color_area
+name|GtkWidget
+modifier|*
+name|color_area
 decl_stmt|;
-comment|/*  starting y coord    */
+DECL|member|color_frame1
+name|GtkWidget
+modifier|*
+name|color_frame1
+decl_stmt|;
+DECL|member|color_frame2
+name|GtkWidget
+modifier|*
+name|color_frame2
+decl_stmt|;
 block|}
 struct|;
 end_struct
