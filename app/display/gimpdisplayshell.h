@@ -179,6 +179,12 @@ name|gboolean
 name|proximity
 decl_stmt|;
 comment|/* is a device in proximity           */
+DECL|member|select
+name|Selection
+modifier|*
+name|select
+decl_stmt|;
+comment|/*  Selection object    */
 DECL|member|display_areas
 name|GSList
 modifier|*
@@ -456,6 +462,17 @@ name|shell
 parameter_list|,
 name|gboolean
 name|kill_it
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_display_shell_reconnect
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -841,6 +858,20 @@ parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_display_shell_selection_visibility
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
+name|GimpSelectionControl
+name|control
 parameter_list|)
 function_decl|;
 end_function_decl

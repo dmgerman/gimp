@@ -251,7 +251,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0b9d550103
+DECL|enum|__anon2c51f5cd0103
 block|{
 DECL|enumerator|PAINT
 name|PAINT
@@ -2175,7 +2175,7 @@ argument_list|,
 name|PRETRACE_PAINT
 argument_list|)
 expr_stmt|;
-name|gdisplay_flush_now
+name|gimp_display_flush_now
 argument_list|(
 name|gdisp
 argument_list|)
@@ -2495,7 +2495,7 @@ argument_list|,
 name|PRETRACE_PAINT
 argument_list|)
 expr_stmt|;
-name|gdisplay_flush_now
+name|gimp_display_flush_now
 argument_list|(
 name|gdisp
 argument_list|)

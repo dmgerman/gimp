@@ -1269,7 +1269,7 @@ name|gdisp
 decl_stmt|;
 name|gdisp
 operator|=
-name|gdisplay_new
+name|gimp_display_new
 argument_list|(
 name|gimage
 argument_list|,

@@ -102,13 +102,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay-selection.h"
+file|"display/gimpdisplayshell.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplayshell.h"
+file|"display/gimpdisplayshell-selection.h"
 end_include
 
 begin_include
@@ -1205,9 +1205,14 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  pause the current selection  */
-name|gdisplay_selection_visibility
+name|gimp_display_shell_selection_visibility
+argument_list|(
+name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|gdisp
+operator|->
+name|shell
+argument_list|)
 argument_list|,
 name|GIMP_SELECTION_PAUSE
 argument_list|)
@@ -1319,9 +1324,9 @@ name|shell
 argument_list|)
 expr_stmt|;
 comment|/*  resume the current selection and ungrab the pointer  */
-name|gdisplay_selection_visibility
+name|gimp_display_shell_selection_visibility
 argument_list|(
-name|gdisp
+name|shell
 argument_list|,
 name|GIMP_SELECTION_RESUME
 argument_list|)
@@ -2142,7 +2147,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|gdisplay_flush
+name|gimp_display_flush
 argument_list|(
 name|gdisp
 argument_list|)
@@ -2538,7 +2543,12 @@ name|gdisp
 expr_stmt|;
 name|select
 operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
 name|gdisp
+operator|->
+name|shell
+argument_list|)
 operator|->
 name|select
 expr_stmt|;

@@ -241,9 +241,10 @@ name|value
 operator|.
 name|pdb_int
 operator|=
+name|gimp_display_get_ID
+argument_list|(
 name|gdisp
-operator|->
-name|ID
+argument_list|)
 expr_stmt|;
 return|return
 name|return_args
@@ -354,7 +355,7 @@ name|gdisp
 decl_stmt|;
 name|gdisp
 operator|=
-name|gdisplay_get_by_ID
+name|gimp_display_get_by_ID
 argument_list|(
 name|gimp
 argument_list|,

@@ -84,7 +84,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b9852a0103
+DECL|enum|__anon2b73262b0103
 block|{
 DECL|enumerator|IMAGE_MAP_WAITING
 name|IMAGE_MAP_WAITING
@@ -1794,7 +1794,7 @@ argument_list|,
 name|h
 argument_list|)
 expr_stmt|;
-name|gdisplay_flush_now
+name|gimp_display_flush_now
 argument_list|(
 name|image_map
 operator|->

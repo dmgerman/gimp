@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay-selection.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"display/gimpdisplayshell.h"
 end_include
 
@@ -73,6 +67,12 @@ begin_include
 include|#
 directive|include
 file|"display/gimpdisplayshell-scale.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/gimpdisplayshell-selection.h"
 end_include
 
 begin_include
@@ -498,6 +498,10 @@ name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|gint
 name|new_val
 decl_stmt|;
@@ -506,6 +510,15 @@ argument_list|(
 name|gdisp
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 name|new_val
@@ -522,16 +535,16 @@ if|if
 condition|(
 name|new_val
 operator|==
-name|gdisp
+name|shell
 operator|->
 name|select
 operator|->
 name|hidden
 condition|)
 block|{
-name|selection_toggle
+name|gimp_display_shell_selection_toggle
 argument_list|(
-name|gdisp
+name|shell
 operator|->
 name|select
 argument_list|)
@@ -846,7 +859,7 @@ name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gdisplay_flush
+name|gimp_display_flush
 argument_list|(
 name|gdisp
 argument_list|)

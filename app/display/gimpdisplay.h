@@ -232,13 +232,9 @@ DECL|member|basey
 name|gint
 name|basey
 decl_stmt|;
-DECL|member|idleid
+DECL|member|idle_id
 name|guint
-name|idleid
-decl_stmt|;
-DECL|member|active
-name|gboolean
-name|active
+name|idle_id
 decl_stmt|;
 DECL|member|update_areas
 name|GSList
@@ -386,12 +382,6 @@ name|gboolean
 name|snap_to_guides
 decl_stmt|;
 comment|/*  should the guides be snapped to?        */
-DECL|member|select
-name|Selection
-modifier|*
-name|select
-decl_stmt|;
-comment|/*  Selection object                        */
 DECL|member|update_areas
 name|GSList
 modifier|*
@@ -420,10 +410,6 @@ block|}
 struct|;
 end_struct
 
-begin_comment
-comment|/* member function declarations */
-end_comment
-
 begin_function_decl
 name|GType
 name|gimp_display_get_type
@@ -436,7 +422,7 @@ end_function_decl
 begin_function_decl
 name|GimpDisplay
 modifier|*
-name|gdisplay_new
+name|gimp_display_new
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -450,7 +436,18 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gdisplay_delete
+name|gimp_display_delete
+parameter_list|(
+name|GimpDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint
+name|gimp_display_get_ID
 parameter_list|(
 name|GimpDisplay
 modifier|*
@@ -462,7 +459,7 @@ end_function_decl
 begin_function_decl
 name|GimpDisplay
 modifier|*
-name|gdisplay_get_by_ID
+name|gimp_display_get_by_ID
 parameter_list|(
 name|Gimp
 modifier|*
@@ -476,7 +473,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gdisplay_reconnect
+name|gimp_display_reconnect
 parameter_list|(
 name|GimpDisplay
 modifier|*
@@ -491,7 +488,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gdisplay_add_update_area
+name|gimp_display_add_update_area
 parameter_list|(
 name|GimpDisplay
 modifier|*
@@ -511,6 +508,43 @@ name|h
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_display_flush
+parameter_list|(
+name|GimpDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_display_flush_now
+parameter_list|(
+name|GimpDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_display_finish_draw
+parameter_list|(
+name|GimpDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/*  stuff that will go to GimpDisplayShell  */
+end_comment
 
 begin_function_decl
 name|void
@@ -623,51 +657,6 @@ name|ny
 parameter_list|,
 name|gboolean
 name|use_offsets
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gdisplay_selection_visibility
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|,
-name|GimpSelectionControl
-name|control
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gdisplay_flush
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gdisplay_flush_now
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gdisplays_finish_draw
-parameter_list|(
-name|void
 parameter_list|)
 function_decl|;
 end_function_decl

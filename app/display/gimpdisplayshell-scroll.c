@@ -451,13 +451,15 @@ name|x_offset
 operator|||
 name|y_offset
 condition|)
-name|gdisplay_flush
+block|{
+name|gimp_display_flush
 argument_list|(
 name|shell
 operator|->
 name|gdisp
 argument_list|)
 expr_stmt|;
+block|}
 name|nav_dialog_update_window_marker
 argument_list|(
 name|shell

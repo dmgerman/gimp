@@ -2,25 +2,20 @@ begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__MARCHING_ANTS_H__
+name|__GIMP_DISPLAY_SHELL_MARCHING_ANTS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__MARCHING_ANTS_H__
+DECL|macro|__GIMP_DISPLAY_SHELL_MARCHING_ANTS_H__
 define|#
 directive|define
-name|__MARCHING_ANTS_H__
+name|__GIMP_DISPLAY_SHELL_MARCHING_ANTS_H__
 end_define
-
-begin_comment
-comment|/* static variable definitions */
-end_comment
 
 begin_decl_stmt
 DECL|variable|ant_data
 specifier|static
-name|unsigned
-name|char
+name|guchar
 name|ant_data
 index|[
 literal|8
@@ -255,7 +250,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __MARCHING_ANTS_H__  */
+comment|/*  __GIMP_DISPLAY_SHELL_MARCHING_ANTS_H__  */
 end_comment
 
 end_unit

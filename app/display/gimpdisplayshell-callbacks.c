@@ -114,12 +114,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplay-selection.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdisplayshell.h"
 end_include
 
@@ -145,6 +139,12 @@ begin_include
 include|#
 directive|include
 file|"gimpdisplayshell-scroll.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdisplayshell-selection.h"
 end_include
 
 begin_include
@@ -624,17 +624,17 @@ name|shell
 argument_list|)
 expr_stmt|;
 comment|/*  create the selection object  */
-name|gdisp
+name|shell
 operator|->
 name|select
 operator|=
-name|selection_create
+name|gimp_display_shell_selection_create
 argument_list|(
 name|canvas
 operator|->
 name|window
 argument_list|,
-name|gdisp
+name|shell
 argument_list|,
 name|gdisp
 operator|->

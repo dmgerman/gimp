@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_DISPLAY_SELECTION_H__
+name|__GIMP_DISPLAY_SHELL_SELECTION_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_DISPLAY_SELECTION_H__
+DECL|macro|__GIMP_DISPLAY_SHELL_SELECTION_H__
 define|#
 directive|define
-name|__GIMP_DISPLAY_SELECTION_H__
+name|__GIMP_DISPLAY_SHELL_SELECTION_H__
 end_define
 
 begin_struct
@@ -28,10 +28,10 @@ modifier|*
 name|win
 decl_stmt|;
 comment|/*  Window to draw to                    */
-DECL|member|gdisp
-name|GimpDisplay
+DECL|member|shell
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 decl_stmt|;
 comment|/*  GimpDisplay that owns the selection  */
 DECL|member|gc_in
@@ -45,7 +45,7 @@ name|GdkGC
 modifier|*
 name|gc_out
 decl_stmt|;
-comment|/*  GC for selected regions outside 				  *  current layer */
+comment|/*  GC for selected regions outside                                        *  current layer */
 DECL|member|gc_layer
 name|GdkGC
 modifier|*
@@ -179,13 +179,13 @@ end_struct
 begin_function_decl
 name|Selection
 modifier|*
-name|selection_create
+name|gimp_display_shell_selection_create
 parameter_list|(
 name|GdkWindow
 modifier|*
 name|window
 parameter_list|,
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
 name|gdisp
 parameter_list|,
@@ -203,7 +203,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|selection_free
+name|gimp_display_shell_selection_free
 parameter_list|(
 name|Selection
 modifier|*
@@ -214,7 +214,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|selection_pause
+name|gimp_display_shell_selection_pause
 parameter_list|(
 name|Selection
 modifier|*
@@ -225,7 +225,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|selection_resume
+name|gimp_display_shell_selection_resume
 parameter_list|(
 name|Selection
 modifier|*
@@ -236,7 +236,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|selection_start
+name|gimp_display_shell_selection_start
 parameter_list|(
 name|Selection
 modifier|*
@@ -250,7 +250,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|selection_invis
+name|gimp_display_shell_selection_invis
 parameter_list|(
 name|Selection
 modifier|*
@@ -261,7 +261,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|selection_layer_invis
+name|gimp_display_shell_selection_layer_invis
 parameter_list|(
 name|Selection
 modifier|*
@@ -272,7 +272,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|selection_toggle
+name|gimp_display_shell_selection_toggle
 parameter_list|(
 name|Selection
 modifier|*
@@ -287,7 +287,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_DISPLAY_SELECTION_H__  */
+comment|/*  __GIMP_DISPLAY_SHELL_SELECTION_H__  */
 end_comment
 
 end_unit

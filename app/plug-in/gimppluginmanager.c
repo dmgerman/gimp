@@ -16496,7 +16496,7 @@ literal|0
 condition|)
 name|gdisp
 operator|=
-name|gdisplay_get_by_ID
+name|gimp_display_get_by_ID
 argument_list|(
 name|the_gimp
 argument_list|,

@@ -5091,7 +5091,7 @@ name|coords
 operator|->
 name|y
 expr_stmt|;
-name|gdisplay_flush_now
+name|gimp_display_flush_now
 argument_list|(
 name|gdisp
 argument_list|)
@@ -5848,7 +5848,7 @@ argument_list|(
 name|blob_union
 argument_list|)
 expr_stmt|;
-name|gdisplay_flush_now
+name|gimp_display_flush_now
 argument_list|(
 name|gdisp
 argument_list|)
@@ -6460,7 +6460,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon290f2ab50103
+DECL|enum|__anon2bf7564a0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

@@ -48,19 +48,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplay-marching-ants.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdisplay-selection.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdisplayshell-marching-ants.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdisplayshell-selection.h"
 end_include
 
 begin_include
@@ -319,16 +319,16 @@ end_comment
 begin_function
 name|Selection
 modifier|*
-DECL|function|selection_create (GdkWindow * win,GimpDisplay * gdisp,gint size,gint width,gint speed)
-name|selection_create
+DECL|function|gimp_display_shell_selection_create (GdkWindow * win,GimpDisplayShell * shell,gint size,gint width,gint speed)
+name|gimp_display_shell_selection_create
 parameter_list|(
 name|GdkWindow
 modifier|*
 name|win
 parameter_list|,
-name|GimpDisplay
+name|GimpDisplayShell
 modifier|*
-name|gdisp
+name|shell
 parameter_list|,
 name|gint
 name|size
@@ -355,6 +355,16 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|new
 operator|=
 name|g_new
@@ -368,6 +378,8 @@ name|base_type
 operator|=
 name|gimp_image_base_type
 argument_list|(
+name|shell
+operator|->
 name|gdisp
 operator|->
 name|gimage
@@ -470,9 +482,9 @@ name|win
 expr_stmt|;
 name|new
 operator|->
-name|gdisp
+name|shell
 operator|=
-name|gdisp
+name|shell
 expr_stmt|;
 name|new
 operator|->
@@ -888,8 +900,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|selection_free (Selection * select)
-name|selection_free
+DECL|function|gimp_display_shell_selection_free (Selection * select)
+name|gimp_display_shell_selection_free
 parameter_list|(
 name|Selection
 modifier|*
@@ -996,8 +1008,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|selection_pause (Selection * select)
-name|selection_pause
+DECL|function|gimp_display_shell_selection_pause (Selection * select)
+name|gimp_display_shell_selection_pause
 parameter_list|(
 name|Selection
 modifier|*
@@ -1043,8 +1055,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|selection_resume (Selection * select)
-name|selection_resume
+DECL|function|gimp_display_shell_selection_resume (Selection * select)
+name|gimp_display_shell_selection_resume
 parameter_list|(
 name|Selection
 modifier|*
@@ -1090,8 +1102,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|selection_start (Selection * select,gboolean recalc)
-name|selection_start
+DECL|function|gimp_display_shell_selection_start (Selection * select,gboolean recalc)
+name|gimp_display_shell_selection_start
 parameter_list|(
 name|Selection
 modifier|*
@@ -1162,18 +1174,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|selection_invis (Selection * select)
-name|selection_invis
+DECL|function|gimp_display_shell_selection_invis (Selection * select)
+name|gimp_display_shell_selection_invis
 parameter_list|(
 name|Selection
 modifier|*
 name|select
 parameter_list|)
 block|{
-name|GimpDisplayShell
-modifier|*
-name|shell
-decl_stmt|;
 name|gint
 name|x1
 decl_stmt|,
@@ -1183,17 +1191,6 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|shell
-operator|=
-name|GIMP_DISPLAY_SHELL
-argument_list|(
-name|select
-operator|->
-name|gdisp
-operator|->
-name|shell
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|select
@@ -1228,6 +1225,8 @@ if|if
 condition|(
 name|gimp_display_shell_mask_bounds
 argument_list|(
+name|select
+operator|->
 name|shell
 argument_list|,
 operator|&
@@ -1246,6 +1245,8 @@ condition|)
 block|{
 name|gimp_display_shell_add_expose_area
 argument_list|(
+name|select
+operator|->
 name|shell
 argument_list|,
 name|x1
@@ -1268,7 +1269,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|selection_start
+name|gimp_display_shell_selection_start
 argument_list|(
 name|select
 argument_list|,
@@ -1281,8 +1282,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|selection_layer_invis (Selection * select)
-name|selection_layer_invis
+DECL|function|gimp_display_shell_selection_layer_invis (Selection * select)
+name|gimp_display_shell_selection_layer_invis
 parameter_list|(
 name|Selection
 modifier|*
@@ -1353,21 +1354,6 @@ operator|==
 literal|4
 condition|)
 block|{
-name|GimpDisplayShell
-modifier|*
-name|shell
-decl_stmt|;
-name|shell
-operator|=
-name|GIMP_DISPLAY_SHELL
-argument_list|(
-name|select
-operator|->
-name|gdisp
-operator|->
-name|shell
-argument_list|)
-expr_stmt|;
 name|x1
 operator|=
 name|select
@@ -1475,6 +1461,8 @@ expr_stmt|;
 comment|/*  expose the region  */
 name|gimp_display_shell_add_expose_area
 argument_list|(
+name|select
+operator|->
 name|shell
 argument_list|,
 name|x1
@@ -1500,6 +1488,8 @@ argument_list|)
 expr_stmt|;
 name|gimp_display_shell_add_expose_area
 argument_list|(
+name|select
+operator|->
 name|shell
 argument_list|,
 name|x1
@@ -1525,6 +1515,8 @@ argument_list|)
 expr_stmt|;
 name|gimp_display_shell_add_expose_area
 argument_list|(
+name|select
+operator|->
 name|shell
 argument_list|,
 name|x1
@@ -1550,6 +1542,8 @@ argument_list|)
 expr_stmt|;
 name|gimp_display_shell_add_expose_area
 argument_list|(
+name|select
+operator|->
 name|shell
 argument_list|,
 name|x4
@@ -1579,20 +1573,20 @@ end_function
 
 begin_function
 name|void
-DECL|function|selection_toggle (Selection * select)
-name|selection_toggle
+DECL|function|gimp_display_shell_selection_toggle (Selection * select)
+name|gimp_display_shell_selection_toggle
 parameter_list|(
 name|Selection
 modifier|*
 name|select
 parameter_list|)
 block|{
-name|selection_invis
+name|gimp_display_shell_selection_invis
 argument_list|(
 name|select
 argument_list|)
 expr_stmt|;
-name|selection_layer_invis
+name|gimp_display_shell_selection_layer_invis
 argument_list|(
 name|select
 argument_list|)
@@ -1610,7 +1604,7 @@ name|FALSE
 else|:
 name|TRUE
 expr_stmt|;
-name|selection_start
+name|gimp_display_shell_selection_start
 argument_list|(
 name|select
 argument_list|,
@@ -2839,6 +2833,8 @@ name|gdisplay_transform_coords
 argument_list|(
 name|select
 operator|->
+name|shell
+operator|->
 name|gdisp
 argument_list|,
 name|src_segs
@@ -2861,7 +2857,7 @@ argument_list|,
 operator|&
 name|y
 argument_list|,
-literal|0
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dest_segs
@@ -2886,6 +2882,8 @@ name|gdisplay_transform_coords
 argument_list|(
 name|select
 operator|->
+name|shell
+operator|->
 name|gdisp
 argument_list|,
 name|src_segs
@@ -2908,7 +2906,7 @@ argument_list|,
 operator|&
 name|y
 argument_list|,
-literal|0
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dest_segs
@@ -3031,6 +3029,8 @@ comment|/*  Ask the gimage for the boundary of its selected region...    *  Then
 name|gimage_mask_boundary
 argument_list|(
 name|select
+operator|->
+name|shell
 operator|->
 name|gdisp
 operator|->
@@ -3158,6 +3158,8 @@ comment|/*  The active layer's boundary  */
 name|gimp_image_layer_boundary
 argument_list|(
 name|select
+operator|->
+name|shell
 operator|->
 name|gdisp
 operator|->
