@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a9387f0103
+DECL|enum|__anon2b7366480103
 block|{
 DECL|enumerator|GIMP_COLOR_BUTTON_COLOR_FG
 name|GIMP_COLOR_BUTTON_COLOR_FG
@@ -97,7 +97,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a9387f0203
+DECL|enum|__anon2b7366480203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -801,15 +801,6 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|GTK_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|destroy
-condition|)
 name|GTK_OBJECT_CLASS
 argument_list|(
 name|parent_class
@@ -1790,9 +1781,11 @@ block|{
 case|case
 name|GIMP_COLOR_BUTTON_COLOR_FG
 case|:
-name|_gimp_eek
-operator|.
-name|palette_get_foreground
+if|if
+condition|(
+name|_gimp_get_foreground_func
+condition|)
+name|_gimp_get_foreground_func
 argument_list|(
 operator|&
 name|color
@@ -1802,9 +1795,11 @@ break|break;
 case|case
 name|GIMP_COLOR_BUTTON_COLOR_BG
 case|:
-name|_gimp_eek
-operator|.
-name|palette_get_background
+if|if
+condition|(
+name|_gimp_get_background_func
+condition|)
+name|_gimp_get_background_func
 argument_list|(
 operator|&
 name|color

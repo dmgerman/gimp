@@ -75,10 +75,16 @@ directive|include
 file|"gimphelpui.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpwidgets-private.h"
+end_include
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1f5d740103
+DECL|enum|__anon28fefe190103
 block|{
 DECL|enumerator|GIMP_WIDGET_HELP_TYPE_HELP
 name|GIMP_WIDGET_HELP_TYPE_HELP
@@ -191,16 +197,6 @@ comment|/*  local variables  */
 end_comment
 
 begin_decl_stmt
-DECL|variable|the_help_func
-specifier|static
-name|GimpHelpFunc
-name|the_help_func
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|tool_tips
 specifier|static
 name|GtkTooltips
@@ -232,33 +228,24 @@ end_comment
 
 begin_function
 name|void
-DECL|function|_gimp_help_init (GimpHelpFunc standard_help_func)
+DECL|function|_gimp_help_init (void)
 name|_gimp_help_init
 parameter_list|(
-name|GimpHelpFunc
-name|standard_help_func
+name|void
 parameter_list|)
 block|{
-name|g_return_if_fail
-argument_list|(
-name|standard_help_func
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
-name|the_help_func
+name|tool_tips
 condition|)
-name|g_error
+block|{
+name|g_warning
 argument_list|(
 literal|"_gimp_help_init() must only be called once!"
 argument_list|)
 expr_stmt|;
-name|the_help_func
-operator|=
-name|standard_help_func
-expr_stmt|;
+return|return;
+block|}
 name|tool_tips
 operator|=
 name|gtk_tooltips_new
@@ -335,12 +322,12 @@ block|{
 if|if
 condition|(
 operator|!
-name|the_help_func
+name|_gimp_standard_help_func
 condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"gimp_standard_help_func(): you must call _gimp_help_init() "
+literal|"gimp_standard_help_func(): you must call gimp_widgets_init() "
 literal|"before using the help system"
 argument_list|)
 expr_stmt|;
@@ -348,7 +335,7 @@ return|return;
 block|}
 call|(
 modifier|*
-name|the_help_func
+name|_gimp_standard_help_func
 call|)
 argument_list|(
 name|help_data

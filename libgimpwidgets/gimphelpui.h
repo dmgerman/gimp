@@ -22,8 +22,7 @@ comment|/* For information look into the C source or the html documentation */
 name|void
 name|_gimp_help_init
 parameter_list|(
-name|GimpHelpFunc
-name|standard_help_func
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl

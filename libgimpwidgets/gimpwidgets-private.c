@@ -55,12 +55,43 @@ begin_decl_stmt
 DECL|variable|_gimp_eek
 name|GimpWidgetsVTable
 name|_gimp_eek
+init|=
+block|{
+name|NULL
+block|, }
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|_gimp_standard_help_func
+name|GimpHelpFunc
+name|_gimp_standard_help_func
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|_gimp_get_foreground_func
+name|GimpGetColorFunc
+name|_gimp_get_foreground_func
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|_gimp_get_background_func
+name|GimpGetColorFunc
+name|_gimp_get_background_func
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
 begin_function
 name|void
-DECL|function|gimp_widgets_init (GimpWidgetsVTable * vtable,GimpHelpFunc standard_help_func)
+DECL|function|gimp_widgets_init (GimpWidgetsVTable * vtable,GimpHelpFunc standard_help_func,GimpGetColorFunc get_foreground_func,GimpGetColorFunc get_background_func)
 name|gimp_widgets_init
 parameter_list|(
 name|GimpWidgetsVTable
@@ -69,6 +100,12 @@ name|vtable
 parameter_list|,
 name|GimpHelpFunc
 name|standard_help_func
+parameter_list|,
+name|GimpGetColorFunc
+name|get_foreground_func
+parameter_list|,
+name|GimpGetColorFunc
+name|get_background_func
 parameter_list|)
 block|{
 specifier|static
@@ -133,6 +170,18 @@ name|_gimp_eek
 operator|=
 operator|*
 name|vtable
+expr_stmt|;
+name|_gimp_standard_help_func
+operator|=
+name|standard_help_func
+expr_stmt|;
+name|_gimp_get_foreground_func
+operator|=
+name|get_foreground_func
+expr_stmt|;
+name|_gimp_get_background_func
+operator|=
+name|get_background_func
 expr_stmt|;
 name|gimp_stock_init
 argument_list|()
@@ -204,9 +253,7 @@ name|icon_list
 argument_list|)
 expr_stmt|;
 name|_gimp_help_init
-argument_list|(
-name|standard_help_func
-argument_list|)
+argument_list|()
 expr_stmt|;
 name|gimp_widgets_initialized
 operator|=

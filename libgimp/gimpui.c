@@ -193,18 +193,6 @@ expr_stmt|;
 comment|/*  Initialize the eeky vtable needed by libgimpwidgets  */
 name|vtable
 operator|.
-name|palette_get_background
-operator|=
-name|gimp_palette_get_background
-expr_stmt|;
-name|vtable
-operator|.
-name|palette_get_foreground
-operator|=
-name|gimp_palette_get_foreground
-expr_stmt|;
-name|vtable
-operator|.
 name|unit_get_number_of_units
 operator|=
 name|gimp_unit_get_number_of_units
@@ -263,6 +251,10 @@ operator|&
 name|vtable
 argument_list|,
 name|gimp_ui_help_func
+argument_list|,
+name|gimp_palette_get_foreground
+argument_list|,
+name|gimp_palette_get_background
 argument_list|)
 expr_stmt|;
 if|if
