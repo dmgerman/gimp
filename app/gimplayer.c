@@ -144,7 +144,7 @@ comment|/* ick. */
 end_comment
 
 begin_enum
-DECL|enum|__anon29ed494a0103
+DECL|enum|__anon2b69fa500103
 enum|enum
 block|{
 DECL|enumerator|REMOVED
@@ -6901,11 +6901,15 @@ name|unsigned
 name|char
 call|)
 argument_list|(
+operator|(
 operator|*
 name|r
 operator|++
 operator|*
 name|tot_frac
+operator|)
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 block|}
