@@ -28,7 +28,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -46,19 +46,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/tools-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"procedural_db.h"
 end_include
 
 begin_include
 include|#
 directive|include
+file|"core/core-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpimage-text.h"
 end_include
 
 begin_include
@@ -71,12 +77,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimplayer.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/gimptexttool.h"
 end_include
 
 begin_include
