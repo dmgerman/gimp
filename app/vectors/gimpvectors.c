@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b997cc0103
+DECL|enum|__anon29480c1b0103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -238,6 +238,9 @@ name|flip_type
 parameter_list|,
 name|gdouble
 name|axis
+parameter_list|,
+name|gboolean
+name|clip_result
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1409,7 +1412,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_vectors_flip (GimpItem * item,GimpOrientationType flip_type,gdouble axis)
+DECL|function|gimp_vectors_flip (GimpItem * item,GimpOrientationType flip_type,gdouble axis,gboolean clip_result)
 name|gimp_vectors_flip
 parameter_list|(
 name|GimpItem
@@ -1421,6 +1424,9 @@ name|flip_type
 parameter_list|,
 name|gdouble
 name|axis
+parameter_list|,
+name|gboolean
+name|clip_result
 parameter_list|)
 block|{
 name|GimpVectors

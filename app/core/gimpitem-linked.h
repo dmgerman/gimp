@@ -49,6 +49,9 @@ name|flip_type
 parameter_list|,
 name|gdouble
 name|axis
+parameter_list|,
+name|gboolean
+name|clip_result
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -77,13 +77,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpcontext.h"
+file|"core/gimpchannel.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpdrawable.h"
+file|"core/gimpcontext.h"
 end_include
 
 begin_include
@@ -3113,6 +3113,9 @@ name|GimpProgress
 modifier|*
 name|progress
 decl_stmt|;
+name|gboolean
+name|clip_result
+decl_stmt|;
 name|TileManager
 modifier|*
 name|ret
@@ -3224,6 +3227,33 @@ argument_list|,
 name|progress
 argument_list|)
 expr_stmt|;
+name|clip_result
+operator|=
+name|options
+operator|->
+name|clip
+expr_stmt|;
+comment|/*  always clip unfloated channels so they keep their size  */
+if|if
+condition|(
+name|GIMP_IS_CHANNEL
+argument_list|(
+name|active_drawable
+argument_list|)
+operator|&&
+name|tile_manager_bpp
+argument_list|(
+name|tr_tool
+operator|->
+name|original
+argument_list|)
+operator|==
+literal|1
+condition|)
+name|clip_result
+operator|=
+name|TRUE
+expr_stmt|;
 name|ret
 operator|=
 name|gimp_drawable_transform_tiles_affine
@@ -3246,9 +3276,7 @@ name|options
 operator|->
 name|interpolation
 argument_list|,
-name|options
-operator|->
-name|clip
+name|clip_result
 argument_list|,
 name|progress
 condition|?

@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be748da0103
+DECL|enum|__anon29aef8ac0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -2620,7 +2620,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_item_flip (GimpItem * item,GimpOrientationType flip_type,gdouble axis)
+DECL|function|gimp_item_flip (GimpItem * item,GimpOrientationType flip_type,gdouble axis,gboolean clip_result)
 name|gimp_item_flip
 parameter_list|(
 name|GimpItem
@@ -2632,6 +2632,9 @@ name|flip_type
 parameter_list|,
 name|gdouble
 name|axis
+parameter_list|,
+name|gboolean
+name|clip_result
 parameter_list|)
 block|{
 name|GimpItemClass
@@ -2662,6 +2665,8 @@ argument_list|,
 name|flip_type
 argument_list|,
 name|axis
+argument_list|,
+name|clip_result
 argument_list|)
 expr_stmt|;
 block|}

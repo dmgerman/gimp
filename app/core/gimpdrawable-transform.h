@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e91ddf0103
+DECL|enum|__anon29fbdb430103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -102,6 +102,9 @@ name|flip_type
 parameter_list|,
 name|gdouble
 name|axis
+parameter_list|,
+name|gboolean
+name|clip_result
 parameter_list|)
 function_decl|;
 end_function_decl

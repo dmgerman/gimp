@@ -941,6 +941,8 @@ operator|->
 name|flip_type
 argument_list|,
 name|axis
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 return|return
@@ -957,6 +959,8 @@ operator|->
 name|flip_type
 argument_list|,
 name|axis
+argument_list|,
+name|FALSE
 argument_list|)
 return|;
 block|}

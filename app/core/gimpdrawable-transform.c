@@ -618,7 +618,22 @@ argument_list|()
 expr_stmt|;
 break|break;
 block|}
-comment|/*  enable rotating un-floated non-layers  */
+comment|/*  "Outside" a channel is transparency, not the bg color  */
+if|if
+condition|(
+name|GIMP_IS_CHANNEL
+argument_list|(
+name|drawable
+argument_list|)
+condition|)
+name|bg_color
+index|[
+literal|0
+index|]
+operator|=
+name|TRANSPARENT_OPACITY
+expr_stmt|;
+comment|/*  setting alpha = 0 will cause the channel's value to be treated    *  as alpha and the color channel loops never to be entered    */
 if|if
 condition|(
 name|tile_manager_bpp
@@ -628,20 +643,10 @@ argument_list|)
 operator|==
 literal|1
 condition|)
-block|{
-name|bg_color
-index|[
-literal|0
-index|]
-operator|=
-name|OPAQUE_OPACITY
-expr_stmt|;
-comment|/*  setting alpha = 0 will cause the channel's value to be treated        *  as alpha and the color channel loops never to be entered        */
 name|alpha
 operator|=
 literal|0
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|direction
@@ -680,20 +685,6 @@ name|m
 argument_list|)
 expr_stmt|;
 block|}
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: path_transform_current_path
-endif|#
-directive|endif
-if|#
-directive|if
-literal|0
-block|path_transform_current_path (gimage, matrix, FALSE);
-endif|#
-directive|endif
 name|tile_manager_get_offsets
 argument_list|(
 name|float_tiles
@@ -723,13 +714,27 @@ argument_list|(
 name|float_tiles
 argument_list|)
 expr_stmt|;
-comment|/*  Find the bounding coordinates of target */
+comment|/*  Always clip unfloated channels since they must keep their size  */
 if|if
 condition|(
+name|G_TYPE_FROM_INSTANCE
+argument_list|(
+name|drawable
+argument_list|)
+operator|==
+name|GIMP_TYPE_CHANNEL
+operator|&&
 name|alpha
 operator|==
 literal|0
-operator|||
+condition|)
+name|clip_result
+operator|=
+name|TRUE
+expr_stmt|;
+comment|/*  Find the bounding coordinates of target */
+if|if
+condition|(
 name|clip_result
 condition|)
 block|{
@@ -902,17 +907,13 @@ name|tiles
 operator|=
 name|tile_manager_new
 argument_list|(
-operator|(
 name|x2
 operator|-
 name|x1
-operator|)
 argument_list|,
-operator|(
 name|y2
 operator|-
 name|y1
-operator|)
 argument_list|,
 name|tile_manager_bpp
 argument_list|(
@@ -931,17 +932,13 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-operator|(
 name|x2
 operator|-
-name|x1
-operator|)
+name|x
 argument_list|,
-operator|(
 name|y2
 operator|-
 name|y1
-operator|)
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1063,7 +1060,6 @@ expr_stmt|;
 name|coords
 operator|=
 operator|(
-operator|(
 name|interpolation_type
 operator|!=
 name|GIMP_INTERPOLATION_NONE
@@ -1072,7 +1068,6 @@ condition|?
 literal|5
 else|:
 literal|1
-operator|)
 expr_stmt|;
 comment|/* these loops could be rearranged, depending on which bit of code    * you'd most like to write more than once.    */
 for|for
@@ -2357,7 +2352,7 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|gimp_drawable_transform_tiles_flip (GimpDrawable * drawable,TileManager * orig,GimpOrientationType flip_type,gdouble axis)
+DECL|function|gimp_drawable_transform_tiles_flip (GimpDrawable * drawable,TileManager * orig,GimpOrientationType flip_type,gdouble axis,gboolean clip_result)
 name|gimp_drawable_transform_tiles_flip
 parameter_list|(
 name|GimpDrawable
@@ -2373,6 +2368,9 @@ name|flip_type
 parameter_list|,
 name|gdouble
 name|axis
+parameter_list|,
+name|gboolean
+name|clip_result
 parameter_list|)
 block|{
 name|TileManager
@@ -2425,6 +2423,28 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: implement clip_result for flipping
+endif|#
+directive|endif
+if|if
+condition|(
+name|clip_result
+condition|)
+block|{
+name|g_print
+argument_list|(
+literal|"FIXME: implement clip_result for gimp_drawable_transform_tiles_flip()\n"
+argument_list|)
+expr_stmt|;
+return|return
+name|NULL
+return|;
+block|}
 name|orig_width
 operator|=
 name|tile_manager_width
@@ -2804,6 +2824,25 @@ name|TileManager
 modifier|*
 name|new_tiles
 decl_stmt|;
+comment|/*  always clip unfloated channels so they keep their size  */
+if|if
+condition|(
+name|GIMP_IS_CHANNEL
+argument_list|(
+name|drawable
+argument_list|)
+operator|&&
+name|tile_manager_bpp
+argument_list|(
+name|float_tiles
+argument_list|)
+operator|==
+literal|1
+condition|)
+name|clip_result
+operator|=
+name|TRUE
+expr_stmt|;
 comment|/* transform the buffer */
 name|new_tiles
 operator|=
@@ -3052,6 +3091,8 @@ argument_list|,
 name|flip_type
 argument_list|,
 name|axis
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* Free the cut/copied buffer */
