@@ -102,12 +102,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpviewabledialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"file-new-dialog.h"
 end_include
 
@@ -128,7 +122,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f3fff20108
+DECL|struct|__anon2b16b58c0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -307,25 +301,18 @@ name|dialog
 operator|->
 name|dialog
 operator|=
-name|gimp_viewable_dialog_new
+name|gimp_dialog_new
 argument_list|(
-name|NULL
-argument_list|,
-name|_
-argument_list|(
-literal|"New Image"
-argument_list|)
-argument_list|,
-literal|"gimp-image-new"
-argument_list|,
-name|GIMP_STOCK_IMAGE
-argument_list|,
 name|_
 argument_list|(
 literal|"Create a New Image"
 argument_list|)
 argument_list|,
+literal|"gimp-image-new"
+argument_list|,
 name|NULL
+argument_list|,
+literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
@@ -501,7 +488,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"From _Template:"
+literal|"_Template:"
 argument_list|)
 argument_list|,
 literal|1.0
