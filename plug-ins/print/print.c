@@ -5215,26 +5215,6 @@ name|PRINTERS_LPSTAT
 value|2
 end_define
 
-begin_function_decl
-specifier|extern
-name|int
-name|asprintf
-parameter_list|(
-name|char
-modifier|*
-modifier|*
-name|result
-parameter_list|,
-specifier|const
-name|char
-modifier|*
-name|format
-parameter_list|,
-modifier|...
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_function
 specifier|static
 name|void
@@ -5688,11 +5668,10 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-name|asprintf
-argument_list|(
-operator|&
 name|result
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 literal|"lpr -P%s -l"
 argument_list|,
 name|line
@@ -5818,11 +5797,10 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-name|asprintf
-argument_list|(
-operator|&
 name|result
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 literal|"lp -s -d%s -oraw"
 argument_list|,
 name|name

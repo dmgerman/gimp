@@ -4,11 +4,11 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* XPM plugin version 1.2.3 */
+comment|/* XPM plugin version 1.2.4 */
 end_comment
 
 begin_comment
-comment|/* 1.2.3 fixes bug when running in noninteractive mode changes alpha_threshold range from [0, 1] to [0,255] for consistency with the threshold_alpha plugin  1.2.2 fixes bug that generated bad digits on images with more than 20000 colors. (thanks, yanele) parses gtkrc (thanks, yosh) doesn't load parameter screen on images that don't have alpha  1.2.1 fixes some minor bugs -- spaces in #XXXXXX strings, small typos in code.  1.2 compute color indexes so that we don't have to use XpmSaveXImage*  Previous...Inherited code from Ray Lehtiniemi, who inherited it from S& P. */
+comment|/* 1.2.4 displays an error message if saving fails (bug #87588)  1.2.3 fixes bug when running in noninteractive mode changes alpha_threshold range from [0, 1] to [0,255] for consistency with the threshold_alpha plugin  1.2.2 fixes bug that generated bad digits on images with more than 20000 colors. (thanks, yanele) parses gtkrc (thanks, yosh) doesn't load parameter screen on images that don't have alpha  1.2.1 fixes some minor bugs -- spaces in #XXXXXX strings, small typos in code.  1.2 compute color indexes so that we don't have to use XpmSaveXImage*  Previous...Inherited code from Ray Lehtiniemi, who inherited it from S& P. */
 end_comment
 
 begin_include
@@ -98,7 +98,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287cf0b80108
+DECL|struct|__anon2b93d33c0108
 block|{
 DECL|member|threshold
 name|gint
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287cf0b80208
+DECL|struct|__anon2b93d33c0208
 block|{
 DECL|member|run
 name|gint
@@ -128,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287cf0b80308
+DECL|struct|__anon2b93d33c0308
 block|{
 DECL|member|r
 name|guchar
@@ -2862,6 +2862,9 @@ operator|=
 name|ibuff
 expr_stmt|;
 comment|/* do the save */
+name|rc
+operator|=
+operator|(
 name|XpmWriteFileFromXpmImage
 argument_list|(
 name|filename
@@ -2870,10 +2873,9 @@ name|image
 argument_list|,
 name|NULL
 argument_list|)
-expr_stmt|;
-name|rc
-operator|=
-name|TRUE
+operator|==
+name|XpmSuccess
+operator|)
 expr_stmt|;
 name|cleanup
 label|:
