@@ -6854,6 +6854,22 @@ argument_list|)
 operator|*
 literal|4
 decl_stmt|;
+comment|/*  get gradient samples if they don't exist -- fixes gradient color    *  mode for noninteractive use (bug #103470).    */
+if|if
+condition|(
+name|gradient_samples
+operator|==
+name|NULL
+condition|)
+name|gradient_samples
+operator|=
+name|gimp_gradients_sample_uniform
+argument_list|(
+name|wvals
+operator|.
+name|ncolors
+argument_list|)
+expr_stmt|;
 name|redstretch
 operator|=
 name|wvals
