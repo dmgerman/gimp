@@ -22,6 +22,26 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_comment
+comment|/* configure cares about HAVE_PROGRESSIVE_JPEG */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|<glib.h>
+end_include
+
+begin_comment
+comment|/* We want glib.h first because of some 				 * pretty obscure Win32 compilation issues. 				 */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|<setjmp.h>
 end_include
 
@@ -66,16 +86,6 @@ include|#
 directive|include
 file|<jerror.h>
 end_include
-
-begin_include
-include|#
-directive|include
-file|"config.h"
-end_include
-
-begin_comment
-comment|/* configure cares about HAVE_PROGRESSIVE_JPEG */
-end_comment
 
 begin_include
 include|#
@@ -249,7 +259,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274d48740108
+DECL|struct|__anon295335910108
 block|{
 DECL|member|quality
 name|gdouble
@@ -296,7 +306,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274d48740208
+DECL|struct|__anon295335910208
 block|{
 DECL|member|run
 name|gint
@@ -311,7 +321,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274d48740308
+DECL|struct|__anon295335910308
 block|{
 DECL|member|cinfo
 name|struct

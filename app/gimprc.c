@@ -206,7 +206,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon279060fe0103
+DECL|enum|__anon2bce8cc80103
 typedef|typedef
 enum|enum
 block|{
@@ -1426,6 +1426,22 @@ specifier|inline
 name|char
 modifier|*
 name|image_type_to_str
+parameter_list|(
+name|gpointer
+name|val1p
+parameter_list|,
+name|gpointer
+name|val2p
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+specifier|inline
+name|char
+modifier|*
+name|interpolation_type_to_str
 parameter_list|(
 name|gpointer
 name|val1p
