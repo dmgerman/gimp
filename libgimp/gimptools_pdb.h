@@ -286,7 +286,7 @@ parameter_list|,
 name|GimpDodgeBurnType
 name|dodgeburn_type
 parameter_list|,
-name|GimpDodgeBurnMode
+name|GimpTransferMode
 name|dodgeburn_mode
 parameter_list|,
 name|gint

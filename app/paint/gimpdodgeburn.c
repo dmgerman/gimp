@@ -167,7 +167,7 @@ DECL|macro|DODGEBURN_DEFAULT_MODE
 define|#
 directive|define
 name|DODGEBURN_DEFAULT_MODE
-value|DODGEBURN_HIGHLIGHTS
+value|GIMP_HIGHLIGHTS
 end_define
 
 begin_comment
@@ -209,12 +209,12 @@ literal|2
 index|]
 decl_stmt|;
 DECL|member|mode
-name|DodgeBurnMode
+name|GimpTransferMode
 name|mode
 decl_stmt|;
 comment|/*highlights, midtones, shadows*/
 DECL|member|mode_d
-name|DodgeBurnMode
+name|GimpTransferMode
 name|mode_d
 decl_stmt|;
 DECL|member|mode_w
@@ -286,7 +286,7 @@ parameter_list|,
 name|DodgeBurnType
 name|type
 parameter_list|,
-name|DodgeBurnMode
+name|GimpTransferMode
 name|mode
 parameter_list|,
 name|GimpLut
@@ -780,7 +780,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dodgeburn_tool_make_luts (GimpPaintTool * paint_tool,gdouble db_exposure,DodgeBurnType type,DodgeBurnMode mode,GimpLut * lut,GimpDrawable * drawable)
+DECL|function|gimp_dodgeburn_tool_make_luts (GimpPaintTool * paint_tool,gdouble db_exposure,DodgeBurnType type,GimpTransferMode mode,GimpLut * lut,GimpDrawable * drawable)
 name|gimp_dodgeburn_tool_make_luts
 parameter_list|(
 name|GimpPaintTool
@@ -793,7 +793,7 @@ parameter_list|,
 name|DodgeBurnType
 name|type
 parameter_list|,
-name|DodgeBurnMode
+name|GimpTransferMode
 name|mode
 parameter_list|,
 name|GimpLut
@@ -844,7 +844,7 @@ name|mode
 condition|)
 block|{
 case|case
-name|DODGEBURN_HIGHLIGHTS
+name|GIMP_HIGHLIGHTS
 case|:
 name|lut_func
 operator|=
@@ -852,7 +852,7 @@ name|gimp_dodgeburn_tool_highlights_lut_func
 expr_stmt|;
 break|break;
 case|case
-name|DODGEBURN_MIDTONES
+name|GIMP_MIDTONES
 case|:
 name|lut_func
 operator|=
@@ -860,7 +860,7 @@ name|gimp_dodgeburn_tool_midtones_lut_func
 expr_stmt|;
 break|break;
 case|case
-name|DODGEBURN_SHADOWS
+name|GIMP_SHADOWS
 case|:
 name|lut_func
 operator|=
@@ -2187,7 +2187,7 @@ name|type
 init|=
 name|DODGEBURN_DEFAULT_TYPE
 decl_stmt|;
-name|DodgeBurnMode
+name|GimpTransferMode
 name|mode
 init|=
 name|DODGEBURN_DEFAULT_MODE
@@ -2243,7 +2243,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_dodgeburn_tool_non_gui (GimpDrawable * drawable,gdouble exposure,DodgeBurnType type,DodgeBurnMode mode,gint num_strokes,gdouble * stroke_array)
+DECL|function|gimp_dodgeburn_tool_non_gui (GimpDrawable * drawable,gdouble exposure,DodgeBurnType type,GimpTransferMode mode,gint num_strokes,gdouble * stroke_array)
 name|gimp_dodgeburn_tool_non_gui
 parameter_list|(
 name|GimpDrawable
@@ -2256,7 +2256,7 @@ parameter_list|,
 name|DodgeBurnType
 name|type
 parameter_list|,
-name|DodgeBurnMode
+name|GimpTransferMode
 name|mode
 parameter_list|,
 name|gint
@@ -2712,9 +2712,9 @@ argument_list|,
 name|GTK_UPDATE_DELAYED
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|options
 operator|->
@@ -2723,7 +2723,7 @@ argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_double_adjustment_update
 argument_list|)
@@ -2855,22 +2855,22 @@ name|options
 operator|->
 name|mode
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|options
 operator|->
 name|mode
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"Highlights"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|DODGEBURN_HIGHLIGHTS
+name|GINT_TO_POINTER
+argument_list|(
+name|GIMP_HIGHLIGHTS
+argument_list|)
 argument_list|,
 operator|&
 name|options
@@ -2885,10 +2885,10 @@ argument_list|(
 literal|"Midtones"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|DODGEBURN_MIDTONES
+name|GINT_TO_POINTER
+argument_list|(
+name|GIMP_MIDTONES
+argument_list|)
 argument_list|,
 operator|&
 name|options
@@ -2903,10 +2903,10 @@ argument_list|(
 literal|"Shadows"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|DODGEBURN_SHADOWS
+name|GINT_TO_POINTER
+argument_list|(
+name|GIMP_SHADOWS
+argument_list|)
 argument_list|,
 operator|&
 name|options

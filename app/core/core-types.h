@@ -33,7 +33,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a5b2f00103
+DECL|enum|__anon2946c6fd0103
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -56,7 +56,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a5b2f00203
+DECL|enum|__anon2946c6fd0203
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a5b2f00303
+DECL|enum|__anon2946c6fd0303
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a5b2f00403
+DECL|enum|__anon2946c6fd0403
 block|{
 DECL|enumerator|APPLY
 name|APPLY
@@ -142,7 +142,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a5b2f00503
+DECL|enum|__anon2946c6fd0503
 block|{
 DECL|enumerator|FOREGROUND_FILL
 name|FOREGROUND_FILL
@@ -166,6 +166,30 @@ comment|/*< nick=NO_IMAGE_FILL>*/
 DECL|typedef|GimpFillType
 block|}
 name|GimpFillType
+typedef|;
+end_typedef
+
+begin_comment
+comment|/* Transfer modes */
+end_comment
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< chop=GIMP_>*/
+DECL|enum|__anon2946c6fd0603
+block|{
+DECL|enumerator|GIMP_SHADOWS
+name|GIMP_SHADOWS
+block|,
+DECL|enumerator|GIMP_MIDTONES
+name|GIMP_MIDTONES
+block|,
+DECL|enumerator|GIMP_HIGHLIGHTS
+name|GIMP_HIGHLIGHTS
+DECL|typedef|GimpTransferMode
+block|}
+name|GimpTransferMode
 typedef|;
 end_typedef
 

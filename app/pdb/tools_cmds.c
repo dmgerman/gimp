@@ -64,6 +64,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/core-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -4062,11 +4068,11 @@ if|if
 condition|(
 name|dodgeburn_mode
 operator|<
-name|DODGEBURN_HIGHLIGHTS
+name|GIMP_SHADOWS
 operator|||
 name|dodgeburn_mode
 operator|>
-name|DODGEBURN_SHADOWS
+name|GIMP_HIGHLIGHTS
 condition|)
 name|success
 operator|=
@@ -4186,7 +4192,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"dodgeburn_mode"
 block|,
-literal|"The mode: { DODGEBURN_HIGHLIGHTS (0), DODGEBURN_MIDTONES (1), DODGEBURN_SHADOWS (2) }"
+literal|"The mode: { SHADOWS (0), MIDTONES (1), HIGHLIGHTS (2) }"
 block|}
 block|,
 block|{

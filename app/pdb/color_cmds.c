@@ -82,6 +82,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/core-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable-desaturate.h"
 end_include
 
@@ -3464,11 +3470,11 @@ if|if
 condition|(
 name|transfer_mode
 operator|<
-name|SHADOWS
+name|GIMP_SHADOWS
 operator|||
 name|transfer_mode
 operator|>
-name|HIGHLIGHTS
+name|GIMP_HIGHLIGHTS
 condition|)
 name|success
 operator|=

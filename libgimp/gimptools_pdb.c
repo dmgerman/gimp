@@ -1087,7 +1087,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_dodgeburn (gint32 drawable_ID,gdouble exposure,GimpDodgeBurnType dodgeburn_type,GimpDodgeBurnMode dodgeburn_mode,gint num_strokes,gdouble * strokes)
+DECL|function|gimp_dodgeburn (gint32 drawable_ID,gdouble exposure,GimpDodgeBurnType dodgeburn_type,GimpTransferMode dodgeburn_mode,gint num_strokes,gdouble * strokes)
 name|gimp_dodgeburn
 parameter_list|(
 name|gint32
@@ -1099,7 +1099,7 @@ parameter_list|,
 name|GimpDodgeBurnType
 name|dodgeburn_type
 parameter_list|,
-name|GimpDodgeBurnMode
+name|GimpTransferMode
 name|dodgeburn_mode
 parameter_list|,
 name|gint

@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a2be8d0103
+DECL|enum|__anon2b29edf00103
 block|{
 DECL|enumerator|DODGE
 name|DODGE
@@ -35,25 +35,6 @@ name|BURN
 DECL|typedef|DodgeBurnType
 block|}
 name|DodgeBurnType
-typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon29a2be8d0203
-block|{
-DECL|enumerator|DODGEBURN_HIGHLIGHTS
-name|DODGEBURN_HIGHLIGHTS
-block|,
-DECL|enumerator|DODGEBURN_MIDTONES
-name|DODGEBURN_MIDTONES
-block|,
-DECL|enumerator|DODGEBURN_SHADOWS
-name|DODGEBURN_SHADOWS
-DECL|typedef|DodgeBurnMode
-block|}
-name|DodgeBurnMode
 typedef|;
 end_typedef
 
@@ -165,7 +146,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GtkType
+name|GType
 name|gimp_dodgeburn_tool_get_type
 parameter_list|(
 name|void
@@ -187,7 +168,7 @@ parameter_list|,
 name|DodgeBurnType
 name|type
 parameter_list|,
-name|DodgeBurnMode
+name|GimpTransferMode
 name|mode
 parameter_list|,
 name|gint

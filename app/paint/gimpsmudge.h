@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bdf38aa0103
+DECL|enum|__anon2bed0c9f0103
 block|{
 DECL|enumerator|SMUDGE_TYPE_SMUDGE
 name|SMUDGE_TYPE_SMUDGE
@@ -35,25 +35,6 @@ name|SMUDGE_TYPE_STREAK
 DECL|typedef|SmudgeType
 block|}
 name|SmudgeType
-typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2bdf38aa0203
-block|{
-DECL|enumerator|SMUDGE_MODE_HIGHLIGHTS
-name|SMUDGE_MODE_HIGHLIGHTS
-block|,
-DECL|enumerator|SMUDGE_MODE_MIDTONES
-name|SMUDGE_MODE_MIDTONES
-block|,
-DECL|enumerator|SMUDGE_MODE_SHADOWS
-name|SMUDGE_MODE_SHADOWS
-DECL|typedef|SmudgeMode
-block|}
-name|SmudgeMode
 typedef|;
 end_typedef
 

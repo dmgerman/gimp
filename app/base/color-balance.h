@@ -22,25 +22,6 @@ directive|include
 file|"gimpimagemaptool.h"
 end_include
 
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2b2f2f810103
-block|{
-DECL|enumerator|SHADOWS
-name|SHADOWS
-block|,
-DECL|enumerator|MIDTONES
-name|MIDTONES
-block|,
-DECL|enumerator|HIGHLIGHTS
-name|HIGHLIGHTS
-DECL|typedef|TransferMode
-block|}
-name|TransferMode
-typedef|;
-end_typedef
-
 begin_define
 DECL|macro|GIMP_TYPE_COLOR_BALANCE_TOOL
 define|#
@@ -232,7 +213,7 @@ name|gboolean
 name|preview
 decl_stmt|;
 DECL|member|application_mode
-name|TransferMode
+name|GimpTransferMode
 name|application_mode
 decl_stmt|;
 block|}
