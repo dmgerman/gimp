@@ -2380,6 +2380,11 @@ DECL|function|channels_dialog_clear ()
 name|channels_dialog_clear
 parameter_list|()
 block|{
+name|ops_button_box_set_insensitive
+argument_list|(
+name|channels_ops_buttons
+argument_list|)
+expr_stmt|;
 name|suspend_gimage_notify
 operator|++
 expr_stmt|;

@@ -136,6 +136,16 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|ops_button_box_set_insensitive
+parameter_list|(
+name|OpsButton
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|ops_button_set_sensitive
 parameter_list|(
 name|OpsButton

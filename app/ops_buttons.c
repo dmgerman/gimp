@@ -337,6 +337,38 @@ end_function
 
 begin_function
 name|void
+DECL|function|ops_button_box_set_insensitive (OpsButton * ops_buttons)
+name|ops_button_box_set_insensitive
+parameter_list|(
+name|OpsButton
+modifier|*
+name|ops_buttons
+parameter_list|)
+block|{
+while|while
+condition|(
+name|ops_buttons
+operator|->
+name|widget
+condition|)
+block|{
+name|ops_button_set_sensitive
+argument_list|(
+operator|*
+name|ops_buttons
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|ops_buttons
+operator|++
+expr_stmt|;
+block|}
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|ops_button_set_sensitive (OpsButton ops_button,gint sensitive)
 name|ops_button_set_sensitive
 parameter_list|(

@@ -4696,6 +4696,11 @@ DECL|function|layers_dialog_clear ()
 name|layers_dialog_clear
 parameter_list|()
 block|{
+name|ops_button_box_set_insensitive
+argument_list|(
+name|layers_ops_buttons
+argument_list|)
+expr_stmt|;
 name|layersD
 operator|->
 name|gimage_id
