@@ -48,7 +48,7 @@ comment|/* __cplusplus */
 comment|/* For information look into the html documentation */
 typedef|typedef
 enum|enum
-DECL|enum|__anon299298e80103
+DECL|enum|__anon29a9d2c10103
 block|{
 DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_NONE
 name|GIMP_SIZE_ENTRY_UPDATE_NONE
@@ -91,6 +91,12 @@ typedef|typedef
 name|struct
 name|_GimpColorButton
 name|GimpColorButton
+typedef|;
+DECL|typedef|GimpOffsetArea
+typedef|typedef
+name|struct
+name|_GimpOffsetArea
+name|GimpOffsetArea
 typedef|;
 DECL|typedef|GimpPathEditor
 typedef|typedef
