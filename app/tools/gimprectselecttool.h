@@ -133,9 +133,9 @@ name|gint
 name|center
 decl_stmt|;
 comment|/*  is the selection being created from the                                    *  center out?  */
-DECL|member|fixed_size
-name|gint
-name|fixed_size
+DECL|member|fixed_mode
+name|GimpRectSelectMode
+name|fixed_mode
 decl_stmt|;
 DECL|member|fixed_width
 name|gdouble

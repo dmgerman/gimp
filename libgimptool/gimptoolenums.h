@@ -65,24 +65,21 @@ name|GIMP_TYPE_CROP_TYPE
 value|(gimp_crop_type_get_type ())
 end_define
 
-begin_function_decl
+begin_decl_stmt
 name|GType
 name|gimp_crop_type_get_type
-parameter_list|(
+argument_list|(
 name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* G_GNUC_CONST;*/
-end_comment
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
 
 begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b83e2630103
+DECL|enum|__anon2780e1b60103
 block|{
 DECL|enumerator|GIMP_CROP
 name|GIMP_CROP
@@ -106,7 +103,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2b83e2630203
+DECL|enum|__anon2780e1b60203
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -151,7 +148,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2b83e2630303
+DECL|enum|__anon2780e1b60303
 block|{
 DECL|enumerator|INACTIVE
 name|INACTIVE
@@ -173,7 +170,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2b83e2630403
+DECL|enum|__anon2780e1b60403
 block|{
 DECL|enumerator|PAUSE
 name|PAUSE
@@ -198,7 +195,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2b83e2630503
+DECL|enum|__anon2780e1b60503
 block|{
 DECL|enumerator|GIMP_MOTION_MODE_EXACT
 name|GIMP_MOTION_MODE_EXACT
@@ -214,8 +211,49 @@ name|GimpMotionMode
 typedef|;
 end_typedef
 
+begin_define
+DECL|macro|GIMP_TYPE_RECT_SELECT_MODE
+define|#
+directive|define
+name|GIMP_TYPE_RECT_SELECT_MODE
+value|(gimp_rect_select_mode_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_rect_select_mode_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< pdb-skip>*/
+DECL|enum|__anon2780e1b60603
+block|{
+DECL|enumerator|GIMP_RECT_SELECT_MODE_FREE
+name|GIMP_RECT_SELECT_MODE_FREE
+block|,
+comment|/*< desc="Free Select">*/
+DECL|enumerator|GIMP_RECT_SELECT_MODE_FIXED_SIZE
+name|GIMP_RECT_SELECT_MODE_FIXED_SIZE
+block|,
+comment|/*< desc="Fixed Size">*/
+DECL|enumerator|GIMP_RECT_SELECT_MODE_FIXED_RATIO
+name|GIMP_RECT_SELECT_MODE_FIXED_RATIO
+comment|/*< desc="Fixed Aspect Ratio">*/
+DECL|typedef|GimpRectSelectMode
+block|}
+name|GimpRectSelectMode
+typedef|;
+end_typedef
+
 begin_comment
-comment|/* possible transform functions */
+comment|/*  Possible transform functions  */
 end_comment
 
 begin_typedef
@@ -223,7 +261,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2b83e2630603
+DECL|enum|__anon2780e1b60703
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING

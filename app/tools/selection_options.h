@@ -123,7 +123,7 @@ DECL|member|threshold
 name|gdouble
 name|threshold
 decl_stmt|;
-comment|/* gdouble   threshold_d; (from gimprc) */
+comment|/* gdouble          threshold_d; (from gimprc) */
 DECL|member|threshold_w
 name|GtkObject
 modifier|*
@@ -156,18 +156,18 @@ name|GtkWidget
 modifier|*
 name|shrink_merged_w
 decl_stmt|;
-DECL|member|fixed_size
-name|gboolean
-name|fixed_size
+DECL|member|fixed_mode
+name|GimpRectSelectMode
+name|fixed_mode
 decl_stmt|;
-DECL|member|fixed_size_d
+DECL|member|fixed_mode_d
 name|gboolean
-name|fixed_size_d
+name|fixed_mode_d
 decl_stmt|;
-DECL|member|fixed_size_w
+DECL|member|fixed_mode_w
 name|GtkWidget
 modifier|*
-name|fixed_size_w
+name|fixed_mode_w
 decl_stmt|;
 DECL|member|fixed_width
 name|gdouble
