@@ -2884,6 +2884,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+comment|/*  don't set the dialog's size, as the number of devices may have        *  changed since the last session        */
 name|session_set_window_geometry
 argument_list|(
 name|deviceD
@@ -2893,7 +2894,7 @@ argument_list|,
 operator|&
 name|device_status_session_info
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|deviceD
