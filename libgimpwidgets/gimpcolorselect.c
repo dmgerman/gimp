@@ -80,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27f7d9a80103
+DECL|enum|__anon2779d4100103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -131,7 +131,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27f7d9a80203
+DECL|enum|__anon2779d4100203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -3235,17 +3235,6 @@ operator|->
 name|y
 expr_stmt|;
 block|}
-break|break;
-case|case
-name|GDK_CONFIGURE
-case|:
-name|gimp_color_select_update
-argument_list|(
-name|select
-argument_list|,
-name|UPDATE_XY_COLOR
-argument_list|)
-expr_stmt|;
 break|break;
 default|default:
 return|return
