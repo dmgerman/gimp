@@ -285,7 +285,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4a4ec60103
+DECL|enum|__anon28d9d04a0103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -299,7 +299,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4a4ec60208
+DECL|struct|__anon28d9d04a0208
 block|{
 DECL|member|dirname
 specifier|const
@@ -1781,8 +1781,12 @@ name|s_str
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%lld"
+literal|"%"
+name|G_GINT64_FORMAT
 argument_list|,
+operator|(
+name|gint64
+operator|)
 name|image_size
 argument_list|)
 expr_stmt|;
@@ -3195,7 +3199,7 @@ decl_stmt|;
 name|time_t
 name|thumb_image_mtime
 decl_stmt|;
-name|off_t
+name|gint64
 name|thumb_image_size
 decl_stmt|;
 name|guchar
@@ -3388,7 +3392,8 @@ name|sscanf
 argument_list|(
 name|option
 argument_list|,
-literal|"%lld"
+literal|"%"
+name|G_GINT64_FORMAT
 argument_list|,
 operator|&
 name|thumb_image_size
@@ -3409,6 +3414,9 @@ name|image_mtime
 operator|&&
 name|thumb_image_size
 operator|==
+operator|(
+name|gint64
+operator|)
 name|imagefile
 operator|->
 name|image_size
@@ -3913,8 +3921,12 @@ name|s_str
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%lld"
+literal|"%"
+name|G_GINT64_FORMAT
 argument_list|,
+operator|(
+name|gint64
+operator|)
 name|image_size
 argument_list|)
 expr_stmt|;
