@@ -270,7 +270,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29013e790103
+DECL|enum|__anon2a23011f0103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -9989,6 +9989,10 @@ operator|.
 name|pdb_int
 operator|=
 name|RUN_INTERACTIVE
+expr_stmt|;
+name|argc
+operator|=
+literal|1
 expr_stmt|;
 if|if
 condition|(
