@@ -903,7 +903,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_channel_combine_ellipse:  * @mask:      the channel with which to combine the ellipse  * @op:        whether to replace, add to, or subtract from the current contents  * @x:         x coordinate of upper left corner of ellipse  * @y:         y coordinate of upper left corner of ellipse  * @w:         width of ellipse bounding box  * @h:         height of ellipse bounding box  * @antialias: if %TRUE, antialias the ellipse  *  * Mainly used for elliptical selections.  If @op is "replace" or  * "add", sets  pixels within the ellipse to 255.  If @op is  * "subtract", sets pixels within to zero.  If antialiasing is  * turned on, a pixels that impinge on the edge of the ellipse   * are set to intermediate values, depending on how much they  * overlap.  **/
+comment|/**  * gimp_channel_combine_ellipse:  * @mask:      the channel with which to combine the ellipse  * @op:        whether to replace, add to, or subtract from the current contents  * @x:         x coordinate of upper left corner of ellipse  * @y:         y coordinate of upper left corner of ellipse  * @w:         width of ellipse bounding box  * @h:         height of ellipse bounding box  * @antialias: if %TRUE, antialias the ellipse  *  * Mainly used for elliptical selections.  If @op is %GIMP_CHANNEL_OP_REPLACE or  * %GIMP_CHANNEL_OP_ADD, sets  pixels within the ellipse to 255.  If @op is  * %GIMP_CHANNEL_OP_SUBTRACT, sets pixels within to zero.  If antialiasing is  * turned on, a pixels that impinge on the edge of the ellipse   * are set to intermediate values, depending on how much they  * overlap.  **/
 end_comment
 
 begin_function
@@ -1007,6 +1007,18 @@ operator|!
 name|h
 condition|)
 return|return;
+name|a
+operator|=
+name|w
+operator|/
+literal|2.
+expr_stmt|;
+name|b
+operator|=
+name|h
+operator|/
+literal|2.
+expr_stmt|;
 name|a_sqr
 operator|=
 operator|(
