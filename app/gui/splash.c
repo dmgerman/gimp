@@ -97,6 +97,16 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
+begin_function_decl
+specifier|static
+name|void
+name|splash_map
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  public functions  */
 end_comment
@@ -191,6 +201,26 @@ argument_list|,
 name|G_CALLBACK
 argument_list|(
 name|gtk_true
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+comment|/* we don't want the splash screen to send the startup notification */
+name|gtk_window_set_auto_startup_notification
+argument_list|(
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|win_initstatus
+argument_list|,
+literal|"map"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|splash_map
 argument_list|)
 argument_list|,
 name|NULL
@@ -596,6 +626,28 @@ argument_list|()
 condition|)
 name|gtk_main_iteration
 argument_list|()
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/*  private functions  */
+end_comment
+
+begin_function
+specifier|static
+name|void
+DECL|function|splash_map (void)
+name|splash_map
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+comment|/*  Reenable startup notification after the splash has been shown    *  so that the next window that is mapped sends the notification.      */
+name|gtk_window_set_auto_startup_notification
+argument_list|(
+name|TRUE
+argument_list|)
 expr_stmt|;
 block|}
 end_function
