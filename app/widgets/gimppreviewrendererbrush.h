@@ -86,6 +86,14 @@ DECL|member|parent_instance
 name|GimpPreview
 name|parent_instance
 decl_stmt|;
+DECL|member|pipe_timeout_id
+name|guint
+name|pipe_timeout_id
+decl_stmt|;
+DECL|member|pipe_animation_index
+name|gint
+name|pipe_animation_index
+decl_stmt|;
 block|}
 struct|;
 DECL|struct|_GimpBrushPreviewClass

@@ -53,9 +53,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|TempBuf
-modifier|*
-name|gimp_drawable_preview_create_preview
+name|void
+name|gimp_drawable_preview_render
 parameter_list|(
 name|GimpPreview
 modifier|*
@@ -223,10 +222,9 @@ end_function
 
 begin_function
 specifier|static
-name|TempBuf
-modifier|*
-DECL|function|gimp_drawable_preview_create_preview (GimpPreview * preview)
-name|gimp_drawable_preview_create_preview
+name|void
+DECL|function|gimp_drawable_preview_render (GimpPreview * preview)
+name|gimp_drawable_preview_render
 parameter_list|(
 name|GimpPreview
 modifier|*

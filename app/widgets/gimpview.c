@@ -135,13 +135,13 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b414a0c0103
+DECL|enum|__anon27cda3b00103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
 block|,
-DECL|enumerator|CREATE_PREVIEW
-name|CREATE_PREVIEW
+DECL|enumerator|RENDER
+name|RENDER
 block|,
 DECL|enumerator|CREATE_POPUP
 name|CREATE_POPUP
@@ -273,9 +273,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|TempBuf
-modifier|*
-name|gimp_preview_create_preview
+name|void
+name|gimp_preview_render
 parameter_list|(
 name|GimpPreview
 modifier|*
@@ -286,9 +285,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|TempBuf
-modifier|*
-name|gimp_preview_real_create_preview
+name|void
+name|gimp_preview_real_render
 parameter_list|(
 name|GimpPreview
 modifier|*
@@ -575,12 +573,12 @@ argument_list|)
 expr_stmt|;
 name|preview_signals
 index|[
-name|CREATE_PREVIEW
+name|RENDER
 index|]
 operator|=
 name|gtk_signal_new
 argument_list|(
-literal|"create_preview"
+literal|"render"
 argument_list|,
 name|GTK_RUN_LAST
 argument_list|,
@@ -592,12 +590,12 @@ name|GTK_SIGNAL_OFFSET
 argument_list|(
 name|GimpPreviewClass
 argument_list|,
-name|create_preview
+name|render
 argument_list|)
 argument_list|,
-name|gimp_marshal_POINTER__NONE
+name|gtk_signal_default_marshaller
 argument_list|,
-name|GTK_TYPE_POINTER
+name|GTK_TYPE_NONE
 argument_list|,
 literal|0
 argument_list|)
@@ -713,9 +711,9 @@ name|NULL
 expr_stmt|;
 name|klass
 operator|->
-name|create_preview
+name|render
 operator|=
-name|gimp_preview_real_create_preview
+name|gimp_preview_real_render
 expr_stmt|;
 name|klass
 operator|->
@@ -1508,22 +1506,15 @@ end_function
 
 begin_function
 specifier|static
-name|TempBuf
-modifier|*
-DECL|function|gimp_preview_create_preview (GimpPreview * preview)
-name|gimp_preview_create_preview
+name|void
+DECL|function|gimp_preview_render (GimpPreview * preview)
+name|gimp_preview_render
 parameter_list|(
 name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
 block|{
-name|TempBuf
-modifier|*
-name|temp_buf
-init|=
-name|NULL
-decl_stmt|;
 name|gtk_signal_emit
 argument_list|(
 name|GTK_OBJECT
@@ -1533,38 +1524,36 @@ argument_list|)
 argument_list|,
 name|preview_signals
 index|[
-name|CREATE_PREVIEW
+name|RENDER
 index|]
-argument_list|,
-operator|&
-name|temp_buf
 argument_list|)
 expr_stmt|;
-return|return
-name|temp_buf
-return|;
 block|}
 end_function
 
 begin_function
 specifier|static
-name|TempBuf
-modifier|*
-DECL|function|gimp_preview_real_create_preview (GimpPreview * preview)
-name|gimp_preview_real_create_preview
+name|void
+DECL|function|gimp_preview_real_render (GimpPreview * preview)
+name|gimp_preview_real_render
 parameter_list|(
 name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
 block|{
-return|return
-name|gimp_viewable_get_new_preview
-argument_list|(
-name|preview
-operator|->
-name|viewable
-argument_list|,
+name|TempBuf
+modifier|*
+name|temp_buf
+decl_stmt|;
+name|gint
+name|width
+decl_stmt|;
+name|gint
+name|height
+decl_stmt|;
+name|width
+operator|=
 name|GTK_WIDGET
 argument_list|(
 name|preview
@@ -1573,7 +1562,9 @@ operator|->
 name|requisition
 operator|.
 name|width
-argument_list|,
+expr_stmt|;
+name|height
+operator|=
 name|GTK_WIDGET
 argument_list|(
 name|preview
@@ -1582,8 +1573,34 @@ operator|->
 name|requisition
 operator|.
 name|height
+expr_stmt|;
+name|temp_buf
+operator|=
+name|gimp_viewable_get_new_preview
+argument_list|(
+name|preview
+operator|->
+name|viewable
+argument_list|,
+name|width
+argument_list|,
+name|height
 argument_list|)
-return|;
+expr_stmt|;
+name|gimp_preview_render_and_flush
+argument_list|(
+name|preview
+argument_list|,
+name|temp_buf
+argument_list|,
+name|width
+argument_list|,
+name|height
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -2283,19 +2300,6 @@ modifier|*
 name|preview
 parameter_list|)
 block|{
-name|TempBuf
-modifier|*
-name|temp_buf
-decl_stmt|;
-name|gint
-name|width
-decl_stmt|;
-name|gint
-name|height
-decl_stmt|;
-name|gint
-name|channel
-decl_stmt|;
 name|preview
 operator|->
 name|idle_id
@@ -2312,31 +2316,39 @@ condition|)
 return|return
 name|FALSE
 return|;
-name|temp_buf
-operator|=
-name|gimp_preview_create_preview
+name|gimp_preview_render
 argument_list|(
 name|preview
 argument_list|)
 expr_stmt|;
-name|width
-operator|=
+return|return
+name|FALSE
+return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_preview_render_and_flush (GimpPreview * preview,TempBuf * temp_buf,gint width,gint height,gint channel)
+name|gimp_preview_render_and_flush
+parameter_list|(
+name|GimpPreview
+modifier|*
+name|preview
+parameter_list|,
+name|TempBuf
+modifier|*
 name|temp_buf
-operator|->
+parameter_list|,
+name|gint
 name|width
-expr_stmt|;
+parameter_list|,
+name|gint
 name|height
-operator|=
-name|temp_buf
-operator|->
-name|height
-expr_stmt|;
+parameter_list|,
+name|gint
 name|channel
-operator|=
-operator|-
-literal|1
-expr_stmt|;
-comment|/*  from layers_dialog.c  */
+parameter_list|)
 block|{
 name|guchar
 modifier|*
@@ -2397,7 +2409,7 @@ name|alpha
 operator|=
 name|ALPHA_PIX
 expr_stmt|;
-comment|/*  Here are the different cases this functions handles correctly:      *  1)  Offset temp_buf which does not necessarily cover full image area      *  2)  Color conversion of temp_buf if it is gray and image is color      *  3)  Background check buffer for transparent temp_bufs      *  4)  Using the optional "channel" argument, one channel can be extracted      *      from a multi-channel temp_buf and composited as a grayscale      *  Prereqs:      *  1)  Grayscale temp_bufs have bytes == {1, 2}      *  2)  Color temp_bufs have bytes == {3, 4}      *  3)  If image is gray, then temp_buf should have bytes == {1, 2}      */
+comment|/*  Here are the different cases this functions handles correctly:    *  1)  Offset temp_buf which does not necessarily cover full image area    *  2)  Color conversion of temp_buf if it is gray and image is color    *  3)  Background check buffer for transparent temp_bufs    *  4)  Using the optional "channel" argument, one channel can be extracted    *      from a multi-channel temp_buf and composited as a grayscale    *  Prereqs:    *  1)  Grayscale temp_bufs have bytes == {1, 2}    *  2)  Color temp_bufs have bytes == {3, 4}    *  3)  If image is gray, then temp_buf should have bytes == {1, 2}    */
 name|color_buf
 operator|=
 operator|(
@@ -2447,7 +2459,7 @@ name|temp_buf
 operator|->
 name|bytes
 expr_stmt|;
-comment|/*  Determine if the preview buf supplied is color      *   Generally, if the bytes == {3, 4}, this is true.      *   However, if the channel argument supplied is not -1, then      *   the preview buf is assumed to be gray despite the number of      *   channels it contains      */
+comment|/*  Determine if the preview buf supplied is color    *   Generally, if the bytes == {3, 4}, this is true.    *   However, if the channel argument supplied is not -1, then    *   the preview buf is assumed to be gray despite the number of    *   channels it contains    */
 name|color
 operator|=
 operator|(
@@ -2667,7 +2679,7 @@ operator|=
 name|buf
 expr_stmt|;
 block|}
-comment|/*  The interesting stuff between leading& trailing  	 *  vertical transparency 	 */
+comment|/*  The interesting stuff between leading& trailing         *  vertical transparency        */
 if|if
 condition|(
 name|i
@@ -3352,12 +3364,6 @@ name|width
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-name|temp_buf_free
-argument_list|(
-name|temp_buf
-argument_list|)
-expr_stmt|;
 name|gtk_widget_queue_draw
 argument_list|(
 name|GTK_WIDGET
@@ -3366,9 +3372,6 @@ name|preview
 argument_list|)
 argument_list|)
 expr_stmt|;
-return|return
-name|FALSE
-return|;
 block|}
 end_function
 
