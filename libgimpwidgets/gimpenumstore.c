@@ -382,7 +382,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_store_new_with_range:  * @enum_type: the #GType of an enum.  * @minimum: the minimum value to include  * @maximum: the maximum value to include  *  * Creates a new #GimpEnumStore like gimp_enum_store_new() but allows  * to limit the enum values to a certain range.  *  * Return value: a new #GimpEnumStore.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_enum_store_new_with_range:  * @enum_type: the #GType of an enum.  * @minimum: the minimum value to include  * @maximum: the maximum value to include  *  * Creates a new #GimpEnumStore like gimp_enum_store_new() but allows  * to limit the enum values to a certain range. Values smaller than  * @minimum or larger than @maximum are not added to the store.  *  * Return value: a new #GimpEnumStore.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -491,7 +491,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_store_new_with_values  * @enum_type: the #GType of an enum.  * @n_values:  the number of enum values to include  * @...:       a list of enum values (exactly @n_values)  *  * Creates a new #GimpEnumStore like gimp_enum_store_new() but allows  * to list the enum values that should be added to the store.  *  * Return value: a new #GimpEnumStore.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_enum_store_new_with_values  * @enum_type: the #GType of an enum.  * @n_values:  the number of enum values to include  * @...:       a list of enum values (exactly @n_values)  *  * Creates a new #GimpEnumStore like gimp_enum_store_new() but allows  * to expliticely list the enum values that should be added to the  * store.  *  * Return value: a new #GimpEnumStore.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -668,7 +668,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_store_set_stock_prefix:  * @store:        a #GimpEnumStore  * @stock_prefix: a prefix to create icon stock ID from enum values  *  * Creates a stock ID for each enum value in the @store by appending  * the value's nick to the given @stock_prefix inserting a hyphen  * between them.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_enum_store_set_stock_prefix:  * @store:        a #GimpEnumStore  * @stock_prefix: a prefix to create icon stock ID from enum values  *  * Creates a stock ID for each enum value in the @store by appending  * the value's nick to the given @stock_prefix, separated by a hyphen.  *  * See also: gimp_enum_combo_box_set_stock_prefix().  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function

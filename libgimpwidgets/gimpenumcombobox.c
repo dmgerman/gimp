@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpenumcombobox.h  * Copyright (C) 2004  Sven Neumann<sven@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpenumcombobox.c  * Copyright (C) 2004  Sven Neumann<sven@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -119,7 +119,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_combo_box_new:  * @enum_type: the #GType of an enum.  *  * Creates a #GtkComboBox readily filled with all enum values from a  * given @enum_type. The enum needs to be registered to the type  * system and should have translatable value names.  *  * This is just a convenience function. If you need more control over  * the enum values that appear in the combo_box, you can create your  * own #GimpEnumStore and use gimp_enum_combo_box_new_with_model().  *  * Return value: a new #GimpEnumComboBox.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_enum_combo_box_new:  * @enum_type: the #GType of an enum.  *  * Creates a #GtkComboBox readily filled with all enum values from a  * given @enum_type. The enum needs to be registered to the type  * system. It should also have %GimpEnumDesc descriptions registered  * that contain translatable value names. This is the case for the  * enums used in the GIMP PDB functions.  *  * This is just a convenience function. If you need more control over  * the enum values that appear in the combo_box, you can create your  * own #GimpEnumStore and use gimp_enum_combo_box_new_with_model().  *  * Return value: a new #GimpEnumComboBox.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -182,7 +182,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_combo_box_set_stock_prefix:  * @combo_box:    a #GimpEnumComboBox  * @stock_prefix: a prefix to create icon stock ID from enum values  *  * Attempts to create and set icons for all items in the  * @combo_box. See gimp_enum_store_set_icons() for more info.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_enum_combo_box_set_stock_prefix:  * @combo_box:    a #GimpEnumComboBox  * @stock_prefix: a prefix to create icon stock ID from enum values  *  * Attempts to create stock icons for all items in the @combo_box. See  * gimp_enum_store_set_icons() to find out what to use for  * @stock_prefix.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
