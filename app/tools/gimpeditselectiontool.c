@@ -454,25 +454,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gimp_edit_selection_tool_key_press
-parameter_list|(
-name|GimpTool
-modifier|*
-name|tool
-parameter_list|,
-name|GdkEventKey
-modifier|*
-name|kevent
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 specifier|static
 name|void
 name|gimp_edit_selection_tool_draw
@@ -4197,7 +4178,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_edit_selection_tool_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
 name|gimp_edit_selection_tool_key_press
 parameter_list|(
@@ -4283,7 +4264,9 @@ name|keyval
 operator|!=
 name|GDK_Down
 condition|)
-return|return;
+return|return
+name|FALSE
+return|;
 comment|/*  check for mask translation first because the translate_layer    *  modifiers match the translate_mask ones...    */
 name|inc_x
 operator|=
@@ -4713,7 +4696,9 @@ condition|(
 operator|!
 name|item
 condition|)
-return|return;
+return|return
+name|TRUE
+return|;
 switch|switch
 condition|(
 name|edit_type
@@ -5029,6 +5014,9 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 

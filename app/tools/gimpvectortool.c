@@ -342,7 +342,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_vector_tool_key_press
 parameter_list|(
 name|GimpTool
@@ -3057,7 +3057,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_vector_tool_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
 name|gimp_vector_tool_key_press
 parameter_list|(
@@ -3113,7 +3113,9 @@ name|vector_tool
 operator|->
 name|vectors
 condition|)
-return|return;
+return|return
+name|TRUE
+return|;
 name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
@@ -3329,6 +3331,9 @@ name|gimage
 argument_list|)
 expr_stmt|;
 block|}
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
@@ -3359,18 +3364,16 @@ block|{
 name|GimpVectorTool
 modifier|*
 name|vector_tool
+init|=
+name|GIMP_VECTOR_TOOL
+argument_list|(
+name|tool
+argument_list|)
 decl_stmt|;
 name|GimpVectorOptions
 modifier|*
 name|options
 decl_stmt|;
-name|vector_tool
-operator|=
-name|GIMP_VECTOR_TOOL
-argument_list|(
-name|tool
-argument_list|)
-expr_stmt|;
 name|options
 operator|=
 name|GIMP_VECTOR_OPTIONS

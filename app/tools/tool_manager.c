@@ -1181,7 +1181,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|tool_manager_key_press_active (Gimp * gimp,GdkEventKey * kevent,GimpDisplay * gdisp)
 name|tool_manager_key_press_active
 parameter_list|(
@@ -1202,12 +1202,14 @@ name|GimpToolManager
 modifier|*
 name|tool_manager
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_GIMP
 argument_list|(
 name|gimp
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|tool_manager
@@ -1224,6 +1226,7 @@ operator|->
 name|active_tool
 condition|)
 block|{
+return|return
 name|gimp_tool_key_press
 argument_list|(
 name|tool_manager
@@ -1234,8 +1237,11 @@ name|kevent
 argument_list|,
 name|gdisp
 argument_list|)
-expr_stmt|;
+return|;
 block|}
+return|return
+name|FALSE
+return|;
 block|}
 end_function
 

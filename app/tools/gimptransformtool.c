@@ -406,7 +406,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_transform_tool_key_press
 parameter_list|(
 name|GimpTool
@@ -819,36 +819,30 @@ block|{
 name|GObjectClass
 modifier|*
 name|object_class
-decl_stmt|;
-name|GimpToolClass
-modifier|*
-name|tool_class
-decl_stmt|;
-name|GimpDrawToolClass
-modifier|*
-name|draw_class
-decl_stmt|;
-name|object_class
-operator|=
+init|=
 name|G_OBJECT_CLASS
 argument_list|(
 name|klass
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|GimpToolClass
+modifier|*
 name|tool_class
-operator|=
+init|=
 name|GIMP_TOOL_CLASS
 argument_list|(
 name|klass
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|GimpDrawToolClass
+modifier|*
 name|draw_class
-operator|=
+init|=
 name|GIMP_DRAW_TOOL_CLASS
 argument_list|(
 name|klass
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|parent_class
 operator|=
 name|g_type_class_peek_parent
@@ -2162,7 +2156,7 @@ end_define
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_transform_tool_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
 name|gimp_transform_tool_key_press
 parameter_list|(
@@ -2228,7 +2222,9 @@ argument_list|,
 name|trans_tool
 argument_list|)
 expr_stmt|;
-break|break;
+return|return
+name|TRUE
+return|;
 case|case
 name|GDK_Delete
 case|:
@@ -2244,11 +2240,14 @@ argument_list|,
 name|trans_tool
 argument_list|)
 expr_stmt|;
-break|break;
-default|default:
-break|break;
+return|return
+name|TRUE
+return|;
 block|}
 block|}
+return|return
+name|FALSE
+return|;
 block|}
 end_function
 

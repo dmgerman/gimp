@@ -246,6 +246,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpControllerKeyboard
+typedef|typedef
+name|struct
+name|_GimpControllerKeyboard
+name|GimpControllerKeyboard
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpControllerWheel
 typedef|typedef
 name|struct

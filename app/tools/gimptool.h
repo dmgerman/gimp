@@ -268,7 +268,7 @@ name|gdisp
 parameter_list|)
 function_decl|;
 DECL|member|key_press
-name|void
+name|gboolean
 function_decl|(
 modifier|*
 name|key_press
@@ -481,7 +481,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|gimp_tool_key_press
 parameter_list|(
 name|GimpTool

@@ -194,7 +194,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbf613a0103
+DECL|enum|__anon29c52c380103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -349,7 +349,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_crop_tool_key_press
 parameter_list|(
 name|GimpTool
@@ -2360,7 +2360,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_crop_tool_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
 name|gimp_crop_tool_key_press
 parameter_list|(
@@ -2426,7 +2426,9 @@ name|tool
 operator|->
 name|gdisp
 condition|)
-return|return;
+return|return
+name|FALSE
+return|;
 name|inc_x
 operator|=
 name|inc_y
@@ -2491,9 +2493,13 @@ argument_list|,
 name|crop
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+name|TRUE
+return|;
 default|default:
-return|return;
+return|return
+name|FALSE
+return|;
 block|}
 comment|/*  If the shift key is down, move by an accelerated increment  */
 if|if
@@ -2795,6 +2801,9 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
