@@ -215,7 +215,7 @@ comment|/*  *  argv processing:   *      Arguments are either switches, their as
 end_comment
 
 begin_function
-name|void
+name|int
 DECL|function|main (int argc,char ** argv)
 name|main
 parameter_list|(
@@ -861,9 +861,18 @@ name|init
 argument_list|)
 expr_stmt|;
 comment|/* Main application loop */
+if|if
+condition|(
+operator|!
+name|app_exit_finish_done
+argument_list|()
+condition|)
 name|gtk_main
 argument_list|()
 expr_stmt|;
+return|return
+literal|0
+return|;
 block|}
 end_function
 

@@ -61,6 +61,15 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gint
+name|app_exit_finish_done
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|app_init_update_status
 parameter_list|(
