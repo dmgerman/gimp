@@ -493,11 +493,12 @@ argument_list|)
 decl_stmt|;
 name|gimp_fonts_load
 argument_list|(
+name|gimp_container_view_get_context
+argument_list|(
 name|editor
 operator|->
 name|view
-operator|->
-name|context
+argument_list|)
 operator|->
 name|gimp
 argument_list|)

@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0525d60103
+DECL|enum|__anon2b93412a0103
 block|{
 DECL|enumerator|SESSION_INFO_POSITION
 name|SESSION_INFO_POSITION
@@ -1226,18 +1226,15 @@ expr_stmt|;
 if|if
 condition|(
 name|view
-operator|&&
-name|view
-operator|->
-name|preview_size
-operator|>=
-name|GIMP_PREVIEW_SIZE_TINY
 condition|)
 name|preview_size
 operator|=
+name|gimp_container_view_get_preview_size
+argument_list|(
 name|view
-operator|->
-name|preview_size
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 if|if
 condition|(

@@ -85,12 +85,32 @@ parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_CONTAINER_VIEW, GimpContainerViewClass))
 end_define
 
+begin_define
+DECL|macro|GIMP_CONTAINER_VIEW_GET_PRIVATE (obj)
+define|#
+directive|define
+name|GIMP_CONTAINER_VIEW_GET_PRIVATE
+parameter_list|(
+name|obj
+parameter_list|)
+value|(gimp_container_view_get_private ((GimpContainerView *) obj));
+end_define
+
 begin_typedef
 DECL|typedef|GimpContainerViewClass
 typedef|typedef
 name|struct
 name|_GimpContainerViewClass
 name|GimpContainerViewClass
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpContainerViewPrivate
+typedef|typedef
+name|struct
+name|_GimpContainerViewPrivate
+name|GimpContainerViewPrivate
 typedef|;
 end_typedef
 
@@ -103,6 +123,15 @@ DECL|member|parent_instance
 name|GimpEditor
 name|parent_instance
 decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpContainerViewPrivate
+struct|struct
+name|_GimpContainerViewPrivate
+block|{
 DECL|member|container
 name|GimpContainer
 modifier|*
@@ -351,6 +380,18 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
+name|GimpContainerViewPrivate
+modifier|*
+name|gimp_container_view_get_private
+parameter_list|(
+name|GimpContainerView
+modifier|*
+name|view
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_container_view_construct
 parameter_list|(
@@ -379,6 +420,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpContainer
+modifier|*
+name|gimp_container_view_get_container
+parameter_list|(
+name|GimpContainerView
+modifier|*
+name|view
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_container_view_set_container
 parameter_list|(
@@ -394,6 +447,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpContext
+modifier|*
+name|gimp_container_view_get_context
+parameter_list|(
+name|GimpContainerView
+modifier|*
+name|view
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_container_view_set_context
 parameter_list|(
@@ -404,6 +469,21 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint
+name|gimp_container_view_get_preview_size
+parameter_list|(
+name|GimpContainerView
+modifier|*
+name|view
+parameter_list|,
+name|gint
+modifier|*
+name|preview_border_width
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -982,9 +982,12 @@ name|view
 condition|)
 name|preview_size
 operator|=
+name|gimp_container_view_get_preview_size
+argument_list|(
 name|view
-operator|->
-name|preview_size
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 name|tab_style
 operator|=
