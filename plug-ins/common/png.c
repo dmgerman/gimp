@@ -58,7 +58,7 @@ DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
 name|PLUG_IN_VERSION
-value|"1.1.6 - 17 May 1998"
+value|"1.1.8 - 8 Sep 1999"
 end_define
 
 begin_define
@@ -84,7 +84,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f9a4810108
+DECL|struct|__anon2ac1d8770108
 block|{
 DECL|member|interlaced
 name|gint
@@ -999,6 +999,9 @@ decl_stmt|;
 comment|/* File pointer */
 name|gint32
 name|image
+init|=
+operator|-
+literal|1
 decl_stmt|,
 comment|/* Image */
 name|layer
@@ -1106,6 +1109,27 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/* PNG_LIBPNG_VER> 88 */
+if|if
+condition|(
+name|setjmp
+argument_list|(
+name|pp
+operator|->
+name|jmpbuf
+argument_list|)
+condition|)
+block|{
+name|g_message
+argument_list|(
+literal|"%s\nPNG error. File corrupted?"
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
+return|return
+name|image
+return|;
+block|}
 comment|/*   * Open the file and initialize the PNG read "engine"...   */
 name|fp
 operator|=
@@ -1122,12 +1146,18 @@ name|fp
 operator|==
 name|NULL
 condition|)
-return|return
-operator|(
-operator|-
-literal|1
-operator|)
-return|;
+block|{
+name|g_message
+argument_list|(
+literal|"%s\nis not present or is unreadable"
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
+name|gimp_quit
+argument_list|()
+expr_stmt|;
+block|}
 name|png_init_io
 argument_list|(
 name|pp
@@ -1191,7 +1221,7 @@ argument_list|,
 name|info
 argument_list|)
 expr_stmt|;
-comment|/*   * I have no idea why this used to be the way it was, luckily   * most people don't use 2bit or 4bit indexed images with PNG   */
+comment|/*   * Hopefully this is now fixed once and for all, please tell me if you   * have any problems with<8-bit images -- njl195@zepler.org.uk   */
 if|if
 condition|(
 name|info
@@ -1214,33 +1244,11 @@ name|color_type
 operator|!=
 name|PNG_COLOR_TYPE_PALETTE
 condition|)
-block|{
 name|png_set_expand
 argument_list|(
 name|pp
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|info
-operator|->
-name|valid
-operator|&
-name|PNG_INFO_sBIT
-condition|)
-name|png_set_shift
-argument_list|(
-name|pp
-argument_list|,
-operator|&
-operator|(
-name|info
-operator|->
-name|sig_bit
-operator|)
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 elseif|else
 if|if
@@ -1274,6 +1282,14 @@ else|else
 name|num_passes
 operator|=
 literal|1
+expr_stmt|;
+comment|/*   * Update the info structures after the transformations take effect   */
+name|png_read_update_info
+argument_list|(
+name|pp
+argument_list|,
+name|info
+argument_list|)
 expr_stmt|;
 switch|switch
 condition|(
@@ -1392,9 +1408,11 @@ operator|-
 literal|1
 condition|)
 block|{
-name|g_print
+name|g_message
 argument_list|(
-literal|"can't allocate new image\n"
+literal|"Can't allocate new image\n%s"
+argument_list|,
+name|filename
 argument_list|)
 expr_stmt|;
 name|gimp_quit
