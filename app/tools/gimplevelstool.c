@@ -306,7 +306,7 @@ DECL|macro|LEVELS_EVENT_MASK
 define|#
 directive|define
 name|LEVELS_EVENT_MASK
-value|(GDK_BUTTON_PRESS_MASK   | \ 			    GDK_BUTTON_RELEASE_MASK | \ 			    GDK_BUTTON_MOTION_MASK)
+value|(GDK_BUTTON_PRESS_MASK   | \                             GDK_BUTTON_RELEASE_MASK | \                             GDK_BUTTON_MOTION_MASK)
 end_define
 
 begin_comment
@@ -1358,23 +1358,6 @@ name|l_tool
 operator|->
 name|channel
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|l_tool
-operator|->
-name|color
-operator|&&
-name|l_tool
-operator|->
-name|alpha
-condition|)
-name|l_tool
-operator|->
-name|channel
-operator|=
-literal|1
 expr_stmt|;
 name|levels_update
 argument_list|(
@@ -4653,34 +4636,6 @@ name|tool
 operator|->
 name|channel
 argument_list|)
-expr_stmt|;
-comment|/* FIXME: hack */
-if|if
-condition|(
-operator|!
-name|tool
-operator|->
-name|color
-operator|&&
-name|tool
-operator|->
-name|alpha
-condition|)
-name|tool
-operator|->
-name|channel
-operator|=
-operator|(
-name|tool
-operator|->
-name|channel
-operator|>
-literal|1
-operator|)
-condition|?
-literal|2
-else|:
-literal|1
 expr_stmt|;
 name|levels_update
 argument_list|(
