@@ -769,13 +769,6 @@ case|case
 name|HALT
 case|:
 comment|/* gimp_tool_pop_status (tool); */
-name|gimp_tool_control_halt
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|)
-expr_stmt|;
 name|gimp_vector_tool_clear_vectors
 argument_list|(
 name|vector_tool
@@ -930,6 +923,13 @@ condition|)
 name|gimp_vector_tool_clear_vectors
 argument_list|(
 name|vector_tool
+argument_list|)
+expr_stmt|;
+name|gimp_tool_control_activate
+argument_list|(
+name|tool
+operator|->
+name|control
 argument_list|)
 expr_stmt|;
 name|tool
@@ -1233,21 +1233,10 @@ name|function
 operator|=
 name|VECTORS_FINISHED
 expr_stmt|;
-name|gimp_tool_control_halt
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|)
-expr_stmt|;
+break|break;
+default|default:
+break|break;
 block|}
-name|gimp_tool_control_activate
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|)
-expr_stmt|;
 name|gimp_draw_tool_start
 argument_list|(
 name|GIMP_DRAW_TOOL
@@ -2332,6 +2321,7 @@ default|default:
 comment|/* GIMP_CURSOR_MODIFIER_MINUS */
 break|break;
 block|}
+comment|/*    * gimp_tool_control_set_cursor (tool->control, ctype);    * gimp_tool_control_set_tool_cursor (tool->control,    *                                    GIMP_BEZIER_SELECT_TOOL_CURSOR);    * gimp_tool_control_set_cursor_modifier (tool->control, cmodifier);    */
 name|gimp_tool_set_cursor
 argument_list|(
 name|tool
