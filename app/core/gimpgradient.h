@@ -38,15 +38,6 @@ name|GIMP_GRADIENT_DEFAULT_SAMPLE_SIZE
 value|40
 end_define
 
-begin_typedef
-DECL|typedef|GimpGradientSegment
-typedef|typedef
-name|struct
-name|_GimpGradientSegment
-name|GimpGradientSegment
-typedef|;
-end_typedef
-
 begin_struct
 DECL|struct|_GimpGradientSegment
 struct|struct

@@ -1075,14 +1075,11 @@ name|orig
 decl_stmt|;
 name|gradient
 operator|=
-name|GIMP_GRADIENT
-argument_list|(
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_GRADIENT
 argument_list|,
 name|NULL
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_data_dirty

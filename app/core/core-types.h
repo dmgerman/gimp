@@ -67,7 +67,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0d0d290103
+DECL|enum|__anon28eb82d90103
 block|{
 DECL|enumerator|GIMP_PIXELS
 name|GIMP_PIXELS
@@ -434,6 +434,15 @@ typedef|typedef
 name|struct
 name|_GimpCoords
 name|GimpCoords
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpGradientSegment
+typedef|typedef
+name|struct
+name|_GimpGradientSegment
+name|GimpGradientSegment
 typedef|;
 end_typedef
 
