@@ -255,7 +255,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298751a20103
+DECL|enum|__anon2a9630e20103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -1240,14 +1240,12 @@ block|{
 name|Gimp
 modifier|*
 name|gimp
-decl_stmt|;
-name|gimp
-operator|=
+init|=
 name|GIMP
 argument_list|(
 name|object
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|gimp
@@ -1333,6 +1331,17 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|gimp
+operator|->
+name|be_verbose
+condition|)
+name|g_print
+argument_list|(
+literal|"EXIT: gimp_finalize\n"
+argument_list|)
+expr_stmt|;
 name|gimp_set_current_context
 argument_list|(
 name|gimp
@@ -4004,15 +4013,13 @@ block|{
 name|Gimp
 modifier|*
 name|gimp
-decl_stmt|;
-name|gimp
-operator|=
+init|=
 operator|(
 name|Gimp
 operator|*
 operator|)
 name|data
-expr_stmt|;
+decl_stmt|;
 name|gimp_unset_busy
 argument_list|(
 name|gimp
