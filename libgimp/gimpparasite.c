@@ -905,6 +905,34 @@ block|}
 end_function
 
 begin_function
+name|gulong
+DECL|function|parasite_flags (const Parasite * p)
+name|parasite_flags
+parameter_list|(
+specifier|const
+name|Parasite
+modifier|*
+name|p
+parameter_list|)
+block|{
+if|if
+condition|(
+name|p
+operator|==
+name|NULL
+condition|)
+return|return
+literal|0
+return|;
+return|return
+name|p
+operator|->
+name|flags
+return|;
+block|}
+end_function
+
+begin_function
 name|int
 DECL|function|parasite_is_persistent (const Parasite * p)
 name|parasite_is_persistent

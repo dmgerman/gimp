@@ -182,6 +182,15 @@ name|gulong
 name|flag
 parameter_list|)
 function_decl|;
+name|gulong
+name|parasite_flags
+parameter_list|(
+specifier|const
+name|Parasite
+modifier|*
+name|p
+parameter_list|)
+function_decl|;
 specifier|const
 name|char
 modifier|*
