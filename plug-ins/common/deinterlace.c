@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2987793a0103
+DECL|enum|__anon296d57e60103
 block|{
 DECL|enumerator|ODD_FIELDS
 name|ODD_FIELDS
@@ -890,6 +890,7 @@ name|lalpha
 decl_stmt|;
 if|if
 condition|(
+operator|(
 name|dpix
 index|[
 name|bytes
@@ -897,9 +898,12 @@ operator|-
 literal|1
 index|]
 operator|=
+operator|(
 name|alpha
 operator|>>
 literal|1
+operator|)
+operator|)
 condition|)
 block|{
 for|for

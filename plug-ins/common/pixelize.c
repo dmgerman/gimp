@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b76e73a0108
+DECL|struct|__anon2a176b3f0108
 block|{
 DECL|member|pixelwidth
 name|gint
@@ -131,7 +131,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b76e73a0208
+DECL|struct|__anon2a176b3f0208
 block|{
 DECL|member|sizeentry
 name|GtkWidget
@@ -151,7 +151,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b76e73a0308
+DECL|struct|__anon2a176b3f0308
 block|{
 DECL|member|x
 DECL|member|y
@@ -2006,6 +2006,7 @@ index|]
 decl_stmt|;
 if|if
 condition|(
+operator|(
 name|average
 index|[
 name|bpp
@@ -2016,6 +2017,7 @@ operator|=
 name|alpha
 operator|/
 name|count
+operator|)
 condition|)
 for|for
 control|(
@@ -3136,6 +3138,7 @@ index|]
 decl_stmt|;
 if|if
 condition|(
+operator|(
 name|average
 index|[
 name|bpp
@@ -3146,6 +3149,7 @@ operator|=
 name|alpha
 operator|/
 name|count
+operator|)
 condition|)
 block|{
 for|for
