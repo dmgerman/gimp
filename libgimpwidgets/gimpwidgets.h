@@ -563,6 +563,31 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_scale_entry_set_logarithmic
+parameter_list|(
+name|GtkObject
+modifier|*
+name|adjustment
+parameter_list|,
+name|gboolean
+name|logarithmic
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_scale_entry_get_logarithmic
+parameter_list|(
+name|GtkObject
+modifier|*
+name|adjustment
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_define
 DECL|macro|GIMP_RANDOM_SEED_SPINBUTTON (hbox)
 define|#
