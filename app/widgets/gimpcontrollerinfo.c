@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpmarshal.h"
 end_include
 
@@ -83,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6188ca0103
+DECL|enum|__anon29fd19320103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -102,7 +108,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6188ca0203
+DECL|enum|__anon29fd19320203
 block|{
 DECL|enumerator|EVENT_MAPPED
 name|EVENT_MAPPED
@@ -430,59 +436,6 @@ block|}
 end_function
 
 begin_function
-name|gboolean
-DECL|function|gimp_controller_info_boolean_handled_accumulator (GSignalInvocationHint * ihint,GValue * return_accu,const GValue * handler_return,gpointer dummy)
-name|gimp_controller_info_boolean_handled_accumulator
-parameter_list|(
-name|GSignalInvocationHint
-modifier|*
-name|ihint
-parameter_list|,
-name|GValue
-modifier|*
-name|return_accu
-parameter_list|,
-specifier|const
-name|GValue
-modifier|*
-name|handler_return
-parameter_list|,
-name|gpointer
-name|dummy
-parameter_list|)
-block|{
-name|gboolean
-name|continue_emission
-decl_stmt|;
-name|gboolean
-name|signal_handled
-decl_stmt|;
-name|signal_handled
-operator|=
-name|g_value_get_boolean
-argument_list|(
-name|handler_return
-argument_list|)
-expr_stmt|;
-name|g_value_set_boolean
-argument_list|(
-name|return_accu
-argument_list|,
-name|signal_handled
-argument_list|)
-expr_stmt|;
-name|continue_emission
-operator|=
-operator|!
-name|signal_handled
-expr_stmt|;
-return|return
-name|continue_emission
-return|;
-block|}
-end_function
-
-begin_function
 specifier|static
 name|void
 DECL|function|gimp_controller_info_class_init (GimpControllerInfoClass * klass)
@@ -593,7 +546,7 @@ argument_list|,
 name|event_mapped
 argument_list|)
 argument_list|,
-name|gimp_controller_info_boolean_handled_accumulator
+name|gimp_boolean_handled_accum
 argument_list|,
 name|NULL
 argument_list|,
