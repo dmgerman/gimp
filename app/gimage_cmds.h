@@ -22,16 +22,6 @@ directive|include
 file|"procedural_db.h"
 end_include
 
-begin_function_decl
-name|void
-name|channel_ops_duplicate
-parameter_list|(
-name|void
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_decl_stmt
 specifier|extern
 name|ProcRecord
@@ -386,13 +376,6 @@ begin_decl_stmt
 specifier|extern
 name|ProcRecord
 name|gimage_floating_sel_attached_to_proc
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|ProcRecord
-name|channel_ops_duplicate_proc
 decl_stmt|;
 end_decl_stmt
 

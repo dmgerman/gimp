@@ -28,8 +28,14 @@ directive|include
 file|"gimpimageF.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpdrawableF.h"
+end_include
+
 begin_typedef
-DECL|enum|__anon27caf2f50103
+DECL|enum|__anon2b05e8de0103
 typedef|typedef
 enum|enum
 block|{
@@ -58,16 +64,47 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  Procedure definition and marshalling function  */
-end_comment
+begin_function_decl
+name|void
+name|channel_ops_duplicate
+parameter_list|(
+name|GimpImage
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
 
-begin_decl_stmt
-specifier|extern
-name|ProcRecord
-name|channel_ops_offset_proc
-decl_stmt|;
-end_decl_stmt
+begin_function_decl
+name|void
+name|offset
+parameter_list|(
+name|GimpImage
+modifier|*
+parameter_list|,
+name|GimpDrawable
+modifier|*
+parameter_list|,
+name|gboolean
+parameter_list|,
+name|int
+parameter_list|,
+name|int
+parameter_list|,
+name|int
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpImage
+modifier|*
+name|duplicate
+parameter_list|(
+name|GimpImage
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_endif
 endif|#

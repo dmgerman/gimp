@@ -28,12 +28,6 @@ directive|include
 file|"gimpbrush.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"procedural_db.h"
-end_include
-
 begin_typedef
 DECL|typedef|_BrushSelect
 DECL|typedef|BrushSelectP
@@ -283,34 +277,25 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* PDB entry */
+comment|/* List of active dialogs */
 end_comment
 
 begin_decl_stmt
 specifier|extern
-name|ProcRecord
-name|brushes_popup_proc
+name|GSList
+modifier|*
+name|brush_active_dialogs
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-specifier|extern
-name|ProcRecord
-name|brushes_close_popup_proc
-decl_stmt|;
-end_decl_stmt
+begin_comment
+comment|/* The main brush dialog */
+end_comment
 
 begin_decl_stmt
 specifier|extern
-name|ProcRecord
-name|brushes_set_popup_proc
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|ProcRecord
-name|brushes_get_brush_data_proc
+name|BrushSelectP
+name|brush_select_dialog
 decl_stmt|;
 end_decl_stmt
 

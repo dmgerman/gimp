@@ -19,6 +19,12 @@ end_define
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"patterns.h"
 end_include
 
@@ -176,28 +182,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_decl_stmt
+specifier|extern
+name|GSList
+modifier|*
+name|pattern_active_dialogs
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
-comment|/* PDB entry */
+comment|/* List of active dialogs */
 end_comment
 
 begin_decl_stmt
 specifier|extern
-name|ProcRecord
-name|patterns_popup_proc
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|ProcRecord
-name|patterns_close_popup_proc
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|ProcRecord
-name|patterns_set_popup_proc
+name|PatternSelectP
+name|pattern_select_dialog
 decl_stmt|;
 end_decl_stmt
 

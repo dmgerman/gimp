@@ -35,7 +35,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2797742e0103
+DECL|enum|__anon2a0536350103
 block|{
 DECL|enumerator|PDB_INT32
 name|PDB_INT32
@@ -105,15 +105,12 @@ name|PDB_STATUS
 block|,
 DECL|enumerator|PDB_END
 name|PDB_END
+comment|/*< skip>*/
 DECL|typedef|PDBArgType
 block|}
 name|PDBArgType
 typedef|;
 end_typedef
-
-begin_comment
-comment|/* NOTE: If you change the PDBArgType enum above, you _must_ change  * the type_str array in procedural_db.c to match. */
-end_comment
 
 begin_comment
 comment|/*  Error types  */
@@ -122,7 +119,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2797742e0203
+DECL|enum|__anon2a0536350203
 block|{
 DECL|enumerator|PDB_EXECUTION_ERROR
 name|PDB_EXECUTION_ERROR
@@ -148,7 +145,8 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2797742e0303
+comment|/*< chop=PDB_>*/
+DECL|enum|__anon2a0536350303
 block|{
 DECL|enumerator|PDB_INTERNAL
 name|PDB_INTERNAL
@@ -161,6 +159,7 @@ name|PDB_EXTENSION
 block|,
 DECL|enumerator|PDB_TEMPORARY
 name|PDB_TEMPORARY
+comment|/*< skip>*/
 DECL|typedef|PDBProcType
 block|}
 name|PDBProcType
@@ -523,66 +522,6 @@ struct|;
 end_struct
 
 begin_comment
-comment|/*  External data  */
-end_comment
-
-begin_decl_stmt
-specifier|extern
-name|ProcRecord
-name|procedural_db_dump_proc
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|ProcRecord
-name|procedural_db_query_proc
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|ProcRecord
-name|procedural_db_proc_info_proc
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|ProcRecord
-name|procedural_db_proc_arg_proc
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|ProcRecord
-name|procedural_db_proc_val_proc
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|ProcRecord
-name|procedural_db_get_data_proc
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|ProcRecord
-name|procedural_db_set_data_proc
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|ProcRecord
-name|procedural_db_get_data_size_proc
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
 comment|/*  Functions  */
 end_comment
 
@@ -735,7 +674,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* "type" should really be a PDBArgType, but we can cope with  *  out-of-range values. */
+comment|/* "type" should really be a PDBArgType, but we can cope with  *  out-of-range values.  */
 end_comment
 
 begin_function_decl
@@ -749,6 +688,18 @@ name|type
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/* really exists in _cmds.c file */
+end_comment
+
+begin_decl_stmt
+specifier|extern
+name|GHashTable
+modifier|*
+name|procedural_ht
+decl_stmt|;
+end_decl_stmt
 
 begin_endif
 endif|#

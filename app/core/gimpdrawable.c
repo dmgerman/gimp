@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/parasite.h"
 end_include
 
@@ -76,7 +82,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2c1603880103
+DECL|enum|__anon2a27d3240103
 enum|enum
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
@@ -2005,6 +2011,8 @@ argument_list|(
 name|drawable
 operator|->
 name|gimage
+argument_list|,
+name|MISC_UNDO
 argument_list|)
 expr_stmt|;
 comment|/* do a group in case we have 						attach_parrent set        */

@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"app_procs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"parasitelist.h"
 end_include
 
@@ -412,13 +418,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_parasiterc_save ()
+DECL|function|gimp_parasiterc_save (void)
 name|gimp_parasiterc_save
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
-name|int
-name|i
-decl_stmt|;
 name|char
 modifier|*
 name|filename

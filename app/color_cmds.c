@@ -942,7 +942,7 @@ argument_list|)
 operator|&&
 name|channel
 operator|!=
-name|GRAY
+name|GRAY_LUT
 operator|)
 condition|)
 name|success
@@ -2255,7 +2255,7 @@ argument_list|)
 operator|&&
 name|channel
 operator|!=
-name|GRAY
+name|GRAY_LUT
 operator|)
 condition|)
 name|success
@@ -2855,7 +2855,7 @@ argument_list|)
 operator|&&
 name|channel
 operator|!=
-name|GRAY
+name|GRAY_LUT
 operator|)
 condition|)
 name|success
@@ -3949,7 +3949,7 @@ argument_list|)
 operator|&&
 name|channel
 operator|!=
-name|GRAY
+name|GRAY_LUT
 operator|)
 condition|)
 name|success

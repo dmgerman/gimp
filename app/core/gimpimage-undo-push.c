@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"parasitelist.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools.h"
 end_include
 
@@ -9869,9 +9875,6 @@ decl_stmt|;
 name|Parasite
 modifier|*
 name|tmp
-decl_stmt|;
-name|int
-name|tmp_ref
 decl_stmt|;
 name|data
 operator|=

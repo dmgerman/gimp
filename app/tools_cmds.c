@@ -40,6 +40,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"channel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"clone.h"
 end_include
 
@@ -95,6 +101,18 @@ begin_include
 include|#
 directive|include
 file|"fuzzy_select.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paint_core.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paint_funcs.h"
 end_include
 
 begin_include
@@ -3226,7 +3244,7 @@ name|new_height
 argument_list|,
 name|FALSE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
