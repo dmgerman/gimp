@@ -40,7 +40,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbe40120108
+DECL|struct|__anon29ce10770108
 block|{
 DECL|member|compression
 name|gint
@@ -59,7 +59,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbe40120208
+DECL|struct|__anon29ce10770208
 block|{
 DECL|member|run
 name|gint
@@ -72,7 +72,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bbe40120308
+DECL|struct|__anon29ce10770308
 typedef|typedef
 struct|struct
 block|{
@@ -5264,6 +5264,10 @@ block|{
 case|case
 name|RGB_IMAGE
 case|:
+name|predictor
+operator|=
+literal|2
+expr_stmt|;
 name|samplesperpixel
 operator|=
 literal|3
@@ -5314,6 +5318,10 @@ break|break;
 case|case
 name|RGBA_IMAGE
 case|:
+name|predictor
+operator|=
+literal|2
+expr_stmt|;
 name|samplesperpixel
 operator|=
 literal|4
