@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27977e0e0103
+DECL|enum|__anon28d2bb6c0103
 block|{
 DECL|enumerator|TEXT_CHANGED
 name|TEXT_CHANGED
@@ -972,6 +972,13 @@ argument_list|,
 literal|128
 argument_list|,
 literal|64
+argument_list|)
+expr_stmt|;
+name|gtk_widget_grab_focus
+argument_list|(
+name|editor
+operator|->
+name|view
 argument_list|)
 expr_stmt|;
 return|return
