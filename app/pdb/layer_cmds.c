@@ -3591,7 +3591,7 @@ name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
-literal|"The layer"
+literal|"The layer to receive the mask"
 block|}
 block|,
 block|{
@@ -3599,7 +3599,7 @@ name|GIMP_PDB_CHANNEL
 block|,
 literal|"mask"
 block|,
-literal|"The mask to add to the layer to receive the mask"
+literal|"The mask to add to the layer"
 block|}
 block|}
 decl_stmt|;
@@ -3787,7 +3787,7 @@ name|GIMP_PDB_LAYER
 block|,
 literal|"layer"
 block|,
-literal|"The layer"
+literal|"The layer from which to remove mask"
 block|}
 block|,
 block|{
@@ -3795,7 +3795,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"mode"
 block|,
-literal|"Removal mode: { GIMP_MASK_APPLY (0), GIMP_MASK_DISCARD (1) } from which to remove mask"
+literal|"Removal mode: { GIMP_MASK_APPLY (0), GIMP_MASK_DISCARD (1) }"
 block|}
 block|}
 decl_stmt|;
