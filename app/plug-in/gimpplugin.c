@@ -2588,6 +2588,21 @@ operator|*
 operator|)
 name|data
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+comment|/* Workaround for GLib bug #137968: sometimes we are called for no    * reason...    */
+if|if
+condition|(
+name|cond
+operator|==
+literal|0
+condition|)
+return|return
+name|TRUE
+return|;
+endif|#
+directive|endif
 if|if
 condition|(
 name|plug_in
