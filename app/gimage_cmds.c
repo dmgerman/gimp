@@ -9285,7 +9285,7 @@ init|=
 block|{
 literal|"gimp_image_get_active_layer"
 block|,
-literal|"Returns the active layer of the specified image."
+literal|"Returns if the specified image's active layer."
 block|,
 literal|"If there is an active layer, its ID will be returned, otherwise, -1. If a channel is currently active, then no layer will be. If a layer mask is active, then this will return the associated layer."
 block|,
@@ -9446,7 +9446,7 @@ init|=
 block|{
 literal|"gimp_image_set_active_layer"
 block|,
-literal|"Set the active layer of the specified image."
+literal|"Sets if the specified image's active layer."
 block|,
 literal|"If the layer exists, it is set as the active layer in the image. Any previous active layer or channel is set to inactive. An exception is a previously existing floating selection, in which case this procedure will return an execution error."
 block|,
@@ -9630,7 +9630,7 @@ init|=
 block|{
 literal|"gimp_image_get_active_channel"
 block|,
-literal|"Returns the active channel of the specified image."
+literal|"Returns if the specified image's active channel."
 block|,
 literal|"If there is an active channel, this will return the channel ID, otherwise, -1."
 block|,
@@ -9791,7 +9791,7 @@ init|=
 block|{
 literal|"gimp_image_set_active_channel"
 block|,
-literal|"Set the active channel of the specified image."
+literal|"Sets if the specified image's active channel."
 block|,
 literal|"If the channel exists, it is set as the active channel in the image. Any previous active channel or channel is set to inactive. An exception is a previously existing floating selection, in which case this procedure will return an execution error."
 block|,
@@ -9976,7 +9976,7 @@ init|=
 block|{
 literal|"gimp_image_get_selection"
 block|,
-literal|"Returns the selection of the specified image."
+literal|"Returns if the specified image's selection."
 block|,
 literal|"This will always return a valid ID for a selection--which is represented as a channel internally."
 block|,
@@ -10220,9 +10220,9 @@ init|=
 block|{
 literal|"gimp_image_get_component_active"
 block|,
-literal|"Returns the image component is active of the specified image."
+literal|"Returns if the specified image's image component is active."
 block|,
-literal|"This procedure returns the specified image's image component (i.e. Red, Green, Blue intensity channels in an RGB image) is active or inactive--whether or not it can be modified. If the specified component is not valid for the image type, and error is returned."
+literal|"This procedure returns if the specified image's image component (i.e. Red, Green, Blue intensity channels in an RGB image) is active or inactive--whether or not it can be modified. If the specified component is not valid for the image type, an error is returned."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -10456,9 +10456,9 @@ init|=
 block|{
 literal|"gimp_image_set_component_active"
 block|,
-literal|"Set the image component is active of the specified image."
+literal|"Sets if the specified image's image component is active."
 block|,
-literal|"This procedure sets the specified image's image component (i.e. Red, Green, Blue intensity channels in an RGB image) is active or inactive--whether or not it can be modified. If the specified component is not valid for the image type, and error is returned."
+literal|"This procedure sets if the specified image's image component (i.e. Red, Green, Blue intensity channels in an RGB image) is active or inactive--whether or not it can be modified. If the specified component is not valid for the image type, an error is returned."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -10700,9 +10700,9 @@ init|=
 block|{
 literal|"gimp_image_get_component_visible"
 block|,
-literal|"Returns the image component is visible of the specified image."
+literal|"Returns if the specified image's image component is visible."
 block|,
-literal|"This procedure returns the specified image's image component (i.e. Red, Green, Blue intensity channels in an RGB image) is visible or invisible--whether or not it can be seen. If the specified component is not valid for the image type, and error is returned."
+literal|"This procedure returns if the specified image's image component (i.e. Red, Green, Blue intensity channels in an RGB image) is visible or invisible--whether or not it can be seen. If the specified component is not valid for the image type, an error is returned."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -10936,9 +10936,9 @@ init|=
 block|{
 literal|"gimp_image_set_component_visible"
 block|,
-literal|"Set the image component is visible of the specified image."
+literal|"Sets if the specified image's image component is visible."
 block|,
-literal|"This procedure sets the specified image's image component (i.e. Red, Green, Blue intensity channels in an RGB image) is visible or invisible--whether or not it can be seen. If the specified component is not valid for the image type, and error is returned."
+literal|"This procedure sets if the specified image's image component (i.e. Red, Green, Blue intensity channels in an RGB image) is visible or invisible--whether or not it can be seen. If the specified component is not valid for the image type, an error is returned."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -11098,9 +11098,9 @@ init|=
 block|{
 literal|"gimp_image_get_filename"
 block|,
-literal|"Returns the filename of the specified image."
+literal|"Returns if the specified image's filename."
 block|,
-literal|"This procedure returns the specified image's filename--if it was loaded or has since been saved. Otherwise, returns NULL."
+literal|"This procedure returns if the specified image's filename--if it was loaded or has since been saved. Otherwise, returns NULL."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -11260,9 +11260,9 @@ init|=
 block|{
 literal|"gimp_image_set_filename"
 block|,
-literal|"Set the filename of the specified image."
+literal|"Sets if the specified image's filename."
 block|,
-literal|"This procedure sets the specified image's filename."
+literal|"This procedure sets if the specified image's filename."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -11441,9 +11441,9 @@ init|=
 block|{
 literal|"gimp_image_get_resolution"
 block|,
-literal|"Returns the resolution of the specified image."
+literal|"Returns if the specified image's resolution."
 block|,
-literal|"This procedure returns the specified image's resolution in dots per inch. This value is independent of any of the layers in this image."
+literal|"This procedure returns if the specified image's resolution in dots per inch. This value is independent of any of the layers in this image."
 block|,
 literal|"Austin Donnelly"
 block|,
@@ -11642,9 +11642,9 @@ init|=
 block|{
 literal|"gimp_image_set_resolution"
 block|,
-literal|"Set the resolution of the specified image."
+literal|"Sets if the specified image's resolution."
 block|,
-literal|"This procedure sets the specified image's resolution in dots per inch. This value is independent of any of the layers in this image. No scaling or resizing is performed."
+literal|"This procedure sets if the specified image's resolution in dots per inch. This value is independent of any of the layers in this image. No scaling or resizing is performed."
 block|,
 literal|"Austin Donnelly"
 block|,
@@ -11800,9 +11800,9 @@ init|=
 block|{
 literal|"gimp_image_get_unit"
 block|,
-literal|"Returns the unit of the specified image."
+literal|"Returns if the specified image's unit."
 block|,
-literal|"This procedure returns the specified image's unit. This value is independent of any of the layers in this image. See the gimp_unit_* procedure definitions for the valid range of unit IDs and a description of the unit system."
+literal|"This procedure returns if the specified image's unit. This value is independent of any of the layers in this image. See the gimp_unit_* procedure definitions for the valid range of unit IDs and a description of the unit system."
 block|,
 literal|"Michael Natterer"
 block|,
@@ -11961,9 +11961,9 @@ init|=
 block|{
 literal|"gimp_image_set_unit"
 block|,
-literal|"Set the unit of the specified image."
+literal|"Sets if the specified image's unit."
 block|,
-literal|"This procedure sets the specified image's unit. No scaling or resizing is performed. This value is independent of any of the layers in this image. See the gimp_unit_* procedure definitions for the valid range of unit IDs and a description of the unit system."
+literal|"This procedure sets if the specified image's unit. No scaling or resizing is performed. This value is independent of any of the layers in this image. See the gimp_unit_* procedure definitions for the valid range of unit IDs and a description of the unit system."
 block|,
 literal|"Michael Natterer"
 block|,
