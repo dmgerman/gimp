@@ -3540,7 +3540,7 @@ argument_list|(
 name|accel_closure
 argument_list|)
 expr_stmt|;
-name|g_signal_connect
+name|g_signal_connect_object
 argument_list|(
 name|accel_group
 argument_list|,
@@ -3552,6 +3552,8 @@ name|gimp_toolbox_button_accel_changed
 argument_list|)
 argument_list|,
 name|button
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_toolbox_button_accel_changed
