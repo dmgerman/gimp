@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimppreviewrenderer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplay.h"
 end_include
 
@@ -1327,6 +1333,8 @@ argument_list|(
 name|preview
 argument_list|)
 operator|->
+name|renderer
+operator|->
 name|width
 operator|-
 literal|4
@@ -1355,6 +1363,8 @@ name|GIMP_PREVIEW
 argument_list|(
 name|preview
 argument_list|)
+operator|->
+name|renderer
 operator|->
 name|height
 operator|-
@@ -1539,6 +1549,8 @@ operator|*
 literal|3
 argument_list|,
 name|preview
+operator|->
+name|renderer
 operator|->
 name|border_width
 argument_list|)
@@ -1979,6 +1991,8 @@ if|if
 condition|(
 name|preview
 operator|->
+name|renderer
+operator|->
 name|width
 operator|>
 name|allocation
@@ -1986,6 +2000,8 @@ operator|->
 name|width
 operator|||
 name|preview
+operator|->
+name|renderer
 operator|->
 name|height
 operator|>
@@ -1996,6 +2012,8 @@ operator|||
 operator|(
 name|preview
 operator|->
+name|renderer
+operator|->
 name|width
 operator|!=
 name|allocation
@@ -2003,6 +2021,8 @@ operator|->
 name|width
 operator|&&
 name|preview
+operator|->
+name|renderer
 operator|->
 name|height
 operator|!=
@@ -2071,6 +2091,8 @@ name|GIMP_PREVIEW_MAX_SIZE
 argument_list|)
 argument_list|,
 name|preview
+operator|->
+name|renderer
 operator|->
 name|dot_for_dot
 argument_list|,
@@ -2162,6 +2184,8 @@ argument_list|,
 name|height
 argument_list|,
 name|preview
+operator|->
+name|renderer
 operator|->
 name|border_width
 argument_list|)
@@ -3020,6 +3044,8 @@ name|view
 operator|->
 name|preview
 argument_list|)
+operator|->
+name|renderer
 operator|->
 name|dot_for_dot
 operator|!=

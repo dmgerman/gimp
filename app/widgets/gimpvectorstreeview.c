@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimagepreview.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimplistitem.h"
 end_include
 

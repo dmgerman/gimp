@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimppreviewrenderer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpviewabledialog.h"
 end_include
 
@@ -140,7 +146,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1f3b9f0103
+DECL|enum|__anon2988675a0103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -1684,6 +1690,8 @@ name|import_dialog
 operator|->
 name|preview
 argument_list|)
+operator|->
+name|renderer
 operator|->
 name|size
 operator|=

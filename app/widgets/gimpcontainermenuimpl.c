@@ -57,6 +57,12 @@ directive|include
 file|"gimppreview.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimppreviewrenderer.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|void
@@ -1129,6 +1135,8 @@ name|menu_item
 operator|->
 name|preview
 argument_list|)
+operator|->
+name|renderer
 operator|->
 name|border_width
 argument_list|)

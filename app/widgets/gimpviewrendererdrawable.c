@@ -48,15 +48,15 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdrawablepreview.h"
+file|"gimppreviewrendererdrawable.h"
 end_include
 
 begin_function_decl
 specifier|static
 name|void
-name|gimp_drawable_preview_class_init
+name|gimp_preview_renderer_drawable_class_init
 parameter_list|(
-name|GimpDrawablePreviewClass
+name|GimpPreviewRendererDrawableClass
 modifier|*
 name|klass
 parameter_list|)
@@ -66,9 +66,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_drawable_preview_init
+name|gimp_preview_renderer_drawable_init
 parameter_list|(
-name|GimpDrawablePreview
+name|GimpPreviewRendererDrawable
 modifier|*
 name|preview
 parameter_list|)
@@ -78,11 +78,15 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_drawable_preview_render
+name|gimp_preview_renderer_drawable_render
 parameter_list|(
-name|GimpPreview
+name|GimpPreviewRenderer
 modifier|*
-name|preview
+name|renderer
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|widget
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -90,7 +94,7 @@ end_function_decl
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
-name|GimpPreviewClass
+name|GimpPreviewRendererClass
 modifier|*
 name|parent_class
 init|=
@@ -100,33 +104,33 @@ end_decl_stmt
 
 begin_function
 name|GType
-DECL|function|gimp_drawable_preview_get_type (void)
-name|gimp_drawable_preview_get_type
+DECL|function|gimp_preview_renderer_drawable_get_type (void)
+name|gimp_preview_renderer_drawable_get_type
 parameter_list|(
 name|void
 parameter_list|)
 block|{
 specifier|static
 name|GType
-name|preview_type
+name|renderer_type
 init|=
 literal|0
 decl_stmt|;
 if|if
 condition|(
 operator|!
-name|preview_type
+name|renderer_type
 condition|)
 block|{
 specifier|static
 specifier|const
 name|GTypeInfo
-name|preview_info
+name|renderer_info
 init|=
 block|{
 sizeof|sizeof
 argument_list|(
-name|GimpDrawablePreviewClass
+name|GimpPreviewRendererDrawableClass
 argument_list|)
 block|,
 name|NULL
@@ -138,7 +142,7 @@ comment|/* base_finalize */
 operator|(
 name|GClassInitFunc
 operator|)
-name|gimp_drawable_preview_class_init
+name|gimp_preview_renderer_drawable_class_init
 block|,
 name|NULL
 block|,
@@ -148,7 +152,7 @@ block|,
 comment|/* class_data */
 sizeof|sizeof
 argument_list|(
-name|GimpDrawablePreview
+name|GimpPreviewRendererDrawable
 argument_list|)
 block|,
 literal|0
@@ -157,26 +161,26 @@ comment|/* n_preallocs */
 operator|(
 name|GInstanceInitFunc
 operator|)
-name|gimp_drawable_preview_init
+name|gimp_preview_renderer_drawable_init
 block|,       }
 decl_stmt|;
-name|preview_type
+name|renderer_type
 operator|=
 name|g_type_register_static
 argument_list|(
-name|GIMP_TYPE_PREVIEW
+name|GIMP_TYPE_PREVIEW_RENDERER
 argument_list|,
-literal|"GimpDrawablePreview"
+literal|"GimpPreviewRendererDrawable"
 argument_list|,
 operator|&
-name|preview_info
+name|renderer_info
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|preview_type
+name|renderer_type
 return|;
 block|}
 end_function
@@ -184,21 +188,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_preview_class_init (GimpDrawablePreviewClass * klass)
-name|gimp_drawable_preview_class_init
+DECL|function|gimp_preview_renderer_drawable_class_init (GimpPreviewRendererDrawableClass * klass)
+name|gimp_preview_renderer_drawable_class_init
 parameter_list|(
-name|GimpDrawablePreviewClass
+name|GimpPreviewRendererDrawableClass
 modifier|*
 name|klass
 parameter_list|)
 block|{
-name|GimpPreviewClass
+name|GimpPreviewRendererClass
 modifier|*
-name|preview_class
+name|renderer_class
 decl_stmt|;
-name|preview_class
+name|renderer_class
 operator|=
-name|GIMP_PREVIEW_CLASS
+name|GIMP_PREVIEW_RENDERER_CLASS
 argument_list|(
 name|klass
 argument_list|)
@@ -210,11 +214,11 @@ argument_list|(
 name|klass
 argument_list|)
 expr_stmt|;
-name|preview_class
+name|renderer_class
 operator|->
 name|render
 operator|=
-name|gimp_drawable_preview_render
+name|gimp_preview_renderer_drawable_render
 expr_stmt|;
 block|}
 end_function
@@ -222,10 +226,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_preview_init (GimpDrawablePreview * preview)
-name|gimp_drawable_preview_init
+DECL|function|gimp_preview_renderer_drawable_init (GimpPreviewRendererDrawable * preview)
+name|gimp_preview_renderer_drawable_init
 parameter_list|(
-name|GimpDrawablePreview
+name|GimpPreviewRendererDrawable
 modifier|*
 name|preview
 parameter_list|)
@@ -235,12 +239,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_preview_render (GimpPreview * preview)
-name|gimp_drawable_preview_render
+DECL|function|gimp_preview_renderer_drawable_render (GimpPreviewRenderer * renderer,GtkWidget * widget)
+name|gimp_preview_renderer_drawable_render
 parameter_list|(
-name|GimpPreview
+name|GimpPreviewRenderer
 modifier|*
-name|preview
+name|renderer
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|widget
 parameter_list|)
 block|{
 name|GimpDrawable
@@ -274,7 +282,7 @@ name|drawable
 operator|=
 name|GIMP_DRAWABLE
 argument_list|(
-name|preview
+name|renderer
 operator|->
 name|viewable
 argument_list|)
@@ -291,13 +299,13 @@ argument_list|)
 expr_stmt|;
 name|width
 operator|=
-name|preview
+name|renderer
 operator|->
 name|width
 expr_stmt|;
 name|height
 operator|=
-name|preview
+name|renderer
 operator|->
 name|height
 expr_stmt|;
@@ -306,7 +314,7 @@ condition|(
 name|gimage
 operator|&&
 operator|!
-name|preview
+name|renderer
 operator|->
 name|is_popup
 condition|)
@@ -379,7 +387,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_viewable_calc_preview_size
 argument_list|(
-name|preview
+name|renderer
 operator|->
 name|viewable
 argument_list|,
@@ -395,7 +403,7 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|preview
+name|renderer
 operator|->
 name|dot_for_dot
 argument_list|,
@@ -422,7 +430,7 @@ else|else
 block|{
 name|gimp_viewable_calc_preview_size
 argument_list|(
-name|preview
+name|renderer
 operator|->
 name|viewable
 argument_list|,
@@ -438,7 +446,7 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|preview
+name|renderer
 operator|->
 name|dot_for_dot
 argument_list|,
@@ -482,7 +490,7 @@ name|temp_buf
 operator|=
 name|gimp_viewable_get_new_preview
 argument_list|(
-name|preview
+name|renderer
 operator|->
 name|viewable
 argument_list|,
@@ -518,7 +526,7 @@ name|render_buf
 operator|=
 name|gimp_viewable_get_new_preview
 argument_list|(
-name|preview
+name|renderer
 operator|->
 name|viewable
 argument_list|,
@@ -533,7 +541,7 @@ condition|(
 name|gimage
 operator|&&
 operator|!
-name|preview
+name|renderer
 operator|->
 name|is_popup
 condition|)
@@ -557,7 +565,7 @@ operator|(
 operator|(
 name|gdouble
 operator|)
-name|preview
+name|renderer
 operator|->
 name|width
 operator|/
@@ -597,7 +605,7 @@ operator|(
 operator|(
 name|gdouble
 operator|)
-name|preview
+name|renderer
 operator|->
 name|height
 operator|/
@@ -658,9 +666,9 @@ operator|/
 literal|2
 expr_stmt|;
 block|}
-name|gimp_preview_render_preview
+name|gimp_preview_renderer_render_preview
 argument_list|(
-name|preview
+name|renderer
 argument_list|,
 name|render_buf
 argument_list|,

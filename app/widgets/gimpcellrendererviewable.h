@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gtk/gtkcellrendererpixbuf.h>
+file|<gtk/gtkcellrenderer.h>
 end_include
 
 begin_define
@@ -100,17 +100,13 @@ struct|struct
 name|_GimpCellRendererViewable
 block|{
 DECL|member|parent_instance
-name|GtkCellRendererPixbuf
+name|GtkCellRenderer
 name|parent_instance
 decl_stmt|;
-DECL|member|viewable
-name|GimpViewable
+DECL|member|renderer
+name|GimpPreviewRenderer
 modifier|*
-name|viewable
-decl_stmt|;
-DECL|member|preview_size
-name|gint
-name|preview_size
+name|renderer
 decl_stmt|;
 block|}
 struct|;
@@ -122,7 +118,7 @@ struct|struct
 name|_GimpCellRendererViewableClass
 block|{
 DECL|member|parent_class
-name|GtkCellRendererPixbufClass
+name|GtkCellRendererClass
 name|parent_class
 decl_stmt|;
 block|}

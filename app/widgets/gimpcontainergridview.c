@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppreviewrenderer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gtkhwrapbox.h"
 end_include
 
@@ -1018,14 +1024,16 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|gimp_preview_set_border_color
+argument_list|(
 name|GIMP_PREVIEW
 argument_list|(
 name|preview
 argument_list|)
-operator|->
-name|border_color
-operator|=
+argument_list|,
+operator|&
 name|white_color
+argument_list|)
 expr_stmt|;
 name|gtk_wrap_box_pack
 argument_list|(
@@ -1461,6 +1469,8 @@ operator|->
 name|preview_size
 argument_list|,
 name|preview
+operator|->
+name|renderer
 operator|->
 name|border_width
 argument_list|)

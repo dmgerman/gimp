@@ -149,6 +149,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppreviewrenderer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -1024,6 +1030,8 @@ if|if
 condition|(
 name|preview
 operator|->
+name|renderer
+operator|->
 name|width
 operator|>
 name|allocation
@@ -1031,6 +1039,8 @@ operator|->
 name|width
 operator|||
 name|preview
+operator|->
+name|renderer
 operator|->
 name|height
 operator|>
@@ -1041,6 +1051,8 @@ operator|||
 operator|(
 name|preview
 operator|->
+name|renderer
+operator|->
 name|width
 operator|!=
 name|allocation
@@ -1048,6 +1060,8 @@ operator|->
 name|width
 operator|&&
 name|preview
+operator|->
+name|renderer
 operator|->
 name|height
 operator|!=
@@ -1103,6 +1117,8 @@ name|GIMP_PREVIEW_MAX_SIZE
 argument_list|)
 argument_list|,
 name|preview
+operator|->
+name|renderer
 operator|->
 name|dot_for_dot
 argument_list|,
@@ -1198,6 +1214,8 @@ argument_list|,
 name|height
 argument_list|,
 name|preview
+operator|->
+name|renderer
 operator|->
 name|border_width
 argument_list|)

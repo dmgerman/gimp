@@ -1,106 +1,106 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpdrawablepreview.h  * Copyright (C) 2001 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimppreviewrendererdrawable.h  * Copyright (C) 2001 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_DRAWABLE_PREVIEW_H__
+name|__GIMP_PREVIEW_RENDERER_DRAWABLE_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_DRAWABLE_PREVIEW_H__
+DECL|macro|__GIMP_PREVIEW_RENDERER_DRAWABLE_H__
 define|#
 directive|define
-name|__GIMP_DRAWABLE_PREVIEW_H__
+name|__GIMP_PREVIEW_RENDERER_DRAWABLE_H__
 end_define
 
 begin_include
 include|#
 directive|include
-file|"gimppreview.h"
+file|"gimppreviewrenderer.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_DRAWABLE_PREVIEW
+DECL|macro|GIMP_TYPE_PREVIEW_RENDERER_DRAWABLE
 define|#
 directive|define
-name|GIMP_TYPE_DRAWABLE_PREVIEW
-value|(gimp_drawable_preview_get_type ())
+name|GIMP_TYPE_PREVIEW_RENDERER_DRAWABLE
+value|(gimp_preview_renderer_drawable_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_DRAWABLE_PREVIEW (obj)
+DECL|macro|GIMP_PREVIEW_RENDERER_DRAWABLE (obj)
 define|#
 directive|define
-name|GIMP_DRAWABLE_PREVIEW
+name|GIMP_PREVIEW_RENDERER_DRAWABLE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_DRAWABLE_PREVIEW, GimpDrawablePreview))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_PREVIEW_RENDERER_DRAWABLE, GimpPreviewRendererDrawable))
 end_define
 
 begin_define
-DECL|macro|GIMP_DRAWABLE_PREVIEW_CLASS (klass)
+DECL|macro|GIMP_PREVIEW_RENDERER_DRAWABLE_CLASS (klass)
 define|#
 directive|define
-name|GIMP_DRAWABLE_PREVIEW_CLASS
+name|GIMP_PREVIEW_RENDERER_DRAWABLE_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DRAWABLE_PREVIEW, GimpDrawablePreviewClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_PREVIEW_RENDERER_DRAWABLE, GimpPreviewRendererDrawableClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_DRAWABLE_PREVIEW (obj)
+DECL|macro|GIMP_IS_PREVIEW_RENDERER_DRAWABLE (obj)
 define|#
 directive|define
-name|GIMP_IS_DRAWABLE_PREVIEW
+name|GIMP_IS_PREVIEW_RENDERER_DRAWABLE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE (obj, GIMP_TYPE_DRAWABLE_PREVIEW))
+value|(G_TYPE_CHECK_INSTANCE_TYPE (obj, GIMP_TYPE_PREVIEW_RENDERER_DRAWABLE))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_DRAWABLE_PREVIEW_CLASS (klass)
+DECL|macro|GIMP_IS_PREVIEW_RENDERER_DRAWABLE_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_DRAWABLE_PREVIEW_CLASS
+name|GIMP_IS_PREVIEW_RENDERER_DRAWABLE_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DRAWABLE_PREVIEW))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PREVIEW_RENDERER_DRAWABLE))
 end_define
 
 begin_define
-DECL|macro|GIMP_DRAWABLE_PREVIEW_GET_CLASS (obj)
+DECL|macro|GIMP_PREVIEW_RENDERER_DRAWABLE_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_DRAWABLE_PREVIEW_GET_CLASS
+name|GIMP_PREVIEW_RENDERER_DRAWABLE_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_DRAWABLE_PREVIEW, GimpDrawablePreviewClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_PREVIEW_RENDERER_DRAWABLE, GimpPreviewRendererDrawableClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpDrawablePreviewClass
+DECL|typedef|GimpPreviewRendererDrawableClass
 typedef|typedef
 name|struct
-name|_GimpDrawablePreviewClass
-name|GimpDrawablePreviewClass
+name|_GimpPreviewRendererDrawableClass
+name|GimpPreviewRendererDrawableClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpDrawablePreview
+DECL|struct|_GimpPreviewRendererDrawable
 struct|struct
-name|_GimpDrawablePreview
+name|_GimpPreviewRendererDrawable
 block|{
 DECL|member|parent_instance
-name|GimpPreview
+name|GimpPreviewRenderer
 name|parent_instance
 decl_stmt|;
 block|}
@@ -108,12 +108,12 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpDrawablePreviewClass
+DECL|struct|_GimpPreviewRendererDrawableClass
 struct|struct
-name|_GimpDrawablePreviewClass
+name|_GimpPreviewRendererDrawableClass
 block|{
 DECL|member|parent_class
-name|GimpPreviewClass
+name|GimpPreviewRendererClass
 name|parent_class
 decl_stmt|;
 block|}
@@ -122,7 +122,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_drawable_preview_get_type
+name|gimp_preview_renderer_drawable_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -136,7 +136,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_DRAWABLE_PREVIEW_H__ */
+comment|/* __GIMP_PREVIEW_RENDERER_DRAWABLE_H__ */
 end_comment
 
 end_unit

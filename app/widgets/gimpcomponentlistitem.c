@@ -54,13 +54,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimagepreview.h"
+file|"gimppreview.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimppreview.h"
+file|"gimppreviewrendererimage.h"
 end_include
 
 begin_include
@@ -846,11 +846,16 @@ name|g_assert_not_reached
 argument_list|()
 expr_stmt|;
 block|}
-name|GIMP_IMAGE_PREVIEW
+name|GIMP_PREVIEW_RENDERER_IMAGE
+argument_list|(
+name|GIMP_PREVIEW
 argument_list|(
 name|list_item
 operator|->
 name|preview
+argument_list|)
+operator|->
+name|renderer
 argument_list|)
 operator|->
 name|channel
