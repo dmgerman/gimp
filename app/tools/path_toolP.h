@@ -16,6 +16,18 @@ directive|define
 name|__PATH_TOOLP_H__
 end_define
 
+begin_undef
+undef|#
+directive|undef
+name|PATH_TOOL_DEBUG
+end_undef
+
+begin_include
+include|#
+directive|include
+file|"draw_core.h"
+end_include
+
 begin_define
 DECL|macro|IMAGE_COORDS
 define|#
@@ -88,8 +100,26 @@ name|SUBDIVIDE
 value|1000
 end_define
 
+begin_typedef
+DECL|enum|__anon2c2819d70103
+DECL|enumerator|SEGMENT_LINE
+DECL|enumerator|SEGMENT_BEZIER
+DECL|typedef|SegmentType
+typedef|typedef
+enum|enum
+block|{
+name|SEGMENT_LINE
+init|=
+literal|0
+block|,
+name|SEGMENT_BEZIER
+block|}
+name|SegmentType
+typedef|;
+end_typedef
+
 begin_enum
-DECL|enum|__anon2b7e48d30103
+DECL|enum|__anon2c2819d70203
 DECL|enumerator|ON_ANCHOR
 DECL|enumerator|ON_HANDLE
 DECL|enumerator|ON_CURVE
@@ -106,22 +136,6 @@ name|ON_CANVAS
 block|}
 enum|;
 end_enum
-
-begin_typedef
-DECL|enum|__anon2b7e48d30203
-DECL|enumerator|SEGMENT_LINE
-DECL|enumerator|SEGMENT_BEZIER
-DECL|typedef|SegmentType
-typedef|typedef
-enum|enum
-block|{
-name|SEGMENT_LINE
-block|,
-name|SEGMENT_BEZIER
-block|}
-name|SegmentType
-typedef|;
-end_typedef
 
 begin_typedef
 DECL|typedef|PathSegment
@@ -291,9 +305,9 @@ DECL|struct|_path_tool
 struct|struct
 name|_path_tool
 block|{
-DECL|member|click_pos
+DECL|member|click_type
 name|gint
-name|click_pos
+name|click_type
 decl_stmt|;
 comment|/* where did the user click?         */
 DECL|member|click_x
@@ -332,6 +346,11 @@ name|PathSegment
 modifier|*
 name|click_segment
 decl_stmt|;
+DECL|member|click_position
+name|gdouble
+name|click_position
+decl_stmt|;
+comment|/* The position on the segment       */
 DECL|member|active_count
 name|gint
 name|active_count
@@ -446,10 +465,6 @@ name|gpointer
 parameter_list|)
 function_decl|;
 end_typedef
-
-begin_comment
-comment|/* typedef void (*SegmentTraverseFunc) (PathTool *, GdkPoint *, gint, gpointer);*/
-end_comment
 
 begin_endif
 endif|#

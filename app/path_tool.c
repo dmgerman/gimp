@@ -7,12 +7,6 @@ begin_comment
 comment|/*  * Complete new path-tool by Simon Budig<Simon.Budig@unix-ag.org>  *   * Currently vapor-ware.  *   * a path manipulation core independent of the underlying formula:  * implement bezier-curves, intelligent scissors-curves, splines...  *   * A Path is a collection of curves, which are constructed from  * segments between two anchors.  */
 end_comment
 
-begin_undef
-undef|#
-directive|undef
-name|PATH_TOOL_DEBUG
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -45,6 +39,12 @@ begin_include
 include|#
 directive|include
 file|"path_toolP.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"path_curves.h"
 end_include
 
 begin_ifdef
@@ -104,7 +104,6 @@ comment|/* Small functions to determine coordinates, iterate over path/curve/seg
 end_comment
 
 begin_function_decl
-specifier|static
 name|void
 name|path_segment_get_coordinates
 parameter_list|(
@@ -123,7 +122,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|static
 name|void
 name|path_traverse_path
 parameter_list|(
@@ -142,7 +140,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|static
 name|void
 name|path_traverse_curve
 parameter_list|(
@@ -162,7 +159,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|static
 name|void
 name|path_traverse_segment
 parameter_list|(
@@ -183,7 +179,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|static
 name|gdouble
 name|path_locate_point
 parameter_list|(
@@ -216,7 +211,6 @@ comment|/* Tools to manipulate paths, curves, segments */
 end_comment
 
 begin_function_decl
-specifier|static
 name|PathCurve
 modifier|*
 name|path_add_curve
@@ -232,7 +226,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|static
 name|PathSegment
 modifier|*
 name|path_append_segment
@@ -253,7 +246,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|static
 name|PathSegment
 modifier|*
 name|path_prepend_segment
@@ -274,7 +266,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|static
 name|PathSegment
 modifier|*
 name|path_split_segment
@@ -288,7 +279,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|static
 name|void
 name|path_join_curves
 parameter_list|(
@@ -302,7 +292,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|static
 name|void
 name|path_flip_curve
 parameter_list|(
@@ -313,7 +302,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|static
 name|void
 name|path_free_path
 parameter_list|(
@@ -324,7 +312,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|static
 name|void
 name|path_free_curve
 parameter_list|(
@@ -335,7 +322,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|static
 name|void
 name|path_free_segment
 parameter_list|(
@@ -346,7 +332,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|static
 name|void
 name|path_delete_segment
 parameter_list|(
@@ -357,7 +342,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|static
 name|void
 name|path_print
 parameter_list|(
@@ -368,7 +352,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|static
 name|void
 name|path_offset_active
 parameter_list|(
@@ -383,7 +366,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|static
 name|void
 name|path_set_flags
 parameter_list|(
@@ -411,7 +393,6 @@ comment|/* High level image-manipulation functions */
 end_comment
 
 begin_function_decl
-specifier|static
 name|void
 name|path_stroke
 parameter_list|(
@@ -425,7 +406,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|static
 name|void
 name|path_to_selection
 parameter_list|(
@@ -443,7 +423,6 @@ comment|/* Functions necessary for the tool */
 end_comment
 
 begin_function_decl
-specifier|static
 name|void
 name|path_tool_button_press
 parameter_list|(
@@ -459,7 +438,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|static
 name|void
 name|path_tool_button_release
 parameter_list|(
@@ -475,7 +453,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|static
 name|void
 name|path_tool_motion
 parameter_list|(
@@ -491,7 +468,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|static
 name|void
 name|path_tool_cursor_update
 parameter_list|(
@@ -507,7 +483,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|static
 name|void
 name|path_tool_control
 parameter_list|(
@@ -522,7 +497,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|static
 name|void
 name|path_tool_draw
 parameter_list|(
@@ -533,7 +507,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|static
 name|void
 name|path_tool_draw_curve
 parameter_list|(
@@ -547,7 +520,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|static
 name|void
 name|path_tool_draw_segment
 parameter_list|(
@@ -561,7 +533,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|static
 name|gboolean
 name|path_tool_on_anchors
 parameter_list|(
@@ -590,7 +561,34 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|static
+name|gdouble
+name|path_tool_on_curve
+parameter_list|(
+name|Tool
+modifier|*
+parameter_list|,
+name|gint
+parameter_list|,
+name|gint
+parameter_list|,
+name|gint
+parameter_list|,
+name|Path
+modifier|*
+modifier|*
+parameter_list|,
+name|PathCurve
+modifier|*
+modifier|*
+parameter_list|,
+name|PathSegment
+modifier|*
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|path_tool_on_handles
 parameter_list|(
@@ -607,24 +605,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|static
-name|gboolean
-name|path_tool_on_curve
-parameter_list|(
-name|Tool
-modifier|*
-parameter_list|,
-name|gint
-parameter_list|,
-name|gint
-parameter_list|,
-name|gint
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|gint
 name|path_tool_button_press_canvas
 parameter_list|(
@@ -641,7 +621,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|static
 name|gint
 name|path_tool_button_press_anchor
 parameter_list|(
@@ -658,7 +637,22 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|static
+name|gint
+name|path_tool_button_press_curve
+parameter_list|(
+name|Tool
+modifier|*
+parameter_list|,
+name|GdkEventButton
+modifier|*
+parameter_list|,
+name|GDisplay
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|path_tool_motion_anchor
 parameter_list|(
@@ -675,7 +669,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|static
 name|void
 name|path_tool_motion_curve
 parameter_list|(
@@ -715,7 +708,6 @@ comment|/*  * These functions are for applying a function over a complete  * pat
 end_comment
 
 begin_function
-specifier|static
 name|void
 DECL|function|path_traverse_path (Path * path,PathTraverseFunc pathfunc,CurveTraverseFunc curvefunc,SegmentTraverseFunc segmentfunc,gpointer data)
 name|path_traverse_path
@@ -831,7 +823,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|path_traverse_curve (Path * path,PathCurve * curve,CurveTraverseFunc curvefunc,SegmentTraverseFunc segmentfunc,gpointer data)
 name|path_traverse_curve
@@ -950,7 +941,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|path_traverse_segment (Path * path,PathCurve * curve,PathSegment * segment,SegmentTraverseFunc function,gpointer data)
 name|path_traverse_segment
@@ -987,6 +977,9 @@ expr_stmt|;
 endif|#
 directive|endif
 endif|PATH_TOOL_DEBUG
+warning|#
+directive|warning
+warning|here we need path_curve_get_point(s)
 comment|/* Something like:     * for i = 1 to subsamples {     *   (x,y) = get_coordinates(i / subsamples)     *   (* function) (....)     * }     */
 block|}
 end_function
@@ -997,7 +990,6 @@ end_comment
 
 begin_function
 DECL|function|path_add_curve (Path * cur_path,gint x,gint y)
-specifier|static
 name|PathCurve
 modifier|*
 name|path_add_curve
@@ -1144,7 +1136,6 @@ end_function
 
 begin_function
 DECL|function|path_append_segment (Path * cur_path,PathCurve * cur_curve,SegmentType type,gint x,gint y)
-specifier|static
 name|PathSegment
 modifier|*
 name|path_append_segment
@@ -1315,6 +1306,9 @@ name|cur_segment
 operator|=
 name|new_segment
 expr_stmt|;
+warning|#
+directive|warning
+warning|we need initialisation of the segment here.
 block|}
 ifdef|#
 directive|ifdef
@@ -1353,7 +1347,6 @@ end_function
 
 begin_function
 DECL|function|path_prepend_segment (Path * cur_path,PathCurve * cur_curve,SegmentType type,gint x,gint y)
-specifier|static
 name|PathSegment
 modifier|*
 name|path_prepend_segment
@@ -1506,6 +1499,9 @@ name|cur_segment
 operator|=
 name|new_segment
 expr_stmt|;
+warning|#
+directive|warning
+warning|we need initialisation of the segment here.
 block|}
 ifdef|#
 directive|ifdef
@@ -1542,16 +1538,171 @@ return|;
 block|}
 end_function
 
-begin_comment
-comment|/* static PathSegment * path_split_segment   (PathSegment *, gdouble);  */
-end_comment
+begin_function
+DECL|function|path_split_segment (PathSegment * segment,gdouble position)
+name|PathSegment
+modifier|*
+name|path_split_segment
+parameter_list|(
+name|PathSegment
+modifier|*
+name|segment
+parameter_list|,
+name|gdouble
+name|position
+parameter_list|)
+block|{
+name|PathSegment
+modifier|*
+name|new_segment
+init|=
+name|NULL
+decl_stmt|;
+ifdef|#
+directive|ifdef
+name|PATH_TOOL_DEBUG
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+literal|"path_split_segment\n"
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
+endif|PATH_TOOL_DEBUG
+if|if
+condition|(
+name|segment
+operator|&&
+name|segment
+operator|->
+name|next
+condition|)
+block|{
+name|new_segment
+operator|=
+name|g_new
+argument_list|(
+name|PathSegment
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+name|new_segment
+operator|->
+name|type
+operator|=
+name|segment
+operator|->
+name|type
+expr_stmt|;
+warning|#
+directive|warning
+warning|Giving PathTool as NULL Pointer!
+name|path_curve_get_point
+argument_list|(
+name|NULL
+argument_list|,
+name|segment
+argument_list|,
+name|position
+argument_list|,
+operator|&
+operator|(
+name|new_segment
+operator|->
+name|x
+operator|)
+argument_list|,
+operator|&
+operator|(
+name|new_segment
+operator|->
+name|y
+operator|)
+argument_list|)
+expr_stmt|;
+name|new_segment
+operator|->
+name|flags
+operator|=
+literal|0
+expr_stmt|;
+name|new_segment
+operator|->
+name|parent
+operator|=
+name|segment
+operator|->
+name|parent
+expr_stmt|;
+name|new_segment
+operator|->
+name|next
+operator|=
+name|segment
+operator|->
+name|next
+expr_stmt|;
+name|new_segment
+operator|->
+name|prev
+operator|=
+name|segment
+expr_stmt|;
+name|new_segment
+operator|->
+name|data
+operator|=
+name|NULL
+expr_stmt|;
+warning|#
+directive|warning
+warning|we need initialisation of the segment here.
+name|new_segment
+operator|->
+name|next
+operator|->
+name|prev
+operator|=
+name|new_segment
+expr_stmt|;
+name|segment
+operator|->
+name|next
+operator|=
+name|new_segment
+expr_stmt|;
+return|return
+name|new_segment
+return|;
+block|}
+ifdef|#
+directive|ifdef
+name|PATH_TOOL_DEBUG
+else|else
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+literal|"path_split_segment without valid segment\n"
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
+endif|PATH_TOOL_DEBUG
+return|return
+name|NULL
+return|;
+block|}
+end_function
 
 begin_comment
 comment|/*  * Join two arbitrary endpoints and free the parent from the second  * segment, if it differs from the first parents.  */
 end_comment
 
 begin_function
-specifier|static
 name|void
 DECL|function|path_join_curves (PathSegment * segment1,PathSegment * segment2)
 name|path_join_curves
@@ -1675,6 +1826,9 @@ operator|=
 name|segment2
 expr_stmt|;
 block|}
+warning|#
+directive|warning
+warning|Probably some segment-updates needed
 return|return;
 block|}
 if|if
@@ -1888,6 +2042,9 @@ operator|->
 name|next
 expr_stmt|;
 block|}
+warning|#
+directive|warning
+warning|Probably some segment-updates needed
 return|return;
 block|}
 if|if
@@ -2034,6 +2191,9 @@ name|prev
 expr_stmt|;
 block|}
 return|return;
+warning|#
+directive|warning
+warning|Probably some segment-updates needed
 block|}
 ifdef|#
 directive|ifdef
@@ -2042,7 +2202,7 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
-literal|"Cant join these curves yet...\n"
+literal|"Cant join these curves yet...\nThis should not happen."
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2057,7 +2217,6 @@ comment|/*  * This function reverses the order of the anchors. This is  * necess
 end_comment
 
 begin_function
-specifier|static
 name|void
 DECL|function|path_flip_curve (PathCurve * curve)
 name|path_flip_curve
@@ -2081,6 +2240,9 @@ decl_stmt|,
 modifier|*
 name|tmp2
 decl_stmt|;
+warning|#
+directive|warning
+warning|Please add path_curve_flip_segment here
 if|if
 condition|(
 operator|!
@@ -2219,12 +2381,14 @@ name|tmp
 operator|->
 name|next
 expr_stmt|;
+warning|#
+directive|warning
+warning|Probably some segment-updates needed
 block|}
 block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|path_free_path (Path * path)
 name|path_free_path
@@ -2252,20 +2416,6 @@ name|path
 operator|->
 name|curves
 expr_stmt|;
-name|g_string_free
-argument_list|(
-name|path
-operator|->
-name|name
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|path
-argument_list|)
-expr_stmt|;
 while|while
 condition|(
 operator|(
@@ -2289,12 +2439,25 @@ name|tmp1
 argument_list|)
 expr_stmt|;
 block|}
+name|g_string_free
+argument_list|(
+name|path
+operator|->
+name|name
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|path
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|path_free_curve (PathCurve * curve)
 name|path_free_curve
@@ -2372,7 +2535,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|path_free_segment (PathSegment * segment)
 name|path_free_segment
@@ -2428,6 +2590,9 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
+warning|#
+directive|warning
+warning|Free Segment needs an own hook in the different curve-types!
 name|g_free
 argument_list|(
 name|segment
@@ -2438,7 +2603,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|path_delete_curve (PathCurve * curve)
 name|path_delete_curve
@@ -2517,7 +2681,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|path_delete_segment (PathSegment * segment)
 name|path_delete_segment
@@ -2636,6 +2799,9 @@ name|segment
 argument_list|)
 expr_stmt|;
 comment|/*        * here we have to update the surrounding segments        */
+warning|#
+directive|warning
+warning|Please add path_curve_update_segment here
 block|}
 block|}
 end_function
@@ -2645,9 +2811,8 @@ comment|/*  * A function to determine, which object is hit by the cursor  */
 end_comment
 
 begin_function
-specifier|static
 name|gint
-DECL|function|path_tool_cursor_position (Tool * tool,gint x,gint y,gint halfwidth,Path ** pathP,PathCurve ** curveP,PathSegment ** segmentP)
+DECL|function|path_tool_cursor_position (Tool * tool,gint x,gint y,gint halfwidth,Path ** pathP,PathCurve ** curveP,PathSegment ** segmentP,gdouble * positionP)
 name|path_tool_cursor_position
 parameter_list|(
 name|Tool
@@ -2677,10 +2842,17 @@ name|PathSegment
 modifier|*
 modifier|*
 name|segmentP
+parameter_list|,
+name|gdouble
+modifier|*
+name|positionP
 parameter_list|)
 block|{
 name|gint
 name|location
+decl_stmt|;
+name|gdouble
+name|pos
 decl_stmt|;
 if|if
 condition|(
@@ -2704,6 +2876,51 @@ condition|)
 return|return
 name|ON_ANCHOR
 return|;
+name|pos
+operator|=
+name|path_tool_on_curve
+argument_list|(
+name|tool
+argument_list|,
+name|x
+argument_list|,
+name|y
+argument_list|,
+name|halfwidth
+argument_list|,
+name|pathP
+argument_list|,
+name|curveP
+argument_list|,
+name|segmentP
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|pos
+operator|>=
+literal|0
+operator|&&
+name|pos
+operator|<=
+literal|1
+condition|)
+block|{
+if|if
+condition|(
+name|positionP
+condition|)
+operator|(
+operator|*
+name|positionP
+operator|)
+operator|=
+name|pos
+expr_stmt|;
+return|return
+name|ON_CURVE
+return|;
+block|}
 return|return
 name|ON_CANVAS
 return|;
@@ -2715,7 +2932,6 @@ comment|/**************************************************************  * The c
 end_comment
 
 begin_function
-specifier|static
 name|void
 DECL|function|path_tool_button_press (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
 name|path_tool_button_press
@@ -2913,7 +3129,7 @@ expr_stmt|;
 comment|/* determine point, where clicked,     * switch accordingly.     */
 name|path_tool
 operator|->
-name|click_pos
+name|click_type
 operator|=
 name|path_tool_cursor_position
 argument_list|(
@@ -2945,13 +3161,20 @@ name|path_tool
 operator|->
 name|click_segment
 operator|)
+argument_list|,
+operator|&
+operator|(
+name|path_tool
+operator|->
+name|click_position
+operator|)
 argument_list|)
 expr_stmt|;
 switch|switch
 condition|(
 name|path_tool
 operator|->
-name|click_pos
+name|click_type
 condition|)
 block|{
 case|case
@@ -2975,6 +3198,21 @@ case|:
 name|grab_pointer
 operator|=
 name|path_tool_button_press_anchor
+argument_list|(
+name|tool
+argument_list|,
+name|bevent
+argument_list|,
+name|gdisp
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|ON_CURVE
+case|:
+name|grab_pointer
+operator|=
+name|path_tool_button_press_curve
 argument_list|(
 name|tool
 argument_list|,
@@ -3030,7 +3268,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|gint
 DECL|function|path_tool_button_press_anchor (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|path_tool_button_press_anchor
@@ -3491,6 +3728,7 @@ name|click_segment
 operator|=
 name|NULL
 expr_stmt|;
+comment|/* Maybe CTRL-ALT Click should remove the whole curve? Or the active points? */
 block|}
 elseif|else
 if|if
@@ -3542,7 +3780,6 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* Action goes here */
 name|draw_core_resume
 argument_list|(
 name|path_tool
@@ -3559,7 +3796,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|gint
 DECL|function|path_tool_button_press_canvas (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|path_tool_button_press_canvas
@@ -3862,7 +4098,184 @@ block|}
 end_function
 
 begin_function
-specifier|static
+name|gint
+DECL|function|path_tool_button_press_curve (Tool * tool,GdkEventButton * bevent,GDisplay * gdisp)
+name|path_tool_button_press_curve
+parameter_list|(
+name|Tool
+modifier|*
+name|tool
+parameter_list|,
+name|GdkEventButton
+modifier|*
+name|bevent
+parameter_list|,
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+block|{
+name|PathTool
+modifier|*
+name|path_tool
+init|=
+name|tool
+operator|->
+name|private
+decl_stmt|;
+name|Path
+modifier|*
+name|cur_path
+init|=
+name|path_tool
+operator|->
+name|cur_path
+decl_stmt|;
+name|PathCurve
+modifier|*
+name|cur_curve
+decl_stmt|;
+name|PathSegment
+modifier|*
+name|cur_segment
+decl_stmt|;
+name|gint
+name|grab_pointer
+decl_stmt|;
+ifdef|#
+directive|ifdef
+name|PATH_TOOL_DEBUG
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+literal|"path_tool_button_press_curve:\n"
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
+endif|PATH_TOOL_DEBUG
+name|grab_pointer
+operator|=
+literal|1
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|cur_path
+condition|)
+block|{
+ifdef|#
+directive|ifdef
+name|PATH_TOOL_DEBUG
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+literal|"Fatal error: No current Path\n"
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
+endif|PATH_TOOL_DEBUG
+return|return
+literal|0
+return|;
+block|}
+name|draw_core_pause
+argument_list|(
+name|path_tool
+operator|->
+name|core
+argument_list|,
+name|tool
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|path_tool
+operator|->
+name|click_modifier
+operator|&
+name|GDK_SHIFT_MASK
+condition|)
+block|{
+name|cur_segment
+operator|=
+name|path_curve_insert_anchor
+argument_list|(
+name|path_tool
+argument_list|,
+name|path_tool
+operator|->
+name|click_segment
+argument_list|,
+name|path_tool
+operator|->
+name|click_position
+argument_list|)
+expr_stmt|;
+name|path_set_flags
+argument_list|(
+name|path_tool
+argument_list|,
+name|cur_path
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+literal|0
+argument_list|,
+name|SEGMENT_ACTIVE
+argument_list|)
+expr_stmt|;
+name|path_set_flags
+argument_list|(
+name|path_tool
+argument_list|,
+name|cur_path
+argument_list|,
+name|path_tool
+operator|->
+name|click_curve
+argument_list|,
+name|cur_segment
+argument_list|,
+name|SEGMENT_ACTIVE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|path_tool
+operator|->
+name|click_type
+operator|=
+name|ON_ANCHOR
+expr_stmt|;
+name|path_tool
+operator|->
+name|click_segment
+operator|=
+name|cur_segment
+expr_stmt|;
+block|}
+name|draw_core_resume
+argument_list|(
+name|path_tool
+operator|->
+name|core
+argument_list|,
+name|tool
+argument_list|)
+expr_stmt|;
+return|return
+literal|0
+return|;
+block|}
+end_function
+
+begin_function
 name|void
 DECL|function|path_tool_button_release (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
 name|path_tool_button_release
@@ -3943,7 +4356,6 @@ comment|/**************************************************************  * The m
 end_comment
 
 begin_function
-specifier|static
 name|void
 DECL|function|path_tool_motion (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
 name|path_tool_motion
@@ -3996,7 +4408,7 @@ switch|switch
 condition|(
 name|path_tool
 operator|->
-name|click_pos
+name|click_type
 condition|)
 block|{
 case|case
@@ -4019,7 +4431,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|path_tool_motion_anchor (Tool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
 name|path_tool_motion_anchor
@@ -4328,7 +4739,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|path_tool_cursor_update (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
 name|path_tool_cursor_update
@@ -4457,6 +4867,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -4477,6 +4889,17 @@ expr_stmt|;
 break|break;
 case|case
 name|ON_ANCHOR
+case|:
+name|gdisplay_install_tool_cursor
+argument_list|(
+name|gdisp
+argument_list|,
+name|GDK_FLEUR
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|ON_CURVE
 case|:
 name|gdisplay_install_tool_cursor
 argument_list|(
@@ -4504,7 +4927,6 @@ comment|/**************************************************************  * Tool-
 end_comment
 
 begin_function
-specifier|static
 name|void
 DECL|function|path_tool_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
 name|path_tool_control
@@ -4595,6 +5017,19 @@ break|break;
 case|case
 name|HALT
 case|:
+ifdef|#
+directive|ifdef
+name|PATH_TOOL_DEBUG
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+literal|"path_tool_control: HALT\n"
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
+endif|PATH_TOOL_DEBUG
 name|draw_core_stop
 argument_list|(
 name|path_tool
@@ -4614,6 +5049,19 @@ break|break;
 default|default:
 break|break;
 block|}
+ifdef|#
+directive|ifdef
+name|PATH_TOOL_DEBUG
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+literal|"path_tool_control: end\n"
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
+endif|PATH_TOOL_DEBUG
 block|}
 end_function
 
@@ -4681,7 +5129,7 @@ argument_list|)
 expr_stmt|;
 name|private
 operator|->
-name|click_pos
+name|click_type
 operator|=
 name|ON_CANVAS
 expr_stmt|;
@@ -4708,6 +5156,31 @@ operator|->
 name|click_modifier
 operator|=
 literal|0
+expr_stmt|;
+name|private
+operator|->
+name|click_path
+operator|=
+name|NULL
+expr_stmt|;
+name|private
+operator|->
+name|click_curve
+operator|=
+name|NULL
+expr_stmt|;
+name|private
+operator|->
+name|click_segment
+operator|=
+name|NULL
+expr_stmt|;
+name|private
+operator|->
+name|click_position
+operator|=
+operator|-
+literal|1
 expr_stmt|;
 name|private
 operator|->
@@ -4866,6 +5339,19 @@ name|PathTool
 modifier|*
 name|path_tool
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|PATH_TOOL_DEBUG
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+literal|"tools_free_path_tool start\n"
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
+endif|PATH_TOOL_DEBUG
 name|path_tool
 operator|=
 operator|(
@@ -4924,6 +5410,404 @@ argument_list|(
 name|path_tool
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|PATH_TOOL_DEBUG
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+literal|"tools_free_path_tool end\n"
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
+endif|PATH_TOOL_DEBUG
+block|}
+end_function
+
+begin_comment
+comment|/**************************************************************  * Set of function to determine, if the click was on an segment  */
+end_comment
+
+begin_typedef
+DECL|struct|__anon280545a90108
+typedef|typedef
+struct|struct
+block|{
+DECL|member|tool
+name|Tool
+modifier|*
+name|tool
+decl_stmt|;
+DECL|member|path
+name|Path
+modifier|*
+name|path
+decl_stmt|;
+DECL|member|curve
+name|PathCurve
+modifier|*
+name|curve
+decl_stmt|;
+DECL|member|segment
+name|PathSegment
+modifier|*
+name|segment
+decl_stmt|;
+DECL|member|testx
+name|gint
+name|testx
+decl_stmt|;
+DECL|member|testy
+name|gint
+name|testy
+decl_stmt|;
+DECL|member|halfwidth
+name|gint
+name|halfwidth
+decl_stmt|;
+DECL|member|distance
+name|gint
+name|distance
+decl_stmt|;
+DECL|member|position
+name|gdouble
+name|position
+decl_stmt|;
+DECL|member|found
+name|gboolean
+name|found
+decl_stmt|;
+DECL|typedef|Path_on_curve_type
+block|}
+name|Path_on_curve_type
+typedef|;
+end_typedef
+
+begin_comment
+comment|/* This is a CurveTraverseFunc */
+end_comment
+
+begin_function
+name|void
+DECL|function|path_tool_on_curve_helper (Path * path,PathCurve * curve,PathSegment * segment,gpointer ptr)
+name|path_tool_on_curve_helper
+parameter_list|(
+name|Path
+modifier|*
+name|path
+parameter_list|,
+name|PathCurve
+modifier|*
+name|curve
+parameter_list|,
+name|PathSegment
+modifier|*
+name|segment
+parameter_list|,
+name|gpointer
+name|ptr
+parameter_list|)
+block|{
+name|gint
+name|distance
+decl_stmt|;
+name|gdouble
+name|position
+decl_stmt|;
+name|Path_on_curve_type
+modifier|*
+name|data
+init|=
+operator|(
+name|Path_on_curve_type
+operator|*
+operator|)
+name|ptr
+decl_stmt|;
+if|if
+condition|(
+name|segment
+operator|&&
+name|segment
+operator|->
+name|next
+operator|&&
+name|data
+operator|&&
+name|data
+operator|->
+name|distance
+operator|>
+literal|0
+condition|)
+block|{
+name|position
+operator|=
+name|path_curve_on_segment
+argument_list|(
+name|data
+operator|->
+name|tool
+argument_list|,
+name|segment
+argument_list|,
+name|data
+operator|->
+name|testx
+argument_list|,
+name|data
+operator|->
+name|testy
+argument_list|,
+name|data
+operator|->
+name|halfwidth
+argument_list|,
+operator|&
+name|distance
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|position
+operator|>=
+literal|0
+operator|&&
+name|distance
+operator|<
+name|data
+operator|->
+name|distance
+condition|)
+block|{
+name|data
+operator|->
+name|path
+operator|=
+name|path
+expr_stmt|;
+name|data
+operator|->
+name|curve
+operator|=
+name|curve
+expr_stmt|;
+name|data
+operator|->
+name|segment
+operator|=
+name|segment
+expr_stmt|;
+name|data
+operator|->
+name|distance
+operator|=
+name|distance
+expr_stmt|;
+name|data
+operator|->
+name|position
+operator|=
+name|position
+expr_stmt|;
+name|data
+operator|->
+name|found
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
+block|}
+block|}
+end_function
+
+begin_function
+name|gdouble
+DECL|function|path_tool_on_curve (Tool * tool,gint x,gint y,gint halfwidth,Path ** ret_pathP,PathCurve ** ret_curveP,PathSegment ** ret_segmentP)
+name|path_tool_on_curve
+parameter_list|(
+name|Tool
+modifier|*
+name|tool
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|,
+name|gint
+name|halfwidth
+parameter_list|,
+name|Path
+modifier|*
+modifier|*
+name|ret_pathP
+parameter_list|,
+name|PathCurve
+modifier|*
+modifier|*
+name|ret_curveP
+parameter_list|,
+name|PathSegment
+modifier|*
+modifier|*
+name|ret_segmentP
+parameter_list|)
+block|{
+name|Path_on_curve_type
+modifier|*
+name|data
+init|=
+name|g_new
+argument_list|(
+name|Path_on_curve_type
+argument_list|,
+literal|1
+argument_list|)
+decl_stmt|;
+name|gdouble
+name|position
+decl_stmt|;
+name|data
+operator|->
+name|tool
+operator|=
+name|tool
+expr_stmt|;
+name|data
+operator|->
+name|path
+operator|=
+name|NULL
+expr_stmt|;
+name|data
+operator|->
+name|segment
+operator|=
+name|NULL
+expr_stmt|;
+name|data
+operator|->
+name|segment
+operator|=
+name|NULL
+expr_stmt|;
+name|data
+operator|->
+name|testx
+operator|=
+name|x
+expr_stmt|;
+name|data
+operator|->
+name|testy
+operator|=
+name|y
+expr_stmt|;
+name|data
+operator|->
+name|halfwidth
+operator|=
+name|halfwidth
+expr_stmt|;
+name|data
+operator|->
+name|distance
+operator|=
+name|halfwidth
+operator|*
+name|halfwidth
+operator|+
+literal|1
+expr_stmt|;
+name|data
+operator|->
+name|position
+operator|=
+operator|-
+literal|1
+expr_stmt|;
+name|data
+operator|->
+name|found
+operator|=
+name|FALSE
+expr_stmt|;
+name|path_traverse_path
+argument_list|(
+operator|(
+operator|(
+name|PathTool
+operator|*
+operator|)
+name|data
+operator|->
+name|tool
+operator|->
+name|private
+operator|)
+operator|->
+name|cur_path
+argument_list|,
+name|NULL
+argument_list|,
+name|path_tool_on_curve_helper
+argument_list|,
+name|NULL
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|ret_pathP
+condition|)
+operator|*
+name|ret_pathP
+operator|=
+name|data
+operator|->
+name|path
+expr_stmt|;
+if|if
+condition|(
+name|ret_curveP
+condition|)
+operator|*
+name|ret_curveP
+operator|=
+name|data
+operator|->
+name|curve
+expr_stmt|;
+if|if
+condition|(
+name|ret_segmentP
+condition|)
+operator|*
+name|ret_segmentP
+operator|=
+name|data
+operator|->
+name|segment
+expr_stmt|;
+name|position
+operator|=
+name|data
+operator|->
+name|position
+expr_stmt|;
+name|g_free
+argument_list|(
+name|data
+argument_list|)
+expr_stmt|;
+return|return
+name|position
+return|;
 block|}
 end_function
 
@@ -4932,7 +5816,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a56ee740108
+DECL|struct|__anon280545a90208
 typedef|typedef
 struct|struct
 block|{
@@ -4978,7 +5862,6 @@ comment|/* This is a CurveTraverseFunc */
 end_comment
 
 begin_function
-specifier|static
 name|void
 DECL|function|path_tool_on_anchors_helper (Path * path,PathCurve * curve,PathSegment * segment,gpointer ptr)
 name|path_tool_on_anchors_helper
@@ -5114,7 +5997,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|gboolean
 DECL|function|path_tool_on_anchors (Tool * tool,gint x,gint y,gint halfwidth,Path ** ret_pathP,PathCurve ** ret_curveP,PathSegment ** ret_segmentP)
 name|path_tool_on_anchors
@@ -5286,7 +6168,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a56ee740208
+DECL|struct|__anon280545a90308
 typedef|typedef
 struct|struct
 block|{
@@ -5309,7 +6191,6 @@ comment|/* This is a CurveTraverseFunc */
 end_comment
 
 begin_function
-specifier|static
 name|void
 DECL|function|path_offset_active_helper (Path * path,PathCurve * curve,PathSegment * segment,gpointer ptr)
 name|path_offset_active_helper
@@ -5372,11 +6253,13 @@ operator|->
 name|dy
 expr_stmt|;
 block|}
+warning|#
+directive|warning
+warning|Do a segment_update here!
 block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|path_offset_active (Path * path,gdouble dx,gdouble dy)
 name|path_offset_active
@@ -5441,11 +6324,11 @@ block|}
 end_function
 
 begin_comment
-comment|/**************************************************************  * Set of function to set the state of all anchors to inactive  */
+comment|/**************************************************************  * Set of function to set the state of all anchors  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a56ee740308
+DECL|struct|__anon280545a90408
 typedef|typedef
 struct|struct
 block|{
@@ -5473,7 +6356,6 @@ comment|/* This is a CurveTraverseFunc */
 end_comment
 
 begin_function
-specifier|static
 name|void
 DECL|function|path_set_flags_helper (Path * path,PathCurve * curve,PathSegment * segment,gpointer ptr)
 name|path_set_flags_helper
@@ -5622,7 +6504,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|path_set_flags (PathTool * path_tool,Path * path,PathCurve * curve,PathSegment * segment,guint32 bits_set,guint32 bits_clear)
 name|path_set_flags
@@ -5747,7 +6628,6 @@ comment|/* This is a CurveTraverseFunc */
 end_comment
 
 begin_function
-specifier|static
 name|void
 DECL|function|path_tool_draw_helper (Path * path,PathCurve * curve,PathSegment * segment,gpointer tool_ptr)
 name|path_tool_draw_helper
@@ -5987,54 +6867,11 @@ operator|->
 name|next
 condition|)
 block|{
-name|gdisplay_transform_coords
+name|path_curve_draw_segment
 argument_list|(
-name|gdisp
+name|tool
 argument_list|,
-operator|(
-name|gint
-operator|)
 name|segment
-operator|->
-name|next
-operator|->
-name|x
-argument_list|,
-operator|(
-name|gint
-operator|)
-name|segment
-operator|->
-name|next
-operator|->
-name|y
-argument_list|,
-operator|&
-name|x2
-argument_list|,
-operator|&
-name|y2
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|gdk_draw_line
-argument_list|(
-name|core
-operator|->
-name|win
-argument_list|,
-name|core
-operator|->
-name|gc
-argument_list|,
-name|x1
-argument_list|,
-name|y1
-argument_list|,
-name|x2
-argument_list|,
-name|y2
 argument_list|)
 expr_stmt|;
 block|}
@@ -6062,7 +6899,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|path_tool_draw (Tool * tool)
 name|path_tool_draw
@@ -6132,6 +6968,19 @@ argument_list|,
 name|tool
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|PATH_TOOL_DEBUG
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+literal|"path_tool_draw end.\n"
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
+endif|PATH_TOOL_DEBUG
 block|}
 end_function
 
