@@ -2480,6 +2480,8 @@ name|filename
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 operator|&
 name|error
 argument_list|)
@@ -2661,6 +2663,7 @@ argument_list|,
 name|filesel
 argument_list|)
 expr_stmt|;
+comment|/*  FIXME: add a proper file selector       and controls for merge and scale options  */
 name|gtk_widget_show
 argument_list|(
 name|GTK_WIDGET

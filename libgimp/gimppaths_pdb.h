@@ -288,6 +288,9 @@ name|filename
 parameter_list|,
 name|gboolean
 name|merge
+parameter_list|,
+name|gboolean
+name|scale
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -4134,6 +4134,9 @@ decl_stmt|;
 name|gboolean
 name|merge
 decl_stmt|;
+name|gboolean
+name|scale
+decl_stmt|;
 name|gimage
 operator|=
 name|gimp_image_get_by_ID
@@ -4202,6 +4205,21 @@ name|TRUE
 else|:
 name|FALSE
 expr_stmt|;
+name|scale
+operator|=
+name|args
+index|[
+literal|3
+index|]
+operator|.
+name|value
+operator|.
+name|pdb_int
+condition|?
+name|TRUE
+else|:
+name|FALSE
+expr_stmt|;
 if|if
 condition|(
 name|success
@@ -4215,6 +4233,8 @@ argument_list|,
 name|filename
 argument_list|,
 name|merge
+argument_list|,
+name|scale
 argument_list|,
 name|NULL
 argument_list|)
@@ -4262,6 +4282,14 @@ literal|"merge"
 block|,
 literal|"Merge paths into a single vectors object"
 block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"scale"
+block|,
+literal|"Scale the SVG to image dimensions"
+block|}
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -4287,7 +4315,7 @@ literal|"2003"
 block|,
 name|GIMP_INTERNAL
 block|,
-literal|3
+literal|4
 block|,
 name|path_import_inargs
 block|,

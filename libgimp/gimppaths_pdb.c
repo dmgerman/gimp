@@ -1394,12 +1394,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_import:  * @image_ID: The image.  * @filename: The name of the SVG file to import.  * @merge: Merge paths into a single vectors object.  *  * Import paths from an SVG file.  *  * This procedure imports path from an SVG file. This is a temporary  * solution until the new vectors PDB API is in place. Don't rely on  * this function being available in future GIMP releases.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_path_import:  * @image_ID: The image.  * @filename: The name of the SVG file to import.  * @merge: Merge paths into a single vectors object.  * @scale: Scale the SVG to image dimensions.  *  * Import paths from an SVG file.  *  * This procedure imports path from an SVG file. This is a temporary  * solution until the new vectors PDB API is in place. Don't rely on  * this function being available in future GIMP releases.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_path_import (gint32 image_ID,const gchar * filename,gboolean merge)
+DECL|function|gimp_path_import (gint32 image_ID,const gchar * filename,gboolean merge,gboolean scale)
 name|gimp_path_import
 parameter_list|(
 name|gint32
@@ -1412,6 +1412,9 @@ name|filename
 parameter_list|,
 name|gboolean
 name|merge
+parameter_list|,
+name|gboolean
+name|scale
 parameter_list|)
 block|{
 name|GimpParam
@@ -1446,6 +1449,10 @@ argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
 name|merge
+argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|scale
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)
