@@ -27,6 +27,29 @@ directive|include
 file|<time.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -302,7 +325,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac4b0080108
+DECL|struct|__anon2c6d3b000108
 block|{
 comment|/* gint, gdouble, and so on */
 DECL|member|holdness
@@ -348,7 +371,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac4b0080208
+DECL|struct|__anon2c6d3b000208
 block|{
 DECL|member|run
 name|gint

@@ -27,6 +27,29 @@ directive|include
 file|<string.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -62,7 +85,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b6038780103
+DECL|enum|__anon28e8fd930103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -78,7 +101,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b6038780203
+DECL|enum|__anon28e8fd930203
 block|{
 DECL|enumerator|LEFT
 name|LEFT

@@ -25,6 +25,29 @@ directive|include
 file|<string.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -182,7 +205,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ed40e70108
+DECL|struct|__anon275c54a60108
 block|{
 DECL|member|x
 DECL|member|y
@@ -200,7 +223,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ed40e70208
+DECL|struct|__anon275c54a60208
 block|{
 DECL|member|npts
 name|gint
@@ -222,7 +245,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ed40e70308
+DECL|struct|__anon275c54a60308
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -251,7 +274,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ed40e70408
+DECL|struct|__anon275c54a60408
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -310,7 +333,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ed40e70508
+DECL|struct|__anon275c54a60508
 block|{
 DECL|member|run
 name|gint

@@ -21,6 +21,29 @@ directive|include
 file|<stdlib.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -47,7 +70,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7f9be90103
+DECL|enum|__anon293859d60103
 block|{
 DECL|enumerator|MODE_SMEAR
 name|MODE_SMEAR

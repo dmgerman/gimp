@@ -27,6 +27,29 @@ directive|include
 file|<string.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -234,7 +257,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a30219b0103
+DECL|enum|__anon2bbd33ed0103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -252,7 +275,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a30219b0208
+DECL|struct|__anon2bbd33ed0208
 block|{
 DECL|member|max_p
 name|gint
@@ -268,7 +291,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a30219b0308
+DECL|struct|__anon2bbd33ed0308
 block|{
 DECL|member|run
 name|gint

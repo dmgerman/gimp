@@ -41,6 +41,29 @@ directive|include
 file|<time.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -376,7 +399,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon2bc128de0108
+DECL|struct|__anon2b9e630c0108
 typedef|typedef
 struct|struct
 block|{
@@ -445,7 +468,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bc128de0208
+DECL|struct|__anon2b9e630c0208
 typedef|typedef
 struct|struct
 block|{
@@ -563,7 +586,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bc128de0308
+DECL|struct|__anon2b9e630c0308
 typedef|typedef
 struct|struct
 block|{
@@ -592,7 +615,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bc128de0408
+DECL|struct|__anon2b9e630c0408
 typedef|typedef
 struct|struct
 block|{
@@ -619,7 +642,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bc128de0508
+DECL|struct|__anon2b9e630c0508
 typedef|typedef
 struct|struct
 block|{

@@ -31,6 +31,29 @@ directive|include
 file|<string.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -512,7 +535,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29613cb90108
+DECL|struct|__anon28ebcf200108
 block|{
 DECL|member|name
 specifier|const
@@ -772,7 +795,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29613cb90208
+DECL|struct|__anon28ebcf200208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -845,7 +868,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29613cb90308
+DECL|struct|__anon28ebcf200308
 block|{
 DECL|member|input_spi
 name|gint
@@ -871,7 +894,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29613cb90408
+DECL|struct|__anon28ebcf200408
 block|{
 DECL|member|run
 name|gint
@@ -890,7 +913,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29613cb90508
+DECL|struct|__anon28ebcf200508
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -997,7 +1020,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29613cb90608
+DECL|struct|__anon28ebcf200608
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1181,7 +1204,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29613cb90708
+DECL|struct|__anon28ebcf200708
 block|{
 DECL|member|name
 specifier|const
@@ -6995,7 +7018,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29613cb90808
+DECL|struct|__anon28ebcf200808
 block|{
 DECL|member|index
 name|gint

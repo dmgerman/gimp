@@ -48,6 +48,29 @@ directive|include
 file|<time.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -157,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c094eb50103
+DECL|enum|__anon2891c8f50103
 block|{
 DECL|enumerator|PROJECTION
 name|PROJECTION
@@ -202,7 +225,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c094eb50208
+DECL|struct|__anon2891c8f50208
 block|{
 DECL|member|transformSequence
 name|TransformType
@@ -241,7 +264,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c094eb50308
+DECL|struct|__anon2891c8f50308
 block|{
 DECL|member|info
 name|ExpInfo

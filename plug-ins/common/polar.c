@@ -52,6 +52,29 @@ endif|#
 directive|endif
 end_endif
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -142,7 +165,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b14bd280108
+DECL|struct|__anon293ff7cb0108
 block|{
 DECL|member|circle
 name|gdouble
@@ -173,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b14bd280208
+DECL|struct|__anon293ff7cb0208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -213,7 +236,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b14bd280308
+DECL|struct|__anon293ff7cb0308
 block|{
 DECL|member|col
 DECL|member|row

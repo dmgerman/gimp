@@ -37,6 +37,29 @@ directive|include
 file|<time.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -244,7 +267,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cfeca70108
+DECL|struct|__anon288e46dd0108
 block|{
 DECL|member|xcenter
 name|gint
@@ -279,7 +302,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cfeca70208
+DECL|struct|__anon288e46dd0208
 block|{
 DECL|member|run
 name|gint
@@ -294,7 +317,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cfeca70308
+DECL|struct|__anon288e46dd0308
 block|{
 DECL|member|drawable
 name|GimpDrawable

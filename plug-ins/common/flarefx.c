@@ -31,6 +31,29 @@ directive|include
 file|<string.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -160,7 +183,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27574c2f0108
+DECL|struct|__anon2bf2fb0a0108
 block|{
 DECL|member|posx
 name|gint
@@ -179,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27574c2f0208
+DECL|struct|__anon2bf2fb0a0208
 block|{
 DECL|member|run
 name|gint
@@ -250,7 +273,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27574c2f0308
+DECL|struct|__anon2bf2fb0a0308
 block|{
 DECL|member|drawable
 name|GimpDrawable

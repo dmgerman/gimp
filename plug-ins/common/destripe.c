@@ -3,22 +3,11 @@ begin_comment
 comment|/*  *   Destripe filter for The GIMP -- an image manipulation  *   program  *  *   Copyright 1997 Marc Lehmann, heavily modified from a filter by  *   Michael Sweet.  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the filter...  *   destripe()                  - Destripe an image.  *   destripe_dialog()           - Popup a dialog window...  *   preview_init()              - Initialize the preview window...  *   preview_scroll_callback()   - Update the preview when a scrollbar is moved.  *   preview_update()            - Update the preview window.  *   preview_exit()              - Free all memory used by the preview window...  *   dialog_iscale_update()      - Update the value field using the scale.  *   dialog_histogram_callback()  *   dialog_ok_callback()        - Start the filter...  *  *   1997/08/16 * Initial Revision.  *   1998/02/06 * Minor changes.  */
 end_comment
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_CONFIG_H
-end_ifdef
-
 begin_include
 include|#
 directive|include
 file|"config.h"
 end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_include
 include|#
@@ -37,6 +26,29 @@ include|#
 directive|include
 file|<string.h>
 end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
 
 begin_include
 include|#

@@ -41,6 +41,29 @@ directive|include
 file|<stdlib.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -191,7 +214,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon2bf4902c0103
+DECL|enum|__anon29c54e200103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -211,7 +234,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf4902c0208
+DECL|struct|__anon29c54e200208
 block|{
 DECL|member|x1
 name|gdouble
@@ -407,7 +430,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf4902c0308
+DECL|struct|__anon29c54e200308
 block|{
 DECL|member|x1
 name|gint
@@ -450,7 +473,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf4902c0408
+DECL|struct|__anon29c54e200408
 block|{
 DECL|member|width
 name|gint
@@ -1009,7 +1032,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf4902c0508
+DECL|struct|__anon29c54e200508
 block|{
 DECL|member|r
 name|guchar
@@ -2810,7 +2833,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf4902c0608
+DECL|struct|__anon29c54e200608
 block|{
 DECL|member|preview
 name|GtkWidget

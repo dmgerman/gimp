@@ -44,6 +44,29 @@ directive|include
 file|<sys/types.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -135,7 +158,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a408fd90108
+DECL|struct|__anon296e619d0108
 block|{
 DECL|member|lam_r
 name|gdouble
@@ -194,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a408fd90208
+DECL|struct|__anon296e619d0208
 block|{
 DECL|member|preview
 name|GtkWidget

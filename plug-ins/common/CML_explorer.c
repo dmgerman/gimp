@@ -55,6 +55,29 @@ begin_comment
 comment|/* for seed of random number */
 end_comment
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -209,7 +232,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2eb80e0108
+DECL|struct|__anon2c8142eb0108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -236,7 +259,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2eb80e0203
+DECL|enum|__anon2c8142eb0203
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -359,7 +382,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2eb80e0303
+DECL|enum|__anon2c8142eb0303
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -498,7 +521,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2eb80e0403
+DECL|enum|__anon2c8142eb0403
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -597,7 +620,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2eb80e0503
+DECL|enum|__anon2c8142eb0503
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -689,7 +712,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2eb80e0608
+DECL|struct|__anon2c8142eb0608
 block|{
 DECL|member|function
 name|gint
@@ -762,7 +785,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2eb80e0708
+DECL|struct|__anon2c8142eb0708
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1540,7 +1563,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2eb80e0808
+DECL|struct|__anon2c8142eb0808
 block|{
 DECL|member|run
 name|gint
@@ -1590,7 +1613,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2eb80e0908
+DECL|struct|__anon2c8142eb0908
 block|{
 DECL|member|widget
 name|GtkWidget

@@ -11,22 +11,11 @@ begin_comment
 comment|/* Version 0.99 */
 end_comment
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_CONFIG_H
-end_ifdef
-
 begin_include
 include|#
 directive|include
 file|"config.h"
 end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_include
 include|#
@@ -39,6 +28,29 @@ include|#
 directive|include
 file|<stdlib.h>
 end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
 
 begin_include
 include|#
@@ -22238,7 +22250,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a22be50108
+DECL|struct|__anon2b5596a90108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -22341,7 +22353,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a22be50208
+DECL|struct|__anon2b5596a90208
 block|{
 DECL|member|height
 DECL|member|width

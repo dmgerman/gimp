@@ -25,6 +25,29 @@ directive|include
 file|<stdlib.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -60902,7 +60925,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290ad97b0108
+DECL|struct|__anon2988d8ff0108
 block|{
 DECL|member|pattern_number
 name|gint
@@ -60925,7 +60948,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290ad97b0208
+DECL|struct|__anon2988d8ff0208
 block|{
 DECL|member|run
 name|gint

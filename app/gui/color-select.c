@@ -27,6 +27,29 @@ directive|include
 file|<string.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -136,7 +159,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a4660930103
+DECL|enum|__anon2bee80d70103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -187,7 +210,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a4660930203
+DECL|enum|__anon2bee80d70203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -7199,7 +7222,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4660930308
+DECL|struct|__anon2bee80d70308
 block|{
 DECL|member|callback
 name|GimpColorSelectorCallback

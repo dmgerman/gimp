@@ -67,6 +67,29 @@ directive|include
 file|<time.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -110,7 +133,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcf37260108
+DECL|struct|__anon2aad5fa80108
 block|{
 DECL|member|colors
 name|GimpRGB
@@ -197,7 +220,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcf37260208
+DECL|struct|__anon2aad5fa80208
 block|{
 DECL|member|width
 DECL|member|height
@@ -220,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcf37260308
+DECL|struct|__anon2aad5fa80308
 block|{
 DECL|member|preview
 name|GtkWidget

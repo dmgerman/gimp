@@ -37,6 +37,29 @@ directive|include
 file|<string.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -128,7 +151,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298a7be40108
+DECL|struct|__anon2bf2c8c20108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -563,7 +586,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon298a7be40203
+DECL|enum|__anon2bf2c8c20203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -582,7 +605,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298a7be40308
+DECL|struct|__anon2bf2c8c20308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -652,7 +675,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298a7be40408
+DECL|struct|__anon2bf2c8c20408
 block|{
 DECL|member|htoggle
 name|GtkWidget

@@ -68,6 +68,29 @@ directive|include
 file|<time.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -524,7 +547,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon275539970108
+DECL|struct|__anon2999630c0108
 block|{
 DECL|member|randomize
 name|gint
