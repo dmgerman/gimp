@@ -6005,7 +6005,7 @@ argument_list|,
 name|num_segs
 argument_list|,
 operator|(
-name|ScanConvertPoint
+name|GimpVector2
 operator|*
 operator|)
 name|segs

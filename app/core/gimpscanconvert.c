@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"core-types.h"
 end_include
 
 begin_include
@@ -42,19 +42,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpchannel.h"
+file|"gimpchannel.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpimage.h"
+file|"gimpimage.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"scan_convert.h"
+file|"gimpscanconvert.h"
 end_include
 
 begin_ifdef
@@ -94,14 +94,10 @@ endif|#
 directive|endif
 end_endif
 
-begin_comment
-comment|/* Reveal our private structure */
-end_comment
-
 begin_struct
-DECL|struct|ScanConverterPrivate
+DECL|struct|_GimpScanConvert
 struct|struct
-name|ScanConverterPrivate
+name|_GimpScanConvert
 block|{
 DECL|member|width
 name|guint
@@ -129,7 +125,7 @@ name|gboolean
 name|got_first
 decl_stmt|;
 DECL|member|first
-name|ScanConvertPoint
+name|GimpVector2
 name|first
 decl_stmt|;
 DECL|member|got_last
@@ -137,7 +133,7 @@ name|gboolean
 name|got_last
 decl_stmt|;
 DECL|member|last
-name|ScanConvertPoint
+name|GimpVector2
 name|last
 decl_stmt|;
 block|}
@@ -281,10 +277,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|convert_segment (ScanConverter * sc,gint x1,gint y1,gint x2,gint y2)
+DECL|function|convert_segment (GimpScanConvert * sc,gint x1,gint y1,gint x2,gint y2)
 name|convert_segment
 parameter_list|(
-name|ScanConverter
+name|GimpScanConvert
 modifier|*
 name|sc
 parameter_list|,
@@ -554,22 +550,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**************************************************************/
-end_comment
-
-begin_comment
-comment|/* Exported functions */
-end_comment
-
-begin_comment
-comment|/* Create a new scan conversion context */
+comment|/*  public functions  */
 end_comment
 
 begin_function
-name|ScanConverter
+name|GimpScanConvert
 modifier|*
-DECL|function|scan_converter_new (guint width,guint height,guint antialias)
-name|scan_converter_new
+DECL|function|gimp_scan_convert_new (guint width,guint height,guint antialias)
+name|gimp_scan_convert_new
 parameter_list|(
 name|guint
 name|width
@@ -581,7 +569,7 @@ name|guint
 name|antialias
 parameter_list|)
 block|{
-name|ScanConverter
+name|GimpScanConvert
 modifier|*
 name|sc
 decl_stmt|;
@@ -616,7 +604,7 @@ name|sc
 operator|=
 name|g_new0
 argument_list|(
-name|ScanConverter
+name|GimpScanConvert
 argument_list|,
 literal|1
 argument_list|)
@@ -661,10 +649,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|scan_converter_free (ScanConverter * sc)
-name|scan_converter_free
+DECL|function|gimp_scan_convert_free (GimpScanConvert * sc)
+name|gimp_scan_convert_free
 parameter_list|(
-name|ScanConverter
+name|GimpScanConvert
 modifier|*
 name|sc
 parameter_list|)
@@ -685,24 +673,24 @@ block|}
 end_function
 
 begin_comment
-comment|/* Add "npoints" from "pointlist" to the polygon currently being  * described by "scan_converter".  */
+comment|/* Add "n_points" from "points" to the polygon currently being  * described by "scan_converter".  */
 end_comment
 
 begin_function
 name|void
-DECL|function|scan_converter_add_points (ScanConverter * sc,guint npoints,ScanConvertPoint * pointlist)
-name|scan_converter_add_points
+DECL|function|gimp_scan_convert_add_points (GimpScanConvert * sc,guint n_points,GimpVector2 * points)
+name|gimp_scan_convert_add_points
 parameter_list|(
-name|ScanConverter
+name|GimpScanConvert
 modifier|*
 name|sc
 parameter_list|,
 name|guint
-name|npoints
+name|n_points
 parameter_list|,
-name|ScanConvertPoint
+name|GimpVector2
 modifier|*
-name|pointlist
+name|points
 parameter_list|)
 block|{
 name|gint
@@ -720,7 +708,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|pointlist
+name|points
 operator|!=
 name|NULL
 argument_list|)
@@ -738,7 +726,7 @@ name|sc
 operator|->
 name|got_first
 operator|&&
-name|npoints
+name|n_points
 operator|>
 literal|0
 condition|)
@@ -753,7 +741,7 @@ name|sc
 operator|->
 name|first
 operator|=
-name|pointlist
+name|points
 index|[
 literal|0
 index|]
@@ -766,7 +754,7 @@ name|sc
 operator|->
 name|got_last
 operator|&&
-name|npoints
+name|n_points
 operator|>
 literal|0
 condition|)
@@ -788,14 +776,14 @@ name|last
 operator|.
 name|y
 operator|,
-name|pointlist
+name|points
 index|[
 literal|0
 index|]
 operator|.
 name|x
 operator|,
-name|pointlist
+name|points
 index|[
 literal|0
 index|]
@@ -809,7 +797,7 @@ argument_list|(
 name|sc
 argument_list|,
 operator|(
-name|int
+name|gint
 operator|)
 name|sc
 operator|->
@@ -820,7 +808,7 @@ operator|*
 name|antialias
 argument_list|,
 operator|(
-name|int
+name|gint
 operator|)
 name|sc
 operator|->
@@ -831,9 +819,9 @@ operator|*
 name|antialias
 argument_list|,
 operator|(
-name|int
+name|gint
 operator|)
-name|pointlist
+name|points
 index|[
 literal|0
 index|]
@@ -843,9 +831,9 @@ operator|*
 name|antialias
 argument_list|,
 operator|(
-name|int
+name|gint
 operator|)
-name|pointlist
+name|points
 index|[
 literal|0
 index|]
@@ -865,7 +853,7 @@ init|;
 name|i
 operator|<
 operator|(
-name|npoints
+name|n_points
 operator|-
 literal|1
 operator|)
@@ -879,9 +867,9 @@ argument_list|(
 name|sc
 argument_list|,
 operator|(
-name|int
+name|gint
 operator|)
-name|pointlist
+name|points
 index|[
 name|i
 index|]
@@ -891,9 +879,9 @@ operator|*
 name|antialias
 argument_list|,
 operator|(
-name|int
+name|gint
 operator|)
-name|pointlist
+name|points
 index|[
 name|i
 index|]
@@ -903,9 +891,9 @@ operator|*
 name|antialias
 argument_list|,
 operator|(
-name|int
+name|gint
 operator|)
-name|pointlist
+name|points
 index|[
 name|i
 operator|+
@@ -917,9 +905,9 @@ operator|*
 name|antialias
 argument_list|,
 operator|(
-name|int
+name|gint
 operator|)
-name|pointlist
+name|points
 index|[
 name|i
 operator|+
@@ -937,32 +925,32 @@ argument_list|(
 operator|(
 literal|"[] %g,%g -> %g,%g\n"
 operator|,
-name|pointlist
+name|points
 index|[
 literal|0
 index|]
 operator|.
 name|x
 operator|,
-name|pointlist
+name|points
 index|[
 literal|0
 index|]
 operator|.
 name|y
 operator|,
-name|pointlist
+name|points
 index|[
-name|npoints
+name|n_points
 operator|-
 literal|1
 index|]
 operator|.
 name|x
 operator|,
-name|pointlist
+name|points
 index|[
-name|npoints
+name|n_points
 operator|-
 literal|1
 index|]
@@ -973,7 +961,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|npoints
+name|n_points
 operator|>
 literal|0
 condition|)
@@ -988,9 +976,9 @@ name|sc
 operator|->
 name|last
 operator|=
-name|pointlist
+name|points
 index|[
-name|npoints
+name|n_points
 operator|-
 literal|1
 index|]
@@ -1006,10 +994,10 @@ end_comment
 begin_function
 name|GimpChannel
 modifier|*
-DECL|function|scan_converter_to_channel (ScanConverter * sc,GimpImage * gimage)
-name|scan_converter_to_channel
+DECL|function|gimp_scan_convert_to_channel (GimpScanConvert * sc,GimpImage * gimage)
+name|gimp_scan_convert_to_channel
 parameter_list|(
-name|ScanConverter
+name|GimpScanConvert
 modifier|*
 name|sc
 parameter_list|,
@@ -1123,7 +1111,7 @@ argument_list|(
 name|sc
 argument_list|,
 operator|(
-name|int
+name|gint
 operator|)
 name|sc
 operator|->
@@ -1134,7 +1122,7 @@ operator|*
 name|antialias
 argument_list|,
 operator|(
-name|int
+name|gint
 operator|)
 name|sc
 operator|->
@@ -1145,7 +1133,7 @@ operator|*
 name|antialias
 argument_list|,
 operator|(
-name|int
+name|gint
 operator|)
 name|sc
 operator|->
@@ -1156,7 +1144,7 @@ operator|*
 name|antialias
 argument_list|,
 operator|(
-name|int
+name|gint
 operator|)
 name|sc
 operator|->

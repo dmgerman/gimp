@@ -60,25 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"errors.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"floating_sel.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"scan_convert.h"
+file|"core/gimpscanconvert.h"
 end_include
 
 begin_include
@@ -109,6 +91,24 @@ begin_include
 include|#
 directive|include
 file|"tool_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"errors.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"floating_sel.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gdisplay.h"
 end_include
 
 begin_include
@@ -291,11 +291,11 @@ modifier|*
 name|gimage
 parameter_list|,
 name|gint
-name|num_pts
+name|n_points
 parameter_list|,
-name|ScanConvertPoint
+name|GimpVector2
 modifier|*
-name|pts
+name|points
 parameter_list|,
 name|gint
 name|width
@@ -456,7 +456,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|free_select (GimpImage * gimage,gint num_pts,ScanConvertPoint * pts,SelectOps op,gboolean antialias,gboolean feather,gdouble feather_radius)
+DECL|function|free_select (GimpImage * gimage,gint n_points,GimpVector2 * points,SelectOps op,gboolean antialias,gboolean feather,gdouble feather_radius)
 name|free_select
 parameter_list|(
 name|GimpImage
@@ -464,11 +464,11 @@ modifier|*
 name|gimage
 parameter_list|,
 name|gint
-name|num_pts
+name|n_points
 parameter_list|,
-name|ScanConvertPoint
+name|GimpVector2
 modifier|*
-name|pts
+name|points
 parameter_list|,
 name|SelectOps
 name|op
@@ -512,9 +512,9 @@ name|scan_convert
 argument_list|(
 name|gimage
 argument_list|,
-name|num_pts
+name|n_points
 argument_list|,
-name|pts
+name|points
 argument_list|,
 name|gimage
 operator|->
@@ -990,9 +990,9 @@ name|GimpFreeSelectTool
 modifier|*
 name|free_sel
 decl_stmt|;
-name|ScanConvertPoint
+name|GimpVector2
 modifier|*
-name|pts
+name|points
 decl_stmt|;
 name|gint
 name|i
@@ -1084,11 +1084,11 @@ argument_list|()
 expr_stmt|;
 return|return;
 block|}
-name|pts
+name|points
 operator|=
 name|g_new
 argument_list|(
-name|ScanConvertPoint
+name|GimpVector2
 argument_list|,
 name|free_sel
 operator|->
@@ -1134,7 +1134,7 @@ operator|.
 name|y
 argument_list|,
 operator|&
-name|pts
+name|points
 index|[
 name|i
 index|]
@@ -1142,7 +1142,7 @@ operator|.
 name|x
 argument_list|,
 operator|&
-name|pts
+name|points
 index|[
 name|i
 index|]
@@ -1163,7 +1163,7 @@ name|free_sel
 operator|->
 name|num_points
 argument_list|,
-name|pts
+name|points
 argument_list|,
 name|GIMP_SELECTION_TOOL
 argument_list|(
@@ -1187,7 +1187,7 @@ argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|pts
+name|points
 argument_list|)
 expr_stmt|;
 name|gdisplays_flush
@@ -1590,7 +1590,7 @@ begin_function
 specifier|static
 name|GimpChannel
 modifier|*
-DECL|function|scan_convert (GimpImage * gimage,gint num_pts,ScanConvertPoint * pts,gint width,gint height,gboolean antialias)
+DECL|function|scan_convert (GimpImage * gimage,gint n_points,GimpVector2 * points,gint width,gint height,gboolean antialias)
 name|scan_convert
 parameter_list|(
 name|GimpImage
@@ -1598,11 +1598,11 @@ modifier|*
 name|gimage
 parameter_list|,
 name|gint
-name|num_pts
+name|n_points
 parameter_list|,
-name|ScanConvertPoint
+name|GimpVector2
 modifier|*
-name|pts
+name|points
 parameter_list|,
 name|gint
 name|width
@@ -1618,13 +1618,13 @@ name|GimpChannel
 modifier|*
 name|mask
 decl_stmt|;
-name|ScanConverter
+name|GimpScanConvert
 modifier|*
 name|sc
 decl_stmt|;
 name|sc
 operator|=
-name|scan_converter_new
+name|gimp_scan_convert_new
 argument_list|(
 name|width
 argument_list|,
@@ -1637,25 +1637,25 @@ else|:
 literal|1
 argument_list|)
 expr_stmt|;
-name|scan_converter_add_points
+name|gimp_scan_convert_add_points
 argument_list|(
 name|sc
 argument_list|,
-name|num_pts
+name|n_points
 argument_list|,
-name|pts
+name|points
 argument_list|)
 expr_stmt|;
 name|mask
 operator|=
-name|scan_converter_to_channel
+name|gimp_scan_convert_to_channel
 argument_list|(
 name|sc
 argument_list|,
 name|gimage
 argument_list|)
 expr_stmt|;
-name|scan_converter_free
+name|gimp_scan_convert_free
 argument_list|(
 name|sc
 argument_list|)

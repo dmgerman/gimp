@@ -158,11 +158,11 @@ modifier|*
 name|gimage
 parameter_list|,
 name|gint
-name|num_pts
+name|n_points
 parameter_list|,
-name|ScanConvertPoint
+name|GimpVector2
 modifier|*
-name|pts
+name|points
 parameter_list|,
 name|SelectOps
 name|op

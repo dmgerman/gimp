@@ -6,39 +6,22 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|SCAN_CONVERT_H
+name|__GIMP_SCAN_CONVERT_H__
 end_ifndef
 
 begin_define
-DECL|macro|SCAN_CONVERT_H
+DECL|macro|__GIMP_SCAN_CONVERT_H__
 define|#
 directive|define
-name|SCAN_CONVERT_H
+name|__GIMP_SCAN_CONVERT_H__
 end_define
 
-begin_struct
-DECL|struct|_ScanConvertPoint
-struct|struct
-name|_ScanConvertPoint
-block|{
-DECL|member|x
-name|gdouble
-name|x
-decl_stmt|;
-DECL|member|y
-name|gdouble
-name|y
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
 begin_typedef
-DECL|typedef|ScanConverter
+DECL|typedef|GimpScanConvert
 typedef|typedef
 name|struct
-name|ScanConverterPrivate
-name|ScanConverter
+name|_GimpScanConvert
+name|GimpScanConvert
 typedef|;
 end_typedef
 
@@ -47,9 +30,9 @@ comment|/* Create a new scan conversion context.  Set "antialias" to 1 for no  *
 end_comment
 
 begin_function_decl
-name|ScanConverter
+name|GimpScanConvert
 modifier|*
-name|scan_converter_new
+name|gimp_scan_convert_new
 parameter_list|(
 name|guint
 name|width
@@ -65,9 +48,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|scan_converter_free
+name|gimp_scan_convert_free
 parameter_list|(
-name|ScanConverter
+name|GimpScanConvert
 modifier|*
 name|scan_converter
 parameter_list|)
@@ -80,18 +63,18 @@ end_comment
 
 begin_function_decl
 name|void
-name|scan_converter_add_points
+name|gimp_scan_convert_add_points
 parameter_list|(
-name|ScanConverter
+name|GimpScanConvert
 modifier|*
 name|scan_converter
 parameter_list|,
 name|guint
-name|npoints
+name|n_points
 parameter_list|,
-name|ScanConvertPoint
+name|GimpVector2
 modifier|*
-name|pointlist
+name|points
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -103,9 +86,9 @@ end_comment
 begin_function_decl
 name|GimpChannel
 modifier|*
-name|scan_converter_to_channel
+name|gimp_scan_convert_to_channel
 parameter_list|(
-name|ScanConverter
+name|GimpScanConvert
 modifier|*
 name|scan_converter
 parameter_list|,
@@ -122,7 +105,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* SCAN_CONVERT_H */
+comment|/* __GIMP_SCAN_CONVERT_H__ */
 end_comment
 
 end_unit

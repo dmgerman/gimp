@@ -103,7 +103,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd06ce50103
+DECL|enum|__anon29057ab70103
 block|{
 DECL|enumerator|NORMAL_MODE
 name|NORMAL_MODE
@@ -186,7 +186,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd06ce50203
+DECL|enum|__anon29057ab70203
 block|{
 DECL|enumerator|NORMAL_CONVOL
 name|NORMAL_CONVOL
@@ -208,7 +208,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd06ce50303
+DECL|enum|__anon29057ab70303
 block|{
 DECL|enumerator|LINEAR_INTERPOLATION
 name|LINEAR_INTERPOLATION
@@ -227,7 +227,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd06ce50403
+DECL|enum|__anon29057ab70403
 block|{
 DECL|enumerator|VALUE_LUT
 name|VALUE_LUT
@@ -263,7 +263,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2bd06ce50503
+DECL|enum|__anon29057ab70503
 block|{
 DECL|enumerator|LIGHT_CHECKS
 name|LIGHT_CHECKS
@@ -304,7 +304,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2bd06ce50603
+DECL|enum|__anon29057ab70603
 block|{
 DECL|enumerator|SMALL_CHECKS
 name|SMALL_CHECKS
@@ -330,7 +330,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2bd06ce50703
+DECL|enum|__anon29057ab70703
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE
@@ -453,15 +453,6 @@ typedef|typedef
 name|struct
 name|_TileManager
 name|TileManager
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|ScanConvertPoint
-typedef|typedef
-name|struct
-name|_ScanConvertPoint
-name|ScanConvertPoint
 typedef|;
 end_typedef
 
