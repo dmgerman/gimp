@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298c38910103
+DECL|enum|__anon293062e10103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -3811,9 +3811,10 @@ end_comment
 begin_function
 name|ArtVpath
 modifier|*
-DECL|function|gimp_vectors_to_art_vpath (GimpVectors * vectors)
+DECL|function|gimp_vectors_to_art_vpath (const GimpVectors * vectors)
 name|gimp_vectors_to_art_vpath
 parameter_list|(
+specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -3849,11 +3850,6 @@ argument_list|,
 name|num_points
 argument_list|)
 expr_stmt|;
-name|gimp_vectors_freeze
-argument_list|(
-name|vectors
-argument_list|)
-expr_stmt|;
 comment|/* Get the list of Strokes in the vector, and create the equivalent    * ArtVpath node */
 for|for
 control|(
@@ -3887,12 +3883,6 @@ name|vec
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_vectors_thaw
-argument_list|(
-name|vectors
-argument_list|)
-expr_stmt|;
-comment|/* That's it - nothing else to see here */
 return|return
 name|vec
 return|;
