@@ -4018,10 +4018,8 @@ name|home_dir
 decl_stmt|;
 name|home_dir
 operator|=
-name|getenv
-argument_list|(
-literal|"HOME"
-argument_list|)
+name|g_get_home_dir
+argument_list|()
 expr_stmt|;
 if|if
 condition|(

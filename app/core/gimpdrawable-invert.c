@@ -82,20 +82,14 @@ end_function_decl
 
 begin_function
 name|void
-DECL|function|image_invert (gimage_ptr)
+DECL|function|image_invert (GImage * gimage)
 name|image_invert
 parameter_list|(
-name|gimage_ptr
-parameter_list|)
-name|void
-modifier|*
-name|gimage_ptr
-decl_stmt|;
-block|{
 name|GImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|)
+block|{
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -107,14 +101,6 @@ decl_stmt|;
 name|int
 name|nreturn_vals
 decl_stmt|;
-name|gimage
-operator|=
-operator|(
-name|GImage
-operator|*
-operator|)
-name|gimage_ptr
-expr_stmt|;
 name|drawable
 operator|=
 name|gimage_active_drawable
@@ -197,15 +183,13 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|invert (drawable)
+DECL|function|invert (GimpDrawable * drawable)
 name|invert
 parameter_list|(
-name|drawable
-parameter_list|)
 name|GimpDrawable
 modifier|*
 name|drawable
-decl_stmt|;
+parameter_list|)
 block|{
 name|PixelRegion
 name|srcPR

@@ -164,10 +164,8 @@ return|return;
 comment|/* Set local path to contain temp_path, where (supposedly)    * there may be working files.    */
 name|home
 operator|=
-name|getenv
-argument_list|(
-literal|"HOME"
-argument_list|)
+name|g_get_home_dir
+argument_list|()
 expr_stmt|;
 name|local_path
 operator|=

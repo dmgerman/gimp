@@ -19,6 +19,12 @@ end_define
 begin_include
 include|#
 directive|include
+file|"gimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"procedural_db.h"
 end_include
 
@@ -30,7 +36,7 @@ begin_function_decl
 name|void
 name|image_invert
 parameter_list|(
-name|void
+name|GImage
 modifier|*
 parameter_list|)
 function_decl|;

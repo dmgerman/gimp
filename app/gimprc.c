@@ -160,7 +160,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon299eb20c0103
+DECL|enum|__anon2a2a55bc0103
 typedef|typedef
 enum|enum
 block|{
@@ -2318,10 +2318,8 @@ argument_list|)
 expr_stmt|;
 name|env_home_dir
 operator|=
-name|getenv
-argument_list|(
-literal|"HOME"
-argument_list|)
+name|g_get_home_dir
+argument_list|()
 expr_stmt|;
 if|if
 condition|(
@@ -2729,10 +2727,8 @@ name|home_dir
 operator|=
 name|g_strdup
 argument_list|(
-name|getenv
-argument_list|(
-literal|"HOME"
-argument_list|)
+name|g_get_home_dir
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|g_snprintf
@@ -7607,10 +7603,8 @@ name|ut
 decl_stmt|;
 name|home
 operator|=
-name|getenv
-argument_list|(
-literal|"HOME"
-argument_list|)
+name|g_get_home_dir
+argument_list|()
 expr_stmt|;
 name|length
 operator|=

@@ -260,7 +260,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296c37e60103
+DECL|enum|__anon2c0106080103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -4722,10 +4722,8 @@ block|{
 comment|/*  Get the first path specified in the palette path list  */
 name|home
 operator|=
-name|getenv
-argument_list|(
-literal|"HOME"
-argument_list|)
+name|g_get_home_dir
+argument_list|()
 expr_stmt|;
 name|local_path
 operator|=

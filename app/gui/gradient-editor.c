@@ -28278,10 +28278,8 @@ comment|/* Perhaps this is not a good idea */
 comment|/* Get the first path specified in the list */
 name|home
 operator|=
-name|getenv
-argument_list|(
-literal|"HOME"
-argument_list|)
+name|g_get_home_dir
+argument_list|()
 expr_stmt|;
 name|local_path
 operator|=

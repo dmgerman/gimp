@@ -91,7 +91,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon29b2f8b30103
+DECL|enum|__anon2b08788f0103
 enum|enum
 block|{
 DECL|enumerator|TARGET_URI_LIST
@@ -831,10 +831,8 @@ condition|)
 block|{
 name|home_dir
 operator|=
-name|getenv
-argument_list|(
-literal|"HOME"
-argument_list|)
+name|g_get_home_dir
+argument_list|()
 expr_stmt|;
 comment|/* open persistant desktop file. */
 name|desktopfile
@@ -1201,10 +1199,8 @@ name|home_dir
 decl_stmt|;
 name|home_dir
 operator|=
-name|getenv
-argument_list|(
-literal|"HOME"
-argument_list|)
+name|g_get_home_dir
+argument_list|()
 expr_stmt|;
 comment|/* open persistant desktop file. */
 name|desktopfile
@@ -1921,10 +1917,8 @@ name|home_dir
 decl_stmt|;
 name|home_dir
 operator|=
-name|getenv
-argument_list|(
-literal|"HOME"
-argument_list|)
+name|g_get_home_dir
+argument_list|()
 expr_stmt|;
 comment|/* open persistant desktop file. */
 name|desktopfile

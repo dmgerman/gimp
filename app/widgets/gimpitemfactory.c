@@ -136,6 +136,7 @@ end_define
 begin_decl_stmt
 DECL|variable|dummyMRU
 specifier|static
+name|G_GNUC_UNUSED
 name|char
 modifier|*
 name|dummyMRU
@@ -442,7 +443,7 @@ literal|0
 block|,
 literal|"<Separator>"
 block|}
-block|, }
+block|}
 decl_stmt|;
 end_decl_stmt
 

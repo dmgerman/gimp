@@ -3818,9 +3818,14 @@ expr_stmt|;
 comment|/*  use the same plug-in for this image next time  */
 comment|/* DISABLED - gets stuck on first saved format... needs 	 attention --Adam */
 comment|/* gimage_set_save_proc(gimage, file_proc); */
+ifdef|#
+directive|ifdef
+name|__GNUC__
 warning|#
 directive|warning
 warning|CRUFTY THUMBNAIL SAVING
+endif|#
+directive|endif
 comment|/* If you have problems, blame Adam... not quite finished. */
 block|{
 name|TempBuf
