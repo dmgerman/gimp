@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpcolor/gimpcolor.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -83,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c37a7d30103
+DECL|enum|__anon2c6769120103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -493,7 +499,7 @@ name|GIMP_TYPE_COLOR_PICK_STATE
 argument_list|,
 name|GIMP_TYPE_IMAGE_TYPE
 argument_list|,
-name|GIMP_TYPE_COLOR
+name|GIMP_TYPE_RGB
 operator||
 name|G_SIGNAL_TYPE_STATIC_SCOPE
 argument_list|,

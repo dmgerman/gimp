@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpcolor/gimpcolor.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core-types.h"
 end_include
 
@@ -436,7 +442,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|GIMP_VALUE_HOLDS_COLOR
+name|GIMP_VALUE_HOLDS_RGB
 argument_list|(
 name|value
 argument_list|)

@@ -1289,7 +1289,7 @@ return|;
 block|}
 if|if
 condition|(
-name|GIMP_VALUE_HOLDS_COLOR
+name|GIMP_VALUE_HOLDS_RGB
 argument_list|(
 name|value
 argument_list|)
@@ -1297,7 +1297,7 @@ condition|)
 block|{
 name|GimpRGB
 modifier|*
-name|color
+name|rgb
 decl_stmt|;
 name|gchar
 name|buf
@@ -1308,7 +1308,7 @@ index|[
 name|G_ASCII_DTOSTR_BUF_SIZE
 index|]
 decl_stmt|;
-name|color
+name|rgb
 operator|=
 name|g_value_get_boxed
 argument_list|(
@@ -1326,7 +1326,7 @@ name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
 literal|"%f"
 argument_list|,
-name|color
+name|rgb
 operator|->
 name|r
 argument_list|)
@@ -1342,7 +1342,7 @@ name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
 literal|"%f"
 argument_list|,
-name|color
+name|rgb
 operator|->
 name|g
 argument_list|)
@@ -1358,7 +1358,7 @@ name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
 literal|"%f"
 argument_list|,
-name|color
+name|rgb
 operator|->
 name|b
 argument_list|)
@@ -1374,7 +1374,7 @@ name|G_ASCII_DTOSTR_BUF_SIZE
 argument_list|,
 literal|"%f"
 argument_list|,
-name|color
+name|rgb
 operator|->
 name|a
 argument_list|)

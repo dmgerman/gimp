@@ -1275,7 +1275,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon298749250103
+DECL|enum|__anon2bdbed700103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1289,7 +1289,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon298749250203
+DECL|enum|__anon2bdbed700203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -1860,7 +1860,7 @@ name|G_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|GIMP_TYPE_COLOR
+name|GIMP_TYPE_RGB
 operator||
 name|G_SIGNAL_TYPE_STATIC_SCOPE
 argument_list|)
@@ -1898,7 +1898,7 @@ name|G_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|GIMP_TYPE_COLOR
+name|GIMP_TYPE_RGB
 operator||
 name|G_SIGNAL_TYPE_STATIC_SCOPE
 argument_list|)
@@ -2545,7 +2545,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_COLOR
+name|GIMP_CONFIG_INSTALL_PROP_RGB
 argument_list|(
 name|object_class
 argument_list|,
@@ -2564,7 +2564,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_COLOR
+name|GIMP_CONFIG_INSTALL_PROP_RGB
 argument_list|(
 name|object_class
 argument_list|,

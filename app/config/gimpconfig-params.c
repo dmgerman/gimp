@@ -52,24 +52,24 @@ file|"gimpconfig-types.h"
 end_include
 
 begin_comment
-comment|/*  * GIMP_TYPE_PARAM_COLOR  */
+comment|/*  * GIMP_TYPE_PARAM_RGB  */
 end_comment
 
 begin_define
-DECL|macro|GIMP_PARAM_SPEC_COLOR (pspec)
+DECL|macro|GIMP_PARAM_SPEC_RGB (pspec)
 define|#
 directive|define
-name|GIMP_PARAM_SPEC_COLOR
+name|GIMP_PARAM_SPEC_RGB
 parameter_list|(
 name|pspec
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((pspec), GIMP_TYPE_PARAM_COLOR, GimpParamSpecColor))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((pspec), GIMP_TYPE_PARAM_RGB, GimpParamSpecRGB))
 end_define
 
 begin_function_decl
 specifier|static
 name|void
-name|gimp_param_color_class_init
+name|gimp_param_rgb_class_init
 parameter_list|(
 name|GParamSpecClass
 modifier|*
@@ -81,7 +81,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_param_color_init
+name|gimp_param_rgb_init
 parameter_list|(
 name|GParamSpec
 modifier|*
@@ -93,7 +93,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_param_color_set_default
+name|gimp_param_rgb_set_default
 parameter_list|(
 name|GParamSpec
 modifier|*
@@ -109,7 +109,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_param_color_validate
+name|gimp_param_rgb_validate
 parameter_list|(
 name|GParamSpec
 modifier|*
@@ -125,7 +125,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gint
-name|gimp_param_color_values_cmp
+name|gimp_param_rgb_values_cmp
 parameter_list|(
 name|GParamSpec
 modifier|*
@@ -145,18 +145,18 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|typedef|GimpParamSpecColor
+DECL|typedef|GimpParamSpecRGB
 typedef|typedef
 name|struct
-name|_GimpParamSpecColor
-name|GimpParamSpecColor
+name|_GimpParamSpecRGB
+name|GimpParamSpecRGB
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpParamSpecColor
+DECL|struct|_GimpParamSpecRGB
 struct|struct
-name|_GimpParamSpecColor
+name|_GimpParamSpecRGB
 block|{
 DECL|member|parent_instance
 name|GParamSpecBoxed
@@ -172,8 +172,8 @@ end_struct
 
 begin_function
 name|GType
-DECL|function|gimp_param_color_get_type (void)
-name|gimp_param_color_get_type
+DECL|function|gimp_param_rgb_get_type (void)
+name|gimp_param_rgb_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -208,7 +208,7 @@ block|,
 operator|(
 name|GClassInitFunc
 operator|)
-name|gimp_param_color_class_init
+name|gimp_param_rgb_class_init
 block|,
 name|NULL
 block|,
@@ -216,7 +216,7 @@ name|NULL
 block|,
 sizeof|sizeof
 argument_list|(
-name|GimpParamSpecColor
+name|GimpParamSpecRGB
 argument_list|)
 block|,
 literal|0
@@ -224,7 +224,7 @@ block|,
 operator|(
 name|GInstanceInitFunc
 operator|)
-name|gimp_param_color_init
+name|gimp_param_rgb_init
 block|}
 decl_stmt|;
 name|spec_type
@@ -233,7 +233,7 @@ name|g_type_register_static
 argument_list|(
 name|G_TYPE_PARAM_BOXED
 argument_list|,
-literal|"GimpParamColor"
+literal|"GimpParamRGB"
 argument_list|,
 operator|&
 name|type_info
@@ -251,8 +251,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_param_color_class_init (GParamSpecClass * class)
-name|gimp_param_color_class_init
+DECL|function|gimp_param_rgb_class_init (GParamSpecClass * class)
+name|gimp_param_rgb_class_init
 parameter_list|(
 name|GParamSpecClass
 modifier|*
@@ -263,25 +263,25 @@ name|class
 operator|->
 name|value_type
 operator|=
-name|GIMP_TYPE_COLOR
+name|GIMP_TYPE_RGB
 expr_stmt|;
 name|class
 operator|->
 name|value_set_default
 operator|=
-name|gimp_param_color_set_default
+name|gimp_param_rgb_set_default
 expr_stmt|;
 name|class
 operator|->
 name|value_validate
 operator|=
-name|gimp_param_color_validate
+name|gimp_param_rgb_validate
 expr_stmt|;
 name|class
 operator|->
 name|values_cmp
 operator|=
-name|gimp_param_color_values_cmp
+name|gimp_param_rgb_values_cmp
 expr_stmt|;
 block|}
 end_function
@@ -289,19 +289,19 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_param_color_init (GParamSpec * pspec)
-name|gimp_param_color_init
+DECL|function|gimp_param_rgb_init (GParamSpec * pspec)
+name|gimp_param_rgb_init
 parameter_list|(
 name|GParamSpec
 modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpParamSpecColor
+name|GimpParamSpecRGB
 modifier|*
 name|cspec
 init|=
-name|GIMP_PARAM_SPEC_COLOR
+name|GIMP_PARAM_SPEC_RGB
 argument_list|(
 name|pspec
 argument_list|)
@@ -328,8 +328,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_param_color_set_default (GParamSpec * pspec,GValue * value)
-name|gimp_param_color_set_default
+DECL|function|gimp_param_rgb_set_default (GParamSpec * pspec,GValue * value)
+name|gimp_param_rgb_set_default
 parameter_list|(
 name|GParamSpec
 modifier|*
@@ -340,11 +340,11 @@ modifier|*
 name|value
 parameter_list|)
 block|{
-name|GimpParamSpecColor
+name|GimpParamSpecRGB
 modifier|*
 name|cspec
 init|=
-name|GIMP_PARAM_SPEC_COLOR
+name|GIMP_PARAM_SPEC_RGB
 argument_list|(
 name|pspec
 argument_list|)
@@ -365,8 +365,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_param_color_validate (GParamSpec * pspec,GValue * value)
-name|gimp_param_color_validate
+DECL|function|gimp_param_rgb_validate (GParamSpec * pspec,GValue * value)
+name|gimp_param_rgb_validate
 parameter_list|(
 name|GParamSpec
 modifier|*
@@ -379,9 +379,9 @@ parameter_list|)
 block|{
 name|GimpRGB
 modifier|*
-name|color
+name|rgb
 decl_stmt|;
-name|color
+name|rgb
 operator|=
 name|value
 operator|->
@@ -394,7 +394,7 @@ name|v_pointer
 expr_stmt|;
 if|if
 condition|(
-name|color
+name|rgb
 condition|)
 block|{
 name|GimpRGB
@@ -403,11 +403,11 @@ decl_stmt|;
 name|oval
 operator|=
 operator|*
-name|color
+name|rgb
 expr_stmt|;
 name|gimp_rgb_clamp
 argument_list|(
-name|color
+name|rgb
 argument_list|)
 expr_stmt|;
 return|return
@@ -416,7 +416,7 @@ name|oval
 operator|.
 name|r
 operator|!=
-name|color
+name|rgb
 operator|->
 name|r
 operator|||
@@ -424,7 +424,7 @@ name|oval
 operator|.
 name|g
 operator|!=
-name|color
+name|rgb
 operator|->
 name|g
 operator|||
@@ -432,7 +432,7 @@ name|oval
 operator|.
 name|b
 operator|!=
-name|color
+name|rgb
 operator|->
 name|b
 operator|||
@@ -440,7 +440,7 @@ name|oval
 operator|.
 name|a
 operator|!=
-name|color
+name|rgb
 operator|->
 name|a
 operator|)
@@ -455,8 +455,8 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|gimp_param_color_values_cmp (GParamSpec * pspec,const GValue * value1,const GValue * value2)
-name|gimp_param_color_values_cmp
+DECL|function|gimp_param_rgb_values_cmp (GParamSpec * pspec,const GValue * value1,const GValue * value2)
+name|gimp_param_rgb_values_cmp
 parameter_list|(
 name|GParamSpec
 modifier|*
@@ -475,13 +475,13 @@ parameter_list|)
 block|{
 name|GimpRGB
 modifier|*
-name|color1
+name|rgb1
 decl_stmt|;
 name|GimpRGB
 modifier|*
-name|color2
+name|rgb2
 decl_stmt|;
-name|color1
+name|rgb1
 operator|=
 name|value1
 operator|->
@@ -492,7 +492,7 @@ index|]
 operator|.
 name|v_pointer
 expr_stmt|;
-name|color2
+name|rgb2
 operator|=
 name|value2
 operator|->
@@ -507,10 +507,10 @@ comment|/*  try to return at least *something*, it's useless anyway...  */
 if|if
 condition|(
 operator|!
-name|color1
+name|rgb1
 condition|)
 return|return
-name|color2
+name|rgb2
 operator|!=
 name|NULL
 condition|?
@@ -523,10 +523,10 @@ elseif|else
 if|if
 condition|(
 operator|!
-name|color2
+name|rgb2
 condition|)
 return|return
-name|color1
+name|rgb1
 operator|!=
 name|NULL
 return|;
@@ -539,7 +539,7 @@ name|int2
 decl_stmt|;
 name|gimp_rgba_get_uchar
 argument_list|(
-name|color1
+name|rgb1
 argument_list|,
 operator|(
 operator|(
@@ -588,7 +588,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_rgba_get_uchar
 argument_list|(
-name|color2
+name|rgb2
 argument_list|,
 operator|(
 operator|(
@@ -647,8 +647,8 @@ end_function
 begin_function
 name|GParamSpec
 modifier|*
-DECL|function|gimp_param_spec_color (const gchar * name,const gchar * nick,const gchar * blurb,const GimpRGB * default_value,GParamFlags flags)
-name|gimp_param_spec_color
+DECL|function|gimp_param_spec_rgb (const gchar * name,const gchar * nick,const gchar * blurb,const GimpRGB * default_value,GParamFlags flags)
+name|gimp_param_spec_rgb
 parameter_list|(
 specifier|const
 name|gchar
@@ -674,7 +674,7 @@ name|GParamFlags
 name|flags
 parameter_list|)
 block|{
-name|GimpParamSpecColor
+name|GimpParamSpecRGB
 modifier|*
 name|cspec
 decl_stmt|;
@@ -691,7 +691,7 @@ name|cspec
 operator|=
 name|g_param_spec_internal
 argument_list|(
-name|GIMP_TYPE_PARAM_COLOR
+name|GIMP_TYPE_PARAM_RGB
 argument_list|,
 name|name
 argument_list|,

@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpcolor/gimpcolor.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpmath/gimpmath.h"
 end_include
 
@@ -9580,7 +9586,7 @@ name|config
 argument_list|,
 name|property_name
 argument_list|,
-name|GIMP_TYPE_PARAM_COLOR
+name|GIMP_TYPE_PARAM_RGB
 argument_list|,
 name|G_STRFUNC
 argument_list|)
@@ -9933,7 +9939,7 @@ name|config
 argument_list|,
 name|property_name
 argument_list|,
-name|GIMP_TYPE_PARAM_COLOR
+name|GIMP_TYPE_PARAM_RGB
 argument_list|,
 name|G_STRFUNC
 argument_list|)

@@ -227,7 +227,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|GTokenType
-name|gimp_config_deserialize_color
+name|gimp_config_deserialize_rgb
 parameter_list|(
 name|GValue
 modifier|*
@@ -1226,11 +1226,11 @@ name|prop_spec
 operator|->
 name|value_type
 operator|==
-name|GIMP_TYPE_COLOR
+name|GIMP_TYPE_RGB
 condition|)
 block|{
 return|return
-name|gimp_config_deserialize_color
+name|gimp_config_deserialize_rgb
 argument_list|(
 name|value
 argument_list|,
@@ -2227,8 +2227,8 @@ end_function
 begin_function
 specifier|static
 name|GTokenType
-DECL|function|gimp_config_deserialize_color (GValue * value,GParamSpec * prop_spec,GScanner * scanner)
-name|gimp_config_deserialize_color
+DECL|function|gimp_config_deserialize_rgb (GValue * value,GParamSpec * prop_spec,GScanner * scanner)
+name|gimp_config_deserialize_rgb
 parameter_list|(
 name|GValue
 modifier|*
@@ -2244,7 +2244,7 @@ name|scanner
 parameter_list|)
 block|{
 name|GimpRGB
-name|color
+name|rgb
 decl_stmt|;
 if|if
 condition|(
@@ -2254,7 +2254,7 @@ argument_list|(
 name|scanner
 argument_list|,
 operator|&
-name|color
+name|rgb
 argument_list|)
 condition|)
 return|return
@@ -2265,7 +2265,7 @@ argument_list|(
 name|value
 argument_list|,
 operator|&
-name|color
+name|rgb
 argument_list|)
 expr_stmt|;
 return|return

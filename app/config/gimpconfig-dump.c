@@ -50,6 +50,12 @@ directive|include
 file|"libgimpbase/gimpbase.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimpcolor/gimpcolor.h"
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -910,7 +916,7 @@ name|g_type_is_a
 argument_list|(
 name|type
 argument_list|,
-name|GIMP_TYPE_COLOR
+name|GIMP_TYPE_RGB
 argument_list|)
 condition|)
 block|{

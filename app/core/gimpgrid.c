@@ -75,7 +75,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9a733b0103
+DECL|enum|__anon2c0f72fb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -404,7 +404,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_COLOR
+name|GIMP_CONFIG_INSTALL_PROP_RGB
 argument_list|(
 name|object_class
 argument_list|,
@@ -423,7 +423,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_COLOR
+name|GIMP_CONFIG_INSTALL_PROP_RGB
 argument_list|(
 name|object_class
 argument_list|,

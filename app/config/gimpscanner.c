@@ -124,7 +124,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29af52410108
+DECL|struct|__anon2aa9db0e0108
 block|{
 DECL|member|fd
 name|gint
@@ -1083,7 +1083,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon29af52410203
+DECL|enum|__anon2aa9db0e0203
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB

@@ -77,31 +77,31 @@ value|(G_PARAM_READWRITE | \                                  G_PARAM_CONSTRUCT 
 end_define
 
 begin_comment
-comment|/*  * GIMP_TYPE_PARAM_COLOR  */
+comment|/*  * GIMP_TYPE_PARAM_RGB  */
 end_comment
 
 begin_define
-DECL|macro|GIMP_TYPE_PARAM_COLOR
+DECL|macro|GIMP_TYPE_PARAM_RGB
 define|#
 directive|define
-name|GIMP_TYPE_PARAM_COLOR
-value|(gimp_param_color_get_type ())
+name|GIMP_TYPE_PARAM_RGB
+value|(gimp_param_rgb_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_PARAM_SPEC_COLOR (pspec)
+DECL|macro|GIMP_IS_PARAM_SPEC_RGB (pspec)
 define|#
 directive|define
-name|GIMP_IS_PARAM_SPEC_COLOR
+name|GIMP_IS_PARAM_SPEC_RGB
 parameter_list|(
 name|pspec
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_COLOR))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_RGB))
 end_define
 
 begin_decl_stmt
 name|GType
-name|gimp_param_color_get_type
+name|gimp_param_rgb_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -112,7 +112,7 @@ end_decl_stmt
 begin_function_decl
 name|GParamSpec
 modifier|*
-name|gimp_param_spec_color
+name|gimp_param_spec_rgb
 parameter_list|(
 specifier|const
 name|gchar
@@ -279,7 +279,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29456b3f0103
+DECL|enum|__anon28d975530103
 block|{
 DECL|enumerator|GIMP_PARAM_PATH_FILE
 name|GIMP_PARAM_PATH_FILE
@@ -463,18 +463,18 @@ end_define
 begin_define
 define|#
 directive|define
-name|GIMP_CONFIG_INSTALL_PROP_COLOR
+name|GIMP_CONFIG_INSTALL_PROP_RGB
 parameter_list|(
 name|class
 parameter_list|,
 name|id
 parameter_list|,\
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_COLOR (class,id,\\\nname,blurb,default,flags)
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_RGB (class,id,\\\nname,blurb,default,flags)
 name|name
 parameter_list|,
 name|blurb
 parameter_list|,
-define|default, flags)\   g_object_class_install_property (class, id,\                                    gimp_param_spec_color (name, NULL, blurb,\                                    default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
+define|default, flags)\   g_object_class_install_property (class, id,\                                    gimp_param_spec_rgb (name, NULL, blurb,\                                    default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
 end_define
 
 begin_define
