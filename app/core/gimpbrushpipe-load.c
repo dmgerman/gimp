@@ -2191,6 +2191,13 @@ name|pattern
 operator|->
 name|mask
 expr_stmt|;
+name|pattern
+operator|->
+name|mask
+operator|=
+name|NULL
+expr_stmt|;
+comment|/* #8150: mask now belongs to pixmap */
 name|g_free
 argument_list|(
 name|pattern
@@ -2198,6 +2205,13 @@ operator|->
 name|name
 argument_list|)
 expr_stmt|;
+name|pattern
+operator|->
+name|name
+operator|=
+name|NULL
+expr_stmt|;
+comment|/* #8150: name no longer exists      */
 name|pipe
 operator|->
 name|nbrushes
