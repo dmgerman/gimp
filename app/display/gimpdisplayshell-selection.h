@@ -95,12 +95,6 @@ name|guint
 name|timeout_id
 decl_stmt|;
 comment|/*  timer for successive draws        */
-DECL|member|cycle_pix
-name|GdkPixmap
-modifier|*
-name|cycle_pix
-decl_stmt|;
-comment|/*  cycling pixmap                    */
 DECL|member|points_in
 name|GdkPoint
 modifier|*
