@@ -2627,9 +2627,9 @@ argument_list|(
 name|old_table
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_scrolled_window_add_with_viewport
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_SCROLLED_WINDOW
 argument_list|(
 name|dbbrowser
 operator|->
