@@ -1213,9 +1213,9 @@ argument_list|)
 argument_list|,
 name|GIMP_HELP_TOOL_OPTIONS_DIALOG
 argument_list|,
-name|tool_options_menu_setup
+name|NULL
 argument_list|,
-name|tool_options_menu_update
+name|NULL
 argument_list|,
 name|TRUE
 argument_list|,
@@ -1238,7 +1238,7 @@ literal|"/tool-options-popup"
 argument_list|,
 literal|"tool-options-menu.xml"
 argument_list|,
-name|NULL
+name|tool_options_menu_setup
 argument_list|,
 name|NULL
 argument_list|)

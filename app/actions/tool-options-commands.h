@@ -18,7 +18,7 @@ end_define
 
 begin_function_decl
 name|void
-name|tool_options_save_to_cmd_callback
+name|tool_options_save_new_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -32,11 +32,14 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|tool_options_save_new_cmd_callback
+name|tool_options_save_to_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
 name|action
+parameter_list|,
+name|gint
+name|value
 parameter_list|,
 name|gpointer
 name|data
@@ -52,6 +55,9 @@ name|GtkAction
 modifier|*
 name|action
 parameter_list|,
+name|gint
+name|value
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -66,6 +72,9 @@ name|GtkAction
 modifier|*
 name|action
 parameter_list|,
+name|gint
+name|value
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -79,6 +88,9 @@ parameter_list|(
 name|GtkAction
 modifier|*
 name|action
+parameter_list|,
+name|gint
+name|value
 parameter_list|,
 name|gpointer
 name|data
