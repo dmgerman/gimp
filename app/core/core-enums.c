@@ -964,7 +964,7 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_LINEAR
+name|GIMP_GRADIENT_LINEAR
 block|,
 name|N_
 argument_list|(
@@ -975,7 +975,7 @@ literal|"linear"
 block|}
 block|,
 block|{
-name|GIMP_BILINEAR
+name|GIMP_GRADIENT_BILINEAR
 block|,
 name|N_
 argument_list|(
@@ -986,7 +986,7 @@ literal|"bilinear"
 block|}
 block|,
 block|{
-name|GIMP_RADIAL
+name|GIMP_GRADIENT_RADIAL
 block|,
 name|N_
 argument_list|(
@@ -997,7 +997,7 @@ literal|"radial"
 block|}
 block|,
 block|{
-name|GIMP_SQUARE
+name|GIMP_GRADIENT_SQUARE
 block|,
 name|N_
 argument_list|(
@@ -1008,7 +1008,7 @@ literal|"square"
 block|}
 block|,
 block|{
-name|GIMP_CONICAL_SYMMETRIC
+name|GIMP_GRADIENT_CONICAL_SYMMETRIC
 block|,
 name|N_
 argument_list|(
@@ -1019,7 +1019,7 @@ literal|"conical-symmetric"
 block|}
 block|,
 block|{
-name|GIMP_CONICAL_ASYMMETRIC
+name|GIMP_GRADIENT_CONICAL_ASYMMETRIC
 block|,
 name|N_
 argument_list|(
@@ -1030,7 +1030,7 @@ literal|"conical-asymmetric"
 block|}
 block|,
 block|{
-name|GIMP_SHAPEBURST_ANGULAR
+name|GIMP_GRADIENT_SHAPEBURST_ANGULAR
 block|,
 name|N_
 argument_list|(
@@ -1041,7 +1041,7 @@ literal|"shapeburst-angular"
 block|}
 block|,
 block|{
-name|GIMP_SHAPEBURST_SPHERICAL
+name|GIMP_GRADIENT_SHAPEBURST_SPHERICAL
 block|,
 name|N_
 argument_list|(
@@ -1052,7 +1052,7 @@ literal|"shapeburst-spherical"
 block|}
 block|,
 block|{
-name|GIMP_SHAPEBURST_DIMPLED
+name|GIMP_GRADIENT_SHAPEBURST_DIMPLED
 block|,
 name|N_
 argument_list|(
@@ -1063,7 +1063,7 @@ literal|"shapeburst-dimpled"
 block|}
 block|,
 block|{
-name|GIMP_SPIRAL_CLOCKWISE
+name|GIMP_GRADIENT_SPIRAL_CLOCKWISE
 block|,
 name|N_
 argument_list|(
@@ -1074,7 +1074,7 @@ literal|"spiral-clockwise"
 block|}
 block|,
 block|{
-name|GIMP_SPIRAL_ANTICLOCKWISE
+name|GIMP_GRADIENT_SPIRAL_ANTICLOCKWISE
 block|,
 name|N_
 argument_list|(

@@ -142,7 +142,7 @@ directive|define
 name|gimp_pattern_select_widget_close_popup
 value|gimp_pattern_select_widget_close
 name|enum
-DECL|enum|__anon2b19a6400103
+DECL|enum|__anon2af47a750103
 type|{
 DECL|enumerator|GIMP_WHITE_MASK
 name|GIMP_WHITE_MASK
@@ -174,7 +174,7 @@ end_decl_stmt
 begin_enum
 unit|};
 enum|enum
-DECL|enum|__anon2b19a6400203
+DECL|enum|__anon2af47a750203
 block|{
 DECL|enumerator|GIMP_ADD
 name|GIMP_ADD
@@ -201,7 +201,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b19a6400303
+DECL|enum|__anon2af47a750303
 block|{
 DECL|enumerator|GIMP_FG_BG_RGB
 name|GIMP_FG_BG_RGB
@@ -228,7 +228,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b19a6400403
+DECL|enum|__anon2af47a750403
 block|{
 DECL|enumerator|GIMP_FG_IMAGE_FILL
 name|GIMP_FG_IMAGE_FILL
@@ -260,7 +260,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b19a6400503
+DECL|enum|__anon2af47a750503
 block|{
 DECL|enumerator|GIMP_APPLY
 name|GIMP_APPLY
@@ -277,7 +277,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b19a6400603
+DECL|enum|__anon2af47a750603
 block|{
 DECL|enumerator|GIMP_HARD
 name|GIMP_HARD
@@ -294,7 +294,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b19a6400703
+DECL|enum|__anon2af47a750703
 block|{
 DECL|enumerator|GIMP_CONTINUOUS
 name|GIMP_CONTINUOUS
@@ -311,7 +311,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b19a6400803
+DECL|enum|__anon2af47a750803
 block|{
 DECL|enumerator|GIMP_HORIZONTAL
 name|GIMP_HORIZONTAL
@@ -327,6 +327,68 @@ DECL|enumerator|GIMP_UNKNOWN
 name|GIMP_UNKNOWN
 init|=
 name|GIMP_ORIENTATION_UNKNOWN
+block|}
+enum|;
+end_enum
+
+begin_enum
+enum|enum
+DECL|enum|__anon2af47a750903
+block|{
+DECL|enumerator|GIMP_LINEAR
+name|GIMP_LINEAR
+init|=
+name|GIMP_GRADIENT_LINEAR
+block|,
+DECL|enumerator|GIMP_BILNEAR
+name|GIMP_BILNEAR
+init|=
+name|GIMP_GRADIENT_BILINEAR
+block|,
+DECL|enumerator|GIMP_RADIAL
+name|GIMP_RADIAL
+init|=
+name|GIMP_GRADIENT_RADIAL
+block|,
+DECL|enumerator|GIMP_SQUARE
+name|GIMP_SQUARE
+init|=
+name|GIMP_GRADIENT_SQUARE
+block|,
+DECL|enumerator|GIMP_CONICAL_SYMMETRIC
+name|GIMP_CONICAL_SYMMETRIC
+init|=
+name|GIMP_GRADIENT_CONICAL_SYMMETRIC
+block|,
+DECL|enumerator|GIMP_CONICAL_ASYMMETRIC
+name|GIMP_CONICAL_ASYMMETRIC
+init|=
+name|GIMP_GRADIENT_CONICAL_ASYMMETRIC
+block|,
+DECL|enumerator|GIMP_SHAPEBURST_ANGULAR
+name|GIMP_SHAPEBURST_ANGULAR
+init|=
+name|GIMP_GRADIENT_SHAPEBURST_ANGULAR
+block|,
+DECL|enumerator|GIMP_SHAPEBURST_SPHERICAL
+name|GIMP_SHAPEBURST_SPHERICAL
+init|=
+name|GIMP_GRADIENT_SHAPEBURST_SPHERICAL
+block|,
+DECL|enumerator|GIMP_SHAPEBURST_DIMPLED
+name|GIMP_SHAPEBURST_DIMPLED
+init|=
+name|GIMP_GRADIENT_SHAPEBURST_DIMPLED
+block|,
+DECL|enumerator|GIMP_SPIRAL_CLOCKWISE
+name|GIMP_SPIRAL_CLOCKWISE
+init|=
+name|GIMP_GRADIENT_SPIRAL_CLOCKWISE
+block|,
+DECL|enumerator|GIMP_SPIRAL_ANTICLOCKWISE
+name|GIMP_SPIRAL_ANTICLOCKWISE
+init|=
+name|GIMP_GRADIENT_SPIRAL_ANTICLOCKWISE
 block|}
 enum|;
 end_enum

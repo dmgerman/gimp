@@ -805,7 +805,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"LINEAR"
+literal|"GRADIENT-LINEAR"
 argument_list|)
 argument_list|,
 name|flocons
@@ -820,7 +820,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"BILINEAR"
+literal|"GRADIENT-BILINEAR"
 argument_list|)
 argument_list|,
 name|flocons
@@ -835,7 +835,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"RADIAL"
+literal|"GRADIENT-RADIAL"
 argument_list|)
 argument_list|,
 name|flocons
@@ -850,7 +850,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"SQUARE"
+literal|"GRADIENT-SQUARE"
 argument_list|)
 argument_list|,
 name|flocons
@@ -865,7 +865,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"CONICAL-SYMMETRIC"
+literal|"GRADIENT-CONICAL-SYMMETRIC"
 argument_list|)
 argument_list|,
 name|flocons
@@ -880,7 +880,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"CONICAL-ASYMMETRIC"
+literal|"GRADIENT-CONICAL-ASYMMETRIC"
 argument_list|)
 argument_list|,
 name|flocons
@@ -895,7 +895,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"SHAPEBURST-ANGULAR"
+literal|"GRADIENT-SHAPEBURST-ANGULAR"
 argument_list|)
 argument_list|,
 name|flocons
@@ -910,7 +910,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"SHAPEBURST-SPHERICAL"
+literal|"GRADIENT-SHAPEBURST-SPHERICAL"
 argument_list|)
 argument_list|,
 name|flocons
@@ -925,7 +925,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"SHAPEBURST-DIMPLED"
+literal|"GRADIENT-SHAPEBURST-DIMPLED"
 argument_list|)
 argument_list|,
 name|flocons
@@ -940,7 +940,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"SPIRAL-CLOCKWISE"
+literal|"GRADIENT-SPIRAL-CLOCKWISE"
 argument_list|)
 argument_list|,
 name|flocons
@@ -955,7 +955,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"SPIRAL-ANTICLOCKWISE"
+literal|"GRADIENT-SPIRAL-ANTICLOCKWISE"
 argument_list|)
 argument_list|,
 name|flocons

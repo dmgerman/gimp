@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4e880c0103
+DECL|enum|__anon2bd42c640103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -370,7 +370,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_GRADIENT_TYPE
 argument_list|,
-name|GIMP_LINEAR
+name|GIMP_GRADIENT_LINEAR
 argument_list|,
 literal|0
 argument_list|)
