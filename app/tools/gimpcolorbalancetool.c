@@ -584,6 +584,21 @@ name|shell_name
 operator|=
 literal|"color_balance"
 expr_stmt|;
+name|image_map_tool
+operator|->
+name|shell_desc
+operator|=
+name|_
+argument_list|(
+literal|"Adjust Color Balance"
+argument_list|)
+expr_stmt|;
+name|image_map_tool
+operator|->
+name|stock_id
+operator|=
+name|GIMP_STOCK_TOOL_COLOR_BALANCE
+expr_stmt|;
 name|cb_tool
 operator|->
 name|color_balance
@@ -699,8 +714,26 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|gdisp
-operator|&&
+condition|)
+block|{
+name|GIMP_TOOL_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|initialize
+argument_list|(
+name|tool
+argument_list|,
+name|gdisp
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
+if|if
+condition|(
 operator|!
 name|gimp_drawable_is_rgb
 argument_list|(
@@ -1543,11 +1576,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Preserve Luminosity"
+literal|"Preserve _Luminosity"
 argument_list|)
 argument_list|)
 expr_stmt|;
