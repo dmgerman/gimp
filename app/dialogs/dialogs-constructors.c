@@ -2707,54 +2707,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
-name|GimpVectors
-modifier|*
-DECL|function|gimp_vectors_copy (const GimpVectors * vectors,GType new_type,gboolean add_alpha)
-name|gimp_vectors_copy
-parameter_list|(
-specifier|const
-name|GimpVectors
-modifier|*
-name|vectors
-parameter_list|,
-name|GType
-name|new_type
-parameter_list|,
-name|gboolean
-name|add_alpha
-comment|/* unused */
-parameter_list|)
-block|{
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_VECTORS
-argument_list|(
-name|vectors
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|g_type_is_a
-argument_list|(
-name|new_type
-argument_list|,
-name|GIMP_TYPE_VECTORS
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-return|return
-name|NULL
-return|;
-block|}
-end_function
-
-begin_function
 name|GtkWidget
 modifier|*
 DECL|function|dialogs_vectors_list_view_new (GimpDialogFactory * factory,GimpContext * context,gint preview_size)

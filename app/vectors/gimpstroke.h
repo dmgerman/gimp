@@ -16,6 +16,12 @@ directive|define
 name|__GIMP_STROKE_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"core/gimpobject.h"
+end_include
+
 begin_define
 DECL|macro|GIMP_TYPE_STROKE
 define|#
@@ -85,7 +91,7 @@ struct|struct
 name|_GimpStroke
 block|{
 DECL|member|parent_instance
-name|GObject
+name|GimpObject
 name|parent_instance
 decl_stmt|;
 DECL|member|anchors
@@ -114,7 +120,7 @@ struct|struct
 name|_GimpStrokeClass
 block|{
 DECL|member|parent_class
-name|GObjectClass
+name|GimpObjectClass
 name|parent_class
 decl_stmt|;
 DECL|member|changed

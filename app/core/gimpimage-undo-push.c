@@ -162,6 +162,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"vectors/gimpvectors.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools/gimpbycolorselecttool.h"
 end_include
 
@@ -251,7 +257,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af3a8720103
+DECL|enum|__anon2a35a60e0103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -10706,9 +10712,18 @@ name|vmu
 operator|->
 name|undo_vectors
 operator|=
-name|NULL
+name|gimp_vectors_copy
+argument_list|(
+name|vectors
+argument_list|,
+name|G_TYPE_FROM_INSTANCE
+argument_list|(
+name|vectors
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
 expr_stmt|;
-comment|/* gimp_vectors_duplicate (vectors); */
 return|return
 name|TRUE
 return|;
@@ -10765,11 +10780,36 @@ name|vmu
 operator|->
 name|undo_vectors
 operator|=
-name|NULL
+name|gimp_vectors_copy
+argument_list|(
+name|vmu
+operator|->
+name|vectors
+argument_list|,
+name|G_TYPE_FROM_INSTANCE
+argument_list|(
+name|vmu
+operator|->
+name|vectors
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
 expr_stmt|;
-comment|/* gimp_vectors_duplicate (vmu->vectors); */
-comment|/* gimp_vectors_copy_strokes (temp, vmu->vectors); */
-comment|/* g_object_unref (temp); */
+name|gimp_vectors_copy_strokes
+argument_list|(
+name|temp
+argument_list|,
+name|vmu
+operator|->
+name|vectors
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|temp
+argument_list|)
+expr_stmt|;
 return|return
 name|TRUE
 return|;
@@ -10804,7 +10844,13 @@ operator|*
 operator|)
 name|vmu_ptr
 expr_stmt|;
-comment|/* g_object_unref (vmu->undo_vectors); */
+name|g_object_unref
+argument_list|(
+name|vmu
+operator|->
+name|undo_vectors
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|vmu
