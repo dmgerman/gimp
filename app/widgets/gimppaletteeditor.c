@@ -294,7 +294,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e46be10103
+DECL|enum|__anon2be449960103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -7794,6 +7794,8 @@ argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 literal|"dialogs/palette_editor/delete_palette.html"
+argument_list|,
+name|TRUE
 argument_list|,
 name|str
 argument_list|,

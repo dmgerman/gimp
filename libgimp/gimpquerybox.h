@@ -366,6 +366,9 @@ name|gchar
 modifier|*
 name|help_data
 parameter_list|,
+name|gboolean
+name|eek
+parameter_list|,
 name|gchar
 modifier|*
 name|message
