@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29718eb80103
+DECL|enum|__anon2b7243110103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -484,15 +484,19 @@ argument_list|()
 argument_list|)
 argument_list|)
 decl_stmt|;
+return|return
+operator|(
 name|gimp_brush_load
 argument_list|(
 name|brush
 argument_list|,
 name|filename
 argument_list|)
-expr_stmt|;
-return|return
+condition|?
 name|brush
+else|:
+name|NULL
+operator|)
 return|;
 block|}
 end_function
@@ -741,7 +745,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_brush_load (GimpBrush * brush,gchar * filename)
 name|gimp_brush_load
 parameter_list|(
@@ -788,8 +792,13 @@ argument_list|(
 name|brush
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+name|FALSE
+return|;
 block|}
+if|if
+condition|(
+operator|!
 name|gimp_brush_load_brush
 argument_list|(
 name|brush
@@ -798,7 +807,10 @@ name|fp
 argument_list|,
 name|filename
 argument_list|)
-expr_stmt|;
+condition|)
+return|return
+name|FALSE
+return|;
 comment|/*  Clean up  */
 name|fclose
 argument_list|(
@@ -817,6 +829,9 @@ operator|->
 name|mask
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 

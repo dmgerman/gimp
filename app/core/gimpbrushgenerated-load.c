@@ -449,8 +449,8 @@ argument_list|,
 name|fp
 argument_list|)
 expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
+if|if
+condition|(
 name|strncmp
 argument_list|(
 name|string
@@ -459,12 +459,12 @@ literal|"GIMP-VBR"
 argument_list|,
 literal|8
 argument_list|)
-operator|==
+operator|!=
 literal|0
-argument_list|,
+condition|)
+return|return
 name|NULL
-argument_list|)
-expr_stmt|;
+return|;
 comment|/* make sure we are reading a compatible version */
 name|fgets
 argument_list|(
