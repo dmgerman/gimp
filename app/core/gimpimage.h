@@ -1542,7 +1542,7 @@ name|src
 parameter_list|,
 name|guchar
 modifier|*
-name|rgb
+name|rgba
 parameter_list|)
 function_decl|;
 end_function_decl

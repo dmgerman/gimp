@@ -1151,23 +1151,6 @@ argument_list|,
 name|rgb
 argument_list|)
 expr_stmt|;
-comment|/*  Plug the alpha channel in there  */
-if|if
-condition|(
-name|has_alpha
-condition|)
-name|rgb
-index|[
-name|color_bytes
-operator|-
-literal|1
-index|]
-operator|=
-name|idata
-index|[
-name|alpha
-index|]
-expr_stmt|;
 comment|/*  Find how closely the colors match  */
 operator|*
 name|mdata
