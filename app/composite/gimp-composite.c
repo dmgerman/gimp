@@ -590,7 +590,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2bb04faf0108
+DECL|struct|__anon29b1ee410108
 block|{
 DECL|member|announce_function
 name|gchar
@@ -1392,14 +1392,10 @@ name|bits
 operator||=
 name|GIMP_COMPOSITE_OPTION_NOEXTENSIONS
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|GIMP_UNSTABLE
 if|if
 condition|(
 name|be_verbose
 condition|)
-block|{
 name|g_printerr
 argument_list|(
 literal|"gimp_composite: use=%s, verbose=%s\n"
@@ -1429,9 +1425,6 @@ else|:
 literal|"no"
 argument_list|)
 expr_stmt|;
-block|}
-endif|#
-directive|endif
 name|gimp_composite_generic_install
 argument_list|()
 expr_stmt|;
@@ -1526,14 +1519,10 @@ init|=
 name|gimp_composite_vis_install
 argument_list|()
 decl_stmt|;
-ifdef|#
-directive|ifdef
-name|GIMP_UNSTABLE
 if|if
 condition|(
 name|be_verbose
 condition|)
-block|{
 name|g_printerr
 argument_list|(
 literal|"Processor instruction sets: "
@@ -1576,9 +1565,6 @@ else|:
 literal|'-'
 argument_list|)
 expr_stmt|;
-block|}
-endif|#
-directive|endif
 block|}
 block|}
 end_function
