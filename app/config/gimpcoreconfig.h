@@ -107,11 +107,6 @@ name|gchar
 modifier|*
 name|plug_in_path
 decl_stmt|;
-DECL|member|tool_plug_in_path
-name|gchar
-modifier|*
-name|tool_plug_in_path
-decl_stmt|;
 DECL|member|module_path
 name|gchar
 modifier|*
