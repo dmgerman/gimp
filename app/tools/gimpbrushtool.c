@@ -2235,7 +2235,7 @@ name|GimpToolInfo
 modifier|*
 name|info
 decl_stmt|;
-name|GimpColorPickerOptions
+name|GimpColorOptions
 modifier|*
 name|options
 decl_stmt|;
@@ -2257,7 +2257,7 @@ argument_list|)
 expr_stmt|;
 name|options
 operator|=
-name|GIMP_COLOR_PICKER_OPTIONS
+name|GIMP_COLOR_OPTIONS
 argument_list|(
 name|info
 operator|->
@@ -2440,9 +2440,9 @@ name|GimpToolInfo
 modifier|*
 name|picker_info
 decl_stmt|;
-name|GimpColorPickerOptions
+name|GimpColorOptions
 modifier|*
-name|picker_options
+name|options
 decl_stmt|;
 name|GimpImage
 modifier|*
@@ -2472,9 +2472,9 @@ argument_list|,
 name|GIMP_TYPE_COLOR_PICKER_TOOL
 argument_list|)
 expr_stmt|;
-name|picker_options
+name|options
 operator|=
-name|GIMP_COLOR_PICKER_OPTIONS
+name|GIMP_COLOR_OPTIONS
 argument_list|(
 name|picker_info
 operator|->
@@ -2489,7 +2489,7 @@ name|gimage
 argument_list|,
 name|drawable
 argument_list|,
-name|picker_options
+name|options
 operator|->
 name|sample_merged
 argument_list|,
@@ -2497,11 +2497,11 @@ name|x
 argument_list|,
 name|y
 argument_list|,
-name|picker_options
+name|options
 operator|->
 name|sample_average
 argument_list|,
-name|picker_options
+name|options
 operator|->
 name|average_radius
 argument_list|,

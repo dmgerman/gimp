@@ -86,15 +86,6 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_IMAGE_MAP_TOOL, GimpImageMapT
 end_define
 
 begin_typedef
-DECL|typedef|GimpImageMapTool
-typedef|typedef
-name|struct
-name|_GimpImageMapTool
-name|GimpImageMapTool
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpImageMapToolClass
 typedef|typedef
 name|struct

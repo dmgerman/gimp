@@ -6,110 +6,101 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_COLOR_PICKER_TOOL_H__
+name|__GIMP_COLOR_TOOL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_COLOR_PICKER_TOOL_H__
+DECL|macro|__GIMP_COLOR_TOOL_H__
 define|#
 directive|define
-name|__GIMP_COLOR_PICKER_TOOL_H__
+name|__GIMP_COLOR_TOOL_H__
 end_define
 
 begin_include
 include|#
 directive|include
-file|"gimpcolortool.h"
+file|"gimpdrawtool.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_COLOR_PICKER_TOOL
+DECL|macro|GIMP_TYPE_COLOR_TOOL
 define|#
 directive|define
-name|GIMP_TYPE_COLOR_PICKER_TOOL
-value|(gimp_color_picker_tool_get_type ())
+name|GIMP_TYPE_COLOR_TOOL
+value|(gimp_color_tool_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_COLOR_PICKER_TOOL (obj)
+DECL|macro|GIMP_COLOR_TOOL (obj)
 define|#
 directive|define
-name|GIMP_COLOR_PICKER_TOOL
+name|GIMP_COLOR_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_COLOR_PICKER_TOOL, GimpColorPickerTool))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_COLOR_TOOL, GimpColorTool))
 end_define
 
 begin_define
-DECL|macro|GIMP_COLOR_PICKER_TOOL_CLASS (klass)
+DECL|macro|GIMP_COLOR_TOOL_CLASS (klass)
 define|#
 directive|define
-name|GIMP_COLOR_PICKER_TOOL_CLASS
+name|GIMP_COLOR_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_COLOR_PICKER_TOOL, GimpColorPickerToolClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_COLOR_TOOL, GimpColorToolClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_COLOR_PICKER_TOOL (obj)
+DECL|macro|GIMP_IS_COLOR_TOOL (obj)
 define|#
 directive|define
-name|GIMP_IS_COLOR_PICKER_TOOL
+name|GIMP_IS_COLOR_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_COLOR_PICKER_TOOL))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_COLOR_TOOL))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_COLOR_PICKER_TOOL_CLASS (klass)
+DECL|macro|GIMP_IS_COLOR_TOOL_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_COLOR_PICKER_TOOL_CLASS
+name|GIMP_IS_COLOR_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_COLOR_PICKER_TOOL))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_COLOR_TOOL))
 end_define
 
 begin_define
-DECL|macro|GIMP_COLOR_PICKER_TOOL_GET_CLASS (obj)
+DECL|macro|GIMP_COLOR_TOOL_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_COLOR_PICKER_TOOL_GET_CLASS
+name|GIMP_COLOR_TOOL_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_COLOR_PICKER_TOOL, GimpColorPickerToolClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_COLOR_TOOL, GimpColorToolClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpColorPickerTool
+DECL|typedef|GimpColorToolClass
 typedef|typedef
 name|struct
-name|_GimpColorPickerTool
-name|GimpColorPickerTool
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpColorPickerToolClass
-typedef|typedef
-name|struct
-name|_GimpColorPickerToolClass
-name|GimpColorPickerToolClass
+name|_GimpColorToolClass
+name|GimpColorToolClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpColorPickerTool
+DECL|struct|_GimpColorTool
 struct|struct
-name|_GimpColorPickerTool
+name|_GimpColorTool
 block|{
 DECL|member|parent_instance
-name|GimpColorTool
+name|GimpDrawTool
 name|parent_instance
 decl_stmt|;
 DECL|member|centerx
@@ -127,34 +118,48 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpColorPickerToolClass
+DECL|struct|_GimpColorToolClass
 struct|struct
-name|_GimpColorPickerToolClass
+name|_GimpColorToolClass
 block|{
 DECL|member|parent_class
-name|GimpColorToolClass
+name|GimpDrawToolClass
 name|parent_class
 decl_stmt|;
+comment|/*  virtual functions  */
+DECL|member|pick
+name|gboolean
+function_decl|(
+modifier|*
+name|pick
+function_decl|)
+parameter_list|(
+name|GimpColorTool
+modifier|*
+name|tool
+parameter_list|,
+name|GimpColorOptions
+modifier|*
+name|options
+parameter_list|,
+name|GimpDisplay
+modifier|*
+name|gdisp
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|)
+function_decl|;
 block|}
 struct|;
 end_struct
 
-begin_function_decl
-name|void
-name|gimp_color_picker_tool_register
-parameter_list|(
-name|GimpToolRegisterCallback
-name|callback
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_decl_stmt
 name|GType
-name|gimp_color_picker_tool_get_type
+name|gimp_color_tool_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -162,13 +167,38 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
+begin_function_decl
+name|gboolean
+name|gimp_color_tool_pick
+parameter_list|(
+name|GimpColorTool
+modifier|*
+name|tool
+parameter_list|,
+name|GimpColorOptions
+modifier|*
+name|options
+parameter_list|,
+name|GimpDisplay
+modifier|*
+name|gdisp
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_COLOR_PICKER_TOOL_H__  */
+comment|/*  __GIMP_COLOR_TOOL_H__  */
 end_comment
 
 end_unit

@@ -66,11 +66,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpPaintTool
+DECL|typedef|GimpColorTool
 typedef|typedef
 name|struct
-name|_GimpPaintTool
-name|GimpPaintTool
+name|_GimpColorTool
+name|GimpColorTool
 typedef|;
 end_typedef
 
@@ -80,6 +80,24 @@ typedef|typedef
 name|struct
 name|_GimpDrawTool
 name|GimpDrawTool
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpImageMapTool
+typedef|typedef
+name|struct
+name|_GimpImageMapTool
+name|GimpImageMapTool
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpPaintTool
+typedef|typedef
+name|struct
+name|_GimpPaintTool
+name|GimpPaintTool
 typedef|;
 end_typedef
 
@@ -102,20 +120,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpBezierSelectPoint
+DECL|typedef|GimpColorOptions
 typedef|typedef
 name|struct
-name|_GimpBezierSelectPoint
-name|GimpBezierSelectPoint
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpBezierSelectTool
-typedef|typedef
-name|struct
-name|_GimpBezierSelectTool
-name|GimpBezierSelectTool
+name|_GimpColorOptions
+name|GimpColorOptions
 typedef|;
 end_typedef
 
