@@ -93,6 +93,16 @@ directive|include
 file|"gimplayerlistview.h"
 end_include
 
+begin_comment
+comment|/* TODO: move the paint mode menu constructor to widgets/ */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|"tools/tools-types.h"
+end_include
+
 begin_include
 include|#
 directive|include

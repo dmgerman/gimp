@@ -18,7 +18,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b87170c0103
+DECL|enum|__anon2b66cbfe0103
 block|{
 DECL|enumerator|GIMP_DND_TYPE_URI_LIST
 name|GIMP_DND_TYPE_URI_LIST
@@ -551,29 +551,6 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/*  OLD drawable dnd functions  */
-end_comment
-
-begin_function_decl
-name|void
-name|gimp_dnd_set_drawable_preview_icon
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GdkDragContext
-modifier|*
-name|context
-parameter_list|,
-name|GimpDrawable
-modifier|*
-name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl

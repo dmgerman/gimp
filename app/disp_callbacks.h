@@ -21,11 +21,11 @@ DECL|macro|CANVAS_EVENT_MASK
 define|#
 directive|define
 name|CANVAS_EVENT_MASK
-value|(GDK_EXPOSURE_MASK | \ 			   GDK_POINTER_MOTION_MASK | \ 			   GDK_POINTER_MOTION_HINT_MASK | \ 			   GDK_BUTTON_PRESS_MASK | \ 			   GDK_BUTTON_RELEASE_MASK | \ 			   GDK_STRUCTURE_MASK | \ 			   GDK_ENTER_NOTIFY_MASK | \ 			   GDK_LEAVE_NOTIFY_MASK | \ 			   GDK_KEY_PRESS_MASK | \ 			   GDK_KEY_RELEASE_MASK | \ 			   GDK_PROXIMITY_OUT_MASK)
+value|(GDK_EXPOSURE_MASK            | \ 			   GDK_POINTER_MOTION_MASK      | \ 			   GDK_POINTER_MOTION_HINT_MASK | \ 			   GDK_BUTTON_PRESS_MASK        | \ 			   GDK_BUTTON_RELEASE_MASK      | \ 			   GDK_STRUCTURE_MASK           | \ 			   GDK_ENTER_NOTIFY_MASK        | \ 			   GDK_LEAVE_NOTIFY_MASK        | \ 			   GDK_KEY_PRESS_MASK           | \ 			   GDK_KEY_RELEASE_MASK         | \ 			   GDK_PROXIMITY_OUT_MASK)
 end_define
 
 begin_function_decl
-name|gint
+name|gboolean
 name|gdisplay_shell_events
 parameter_list|(
 name|GtkWidget
@@ -44,7 +44,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|gboolean
 name|gdisplay_canvas_events
 parameter_list|(
 name|GtkWidget
@@ -59,7 +59,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|gboolean
 name|gdisplay_hruler_button_press
 parameter_list|(
 name|GtkWidget
@@ -77,7 +77,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|gboolean
 name|gdisplay_vruler_button_press
 parameter_list|(
 name|GtkWidget
@@ -95,7 +95,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|gboolean
 name|gdisplay_origin_button_press
 parameter_list|(
 name|GtkWidget
@@ -113,25 +113,34 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
-name|gdisplay_drag_drop
+name|void
+name|gdisplay_drop_drawable
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkDragContext
+name|GimpViewable
 modifier|*
-name|context
+name|viewable
 parameter_list|,
-name|gint
-name|x
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gdisplay_drop_pattern
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
 parameter_list|,
-name|gint
-name|y
-parameter_list|,
-name|guint
-name|time
+name|GimpViewable
+modifier|*
+name|viewable
 parameter_list|,
 name|gpointer
 name|data
@@ -151,24 +160,6 @@ specifier|const
 name|GimpRGB
 modifier|*
 name|color
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gdisplay_drop_pattern
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GimpViewable
-modifier|*
-name|viewable
 parameter_list|,
 name|gpointer
 name|data

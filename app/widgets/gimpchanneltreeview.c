@@ -114,12 +114,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/paint_options.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 

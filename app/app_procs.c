@@ -96,12 +96,6 @@ directive|include
 file|<gtk/gtk.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|<gdk/gdktypes.h>
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -145,6 +139,12 @@ begin_include
 include|#
 directive|include
 file|"core/core-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/tools-types.h"
 end_include
 
 begin_include

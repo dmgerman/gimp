@@ -40,21 +40,6 @@ name|GtkWidget
 modifier|*
 name|view
 decl_stmt|;
-DECL|member|options_box
-name|GtkWidget
-modifier|*
-name|options_box
-decl_stmt|;
-DECL|member|pattern_name
-name|GtkWidget
-modifier|*
-name|pattern_name
-decl_stmt|;
-DECL|member|pattern_size
-name|GtkWidget
-modifier|*
-name|pattern_size
-decl_stmt|;
 comment|/*  Callback function name  */
 DECL|member|callback_name
 name|gchar
@@ -66,10 +51,6 @@ DECL|member|context
 name|GimpContext
 modifier|*
 name|context
-decl_stmt|;
-DECL|member|name_changed_handler_id
-name|GQuark
-name|name_changed_handler_id
 decl_stmt|;
 block|}
 struct|;

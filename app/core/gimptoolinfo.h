@@ -22,6 +22,16 @@ directive|include
 file|"core/gimpdata.h"
 end_include
 
+begin_comment
+comment|/* FIXME: the ToolOptions need to be an object living in core/ */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|"tools/tools-types.h"
+end_include
+
 begin_define
 DECL|macro|GIMP_TYPE_TOOL_INFO
 define|#

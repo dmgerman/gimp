@@ -92,6 +92,11 @@ DECL|member|parent_instance
 name|GimpContainerView
 name|parent_instance
 decl_stmt|;
+DECL|member|name_label
+name|GtkWidget
+modifier|*
+name|name_label
+decl_stmt|;
 DECL|member|scrolled_win
 name|GtkWidget
 modifier|*

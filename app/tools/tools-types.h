@@ -94,11 +94,53 @@ comment|/*  stuff  */
 end_comment
 
 begin_typedef
+DECL|typedef|ToolOptions
+typedef|typedef
+name|struct
+name|_ToolOptions
+name|ToolOptions
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|SelectionOptions
 typedef|typedef
 name|struct
 name|_SelectionOptions
 name|SelectionOptions
+typedef|;
+end_typedef
+
+begin_comment
+comment|/*  functions  */
+end_comment
+
+begin_typedef
+DECL|typedef|ToolOptionsResetFunc
+typedef|typedef
+name|void
+function_decl|(
+modifier|*
+name|ToolOptionsResetFunc
+function_decl|)
+parameter_list|(
+name|ToolOptions
+modifier|*
+name|tool_options
+parameter_list|)
+function_decl|;
+end_typedef
+
+begin_comment
+comment|/*  EEK  */
+end_comment
+
+begin_typedef
+DECL|typedef|Tool
+typedef|typedef
+name|struct
+name|_Tool
+name|Tool
 typedef|;
 end_typedef
 

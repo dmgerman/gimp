@@ -498,16 +498,13 @@ name|psp
 operator|->
 name|context
 argument_list|,
-literal|64
+literal|32
 argument_list|,
-comment|/* FIXME: SM_PREVIEW_WIDTH */
-literal|3
+literal|5
 argument_list|,
-comment|/* FIXME: STD_PALETTE_COLUMNS */
 literal|3
 argument_list|)
 expr_stmt|;
-comment|/* FIXME: STD_PALETTE_ROWS */
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
