@@ -1609,6 +1609,22 @@ value|"gimp-toolbox"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_TOOLBOX_COLOR_AREA
+define|#
+directive|define
+name|GIMP_HELP_TOOLBOX_COLOR_AREA
+value|"gimp-toolbox-color-area"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOLBOX_INDICATOR_AREA
+define|#
+directive|define
+name|GIMP_HELP_TOOLBOX_INDICATOR_AREA
+value|"gimp-toolbox-indicator-area"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_TOOLBOX_DEFAULT_COLORS
 define|#
 directive|define
@@ -2446,6 +2462,22 @@ define|#
 directive|define
 name|GIMP_HELP_DOCK
 value|"gimp-dock"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_DOCK_IMAGE_MENU
+define|#
+directive|define
+name|GIMP_HELP_DOCK_IMAGE_MENU
+value|"gimp-dock-image-menu"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_DOCK_AUTO_BUTTON
+define|#
+directive|define
+name|GIMP_HELP_DOCK_AUTO_BUTTON
+value|"gimp-dock-auto-button"
 end_define
 
 begin_define

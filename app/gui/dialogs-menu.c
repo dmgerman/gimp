@@ -773,7 +773,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_DOCK_IMAGE_MENU
 block|,
 name|NULL
 block|}
@@ -796,7 +796,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_DOCK_AUTO_BUTTON
 block|,
 name|NULL
 block|}
