@@ -18,6 +18,12 @@ end_ifdef
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<pthread.h>
 end_include
 
@@ -272,10 +278,10 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|gint
+name|gboolean
 name|cont
 init|=
-literal|1
+name|TRUE
 decl_stmt|;
 name|pthread_mutex_lock
 argument_list|(
@@ -768,7 +774,7 @@ argument_list|)
 condition|)
 name|cont
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 block|}
 do|while
@@ -818,7 +824,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  do_parallel_regions_single is just like do_parallel_regions   *   except that all the mutex and tile locks have been removed  *  * If we are processing with only a single thread we don't need to do the  * mutex locks etc. and aditional tile locks even if we were  * configured --with-mp  */
+comment|/*  do_parallel_regions_single is just like do_parallel_regions  *   except that all the mutex and tile locks have been removed  *  * If we are processing with only a single thread we don't need to do the  * mutex locks etc. and aditional tile locks even if we were  * configured --with-mp  */
 end_comment
 
 begin_function
@@ -832,10 +838,10 @@ modifier|*
 name|p_s
 parameter_list|)
 block|{
-name|gint
+name|gboolean
 name|cont
 init|=
-literal|1
+name|TRUE
 decl_stmt|;
 do|do
 block|{
@@ -1053,7 +1059,7 @@ argument_list|)
 condition|)
 name|cont
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 block|}
 do|while
@@ -1276,11 +1282,13 @@ block|}
 else|else
 endif|#
 directive|endif
+block|{
 name|do_parallel_regions_single
 argument_list|(
 name|p_s
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
