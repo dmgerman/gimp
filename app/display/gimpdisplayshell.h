@@ -58,6 +58,10 @@ DECL|member|guides
 name|gboolean
 name|guides
 decl_stmt|;
+DECL|member|grid
+name|gboolean
+name|grid
+decl_stmt|;
 DECL|member|menubar
 name|gboolean
 name|menubar
@@ -407,6 +411,11 @@ name|gboolean
 name|snap_to_guides
 decl_stmt|;
 comment|/*  should the guides be snapped to?   */
+DECL|member|snap_to_grid
+name|gboolean
+name|snap_to_grid
+decl_stmt|;
+comment|/*  should the grid be snapped to?     */
 DECL|member|select
 name|Selection
 modifier|*
@@ -591,6 +600,12 @@ modifier|*
 name|nav_popup
 decl_stmt|;
 comment|/*  navigation popup                   */
+DECL|member|grid_dialog
+name|GtkWidget
+modifier|*
+name|grid_dialog
+decl_stmt|;
+comment|/*  grid configuration dialog          */
 DECL|member|filters
 name|GList
 modifier|*
@@ -948,6 +963,17 @@ end_function_decl
 begin_function_decl
 name|void
 name|gimp_display_shell_draw_guides
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_display_shell_draw_grid
 parameter_list|(
 name|GimpDisplayShell
 modifier|*

@@ -791,6 +791,15 @@ operator|.
 name|guides
 argument_list|)
 expr_stmt|;
+name|gimp_display_shell_set_show_grid
+argument_list|(
+name|shell
+argument_list|,
+name|visibility
+operator|.
+name|grid
+argument_list|)
+expr_stmt|;
 name|gimp_display_shell_set_show_menubar
 argument_list|(
 name|shell
@@ -1311,6 +1320,12 @@ argument_list|)
 expr_stmt|;
 comment|/* draw the guides */
 name|gimp_display_shell_draw_guides
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
+comment|/* draw the grid */
+name|gimp_display_shell_draw_grid
 argument_list|(
 name|shell
 argument_list|)
