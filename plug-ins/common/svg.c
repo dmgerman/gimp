@@ -34,7 +34,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<rsvg.h>
+file|<librsvg/rsvg.h>
 end_include
 
 begin_include
@@ -55,10 +55,24 @@ directive|include
 file|<libgimp/gimpui.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_define
+DECL|macro|VERSION
+define|#
+directive|define
+name|VERSION
+value|"2.4.0"
+end_define
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286e2adb0108
+DECL|struct|__anon2b9996ff0108
 block|{
 DECL|member|scale
 name|double
@@ -86,7 +100,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286e2adb0208
+DECL|struct|__anon2b9996ff0208
 block|{
 DECL|member|run
 name|gint
@@ -113,7 +127,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286e2adb0308
+DECL|struct|__anon2b9996ff0308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -130,21 +144,6 @@ block|}
 name|LoadDialogVals
 typedef|;
 end_typedef
-
-begin_comment
-comment|/* TODO: remove me, initialize gimp i18n services */
-end_comment
-
-begin_define
-DECL|macro|_ (String)
-define|#
-directive|define
-name|_
-parameter_list|(
-name|String
-parameter_list|)
-value|(String)
-end_define
 
 begin_function_decl
 specifier|static
