@@ -73,7 +73,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d165de0108
+DECL|struct|__anon296db0070108
 block|{
 DECL|member|radius
 name|gdouble
@@ -96,7 +96,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d165de0208
+DECL|struct|__anon296db0070208
 block|{
 DECL|member|run
 name|gint
@@ -2606,6 +2606,10 @@ name|horz
 condition|)
 block|{
 comment|/*  prepare for the horizontal pass  */
+if|if
+condition|(
+name|vert
+condition|)
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
