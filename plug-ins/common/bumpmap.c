@@ -138,7 +138,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c39b780103
+DECL|enum|__anon28de1d890103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -156,7 +156,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c39b780203
+DECL|enum|__anon28de1d890203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -175,7 +175,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c39b780308
+DECL|struct|__anon28de1d890308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -234,7 +234,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c39b780408
+DECL|struct|__anon28de1d890408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -279,7 +279,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c39b780508
+DECL|struct|__anon28de1d890508
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -1714,26 +1714,6 @@ argument_list|)
 operator|)
 condition|)
 block|{
-comment|/* Set the tile cache size */
-name|gimp_tile_cache_ntiles
-argument_list|(
-literal|2
-operator|*
-operator|(
-name|drawable
-operator|->
-name|width
-operator|+
-name|gimp_tile_width
-argument_list|()
-operator|-
-literal|1
-operator|)
-operator|/
-name|gimp_tile_width
-argument_list|()
-argument_list|)
-expr_stmt|;
 comment|/* Run! */
 name|bumpmap
 argument_list|()
@@ -1862,6 +1842,11 @@ decl_stmt|;
 name|gint
 name|tmp
 decl_stmt|;
+name|gint
+name|drawable_tiles_per_row
+decl_stmt|,
+name|bm_tiles_per_row
+decl_stmt|;
 if|#
 directive|if
 literal|0
@@ -1941,6 +1926,54 @@ argument_list|(
 name|bm_drawable
 operator|->
 name|id
+argument_list|)
+expr_stmt|;
+comment|/* Set the tile cache size */
+comment|/* Compute number of tiles needed for one row of the drawable */
+name|drawable_tiles_per_row
+operator|=
+literal|1
+operator|+
+operator|(
+name|sel_x2
+operator|+
+name|gimp_tile_width
+argument_list|()
+operator|-
+literal|1
+operator|)
+operator|/
+name|gimp_tile_width
+argument_list|()
+operator|-
+name|sel_x1
+operator|/
+name|gimp_tile_width
+argument_list|()
+expr_stmt|;
+comment|/* Compute number of tiles needed for one row of the bitmap */
+name|bm_tiles_per_row
+operator|=
+operator|(
+name|bm_width
+operator|+
+name|gimp_tile_width
+argument_list|()
+operator|-
+literal|1
+operator|)
+operator|/
+name|gimp_tile_width
+argument_list|()
+expr_stmt|;
+comment|/* Cache one row of source, destination and bitmap */
+name|gimp_tile_cache_ntiles
+argument_list|(
+name|bm_tiles_per_row
+operator|+
+literal|2
+operator|*
+name|drawable_tiles_per_row
 argument_list|)
 expr_stmt|;
 comment|/* Initialize offsets */
