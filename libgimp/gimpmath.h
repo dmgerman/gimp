@@ -187,6 +187,15 @@ parameter_list|(
 name|x
 parameter_list|)
 value|_finite(x)
+empty|#elsifdef __EMX__
+DECL|macro|FINITE (x)
+define|#
+directive|define
+name|FINITE
+parameter_list|(
+name|x
+parameter_list|)
+value|isfinite(x)
 else|#
 directive|else
 define|#
