@@ -59,7 +59,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac43beb0108
+DECL|struct|__anon2b929b350108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -567,9 +567,9 @@ name|ExportAction
 name|export_action_animate_or_merge
 init|=
 block|{
-name|NULL
-block|,
 name|export_merge
+block|,
+name|NULL
 block|,
 name|N_
 argument_list|(
@@ -579,12 +579,12 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Save as Animation"
+literal|"Merge Visible Layers"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Merge Visible Layers"
+literal|"Save as Animation"
 argument_list|)
 block|}
 block|,
@@ -600,9 +600,9 @@ name|ExportAction
 name|export_action_animate_or_flatten
 init|=
 block|{
-name|NULL
-block|,
 name|export_flatten
+block|,
+name|NULL
 block|,
 name|N_
 argument_list|(
@@ -612,12 +612,12 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Save as Animation"
+literal|"Flatten Image"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Flatten Image"
+literal|"Save as Animation"
 argument_list|)
 block|}
 block|,
