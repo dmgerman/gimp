@@ -132,6 +132,11 @@ name|GtkTreeViewColumn
 modifier|*
 name|eye_column
 decl_stmt|;
+DECL|member|eye_cell
+name|GtkCellRenderer
+modifier|*
+name|eye_cell
+decl_stmt|;
 DECL|member|clicked_component
 name|GimpChannelType
 name|clicked_component
