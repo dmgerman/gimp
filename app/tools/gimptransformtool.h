@@ -304,12 +304,6 @@ name|GimpTransformDirection
 name|direction
 decl_stmt|;
 comment|/*  transform info dialog  */
-DECL|member|shell_identifier
-specifier|const
-name|gchar
-modifier|*
-name|shell_identifier
-decl_stmt|;
 DECL|member|shell_desc
 specifier|const
 name|gchar
