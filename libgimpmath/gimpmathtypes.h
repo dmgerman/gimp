@@ -21,6 +21,15 @@ name|G_BEGIN_DECLS
 end_macro
 
 begin_typedef
+DECL|typedef|GimpMatrix2
+typedef|typedef
+name|struct
+name|_GimpMatrix2
+name|GimpMatrix2
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpMatrix3
 typedef|typedef
 name|struct

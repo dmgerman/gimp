@@ -168,6 +168,10 @@ DECL|member|box_unit
 name|GimpUnit
 name|box_unit
 decl_stmt|;
+DECL|member|transformation
+name|GimpMatrix2
+name|transformation
+decl_stmt|;
 comment|/* for historical reasons, don't use */
 DECL|member|border
 name|gint

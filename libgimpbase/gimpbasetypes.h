@@ -22,6 +22,12 @@ directive|include
 file|<libgimpcolor/gimpcolortypes.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<libgimpmath/gimpmathtypes.h>
+end_include
+
 begin_macro
 name|G_BEGIN_DECLS
 end_macro
@@ -71,7 +77,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29af2db60103
+DECL|enum|__anon2c4962f00103
 block|{
 DECL|enumerator|GIMP_UNIT_PIXEL
 name|GIMP_UNIT_PIXEL
@@ -117,7 +123,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29af2db60203
+DECL|enum|__anon2c4962f00203
 block|{
 DECL|enumerator|GIMP_PDB_INT32
 name|GIMP_PDB_INT32
@@ -196,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29af2db60303
+DECL|enum|__anon2c4962f00303
 block|{
 DECL|enumerator|GIMP_INTERNAL
 name|GIMP_INTERNAL
@@ -218,7 +224,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29af2db60403
+DECL|enum|__anon2c4962f00403
 block|{
 DECL|enumerator|GIMP_PDB_EXECUTION_ERROR
 name|GIMP_PDB_EXECUTION_ERROR
@@ -243,7 +249,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29af2db60503
+DECL|enum|__anon2c4962f00503
 block|{
 DECL|enumerator|GIMP_MESSAGE_BOX
 name|GIMP_MESSAGE_BOX
@@ -262,7 +268,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29af2db60603
+DECL|enum|__anon2c4962f00603
 block|{
 DECL|enumerator|GIMP_STACK_TRACE_NEVER
 name|GIMP_STACK_TRACE_NEVER

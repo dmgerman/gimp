@@ -121,6 +121,70 @@ function_decl|;
 end_function_decl
 
 begin_comment
+comment|/*  * GIMP_TYPE_PARAM_MATRIX2  */
+end_comment
+
+begin_define
+DECL|macro|GIMP_TYPE_PARAM_MATRIX2
+define|#
+directive|define
+name|GIMP_TYPE_PARAM_MATRIX2
+value|(gimp_param_matrix2_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_PARAM_SPEC_MATRIX2 (pspec)
+define|#
+directive|define
+name|GIMP_IS_PARAM_SPEC_MATRIX2
+parameter_list|(
+name|pspec
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_MATRIX2))
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_param_matrix2_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_function_decl
+name|GParamSpec
+modifier|*
+name|gimp_param_spec_matrix2
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|nick
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|blurb
+parameter_list|,
+specifier|const
+name|GimpMatrix2
+modifier|*
+name|default_value
+parameter_list|,
+name|GParamFlags
+name|flags
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  * GIMP_TYPE_PARAM_MEMSIZE  */
 end_comment
 
@@ -195,7 +259,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6f4b200103
+DECL|enum|__anon2c39dee60103
 block|{
 DECL|enumerator|GIMP_PARAM_PATH_FILE
 name|GIMP_PARAM_PATH_FILE
@@ -449,6 +513,23 @@ parameter_list|,
 name|max
 parameter_list|,
 define|default, flags)\   g_object_class_install_property (class, id,\                                    g_param_spec_int (name, NULL, blurb,\                                    min, max, default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
+end_define
+
+begin_define
+define|#
+directive|define
+name|GIMP_CONFIG_INSTALL_PROP_MATRIX2
+parameter_list|(
+name|class
+parameter_list|,
+name|id
+parameter_list|,\
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_MATRIX2 (class,id,\\\nname,blurb,default,flags)
+name|name
+parameter_list|,
+name|blurb
+parameter_list|,
+define|default, flags)\   g_object_class_install_property (class, id,\                                    gimp_param_spec_matrix2 (name, NULL, blurb,\                                    default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
 end_define
 
 begin_define

@@ -25,6 +25,25 @@ comment|/* For information look into the C source or the html documentation */
 end_comment
 
 begin_struct
+DECL|struct|_GimpMatrix2
+struct|struct
+name|_GimpMatrix2
+block|{
+DECL|member|coeff
+name|gdouble
+name|coeff
+index|[
+literal|2
+index|]
+index|[
+literal|2
+index|]
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_struct
 DECL|struct|_GimpMatrix3
 struct|struct
 name|_GimpMatrix3
@@ -61,6 +80,17 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
+
+begin_function_decl
+name|void
+name|gimp_matrix2_identity
+parameter_list|(
+name|GimpMatrix2
+modifier|*
+name|matrix
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|void

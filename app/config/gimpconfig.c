@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpcolor/gimpcolor.h"
+file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_include
@@ -1673,7 +1673,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2952f36c0108
+DECL|struct|__anon2be079500108
 block|{
 DECL|member|key
 name|gchar
