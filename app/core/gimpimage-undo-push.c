@@ -132,12 +132,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage-projection.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpimage-undo.h"
 end_include
 
@@ -1852,13 +1846,6 @@ operator|->
 name|height
 operator|=
 name|height
-expr_stmt|;
-name|gimp_image_projection_allocate
-argument_list|(
-name|undo
-operator|->
-name|gimage
-argument_list|)
 expr_stmt|;
 name|gimp_drawable_invalidate_boundary
 argument_list|(

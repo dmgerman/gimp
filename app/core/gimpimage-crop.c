@@ -102,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287d95090103
+DECL|enum|__anon2ae3c7ce0103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -974,12 +974,6 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  Make sure the projection matches the gimage size  */
-name|gimp_image_projection_allocate
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
 comment|/*  rigor the floating layer  */
 if|if
 condition|(
