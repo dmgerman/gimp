@@ -350,12 +350,15 @@ end_comment
 
 begin_function
 name|void
-DECL|function|tool_options_menu_setup (GimpItemFactory * factory)
+DECL|function|tool_options_menu_setup (GimpItemFactory * factory,gpointer callback_data)
 name|tool_options_menu_setup
 parameter_list|(
 name|GimpItemFactory
 modifier|*
 name|factory
+parameter_list|,
+name|gpointer
+name|callback_data
 parameter_list|)
 block|{
 name|gimp_item_factory_set_sensitive

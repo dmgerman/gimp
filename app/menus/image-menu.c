@@ -5046,12 +5046,15 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|image_menu_setup (GimpItemFactory * factory)
+DECL|function|image_menu_setup (GimpItemFactory * factory,gpointer setup_data)
 name|image_menu_setup
 parameter_list|(
 name|GimpItemFactory
 modifier|*
 name|factory
+parameter_list|,
+name|gpointer
+name|setup_data
 parameter_list|)
 block|{
 if|if

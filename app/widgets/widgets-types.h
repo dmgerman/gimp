@@ -615,6 +615,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpFileDialog
+typedef|typedef
+name|struct
+name|_GimpFileDialog
+name|GimpFileDialog
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpHistogramView
 typedef|typedef
 name|struct
@@ -751,6 +760,9 @@ parameter_list|(
 name|GimpItemFactory
 modifier|*
 name|factory
+parameter_list|,
+name|gpointer
+name|callback_data
 parameter_list|)
 function_decl|;
 end_typedef
@@ -769,7 +781,7 @@ modifier|*
 name|factory
 parameter_list|,
 name|gpointer
-name|data
+name|update_data
 parameter_list|)
 function_decl|;
 end_typedef

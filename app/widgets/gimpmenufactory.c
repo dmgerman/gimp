@@ -721,6 +721,8 @@ operator|->
 name|setup_func
 argument_list|(
 name|item_factory
+argument_list|,
+name|callback_data
 argument_list|)
 expr_stmt|;
 return|return

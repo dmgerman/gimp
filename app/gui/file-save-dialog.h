@@ -18,17 +18,6 @@ end_define
 
 begin_function_decl
 name|void
-name|file_save_dialog_set_type
-parameter_list|(
-name|PlugInProcDef
-modifier|*
-name|proc
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|file_save_dialog_show
 parameter_list|(
 name|GimpImage

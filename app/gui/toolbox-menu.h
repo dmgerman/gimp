@@ -38,6 +38,9 @@ parameter_list|(
 name|GimpItemFactory
 modifier|*
 name|factory
+parameter_list|,
+name|gpointer
+name|callback_data
 parameter_list|)
 function_decl|;
 end_function_decl
