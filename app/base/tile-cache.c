@@ -1090,10 +1090,7 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
-name|_
-argument_list|(
 literal|"starting tile preswapper\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|count
@@ -1178,7 +1175,7 @@ name|dirty
 operator|||
 name|tile
 operator|->
-name|swap
+name|swap_offset
 operator|==
 operator|-
 literal|1

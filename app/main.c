@@ -354,6 +354,12 @@ name|batch_cmds
 decl_stmt|;
 end_decl_stmt
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|ENABLE_NLS
+end_ifdef
+
 begin_decl_stmt
 DECL|variable|plugin_domains
 name|gchar
@@ -390,6 +396,11 @@ argument_list|)
 operator|)
 decl_stmt|;
 end_decl_stmt
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_comment
 comment|/* LOCAL data */
@@ -473,6 +484,9 @@ argument_list|(
 literal|"gimp"
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|ENABLE_NLS
 for|for
 control|(
 name|i
@@ -496,6 +510,8 @@ argument_list|,
 name|LOCALEDIR
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|gtk_init
 argument_list|(
 operator|&
@@ -2043,7 +2059,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c3ee440108
+DECL|struct|__anon2975a4150108
 block|{
 DECL|member|test_gint32
 name|gint32

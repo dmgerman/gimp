@@ -214,6 +214,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|ENABLE_NLS
+end_ifdef
+
 begin_function_decl
 specifier|static
 name|gchar
@@ -230,6 +236,24 @@ name|data
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_define
+DECL|macro|menu_translate
+define|#
+directive|define
+name|menu_translate
+value|NULL
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function_decl
 specifier|static
@@ -266,6 +290,12 @@ name|callback_action
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|ENABLE_NLS
+end_ifdef
 
 begin_comment
 comment|/*  from main.c  */
@@ -475,6 +505,15 @@ argument_list|)
 block|}
 decl_stmt|;
 end_decl_stmt
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/*  ENABLE_NLS  */
+end_comment
 
 begin_decl_stmt
 DECL|variable|last_opened_raw_filenames
@@ -9557,6 +9596,12 @@ expr_stmt|;
 block|}
 end_function
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|ENABLE_NLS
+end_ifdef
+
 begin_function
 specifier|static
 name|gchar
@@ -9721,6 +9766,15 @@ name|retval
 return|;
 block|}
 end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/*  ENABLE_NLS  */
+end_comment
 
 begin_function
 specifier|static

@@ -294,7 +294,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275db7750103
+DECL|enum|__anon2c53b56a0103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -310,8 +310,8 @@ DECL|enumerator|INDEXED_IMPORT
 name|INDEXED_IMPORT
 init|=
 literal|2
-block|, }
 DECL|typedef|ImportType
+block|}
 name|ImportType
 typedef|;
 end_typedef
