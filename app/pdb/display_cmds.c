@@ -219,6 +219,22 @@ operator|!=
 name|NULL
 operator|)
 expr_stmt|;
+comment|/* the first display takes ownership of the image */
+if|if
+condition|(
+name|success
+operator|&&
+name|gimage
+operator|->
+name|disp_count
+operator|==
+literal|1
+condition|)
+name|g_object_unref
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 block|}
 name|return_args
 operator|=
