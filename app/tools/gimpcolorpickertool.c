@@ -1412,12 +1412,9 @@ argument_list|)
 expr_stmt|;
 name|gimp_drawable_offsets
 argument_list|(
-name|gimp_image_active_drawable
-argument_list|(
-name|gdisp
+name|tool
 operator|->
-name|gimage
-argument_list|)
+name|drawable
 argument_list|,
 operator|&
 name|off_x

@@ -27,32 +27,32 @@ name|GdkWindow
 modifier|*
 name|win
 decl_stmt|;
-comment|/*  Window to draw to                    */
+comment|/*  Window to draw to                   */
 DECL|member|shell
 name|GimpDisplayShell
 modifier|*
 name|shell
 decl_stmt|;
-comment|/*  GimpDisplay that owns the selection  */
+comment|/*  GimpDisplay that owns the selection */
 DECL|member|gc_in
 name|GdkGC
 modifier|*
 name|gc_in
 decl_stmt|;
-comment|/*  GC for drawing selection outline     */
+comment|/*  GC for drawing selection outline    */
 DECL|member|gc_out
 name|GdkGC
 modifier|*
 name|gc_out
 decl_stmt|;
-comment|/*  GC for selected regions outside                                        *  current layer */
+comment|/*  GC for selected regions outside     *                                        *  current layer                       */
 DECL|member|gc_layer
 name|GdkGC
 modifier|*
 name|gc_layer
 decl_stmt|;
-comment|/*  GC for current layer outline         */
-comment|/*  This information is for drawing the marching ants around the border  */
+comment|/*  GC for current layer outline        */
+comment|/*  This information is for drawing the marching ants around the border   */
 DECL|member|segs_in
 name|GdkSegment
 modifier|*
@@ -142,7 +142,7 @@ modifier|*
 name|cycle_pix
 decl_stmt|;
 comment|/*  cycling pixmap                    */
-comment|/* These are used only if USE_XDRAWPOINTS is defined. */
+comment|/* These are used only if USE_XDRAWPOINTS is defined.                     */
 DECL|member|points_in
 name|GdkPoint
 modifier|*
