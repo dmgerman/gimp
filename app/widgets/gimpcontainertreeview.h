@@ -157,11 +157,6 @@ name|GtkCellRenderer
 modifier|*
 name|name_cell
 decl_stmt|;
-DECL|member|toggle_columns
-name|GList
-modifier|*
-name|toggle_columns
-decl_stmt|;
 DECL|member|toggle_cells
 name|GList
 modifier|*

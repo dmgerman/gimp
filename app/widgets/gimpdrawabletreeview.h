@@ -107,11 +107,6 @@ DECL|member|model_column_visible
 name|gint
 name|model_column_visible
 decl_stmt|;
-DECL|member|eye_column
-name|GtkTreeViewColumn
-modifier|*
-name|eye_column
-decl_stmt|;
 DECL|member|eye_cell
 name|GtkCellRenderer
 modifier|*

@@ -140,11 +140,6 @@ DECL|member|model_column_mask_visible
 name|gint
 name|model_column_mask_visible
 decl_stmt|;
-DECL|member|chain_column
-name|GtkTreeViewColumn
-modifier|*
-name|chain_column
-decl_stmt|;
 DECL|member|chain_cell
 name|GtkCellRenderer
 modifier|*

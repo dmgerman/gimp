@@ -434,6 +434,27 @@ DECL|member|convert_item
 name|GimpConvertItemFunc
 name|convert_item
 decl_stmt|;
+DECL|member|rename_item
+name|void
+function_decl|(
+modifier|*
+name|rename_item
+function_decl|)
+parameter_list|(
+name|GimpItemTreeView
+modifier|*
+name|view
+parameter_list|,
+name|GimpItem
+modifier|*
+name|item
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|new_name
+parameter_list|)
+function_decl|;
 comment|/*  various descriptive strings for tooltips and undo steps  */
 DECL|member|new_desc
 specifier|const
