@@ -184,6 +184,9 @@ parameter_list|,
 name|guchar
 modifier|*
 name|dst
+parameter_list|,
+name|gboolean
+name|dst_has_alpha
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -208,6 +211,9 @@ parameter_list|,
 name|guchar
 modifier|*
 name|dst
+parameter_list|,
+name|gboolean
+name|dst_has_alpha
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -232,6 +238,9 @@ parameter_list|,
 name|guchar
 modifier|*
 name|dst
+parameter_list|,
+name|gboolean
+name|dst_has_alpha
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -255,7 +264,10 @@ name|numpix
 parameter_list|,
 name|guchar
 modifier|*
-name|dst
+name|ds
+parameter_list|,
+name|gboolean
+name|dst_has_alpha
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -280,6 +292,9 @@ parameter_list|,
 name|guchar
 modifier|*
 name|dst
+parameter_list|,
+name|gboolean
+name|dst_has_alpha
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -304,6 +319,9 @@ parameter_list|,
 name|guchar
 modifier|*
 name|dst
+parameter_list|,
+name|gboolean
+name|dst_has_alpha
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -328,6 +346,9 @@ parameter_list|,
 name|guchar
 modifier|*
 name|dst
+parameter_list|,
+name|gboolean
+name|dst_has_alpha
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -352,6 +373,9 @@ parameter_list|,
 name|guchar
 modifier|*
 name|dst
+parameter_list|,
+name|gboolean
+name|dst_has_alpha
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -376,6 +400,9 @@ parameter_list|,
 name|guchar
 modifier|*
 name|dst
+parameter_list|,
+name|gboolean
+name|dst_has_alpha
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -400,6 +427,9 @@ parameter_list|,
 name|guchar
 modifier|*
 name|dst
+parameter_list|,
+name|gboolean
+name|dst_has_alpha
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -505,7 +535,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29697ce40108
+DECL|struct|__anon277b979a0108
 block|{
 DECL|member|compose_type
 specifier|const
@@ -568,6 +598,9 @@ parameter_list|,
 name|guchar
 modifier|*
 name|dst
+parameter_list|,
+name|gboolean
+name|dst_has_alpha
 parameter_list|)
 function_decl|;
 DECL|typedef|COMPOSE_DSC
@@ -999,7 +1032,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29697ce40208
+DECL|struct|__anon277b979a0208
 block|{
 DECL|member|compose_ID
 name|gint32
@@ -1039,7 +1072,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29697ce40308
+DECL|struct|__anon277b979a0308
 block|{
 DECL|member|width
 DECL|member|height
@@ -2324,6 +2357,9 @@ index|]
 decl_stmt|,
 name|pixel_rgn_dst
 decl_stmt|;
+name|GimpPixelRgn
+name|pixel_rgn_dst_read
+decl_stmt|;
 comment|/* Search type of composing */
 name|compose_idx
 operator|=
@@ -2921,6 +2957,30 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|gimp_pixel_rgn_init
+argument_list|(
+operator|&
+name|pixel_rgn_dst_read
+argument_list|,
+name|drawable_dst
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|drawable_dst
+operator|->
+name|width
+argument_list|,
+name|drawable_dst
+operator|->
+name|height
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|image_ID_dst
 operator|=
 name|gimp_drawable_get_image
@@ -3096,6 +3156,28 @@ argument_list|,
 name|scan_lines
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|composevals
+operator|.
+name|do_recompose
+condition|)
+name|gimp_pixel_rgn_get_rect
+argument_list|(
+operator|&
+name|pixel_rgn_dst_read
+argument_list|,
+name|dst
+argument_list|,
+literal|0
+argument_list|,
+name|i
+argument_list|,
+name|width
+argument_list|,
+name|scan_lines
+argument_list|)
+expr_stmt|;
 comment|/* Do the composition */
 name|compose_dsc
 index|[
@@ -3113,6 +3195,11 @@ operator|*
 name|tile_height
 argument_list|,
 name|dst
+argument_list|,
+name|gimp_drawable_has_alpha
+argument_list|(
+name|layer_ID_dst
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Set destination pixel region */
@@ -3419,7 +3506,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|compose_rgb (guchar ** src,gint * incr_src,gint numpix,guchar * dst)
+DECL|function|compose_rgb (guchar ** src,gint * incr_src,gint numpix,guchar * dst,gboolean dst_has_alpha)
 name|compose_rgb
 parameter_list|(
 name|guchar
@@ -3437,6 +3524,9 @@ parameter_list|,
 name|guchar
 modifier|*
 name|dst
+parameter_list|,
+name|gboolean
+name|dst_has_alpha
 parameter_list|)
 block|{
 specifier|register
@@ -3574,6 +3664,13 @@ name|blue_src
 operator|++
 operator|)
 expr_stmt|;
+if|if
+condition|(
+name|dst_has_alpha
+condition|)
+name|rgb_dst
+operator|++
+expr_stmt|;
 block|}
 block|}
 else|else
@@ -3625,6 +3722,13 @@ name|blue_src
 operator|+=
 name|blue_incr
 expr_stmt|;
+if|if
+condition|(
+name|dst_has_alpha
+condition|)
+name|rgb_dst
+operator|++
+expr_stmt|;
 block|}
 block|}
 block|}
@@ -3633,7 +3737,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|compose_rgba (guchar ** src,gint * incr_src,gint numpix,guchar * dst)
+DECL|function|compose_rgba (guchar ** src,gint * incr_src,gint numpix,guchar * dst,gboolean dst_has_alpha)
 name|compose_rgba
 parameter_list|(
 name|guchar
@@ -3651,6 +3755,9 @@ parameter_list|,
 name|guchar
 modifier|*
 name|dst
+parameter_list|,
+name|gboolean
+name|dst_has_alpha
 parameter_list|)
 block|{
 specifier|register
@@ -3897,7 +4004,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|compose_hsv (guchar ** src,gint * incr_src,gint numpix,guchar * dst)
+DECL|function|compose_hsv (guchar ** src,gint * incr_src,gint numpix,guchar * dst,gboolean dst_has_alpha)
 name|compose_hsv
 parameter_list|(
 name|guchar
@@ -3915,6 +4022,9 @@ parameter_list|,
 name|guchar
 modifier|*
 name|dst
+parameter_list|,
+name|gboolean
+name|dst_has_alpha
 parameter_list|)
 block|{
 specifier|register
@@ -4040,6 +4150,13 @@ name|val_src
 operator|+=
 name|val_incr
 expr_stmt|;
+if|if
+condition|(
+name|dst_has_alpha
+condition|)
+name|rgb_dst
+operator|++
+expr_stmt|;
 block|}
 block|}
 end_function
@@ -4047,7 +4164,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|compose_cmy (guchar ** src,gint * incr_src,gint numpix,guchar * dst)
+DECL|function|compose_cmy (guchar ** src,gint * incr_src,gint numpix,guchar * dst,gboolean dst_has_alpha)
 name|compose_cmy
 parameter_list|(
 name|guchar
@@ -4065,6 +4182,9 @@ parameter_list|,
 name|guchar
 modifier|*
 name|dst
+parameter_list|,
+name|gboolean
+name|dst_has_alpha
 parameter_list|)
 block|{
 specifier|register
@@ -4208,6 +4328,13 @@ name|yellow_src
 operator|++
 operator|)
 expr_stmt|;
+if|if
+condition|(
+name|dst_has_alpha
+condition|)
+name|rgb_dst
+operator|++
+expr_stmt|;
 block|}
 block|}
 else|else
@@ -4265,6 +4392,13 @@ name|yellow_src
 operator|+=
 name|yellow_incr
 expr_stmt|;
+if|if
+condition|(
+name|dst_has_alpha
+condition|)
+name|rgb_dst
+operator|++
+expr_stmt|;
 block|}
 block|}
 block|}
@@ -4273,7 +4407,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|compose_cmyk (guchar ** src,gint * incr_src,gint numpix,guchar * dst)
+DECL|function|compose_cmyk (guchar ** src,gint * incr_src,gint numpix,guchar * dst,gboolean dst_has_alpha)
 name|compose_cmyk
 parameter_list|(
 name|guchar
@@ -4291,6 +4425,9 @@ parameter_list|,
 name|guchar
 modifier|*
 name|dst
+parameter_list|,
+name|gboolean
+name|dst_has_alpha
 parameter_list|)
 block|{
 specifier|register
@@ -4561,6 +4698,13 @@ name|black_src
 operator|+=
 name|black_incr
 expr_stmt|;
+if|if
+condition|(
+name|dst_has_alpha
+condition|)
+name|rgb_dst
+operator|++
+expr_stmt|;
 block|}
 block|}
 end_function
@@ -4568,7 +4712,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|compose_lab (guchar ** src,gint * incr_src,gint numpix,guchar * dst)
+DECL|function|compose_lab (guchar ** src,gint * incr_src,gint numpix,guchar * dst,gboolean dst_has_alpha)
 name|compose_lab
 parameter_list|(
 name|guchar
@@ -4586,6 +4730,9 @@ parameter_list|,
 name|guchar
 modifier|*
 name|dst
+parameter_list|,
+name|gboolean
+name|dst_has_alpha
 parameter_list|)
 block|{
 specifier|register
@@ -5033,6 +5180,13 @@ name|b_src
 operator|+=
 name|b_incr
 expr_stmt|;
+if|if
+condition|(
+name|dst_has_alpha
+condition|)
+name|rgb_dst
+operator|++
+expr_stmt|;
 block|}
 block|}
 end_function
@@ -5077,7 +5231,7 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|compose_ycbcr470 (guchar ** src,gint * incr_src,gint numpix,guchar * dst)
+DECL|function|compose_ycbcr470 (guchar ** src,gint * incr_src,gint numpix,guchar * dst,gboolean dst_has_alpha)
 name|compose_ycbcr470
 parameter_list|(
 name|guchar
@@ -5095,6 +5249,9 @@ parameter_list|,
 name|guchar
 modifier|*
 name|dst
+parameter_list|,
+name|gboolean
+name|dst_has_alpha
 parameter_list|)
 block|{
 specifier|register
@@ -5402,6 +5559,13 @@ operator|)
 operator|=
 name|b
 expr_stmt|;
+if|if
+condition|(
+name|dst_has_alpha
+condition|)
+name|rgb_dst
+operator|++
+expr_stmt|;
 block|}
 block|}
 end_function
@@ -5409,7 +5573,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|compose_ycbcr709 (guchar ** src,gint * incr_src,gint numpix,guchar * dst)
+DECL|function|compose_ycbcr709 (guchar ** src,gint * incr_src,gint numpix,guchar * dst,gboolean dst_has_alpha)
 name|compose_ycbcr709
 parameter_list|(
 name|guchar
@@ -5427,6 +5591,9 @@ parameter_list|,
 name|guchar
 modifier|*
 name|dst
+parameter_list|,
+name|gboolean
+name|dst_has_alpha
 parameter_list|)
 block|{
 specifier|register
@@ -5734,6 +5901,13 @@ operator|)
 operator|=
 name|b
 expr_stmt|;
+if|if
+condition|(
+name|dst_has_alpha
+condition|)
+name|rgb_dst
+operator|++
+expr_stmt|;
 block|}
 block|}
 end_function
@@ -5741,7 +5915,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|compose_ycbcr470f (guchar ** src,gint * incr_src,gint numpix,guchar * dst)
+DECL|function|compose_ycbcr470f (guchar ** src,gint * incr_src,gint numpix,guchar * dst,gboolean dst_has_alpha)
 name|compose_ycbcr470f
 parameter_list|(
 name|guchar
@@ -5759,6 +5933,9 @@ parameter_list|,
 name|guchar
 modifier|*
 name|dst
+parameter_list|,
+name|gboolean
+name|dst_has_alpha
 parameter_list|)
 block|{
 specifier|register
@@ -6064,6 +6241,13 @@ operator|)
 operator|=
 name|b
 expr_stmt|;
+if|if
+condition|(
+name|dst_has_alpha
+condition|)
+name|rgb_dst
+operator|++
+expr_stmt|;
 block|}
 block|}
 end_function
@@ -6071,7 +6255,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|compose_ycbcr709f (guchar ** src,gint * incr_src,gint numpix,guchar * dst)
+DECL|function|compose_ycbcr709f (guchar ** src,gint * incr_src,gint numpix,guchar * dst,gboolean dst_has_alpha)
 name|compose_ycbcr709f
 parameter_list|(
 name|guchar
@@ -6089,6 +6273,9 @@ parameter_list|,
 name|guchar
 modifier|*
 name|dst
+parameter_list|,
+name|gboolean
+name|dst_has_alpha
 parameter_list|)
 block|{
 specifier|register
@@ -6393,6 +6580,13 @@ operator|++
 operator|)
 operator|=
 name|b
+expr_stmt|;
+if|if
+condition|(
+name|dst_has_alpha
+condition|)
+name|rgb_dst
+operator|++
 expr_stmt|;
 block|}
 block|}
