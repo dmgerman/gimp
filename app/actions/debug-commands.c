@@ -54,13 +54,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"debug-commands.h"
+file|"menus/menus.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gui/menus.h"
+file|"debug-commands.h"
 end_include
 
 begin_ifdef

@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui-types.h"
+file|"menus-types.h"
 end_include
 
 begin_include

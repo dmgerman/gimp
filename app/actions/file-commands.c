@@ -120,6 +120,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"menus/menus.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gui/dialogs.h"
 end_include
 
@@ -139,12 +145,6 @@ begin_include
 include|#
 directive|include
 file|"gui/file-save-dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gui/menus.h"
 end_include
 
 begin_include

@@ -132,6 +132,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"menus/menus.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"menus/plug-in-menus.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"brush-select.h"
 end_include
 
@@ -156,12 +168,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"menus.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"palette-select.h"
 end_include
 
@@ -169,12 +175,6 @@ begin_include
 include|#
 directive|include
 file|"pattern-select.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug-in-menus.h"
 end_include
 
 begin_include

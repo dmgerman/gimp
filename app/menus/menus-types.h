@@ -3,73 +3,33 @@ begin_comment
 comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
-begin_include
-include|#
-directive|include
-file|"config.h"
-end_include
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|__MENUS_TYPES_H__
+end_ifndef
+
+begin_define
+DECL|macro|__MENUS_TYPES_H__
+define|#
+directive|define
+name|__MENUS_TYPES_H__
+end_define
 
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|"gui/gui-types.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gui-types.h"
-end_include
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_include
-include|#
-directive|include
-file|"image-menu.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"menus.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug-in-menus.h"
-end_include
-
-begin_function
-name|void
-DECL|function|image_menu_setup (GimpUIManager * manager,const gchar * ui_path)
-name|image_menu_setup
-parameter_list|(
-name|GimpUIManager
-modifier|*
-name|manager
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|ui_path
-parameter_list|)
-block|{
-name|menus_open_recent_add
-argument_list|(
-name|manager
-argument_list|,
-name|ui_path
-argument_list|)
-expr_stmt|;
-name|plug_in_menus_setup
-argument_list|(
-name|manager
-argument_list|,
-name|ui_path
-argument_list|)
-expr_stmt|;
-block|}
-end_function
+begin_comment
+comment|/* __MENUS_TYPES_H__ */
+end_comment
 
 end_unit
 

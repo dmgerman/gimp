@@ -78,13 +78,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialogs-constructors.h"
+file|"menus/menus.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"menus.h"
+file|"dialogs-constructors.h"
 end_include
 
 begin_include

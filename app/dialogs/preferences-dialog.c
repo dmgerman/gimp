@@ -144,7 +144,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"menus.h"
+file|"menus/menus.h"
 end_include
 
 begin_include
@@ -6937,7 +6937,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2ab971460108
+DECL|struct|__anon28c671a90108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9378,7 +9378,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ab971460208
+DECL|struct|__anon28c671a90208
 block|{
 DECL|member|label
 specifier|const
@@ -9537,7 +9537,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ab971460308
+DECL|struct|__anon28c671a90308
 block|{
 DECL|member|tree_label
 specifier|const
