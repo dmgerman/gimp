@@ -6622,35 +6622,6 @@ index|]
 argument_list|)
 operator|)
 decl_stmt|;
-specifier|static
-name|gchar
-modifier|*
-name|reorder_if_exists
-index|[]
-init|=
-block|{
-literal|"/Filters/Misc"
-block|}
-decl_stmt|;
-specifier|static
-name|gint
-name|n_reorder_if_exists
-init|=
-operator|(
-sizeof|sizeof
-argument_list|(
-name|reorder_if_exists
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|reorder_if_exists
-index|[
-literal|0
-index|]
-argument_list|)
-operator|)
-decl_stmt|;
 name|GtkItemFactory
 modifier|*
 name|item_factory
@@ -6676,7 +6647,7 @@ name|i
 decl_stmt|,
 name|pos
 decl_stmt|;
-comment|/*  Beautify<Toolbox>/Xtns  */
+comment|/*  Beautify "<Toolbox>/Xtns"  */
 name|pos
 operator|=
 literal|2
@@ -6751,7 +6722,7 @@ operator|++
 expr_stmt|;
 block|}
 block|}
-comment|/*  Move "Filter all Layers..." before the separator  */
+comment|/*  Move "<Image>/Filters/Filter all Layers..." before the separator  */
 name|menu_item
 operator|=
 name|gtk_item_factory_get_widget
@@ -6932,7 +6903,7 @@ operator|++
 expr_stmt|;
 block|}
 block|}
-comment|/*  Reorder<Image>/File  */
+comment|/*  Reorder "<Image>/File"  */
 for|for
 control|(
 name|i
@@ -7155,7 +7126,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/*  Reorder submenus of<Image>/Filters which only exist sometimes  */
+comment|/*  Move all submenus which registered after "<Image>/Filters/Toys"    *  before the separator after "<Image>/Filters/Web"    */
 name|menu_item
 operator|=
 name|gtk_item_factory_get_widget
@@ -7201,34 +7172,13 @@ argument_list|,
 name|menu_item
 argument_list|)
 expr_stmt|;
-for|for
-control|(
-name|i
-operator|=
-literal|0
-init|;
-name|i
-operator|<
-name|n_reorder_if_exists
-condition|;
-name|i
-operator|++
-control|)
-block|{
-name|GList
-modifier|*
-name|list
-decl_stmt|;
 name|menu_item
 operator|=
 name|gtk_item_factory_get_widget
 argument_list|(
 name|image_factory
 argument_list|,
-name|reorder_if_exists
-index|[
-name|i
-index|]
+literal|"/Filters/Toys"
 argument_list|)
 expr_stmt|;
 if|if
@@ -7241,6 +7191,15 @@ name|menu_item
 argument_list|)
 condition|)
 block|{
+name|GList
+modifier|*
+name|list
+decl_stmt|;
+name|gint
+name|index
+init|=
+literal|1
+decl_stmt|;
 for|for
 control|(
 name|list
@@ -7276,10 +7235,27 @@ operator|==
 name|menu_item
 condition|)
 break|break;
+name|index
+operator|++
+expr_stmt|;
 block|}
-if|if
+while|while
 condition|(
-name|list
+operator|(
+name|menu_item
+operator|=
+name|g_list_nth_data
+argument_list|(
+name|GTK_MENU_SHELL
+argument_list|(
+name|menu
+argument_list|)
+operator|->
+name|children
+argument_list|,
+name|index
+argument_list|)
+operator|)
 condition|)
 block|{
 name|gtk_menu_reorder_child
@@ -7289,12 +7265,7 @@ argument_list|(
 name|menu
 argument_list|)
 argument_list|,
-name|GTK_WIDGET
-argument_list|(
-name|list
-operator|->
-name|data
-argument_list|)
+name|menu_item
 argument_list|,
 name|pos
 argument_list|)
@@ -7302,7 +7273,9 @@ expr_stmt|;
 name|pos
 operator|++
 expr_stmt|;
-block|}
+name|index
+operator|++
+expr_stmt|;
 block|}
 block|}
 block|}
