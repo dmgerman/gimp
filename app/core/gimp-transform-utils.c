@@ -621,7 +621,7 @@ name|dy1
 operator|=
 name|ty2
 operator|-
-name|ty3
+name|ty4
 expr_stmt|;
 name|dy2
 operator|=
