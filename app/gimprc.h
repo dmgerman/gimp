@@ -504,6 +504,13 @@ name|help_browser
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+specifier|extern
+name|gint
+name|cursor_mode
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/*  function prototypes  */
 end_comment

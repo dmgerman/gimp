@@ -63,6 +63,22 @@ directive|include
 file|<gtk/gtk.h>
 end_include
 
+begin_enum
+enum|enum
+DECL|enum|__anon2956f5a20103
+block|{
+DECL|enumerator|CURSOR_MODE_TOOL_ICON
+name|CURSOR_MODE_TOOL_ICON
+block|,
+DECL|enumerator|CURSOR_MODE_TOOL_CROSSHAIR
+name|CURSOR_MODE_TOOL_CROSSHAIR
+block|,
+DECL|enumerator|CURSOR_MODE_CROSSHAIR
+name|CURSOR_MODE_CROSSHAIR
+block|}
+enum|;
+end_enum
+
 begin_comment
 comment|/* FIXME: gimp_busy HACK */
 end_comment
@@ -77,7 +93,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ed678a0103
+DECL|enum|__anon2956f5a20203
 block|{
 DECL|enumerator|GIMP_MOUSE_CURSOR
 name|GIMP_MOUSE_CURSOR
@@ -87,6 +103,9 @@ name|GDK_LAST_CURSOR
 operator|+
 literal|2
 operator|)
+block|,
+DECL|enumerator|GIMP_CROSSHAIR_CURSOR
+name|GIMP_CROSSHAIR_CURSOR
 block|,
 DECL|enumerator|GIMP_MOUSE_ADD_CURSOR
 name|GIMP_MOUSE_ADD_CURSOR
