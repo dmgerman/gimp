@@ -142,7 +142,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c153a80108
+DECL|struct|__anon293783450108
 block|{
 DECL|member|root
 name|gboolean
@@ -1863,7 +1863,7 @@ argument_list|(
 name|main_vbox
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1895,7 +1895,7 @@ expr_stmt|;
 comment|/*  single window  */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
