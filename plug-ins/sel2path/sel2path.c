@@ -1393,10 +1393,7 @@ expr_stmt|;
 default|default:
 name|gtk_widget_destroy
 argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|data
-argument_list|)
+name|widget
 argument_list|)
 expr_stmt|;
 break|break;
