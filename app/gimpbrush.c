@@ -178,7 +178,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28896aee0103
+DECL|enum|__anon2ad746640103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -1447,10 +1447,15 @@ argument_list|(
 name|fd
 argument_list|,
 operator|-
+operator|(
+operator|(
+name|off_t
+operator|)
 sizeof|sizeof
 argument_list|(
 name|PatternHeader
 argument_list|)
+operator|)
 argument_list|,
 name|SEEK_CUR
 argument_list|)

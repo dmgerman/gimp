@@ -173,7 +173,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28def1000108
+DECL|struct|__anon27dfa9010108
 block|{
 DECL|member|spacing
 name|guint
@@ -230,7 +230,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28def1000208
+DECL|struct|__anon27dfa9010208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -2331,10 +2331,15 @@ argument_list|(
 name|fd
 argument_list|,
 operator|-
+operator|(
+operator|(
+name|off_t
+operator|)
 sizeof|sizeof
 argument_list|(
 name|PatternHeader
 argument_list|)
+operator|)
 argument_list|,
 name|SEEK_CUR
 argument_list|)
