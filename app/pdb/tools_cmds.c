@@ -64,6 +64,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpdrawable-blend.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable-bucket-fill.h"
 end_include
 
@@ -89,12 +95,6 @@ begin_include
 include|#
 directive|include
 file|"tools/gimpairbrushtool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/gimpblendtool.h"
 end_include
 
 begin_include
@@ -1102,10 +1102,6 @@ decl_stmt|;
 name|gdouble
 name|y2
 decl_stmt|;
-name|GimpImage
-modifier|*
-name|gimage
-decl_stmt|;
 name|drawable
 operator|=
 name|gimp_drawable_get_by_ID
@@ -1400,20 +1396,24 @@ condition|(
 name|success
 condition|)
 block|{
-name|gimage
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_gimage
-argument_list|(
-name|GIMP_DRAWABLE
 argument_list|(
 name|drawable
 argument_list|)
-argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
-name|blend
+block|}
+else|else
+block|{
+name|gimp_drawable_blend
 argument_list|(
-name|gimage
-argument_list|,
 name|drawable
 argument_list|,
 name|blend_mode
@@ -1447,6 +1447,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 return|return
 name|procedural_db_return_args

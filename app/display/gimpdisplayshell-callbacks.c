@@ -593,6 +593,36 @@ name|shell
 operator|->
 name|gdisp
 expr_stmt|;
+name|gtk_widget_grab_focus
+argument_list|(
+name|shell
+operator|->
+name|canvas
+argument_list|)
+expr_stmt|;
+name|gdk_window_set_back_pixmap
+argument_list|(
+name|shell
+operator|->
+name|canvas
+operator|->
+name|window
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_resize_cursor_label
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_update_title
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 comment|/*  create the selection object  */
 name|gdisp
 operator|->
@@ -709,6 +739,18 @@ comment|/*  setup scale properly  */
 name|gimp_display_shell_scale_setup
 argument_list|(
 name|shell
+argument_list|)
+expr_stmt|;
+comment|/*  set the initial cursor  */
+name|gimp_display_shell_install_tool_cursor
+argument_list|(
+name|shell
+argument_list|,
+name|GDK_TOP_LEFT_ARROW
+argument_list|,
+name|GIMP_TOOL_CURSOR_NONE
+argument_list|,
+name|GIMP_CURSOR_MODIFIER_NONE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1174,7 +1216,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"imp_display_shell_canvas_events(): called unrealized"
+literal|"gimp_display_shell_canvas_events(): called unrealized"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1198,25 +1240,6 @@ operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
-comment|/* FIXME */
-if|if
-condition|(
-operator|!
-name|gdisp
-operator|->
-name|select
-condition|)
-block|{
-name|gimp_display_shell_canvas_realize
-argument_list|(
-name|shell
-operator|->
-name|canvas
-argument_list|,
-name|shell
-argument_list|)
-expr_stmt|;
-block|}
 comment|/*  Find out what device the event occurred upon  */
 if|if
 condition|(

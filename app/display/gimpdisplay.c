@@ -602,6 +602,13 @@ argument_list|(
 name|gdisp
 argument_list|)
 expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|gdisp
+operator|->
+name|shell
+argument_list|)
+expr_stmt|;
 return|return
 name|gdisp
 return|;

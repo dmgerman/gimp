@@ -1717,7 +1717,7 @@ operator|(
 name|GimpToolOptions
 operator|*
 operator|)
-name|bucket_options
+name|options
 argument_list|)
 expr_stmt|;
 return|return
