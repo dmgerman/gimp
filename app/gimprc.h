@@ -485,6 +485,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|char
+modifier|*
+name|gimprc_value_to_str
+parameter_list|(
+name|char
+modifier|*
+name|name
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|save_gimprc_strings
 parameter_list|(

@@ -206,7 +206,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2882416c0103
+DECL|enum|__anon28e847610103
 typedef|typedef
 enum|enum
 block|{
@@ -1228,6 +1228,18 @@ parameter_list|(
 name|char
 modifier|*
 name|token_sym
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|char
+modifier|*
+name|gimprc_value_to_str
+parameter_list|(
+name|char
+modifier|*
+name|name
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -11038,6 +11050,27 @@ block|}
 end_function
 
 begin_function
+name|char
+modifier|*
+DECL|function|gimprc_value_to_str (char * name)
+name|gimprc_value_to_str
+parameter_list|(
+name|char
+modifier|*
+name|name
+parameter_list|)
+block|{
+return|return
+name|value_to_str
+argument_list|(
+name|name
+argument_list|)
+return|;
+comment|/* had a namespace collision */
+block|}
+end_function
+
+begin_function
 specifier|static
 name|char
 modifier|*
@@ -11052,6 +11085,13 @@ block|{
 name|int
 name|i
 decl_stmt|;
+name|printf
+argument_list|(
+literal|" STRING = %s"
+argument_list|,
+name|name
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|i

@@ -118,12 +118,32 @@ if|if
 condition|(
 name|success
 condition|)
+comment|/* tests the custom tokens only */
 name|success
 operator|=
 operator|(
 name|value
 operator|=
 name|gimprc_find_token
+argument_list|(
+name|token
+argument_list|)
+operator|)
+operator|!=
+name|NULL
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|success
+condition|)
+comment|/* try the standard ones, and do necessary conversions */
+name|success
+operator|=
+operator|(
+name|value
+operator|=
+name|gimprc_value_to_str
 argument_list|(
 name|token
 argument_list|)
