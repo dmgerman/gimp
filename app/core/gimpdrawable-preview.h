@@ -38,6 +38,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  *  normal functions (no virtuals)  */
+end_comment
+
+begin_function_decl
+name|gint
+name|gimp_drawable_preview_bytes
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_function_decl
 name|TempBuf
 modifier|*
