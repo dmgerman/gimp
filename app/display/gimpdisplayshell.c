@@ -3323,15 +3323,21 @@ name|gint
 name|contextid
 decl_stmt|;
 comment|/*  adjust the initial scale -- so that window fits on screen */
+comment|/*  the 75% value is the same as in gdisplay_shrink_wrap. It  */
+comment|/*  probably should be a user-configurable option.            */
 name|s_width
 operator|=
 name|gdk_screen_width
 argument_list|()
+operator|*
+literal|0.75
 expr_stmt|;
 name|s_height
 operator|=
 name|gdk_screen_height
 argument_list|()
+operator|*
+literal|0.75
 expr_stmt|;
 name|scalesrc
 operator|=
