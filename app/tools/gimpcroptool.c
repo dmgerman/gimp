@@ -194,7 +194,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27bbb3c90103
+DECL|enum|__anon2b9bc13a0103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -4352,11 +4352,14 @@ expr_stmt|;
 comment|/* restore sensitivity of buttons */
 name|gtk_dialog_set_response_sensitive
 argument_list|(
+name|GTK_DIALOG
+argument_list|(
 name|crop
 operator|->
 name|crop_info
 operator|->
 name|shell
+argument_list|)
 argument_list|,
 name|GIMP_CROP_MODE_CROP
 argument_list|,
@@ -4365,11 +4368,14 @@ argument_list|)
 expr_stmt|;
 name|gtk_dialog_set_response_sensitive
 argument_list|(
+name|GTK_DIALOG
+argument_list|(
 name|crop
 operator|->
 name|crop_info
 operator|->
 name|shell
+argument_list|)
 argument_list|,
 name|GIMP_CROP_MODE_RESIZE
 argument_list|,
@@ -5298,14 +5304,17 @@ operator|->
 name|crop_info
 condition|)
 block|{
-comment|/* set these buttons to be insensitive so that you cannot 	   * accidentially trigger a crop while one is ongoing */
+comment|/* set these buttons to be insensitive so that you cannot            * accidentially trigger a crop while one is ongoing */
 name|gtk_dialog_set_response_sensitive
+argument_list|(
+name|GTK_DIALOG
 argument_list|(
 name|crop
 operator|->
 name|crop_info
 operator|->
 name|shell
+argument_list|)
 argument_list|,
 name|GIMP_CROP_MODE_CROP
 argument_list|,
@@ -5314,11 +5323,14 @@ argument_list|)
 expr_stmt|;
 name|gtk_dialog_set_response_sensitive
 argument_list|(
+name|GTK_DIALOG
+argument_list|(
 name|crop
 operator|->
 name|crop_info
 operator|->
 name|shell
+argument_list|)
 argument_list|,
 name|GIMP_CROP_MODE_RESIZE
 argument_list|,
