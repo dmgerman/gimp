@@ -2078,6 +2078,17 @@ argument_list|,
 name|fileload
 argument_list|)
 expr_stmt|;
+comment|/* hide the help button because we have nothing to connect to it */
+name|gtk_widget_hide
+argument_list|(
+name|GTK_FILE_SELECTION
+argument_list|(
+name|fileload
+argument_list|)
+operator|->
+name|help_button
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -2494,6 +2505,17 @@ operator|)
 name|file_save_ok_callback
 argument_list|,
 name|filesave
+argument_list|)
+expr_stmt|;
+comment|/* hide the help button because we have nothing to connect to it */
+name|gtk_widget_hide
+argument_list|(
+name|GTK_FILE_SELECTION
+argument_list|(
+name|filesave
+argument_list|)
+operator|->
+name|help_button
 argument_list|)
 expr_stmt|;
 block|}
