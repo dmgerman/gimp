@@ -156,7 +156,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291a5ed70103
+DECL|enum|__anon29593eac0103
 block|{
 DECL|enumerator|HUE
 name|HUE
@@ -204,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291a5ed70203
+DECL|enum|__anon29593eac0203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -342,16 +342,19 @@ specifier|static
 name|void
 name|color_select_drag_new_color
 parameter_list|(
+name|GtkWidget
+modifier|*
+parameter_list|,
+name|guchar
+modifier|*
+parameter_list|,
+name|guchar
+modifier|*
+parameter_list|,
+name|guchar
+modifier|*
+parameter_list|,
 name|gpointer
-parameter_list|,
-name|guchar
-modifier|*
-parameter_list|,
-name|guchar
-modifier|*
-parameter_list|,
-name|guchar
-modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -361,13 +364,16 @@ specifier|static
 name|void
 name|color_select_drop_new_color
 parameter_list|(
+name|GtkWidget
+modifier|*
+parameter_list|,
+name|guchar
+parameter_list|,
+name|guchar
+parameter_list|,
+name|guchar
+parameter_list|,
 name|gpointer
-parameter_list|,
-name|guchar
-parameter_list|,
-name|guchar
-parameter_list|,
-name|guchar
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -377,16 +383,19 @@ specifier|static
 name|void
 name|color_select_drag_old_color
 parameter_list|(
+name|GtkWidget
+modifier|*
+parameter_list|,
+name|guchar
+modifier|*
+parameter_list|,
+name|guchar
+modifier|*
+parameter_list|,
+name|guchar
+modifier|*
+parameter_list|,
 name|gpointer
-parameter_list|,
-name|guchar
-modifier|*
-parameter_list|,
-name|guchar
-modifier|*
-parameter_list|,
-name|guchar
-modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2902,11 +2911,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_select_drag_new_color (gpointer data,guchar * r,guchar * g,guchar * b)
+DECL|function|color_select_drag_new_color (GtkWidget * widget,guchar * r,guchar * g,guchar * b,gpointer data)
 name|color_select_drag_new_color
 parameter_list|(
-name|gpointer
-name|data
+name|GtkWidget
+modifier|*
+name|widget
 parameter_list|,
 name|guchar
 modifier|*
@@ -2919,6 +2929,9 @@ parameter_list|,
 name|guchar
 modifier|*
 name|b
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 block|{
 name|ColorSelect
@@ -2978,11 +2991,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_select_drop_new_color (gpointer data,guchar r,guchar g,guchar b)
+DECL|function|color_select_drop_new_color (GtkWidget * widget,guchar r,guchar g,guchar b,gpointer data)
 name|color_select_drop_new_color
 parameter_list|(
-name|gpointer
-name|data
+name|GtkWidget
+modifier|*
+name|widget
 parameter_list|,
 name|guchar
 name|r
@@ -2992,6 +3006,9 @@ name|g
 parameter_list|,
 name|guchar
 name|b
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 block|{
 name|ColorSelect
@@ -3095,11 +3112,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_select_drag_old_color (gpointer data,guchar * r,guchar * g,guchar * b)
+DECL|function|color_select_drag_old_color (GtkWidget * widget,guchar * r,guchar * g,guchar * b,gpointer data)
 name|color_select_drag_old_color
 parameter_list|(
-name|gpointer
-name|data
+name|GtkWidget
+modifier|*
+name|widget
 parameter_list|,
 name|guchar
 modifier|*
@@ -3112,6 +3130,9 @@ parameter_list|,
 name|guchar
 modifier|*
 name|b
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 block|{
 name|ColorSelect
@@ -11503,7 +11524,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291a5ed70308
+DECL|struct|__anon29593eac0308
 block|{
 DECL|member|callback
 name|GimpColorSelector_Callback

@@ -1066,13 +1066,13 @@ name|g
 decl_stmt|,
 name|b
 decl_stmt|;
-name|GimpDndGetColorFunc
+name|GimpDndDragColorFunc
 name|get_color_func
 decl_stmt|;
 name|get_color_func
 operator|=
 operator|(
-name|GimpDndGetColorFunc
+name|GimpDndDragColorFunc
 operator|)
 name|gtk_object_get_data
 argument_list|(
@@ -1143,7 +1143,7 @@ modifier|*
 name|get_color_func
 call|)
 argument_list|(
-name|data
+name|widget
 argument_list|,
 operator|&
 name|r
@@ -1153,6 +1153,8 @@ name|g
 argument_list|,
 operator|&
 name|b
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|bg
@@ -1287,13 +1289,13 @@ name|g
 decl_stmt|,
 name|b
 decl_stmt|;
-name|GimpDndGetColorFunc
+name|GimpDndDragColorFunc
 name|get_color_func
 decl_stmt|;
 name|get_color_func
 operator|=
 operator|(
-name|GimpDndGetColorFunc
+name|GimpDndDragColorFunc
 operator|)
 name|gtk_object_get_data
 argument_list|(
@@ -1316,7 +1318,7 @@ modifier|*
 name|get_color_func
 call|)
 argument_list|(
-name|data
+name|widget
 argument_list|,
 operator|&
 name|r
@@ -1326,6 +1328,8 @@ name|g
 argument_list|,
 operator|&
 name|b
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|vals
@@ -1432,13 +1436,13 @@ name|g
 decl_stmt|,
 name|b
 decl_stmt|;
-name|GimpDndSetColorFunc
+name|GimpDndDropColorFunc
 name|set_color_func
 decl_stmt|;
 name|set_color_func
 operator|=
 operator|(
-name|GimpDndSetColorFunc
+name|GimpDndDropColorFunc
 operator|)
 name|gtk_object_get_data
 argument_list|(
@@ -1533,13 +1537,15 @@ modifier|*
 name|set_color_func
 call|)
 argument_list|(
-name|data
+name|widget
 argument_list|,
 name|r
 argument_list|,
 name|g
 argument_list|,
 name|b
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 block|}
@@ -1547,14 +1553,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_dnd_color_source_set (GtkWidget * widget,GimpDndGetColorFunc get_color_func,gpointer data)
+DECL|function|gimp_dnd_color_source_set (GtkWidget * widget,GimpDndDragColorFunc get_color_func,gpointer data)
 name|gimp_dnd_color_source_set
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpDndGetColorFunc
+name|GimpDndDragColorFunc
 name|get_color_func
 parameter_list|,
 name|gpointer
@@ -1632,14 +1638,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_dnd_color_dest_set (GtkWidget * widget,GimpDndSetColorFunc set_color_func,gpointer data)
+DECL|function|gimp_dnd_color_dest_set (GtkWidget * widget,GimpDndDropColorFunc set_color_func,gpointer data)
 name|gimp_dnd_color_dest_set
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpDndSetColorFunc
+name|GimpDndDropColorFunc
 name|set_color_func
 parameter_list|,
 name|gpointer

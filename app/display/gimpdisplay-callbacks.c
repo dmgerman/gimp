@@ -3139,11 +3139,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_set_color (gpointer data,guchar r,guchar g,guchar b)
+DECL|function|gdisplay_set_color (GtkWidget * widget,guchar r,guchar g,guchar b,gpointer data)
 name|gdisplay_set_color
 parameter_list|(
-name|gpointer
-name|data
+name|GtkWidget
+modifier|*
+name|widget
 parameter_list|,
 name|guchar
 name|r
@@ -3153,6 +3154,9 @@ name|g
 parameter_list|,
 name|guchar
 name|b
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 block|{
 name|GimpImage

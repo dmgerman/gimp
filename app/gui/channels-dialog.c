@@ -759,15 +759,18 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|channel_widget_set_color
+name|channel_widget_drop_color
 parameter_list|(
+name|GtkWidget
+modifier|*
+parameter_list|,
+name|guchar
+parameter_list|,
+name|guchar
+parameter_list|,
+name|guchar
+parameter_list|,
 name|gpointer
-parameter_list|,
-name|guchar
-parameter_list|,
-name|guchar
-parameter_list|,
-name|guchar
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -6183,7 +6186,7 @@ name|gimp_dnd_color_dest_set
 argument_list|(
 name|list_item
 argument_list|,
-name|channel_widget_set_color
+name|channel_widget_drop_color
 argument_list|,
 operator|(
 name|gpointer
@@ -7090,11 +7093,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|channel_widget_set_color (gpointer data,guchar r,guchar g,guchar b)
-name|channel_widget_set_color
+DECL|function|channel_widget_drop_color (GtkWidget * widget,guchar r,guchar g,guchar b,gpointer data)
+name|channel_widget_drop_color
 parameter_list|(
-name|gpointer
-name|data
+name|GtkWidget
+modifier|*
+name|widget
 parameter_list|,
 name|guchar
 name|r
@@ -7104,6 +7108,9 @@ name|g
 parameter_list|,
 name|guchar
 name|b
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 block|{
 name|ChannelWidget

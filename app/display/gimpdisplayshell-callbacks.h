@@ -129,8 +129,9 @@ begin_function_decl
 name|void
 name|gdisplay_set_color
 parameter_list|(
-name|gpointer
-name|data
+name|GtkWidget
+modifier|*
+name|widget
 parameter_list|,
 name|guchar
 name|r
@@ -140,6 +141,9 @@ name|g
 parameter_list|,
 name|guchar
 name|b
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
