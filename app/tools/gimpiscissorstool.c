@@ -255,7 +255,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b761560103
+DECL|enum|__anon2b9efa720103
 block|{
 DECL|enumerator|NO_ACTION
 name|NO_ACTION
@@ -281,7 +281,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b761560203
+DECL|enum|__anon2b9efa720203
 block|{
 DECL|enumerator|DRAW_NOTHING
 name|DRAW_NOTHING
@@ -4507,7 +4507,13 @@ name|op
 operator|=
 name|SELECTION_INTERSECT
 expr_stmt|;
-else|else
+elseif|else
+if|if
+condition|(
+name|op
+operator|==
+name|SELECTION_INTERSECT
+condition|)
 name|op
 operator|=
 name|SELECTION_SUB
@@ -4551,7 +4557,13 @@ name|op
 operator|=
 name|SELECTION_REPLACE
 expr_stmt|;
-else|else
+elseif|else
+if|if
+condition|(
+name|op
+operator|==
+name|SELECTION_INTERSECT
+condition|)
 name|op
 operator|=
 name|SELECTION_ADD

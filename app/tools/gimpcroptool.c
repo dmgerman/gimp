@@ -639,7 +639,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28feddcb0103
+DECL|enum|__anon2b63f6b30103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -980,7 +980,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Current Layer Only"
+literal|"Current Layer only"
 argument_list|)
 argument_list|)
 expr_stmt|;

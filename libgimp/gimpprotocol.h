@@ -35,8 +35,8 @@ value|0x0003
 end_define
 
 begin_enum
-DECL|enum|__anon2c47ef540103
 enum|enum
+DECL|enum|__anon29d3f9fd0103
 block|{
 DECL|enumerator|GP_QUIT
 name|GP_QUIT
@@ -290,8 +290,8 @@ DECL|member|type
 name|guint32
 name|type
 decl_stmt|;
-DECL|union|__anon2c47ef54020a
 union|union
+DECL|union|__anon29d3f9fd020a
 block|{
 DECL|member|d_int32
 name|gint32
@@ -340,8 +340,8 @@ modifier|*
 modifier|*
 name|d_stringarray
 decl_stmt|;
-DECL|struct|__anon2c47ef540308
 struct|struct
+DECL|struct|__anon29d3f9fd0308
 block|{
 DECL|member|red
 name|guint8
@@ -359,8 +359,8 @@ DECL|member|d_color
 block|}
 name|d_color
 struct|;
-DECL|struct|__anon2c47ef540408
 struct|struct
+DECL|struct|__anon29d3f9fd0408
 block|{
 DECL|member|x
 name|gint32
@@ -415,10 +415,10 @@ name|gint32
 name|d_path
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c47ef540508
+DECL|struct|__anon29d3f9fd0508
 block|{
 DECL|member|name
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
@@ -431,8 +431,7 @@ name|guint32
 name|size
 decl_stmt|;
 DECL|member|data
-name|void
-modifier|*
+name|gpointer
 name|data
 decl_stmt|;
 DECL|member|d_parasite
@@ -461,12 +460,12 @@ name|guint32
 name|type
 decl_stmt|;
 DECL|member|name
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
 DECL|member|description
-name|char
+name|gchar
 modifier|*
 name|description
 decl_stmt|;
@@ -480,7 +479,7 @@ struct|struct
 name|_GPProcRun
 block|{
 DECL|member|name
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
@@ -503,7 +502,7 @@ struct|struct
 name|_GPProcReturn
 block|{
 DECL|member|name
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
@@ -526,42 +525,42 @@ struct|struct
 name|_GPProcInstall
 block|{
 DECL|member|name
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
 DECL|member|blurb
-name|char
+name|gchar
 modifier|*
 name|blurb
 decl_stmt|;
 DECL|member|help
-name|char
+name|gchar
 modifier|*
 name|help
 decl_stmt|;
 DECL|member|author
-name|char
+name|gchar
 modifier|*
 name|author
 decl_stmt|;
 DECL|member|copyright
-name|char
+name|gchar
 modifier|*
 name|copyright
 decl_stmt|;
 DECL|member|date
-name|char
+name|gchar
 modifier|*
 name|date
 decl_stmt|;
 DECL|member|menu_path
-name|char
+name|gchar
 modifier|*
 name|menu_path
 decl_stmt|;
 DECL|member|image_types
-name|char
+name|gchar
 modifier|*
 name|image_types
 decl_stmt|;
@@ -597,7 +596,7 @@ struct|struct
 name|_GPProcUninstall
 block|{
 DECL|member|name
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
@@ -615,7 +614,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|gp_quit_write
 parameter_list|(
 name|GIOChannel
@@ -626,7 +625,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|gp_config_write
 parameter_list|(
 name|GIOChannel
@@ -641,7 +640,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|gp_tile_req_write
 parameter_list|(
 name|GIOChannel
@@ -656,7 +655,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|gp_tile_ack_write
 parameter_list|(
 name|GIOChannel
@@ -667,7 +666,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|gp_tile_data_write
 parameter_list|(
 name|GIOChannel
@@ -682,7 +681,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|gp_proc_run_write
 parameter_list|(
 name|GIOChannel
@@ -697,7 +696,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|gp_proc_return_write
 parameter_list|(
 name|GIOChannel
@@ -712,7 +711,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|gp_temp_proc_run_write
 parameter_list|(
 name|GIOChannel
@@ -727,7 +726,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|gp_temp_proc_return_write
 parameter_list|(
 name|GIOChannel
@@ -742,7 +741,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|gp_proc_install_write
 parameter_list|(
 name|GIOChannel
@@ -757,7 +756,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|gp_proc_uninstall_write
 parameter_list|(
 name|GIOChannel
@@ -772,7 +771,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|gp_extension_ack_write
 parameter_list|(
 name|GIOChannel
@@ -783,7 +782,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|gp_request_wakeups_write
 parameter_list|(
 name|GIOChannel

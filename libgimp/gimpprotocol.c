@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<stdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpenums.h"
 end_include
 
@@ -31,12 +37,6 @@ begin_include
 include|#
 directive|include
 file|"parasiteP.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
 end_include
 
 begin_function_decl
@@ -645,11 +645,15 @@ name|GPParam
 modifier|*
 name|params
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/* used by gimp.c:gimp_destroy_params() */
+end_comment
 
 begin_function_decl
 name|void
@@ -659,7 +663,7 @@ name|GPParam
 modifier|*
 name|params
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|)
 function_decl|;
@@ -667,9 +671,11 @@ end_function_decl
 
 begin_function
 name|void
-DECL|function|gp_init ()
+DECL|function|gp_init (void)
 name|gp_init
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|wire_register
 argument_list|(
@@ -818,7 +824,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|gp_quit_write (GIOChannel * channel)
 name|gp_quit_write
 parameter_list|(
@@ -874,7 +880,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|gp_config_write (GIOChannel * channel,GPConfig * config)
 name|gp_config_write
 parameter_list|(
@@ -934,7 +940,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|gp_tile_req_write (GIOChannel * channel,GPTileReq * tile_req)
 name|gp_tile_req_write
 parameter_list|(
@@ -994,7 +1000,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|gp_tile_ack_write (GIOChannel * channel)
 name|gp_tile_ack_write
 parameter_list|(
@@ -1050,7 +1056,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|gp_tile_data_write (GIOChannel * channel,GPTileData * tile_data)
 name|gp_tile_data_write
 parameter_list|(
@@ -1110,7 +1116,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|gp_proc_run_write (GIOChannel * channel,GPProcRun * proc_run)
 name|gp_proc_run_write
 parameter_list|(
@@ -1170,7 +1176,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|gp_proc_return_write (GIOChannel * channel,GPProcReturn * proc_return)
 name|gp_proc_return_write
 parameter_list|(
@@ -1230,7 +1236,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|gp_temp_proc_run_write (GIOChannel * channel,GPProcRun * proc_run)
 name|gp_temp_proc_run_write
 parameter_list|(
@@ -1290,7 +1296,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|gp_temp_proc_return_write (GIOChannel * channel,GPProcReturn * proc_return)
 name|gp_temp_proc_return_write
 parameter_list|(
@@ -1350,7 +1356,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|gp_proc_install_write (GIOChannel * channel,GPProcInstall * proc_install)
 name|gp_proc_install_write
 parameter_list|(
@@ -1410,7 +1416,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|gp_proc_uninstall_write (GIOChannel * channel,GPProcUninstall * proc_uninstall)
 name|gp_proc_uninstall_write
 parameter_list|(
@@ -1470,7 +1476,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|gp_extension_ack_write (GIOChannel * channel)
 name|gp_extension_ack_write
 parameter_list|(
@@ -1526,7 +1532,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|gp_request_wakeups_write (GIOChannel * channel)
 name|gp_request_wakeups_write
 parameter_list|(
@@ -1581,6 +1587,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/*  quit  */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -1628,6 +1638,10 @@ parameter_list|)
 block|{ }
 end_function
 
+begin_comment
+comment|/*  config  */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -1671,7 +1685,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -1687,7 +1703,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -1703,7 +1721,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -1723,7 +1743,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -1739,7 +1761,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -1759,7 +1783,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -1778,7 +1804,9 @@ argument_list|,
 literal|3
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -1798,12 +1826,22 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 name|msg
 operator|->
 name|data
 operator|=
 name|config
+expr_stmt|;
+return|return;
+name|cleanup
+label|:
+name|g_free
+argument_list|(
+name|config
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -2000,6 +2038,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*  tile_req  */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -2047,7 +2089,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -2063,7 +2107,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -2079,12 +2125,22 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 name|msg
 operator|->
 name|data
 operator|=
 name|tile_req
+expr_stmt|;
+return|return;
+name|cleanup
+label|:
+name|g_free
+argument_list|(
+name|tile_req
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -2190,6 +2246,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*  tile_ack  */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -2237,6 +2297,10 @@ parameter_list|)
 block|{ }
 end_function
 
+begin_comment
+comment|/*  tile_data  */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -2261,7 +2325,7 @@ name|length
 decl_stmt|;
 name|tile_data
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|GPTileData
 argument_list|,
@@ -2287,7 +2351,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -2303,7 +2369,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -2319,7 +2387,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -2335,7 +2405,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -2351,7 +2423,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -2367,7 +2441,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -2383,13 +2459,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
-name|tile_data
-operator|->
-name|data
-operator|=
-name|NULL
-expr_stmt|;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -2441,13 +2513,30 @@ argument_list|,
 name|length
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 block|}
 name|msg
 operator|->
 name|data
 operator|=
 name|tile_data
+expr_stmt|;
+return|return;
+name|cleanup
+label|:
+name|g_free
+argument_list|(
+name|tile_data
+operator|->
+name|data
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|tile_data
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -2677,6 +2766,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*  proc_run  */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -2720,14 +2813,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-block|{
-name|g_free
-argument_list|(
-name|proc_run
-argument_list|)
-expr_stmt|;
-return|return;
-block|}
+goto|goto
+name|cleanup
+goto|;
 name|_gp_params_read
 argument_list|(
 name|channel
@@ -2752,6 +2840,14 @@ operator|->
 name|data
 operator|=
 name|proc_run
+expr_stmt|;
+return|return;
+name|cleanup
+label|:
+name|g_free
+argument_list|(
+name|proc_run
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -2860,6 +2956,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*  proc_return  */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -2903,7 +3003,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 name|_gp_params_read
 argument_list|(
 name|channel
@@ -2928,6 +3030,14 @@ operator|->
 name|data
 operator|=
 name|proc_return
+expr_stmt|;
+return|return;
+name|cleanup
+label|:
+name|g_free
+argument_list|(
+name|proc_return
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -3036,6 +3146,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*  temp_proc_run  */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -3104,6 +3218,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/*  temp_proc_return  */
+end_comment
 
 begin_function
 specifier|static
@@ -3174,6 +3292,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*  proc_install  */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -3193,12 +3315,12 @@ name|GPProcInstall
 modifier|*
 name|proc_install
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|proc_install
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|GPProcInstall
 argument_list|,
@@ -3220,7 +3342,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -3236,7 +3360,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -3252,7 +3378,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -3268,7 +3396,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -3284,7 +3414,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -3300,7 +3432,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -3316,7 +3450,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -3332,7 +3468,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -3348,7 +3486,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -3364,7 +3504,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -3380,31 +3522,20 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 name|proc_install
 operator|->
 name|params
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|GPParamDef
 argument_list|,
 name|proc_install
 operator|->
 name|nparams
-argument_list|)
-expr_stmt|;
-name|proc_install
-operator|->
-name|return_vals
-operator|=
-name|g_new
-argument_list|(
-name|GPParamDef
-argument_list|,
-name|proc_install
-operator|->
-name|nreturn_vals
 argument_list|)
 expr_stmt|;
 for|for
@@ -3447,7 +3578,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -3468,7 +3601,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -3489,8 +3624,23 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 block|}
+name|proc_install
+operator|->
+name|return_vals
+operator|=
+name|g_new0
+argument_list|(
+name|GPParamDef
+argument_list|,
+name|proc_install
+operator|->
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -3531,7 +3681,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -3552,7 +3704,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -3573,13 +3727,217 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 block|}
 name|msg
 operator|->
 name|data
 operator|=
 name|proc_install
+expr_stmt|;
+return|return;
+name|cleanup
+label|:
+name|g_free
+argument_list|(
+name|proc_install
+operator|->
+name|name
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|proc_install
+operator|->
+name|blurb
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|proc_install
+operator|->
+name|help
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|proc_install
+operator|->
+name|author
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|proc_install
+operator|->
+name|copyright
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|proc_install
+operator|->
+name|date
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|proc_install
+operator|->
+name|menu_path
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|proc_install
+operator|->
+name|image_types
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|proc_install
+operator|->
+name|params
+condition|)
+block|{
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|proc_install
+operator|->
+name|nparams
+condition|;
+name|i
+operator|++
+control|)
+block|{
+if|if
+condition|(
+operator|!
+name|proc_install
+operator|->
+name|params
+index|[
+name|i
+index|]
+operator|.
+name|name
+condition|)
+break|break;
+name|g_free
+argument_list|(
+name|proc_install
+operator|->
+name|params
+index|[
+name|i
+index|]
+operator|.
+name|name
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|proc_install
+operator|->
+name|params
+index|[
+name|i
+index|]
+operator|.
+name|description
+argument_list|)
+expr_stmt|;
+block|}
+name|g_free
+argument_list|(
+name|proc_install
+operator|->
+name|params
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|proc_install
+operator|->
+name|return_vals
+condition|)
+block|{
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|proc_install
+operator|->
+name|nreturn_vals
+condition|;
+name|i
+operator|++
+control|)
+block|{
+if|if
+condition|(
+operator|!
+name|proc_install
+operator|->
+name|return_vals
+index|[
+name|i
+index|]
+operator|.
+name|name
+condition|)
+break|break;
+name|g_free
+argument_list|(
+name|proc_install
+operator|->
+name|return_vals
+index|[
+name|i
+index|]
+operator|.
+name|name
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|proc_install
+operator|->
+name|return_vals
+index|[
+name|i
+index|]
+operator|.
+name|description
+argument_list|)
+expr_stmt|;
+block|}
+name|g_free
+argument_list|(
+name|proc_install
+operator|->
+name|return_vals
+argument_list|)
+expr_stmt|;
+block|}
+name|g_free
+argument_list|(
+name|proc_install
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -3603,7 +3961,7 @@ name|GPProcInstall
 modifier|*
 name|proc_install
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|proc_install
@@ -3974,7 +4332,7 @@ name|GPProcInstall
 modifier|*
 name|proc_install
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|proc_install
@@ -4143,6 +4501,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*  proc_uninstall  */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -4186,12 +4548,22 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 name|msg
 operator|->
 name|data
 operator|=
 name|proc_uninstall
+expr_stmt|;
+return|return;
+name|cleanup
+label|:
+name|g_free
+argument_list|(
+name|proc_uninstall
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -4276,6 +4648,112 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*  extension_ack  */
+end_comment
+
+begin_function
+specifier|static
+name|void
+DECL|function|_gp_extension_ack_read (GIOChannel * channel,WireMessage * msg)
+name|_gp_extension_ack_read
+parameter_list|(
+name|GIOChannel
+modifier|*
+name|channel
+parameter_list|,
+name|WireMessage
+modifier|*
+name|msg
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|_gp_extension_ack_write (GIOChannel * channel,WireMessage * msg)
+name|_gp_extension_ack_write
+parameter_list|(
+name|GIOChannel
+modifier|*
+name|channel
+parameter_list|,
+name|WireMessage
+modifier|*
+name|msg
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|_gp_extension_ack_destroy (WireMessage * msg)
+name|_gp_extension_ack_destroy
+parameter_list|(
+name|WireMessage
+modifier|*
+name|msg
+parameter_list|)
+block|{ }
+end_function
+
+begin_comment
+comment|/*  request_wakeups  */
+end_comment
+
+begin_function
+specifier|static
+name|void
+DECL|function|_gp_request_wakeups_read (GIOChannel * channel,WireMessage * msg)
+name|_gp_request_wakeups_read
+parameter_list|(
+name|GIOChannel
+modifier|*
+name|channel
+parameter_list|,
+name|WireMessage
+modifier|*
+name|msg
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|_gp_request_wakeups_write (GIOChannel * channel,WireMessage * msg)
+name|_gp_request_wakeups_write
+parameter_list|(
+name|GIOChannel
+modifier|*
+name|channel
+parameter_list|,
+name|WireMessage
+modifier|*
+name|msg
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|_gp_request_wakeups_destroy (WireMessage * msg)
+name|_gp_request_wakeups_destroy
+parameter_list|(
+name|WireMessage
+modifier|*
+name|msg
+parameter_list|)
+block|{ }
+end_function
+
+begin_comment
+comment|/*  params  */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -4296,8 +4774,10 @@ modifier|*
 name|nparams
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
+decl_stmt|,
+name|j
 decl_stmt|;
 if|if
 condition|(
@@ -4382,7 +4862,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 switch|switch
 condition|(
 operator|(
@@ -4426,7 +4908,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 break|break;
 case|case
 name|PARAM_INT16
@@ -4458,7 +4942,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 break|break;
 case|case
 name|PARAM_INT8
@@ -4490,7 +4976,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 break|break;
 case|case
 name|PARAM_FLOAT
@@ -4518,7 +5006,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 break|break;
 case|case
 name|PARAM_STRING
@@ -4546,7 +5036,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 break|break;
 case|case
 name|PARAM_INT32ARRAY
@@ -4620,7 +5112,26 @@ operator|.
 name|d_int32
 argument_list|)
 condition|)
-return|return;
+block|{
+name|g_free
+argument_list|(
+operator|(
+operator|*
+name|params
+operator|)
+index|[
+name|i
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32array
+argument_list|)
+expr_stmt|;
+goto|goto
+name|cleanup
+goto|;
+block|}
 break|break;
 case|case
 name|PARAM_INT16ARRAY
@@ -4694,7 +5205,26 @@ operator|.
 name|d_int32
 argument_list|)
 condition|)
-return|return;
+block|{
+name|g_free
+argument_list|(
+operator|(
+operator|*
+name|params
+operator|)
+index|[
+name|i
+index|]
+operator|.
+name|data
+operator|.
+name|d_int16array
+argument_list|)
+expr_stmt|;
+goto|goto
+name|cleanup
+goto|;
+block|}
 break|break;
 case|case
 name|PARAM_INT8ARRAY
@@ -4768,7 +5298,26 @@ operator|.
 name|d_int32
 argument_list|)
 condition|)
-return|return;
+block|{
+name|g_free
+argument_list|(
+operator|(
+operator|*
+name|params
+operator|)
+index|[
+name|i
+index|]
+operator|.
+name|data
+operator|.
+name|d_int8array
+argument_list|)
+expr_stmt|;
+goto|goto
+name|cleanup
+goto|;
+block|}
 break|break;
 case|case
 name|PARAM_FLOATARRAY
@@ -4838,7 +5387,26 @@ operator|.
 name|d_int32
 argument_list|)
 condition|)
-return|return;
+block|{
+name|g_free
+argument_list|(
+operator|(
+operator|*
+name|params
+operator|)
+index|[
+name|i
+index|]
+operator|.
+name|data
+operator|.
+name|d_floatarray
+argument_list|)
+expr_stmt|;
+goto|goto
+name|cleanup
+goto|;
+block|}
 break|break;
 case|case
 name|PARAM_STRINGARRAY
@@ -4855,7 +5423,7 @@ name|data
 operator|.
 name|d_stringarray
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|gchar
 operator|*
@@ -4909,7 +5477,71 @@ operator|.
 name|d_int32
 argument_list|)
 condition|)
-return|return;
+block|{
+for|for
+control|(
+name|j
+operator|=
+literal|0
+init|;
+name|j
+operator|<
+operator|(
+operator|*
+name|params
+operator|)
+index|[
+name|i
+operator|-
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+condition|;
+name|j
+operator|++
+control|)
+name|g_free
+argument_list|(
+operator|(
+operator|(
+operator|*
+name|params
+operator|)
+index|[
+name|i
+index|]
+operator|.
+name|data
+operator|.
+name|d_stringarray
+operator|)
+index|[
+name|j
+index|]
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+operator|(
+operator|*
+name|params
+operator|)
+index|[
+name|i
+index|]
+operator|.
+name|data
+operator|.
+name|d_stringarray
+argument_list|)
+expr_stmt|;
+goto|goto
+name|cleanup
+goto|;
+block|}
 break|break;
 case|case
 name|PARAM_COLOR
@@ -4943,7 +5575,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -4973,7 +5607,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -5003,7 +5639,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 break|break;
 case|case
 name|PARAM_REGION
@@ -5039,7 +5677,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 break|break;
 case|case
 name|PARAM_IMAGE
@@ -5071,7 +5711,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 break|break;
 case|case
 name|PARAM_LAYER
@@ -5103,7 +5745,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 break|break;
 case|case
 name|PARAM_CHANNEL
@@ -5135,7 +5779,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 break|break;
 case|case
 name|PARAM_DRAWABLE
@@ -5167,7 +5813,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 break|break;
 case|case
 name|PARAM_SELECTION
@@ -5199,7 +5847,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 break|break;
 case|case
 name|PARAM_BOUNDARY
@@ -5231,7 +5881,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 break|break;
 case|case
 name|PARAM_PATH
@@ -5263,12 +5915,13 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 break|break;
 case|case
 name|PARAM_PARASITE
 case|:
-block|{
 if|if
 condition|(
 operator|!
@@ -5294,7 +5947,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|(
@@ -5360,7 +6015,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|!
@@ -5388,7 +6045,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 if|if
 condition|(
 operator|(
@@ -5493,23 +6152,9 @@ operator|.
 name|data
 argument_list|)
 expr_stmt|;
-operator|(
-operator|*
-name|params
-operator|)
-index|[
-name|i
-index|]
-operator|.
-name|data
-operator|.
-name|d_parasite
-operator|.
-name|data
-operator|=
-name|NULL
-expr_stmt|;
-return|return;
+goto|goto
+name|cleanup
+goto|;
 block|}
 block|}
 else|else
@@ -5529,7 +6174,6 @@ name|data
 operator|=
 name|NULL
 expr_stmt|;
-block|}
 break|break;
 case|case
 name|PARAM_STATUS
@@ -5561,7 +6205,9 @@ argument_list|,
 literal|1
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 break|break;
 case|case
 name|PARAM_END
@@ -5569,13 +6215,32 @@ case|:
 break|break;
 block|}
 block|}
+return|return;
+name|cleanup
+label|:
+operator|*
+name|nparams
+operator|=
+literal|0
+expr_stmt|;
+name|g_free
+argument_list|(
+operator|*
+name|params
+argument_list|)
+expr_stmt|;
+operator|*
+name|params
+operator|=
+name|NULL
+expr_stmt|;
 block|}
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_params_write (GIOChannel * channel,GPParam * params,int nparams)
+DECL|function|_gp_params_write (GIOChannel * channel,GPParam * params,gint nparams)
 name|_gp_params_write
 parameter_list|(
 name|GIOChannel
@@ -5586,11 +6251,11 @@ name|GPParam
 modifier|*
 name|params
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 if|if
@@ -6455,116 +7120,22 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
-DECL|function|_gp_extension_ack_read (GIOChannel * channel,WireMessage * msg)
-name|_gp_extension_ack_read
-parameter_list|(
-name|GIOChannel
-modifier|*
-name|channel
-parameter_list|,
-name|WireMessage
-modifier|*
-name|msg
-parameter_list|)
-block|{ }
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|_gp_extension_ack_write (GIOChannel * channel,WireMessage * msg)
-name|_gp_extension_ack_write
-parameter_list|(
-name|GIOChannel
-modifier|*
-name|channel
-parameter_list|,
-name|WireMessage
-modifier|*
-name|msg
-parameter_list|)
-block|{ }
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|_gp_extension_ack_destroy (WireMessage * msg)
-name|_gp_extension_ack_destroy
-parameter_list|(
-name|WireMessage
-modifier|*
-name|msg
-parameter_list|)
-block|{ }
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|_gp_request_wakeups_read (GIOChannel * channel,WireMessage * msg)
-name|_gp_request_wakeups_read
-parameter_list|(
-name|GIOChannel
-modifier|*
-name|channel
-parameter_list|,
-name|WireMessage
-modifier|*
-name|msg
-parameter_list|)
-block|{ }
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|_gp_request_wakeups_write (GIOChannel * channel,WireMessage * msg)
-name|_gp_request_wakeups_write
-parameter_list|(
-name|GIOChannel
-modifier|*
-name|channel
-parameter_list|,
-name|WireMessage
-modifier|*
-name|msg
-parameter_list|)
-block|{ }
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|_gp_request_wakeups_destroy (WireMessage * msg)
-name|_gp_request_wakeups_destroy
-parameter_list|(
-name|WireMessage
-modifier|*
-name|msg
-parameter_list|)
-block|{ }
-end_function
-
-begin_function
-name|void
-DECL|function|_gp_params_destroy (GPParam * params,int nparams)
+DECL|function|_gp_params_destroy (GPParam * params,gint nparams)
 name|_gp_params_destroy
 parameter_list|(
 name|GPParam
 modifier|*
 name|params
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|)
 block|{
-name|int
+name|gint
 name|count
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
