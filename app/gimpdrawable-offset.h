@@ -6,20 +6,20 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__CHANNEL_OPS_H__
+name|__GIMP_DRAWABLE_OFFSET_H__
 end_ifndef
 
 begin_define
-DECL|macro|__CHANNEL_OPS_H__
+DECL|macro|__GIMP_DRAWABLE_OFFSET_H__
 define|#
 directive|define
-name|__CHANNEL_OPS_H__
+name|__GIMP_DRAWABLE_OFFSET_H__
 end_define
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2f03980103
+DECL|enum|__anon2c3cb1700103
 block|{
 DECL|enumerator|OFFSET_BACKGROUND
 name|OFFSET_BACKGROUND
@@ -32,40 +32,10 @@ name|ChannelOffsetType
 typedef|;
 end_typedef
 
-begin_comment
-comment|/*  channel_ops functions  */
-end_comment
-
 begin_function_decl
 name|void
-name|channel_ops_offset
+name|gimp_drawable_offset
 parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|channel_ops_duplicate
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|offset
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -85,25 +55,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|GimpImage
-modifier|*
-name|duplicate
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
 end_endif
 
 begin_comment
-comment|/*  __CHANNEL_OPS_H__  */
+comment|/*  __GIMP_DRAWABLE_OFFSET_H__  */
 end_comment
 
 end_unit

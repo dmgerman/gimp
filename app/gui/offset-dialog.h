@@ -6,20 +6,19 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_IMAGE_DUPLICATE_H__
+name|__OFFSET_DIALOG_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_IMAGE_DUPLICATE_H__
+DECL|macro|__OFFSET_DIALOG_H__
 define|#
 directive|define
-name|__GIMP_IMAGE_DUPLICATE_H__
+name|__OFFSET_DIALOG_H__
 end_define
 
 begin_function_decl
-name|GimpImage
-modifier|*
-name|gimp_image_duplicate
+name|void
+name|offset_dialog_create
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -34,7 +33,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_IMAGE_DUPLICATE_H__  */
+comment|/*  __OFFSET_DIALOG_H__  */
 end_comment
 
 end_unit

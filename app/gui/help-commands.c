@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"commands.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"convert-dialog.h"
 end_include
 
@@ -102,13 +108,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
+file|"offset-dialog.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"commands.h"
+file|"app_procs.h"
 end_include
 
 begin_include
@@ -121,12 +127,6 @@ begin_include
 include|#
 directive|include
 file|"desaturate.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"channel_ops.h"
 end_include
 
 begin_include
@@ -193,6 +193,12 @@ begin_include
 include|#
 directive|include
 file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpimage-duplicate.h"
 end_include
 
 begin_include
@@ -2960,7 +2966,7 @@ argument_list|(
 name|gdisp
 argument_list|)
 expr_stmt|;
-name|channel_ops_offset
+name|offset_dialog_create
 argument_list|(
 name|gdisp
 operator|->
@@ -3266,11 +3272,16 @@ argument_list|(
 name|gdisp
 argument_list|)
 expr_stmt|;
-name|channel_ops_duplicate
+name|gdisplay_new
+argument_list|(
+name|gimp_image_duplicate
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
+argument_list|)
+argument_list|,
+literal|0x0101
 argument_list|)
 expr_stmt|;
 block|}
