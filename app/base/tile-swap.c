@@ -729,6 +729,12 @@ name|TRUE
 decl_stmt|;
 end_decl_stmt
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|GIMP_UNSTABLE
+end_ifdef
+
 begin_function
 specifier|static
 name|void
@@ -792,6 +798,11 @@ block|}
 block|}
 end_function
 
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_function
 specifier|static
 name|void
@@ -852,6 +863,9 @@ name|swap_file
 operator|->
 name|user_data
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|GIMP_UNSTABLE
 if|if
 condition|(
 name|def_swap_file
@@ -879,6 +893,8 @@ name|def_swap_file
 argument_list|)
 expr_stmt|;
 block|}
+endif|#
+directive|endif
 ifdef|#
 directive|ifdef
 name|G_OS_WIN32

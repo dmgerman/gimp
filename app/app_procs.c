@@ -1199,6 +1199,10 @@ argument_list|)
 expr_stmt|;
 else|#
 directive|else
+comment|/*  make sure that the swap file is removed before we quit */
+name|base_exit
+argument_list|()
+expr_stmt|;
 name|exit
 argument_list|(
 name|EXIT_SUCCESS
