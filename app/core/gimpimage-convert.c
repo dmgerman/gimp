@@ -1786,7 +1786,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288be9700108
+DECL|struct|__anon28cc37900108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1833,7 +1833,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288be9700208
+DECL|struct|__anon28cc37900208
 block|{
 DECL|member|ncolors
 name|long
@@ -1852,7 +1852,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288be9700308
+DECL|struct|__anon28cc37900308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -4823,6 +4823,18 @@ operator|=
 name|new_layer_type
 expr_stmt|;
 block|}
+comment|/*  Delete the quantizer object, if there is one */
+if|if
+condition|(
+name|quantobj
+condition|)
+name|quantobj
+operator|->
+name|delete_func
+argument_list|(
+name|quantobj
+argument_list|)
+expr_stmt|;
 comment|/*  Make sure the projection is up to date  */
 name|gimage_projection_realloc
 argument_list|(
