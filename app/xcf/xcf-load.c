@@ -1358,6 +1358,37 @@ literal|3
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* discard color map, if image is not indexed, this is just 	   * sanity checking to make sure gimp doesn't end up with an 	   * image state that is impossible.            */
+if|if
+condition|(
+name|gimp_image_base_type
+argument_list|(
+name|gimage
+argument_list|)
+operator|!=
+name|GIMP_INDEXED
+condition|)
+block|{
+name|g_free
+argument_list|(
+name|gimage
+operator|->
+name|cmap
+argument_list|)
+expr_stmt|;
+name|gimage
+operator|->
+name|cmap
+operator|=
+name|NULL
+expr_stmt|;
+name|gimage
+operator|->
+name|num_cols
+operator|=
+literal|0
+expr_stmt|;
+block|}
 break|break;
 case|case
 name|PROP_COMPRESSION
@@ -1562,7 +1593,7 @@ expr_stmt|;
 continue|continue;
 block|}
 block|}
-comment|/*  this is silly as the order of guides doesn't really matter, 	     *  but it restores the list to it's original order, which 	     *  cannot be wrong  --Mitch 	     */
+comment|/*  this is silly as the order of guides doesn't really matter,              *  but it restores the list to it's original order, which              *  cannot be wrong  --Mitch              */
 name|gimage
 operator|->
 name|guides
@@ -1973,7 +2004,7 @@ name|unit
 operator|++
 control|)
 block|{
-comment|/* if the factor and the identifier match some unit 		 * in unitrc, use the unitrc unit 		 */
+comment|/* if the factor and the identifier match some unit                  * in unitrc, use the unitrc unit                  */
 if|if
 condition|(
 operator|(
@@ -4861,7 +4892,7 @@ name|info
 operator|->
 name|cp
 expr_stmt|;
-comment|/* read in the offset of the next tile so we can calculate the amount 	 of data needed for this tile*/
+comment|/* read in the offset of the next tile so we can calculate the amount          of data needed for this tile*/
 name|info
 operator|->
 name|cp
@@ -4878,7 +4909,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/* if the offset is 0 then we need to read in the maximum possible 	 allowing for negative compression */
+comment|/* if the offset is 0 then we need to read in the maximum possible          allowing for negative compression */
 if|if
 condition|(
 name|offset2
@@ -4897,7 +4928,7 @@ literal|4
 operator|*
 literal|1.5
 expr_stmt|;
-comment|/* 1.5 is probably more 					   than we need to allow */
+comment|/* 1.5 is probably more                                            than we need to allow */
 comment|/* seek to the tile offset */
 if|if
 condition|(
