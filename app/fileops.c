@@ -3855,7 +3855,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*    * Now deal with multiple selections from the filesel clist    */
-comment|/*    * FIXME: cope with cwd != fileselcwd != dirname(filename)    *    /*   {     HistoryCallbackArg *callback_arg;     GList *row = fs->history_list;      while (row)       { 	callback_arg = row->data;  	printf ("(%s)\n", callback_arg->directory );  	row = g_list_next (row);       }       }*/
+comment|/*    * FIXME: cope with cwd != fileselcwd != dirname(filename)    */
+comment|/*   {     HistoryCallbackArg *callback_arg;     GList *row = fs->history_list;      while (row)       { 	callback_arg = row->data;  	printf ("(%s)\n", callback_arg->directory );  	row = g_list_next (row);       }       }*/
 comment|/*  filedirname = fs->history_list->data;*/
 name|filedirname
 operator|=
@@ -4020,7 +4021,8 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*printf(">>> %s\n", mfilename);/* 			/*fflush (stdout);*/
+comment|/*printf(">>> %s\n", mfilename);*/
+comment|/*fflush (stdout);*/
 block|}
 if|if
 condition|(

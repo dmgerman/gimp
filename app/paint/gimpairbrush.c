@@ -350,7 +350,7 @@ name|options
 operator|->
 name|rate
 operator|=
-literal|25.0
+literal|80.0
 expr_stmt|;
 name|options
 operator|->
@@ -460,11 +460,11 @@ name|rate_scale_data
 operator|=
 name|gtk_adjustment_new
 argument_list|(
-literal|25.0
+literal|80.0
 argument_list|,
 literal|0.0
 argument_list|,
-literal|100.0
+literal|150.0
 argument_list|,
 literal|1.0
 argument_list|,
