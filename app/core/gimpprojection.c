@@ -165,12 +165,6 @@ directive|include
 file|"undo.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"tools.h"
-end_include
-
 begin_define
 DECL|macro|OVERHEAD
 define|#
@@ -5562,13 +5556,6 @@ condition|(
 name|popup_shell
 condition|)
 block|{
-name|active_tool_control
-argument_list|(
-name|DESTROY
-argument_list|,
-name|gdisp
-argument_list|)
-expr_stmt|;
 name|gdisp
 operator|=
 name|gtk_object_get_user_data

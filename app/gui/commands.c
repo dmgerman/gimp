@@ -301,7 +301,7 @@ empty_stmt|;
 end_empty_stmt
 
 begin_typedef
-DECL|struct|__anon28b7ae4f0108
+DECL|struct|__anon2a0d95390108
 typedef|typedef
 struct|struct
 block|{
@@ -345,7 +345,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b7ae4f0208
+DECL|struct|__anon2a0d95390208
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -4367,7 +4367,7 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon28b7ae4f0308
+DECL|struct|__anon2a0d95390308
 struct|struct
 block|{
 DECL|member|label
@@ -4436,7 +4436,7 @@ name|edit_plug_in_path
 block|}
 block|}
 struct|;
-DECL|struct|__anon28b7ae4f0408
+DECL|struct|__anon2a0d95390408
 struct|struct
 block|{
 DECL|member|label
@@ -7026,7 +7026,7 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-literal|"Tile cache size:"
+literal|"Tile cache size (bytes):"
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
