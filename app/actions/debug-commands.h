@@ -43,6 +43,20 @@ end_ifdef
 
 begin_function_decl
 name|void
+name|debug_mem_profile_cmd_callback
+parameter_list|(
+name|GtkAction
+modifier|*
+name|action
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|debug_dump_menus_cmd_callback
 parameter_list|(
 name|GtkAction
@@ -57,7 +71,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|debug_mem_profile_cmd_callback
+name|debug_dump_managers_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
