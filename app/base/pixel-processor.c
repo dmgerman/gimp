@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pixel_regionP.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
 end_include
 
@@ -184,15 +190,6 @@ name|PixelRegion
 modifier|*
 parameter_list|)
 function_decl|;
-end_typedef
-
-begin_typedef
-DECL|typedef|PixelRegionIterator
-typedef|typedef
-name|struct
-name|_PixelRegionIterator
-name|PixelRegionIterator
-typedef|;
 end_typedef
 
 begin_struct
@@ -356,6 +353,7 @@ index|[
 name|i
 index|]
 condition|)
+block|{
 name|memcpy
 argument_list|(
 operator|&
@@ -377,6 +375,11 @@ name|PixelRegion
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|IF_THREAD
+argument_list|(
+argument|if (tr[i].tiles) 	    tile_lock(tr[i].curtile);
+argument_list|)
+block|}
 name|IF_THREAD
 argument_list|(
 argument|pthread_mutex_unlock(&p_s->mutex);
@@ -628,6 +631,12 @@ name|IF_THREAD
 argument_list|(
 argument|pthread_mutex_lock(&p_s->mutex);
 argument_list|)
+name|IF_THREAD
+argument_list|(
+argument|{ 	for (i =
+literal|0
+argument|; i< p_s->n_regions; i++) 	  if (p_s->r[i]) 	  { 	    if (tr[i].tiles) 	      tile_release(tr[i].curtile, tr[i].dirty); 	  }       }
+argument_list|)
 if|if
 condition|(
 name|p_s
@@ -767,9 +776,9 @@ argument_list|)
 comment|/*		 (p_s->PRI->region_width * p_s->PRI->region_height) /(64*64)); */
 name|IF_THREAD
 argument_list|(
-argument|nthreads = MIN(num_processors,
-literal|5
-argument|);     if (nthreads>
+argument|nthreads = MIN(num_processors, MAX_THREADS);     nthreads = MIN(nthreads,
+literal|1
+argument|+  		   (p_s->PRI->region_width * p_s->PRI->region_height) 		   /(TILE_WIDTH*TILE_HEIGHT));     if (nthreads>
 literal|1
 argument|)     {       pthread_attr_init (&pthread_attr);       for (i =
 literal|0
@@ -1043,6 +1052,12 @@ return|return
 name|NULL
 return|;
 block|}
+name|IF_THREAD
+argument_list|(
+argument|p_s->PRI->dirty_tiles =
+literal|0
+argument|;
+argument_list|)
 name|p_s
 operator|->
 name|f

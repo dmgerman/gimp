@@ -5678,9 +5678,11 @@ operator|*
 operator|*
 name|k
 operator|++
+operator|+
+literal|128
 operator|)
-operator|/
-literal|255
+operator|>>
+literal|8
 operator|)
 expr_stmt|;
 operator|*
