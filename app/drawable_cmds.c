@@ -164,26 +164,26 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_layer_proc
+DECL|variable|drawable_is_layer_proc
 specifier|static
 name|ProcRecord
-name|drawable_layer_proc
+name|drawable_is_layer_proc
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_layer_mask_proc
+DECL|variable|drawable_is_layer_mask_proc
 specifier|static
 name|ProcRecord
-name|drawable_layer_mask_proc
+name|drawable_is_layer_mask_proc
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_channel_proc
+DECL|variable|drawable_is_channel_proc
 specifier|static
 name|ProcRecord
-name|drawable_channel_proc
+name|drawable_is_channel_proc
 decl_stmt|;
 end_decl_stmt
 
@@ -320,19 +320,19 @@ expr_stmt|;
 name|procedural_db_register
 argument_list|(
 operator|&
-name|drawable_layer_proc
+name|drawable_is_layer_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
 operator|&
-name|drawable_layer_mask_proc
+name|drawable_is_layer_mask_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
 argument_list|(
 operator|&
-name|drawable_channel_proc
+name|drawable_is_channel_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -2736,8 +2736,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_layer_invoker (Argument * args)
-name|drawable_layer_invoker
+DECL|function|drawable_is_layer_invoker (Argument * args)
+name|drawable_is_layer_invoker
 parameter_list|(
 name|Argument
 modifier|*
@@ -2771,7 +2771,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|drawable_layer_proc
+name|drawable_is_layer_proc
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2801,10 +2801,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|drawable_layer_inargs
+DECL|variable|drawable_is_layer_inargs
 specifier|static
 name|ProcArg
-name|drawable_layer_inargs
+name|drawable_is_layer_inargs
 index|[]
 init|=
 block|{
@@ -2820,10 +2820,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_layer_outargs
+DECL|variable|drawable_is_layer_outargs
 specifier|static
 name|ProcArg
-name|drawable_layer_outargs
+name|drawable_is_layer_outargs
 index|[]
 init|=
 block|{
@@ -2839,13 +2839,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_layer_proc
+DECL|variable|drawable_is_layer_proc
 specifier|static
 name|ProcRecord
-name|drawable_layer_proc
+name|drawable_is_layer_proc
 init|=
 block|{
-literal|"gimp_drawable_layer"
+literal|"gimp_drawable_is_layer"
 block|,
 literal|"Returns whether the drawable is a layer."
 block|,
@@ -2861,15 +2861,15 @@ name|PDB_INTERNAL
 block|,
 literal|1
 block|,
-name|drawable_layer_inargs
+name|drawable_is_layer_inargs
 block|,
 literal|1
 block|,
-name|drawable_layer_outargs
+name|drawable_is_layer_outargs
 block|,
 block|{
 block|{
-name|drawable_layer_invoker
+name|drawable_is_layer_invoker
 block|}
 block|}
 block|}
@@ -2880,8 +2880,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_layer_mask_invoker (Argument * args)
-name|drawable_layer_mask_invoker
+DECL|function|drawable_is_layer_mask_invoker (Argument * args)
+name|drawable_is_layer_mask_invoker
 parameter_list|(
 name|Argument
 modifier|*
@@ -2915,7 +2915,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|drawable_layer_mask_proc
+name|drawable_is_layer_mask_proc
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2945,10 +2945,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|drawable_layer_mask_inargs
+DECL|variable|drawable_is_layer_mask_inargs
 specifier|static
 name|ProcArg
-name|drawable_layer_mask_inargs
+name|drawable_is_layer_mask_inargs
 index|[]
 init|=
 block|{
@@ -2964,10 +2964,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_layer_mask_outargs
+DECL|variable|drawable_is_layer_mask_outargs
 specifier|static
 name|ProcArg
-name|drawable_layer_mask_outargs
+name|drawable_is_layer_mask_outargs
 index|[]
 init|=
 block|{
@@ -2983,13 +2983,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_layer_mask_proc
+DECL|variable|drawable_is_layer_mask_proc
 specifier|static
 name|ProcRecord
-name|drawable_layer_mask_proc
+name|drawable_is_layer_mask_proc
 init|=
 block|{
-literal|"gimp_drawable_layer_mask"
+literal|"gimp_drawable_is_layer_mask"
 block|,
 literal|"Returns whether the drawable is a layer mask."
 block|,
@@ -3005,15 +3005,15 @@ name|PDB_INTERNAL
 block|,
 literal|1
 block|,
-name|drawable_layer_mask_inargs
+name|drawable_is_layer_mask_inargs
 block|,
 literal|1
 block|,
-name|drawable_layer_mask_outargs
+name|drawable_is_layer_mask_outargs
 block|,
 block|{
 block|{
-name|drawable_layer_mask_invoker
+name|drawable_is_layer_mask_invoker
 block|}
 block|}
 block|}
@@ -3024,8 +3024,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_channel_invoker (Argument * args)
-name|drawable_channel_invoker
+DECL|function|drawable_is_channel_invoker (Argument * args)
+name|drawable_is_channel_invoker
 parameter_list|(
 name|Argument
 modifier|*
@@ -3059,7 +3059,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|drawable_channel_proc
+name|drawable_is_channel_proc
 argument_list|,
 name|TRUE
 argument_list|)
@@ -3089,10 +3089,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|drawable_channel_inargs
+DECL|variable|drawable_is_channel_inargs
 specifier|static
 name|ProcArg
-name|drawable_channel_inargs
+name|drawable_is_channel_inargs
 index|[]
 init|=
 block|{
@@ -3108,10 +3108,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_channel_outargs
+DECL|variable|drawable_is_channel_outargs
 specifier|static
 name|ProcArg
-name|drawable_channel_outargs
+name|drawable_is_channel_outargs
 index|[]
 init|=
 block|{
@@ -3127,13 +3127,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_channel_proc
+DECL|variable|drawable_is_channel_proc
 specifier|static
 name|ProcRecord
-name|drawable_channel_proc
+name|drawable_is_channel_proc
 init|=
 block|{
-literal|"gimp_drawable_channel"
+literal|"gimp_drawable_is_channel"
 block|,
 literal|"Returns whether the drawable is a channel."
 block|,
@@ -3149,15 +3149,15 @@ name|PDB_INTERNAL
 block|,
 literal|1
 block|,
-name|drawable_channel_inargs
+name|drawable_is_channel_inargs
 block|,
 literal|1
 block|,
-name|drawable_channel_outargs
+name|drawable_is_channel_outargs
 block|,
 block|{
 block|{
-name|drawable_channel_invoker
+name|drawable_is_channel_invoker
 block|}
 block|}
 block|}
