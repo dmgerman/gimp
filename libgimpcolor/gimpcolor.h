@@ -43,6 +43,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpcolor/gimpcmyk.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpcolor/gimphsv.h>
 end_include
 
