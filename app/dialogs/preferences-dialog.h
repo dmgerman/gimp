@@ -17,7 +17,8 @@ name|__PREFERENCES_DIALOG_H__
 end_define
 
 begin_function_decl
-name|void
+name|GtkWidget
+modifier|*
 name|preferences_dialog_create
 parameter_list|(
 name|void

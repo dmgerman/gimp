@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c8fe16d0103
+DECL|enum|__anon2b7796190103
 block|{
 DECL|enumerator|DEVICE_MODE
 name|DEVICE_MODE
@@ -120,7 +120,8 @@ comment|/*  Create device info dialog  */
 end_comment
 
 begin_function_decl
-name|void
+name|GtkWidget
+modifier|*
 name|input_dialog_create
 parameter_list|(
 name|void
@@ -143,7 +144,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  Returns TRUE, and makes necessary global changes  *  event is not for current_device  */
+comment|/*  Returns TRUE, and makes necessary global changes  *  if event is not for current_device  */
 end_comment
 
 begin_function_decl

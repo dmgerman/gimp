@@ -156,7 +156,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b6e697a0103
+DECL|enum|__anon2909662c0103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -5627,7 +5627,8 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-name|void
+name|GtkWidget
+modifier|*
 DECL|function|preferences_dialog_create (void)
 name|preferences_dialog_create
 parameter_list|(
@@ -5755,19 +5756,9 @@ if|if
 condition|(
 name|prefs_dlg
 condition|)
-block|{
-name|gdk_window_raise
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
+return|return
 name|prefs_dlg
-argument_list|)
-operator|->
-name|window
-argument_list|)
-expr_stmt|;
-return|return;
-block|}
+return|;
 if|if
 condition|(
 name|edit_temp_path
@@ -12461,7 +12452,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b6e697a0208
+DECL|struct|__anon2909662c0208
 block|{
 DECL|member|label
 name|gchar
@@ -12690,7 +12681,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b6e697a0308
+DECL|struct|__anon2909662c0308
 block|{
 DECL|member|tree_label
 name|gchar
@@ -13039,11 +13030,9 @@ argument_list|(
 name|notebook
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
+return|return
 name|prefs_dlg
-argument_list|)
-expr_stmt|;
+return|;
 block|}
 end_function
 

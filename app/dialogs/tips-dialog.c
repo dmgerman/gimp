@@ -216,7 +216,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-name|void
+name|GtkWidget
+modifier|*
 DECL|function|tips_dialog_create (void)
 name|tips_dialog_create
 parameter_list|(
@@ -304,10 +305,11 @@ literal|0
 expr_stmt|;
 if|if
 condition|(
-operator|!
 name|tips_dialog
 condition|)
-block|{
+return|return
+name|tips_dialog
+return|;
 name|tips_dialog
 operator|=
 name|gtk_window_new
@@ -691,9 +693,6 @@ argument_list|(
 name|tips_toggle_update
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 operator|&
 name|show_tips
 argument_list|)
@@ -962,32 +961,9 @@ argument_list|,
 literal|"dialogs/tip_of_the_day.html"
 argument_list|)
 expr_stmt|;
-block|}
-if|if
-condition|(
-operator|!
-name|GTK_WIDGET_VISIBLE
-argument_list|(
+return|return
 name|tips_dialog
-argument_list|)
-condition|)
-block|{
-name|gtk_widget_show
-argument_list|(
-name|tips_dialog
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|gdk_window_raise
-argument_list|(
-name|tips_dialog
-operator|->
-name|window
-argument_list|)
-expr_stmt|;
-block|}
+return|;
 block|}
 end_function
 

@@ -402,7 +402,6 @@ index|[]
 init|=
 block|{
 comment|/*<Toolbox>/File  */
-comment|/* the underscore installs an accelerator using the character that follows */
 block|{
 block|{
 name|N_
@@ -529,9 +528,12 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|dialogs_preferences_cmd_callback
+name|dialogs_create_toplevel_cmd_callback
 block|,
-literal|0
+name|GPOINTER_TO_UINT
+argument_list|(
+literal|"gimp:preferences-dialog"
+argument_list|)
 block|}
 block|,
 literal|"file/dialogs/preferences/preferences.html"
@@ -717,9 +719,12 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|dialogs_indexed_palette_cmd_callback
+name|dialogs_create_toplevel_cmd_callback
 block|,
-literal|0
+name|GPOINTER_TO_UINT
+argument_list|(
+literal|"gimp:indexed-palette-dialog"
+argument_list|)
 block|}
 block|,
 literal|"file/dialogs/indexed_palette.html"
@@ -754,9 +759,12 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|dialogs_input_devices_cmd_callback
+name|dialogs_create_toplevel_cmd_callback
 block|,
-literal|0
+name|GPOINTER_TO_UINT
+argument_list|(
+literal|"gimp:input-devices-dialog"
+argument_list|)
 block|}
 block|,
 literal|"file/dialogs/input_devices.html"
@@ -860,9 +868,12 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|dialogs_display_filters_cmd_callback
+name|dialogs_create_toplevel_cmd_callback
 block|,
-literal|0
+name|GPOINTER_TO_UINT
+argument_list|(
+literal|"gimp:display-filters-dialog"
+argument_list|)
 block|}
 block|,
 literal|"file/dialogs/display_filters/display_filters.html"
@@ -1288,7 +1299,6 @@ name|NULL
 block|}
 block|,
 comment|/*<Toolbox>/Xtns  */
-comment|/* the underscore installs an accelerator using the character that follows */
 block|{
 block|{
 name|N_
@@ -1319,9 +1329,12 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|dialogs_module_browser_cmd_callback
+name|dialogs_create_toplevel_cmd_callback
 block|,
-literal|0
+name|GPOINTER_TO_UINT
+argument_list|(
+literal|"gimp:module-browser-dialog"
+argument_list|)
 block|}
 block|,
 literal|"dialogs/module_browser.html"
@@ -1348,7 +1361,6 @@ name|NULL
 block|}
 block|,
 comment|/*<Toolbox>/Help  */
-comment|/* the underscore installs an accelerator using the character that follows */
 block|{
 block|{
 name|N_
@@ -1417,9 +1429,12 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|help_tips_cmd_callback
+name|dialogs_create_toplevel_cmd_callback
 block|,
-literal|0
+name|GPOINTER_TO_UINT
+argument_list|(
+literal|"gimp:tips-dialog"
+argument_list|)
 block|}
 block|,
 literal|"help/dialogs/tip_of_the_day.html"
@@ -1436,9 +1451,12 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|help_about_cmd_callback
+name|dialogs_create_toplevel_cmd_callback
 block|,
-literal|0
+name|GPOINTER_TO_UINT
+argument_list|(
+literal|"gimp:about-dialog"
+argument_list|)
 block|}
 block|,
 literal|"help/dialogs/about.html"
@@ -3502,9 +3520,12 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|tools_toolbox_raise_cmd_callback
+name|dialogs_create_toplevel_cmd_callback
 block|,
-literal|0
+name|GPOINTER_TO_UINT
+argument_list|(
+literal|"gimp:toolbox"
+argument_list|)
 block|}
 block|,
 literal|"toolbox/toolbox.html"
@@ -3747,9 +3768,12 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|dialogs_indexed_palette_cmd_callback
+name|dialogs_create_toplevel_cmd_callback
 block|,
-literal|0
+name|GPOINTER_TO_UINT
+argument_list|(
+literal|"gimp:indexed-palette-dialog"
+argument_list|)
 block|}
 block|,
 literal|"dialogs/indexed_palette.html"
@@ -3784,9 +3808,12 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|dialogs_input_devices_cmd_callback
+name|dialogs_create_toplevel_cmd_callback
 block|,
-literal|0
+name|GPOINTER_TO_UINT
+argument_list|(
+literal|"gimp:input-devices-dialog"
+argument_list|)
 block|}
 block|,
 literal|"dialogs/input_devices.html"
@@ -3890,9 +3917,12 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|dialogs_display_filters_cmd_callback
+name|dialogs_create_toplevel_cmd_callback
 block|,
-literal|0
+name|GPOINTER_TO_UINT
+argument_list|(
+literal|"gimp:display-filters-dialogs"
+argument_list|)
 block|}
 block|,
 literal|"dialogs/display_filters/display_filters.html"
@@ -3912,9 +3942,12 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|dialogs_undo_history_cmd_callback
+name|dialogs_create_toplevel_cmd_callback
 block|,
-literal|0
+name|GPOINTER_TO_UINT
+argument_list|(
+literal|"gimp:undo-history-dialog"
+argument_list|)
 block|}
 block|,
 literal|"dialogs/undo_history.html"

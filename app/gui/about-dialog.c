@@ -586,7 +586,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-name|void
+name|GtkWidget
+modifier|*
 DECL|function|about_dialog_create (void)
 name|about_dialog_create
 parameter_list|(
@@ -816,7 +817,9 @@ name|about_dialog
 operator|=
 name|NULL
 expr_stmt|;
-return|return;
+return|return
+name|NULL
+return|;
 block|}
 name|vbox
 operator|=
@@ -1586,6 +1589,9 @@ name|window
 argument_list|)
 expr_stmt|;
 block|}
+return|return
+name|about_dialog
+return|;
 block|}
 end_function
 
