@@ -15,16 +15,17 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c8803eb0103
+comment|/*< chop=ADD_>*/
+DECL|enum|__anon28c80aec0103
 block|{
-DECL|enumerator|WhiteMask
-name|WhiteMask
+DECL|enumerator|ADD_WHITE_MASK
+name|ADD_WHITE_MASK
 block|,
-DECL|enumerator|BlackMask
-name|BlackMask
+DECL|enumerator|ADD_BLACK_MASK
+name|ADD_BLACK_MASK
 block|,
-DECL|enumerator|AlphaMask
-name|AlphaMask
+DECL|enumerator|ADD_ALPHA_MASK
+name|ADD_ALPHA_MASK
 DECL|typedef|AddMaskType
 block|}
 name|AddMaskType

@@ -2158,7 +2158,7 @@ name|PDB_FLOAT
 block|,
 literal|"opacity"
 block|,
-literal|"The new channel opacity"
+literal|"The new channel opacity (0<= opacity<= 100)"
 block|}
 block|}
 decl_stmt|;

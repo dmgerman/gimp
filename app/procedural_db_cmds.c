@@ -1098,7 +1098,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* This really doesn't belong here, but it depends on your generated type_str  * array.  */
+comment|/* This really doesn't belong here, but it depends on our generated type_str  * array.  */
 end_comment
 
 begin_function

@@ -138,7 +138,7 @@ comment|/* ick. */
 end_comment
 
 begin_enum
-DECL|enum|__anon2c75fd220103
+DECL|enum|__anon288bd7620103
 enum|enum
 block|{
 DECL|enumerator|REMOVED
@@ -2295,7 +2295,7 @@ name|add_mask_type
 condition|)
 block|{
 case|case
-name|WhiteMask
+name|ADD_WHITE_MASK
 case|:
 name|color_region
 argument_list|(
@@ -2308,7 +2308,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|BlackMask
+name|ADD_BLACK_MASK
 case|:
 name|color_region
 argument_list|(
@@ -2321,7 +2321,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|AlphaMask
+name|ADD_ALPHA_MASK
 case|:
 comment|/*  Extract the layer's alpha channel  */
 if|if

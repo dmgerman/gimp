@@ -4576,7 +4576,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2bd195a40108
+DECL|struct|__anon298eb1670108
 typedef|typedef
 struct|struct
 block|{
@@ -17176,7 +17176,7 @@ name|options
 operator|->
 name|add_mask_type
 operator|=
-name|WhiteMask
+name|ADD_WHITE_MASK
 expr_stmt|;
 block|}
 end_function
@@ -17211,7 +17211,7 @@ name|options
 operator|->
 name|add_mask_type
 operator|=
-name|BlackMask
+name|ADD_BLACK_MASK
 expr_stmt|;
 block|}
 end_function
@@ -17246,7 +17246,7 @@ name|options
 operator|->
 name|add_mask_type
 operator|=
-name|AlphaMask
+name|ADD_ALPHA_MASK
 expr_stmt|;
 block|}
 end_function
@@ -17393,7 +17393,7 @@ name|options
 operator|->
 name|add_mask_type
 operator|=
-name|WhiteMask
+name|ADD_WHITE_MASK
 expr_stmt|;
 comment|/*  the dialog  */
 name|options
