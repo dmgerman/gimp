@@ -776,6 +776,26 @@ name|gimp
 condition|)
 break|break;
 block|}
+comment|/* We must ensure that gimp is started with a different PID.      Otherwise it could happen that (when it opens it's display) it sends      the same auth token again (because that one is uniquified with PID      and time()), which the server would deny.  */
+switch|switch
+condition|(
+name|fork
+argument_list|()
+condition|)
+block|{
+case|case
+operator|-
+literal|1
+case|:
+name|exit
+argument_list|(
+name|EXIT_FAILURE
+argument_list|)
+expr_stmt|;
+case|case
+literal|0
+case|:
+comment|/* child */
 name|execv
 argument_list|(
 name|gimp
@@ -790,7 +810,7 @@ argument_list|,
 name|argv
 argument_list|)
 expr_stmt|;
-comment|/*  if execv and execvp return, there was an arror  */
+comment|/*  if execv and execvp return, there was an error  */
 name|g_printerr
 argument_list|(
 literal|"Couldn't start %s for the following reason: %s\n"
@@ -806,6 +826,15 @@ expr_stmt|;
 name|exit
 argument_list|(
 name|EXIT_FAILURE
+argument_list|)
+expr_stmt|;
+default|default:
+comment|/* parent */
+break|break;
+block|}
+name|exit
+argument_list|(
+name|EXIT_SUCCESS
 argument_list|)
 expr_stmt|;
 block|}
