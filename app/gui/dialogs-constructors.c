@@ -3100,7 +3100,7 @@ argument_list|(
 literal|"Indexed Palette"
 argument_list|)
 argument_list|,
-name|GTK_STOCK_MISSING_IMAGE
+name|GIMP_STOCK_INDEXED_PALETTE
 argument_list|,
 name|NULL
 argument_list|,
@@ -3301,7 +3301,7 @@ argument_list|(
 literal|"Undo History"
 argument_list|)
 argument_list|,
-name|GTK_STOCK_UNDO
+name|GIMP_STOCK_UNDO_HISTORY
 argument_list|,
 name|NULL
 argument_list|,

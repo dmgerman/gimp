@@ -506,6 +506,11 @@ define|#
 directive|define
 name|GIMP_STOCK_PLUGIN
 value|"gimp-plugin"
+DECL|macro|GIMP_STOCK_UNDO_HISTORY
+define|#
+directive|define
+name|GIMP_STOCK_UNDO_HISTORY
+value|"gimp-undo-history"
 DECL|macro|GIMP_STOCK_RESHOW_FILTER
 define|#
 directive|define
@@ -601,6 +606,11 @@ define|#
 directive|define
 name|GIMP_STOCK_TEMPLATE
 value|"gimp-template"
+DECL|macro|GIMP_STOCK_INDEXED_PALETTE
+define|#
+directive|define
+name|GIMP_STOCK_INDEXED_PALETTE
+value|"gimp-indexed-palette"
 DECL|macro|GIMP_STOCK_IMAGES
 define|#
 directive|define

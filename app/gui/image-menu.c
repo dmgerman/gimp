@@ -671,7 +671,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GTK_STOCK_UNDO
+name|GIMP_STOCK_UNDO_HISTORY
 block|}
 block|,
 literal|"gimp-undo-history"
@@ -4069,7 +4069,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GTK_STOCK_UNDO
+name|GIMP_STOCK_UNDO_HISTORY
 block|}
 block|,
 literal|"gimp-undo-history"

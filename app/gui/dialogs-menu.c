@@ -264,7 +264,7 @@ literal|"gimp-indexed-palette"
 argument_list|,
 literal|"<StockItem>"
 argument_list|,
-name|GTK_STOCK_SELECT_COLOR
+name|GIMP_STOCK_INDEXED_PALETTE
 argument_list|)
 block|,
 name|ADD_TAB
@@ -306,7 +306,7 @@ literal|"gimp-undo-history"
 argument_list|,
 literal|"<StockItem>"
 argument_list|,
-name|GTK_STOCK_UNDO
+name|GIMP_STOCK_UNDO_HISTORY
 argument_list|)
 block|,
 name|MENU_SEPARATOR
