@@ -46,6 +46,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpui.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -546,7 +552,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2bab57e20108
+DECL|struct|__anon28c5a5e70108
 typedef|typedef
 struct|struct
 block|{
@@ -806,7 +812,7 @@ comment|/* Some of these are here merely to save them across calls.  They are  *
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bab57e20208
+DECL|struct|__anon28c5a5e70208
 typedef|typedef
 struct|struct
 block|{
@@ -879,7 +885,7 @@ comment|/* bits of state used by the UI, but not visible from the PDB */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bab57e20308
+DECL|struct|__anon28c5a5e70308
 typedef|typedef
 struct|struct
 block|{
@@ -905,7 +911,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bab57e20408
+DECL|struct|__anon28c5a5e70408
 typedef|typedef
 struct|struct
 block|{
@@ -938,7 +944,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2bab57e20503
+DECL|enum|__anon28c5a5e70503
 typedef|typedef
 enum|enum
 block|{
@@ -954,7 +960,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bab57e20608
+DECL|struct|__anon28c5a5e70608
 typedef|typedef
 struct|struct
 block|{
@@ -1012,7 +1018,7 @@ comment|/* state for the preview widgets */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bab57e20708
+DECL|struct|__anon28c5a5e70708
 typedef|typedef
 struct|struct
 block|{
@@ -1114,7 +1120,7 @@ comment|/* State associated with the configuration dialog and passed to its  * c
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bab57e20808
+DECL|struct|__anon28c5a5e70808
 typedef|typedef
 struct|struct
 block|{
@@ -1302,7 +1308,7 @@ comment|/* channel templates */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bab57e20908
+DECL|struct|__anon28c5a5e70908
 typedef|typedef
 struct|struct
 block|{
@@ -1803,21 +1809,6 @@ parameter_list|(
 name|GDrawable
 modifier|*
 name|drawable
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|newsprint_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -5023,10 +5014,6 @@ name|button
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|hbbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|hbox
 decl_stmt|;
 name|GtkWidget
@@ -5147,10 +5134,10 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|printf("newsprint: waiting... (pid %d)\n", getpid());     kill(getpid(), 19);
+block|g_print ("newsprint: waiting... (pid %d)\n", getpid ());   kill (getpid (), 19);
 endif|#
 directive|endif
-comment|/* flag values to say we haven't filled these channel      * states in yet */
+comment|/* flag values to say we haven't filled these channel    * states in yet */
 for|for
 control|(
 name|i
@@ -5183,7 +5170,7 @@ name|current_ch
 operator|=
 name|NULL
 expr_stmt|;
-comment|/* need to know the bpp, so we can tell if we're doing       * RGB/CMYK or grey style of dialog box */
+comment|/* need to know the bpp, so we can tell if we're doing     * RGB/CMYK or grey style of dialog box */
 name|bpp
 operator|=
 name|gimp_drawable_bpp
@@ -5241,34 +5228,62 @@ name|st
 operator|.
 name|dlg
 operator|=
-name|gtk_dialog_new
-argument_list|()
-expr_stmt|;
-name|gtk_window_set_title
+name|gimp_dialog_new
 argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|st
-operator|.
-name|dlg
-argument_list|)
-argument_list|,
 name|_
 argument_list|(
 literal|"Newsprint"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_window_position
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|st
-operator|.
-name|dlg
-argument_list|)
+argument_list|,
+literal|"newsprint"
+argument_list|,
+name|gimp_plugin_help_func
+argument_list|,
+literal|"filters/newsprint.html"
 argument_list|,
 name|GTK_WIN_POS_MOUSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
+argument_list|(
+literal|"OK"
+argument_list|)
+argument_list|,
+name|newsprint_ok_callback
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
+argument_list|(
+literal|"Cancel"
+argument_list|)
+argument_list|,
+name|gtk_widget_destroy
+argument_list|,
+name|NULL
+argument_list|,
+literal|1
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -5282,212 +5297,12 @@ argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|newsprint_close_callback
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gtk_main_quit
+argument_list|)
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-comment|/*  Action area  */
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|st
-operator|.
-name|dlg
-argument_list|)
-operator|->
-name|action_area
-argument_list|)
-argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
-name|gtk_box_set_homogeneous
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|st
-operator|.
-name|dlg
-argument_list|)
-operator|->
-name|action_area
-argument_list|)
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|hbbox
-operator|=
-name|gtk_hbutton_box_new
-argument_list|()
-expr_stmt|;
-name|gtk_button_box_set_spacing
-argument_list|(
-name|GTK_BUTTON_BOX
-argument_list|(
-name|hbbox
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_end
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|st
-operator|.
-name|dlg
-argument_list|)
-operator|->
-name|action_area
-argument_list|)
-argument_list|,
-name|hbbox
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|hbbox
-argument_list|)
-expr_stmt|;
-name|button
-operator|=
-name|gtk_button_new_with_label
-argument_list|(
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|GTK_WIDGET_SET_FLAGS
-argument_list|(
-name|button
-argument_list|,
-name|GTK_CAN_DEFAULT
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-literal|"clicked"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|newsprint_ok_callback
-argument_list|,
-name|st
-operator|.
-name|dlg
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|hbbox
-argument_list|)
-argument_list|,
-name|button
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_grab_default
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
-name|button
-operator|=
-name|gtk_button_new_with_label
-argument_list|(
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|GTK_WIDGET_SET_FLAGS
-argument_list|(
-name|button
-argument_list|,
-name|GTK_CAN_DEFAULT
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect_object
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-literal|"clicked"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|gtk_widget_destroy
-argument_list|,
-name|GTK_OBJECT
-argument_list|(
-name|st
-operator|.
-name|dlg
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|hbbox
-argument_list|)
-argument_list|,
-name|button
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
 argument_list|)
 expr_stmt|;
 comment|/* resolution settings  */
@@ -5600,7 +5415,7 @@ operator|&
 name|yres
 argument_list|)
 expr_stmt|;
-comment|/* XXX hack: should really note both resolutions, and use        * rectangular cells, not square cells.  But I'm being lazy,        * and the majority of the world works with xres == yres */
+comment|/* XXX hack: should really note both resolutions, and use      * rectangular cells, not square cells.  But I'm being lazy,      * and the majority of the world works with xres == yres */
 name|pvals_ui
 operator|.
 name|input_spi
@@ -5832,7 +5647,7 @@ operator|.
 name|vbox
 argument_list|)
 expr_stmt|;
-comment|/* we only create the channel menu and option menu if there are       * more than one channels involved */
+comment|/* we only create the channel menu and option menu if there are     * more than one channels involved */
 name|st
 operator|.
 name|channel_menu
@@ -6374,7 +6189,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/* make sure it went in the right place, since colourspace 	 * radio button callbacks may have already inserted the 	 * channel frames */
+comment|/* make sure it went in the right place, since colourspace        * radio button callbacks may have already inserted the        * channel frames */
 name|gtk_box_reorder_child
 argument_list|(
 name|GTK_BOX
@@ -6575,7 +6390,7 @@ name|button
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* Make the channels appropriate for this colourspace and      * currently selected defaults.  They may have already been      * created as a result of callbacks to cspace_update from      * gtk_toggle_button_set_active().  Other channel frames are      * created lazily the first time they are required. */
+comment|/* Make the channels appropriate for this colourspace and    * currently selected defaults.  They may have already been    * created as a result of callbacks to cspace_update from    * gtk_toggle_button_set_active().  Other channel frames are    * created lazily the first time they are required. */
 if|if
 condition|(
 operator|!
@@ -6852,26 +6667,6 @@ end_function
 begin_comment
 comment|/*  Newsprint interface functions  */
 end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|newsprint_close_callback (GtkWidget * widget,gpointer data)
-name|newsprint_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|gtk_main_quit
-argument_list|()
-expr_stmt|;
-block|}
-end_function
 
 begin_function
 specifier|static
@@ -7560,7 +7355,7 @@ comment|/* Each call of the spot function results in one of these */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bab57e20a08
+DECL|struct|__anon28c5a5e70a08
 typedef|typedef
 struct|struct
 block|{

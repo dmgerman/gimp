@@ -7,6 +7,23 @@ begin_comment
 comment|/* add any necessary includes  */
 end_comment
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_CONFIG_H
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include
@@ -31,22 +48,11 @@ directive|include
 file|<math.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_CONFIG_H
-end_ifdef
-
 begin_include
 include|#
 directive|include
-file|"config.h"
+file|<gtk/gtk.h>
 end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_include
 include|#
@@ -57,7 +63,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<libgimp/gimpui.h>
 end_include
 
 begin_include
@@ -156,7 +162,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon2b9dca2a0103
+DECL|enum|__anon28b65eb70103
 typedef|typedef
 enum|enum
 block|{
@@ -1280,9 +1286,47 @@ return|;
 block|}
 end_function
 
+begin_decl_stmt
+DECL|variable|run_flag
+name|gboolean
+name|run_flag
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
+
 begin_function
-DECL|function|pluginCoreIA (struct piArgs * argp)
+specifier|static
+name|void
+DECL|function|nlfilt_ok_callback (GtkWidget * widget,gpointer data)
+name|nlfilt_ok_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|run_flag
+operator|=
+name|TRUE
+expr_stmt|;
+name|gtk_widget_destroy
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|data
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 name|gint
+DECL|function|pluginCoreIA (struct piArgs * argp)
 name|pluginCoreIA
 parameter_list|(
 name|struct
@@ -1318,8 +1362,13 @@ name|GtkWidget
 modifier|*
 name|preview
 decl_stmt|;
+name|gchar
+modifier|*
+modifier|*
+name|argv
+decl_stmt|;
 name|gint
-name|runp
+name|argc
 decl_stmt|;
 name|gint
 name|i
@@ -1363,14 +1412,6 @@ block|,
 literal|0
 block|}
 block|}
-decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
 decl_stmt|;
 comment|/* Set args */
 name|argc
@@ -1460,17 +1501,79 @@ argument_list|)
 expr_stmt|;
 name|dlg
 operator|=
-name|mw_app_new
+name|gimp_dialog_new
 argument_list|(
-literal|"plug_in_nlfilt"
-argument_list|,
 name|_
 argument_list|(
 literal|"NL Filter"
 argument_list|)
 argument_list|,
-operator|&
-name|runp
+literal|"nlfilt"
+argument_list|,
+name|gimp_plugin_help_func
+argument_list|,
+literal|"filters/nlfilt.html"
+argument_list|,
+name|GTK_WIN_POS_MOUSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
+argument_list|(
+literal|"OK"
+argument_list|)
+argument_list|,
+name|nlfilt_ok_callback
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
+argument_list|(
+literal|"Cancel"
+argument_list|)
+argument_list|,
+name|gtk_widget_destroy
+argument_list|,
+name|NULL
+argument_list|,
+literal|1
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|dlg
+argument_list|)
+argument_list|,
+literal|"destroy"
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gtk_main_quit
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|hbox
@@ -1757,13 +1860,13 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|runp
+name|run_flag
 condition|)
 block|{
 if|#
 directive|if
 literal|0
-block|fprintf(stderr, "running:\n");     fprintf(stderr, "\t(image %d)\n", argp->img);     fprintf(stderr, "\t(drawable %d)\n", argp->drw);     fprintf(stderr, "\t(alpha %f)\n", argp->alpha);     fprintf(stderr, "\t(radius %f)\n", argp->radius);
+block|fprintf (stderr, "running:\n");       fprintf (stderr, "\t(image %d)\n", argp->img);       fprintf (stderr, "\t(drawable %d)\n", argp->drw);       fprintf (stderr, "\t(alpha %f)\n", argp->alpha);       fprintf (stderr, "\t(radius %f)\n", argp->radius);
 endif|#
 directive|endif
 return|return
@@ -6930,14 +7033,6 @@ operator|)
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/*  * Local Variables:  * mode: C  * c-auto-newline: t  * c-indent-level: 3  *  * End:  */
-end_comment
-
-begin_comment
-comment|/* end of file: nlfilt/nlfilt.c */
-end_comment
 
 end_unit
 

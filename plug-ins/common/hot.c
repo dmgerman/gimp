@@ -22,6 +22,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<math.h>
 end_include
 
@@ -46,7 +52,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -58,7 +64,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<libgimp/gimpui.h>
 end_include
 
 begin_include
@@ -149,7 +155,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon2a3c1d8d0103
+DECL|enum|__anon2c62f6f90103
 typedef|typedef
 enum|enum
 block|{
@@ -174,7 +180,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2a3c1d8d0203
+DECL|enum|__anon2c62f6f90203
 typedef|typedef
 enum|enum
 block|{
@@ -224,7 +230,7 @@ comment|/*  * RGB to YIQ encoding matrix.  */
 end_comment
 
 begin_struct
-DECL|struct|__anon2a3c1d8d0308
+DECL|struct|__anon2c62f6f90308
 struct|struct
 block|{
 DECL|member|pedestal
@@ -1252,7 +1258,7 @@ block|{
 literal|"ntsc"
 block|,
 literal|"pal"
-block|,     }
+block|,       }
 decl_stmt|;
 name|char
 modifier|*
@@ -1265,11 +1271,16 @@ block|,
 literal|"sat redux"
 block|,
 literal|"flag"
-block|,     }
+block|,       }
 decl_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|name
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|name
+argument_list|)
 argument_list|,
 literal|"hot mask (%s, %s)"
 argument_list|,
@@ -1628,7 +1639,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/*                  * Optimization: cache the last-computed hot pixel.                  */
+comment|/* 		   * Optimization: cache the last-computed hot pixel. 		   */
 if|if
 condition|(
 name|r
@@ -1813,7 +1824,7 @@ name|prev_b
 operator|=
 name|b
 expr_stmt|;
-comment|/*                     * Get Y and chroma amplitudes in floating point.                     *                     * If your C library doesn't have hypot(), just use                     * hypot(a,b) = sqrt(a*a, b*b);                     *                     * Then extract linear (un-gamma-corrected)                     * floating-point pixel RGB values.                     */
+comment|/* 		       * Get Y and chroma amplitudes in floating point. 		       * 		       * If your C library doesn't have hypot(), just use 		       * hypot(a,b) = sqrt(a*a, b*b); 		       * 		       * Then extract linear (un-gamma-corrected) 		       * floating-point pixel RGB values. 		       */
 name|fy
 operator|=
 operator|(
@@ -1881,7 +1892,7 @@ argument_list|(
 name|b
 argument_list|)
 expr_stmt|;
-comment|/*                     * Reducing overall pixel intensity by scaling R,                     * G, and B reduces Y, I, and Q by the same factor.                     * This changes luminance but not saturation, since                     * saturation is determined by the chroma/luminance                     * ratio.                     *                     * On the other hand, by linearly interpolating                     * between the original pixel value and a grey                     * pixel with the same luminance (R=G=B=Y), we                     * change saturation without affecting luminance.                     */
+comment|/* 		       * Reducing overall pixel intensity by scaling R, 		       * G, and B reduces Y, I, and Q by the same factor. 		       * This changes luminance but not saturation, since 		       * saturation is determined by the chroma/luminance 		       * ratio. 		       * 		       * On the other hand, by linearly interpolating 		       * between the original pixel value and a grey 		       * pixel with the same luminance (R=G=B=Y), we 		       * change saturation without affecting luminance. 		       */
 if|if
 condition|(
 name|argp
@@ -1891,7 +1902,7 @@ operator|==
 name|act_lredux
 condition|)
 block|{
-comment|/*                        * Calculate a scale factor that will bring the pixel                        * within both chroma and composite limits, if we scale                        * luminance and chroma simultaneously.                        *                        * The calculated chrominance reduction applies                        * to the gamma-corrected RGB values that are                        * the input to the RGB-to-YIQ operation.                        * Multiplying the original un-gamma-corrected                        * pixel values by the scaling factor raised to                        * the "gamma" power is equivalent, and avoids                        * calling gc() and inv_gc() three times each.  */
+comment|/* 			   * Calculate a scale factor that will bring the pixel 			   * within both chroma and composite limits, if we scale 			   * luminance and chroma simultaneously. 			   * 			   * The calculated chrominance reduction applies 			   * to the gamma-corrected RGB values that are 			   * the input to the RGB-to-YIQ operation. 			   * Multiplying the original un-gamma-corrected 			   * pixel values by the scaling factor raised to 			   * the "gamma" power is equivalent, and avoids 			   * calling gc() and inv_gc() three times each.  */
 name|scale
 operator|=
 name|chroma_lim
@@ -1974,7 +1985,7 @@ block|}
 else|else
 block|{
 comment|/* act_sredux hopefully */
-comment|/*                        * Calculate a scale factor that will bring the                        * pixel within both chroma and composite                        * limits, if we scale chroma while leaving                        * luminance unchanged.                        *                        * We have to interpolate gamma-corrected RGB                        * values, so we must convert from linear to                        * gamma-corrected before interpolation and then                        * back to linear afterwards.                        */
+comment|/* 			   * Calculate a scale factor that will bring the 			   * pixel within both chroma and composite 			   * limits, if we scale chroma while leaving 			   * luminance unchanged. 			   * 			   * We have to interpolate gamma-corrected RGB 			   * values, so we must convert from linear to 			   * gamma-corrected before interpolation and then 			   * back to linear afterwards. 			   */
 name|scale
 operator|=
 name|chroma_lim
@@ -2351,6 +2362,44 @@ return|;
 block|}
 end_function
 
+begin_decl_stmt
+DECL|variable|run_flag
+name|gboolean
+name|run_flag
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
+
+begin_function
+specifier|static
+name|void
+DECL|function|hot_ok_callback (GtkWidget * widget,gpointer data)
+name|hot_ok_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|run_flag
+operator|=
+name|TRUE
+expr_stmt|;
+name|gtk_widget_destroy
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|data
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
 begin_function
 name|gint
 DECL|function|pluginCoreIA (struct piArgs * argp)
@@ -2374,8 +2423,16 @@ name|GtkWidget
 modifier|*
 name|vbox
 decl_stmt|;
+name|gchar
+modifier|*
+modifier|*
+name|argv
+decl_stmt|;
 name|gint
-name|runp
+name|argc
+decl_stmt|;
+name|gint
+name|i
 decl_stmt|;
 name|struct
 name|mwRadioGroup
@@ -2441,17 +2498,6 @@ block|,
 literal|0
 block|}
 block|}
-decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
-name|gint
-name|i
 decl_stmt|;
 for|for
 control|(
@@ -2541,17 +2587,79 @@ literal|1
 expr_stmt|;
 name|dlg
 operator|=
-name|mw_app_new
+name|gimp_dialog_new
 argument_list|(
-literal|"plug_in_hot"
-argument_list|,
 name|_
 argument_list|(
 literal|"Hot"
 argument_list|)
 argument_list|,
-operator|&
-name|runp
+literal|"hot"
+argument_list|,
+name|gimp_plugin_help_func
+argument_list|,
+literal|"filters/hot.html"
+argument_list|,
+name|GTK_WIN_POS_MOUSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
+argument_list|(
+literal|"OK"
+argument_list|)
+argument_list|,
+name|hot_ok_callback
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
+argument_list|(
+literal|"Cancel"
+argument_list|)
+argument_list|,
+name|gtk_widget_destroy
+argument_list|,
+name|NULL
+argument_list|,
+literal|1
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|dlg
+argument_list|)
+argument_list|,
+literal|"destroy"
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gtk_main_quit
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|hbox
@@ -2563,7 +2671,7 @@ argument_list|,
 literal|5
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -2701,23 +2809,19 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|runp
+name|run_flag
 condition|)
-block|{
 return|return
 name|pluginCore
 argument_list|(
 name|argp
 argument_list|)
 return|;
-block|}
 else|else
-block|{
 return|return
 operator|-
 literal|1
 return|;
-block|}
 block|}
 end_function
 
@@ -3350,14 +3454,6 @@ literal|1
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/*  * Local Variables:  * mode: C  * End:  */
-end_comment
-
-begin_comment
-comment|/* end of file: hot/hot.c */
-end_comment
 
 end_unit
 

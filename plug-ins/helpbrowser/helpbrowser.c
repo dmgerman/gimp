@@ -133,7 +133,7 @@ value|"help"
 end_define
 
 begin_enum
-DECL|enum|__anon2bdde6d80103
+DECL|enum|__anon2b264fc60103
 enum|enum
 block|{
 DECL|enumerator|CONTENTS
@@ -149,7 +149,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2bdde6d80203
+DECL|enum|__anon2b264fc60203
 enum|enum
 block|{
 DECL|enumerator|URL_UNKNOWN
@@ -181,7 +181,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdde6d80308
+DECL|struct|__anon2b264fc60308
 block|{
 DECL|member|index
 name|gint
@@ -221,7 +221,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdde6d80408
+DECL|struct|__anon2b264fc60408
 block|{
 DECL|member|title
 name|gchar
@@ -3307,7 +3307,7 @@ name|window
 argument_list|,
 name|gimp_plugin_help_func
 argument_list|,
-literal|"filters/helpbrowser.html"
+literal|"dialogs/help.html"
 argument_list|)
 expr_stmt|;
 name|vbox
