@@ -88,10 +88,10 @@ argument_list|)
 end_if
 
 begin_define
-DECL|macro|COMPILE_SSE2_OKAY
+DECL|macro|COMPILE_SSE2_IS_OKAY
 define|#
 directive|define
-name|COMPILE_SSE2_OKAY
+name|COMPILE_SSE2_IS_OKAY
 value|(1)
 end_define
 
@@ -143,7 +143,7 @@ end_comment
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|COMPILE_SSE2_OKAY
+name|COMPILE_SSE2_IS_OKAY
 end_ifdef
 
 begin_function_decl
