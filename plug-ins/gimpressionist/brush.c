@@ -1780,15 +1780,12 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|brush_select (GtkTreeSelection * selection,gpointer data)
+DECL|function|brush_select (GtkTreeSelection * selection)
 name|brush_select
 parameter_list|(
 name|GtkTreeSelection
 modifier|*
 name|selection
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 block|{
 name|GtkTreeIter
@@ -2019,8 +2016,6 @@ expr_stmt|;
 name|brush_select
 argument_list|(
 name|selection
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -2895,8 +2890,6 @@ expr_stmt|;
 name|brush_select
 argument_list|(
 name|selection
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|readdirintolist
