@@ -99,6 +99,10 @@ DECL|member|reverselines
 name|gboolean
 name|reverselines
 decl_stmt|;
+DECL|member|ref_count
+name|gint
+name|ref_count
+decl_stmt|;
 block|}
 struct|;
 end_struct
