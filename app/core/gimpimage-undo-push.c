@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -54,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpcoreconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"base/pixel-region.h"
 end_include
 
@@ -85,18 +73,6 @@ begin_include
 include|#
 directive|include
 file|"gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpchannel.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcontext.h"
 end_include
 
 begin_include
@@ -169,18 +145,6 @@ begin_include
 include|#
 directive|include
 file|"gimpparasitelist.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpundostack.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint/gimppaintcore.h"
 end_include
 
 begin_include
