@@ -634,24 +634,6 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpDataObjectLoaderFunc
-typedef|typedef
-name|GimpData
-modifier|*
-function_decl|(
-modifier|*
-name|GimpDataObjectLoaderFunc
-function_decl|)
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|filename
-parameter_list|)
-function_decl|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpObjectFilterFunc
 typedef|typedef
 name|gboolean
