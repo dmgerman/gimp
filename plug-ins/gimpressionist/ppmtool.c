@@ -123,33 +123,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|fatal (char * s)
-name|void
-name|fatal
-parameter_list|(
-name|char
-modifier|*
-name|s
-parameter_list|)
-block|{
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"%s\n"
-argument_list|,
-name|s
-argument_list|)
-expr_stmt|;
-name|exit
-argument_list|(
-literal|1
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
 DECL|function|ppm_kill (ppm_t * p)
 name|void
 name|ppm_kill
@@ -1850,12 +1823,6 @@ literal|10
 argument_list|)
 expr_stmt|;
 return|return;
-if|#
-directive|if
-literal|0
-block|fatal("Aborting!");
-endif|#
-directive|endif
 block|}
 name|readline
 argument_list|(
@@ -1912,12 +1879,6 @@ literal|10
 argument_list|)
 expr_stmt|;
 return|return;
-if|#
-directive|if
-literal|0
-block|fatal("Aborting!");
-endif|#
-directive|endif
 block|}
 name|pgm
 operator|=
@@ -1998,12 +1959,6 @@ literal|10
 argument_list|)
 expr_stmt|;
 return|return;
-if|#
-directive|if
-literal|0
-block|fatal("Aborting!");
-endif|#
-directive|endif
 block|}
 name|p
 operator|->
