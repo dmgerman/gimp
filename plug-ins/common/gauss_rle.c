@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287192c10108
+DECL|struct|__anon27ef949d0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -71,7 +71,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287192c10208
+DECL|struct|__anon27ef949d0208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -90,7 +90,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287192c10308
+DECL|struct|__anon27ef949d0308
 block|{
 DECL|member|size
 name|GtkWidget
@@ -1639,7 +1639,7 @@ name|radius
 argument_list|,
 literal|1.0
 argument_list|,
-name|G_MAXDOUBLE
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|1.0
 argument_list|,

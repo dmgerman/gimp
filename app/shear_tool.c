@@ -1456,6 +1456,9 @@ name|progress
 condition|?
 name|progress_update_and_flush
 else|:
+operator|(
+name|progress_func_t
+operator|)
 name|NULL
 argument_list|,
 name|progress
