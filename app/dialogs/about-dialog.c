@@ -63,12 +63,6 @@ directive|include
 file|"about_dialog.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"interface.h"
-end_include
-
 begin_define
 DECL|macro|ANIMATION_STEPS
 define|#
