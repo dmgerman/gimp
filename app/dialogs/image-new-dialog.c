@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c357d390108
+DECL|struct|__anon29368ab20108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -888,6 +888,7 @@ argument_list|(
 name|max_new_image_size
 argument_list|)
 expr_stmt|;
+comment|/* xgettext:no-c-format */
 name|text
 operator|=
 name|g_strdup_printf
