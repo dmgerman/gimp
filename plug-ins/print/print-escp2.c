@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   Print plug-in EPSON ESC/P2 driver for the GIMP.  *  *   Copyright 1997-2000 Michael Sweet (mike@easysw.com) and  *	Robert Krawitz (rlk@alum.mit.edu)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   escp2_parameters()     - Return the parameter values for the given  *                            parameter.  *   escp2_imageable_area() - Return the imageable area of the page.  *   escp2_print()          - Print an image to an EPSON printer.  *   escp2_write()          - Send 6-color ESC/P2 graphics using TIFF packbits compression.  *  * Revision History:  *  *   $Log$  *   Revision 1.13  2000/01/26 16:00:47  neo  *   updated print plug-in  *  *  *   --Sven  *  *   Revision 1.39.2.1  2000/01/13 03:32:34  rlk  *   silliness  *  *   Revision 1.39  2000/01/13 03:25:31  rlk  *   bug fix from mainline  *  *   Revision 1.38  2000/01/08 23:27:54  rlk  *   Rearrange setup code; more printers to support softweave  *  *   Revision 1.37  1999/12/19 14:36:18  rlk  *   Make 'em big enough  *  *   Revision 1.36  1999/12/18 23:08:28  rlk  *   comments, mostly  *  *   Revision 1.35  1999/12/11 15:26:27  rlk  *   hopefully get borders right  *  *   Revision 1.34  1999/12/11 04:52:35  rlk  *   bug fixes  *  *   Revision 1.33  1999/12/11 04:25:23  rlk  *   various other print modes  *  *   Revision 1.32  1999/12/11 01:46:13  rlk  *   Better weaving code -- not absolutely complete yet  *  *   Revision 1.31  1999/12/05 22:10:53  rlk  *   minor, prep for release  *  *   Revision 1.30  1999/12/05 04:33:43  rlk  *   fencepost  *  *   Revision 1.29  1999/11/23 02:11:37  rlk  *   Rationalize variables, pass 3  *  *   Revision 1.28  1999/11/23 01:45:00  rlk  *   Rationalize variables -- pass 2  *  *   Revision 1.27  1999/11/16 01:04:06  rlk  *   Documentation  *  *   Revision 1.26  1999/11/14 18:59:22  rlk  *   Final preparations for release to Olof  *  *   Revision 1.25  1999/11/14 03:13:36  rlk  *   Pseudo-hi-res microweave options  *  *   Revision 1.24  1999/11/13 02:32:58  rlk  *   Comments on some good settings!  *  *   Revision 1.23  1999/11/10 01:13:27  rlk  *   1440x720 two-pass  *  *   Revision 1.22  1999/11/08 13:10:21  rlk  *   Bug fix  *  *   Revision 1.21  1999/11/07 22:18:51  rlk  *   Support Stylus Photo  *  *   Attempt at 1440 dpi  *  *   Revision 1.20  1999/11/04 03:08:52  rlk  *   Comments!  Comments!  Comments!  *  *   Revision 1.19  1999/11/02 23:11:16  rlk  *   Good weave code  *  *   Revision 1.18  1999/11/02 03:11:17  rlk  *   Remove dead code  *  *   Revision 1.17  1999/11/02 03:01:29  rlk  *   Support both softweave and microweave  *  *   Revision 1.16  1999/11/02 02:04:18  rlk  *   Much better weaving code!  *  *   Revision 1.15  1999/11/01 03:38:53  rlk  *   First cut at weaving  *  *   Revision 1.14  1999/10/26 23:58:31  rlk  *   indentation  *  *   Revision 1.13  1999/10/26 23:36:51  rlk  *   Comment out all remaining 16-bit code, and rename 16-bit functions to "standard" names  *  *   Revision 1.12  1999/10/26 02:10:30  rlk  *   Mostly fix save/load  *  *   Move all gimp, glib, gtk stuff into print.c (take it out of everything else).  *   This should help port it to more general purposes later.  *  *   Revision 1.11  1999/10/25 23:31:59  rlk  *   16-bit clean  *  *   Revision 1.10  1999/10/25 00:16:12  rlk  *   Comment  *  *   Revision 1.9  1999/10/21 01:27:37  rlk  *   More progress toward full 16-bit rendering  *  *   Revision 1.8  1999/10/19 02:04:59  rlk  *   Merge all of the single-level print_cmyk functions  *  *   Revision 1.7  1999/10/18 01:37:19  rlk  *   Add Stylus Photo 700 and switch to printer capabilities  *  *   Revision 1.6  1999/10/17 23:44:07  rlk  *   16-bit everything (untested)  *  *   Revision 1.5  1999/10/14 01:59:59  rlk  *   Saturation  *  *   Revision 1.4  1999/10/03 23:57:20  rlk  *   Various improvements  *  *   Revision 1.3  1999/09/15 02:53:58  rlk  *   Remove some stuff that seems to have no effect  *  *   Revision 1.2  1999/09/12 00:12:24  rlk  *   Current best stuff  *  *   Revision 1.11  1999/05/29 16:35:26  yosh  *   * configure.in  *   * Makefile.am: removed tips files, AC_SUBST GIMP_PLUGINS and  *   GIMP_MODULES so you can easily skip those parts of the build  *  *   * acinclude.m4  *   * config.sub  *   * config.guess  *   * ltconfig  *   * ltmain.sh: libtool 1.3.2  *  *   * app/fileops.c: shuffle #includes to avoid warning about MIN and  *   MAX  *  *   [ The following is a big i18n patch from David Monniaux  *<david.monniaux@ens.fr> ]  *  *   * tips/gimp_conseils.fr.txt  *   * tips/gimp_tips.txt  *   * tips/Makefile.am  *   * configure.in: moved tips to separate dir  *  *   * po-plugins: new dir for plug-in translation files  *  *   * configure.in: add po-plugins dir and POTFILES processing  *  *   * app/boundary.c  *   * app/brightness_contrast.c  *   * app/by_color_select.c  *   * app/color_balance.c  *   * app/convert.c  *   * app/curves.c  *   * app/free_select.c  *   * app/gdisplay.c  *   * app/gimpimage.c  *   * app/gimpunit.c  *   * app/gradient.c  *   * app/gradient_select.c  *   * app/install.c  *   * app/session.c: various i18n tweaks  *  *   * app/tips_dialog.c: localize tips filename  *  *   * libgimp/gimpunit.c  *   * libgimp/gimpunitmenu.c: #include "config.h"  *  *   * plug-ins/CEL  *   * plug-ins/CML_explorer  *   * plug-ins/Lighting  *   * plug-ins/apply_lens  *   * plug-ins/autostretch_hsv  *   * plug-ins/blur  *   * plug-ins/bmp  *   * plug-ins/borderaverage  *   * plug-ins/bumpmap  *   * plug-ins/bz2  *   * plug-ins/checkerboard  *   * plug-ins/colorify  *   * plug-ins/compose  *   * plug-ins/convmatrix  *   * plug-ins/cubism  *   * plug-ins/depthmerge  *   * plug-ins/destripe  *   * plug-ins/gif  *   * plug-ins/gifload  *   * plug-ins/jpeg  *   * plug-ins/mail  *   * plug-ins/oilify  *   * plug-ins/png  *   * plug-ins/print  *   * plug-ins/ps  *   * plug-ins/xbm  *   * plug-ins/xpm  *   * plug-ins/xwd: plug-in i18n stuff  *  *   -Yosh  *  *   Revision 1.10  1998/08/28 23:01:44  yosh  *   * acconfig.h  *   * configure.in  *   * app/main.c: added check for putenv and #ifdefed it's usage since NeXTStep is  *   lame  *  *   * libgimp/gimp.c  *   * app/main.c  *   * app/plug_in.c: conditionally compile shared mem stuff so platforms without  *   it can still work  *  *   * plug-ins/CEL/CEL.c  *   * plug-ins/palette/palette.c  *   * plug-ins/print/print-escp2.c  *   * plug-ins/print/print-pcl.c  *   * plug-ins/print/print-ps.c: s/strdup/g_strdup/ for portability  *  *   -Yosh  *  *   Revision 1.9  1998/05/17 07:16:45  yosh  *   0.99.31 fun  *  *   updated print plugin  *  *   -Yosh  *  *   Revision 1.11  1998/05/15  21:01:51  mike  *   Updated image positioning code (invert top and center left/top independently)  *  *   Revision 1.10  1998/05/08  21:18:34  mike  *   Now enable microweaving in 720 DPI mode.  *  *   Revision 1.9  1998/05/08  20:49:43  mike  *   Updated to support media size, imageable area, and parameter functions.  *   Added support for scaling modes - scale by percent or scale by PPI.  *  *   Revision 1.8  1998/01/21  21:33:47  mike  *   Updated copyright.  *  *   Revision 1.7  1997/11/12  15:57:48  mike  *   Minor changes for clean compiles under Digital UNIX.  *  *   Revision 1.7  1997/11/12  15:57:48  mike  *   Minor changes for clean compiles under Digital UNIX.  *  *   Revision 1.6  1997/07/30  20:33:05  mike  *   Final changes for 1.1 release.  *  *   Revision 1.6  1997/07/30  20:33:05  mike  *   Final changes for 1.1 release.  *  *   Revision 1.5  1997/07/30  18:47:39  mike  *   Added scaling, orientation, and offset options.  *  *   Revision 1.4  1997/07/15  20:57:11  mike  *   Updated ESC 800/1520/3000 output code to use vertical spacing of 5 instead of 40.  *  *   Revision 1.3  1997/07/03  13:21:15  mike  *   Updated documentation for 1.0 release.  *  *   Revision 1.2  1997/07/03  13:03:57  mike  *   Added horizontal offset to try to center image.  *   Got rid of initial vertical positioning since the top margin is  *   now set properly.  *  *   Revision 1.2  1997/07/03  13:03:57  mike  *   Added horizontal offset to try to center image.  *   Got rid of initial vertical positioning since the top margin is  *   now set properly.  *  *   Revision 1.1  1997/07/02  13:51:53  mike  *   Initial revision  */
+comment|/*  * "$Id$"  *  *   Print plug-in EPSON ESC/P2 driver for the GIMP.  *  *   Copyright 1997-2000 Michael Sweet (mike@easysw.com) and  *	Robert Krawitz (rlk@alum.mit.edu)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   escp2_parameters()     - Return the parameter values for the given  *                            parameter.  *   escp2_imageable_area() - Return the imageable area of the page.  *   escp2_print()          - Print an image to an EPSON printer.  *   escp2_write()          - Send 6-color ESC/P2 graphics using TIFF packbits  *                            compression.  *  * Revision History:  *  *   See ChangeLog  */
 end_comment
 
 begin_comment
@@ -715,7 +715,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2c54469b0108
+DECL|struct|__anon2acfc6340108
 typedef|typedef
 struct|struct
 block|{
@@ -3236,6 +3236,40 @@ argument_list|,
 name|black
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|use_softweave
+condition|)
+name|escp2_write_weave
+argument_list|(
+name|prn
+argument_list|,
+name|length
+argument_list|,
+name|ydpi
+argument_list|,
+name|model
+argument_list|,
+name|out_width
+argument_list|,
+name|left
+argument_list|,
+name|xdpi
+argument_list|,
+name|cyan
+argument_list|,
+name|magenta
+argument_list|,
+name|yellow
+argument_list|,
+name|black
+argument_list|,
+name|lcyan
+argument_list|,
+name|lmagenta
+argument_list|)
+expr_stmt|;
+else|else
 name|escp2_write
 argument_list|(
 name|prn
@@ -3819,6 +3853,40 @@ argument_list|,
 name|black
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|use_softweave
+condition|)
+name|escp2_write_weave
+argument_list|(
+name|prn
+argument_list|,
+name|length
+argument_list|,
+name|ydpi
+argument_list|,
+name|model
+argument_list|,
+name|out_width
+argument_list|,
+name|left
+argument_list|,
+name|xdpi
+argument_list|,
+name|cyan
+argument_list|,
+name|magenta
+argument_list|,
+name|yellow
+argument_list|,
+name|black
+argument_list|,
+name|lcyan
+argument_list|,
+name|lmagenta
+argument_list|)
+expr_stmt|;
+else|else
 name|escp2_write
 argument_list|(
 name|prn
@@ -4982,7 +5050,7 @@ begin_typedef
 typedef|typedef
 struct|struct
 comment|/* Weave parameters for a specific row */
-DECL|struct|__anon2c54469b0208
+DECL|struct|__anon2acfc6340208
 block|{
 DECL|member|row
 name|int
@@ -5039,7 +5107,7 @@ begin_typedef
 typedef|typedef
 struct|struct
 comment|/* Weave parameters for a specific pass */
-DECL|struct|__anon2c54469b0308
+DECL|struct|__anon2acfc6340308
 block|{
 DECL|member|pass
 name|int
@@ -5070,7 +5138,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|union|__anon2c54469b040a
+DECL|union|__anon2acfc634040a
 typedef|typedef
 union|union
 block|{
@@ -5083,7 +5151,7 @@ literal|6
 index|]
 decl_stmt|;
 comment|/* (really pass) */
-DECL|struct|__anon2c54469b0508
+DECL|struct|__anon2acfc6340508
 struct|struct
 block|{
 DECL|member|k
@@ -5121,7 +5189,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|union|__anon2c54469b060a
+DECL|union|__anon2acfc634060a
 typedef|typedef
 union|union
 block|{
@@ -5135,7 +5203,7 @@ index|[
 literal|6
 index|]
 decl_stmt|;
-DECL|struct|__anon2c54469b0708
+DECL|struct|__anon2acfc6340708
 struct|struct
 block|{
 DECL|member|k
@@ -5475,6 +5543,16 @@ begin_comment
 DECL|variable|oversample
 comment|/* Excess precision per row */
 end_comment
+
+begin_decl_stmt
+DECL|variable|is_monochrome
+specifier|static
+name|int
+name|is_monochrome
+init|=
+literal|0
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
 comment|/*  * Mapping between color and linear index.  The colors are  * black, magenta, cyan, yellow, light magenta, light cyan  */
@@ -7319,6 +7397,14 @@ name|j
 index|]
 operator|==
 literal|0
+operator|||
+operator|(
+name|j
+operator|>
+literal|0
+operator|&&
+name|is_monochrome
+operator|)
 condition|)
 continue|continue;
 if|if
@@ -9195,6 +9281,20 @@ literal|5
 index|]
 operator|=
 name|C
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|c
+condition|)
+name|is_monochrome
+operator|=
+literal|1
+expr_stmt|;
+else|else
+name|is_monochrome
+operator|=
+literal|0
 expr_stmt|;
 name|initialize_row
 argument_list|(

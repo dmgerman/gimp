@@ -87,7 +87,7 @@ DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
 name|PLUG_IN_VERSION
-value|"3.0.5 - 13 Jan 2000"
+value|"3.0.6 - 11 Feb 2000"
 end_define
 
 begin_define
@@ -150,7 +150,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288dacf50108
+DECL|struct|__anon2b148d5a0108
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -3139,7 +3139,7 @@ name|vars
 operator|.
 name|gamma
 operator|=
-literal|0.0
+literal|1.0
 expr_stmt|;
 if|if
 condition|(
@@ -16820,10 +16820,6 @@ name|plist
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|plist_count
-operator|=
-literal|1
-expr_stmt|;
 name|strcpy
 argument_list|(
 name|plist
@@ -16867,16 +16863,18 @@ argument_list|,
 literal|"ps2"
 argument_list|)
 expr_stmt|;
+name|initialize_printer
+argument_list|(
+operator|&
 name|plist
 index|[
 literal|0
 index|]
-operator|.
-name|v
-operator|.
-name|output_type
+argument_list|)
+expr_stmt|;
+name|plist_count
 operator|=
-name|OUTPUT_COLOR
+literal|1
 expr_stmt|;
 ifdef|#
 directive|ifdef
