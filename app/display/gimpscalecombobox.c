@@ -37,7 +37,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b27e87d0103
+DECL|enum|__anon278bfec80103
 block|{
 DECL|enumerator|SCALE
 name|SCALE
@@ -942,9 +942,14 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|fabs
+argument_list|(
 name|this
-operator|==
+operator|-
 name|scale
+argument_list|)
+operator|<
+literal|0.01
 condition|)
 break|break;
 block|}
