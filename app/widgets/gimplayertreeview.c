@@ -1996,14 +1996,11 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-operator|(
-name|gdouble
-operator|)
 name|layer
 operator|->
 name|opacity
-operator|/
-literal|2.55
+operator|*
+literal|100.0
 operator|!=
 name|view
 operator|->
@@ -2030,8 +2027,8 @@ argument_list|,
 name|layer
 operator|->
 name|opacity
-operator|/
-literal|2.55
+operator|*
+literal|100.0
 argument_list|)
 expr_stmt|;
 name|UNBLOCK

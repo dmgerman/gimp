@@ -104,7 +104,7 @@ name|GimpDrawable
 name|parent_instance
 decl_stmt|;
 DECL|member|opacity
-name|gint
+name|gdouble
 name|opacity
 decl_stmt|;
 comment|/*  layer opacity              */
@@ -131,7 +131,7 @@ decl_stmt|;
 comment|/*  possible layer mask        */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon2c4031580108
+DECL|struct|__anon296d67c20108
 block|{
 DECL|member|backing_store
 name|TileManager
@@ -284,7 +284,7 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|gint
+name|gdouble
 name|opacity
 parameter_list|,
 name|GimpLayerModeEffects
@@ -330,7 +330,7 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|gint
+name|gdouble
 name|opacity
 parameter_list|,
 name|GimpLayerModeEffects

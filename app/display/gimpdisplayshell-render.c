@@ -3709,6 +3709,8 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|)
+operator|*
+literal|255.999
 argument_list|)
 expr_stmt|;
 block|}

@@ -635,7 +635,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gdouble
 DECL|function|gimp_image_projection_opacity (const GimpImage * gimage)
 name|gimp_image_projection_opacity
 parameter_list|(
@@ -652,12 +652,11 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
-operator|-
-literal|1
+name|GIMP_OPACITY_OPAQUE
 argument_list|)
 expr_stmt|;
 return|return
-name|OPAQUE_OPACITY
+name|GIMP_OPACITY_OPAQUE
 return|;
 block|}
 end_function
@@ -2628,7 +2627,7 @@ block|(gimp_drawable_width (GIMP_DRAWABLE (gimage->layers->data)) ==        gima
 comment|/* Covers all.           */
 block|(!gimp_drawable_is_indexed (GIMP_DRAWABLE (gimage->layers->data)))&&
 comment|/* Not indexed.          */
-block|(((GimpLayer *)(gimage->layers->data))->opacity == OPAQUE_OPACITY)
+block|(((GimpLayer *)(gimage->layers->data))->opacity == GIMP_OPACITY_OPAQUE)
 comment|/* Opaque                */
 block|)     {       gint xoff;       gint yoff;              gimp_drawable_offsets (GIMP_DRAWABLE (gimage->layers->data),&xoff,&yoff);        if ((xoff==0)&& (yoff==0))
 comment|/* Starts at 0,0         */
@@ -2734,6 +2733,8 @@ argument_list|,
 name|layer
 operator|->
 name|opacity
+operator|*
+literal|255.999
 argument_list|,
 name|layer
 operator|->
@@ -2762,6 +2763,8 @@ argument_list|,
 name|layer
 operator|->
 name|opacity
+operator|*
+literal|255.999
 argument_list|,
 name|layer
 operator|->
@@ -2824,6 +2827,8 @@ argument_list|,
 name|layer
 operator|->
 name|opacity
+operator|*
+literal|255.999
 argument_list|,
 name|layer
 operator|->
@@ -2852,6 +2857,8 @@ argument_list|,
 name|layer
 operator|->
 name|opacity
+operator|*
+literal|255.999
 argument_list|,
 name|layer
 operator|->
@@ -2912,6 +2919,8 @@ argument_list|,
 name|layer
 operator|->
 name|opacity
+operator|*
+literal|255.999
 argument_list|,
 name|layer
 operator|->
@@ -2984,6 +2993,8 @@ argument_list|,
 name|layer
 operator|->
 name|opacity
+operator|*
+literal|255.999
 argument_list|,
 name|layer
 operator|->
@@ -3014,6 +3025,8 @@ argument_list|,
 name|layer
 operator|->
 name|opacity
+operator|*
+literal|255.999
 argument_list|,
 name|layer
 operator|->

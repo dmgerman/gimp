@@ -75,7 +75,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|gdouble
 name|gimp_image_projection_opacity
 parameter_list|(
 specifier|const

@@ -228,7 +228,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c78a6080103
+DECL|enum|__anon2984d1240103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -3578,6 +3578,8 @@ argument_list|,
 name|layer
 operator|->
 name|opacity
+operator|*
+literal|255.999
 argument_list|,
 name|layer
 operator|->
@@ -3607,6 +3609,8 @@ argument_list|,
 name|layer
 operator|->
 name|opacity
+operator|*
+literal|255.999
 argument_list|,
 name|layer
 operator|->
@@ -3640,6 +3644,8 @@ argument_list|,
 name|layer
 operator|->
 name|opacity
+operator|*
+literal|255.999
 argument_list|,
 name|layer
 operator|->
@@ -3669,6 +3675,8 @@ argument_list|,
 name|layer
 operator|->
 name|opacity
+operator|*
+literal|255.999
 argument_list|,
 name|layer
 operator|->

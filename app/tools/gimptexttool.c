@@ -1889,7 +1889,7 @@ argument_list|(
 literal|"Text Layer"
 argument_list|)
 argument_list|,
-name|OPAQUE_OPACITY
+name|GIMP_OPACITY_OPAQUE
 argument_list|,
 name|GIMP_NORMAL_MODE
 argument_list|)
