@@ -1994,18 +1994,6 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|gtk_table_set_row_spacing
-argument_list|(
-name|GTK_TABLE
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|1
-argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -2130,7 +2118,7 @@ argument_list|(
 name|gradient
 argument_list|)
 argument_list|,
-literal|128
+literal|96
 argument_list|,
 literal|16
 argument_list|,
