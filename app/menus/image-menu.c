@@ -765,7 +765,10 @@ literal|"<control>V"
 block|,
 name|edit_paste_cmd_callback
 block|,
-literal|0
+operator|(
+name|guint
+operator|)
+name|FALSE
 block|,
 literal|"<StockItem>"
 block|,
@@ -788,9 +791,12 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|edit_paste_into_cmd_callback
+name|edit_paste_cmd_callback
 block|,
-literal|0
+operator|(
+name|guint
+operator|)
+name|TRUE
 block|,
 literal|"<StockItem>"
 block|,
