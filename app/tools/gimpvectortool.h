@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29db30740103
+DECL|enum|__anon29b474f60103
 block|{
 DECL|enumerator|VECTORS_CREATING
 name|VECTORS_CREATING
@@ -149,6 +149,11 @@ name|VectorFunction
 name|function
 decl_stmt|;
 comment|/*  function we're performing     */
+DECL|member|restriction
+name|GimpAnchorFeatureType
+name|restriction
+decl_stmt|;
+comment|/*  movement restriction          */
 DECL|member|last_x
 name|gint
 name|last_x

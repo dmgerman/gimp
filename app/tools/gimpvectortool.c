@@ -742,11 +742,7 @@ break|break;
 case|case
 name|HALT
 case|:
-name|gimp_tool_pop_status
-argument_list|(
-name|tool
-argument_list|)
-expr_stmt|;
+comment|/* gimp_tool_pop_status (tool); */
 name|gimp_tool_control_halt
 argument_list|(
 name|tool
@@ -855,11 +851,7 @@ operator|->
 name|gdisp
 condition|)
 block|{
-name|gimp_tool_pop_status
-argument_list|(
-name|tool
-argument_list|)
-expr_stmt|;
+comment|/* gimp_tool_pop_status (tool); */
 block|}
 if|if
 condition|(
@@ -975,12 +967,32 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|state
+operator|&
+name|GDK_MOD1_MASK
+condition|)
+name|vector_tool
+operator|->
+name|restriction
+operator|=
+name|GIMP_ANCHOR_FEATURE_SYMMETRIC
+expr_stmt|;
+else|else
+name|vector_tool
+operator|->
+name|restriction
+operator|=
+name|GIMP_ANCHOR_FEATURE_NONE
+expr_stmt|;
+if|if
+condition|(
 name|anchor
 operator|->
 name|type
 operator|==
-name|GIMP_HANDLE_ANCHOR
+name|GIMP_ANCHOR_ANCHOR
 condition|)
+block|{
 name|gimp_stroke_anchor_select
 argument_list|(
 name|stroke
@@ -990,6 +1002,31 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+comment|/* MOD1 pressed? Convert to Edge */
+if|if
+condition|(
+name|state
+operator|&
+name|GDK_MOD1_MASK
+condition|)
+block|{
+name|gimp_stroke_anchor_convert
+argument_list|(
+name|stroke
+argument_list|,
+name|anchor
+argument_list|,
+name|GIMP_ANCHOR_FEATURE_EDGE
+argument_list|)
+expr_stmt|;
+name|vector_tool
+operator|->
+name|restriction
+operator|=
+name|GIMP_ANCHOR_FEATURE_SYMMETRIC
+expr_stmt|;
+block|}
+block|}
 comment|/* doublecheck if there are control handles at this anchor */
 name|anchor
 operator|=
@@ -1197,18 +1234,8 @@ name|control
 argument_list|)
 condition|)
 block|{
-name|gimp_tool_pop_status
-argument_list|(
-name|tool
-argument_list|)
-expr_stmt|;
-name|gimp_tool_push_status
-argument_list|(
-name|tool
-argument_list|,
-literal|""
-argument_list|)
-expr_stmt|;
+comment|/* gimp_tool_pop_status (tool); */
+comment|/* gimp_tool_push_status (tool, ""); */
 block|}
 comment|/*  start drawing the vector tool  */
 name|gimp_draw_tool_start
@@ -1298,18 +1325,8 @@ name|control
 argument_list|)
 condition|)
 block|{
-name|gimp_tool_pop_status
-argument_list|(
-name|tool
-argument_list|)
-expr_stmt|;
-name|gimp_tool_push_status
-argument_list|(
-name|tool
-argument_list|,
-literal|""
-argument_list|)
-expr_stmt|;
+comment|/* gimp_tool_pop_status (tool); */
+comment|/* gimp_tool_push_status (tool, ""); */
 block|}
 comment|/*  start drawing the vector tool  */
 name|gimp_draw_tool_start
@@ -1478,7 +1495,6 @@ block|{
 case|case
 name|VECTORS_MOVING
 case|:
-comment|/* if we are moving the start point and only have two,        * make it the end point  */
 name|anchor
 operator|=
 name|vector_tool
@@ -1501,7 +1517,9 @@ name|cur_anchor
 argument_list|,
 name|coords
 argument_list|,
-literal|0
+name|vector_tool
+operator|->
+name|restriction
 argument_list|)
 expr_stmt|;
 default|default:
@@ -1821,7 +1839,7 @@ name|cur_anchor
 operator|->
 name|type
 operator|==
-name|GIMP_HANDLE_ANCHOR
+name|GIMP_ANCHOR_ANCHOR
 condition|)
 block|{
 name|gimp_draw_tool_draw_handle

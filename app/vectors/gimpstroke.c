@@ -142,8 +142,8 @@ modifier|*
 name|deltacoord
 parameter_list|,
 specifier|const
-name|gint
-name|type
+name|GimpAnchorFeatureType
+name|feature
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -167,8 +167,8 @@ modifier|*
 name|deltacoord
 parameter_list|,
 specifier|const
-name|gint
-name|type
+name|GimpAnchorFeatureType
+name|feature
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -362,6 +362,12 @@ operator|->
 name|anchor_move_absolute
 operator|=
 name|gimp_stroke_real_anchor_move_absolute
+expr_stmt|;
+name|klass
+operator|->
+name|anchor_convert
+operator|=
+name|NULL
 expr_stmt|;
 name|klass
 operator|->
@@ -1127,7 +1133,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_stroke_anchor_move_relative (GimpStroke * stroke,GimpAnchor * anchor,const GimpCoords * deltacoord,const gint type)
+DECL|function|gimp_stroke_anchor_move_relative (GimpStroke * stroke,GimpAnchor * anchor,const GimpCoords * deltacoord,const GimpAnchorFeatureType feature)
 name|gimp_stroke_anchor_move_relative
 parameter_list|(
 name|GimpStroke
@@ -1144,8 +1150,8 @@ modifier|*
 name|deltacoord
 parameter_list|,
 specifier|const
-name|gint
-name|type
+name|GimpAnchorFeatureType
+name|feature
 parameter_list|)
 block|{
 name|GimpStrokeClass
@@ -1177,7 +1183,7 @@ name|anchor
 argument_list|,
 name|deltacoord
 argument_list|,
-name|type
+name|feature
 argument_list|)
 expr_stmt|;
 block|}
@@ -1186,7 +1192,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_stroke_real_anchor_move_relative (GimpStroke * stroke,GimpAnchor * anchor,const GimpCoords * deltacoord,const gint type)
+DECL|function|gimp_stroke_real_anchor_move_relative (GimpStroke * stroke,GimpAnchor * anchor,const GimpCoords * deltacoord,const GimpAnchorFeatureType feature)
 name|gimp_stroke_real_anchor_move_relative
 parameter_list|(
 name|GimpStroke
@@ -1203,8 +1209,8 @@ modifier|*
 name|deltacoord
 parameter_list|,
 specifier|const
-name|gint
-name|type
+name|GimpAnchorFeatureType
+name|feature
 parameter_list|)
 block|{
 comment|/*    * There should be a test that ensures that the anchor is owned by    * the stroke...    */
@@ -1239,7 +1245,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_stroke_anchor_move_absolute (GimpStroke * stroke,GimpAnchor * anchor,const GimpCoords * coord,const gint type)
+DECL|function|gimp_stroke_anchor_move_absolute (GimpStroke * stroke,GimpAnchor * anchor,const GimpCoords * coord,const GimpAnchorFeatureType feature)
 name|gimp_stroke_anchor_move_absolute
 parameter_list|(
 name|GimpStroke
@@ -1256,8 +1262,8 @@ modifier|*
 name|coord
 parameter_list|,
 specifier|const
-name|gint
-name|type
+name|GimpAnchorFeatureType
+name|feature
 parameter_list|)
 block|{
 name|GimpStrokeClass
@@ -1289,7 +1295,7 @@ name|anchor
 argument_list|,
 name|coord
 argument_list|,
-name|type
+name|feature
 argument_list|)
 expr_stmt|;
 block|}
@@ -1298,7 +1304,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_stroke_real_anchor_move_absolute (GimpStroke * stroke,GimpAnchor * anchor,const GimpCoords * coord,const gint type)
+DECL|function|gimp_stroke_real_anchor_move_absolute (GimpStroke * stroke,GimpAnchor * anchor,const GimpCoords * coord,const GimpAnchorFeatureType feature)
 name|gimp_stroke_real_anchor_move_absolute
 parameter_list|(
 name|GimpStroke
@@ -1315,8 +1321,8 @@ modifier|*
 name|coord
 parameter_list|,
 specifier|const
-name|gint
-name|type
+name|GimpAnchorFeatureType
+name|feature
 parameter_list|)
 block|{
 comment|/*    * There should be a test that ensures that the anchor is owned by    * the stroke...    */
@@ -1346,6 +1352,69 @@ operator|->
 name|y
 expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_stroke_anchor_convert (GimpStroke * stroke,GimpAnchor * anchor,GimpAnchorFeatureType feature)
+name|gimp_stroke_anchor_convert
+parameter_list|(
+name|GimpStroke
+modifier|*
+name|stroke
+parameter_list|,
+name|GimpAnchor
+modifier|*
+name|anchor
+parameter_list|,
+name|GimpAnchorFeatureType
+name|feature
+parameter_list|)
+block|{
+name|GimpStrokeClass
+modifier|*
+name|stroke_class
+decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_STROKE
+argument_list|(
+name|stroke
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|stroke_class
+operator|=
+name|GIMP_STROKE_GET_CLASS
+argument_list|(
+name|stroke
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|stroke_class
+operator|->
+name|anchor_convert
+condition|)
+name|stroke_class
+operator|->
+name|anchor_convert
+argument_list|(
+name|stroke
+argument_list|,
+name|anchor
+argument_list|,
+name|feature
+argument_list|)
+expr_stmt|;
+else|else
+name|g_printerr
+argument_list|(
+literal|"gimp_stroke_anchor_convert: default implementation\n"
+argument_list|)
+expr_stmt|;
+return|return;
 block|}
 end_function
 
@@ -1924,7 +1993,7 @@ operator|)
 operator|->
 name|type
 operator|==
-name|GIMP_HANDLE_ANCHOR
+name|GIMP_ANCHOR_ANCHOR
 condition|)
 name|ret_list
 operator|=
@@ -2035,7 +2104,7 @@ operator|)
 operator|->
 name|type
 operator|==
-name|GIMP_HANDLE_CONTROL
+name|GIMP_ANCHOR_CONTROL
 condition|)
 block|{
 if|if
@@ -2058,7 +2127,7 @@ operator|)
 operator|->
 name|type
 operator|==
-name|GIMP_HANDLE_ANCHOR
+name|GIMP_ANCHOR_ANCHOR
 operator|&&
 operator|(
 operator|(
@@ -2106,7 +2175,7 @@ operator|)
 operator|->
 name|type
 operator|==
-name|GIMP_HANDLE_ANCHOR
+name|GIMP_ANCHOR_ANCHOR
 operator|&&
 operator|(
 operator|(
@@ -2246,7 +2315,7 @@ operator|)
 operator|->
 name|type
 operator|==
-name|GIMP_HANDLE_ANCHOR
+name|GIMP_ANCHOR_ANCHOR
 operator|&&
 operator|(
 operator|(
