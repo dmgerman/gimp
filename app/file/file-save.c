@@ -663,6 +663,9 @@ name|value
 operator|.
 name|pdb_pointer
 operator|=
+operator|(
+name|gpointer
+operator|)
 name|filename
 expr_stmt|;
 name|args
@@ -674,6 +677,9 @@ name|value
 operator|.
 name|pdb_pointer
 operator|=
+operator|(
+name|gpointer
+operator|)
 name|raw_filename
 expr_stmt|;
 name|return_vals

@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMPP_ROGRESS_H__
+name|__GIMP_PROGRESS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMPP_ROGRESS_H__
+DECL|macro|__GIMP_PROGRESS_H__
 define|#
 directive|define
-name|__GIMPP_ROGRESS_H__
+name|__GIMP_PROGRESS_H__
 end_define
 
 begin_comment
@@ -41,7 +41,7 @@ parameter_list|,
 name|gboolean
 name|important
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|cancel_callback
 parameter_list|,
 name|gpointer
@@ -64,7 +64,7 @@ name|gchar
 modifier|*
 name|message
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|cancel_callback
 parameter_list|,
 name|gpointer

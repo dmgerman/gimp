@@ -821,9 +821,9 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  set up the scrollbar observers  */
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gdisp
 operator|->
@@ -832,7 +832,7 @@ argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gdisplay_hscrollbar_update
 argument_list|)
@@ -840,9 +840,9 @@ argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gdisp
 operator|->
@@ -851,7 +851,7 @@ argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gdisplay_vscrollbar_update
 argument_list|)
@@ -1148,16 +1148,16 @@ literal|0
 condition|)
 name|key_signal_id
 operator|=
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|canvas
 argument_list|)
 argument_list|,
 literal|"key_press_event"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gtk_true
 argument_list|)
@@ -1648,9 +1648,9 @@ condition|(
 name|key_signal_id
 condition|)
 block|{
-name|gtk_signal_disconnect
+name|g_signal_handler_disconnect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|canvas
 argument_list|)
@@ -3117,19 +3117,9 @@ name|time
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  Stop the signal emission so the button doesn't grab the    *  pointer away from us    */
-name|gtk_signal_emit_stop_by_name
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|widget
-argument_list|)
-argument_list|,
-literal|"button_press_event"
-argument_list|)
-expr_stmt|;
+comment|/* Return TRUE to stop signal emission so the button doesn't grab the    * pointer away from us. */
 return|return
-name|FALSE
+name|TRUE
 return|;
 block|}
 end_function

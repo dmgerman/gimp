@@ -1138,16 +1138,16 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* We're interested in clean and dirty signals so we can update the    * title if need be.    */
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
 literal|"dirty"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gdisplay_cleandirty_handler
 argument_list|)
@@ -1155,16 +1155,16 @@ argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
 literal|"clean"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gdisplay_cleandirty_handler
 argument_list|)
@@ -1877,9 +1877,9 @@ endif|#
 directive|endif
 comment|/* DISPLAY_FILTERS */
 comment|/* get rid of signals handled by this display */
-name|gtk_signal_disconnect_by_data
+name|g_signal_handlers_disconnect_by_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gdisp
 operator|->
@@ -11635,9 +11635,9 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
-name|gtk_signal_disconnect_by_data
+name|g_signal_handlers_disconnect_by_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gdisp
 operator|->
@@ -11708,17 +11708,17 @@ name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* reconnect our clean / dirty signals */
-name|gtk_signal_connect
+comment|/*  reconnect our clean / dirty signal_handlers  */
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
 literal|"dirty"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gdisplay_cleandirty_handler
 argument_list|)
@@ -11726,16 +11726,16 @@ argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
 literal|"clean"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gdisplay_cleandirty_handler
 argument_list|)

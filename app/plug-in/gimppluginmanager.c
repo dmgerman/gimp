@@ -10379,10 +10379,12 @@ name|PlugInDef
 modifier|*
 name|plug_in_def
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|plug_in_name
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -16060,7 +16062,10 @@ name|progress
 argument_list|,
 name|message
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|plug_in_progress_cancel
+argument_list|)
 argument_list|,
 name|plug_in
 argument_list|)
@@ -16078,7 +16083,10 @@ name|message
 argument_list|,
 name|TRUE
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|plug_in_progress_cancel
+argument_list|)
 argument_list|,
 name|plug_in
 argument_list|)

@@ -8653,9 +8653,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|menus_last_opened_add (gchar * filename)
+DECL|function|menus_last_opened_add (const gchar * filename)
 name|menus_last_opened_add
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename

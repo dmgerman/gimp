@@ -79,7 +79,7 @@ modifier|*
 name|cancelbutton
 decl_stmt|;
 DECL|member|cancel_callback
-name|GtkSignalFunc
+name|GCallback
 name|cancel_callback
 decl_stmt|;
 comment|/* callback to remove, or NULL */
@@ -104,7 +104,7 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|cancel_callback
 parameter_list|,
 name|gpointer
@@ -124,7 +124,7 @@ end_comment
 begin_function
 name|GimpProgress
 modifier|*
-DECL|function|progress_start (GDisplay * gdisp,const char * message,gboolean important,GtkSignalFunc cancel_callback,gpointer cancel_data)
+DECL|function|progress_start (GDisplay * gdisp,const char * message,gboolean important,GCallback cancel_callback,gpointer cancel_data)
 name|progress_start
 parameter_list|(
 name|GDisplay
@@ -139,7 +139,7 @@ parameter_list|,
 name|gboolean
 name|important
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|cancel_callback
 parameter_list|,
 name|gpointer
@@ -502,7 +502,7 @@ end_comment
 begin_function
 name|GimpProgress
 modifier|*
-DECL|function|progress_restart (GimpProgress * p,const char * message,GtkSignalFunc cancel_callback,gpointer cancel_data)
+DECL|function|progress_restart (GimpProgress * p,const char * message,GCallback cancel_callback,gpointer cancel_data)
 name|progress_restart
 parameter_list|(
 name|GimpProgress
@@ -514,7 +514,7 @@ name|char
 modifier|*
 name|message
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|cancel_callback
 parameter_list|,
 name|gpointer
@@ -1002,14 +1002,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|progress_signal_setup (GimpProgress * p,GtkSignalFunc cancel_callback,gpointer cancel_data)
+DECL|function|progress_signal_setup (GimpProgress * p,GCallback cancel_callback,gpointer cancel_data)
 name|progress_signal_setup
 parameter_list|(
 name|GimpProgress
 modifier|*
 name|p
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|cancel_callback
 parameter_list|,
 name|gpointer

@@ -288,7 +288,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299bbd730103
+DECL|enum|__anon2b0d22bf0103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -3624,6 +3624,7 @@ name|filename
 argument_list|)
 condition|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|home_dir
@@ -9792,6 +9793,7 @@ name|gchar
 modifier|*
 name|new_path
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|home

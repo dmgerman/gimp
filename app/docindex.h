@@ -45,6 +45,7 @@ begin_function_decl
 name|void
 name|document_index_add
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|label

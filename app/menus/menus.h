@@ -263,6 +263,7 @@ begin_function_decl
 name|void
 name|menus_last_opened_add
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename

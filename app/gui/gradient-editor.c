@@ -269,7 +269,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c423b20103
+DECL|enum|__anon2759e5740103
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -309,7 +309,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c423b20203
+DECL|enum|__anon2759e5740203
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -11593,14 +11593,17 @@ argument_list|,
 name|accel_label
 argument_list|)
 expr_stmt|;
-name|gtk_accel_label_set_accel_widget
+name|gtk_accel_label_set_accel_object
 argument_list|(
 name|GTK_ACCEL_LABEL
 argument_list|(
 name|accel_label
 argument_list|)
 argument_list|,
+name|G_OBJECT
+argument_list|(
 name|menuitem
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

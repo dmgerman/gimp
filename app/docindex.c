@@ -132,7 +132,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba29d5e0108
+DECL|struct|__anon29733e4f0108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -153,13 +153,14 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba29d5e0208
+DECL|struct|__anon29733e4f0208
 block|{
 DECL|member|boole
 name|gboolean
 name|boole
 decl_stmt|;
 DECL|member|string
+specifier|const
 name|gchar
 modifier|*
 name|string
@@ -193,6 +194,7 @@ specifier|static
 name|void
 name|idea_add_in_position
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|label
@@ -218,6 +220,7 @@ specifier|static
 name|void
 name|open_or_raise
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|file_name
@@ -704,9 +707,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|document_index_add (gchar * title)
+DECL|function|document_index_add (const gchar * title)
 name|document_index_add
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|title
@@ -917,6 +921,7 @@ block|{
 name|idea_add_in_position
 argument_list|(
 operator|(
+specifier|const
 name|gchar
 operator|*
 operator|)
@@ -1538,9 +1543,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|idea_add_in_position_with_select (gchar * title,gint position,gboolean select)
+DECL|function|idea_add_in_position_with_select (const gchar * title,gint position,gboolean select)
 name|idea_add_in_position_with_select
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|title
@@ -1912,9 +1918,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|idea_add_in_position (gchar * title,gint position)
+DECL|function|idea_add_in_position (const gchar * title,gint position)
 name|idea_add_in_position
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|title
@@ -2027,9 +2034,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|open_or_raise (gchar * file_name,gboolean try_raise)
+DECL|function|open_or_raise (const gchar * file_name,gboolean try_raise)
 name|open_or_raise
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|file_name
