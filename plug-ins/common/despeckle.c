@@ -171,6 +171,19 @@ DECL|macro|white_level
 comment|/* White level */
 end_comment
 
+begin_define
+DECL|macro|update_toggle
+define|#
+directive|define
+name|update_toggle
+value|(despeckle_vals[4])
+end_define
+
+begin_comment
+DECL|macro|update_toggle
+comment|/* Update the preview? */
+end_comment
+
 begin_comment
 comment|/*  * Local functions...  */
 end_comment
@@ -278,26 +291,6 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|preview_init
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|preview_exit
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|preview_update
 parameter_list|(
 name|GtkWidget
@@ -344,32 +337,6 @@ end_decl_stmt
 begin_comment
 DECL|variable|preview
 comment|/* Preview widget */
-end_comment
-
-begin_decl_stmt
-DECL|variable|preview_src
-specifier|static
-name|guchar
-modifier|*
-name|preview_src
-init|=
-name|NULL
-decl_stmt|,
-comment|/* Source pixel rows */
-DECL|variable|preview_dst
-modifier|*
-name|preview_dst
-decl_stmt|,
-comment|/* Destination pixel row */
-DECL|variable|preview_sort
-modifier|*
-name|preview_sort
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-DECL|variable|preview_sort
-comment|/* Pixel value sort array */
 end_comment
 
 begin_decl_stmt
@@ -442,17 +409,24 @@ specifier|static
 name|gint
 name|despeckle_vals
 index|[
-literal|4
+literal|5
 index|]
 init|=
 block|{
 literal|3
 block|,
+comment|/* Default value for the radius */
 name|FILTER_ADAPTIVE
 block|,
+comment|/* Default value for the filter type */
 literal|7
 block|,
+comment|/* Default value for the black level */
 literal|248
+block|,
+comment|/* Default value for the white level */
+name|TRUE
+comment|/* Default value for the update toggle */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -957,7 +931,6 @@ operator|.
 name|d_int32
 expr_stmt|;
 block|}
-empty_stmt|;
 break|break;
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
@@ -981,7 +954,6 @@ name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 break|break;
 block|}
-empty_stmt|;
 comment|/*    * Despeckle the image...    */
 if|if
 condition|(
@@ -1071,7 +1043,6 @@ operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
-empty_stmt|;
 comment|/*    * Reset the current run status...    */
 name|values
 index|[
@@ -1477,7 +1448,6 @@ operator|%
 name|max_row
 expr_stmt|;
 block|}
-empty_stmt|;
 comment|/*        * Now find the median pixels and save the results...        */
 name|radius
 operator|=
@@ -1716,7 +1686,6 @@ name|sort_ptr
 operator|++
 expr_stmt|;
 block|}
-empty_stmt|;
 comment|/*                * Shell sort the color values...                */
 name|sort_count
 operator|=
@@ -1824,7 +1793,6 @@ operator|=
 name|t
 expr_stmt|;
 block|}
-empty_stmt|;
 comment|/*                    * Assign the median value...                    */
 name|t
 operator|=
@@ -1901,7 +1869,6 @@ name|x
 index|]
 expr_stmt|;
 block|}
-empty_stmt|;
 comment|/*                * Check the histogram and adjust the radius accordingly...                */
 if|if
 condition|(
@@ -1942,11 +1909,8 @@ name|radius
 operator|--
 expr_stmt|;
 block|}
-empty_stmt|;
 block|}
-empty_stmt|;
 block|}
-empty_stmt|;
 name|gimp_pixel_rgn_set_row
 argument_list|(
 operator|&
@@ -1989,7 +1953,6 @@ name|sel_height
 argument_list|)
 expr_stmt|;
 block|}
-empty_stmt|;
 comment|/*    * OK, we're done.  Free all memory used...    */
 name|g_free
 argument_list|(
@@ -2213,7 +2176,8 @@ name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
 argument_list|,
-name|NULL
+operator|&
+name|update_toggle
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2250,9 +2214,6 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
-expr_stmt|;
-name|preview_init
-argument_list|()
 expr_stmt|;
 comment|/*    * Filter type controls...    */
 name|frame
@@ -2697,116 +2658,10 @@ argument_list|(
 name|dialog
 argument_list|)
 expr_stmt|;
-comment|/*    * Free the preview data...    */
-name|preview_exit
-argument_list|()
-expr_stmt|;
 comment|/*    * Return ok/cancel...    */
 return|return
 name|run
 return|;
-block|}
-end_function
-
-begin_comment
-comment|/*  * 'preview_init()' - Initialize the preview window...  */
-end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|preview_init (void)
-name|preview_init
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-name|gint
-name|size
-decl_stmt|,
-comment|/* Size of filter box */
-name|width
-decl_stmt|;
-comment|/* Byte width of the image */
-comment|/*    * Setup for preview filter...    */
-name|size
-operator|=
-name|despeckle_radius
-operator|*
-literal|2
-operator|+
-literal|1
-expr_stmt|;
-name|width
-operator|=
-name|GIMP_PREVIEW
-argument_list|(
-name|preview
-argument_list|)
-operator|->
-name|width
-operator|*
-name|img_bpp
-expr_stmt|;
-if|if
-condition|(
-name|preview_src
-operator|!=
-name|NULL
-condition|)
-block|{
-name|g_free
-argument_list|(
-name|preview_src
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|preview_dst
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|preview_sort
-argument_list|)
-expr_stmt|;
-block|}
-name|preview_src
-operator|=
-name|g_new
-argument_list|(
-name|guchar
-argument_list|,
-name|width
-operator|*
-name|GIMP_PREVIEW
-argument_list|(
-name|preview
-argument_list|)
-operator|->
-name|height
-argument_list|)
-expr_stmt|;
-name|preview_dst
-operator|=
-name|g_new
-argument_list|(
-name|guchar
-argument_list|,
-name|width
-argument_list|)
-expr_stmt|;
-name|preview_sort
-operator|=
-name|g_new
-argument_list|(
-name|guchar
-argument_list|,
-name|size
-operator|*
-name|size
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -2897,6 +2752,21 @@ modifier|*
 name|preview
 decl_stmt|;
 comment|/* The preview widget */
+name|guchar
+modifier|*
+name|preview_src
+decl_stmt|;
+comment|/* Source pixel rows */
+name|guchar
+modifier|*
+name|preview_dst
+decl_stmt|;
+comment|/* Destination pixel row */
+name|guchar
+modifier|*
+name|preview_sort
+decl_stmt|;
+comment|/* Pixel value sort array */
 name|preview
 operator|=
 name|GIMP_PREVIEW
@@ -2973,6 +2843,39 @@ operator|->
 name|width
 operator|*
 name|img_bpp
+expr_stmt|;
+name|preview_src
+operator|=
+name|g_new
+argument_list|(
+name|guchar
+argument_list|,
+name|width
+operator|*
+name|preview
+operator|->
+name|height
+argument_list|)
+expr_stmt|;
+name|preview_dst
+operator|=
+name|g_new
+argument_list|(
+name|guchar
+argument_list|,
+name|width
+argument_list|)
+expr_stmt|;
+name|preview_sort
+operator|=
+name|g_new
+argument_list|(
+name|guchar
+argument_list|,
+name|size
+operator|*
+name|size
+argument_list|)
 expr_stmt|;
 name|gimp_pixel_rgn_get_rect
 argument_list|(
@@ -3210,7 +3113,6 @@ name|sort_ptr
 operator|++
 expr_stmt|;
 block|}
-empty_stmt|;
 comment|/*                * Shell preview_sort the color values...                */
 name|sort_count
 operator|=
@@ -3318,7 +3220,6 @@ operator|=
 name|t
 expr_stmt|;
 block|}
-empty_stmt|;
 comment|/*                    * Assign the median value...                    */
 name|t
 operator|=
@@ -3380,7 +3281,6 @@ operator|*
 name|dst_ptr
 expr_stmt|;
 block|}
-empty_stmt|;
 comment|/*                * Check the histogram and adjust the radius accordingly...                */
 if|if
 condition|(
@@ -3438,7 +3338,6 @@ name|width
 argument_list|)
 expr_stmt|;
 block|}
-empty_stmt|;
 comment|/*    * Update the screen...    */
 name|gimp_drawable_preview_draw
 argument_list|(
@@ -3455,18 +3354,6 @@ argument_list|(
 name|rgba
 argument_list|)
 expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|preview_exit (void)
-name|preview_exit
-parameter_list|(
-name|void
-parameter_list|)
-block|{
 name|g_free
 argument_list|(
 name|preview_src
@@ -3506,16 +3393,6 @@ operator|=
 name|adjustment
 operator|->
 name|value
-expr_stmt|;
-if|if
-condition|(
-name|value
-operator|==
-operator|&
-name|despeckle_radius
-condition|)
-name|preview_init
-argument_list|()
 expr_stmt|;
 name|gimp_preview_invalidate
 argument_list|(
