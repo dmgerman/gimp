@@ -185,7 +185,7 @@ function_decl|)
 parameter_list|(
 name|GimpColormapEditor
 modifier|*
-name|gcd
+name|editor
 parameter_list|)
 function_decl|;
 block|}
