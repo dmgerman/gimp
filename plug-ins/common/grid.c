@@ -261,7 +261,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c657d40108
+DECL|struct|__anon2b3696180108
 block|{
 DECL|member|hwidth
 name|gint
@@ -334,7 +334,7 @@ literal|0.0
 block|,
 literal|0.0
 block|,
-literal|0.5
+literal|0.0
 block|,
 literal|1.0
 block|}
@@ -351,7 +351,7 @@ literal|0.0
 block|,
 literal|0.0
 block|,
-literal|0.5
+literal|0.0
 block|,
 literal|1.0
 block|}
@@ -368,7 +368,7 @@ literal|0.0
 block|,
 literal|0.0
 block|,
-literal|1.0
+literal|0.0
 block|,
 literal|1.0
 block|}
@@ -924,6 +924,26 @@ block|}
 block|}
 else|else
 block|{
+name|gimp_palette_get_foreground
+argument_list|(
+operator|&
+name|grid_cfg
+operator|.
+name|hcolor
+argument_list|)
+expr_stmt|;
+name|grid_cfg
+operator|.
+name|vcolor
+operator|=
+name|grid_cfg
+operator|.
+name|icolor
+operator|=
+name|grid_cfg
+operator|.
+name|hcolor
+expr_stmt|;
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
