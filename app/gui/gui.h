@@ -17,7 +17,7 @@ name|__GUI_H__
 end_define
 
 begin_function_decl
-name|void
+name|gboolean
 name|gui_libs_init
 parameter_list|(
 name|gint

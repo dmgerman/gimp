@@ -451,7 +451,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gui_libs_init (gint * argc,gchar *** argv)
 name|gui_libs_init
 parameter_list|(
@@ -466,27 +466,37 @@ modifier|*
 name|argv
 parameter_list|)
 block|{
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|argc
 operator|!=
 name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|argv
 operator|!=
 name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_init
+if|if
+condition|(
+operator|!
+name|gtk_init_check
 argument_list|(
 name|argc
 argument_list|,
 name|argv
 argument_list|)
-expr_stmt|;
+condition|)
+return|return
+name|FALSE
+return|;
 name|gimp_widgets_init
 argument_list|()
 expr_stmt|;
@@ -495,6 +505,9 @@ argument_list|(
 name|GIMP_TYPE_COLOR_SELECT
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
