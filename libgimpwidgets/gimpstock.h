@@ -586,6 +586,11 @@ define|#
 directive|define
 name|GIMP_STOCK_CHANNEL_GRAY
 value|"gimp-channel-gray"
+DECL|macro|GIMP_STOCK_CHANNEL_INDEXED
+define|#
+directive|define
+name|GIMP_STOCK_CHANNEL_INDEXED
+value|"gimp-channel-indexed"
 DECL|macro|GIMP_STOCK_CHANNEL_ALPHA
 define|#
 directive|define

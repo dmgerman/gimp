@@ -587,7 +587,7 @@ name|GIMP_INDEXED_CHANNEL
 case|:
 name|stock_id
 operator|=
-name|GIMP_STOCK_QUESTION
+name|GIMP_STOCK_CHANNEL_INDEXED
 expr_stmt|;
 break|break;
 case|case
