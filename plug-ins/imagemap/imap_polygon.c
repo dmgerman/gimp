@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-1999 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2002 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_include
@@ -89,6 +89,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"imap_stock.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_table.h"
 end_include
 
@@ -96,12 +102,6 @@ begin_include
 include|#
 directive|include
 file|"libgimp/stdplugins-intl.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"polygon.xpm"
 end_include
 
 begin_define
@@ -449,10 +449,10 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|char
+specifier|const
+name|gchar
 modifier|*
-modifier|*
-name|polygon_get_icon_data
+name|polygon_get_stock_icon_name
 parameter_list|(
 name|void
 parameter_list|)
@@ -468,7 +468,7 @@ init|=
 block|{
 name|N_
 argument_list|(
-literal|"Polygon"
+literal|"_Polygon"
 argument_list|)
 block|,
 name|NULL
@@ -523,7 +523,7 @@ name|polygon_write_ncsa
 block|,
 name|polygon_do_popup
 block|,
-name|polygon_get_icon_data
+name|polygon_get_stock_icon_name
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1719,7 +1719,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2c47d00a0108
+DECL|struct|__anon27ffa2510108
 typedef|typedef
 struct|struct
 block|{
@@ -2368,6 +2368,9 @@ name|swin
 decl_stmt|,
 modifier|*
 name|table
+decl_stmt|,
+modifier|*
+name|label
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -2690,6 +2693,8 @@ argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
+name|label
+operator|=
 name|create_label_in_table
 argument_list|(
 name|table
@@ -2698,7 +2703,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-literal|"x:"
+literal|"_x:"
 argument_list|)
 expr_stmt|;
 name|props
@@ -2708,6 +2713,8 @@ operator|=
 name|create_spin_button_in_table
 argument_list|(
 name|table
+argument_list|,
+name|label
 argument_list|,
 literal|0
 argument_list|,
@@ -2770,6 +2777,8 @@ literal|"pixels"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|label
+operator|=
 name|create_label_in_table
 argument_list|(
 name|table
@@ -2778,7 +2787,7 @@ literal|1
 argument_list|,
 literal|0
 argument_list|,
-literal|"y:"
+literal|"_y:"
 argument_list|)
 expr_stmt|;
 name|props
@@ -2788,6 +2797,8 @@ operator|=
 name|create_spin_button_in_table
 argument_list|(
 name|table
+argument_list|,
+name|label
 argument_list|,
 literal|1
 argument_list|,
@@ -2854,11 +2865,11 @@ name|props
 operator|->
 name|update
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Update"
+literal|"_Update"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2912,11 +2923,11 @@ name|props
 operator|->
 name|insert
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Insert"
+literal|"_Insert"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2970,11 +2981,11 @@ name|props
 operator|->
 name|append
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Append"
+literal|"A_ppend"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3028,11 +3039,11 @@ name|props
 operator|->
 name|remove
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Remove"
+literal|"_Remove"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4566,17 +4577,17 @@ end_function
 
 begin_function
 specifier|static
-name|char
+specifier|const
+name|gchar
 modifier|*
-modifier|*
-DECL|function|polygon_get_icon_data (void)
-name|polygon_get_icon_data
+DECL|function|polygon_get_stock_icon_name (void)
+name|polygon_get_stock_icon_name
 parameter_list|(
 name|void
 parameter_list|)
 block|{
 return|return
-name|polygon_xpm
+name|IMAP_STOCK_POLYGON
 return|;
 block|}
 end_function

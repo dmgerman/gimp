@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2000 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2002 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_include
@@ -915,7 +915,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Web Site"
+literal|"_Web Site"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -969,7 +969,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Ftp Site"
+literal|"_Ftp Site"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1023,7 +1023,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Gopher"
+literal|"_Gopher"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1077,7 +1077,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"Other"
+literal|"Ot_her"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1131,7 +1131,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"File"
+literal|"F_ile"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1185,7 +1185,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"WAIS"
+literal|"WAI_S"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1239,7 +1239,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Telnet"
+literal|"Tel_net"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1293,7 +1293,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"e-mail"
+literal|"e-_mail"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1319,6 +1319,8 @@ operator|)
 name|dialog
 argument_list|)
 expr_stmt|;
+name|label
+operator|=
 name|create_label_in_table
 argument_list|(
 name|table
@@ -1329,7 +1331,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"URL to activate when this area is clicked: (required)"
+literal|"_URL to activate when this area is clicked: (required)"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1402,6 +1404,18 @@ argument_list|,
 name|dialog
 argument_list|)
 expr_stmt|;
+name|gtk_label_set_mnemonic_widget
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|dialog
+operator|->
+name|url
+argument_list|)
+expr_stmt|;
 name|dialog
 operator|->
 name|relative_link
@@ -1416,7 +1430,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Relative link"
+literal|"Relati_ve link"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1432,6 +1446,8 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|label
+operator|=
 name|create_label_in_table
 argument_list|(
 name|table
@@ -1442,7 +1458,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Target frame name/ID: (optional - used for FRAMES only)"
+literal|"_Target frame name/ID: (optional - used for FRAMES only)"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1454,11 +1470,15 @@ name|create_entry_in_table
 argument_list|(
 name|table
 argument_list|,
+name|label
+argument_list|,
 literal|7
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|label
+operator|=
 name|create_label_in_table
 argument_list|(
 name|table
@@ -1469,7 +1489,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Comment about this area: (optional)"
+literal|"ALT te_xt: (optional)"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1481,6 +1501,8 @@ name|create_entry_in_table
 argument_list|(
 name|table
 argument_list|,
+name|label
+argument_list|,
 literal|10
 argument_list|,
 literal|0
@@ -1488,11 +1510,11 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Link"
+literal|"_Link"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1715,11 +1737,11 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Preview"
+literal|"Pre_view"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1779,7 +1801,7 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|gettext
 argument_list|(
@@ -1897,6 +1919,8 @@ argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
+name|label
+operator|=
 name|create_label_in_table
 argument_list|(
 name|table
@@ -1905,7 +1929,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-literal|"onMouseover:"
+literal|"o_nMouseover:"
 argument_list|)
 expr_stmt|;
 name|dialog
@@ -1916,11 +1940,15 @@ name|create_entry_in_table
 argument_list|(
 name|table
 argument_list|,
+name|label
+argument_list|,
 literal|1
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|label
+operator|=
 name|create_label_in_table
 argument_list|(
 name|table
@@ -1929,7 +1957,7 @@ literal|3
 argument_list|,
 literal|0
 argument_list|,
-literal|"onMouseout:"
+literal|"on_Mouseout:"
 argument_list|)
 expr_stmt|;
 name|dialog
@@ -1940,11 +1968,15 @@ name|create_entry_in_table
 argument_list|(
 name|table
 argument_list|,
+name|label
+argument_list|,
 literal|4
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|label
+operator|=
 name|create_label_in_table
 argument_list|(
 name|table
@@ -1953,7 +1985,7 @@ literal|6
 argument_list|,
 literal|0
 argument_list|,
-literal|"onFocus (HTML 4.0):"
+literal|"on_Focus (HTML 4.0):"
 argument_list|)
 expr_stmt|;
 name|dialog
@@ -1964,11 +1996,15 @@ name|create_entry_in_table
 argument_list|(
 name|table
 argument_list|,
+name|label
+argument_list|,
 literal|7
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|label
+operator|=
 name|create_label_in_table
 argument_list|(
 name|table
@@ -1977,7 +2013,7 @@ literal|9
 argument_list|,
 literal|0
 argument_list|,
-literal|"onBlur (HTML 4.0):"
+literal|"on_Blur (HTML 4.0):"
 argument_list|)
 expr_stmt|;
 name|dialog
@@ -1988,6 +2024,8 @@ name|create_entry_in_table
 argument_list|(
 name|table
 argument_list|,
+name|label
+argument_list|,
 literal|10
 argument_list|,
 literal|0
@@ -1995,11 +2033,11 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"JavaScript"
+literal|"_JavaScript"
 argument_list|)
 argument_list|)
 expr_stmt|;

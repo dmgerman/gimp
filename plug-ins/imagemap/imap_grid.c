@@ -76,7 +76,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon2b92d0b60103
+DECL|enum|__anon29801b430103
 DECL|enumerator|GRID_HIDDEN
 DECL|enumerator|GRID_LINES
 DECL|enumerator|GRID_CROSSES
@@ -95,7 +95,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b92d0b60208
+DECL|struct|__anon29801b430208
 typedef|typedef
 struct|struct
 block|{
@@ -1427,6 +1427,8 @@ name|create_spin_button_in_table
 argument_list|(
 name|table
 argument_list|,
+name|label
+argument_list|,
 literal|0
 argument_list|,
 literal|1
@@ -1497,6 +1499,8 @@ operator|=
 name|create_spin_button_in_table
 argument_list|(
 name|table
+argument_list|,
+name|label
 argument_list|,
 literal|1
 argument_list|,
@@ -1698,6 +1702,8 @@ name|create_spin_button_in_table
 argument_list|(
 name|table
 argument_list|,
+name|label
+argument_list|,
 literal|0
 argument_list|,
 literal|0
@@ -1754,6 +1760,8 @@ operator|=
 name|create_spin_button_in_table
 argument_list|(
 name|table
+argument_list|,
+name|label
 argument_list|,
 literal|1
 argument_list|,

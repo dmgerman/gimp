@@ -315,6 +315,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"imap_stock.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_string.h"
 end_include
 
@@ -6027,6 +6033,9 @@ name|gtk_widget_show
 argument_list|(
 name|main_vbox
 argument_list|)
+expr_stmt|;
+name|init_stock_icons
+argument_list|()
 expr_stmt|;
 comment|/* Create menu */
 name|menu

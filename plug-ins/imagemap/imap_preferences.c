@@ -2901,6 +2901,8 @@ name|create_spin_button_in_table
 argument_list|(
 name|table
 argument_list|,
+name|label
+argument_list|,
 literal|0
 argument_list|,
 literal|1
@@ -2935,6 +2937,8 @@ operator|=
 name|create_spin_button_in_table
 argument_list|(
 name|table
+argument_list|,
+name|label
 argument_list|,
 literal|1
 argument_list|,

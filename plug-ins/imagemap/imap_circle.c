@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-1999 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2002 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_include
@@ -15,28 +15,11 @@ directive|include
 file|<math.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|GTK_DISABLE_DEPRECATED
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_undef
-undef|#
-directive|undef
-name|GTK_DISABLE_DEPRECATED
-end_undef
+begin_include
+include|#
+directive|include
+file|<stdlib.h>
+end_include
 
 begin_include
 include|#
@@ -71,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"imap_stock.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_table.h"
 end_include
 
@@ -78,12 +67,6 @@ begin_include
 include|#
 directive|include
 file|"libgimp/stdplugins-intl.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"circle.xpm"
 end_include
 
 begin_function_decl
@@ -380,10 +363,10 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|char
+specifier|const
+name|gchar
 modifier|*
-modifier|*
-name|circle_get_icon_data
+name|circle_get_stock_icon_name
 parameter_list|(
 name|void
 parameter_list|)
@@ -399,7 +382,7 @@ init|=
 block|{
 name|N_
 argument_list|(
-literal|"Circle"
+literal|"C_ircle"
 argument_list|)
 block|,
 name|NULL
@@ -456,7 +439,7 @@ name|circle_write_ncsa
 block|,
 name|object_do_popup
 block|,
-name|circle_get_icon_data
+name|circle_get_stock_icon_name
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1324,7 +1307,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2a9a84070108
+DECL|struct|__anon2b24b55c0108
 typedef|typedef
 struct|struct
 block|{
@@ -1559,6 +1542,9 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|table
+decl_stmt|,
+modifier|*
+name|label
 decl_stmt|;
 name|gint
 name|max_width
@@ -1628,6 +1614,8 @@ argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
+name|label
+operator|=
 name|create_label_in_table
 argument_list|(
 name|table
@@ -1638,7 +1626,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Center x:"
+literal|"Center _x:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1649,6 +1637,8 @@ operator|=
 name|create_spin_button_in_table
 argument_list|(
 name|table
+argument_list|,
+name|label
 argument_list|,
 literal|0
 argument_list|,
@@ -1672,7 +1662,7 @@ operator|->
 name|x
 argument_list|)
 argument_list|,
-literal|"changed"
+literal|"value_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1699,6 +1689,8 @@ literal|"pixels"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|label
+operator|=
 name|create_label_in_table
 argument_list|(
 name|table
@@ -1709,7 +1701,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Center y:"
+literal|"Center _y:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1720,6 +1712,8 @@ operator|=
 name|create_spin_button_in_table
 argument_list|(
 name|table
+argument_list|,
+name|label
 argument_list|,
 literal|1
 argument_list|,
@@ -1743,7 +1737,7 @@ operator|->
 name|y
 argument_list|)
 argument_list|,
-literal|"changed"
+literal|"value_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1770,6 +1764,8 @@ literal|"pixels"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|label
+operator|=
 name|create_label_in_table
 argument_list|(
 name|table
@@ -1780,7 +1776,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Radius:"
+literal|"_Radius:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1791,6 +1787,8 @@ operator|=
 name|create_spin_button_in_table
 argument_list|(
 name|table
+argument_list|,
+name|label
 argument_list|,
 literal|2
 argument_list|,
@@ -1812,7 +1810,7 @@ operator|->
 name|r
 argument_list|)
 argument_list|,
-literal|"changed"
+literal|"value_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2199,17 +2197,17 @@ end_function
 
 begin_function
 specifier|static
-name|char
+specifier|const
+name|gchar
 modifier|*
-modifier|*
-DECL|function|circle_get_icon_data (void)
-name|circle_get_icon_data
+DECL|function|circle_get_stock_icon_name (void)
+name|circle_get_stock_icon_name
 parameter_list|(
 name|void
 parameter_list|)
 block|{
 return|return
-name|circle_xpm
+name|IMAP_STOCK_CIRCLE
 return|;
 block|}
 end_function

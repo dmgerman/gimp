@@ -58,7 +58,7 @@ file|"imap_string.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2c1ad4130108
+DECL|struct|__anon27dd2a840108
 typedef|typedef
 struct|struct
 block|{
@@ -1820,6 +1820,9 @@ modifier|*
 name|mask
 parameter_list|)
 block|{
+ifdef|#
+directive|ifdef
+name|_NOT_READY_YET_
 if|if
 condition|(
 operator|!
@@ -1884,6 +1887,8 @@ name|class
 operator|->
 name|mask
 expr_stmt|;
+endif|#
+directive|endif
 return|return
 name|obj
 operator|->
@@ -1983,7 +1988,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|button_motion (GtkWidget * widget,GdkEventMotion * event,ObjectFactory_t * factory)
 name|button_motion
 parameter_list|(
@@ -2074,6 +2079,9 @@ operator|->
 name|window
 argument_list|)
 expr_stmt|;
+return|return
+name|FALSE
+return|;
 block|}
 end_function
 

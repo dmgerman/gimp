@@ -538,13 +538,13 @@ modifier|*
 name|event
 parameter_list|)
 function_decl|;
-DECL|member|get_icon_data
-name|char
-modifier|*
+DECL|member|get_stock_icon_name
+specifier|const
+name|gchar
 modifier|*
 function_decl|(
 modifier|*
-name|get_icon_data
+name|get_stock_icon_name
 function_decl|)
 parameter_list|(
 name|void
@@ -1002,7 +1002,7 @@ value|((obj)->class->fill_info_tab((obj), (data)))
 end_define
 
 begin_typedef
-DECL|struct|__anon299822630108
+DECL|struct|__anon2a04bd400108
 typedef|typedef
 struct|struct
 block|{
@@ -1106,7 +1106,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon299822630208
+DECL|struct|__anon2a04bd400208
 typedef|typedef
 struct|struct
 block|{
