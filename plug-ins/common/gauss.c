@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c548e60103
+DECL|enum|__anon2ae9f4690103
 block|{
 DECL|enumerator|BLUR_IIR
 name|BLUR_IIR
@@ -70,7 +70,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c548e60208
+DECL|struct|__anon2ae9f4690208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -3660,7 +3660,7 @@ name|val_p
 argument_list|,
 literal|0
 argument_list|,
-name|height
+name|width
 operator|*
 name|bytes
 operator|*
@@ -3676,7 +3676,7 @@ name|val_m
 argument_list|,
 literal|0
 argument_list|,
-name|height
+name|width
 operator|*
 name|bytes
 operator|*
