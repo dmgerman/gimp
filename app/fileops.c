@@ -897,7 +897,7 @@ literal|"1995-1996"
 block|,
 name|PDB_INTERNAL
 block|,
-literal|3
+literal|4
 block|,
 name|register_magic_load_handler_args
 block|,
