@@ -83,7 +83,6 @@ name|void
 modifier|*
 name|data
 parameter_list|,
-comment|/* RETURNS: */
 name|void
 modifier|*
 modifier|*

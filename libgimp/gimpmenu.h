@@ -79,32 +79,32 @@ function_decl|)
 parameter_list|(
 name|gchar
 modifier|*
+name|name
 parameter_list|,
-comment|/* Name */
 name|gdouble
+name|opacity
 parameter_list|,
-comment|/* opacity */
 name|gint
+name|spacing
 parameter_list|,
-comment|/* spacing */
 name|gint
+name|paint_mode
 parameter_list|,
-comment|/* paint_mode */
 name|gint
+name|width
 parameter_list|,
-comment|/* width */
 name|gint
+name|height
 parameter_list|,
-comment|/* height */
 name|gchar
 modifier|*
+name|mask_data
 parameter_list|,
-comment|/* mask data */
 name|gint
+name|dialog_closing
 parameter_list|,
-comment|/* dialog closing */
 name|gpointer
-comment|/* user data */
+name|user_data
 parameter_list|)
 function_decl|;
 comment|/* Popup the pattern dialog */
@@ -118,26 +118,26 @@ function_decl|)
 parameter_list|(
 name|gchar
 modifier|*
+name|name
 parameter_list|,
-comment|/* Name */
 name|gint
+name|width
 parameter_list|,
-comment|/* Width */
 name|gint
+name|height
 parameter_list|,
-comment|/* Heigth */
 name|gint
+name|bpp
 parameter_list|,
-comment|/* bytes pp in mask */
 name|gchar
 modifier|*
+name|mask_data
 parameter_list|,
-comment|/* mask data */
 name|gint
+name|dialog_closing
 parameter_list|,
-comment|/* dialog closing */
 name|gpointer
-comment|/* user data */
+name|user_data
 parameter_list|)
 function_decl|;
 comment|/* Popup the gradient dialog */
@@ -151,20 +151,20 @@ function_decl|)
 parameter_list|(
 name|gchar
 modifier|*
+name|name
 parameter_list|,
-comment|/* Name */
 name|gint
+name|width
 parameter_list|,
-comment|/* Width */
 name|gdouble
 modifier|*
+name|grad_data
 parameter_list|,
-comment|/* grad data */
 name|gint
+name|dialog_closing
 parameter_list|,
-comment|/* dialog closing */
 name|gpointer
-comment|/* user data */
+name|user_data
 parameter_list|)
 function_decl|;
 name|GtkWidget
