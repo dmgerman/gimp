@@ -28,6 +28,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -37,10 +43,16 @@ directive|include
 file|<libgimp/gimpui.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b41b9fa0108
+DECL|struct|__anon2b0eb27b0108
 block|{
 DECL|member|compression
 name|gint
@@ -59,7 +71,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b41b9fa0208
+DECL|struct|__anon2b0eb27b0208
 block|{
 DECL|member|run
 name|gint
@@ -72,7 +84,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b41b9fa0308
+DECL|struct|__anon2b0eb27b0308
 typedef|typedef
 struct|struct
 block|{
@@ -712,11 +724,17 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_tiff_load"
 argument_list|,
+name|_
+argument_list|(
 literal|"loads files of the tiff file format"
+argument_list|)
 argument_list|,
 literal|"FIXME: write help for tiff_load"
 argument_list|,
@@ -745,7 +763,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_tiff_save"
 argument_list|,
+name|_
+argument_list|(
 literal|"saves files in the tiff file format"
+argument_list|)
 argument_list|,
 literal|"FIXME: write help for tiff_save"
 argument_list|,
@@ -912,6 +933,9 @@ operator|==
 literal|0
 condition|)
 block|{
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|image
 operator|=
 name|load_image
@@ -1036,6 +1060,9 @@ case|:
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|init_gtk
 argument_list|()
 expr_stmt|;
@@ -1209,6 +1236,9 @@ break|break;
 case|case
 name|RUN_NONINTERACTIVE
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/*  Make sure all the arguments are there!  */
 if|if
 condition|(
@@ -1561,21 +1591,12 @@ expr_stmt|;
 block|}
 name|name
 operator|=
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
+name|_
 argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|12
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|name
-argument_list|,
 literal|"Loading %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -2369,7 +2390,10 @@ name|gimp_layer_new
 argument_list|(
 name|image
 argument_list|,
+name|_
+argument_list|(
 literal|"Background"
+argument_list|)
 argument_list|,
 name|cols
 argument_list|,
@@ -2448,7 +2472,10 @@ name|gimp_channel_new
 argument_list|(
 name|image
 argument_list|,
+name|_
+argument_list|(
 literal|"TIFF Channel"
+argument_list|)
 argument_list|,
 name|cols
 argument_list|,
@@ -5897,21 +5924,12 @@ return|;
 block|}
 name|name
 operator|=
-name|malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
+name|_
 argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|11
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|name
-argument_list|,
 literal|"Saving %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -7166,7 +7184,10 @@ name|dlg
 operator|=
 name|gimp_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Save as TIFF"
+argument_list|)
 argument_list|,
 literal|"tiff"
 argument_list|,
@@ -7182,7 +7203,10 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|,
 name|save_ok_callback
 argument_list|,
@@ -7196,7 +7220,10 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,
@@ -7245,7 +7272,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Compression"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -7323,8 +7353,11 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"None"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|group
 operator|=
@@ -7391,8 +7424,11 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"LZW"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|group
 operator|=
@@ -7459,7 +7495,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Pack Bits"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -7634,7 +7673,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Comment:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

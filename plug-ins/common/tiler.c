@@ -32,7 +32,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
@@ -207,13 +219,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_make_seamless"
 argument_list|,
+name|_
+argument_list|(
 literal|"Seamless tile creation"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"This plugin creates a seamless tileable from the input image"
+argument_list|)
 argument_list|,
 literal|"Tim Rowley"
 argument_list|,
@@ -221,7 +242,10 @@ literal|"Tim Rowley"
 argument_list|,
 literal|"1997"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Map/Make Seamless"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -295,6 +319,9 @@ operator|.
 name|data
 operator|.
 name|d_int32
+expr_stmt|;
+name|INIT_I18N
+argument_list|()
 expr_stmt|;
 comment|/*  Get the specified drawable  */
 name|drawable
@@ -776,7 +803,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_progress_init
 argument_list|(
-literal|"Tiler"
+name|_
+argument_list|(
+literal|"Tiler..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|width

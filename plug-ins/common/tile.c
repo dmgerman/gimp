@@ -28,6 +28,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -41,6 +47,12 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpui.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
@@ -60,7 +72,7 @@ value|25
 end_define
 
 begin_typedef
-DECL|struct|__anon293732620108
+DECL|struct|__anon276f90200108
 typedef|typedef
 struct|struct
 block|{
@@ -87,7 +99,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon293732620208
+DECL|struct|__anon276f90200208
 typedef|typedef
 struct|struct
 block|{
@@ -438,13 +450,22 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_tile"
 argument_list|,
+name|_
+argument_list|(
 literal|"Create a new image which is a tiled version of the input drawable"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"This function creates a new image with a single layer sized to the specified 'new_width' and 'new_height' parameters.  The specified drawable is tiled into this layer.  The new layer will have the same type as the specified drawable and the new image will have a corresponding base type"
+argument_list|)
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -452,7 +473,10 @@ literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1996-1997"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Map/Tile..."
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
@@ -615,6 +639,9 @@ block|{
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
@@ -640,6 +667,9 @@ break|break;
 case|case
 name|RUN_NONINTERACTIVE
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/*  Make sure all the arguments are there!  */
 if|if
 condition|(
@@ -726,6 +756,9 @@ break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
@@ -749,7 +782,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Tiling..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_tile_cache_ntiles
@@ -1033,7 +1069,10 @@ name|gimp_layer_new
 argument_list|(
 name|new_image_id
 argument_list|,
+name|_
+argument_list|(
 literal|"Background"
+argument_list|)
 argument_list|,
 name|tvals
 operator|.
@@ -1624,7 +1663,10 @@ name|dlg
 operator|=
 name|gimp_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Tile"
+argument_list|)
 argument_list|,
 literal|"tile"
 argument_list|,
@@ -1640,7 +1682,10 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|,
 name|tile_ok_callback
 argument_list|,
@@ -1654,7 +1699,10 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,
@@ -1693,7 +1741,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Tile to New Size"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -1792,7 +1843,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Width:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -1945,7 +1999,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Height:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2098,7 +2155,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Constrain Ratio"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2170,7 +2230,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"New Image"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach

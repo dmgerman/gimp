@@ -26,6 +26,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
 end_include
 
@@ -33,6 +39,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimpcolorspace.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
@@ -227,13 +239,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_vinvert"
 argument_list|,
+name|_
+argument_list|(
 literal|"Invert the 'value' componant of an indexed/RGB image in HSV colourspace"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"This function takes an indexed/RGB image and inverts its 'value' in HSV space.  The upshot of this is that the colour and saturation at any given point remains the same, but its brightness is effectively inverted.  Quite strange.  Sometimes produces unpleasant colour artifacts on images from lossy sources (ie. JPEG)."
+argument_list|)
 argument_list|,
 literal|"Adam D. Moss (adam@foxbox.org)"
 argument_list|,
@@ -241,7 +262,10 @@ literal|"Adam D. Moss (adam@foxbox.org)"
 argument_list|,
 literal|"27th March 1997"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Colors/Value Invert"
+argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*"
 argument_list|,
@@ -396,11 +420,16 @@ name|run_mode
 operator|!=
 name|RUN_NONINTERACTIVE
 condition|)
+block|{
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_progress_init
 argument_list|(
 literal|"Value Invert..."
 argument_list|)
 expr_stmt|;
+block|}
 name|vinvert
 argument_list|(
 name|drawable

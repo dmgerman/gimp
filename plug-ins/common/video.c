@@ -22,6 +22,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -35,6 +41,12 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpui.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
@@ -126,24 +138,51 @@ name|MAX_PATTERNS
 index|]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Staggered"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Large staggered"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Striped"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Wide-striped"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Long-staggered"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"3x3"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Large 3x3"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Hex"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Dots"
-block|, }
+argument_list|)
+block|}
 decl_stmt|;
 end_decl_stmt
 
@@ -60861,7 +60900,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2c42c3400108
+DECL|struct|__anon2bc225240108
 typedef|typedef
 struct|struct
 block|{
@@ -60884,7 +60923,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c42c3400208
+DECL|struct|__anon2bc225240208
 typedef|typedef
 struct|struct
 block|{
@@ -61218,13 +61257,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_video"
 argument_list|,
+name|_
+argument_list|(
 literal|"Apply low-dotpitch RGB simulation to the specified drawable"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"This function simulates the degradation of being on an old low-dotpitch RGB video monitor to the specified drawable."
+argument_list|)
 argument_list|,
 literal|"Adam D. Moss (adam@foxbox.org)"
 argument_list|,
@@ -61232,7 +61280,10 @@ literal|"Adam D. Moss (adam@foxbox.org)"
 argument_list|,
 literal|"2nd March 1997"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Distorts/Video..."
+argument_list|)
 argument_list|,
 literal|"RGB*"
 argument_list|,
@@ -61345,6 +61396,9 @@ block|{
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
@@ -61366,6 +61420,9 @@ break|break;
 case|case
 name|RUN_NONINTERACTIVE
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/*  Make sure all the arguments are there!  */
 if|if
 condition|(
@@ -61428,6 +61485,9 @@ break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
@@ -61476,7 +61536,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Video/RGB..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_tile_cache_ntiles
@@ -62739,7 +62802,10 @@ name|dlg
 operator|=
 name|gimp_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Video"
+argument_list|)
 argument_list|,
 literal|"video"
 argument_list|,
@@ -62755,7 +62821,10 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|,
 name|video_ok_callback
 argument_list|,
@@ -62769,7 +62838,10 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,
@@ -62808,7 +62880,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Parameter Settings"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -62886,7 +62961,10 @@ name|radioframe
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"RGB Pattern Type"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -62964,7 +63042,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Additive"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -63024,7 +63105,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Rotated"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -63194,10 +63278,13 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|gettext
+argument_list|(
 name|pattern_name
 index|[
 name|y
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group

@@ -103,6 +103,12 @@ directive|include
 file|<libgimp/gimpui.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_comment
 comment|/* Round up a division to the nearest integer. */
 end_comment
@@ -308,7 +314,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c434bea0108
+DECL|struct|__anon28e1a7480108
 block|{
 DECL|member|extensionAreaOffset
 name|guint32
@@ -672,11 +678,17 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_tga_load"
 argument_list|,
+name|_
+argument_list|(
 literal|"Loads files of Targa file format"
+argument_list|)
 argument_list|,
 literal|"FIXME: write help for tga_load"
 argument_list|,
@@ -705,7 +717,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_tga_save"
 argument_list|,
+name|_
+argument_list|(
 literal|"saves files in the Targa file format"
+argument_list|)
 argument_list|,
 literal|"FIXME: write help for tga_save"
 argument_list|,
@@ -886,6 +901,9 @@ operator|==
 literal|0
 condition|)
 block|{
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 ifdef|#
 directive|ifdef
 name|PROFILE
@@ -984,6 +1002,9 @@ operator|==
 literal|0
 condition|)
 block|{
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|init_gtk
 argument_list|()
 expr_stmt|;
@@ -1364,21 +1385,12 @@ return|;
 block|}
 name|name_buf
 operator|=
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
+name|_
 argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|11
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|name_buf
-argument_list|,
 literal|"Loading %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -3651,7 +3663,10 @@ name|gimp_layer_new
 argument_list|(
 name|image_ID
 argument_list|,
+name|_
+argument_list|(
 literal|"Background"
+argument_list|)
 argument_list|,
 name|width
 argument_list|,
@@ -4450,29 +4465,12 @@ name|height
 expr_stmt|;
 name|name_buf
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
+name|_
 argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|11
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-operator|(
-name|char
-operator|*
-operator|)
-name|name_buf
-argument_list|,
 literal|"Saving %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -5614,7 +5612,10 @@ name|dlg
 operator|=
 name|gimp_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Save as TGA"
+argument_list|)
 argument_list|,
 literal|"tga"
 argument_list|,
@@ -5630,7 +5631,10 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|,
 name|save_ok_callback
 argument_list|,
@@ -5644,7 +5648,10 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,
@@ -5683,7 +5690,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Targa Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -5761,7 +5771,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"RLE compression"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

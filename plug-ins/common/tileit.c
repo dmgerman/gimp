@@ -34,6 +34,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -47,6 +53,12 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpui.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
@@ -142,7 +154,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b052e430108
+DECL|struct|__anon29ec1d250108
 typedef|typedef
 struct|struct
 block|{
@@ -592,7 +604,7 @@ comment|/* The "explict tile"& family */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b052e430203
+DECL|enum|__anon29ec1d250203
 typedef|typedef
 enum|enum
 block|{
@@ -611,7 +623,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b052e430308
+DECL|struct|__anon29ec1d250308
 typedef|typedef
 struct|struct
 block|{
@@ -697,7 +709,7 @@ comment|/* The reset button needs to know some toggle widgets.. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b052e430408
+DECL|struct|__anon29ec1d250408
 typedef|typedef
 struct|struct
 block|{
@@ -930,11 +942,17 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_small_tiles"
 argument_list|,
+name|_
+argument_list|(
 literal|"Tiles image into smaller versions of the orginal"
+argument_list|)
 argument_list|,
 literal|"More here later"
 argument_list|,
@@ -944,7 +962,10 @@ literal|"Andy Thomas"
 argument_list|,
 literal|"1997"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Map/Small Tiles..."
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -1184,6 +1205,9 @@ block|{
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|gimp_get_data
 argument_list|(
 literal|"plug_in_tileit"
@@ -1241,10 +1265,16 @@ operator|.
 name|d_int32
 expr_stmt|;
 block|}
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_get_data
 argument_list|(
 literal|"plug_in_tileit"
@@ -1294,7 +1324,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_progress_init
 argument_list|(
-literal|"Tiling ..."
+name|_
+argument_list|(
+literal|"Tiling..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|do_tiles
@@ -1553,7 +1586,10 @@ name|dlg
 operator|=
 name|gimp_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"TileIt"
+argument_list|)
 argument_list|,
 literal|"tileit"
 argument_list|,
@@ -1569,7 +1605,10 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|,
 name|tileit_ok_callback
 argument_list|,
@@ -1583,7 +1622,10 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,
@@ -1696,7 +1738,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Preview"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -1892,7 +1937,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Flipping"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -1994,7 +2042,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Horizontal"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2046,7 +2097,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Vertical"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2098,7 +2152,10 @@ name|xframe
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Applied to Tile"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -2195,7 +2252,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|orientation_group
 argument_list|,
+name|_
+argument_list|(
 literal|"All Tiles"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|orientation_group
@@ -2267,7 +2327,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|orientation_group
 argument_list|,
+name|_
+argument_list|(
 literal|"Alternate Tiles"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|orientation_group
@@ -2339,7 +2402,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|orientation_group
 argument_list|,
-literal|"Explict Tile"
+name|_
+argument_list|(
+literal|"Explicit Tile"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|orientation_group
@@ -2389,7 +2455,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Row:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2556,7 +2625,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Column:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2741,7 +2813,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Apply"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
@@ -2814,7 +2889,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Opacity:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -3105,7 +3183,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Reset"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3160,7 +3241,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Segment Setting"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type

@@ -65,7 +65,19 @@ end_endif
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
@@ -236,13 +248,22 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_url_load"
 argument_list|,
+name|_
+argument_list|(
 literal|"loads files given a URL"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"You need to have GNU Wget installed."
+argument_list|)
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
