@@ -5421,7 +5421,7 @@ name|GTK_WIN_POS_NONE
 argument_list|,
 name|FALSE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -11266,7 +11266,7 @@ name|page_index
 operator|++
 expr_stmt|;
 block|{
-DECL|struct|__anon27ca82890108
+DECL|struct|__anon2b655aa40108
 specifier|static
 specifier|const
 struct|struct
@@ -11491,7 +11491,7 @@ block|}
 block|}
 comment|/* Directories /<paths> */
 block|{
-DECL|struct|__anon27ca82890208
+DECL|struct|__anon2b655aa40208
 specifier|static
 specifier|const
 struct|struct
