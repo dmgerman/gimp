@@ -2644,6 +2644,11 @@ if|if
 condition|(
 operator|!
 name|gdisplay
+operator|||
+operator|!
+name|gdisplay
+operator|->
+name|gimage
 condition|)
 return|return;
 if|if
@@ -2703,9 +2708,11 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gdisplay_reconnect
+name|gdisplays_reconnect
 argument_list|(
 name|gdisplay
+operator|->
+name|gimage
 argument_list|,
 name|gimage
 argument_list|)

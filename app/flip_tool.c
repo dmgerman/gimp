@@ -421,6 +421,7 @@ name|type
 operator|==
 name|ORIENTATION_HORIZONTAL
 condition|)
+block|{
 name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
@@ -438,7 +439,9 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+block|}
 else|else
+block|{
 name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
@@ -456,6 +459,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+block|}
 break|break;
 block|}
 block|}
@@ -592,9 +596,9 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|Layer
+name|Drawable
 modifier|*
-name|layer
+name|drawable
 decl_stmt|;
 name|GdkCursorType
 name|ctype
@@ -612,9 +616,9 @@ expr_stmt|;
 if|if
 condition|(
 operator|(
-name|layer
+name|drawable
 operator|=
-name|gimage_get_active_layer
+name|gimage_get_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -623,21 +627,19 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|off_x
 decl_stmt|,
 name|off_y
 decl_stmt|;
 name|drawable_offsets
 argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
+name|drawable
 argument_list|,
 operator|&
 name|off_x
@@ -692,10 +694,7 @@ name|off_x
 operator|+
 name|drawable_width
 argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
+name|drawable
 argument_list|)
 operator|)
 operator|&&
@@ -706,10 +705,7 @@ name|off_y
 operator|+
 name|drawable_height
 argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
+name|drawable
 argument_list|)
 operator|)
 condition|)
@@ -877,7 +873,7 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|flip_tool_flip (GimpImage * gimage,GimpDrawable * drawable,TileManager * orig,int flip,InternalOrientationType type)
+DECL|function|flip_tool_flip (GimpImage * gimage,GimpDrawable * drawable,TileManager * orig,gint flip,InternalOrientationType type)
 name|flip_tool_flip
 parameter_list|(
 name|GimpImage
@@ -892,7 +888,7 @@ name|TileManager
 modifier|*
 name|orig
 parameter_list|,
-name|int
+name|gint
 name|flip
 parameter_list|,
 name|InternalOrientationType

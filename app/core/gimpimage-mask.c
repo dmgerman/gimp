@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -25,12 +31,6 @@ begin_include
 include|#
 directive|include
 file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"errors.h"
 end_include
 
 begin_include
@@ -90,31 +90,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layer_pvt.h"
+file|"channel_pvt.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"tile_manager_pvt.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"drawable_pvt.h"
 end_include
 
 begin_comment
@@ -136,8 +124,8 @@ comment|/*  functions  */
 end_comment
 
 begin_function
-name|int
-DECL|function|gimage_mask_boundary (GImage * gimage,BoundSeg ** segs_in,BoundSeg ** segs_out,int * num_segs_in,int * num_segs_out)
+name|gboolean
+DECL|function|gimage_mask_boundary (GImage * gimage,BoundSeg ** segs_in,BoundSeg ** segs_out,gint * num_segs_in,gint * num_segs_out)
 name|gimage_mask_boundary
 parameter_list|(
 name|GImage
@@ -154,11 +142,11 @@ modifier|*
 modifier|*
 name|segs_out
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|num_segs_in
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|num_segs_out
 parameter_list|)
@@ -171,11 +159,12 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|x2
 decl_stmt|,
 name|y2
@@ -296,7 +285,7 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|int
+name|gint
 name|off_x
 decl_stmt|,
 name|off_y
@@ -439,27 +428,27 @@ block|}
 end_function
 
 begin_function
-name|int
-DECL|function|gimage_mask_bounds (GImage * gimage,int * x1,int * y1,int * x2,int * y2)
+name|gboolean
+DECL|function|gimage_mask_bounds (GImage * gimage,gint * x1,gint * y1,gint * x2,gint * y2)
 name|gimage_mask_bounds
 parameter_list|(
 name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|x1
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|y1
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|x2
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|y2
 parameter_list|)
@@ -570,7 +559,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gint
 DECL|function|gimage_mask_value (GImage * gimage,int x,int y)
 name|gimage_mask_value
 parameter_list|(
@@ -602,7 +591,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|gimage_mask_is_empty (GImage * gimage)
 name|gimage_mask_is_empty
 parameter_list|(
@@ -634,17 +623,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_translate (GImage * gimage,int off_x,int off_y)
+DECL|function|gimage_mask_translate (GImage * gimage,gint off_x,gint off_y)
 name|gimage_mask_translate
 parameter_list|(
 name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|gint
 name|off_x
 parameter_list|,
-name|int
+name|gint
 name|off_y
 parameter_list|)
 block|{
@@ -666,7 +655,7 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|gimage_mask_extract (GImage * gimage,GimpDrawable * drawable,int cut_gimage,int keep_indexed)
+DECL|function|gimage_mask_extract (GImage * gimage,GimpDrawable * drawable,gboolean cut_gimage,gboolean keep_indexed)
 name|gimage_mask_extract
 parameter_list|(
 name|GImage
@@ -677,10 +666,10 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|gboolean
 name|cut_gimage
 parameter_list|,
-name|int
+name|gboolean
 name|keep_indexed
 parameter_list|)
 block|{
@@ -699,33 +688,33 @@ name|destPR
 decl_stmt|,
 name|maskPR
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|bg
 index|[
 name|MAX_CHANNELS
 index|]
 decl_stmt|;
-name|int
+name|gint
 name|bytes
 decl_stmt|,
 name|type
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|int
+name|gint
 name|off_x
 decl_stmt|,
 name|off_y
 decl_stmt|;
-name|int
+name|gboolean
 name|non_empty
 decl_stmt|;
 if|if
@@ -781,8 +770,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Unable to cut/copy because the selected\nregion is "
-literal|"empty."
+literal|"Unable to cut/copy because the selected\n"
+literal|"region is empty."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1268,12 +1257,13 @@ name|gimage_remove_layer_mask
 argument_list|(
 name|gimage
 argument_list|,
+name|layer_mask_get_layer
+argument_list|(
 name|GIMP_LAYER_MASK
 argument_list|(
 name|drawable
 argument_list|)
-operator|->
-name|layer
+argument_list|)
 argument_list|,
 name|DISCARD
 argument_list|)
@@ -1309,7 +1299,7 @@ end_function
 begin_function
 name|Layer
 modifier|*
-DECL|function|gimage_mask_float (GImage * gimage,GimpDrawable * drawable,int off_x,int off_y)
+DECL|function|gimage_mask_float (GImage * gimage,GimpDrawable * drawable,gint off_x,gint off_y)
 name|gimage_mask_float
 parameter_list|(
 name|GImage
@@ -1320,11 +1310,11 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|gint
 name|off_x
 parameter_list|,
 comment|/* optional offset */
-name|int
+name|gint
 name|off_y
 parameter_list|)
 block|{
@@ -1345,14 +1335,15 @@ name|TileManager
 modifier|*
 name|tiles
 decl_stmt|;
-name|int
+name|gboolean
 name|non_empty
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|x2
 decl_stmt|,
 name|y2
@@ -1648,17 +1639,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_feather (GImage * gimage,double feather_radius_x,double feather_radius_y)
+DECL|function|gimage_mask_feather (GImage * gimage,gdouble feather_radius_x,gdouble feather_radius_y)
 name|gimage_mask_feather
 parameter_list|(
 name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|double
+name|gdouble
 name|feather_radius_x
 parameter_list|,
-name|double
+name|gdouble
 name|feather_radius_y
 parameter_list|)
 block|{
@@ -1700,17 +1691,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_border (GImage * gimage,int border_radius_x,int border_radius_y)
+DECL|function|gimage_mask_border (GImage * gimage,gint border_radius_x,gint border_radius_y)
 name|gimage_mask_border
 parameter_list|(
 name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|gint
 name|border_radius_x
 parameter_list|,
-name|int
+name|gint
 name|border_radius_y
 parameter_list|)
 block|{
@@ -1764,20 +1755,20 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_shrink (GImage * gimage,int shrink_pixels_x,int shrink_pixels_y,int edge_lock)
+DECL|function|gimage_mask_shrink (GImage * gimage,gint shrink_pixels_x,gint shrink_pixels_y,gboolean edge_lock)
 name|gimage_mask_shrink
 parameter_list|(
 name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|gint
 name|shrink_pixels_x
 parameter_list|,
-name|int
+name|gint
 name|shrink_pixels_y
 parameter_list|,
-name|int
+name|gboolean
 name|edge_lock
 parameter_list|)
 block|{
@@ -1843,8 +1834,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"The active layer has no alpha channel\nto convert to a "
-literal|"selection."
+literal|"The active layer has no alpha channel\n"
+literal|"to convert to a selection."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1870,9 +1861,10 @@ block|{
 comment|/*  extract the layer's alpha channel  */
 if|if
 condition|(
+name|layer_get_mask
+argument_list|(
 name|layer
-operator|->
-name|mask
+argument_list|)
 condition|)
 block|{
 comment|/*  load the mask with the given layer's alpha channel  */
@@ -1893,7 +1885,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"The active layer has no mask\nto convert to a selection."
+literal|"The active layer has no mask\n"
+literal|"to convert to a selection."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1984,7 +1977,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|gimage_mask_stroke (GImage * gimage,GimpDrawable * drawable)
 name|gimage_mask_stroke
 parameter_list|(
@@ -2005,28 +1998,28 @@ name|BoundSeg
 modifier|*
 name|bs_out
 decl_stmt|;
-name|int
+name|gint
 name|num_segs_in
 decl_stmt|;
-name|int
+name|gint
 name|num_segs_out
 decl_stmt|;
 name|BoundSeg
 modifier|*
 name|stroke_segs
 decl_stmt|;
-name|int
+name|gint
 name|num_strokes
 decl_stmt|;
-name|int
+name|gint
 name|seg
 decl_stmt|;
-name|int
+name|gint
 name|offx
 decl_stmt|,
 name|offy
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|gdouble
@@ -2040,7 +2033,7 @@ name|Argument
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 if|if

@@ -648,7 +648,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|gdisplay_mask_value
 parameter_list|(
 name|GDisplay
@@ -662,7 +662,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|gdisplay_mask_bounds
 parameter_list|(
 name|GDisplay
@@ -902,15 +902,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gdisplays_finish_draw
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gdisplay_draw_guides
 parameter_list|(
 name|GDisplay
@@ -1030,21 +1021,28 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GDisplay
-modifier|*
-name|gdisplays_check_valid
+name|void
+name|gdisplay_update_title
 parameter_list|(
 name|GDisplay
-modifier|*
-parameter_list|,
-name|GimpImage
 modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gdisplay_flush_displays_only
+parameter_list|(
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
-comment|/*  function declarations  */
+comment|/* no rerender! */
 end_comment
 
 begin_function_decl
@@ -1067,12 +1065,35 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  function declarations  */
+end_comment
+
 begin_function_decl
-name|void
-name|gdisplay_update_title
+name|GDisplay
+modifier|*
+name|gdisplays_check_valid
 parameter_list|(
 name|GDisplay
 modifier|*
+parameter_list|,
+name|GimpImage
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gdisplays_reconnect
+parameter_list|(
+name|GimpImage
+modifier|*
+name|old
+parameter_list|,
+name|GimpImage
+modifier|*
+name|new
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1227,18 +1248,12 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gdisplay_flush_displays_only
+name|gdisplays_finish_draw
 parameter_list|(
-name|GDisplay
-modifier|*
-name|gdisp
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/* no rerender! */
-end_comment
 
 begin_function_decl
 name|void
