@@ -217,7 +217,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|enum|__anon2c643b250103
+DECL|enum|__anon2b4e62fa0103
 typedef|typedef
 enum|enum
 block|{
@@ -1693,10 +1693,11 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-operator|!
 name|gimage
 operator|->
 name|pushing_undo_group
+operator|==
+name|UNDO_NULL
 condition|)
 if|if
 condition|(
@@ -1729,10 +1730,11 @@ expr_stmt|;
 comment|/*  only increment levels if not in a group  */
 if|if
 condition|(
-operator|!
 name|gimage
 operator|->
 name|pushing_undo_group
+operator|==
+name|UNDO_NULL
 condition|)
 name|gimage
 operator|->
@@ -1771,10 +1773,11 @@ expr_stmt|;
 comment|/* lastly, tell people about the newly pushed undo (must come after    * modification of undo_stack).  */
 if|if
 condition|(
-operator|!
 name|gimage
 operator|->
 name|pushing_undo_group
+operator|==
+name|UNDO_NULL
 condition|)
 name|gimp_image_undo_event
 argument_list|(
@@ -2253,7 +2256,7 @@ name|gimage
 operator|->
 name|pushing_undo_group
 operator|==
-literal|0
+name|UNDO_NULL
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2296,7 +2299,7 @@ name|gimage
 operator|->
 name|pushing_undo_group
 operator|==
-literal|0
+name|UNDO_NULL
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2394,7 +2397,7 @@ operator|!
 name|stack
 condition|)
 return|return
-literal|0
+name|UNDO_NULL
 return|;
 name|object
 operator|=
@@ -2471,7 +2474,7 @@ name|gimage
 operator|!=
 name|NULL
 argument_list|,
-literal|0
+name|UNDO_NULL
 argument_list|)
 expr_stmt|;
 comment|/* don't want to encourage undo while a group is open */
@@ -2481,10 +2484,10 @@ name|gimage
 operator|->
 name|pushing_undo_group
 operator|!=
-literal|0
+name|UNDO_NULL
 condition|)
 return|return
-literal|0
+name|UNDO_NULL
 return|;
 return|return
 name|undo_get_topitem_type
@@ -2525,7 +2528,7 @@ name|gimage
 operator|->
 name|pushing_undo_group
 operator|!=
-literal|0
+name|UNDO_NULL
 condition|)
 return|return
 name|NULL
@@ -2672,7 +2675,7 @@ name|gimage
 operator|->
 name|pushing_undo_group
 operator|==
-literal|0
+name|UNDO_NULL
 argument_list|)
 expr_stmt|;
 name|undo_map_over_stack
@@ -2713,7 +2716,7 @@ name|gimage
 operator|->
 name|pushing_undo_group
 operator|==
-literal|0
+name|UNDO_NULL
 argument_list|)
 expr_stmt|;
 name|undo_map_over_stack
@@ -3087,7 +3090,7 @@ name|gimage
 operator|->
 name|pushing_undo_group
 operator|=
-literal|0
+name|UNDO_NULL
 expr_stmt|;
 comment|/* Do it here, since undo_push doesn't emit this event while in the        * middle of a group */
 name|gimp_image_undo_event
@@ -7283,7 +7286,7 @@ name|UNDO
 operator|&&
 name|type
 operator|==
-name|LAYER_ADD_UNDO
+name|LAYER_MASK_ADD_UNDO
 operator|)
 operator|||
 operator|(
@@ -7293,7 +7296,7 @@ name|REDO
 operator|&&
 name|type
 operator|==
-name|LAYER_REMOVE_UNDO
+name|LAYER_MASK_REMOVE_UNDO
 operator|)
 condition|)
 block|{
@@ -7535,7 +7538,7 @@ name|REDO
 operator|&&
 name|type
 operator|==
-name|LAYER_ADD_UNDO
+name|LAYER_MASK_ADD_UNDO
 operator|)
 operator|||
 operator|(
@@ -7545,7 +7548,7 @@ name|UNDO
 operator|&&
 name|type
 operator|==
-name|LAYER_REMOVE_UNDO
+name|LAYER_MASK_REMOVE_UNDO
 operator|)
 condition|)
 name|layer_mask_delete
@@ -11422,7 +11425,7 @@ comment|/* Layer re-position */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c643b250208
+DECL|struct|__anon2b4e62fa0208
 typedef|typedef
 struct|struct
 block|{
@@ -11652,7 +11655,7 @@ comment|/* Layer name change */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c643b250308
+DECL|struct|__anon2b4e62fa0308
 typedef|typedef
 struct|struct
 block|{
@@ -12070,7 +12073,7 @@ index|[]
 init|=
 block|{
 block|{
-literal|0
+name|UNDO_NULL
 block|,
 name|N_
 argument_list|(

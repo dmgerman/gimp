@@ -540,7 +540,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2c1a0cfd0103
+DECL|enum|__anon2b0419020103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -940,7 +940,7 @@ name|gimage
 operator|->
 name|pushing_undo_group
 operator|=
-literal|0
+name|UNDO_NULL
 expr_stmt|;
 name|gimage
 operator|->

@@ -27,13 +27,17 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2784d0ca0103
+DECL|enum|__anon27ecdba10103
 block|{
-comment|/* Type 0 is special - in the gimpimage structure it means      * there is no undo group currently being added to. */
+comment|/* Type UNDO_NULL (0) is special - in the gimpimage structure it means      * there is no undo group currently being added to. */
+DECL|enumerator|UNDO_NULL
+name|UNDO_NULL
+init|=
+literal|0
+block|,
+comment|/* Picky compilers demand this in the enumeration - gosgood@idt.net */
 DECL|enumerator|IMAGE_UNDO
 name|IMAGE_UNDO
-init|=
-literal|1
 block|,
 DECL|enumerator|IMAGE_MOD_UNDO
 name|IMAGE_MOD_UNDO
