@@ -758,6 +758,23 @@ argument_list|,
 name|percentage
 argument_list|)
 expr_stmt|;
+comment|/* force updates so there's feedback even when the main loop is busy */
+if|if
+condition|(
+name|GTK_WIDGET_DRAWABLE
+argument_list|(
+name|bar
+argument_list|)
+condition|)
+name|gdk_window_process_updates
+argument_list|(
+name|bar
+operator|->
+name|window
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
