@@ -3076,6 +3076,12 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|accelerator
+operator|!=
+name|NULL
+condition|)
 name|g_snprintf
 argument_list|(
 name|accelerator
