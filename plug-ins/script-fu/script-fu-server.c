@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib.h>
 end_include
 
@@ -97,12 +103,6 @@ directive|include
 file|<netdb.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|"config.h"
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -127,6 +127,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
 end_include
 
@@ -140,12 +146,6 @@ begin_include
 include|#
 directive|include
 file|"script-fu-intl.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gtk/gtk.h"
 end_include
 
 begin_include
@@ -353,7 +353,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27783feb0108
+DECL|struct|__anon2c07c7100108
 block|{
 DECL|member|command
 name|gchar
@@ -377,7 +377,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27783feb0208
+DECL|struct|__anon2c07c7100208
 block|{
 DECL|member|port_entry
 name|GtkWidget
