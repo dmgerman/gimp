@@ -137,7 +137,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b30b4c50108
+DECL|struct|__anon27a99cc90108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -519,7 +519,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b30b4c50203
+DECL|enum|__anon27a99cc90203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -538,7 +538,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b30b4c50308
+DECL|struct|__anon27a99cc90308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -608,7 +608,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b30b4c50408
+DECL|struct|__anon27a99cc90408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -2696,7 +2696,7 @@ name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Numer of Segments"
+literal|"Number of Segments"
 argument_list|)
 argument_list|)
 expr_stmt|;
