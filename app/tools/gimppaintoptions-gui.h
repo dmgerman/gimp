@@ -79,6 +79,20 @@ name|GtkWidget
 modifier|*
 name|paint_mode_w
 decl_stmt|;
+comment|/*  the incremental toggle  */
+DECL|member|incremental
+name|gboolean
+name|incremental
+decl_stmt|;
+DECL|member|incremental_d
+name|gboolean
+name|incremental_d
+decl_stmt|;
+DECL|member|incremental_w
+name|GtkWidget
+modifier|*
+name|incremental_w
+decl_stmt|;
 block|}
 struct|;
 end_struct

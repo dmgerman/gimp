@@ -674,7 +674,7 @@ end_function_decl
 begin_function_decl
 name|LayerMask
 modifier|*
-name|layer_mask
+name|layer_get_mask
 parameter_list|(
 name|Layer
 modifier|*

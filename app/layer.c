@@ -144,7 +144,7 @@ comment|/* ick. */
 end_comment
 
 begin_enum
-DECL|enum|__anon280407a50103
+DECL|enum|__anon2c4938040103
 enum|enum
 block|{
 DECL|enumerator|REMOVED
@@ -907,27 +907,27 @@ end_comment
 begin_function
 name|Layer
 modifier|*
-DECL|function|layer_new (GimpImage * gimage,int width,int height,GimpImageType type,char * name,int opacity,LayerModeEffects mode)
+DECL|function|layer_new (GimpImage * gimage,gint width,gint height,GimpImageType type,gchar * name,gint opacity,LayerModeEffects mode)
 name|layer_new
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
 name|GimpImageType
 name|type
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|opacity
 parameter_list|,
 name|LayerModeEffects
@@ -1150,20 +1150,16 @@ end_function
 begin_function
 name|Layer
 modifier|*
-DECL|function|layer_copy (layer,add_alpha)
+DECL|function|layer_copy (Layer * layer,gint add_alpha)
 name|layer_copy
 parameter_list|(
-name|layer
-parameter_list|,
-name|add_alpha
-parameter_list|)
 name|Layer
 modifier|*
 name|layer
-decl_stmt|;
-name|int
+parameter_list|,
+name|gint
 name|add_alpha
-decl_stmt|;
+parameter_list|)
 block|{
 name|char
 modifier|*
@@ -1740,7 +1736,7 @@ end_function
 begin_function
 name|Layer
 modifier|*
-DECL|function|layer_from_tiles (void * gimage_ptr,GimpDrawable * drawable,TileManager * tiles,char * name,int opacity,LayerModeEffects mode)
+DECL|function|layer_from_tiles (void * gimage_ptr,GimpDrawable * drawable,TileManager * tiles,gchar * name,gint opacity,LayerModeEffects mode)
 name|layer_from_tiles
 parameter_list|(
 name|void
@@ -1755,11 +1751,11 @@ name|TileManager
 modifier|*
 name|tiles
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|opacity
 parameter_list|,
 name|LayerModeEffects
@@ -1998,21 +1994,17 @@ end_function
 begin_function
 name|LayerMask
 modifier|*
-DECL|function|layer_add_mask (layer,mask)
+DECL|function|layer_add_mask (Layer * layer,LayerMask * mask)
 name|layer_add_mask
 parameter_list|(
-name|layer
-parameter_list|,
-name|mask
-parameter_list|)
 name|Layer
 modifier|*
 name|layer
-decl_stmt|;
+parameter_list|,
 name|LayerMask
 modifier|*
 name|mask
-decl_stmt|;
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -2094,20 +2086,16 @@ end_function
 begin_function
 name|LayerMask
 modifier|*
-DECL|function|layer_create_mask (layer,add_mask_type)
+DECL|function|layer_create_mask (Layer * layer,AddMaskType add_mask_type)
 name|layer_create_mask
 parameter_list|(
-name|layer
-parameter_list|,
-name|add_mask_type
-parameter_list|)
 name|Layer
 modifier|*
 name|layer
-decl_stmt|;
+parameter_list|,
 name|AddMaskType
 name|add_mask_type
-decl_stmt|;
+parameter_list|)
 block|{
 name|PixelRegion
 name|maskPR
@@ -2364,14 +2352,12 @@ end_function
 begin_function
 name|Layer
 modifier|*
-DECL|function|layer_get_ID (ID)
+DECL|function|layer_get_ID (gint ID)
 name|layer_get_ID
 parameter_list|(
+name|gint
 name|ID
 parameter_list|)
-name|int
-name|ID
-decl_stmt|;
 block|{
 name|GimpDrawable
 modifier|*
@@ -2590,20 +2576,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layer_apply_mask (layer,mode)
+DECL|function|layer_apply_mask (Layer * layer,gint mode)
 name|layer_apply_mask
 parameter_list|(
-name|layer
-parameter_list|,
-name|mode
-parameter_list|)
 name|Layer
 modifier|*
 name|layer
-decl_stmt|;
-name|int
+parameter_list|,
+name|gint
 name|mode
-decl_stmt|;
+parameter_list|)
 block|{
 name|PixelRegion
 name|srcPR
@@ -2820,29 +2802,22 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|layer_translate_lowlevel (layer,off_x,off_y,temporary)
+DECL|function|layer_translate_lowlevel (Layer * layer,gint off_x,gint off_y,gboolean temporary)
 name|layer_translate_lowlevel
 parameter_list|(
-name|layer
-parameter_list|,
-name|off_x
-parameter_list|,
-name|off_y
-parameter_list|,
-name|temporary
-parameter_list|)
 name|Layer
 modifier|*
 name|layer
-decl_stmt|;
-name|int
+parameter_list|,
+name|gint
 name|off_x
-decl_stmt|,
+parameter_list|,
+name|gint
 name|off_y
-decl_stmt|;
+parameter_list|,
 name|gboolean
 name|temporary
-decl_stmt|;
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -3004,24 +2979,19 @@ end_function
 
 begin_function
 name|void
-DECL|function|layer_temporarily_translate (layer,off_x,off_y)
+DECL|function|layer_temporarily_translate (Layer * layer,gint off_x,gint off_y)
 name|layer_temporarily_translate
 parameter_list|(
-name|layer
-parameter_list|,
-name|off_x
-parameter_list|,
-name|off_y
-parameter_list|)
 name|Layer
 modifier|*
 name|layer
-decl_stmt|;
-name|int
+parameter_list|,
+name|gint
 name|off_x
-decl_stmt|,
+parameter_list|,
+name|gint
 name|off_y
-decl_stmt|;
+parameter_list|)
 block|{
 name|layer_translate_lowlevel
 argument_list|(
@@ -3039,24 +3009,19 @@ end_function
 
 begin_function
 name|void
-DECL|function|layer_translate (layer,off_x,off_y)
+DECL|function|layer_translate (Layer * layer,gint off_x,gint off_y)
 name|layer_translate
 parameter_list|(
-name|layer
-parameter_list|,
-name|off_x
-parameter_list|,
-name|off_y
-parameter_list|)
 name|Layer
 modifier|*
 name|layer
-decl_stmt|;
-name|int
+parameter_list|,
+name|gint
 name|off_x
-decl_stmt|,
+parameter_list|,
+name|gint
 name|off_y
-decl_stmt|;
+parameter_list|)
 block|{
 name|layer_translate_lowlevel
 argument_list|(
@@ -3074,15 +3039,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|layer_add_alpha (layer)
+DECL|function|layer_add_alpha (Layer * layer)
 name|layer_add_alpha
 parameter_list|(
-name|layer
-parameter_list|)
 name|Layer
 modifier|*
 name|layer
-decl_stmt|;
+parameter_list|)
 block|{
 name|PixelRegion
 name|srcPR
@@ -3337,29 +3300,22 @@ end_function
 
 begin_function
 name|void
-DECL|function|layer_scale (layer,new_width,new_height,local_origin)
+DECL|function|layer_scale (Layer * layer,gint new_width,gint new_height,gint local_origin)
 name|layer_scale
 parameter_list|(
-name|layer
-parameter_list|,
-name|new_width
-parameter_list|,
-name|new_height
-parameter_list|,
-name|local_origin
-parameter_list|)
 name|Layer
 modifier|*
 name|layer
-decl_stmt|;
-name|int
+parameter_list|,
+name|gint
 name|new_width
-decl_stmt|,
+parameter_list|,
+name|gint
 name|new_height
-decl_stmt|;
-name|int
+parameter_list|,
+name|gint
 name|local_origin
-decl_stmt|;
+parameter_list|)
 block|{
 name|PixelRegion
 name|srcPR
@@ -3810,33 +3766,25 @@ end_function
 
 begin_function
 name|void
-DECL|function|layer_resize (layer,new_width,new_height,offx,offy)
+DECL|function|layer_resize (Layer * layer,gint new_width,gint new_height,gint offx,gint offy)
 name|layer_resize
 parameter_list|(
-name|layer
-parameter_list|,
-name|new_width
-parameter_list|,
-name|new_height
-parameter_list|,
-name|offx
-parameter_list|,
-name|offy
-parameter_list|)
 name|Layer
 modifier|*
 name|layer
-decl_stmt|;
-name|int
+parameter_list|,
+name|gint
 name|new_width
-decl_stmt|,
+parameter_list|,
+name|gint
 name|new_height
-decl_stmt|;
-name|int
+parameter_list|,
+name|gint
 name|offx
-decl_stmt|,
+parameter_list|,
+name|gint
 name|offy
-decl_stmt|;
+parameter_list|)
 block|{
 name|PixelRegion
 name|srcPR
@@ -4360,21 +4308,17 @@ end_function
 begin_function
 name|BoundSeg
 modifier|*
-DECL|function|layer_boundary (layer,num_segs)
+DECL|function|layer_boundary (Layer * layer,gint * num_segs)
 name|layer_boundary
 parameter_list|(
-name|layer
-parameter_list|,
-name|num_segs
-parameter_list|)
 name|Layer
 modifier|*
 name|layer
-decl_stmt|;
-name|int
+parameter_list|,
+name|gint
 modifier|*
 name|num_segs
-decl_stmt|;
+parameter_list|)
 block|{
 name|BoundSeg
 modifier|*
@@ -4771,15 +4715,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|layer_invalidate_boundary (layer)
+DECL|function|layer_invalidate_boundary (Layer * layer)
 name|layer_invalidate_boundary
 parameter_list|(
-name|layer
-parameter_list|)
 name|Layer
 modifier|*
 name|layer
-decl_stmt|;
+parameter_list|)
 block|{
 name|GImage
 modifier|*
@@ -4869,24 +4811,19 @@ end_function
 
 begin_function
 name|int
-DECL|function|layer_pick_correlate (layer,x,y)
+DECL|function|layer_pick_correlate (Layer * layer,gint x,gint y)
 name|layer_pick_correlate
 parameter_list|(
-name|layer
-parameter_list|,
-name|x
-parameter_list|,
-name|y
-parameter_list|)
 name|Layer
 modifier|*
 name|layer
-decl_stmt|;
-name|int
+parameter_list|,
+name|gint
 name|x
-decl_stmt|,
+parameter_list|,
+name|gint
 name|y
-decl_stmt|;
+parameter_list|)
 block|{
 name|Tile
 modifier|*
@@ -5118,14 +5055,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|layer_set_name (Layer * layer,char * name)
+DECL|function|layer_set_name (Layer * layer,gchar * name)
 name|layer_set_name
 parameter_list|(
 name|Layer
 modifier|*
 name|layer
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -5144,7 +5081,7 @@ block|}
 end_function
 
 begin_function
-name|char
+name|gchar
 modifier|*
 DECL|function|layer_get_name (Layer * layer)
 name|layer_get_name
@@ -5167,8 +5104,7 @@ block|}
 end_function
 
 begin_function
-name|unsigned
-name|char
+name|guchar
 modifier|*
 DECL|function|layer_data (Layer * layer)
 name|layer_data
@@ -5187,8 +5123,8 @@ end_function
 begin_function
 name|LayerMask
 modifier|*
-DECL|function|layer_mask (Layer * layer)
-name|layer_mask
+DECL|function|layer_get_mask (Layer * layer)
+name|layer_get_mask
 parameter_list|(
 name|Layer
 modifier|*
@@ -5303,17 +5239,17 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|layer_preview (Layer * layer,int w,int h)
+DECL|function|layer_preview (Layer * layer,gint w,gint h)
 name|layer_preview
 parameter_list|(
 name|Layer
 modifier|*
 name|layer
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|)
 block|{
@@ -5711,24 +5647,19 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|layer_mask_preview (layer,w,h)
+DECL|function|layer_mask_preview (Layer * layer,gint w,gint h)
 name|layer_mask_preview
 parameter_list|(
-name|layer
-parameter_list|,
-name|w
-parameter_list|,
-name|h
-parameter_list|)
 name|Layer
 modifier|*
 name|layer
-decl_stmt|;
-name|int
+parameter_list|,
+name|gint
 name|w
-decl_stmt|,
+parameter_list|,
+name|gint
 name|h
-decl_stmt|;
+parameter_list|)
 block|{
 name|TempBuf
 modifier|*
@@ -6124,38 +6055,27 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|layer_preview_scale (type,cmap,srcPR,destPR,subsample)
+DECL|function|layer_preview_scale (gint type,guchar * cmap,PixelRegion * srcPR,PixelRegion * destPR,gint subsample)
 name|layer_preview_scale
 parameter_list|(
+name|gint
 name|type
 parameter_list|,
+name|guchar
+modifier|*
 name|cmap
 parameter_list|,
+name|PixelRegion
+modifier|*
 name|srcPR
 parameter_list|,
+name|PixelRegion
+modifier|*
 name|destPR
 parameter_list|,
+name|gint
 name|subsample
 parameter_list|)
-name|int
-name|type
-decl_stmt|;
-name|unsigned
-name|char
-modifier|*
-name|cmap
-decl_stmt|;
-name|PixelRegion
-modifier|*
-name|srcPR
-decl_stmt|;
-name|PixelRegion
-modifier|*
-name|destPR
-decl_stmt|;
-name|int
-name|subsample
-decl_stmt|;
 block|{
 DECL|macro|EPSILON
 define|#
@@ -6947,28 +6867,27 @@ end_function
 begin_function
 name|LayerMask
 modifier|*
-DECL|function|layer_mask_new (GimpImage * gimage,int width,int height,char * name,int opacity,unsigned char * col)
+DECL|function|layer_mask_new (GimpImage * gimage,gint width,gint height,gchar * name,gint opacity,guchar * col)
 name|layer_mask_new
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|opacity
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|col
 parameter_list|)
@@ -7389,10 +7308,10 @@ end_function
 begin_function
 name|LayerMask
 modifier|*
-DECL|function|layer_mask_get_ID (int ID)
+DECL|function|layer_mask_get_ID (gint ID)
 name|layer_mask_get_ID
 parameter_list|(
-name|int
+name|gint
 name|ID
 parameter_list|)
 block|{

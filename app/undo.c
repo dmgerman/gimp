@@ -863,7 +863,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|layer_mask
+name|layer_get_mask
 argument_list|(
 name|layer
 argument_list|)
@@ -874,7 +874,7 @@ name|channel_size
 argument_list|(
 name|GIMP_CHANNEL
 argument_list|(
-name|layer_mask
+name|layer_get_mask
 argument_list|(
 name|layer
 argument_list|)
