@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abae29f0103
+DECL|enum|__anon28baa1200103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1199,6 +1199,8 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|G_PARAM_READWRITE
+operator||
+name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
 expr_stmt|;
 name|g_object_class_install_property
@@ -2837,6 +2839,16 @@ operator|->
 name|closed
 operator|=
 name|TRUE
+expr_stmt|;
+name|g_object_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|stroke
+argument_list|)
+argument_list|,
+literal|"closed"
+argument_list|)
 expr_stmt|;
 block|}
 end_function
