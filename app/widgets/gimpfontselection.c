@@ -215,7 +215,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon293136920103
+DECL|enum|__anon2bf866010103
 block|{
 DECL|enumerator|FONT_CHANGED
 name|FONT_CHANGED
@@ -926,23 +926,6 @@ name|name
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|fontsel
-operator|->
-name|dialog
-condition|)
-name|gimp_font_selection_dialog_set_font_desc
-argument_list|(
-name|fontsel
-operator|->
-name|dialog
-argument_list|,
-name|fontsel
-operator|->
-name|font_desc
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
