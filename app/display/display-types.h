@@ -60,11 +60,11 @@ comment|/* typedef struct _GimpDisplayOptions GimpDisplayOptions; in config-type
 end_comment
 
 begin_typedef
-DECL|typedef|GimpNavigationView
+DECL|typedef|GimpNavigationEditor
 typedef|typedef
 name|struct
-name|_GimpNavigationView
-name|GimpNavigationView
+name|_GimpNavigationEditor
+name|GimpNavigationEditor
 typedef|;
 end_typedef
 

@@ -270,7 +270,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpnavigationview.h"
+file|"display/gimpnavigationeditor.h"
 end_include
 
 begin_include
@@ -2944,7 +2944,7 @@ argument_list|)
 expr_stmt|;
 name|view
 operator|=
-name|gimp_navigation_view_new
+name|gimp_navigation_editor_new
 argument_list|(
 name|shell
 argument_list|,

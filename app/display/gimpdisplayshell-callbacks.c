@@ -282,7 +282,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpnavigationview.h"
+file|"gimpnavigationeditor.h"
 end_include
 
 begin_include
@@ -5549,7 +5549,7 @@ literal|1
 operator|)
 condition|)
 block|{
-name|gimp_navigation_view_popup
+name|gimp_navigation_editor_popup
 argument_list|(
 name|shell
 argument_list|,

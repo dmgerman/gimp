@@ -1,19 +1,19 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpnavigationview.h  * Copyright (C) 2002 Michael Natterer<mitch@gimp.org>  *  * partly based on app/nav_window  * Copyright (C) 1999 Andy Thomas<alt@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpnavigationeditor.h  * Copyright (C) 2002 Michael Natterer<mitch@gimp.org>  *  * partly based on app/nav_window  * Copyright (C) 1999 Andy Thomas<alt@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_NAVIGATION_VIEW_H__
+name|__GIMP_NAVIGATION_EDITOR_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_NAVIGATION_VIEW_H__
+DECL|macro|__GIMP_NAVIGATION_EDITOR_H__
 define|#
 directive|define
-name|__GIMP_NAVIGATION_VIEW_H__
+name|__GIMP_NAVIGATION_EDITOR_H__
 end_define
 
 begin_include
@@ -23,81 +23,81 @@ file|"widgets/gimpeditor.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_NAVIGATION_VIEW
+DECL|macro|GIMP_TYPE_NAVIGATION_EDITOR
 define|#
 directive|define
-name|GIMP_TYPE_NAVIGATION_VIEW
-value|(gimp_navigation_view_get_type ())
+name|GIMP_TYPE_NAVIGATION_EDITOR
+value|(gimp_navigation_editor_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_NAVIGATION_VIEW (obj)
+DECL|macro|GIMP_NAVIGATION_EDITOR (obj)
 define|#
 directive|define
-name|GIMP_NAVIGATION_VIEW
+name|GIMP_NAVIGATION_EDITOR
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_NAVIGATION_VIEW, GimpNavigationView))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_NAVIGATION_EDITOR, GimpNavigationEditor))
 end_define
 
 begin_define
-DECL|macro|GIMP_NAVIGATION_VIEW_CLASS (klass)
+DECL|macro|GIMP_NAVIGATION_EDITOR_CLASS (klass)
 define|#
 directive|define
-name|GIMP_NAVIGATION_VIEW_CLASS
+name|GIMP_NAVIGATION_EDITOR_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_NAVIGATION_VIEW, GimpNavigationViewClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_NAVIGATION_EDITOR, GimpNavigationEditorClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_NAVIGATION_VIEW (obj)
+DECL|macro|GIMP_IS_NAVIGATION_EDITOR (obj)
 define|#
 directive|define
-name|GIMP_IS_NAVIGATION_VIEW
+name|GIMP_IS_NAVIGATION_EDITOR
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_NAVIGATION_VIEW))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_NAVIGATION_EDITOR))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_NAVIGATION_VIEW_CLASS (klass)
+DECL|macro|GIMP_IS_NAVIGATION_EDITOR_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_NAVIGATION_VIEW_CLASS
+name|GIMP_IS_NAVIGATION_EDITOR_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_NAVIGATION_VIEW))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_NAVIGATION_EDITOR))
 end_define
 
 begin_define
-DECL|macro|GIMP_NAVIGATION_VIEW_GET_CLASS (obj)
+DECL|macro|GIMP_NAVIGATION_EDITOR_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_NAVIGATION_VIEW_GET_CLASS
+name|GIMP_NAVIGATION_EDITOR_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_NAVIGATION_VIEW, GimpNavigationViewClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_NAVIGATION_EDITOR, GimpNavigationEditorClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpNavigationViewClass
+DECL|typedef|GimpNavigationEditorClass
 typedef|typedef
 name|struct
-name|_GimpNavigationViewClass
-name|GimpNavigationViewClass
+name|_GimpNavigationEditorClass
+name|GimpNavigationEditorClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpNavigationView
+DECL|struct|_GimpNavigationEditor
 struct|struct
-name|_GimpNavigationView
+name|_GimpNavigationEditor
 block|{
 DECL|member|parent_instance
 name|GimpEditor
@@ -163,9 +163,9 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpNavigationViewClass
+DECL|struct|_GimpNavigationEditorClass
 struct|struct
-name|_GimpNavigationViewClass
+name|_GimpNavigationEditorClass
 block|{
 DECL|member|parent_class
 name|GimpEditorClass
@@ -177,7 +177,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_navigation_view_get_type
+name|gimp_navigation_editor_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -188,7 +188,7 @@ end_decl_stmt
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_navigation_view_new
+name|gimp_navigation_editor_new
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
@@ -203,9 +203,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_navigation_view_set_shell
+name|gimp_navigation_editor_set_shell
 parameter_list|(
-name|GimpNavigationView
+name|GimpNavigationEditor
 modifier|*
 name|view
 parameter_list|,
@@ -218,7 +218,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_navigation_view_popup
+name|gimp_navigation_editor_popup
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
@@ -243,7 +243,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_NAVIGATION_VIEW_H__  */
+comment|/*  __GIMP_NAVIGATION_EDITOR_H__  */
 end_comment
 
 end_unit
