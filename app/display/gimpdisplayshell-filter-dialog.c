@@ -12,7 +12,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"color_area.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"dialog_handler.h"
 end_include
 
 begin_include
@@ -55,12 +67,6 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimpintl.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
 end_include
 
 begin_typedef
@@ -417,14 +423,14 @@ name|GtkWidget
 modifier|*
 name|vbbox
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|titles
 index|[
 literal|2
 index|]
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 specifier|static
@@ -539,6 +545,13 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|dialog_register
+argument_list|(
+name|cdd
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 name|hbox

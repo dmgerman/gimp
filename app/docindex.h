@@ -39,9 +39,10 @@ DECL|member|vscrollbar
 name|GtkWidget
 modifier|*
 name|vscrollbar
-decl_stmt|,
+decl_stmt|;
 comment|/* The GTK window */
 DECL|member|window
+name|GtkWidget
 modifier|*
 name|window
 decl_stmt|;
@@ -49,12 +50,6 @@ DECL|member|tree
 name|GtkWidget
 modifier|*
 name|tree
-decl_stmt|;
-comment|/* The menufactory */
-DECL|member|menubar
-name|GtkMenuFactory
-modifier|*
-name|menubar
 decl_stmt|;
 comment|/* The window menu widget */
 DECL|member|window_menu
@@ -80,11 +75,6 @@ decl_stmt|;
 DECL|member|named
 name|gboolean
 name|named
-decl_stmt|;
-DECL|member|title
-name|gchar
-modifier|*
-name|title
 decl_stmt|;
 DECL|member|auto_save
 name|gint

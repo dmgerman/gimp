@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"dialog_handler.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"docindexif.h"
 end_include
 
@@ -641,13 +647,6 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-if|if
-condition|(
-operator|!
-name|exit_from_go
-argument_list|()
-condition|)
-block|{
 name|save_idea_manager
 argument_list|(
 name|ideas
@@ -665,7 +664,6 @@ name|ideas
 operator|=
 literal|0
 expr_stmt|;
-block|}
 return|return
 name|FALSE
 return|;
@@ -703,17 +701,18 @@ expr_stmt|;
 comment|/* False if exitting */
 if|if
 condition|(
-operator|(
-operator|!
-name|exit_from_go
-argument_list|()
-operator|)
-operator|&&
 name|ideas
 condition|)
 block|{
 name|create_idea_list
 argument_list|()
+expr_stmt|;
+name|dialog_unregister
+argument_list|(
+name|ideas
+operator|->
+name|window
+argument_list|)
 expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(

@@ -22,6 +22,24 @@ directive|include
 file|<stdio.h>
 end_include
 
+begin_struct
+DECL|struct|bool_char_pair
+struct|struct
+name|bool_char_pair
+block|{
+DECL|member|boole
+name|gboolean
+name|boole
+decl_stmt|;
+DECL|member|string
+name|gchar
+modifier|*
+name|string
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
 begin_function_decl
 name|void
 name|open_or_raise
@@ -47,13 +65,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
-name|exit_from_go
-parameter_list|()
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|open_file_in_position
 parameter_list|(
@@ -68,18 +79,12 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GtkMenuFactory
-modifier|*
-name|create_idea_menu
-parameter_list|()
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|GtkWidget
 modifier|*
 name|create_idea_toolbar
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 
@@ -136,24 +141,6 @@ name|data
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_struct
-DECL|struct|bool_char_pair
-struct|struct
-name|bool_char_pair
-block|{
-DECL|member|boole
-name|gboolean
-name|boole
-decl_stmt|;
-DECL|member|string
-name|gchar
-modifier|*
-name|string
-decl_stmt|;
-block|}
-struct|;
-end_struct
 
 begin_endif
 endif|#

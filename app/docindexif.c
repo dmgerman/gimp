@@ -18,6 +18,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"dialog_handler.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"docindex.h"
 end_include
 
@@ -185,18 +197,6 @@ block|}
 end_function
 
 begin_function
-name|gboolean
-DECL|function|exit_from_go ()
-name|exit_from_go
-parameter_list|()
-block|{
-return|return
-name|FALSE
-return|;
-block|}
-end_function
-
-begin_function
 DECL|function|open_file_in_position (gchar * filename,gint position)
 name|void
 name|open_file_in_position
@@ -233,11 +233,13 @@ block|}
 end_function
 
 begin_function
-DECL|function|create_idea_toolbar ()
 name|GtkWidget
 modifier|*
+DECL|function|create_idea_toolbar (void)
 name|create_idea_toolbar
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
@@ -697,9 +699,6 @@ block|{
 name|GtkWidget
 modifier|*
 name|main_vbox
-decl_stmt|,
-modifier|*
-name|menu
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -709,19 +708,14 @@ name|GtkWidget
 modifier|*
 name|toolbar
 decl_stmt|;
-name|GtkAccelGroup
-modifier|*
-name|accel
-decl_stmt|;
 comment|/* malloc idea_manager */
 name|ideas
 operator|=
-name|g_malloc0
-argument_list|(
-sizeof|sizeof
+name|g_new0
 argument_list|(
 name|idea_manager
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 comment|/* Setup tree */
@@ -795,58 +789,6 @@ argument_list|(
 name|GTK_WINDOW_TOPLEVEL
 argument_list|)
 expr_stmt|;
-name|ideas
-operator|->
-name|menubar
-operator|=
-name|create_idea_menu
-argument_list|(
-name|ideas
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|ideas
-operator|->
-name|menubar
-condition|)
-block|{
-name|menu
-operator|=
-name|ideas
-operator|->
-name|menubar
-operator|->
-name|widget
-expr_stmt|;
-comment|/* Setup accelerator (hotkey) table */
-name|accel
-operator|=
-name|ideas
-operator|->
-name|menubar
-operator|->
-name|accel_group
-expr_stmt|;
-comment|/* Add accelerators to window widget */
-name|gtk_window_add_accel_group
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|ideas
-operator|->
-name|window
-argument_list|)
-argument_list|,
-name|accel
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-name|menu
-operator|=
-name|NULL
-expr_stmt|;
 comment|/* Setup the status bar */
 name|ideas
 operator|->
@@ -887,26 +829,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|menu
-condition|)
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|main_vbox
-argument_list|)
-argument_list|,
-name|menu
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -957,15 +879,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|menu
-condition|)
-name|gtk_widget_show
-argument_list|(
-name|menu
-argument_list|)
-expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|scrolled_win
@@ -978,19 +891,6 @@ operator|->
 name|status
 argument_list|)
 expr_stmt|;
-comment|/* Set the GOWindow title */
-name|ideas
-operator|->
-name|title
-operator|=
-name|g_strdup
-argument_list|(
-name|_
-argument_list|(
-literal|"Document Index"
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/* Set the GtkWindow title */
 name|gtk_window_set_title
 argument_list|(
@@ -1001,9 +901,10 @@ operator|->
 name|window
 argument_list|)
 argument_list|,
-name|ideas
-operator|->
-name|title
+name|_
+argument_list|(
+literal|"Document Index"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Set the initial status message */
@@ -1020,10 +921,7 @@ name|ideas
 operator|->
 name|contextid
 argument_list|,
-name|_
-argument_list|(
-literal|"GTK successfully started"
-argument_list|)
+literal|""
 argument_list|)
 expr_stmt|;
 comment|/* Connect the signals */
@@ -1121,6 +1019,13 @@ argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 literal|"dialogs/document_index.html"
+argument_list|)
+expr_stmt|;
+name|dialog_register
+argument_list|(
+name|ideas
+operator|->
+name|window
 argument_list|)
 expr_stmt|;
 block|}

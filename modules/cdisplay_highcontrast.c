@@ -18,13 +18,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/color_display.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpintl.h>
+file|<libgimp/color_display.h>
 end_include
 
 begin_include
@@ -54,13 +54,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|"app/dialog_handler.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"modregister.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_define
@@ -447,10 +453,10 @@ end_function
 begin_function
 specifier|static
 name|gpointer
-DECL|function|contrast_new (int type)
+DECL|function|contrast_new (gint type)
 name|contrast_new
 parameter_list|(
-name|int
+name|gint
 name|type
 parameter_list|)
 block|{
@@ -565,7 +571,7 @@ modifier|*
 name|context
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 if|if
@@ -660,6 +666,14 @@ name|context
 operator|->
 name|shell
 condition|)
+block|{
+name|dialog_unregister
+argument_list|(
+name|context
+operator|->
+name|shell
+argument_list|)
+expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
 name|context
@@ -667,6 +681,7 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
+block|}
 name|g_free
 argument_list|(
 name|context
@@ -685,7 +700,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|contrast_convert (gpointer cd_ID,guchar * buf,int width,int height,int bpp,int bpl)
+DECL|function|contrast_convert (gpointer cd_ID,guchar * buf,gint width,gint height,gint bpp,gint bpl)
 name|contrast_convert
 parameter_list|(
 name|gpointer
@@ -695,16 +710,16 @@ name|guchar
 modifier|*
 name|buf
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
-name|int
+name|gint
 name|bpp
 parameter_list|,
-name|int
+name|gint
 name|bpl
 parameter_list|)
 block|{
@@ -722,7 +737,7 @@ operator|)
 operator|->
 name|lookup
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -1021,6 +1036,13 @@ argument_list|(
 name|context
 argument_list|)
 expr_stmt|;
+name|dialog_unregister
+argument_list|(
+name|context
+operator|->
+name|shell
+argument_list|)
+expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
 name|GTK_WIDGET
@@ -1077,6 +1099,13 @@ name|context
 init|=
 name|data
 decl_stmt|;
+name|dialog_unregister
+argument_list|(
+name|context
+operator|->
+name|shell
+argument_list|)
+expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
 name|GTK_WIDGET
@@ -1245,6 +1274,13 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|dialog_register
+argument_list|(
+name|context
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 name|hbox
@@ -1422,6 +1458,14 @@ name|context
 operator|->
 name|shell
 condition|)
+block|{
+name|dialog_unregister
+argument_list|(
+name|context
+operator|->
+name|shell
+argument_list|)
+expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
 name|context
@@ -1435,6 +1479,7 @@ name|shell
 operator|=
 name|NULL
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|context
