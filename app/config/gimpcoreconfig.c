@@ -173,7 +173,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_core_config_default_image_changed
+name|gimp_core_config_default_image_notify
 parameter_list|(
 name|GObject
 modifier|*
@@ -192,7 +192,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_core_config_default_grid_changed
+name|gimp_core_config_default_grid_notify
 parameter_list|(
 name|GObject
 modifier|*
@@ -258,7 +258,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29faf6450103
+DECL|enum|__anon278d6c4a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -964,7 +964,7 @@ literal|"notify"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_core_config_default_image_changed
+name|gimp_core_config_default_image_notify
 argument_list|)
 argument_list|,
 name|config
@@ -991,7 +991,7 @@ literal|"notify"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_core_config_default_grid_changed
+name|gimp_core_config_default_grid_notify
 argument_list|)
 argument_list|,
 name|config
@@ -2053,8 +2053,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_core_config_default_image_changed (GObject * object,GParamSpec * pspec,gpointer data)
-name|gimp_core_config_default_image_changed
+DECL|function|gimp_core_config_default_image_notify (GObject * object,GParamSpec * pspec,gpointer data)
+name|gimp_core_config_default_image_notify
 parameter_list|(
 name|GObject
 modifier|*
@@ -2068,20 +2068,11 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GimpCoreConfig
-modifier|*
-name|core_config
-init|=
-name|GIMP_CORE_CONFIG
-argument_list|(
-name|data
-argument_list|)
-decl_stmt|;
 name|g_object_notify
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|core_config
+name|data
 argument_list|)
 argument_list|,
 literal|"default-image"
@@ -2093,8 +2084,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_core_config_default_grid_changed (GObject * object,GParamSpec * pspec,gpointer data)
-name|gimp_core_config_default_grid_changed
+DECL|function|gimp_core_config_default_grid_notify (GObject * object,GParamSpec * pspec,gpointer data)
+name|gimp_core_config_default_grid_notify
 parameter_list|(
 name|GObject
 modifier|*
@@ -2108,20 +2099,11 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GimpCoreConfig
-modifier|*
-name|core_config
-init|=
-name|GIMP_CORE_CONFIG
-argument_list|(
-name|data
-argument_list|)
-decl_stmt|;
 name|g_object_notify
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|core_config
+name|data
 argument_list|)
 argument_list|,
 literal|"default-grid"
