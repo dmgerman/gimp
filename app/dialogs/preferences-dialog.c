@@ -6580,6 +6580,23 @@ name|prefs_check_button_add
 argument_list|(
 name|object
 argument_list|,
+literal|"show-help-button"
+argument_list|,
+name|_
+argument_list|(
+literal|"Show help _buttons"
+argument_list|)
+argument_list|,
+name|GTK_BOX
+argument_list|(
+name|vbox2
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|prefs_check_button_add
+argument_list|(
+name|object
+argument_list|,
 literal|"show-tips"
 argument_list|,
 name|_
@@ -7678,7 +7695,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon274ee10f0108
+DECL|struct|__anon299af2d90108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9001,7 +9018,7 @@ modifier|*
 name|list
 decl_stmt|;
 enum|enum
-DECL|enum|__anon274ee10f0203
+DECL|enum|__anon299af2d90203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -10394,7 +10411,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon274ee10f0308
+DECL|struct|__anon299af2d90308
 block|{
 DECL|member|label
 specifier|const
@@ -10551,7 +10568,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon274ee10f0408
+DECL|struct|__anon299af2d90408
 block|{
 DECL|member|tree_label
 specifier|const

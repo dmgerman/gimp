@@ -2000,7 +2000,7 @@ operator|)
 operator|&
 name|config
 operator|->
-name|gimp_reserved_3
+name|show_help_button
 argument_list|,
 literal|1
 argument_list|,
@@ -2510,7 +2510,7 @@ operator|)
 operator|&
 name|config
 operator|->
-name|gimp_reserved_3
+name|show_help_button
 argument_list|,
 literal|1
 argument_list|,

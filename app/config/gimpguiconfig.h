@@ -184,6 +184,10 @@ DECL|member|use_help
 name|gboolean
 name|use_help
 decl_stmt|;
+DECL|member|show_help_button
+name|gboolean
+name|show_help_button
+decl_stmt|;
 DECL|member|help_locales
 name|gchar
 modifier|*

@@ -676,6 +676,15 @@ value|N_("When enabled, all paint tools will show a preview of the current " \  
 end_define
 
 begin_define
+DECL|macro|SHOW_HELP_BUTTON_BLURB
+define|#
+directive|define
+name|SHOW_HELP_BUTTON_BLURB
+define|\
+value|N_("When enabled, dialogs will show a help button that gives access to " \    "the related help page.  Without this button, the help page can still " \    "be reached by pressing F1.")
+end_define
+
+begin_define
 DECL|macro|SHOW_PAINT_TOOL_CURSOR_BLURB
 define|#
 directive|define

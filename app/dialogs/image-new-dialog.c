@@ -128,7 +128,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f0665e0108
+DECL|struct|__anon2781ae040108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1075,7 +1075,7 @@ name|dialog
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|GIMP_HELP_FILE_NEW_CONFIRM
+name|NULL
 argument_list|,
 name|GIMP_STOCK_INFO
 argument_list|,

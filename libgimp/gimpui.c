@@ -311,6 +311,12 @@ condition|)
 name|gimp_help_disable_tooltips
 argument_list|()
 expr_stmt|;
+name|gimp_dialogs_show_help_button
+argument_list|(
+name|gimp_show_help_button
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|initialized
 operator|=
 name|TRUE

@@ -33,14 +33,6 @@ value|"gimp-file-new"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_FILE_NEW_CONFIRM
-define|#
-directive|define
-name|GIMP_HELP_FILE_NEW_CONFIRM
-value|"gimp-file-new-confirm"
-end_define
-
-begin_define
 DECL|macro|GIMP_HELP_FILE_OPEN
 define|#
 directive|define
@@ -121,14 +113,6 @@ value|"gimp-file-save-by-extension"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_FILE_SAVE_OVERWRITE
-define|#
-directive|define
-name|GIMP_HELP_FILE_SAVE_OVERWRITE
-value|"gimp-file-save-overwrite"
-end_define
-
-begin_define
 DECL|macro|GIMP_HELP_FILE_REVERT
 define|#
 directive|define
@@ -145,27 +129,11 @@ value|"gimp-file-close"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_FILE_CLOSE_CONFIRM
-define|#
-directive|define
-name|GIMP_HELP_FILE_CLOSE_CONFIRM
-value|"gimp-file-close-confirm"
-end_define
-
-begin_define
 DECL|macro|GIMP_HELP_FILE_QUIT
 define|#
 directive|define
 name|GIMP_HELP_FILE_QUIT
 value|"gimp-file-quit"
-end_define
-
-begin_define
-DECL|macro|GIMP_HELP_FILE_QUIT_CONFIRM
-define|#
-directive|define
-name|GIMP_HELP_FILE_QUIT_CONFIRM
-value|"gimp-file-quit-confirm"
 end_define
 
 begin_define

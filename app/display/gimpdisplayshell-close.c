@@ -354,7 +354,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|GIMP_HELP_FILE_CLOSE_CONFIRM
+name|NULL
 argument_list|,
 name|_
 argument_list|(

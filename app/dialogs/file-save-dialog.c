@@ -562,7 +562,7 @@ name|save_dialog
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|GIMP_HELP_FILE_SAVE_OVERWRITE
+name|NULL
 argument_list|,
 name|GIMP_STOCK_QUESTION
 argument_list|,

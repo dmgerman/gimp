@@ -275,6 +275,20 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  for internal use only!  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_dialogs_show_help_button
+parameter_list|(
+name|gboolean
+name|show
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro

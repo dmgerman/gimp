@@ -414,7 +414,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5dbfd20103
+DECL|enum|__anon2adf3e9c0103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -840,6 +840,16 @@ DECL|variable|_show_tool_tips
 specifier|static
 name|gboolean
 name|_show_tool_tips
+init|=
+name|TRUE
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|_show_help_button
+specifier|static
+name|gboolean
+name|_show_help_button
 init|=
 name|TRUE
 decl_stmt|;
@@ -3971,6 +3981,24 @@ block|}
 end_function
 
 begin_comment
+comment|/**  * gimp_show_help_button:  *  * Returns whether or not GimpDialog should automatically add a help  * button if help_func and help_id are given.  *  * Return value: the show_help_button boolean  *  * Since: GIMP 2.2  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_show_help_button (void)
+name|gimp_show_help_button
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|_show_help_button
+return|;
+block|}
+end_function
+
+begin_comment
 comment|/**  * gimp_check_size:  *  * Returns the size of the checkerboard to be used in previews.  * This is a constant value given at Plug-In config time.  *  * Return value: the check_size value  *  * Since: GIMP 2.2  **/
 end_comment
 
@@ -5326,6 +5354,12 @@ operator|=
 name|config
 operator|->
 name|show_tool_tips
+expr_stmt|;
+name|_show_help_button
+operator|=
+name|config
+operator|->
+name|show_help_button
 expr_stmt|;
 name|_min_colors
 operator|=
