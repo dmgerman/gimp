@@ -999,7 +999,7 @@ name|gimage
 operator|->
 name|gimp
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1421,7 +1421,7 @@ name|gimage
 operator|->
 name|gimp
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|tool

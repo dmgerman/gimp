@@ -542,7 +542,11 @@ name|FALSE
 expr_stmt|;
 name|plug_in_repeat
 argument_list|(
-name|the_gimp
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
 argument_list|,
 name|gimp_display_get_ID
 argument_list|(
