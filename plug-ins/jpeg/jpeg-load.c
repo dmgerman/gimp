@@ -69,11 +69,22 @@ directive|include
 file|<sys/stat.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -259,7 +270,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295335910108
+DECL|struct|__anon2bdc76940108
 block|{
 DECL|member|quality
 name|gdouble
@@ -306,7 +317,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295335910208
+DECL|struct|__anon2bdc76940208
 block|{
 DECL|member|run
 name|gint
@@ -321,7 +332,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295335910308
+DECL|struct|__anon2bdc76940308
 block|{
 DECL|member|cinfo
 name|struct
@@ -7585,6 +7596,17 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|gtk_widget_set_usize
+argument_list|(
+name|text
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+literal|3
+argument_list|)
+expr_stmt|;
+comment|/* //HB: restrict to 3 line height                                      * to allow 800x600 mode */
 if|if
 condition|(
 name|image_comment

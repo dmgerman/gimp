@@ -208,7 +208,7 @@ value|768
 end_define
 
 begin_typedef
-DECL|enum|__anon2987d0b20103
+DECL|enum|__anon27d6df520103
 typedef|typedef
 enum|enum
 block|{
@@ -227,7 +227,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2987d0b20203
+DECL|enum|__anon27d6df520203
 typedef|typedef
 enum|enum
 block|{
@@ -248,7 +248,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2987d0b20303
+DECL|enum|__anon27d6df520303
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -276,7 +276,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2987d0b20403
+DECL|enum|__anon27d6df520403
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -1553,6 +1553,26 @@ end_function_decl
 begin_function_decl
 name|gboolean
 name|gimp_image_disable_undo
+parameter_list|(
+name|GimpImage
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_image_freeze_undo
+parameter_list|(
+name|GimpImage
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_image_thaw_undo
 parameter_list|(
 name|GimpImage
 modifier|*

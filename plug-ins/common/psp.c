@@ -119,7 +119,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a15be710103
+DECL|enum|__anon2b0871d90103
 typedef|typedef
 enum|enum
 block|{
@@ -183,7 +183,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a15be710203
+DECL|enum|__anon2b0871d90203
 typedef|typedef
 enum|enum
 block|{
@@ -223,7 +223,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a15be710303
+DECL|enum|__anon2b0871d90303
 typedef|typedef
 enum|enum
 block|{
@@ -255,7 +255,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a15be710403
+DECL|enum|__anon2b0871d90403
 typedef|typedef
 enum|enum
 block|{
@@ -283,7 +283,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a15be710503
+DECL|enum|__anon2b0871d90503
 typedef|typedef
 enum|enum
 block|{
@@ -311,7 +311,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a15be710603
+DECL|enum|__anon2b0871d90603
 typedef|typedef
 enum|enum
 block|{
@@ -333,7 +333,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a15be710703
+DECL|enum|__anon2b0871d90703
 typedef|typedef
 enum|enum
 block|{
@@ -369,7 +369,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a15be710803
+DECL|enum|__anon2b0871d90803
 typedef|typedef
 enum|enum
 block|{
@@ -389,7 +389,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a15be710903
+DECL|enum|__anon2b0871d90903
 typedef|typedef
 enum|enum
 block|{
@@ -437,7 +437,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a15be710a03
+DECL|enum|__anon2b0871d90a03
 typedef|typedef
 enum|enum
 block|{
@@ -461,7 +461,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a15be710b03
+DECL|enum|__anon2b0871d90b03
 typedef|typedef
 enum|enum
 block|{
@@ -522,7 +522,7 @@ comment|/* The following have been reverse engineered.  * If a new version of th
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a15be710c03
+DECL|enum|__anon2b0871d90c03
 typedef|typedef
 enum|enum
 block|{
@@ -595,7 +595,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a15be710d08
+DECL|struct|__anon2b0871d90d08
 block|{
 DECL|member|width
 DECL|member|height
@@ -755,7 +755,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a15be710e08
+DECL|struct|__anon2b0871d90e08
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -770,7 +770,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a15be710f08
+DECL|struct|__anon2b0871d90f08
 block|{
 DECL|member|run
 name|gint
@@ -6365,7 +6365,7 @@ name|i
 decl_stmt|;
 name|Parasite
 modifier|*
-name|hose_parasite
+name|pipe_parasite
 decl_stmt|;
 name|gchar
 modifier|*
@@ -6617,15 +6617,24 @@ operator|/
 name|row_count
 argument_list|)
 expr_stmt|;
-comment|/* We use a parasite to pass in the tube (hose) parameters in    * case we will have any use of those (for instance in some    * yet to be written code that saves a GIMP image hose format    * file.    */
+comment|/* We use a parasite to pass in the tube (pipe) parameters in    * case we will have any use of those (for instance in some    * yet to be written code that saves a GIMP image pipe format    * file.    */
 name|parasite_text
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"step:%d cols:%d rows:%d "
+literal|"ncells:%d step:%d dim:%d cols:%d rows:%d "
+literal|"rank0:%d rank1:%d "
 literal|"placement:%s selection:%s"
 argument_list|,
+name|cell_count
+argument_list|,
 name|step_size
+argument_list|,
+literal|2
+argument_list|,
+name|column_count
+argument_list|,
+name|row_count
 argument_list|,
 name|column_count
 argument_list|,
@@ -6692,11 +6701,11 @@ operator|)
 operator|)
 argument_list|)
 expr_stmt|;
-name|hose_parasite
+name|pipe_parasite
 operator|=
 name|parasite_new
 argument_list|(
-literal|"gimp-image-hose-parameters"
+literal|"gimp-brush-pipe-parameters"
 argument_list|,
 name|PARASITE_PERSISTENT
 argument_list|,
@@ -6714,12 +6723,12 @@ name|gimp_image_attach_parasite
 argument_list|(
 name|image_ID
 argument_list|,
-name|hose_parasite
+name|pipe_parasite
 argument_list|)
 expr_stmt|;
 name|parasite_free
 argument_list|(
-name|hose_parasite
+name|pipe_parasite
 argument_list|)
 expr_stmt|;
 name|g_free
