@@ -1051,7 +1051,7 @@ name|gtk_adjustment_new
 argument_list|(
 name|default_threshold
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|255.0
 argument_list|,
