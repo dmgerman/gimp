@@ -225,15 +225,6 @@ block|}
 struct|;
 end_struct
 
-begin_typedef
-DECL|typedef|ColorPickerTool
-typedef|typedef
-name|struct
-name|_ColorPickerTool
-name|ColorPickerTool
-typedef|;
-end_typedef
-
 begin_comment
 comment|/*  the color picker tool options  */
 end_comment
@@ -4042,17 +4033,8 @@ operator|=
 name|color_picker_options_new
 argument_list|()
 expr_stmt|;
-name|tools_register
-argument_list|(
-name|COLOR_PICKER
-argument_list|,
-operator|(
-name|ToolOptions
-operator|*
-operator|)
-name|color_picker_options
-argument_list|)
-expr_stmt|;
+comment|/* OBSOLETE? */
+comment|/* tools_register (COLOR_PICKER, (ToolOptions *) color_picker_options); */
 block|}
 name|cp_tool
 operator|=

@@ -134,6 +134,10 @@ block|}
 struct|;
 end_struct
 
+begin_comment
+comment|/* FIXME: Whats this doing here? */
+end_comment
+
 begin_decl_stmt
 specifier|extern
 name|gint
