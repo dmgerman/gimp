@@ -69,7 +69,7 @@ file|<process.h>
 end_include
 
 begin_comment
-comment|/* For _getpid() */
+comment|/*  for _getpid()  */
 end_comment
 
 begin_include
@@ -79,7 +79,7 @@ file|<io.h>
 end_include
 
 begin_comment
-comment|/* for _unlink() */
+comment|/*  for _unlink()  */
 end_comment
 
 begin_endif
@@ -109,6 +109,12 @@ begin_include
 include|#
 directive|include
 file|"paint-funcs/paint-funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"composite/gimp-composite.h"
 end_include
 
 begin_include

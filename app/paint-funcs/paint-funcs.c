@@ -93,15 +93,6 @@ directive|include
 file|"gimp-composite.h"
 end_include
 
-begin_decl_stmt
-DECL|variable|gimp_composite_use_old
-name|int
-name|gimp_composite_use_old
-init|=
-literal|1
-decl_stmt|;
-end_decl_stmt
-
 begin_define
 DECL|macro|RANDOM_SEED
 define|#
@@ -121,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296898090103
+DECL|enum|__anon2c40329f0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -509,6 +500,16 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|gimp_composite_use_old
+specifier|static
+name|gboolean
+name|gimp_composite_use_old
+init|=
+name|TRUE
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/*  Local function prototypes  */
 end_comment
@@ -614,6 +615,7 @@ function_decl|;
 end_function_decl
 
 begin_function
+specifier|static
 name|void
 DECL|function|update_tile_rowhints (Tile * tile,gint ymin,gint ymax)
 name|update_tile_rowhints
@@ -17195,7 +17197,7 @@ argument_list|,
 name|yradius
 argument_list|)
 expr_stmt|;
-comment|/* offset the circ pointer by xradius so the range of the array      is [-xradius] to [xradius] */
+comment|/* offset the circ pointer by xradius so the range of the array     is [-xradius] to [xradius] */
 name|circ
 operator|+=
 name|xradius
@@ -21953,7 +21955,7 @@ condition|(
 name|gimp_composite_use_old
 condition|)
 block|{
-comment|/*  Determine whether the alpha channel of the destination can be 	     *  affected by the specified mode--This keeps consistency with 	     *  varying opacities 	     */
+comment|/*  Determine whether the alpha channel of the destination                  *  can be affected by the specified mode. -- This keeps                  *  consistency with varying opacities.                  */
 name|mode_affect
 operator|=
 name|layer_modes
@@ -21980,13 +21982,13 @@ operator|.
 name|combine
 operator|==
 name|NO_COMBINATION
-operator|)
 condition|?
 name|type
 else|:
 name|alms
 operator|.
 name|combine
+operator|)
 expr_stmt|;
 block|}
 else|else
