@@ -169,6 +169,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|ENABLE_GLOBAL_SHORTCUTS
+end_ifdef
+
 begin_function_decl
 specifier|static
 name|GObject
@@ -187,6 +193,11 @@ name|params
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function_decl
 specifier|static
@@ -366,6 +377,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|ENABLE_GLOBAL_SHORTCUTS
+end_ifdef
+
 begin_function_decl
 specifier|static
 name|void
@@ -385,6 +402,11 @@ name|dock
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function_decl
 specifier|static
@@ -422,6 +444,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|ENABLE_GLOBAL_SHORTCUTS
+end_ifdef
+
 begin_function_decl
 specifier|static
 name|void
@@ -437,6 +465,11 @@ name|dock
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_decl_stmt
 DECL|variable|parent_class
@@ -594,12 +627,17 @@ argument_list|(
 name|klass
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|ENABLE_GLOBAL_SHORTCUTS
 name|object_class
 operator|->
 name|constructor
 operator|=
 name|gimp_image_dock_constructor
 expr_stmt|;
+endif|#
+directive|endif
 name|gtk_object_class
 operator|->
 name|destroy
@@ -936,6 +974,12 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|ENABLE_GLOBAL_SHORTCUTS
+end_ifdef
 
 begin_function
 specifier|static
@@ -1326,6 +1370,15 @@ return|;
 block|}
 end_function
 
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* ENABLE_GLOBAL_SHORTCUTS */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -1367,6 +1420,9 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
+ifdef|#
+directive|ifdef
+name|ENABLE_GLOBAL_SHORTCUTS
 if|if
 condition|(
 name|dock
@@ -1413,6 +1469,8 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+endif|#
+directive|endif
 comment|/*  remove the image menu and the auto button manually here because    *  of weird cross-connections with GimpDock's context    */
 if|if
 condition|(
@@ -2230,6 +2288,9 @@ name|display_container
 operator|=
 name|display_container
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|ENABLE_GLOBAL_SHORTCUTS
 name|image_dock
 operator|->
 name|image_flush_handler_id
@@ -2248,6 +2309,8 @@ argument_list|,
 name|image_dock
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|gimp_help_connect
 argument_list|(
 name|GTK_WIDGET
@@ -2363,6 +2426,9 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|ENABLE_GLOBAL_SHORTCUTS
 name|g_signal_connect_object
 argument_list|(
 name|context
@@ -2379,6 +2445,8 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|g_signal_connect_object
 argument_list|(
 name|context
@@ -2905,6 +2973,12 @@ expr_stmt|;
 block|}
 end_function
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|ENABLE_GLOBAL_SHORTCUTS
+end_ifdef
+
 begin_function
 specifier|static
 name|void
@@ -2944,6 +3018,11 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function
 specifier|static
@@ -3277,6 +3356,12 @@ block|}
 block|}
 end_function
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|ENABLE_GLOBAL_SHORTCUTS
+end_ifdef
+
 begin_function
 specifier|static
 name|void
@@ -3348,6 +3433,11 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 end_unit
 

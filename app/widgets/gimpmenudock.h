@@ -22,6 +22,10 @@ directive|include
 file|"gimpdock.h"
 end_include
 
+begin_comment
+comment|/*  #define ENABLE_GLOBAL_SHORTCUTS  */
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_IMAGE_DOCK
 define|#
@@ -121,6 +125,9 @@ DECL|member|auto_follow_active
 name|gboolean
 name|auto_follow_active
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|ENABLE_GLOBAL_SHORTCUTS
 DECL|member|item_factory
 name|GimpItemFactory
 modifier|*
@@ -130,6 +137,8 @@ DECL|member|image_flush_handler_id
 name|GQuark
 name|image_flush_handler_id
 decl_stmt|;
+endif|#
+directive|endif
 DECL|member|option_menu
 name|GtkWidget
 modifier|*
