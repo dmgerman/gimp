@@ -186,10 +186,6 @@ name|N_
 argument_list|(
 literal|"Open _Recent"
 argument_list|)
-block|,
-literal|""
-block|,
-name|NULL
 block|}
 block|,
 block|{
@@ -201,10 +197,6 @@ name|N_
 argument_list|(
 literal|"_Acquire"
 argument_list|)
-block|,
-name|NULL
-block|,
-name|NULL
 block|}
 block|,
 block|{
@@ -258,7 +250,7 @@ name|GIMP_STOCK_LAYER
 block|,
 name|N_
 argument_list|(
-literal|"Open as _Layer..."
+literal|"Op_en as Layer..."
 argument_list|)
 block|,
 literal|"<control><alt>O"
@@ -280,7 +272,7 @@ name|GIMP_STOCK_WEB
 block|,
 name|N_
 argument_list|(
-literal|"_Open Location..."
+literal|"Open _Location..."
 argument_list|)
 block|,
 name|NULL
