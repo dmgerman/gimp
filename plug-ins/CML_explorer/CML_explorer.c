@@ -244,7 +244,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a1736b0108
+DECL|struct|__anon2c5c37cc0108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -272,7 +272,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a1736b0208
+DECL|struct|__anon2c5c37cc0208
 block|{
 DECL|member|name
 name|guchar
@@ -1498,7 +1498,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a1736b0308
+DECL|struct|__anon2c5c37cc0308
 block|{
 DECL|member|function
 name|gint
@@ -1571,7 +1571,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a1736b0408
+DECL|struct|__anon2c5c37cc0408
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -2337,7 +2337,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a1736b0508
+DECL|struct|__anon2c5c37cc0508
 block|{
 DECL|member|run
 name|gint
@@ -2385,7 +2385,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a1736b0608
+DECL|struct|__anon2c5c37cc0608
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -7922,6 +7922,10 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
+name|GtkTooltips
+modifier|*
+name|tooltips
+decl_stmt|;
 name|gchar
 modifier|*
 modifier|*
@@ -9103,10 +9107,6 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
-name|GtkTooltips
-modifier|*
-name|tooltips
-decl_stmt|;
 name|button
 operator|=
 name|gtkW_vbox_add_button
@@ -9771,6 +9771,14 @@ argument_list|()
 expr_stmt|;
 name|gtk_main
 argument_list|()
+expr_stmt|;
+name|gtk_object_unref
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|tooltips
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|gdk_flush
 argument_list|()

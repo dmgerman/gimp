@@ -46,7 +46,7 @@ value|100
 end_define
 
 begin_typedef
-DECL|struct|__anon2be2f3000108
+DECL|struct|__anon2c2e4da30108
 typedef|typedef
 struct|struct
 block|{
@@ -65,7 +65,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2be2f3000208
+DECL|struct|__anon2c2e4da30208
 typedef|typedef
 struct|struct
 block|{
@@ -2058,6 +2058,14 @@ argument_list|)
 expr_stmt|;
 name|gtk_main
 argument_list|()
+expr_stmt|;
+name|gtk_object_unref
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|tips
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|gdk_flush
 argument_list|()

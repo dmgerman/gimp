@@ -22,6 +22,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|<signal.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<unistd.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
 end_include
 
@@ -136,7 +148,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288c7c5b0108
+DECL|struct|__anon2c3f053f0108
 block|{
 DECL|member|cone_radius
 name|gdouble
@@ -191,7 +203,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288c7c5b0208
+DECL|struct|__anon2c3f053f0208
 block|{
 DECL|member|run
 name|gint
@@ -675,6 +687,22 @@ break|break;
 default|default:
 break|break;
 block|}
+name|printf
+argument_list|(
+literal|"creflect: waiting... (pid %d)\n"
+argument_list|,
+name|getpid
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|kill
+argument_list|(
+name|getpid
+argument_list|()
+argument_list|,
+name|SIGSTOP
+argument_list|)
+expr_stmt|;
 name|gimp_tile_cache_ntiles
 argument_list|(
 literal|2
@@ -3312,6 +3340,14 @@ argument_list|)
 expr_stmt|;
 name|gtk_main
 argument_list|()
+expr_stmt|;
+name|gtk_object_unref
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|tips
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|gdk_flush
 argument_list|()

@@ -52,7 +52,7 @@ value|200
 end_define
 
 begin_typedef
-DECL|struct|__anon2be38ab70108
+DECL|struct|__anon290966920108
 typedef|typedef
 struct|struct
 block|{
@@ -107,7 +107,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2be38ab70208
+DECL|struct|__anon290966920208
 typedef|typedef
 struct|struct
 block|{
@@ -700,6 +700,14 @@ name|signature_warning_dialog
 argument_list|()
 condition|)
 return|return;
+name|gtk_object_unref
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|tips
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|ending
@@ -1236,7 +1244,7 @@ name|finished_atleast_once
 init|=
 literal|0
 decl_stmt|;
-DECL|struct|__anon2be38ab70308
+DECL|struct|__anon290966920308
 typedef|typedef
 struct|struct
 block|{
@@ -2160,7 +2168,7 @@ name|char
 modifier|*
 name|point2
 decl_stmt|;
-DECL|struct|__anon2be38ab70408
+DECL|struct|__anon290966920408
 typedef|typedef
 struct|struct
 block|{

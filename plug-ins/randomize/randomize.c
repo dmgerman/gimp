@@ -144,7 +144,7 @@ comment|/*********************************  *  *  PLUGIN-SPECIFIC STRUCTURES AND
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a2300bb0108
+DECL|struct|__anon2bc28fe90108
 typedef|typedef
 struct|struct
 block|{
@@ -200,7 +200,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2a2300bb0208
+DECL|struct|__anon2bc28fe90208
 typedef|typedef
 struct|struct
 block|{
@@ -476,6 +476,15 @@ name|setup_tooltips
 parameter_list|()
 function_decl|;
 end_function_decl
+
+begin_decl_stmt
+DECL|variable|tips
+specifier|static
+name|GtkTooltips
+modifier|*
+name|tips
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
 comment|/************************************ Guts ***********************************/
@@ -3561,6 +3570,14 @@ expr_stmt|;
 name|gtk_main
 argument_list|()
 expr_stmt|;
+name|gtk_object_unref
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|tips
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gdk_flush
 argument_list|()
 expr_stmt|;
@@ -3866,15 +3883,6 @@ end_function
 begin_comment
 comment|/*  *  TOOLTIPS ROUTINES  */
 end_comment
-
-begin_decl_stmt
-DECL|variable|tips
-specifier|static
-name|GtkTooltips
-modifier|*
-name|tips
-decl_stmt|;
-end_decl_stmt
 
 begin_function
 DECL|function|setup_tooltips (GtkWidget * parent)

@@ -123,7 +123,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|struct|__anon2c280e570108
+DECL|struct|__anon291474990108
 typedef|typedef
 struct|struct
 block|{
@@ -1854,6 +1854,14 @@ argument_list|)
 expr_stmt|;
 name|gtk_main
 argument_list|()
+expr_stmt|;
+name|gtk_object_unref
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|tooltips
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|gdk_flush
 argument_list|()

@@ -136,7 +136,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f074a20108
+DECL|struct|__anon2b1c26b70108
 block|{
 DECL|member|cone_radius
 name|gdouble
@@ -202,7 +202,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f074a20208
+DECL|struct|__anon2b1c26b70208
 block|{
 DECL|member|run
 name|gint
@@ -3736,6 +3736,14 @@ argument_list|)
 expr_stmt|;
 name|gtk_main
 argument_list|()
+expr_stmt|;
+name|gtk_object_unref
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|tips
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|gdk_flush
 argument_list|()
