@@ -27,6 +27,12 @@ directive|include
 file|"images/gfig-stock-pixbufs.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_decl_stmt
 DECL|variable|gfig_icon_factory
 specifier|static
@@ -49,7 +55,10 @@ block|{
 block|{
 name|GFIG_STOCK_BEZIER
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Create bezier curve"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -61,7 +70,10 @@ block|,
 block|{
 name|GFIG_STOCK_CIRCLE
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Create circle"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -73,7 +85,10 @@ block|,
 block|{
 name|GFIG_STOCK_COPY_OBJECT
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Copy an object"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -85,7 +100,10 @@ block|,
 block|{
 name|GFIG_STOCK_CURVE
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Create arc"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -97,7 +115,10 @@ block|,
 block|{
 name|GFIG_STOCK_DELETE_OBJECT
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Delete an object"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -109,7 +130,10 @@ block|,
 block|{
 name|GFIG_STOCK_ELLIPSE
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Create ellipse"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -121,7 +145,10 @@ block|,
 block|{
 name|GFIG_STOCK_LINE
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Create line"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -133,7 +160,10 @@ block|,
 block|{
 name|GFIG_STOCK_MOVE_OBJECT
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Move an object"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -145,7 +175,10 @@ block|,
 block|{
 name|GFIG_STOCK_MOVE_POINT
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Move a single point"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -157,7 +190,40 @@ block|,
 block|{
 name|GFIG_STOCK_POLYGON
 block|,
+name|N_
+argument_list|(
+literal|"Create reg polygon"
+argument_list|)
+block|,
+literal|0
+block|,
+literal|0
+block|,
 name|NULL
+block|}
+block|,
+block|{
+name|GFIG_STOCK_SELECT_OBJECT
+block|,
+name|N_
+argument_list|(
+literal|"Select an object"
+argument_list|)
+block|,
+literal|0
+block|,
+literal|0
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GFIG_STOCK_SHOW_ALL
+block|,
+name|N_
+argument_list|(
+literal|"Show all objects"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -169,7 +235,10 @@ block|,
 block|{
 name|GFIG_STOCK_SPIRAL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Create spiral"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -181,7 +250,10 @@ block|,
 block|{
 name|GFIG_STOCK_STAR
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Create star"
+argument_list|)
 block|,
 literal|0
 block|,
@@ -241,7 +313,7 @@ name|gtk_icon_source_set_size_wildcarded
 argument_list|(
 name|source
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|pixbuf
@@ -416,6 +488,24 @@ argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|,
 name|stock_polygon
+argument_list|)
+expr_stmt|;
+name|add_stock_icon
+argument_list|(
+name|GFIG_STOCK_SELECT_OBJECT
+argument_list|,
+name|GTK_ICON_SIZE_BUTTON
+argument_list|,
+name|stock_select_object
+argument_list|)
+expr_stmt|;
+name|add_stock_icon
+argument_list|(
+name|GFIG_STOCK_SHOW_ALL
+argument_list|,
+name|GTK_ICON_SIZE_BUTTON
+argument_list|,
+name|stock_show_all
 argument_list|)
 expr_stmt|;
 name|add_stock_icon

@@ -1939,16 +1939,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_options_bezier (GtkWidget * notebook,GtkWidget * button)
+DECL|function|tool_options_bezier (GtkWidget * notebook)
 name|tool_options_bezier
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|notebook
-parameter_list|,
-name|GtkWidget
-modifier|*
-name|button
 parameter_list|)
 block|{
 name|GtkWidget
@@ -1958,9 +1954,6 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|toggle
-decl_stmt|;
-name|gint
-name|page
 decl_stmt|;
 name|vbox
 operator|=
@@ -1981,8 +1974,6 @@ argument_list|,
 literal|12
 argument_list|)
 expr_stmt|;
-name|page
-operator|=
 name|gtk_notebook_append_page
 argument_list|(
 name|GTK_NOTEBOOK
@@ -1998,35 +1989,6 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|vbox
-argument_list|)
-expr_stmt|;
-name|g_object_set_data
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-literal|"page"
-argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
-name|page
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|button
-argument_list|,
-literal|"clicked"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|tool_option_page_update
-argument_list|)
-argument_list|,
-name|notebook
 argument_list|)
 expr_stmt|;
 name|toggle

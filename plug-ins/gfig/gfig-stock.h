@@ -97,6 +97,22 @@ value|"gfig-polygon"
 end_define
 
 begin_define
+DECL|macro|GFIG_STOCK_SELECT_OBJECT
+define|#
+directive|define
+name|GFIG_STOCK_SELECT_OBJECT
+value|"gfig-select-object"
+end_define
+
+begin_define
+DECL|macro|GFIG_STOCK_SHOW_ALL
+define|#
+directive|define
+name|GFIG_STOCK_SHOW_ALL
+value|"gfig-show-all"
+end_define
+
+begin_define
 DECL|macro|GFIG_STOCK_SPIRAL
 define|#
 directive|define
