@@ -7683,7 +7683,6 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
-specifier|static
 name|gboolean
 name|button_down
 init|=

@@ -200,7 +200,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299fafea0108
+DECL|struct|__anon29eaf8110108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -249,7 +249,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299fafea0208
+DECL|struct|__anon29eaf8110208
 block|{
 DECL|member|run
 name|gint
@@ -975,9 +975,6 @@ comment|/* 	   *  If we're not interactive (probably scripting), we 	   *  get t
 case|case
 name|RUN_NONINTERACTIVE
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 if|if
 condition|(
 name|nparams
@@ -1112,9 +1109,6 @@ comment|/* 	   *  If we're running with the last set of values, get those values
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_get_data
 argument_list|(
 name|PLUG_IN_NAME
@@ -1187,7 +1181,10 @@ literal|1
 index|]
 argument_list|)
 argument_list|,
+name|gettext
+argument_list|(
 name|rndm_type_str
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init
