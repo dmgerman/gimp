@@ -3965,9 +3965,6 @@ modifier|*
 name|area
 parameter_list|)
 block|{
-name|GtkRequisition
-name|foo
-decl_stmt|;
 name|gboolean
 name|visible
 decl_stmt|;
