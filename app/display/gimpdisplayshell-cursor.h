@@ -24,7 +24,7 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
-name|GdkCursorType
+name|GimpCursorType
 name|cursor_type
 parameter_list|,
 name|GimpToolCursorType
@@ -44,7 +44,7 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
-name|GdkCursorType
+name|GimpCursorType
 name|cursor_type
 parameter_list|)
 function_decl|;

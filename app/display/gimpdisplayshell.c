@@ -340,7 +340,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2790c2ad0103
+DECL|enum|__anon2b1d66670103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -356,7 +356,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2790c2ad0203
+DECL|enum|__anon2b1d66670203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1136,10 +1136,16 @@ literal|0
 expr_stmt|;
 name|shell
 operator|->
+name|cursor_format
+operator|=
+name|GIMP_CURSOR_FORMAT_BITMAP
+expr_stmt|;
+name|shell
+operator|->
 name|current_cursor
 operator|=
 operator|(
-name|GdkCursorType
+name|GimpCursorType
 operator|)
 operator|-
 literal|1
@@ -1161,7 +1167,7 @@ operator|->
 name|override_cursor
 operator|=
 operator|(
-name|GdkCursorType
+name|GimpCursorType
 operator|)
 operator|-
 literal|1

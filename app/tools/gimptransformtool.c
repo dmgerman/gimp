@@ -2628,13 +2628,13 @@ operator|->
 name|gimage
 argument_list|)
 decl_stmt|;
-name|GdkCursorType
-name|ctype
+name|GimpCursorType
+name|cursor
 init|=
 name|GDK_TOP_LEFT_ARROW
 decl_stmt|;
 name|GimpCursorModifier
-name|cmodifier
+name|modifier
 init|=
 name|GIMP_CURSOR_MODIFIER_NONE
 decl_stmt|;
@@ -2681,7 +2681,7 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|ctype
+name|cursor
 operator|=
 name|GIMP_CURSOR_BAD
 expr_stmt|;
@@ -2718,7 +2718,7 @@ name|y
 argument_list|)
 condition|)
 block|{
-name|ctype
+name|cursor
 operator|=
 name|GIMP_CURSOR_MOUSE
 expr_stmt|;
@@ -2751,7 +2751,7 @@ name|y
 argument_list|)
 condition|)
 block|{
-name|ctype
+name|cursor
 operator|=
 name|GIMP_CURSOR_MOUSE
 expr_stmt|;
@@ -2769,12 +2769,12 @@ operator|->
 name|gimage
 argument_list|)
 condition|)
-name|ctype
+name|cursor
 operator|=
 name|GIMP_CURSOR_MOUSE
 expr_stmt|;
 else|else
-name|ctype
+name|cursor
 operator|=
 name|GIMP_CURSOR_BAD
 expr_stmt|;
@@ -2793,7 +2793,7 @@ operator|==
 name|TRANSFORM_HANDLE_CENTER
 condition|)
 block|{
-name|cmodifier
+name|modifier
 operator|=
 name|GIMP_CURSOR_MODIFIER_MOVE
 expr_stmt|;
@@ -2804,7 +2804,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-name|ctype
+name|cursor
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_cursor_modifier
@@ -2813,7 +2813,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-name|cmodifier
+name|modifier
 argument_list|)
 expr_stmt|;
 block|}

@@ -642,7 +642,7 @@ name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|GdkCursorType
+name|GimpCursorType
 name|cursor
 parameter_list|,
 name|GimpToolCursorType

@@ -4106,13 +4106,13 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-name|GdkCursorType
+name|GimpCursorType
 name|cursor
 init|=
 name|GIMP_CURSOR_MOUSE
 decl_stmt|;
 name|GimpCursorModifier
-name|cmodifier
+name|modifier
 init|=
 name|GIMP_CURSOR_MODIFIER_NONE
 decl_stmt|;
@@ -4146,7 +4146,7 @@ return|return;
 case|case
 name|ISCISSORS_OP_MOVE_POINT
 case|:
-name|cmodifier
+name|modifier
 operator|=
 name|GIMP_CURSOR_MODIFIER_MOVE
 expr_stmt|;
@@ -4154,7 +4154,7 @@ break|break;
 case|case
 name|ISCISSORS_OP_ADD_POINT
 case|:
-name|cmodifier
+name|modifier
 operator|=
 name|GIMP_CURSOR_MODIFIER_PLUS
 expr_stmt|;
@@ -4180,7 +4180,7 @@ name|cursor
 argument_list|,
 name|GIMP_TOOL_CURSOR_ISCISSORS
 argument_list|,
-name|cmodifier
+name|modifier
 argument_list|)
 expr_stmt|;
 block|}

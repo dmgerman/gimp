@@ -194,7 +194,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3a62ac0103
+DECL|enum|__anon2b1f3ecb0103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -3409,13 +3409,13 @@ name|GimpCropOptions
 modifier|*
 name|options
 decl_stmt|;
-name|GdkCursorType
-name|ctype
+name|GimpCursorType
+name|cursor
 init|=
 name|GIMP_CURSOR_CROSSHAIR_SMALL
 decl_stmt|;
 name|GimpCursorModifier
-name|cmodifier
+name|modifier
 init|=
 name|GIMP_CURSOR_MODIFIER_NONE
 decl_stmt|;
@@ -3449,7 +3449,7 @@ block|{
 case|case
 name|MOVING
 case|:
-name|cmodifier
+name|modifier
 operator|=
 name|GIMP_CURSOR_MODIFIER_MOVE
 expr_stmt|;
@@ -3460,7 +3460,7 @@ case|:
 case|case
 name|RESIZING_RIGHT
 case|:
-name|cmodifier
+name|modifier
 operator|=
 name|GIMP_CURSOR_MODIFIER_RESIZE
 expr_stmt|;
@@ -3475,7 +3475,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-name|ctype
+name|cursor
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_tool_cursor
@@ -3501,7 +3501,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-name|cmodifier
+name|modifier
 argument_list|)
 expr_stmt|;
 name|GIMP_TOOL_CLASS

@@ -709,14 +709,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_control_set_cursor (GimpToolControl * control,GdkCursorType cursor)
+DECL|function|gimp_tool_control_set_cursor (GimpToolControl * control,GimpCursorType cursor)
 name|gimp_tool_control_set_cursor
 parameter_list|(
 name|GimpToolControl
 modifier|*
 name|control
 parameter_list|,
-name|GdkCursorType
+name|GimpCursorType
 name|cursor
 parameter_list|)
 block|{
@@ -799,14 +799,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_control_set_toggle_cursor (GimpToolControl * control,GdkCursorType cursor)
+DECL|function|gimp_tool_control_set_toggle_cursor (GimpToolControl * control,GimpCursorType cursor)
 name|gimp_tool_control_set_toggle_cursor
 parameter_list|(
 name|GimpToolControl
 modifier|*
 name|control
 parameter_list|,
-name|GdkCursorType
+name|GimpCursorType
 name|cursor
 parameter_list|)
 block|{
@@ -1171,7 +1171,7 @@ block|}
 end_function
 
 begin_function
-name|GdkCursorType
+name|GimpCursorType
 DECL|function|gimp_tool_control_get_cursor (GimpToolControl * control)
 name|gimp_tool_control_get_cursor
 parameter_list|(
@@ -1199,7 +1199,7 @@ block|}
 end_function
 
 begin_function
-name|GdkCursorType
+name|GimpCursorType
 DECL|function|gimp_tool_control_get_toggle_cursor (GimpToolControl * control)
 name|gimp_tool_control_get_toggle_cursor
 parameter_list|(

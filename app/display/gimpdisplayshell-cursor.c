@@ -113,7 +113,7 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
-name|GdkCursorType
+name|GimpCursorType
 name|cursor_type
 parameter_list|,
 name|GimpToolCursorType
@@ -130,14 +130,14 @@ end_function_decl
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_set_cursor (GimpDisplayShell * shell,GdkCursorType cursor_type,GimpToolCursorType tool_cursor,GimpCursorModifier modifier)
+DECL|function|gimp_display_shell_set_cursor (GimpDisplayShell * shell,GimpCursorType cursor_type,GimpToolCursorType tool_cursor,GimpCursorModifier modifier)
 name|gimp_display_shell_set_cursor
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
-name|GdkCursorType
+name|GimpCursorType
 name|cursor_type
 parameter_list|,
 name|GimpToolCursorType
@@ -182,14 +182,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_set_override_cursor (GimpDisplayShell * shell,GdkCursorType cursor_type)
+DECL|function|gimp_display_shell_set_override_cursor (GimpDisplayShell * shell,GimpCursorType cursor_type)
 name|gimp_display_shell_set_override_cursor
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
-name|GdkCursorType
+name|GimpCursorType
 name|cursor_type
 parameter_list|)
 block|{
@@ -239,18 +239,7 @@ name|shell
 operator|->
 name|canvas
 argument_list|,
-name|GIMP_GUI_CONFIG
-argument_list|(
 name|shell
-operator|->
-name|gdisp
-operator|->
-name|gimage
-operator|->
-name|gimp
-operator|->
-name|config
-argument_list|)
 operator|->
 name|cursor_format
 argument_list|,
@@ -618,14 +607,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_real_set_cursor (GimpDisplayShell * shell,GdkCursorType cursor_type,GimpToolCursorType tool_cursor,GimpCursorModifier modifier,gboolean always_install)
+DECL|function|gimp_display_shell_real_set_cursor (GimpDisplayShell * shell,GimpCursorType cursor_type,GimpToolCursorType tool_cursor,GimpCursorModifier modifier,gboolean always_install)
 name|gimp_display_shell_real_set_cursor
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
-name|GdkCursorType
+name|GimpCursorType
 name|cursor_type
 parameter_list|,
 name|GimpToolCursorType
@@ -641,6 +630,9 @@ block|{
 name|GimpDisplayConfig
 modifier|*
 name|config
+decl_stmt|;
+name|GimpCursorFormat
+name|cursor_format
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -713,8 +705,23 @@ expr_stmt|;
 break|break;
 block|}
 block|}
+name|cursor_format
+operator|=
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|config
+argument_list|)
+operator|->
+name|cursor_format
+expr_stmt|;
 if|if
 condition|(
+name|shell
+operator|->
+name|cursor_format
+operator|!=
+name|cursor_format
+operator|||
 name|shell
 operator|->
 name|current_cursor
@@ -736,6 +743,12 @@ operator|||
 name|always_install
 condition|)
 block|{
+name|shell
+operator|->
+name|cursor_format
+operator|=
+name|cursor_format
+expr_stmt|;
 name|shell
 operator|->
 name|current_cursor
@@ -760,11 +773,6 @@ name|shell
 operator|->
 name|canvas
 argument_list|,
-name|GIMP_GUI_CONFIG
-argument_list|(
-name|config
-argument_list|)
-operator|->
 name|cursor_format
 argument_list|,
 name|cursor_type

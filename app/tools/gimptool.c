@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28db52910103
+DECL|enum|__anon2c67b6020103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2394,7 +2394,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_set_cursor (GimpTool * tool,GimpDisplay * gdisp,GdkCursorType cursor,GimpToolCursorType tool_cursor,GimpCursorModifier modifier)
+DECL|function|gimp_tool_set_cursor (GimpTool * tool,GimpDisplay * gdisp,GimpCursorType cursor,GimpToolCursorType tool_cursor,GimpCursorModifier modifier)
 name|gimp_tool_set_cursor
 parameter_list|(
 name|GimpTool
@@ -2405,7 +2405,7 @@ name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|GdkCursorType
+name|GimpCursorType
 name|cursor
 parameter_list|,
 name|GimpToolCursorType

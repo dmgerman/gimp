@@ -155,7 +155,7 @@ name|motion_mode
 decl_stmt|;
 comment|/*  how to process motion events before  *                                       *  they are forwarded to the tool       */
 DECL|member|cursor
-name|GdkCursorType
+name|GimpCursorType
 name|cursor
 decl_stmt|;
 DECL|member|tool_cursor
@@ -167,7 +167,7 @@ name|GimpCursorModifier
 name|cursor_modifier
 decl_stmt|;
 DECL|member|toggle_cursor
-name|GdkCursorType
+name|GimpCursorType
 name|toggle_cursor
 decl_stmt|;
 DECL|member|toggle_tool_cursor
@@ -476,7 +476,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GdkCursorType
+name|GimpCursorType
 name|gimp_tool_control_get_cursor
 parameter_list|(
 name|GimpToolControl
@@ -494,7 +494,7 @@ name|GimpToolControl
 modifier|*
 name|control
 parameter_list|,
-name|GdkCursorType
+name|GimpCursorType
 name|cursor
 parameter_list|)
 function_decl|;
@@ -551,7 +551,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GdkCursorType
+name|GimpCursorType
 name|gimp_tool_control_get_toggle_cursor
 parameter_list|(
 name|GimpToolControl
@@ -569,7 +569,7 @@ name|GimpToolControl
 modifier|*
 name|control
 parameter_list|,
-name|GdkCursorType
+name|GimpCursorType
 name|cursor
 parameter_list|)
 function_decl|;

@@ -889,7 +889,7 @@ name|GimpCloneOptions
 modifier|*
 name|options
 decl_stmt|;
-name|GdkCursorType
+name|GimpCursorType
 name|ctype
 init|=
 name|GIMP_CURSOR_MOUSE

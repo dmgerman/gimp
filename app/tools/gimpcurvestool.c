@@ -4367,12 +4367,12 @@ name|tool
 parameter_list|)
 block|{
 specifier|static
-name|GdkCursorType
+name|GimpCursorType
 name|cursor_type
 init|=
 name|GDK_TOP_LEFT_ARROW
 decl_stmt|;
-name|GdkCursorType
+name|GimpCursorType
 name|new_cursor
 init|=
 name|GDK_X_CURSOR

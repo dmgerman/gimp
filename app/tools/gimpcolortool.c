@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a8f73700103
+DECL|enum|__anon278c60a70103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -994,7 +994,7 @@ operator|->
 name|enabled
 condition|)
 block|{
-name|GdkCursorType
+name|GimpCursorType
 name|cursor
 init|=
 name|GIMP_CURSOR_BAD

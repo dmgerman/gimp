@@ -2348,7 +2348,7 @@ operator|->
 name|tool_options
 argument_list|)
 decl_stmt|;
-name|GdkCursorType
+name|GimpCursorType
 name|cursor
 init|=
 name|GIMP_CURSOR_BAD

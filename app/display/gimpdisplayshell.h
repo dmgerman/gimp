@@ -450,8 +450,13 @@ name|guint
 name|icon_idle_id
 decl_stmt|;
 comment|/*  ID of the idle-function            */
+DECL|member|cursor_format
+name|GimpCursorFormat
+name|cursor_format
+decl_stmt|;
+comment|/*  Currently used cursor format       */
 DECL|member|current_cursor
-name|GdkCursorType
+name|GimpCursorType
 name|current_cursor
 decl_stmt|;
 comment|/*  Currently installed main cursor    */
@@ -466,7 +471,7 @@ name|cursor_modifier
 decl_stmt|;
 comment|/*  Cursor modifier (plus, minus, ...) */
 DECL|member|override_cursor
-name|GdkCursorType
+name|GimpCursorType
 name|override_cursor
 decl_stmt|;
 comment|/*  Overriding cursor                  */
