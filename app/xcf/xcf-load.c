@@ -5660,7 +5660,7 @@ name|xcfdata
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|char
+name|gchar
 argument_list|)
 argument_list|,
 name|data_length
