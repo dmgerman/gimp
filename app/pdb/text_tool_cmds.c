@@ -315,7 +315,7 @@ condition|(
 name|text
 operator|==
 name|NULL
-operator|&&
+operator|||
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -755,7 +755,7 @@ condition|(
 name|text
 operator|==
 name|NULL
-operator|&&
+operator|||
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -1265,7 +1265,7 @@ condition|(
 name|text
 operator|==
 name|NULL
-operator|&&
+operator|||
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -1965,7 +1965,7 @@ condition|(
 name|text
 operator|==
 name|NULL
-operator|&&
+operator|||
 operator|!
 name|g_utf8_validate
 argument_list|(
