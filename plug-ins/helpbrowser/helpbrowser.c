@@ -110,7 +110,7 @@ value|"help"
 end_define
 
 begin_enum
-DECL|enum|__anon2bff75480103
+DECL|enum|__anon2ba897100103
 enum|enum
 block|{
 DECL|enumerator|CONTENTS
@@ -126,7 +126,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2bff75480203
+DECL|enum|__anon2ba897100203
 enum|enum
 block|{
 DECL|enumerator|URL_UNKNOWN
@@ -158,7 +158,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bff75480308
+DECL|struct|__anon2ba897100308
 block|{
 DECL|member|index
 name|gint
@@ -198,7 +198,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bff75480408
+DECL|struct|__anon2ba897100408
 block|{
 DECL|member|title
 name|gchar
@@ -225,16 +225,16 @@ comment|/*  constant strings  */
 end_comment
 
 begin_decl_stmt
-DECL|variable|doc_not_found_string
+DECL|variable|doc_not_found_format_string
 specifier|static
 name|char
 modifier|*
-name|doc_not_found_string
+name|doc_not_found_format_string
 init|=
 literal|"<html><head><title>Document not found</title></head>"
 literal|"<body bgcolor=\"#ffffff\">"
 literal|"<center>"
-literal|"<h1>Error</h1>"
+literal|"%s"
 literal|"<h2>Couldn't find document</h2>"
 literal|"%s"
 literal|"</center>"
@@ -244,16 +244,16 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|dir_not_found_string
+DECL|variable|dir_not_found_format_string
 specifier|static
 name|char
 modifier|*
-name|dir_not_found_string
+name|dir_not_found_format_string
 init|=
 literal|"<html><head><title>Directory not found</title></head>"
 literal|"<body bgcolor=\"#ffffff\">"
 literal|"<center>"
-literal|"<h1>Error</h1>"
+literal|"%s"
 literal|"<h2>Couldn't change to directory</h2>"
 literal|"%s"
 literal|"</center>"
@@ -335,13 +335,29 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|history
+specifier|static
+name|GList
+modifier|*
+name|history
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|back_button
-DECL|variable|forward_button
 specifier|static
 name|GtkWidget
 modifier|*
 name|back_button
-decl_stmt|,
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|forward_button
+specifier|static
+name|GtkWidget
 modifier|*
 name|forward_button
 decl_stmt|;
@@ -366,13 +382,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|history
+DECL|variable|eek_png_tag
 specifier|static
-name|GList
+name|gchar
 modifier|*
-name|history
+name|eek_png_tag
 init|=
-name|NULL
+literal|"<h1>Eeek!</h1>\n"
 decl_stmt|;
 end_decl_stmt
 
@@ -426,16 +442,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/*  init_proc   */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/*  quit_proc   */
 name|query
 block|,
-comment|/* query_proc */
+comment|/*  query_proc  */
 name|run
 block|,
-comment|/* run_proc */
+comment|/*  run_proc    */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -817,6 +833,10 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
+name|HistoryItem
+modifier|*
+name|item
+decl_stmt|;
 name|gchar
 modifier|*
 name|entry_text
@@ -858,9 +878,8 @@ operator|->
 name|next
 control|)
 block|{
-if|if
-condition|(
-operator|(
+name|item
+operator|=
 operator|(
 name|HistoryItem
 operator|*
@@ -868,7 +887,10 @@ operator|)
 name|list
 operator|->
 name|data
-operator|)
+expr_stmt|;
+if|if
+condition|(
+name|item
 operator|->
 name|count
 condition|)
@@ -878,27 +900,11 @@ name|g_strdup_printf
 argument_list|(
 literal|"%s<%i>"
 argument_list|,
-operator|(
-operator|(
-name|HistoryItem
-operator|*
-operator|)
-name|list
-operator|->
-name|data
-operator|)
+name|item
 operator|->
 name|title
 argument_list|,
-operator|(
-operator|(
-name|HistoryItem
-operator|*
-operator|)
-name|list
-operator|->
-name|data
-operator|)
+name|item
 operator|->
 name|count
 operator|+
@@ -908,15 +914,7 @@ expr_stmt|;
 else|else
 name|compare_text
 operator|=
-operator|(
-operator|(
-name|HistoryItem
-operator|*
-operator|)
-name|list
-operator|->
-name|data
-operator|)
+name|item
 operator|->
 name|title
 expr_stmt|;
@@ -946,15 +944,7 @@ index|[
 name|HELP
 index|]
 argument_list|,
-operator|(
-operator|(
-name|HistoryItem
-operator|*
-operator|)
-name|list
-operator|->
-name|data
-operator|)
+name|item
 operator|->
 name|ref
 argument_list|,
@@ -972,15 +962,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-operator|(
-operator|(
-name|HistoryItem
-operator|*
-operator|)
-name|list
-operator|->
-name|data
-operator|)
+name|item
 operator|->
 name|count
 condition|)
@@ -1021,8 +1003,6 @@ decl_stmt|;
 name|HistoryItem
 modifier|*
 name|item
-init|=
-name|NULL
 decl_stmt|;
 name|GList
 modifier|*
@@ -1053,11 +1033,8 @@ operator|->
 name|next
 control|)
 block|{
-if|if
-condition|(
-name|strcmp
-argument_list|(
-operator|(
+name|item
+operator|=
 operator|(
 name|HistoryItem
 operator|*
@@ -1065,7 +1042,12 @@ operator|)
 name|list
 operator|->
 name|data
-operator|)
+expr_stmt|;
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|item
 operator|->
 name|title
 argument_list|,
@@ -1079,15 +1061,7 @@ if|if
 condition|(
 name|strcmp
 argument_list|(
-operator|(
-operator|(
-name|HistoryItem
-operator|*
-operator|)
-name|list
-operator|->
-name|data
-operator|)
+name|item
 operator|->
 name|ref
 argument_list|,
@@ -1197,9 +1171,8 @@ name|gchar
 modifier|*
 name|combo_title
 decl_stmt|;
-if|if
-condition|(
-operator|(
+name|item
+operator|=
 operator|(
 name|HistoryItem
 operator|*
@@ -1207,7 +1180,10 @@ operator|)
 name|list
 operator|->
 name|data
-operator|)
+expr_stmt|;
+if|if
+condition|(
+name|item
 operator|->
 name|count
 condition|)
@@ -1217,27 +1193,11 @@ name|g_strdup_printf
 argument_list|(
 literal|"%s<%i>"
 argument_list|,
-operator|(
-operator|(
-name|HistoryItem
-operator|*
-operator|)
-name|list
-operator|->
-name|data
-operator|)
+name|item
 operator|->
 name|title
 argument_list|,
-operator|(
-operator|(
-name|HistoryItem
-operator|*
-operator|)
-name|list
-operator|->
-name|data
-operator|)
+name|item
 operator|->
 name|count
 operator|+
@@ -1249,15 +1209,7 @@ name|combo_title
 operator|=
 name|g_strdup
 argument_list|(
-operator|(
-operator|(
-name|HistoryItem
-operator|*
-operator|)
-name|list
-operator|->
-name|data
-operator|)
+name|item
 operator|->
 name|title
 argument_list|)
@@ -1680,7 +1632,9 @@ name|g_string_sprintf
 argument_list|(
 name|file_contents
 argument_list|,
-name|dir_not_found_string
+name|dir_not_found_format_string
+argument_list|,
+name|eek_png_tag
 argument_list|,
 name|new_dir
 argument_list|)
@@ -1868,7 +1822,9 @@ name|g_string_sprintf
 argument_list|(
 name|file_contents
 argument_list|,
-name|doc_not_found_string
+name|doc_not_found_format_string
+argument_list|,
+name|eek_png_tag
 argument_list|,
 name|ref
 argument_list|)
@@ -2189,6 +2145,16 @@ name|button
 argument_list|)
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_button_set_relief
+argument_list|(
+name|GTK_BUTTON
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+name|GTK_RELIEF_NONE
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -2770,6 +2736,10 @@ name|gchar
 modifier|*
 name|root_dir
 decl_stmt|;
+name|gchar
+modifier|*
+name|eek_png_path
+decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
@@ -2854,6 +2824,44 @@ return|return
 name|FALSE
 return|;
 block|}
+name|eek_png_path
+operator|=
+name|g_strconcat
+argument_list|(
+name|root_dir
+argument_list|,
+name|G_DIR_SEPARATOR_S
+argument_list|,
+literal|"eek.png"
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|access
+argument_list|(
+name|eek_png_path
+argument_list|,
+name|R_OK
+argument_list|)
+operator|==
+literal|0
+condition|)
+name|eek_png_tag
+operator|=
+name|g_strdup_printf
+argument_list|(
+literal|"<img src=\"%s\">\n"
+argument_list|,
+name|eek_png_path
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|eek_png_path
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|root_dir
@@ -3139,6 +3147,16 @@ operator|=
 name|gtk_button_new_with_label
 argument_list|(
 literal|"Close"
+argument_list|)
+expr_stmt|;
+name|gtk_button_set_relief
+argument_list|(
+name|GTK_BUTTON
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+name|GTK_RELIEF_NONE
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -3949,7 +3967,10 @@ name|path
 decl_stmt|;
 name|g_print
 argument_list|(
-literal|"starting idle page loader\n"
+literal|"starting idle page loader (%i)\n"
+argument_list|,
+name|getpid
+argument_list|()
 argument_list|)
 expr_stmt|;
 comment|/*  Make sure all the arguments are there!  */
@@ -4017,7 +4038,10 @@ argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"idle page loader started\n"
+literal|"idle page loader started (%i)\n"
+argument_list|,
+name|getpid
+argument_list|()
 argument_list|)
 expr_stmt|;
 operator|*
@@ -4087,7 +4111,10 @@ comment|/* We have some data in the wire - read it */
 comment|/* The below will only ever run a single proc */
 name|g_print
 argument_list|(
-literal|"before gimp_run_temp ()\n"
+literal|"before gimp_run_temp (%i)\n"
+argument_list|,
+name|getpid
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|gimp_run_temp
@@ -4095,7 +4122,10 @@ argument_list|()
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"after gimp_run_temp ()\n"
+literal|"after gimp_run_temp (%i)\n"
+argument_list|,
+name|getpid
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return
@@ -4260,7 +4290,10 @@ argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"after run_procedure()\n"
+literal|"after run_procedure(%i)\n"
+argument_list|,
+name|getpid
+argument_list|()
 argument_list|)
 expr_stmt|;
 if|if
