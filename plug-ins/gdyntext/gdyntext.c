@@ -1582,14 +1582,13 @@ argument_list|(
 name|parasite
 argument_list|)
 expr_stmt|;
+comment|/* change the layer name as in GIMP 1.x */
 if|if
 condition|(
-operator|!
 name|data
 operator|->
 name|change_layer_name
 condition|)
-block|{
 name|gimp_layer_set_name
 argument_list|(
 name|data
@@ -1600,26 +1599,6 @@ name|_
 argument_list|(
 literal|"GDynText Layer"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_displays_flush
-argument_list|()
-expr_stmt|;
-name|g_free
-argument_list|(
-name|lname
-argument_list|)
-expr_stmt|;
-return|return;
-block|}
-comment|/* change the layer name as in GIMP 1.x */
-name|gimp_layer_set_name
-argument_list|(
-name|data
-operator|->
-name|layer_id
-argument_list|,
-name|lname
 argument_list|)
 expr_stmt|;
 name|gimp_displays_flush
@@ -2377,7 +2356,8 @@ index|[
 name|i
 index|]
 argument_list|,
-literal|0
+operator|-
+literal|1
 argument_list|,
 comment|/* border */
 name|data

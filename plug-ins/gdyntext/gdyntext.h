@@ -21,7 +21,7 @@ DECL|macro|GDYNTEXT_VERSION
 define|#
 directive|define
 name|GDYNTEXT_VERSION
-value|"1.5.2"
+value|"1.5.4"
 end_define
 
 begin_define
@@ -83,7 +83,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290b5f0a0103
+DECL|enum|__anon2c8437540103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -108,7 +108,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290b5f0a0203
+DECL|enum|__anon2c8437540203
 block|{
 DECL|enumerator|TEXT
 name|TEXT
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290b5f0a0303
+DECL|enum|__anon2c8437540303
 block|{
 DECL|enumerator|XLFD_NONE
 name|XLFD_NONE
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290b5f0a0403
+DECL|enum|__anon2c8437540403
 block|{
 DECL|enumerator|LA_NONE
 name|LA_NONE
@@ -301,7 +301,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon290b5f0a0508
+DECL|struct|__anon2c8437540508
 typedef|typedef
 struct|struct
 block|{
