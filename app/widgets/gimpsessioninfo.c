@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29850bf70103
+DECL|enum|__anon2766fd560103
 block|{
 DECL|enumerator|SESSION_INFO_POSITION
 name|SESSION_INFO_POSITION
@@ -2142,6 +2142,9 @@ name|gimp_dialog_factory_dialog_new
 argument_list|(
 name|factory
 argument_list|,
+name|gdk_screen_get_default
+argument_list|()
+argument_list|,
 name|info
 operator|->
 name|toplevel_entry
@@ -2190,6 +2193,9 @@ argument_list|(
 name|gimp_dialog_factory_dock_new
 argument_list|(
 name|factory
+argument_list|,
+name|gdk_screen_get_default
+argument_list|()
 argument_list|)
 argument_list|)
 expr_stmt|;

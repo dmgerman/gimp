@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb66e300103
+DECL|enum|__anon29b3b14a0103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -1361,10 +1361,14 @@ name|screen
 operator|=
 name|gtk_widget_get_screen
 argument_list|(
-name|GTK_WIDGET
+name|widget
+argument_list|)
+expr_stmt|;
+name|gtk_menu_set_screen
 argument_list|(
 name|menu
-argument_list|)
+argument_list|,
+name|screen
 argument_list|)
 expr_stmt|;
 if|if
@@ -1496,6 +1500,11 @@ argument_list|,
 name|editor
 operator|->
 name|item_factory_data
+argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|editor
+argument_list|)
 argument_list|,
 name|gimp_container_tree_view_menu_position
 argument_list|,

@@ -1156,7 +1156,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fd14dc0108
+DECL|struct|__anon2992f6df0108
 block|{
 DECL|member|gridspacing
 name|void
@@ -16765,6 +16765,8 @@ argument_list|(
 literal|"Warning"
 argument_list|)
 argument_list|,
+name|widget
+argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 literal|"filters/gfig.html"
@@ -20159,6 +20161,11 @@ argument_list|(
 name|_
 argument_list|(
 literal|"Delete Gfig Drawing"
+argument_list|)
+argument_list|,
+name|gtk_widget_get_toplevel
+argument_list|(
+name|list
 argument_list|)
 argument_list|,
 name|gimp_standard_help_func

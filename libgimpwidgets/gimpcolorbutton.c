@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library   * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpcolorbutton.c  * Copyright (C) 1999-2001 Sven Neumann  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *   * This library is distributed in the hope that it will be useful,   * but WITHOUT ANY WARRANTY; without even the implied warranty of   * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU    * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpcolorbutton.c  * Copyright (C) 1999-2001 Sven Neumann  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7366480103
+DECL|enum|__anon2bc3c94c0103
 block|{
 DECL|enumerator|GIMP_COLOR_BUTTON_COLOR_FG
 name|GIMP_COLOR_BUTTON_COLOR_FG
@@ -97,7 +97,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7366480203
+DECL|enum|__anon2bc3c94c0203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -887,6 +887,23 @@ name|allocation
 operator|.
 name|y
 expr_stmt|;
+name|gtk_menu_set_screen
+argument_list|(
+name|GTK_MENU
+argument_list|(
+name|button
+operator|->
+name|item_factory
+operator|->
+name|widget
+argument_list|)
+argument_list|,
+name|gtk_widget_get_screen
+argument_list|(
+name|widget
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gtk_item_factory_popup
 argument_list|(
 name|button
@@ -1015,7 +1032,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_button_new:  * @title: String that will be used as title for the color_selector.  * @width: Width of the colorpreview in pixels.  * @height: Height of the colorpreview in pixels.  * @color: A pointer to a #GimpRGB color.  * @type:   *   * Creates a new #GimpColorButton widget.  *  * This returns a button with a preview showing the color.  * When the button is clicked a GtkColorSelectionDialog is opened.  * If the user changes the color the new color is written into the  * array that was used to pass the initial color and the "color_changed"  * signal is emitted.  *   * Returns: Pointer to the new #GimpColorButton widget.  **/
+comment|/**  * gimp_color_button_new:  * @title: String that will be used as title for the color_selector.  * @width: Width of the colorpreview in pixels.  * @height: Height of the colorpreview in pixels.  * @color: A pointer to a #GimpRGB color.  * @type:  *  * Creates a new #GimpColorButton widget.  *  * This returns a button with a preview showing the color.  * When the button is clicked a GtkColorSelectionDialog is opened.  * If the user changes the color the new color is written into the  * array that was used to pass the initial color and the "color_changed"  * signal is emitted.  *  * Returns: Pointer to the new #GimpColorButton widget.  **/
 end_comment
 
 begin_function
@@ -1123,7 +1140,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_button_set_color:  * @button: Pointer to a #GimpColorButton.  * @color: Pointer to the new #GimpRGB color.  *   * Sets the @button to the given @color.  **/
+comment|/**  * gimp_color_button_set_color:  * @button: Pointer to a #GimpColorButton.  * @color: Pointer to the new #GimpRGB color.  *  * Sets the @button to the given @color.  **/
 end_comment
 
 begin_function
@@ -1172,7 +1189,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_button_get_color:  * @button: Pointer to a #GimpColorButton.  * @color: Pointer to a #GimpRGB struct used to return the color.  *   * Retrieves the currently set color from the @button.  **/
+comment|/**  * gimp_color_button_get_color:  * @button: Pointer to a #GimpColorButton.  * @color: Pointer to a #GimpRGB struct used to return the color.  *  * Retrieves the currently set color from the @button.  **/
 end_comment
 
 begin_function

@@ -1402,6 +1402,11 @@ operator|->
 name|gimage
 argument_list|)
 argument_list|)
+argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|editor
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

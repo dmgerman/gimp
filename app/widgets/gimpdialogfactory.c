@@ -131,7 +131,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27cba3270103
+DECL|enum|__anon2bd414f00103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -152,7 +152,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27cba3270203
+DECL|enum|__anon2bd414f00203
 block|{
 DECL|enumerator|GIMP_DIALOG_SHOW_ALL
 name|GIMP_DIALOG_SHOW_ALL
@@ -1446,12 +1446,16 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dialog_factory_dialog_new_internal (GimpDialogFactory * factory,GimpContext * context,const gchar * identifier,gint preview_size,gboolean raise_if_found)
+DECL|function|gimp_dialog_factory_dialog_new_internal (GimpDialogFactory * factory,GdkScreen * screen,GimpContext * context,const gchar * identifier,gint preview_size,gboolean raise_if_found)
 name|gimp_dialog_factory_dialog_new_internal
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GdkScreen
+modifier|*
+name|screen
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -1614,6 +1618,8 @@ operator|=
 name|gimp_dialog_factory_dock_new
 argument_list|(
 name|factory
+argument_list|,
+name|screen
 argument_list|)
 expr_stmt|;
 name|dockbook
@@ -1846,6 +1852,16 @@ name|dialog
 argument_list|)
 condition|)
 block|{
+name|gtk_window_set_screen
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|screen
+argument_list|)
+expr_stmt|;
 name|gtk_window_present
 argument_list|(
 name|GTK_WINDOW
@@ -1961,12 +1977,16 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dialog_factory_dialog_new (GimpDialogFactory * factory,const gchar * identifier,gint preview_size)
+DECL|function|gimp_dialog_factory_dialog_new (GimpDialogFactory * factory,GdkScreen * screen,const gchar * identifier,gint preview_size)
 name|gimp_dialog_factory_dialog_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GdkScreen
+modifier|*
+name|screen
 parameter_list|,
 specifier|const
 name|gchar
@@ -1989,6 +2009,16 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|GDK_IS_SCREEN
+argument_list|(
+name|screen
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
 name|identifier
 operator|!=
 name|NULL
@@ -2000,6 +2030,8 @@ return|return
 name|gimp_dialog_factory_dialog_new_internal
 argument_list|(
 name|factory
+argument_list|,
+name|screen
 argument_list|,
 name|factory
 operator|->
@@ -2022,12 +2054,16 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dialog_factory_dialog_raise (GimpDialogFactory * factory,const gchar * identifier,gint preview_size)
+DECL|function|gimp_dialog_factory_dialog_raise (GimpDialogFactory * factory,GdkScreen * screen,const gchar * identifier,gint preview_size)
 name|gimp_dialog_factory_dialog_raise
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GdkScreen
+modifier|*
+name|screen
 parameter_list|,
 specifier|const
 name|gchar
@@ -2050,6 +2086,16 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|GDK_IS_SCREEN
+argument_list|(
+name|screen
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
 name|identifier
 operator|!=
 name|NULL
@@ -2061,6 +2107,8 @@ return|return
 name|gimp_dialog_factory_dialog_new_internal
 argument_list|(
 name|factory
+argument_list|,
+name|screen
 argument_list|,
 name|NULL
 argument_list|,
@@ -2135,6 +2183,14 @@ name|gimp_dialog_factory_dialog_new_internal
 argument_list|(
 name|factory
 argument_list|,
+name|gtk_widget_get_screen
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|dock
+argument_list|)
+argument_list|)
+argument_list|,
 name|dock
 operator|->
 name|context
@@ -2156,12 +2212,16 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dialog_factory_dock_new (GimpDialogFactory * factory)
+DECL|function|gimp_dialog_factory_dock_new (GimpDialogFactory * factory,GdkScreen * screen)
 name|gimp_dialog_factory_dock_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GdkScreen
+modifier|*
+name|screen
 parameter_list|)
 block|{
 name|GtkWidget
@@ -2173,6 +2233,16 @@ argument_list|(
 name|GIMP_IS_DIALOG_FACTORY
 argument_list|(
 name|factory
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GDK_IS_SCREEN
+argument_list|(
+name|screen
 argument_list|)
 argument_list|,
 name|NULL
@@ -2209,6 +2279,16 @@ condition|(
 name|dock
 condition|)
 block|{
+name|gtk_window_set_screen
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dock
+argument_list|)
+argument_list|,
+name|screen
+argument_list|)
+expr_stmt|;
 name|gimp_dialog_factory_set_widget_data
 argument_list|(
 name|dock

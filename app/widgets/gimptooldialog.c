@@ -64,12 +64,16 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_tool_dialog_new (GimpToolInfo * tool_info,const gchar * desc,...)
+DECL|function|gimp_tool_dialog_new (GimpToolInfo * tool_info,GtkWidget * parent,const gchar * desc,...)
 name|gimp_tool_dialog_new
 parameter_list|(
 name|GimpToolInfo
 modifier|*
 name|tool_info
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|,
 specifier|const
 name|gchar
@@ -100,6 +104,16 @@ argument_list|(
 name|GIMP_IS_TOOL_INFO
 argument_list|(
 name|tool_info
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GTK_IS_WIDGET
+argument_list|(
+name|parent
 argument_list|)
 argument_list|,
 name|NULL
@@ -141,6 +155,8 @@ else|:
 name|tool_info
 operator|->
 name|help
+argument_list|,
+name|parent
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,

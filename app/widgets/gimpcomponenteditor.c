@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bac13bd0103
+DECL|enum|__anon2c89bc830103
 block|{
 DECL|enumerator|COLUMN_CHANNEL
 name|COLUMN_CHANNEL
@@ -1959,6 +1959,11 @@ name|editor
 argument_list|)
 operator|->
 name|item_factory_data
+argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|editor
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

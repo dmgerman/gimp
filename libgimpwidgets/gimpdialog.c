@@ -598,6 +598,19 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|gtk_window_set_screen
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|gtk_widget_get_screen
+argument_list|(
+name|parent
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* TODO */
 block|}
 block|}

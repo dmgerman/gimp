@@ -178,6 +178,11 @@ argument_list|)
 operator|->
 name|dialog_factory
 argument_list|,
+name|gtk_widget_get_screen
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
 literal|"gimp-brush-grid"
 argument_list|,
 operator|-
@@ -256,6 +261,11 @@ argument_list|)
 operator|->
 name|dialog_factory
 argument_list|,
+name|gtk_widget_get_screen
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
 literal|"gimp-pattern-grid"
 argument_list|,
 operator|-
@@ -333,6 +343,11 @@ name|toolbox
 argument_list|)
 operator|->
 name|dialog_factory
+argument_list|,
+name|gtk_widget_get_screen
+argument_list|(
+name|widget
+argument_list|)
 argument_list|,
 literal|"gimp-gradient-list"
 argument_list|,

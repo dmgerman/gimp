@@ -188,7 +188,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon277094a10103
+DECL|enum|__anon29f7a8070103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -4304,6 +4304,11 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Crop& Resize Information"
+argument_list|)
+argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|shell
 argument_list|)
 argument_list|,
 name|gimp_standard_help_func

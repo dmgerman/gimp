@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298072820103
+DECL|enum|__anon2c15e3f60103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -3216,6 +3216,11 @@ name|GIMP_ITEM
 argument_list|(
 name|item
 argument_list|)
+argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|view
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -3288,6 +3293,11 @@ argument_list|,
 name|editor
 operator|->
 name|item_factory_data
+argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|editor
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -3670,6 +3680,11 @@ operator|->
 name|edit_item_func
 argument_list|(
 name|item
+argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|view
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -3705,6 +3720,11 @@ argument_list|,
 name|NULL
 argument_list|,
 name|TRUE
+argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|view
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -3773,6 +3793,11 @@ name|viewable
 argument_list|)
 argument_list|,
 name|FALSE
+argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|view
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush

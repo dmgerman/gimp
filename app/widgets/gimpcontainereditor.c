@@ -980,6 +980,11 @@ name|gimp_editor
 operator|->
 name|item_factory_data
 argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|editor
+argument_list|)
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL

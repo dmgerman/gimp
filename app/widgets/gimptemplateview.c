@@ -978,6 +978,11 @@ operator|->
 name|gimp
 argument_list|,
 name|template
+argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|view
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1063,6 +1068,11 @@ operator|->
 name|gimp
 argument_list|,
 name|NULL
+argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|view
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1216,6 +1226,11 @@ operator|->
 name|gimp
 argument_list|,
 name|new_template
+argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|view
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -1306,6 +1321,11 @@ operator|->
 name|gimp
 argument_list|,
 name|template
+argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|view
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1532,6 +1552,11 @@ argument_list|(
 name|_
 argument_list|(
 literal|"Delete Template"
+argument_list|)
+argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|view
 argument_list|)
 argument_list|,
 name|gimp_standard_help_func
@@ -1789,6 +1814,11 @@ argument_list|,
 name|GIMP_TEMPLATE
 argument_list|(
 name|viewable
+argument_list|)
+argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|editor
 argument_list|)
 argument_list|)
 expr_stmt|;

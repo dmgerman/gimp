@@ -754,6 +754,11 @@ argument_list|,
 name|NULL
 argument_list|,
 name|FALSE
+argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|view
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|drawable

@@ -38,6 +38,10 @@ parameter_list|,
 name|GimpTemplate
 modifier|*
 name|template
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 function_decl|;
 end_typedef

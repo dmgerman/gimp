@@ -797,6 +797,10 @@ name|gimp_tool_dialog_new
 argument_list|(
 name|tool_info
 argument_list|,
+name|gdisp
+operator|->
+name|shell
+argument_list|,
 name|image_map_tool
 operator|->
 name|shell_desc

@@ -2100,6 +2100,11 @@ name|gimp_dialog_factory_dialog_raise
 argument_list|(
 name|dialog_factory
 argument_list|,
+name|gtk_widget_get_screen
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
 name|identifier
 argument_list|,
 operator|-

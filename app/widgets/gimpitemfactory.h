@@ -354,6 +354,10 @@ parameter_list|,
 name|gpointer
 name|popup_data
 parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
+parameter_list|,
 name|GimpMenuPositionFunc
 name|position_func
 parameter_list|,

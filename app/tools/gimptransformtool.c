@@ -5364,6 +5364,15 @@ name|tr_tool
 operator|->
 name|shell_desc
 argument_list|,
+name|GIMP_TOOL
+argument_list|(
+name|tr_tool
+argument_list|)
+operator|->
+name|gdisp
+operator|->
+name|shell
+argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 name|tool_info

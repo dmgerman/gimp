@@ -706,6 +706,8 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|,
 name|_
@@ -933,6 +935,8 @@ name|_
 argument_list|(
 literal|"Could not start GIMP Help Browser"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

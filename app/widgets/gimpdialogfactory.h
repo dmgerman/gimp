@@ -341,6 +341,10 @@ name|GimpDialogFactory
 modifier|*
 name|factory
 parameter_list|,
+name|GdkScreen
+modifier|*
+name|screen
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -360,6 +364,10 @@ parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GdkScreen
+modifier|*
+name|screen
 parameter_list|,
 specifier|const
 name|gchar
@@ -404,6 +412,10 @@ parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GdkScreen
+modifier|*
+name|screen
 parameter_list|)
 function_decl|;
 end_function_decl

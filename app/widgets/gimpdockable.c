@@ -3468,6 +3468,14 @@ argument_list|(
 name|src_dock
 operator|->
 name|dialog_factory
+argument_list|,
+name|gtk_widget_get_screen
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|dockable
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_dock_setup
@@ -4070,6 +4078,11 @@ argument_list|(
 name|dockbook_item_factory
 argument_list|,
 name|dockable
+argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|dockable
+argument_list|)
 argument_list|,
 name|gimp_dockable_menu_position
 argument_list|,

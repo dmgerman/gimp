@@ -211,7 +211,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e320770103
+DECL|enum|__anon28934cc30103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -3904,6 +3904,11 @@ argument_list|)
 operator|->
 name|item_factory_data
 argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|editor
+argument_list|)
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL
@@ -4497,6 +4502,11 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Edit Indexed Image Palette Color"
+argument_list|)
+argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|editor
 argument_list|)
 argument_list|,
 name|toplevel_factory

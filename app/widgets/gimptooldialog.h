@@ -25,6 +25,10 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*

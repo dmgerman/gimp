@@ -1598,6 +1598,11 @@ argument_list|(
 literal|"Delete Data Object"
 argument_list|)
 argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|view
+argument_list|)
+argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 name|NULL

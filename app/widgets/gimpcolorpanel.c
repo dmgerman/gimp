@@ -1001,6 +1001,11 @@ argument_list|)
 operator|->
 name|title
 argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL

@@ -164,6 +164,10 @@ parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 function_decl|;
 end_typedef
@@ -187,6 +191,10 @@ name|template
 parameter_list|,
 name|gboolean
 name|interactive
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 function_decl|;
 end_typedef
@@ -203,6 +211,10 @@ parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 function_decl|;
 end_typedef

@@ -1540,7 +1540,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_item_factory_popup_with_data (GimpItemFactory * item_factory,gpointer popup_data,GimpMenuPositionFunc position_func,gpointer position_data,GtkDestroyNotify popdown_func)
+DECL|function|gimp_item_factory_popup_with_data (GimpItemFactory * item_factory,gpointer popup_data,GtkWidget * parent,GimpMenuPositionFunc position_func,gpointer position_data,GtkDestroyNotify popdown_func)
 name|gimp_item_factory_popup_with_data
 parameter_list|(
 name|GimpItemFactory
@@ -1549,6 +1549,10 @@ name|item_factory
 parameter_list|,
 name|gpointer
 name|popup_data
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|,
 name|GimpMenuPositionFunc
 name|position_func
@@ -1583,6 +1587,14 @@ name|item_factory
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GTK_IS_WIDGET
+argument_list|(
+name|parent
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|item_factory
@@ -1608,7 +1620,7 @@ name|gimp_menu_position
 expr_stmt|;
 name|position_data
 operator|=
-name|NULL
+name|parent
 expr_stmt|;
 block|}
 call|(

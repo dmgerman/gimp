@@ -3351,6 +3351,11 @@ argument_list|(
 literal|"Delete Fractal"
 argument_list|)
 argument_list|,
+name|gtk_widget_get_toplevel
+argument_list|(
+name|list
+argument_list|)
+argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 literal|"filters/fractalexplorer.html"

@@ -1262,6 +1262,11 @@ operator|->
 name|stroke_item_func
 argument_list|(
 name|item
+argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|view
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

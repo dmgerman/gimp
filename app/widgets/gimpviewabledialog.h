@@ -183,6 +183,10 @@ name|gchar
 modifier|*
 name|desc
 parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
+parameter_list|,
 name|GimpHelpFunc
 name|help_func
 parameter_list|,

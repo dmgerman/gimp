@@ -117,7 +117,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b65b4d00103
+DECL|enum|__anon2b5fe0f20103
 block|{
 DECL|enumerator|FORE_AREA
 name|FORE_AREA
@@ -257,6 +257,10 @@ parameter_list|(
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|widget
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1522,12 +1526,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_area_edit (GimpContext * context)
+DECL|function|color_area_edit (GimpContext * context,GtkWidget * widget)
 name|color_area_edit
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|widget
 parameter_list|)
 block|{
 name|GimpRGB
@@ -1631,6 +1639,8 @@ operator|=
 name|color_notebook_new
 argument_list|(
 name|title
+argument_list|,
+name|widget
 argument_list|,
 name|toplevel_factory
 argument_list|,
@@ -1887,6 +1897,8 @@ case|:
 name|color_area_edit
 argument_list|(
 name|context
+argument_list|,
+name|widget
 argument_list|)
 expr_stmt|;
 break|break;
