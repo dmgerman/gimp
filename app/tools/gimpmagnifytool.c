@@ -129,11 +129,11 @@ DECL|member|tool_options
 name|GimpToolOptions
 name|tool_options
 decl_stmt|;
-comment|/* gint       resize_windows_on_zoom; (from gimprc) */
-DECL|member|allow_resize_d
+DECL|member|allow_resize
 name|gint
-name|allow_resize_d
+name|allow_resize
 decl_stmt|;
+comment|/* default from gimprc.resize_windows_on_zoom */
 DECL|member|allow_resize_w
 name|GtkWidget
 modifier|*
@@ -1234,9 +1234,9 @@ literal|2
 operator|)
 operator|)
 argument_list|,
-name|gimprc
-operator|.
-name|resize_windows_on_zoom
+name|options
+operator|->
+name|allow_resize
 argument_list|)
 expr_stmt|;
 block|}
@@ -1757,7 +1757,7 @@ name|magnify_options_reset
 expr_stmt|;
 name|options
 operator|->
-name|allow_resize_d
+name|allow_resize
 operator|=
 name|gimprc
 operator|.
@@ -1814,9 +1814,9 @@ operator|->
 name|allow_resize_w
 argument_list|)
 argument_list|,
-name|gimprc
-operator|.
-name|resize_windows_on_zoom
+name|options
+operator|->
+name|allow_resize
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1861,11 +1861,9 @@ name|gimp_toggle_button_update
 argument_list|)
 argument_list|,
 operator|&
-operator|(
-name|gimprc
-operator|.
-name|resize_windows_on_zoom
-operator|)
+name|options
+operator|->
+name|allow_resize
 argument_list|)
 expr_stmt|;
 comment|/*  tool toggle  */
@@ -2009,7 +2007,7 @@ literal|50
 argument_list|,
 name|options
 operator|->
-name|threshold_d
+name|threshold
 argument_list|,
 literal|1.0
 argument_list|,
@@ -2096,9 +2094,9 @@ operator|->
 name|allow_resize_w
 argument_list|)
 argument_list|,
-name|options
-operator|->
-name|allow_resize_d
+name|gimprc
+operator|.
+name|resize_windows_on_zoom
 argument_list|)
 expr_stmt|;
 name|gimp_radio_group_set_active

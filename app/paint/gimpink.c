@@ -4685,7 +4685,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2a532f460103
+DECL|enum|__anon28abf7dc0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
@@ -6741,7 +6741,7 @@ literal|50
 argument_list|,
 name|options
 operator|->
-name|size_d
+name|size
 argument_list|,
 literal|0.0
 argument_list|,
@@ -6814,7 +6814,7 @@ literal|50
 argument_list|,
 name|options
 operator|->
-name|tilt_angle_d
+name|tilt_angle
 argument_list|,
 operator|-
 literal|90.0
@@ -6976,7 +6976,7 @@ literal|50
 argument_list|,
 name|options
 operator|->
-name|sensitivity_d
+name|sensitivity
 argument_list|,
 literal|0.0
 argument_list|,
@@ -7049,7 +7049,7 @@ literal|50
 argument_list|,
 name|options
 operator|->
-name|tilt_sensitivity_d
+name|tilt_sensitivity
 argument_list|,
 literal|0.0
 argument_list|,
@@ -7122,7 +7122,7 @@ literal|50
 argument_list|,
 name|options
 operator|->
-name|vel_sensitivity_d
+name|vel_sensitivity
 argument_list|,
 literal|0.0
 argument_list|,

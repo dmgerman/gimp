@@ -677,7 +677,7 @@ argument_list|)
 argument_list|,
 name|options
 operator|->
-name|anti_erase_d
+name|anti_erase
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -751,7 +751,7 @@ argument_list|)
 argument_list|,
 name|options
 operator|->
-name|hard_d
+name|hard
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

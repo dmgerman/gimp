@@ -2051,7 +2051,7 @@ literal|50
 argument_list|,
 name|options
 operator|->
-name|offset_d
+name|offset
 argument_list|,
 literal|0.0
 argument_list|,
@@ -2129,7 +2129,7 @@ name|GINT_TO_POINTER
 argument_list|(
 name|options
 operator|->
-name|blend_mode_d
+name|blend_mode
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2192,7 +2192,7 @@ name|GINT_TO_POINTER
 argument_list|(
 name|options
 operator|->
-name|gradient_type_d
+name|gradient_type
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2258,7 +2258,7 @@ name|GINT_TO_POINTER
 argument_list|(
 name|options
 operator|->
-name|repeat_d
+name|repeat
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2385,7 +2385,7 @@ argument_list|)
 argument_list|,
 name|options
 operator|->
-name|supersample_d
+name|supersample
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_label_widget
@@ -2494,7 +2494,7 @@ name|table
 argument_list|,
 name|options
 operator|->
-name|supersample_d
+name|supersample
 argument_list|)
 expr_stmt|;
 name|g_object_set_data
@@ -2539,7 +2539,7 @@ literal|50
 argument_list|,
 name|options
 operator|->
-name|max_depth_d
+name|max_depth
 argument_list|,
 literal|1.0
 argument_list|,
@@ -2612,7 +2612,7 @@ literal|50
 argument_list|,
 name|options
 operator|->
-name|threshold_d
+name|threshold
 argument_list|,
 literal|0.0
 argument_list|,

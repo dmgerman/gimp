@@ -171,7 +171,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2baa3f700103
+DECL|enum|__anon2c19cf800103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -6321,7 +6321,7 @@ argument_list|)
 argument_list|,
 name|options
 operator|->
-name|layer_only_d
+name|layer_only
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -6395,7 +6395,7 @@ argument_list|)
 argument_list|,
 name|options
 operator|->
-name|allow_enlarge_d
+name|allow_enlarge
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

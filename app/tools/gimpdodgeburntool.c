@@ -929,7 +929,7 @@ literal|50
 argument_list|,
 name|options
 operator|->
-name|exposure_d
+name|exposure
 argument_list|,
 literal|0.0
 argument_list|,

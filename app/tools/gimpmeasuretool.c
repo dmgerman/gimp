@@ -3844,7 +3844,7 @@ argument_list|)
 argument_list|,
 name|options
 operator|->
-name|use_info_window_d
+name|use_info_window
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

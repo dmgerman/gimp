@@ -1503,7 +1503,7 @@ argument_list|)
 argument_list|,
 name|options
 operator|->
-name|fill_transparent_d
+name|fill_transparent
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

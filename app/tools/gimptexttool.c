@@ -2601,7 +2601,7 @@ literal|50
 argument_list|,
 name|options
 operator|->
-name|size_d
+name|size
 argument_list|,
 literal|1.0
 argument_list|,
@@ -2682,7 +2682,7 @@ literal|50
 argument_list|,
 name|options
 operator|->
-name|border_d
+name|border
 argument_list|,
 literal|0.0
 argument_list|,
@@ -2746,7 +2746,7 @@ literal|"%a"
 argument_list|,
 name|options
 operator|->
-name|unit_d
+name|unit
 argument_list|,
 name|TRUE
 argument_list|,

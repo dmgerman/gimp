@@ -790,7 +790,7 @@ name|log
 argument_list|(
 name|options
 operator|->
-name|grid_size_d
+name|grid_size
 argument_list|)
 operator|/
 name|log
@@ -881,7 +881,7 @@ name|label
 argument_list|,
 name|options
 operator|->
-name|show_grid_d
+name|show_grid
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
@@ -890,7 +890,7 @@ name|grid_density
 argument_list|,
 name|options
 operator|->
-name|show_grid_d
+name|show_grid
 argument_list|)
 expr_stmt|;
 name|g_object_set_data

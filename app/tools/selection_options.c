@@ -767,7 +767,7 @@ argument_list|)
 argument_list|,
 name|options
 operator|->
-name|antialias_d
+name|antialias
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -914,7 +914,7 @@ argument_list|)
 argument_list|,
 name|options
 operator|->
-name|feather_d
+name|feather
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_label_widget
@@ -1032,7 +1032,7 @@ literal|50
 argument_list|,
 name|options
 operator|->
-name|feather_radius_d
+name|feather_radius
 argument_list|,
 literal|0.0
 argument_list|,
@@ -1084,7 +1084,7 @@ name|table
 argument_list|,
 name|options
 operator|->
-name|feather_d
+name|feather
 argument_list|)
 expr_stmt|;
 name|g_object_set_data
@@ -1142,7 +1142,7 @@ argument_list|)
 argument_list|,
 name|options
 operator|->
-name|interactive_d
+name|interactive
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1310,7 +1310,7 @@ argument_list|)
 argument_list|,
 name|options
 operator|->
-name|select_transparent_d
+name|select_transparent
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1399,7 +1399,7 @@ argument_list|)
 argument_list|,
 name|options
 operator|->
-name|sample_merged_d
+name|sample_merged
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1703,7 +1703,7 @@ argument_list|)
 argument_list|,
 name|options
 operator|->
-name|auto_shrink_d
+name|auto_shrink
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_label_widget
@@ -1793,7 +1793,7 @@ argument_list|)
 argument_list|,
 name|options
 operator|->
-name|shrink_merged_d
+name|shrink_merged
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1909,7 +1909,7 @@ argument_list|)
 argument_list|,
 name|options
 operator|->
-name|fixed_size_d
+name|fixed_size
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_label_widget
@@ -2010,7 +2010,7 @@ name|table
 argument_list|,
 name|options
 operator|->
-name|fixed_size_d
+name|fixed_size
 argument_list|)
 expr_stmt|;
 name|g_object_set_data
@@ -2054,7 +2054,7 @@ literal|50
 argument_list|,
 name|options
 operator|->
-name|fixed_width_d
+name|fixed_width
 argument_list|,
 literal|1.0
 argument_list|,
@@ -2135,7 +2135,7 @@ literal|50
 argument_list|,
 name|options
 operator|->
-name|fixed_height_d
+name|fixed_height
 argument_list|,
 literal|1.0
 argument_list|,
@@ -2199,7 +2199,7 @@ literal|"%a"
 argument_list|,
 name|options
 operator|->
-name|fixed_unit_d
+name|fixed_unit
 argument_list|,
 name|TRUE
 argument_list|,

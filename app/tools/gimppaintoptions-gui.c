@@ -798,7 +798,7 @@ argument_list|)
 argument_list|,
 name|options
 operator|->
-name|incremental_d
+name|incremental
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1280,7 +1280,7 @@ argument_list|)
 argument_list|,
 name|pressure
 operator|->
-name|opacity_d
+name|opacity
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1376,7 +1376,7 @@ argument_list|)
 argument_list|,
 name|pressure
 operator|->
-name|pressure_d
+name|pressure
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1460,7 +1460,7 @@ argument_list|)
 argument_list|,
 name|pressure
 operator|->
-name|rate_d
+name|rate
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1560,7 +1560,7 @@ argument_list|)
 argument_list|,
 name|pressure
 operator|->
-name|size_d
+name|size
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1644,7 +1644,7 @@ argument_list|)
 argument_list|,
 name|pressure
 operator|->
-name|color_d
+name|color
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1959,7 +1959,7 @@ name|table
 argument_list|,
 name|gradient
 operator|->
-name|use_fade_d
+name|use_fade
 argument_list|)
 expr_stmt|;
 name|g_object_set_data
@@ -1985,7 +1985,7 @@ name|gtk_adjustment_new
 argument_list|(
 name|gradient
 operator|->
-name|fade_out_d
+name|fade_out
 argument_list|,
 literal|1e-5
 argument_list|,
@@ -2094,7 +2094,7 @@ literal|"%a"
 argument_list|,
 name|gradient
 operator|->
-name|fade_unit_d
+name|fade_unit
 argument_list|,
 name|TRUE
 argument_list|,
@@ -2311,7 +2311,7 @@ name|table
 argument_list|,
 name|gradient
 operator|->
-name|use_gradient_d
+name|use_gradient
 argument_list|)
 expr_stmt|;
 name|g_object_set_data
@@ -2353,7 +2353,7 @@ name|gtk_adjustment_new
 argument_list|(
 name|gradient
 operator|->
-name|gradient_length_d
+name|gradient_length
 argument_list|,
 literal|1e-5
 argument_list|,
@@ -2462,7 +2462,7 @@ literal|"%a"
 argument_list|,
 name|gradient
 operator|->
-name|gradient_unit_d
+name|gradient_unit
 argument_list|,
 name|TRUE
 argument_list|,
@@ -2579,7 +2579,7 @@ name|GINT_TO_POINTER
 argument_list|(
 name|gradient
 operator|->
-name|gradient_type_d
+name|gradient_type
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -3055,7 +3055,7 @@ argument_list|)
 argument_list|,
 name|options
 operator|->
-name|sample_merged_d
+name|sample_merged
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3213,7 +3213,7 @@ argument_list|)
 argument_list|,
 name|options
 operator|->
-name|sample_average_d
+name|sample_average
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_label_widget
@@ -3263,7 +3263,7 @@ name|table
 argument_list|,
 name|options
 operator|->
-name|sample_average_d
+name|sample_average
 argument_list|)
 expr_stmt|;
 name|g_object_set_data
@@ -3307,7 +3307,7 @@ literal|50
 argument_list|,
 name|options
 operator|->
-name|average_radius_d
+name|average_radius
 argument_list|,
 literal|1.0
 argument_list|,
@@ -3376,7 +3376,7 @@ argument_list|)
 argument_list|,
 name|options
 operator|->
-name|update_active_d
+name|update_active
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

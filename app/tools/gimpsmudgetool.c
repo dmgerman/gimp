@@ -533,7 +533,7 @@ literal|50
 argument_list|,
 name|options
 operator|->
-name|rate_d
+name|rate
 argument_list|,
 literal|0.0
 argument_list|,
