@@ -39,6 +39,14 @@ value|2
 end_define
 
 begin_define
+DECL|macro|PRESSURE_SCALE
+define|#
+directive|define
+name|PRESSURE_SCALE
+value|1.5
+end_define
+
+begin_define
 DECL|macro|GIMP_TYPE_BRUSH_CORE
 define|#
 directive|define

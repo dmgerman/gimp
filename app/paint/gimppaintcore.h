@@ -22,30 +22,6 @@ directive|include
 file|"core/gimpobject.h"
 end_include
 
-begin_define
-DECL|macro|PAINT_CORE_SUBSAMPLE
-define|#
-directive|define
-name|PAINT_CORE_SUBSAMPLE
-value|4
-end_define
-
-begin_define
-DECL|macro|PAINT_CORE_SOLID_SUBSAMPLE
-define|#
-directive|define
-name|PAINT_CORE_SOLID_SUBSAMPLE
-value|2
-end_define
-
-begin_define
-DECL|macro|PRESSURE_SCALE
-define|#
-directive|define
-name|PRESSURE_SCALE
-value|1.5
-end_define
-
 begin_comment
 comment|/* the different states that the painting function can be called with  */
 end_comment
@@ -53,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b50542a0103
+DECL|enum|__anon2b8d2ec10103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -63,14 +39,6 @@ DECL|enumerator|MOTION_PAINT
 name|MOTION_PAINT
 block|,
 comment|/* PaintFunc performs motion-related rendering */
-DECL|enumerator|PAUSE_PAINT
-name|PAUSE_PAINT
-block|,
-comment|/* Unused. Reserved */
-DECL|enumerator|RESUME_PAINT
-name|RESUME_PAINT
-block|,
-comment|/* Unused. Reserved */
 DECL|enumerator|FINISH_PAINT
 name|FINISH_PAINT
 block|,
@@ -78,10 +46,10 @@ comment|/* Cleanup and/or reset PaintFunc operation */
 DECL|enumerator|PRETRACE_PAINT
 name|PRETRACE_PAINT
 block|,
-comment|/* PaintFunc performs window tracing activity prior to rendering */
+comment|/* PaintFunc performs window tracing activity                      * prior to rendering                      */
 DECL|enumerator|POSTTRACE_PAINT
 name|POSTTRACE_PAINT
-comment|/* PaintFunc performs window tracing activity following rendering */
+comment|/* PaintFunc performs window tracing activity                      * following rendering                      */
 DECL|typedef|GimpPaintCoreState
 block|}
 name|GimpPaintCoreState
@@ -91,9 +59,8 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b50542a0203
+DECL|enum|__anon2b8d2ec10203
 block|{
-comment|/*  Set for tools that don't mind if    *  the brush changes while painting.    */
 DECL|enumerator|CORE_HANDLES_CHANGING_BRUSH
 name|CORE_HANDLES_CHANGING_BRUSH
 init|=
@@ -101,13 +68,14 @@ literal|0x1
 operator|<<
 literal|0
 block|,
-comment|/*  Set for tools that perform    *  temporary rendering directly to the    *  window. These require sequencing with    *  gdisplay_flush() routines.    *  See gimpclone.c for example.    */
+comment|/*  Set for tools that don't                                            *  mind if the brush                                            *  changes while painting.                                            */
 DECL|enumerator|CORE_TRACES_ON_WINDOW
 name|CORE_TRACES_ON_WINDOW
 init|=
 literal|0x1
 operator|<<
 literal|1
+comment|/*  Set for tools that                                            *  perform temporary                                            *  rendering directly to                                            *  the window. These                                            *  require sequencing with                                            *  gdisplay_flush()                                            *  routines.  See                                            *  gimpclone.c for example.                                            */
 DECL|typedef|GimpPaintCoreFlags
 block|}
 name|GimpPaintCoreFlags
