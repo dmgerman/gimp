@@ -1,6 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* gimpunit.h  * Copyright (C) 1999 Michael Natterer<mitschel@cs.tu-berlin.de>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Library General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Library General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library                                                     * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball                  *  * gimpunit.h  * Copyright (C) 1999 Michael Natterer<mitschel@cs.tu-berlin.de>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Library General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Library General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+end_comment
+
+begin_comment
+comment|/* NOTE:  *  * This file serves as header for both app/gimpunit.c and libgimp/gimpunit.c  * because the unit functions are needed by widgets which are used by both  * the gimp app and plugins.  */
 end_comment
 
 begin_ifndef
@@ -35,10 +39,9 @@ block|{
 endif|#
 directive|endif
 comment|/* __cplusplus */
-comment|/* I've put this here and not to libgimp/gimpenums.h, because if this  * file includes libgimp/gimpenums.h there is a name clash wherever  * someone includes libgimp/gimpunit.h and app/gimpimage.h  * (the constants RGB, GRAY and INDEXED are defined in both  * gimpenums.h and gimpimage.h) (is this a bug? don't know...)  */
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bdf1c310103
+DECL|enum|__anon2b0d0dce0103
 block|{
 DECL|enumerator|UNIT_PIXEL
 name|UNIT_PIXEL
@@ -67,7 +70,9 @@ literal|4
 block|,
 DECL|enumerator|UNIT_END
 name|UNIT_END
-comment|/* never use UNIT_END but gimp_unit_get_number_of_units() instead */
+init|=
+literal|5
+comment|/* never use UNIT_END but 			gimp_unit_get_number_of_units() instead */
 DECL|typedef|GUnit
 block|}
 name|GUnit
@@ -134,16 +139,6 @@ name|guint
 name|deletion_flag
 parameter_list|)
 function_decl|;
-comment|/* This one is an untranslated string for gimprc */
-specifier|const
-name|gchar
-modifier|*
-name|gimp_unit_get_identifier
-parameter_list|(
-name|GUnit
-name|unit
-parameter_list|)
-function_decl|;
 comment|/* The meaning of 'factor' is:  * distance_in_units == ( factor * distance_in_inches )  *  * Returns 0 for unit == UNIT_PIXEL as we don't have resolution info here  */
 name|gfloat
 name|gimp_unit_get_factor
@@ -160,7 +155,16 @@ name|GUnit
 name|unit
 parameter_list|)
 function_decl|;
-specifier|const
+comment|/* NOTE:  *  * the gchar pointer returned is constant in the gimp application but must  * be g_free()'d by plug-ins.  */
+comment|/* This one is an untranslated string for gimprc */
+name|gchar
+modifier|*
+name|gimp_unit_get_identifier
+parameter_list|(
+name|GUnit
+name|unit
+parameter_list|)
+function_decl|;
 name|gchar
 modifier|*
 name|gimp_unit_get_symbol
@@ -169,7 +173,6 @@ name|GUnit
 name|unit
 parameter_list|)
 function_decl|;
-specifier|const
 name|gchar
 modifier|*
 name|gimp_unit_get_abbreviation
@@ -178,7 +181,6 @@ name|GUnit
 name|unit
 parameter_list|)
 function_decl|;
-specifier|const
 name|gchar
 modifier|*
 name|gimp_unit_get_singular
@@ -187,7 +189,6 @@ name|GUnit
 name|unit
 parameter_list|)
 function_decl|;
-specifier|const
 name|gchar
 modifier|*
 name|gimp_unit_get_plural

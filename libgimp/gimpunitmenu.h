@@ -98,6 +98,23 @@ DECL|member|optionmenu
 name|GtkOptionMenu
 name|optionmenu
 decl_stmt|;
+comment|/* private stuff */
+DECL|member|selection
+name|GtkWidget
+modifier|*
+name|selection
+decl_stmt|;
+DECL|member|clist
+name|GtkWidget
+modifier|*
+name|clist
+decl_stmt|;
+comment|/* public */
+DECL|member|format
+name|gchar
+modifier|*
+name|format
+decl_stmt|;
 DECL|member|unit
 name|GUnit
 name|unit

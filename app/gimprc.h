@@ -418,6 +418,17 @@ end_comment
 
 begin_function_decl
 name|void
+name|init_parse_buffers
+parameter_list|()
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* this has to be called before any file 				* is parsed 				*/
+end_comment
+
+begin_function_decl
+name|void
 name|parse_gimprc
 parameter_list|(
 name|void

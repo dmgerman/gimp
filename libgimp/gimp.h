@@ -52,6 +52,12 @@ directive|include
 file|"libgimp/parasiteP.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpunit.h"
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -1608,6 +1614,23 @@ parameter_list|,
 name|float
 modifier|*
 name|yresolution
+parameter_list|)
+function_decl|;
+name|void
+name|gimp_image_set_unit
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|,
+name|GUnit
+name|unit
+parameter_list|)
+function_decl|;
+name|GUnit
+name|gimp_image_get_unit
+parameter_list|(
+name|gint32
+name|image_ID
 parameter_list|)
 function_decl|;
 name|gint32

@@ -354,6 +354,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"unitrc.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"xcf.h"
 end_include
 
@@ -2389,6 +2395,13 @@ expr_stmt|;
 name|RESET_BAR
 argument_list|()
 expr_stmt|;
+name|init_parse_buffers
+argument_list|()
+expr_stmt|;
+name|parse_unitrc
+argument_list|()
+expr_stmt|;
+comment|/*  this needs to be done before gimprc loading */
 name|parse_gimprc
 argument_list|()
 expr_stmt|;
@@ -2809,6 +2822,9 @@ name|menus_quit
 argument_list|()
 expr_stmt|;
 name|tile_swap_exit
+argument_list|()
+expr_stmt|;
+name|save_unitrc
 argument_list|()
 expr_stmt|;
 comment|/*  Things to do only if there is an interface  */
