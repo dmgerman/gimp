@@ -782,7 +782,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|success
+name|pattern
 condition|)
 name|gimp_context_set_pattern
 argument_list|(

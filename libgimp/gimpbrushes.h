@@ -78,7 +78,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_BRUSHES_PDB_H__ */
+comment|/* __GIMP_BRUSHES_H__ */
 end_comment
 
 end_unit
