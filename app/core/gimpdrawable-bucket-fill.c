@@ -54,55 +54,55 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp.h"
+file|"gimp.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpchannel.h"
+file|"gimpchannel.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpcontext.h"
+file|"gimpcontext.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpdrawable.h"
+file|"gimpdrawable.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpdrawable-bucket-fill.h"
+file|"gimpdrawable-bucket-fill.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpimage.h"
+file|"gimpimage.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-contiguous-region.h"
+file|"gimpimage-contiguous-region.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-mask.h"
+file|"gimpimage-mask.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimppattern.h"
+file|"gimppattern.h"
 end_include
 
 begin_include

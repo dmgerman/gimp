@@ -190,6 +190,22 @@ operator|->
 name|disp_count
 operator|++
 expr_stmt|;
+name|g_print
+argument_list|(
+literal|"%s: gimage->ref_count before refing: %d\n"
+argument_list|,
+name|G_GNUC_FUNCTION
+argument_list|,
+name|G_OBJECT
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+operator|->
+name|ref_count
+argument_list|)
+expr_stmt|;
 name|g_object_ref
 argument_list|(
 name|G_OBJECT
@@ -359,6 +375,22 @@ name|gimage
 operator|->
 name|disp_count
 operator|--
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|"%s: gimage->ref_count before unrefing: %d\n"
+argument_list|,
+name|G_GNUC_FUNCTION
+argument_list|,
+name|G_OBJECT
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+operator|->
+name|ref_count
+argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(

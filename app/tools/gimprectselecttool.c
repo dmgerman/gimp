@@ -126,12 +126,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tool_options.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tool_manager.h"
 end_include
 
@@ -157,7 +151,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ee44850103
+DECL|enum|__anon27ba274d0103
 block|{
 DECL|enumerator|RECT_SELECT
 name|RECT_SELECT

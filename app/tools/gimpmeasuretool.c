@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/info-dialog.h"
+file|"core/gimptoolinfo.h"
 end_include
 
 begin_include
@@ -79,6 +79,12 @@ begin_include
 include|#
 directive|include
 file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gui/info-dialog.h"
 end_include
 
 begin_include
@@ -892,6 +898,10 @@ name|GimpMeasureTool
 modifier|*
 name|measure_tool
 decl_stmt|;
+name|MeasureOptions
+modifier|*
+name|options
+decl_stmt|;
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -905,6 +915,18 @@ name|GIMP_MEASURE_TOOL
 argument_list|(
 name|tool
 argument_list|)
+expr_stmt|;
+name|options
+operator|=
+operator|(
+name|MeasureOptions
+operator|*
+operator|)
+name|tool
+operator|->
+name|tool_info
+operator|->
+name|tool_options
 expr_stmt|;
 name|shell
 operator|=
@@ -1558,7 +1580,7 @@ operator|!
 name|measure_tool_info
 operator|&&
 operator|(
-name|measure_tool_options
+name|options
 operator|->
 name|use_info_window
 operator|||
@@ -1763,6 +1785,10 @@ name|GimpMeasureTool
 modifier|*
 name|measure_tool
 decl_stmt|;
+name|MeasureOptions
+modifier|*
+name|options
+decl_stmt|;
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -1806,6 +1832,18 @@ name|GIMP_MEASURE_TOOL
 argument_list|(
 name|tool
 argument_list|)
+expr_stmt|;
+name|options
+operator|=
+operator|(
+name|MeasureOptions
+operator|*
+operator|)
+name|tool
+operator|->
+name|tool_info
+operator|->
+name|tool_options
 expr_stmt|;
 name|shell
 operator|=
@@ -2634,11 +2672,6 @@ literal|"degrees"
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|measure_tool_options
-condition|)
-block|{
 name|g_snprintf
 argument_list|(
 name|distance_buf
@@ -2677,7 +2710,6 @@ literal|"degrees"
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 else|else
 comment|/* show real world units */
@@ -2878,15 +2910,8 @@ argument_list|(
 name|format_str
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|measure_tool_options
-condition|)
-block|{
-name|gchar
-modifier|*
 name|format_str
-init|=
+operator|=
 name|g_strdup_printf
 argument_list|(
 literal|"%%.%df %s"
@@ -2909,7 +2934,7 @@ operator|->
 name|unit
 argument_list|)
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|g_snprintf
 argument_list|(
 name|distance_buf
@@ -2948,7 +2973,6 @@ argument_list|(
 name|format_str
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 comment|/*  show info in statusbar  */
 name|gtk_statusbar_pop

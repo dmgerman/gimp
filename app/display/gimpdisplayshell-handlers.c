@@ -529,7 +529,7 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
-name|gimp_display_shell_update_title
+name|gimp_display_shell_update_title_handler
 argument_list|,
 name|shell
 argument_list|)

@@ -77,37 +77,37 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp.h"
+file|"gimp.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpcoreconfig.h"
+file|"gimpcoreconfig.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpdatafiles.h"
+file|"gimpdatafiles.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimplist.h"
+file|"gimplist.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpmoduleinfo.h"
+file|"gimpmoduleinfo.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpmodules.h"
+file|"gimpmodules.h"
 end_include
 
 begin_include
@@ -1047,7 +1047,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4025720108
+DECL|struct|__anon2bd43cc50108
 block|{
 DECL|member|search_key
 specifier|const

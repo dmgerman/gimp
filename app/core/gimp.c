@@ -1594,19 +1594,19 @@ argument_list|,
 name|context
 argument_list|)
 expr_stmt|;
-name|gimp_set_current_context
-argument_list|(
-name|gimp
-argument_list|,
-name|context
-argument_list|)
-expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|G_OBJECT
 argument_list|(
 name|context
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_set_current_context
+argument_list|(
+name|gimp
+argument_list|,
+name|context
 argument_list|)
 expr_stmt|;
 comment|/*  register all internal procedures  */

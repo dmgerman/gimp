@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimptoolinfo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpsmudgetool.h"
 end_include
 
@@ -670,6 +676,10 @@ name|PaintState
 name|state
 parameter_list|)
 block|{
+name|SmudgeOptions
+modifier|*
+name|options
+decl_stmt|;
 comment|/* initialization fails if the user starts outside the drawable */
 specifier|static
 name|gboolean
@@ -677,6 +687,21 @@ name|initialized
 init|=
 name|FALSE
 decl_stmt|;
+name|options
+operator|=
+operator|(
+name|SmudgeOptions
+operator|*
+operator|)
+name|GIMP_TOOL
+argument_list|(
+name|paint_tool
+argument_list|)
+operator|->
+name|tool_info
+operator|->
+name|tool_options
+expr_stmt|;
 switch|switch
 condition|(
 name|state
@@ -707,13 +732,13 @@ name|gimp_smudge_tool_motion
 argument_list|(
 name|paint_tool
 argument_list|,
-name|smudge_options
+name|options
 operator|->
 name|paint_options
 operator|.
 name|pressure_options
 argument_list|,
-name|smudge_options
+name|options
 operator|->
 name|rate
 argument_list|,
