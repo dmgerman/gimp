@@ -78,10 +78,10 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0b04ad0108
+DECL|struct|__anon27bf53a90108
 block|{
 DECL|member|code
-name|__u16
+name|guint16
 name|code
 decl_stmt|;
 DECL|member|name
@@ -418,7 +418,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0b04ad0203
+DECL|enum|__anon27bf53a90203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
