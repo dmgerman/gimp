@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac4281b0108
+DECL|struct|__anon288984040108
 block|{
 DECL|member|interlaced
 name|gint
@@ -126,8 +126,8 @@ DECL|member|time
 name|gint
 name|time
 decl_stmt|;
-DECL|typedef|PngSaveVals
 block|}
+DECL|typedef|PngSaveVals
 name|PngSaveVals
 typedef|;
 end_typedef
@@ -1095,7 +1095,7 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-comment|/* 	   * Possibly retrieve data... 	   */
+comment|/*            * Possibly retrieve data...            */
 name|gimp_get_data
 argument_list|(
 literal|"file_png_save"
@@ -1104,7 +1104,7 @@ operator|&
 name|pngvals
 argument_list|)
 expr_stmt|;
-comment|/* 	   * Then acquire information with a dialog... 	   */
+comment|/*            * Then acquire information with a dialog...            */
 if|if
 condition|(
 operator|!
@@ -1119,7 +1119,7 @@ break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-comment|/* 	   * Make sure all the arguments are there! 	   */
+comment|/*            * Make sure all the arguments are there!            */
 if|if
 condition|(
 name|nparams
@@ -1249,7 +1249,7 @@ break|break;
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-comment|/* 	   * Possibly retrieve data... 	   */
+comment|/*            * Possibly retrieve data...            */
 name|gimp_get_data
 argument_list|(
 literal|"file_png_save"
@@ -1456,7 +1456,7 @@ modifier|*
 name|alpha_ptr
 decl_stmt|;
 comment|/* Temporary pointer */
-comment|/*   * PNG 0.89 and newer have a sane, forwards compatible constructor.   * Some SGI IRIX users will not have a new enough version though   */
+comment|/*    * PNG 0.89 and newer have a sane, forwards compatible constructor.    * Some SGI IRIX users will not have a new enough version though    */
 if|#
 directive|if
 name|PNG_LIBPNG_VER
@@ -1552,7 +1552,7 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
-comment|/*   * Open the file and initialize the PNG read "engine"...   */
+comment|/*    * Open the file and initialize the PNG read "engine"...    */
 name|fp
 operator|=
 name|fopen
@@ -1640,7 +1640,7 @@ argument_list|(
 name|progress
 argument_list|)
 expr_stmt|;
-comment|/*   * Get the image dimensions and create the image...   */
+comment|/*    * Get the image dimensions and create the image...    */
 name|png_read_info
 argument_list|(
 name|pp
@@ -1648,7 +1648,7 @@ argument_list|,
 name|info
 argument_list|)
 expr_stmt|;
-comment|/*   * Latest attempt, this should be my best yet :)   */
+comment|/*    * Latest attempt, this should be my best yet :)    */
 if|if
 condition|(
 name|info
@@ -1706,7 +1706,7 @@ name|pp
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*   * Expand G+tRNS to GA, RGB+tRNS to RGBA   */
+comment|/*    * Expand G+tRNS to GA, RGB+tRNS to RGBA    */
 if|if
 condition|(
 name|info
@@ -1730,7 +1730,7 @@ name|pp
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*   * Turn on interlace handling... libpng returns just 1 (ie single pass)   * if the image is not interlaced   */
+comment|/*    * Turn on interlace handling... libpng returns just 1 (ie single pass)    * if the image is not interlaced    */
 name|num_passes
 operator|=
 name|png_set_interlace_handling
@@ -1738,7 +1738,7 @@ argument_list|(
 name|pp
 argument_list|)
 expr_stmt|;
-comment|/*   * Special handling for INDEXED + tRNS (transparency palette)   */
+comment|/*    * Special handling for INDEXED + tRNS (transparency palette)    */
 if|#
 directive|if
 name|PNG_LIBPNG_VER
@@ -1843,7 +1843,7 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/* PNG_LIBPNG_VER> 99 */
-comment|/*   * Update the info structures after the transformations take effect   */
+comment|/*    * Update the info structures after the transformations take effect    */
 name|png_read_update_info
 argument_list|(
 name|pp
@@ -1996,7 +1996,7 @@ argument_list|()
 expr_stmt|;
 block|}
 empty_stmt|;
-comment|/*   * Create the "background" layer to hold the image...   */
+comment|/*    * Create the "background" layer to hold the image...    */
 name|layer
 operator|=
 name|gimp_layer_new
@@ -2050,7 +2050,7 @@ name|PNG_INFO_gAMA
 argument_list|)
 condition|)
 block|{
-comment|/* I sure would like to handle this, but there's no mechanism to        do so in Gimp :( */
+comment|/* I sure would like to handle this, but there's no mechanism to          do so in Gimp :( */
 block|}
 if|if
 condition|(
@@ -2140,7 +2140,7 @@ argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;
-comment|/*   * Load the colormap as necessary...   */
+comment|/*    * Load the colormap as necessary...    */
 name|empty
 operator|=
 literal|0
@@ -2261,7 +2261,7 @@ endif|#
 directive|endif
 comment|/* PNG_LIBPNG_VER> 99 */
 block|}
-comment|/*   * Get the drawable and set the pixel region for our load...   */
+comment|/*    * Get the drawable and set the pixel region for our load...    */
 name|drawable
 operator|=
 name|gimp_drawable_get
@@ -2293,7 +2293,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/*   * Temporary buffer...   */
+comment|/*    * Temporary buffer...    */
 name|tile_height
 operator|=
 name|gimp_tile_height
@@ -2368,7 +2368,7 @@ name|pass
 operator|++
 control|)
 block|{
-comment|/*     * This works if you are only reading one row at a time...     */
+comment|/*        * This works if you are only reading one row at a time...        */
 for|for
 control|(
 name|begin
@@ -2499,7 +2499,7 @@ block|}
 empty_stmt|;
 block|}
 empty_stmt|;
-comment|/*   * Done with the file...   */
+comment|/*    * Done with the file...    */
 name|png_read_end
 argument_list|(
 name|pp
@@ -2733,7 +2733,7 @@ name|pixel
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*   * Update the display...   */
+comment|/*    * Update the display...    */
 name|gimp_drawable_flush
 argument_list|(
 name|drawable
@@ -2906,7 +2906,7 @@ literal|256
 index|]
 decl_stmt|;
 comment|/* Re-mapping for the palette */
-comment|/*   * PNG 0.89 and newer have a sane, forwards compatible constructor.   * Some SGI IRIX users will not have a new enough version though   */
+comment|/*    * PNG 0.89 and newer have a sane, forwards compatible constructor.    * Some SGI IRIX users will not have a new enough version though    */
 if|#
 directive|if
 name|PNG_LIBPNG_VER
@@ -2996,7 +2996,7 @@ return|return
 literal|0
 return|;
 block|}
-comment|/*   * Open the file and initialize the PNG write "engine"...   */
+comment|/*    * Open the file and initialize the PNG write "engine"...    */
 name|fp
 operator|=
 name|fopen
@@ -3087,7 +3087,7 @@ argument_list|(
 name|progress
 argument_list|)
 expr_stmt|;
-comment|/*   * Get the drawable for the current image...   */
+comment|/*    * Get the drawable for the current image...    */
 name|drawable
 operator|=
 name|gimp_drawable_get
@@ -3102,7 +3102,7 @@ argument_list|(
 name|drawable_ID
 argument_list|)
 expr_stmt|;
-comment|/*   * Set the image dimensions, bit depth, interlacing and compression   */
+comment|/*    * Set the image dimensions, bit depth, interlacing and compression    */
 name|png_set_compression_level
 argument_list|(
 name|pp
@@ -3142,7 +3142,7 @@ name|pngvals
 operator|.
 name|interlaced
 expr_stmt|;
-comment|/*    * Initialise remap[]   */
+comment|/*     * Initialise remap[]    */
 for|for
 control|(
 name|i
@@ -3165,7 +3165,7 @@ operator|=
 name|i
 expr_stmt|;
 block|}
-comment|/*   * Set color type and remember bytes per pixel count    */
+comment|/*    * Set color type and remember bytes per pixel count     */
 switch|switch
 condition|(
 name|type
@@ -3309,7 +3309,7 @@ literal|0
 return|;
 block|}
 empty_stmt|;
-comment|/*   * Fix bit depths for (possibly) smaller colormap images   */
+comment|/*    * Fix bit depths for (possibly) smaller colormap images    */
 if|if
 condition|(
 name|info
@@ -3655,7 +3655,7 @@ argument_list|,
 name|info
 argument_list|)
 expr_stmt|;
-comment|/*   * Turn on interlace handling...   */
+comment|/*    * Turn on interlace handling...    */
 if|if
 condition|(
 name|pngvals
@@ -3674,7 +3674,7 @@ name|num_passes
 operator|=
 literal|1
 expr_stmt|;
-comment|/*   * Convert unpacked pixels to packed if necessary   */
+comment|/*    * Convert unpacked pixels to packed if necessary    */
 if|if
 condition|(
 name|info
@@ -3694,7 +3694,7 @@ argument_list|(
 name|pp
 argument_list|)
 expr_stmt|;
-comment|/*   * Allocate memory for "tile_height" rows and save the image...   */
+comment|/*    * Allocate memory for "tile_height" rows and save the image...    */
 name|tile_height
 operator|=
 name|gimp_tile_height
@@ -4082,7 +4082,7 @@ argument_list|(
 name|pixels
 argument_list|)
 expr_stmt|;
-comment|/*   * Done with the file...   */
+comment|/*    * Done with the file...    */
 name|free
 argument_list|(
 name|pp
@@ -4136,9 +4136,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|respin_cmap (png_structp pp,png_infop info,guchar * remap,gint32 image_ID,GimpDrawable * drawable)
 specifier|static
 name|void
+DECL|function|respin_cmap (png_structp pp,png_infop info,guchar * remap,gint32 image_ID,GimpDrawable * drawable)
 name|respin_cmap
 parameter_list|(
 name|png_structp
@@ -4307,7 +4307,7 @@ operator|!=
 operator|-
 literal|1
 condition|)
-comment|/* we have a winner for a transparent                             * index - do like gif2png and swap                             * index 0 and index transparent */
+comment|/* we have a winner for a transparent                                   * index - do like gif2png and swap                                   * index 0 and index transparent */
 block|{
 name|png_color
 name|palette
