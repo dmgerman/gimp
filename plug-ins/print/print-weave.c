@@ -5022,7 +5022,7 @@ literal|'\n'
 argument_list|)
 expr_stmt|;
 block|}
-comment|//putchar('\n');
+comment|/* putchar('\n'); */
 block|}
 return|return
 literal|0

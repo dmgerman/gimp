@@ -51,7 +51,7 @@ comment|/*#include<endian.h>*/
 end_comment
 
 begin_typedef
-DECL|enum|__anon289347890103
+DECL|enum|__anon278c134e0103
 typedef|typedef
 enum|enum
 block|{
@@ -2832,7 +2832,7 @@ literal|14
 block|,
 literal|0
 block|,
-literal|24
+literal|30
 block|,
 literal|1
 block|,
@@ -3048,7 +3048,7 @@ literal|9
 block|,
 literal|0
 block|,
-literal|24
+literal|30
 block|,
 literal|1
 block|,
@@ -3463,7 +3463,7 @@ literal|9
 block|,
 literal|0
 block|,
-literal|24
+literal|30
 block|,
 literal|1
 block|,
@@ -3566,7 +3566,7 @@ literal|9
 block|,
 literal|0
 block|,
-literal|24
+literal|30
 block|,
 literal|1
 block|,
@@ -3671,7 +3671,7 @@ literal|9
 block|,
 literal|0
 block|,
-literal|24
+literal|30
 block|,
 literal|1
 block|,
@@ -6085,7 +6085,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon289347890208
+DECL|struct|__anon278c134e0208
 typedef|typedef
 struct|struct
 block|{
@@ -6332,7 +6332,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon289347890308
+DECL|struct|__anon278c134e0308
 typedef|typedef
 struct|struct
 block|{
@@ -6373,7 +6373,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon289347890408
+DECL|struct|__anon278c134e0408
 typedef|typedef
 struct|struct
 block|{
@@ -17720,7 +17720,7 @@ begin_typedef
 typedef|typedef
 struct|struct
 comment|/* Weave parameters for a specific row */
-DECL|struct|__anon289347890508
+DECL|struct|__anon278c134e0508
 block|{
 DECL|member|row
 name|int
@@ -17777,7 +17777,7 @@ begin_typedef
 typedef|typedef
 struct|struct
 comment|/* Weave parameters for a specific pass */
-DECL|struct|__anon289347890608
+DECL|struct|__anon278c134e0608
 block|{
 DECL|member|pass
 name|int
@@ -17812,7 +17812,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|union|__anon28934789070a
+DECL|union|__anon278c134e070a
 typedef|typedef
 union|union
 block|{
@@ -17826,7 +17826,7 @@ literal|6
 index|]
 decl_stmt|;
 comment|/* (really pass) */
-DECL|struct|__anon289347890808
+DECL|struct|__anon278c134e0808
 struct|struct
 block|{
 DECL|member|k
@@ -17870,7 +17870,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|union|__anon28934789090a
+DECL|union|__anon278c134e090a
 typedef|typedef
 union|union
 block|{
@@ -17883,7 +17883,7 @@ literal|6
 index|]
 decl_stmt|;
 comment|/* (really pass) */
-DECL|struct|__anon289347890a08
+DECL|struct|__anon278c134e0a08
 struct|struct
 block|{
 DECL|member|k
@@ -17921,7 +17921,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|union|__anon289347890b0a
+DECL|union|__anon278c134e0b0a
 typedef|typedef
 union|union
 block|{
@@ -17935,7 +17935,7 @@ index|[
 literal|6
 index|]
 decl_stmt|;
-DECL|struct|__anon289347890c08
+DECL|struct|__anon278c134e0c08
 struct|struct
 block|{
 DECL|member|k
@@ -17985,7 +17985,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon289347890d08
+DECL|struct|__anon278c134e0d08
 typedef|typedef
 struct|struct
 block|{

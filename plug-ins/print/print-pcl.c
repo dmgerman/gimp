@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278c72260108
+DECL|struct|__anon2b8b49d10108
 block|{
 DECL|member|pcl_name
 name|char
@@ -1118,7 +1118,7 @@ comment|/*  * Printer capability data  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon278c72260208
+DECL|struct|__anon2b8b49d10208
 typedef|typedef
 struct|struct
 block|{
@@ -6501,6 +6501,34 @@ name|out_height
 operator|/
 literal|72
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|DEBUG
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+literal|"left %d margin %d top %d margin %d width %d height %d\n"
+argument_list|,
+name|left
+argument_list|,
+name|caps
+operator|.
+name|left_margin
+argument_list|,
+name|top
+argument_list|,
+name|caps
+operator|.
+name|top_margin
+argument_list|,
+name|out_width
+argument_list|,
+name|out_height
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 name|fprintf
 argument_list|(
 name|prn
@@ -6521,7 +6549,13 @@ literal|"\033&a%dV"
 argument_list|,
 literal|10
 operator|*
+operator|(
 name|top
+operator|+
+name|caps
+operator|.
+name|top_margin
+operator|)
 argument_list|)
 expr_stmt|;
 comment|/* Set top raster position */
