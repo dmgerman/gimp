@@ -3580,6 +3580,16 @@ operator|&&
 name|raw_filename
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|strlen
+argument_list|(
+name|raw_filename
+argument_list|)
+operator|==
+literal|0
+condition|)
+return|return;
 name|err
 operator|=
 name|stat
