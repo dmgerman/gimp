@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288af6170103
+DECL|enum|__anon2c4ecd110103
 block|{
 DECL|enumerator|PATH_CHANGED
 name|PATH_CHANGED
@@ -69,7 +69,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon288af6170203
+DECL|enum|__anon2c4ecd110203
 block|{
 DECL|enumerator|COLUMN_UTF8
 name|COLUMN_UTF8
@@ -2959,18 +2959,9 @@ return|return;
 block|}
 name|utf8
 operator|=
-name|g_filename_to_utf8
+name|g_filename_display_name
 argument_list|(
 name|dir
-argument_list|,
-operator|-
-literal|1
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 if|if

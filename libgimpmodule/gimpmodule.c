@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b94e0620103
+DECL|enum|__anon27de1d1a0103
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -594,6 +594,18 @@ name|gimp_module
 operator|->
 name|verbose
 condition|)
+block|{
+name|gchar
+modifier|*
+name|name
+init|=
+name|g_filename_display_name
+argument_list|(
+name|gimp_module
+operator|->
+name|filename
+argument_list|)
+decl_stmt|;
 name|g_print
 argument_list|(
 name|_
@@ -601,14 +613,15 @@ argument_list|(
 literal|"Loading module: '%s'\n"
 argument_list|)
 argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|gimp_module
-operator|->
-name|filename
-argument_list|)
+name|name
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|name
+argument_list|)
+expr_stmt|;
+block|}
 if|if
 condition|(
 operator|!
@@ -937,20 +950,11 @@ condition|)
 block|{
 name|gchar
 modifier|*
-name|filename_utf8
+name|name
 init|=
-name|g_filename_to_utf8
+name|g_filename_display_name
 argument_list|(
 name|filename
-argument_list|,
-operator|-
-literal|1
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 decl_stmt|;
 name|g_print
@@ -960,12 +964,12 @@ argument_list|(
 literal|"Skipping module: '%s'\n"
 argument_list|)
 argument_list|,
-name|filename_utf8
+name|name
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|filename_utf8
+name|name
 argument_list|)
 expr_stmt|;
 block|}
