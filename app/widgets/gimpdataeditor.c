@@ -1031,10 +1031,9 @@ modifier|*
 name|editor
 parameter_list|)
 block|{
-comment|/* TODO */
 name|g_print
 argument_list|(
-literal|"Save clicked\n"
+literal|"TODO: implement save\n"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1055,10 +1054,9 @@ modifier|*
 name|editor
 parameter_list|)
 block|{
-comment|/* TODO */
 name|g_print
 argument_list|(
-literal|"Revert clicked\n"
+literal|"TODO: implement revert\n"
 argument_list|)
 expr_stmt|;
 block|}

@@ -687,7 +687,11 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-comment|/* TODO */
+name|g_print
+argument_list|(
+literal|"TODO: implement image raise\n"
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_function
