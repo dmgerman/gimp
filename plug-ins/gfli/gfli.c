@@ -546,35 +546,6 @@ block|{
 comment|/*    * Load/save procedures    */
 name|gimp_install_procedure
 argument_list|(
-literal|"file_fli_load_frames"
-argument_list|,
-literal|"load FLI-movies"
-argument_list|,
-literal|"This is an experimantal plug-in to handle FLI movies"
-argument_list|,
-literal|"Jens Ch. Restemeier"
-argument_list|,
-literal|"Jens Ch. Restemeier"
-argument_list|,
-literal|"1997"
-argument_list|,
-literal|"<Load>/FLI"
-argument_list|,
-name|NULL
-argument_list|,
-name|PROC_PLUG_IN
-argument_list|,
-name|nload_args
-argument_list|,
-name|nload_return_vals
-argument_list|,
-name|load_args
-argument_list|,
-name|load_return_vals
-argument_list|)
-expr_stmt|;
-name|gimp_install_procedure
-argument_list|(
 literal|"file_fli_load"
 argument_list|,
 literal|"load FLI-movies"
@@ -791,16 +762,11 @@ name|STATUS_EXECUTION_ERROR
 expr_stmt|;
 if|if
 condition|(
-name|strncmp
+name|strcmp
 argument_list|(
 name|name
 argument_list|,
 literal|"file_fli_load"
-argument_list|,
-name|strlen
-argument_list|(
-literal|"file_fli_load"
-argument_list|)
 argument_list|)
 operator|==
 literal|0
