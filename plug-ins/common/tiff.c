@@ -64,7 +64,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295445040108
+DECL|struct|__anon27f307c90108
 block|{
 DECL|member|compression
 name|gint
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295445040208
+DECL|struct|__anon27f307c90208
 block|{
 DECL|member|ID
 name|gint32
@@ -1856,22 +1856,69 @@ name|photomet
 argument_list|)
 condition|)
 block|{
+name|uint16
+name|compress
+decl_stmt|;
+if|if
+condition|(
+name|TIFFGetField
+argument_list|(
+name|tif
+argument_list|,
+name|TIFFTAG_COMPRESSION
+argument_list|,
+operator|&
+name|compress
+argument_list|)
+operator|&&
+operator|(
+name|compress
+operator|==
+name|COMPRESSION_CCITTFAX3
+operator|||
+name|compress
+operator|==
+name|COMPRESSION_CCITTFAX4
+operator|||
+name|compress
+operator|==
+name|COMPRESSION_CCITTRLE
+operator|||
+name|compress
+operator|==
+name|COMPRESSION_CCITTRLEW
+operator|)
+condition|)
+block|{
+name|g_message
+argument_list|(
+literal|"Could not get photometric from '%s'. "
+literal|"Image is CCITT compressed, assuming min-is-white"
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
+name|photomet
+operator|=
+name|PHOTOMETRIC_MINISWHITE
+expr_stmt|;
+block|}
+else|else
+block|{
 name|g_message
 argument_list|(
 literal|"Could not get photometric from '%s'. "
 literal|"Assuming min-is-black"
 argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
 name|filename
 argument_list|)
-argument_list|)
 expr_stmt|;
-comment|/* old AppleScan software misses out the photometric tag (and            * incidentally assumes min-is-white, but xv assumes min-is-black,            * so we follow xv's lead.  It's not much hardship to invert the            * image later). */
+comment|/* old AppleScan software misses out the photometric tag (and                * incidentally assumes min-is-white, but xv assumes                * min-is-black, so we follow xv's lead.  It's not much hardship                * to invert the image later). */
 name|photomet
 operator|=
 name|PHOTOMETRIC_MINISBLACK
 expr_stmt|;
+block|}
 block|}
 comment|/* test if the extrasample represents an associated alpha channel... */
 if|if
