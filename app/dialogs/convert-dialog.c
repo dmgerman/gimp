@@ -102,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d9fa8d0108
+DECL|struct|__anon27a3a7a30108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -2460,8 +2460,6 @@ name|gimage
 operator|->
 name|gimp
 argument_list|,
-name|NULL
-argument_list|,
 name|_
 argument_list|(
 literal|"Select Custom Palette"
@@ -2529,6 +2527,8 @@ argument_list|(
 name|dialog
 operator|->
 name|palette_select
+operator|->
+name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -507,7 +507,7 @@ argument_list|,
 name|FALSE
 argument_list|,
 comment|/* 				  "NULL", null_callback, 				  view, NULL, NULL, FALSE, FALSE, 				*/
-literal|"_delete_event_"
+name|GTK_STOCK_CLOSE
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,

@@ -16,22 +16,6 @@ directive|define
 name|__PALETTE_SELECT_H__
 end_define
 
-begin_define
-DECL|macro|SM_PREVIEW_WIDTH
-define|#
-directive|define
-name|SM_PREVIEW_WIDTH
-value|(96 + 2)
-end_define
-
-begin_define
-DECL|macro|SM_PREVIEW_HEIGHT
-define|#
-directive|define
-name|SM_PREVIEW_HEIGHT
-value|(33 + 2)
-end_define
-
 begin_typedef
 DECL|typedef|PaletteSelect
 typedef|typedef
@@ -78,10 +62,6 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|,
-name|GimpContext
-modifier|*
-name|context
 parameter_list|,
 specifier|const
 name|gchar

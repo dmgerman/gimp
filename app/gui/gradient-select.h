@@ -67,10 +67,6 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GimpContext
-modifier|*
-name|context
-parameter_list|,
 specifier|const
 name|gchar
 modifier|*
