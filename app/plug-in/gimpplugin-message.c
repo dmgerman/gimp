@@ -11771,7 +11771,7 @@ name|plug_in_proc_def_destroy
 argument_list|(
 name|proc_def
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
