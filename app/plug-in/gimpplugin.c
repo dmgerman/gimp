@@ -1980,6 +1980,9 @@ name|g_source_set_callback
 argument_list|(
 name|source
 argument_list|,
+operator|(
+name|GSourceFunc
+operator|)
 name|plug_in_recv_message
 argument_list|,
 name|plug_in
