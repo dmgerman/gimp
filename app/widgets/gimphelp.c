@@ -371,18 +371,12 @@ block|{
 name|GimpIdleHelp
 modifier|*
 name|idle_help
+init|=
+name|data
 decl_stmt|;
 name|GimpHelpBrowserType
 name|browser
 decl_stmt|;
-name|idle_help
-operator|=
-operator|(
-name|GimpIdleHelp
-operator|*
-operator|)
-name|data
-expr_stmt|;
 name|browser
 operator|=
 name|GIMP_GUI_CONFIG
@@ -399,12 +393,6 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|DEBUG_HELP
-if|if
-condition|(
-name|idle_help
-operator|->
-name|help_domain
-condition|)
 name|g_print
 argument_list|(
 literal|"Help Domain: %s\n"
@@ -412,38 +400,27 @@ argument_list|,
 name|idle_help
 operator|->
 name|help_domain
-argument_list|)
-expr_stmt|;
-else|else
-name|g_print
-argument_list|(
-literal|"Help Domain: NULL\n"
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
+condition|?
 name|idle_help
 operator|->
-name|help_id
-condition|)
+name|help_domain
+else|:
+literal|"NULL"
+argument_list|)
+expr_stmt|;
 name|g_print
 argument_list|(
-literal|"Help ID: %s\n"
+literal|"Help ID: %s\n\n"
 argument_list|,
 name|idle_help
 operator|->
 name|help_id
-argument_list|)
-expr_stmt|;
-else|else
-name|g_print
-argument_list|(
-literal|"Help ID: NULL\n"
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"\n"
+condition|?
+name|idle_help
+operator|->
+name|help_id
+else|:
+literal|"NULL"
 argument_list|)
 expr_stmt|;
 endif|#
