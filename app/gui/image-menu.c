@@ -4439,6 +4439,14 @@ name|MENU_BRANCH
 argument_list|(
 name|N_
 argument_list|(
+literal|"/Filters/Colors/_Map"
+argument_list|)
+argument_list|)
+block|,
+name|MENU_BRANCH
+argument_list|(
+name|N_
+argument_list|(
 literal|"/Filters/_Noise"
 argument_list|)
 argument_list|)
