@@ -1632,6 +1632,11 @@ name|gchar
 modifier|*
 name|uri
 decl_stmt|;
+name|gboolean
+name|uri_set
+init|=
+name|FALSE
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_FILE_DIALOG
@@ -1680,6 +1685,8 @@ if|if
 condition|(
 name|uri
 condition|)
+name|uri_set
+operator|=
 name|gtk_file_chooser_set_uri
 argument_list|(
 name|GTK_FILE_CHOOSER
@@ -1690,7 +1697,11 @@ argument_list|,
 name|uri
 argument_list|)
 expr_stmt|;
-else|else
+if|if
+condition|(
+operator|!
+name|uri_set
+condition|)
 name|gtk_file_chooser_set_current_name
 argument_list|(
 name|GTK_FILE_CHOOSER

@@ -165,14 +165,6 @@ function_decl|;
 end_function_decl
 
 begin_decl_stmt
-specifier|extern
-name|gchar
-modifier|*
-name|prog_name
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|message_boxes
 specifier|static
 name|GList
@@ -2524,7 +2516,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2a2fcdb90108
+DECL|struct|__anon27c0b41f0108
 block|{
 DECL|member|modifiers
 name|GdkModifierType

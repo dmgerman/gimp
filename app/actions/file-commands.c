@@ -581,9 +581,7 @@ specifier|const
 name|gchar
 modifier|*
 name|uri
-decl_stmt|;
-name|uri
-operator|=
+init|=
 name|gimp_object_get_name
 argument_list|(
 name|GIMP_OBJECT
@@ -593,7 +591,7 @@ operator|->
 name|gimage
 argument_list|)
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 operator|!
