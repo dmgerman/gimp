@@ -6417,9 +6417,12 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
+specifier|static
 name|PangoLayout
 modifier|*
 name|layout
+init|=
+name|NULL
 decl_stmt|;
 name|gchar
 name|buffer
@@ -6598,22 +6601,24 @@ name|yresolution
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* one static layout for all displays should be fine */
+if|if
+condition|(
+operator|!
+name|layout
+condition|)
 name|layout
 operator|=
-name|GTK_LABEL
+name|gtk_widget_create_pango_layout
 argument_list|(
 name|gdisp
 operator|->
 name|cursor_label
+argument_list|,
+name|buffer
 argument_list|)
-operator|->
-name|layout
 expr_stmt|;
-if|if
-condition|(
-name|layout
-condition|)
-block|{
+else|else
 name|pango_layout_set_text
 argument_list|(
 name|layout
@@ -6634,7 +6639,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  find out how many pixels the label's parent frame is bigger than        *  the label itself        */
+comment|/*  find out how many pixels the label's parent frame is bigger than    *  the label itself    */
 name|label_frame_size_difference
 operator|=
 name|gdisp
@@ -6688,7 +6693,6 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-block|}
 name|gdisplay_update_cursor
 argument_list|(
 name|gdisp
