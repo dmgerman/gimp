@@ -1816,7 +1816,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2a3e6e0108
+DECL|struct|__anon2af8af260108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1863,7 +1863,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2a3e6e0208
+DECL|struct|__anon2af8af260208
 block|{
 DECL|member|ncolors
 name|long
@@ -1882,7 +1882,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2a3e6e0308
+DECL|struct|__anon2af8af260308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -1893,6 +1893,10 @@ DECL|member|gimage_ptr
 name|void
 modifier|*
 name|gimage_ptr
+decl_stmt|;
+DECL|member|gimage_ID
+name|int
+name|gimage_ID
 decl_stmt|;
 DECL|member|dither
 name|int
@@ -2445,6 +2449,14 @@ operator|->
 name|gimage_ptr
 operator|=
 name|gimage_ptr
+expr_stmt|;
+name|dialog
+operator|->
+name|gimage_ID
+operator|=
+name|gimage
+operator|->
+name|ID
 expr_stmt|;
 name|dialog
 operator|->
@@ -3885,6 +3897,16 @@ operator|=
 name|REUSE_PALETTE
 expr_stmt|;
 comment|/*  Convert the image to indexed color  */
+if|if
+condition|(
+name|gimage_get_ID
+argument_list|(
+name|dialog
+operator|->
+name|gimage_ID
+argument_list|)
+condition|)
+block|{
 name|convert_image
 argument_list|(
 operator|(
@@ -3911,6 +3933,7 @@ expr_stmt|;
 name|gdisplays_flush
 argument_list|()
 expr_stmt|;
+block|}
 name|gtk_widget_destroy
 argument_list|(
 name|dialog
