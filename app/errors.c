@@ -172,6 +172,7 @@ argument_list|,
 name|message
 argument_list|)
 expr_stmt|;
+return|return;
 block|}
 name|g_printerr
 argument_list|(

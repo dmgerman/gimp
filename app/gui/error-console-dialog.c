@@ -168,7 +168,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aba78c20103
+DECL|enum|__anon2b29f2520103
 block|{
 DECL|enumerator|ERRORS_ALL
 name|ERRORS_ALL
@@ -559,7 +559,7 @@ argument_list|(
 name|menuitem
 argument_list|)
 expr_stmt|;
-name|g_signal_connect_swapped
+name|g_signal_connect
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -601,7 +601,7 @@ argument_list|(
 name|menuitem
 argument_list|)
 expr_stmt|;
-name|g_signal_connect_swapped
+name|g_signal_connect
 argument_list|(
 name|G_OBJECT
 argument_list|(
