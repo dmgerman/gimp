@@ -90,7 +90,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpcoreconfig.h"
+file|"config/gimpdisplayconfig.h"
 end_include
 
 begin_include
@@ -3042,6 +3042,12 @@ operator|=
 name|gimp_selection_editor_new
 argument_list|(
 name|gimage
+argument_list|,
+name|context
+operator|->
+name|gimp
+operator|->
+name|config
 argument_list|)
 expr_stmt|;
 name|dockable
@@ -3745,6 +3751,15 @@ operator|=
 name|gimp_navigation_view_new
 argument_list|(
 name|shell
+argument_list|,
+name|GIMP_DISPLAY_CONFIG
+argument_list|(
+name|context
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

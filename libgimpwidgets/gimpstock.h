@@ -516,6 +516,11 @@ define|#
 directive|define
 name|GIMP_STOCK_CHANNEL_ALPHA
 value|"gimp-channel-alpha"
+DECL|macro|GIMP_STOCK_TEMPLATE
+define|#
+directive|define
+name|GIMP_STOCK_TEMPLATE
+value|"gimp-template"
 DECL|macro|GIMP_STOCK_IMAGES
 define|#
 directive|define
@@ -632,6 +637,11 @@ define|#
 directive|define
 name|GIMP_STOCK_WILBER_EEK
 value|"gimp-wilber-eek"
+DECL|macro|GIMP_STOCK_TEXTURE
+define|#
+directive|define
+name|GIMP_STOCK_TEXTURE
+value|"gimp-texture"
 name|void
 name|gimp_stock_init
 parameter_list|(

@@ -163,6 +163,10 @@ parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GimpCoreConfig
+modifier|*
+name|config
 parameter_list|)
 function_decl|;
 end_function_decl
