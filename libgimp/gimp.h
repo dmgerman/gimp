@@ -1399,6 +1399,23 @@ modifier|*
 name|name
 parameter_list|)
 function_decl|;
+name|void
+name|gimp_image_set_resolution
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|,
+name|float
+name|resolution
+parameter_list|)
+function_decl|;
+name|float
+name|gimp_image_get_resolution
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|)
+function_decl|;
 comment|/****************************************  *              Guides                  *  ****************************************/
 name|gint32
 name|gimp_image_add_hguide

@@ -40,7 +40,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275f0e890108
+DECL|struct|__anon2b1a8c9d0108
 block|{
 DECL|member|compression
 name|gint
@@ -59,7 +59,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275f0e890208
+DECL|struct|__anon2b1a8c9d0208
 block|{
 DECL|member|run
 name|gint
@@ -1057,7 +1057,7 @@ block|,
 literal|0
 block|}
 decl_stmt|;
-DECL|struct|__anon275f0e890308
+DECL|struct|__anon2b1a8c9d0308
 typedef|typedef
 struct|struct
 block|{
@@ -1283,11 +1283,13 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"TIFF Can't get photometric"
+literal|"TIFF Can't get photometric\nassuming min-is-black"
 argument_list|)
 expr_stmt|;
-name|gimp_quit
-argument_list|()
+comment|/* old AppleScan software misses out the photometric tag (and      * incidentally assumes min-is-white, but xv assumes min-is-black,      * so we follow xv's lead.  It's not much hardship to invert the      * image later). */
+name|photomet
+operator|=
+name|PHOTOMETRIC_MINISBLACK
 expr_stmt|;
 block|}
 comment|/* test if the extrasample represents an associated alpha channel... */
@@ -1499,6 +1501,192 @@ argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;
+comment|/* any resolution info in the file? */
+block|{
+name|float
+name|xres
+init|=
+literal|0
+decl_stmt|,
+name|yres
+init|=
+literal|0
+decl_stmt|;
+name|unsigned
+name|short
+name|units
+decl_stmt|;
+name|float
+name|res
+init|=
+literal|0.0
+decl_stmt|;
+if|if
+condition|(
+name|TIFFGetField
+argument_list|(
+name|tif
+argument_list|,
+name|TIFFTAG_XRESOLUTION
+argument_list|,
+operator|&
+name|xres
+argument_list|)
+condition|)
+block|{
+if|if
+condition|(
+name|TIFFGetField
+argument_list|(
+name|tif
+argument_list|,
+name|TIFFTAG_YRESOLUTION
+argument_list|,
+operator|&
+name|yres
+argument_list|)
+condition|)
+block|{
+if|if
+condition|(
+name|abs
+argument_list|(
+name|xres
+operator|-
+name|yres
+argument_list|)
+operator|>
+literal|1e-5
+condition|)
+name|g_message
+argument_list|(
+literal|"TIFF warning: x resolution differs "
+literal|"from y resolution (%g != %g)\n"
+literal|"Using x resolution\n"
+argument_list|,
+name|xres
+argument_list|,
+name|yres
+argument_list|)
+expr_stmt|;
+name|res
+operator|=
+name|xres
+expr_stmt|;
+if|if
+condition|(
+name|TIFFGetField
+argument_list|(
+name|tif
+argument_list|,
+name|TIFFTAG_RESOLUTIONUNIT
+argument_list|,
+operator|&
+name|units
+argument_list|)
+condition|)
+block|{
+switch|switch
+condition|(
+name|units
+condition|)
+block|{
+case|case
+name|RESUNIT_NONE
+case|:
+comment|/* ImageMagick writes files with this silly resunit */
+name|g_message
+argument_list|(
+literal|"TIFF warning: resolution units meaningless, "
+literal|"forcing 72 dpi\n"
+argument_list|)
+expr_stmt|;
+name|res
+operator|=
+literal|72.0
+expr_stmt|;
+break|break;
+case|case
+name|RESUNIT_INCH
+case|:
+break|break;
+case|case
+name|RESUNIT_CENTIMETER
+case|:
+name|res
+operator|=
+operator|(
+operator|(
+name|float
+operator|)
+name|xres
+operator|)
+operator|*
+literal|2.54
+expr_stmt|;
+break|break;
+default|default:
+name|g_message
+argument_list|(
+literal|"TIFF file error: unknown resolution unit type %d, "
+literal|"assuming dpi\n"
+argument_list|,
+name|units
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+else|else
+block|{
+comment|/* no res unit tag */
+comment|/* old AppleScan software produces these */
+name|g_message
+argument_list|(
+literal|"TIFF warning: resolution specified without\n"
+literal|"any units tag, assuming dpi\n"
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+else|else
+block|{
+comment|/* xres but no yres */
+name|g_message
+argument_list|(
+literal|"TIFF warning: no y resolution info, assuming same as x\n"
+argument_list|)
+expr_stmt|;
+block|}
+comment|/* sanity check, since division by zero later could be embarrassing */
+if|if
+condition|(
+name|res
+operator|<
+literal|1e-5
+condition|)
+block|{
+name|g_message
+argument_list|(
+literal|"TIFF: image resolution is zero: forcing 72 dpi\n"
+argument_list|)
+expr_stmt|;
+name|res
+operator|=
+literal|72.0
+expr_stmt|;
+block|}
+comment|/* now set the new image's resolution info */
+name|gimp_image_set_resolution
+argument_list|(
+name|image
+argument_list|,
+name|res
+argument_list|)
+expr_stmt|;
+block|}
+comment|/* no x res tag => we assume we have no resolution info, so we      * don't care.  Older versions of this plugin used to write files      * with no resolution tags at all. */
+comment|/* TODO: haven't caught the case where yres tag is present, but        not xres.  This is left as an exercise for the reader - they        should feel free to shoot the author of the broken program        that produced the damaged TIFF file in the first place. */
+block|}
 comment|/* Install colormap for INDEXED images only */
 if|if
 condition|(
@@ -3262,6 +3450,50 @@ argument_list|,
 name|PLANARCONFIG_CONTIG
 argument_list|)
 expr_stmt|;
+comment|/* resolution fields */
+block|{
+name|float
+name|resolution
+init|=
+name|gimp_image_get_resolution
+argument_list|(
+name|image
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|resolution
+condition|)
+block|{
+name|TIFFSetField
+argument_list|(
+name|tif
+argument_list|,
+name|TIFFTAG_XRESOLUTION
+argument_list|,
+name|resolution
+argument_list|)
+expr_stmt|;
+name|TIFFSetField
+argument_list|(
+name|tif
+argument_list|,
+name|TIFFTAG_YRESOLUTION
+argument_list|,
+name|resolution
+argument_list|)
+expr_stmt|;
+name|TIFFSetField
+argument_list|(
+name|tif
+argument_list|,
+name|TIFFTAG_RESOLUTIONUNIT
+argument_list|,
+name|RESUNIT_INCH
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 if|if
 condition|(
 name|drawable_type

@@ -509,12 +509,6 @@ literal|'\0'
 operator|)
 condition|)
 block|{
-name|info
-operator|->
-name|position
-operator|=
-literal|0
-expr_stmt|;
 name|count
 operator|=
 name|fread
@@ -561,6 +555,12 @@ name|count
 index|]
 operator|=
 literal|'\0'
+expr_stmt|;
+name|info
+operator|->
+name|position
+operator|=
+literal|0
 expr_stmt|;
 block|}
 name|info

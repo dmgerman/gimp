@@ -139,6 +139,13 @@ index|[
 name|MAX_BUF
 index|]
 decl_stmt|;
+DECL|member|resolution_str
+name|char
+name|resolution_str
+index|[
+name|MAX_BUF
+index|]
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -392,6 +399,15 @@ literal|'\0'
 expr_stmt|;
 name|iwd
 operator|->
+name|resolution_str
+index|[
+literal|0
+index|]
+operator|=
+literal|'\0'
+expr_stmt|;
+name|iwd
+operator|->
 name|scale_str
 index|[
 literal|0
@@ -445,6 +461,21 @@ argument_list|,
 name|iwd
 operator|->
 name|dimensions_str
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|info_dialog_add_field
+argument_list|(
+name|info_win
+argument_list|,
+literal|"Resolution: "
+argument_list|,
+name|iwd
+operator|->
+name|resolution_str
 argument_list|,
 name|NULL
 argument_list|,
@@ -710,6 +741,22 @@ operator|->
 name|gimage
 operator|->
 name|height
+argument_list|)
+expr_stmt|;
+comment|/*  image resolution  */
+name|sprintf
+argument_list|(
+name|iwd
+operator|->
+name|resolution_str
+argument_list|,
+literal|"%g dpi"
+argument_list|,
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|resolution
 argument_list|)
 expr_stmt|;
 comment|/*  zoom ratio  */

@@ -84,11 +84,16 @@ decl_stmt|,
 name|height
 decl_stmt|;
 comment|/*  width and height attributes  */
+DECL|member|resolution
+name|float
+name|resolution
+decl_stmt|;
+comment|/*  image res, in dpi            */
 DECL|member|base_type
 name|int
 name|base_type
 decl_stmt|;
-comment|/*  base gimp_image type             */
+comment|/*  base gimp_image type         */
 DECL|member|cmap
 name|unsigned
 name|char

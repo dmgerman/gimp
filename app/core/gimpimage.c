@@ -461,7 +461,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon28ae29270103
+DECL|enum|__anon28833a810103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -821,6 +821,13 @@ name|comp_preview
 operator|=
 name|NULL
 expr_stmt|;
+name|gimage
+operator|->
+name|resolution
+operator|=
+literal|72.0
+expr_stmt|;
+comment|/* maybe should be rc-supplied default? */
 block|}
 end_function
 
@@ -1315,6 +1322,46 @@ name|RENAME
 index|]
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_image_set_resolution (GimpImage * gimage,float resolution)
+name|gimp_image_set_resolution
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|float
+name|resolution
+parameter_list|)
+block|{
+name|gimage
+operator|->
+name|resolution
+operator|=
+name|resolution
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|float
+DECL|function|gimp_image_get_resolution (GimpImage * gimage)
+name|gimp_image_get_resolution
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+block|{
+return|return
+name|gimage
+operator|->
+name|resolution
+return|;
 block|}
 end_function
 

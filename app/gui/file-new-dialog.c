@@ -90,7 +90,7 @@ file|"gdisplay.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2a33fbda0108
+DECL|struct|__anon2b4aa37c0108
 typedef|typedef
 struct|struct
 block|{
@@ -687,6 +687,15 @@ argument_list|,
 name|vals
 operator|->
 name|type
+argument_list|)
+expr_stmt|;
+name|gimp_image_set_resolution
+argument_list|(
+name|gimage
+argument_list|,
+name|vals
+operator|->
+name|resolution
 argument_list|)
 expr_stmt|;
 comment|/*  Make the background (or first) layer  */
