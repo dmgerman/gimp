@@ -412,10 +412,12 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|GdkRectangle
 modifier|*
 name|draw_area
 parameter_list|,
+specifier|const
 name|GdkRectangle
 modifier|*
 name|expose_area

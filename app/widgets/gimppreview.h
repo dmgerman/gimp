@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_PREVIEW_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtkdrawingarea.h>
-end_include
-
 begin_define
 DECL|macro|GIMP_TYPE_PREVIEW
 define|#
@@ -100,8 +94,13 @@ struct|struct
 name|_GimpPreview
 block|{
 DECL|member|parent_instance
-name|GtkDrawingArea
+name|GtkWidget
 name|parent_instance
+decl_stmt|;
+DECL|member|event_window
+name|GdkWindow
+modifier|*
+name|event_window
 decl_stmt|;
 DECL|member|viewable
 name|GimpViewable
@@ -143,6 +142,11 @@ name|gchar
 modifier|*
 name|bg_stock_id
 decl_stmt|;
+DECL|member|bg_pixmap
+name|GdkPixmap
+modifier|*
+name|bg_pixmap
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -153,7 +157,7 @@ struct|struct
 name|_GimpPreviewClass
 block|{
 DECL|member|parent_class
-name|GtkDrawingAreaClass
+name|GtkWidgetClass
 name|parent_class
 decl_stmt|;
 comment|/*  signals  */

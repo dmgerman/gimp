@@ -118,7 +118,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6195650103
+DECL|enum|__anon29d8cf950103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1819,7 +1819,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_preview_renderer_draw (GimpPreviewRenderer * renderer,GdkWindow * window,GtkWidget * widget,GdkRectangle * draw_area,GdkRectangle * expose_area)
+DECL|function|gimp_preview_renderer_draw (GimpPreviewRenderer * renderer,GdkWindow * window,GtkWidget * widget,const GdkRectangle * draw_area,const GdkRectangle * expose_area)
 name|gimp_preview_renderer_draw
 parameter_list|(
 name|GimpPreviewRenderer
@@ -1834,10 +1834,12 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|GdkRectangle
 modifier|*
 name|draw_area
 parameter_list|,
+specifier|const
 name|GdkRectangle
 modifier|*
 name|expose_area
@@ -2102,6 +2104,10 @@ argument_list|(
 operator|&
 name|buf_rect
 argument_list|,
+operator|(
+name|GdkRectangle
+operator|*
+operator|)
 name|expose_area
 argument_list|,
 operator|&
@@ -2227,6 +2233,10 @@ argument_list|(
 operator|&
 name|buf_rect
 argument_list|,
+operator|(
+name|GdkRectangle
+operator|*
+operator|)
 name|expose_area
 argument_list|,
 operator|&
