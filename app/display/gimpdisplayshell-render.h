@@ -32,28 +32,24 @@ name|GIMP_DISPLAY_SHELL_RENDER_BUF_HEIGHT
 value|256
 end_define
 
-begin_comment
-comment|/*  Functions  */
-end_comment
-
 begin_function_decl
 name|void
-name|render_setup
+name|render_init
 parameter_list|(
-name|GimpCheckType
-name|check_type
-parameter_list|,
-name|GimpCheckSize
-name|check_size
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|render_free
+name|render_exit
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl

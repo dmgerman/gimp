@@ -182,14 +182,6 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
-begin_define
-DECL|macro|SB_WIDTH
-define|#
-directive|define
-name|SB_WIDTH
-value|10
-end_define
-
 begin_comment
 comment|/*  gimprc will be parsed with a buffer size of 1024,   *  so don't set this too large  */
 end_comment
@@ -425,7 +417,14 @@ name|config_copy
 parameter_list|)
 block|{
 name|GValue
-name|value
+name|global_value
+init|=
+block|{
+literal|0
+block|, }
+decl_stmt|;
+name|GValue
+name|copy_value
 init|=
 block|{
 literal|0
@@ -434,7 +433,17 @@ decl_stmt|;
 name|g_value_init
 argument_list|(
 operator|&
-name|value
+name|global_value
+argument_list|,
+name|param_spec
+operator|->
+name|value_type
+argument_list|)
+expr_stmt|;
+name|g_value_init
+argument_list|(
+operator|&
+name|copy_value
 argument_list|,
 name|param_spec
 operator|->
@@ -450,9 +459,35 @@ operator|->
 name|name
 argument_list|,
 operator|&
-name|value
+name|global_value
 argument_list|)
 expr_stmt|;
+name|g_object_get_property
+argument_list|(
+name|config_copy
+argument_list|,
+name|param_spec
+operator|->
+name|name
+argument_list|,
+operator|&
+name|copy_value
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|g_param_values_cmp
+argument_list|(
+name|param_spec
+argument_list|,
+operator|&
+name|global_value
+argument_list|,
+operator|&
+name|copy_value
+argument_list|)
+condition|)
+block|{
 name|g_signal_handlers_block_by_func
 argument_list|(
 name|config_copy
@@ -471,7 +506,7 @@ operator|->
 name|name
 argument_list|,
 operator|&
-name|value
+name|global_value
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func
@@ -483,10 +518,17 @@ argument_list|,
 name|config
 argument_list|)
 expr_stmt|;
+block|}
 name|g_value_unset
 argument_list|(
 operator|&
-name|value
+name|global_value
+argument_list|)
+expr_stmt|;
+name|g_value_unset
+argument_list|(
+operator|&
+name|copy_value
 argument_list|)
 expr_stmt|;
 block|}
@@ -512,7 +554,14 @@ name|config
 parameter_list|)
 block|{
 name|GValue
-name|value
+name|copy_value
+init|=
+block|{
+literal|0
+block|, }
+decl_stmt|;
+name|GValue
+name|global_value
 init|=
 block|{
 literal|0
@@ -521,7 +570,17 @@ decl_stmt|;
 name|g_value_init
 argument_list|(
 operator|&
-name|value
+name|copy_value
+argument_list|,
+name|param_spec
+operator|->
+name|value_type
+argument_list|)
+expr_stmt|;
+name|g_value_init
+argument_list|(
+operator|&
+name|global_value
 argument_list|,
 name|param_spec
 operator|->
@@ -537,9 +596,35 @@ operator|->
 name|name
 argument_list|,
 operator|&
-name|value
+name|copy_value
 argument_list|)
 expr_stmt|;
+name|g_object_get_property
+argument_list|(
+name|config
+argument_list|,
+name|param_spec
+operator|->
+name|name
+argument_list|,
+operator|&
+name|global_value
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|g_param_values_cmp
+argument_list|(
+name|param_spec
+argument_list|,
+operator|&
+name|copy_value
+argument_list|,
+operator|&
+name|global_value
+argument_list|)
+condition|)
+block|{
 if|if
 condition|(
 name|param_spec
@@ -610,7 +695,7 @@ operator|->
 name|name
 argument_list|,
 operator|&
-name|value
+name|copy_value
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func
@@ -623,10 +708,17 @@ name|config_copy
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 name|g_value_unset
 argument_list|(
 operator|&
-name|value
+name|copy_value
+argument_list|)
+expr_stmt|;
+name|g_value_unset
+argument_list|(
+operator|&
+name|global_value
 argument_list|)
 expr_stmt|;
 block|}
@@ -1118,6 +1210,16 @@ operator|&
 name|n_param_specs
 argument_list|)
 expr_stmt|;
+name|g_object_freeze_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimp
+operator|->
+name|config
+argument_list|)
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -1258,6 +1360,16 @@ name|orig_value
 argument_list|)
 expr_stmt|;
 block|}
+name|g_object_thaw_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimp
+operator|->
+name|config
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|param_specs
@@ -1902,7 +2014,7 @@ name|yres
 argument_list|,
 literal|"monitor-resolution-from-windowing-system"
 argument_list|,
-name|TRUE
+name|from_gdk
 argument_list|,
 name|NULL
 argument_list|)
@@ -4295,6 +4407,26 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|gtk_table_set_col_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|sizeentry
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
+name|gtk_table_set_row_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|sizeentry
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
 name|gimp_size_entry_attach_label
 argument_list|(
 name|GIMP_SIZE_ENTRY
@@ -4475,6 +4607,26 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|gtk_table_set_col_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|sizeentry2
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
+name|gtk_table_set_row_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|sizeentry2
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
 name|gimp_size_entry_attach_label
 argument_list|(
 name|GIMP_SIZE_ENTRY
@@ -4613,7 +4765,7 @@ name|GIMP_GRAY
 argument_list|,
 name|_
 argument_list|(
-literal|"Default Image Type:"
+literal|"Default Image _Type:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -4897,7 +5049,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Preview Size:"
+literal|"_Preview Size:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -4916,7 +5068,7 @@ literal|"navigation-preview-size"
 argument_list|,
 name|_
 argument_list|(
-literal|"Nav Preview Size:"
+literal|"_Nav Preview Size:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -4949,7 +5101,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Recent Documents List Size:"
+literal|"_Recent Documents List Size:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -4984,7 +5136,7 @@ literal|"info-window-per-display"
 argument_list|,
 name|_
 argument_list|(
-literal|"Info Window Per Display"
+literal|"_Info Window Per Display"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -5017,7 +5169,7 @@ literal|"tearoff-menus"
 argument_list|,
 name|_
 argument_list|(
-literal|"Disable Tearoff Menus"
+literal|"Disable _Tearoff Menus"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -5050,7 +5202,7 @@ literal|"save-session-info"
 argument_list|,
 name|_
 argument_list|(
-literal|"Save Window Positions on Exit"
+literal|"_Save Window Positions on Exit"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -5067,7 +5219,7 @@ literal|"restore-session"
 argument_list|,
 name|_
 argument_list|(
-literal|"Restore Saved Window Positions on Start-up"
+literal|"R_estore Saved Window Positions on Start-up"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -5247,7 +5399,7 @@ literal|"show-tool-tips"
 argument_list|,
 name|_
 argument_list|(
-literal|"Show Tool Tips"
+literal|"Show Tool _Tips"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -5264,7 +5416,7 @@ literal|"use-help"
 argument_list|,
 name|_
 argument_list|(
-literal|"Context Sensitive Help with \"F1\""
+literal|"Context Sensitive _Help with \"F1\""
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -5314,7 +5466,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Help Browser to Use:"
+literal|"Help _Browser to Use:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -5412,7 +5564,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Default Threshold:"
+literal|"Default _Threshold:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -5480,7 +5632,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Default Interpolation:"
+literal|"Default _Interpolation:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -5881,7 +6033,7 @@ literal|"default-dot-for-dot"
 argument_list|,
 name|_
 argument_list|(
-literal|"Use \"Dot for Dot\" by default"
+literal|"Use \"_Dot for Dot\" by default"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -5898,7 +6050,7 @@ literal|"resize-windows-on-zoom"
 argument_list|,
 name|_
 argument_list|(
-literal|"Resize Window on Zoom"
+literal|"Resize Window on _Zoom"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -5915,7 +6067,7 @@ literal|"resize-windows-on-resize"
 argument_list|,
 name|_
 argument_list|(
-literal|"Resize Window on Image Size Change"
+literal|"Resize Window on Image _Size Change"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -5932,7 +6084,7 @@ literal|"show-rulers"
 argument_list|,
 name|_
 argument_list|(
-literal|"Show Rulers"
+literal|"Show _Rulers"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -5949,7 +6101,7 @@ literal|"show-statusbar"
 argument_list|,
 name|_
 argument_list|(
-literal|"Show Statusbar"
+literal|"Show S_tatusbar"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -5986,7 +6138,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Marching Ants Speed:"
+literal|"Marching _Ants Speed:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -6027,7 +6179,7 @@ literal|"perfect-mouse"
 argument_list|,
 name|_
 argument_list|(
-literal|"Perfect-but-Slow Pointer Tracking"
+literal|"Perfect-but-Slow _Pointer Tracking"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -6044,7 +6196,7 @@ literal|"cursor-updating"
 argument_list|,
 name|_
 argument_list|(
-literal|"Enable Cursor Updating"
+literal|"Enable Cursor _Updating"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -6079,7 +6231,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Cursor Mode:"
+literal|"Cursor M_ode:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -6190,7 +6342,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Transparency Type:"
+literal|"Transparency _Type:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -6213,7 +6365,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Check Size:"
+literal|"Check _Size:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -6488,6 +6640,26 @@ name|pixels_per_unit
 operator|=
 name|NULL
 expr_stmt|;
+name|gtk_table_set_col_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|sizeentry
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
+name|gtk_table_set_row_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|sizeentry
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
 name|gimp_size_entry_attach_label
 argument_list|(
 name|GIMP_SIZE_ENTRY
@@ -6591,11 +6763,11 @@ argument_list|)
 expr_stmt|;
 name|calibrate_button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Calibrate"
+literal|"C_alibrate"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6670,13 +6842,13 @@ name|NULL
 expr_stmt|;
 name|button
 operator|=
-name|gtk_radio_button_new_with_label
+name|gtk_radio_button_new_with_mnemonic
 argument_list|(
 name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"From Windowing System"
+literal|"From _Windowing System"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6825,13 +6997,13 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_radio_button_new_with_label
+name|gtk_radio_button_new_with_mnemonic
 argument_list|(
 name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"Manually"
+literal|"_Manually"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7237,7 +7409,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b8b2b6b0108
+DECL|struct|__anon29a134e30108
 block|{
 DECL|member|label
 specifier|const
@@ -7394,7 +7566,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b8b2b6b0208
+DECL|struct|__anon29a134e30208
 block|{
 DECL|member|tree_label
 specifier|const

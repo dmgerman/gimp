@@ -1303,7 +1303,7 @@ name|FALSE
 argument_list|,
 name|_
 argument_list|(
-literal|"Horizontal:"
+literal|"_Horizontal:"
 argument_list|)
 argument_list|,
 name|ruler_width
@@ -1320,7 +1320,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Vertical:"
+literal|"_Vertical:"
 argument_list|)
 argument_list|,
 name|ruler_height
