@@ -371,6 +371,16 @@ name|canvas
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|canvas
+operator|->
+name|window
+condition|)
+return|return
+name|FALSE
+return|;
 comment|/*  If this is the first event...  */
 if|if
 condition|(

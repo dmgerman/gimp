@@ -122,7 +122,7 @@ file|"tile_manager_pvt.h"
 end_include
 
 begin_enum
-DECL|enum|__anon28fd67c40103
+DECL|enum|__anon2a4728c90103
 enum|enum
 block|{
 DECL|enumerator|LAST_SIGNAL
@@ -214,35 +214,9 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
-DECL|variable|layer_signals
-specifier|static
-name|gint
-name|layer_signals
-index|[
-name|LAST_SIGNAL
-index|]
-init|=
-block|{
-literal|0
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|layer_mask_signals
-specifier|static
-name|gint
-name|layer_mask_signals
-index|[
-name|LAST_SIGNAL
-index|]
-init|=
-block|{
-literal|0
-block|}
-decl_stmt|;
-end_decl_stmt
+begin_comment
+comment|/* static gint layer_signals[LAST_SIGNAL] = { 0 }; static gint layer_mask_signals[LAST_SIGNAL] = { 0 }; */
+end_comment
 
 begin_decl_stmt
 DECL|variable|layer_parent_class
@@ -382,15 +356,7 @@ name|gimp_drawable_get_type
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|gtk_object_class_add_signals
-argument_list|(
-name|object_class
-argument_list|,
-name|layer_signals
-argument_list|,
-name|LAST_SIGNAL
-argument_list|)
-expr_stmt|;
+comment|/*   gtk_object_class_add_signals (object_class, layer_signals, LAST_SIGNAL);   */
 name|object_class
 operator|->
 name|destroy
@@ -523,15 +489,7 @@ name|gimp_channel_get_type
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|gtk_object_class_add_signals
-argument_list|(
-name|object_class
-argument_list|,
-name|layer_mask_signals
-argument_list|,
-name|LAST_SIGNAL
-argument_list|)
-expr_stmt|;
+comment|/*   gtk_object_class_add_signals (object_class, layer_mask_signals, LAST_SIGNAL);   */
 name|object_class
 operator|->
 name|destroy
@@ -1081,6 +1039,60 @@ expr_stmt|;
 return|return
 name|layer
 return|;
+block|}
+end_function
+
+begin_function
+name|Layer
+modifier|*
+DECL|function|layer_ref (Layer * layer)
+name|layer_ref
+parameter_list|(
+name|Layer
+modifier|*
+name|layer
+parameter_list|)
+block|{
+name|gtk_object_ref
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_object_sink
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+name|layer
+return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|layer_unref (Layer * layer)
+name|layer_unref
+parameter_list|(
+name|Layer
+modifier|*
+name|layer
+parameter_list|)
+block|{
+name|gtk_object_unref
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

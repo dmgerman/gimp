@@ -4685,7 +4685,7 @@ name|undo_type
 operator|==
 literal|1
 condition|)
-name|layer_delete
+name|layer_unref
 argument_list|(
 name|lu
 operator|->
@@ -5104,7 +5104,7 @@ operator|==
 literal|1
 operator|)
 condition|)
-name|layer_delete
+name|layer_unref
 argument_list|(
 name|lu
 operator|->

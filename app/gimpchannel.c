@@ -93,15 +93,9 @@ directive|include
 file|"channel_pvt.h"
 end_include
 
-begin_enum
-DECL|enum|__anon2baa00a20103
-enum|enum
-block|{
-DECL|enumerator|LAST_SIGNAL
-name|LAST_SIGNAL
-block|}
-enum|;
-end_enum
+begin_comment
+comment|/* enum {   LAST_SIGNAL }; */
+end_comment
 
 begin_function_decl
 specifier|static
@@ -139,20 +133,9 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
-DECL|variable|channel_signals
-specifier|static
-name|gint
-name|channel_signals
-index|[
-name|LAST_SIGNAL
-index|]
-init|=
-block|{
-literal|0
-block|}
-decl_stmt|;
-end_decl_stmt
+begin_comment
+comment|/* static gint channel_signals[LAST_SIGNAL] = { 0 }; */
+end_comment
 
 begin_decl_stmt
 DECL|variable|parent_class
@@ -269,15 +252,7 @@ name|gimp_drawable_get_type
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|gtk_object_class_add_signals
-argument_list|(
-name|object_class
-argument_list|,
-name|channel_signals
-argument_list|,
-name|LAST_SIGNAL
-argument_list|)
-expr_stmt|;
+comment|/*   gtk_object_class_add_signals (object_class, channel_signals, LAST_SIGNAL);   */
 name|object_class
 operator|->
 name|destroy
@@ -545,6 +520,60 @@ expr_stmt|;
 return|return
 name|channel
 return|;
+block|}
+end_function
+
+begin_function
+name|Channel
+modifier|*
+DECL|function|channel_ref (Channel * channel)
+name|channel_ref
+parameter_list|(
+name|Channel
+modifier|*
+name|channel
+parameter_list|)
+block|{
+name|gtk_object_ref
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|channel
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_object_sink
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|channel
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+name|channel
+return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|channel_unref (Channel * channel)
+name|channel_unref
+parameter_list|(
+name|Channel
+modifier|*
+name|channel
+parameter_list|)
+block|{
+name|gtk_object_unref
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|channel
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

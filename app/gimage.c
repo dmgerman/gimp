@@ -10007,7 +10007,10 @@ name|gimage
 operator|->
 name|layers
 argument_list|,
+name|layer_ref
+argument_list|(
 name|float_layer
+argument_list|)
 argument_list|,
 name|position
 argument_list|)
@@ -10024,7 +10027,10 @@ name|gimage
 operator|->
 name|layers
 argument_list|,
+name|layer_ref
+argument_list|(
 name|float_layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimage
@@ -11231,7 +11237,10 @@ name|gimage
 operator|->
 name|channels
 argument_list|,
+name|channel_ref
+argument_list|(
 name|channel
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  notify this gimage of the currently active channel  */

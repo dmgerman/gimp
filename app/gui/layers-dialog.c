@@ -1919,6 +1919,11 @@ operator|=
 name|gtk_dialog_new
 argument_list|()
 expr_stmt|;
+name|gtk_widget_ref
+argument_list|(
+name|lc_shell
+argument_list|)
+expr_stmt|;
 name|gtk_window_set_title
 argument_list|(
 name|GTK_WINDOW
@@ -2420,11 +2425,7 @@ name|image_option_menu
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_widget_destroy
-argument_list|(
-name|image_menu
-argument_list|)
-expr_stmt|;
+comment|/* gtk_widget_destroy (image_menu); */
 name|default_id
 operator|=
 name|layersD
@@ -2565,6 +2566,11 @@ name|channels_dialog_free
 argument_list|()
 expr_stmt|;
 name|gtk_widget_destroy
+argument_list|(
+name|lc_shell
+argument_list|)
+expr_stmt|;
+name|gtk_widget_unref
 argument_list|(
 name|lc_shell
 argument_list|)
