@@ -200,7 +200,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b85d1d60108
+DECL|struct|__anon2bdfb5990108
 block|{
 DECL|member|hwidth
 name|gint
@@ -463,7 +463,7 @@ name|PARAM_INT32
 block|,
 literal|"ispace"
 block|,
-literal|"Intersection Spacing (>= 1)"
+literal|"Intersection Spacing (>= 0)"
 block|}
 block|,
 block|{
@@ -953,7 +953,7 @@ name|ispace
 operator|=
 name|MAX
 argument_list|(
-literal|1
+literal|0
 argument_list|,
 name|param
 index|[
@@ -2998,9 +2998,16 @@ call|(
 name|gdouble
 call|)
 argument_list|(
+name|MAX
+argument_list|(
 name|drawable
 operator|->
 name|width
+argument_list|,
+name|drawable
+operator|->
+name|height
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3481,15 +3488,22 @@ argument_list|)
 argument_list|,
 literal|2
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 call|(
 name|gdouble
 call|)
 argument_list|(
+name|MAX
+argument_list|(
 name|drawable
 operator|->
 name|width
+argument_list|,
+name|drawable
+operator|->
+name|height
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3936,9 +3950,16 @@ call|(
 name|gdouble
 call|)
 argument_list|(
+name|MAX
+argument_list|(
 name|drawable
 operator|->
 name|width
+argument_list|,
+name|drawable
+operator|->
+name|height
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
