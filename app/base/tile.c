@@ -1248,6 +1248,21 @@ name|tile
 argument_list|)
 expr_stmt|;
 block|}
+if|#
+directive|if
+name|USE_PTHREADS
+name|pthread_mutex_unlock
+argument_list|(
+operator|&
+operator|(
+name|tile
+operator|->
+name|mutex
+operator|)
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 comment|/* Read/write attachment to a mirrored/ing tile - must be    *  thoughtful.    */
 if|if
 condition|(
@@ -1297,21 +1312,6 @@ name|dirty
 operator||=
 name|dirty
 expr_stmt|;
-if|#
-directive|if
-name|USE_PTHREADS
-name|pthread_mutex_unlock
-argument_list|(
-operator|&
-operator|(
-name|tile
-operator|->
-name|mutex
-operator|)
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
 comment|/* Call 'tile_manager_validate' if the tile was invalid.    */
 if|if
 condition|(
