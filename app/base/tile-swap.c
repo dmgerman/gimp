@@ -247,7 +247,7 @@ modifier|*
 name|gaps
 decl_stmt|;
 DECL|member|swap_file_end
-name|glong
+name|off_t
 name|swap_file_end
 decl_stmt|;
 DECL|member|cur_position
@@ -264,11 +264,11 @@ struct|struct
 name|_Gap
 block|{
 DECL|member|start
-name|glong
+name|off_t
 name|start
 decl_stmt|;
 DECL|member|end
-name|glong
+name|off_t
 name|end
 decl_stmt|;
 block|}
@@ -472,7 +472,7 @@ parameter_list|,
 name|gint
 name|fd
 parameter_list|,
-name|gint
+name|off_t
 name|bytes
 parameter_list|)
 function_decl|;
@@ -490,7 +490,7 @@ parameter_list|,
 name|gint
 name|fd
 parameter_list|,
-name|glong
+name|off_t
 name|new_size
 parameter_list|)
 function_decl|;
@@ -502,10 +502,10 @@ name|Gap
 modifier|*
 name|tile_swap_gap_new
 parameter_list|(
-name|glong
+name|off_t
 name|start
 parameter_list|,
-name|glong
+name|off_t
 name|end
 parameter_list|)
 function_decl|;
@@ -599,7 +599,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|swap_file_grow
 specifier|static
-name|glong
+name|off_t
 name|swap_file_grow
 init|=
 literal|16
@@ -761,7 +761,11 @@ name|next
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"  %6ld - %6ld\n"
+literal|"  %"
+name|G_GINT64_FORMAT
+literal|" - %"
+name|G_GINT64_FORMAT
+literal|"\n"
 argument_list|,
 name|gap
 operator|->
@@ -2393,10 +2397,10 @@ name|Gap
 modifier|*
 name|gap2
 decl_stmt|;
-name|glong
+name|off_t
 name|start
 decl_stmt|;
-name|glong
+name|off_t
 name|end
 decl_stmt|;
 if|if
@@ -2832,7 +2836,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|tile_swap_resize (DefSwapFile * def_swap_file,gint fd,glong new_size)
+DECL|function|tile_swap_resize (DefSwapFile * def_swap_file,gint fd,off_t new_size)
 name|tile_swap_resize
 parameter_list|(
 name|DefSwapFile
@@ -2842,7 +2846,7 @@ parameter_list|,
 name|gint
 name|fd
 parameter_list|,
-name|glong
+name|off_t
 name|new_size
 parameter_list|)
 block|{
@@ -2875,7 +2879,7 @@ end_function
 begin_function
 specifier|static
 name|long
-DECL|function|tile_swap_find_offset (DefSwapFile * def_swap_file,gint fd,gint bytes)
+DECL|function|tile_swap_find_offset (DefSwapFile * def_swap_file,gint fd,off_t bytes)
 name|tile_swap_find_offset
 parameter_list|(
 name|DefSwapFile
@@ -2885,7 +2889,7 @@ parameter_list|,
 name|gint
 name|fd
 parameter_list|,
-name|gint
+name|off_t
 name|bytes
 parameter_list|)
 block|{
@@ -2897,7 +2901,7 @@ name|Gap
 modifier|*
 name|gap
 decl_stmt|;
-name|glong
+name|off_t
 name|offset
 decl_stmt|;
 name|tmp
@@ -3061,13 +3065,13 @@ begin_function
 specifier|static
 name|Gap
 modifier|*
-DECL|function|tile_swap_gap_new (glong start,glong end)
+DECL|function|tile_swap_gap_new (off_t start,off_t end)
 name|tile_swap_gap_new
 parameter_list|(
-name|glong
+name|off_t
 name|start
 parameter_list|,
-name|glong
+name|off_t
 name|end
 parameter_list|)
 block|{
