@@ -1052,7 +1052,7 @@ name|gimp_tool_options_editor_menu_pos
 argument_list|,
 name|button
 argument_list|,
-literal|1
+literal|0
 argument_list|,
 name|GDK_CURRENT_TIME
 argument_list|)
