@@ -436,6 +436,13 @@ argument_list|(
 literal|"gimp"
 argument_list|)
 expr_stmt|;
+name|bindtextdomain
+argument_list|(
+literal|"gimp-std-plugins"
+argument_list|,
+name|LOCALEDIR
+argument_list|)
+expr_stmt|;
 name|gtk_init
 argument_list|(
 operator|&
@@ -1983,7 +1990,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb795b50108
+DECL|struct|__anon2bddfdec0108
 block|{
 DECL|member|test_gint32
 name|gint32

@@ -466,7 +466,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd36d0b0108
+DECL|struct|__anon2ab080910108
 block|{
 DECL|member|receipt
 name|char
@@ -544,6 +544,8 @@ specifier|static
 name|gchar
 modifier|*
 name|mesg_body
+init|=
+literal|"\0"
 decl_stmt|;
 end_decl_stmt
 
