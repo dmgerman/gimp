@@ -23,7 +23,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27cca6090103
+DECL|enum|__anon274bd9d90103
 block|{
 DECL|enumerator|IMAGE_UNDO
 name|IMAGE_UNDO
@@ -34,6 +34,9 @@ literal|1
 block|,
 DECL|enumerator|IMAGE_MOD_UNDO
 name|IMAGE_MOD_UNDO
+block|,
+DECL|enumerator|IMAGE_TYPE_UNDO
+name|IMAGE_TYPE_UNDO
 block|,
 DECL|enumerator|IMAGE_SIZE_UNDO
 name|IMAGE_SIZE_UNDO

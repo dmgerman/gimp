@@ -257,7 +257,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1b58030103
+DECL|enum|__anon279898020103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -3273,6 +3273,263 @@ comment|/*********************/
 end_comment
 
 begin_comment
+comment|/*  Image Type Undo  */
+end_comment
+
+begin_typedef
+DECL|typedef|ImageTypeUndo
+typedef|typedef
+name|struct
+name|_ImageTypeUndo
+name|ImageTypeUndo
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_ImageTypeUndo
+struct|struct
+name|_ImageTypeUndo
+block|{
+DECL|member|base_type
+name|GimpImageBaseType
+name|base_type
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_function_decl
+specifier|static
+name|gboolean
+name|undo_pop_image_type
+parameter_list|(
+name|GimpImage
+modifier|*
+parameter_list|,
+name|UndoState
+parameter_list|,
+name|UndoType
+parameter_list|,
+name|gpointer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|undo_free_image_type
+parameter_list|(
+name|UndoState
+parameter_list|,
+name|UndoType
+parameter_list|,
+name|gpointer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function
+name|gboolean
+DECL|function|undo_push_image_type (GimpImage * gimage)
+name|undo_push_image_type
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+block|{
+name|Undo
+modifier|*
+name|new
+decl_stmt|;
+if|if
+condition|(
+operator|(
+name|new
+operator|=
+name|undo_push
+argument_list|(
+name|gimage
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|ImageTypeUndo
+argument_list|)
+argument_list|,
+name|IMAGE_TYPE_UNDO
+argument_list|,
+name|TRUE
+argument_list|)
+operator|)
+condition|)
+block|{
+name|ImageTypeUndo
+modifier|*
+name|itu
+decl_stmt|;
+name|itu
+operator|=
+name|g_new0
+argument_list|(
+name|ImageTypeUndo
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+name|new
+operator|->
+name|data
+operator|=
+name|itu
+expr_stmt|;
+name|new
+operator|->
+name|pop_func
+operator|=
+name|undo_pop_image_type
+expr_stmt|;
+name|new
+operator|->
+name|free_func
+operator|=
+name|undo_free_image_type
+expr_stmt|;
+name|itu
+operator|->
+name|base_type
+operator|=
+name|gimage
+operator|->
+name|base_type
+expr_stmt|;
+return|return
+name|TRUE
+return|;
+block|}
+return|return
+name|FALSE
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gboolean
+DECL|function|undo_pop_image_type (GimpImage * gimage,UndoState state,UndoType type,gpointer data_ptr)
+name|undo_pop_image_type
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|UndoState
+name|state
+parameter_list|,
+name|UndoType
+name|type
+parameter_list|,
+name|gpointer
+name|data_ptr
+parameter_list|)
+block|{
+name|ImageTypeUndo
+modifier|*
+name|itu
+decl_stmt|;
+name|GimpImageBaseType
+name|tmp
+decl_stmt|;
+name|itu
+operator|=
+operator|(
+name|ImageTypeUndo
+operator|*
+operator|)
+name|data_ptr
+expr_stmt|;
+name|tmp
+operator|=
+name|itu
+operator|->
+name|base_type
+expr_stmt|;
+name|itu
+operator|->
+name|base_type
+operator|=
+name|gimage
+operator|->
+name|base_type
+expr_stmt|;
+name|gimage
+operator|->
+name|base_type
+operator|=
+name|tmp
+expr_stmt|;
+name|gimp_image_projection_allocate
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
+name|gimp_image_colormap_changed
+argument_list|(
+name|gimage
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|itu
+operator|->
+name|base_type
+operator|!=
+name|gimage
+operator|->
+name|base_type
+condition|)
+name|mode_changed
+operator|=
+name|TRUE
+expr_stmt|;
+return|return
+name|TRUE
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|undo_free_image_type (UndoState state,UndoType type,gpointer data_ptr)
+name|undo_free_image_type
+parameter_list|(
+name|UndoState
+name|state
+parameter_list|,
+name|UndoType
+name|type
+parameter_list|,
+name|gpointer
+name|data_ptr
+parameter_list|)
+block|{
+name|g_free
+argument_list|(
+name|data_ptr
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/*********************/
+end_comment
+
+begin_comment
 comment|/*  Image Size Undo  */
 end_comment
 
@@ -3297,10 +3554,6 @@ decl_stmt|;
 DECL|member|height
 name|gint
 name|height
-decl_stmt|;
-DECL|member|base_type
-name|GimpImageBaseType
-name|base_type
 decl_stmt|;
 block|}
 struct|;
@@ -3419,14 +3672,6 @@ name|gimage
 operator|->
 name|height
 expr_stmt|;
-name|isu
-operator|->
-name|base_type
-operator|=
-name|gimage
-operator|->
-name|base_type
-expr_stmt|;
 return|return
 name|TRUE
 return|;
@@ -3459,12 +3704,12 @@ parameter_list|)
 block|{
 name|ImageSizeUndo
 modifier|*
-name|data
+name|isu
 decl_stmt|;
 name|gint
 name|tmp
 decl_stmt|;
-name|data
+name|isu
 operator|=
 operator|(
 name|ImageSizeUndo
@@ -3474,11 +3719,11 @@ name|data_ptr
 expr_stmt|;
 name|tmp
 operator|=
-name|data
+name|isu
 operator|->
 name|width
 expr_stmt|;
-name|data
+name|isu
 operator|->
 name|width
 operator|=
@@ -3494,11 +3739,11 @@ name|tmp
 expr_stmt|;
 name|tmp
 operator|=
-name|data
+name|isu
 operator|->
 name|height
 expr_stmt|;
-name|data
+name|isu
 operator|->
 name|height
 operator|=
@@ -3509,26 +3754,6 @@ expr_stmt|;
 name|gimage
 operator|->
 name|height
-operator|=
-name|tmp
-expr_stmt|;
-name|tmp
-operator|=
-name|data
-operator|->
-name|base_type
-expr_stmt|;
-name|data
-operator|->
-name|base_type
-operator|=
-name|gimage
-operator|->
-name|base_type
-expr_stmt|;
-name|gimage
-operator|->
-name|base_type
 operator|=
 name|tmp
 expr_stmt|;
@@ -3542,35 +3767,13 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gimp_image_colormap_changed
-argument_list|(
-name|gimage
-argument_list|,
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|data
-operator|->
-name|base_type
-operator|!=
-name|gimage
-operator|->
-name|base_type
-condition|)
-name|mode_changed
-operator|=
-name|TRUE
-expr_stmt|;
 if|if
 condition|(
 name|gimage
 operator|->
 name|width
 operator|!=
-name|data
+name|isu
 operator|->
 name|width
 operator|||
@@ -3578,7 +3781,7 @@ name|gimage
 operator|->
 name|height
 operator|!=
-name|data
+name|isu
 operator|->
 name|height
 condition|)
@@ -12561,7 +12764,7 @@ name|IMAGE_UNDO
 block|,
 name|N_
 argument_list|(
-literal|"image"
+literal|"Image"
 argument_list|)
 block|}
 block|,
@@ -12570,7 +12773,16 @@ name|IMAGE_MOD_UNDO
 block|,
 name|N_
 argument_list|(
-literal|"image mod"
+literal|"Image Mod"
+argument_list|)
+block|}
+block|,
+block|{
+name|IMAGE_TYPE_UNDO
+block|,
+name|N_
+argument_list|(
+literal|"Image Type"
 argument_list|)
 block|}
 block|,
@@ -12579,7 +12791,7 @@ name|IMAGE_SIZE_UNDO
 block|,
 name|N_
 argument_list|(
-literal|"image size"
+literal|"Image Size"
 argument_list|)
 block|}
 block|,
@@ -12588,7 +12800,7 @@ name|IMAGE_RESOLUTION_UNDO
 block|,
 name|N_
 argument_list|(
-literal|"resolution change"
+literal|"Resolution Change"
 argument_list|)
 block|}
 block|,
@@ -12597,7 +12809,7 @@ name|IMAGE_MASK_UNDO
 block|,
 name|N_
 argument_list|(
-literal|"mask"
+literal|"Selection Mask"
 argument_list|)
 block|}
 block|,
@@ -12606,7 +12818,7 @@ name|IMAGE_QMASK_UNDO
 block|,
 name|N_
 argument_list|(
-literal|"quickmask"
+literal|"QuickMask"
 argument_list|)
 block|}
 block|,
@@ -12615,7 +12827,7 @@ name|IMAGE_GUIDE_UNDO
 block|,
 name|N_
 argument_list|(
-literal|"guide"
+literal|"Guide"
 argument_list|)
 block|}
 block|,
@@ -12624,7 +12836,7 @@ name|LAYER_ADD_UNDO
 block|,
 name|N_
 argument_list|(
-literal|"new layer"
+literal|"New Layer"
 argument_list|)
 block|}
 block|,
@@ -12633,7 +12845,7 @@ name|LAYER_REMOVE_UNDO
 block|,
 name|N_
 argument_list|(
-literal|"delete layer"
+literal|"Delete Layer"
 argument_list|)
 block|}
 block|,
@@ -12642,7 +12854,7 @@ name|LAYER_MOD_UNDO
 block|,
 name|N_
 argument_list|(
-literal|"layer mod"
+literal|"Layer Mod"
 argument_list|)
 block|}
 block|,
@@ -12651,7 +12863,7 @@ name|LAYER_MASK_ADD_UNDO
 block|,
 name|N_
 argument_list|(
-literal|"add layer mask"
+literal|"Add Layer Mask"
 argument_list|)
 block|}
 block|,
@@ -12660,7 +12872,7 @@ name|LAYER_MASK_REMOVE_UNDO
 block|,
 name|N_
 argument_list|(
-literal|"delete layer mask"
+literal|"Delete Layer Mask"
 argument_list|)
 block|}
 block|,
@@ -12669,7 +12881,7 @@ name|LAYER_RENAME_UNDO
 block|,
 name|N_
 argument_list|(
-literal|"rename layer"
+literal|"Rename Layer"
 argument_list|)
 block|}
 block|,
@@ -12678,7 +12890,7 @@ name|LAYER_REPOSITION_UNDO
 block|,
 name|N_
 argument_list|(
-literal|"layer reposition"
+literal|"Layer Reposition"
 argument_list|)
 block|}
 block|,
@@ -12687,7 +12899,7 @@ name|LAYER_DISPLACE_UNDO
 block|,
 name|N_
 argument_list|(
-literal|"layer move"
+literal|"Layer Move"
 argument_list|)
 block|}
 block|,
@@ -12696,7 +12908,7 @@ name|CHANNEL_ADD_UNDO
 block|,
 name|N_
 argument_list|(
-literal|"new channel"
+literal|"New Channel"
 argument_list|)
 block|}
 block|,
@@ -12705,7 +12917,7 @@ name|CHANNEL_REMOVE_UNDO
 block|,
 name|N_
 argument_list|(
-literal|"delete channel"
+literal|"Delete Channel"
 argument_list|)
 block|}
 block|,
@@ -12714,7 +12926,7 @@ name|CHANNEL_MOD_UNDO
 block|,
 name|N_
 argument_list|(
-literal|"channel mod"
+literal|"Channel Mod"
 argument_list|)
 block|}
 block|,
@@ -12723,7 +12935,7 @@ name|CHANNEL_REPOSITION_UNDO
 block|,
 name|N_
 argument_list|(
-literal|"channel reposition"
+literal|"Channel Reposition"
 argument_list|)
 block|}
 block|,
@@ -12732,7 +12944,7 @@ name|FS_TO_LAYER_UNDO
 block|,
 name|N_
 argument_list|(
-literal|"FS to layer"
+literal|"FS to Layer"
 argument_list|)
 block|}
 block|,
@@ -12741,7 +12953,7 @@ name|FS_RIGOR_UNDO
 block|,
 name|N_
 argument_list|(
-literal|"FS rigor"
+literal|"FS Rigor"
 argument_list|)
 block|}
 block|,
@@ -12750,7 +12962,7 @@ name|FS_RELAX_UNDO
 block|,
 name|N_
 argument_list|(
-literal|"FS relax"
+literal|"FS Relax"
 argument_list|)
 block|}
 block|,
@@ -12759,7 +12971,7 @@ name|TRANSFORM_UNDO
 block|,
 name|N_
 argument_list|(
-literal|"transform"
+literal|"Transform"
 argument_list|)
 block|}
 block|,
@@ -12768,7 +12980,7 @@ name|PAINT_UNDO
 block|,
 name|N_
 argument_list|(
-literal|"paint"
+literal|"Paint"
 argument_list|)
 block|}
 block|,
@@ -12777,7 +12989,7 @@ name|PARASITE_ATTACH_UNDO
 block|,
 name|N_
 argument_list|(
-literal|"attach parasite"
+literal|"Attach Parasite"
 argument_list|)
 block|}
 block|,
@@ -12786,7 +12998,7 @@ name|PARASITE_REMOVE_UNDO
 block|,
 name|N_
 argument_list|(
-literal|"remove parasite"
+literal|"Remove Parasite"
 argument_list|)
 block|}
 block|,

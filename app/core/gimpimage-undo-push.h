@@ -23,7 +23,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296649420103
+DECL|enum|__anon289cd3b20103
 block|{
 DECL|enumerator|UNDO_PUSHED
 name|UNDO_PUSHED
@@ -272,6 +272,17 @@ name|tiles
 parameter_list|,
 name|gboolean
 name|sparse
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|undo_push_image_type
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
 parameter_list|)
 function_decl|;
 end_function_decl
