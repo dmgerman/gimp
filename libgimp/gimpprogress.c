@@ -123,6 +123,10 @@ begin_comment
 comment|/*  public functions  */
 end_comment
 
+begin_comment
+comment|/**  * gimp_progress_install:  * @start_callback: the function to call when progress starts  * @end_callback:   the function to call when progress finishes  * @text_callback:  the function to call to change the text  * @value_callback: the function to call to change the value  * @user_data:      a pointer that is returned when uninstalling the progress  *  * Return value: the name of the temporary procedure that's been installed  *  * Since: GIMP 2.2  **/
+end_comment
+
 begin_function
 specifier|const
 name|gchar
@@ -365,6 +369,10 @@ name|NULL
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_progress_uninstall:  * @progress_callback: the name of the temporary procedure to uninstall  *  * Uninstalls a temporary progress procedure that was installed using  * gimp_progress_install().  *  * Return value: the @user_data that was passed to gimp_progress_install().  *  * Since: GIMP 2.2  **/
+end_comment
 
 begin_function
 name|gpointer
