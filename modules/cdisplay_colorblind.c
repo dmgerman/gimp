@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6575250103
+DECL|enum|__anon2b40a0480103
 block|{
 DECL|enumerator|COLORBLIND_DEFICIENCY_PROTANOPIA
 name|COLORBLIND_DEFICIENCY_PROTANOPIA
@@ -97,11 +97,55 @@ function_decl|;
 end_function_decl
 
 begin_decl_stmt
-DECL|variable|cdisplay_colorblind_deficiency_enum_values
+DECL|variable|enum_values
 specifier|static
 specifier|const
 name|GEnumValue
-name|cdisplay_colorblind_deficiency_enum_values
+name|enum_values
+index|[]
+init|=
+block|{
+block|{
+name|COLORBLIND_DEFICIENCY_PROTANOPIA
+block|,
+literal|"COLORBLIND_DEFICIENCY_PROTANOPIA"
+block|,
+literal|"protanopia"
+block|}
+block|,
+block|{
+name|COLORBLIND_DEFICIENCY_DEUTERANOPIA
+block|,
+literal|"COLORBLIND_DEFICIENCY_DEUTERANOPIA"
+block|,
+literal|"deuteranopia"
+block|}
+block|,
+block|{
+name|COLORBLIND_DEFICIENCY_TRITANOPIA
+block|,
+literal|"COLORBLIND_DEFICIENCY_TRITANOPIA"
+block|,
+literal|"tritanopia"
+block|}
+block|,
+block|{
+literal|0
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|enum_descs
+specifier|static
+specifier|const
+name|GimpEnumDesc
+name|enum_descs
 index|[]
 init|=
 block|{
@@ -110,10 +154,10 @@ name|COLORBLIND_DEFICIENCY_PROTANOPIA
 block|,
 name|N_
 argument_list|(
-literal|"Protanopia (insensitivity to red)"
+literal|"Protanopia (insensitivity to red"
 argument_list|)
 block|,
-literal|"protanopia"
+name|NULL
 block|}
 block|,
 block|{
@@ -124,7 +168,7 @@ argument_list|(
 literal|"Deuteranopia (insensitivity to green)"
 argument_list|)
 block|,
-literal|"deuteranopia"
+name|NULL
 block|}
 block|,
 block|{
@@ -135,7 +179,7 @@ argument_list|(
 literal|"Tritanopia (insensitivity to blue)"
 argument_list|)
 block|,
-literal|"tritanopia"
+name|NULL
 block|}
 block|,
 block|{
@@ -331,7 +375,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6575250203
+DECL|enum|__anon2b40a0480203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -782,6 +826,7 @@ condition|(
 operator|!
 name|cdisplay_colorblind_deficiency_type
 condition|)
+block|{
 name|cdisplay_colorblind_deficiency_type
 operator|=
 name|gimp_module_register_enum
@@ -790,9 +835,17 @@ name|module
 argument_list|,
 literal|"CDisplayColorblindDeficiency"
 argument_list|,
-name|cdisplay_colorblind_deficiency_enum_values
+name|enum_values
 argument_list|)
 expr_stmt|;
+name|gimp_enum_set_value_descriptions
+argument_list|(
+name|cdisplay_colorblind_deficiency_type
+argument_list|,
+name|enum_descs
+argument_list|)
+expr_stmt|;
+block|}
 return|return
 name|cdisplay_colorblind_deficiency_type
 return|;
@@ -2461,30 +2514,9 @@ name|colorblind
 operator|->
 name|combo
 operator|=
-name|gimp_int_combo_box_new
+name|gimp_enum_combo_box_new
 argument_list|(
-name|_
-argument_list|(
-literal|"Protanopia (insensitivity to red)"
-argument_list|)
-argument_list|,
-name|COLORBLIND_DEFICIENCY_PROTANOPIA
-argument_list|,
-name|_
-argument_list|(
-literal|"Deuteranopia (insensitivity to green)"
-argument_list|)
-argument_list|,
-name|COLORBLIND_DEFICIENCY_DEUTERANOPIA
-argument_list|,
-name|_
-argument_list|(
-literal|"Tritanopia (insensitivity to blue)"
-argument_list|)
-argument_list|,
-name|COLORBLIND_DEFICIENCY_TRITANOPIA
-argument_list|,
-name|NULL
+name|CDISPLAY_TYPE_COLORBLIND_DEFICIENCY
 argument_list|)
 expr_stmt|;
 name|gimp_int_combo_box_set_active

@@ -1138,6 +1138,8 @@ expr_stmt|;
 if|if
 condition|(
 name|enum_desc
+operator|&&
+name|enum_desc
 operator|->
 name|value_desc
 condition|)
