@@ -23,7 +23,7 @@ file|<libgimp/gimp.h>
 end_include
 
 begin_typedef
-DECL|struct|__anon2badffc80108
+DECL|struct|__anon29f80d290108
 typedef|typedef
 struct|struct
 block|{
@@ -64,6 +64,14 @@ decl_stmt|;
 DECL|member|height
 name|gint
 name|height
+decl_stmt|;
+DECL|member|widget_width
+name|gint
+name|widget_width
+decl_stmt|;
+DECL|member|widget_height
+name|gint
+name|widget_height
 decl_stmt|;
 DECL|member|src_rgn
 name|GimpPixelRgn
