@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9c68ed0108
+DECL|struct|__anon29fa218d0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9c68ed0208
+DECL|struct|__anon29fa218d0208
 block|{
 DECL|member|cinfo
 name|struct
@@ -6136,7 +6136,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -6146,7 +6146,7 @@ argument_list|(
 name|main_vbox
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -6178,7 +6178,7 @@ expr_stmt|;
 comment|/* sg - preview */
 name|prv_frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -6208,17 +6208,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -6364,11 +6354,11 @@ expr_stmt|;
 comment|/*  parameter settings  */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Parameter Settings"
+literal|"JPEG Parameters"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6411,7 +6401,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacings
@@ -6421,17 +6411,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -6461,7 +6441,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|1.0
 argument_list|)
@@ -6649,7 +6629,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|1.0
 argument_list|)
@@ -6932,7 +6912,7 @@ argument_list|(
 name|restart_markers_label
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|1.0
 argument_list|)
@@ -7639,11 +7619,11 @@ argument_list|)
 expr_stmt|;
 name|com_frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Image comments"
+literal|"Comment"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7682,16 +7662,6 @@ argument_list|,
 name|GTK_POLICY_AUTOMATIC
 argument_list|,
 name|GTK_POLICY_AUTOMATIC
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|scrolled_window
-argument_list|)
-argument_list|,
-literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add

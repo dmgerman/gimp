@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2918eaef0108
+DECL|struct|__anon2b5d25380108
 block|{
 DECL|member|receipt
 name|gchar
@@ -1476,7 +1476,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1512,7 +1512,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -1522,7 +1522,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 comment|/* to: dialog */
@@ -1583,7 +1583,7 @@ argument_list|(
 literal|"_Recipient:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -1669,7 +1669,7 @@ argument_list|(
 literal|"_Sender:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -1755,7 +1755,7 @@ argument_list|(
 literal|"S_ubject:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -1841,7 +1841,7 @@ argument_list|(
 literal|"Comm_ent:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -1927,7 +1927,7 @@ argument_list|(
 literal|"_Filename:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -2098,9 +2098,9 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
-literal|0.5
+literal|0.2
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
