@@ -85,6 +85,11 @@ name|gchar
 modifier|*
 name|help_uri
 decl_stmt|;
+DECL|member|help_root
+name|gchar
+modifier|*
+name|help_root
+decl_stmt|;
 DECL|member|help_locales
 name|GHashTable
 modifier|*
@@ -146,6 +151,11 @@ specifier|const
 name|gchar
 modifier|*
 name|domain_uri
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|domain_root
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -290,7 +300,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|domain_register (const gchar * domain_name,const gchar * domain_uri)
+DECL|function|domain_register (const gchar * domain_name,const gchar * domain_uri,const gchar * domain_root)
 name|domain_register
 parameter_list|(
 specifier|const
@@ -302,6 +312,11 @@ specifier|const
 name|gchar
 modifier|*
 name|domain_uri
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|domain_root
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -367,6 +382,8 @@ argument_list|(
 name|domain_name
 argument_list|,
 name|domain_uri
+argument_list|,
+name|domain_root
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -735,7 +752,7 @@ begin_function
 specifier|static
 name|HelpDomain
 modifier|*
-DECL|function|domain_new (const gchar * domain_name,const gchar * domain_uri)
+DECL|function|domain_new (const gchar * domain_name,const gchar * domain_uri,const gchar * domain_root)
 name|domain_new
 parameter_list|(
 specifier|const
@@ -747,6 +764,11 @@ specifier|const
 name|gchar
 modifier|*
 name|domain_uri
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|domain_root
 parameter_list|)
 block|{
 name|HelpDomain
@@ -778,6 +800,54 @@ argument_list|(
 name|domain_uri
 argument_list|)
 expr_stmt|;
+name|domain
+operator|->
+name|help_root
+operator|=
+name|g_strdup
+argument_list|(
+name|domain_root
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|domain_uri
+condition|)
+block|{
+comment|/*  strip trailing slash  */
+name|gint
+name|len
+init|=
+name|strlen
+argument_list|(
+name|domain_uri
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|len
+operator|&&
+name|domain_uri
+index|[
+name|len
+operator|-
+literal|1
+index|]
+operator|==
+literal|'/'
+condition|)
+name|domain
+operator|->
+name|help_uri
+index|[
+name|len
+operator|-
+literal|1
+index|]
+operator|=
+literal|'\0'
+expr_stmt|;
+block|}
 return|return
 name|domain
 return|;
@@ -827,6 +897,13 @@ argument_list|(
 name|domain
 operator|->
 name|help_uri
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|domain
+operator|->
+name|help_root
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1067,7 +1144,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8b16d00103
+DECL|enum|__anon27681de60103
 block|{
 DECL|enumerator|DOMAIN_START
 name|DOMAIN_START
@@ -1092,7 +1169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8b16d00208
+DECL|struct|__anon27681de60208
 block|{
 DECL|member|filename
 specifier|const
@@ -1391,9 +1468,9 @@ name|DomainParser
 modifier|*
 name|parser
 decl_stmt|;
-name|gchar
+name|GIOChannel
 modifier|*
-name|basedir
+name|io
 decl_stmt|;
 name|gchar
 modifier|*
@@ -1401,10 +1478,6 @@ name|filename
 decl_stmt|;
 name|gboolean
 name|success
-decl_stmt|;
-name|GIOChannel
-modifier|*
-name|io
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -1480,7 +1553,16 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-name|basedir
+if|if
+condition|(
+operator|!
+name|domain
+operator|->
+name|help_root
+condition|)
+name|domain
+operator|->
+name|help_root
 operator|=
 name|g_filename_from_uri
 argument_list|(
@@ -1496,7 +1578,9 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|basedir
+name|domain
+operator|->
+name|help_root
 condition|)
 block|{
 name|g_set_error
@@ -1522,7 +1606,9 @@ name|filename
 operator|=
 name|g_build_filename
 argument_list|(
-name|basedir
+name|domain
+operator|->
+name|help_root
 argument_list|,
 name|locale
 operator|->
@@ -1531,11 +1617,6 @@ argument_list|,
 literal|"gimp-help.xml"
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|basedir
 argument_list|)
 expr_stmt|;
 ifdef|#

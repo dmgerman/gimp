@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c751b340108
+DECL|struct|__anon2acf6c840108
 block|{
 DECL|member|procedure
 name|gchar
@@ -529,6 +529,8 @@ argument_list|(
 name|GIMP_HELP_DEFAULT_DOMAIN
 argument_list|,
 name|default_domain_uri
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 for|for
@@ -556,6 +558,8 @@ name|domain_uris
 index|[
 name|i
 index|]
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

@@ -89,14 +89,14 @@ parameter_list|)
 block|{
 name|g_print
 argument_list|(
-literal|"gimp-help-lookup version %s\n\n"
+literal|"gimp-help-lookup version %s\n"
 argument_list|,
 name|GIMP_VERSION
 argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"Looks up a help-id in the GIMP user manual.\n"
+literal|"Looks up a help-id in the GIMP user manual.\n\n"
 literal|"Usage: %s [options] [help-id]\n\n"
 argument_list|,
 name|name
@@ -107,6 +107,8 @@ argument_list|(
 literal|"Valid options are:\n"
 literal|"  -h, --help                  Output this help.\n"
 literal|"  -v, --version               Output version info.\n"
+literal|"  -b, --base<uri>            Speficies base URI.\n"
+literal|"  -r, --root<directory>      Speficies root directory for index files.\n"
 literal|"  -l, --lang<language-code>  Specifies help language.\n"
 literal|"\n"
 argument_list|)
@@ -131,7 +133,7 @@ block|{
 specifier|const
 name|gchar
 modifier|*
-name|help_root
+name|help_base
 init|=
 name|g_getenv
 argument_list|(
@@ -151,6 +153,13 @@ modifier|*
 name|help_id
 init|=
 name|GIMP_HELP_DEFAULT_ID
+decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|help_root
+init|=
+name|NULL
 decl_stmt|;
 name|gchar
 modifier|*
@@ -220,33 +229,13 @@ operator|++
 expr_stmt|;
 switch|switch
 condition|(
+name|g_ascii_tolower
+argument_list|(
 operator|*
 name|opt
+argument_list|)
 condition|)
 block|{
-case|case
-literal|'l'
-case|:
-if|if
-condition|(
-name|i
-operator|+
-name|i
-operator|<
-name|argc
-condition|)
-block|{
-name|help_locales
-operator|=
-name|argv
-index|[
-operator|++
-name|i
-index|]
-expr_stmt|;
-break|break;
-block|}
-comment|/* else fallthrough */
 case|case
 literal|'v'
 case|:
@@ -263,9 +252,80 @@ name|EXIT_SUCCESS
 argument_list|)
 expr_stmt|;
 case|case
+literal|'b'
+case|:
+if|if
+condition|(
+name|i
+operator|+
+literal|1
+operator|<
+name|argc
+condition|)
+block|{
+name|help_base
+operator|=
+name|argv
+index|[
+operator|++
+name|i
+index|]
+expr_stmt|;
+continue|continue;
+block|}
+break|break;
+case|case
+literal|'r'
+case|:
+if|if
+condition|(
+name|i
+operator|+
+literal|1
+operator|<
+name|argc
+condition|)
+block|{
+name|help_root
+operator|=
+name|argv
+index|[
+operator|++
+name|i
+index|]
+expr_stmt|;
+continue|continue;
+block|}
+break|break;
+case|case
+literal|'l'
+case|:
+if|if
+condition|(
+name|i
+operator|+
+literal|1
+operator|<
+name|argc
+condition|)
+block|{
+name|help_locales
+operator|=
+name|argv
+index|[
+operator|++
+name|i
+index|]
+expr_stmt|;
+continue|continue;
+block|}
+break|break;
+case|case
 literal|'h'
 case|:
-default|default:
+case|case
+literal|'?'
+case|:
 name|usage
 argument_list|(
 name|argv
@@ -280,6 +340,16 @@ name|EXIT_SUCCESS
 argument_list|)
 expr_stmt|;
 block|}
+name|g_printerr
+argument_list|(
+literal|"Error parsing the command-line options, try --help\n"
+argument_list|)
+expr_stmt|;
+name|exit
+argument_list|(
+name|EXIT_FAILURE
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -294,13 +364,13 @@ block|}
 block|}
 if|if
 condition|(
-name|help_root
+name|help_base
 condition|)
 name|uri
 operator|=
 name|g_strdup
 argument_list|(
-name|help_root
+name|help_base
 argument_list|)
 expr_stmt|;
 else|else
@@ -320,6 +390,8 @@ argument_list|(
 name|GIMP_HELP_DEFAULT_DOMAIN
 argument_list|,
 name|uri
+argument_list|,
+name|help_root
 argument_list|)
 expr_stmt|;
 name|g_free
