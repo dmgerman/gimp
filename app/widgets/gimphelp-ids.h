@@ -2465,6 +2465,14 @@ value|"gimp-prefs-tool-options"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_PREFS_TOOLBOX
+define|#
+directive|define
+name|GIMP_HELP_PREFS_TOOLBOX
+value|"gimp-prefs-toolbox"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_PREFS_INPUT_DEVICES
 define|#
 directive|define

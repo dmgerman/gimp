@@ -209,7 +209,7 @@ name|gimp_dnd_file_dest_add
 argument_list|(
 name|toolbox
 operator|->
-name|wbox
+name|tool_wbox
 argument_list|,
 name|gimp_dnd_open_files
 argument_list|,
@@ -220,7 +220,7 @@ name|gimp_dnd_viewable_dest_add
 argument_list|(
 name|toolbox
 operator|->
-name|wbox
+name|tool_wbox
 argument_list|,
 name|GIMP_TYPE_LAYER
 argument_list|,
@@ -235,7 +235,7 @@ name|gimp_dnd_viewable_dest_add
 argument_list|(
 name|toolbox
 operator|->
-name|wbox
+name|tool_wbox
 argument_list|,
 name|GIMP_TYPE_LAYER_MASK
 argument_list|,
@@ -250,7 +250,7 @@ name|gimp_dnd_viewable_dest_add
 argument_list|(
 name|toolbox
 operator|->
-name|wbox
+name|tool_wbox
 argument_list|,
 name|GIMP_TYPE_CHANNEL
 argument_list|,
@@ -265,7 +265,7 @@ name|gimp_dnd_viewable_dest_add
 argument_list|(
 name|toolbox
 operator|->
-name|wbox
+name|tool_wbox
 argument_list|,
 name|GIMP_TYPE_TOOL_INFO
 argument_list|,
@@ -280,7 +280,7 @@ name|gimp_dnd_viewable_dest_add
 argument_list|(
 name|toolbox
 operator|->
-name|wbox
+name|tool_wbox
 argument_list|,
 name|GIMP_TYPE_BUFFER
 argument_list|,

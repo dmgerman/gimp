@@ -104,12 +104,12 @@ DECL|macro|CELL_SIZE
 define|#
 directive|define
 name|CELL_SIZE
-value|23
+value|26
 end_define
 
 begin_comment
 DECL|macro|CELL_SIZE
-comment|/*  The size of the previews  */
+comment|/*  The size of the previews                  */
 end_comment
 
 begin_define
@@ -117,12 +117,12 @@ DECL|macro|GRAD_CELL_WIDTH
 define|#
 directive|define
 name|GRAD_CELL_WIDTH
-value|48
+value|54
 end_define
 
 begin_comment
 DECL|macro|GRAD_CELL_WIDTH
-comment|/*  The width of the gradient preview  */
+comment|/*  The width of the gradient preview         */
 end_comment
 
 begin_define
@@ -130,24 +130,24 @@ DECL|macro|GRAD_CELL_HEIGHT
 define|#
 directive|define
 name|GRAD_CELL_HEIGHT
-value|12
+value|14
 end_define
 
 begin_comment
 DECL|macro|GRAD_CELL_HEIGHT
-comment|/*  The height of the gradient preview  */
+comment|/*  The height of the gradient preview        */
 end_comment
 
 begin_define
-DECL|macro|CELL_PADDING
+DECL|macro|CELL_SPACING
 define|#
 directive|define
-name|CELL_PADDING
+name|CELL_SPACING
 value|2
 end_define
 
 begin_comment
-DECL|macro|CELL_PADDING
+DECL|macro|CELL_SPACING
 comment|/*  How much between brush and pattern cells  */
 end_comment
 
@@ -213,14 +213,12 @@ block|{
 name|GimpContext
 modifier|*
 name|context
-decl_stmt|;
-name|context
-operator|=
+init|=
 name|GIMP_CONTEXT
 argument_list|(
 name|data
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gimp_context_set_brush
 argument_list|(
 name|context
@@ -296,14 +294,12 @@ block|{
 name|GimpContext
 modifier|*
 name|context
-decl_stmt|;
-name|context
-operator|=
+init|=
 name|GIMP_CONTEXT
 argument_list|(
 name|data
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gimp_context_set_pattern
 argument_list|(
 name|context
@@ -379,14 +375,12 @@ block|{
 name|GimpContext
 modifier|*
 name|context
-decl_stmt|;
-name|context
-operator|=
+init|=
 name|GIMP_CONTEXT
 argument_list|(
 name|data
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gimp_context_set_gradient
 argument_list|(
 name|context
@@ -472,7 +466,7 @@ argument_list|(
 name|indicator_table
 argument_list|)
 argument_list|,
-name|CELL_PADDING
+name|CELL_SPACING
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -482,7 +476,7 @@ argument_list|(
 name|indicator_table
 argument_list|)
 argument_list|,
-name|CELL_PADDING
+name|CELL_SPACING
 argument_list|)
 expr_stmt|;
 comment|/*  brush preview  */
