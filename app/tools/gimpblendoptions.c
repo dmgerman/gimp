@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d478900103
+DECL|enum|__anon2be576fa0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -116,23 +116,11 @@ end_enum
 begin_function_decl
 specifier|static
 name|void
-name|gimp_blend_options_init
-parameter_list|(
-name|GimpBlendOptions
-modifier|*
-name|options
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|gimp_blend_options_class_init
 parameter_list|(
 name|GimpBlendOptionsClass
 modifier|*
-name|options_class
+name|klass
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -278,8 +266,8 @@ comment|/* n_preallocs    */
 operator|(
 name|GInstanceInitFunc
 operator|)
-name|gimp_blend_options_init
-block|,       }
+name|NULL
+block|}
 decl_stmt|;
 name|type
 operator|=
@@ -316,14 +304,12 @@ block|{
 name|GObjectClass
 modifier|*
 name|object_class
-decl_stmt|;
-name|object_class
-operator|=
+init|=
 name|G_OBJECT_CLASS
 argument_list|(
 name|klass
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|parent_class
 operator|=
 name|g_type_class_peek_parent
@@ -470,19 +456,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_blend_options_init (GimpBlendOptions * options)
-name|gimp_blend_options_init
-parameter_list|(
-name|GimpBlendOptions
-modifier|*
-name|options
-parameter_list|)
-block|{ }
-end_function
-
-begin_function
-specifier|static
-name|void
 DECL|function|gimp_blend_options_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
 name|gimp_blend_options_set_property
 parameter_list|(
@@ -506,14 +479,12 @@ block|{
 name|GimpBlendOptions
 modifier|*
 name|options
-decl_stmt|;
-name|options
-operator|=
+init|=
 name|GIMP_BLEND_OPTIONS
 argument_list|(
 name|object
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 switch|switch
 condition|(
 name|property_id
@@ -655,14 +626,12 @@ block|{
 name|GimpBlendOptions
 modifier|*
 name|options
-decl_stmt|;
-name|options
-operator|=
+init|=
 name|GIMP_BLEND_OPTIONS
 argument_list|(
 name|object
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 switch|switch
 condition|(
 name|property_id
@@ -793,6 +762,11 @@ block|{
 name|GObject
 modifier|*
 name|config
+init|=
+name|G_OBJECT
+argument_list|(
+name|tool_options
+argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -814,13 +788,6 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
-name|config
-operator|=
-name|G_OBJECT
-argument_list|(
-name|tool_options
-argument_list|)
-expr_stmt|;
 name|vbox
 operator|=
 name|gimp_paint_options_gui

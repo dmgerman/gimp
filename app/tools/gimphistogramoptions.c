@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4d07a80103
+DECL|enum|__anon2bf77dc10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -206,8 +206,10 @@ block|,
 literal|0
 block|,
 comment|/* n_preallocs    */
+operator|(
+name|GInstanceInitFunc
+operator|)
 name|NULL
-comment|/* instance_init  */
 block|}
 decl_stmt|;
 name|type

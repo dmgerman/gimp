@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c63a9aa0103
+DECL|enum|__anon2889ff280103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -84,7 +84,7 @@ name|gimp_color_picker_options_class_init
 parameter_list|(
 name|GimpColorPickerOptionsClass
 modifier|*
-name|options_class
+name|klass
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -246,14 +246,12 @@ block|{
 name|GObjectClass
 modifier|*
 name|object_class
-decl_stmt|;
-name|object_class
-operator|=
+init|=
 name|G_OBJECT_CLASS
 argument_list|(
 name|klass
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|parent_class
 operator|=
 name|g_type_class_peek_parent

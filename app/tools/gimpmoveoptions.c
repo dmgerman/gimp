@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ae52820103
+DECL|enum|__anon27f0a52b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -84,18 +84,6 @@ name|PROP_MOVE_CURRENT
 block|}
 enum|;
 end_enum
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_move_options_init
-parameter_list|(
-name|GimpMoveOptions
-modifier|*
-name|options
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 specifier|static
@@ -230,8 +218,8 @@ comment|/* n_preallocs    */
 operator|(
 name|GInstanceInitFunc
 operator|)
-name|gimp_move_options_init
-block|,       }
+name|NULL
+block|}
 decl_stmt|;
 name|type
 operator|=
@@ -268,14 +256,12 @@ block|{
 name|GObjectClass
 modifier|*
 name|object_class
-decl_stmt|;
-name|object_class
-operator|=
+init|=
 name|G_OBJECT_CLASS
 argument_list|(
 name|klass
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|parent_class
 operator|=
 name|g_type_class_peek_parent
@@ -328,19 +314,6 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_move_options_init (GimpMoveOptions * options)
-name|gimp_move_options_init
-parameter_list|(
-name|GimpMoveOptions
-modifier|*
-name|options
-parameter_list|)
-block|{ }
 end_function
 
 begin_function
@@ -682,6 +655,11 @@ block|{
 name|GObject
 modifier|*
 name|config
+init|=
+name|G_OBJECT
+argument_list|(
+name|tool_options
+argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -703,13 +681,6 @@ name|gchar
 modifier|*
 name|title
 decl_stmt|;
-name|config
-operator|=
-name|G_OBJECT
-argument_list|(
-name|tool_options
-argument_list|)
-expr_stmt|;
 name|vbox
 operator|=
 name|gimp_tool_options_gui

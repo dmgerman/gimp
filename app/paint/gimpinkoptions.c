@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b703e730103
+DECL|enum|__anon27dc262a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -100,23 +100,11 @@ end_enum
 begin_function_decl
 specifier|static
 name|void
-name|gimp_ink_options_init
-parameter_list|(
-name|GimpInkOptions
-modifier|*
-name|options
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|gimp_ink_options_class_init
 parameter_list|(
 name|GimpInkOptionsClass
 modifier|*
-name|options_class
+name|klass
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -242,8 +230,8 @@ comment|/* n_preallocs    */
 operator|(
 name|GInstanceInitFunc
 operator|)
-name|gimp_ink_options_init
-block|,       }
+name|NULL
+block|}
 decl_stmt|;
 name|type
 operator|=
@@ -458,19 +446,6 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_ink_options_init (GimpInkOptions * options)
-name|gimp_ink_options_init
-parameter_list|(
-name|GimpInkOptions
-modifier|*
-name|options
-parameter_list|)
-block|{ }
 end_function
 
 begin_function

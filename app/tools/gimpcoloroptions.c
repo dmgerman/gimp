@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0fa07e0103
+DECL|enum|__anon27d998960103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -89,7 +89,7 @@ name|gimp_color_options_class_init
 parameter_list|(
 name|GimpColorOptionsClass
 modifier|*
-name|options_class
+name|klass
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -201,8 +201,10 @@ block|,
 literal|0
 block|,
 comment|/* n_preallocs    */
+operator|(
+name|GInstanceInitFunc
+operator|)
 name|NULL
-comment|/* instance_init  */
 block|}
 decl_stmt|;
 name|type

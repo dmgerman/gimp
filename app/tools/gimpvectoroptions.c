@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Vector tool  * Copyright (C) 1999 Sven Neumann<sven@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpvectoroptions.c  * Copyright (C) 1999 Sven Neumann<sven@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a30156d0103
+DECL|enum|__anon29c6d1060103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -90,18 +90,6 @@ name|PROP_VECTORS_POLYGONAL
 block|}
 enum|;
 end_enum
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_vector_options_init
-parameter_list|(
-name|GimpVectorOptions
-modifier|*
-name|options
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 specifier|static
@@ -236,8 +224,8 @@ comment|/* n_preallocs    */
 operator|(
 name|GInstanceInitFunc
 operator|)
-name|gimp_vector_options_init
-block|,       }
+name|NULL
+block|}
 decl_stmt|;
 name|type
 operator|=
@@ -274,14 +262,12 @@ block|{
 name|GObjectClass
 modifier|*
 name|object_class
-decl_stmt|;
-name|object_class
-operator|=
+init|=
 name|G_OBJECT_CLASS
 argument_list|(
 name|klass
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|parent_class
 operator|=
 name|g_type_class_peek_parent
@@ -328,7 +314,7 @@ literal|"vectors-polygonal"
 argument_list|,
 name|N_
 argument_list|(
-literal|"restrict editing to polygonals"
+literal|"Restrict editing to polygons"
 argument_list|)
 argument_list|,
 name|FALSE
@@ -337,19 +323,6 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_vector_options_init (GimpVectorOptions * options)
-name|gimp_vector_options_init
-parameter_list|(
-name|GimpVectorOptions
-modifier|*
-name|options
-parameter_list|)
-block|{ }
 end_function
 
 begin_function
@@ -378,14 +351,12 @@ block|{
 name|GimpVectorOptions
 modifier|*
 name|options
-decl_stmt|;
-name|options
-operator|=
+init|=
 name|GIMP_VECTOR_OPTIONS
 argument_list|(
 name|object
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 switch|switch
 condition|(
 name|property_id
@@ -457,14 +428,12 @@ block|{
 name|GimpVectorOptions
 modifier|*
 name|options
-decl_stmt|;
-name|options
-operator|=
+init|=
 name|GIMP_VECTOR_OPTIONS
 argument_list|(
 name|object
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 switch|switch
 condition|(
 name|property_id
@@ -525,6 +494,11 @@ block|{
 name|GObject
 modifier|*
 name|config
+init|=
+name|G_OBJECT
+argument_list|(
+name|tool_options
+argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -542,13 +516,6 @@ name|gchar
 modifier|*
 name|str
 decl_stmt|;
-name|config
-operator|=
-name|G_OBJECT
-argument_list|(
-name|tool_options
-argument_list|)
-expr_stmt|;
 name|vbox
 operator|=
 name|gimp_tool_options_gui
