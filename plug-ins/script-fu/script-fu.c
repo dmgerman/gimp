@@ -5347,7 +5347,7 @@ literal|"1997"
 argument_list|,
 literal|"<Toolbox>/Xtns/Script-Fu/Refresh"
 argument_list|,
-literal|""
+name|NULL
 argument_list|,
 name|PROC_TEMPORARY
 argument_list|,
