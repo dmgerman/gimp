@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2badd6930103
+DECL|enum|__anon2c781e240103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1698,6 +1698,17 @@ argument_list|)
 argument_list|,
 name|GIMP_VIEW_SIZE_SMALL
 argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+comment|/*  set a silly smally size request on the entry to disable    *  GtkEntry's minimal width of 150 pixels.    */
+name|gtk_widget_set_size_request
+argument_list|(
+name|entry
+argument_list|,
+literal|10
+argument_list|,
+operator|-
 literal|1
 argument_list|)
 expr_stmt|;
