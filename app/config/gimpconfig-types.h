@@ -17,6 +17,35 @@ name|__GIMP_CONFIG_TYPES_H__
 end_define
 
 begin_define
+DECL|macro|GIMP_TYPE_COLOR
+define|#
+directive|define
+name|GIMP_TYPE_COLOR
+value|(gimp_color_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_VALUE_HOLDS_COLOR (value)
+define|#
+directive|define
+name|GIMP_VALUE_HOLDS_COLOR
+parameter_list|(
+name|value
+parameter_list|)
+value|(G_TYPE_CHECK_VALUE_TYPE ((value), GIMP_TYPE_COLOR))
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_color_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_define
 DECL|macro|GIMP_TYPE_MEMSIZE
 define|#
 directive|define
