@@ -88,7 +88,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2881a0460103
+DECL|enum|__anon2c07a34b0103
 block|{
 DECL|enumerator|CROP_CROP
 name|CROP_CROP
@@ -191,7 +191,7 @@ struct|struct
 name|_GimpCropToolClass
 block|{
 DECL|member|parent_class
-name|GimpToolClass
+name|GimpDrawToolClass
 name|parent_class
 decl_stmt|;
 block|}

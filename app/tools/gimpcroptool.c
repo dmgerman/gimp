@@ -704,7 +704,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1da8b50103
+DECL|enum|__anon2c0a699d0103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -8218,7 +8218,7 @@ name|tool_type
 operator|=
 name|gtk_type_unique
 argument_list|(
-name|GIMP_TYPE_TOOL
+name|GIMP_TYPE_DRAW_TOOL
 argument_list|,
 operator|&
 name|tool_info
