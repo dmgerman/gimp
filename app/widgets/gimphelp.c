@@ -211,7 +211,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_help_webbrowser
+name|gimp_help_web_browser
 parameter_list|(
 name|Gimp
 modifier|*
@@ -480,9 +480,9 @@ argument_list|)
 condition|)
 break|break;
 case|case
-name|GIMP_HELP_BROWSER_WEBBROWSER
+name|GIMP_HELP_BROWSER_WEB_BROWSER
 case|:
-name|gimp_help_webbrowser
+name|gimp_help_web_browser
 argument_list|(
 name|idle_help
 operator|->
@@ -540,7 +540,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_help_internal_not_found_callback (GtkWidget * widget,gboolean use_webbrowser,gpointer data)
+DECL|function|gimp_help_internal_not_found_callback (GtkWidget * widget,gboolean use_web_browser,gpointer data)
 name|gimp_help_internal_not_found_callback
 parameter_list|(
 name|GtkWidget
@@ -548,7 +548,7 @@ modifier|*
 name|widget
 parameter_list|,
 name|gboolean
-name|use_webbrowser
+name|use_web_browser
 parameter_list|,
 name|gpointer
 name|data
@@ -565,7 +565,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|use_webbrowser
+name|use_web_browser
 condition|)
 name|g_object_set
 argument_list|(
@@ -575,7 +575,7 @@ name|config
 argument_list|,
 literal|"help-browser"
 argument_list|,
-name|GIMP_HELP_BROWSER_WEBBROWSER
+name|GIMP_HELP_BROWSER_WEB_BROWSER
 argument_list|,
 name|NULL
 argument_list|)
@@ -756,7 +756,7 @@ argument_list|)
 operator|->
 name|help_browser
 operator|!=
-name|GIMP_HELP_BROWSER_WEBBROWSER
+name|GIMP_HELP_BROWSER_WEB_BROWSER
 operator|)
 return|;
 block|}
@@ -988,7 +988,7 @@ argument_list|)
 operator|->
 name|help_browser
 operator|!=
-name|GIMP_HELP_BROWSER_WEBBROWSER
+name|GIMP_HELP_BROWSER_WEB_BROWSER
 operator|)
 return|;
 block|}
@@ -1048,8 +1048,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_help_webbrowser (Gimp * gimp,const gchar * help_domain,const gchar * help_locale,const gchar * help_id)
-name|gimp_help_webbrowser
+DECL|function|gimp_help_web_browser (Gimp * gimp,const gchar * help_domain,const gchar * help_locale,const gchar * help_id)
+name|gimp_help_web_browser
 parameter_list|(
 name|Gimp
 modifier|*

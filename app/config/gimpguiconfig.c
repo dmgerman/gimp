@@ -153,7 +153,7 @@ DECL|macro|DEFAULT_GIMP_HELP_BROWSER
 define|#
 directive|define
 name|DEFAULT_GIMP_HELP_BROWSER
-value|GIMP_HELP_BROWSER_WEBBROWSER
+value|GIMP_HELP_BROWSER_WEB_BROWSER
 end_define
 
 begin_define
@@ -192,7 +192,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon29255d920103
+DECL|enum|__anon2b417bcc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

@@ -234,14 +234,14 @@ literal|"gimp"
 block|}
 block|,
 block|{
-name|GIMP_HELP_BROWSER_WEBBROWSER
+name|GIMP_HELP_BROWSER_WEB_BROWSER
 block|,
 name|N_
 argument_list|(
 literal|"Web Browser"
 argument_list|)
 block|,
-literal|"webbrowser"
+literal|"web-browser"
 block|}
 block|,
 block|{
