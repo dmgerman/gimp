@@ -1198,6 +1198,20 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
+comment|/*  Restore the original threshold  */
+name|g_object_set
+argument_list|(
+name|options
+argument_list|,
+literal|"threshold"
+argument_list|,
+name|fuzzy_sel
+operator|->
+name|first_threshold
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -1346,11 +1360,18 @@ name|options
 argument_list|,
 literal|"threshold"
 argument_list|,
+name|CLAMP
+argument_list|(
 name|fuzzy_sel
 operator|->
 name|first_threshold
 operator|+
 name|diff
+argument_list|,
+literal|0
+argument_list|,
+literal|255
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
