@@ -134,7 +134,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon273aefbf0103
+DECL|enum|__anon2c1bcd560103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2775,17 +2775,6 @@ name|G_CALLBACK
 argument_list|(
 name|gimp_template_editor_template_notify
 argument_list|)
-argument_list|,
-name|editor
-argument_list|)
-expr_stmt|;
-name|gimp_template_editor_template_notify
-argument_list|(
-name|editor
-operator|->
-name|template
-argument_list|,
-name|NULL
 argument_list|,
 name|editor
 argument_list|)

@@ -120,7 +120,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a20bd5d0108
+DECL|struct|__anon279317630108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -826,13 +826,13 @@ name|gimp_config_sync
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
-name|dialog
-operator|->
 name|template
 argument_list|)
 argument_list|,
 name|GIMP_CONFIG
 argument_list|(
+name|dialog
+operator|->
 name|template
 argument_list|)
 argument_list|,
