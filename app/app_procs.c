@@ -620,7 +620,7 @@ name|g_log_set_handler
 argument_list|(
 name|log_domains
 index|[
-literal|0
+name|i
 index|]
 argument_list|,
 name|G_LOG_LEVEL_MESSAGE
