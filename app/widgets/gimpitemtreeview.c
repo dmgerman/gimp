@@ -83,12 +83,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimplayer-floating-sel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpmarshal.h"
 end_include
 
@@ -160,7 +154,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279de3c80103
+DECL|enum|__anon27f05a420103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -2827,31 +2821,6 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
-comment|/* EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEK */
-if|if
-condition|(
-name|GIMP_IS_LAYER
-argument_list|(
-name|viewable
-argument_list|)
-operator|&&
-name|gimp_layer_is_floating_sel
-argument_list|(
-name|GIMP_LAYER
-argument_list|(
-name|viewable
-argument_list|)
-argument_list|)
-condition|)
-name|floating_sel_remove
-argument_list|(
-name|GIMP_LAYER
-argument_list|(
-name|viewable
-argument_list|)
-argument_list|)
-expr_stmt|;
-else|else
 name|view
 operator|->
 name|remove_item_func

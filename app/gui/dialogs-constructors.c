@@ -186,6 +186,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimplayerlistview.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimplistitem.h"
 end_include
 
@@ -2312,6 +2318,10 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
+name|GimpLayerListView
+modifier|*
+name|layer_view
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|view
@@ -2367,7 +2377,7 @@ argument_list|,
 operator|(
 name|GimpRemoveItemFunc
 operator|)
-name|gimp_image_remove_layer
+name|layers_remove_layer
 argument_list|,
 operator|(
 name|GimpCopyItemFunc
@@ -2399,6 +2409,19 @@ argument_list|(
 literal|"<Layers>"
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|layer_view
+operator|=
+name|GIMP_LAYER_LIST_VIEW
+argument_list|(
+name|view
+argument_list|)
+expr_stmt|;
+name|layer_view
+operator|->
+name|anchor_item_func
+operator|=
+name|layers_anchor_layer
 expr_stmt|;
 name|dockable
 operator|=

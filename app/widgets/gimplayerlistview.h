@@ -22,6 +22,22 @@ directive|include
 file|"gimpdrawablelistview.h"
 end_include
 
+begin_typedef
+DECL|typedef|GimpAnchorItemFunc
+typedef|typedef
+name|void
+function_decl|(
+modifier|*
+name|GimpAnchorItemFunc
+function_decl|)
+parameter_list|(
+name|GimpLayer
+modifier|*
+name|layer
+parameter_list|)
+function_decl|;
+end_typedef
+
 begin_define
 DECL|macro|GIMP_TYPE_LAYER_LIST_VIEW
 define|#
@@ -102,6 +118,10 @@ block|{
 DECL|member|parent_instance
 name|GimpDrawableListView
 name|parent_instance
+decl_stmt|;
+DECL|member|anchor_item_func
+name|GimpAnchorItemFunc
+name|anchor_item_func
 decl_stmt|;
 DECL|member|options_box
 name|GtkWidget

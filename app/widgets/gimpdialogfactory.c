@@ -102,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294abc9f0103
+DECL|enum|__anon2c78f6070103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -123,7 +123,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294abc9f0203
+DECL|enum|__anon2c78f6070203
 block|{
 DECL|enumerator|GIMP_DIALOG_SHOW_ALL
 name|GIMP_DIALOG_SHOW_ALL
@@ -585,6 +585,7 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
+comment|/*  start iterating from the beginning each time we destroyed a    *  toplevel because destroying a dock may cause lots of items    *  to be removed from factory->open_dialogs    */
 while|while
 condition|(
 name|factory
@@ -633,6 +634,7 @@ expr_stmt|;
 break|break;
 block|}
 block|}
+comment|/*  the list being non-empty without any toplevel is an error,        *  so eek and chain up        */
 if|if
 condition|(
 operator|!
@@ -641,7 +643,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"%s: stale entries in factory->open_dialogs"
+literal|"%s: stale non-toplevel entries in factory->open_dialogs"
 argument_list|,
 name|G_GNUC_FUNCTION
 argument_list|)
