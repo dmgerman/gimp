@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2909af970103
+DECL|enum|__anon29a41abe0103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -70,7 +70,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2909af970203
+DECL|enum|__anon29a41abe0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2314,7 +2314,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_set_default_cursor:  * @preview: a #GimpPreview widget  * @cursor:  a #GdkCursor or NULL  *  * Sets the default mouse cursor for the preview.  Note that this will be  * overriden by a GDK_FLEUR if the preview has scrollbars, or by a GDK_WATCH  * when the preview is invalidated.  *   * Since: GIMP 2.2  **/
+comment|/**  * gimp_preview_set_default_cursor:  * @preview: a #GimpPreview widget  * @cursor:  a #GdkCursor or %NULL  *  * Sets the default mouse cursor for the preview.  Note that this will  * be overriden by a %GDK_FLEUR if the preview has scrollbars, or by a  * %GDK_WATCH when the preview is invalidated.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
