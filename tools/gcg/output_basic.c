@@ -513,7 +513,7 @@ name|old
 decl_stmt|;
 specifier|static
 specifier|const
-name|gint
+name|size_t
 name|bufsize
 init|=
 literal|1024

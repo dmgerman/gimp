@@ -6,7 +6,7 @@ file|"output.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon289fd8050108
+DECL|struct|__anon276f4bc60108
 typedef|typedef
 struct|struct
 block|{
@@ -106,6 +106,7 @@ argument_list|,
 literal|"typedef enum {\n"
 literal|"%3"
 literal|"} %1;\n"
+literal|"const %1 %3 = %3;\n"
 argument_list|,
 name|pr_list_foreach
 argument_list|,
@@ -123,6 +124,39 @@ argument_list|,
 name|d
 operator|.
 name|t
+argument_list|,
+name|pr_primtype
+argument_list|,
+name|d
+operator|.
+name|t
+argument_list|,
+name|pr_macro_name
+argument_list|,
+name|d
+operator|.
+name|t
+argument_list|,
+name|NULL
+argument_list|,
+literal|"LAST"
+argument_list|,
+name|pr_macro_name
+argument_list|,
+name|d
+operator|.
+name|t
+argument_list|,
+name|NULL
+argument_list|,
+name|g_slist_last
+argument_list|(
+name|e
+operator|->
+name|flags
+argument_list|)
+operator|->
+name|data
 argument_list|)
 expr_stmt|;
 block|}

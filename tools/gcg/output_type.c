@@ -31,6 +31,34 @@ name|pr
 argument_list|(
 name|type_hdr
 argument_list|,
+literal|"\n\n"
+argument_list|)
+expr_stmt|;
+name|pr
+argument_list|(
+name|source
+argument_list|,
+literal|"\n"
+argument_list|)
+expr_stmt|;
+name|pr
+argument_list|(
+name|prot_hdr
+argument_list|,
+literal|"\n\n"
+argument_list|)
+expr_stmt|;
+name|pr
+argument_list|(
+name|source_head
+argument_list|,
+literal|"\n"
+argument_list|)
+expr_stmt|;
+name|pr
+argument_list|(
+name|type_hdr
+argument_list|,
 literal|"#define %3 \\\n"
 literal|" (%2 ? %2 : %2())\n"
 argument_list|,

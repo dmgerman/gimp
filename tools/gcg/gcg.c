@@ -124,6 +124,31 @@ name|impl_name
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+specifier|extern
+name|int
+name|yydebug
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|FILE
+modifier|*
+name|yyin
+decl_stmt|;
+end_decl_stmt
+
+begin_function_decl
+specifier|extern
+name|int
+name|yyparse
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_function
 DECL|function|get_options (int argc,char * argv[])
 name|void
@@ -153,7 +178,7 @@ name|argc
 argument_list|,
 name|argv
 argument_list|,
-literal|"f:t:p:s:i:"
+literal|"f:t:p:s:i:d"
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -199,6 +224,14 @@ case|:
 name|impl_name
 operator|=
 name|optarg
+expr_stmt|;
+break|break;
+case|case
+literal|'d'
+case|:
+name|yydebug
+operator|=
+literal|1
 expr_stmt|;
 break|break;
 case|case
@@ -351,15 +384,6 @@ name|argv
 index|[]
 parameter_list|)
 block|{
-specifier|extern
-name|int
-name|yydebug
-decl_stmt|;
-specifier|extern
-name|FILE
-modifier|*
-name|yyin
-decl_stmt|;
 comment|/*	target=stdout;*/
 name|decl_hash
 operator|=
