@@ -206,7 +206,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon28a2f12c0103
+DECL|enum|__anon2b6784e80103
 typedef|typedef
 enum|enum
 block|{
@@ -770,7 +770,7 @@ DECL|variable|default_width
 name|int
 name|default_width
 init|=
-literal|256
+literal|983
 decl_stmt|;
 end_decl_stmt
 
@@ -779,9 +779,13 @@ DECL|variable|default_height
 name|int
 name|default_height
 init|=
-literal|256
+literal|857
 decl_stmt|;
 end_decl_stmt
+
+begin_comment
+comment|/* temporary default size increase to stress test stuff.  -- austin 7/11/99 */
+end_comment
 
 begin_decl_stmt
 DECL|variable|default_type

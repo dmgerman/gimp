@@ -356,7 +356,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28945bc20103
+DECL|enum|__anon2c01b5ed0103
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -380,7 +380,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28945bc20208
+DECL|struct|__anon2c01b5ed0208
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -663,7 +663,7 @@ name|replicate_times
 decl_stmt|;
 comment|/*  Saved colors  */
 struct|struct
-DECL|struct|__anon28945bc20308
+DECL|struct|__anon2c01b5ed0308
 block|{
 DECL|member|r
 DECL|member|g
@@ -26705,6 +26705,10 @@ name|tmp
 operator|=
 name|gradients_list
 expr_stmt|;
+name|g
+operator|=
+name|NULL
+expr_stmt|;
 while|while
 condition|(
 name|tmp
@@ -26742,6 +26746,47 @@ name|g_slist_next
 argument_list|(
 name|tmp
 argument_list|)
+expr_stmt|;
+block|}
+comment|/* is there a gradient with this name already? */
+if|if
+condition|(
+name|g
+operator|&&
+name|strcmp
+argument_list|(
+name|grad
+operator|->
+name|name
+argument_list|,
+name|g
+operator|->
+name|name
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|gradients_list
+operator|=
+name|g_slist_remove
+argument_list|(
+name|gradients_list
+argument_list|,
+name|g
+argument_list|)
+expr_stmt|;
+name|grad_free_gradient
+argument_list|(
+name|g
+argument_list|)
+expr_stmt|;
+name|num_gradients
+operator|--
+expr_stmt|;
+comment|/* force refresh in case anyone had the gradient selected */
+name|gimp_context_refresh_gradients
+argument_list|()
 expr_stmt|;
 block|}
 name|num_gradients
