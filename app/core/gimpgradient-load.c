@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -37,6 +31,12 @@ begin_include
 include|#
 directive|include
 file|<glib-object.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -169,7 +169,7 @@ argument_list|)
 expr_stmt|;
 name|file
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -952,7 +952,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab438fb0108
+DECL|struct|__anon2b2631f80108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -980,7 +980,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab438fb0208
+DECL|struct|__anon2b2631f80208
 block|{
 DECL|member|offset
 name|gdouble

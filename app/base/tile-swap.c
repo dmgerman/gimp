@@ -12,16 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_comment
-comment|/* SEEK_SET */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|<errno.h>
 end_include
 
@@ -29,12 +19,6 @@ begin_include
 include|#
 directive|include
 file|<sys/types.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<sys/stat.h>
 end_include
 
 begin_include
@@ -81,6 +65,12 @@ begin_include
 include|#
 directive|include
 file|<glib-object.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -925,7 +915,7 @@ expr_stmt|;
 block|}
 endif|#
 directive|endif
-name|unlink
+name|g_unlink
 argument_list|(
 name|swap_file
 operator|->
@@ -1416,7 +1406,7 @@ name|swap_file
 operator|->
 name|fd
 operator|=
-name|open
+name|g_open
 argument_list|(
 name|swap_file
 operator|->
@@ -1459,7 +1449,7 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
-name|unlink
+name|g_unlink
 argument_list|(
 name|swap_file
 operator|->
@@ -1787,7 +1777,7 @@ name|swap_file
 operator|->
 name|fd
 operator|=
-name|open
+name|g_open
 argument_list|(
 name|swap_file
 operator|->

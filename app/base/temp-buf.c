@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -60,6 +54,12 @@ begin_include
 include|#
 directive|include
 file|<glib-object.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
 end_include
 
 begin_ifdef
@@ -2705,18 +2705,18 @@ expr_stmt|;
 return|return;
 block|}
 comment|/*  Open file for overwrite  */
-if|if
-condition|(
-operator|(
 name|fp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
 literal|"wb"
 argument_list|)
-operator|)
+expr_stmt|;
+if|if
+condition|(
+name|fp
 condition|)
 block|{
 name|gsize
@@ -2766,7 +2766,7 @@ name|blocks_written
 operator|)
 condition|)
 block|{
-name|unlink
+name|g_unlink
 argument_list|(
 name|filename
 argument_list|)
@@ -2796,7 +2796,7 @@ block|}
 block|}
 else|else
 block|{
-name|unlink
+name|g_unlink
 argument_list|(
 name|filename
 argument_list|)
@@ -2929,12 +2929,9 @@ name|G_FILE_TEST_IS_REGULAR
 argument_list|)
 condition|)
 block|{
-if|if
-condition|(
-operator|(
 name|fp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|buf
 operator|->
@@ -2942,7 +2939,10 @@ name|filename
 argument_list|,
 literal|"rb"
 argument_list|)
-operator|)
+expr_stmt|;
+if|if
+condition|(
+name|fp
 condition|)
 block|{
 name|gsize
@@ -2996,13 +2996,15 @@ name|TRUE
 expr_stmt|;
 block|}
 else|else
+block|{
 name|perror
 argument_list|(
 literal|"Error in temp buf caching"
 argument_list|)
 expr_stmt|;
+block|}
 comment|/*  Delete the swap file  */
-name|unlink
+name|g_unlink
 argument_list|(
 name|buf
 operator|->
@@ -3091,7 +3093,7 @@ argument_list|)
 condition|)
 block|{
 comment|/*  Delete the swap file  */
-name|unlink
+name|g_unlink
 argument_list|(
 name|buf
 operator|->
@@ -3112,6 +3114,7 @@ name|buf
 operator|->
 name|filename
 condition|)
+block|{
 name|g_free
 argument_list|(
 name|buf
@@ -3119,13 +3122,13 @@ operator|->
 name|filename
 argument_list|)
 expr_stmt|;
-comment|/*  free filename  */
 name|buf
 operator|->
 name|filename
 operator|=
 name|NULL
 expr_stmt|;
+block|}
 block|}
 end_function
 

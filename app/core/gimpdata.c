@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -48,6 +42,12 @@ begin_include
 include|#
 directive|include
 file|<glib-object.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -99,7 +99,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1d63800103
+DECL|enum|__anon2a08ad520103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -1002,7 +1002,7 @@ name|TRUE
 return|;
 if|if
 condition|(
-name|unlink
+name|g_unlink
 argument_list|(
 name|data
 operator|->

@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -37,12 +31,6 @@ begin_include
 include|#
 directive|include
 file|<sys/types.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<sys/stat.h>
 end_include
 
 begin_ifdef
@@ -72,6 +60,12 @@ begin_include
 include|#
 directive|include
 file|<glib-object.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
 end_include
 
 begin_ifdef
@@ -176,7 +170,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2952ea240103
+DECL|enum|__anon288fc3a70103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -1589,13 +1583,15 @@ argument_list|)
 expr_stmt|;
 name|fd
 operator|=
-name|open
+name|g_open
 argument_list|(
 name|filename
 argument_list|,
 name|O_RDONLY
 operator||
 name|_O_BINARY
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 if|if
@@ -2819,7 +2815,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2952ea24020a
+DECL|union|__anon288fc3a7020a
 block|{
 DECL|member|u
 name|guint16

@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -31,6 +25,12 @@ begin_include
 include|#
 directive|include
 file|<glib-object.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -887,7 +887,7 @@ argument_list|)
 expr_stmt|;
 name|env
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|file_data
 operator|->

@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -54,6 +48,12 @@ begin_include
 include|#
 directive|include
 file|<glib-object.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -102,7 +102,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aaaf3530103
+DECL|enum|__anon29ae9a630103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -939,7 +939,7 @@ name|FALSE
 decl_stmt|;
 name|file
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|data
 operator|->
@@ -2682,7 +2682,7 @@ argument_list|)
 expr_stmt|;
 name|file
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,

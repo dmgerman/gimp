@@ -35,6 +35,12 @@ end_endif
 begin_include
 include|#
 directive|include
+file|<glib/gstdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -772,7 +778,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|unlink
+name|g_unlink
 argument_list|(
 name|filename
 argument_list|)

@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -43,6 +37,12 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
+end_include
 
 begin_include
 include|#
@@ -129,7 +129,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afcddc50103
+DECL|enum|__anon28d225380103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO
@@ -772,7 +772,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|unlink
+name|g_unlink
 argument_list|(
 name|filename
 argument_list|)

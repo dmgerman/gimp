@@ -56,6 +56,12 @@ directive|include
 file|<glib-object.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -556,9 +562,7 @@ block|{
 name|gchar
 modifier|*
 name|filename
-decl_stmt|;
-name|filename
-operator|=
+init|=
 name|g_build_filename
 argument_list|(
 name|dirname
@@ -567,8 +571,8 @@ name|entry
 argument_list|,
 name|NULL
 argument_list|)
-expr_stmt|;
-name|unlink
+decl_stmt|;
+name|g_unlink
 argument_list|(
 name|filename
 argument_list|)

@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<errno.h>
 end_include
 
@@ -30,13 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<sys/stat.h>
+file|<glib-object.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -399,7 +393,7 @@ return|;
 block|}
 if|if
 condition|(
-name|stat
+name|g_stat
 argument_list|(
 name|source
 argument_list|,

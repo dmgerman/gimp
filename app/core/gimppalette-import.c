@@ -45,12 +45,6 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<sys/stat.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<sys/types.h>
 end_include
 
@@ -64,6 +58,12 @@ begin_include
 include|#
 directive|include
 file|<glib-object.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
 end_include
 
 begin_ifdef
@@ -1619,7 +1619,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3d91ec0103
+DECL|enum|__anon27b69e3f0103
 block|{
 DECL|enumerator|GIMP_PALETTE_FILE_FORMAT_UNKNOWN
 name|GIMP_PALETTE_FILE_FORMAT_UNKNOWN
@@ -1673,11 +1673,13 @@ name|file_stat
 decl_stmt|;
 name|fd
 operator|=
-name|open
+name|g_open
 argument_list|(
 name|filename
 argument_list|,
 name|O_RDONLY
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 if|if
@@ -1875,11 +1877,13 @@ argument_list|)
 expr_stmt|;
 name|fd
 operator|=
-name|open
+name|g_open
 argument_list|(
 name|filename
 argument_list|,
 name|O_RDONLY
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 if|if
