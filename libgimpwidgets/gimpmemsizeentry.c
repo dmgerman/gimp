@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276b06dc0103
+DECL|enum|__anon29113ed60103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -981,7 +981,7 @@ name|value
 operator|=
 name|value
 expr_stmt|;
-name|gimp_option_menu_set_history
+name|gimp_int_option_menu_set_history
 argument_list|(
 name|GTK_OPTION_MENU
 argument_list|(
@@ -990,10 +990,7 @@ operator|->
 name|menu
 argument_list|)
 argument_list|,
-name|GUINT_TO_POINTER
-argument_list|(
 name|shift
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

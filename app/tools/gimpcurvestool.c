@@ -1296,7 +1296,7 @@ name|c_tool
 argument_list|)
 expr_stmt|;
 comment|/* set the current selection */
-name|gimp_option_menu_set_history
+name|gimp_int_option_menu_set_history
 argument_list|(
 name|GTK_OPTION_MENU
 argument_list|(
@@ -1305,12 +1305,9 @@ operator|->
 name|channel_menu
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|c_tool
 operator|->
 name|channel
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|curves_update

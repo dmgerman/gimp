@@ -595,7 +595,7 @@ name|frame
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_option_menu_set_history
+name|gimp_int_option_menu_set_history
 argument_list|(
 name|GTK_OPTION_MENU
 argument_list|(
@@ -604,10 +604,7 @@ operator|->
 name|menu
 argument_list|)
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
 name|mode
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|frame

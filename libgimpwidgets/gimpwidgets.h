@@ -239,6 +239,20 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_int_option_menu_set_history
+parameter_list|(
+name|GtkOptionMenu
+modifier|*
+name|option_menu
+parameter_list|,
+name|gint
+name|item_data
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_typedef
 DECL|typedef|GimpOptionMenuSensitivityCallback
 typedef|typedef

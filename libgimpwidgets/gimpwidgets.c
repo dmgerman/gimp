@@ -1114,6 +1114,44 @@ block|}
 end_function
 
 begin_comment
+comment|/**  * gimp_int_option_menu_set_history:  * @option_menu: A #GtkOptionMenu as returned by gimp_int_option_menu_new().  * @item_data:   The @item_data of the menu item you want to select.  *  * Iterates over all entries in a #GtkOptionMenu and selects the one with the  * matching @item_data. Probably only makes sense to use with a #GtkOptionMenu  * that was created using gimp_int_option_menu_new(). This just mirrors  * gimp_option_menu_set_history() like gimp_int_option_menu_new() mirrors  * gimp_option_menu_new2().  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_int_option_menu_set_history (GtkOptionMenu * option_menu,gint item_data)
+name|gimp_int_option_menu_set_history
+parameter_list|(
+name|GtkOptionMenu
+modifier|*
+name|option_menu
+parameter_list|,
+name|gint
+name|item_data
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GTK_IS_OPTION_MENU
+argument_list|(
+name|option_menu
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_option_menu_set_history
+argument_list|(
+name|option_menu
+argument_list|,
+name|GINT_TO_POINTER
+argument_list|(
+name|item_data
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
 comment|/**  * gimp_option_menu_set_sensitive:  * @option_menu: a #GtkOptionMenu as returned by gimp_option_menu_new() or  *            gimp_option_menu_new2().  * @callback: a function called for each item in the menu to determine the  *            the sensitivity state.  * @callback_data: data to pass to the @callback function.  *  * Calls the given @callback for each item in the menu and passes it the  * item_data and the @callback_data. The menu item's sensitivity is set  * according to the return value of this function.  **/
 end_comment
 
@@ -3541,7 +3579,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27679b130108
+DECL|struct|__anon27a7b8ce0108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
