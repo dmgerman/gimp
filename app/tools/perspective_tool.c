@@ -6,12 +6,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"appenv.h"
 end_include
 
@@ -793,9 +787,20 @@ control|)
 block|{
 name|p
 operator|+=
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|p
+argument_list|,
+name|MAX_INFO_BUF
+operator|-
+operator|(
+name|p
+operator|-
+name|matrix_row_buf
+index|[
+name|i
+index|]
+operator|)
 argument_list|,
 literal|"%10.3g"
 argument_list|,

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library                                                     * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball                  *  * gimpunitmenu.c  * Copyright (C) 1999 Michael Natterer<mitschel@cs.tu-berlin.de>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Library General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.               *                                                                                * This library is distributed in the hope that it will be useful,                * but WITHOUT ANY WARRANTY; without even the implied warranty of                 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU              * Library General Public License for more details.  *  * You should have received a copy of the GNU Library General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library                                                     * Copyright (C) 1995-1999 Peter Mattis and Spencer Kimball                  *  * gimpunitmenu.c  * Copyright (C) 1999 Michael Natterer<mitschel@cs.tu-berlin.de>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Library General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.               *                                                                                * This library is distributed in the hope that it will be useful,                * but WITHOUT ANY WARRANTY; without even the implied warranty of                 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU              * Library General Public License for more details.  *  * You should have received a copy of the GNU Library General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -14,6 +14,10 @@ include|#
 directive|include
 file|"libgimp/gimpintl.h"
 end_include
+
+begin_comment
+comment|/*  private functions  */
+end_comment
 
 begin_function_decl
 specifier|static
@@ -48,7 +52,7 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon2b2120d10103
+DECL|enum|__anon277186610103
 enum|enum
 block|{
 DECL|enumerator|GUM_UNIT_CHANGED_SIGNAL
@@ -276,9 +280,15 @@ name|UNIT_PIXEL
 expr_stmt|;
 name|gum
 operator|->
-name|start
+name|show_pixels
 operator|=
-literal|0
+name|FALSE
+expr_stmt|;
+name|gum
+operator|->
+name|show_percent
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 end_function
@@ -360,7 +370,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_unit_menu_new (gchar * format,GUnit unit,gboolean with_pixels,gboolean with_custom)
+DECL|function|gimp_unit_menu_new (gchar * format,GUnit unit,gboolean show_pixels,gboolean show_percent,gboolean show_custom)
 name|gimp_unit_menu_new
 parameter_list|(
 name|gchar
@@ -371,10 +381,13 @@ name|GUnit
 name|unit
 parameter_list|,
 name|gboolean
-name|with_pixels
+name|show_pixels
 parameter_list|,
 name|gboolean
-name|with_custom
+name|show_percent
+parameter_list|,
+name|gboolean
+name|show_custom
 parameter_list|)
 block|{
 name|GimpUnitMenu
@@ -417,7 +430,7 @@ operator|>=
 name|gimp_unit_get_number_of_built_in_units
 argument_list|()
 condition|)
-name|with_custom
+name|show_custom
 operator|=
 name|TRUE
 expr_stmt|;
@@ -438,30 +451,17 @@ argument_list|(
 name|format
 argument_list|)
 expr_stmt|;
-comment|/* if we don't want pixels, start with inches */
 name|gum
 operator|->
-name|start
+name|show_pixels
 operator|=
-name|with_pixels
-condition|?
-name|UNIT_PIXEL
-else|:
-name|UNIT_INCH
+name|show_pixels
 expr_stmt|;
-if|if
-condition|(
-name|unit
-operator|<
 name|gum
 operator|->
-name|start
-condition|)
-name|unit
+name|show_percent
 operator|=
-name|gum
-operator|->
-name|start
+name|show_percent
 expr_stmt|;
 name|menu
 operator|=
@@ -472,9 +472,11 @@ for|for
 control|(
 name|u
 operator|=
-name|gum
-operator|->
-name|start
+name|show_pixels
+condition|?
+name|UNIT_PIXEL
+else|:
+name|UNIT_INCH
 init|;
 name|u
 operator|<
@@ -544,7 +546,7 @@ argument_list|(
 name|menuitem
 argument_list|)
 expr_stmt|;
-comment|/* add a separator after pixels */
+comment|/*  add a separator after "pixels"  */
 if|if
 condition|(
 name|u
@@ -664,7 +666,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|with_custom
+name|show_custom
 condition|)
 block|{
 name|menuitem
@@ -769,38 +771,44 @@ name|gum
 argument_list|)
 argument_list|,
 operator|(
+name|unit
+operator|==
+name|UNIT_PIXEL
+operator|)
+condition|?
+literal|0
+else|:
+operator|(
+name|show_pixels
+condition|?
+operator|(
 operator|(
 name|unit
 operator|<
 name|UNIT_END
 operator|)
 condition|?
-operator|(
 name|unit
-operator|-
-name|gum
-operator|->
-name|start
 operator|+
-operator|(
-name|with_pixels
-condition|?
 literal|1
 else|:
-literal|0
-operator|)
-operator|)
-else|:
-operator|(
 name|UNIT_END
 operator|+
-operator|(
-name|with_pixels
-condition|?
 literal|2
-else|:
-literal|0
 operator|)
+else|:
+operator|(
+operator|(
+name|unit
+operator|<
+name|UNIT_END
+operator|)
+condition|?
+name|unit
+operator|-
+literal|1
+else|:
+name|UNIT_END
 operator|)
 operator|)
 argument_list|)
@@ -860,9 +868,19 @@ argument_list|(
 operator|(
 name|unit
 operator|>=
+name|UNIT_PIXEL
+operator|)
+operator|&&
+operator|(
+operator|(
+name|unit
+operator|>
+name|UNIT_PIXEL
+operator|)
+operator|||
 name|gum
 operator|->
-name|start
+name|show_pixels
 operator|)
 operator|&&
 operator|(
@@ -901,13 +919,9 @@ operator|=
 name|UNIT_END
 operator|+
 operator|(
-operator|(
 name|gum
 operator|->
-name|start
-operator|==
-name|UNIT_PIXEL
-operator|)
+name|show_pixels
 condition|?
 literal|2
 else|:
@@ -1108,50 +1122,46 @@ name|gum
 argument_list|)
 argument_list|,
 operator|(
+name|unit
+operator|==
+name|UNIT_PIXEL
+operator|)
+condition|?
+literal|0
+else|:
+operator|(
+name|gum
+operator|->
+name|show_pixels
+condition|?
+operator|(
 operator|(
 name|unit
 operator|<
 name|UNIT_END
 operator|)
 condition|?
-operator|(
 name|unit
-operator|-
-name|gum
-operator|->
-name|start
 operator|+
-operator|(
-operator|(
-name|gum
-operator|->
-name|start
-operator|==
-name|UNIT_PIXEL
-operator|)
-condition|?
 literal|1
 else|:
-literal|0
-operator|)
-operator|)
-else|:
-operator|(
 name|UNIT_END
 operator|+
+literal|2
+operator|)
+else|:
 operator|(
 operator|(
-name|gum
-operator|->
-name|start
-operator|==
-name|UNIT_PIXEL
+name|unit
+operator|<
+name|UNIT_END
 operator|)
 condition|?
-literal|2
+name|unit
+operator|-
+literal|1
 else|:
-literal|0
-operator|)
+name|UNIT_END
 operator|)
 operator|)
 argument_list|)
@@ -1197,7 +1207,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* most of the next two functions is stolen from app/gdisplay.h ;-) */
+comment|/*  most of the next two functions is stolen from app/gdisplay.c  */
 end_comment
 
 begin_function
@@ -1534,7 +1544,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* private callbacks of gimp_unit_menu_create_selection ()  */
+comment|/*  private callbacks of gimp_unit_menu_create_selection ()  */
 end_comment
 
 begin_function
@@ -1742,7 +1752,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* private function of gimp_unit_menu_callback ()  */
+comment|/*  private function of gimp_unit_menu_callback ()  */
 end_comment
 
 begin_function
@@ -1935,6 +1945,7 @@ argument_list|,
 name|gum
 argument_list|)
 expr_stmt|;
+comment|/*  build the selection list  */
 name|scrolled_win
 operator|=
 name|gtk_scrolled_window_new
@@ -2001,7 +2012,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Unit"
+literal|"Unit "
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2152,6 +2163,7 @@ operator|->
 name|clist
 argument_list|)
 expr_stmt|;
+comment|/*  build the action area  */
 name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
@@ -2344,6 +2356,7 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
+comment|/*  insert the unit lines  */
 name|num_units
 operator|=
 name|gimp_unit_get_number_of_units
@@ -2443,7 +2456,7 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* Now show the dialog */
+comment|/*  now show the dialog  */
 name|gtk_widget_show
 argument_list|(
 name|vbox
@@ -2558,7 +2571,7 @@ operator|==
 name|new_unit
 condition|)
 return|return;
-comment|/* was "More..." selected? */
+comment|/*  was "More..." selected?  */
 if|if
 condition|(
 name|new_unit
@@ -2574,6 +2587,21 @@ name|gum
 argument_list|)
 argument_list|,
 operator|(
+name|gum
+operator|->
+name|unit
+operator|==
+name|UNIT_PIXEL
+operator|)
+condition|?
+literal|0
+else|:
+operator|(
+name|gum
+operator|->
+name|show_pixels
+condition|?
+operator|(
 operator|(
 name|gum
 operator|->
@@ -2582,46 +2610,33 @@ operator|<
 name|UNIT_END
 operator|)
 condition|?
+name|gum
+operator|->
+name|unit
+operator|+
+literal|1
+else|:
+name|UNIT_END
+operator|+
+literal|2
+operator|)
+else|:
+operator|(
 operator|(
 name|gum
 operator|->
 name|unit
-operator|-
-name|gum
-operator|->
-name|start
-operator|+
-operator|(
-operator|(
-name|gum
-operator|->
-name|start
-operator|==
-name|UNIT_PIXEL
+operator|<
+name|UNIT_END
 operator|)
 condition|?
+name|gum
+operator|->
+name|unit
+operator|-
 literal|1
 else|:
-literal|0
-operator|)
-operator|)
-else|:
-operator|(
 name|UNIT_END
-operator|+
-operator|(
-operator|(
-name|gum
-operator|->
-name|start
-operator|==
-name|UNIT_PIXEL
-operator|)
-condition|?
-literal|2
-else|:
-literal|0
-operator|)
 operator|)
 operator|)
 argument_list|)

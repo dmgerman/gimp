@@ -5326,6 +5326,8 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 literal|100
 argument_list|,
 name|GIMP_SIZE_ENTRY_UPDATE_SIZE

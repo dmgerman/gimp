@@ -16,6 +16,12 @@ directive|define
 name|__ACTIONAREA_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|<gtk/gtk.h>
+end_include
+
 begin_typedef
 DECL|typedef|ActionCallback
 typedef|typedef
@@ -34,7 +40,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28c2d8b00108
+DECL|struct|__anon2ab1fad60108
 typedef|typedef
 struct|struct
 block|{

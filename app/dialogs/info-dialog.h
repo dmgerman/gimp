@@ -35,7 +35,7 @@ file|"libgimp/gimpunit.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon27e8ee460103
+DECL|enum|__anon29c276b70103
 typedef|typedef
 enum|enum
 block|{
@@ -372,6 +372,9 @@ name|unit_format
 parameter_list|,
 name|gboolean
 name|menu_show_pixels
+parameter_list|,
+name|gboolean
+name|menu_show_percent
 parameter_list|,
 name|gboolean
 name|show_refval

@@ -560,6 +560,24 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|old_plug_in_path
+specifier|static
+name|char
+modifier|*
+name|old_plug_in_path
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|old_module_path
+specifier|static
+name|char
+modifier|*
+name|old_module_path
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|old_brush_path
 specifier|static
 name|char
@@ -583,24 +601,6 @@ specifier|static
 name|char
 modifier|*
 name|old_palette_path
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|old_plug_in_path
-specifier|static
-name|char
-modifier|*
-name|old_plug_in_path
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|old_module_path
-specifier|static
-name|char
-modifier|*
-name|old_module_path
 decl_stmt|;
 end_decl_stmt
 
@@ -654,93 +654,9 @@ name|old_image_title_format
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|edit_temp_path
-specifier|static
-name|char
-modifier|*
-name|edit_temp_path
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|edit_swap_path
-specifier|static
-name|char
-modifier|*
-name|edit_swap_path
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|edit_brush_path
-specifier|static
-name|char
-modifier|*
-name|edit_brush_path
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|edit_pattern_path
-specifier|static
-name|char
-modifier|*
-name|edit_pattern_path
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|edit_palette_path
-specifier|static
-name|char
-modifier|*
-name|edit_palette_path
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|edit_plug_in_path
-specifier|static
-name|char
-modifier|*
-name|edit_plug_in_path
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|edit_module_path
-specifier|static
-name|char
-modifier|*
-name|edit_module_path
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|edit_gradient_path
-specifier|static
-name|char
-modifier|*
-name|edit_gradient_path
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
+begin_comment
+comment|/*  variables which can't be changed on the fly  */
+end_comment
 
 begin_decl_stmt
 DECL|variable|edit_stingy_memory_use
@@ -787,6 +703,94 @@ DECL|variable|edit_num_processors
 specifier|static
 name|int
 name|edit_num_processors
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|edit_temp_path
+specifier|static
+name|char
+modifier|*
+name|edit_temp_path
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|edit_swap_path
+specifier|static
+name|char
+modifier|*
+name|edit_swap_path
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|edit_plug_in_path
+specifier|static
+name|char
+modifier|*
+name|edit_plug_in_path
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|edit_module_path
+specifier|static
+name|char
+modifier|*
+name|edit_module_path
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|edit_brush_path
+specifier|static
+name|char
+modifier|*
+name|edit_brush_path
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|edit_pattern_path
+specifier|static
+name|char
+modifier|*
+name|edit_pattern_path
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|edit_palette_path
+specifier|static
+name|char
+modifier|*
+name|edit_palette_path
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|edit_gradient_path
+specifier|static
+name|char
+modifier|*
+name|edit_gradient_path
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -851,17 +855,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|default_resolution_force_equal
-specifier|static
-name|GtkWidget
-modifier|*
-name|default_resolution_force_equal
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|resolution_xserver_label
 specifier|static
 name|GtkWidget
@@ -883,19 +876,8 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|monitor_resolution_force_equal
-specifier|static
-name|GtkWidget
-modifier|*
-name|monitor_resolution_force_equal
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
-comment|/* Some information regarding preferences, compiled by Raph Levien 11/3/97.    updated by Michael Natterer 27/3/99     The following preference items cannot be set on the fly (at least    according to the existing pref code - it may be that changing them    so they're set on the fly is not hard).     temp-path    swap-path    brush-path    pattern-path    plug-in-path    module-path    palette-path    gradient-path    stingy-memory-use    tile-cache-size    install-cmap    cycled-marching-ants    last-opened-size    num-processors     All of these now have variables of the form edit_temp_path, which    are copied from the actual variables (e.g. temp_path) the first time    the dialog box is started.     Variables of the form old_temp_path represent the values at the    time the dialog is opened - a cancel copies them back from old to    the real variables or the edit variables, depending on whether they    can be set on the fly.     Here are the remaining issues as I see them:     Still no settings for default-gradient, default-palette,    gamma-correction, color-cube.     No widget for confirm-on-close although a lot of stuff is there.     The semantics of "save" are a little funny - it only saves the    settings that are different from the way they were when the dialog    was opened. So you can set something, close the window, open it    up again, click "save" and have nothing happen. To change this    to more intuitive semantics, we should have a whole set of init_    variables that are set the first time the dialog is opened (along    with the edit_ variables that are currently set). Then, the save    callback checks against the init_ variable rather than the old_. */
+comment|/* Some information regarding preferences, compiled by Raph Levien 11/3/97.    updated by Michael Natterer 27/3/99     The following preference items cannot be set on the fly (at least    according to the existing pref code - it may be that changing them    so they're set on the fly is not hard).     stingy-memory-use    tile-cache-size    install-cmap    cycled-marching-ants    last-opened-size    num-processors    temp-path    swap-path    plug-in-path    module-path    brush-path    pattern-path    palette-path    gradient-path     All of these now have variables of the form edit_temp_path, which    are copied from the actual variables (e.g. temp_path) the first time    the dialog box is started.     Variables of the form old_temp_path represent the values at the    time the dialog is opened - a cancel copies them back from old to    the real variables or the edit variables, depending on whether they    can be set on the fly.     Here are the remaining issues as I see them:     Still no settings for default-gradient, default-palette,    gamma-correction, color-cube.     No widget for confirm-on-close although a lot of stuff is there.     The semantics of "save" are a little funny - it only saves the    settings that are different from the way they were when the dialog    was opened. So you can set something, close the window, open it    up again, click "save" and have nothing happen. To change this    to more intuitive semantics, we should have a whole set of init_    variables that are set the first time the dialog is opened (along    with the edit_ variables that are currently set). Then, the save    callback checks against the init_ variable rather than the old_. */
 end_comment
 
 begin_comment
@@ -1161,7 +1143,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Error: Default units must be within unit range."
+literal|"Error: Default unit must be within unit range."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1216,7 +1198,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Error: Default units must be within unit range."
+literal|"Error: Default resolution unit must be within unit range."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1241,7 +1223,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Error: monitor resolution must not be zero."
+literal|"Error: Monitor resolution must not be zero."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1266,7 +1248,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Error: image_title_format should never be NULL."
+literal|"Error: Image title format must not be NULL."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1285,6 +1267,10 @@ name|prefs_dlg
 operator|=
 name|NULL
 expr_stmt|;
+name|tile_cache_size_adjustment
+operator|=
+name|NULL
+expr_stmt|;
 name|default_size_sizeentry
 operator|=
 name|NULL
@@ -1293,19 +1279,11 @@ name|default_resolution_sizeentry
 operator|=
 name|NULL
 expr_stmt|;
-name|default_resolution_force_equal
-operator|=
-name|NULL
-expr_stmt|;
 name|resolution_xserver_label
 operator|=
 name|NULL
 expr_stmt|;
 name|monitor_resolution_sizeentry
-operator|=
-name|NULL
-expr_stmt|;
-name|monitor_resolution_force_equal
 operator|=
 name|NULL
 expr_stmt|;
@@ -1363,9 +1341,6 @@ name|int
 name|save_tile_cache_size
 decl_stmt|;
 name|int
-name|save_num_processors
-decl_stmt|;
-name|int
 name|save_install_cmap
 decl_stmt|;
 name|int
@@ -1374,6 +1349,9 @@ decl_stmt|;
 name|int
 name|save_last_opened_size
 decl_stmt|;
+name|int
+name|save_num_processors
+decl_stmt|;
 name|gchar
 modifier|*
 name|save_temp_path
@@ -1381,6 +1359,14 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|save_swap_path
+decl_stmt|;
+name|gchar
+modifier|*
+name|save_plug_in_path
+decl_stmt|;
+name|gchar
+modifier|*
+name|save_module_path
 decl_stmt|;
 name|gchar
 modifier|*
@@ -1393,14 +1379,6 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|save_palette_path
-decl_stmt|;
-name|gchar
-modifier|*
-name|save_plug_in_path
-decl_stmt|;
-name|gchar
-modifier|*
-name|save_module_path
 decl_stmt|;
 name|gchar
 modifier|*
@@ -1439,6 +1417,10 @@ name|save_last_opened_size
 operator|=
 name|last_opened_size
 expr_stmt|;
+name|save_num_processors
+operator|=
+name|num_processors
+expr_stmt|;
 name|save_temp_path
 operator|=
 name|temp_path
@@ -1446,6 +1428,14 @@ expr_stmt|;
 name|save_swap_path
 operator|=
 name|swap_path
+expr_stmt|;
+name|save_plug_in_path
+operator|=
+name|plug_in_path
+expr_stmt|;
+name|save_module_path
+operator|=
+name|module_path
 expr_stmt|;
 name|save_brush_path
 operator|=
@@ -1459,21 +1449,9 @@ name|save_palette_path
 operator|=
 name|palette_path
 expr_stmt|;
-name|save_plug_in_path
-operator|=
-name|plug_in_path
-expr_stmt|;
-name|save_module_path
-operator|=
-name|module_path
-expr_stmt|;
 name|save_gradient_path
 operator|=
 name|gradient_path
-expr_stmt|;
-name|save_num_processors
-operator|=
-name|num_processors
 expr_stmt|;
 if|if
 condition|(
@@ -2196,6 +2174,62 @@ if|if
 condition|(
 name|file_prefs_strcmp
 argument_list|(
+name|plug_in_path
+argument_list|,
+name|edit_plug_in_path
+argument_list|)
+condition|)
+block|{
+name|update
+operator|=
+name|g_list_append
+argument_list|(
+name|update
+argument_list|,
+literal|"plug-in-path"
+argument_list|)
+expr_stmt|;
+name|plug_in_path
+operator|=
+name|edit_plug_in_path
+expr_stmt|;
+name|restart_notification
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|file_prefs_strcmp
+argument_list|(
+name|module_path
+argument_list|,
+name|edit_module_path
+argument_list|)
+condition|)
+block|{
+name|update
+operator|=
+name|g_list_append
+argument_list|(
+name|update
+argument_list|,
+literal|"module-path"
+argument_list|)
+expr_stmt|;
+name|module_path
+operator|=
+name|edit_module_path
+expr_stmt|;
+name|restart_notification
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|file_prefs_strcmp
+argument_list|(
 name|brush_path
 argument_list|,
 name|edit_brush_path
@@ -2270,62 +2304,6 @@ expr_stmt|;
 name|palette_path
 operator|=
 name|edit_palette_path
-expr_stmt|;
-name|restart_notification
-operator|=
-name|TRUE
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|file_prefs_strcmp
-argument_list|(
-name|plug_in_path
-argument_list|,
-name|edit_plug_in_path
-argument_list|)
-condition|)
-block|{
-name|update
-operator|=
-name|g_list_append
-argument_list|(
-name|update
-argument_list|,
-literal|"plug-in-path"
-argument_list|)
-expr_stmt|;
-name|plug_in_path
-operator|=
-name|edit_plug_in_path
-expr_stmt|;
-name|restart_notification
-operator|=
-name|TRUE
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|file_prefs_strcmp
-argument_list|(
-name|module_path
-argument_list|,
-name|edit_module_path
-argument_list|)
-condition|)
-block|{
-name|update
-operator|=
-name|g_list_append
-argument_list|(
-name|update
-argument_list|,
-literal|"module-path"
-argument_list|)
-expr_stmt|;
-name|module_path
-operator|=
-name|edit_module_path
 expr_stmt|;
 name|restart_notification
 operator|=
@@ -2436,6 +2414,10 @@ name|last_opened_size
 operator|=
 name|save_last_opened_size
 expr_stmt|;
+name|num_processors
+operator|=
+name|save_num_processors
+expr_stmt|;
 name|temp_path
 operator|=
 name|save_temp_path
@@ -2443,6 +2425,14 @@ expr_stmt|;
 name|swap_path
 operator|=
 name|save_swap_path
+expr_stmt|;
+name|plug_in_path
+operator|=
+name|save_plug_in_path
+expr_stmt|;
+name|module_path
+operator|=
+name|save_module_path
 expr_stmt|;
 name|brush_path
 operator|=
@@ -2455,14 +2445,6 @@ expr_stmt|;
 name|palette_path
 operator|=
 name|save_palette_path
-expr_stmt|;
-name|plug_in_path
-operator|=
-name|save_plug_in_path
-expr_stmt|;
-name|module_path
-operator|=
-name|save_module_path
 expr_stmt|;
 name|gradient_path
 operator|=
@@ -2518,6 +2500,10 @@ name|prefs_dlg
 operator|=
 name|NULL
 expr_stmt|;
+name|tile_cache_size_adjustment
+operator|=
+name|NULL
+expr_stmt|;
 name|default_size_sizeentry
 operator|=
 name|NULL
@@ -2526,19 +2512,11 @@ name|default_resolution_sizeentry
 operator|=
 name|NULL
 expr_stmt|;
-name|default_resolution_force_equal
-operator|=
-name|NULL
-expr_stmt|;
 name|resolution_xserver_label
 operator|=
 name|NULL
 expr_stmt|;
 name|monitor_resolution_sizeentry
-operator|=
-name|NULL
-expr_stmt|;
-name|monitor_resolution_force_equal
 operator|=
 name|NULL
 expr_stmt|;
@@ -2743,6 +2721,22 @@ expr_stmt|;
 name|file_prefs_strset
 argument_list|(
 operator|&
+name|edit_plug_in_path
+argument_list|,
+name|old_plug_in_path
+argument_list|)
+expr_stmt|;
+name|file_prefs_strset
+argument_list|(
+operator|&
+name|edit_module_path
+argument_list|,
+name|old_module_path
+argument_list|)
+expr_stmt|;
+name|file_prefs_strset
+argument_list|(
+operator|&
 name|edit_brush_path
 argument_list|,
 name|old_brush_path
@@ -2762,22 +2756,6 @@ operator|&
 name|edit_palette_path
 argument_list|,
 name|old_palette_path
-argument_list|)
-expr_stmt|;
-name|file_prefs_strset
-argument_list|(
-operator|&
-name|edit_plug_in_path
-argument_list|,
-name|old_plug_in_path
-argument_list|)
-expr_stmt|;
-name|file_prefs_strset
-argument_list|(
-operator|&
-name|edit_module_path
-argument_list|,
-name|old_module_path
 argument_list|)
 expr_stmt|;
 name|file_prefs_strset
@@ -3750,23 +3728,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|monitor_resolution_force_equal
-condition|)
-name|gtk_widget_set_sensitive
-argument_list|(
-name|monitor_resolution_force_equal
-argument_list|,
-operator|!
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|widget
-argument_list|)
-operator|->
-name|active
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
 name|widget
@@ -4077,7 +4038,7 @@ comment|/* #include "/home/mitschel/wilber3.xpm"  static void gimp_dialog_realiz
 end_comment
 
 begin_comment
-comment|/*  this is an experimental one  *  I tried to fold the entire dialog creation and the ActionArea stuff  *  into one function. Might be not general enough.  *  todo:  *   - session management?? (probably not)  *   - window placement  *   - policy setting  */
+comment|/*  this is an experimental one  *  I tried to fold the entire dialog creation and the ActionArea stuff  *  into one function. Might be not general enough.  */
 end_comment
 
 begin_function
@@ -4227,7 +4188,7 @@ argument_list|,
 name|auto_shrink
 argument_list|)
 expr_stmt|;
-comment|/* prepare the action_area */
+comment|/*  prepare the action_area  */
 name|gtk_container_border_width
 argument_list|(
 name|GTK_CONTAINER
@@ -4299,6 +4260,7 @@ argument_list|(
 name|hbbox
 argument_list|)
 expr_stmt|;
+comment|/*  the action_area buttons  */
 name|va_start
 argument_list|(
 name|args
@@ -4341,7 +4303,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/* pass data as user_data if data != NULL, or the dialog otherwise */
+comment|/*  pass data as user_data if data != NULL, or the dialog otherwise  */
 if|if
 condition|(
 name|callback
@@ -4401,7 +4363,7 @@ argument_list|,
 name|button
 argument_list|)
 expr_stmt|;
-comment|/* catch WM delete event */
+comment|/*  catch the WM delete event  */
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -4500,7 +4462,7 @@ argument_list|(
 name|args
 argument_list|)
 expr_stmt|;
-comment|/* catch WM delete event if not already done*/
+comment|/*  catch the WM delete event if not already done  */
 if|if
 condition|(
 operator|!
@@ -4523,7 +4485,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* the realize callback sets the wm icon pixmap */
+comment|/*  the realize callback sets the WM icon  */
 comment|/*   gtk_signal_connect (GTK_OBJECT (dialog), "realize", 		      (GtkSignalFunc) gimp_dialog_realize_callback, 		      NULL);   */
 return|return
 name|dialog
@@ -4543,6 +4505,7 @@ parameter_list|,
 name|gpointer
 name|initial
 parameter_list|,
+comment|/* set_data */
 comment|/* this is a menu item */
 name|gchar
 modifier|*
@@ -4593,6 +4556,7 @@ operator|=
 name|gtk_menu_new
 argument_list|()
 expr_stmt|;
+comment|/*  create the menu items  */
 name|initial_index
 operator|=
 literal|0
@@ -4662,7 +4626,7 @@ argument_list|(
 name|menuitem
 argument_list|)
 expr_stmt|;
-comment|/* remember the initial menu item */
+comment|/*  remember the initial menu item  */
 if|if
 condition|(
 name|set_data
@@ -4728,7 +4692,7 @@ argument_list|,
 name|menu
 argument_list|)
 expr_stmt|;
-comment|/* select the initial menu item */
+comment|/*  select the initial menu item  */
 name|gtk_option_menu_set_history
 argument_list|(
 name|GTK_OPTION_MENU
@@ -4757,6 +4721,7 @@ parameter_list|,
 name|gpointer
 name|initial
 parameter_list|,
+comment|/* set_data */
 comment|/* this is a radio button */
 name|gchar
 modifier|*
@@ -4819,6 +4784,7 @@ name|group
 operator|=
 name|NULL
 expr_stmt|;
+comment|/*  create the radio buttons  */
 name|va_start
 argument_list|(
 name|args
@@ -4893,7 +4859,7 @@ argument_list|,
 name|set_data
 argument_list|)
 expr_stmt|;
-comment|/* press the initially active radio button */
+comment|/*  press the initially active radio button  */
 if|if
 condition|(
 name|set_data
@@ -5075,12 +5041,12 @@ block|}
 end_function
 
 begin_comment
-comment|/*  add correctly aligned label& widget to a two-column table  */
+comment|/*  add aligned label& widget to a two-column table  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_table_attach_aligned (GtkTable * table,gint row,gchar * text,GtkWidget * widget,gboolean left_adjust)
+DECL|function|gimp_table_attach_aligned (GtkTable * table,gint row,gchar * text,gfloat xalign,gfloat yalign,GtkWidget * widget,gboolean left_adjust)
 name|gimp_table_attach_aligned
 parameter_list|(
 name|GtkTable
@@ -5093,6 +5059,12 @@ parameter_list|,
 name|gchar
 modifier|*
 name|text
+parameter_list|,
+name|gfloat
+name|xalign
+parameter_list|,
+name|gfloat
+name|yalign
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -5120,9 +5092,9 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|1.0
+name|xalign
 argument_list|,
-literal|0.5
+name|yalign
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -5149,6 +5121,8 @@ operator||
 name|GTK_FILL
 argument_list|,
 name|GTK_SHRINK
+operator||
+name|GTK_FILL
 argument_list|,
 literal|0
 argument_list|,
@@ -5168,7 +5142,9 @@ block|{
 name|GtkWidget
 modifier|*
 name|alignment
-init|=
+decl_stmt|;
+name|alignment
+operator|=
 name|gtk_alignment_new
 argument_list|(
 literal|0.0
@@ -5179,7 +5155,7 @@ literal|0.0
 argument_list|,
 literal|0.0
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|gtk_table_attach_defaults
 argument_list|(
 name|table
@@ -5710,6 +5686,26 @@ name|NULL
 condition|)
 block|{
 comment|/* first time dialog is opened - copy config vals to edit 	 variables. */
+name|edit_stingy_memory_use
+operator|=
+name|stingy_memory_use
+expr_stmt|;
+name|edit_tile_cache_size
+operator|=
+name|tile_cache_size
+expr_stmt|;
+name|edit_install_cmap
+operator|=
+name|install_cmap
+expr_stmt|;
+name|edit_cycled_marching_ants
+operator|=
+name|cycled_marching_ants
+expr_stmt|;
+name|edit_last_opened_size
+operator|=
+name|last_opened_size
+expr_stmt|;
 name|edit_temp_path
 operator|=
 name|file_prefs_strdup
@@ -5765,26 +5761,6 @@ name|file_prefs_strdup
 argument_list|(
 name|gradient_path
 argument_list|)
-expr_stmt|;
-name|edit_stingy_memory_use
-operator|=
-name|stingy_memory_use
-expr_stmt|;
-name|edit_tile_cache_size
-operator|=
-name|tile_cache_size
-expr_stmt|;
-name|edit_install_cmap
-operator|=
-name|install_cmap
-expr_stmt|;
-name|edit_cycled_marching_ants
-operator|=
-name|cycled_marching_ants
-expr_stmt|;
-name|edit_last_opened_size
-operator|=
-name|last_opened_size
 expr_stmt|;
 block|}
 name|old_perfectmouse
@@ -5945,6 +5921,22 @@ expr_stmt|;
 name|file_prefs_strset
 argument_list|(
 operator|&
+name|old_plug_in_path
+argument_list|,
+name|edit_plug_in_path
+argument_list|)
+expr_stmt|;
+name|file_prefs_strset
+argument_list|(
+operator|&
+name|old_module_path
+argument_list|,
+name|edit_module_path
+argument_list|)
+expr_stmt|;
+name|file_prefs_strset
+argument_list|(
+operator|&
 name|old_brush_path
 argument_list|,
 name|edit_brush_path
@@ -5964,22 +5956,6 @@ operator|&
 name|old_palette_path
 argument_list|,
 name|edit_palette_path
-argument_list|)
-expr_stmt|;
-name|file_prefs_strset
-argument_list|(
-operator|&
-name|old_plug_in_path
-argument_list|,
-name|edit_plug_in_path
-argument_list|)
-expr_stmt|;
-name|file_prefs_strset
-argument_list|(
-operator|&
-name|old_module_path
-argument_list|,
-name|edit_module_path
 argument_list|)
 expr_stmt|;
 name|file_prefs_strset
@@ -6436,6 +6412,8 @@ literal|"%p"
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|TRUE
 argument_list|,
 literal|75
@@ -6717,7 +6695,7 @@ argument_list|(
 name|hbox
 argument_list|)
 expr_stmt|;
-name|default_resolution_force_equal
+name|button
 operator|=
 name|gimp_chain_button_new
 argument_list|(
@@ -6733,6 +6711,8 @@ argument_list|,
 name|default_resolution_units
 argument_list|,
 literal|"%s"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6885,7 +6865,7 @@ name|GtkSignalFunc
 operator|)
 name|file_prefs_default_resolution_callback
 argument_list|,
-name|default_resolution_force_equal
+name|button
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -6902,7 +6882,7 @@ name|GtkSignalFunc
 operator|)
 name|file_prefs_default_resolution_callback
 argument_list|,
-name|default_resolution_force_equal
+name|button
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -6919,7 +6899,7 @@ name|GtkSignalFunc
 operator|)
 name|file_prefs_default_resolution_callback
 argument_list|,
-name|default_resolution_force_equal
+name|button
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -6950,7 +6930,7 @@ argument_list|(
 name|default_resolution_sizeentry
 argument_list|)
 argument_list|,
-name|default_resolution_force_equal
+name|button
 argument_list|,
 literal|1
 argument_list|,
@@ -6976,7 +6956,7 @@ name|gimp_chain_button_set_active
 argument_list|(
 name|GIMP_CHAIN_BUTTON
 argument_list|(
-name|default_resolution_force_equal
+name|button
 argument_list|)
 argument_list|,
 name|TRUE
@@ -6984,7 +6964,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|default_resolution_force_equal
+name|button
 argument_list|)
 expr_stmt|;
 name|hbox
@@ -7132,6 +7112,10 @@ name|_
 argument_list|(
 literal|"Default Image Type:"
 argument_list|)
+argument_list|,
+literal|1.0
+argument_list|,
+literal|0.5
 argument_list|,
 name|optionmenu
 argument_list|,
@@ -7402,6 +7386,10 @@ argument_list|(
 literal|"Transparency Type:"
 argument_list|)
 argument_list|,
+literal|1.0
+argument_list|,
+literal|0.5
+argument_list|,
 name|optionmenu
 argument_list|,
 name|TRUE
@@ -7420,7 +7408,7 @@ name|transparency_size
 argument_list|,
 name|_
 argument_list|(
-literal|"Small Checks"
+literal|"Small"
 argument_list|)
 argument_list|,
 operator|&
@@ -7433,7 +7421,7 @@ name|SMALL_CHECKS
 argument_list|,
 name|_
 argument_list|(
-literal|"Medium Checks"
+literal|"Medium"
 argument_list|)
 argument_list|,
 operator|&
@@ -7446,7 +7434,7 @@ name|MEDIUM_CHECKS
 argument_list|,
 name|_
 argument_list|(
-literal|"Large Checks"
+literal|"Large"
 argument_list|)
 argument_list|,
 operator|&
@@ -7473,6 +7461,10 @@ name|_
 argument_list|(
 literal|"Check Size:"
 argument_list|)
+argument_list|,
+literal|1.0
+argument_list|,
+literal|0.5
 argument_list|,
 name|optionmenu
 argument_list|,
@@ -7850,6 +7842,10 @@ argument_list|(
 literal|"Preview Size:"
 argument_list|)
 argument_list|,
+literal|1.0
+argument_list|,
+literal|0.5
+argument_list|,
 name|optionmenu
 argument_list|,
 name|TRUE
@@ -7911,6 +7907,10 @@ argument_list|(
 literal|"Levels of Undo:"
 argument_list|)
 argument_list|,
+literal|1.0
+argument_list|,
+literal|0.5
+argument_list|,
 name|spinbutton
 argument_list|,
 name|TRUE
@@ -7971,6 +7971,10 @@ name|_
 argument_list|(
 literal|"Recent Documents List Size:"
 argument_list|)
+argument_list|,
+literal|1.0
+argument_list|,
+literal|0.5
 argument_list|,
 name|spinbutton
 argument_list|,
@@ -8455,15 +8459,15 @@ name|adjustment
 argument_list|,
 name|marching_speed
 argument_list|,
-literal|0.0
+literal|50.0
 argument_list|,
 literal|32000.0
 argument_list|,
-literal|50.0
+literal|10.0
 argument_list|,
 literal|100.0
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
 literal|1.0
 argument_list|,
@@ -8501,6 +8505,10 @@ name|_
 argument_list|(
 literal|"Marching Ants Speed:"
 argument_list|)
+argument_list|,
+literal|1.0
+argument_list|,
+literal|0.5
 argument_list|,
 name|spinbutton
 argument_list|,
@@ -8798,6 +8806,10 @@ name|_
 argument_list|(
 literal|"Image Title Format:"
 argument_list|)
+argument_list|,
+literal|1.0
+argument_list|,
+literal|0.5
 argument_list|,
 name|combo
 argument_list|,
@@ -9414,6 +9426,10 @@ argument_list|(
 literal|"Tile Cache Size:"
 argument_list|)
 argument_list|,
+literal|1.0
+argument_list|,
+literal|0.5
+argument_list|,
 name|hbox
 argument_list|,
 name|TRUE
@@ -9477,6 +9493,10 @@ name|_
 argument_list|(
 literal|"Number of Processors to Use:"
 argument_list|)
+argument_list|,
+literal|1.0
+argument_list|,
+literal|0.5
 argument_list|,
 name|spinbutton
 argument_list|,
@@ -10444,7 +10464,7 @@ literal|0.5
 argument_list|,
 literal|0.0
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -10468,7 +10488,7 @@ argument_list|(
 name|abox
 argument_list|)
 expr_stmt|;
-name|monitor_resolution_force_equal
+name|button
 operator|=
 name|gimp_chain_button_new
 argument_list|(
@@ -10484,6 +10504,8 @@ argument_list|,
 name|UNIT_INCH
 argument_list|,
 literal|"%s"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -10636,7 +10658,7 @@ name|GtkSignalFunc
 operator|)
 name|file_prefs_monitor_resolution_callback
 argument_list|,
-name|monitor_resolution_force_equal
+name|button
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -10653,7 +10675,7 @@ name|GtkSignalFunc
 operator|)
 name|file_prefs_monitor_resolution_callback
 argument_list|,
-name|monitor_resolution_force_equal
+name|button
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -10686,7 +10708,7 @@ name|gimp_chain_button_set_active
 argument_list|(
 name|GIMP_CHAIN_BUTTON
 argument_list|(
-name|monitor_resolution_force_equal
+name|button
 argument_list|)
 argument_list|,
 name|TRUE
@@ -10699,7 +10721,7 @@ argument_list|(
 name|monitor_resolution_sizeentry
 argument_list|)
 argument_list|,
-name|monitor_resolution_force_equal
+name|button
 argument_list|,
 literal|1
 argument_list|,
@@ -10712,20 +10734,12 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|monitor_resolution_force_equal
+name|button
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
 name|monitor_resolution_sizeentry
-argument_list|,
-operator|!
-name|using_xserver_resolution
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_sensitive
-argument_list|(
-name|monitor_resolution_force_equal
 argument_list|,
 operator|!
 name|using_xserver_resolution
@@ -10773,7 +10787,7 @@ name|page_index
 operator|++
 expr_stmt|;
 block|{
-DECL|struct|__anon2be534540108
+DECL|struct|__anon28ea13b30108
 specifier|static
 specifier|const
 struct|struct
@@ -10985,6 +10999,10 @@ operator|.
 name|label
 argument_list|)
 argument_list|,
+literal|1.0
+argument_list|,
+literal|0.5
+argument_list|,
 name|fileselection
 argument_list|,
 name|FALSE
@@ -10994,7 +11012,7 @@ block|}
 block|}
 comment|/* Directories /<paths> */
 block|{
-DECL|struct|__anon2be534540208
+DECL|struct|__anon28ea13b30208
 specifier|static
 specifier|const
 struct|struct
@@ -11048,26 +11066,6 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Gradients"
-argument_list|)
-block|,
-name|N_
-argument_list|(
-literal|"Gradients Directories"
-argument_list|)
-block|,
-name|N_
-argument_list|(
-literal|"Select Gradients Dir"
-argument_list|)
-block|,
-operator|&
-name|edit_gradient_path
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
 literal|"Patterns"
 argument_list|)
 block|,
@@ -11103,6 +11101,26 @@ argument_list|)
 block|,
 operator|&
 name|edit_palette_path
+block|}
+block|,
+block|{
+name|N_
+argument_list|(
+literal|"Gradients"
+argument_list|)
+block|,
+name|N_
+argument_list|(
+literal|"Gradients Directories"
+argument_list|)
+block|,
+name|N_
+argument_list|(
+literal|"Select Gradients Dir"
+argument_list|)
+block|,
+operator|&
+name|edit_gradient_path
 block|}
 block|,
 block|{

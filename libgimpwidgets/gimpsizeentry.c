@@ -23,11 +23,6 @@ name|SIZE_MAX_VALUE
 value|500000.0
 end_define
 
-begin_comment
-DECL|macro|SIZE_MAX_VALUE
-comment|/* is that enough ?? */
-end_comment
-
 begin_function_decl
 specifier|static
 name|void
@@ -78,7 +73,7 @@ comment|/* static int  gimp_size_entry_focus_in_callback  (GtkWidget *widget, 		
 end_comment
 
 begin_enum
-DECL|enum|__anon27ed16560103
+DECL|enum|__anon2b84a1be0103
 enum|enum
 block|{
 DECL|enumerator|GSE_VALUE_CHANGED_SIGNAL
@@ -488,6 +483,12 @@ name|TRUE
 expr_stmt|;
 name|gse
 operator|->
+name|menu_show_percent
+operator|=
+name|TRUE
+expr_stmt|;
+name|gse
+operator|->
 name|show_refval
 operator|=
 name|FALSE
@@ -578,7 +579,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_size_entry_new (gint number_of_fields,GUnit unit,gchar * unit_format,guint menu_show_pixels,guint show_refval,guint spinbutton_usize,GimpSizeEntryUP update_policy)
+DECL|function|gimp_size_entry_new (gint number_of_fields,GUnit unit,gchar * unit_format,gboolean menu_show_pixels,gboolean menu_show_percent,gboolean show_refval,gint spinbutton_usize,GimpSizeEntryUP update_policy)
 name|gimp_size_entry_new
 parameter_list|(
 name|gint
@@ -591,13 +592,16 @@ name|gchar
 modifier|*
 name|unit_format
 parameter_list|,
-name|guint
+name|gboolean
 name|menu_show_pixels
 parameter_list|,
-name|guint
+name|gboolean
+name|menu_show_percent
+parameter_list|,
+name|gboolean
 name|show_refval
 parameter_list|,
-name|guint
+name|gint
 name|spinbutton_usize
 parameter_list|,
 name|GimpSizeEntryUP
@@ -653,10 +657,6 @@ operator|->
 name|show_refval
 operator|=
 name|show_refval
-condition|?
-literal|1
-else|:
-literal|0
 expr_stmt|;
 name|gse
 operator|->
@@ -692,23 +692,14 @@ condition|(
 operator|(
 name|update_policy
 operator|==
-name|GIMP_SIZE_ENTRY_UPDATE_SIZE
-operator|)
-operator|&&
-name|menu_show_pixels
-condition|)
-name|gse
-operator|->
-name|menu_show_pixels
-operator|=
-name|TRUE
-expr_stmt|;
-elseif|else
-if|if
-condition|(
-name|update_policy
-operator|==
 name|GIMP_SIZE_ENTRY_UPDATE_RESOLUTION
+operator|)
+operator|||
+operator|(
+name|show_refval
+operator|==
+name|TRUE
+operator|)
 condition|)
 name|gse
 operator|->
@@ -722,6 +713,26 @@ operator|->
 name|menu_show_pixels
 operator|=
 name|menu_show_pixels
+expr_stmt|;
+comment|/*  show the 'percent' menu entry only if we are a 'size' sizeentry    */
+if|if
+condition|(
+name|update_policy
+operator|==
+name|GIMP_SIZE_ENTRY_UPDATE_RESOLUTION
+condition|)
+name|gse
+operator|->
+name|menu_show_percent
+operator|=
+name|FALSE
+expr_stmt|;
+else|else
+name|gse
+operator|->
+name|menu_show_percent
+operator|=
+name|menu_show_percent
 expr_stmt|;
 for|for
 control|(
@@ -1153,6 +1164,8 @@ name|gse
 operator|->
 name|menu_show_pixels
 argument_list|,
+name|FALSE
+argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
@@ -1229,24 +1242,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_size_entry_add_field (GimpSizeEntry * gse,GtkAdjustment * value_adjustment,GtkSpinButton * value_spinbutton,GtkAdjustment * refval_adjustment,GtkSpinButton * refval_spinbutton)
+DECL|function|gimp_size_entry_add_field (GimpSizeEntry * gse,GtkSpinButton * value_spinbutton,GtkSpinButton * refval_spinbutton)
 name|gimp_size_entry_add_field
 parameter_list|(
 name|GimpSizeEntry
 modifier|*
 name|gse
 parameter_list|,
-name|GtkAdjustment
-modifier|*
-name|value_adjustment
-parameter_list|,
 name|GtkSpinButton
 modifier|*
 name|value_spinbutton
-parameter_list|,
-name|GtkAdjustment
-modifier|*
-name|refval_adjustment
 parameter_list|,
 name|GtkSpinButton
 modifier|*
@@ -1274,21 +1279,6 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|value_adjustment
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|GTK_IS_ADJUSTMENT
-argument_list|(
-name|value_adjustment
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
 name|value_spinbutton
 operator|!=
 name|NULL
@@ -1309,21 +1299,6 @@ operator|->
 name|show_refval
 condition|)
 block|{
-name|g_return_if_fail
-argument_list|(
-name|refval_adjustment
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|GTK_IS_ADJUSTMENT
-argument_list|(
-name|refval_adjustment
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|refval_spinbutton
@@ -1445,7 +1420,10 @@ name|value_adjustment
 operator|=
 name|GTK_OBJECT
 argument_list|(
-name|value_adjustment
+name|gtk_spin_button_get_adjustment
+argument_list|(
+name|value_spinbutton
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gsef
@@ -1461,6 +1439,8 @@ name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
+name|gsef
+operator|->
 name|value_adjustment
 argument_list|)
 argument_list|,
@@ -1488,7 +1468,10 @@ name|refval_adjustment
 operator|=
 name|GTK_OBJECT
 argument_list|(
-name|refval_adjustment
+name|gtk_spin_button_get_adjustment
+argument_list|(
+name|refval_spinbutton
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gsef
@@ -1504,6 +1487,8 @@ name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
+name|gsef
+operator|->
 name|refval_adjustment
 argument_list|)
 argument_list|,

@@ -90,7 +90,7 @@ file|"libgimp/gimpsizeentry.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2be254fe0108
+DECL|struct|__anon2989ffb00108
 typedef|typedef
 struct|struct
 block|{
@@ -1720,6 +1720,8 @@ literal|"%p"
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 name|TRUE
 argument_list|,
 literal|75
@@ -1999,6 +2001,8 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+name|FALSE
+argument_list|,
 literal|75
 argument_list|,
 name|GIMP_SIZE_ENTRY_UPDATE_RESOLUTION
@@ -2179,6 +2183,8 @@ operator|->
 name|res_unit
 argument_list|,
 literal|"%s"
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,

@@ -242,6 +242,8 @@ operator||
 name|GTK_FILL
 argument_list|,
 name|GTK_SHRINK
+operator||
+name|GTK_FILL
 argument_list|,
 literal|0
 argument_list|,
@@ -1393,9 +1395,9 @@ argument_list|)
 argument_list|,
 name|climb_rate
 argument_list|,
-name|MIN
-argument_list|(
 name|MAX
+argument_list|(
+name|MIN
 argument_list|(
 name|digits
 argument_list|,
@@ -1503,7 +1505,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|info_dialog_add_sizeentry (InfoDialog * idialog,gchar * title,gfloat * value_ptr,gint nfields,GUnit unit,gchar * unit_format,gboolean menu_show_pixels,gboolean show_refval,GimpSizeEntryUP update_policy,GtkSignalFunc callback,gpointer data)
+DECL|function|info_dialog_add_sizeentry (InfoDialog * idialog,gchar * title,gfloat * value_ptr,gint nfields,GUnit unit,gchar * unit_format,gboolean menu_show_pixels,gboolean menu_show_percent,gboolean show_refval,GimpSizeEntryUP update_policy,GtkSignalFunc callback,gpointer data)
 name|info_dialog_add_sizeentry
 parameter_list|(
 name|InfoDialog
@@ -1530,6 +1532,9 @@ name|unit_format
 parameter_list|,
 name|gboolean
 name|menu_show_pixels
+parameter_list|,
+name|gboolean
+name|menu_show_percent
 parameter_list|,
 name|gboolean
 name|show_refval
@@ -1588,6 +1593,8 @@ argument_list|,
 name|unit_format
 argument_list|,
 name|menu_show_pixels
+argument_list|,
+name|menu_show_percent
 argument_list|,
 name|show_refval
 argument_list|,

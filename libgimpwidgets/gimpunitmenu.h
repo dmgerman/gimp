@@ -98,7 +98,7 @@ DECL|member|optionmenu
 name|GtkOptionMenu
 name|optionmenu
 decl_stmt|;
-comment|/* private stuff */
+comment|/* private */
 DECL|member|selection
 name|GtkWidget
 modifier|*
@@ -119,9 +119,13 @@ DECL|member|unit
 name|GUnit
 name|unit
 decl_stmt|;
-DECL|member|start
-name|GUnit
-name|start
+DECL|member|show_pixels
+name|gboolean
+name|show_pixels
+decl_stmt|;
+DECL|member|show_percent
+name|gboolean
+name|show_percent
 decl_stmt|;
 block|}
 struct|;
@@ -153,7 +157,7 @@ parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
-comment|/* format      -- a printf-like format string for the menu items  * unit        -- the unit selected on widget creation  * with_pixels -- should the menu contain 'pixels' ?  * with_custom -- should the menu contain an item 'More...' to pop up  *                the custom unit browser (not yet implemented)  *  *            the format string supports the following percent expansions:  *  *            %f -- factor (how many units make up an inch)  *            %y -- symbol ("''" for inch)  *            %a -- abbreviation  *            %s -- singular  *            %p -- plural  *            %% -- literal percent  */
+comment|/*  format       -- a printf-like format string for the menu items  *  unit         -- the unit selected on widget creation  *  show_pixels  -- should the menu contain 'pixels' ?  *  show_percent -- should the menu contain 'percent' ?  *  show_custom  -- should the menu contain an item 'More...' to pop up  *                  the custom unit browser (not yet implemented)  *  *            the format string supports the following percent expansions:  *  *            %f -- factor (how many units make up an inch)  *            %y -- symbol ("''" for inch)  *            %a -- abbreviation  *            %s -- singular  *            %p -- plural  *            %% -- literal percent  */
 name|GtkWidget
 modifier|*
 name|gimp_unit_menu_new
@@ -166,10 +170,13 @@ name|GUnit
 name|unit
 parameter_list|,
 name|gboolean
-name|with_pixels
+name|show_pixels
 parameter_list|,
 name|gboolean
-name|with_custom
+name|show_percent
+parameter_list|,
+name|gboolean
+name|show_custom
 parameter_list|)
 function_decl|;
 name|void
