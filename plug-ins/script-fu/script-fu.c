@@ -657,9 +657,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-ifndef|#
-directive|ifndef
-name|G_OS_WIN32
 name|gimp_install_procedure
 argument_list|(
 literal|"extension_script_fu_console"
@@ -692,6 +689,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
 name|gimp_install_procedure
 argument_list|(
 literal|"extension_script_fu_server"
@@ -893,9 +893,6 @@ operator|=
 name|status
 expr_stmt|;
 block|}
-ifndef|#
-directive|ifndef
-name|G_OS_WIN32
 comment|/*    *  The script-fu console for interactive SIOD development    */
 elseif|else
 if|if
@@ -924,6 +921,9 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 block|}
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
 comment|/*    *  The script-fu server for remote operation    */
 elseif|else
 if|if
