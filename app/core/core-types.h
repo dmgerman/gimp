@@ -33,7 +33,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2946c6fd0103
+DECL|enum|__anon2b5c10400103
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -56,7 +56,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2946c6fd0203
+DECL|enum|__anon2b5c10400203
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2946c6fd0303
+DECL|enum|__anon2b5c10400303
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2946c6fd0403
+DECL|enum|__anon2b5c10400403
 block|{
 DECL|enumerator|APPLY
 name|APPLY
@@ -142,7 +142,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2946c6fd0503
+DECL|enum|__anon2b5c10400503
 block|{
 DECL|enumerator|FOREGROUND_FILL
 name|FOREGROUND_FILL
@@ -177,7 +177,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=GIMP_>*/
-DECL|enum|__anon2946c6fd0603
+DECL|enum|__anon2b5c10400603
 block|{
 DECL|enumerator|GIMP_SHADOWS
 name|GIMP_SHADOWS
@@ -293,6 +293,15 @@ typedef|typedef
 name|struct
 name|_GimpToolInfo
 name|GimpToolInfo
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpImagefile
+typedef|typedef
+name|struct
+name|_GimpImagefile
+name|GimpImagefile
 typedef|;
 end_typedef
 
