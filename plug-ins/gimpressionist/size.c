@@ -655,7 +655,7 @@ name|tmpw
 argument_list|,
 name|_
 argument_list|(
-literal|"The number of directions (i.e. brushes) to use"
+literal|"The number of sizes of brushes to use"
 argument_list|)
 argument_list|,
 name|NULL

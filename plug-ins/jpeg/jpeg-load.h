@@ -306,7 +306,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abd85f40108
+DECL|struct|__anon29bd756e0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -353,7 +353,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abd85f40208
+DECL|struct|__anon29bd756e0208
 block|{
 DECL|member|run
 name|gint
@@ -368,7 +368,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abd85f40308
+DECL|struct|__anon29bd756e0308
 block|{
 DECL|member|cinfo
 name|struct
@@ -7533,12 +7533,6 @@ argument_list|,
 operator|&
 name|start_iter
 argument_list|,
-operator|&
-name|end_iter
-argument_list|)
-expr_stmt|;
-name|gtk_text_iter_backward_char
-argument_list|(
 operator|&
 name|end_iter
 argument_list|)
