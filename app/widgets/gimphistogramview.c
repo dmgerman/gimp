@@ -63,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon275ae9340103
+DECL|enum|__anon2a17561f0103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -76,7 +76,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon275ae9340203
+DECL|enum|__anon2a17561f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1447,6 +1447,25 @@ if|if
 condition|(
 name|in_selection
 condition|)
+block|{
+if|if
+condition|(
+name|view
+operator|->
+name|light_histogram
+condition|)
+name|spike_gc
+operator|=
+name|widget
+operator|->
+name|style
+operator|->
+name|mid_gc
+index|[
+name|GTK_STATE_SELECTED
+index|]
+expr_stmt|;
+else|else
 name|spike_gc
 operator|=
 name|widget
@@ -1458,7 +1477,9 @@ index|[
 name|GTK_STATE_SELECTED
 index|]
 expr_stmt|;
-elseif|else
+block|}
+else|else
+block|{
 if|if
 condition|(
 name|view
@@ -1488,6 +1509,7 @@ index|[
 name|GTK_STATE_NORMAL
 index|]
 expr_stmt|;
+block|}
 name|gdk_draw_line
 argument_list|(
 name|widget
