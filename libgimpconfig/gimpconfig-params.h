@@ -141,13 +141,13 @@ name|gchar
 modifier|*
 name|blurb
 parameter_list|,
-name|guint
+name|gulong
 name|minimum
 parameter_list|,
-name|guint
+name|gulong
 name|maximum
 parameter_list|,
-name|guint
+name|gulong
 name|default_value
 parameter_list|,
 name|GParamFlags

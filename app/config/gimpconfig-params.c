@@ -698,7 +698,7 @@ name|spec_type
 operator|=
 name|g_type_register_static
 argument_list|(
-name|G_TYPE_PARAM_UINT
+name|G_TYPE_PARAM_ULONG
 argument_list|,
 literal|"GimpParamMemsize"
 argument_list|,
@@ -738,7 +738,7 @@ end_function
 begin_function
 name|GParamSpec
 modifier|*
-DECL|function|gimp_param_spec_memsize (const gchar * name,const gchar * nick,const gchar * blurb,guint minimum,guint maximum,guint default_value,GParamFlags flags)
+DECL|function|gimp_param_spec_memsize (const gchar * name,const gchar * nick,const gchar * blurb,gulong minimum,gulong maximum,gulong default_value,GParamFlags flags)
 name|gimp_param_spec_memsize
 parameter_list|(
 specifier|const
@@ -756,20 +756,20 @@ name|gchar
 modifier|*
 name|blurb
 parameter_list|,
-name|guint
+name|gulong
 name|minimum
 parameter_list|,
-name|guint
+name|gulong
 name|maximum
 parameter_list|,
-name|guint
+name|gulong
 name|default_value
 parameter_list|,
 name|GParamFlags
 name|flags
 parameter_list|)
 block|{
-name|GParamSpecUInt
+name|GParamSpecULong
 modifier|*
 name|pspec
 decl_stmt|;
