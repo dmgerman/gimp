@@ -110,7 +110,7 @@ block|{
 block|{
 literal|"layers-popup"
 block|,
-name|NULL
+name|GIMP_STOCK_LAYERS
 block|,
 name|N_
 argument_list|(

@@ -137,7 +137,7 @@ block|{
 block|{
 literal|"tool-options-popup"
 block|,
-name|NULL
+name|GIMP_STOCK_TOOL_OPTIONS
 block|,
 name|N_
 argument_list|(

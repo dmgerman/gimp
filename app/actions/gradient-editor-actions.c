@@ -104,7 +104,7 @@ block|{
 block|{
 literal|"gradient-editor-popup"
 block|,
-name|NULL
+name|GIMP_STOCK_GRADIENT
 block|,
 name|N_
 argument_list|(

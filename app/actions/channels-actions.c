@@ -92,7 +92,7 @@ block|{
 block|{
 literal|"channels-popup"
 block|,
-name|NULL
+name|GIMP_STOCK_CHANNELS
 block|,
 name|N_
 argument_list|(
@@ -129,7 +129,7 @@ name|GTK_STOCK_NEW
 block|,
 name|N_
 argument_list|(
-literal|"/_New Channel..."
+literal|"_New Channel..."
 argument_list|)
 block|,
 literal|""

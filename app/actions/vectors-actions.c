@@ -92,7 +92,7 @@ block|{
 block|{
 literal|"vectors-popup"
 block|,
-name|NULL
+name|GIMP_STOCK_PATHS
 block|,
 name|N_
 argument_list|(

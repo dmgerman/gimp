@@ -80,7 +80,7 @@ block|{
 block|{
 literal|"colormap-editor-popup"
 block|,
-name|NULL
+name|GIMP_STOCK_INDEXED_PALETTE
 block|,
 name|N_
 argument_list|(

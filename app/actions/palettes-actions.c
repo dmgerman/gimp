@@ -104,7 +104,7 @@ block|{
 block|{
 literal|"palettes-popup"
 block|,
-name|NULL
+name|GIMP_STOCK_PALETTE
 block|,
 name|N_
 argument_list|(

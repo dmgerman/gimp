@@ -98,7 +98,7 @@ block|{
 block|{
 literal|"brushes-popup"
 block|,
-name|NULL
+name|GIMP_STOCK_BRUSH
 block|,
 name|N_
 argument_list|(

@@ -135,7 +135,7 @@ literal|"dockable-menu"
 block|,
 name|GTK_STOCK_MISSING_IMAGE
 block|,
-name|NULL
+literal|""
 block|}
 block|,
 block|{
@@ -167,7 +167,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"/_Tab Style"
+literal|"_Tab Style"
 argument_list|)
 block|}
 block|,
@@ -471,7 +471,7 @@ argument_list|)
 block|,
 name|TAB_STYLE
 argument_list|(
-literal|"status"
+literal|"preview"
 argument_list|,
 name|N_
 argument_list|(
@@ -483,7 +483,7 @@ argument_list|)
 block|,
 name|TAB_STYLE
 argument_list|(
-literal|"text"
+literal|"name"
 argument_list|,
 name|N_
 argument_list|(
@@ -495,7 +495,7 @@ argument_list|)
 block|,
 name|TAB_STYLE
 argument_list|(
-literal|"icon-text"
+literal|"icon-name"
 argument_list|,
 name|N_
 argument_list|(
@@ -507,7 +507,7 @@ argument_list|)
 block|,
 name|TAB_STYLE
 argument_list|(
-literal|"status-text"
+literal|"preview-name"
 argument_list|,
 argument|N_(
 literal|"St_atus& Text"
@@ -1258,7 +1258,7 @@ name|GIMP_TAB_STYLE_PREVIEW
 condition|)
 name|SET_ACTIVE
 argument_list|(
-literal|"dockable-tab-style-status"
+literal|"dockable-tab-style-preview"
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1272,7 +1272,7 @@ name|GIMP_TAB_STYLE_NAME
 condition|)
 name|SET_ACTIVE
 argument_list|(
-literal|"dockable-tab-style-text"
+literal|"dockable-tab-style-name"
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1286,7 +1286,7 @@ name|GIMP_TAB_STYLE_ICON_NAME
 condition|)
 name|SET_ACTIVE
 argument_list|(
-literal|"dockable-tab-style-icon-text"
+literal|"dockable-tab-style-icon-name"
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1300,14 +1300,14 @@ name|GIMP_TAB_STYLE_PREVIEW_NAME
 condition|)
 name|SET_ACTIVE
 argument_list|(
-literal|"dockable-tab-style-status-text"
+literal|"dockable-tab-style-preview-name"
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"dockable-tab-style-status"
+literal|"dockable-tab-style-preview"
 argument_list|,
 name|docked_iface
 operator|->
@@ -1316,7 +1316,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"dockable-tab-style-status-text"
+literal|"dockable-tab-style-preview-name"
 argument_list|,
 name|docked_iface
 operator|->

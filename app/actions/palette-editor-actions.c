@@ -74,7 +74,7 @@ block|{
 block|{
 literal|"palette-editor-popup"
 block|,
-name|NULL
+name|GIMP_STOCK_PALETTE
 block|,
 name|N_
 argument_list|(

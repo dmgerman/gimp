@@ -86,7 +86,7 @@ block|{
 block|{
 literal|"images-popup"
 block|,
-name|NULL
+name|GIMP_STOCK_IMAGES
 block|,
 name|N_
 argument_list|(

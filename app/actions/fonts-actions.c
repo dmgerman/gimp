@@ -92,7 +92,7 @@ block|{
 block|{
 literal|"fonts-popup"
 block|,
-name|NULL
+name|GIMP_STOCK_FONT
 block|,
 name|N_
 argument_list|(

@@ -84,9 +84,9 @@ index|[]
 init|=
 block|{
 block|{
-literal|"ducuments-popup"
+literal|"documents-popup"
 block|,
-name|NULL
+name|GTK_STOCK_OPEN
 block|,
 name|N_
 argument_list|(

@@ -72,6 +72,17 @@ index|[]
 init|=
 block|{
 block|{
+literal|"error-console-popup"
+block|,
+name|GIMP_STOCK_WARNING
+block|,
+name|N_
+argument_list|(
+literal|"Error Console Menu"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"error-console-clear"
 block|,
 name|GTK_STOCK_CLEAR

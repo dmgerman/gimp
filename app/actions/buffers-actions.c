@@ -86,7 +86,7 @@ block|{
 block|{
 literal|"buffers-popup"
 block|,
-name|NULL
+name|GIMP_STOCK_BUFFER
 block|,
 name|N_
 argument_list|(

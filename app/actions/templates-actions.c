@@ -86,7 +86,7 @@ block|{
 block|{
 literal|"templates-popup"
 block|,
-name|NULL
+name|GIMP_STOCK_TEMPLATE
 block|,
 name|N_
 argument_list|(

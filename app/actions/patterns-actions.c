@@ -98,7 +98,7 @@ block|{
 block|{
 literal|"patterns-popup"
 block|,
-name|NULL
+name|GIMP_STOCK_PATTERN
 block|,
 name|N_
 argument_list|(
