@@ -274,7 +274,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27820f850103
+DECL|enum|__anon2920be570103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -290,7 +290,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27820f850203
+DECL|enum|__anon2920be570203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2753,11 +2753,14 @@ name|shell
 operator|->
 name|menubar
 operator|=
-name|gimp_ui_manager_ui_get
+name|gtk_ui_manager_get_widget
+argument_list|(
+name|GTK_UI_MANAGER
 argument_list|(
 name|shell
 operator|->
 name|menubar_manager
+argument_list|)
 argument_list|,
 literal|"/image-menubar"
 argument_list|)

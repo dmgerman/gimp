@@ -1298,11 +1298,14 @@ argument_list|(
 name|editor
 argument_list|)
 decl_stmt|;
-name|gimp_ui_manager_ui_get
+name|gtk_ui_manager_get_widget
+argument_list|(
+name|GTK_UI_MANAGER
 argument_list|(
 name|gimp_editor
 operator|->
 name|ui_manager
+argument_list|)
 argument_list|,
 name|gimp_editor
 operator|->

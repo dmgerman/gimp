@@ -313,23 +313,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GtkWidget
-modifier|*
-name|gimp_ui_manager_ui_get
-parameter_list|(
-name|GimpUIManager
-modifier|*
-name|manager
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|ui_path
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gimp_ui_manager_ui_popup
 parameter_list|(
