@@ -571,7 +571,7 @@ name|strstr
 argument_list|(
 name|identifier
 argument_list|,
-literal|"grid"
+literal|"tree"
 argument_list|)
 expr_stmt|;
 if|if
