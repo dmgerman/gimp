@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fc84260103
+DECL|enum|__anon27c1bc760103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -3779,7 +3779,7 @@ decl_stmt|;
 name|gint
 name|width
 decl_stmt|;
-name|ginr
+name|gint
 name|height
 decl_stmt|;
 name|g_return_val_if_fail
