@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpitem-preview.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplayer.h"
 end_include
 
@@ -137,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290061a20103
+DECL|enum|__anon2926c34a0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -494,6 +500,10 @@ name|GimpObjectClass
 modifier|*
 name|gimp_object_class
 decl_stmt|;
+name|GimpViewableClass
+modifier|*
+name|viewable_class
+decl_stmt|;
 name|object_class
 operator|=
 name|G_OBJECT_CLASS
@@ -504,6 +514,13 @@ expr_stmt|;
 name|gimp_object_class
 operator|=
 name|GIMP_OBJECT_CLASS
+argument_list|(
+name|klass
+argument_list|)
+expr_stmt|;
+name|viewable_class
+operator|=
+name|GIMP_VIEWABLE_CLASS
 argument_list|(
 name|klass
 argument_list|)
@@ -634,6 +651,18 @@ operator|->
 name|get_memsize
 operator|=
 name|gimp_item_get_memsize
+expr_stmt|;
+name|viewable_class
+operator|->
+name|get_preview_size
+operator|=
+name|gimp_item_get_preview_size
+expr_stmt|;
+name|viewable_class
+operator|->
+name|get_popup_size
+operator|=
+name|gimp_item_get_popup_size
 expr_stmt|;
 name|klass
 operator|->

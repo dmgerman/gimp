@@ -6,24 +6,51 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_DRAWABLE__PREVIEW_H__
+name|__GIMP_ITEM__PREVIEW_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_DRAWABLE__PREVIEW_H__
+DECL|macro|__GIMP_ITEM__PREVIEW_H__
 define|#
 directive|define
-name|__GIMP_DRAWABLE__PREVIEW_H__
+name|__GIMP_ITEM__PREVIEW_H__
 end_define
 
 begin_comment
-comment|/*  *  virtual functions of GimpDrawable -- dont't call directly  */
+comment|/*  *  virtual functions of GimpItem -- dont't call directly  */
 end_comment
 
 begin_function_decl
-name|TempBuf
+name|void
+name|gimp_item_get_preview_size
+parameter_list|(
+name|GimpViewable
 modifier|*
-name|gimp_drawable_get_preview
+name|viewable
+parameter_list|,
+name|gint
+name|size
+parameter_list|,
+name|gboolean
+name|is_popup
+parameter_list|,
+name|gboolean
+name|dot_for_dot
+parameter_list|,
+name|gint
+modifier|*
+name|width
+parameter_list|,
+name|gint
+modifier|*
+name|height
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_item_get_popup_size
 parameter_list|(
 name|GimpViewable
 modifier|*
@@ -34,6 +61,17 @@ name|width
 parameter_list|,
 name|gint
 name|height
+parameter_list|,
+name|gboolean
+name|dot_for_dot
+parameter_list|,
+name|gint
+modifier|*
+name|popup_width
+parameter_list|,
+name|gint
+modifier|*
+name|popup_height
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -44,7 +82,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_DRAWABLE__PREVIEW_H__ */
+comment|/* __GIMP_ITEM__PREVIEW_H__ */
 end_comment
 
 end_unit

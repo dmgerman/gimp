@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a041d900103
+DECL|enum|__anon29c300f10103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -698,18 +698,6 @@ operator|->
 name|invalidate_preview
 operator|=
 name|gimp_drawable_invalidate_preview
-expr_stmt|;
-name|viewable_class
-operator|->
-name|get_preview_size
-operator|=
-name|gimp_drawable_get_preview_size
-expr_stmt|;
-name|viewable_class
-operator|->
-name|get_popup_size
-operator|=
-name|gimp_drawable_get_popup_size
 expr_stmt|;
 name|viewable_class
 operator|->
