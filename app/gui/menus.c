@@ -1956,6 +1956,10 @@ block|,
 name|select_save_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_SELECTION_TO_CHANNEL
 block|}
 block|,
 name|NULL

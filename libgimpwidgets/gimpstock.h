@@ -166,6 +166,11 @@ define|#
 directive|define
 name|GIMP_STOCK_SCALE
 value|"gimp-scale"
+DECL|macro|GIMP_STOCK_SELECTION_TO_CHANNEL
+define|#
+directive|define
+name|GIMP_STOCK_SELECTION_TO_CHANNEL
+value|"gimp-selection-to-channel"
 DECL|macro|GIMP_STOCK_NAVIGATION
 define|#
 directive|define
