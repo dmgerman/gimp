@@ -1028,7 +1028,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_rotate:  * @image_ID: The image.  * @rotate_type: Angle of rotation.  *  * Rotates the image by the spacified degrees.  *  * This procedure rotates the image.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_rotate:  * @image_ID: The image.  * @rotate_type: Angle of rotation.  *  * Rotates the image by the specified degrees.  *  * This procedure rotates the image.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

@@ -3811,7 +3811,7 @@ init|=
 block|{
 literal|"gimp_image_rotate"
 block|,
-literal|"Rotates the image by the spacified degrees."
+literal|"Rotates the image by the specified degrees."
 block|,
 literal|"This procedure rotates the image."
 block|,
