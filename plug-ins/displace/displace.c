@@ -100,7 +100,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|struct|__anon2b890c9d0108
+DECL|struct|__anon2985f5ca0108
 typedef|typedef
 struct|struct
 block|{
@@ -139,7 +139,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b890c9d0208
+DECL|struct|__anon2985f5ca0208
 typedef|typedef
 struct|struct
 block|{
@@ -904,7 +904,7 @@ name|d_int32
 expr_stmt|;
 name|dvals
 operator|.
-name|do_x
+name|do_y
 operator|=
 name|param
 index|[
