@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   SGI image file plug-in for the GIMP.  *  *   Copyright 1997 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the plug-in...  *   load_image()                - Load a PNG image into a new image window.  *   save_image()                - Save the specified image to a PNG file.  *   save_close_callback()       - Close the save dialog window.  *   save_ok_callback()          - Destroy the save dialog and save the image.  *   save_compression_callback() - Update the image compression level.  *   save_dialog()               - Pop up the save dialog.  *  * Revision History:  *  *   $Log$  *   Revision 1.3  1998/03/26 02:08:28  yosh  *   * applied gimp-quinet-980122-0 and tweaked the tests a bit, this makes the  *   optional library tests in configure.  *  *   * applied gimp-jbuhler-980321-0, fixes more warnings in plug-ins  *  *   -Yosh  *  *   Revision 1.2  1998/03/16 06:33:56  yosh  *   configure saves CFLAGS properly  *   all plugins should parse gtkrc now  *  *   -Yosh  *  *   Revision 1.1.1.1  1997/11/24 22:04:37  sopwith  *   Let's try this import one last time.  *  *   Revision 1.3  1997/11/18 03:04:28  nobody  *   fixed ugly comment-bugs introduced by evil darkwing  *   keep out configuration empty dirs  *   	--darkwing  *  *   Revision 1.2  1997/11/17 05:44:02  nobody  *   updated ChangeLog  *   dropped non-working doc/Makefile entries  *   applied many fixes from the registry as well as the devel ML  *   applied missing patches by Art Haas  *  *   	--darkwing  *  *   Revision 1.3  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *   Added warning message about advanced RLE compression not being supported  *   by SGI.  *  *   Revision 1.2  1997/07/25  20:44:05  mike  *   Fixed image_load_sgi load error bug (causes GIMP hang/crash).  *  *   Revision 1.1  1997/06/18  00:55:28  mike  *   Initial revision  */
+comment|/*  * "$Id$"  *  *   SGI image file plug-in for the GIMP.  *  *   Copyright 1997 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the plug-in...  *   load_image()                - Load a PNG image into a new image window.  *   save_image()                - Save the specified image to a PNG file.  *   save_close_callback()       - Close the save dialog window.  *   save_ok_callback()          - Destroy the save dialog and save the image.  *   save_compression_callback() - Update the image compression level.  *   save_dialog()               - Pop up the save dialog.  *  * Revision History:  *  *   $Log$  *   Revision 1.4  1998/04/01 22:14:50  neo  *   Added checks for print spoolers to configure.in as suggested by Michael  *   Sweet. The print plug-in still needs some changes to Makefile.am to make  *   make use of this.  *  *   Updated print and sgi plug-ins to version on the registry.  *  *  *   --Sven  *  *   Revision 1.3  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *   Added warning message about advanced RLE compression not being supported  *   by SGI.  *  *   Revision 1.2  1997/07/25  20:44:05  mike  *   Fixed image_load_sgi load error bug (causes GIMP hang/crash).  *  *   Revision 1.1  1997/06/18  00:55:28  mike  *   Initial revision  */
 end_comment
 
 begin_include
@@ -13,12 +13,6 @@ begin_include
 include|#
 directive|include
 file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
 end_include
 
 begin_include
@@ -1646,7 +1640,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * 'save_image()' - Save the specified image to an SGI file.  */
+comment|/*  * 'save_image()' - Save the specified image to a PNG file.  */
 end_comment
 
 begin_function
@@ -1681,6 +1675,12 @@ comment|/* Current X coordinate */
 name|y
 decl_stmt|,
 comment|/* Current Y coordinate */
+name|image_type
+decl_stmt|,
+comment|/* Type of image */
+name|layer_type
+decl_stmt|,
+comment|/* Type of drawable/layer */
 name|tile_height
 decl_stmt|,
 comment|/* Height of tile in GIMP */
@@ -1803,21 +1803,6 @@ operator|=
 literal|4
 expr_stmt|;
 break|break;
-case|case
-name|INDEXED_IMAGE
-case|:
-case|case
-name|INDEXEDA_IMAGE
-case|:
-comment|/* we should never be asked to save images of this type */
-name|g_print
-argument_list|(
-literal|"internal error: cannot save indexed image\n"
-argument_list|)
-expr_stmt|;
-name|gimp_quit
-argument_list|()
-expr_stmt|;
 block|}
 empty_stmt|;
 comment|/*   * Open the file for writing...   */
@@ -2436,12 +2421,6 @@ name|argc
 argument_list|,
 operator|&
 name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|signal

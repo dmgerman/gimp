@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   Print plug-in for the GIMP.  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  * Contents:  *  *   main()                   - Main entry - just call gimp_main()...  *   query()                  - Respond to a plug-in query...  *   run()                    - Run the plug-in...  *   print_dialog()           - Pop up the print dialog...  *   dialog_create_ivalue()   - Create an integer value control...  *   dialog_iscale_update()   - Update the value field using the scale.  *   dialog_ientry_update()   - Update the value field using the text entry.  *   print_driver_callback()  - Update the current printer driver...  *   media_size_callback()    - Update the current media size...  *   print_command_callback() - Update the print command...  *   output_type_callback()   - Update the current output type...  *   print_callback()         - Start the print...  *   cancel_callback()        - Cancel the print...  *   close_callback()         - Exit the print dialog application.  *  * Revision History:  *  *   $Log$  *   Revision 1.4  1998/03/26 02:08:27  yosh  *   * applied gimp-quinet-980122-0 and tweaked the tests a bit, this makes the  *   optional library tests in configure.  *  *   * applied gimp-jbuhler-980321-0, fixes more warnings in plug-ins  *  *   -Yosh  *  *   Revision 1.3  1998/03/19 02:11:42  adrian  *    *AlienMap/AlienMap.c CEL/CEL.c CML_explorer/CML_explorer.c  *           align_layers/align_layers.c animationplay/animationplay.c  *           bmp/bmpwrite.c dbbrowser/dbbrowser.c emboss/emboss.c  *           exchange/exchange.c faxg3/faxg3.c faxg3/g3.c gbr/gbr.c  *           gif/gif.c gqbist/gqbist.c hot/hot.c ifscompose/ifscompose.c  *           iwarp/iwarp.c max_rgb/max_rgb.c maze/maze_face.c  *           megawidget/megawidget.c mpeg/mpeg.c nlfilt/nlfilt.c pcx/pcx.c  *           plasma/plasma.c pnm/pnm.c print/print-escp2.c  *           print/print-pcl.c print/print.c scatter_hsv/scatter_hsv.c  *           script-fu/script-fu-scripts.c script-fu/script-fu.c  *           sinus/sinus.c tga/tga.c tileit/tileit.c  *           vpropagate/vpropagate.c xpm/xpm.c:  More picky picky ansi type  *           stuff from gimp-hpux-980316.patch.  *  *   	isnt big patches fun?  *  *   -adrian  *  *   Revision 1.2  1998/01/25 09:29:27  yosh  *   Plugin updates  *   Properly generated aa Makefile (still not built by default)  *   Sven's no args script patch  *  *   -Yosh  *  *   Revision 1.13  1998/01/22  15:06:31  mike  *   Added "file" printer for printing to file.  *   Now you don't need the "|" in front of print commands.  *   Now "remembers" last selected printer.  *  *   Revision 1.12  1998/01/21  21:33:47  mike  *   Added Level 2 PostScript driver.  *   Fixed bug in dialog - didn't display correct output file/command  *   and driver for the default printer.  *  *   Revision 1.11  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *  *   Revision 1.10  1997/11/12  15:57:48  mike  *   Minor changes for clean compiles under Digital UNIX.  *  *   Revision 1.9  1997/10/22  13:07:20  mike  *   Fixed typo in run() return status (thanks Michael Schubart!)  *  *   Revision 1.8  1997/10/02  17:57:26  mike  *   Added printrc support.  *   Added printer list (spooler support).  *   Added gamma/dot gain correction values for all printers.  *  *   Revision 1.8  1997/10/02  17:57:26  mike  *   Added printrc support.  *   Added printer list (spooler support).  *   Added gamma/dot gain correction values for all printers.  *  *   Revision 1.7  1997/07/30  20:33:05  mike  *   Final changes for 1.1 release.  *  *   Revision 1.6  1997/07/30  18:47:39  mike  *   Added scaling, orientation, and offset options.  *   Added first cut at preview window.  *  *   Revision 1.5  1997/07/26  18:38:23  mike  *   Whoops - wasn't grabbing the colormap for indexed images properly...  *  *   Revision 1.4  1997/07/03  13:13:26  mike  *   Updated documentation for 1.0 release.  *  *   Revision 1.3  1997/07/03  13:07:05  mike  *   Updated EPSON driver short names.  *   Changed brightness lut formula for better control.  *  *   Revision 1.2  1997/07/02  15:22:17  mike  *   Added GUI with printer/media/output selection controls.  *  *   Revision 1.1  1997/07/02  13:51:53  mike  *   Initial revision  */
+comment|/*  * "$Id$"  *  *   Print plug-in for the GIMP.  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  * Contents:  *  *   main()                   - Main entry - just call gimp_main()...  *   query()                  - Respond to a plug-in query...  *   run()                    - Run the plug-in...  *   print_dialog()           - Pop up the print dialog...  *   dialog_create_ivalue()   - Create an integer value control...  *   dialog_iscale_update()   - Update the value field using the scale.  *   dialog_ientry_update()   - Update the value field using the text entry.  *   print_driver_callback()  - Update the current printer driver...  *   media_size_callback()    - Update the current media size...  *   print_command_callback() - Update the print command...  *   output_type_callback()   - Update the current output type...  *   print_callback()         - Start the print...  *   cancel_callback()        - Cancel the print...  *   close_callback()         - Exit the print dialog application.  *  * Revision History:  *  *   $Log$  *   Revision 1.5  1998/04/01 22:14:48  neo  *   Added checks for print spoolers to configure.in as suggested by Michael  *   Sweet. The print plug-in still needs some changes to Makefile.am to make  *   make use of this.  *  *   Updated print and sgi plug-ins to version on the registry.  *  *  *   --Sven  *  *   Revision 1.14  1998/03/01  17:29:42  mike  *   Added LPC/LPR/LP/LPSTAT_COMMAND definitions for portability.  *  *   Revision 1.13  1998/01/22  15:06:31  mike  *   Added "file" printer for printing to file.  *   Now you don't need the "|" in front of print commands.  *   Now "remembers" last selected printer.  *  *   Revision 1.12  1998/01/21  21:33:47  mike  *   Added Level 2 PostScript driver.  *   Fixed bug in dialog - didn't display correct output file/command  *   and driver for the default printer.  *  *   Revision 1.11  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *  *   Revision 1.10  1997/11/12  15:57:48  mike  *   Minor changes for clean compiles under Digital UNIX.  *  *   Revision 1.9  1997/10/22  13:07:20  mike  *   Fixed typo in run() return status (thanks Michael Schubart!)  *  *   Revision 1.8  1997/10/02  17:57:26  mike  *   Added printrc support.  *   Added printer list (spooler support).  *   Added gamma/dot gain correction values for all printers.  *  *   Revision 1.8  1997/10/02  17:57:26  mike  *   Added printrc support.  *   Added printer list (spooler support).  *   Added gamma/dot gain correction values for all printers.  *  *   Revision 1.7  1997/07/30  20:33:05  mike  *   Final changes for 1.1 release.  *  *   Revision 1.6  1997/07/30  18:47:39  mike  *   Added scaling, orientation, and offset options.  *   Added first cut at preview window.  *  *   Revision 1.5  1997/07/26  18:38:23  mike  *   Whoops - wasn't grabbing the colormap for indexed images properly...  *  *   Revision 1.4  1997/07/03  13:13:26  mike  *   Updated documentation for 1.0 release.  *  *   Revision 1.3  1997/07/03  13:07:05  mike  *   Updated EPSON driver short names.  *   Changed brightness lut formula for better control.  *  *   Revision 1.2  1997/07/02  15:22:17  mike  *   Added GUI with printer/media/output selection controls.  *  *   Revision 1.1  1997/07/02  13:51:53  mike  *   Initial revision  */
 end_comment
 
 begin_include
@@ -70,7 +70,7 @@ begin_typedef
 typedef|typedef
 struct|struct
 comment|/**** Printer List ****/
-DECL|struct|__anon2b27c6680108
+DECL|struct|__anon2bcb6fb40108
 block|{
 DECL|member|name
 name|char
@@ -434,7 +434,7 @@ end_decl_stmt
 begin_struct
 struct|struct
 comment|/* Plug-in variables */
-DECL|struct|__anon2b27c6680208
+DECL|struct|__anon2bcb6fb40208
 block|{
 DECL|member|output_to
 name|char
@@ -1363,13 +1363,13 @@ literal|"Prints images to PostScript, PCL, or ESC/P2 printers."
 argument_list|,
 literal|"Michael Sweet<mike@easysw.com>"
 argument_list|,
-literal|"Copyright 1997 by Michael Sweet"
+literal|"Copyright 1997-1998 by Michael Sweet"
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
 literal|"<Image>/File/Print..."
 argument_list|,
-literal|"RGB*,GRAY*INDEXED*"
+literal|"RGB*,GRAY*,INDEXED*"
 argument_list|,
 name|PROC_PLUG_IN
 argument_list|,
@@ -2296,7 +2296,6 @@ comment|/*  * 'print_dialog()' - Pop up the print dialog...  */
 end_comment
 
 begin_function
-specifier|static
 name|int
 DECL|function|print_dialog (void)
 name|print_dialog
@@ -6186,6 +6185,11 @@ modifier|*
 name|pfile
 decl_stmt|;
 name|char
+name|command
+index|[
+literal|255
+index|]
+decl_stmt|,
 name|line
 index|[
 literal|129
@@ -6236,7 +6240,7 @@ argument_list|,
 literal|"File"
 argument_list|)
 expr_stmt|;
-name|strcpy
+name|sprintf
 argument_list|(
 name|plist
 index|[
@@ -6246,6 +6250,8 @@ operator|.
 name|command
 argument_list|,
 literal|"file.ps"
+argument_list|,
+name|line
 argument_list|)
 expr_stmt|;
 name|strcpy
@@ -6269,10 +6275,9 @@ name|output_type
 operator|=
 name|OUTPUT_COLOR
 expr_stmt|;
-ifndef|#
-directive|ifndef
-name|sun
-comment|/* Sun Solaris merges LPR and LP queues */
+ifdef|#
+directive|ifdef
+name|LPC_COMMAND
 if|if
 condition|(
 operator|(
@@ -6280,7 +6285,8 @@ name|pfile
 operator|=
 name|popen
 argument_list|(
-literal|"lpc status"
+name|LPC_COMMAND
+literal|" status"
 argument_list|,
 literal|"r"
 argument_list|)
@@ -6352,7 +6358,8 @@ index|]
 operator|.
 name|command
 argument_list|,
-literal|"lpr -P%s -l"
+name|LPR_COMMAND
+literal|" -P%s -l"
 argument_list|,
 name|line
 argument_list|)
@@ -6392,7 +6399,10 @@ block|}
 empty_stmt|;
 endif|#
 directive|endif
-comment|/* !sun */
+comment|/* LPC_COMMAND */
+ifdef|#
+directive|ifdef
+name|LPSTAT_COMMAND
 if|if
 condition|(
 operator|(
@@ -6400,7 +6410,8 @@ name|pfile
 operator|=
 name|popen
 argument_list|(
-literal|"lpstat -d -p"
+name|LPSTAT_COMMAND
+literal|" -d -p"
 argument_list|,
 literal|"r"
 argument_list|)
@@ -6456,10 +6467,6 @@ argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__sgi
-comment|/* SGI still uses the SVR3 spooler */
 name|sprintf
 argument_list|(
 name|plist
@@ -6469,30 +6476,12 @@ index|]
 operator|.
 name|command
 argument_list|,
-literal|"lp -s -d%s"
+name|LP_COMMAND
+literal|" -s -d%s"
 argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
-else|#
-directive|else
-name|sprintf
-argument_list|(
-name|plist
-index|[
-name|plist_count
-index|]
-operator|.
-name|command
-argument_list|,
-literal|"lp -s -d %s"
-argument_list|,
-name|name
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* __sgi */
 name|strcpy
 argument_list|(
 name|plist
@@ -6537,6 +6526,9 @@ argument_list|)
 expr_stmt|;
 block|}
 empty_stmt|;
+endif|#
+directive|endif
+comment|/* LPSTAT_COMMAND */
 if|if
 condition|(
 name|plist_count
