@@ -50,6 +50,8 @@ literal|"Hans Breuer"
 block|,
 literal|"Simon Budig"
 block|,
+literal|"Joao S. O. Bueno"
+block|,
 literal|"Carey Bunks"
 block|,
 literal|"Seth Burgess"
@@ -106,11 +108,15 @@ literal|"Nick Fetchak"
 block|,
 literal|"Valek Filippov"
 block|,
+literal|"Shlomi Fish"
+block|,
 literal|"David Forsyth"
 block|,
 literal|"Raphael Francois"
 block|,
 literal|"Jochen Friedrich"
+block|,
+literal|"Jordi Gay"
 block|,
 literal|"Sami Gerdt"
 block|,
@@ -126,9 +132,13 @@ literal|"Heiko Goller"
 block|,
 literal|"Marcelo de Gomensoro Malheiros"
 block|,
+literal|"David Gowers"
+block|,
 literal|"Cameron Gregory"
 block|,
 literal|"Pavel Grinfeld"
+block|,
+literal|"Dov Grobgeld"
 block|,
 literal|"Michael Hammel"
 block|,
@@ -146,6 +156,8 @@ literal|"Christoph Hoegl"
 block|,
 literal|"Wolfgang Hofer"
 block|,
+literal|"Alan Horkan"
+block|,
 literal|"Jan HubiÄka"
 block|,
 literal|"Andreas Hyden"
@@ -160,6 +172,10 @@ literal|"Tim Janik"
 block|,
 literal|"Fellmann Joaquim"
 block|,
+literal|"Roman Joost"
+block|,
+literal|"Geert Jordaens"
+block|,
 literal|"Andrew Kieschnick"
 block|,
 literal|"Peter Kirchgessner"
@@ -167,6 +183,8 @@ block|,
 literal|"Philipp Klaus"
 block|,
 literal|"David Koblas"
+block|,
+literal|"Daniel Kobras"
 block|,
 literal|"Ãyvind KolÃ¥s"
 block|,
@@ -179,6 +197,8 @@ block|,
 literal|"Olof S Kylander"
 block|,
 literal|"Karl La Rocca"
+block|,
+literal|"Philip Lafleur"
 block|,
 literal|"Chris Lahey"
 block|,
@@ -266,6 +286,8 @@ literal|"Miles O'Neal"
 block|,
 literal|"David Odin "
 block|,
+literal|"Robert Ãgren"
+block|,
 literal|"Thom van Os"
 block|,
 literal|"Garry R. Osgood"
@@ -283,6 +305,8 @@ block|,
 literal|"Mike Phillips"
 block|,
 literal|"Artur Polaczynski"
+block|,
+literal|"Ari Pollak"
 block|,
 literal|"RaphaÃ«l Quinet"
 block|,
@@ -314,6 +338,8 @@ literal|"Thorsten Schnier"
 block|,
 literal|"Alexander Schulz"
 block|,
+literal|"Michael Schumacher"
+block|,
 literal|"Tracy Scott"
 block|,
 literal|"Craig Setera"
@@ -321,6 +347,8 @@ block|,
 literal|"Aaron Sherman"
 block|,
 literal|"Manish Singh"
+block|,
+literal|"William Skaggs"
 block|,
 literal|"Daniel Skarda"
 block|,
@@ -349,6 +377,10 @@ block|,
 literal|"Andy Thomas"
 block|,
 literal|"Kevin Turner"
+block|,
+literal|"Brion Vibber"
+block|,
+literal|"Helvetix Victorinox"
 block|,
 literal|"Rebecca Walter"
 block|,
