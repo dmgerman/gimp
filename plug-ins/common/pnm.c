@@ -106,6 +106,12 @@ directive|include
 file|<libgimp/gimpui.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -318,7 +324,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b32eda60108
+DECL|struct|__anon2a1f76eb0108
 block|{
 DECL|member|raw
 name|gint
@@ -334,7 +340,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b32eda60208
+DECL|struct|__anon2a1f76eb0208
 block|{
 DECL|member|run
 name|gint
@@ -1107,11 +1113,17 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_pnm_load"
 argument_list|,
+name|_
+argument_list|(
 literal|"loads files of the pnm file format"
+argument_list|)
 argument_list|,
 literal|"FIXME: write help for pnm_load"
 argument_list|,
@@ -1140,9 +1152,15 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_pnm_save"
 argument_list|,
+name|_
+argument_list|(
 literal|"saves files in the pnm file format"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"PNM saving handles all image types except those with alpha channels."
+argument_list|)
 argument_list|,
 literal|"Erik Nygren"
 argument_list|,
@@ -1298,6 +1316,23 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
+if|if
+condition|(
+name|run_mode
+operator|==
+name|RUN_NONINTERACTIVE
+condition|)
+block|{
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
+block|}
+else|else
+block|{
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|strcmp
@@ -1689,7 +1724,10 @@ name|temp
 operator|=
 name|g_strdup_printf
 argument_list|(
+name|_
+argument_list|(
 literal|"Loading %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -2181,7 +2219,10 @@ name|gimp_layer_new
 argument_list|(
 name|image_ID
 argument_list|,
+name|_
+argument_list|(
 literal|"Background"
+argument_list|)
 argument_list|,
 name|pnminfo
 operator|->
@@ -3840,7 +3881,10 @@ condition|)
 block|{
 name|gimp_message
 argument_list|(
+name|_
+argument_list|(
 literal|"PNM save cannot handle images with alpha channels."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -3851,7 +3895,10 @@ name|temp
 operator|=
 name|g_strdup_printf
 argument_list|(
+name|_
+argument_list|(
 literal|"Saving %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -4571,7 +4618,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Save as PNM"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -4677,7 +4727,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -4734,7 +4787,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -4790,7 +4846,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Data Formatting"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -4873,7 +4932,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Raw"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -4941,7 +5003,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Ascii"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group

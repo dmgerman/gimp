@@ -31,6 +31,23 @@ directive|include
 file|<time.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_CONFIG_H
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include
@@ -49,22 +66,11 @@ directive|include
 file|<plug-ins/gpc/gpc.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_CONFIG_H
-end_ifdef
-
 begin_include
 include|#
 directive|include
-file|"config.h"
+file|"libgimp/stdplugins-intl.h"
 end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_comment
 comment|/*********************************  *  *  PLUGIN-SPECIFIC CONSTANTS  *  ********************************/
@@ -107,11 +113,20 @@ name|RNDM_VERSION
 index|[]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Random Hurl 1.7"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Random Pick 1.7"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Random Slur 1.7"
+argument_list|)
 block|, }
 decl_stmt|;
 end_decl_stmt
@@ -191,7 +206,7 @@ comment|/*********************************  *  *  PLUGIN-SPECIFIC STRUCTURES AND
 end_comment
 
 begin_typedef
-DECL|struct|__anon29ac10c40108
+DECL|struct|__anon28e351810108
 typedef|typedef
 struct|struct
 block|{
@@ -240,7 +255,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon29ac10c40208
+DECL|struct|__anon28e351810208
 typedef|typedef
 struct|struct
 block|{
@@ -510,42 +525,60 @@ name|char
 modifier|*
 name|hurl_blurb
 init|=
+name|_
+argument_list|(
 literal|"Add a random factor to the image by hurling random data at it."
+argument_list|)
 decl_stmt|;
 specifier|const
 name|char
 modifier|*
 name|pick_blurb
 init|=
+name|_
+argument_list|(
 literal|"Add a random factor to the image by picking a random adjacent pixel."
+argument_list|)
 decl_stmt|;
 specifier|const
 name|char
 modifier|*
 name|slur_blurb
 init|=
+name|_
+argument_list|(
 literal|"Add a random factor to the image by slurring (similar to melting)."
+argument_list|)
 decl_stmt|;
 specifier|const
 name|char
 modifier|*
 name|hurl_help
 init|=
+name|_
+argument_list|(
 literal|"This plug-in ``hurls'' randomly-valued pixels onto the selection or image.  You may select the percentage of pixels to modify and the number of times to repeat the process."
+argument_list|)
 decl_stmt|;
 specifier|const
 name|char
 modifier|*
 name|pick_help
 init|=
+name|_
+argument_list|(
 literal|"This plug-in replaces a pixel with a random adjacent pixel.  You may select the percentage of pixels to modify and the number of times to repeat the process."
+argument_list|)
 decl_stmt|;
 specifier|const
 name|char
 modifier|*
 name|slur_help
 init|=
+name|_
+argument_list|(
 literal|"This plug-in slurs (melts like a bunch of icicles) an image.  You may select the percentage of pixels to modify and the number of times to repeat the process."
+argument_list|)
 decl_stmt|;
 specifier|const
 name|char
@@ -568,6 +601,9 @@ name|copyright_date
 init|=
 literal|"1995-1998"
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
@@ -605,7 +641,10 @@ operator|*
 operator|)
 name|copyright_date
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Noise/Hurl..."
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
@@ -657,7 +696,10 @@ operator|*
 operator|)
 name|copyright_date
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Noise/Pick..."
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
@@ -709,7 +751,10 @@ operator|*
 operator|)
 name|copyright_date
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Noise/Slur..."
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
@@ -936,6 +981,9 @@ comment|/*  *  If we're running interactively, pop up the dialog box.  */
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|gimp_get_data
 argument_list|(
 name|PLUG_IN_NAME
@@ -962,6 +1010,9 @@ comment|/*  *  If we're not interactive (probably scripting), we  *  get the par
 case|case
 name|RUN_NONINTERACTIVE
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|nparams
@@ -1107,6 +1158,9 @@ comment|/*  *  If we're running with the last set of values, get those values.  
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_get_data
 argument_list|(
 name|PLUG_IN_NAME
@@ -1169,12 +1223,15 @@ name|prog_label
 argument_list|,
 literal|"%s (%s)"
 argument_list|,
+name|gettext
+argument_list|(
 name|RNDM_VERSION
 index|[
 name|rndm_type
 operator|-
 literal|1
 index|]
+argument_list|)
 argument_list|,
 name|rndm_type_str
 argument_list|)
@@ -2486,12 +2543,15 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|gettext
+argument_list|(
 name|RNDM_VERSION
 index|[
 name|rndm_type
 operator|-
 literal|1
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -2526,7 +2586,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Parameter Settings"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -2614,7 +2677,10 @@ expr_stmt|;
 comment|/*  *  Action area OK& Cancel buttons  */
 name|gpc_add_action_button
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|,
 operator|(
 name|GtkSignalFunc
@@ -2623,12 +2689,18 @@ name|randomize_ok_callback
 argument_list|,
 name|dlg
 argument_list|,
+name|_
+argument_list|(
 literal|"Accept settings and apply filter to image"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gpc_add_action_button
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|,
 operator|(
 name|GtkSignalFunc
@@ -2637,13 +2709,19 @@ name|gpc_cancel_callback
 argument_list|,
 name|dlg
 argument_list|,
+name|_
+argument_list|(
 literal|"Close plug-in without making any changes"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  *  Randomization seed initialization controls  */
 name|gpc_add_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Randomization Seed:"
+argument_list|)
 argument_list|,
 name|table
 argument_list|,
@@ -2710,14 +2788,20 @@ argument_list|(
 operator|&
 name|seed_group
 argument_list|,
+name|_
+argument_list|(
 literal|"Current Time"
+argument_list|)
 argument_list|,
 name|seed_vbox
 argument_list|,
 operator|&
 name|do_time
 argument_list|,
+name|_
+argument_list|(
 literal|"Seed random number generator from the current time - this guarantees a reasonable randomization"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  *  Box to hold seed user initialization controls  */
@@ -2762,14 +2846,20 @@ argument_list|(
 operator|&
 name|seed_group
 argument_list|,
+name|_
+argument_list|(
 literal|"Other Value"
+argument_list|)
 argument_list|,
 name|seed_hbox
 argument_list|,
 operator|&
 name|do_user
 argument_list|,
+name|_
+argument_list|(
 literal|"Enable user-entered value for random number generator seed - this allows you to repeat a given \"random\" operation"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  *  Randomization seed number (text)  */
@@ -2853,7 +2943,10 @@ name|gpc_set_tooltip
 argument_list|(
 name|entry
 argument_list|,
+name|_
+argument_list|(
 literal|"Value for seeding the random number generator"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2864,7 +2957,10 @@ expr_stmt|;
 comment|/*  *  Randomization percentage label& scale (1 to 100)  */
 name|gpc_add_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Randomization %:"
+argument_list|)
 argument_list|,
 name|table
 argument_list|,
@@ -2900,13 +2996,19 @@ literal|2
 argument_list|,
 literal|3
 argument_list|,
+name|_
+argument_list|(
 literal|"Percentage of pixels to be filtered"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  *  Repeat count label& scale (1 to 100)  */
 name|gpc_add_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Repeat:"
+argument_list|)
 argument_list|,
 name|table
 argument_list|,
@@ -2942,7 +3044,10 @@ literal|3
 argument_list|,
 literal|4
 argument_list|,
+name|_
+argument_list|(
 literal|"Number of times to apply filter"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  *  Display everything.  */

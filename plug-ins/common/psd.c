@@ -136,6 +136,12 @@ directive|include
 file|<libgimp/gimp.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_comment
 comment|/* Local types etc  */
 end_comment
@@ -143,7 +149,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon280276f80103
+DECL|enum|__anon2782b54a0103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -518,7 +524,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon280276f80208
+DECL|struct|__anon2782b54a0208
 specifier|static
 struct|struct
 block|{
@@ -1121,13 +1127,22 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_psd_load"
 argument_list|,
+name|_
+argument_list|(
 literal|"loads files of the Photoshop(tm) PSD file format"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"This filter loads files of Adobe Photoshop(tm) native PSD format.  These files may be of any image type supported by GIMP, with or without layers, layer masks, aux channels and guides."
+argument_list|)
 argument_list|,
 literal|"Adam D. Moss& Torsten Martinsen"
 argument_list|,
@@ -6663,7 +6678,10 @@ index|]
 operator|.
 name|name
 else|:
+name|_
+argument_list|(
 literal|"Unnamed channel"
+argument_list|)
 argument_list|,
 name|width
 argument_list|,
@@ -7291,48 +7309,12 @@ argument_list|)
 decl_stmt|;
 name|name_buf
 operator|=
-name|xmalloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
+name|_
 argument_list|(
-name|name
-argument_list|)
-operator|+
-literal|11
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|number
-operator|>
-literal|1
-condition|)
-name|sprintf
-argument_list|(
-name|name_buf
-argument_list|,
-literal|"%s-%d"
-argument_list|,
-name|name
-argument_list|,
-name|number
-argument_list|)
-expr_stmt|;
-else|else
-name|sprintf
-argument_list|(
-name|name_buf
-argument_list|,
-literal|"%s"
-argument_list|,
-name|name
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|name_buf
-argument_list|,
 literal|"Loading %s:"
+argument_list|)
 argument_list|,
 name|name
 argument_list|)
@@ -9389,7 +9371,10 @@ name|gimp_layer_new
 argument_list|(
 name|image_ID
 argument_list|,
+name|_
+argument_list|(
 literal|"Background"
+argument_list|)
 argument_list|,
 name|PSDheader
 operator|.

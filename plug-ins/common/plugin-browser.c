@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gtk/gtk.h"
 end_include
 
@@ -37,6 +43,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
@@ -72,13 +84,25 @@ name|proc_type_str
 index|[]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Internal GIMP procedure"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"GIMP Plug-In"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"GIMP Extension"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Temporary Procedure"
+argument_list|)
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -247,13 +271,22 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_details"
 argument_list|,
+name|_
+argument_list|(
 literal|"Displays plugin details"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Helps browse the plugin menus system. You can search for plugin names, sort by name or menu location and you can view a tree representation of the plugin menus. Can also be of help to find where new plugins have installed themselves in the menuing system"
+argument_list|)
 argument_list|,
 literal|"Andy Thomas"
 argument_list|,
@@ -261,7 +294,10 @@ literal|"Andy Thomas"
 argument_list|,
 literal|"1999"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Toolbox>/Xtns/Plugin Details..."
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -361,6 +397,9 @@ name|d_status
 operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|strcmp
@@ -407,7 +446,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c4cdf00108
+DECL|struct|__anon27b4e20e0108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -513,7 +552,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c4cdf00208
+DECL|struct|__anon27b4e20e0208
 block|{
 DECL|member|menu
 name|gchar
@@ -756,7 +795,10 @@ name|gtk_label_set_text
 argument_list|(
 name|lab
 argument_list|,
+name|_
+argument_list|(
 literal|" Details<<< "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -838,7 +880,10 @@ name|gtk_label_set_text
 argument_list|(
 name|lab
 argument_list|,
+name|_
+argument_list|(
 literal|" Details>>> "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_hide
@@ -1183,7 +1228,10 @@ name|gtk_label_new
 argument_list|(
 name|g_strdup_printf
 argument_list|(
+name|_
+argument_list|(
 literal|" Number of plugin interfaces :%d"
+argument_list|)
 argument_list|,
 name|pdesc
 operator|->
@@ -1290,7 +1338,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Menu path :"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -1451,7 +1502,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Name :"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -1615,7 +1669,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Blurb :"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -1787,7 +1844,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Help :"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2120,7 +2180,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Type :"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2174,10 +2237,13 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|gettext
+argument_list|(
 name|proc_type_str
 index|[
 name|selected_proc_type
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -4485,7 +4551,10 @@ operator|->
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Plugin Descriptions"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -4666,7 +4735,10 @@ index|]
 operator|=
 name|g_strdup
 argument_list|(
+name|_
+argument_list|(
 literal|"Name"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|clabels
@@ -4676,7 +4748,10 @@ index|]
 operator|=
 name|g_strdup
 argument_list|(
+name|_
+argument_list|(
 literal|"Ins Date"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|clabels
@@ -4686,7 +4761,10 @@ index|]
 operator|=
 name|g_strdup
 argument_list|(
+name|_
+argument_list|(
 literal|"Menu Path"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|clabels
@@ -4696,7 +4774,10 @@ index|]
 operator|=
 name|g_strdup
 argument_list|(
+name|_
+argument_list|(
 literal|"Image Types"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|plugindesc
@@ -4806,7 +4887,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"List view"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_notebook_append_page
@@ -4853,7 +4937,10 @@ index|]
 operator|=
 name|g_strdup
 argument_list|(
+name|_
+argument_list|(
 literal|"Menu Path/Name"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|clabels
@@ -4863,7 +4950,10 @@ index|]
 operator|=
 name|g_strdup
 argument_list|(
+name|_
+argument_list|(
 literal|"Ins Date"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|clabels
@@ -4873,7 +4963,10 @@ index|]
 operator|=
 name|g_strdup
 argument_list|(
+name|_
+argument_list|(
 literal|"Image Types"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|plugindesc
@@ -4948,7 +5041,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Tree view"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_clist_set_column_auto_resize
@@ -5086,7 +5182,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Search : "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -5158,7 +5257,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|" Details>>> "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -5225,7 +5327,10 @@ name|name_button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Search by name"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -5292,7 +5397,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Close"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS

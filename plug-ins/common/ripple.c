@@ -39,6 +39,12 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_comment
 comment|/* Some useful macros */
 end_comment
@@ -124,7 +130,7 @@ value|1
 end_define
 
 begin_typedef
-DECL|struct|__anon2c8fb9cc0108
+DECL|struct|__anon297db87f0108
 typedef|typedef
 struct|struct
 block|{
@@ -163,7 +169,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c8fb9cc0208
+DECL|struct|__anon297db87f0208
 typedef|typedef
 struct|struct
 block|{
@@ -607,13 +613,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_ripple"
 argument_list|,
+name|_
+argument_list|(
 literal|"Ripple the contents of the specified drawable"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Ripples the pixels of the specified drawable. Each row or colum will be displaced a certain number of pixels coinciding with the given wave form"
+argument_list|)
 argument_list|,
 literal|"Brian Degenhardt<bdegenha@ucsd.edu>"
 argument_list|,
@@ -621,7 +636,10 @@ literal|"Brian Degenhardt"
 argument_list|,
 literal|"1997"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Distorts/Ripple..."
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -749,6 +767,9 @@ block|{
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
@@ -770,6 +791,9 @@ break|break;
 case|case
 name|RUN_NONINTERACTIVE
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/*  Make sure all the arguments are there!  */
 if|if
 condition|(
@@ -928,6 +952,9 @@ break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
@@ -968,7 +995,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Rippling..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  set the tile cache size  */
@@ -3165,7 +3195,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Ripple"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -3271,7 +3304,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3328,7 +3364,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3490,7 +3529,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -3566,7 +3608,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Antialiasing"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3626,7 +3671,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Retain Tilability"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3699,7 +3747,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Orientation"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -3777,7 +3828,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|orientation_group
 argument_list|,
+name|_
+argument_list|(
 literal|"Horizontal"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|orientation_group
@@ -3845,7 +3899,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|orientation_group
 argument_list|,
+name|_
+argument_list|(
 literal|"Vertical"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|orientation_group
@@ -3953,7 +4010,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Edges"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -4031,8 +4091,11 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|edges_group
 argument_list|,
+name|_
+argument_list|(
 literal|"Wrap"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|edges_group
 operator|=
@@ -4099,8 +4162,11 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|edges_group
 argument_list|,
+name|_
+argument_list|(
 literal|"Smear"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|edges_group
 operator|=
@@ -4167,7 +4233,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|edges_group
 argument_list|,
+name|_
+argument_list|(
 literal|"Black"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|edges_group
@@ -4244,7 +4313,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Wave Type"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -4322,7 +4394,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|waveform_group
 argument_list|,
+name|_
+argument_list|(
 literal|"Sawtooth"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|waveform_group
@@ -4390,7 +4465,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|waveform_group
 argument_list|,
+name|_
+argument_list|(
 literal|"Sine"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|waveform_group
@@ -4477,7 +4555,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Parameter Settings"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -4552,7 +4633,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Period"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -4841,7 +4925,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Amplitude"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment

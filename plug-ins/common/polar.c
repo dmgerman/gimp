@@ -64,6 +64,12 @@ directive|include
 file|<libgimp/gimp.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_define
 DECL|macro|WITHIN (a,b,c)
 define|#
@@ -152,7 +158,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b1d45350108
+DECL|struct|__anon289338f00108
 typedef|typedef
 struct|struct
 block|{
@@ -183,7 +189,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b1d45350208
+DECL|struct|__anon289338f00208
 typedef|typedef
 struct|struct
 block|{
@@ -223,7 +229,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b1d45350308
+DECL|struct|__anon289338f00308
 typedef|typedef
 struct|struct
 block|{
@@ -920,13 +926,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
+name|_
+argument_list|(
 literal|"Converts and image to and from polar coords"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Remaps and image from rectangular coordinates to polar coordinats or vice versa"
+argument_list|)
 argument_list|,
 literal|"Daniel Dunbar and Federico Mena Quintero"
 argument_list|,
@@ -934,7 +949,10 @@ literal|"Daniel Dunbar and Federico Mena Quintero"
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Distorts/Polar Coords..."
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -1318,6 +1336,9 @@ block|{
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 comment|/* Possibly retrieve data */
 name|gimp_get_data
 argument_list|(
@@ -1339,6 +1360,9 @@ break|break;
 case|case
 name|RUN_NONINTERACTIVE
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/* Make sure all the arguments are present */
 if|if
 condition|(
@@ -1428,6 +1452,9 @@ break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/* Possibly retrieve data */
 name|gimp_get_data
 argument_list|(
@@ -1763,7 +1790,10 @@ name|img_height
 expr_stmt|;
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Polarizing..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -4716,7 +4746,10 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Polarize"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -5038,7 +5071,10 @@ argument_list|)
 expr_stmt|;
 name|dialog_create_value
 argument_list|(
+name|_
+argument_list|(
 literal|"Circle depth in percent"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -5061,7 +5097,10 @@ argument_list|)
 expr_stmt|;
 name|dialog_create_value
 argument_list|(
+name|_
+argument_list|(
 literal|"Offset angle"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -5122,7 +5161,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Map Backwards"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -5184,15 +5226,21 @@ name|tips
 argument_list|,
 name|toggle
 argument_list|,
+name|_
+argument_list|(
 literal|"If checked the mapping will begin at the right side, as opposed to beginning at the left."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
 name|gtk_check_button_new_with_label
+argument_list|(
+name|_
 argument_list|(
 literal|"Map from Top"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
 argument_list|(
@@ -5253,14 +5301,20 @@ name|tips
 argument_list|,
 name|toggle
 argument_list|,
+name|_
+argument_list|(
 literal|"If unchecked the mapping will put the bottom row in the middle and the top row on the outside.  If checked it will be the opposite."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
-literal|"Polar to Rectangular"
+name|_
+argument_list|(
+literal|"To Polar"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -5322,7 +5376,10 @@ name|tips
 argument_list|,
 name|toggle
 argument_list|,
+name|_
+argument_list|(
 literal|"If unchecked the image will be circularly mapped onto a rectangle.  If checked the image will be mapped onto a circle."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -5406,7 +5463,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -5463,7 +5523,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
