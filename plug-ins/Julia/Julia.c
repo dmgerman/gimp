@@ -130,7 +130,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon27cc73f30108
+DECL|struct|__anon2bfef4180108
 typedef|typedef
 struct|struct
 block|{
@@ -197,7 +197,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27cc73f30208
+DECL|struct|__anon2bfef4180208
 typedef|typedef
 struct|struct
 block|{
@@ -8801,6 +8801,12 @@ expr_stmt|;
 name|datapointer
 operator|=
 name|header_data
+operator|+
+name|logo_width
+operator|*
+name|logo_height
+operator|-
+literal|1
 expr_stmt|;
 for|for
 control|(

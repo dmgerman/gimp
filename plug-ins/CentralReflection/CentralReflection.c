@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/**********************************************************************  *  CentralReflection Distortion Plug-In (Version 1.02)  *  Daniel Cotting (cotting@mygale.org)  **********************************************************************  *  Official homepages: http://www.mygale.org/~cotting  *                      http://village.cyberbrain.com/cotting  **********************************************************************      */
+comment|/**********************************************************************  *  CentralReflection Distortion Plug-In (Version 1.04)  *  Daniel Cotting (cotting@mygale.org)  **********************************************************************  *  Official homepages: http://www.mygale.org/~cotting  *                      http://cotting.citeweb.net  *                      http://village.cyberbrain.com/cotting  **********************************************************************      */
 end_comment
 
 begin_comment
@@ -136,7 +136,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29561a240108
+DECL|struct|__anon2be6998f0108
 block|{
 DECL|member|cone_radius
 name|gdouble
@@ -191,7 +191,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29561a240208
+DECL|struct|__anon2be6998f0208
 block|{
 DECL|member|run
 name|gint
@@ -3370,14 +3370,14 @@ name|char
 modifier|*
 name|text
 decl_stmt|;
-name|gchar
+name|guchar
 modifier|*
 name|temp
 decl_stmt|,
 modifier|*
 name|temp2
 decl_stmt|;
-name|char
+name|guchar
 modifier|*
 name|datapointer
 decl_stmt|;
@@ -3697,6 +3697,12 @@ expr_stmt|;
 name|datapointer
 operator|=
 name|header_data
+operator|+
+name|logo_width
+operator|*
+name|logo_height
+operator|-
+literal|1
 expr_stmt|;
 for|for
 control|(
@@ -3827,7 +3833,7 @@ literal|"CH-3066 Stettlen (Switzerland)\n\n"
 literal|"cotting@mygale.org\n"
 literal|"http://www.mygale.org/~cotting\n\n"
 literal|"Central-Reflection\n Plug-In for the GIMP\n"
-literal|"Version 1.02\n"
+literal|"Version 1.04\n"
 expr_stmt|;
 name|xlabel
 operator|=

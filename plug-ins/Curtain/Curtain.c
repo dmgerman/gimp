@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/**********************************************************************  *  Curtain Plug-In (Version 1.01)  *  Daniel Cotting (cotting@mygale.org)  **********************************************************************  *  Official Homepage: http://www.mygale.org/~cotting  **********************************************************************  *  Homepages under construction: http://www.chez.com/cotting  *                                http://www.cyberbrain.com/cotting  *  You won't be able to see anything yet, as I don't really have the   *  time to build up these two sites :-(   *  Have a look at www.mygale.org/~cotting instead!  **********************************************************************      */
+comment|/**********************************************************************  *  Curtain Plug-In (Version 1.03)  *  Daniel Cotting (cotting@mygale.org)  **********************************************************************  *  Official homepages: http://www.mygale.org/~cotting  *                      http://cotting.citeweb.net  *                      http://village.cyberbrain.com/cotting  **********************************************************************      */
 end_comment
 
 begin_comment
@@ -46,7 +46,7 @@ value|100
 end_define
 
 begin_typedef
-DECL|struct|__anon27c5fcc90108
+DECL|struct|__anon29b2a00b0108
 typedef|typedef
 struct|struct
 block|{
@@ -65,7 +65,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27c5fcc90208
+DECL|struct|__anon29b2a00b0208
 typedef|typedef
 struct|struct
 block|{
@@ -1011,9 +1011,7 @@ name|int
 operator|)
 name|y
 expr_stmt|;
-comment|/* 	  Flags horiz and vert inversed by mistake! */
-comment|/* 	  Corrected this with a small hack in the next lines. */
-comment|/* 	  (one more inversion) */
+comment|/*  	     Flags horiz and vert inversed by mistake! 	     Corrected this with a small hack in the next lines. 	     (one more inversion) 	  */
 if|if
 condition|(
 operator|(
@@ -2118,14 +2116,14 @@ name|char
 modifier|*
 name|text
 decl_stmt|;
-name|gchar
+name|guchar
 modifier|*
 name|temp
 decl_stmt|,
 modifier|*
 name|temp2
 decl_stmt|;
-name|char
+name|guchar
 modifier|*
 name|datapointer
 decl_stmt|;
@@ -2445,6 +2443,12 @@ expr_stmt|;
 name|datapointer
 operator|=
 name|header_data
+operator|+
+name|logo_height
+operator|*
+name|logo_width
+operator|-
+literal|1
 expr_stmt|;
 for|for
 control|(
@@ -2575,7 +2579,7 @@ literal|"CH-3066 Stettlen (Switzerland)\n\n"
 literal|"cotting@mygale.org\n"
 literal|"http://www.mygale.org/~cotting\n\n"
 literal|"Curtain Plug-In for the GIMP\n"
-literal|"Version 1.01\n"
+literal|"Version 1.03\n"
 expr_stmt|;
 name|xlabel
 operator|=

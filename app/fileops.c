@@ -2340,11 +2340,14 @@ operator|->
 name|gimage
 argument_list|)
 argument_list|,
+name|prune_filename
+argument_list|(
 name|gimage_filename
 argument_list|(
 name|gdisplay
 operator|->
 name|gimage
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3488,10 +3491,7 @@ name|gimage_set_filename
 argument_list|(
 name|gimage
 argument_list|,
-name|prune_filename
-argument_list|(
 name|filename
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -1311,6 +1311,8 @@ control|(
 name|i
 operator|=
 name|start
+operator|+
+literal|1
 init|;
 name|i
 operator|<

@@ -154,6 +154,10 @@ name|PARAM_LAYER
 argument_list|,
 name|layer_ID
 argument_list|,
+name|PARAM_INT32
+argument_list|,
+literal|0
+argument_list|,
 name|PARAM_END
 argument_list|)
 expr_stmt|;

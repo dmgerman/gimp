@@ -8479,6 +8479,9 @@ name|int
 name|nstrs
 decl_stmt|;
 name|int
+name|crop
+decl_stmt|;
+name|int
 name|line_width
 decl_stmt|,
 name|line_height
@@ -8545,6 +8548,24 @@ else|else
 name|antialias
 operator|=
 literal|1
+expr_stmt|;
+comment|/* Dont crop the text if border is negative */
+name|crop
+operator|=
+operator|(
+name|border
+operator|>=
+literal|0
+operator|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|crop
+condition|)
+name|border
+operator|=
+literal|0
 expr_stmt|;
 comment|/* load the font in */
 name|font
@@ -8941,12 +8962,16 @@ block|}
 comment|/*  Crop the mask buffer  */
 name|newmask
 operator|=
+name|crop
+condition|?
 name|crop_buffer
 argument_list|(
 name|mask
 argument_list|,
 name|border
 argument_list|)
+else|:
+name|mask
 expr_stmt|;
 if|if
 condition|(
@@ -10071,7 +10096,8 @@ if|if
 condition|(
 name|int_value
 operator|>=
-literal|0
+operator|-
+literal|1
 condition|)
 name|border
 operator|=
