@@ -42,7 +42,10 @@ begin_function_decl
 name|void
 name|gimp_templates_migrate
 parameter_list|(
-name|void
+specifier|const
+name|gchar
+modifier|*
+name|olddir
 parameter_list|)
 function_decl|;
 end_function_decl
