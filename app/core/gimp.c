@@ -76,7 +76,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint/paint.h"
+file|"paint/gimp-paint.h"
 end_include
 
 begin_include
@@ -249,7 +249,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2947ae590103
+DECL|enum|__anon2772dacc0103
 block|{
 DECL|enumerator|EXIT
 name|EXIT
@@ -1651,7 +1651,7 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-name|paint_exit
+name|gimp_paint_exit
 argument_list|(
 name|gimp
 argument_list|)
@@ -3039,7 +3039,7 @@ argument_list|,
 literal|"palette factory"
 argument_list|)
 expr_stmt|;
-name|paint_init
+name|gimp_paint_init
 argument_list|(
 name|gimp
 argument_list|)

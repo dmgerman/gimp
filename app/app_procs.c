@@ -124,7 +124,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/tool_manager.h"
+file|"tools/gimp-tools.h"
 end_include
 
 begin_include
@@ -725,7 +725,7 @@ argument_list|(
 name|the_gimp
 argument_list|)
 expr_stmt|;
-name|tool_manager_init
+name|gimp_tools_init
 argument_list|(
 name|the_gimp
 argument_list|)
@@ -752,7 +752,7 @@ argument_list|(
 name|the_gimp
 argument_list|)
 expr_stmt|;
-name|tool_manager_restore
+name|gimp_tools_restore
 argument_list|(
 name|the_gimp
 argument_list|)
@@ -1183,12 +1183,12 @@ operator|->
 name|no_interface
 condition|)
 block|{
-name|tool_manager_save
+name|gimp_tools_save
 argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-name|tool_manager_exit
+name|gimp_tools_exit
 argument_list|(
 name|gimp
 argument_list|)
@@ -1227,7 +1227,7 @@ expr_stmt|;
 name|base_exit
 argument_list|()
 expr_stmt|;
-comment|/*  There used to be foo_main_quit() here, but there's a chance     *  that foo_main() was never called before we reach this point. --Sven      */
+comment|/*  There used to be foo_main_quit() here, but there's a chance    *  that foo_main() was never called before we reach this point. --Sven    */
 name|exit
 argument_list|(
 literal|0
@@ -1256,7 +1256,7 @@ file|"config/gimpconfig-serialize.h"
 end_include
 
 begin_endif
-unit|static void gimprc_notify_callback (GObject    *object, 			GParamSpec *pspec) {   GString *str;   GValue   value = { 0, };    g_return_if_fail (G_IS_OBJECT (object));   g_return_if_fail (G_IS_PARAM_SPEC (pspec));    g_value_init (&value, pspec->value_type);   g_object_get_property (object, pspec->name,&value);    str = g_string_new (NULL);    if (gimp_config_serialize_value (&value, str, TRUE))     {       g_print ("  %s -> %s\n", pspec->name, str->str);     }   else     {       g_print ("  %s changed but we failed to serialize its value!\n",                 pspec->name);     }    g_string_free (str, TRUE);   g_value_unset (&value); }
+unit|static void gimprc_notify_callback (GObject    *object, 			GParamSpec *pspec) {   GString *str;   GValue   value = { 0, };    g_return_if_fail (G_IS_OBJECT (object));   g_return_if_fail (G_IS_PARAM_SPEC (pspec));    g_value_init (&value, pspec->value_type);   g_object_get_property (object, pspec->name,&value);    str = g_string_new (NULL);    if (gimp_config_serialize_value (&value, str, TRUE))     {       g_print ("  %s -> %s\n", pspec->name, str->str);     }   else     {       g_print ("  %s changed but we failed to serialize its value!\n",                pspec->name);     }    g_string_free (str, TRUE);   g_value_unset (&value); }
 endif|#
 directive|endif
 end_endif

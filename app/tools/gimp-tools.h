@@ -6,19 +6,19 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__TOOLS_H__
+name|__GIMP_TOOLS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__TOOLS_H__
+DECL|macro|__GIMP_TOOLS_H__
 define|#
 directive|define
-name|__TOOLS_H__
+name|__GIMP_TOOLS_H__
 end_define
 
 begin_function_decl
 name|void
-name|tools_init
+name|gimp_tools_init
 parameter_list|(
 name|Gimp
 modifier|*
@@ -29,7 +29,29 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|tools_exit
+name|gimp_tools_exit
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_tools_restore
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_tools_save
 parameter_list|(
 name|Gimp
 modifier|*
@@ -44,7 +66,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __TOOLS_H__ */
+comment|/* __GIMP_TOOLS_H__ */
 end_comment
 
 end_unit

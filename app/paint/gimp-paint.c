@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint.h"
+file|"gimp-paint.h"
 end_include
 
 begin_include
@@ -100,7 +100,7 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|paint_register
+name|gimp_paint_register
 parameter_list|(
 name|Gimp
 modifier|*
@@ -126,8 +126,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|paint_init (Gimp * gimp)
-name|paint_init
+DECL|function|gimp_paint_init (Gimp * gimp)
+name|gimp_paint_init
 parameter_list|(
 name|Gimp
 modifier|*
@@ -214,7 +214,7 @@ index|]
 operator|(
 name|gimp
 operator|,
-name|paint_register
+name|gimp_paint_register
 operator|)
 expr_stmt|;
 block|}
@@ -223,8 +223,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|paint_exit (Gimp * gimp)
-name|paint_exit
+DECL|function|gimp_paint_exit (Gimp * gimp)
+name|gimp_paint_exit
 parameter_list|(
 name|Gimp
 modifier|*
@@ -270,8 +270,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|paint_register (Gimp * gimp,GType paint_type,GType paint_options_type,const gchar * blurb)
-name|paint_register
+DECL|function|gimp_paint_register (Gimp * gimp,GType paint_type,GType paint_options_type,const gchar * blurb)
+name|gimp_paint_register
 parameter_list|(
 name|Gimp
 modifier|*

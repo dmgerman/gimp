@@ -594,7 +594,7 @@ name|gimp_vector_options_gui
 argument_list|,
 literal|0
 argument_list|,
-literal|"gimp-path-tool"
+literal|"gimp-vector-tool"
 argument_list|,
 name|_
 argument_list|(
