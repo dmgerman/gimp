@@ -1804,6 +1804,14 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
+name|gimp_draw_tool_pause
+argument_list|(
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|tool
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/*  Let the specific painting function finish up  */
 name|gimp_paint_core_paint
 argument_list|(
@@ -1873,6 +1881,14 @@ argument_list|(
 name|gdisp
 operator|->
 name|gimage
+argument_list|)
+expr_stmt|;
+name|gimp_draw_tool_resume
+argument_list|(
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|tool
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
