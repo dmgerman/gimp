@@ -55,12 +55,6 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"pixmaps/eek.xpm"
-end_include
-
 begin_comment
 comment|/* Typedefs */
 end_comment
@@ -68,7 +62,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb9a5e40108
+DECL|struct|__anon2c38c3620108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -135,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb9a5e40208
+DECL|struct|__anon2c38c3620208
 block|{
 DECL|member|run
 name|gint
@@ -1822,9 +1816,11 @@ argument_list|)
 expr_stmt|;
 name|eek
 operator|=
-name|gimp_pixmap_new
+name|gtk_image_new_from_stock
 argument_list|(
-name|eek_xpm
+name|GIMP_STOCK_WILBER_EEK
+argument_list|,
+name|GTK_ICON_SIZE_DIALOG
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
