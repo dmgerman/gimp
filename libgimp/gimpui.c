@@ -205,7 +205,7 @@ expr_stmt|;
 block|}
 name|argc
 operator|=
-literal|3
+literal|2
 expr_stmt|;
 name|argv
 operator|=
@@ -214,7 +214,7 @@ argument_list|(
 name|gchar
 operator|*
 argument_list|,
-literal|3
+literal|2
 argument_list|)
 expr_stmt|;
 name|argv
@@ -230,19 +230,6 @@ expr_stmt|;
 name|argv
 index|[
 literal|1
-index|]
-operator|=
-name|g_strdup_printf
-argument_list|(
-literal|"--name=%s"
-argument_list|,
-name|gimp_wm_name
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|2
 index|]
 operator|=
 name|g_strdup_printf

@@ -270,7 +270,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon29148dea0103
+DECL|enum|__anon2b84bad20103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -2904,15 +2904,6 @@ modifier|*
 name|object
 parameter_list|)
 block|{
-name|GimpImage
-modifier|*
-name|gimage
-init|=
-name|GIMP_IMAGE
-argument_list|(
-name|object
-argument_list|)
-decl_stmt|;
 specifier|const
 name|gchar
 modifier|*

@@ -386,9 +386,13 @@ name|gdisp_ID
 expr_stmt|;
 name|config
 operator|.
-name|wm_name
+name|app_name
 operator|=
-name|g_get_prgname
+operator|(
+name|gchar
+operator|*
+operator|)
+name|g_get_application_name
 argument_list|()
 expr_stmt|;
 name|config

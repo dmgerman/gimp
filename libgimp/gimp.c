@@ -414,7 +414,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278b7cac0103
+DECL|enum|__anon2c4a98220103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -863,17 +863,6 @@ name|_gdisp_ID
 init|=
 operator|-
 literal|1
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|_wm_name
-specifier|static
-name|gchar
-modifier|*
-name|_wm_name
-init|=
-name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -1828,7 +1817,7 @@ name|gimp_close
 argument_list|()
 expr_stmt|;
 return|return
-literal|0
+name|EXIT_SUCCESS
 return|;
 block|}
 if|if
@@ -1873,7 +1862,7 @@ name|gimp_close
 argument_list|()
 expr_stmt|;
 return|return
-literal|0
+name|EXIT_SUCCESS
 return|;
 block|}
 if|if
@@ -1927,7 +1916,7 @@ name|gimp_loop
 argument_list|()
 expr_stmt|;
 return|return
-literal|0
+name|EXIT_SUCCESS
 return|;
 block|}
 end_function
@@ -1949,7 +1938,7 @@ argument_list|()
 expr_stmt|;
 name|exit
 argument_list|(
-literal|0
+name|EXIT_SUCCESS
 argument_list|)
 expr_stmt|;
 block|}
@@ -3980,31 +3969,6 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_wm_name:  *  * Returns the window manager name to be used for plug-in windows.  * This is a constant value given at Plug-In config time.  *  * Return value: the window manager name  **/
-end_comment
-
-begin_function
-specifier|const
-name|gchar
-modifier|*
-DECL|function|gimp_wm_name (void)
-name|gimp_wm_name
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-return|return
-operator|(
-specifier|const
-name|gchar
-operator|*
-operator|)
-name|_wm_name
-return|;
-block|}
-end_function
-
-begin_comment
 comment|/**  * gimp_wm_class:  *  * Returns the window manager class to be used for plug-in windows.  * This is a constant value given at Plug-In config time.  *  * Return value: the window manager class  **/
 end_comment
 
@@ -5313,15 +5277,6 @@ name|config
 operator|->
 name|gdisp_ID
 expr_stmt|;
-name|_wm_name
-operator|=
-name|g_strdup
-argument_list|(
-name|config
-operator|->
-name|wm_name
-argument_list|)
-expr_stmt|;
 name|_wm_class
 operator|=
 name|g_strdup
@@ -5345,6 +5300,19 @@ operator|=
 name|config
 operator|->
 name|monitor_number
+expr_stmt|;
+if|if
+condition|(
+name|config
+operator|->
+name|app_name
+condition|)
+name|g_set_application_name
+argument_list|(
+name|config
+operator|->
+name|app_name
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
