@@ -102,7 +102,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2ad95d0103
+DECL|enum|__anon291a18b60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1743,6 +1743,7 @@ name|spikes
 operator|>
 literal|2
 condition|)
+block|{
 comment|/* could be optimized by respecting the angle */
 name|width
 operator|=
@@ -1766,6 +1767,31 @@ name|short_radius
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gbrush
+operator|->
+name|y_axis
+operator|.
+name|x
+operator|=
+name|s
+operator|*
+name|brush
+operator|->
+name|radius
+expr_stmt|;
+name|gbrush
+operator|->
+name|y_axis
+operator|.
+name|y
+operator|=
+name|c
+operator|*
+name|brush
+operator|->
+name|radius
+expr_stmt|;
+block|}
 name|gbrush
 operator|->
 name|mask
@@ -2099,7 +2125,7 @@ operator|->
 name|spikes
 argument_list|)
 expr_stmt|;
-comment|/*for an even number of spikes compute one half and mirror it */
+comment|/* for an even number of spikes compute one half and mirror it */
 for|for
 control|(
 name|y
