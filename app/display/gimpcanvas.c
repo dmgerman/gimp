@@ -812,6 +812,10 @@ case|:
 name|mask
 operator||=
 name|GDK_GC_FUNCTION
+operator||
+name|GDK_GC_CAP_STYLE
+operator||
+name|GDK_GC_JOIN_STYLE
 expr_stmt|;
 name|values
 operator|.
@@ -819,7 +823,19 @@ name|function
 operator|=
 name|GDK_INVERT
 expr_stmt|;
-comment|/*  fallthrough  */
+name|values
+operator|.
+name|cap_style
+operator|=
+name|GDK_CAP_NOT_LAST
+expr_stmt|;
+name|values
+operator|.
+name|join_style
+operator|=
+name|GDK_JOIN_MITER
+expr_stmt|;
+break|break;
 case|case
 name|GIMP_CANVAS_STYLE_SELECTION_IN
 case|:
@@ -839,8 +855,6 @@ name|mask
 operator||=
 name|GDK_GC_CAP_STYLE
 operator||
-name|GDK_GC_JOIN_STYLE
-operator||
 name|GDK_GC_FILL
 operator||
 name|GDK_GC_STIPPLE
@@ -850,12 +864,6 @@ operator|.
 name|cap_style
 operator|=
 name|GDK_CAP_NOT_LAST
-expr_stmt|;
-name|values
-operator|.
-name|join_style
-operator|=
-name|GDK_JOIN_MITER
 expr_stmt|;
 name|values
 operator|.
