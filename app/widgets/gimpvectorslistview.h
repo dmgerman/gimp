@@ -22,21 +22,23 @@ directive|include
 file|"gimpitemlistview.h"
 end_include
 
-begin_typedef
-DECL|typedef|GimpStrokeItemFunc
-typedef|typedef
-name|void
-function_decl|(
-modifier|*
-name|GimpStrokeItemFunc
-function_decl|)
-parameter_list|(
-name|GimpVectors
-modifier|*
-name|vectors
-parameter_list|)
-function_decl|;
-end_typedef
+begin_include
+include|#
+directive|include
+file|"gimpvectorstreeview.h"
+end_include
+
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
+begin_endif
+unit|typedef void (* GimpStrokeItemFunc) (GimpVectors *vectors);
+endif|#
+directive|endif
+end_endif
 
 begin_define
 DECL|macro|GIMP_TYPE_VECTORS_LIST_VIEW

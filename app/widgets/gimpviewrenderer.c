@@ -118,7 +118,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d6172a0103
+DECL|enum|__anon2a3c17cc0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -168,7 +168,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_preview_renderer_idle_invalidate
+name|gimp_preview_renderer_idle_update
 parameter_list|(
 name|GimpPreviewRenderer
 modifier|*
@@ -1603,7 +1603,7 @@ name|gdk_color
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_preview_renderer_update
+name|gimp_preview_renderer_update_idle
 argument_list|(
 name|renderer
 argument_list|)
@@ -1660,7 +1660,7 @@ argument_list|,
 operator|(
 name|GSourceFunc
 operator|)
-name|gimp_preview_renderer_idle_invalidate
+name|gimp_preview_renderer_idle_update
 argument_list|,
 name|renderer
 argument_list|,
@@ -1719,6 +1719,58 @@ name|UPDATE
 index|]
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_preview_renderer_update_idle (GimpPreviewRenderer * renderer)
+name|gimp_preview_renderer_update_idle
+parameter_list|(
+name|GimpPreviewRenderer
+modifier|*
+name|renderer
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_PREVIEW_RENDERER
+argument_list|(
+name|renderer
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|renderer
+operator|->
+name|idle_id
+condition|)
+name|g_source_remove
+argument_list|(
+name|renderer
+operator|->
+name|idle_id
+argument_list|)
+expr_stmt|;
+name|renderer
+operator|->
+name|idle_id
+operator|=
+name|g_idle_add_full
+argument_list|(
+name|G_PRIORITY_LOW
+argument_list|,
+operator|(
+name|GSourceFunc
+operator|)
+name|gimp_preview_renderer_idle_update
+argument_list|,
+name|renderer
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -2442,8 +2494,8 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_preview_renderer_idle_invalidate (GimpPreviewRenderer * renderer)
-name|gimp_preview_renderer_idle_invalidate
+DECL|function|gimp_preview_renderer_idle_update (GimpPreviewRenderer * renderer)
+name|gimp_preview_renderer_idle_update
 parameter_list|(
 name|GimpPreviewRenderer
 modifier|*

@@ -1,25 +1,25 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpitemlistview.h  * Copyright (C) 2001 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpitemtreeview.h  * Copyright (C) 2001-2003 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_ITEM_LIST_VIEW_H__
+name|__GIMP_ITEM_TREE_VIEW_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_ITEM_LIST_VIEW_H__
+DECL|macro|__GIMP_ITEM_TREE_VIEW_H__
 define|#
 directive|define
-name|__GIMP_ITEM_LIST_VIEW_H__
+name|__GIMP_ITEM_TREE_VIEW_H__
 end_define
 
 begin_include
 include|#
 directive|include
-file|"gimpcontainerlistview.h"
+file|"gimpcontainertreeview.h"
 end_include
 
 begin_typedef
@@ -229,84 +229,84 @@ function_decl|;
 end_typedef
 
 begin_define
-DECL|macro|GIMP_TYPE_ITEM_LIST_VIEW
+DECL|macro|GIMP_TYPE_ITEM_TREE_VIEW
 define|#
 directive|define
-name|GIMP_TYPE_ITEM_LIST_VIEW
-value|(gimp_item_list_view_get_type ())
+name|GIMP_TYPE_ITEM_TREE_VIEW
+value|(gimp_item_tree_view_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_ITEM_LIST_VIEW (obj)
+DECL|macro|GIMP_ITEM_TREE_VIEW (obj)
 define|#
 directive|define
-name|GIMP_ITEM_LIST_VIEW
+name|GIMP_ITEM_TREE_VIEW
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_ITEM_LIST_VIEW, GimpItemListView))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_ITEM_TREE_VIEW, GimpItemTreeView))
 end_define
 
 begin_define
-DECL|macro|GIMP_ITEM_LIST_VIEW_CLASS (klass)
+DECL|macro|GIMP_ITEM_TREE_VIEW_CLASS (klass)
 define|#
 directive|define
-name|GIMP_ITEM_LIST_VIEW_CLASS
+name|GIMP_ITEM_TREE_VIEW_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_ITEM_LIST_VIEW, GimpItemListViewClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_ITEM_TREE_VIEW, GimpItemTreeViewClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_ITEM_LIST_VIEW (obj)
+DECL|macro|GIMP_IS_ITEM_TREE_VIEW (obj)
 define|#
 directive|define
-name|GIMP_IS_ITEM_LIST_VIEW
+name|GIMP_IS_ITEM_TREE_VIEW
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_ITEM_LIST_VIEW))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_ITEM_TREE_VIEW))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_ITEM_LIST_VIEW_CLASS (klass)
+DECL|macro|GIMP_IS_ITEM_TREE_VIEW_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_ITEM_LIST_VIEW_CLASS
+name|GIMP_IS_ITEM_TREE_VIEW_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_ITEM_LIST_VIEW))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_ITEM_TREE_VIEW))
 end_define
 
 begin_define
-DECL|macro|GIMP_ITEM_LIST_VIEW_GET_CLASS (obj)
+DECL|macro|GIMP_ITEM_TREE_VIEW_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_ITEM_LIST_VIEW_GET_CLASS
+name|GIMP_ITEM_TREE_VIEW_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_ITEM_LIST_VIEW, GimpItemListViewClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_ITEM_TREE_VIEW, GimpItemTreeViewClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpItemListViewClass
+DECL|typedef|GimpItemTreeViewClass
 typedef|typedef
 name|struct
-name|_GimpItemListViewClass
-name|GimpItemListViewClass
+name|_GimpItemTreeViewClass
+name|GimpItemTreeViewClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpItemListView
+DECL|struct|_GimpItemTreeView
 struct|struct
-name|_GimpItemListView
+name|_GimpItemTreeView
 block|{
 DECL|member|parent_instance
-name|GimpContainerListView
+name|GimpContainerTreeView
 name|parent_instance
 decl_stmt|;
 DECL|member|gimage
@@ -380,15 +380,15 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpItemListViewClass
+DECL|struct|_GimpItemTreeViewClass
 struct|struct
-name|_GimpItemListViewClass
+name|_GimpItemTreeViewClass
 block|{
 DECL|member|parent_class
-name|GimpContainerListViewClass
+name|GimpContainerTreeViewClass
 name|parent_class
 decl_stmt|;
-comment|/*  virtual functions  */
+comment|/*  signals  */
 DECL|member|set_image
 name|void
 function_decl|(
@@ -396,7 +396,7 @@ modifier|*
 name|set_image
 function_decl|)
 parameter_list|(
-name|GimpItemListView
+name|GimpItemTreeView
 modifier|*
 name|view
 parameter_list|,
@@ -405,7 +405,7 @@ modifier|*
 name|gimage
 parameter_list|)
 function_decl|;
-comment|/*  virtual functions for manipulating the image's item list  */
+comment|/*  virtual functions for manipulating the image's item tree  */
 DECL|member|get_container
 name|GimpGetContainerFunc
 name|get_container
@@ -483,13 +483,19 @@ name|gchar
 modifier|*
 name|lower_to_bottom_desc
 decl_stmt|;
+DECL|member|rename_desc
+specifier|const
+name|gchar
+modifier|*
+name|rename_desc
+decl_stmt|;
 block|}
 struct|;
 end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_item_list_view_get_type
+name|gimp_item_tree_view_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -500,7 +506,7 @@ end_decl_stmt
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_item_list_view_new
+name|gimp_item_tree_view_new
 parameter_list|(
 name|gint
 name|preview_size
@@ -540,9 +546,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_item_list_view_set_image
+name|gimp_item_tree_view_set_image
 parameter_list|(
-name|GimpItemListView
+name|GimpItemTreeView
 modifier|*
 name|view
 parameter_list|,
@@ -559,7 +565,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_ITEM_LIST_VIEW_H__  */
+comment|/*  __GIMP_ITEM_TREE_VIEW_H__  */
 end_comment
 
 end_unit

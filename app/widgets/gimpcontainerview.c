@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acc74cd0103
+DECL|enum|__anon2935455a0103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -772,15 +772,6 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|GTK_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|destroy
-condition|)
 name|GTK_OBJECT_CLASS
 argument_list|(
 name|parent_class
@@ -835,7 +826,6 @@ name|view
 operator|->
 name|container
 condition|)
-block|{
 name|GIMP_CONTAINER_VIEW_GET_CLASS
 argument_list|(
 name|view
@@ -848,7 +838,6 @@ argument_list|,
 name|container
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -1205,14 +1194,11 @@ name|gimp_container_view_select_item
 argument_list|(
 name|view
 argument_list|,
+operator|(
+name|GimpViewable
+operator|*
+operator|)
 name|object
-condition|?
-name|GIMP_VIEWABLE
-argument_list|(
-name|object
-argument_list|)
-else|:
-name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -1440,14 +1426,11 @@ name|gimp_container_view_select_item
 argument_list|(
 name|view
 argument_list|,
+operator|(
+name|GimpViewable
+operator|*
+operator|)
 name|object
-condition|?
-name|GIMP_VIEWABLE
-argument_list|(
-name|object
-argument_list|)
-else|:
-name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -1563,22 +1546,12 @@ name|view
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|view
-operator|->
-name|get_name_func
-operator|!=
-name|get_name_func
-condition|)
-block|{
 name|view
 operator|->
 name|get_name_func
 operator|=
 name|get_name_func
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -1864,7 +1837,6 @@ name|view
 operator|->
 name|context
 condition|)
-block|{
 name|gimp_context_set_by_type
 argument_list|(
 name|view
@@ -1883,7 +1855,6 @@ name|viewable
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 name|gimp_container_view_select_item
 argument_list|(
 name|view

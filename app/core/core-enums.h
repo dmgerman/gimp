@@ -82,7 +82,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2948a9e50103
+DECL|enum|__anon286facf70103
 block|{
 DECL|enumerator|GIMP_ADD_WHITE_MASK
 name|GIMP_ADD_WHITE_MASK
@@ -130,7 +130,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2948a9e50203
+DECL|enum|__anon286facf70203
 block|{
 DECL|enumerator|GIMP_FG_BG_RGB_MODE
 name|GIMP_FG_BG_RGB_MODE
@@ -174,7 +174,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2948a9e50303
+DECL|enum|__anon286facf70303
 block|{
 DECL|enumerator|GIMP_FG_BUCKET_FILL
 name|GIMP_FG_BUCKET_FILL
@@ -218,7 +218,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2948a9e50403
+DECL|enum|__anon286facf70403
 block|{
 DECL|enumerator|GIMP_CHANNEL_OP_ADD
 name|GIMP_CHANNEL_OP_ADD
@@ -266,7 +266,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2948a9e50503
+DECL|enum|__anon286facf70503
 block|{
 DECL|enumerator|GIMP_RED_CHANNEL
 name|GIMP_RED_CHANNEL
@@ -318,7 +318,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2948a9e50603
+DECL|enum|__anon286facf70603
 block|{
 DECL|enumerator|GIMP_NO_DITHER
 name|GIMP_NO_DITHER
@@ -367,7 +367,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2948a9e50703
+DECL|enum|__anon286facf70703
 block|{
 DECL|enumerator|GIMP_GRAVITY_NONE
 name|GIMP_GRAVITY_NONE
@@ -425,7 +425,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2948a9e50803
+DECL|enum|__anon286facf70803
 block|{
 DECL|enumerator|GIMP_FOREGROUND_FILL
 name|GIMP_FOREGROUND_FILL
@@ -473,7 +473,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2948a9e50903
+DECL|enum|__anon286facf70903
 block|{
 DECL|enumerator|GIMP_LINEAR
 name|GIMP_LINEAR
@@ -545,7 +545,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2948a9e50a03
+DECL|enum|__anon286facf70a03
 block|{
 DECL|enumerator|GIMP_RGB
 name|GIMP_RGB
@@ -585,7 +585,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2948a9e50b03
+DECL|enum|__anon286facf70b03
 block|{
 DECL|enumerator|GIMP_RGB_IMAGE
 name|GIMP_RGB_IMAGE
@@ -637,7 +637,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2948a9e50c03
+DECL|enum|__anon286facf70c03
 block|{
 DECL|enumerator|GIMP_ORIENTATION_HORIZONTAL
 name|GIMP_ORIENTATION_HORIZONTAL
@@ -678,7 +678,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2948a9e50d03
+DECL|enum|__anon286facf70d03
 block|{
 DECL|enumerator|GIMP_PREVIEW_SIZE_TINY
 name|GIMP_PREVIEW_SIZE_TINY
@@ -760,7 +760,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2948a9e50e03
+DECL|enum|__anon286facf70e03
 block|{
 DECL|enumerator|GIMP_REPEAT_NONE
 name|GIMP_REPEAT_NONE
@@ -801,7 +801,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2948a9e50f03
+DECL|enum|__anon286facf70f03
 block|{
 DECL|enumerator|GIMP_SELECTION_OFF
 name|GIMP_SELECTION_OFF
@@ -845,7 +845,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2948a9e51003
+DECL|enum|__anon286facf71003
 block|{
 DECL|enumerator|GIMP_THUMBNAIL_SIZE_NONE
 name|GIMP_THUMBNAIL_SIZE_NONE
@@ -892,7 +892,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2948a9e51103
+DECL|enum|__anon286facf71103
 block|{
 DECL|enumerator|GIMP_TRANSFORM_FORWARD
 name|GIMP_TRANSFORM_FORWARD
@@ -929,7 +929,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2948a9e51203
+DECL|enum|__anon286facf71203
 block|{
 DECL|enumerator|GIMP_UNDO_MODE_UNDO
 name|GIMP_UNDO_MODE_UNDO
@@ -964,7 +964,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2948a9e51303
+DECL|enum|__anon286facf71303
 block|{
 DECL|enumerator|GIMP_UNDO_EVENT_UNDO_PUSHED
 name|GIMP_UNDO_EVENT_UNDO_PUSHED
@@ -1017,7 +1017,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2948a9e51403
+DECL|enum|__anon286facf71403
 block|{
 comment|/* Type NO_UNDO_GROUP (0) is special - in the gimpimage structure it    * means there is no undo group currently being added to.    */
 DECL|enumerator|GIMP_UNDO_GROUP_NONE
@@ -1060,10 +1060,10 @@ DECL|enumerator|GIMP_UNDO_GROUP_IMAGE_GUIDE
 name|GIMP_UNDO_GROUP_IMAGE_GUIDE
 block|,
 comment|/*< desc="Guide">*/
-DECL|enumerator|GIMP_UNDO_GROUP_LAYER_PROPERTIES
-name|GIMP_UNDO_GROUP_LAYER_PROPERTIES
+DECL|enumerator|GIMP_UNDO_GROUP_ITEM_PROPERTIES
+name|GIMP_UNDO_GROUP_ITEM_PROPERTIES
 block|,
-comment|/*< desc="Layer Properties">*/
+comment|/*< desc="Item Properties">*/
 DECL|enumerator|GIMP_UNDO_GROUP_LAYER_SCALE
 name|GIMP_UNDO_GROUP_LAYER_SCALE
 block|,
@@ -1276,7 +1276,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2948a9e51503
+DECL|enum|__anon286facf71503
 block|{
 DECL|enumerator|GIMP_MAKE_PALETTE
 name|GIMP_MAKE_PALETTE
@@ -1303,7 +1303,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2948a9e51603
+DECL|enum|__anon286facf71603
 block|{
 DECL|enumerator|GIMP_GRAD_LINEAR
 name|GIMP_GRAD_LINEAR
@@ -1332,7 +1332,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2948a9e51703
+DECL|enum|__anon286facf71703
 block|{
 DECL|enumerator|GIMP_GRAD_RGB
 name|GIMP_GRAD_RGB
@@ -1355,7 +1355,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2948a9e51803
+DECL|enum|__anon286facf71803
 block|{
 DECL|enumerator|GIMP_MASK_APPLY
 name|GIMP_MASK_APPLY
@@ -1372,7 +1372,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2948a9e51903
+DECL|enum|__anon286facf71903
 block|{
 DECL|enumerator|GIMP_EXPAND_AS_NECESSARY
 name|GIMP_EXPAND_AS_NECESSARY
@@ -1395,7 +1395,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2948a9e51a03
+DECL|enum|__anon286facf71a03
 block|{
 DECL|enumerator|GIMP_OFFSET_BACKGROUND
 name|GIMP_OFFSET_BACKGROUND

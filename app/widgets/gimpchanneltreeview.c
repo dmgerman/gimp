@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpchannellistview.c  * Copyright (C) 2001 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpchanneltreeview.c  * Copyright (C) 2001-2003 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -83,7 +83,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpchannellistview.h"
+file|"gimpchanneltreeview.h"
 end_include
 
 begin_include
@@ -101,12 +101,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimplistitem.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpwidgets-utils.h"
 end_include
 
@@ -119,9 +113,9 @@ end_include
 begin_function_decl
 specifier|static
 name|void
-name|gimp_channel_list_view_class_init
+name|gimp_channel_tree_view_class_init
 parameter_list|(
-name|GimpChannelListViewClass
+name|GimpChannelTreeViewClass
 modifier|*
 name|klass
 parameter_list|)
@@ -131,9 +125,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_channel_list_view_init
+name|gimp_channel_tree_view_init
 parameter_list|(
-name|GimpChannelListView
+name|GimpChannelTreeView
 modifier|*
 name|view
 parameter_list|)
@@ -143,9 +137,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_channel_list_view_set_image
+name|gimp_channel_tree_view_set_image
 parameter_list|(
-name|GimpItemListView
+name|GimpItemTreeView
 modifier|*
 name|item_view
 parameter_list|,
@@ -159,7 +153,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_channel_list_view_select_item
+name|gimp_channel_tree_view_select_item
 parameter_list|(
 name|GimpContainerView
 modifier|*
@@ -178,7 +172,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_channel_list_view_set_preview_size
+name|gimp_channel_tree_view_set_preview_size
 parameter_list|(
 name|GimpContainerView
 modifier|*
@@ -190,13 +184,13 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_channel_list_view_toselection_clicked
+name|gimp_channel_tree_view_toselection_clicked
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpChannelListView
+name|GimpChannelTreeView
 modifier|*
 name|view
 parameter_list|)
@@ -206,7 +200,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_channel_list_view_toselection_extended_clicked
+name|gimp_channel_tree_view_toselection_extended_clicked
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -215,7 +209,7 @@ parameter_list|,
 name|guint
 name|state
 parameter_list|,
-name|GimpChannelListView
+name|GimpChannelTreeView
 modifier|*
 name|view
 parameter_list|)
@@ -225,7 +219,7 @@ end_function_decl
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
-name|GimpDrawableListViewClass
+name|GimpDrawableTreeViewClass
 modifier|*
 name|parent_class
 init|=
@@ -235,8 +229,8 @@ end_decl_stmt
 
 begin_function
 name|GType
-DECL|function|gimp_channel_list_view_get_type (void)
-name|gimp_channel_list_view_get_type
+DECL|function|gimp_channel_tree_view_get_type (void)
+name|gimp_channel_tree_view_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -261,7 +255,7 @@ init|=
 block|{
 sizeof|sizeof
 argument_list|(
-name|GimpChannelListViewClass
+name|GimpChannelTreeViewClass
 argument_list|)
 block|,
 name|NULL
@@ -273,7 +267,7 @@ comment|/* base_finalize */
 operator|(
 name|GClassInitFunc
 operator|)
-name|gimp_channel_list_view_class_init
+name|gimp_channel_tree_view_class_init
 block|,
 name|NULL
 block|,
@@ -283,7 +277,7 @@ block|,
 comment|/* class_data */
 sizeof|sizeof
 argument_list|(
-name|GimpChannelListView
+name|GimpChannelTreeView
 argument_list|)
 block|,
 literal|0
@@ -292,16 +286,16 @@ comment|/* n_preallocs */
 operator|(
 name|GInstanceInitFunc
 operator|)
-name|gimp_channel_list_view_init
+name|gimp_channel_tree_view_init
 block|,       }
 decl_stmt|;
 name|view_type
 operator|=
 name|g_type_register_static
 argument_list|(
-name|GIMP_TYPE_DRAWABLE_LIST_VIEW
+name|GIMP_TYPE_DRAWABLE_TREE_VIEW
 argument_list|,
-literal|"GimpChannelListView"
+literal|"GimpChannelTreeView"
 argument_list|,
 operator|&
 name|view_info
@@ -319,10 +313,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_list_view_class_init (GimpChannelListViewClass * klass)
-name|gimp_channel_list_view_class_init
+DECL|function|gimp_channel_tree_view_class_init (GimpChannelTreeViewClass * klass)
+name|gimp_channel_tree_view_class_init
 parameter_list|(
-name|GimpChannelListViewClass
+name|GimpChannelTreeViewClass
 modifier|*
 name|klass
 parameter_list|)
@@ -331,7 +325,7 @@ name|GimpContainerViewClass
 modifier|*
 name|container_view_class
 decl_stmt|;
-name|GimpItemListViewClass
+name|GimpItemTreeViewClass
 modifier|*
 name|item_view_class
 decl_stmt|;
@@ -344,7 +338,7 @@ argument_list|)
 expr_stmt|;
 name|item_view_class
 operator|=
-name|GIMP_ITEM_LIST_VIEW_CLASS
+name|GIMP_ITEM_TREE_VIEW_CLASS
 argument_list|(
 name|klass
 argument_list|)
@@ -360,19 +354,19 @@ name|container_view_class
 operator|->
 name|select_item
 operator|=
-name|gimp_channel_list_view_select_item
+name|gimp_channel_tree_view_select_item
 expr_stmt|;
 name|container_view_class
 operator|->
 name|set_preview_size
 operator|=
-name|gimp_channel_list_view_set_preview_size
+name|gimp_channel_tree_view_set_preview_size
 expr_stmt|;
 name|item_view_class
 operator|->
 name|set_image
 operator|=
-name|gimp_channel_list_view_set_image
+name|gimp_channel_tree_view_set_image
 expr_stmt|;
 name|item_view_class
 operator|->
@@ -497,16 +491,25 @@ argument_list|(
 literal|"Lower Channel to Bottom"
 argument_list|)
 expr_stmt|;
+name|item_view_class
+operator|->
+name|rename_desc
+operator|=
+name|_
+argument_list|(
+literal|"Rename Channel"
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_list_view_init (GimpChannelListView * view)
-name|gimp_channel_list_view_init
+DECL|function|gimp_channel_tree_view_init (GimpChannelTreeView * view)
+name|gimp_channel_tree_view_init
 parameter_list|(
-name|GimpChannelListView
+name|GimpChannelTreeView
 modifier|*
 name|view
 parameter_list|)
@@ -563,12 +566,12 @@ name|NULL
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_channel_list_view_toselection_clicked
+name|gimp_channel_tree_view_toselection_clicked
 argument_list|)
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_channel_list_view_toselection_extended_clicked
+name|gimp_channel_tree_view_toselection_extended_clicked
 argument_list|)
 argument_list|,
 name|view
@@ -628,16 +631,16 @@ block|}
 end_function
 
 begin_comment
-comment|/*  GimpChannelListView methods  */
+comment|/*  GimpItemTreeView methods  */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_list_view_set_image (GimpItemListView * item_view,GimpImage * gimage)
-name|gimp_channel_list_view_set_image
+DECL|function|gimp_channel_tree_view_set_image (GimpItemTreeView * item_view,GimpImage * gimage)
+name|gimp_channel_tree_view_set_image
 parameter_list|(
-name|GimpItemListView
+name|GimpItemTreeView
 modifier|*
 name|item_view
 parameter_list|,
@@ -646,13 +649,13 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|GimpChannelListView
+name|GimpChannelTreeView
 modifier|*
 name|channel_view
 decl_stmt|;
 name|channel_view
 operator|=
-name|GIMP_CHANNEL_LIST_VIEW
+name|GIMP_CHANNEL_TREE_VIEW
 argument_list|(
 name|item_view
 argument_list|)
@@ -740,16 +743,7 @@ argument_list|,
 name|gimage
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|GIMP_ITEM_LIST_VIEW_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|set_image
-condition|)
-name|GIMP_ITEM_LIST_VIEW_CLASS
+name|GIMP_ITEM_TREE_VIEW_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
@@ -784,8 +778,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_list_view_select_item (GimpContainerView * view,GimpViewable * item,gpointer insert_data)
-name|gimp_channel_list_view_select_item
+DECL|function|gimp_channel_tree_view_select_item (GimpContainerView * view,GimpViewable * item,gpointer insert_data)
+name|gimp_channel_tree_view_select_item
 parameter_list|(
 name|GimpContainerView
 modifier|*
@@ -799,37 +793,28 @@ name|gpointer
 name|insert_data
 parameter_list|)
 block|{
-name|GimpItemListView
+name|GimpItemTreeView
 modifier|*
 name|item_view
 decl_stmt|;
-name|GimpChannelListView
+name|GimpChannelTreeView
 modifier|*
-name|list_view
+name|tree_view
 decl_stmt|;
 name|item_view
 operator|=
-name|GIMP_ITEM_LIST_VIEW
+name|GIMP_ITEM_TREE_VIEW
 argument_list|(
 name|view
 argument_list|)
 expr_stmt|;
-name|list_view
+name|tree_view
 operator|=
-name|GIMP_CHANNEL_LIST_VIEW
+name|GIMP_CHANNEL_TREE_VIEW
 argument_list|(
 name|view
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|GIMP_CONTAINER_VIEW_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|select_item
-condition|)
 name|GIMP_CONTAINER_VIEW_CLASS
 argument_list|(
 name|parent_class
@@ -883,7 +868,7 @@ expr_stmt|;
 block|}
 name|gtk_widget_set_sensitive
 argument_list|(
-name|list_view
+name|tree_view
 operator|->
 name|toselection_button
 argument_list|,
@@ -898,34 +883,25 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_list_view_set_preview_size (GimpContainerView * view)
-name|gimp_channel_list_view_set_preview_size
+DECL|function|gimp_channel_tree_view_set_preview_size (GimpContainerView * view)
+name|gimp_channel_tree_view_set_preview_size
 parameter_list|(
 name|GimpContainerView
 modifier|*
 name|view
 parameter_list|)
 block|{
-name|GimpChannelListView
+name|GimpChannelTreeView
 modifier|*
 name|channel_view
 decl_stmt|;
 name|channel_view
 operator|=
-name|GIMP_CHANNEL_LIST_VIEW
+name|GIMP_CHANNEL_TREE_VIEW
 argument_list|(
 name|view
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|GIMP_CONTAINER_VIEW_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|set_preview_size
-condition|)
 name|GIMP_CONTAINER_VIEW_CLASS
 argument_list|(
 name|parent_class
@@ -956,19 +932,19 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_list_view_toselection_clicked (GtkWidget * widget,GimpChannelListView * view)
-name|gimp_channel_list_view_toselection_clicked
+DECL|function|gimp_channel_tree_view_toselection_clicked (GtkWidget * widget,GimpChannelTreeView * view)
+name|gimp_channel_tree_view_toselection_clicked
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpChannelListView
+name|GimpChannelTreeView
 modifier|*
 name|view
 parameter_list|)
 block|{
-name|gimp_channel_list_view_toselection_extended_clicked
+name|gimp_channel_tree_view_toselection_extended_clicked
 argument_list|(
 name|widget
 argument_list|,
@@ -983,8 +959,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_list_view_toselection_extended_clicked (GtkWidget * widget,guint state,GimpChannelListView * view)
-name|gimp_channel_list_view_toselection_extended_clicked
+DECL|function|gimp_channel_tree_view_toselection_extended_clicked (GtkWidget * widget,guint state,GimpChannelTreeView * view)
+name|gimp_channel_tree_view_toselection_extended_clicked
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -993,7 +969,7 @@ parameter_list|,
 name|guint
 name|state
 parameter_list|,
-name|GimpChannelListView
+name|GimpChannelTreeView
 modifier|*
 name|view
 parameter_list|)
@@ -1008,7 +984,7 @@ name|item
 decl_stmt|;
 name|gimage
 operator|=
-name|GIMP_ITEM_LIST_VIEW
+name|GIMP_ITEM_TREE_VIEW
 argument_list|(
 name|view
 argument_list|)
@@ -1017,7 +993,7 @@ name|gimage
 expr_stmt|;
 name|item
 operator|=
-name|GIMP_ITEM_LIST_VIEW_GET_CLASS
+name|GIMP_ITEM_TREE_VIEW_GET_CLASS
 argument_list|(
 name|view
 argument_list|)

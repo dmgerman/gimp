@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2925a2c30103
+DECL|enum|__anon27f1e4950103
 block|{
 DECL|enumerator|COLUMN_CHANNEL
 name|COLUMN_CHANNEL
@@ -1256,26 +1256,6 @@ name|renderer
 argument_list|,
 name|preview_size
 argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|gtk_list_store_set
-argument_list|(
-name|GTK_LIST_STORE
-argument_list|(
-name|editor
-operator|->
-name|model
-argument_list|)
-argument_list|,
-operator|&
-name|iter
-argument_list|,
-name|COLUMN_RENDERER
-argument_list|,
-name|renderer
-argument_list|,
-operator|-
 literal|1
 argument_list|)
 expr_stmt|;

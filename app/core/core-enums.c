@@ -2120,14 +2120,14 @@ literal|"group-image-guide"
 block|}
 block|,
 block|{
-name|GIMP_UNDO_GROUP_LAYER_PROPERTIES
+name|GIMP_UNDO_GROUP_ITEM_PROPERTIES
 block|,
 name|N_
 argument_list|(
-literal|"Layer Properties"
+literal|"Item Properties"
 argument_list|)
 block|,
-literal|"group-layer-properties"
+literal|"group-item-properties"
 block|}
 block|,
 block|{

@@ -132,6 +132,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpitemtreeview.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpviewabledialog.h"
 end_include
 
@@ -218,7 +224,7 @@ parameter_list|,
 name|data
 parameter_list|)
 define|\
-value|if (GIMP_IS_DISPLAY (data)) \     gimage = ((GimpDisplay *) data)->gimage; \   else if (GIMP_IS_GIMP (data)) \     gimage = gimp_context_get_image (gimp_get_user_context (GIMP (data))); \   else if (GIMP_IS_ITEM_LIST_VIEW (data)) \     gimage = ((GimpItemListView *) data)->gimage; \   else \     gimage = NULL; \   \   if (! gimage) \     return
+value|if (GIMP_IS_DISPLAY (data)) \     gimage = ((GimpDisplay *) data)->gimage; \   else if (GIMP_IS_GIMP (data)) \     gimage = gimp_context_get_image (gimp_get_user_context (GIMP (data))); \   else if (GIMP_IS_ITEM_LIST_VIEW (data)) \     gimage = ((GimpItemListView *) data)->gimage; \   else if (GIMP_IS_ITEM_TREE_VIEW (data)) \     gimage = ((GimpItemTreeView *) data)->gimage; \   else \     gimage = NULL; \   \   if (! gimage) \     return
 end_define
 
 begin_define
@@ -3001,7 +3007,7 @@ name|options
 operator|->
 name|gimage
 argument_list|,
-name|GIMP_UNDO_GROUP_LAYER_PROPERTIES
+name|GIMP_UNDO_GROUP_ITEM_PROPERTIES
 argument_list|,
 name|_
 argument_list|(

@@ -37,7 +37,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28953b130103
+DECL|enum|__anon2989f0dd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1289,6 +1289,12 @@ argument_list|,
 operator|&
 name|draw_rect
 argument_list|)
+operator|&&
+operator|(
+name|flags
+operator|&
+name|GTK_CELL_RENDERER_PRELIT
+operator|)
 condition|)
 name|gtk_paint_shadow
 argument_list|(

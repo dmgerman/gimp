@@ -384,6 +384,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_preview_renderer_update_idle
+parameter_list|(
+name|GimpPreviewRenderer
+modifier|*
+name|renderer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_preview_renderer_remove_idle
 parameter_list|(
 name|GimpPreviewRenderer

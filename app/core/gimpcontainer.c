@@ -176,7 +176,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a276f740103
+DECL|enum|__anon2b29f3520103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -201,7 +201,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a276f740203
+DECL|enum|__anon2b29f3520203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1374,7 +1374,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a276f740308
+DECL|struct|__anon2b29f3520308
 block|{
 DECL|member|writer
 name|GimpConfigWriter
@@ -2722,6 +2722,17 @@ return|return
 name|FALSE
 return|;
 block|}
+if|if
+condition|(
+name|container
+operator|->
+name|num_children
+operator|==
+literal|1
+condition|)
+return|return
+name|TRUE
+return|;
 name|g_signal_emit
 argument_list|(
 name|container
