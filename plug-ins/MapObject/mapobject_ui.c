@@ -7573,12 +7573,6 @@ argument_list|(
 literal|"MapObject"
 argument_list|)
 expr_stmt|;
-name|gdk_set_use_xshm
-argument_list|(
-name|gimp_use_xshm
-argument_list|()
-argument_list|)
-expr_stmt|;
 name|gtk_init
 argument_list|(
 operator|&
@@ -7592,6 +7586,17 @@ name|gtk_rc_parse
 argument_list|(
 name|gimp_gtkrc
 argument_list|()
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gimp_use_xshm
+argument_list|()
+condition|)
+name|gdk_set_use_xshm
+argument_list|(
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* Set up ArcBall stuff */

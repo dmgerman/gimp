@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a59a3e0108
+DECL|struct|__anon298715520108
 block|{
 DECL|member|delete_on_exit
 name|gboolean
@@ -1154,16 +1154,6 @@ operator|=
 name|gimp_personal_rc_file
 argument_list|(
 literal|"unitrc"
-argument_list|)
-expr_stmt|;
-name|app_init_update_status
-argument_list|(
-name|NULL
-argument_list|,
-name|filename
-argument_list|,
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 name|parse_gimprc_file

@@ -1192,6 +1192,12 @@ parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
+name|gint
+name|gimp_min_colors
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
 name|void
 name|gimp_request_wakeups
 parameter_list|(

@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<string.h>
 end_include
 
@@ -36,31 +42,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk-xmhtml/gtk-xmhtml.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gdk/gdkkeysyms.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
+file|<gtk-xmhtml/gtk-xmhtml.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpui.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/stdplugins-intl.h"
+file|<libgimp/gimpui.h>
 end_include
 
 begin_include
@@ -69,9 +69,11 @@ directive|include
 file|"queue.h"
 end_include
 
-begin_comment
-comment|/*  pixmaps  */
-end_comment
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
 
 begin_include
 include|#
@@ -133,7 +135,7 @@ value|"help"
 end_define
 
 begin_enum
-DECL|enum|__anon28eae8d40103
+DECL|enum|__anon2afb781d0103
 enum|enum
 block|{
 DECL|enumerator|CONTENTS
@@ -149,7 +151,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon28eae8d40203
+DECL|enum|__anon2afb781d0203
 enum|enum
 block|{
 DECL|enumerator|URL_UNKNOWN
@@ -181,7 +183,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eae8d40308
+DECL|struct|__anon2afb781d0308
 block|{
 DECL|member|index
 name|gint
@@ -221,7 +223,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eae8d40408
+DECL|struct|__anon2afb781d0408
 block|{
 DECL|member|title
 name|gchar
@@ -250,11 +252,11 @@ end_comment
 begin_decl_stmt
 DECL|variable|doc_not_found_format_string
 specifier|static
-name|char
+name|gchar
 modifier|*
 name|doc_not_found_format_string
 init|=
-name|_
+name|N_
 argument_list|(
 literal|"<html><head><title>Document not found</title></head>"
 literal|"<body bgcolor=\"#ffffff\">"
@@ -277,11 +279,11 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|dir_not_found_format_string
 specifier|static
-name|char
+name|gchar
 modifier|*
 name|dir_not_found_format_string
 init|=
-name|_
+name|N_
 argument_list|(
 literal|"<html><head><title>Directory not found</title></head>"
 literal|"<body bgcolor=\"#ffffff\">"
@@ -1736,7 +1738,10 @@ name|g_string_sprintf
 argument_list|(
 name|file_contents
 argument_list|,
+name|gettext
+argument_list|(
 name|dir_not_found_format_string
+argument_list|)
 argument_list|,
 name|eek_png_tag
 argument_list|,
@@ -1910,7 +1915,10 @@ name|g_string_sprintf
 argument_list|(
 name|file_contents
 argument_list|,
+name|gettext
+argument_list|(
 name|doc_not_found_format_string
+argument_list|)
 argument_list|,
 name|eek_png_tag
 argument_list|,
@@ -2900,107 +2908,11 @@ decl_stmt|;
 name|guint
 name|i
 decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|guchar
-modifier|*
-name|color_cube
-decl_stmt|;
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-operator|*
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
+name|gimp_ui_init
 argument_list|(
 literal|"webbrowser"
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
 argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gtk_preview_set_gamma
-argument_list|(
-name|gimp_gamma
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gtk_preview_set_install_cmap
-argument_list|(
-name|gimp_install_cmap
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|color_cube
-operator|=
-name|gimp_color_cube
-argument_list|()
-expr_stmt|;
-name|gtk_preview_set_color_cube
-argument_list|(
-name|color_cube
-index|[
-literal|0
-index|]
-argument_list|,
-name|color_cube
-index|[
-literal|1
-index|]
-argument_list|,
-name|color_cube
-index|[
-literal|2
-index|]
-argument_list|,
-name|color_cube
-index|[
-literal|3
-index|]
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_default_visual
-argument_list|(
-name|gtk_preview_get_visual
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_default_colormap
-argument_list|(
-name|gtk_preview_get_cmap
-argument_list|()
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|root_dir

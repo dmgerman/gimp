@@ -1,15 +1,7 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * This is a plugin for the GIMP.  *  * Copyright (C) 1997 Jochen Friedrich  * Parts Copyright (C) 1995 Gert Doering  * Parts Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/* This is a plugin for the GIMP.  *  * Copyright (C) 1997 Jochen Friedrich  * Parts Copyright (C) 1995 Gert Doering  * Parts Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
-
-begin_define
-DECL|macro|VERSION
-define|#
-directive|define
-name|VERSION
-value|"0.6"
-end_define
 
 begin_include
 include|#
@@ -113,13 +105,7 @@ end_endif
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/stdplugins-intl.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
@@ -128,30 +114,26 @@ directive|include
 file|"g3.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_define
+DECL|macro|VERSION
+define|#
+directive|define
+name|VERSION
+value|"0.6"
+end_define
+
 begin_comment
 comment|/* Declare local functions.  */
 end_comment
 
 begin_function_decl
-name|gint32
-name|emitgimp
-parameter_list|(
-name|int
-parameter_list|,
-name|int
-parameter_list|,
-name|char
-modifier|*
-parameter_list|,
-name|int
-parameter_list|,
-name|char
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
+specifier|static
 name|void
 name|query
 parameter_list|(
@@ -165,18 +147,18 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -193,7 +175,26 @@ specifier|static
 name|gint32
 name|load_image
 parameter_list|(
-name|char
+name|gchar
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint32
+name|emitgimp
+parameter_list|(
+name|gint
+parameter_list|,
+name|gint
+parameter_list|,
+name|gchar
+modifier|*
+parameter_list|,
+name|gint
+parameter_list|,
+name|gchar
 modifier|*
 parameter_list|)
 function_decl|;
@@ -207,16 +208,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -230,7 +231,9 @@ end_macro
 begin_function
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -312,9 +315,6 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_faxg3_load"
@@ -329,7 +329,10 @@ literal|"Jochen Friedrich, Gert Doering, Spencer Kimball& Peter Mattis"
 argument_list|,
 name|VERSION
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Load>/Fax G3"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -359,23 +362,23 @@ block|}
 end_function
 
 begin_function
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
 specifier|static
 name|void
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -725,10 +728,10 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (char * filename)
+DECL|function|load_image (gchar * filename)
 name|load_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)

@@ -93,26 +93,30 @@ name|gimp_gtkrc
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|/*  FIXME: check if gimp could allocate and attach smh and don't blindly    *  use the commandline option    */
-name|gdk_set_use_xshm
-argument_list|(
-name|gimp_use_xshm
-argument_list|()
-argument_list|)
-expr_stmt|;
-comment|/*  FIXME: check if gimp's GdkRGB subsystem actually installed a cmap    *  and don't blindly use the gimprc option    */
+comment|/*  It's only safe to switch Gdk SHM usage off  */
 if|if
 condition|(
-name|gimp_install_cmap
+operator|!
+name|gimp_use_xshm
 argument_list|()
 condition|)
-block|{
-name|gdk_rgb_set_install
+name|gdk_set_use_xshm
 argument_list|(
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/*  or is this needed in all cases?  */
+name|gdk_rgb_set_min_colors
+argument_list|(
+name|gimp_min_colors
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|gdk_rgb_set_install
+argument_list|(
+name|gimp_install_cmap
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|gtk_widget_set_default_visual
 argument_list|(
 name|gdk_rgb_get_visual
@@ -125,7 +129,6 @@ name|gdk_rgb_get_cmap
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
 comment|/*  Set the gamma after installing the colormap because    *  gtk_preview_set_gamma() initializes GdkRGB if not already done    */
 if|if
 condition|(

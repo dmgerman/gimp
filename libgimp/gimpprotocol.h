@@ -36,7 +36,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d3f9fd0103
+DECL|enum|__anon2bbb34fb0103
 block|{
 DECL|enumerator|GP_QUIT
 name|GP_QUIT
@@ -203,12 +203,9 @@ DECL|member|use_xshm
 name|gint8
 name|use_xshm
 decl_stmt|;
-DECL|member|color_cube
-name|guint8
-name|color_cube
-index|[
-literal|4
-index|]
+DECL|member|min_colors
+name|gint32
+name|min_colors
 decl_stmt|;
 DECL|member|gdisp_ID
 name|gint32
@@ -291,7 +288,7 @@ name|guint32
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon29d3f9fd020a
+DECL|union|__anon2bbb34fb020a
 block|{
 DECL|member|d_int32
 name|gint32
@@ -341,7 +338,7 @@ modifier|*
 name|d_stringarray
 decl_stmt|;
 struct|struct
-DECL|struct|__anon29d3f9fd0308
+DECL|struct|__anon2bbb34fb0308
 block|{
 DECL|member|red
 name|guint8
@@ -360,7 +357,7 @@ block|}
 name|d_color
 struct|;
 struct|struct
-DECL|struct|__anon29d3f9fd0408
+DECL|struct|__anon2bbb34fb0408
 block|{
 DECL|member|x
 name|gint32
@@ -415,7 +412,7 @@ name|gint32
 name|d_path
 decl_stmt|;
 struct|struct
-DECL|struct|__anon29d3f9fd0508
+DECL|struct|__anon2bbb34fb0508
 block|{
 DECL|member|name
 name|gchar

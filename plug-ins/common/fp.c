@@ -36,13 +36,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/stdplugins-intl.h"
+file|"fp.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"fp.h"
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_decl_stmt
@@ -232,9 +232,6 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_filter_pack"

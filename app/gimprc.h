@@ -25,13 +25,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpunit.h"
+file|"apptypes.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"libgimp/gimpunit.h"
 end_include
 
 begin_comment
@@ -209,8 +209,7 @@ end_decl_stmt
 begin_decl_stmt
 specifier|extern
 name|gint
-name|color_cube_shades
-index|[]
+name|min_colors
 decl_stmt|;
 end_decl_stmt
 

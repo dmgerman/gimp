@@ -5755,10 +5755,15 @@ name|gimp_gtkrc
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|gdk_set_use_xshm
-argument_list|(
+if|if
+condition|(
+operator|!
 name|gimp_use_xshm
 argument_list|()
+condition|)
+name|gdk_set_use_xshm
+argument_list|(
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|visinfo

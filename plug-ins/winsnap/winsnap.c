@@ -362,7 +362,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2963e8cc0108
+DECL|struct|__anon2a327ced0108
 typedef|typedef
 struct|struct
 block|{
@@ -409,7 +409,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2963e8cc0208
+DECL|struct|__anon2a327ced0208
 typedef|typedef
 struct|struct
 block|{
@@ -2859,38 +2859,9 @@ decl_stmt|;
 name|gint
 name|decorations
 decl_stmt|;
-name|gint
-name|argc
-init|=
-literal|1
-decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-init|=
-name|g_new
-argument_list|(
-name|gchar
-operator|*
-argument_list|,
-literal|1
-argument_list|)
-decl_stmt|;
 name|guint
 name|delay
 decl_stmt|;
-comment|/* Set the name */
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
-argument_list|(
-literal|"winsnap"
-argument_list|)
-expr_stmt|;
 comment|/* Set defaults */
 name|radio_pressed
 index|[
@@ -2931,25 +2902,11 @@ operator|.
 name|delay
 expr_stmt|;
 comment|/* Init GTK  */
-name|gtk_init
+name|gimp_ui_init
 argument_list|(
-operator|&
-name|argc
+literal|"winsnap"
 argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gdk_set_use_xshm
-argument_list|(
-name|gimp_use_xshm
-argument_list|()
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* Main Dialog */
