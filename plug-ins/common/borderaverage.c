@@ -272,9 +272,6 @@ literal|"The average color of the specified border"
 block|}
 block|,   }
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_borderaverage"
@@ -365,7 +362,7 @@ decl_stmt|;
 name|GimpRGB
 name|result_color
 decl_stmt|;
-name|INIT_I18N_UI
+name|INIT_I18N
 argument_list|()
 expr_stmt|;
 name|run_mode

@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27854bd70108
+DECL|struct|__anon2c0c00d10108
 block|{
 DECL|member|new_width
 name|gint
@@ -85,7 +85,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27854bd70208
+DECL|struct|__anon2c0c00d10208
 block|{
 DECL|member|sizeentry
 name|GtkWidget
@@ -457,6 +457,9 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -541,9 +544,6 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
@@ -583,9 +583,6 @@ break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 comment|/*  Make sure all the arguments are there!  */
 if|if
 condition|(
@@ -667,9 +664,6 @@ break|break;
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(

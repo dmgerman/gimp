@@ -68,17 +68,6 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
-comment|/* Is the plug-in hidden?  Hey, if you can read this, you may    as well comment-out the next line...! */
-end_comment
-
-begin_define
-DECL|macro|HIDDEN
-define|#
-directive|define
-name|HIDDEN
-end_define
-
-begin_comment
 comment|/* Declare local functions. */
 end_comment
 
@@ -465,20 +454,11 @@ literal|"Adam D. Moss<adam@gimp.org>"
 argument_list|,
 literal|"2000"
 argument_list|,
-ifdef|#
-directive|ifdef
-name|HIDDEN
-name|NULL
-argument_list|,
-else|#
-directive|else
 name|N_
 argument_list|(
 literal|"<Image>/Filters/Toys/Gee-Slime"
 argument_list|)
 argument_list|,
-endif|#
-directive|endif
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
 name|GIMP_PLUGIN
@@ -561,7 +541,7 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-name|INIT_I18N_UI
+name|INIT_I18N
 argument_list|()
 expr_stmt|;
 if|if

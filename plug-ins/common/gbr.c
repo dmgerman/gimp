@@ -163,7 +163,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e8a4d50108
+DECL|struct|__anon299fe7020108
 block|{
 DECL|member|description
 name|gchar
@@ -616,6 +616,9 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -761,9 +764,6 @@ case|:
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|gimp_ui_init
 argument_list|(
 literal|"gbr"
@@ -812,9 +812,6 @@ return|return;
 block|}
 break|break;
 default|default:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 break|break;
 block|}
 switch|switch

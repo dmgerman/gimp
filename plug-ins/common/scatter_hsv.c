@@ -335,7 +335,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2913857b0108
+DECL|struct|__anon2b4170e90108
 block|{
 comment|/* gint, gdouble, and so on */
 DECL|member|holdness
@@ -381,7 +381,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2913857b0208
+DECL|struct|__anon2b4170e90208
 block|{
 DECL|member|run
 name|gint
@@ -657,6 +657,9 @@ name|status
 init|=
 name|GIMP_PDB_EXECUTION_ERROR
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -717,9 +720,6 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|gimp_get_data
 argument_list|(
 name|PLUG_IN_NAME
@@ -755,9 +755,6 @@ break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|VALS
 operator|.
 name|holdness
@@ -814,9 +811,6 @@ break|break;
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_get_data
 argument_list|(
 name|PLUG_IN_NAME

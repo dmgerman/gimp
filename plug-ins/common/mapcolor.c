@@ -133,7 +133,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad388e10108
+DECL|struct|__anon2c42bdbc0108
 block|{
 DECL|member|colors
 name|GimpRGB
@@ -220,7 +220,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad388e10208
+DECL|struct|__anon2c42bdbc0208
 block|{
 DECL|member|width
 DECL|member|height
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad388e10308
+DECL|struct|__anon2c42bdbc0308
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -1637,7 +1637,7 @@ operator|*
 operator|)
 name|ident
 expr_stmt|;
-name|INIT_I18N_UI
+name|INIT_I18N
 argument_list|()
 expr_stmt|;
 name|l_run_mode

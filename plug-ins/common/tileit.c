@@ -143,7 +143,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b60c450108
+DECL|struct|__anon2754f4290108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -550,7 +550,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b60c450203
+DECL|enum|__anon2754f4290203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -569,7 +569,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b60c450308
+DECL|struct|__anon2754f4290308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -639,7 +639,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b60c450408
+DECL|struct|__anon2754f4290408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -946,6 +946,9 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -1105,9 +1108,6 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|gimp_get_data
 argument_list|(
 literal|"plug_in_tileit"
@@ -1162,16 +1162,10 @@ operator|.
 name|d_int32
 expr_stmt|;
 block|}
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 break|break;
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_get_data
 argument_list|(
 literal|"plug_in_tileit"

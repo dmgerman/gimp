@@ -182,7 +182,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2e7ad90108
+DECL|struct|__anon298b294c0108
 block|{
 DECL|member|x
 DECL|member|y
@@ -200,7 +200,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2e7ad90208
+DECL|struct|__anon298b294c0208
 block|{
 DECL|member|npts
 name|gint
@@ -222,7 +222,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2e7ad90308
+DECL|struct|__anon298b294c0308
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -251,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2e7ad90408
+DECL|struct|__anon298b294c0408
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -310,7 +310,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2e7ad90508
+DECL|struct|__anon298b294c0508
 block|{
 DECL|member|run
 name|gint
@@ -1464,9 +1464,6 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_mosaic"
@@ -1562,6 +1559,9 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -1600,9 +1600,6 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
@@ -1624,9 +1621,6 @@ break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 comment|/*  Make sure all the arguments are there!  */
 if|if
 condition|(

@@ -202,7 +202,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"gimp-intl.h"
 end_include
 
 begin_define
@@ -279,7 +279,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1d85c70103
+DECL|enum|__anon29321fb50103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -293,7 +293,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1d85c70208
+DECL|struct|__anon29321fb50208
 block|{
 DECL|member|dirname
 specifier|const

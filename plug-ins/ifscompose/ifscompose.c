@@ -143,7 +143,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2338740103
+DECL|enum|__anon27fcbfcc0103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -163,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2338740203
+DECL|enum|__anon27fcbfcc0203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -179,7 +179,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2338740308
+DECL|struct|__anon27fcbfcc0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -201,7 +201,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2c233874040a
+DECL|union|__anon27fcbfcc040a
 block|{
 DECL|member|d
 name|gdouble
@@ -230,7 +230,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2338740508
+DECL|struct|__anon27fcbfcc0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -260,7 +260,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2338740608
+DECL|struct|__anon27fcbfcc0608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -295,7 +295,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2338740708
+DECL|struct|__anon27fcbfcc0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -331,7 +331,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2338740808
+DECL|struct|__anon27fcbfcc0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -398,7 +398,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2338740908
+DECL|struct|__anon27fcbfcc0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -600,7 +600,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2338740a08
+DECL|struct|__anon27fcbfcc0a08
 block|{
 DECL|member|run
 name|gboolean
@@ -1576,9 +1576,6 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_ifs_compose"
@@ -1722,7 +1719,7 @@ name|return_vals
 operator|=
 name|values
 expr_stmt|;
-name|INIT_I18N_UI
+name|INIT_I18N
 argument_list|()
 expr_stmt|;
 name|image_id

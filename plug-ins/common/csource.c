@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2972a7a70108
+DECL|struct|__anon2c72a9620108
 block|{
 DECL|member|file_name
 name|gchar
@@ -417,6 +417,9 @@ name|return_vals
 operator|=
 name|values
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|values
 index|[
 literal|0
@@ -543,9 +546,6 @@ name|drawable_type
 operator|==
 name|GIMP_INDEXEDA_IMAGE
 operator|)
-expr_stmt|;
-name|INIT_I18N_UI
-argument_list|()
 expr_stmt|;
 name|parasite
 operator|=

@@ -214,7 +214,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e55dec0108
+DECL|struct|__anon28a88aba0108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -241,7 +241,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e55dec0203
+DECL|enum|__anon28a88aba0203
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -364,7 +364,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e55dec0303
+DECL|enum|__anon28a88aba0303
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -503,7 +503,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e55dec0403
+DECL|enum|__anon28a88aba0403
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -602,7 +602,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e55dec0503
+DECL|enum|__anon28a88aba0503
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -694,7 +694,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e55dec0608
+DECL|struct|__anon28a88aba0608
 block|{
 DECL|member|function
 name|gint
@@ -767,7 +767,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e55dec0708
+DECL|struct|__anon28a88aba0708
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1539,7 +1539,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e55dec0808
+DECL|struct|__anon28a88aba0808
 block|{
 DECL|member|run
 name|gint
@@ -1589,7 +1589,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e55dec0908
+DECL|struct|__anon28a88aba0908
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -1960,6 +1960,9 @@ name|data
 operator|.
 name|d_drawable
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -1998,9 +2001,6 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|gimp_get_data
 argument_list|(
 name|PLUG_IN_NAME

@@ -872,7 +872,7 @@ name|export
 init|=
 name|GIMP_EXPORT_CANCEL
 decl_stmt|;
-name|INIT_I18N_UI
+name|INIT_I18N
 argument_list|()
 expr_stmt|;
 name|strncpy

@@ -306,7 +306,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28899ae00108
+DECL|struct|__anon27d84fe60108
 block|{
 DECL|member|width
 name|gint
@@ -403,6 +403,9 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -473,9 +476,6 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|gimp_get_data
 argument_list|(
 literal|"plug_in_smooth_palette"
@@ -497,9 +497,6 @@ break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 if|if
 condition|(
 name|nparams
@@ -609,9 +606,6 @@ break|break;
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(

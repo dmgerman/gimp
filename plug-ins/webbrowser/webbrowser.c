@@ -375,7 +375,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297ec28b0108
+DECL|struct|__anon2974fb680108
 block|{
 DECL|member|url
 name|gchar
@@ -557,6 +557,9 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|values
 index|[
 literal|0
@@ -607,9 +610,6 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 comment|/* Possibly retrieve data */
 name|gimp_get_data
 argument_list|(

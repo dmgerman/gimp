@@ -735,7 +735,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fca8670108
+DECL|struct|__anon29f930e70108
 block|{
 DECL|member|type
 name|gchar
@@ -1347,7 +1347,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fca8670208
+DECL|struct|__anon29f930e70208
 block|{
 DECL|member|extract_type
 name|gchar
@@ -1365,7 +1365,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fca8670308
+DECL|struct|__anon29f930e70308
 block|{
 DECL|member|extract_flag
 name|gint
@@ -1635,7 +1635,7 @@ decl_stmt|;
 name|gint
 name|j
 decl_stmt|;
-name|INIT_I18N_UI
+name|INIT_I18N
 argument_list|()
 expr_stmt|;
 name|run_mode

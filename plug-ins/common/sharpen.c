@@ -897,6 +897,9 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|values
 operator|=
 name|g_new
@@ -1000,9 +1003,6 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 comment|/*        * Possibly retrieve data...        */
 name|gimp_get_data
 argument_list|(
@@ -1024,9 +1024,6 @@ break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 comment|/*        * Make sure all the arguments are present...        */
 if|if
 condition|(
@@ -1054,9 +1051,6 @@ break|break;
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 comment|/*        * Possibly retrieve data...        */
 name|gimp_get_data
 argument_list|(

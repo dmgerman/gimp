@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a56c6450108
+DECL|struct|__anon29a183810108
 block|{
 DECL|member|radius
 name|gdouble
@@ -117,7 +117,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a56c6450208
+DECL|struct|__anon29a183810208
 block|{
 DECL|member|run
 name|gint
@@ -596,7 +596,7 @@ name|d_status
 operator|=
 name|status
 expr_stmt|;
-name|INIT_I18N_UI
+name|INIT_I18N
 argument_list|()
 expr_stmt|;
 switch|switch

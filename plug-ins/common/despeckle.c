@@ -730,6 +730,9 @@ modifier|*
 name|values
 decl_stmt|;
 comment|/* Return values */
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/*    * Initialize parameter data...    */
 name|status
 operator|=
@@ -849,9 +852,6 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 comment|/*        * Possibly retrieve data...        */
 name|gimp_get_data
 argument_list|(
@@ -874,9 +874,6 @@ case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
 comment|/*        * Make sure all the arguments are present...        */
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 if|if
 condition|(
 name|nparams

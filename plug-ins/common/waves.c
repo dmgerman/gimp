@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be0baad0103
+DECL|enum|__anon29c91fb30103
 block|{
 DECL|enumerator|MODE_SMEAR
 name|MODE_SMEAR
@@ -61,7 +61,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be0baad0208
+DECL|struct|__anon29c91fb30208
 block|{
 DECL|member|amplitude
 name|gdouble
@@ -456,6 +456,9 @@ decl_stmt|;
 name|piArgs
 name|args
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 operator|*
 name|nretvals
 operator|=
@@ -546,9 +549,6 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 comment|/* XXX: add code here for interactive running */
 if|if
 condition|(
@@ -637,9 +637,6 @@ break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 comment|/* XXX: add code here for non-interactive running */
 if|if
 condition|(
@@ -757,9 +754,6 @@ break|break;
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 comment|/* XXX: add code here for last-values running */
 if|if
 condition|(

@@ -144,7 +144,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"gimp-intl.h"
 end_include
 
 begin_comment
@@ -165,7 +165,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon292375280103
+DECL|enum|__anon29c1a4670103
 block|{
 DECL|enumerator|CREATING
 name|CREATING

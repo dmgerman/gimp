@@ -95,7 +95,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3b72320108
+DECL|struct|__anon2b9b06130108
 block|{
 DECL|member|from
 name|GimpRGB
@@ -643,6 +643,9 @@ name|return_vals
 operator|=
 name|values
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|values
 index|[
 literal|0
@@ -788,9 +791,6 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 comment|/* retrieve stored arguments (if any) */
 name|gimp_get_data
 argument_list|(
@@ -820,9 +820,6 @@ break|break;
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_get_data
 argument_list|(
 literal|"plug_in_exchange"
@@ -844,9 +841,6 @@ break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 if|if
 condition|(
 name|nparams

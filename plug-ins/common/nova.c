@@ -161,7 +161,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275bbd5b0108
+DECL|struct|__anon2a2166df0108
 block|{
 DECL|member|xcenter
 name|gint
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275bbd5b0208
+DECL|struct|__anon2a2166df0208
 block|{
 DECL|member|run
 name|gint
@@ -211,7 +211,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275bbd5b0308
+DECL|struct|__anon2a2166df0308
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -713,7 +713,7 @@ name|status
 init|=
 name|GIMP_PDB_SUCCESS
 decl_stmt|;
-name|INIT_I18N_UI
+name|INIT_I18N
 argument_list|()
 expr_stmt|;
 name|run_mode

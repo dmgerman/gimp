@@ -84,7 +84,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"gimp-intl.h"
 end_include
 
 begin_define
@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0b6d770108
+DECL|struct|__anon2b1527510108
 block|{
 DECL|member|dialog
 name|GtkWidget

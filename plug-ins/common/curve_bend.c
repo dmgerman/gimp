@@ -794,7 +794,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac1299e0108
+DECL|struct|__anon296204e70108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -880,7 +880,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac1299e0208
+DECL|struct|__anon296204e70208
 block|{
 DECL|member|y
 name|gint32
@@ -3038,15 +3038,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GimpParam * param,int * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
 comment|/* name of plugin */
-name|int
+name|gint
 name|nparams
 parameter_list|,
 comment|/* number of in-paramters */
@@ -3055,7 +3055,7 @@ modifier|*
 name|param
 parameter_list|,
 comment|/* in-parameters */
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -3133,23 +3133,9 @@ index|[
 literal|2
 index|]
 decl_stmt|;
-if|if
-condition|(
-name|run_mode
-operator|==
-name|GIMP_RUN_INTERACTIVE
-condition|)
-block|{
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
-block|}
-else|else
-block|{
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
-block|}
 name|cd
 operator|=
 name|NULL

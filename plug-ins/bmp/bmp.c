@@ -381,9 +381,6 @@ literal|"The name entered"
 block|}
 block|,   }
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_bmp_load"
@@ -538,6 +535,9 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -580,9 +580,6 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 switch|switch
 condition|(
 name|run_mode
@@ -695,9 +692,6 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|image_ID
 operator|=
 name|param

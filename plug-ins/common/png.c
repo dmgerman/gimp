@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab03b770108
+DECL|struct|__anon287933bb0108
 block|{
 DECL|member|interlaced
 name|gint
@@ -838,6 +838,9 @@ name|export
 init|=
 name|GIMP_EXPORT_CANCEL
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -880,9 +883,6 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|image_ID
 operator|=
 name|load_image
@@ -952,9 +952,6 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|run_mode
 operator|=
 name|param

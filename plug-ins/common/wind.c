@@ -110,7 +110,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29690fdf0103
+DECL|enum|__anon2be35b510103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -126,7 +126,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29690fdf0203
+DECL|enum|__anon2be35b510203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -142,7 +142,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29690fdf0303
+DECL|enum|__anon2be35b510303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -768,6 +768,9 @@ literal|1
 operator|)
 argument_list|)
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 switch|switch
 condition|(
 name|run_mode
@@ -776,9 +779,6 @@ block|{
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 if|if
 condition|(
 name|nparams
@@ -879,9 +879,6 @@ break|break;
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|gimp_get_data
 argument_list|(
 literal|"plug_in_wind"
@@ -948,9 +945,6 @@ break|break;
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_get_data
 argument_list|(
 literal|"plug_in_wind"

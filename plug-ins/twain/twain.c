@@ -502,7 +502,7 @@ comment|/* Currently unused... Eventually may be used  * to track dialog data.  
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c3f2df40108
+DECL|struct|__anon277d14ec0108
 typedef|typedef
 struct|struct
 block|{
@@ -1452,9 +1452,6 @@ block|{
 name|OUT_ARGS
 block|}
 decl_stmt|;
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 ifdef|#
 directive|ifdef
 name|_DEBUG
@@ -1655,6 +1652,9 @@ operator|*
 name|return_vals
 operator|=
 name|values
+expr_stmt|;
+name|INIT_I18N
+argument_list|()
 expr_stmt|;
 comment|/* Before we get any further, verify that we have    * TWAIN and that there is actually a datasource    * to be used in doing the acquire.    */
 if|if
@@ -1875,7 +1875,7 @@ comment|/* Data used to carry data between each of  * the callback function call
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c3f2df40208
+DECL|struct|__anon277d14ec0208
 typedef|typedef
 struct|struct
 block|{

@@ -272,6 +272,18 @@ endif|#
 directive|endif
 end_endif
 
+begin_include
+include|#
+directive|include
+file|<libintl.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<locale.h>
+end_include
+
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -325,7 +337,7 @@ comment|/* Maybe this should go in a public header if we add other things to it 
 end_comment
 
 begin_typedef
-DECL|enum|__anon29c88a810103
+DECL|enum|__anon289b67f20103
 typedef|typedef
 enum|enum
 block|{
@@ -1543,7 +1555,37 @@ argument_list|(
 name|gimp_flush
 argument_list|)
 expr_stmt|;
-comment|/* set handler both for the "LibGimp" and ""      domains */
+comment|/* initialize i18n support */
+name|setlocale
+argument_list|(
+name|LC_ALL
+argument_list|,
+literal|""
+argument_list|)
+expr_stmt|;
+name|bindtextdomain
+argument_list|(
+name|GETTEXT_PACKAGE
+literal|"-libgimp"
+argument_list|,
+name|gimp_locale_directory
+argument_list|()
+argument_list|)
+expr_stmt|;
+ifdef|#
+directive|ifdef
+name|HAVE_BIND_TEXTDOMAIN_CODESET
+name|bind_textdomain_codeset
+argument_list|(
+name|GETTEXT_PACKAGE
+literal|"-libgimp"
+argument_list|,
+literal|"UTF-8"
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
+comment|/* set handler both for the "LibGimp" and "" domains */
 name|g_log_set_handler
 argument_list|(
 name|G_LOG_DOMAIN

@@ -162,13 +162,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"gimp-intl.h"
 end_include
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b66e7b00103
+DECL|enum|__anon28c3da9f0103
 block|{
 DECL|enumerator|ERRORS_ALL
 name|ERRORS_ALL

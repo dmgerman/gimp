@@ -306,7 +306,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fac6590108
+DECL|struct|__anon273c3cd80108
 block|{
 DECL|member|quality
 name|gdouble
@@ -353,7 +353,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fac6590208
+DECL|struct|__anon273c3cd80208
 block|{
 DECL|member|run
 name|gint
@@ -368,7 +368,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fac6590308
+DECL|struct|__anon273c3cd80308
 block|{
 DECL|member|cinfo
 name|struct
@@ -1078,6 +1078,9 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -1120,9 +1123,6 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|image_ID
 operator|=
 name|load_image
@@ -1196,9 +1196,6 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|image_ID
 operator|=
 name|orig_image_ID

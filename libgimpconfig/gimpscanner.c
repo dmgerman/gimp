@@ -106,7 +106,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"gimp-intl.h"
 end_include
 
 begin_comment
@@ -725,7 +725,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b05224b0103
+DECL|enum|__anon2bde957a0103
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB

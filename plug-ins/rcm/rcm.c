@@ -16,12 +16,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<math.h>
 end_include
 
@@ -770,12 +764,10 @@ name|bpp
 expr_stmt|;
 name|src_row
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 operator|(
 name|x2
 operator|-
@@ -787,12 +779,10 @@ argument_list|)
 expr_stmt|;
 name|dest_row
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 operator|(
 name|x2
 operator|-
@@ -975,12 +965,12 @@ name|y1
 operator|)
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|src_row
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|dest_row
 argument_list|)
@@ -1046,6 +1036,9 @@ operator|*
 name|return_vals
 operator|=
 name|values
+expr_stmt|;
+name|INIT_I18N
+argument_list|()
 expr_stmt|;
 name|values
 index|[
@@ -1132,9 +1125,6 @@ block|}
 else|else
 block|{
 comment|/* call dialog and rotate the colormap */
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 if|if
 condition|(
 name|gimp_drawable_is_rgb

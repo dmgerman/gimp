@@ -103,7 +103,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289bfd680108
+DECL|struct|__anon2b2034e60108
 block|{
 DECL|member|mask_size
 name|gdouble
@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289bfd680208
+DECL|struct|__anon2b2034e60208
 block|{
 DECL|member|run
 name|gint
@@ -424,7 +424,7 @@ name|status
 init|=
 name|GIMP_PDB_SUCCESS
 decl_stmt|;
-name|INIT_I18N_UI
+name|INIT_I18N
 argument_list|()
 expr_stmt|;
 name|run_mode

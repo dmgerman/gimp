@@ -264,6 +264,9 @@ name|d_status
 operator|=
 name|GIMP_PDB_SUCCESS
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 switch|switch
 condition|(
 name|run_mode
@@ -273,9 +276,6 @@ case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
 block|{
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|gimp_ui_init
 argument_list|(
 literal|"dbbrowser"

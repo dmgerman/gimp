@@ -83,7 +83,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296f1d860103
+DECL|enum|__anon2b0bc92d0103
 block|{
 DECL|enumerator|EXTEND
 name|EXTEND
@@ -292,7 +292,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296f1d860208
+DECL|struct|__anon2b0bc92d0208
 block|{
 DECL|member|matrix
 name|gfloat
@@ -449,7 +449,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon296f1d860308
+DECL|struct|__anon2b0bc92d0308
 block|{
 DECL|member|matrix
 name|GtkWidget
@@ -703,7 +703,7 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|INIT_I18N_UI
+name|INIT_I18N
 argument_list|()
 expr_stmt|;
 operator|(

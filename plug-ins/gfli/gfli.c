@@ -665,6 +665,9 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -707,9 +710,6 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 switch|switch
 condition|(
 name|run_mode
@@ -1026,9 +1026,6 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|image_ID
 operator|=
 name|orig_image_ID
@@ -1288,9 +1285,6 @@ name|height
 decl_stmt|,
 name|frames
 decl_stmt|;
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 comment|/*        * check for valid parameters;        */
 if|if
 condition|(

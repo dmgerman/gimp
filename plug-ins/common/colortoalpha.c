@@ -62,7 +62,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a219af60108
+DECL|struct|__anon2a4732010108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -77,7 +77,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a219af60208
+DECL|struct|__anon2a4732010208
 block|{
 DECL|member|run
 name|gboolean
@@ -415,7 +415,7 @@ name|return_vals
 operator|=
 name|values
 expr_stmt|;
-name|INIT_I18N_UI
+name|INIT_I18N
 argument_list|()
 expr_stmt|;
 name|values

@@ -121,7 +121,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b011d2b0103
+DECL|enum|__anon2af69b140103
 block|{
 DECL|enumerator|GROW
 name|GROW
@@ -149,7 +149,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b011d2b0208
+DECL|struct|__anon2af69b140208
 block|{
 DECL|member|run
 name|gint
@@ -164,7 +164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b011d2b0308
+DECL|struct|__anon2af69b140308
 block|{
 DECL|member|deform_area_radius
 name|gint
@@ -1098,6 +1098,9 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/*  Get the specified drawable  */
 name|destdrawable
 operator|=
@@ -1152,9 +1155,6 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|gimp_get_data
 argument_list|(
 literal|"plug_in_iwarp"

@@ -158,7 +158,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2753034c0108
+DECL|struct|__anon296cd4f20108
 block|{
 DECL|member|lam_r
 name|gdouble
@@ -217,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2753034c0208
+DECL|struct|__anon296cd4f20208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -792,6 +792,9 @@ name|GimpPDBStatusType
 name|status
 decl_stmt|;
 comment|/* Initialize */
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|diff_init_luts
 argument_list|()
 expr_stmt|;
@@ -848,9 +851,6 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 comment|/* Possibly retrieve data */
 name|gimp_get_data
 argument_list|(
@@ -872,9 +872,6 @@ break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 comment|/* Make sure all the arguments are present */
 if|if
 condition|(
@@ -1054,9 +1051,6 @@ break|break;
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 comment|/* Possibly retrieve data */
 name|gimp_get_data
 argument_list|(

@@ -535,7 +535,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon2c5257880108
+DECL|struct|__anon2b8bbc4a0108
 block|{
 DECL|member|randomize
 name|gint
@@ -912,6 +912,9 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|run_mode
@@ -926,9 +929,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|gimp_get_data
 argument_list|(
 literal|"plug_in_flame"

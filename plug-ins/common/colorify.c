@@ -162,7 +162,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a986a60108
+DECL|struct|__anon2b187b400108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -177,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a986a60208
+DECL|struct|__anon2b187b400208
 block|{
 DECL|member|run
 name|gboolean
@@ -537,7 +537,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|INIT_I18N_UI
+name|INIT_I18N
 argument_list|()
 expr_stmt|;
 name|status

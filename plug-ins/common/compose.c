@@ -495,7 +495,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c73bd180108
+DECL|struct|__anon2b07fce90108
 block|{
 DECL|member|compose_type
 specifier|const
@@ -964,7 +964,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c73bd180208
+DECL|struct|__anon2b07fce90208
 block|{
 DECL|member|compose_ID
 name|gint32
@@ -995,7 +995,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c73bd180308
+DECL|struct|__anon2b07fce90308
 block|{
 DECL|member|width
 DECL|member|height
@@ -1445,7 +1445,7 @@ decl_stmt|;
 name|gint
 name|compose_by_drawable
 decl_stmt|;
-name|INIT_I18N_UI
+name|INIT_I18N
 argument_list|()
 expr_stmt|;
 name|run_mode

@@ -108,7 +108,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"gimp-intl.h"
 end_include
 
 begin_typedef
@@ -128,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4868f20108
+DECL|struct|__anon2773b1870108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -185,7 +185,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4868f20208
+DECL|struct|__anon2773b1870208
 block|{
 DECL|member|PR
 name|PixelRegion

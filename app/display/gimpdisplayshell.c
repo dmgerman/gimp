@@ -251,12 +251,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"gimp-intl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295934920103
+DECL|enum|__anon29e50f8a0103
 block|{
 DECL|enumerator|SCALED
 name|SCALED

@@ -126,13 +126,13 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"gimp-intl.h"
 end_include
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29322be50103
+DECL|enum|__anon2b80aad20103
 block|{
 DECL|enumerator|FORE_AREA
 name|FORE_AREA

@@ -714,6 +714,9 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -756,9 +759,6 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|image_ID
 operator|=
 name|load_image
@@ -862,9 +862,6 @@ case|:
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|gimp_ui_init
 argument_list|(
 literal|"pcx"
@@ -915,9 +912,6 @@ return|return;
 block|}
 break|break;
 default|default:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 break|break;
 block|}
 switch|switch
@@ -1043,7 +1037,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a3e151e0108
+DECL|struct|__anon294548fd0108
 block|{
 DECL|member|manufacturer
 name|guint8

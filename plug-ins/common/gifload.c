@@ -441,6 +441,9 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -483,9 +486,6 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|image_ID
 operator|=
 name|load_image
@@ -725,7 +725,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon273c7a920108
+DECL|struct|__anon277ad7220108
 block|{
 DECL|member|Width
 name|unsigned
@@ -775,7 +775,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon273c7a920208
+DECL|struct|__anon277ad7220208
 block|{
 DECL|member|transparent
 name|int

@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294886810108
+DECL|struct|__anon2c4c41030108
 block|{
 DECL|member|radius
 name|gdouble
@@ -67,7 +67,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294886810208
+DECL|struct|__anon2c4c41030208
 block|{
 DECL|member|run
 name|gint
@@ -390,7 +390,7 @@ name|return_vals
 operator|=
 name|values
 expr_stmt|;
-name|INIT_I18N_UI
+name|INIT_I18N
 argument_list|()
 expr_stmt|;
 name|values

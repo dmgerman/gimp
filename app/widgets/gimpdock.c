@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"gimp-intl.h"
 end_include
 
 begin_define
@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ee8c740103
+DECL|enum|__anon290068f30103
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED

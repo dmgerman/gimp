@@ -164,7 +164,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcbc3ef0108
+DECL|struct|__anon2b081ad70108
 block|{
 DECL|member|resolution
 name|guint
@@ -216,7 +216,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcbc3ef0208
+DECL|struct|__anon2b081ad70208
 block|{
 DECL|member|run
 name|gint
@@ -282,7 +282,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcbc3ef0308
+DECL|struct|__anon2b081ad70308
 block|{
 DECL|member|width
 DECL|member|height
@@ -344,7 +344,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcbc3ef0408
+DECL|struct|__anon2b081ad70408
 block|{
 DECL|member|run
 name|gint
@@ -884,7 +884,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcbc3ef0508
+DECL|struct|__anon2b081ad70508
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1755,7 +1755,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcbc3ef0608
+DECL|struct|__anon2b081ad70608
 block|{
 DECL|member|eol
 name|long
@@ -2594,6 +2594,9 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -2636,9 +2639,6 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 switch|switch
 condition|(
 name|run_mode
@@ -2808,9 +2808,6 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|image_ID
 operator|=
 name|orig_image_ID

@@ -200,7 +200,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abaefb20108
+DECL|struct|__anon2803e6ff0108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -242,7 +242,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abaefb20208
+DECL|struct|__anon2803e6ff0208
 block|{
 DECL|member|run
 name|gint
@@ -783,6 +783,9 @@ modifier|*
 name|gr
 decl_stmt|;
 comment|/* The GRand object which generates the                            * random numbers */
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/*    *  Get the specified drawable, do standard initialization.    */
 if|if
 condition|(
@@ -934,9 +937,6 @@ comment|/* 	   *  If we're running interactively, pop up the dialog box. 	   */
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|gimp_get_data
 argument_list|(
 name|PLUG_IN_NAME

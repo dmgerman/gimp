@@ -501,6 +501,9 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/* Set up default return values */
 operator|*
 name|nreturn_vals
@@ -532,23 +535,6 @@ name|d_status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
-if|if
-condition|(
-name|run_mode
-operator|==
-name|GIMP_RUN_INTERACTIVE
-condition|)
-block|{
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
-block|}
-else|else
-block|{
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|strcmp

@@ -862,9 +862,6 @@ literal|"Number of Colors for mapping (2<=ncolors<=8192)"
 block|}
 block|}
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_fractalexplorer"
@@ -1005,7 +1002,7 @@ name|return_vals
 operator|=
 name|values
 expr_stmt|;
-name|INIT_I18N_UI
+name|INIT_I18N
 argument_list|()
 expr_stmt|;
 comment|/*  Get the specified drawable  */

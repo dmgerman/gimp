@@ -40878,7 +40878,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6817910103
+DECL|enum|__anon2c6614dd0103
 block|{
 DECL|enumerator|TOP_RIGHT
 name|TOP_RIGHT
@@ -40898,7 +40898,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6817910208
+DECL|struct|__anon2c6614dd0208
 block|{
 DECL|member|direction
 name|gint
@@ -40917,7 +40917,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6817910308
+DECL|struct|__anon2c6614dd0308
 block|{
 DECL|member|run
 name|gint
@@ -41128,9 +41128,6 @@ literal|"Texture depth (1 - 50)"
 block|}
 block|,   }
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_apply_canvas"
@@ -41228,6 +41225,9 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -41258,23 +41258,6 @@ name|d_status
 operator|=
 name|status
 expr_stmt|;
-if|if
-condition|(
-name|run_mode
-operator|==
-name|GIMP_RUN_INTERACTIVE
-condition|)
-block|{
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
-block|}
-else|else
-block|{
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
-block|}
 comment|/*  Get the specified drawable  */
 name|drawable
 operator|=

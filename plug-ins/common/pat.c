@@ -596,6 +596,9 @@ name|d_status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|strcmp
@@ -608,9 +611,6 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|image_ID
 operator|=
 name|load_image
@@ -714,9 +714,6 @@ case|:
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|gimp_ui_init
 argument_list|(
 literal|"pat"
@@ -765,9 +762,6 @@ return|return;
 block|}
 break|break;
 default|default:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 break|break;
 block|}
 switch|switch

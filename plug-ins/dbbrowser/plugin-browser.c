@@ -412,7 +412,7 @@ name|d_status
 operator|=
 name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
-name|INIT_I18N_UI
+name|INIT_I18N
 argument_list|()
 expr_stmt|;
 if|if
@@ -461,7 +461,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bba11840108
+DECL|struct|__anon2a23879e0108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -567,7 +567,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bba11840208
+DECL|struct|__anon2a23879e0208
 block|{
 DECL|member|menu
 name|gchar

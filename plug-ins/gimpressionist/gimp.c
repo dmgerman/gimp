@@ -361,9 +361,6 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
@@ -438,21 +435,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GimpParam * param,int * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GimpParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -520,6 +517,9 @@ name|return_vals
 operator|=
 name|values
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/* Get the active drawable info */
 name|drawable
 operator|=
@@ -552,9 +552,6 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|gimpressionist_get_data
 argument_list|(
 name|PLUG_IN_NAME
@@ -574,9 +571,6 @@ break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|g_message
 argument_list|(
 literal|"GIMPressionist: GIMP_RUN_NONINTERACTIVE not implemented yet!\n"
@@ -590,9 +584,6 @@ break|break;
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|gimpressionist_get_data
 argument_list|(
 name|PLUG_IN_NAME
@@ -672,10 +663,12 @@ name|status
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
+block|{
 name|status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
+block|}
 name|values
 index|[
 literal|0

@@ -142,7 +142,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7cc72d0103
+DECL|enum|__anon2bddf8790103
 block|{
 DECL|enumerator|BUTTON_HOME
 name|BUTTON_HOME
@@ -162,7 +162,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7cc72d0208
+DECL|struct|__anon2bddf8790208
 block|{
 DECL|member|title
 specifier|const
@@ -3599,7 +3599,7 @@ name|return_vals
 operator|=
 name|values
 expr_stmt|;
-name|INIT_I18N_UI
+name|INIT_I18N
 argument_list|()
 expr_stmt|;
 if|if

@@ -79,7 +79,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae95b060108
+DECL|struct|__anon2af04e9a0108
 block|{
 DECL|member|replace
 name|gint
@@ -105,7 +105,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae95b060208
+DECL|struct|__anon2af04e9a0208
 block|{
 DECL|member|run
 name|gint
@@ -526,9 +526,6 @@ literal|"The name of the file to save the image in"
 block|}
 block|,   }
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_fits_load"
@@ -689,6 +686,9 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -731,9 +731,6 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 switch|switch
 condition|(
 name|run_mode
@@ -896,9 +893,6 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|image_ID
 operator|=
 name|param
@@ -1103,7 +1097,7 @@ decl_stmt|;
 name|guint
 name|picnum
 decl_stmt|;
-name|int
+name|gint
 name|k
 decl_stmt|,
 name|n_images
@@ -1112,7 +1106,7 @@ name|max_images
 decl_stmt|,
 name|hdu_picnum
 decl_stmt|;
-name|int
+name|gint
 name|compose
 decl_stmt|;
 name|FILE

@@ -643,7 +643,7 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-name|INIT_I18N_UI
+name|INIT_I18N
 argument_list|()
 expr_stmt|;
 if|if

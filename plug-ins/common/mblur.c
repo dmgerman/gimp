@@ -111,7 +111,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baedabb0108
+DECL|struct|__anon2c546a760108
 block|{
 DECL|member|mblur_type
 name|gint32
@@ -526,6 +526,9 @@ decl_stmt|;
 name|GimpPDBStatusType
 name|status
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|status
 operator|=
 name|GIMP_PDB_SUCCESS
@@ -683,9 +686,6 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 comment|/* Possibly retrieve data */
 name|gimp_get_data
 argument_list|(
@@ -707,9 +707,6 @@ break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 comment|/* Make sure all the arguments are present */
 if|if
 condition|(
@@ -794,9 +791,6 @@ break|break;
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 comment|/* Possibly retrieve data */
 name|gimp_get_data
 argument_list|(

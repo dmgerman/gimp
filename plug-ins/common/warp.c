@@ -85,7 +85,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2911f59e0103
+DECL|enum|__anon2aa77d020103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -105,7 +105,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2911f59e0208
+DECL|struct|__anon2aa77d020208
 block|{
 DECL|member|amount
 name|gdouble
@@ -172,7 +172,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2911f59e0308
+DECL|struct|__anon2aa77d020308
 block|{
 DECL|member|run
 name|gint
@@ -977,6 +977,9 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|tile_width
 operator|=
 name|gimp_tile_width
@@ -1072,9 +1075,6 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
@@ -1098,9 +1098,6 @@ break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 comment|/*  Make sure minimum args        *  (mode, image, draw, amount, warp_map, iter) are there         */
 if|if
 condition|(

@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"gimp-intl.h"
 end_include
 
 begin_define
@@ -97,7 +97,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon288a1cdf0103
+DECL|enum|__anon276145610103
 block|{
 DECL|enumerator|FAMILY_COLUMN
 name|FAMILY_COLUMN
@@ -110,7 +110,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon288a1cdf0203
+DECL|enum|__anon276145610203
 block|{
 DECL|enumerator|FACE_COLUMN
 name|FACE_COLUMN

@@ -184,7 +184,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2922ec7c0103
+DECL|enum|__anon2bbfbd220103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -202,7 +202,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2922ec7c0208
+DECL|struct|__anon2bbfbd220208
 block|{
 DECL|member|max_p
 name|gint
@@ -217,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2922ec7c0308
+DECL|struct|__anon2bbfbd220308
 block|{
 DECL|member|run
 name|gint
@@ -432,6 +432,9 @@ operator|.
 name|d_drawable
 argument_list|)
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -470,9 +473,6 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|gimp_get_data
 argument_list|(
 name|PLUG_IN_NAME
@@ -516,17 +516,11 @@ break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 comment|/* You must copy the values of parameters to pvals or dialog variables. */
 break|break;
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_get_data
 argument_list|(
 name|PLUG_IN_NAME
@@ -591,7 +585,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2922ec7c0408
+DECL|struct|__anon2bbfbd220408
 typedef|typedef
 struct|struct
 block|{

@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5696620108
+DECL|struct|__anon2a3f5a9d0108
 block|{
 DECL|member|do_curl_shade
 name|gint
@@ -714,9 +714,6 @@ literal|"The new layer with the curl."
 block|}
 block|}
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
@@ -810,6 +807,9 @@ operator|.
 name|data
 operator|.
 name|d_int32
+expr_stmt|;
+name|INIT_I18N
+argument_list|()
 expr_stmt|;
 name|set_default_params
 argument_list|()
@@ -925,9 +925,6 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 comment|/*  First acquire information with a dialog  */
 if|if
 condition|(
@@ -940,9 +937,6 @@ break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 comment|/*  Make sure all the arguments are there!  */
 if|if
 condition|(
@@ -1172,9 +1166,6 @@ break|break;
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 break|break;
 default|default:
 break|break;

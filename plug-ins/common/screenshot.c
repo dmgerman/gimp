@@ -112,7 +112,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2981144c0108
+DECL|struct|__anon2c1f1cee0108
 block|{
 DECL|member|root
 name|gboolean
@@ -500,6 +500,9 @@ name|return_vals
 operator|=
 name|values
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/* how are we running today? */
 switch|switch
 condition|(
@@ -523,9 +526,6 @@ operator|.
 name|window_id
 operator|=
 name|NULL
-expr_stmt|;
-name|INIT_I18N_UI
-argument_list|()
 expr_stmt|;
 comment|/* Get information from the dialog */
 if|if

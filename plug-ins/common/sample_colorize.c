@@ -88,43 +88,6 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|__GIMPINTL_H__
-end_ifndef
-
-begin_comment
-comment|/* for older gimp releases use dummys nls-macros */
-end_comment
-
-begin_define
-DECL|macro|N_ (x)
-define|#
-directive|define
-name|N_
-parameter_list|(
-name|x
-parameter_list|)
-value|x
-end_define
-
-begin_define
-DECL|macro|_ (x)
-define|#
-directive|define
-name|_
-parameter_list|(
-name|x
-parameter_list|)
-value|x
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_comment
 comment|/* Some useful macros */
 end_comment
@@ -391,7 +354,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon2a0614060108
+DECL|struct|__anon28e41dfb0108
 typedef|typedef
 struct|struct
 block|{
@@ -460,7 +423,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a0614060208
+DECL|struct|__anon28e41dfb0208
 typedef|typedef
 struct|struct
 block|{
@@ -578,7 +541,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a0614060308
+DECL|struct|__anon28e41dfb0308
 typedef|typedef
 struct|struct
 block|{
@@ -607,7 +570,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a0614060408
+DECL|struct|__anon28e41dfb0408
 typedef|typedef
 struct|struct
 block|{
@@ -634,7 +597,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a0614060508
+DECL|struct|__anon28e41dfb0508
 typedef|typedef
 struct|struct
 block|{
@@ -1496,6 +1459,9 @@ name|gchar
 modifier|*
 name|l_env
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|l_env
 operator|=
 name|g_getenv
@@ -1687,9 +1653,6 @@ operator|==
 name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|p_smp_dialog
 argument_list|()
 expr_stmt|;
@@ -1719,9 +1682,6 @@ operator|==
 name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 if|if
 condition|(
 name|nparams

@@ -95,7 +95,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2759642d0108
+DECL|struct|__anon2768fb980108
 block|{
 DECL|member|amount_x
 name|gdouble
@@ -134,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2759642d0208
+DECL|struct|__anon2768fb980208
 block|{
 DECL|member|run
 name|gint
@@ -568,6 +568,9 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/*  Get the specified drawable  */
 name|drawable
 operator|=
@@ -622,9 +625,6 @@ case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
 comment|/*  Possibly retrieve data  */
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|gimp_get_data
 argument_list|(
 literal|"plug_in_displace"
@@ -647,9 +647,6 @@ break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 comment|/*  Make sure all the arguments are there!  */
 if|if
 condition|(

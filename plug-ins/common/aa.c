@@ -460,6 +460,9 @@ name|export
 init|=
 name|GIMP_EXPORT_CANCEL
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/* Set us up to return a status. */
 operator|*
 name|nreturn_vals
@@ -536,9 +539,6 @@ case|:
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|gimp_ui_init
 argument_list|(
 literal|"aa"
@@ -589,9 +589,6 @@ return|return;
 block|}
 break|break;
 default|default:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 break|break;
 block|}
 if|if

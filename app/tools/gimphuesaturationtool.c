@@ -84,7 +84,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"gimp-intl.h"
 end_include
 
 begin_define
@@ -965,7 +965,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon294318530108
+DECL|struct|__anon29e091ee0108
 block|{
 DECL|member|label
 specifier|const

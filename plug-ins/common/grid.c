@@ -244,7 +244,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab082050108
+DECL|struct|__anon2bc25a050108
 block|{
 DECL|member|hwidth
 name|gint
@@ -624,7 +624,7 @@ name|return_vals
 operator|=
 name|values
 expr_stmt|;
-name|INIT_I18N_UI
+name|INIT_I18N
 argument_list|()
 expr_stmt|;
 name|run_mode

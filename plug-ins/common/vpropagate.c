@@ -714,7 +714,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2743732d0108
+DECL|struct|__anon2af2d54f0108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -866,7 +866,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2743732d0208
+DECL|struct|__anon2af2d54f0208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -1091,7 +1091,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2743732d0308
+DECL|struct|__anon2af2d54f0308
 block|{
 DECL|member|run
 name|gint
@@ -1388,6 +1388,9 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -1438,9 +1441,6 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|gimp_get_data
 argument_list|(
 name|DEFAULT_PLUG_IN_NAME
@@ -1552,9 +1552,6 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|vpvals
 operator|.
 name|propagating_channel
@@ -1625,9 +1622,6 @@ break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 if|if
 condition|(
 name|strcmp
@@ -1741,9 +1735,6 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|vpvals
 operator|.
 name|propagating_channel
@@ -1814,9 +1805,6 @@ break|break;
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_get_data
 argument_list|(
 name|DEFAULT_PLUG_IN_NAME
@@ -3946,7 +3934,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2743732d0408
+DECL|struct|__anon2af2d54f0408
 block|{
 DECL|member|min_modified
 name|gshort

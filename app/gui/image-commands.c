@@ -132,13 +132,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"gimp-intl.h"
 end_include
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be03bf90108
+DECL|struct|__anon2b4a0a330108
 block|{
 DECL|member|resize
 name|Resize

@@ -68,7 +68,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7b57860108
+DECL|struct|__anon27495d120108
 block|{
 DECL|member|run
 name|gboolean
@@ -385,7 +385,7 @@ name|status
 init|=
 name|GIMP_PDB_SUCCESS
 decl_stmt|;
-name|INIT_I18N_UI
+name|INIT_I18N
 argument_list|()
 expr_stmt|;
 name|run_mode

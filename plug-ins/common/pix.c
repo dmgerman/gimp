@@ -528,6 +528,9 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -570,9 +573,6 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 comment|/* Perform the image load */
 name|image_ID
 operator|=
@@ -679,9 +679,6 @@ case|:
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|gimp_ui_init
 argument_list|(
 literal|"pix"
@@ -730,9 +727,6 @@ return|return;
 block|}
 break|break;
 default|default:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 break|break;
 block|}
 if|if

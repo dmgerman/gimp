@@ -120,12 +120,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"gimp-intl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29615db70103
+DECL|enum|__anon2bba42e50103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED

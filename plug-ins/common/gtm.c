@@ -62,7 +62,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29df679a0108
+DECL|struct|__anon29001edf0108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -129,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29df679a0208
+DECL|struct|__anon29001edf0208
 block|{
 DECL|member|run
 name|gint
@@ -531,7 +531,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|INIT_I18N_UI
+name|INIT_I18N
 argument_list|()
 expr_stmt|;
 name|drawable

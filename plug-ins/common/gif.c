@@ -133,7 +133,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b7dce20103
+DECL|enum|__anon2c3cd65a0103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -150,7 +150,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b7dce20208
+DECL|struct|__anon2c3cd65a0208
 block|{
 DECL|member|interlace
 name|gint
@@ -181,7 +181,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b7dce20308
+DECL|struct|__anon2c3cd65a0308
 block|{
 DECL|member|run
 name|gint
@@ -658,6 +658,9 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -700,9 +703,6 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|gimp_ui_init
 argument_list|(
 literal|"gif"

@@ -162,7 +162,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"gimp-intl.h"
 end_include
 
 begin_typedef
@@ -1087,7 +1087,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c39a33e0103
+DECL|enum|__anon2b7925860103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1101,7 +1101,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c39a33e0203
+DECL|enum|__anon2b7925860203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0

@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289ca0230103
+DECL|enum|__anon28ee7c310103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -160,7 +160,7 @@ end_macro
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289ca0230208
+DECL|struct|__anon28ee7c310208
 block|{
 DECL|member|title
 specifier|const
@@ -407,6 +407,9 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -459,9 +462,6 @@ operator|.
 name|d_status
 operator|=
 name|GIMP_PDB_SUCCESS
-expr_stmt|;
-name|INIT_I18N_UI
-argument_list|()
 expr_stmt|;
 name|unit_editor_dialog
 argument_list|()

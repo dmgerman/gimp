@@ -232,12 +232,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"gimp-intl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e6bc140103
+DECL|enum|__anon2989e8870103
 block|{
 DECL|enumerator|EXIT
 name|EXIT

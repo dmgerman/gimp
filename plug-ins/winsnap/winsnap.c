@@ -368,7 +368,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28b6a5ed0108
+DECL|struct|__anon2795c87a0108
 typedef|typedef
 struct|struct
 block|{
@@ -415,7 +415,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28b6a5ed0208
+DECL|struct|__anon2795c87a0208
 typedef|typedef
 struct|struct
 block|{
@@ -4072,7 +4072,7 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-name|INIT_I18N_UI
+name|INIT_I18N
 argument_list|()
 expr_stmt|;
 comment|/* Set up the rest of the return parameters */

@@ -65,7 +65,7 @@ end_define
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2babd2820108
+DECL|struct|__anon2c1723cd0108
 block|{
 DECL|member|prDlg
 name|PRINTDLG

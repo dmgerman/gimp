@@ -82,7 +82,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2c45060103
+DECL|enum|__anon2b9630120103
 block|{
 DECL|enumerator|FUNCTION_BUMPMAP
 name|FUNCTION_BUMPMAP
@@ -100,7 +100,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2c45060208
+DECL|struct|__anon2b9630120208
 block|{
 DECL|member|img
 name|gint32
@@ -178,7 +178,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2c45060308
+DECL|struct|__anon2b9630120308
 block|{
 DECL|member|width
 name|gint
@@ -586,6 +586,9 @@ name|retvals
 operator|=
 name|rvals
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|memset
 argument_list|(
 operator|&
@@ -637,9 +640,6 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|args
 operator|.
 name|img
@@ -805,9 +805,6 @@ name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 break|break;
 block|}
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|args
 operator|.
 name|img
@@ -915,9 +912,6 @@ break|break;
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_get_data
 argument_list|(
 literal|"plug_in_emboss"

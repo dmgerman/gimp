@@ -22250,7 +22250,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb185980108
+DECL|struct|__anon27fddd210108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -22353,7 +22353,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb185980208
+DECL|struct|__anon27fddd210208
 block|{
 DECL|member|height
 DECL|member|width
@@ -22435,7 +22435,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb185980308
+DECL|struct|__anon27fddd210308
 block|{
 DECL|member|width
 name|gint
@@ -23074,7 +23074,7 @@ name|d_status
 operator|=
 name|status
 expr_stmt|;
-name|INIT_I18N_UI
+name|INIT_I18N
 argument_list|()
 expr_stmt|;
 switch|switch

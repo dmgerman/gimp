@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2be7ea0103
+DECL|enum|__anon2b618ba20103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -85,7 +85,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2be7ea0203
+DECL|enum|__anon2b618ba20203
 block|{
 DECL|enumerator|OPOPTIMIZE
 name|OPOPTIMIZE
@@ -710,15 +710,15 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|run_mode
 operator|==
 name|GIMP_RUN_NONINTERACTIVE
-condition|)
-block|{
-if|if
-condition|(
+operator|&&
 name|n_params
 operator|!=
 literal|3
@@ -729,10 +729,6 @@ operator|=
 name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
-block|}
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 comment|/* Check the procedure name we were called with, to decide      what needs to be done. */
 if|if
 condition|(

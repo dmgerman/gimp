@@ -204,7 +204,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"gimp-intl.h"
 end_include
 
 begin_ifdef
@@ -246,7 +246,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fe20900103
+DECL|enum|__anon295708e60103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED

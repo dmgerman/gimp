@@ -135,7 +135,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8bbb8c0108
+DECL|struct|__anon27b9cdcc0108
 block|{
 DECL|member|blur_pct
 name|gdouble
@@ -177,7 +177,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8bbb8c0208
+DECL|struct|__anon27b9cdcc0208
 block|{
 DECL|member|run
 name|gint
@@ -633,7 +633,7 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-name|INIT_I18N_UI
+name|INIT_I18N
 argument_list|()
 expr_stmt|;
 comment|/*    *  Get the specified drawable, do standard initialization.    */

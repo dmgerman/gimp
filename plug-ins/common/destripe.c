@@ -560,7 +560,7 @@ literal|1
 index|]
 decl_stmt|;
 comment|/* Return values */
-name|INIT_I18N_UI
+name|INIT_I18N
 argument_list|()
 expr_stmt|;
 comment|/*    * Initialize parameter data...    */

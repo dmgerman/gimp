@@ -316,9 +316,6 @@ literal|"Compression level (0 = none, 1 = RLE, 2 = ARLE)"
 block|}
 block|}
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_sgi_load"
@@ -503,7 +500,7 @@ name|d_status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
-name|INIT_I18N_UI
+name|INIT_I18N
 argument_list|()
 expr_stmt|;
 if|if

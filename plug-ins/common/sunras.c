@@ -137,7 +137,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c54bf6d0108
+DECL|struct|__anon296e82c30108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -226,7 +226,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c54bf6d0208
+DECL|struct|__anon296e82c30208
 block|{
 DECL|member|val
 name|gint
@@ -827,7 +827,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c54bf6d0308
+DECL|struct|__anon296e82c30308
 block|{
 DECL|member|rle
 name|gint
@@ -843,7 +843,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c54bf6d0408
+DECL|struct|__anon296e82c30408
 block|{
 DECL|member|run
 name|gint
@@ -1167,6 +1167,9 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -1209,9 +1212,6 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|image_ID
 operator|=
 name|load_image
@@ -1281,9 +1281,6 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|image_ID
 operator|=
 name|param

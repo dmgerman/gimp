@@ -214,7 +214,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon2b2756be0103
+DECL|enum|__anon2c154b9e0103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -234,7 +234,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2756be0208
+DECL|struct|__anon2c154b9e0208
 block|{
 DECL|member|x1
 name|gdouble
@@ -430,7 +430,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2756be0308
+DECL|struct|__anon2c154b9e0308
 block|{
 DECL|member|x1
 name|gint
@@ -473,7 +473,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2756be0408
+DECL|struct|__anon2c154b9e0408
 block|{
 DECL|member|width
 name|gint
@@ -575,6 +575,9 @@ expr_stmt|;
 name|status
 operator|=
 name|GIMP_PDB_SUCCESS
+expr_stmt|;
+name|INIT_I18N
+argument_list|()
 expr_stmt|;
 name|drawable
 operator|=
@@ -756,9 +759,6 @@ block|{
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_get_data
 argument_list|(
 name|PLUG_IN_NAME
@@ -771,9 +771,6 @@ break|break;
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|gimp_get_data
 argument_list|(
 name|PLUG_IN_NAME
@@ -905,9 +902,6 @@ operator|.
 name|d_int32
 expr_stmt|;
 block|}
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 break|break;
 block|}
 if|if
@@ -1032,7 +1026,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2756be0508
+DECL|struct|__anon2c154b9e0508
 block|{
 DECL|member|r
 name|guchar
@@ -2916,7 +2910,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2756be0608
+DECL|struct|__anon2c154b9e0608
 block|{
 DECL|member|preview
 name|GtkWidget

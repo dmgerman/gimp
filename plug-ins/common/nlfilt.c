@@ -75,7 +75,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dc627a0108
+DECL|struct|__anon29059d000108
 block|{
 DECL|member|img
 name|gint32
@@ -106,7 +106,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dc627a0203
+DECL|enum|__anon29059d000203
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -468,6 +468,9 @@ name|retvals
 operator|=
 name|rvals
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|memset
 argument_list|(
 operator|&
@@ -564,9 +567,6 @@ decl_stmt|;
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 comment|/* XXX: add code here for interactive running */
 if|if
 condition|(
@@ -658,9 +658,6 @@ break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 comment|/* XXX: add code here for non-interactive running */
 if|if
 condition|(
@@ -750,9 +747,6 @@ break|break;
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 comment|/* XXX: add code here for last-values running */
 if|if
 condition|(

@@ -138,7 +138,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9a0cf70108
+DECL|struct|__anon2a189f770108
 block|{
 DECL|member|film_height
 name|gint
@@ -242,7 +242,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9a0cf70208
+DECL|struct|__anon2a189f770208
 block|{
 DECL|member|font_entry
 name|GtkWidget
@@ -1013,7 +1013,7 @@ decl_stmt|;
 name|gint
 name|k
 decl_stmt|;
-name|INIT_I18N_UI
+name|INIT_I18N
 argument_list|()
 expr_stmt|;
 name|run_mode

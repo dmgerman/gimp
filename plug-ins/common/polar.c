@@ -165,7 +165,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c5fd5e0108
+DECL|struct|__anon27b7d2be0108
 block|{
 DECL|member|circle
 name|gdouble
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c5fd5e0208
+DECL|struct|__anon27b7d2be0208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -771,6 +771,9 @@ name|return_vals
 operator|=
 name|values
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/* Get the active drawable info */
 name|drawable
 operator|=
@@ -1032,9 +1035,6 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 comment|/* Possibly retrieve data */
 name|gimp_get_data
 argument_list|(
@@ -1056,9 +1056,6 @@ break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 comment|/* Make sure all the arguments are present */
 if|if
 condition|(
@@ -1144,9 +1141,6 @@ break|break;
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 comment|/* Possibly retrieve data */
 name|gimp_get_data
 argument_list|(

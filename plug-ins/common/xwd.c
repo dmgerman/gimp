@@ -114,7 +114,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5b6b050108
+DECL|struct|__anon2bdc43290108
 block|{
 DECL|member|l_header_size
 name|L_CARD32
@@ -248,7 +248,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5b6b050208
+DECL|struct|__anon2bdc43290208
 block|{
 DECL|member|l_pixel
 name|L_CARD32
@@ -306,7 +306,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5b6b050308
+DECL|struct|__anon2bdc43290308
 block|{
 DECL|member|pixel_val
 name|L_CARD32
@@ -333,7 +333,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5b6b050408
+DECL|struct|__anon2bdc43290408
 block|{
 DECL|member|npixel
 name|gint
@@ -1133,6 +1133,9 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -1175,9 +1178,6 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|image_ID
 operator|=
 name|load_image
@@ -1247,9 +1247,6 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|image_ID
 operator|=
 name|param

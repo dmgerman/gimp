@@ -126,7 +126,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"gimp-intl.h"
 end_include
 
 begin_define
@@ -6199,7 +6199,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b7821220108
+DECL|struct|__anon2c973eb00108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -7820,7 +7820,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b7821220208
+DECL|struct|__anon2c973eb00208
 block|{
 DECL|member|label
 specifier|const
@@ -7979,7 +7979,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b7821220308
+DECL|struct|__anon2c973eb00308
 block|{
 DECL|member|tree_label
 specifier|const

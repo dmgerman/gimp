@@ -95,6 +95,12 @@ end_endif
 begin_include
 include|#
 directive|include
+file|<locale.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib-object.h>
 end_include
 
@@ -137,7 +143,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"gimp-intl.h"
 end_include
 
 begin_ifdef
@@ -430,6 +436,9 @@ name|gimp_locale_directory
 argument_list|()
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|HAVE_BIND_TEXTDOMAIN_CODESET
 name|bind_textdomain_codeset
 argument_list|(
 name|GETTEXT_PACKAGE
@@ -438,6 +447,8 @@ argument_list|,
 literal|"UTF-8"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|bindtextdomain
 argument_list|(
 name|GETTEXT_PACKAGE
@@ -446,6 +457,9 @@ name|gimp_locale_directory
 argument_list|()
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|HAVE_BIND_TEXTDOMAIN_CODESET
 name|bind_textdomain_codeset
 argument_list|(
 name|GETTEXT_PACKAGE
@@ -453,6 +467,8 @@ argument_list|,
 literal|"UTF-8"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|textdomain
 argument_list|(
 name|GETTEXT_PACKAGE
