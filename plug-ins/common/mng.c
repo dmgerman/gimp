@@ -1113,6 +1113,49 @@ return|;
 block|}
 end_function
 
+begin_function
+specifier|static
+name|gboolean
+DECL|function|ia_has_transparent_pixels (guchar * pixels,gint numpixels)
+name|ia_has_transparent_pixels
+parameter_list|(
+name|guchar
+modifier|*
+name|pixels
+parameter_list|,
+name|gint
+name|numpixels
+parameter_list|)
+block|{
+while|while
+condition|(
+name|numpixels
+operator|--
+condition|)
+block|{
+if|if
+condition|(
+name|pixels
+index|[
+literal|1
+index|]
+operator|<=
+literal|127
+condition|)
+return|return
+name|TRUE
+return|;
+name|pixels
+operator|+=
+literal|2
+expr_stmt|;
+block|}
+return|return
+name|FALSE
+return|;
+block|}
+end_function
+
 begin_comment
 comment|/* Spins the color map (palette) putting the transparent color at  * index 0 if there is space. If there isn't any space, warn the user  * and forget about transparency. Returns TRUE if the colormap has  * been changed and FALSE otherwise.  */
 end_comment
@@ -1157,6 +1200,9 @@ decl_stmt|;
 name|guchar
 modifier|*
 name|pixels
+decl_stmt|;
+name|gint
+name|numpixels
 decl_stmt|;
 name|gint
 name|colors
@@ -1216,6 +1262,12 @@ name|drawable
 operator|->
 name|height
 expr_stmt|;
+name|numpixels
+operator|=
+name|cols
+operator|*
+name|rows
+expr_stmt|;
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -1248,13 +1300,7 @@ operator|*
 operator|)
 name|g_malloc
 argument_list|(
-name|drawable
-operator|->
-name|width
-operator|*
-name|drawable
-operator|->
-name|height
+name|numpixels
 operator|*
 literal|2
 argument_list|)
@@ -1279,19 +1325,23 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|ia_has_transparent_pixels
+argument_list|(
+name|pixels
+argument_list|,
+name|numpixels
+argument_list|)
+condition|)
+block|{
 name|transparent
 operator|=
 name|find_unused_ia_colour
 argument_list|(
 name|pixels
 argument_list|,
-name|drawable
-operator|->
-name|width
-operator|*
-name|drawable
-operator|->
-name|height
+name|numpixels
 argument_list|,
 operator|&
 name|colors
@@ -1330,6 +1380,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/* Transform all pixels with a value = transparent to            * 0 and vice versa to compensate for re-ordering in palette            * due to png_set_tRNS() */
 name|remap
 index|[
 literal|0
@@ -1344,6 +1395,7 @@ index|]
 operator|=
 literal|0
 expr_stmt|;
+comment|/* Copy from index 0 to index transparent - 1 to index 1 to            * transparent of after, then from transparent+1 to colors-1            * unchanged, and finally from index transparent to index 0. */
 for|for
 control|(
 name|i
@@ -1433,12 +1485,16 @@ name|TRUE
 return|;
 block|}
 else|else
-block|{
 name|g_message
 argument_list|(
-literal|"Couldn't losslessly save transparency, so saving opacity instead."
+name|_
+argument_list|(
+literal|"Couldn't losslessly save transparency, "
+literal|"saving opacity instead."
+argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 name|png_set_PLTE
 argument_list|(
 name|png_ptr
@@ -1453,7 +1509,6 @@ argument_list|,
 name|colors
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 name|FALSE
 return|;

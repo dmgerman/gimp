@@ -126,7 +126,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2954e2fb0108
+DECL|struct|__anon2c7b56f80108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2954e2fb0208
+DECL|struct|__anon2c7b56f80208
 block|{
 DECL|member|run
 name|gboolean
@@ -365,6 +365,21 @@ name|response_id
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gboolean
+name|ia_has_transparent_pixels
+parameter_list|(
+name|guchar
+modifier|*
+name|pixels
+parameter_list|,
+name|gint
+name|numpixels
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -5395,6 +5410,49 @@ end_function
 
 begin_function
 specifier|static
+name|gboolean
+DECL|function|ia_has_transparent_pixels (guchar * pixels,gint numpixels)
+name|ia_has_transparent_pixels
+parameter_list|(
+name|guchar
+modifier|*
+name|pixels
+parameter_list|,
+name|gint
+name|numpixels
+parameter_list|)
+block|{
+while|while
+condition|(
+name|numpixels
+operator|--
+condition|)
+block|{
+if|if
+condition|(
+name|pixels
+index|[
+literal|1
+index|]
+operator|<=
+literal|127
+condition|)
+return|return
+name|TRUE
+return|;
+name|pixels
+operator|+=
+literal|2
+expr_stmt|;
+block|}
+return|return
+name|FALSE
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|void
 DECL|function|respin_cmap (png_structp pp,png_infop info,guchar * remap,gint32 image_ID,GimpDrawable * drawable)
 name|respin_cmap
@@ -5449,6 +5507,9 @@ name|guchar
 modifier|*
 name|pixels
 decl_stmt|;
+name|gint
+name|numpixels
+decl_stmt|;
 name|before
 operator|=
 name|gimp_image_get_cmap
@@ -5493,6 +5554,12 @@ name|drawable
 operator|->
 name|height
 expr_stmt|;
+name|numpixels
+operator|=
+name|cols
+operator|*
+name|rows
+expr_stmt|;
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -5525,13 +5592,7 @@ operator|*
 operator|)
 name|g_malloc
 argument_list|(
-name|drawable
-operator|->
-name|width
-operator|*
-name|drawable
-operator|->
-name|height
+name|numpixels
 operator|*
 literal|2
 argument_list|)
@@ -5557,24 +5618,6 @@ name|height
 argument_list|)
 expr_stmt|;
 comment|/* Try to find an entry which isn't actually used in the      image, for a transparency index. */
-name|transparent
-operator|=
-name|find_unused_ia_colour
-argument_list|(
-name|pixels
-argument_list|,
-name|drawable
-operator|->
-name|width
-operator|*
-name|drawable
-operator|->
-name|height
-argument_list|,
-operator|&
-name|colors
-argument_list|)
-expr_stmt|;
 if|#
 directive|if
 name|PNG_LIBPNG_VER
@@ -5582,12 +5625,34 @@ operator|>
 literal|99
 if|if
 condition|(
+name|ia_has_transparent_pixels
+argument_list|(
+name|pixels
+argument_list|,
+name|numpixels
+argument_list|)
+condition|)
+block|{
+name|transparent
+operator|=
+name|find_unused_ia_colour
+argument_list|(
+name|pixels
+argument_list|,
+name|numpixels
+argument_list|,
+operator|&
+name|colors
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
 name|transparent
 operator|!=
 operator|-
 literal|1
 condition|)
-comment|/* we have a winner for a transparent                                  * index - do like gif2png and swap                                  * index 0 and index transparent */
+comment|/* we have a winner for a transparent                                      * index - do like gif2png and swap                                      * index 0 and index transparent */
 block|{
 name|png_color
 name|palette
@@ -5614,7 +5679,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* Transform all pixels with a value = transparent to        * 0 and vice versa to compensate for re-ordering in palette        * due to png_set_tRNS() */
+comment|/* Transform all pixels with a value = transparent to            * 0 and vice versa to compensate for re-ordering in palette            * due to png_set_tRNS() */
 name|remap
 index|[
 literal|0
@@ -5629,7 +5694,7 @@ index|]
 operator|=
 literal|0
 expr_stmt|;
-comment|/* Copy from index 0 to index transparent - 1 to index 1 to        * transparent of after, then from transparent+1 to colors-1        * unchanged, and finally from index transparent to index 0. */
+comment|/* Copy from index 0 to index transparent - 1 to index 1 to            * transparent of after, then from transparent+1 to colors-1            * unchanged, and finally from index transparent to index 0. */
 for|for
 control|(
 name|i
@@ -5714,7 +5779,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* Inform the user that we couldn't losslessly save the        * transparency& just use the full palette */
+comment|/* Inform the user that we couldn't losslessly save the            * transparency& just use the full palette */
 name|g_message
 argument_list|(
 name|_
@@ -5739,6 +5804,22 @@ name|colors
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+else|else
+name|png_set_PLTE
+argument_list|(
+name|pp
+argument_list|,
+name|info
+argument_list|,
+operator|(
+name|png_colorp
+operator|)
+name|before
+argument_list|,
+name|colors
+argument_list|)
+expr_stmt|;
 else|#
 directive|else
 name|info
