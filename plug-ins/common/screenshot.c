@@ -112,7 +112,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29873bc00108
+DECL|struct|__anon2c1d9a8c0108
 block|{
 DECL|member|root
 name|gboolean
@@ -494,7 +494,7 @@ specifier|static
 name|GimpParam
 name|values
 index|[
-literal|1
+literal|2
 index|]
 decl_stmt|;
 comment|/* initialize the return of the status */
