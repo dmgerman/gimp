@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -30,13 +36,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gtk/gtk.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gtk/gtk.h"
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_include
@@ -127,7 +139,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|struct|__anon2c63ebab0108
+DECL|struct|__anon29092b450108
 typedef|typedef
 struct|struct
 block|{
@@ -150,7 +162,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c63ebab0208
+DECL|struct|__anon29092b450208
 typedef|typedef
 struct|struct
 block|{
@@ -782,14 +794,20 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/* Install a procedure in the procedure database. */
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_unsharp_mask"
 argument_list|,
+name|_
+argument_list|(
 literal|"An unsharp mask filter"
+argument_list|)
 argument_list|,
-literal|"Long description / help"
+literal|""
 argument_list|,
 literal|"Winston Chang<wchang3@students.wisc.edu>"
 argument_list|,
@@ -797,7 +815,10 @@ literal|"Winston Chang"
 argument_list|,
 literal|"1999"
 argument_list|,
-literal|"<Image>/Filters/Enhance/Unsharp Mask"
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Enhance/Unsharp Mask..."
+argument_list|)
 argument_list|,
 literal|"GRAY*, RGB*"
 argument_list|,
@@ -913,6 +934,9 @@ operator|*
 name|nreturn_vals
 operator|=
 literal|1
+expr_stmt|;
+name|INIT_I18N_UI
+argument_list|()
 expr_stmt|;
 switch|switch
 condition|(
@@ -1215,7 +1239,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Blurring..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* generate convolution matrix */
@@ -1841,7 +1868,10 @@ expr_stmt|;
 block|}
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Merging..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* find integer value of threshold */
@@ -3882,7 +3912,7 @@ index|]
 operator|=
 name|g_strdup
 argument_list|(
-literal|"unsharp mask"
+literal|"unsharp_mask"
 argument_list|)
 expr_stmt|;
 comment|/* initialize */
@@ -3932,8 +3962,10 @@ argument_list|(
 name|window
 argument_list|)
 argument_list|,
-literal|"Unsharp Mask "
-name|PLUG_IN_VERSION
+name|_
+argument_list|(
+literal|"Unsharp Mask"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* I have no idea what the following two lines do.  	   I took them from sharpen.c */
@@ -3944,7 +3976,7 @@ argument_list|(
 name|window
 argument_list|)
 argument_list|,
-literal|"unsharp mask"
+literal|"unsharp_mask"
 argument_list|,
 literal|"Gimp"
 argument_list|)
@@ -4029,7 +4061,10 @@ expr_stmt|;
 comment|/* create each of the inputs */
 name|dialog_create_value_f
 argument_list|(
+name|_
+argument_list|(
 literal|"Radius:"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -4054,7 +4089,10 @@ argument_list|)
 expr_stmt|;
 name|dialog_create_value_f
 argument_list|(
+name|_
+argument_list|(
 literal|"Amount:"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -4079,7 +4117,10 @@ argument_list|)
 expr_stmt|;
 name|dialog_create_value_i
 argument_list|(
+name|_
+argument_list|(
 literal|"Threshold:"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -4182,7 +4223,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -4239,7 +4283,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS

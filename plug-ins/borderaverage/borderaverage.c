@@ -6,13 +6,13 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
+file|"config.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|<libgimp/gimp.h>
+file|<stdlib.h>
 end_include
 
 begin_include
@@ -24,25 +24,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gck/gck.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<plug-ins/megawidget/megawidget.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config.h"
+file|"libgimp/gimp.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gck/gck.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"plug-ins/megawidget/megawidget.h"
 end_include
 
 begin_comment
@@ -232,7 +232,7 @@ name|menu_labels
 index|[]
 init|=
 block|{
-literal|"1 (nonsens?)"
+literal|"1 (nonsense?)"
 block|,
 literal|"2"
 block|,
@@ -248,7 +248,7 @@ literal|"64"
 block|,
 literal|"128"
 block|,
-literal|"256 (nonsens?)"
+literal|"256 (nonsense?)"
 block|}
 decl_stmt|;
 end_decl_stmt

@@ -6,7 +6,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<math.h>
+file|"config.h"
 end_include
 
 begin_include
@@ -39,28 +39,17 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|M_PI
-end_ifndef
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpmath.h"
+end_include
 
-begin_define
-DECL|macro|M_PI
-define|#
-directive|define
-name|M_PI
-value|3.14159265358979323846
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* M_PI */
-end_comment
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
 
 begin_define
 DECL|macro|ENTRY_WIDTH
@@ -73,7 +62,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ad27fe0108
+DECL|struct|__anon2a55e3280108
 block|{
 DECL|member|radius
 name|gdouble
@@ -92,7 +81,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ad27fe0208
+DECL|struct|__anon2a55e3280208
 block|{
 DECL|member|run
 name|gint
@@ -382,13 +371,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_sel_gauss"
 argument_list|,
+name|_
+argument_list|(
 literal|"Applies a selective gaussian blur to the specified drawable."
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"This filter functions similar to the regular gaussian blur filter except that neighbouring pixels that differ more than the given maxdelta parameter will not be blended with. This way with the correct parameters, an image can be smoothed out without losing details. However, this filter can be rather slow."
+argument_list|)
 argument_list|,
 literal|"Thom van Os"
 argument_list|,
@@ -396,7 +394,10 @@ literal|"Thom van Os"
 argument_list|,
 literal|"1999"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Blur/Selective Gaussian Blur..."
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -483,6 +484,9 @@ operator|*
 name|return_vals
 operator|=
 name|values
+expr_stmt|;
+name|INIT_I18N_UI
+argument_list|()
 expr_stmt|;
 name|values
 index|[
@@ -699,7 +703,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Selective Gaussian Blur"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|radius
@@ -759,7 +766,10 @@ else|else
 block|{
 name|gimp_message
 argument_list|(
-literal|"sel_gauss: cannot operate on indexed color images"
+name|_
+argument_list|(
+literal|"sel_gauss: Cannot operate on indexed color images"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|status
@@ -890,7 +900,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Selective Gaussian Blur"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -996,7 +1009,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1053,7 +1069,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1109,7 +1128,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Parameter Settings"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -1211,7 +1233,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Blur Radius: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1342,7 +1367,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Max. delta: "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1517,7 +1545,7 @@ name|sqrt
 argument_list|(
 literal|2.0
 operator|*
-name|M_PI
+name|G_PI
 operator|*
 name|sd
 argument_list|)
