@@ -129,7 +129,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b31f0c40103
+DECL|enum|__anon2c03a6030103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO
@@ -207,7 +207,7 @@ argument_list|)
 expr_stmt|;
 name|scanner
 operator|=
-name|gimp_scanner_new
+name|gimp_scanner_new_file
 argument_list|(
 name|filename
 argument_list|,
@@ -673,7 +673,7 @@ argument_list|)
 expr_stmt|;
 name|writer
 operator|=
-name|gimp_config_writer_new
+name|gimp_config_writer_new_file
 argument_list|(
 name|filename
 argument_list|,

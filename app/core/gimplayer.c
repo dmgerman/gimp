@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2921daf40103
+DECL|enum|__anon276ed9c60103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED

@@ -113,7 +113,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a4c7250103
+DECL|enum|__anon2b0124920103
 block|{
 DECL|enumerator|DUMP_NONE
 name|DUMP_NONE
@@ -155,6 +155,9 @@ parameter_list|,
 name|GimpConfigWriter
 modifier|*
 name|writer
+parameter_list|,
+name|gint
+name|fd
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -171,6 +174,9 @@ parameter_list|,
 name|GimpConfigWriter
 modifier|*
 name|writer
+parameter_list|,
+name|gint
+name|fd
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -377,6 +383,11 @@ name|GObject
 modifier|*
 name|rc
 decl_stmt|;
+name|gint
+name|fd
+init|=
+literal|1
+decl_stmt|;
 if|if
 condition|(
 name|format
@@ -405,9 +416,9 @@ argument_list|)
 expr_stmt|;
 name|writer
 operator|=
-name|gimp_config_writer_new_from_fd
+name|gimp_config_writer_new_fd
 argument_list|(
-literal|1
+name|fd
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -451,6 +462,8 @@ argument_list|(
 name|rc
 argument_list|,
 name|writer
+argument_list|,
+name|fd
 argument_list|)
 expr_stmt|;
 break|break;
@@ -462,6 +475,8 @@ argument_list|(
 name|rc
 argument_list|,
 name|writer
+argument_list|,
+name|fd
 argument_list|)
 expr_stmt|;
 break|break;
@@ -515,7 +530,7 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|dump_gimprc_system (GObject * rc,GimpConfigWriter * writer)
+DECL|function|dump_gimprc_system (GObject * rc,GimpConfigWriter * writer,gint fd)
 name|dump_gimprc_system
 parameter_list|(
 name|GObject
@@ -525,6 +540,9 @@ parameter_list|,
 name|GimpConfigWriter
 modifier|*
 name|writer
+parameter_list|,
+name|gint
+name|fd
 parameter_list|)
 block|{
 name|GObjectClass
@@ -636,8 +654,6 @@ argument_list|)
 expr_stmt|;
 name|write
 argument_list|(
-name|writer
-operator|->
 name|fd
 argument_list|,
 literal|"#\n"
@@ -646,11 +662,8 @@ literal|2
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* kids, don't try this at home! */
 name|write
 argument_list|(
-name|writer
-operator|->
 name|fd
 argument_list|,
 literal|"# "
@@ -796,7 +809,7 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|dump_gimprc_manpage (GObject * rc,GimpConfigWriter * writer)
+DECL|function|dump_gimprc_manpage (GObject * rc,GimpConfigWriter * writer,gint fd)
 name|dump_gimprc_manpage
 parameter_list|(
 name|GObject
@@ -806,6 +819,9 @@ parameter_list|,
 name|GimpConfigWriter
 modifier|*
 name|writer
+parameter_list|,
+name|gint
+name|fd
 parameter_list|)
 block|{
 name|GObjectClass
@@ -825,8 +841,6 @@ name|i
 decl_stmt|;
 name|write
 argument_list|(
-name|writer
-operator|->
 name|fd
 argument_list|,
 name|man_page_header
@@ -895,8 +909,6 @@ condition|)
 continue|continue;
 name|write
 argument_list|(
-name|writer
-operator|->
 name|fd
 argument_list|,
 literal|".TP\n"
@@ -921,8 +933,6 @@ condition|)
 block|{
 name|write
 argument_list|(
-name|writer
-operator|->
 name|fd
 argument_list|,
 literal|"\n"
@@ -939,8 +949,6 @@ argument_list|)
 expr_stmt|;
 name|dump_with_linebreaks
 argument_list|(
-name|writer
-operator|->
 name|fd
 argument_list|,
 name|desc
@@ -948,8 +956,6 @@ argument_list|)
 expr_stmt|;
 name|write
 argument_list|(
-name|writer
-operator|->
 name|fd
 argument_list|,
 literal|"\n"
@@ -971,8 +977,6 @@ argument_list|)
 expr_stmt|;
 name|write
 argument_list|(
-name|writer
-operator|->
 name|fd
 argument_list|,
 name|man_page_path
@@ -985,8 +989,6 @@ argument_list|)
 expr_stmt|;
 name|write
 argument_list|(
-name|writer
-operator|->
 name|fd
 argument_list|,
 name|man_page_footer

@@ -693,7 +693,7 @@ block|}
 end_function
 
 begin_function
-name|gpointer
+name|gconstpointer
 DECL|function|gimp_parasite_data (const GimpParasite * parasite)
 name|gimp_parasite_data
 parameter_list|(

@@ -117,7 +117,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c87fb9b0103
+DECL|enum|__anon2bc3bade0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1254,7 +1254,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_config_deserialize
+name|gimp_config_deserialize_file
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -1315,7 +1315,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_config_deserialize
+name|gimp_config_deserialize_file
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -2021,7 +2021,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_config_deserialize
+name|gimp_config_deserialize_file
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -2073,7 +2073,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_config_serialize
+name|gimp_config_serialize_to_file
 argument_list|(
 name|G_OBJECT
 argument_list|(

@@ -109,7 +109,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_config_deserialize
+name|gimp_config_deserialize_file
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -230,7 +230,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_config_serialize
+name|gimp_config_serialize_to_file
 argument_list|(
 name|G_OBJECT
 argument_list|(

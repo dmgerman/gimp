@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f6dff90103
+DECL|enum|__anon27cd33630103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -685,7 +685,7 @@ argument_list|)
 expr_stmt|;
 name|retval
 operator|=
-name|gimp_config_serialize
+name|gimp_config_serialize_to_file
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -776,7 +776,7 @@ argument_list|)
 expr_stmt|;
 name|retval
 operator|=
-name|gimp_config_deserialize
+name|gimp_config_deserialize_file
 argument_list|(
 name|G_OBJECT
 argument_list|(

@@ -198,7 +198,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e53ed50103
+DECL|enum|__anon2b60656f0103
 block|{
 DECL|enumerator|UNIT_INFO
 name|UNIT_INFO
@@ -270,7 +270,7 @@ argument_list|)
 expr_stmt|;
 name|scanner
 operator|=
-name|gimp_scanner_new
+name|gimp_scanner_new_file
 argument_list|(
 name|filename
 argument_list|,
@@ -574,7 +574,7 @@ argument_list|)
 expr_stmt|;
 name|writer
 operator|=
-name|gimp_config_writer_new
+name|gimp_config_writer_new_file
 argument_list|(
 name|filename
 argument_list|,

@@ -265,7 +265,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gpointer
+name|gconstpointer
 name|gimp_parasite_data
 parameter_list|(
 specifier|const
