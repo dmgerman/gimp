@@ -267,6 +267,16 @@ block|}
 block|}
 end_function
 
+begin_decl_stmt
+DECL|variable|scrolled
+specifier|static
+name|int
+name|scrolled
+init|=
+literal|0
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 name|gint
 DECL|function|gdisplay_canvas_events (GtkWidget * canvas,GdkEvent * event)
@@ -783,6 +793,10 @@ break|break;
 case|case
 literal|2
 case|:
+name|scrolled
+operator|=
+literal|1
+expr_stmt|;
 name|gtk_grab_add
 argument_list|(
 name|canvas
@@ -968,6 +982,10 @@ break|break;
 case|case
 literal|2
 case|:
+name|scrolled
+operator|=
+literal|0
+expr_stmt|;
 name|gtk_grab_remove
 argument_list|(
 name|canvas
@@ -1185,11 +1203,15 @@ block|}
 elseif|else
 if|if
 condition|(
+operator|(
 name|mevent
 operator|->
 name|state
 operator|&
 name|GDK_BUTTON2_MASK
+operator|)
+operator|&&
+name|scrolled
 condition|)
 block|{
 name|grab_and_scroll
