@@ -1708,11 +1708,11 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GDK_SB_DOWN_ARROW
+name|GIMP_MOUSE_CURSOR
 argument_list|,
-name|TOOL_TYPE_NONE
+name|RECT_SELECT
 argument_list|,
-name|CURSOR_MODIFIER_NONE
+name|CURSOR_MODIFIER_ANCHOR
 argument_list|,
 name|FALSE
 argument_list|)
