@@ -58,6 +58,8 @@ literal|"Francisco Bustamante"
 block|,
 literal|"Albert Cahalan"
 block|,
+literal|"George J. Carrette"
+block|,
 literal|"Sean Cier"
 block|,
 literal|"Winston Chang"
