@@ -1378,7 +1378,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_scan_convert_render (GimpScanConvert * sc,TileManager * tile_manager,gboolean antialias)
+DECL|function|gimp_scan_convert_render (GimpScanConvert * sc,TileManager * tile_manager,gint off_x,gint off_y,gboolean antialias)
 name|gimp_scan_convert_render
 parameter_list|(
 name|GimpScanConvert
@@ -1388,6 +1388,12 @@ parameter_list|,
 name|TileManager
 modifier|*
 name|tile_manager
+parameter_list|,
+name|gint
+name|off_x
+parameter_list|,
+name|gint
+name|off_y
 parameter_list|,
 name|gboolean
 name|antialias
@@ -1403,10 +1409,6 @@ name|gint
 name|i
 decl_stmt|,
 name|j
-decl_stmt|,
-name|x0
-decl_stmt|,
-name|y0
 decl_stmt|;
 name|guchar
 modifier|*
@@ -1432,17 +1434,6 @@ expr_stmt|;
 name|gimp_scan_convert_finish
 argument_list|(
 name|sc
-argument_list|)
-expr_stmt|;
-name|tile_manager_get_offsets
-argument_list|(
-name|tile_manager
-argument_list|,
-operator|&
-name|x0
-argument_list|,
-operator|&
-name|y0
 argument_list|)
 expr_stmt|;
 name|pixel_region_init
@@ -1508,19 +1499,19 @@ name|sc
 operator|->
 name|svp
 argument_list|,
-name|x0
+name|off_x
 operator|+
 name|maskPR
 operator|.
 name|x
 argument_list|,
-name|y0
+name|off_y
 operator|+
 name|maskPR
 operator|.
 name|y
 argument_list|,
-name|x0
+name|off_x
 operator|+
 name|maskPR
 operator|.
@@ -1530,7 +1521,7 @@ name|maskPR
 operator|.
 name|w
 argument_list|,
-name|y0
+name|off_y
 operator|+
 name|maskPR
 operator|.

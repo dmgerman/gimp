@@ -591,6 +591,10 @@ name|add_on
 argument_list|)
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|antialias
 argument_list|)
 expr_stmt|;
@@ -935,6 +939,10 @@ name|add_on
 argument_list|)
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|antialias
 argument_list|)
 expr_stmt|;
@@ -1205,6 +1213,11 @@ decl_stmt|;
 name|GimpRGB
 name|color
 decl_stmt|;
+name|gint
+name|off_x
+decl_stmt|,
+name|off_y
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_CHANNEL
@@ -1275,6 +1288,20 @@ name|FALSE
 comment|/* no undo */
 argument_list|)
 expr_stmt|;
+name|gimp_item_offsets
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|layer
+argument_list|)
+argument_list|,
+operator|&
+name|off_x
+argument_list|,
+operator|&
+name|off_y
+argument_list|)
+expr_stmt|;
 name|gimp_channel_select_channel
 argument_list|(
 name|channel
@@ -1286,9 +1313,9 @@ argument_list|)
 argument_list|,
 name|add_on
 argument_list|,
-literal|0
+name|off_x
 argument_list|,
-literal|0
+name|off_y
 argument_list|,
 name|op
 argument_list|,

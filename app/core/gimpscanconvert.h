@@ -168,6 +168,12 @@ name|TileManager
 modifier|*
 name|tile_manager
 parameter_list|,
+name|gint
+name|off_x
+parameter_list|,
+name|gint
+name|off_y
+parameter_list|,
 name|gboolean
 name|antialias
 parameter_list|)
