@@ -765,7 +765,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"wget exited abnormally on URL %s"
+literal|"wget exited abnormally on URL '%s'"
 argument_list|,
 name|filename
 argument_list|)
@@ -932,7 +932,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"wget exited abnormally on URL\n'%s'"
+literal|"wget exited abnormally on URL '%s'"
 argument_list|,
 name|filename
 argument_list|)
@@ -984,7 +984,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"wget exited abnormally on URL\n'%s'"
+literal|"wget exited abnormally on URL '%s'"
 argument_list|,
 name|filename
 argument_list|)
@@ -1073,7 +1073,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"wget exited abnormally on URL\n'%s'"
+literal|"wget exited abnormally on URL '%s'"
 argument_list|,
 name|filename
 argument_list|)
@@ -1149,7 +1149,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"wget exited abnormally on URL\n'%s'"
+literal|"wget exited abnormally on URL '%s'"
 argument_list|,
 name|filename
 argument_list|)

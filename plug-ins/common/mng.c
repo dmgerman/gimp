@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -1749,9 +1755,6 @@ expr_stmt|;
 comment|/* background transparency should happen */
 break|break;
 block|}
-if|if
-condition|(
-operator|(
 name|userdata
 operator|=
 name|g_new0
@@ -1761,20 +1764,7 @@ name|mnglib_userdata_t
 argument_list|,
 literal|1
 argument_list|)
-operator|)
-operator|==
-name|NULL
-condition|)
-block|{
-name|g_warning
-argument_list|(
-literal|"Unable to allocate a user data buffer in mng_save_image()"
-argument_list|)
 expr_stmt|;
-return|return
-literal|0
-return|;
-block|}
 if|if
 condition|(
 operator|(
@@ -1793,11 +1783,22 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
-literal|"Unable to open output file %s in mng_save_image()"
+name|_
+argument_list|(
+literal|"Could not open '%s' for writing: %s"
+argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -3002,11 +3003,22 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
-literal|"fopen() failed for '%s' in mng_save_image()"
+name|_
+argument_list|(
+literal|"Could not open '%s' for writing: %s"
+argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|temp_file_name
+argument_list|)
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|unlink
@@ -3853,9 +3865,22 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
-literal|"Unable to fopen(in) in mng_save_image()"
+name|_
+argument_list|(
+literal|"Could not open '%s' for reading: %s"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|temp_file_name
+argument_list|)
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|unlink
