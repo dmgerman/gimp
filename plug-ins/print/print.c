@@ -1348,11 +1348,21 @@ condition|)
 empty_stmt|;
 endif|#
 directive|endif
+ifdef|#
+directive|ifdef
+name|INIT_I18N_UI
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
+else|#
+directive|else
 name|INIT_LOCALE
 argument_list|(
-name|LOCALE
+literal|"gimp-print"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 comment|/*    * Initialize parameter data...    */
 name|current_printer
 operator|=
