@@ -71,7 +71,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f31a310108
+DECL|struct|__anon2997f5bf0108
 block|{
 DECL|member|point
 name|GdkPoint
@@ -5212,7 +5212,7 @@ name|gi
 decl_stmt|,
 name|bi
 decl_stmt|;
-name|gint
+name|guint32
 name|p0
 decl_stmt|,
 name|psum
@@ -5224,7 +5224,7 @@ name|guchar
 modifier|*
 name|ptr
 decl_stmt|;
-name|gint
+name|guint32
 modifier|*
 name|prob
 decl_stmt|;
@@ -5427,7 +5427,11 @@ control|)
 block|{
 name|psum
 operator|+=
-name|G_MAXRAND
+operator|(
+name|guint32
+operator|)
+operator|-
+literal|1
 operator|*
 operator|(
 name|fprob
@@ -5453,9 +5457,13 @@ operator|-
 literal|1
 index|]
 operator|=
-name|G_MAXRAND
+operator|(
+name|guint32
+operator|)
+operator|-
+literal|1
 expr_stmt|;
-comment|/* make sure we don't get bitten 				   by roundoff*/
+comment|/* make sure we don't get bitten 			           by roundoff*/
 comment|/* create the brush */
 if|if
 condition|(
@@ -5531,7 +5539,7 @@ argument_list|)
 expr_stmt|;
 name|p0
 operator|=
-name|rand
+name|g_random_int
 argument_list|()
 expr_stmt|;
 name|k

@@ -110,44 +110,6 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|SRAND_FUNC
-end_ifndef
-
-begin_define
-DECL|macro|SRAND_FUNC
-define|#
-directive|define
-name|SRAND_FUNC
-value|srand
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|RAND_FUNC
-end_ifndef
-
-begin_define
-DECL|macro|RAND_FUNC
-define|#
-directive|define
-name|RAND_FUNC
-value|rand
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_define
 DECL|macro|PREVIEWSIZE
 define|#
@@ -285,7 +247,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon289bc7d10103
+DECL|enum|__anon28c038e80103
 enum|enum
 block|{
 DECL|enumerator|TRIANGLE
@@ -310,7 +272,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon289bc7d10203
+DECL|enum|__anon28c038e80203
 enum|enum
 block|{
 DECL|enumerator|SOLID
@@ -359,7 +321,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon289bc7d10303
+DECL|enum|__anon28c038e80303
 enum|enum
 block|{
 DECL|enumerator|PERSPECTIVE
@@ -375,7 +337,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon289bc7d10403
+DECL|enum|__anon28c038e80403
 enum|enum
 block|{
 DECL|enumerator|FOG
@@ -421,7 +383,7 @@ value|0x00000001
 end_define
 
 begin_typedef
-DECL|struct|__anon289bc7d10508
+DECL|struct|__anon28c038e80508
 typedef|typedef
 struct|struct
 block|{
@@ -445,7 +407,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon289bc7d10608
+DECL|struct|__anon28c038e80608
 typedef|typedef
 struct|struct
 block|{
@@ -469,7 +431,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon289bc7d10708
+DECL|struct|__anon28c038e80708
 typedef|typedef
 struct|struct
 block|{
@@ -498,7 +460,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon289bc7d10808
+DECL|struct|__anon28c038e80808
 typedef|typedef
 struct|struct
 block|{
@@ -594,7 +556,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon289bc7d10908
+DECL|struct|__anon28c038e80908
 typedef|typedef
 struct|struct
 block|{
@@ -621,7 +583,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon289bc7d10a08
+DECL|struct|__anon28c038e80a08
 typedef|typedef
 struct|struct
 block|{
@@ -663,7 +625,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon289bc7d10b08
+DECL|struct|__anon28c038e80b08
 typedef|typedef
 struct|struct
 block|{
@@ -688,7 +650,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon289bc7d10c08
+DECL|struct|__anon28c038e80c08
 typedef|typedef
 struct|struct
 block|{
@@ -714,7 +676,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon289bc7d10d08
+DECL|struct|__anon28c038e80d08
 typedef|typedef
 struct|struct
 block|{
@@ -737,7 +699,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon289bc7d10e08
+DECL|struct|__anon28c038e80e08
 typedef|typedef
 struct|struct
 block|{
@@ -762,7 +724,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon289bc7d10f08
+DECL|struct|__anon28c038e80f08
 typedef|typedef
 struct|struct
 block|{
@@ -785,7 +747,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon289bc7d11008
+DECL|struct|__anon28c038e81008
 typedef|typedef
 struct|struct
 block|{
@@ -808,7 +770,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon289bc7d11108
+DECL|struct|__anon28c038e81108
 typedef|typedef
 struct|struct
 block|{
@@ -834,7 +796,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|union|__anon289bc7d1120a
+DECL|union|__anon28c038e8120a
 typedef|typedef
 union|union
 block|{
@@ -1170,7 +1132,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon289bc7d11308
+DECL|struct|__anon28c038e81308
 struct|struct
 block|{
 DECL|member|solid
@@ -1480,6 +1442,15 @@ literal|1
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|gr
+specifier|static
+name|GRand
+modifier|*
+name|gr
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 DECL|function|init (void)
 name|void
@@ -1504,8 +1475,15 @@ decl_stmt|,
 name|s
 decl_stmt|;
 comment|/* Create an array of random gradient vectors uniformly on the unit sphere */
-name|SRAND_FUNC
+name|gr
+operator|=
+name|g_rand_new
+argument_list|()
+expr_stmt|;
+name|g_rand_set_seed
 argument_list|(
+name|gr
+argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
@@ -1545,25 +1523,15 @@ index|[
 name|j
 index|]
 operator|=
-call|(
-name|double
-call|)
+name|g_rand_double_range
 argument_list|(
-operator|(
-name|RAND_FUNC
-argument_list|()
-operator|%
-operator|(
-name|B
-operator|+
-name|B
-operator|)
-operator|)
+name|gr
+argument_list|,
 operator|-
-name|B
+literal|1
+argument_list|,
+literal|1
 argument_list|)
-operator|/
-name|B
 expr_stmt|;
 name|s
 operator|=
@@ -1672,10 +1640,14 @@ name|p
 index|[
 name|j
 operator|=
-name|RAND_FUNC
-argument_list|()
-operator|%
+name|g_rand_int_range
+argument_list|(
+name|gr
+argument_list|,
+literal|0
+argument_list|,
 name|B
+argument_list|)
 index|]
 expr_stmt|;
 name|p
@@ -6529,19 +6501,19 @@ name|v
 parameter_list|)
 block|{
 return|return
-operator|(
-name|RAND_FUNC
-argument_list|()
-operator|/
-operator|(
-name|double
-operator|)
-name|G_MAXRAND
+name|g_rand_double_range
+argument_list|(
+name|gr
+argument_list|,
 operator|-
-literal|0.5
-operator|)
-operator|*
 name|v
+operator|/
+literal|2.0
+argument_list|,
+name|v
+operator|/
+literal|2.0
+argument_list|)
 return|;
 block|}
 end_function

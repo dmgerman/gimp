@@ -218,6 +218,14 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|gr
+name|GRand
+modifier|*
+name|gr
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 DECL|function|parsepath (void)
 name|GList
@@ -2509,6 +2517,11 @@ name|run
 operator|=
 literal|0
 expr_stmt|;
+name|gr
+operator|=
+name|g_rand_new
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|standalone
@@ -2536,6 +2549,11 @@ argument_list|()
 expr_stmt|;
 name|gimp_help_free
 argument_list|()
+expr_stmt|;
+name|g_rand_free
+argument_list|(
+name|gr
+argument_list|)
 expr_stmt|;
 name|gdk_flush
 argument_list|()

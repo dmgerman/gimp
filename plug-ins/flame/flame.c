@@ -535,7 +535,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon2c52da530108
+DECL|struct|__anon27ed9c600108
 block|{
 DECL|member|randomize
 name|gint
@@ -900,14 +900,6 @@ operator|*
 name|return_vals
 operator|=
 name|values
-expr_stmt|;
-name|SRAND_FUNC
-argument_list|(
-name|time
-argument_list|(
-name|NULL
-argument_list|)
-argument_list|)
 expr_stmt|;
 name|run_mode
 operator|=

@@ -83,22 +83,6 @@ end_include
 begin_expr_stmt
 name|G_BEGIN_DECLS
 comment|/* Some portability enhancing stuff. For use both by the gimp app  * as well as plug-ins and modules.  *  * Include this instead of just<math.h>.  */
-ifndef|#
-directive|ifndef
-name|RAND_MAX
-DECL|macro|G_MAXRAND
-define|#
-directive|define
-name|G_MAXRAND
-value|G_MAXINT
-else|#
-directive|else
-define|#
-directive|define
-name|G_MAXRAND
-value|RAND_MAX
-endif|#
-directive|endif
 comment|/* Use RINT() instead of rint() */
 ifdef|#
 directive|ifdef

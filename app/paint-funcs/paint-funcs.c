@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3c71000103
+DECL|enum|__anon294edaf00103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -1713,8 +1713,14 @@ block|{
 name|guint
 name|i
 decl_stmt|;
+name|GRand
+modifier|*
+name|gr
+decl_stmt|;
 comment|/*  generate a table of random seeds  */
-name|srand
+name|gr
+operator|=
+name|g_rand_new_with_seed
 argument_list|(
 name|RANDOM_SEED
 argument_list|)
@@ -1737,8 +1743,10 @@ index|[
 name|i
 index|]
 operator|=
-name|rand
-argument_list|()
+name|g_rand_int
+argument_list|(
+name|gr
+argument_list|)
 expr_stmt|;
 for|for
 control|(
@@ -1855,6 +1863,11 @@ comment|/* GIMP_ENABLE_MMX */
 endif|#
 directive|endif
 comment|/* HAVE_ASM_MMX */
+name|g_rand_free
+argument_list|(
+name|gr
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

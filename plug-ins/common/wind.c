@@ -141,7 +141,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dd86370103
+DECL|enum|__anon276f02bf0103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -157,7 +157,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dd86370203
+DECL|enum|__anon276f02bf0203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dd86370303
+DECL|enum|__anon276f02bf0303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -2095,10 +2095,12 @@ name|limit
 operator|=
 literal|1
 operator|+
-name|rand
-argument_list|()
-operator|%
+name|g_random_int_range
+argument_list|(
+literal|0
+argument_list|,
 literal|2
+argument_list|)
 expr_stmt|;
 for|for
 control|(
@@ -2894,10 +2896,12 @@ name|Ri
 expr_stmt|;
 name|weight
 operator|=
-name|rand
-argument_list|()
-operator|%
+name|g_random_int_range
+argument_list|(
+literal|0
+argument_list|,
 literal|10
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -2905,6 +2909,7 @@ name|weight
 operator|>
 literal|5
 condition|)
+comment|/* 40% */
 block|{
 name|random_factor
 operator|=
@@ -2918,6 +2923,7 @@ name|weight
 operator|>
 literal|3
 condition|)
+comment|/* 20% */
 block|{
 name|random_factor
 operator|=
@@ -2925,6 +2931,7 @@ literal|3
 expr_stmt|;
 block|}
 else|else
+comment|/* 40% */
 block|{
 name|random_factor
 operator|=
@@ -2937,10 +2944,12 @@ literal|0
 expr_stmt|;
 switch|switch
 condition|(
-name|rand
-argument_list|()
-operator|%
+name|g_random_int_range
+argument_list|(
+literal|0
+argument_list|,
 name|random_factor
+argument_list|)
 condition|)
 block|{
 case|case
@@ -3072,15 +3081,16 @@ name|bytes
 expr_stmt|;
 if|if
 condition|(
-operator|(
-name|rand
-argument_list|()
-operator|%
+name|g_random_int_range
+argument_list|(
+literal|0
+argument_list|,
 literal|10
-operator|)
+argument_list|)
 operator|>
 literal|7
 condition|)
+comment|/* 20% */
 block|{
 name|skip
 operator|=
@@ -3349,10 +3359,12 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|rand
-argument_list|()
-operator|%
+name|g_random_int_range
+argument_list|(
+literal|0
+argument_list|,
 literal|3
+argument_list|)
 condition|)
 comment|/* introduce weighted randomness */
 block|{
@@ -3380,14 +3392,8 @@ call|)
 argument_list|(
 name|bleed_length_max
 operator|*
-name|rand
+name|g_random_double
 argument_list|()
-operator|/
-operator|(
-name|G_MAXRAND
-operator|+
-literal|1.0
-operator|)
 argument_list|)
 expr_stmt|;
 name|lbi
@@ -3505,12 +3511,8 @@ literal|3
 operator|)
 argument_list|)
 operator|&&
-operator|(
-name|rand
+name|g_random_boolean
 argument_list|()
-operator|%
-literal|2
-operator|)
 condition|)
 block|{
 break|break;

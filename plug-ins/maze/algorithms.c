@@ -69,6 +69,14 @@ name|mvals
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+specifier|extern
+name|GRand
+modifier|*
+name|gr
+decl_stmt|;
+end_decl_stmt
+
 begin_function_decl
 name|void
 name|mazegen
@@ -131,9 +139,6 @@ name|x
 parameter_list|,
 name|guint
 name|y
-parameter_list|,
-name|gint
-name|rnd
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -151,9 +156,6 @@ name|x
 parameter_list|,
 name|guint
 name|y
-parameter_list|,
-name|gint
-name|rnd
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1068,7 +1070,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|prim (gint pos,gchar * maz,guint x,guint y,gint rnd)
+DECL|function|prim (gint pos,gchar * maz,guint x,guint y)
 name|prim
 parameter_list|(
 name|gint
@@ -1083,9 +1085,6 @@ name|x
 parameter_list|,
 name|guint
 name|y
-parameter_list|,
-name|gint
-name|rnd
 parameter_list|)
 block|{
 name|GSList
@@ -1123,6 +1122,13 @@ name|guint
 name|c
 init|=
 literal|0
+decl_stmt|;
+name|gint
+name|rnd
+init|=
+name|mvals
+operator|.
+name|seed
 decl_stmt|;
 name|gimp_progress_init
 argument_list|(
@@ -1301,12 +1307,16 @@ block|{
 comment|/* Remove one cell at random from frontier and place it in IN. */
 name|current
 operator|=
-name|rand
-argument_list|()
-operator|%
+name|g_rand_int_range
+argument_list|(
+name|gr
+argument_list|,
+literal|0
+argument_list|,
 name|g_slist_length
 argument_list|(
 name|front_cells
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|pos
@@ -1803,7 +1813,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|prim_tileable (gchar * maz,guint x,guint y,gint rnd)
+DECL|function|prim_tileable (gchar * maz,guint x,guint y)
 name|prim_tileable
 parameter_list|(
 name|gchar
@@ -1815,9 +1825,6 @@ name|x
 parameter_list|,
 name|guint
 name|y
-parameter_list|,
-name|gint
-name|rnd
 parameter_list|)
 block|{
 name|GSList
@@ -1857,6 +1864,13 @@ name|c
 init|=
 literal|0
 decl_stmt|;
+name|gint
+name|rnd
+init|=
+name|mvals
+operator|.
+name|seed
+decl_stmt|;
 name|gimp_progress_init
 argument_list|(
 name|_
@@ -1875,8 +1889,17 @@ operator|/
 literal|4
 expr_stmt|;
 comment|/* Pick someplace to start. */
-name|srand
+if|if
+condition|(
+operator|!
+name|mvals
+operator|.
+name|defaultseed
+condition|)
+name|g_rand_set_seed
 argument_list|(
+name|gr
+argument_list|,
 name|rnd
 argument_list|)
 expr_stmt|;
@@ -1886,25 +1909,29 @@ name|x
 operator|*
 literal|2
 operator|*
-operator|(
-name|rand
-argument_list|()
-operator|%
+name|g_rand_int_range
+argument_list|(
+name|gr
+argument_list|,
+literal|0
+argument_list|,
 name|y
 operator|/
 literal|2
-operator|)
+argument_list|)
 operator|+
 literal|2
 operator|*
-operator|(
-name|rand
-argument_list|()
-operator|%
+name|g_rand_int_range
+argument_list|(
+name|gr
+argument_list|,
+literal|0
+argument_list|,
 name|x
 operator|/
 literal|2
-operator|)
+argument_list|)
 expr_stmt|;
 name|maz
 index|[
@@ -2026,12 +2053,16 @@ block|{
 comment|/* Remove one cell at random from frontier and place it in IN. */
 name|current
 operator|=
-name|rand
-argument_list|()
-operator|%
+name|g_rand_int_range
+argument_list|(
+name|gr
+argument_list|,
+literal|0
+argument_list|,
 name|g_slist_length
 argument_list|(
 name|front_cells
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|pos

@@ -156,10 +156,10 @@ value|3
 end_define
 
 begin_define
-DECL|macro|SEED_TIME
+DECL|macro|SEED_DEFAULT
 define|#
 directive|define
-name|SEED_TIME
+name|SEED_DEFAULT
 value|10
 end_define
 
@@ -200,7 +200,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bce574e0108
+DECL|struct|__anon27fc42b60108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -221,7 +221,7 @@ DECL|member|rndm_seed
 name|gint
 name|rndm_seed
 decl_stmt|;
-comment|/* seed value for rand() function */
+comment|/* seed value for g_rand_set_seed() function */
 DECL|typedef|RandomizeVals
 block|}
 name|RandomizeVals
@@ -239,7 +239,7 @@ literal|50.0
 block|,
 literal|1.0
 block|,
-name|SEED_TIME
+name|SEED_DEFAULT
 block|,
 literal|0
 block|, }
@@ -249,7 +249,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bce574e0208
+DECL|struct|__anon27fc42b60208
 block|{
 DECL|member|run
 name|gint
@@ -324,6 +324,10 @@ parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GRand
+modifier|*
+name|gr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -789,6 +793,11 @@ index|[
 literal|1
 index|]
 decl_stmt|;
+name|GRand
+modifier|*
+name|gr
+decl_stmt|;
+comment|/* The GRand object which generates the                            * random numbers */
 comment|/*    *  Get the specified drawable, do standard initialization.    */
 if|if
 condition|(
@@ -900,6 +909,11 @@ operator|.
 name|d_status
 operator|=
 name|status
+expr_stmt|;
+name|gr
+operator|=
+name|g_rand_new
+argument_list|()
 expr_stmt|;
 comment|/*    *  Make sure the drawable type is appropriate.    */
 if|if
@@ -1197,26 +1211,19 @@ literal|1
 operator|)
 argument_list|)
 expr_stmt|;
-comment|/* 	   *  Initialize the rand() function seed 	   */
+comment|/* 	   *  Initialize the g_rand() function seed 	   */
 if|if
 condition|(
 name|pivals
 operator|.
 name|seed_type
-operator|==
-name|SEED_TIME
+operator|!=
+name|SEED_DEFAULT
 condition|)
-name|pivals
-operator|.
-name|rndm_seed
-operator|=
-name|time
+name|g_rand_set_seed
 argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|srand
-argument_list|(
+name|gr
+argument_list|,
 name|pivals
 operator|.
 name|rndm_seed
@@ -1225,6 +1232,8 @@ expr_stmt|;
 name|randomize
 argument_list|(
 name|drawable
+argument_list|,
+name|gr
 argument_list|)
 expr_stmt|;
 comment|/* 	   *  If we ran interactively (even repeating) update the display. 	   */
@@ -1277,6 +1286,11 @@ name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 comment|/*    *  DONE!    *  Set the status where the GIMP can see it, and let go    *  of the drawable.    */
+name|g_rand_free
+argument_list|(
+name|gr
+argument_list|)
+expr_stmt|;
 name|values
 index|[
 literal|0
@@ -1469,12 +1483,16 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|randomize (GimpDrawable * drawable)
+DECL|function|randomize (GimpDrawable * drawable,GRand * gr)
 name|randomize
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GRand
+modifier|*
+name|gr
 parameter_list|)
 block|{
 name|GimpPixelRgn
@@ -1881,14 +1899,14 @@ control|)
 block|{
 if|if
 condition|(
-operator|(
-operator|(
-name|rand
-argument_list|()
-operator|%
+name|g_rand_int_range
+argument_list|(
+name|gr
+argument_list|,
+literal|0
+argument_list|,
 literal|100
-operator|)
-operator|)
+argument_list|)
 operator|<=
 operator|(
 name|gint
@@ -1911,10 +1929,14 @@ operator|*
 name|d
 operator|++
 operator|=
-name|rand
-argument_list|()
-operator|%
+name|g_rand_int_range
+argument_list|(
+name|gr
+argument_list|,
+literal|0
+argument_list|,
 literal|256
+argument_list|)
 expr_stmt|;
 break|break;
 comment|/* 		       *  PICK 		       *      pick at random from a neighboring pixel. 		       */
@@ -1923,10 +1945,14 @@ name|RNDM_PICK
 case|:
 switch|switch
 condition|(
-name|rand
-argument_list|()
-operator|%
+name|g_rand_int_range
+argument_list|(
+name|gr
+argument_list|,
+literal|0
+argument_list|,
 literal|9
+argument_list|)
 condition|)
 block|{
 case|case
@@ -2093,10 +2119,14 @@ name|RNDM_SLUR
 case|:
 switch|switch
 condition|(
-name|rand
-argument_list|()
-operator|%
+name|g_rand_int_range
+argument_list|(
+name|gr
+argument_list|,
+literal|0
+argument_list|,
 literal|10
+argument_list|)
 condition|)
 block|{
 case|case
@@ -2596,7 +2626,7 @@ name|pivals
 operator|.
 name|seed_type
 argument_list|,
-name|SEED_TIME
+name|SEED_DEFAULT
 argument_list|,
 name|SEED_USER
 argument_list|)

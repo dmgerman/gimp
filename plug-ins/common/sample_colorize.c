@@ -391,7 +391,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon275c640e0108
+DECL|struct|__anon2c45a75a0108
 typedef|typedef
 struct|struct
 block|{
@@ -460,7 +460,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon275c640e0208
+DECL|struct|__anon2c45a75a0208
 typedef|typedef
 struct|struct
 block|{
@@ -578,7 +578,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon275c640e0308
+DECL|struct|__anon2c45a75a0308
 typedef|typedef
 struct|struct
 block|{
@@ -607,7 +607,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon275c640e0408
+DECL|struct|__anon2c45a75a0408
 typedef|typedef
 struct|struct
 block|{
@@ -634,7 +634,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon275c640e0508
+DECL|struct|__anon2c45a75a0508
 typedef|typedef
 struct|struct
 block|{
@@ -14580,15 +14580,17 @@ condition|)
 block|{
 name|l_rnd
 operator|=
-name|rand
-argument_list|()
-operator|%
+name|g_random_int_range
+argument_list|(
+literal|0
+argument_list|,
 name|g_lum_tab
 index|[
 name|lum
 index|]
 operator|.
 name|all_samples
+argument_list|)
 expr_stmt|;
 name|l_ct
 operator|=
@@ -16195,14 +16197,6 @@ expr_stmt|;
 name|g_max_col_err
 operator|=
 name|l_max
-expr_stmt|;
-name|srand
-argument_list|(
-name|time
-argument_list|(
-name|NULL
-argument_list|)
-argument_list|)
 expr_stmt|;
 name|l_rc
 operator|=

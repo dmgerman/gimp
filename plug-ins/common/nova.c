@@ -267,7 +267,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7d46580108
+DECL|struct|__anon292e2cad0108
 block|{
 DECL|member|xcenter
 name|gint
@@ -302,7 +302,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7d46580208
+DECL|struct|__anon292e2cad0208
 block|{
 DECL|member|run
 name|gint
@@ -317,7 +317,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7d46580308
+DECL|struct|__anon292e2cad0308
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -4180,10 +4180,12 @@ end_comment
 begin_function
 specifier|static
 name|gdouble
-DECL|function|gauss (void)
+DECL|function|gauss (GRand * gr)
 name|gauss
 parameter_list|(
-name|void
+name|GRand
+modifier|*
+name|gr
 parameter_list|)
 block|{
 name|gdouble
@@ -4212,10 +4214,10 @@ operator|+=
 operator|(
 name|gdouble
 operator|)
-name|rand
-argument_list|()
-operator|/
-name|G_MAXRAND
+name|g_rand_double
+argument_list|(
+name|gr
+argument_list|)
 expr_stmt|;
 return|return
 name|sum
@@ -4335,6 +4337,15 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|GRand
+modifier|*
+name|gr
+decl_stmt|;
+name|gr
+operator|=
+name|g_rand_new
+argument_list|()
+expr_stmt|;
 comment|/* initialize */
 name|has_alpha
 operator|=
@@ -4343,14 +4354,6 @@ argument_list|(
 name|drawable
 operator|->
 name|drawable_id
-argument_list|)
-expr_stmt|;
-name|srand
-argument_list|(
-name|time
-argument_list|(
-name|NULL
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|spoke
@@ -4418,7 +4421,9 @@ name|i
 index|]
 operator|=
 name|gauss
-argument_list|()
+argument_list|(
+name|gr
+argument_list|)
 expr_stmt|;
 name|hsv
 operator|.
@@ -4435,20 +4440,15 @@ operator|/
 literal|360.0
 operator|)
 operator|*
-operator|(
-operator|(
-name|gdouble
-operator|)
-name|rand
-argument_list|()
-operator|/
-operator|(
-name|gdouble
-operator|)
-name|G_MAXRAND
+name|g_rand_double_range
+argument_list|(
+name|gr
+argument_list|,
 operator|-
 literal|0.5
-operator|)
+argument_list|,
+literal|0.5
+argument_list|)
 expr_stmt|;
 if|if
 condition|(

@@ -40,16 +40,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<time.h>
-end_include
-
-begin_comment
-comment|/* For random seeding */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -143,7 +133,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cd47230108
+DECL|struct|__anon29f8afac0108
 block|{
 DECL|member|seed
 name|gint
@@ -167,7 +157,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cd47230208
+DECL|struct|__anon29f8afac0208
 block|{
 DECL|member|run
 name|gint
@@ -298,6 +288,10 @@ specifier|static
 name|void
 name|random_rgb
 parameter_list|(
+name|GRand
+modifier|*
+name|gr
+parameter_list|,
 name|guchar
 modifier|*
 name|d
@@ -310,6 +304,10 @@ specifier|static
 name|void
 name|add_random
 parameter_list|(
+name|GRand
+modifier|*
+name|gr
+parameter_list|,
 name|guchar
 modifier|*
 name|d
@@ -331,6 +329,10 @@ name|drawable
 parameter_list|,
 name|gboolean
 name|preview_mode
+parameter_list|,
+name|GRand
+modifier|*
+name|gr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -364,6 +366,10 @@ name|drawable
 parameter_list|,
 name|gboolean
 name|preview_mode
+parameter_list|,
+name|GRand
+modifier|*
+name|gr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -447,6 +453,10 @@ name|scale_depth
 parameter_list|,
 name|gboolean
 name|preview_mode
+parameter_list|,
+name|GRand
+modifier|*
+name|gr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -879,21 +889,6 @@ name|pvals
 argument_list|)
 expr_stmt|;
 comment|/* If we're using a time seed, set it at the start */
-if|if
-condition|(
-name|pvals
-operator|.
-name|timeseed
-condition|)
-name|pvals
-operator|.
-name|seed
-operator|=
-name|time
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
 break|break;
 default|default:
 break|break;
@@ -1303,21 +1298,6 @@ argument_list|,
 name|preview
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|pvals
-operator|.
-name|timeseed
-condition|)
-name|pvals
-operator|.
-name|seed
-operator|=
-name|time
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
 name|plasma
 argument_list|(
 name|drawable
@@ -1671,21 +1651,6 @@ name|gboolean
 name|preview_mode
 parameter_list|)
 block|{
-if|if
-condition|(
-name|pvals
-operator|.
-name|timeseed
-condition|)
-name|pvals
-operator|.
-name|seed
-operator|=
-name|time
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
 name|plasma
 argument_list|(
 name|drawable
@@ -1835,11 +1800,22 @@ block|{
 name|gint
 name|depth
 decl_stmt|;
+name|GRand
+modifier|*
+name|gr
+decl_stmt|;
+name|gr
+operator|=
+name|g_rand_new
+argument_list|()
+expr_stmt|;
 name|init_plasma
 argument_list|(
 name|drawable
 argument_list|,
 name|preview_mode
+argument_list|,
+name|gr
 argument_list|)
 expr_stmt|;
 comment|/*    * This first time only puts in the seed pixels - one in each    * corner, and one in the center of each edge, plus one in the    * center of the image.    */
@@ -1865,6 +1841,8 @@ argument_list|,
 literal|0
 argument_list|,
 name|preview_mode
+argument_list|,
+name|gr
 argument_list|)
 expr_stmt|;
 comment|/*    * Now we recurse through the images, going further each time.    */
@@ -1896,6 +1874,8 @@ argument_list|,
 literal|0
 argument_list|,
 name|preview_mode
+argument_list|,
+name|gr
 argument_list|)
 condition|)
 block|{
@@ -1908,6 +1888,8 @@ argument_list|(
 name|drawable
 argument_list|,
 name|preview_mode
+argument_list|,
+name|gr
 argument_list|)
 expr_stmt|;
 block|}
@@ -1916,7 +1898,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|init_plasma (GimpDrawable * drawable,gboolean preview_mode)
+DECL|function|init_plasma (GimpDrawable * drawable,gboolean preview_mode,GRand * gr)
 name|init_plasma
 parameter_list|(
 name|GimpDrawable
@@ -1925,10 +1907,23 @@ name|drawable
 parameter_list|,
 name|gboolean
 name|preview_mode
+parameter_list|,
+name|GRand
+modifier|*
+name|gr
 parameter_list|)
 block|{
-name|srand
+if|if
+condition|(
+operator|!
+name|pvals
+operator|.
+name|timeseed
+condition|)
+name|g_rand_set_seed
 argument_list|(
+name|gr
+argument_list|,
 name|pvals
 operator|.
 name|seed
@@ -2196,7 +2191,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|end_plasma (GimpDrawable * drawable,gboolean preview_mode)
+DECL|function|end_plasma (GimpDrawable * drawable,gboolean preview_mode,GRand * gr)
 name|end_plasma
 parameter_list|(
 name|GimpDrawable
@@ -2205,6 +2200,10 @@ name|drawable
 parameter_list|,
 name|gboolean
 name|preview_mode
+parameter_list|,
+name|GRand
+modifier|*
+name|gr
 parameter_list|)
 block|{
 if|if
@@ -2299,6 +2298,11 @@ operator|)
 argument_list|)
 expr_stmt|;
 block|}
+name|g_rand_free
+argument_list|(
+name|gr
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -2721,9 +2725,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|random_rgb (guchar * d)
+DECL|function|random_rgb (GRand * gr,guchar * d)
 name|random_rgb
 parameter_list|(
+name|GRand
+modifier|*
+name|gr
+parameter_list|,
 name|guchar
 modifier|*
 name|d
@@ -2751,10 +2759,14 @@ index|[
 name|i
 index|]
 operator|=
-name|rand
-argument_list|()
-operator|%
+name|g_rand_int_range
+argument_list|(
+name|gr
+argument_list|,
+literal|0
+argument_list|,
 literal|256
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -2763,9 +2775,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|add_random (guchar * d,gint amnt)
+DECL|function|add_random (GRand * gr,guchar * d,gint amnt)
 name|add_random
 parameter_list|(
+name|GRand
+modifier|*
+name|gr
+parameter_list|,
 name|guchar
 modifier|*
 name|d
@@ -2811,10 +2827,14 @@ name|amnt
 operator|/
 literal|2
 operator|-
-name|rand
-argument_list|()
-operator|%
+name|g_rand_int_range
+argument_list|(
+name|gr
+argument_list|,
+literal|0
+argument_list|,
 name|amnt
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -2880,7 +2900,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|do_plasma (GimpDrawable * drawable,gint x1,gint y1,gint x2,gint y2,gint depth,gint scale_depth,gboolean preview_mode)
+DECL|function|do_plasma (GimpDrawable * drawable,gint x1,gint y1,gint x2,gint y2,gint depth,gint scale_depth,gboolean preview_mode,GRand * gr)
 name|do_plasma
 parameter_list|(
 name|GimpDrawable
@@ -2907,6 +2927,10 @@ name|scale_depth
 parameter_list|,
 name|gboolean
 name|preview_mode
+parameter_list|,
+name|GRand
+modifier|*
+name|gr
 parameter_list|)
 block|{
 name|guchar
@@ -2986,6 +3010,8 @@ condition|)
 block|{
 name|random_rgb
 argument_list|(
+name|gr
+argument_list|,
 name|tl
 argument_list|)
 expr_stmt|;
@@ -3004,6 +3030,8 @@ argument_list|)
 expr_stmt|;
 name|random_rgb
 argument_list|(
+name|gr
+argument_list|,
 name|tr
 argument_list|)
 expr_stmt|;
@@ -3022,6 +3050,8 @@ argument_list|)
 expr_stmt|;
 name|random_rgb
 argument_list|(
+name|gr
+argument_list|,
 name|bl
 argument_list|)
 expr_stmt|;
@@ -3040,6 +3070,8 @@ argument_list|)
 expr_stmt|;
 name|random_rgb
 argument_list|(
+name|gr
+argument_list|,
 name|br
 argument_list|)
 expr_stmt|;
@@ -3058,6 +3090,8 @@ argument_list|)
 expr_stmt|;
 name|random_rgb
 argument_list|(
+name|gr
+argument_list|,
 name|mm
 argument_list|)
 expr_stmt|;
@@ -3088,6 +3122,8 @@ argument_list|)
 expr_stmt|;
 name|random_rgb
 argument_list|(
+name|gr
+argument_list|,
 name|ml
 argument_list|)
 expr_stmt|;
@@ -3112,6 +3148,8 @@ argument_list|)
 expr_stmt|;
 name|random_rgb
 argument_list|(
+name|gr
+argument_list|,
 name|mr
 argument_list|)
 expr_stmt|;
@@ -3136,6 +3174,8 @@ argument_list|)
 expr_stmt|;
 name|random_rgb
 argument_list|(
+name|gr
+argument_list|,
 name|mt
 argument_list|)
 expr_stmt|;
@@ -3160,6 +3200,8 @@ argument_list|)
 expr_stmt|;
 name|random_rgb
 argument_list|(
+name|gr
+argument_list|,
 name|ml
 argument_list|)
 expr_stmt|;
@@ -3341,6 +3383,8 @@ argument_list|)
 expr_stmt|;
 name|add_random
 argument_list|(
+name|gr
+argument_list|,
 name|ml
 argument_list|,
 name|ran
@@ -3378,6 +3422,8 @@ argument_list|)
 expr_stmt|;
 name|add_random
 argument_list|(
+name|gr
+argument_list|,
 name|mr
 argument_list|,
 name|ran
@@ -3432,6 +3478,8 @@ argument_list|)
 expr_stmt|;
 name|add_random
 argument_list|(
+name|gr
+argument_list|,
 name|mb
 argument_list|,
 name|ran
@@ -3470,6 +3518,8 @@ argument_list|)
 expr_stmt|;
 name|add_random
 argument_list|(
+name|gr
+argument_list|,
 name|mt
 argument_list|,
 name|ran
@@ -3531,6 +3581,8 @@ argument_list|)
 expr_stmt|;
 name|add_random
 argument_list|(
+name|gr
+argument_list|,
 name|mm
 argument_list|,
 name|ran
@@ -3649,6 +3701,8 @@ operator|+
 literal|1
 argument_list|,
 name|preview_mode
+argument_list|,
+name|gr
 argument_list|)
 expr_stmt|;
 comment|/* Bottom left. */
@@ -3673,6 +3727,8 @@ operator|+
 literal|1
 argument_list|,
 name|preview_mode
+argument_list|,
+name|gr
 argument_list|)
 expr_stmt|;
 comment|/* Top right. */
@@ -3697,6 +3753,8 @@ operator|+
 literal|1
 argument_list|,
 name|preview_mode
+argument_list|,
+name|gr
 argument_list|)
 expr_stmt|;
 comment|/* Bottom right. */
@@ -3722,6 +3780,8 @@ operator|+
 literal|1
 argument_list|,
 name|preview_mode
+argument_list|,
+name|gr
 argument_list|)
 return|;
 block|}

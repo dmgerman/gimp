@@ -2927,7 +2927,11 @@ name|seed
 argument_list|,
 literal|0
 argument_list|,
-name|G_MAXRAND
+operator|(
+name|guint32
+operator|)
+operator|-
+literal|1
 argument_list|,
 literal|1
 argument_list|,
@@ -3160,7 +3164,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c58a120108
+DECL|struct|__anon27ea184b0108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -4075,7 +4079,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c58a120208
+DECL|struct|__anon27ea184b0208
 block|{
 DECL|member|adjustment
 name|GtkAdjustment

@@ -105,10 +105,10 @@ value|"Blur 2.0"
 end_define
 
 begin_define
-DECL|macro|SEED_TIME
+DECL|macro|SEED_DEFAULT
 define|#
 directive|define
-name|SEED_TIME
+name|SEED_DEFAULT
 value|10
 end_define
 
@@ -135,7 +135,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c47d5cc0108
+DECL|struct|__anon2bd3828f0108
 block|{
 DECL|member|blur_pct
 name|gdouble
@@ -151,12 +151,12 @@ DECL|member|seed_type
 name|gint
 name|seed_type
 decl_stmt|;
-comment|/* seed init. type - current time or user value */
+comment|/* seed init. type - default or user value */
 DECL|member|blur_seed
 name|gint
 name|blur_seed
 decl_stmt|;
-comment|/* seed value for rand() function */
+comment|/* seed value for g_random_set_seed() function */
 DECL|typedef|BlurVals
 block|}
 name|BlurVals
@@ -174,7 +174,7 @@ literal|100.0
 block|,
 literal|1.0
 block|,
-name|SEED_TIME
+name|SEED_DEFAULT
 block|,
 literal|0
 block|, }
@@ -184,7 +184,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c47d5cc0208
+DECL|struct|__anon2bd3828f0208
 block|{
 DECL|member|run
 name|gint
@@ -917,7 +917,7 @@ name|gint
 operator|)
 name|MAX
 argument_list|(
-name|SEED_TIME
+name|SEED_DEFAULT
 argument_list|,
 name|param
 index|[
@@ -989,7 +989,7 @@ name|pivals
 operator|.
 name|seed_type
 operator|=
-name|SEED_TIME
+name|SEED_DEFAULT
 expr_stmt|;
 name|pivals
 operator|.
@@ -1062,18 +1062,9 @@ name|pivals
 operator|.
 name|seed_type
 operator|==
-name|SEED_TIME
+name|SEED_USER
 condition|)
-name|pivals
-operator|.
-name|blur_seed
-operator|=
-name|time
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|srand
+name|g_random_set_seed
 argument_list|(
 name|pivals
 operator|.
@@ -1693,14 +1684,12 @@ control|)
 block|{
 if|if
 condition|(
-operator|(
-operator|(
-name|rand
-argument_list|()
-operator|%
+name|g_random_int_range
+argument_list|(
+literal|0
+argument_list|,
 literal|100
-operator|)
-operator|)
+argument_list|)
 operator|<=
 operator|(
 name|gint
@@ -2563,7 +2552,7 @@ name|pivals
 operator|.
 name|seed_type
 argument_list|,
-name|SEED_TIME
+name|SEED_DEFAULT
 argument_list|,
 name|SEED_USER
 argument_list|)

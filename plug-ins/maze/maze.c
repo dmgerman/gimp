@@ -67,16 +67,6 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<time.h>
-end_include
-
-begin_comment
-comment|/* For random seeding */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -266,9 +256,6 @@ name|x
 parameter_list|,
 name|guint
 name|y
-parameter_list|,
-name|gint
-name|rnd
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -287,9 +274,6 @@ name|x
 parameter_list|,
 name|guint
 name|y
-parameter_list|,
-name|gint
-name|rnd
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -400,8 +384,16 @@ block|,
 comment|/* Algorithm */
 comment|/* Interface options */
 name|TRUE
-comment|/* Time seed? */
+comment|/* Default seed? */
 block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|gr
+name|GRand
+modifier|*
+name|gr
 decl_stmt|;
 end_decl_stmt
 
@@ -680,6 +672,11 @@ operator|=
 name|values
 expr_stmt|;
 name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
+name|gr
+operator|=
+name|g_rand_new
 argument_list|()
 expr_stmt|;
 name|values
@@ -981,7 +978,7 @@ operator|||
 operator|(
 name|mvals
 operator|.
-name|timeseed
+name|defaultseed
 operator|&&
 name|run_mode
 operator|==
@@ -1019,6 +1016,11 @@ operator|.
 name|d_status
 operator|=
 name|status
+expr_stmt|;
+name|g_rand_free
+argument_list|(
+name|gr
+argument_list|)
 expr_stmt|;
 name|gimp_drawable_detach
 argument_list|(
@@ -1456,21 +1458,6 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-if|if
-condition|(
-name|mvals
-operator|.
-name|timeseed
-condition|)
-name|mvals
-operator|.
-name|seed
-operator|=
-name|time
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
 comment|/* Sanity check: */
 switch|switch
 condition|(
@@ -1541,10 +1528,6 @@ argument_list|,
 name|mw
 argument_list|,
 name|mh
-argument_list|,
-name|mvals
-operator|.
-name|seed
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1676,10 +1659,6 @@ argument_list|,
 name|mw
 argument_list|,
 name|mh
-argument_list|,
-name|mvals
-operator|.
-name|seed
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1741,10 +1720,6 @@ argument_list|,
 name|mw
 argument_list|,
 name|mh
-argument_list|,
-name|mvals
-operator|.
-name|seed
 argument_list|)
 expr_stmt|;
 break|break;

@@ -475,7 +475,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1e169b0103
+DECL|enum|__anon2acf90660103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -502,7 +502,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1e169b0203
+DECL|enum|__anon2acf90660203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -523,7 +523,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1e169b0308
+DECL|struct|__anon2acf90660308
 block|{
 DECL|member|name
 name|gchar
@@ -651,9 +651,9 @@ DECL|member|sflare_seed
 name|gint
 name|sflare_seed
 decl_stmt|;
-DECL|member|sflare_seed_time
+DECL|member|sflare_seed_default
 name|gint
-name|sflare_seed_time
+name|sflare_seed_default
 decl_stmt|;
 DECL|typedef|GFlare
 block|}
@@ -664,7 +664,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1e169b0408
+DECL|struct|__anon2acf90660408
 block|{
 DECL|member|fp
 name|FILE
@@ -684,7 +684,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1e169b0503
+DECL|enum|__anon2acf90660503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -712,7 +712,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1e169b0608
+DECL|struct|__anon2acf90660608
 block|{
 DECL|member|init
 name|gint
@@ -734,7 +734,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b1e169b0708
+DECL|struct|__anon2acf90660708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -808,7 +808,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1e169b0808
+DECL|struct|__anon2acf90660808
 block|{
 DECL|member|init
 name|gint
@@ -878,7 +878,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1e169b0908
+DECL|struct|__anon2acf90660908
 block|{
 DECL|member|x0
 name|gdouble
@@ -905,7 +905,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1e169b0a08
+DECL|struct|__anon2acf90660a08
 block|{
 DECL|member|init
 name|gint
@@ -1075,7 +1075,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1e169b0b08
+DECL|struct|__anon2acf90660b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1102,7 +1102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1e169b0c08
+DECL|struct|__anon2acf90660c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1143,7 +1143,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1e169b0d08
+DECL|struct|__anon2acf90660d08
 block|{
 DECL|member|tile
 name|GimpTile
@@ -1369,7 +1369,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1e169b0e08
+DECL|struct|__anon2acf90660e08
 block|{
 DECL|member|tag
 name|gint
@@ -1446,7 +1446,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1e169b0f08
+DECL|struct|__anon2acf90660f08
 block|{
 DECL|member|xcenter
 name|gint
@@ -1504,7 +1504,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1e169b1008
+DECL|struct|__anon2acf90661008
 block|{
 DECL|member|run
 name|gint
@@ -2365,7 +2365,7 @@ block|,
 comment|/* sflare_seed */
 name|FALSE
 block|,
-comment|/* sflare_seed_time */
+comment|/* sflare_seed_default */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -3990,9 +3990,6 @@ specifier|static
 name|void
 name|gradient_get_random
 parameter_list|(
-name|gint
-name|seed
-parameter_list|,
 name|guchar
 modifier|*
 name|values
@@ -7126,7 +7123,7 @@ literal|1
 expr_stmt|;
 name|gflare
 operator|->
-name|sflare_seed_time
+name|sflare_seed_default
 operator|=
 name|TRUE
 expr_stmt|;
@@ -7135,7 +7132,7 @@ else|else
 block|{
 name|gflare
 operator|->
-name|sflare_seed_time
+name|sflare_seed_default
 operator|=
 name|FALSE
 expr_stmt|;
@@ -8240,7 +8237,7 @@ name|sflare_nverts
 argument_list|,
 name|gflare
 operator|->
-name|sflare_seed_time
+name|sflare_seed_default
 condition|?
 operator|-
 literal|1
@@ -9503,7 +9500,7 @@ DECL|function|calc_sample_one_gradient ()
 name|calc_sample_one_gradient
 parameter_list|()
 block|{
-DECL|struct|__anon2b1e169b1108
+DECL|struct|__anon2acf90661108
 specifier|static
 struct|struct
 block|{
@@ -10117,6 +10114,15 @@ decl_stmt|;
 name|int
 name|i
 decl_stmt|;
+name|GRand
+modifier|*
+name|gr
+decl_stmt|;
+name|gr
+operator|=
+name|g_rand_new
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 operator|(
@@ -10233,21 +10239,15 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+operator|!
 name|gflare
 operator|->
-name|sflare_seed_time
+name|sflare_seed_default
 condition|)
-name|srand
+name|g_rand_set_seed
 argument_list|(
-name|time
-argument_list|(
-name|NULL
-argument_list|)
-argument_list|)
-expr_stmt|;
-else|else
-name|srand
-argument_list|(
+name|gr
+argument_list|,
 name|gflare
 operator|->
 name|sflare_seed
@@ -10278,13 +10278,10 @@ argument_list|)
 expr_stmt|;
 name|rnd
 operator|=
-operator|(
-name|double
-operator|)
-name|rand
-argument_list|()
-operator|/
-name|G_MAXRAND
+name|g_rand_double
+argument_list|(
+name|gr
+argument_list|)
 expr_stmt|;
 for|for
 control|(
@@ -10490,6 +10487,11 @@ name|sflare
 argument_list|)
 expr_stmt|;
 block|}
+name|g_rand_free
+argument_list|(
+name|gr
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -15881,7 +15883,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon2b1e169b1208
+DECL|struct|__anon2acf90661208
 block|{
 DECL|member|label
 specifier|const
@@ -21195,7 +21197,7 @@ argument_list|,
 operator|&
 name|gflare
 operator|->
-name|sflare_seed_time
+name|sflare_seed_default
 argument_list|,
 name|TRUE
 argument_list|,
@@ -25261,8 +25263,6 @@ condition|)
 block|{
 name|gradient_get_random
 argument_list|(
-literal|1
-argument_list|,
 name|values
 argument_list|,
 name|nvalues
@@ -25386,12 +25386,9 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_get_random (gint seed,guchar * values,gint nvalues)
+DECL|function|gradient_get_random (guchar * values,gint nvalues)
 name|gradient_get_random
 parameter_list|(
-name|gint
-name|seed
-parameter_list|,
 name|guchar
 modifier|*
 name|values
@@ -25416,11 +25413,6 @@ init|=
 name|values
 decl_stmt|;
 comment|/*     This is really simple  -- gaussian noise might be better    */
-name|srand
-argument_list|(
-name|seed
-argument_list|)
-expr_stmt|;
 for|for
 control|(
 name|i
@@ -25437,10 +25429,12 @@ control|)
 block|{
 name|inten
 operator|=
-name|rand
-argument_list|()
-operator|%
+name|g_random_int_range
+argument_list|(
+literal|0
+argument_list|,
 literal|256
+argument_list|)
 expr_stmt|;
 for|for
 control|(

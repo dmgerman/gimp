@@ -111,7 +111,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b25c5be0108
+DECL|struct|__anon2a2df4660108
 block|{
 DECL|member|independent
 name|gint
@@ -134,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b25c5be0208
+DECL|struct|__anon2a2df4660208
 block|{
 DECL|member|channels
 name|gint
@@ -220,7 +220,9 @@ specifier|static
 name|gdouble
 name|gauss
 parameter_list|(
-name|void
+name|GRand
+modifier|*
+name|gr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -821,15 +823,6 @@ expr_stmt|;
 name|gimp_tile_cache_ntiles
 argument_list|(
 name|TILE_CACHE_SIZE
-argument_list|)
-expr_stmt|;
-comment|/*  seed the random number generator  */
-name|srand
-argument_list|(
-name|time
-argument_list|(
-name|NULL
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  compute the luminosity which exceeds the luminosity threshold  */
@@ -1464,10 +1457,19 @@ name|even
 init|=
 name|NULL
 decl_stmt|;
+name|GRand
+modifier|*
+name|gr
+decl_stmt|;
 comment|/* initialize */
 name|noise
 operator|=
 literal|0
+expr_stmt|;
+name|gr
+operator|=
+name|g_rand_new
+argument_list|()
 expr_stmt|;
 if|if
 condition|(
@@ -1702,7 +1704,9 @@ literal|0
 index|]
 operator|*
 name|gauss
-argument_list|()
+argument_list|(
+name|gr
+argument_list|)
 operator|*
 literal|127
 argument_list|)
@@ -1743,7 +1747,9 @@ name|b
 index|]
 operator|*
 name|gauss
-argument_list|()
+argument_list|(
+name|gr
+argument_list|)
 operator|*
 literal|127
 argument_list|)
@@ -1971,7 +1977,9 @@ literal|0
 index|]
 operator|*
 name|gauss
-argument_list|()
+argument_list|(
+name|gr
+argument_list|)
 operator|*
 literal|127
 argument_list|)
@@ -2014,7 +2022,9 @@ name|b
 index|]
 operator|*
 name|gauss
-argument_list|()
+argument_list|(
+name|gr
+argument_list|)
 operator|*
 literal|127
 argument_list|)
@@ -2172,6 +2182,11 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* endif normal mode */
+name|g_rand_free
+argument_list|(
+name|gr
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -3813,16 +3828,18 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * Return a Gaussian (aka normal) random variable.  *  * Adapted from ppmforge.c, which is part of PBMPLUS.  * The algorithm comes from:  * 'The Science Of Fractal Images'. Peitgen, H.-O., and Saupe, D. eds.  * Springer Verlag, New York, 1988.  */
+comment|/*  * Return a Gaussian (aka normal) random variable.  *  * Adapted from ppmforge.c, which is part of PBMPLUS.  * The algorithm comes from:  * 'The Science Of Fractal Images'. Peitgen, H.-O., and Saupe, D. eds.  * Springer Verlag, New York, 1988.  *  * It would probably be better to use another algorithm, such as that   * in Knuth  */
 end_comment
 
 begin_function
 specifier|static
 name|gdouble
-DECL|function|gauss (void)
+DECL|function|gauss (GRand * gr)
 name|gauss
 parameter_list|(
-name|void
+name|GRand
+modifier|*
+name|gr
 parameter_list|)
 block|{
 name|gint
@@ -3848,10 +3865,14 @@ operator|++
 control|)
 name|sum
 operator|+=
-name|rand
-argument_list|()
-operator|&
+name|g_rand_int_range
+argument_list|(
+name|gr
+argument_list|,
+literal|0
+argument_list|,
 literal|0x7FFF
+argument_list|)
 expr_stmt|;
 return|return
 name|sum

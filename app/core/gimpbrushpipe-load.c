@@ -822,6 +822,16 @@ decl_stmt|;
 name|gdouble
 name|angle
 decl_stmt|;
+name|GRand
+modifier|*
+name|gr
+decl_stmt|;
+comment|/* Initialise random number generator */
+name|gr
+operator|=
+name|g_rand_new
+argument_list|()
+expr_stmt|;
 name|pipe
 operator|=
 name|GIMP_BRUSH_PIPE
@@ -983,15 +993,19 @@ case|:
 comment|/* This probably isn't the right way */
 name|ix
 operator|=
-name|rand
-argument_list|()
-operator|%
+name|g_rand_int_range
+argument_list|(
+name|gr
+argument_list|,
+literal|0
+argument_list|,
 name|pipe
 operator|->
 name|rank
 index|[
 name|i
 index|]
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -1161,6 +1175,11 @@ name|brushes
 index|[
 name|brushix
 index|]
+expr_stmt|;
+name|g_rand_free
+argument_list|(
+name|gr
+argument_list|)
 expr_stmt|;
 return|return
 name|GIMP_BRUSH
