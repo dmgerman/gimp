@@ -9,6 +9,16 @@ directive|include
 file|"config.h"
 end_include
 
+begin_comment
+comment|/* For ArtVpath */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|<libart_lgpl/libart.h>
+end_include
+
 begin_include
 include|#
 directive|include
@@ -753,6 +763,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|gimp_stroke_to_art_point
+parameter_list|(
+name|ArtVpath
+modifier|*
+name|vec
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  private variables  */
 end_comment
@@ -1116,6 +1138,12 @@ operator|->
 name|get_draw_lines
 operator|=
 name|gimp_stroke_real_get_draw_lines
+expr_stmt|;
+name|klass
+operator|->
+name|to_art_point
+operator|=
+name|gimp_stroke_to_art_point
 expr_stmt|;
 block|}
 end_function
@@ -4996,6 +5024,26 @@ block|}
 return|return
 name|ret_lines
 return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_stroke_to_art_point (ArtVpath * vec)
+name|gimp_stroke_to_art_point
+parameter_list|(
+name|ArtVpath
+modifier|*
+name|vec
+parameter_list|)
+block|{
+name|g_printerr
+argument_list|(
+literal|"gimp_stroke_to_art_point: default implementation\n"
+argument_list|)
+expr_stmt|;
+return|return;
 block|}
 end_function
 

@@ -19,6 +19,12 @@ end_define
 begin_include
 include|#
 directive|include
+file|<libart_lgpl/libart.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpitem.h"
 end_include
 
@@ -731,6 +737,23 @@ begin_function_decl
 name|GimpVectors
 modifier|*
 name|gimp_vectors_make_bezier
+parameter_list|(
+specifier|const
+name|GimpVectors
+modifier|*
+name|vectors
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* Convert to libart vector path */
+end_comment
+
+begin_function_decl
+name|ArtVpath
+modifier|*
+name|gimp_vectors_to_art_vpath
 parameter_list|(
 specifier|const
 name|GimpVectors

@@ -16,6 +16,16 @@ directive|define
 name|__GIMP_STROKE_H__
 end_define
 
+begin_comment
+comment|/* For ArtVpath */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|<libart_lgpl/libart.h>
+end_include
+
 begin_include
 include|#
 directive|include
@@ -798,6 +808,18 @@ specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
+parameter_list|)
+function_decl|;
+DECL|member|to_art_point
+name|void
+function_decl|(
+modifier|*
+name|to_art_point
+function_decl|)
+parameter_list|(
+name|ArtVpath
+modifier|*
+name|vec
 parameter_list|)
 function_decl|;
 block|}

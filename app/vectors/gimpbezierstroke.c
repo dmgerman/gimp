@@ -510,6 +510,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|gimp_bezier_stroke_to_art_point
+parameter_list|(
+name|ArtVpath
+modifier|*
+name|vec
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  private variables  */
 end_comment
@@ -753,6 +765,12 @@ operator|->
 name|interpolate
 operator|=
 name|gimp_bezier_stroke_interpolate
+expr_stmt|;
+name|stroke_class
+operator|->
+name|to_art_point
+operator|=
+name|gimp_bezier_stroke_to_art_point
 expr_stmt|;
 block|}
 end_function
@@ -7214,6 +7232,26 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_bezier_stroke_to_art_point (ArtVpath * vec)
+name|gimp_bezier_stroke_to_art_point
+parameter_list|(
+name|ArtVpath
+modifier|*
+name|vec
+parameter_list|)
+block|{
+name|g_printerr
+argument_list|(
+literal|"gimp_bezier_stroke_to_art_point: default implementation\n"
+argument_list|)
+expr_stmt|;
+return|return;
 block|}
 end_function
 
