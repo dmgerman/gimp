@@ -162,17 +162,6 @@ value|15
 end_define
 
 begin_define
-DECL|macro|SQR (x)
-define|#
-directive|define
-name|SQR
-parameter_list|(
-name|x
-parameter_list|)
-value|((x) * (x))
-end_define
-
-begin_define
 DECL|macro|EPSILON
 define|#
 directive|define

@@ -524,7 +524,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon28d950590103
+DECL|enum|__anon28b16f160103
 enum|enum
 block|{
 DECL|enumerator|TARGET_URI_LIST
@@ -7088,7 +7088,10 @@ argument_list|)
 expr_stmt|;
 name|gtk_label_set_justify
 argument_list|(
+name|GTK_LABEL
+argument_list|(
 name|label
+argument_list|)
 argument_list|,
 name|GTK_JUSTIFY_LEFT
 argument_list|)

@@ -33,17 +33,6 @@ directive|include
 file|"color_transfer.h"
 end_include
 
-begin_define
-DECL|macro|SQR (x)
-define|#
-directive|define
-name|SQR
-parameter_list|(
-name|x
-parameter_list|)
-value|((x) * (x))
-end_define
-
 begin_comment
 comment|/*  for lightening  */
 end_comment

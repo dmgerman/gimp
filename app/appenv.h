@@ -204,7 +204,7 @@ name|RINT
 parameter_list|(
 name|x
 parameter_list|)
-value|floor ((x)+0.5)
+value|floor ((x) + 0.5)
 end_define
 
 begin_endif
@@ -220,7 +220,7 @@ name|ROUND
 parameter_list|(
 name|x
 parameter_list|)
-value|((int) ((x)+0.5))
+value|((int) ((x) + 0.5))
 end_define
 
 begin_comment
@@ -235,7 +235,7 @@ name|SQR
 parameter_list|(
 name|x
 parameter_list|)
-value|((x)*(x))
+value|((x) * (x))
 end_define
 
 begin_comment
@@ -273,7 +273,7 @@ value|CLAMP(a,0,255)
 end_define
 
 begin_typedef
-DECL|enum|__anon2c6d07460103
+DECL|enum|__anon2998b4960103
 typedef|typedef
 enum|enum
 block|{

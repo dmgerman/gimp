@@ -162,6 +162,10 @@ begin_comment
 comment|/*  functions  */
 end_comment
 
+begin_comment
+comment|/*  FIXME: Lame - 1 hacks abound since the code assumes certain values for  *  the ORIENTATION_FOO constants.  */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -188,6 +192,8 @@ index|[
 name|options
 operator|->
 name|type_d
+operator|-
+literal|1
 index|]
 argument_list|)
 argument_list|,
@@ -337,6 +343,8 @@ index|[
 name|options
 operator|->
 name|type_d
+operator|-
+literal|1
 index|]
 argument_list|)
 argument_list|,
@@ -432,6 +440,8 @@ operator|->
 name|type_w
 index|[
 name|ORIENTATION_VERTICAL
+operator|-
+literal|1
 index|]
 argument_list|)
 argument_list|,
@@ -448,6 +458,8 @@ operator|->
 name|type_w
 index|[
 name|ORIENTATION_HORIZONTAL
+operator|-
+literal|1
 index|]
 argument_list|)
 argument_list|,
@@ -767,9 +779,11 @@ end_function
 begin_function
 name|Tool
 modifier|*
-DECL|function|tools_new_flip ()
+DECL|function|tools_new_flip (void)
 name|tools_new_flip
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|Tool
 modifier|*
@@ -873,7 +887,7 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|flip_tool_flip (GimpImage * gimage,GimpDrawable * drawable,TileManager * orig,int flip,OrientationType type)
+DECL|function|flip_tool_flip (GimpImage * gimage,GimpDrawable * drawable,TileManager * orig,int flip,InternalOrientationType type)
 name|flip_tool_flip
 parameter_list|(
 name|GimpImage
@@ -891,7 +905,7 @@ parameter_list|,
 name|int
 name|flip
 parameter_list|,
-name|OrientationType
+name|InternalOrientationType
 name|type
 parameter_list|)
 block|{

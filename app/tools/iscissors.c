@@ -603,17 +603,6 @@ comment|/*  functional defines  */
 end_comment
 
 begin_define
-DECL|macro|SQR (x)
-define|#
-directive|define
-name|SQR
-parameter_list|(
-name|x
-parameter_list|)
-value|((x) * (x))
-end_define
-
-begin_define
 DECL|macro|BILINEAR (jk,j1k,jk1,j1k1,dx,dy)
 define|#
 directive|define
