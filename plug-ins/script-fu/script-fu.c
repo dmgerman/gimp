@@ -823,7 +823,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Toolbox>/Xtns/Script-Fu/_Refresh Scripts"
+literal|"_Refresh Scripts"
 argument_list|)
 argument_list|,
 name|NULL
@@ -842,6 +842,16 @@ argument_list|,
 name|NULL
 argument_list|,
 name|script_fu_refresh_proc
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"script_fu_refresh"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Toolbox>/Xtns/Script-Fu"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
