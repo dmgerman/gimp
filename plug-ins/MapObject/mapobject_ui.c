@@ -5992,7 +5992,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_int_combo_box_set_active
+name|gimp_int_combo_box_connect
 argument_list|(
 name|GIMP_INT_COMBO_BOX
 argument_list|(
@@ -6005,13 +6005,6 @@ name|boxmap_id
 index|[
 name|i
 index|]
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|combo
-argument_list|,
-literal|"changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -6567,7 +6560,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_int_combo_box_set_active
+name|gimp_int_combo_box_connect
 argument_list|(
 name|GIMP_INT_COMBO_BOX
 argument_list|(
@@ -6580,13 +6573,6 @@ name|cylindermap_id
 index|[
 name|i
 index|]
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|combo
-argument_list|,
-literal|"changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

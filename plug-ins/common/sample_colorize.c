@@ -370,7 +370,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a62a320108
+DECL|struct|__anon29b448d80108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -439,7 +439,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a62a320208
+DECL|struct|__anon29b448d80208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -547,7 +547,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a62a320308
+DECL|struct|__anon29b448d80308
 block|{
 DECL|member|color
 name|guchar
@@ -576,7 +576,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a62a320408
+DECL|struct|__anon29b448d80408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -603,7 +603,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a62a320508
+DECL|struct|__anon29b448d80508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -6748,7 +6748,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_int_combo_box_set_active
+name|gimp_int_combo_box_connect
 argument_list|(
 name|GIMP_INT_COMBO_BOX
 argument_list|(
@@ -6758,13 +6758,6 @@ argument_list|,
 name|g_values
 operator|.
 name|dst_id
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|combo
-argument_list|,
-literal|"changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -6928,7 +6921,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_int_combo_box_set_active
+name|gimp_int_combo_box_connect
 argument_list|(
 name|GIMP_INT_COMBO_BOX
 argument_list|(
@@ -6938,13 +6931,6 @@ argument_list|,
 name|g_values
 operator|.
 name|sample_id
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|combo
-argument_list|,
-literal|"changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

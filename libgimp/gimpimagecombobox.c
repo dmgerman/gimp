@@ -81,7 +81,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_combo_box_model_add_none
+name|gimp_image_combo_box_model_add_empty
 parameter_list|(
 name|GtkListStore
 modifier|*
@@ -175,7 +175,7 @@ name|data
 argument_list|)
 expr_stmt|;
 else|else
-name|gimp_image_combo_box_model_add_none
+name|gimp_image_combo_box_model_add_empty
 argument_list|(
 name|GTK_LIST_STORE
 argument_list|(
@@ -389,8 +389,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_combo_box_model_add_none (GtkListStore * store)
-name|gimp_image_combo_box_model_add_none
+DECL|function|gimp_image_combo_box_model_add_empty (GtkListStore * store)
+name|gimp_image_combo_box_model_add_empty
 parameter_list|(
 name|GtkListStore
 modifier|*
@@ -424,7 +424,7 @@ name|GIMP_INT_STORE_LABEL
 argument_list|,
 name|_
 argument_list|(
-literal|"(None)"
+literal|"(Empty)"
 argument_list|)
 argument_list|,
 operator|-

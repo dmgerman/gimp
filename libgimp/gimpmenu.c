@@ -121,7 +121,7 @@ begin_function_decl
 specifier|static
 name|GtkWidget
 modifier|*
-name|gimp_menu_add_none
+name|gimp_menu_add_empty
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -385,7 +385,7 @@ name|k
 operator|==
 literal|0
 condition|)
-name|gimp_menu_add_none
+name|gimp_menu_add_empty
 argument_list|(
 name|menu
 argument_list|)
@@ -711,7 +711,7 @@ name|k
 operator|==
 literal|0
 condition|)
-name|gimp_menu_add_none
+name|gimp_menu_add_empty
 argument_list|(
 name|menu
 argument_list|)
@@ -1034,7 +1034,7 @@ name|k
 operator|==
 literal|0
 condition|)
-name|gimp_menu_add_none
+name|gimp_menu_add_empty
 argument_list|(
 name|menu
 argument_list|)
@@ -1486,7 +1486,7 @@ name|k
 operator|==
 literal|0
 condition|)
-name|gimp_menu_add_none
+name|gimp_menu_add_empty
 argument_list|(
 name|menu
 argument_list|)
@@ -1802,8 +1802,8 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_menu_add_none (GtkWidget * menu)
-name|gimp_menu_add_none
+DECL|function|gimp_menu_add_empty (GtkWidget * menu)
+name|gimp_menu_add_empty
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1820,7 +1820,7 @@ name|gtk_menu_item_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"(None)"
+literal|"(Empty)"
 argument_list|)
 argument_list|)
 expr_stmt|;

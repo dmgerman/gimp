@@ -89,7 +89,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2922d81a0103
+DECL|enum|__anon2908f1fa0103
 block|{
 DECL|enumerator|LIC_HUE
 name|LIC_HUE
@@ -137,7 +137,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2922d81a0208
+DECL|struct|__anon2908f1fa0208
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -444,9 +444,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|peekmap (guchar * image,gint x,gint y)
+DECL|function|peekmap (const guchar * image,gint x,gint y)
 name|peekmap
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|image
@@ -549,9 +550,10 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|gradx (guchar * image,gint x,gint y)
+DECL|function|gradx (const guchar * image,gint x,gint y)
 name|gradx
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|image
@@ -679,9 +681,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|grady (guchar * image,gint x,gint y)
+DECL|function|grady (const guchar * image,gint x,gint y)
 name|grady
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|image
@@ -1941,6 +1944,8 @@ name|color_hsl
 decl_stmt|;
 name|gdouble
 name|val
+init|=
+literal|0.0
 decl_stmt|;
 name|glong
 name|maxc
@@ -2178,13 +2183,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|compute_lic (GimpDrawable * drawable,guchar * scalarfield,gboolean rotate)
+DECL|function|compute_lic (GimpDrawable * drawable,const guchar * scalarfield,gboolean rotate)
 name|compute_lic
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|scalarfield
@@ -2487,6 +2493,8 @@ decl_stmt|;
 name|guchar
 modifier|*
 name|scalarfield
+init|=
+name|NULL
 decl_stmt|;
 comment|/* Get some useful info on the input drawable */
 comment|/* ========================================== */
@@ -2722,7 +2730,7 @@ end_comment
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|effect_image_constrain (gint32 image_id,gint32 drawable_id,gpointer data)
 name|effect_image_constrain
 parameter_list|(
@@ -2736,44 +2744,12 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-if|if
-condition|(
-name|drawable_id
-operator|==
-operator|-
-literal|1
-condition|)
-return|return
-name|TRUE
-return|;
 return|return
 name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable_id
 argument_list|)
 return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|effect_image_callback (gint32 id,gpointer data)
-name|effect_image_callback
-parameter_list|(
-name|gint32
-name|id
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|licvals
-operator|.
-name|effect_image_id
-operator|=
-name|id
-expr_stmt|;
 block|}
 end_function
 
@@ -2812,11 +2788,7 @@ name|table
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|option_menu
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|menu
+name|combo
 decl_stmt|;
 name|GtkObject
 modifier|*
@@ -3234,34 +3206,35 @@ argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
-name|option_menu
+name|combo
 operator|=
-name|gtk_option_menu_new
-argument_list|()
-expr_stmt|;
-name|menu
-operator|=
-name|gimp_drawable_menu_new
+name|gimp_drawable_combo_box_new
 argument_list|(
 name|effect_image_constrain
 argument_list|,
-name|effect_image_callback
-argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_int_combo_box_connect
+argument_list|(
+name|GIMP_INT_COMBO_BOX
+argument_list|(
+name|combo
+argument_list|)
 argument_list|,
 name|licvals
 operator|.
 name|effect_image_id
-argument_list|)
-expr_stmt|;
-name|gtk_option_menu_set_menu
+argument_list|,
+name|G_CALLBACK
 argument_list|(
-name|GTK_OPTION_MENU
-argument_list|(
-name|option_menu
+name|gimp_int_combo_box_get_active
 argument_list|)
 argument_list|,
-name|menu
+operator|&
+name|licvals
+operator|.
+name|effect_image_id
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
@@ -3284,7 +3257,7 @@ literal|1.0
 argument_list|,
 literal|0.5
 argument_list|,
-name|option_menu
+name|combo
 argument_list|,
 literal|2
 argument_list|,

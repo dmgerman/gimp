@@ -243,6 +243,26 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gulong
+name|gimp_int_combo_box_connect
+parameter_list|(
+name|GimpIntComboBox
+modifier|*
+name|combo_box
+parameter_list|,
+name|gint
+name|value
+parameter_list|,
+name|GCallback
+name|callback
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro
