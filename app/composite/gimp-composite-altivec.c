@@ -9,12 +9,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|ARCH_PPC
-end_ifdef
-
 begin_include
 include|#
 directive|include
@@ -50,6 +44,12 @@ include|#
 directive|include
 file|"gimp-composite-altivec.h"
 end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|ARCH_PPC
+end_ifdef
 
 begin_if
 if|#
