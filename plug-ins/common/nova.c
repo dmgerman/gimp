@@ -155,7 +155,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293583dc0108
+DECL|struct|__anon2986a2a10108
 block|{
 DECL|member|xcenter
 name|gint
@@ -190,7 +190,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293583dc0208
+DECL|struct|__anon2986a2a10208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -309,7 +309,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|nova_dialog
 parameter_list|(
 name|GimpDrawable
@@ -391,7 +391,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|nova_center_preview_expose
 parameter_list|(
 name|GtkWidget
@@ -410,7 +410,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|nova_center_preview_events
 parameter_list|(
 name|GtkWidget
@@ -1014,7 +1014,7 @@ end_comment
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|nova_dialog (GimpDrawable * drawable)
 name|nova_dialog
 parameter_list|(
@@ -1223,6 +1223,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+comment|/* Color */
 if|if
 condition|(
 name|gimp_drawable_is_rgb
@@ -1315,6 +1316,7 @@ name|drawable
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* Radius */
 name|adj
 operator|=
 name|gimp_scale_entry_new
@@ -1393,6 +1395,7 @@ argument_list|,
 name|drawable
 argument_list|)
 expr_stmt|;
+comment|/* Number of spokes */
 name|adj
 operator|=
 name|gimp_scale_entry_new
@@ -1471,6 +1474,7 @@ argument_list|,
 name|drawable
 argument_list|)
 expr_stmt|;
+comment|/* Randomness of hue */
 if|if
 condition|(
 name|gimp_drawable_is_rgb
@@ -2829,7 +2833,7 @@ end_comment
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|nova_center_preview_expose (GtkWidget * widget,GdkEvent * event,gpointer data)
 name|nova_center_preview_expose
 parameter_list|(
@@ -2868,7 +2872,7 @@ end_comment
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|nova_center_preview_events (GtkWidget * widget,GdkEvent * event,gpointer data)
 name|nova_center_preview_events
 parameter_list|(
@@ -3207,6 +3211,8 @@ decl_stmt|,
 name|w1
 decl_stmt|,
 name|c
+decl_stmt|,
+name|t
 decl_stmt|;
 name|gdouble
 modifier|*
@@ -3725,7 +3731,7 @@ name|v
 argument_list|)
 expr_stmt|;
 comment|/* This algorithm is still under construction. */
-name|c
+name|t
 operator|=
 operator|(
 name|atan2
@@ -3755,10 +3761,10 @@ name|gint
 operator|)
 name|floor
 argument_list|(
-name|c
+name|t
 argument_list|)
 expr_stmt|;
-name|c
+name|t
 operator|-=
 name|i
 expr_stmt|;
@@ -3778,7 +3784,7 @@ operator|*
 operator|(
 literal|1
 operator|-
-name|c
+name|t
 operator|)
 operator|+
 name|spoke
@@ -3794,7 +3800,7 @@ operator|.
 name|nspoke
 index|]
 operator|*
-name|c
+name|t
 expr_stmt|;
 name|w1
 operator|=
@@ -3899,7 +3905,7 @@ operator|*
 operator|(
 literal|1.0
 operator|-
-name|c
+name|t
 operator|)
 operator|+
 operator|(
@@ -3920,7 +3926,7 @@ index|]
 operator|.
 name|r
 operator|*
-name|c
+name|t
 expr_stmt|;
 if|if
 condition|(
@@ -4021,7 +4027,7 @@ operator|*
 operator|(
 literal|1.0
 operator|-
-name|c
+name|t
 operator|)
 operator|+
 operator|(
@@ -4042,7 +4048,7 @@ index|]
 operator|.
 name|g
 operator|*
-name|c
+name|t
 expr_stmt|;
 if|if
 condition|(
@@ -4136,7 +4142,7 @@ operator|*
 operator|(
 literal|1.0
 operator|-
-name|c
+name|t
 operator|)
 operator|+
 operator|(
@@ -4157,7 +4163,7 @@ index|]
 operator|.
 name|b
 operator|*
-name|c
+name|t
 expr_stmt|;
 if|if
 condition|(
@@ -4271,7 +4277,9 @@ name|preview
 argument_list|,
 name|row
 argument_list|,
-name|y2
+name|preview
+operator|->
+name|width
 argument_list|,
 name|dest_row
 argument_list|)
@@ -4439,7 +4447,7 @@ name|v
 argument_list|)
 expr_stmt|;
 comment|/* This algorithm is still under construction. */
-name|c
+name|t
 operator|=
 operator|(
 name|atan2
@@ -4469,10 +4477,10 @@ name|gint
 operator|)
 name|floor
 argument_list|(
-name|c
+name|t
 argument_list|)
 expr_stmt|;
-name|c
+name|t
 operator|-=
 name|i
 expr_stmt|;
@@ -4492,7 +4500,7 @@ operator|*
 operator|(
 literal|1
 operator|-
-name|c
+name|t
 operator|)
 operator|+
 name|spoke
@@ -4508,7 +4516,7 @@ operator|.
 name|nspoke
 index|]
 operator|*
-name|c
+name|t
 expr_stmt|;
 name|w1
 operator|=
@@ -4624,7 +4632,7 @@ operator|*
 operator|(
 literal|1.0
 operator|-
-name|c
+name|t
 operator|)
 operator|+
 operator|(
@@ -4645,7 +4653,7 @@ index|]
 operator|.
 name|r
 operator|*
-name|c
+name|t
 expr_stmt|;
 if|if
 condition|(
@@ -4746,7 +4754,7 @@ operator|*
 operator|(
 literal|1.0
 operator|-
-name|c
+name|t
 operator|)
 operator|+
 operator|(
@@ -4767,7 +4775,7 @@ index|]
 operator|.
 name|r
 operator|*
-name|c
+name|t
 expr_stmt|;
 if|if
 condition|(
@@ -4861,7 +4869,7 @@ operator|*
 operator|(
 literal|1.0
 operator|-
-name|c
+name|t
 operator|)
 operator|+
 operator|(
@@ -4882,7 +4890,7 @@ index|]
 operator|.
 name|g
 operator|*
-name|c
+name|t
 expr_stmt|;
 if|if
 condition|(
@@ -4976,7 +4984,7 @@ operator|*
 operator|(
 literal|1.0
 operator|-
-name|c
+name|t
 operator|)
 operator|+
 operator|(
@@ -4997,7 +5005,7 @@ index|]
 operator|.
 name|b
 operator|*
-name|c
+name|t
 expr_stmt|;
 if|if
 condition|(
