@@ -696,7 +696,8 @@ argument_list|,
 name|newtextvalue
 argument_list|)
 expr_stmt|;
-comment|//gtk_entry_set_position( GTK_ENTRY(widget), i);  //doesn't seem to work
+comment|/* gtk_entry_set_position( GTK_ENTRY(widget), i); */
+comment|/* doesn't seem to work */
 comment|/* unblock signal handler */
 name|gtk_signal_handler_unblock_by_data
 argument_list|(

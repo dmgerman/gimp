@@ -558,7 +558,7 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-comment|//	new_value = atod(gtk_entry_get_text(GTK_ENTRY(widget)));
+comment|/*	new_value = atod(gtk_entry_get_text(GTK_ENTRY(widget))); */
 name|textvalue
 operator|=
 name|gtk_entry_get_text
@@ -750,7 +750,8 @@ argument_list|,
 name|newtextvalue
 argument_list|)
 expr_stmt|;
-comment|//gtk_entry_set_position( GTK_ENTRY(widget), i);  //doesn't seem to work
+comment|/* gtk_entry_set_position( GTK_ENTRY(widget), i); */
+comment|/* doesn't seem to work */
 comment|/* unblock signal handler */
 name|gtk_signal_handler_unblock_by_data
 argument_list|(
@@ -762,8 +763,8 @@ argument_list|,
 name|value
 argument_list|)
 expr_stmt|;
-comment|//	g_print(newtextvalue);
-comment|//	g_print("\n");
+comment|/*	g_print(newtextvalue); */
+comment|/*	g_print("\n"); */
 comment|/* set the adjustment thingy */
 name|new_value
 operator|=
@@ -772,7 +773,7 @@ argument_list|(
 name|newtextvalue
 argument_list|)
 expr_stmt|;
-comment|//	g_print("%e.", new_value);
+comment|/*	g_print("%e.", new_value); */
 comment|/* set the new value */
 if|if
 condition|(

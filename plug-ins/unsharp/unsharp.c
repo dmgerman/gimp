@@ -64,7 +64,7 @@ comment|/* to show both pretty unoptimized code and ugly optimized code blocks  
 end_comment
 
 begin_comment
-comment|//#define READABLE_CODE
+comment|/* #define READABLE_CODE */
 end_comment
 
 begin_comment
@@ -72,7 +72,7 @@ comment|/* uncomment this line to get a rough feel of how long the    plug-in ta
 end_comment
 
 begin_comment
-comment|//#define TIMER
+comment|/* #define TIMER */
 end_comment
 
 begin_ifdef
@@ -127,7 +127,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|struct|__anon28a0baa20108
+DECL|struct|__anon2945f2300108
 typedef|typedef
 struct|struct
 block|{
@@ -150,7 +150,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28a0baa20208
+DECL|struct|__anon2945f2300208
 typedef|typedef
 struct|struct
 block|{
@@ -655,7 +655,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|//static UnsharpMaskInterface umint = { FALSE };
+comment|/* static UnsharpMaskInterface umint = { FALSE }; */
 end_comment
 
 begin_comment
@@ -1075,7 +1075,7 @@ operator|.
 name|amount
 argument_list|)
 expr_stmt|;
-comment|//	values[0].data.d_status = status;
+comment|/* values[0].data.d_status = status; */
 name|gimp_displays_flush
 argument_list|()
 expr_stmt|;
@@ -1432,7 +1432,7 @@ name|row
 decl_stmt|,
 name|col
 decl_stmt|;
-comment|//these are counters for loops
+comment|/* these are counters for loops */
 comment|/* these are used for the merging step */
 name|gint
 name|threshold
@@ -2141,9 +2141,7 @@ decl_stmt|;
 name|gint
 name|row
 decl_stmt|;
-comment|// this is to take care cases in which the matrix can go over
-comment|// both edges at once.  It's not efficient, but this can only
-comment|// happen in small pictures anyway.
+comment|/* this is to take care cases in which the matrix can go over 	 * both edges at once.  It's not efficient, but this can only 	 * happen in small pictures anyway. 	 */
 if|if
 condition|(
 name|cmatrix_length
@@ -2169,7 +2167,7 @@ name|scale
 operator|=
 literal|0
 expr_stmt|;
-comment|// find the scale factor
+comment|/* find the scale factor */
 for|for
 control|(
 name|j
@@ -2184,7 +2182,7 @@ name|j
 operator|++
 control|)
 block|{
-comment|// if the index is in bounds, add it to the scale counter
+comment|/* if the index is in bounds, add it to the scale counter */
 if|if
 condition|(
 operator|(
@@ -2320,8 +2318,8 @@ block|}
 block|}
 else|else
 block|{
-comment|// when the cmatrix is smaller than row length
-comment|// for the edge condition, we only use available info, and scale to one
+comment|/* when the cmatrix is smaller than row length */
+comment|/* for the edge condition, we only use available info, and scale to one */
 for|for
 control|(
 name|row
@@ -2338,7 +2336,7 @@ name|row
 operator|++
 control|)
 block|{
-comment|// find scale factor
+comment|/* find scale factor */
 name|scale
 operator|=
 literal|0
@@ -2449,7 +2447,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|// go through each pixel in each col
+comment|/* go through each pixel in each col */
 for|for
 control|(
 init|;
@@ -2541,7 +2539,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|// for the edge condition , we only use available info, and scale to one
+comment|/* for the edge condition , we only use available info, and scale to one */
 for|for
 control|(
 init|;
@@ -2553,7 +2551,7 @@ name|row
 operator|++
 control|)
 block|{
-comment|// find scale factor
+comment|/* find scale factor */
 name|scale
 operator|=
 literal|0
@@ -2720,9 +2718,7 @@ name|gdouble
 modifier|*
 name|ctable_p
 decl_stmt|;
-comment|// this first block is the same as the non-optimized version --
-comment|// it is only used for very small pictures, so speed isn't a
-comment|// big concern.
+comment|/* this first block is the same as the non-optimized version -- 	 * it is only used for very small pictures, so speed isn't a 	 * big concern. 	 */
 if|if
 condition|(
 name|cmatrix_length
@@ -2748,7 +2744,7 @@ name|scale
 operator|=
 literal|0
 expr_stmt|;
-comment|// find the scale factor
+comment|/* find the scale factor */
 for|for
 control|(
 name|j
@@ -2763,7 +2759,7 @@ name|j
 operator|++
 control|)
 block|{
-comment|// if the index is in bounds, add it to the scale counter
+comment|/* if the index is in bounds, add it to the scale counter */
 if|if
 condition|(
 operator|(
@@ -2899,7 +2895,7 @@ block|}
 block|}
 else|else
 block|{
-comment|// for the edge condition, we only use available info and scale to one
+comment|/* for the edge condition, we only use available info and scale to one */
 for|for
 control|(
 name|row
@@ -2914,7 +2910,7 @@ name|row
 operator|++
 control|)
 block|{
-comment|// find scale factor
+comment|/* find scale factor */
 name|scale
 operator|=
 literal|0
@@ -3019,7 +3015,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|// go through each pixel in each col
+comment|/* go through each pixel in each col */
 name|dest_col_p
 operator|=
 name|dest_col
@@ -3132,7 +3128,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|// for the edge condition , we only use available info, and scale to one
+comment|/* for the edge condition , we only use available info, and scale to one */
 for|for
 control|(
 init|;
@@ -3144,7 +3140,7 @@ name|row
 operator|++
 control|)
 block|{
-comment|// find scale factor
+comment|/* find scale factor */
 name|scale
 operator|=
 literal|0
@@ -3989,7 +3985,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|//Make a 3x3 table in mainbox
+comment|/* Make a 3x3 table in mainbox */
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -4107,7 +4103,7 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-comment|// Make OK button
+comment|/* Make OK button */
 name|button
 operator|=
 name|gtk_button_new_with_label
@@ -4170,7 +4166,7 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
-comment|// Make Cancel button
+comment|/* Make Cancel button */
 name|button
 operator|=
 name|gtk_button_new_with_label

@@ -34,7 +34,7 @@ file|<gtk/gtk.h>
 end_include
 
 begin_typedef
-DECL|struct|__anon2ba8d16b0108
+DECL|struct|__anon2abe13e50108
 typedef|typedef
 struct|struct
 block|{
@@ -181,11 +181,11 @@ begin_comment
 comment|/* --- implement main (), provided by libgimp --- */
 end_comment
 
-begin_expr_stmt
+begin_macro
+DECL|function|MAIN ()
 name|MAIN
 argument_list|()
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_comment
 comment|/* --- functions --- */
@@ -194,7 +194,6 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|query (void)
 name|query
 parameter_list|(
 name|void
@@ -423,6 +422,14 @@ name|data
 operator|.
 name|d_int32
 decl_stmt|;
+name|Parasite
+modifier|*
+name|parasite
+decl_stmt|;
+name|gchar
+modifier|*
+name|x
+decl_stmt|;
 name|GDrawableType
 name|drawable_type
 init|=
@@ -435,14 +442,7 @@ name|Config
 name|config
 init|=
 block|{
-name|param
-index|[
-literal|3
-index|]
-operator|.
-name|data
-operator|.
-name|d_string
+name|NULL
 block|,
 literal|"gimp_image"
 block|,
@@ -454,6 +454,28 @@ name|TRUE
 block|,
 name|TRUE
 block|,
+name|FALSE
+block|,
+literal|100.0
+block|,       }
+decl_stmt|;
+name|config
+operator|.
+name|file_name
+operator|=
+name|param
+index|[
+literal|3
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+expr_stmt|;
+name|config
+operator|.
+name|alpha
+operator|=
 operator|(
 name|drawable_type
 operator|==
@@ -467,18 +489,7 @@ name|drawable_type
 operator|==
 name|INDEXEDA_IMAGE
 operator|)
-block|,
-literal|100.0
-block|,       }
-decl_stmt|;
-name|Parasite
-modifier|*
-name|parasite
-decl_stmt|;
-name|gchar
-modifier|*
-name|x
-decl_stmt|;
+expr_stmt|;
 name|parasite
 operator|=
 name|gimp_image_find_parasite
