@@ -6585,11 +6585,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_warning
-argument_list|(
-literal|"Tried to remove override-cursor from un-overridden gdisp."
-argument_list|)
-expr_stmt|;
+comment|/*      g_warning ("Tried to remove override-cursor from un-overridden gdisp."); */
 block|}
 block|}
 end_function
@@ -8811,13 +8807,6 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gdisplay_format_title
-argument_list|(
-name|gimage
-argument_list|,
-name|title
-argument_list|)
-expr_stmt|;
 name|instance
 operator|=
 name|gimage
@@ -8845,6 +8834,18 @@ operator|->
 name|instance
 operator|=
 name|instance
+expr_stmt|;
+name|gdisplay_format_title
+argument_list|(
+name|gimage
+argument_list|,
+name|title
+argument_list|)
+expr_stmt|;
+name|gdisplays_update_title
+argument_list|(
+name|gimage
+argument_list|)
 expr_stmt|;
 name|gdisplay_expose_full
 argument_list|(

@@ -183,7 +183,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ea42370103
+DECL|enum|__anon2ae8ccb50103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -8614,6 +8614,7 @@ name|i
 operator|!=
 literal|0
 condition|)
+block|{
 name|i
 operator|=
 sizeof|sizeof
@@ -8754,6 +8755,7 @@ operator|+=
 name|bytes
 expr_stmt|;
 comment|/* GUTS END */
+block|}
 block|}
 comment|/* BODY */
 name|mask_ip
@@ -9156,6 +9158,7 @@ name|i
 operator|!=
 literal|0
 condition|)
+block|{
 name|i
 operator|=
 sizeof|sizeof
@@ -9298,6 +9301,7 @@ operator|+=
 name|bytes
 expr_stmt|;
 comment|/* GUTS END */
+block|}
 block|}
 comment|/* BODY */
 name|mask_ip

@@ -8,7 +8,7 @@ comment|/* JPEG loading and saving file filter for the GIMP  *  -Peter Mattis  *
 end_comment
 
 begin_comment
-comment|/* 11-JAN-99 - Added support for JPEG comments and Progressive saves.  *  -pete whiting<pwhiting@sprint.net>  *  * Comments of size up to 32k can be stored in the header of jpeg  * files.  (They are not compressed.)  The JPEG specs and libraries  * support the storing of multiple comments.  The behavior of this  * code is to merge all comments in a loading image into a single  * comment (putting \n between each) and attach that string as a  * parasite - gimp-comment - to the image.  When saving, the image is  * checked to see if it has the gimp-comment parasite - if so, that is  * used as the default comment in the save dialog.  Further, the other  * jpeg parameters (quaility, smoothing, compression and progressive)  * are attached to the image as a parasite.  This allows the  * parameters to remain consistent between saves.  I was not able to  * figure out how to determine the quaility, smoothing or compression  * values of an image as it is being loaded, but the code is there to  * support it if anyone knows how.  Progressive mode is a method of  * saving the image such that as a browser (or other app supporting  * progressive loads - gimp doesn't) loads the image it first gets a  * low res version displayed and then the image is progressively  * enhanced until you get the final version.  It doesn't add any size  * to the image - the only draw back is some might find it annoying.  */
+comment|/* 11-JAN-99 - Added support for JPEG comments and Progressive saves.  *  -pete whiting<pwhiting@sprint.net>  *  * Comments of size up to 32k can be stored in the header of jpeg  * files.  (They are not compressed.)  The JPEG specs and libraries  * support the storing of multiple comments.  The behavior of this  * code is to merge all comments in a loading image into a single  * comment (putting \n between each) and attach that string as a  * parasite - gimp-comment - to the image.  When saving, the image is  * checked to see if it has the gimp-comment parasite - if so, that is  * used as the default comment in the save dialog.  Further, the other  * jpeg parameters (quaility, smoothing, compression and progressive)  * are attached to the image as a parasite.  This allows the  * parameters to remain consistent between saves.  I was not able to  * figure out how to determine the quaility, smoothing or compression  * values of an image as it is being loaded, but the code is there to  * support it if anyone knows how.  Progressive mode is a method of  * saving the image such that as a browser (or other app supporting  * progressive loads - gimp doesn't) loads the image it first gets a  * low res version displayed and then the image is progressively  * enhanced until you get the final version.  It doesn't add any size  * to the image (actually it often results in smaller file size) - the  * only draw backs are that progressive jpegs are not supported by some  * older viewers/browsers, and some might find it annoying.  */
 end_comment
 
 begin_include
@@ -136,7 +136,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275ce6e50108
+DECL|struct|__anon2c81e7b50108
 block|{
 DECL|member|quality
 name|gdouble
@@ -163,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275ce6e50208
+DECL|struct|__anon2c81e7b50208
 block|{
 DECL|member|run
 name|gint
