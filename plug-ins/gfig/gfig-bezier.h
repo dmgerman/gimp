@@ -46,17 +46,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|d_update_bezier
-parameter_list|(
-name|GdkPoint
-modifier|*
-name|pnt
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|d_bezier_start
 parameter_list|(
 name|GdkPoint

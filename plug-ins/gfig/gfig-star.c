@@ -127,6 +127,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|d_update_star
+parameter_list|(
+name|GdkPoint
+modifier|*
+name|pnt
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_function
 name|void
 DECL|function|tool_options_star (GtkWidget * notebook)
@@ -1386,10 +1398,17 @@ name|copyfunc
 operator|=
 name|d_copy_star
 expr_stmt|;
+name|class
+operator|->
+name|update
+operator|=
+name|d_update_star
+expr_stmt|;
 block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|d_update_star (GdkPoint * pnt)
 name|d_update_star

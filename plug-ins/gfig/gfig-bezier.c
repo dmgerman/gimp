@@ -259,6 +259,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|d_update_bezier
+parameter_list|(
+name|GdkPoint
+modifier|*
+name|pnt
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_function
 specifier|static
 name|void
@@ -1515,10 +1527,17 @@ name|copyfunc
 operator|=
 name|d_copy_bezier
 expr_stmt|;
+name|class
+operator|->
+name|update
+operator|=
+name|d_update_bezier
+expr_stmt|;
 block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|d_update_bezier (GdkPoint * pnt)
 name|d_update_bezier

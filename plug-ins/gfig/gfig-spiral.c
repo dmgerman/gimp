@@ -118,6 +118,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|d_update_spiral
+parameter_list|(
+name|GdkPoint
+modifier|*
+name|pnt
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_decl_stmt
 DECL|variable|spiral_num_turns
 specifier|static
@@ -1196,10 +1208,17 @@ name|copyfunc
 operator|=
 name|d_copy_spiral
 expr_stmt|;
+name|class
+operator|->
+name|update
+operator|=
+name|d_update_spiral
+expr_stmt|;
 block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|d_update_spiral (GdkPoint * pnt)
 name|d_update_spiral

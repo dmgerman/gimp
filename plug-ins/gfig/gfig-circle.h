@@ -27,17 +27,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|d_update_circle
-parameter_list|(
-name|GdkPoint
-modifier|*
-name|pnt
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|d_circle_start
 parameter_list|(
 name|GdkPoint

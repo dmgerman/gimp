@@ -88,7 +88,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2bb7540108
+DECL|struct|__anon2c64a0670108
 block|{
 DECL|member|type
 name|DobjType
@@ -100,6 +100,7 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
+comment|/* virtuals */
 DECL|member|drawfunc
 name|DobjFunc
 name|drawfunc
@@ -115,6 +116,18 @@ name|DobjGenFunc
 name|copyfunc
 decl_stmt|;
 comment|/* copy */
+DECL|member|update
+name|void
+function_decl|(
+modifier|*
+name|update
+function_decl|)
+parameter_list|(
+name|GdkPoint
+modifier|*
+name|pnt
+parameter_list|)
+function_decl|;
 DECL|typedef|GfigObjectClass
 block|}
 name|GfigObjectClass
@@ -404,6 +417,26 @@ name|void
 name|gfig_init_object_classes
 parameter_list|(
 name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|d_pnt_add_line
+parameter_list|(
+name|GfigObject
+modifier|*
+name|obj
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|,
+name|gint
+name|pos
 parameter_list|)
 function_decl|;
 end_function_decl

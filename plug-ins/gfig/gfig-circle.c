@@ -122,6 +122,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|d_update_circle
+parameter_list|(
+name|GdkPoint
+modifier|*
+name|pnt
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_function
 specifier|static
 name|gint
@@ -643,10 +655,17 @@ name|copyfunc
 operator|=
 name|d_copy_circle
 expr_stmt|;
+name|class
+operator|->
+name|update
+operator|=
+name|d_update_circle
+expr_stmt|;
 block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|d_update_circle (GdkPoint * pnt)
 name|d_update_circle

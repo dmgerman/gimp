@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gfig-poly.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -108,6 +102,18 @@ parameter_list|(
 name|GfigObject
 modifier|*
 name|obj
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|d_update_ellipse
+parameter_list|(
+name|GdkPoint
+modifier|*
+name|pnt
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -785,10 +791,17 @@ name|copyfunc
 operator|=
 name|d_copy_ellipse
 expr_stmt|;
+name|class
+operator|->
+name|update
+operator|=
+name|d_update_ellipse
+expr_stmt|;
 block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|d_update_ellipse (GdkPoint * pnt)
 name|d_update_ellipse

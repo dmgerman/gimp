@@ -38,17 +38,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|d_update_star
-parameter_list|(
-name|GdkPoint
-modifier|*
-name|pnt
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|d_star_start
 parameter_list|(
 name|GdkPoint

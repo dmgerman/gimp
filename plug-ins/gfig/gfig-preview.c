@@ -1311,7 +1311,11 @@ condition|(
 name|obj_creating
 condition|)
 block|{
-name|object_update
+name|obj_creating
+operator|->
+name|class
+operator|->
+name|update
 argument_list|(
 operator|&
 name|point
