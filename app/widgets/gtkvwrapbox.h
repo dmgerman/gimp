@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gle/gtkwrapbox.h>
+file|"gtkwrapbox.h"
 end_include
 
 begin_ifdef

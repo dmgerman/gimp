@@ -6,7 +6,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<math.h>
+file|"config.h"
 end_include
 
 begin_include
@@ -20,7 +20,7 @@ comment|/* --- arguments --- */
 end_comment
 
 begin_enum
-DECL|enum|__anon2b41c4200103
+DECL|enum|__anon278d0ccc0103
 enum|enum
 block|{
 DECL|enumerator|ARG_0
@@ -54,7 +54,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2b41c4200203
+DECL|enum|__anon278d0ccc0203
 enum|enum
 block|{
 DECL|enumerator|CHILD_PROP_0
