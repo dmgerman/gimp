@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<signal.h>
 end_include
 
@@ -1382,7 +1388,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"pipe() failed: Unable to start Plug-In \"%s\"\n(%s)"
+literal|"Unable to run Plug-In \"%s\"\n(%s)\n\npipe() failed: %s"
 argument_list|,
 name|plug_in
 operator|->
@@ -1391,6 +1397,11 @@ argument_list|,
 name|plug_in
 operator|->
 name|prog
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1882,7 +1893,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Unable to run Plug-In: \"%s\"\n(%s)\n%s"
+literal|"Unable to run Plug-In \"%s\"\n(%s)\n\n%s"
 argument_list|,
 name|plug_in
 operator|->

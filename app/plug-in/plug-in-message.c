@@ -348,10 +348,18 @@ break|break;
 case|case
 name|GP_CONFIG
 case|:
-name|g_warning
+name|g_message
 argument_list|(
-literal|"plug_in_handle_message: "
-literal|"received a config message (should not happen)"
+literal|"Plug-In \"%s\"\n(%s)\n\n"
+literal|"sent a CONFIG message (should not happen)"
+argument_list|,
+name|plug_in
+operator|->
+name|name
+argument_list|,
+name|plug_in
+operator|->
+name|prog
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -378,10 +386,18 @@ break|break;
 case|case
 name|GP_TILE_ACK
 case|:
-name|g_warning
+name|g_message
 argument_list|(
-literal|"plug_in_handle_message: "
-literal|"received a tile ack message (should not happen)"
+literal|"Plug-In \"%s\"\n(%s)\n\n"
+literal|"sent a TILE_ACK message (should not happen)"
+argument_list|,
+name|plug_in
+operator|->
+name|name
+argument_list|,
+name|plug_in
+operator|->
+name|prog
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -395,10 +411,18 @@ break|break;
 case|case
 name|GP_TILE_DATA
 case|:
-name|g_warning
+name|g_message
 argument_list|(
-literal|"plug_in_handle_message: "
-literal|"received a tile data message (should not happen)"
+literal|"Plug-In \"%s\"\n(%s)\n\n"
+literal|"sent a TILE_DATA message (should not happen)"
+argument_list|,
+name|plug_in
+operator|->
+name|name
+argument_list|,
+name|plug_in
+operator|->
+name|prog
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -438,10 +462,18 @@ break|break;
 case|case
 name|GP_TEMP_PROC_RUN
 case|:
-name|g_warning
+name|g_message
 argument_list|(
-literal|"plug_in_handle_message: "
-literal|"received a temp proc run message (should not happen)"
+literal|"Plug-In \"%s\"\n(%s)\n\n"
+literal|"sent a TEMP_PROC_RUN message (should not happen)"
+argument_list|,
+name|plug_in
+operator|->
+name|name
+argument_list|,
+name|plug_in
+operator|->
+name|prog
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -469,10 +501,18 @@ argument_list|)
 expr_stmt|;
 else|#
 directive|else
-name|g_warning
+name|g_message
 argument_list|(
-literal|"plug_in_handle_message: "
-literal|"received a temp proc return message (should not happen)"
+literal|"Plug-In \"%s\"\n(%s)\n\n"
+literal|"sent a TEMP_PROC_RETURN message (should not happen)"
+argument_list|,
+name|plug_in
+operator|->
+name|name
+argument_list|,
+name|plug_in
+operator|->
+name|prog
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -582,6 +622,10 @@ name|tile_info
 decl_stmt|;
 name|WireMessage
 name|msg
+decl_stmt|;
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 name|TileManager
 modifier|*
@@ -765,16 +809,8 @@ name|msg
 operator|.
 name|data
 expr_stmt|;
-if|if
-condition|(
-name|tile_info
-operator|->
-name|shadow
-condition|)
-name|tm
+name|drawable
 operator|=
-name|gimp_drawable_shadow
-argument_list|(
 operator|(
 name|GimpDrawable
 operator|*
@@ -788,39 +824,26 @@ argument_list|,
 name|tile_info
 operator|->
 name|drawable_ID
-argument_list|)
-argument_list|)
-expr_stmt|;
-else|else
-name|tm
-operator|=
-name|gimp_drawable_data
-argument_list|(
-operator|(
-name|GimpDrawable
-operator|*
-operator|)
-name|gimp_item_get_by_ID
-argument_list|(
-name|plug_in
-operator|->
-name|gimp
-argument_list|,
-name|tile_info
-operator|->
-name|drawable_ID
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 operator|!
-name|tm
+name|drawable
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
-literal|"plug-in requested invalid drawable (killing)"
+literal|"Plug-In \"%s\"\n(%s)\n\n"
+literal|"requested invalid drawable (killing)"
+argument_list|,
+name|plug_in
+operator|->
+name|name
+argument_list|,
+name|plug_in
+operator|->
+name|prog
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -832,6 +855,27 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
+if|if
+condition|(
+name|tile_info
+operator|->
+name|shadow
+condition|)
+name|tm
+operator|=
+name|gimp_drawable_shadow
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
+else|else
+name|tm
+operator|=
+name|gimp_drawable_data
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 name|tile
 operator|=
 name|tile_manager_get
@@ -853,9 +897,18 @@ operator|!
 name|tile
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
-literal|"plug-in requested invalid tile (killing)"
+literal|"Plug-In \"%s\"\n(%s)\n\n"
+literal|"requested invalid tile (killing)"
+argument_list|,
+name|plug_in
+operator|->
+name|name
+argument_list|,
+name|plug_in
+operator|->
+name|prog
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -963,16 +1016,8 @@ block|}
 else|else
 block|{
 comment|/*  this branch communicates with libgimp/gimptile.c:gimp_tile_get()  */
-if|if
-condition|(
-name|tile_req
-operator|->
-name|shadow
-condition|)
-name|tm
+name|drawable
 operator|=
-name|gimp_drawable_shadow
-argument_list|(
 operator|(
 name|GimpDrawable
 operator|*
@@ -986,39 +1031,26 @@ argument_list|,
 name|tile_req
 operator|->
 name|drawable_ID
-argument_list|)
-argument_list|)
-expr_stmt|;
-else|else
-name|tm
-operator|=
-name|gimp_drawable_data
-argument_list|(
-operator|(
-name|GimpDrawable
-operator|*
-operator|)
-name|gimp_item_get_by_ID
-argument_list|(
-name|plug_in
-operator|->
-name|gimp
-argument_list|,
-name|tile_req
-operator|->
-name|drawable_ID
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 operator|!
-name|tm
+name|drawable
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
-literal|"plug-in requested invalid drawable (killing)"
+literal|"Plug-In \"%s\"\n(%s)\n\n"
+literal|"requested invalid drawable (killing)"
+argument_list|,
+name|plug_in
+operator|->
+name|name
+argument_list|,
+name|plug_in
+operator|->
+name|prog
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -1030,6 +1062,27 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
+if|if
+condition|(
+name|tile_req
+operator|->
+name|shadow
+condition|)
+name|tm
+operator|=
+name|gimp_drawable_shadow
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
+else|else
+name|tm
+operator|=
+name|gimp_drawable_data
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 name|tile
 operator|=
 name|tile_manager_get
@@ -1051,9 +1104,18 @@ operator|!
 name|tile
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
-literal|"plug-in requested invalid tile (killing)"
+literal|"Plug-In \"%s\"\n(%s)\n\n"
+literal|"requested invalid tile (killing)"
+argument_list|,
+name|plug_in
+operator|->
+name|name
+argument_list|,
+name|plug_in
+operator|->
+name|prog
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -1376,7 +1438,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"WARNING: Plug-In '%s'\n\n(%s)\n\n"
+literal|"WARNING: Plug-In \"%s\"\n(%s)\n\n"
 literal|"called deprecated procedure '%s'.\n"
 literal|"It should call '%s' instead!"
 argument_list|,
@@ -1462,6 +1524,7 @@ block|{
 name|GPProcReturn
 name|proc_return
 decl_stmt|;
+comment|/*  Return the name we got called with, *not* proc_name, since        *  proc_name may have been remapped by gimp->procedural_compat_ht        */
 name|proc_return
 operator|.
 name|name
@@ -1913,11 +1976,19 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_warning
+name|g_message
 argument_list|(
-literal|"plug_in_handle_temp_proc_return: "
-literal|"received a temp_proc_return mesage while not running "
+literal|"Plug-In \"%s\"\n(%s)\n\n"
+literal|"sent a TEMP_PROC_RETURN message while not running "
 literal|"a temp proc (should not happen)"
+argument_list|,
+name|plug_in
+operator|->
+name|name
+argument_list|,
+name|plug_in
+operator|->
+name|prog
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -2039,7 +2110,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Plug-In \"%s\"\n(%s)\n"
+literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"attempted to install<Toolbox> procedure \"%s\" "
 literal|"which does not take the standard<Toolbox> Plug-In "
 literal|"args.\n"
@@ -2130,7 +2201,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Plug-In \"%s\"\n(%s)\n"
+literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"attempted to install<Image> procedure \"%s\" "
 literal|"which does not take the standard<Image> Plug-In "
 literal|"args.\n"
@@ -2221,7 +2292,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Plug-In \"%s\"\n(%s)\n"
+literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"attempted to install<Load> procedure \"%s\" "
 literal|"which does not take the standard<Load> Plug-In "
 literal|"args.\n"
@@ -2338,7 +2409,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Plug-In \"%s\"\n(%s)\n"
+literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"attempted to install<Save> procedure \"%s\" "
 literal|"which does not take the standard<Save> Plug-In "
 literal|"args.\n"
@@ -2364,7 +2435,7 @@ else|else
 block|{
 name|g_message
 argument_list|(
-literal|"Plug-In \"%s\"\n(%s)\n"
+literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"attempted to install procedure \"%s\" "
 literal|"in an invalid menu location.\n"
 literal|"Use either \"<Toolbox>\", \"<Image>\", "
@@ -2467,7 +2538,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Plug-In \"%s\"\n(%s)\n"
+literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"attempted to install procedure \"%s\" "
 literal|"which fails to comply with the array parameter "
 literal|"passing standard.  Argument %d is noncompliant."
@@ -2791,7 +2862,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Plug-In \"%s\"\n(%s)\n"
+literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"attempted to install a procedure with invalid UTF-8 strings."
 argument_list|,
 name|plug_in
@@ -3500,11 +3571,19 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_warning
+name|g_message
 argument_list|(
-literal|"plug_in_handle_extension_ack: "
-literal|"received an extension_ack message while not starting "
-literal|"an extension (should not happen)"
+literal|"Plug-In \"%s\"\n(%s)\n\n"
+literal|"sent an EXTENSION_ACK message while not being started "
+literal|"as extension (should not happen)"
+argument_list|,
+name|plug_in
+operator|->
+name|name
+argument_list|,
+name|plug_in
+operator|->
+name|prog
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -3548,11 +3627,19 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_warning
+name|g_message
 argument_list|(
-literal|"plug_in_handle_has_init: "
-literal|"received a has_init message while not in query() "
+literal|"Plug-In \"%s\"\n(%s)\n\n"
+literal|"sent an HAS_INIT message while not in query() "
 literal|"(should not happen)"
+argument_list|,
+name|plug_in
+operator|->
+name|name
+argument_list|,
+name|plug_in
+operator|->
+name|prog
 argument_list|)
 expr_stmt|;
 name|plug_in_close
