@@ -754,7 +754,7 @@ argument_list|)
 expr_stmt|;
 name|console
 operator|->
-name|filesel
+name|file_dialog
 operator|=
 name|NULL
 expr_stmt|;
@@ -785,13 +785,13 @@ if|if
 condition|(
 name|console
 operator|->
-name|filesel
+name|file_dialog
 condition|)
 name|gtk_widget_destroy
 argument_list|(
 name|console
 operator|->
-name|filesel
+name|file_dialog
 argument_list|)
 expr_stmt|;
 name|console
@@ -839,13 +839,13 @@ if|if
 condition|(
 name|console
 operator|->
-name|filesel
+name|file_dialog
 condition|)
 name|gtk_widget_destroy
 argument_list|(
 name|console
 operator|->
-name|filesel
+name|file_dialog
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_CLASS
@@ -1424,7 +1424,7 @@ if|if
 condition|(
 name|console
 operator|->
-name|filesel
+name|file_dialog
 condition|)
 block|{
 name|gtk_window_present
@@ -1433,7 +1433,7 @@ name|GTK_WINDOW
 argument_list|(
 name|console
 operator|->
-name|filesel
+name|file_dialog
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1441,7 +1441,7 @@ return|return;
 block|}
 name|console
 operator|->
-name|filesel
+name|file_dialog
 operator|=
 name|gtk_file_selection_new
 argument_list|(
@@ -1471,7 +1471,7 @@ name|G_OBJECT
 argument_list|(
 name|console
 operator|->
-name|filesel
+name|file_dialog
 argument_list|)
 argument_list|,
 operator|(
@@ -1481,7 +1481,7 @@ operator|)
 operator|&
 name|console
 operator|->
-name|filesel
+name|file_dialog
 argument_list|)
 expr_stmt|;
 name|filesel
@@ -1490,7 +1490,7 @@ name|GTK_FILE_SELECTION
 argument_list|(
 name|console
 operator|->
-name|filesel
+name|file_dialog
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_screen

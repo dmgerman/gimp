@@ -128,10 +128,10 @@ name|GtkWidget
 modifier|*
 name|save_button
 decl_stmt|;
-DECL|member|filesel
+DECL|member|file_dialog
 name|GtkWidget
 modifier|*
-name|filesel
+name|file_dialog
 decl_stmt|;
 DECL|member|save_selection
 name|gboolean

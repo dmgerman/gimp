@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0716d20103
+DECL|enum|__anon2af6a9dd0103
 block|{
 DECL|enumerator|DIR_CHANGED
 name|DIR_CHANGED
@@ -438,7 +438,7 @@ name|NULL
 expr_stmt|;
 name|editor
 operator|->
-name|filesel
+name|file_dialog
 operator|=
 name|NULL
 expr_stmt|;
@@ -1199,7 +1199,7 @@ if|if
 condition|(
 name|editor
 operator|->
-name|filesel
+name|file_dialog
 condition|)
 block|{
 name|gtk_window_present
@@ -1208,7 +1208,7 @@ name|GTK_WINDOW
 argument_list|(
 name|editor
 operator|->
-name|filesel
+name|file_dialog
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1308,7 +1308,7 @@ argument_list|)
 expr_stmt|;
 name|editor
 operator|->
-name|filesel
+name|file_dialog
 operator|=
 name|GTK_WIDGET
 argument_list|(
@@ -1328,7 +1328,7 @@ operator|)
 operator|&
 name|editor
 operator|->
-name|filesel
+name|file_dialog
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

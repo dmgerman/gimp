@@ -84,10 +84,10 @@ name|GtkWidget
 modifier|*
 name|view
 decl_stmt|;
-DECL|member|filesel
+DECL|member|file_dialog
 name|GtkWidget
 modifier|*
-name|filesel
+name|file_dialog
 decl_stmt|;
 block|}
 struct|;
