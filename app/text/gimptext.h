@@ -16,6 +16,12 @@ directive|define
 name|__GIMP_TEXT_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"core/gimpobject.h"
+end_include
+
 begin_define
 DECL|macro|GIMP_TYPE_TEXT
 define|#
@@ -94,7 +100,7 @@ struct|struct
 name|_GimpText
 block|{
 DECL|member|parent_instance
-name|GObject
+name|GimpObject
 name|parent_instance
 decl_stmt|;
 DECL|member|text
@@ -187,7 +193,7 @@ struct|struct
 name|_GimpTextClass
 block|{
 DECL|member|parent_class
-name|GObjectClass
+name|GimpObjectClass
 name|parent_class
 decl_stmt|;
 block|}
