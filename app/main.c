@@ -812,6 +812,13 @@ literal|0
 operator|)
 condition|)
 block|{
+name|argv
+index|[
+name|i
+index|]
+operator|=
+name|NULL
+expr_stmt|;
 if|if
 condition|(
 name|argc
