@@ -27,17 +27,6 @@ parameter_list|,
 name|GdkPixbuf
 modifier|*
 name|pixbuf
-parameter_list|,
-name|GtkRcStyle
-modifier|*
-name|dialog_style
-parameter_list|,
-name|GtkRcStyle
-modifier|*
-name|ruler_style
-parameter_list|,
-name|GCallback
-name|expose_callback
 parameter_list|)
 function_decl|;
 end_function_decl
