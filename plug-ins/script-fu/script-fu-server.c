@@ -353,7 +353,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c03d4a00108
+DECL|struct|__anon27783feb0108
 block|{
 DECL|member|command
 name|gchar
@@ -377,7 +377,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c03d4a00208
+DECL|struct|__anon27783feb0208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -2601,7 +2601,7 @@ name|gtk_widget_destroy
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|data
+name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
