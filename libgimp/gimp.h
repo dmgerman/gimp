@@ -61,13 +61,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/parasite.h"
+file|"libgimp/gimpparasite.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/parasiteP.h"
+file|"libgimp/gimpparasiteP.h"
 end_include
 
 begin_include
