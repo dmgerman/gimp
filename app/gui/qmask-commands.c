@@ -1077,11 +1077,6 @@ operator|->
 name|query_box
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|options
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
