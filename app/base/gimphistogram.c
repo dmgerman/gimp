@@ -9,23 +9,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|ENABLE_MP
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<pthread.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_include
 include|#
 directive|include
@@ -91,7 +74,8 @@ ifdef|#
 directive|ifdef
 name|ENABLE_MP
 DECL|member|mutex
-name|pthread_mutex_t
+name|GMutex
+modifier|*
 name|mutex
 decl_stmt|;
 DECL|member|num_slots
@@ -226,15 +210,12 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|ENABLE_MP
-name|pthread_mutex_init
-argument_list|(
-operator|&
 name|histogram
 operator|->
 name|mutex
-argument_list|,
-name|NULL
-argument_list|)
+operator|=
+name|g_mutex_new
+argument_list|()
 expr_stmt|;
 name|histogram
 operator|->
@@ -301,9 +282,8 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|ENABLE_MP
-name|pthread_mutex_destroy
+name|g_mutex_free
 argument_list|(
-operator|&
 name|histogram
 operator|->
 name|mutex
@@ -2136,9 +2116,8 @@ init|=
 literal|0
 decl_stmt|;
 comment|/* find an unused temporary slot to put our results in and lock it */
-name|pthread_mutex_lock
+name|g_mutex_lock
 argument_list|(
-operator|&
 name|histogram
 operator|->
 name|mutex
@@ -2174,9 +2153,8 @@ index|]
 operator|=
 literal|1
 expr_stmt|;
-name|pthread_mutex_unlock
+name|g_mutex_unlock
 argument_list|(
-operator|&
 name|histogram
 operator|->
 name|mutex
@@ -2976,9 +2954,8 @@ directive|ifdef
 name|ENABLE_MP
 comment|/* unlock this slot */
 comment|/* we shouldn't have to use mutex locks here */
-name|pthread_mutex_lock
+name|g_mutex_lock
 argument_list|(
-operator|&
 name|histogram
 operator|->
 name|mutex
@@ -2993,9 +2970,8 @@ index|]
 operator|=
 literal|0
 expr_stmt|;
-name|pthread_mutex_unlock
+name|g_mutex_unlock
 argument_list|(
-operator|&
 name|histogram
 operator|->
 name|mutex
