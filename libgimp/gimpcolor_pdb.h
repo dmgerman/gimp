@@ -191,6 +191,25 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_colorize
+parameter_list|(
+name|gint32
+name|drawable_ID
+parameter_list|,
+name|gdouble
+name|hue
+parameter_list|,
+name|gdouble
+name|saturation
+parameter_list|,
+name|gdouble
+name|lightness
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_histogram
 parameter_list|(
 name|gint32

@@ -504,7 +504,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* 407 procedures registered total */
+comment|/* 408 procedures registered total */
 end_comment
 
 begin_function
@@ -650,7 +650,7 @@ argument_list|(
 literal|"Context"
 argument_list|)
 argument_list|,
-literal|0.093
+literal|0.096
 argument_list|)
 expr_stmt|;
 name|register_context_procs
@@ -670,7 +670,7 @@ argument_list|(
 literal|"Convert"
 argument_list|)
 argument_list|,
-literal|0.147
+literal|0.15
 argument_list|)
 expr_stmt|;
 name|register_convert_procs
@@ -690,7 +690,7 @@ argument_list|(
 literal|"Display procedures"
 argument_list|)
 argument_list|,
-literal|0.155
+literal|0.157
 argument_list|)
 expr_stmt|;
 name|register_display_procs
@@ -710,7 +710,7 @@ argument_list|(
 literal|"Drawable procedures"
 argument_list|)
 argument_list|,
-literal|0.165
+literal|0.167
 argument_list|)
 expr_stmt|;
 name|register_drawable_procs
@@ -730,7 +730,7 @@ argument_list|(
 literal|"Edit procedures"
 argument_list|)
 argument_list|,
-literal|0.243
+literal|0.245
 argument_list|)
 expr_stmt|;
 name|register_edit_procs
@@ -750,7 +750,7 @@ argument_list|(
 literal|"File Operations"
 argument_list|)
 argument_list|,
-literal|0.263
+literal|0.265
 argument_list|)
 expr_stmt|;
 name|register_fileops_procs
@@ -770,7 +770,7 @@ argument_list|(
 literal|"Floating selections"
 argument_list|)
 argument_list|,
-literal|0.285
+literal|0.287
 argument_list|)
 expr_stmt|;
 name|register_floating_sel_procs
@@ -790,7 +790,7 @@ argument_list|(
 literal|"Font UI"
 argument_list|)
 argument_list|,
-literal|0.3
+literal|0.301
 argument_list|)
 expr_stmt|;
 name|register_font_select_procs
@@ -810,7 +810,7 @@ argument_list|(
 literal|"Fonts"
 argument_list|)
 argument_list|,
-literal|0.307
+literal|0.309
 argument_list|)
 expr_stmt|;
 name|register_fonts_procs
@@ -830,7 +830,7 @@ argument_list|(
 literal|"Gimprc procedures"
 argument_list|)
 argument_list|,
-literal|0.312
+literal|0.314
 argument_list|)
 expr_stmt|;
 name|register_gimprc_procs
@@ -850,7 +850,7 @@ argument_list|(
 literal|"Gradient"
 argument_list|)
 argument_list|,
-literal|0.327
+literal|0.328
 argument_list|)
 expr_stmt|;
 name|register_gradient_procs
@@ -870,7 +870,7 @@ argument_list|(
 literal|"Gradient UI"
 argument_list|)
 argument_list|,
-literal|0.393
+literal|0.395
 argument_list|)
 expr_stmt|;
 name|register_gradient_select_procs
@@ -890,7 +890,7 @@ argument_list|(
 literal|"Gradients"
 argument_list|)
 argument_list|,
-literal|0.4
+literal|0.402
 argument_list|)
 expr_stmt|;
 name|register_gradients_procs
@@ -910,7 +910,7 @@ argument_list|(
 literal|"Guide procedures"
 argument_list|)
 argument_list|,
-literal|0.413
+literal|0.414
 argument_list|)
 expr_stmt|;
 name|register_guides_procs
@@ -930,7 +930,7 @@ argument_list|(
 literal|"Help procedures"
 argument_list|)
 argument_list|,
-literal|0.428
+literal|0.429
 argument_list|)
 expr_stmt|;
 name|register_help_procs
@@ -950,7 +950,7 @@ argument_list|(
 literal|"Image"
 argument_list|)
 argument_list|,
-literal|0.43
+literal|0.431
 argument_list|)
 expr_stmt|;
 name|register_image_procs
@@ -970,7 +970,7 @@ argument_list|(
 literal|"Layer"
 argument_list|)
 argument_list|,
-literal|0.582
+literal|0.583
 argument_list|)
 expr_stmt|;
 name|register_layer_procs
@@ -990,7 +990,7 @@ argument_list|(
 literal|"Message procedures"
 argument_list|)
 argument_list|,
-literal|0.646
+literal|0.647
 argument_list|)
 expr_stmt|;
 name|register_message_procs
@@ -1030,7 +1030,7 @@ argument_list|(
 literal|"Paint Tool procedures"
 argument_list|)
 argument_list|,
-literal|0.658
+literal|0.659
 argument_list|)
 expr_stmt|;
 name|register_paint_tools_procs
@@ -1050,7 +1050,7 @@ argument_list|(
 literal|"Palette"
 argument_list|)
 argument_list|,
-literal|0.695
+literal|0.696
 argument_list|)
 expr_stmt|;
 name|register_palette_procs
@@ -1070,7 +1070,7 @@ argument_list|(
 literal|"Palette UI"
 argument_list|)
 argument_list|,
-literal|0.722
+literal|0.723
 argument_list|)
 expr_stmt|;
 name|register_palette_select_procs
@@ -1130,7 +1130,7 @@ argument_list|(
 literal|"Paths"
 argument_list|)
 argument_list|,
-literal|0.769
+literal|0.77
 argument_list|)
 expr_stmt|;
 name|register_paths_procs
@@ -1170,7 +1170,7 @@ argument_list|(
 literal|"Pattern UI"
 argument_list|)
 argument_list|,
-literal|0.808
+literal|0.809
 argument_list|)
 expr_stmt|;
 name|register_pattern_select_procs
@@ -1270,7 +1270,7 @@ argument_list|(
 literal|"Image mask"
 argument_list|)
 argument_list|,
-literal|0.872
+literal|0.873
 argument_list|)
 expr_stmt|;
 name|register_selection_procs
@@ -1290,7 +1290,7 @@ argument_list|(
 literal|"Selection Tool procedures"
 argument_list|)
 argument_list|,
-literal|0.916
+literal|0.917
 argument_list|)
 expr_stmt|;
 name|register_selection_tools_procs
