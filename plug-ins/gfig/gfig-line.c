@@ -236,7 +236,7 @@ operator|->
 name|pnt
 argument_list|,
 name|obj
-operator|=
+operator|==
 name|gfig_context
 operator|->
 name|selected_obj
