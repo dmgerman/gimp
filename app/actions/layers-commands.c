@@ -5146,7 +5146,7 @@ modifier|*
 name|layer
 decl_stmt|;
 DECL|member|dialog
-name|Resize
+name|ResizeDialog
 modifier|*
 name|dialog
 decl_stmt|;

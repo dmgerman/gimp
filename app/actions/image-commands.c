@@ -198,7 +198,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295b64670108
+DECL|struct|__anon290d08cb0108
 block|{
 DECL|member|dialog
 name|ResizeDialog
@@ -1879,7 +1879,7 @@ name|image_resize
 operator|->
 name|dialog
 operator|->
-name|dialog_shell
+name|shell
 argument_list|)
 expr_stmt|;
 block|}
