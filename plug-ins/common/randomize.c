@@ -200,7 +200,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f6ce010108
+DECL|struct|__anon2ad5c5ba0108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -249,7 +249,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f6ce010208
+DECL|struct|__anon2ad5c5ba0208
 block|{
 DECL|member|run
 name|gint
@@ -2690,6 +2690,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Random Seed:"
@@ -2700,6 +2702,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|seed_hbox
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)

@@ -2582,6 +2582,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Opacity:"
@@ -2592,6 +2594,8 @@ argument_list|,
 literal|1.0
 argument_list|,
 name|slider
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2650,6 +2654,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|1
 argument_list|,
 name|_
@@ -2662,6 +2668,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|option_menu
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -3022,6 +3030,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Spacing:"
@@ -3032,6 +3042,8 @@ argument_list|,
 literal|1.0
 argument_list|,
 name|slider
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)
@@ -5192,7 +5204,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28efab600108
+DECL|struct|__anon2b3bca8d0108
 block|{
 DECL|member|bsp
 name|BrushSelect

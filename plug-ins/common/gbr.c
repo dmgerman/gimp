@@ -163,7 +163,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293e1cc10108
+DECL|struct|__anon2a36082b0108
 block|{
 DECL|member|description
 name|gchar
@@ -2261,6 +2261,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Spacing:"
@@ -2271,6 +2273,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|spinbutton
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2316,6 +2320,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|1
 argument_list|,
 name|_
@@ -2328,6 +2334,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|entry
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)

@@ -286,7 +286,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f3a5880108
+DECL|struct|__anon2a4306cc0108
 block|{
 DECL|member|r
 DECL|member|g
@@ -375,7 +375,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f3a5880208
+DECL|struct|__anon2a4306cc0208
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -5656,6 +5656,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Effect Image:"
@@ -5666,6 +5668,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|option_menu
+argument_list|,
+literal|2
 argument_list|,
 name|TRUE
 argument_list|)

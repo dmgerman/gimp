@@ -1819,7 +1819,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Undo zoom"
+literal|"Undo Zoom"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1879,7 +1879,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Redo zoom"
+literal|"Redo Zoom"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5430,7 +5430,7 @@ argument_list|(
 name|notebook
 argument_list|)
 argument_list|,
-literal|0
+literal|1
 argument_list|)
 expr_stmt|;
 comment|/* Done */

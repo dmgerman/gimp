@@ -76,7 +76,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c4ea680108
+DECL|struct|__anon2a1d56ac0108
 block|{
 DECL|member|fromred
 DECL|member|fromgreen
@@ -1775,6 +1775,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|NULL
 argument_list|,
 literal|0.0
@@ -1782,6 +1784,8 @@ argument_list|,
 literal|0.0
 argument_list|,
 name|colorbutton
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)

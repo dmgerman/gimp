@@ -1552,6 +1552,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Radius:"
@@ -1562,6 +1564,8 @@ argument_list|,
 literal|1.0
 argument_list|,
 name|slider
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1644,6 +1648,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|1
 argument_list|,
 name|_
@@ -1656,6 +1662,8 @@ argument_list|,
 literal|1.0
 argument_list|,
 name|slider
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1738,6 +1746,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|3
 argument_list|,
 name|_
@@ -1750,6 +1760,8 @@ argument_list|,
 literal|1.0
 argument_list|,
 name|slider
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1832,6 +1844,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|2
 argument_list|,
 name|_
@@ -1844,6 +1858,8 @@ argument_list|,
 literal|1.0
 argument_list|,
 name|slider
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)

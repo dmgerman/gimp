@@ -115,7 +115,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29bd9cd90108
+DECL|struct|__anon2ba3df4a0108
 block|{
 comment|/* Use by both gpb and gih: */
 DECL|member|spacing
@@ -173,7 +173,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bd9cd90208
+DECL|struct|__anon2ba3df4a0208
 block|{
 DECL|member|orientation
 name|GOrientation
@@ -1310,6 +1310,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Spacing (Percent):"
@@ -1320,6 +1322,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|spinbutton
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1378,6 +1382,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|1
 argument_list|,
 name|_
@@ -1390,6 +1396,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|entry
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2142,6 +2150,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|2
 argument_list|,
 name|_
@@ -2154,6 +2164,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|box
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2197,6 +2209,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|3
 argument_list|,
 name|_
@@ -2209,6 +2223,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|spinbutton
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2541,6 +2557,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|4
 argument_list|,
 name|_
@@ -2553,6 +2571,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|box
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2591,6 +2611,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|5
 argument_list|,
 name|_
@@ -2603,6 +2625,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|spinbutton
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2827,6 +2851,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|6
 argument_list|,
 name|_
@@ -2839,6 +2865,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|dimtable
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)
@@ -3062,6 +3090,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|7
 argument_list|,
 name|_
@@ -3074,6 +3104,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|box
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)

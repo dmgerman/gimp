@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d95ff30108
+DECL|struct|__anon2c95782e0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -67,7 +67,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d95ff30208
+DECL|struct|__anon2c95782e0208
 block|{
 DECL|member|run
 name|gint
@@ -912,7 +912,7 @@ name|gtk_table_new
 argument_list|(
 literal|2
 argument_list|,
-literal|2
+literal|3
 argument_list|,
 name|FALSE
 argument_list|)
@@ -992,6 +992,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Blur Radius:"
@@ -1002,6 +1004,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|spinbutton
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)

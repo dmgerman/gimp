@@ -392,7 +392,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c79152a0108
+DECL|struct|__anon2b446e950108
 block|{
 DECL|member|receipt
 name|gchar
@@ -1968,6 +1968,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"To:"
@@ -1978,6 +1980,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|entry
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2050,6 +2054,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|1
 argument_list|,
 name|_
@@ -2062,6 +2068,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|entry
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2134,6 +2142,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|2
 argument_list|,
 name|_
@@ -2146,6 +2156,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|entry
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2218,6 +2230,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|3
 argument_list|,
 name|_
@@ -2230,6 +2244,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|entry
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2302,6 +2318,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|4
 argument_list|,
 name|_
@@ -2314,6 +2332,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|entry
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)

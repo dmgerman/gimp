@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b17f46f0108
+DECL|struct|__anon28aaabae0108
 block|{
 DECL|member|independent
 name|gint
@@ -97,7 +97,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b17f46f0208
+DECL|struct|__anon28aaabae0208
 block|{
 DECL|member|run
 name|gint
@@ -1530,7 +1530,7 @@ name|toggle
 argument_list|,
 literal|0
 argument_list|,
-literal|2
+literal|3
 argument_list|,
 literal|0
 argument_list|,

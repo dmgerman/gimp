@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295aa7ee0108
+DECL|struct|__anon2a18303e0108
 block|{
 DECL|member|interlaced
 name|gint
@@ -3871,6 +3871,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|2
 argument_list|,
 name|_
@@ -3883,6 +3885,8 @@ argument_list|,
 literal|1.0
 argument_list|,
 name|scale
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)

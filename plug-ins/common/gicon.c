@@ -111,7 +111,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b28fc2b0108
+DECL|struct|__anon28ecae2d0108
 block|{
 DECL|member|icon_name
 name|gchar
@@ -129,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b28fc2b0208
+DECL|struct|__anon28ecae2d0208
 block|{
 DECL|member|run
 name|gint
@@ -1998,6 +1998,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Icon Name:"
@@ -2008,6 +2010,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|entry
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)

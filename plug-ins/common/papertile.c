@@ -74,7 +74,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad27a8b0103
+DECL|enum|__anon2a3f63b80103
 block|{
 DECL|enumerator|BACKGROUND_TYPE_TRANSPARENT
 name|BACKGROUND_TYPE_TRANSPARENT
@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad27a8b0203
+DECL|enum|__anon2a3f63b80203
 block|{
 DECL|enumerator|FRACTIONAL_TYPE_BACKGROUND
 name|FRACTIONAL_TYPE_BACKGROUND
@@ -193,7 +193,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2ad27a8b0308
+DECL|struct|__anon2a3f63b80308
 block|{
 DECL|member|params
 name|PluginParams
@@ -213,7 +213,7 @@ name|gboolean
 name|drawable_has_alpha
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2ad27a8b0408
+DECL|struct|__anon2a3f63b80408
 block|{
 DECL|member|x0
 name|gint
@@ -579,7 +579,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2ad27a8b0508
+DECL|struct|__anon2a3f63b80508
 block|{
 DECL|member|tile_size_adj
 name|GtkObject
@@ -1298,6 +1298,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"X:"
@@ -1308,6 +1310,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|button
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1372,6 +1376,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|1
 argument_list|,
 name|_
@@ -1384,6 +1390,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|button
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1457,6 +1465,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|2
 argument_list|,
 name|_
@@ -1469,6 +1479,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|button
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1838,6 +1850,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Max (%):"
@@ -1848,6 +1862,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|button
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)

@@ -1550,6 +1550,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Width:"
@@ -1560,6 +1562,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|width_spinbutton
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1659,6 +1663,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|1
 argument_list|,
 name|_
@@ -1671,6 +1677,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|height_spinbutton
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1749,6 +1757,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|2
 argument_list|,
 name|_
@@ -1763,6 +1773,8 @@ argument_list|,
 name|options
 operator|->
 name|fixed_unit_w
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2498,6 +2510,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Opacity:"
@@ -2508,6 +2522,8 @@ argument_list|,
 literal|1.0
 argument_list|,
 name|scale
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2604,6 +2620,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|1
 argument_list|,
 name|_
@@ -2618,6 +2636,8 @@ argument_list|,
 name|options
 operator|->
 name|paint_mode_w
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)

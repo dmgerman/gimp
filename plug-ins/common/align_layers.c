@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon292695590103
+DECL|enum|__anon2a1597480103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon292695590203
+DECL|enum|__anon2a1597480203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -115,7 +115,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon292695590303
+DECL|enum|__anon2a1597480303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon292695590403
+DECL|enum|__anon2a1597480403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292695590508
+DECL|struct|__anon2a1597480508
 block|{
 DECL|member|h_style
 name|gint
@@ -336,7 +336,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292695590608
+DECL|struct|__anon2a1597480608
 block|{
 DECL|member|run
 name|gint
@@ -1925,6 +1925,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Horizontal Style:"
@@ -1935,6 +1937,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|optionmenu
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2005,6 +2009,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|1
 argument_list|,
 name|_
@@ -2017,6 +2023,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|optionmenu
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2111,6 +2119,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|2
 argument_list|,
 name|_
@@ -2123,6 +2133,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|optionmenu
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2193,6 +2205,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|3
 argument_list|,
 name|_
@@ -2205,6 +2219,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|optionmenu
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)

@@ -107,7 +107,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf8065d0103
+DECL|enum|__anon28ee37e20103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -127,7 +127,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf8065d0208
+DECL|struct|__anon28ee37e20208
 block|{
 DECL|member|amount
 name|gdouble
@@ -194,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf8065d0308
+DECL|struct|__anon28ee37e20308
 block|{
 DECL|member|run
 name|gint
@@ -1941,6 +1941,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Step Size:"
@@ -1951,6 +1953,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|spinbutton
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2008,6 +2012,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|1
 argument_list|,
 name|_
@@ -2020,6 +2026,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|spinbutton
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2740,6 +2748,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Dither Size:"
@@ -2750,6 +2760,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|spinbutton
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2807,6 +2819,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|1
 argument_list|,
 name|_
@@ -2819,6 +2833,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|spinbutton
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2876,6 +2892,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|2
 argument_list|,
 name|_
@@ -2888,6 +2906,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|spinbutton
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -3269,6 +3289,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Gradient Scale:"
@@ -3279,6 +3301,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|spinbutton
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -3417,6 +3441,8 @@ argument_list|(
 name|otable
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|1
 argument_list|,
 name|_
@@ -3429,6 +3455,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|spinbutton
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -3487,6 +3515,8 @@ argument_list|(
 name|otable
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|2
 argument_list|,
 name|_
@@ -3499,6 +3529,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|spinbutton
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)

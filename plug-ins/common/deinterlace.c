@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon274ad18d0103
+DECL|enum|__anon2900f22e0103
 block|{
 DECL|enumerator|ODD_FIELDS
 name|ODD_FIELDS
@@ -1176,7 +1176,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|5
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

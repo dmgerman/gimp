@@ -132,7 +132,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b604570108
+DECL|struct|__anon287826d60108
 block|{
 DECL|member|division
 name|gint32
@@ -1668,6 +1668,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Division:"
@@ -1678,6 +1680,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|spinbutton
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)

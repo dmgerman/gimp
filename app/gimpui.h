@@ -289,45 +289,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  helper functions  */
-end_comment
-
-begin_comment
-comment|/*  add aligned label& widget to a two-column table  */
-end_comment
-
-begin_function_decl
-name|void
-name|gimp_table_attach_aligned
-parameter_list|(
-name|GtkTable
-modifier|*
-name|table
-parameter_list|,
-name|gint
-name|row
-parameter_list|,
-name|gchar
-modifier|*
-name|text
-parameter_list|,
-name|gfloat
-name|xalign
-parameter_list|,
-name|gfloat
-name|yalign
-parameter_list|,
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gboolean
-name|left_adjust
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif

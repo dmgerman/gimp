@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a5092c0103
+DECL|enum|__anon275f05dd0103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -7270,6 +7270,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Default Image Type:"
@@ -7280,6 +7282,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|optionmenu
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -7535,6 +7539,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|1
 argument_list|,
 name|_
@@ -7547,6 +7553,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|hbox
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -7811,6 +7819,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Transparency Type:"
@@ -7821,6 +7831,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|optionmenu
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -7887,6 +7899,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|1
 argument_list|,
 name|_
@@ -7899,6 +7913,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|optionmenu
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -8277,6 +8293,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Preview Size:"
@@ -8287,6 +8305,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|optionmenu
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -8353,6 +8373,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|1
 argument_list|,
 name|_
@@ -8365,6 +8387,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|optionmenu
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -8418,6 +8442,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|3
 argument_list|,
 name|_
@@ -8430,6 +8456,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|spinbutton
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -8937,6 +8965,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Help Browser to Use:"
@@ -8947,6 +8977,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|optionmenu
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -9358,6 +9390,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Marching Ants Speed:"
@@ -9368,6 +9402,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|spinbutton
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -9657,6 +9693,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|1
 argument_list|,
 name|_
@@ -9669,6 +9707,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|combo
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)
@@ -10185,6 +10225,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Levels of Undo:"
@@ -10195,6 +10237,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|spinbutton
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -10450,6 +10494,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|1
 argument_list|,
 name|_
@@ -10462,6 +10508,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|hbox
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -10518,6 +10566,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|2
 argument_list|,
 name|_
@@ -10530,6 +10580,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|spinbutton
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -10708,6 +10760,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Interpolation Type:"
@@ -10718,6 +10772,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|optionmenu
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -10881,6 +10937,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Try to Write a Thumbnail File:"
@@ -10891,6 +10949,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|optionmenu
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -10945,6 +11005,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|1
 argument_list|,
 name|_
@@ -10957,6 +11019,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|optionmenu
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -11905,7 +11969,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28a5092c0208
+DECL|struct|__anon275f05dd0208
 block|{
 DECL|member|label
 name|gchar
@@ -12102,6 +12166,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 name|i
 argument_list|,
 name|gettext
@@ -12120,6 +12186,8 @@ literal|0.5
 argument_list|,
 name|fileselection
 argument_list|,
+literal|1
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
@@ -12130,7 +12198,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28a5092c0308
+DECL|struct|__anon275f05dd0308
 block|{
 DECL|member|tree_label
 name|gchar

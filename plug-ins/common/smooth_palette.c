@@ -296,7 +296,7 @@ block|}
 end_function
 
 begin_struct
-DECL|struct|__anon27ce71ea0108
+DECL|struct|__anon2af8e1f50108
 specifier|static
 struct|struct
 block|{
@@ -2248,6 +2248,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Width:"
@@ -2258,6 +2260,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|spinbutton
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2315,6 +2319,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|1
 argument_list|,
 name|_
@@ -2327,6 +2333,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|spinbutton
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2384,6 +2392,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|2
 argument_list|,
 name|_
@@ -2396,6 +2406,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|spinbutton
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)

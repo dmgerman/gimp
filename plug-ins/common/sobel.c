@@ -64,7 +64,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0a398a0108
+DECL|struct|__anon289230560108
 block|{
 DECL|member|horizontal
 name|gint
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0a398a0208
+DECL|struct|__anon289230560208
 block|{
 DECL|member|run
 name|gint
@@ -971,7 +971,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|2
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_container_border_width
@@ -981,7 +981,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|4
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_container_add

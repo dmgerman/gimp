@@ -352,7 +352,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6d06a60108
+DECL|struct|__anon274ad9b00108
 block|{
 DECL|member|offset
 name|gdouble
@@ -404,7 +404,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6d06a60208
+DECL|struct|__anon274ad9b00208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -1941,6 +1941,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Offset:"
@@ -1951,6 +1953,8 @@ argument_list|,
 literal|1.0
 argument_list|,
 name|scale
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2013,6 +2017,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|1
 argument_list|,
 name|_
@@ -2027,6 +2033,8 @@ argument_list|,
 name|options
 operator|->
 name|blend_mode_w
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2067,6 +2075,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|2
 argument_list|,
 name|_
@@ -2081,6 +2091,8 @@ argument_list|,
 name|options
 operator|->
 name|gradient_type_w
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2121,6 +2133,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|3
 argument_list|,
 name|_
@@ -2135,6 +2149,8 @@ argument_list|,
 name|options
 operator|->
 name|repeat_w
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2430,6 +2446,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Max Depth:"
@@ -2440,6 +2458,8 @@ argument_list|,
 literal|1.0
 argument_list|,
 name|scale
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2527,6 +2547,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|1
 argument_list|,
 name|_
@@ -2539,6 +2561,8 @@ argument_list|,
 literal|1.0
 argument_list|,
 name|scale
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)

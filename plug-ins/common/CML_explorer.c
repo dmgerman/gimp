@@ -209,7 +209,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7750f80108
+DECL|struct|__anon2b0e4c100108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -236,7 +236,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7750f80203
+DECL|enum|__anon2b0e4c100203
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -359,7 +359,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7750f80303
+DECL|enum|__anon2b0e4c100303
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -498,7 +498,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7750f80403
+DECL|enum|__anon2b0e4c100403
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -597,7 +597,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7750f80503
+DECL|enum|__anon2b0e4c100503
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -689,7 +689,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7750f80608
+DECL|struct|__anon2b0e4c100608
 block|{
 DECL|member|function
 name|gint
@@ -762,7 +762,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7750f80708
+DECL|struct|__anon2b0e4c100708
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1538,7 +1538,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7750f80808
+DECL|struct|__anon2b0e4c100808
 block|{
 DECL|member|run
 name|gint
@@ -1588,7 +1588,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7750f80908
+DECL|struct|__anon2b0e4c100908
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -7819,12 +7819,14 @@ operator|.
 name|initial_value
 argument_list|)
 expr_stmt|;
-name|gimp_table_attach_aligned2
+name|gimp_table_attach_aligned
 argument_list|(
 name|GTK_TABLE
 argument_list|(
 name|table
 argument_list|)
+argument_list|,
+literal|0
 argument_list|,
 literal|0
 argument_list|,
@@ -7839,9 +7841,7 @@ literal|0.5
 argument_list|,
 name|optionmenu
 argument_list|,
-literal|1
-argument_list|,
-literal|3
+literal|2
 argument_list|,
 name|FALSE
 argument_list|)
@@ -8476,6 +8476,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Source Channel:"
@@ -8486,6 +8488,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|optionmenu
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -8561,6 +8565,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|1
 argument_list|,
 name|_
@@ -8573,6 +8579,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|optionmenu
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -8810,6 +8818,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Source Channel in File:"
@@ -8820,6 +8830,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|optionmenu
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -8907,6 +8919,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|1
 argument_list|,
 name|_
@@ -8919,6 +8933,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|optionmenu
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)
@@ -9346,12 +9362,14 @@ operator|->
 name|function
 argument_list|)
 expr_stmt|;
-name|gimp_table_attach_aligned2
+name|gimp_table_attach_aligned
 argument_list|(
 name|GTK_TABLE
 argument_list|(
 name|table
 argument_list|)
+argument_list|,
+literal|0
 argument_list|,
 name|index
 argument_list|,
@@ -9366,9 +9384,7 @@ literal|0.5
 argument_list|,
 name|optionmenu
 argument_list|,
-literal|1
-argument_list|,
-literal|3
+literal|2
 argument_list|,
 name|FALSE
 argument_list|)
@@ -9643,12 +9659,14 @@ operator|->
 name|composition
 argument_list|)
 expr_stmt|;
-name|gimp_table_attach_aligned2
+name|gimp_table_attach_aligned
 argument_list|(
 name|GTK_TABLE
 argument_list|(
 name|table
 argument_list|)
+argument_list|,
+literal|0
 argument_list|,
 name|index
 argument_list|,
@@ -9663,9 +9681,7 @@ literal|0.5
 argument_list|,
 name|optionmenu
 argument_list|,
-literal|1
-argument_list|,
-literal|3
+literal|2
 argument_list|,
 name|FALSE
 argument_list|)
@@ -9865,12 +9881,14 @@ operator|->
 name|arrange
 argument_list|)
 expr_stmt|;
-name|gimp_table_attach_aligned2
+name|gimp_table_attach_aligned
 argument_list|(
 name|GTK_TABLE
 argument_list|(
 name|table
 argument_list|)
+argument_list|,
+literal|0
 argument_list|,
 name|index
 argument_list|,
@@ -9885,9 +9903,7 @@ literal|0.5
 argument_list|,
 name|optionmenu
 argument_list|,
-literal|1
-argument_list|,
-literal|3
+literal|2
 argument_list|,
 name|FALSE
 argument_list|)

@@ -102,7 +102,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4c09000108
+DECL|struct|__anon2b87f8b30108
 block|{
 DECL|member|seed
 name|gint
@@ -126,7 +126,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4c09000208
+DECL|struct|__anon2b87f8b30208
 block|{
 DECL|member|run
 name|gint
@@ -1173,6 +1173,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Random Seed:"
@@ -1183,6 +1185,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|seed_hbox
+argument_list|,
+literal|1
 argument_list|,
 name|TRUE
 argument_list|)

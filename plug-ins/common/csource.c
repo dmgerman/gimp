@@ -62,7 +62,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294e052d0108
+DECL|struct|__anon2b058bdc0108
 block|{
 DECL|member|file_name
 name|gchar
@@ -3333,6 +3333,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Prefixed Name:"
@@ -3343,6 +3345,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|prefixed_name
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)
@@ -3378,6 +3382,8 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
+literal|0
+argument_list|,
 literal|1
 argument_list|,
 name|_
@@ -3390,6 +3396,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|centry
+argument_list|,
+literal|1
 argument_list|,
 name|FALSE
 argument_list|)
