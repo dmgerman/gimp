@@ -495,6 +495,12 @@ modifier|*
 name|padding_gc
 decl_stmt|;
 comment|/* GC with padding_color as BG         */
+DECL|member|nav_ebox
+name|GtkWidget
+modifier|*
+name|nav_ebox
+decl_stmt|;
+comment|/* GtkEventBox on the SE corner        */
 DECL|member|warning_dialog
 name|GtkWidget
 modifier|*

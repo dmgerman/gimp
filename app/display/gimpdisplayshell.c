@@ -294,7 +294,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a2fc210103
+DECL|enum|__anon29f600fb0103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1586,10 +1586,6 @@ name|GtkWidget
 modifier|*
 name|image
 decl_stmt|;
-name|GtkWidget
-modifier|*
-name|nav_ebox
-decl_stmt|;
 name|gint
 name|image_width
 decl_stmt|,
@@ -2817,6 +2813,8 @@ name|shell
 argument_list|)
 expr_stmt|;
 comment|/*  the navigation window button  */
+name|shell
+operator|->
 name|nav_ebox
 operator|=
 name|gtk_event_box_new
@@ -2835,6 +2833,8 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
+name|shell
+operator|->
 name|nav_ebox
 argument_list|)
 argument_list|,
@@ -2850,6 +2850,8 @@ name|g_signal_connect
 argument_list|(
 name|G_OBJECT
 argument_list|(
+name|shell
+operator|->
 name|nav_ebox
 argument_list|)
 argument_list|,
@@ -2865,6 +2867,8 @@ argument_list|)
 expr_stmt|;
 name|gimp_help_set_help_data
 argument_list|(
+name|shell
+operator|->
 name|nav_ebox
 argument_list|,
 name|NULL
@@ -3117,6 +3121,8 @@ argument_list|(
 name|lower_hbox
 argument_list|)
 argument_list|,
+name|shell
+operator|->
 name|nav_ebox
 argument_list|,
 name|FALSE
@@ -3211,6 +3217,8 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|shell
+operator|->
 name|nav_ebox
 argument_list|)
 expr_stmt|;
