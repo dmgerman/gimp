@@ -104,8 +104,8 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2d11fe0103
-DECL|enum|__anon2c2d11fe0203
+DECL|enum|__anon2b4f2b560103
+DECL|enum|__anon2b4f2b560203
 block|{
 DECL|enumerator|SET_BRUSH
 DECL|enumerator|SET_BRUSH
@@ -4495,6 +4495,8 @@ argument_list|,
 name|dest
 operator|->
 name|width
+operator|+
+literal|1
 argument_list|)
 expr_stmt|;
 comment|/* Investigate modifiying kernelgen to make the sum the same    *  for all kernels. That way kernal_sum becomes a constant    */
@@ -4609,8 +4611,6 @@ while|while
 condition|(
 name|s
 operator|--
-operator|>
-name|dest_offset_x
 condition|)
 block|{
 name|accum
