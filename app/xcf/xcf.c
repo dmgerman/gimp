@@ -276,7 +276,12 @@ name|NULL
 block|,
 comment|/* fill me in at runtime */
 name|NULL
+block|,
 comment|/* fill me in at runtime */
+name|NULL
+block|,
+comment|/* fill me in at runtime */
+literal|0
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -390,7 +395,12 @@ name|NULL
 block|,
 comment|/* fill me in at runtime */
 name|NULL
+block|,
 comment|/* fill me in at runtime */
+name|NULL
+block|,
+comment|/* fill me in at runtime */
+literal|0
 block|}
 decl_stmt|;
 end_decl_stmt

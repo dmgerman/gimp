@@ -119,6 +119,20 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|plug_in_proc_def_destroy
+parameter_list|(
+name|PlugInProcDef
+modifier|*
+name|proc_def
+parameter_list|,
+name|gboolean
+name|data_only
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
