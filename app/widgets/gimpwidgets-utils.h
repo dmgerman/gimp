@@ -272,8 +272,7 @@ comment|/*  a simple message box  */
 end_comment
 
 begin_function_decl
-name|GtkWidget
-modifier|*
+name|void
 name|gimp_message_box
 parameter_list|(
 name|gchar
