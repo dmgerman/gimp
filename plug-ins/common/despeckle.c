@@ -36,7 +36,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac262f40103
+DECL|enum|__anon2bc4b2d40103
 block|{
 DECL|enumerator|MEDIAN
 name|MEDIAN
@@ -49,7 +49,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac262f40208
+DECL|struct|__anon2bc4b2d40208
 block|{
 DECL|member|diameter
 name|gint
@@ -3341,6 +3341,7 @@ end_function
 
 begin_function
 specifier|static
+specifier|inline
 name|guchar
 DECL|function|pixel_intensity (const guchar * p,gint bpp)
 name|pixel_intensity
