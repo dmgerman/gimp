@@ -2723,7 +2723,7 @@ literal|20
 argument_list|,
 literal|20
 argument_list|,
-name|GIMP_COLOR_AREA_SMALL_CHECKS
+name|GIMP_COLOR_AREA_FLAT
 argument_list|)
 expr_stmt|;
 if|if
@@ -6195,7 +6195,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2afd2bd40108
+DECL|struct|__anon27a01a560108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -7806,7 +7806,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2afd2bd40208
+DECL|struct|__anon27a01a560208
 block|{
 DECL|member|label
 specifier|const
@@ -7965,7 +7965,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2afd2bd40308
+DECL|struct|__anon27a01a560308
 block|{
 DECL|member|tree_label
 specifier|const
