@@ -145,9 +145,11 @@ name|GimpCoords
 modifier|*
 name|coords
 parameter_list|,
-specifier|const
 name|gint
-name|ncoords
+name|n_coords
+parameter_list|,
+name|gboolean
+name|closed
 parameter_list|)
 function_decl|;
 end_function_decl
