@@ -76,7 +76,7 @@ comment|/* this program (read the "COPYING" file); if not, write to the Free Sof
 end_comment
 
 begin_comment
-comment|/* Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.                     */
+comment|/* Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.    */
 end_comment
 
 begin_comment
@@ -589,14 +589,13 @@ block|}
 block|}
 end_function
 
-begin_expr_stmt
+begin_macro
+DECL|function|MAIN ()
 name|MAIN
 argument_list|()
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_function
-DECL|function|query (void)
 specifier|static
 name|void
 name|query
@@ -2010,6 +2009,12 @@ name|argc
 argument_list|,
 operator|&
 name|argv
+argument_list|)
+expr_stmt|;
+name|gtk_rc_parse
+argument_list|(
+name|gimp_gtkrc
+argument_list|()
 argument_list|)
 expr_stmt|;
 comment|/* Set up ArcBall stuff */
