@@ -897,21 +897,6 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
-name|brush_list_button_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|gint
 name|calculate_point_to_line_distance
 parameter_list|(
@@ -967,7 +952,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b02bd2f0103
+DECL|enum|__anon2aeeee4a0103
 block|{
 DECL|enumerator|LINE
 name|LINE
@@ -1019,7 +1004,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b02bd2f0203
+DECL|enum|__anon2aeeee4a0203
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -1040,7 +1025,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b02bd2f0303
+DECL|enum|__anon2aeeee4a0303
 block|{
 DECL|enumerator|ORIGINAL_LAYER
 name|ORIGINAL_LAYER
@@ -1061,7 +1046,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b02bd2f0403
+DECL|enum|__anon2aeeee4a0403
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -1088,7 +1073,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b02bd2f0503
+DECL|enum|__anon2aeeee4a0503
 block|{
 DECL|enumerator|PAINT_BRUSH_TYPE
 name|PAINT_BRUSH_TYPE
@@ -1109,7 +1094,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b02bd2f0603
+DECL|enum|__anon2aeeee4a0603
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -1277,7 +1262,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b02bd2f0708
+DECL|struct|__anon2aeeee4a0708
 block|{
 DECL|member|gridspacing
 name|gint
@@ -1316,7 +1301,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b02bd2f0808
+DECL|struct|__anon2aeeee4a0808
 block|{
 DECL|member|gridspacing
 name|void
@@ -1365,7 +1350,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b02bd2f0908
+DECL|struct|__anon2aeeee4a0908
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -1535,7 +1520,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b02bd2f0a03
+DECL|enum|__anon2aeeee4a0a03
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1559,7 +1544,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b02bd2f0b03
+DECL|enum|__anon2aeeee4a0b03
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -1577,7 +1562,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b02bd2f0c03
+DECL|enum|__anon2aeeee4a0c03
 block|{
 DECL|enumerator|FILL_FOREGROUND
 name|FILL_FOREGROUND
@@ -1598,7 +1583,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b02bd2f0d03
+DECL|enum|__anon2aeeee4a0d03
 block|{
 DECL|enumerator|FILL_EACH
 name|FILL_EACH
@@ -2164,22 +2149,31 @@ typedef|typedef
 struct|struct
 name|BrushDesc
 block|{
-DECL|member|bname
+DECL|member|name
 name|gchar
 modifier|*
-name|bname
+name|name
 decl_stmt|;
-comment|/* name of the brush */
+DECL|member|opacity
+name|gdouble
+name|opacity
+decl_stmt|;
+DECL|member|spacing
+name|gint
+name|spacing
+decl_stmt|;
+DECL|member|paint_mode
+name|GimpLayerModeEffects
+name|paint_mode
+decl_stmt|;
 DECL|member|width
-name|gint32
+name|gint
 name|width
 decl_stmt|;
-comment|/* Width of brush */
 DECL|member|height
-name|gint32
+name|gint
 name|height
 decl_stmt|;
-comment|/* Height of brush */
 DECL|member|pv_buf
 name|guchar
 modifier|*
@@ -2194,11 +2188,11 @@ DECL|member|y_off
 name|gint16
 name|y_off
 decl_stmt|;
-DECL|member|bpp
-name|gint
-name|bpp
+DECL|member|popup
+name|gchar
+modifier|*
+name|popup
 decl_stmt|;
-comment|/* Depth - should ALWAYS be the same for all BrushDesc */
 DECL|typedef|BrushDesc
 block|}
 name|BrushDesc
@@ -3460,6 +3454,18 @@ name|x
 parameter_list|,
 name|gint
 name|y
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|brush_list_button_callback
+parameter_list|(
+name|BrushDesc
+modifier|*
+name|bdesc
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -10089,38 +10095,22 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GtkWidget
-modifier|*
-name|pw
-init|=
-operator|(
-name|GtkWidget
-operator|*
-operator|)
-name|data
-decl_stmt|;
 name|BrushDesc
 modifier|*
 name|bdesc
-decl_stmt|;
-comment|/* Must update the dialog area */
-comment|/* Use the same brush as already set in the dialog */
-name|bdesc
-operator|=
+init|=
 name|g_object_get_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|pw
+name|data
 argument_list|)
 argument_list|,
-literal|"user_data"
+literal|"brush-desc"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|brush_list_button_callback
 argument_list|(
-name|NULL
-argument_list|,
 name|bdesc
 argument_list|)
 expr_stmt|;
@@ -10666,7 +10656,7 @@ argument_list|(
 name|pw
 argument_list|)
 argument_list|,
-literal|"user_data"
+literal|"brush-desc"
 argument_list|)
 decl_stmt|;
 comment|/* Adjust start position */
@@ -10788,18 +10778,14 @@ name|bdesc
 operator|->
 name|x_off
 operator|*
-name|bdesc
-operator|->
-name|bpp
+literal|3
 operator|+
 operator|(
 name|bdesc
 operator|->
 name|width
 operator|*
-name|bdesc
-operator|->
-name|bpp
+literal|3
 operator|*
 operator|(
 name|row_count
@@ -10846,11 +10832,6 @@ name|GimpDrawable
 modifier|*
 name|brushdrawable
 decl_stmt|;
-name|gint
-name|bcount
-init|=
-literal|3
-decl_stmt|;
 name|g_free
 argument_list|(
 name|bdesc
@@ -10865,12 +10846,6 @@ name|gimp_drawable_get
 argument_list|(
 name|layer_ID
 argument_list|)
-expr_stmt|;
-name|bdesc
-operator|->
-name|bpp
-operator|=
-name|bcount
 expr_stmt|;
 comment|/* Fill the preview with the current brush name */
 name|gimp_pixel_rgn_init
@@ -10913,7 +10888,7 @@ name|bdesc
 operator|->
 name|height
 operator|*
-name|bcount
+literal|3
 argument_list|)
 expr_stmt|;
 name|bdesc
@@ -10965,12 +10940,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|mygimp_brush_set (gchar * bname)
+DECL|function|mygimp_brush_set (gchar * name)
 name|mygimp_brush_set
 parameter_list|(
 name|gchar
 modifier|*
-name|bname
+name|name
 parameter_list|)
 block|{
 name|GimpParam
@@ -10991,7 +10966,7 @@ name|nreturn_vals
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
-name|bname
+name|name
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)
@@ -11043,14 +11018,12 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
-specifier|static
 name|gchar
-name|saved_bname
-index|[
-literal|1024
-index|]
+modifier|*
+name|name
+init|=
+name|NULL
 decl_stmt|;
-comment|/* required to be static - returned from proc */
 name|return_vals
 operator|=
 name|gimp_run_procedure
@@ -11076,11 +11049,10 @@ name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-block|{
-name|strncpy
+name|name
+operator|=
+name|g_strdup
 argument_list|(
-name|saved_bname
-argument_list|,
 name|return_vals
 index|[
 literal|1
@@ -11089,24 +11061,8 @@ operator|.
 name|data
 operator|.
 name|d_string
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|saved_bname
-argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|saved_bname
-index|[
-literal|0
-index|]
-operator|=
-literal|'\0'
-expr_stmt|;
-block|}
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -11115,9 +11071,7 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
-name|saved_bname
-operator|)
+name|name
 return|;
 block|}
 end_function
@@ -11355,7 +11309,7 @@ literal|1
 decl_stmt|;
 name|gchar
 modifier|*
-name|saved_bname
+name|saved_name
 decl_stmt|;
 name|gint32
 name|width
@@ -11429,14 +11383,12 @@ literal|48
 argument_list|,
 literal|48
 argument_list|,
-literal|0
+name|GIMP_RGB_IMAGE
 argument_list|,
-comment|/* RGB type */
 literal|100.0
 argument_list|,
 comment|/* opacity */
-literal|0
-comment|/* mode */
+name|GIMP_NORMAL_MODE
 argument_list|)
 operator|)
 operator|<
@@ -11478,7 +11430,7 @@ operator|&
 name|background
 argument_list|)
 expr_stmt|;
-name|saved_bname
+name|saved_name
 operator|=
 name|mygimp_brush_get
 argument_list|()
@@ -11527,7 +11479,7 @@ name|mygimp_brush_set
 argument_list|(
 name|bdesc
 operator|->
-name|bname
+name|name
 argument_list|)
 expr_stmt|;
 name|mygimp_brush_info
@@ -11605,10 +11557,9 @@ name|gimp_drawable_fill
 argument_list|(
 name|layer_ID
 argument_list|,
-literal|1
+name|GIMP_BACKGROUND_FILL
 argument_list|)
 expr_stmt|;
-comment|/* Clear... Fill with white ... */
 comment|/* Blob of paint */
 name|gfig_paint
 argument_list|(
@@ -11637,7 +11588,12 @@ argument_list|)
 expr_stmt|;
 name|mygimp_brush_set
 argument_list|(
-name|saved_bname
+name|saved_name
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|saved_name
 argument_list|)
 expr_stmt|;
 return|return
@@ -11649,29 +11605,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|brush_list_button_callback (GtkWidget * widget,gpointer data)
+DECL|function|brush_list_button_callback (BrushDesc * bdesc)
 name|brush_list_button_callback
 parameter_list|(
-name|GtkWidget
+name|BrushDesc
 modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
+name|bdesc
 parameter_list|)
 block|{
 name|gint32
 name|layer_ID
-decl_stmt|;
-name|BrushDesc
-modifier|*
-name|bdesc
-init|=
-operator|(
-name|BrushDesc
-operator|*
-operator|)
-name|data
 decl_stmt|;
 if|if
 condition|(
@@ -11695,7 +11638,7 @@ argument_list|(
 name|brush_page_pw
 argument_list|)
 argument_list|,
-literal|"user_data"
+literal|"brush-desc"
 argument_list|,
 name|bdesc
 argument_list|)
@@ -13164,9 +13107,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gfig_brush_invoker (gchar * name,gdouble opacity,gint spacing,gint paint_mode,gint width,gint height,gchar * mask_data,gint closing,gpointer udata)
+DECL|function|gfig_brush_invoker (const gchar * name,gdouble opacity,gint spacing,GimpLayerModeEffects paint_mode,gint width,gint height,const guchar * mask_data,gboolean closing,gpointer data)
 name|gfig_brush_invoker
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -13177,7 +13121,7 @@ parameter_list|,
 name|gint
 name|spacing
 parameter_list|,
-name|gint
+name|GimpLayerModeEffects
 name|paint_mode
 parameter_list|,
 name|gint
@@ -13186,62 +13130,88 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
-name|gchar
+specifier|const
+name|guchar
 modifier|*
 name|mask_data
 parameter_list|,
-name|gint
+name|gboolean
 name|closing
 parameter_list|,
 name|gpointer
-name|udata
+name|data
 parameter_list|)
 block|{
 name|BrushDesc
 modifier|*
 name|bdesc
 init|=
-name|g_new0
-argument_list|(
+operator|(
 name|BrushDesc
-argument_list|,
-literal|1
-argument_list|)
+operator|*
+operator|)
+name|data
 decl_stmt|;
-comment|/* Mem leak */
+name|g_free
+argument_list|(
 name|bdesc
 operator|->
-name|bpp
-operator|=
-literal|3
+name|name
+argument_list|)
 expr_stmt|;
 name|bdesc
 operator|->
-name|width
-operator|=
-name|width
-expr_stmt|;
-name|bdesc
-operator|->
-name|height
-operator|=
-name|height
-expr_stmt|;
-name|bdesc
-operator|->
-name|bname
+name|name
 operator|=
 name|g_strdup
 argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
+name|bdesc
+operator|->
+name|width
+operator|=
+name|width
+expr_stmt|;
+name|bdesc
+operator|->
+name|height
+operator|=
+name|height
+expr_stmt|;
+name|bdesc
+operator|->
+name|opacity
+operator|=
+name|opacity
+expr_stmt|;
+name|bdesc
+operator|->
+name|spacing
+operator|=
+name|spacing
+expr_stmt|;
+name|bdesc
+operator|->
+name|paint_mode
+operator|=
+name|paint_mode
+expr_stmt|;
 name|brush_list_button_callback
 argument_list|(
-name|NULL
-argument_list|,
 name|bdesc
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|closing
+condition|)
+name|bdesc
+operator|->
+name|popup
+operator|=
+name|NULL
 expr_stmt|;
 block|}
 end_function
@@ -13264,26 +13234,60 @@ name|BrushDesc
 modifier|*
 name|bdesc
 init|=
-name|g_new0
-argument_list|(
+operator|(
 name|BrushDesc
-argument_list|,
-literal|1
-argument_list|)
+operator|*
+operator|)
+name|data
 decl_stmt|;
+name|g_print
+argument_list|(
+literal|"select_brush_callback: %s %s\n"
+argument_list|,
 name|bdesc
 operator|->
-name|bpp
-operator|=
-literal|3
-expr_stmt|;
+name|popup
+argument_list|,
 name|bdesc
 operator|->
-name|bname
-operator|=
-name|mygimp_brush_get
-argument_list|()
+name|name
+argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|bdesc
+operator|->
+name|popup
+condition|)
+comment|/*  calling gimp_brushes_set_popup() raises the dialog  */
+name|gimp_brushes_set_popup
+argument_list|(
+name|bdesc
+operator|->
+name|popup
+argument_list|,
+name|bdesc
+operator|->
+name|name
+argument_list|,
+name|bdesc
+operator|->
+name|opacity
+argument_list|,
+name|bdesc
+operator|->
+name|spacing
+argument_list|,
+name|bdesc
+operator|->
+name|paint_mode
+argument_list|)
+expr_stmt|;
+else|else
+name|bdesc
+operator|->
+name|popup
+operator|=
 name|gimp_interactive_selection_brush
 argument_list|(
 name|_
@@ -13293,27 +13297,24 @@ argument_list|)
 argument_list|,
 name|bdesc
 operator|->
-name|bname
+name|name
 argument_list|,
 literal|100.0
 argument_list|,
-comment|/* Opacity */
+comment|/*  opacity  */
 operator|-
 literal|1
 argument_list|,
-comment|/* spacing (default)*/
-literal|1
+comment|/*  spacing  */
+name|GIMP_NORMAL_MODE
 argument_list|,
-comment|/* Paint mode */
 name|gfig_brush_invoker
 argument_list|,
-name|NULL
+name|bdesc
 argument_list|)
 expr_stmt|;
 name|brush_list_button_callback
 argument_list|(
-name|NULL
-argument_list|,
 name|bdesc
 argument_list|)
 expr_stmt|;
@@ -14115,7 +14116,7 @@ argument_list|(
 name|select_brush_callback
 argument_list|)
 argument_list|,
-name|NULL
+name|bdesc
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
@@ -14145,21 +14146,13 @@ expr_stmt|;
 comment|/* Setup initial brush settings */
 name|bdesc
 operator|->
-name|bpp
-operator|=
-literal|3
-expr_stmt|;
-name|bdesc
-operator|->
-name|bname
+name|name
 operator|=
 name|mygimp_brush_get
 argument_list|()
 expr_stmt|;
 name|brush_list_button_callback
 argument_list|(
-name|NULL
-argument_list|,
 name|bdesc
 argument_list|)
 expr_stmt|;
@@ -16923,11 +16916,11 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Merge"
+literal|"_Merge"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -17154,7 +17147,6 @@ index|[
 literal|256
 index|]
 decl_stmt|;
-comment|/*gtk_idle_remove (pos_tag);*/
 name|pos_tag
 operator|=
 operator|-
@@ -17246,7 +17238,6 @@ operator|.
 name|showpos
 condition|)
 block|{
-comment|/*pos_tag = gtk_idle_add ((GtkFunction)gfig_pos_update_labels, NULL);*/
 name|gfig_pos_update_labels
 argument_list|(
 name|NULL
@@ -17267,12 +17258,12 @@ comment|/* NOT USED */
 end_comment
 
 begin_comment
-unit|static void gfig_obj_size_update (gint sz) {   static gchar buf[256];      sprintf (buf, "%6d", sz);   gtk_label_set_text (GTK_LABEL (obj_size_label), buf); }    static GtkWidget * gfig_obj_size_label (void) {   GtkWidget *label;   GtkWidget *hbox;   gchar buf[256];    hbox = gtk_hbox_new (TRUE, 6);
+unit|static void gfig_obj_size_update (gint sz) {   static gchar buf[256];      sprintf (buf, "%6d", sz);   gtk_label_set_text (GTK_LABEL (obj_size_label), buf); }    static GtkWidget * gfig_obj_size_label (void) {   GtkWidget *label;   GtkWidget *hbox;    hbox = gtk_hbox_new (TRUE, 6);
 comment|/* Position labels */
 end_comment
 
 begin_endif
-unit|label = gtk_label_new ("Size: ");   gtk_widget_show (label);   gtk_box_pack_start (GTK_BOX (hbox), label, FALSE, FALSE, 0);    obj_size_label = gtk_label_new ("");   gtk_misc_set_alignment (GTK_MISC (obj_size_label), 0.5, 0.5);       gtk_widget_show (obj_size_label);   gtk_box_pack_start (GTK_BOX (hbox), obj_size_label, FALSE, FALSE, 0);    gtk_widget_show (hbox);    sprintf (buf, "%6d", 0);   gtk_label_set_text (GTK_LABEL (obj_size_label), buf);    return (hbox); }
+unit|label = gtk_label_new (_("Size:"));   gtk_box_pack_start (GTK_BOX (hbox), label, FALSE, FALSE, 0);   gtk_widget_show (label);    obj_size_label = gtk_label_new ("0");   gtk_misc_set_alignment (GTK_MISC (obj_size_label), 0.5, 0.5);       gtk_box_pack_start (GTK_BOX (hbox), obj_size_label, FALSE, FALSE, 0);   gtk_widget_show (obj_size_label);    gtk_widget_show (hbox);    return (hbox); }
 endif|#
 directive|endif
 end_endif
@@ -18282,22 +18273,6 @@ return|;
 block|}
 end_function
 
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_endif
-unit|scatch () {    pause ();  }
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* 0 */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -19001,7 +18976,6 @@ argument_list|(
 name|top_level_dlg
 argument_list|)
 expr_stmt|;
-comment|/* signal (11, scatch); For debugging */
 name|gtk_main
 argument_list|()
 expr_stmt|;
@@ -19959,7 +19933,7 @@ modifier|*
 name|obj
 decl_stmt|;
 DECL|member|created
-name|gint
+name|gboolean
 name|created
 decl_stmt|;
 DECL|typedef|GfigListOptions
@@ -20293,7 +20267,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gfig_dialog_edit_list (GtkWidget * lwidget,GFigObj * obj,gint created)
+DECL|function|gfig_dialog_edit_list (GtkWidget * lwidget,GFigObj * obj,gboolean created)
 name|gfig_dialog_edit_list
 parameter_list|(
 name|GtkWidget
@@ -20304,7 +20278,7 @@ name|GFigObj
 modifier|*
 name|obj
 parameter_list|,
-name|gint
+name|gboolean
 name|created
 parameter_list|)
 block|{
@@ -21247,16 +21221,14 @@ modifier|*
 name|new_name
 parameter_list|)
 block|{
-name|gint32
-name|layer_id
-decl_stmt|;
-name|gint32
+name|GimpFillType
 name|fill_type
 decl_stmt|;
-name|int
-name|isgrey
-init|=
-literal|0
+name|GimpImageType
+name|type
+decl_stmt|;
+name|gint32
+name|layer_id
 decl_stmt|;
 switch|switch
 condition|(
@@ -21274,11 +21246,16 @@ case|:
 case|case
 name|GIMP_GRAY_IMAGE
 case|:
-name|isgrey
+name|type
 operator|=
-literal|2
+name|GIMP_GRAYA_IMAGE
 expr_stmt|;
+break|break;
 default|default:
+name|type
+operator|=
+name|GIMP_RGBA_IMAGE
+expr_stmt|;
 break|break;
 block|}
 if|if
@@ -21296,31 +21273,25 @@ name|img_width
 argument_list|,
 name|img_height
 argument_list|,
-literal|1
-operator|+
-name|isgrey
+name|type
 argument_list|,
-comment|/* RGBA or GRAYA type */
 literal|100.0
 argument_list|,
 comment|/* opacity */
-literal|0
-comment|/* mode */
+name|GIMP_NORMAL_MODE
 argument_list|)
 operator|)
 operator|<
 literal|0
 condition|)
+block|{
 name|g_warning
-argument_list|(
-name|_
 argument_list|(
 literal|"Error in creating layer"
 argument_list|)
-argument_list|)
 expr_stmt|;
-else|else
-block|{
+return|return;
+block|}
 name|gimp_image_add_layer
 argument_list|(
 name|gfig_image
@@ -21331,14 +21302,6 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_fill
-argument_list|(
-name|layer_id
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-block|}
 name|gfig_drawable
 operator|=
 name|layer_id
@@ -21355,7 +21318,7 @@ name|LAYER_TRANS_BG
 case|:
 name|fill_type
 operator|=
-literal|3
+name|GIMP_TRANSPARENT_FILL
 expr_stmt|;
 break|break;
 case|case
@@ -21363,7 +21326,7 @@ name|LAYER_BG_BG
 case|:
 name|fill_type
 operator|=
-literal|1
+name|GIMP_BACKGROUND_FILL
 expr_stmt|;
 break|break;
 case|case
@@ -21371,7 +21334,7 @@ name|LAYER_FG_BG
 case|:
 name|fill_type
 operator|=
-literal|0
+name|GIMP_FOREGROUND_FILL
 expr_stmt|;
 break|break;
 case|case
@@ -21379,16 +21342,13 @@ name|LAYER_WHITE_BG
 case|:
 name|fill_type
 operator|=
-literal|2
+name|GIMP_WHITE_FILL
 expr_stmt|;
 break|break;
-case|case
-name|LAYER_COPY_BG
-case|:
 default|default:
 name|fill_type
 operator|=
-literal|1
+name|GIMP_BACKGROUND_FILL
 expr_stmt|;
 name|g_warning
 argument_list|(
@@ -21415,9 +21375,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|paint_layer_fill ()
+DECL|function|paint_layer_fill (void)
 name|paint_layer_fill
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|gimp_bucket_fill
 argument_list|(
@@ -21511,7 +21473,6 @@ literal|0
 block|gtk_progress_bar_update (GTK_PROGRESS_BAR (progress_widget), (gfloat) 0.0);
 endif|#
 directive|endif
-comment|/* 0 */
 comment|/* Set the brush up */
 name|bdesc
 operator|=
@@ -21522,7 +21483,7 @@ argument_list|(
 name|brush_page_pw
 argument_list|)
 argument_list|,
-literal|"user_data"
+literal|"brush-desc"
 argument_list|)
 expr_stmt|;
 if|if
@@ -21533,7 +21494,7 @@ name|mygimp_brush_set
 argument_list|(
 name|bdesc
 operator|->
-name|bname
+name|name
 argument_list|)
 expr_stmt|;
 name|gimp_undo_push_group_start
