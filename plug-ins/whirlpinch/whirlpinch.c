@@ -74,6 +74,29 @@ begin_comment
 comment|/* M_PI */
 end_comment
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|M_PI_2
+end_ifndef
+
+begin_define
+DECL|macro|M_PI_2
+define|#
+directive|define
+name|M_PI_2
+value|1.57079632679489661923
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* M_PI_2 */
+end_comment
+
 begin_define
 DECL|macro|PLUG_IN_NAME
 define|#
@@ -143,7 +166,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a438f1f0108
+DECL|struct|__anon2935f37a0108
 typedef|typedef
 struct|struct
 block|{
@@ -166,7 +189,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a438f1f0208
+DECL|struct|__anon2935f37a0208
 typedef|typedef
 struct|struct
 block|{
@@ -206,7 +229,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a438f1f0308
+DECL|struct|__anon2935f37a0308
 typedef|typedef
 struct|struct
 block|{

@@ -31,37 +31,6 @@ directive|include
 file|<plug-ins/megawidget/megawidget.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_define
-DECL|macro|inline
-define|#
-directive|define
-name|inline
-value|inline
-end_define
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_define
-DECL|macro|inline
-define|#
-directive|define
-name|inline
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_decl_stmt
 DECL|variable|nlfilt_do_preview
 specifier|static
@@ -146,7 +115,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon29354e3a0103
+DECL|enum|__anon2b3a775c0103
 typedef|typedef
 enum|enum
 block|{

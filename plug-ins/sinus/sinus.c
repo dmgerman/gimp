@@ -77,37 +77,6 @@ endif|#
 directive|endif
 end_endif
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_define
-DECL|macro|inline
-define|#
-directive|define
-name|inline
-value|inline
-end_define
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_define
-DECL|macro|inline
-define|#
-directive|define
-name|inline
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -260,7 +229,7 @@ value|1
 end_define
 
 begin_typedef
-DECL|struct|__anon2b8c1d6a0108
+DECL|struct|__anon2b0ae1620108
 typedef|typedef
 struct|struct
 block|{
@@ -361,7 +330,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b8c1d6a0208
+DECL|struct|__anon2b0ae1620208
 typedef|typedef
 struct|struct
 block|{
@@ -1509,7 +1478,7 @@ modifier|*
 name|p
 parameter_list|)
 block|{
-DECL|struct|__anon2b8c1d6a0308
+DECL|struct|__anon2b0ae1620308
 DECL|member|r
 DECL|member|g
 DECL|member|b

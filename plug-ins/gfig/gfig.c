@@ -241,13 +241,11 @@ name|GFIG_HEADER
 value|"GFIG Version 0.1\n"
 end_define
 
-begin_define
-DECL|macro|TRUE
-define|#
-directive|define
-name|TRUE
-value|1
-end_define
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|FALSE
+end_ifndef
 
 begin_define
 DECL|macro|FALSE
@@ -256,6 +254,49 @@ directive|define
 name|FALSE
 value|0
 end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|TRUE
+end_ifndef
+
+begin_define
+DECL|macro|TRUE
+define|#
+directive|define
+name|TRUE
+value|1
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|M_PI
+end_ifndef
+
+begin_define
+DECL|macro|M_PI
+define|#
+directive|define
+name|M_PI
+value|3.14159265358979323846
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_define
 DECL|macro|PREVIEW_MASK
@@ -8133,7 +8174,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fe7dc40108
+DECL|struct|__anon2c89a7940108
 block|{
 DECL|member|color_string
 name|gchar
@@ -24179,6 +24220,7 @@ decl_stmt|;
 name|GdkColor
 name|new_col2
 decl_stmt|;
+name|unsigned
 name|char
 name|stipple
 index|[
