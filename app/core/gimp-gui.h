@@ -313,6 +313,9 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|gint
+name|display_ID
 parameter_list|)
 function_decl|;
 DECL|member|progress_free
@@ -687,6 +690,9 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|gint
+name|display_ID
 parameter_list|)
 function_decl|;
 end_function_decl

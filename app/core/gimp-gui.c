@@ -1324,12 +1324,15 @@ end_function
 begin_function
 name|GimpProgress
 modifier|*
-DECL|function|gimp_new_progress (Gimp * gimp)
+DECL|function|gimp_new_progress (Gimp * gimp,gint display_ID)
 name|gimp_new_progress
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|gint
+name|display_ID
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -1358,6 +1361,8 @@ operator|.
 name|progress_new
 argument_list|(
 name|gimp
+argument_list|,
+name|display_ID
 argument_list|)
 return|;
 return|return

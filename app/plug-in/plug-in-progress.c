@@ -77,7 +77,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|plug_in_progress_start (PlugIn * plug_in,const gchar * message,gint gdisp_ID)
+DECL|function|plug_in_progress_start (PlugIn * plug_in,const gchar * message,gint display_ID)
 name|plug_in_progress_start
 parameter_list|(
 name|PlugIn
@@ -90,7 +90,7 @@ modifier|*
 name|message
 parameter_list|,
 name|gint
-name|gdisp_ID
+name|display_ID
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -128,6 +128,8 @@ argument_list|(
 name|plug_in
 operator|->
 name|gimp
+argument_list|,
+name|display_ID
 argument_list|)
 expr_stmt|;
 if|if
