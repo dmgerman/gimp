@@ -179,7 +179,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be7aed50103
+DECL|enum|__anon289bbb3f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -533,22 +533,6 @@ name|NULL
 comment|/* instance_init  */
 block|}
 decl_stmt|;
-specifier|static
-specifier|const
-name|GInterfaceInfo
-name|display_iface_info
-init|=
-block|{
-name|NULL
-block|,
-comment|/* iface_init     */
-name|NULL
-block|,
-comment|/* iface_finalize */
-name|NULL
-comment|/* iface_data     */
-block|}
-decl_stmt|;
 name|cdisplay_contrast_type
 operator|=
 name|g_type_module_register_type
@@ -563,16 +547,6 @@ operator|&
 name|display_info
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|g_type_add_interface_static
-argument_list|(
-name|cdisplay_contrast_type
-argument_list|,
-name|GIMP_TYPE_CONFIG
-argument_list|,
-operator|&
-name|display_iface_info
 argument_list|)
 expr_stmt|;
 block|}
