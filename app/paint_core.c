@@ -2525,11 +2525,13 @@ operator|(
 name|double
 operator|)
 name|gimp_brush_get_spacing
-argument_list|()
+argument_list|(
+name|brush
+argument_list|)
 operator|/
 literal|100.0
 expr_stmt|;
-comment|/*  paint_core->spacing =     (double) MAXIMUM (brush->mask->width, brush->mask->height) *     ((double) gimp_brush_get_spacing () / 100.0);   if (paint_core->spacing< 1.0)     paint_core->spacing = 1.0; */
+comment|/*  paint_core->spacing =     (double) MAXIMUM (brush->mask->width, brush->mask->height) *     ((double) gimp_brush_get_spacing (brush) / 100.0);   if (paint_core->spacing< 1.0)     paint_core->spacing = 1.0; */
 name|paint_core
 operator|->
 name|brush

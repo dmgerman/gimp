@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrushlist.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"drawable.h"
 end_include
 
@@ -49,6 +43,12 @@ begin_include
 include|#
 directive|include
 file|"paint_core.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paint_options.h"
 end_include
 
 begin_include
@@ -105,9 +105,9 @@ DECL|struct|_EraserOptions
 struct|struct
 name|_EraserOptions
 block|{
-DECL|member|tool_options
-name|ToolOptions
-name|tool_options
+DECL|member|paint_options
+name|PaintOptions
+name|paint_options
 decl_stmt|;
 DECL|member|hard
 name|gboolean
@@ -215,6 +215,15 @@ name|options
 init|=
 name|eraser_options
 decl_stmt|;
+name|paint_options_reset
+argument_list|(
+operator|(
+name|PaintOptions
+operator|*
+operator|)
+name|options
+argument_list|)
+expr_stmt|;
 name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
@@ -279,18 +288,15 @@ name|EraserOptions
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|tool_options_init
+name|paint_options_init
 argument_list|(
 operator|(
-name|ToolOptions
+name|PaintOptions
 operator|*
 operator|)
 name|options
 argument_list|,
-name|_
-argument_list|(
-literal|"Eraser Options"
-argument_list|)
+name|ERASER
 argument_list|,
 name|eraser_options_reset
 argument_list|)
@@ -318,10 +324,14 @@ expr_stmt|;
 comment|/*  the main vbox  */
 name|vbox
 operator|=
+operator|(
+operator|(
+name|ToolOptions
+operator|*
+operator|)
 name|options
+operator|)
 operator|->
-name|tool_options
-operator|.
 name|main_vbox
 expr_stmt|;
 comment|/* the hard toggle */
@@ -741,7 +751,7 @@ name|opacity
 operator|=
 literal|255
 operator|*
-name|gimp_brush_get_opacity
+name|paint_options_get_opacity
 argument_list|()
 operator|*
 operator|(
@@ -775,8 +785,10 @@ call|(
 name|int
 call|)
 argument_list|(
-name|gimp_brush_get_opacity
-argument_list|()
+name|PAINT_OPTIONS_GET_OPACITY
+argument_list|(
+name|eraser_options
+argument_list|)
 operator|*
 literal|255
 argument_list|)

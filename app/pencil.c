@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrushlist.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"drawable.h"
 end_include
 
@@ -54,13 +48,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"palette.h"
+file|"paint_options.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"paintbrush.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"palette.h"
 end_include
 
 begin_include
@@ -94,7 +94,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|pencil_options
 specifier|static
-name|ToolOptions
+name|PaintOptions
 modifier|*
 name|pencil_options
 init|=
@@ -176,6 +176,22 @@ block|}
 end_function
 
 begin_function
+name|void
+DECL|function|pencil_options_reset (void)
+name|pencil_options_reset
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|paint_options_reset
+argument_list|(
+name|pencil_options
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 name|Tool
 modifier|*
 DECL|function|tools_new_pencil (void)
@@ -201,18 +217,21 @@ condition|)
 block|{
 name|pencil_options
 operator|=
-name|tool_options_new
+name|paint_options_new
 argument_list|(
-name|_
-argument_list|(
-literal|"Pencil Options"
-argument_list|)
+name|PENCIL
+argument_list|,
+name|pencil_options_reset
 argument_list|)
 expr_stmt|;
 name|tools_register
 argument_list|(
 name|PENCIL
 argument_list|,
+operator|(
+name|ToolOptions
+operator|*
+operator|)
 name|pencil_options
 argument_list|)
 expr_stmt|;
@@ -380,14 +399,18 @@ call|(
 name|int
 call|)
 argument_list|(
-name|gimp_brush_get_opacity
-argument_list|()
+name|PAINT_OPTIONS_GET_OPACITY
+argument_list|(
+name|pencil_options
+argument_list|)
 operator|*
 literal|255
 argument_list|)
 argument_list|,
-name|gimp_brush_get_paint_mode
-argument_list|()
+name|PAINT_OPTIONS_GET_PAINT_MODE
+argument_list|(
+name|pencil_options
+argument_list|)
 argument_list|,
 name|HARD
 argument_list|,

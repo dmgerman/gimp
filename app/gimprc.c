@@ -200,7 +200,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2a3ee8bf0103
+DECL|enum|__anon29d833890103
 typedef|typedef
 enum|enum
 block|{
@@ -859,6 +859,15 @@ modifier|*
 name|image_title_format
 init|=
 name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|global_paint_options
+name|int
+name|global_paint_options
+init|=
+name|TRUE
 decl_stmt|;
 end_decl_stmt
 
@@ -2255,7 +2264,29 @@ name|NULL
 block|,
 name|NULL
 block|}
-block|, }
+block|,
+block|{
+literal|"global-paint-options"
+block|,
+name|TT_BOOLEAN
+block|,
+operator|&
+name|global_paint_options
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"no-global-paint-options"
+block|,
+name|TT_BOOLEAN
+block|,
+name|NULL
+block|,
+operator|&
+name|global_paint_options
+block|}
+block|}
 decl_stmt|;
 end_decl_stmt
 

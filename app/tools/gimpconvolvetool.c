@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrushlist.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"drawable.h"
 end_include
 
@@ -61,6 +55,12 @@ begin_include
 include|#
 directive|include
 file|"paint_core.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paint_options.h"
 end_include
 
 begin_include
@@ -161,9 +161,9 @@ DECL|struct|_ConvolveOptions
 struct|struct
 name|_ConvolveOptions
 block|{
-DECL|member|tool_options
-name|ToolOptions
-name|tool_options
+DECL|member|paint_options
+name|PaintOptions
+name|paint_options
 decl_stmt|;
 DECL|member|type
 name|ConvolveType
@@ -556,6 +556,15 @@ name|options
 init|=
 name|convolve_options
 decl_stmt|;
+name|paint_options_reset
+argument_list|(
+operator|(
+name|PaintOptions
+operator|*
+operator|)
+name|options
+argument_list|)
+expr_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
 name|GTK_ADJUSTMENT
@@ -680,18 +689,15 @@ name|ConvolveOptions
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|tool_options_init
+name|paint_options_init
 argument_list|(
 operator|(
-name|ToolOptions
+name|PaintOptions
 operator|*
 operator|)
 name|options
 argument_list|,
-name|_
-argument_list|(
-literal|"Convolver Options"
-argument_list|)
+name|CONVOLVE
 argument_list|,
 name|convolve_options_reset
 argument_list|)
@@ -719,10 +725,14 @@ expr_stmt|;
 comment|/*  the main vbox  */
 name|vbox
 operator|=
+operator|(
+operator|(
+name|ToolOptions
+operator|*
+operator|)
 name|options
+operator|)
 operator|->
-name|tool_options
-operator|.
 name|main_vbox
 expr_stmt|;
 comment|/*  the pressure scale  */
@@ -732,7 +742,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|6
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1722,8 +1732,10 @@ call|(
 name|int
 call|)
 argument_list|(
-name|gimp_brush_get_opacity
-argument_list|()
+name|PAINT_OPTIONS_GET_OPACITY
+argument_list|(
+name|convolve_options
+argument_list|)
 operator|*
 literal|255
 argument_list|)

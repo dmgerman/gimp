@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrushlist.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"drawable.h"
 end_include
 
@@ -85,6 +79,12 @@ begin_include
 include|#
 directive|include
 file|"paint_core.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paint_options.h"
 end_include
 
 begin_include
@@ -2514,13 +2514,13 @@ call|(
 name|int
 call|)
 argument_list|(
-name|gimp_brush_get_opacity
+name|paint_options_get_opacity
 argument_list|()
 operator|*
 literal|255
 argument_list|)
 argument_list|,
-name|gimp_brush_get_paint_mode
+name|paint_options_get_paint_mode
 argument_list|()
 argument_list|,
 name|SOFT

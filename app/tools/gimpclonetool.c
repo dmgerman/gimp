@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrushlist.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"drawable.h"
 end_include
 
@@ -67,6 +61,12 @@ begin_include
 include|#
 directive|include
 file|"paint_core.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paint_options.h"
 end_include
 
 begin_include
@@ -122,7 +122,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ffa8060103
+DECL|enum|__anon2c3cbec60103
 block|{
 DECL|enumerator|AlignNo
 name|AlignNo
@@ -152,9 +152,9 @@ DECL|struct|_CloneOptions
 struct|struct
 name|_CloneOptions
 block|{
-DECL|member|tool_options
-name|ToolOptions
-name|tool_options
+DECL|member|paint_options
+name|PaintOptions
+name|paint_options
 decl_stmt|;
 DECL|member|type
 name|CloneType
@@ -568,6 +568,15 @@ name|options
 init|=
 name|clone_options
 decl_stmt|;
+name|paint_options_reset
+argument_list|(
+operator|(
+name|PaintOptions
+operator|*
+operator|)
+name|options
+argument_list|)
+expr_stmt|;
 name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
@@ -702,18 +711,15 @@ name|CloneOptions
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|tool_options_init
+name|paint_options_init
 argument_list|(
 operator|(
-name|ToolOptions
+name|PaintOptions
 operator|*
 operator|)
 name|options
 argument_list|,
-name|_
-argument_list|(
-literal|"Clone Tool Options"
-argument_list|)
+name|CLONE
 argument_list|,
 name|clone_options_reset
 argument_list|)
@@ -741,10 +747,14 @@ expr_stmt|;
 comment|/*  the main vbox  */
 name|vbox
 operator|=
+operator|(
+operator|(
+name|ToolOptions
+operator|*
+operator|)
 name|options
+operator|)
 operator|->
-name|tool_options
-operator|.
 name|main_vbox
 expr_stmt|;
 comment|/*  the radio frame and box  */
@@ -2629,14 +2639,18 @@ call|(
 name|int
 call|)
 argument_list|(
-name|gimp_brush_get_opacity
-argument_list|()
+name|PAINT_OPTIONS_GET_OPACITY
+argument_list|(
+name|clone_options
+argument_list|)
 operator|*
 literal|255
 argument_list|)
 argument_list|,
-name|gimp_brush_get_paint_mode
-argument_list|()
+name|PAINT_OPTIONS_GET_PAINT_MODE
+argument_list|(
+name|clone_options
+argument_list|)
 argument_list|,
 name|SOFT
 argument_list|,

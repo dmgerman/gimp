@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrushlist.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"drawable.h"
 end_include
 
@@ -73,6 +67,12 @@ begin_include
 include|#
 directive|include
 file|"palette.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paint_options.h"
 end_include
 
 begin_include
@@ -122,22 +122,22 @@ comment|/*  the paintbrush structures  */
 end_comment
 
 begin_typedef
-DECL|typedef|PaintOptions
+DECL|typedef|PaintbrushOptions
 typedef|typedef
 name|struct
-name|_PaintOptions
-name|PaintOptions
+name|_PaintbrushOptions
+name|PaintbrushOptions
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_PaintOptions
+DECL|struct|_PaintbrushOptions
 struct|struct
-name|_PaintOptions
+name|_PaintbrushOptions
 block|{
-DECL|member|tool_options
-name|ToolOptions
-name|tool_options
+DECL|member|paint_options
+name|PaintOptions
+name|paint_options
 decl_stmt|;
 DECL|member|fade_out
 name|double
@@ -219,7 +219,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|paintbrush_options
 specifier|static
-name|PaintOptions
+name|PaintbrushOptions
 modifier|*
 name|paintbrush_options
 init|=
@@ -307,7 +307,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|PaintOptions
+name|PaintbrushOptions
 modifier|*
 name|options
 init|=
@@ -409,12 +409,21 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|PaintOptions
+name|PaintbrushOptions
 modifier|*
 name|options
 init|=
 name|paintbrush_options
 decl_stmt|;
+name|paint_options_reset
+argument_list|(
+operator|(
+name|PaintOptions
+operator|*
+operator|)
+name|options
+argument_list|)
+expr_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
 name|GTK_ADJUSTMENT
@@ -493,7 +502,7 @@ end_function
 
 begin_function
 specifier|static
-name|PaintOptions
+name|PaintbrushOptions
 modifier|*
 DECL|function|paintbrush_options_new (void)
 name|paintbrush_options_new
@@ -501,7 +510,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|PaintOptions
+name|PaintbrushOptions
 modifier|*
 name|options
 decl_stmt|;
@@ -579,29 +588,26 @@ comment|/*  the new paint tool options structure  */
 name|options
 operator|=
 operator|(
-name|PaintOptions
+name|PaintbrushOptions
 operator|*
 operator|)
 name|g_malloc
 argument_list|(
 sizeof|sizeof
 argument_list|(
-name|PaintOptions
+name|PaintbrushOptions
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|tool_options_init
+name|paint_options_init
 argument_list|(
 operator|(
-name|ToolOptions
+name|PaintOptions
 operator|*
 operator|)
 name|options
 argument_list|,
-name|_
-argument_list|(
-literal|"Paintbrush Options"
-argument_list|)
+name|PAINTBRUSH
 argument_list|,
 name|paintbrush_options_reset
 argument_list|)
@@ -659,10 +665,14 @@ expr_stmt|;
 comment|/*  the main vbox  */
 name|vbox
 operator|=
+operator|(
+operator|(
+name|ToolOptions
+operator|*
+operator|)
 name|options
+operator|)
 operator|->
-name|tool_options
-operator|.
 name|main_vbox
 expr_stmt|;
 comment|/*  the fade-out scale  */
@@ -686,7 +696,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|6
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacing
@@ -2091,14 +2101,18 @@ call|(
 name|int
 call|)
 argument_list|(
-name|gimp_brush_get_opacity
-argument_list|()
+name|PAINT_OPTIONS_GET_OPACITY
+argument_list|(
+name|paintbrush_options
+argument_list|)
 operator|*
 literal|255
 argument_list|)
 argument_list|,
-name|gimp_brush_get_paint_mode
-argument_list|()
+name|PAINT_OPTIONS_GET_PAINT_MODE
+argument_list|(
+name|paintbrush_options
+argument_list|)
 argument_list|,
 name|PRESSURE
 argument_list|,

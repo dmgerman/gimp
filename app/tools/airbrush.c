@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint_options.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"palette.h"
 end_include
 
@@ -167,9 +173,9 @@ DECL|struct|_AirbrushOptions
 struct|struct
 name|_AirbrushOptions
 block|{
-DECL|member|tool_options
-name|ToolOptions
-name|tool_options
+DECL|member|paint_options
+name|PaintOptions
+name|paint_options
 decl_stmt|;
 DECL|member|rate
 name|double
@@ -313,6 +319,15 @@ name|options
 init|=
 name|airbrush_options
 decl_stmt|;
+name|paint_options_reset
+argument_list|(
+operator|(
+name|PaintOptions
+operator|*
+operator|)
+name|options
+argument_list|)
+expr_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
 name|GTK_ADJUSTMENT
@@ -389,18 +404,15 @@ name|AirbrushOptions
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|tool_options_init
+name|paint_options_init
 argument_list|(
 operator|(
-name|ToolOptions
+name|PaintOptions
 operator|*
 operator|)
 name|options
 argument_list|,
-name|_
-argument_list|(
-literal|"Airbrush Options"
-argument_list|)
+name|AIRBRUSH
 argument_list|,
 name|airbrush_options_reset
 argument_list|)
@@ -428,10 +440,14 @@ expr_stmt|;
 comment|/*  the main vbox  */
 name|vbox
 operator|=
+operator|(
+operator|(
+name|ToolOptions
+operator|*
+operator|)
 name|options
+operator|)
 operator|->
-name|tool_options
-operator|.
 name|main_vbox
 expr_stmt|;
 comment|/*  the rate scale  */
@@ -455,7 +471,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|6
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacings
@@ -1274,14 +1290,18 @@ call|(
 name|int
 call|)
 argument_list|(
-name|gimp_brush_get_opacity
-argument_list|()
+name|PAINT_OPTIONS_GET_OPACITY
+argument_list|(
+name|airbrush_options
+argument_list|)
 operator|*
 literal|255
 argument_list|)
 argument_list|,
-name|gimp_brush_get_paint_mode
-argument_list|()
+name|PAINT_OPTIONS_GET_PAINT_MODE
+argument_list|(
+name|airbrush_options
+argument_list|)
 argument_list|,
 name|SOFT
 argument_list|,

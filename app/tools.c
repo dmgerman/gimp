@@ -2246,10 +2246,7 @@ name|GtkWidget
 modifier|*
 name|frame
 decl_stmt|;
-name|GtkWidget
-modifier|*
-name|frame2
-decl_stmt|;
+comment|/* GtkWidget *frame2; */
 name|GtkWidget
 modifier|*
 name|vbox

@@ -729,7 +729,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|6
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

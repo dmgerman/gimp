@@ -19,19 +19,19 @@ end_define
 begin_include
 include|#
 directive|include
-file|"procedural_db.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"buildmenu.h"
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
 file|"gimpbrush.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"procedural_db.h"
 end_include
 
 begin_typedef
@@ -56,6 +56,27 @@ DECL|member|shell
 name|GtkWidget
 modifier|*
 name|shell
+decl_stmt|;
+comment|/* Place holders which enable global<->per-tool paint options switching */
+DECL|member|left_box
+name|GtkWidget
+modifier|*
+name|left_box
+decl_stmt|;
+DECL|member|right_box
+name|GtkWidget
+modifier|*
+name|right_box
+decl_stmt|;
+DECL|member|brush_selection_box
+name|GtkWidget
+modifier|*
+name|brush_selection_box
+decl_stmt|;
+DECL|member|paint_options_box
+name|GtkWidget
+modifier|*
+name|paint_options_box
 decl_stmt|;
 DECL|member|frame
 name|GtkWidget
@@ -107,6 +128,42 @@ name|GtkWidget
 modifier|*
 name|option_menu
 decl_stmt|;
+comment|/* Brush preview */
+DECL|member|brush_popup
+name|GtkWidget
+modifier|*
+name|brush_popup
+decl_stmt|;
+DECL|member|brush_preview
+name|GtkWidget
+modifier|*
+name|brush_preview
+decl_stmt|;
+comment|/* Call back function name */
+DECL|member|callback_name
+name|gchar
+modifier|*
+name|callback_name
+decl_stmt|;
+comment|/* Current brush */
+DECL|member|brush
+name|GimpBrushP
+name|brush
+decl_stmt|;
+DECL|member|spacing_value
+name|gint
+name|spacing_value
+decl_stmt|;
+comment|/* Current paint options */
+DECL|member|opacity_value
+name|gdouble
+name|opacity_value
+decl_stmt|;
+DECL|member|paint_mode
+name|gint
+name|paint_mode
+decl_stmt|;
+comment|/* Some variables to keep the GUI consistent */
 DECL|member|width
 DECL|member|height
 name|int
@@ -129,29 +186,6 @@ DECL|member|redraw
 name|int
 name|redraw
 decl_stmt|;
-comment|/*  Brush preview  */
-DECL|member|brush_popup
-name|GtkWidget
-modifier|*
-name|brush_popup
-decl_stmt|;
-DECL|member|brush_preview
-name|GtkWidget
-modifier|*
-name|brush_preview
-decl_stmt|;
-comment|/* Call back function name */
-DECL|member|callback_name
-name|gchar
-modifier|*
-name|callback_name
-decl_stmt|;
-comment|/* current brush */
-DECL|member|brush
-name|GimpBrushP
-name|brush
-decl_stmt|;
-comment|/* Stuff for current selection */
 DECL|member|old_row
 name|int
 name|old_row
@@ -160,19 +194,6 @@ DECL|member|old_col
 name|int
 name|old_col
 decl_stmt|;
-DECL|member|opacity_value
-name|gdouble
-name|opacity_value
-decl_stmt|;
-DECL|member|spacing_value
-name|gint
-name|spacing_value
-decl_stmt|;
-DECL|member|paint_mode
-name|gint
-name|paint_mode
-decl_stmt|;
-comment|/* To calc column pos. */
 DECL|member|NUM_BRUSH_COLUMNS
 name|gint
 name|NUM_BRUSH_COLUMNS
@@ -191,28 +212,21 @@ name|brush_select_new
 parameter_list|(
 name|gchar
 modifier|*
+name|title
 parameter_list|,
+comment|/*  These are the required initial vals 				 *  If init_name == NULL then use current brush 				 */
 name|gchar
 modifier|*
+name|init_name
 parameter_list|,
-comment|/* These are the required initial vals*/
 name|gdouble
-parameter_list|,
-comment|/* If init_name == NULL then  							   * use current brush  							   */
-name|gint
+name|init_opacity
 parameter_list|,
 name|gint
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|brush_select_select
-parameter_list|(
-name|BrushSelectP
+name|init_spacing
 parameter_list|,
-name|int
+name|gint
+name|init_mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -222,6 +236,20 @@ name|void
 name|brush_select_free
 parameter_list|(
 name|BrushSelectP
+name|bsp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|brush_select_select
+parameter_list|(
+name|BrushSelectP
+name|bsp
+parameter_list|,
+name|int
+name|index
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -231,8 +259,10 @@ name|void
 name|brush_change_callbacks
 parameter_list|(
 name|BrushSelectP
+name|bsp
 parameter_list|,
 name|gint
+name|closing
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -247,17 +277,18 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  An interface to other dialogs which need to create a paint mode menu  */
+comment|/*  show/hide paint options (main brush dialog if bsp == NULL)  */
 end_comment
 
 begin_function_decl
-name|GtkWidget
-modifier|*
-name|create_paint_mode_menu
+name|void
+name|brush_select_show_paint_options
 parameter_list|(
-name|MenuItemCallback
+name|BrushSelectP
+name|bsp
 parameter_list|,
-name|gpointer
+name|gboolean
+name|show
 parameter_list|)
 function_decl|;
 end_function_decl
