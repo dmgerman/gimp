@@ -19,8 +19,26 @@ end_define
 begin_include
 include|#
 directive|include
-file|"tools.h"
+file|"toolsF.h"
 end_include
+
+begin_typedef
+DECL|typedef|BezierPoint
+typedef|typedef
+name|struct
+name|_bezier_point
+name|BezierPoint
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|BezierSelect
+typedef|typedef
+name|struct
+name|_bezier_select
+name|BezierSelect
+typedef|;
+end_typedef
 
 begin_comment
 comment|/*  bezier select functions  */

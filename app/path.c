@@ -42,7 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pathsP.h"
+file|"path.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pathP.h"
 end_include
 
 begin_include
@@ -56,19 +62,6 @@ include|#
 directive|include
 file|"libgimp/gimpmath.h"
 end_include
-
-begin_function_decl
-specifier|static
-name|BezierSelect
-modifier|*
-name|path_to_beziersel
-parameter_list|(
-name|Path
-modifier|*
-name|bzp
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 specifier|static
@@ -387,10 +380,10 @@ end_function
 begin_function
 name|PathPoint
 modifier|*
-DECL|function|path_point_new (gint type,gdouble x,gdouble y)
+DECL|function|path_point_new (guint type,gdouble x,gdouble y)
 name|path_point_new
 parameter_list|(
-name|gint
+name|guint
 name|type
 parameter_list|,
 name|gdouble
@@ -872,7 +865,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|BezierSelect
 modifier|*
 DECL|function|path_to_beziersel (Path * bzp)
@@ -902,13 +894,11 @@ condition|(
 operator|!
 name|bzp
 condition|)
-block|{
 name|g_warning
 argument_list|(
-literal|"path_to_beziersel:: NULL bzp"
+literal|"path_to_beziersel: NULL bzp"
 argument_list|)
 expr_stmt|;
-block|}
 name|list
 operator|=
 name|bzp

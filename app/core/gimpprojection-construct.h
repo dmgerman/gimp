@@ -91,7 +91,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pathsP.h"
+file|"path.h"
 end_include
 
 begin_define
@@ -211,7 +211,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon28905d440103
+DECL|enum|__anon2b98518c0103
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -230,7 +230,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28905d440203
+DECL|enum|__anon2b98518c0203
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -249,7 +249,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28905d440303
+DECL|enum|__anon2b98518c0303
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -277,7 +277,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28905d440403
+DECL|enum|__anon2b98518c0403
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY

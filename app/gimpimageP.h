@@ -61,7 +61,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pathsP.h"
+file|"path.h"
 end_include
 
 begin_include

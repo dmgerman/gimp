@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"path_transform.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"transform_core.h"
 end_include
 
@@ -286,25 +292,6 @@ name|transform_core_grid_recalc
 parameter_list|(
 name|TransformCore
 modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* Hmmm... Should be in a headerfile but which? */
-end_comment
-
-begin_function_decl
-name|void
-name|paths_draw_current
-parameter_list|(
-name|GDisplay
-modifier|*
-parameter_list|,
-name|DrawCore
-modifier|*
-parameter_list|,
-name|GimpMatrix3
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2079,7 +2066,7 @@ block|}
 else|else
 block|{
 comment|/*  Only update the paths preview */
-name|paths_transform_current_path
+name|path_transform_current_path
 argument_list|(
 name|gdisp
 operator|->
@@ -2151,7 +2138,7 @@ name|tool
 argument_list|)
 expr_stmt|;
 comment|/* Update the paths preview */
-name|paths_transform_current_path
+name|path_transform_current_path
 argument_list|(
 name|gdisp
 operator|->
@@ -2211,7 +2198,7 @@ name|TransformUndo
 modifier|*
 name|tu
 decl_stmt|;
-name|void
+name|PathUndo
 modifier|*
 name|pundo
 decl_stmt|;
@@ -2315,7 +2302,7 @@ argument_list|)
 expr_stmt|;
 name|pundo
 operator|=
-name|paths_transform_start_undo
+name|path_transform_start_undo
 argument_list|(
 name|gdisp
 operator|->
@@ -3901,7 +3888,7 @@ name|tmp_matrix
 argument_list|)
 expr_stmt|;
 block|}
-name|paths_draw_current
+name|path_transform_draw_current
 argument_list|(
 name|gdisp
 argument_list|,
@@ -5669,7 +5656,7 @@ name|m
 argument_list|)
 expr_stmt|;
 block|}
-name|paths_transform_current_path
+name|path_transform_current_path
 argument_list|(
 name|gimage
 argument_list|,

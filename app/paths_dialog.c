@@ -150,7 +150,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pathsP.h"
+file|"path.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pathP.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"path_transform.h"
 end_include
 
 begin_include
@@ -2248,257 +2260,6 @@ name|state
 operator|=
 name|BEZIER_EDIT
 expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|BezierSelect
-modifier|*
-DECL|function|path_to_beziersel (Path * bzp)
-name|path_to_beziersel
-parameter_list|(
-name|Path
-modifier|*
-name|bzp
-parameter_list|)
-block|{
-name|BezierSelect
-modifier|*
-name|bezier_sel
-decl_stmt|;
-name|BezierPoint
-modifier|*
-name|bpnt
-init|=
-name|NULL
-decl_stmt|;
-name|GSList
-modifier|*
-name|list
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|bzp
-condition|)
-block|{
-name|g_warning
-argument_list|(
-literal|"path_to_beziersel:: NULL bzp"
-argument_list|)
-expr_stmt|;
-block|}
-name|list
-operator|=
-name|bzp
-operator|->
-name|path_details
-expr_stmt|;
-name|bezier_sel
-operator|=
-name|g_new0
-argument_list|(
-name|BezierSelect
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|bezier_sel
-operator|->
-name|num_points
-operator|=
-literal|0
-expr_stmt|;
-name|bezier_sel
-operator|->
-name|mask
-operator|=
-name|NULL
-expr_stmt|;
-name|bezier_sel
-operator|->
-name|core
-operator|=
-name|NULL
-expr_stmt|;
-comment|/* not required will be reset in bezier code */
-name|bezier_select_reset
-argument_list|(
-name|bezier_sel
-argument_list|)
-expr_stmt|;
-name|bezier_sel
-operator|->
-name|closed
-operator|=
-name|bzp
-operator|->
-name|closed
-expr_stmt|;
-comment|/*   bezier_sel->state = BEZIER_ADD; */
-name|bezier_sel
-operator|->
-name|state
-operator|=
-name|bzp
-operator|->
-name|state
-expr_stmt|;
-while|while
-condition|(
-name|list
-condition|)
-block|{
-name|PathPoint
-modifier|*
-name|pdata
-decl_stmt|;
-name|pdata
-operator|=
-operator|(
-name|PathPoint
-operator|*
-operator|)
-name|list
-operator|->
-name|data
-expr_stmt|;
-if|if
-condition|(
-name|pdata
-operator|->
-name|type
-operator|==
-name|BEZIER_MOVE
-condition|)
-block|{
-comment|/* 	  printf("Close last curve off\n"); */
-name|bezier_sel
-operator|->
-name|last_point
-operator|->
-name|next
-operator|=
-name|bpnt
-expr_stmt|;
-name|bpnt
-operator|->
-name|prev
-operator|=
-name|bezier_sel
-operator|->
-name|last_point
-expr_stmt|;
-name|bezier_sel
-operator|->
-name|cur_anchor
-operator|=
-name|NULL
-expr_stmt|;
-name|bezier_sel
-operator|->
-name|cur_control
-operator|=
-name|NULL
-expr_stmt|;
-name|bpnt
-operator|=
-name|NULL
-expr_stmt|;
-block|}
-name|bezier_add_point
-argument_list|(
-name|bezier_sel
-argument_list|,
-operator|(
-name|gint
-operator|)
-name|pdata
-operator|->
-name|type
-argument_list|,
-name|RINT
-argument_list|(
-name|pdata
-operator|->
-name|x
-argument_list|)
-argument_list|,
-comment|/* ALT add rint() */
-name|RINT
-argument_list|(
-name|pdata
-operator|->
-name|y
-argument_list|)
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|bpnt
-operator|==
-name|NULL
-condition|)
-name|bpnt
-operator|=
-name|bezier_sel
-operator|->
-name|last_point
-expr_stmt|;
-name|list
-operator|=
-name|g_slist_next
-argument_list|(
-name|list
-argument_list|)
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|bezier_sel
-operator|->
-name|closed
-condition|)
-block|{
-name|bezier_sel
-operator|->
-name|last_point
-operator|->
-name|next
-operator|=
-name|bpnt
-expr_stmt|;
-name|bpnt
-operator|->
-name|prev
-operator|=
-name|bezier_sel
-operator|->
-name|last_point
-expr_stmt|;
-name|bezier_sel
-operator|->
-name|cur_anchor
-operator|=
-name|bezier_sel
-operator|->
-name|points
-expr_stmt|;
-name|bezier_sel
-operator|->
-name|cur_control
-operator|=
-name|bezier_sel
-operator|->
-name|points
-operator|->
-name|next
-expr_stmt|;
-block|}
-return|return
-name|bezier_sel
-return|;
 block|}
 end_function
 
@@ -9062,10 +8823,10 @@ comment|/* These functions are the undo functions for the paths  * that have und
 end_comment
 
 begin_function
-name|void
+name|PathUndo
 modifier|*
-DECL|function|paths_transform_start_undo (GimpImage * gimage)
-name|paths_transform_start_undo
+DECL|function|path_transform_start_undo (GimpImage * gimage)
+name|path_transform_start_undo
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -9121,10 +8882,23 @@ name|plp
 operator|->
 name|bz_paths
 expr_stmt|;
-while|while
-condition|(
+for|for
+control|(
 name|plist
-condition|)
+operator|=
+name|plp
+operator|->
+name|bz_paths
+init|;
+name|plist
+condition|;
+name|plist
+operator|=
+name|g_slist_next
+argument_list|(
+name|plist
+argument_list|)
+control|)
 block|{
 name|p
 operator|=
@@ -9143,7 +8917,7 @@ operator|->
 name|locked
 condition|)
 block|{
-comment|/* save away for a rainly day */
+comment|/* save away for a rainy day */
 name|p_copy
 operator|=
 name|path_copy
@@ -9164,15 +8938,12 @@ name|p_copy
 argument_list|)
 expr_stmt|;
 block|}
-name|plist
-operator|=
-name|g_slist_next
-argument_list|(
-name|plist
-argument_list|)
-expr_stmt|;
 block|}
 return|return
+operator|(
+name|PathUndo
+operator|*
+operator|)
 name|undo_list
 return|;
 block|}
@@ -9180,19 +8951,23 @@ end_function
 
 begin_function
 name|void
-DECL|function|paths_transform_free_undo (void * data)
-name|paths_transform_free_undo
+DECL|function|path_transform_free_undo (PathUndo * pundo)
+name|path_transform_free_undo
 parameter_list|(
-name|void
+name|PathUndo
 modifier|*
-name|data
+name|pundo
 parameter_list|)
 block|{
 name|GSList
 modifier|*
 name|pundolist
 init|=
-name|data
+operator|(
+name|GSList
+operator|*
+operator|)
+name|pundo
 decl_stmt|;
 name|Path
 modifier|*
@@ -9229,11 +9004,7 @@ expr_stmt|;
 block|}
 name|g_slist_free
 argument_list|(
-operator|(
-name|GSList
-operator|*
-operator|)
-name|data
+name|pundolist
 argument_list|)
 expr_stmt|;
 block|}
@@ -9241,23 +9012,27 @@ end_function
 
 begin_function
 name|void
-DECL|function|paths_transform_do_undo (GimpImage * gimage,void * data)
-name|paths_transform_do_undo
+DECL|function|path_transform_do_undo (GimpImage * gimage,PathUndo * pundo)
+name|path_transform_do_undo
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|void
+name|PathUndo
 modifier|*
-name|data
+name|pundo
 parameter_list|)
 block|{
 name|GSList
 modifier|*
 name|pundolist
 init|=
-name|data
+operator|(
+name|GSList
+operator|*
+operator|)
+name|pundo
 decl_stmt|;
 comment|/* Restore the paths as they were before this transform took place. */
 name|Path
@@ -9786,8 +9561,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|paths_transform_flip_horz (GimpImage * gimage)
-name|paths_transform_flip_horz
+DECL|function|path_transform_flip_horz (GimpImage * gimage)
+name|path_transform_flip_horz
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -9810,8 +9585,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|paths_transform_flip_vert (GimpImage * gimage)
-name|paths_transform_flip_vert
+DECL|function|path_transform_flip_vert (GimpImage * gimage)
+name|path_transform_flip_vert
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -9834,8 +9609,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|paths_transform_xy (GimpImage * gimage,gint x,gint y)
-name|paths_transform_xy
+DECL|function|path_transform_xy (GimpImage * gimage,gint x,gint y)
+name|path_transform_xy
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -9870,8 +9645,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|paths_transform_current_path (GimpImage * gimage,GimpMatrix3 transform,gboolean forpreview)
-name|paths_transform_current_path
+DECL|function|path_transform_current_path (GimpImage * gimage,GimpMatrix3 transform,gboolean forpreview)
+name|path_transform_current_path
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -10139,8 +9914,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|paths_draw_current (GDisplay * gdisp,DrawCore * core,GimpMatrix3 transform)
-name|paths_draw_current
+DECL|function|path_transform_draw_current (GDisplay * gdisp,DrawCore * core,GimpMatrix3 transform)
+name|path_transform_draw_current
 parameter_list|(
 name|GDisplay
 modifier|*
@@ -10362,8 +10137,8 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|paths_set_path (GimpImage * gimage,gchar * pname)
-name|paths_set_path
+DECL|function|path_set_path (GimpImage * gimage,gchar * pname)
+name|path_set_path
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -10527,8 +10302,8 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|paths_set_path_points (GimpImage * gimage,gchar * pname,gint ptype,gint pclosed,gint num_pnts,gdouble * pnts)
-name|paths_set_path_points
+DECL|function|path_set_path_points (GimpImage * gimage,gchar * pname,gint ptype,gint pclosed,gint num_pnts,gdouble * pnts)
+name|path_set_path_points
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -10990,8 +10765,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|paths_delete_path (GimpImage * gimage,gchar * pname)
-name|paths_delete_path
+DECL|function|path_delete_path (GimpImage * gimage,gchar * pname)
+name|path_delete_path
 parameter_list|(
 name|GimpImage
 modifier|*

@@ -212,7 +212,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pathsP.h"
+file|"path.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pathP.h"
 end_include
 
 begin_include
@@ -234,7 +240,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0d1b930103
+DECL|enum|__anon289c82e70103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -369,7 +375,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0d1b930203
+DECL|enum|__anon289c82e70203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE

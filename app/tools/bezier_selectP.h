@@ -111,7 +111,7 @@ value|1000
 end_define
 
 begin_enum
-DECL|enum|__anon29be11b80103
+DECL|enum|__anon298018160103
 DECL|enumerator|EXTEND_EDIT
 DECL|enumerator|EXTEND_ADD
 DECL|enumerator|EXTEND_REMOVE
@@ -128,15 +128,6 @@ name|EXTEND_NEW
 block|}
 enum|;
 end_enum
-
-begin_typedef
-DECL|typedef|BezierPoint
-typedef|typedef
-name|struct
-name|_bezier_point
-name|BezierPoint
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_bezier_point
@@ -190,15 +181,6 @@ comment|/* Status of point 0 = not selected  			       * 1 = selected  			      
 block|}
 struct|;
 end_struct
-
-begin_typedef
-DECL|typedef|BezierSelect
-typedef|typedef
-name|struct
-name|_bezier_select
-name|BezierSelect
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_bezier_select
@@ -277,7 +259,7 @@ comment|/* All udata that are passed to the bezier_draw_curve must  * have this 
 end_comment
 
 begin_typedef
-DECL|struct|__anon29be11b80208
+DECL|struct|__anon298018160208
 typedef|typedef
 struct|struct
 block|{

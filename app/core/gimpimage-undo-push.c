@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"path_transform.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools.h"
 end_include
 
@@ -217,7 +223,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|enum|__anon2900b9700103
+DECL|enum|__anon28eb41110103
 typedef|typedef
 enum|enum
 block|{
@@ -4822,7 +4828,7 @@ literal|3
 index|]
 decl_stmt|;
 DECL|member|path_undo
-name|void
+name|PathUndo
 modifier|*
 name|path_undo
 decl_stmt|;
@@ -4955,7 +4961,7 @@ name|ldu
 operator|->
 name|path_undo
 operator|=
-name|paths_transform_start_undo
+name|path_transform_start_undo
 argument_list|(
 name|gimage
 argument_list|)
@@ -5244,7 +5250,7 @@ name|ldu
 operator|->
 name|path_undo
 condition|)
-name|paths_transform_do_undo
+name|path_transform_do_undo
 argument_list|(
 name|gimage
 argument_list|,
@@ -5300,7 +5306,7 @@ name|ldu
 operator|->
 name|path_undo
 condition|)
-name|paths_transform_free_undo
+name|path_transform_free_undo
 argument_list|(
 name|ldu
 operator|->
@@ -5472,7 +5478,7 @@ operator|*
 operator|)
 name|tu_ptr
 expr_stmt|;
-name|paths_transform_do_undo
+name|path_transform_do_undo
 argument_list|(
 name|gimage
 argument_list|,
@@ -5640,7 +5646,7 @@ operator|->
 name|original
 argument_list|)
 expr_stmt|;
-name|paths_transform_free_undo
+name|path_transform_free_undo
 argument_list|(
 name|tu
 operator|->
@@ -11435,7 +11441,7 @@ comment|/* Layer re-position */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2900b9700208
+DECL|struct|__anon28eb41110208
 typedef|typedef
 struct|struct
 block|{
@@ -11665,7 +11671,7 @@ comment|/* Layer name change */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2900b9700308
+DECL|struct|__anon28eb41110308
 typedef|typedef
 struct|struct
 block|{

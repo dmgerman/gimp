@@ -28,7 +28,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pathsP.h"
+file|"path.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pathP.h"
 end_include
 
 begin_decl_stmt
@@ -1263,7 +1269,7 @@ name|success
 condition|)
 name|success
 operator|=
-name|paths_set_path
+name|path_set_path
 argument_list|(
 name|gimage
 argument_list|,
@@ -1530,7 +1536,7 @@ condition|(
 name|success
 operator|&&
 operator|!
-name|paths_set_path_points
+name|path_set_path_points
 argument_list|(
 name|gimage
 argument_list|,
@@ -2775,7 +2781,7 @@ name|success
 condition|)
 name|success
 operator|=
-name|paths_delete_path
+name|path_delete_path
 argument_list|(
 name|gimage
 argument_list|,

@@ -96,7 +96,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pathsP.h"
+file|"path.h"
 end_include
 
 begin_include
@@ -558,7 +558,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2be1c6500103
+DECL|enum|__anon2b4014f10103
 enum|enum
 block|{
 DECL|enumerator|CLEAN

@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paths_dialogP.h"
+file|"path_transform.h"
 end_include
 
 begin_include
@@ -1211,13 +1211,13 @@ name|type
 operator|==
 name|ORIENTATION_HORIZONTAL
 condition|)
-name|paths_transform_flip_horz
+name|path_transform_flip_horz
 argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
 else|else
-name|paths_transform_flip_vert
+name|path_transform_flip_vert
 argument_list|(
 name|gimage
 argument_list|)

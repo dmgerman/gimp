@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -84,13 +90,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paths_dialogP.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config.h"
+file|"path_transform.h"
 end_include
 
 begin_include
@@ -1119,7 +1119,7 @@ block|}
 block|}
 else|else
 block|{
-name|paths_transform_xy
+name|path_transform_xy
 argument_list|(
 name|gdisp
 operator|->
