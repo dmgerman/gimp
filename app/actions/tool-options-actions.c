@@ -532,7 +532,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  privat function  */
+comment|/*  private function  */
 end_comment
 
 begin_function
