@@ -5728,15 +5728,6 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|g_print
-argument_list|(
-literal|"num_paths: %d  selected_row: %d\n"
-argument_list|,
-name|num_paths
-argument_list|,
-name|last_selected_row
-argument_list|)
-expr_stmt|;
 while|while
 condition|(
 name|num_paths
@@ -6032,15 +6023,6 @@ return|return
 name|FALSE
 return|;
 block|}
-name|g_print
-argument_list|(
-literal|"num_points: %d  closed: %d\n"
-argument_list|,
-name|num_points
-argument_list|,
-name|closed
-argument_list|)
-expr_stmt|;
 name|points
 operator|=
 name|g_new0
@@ -6216,22 +6198,6 @@ operator|&
 name|y
 argument_list|,
 literal|1
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"path point type: %d   (at %f, %f)\n"
-argument_list|,
-name|points
-index|[
-name|i
-index|]
-operator|.
-name|type
-argument_list|,
-name|x
-argument_list|,
-name|y
 argument_list|)
 expr_stmt|;
 name|points
