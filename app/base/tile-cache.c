@@ -547,8 +547,10 @@ expr_stmt|;
 goto|goto
 name|out
 goto|;
+comment|/* goto grump;*/
 block|}
 block|}
+comment|/*grump:*/
 comment|/* Note the increase in the number of bytes the cache        *  is referencing.        */
 name|cur_cache_size
 operator|+=
@@ -816,6 +818,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/* untested -- ADM */
+end_comment
+
 begin_function
 name|void
 DECL|function|tile_cache_set_size (unsigned long cache_size)
@@ -841,8 +847,8 @@ name|CACHE_LOCK
 expr_stmt|;
 while|while
 condition|(
-name|cache_size
-operator|>=
+name|cur_cache_size
+operator|>
 name|max_cache_size
 condition|)
 block|{
@@ -951,7 +957,7 @@ name|Tile
 modifier|*
 name|tile
 decl_stmt|;
-comment|/* printf("cache zorch: %u/%u\n", cur_cache_size, cur_cache_dirty); */
+comment|/*  fprintf(stderr, "cache zorch: %u/%u\n", cur_cache_size, cur_cache_dirty);*/
 if|if
 condition|(
 name|clean_list

@@ -2837,6 +2837,7 @@ name|swap_file_end
 operator|>
 name|new_size
 condition|)
+block|{
 name|ftruncate
 argument_list|(
 name|fd
@@ -2844,6 +2845,8 @@ argument_list|,
 name|new_size
 argument_list|)
 expr_stmt|;
+comment|/*fprintf(stderr, "TRUNCATED SWAP from %d to %d bytes.\n", 	(int)def_swap_file->swap_file_end, (int) new_size);*/
+block|}
 name|def_swap_file
 operator|->
 name|swap_file_end
