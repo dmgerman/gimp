@@ -132,7 +132,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b20ad770108
+DECL|struct|__anon2b81daed0108
 block|{
 DECL|member|threshold
 name|gint
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b20ad770208
+DECL|struct|__anon2b81daed0208
 block|{
 DECL|member|r
 name|guchar
@@ -463,9 +463,15 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_xpm_load"
 argument_list|,
-literal|"loads files of the xpm file format"
+literal|"Load files in XPM (X11 Pixmap) format."
 argument_list|,
-literal|"FIXME: write help for xpm_load"
+literal|"Load files in XPM (X11 Pixmap) format. "
+literal|"XPM is a portable image format designed to be "
+literal|"included in C source code. XLib provides utility "
+literal|"functions to read this format. Newer code should "
+literal|"however be using gdk-pixbuf-csource instead. "
+literal|"XPM supports coloured images, unlike the XBM "
+literal|"format which XPM was designed to replace."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis& Ray Lehtiniemi"
 argument_list|,
@@ -526,9 +532,15 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_xpm_save"
 argument_list|,
-literal|"saves files in the xpm file format (if you're on a 16 bit display...)"
+literal|"Save files in XPM (X11 Pixmap) format."
 argument_list|,
-literal|"FIXME: write help for xpm"
+literal|"Save files in XPM (X11 Pixmap) format. "
+literal|"XPM is a portable image format designed to be "
+literal|"included in C source code. XLib provides utility "
+literal|"functions to read this format. Newer code should "
+literal|"however be using gdk-pixbuf-csource instead. "
+literal|"XPM supports coloured images, unlike the XBM "
+literal|"format which XPM was designed to replace."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis& Ray Lehtiniemi& Nathan Summers"
 argument_list|,
