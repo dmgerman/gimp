@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* T I N Y S C H E M E    1 . 3 5  *   Dimitrios Souflis (dsouflis@acm.org)  *   Based on MiniScheme (original credits follow)  * (MINISCM)               coded by Atsushi Moriwaki (11/5/1989)  * (MINISCM)           E-MAIL :  moriwaki@kurims.kurims.kyoto-u.ac.jp  * (MINISCM) This version has been modified by R.C. Secrist.  * (MINISCM)  * (MINISCM) Mini-Scheme is now maintained by Akira KIDA.  * (MINISCM)  * (MINISCM) This is a revised and modified version by Akira KIDA.  * (MINISCM)	current version is 0.85k4 (15 May 1994)  *  */
+comment|/* T I N Y S C H E M E    1 . 3 5  *   Dimitrios Souflis (dsouflis@acm.org)  *   Based on MiniScheme (original credits follow)  * (MINISCM)               coded by Atsushi Moriwaki (11/5/1989)  * (MINISCM)           E-MAIL :  moriwaki@kurims.kurims.kyoto-u.ac.jp  * (MINISCM) This version has been modified by R.C. Secrist.  * (MINISCM)  * (MINISCM) Mini-Scheme is now maintained by Akira KIDA.  * (MINISCM)  * (MINISCM) This is a revised and modified version by Akira KIDA.  * (MINISCM)   current version is 0.85k4 (15 May 1994)  *  */
 end_comment
 
 begin_define
@@ -256,14 +256,6 @@ define|#
 directive|define
 name|TOK_VEC
 value|12
-end_define
-
-begin_define
-DECL|macro|TOK_TQUOTE
-define|#
-directive|define
-name|TOK_TQUOTE
-value|13
 end_define
 
 begin_define
@@ -10811,7 +10803,7 @@ name|c1
 init|=
 literal|0
 decl_stmt|;
-DECL|enum|__anon279e28970103
+DECL|enum|__anon2c024a010103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -11356,7 +11348,7 @@ literal|'"'
 condition|)
 return|return
 operator|(
-name|TOK_TQUOTE
+name|TOK_DQUOTE
 operator|)
 return|;
 name|backchar
@@ -15946,7 +15938,7 @@ name|print_flag
 operator|=
 literal|1
 expr_stmt|;
-comment|/*	 sc->args=cons(sc,sc->code,sc->args);*/
+comment|/*         sc->args=cons(sc,sc->code,sc->args);*/
 name|putstr
 argument_list|(
 name|sc
@@ -22636,7 +22628,7 @@ operator|==
 name|slow
 condition|)
 block|{
-comment|/* the fast pointer has looped back around and caught up 			   with the slow pointer, hence the structure is circular, 			   not of finite length, and therefore not a list */
+comment|/* the fast pointer has looped back around and caught up                            with the slow pointer, hence the structure is circular,                            not of finite length, and therefore not a list */
 return|return
 literal|0
 return|;
@@ -22758,7 +22750,7 @@ operator|==
 name|slow
 condition|)
 block|{
-comment|/* the fast pointer has looped back around and caught up 			   with the slow pointer, hence the structure is circular, 			   not of finite length, and therefore not a list */
+comment|/* the fast pointer has looped back around and caught up                            with the slow pointer, hence the structure is circular,                            not of finite length, and therefore not a list */
 return|return
 operator|-
 literal|1
@@ -25851,17 +25843,6 @@ expr_stmt|;
 case|case
 name|TOK_DQUOTE
 case|:
-case|case
-name|TOK_TQUOTE
-case|:
-if|if
-condition|(
-name|sc
-operator|->
-name|tok
-operator|==
-name|TOK_DQUOTE
-condition|)
 name|x
 operator|=
 name|readstrexp
@@ -25869,43 +25850,6 @@ argument_list|(
 name|sc
 argument_list|)
 expr_stmt|;
-else|else
-block|{
-name|char
-modifier|*
-name|s
-decl_stmt|;
-name|s
-operator|=
-name|readstr_upto
-argument_list|(
-name|sc
-argument_list|,
-literal|"\""
-argument_list|)
-expr_stmt|;
-operator|(
-name|void
-operator|)
-name|inchar
-argument_list|(
-name|sc
-argument_list|)
-expr_stmt|;
-comment|/* Swallow the terminating " char */
-name|x
-operator|=
-name|mk_string
-argument_list|(
-name|sc
-argument_list|,
-name|gettext
-argument_list|(
-name|s
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|x
@@ -26508,7 +26452,7 @@ case|case
 name|OP_RDVEC
 case|:
 comment|/*sc->code=cons(sc,mk_proc(sc,OP_VECTOR),sc->value);           s_goto(sc,OP_EVAL); Cannot be quoted*/
-comment|/*x=cons(sc,mk_proc(sc,OP_VECTOR),sc->value); 	 s_return(sc,x); Cannot be part of pairs*/
+comment|/*x=cons(sc,mk_proc(sc,OP_VECTOR),sc->value);          s_return(sc,x); Cannot be part of pairs*/
 comment|/*sc->code=mk_proc(sc,OP_VECTOR);        sc->args=sc->value;        s_goto(sc,OP_APPLY);*/
 name|sc
 operator|->
@@ -27664,7 +27608,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon279e28970208
+DECL|struct|__anon2c024a010208
 specifier|static
 struct|struct
 block|{
@@ -27913,7 +27857,7 @@ value|"\017"
 end_define
 
 begin_typedef
-DECL|struct|__anon279e28970308
+DECL|struct|__anon2c024a010308
 typedef|typedef
 struct|struct
 block|{
