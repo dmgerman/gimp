@@ -504,7 +504,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_signal_connect_swapped
+name|g_signal_connect
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -515,10 +515,10 @@ literal|"notify"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|g_print
+name|gimp_config_debug_notify_callback
 argument_list|)
 argument_list|,
-literal|"GimpBaseConfig property changed\n"
+name|NULL
 argument_list|)
 expr_stmt|;
 name|filename

@@ -137,6 +137,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/* for debugging only */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_config_debug_notify_callback
+parameter_list|(
+name|GObject
+modifier|*
+name|object
+parameter_list|,
+name|GParamSpec
+modifier|*
+name|pspec
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
