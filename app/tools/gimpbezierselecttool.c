@@ -274,7 +274,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2fb72f0108
+DECL|struct|__anon2c1547bb0108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -310,7 +310,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2fb72f0208
+DECL|struct|__anon2c1547bb0208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -365,7 +365,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2fb72f0308
+DECL|struct|__anon2c1547bb0308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -531,7 +531,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2fb72f0403
+DECL|enum|__anon2c1547bb0403
 block|{
 DECL|enumerator|BEZIER_SELECT
 name|BEZIER_SELECT
@@ -1246,7 +1246,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"/Tools/Select Tools/Bezier Select"
+literal|"/Tools/Selection Tools/Bezier Select"
 argument_list|)
 argument_list|,
 literal|"B"
@@ -15483,13 +15483,74 @@ operator|-=
 name|offset_y
 expr_stmt|;
 block|}
-if|#
-directive|if
-literal|0
 comment|/* Stroke with the correct tool */
-block|return_vals = 	    procedural_db_run_proc (tool_active_PDB_string (),&nreturn_vals, 				    PDB_DRAWABLE, gimp_drawable_get_ID (drawable), 				    PDB_INT32, (gint32) rpnts->num_stroke_points * 2, 				    PDB_FLOATARRAY, rpnts->stroke_points, 				    PDB_END);  	  if (return_vals&& return_vals[0].value.pdb_int != PDB_SUCCESS) 	    g_message (_("Paintbrush operation failed."));  	  procedural_db_destroy_args (return_vals, nreturn_vals);
-endif|#
-directive|endif
+name|return_vals
+operator|=
+name|procedural_db_run_proc
+argument_list|(
+name|tool_manager_active_get_PDB_string
+argument_list|()
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|PDB_DRAWABLE
+argument_list|,
+name|gimp_drawable_get_ID
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
+name|PDB_INT32
+argument_list|,
+operator|(
+name|gint32
+operator|)
+name|rpnts
+operator|->
+name|num_stroke_points
+operator|*
+literal|2
+argument_list|,
+name|PDB_FLOATARRAY
+argument_list|,
+name|rpnts
+operator|->
+name|stroke_points
+argument_list|,
+name|PDB_END
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|return_vals
+operator|&&
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|value
+operator|.
+name|pdb_int
+operator|!=
+name|PDB_SUCCESS
+condition|)
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Paintbrush operation failed."
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|procedural_db_destroy_args
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|rpnts

@@ -708,6 +708,12 @@ expr_stmt|;
 block|}
 name|tool
 operator|->
+name|tool_cursor
+operator|=
+name|GIMP_BUCKET_FILL_TOOL_CURSOR
+expr_stmt|;
+name|tool
+operator|->
 name|scroll_lock
 operator|=
 name|TRUE

@@ -22,67 +22,6 @@ directive|include
 file|"tools/gimpdrawtool.h"
 end_include
 
-begin_define
-DECL|macro|GIMP_TYPE_TRANSFORM_TOOL
-define|#
-directive|define
-name|GIMP_TYPE_TRANSFORM_TOOL
-value|(gimp_transform_tool_get_type ())
-end_define
-
-begin_define
-DECL|macro|GIMP_TRANSFORM_TOOL (obj)
-define|#
-directive|define
-name|GIMP_TRANSFORM_TOOL
-parameter_list|(
-name|obj
-parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_TRANSFORM_TOOL, GimpTransformTool))
-end_define
-
-begin_define
-DECL|macro|GIMP_IS_TRANSFORM_TOOL (obj)
-define|#
-directive|define
-name|GIMP_IS_TRANSFORM_TOOL
-parameter_list|(
-name|obj
-parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_TRANSFORM_TOOL))
-end_define
-
-begin_define
-DECL|macro|GIMP_TRANSFORM_TOOL_CLASS (klass)
-define|#
-directive|define
-name|GIMP_TRANSFORM_TOOL_CLASS
-parameter_list|(
-name|klass
-parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_TRANSFORM_TOOL, GimpTransformToolClass))
-end_define
-
-begin_define
-DECL|macro|GIMP_IS_TRANSFORM_TOOL_CLASS (klass)
-define|#
-directive|define
-name|GIMP_IS_TRANSFORM_TOOL_CLASS
-parameter_list|(
-name|klass
-parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_TRANSFORM_TOOL))
-end_define
-
-begin_typedef
-DECL|typedef|GimpTransformToolClass
-typedef|typedef
-name|struct
-name|_GimpTransformToolClass
-name|GimpTransformToolClass
-typedef|;
-end_typedef
-
 begin_comment
 comment|/* buffer sizes for scaling information strings (for the info dialog) */
 end_comment
@@ -143,6 +82,67 @@ name|TranInfo
 index|[
 name|TRAN_INFO_SIZE
 index|]
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_TRANSFORM_TOOL
+define|#
+directive|define
+name|GIMP_TYPE_TRANSFORM_TOOL
+value|(gimp_transform_tool_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_TRANSFORM_TOOL (obj)
+define|#
+directive|define
+name|GIMP_TRANSFORM_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_TRANSFORM_TOOL, GimpTransformTool))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_TRANSFORM_TOOL (obj)
+define|#
+directive|define
+name|GIMP_IS_TRANSFORM_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_TRANSFORM_TOOL))
+end_define
+
+begin_define
+DECL|macro|GIMP_TRANSFORM_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_TRANSFORM_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_TRANSFORM_TOOL, GimpTransformToolClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_TRANSFORM_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_TRANSFORM_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_TRANSFORM_TOOL))
+end_define
+
+begin_typedef
+DECL|typedef|GimpTransformToolClass
+typedef|typedef
+name|struct
+name|_GimpTransformToolClass
+name|GimpTransformToolClass
 typedef|;
 end_typedef
 

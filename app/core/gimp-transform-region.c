@@ -222,12 +222,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tools/gimpfliptool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e608f80103
+DECL|enum|__anon2c0975230103
 block|{
 DECL|enumerator|TRANSFORM
 name|TRANSFORM
@@ -2324,7 +2330,11 @@ name|state
 operator|&
 name|GDK_SHIFT_MASK
 operator|)
-comment|/* FIXME || (tool->type == FLIP) */
+operator|||
+name|GIMP_IS_FLIP_TOOL
+argument_list|(
+name|tool
+argument_list|)
 condition|)
 block|{
 name|gimp_transform_tool_doit

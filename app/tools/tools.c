@@ -246,7 +246,9 @@ name|gimp_text_tool_register
 argument_list|()
 expr_stmt|;
 comment|/*  transform tools  */
-comment|/* gimp_flip_tool_registrer (); */
+name|gimp_flip_tool_register
+argument_list|()
+expr_stmt|;
 comment|/* gimp_perspective_tool_register (); */
 comment|/* gimp_shear_tool_register (); */
 name|gimp_scale_tool_register

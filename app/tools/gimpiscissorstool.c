@@ -1277,7 +1277,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Select Tools/Intelligent Scissors"
+literal|"/Tools/Selection Tools/Intelligent Scissors"
 argument_list|)
 argument_list|,
 literal|"I"
