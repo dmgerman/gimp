@@ -1816,7 +1816,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6320290108
+DECL|struct|__anon2aa7bd670108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1863,7 +1863,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6320290208
+DECL|struct|__anon2aa7bd670208
 block|{
 DECL|member|ncolors
 name|long
@@ -1882,7 +1882,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6320290308
+DECL|struct|__anon2aa7bd670308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -3975,6 +3975,16 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
+comment|/* We can't dither to> 256 colors */
+if|if
+condition|(
+name|entries
+operator|->
+name|n_colors
+operator|<=
+literal|256
+condition|)
+block|{
 name|menu_item
 operator|=
 name|gtk_menu_item_new_with_label
@@ -4030,6 +4040,7 @@ name|default_palette
 operator|=
 name|i
 expr_stmt|;
+block|}
 block|}
 comment|/* default to first one (only used if 'web' palette not avail.) */
 if|if
