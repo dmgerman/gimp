@@ -616,6 +616,8 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
 name|gimp_dnd_drag_source_set_by_type
 argument_list|(
 name|GTK_WIDGET
@@ -636,8 +638,9 @@ name|GDK_ACTION_MOVE
 operator||
 name|GDK_ACTION_COPY
 argument_list|)
-expr_stmt|;
-name|gimp_dnd_viewable_source_set
+condition|)
+block|{
+name|gimp_dnd_viewable_source_add
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
@@ -654,6 +657,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

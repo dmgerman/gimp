@@ -117,7 +117,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a87f0b0103
+DECL|enum|__anon2a0bf5780103
 block|{
 DECL|enumerator|FORE_AREA
 name|FORE_AREA
@@ -394,23 +394,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/*  dnd stuff  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|color_area_target_table
-specifier|static
-name|GtkTargetEntry
-name|color_area_target_table
-index|[]
-init|=
-block|{
-name|GIMP_TARGET_COLOR
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
 comment|/*  public functions  */
 end_comment
 
@@ -511,28 +494,7 @@ argument_list|,
 name|context
 argument_list|)
 expr_stmt|;
-comment|/*  dnd stuff  */
-name|gtk_drag_source_set
-argument_list|(
-name|color_area
-argument_list|,
-name|GDK_BUTTON1_MASK
-operator||
-name|GDK_BUTTON2_MASK
-argument_list|,
-name|color_area_target_table
-argument_list|,
-name|G_N_ELEMENTS
-argument_list|(
-name|color_area_target_table
-argument_list|)
-argument_list|,
-name|GDK_ACTION_COPY
-operator||
-name|GDK_ACTION_MOVE
-argument_list|)
-expr_stmt|;
-name|gimp_dnd_color_source_set
+name|gimp_dnd_color_source_add
 argument_list|(
 name|color_area
 argument_list|,

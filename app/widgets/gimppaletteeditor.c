@@ -736,23 +736,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  dnd stuff  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|color_palette_target_table
-specifier|static
-name|GtkTargetEntry
-name|color_palette_target_table
-index|[]
-init|=
-block|{
-name|GIMP_TARGET_COLOR
-block|}
-decl_stmt|;
-end_decl_stmt
-
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
@@ -1256,30 +1239,7 @@ argument_list|,
 name|editor
 argument_list|)
 expr_stmt|;
-comment|/*  dnd stuff  */
-name|gtk_drag_source_set
-argument_list|(
-name|editor
-operator|->
-name|color_area
-argument_list|,
-name|GDK_BUTTON1_MASK
-operator||
-name|GDK_BUTTON2_MASK
-argument_list|,
-name|color_palette_target_table
-argument_list|,
-name|G_N_ELEMENTS
-argument_list|(
-name|color_palette_target_table
-argument_list|)
-argument_list|,
-name|GDK_ACTION_COPY
-operator||
-name|GDK_ACTION_MOVE
-argument_list|)
-expr_stmt|;
-name|gimp_dnd_color_source_set
+name|gimp_dnd_color_source_add
 argument_list|(
 name|editor
 operator|->

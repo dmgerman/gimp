@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c95a04f0103
+DECL|enum|__anon274eed5f0103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -1854,7 +1854,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|gimp_dnd_viewable_source_unset
+name|gimp_dnd_viewable_source_remove
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
@@ -1924,7 +1924,7 @@ name|GDK_ACTION_COPY
 argument_list|)
 condition|)
 block|{
-name|gimp_dnd_viewable_source_set
+name|gimp_dnd_viewable_source_add
 argument_list|(
 name|GTK_WIDGET
 argument_list|(

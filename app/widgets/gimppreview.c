@@ -103,7 +103,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27fafe7b0103
+DECL|enum|__anon2bee043c0103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -2917,7 +2917,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|gimp_dnd_viewable_source_unset
+name|gimp_dnd_viewable_source_remove
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
@@ -2976,7 +2976,7 @@ name|GDK_ACTION_COPY
 argument_list|)
 condition|)
 block|{
-name|gimp_dnd_viewable_source_set
+name|gimp_dnd_viewable_source_add
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
