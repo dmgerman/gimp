@@ -90,6 +90,20 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|file_revert_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|w
+parameter_list|,
+name|gpointer
+name|client_data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|file_load_by_extension_callback
 parameter_list|(
 name|GtkWidget

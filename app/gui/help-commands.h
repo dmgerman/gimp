@@ -73,6 +73,18 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|file_revert_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+parameter_list|,
+name|gpointer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|file_pref_cmd_callback
 parameter_list|(
 name|GtkWidget
