@@ -51,6 +51,12 @@ directive|include
 file|<gtk/gtk.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"modregister.h"
+end_include
+
 begin_define
 DECL|macro|COLOR_DISPLAY_NAME
 define|#
@@ -358,6 +364,9 @@ modifier|*
 name|inforet
 parameter_list|)
 block|{
+ifndef|#
+directive|ifndef
+name|__EMX__
 if|if
 condition|(
 name|gimp_color_display_register
@@ -368,6 +377,20 @@ operator|&
 name|methods
 argument_list|)
 condition|)
+else|#
+directive|else
+if|if
+condition|(
+name|mod_color_display_register
+argument_list|(
+name|COLOR_DISPLAY_NAME
+argument_list|,
+operator|&
+name|methods
+argument_list|)
+condition|)
+endif|#
+directive|endif
 block|{
 operator|*
 name|inforet
@@ -411,11 +434,23 @@ modifier|*
 name|completed_data
 parameter_list|)
 block|{
+ifndef|#
+directive|ifndef
+name|__EMX__
 name|gimp_color_display_unregister
 argument_list|(
 name|COLOR_DISPLAY_NAME
 argument_list|)
 expr_stmt|;
+else|#
+directive|else
+name|mod_color_display_unregister
+argument_list|(
+name|COLOR_DISPLAY_NAME
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 block|}
 end_function
 
