@@ -137,10 +137,10 @@ DECL|struct|_OffsetDialog
 struct|struct
 name|_OffsetDialog
 block|{
-DECL|member|dlg
+DECL|member|dialog
 name|GtkWidget
 modifier|*
-name|dlg
+name|dialog
 decl_stmt|;
 DECL|member|off_se
 name|GtkWidget
@@ -178,7 +178,7 @@ name|response_id
 parameter_list|,
 name|OffsetDialog
 modifier|*
-name|off_d
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -194,7 +194,7 @@ name|widget
 parameter_list|,
 name|OffsetDialog
 modifier|*
-name|off_d
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -220,7 +220,7 @@ parameter_list|)
 block|{
 name|OffsetDialog
 modifier|*
-name|off_d
+name|dialog
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -281,7 +281,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|off_d
+name|dialog
 operator|=
 name|g_new0
 argument_list|(
@@ -290,7 +290,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|off_d
+name|dialog
 operator|->
 name|fill_type
 operator|=
@@ -301,7 +301,7 @@ argument_list|)
 operator||
 name|WRAP_AROUND
 expr_stmt|;
-name|off_d
+name|dialog
 operator|->
 name|gimage
 operator|=
@@ -365,9 +365,9 @@ argument_list|,
 name|G_STRFUNC
 argument_list|)
 expr_stmt|;
-name|off_d
+name|dialog
 operator|->
-name|dlg
+name|dialog
 operator|=
 name|gimp_viewable_dialog_new
 argument_list|(
@@ -408,9 +408,9 @@ name|gtk_window_set_resizable
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
-name|off_d
+name|dialog
 operator|->
-name|dlg
+name|dialog
 argument_list|)
 argument_list|,
 name|FALSE
@@ -420,9 +420,9 @@ name|g_object_weak_ref
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|off_d
+name|dialog
 operator|->
-name|dlg
+name|dialog
 argument_list|)
 argument_list|,
 operator|(
@@ -430,14 +430,14 @@ name|GWeakNotify
 operator|)
 name|g_free
 argument_list|,
-name|off_d
+name|dialog
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|off_d
+name|dialog
 operator|->
-name|dlg
+name|dialog
 argument_list|,
 literal|"response"
 argument_list|,
@@ -446,7 +446,7 @@ argument_list|(
 name|offset_response
 argument_list|)
 argument_list|,
-name|off_d
+name|dialog
 argument_list|)
 expr_stmt|;
 name|main_vbox
@@ -474,9 +474,9 @@ name|GTK_CONTAINER
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|off_d
+name|dialog
 operator|->
-name|dlg
+name|dialog
 argument_list|)
 operator|->
 name|vbox
@@ -610,7 +610,7 @@ argument_list|,
 literal|10
 argument_list|)
 expr_stmt|;
-name|off_d
+name|dialog
 operator|->
 name|off_se
 operator|=
@@ -637,7 +637,7 @@ name|gtk_table_set_col_spacing
 argument_list|(
 name|GTK_TABLE
 argument_list|(
-name|off_d
+name|dialog
 operator|->
 name|off_se
 argument_list|)
@@ -651,7 +651,7 @@ name|gtk_table_set_col_spacing
 argument_list|(
 name|GTK_TABLE
 argument_list|(
-name|off_d
+name|dialog
 operator|->
 name|off_se
 argument_list|)
@@ -665,7 +665,7 @@ name|gtk_table_set_row_spacing
 argument_list|(
 name|GTK_TABLE
 argument_list|(
-name|off_d
+name|dialog
 operator|->
 name|off_se
 argument_list|)
@@ -679,7 +679,7 @@ name|gimp_size_entry_add_field
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|off_d
+name|dialog
 operator|->
 name|off_se
 argument_list|)
@@ -696,7 +696,7 @@ name|gtk_table_attach_defaults
 argument_list|(
 name|GTK_TABLE
 argument_list|(
-name|off_d
+name|dialog
 operator|->
 name|off_se
 argument_list|)
@@ -721,7 +721,7 @@ name|gimp_size_entry_attach_label
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|off_d
+name|dialog
 operator|->
 name|off_se
 argument_list|)
@@ -742,7 +742,7 @@ name|gimp_size_entry_attach_label
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|off_d
+name|dialog
 operator|->
 name|off_se
 argument_list|)
@@ -766,7 +766,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-name|off_d
+name|dialog
 operator|->
 name|off_se
 argument_list|,
@@ -779,7 +779,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|off_d
+name|dialog
 operator|->
 name|off_se
 argument_list|)
@@ -788,7 +788,7 @@ name|gimp_size_entry_set_unit
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|off_d
+name|dialog
 operator|->
 name|off_se
 argument_list|)
@@ -800,14 +800,14 @@ name|gimp_size_entry_set_resolution
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|off_d
+name|dialog
 operator|->
 name|off_se
 argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-name|off_d
+name|dialog
 operator|->
 name|gimage
 operator|->
@@ -820,14 +820,14 @@ name|gimp_size_entry_set_resolution
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|off_d
+name|dialog
 operator|->
 name|off_se
 argument_list|)
 argument_list|,
 literal|1
 argument_list|,
-name|off_d
+name|dialog
 operator|->
 name|gimage
 operator|->
@@ -840,7 +840,7 @@ name|gimp_size_entry_set_refval_boundaries
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|off_d
+name|dialog
 operator|->
 name|off_se
 argument_list|)
@@ -848,13 +848,13 @@ argument_list|,
 literal|0
 argument_list|,
 operator|-
-name|off_d
+name|dialog
 operator|->
 name|gimage
 operator|->
 name|width
 argument_list|,
-name|off_d
+name|dialog
 operator|->
 name|gimage
 operator|->
@@ -865,7 +865,7 @@ name|gimp_size_entry_set_refval_boundaries
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|off_d
+name|dialog
 operator|->
 name|off_se
 argument_list|)
@@ -873,13 +873,13 @@ argument_list|,
 literal|1
 argument_list|,
 operator|-
-name|off_d
+name|dialog
 operator|->
 name|gimage
 operator|->
 name|height
 argument_list|,
-name|off_d
+name|dialog
 operator|->
 name|gimage
 operator|->
@@ -890,7 +890,7 @@ name|gimp_size_entry_set_size
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|off_d
+name|dialog
 operator|->
 name|off_se
 argument_list|)
@@ -899,7 +899,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|off_d
+name|dialog
 operator|->
 name|gimage
 operator|->
@@ -910,7 +910,7 @@ name|gimp_size_entry_set_size
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|off_d
+name|dialog
 operator|->
 name|off_se
 argument_list|)
@@ -919,7 +919,7 @@ literal|1
 argument_list|,
 literal|0
 argument_list|,
-name|off_d
+name|dialog
 operator|->
 name|gimage
 operator|->
@@ -930,7 +930,7 @@ name|gimp_size_entry_set_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|off_d
+name|dialog
 operator|->
 name|off_se
 argument_list|)
@@ -944,7 +944,7 @@ name|gimp_size_entry_set_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|off_d
+name|dialog
 operator|->
 name|off_se
 argument_list|)
@@ -996,7 +996,7 @@ argument_list|(
 name|offset_halfheight_callback
 argument_list|)
 argument_list|,
-name|off_d
+name|dialog
 argument_list|)
 expr_stmt|;
 comment|/*  The edge behaviour frame  */
@@ -1017,11 +1017,11 @@ name|gimp_radio_button_update
 argument_list|)
 argument_list|,
 operator|&
-name|off_d
+name|dialog
 operator|->
 name|fill_type
 argument_list|,
-name|off_d
+name|dialog
 operator|->
 name|fill_type
 argument_list|,
@@ -1093,9 +1093,9 @@ name|frame
 argument_list|)
 expr_stmt|;
 return|return
-name|off_d
+name|dialog
 operator|->
-name|dlg
+name|dialog
 return|;
 block|}
 end_function
@@ -1107,7 +1107,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|offset_response (GtkWidget * widget,gint response_id,OffsetDialog * off_d)
+DECL|function|offset_response (GtkWidget * widget,gint response_id,OffsetDialog * dialog)
 name|offset_response
 parameter_list|(
 name|GtkWidget
@@ -1119,7 +1119,7 @@ name|response_id
 parameter_list|,
 name|OffsetDialog
 modifier|*
-name|off_d
+name|dialog
 parameter_list|)
 block|{
 if|if
@@ -1148,7 +1148,7 @@ condition|(
 operator|(
 name|gimage
 operator|=
-name|off_d
+name|dialog
 operator|->
 name|gimage
 operator|)
@@ -1171,7 +1171,7 @@ name|gimp_size_entry_get_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|off_d
+name|dialog
 operator|->
 name|off_se
 argument_list|)
@@ -1188,7 +1188,7 @@ name|gimp_size_entry_get_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|off_d
+name|dialog
 operator|->
 name|off_se
 argument_list|)
@@ -1208,7 +1208,7 @@ operator|->
 name|gimp
 argument_list|)
 argument_list|,
-name|off_d
+name|dialog
 operator|->
 name|fill_type
 operator|&
@@ -1218,7 +1218,7 @@ name|TRUE
 else|:
 name|FALSE
 argument_list|,
-name|off_d
+name|dialog
 operator|->
 name|fill_type
 operator|&
@@ -1238,9 +1238,9 @@ block|}
 block|}
 name|gtk_widget_destroy
 argument_list|(
-name|off_d
+name|dialog
 operator|->
-name|dlg
+name|dialog
 argument_list|)
 expr_stmt|;
 block|}
@@ -1249,7 +1249,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|offset_halfheight_callback (GtkWidget * widget,OffsetDialog * off_d)
+DECL|function|offset_halfheight_callback (GtkWidget * widget,OffsetDialog * dialog)
 name|offset_halfheight_callback
 parameter_list|(
 name|GtkWidget
@@ -1258,14 +1258,14 @@ name|widget
 parameter_list|,
 name|OffsetDialog
 modifier|*
-name|off_d
+name|dialog
 parameter_list|)
 block|{
 name|GimpImage
 modifier|*
 name|gimage
 init|=
-name|off_d
+name|dialog
 operator|->
 name|gimage
 decl_stmt|;
@@ -1273,7 +1273,7 @@ name|gimp_size_entry_set_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|off_d
+name|dialog
 operator|->
 name|off_se
 argument_list|)
@@ -1291,7 +1291,7 @@ name|gimp_size_entry_set_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|off_d
+name|dialog
 operator|->
 name|off_se
 argument_list|)
