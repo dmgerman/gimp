@@ -195,6 +195,16 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gint32
+name|gimp_layer_from_mask
+parameter_list|(
+name|gint32
+name|mask_ID
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_layer_add_mask
 parameter_list|(
