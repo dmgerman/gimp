@@ -342,7 +342,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0a27ca0103
+DECL|enum|__anon2b8652580103
 block|{
 DECL|enumerator|TEXT
 name|TEXT
@@ -565,18 +565,50 @@ name|NULL
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|gchar
+modifier|*
+name|utf8_str
+decl_stmt|;
+name|utf8_str
+operator|=
+name|g_locale_to_utf8
+argument_list|(
+name|text
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|text
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|utf8_str
+condition|)
+name|text
+operator|=
+name|utf8_str
+expr_stmt|;
+else|else
+name|text
+operator|=
+name|g_strdup
 argument_list|(
 name|_
 argument_list|(
-literal|"Can not convert GDynText layer because it "
-literal|"contains text that is not UTF-8 encoded."
+literal|"(invalid UTF-8 string)"
 argument_list|)
 argument_list|)
 expr_stmt|;
-goto|goto
-name|cleanup
-goto|;
 block|}
 name|antialias
 operator|=

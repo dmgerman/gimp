@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fabf350103
+DECL|enum|__anon2c3dd70f0103
 block|{
 DECL|enumerator|GIMP_VECTORS_COMPAT_ANCHOR
 name|GIMP_VECTORS_COMPAT_ANCHOR
@@ -146,6 +146,10 @@ argument_list|(
 name|points
 operator|!=
 name|NULL
+operator|||
+name|n_points
+operator|==
+literal|0
 argument_list|,
 name|NULL
 argument_list|)
@@ -153,7 +157,7 @@ expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|n_points
-operator|>
+operator|>=
 literal|0
 argument_list|,
 name|NULL
