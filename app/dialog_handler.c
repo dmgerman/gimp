@@ -100,7 +100,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon29fda3550103
+DECL|enum|__anon27cba7c10103
 typedef|typedef
 enum|enum
 block|{
@@ -145,7 +145,7 @@ comment|/* ie how many times we have pressed the tab key */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29fda3550203
+DECL|enum|__anon27cba7c10203
 typedef|typedef
 enum|enum
 block|{
@@ -353,43 +353,6 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|dialog_show_toolbox ()
-name|dialog_show_toolbox
-parameter_list|()
-block|{
-if|if
-condition|(
-name|toolbox_shell
-operator|&&
-name|toolbox_shell
-operator|->
-name|state
-operator|==
-name|WAS_SHOWING
-operator|&&
-operator|!
-name|GTK_WIDGET_VISIBLE
-argument_list|(
-name|toolbox_shell
-operator|->
-name|d
-argument_list|)
-condition|)
-block|{
-name|gtk_widget_show
-argument_list|(
-name|toolbox_shell
-operator|->
-name|d
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
 DECL|function|dialog_hide_toolbox ()
 name|dialog_hide_toolbox
 parameter_list|()
@@ -426,6 +389,42 @@ end_function
 begin_comment
 comment|/* public */
 end_comment
+
+begin_function
+name|void
+DECL|function|dialog_show_toolbox ()
+name|dialog_show_toolbox
+parameter_list|()
+block|{
+if|if
+condition|(
+name|toolbox_shell
+operator|&&
+name|toolbox_shell
+operator|->
+name|state
+operator|==
+name|WAS_SHOWING
+operator|&&
+operator|!
+name|GTK_WIDGET_VISIBLE
+argument_list|(
+name|toolbox_shell
+operator|->
+name|d
+argument_list|)
+condition|)
+block|{
+name|gtk_widget_show
+argument_list|(
+name|toolbox_shell
+operator|->
+name|d
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+end_function
 
 begin_comment
 comment|/* Set hourglass cursor on all currently registered dialogs */

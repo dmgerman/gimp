@@ -160,7 +160,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2a4feff60103
+DECL|enum|__anon299eb20c0103
 typedef|typedef
 enum|enum
 block|{
@@ -6069,6 +6069,14 @@ name|proc_def
 argument_list|)
 condition|)
 block|{
+name|proc_def
+operator|->
+name|mtime
+operator|=
+name|plug_in_def
+operator|->
+name|mtime
+expr_stmt|;
 name|proc_def
 operator|->
 name|prog

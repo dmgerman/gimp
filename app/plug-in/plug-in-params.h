@@ -329,6 +329,10 @@ name|GSList
 modifier|*
 name|magics_list
 decl_stmt|;
+DECL|member|mtime
+name|time_t
+name|mtime
+decl_stmt|;
 block|}
 struct|;
 end_struct
