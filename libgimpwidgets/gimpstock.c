@@ -1740,7 +1740,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29589da60108
+DECL|struct|__anon29d203eb0108
 block|{
 DECL|member|stock_id
 specifier|const
@@ -2298,7 +2298,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29589da60208
+DECL|struct|__anon29d203eb0208
 block|{
 DECL|member|stock_id
 specifier|const
@@ -2808,7 +2808,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29589da60308
+DECL|struct|__anon29d203eb0308
 block|{
 DECL|member|stock_id
 specifier|const
@@ -2856,7 +2856,12 @@ block|,
 name|stock_channel_gray_32
 block|}
 block|,
-comment|/* { GIMP_STOCK_CHANNEL_ALPHA,        stock_channel_alpha_32        }, */
+block|{
+name|GIMP_STOCK_CHANNEL_ALPHA
+block|,
+name|stock_channel_alpha_32
+block|}
+block|,
 block|{
 name|GIMP_STOCK_IMAGE
 block|,
@@ -2881,7 +2886,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29589da60408
+DECL|struct|__anon29d203eb0408
 block|{
 DECL|member|stock_id
 specifier|const
@@ -2929,7 +2934,12 @@ block|,
 name|stock_channel_gray_48
 block|}
 block|,
-comment|/* { GIMP_STOCK_CHANNEL_ALPHA,        stock_channel_alpha_48        }, */
+block|{
+name|GIMP_STOCK_CHANNEL_ALPHA
+block|,
+name|stock_channel_alpha_48
+block|}
+block|,
 block|{
 name|GIMP_STOCK_IMAGE
 block|,

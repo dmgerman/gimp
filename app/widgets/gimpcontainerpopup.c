@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8a209c0103
+DECL|enum|__anon2c3780b70103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -1916,7 +1916,7 @@ name|gimp_editor_add_button
 argument_list|(
 name|editor
 argument_list|,
-name|GTK_STOCK_INDEX
+name|GIMP_STOCK_LIST
 argument_list|,
 name|_
 argument_list|(
@@ -1954,7 +1954,7 @@ name|gimp_editor_add_button
 argument_list|(
 name|editor
 argument_list|,
-name|GTK_STOCK_SELECT_COLOR
+name|GIMP_STOCK_GRID
 argument_list|,
 name|_
 argument_list|(
