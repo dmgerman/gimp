@@ -7188,9 +7188,6 @@ argument_list|,
 name|l_tmp_layer_id
 argument_list|)
 expr_stmt|;
-comment|/*  gimp_layer_delete(l_tmp_layer_id); */
-comment|/* gives sigsegv ERROR */
-comment|/* A: gimp_image_remove_layer does automatic delete           *    if layer is not attched to any image          * B: gimp_layer_delete has a BUG          */
 comment|/* save current frame */
 name|l_rc
 operator|=

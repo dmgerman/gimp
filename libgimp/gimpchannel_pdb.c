@@ -241,7 +241,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_channel_delete:  * @channel_ID: The channel to delete.  *  * Delete a channel.  *  * This procedure deletes the specified channel. This does not need to  * be done if a gimage containing this channel was already deleted.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_channel_delete:  * @channel_ID: The channel to delete.  *  * Delete a channel.  *  * This procedure deletes the specified channel. This must not be done  * if the gimage containing this channel was already deleted or if the  * channel was already removed from the image. The only case in which  * this procedure is useful is if you want to get rid of a channel  * which has not yet been added to an image.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

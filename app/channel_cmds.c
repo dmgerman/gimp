@@ -900,7 +900,7 @@ literal|"gimp_channel_delete"
 block|,
 literal|"Delete a channel."
 block|,
-literal|"This procedure deletes the specified channel. This does not need to be done if a gimage containing this channel was already deleted."
+literal|"This procedure deletes the specified channel. This must not be done if the gimage containing this channel was already deleted or if the channel was already removed from the image. The only case in which this procedure is useful is if you want to get rid of a channel which has not yet been added to an image."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

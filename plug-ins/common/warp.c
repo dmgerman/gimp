@@ -107,7 +107,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad4b7900103
+DECL|enum|__anon295019090103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -127,7 +127,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad4b7900208
+DECL|struct|__anon295019090208
 block|{
 DECL|member|amount
 name|gdouble
@@ -194,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad4b7900308
+DECL|struct|__anon295019090308
 block|{
 DECL|member|run
 name|gint
@@ -1524,15 +1524,6 @@ operator|->
 name|id
 argument_list|)
 expr_stmt|;
-name|gimp_image_delete
-argument_list|(
-name|image_ID
-argument_list|)
-expr_stmt|;
-name|gimp_displays_flush
-argument_list|()
-expr_stmt|;
-comment|/*   if (display_diff_map == FALSE) {     gimp_layer_delete(map_x->id);     gimp_layer_delete(map_y->id);   } else {     image_ID = gimp_layer_get_image_id(drawable->id);     gimp_image_undo_disable(image_ID);     gimp_image_undo_enable(image_ID);   }   */
 name|gimp_drawable_detach
 argument_list|(
 name|map_x
@@ -1541,6 +1532,11 @@ expr_stmt|;
 name|gimp_drawable_detach
 argument_list|(
 name|map_y
+argument_list|)
+expr_stmt|;
+name|gimp_image_delete
+argument_list|(
+name|image_ID
 argument_list|)
 expr_stmt|;
 if|if

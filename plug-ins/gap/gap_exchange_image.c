@@ -1451,11 +1451,6 @@ argument_list|,
 name|l_channel_id
 argument_list|)
 expr_stmt|;
-name|gimp_channel_delete
-argument_list|(
-name|l_channel_id
-argument_list|)
-expr_stmt|;
 block|}
 if|if
 condition|(
@@ -1721,8 +1716,6 @@ argument_list|,
 name|l_layer_id
 argument_list|)
 expr_stmt|;
-comment|/* gimp_layer_delete(l_layer_id); */
-comment|/* did crash in gimp 1.0.2 ?? and in 1.1 too */
 block|}
 block|}
 comment|/* steal all layers, channels and guides from src_image */
@@ -1764,8 +1757,6 @@ argument_list|,
 name|l_old_bg_layer_id
 argument_list|)
 expr_stmt|;
-comment|/* gimp_layer_delete(l_old_bg_layer_id); */
-comment|/* did crash in gimp 1.0.2 ?? and in 1.1 too */
 block|}
 if|if
 condition|(
