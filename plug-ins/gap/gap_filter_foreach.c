@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history:  * version 0.97.00              hof: - modul splitted (2.nd part is now gap_filter_pdb.c)  * version 0.96.03              hof: - pitstop dialog provides optional backup on each step  *                                     (and skip option)  * version 0.96.00              hof: - now using gap_arr_dialog.h  * version 0.92.00              hof: - pitstop dialog   *                                     give user a chance to stop after interactive plugin calls  *                                     if you dont want the dialog export GAP_FILTER_PITSTOP="N"  *                                   - fixed bug in restore of layervisibility  *                                   - codegen via explicite button (in gap_debug mode)  * version 0.91.01; Tue Dec 23  hof: 1.st (pre) release  */
+comment|/* revision history:  * 1.1.28a; 2000/11/05   hof: check for GIMP_PDB_SUCCESS (not for FALSE)  * version 0.97.00              hof: - modul splitted (2.nd part is now gap_filter_pdb.c)  * version 0.96.03              hof: - pitstop dialog provides optional backup on each step  *                                     (and skip option)  * version 0.96.00              hof: - now using gap_arr_dialog.h  * version 0.92.00              hof: - pitstop dialog   *                                     give user a chance to stop after interactive plugin calls  *                                     if you dont want the dialog export GAP_FILTER_PITSTOP="N"  *                                   - fixed bug in restore of layervisibility  *                                   - codegen via explicite button (in gap_debug mode)  * version 0.91.01; Tue Dec 23  hof: 1.st (pre) release  */
 end_comment
 
 begin_include
@@ -1871,8 +1871,8 @@ operator|.
 name|data
 operator|.
 name|d_status
-operator|==
-name|FALSE
+operator|!=
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|fprintf

@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history:  * version gimp 1.1.17b  2000.02.22  hof: - removed limit PLUGIN_DATA_SIZE  *                                        - removed support for old gimp 1.0.x PDB-interface.  * version 0.97.00                   hof: - created module (as extract gap_filter_foreach)  */
+comment|/* revision history:  * 1.1.28a; 2000/11/05   hof: check for GIMP_PDB_SUCCESS (not for FALSE)  * version gimp 1.1.17b  2000.02.22  hof: - removed limit PLUGIN_DATA_SIZE  *                                        - removed support for old gimp 1.0.x PDB-interface.  * version 0.97.00                   hof: - created module (as extract gap_filter_foreach)  */
 end_comment
 
 begin_include
@@ -587,8 +587,8 @@ operator|.
 name|data
 operator|.
 name|d_status
-operator|==
-name|FALSE
+operator|!=
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|fprintf
@@ -701,8 +701,8 @@ operator|.
 name|data
 operator|.
 name|d_status
-operator|==
-name|FALSE
+operator|!=
+name|GIMP_PDB_SUCCESS
 condition|)
 return|return
 operator|(

@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history:  * gimp   1.1.6;     1999/06/21  hof: bugix: wrong iterator total_steps and direction  * gimp   1.1.15.1;  1999/05/08  hof: bugix (dont mix GimpImageType with GimpImageBaseType)  * version 0.98.00   1998.11.27  hof: - use new module gap_pdb_calls.h  * version 0.97.00   1998.10.19  hof: - created module  */
+comment|/* revision history:  * 1.1.28a; 2000/11/05   hof: check for GIMP_PDB_SUCCESS (not for FALSE)  * gimp   1.1.6;     1999/06/21  hof: bugix: wrong iterator total_steps and direction  * gimp   1.1.15.1;  1999/05/08  hof: bugix (dont mix GimpImageType with GimpImageBaseType)  * version 0.98.00   1998.11.27  hof: - use new module gap_pdb_calls.h  * version 0.97.00   1998.10.19  hof: - created module  */
 end_comment
 
 begin_comment
@@ -4211,8 +4211,8 @@ operator|.
 name|data
 operator|.
 name|d_status
-operator|==
-name|FALSE
+operator|!=
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|fprintf

@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history  * 1.1.24a  2000/07/01   hof: bugfix: flatten of singlelayer images has to remove alpha channel  * 1.1.17b  2000/02/26   hof: bugfixes  * 1.1.14a  2000/01/06   hof: gap_range_to_multilayer: use framerate (from video info file) in framenames  *                            bugfix: gap_range_to_multilayer: first save current frame  * 1.1.10a  1999/10/22   hof: bugfix: have to use the changed PDB-Interface  *                            for gimp_convert_indexed  *                            (with extended dither options and extra dialog window)  * 1.1.9a   1999/09/21   hof: bugfix GIMP_RUN_NONINTERACTIVE did not work in  *                            plug_in_gap_range_convert  *                            plug_in_gap_range_layer_del  *                            plug_in_gap_range_flatten  * 1.1.8    1999/08/31   hof: frames convert: save subsequent frames  *                            with rumode GIMP_RUN_WITH_LAST_VALS   * 0.97.00; 1998/10/19   hof: gap_range_to_multilayer: extended layer selection  * 0.96.03; 1998/08/31   hof: gap_range_to_multilayer: all params available  *                            in non-interactive runmode  * 0.96.02; 1998/08/05   hof: - p_frames_to_multilayer added framerate support  * 0.96.00; 1998/07/01   hof: - added scale, resize and crop   *                              (affects full range == all anim frames)  *                            - now using gap_arr_dialog.h  * 0.94.01; 1998/04/28   hof: added flatten_mode to plugin: gap_range_to_multilayer  * 0.92.00  1998.01.10   hof: bugfix in p_frames_to_multilayer  *                            layers need alpha (to be raise/lower able)   * 0.90.00               first development release  */
+comment|/* revision history  * 1.1.28a; 2000/11/05   hof: check for GIMP_PDB_SUCCESS (not for FALSE)  * 1.1.24a  2000/07/01   hof: bugfix: flatten of singlelayer images has to remove alpha channel  * 1.1.17b  2000/02/26   hof: bugfixes  * 1.1.14a  2000/01/06   hof: gap_range_to_multilayer: use framerate (from video info file) in framenames  *                            bugfix: gap_range_to_multilayer: first save current frame  * 1.1.10a  1999/10/22   hof: bugfix: have to use the changed PDB-Interface  *                            for gimp_convert_indexed  *                            (with extended dither options and extra dialog window)  * 1.1.9a   1999/09/21   hof: bugfix GIMP_RUN_NONINTERACTIVE did not work in  *                            plug_in_gap_range_convert  *                            plug_in_gap_range_layer_del  *                            plug_in_gap_range_flatten  * 1.1.8    1999/08/31   hof: frames convert: save subsequent frames  *                            with rumode GIMP_RUN_WITH_LAST_VALS   * 0.97.00; 1998/10/19   hof: gap_range_to_multilayer: extended layer selection  * 0.96.03; 1998/08/31   hof: gap_range_to_multilayer: all params available  *                            in non-interactive runmode  * 0.96.02; 1998/08/05   hof: - p_frames_to_multilayer added framerate support  * 0.96.00; 1998/07/01   hof: - added scale, resize and crop   *                              (affects full range == all anim frames)  *                            - now using gap_arr_dialog.h  * 0.94.01; 1998/04/28   hof: added flatten_mode to plugin: gap_range_to_multilayer  * 0.92.00  1998.01.10   hof: bugfix in p_frames_to_multilayer  *                            layers need alpha (to be raise/lower able)   * 0.90.00               first development release  */
 end_comment
 
 begin_include
@@ -5239,8 +5239,8 @@ operator|.
 name|data
 operator|.
 name|d_status
-operator|==
-name|FALSE
+operator|!=
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|l_rc
