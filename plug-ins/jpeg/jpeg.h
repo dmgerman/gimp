@@ -279,7 +279,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5492740108
+DECL|struct|__anon27c9cb740108
 block|{
 DECL|member|quality
 name|gdouble
@@ -326,7 +326,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5492740208
+DECL|struct|__anon27c9cb740208
 block|{
 DECL|member|run
 name|gint
@@ -341,7 +341,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5492740308
+DECL|struct|__anon27c9cb740308
 block|{
 DECL|member|cinfo
 name|struct
@@ -2902,20 +2902,8 @@ condition|)
 block|{
 name|name
 operator|=
-name|malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
-argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|12
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|name
-argument_list|,
 name|_
 argument_list|(
 literal|"Loading %s:"
@@ -2929,7 +2917,7 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|name
 argument_list|)
@@ -4063,7 +4051,7 @@ name|struct
 name|stat
 name|buf
 decl_stmt|;
-name|char
+name|gchar
 name|temp
 index|[
 literal|256
@@ -4118,14 +4106,14 @@ name|cinfo
 operator|)
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|pp
 operator|->
 name|temp
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|pp
 operator|->
@@ -4164,9 +4152,14 @@ operator|&
 name|buf
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|temp
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|temp
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -4186,7 +4179,7 @@ operator|.
 name|st_size
 argument_list|)
 operator|/
-literal|1024.0f
+literal|1024.0
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_text
@@ -4220,7 +4213,7 @@ operator|->
 name|file_name
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|pp
 operator|->
@@ -4242,7 +4235,7 @@ name|abort_me
 operator|=
 name|NULL
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|pp
 argument_list|)
@@ -4572,20 +4565,8 @@ condition|)
 block|{
 name|name
 operator|=
-name|malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
-argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|11
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|name
-argument_list|,
 name|_
 argument_list|(
 literal|"Saving %s:"
@@ -4599,7 +4580,7 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|name
 argument_list|)
@@ -5269,7 +5250,7 @@ operator|(
 name|guchar
 operator|*
 operator|)
-name|malloc
+name|g_malloc
 argument_list|(
 name|cinfo
 operator|.
@@ -5286,7 +5267,7 @@ operator|(
 name|guchar
 operator|*
 operator|)
-name|malloc
+name|g_malloc
 argument_list|(
 name|rowstride
 operator|*
@@ -5309,7 +5290,7 @@ name|preview_persistent
 modifier|*
 name|pp
 init|=
-name|malloc
+name|g_malloc
 argument_list|(
 sizeof|sizeof
 argument_list|(
@@ -5640,12 +5621,12 @@ name|cinfo
 argument_list|)
 expr_stmt|;
 comment|/* free the temporary buffer */
-name|free
+name|g_free
 argument_list|(
 name|temp
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|data
 argument_list|)
