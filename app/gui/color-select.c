@@ -108,7 +108,7 @@ value|GDK_EXPOSURE_MASK | \                         GDK_BUTTON_PRESS_MASK | GDK_
 end_define
 
 begin_typedef
-DECL|enum|__anon28b720630103
+DECL|enum|__anon2b205f5a0103
 typedef|typedef
 enum|enum
 block|{
@@ -156,7 +156,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon28b720630203
+DECL|enum|__anon2b205f5a0203
 typedef|typedef
 enum|enum
 block|{
@@ -1014,6 +1014,20 @@ name|shell
 operator|=
 name|gtk_dialog_new
 argument_list|()
+expr_stmt|;
+name|gtk_window_set_wmclass
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|csp
+operator|->
+name|shell
+argument_list|)
+argument_list|,
+literal|"color_selection"
+argument_list|,
+literal|"Gimp"
+argument_list|)
 expr_stmt|;
 name|gtk_window_set_title
 argument_list|(

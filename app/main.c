@@ -153,6 +153,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|be_verbose
+name|int
+name|be_verbose
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|use_shm
 name|int
 name|use_shm
@@ -596,6 +603,27 @@ index|[
 name|i
 index|]
 argument_list|,
+literal|"--verbose"
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|be_verbose
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|argv
+index|[
+name|i
+index|]
+argument_list|,
 literal|"--no-shm"
 argument_list|)
 operator|==
@@ -682,6 +710,11 @@ expr_stmt|;
 name|g_print
 argument_list|(
 literal|"  --no-data              Do not load patterns, gradients, palettes, brushes.\n"
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|"  --verbose              Show startup messages.\n"
 argument_list|)
 expr_stmt|;
 name|g_print

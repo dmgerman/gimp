@@ -118,7 +118,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon293e28fb0103
+DECL|enum|__anon2890be5f0103
 typedef|typedef
 enum|enum
 block|{
@@ -2262,6 +2262,12 @@ operator|.
 name|fp
 condition|)
 return|return;
+if|if
+condition|(
+name|be_verbose
+operator|==
+name|TRUE
+condition|)
 name|g_print
 argument_list|(
 literal|"parsing \"%s\"\n"

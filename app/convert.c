@@ -1816,7 +1816,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9ec04c0108
+DECL|struct|__anon2a99b6370108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1863,7 +1863,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9ec04c0208
+DECL|struct|__anon2a99b6370208
 block|{
 DECL|member|ncolors
 name|long
@@ -1882,7 +1882,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9ec04c0308
+DECL|struct|__anon2a99b6370308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -2554,6 +2554,20 @@ name|shell
 operator|=
 name|gtk_dialog_new
 argument_list|()
+expr_stmt|;
+name|gtk_window_set_wmclass
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+operator|->
+name|shell
+argument_list|)
+argument_list|,
+literal|"indexed_color_conversion"
+argument_list|,
+literal|"Gimp"
+argument_list|)
 expr_stmt|;
 name|gtk_window_set_title
 argument_list|(

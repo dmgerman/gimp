@@ -313,7 +313,7 @@ comment|/* Gradient segment type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29462f850103
+DECL|enum|__anon2ad0bed20103
 typedef|typedef
 enum|enum
 block|{
@@ -340,7 +340,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon29462f850203
+DECL|enum|__anon2ad0bed20203
 typedef|typedef
 enum|enum
 block|{
@@ -485,7 +485,7 @@ comment|/* Gradient editor type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29462f850303
+DECL|enum|__anon2ad0bed20303
 typedef|typedef
 enum|enum
 block|{
@@ -509,7 +509,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29462f850408
+DECL|struct|__anon2ad0bed20408
 typedef|typedef
 struct|struct
 block|{
@@ -789,7 +789,7 @@ name|int
 name|replicate_times
 decl_stmt|;
 comment|/* Saved colors */
-DECL|struct|__anon29462f850508
+DECL|struct|__anon2ad0bed20508
 struct|struct
 block|{
 DECL|member|r
@@ -3883,6 +3883,20 @@ operator|=
 name|gtk_window_new
 argument_list|(
 name|GTK_WINDOW_TOPLEVEL
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_wmclass
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|g_editor
+operator|->
+name|shell
+argument_list|)
+argument_list|,
+literal|"gradiet_editor"
+argument_list|,
+literal|"Gimp"
 argument_list|)
 expr_stmt|;
 name|gtk_container_border_width

@@ -342,6 +342,8 @@ literal|"Tim Janik"
 block|,
 literal|"Tuomas Kuosmanen"
 block|,
+literal|"Peter Kirchgessner"
+block|,
 literal|"Karl LaRocca"
 block|,
 literal|"Jens Lautenbacher"
@@ -533,6 +535,18 @@ operator|=
 name|gtk_window_new
 argument_list|(
 name|GTK_WINDOW_DIALOG
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_wmclass
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|about_dialog
+argument_list|)
+argument_list|,
+literal|"about_dialog"
+argument_list|,
+literal|"Gimp"
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_title

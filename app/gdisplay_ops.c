@@ -1351,6 +1351,19 @@ operator|=
 name|gtk_dialog_new
 argument_list|()
 expr_stmt|;
+comment|/* should this be imaeg_window or the actual image naem??? */
+name|gtk_window_set_wmclass
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|mbox
+argument_list|)
+argument_list|,
+literal|"image_window"
+argument_list|,
+literal|"Gimp"
+argument_list|)
+expr_stmt|;
 name|gtk_window_set_title
 argument_list|(
 name|GTK_WINDOW
