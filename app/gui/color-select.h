@@ -17,7 +17,7 @@ name|__COLOR_SELECT_H__
 end_define
 
 begin_typedef
-DECL|enum|__anon2c1bda370103
+DECL|enum|__anon2bcd4fbe0103
 typedef|typedef
 enum|enum
 block|{
@@ -180,6 +180,15 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
+
+begin_function_decl
+name|void
+name|color_select_init
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|ColorSelectP

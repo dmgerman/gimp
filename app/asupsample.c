@@ -30,7 +30,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b046dcd0108
+DECL|struct|__anon2b269a270108
 typedef|typedef
 struct|struct
 block|{
@@ -952,6 +952,13 @@ comment|/* Call progress display function */
 if|if
 condition|(
 name|progress_func
+operator|&&
+operator|!
+operator|(
+name|y
+operator|&
+literal|0xf
+operator|)
 condition|)
 call|(
 modifier|*

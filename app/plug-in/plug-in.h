@@ -28,6 +28,12 @@ directive|include
 file|"procedural_db.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpprogress.h"
+end_include
+
 begin_define
 DECL|macro|WRITE_BUFFER_SIZE
 define|#
@@ -219,26 +225,11 @@ name|temp_proc_defs
 decl_stmt|;
 comment|/* Temporary procedures  */
 DECL|member|progress
-name|GtkWidget
+name|gimp_progress
 modifier|*
 name|progress
 decl_stmt|;
 comment|/* Progress dialog */
-DECL|member|progress_label
-name|GtkWidget
-modifier|*
-name|progress_label
-decl_stmt|;
-DECL|member|progress_bar
-name|GtkWidget
-modifier|*
-name|progress_bar
-decl_stmt|;
-DECL|member|progress_gdisp_ID
-name|gint8
-name|progress_gdisp_ID
-decl_stmt|;
-comment|/* gdisp_ID of progress */
 DECL|member|user_data
 name|gpointer
 name|user_data

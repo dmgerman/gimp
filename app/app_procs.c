@@ -294,6 +294,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"color_notebook.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"color_select.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"config.h"
 end_include
 
@@ -2518,6 +2530,10 @@ name|get_active_pattern
 argument_list|()
 expr_stmt|;
 name|paint_funcs_setup
+argument_list|()
+expr_stmt|;
+comment|/* register internal color selectors */
+name|color_select_init
 argument_list|()
 expr_stmt|;
 if|if

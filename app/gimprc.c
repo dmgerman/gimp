@@ -160,7 +160,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2b950e770103
+DECL|enum|__anon2bfa9f320103
 typedef|typedef
 enum|enum
 block|{
@@ -402,6 +402,16 @@ DECL|variable|pluginrc_path
 name|char
 modifier|*
 name|pluginrc_path
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|module_path
+name|char
+modifier|*
+name|module_path
 init|=
 name|NULL
 decl_stmt|;
@@ -1534,6 +1544,17 @@ name|TT_PATH
 block|,
 operator|&
 name|pluginrc_path
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"module-path"
+block|,
+name|TT_PATH
+block|,
+operator|&
+name|module_path
 block|,
 name|NULL
 block|}

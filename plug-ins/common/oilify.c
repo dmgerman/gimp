@@ -85,7 +85,7 @@ value|((unsigned int) (p[0]*77+p[1]*150+p[2]*29)>> 8)
 end_define
 
 begin_typedef
-DECL|struct|__anon2c2588230108
+DECL|struct|__anon29bf78030108
 typedef|typedef
 struct|struct
 block|{
@@ -104,7 +104,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c2588230208
+DECL|struct|__anon29bf78030208
 typedef|typedef
 struct|struct
 block|{
@@ -1453,16 +1453,6 @@ name|dest_rgn
 operator|.
 name|h
 expr_stmt|;
-if|if
-condition|(
-operator|(
-name|progress
-operator|%
-literal|5
-operator|)
-operator|==
-literal|0
-condition|)
 name|gimp_progress_update
 argument_list|(
 operator|(

@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"color_select.h"
+file|"color_notebook.h"
 end_include
 
 begin_include
@@ -144,20 +144,20 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|color_select
+DECL|variable|color_notebook
 specifier|static
-name|ColorSelectP
-name|color_select
+name|ColorNotebookP
+name|color_notebook
 init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|color_select_active
+DECL|variable|color_notebook_active
 specifier|static
 name|int
-name|color_select_active
+name|color_notebook_active
 init|=
 literal|0
 decl_stmt|;
@@ -1061,7 +1061,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_area_select_callback (int r,int g,int b,ColorSelectState state,void * client_data)
+DECL|function|color_area_select_callback (int r,int g,int b,ColorNotebookState state,void * client_data)
 name|color_area_select_callback
 parameter_list|(
 name|int
@@ -1073,7 +1073,7 @@ parameter_list|,
 name|int
 name|b
 parameter_list|,
-name|ColorSelectState
+name|ColorNotebookState
 name|state
 parameter_list|,
 name|void
@@ -1083,7 +1083,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|color_select
+name|color_notebook
 condition|)
 block|{
 switch|switch
@@ -1092,20 +1092,20 @@ name|state
 condition|)
 block|{
 case|case
-name|COLOR_SELECT_OK
+name|COLOR_NOTEBOOK_OK
 case|:
-name|color_select_hide
+name|color_notebook_hide
 argument_list|(
-name|color_select
+name|color_notebook
 argument_list|)
 expr_stmt|;
-name|color_select_active
+name|color_notebook_active
 operator|=
 literal|0
 expr_stmt|;
 comment|/* Fallthrough */
 case|case
-name|COLOR_SELECT_UPDATE
+name|COLOR_NOTEBOOK_UPDATE
 case|:
 if|if
 condition|(
@@ -1134,14 +1134,14 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|COLOR_SELECT_CANCEL
+name|COLOR_NOTEBOOK_CANCEL
 case|:
-name|color_select_hide
+name|color_notebook_hide
 argument_list|(
-name|color_select
+name|color_notebook
 argument_list|)
 expr_stmt|;
-name|color_select_active
+name|color_notebook_active
 operator|=
 literal|0
 expr_stmt|;
@@ -1188,7 +1188,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|color_select_active
+name|color_notebook_active
 condition|)
 block|{
 name|palette_get_foreground
@@ -1262,12 +1262,12 @@ block|}
 if|if
 condition|(
 operator|!
-name|color_select
+name|color_notebook
 condition|)
 block|{
-name|color_select
+name|color_notebook
 operator|=
-name|color_select_new
+name|color_notebook_new
 argument_list|(
 name|r
 argument_list|,
@@ -1282,7 +1282,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|color_select_active
+name|color_notebook_active
 operator|=
 literal|1
 expr_stmt|;
@@ -1292,26 +1292,26 @@ block|{
 if|if
 condition|(
 operator|!
-name|color_select_active
+name|color_notebook_active
 condition|)
-name|color_select_show
+name|color_notebook_show
 argument_list|(
-name|color_select
+name|color_notebook
 argument_list|)
 expr_stmt|;
 else|else
 name|gdk_window_raise
 argument_list|(
-name|color_select
+name|color_notebook
 operator|->
 name|shell
 operator|->
 name|window
 argument_list|)
 expr_stmt|;
-name|color_select_set_color
+name|color_notebook_set_color
 argument_list|(
-name|color_select
+name|color_notebook
 argument_list|,
 name|r
 argument_list|,

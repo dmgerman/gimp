@@ -16,12 +16,18 @@ directive|define
 name|__ASUPSAMPLE_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"gimpprogress.h"
+end_include
+
 begin_comment
 comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b2616d10108
+DECL|struct|__anon29b04b980108
 typedef|typedef
 struct|struct
 block|{
@@ -92,31 +98,6 @@ parameter_list|,
 name|void
 modifier|*
 name|put_pixel_data
-parameter_list|)
-function_decl|;
-end_typedef
-
-begin_typedef
-DECL|typedef|progress_func_t
-typedef|typedef
-name|void
-function_decl|(
-modifier|*
-name|progress_func_t
-function_decl|)
-parameter_list|(
-name|int
-name|y1
-parameter_list|,
-name|int
-name|y2
-parameter_list|,
-name|int
-name|curr_y
-parameter_list|,
-name|void
-modifier|*
-name|progress_data
 parameter_list|)
 function_decl|;
 end_typedef

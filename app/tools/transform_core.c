@@ -219,6 +219,16 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|transform_info_inited
+specifier|static
+name|gboolean
+name|transform_info_inited
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/*  forward function declarations  */
 end_comment
@@ -289,6 +299,17 @@ name|void
 name|transform_core_setup_grid
 parameter_list|(
 name|Tool
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|transform_core_grid_recalc
+parameter_list|(
+name|TransformCore
 modifier|*
 parameter_list|)
 function_decl|;
@@ -679,14 +700,6 @@ comment|/*  if we have already displayed the bounding box and handles,    *  che
 if|if
 condition|(
 operator|(
-name|transform_core
-operator|->
-name|function
-operator|>=
-name|CREATING
-operator|)
-operator|&&
-operator|(
 name|gdisp_ptr
 operator|==
 name|tool
@@ -982,7 +995,7 @@ name|ACTIVE
 expr_stmt|;
 return|return;
 block|}
-comment|/*  if the cursor is clicked inside the current selection, show the    *  bounding box and handles...    */
+comment|/* Initialisation stuff: if the cursor is clicked inside the current    * selection, show the bounding box and handles...  */
 name|gdisplay_untransform_coords
 argument_list|(
 name|gdisp
@@ -1125,7 +1138,7 @@ name|INACTIVE
 expr_stmt|;
 return|return;
 block|}
-comment|/*  If the tool is already active, clear the current state and reset  */
+comment|/* If the tool is already active, clear the current state              * and reset */
 if|if
 condition|(
 name|tool
@@ -1189,7 +1202,7 @@ operator|->
 name|time
 argument_list|)
 expr_stmt|;
-comment|/*  Find the transform bounds for some tools (like scale, perspective) 	     *  that actually need the bounds for initializing 	     */
+comment|/* Find the transform bounds for some tools (like scale, 	     * perspective) that actually need the bounds for 	     * initializing */
 name|transform_core_bounds
 argument_list|(
 name|tool
@@ -1228,6 +1241,9 @@ condition|(
 name|transform_info
 operator|!=
 name|NULL
+operator|&&
+operator|!
+name|transform_info_inited
 condition|)
 block|{
 name|action_items
@@ -1279,6 +1295,10 @@ literal|2
 argument_list|,
 literal|0
 argument_list|)
+expr_stmt|;
+name|transform_info_inited
+operator|=
+name|TRUE
 expr_stmt|;
 block|}
 comment|/*  Recalculate the transform tool  */
@@ -1585,6 +1605,16 @@ operator|)
 name|tool
 operator|->
 name|private
+expr_stmt|;
+comment|/* undraw the tool before we muck around with the transform matrix */
+name|draw_core_pause
+argument_list|(
+name|transform_core
+operator|->
+name|core
+argument_list|,
+name|tool
+argument_list|)
 expr_stmt|;
 comment|/*  We're going to dirty this image, but we want to keep the tool       around   */
 name|tool
@@ -3528,6 +3558,10 @@ name|transform_info
 operator|=
 name|NULL
 expr_stmt|;
+name|transform_info_inited
+operator|=
+name|FALSE
+expr_stmt|;
 comment|/*  Free the grid line endpoint arrays if they exist */
 if|if
 condition|(
@@ -3926,6 +3960,12 @@ name|state
 operator|=
 name|INACTIVE
 expr_stmt|;
+name|tool
+operator|->
+name|gdisp_ptr
+operator|=
+name|NULL
+expr_stmt|;
 block|}
 end_function
 
@@ -4144,6 +4184,12 @@ operator|)
 operator|/
 literal|2
 expr_stmt|;
+comment|/* changing the bounds invalidates any grid we may have */
+name|transform_core_grid_recalc
+argument_list|(
+name|transform_core
+argument_list|)
+expr_stmt|;
 return|return
 name|TRUE
 return|;
@@ -4188,6 +4234,39 @@ argument_list|,
 name|active_tool
 argument_list|)
 expr_stmt|;
+name|transform_core_grid_recalc
+argument_list|(
+name|transform_core
+argument_list|)
+expr_stmt|;
+name|transform_bounding_box
+argument_list|(
+name|active_tool
+argument_list|)
+expr_stmt|;
+name|draw_core_resume
+argument_list|(
+name|transform_core
+operator|->
+name|core
+argument_list|,
+name|active_tool
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|transform_core_grid_recalc (TransformCore * transform_core)
+name|transform_core_grid_recalc
+parameter_list|(
+name|TransformCore
+modifier|*
+name|transform_core
+parameter_list|)
+block|{
 if|if
 condition|(
 name|transform_core
@@ -4241,20 +4320,6 @@ argument_list|()
 condition|)
 name|transform_core_setup_grid
 argument_list|(
-name|active_tool
-argument_list|)
-expr_stmt|;
-name|transform_bounding_box
-argument_list|(
-name|active_tool
-argument_list|)
-expr_stmt|;
-name|draw_core_resume
-argument_list|(
-name|transform_core
-operator|->
-name|core
-argument_list|,
 name|active_tool
 argument_list|)
 expr_stmt|;
@@ -4669,7 +4734,7 @@ end_comment
 begin_function
 name|TileManager
 modifier|*
-DECL|function|transform_core_do (gimage,drawable,float_tiles,interpolation,matrix)
+DECL|function|transform_core_do (gimage,drawable,float_tiles,interpolation,matrix,progress_callback,progress_data)
 name|transform_core_do
 parameter_list|(
 name|gimage
@@ -4681,6 +4746,10 @@ parameter_list|,
 name|interpolation
 parameter_list|,
 name|matrix
+parameter_list|,
+name|progress_callback
+parameter_list|,
+name|progress_data
 parameter_list|)
 name|GImage
 modifier|*
@@ -4699,6 +4768,12 @@ name|interpolation
 decl_stmt|;
 name|GimpMatrix
 name|matrix
+decl_stmt|;
+name|progress_func_t
+name|progress_callback
+decl_stmt|;
+name|gpointer
+name|progress_data
 decl_stmt|;
 block|{
 name|PixelRegion
@@ -5364,6 +5439,31 @@ name|y
 operator|++
 control|)
 block|{
+if|if
+condition|(
+name|progress_callback
+operator|&&
+operator|!
+operator|(
+name|y
+operator|&
+literal|0xf
+operator|)
+condition|)
+call|(
+modifier|*
+name|progress_callback
+call|)
+argument_list|(
+name|ty1
+argument_list|,
+name|ty2
+argument_list|,
+name|y
+argument_list|,
+name|progress_data
+argument_list|)
+expr_stmt|;
 comment|/*  When we calculate the inverse transformation, we should transform        *  the center of each destination pixel...        */
 name|tx
 operator|=
@@ -7365,7 +7465,10 @@ name|drawable
 argument_list|,
 name|tiles
 argument_list|,
+name|_
+argument_list|(
 literal|"Transformation"
+argument_list|)
 argument_list|,
 name|OPAQUE_OPACITY
 argument_list|,
@@ -7614,6 +7717,18 @@ name|layer
 argument_list|)
 operator|->
 name|height
+argument_list|)
+expr_stmt|;
+comment|/* if we were operating on the floating selection, then it's boundary         * and previews need invalidating */
+if|if
+condition|(
+name|layer
+operator|==
+name|floating_layer
+condition|)
+name|floating_sel_invalidate
+argument_list|(
+name|floating_layer
 argument_list|)
 expr_stmt|;
 return|return

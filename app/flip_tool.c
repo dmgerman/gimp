@@ -568,16 +568,7 @@ break|break;
 case|case
 name|FINISH
 case|:
-name|transform_core
-operator|->
-name|trans_info
-index|[
-name|FLIP
-index|]
-operator|*=
-operator|-
-literal|1.0
-expr_stmt|;
+comment|/*      transform_core->trans_info[FLIP] *= -1.0;*/
 return|return
 name|flip_tool_flip_horz
 argument_list|(
@@ -680,16 +671,7 @@ break|break;
 case|case
 name|FINISH
 case|:
-name|transform_core
-operator|->
-name|trans_info
-index|[
-name|FLIP
-index|]
-operator|*=
-operator|-
-literal|1.0
-expr_stmt|;
+comment|/*transform_core->trans_info[FLIP] *= -1.0;*/
 return|return
 name|flip_tool_flip_vert
 argument_list|(
@@ -836,6 +818,7 @@ index|[
 name|FLIP
 index|]
 operator|=
+operator|-
 literal|1.0
 expr_stmt|;
 return|return
@@ -889,6 +872,7 @@ index|[
 name|FLIP
 index|]
 operator|=
+operator|-
 literal|1.0
 expr_stmt|;
 return|return

@@ -40,6 +40,12 @@ directive|include
 file|"libgimp/gimpmatrix.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpprogress.h"
+end_include
+
 begin_comment
 comment|/* possible scaling functions */
 end_comment
@@ -637,6 +643,10 @@ parameter_list|,
 name|int
 parameter_list|,
 name|GimpMatrix
+parameter_list|,
+name|progress_func_t
+parameter_list|,
+name|gpointer
 parameter_list|)
 function_decl|;
 end_function_decl

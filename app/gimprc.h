@@ -130,6 +130,14 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
+name|char
+modifier|*
+name|module_path
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
 name|int
 name|tile_cache_size
 decl_stmt|;
