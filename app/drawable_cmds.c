@@ -3371,7 +3371,7 @@ name|TILE_WIDTH
 expr_stmt|;
 name|y
 operator|%=
-name|TILE_WIDTH
+name|TILE_HEIGHT
 expr_stmt|;
 name|p
 operator|=
@@ -3755,7 +3755,7 @@ name|TILE_WIDTH
 expr_stmt|;
 name|y
 operator|%=
-name|TILE_WIDTH
+name|TILE_HEIGHT
 expr_stmt|;
 name|p
 operator|=
