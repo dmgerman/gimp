@@ -68,6 +68,61 @@ directive|include
 file|"pixmaps/no.xpm"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|NATIVE_WIN32
+end_ifdef
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|S_ISDIR
+end_ifndef
+
+begin_define
+DECL|macro|S_ISDIR (m)
+define|#
+directive|define
+name|S_ISDIR
+parameter_list|(
+name|m
+parameter_list|)
+value|((m)& _S_IFDIR)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|S_ISREG
+end_ifndef
+
+begin_define
+DECL|macro|S_ISREG (m)
+define|#
+directive|define
+name|S_ISREG
+parameter_list|(
+name|m
+parameter_list|)
+value|((m)& _S_IFREG)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_comment
 comment|/*  callbacks  */
 end_comment
@@ -153,7 +208,7 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon2b019ec60103
+DECL|enum|__anon29c51e300103
 enum|enum
 block|{
 DECL|enumerator|GFS_FILENAME_CHANGED_SIGNAL

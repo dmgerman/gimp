@@ -5317,6 +5317,24 @@ name|i
 index|]
 expr_stmt|;
 block|}
+ifdef|#
+directive|ifdef
+name|_MSC_VER
+return|return
+call|(
+name|gdouble
+call|)
+argument_list|(
+name|gint64
+argument_list|)
+argument_list|(
+name|result
+operator|/
+name|TIME_SMOOTHER_BUFFER
+argument_list|)
+return|;
+else|#
+directive|else
 return|return
 operator|(
 name|result
@@ -5324,6 +5342,8 @@ operator|/
 name|TIME_SMOOTHER_BUFFER
 operator|)
 return|;
+endif|#
+directive|endif
 block|}
 end_function
 
@@ -6434,7 +6454,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2c24c3530103
+DECL|enum|__anon2a044a5c0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

@@ -22,6 +22,27 @@ directive|include
 file|<gtk/gtk.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|NATIVE_WIN32
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<process.h>
+end_include
+
+begin_comment
+comment|/* For _getpid() */
+end_comment
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include

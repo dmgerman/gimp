@@ -1020,6 +1020,7 @@ name|TRUE
 expr_stmt|;
 name|done
 label|:
+empty_stmt|;
 block|}
 return|return
 name|procedural_db_return_args
@@ -1510,6 +1511,7 @@ name|TRUE
 expr_stmt|;
 name|done
 label|:
+empty_stmt|;
 block|}
 return|return
 name|procedural_db_return_args

@@ -153,7 +153,7 @@ end_include
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|_MSC_VER
+name|NATIVE_WIN32
 end_ifdef
 
 begin_include

@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gdk/gdkkeysyms.h"
 end_include
 
@@ -625,7 +631,7 @@ comment|/* Crop area-select functions */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b4498680103
+DECL|enum|__anon2af61fde0103
 typedef|typedef
 enum|enum
 block|{

@@ -88,18 +88,8 @@ end_include
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|_MSC_VER
+name|NATIVE_WIN32
 end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<process.h>
-end_include
-
-begin_comment
-comment|/* For _getpid() */
-end_comment
 
 begin_include
 include|#

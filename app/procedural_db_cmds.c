@@ -34,6 +34,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"regex.h"
 end_include
 
