@@ -606,14 +606,11 @@ index|[
 name|ALPHA_PIX
 index|]
 return|;
-default|default:
-name|g_assert_not_reached
-argument_list|()
-expr_stmt|;
+block|}
 return|return
 literal|0
 return|;
-block|}
+comment|/* just to please the compiler */
 block|}
 end_function
 
