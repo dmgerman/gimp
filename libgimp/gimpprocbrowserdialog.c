@@ -1351,6 +1351,16 @@ operator|->
 name|selected_scheme_proc_name
 argument_list|)
 expr_stmt|;
+name|gtk_entry_set_editable
+argument_list|(
+name|GTK_ENTRY
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|gtk_table_attach
 argument_list|(
 name|GTK_TABLE

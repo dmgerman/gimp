@@ -127,7 +127,7 @@ comment|/* to film_height (i.e. it should be a value from 0.0 to 1.0) */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29a85d530108
+DECL|struct|__anon28f63ec20108
 typedef|typedef
 struct|struct
 block|{
@@ -241,7 +241,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a85d530208
+DECL|struct|__anon28f63ec20208
 block|{
 DECL|member|activate
 name|GtkWidget
@@ -283,7 +283,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a85d530308
+DECL|struct|__anon28f63ec20308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -4558,6 +4558,8 @@ decl_stmt|;
 name|GParam
 modifier|*
 name|params
+init|=
+name|NULL
 decl_stmt|;
 name|gint
 name|nreturn_vals
