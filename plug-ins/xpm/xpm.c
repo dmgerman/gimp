@@ -64,7 +64,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b14d4800108
+DECL|struct|__anon29eb132e0108
 block|{
 DECL|member|threshold
 name|gdouble
@@ -79,7 +79,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b14d4800208
+DECL|struct|__anon29eb132e0208
 block|{
 DECL|member|run
 name|gint
@@ -1286,6 +1286,21 @@ operator|=
 name|xpm_color
 operator|->
 name|m_color
+expr_stmt|;
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|colorspec
+argument_list|,
+literal|"none"
+argument_list|)
+operator|==
+literal|0
+condition|)
+name|colorspec
+operator|=
+literal|"None"
 expr_stmt|;
 comment|/* parse if it's not transparent.  the assumption is that              g_new will memset the buffer to zeros */
 if|if
