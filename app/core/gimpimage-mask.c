@@ -1548,6 +1548,11 @@ name|tiles
 argument_list|,
 name|gimage
 argument_list|,
+name|gimp_image_base_type_with_alpha
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Floating Selection"

@@ -3061,6 +3061,11 @@ name|tiles
 argument_list|,
 name|gimage
 argument_list|,
+name|gimp_drawable_type
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Transformation"

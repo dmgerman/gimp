@@ -141,7 +141,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b38643d0103
+DECL|enum|__anon2bdba2dc0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -1422,13 +1422,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_new_from_tiles:  * @tiles:       The buffer to make the new layer from.  * @dest_gimage: The image the new layer will be added to.  * @name:        The new layer's name.  * @opacity:     The new layer's opacity.  * @mode:        The new layer's mode.  *   * Copies %tiles to a layer taking into consideration the  * possibility of transforming the contents to meet the requirements  * of the target image type  *   * Return value: The new layer.  **/
+comment|/**  * gimp_layer_new_from_tiles:  * @tiles:       The buffer to make the new layer from.  * @dest_gimage: The image the new layer will be added to.  * @type:        The #GimpImageType of the new layer.  * @name:        The new layer's name.  * @opacity:     The new layer's opacity.  * @mode:        The new layer's mode.  *   * Copies %tiles to a layer taking into consideration the  * possibility of transforming the contents to meet the requirements  * of the target image type  *   * Return value: The new layer.  **/
 end_comment
 
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_layer_new_from_tiles (TileManager * tiles,GimpImage * dest_gimage,const gchar * name,gdouble opacity,GimpLayerModeEffects mode)
+DECL|function|gimp_layer_new_from_tiles (TileManager * tiles,GimpImage * dest_gimage,GimpImageType type,const gchar * name,gdouble opacity,GimpLayerModeEffects mode)
 name|gimp_layer_new_from_tiles
 parameter_list|(
 name|TileManager
@@ -1438,6 +1438,9 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|dest_gimage
+parameter_list|,
+name|GimpImageType
+name|type
 parameter_list|,
 specifier|const
 name|gchar
@@ -1518,10 +1521,7 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|gimp_image_base_type_with_alpha
-argument_list|(
-name|dest_gimage
-argument_list|)
+name|type
 argument_list|,
 name|name
 argument_list|,

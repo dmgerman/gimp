@@ -131,7 +131,7 @@ decl_stmt|;
 comment|/*  possible layer mask        */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon277832660108
+DECL|struct|__anon28e52e120108
 block|{
 DECL|member|backing_store
 name|TileManager
@@ -324,6 +324,9 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|dest_gimage
+parameter_list|,
+name|GimpImageType
+name|type
 parameter_list|,
 specifier|const
 name|gchar
