@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3373210103
+DECL|enum|__anon294934480103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1827,6 +1827,22 @@ name|copy_width
 decl_stmt|,
 name|copy_height
 decl_stmt|;
+comment|/*  if the size doesn't change, this is a nop  */
+if|if
+condition|(
+name|item
+operator|->
+name|width
+operator|==
+name|new_width
+operator|&&
+name|item
+operator|->
+name|height
+operator|==
+name|new_height
+condition|)
+return|return;
 name|new_offset_x
 operator|=
 name|item
