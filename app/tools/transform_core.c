@@ -6634,7 +6634,7 @@ index|[
 name|alpha
 index|]
 operator|=
-name|rint
+name|RINT
 argument_list|(
 name|a_val
 argument_list|)
@@ -6666,7 +6666,7 @@ index|]
 expr_stmt|;
 name|newval
 operator|=
-name|rint
+name|RINT
 argument_list|(
 name|a_recip
 operator|*
@@ -7005,7 +7005,7 @@ index|[
 name|alpha
 index|]
 operator|=
-name|rint
+name|RINT
 argument_list|(
 name|a_val
 argument_list|)
@@ -7037,7 +7037,7 @@ index|]
 expr_stmt|;
 name|newval
 operator|=
-name|rint
+name|RINT
 argument_list|(
 name|a_recip
 operator|*
@@ -7183,14 +7183,14 @@ comment|/*  no interpolation  */
 block|{
 name|itx
 operator|=
-name|rint
+name|RINT
 argument_list|(
 name|ttx
 argument_list|)
 expr_stmt|;
 name|ity
 operator|=
-name|rint
+name|RINT
 argument_list|(
 name|tty
 argument_list|)

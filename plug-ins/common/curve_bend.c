@@ -879,7 +879,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ad4995d0108
+DECL|struct|__anon292c28f50108
 typedef|typedef
 struct|struct
 block|{
@@ -908,7 +908,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ad4995d0208
+DECL|struct|__anon292c28f50208
 typedef|typedef
 struct|struct
 block|{
@@ -994,7 +994,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ad4995d0308
+DECL|struct|__anon292c28f50308
 typedef|typedef
 struct|struct
 block|{
@@ -11145,7 +11145,7 @@ name|b
 parameter_list|,
 name|h
 parameter_list|)
-value|({ h=a; a=b; b=h; })
+value|{ h=a; a=b; b=h; }
 name|BenderDialog
 modifier|*
 name|cd
@@ -11855,7 +11855,7 @@ name|filesel
 operator|=
 name|gtk_file_selection_new
 argument_list|(
-literal|"Save Curve Points to file"
+literal|"Load Curve Points from file"
 argument_list|)
 expr_stmt|;
 name|cd
