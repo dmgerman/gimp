@@ -1117,6 +1117,8 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
@@ -1129,6 +1131,8 @@ argument_list|,
 name|error_console_close_callback
 argument_list|,
 name|text
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

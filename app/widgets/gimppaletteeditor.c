@@ -294,7 +294,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8ce3bc0103
+DECL|enum|__anon2c244d200103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -7846,6 +7846,8 @@ name|palette
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
@@ -7858,6 +7860,8 @@ argument_list|,
 name|palette_dialog_cancel_delete_callback
 argument_list|,
 name|palette
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -8882,6 +8886,8 @@ name|palette
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
@@ -8897,6 +8903,8 @@ name|palette
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
@@ -8909,6 +8917,8 @@ argument_list|,
 name|palette_dialog_close_callback
 argument_list|,
 name|palette
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -8958,6 +8968,8 @@ name|palette
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
@@ -8970,6 +8982,8 @@ argument_list|,
 name|palette_dialog_close_callback
 argument_list|,
 name|palette
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -13990,6 +14004,8 @@ name|palette
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
@@ -14002,6 +14018,8 @@ argument_list|,
 name|palette_import_close_callback
 argument_list|,
 name|palette
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

@@ -185,6 +185,8 @@ name|psp
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
@@ -197,6 +199,8 @@ argument_list|,
 name|palette_select_close_callback
 argument_list|,
 name|psp
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

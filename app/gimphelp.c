@@ -320,6 +320,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gimp_help_internal (gchar * current_locale,gchar * help_data)
 name|gimp_help_internal
@@ -515,6 +516,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gimp_help_netscape (gchar * current_locale,gchar * help_data)
 name|gimp_help_netscape

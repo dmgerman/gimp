@@ -3089,6 +3089,8 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
@@ -3099,6 +3101,8 @@ literal|"Close"
 argument_list|)
 argument_list|,
 name|devices_close_callback
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

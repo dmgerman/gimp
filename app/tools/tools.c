@@ -2965,6 +2965,8 @@ name|tool_options_reset_callback
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 operator|&
 name|options_reset_button
 argument_list|,
@@ -2978,6 +2980,8 @@ literal|"Close"
 argument_list|)
 argument_list|,
 name|tool_options_close_callback
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

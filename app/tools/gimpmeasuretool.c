@@ -106,7 +106,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c11f6e60103
+DECL|enum|__anon2bd3fd9c0103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -1363,6 +1363,8 @@ argument_list|,
 name|measure_tool_info_window_close_callback
 argument_list|,
 name|measure_tool_info
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

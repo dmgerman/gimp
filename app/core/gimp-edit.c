@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2e88a60103
+DECL|enum|__anon2ad7dc820103
 block|{
 DECL|enumerator|PASTE
 name|PASTE
@@ -3076,6 +3076,8 @@ name|pn_dlg
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
@@ -3088,6 +3090,8 @@ argument_list|,
 name|named_buffer_cancel_callback
 argument_list|,
 name|pn_dlg
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

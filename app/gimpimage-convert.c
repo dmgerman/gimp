@@ -34887,7 +34887,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292f32da0108
+DECL|struct|__anon2788c50c0108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -34964,7 +34964,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292f32da0208
+DECL|struct|__anon2788c50c0208
 block|{
 DECL|member|ncolors
 name|long
@@ -34983,7 +34983,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292f32da0308
+DECL|struct|__anon2788c50c0308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -35728,6 +35728,8 @@ name|dialog
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
@@ -35740,6 +35742,8 @@ argument_list|,
 name|indexed_cancel_callback
 argument_list|,
 name|dialog
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -38246,7 +38250,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292f32da0408
+DECL|struct|__anon2788c50c0408
 block|{
 DECL|member|used_count
 name|signed

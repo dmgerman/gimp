@@ -1031,6 +1031,8 @@ name|options
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
@@ -1043,6 +1045,8 @@ argument_list|,
 name|edit_qmask_query_cancel_callback
 argument_list|,
 name|options
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

@@ -849,6 +849,8 @@ name|user_data
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
@@ -861,6 +863,8 @@ argument_list|,
 name|cancel_cb
 argument_list|,
 name|user_data
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

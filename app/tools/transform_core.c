@@ -1897,6 +1897,8 @@ name|tool
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
@@ -1909,6 +1911,8 @@ argument_list|,
 name|transform_reset_callback
 argument_list|,
 name|tool
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

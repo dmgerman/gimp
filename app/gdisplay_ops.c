@@ -1344,6 +1344,8 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
@@ -1354,6 +1356,8 @@ literal|"Cancel"
 argument_list|)
 argument_list|,
 name|gdisplay_cancel_warning_callback
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

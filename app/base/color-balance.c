@@ -1129,6 +1129,8 @@ name|cbd
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
@@ -1144,6 +1146,8 @@ name|cbd
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
@@ -1156,6 +1160,8 @@ argument_list|,
 name|color_balance_cancel_callback
 argument_list|,
 name|cbd
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

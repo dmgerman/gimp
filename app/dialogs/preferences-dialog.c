@@ -5879,6 +5879,8 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
@@ -5894,6 +5896,8 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
@@ -5904,6 +5908,8 @@ literal|"Cancel"
 argument_list|)
 argument_list|,
 name|file_prefs_cancel_callback
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -11538,7 +11544,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon296caa0d0108
+DECL|struct|__anon277966bf0108
 block|{
 DECL|member|label
 name|gchar
@@ -11763,7 +11769,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon296caa0d0208
+DECL|struct|__anon277966bf0208
 block|{
 DECL|member|tree_label
 name|gchar

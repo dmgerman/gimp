@@ -338,7 +338,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b156cdf0103
+DECL|enum|__anon27fac3040103
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -362,7 +362,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b156cdf0208
+DECL|struct|__anon27fac3040208
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -645,7 +645,7 @@ name|replicate_times
 decl_stmt|;
 comment|/*  Saved colors  */
 struct|struct
-DECL|struct|__anon2b156cdf0308
+DECL|struct|__anon27fac3040308
 block|{
 DECL|member|r
 DECL|member|g
@@ -3987,6 +3987,8 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
@@ -3997,6 +3999,8 @@ literal|"Close"
 argument_list|)
 argument_list|,
 name|ed_close_callback
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -8868,6 +8872,8 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
@@ -8878,6 +8884,8 @@ literal|"Cancel"
 argument_list|)
 argument_list|,
 name|ed_cancel_delete_gradient_callback
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -22314,6 +22322,8 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
@@ -22324,6 +22334,8 @@ literal|"Cancel"
 argument_list|)
 argument_list|,
 name|cpopup_split_uniform_cancel_callback
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -24612,6 +24624,8 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
@@ -24622,6 +24636,8 @@ literal|"Cancel"
 argument_list|)
 argument_list|,
 name|cpopup_replicate_cancel_callback
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

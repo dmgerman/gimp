@@ -63,6 +63,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpui.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -2884,12 +2890,12 @@ block|}
 end_function
 
 begin_function
-DECL|function|palette_dialog (char * title)
 specifier|static
 name|gint
+DECL|function|palette_dialog (gchar * title)
 name|palette_dialog
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|title
 parameter_list|)
@@ -2951,7 +2957,7 @@ argument_list|(
 name|title
 argument_list|)
 expr_stmt|;
-name|gtk_window_position
+name|gtk_window_set_position
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -3033,6 +3039,15 @@ name|GTK_OBJECT
 argument_list|(
 name|dialog
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_help_connect_help_accel
+argument_list|(
+name|dialog
+argument_list|,
+name|gimp_plugin_help_func
+argument_list|,
+literal|"filters/cel.html"
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

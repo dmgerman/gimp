@@ -523,6 +523,8 @@ name|gsp
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
@@ -535,6 +537,8 @@ argument_list|,
 name|gradient_select_close_callback
 argument_list|,
 name|gsp
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

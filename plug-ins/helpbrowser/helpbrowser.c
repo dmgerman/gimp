@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -127,7 +133,7 @@ value|"help"
 end_define
 
 begin_enum
-DECL|enum|__anon2b56f1290103
+DECL|enum|__anon2bdde6d80103
 enum|enum
 block|{
 DECL|enumerator|CONTENTS
@@ -143,7 +149,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2b56f1290203
+DECL|enum|__anon2bdde6d80203
 enum|enum
 block|{
 DECL|enumerator|URL_UNKNOWN
@@ -175,7 +181,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b56f1290308
+DECL|struct|__anon2bdde6d80308
 block|{
 DECL|member|index
 name|gint
@@ -215,7 +221,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b56f1290408
+DECL|struct|__anon2bdde6d80408
 block|{
 DECL|member|title
 name|gchar
@@ -3277,7 +3283,7 @@ argument_list|(
 name|window
 argument_list|)
 argument_list|,
-literal|"gimp_help_browser"
+literal|"helpbrowser"
 argument_list|,
 literal|"Gimp"
 argument_list|)
@@ -3293,6 +3299,15 @@ name|_
 argument_list|(
 literal|"GIMP Help Browser"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_help_connect_help_accel
+argument_list|(
+name|window
+argument_list|,
+name|gimp_plugin_help_func
+argument_list|,
+literal|"filters/helpbrowser.html"
 argument_list|)
 expr_stmt|;
 name|vbox

@@ -639,7 +639,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2880151d0103
+DECL|enum|__anon2bd9acd20103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -5648,6 +5648,8 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
@@ -5663,6 +5665,8 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
@@ -5673,6 +5677,8 @@ literal|"Close"
 argument_list|)
 argument_list|,
 name|crop_close_callback
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

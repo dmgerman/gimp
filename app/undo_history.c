@@ -88,7 +88,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27738e220108
+DECL|struct|__anon2945c1b70108
 block|{
 DECL|member|gimage
 name|GImage
@@ -139,7 +139,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27738e220208
+DECL|struct|__anon2945c1b70208
 block|{
 DECL|member|clist
 name|GtkCList
@@ -3383,6 +3383,8 @@ argument_list|,
 name|undo_history_close_callback
 argument_list|,
 name|st
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

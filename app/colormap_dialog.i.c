@@ -907,6 +907,8 @@ name|ipal
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|TRUE
@@ -5231,7 +5233,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fe4ae10108
+DECL|struct|__anon28fc85fb0108
 block|{
 DECL|member|def
 name|GimpImage

@@ -906,6 +906,8 @@ name|query_box
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
@@ -918,6 +920,8 @@ argument_list|,
 name|query_box_cancel_callback
 argument_list|,
 name|query_box
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -2518,6 +2522,8 @@ argument_list|,
 name|gimp_message_box_close_callback
 argument_list|,
 name|msg_box
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

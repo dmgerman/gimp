@@ -15784,6 +15784,8 @@ name|options
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
@@ -15796,6 +15798,8 @@ argument_list|,
 name|new_layer_query_cancel_callback
 argument_list|,
 name|options
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -16937,6 +16941,8 @@ name|options
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
@@ -16949,6 +16955,8 @@ argument_list|,
 name|edit_layer_query_cancel_callback
 argument_list|,
 name|options
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -17509,6 +17517,8 @@ name|options
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
@@ -17521,6 +17531,8 @@ argument_list|,
 name|add_mask_query_cancel_callback
 argument_list|,
 name|options
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -18020,6 +18032,8 @@ name|options
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
@@ -18035,6 +18049,8 @@ name|options
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
@@ -18047,6 +18063,8 @@ argument_list|,
 name|apply_mask_query_cancel_callback
 argument_list|,
 name|options
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -19205,6 +19223,8 @@ name|options
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
@@ -19217,6 +19237,8 @@ argument_list|,
 name|layer_merge_query_cancel_callback
 argument_list|,
 name|options
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

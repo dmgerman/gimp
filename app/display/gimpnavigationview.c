@@ -196,7 +196,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2978bcdb0103
+DECL|enum|__anon2ab031af0103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -6574,6 +6574,8 @@ argument_list|,
 name|nav_window_close_callback
 argument_list|,
 name|info_win
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

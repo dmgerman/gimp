@@ -422,7 +422,7 @@ name|GdkFont
 modifier|*
 name|font
 decl_stmt|;
-DECL|struct|__anon2b833c210108
+DECL|struct|__anon2a4536c50108
 specifier|static
 specifier|const
 struct|struct
@@ -929,6 +929,8 @@ name|callback
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
@@ -944,6 +946,8 @@ name|callback
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
@@ -956,6 +960,8 @@ argument_list|,
 name|help_quit_callback
 argument_list|,
 name|callback
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -1662,6 +1668,8 @@ name|callback
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
@@ -1674,6 +1682,8 @@ argument_list|,
 name|install_quit_callback
 argument_list|,
 name|callback
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

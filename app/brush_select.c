@@ -1601,6 +1601,8 @@ name|bsp
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
@@ -1613,6 +1615,8 @@ argument_list|,
 name|brush_select_close_callback
 argument_list|,
 name|bsp
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -5184,7 +5188,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2e733a0108
+DECL|struct|__anon27b758530108
 block|{
 DECL|member|bsp
 name|BrushSelect

@@ -200,7 +200,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bde9f540108
+DECL|struct|__anon2bb068c70108
 block|{
 DECL|member|hwidth
 name|gint
@@ -2785,10 +2785,7 @@ literal|"grid"
 argument_list|,
 name|gimp_plugin_help_func
 argument_list|,
-name|argv
-index|[
-literal|0
-index|]
+literal|"filters/grid.html"
 argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|,
@@ -2809,6 +2806,8 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
@@ -2819,6 +2818,8 @@ literal|"Cancel"
 argument_list|)
 argument_list|,
 name|close_callback
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

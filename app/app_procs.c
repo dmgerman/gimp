@@ -3155,6 +3155,8 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
@@ -3165,6 +3167,8 @@ literal|"Cancel"
 argument_list|)
 argument_list|,
 name|really_quit_cancel_callback
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

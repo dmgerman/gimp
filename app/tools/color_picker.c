@@ -1637,6 +1637,8 @@ name|color_picker_info
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE

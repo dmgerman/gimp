@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29368ab20108
+DECL|struct|__anon2792e07d0108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -850,6 +850,8 @@ name|info
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
@@ -862,6 +864,8 @@ argument_list|,
 name|file_new_confirm_dialog_cancel_callback
 argument_list|,
 name|info
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -1610,6 +1614,8 @@ name|info
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
@@ -1625,6 +1631,8 @@ name|info
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
@@ -1637,6 +1645,8 @@ argument_list|,
 name|file_new_cancel_callback
 argument_list|,
 name|info
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

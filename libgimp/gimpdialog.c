@@ -148,7 +148,7 @@ parameter_list|,
 name|gint
 name|auto_shrink
 parameter_list|,
-comment|/* specify action area buttons as va_list: 		  *  gchar          *label, 		  *  GtkSignalFunc   callback, 		  *  gpointer        data, 		  *  GtkWidget     **widget_ptr, 		  *  gboolean        default_action, 		  *  gboolean        connect_delete, 		  */
+comment|/* specify action area buttons as va_list: 		  *  gchar          *label, 		  *  GtkSignalFunc   callback, 		  *  gpointer        data, 		  *  GtkObject      *slot_object, 		  *  GtkWidget     **widget_ptr, 		  *  gboolean        default_action, 		  *  gboolean        connect_delete, 		  */
 modifier|...
 parameter_list|)
 block|{
@@ -415,7 +415,7 @@ name|GtkDialog
 modifier|*
 name|dialog
 parameter_list|,
-comment|/* specify action area buttons as va_list: 				 *  gchar          *label, 				 *  GtkSignalFunc   callback, 				 *  gpointer        data, 				 *  GtkWidget     **widget_ptr, 				 *  gboolean        default_action, 				 *  gboolean        connect_delete, 				 */
+comment|/* specify action area buttons as va_list: 				 *  gchar          *label, 				 *  GtkSignalFunc   callback, 				 *  gpointer        data, 				 *  GtkObject      *slot_object, 				 *  GtkWidget     **widget_ptr, 				 *  gboolean        default_action, 				 *  gboolean        connect_delete, 				 */
 modifier|...
 parameter_list|)
 block|{
@@ -475,6 +475,10 @@ name|callback
 decl_stmt|;
 name|gpointer
 name|data
+decl_stmt|;
+name|GtkObject
+modifier|*
+name|slot_object
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -610,6 +614,15 @@ argument_list|,
 name|gpointer
 argument_list|)
 expr_stmt|;
+name|slot_object
+operator|=
+name|va_arg
+argument_list|(
+name|args
+argument_list|,
+name|gpointer
+argument_list|)
+expr_stmt|;
 name|widget_ptr
 operator|=
 name|va_arg
@@ -667,11 +680,61 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/*  pass data as user_data if data != NULL, or the dialog otherwise  */
+if|if
+condition|(
+name|slot_object
+operator|==
+operator|(
+name|GtkObject
+operator|*
+operator|)
+literal|1
+condition|)
+name|slot_object
+operator|=
+operator|(
+name|GtkObject
+operator|*
+operator|)
+name|dialog
+expr_stmt|;
+if|if
+condition|(
+name|data
+operator|==
+name|NULL
+condition|)
+name|data
+operator|=
+name|dialog
+expr_stmt|;
 if|if
 condition|(
 name|callback
 condition|)
+block|{
+if|if
+condition|(
+name|slot_object
+condition|)
+name|gtk_signal_connect_object
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+literal|"clicked"
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|callback
+argument_list|)
+argument_list|,
+name|slot_object
+argument_list|)
+expr_stmt|;
+else|else
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -687,12 +750,9 @@ name|callback
 argument_list|)
 argument_list|,
 name|data
-condition|?
-name|data
-else|:
-name|dialog
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|widget_ptr
@@ -733,7 +793,14 @@ argument_list|)
 argument_list|,
 literal|"gimp_dialog_cancel_widget"
 argument_list|,
+name|slot_object
+condition|?
+name|slot_object
+else|:
+name|GTK_OBJECT
+argument_list|(
 name|button
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  catch the WM delete event  */
@@ -752,10 +819,6 @@ operator|)
 name|gimp_dialog_delete_callback
 argument_list|,
 name|data
-condition|?
-name|data
-else|:
-name|dialog
 argument_list|)
 expr_stmt|;
 name|delete_connected

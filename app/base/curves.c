@@ -2962,6 +2962,8 @@ name|cd
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
@@ -2977,6 +2979,8 @@ name|cd
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
@@ -2989,6 +2993,8 @@ argument_list|,
 name|curves_cancel_callback
 argument_list|,
 name|cd
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

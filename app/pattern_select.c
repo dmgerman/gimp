@@ -756,6 +756,8 @@ name|psp
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
@@ -768,6 +770,8 @@ argument_list|,
 name|pattern_select_close_callback
 argument_list|,
 name|psp
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -2181,7 +2185,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ba1ce90108
+DECL|struct|__anon287a581b0108
 block|{
 DECL|member|psp
 name|PatternSelect
