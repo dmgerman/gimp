@@ -3133,6 +3133,14 @@ name|CloseClipboard
 argument_list|()
 expr_stmt|;
 comment|/* shouldn't this be done by caller?? */
+if|if
+condition|(
+operator|!
+name|gimp_image_undo_is_enabled
+argument_list|(
+name|image_ID
+argument_list|)
+condition|)
 name|gimp_image_undo_enable
 argument_list|(
 name|image_ID
