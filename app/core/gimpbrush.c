@@ -164,7 +164,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon277a74fa0103
+DECL|enum|__anon2c5e0ecb0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -1780,7 +1780,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Unknown brush format version #%d in \"%s\"."
+literal|"Fatal parsing error (unknown version %d):\n"
+literal|"Brush file '%s'"
 argument_list|)
 argument_list|,
 name|header
@@ -1876,7 +1877,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Error in GIMP brush file \"%s\"."
+literal|"Fatal parsing error:\nBrush file '%s' appears truncated."
 argument_list|)
 argument_list|,
 name|filename
@@ -1909,7 +1910,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Invalid UTF-8 string in GIMP brush file \"%s\"."
+literal|"Invalid UTF-8 string in brush file '%s'."
 argument_list|)
 argument_list|,
 name|filename
@@ -2021,7 +2022,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"GIMP brush file appears to be truncated: \"%s\"."
+literal|"Fatal parsing error:\nBrush file '%s' appears truncated."
 argument_list|)
 argument_list|,
 name|filename
@@ -2171,7 +2172,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"GIMP brush file appears to be truncated: \"%s\"."
+literal|"Fatal parsing error:\nBrush file '%s' appears truncated."
 argument_list|)
 argument_list|,
 name|filename
@@ -2199,9 +2200,9 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
-literal|"Unsupported brush depth: %d\n"
-literal|"in file \"%s\"\n"
-literal|"GIMP Brushes must be GRAY or RGBA"
+literal|"Unsupported brush depth %d\n"
+literal|"in file '%s'.\n"
+literal|"GIMP brushes must be GRAY or RGBA."
 argument_list|,
 name|header
 operator|.

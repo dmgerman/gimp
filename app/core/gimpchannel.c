@@ -4522,7 +4522,7 @@ break|break;
 default|default:
 name|g_warning
 argument_list|(
-literal|"Only ADD, REPLACE and SUB are valid for channel_combine!"
+literal|"Only ADD, REPLACE, and SUB are valid for channel_combine!"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4749,7 +4749,7 @@ break|break;
 default|default:
 name|g_warning
 argument_list|(
-literal|"Only ADD, REPLACE and SUB are valid for channel_combine!"
+literal|"Only ADD, REPLACE, and SUB are valid for channel_combine!"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4850,7 +4850,7 @@ expr_stmt|;
 else|else
 name|g_warning
 argument_list|(
-literal|"Only ADD, REPLACE and SUB are valid for channel_combine!"
+literal|"Only ADD, REPLACE, and SUB are valid for channel_combine!"
 argument_list|)
 expr_stmt|;
 block|}
@@ -5723,9 +5723,11 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|g_message
+name|g_warning
 argument_list|(
-literal|"Error: unknown opperation type in channel_combine_mask\n"
+literal|"%s: unknown operation type\n"
+argument_list|,
+name|G_GNUC_PRETTY_FUNCTION
 argument_list|)
 expr_stmt|;
 break|break;

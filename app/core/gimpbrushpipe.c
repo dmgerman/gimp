@@ -743,7 +743,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Couldn't open file '%s'"
+name|_
+argument_list|(
+literal|"Could not open file '%s'"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -854,7 +857,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Invalid UTF-8 string in GIMP brush file \"%s\"."
+literal|"Invalid UTF-8 string in GIMP brush file '%s'."
 argument_list|)
 argument_list|,
 name|filename
@@ -890,7 +893,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Couldn't read name for brush pipe from file \"%s\".\n"
+name|_
+argument_list|(
+literal|"Fatal parsing error:\nBrush pipe file '%s' is corrupt."
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -984,7 +990,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Brush pipes should have at least one brush:\n\"%s\""
+literal|"Fatal parsing error:\nBrush pipe file '%s' is corrupt."
 argument_list|)
 argument_list|,
 name|filename
@@ -1627,7 +1633,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Failed to load one of the brushes in the brush pipe\n\"%s\""
+literal|"Fatal parsing error:\nBrush pipe file '%s' is corrupt."
 argument_list|)
 argument_list|,
 name|filename
