@@ -216,7 +216,10 @@ argument_list|)
 argument_list|,
 literal|"calibrate_resolution"
 argument_list|,
+name|gtk_widget_get_toplevel
+argument_list|(
 name|resolution_entry
+argument_list|)
 argument_list|,
 name|GTK_DIALOG_DESTROY_WITH_PARENT
 argument_list|,
