@@ -212,15 +212,6 @@ condition|)
 return|return
 name|FALSE
 return|;
-name|g_io_channel_set_encoding
-argument_list|(
-name|io
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|success
 operator|=
 name|gimp_xml_parser_parse_io_channel
@@ -336,6 +327,13 @@ expr_stmt|;
 if|if
 condition|(
 name|io_encoding
+operator|&&
+name|strcmp
+argument_list|(
+name|io_encoding
+argument_list|,
+literal|"UTF-8"
+argument_list|)
 condition|)
 block|{
 name|g_warning
@@ -349,6 +347,15 @@ name|FALSE
 return|;
 block|}
 comment|/* try to determine the encoding */
+name|g_io_channel_set_encoding
+argument_list|(
+name|io
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 while|while
 condition|(
 name|len
