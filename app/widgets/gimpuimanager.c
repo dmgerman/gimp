@@ -81,9 +81,15 @@ directive|include
 file|"gimpuimanager.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon297538ad0103
+DECL|enum|__anon279532f90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -99,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297538ad0203
+DECL|enum|__anon279532f90203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1901,9 +1907,22 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+literal|"%s\n\n%s\n\n%s"
+argument_list|,
+name|_
+argument_list|(
+literal|"Your GIMP installation is incomplete:"
+argument_list|)
+argument_list|,
 name|error
 operator|->
 name|message
+argument_list|,
+name|_
+argument_list|(
+literal|"Plase make sure the menu XML files are correctly "
+literal|"installed."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_clear_error
@@ -2050,7 +2069,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297538ad0308
+DECL|struct|__anon279532f90308
 block|{
 DECL|member|x
 name|guint
