@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b05e46d0103
+DECL|enum|__anon2ae8ea3d0103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -87,11 +87,9 @@ parameter_list|,
 name|gboolean
 name|clip_result
 parameter_list|,
-name|GimpProgressFunc
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 function_decl|;
 end_function_decl

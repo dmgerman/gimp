@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d4c95b0103
+DECL|enum|__anon2906ce5f0103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -296,11 +296,9 @@ parameter_list|,
 name|GimpInterpolationType
 name|interp_type
 parameter_list|,
-name|GimpProgressFunc
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -419,11 +417,9 @@ parameter_list|,
 name|gboolean
 name|clip_result
 parameter_list|,
-name|GimpProgressFunc
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1707,7 +1703,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_vectors_scale (GimpItem * item,gint new_width,gint new_height,gint new_offset_x,gint new_offset_y,GimpInterpolationType interpolation_type,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gimp_vectors_scale (GimpItem * item,gint new_width,gint new_height,gint new_offset_x,gint new_offset_y,GimpInterpolationType interpolation_type,GimpProgress * progress)
 name|gimp_vectors_scale
 parameter_list|(
 name|GimpItem
@@ -1729,11 +1725,9 @@ parameter_list|,
 name|GimpInterpolationType
 name|interpolation_type
 parameter_list|,
-name|GimpProgressFunc
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 block|{
 name|GimpVectors
@@ -1860,9 +1854,7 @@ literal|0
 argument_list|,
 name|interpolation_type
 argument_list|,
-name|progress_callback
-argument_list|,
-name|progress_data
+name|progress
 argument_list|)
 expr_stmt|;
 name|gimp_vectors_thaw
@@ -2274,7 +2266,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_vectors_transform (GimpItem * item,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gimp_vectors_transform (GimpItem * item,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,gboolean clip_result,GimpProgress * progress)
 name|gimp_vectors_transform
 parameter_list|(
 name|GimpItem
@@ -2305,11 +2297,9 @@ parameter_list|,
 name|gboolean
 name|clip_result
 parameter_list|,
-name|GimpProgressFunc
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 block|{
 name|GimpVectors

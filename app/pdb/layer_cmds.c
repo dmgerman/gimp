@@ -524,7 +524,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_new_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|layer_new_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|layer_new_invoker
 parameter_list|(
 name|Gimp
@@ -534,6 +534,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -957,7 +961,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_new_from_drawable_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|layer_new_from_drawable_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|layer_new_from_drawable_invoker
 parameter_list|(
 name|Gimp
@@ -967,6 +971,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1283,7 +1291,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_copy_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|layer_copy_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|layer_copy_invoker
 parameter_list|(
 name|Gimp
@@ -1293,6 +1301,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1534,7 +1546,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_add_alpha_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|layer_add_alpha_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|layer_add_alpha_invoker
 parameter_list|(
 name|Gimp
@@ -1544,6 +1556,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1684,7 +1700,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_scale_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|layer_scale_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|layer_scale_invoker
 parameter_list|(
 name|Gimp
@@ -1694,6 +1710,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1841,8 +1861,6 @@ name|interpolation_type
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
-argument_list|,
 name|local_origin
 argument_list|)
 expr_stmt|;
@@ -1943,7 +1961,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_resize_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|layer_resize_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|layer_resize_invoker
 parameter_list|(
 name|Gimp
@@ -1953,6 +1971,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -2214,7 +2236,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_resize_to_image_size_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|layer_resize_to_image_size_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|layer_resize_to_image_size_invoker
 parameter_list|(
 name|Gimp
@@ -2224,6 +2246,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -2383,7 +2409,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_translate_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|layer_translate_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|layer_translate_invoker
 parameter_list|(
 name|Gimp
@@ -2393,6 +2419,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -2641,7 +2671,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_set_offsets_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|layer_set_offsets_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|layer_set_offsets_invoker
 parameter_list|(
 name|Gimp
@@ -2651,6 +2681,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -2913,7 +2947,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_create_mask_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|layer_create_mask_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|layer_create_mask_invoker
 parameter_list|(
 name|Gimp
@@ -2923,6 +2957,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -3166,7 +3204,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_get_mask_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|layer_get_mask_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|layer_get_mask_invoker
 parameter_list|(
 name|Gimp
@@ -3176,6 +3214,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -3364,7 +3406,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_add_mask_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|layer_add_mask_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|layer_add_mask_invoker
 parameter_list|(
 name|Gimp
@@ -3374,6 +3416,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -3579,7 +3625,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_remove_mask_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|layer_remove_mask_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|layer_remove_mask_invoker
 parameter_list|(
 name|Gimp
@@ -3589,6 +3635,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -3769,7 +3819,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_is_floating_sel_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|layer_is_floating_sel_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|layer_is_floating_sel_invoker
 parameter_list|(
 name|Gimp
@@ -3779,6 +3829,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -3955,7 +4009,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_get_preserve_trans_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|layer_get_preserve_trans_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|layer_get_preserve_trans_invoker
 parameter_list|(
 name|Gimp
@@ -3965,6 +4019,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -4141,7 +4199,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_set_preserve_trans_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|layer_set_preserve_trans_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|layer_set_preserve_trans_invoker
 parameter_list|(
 name|Gimp
@@ -4151,6 +4209,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -4321,7 +4383,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_get_apply_mask_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|layer_get_apply_mask_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|layer_get_apply_mask_invoker
 parameter_list|(
 name|Gimp
@@ -4331,6 +4393,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -4507,7 +4573,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_set_apply_mask_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|layer_set_apply_mask_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|layer_set_apply_mask_invoker
 parameter_list|(
 name|Gimp
@@ -4517,6 +4583,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -4685,7 +4755,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_get_show_mask_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|layer_get_show_mask_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|layer_get_show_mask_invoker
 parameter_list|(
 name|Gimp
@@ -4695,6 +4765,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -4871,7 +4945,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_set_show_mask_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|layer_set_show_mask_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|layer_set_show_mask_invoker
 parameter_list|(
 name|Gimp
@@ -4881,6 +4955,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -5049,7 +5127,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_get_edit_mask_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|layer_get_edit_mask_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|layer_get_edit_mask_invoker
 parameter_list|(
 name|Gimp
@@ -5059,6 +5137,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -5235,7 +5317,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_set_edit_mask_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|layer_set_edit_mask_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|layer_set_edit_mask_invoker
 parameter_list|(
 name|Gimp
@@ -5245,6 +5327,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -5413,7 +5499,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_get_opacity_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|layer_get_opacity_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|layer_get_opacity_invoker
 parameter_list|(
 name|Gimp
@@ -5423,6 +5509,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -5601,7 +5691,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_set_opacity_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|layer_set_opacity_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|layer_set_opacity_invoker
 parameter_list|(
 name|Gimp
@@ -5611,6 +5701,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -5793,7 +5887,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_get_mode_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|layer_get_mode_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|layer_get_mode_invoker
 parameter_list|(
 name|Gimp
@@ -5803,6 +5897,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -5979,7 +6077,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_set_mode_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|layer_set_mode_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|layer_set_mode_invoker
 parameter_list|(
 name|Gimp
@@ -5989,6 +6087,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*

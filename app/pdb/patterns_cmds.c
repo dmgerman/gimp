@@ -176,7 +176,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|patterns_refresh_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|patterns_refresh_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|patterns_refresh_invoker
 parameter_list|(
 name|Gimp
@@ -186,6 +186,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -262,7 +266,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|patterns_get_list_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|patterns_get_list_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|patterns_get_list_invoker
 parameter_list|(
 name|Gimp
@@ -272,6 +276,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -487,7 +495,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|patterns_get_pattern_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|patterns_get_pattern_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|patterns_get_pattern_invoker
 parameter_list|(
 name|Gimp
@@ -497,6 +505,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -677,7 +689,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|patterns_set_pattern_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|patterns_set_pattern_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|patterns_set_pattern_invoker
 parameter_list|(
 name|Gimp
@@ -687,6 +699,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -854,7 +870,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|patterns_get_pattern_data_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|patterns_get_pattern_data_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|patterns_get_pattern_data_invoker
 parameter_list|(
 name|Gimp
@@ -864,6 +880,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*

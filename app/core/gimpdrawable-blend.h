@@ -73,11 +73,9 @@ parameter_list|,
 name|gdouble
 name|endy
 parameter_list|,
-name|GimpProgressFunc
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 function_decl|;
 end_function_decl

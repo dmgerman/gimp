@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpprogress.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file/file-open.h"
 end_include
 
@@ -1198,6 +1204,13 @@ operator|->
 name|gimp
 argument_list|,
 name|context
+argument_list|,
+name|GIMP_PROGRESS
+argument_list|(
+name|shell
+operator|->
+name|statusbar
+argument_list|)
 argument_list|,
 name|gimage
 argument_list|,

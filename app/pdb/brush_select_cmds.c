@@ -108,7 +108,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brushes_popup_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|brushes_popup_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brushes_popup_invoker
 parameter_list|(
 name|Gimp
@@ -118,6 +118,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -500,7 +504,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brushes_close_popup_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|brushes_close_popup_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brushes_close_popup_invoker
 parameter_list|(
 name|Gimp
@@ -510,6 +514,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -672,7 +680,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brushes_set_popup_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|brushes_set_popup_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brushes_set_popup_invoker
 parameter_list|(
 name|Gimp
@@ -682,6 +690,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*

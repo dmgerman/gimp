@@ -162,7 +162,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|floating_sel_remove_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|floating_sel_remove_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|floating_sel_remove_invoker
 parameter_list|(
 name|Gimp
@@ -172,6 +172,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -326,7 +330,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|floating_sel_anchor_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|floating_sel_anchor_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|floating_sel_anchor_invoker
 parameter_list|(
 name|Gimp
@@ -336,6 +340,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -490,7 +498,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|floating_sel_to_layer_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|floating_sel_to_layer_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|floating_sel_to_layer_invoker
 parameter_list|(
 name|Gimp
@@ -500,6 +508,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -654,7 +666,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|floating_sel_attach_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|floating_sel_attach_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|floating_sel_attach_invoker
 parameter_list|(
 name|Gimp
@@ -664,6 +676,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -877,7 +893,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|floating_sel_rigor_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|floating_sel_rigor_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|floating_sel_rigor_invoker
 parameter_list|(
 name|Gimp
@@ -887,6 +903,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1069,7 +1089,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|floating_sel_relax_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|floating_sel_relax_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|floating_sel_relax_invoker
 parameter_list|(
 name|Gimp
@@ -1079,6 +1099,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*

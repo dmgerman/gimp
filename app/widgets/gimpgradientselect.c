@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d3ad5c0103
+DECL|enum|__anon2c8879c00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -659,6 +659,8 @@ argument_list|,
 name|dialog
 operator|->
 name|context
+argument_list|,
+name|NULL
 argument_list|,
 name|dialog
 operator|->

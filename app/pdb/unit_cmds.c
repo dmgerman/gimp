@@ -252,7 +252,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_get_number_of_units_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|unit_get_number_of_units_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|unit_get_number_of_units_invoker
 parameter_list|(
 name|Gimp
@@ -262,6 +262,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -363,7 +367,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_get_number_of_built_in_units_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|unit_get_number_of_built_in_units_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|unit_get_number_of_built_in_units_invoker
 parameter_list|(
 name|Gimp
@@ -373,6 +377,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -474,7 +482,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_new_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|unit_new_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|unit_new_invoker
 parameter_list|(
 name|Gimp
@@ -484,6 +492,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -916,7 +928,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_get_deletion_flag_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|unit_get_deletion_flag_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|unit_get_deletion_flag_invoker
 parameter_list|(
 name|Gimp
@@ -926,6 +938,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1088,7 +1104,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_set_deletion_flag_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|unit_set_deletion_flag_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|unit_set_deletion_flag_invoker
 parameter_list|(
 name|Gimp
@@ -1098,6 +1114,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1252,7 +1272,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_get_identifier_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|unit_get_identifier_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|unit_get_identifier_invoker
 parameter_list|(
 name|Gimp
@@ -1262,6 +1282,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1427,7 +1451,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_get_factor_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|unit_get_factor_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|unit_get_factor_invoker
 parameter_list|(
 name|Gimp
@@ -1437,6 +1461,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1599,7 +1627,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_get_digits_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|unit_get_digits_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|unit_get_digits_invoker
 parameter_list|(
 name|Gimp
@@ -1609,6 +1637,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1771,7 +1803,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_get_symbol_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|unit_get_symbol_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|unit_get_symbol_invoker
 parameter_list|(
 name|Gimp
@@ -1781,6 +1813,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1946,7 +1982,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_get_abbreviation_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|unit_get_abbreviation_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|unit_get_abbreviation_invoker
 parameter_list|(
 name|Gimp
@@ -1956,6 +1992,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -2121,7 +2161,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_get_singular_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|unit_get_singular_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|unit_get_singular_invoker
 parameter_list|(
 name|Gimp
@@ -2131,6 +2171,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -2296,7 +2340,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|unit_get_plural_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|unit_get_plural_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|unit_get_plural_invoker
 parameter_list|(
 name|Gimp
@@ -2306,6 +2350,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*

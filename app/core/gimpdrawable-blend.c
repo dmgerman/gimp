@@ -108,13 +108,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpprogress.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be577380108
+DECL|struct|__anon2c3951b10108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -175,7 +181,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be577380208
+DECL|struct|__anon2c3951b10208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -439,11 +445,9 @@ parameter_list|,
 name|gdouble
 name|dist
 parameter_list|,
-name|GimpProgressFunc
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -556,11 +560,9 @@ parameter_list|,
 name|gdouble
 name|ey
 parameter_list|,
-name|GimpProgressFunc
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -610,7 +612,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_drawable_blend (GimpDrawable * drawable,GimpContext * context,GimpBlendMode blend_mode,GimpLayerModeEffects paint_mode,GimpGradientType gradient_type,gdouble opacity,gdouble offset,GimpRepeatMode repeat,gboolean reverse,gboolean supersample,gint max_depth,gdouble threshold,gboolean dither,gdouble startx,gdouble starty,gdouble endx,gdouble endy,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gimp_drawable_blend (GimpDrawable * drawable,GimpContext * context,GimpBlendMode blend_mode,GimpLayerModeEffects paint_mode,GimpGradientType gradient_type,gdouble opacity,gdouble offset,GimpRepeatMode repeat,gboolean reverse,gboolean supersample,gint max_depth,gdouble threshold,gboolean dither,gdouble startx,gdouble starty,gdouble endx,gdouble endy,GimpProgress * progress)
 name|gimp_drawable_blend
 parameter_list|(
 name|GimpDrawable
@@ -666,11 +668,9 @@ parameter_list|,
 name|gdouble
 name|endy
 parameter_list|,
-name|GimpProgressFunc
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 block|{
 name|GimpImage
@@ -709,6 +709,18 @@ argument_list|(
 name|GIMP_IS_CONTEXT
 argument_list|(
 name|context
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|progress
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_PROGRESS
+argument_list|(
+name|progress
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -886,9 +898,7 @@ operator|-
 name|y1
 operator|)
 argument_list|,
-name|progress_callback
-argument_list|,
-name|progress_data
+name|progress
 argument_list|)
 expr_stmt|;
 if|if
@@ -2402,7 +2412,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_precalc_shapeburst (GimpImage * gimage,GimpDrawable * drawable,PixelRegion * PR,gdouble dist,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gradient_precalc_shapeburst (GimpImage * gimage,GimpDrawable * drawable,PixelRegion * PR,gdouble dist,GimpProgress * progress)
 name|gradient_precalc_shapeburst
 parameter_list|(
 name|GimpImage
@@ -2420,11 +2430,9 @@ parameter_list|,
 name|gdouble
 name|dist
 parameter_list|,
-name|GimpProgressFunc
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 block|{
 name|GimpChannel
@@ -2759,9 +2767,13 @@ argument_list|,
 operator|&
 name|distR
 argument_list|,
-name|progress_callback
+name|progress
+condition|?
+name|gimp_progress_update_and_flush
+else|:
+name|NULL
 argument_list|,
-name|progress_data
+name|progress
 argument_list|)
 expr_stmt|;
 comment|/*  normalize the shapeburst with the max iteration  */
@@ -3998,7 +4010,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_fill_region (GimpImage * gimage,GimpDrawable * drawable,GimpContext * context,PixelRegion * PR,gint width,gint height,GimpBlendMode blend_mode,GimpGradientType gradient_type,gdouble offset,GimpRepeatMode repeat,gboolean reverse,gboolean supersample,gint max_depth,gdouble threshold,gboolean dither,gdouble sx,gdouble sy,gdouble ex,gdouble ey,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gradient_fill_region (GimpImage * gimage,GimpDrawable * drawable,GimpContext * context,PixelRegion * PR,gint width,gint height,GimpBlendMode blend_mode,GimpGradientType gradient_type,gdouble offset,GimpRepeatMode repeat,gboolean reverse,gboolean supersample,gint max_depth,gdouble threshold,gboolean dither,gdouble sx,gdouble sy,gdouble ex,gdouble ey,GimpProgress * progress)
 name|gradient_fill_region
 parameter_list|(
 name|GimpImage
@@ -4062,11 +4074,9 @@ parameter_list|,
 name|gdouble
 name|ey
 parameter_list|,
-name|GimpProgressFunc
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 block|{
 name|RenderBlendData
@@ -4422,9 +4432,7 @@ name|rbd
 operator|.
 name|dist
 argument_list|,
-name|progress_callback
-argument_list|,
-name|progress_data
+name|progress
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4566,9 +4574,9 @@ argument_list|,
 operator|&
 name|ppd
 argument_list|,
-name|progress_callback
+name|gimp_progress_update_and_flush
 argument_list|,
-name|progress_data
+name|progress
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -4593,7 +4601,7 @@ operator|->
 name|h
 decl_stmt|;
 name|gint
-name|progress
+name|curr_progress
 init|=
 literal|0
 decl_stmt|;
@@ -5104,10 +5112,10 @@ block|}
 block|}
 if|if
 condition|(
-name|progress_callback
+name|progress
 condition|)
 block|{
-name|progress
+name|curr_progress
 operator|+=
 name|PR
 operator|->
@@ -5117,18 +5125,15 @@ name|PR
 operator|->
 name|h
 expr_stmt|;
-call|(
-modifier|*
-name|progress_callback
-call|)
+name|gimp_progress_update_and_flush
 argument_list|(
 literal|0
 argument_list|,
 name|max_progress
 argument_list|,
-name|progress
+name|curr_progress
 argument_list|,
-name|progress_data
+name|progress
 argument_list|)
 expr_stmt|;
 block|}

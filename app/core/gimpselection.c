@@ -186,11 +186,9 @@ parameter_list|,
 name|GimpInterpolationType
 name|interp_type
 parameter_list|,
-name|GimpProgressFunc
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1054,7 +1052,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_selection_scale (GimpItem * item,gint new_width,gint new_height,gint new_offset_x,gint new_offset_y,GimpInterpolationType interp_type,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gimp_selection_scale (GimpItem * item,gint new_width,gint new_height,gint new_offset_x,gint new_offset_y,GimpInterpolationType interp_type,GimpProgress * progress)
 name|gimp_selection_scale
 parameter_list|(
 name|GimpItem
@@ -1076,11 +1074,9 @@ parameter_list|,
 name|GimpInterpolationType
 name|interp_type
 parameter_list|,
-name|GimpProgressFunc
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 block|{
 name|GIMP_ITEM_CLASS
@@ -1102,9 +1098,7 @@ name|new_offset_y
 argument_list|,
 name|interp_type
 argument_list|,
-name|progress_callback
-argument_list|,
-name|progress_data
+name|progress
 argument_list|)
 expr_stmt|;
 name|item

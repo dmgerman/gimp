@@ -104,7 +104,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|fonts_refresh_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|fonts_refresh_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|fonts_refresh_invoker
 parameter_list|(
 name|Gimp
@@ -114,6 +114,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -179,7 +183,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|fonts_get_list_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|fonts_get_list_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|fonts_get_list_invoker
 parameter_list|(
 name|Gimp
@@ -189,6 +193,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*

@@ -489,6 +489,8 @@ argument_list|(
 name|gimp
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 literal|"plug_in_script_fu_eval"
 argument_list|,
 name|args
@@ -697,6 +699,8 @@ name|gimp_get_user_context
 argument_list|(
 name|gimp
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 literal|"extension_perl_server"
 argument_list|,

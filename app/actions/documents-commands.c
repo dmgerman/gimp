@@ -763,6 +763,8 @@ name|imagefile
 argument_list|,
 name|context
 argument_list|,
+name|NULL
+argument_list|,
 name|preview_size
 argument_list|)
 expr_stmt|;
@@ -969,6 +971,8 @@ operator|->
 name|gimp
 argument_list|,
 name|context
+argument_list|,
+name|NULL
 argument_list|,
 name|uri
 argument_list|,

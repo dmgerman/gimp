@@ -366,7 +366,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_list_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|path_list_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|path_list_invoker
 parameter_list|(
 name|Gimp
@@ -376,6 +376,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -581,7 +585,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_get_current_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|path_get_current_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|path_get_current_invoker
 parameter_list|(
 name|Gimp
@@ -591,6 +595,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -794,7 +802,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_set_current_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|path_set_current_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|path_set_current_invoker
 parameter_list|(
 name|Gimp
@@ -804,6 +812,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1003,7 +1015,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_delete_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|path_delete_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|path_delete_invoker
 parameter_list|(
 name|Gimp
@@ -1013,6 +1025,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1212,7 +1228,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_get_points_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|path_get_points_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|path_get_points_invoker
 parameter_list|(
 name|Gimp
@@ -1222,6 +1238,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1660,7 +1680,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_set_points_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|path_set_points_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|path_set_points_invoker
 parameter_list|(
 name|Gimp
@@ -1670,6 +1690,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -2099,7 +2123,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_stroke_current_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|path_stroke_current_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|path_stroke_current_invoker
 parameter_list|(
 name|Gimp
@@ -2109,6 +2133,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -2299,7 +2327,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_get_point_at_dist_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|path_get_point_at_dist_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|path_get_point_at_dist_invoker
 parameter_list|(
 name|Gimp
@@ -2309,6 +2337,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -2713,7 +2745,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_get_tattoo_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|path_get_tattoo_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|path_get_tattoo_invoker
 parameter_list|(
 name|Gimp
@@ -2723,6 +2755,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -2972,7 +3008,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_set_tattoo_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|path_set_tattoo_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|path_set_tattoo_invoker
 parameter_list|(
 name|Gimp
@@ -2982,6 +3018,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -3208,7 +3248,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|get_path_by_tattoo_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|get_path_by_tattoo_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|get_path_by_tattoo_invoker
 parameter_list|(
 name|Gimp
@@ -3218,6 +3258,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -3445,7 +3489,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_get_locked_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|path_get_locked_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|path_get_locked_invoker
 parameter_list|(
 name|Gimp
@@ -3455,6 +3499,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -3704,7 +3752,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_set_locked_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|path_set_locked_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|path_set_locked_invoker
 parameter_list|(
 name|Gimp
@@ -3714,6 +3762,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -3942,7 +3994,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_to_selection_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|path_to_selection_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|path_to_selection_invoker
 parameter_list|(
 name|Gimp
@@ -3952,6 +4004,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -4301,7 +4357,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_import_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|path_import_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|path_import_invoker
 parameter_list|(
 name|Gimp
@@ -4311,6 +4367,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*

@@ -29,6 +29,10 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -77,6 +81,10 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -106,6 +114,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 specifier|const
 name|gchar
@@ -145,6 +157,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|GimpImage
 modifier|*

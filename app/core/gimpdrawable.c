@@ -150,12 +150,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpprogress.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba7f7ab0103
+DECL|enum|__anon2ae1bcaf0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -313,11 +319,9 @@ parameter_list|,
 name|GimpInterpolationType
 name|interp_type
 parameter_list|,
-name|GimpProgressFunc
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -436,11 +440,9 @@ parameter_list|,
 name|gboolean
 name|clip_result
 parameter_list|,
-name|GimpProgressFunc
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1601,7 +1603,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_scale (GimpItem * item,gint new_width,gint new_height,gint new_offset_x,gint new_offset_y,GimpInterpolationType interpolation_type,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gimp_drawable_scale (GimpItem * item,gint new_width,gint new_height,gint new_offset_x,gint new_offset_y,GimpInterpolationType interpolation_type,GimpProgress * progress)
 name|gimp_drawable_scale
 parameter_list|(
 name|GimpItem
@@ -1623,11 +1625,9 @@ parameter_list|,
 name|GimpInterpolationType
 name|interpolation_type
 parameter_list|,
-name|GimpProgressFunc
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 block|{
 name|GimpDrawable
@@ -1721,9 +1721,13 @@ name|GIMP_INTERPOLATION_NONE
 else|:
 name|interpolation_type
 argument_list|,
-name|progress_callback
+name|progress
+condition|?
+name|gimp_progress_update_and_flush
+else|:
+name|NULL
 argument_list|,
-name|progress_data
+name|progress
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_set_tiles_full
@@ -2334,7 +2338,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_transform (GimpItem * item,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gimp_drawable_transform (GimpItem * item,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,gboolean clip_result,GimpProgress * progress)
 name|gimp_drawable_transform
 parameter_list|(
 name|GimpItem
@@ -2365,11 +2369,9 @@ parameter_list|,
 name|gboolean
 name|clip_result
 parameter_list|,
-name|GimpProgressFunc
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 block|{
 name|GimpDrawable
@@ -2454,9 +2456,7 @@ name|recursion_level
 argument_list|,
 name|clip_result
 argument_list|,
-name|progress_callback
-argument_list|,
-name|progress_data
+name|progress
 argument_list|)
 expr_stmt|;
 name|tile_manager_set_offsets

@@ -1514,6 +1514,8 @@ name|gimp
 argument_list|,
 name|context
 argument_list|,
+name|NULL
+argument_list|,
 operator|&
 name|proc_def
 operator|->
@@ -4051,6 +4053,8 @@ argument_list|(
 name|gimp
 argument_list|,
 name|context
+argument_list|,
+name|NULL
 argument_list|,
 name|proc_def
 operator|->

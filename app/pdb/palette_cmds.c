@@ -162,7 +162,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|palette_get_foreground_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|palette_get_foreground_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|palette_get_foreground_invoker
 parameter_list|(
 name|Gimp
@@ -172,6 +172,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -281,7 +285,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|palette_get_background_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|palette_get_background_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|palette_get_background_invoker
 parameter_list|(
 name|Gimp
@@ -291,6 +295,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -400,7 +408,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|palette_set_foreground_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|palette_set_foreground_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|palette_set_foreground_invoker
 parameter_list|(
 name|Gimp
@@ -410,6 +418,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -519,7 +531,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|palette_set_background_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|palette_set_background_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|palette_set_background_invoker
 parameter_list|(
 name|Gimp
@@ -529,6 +541,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -638,7 +654,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|palette_set_default_colors_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|palette_set_default_colors_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|palette_set_default_colors_invoker
 parameter_list|(
 name|Gimp
@@ -648,6 +664,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -713,7 +733,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|palette_swap_colors_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|palette_swap_colors_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|palette_swap_colors_invoker
 parameter_list|(
 name|Gimp
@@ -723,6 +743,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*

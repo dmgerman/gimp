@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abf56020103
+DECL|enum|__anon29d3c6900103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -318,11 +318,9 @@ parameter_list|,
 name|GimpInterpolationType
 name|interp_type
 parameter_list|,
-name|GimpProgressFunc
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -441,11 +439,9 @@ parameter_list|,
 name|gboolean
 name|clip_result
 parameter_list|,
-name|GimpProgressFunc
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2446,7 +2442,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_scale (GimpItem * item,gint new_width,gint new_height,gint new_offset_x,gint new_offset_y,GimpInterpolationType interpolation_type,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gimp_channel_scale (GimpItem * item,gint new_width,gint new_height,gint new_offset_x,gint new_offset_y,GimpInterpolationType interpolation_type,GimpProgress * progress)
 name|gimp_channel_scale
 parameter_list|(
 name|GimpItem
@@ -2468,11 +2464,9 @@ parameter_list|,
 name|GimpInterpolationType
 name|interpolation_type
 parameter_list|,
-name|GimpProgressFunc
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 block|{
 if|if
@@ -2513,9 +2507,7 @@ name|new_offset_y
 argument_list|,
 name|interpolation_type
 argument_list|,
-name|progress_callback
-argument_list|,
-name|progress_data
+name|progress
 argument_list|)
 expr_stmt|;
 block|}
@@ -2706,7 +2698,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_transform (GimpItem * item,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gimp_channel_transform (GimpItem * item,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,gboolean clip_result,GimpProgress * progress)
 name|gimp_channel_transform
 parameter_list|(
 name|GimpItem
@@ -2737,11 +2729,9 @@ parameter_list|,
 name|gboolean
 name|clip_result
 parameter_list|,
-name|GimpProgressFunc
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 block|{
 if|if
@@ -2780,9 +2770,7 @@ name|recursion_level
 argument_list|,
 name|clip_result
 argument_list|,
-name|progress_callback
-argument_list|,
-name|progress_data
+name|progress
 argument_list|)
 expr_stmt|;
 block|}

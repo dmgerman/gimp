@@ -132,7 +132,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_convert_rgb_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|image_convert_rgb_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_convert_rgb_invoker
 parameter_list|(
 name|Gimp
@@ -142,6 +142,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -214,8 +218,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|,
-name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -301,7 +303,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_convert_grayscale_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|image_convert_grayscale_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_convert_grayscale_invoker
 parameter_list|(
 name|Gimp
@@ -311,6 +313,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -383,8 +389,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|,
-name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -470,7 +474,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_convert_indexed_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|image_convert_indexed_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_convert_indexed_invoker
 parameter_list|(
 name|Gimp
@@ -480,6 +484,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -796,8 +804,6 @@ argument_list|,
 name|palette_type
 argument_list|,
 name|palette
-argument_list|,
-name|NULL
 argument_list|,
 name|NULL
 argument_list|)

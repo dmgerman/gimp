@@ -520,6 +520,20 @@ DECL|typedef|GimpPickable
 comment|/* dummy typedef */
 end_comment
 
+begin_typedef
+DECL|typedef|GimpProgress
+typedef|typedef
+name|struct
+name|_GimpProgress
+name|GimpProgress
+typedef|;
+end_typedef
+
+begin_comment
+DECL|typedef|GimpProgress
+comment|/* dummy typedef */
+end_comment
+
 begin_comment
 comment|/*  non-object types  */
 end_comment
@@ -557,15 +571,6 @@ typedef|typedef
 name|struct
 name|_GimpGuide
 name|GimpGuide
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpProgress
-typedef|typedef
-name|struct
-name|_GimpProgress
-name|GimpProgress
 typedef|;
 end_typedef
 

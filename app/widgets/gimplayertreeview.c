@@ -3446,6 +3446,8 @@ name|item_view
 operator|->
 name|context
 argument_list|,
+name|NULL
+argument_list|,
 name|gimage
 argument_list|,
 name|uri

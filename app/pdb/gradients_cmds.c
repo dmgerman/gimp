@@ -266,7 +266,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradients_refresh_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradients_refresh_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradients_refresh_invoker
 parameter_list|(
 name|Gimp
@@ -276,6 +276,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -352,7 +356,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradients_get_list_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradients_get_list_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradients_get_list_invoker
 parameter_list|(
 name|Gimp
@@ -362,6 +366,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -577,7 +585,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradients_get_gradient_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradients_get_gradient_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradients_get_gradient_invoker
 parameter_list|(
 name|Gimp
@@ -587,6 +595,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -714,7 +726,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradients_set_gradient_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradients_set_gradient_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradients_set_gradient_invoker
 parameter_list|(
 name|Gimp
@@ -724,6 +736,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -891,7 +907,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradients_sample_uniform_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradients_sample_uniform_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradients_sample_uniform_invoker
 parameter_list|(
 name|Gimp
@@ -901,6 +917,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1224,7 +1244,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradients_sample_custom_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradients_sample_custom_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradients_sample_custom_invoker
 parameter_list|(
 name|Gimp
@@ -1234,6 +1254,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1565,7 +1589,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradients_get_gradient_data_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradients_get_gradient_data_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradients_get_gradient_data_invoker
 parameter_list|(
 name|Gimp
@@ -1575,6 +1599,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -2019,7 +2047,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradients_new_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradients_new_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradients_new_invoker
 parameter_list|(
 name|Gimp
@@ -2029,6 +2057,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -2230,7 +2262,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradients_duplicate_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradients_duplicate_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradients_duplicate_invoker
 parameter_list|(
 name|Gimp
@@ -2240,6 +2272,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -2507,7 +2543,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradients_delete_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradients_delete_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradients_delete_invoker
 parameter_list|(
 name|Gimp
@@ -2517,6 +2553,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -2753,7 +2793,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradients_rename_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradients_rename_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradients_rename_invoker
 parameter_list|(
 name|Gimp
@@ -2763,6 +2803,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*

@@ -638,6 +638,14 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: add progress bar to open location dialog
+endif|#
+directive|endif
 name|image
 operator|=
 name|file_open_with_proc_and_display
@@ -648,6 +656,8 @@ name|gimp_get_user_context
 argument_list|(
 name|gimp
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|uri
 argument_list|,

@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpprogress.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimptoolinfo.h"
 end_include
 
@@ -980,6 +986,15 @@ name|action_data_get_context
 argument_list|(
 name|data
 argument_list|)
+argument_list|,
+name|gdisp
+condition|?
+name|GIMP_PROGRESS
+argument_list|(
+name|gdisp
+argument_list|)
+else|:
+name|NULL
 argument_list|,
 name|proc_rec
 argument_list|,

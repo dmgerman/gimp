@@ -418,6 +418,8 @@ name|gimp
 argument_list|,
 name|context
 argument_list|,
+name|NULL
+argument_list|,
 name|uri
 argument_list|,
 operator|&

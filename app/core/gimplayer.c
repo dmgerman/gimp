@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c1bc760103
+DECL|enum|__anon294f0e590103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -390,11 +390,9 @@ parameter_list|,
 name|GimpInterpolationType
 name|interp_type
 parameter_list|,
-name|GimpProgressFunc
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -513,11 +511,9 @@ parameter_list|,
 name|gboolean
 name|clip_result
 parameter_list|,
-name|GimpProgressFunc
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2786,7 +2782,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_layer_scale (GimpItem * item,gint new_width,gint new_height,gint new_offset_x,gint new_offset_y,GimpInterpolationType interpolation_type,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gimp_layer_scale (GimpItem * item,gint new_width,gint new_height,gint new_offset_x,gint new_offset_y,GimpInterpolationType interpolation_type,GimpProgress * progress)
 name|gimp_layer_scale
 parameter_list|(
 name|GimpItem
@@ -2808,11 +2804,9 @@ parameter_list|,
 name|GimpInterpolationType
 name|interpolation_type
 parameter_list|,
-name|GimpProgressFunc
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 block|{
 name|GimpLayer
@@ -2843,9 +2837,7 @@ name|new_offset_y
 argument_list|,
 name|interpolation_type
 argument_list|,
-name|progress_callback
-argument_list|,
-name|progress_data
+name|progress
 argument_list|)
 expr_stmt|;
 if|if
@@ -2873,9 +2865,7 @@ name|new_offset_y
 argument_list|,
 name|interpolation_type
 argument_list|,
-name|NULL
-argument_list|,
-name|NULL
+name|progress
 argument_list|)
 expr_stmt|;
 block|}
@@ -3132,7 +3122,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_layer_transform (GimpItem * item,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gimp_layer_transform (GimpItem * item,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,gboolean clip_result,GimpProgress * progress)
 name|gimp_layer_transform
 parameter_list|(
 name|GimpItem
@@ -3163,11 +3153,9 @@ parameter_list|,
 name|gboolean
 name|clip_result
 parameter_list|,
-name|GimpProgressFunc
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 block|{
 name|GimpLayer
@@ -3202,9 +3190,7 @@ name|recursion_level
 argument_list|,
 name|clip_result
 argument_list|,
-name|progress_callback
-argument_list|,
-name|progress_data
+name|progress
 argument_list|)
 expr_stmt|;
 if|if
@@ -3236,9 +3222,7 @@ name|recursion_level
 argument_list|,
 name|clip_result
 argument_list|,
-name|progress_callback
-argument_list|,
-name|progress_data
+name|progress
 argument_list|)
 expr_stmt|;
 block|}

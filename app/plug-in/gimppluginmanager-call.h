@@ -33,6 +33,10 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
+parameter_list|,
 name|ProcRecord
 modifier|*
 name|proc_rec
@@ -71,6 +75,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|gint
 name|display_ID

@@ -31,11 +31,9 @@ parameter_list|,
 name|GimpOrientationType
 name|flip_type
 parameter_list|,
-name|GimpProgressFunc
-name|progress_func
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 function_decl|;
 end_function_decl

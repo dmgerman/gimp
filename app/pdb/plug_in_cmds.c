@@ -286,7 +286,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|progress_init_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|progress_init_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|progress_init_invoker
 parameter_list|(
 name|Gimp
@@ -296,6 +296,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -483,7 +487,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|progress_update_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|progress_update_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|progress_update_invoker
 parameter_list|(
 name|Gimp
@@ -493,6 +497,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -626,7 +634,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|plugins_query_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|plugins_query_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|plugins_query_invoker
 parameter_list|(
 name|Gimp
@@ -636,6 +644,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1423,7 +1435,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|plugin_domain_register_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|plugin_domain_register_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|plugin_domain_register_invoker
 parameter_list|(
 name|Gimp
@@ -1433,6 +1445,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1631,7 +1647,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|plugin_help_register_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|plugin_help_register_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|plugin_help_register_invoker
 parameter_list|(
 name|Gimp
@@ -1641,6 +1657,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1860,7 +1880,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|plugin_menu_register_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|plugin_menu_register_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|plugin_menu_register_invoker
 parameter_list|(
 name|Gimp
@@ -1870,6 +1890,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -2269,7 +2293,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|plugin_icon_register_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|plugin_icon_register_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|plugin_icon_register_invoker
 parameter_list|(
 name|Gimp
@@ -2279,6 +2303,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*

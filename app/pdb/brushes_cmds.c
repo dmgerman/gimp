@@ -272,7 +272,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brushes_refresh_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|brushes_refresh_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brushes_refresh_invoker
 parameter_list|(
 name|Gimp
@@ -282,6 +282,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -358,7 +362,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brushes_get_list_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|brushes_get_list_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brushes_get_list_invoker
 parameter_list|(
 name|Gimp
@@ -368,6 +372,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -583,7 +591,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brushes_get_brush_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|brushes_get_brush_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brushes_get_brush_invoker
 parameter_list|(
 name|Gimp
@@ -593,6 +601,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -794,7 +806,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brushes_set_brush_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|brushes_set_brush_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brushes_set_brush_invoker
 parameter_list|(
 name|Gimp
@@ -804,6 +816,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -971,7 +987,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brushes_get_opacity_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|brushes_get_opacity_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brushes_get_opacity_invoker
 parameter_list|(
 name|Gimp
@@ -981,6 +997,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1084,7 +1104,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brushes_set_opacity_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|brushes_set_opacity_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brushes_set_opacity_invoker
 parameter_list|(
 name|Gimp
@@ -1094,6 +1114,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1219,7 +1243,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brushes_get_spacing_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|brushes_get_spacing_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brushes_get_spacing_invoker
 parameter_list|(
 name|Gimp
@@ -1229,6 +1253,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1333,7 +1361,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brushes_set_spacing_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|brushes_set_spacing_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brushes_set_spacing_invoker
 parameter_list|(
 name|Gimp
@@ -1343,6 +1371,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1469,7 +1501,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brushes_get_paint_mode_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|brushes_get_paint_mode_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brushes_get_paint_mode_invoker
 parameter_list|(
 name|Gimp
@@ -1479,6 +1511,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1580,7 +1616,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brushes_set_paint_mode_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|brushes_set_paint_mode_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brushes_set_paint_mode_invoker
 parameter_list|(
 name|Gimp
@@ -1590,6 +1626,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1713,7 +1753,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brushes_get_brush_data_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|brushes_get_brush_data_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brushes_get_brush_data_invoker
 parameter_list|(
 name|Gimp
@@ -1723,6 +1763,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*

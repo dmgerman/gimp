@@ -1576,6 +1576,10 @@ name|plug_in
 operator|->
 name|context
 argument_list|,
+name|plug_in
+operator|->
+name|progress
+argument_list|,
 name|proc_name
 argument_list|,
 name|args

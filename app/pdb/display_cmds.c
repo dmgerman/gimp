@@ -130,7 +130,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|display_new_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|display_new_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|display_new_invoker
 parameter_list|(
 name|Gimp
@@ -140,6 +140,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -352,7 +356,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|display_delete_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|display_delete_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|display_delete_invoker
 parameter_list|(
 name|Gimp
@@ -362,6 +366,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -489,7 +497,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|displays_flush_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|displays_flush_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|displays_flush_invoker
 parameter_list|(
 name|Gimp
@@ -499,6 +507,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -573,7 +585,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|displays_reconnect_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|displays_reconnect_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|displays_reconnect_invoker
 parameter_list|(
 name|Gimp
@@ -583,6 +595,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*

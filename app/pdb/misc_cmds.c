@@ -92,7 +92,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|version_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|version_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|version_invoker
 parameter_list|(
 name|Gimp
@@ -102,6 +102,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -203,7 +207,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|quit_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|quit_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|quit_invoker
 parameter_list|(
 name|Gimp
@@ -213,6 +217,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*

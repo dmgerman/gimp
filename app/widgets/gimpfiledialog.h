@@ -134,6 +134,15 @@ name|GtkWidget
 modifier|*
 name|proc_view
 decl_stmt|;
+DECL|member|progress_active
+name|gboolean
+name|progress_active
+decl_stmt|;
+DECL|member|progress
+name|GtkWidget
+modifier|*
+name|progress
+decl_stmt|;
 block|}
 struct|;
 end_struct

@@ -168,6 +168,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpprogress.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb/procedural_db.h"
 end_include
 
@@ -208,7 +214,7 @@ end_comment
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|file_open_image (Gimp * gimp,GimpContext * context,const gchar * uri,const gchar * entered_filename,PlugInProcDef * file_proc,GimpRunMode run_mode,GimpPDBStatusType * status,const gchar ** mime_type,GError ** error)
+DECL|function|file_open_image (Gimp * gimp,GimpContext * context,GimpProgress * progress,const gchar * uri,const gchar * entered_filename,PlugInProcDef * file_proc,GimpRunMode run_mode,GimpPDBStatusType * status,const gchar ** mime_type,GError ** error)
 name|file_open_image
 parameter_list|(
 name|Gimp
@@ -218,6 +224,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 specifier|const
 name|gchar
@@ -290,6 +300,20 @@ argument_list|(
 name|GIMP_IS_CONTEXT
 argument_list|(
 name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|progress
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_PROGRESS
+argument_list|(
+name|progress
 argument_list|)
 argument_list|,
 name|NULL
@@ -577,6 +601,8 @@ name|gimp
 argument_list|,
 name|context
 argument_list|,
+name|progress
+argument_list|,
 name|proc
 operator|->
 name|name
@@ -771,7 +797,7 @@ end_function
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|file_open_with_display (Gimp * gimp,GimpContext * context,const gchar * uri,GimpPDBStatusType * status,GError ** error)
+DECL|function|file_open_with_display (Gimp * gimp,GimpContext * context,GimpProgress * progress,const gchar * uri,GimpPDBStatusType * status,GError ** error)
 name|file_open_with_display
 parameter_list|(
 name|Gimp
@@ -781,6 +807,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 specifier|const
 name|gchar
@@ -804,6 +834,8 @@ name|gimp
 argument_list|,
 name|context
 argument_list|,
+name|progress
+argument_list|,
 name|uri
 argument_list|,
 name|uri
@@ -821,7 +853,7 @@ end_function
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|file_open_with_proc_and_display (Gimp * gimp,GimpContext * context,const gchar * uri,const gchar * entered_filename,PlugInProcDef * file_proc,GimpPDBStatusType * status,GError ** error)
+DECL|function|file_open_with_proc_and_display (Gimp * gimp,GimpContext * context,GimpProgress * progress,const gchar * uri,const gchar * entered_filename,PlugInProcDef * file_proc,GimpPDBStatusType * status,GError ** error)
 name|file_open_with_proc_and_display
 parameter_list|(
 name|Gimp
@@ -831,6 +863,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 specifier|const
 name|gchar
@@ -889,6 +925,20 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|progress
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_PROGRESS
+argument_list|(
+name|progress
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
 name|status
 operator|!=
 name|NULL
@@ -903,6 +953,8 @@ argument_list|(
 name|gimp
 argument_list|,
 name|context
+argument_list|,
+name|progress
 argument_list|,
 name|uri
 argument_list|,
@@ -1004,7 +1056,7 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|file_open_layer (Gimp * gimp,GimpContext * context,GimpImage * dest_image,const gchar * uri,GimpPDBStatusType * status,GError ** error)
+DECL|function|file_open_layer (Gimp * gimp,GimpContext * context,GimpProgress * progress,GimpImage * dest_image,const gchar * uri,GimpPDBStatusType * status,GError ** error)
 name|file_open_layer
 parameter_list|(
 name|Gimp
@@ -1014,6 +1066,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -1059,6 +1115,20 @@ argument_list|(
 name|GIMP_IS_CONTEXT
 argument_list|(
 name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|progress
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_PROGRESS
+argument_list|(
+name|progress
 argument_list|)
 argument_list|,
 name|NULL
@@ -1113,6 +1183,8 @@ argument_list|(
 name|gimp
 argument_list|,
 name|context
+argument_list|,
+name|progress
 argument_list|,
 name|uri
 argument_list|,

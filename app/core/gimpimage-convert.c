@@ -132,6 +132,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpprogress.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"cpercep.h"
 end_include
 
@@ -405,7 +411,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2a3ff8dd0103
+DECL|enum|__anon2c402f560103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1426,13 +1432,10 @@ name|int
 name|error_freedom
 decl_stmt|;
 comment|/* 0=much bleed, 1=controlled bleed */
-DECL|member|progress_callback
-name|GimpImageConvertProgressCallback
-name|progress_callback
-decl_stmt|;
-DECL|member|progress_data
-name|gpointer
-name|progress_data
+DECL|member|progress
+name|GimpProgress
+modifier|*
+name|progress
 decl_stmt|;
 DECL|member|nth_layer
 name|gint
@@ -1449,7 +1452,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3ff8dd0208
+DECL|struct|__anon2c402f560208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1526,7 +1529,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3ff8dd0308
+DECL|struct|__anon2c402f560308
 block|{
 DECL|member|ncolors
 name|long
@@ -1600,11 +1603,9 @@ parameter_list|,
 name|gboolean
 name|alpha_dither
 parameter_list|,
-name|GimpImageConvertProgressCallback
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|gint
 name|nth_layer
@@ -1636,11 +1637,9 @@ parameter_list|,
 name|gboolean
 name|alpha_dither
 parameter_list|,
-name|GimpImageConvertProgressCallback
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1715,7 +1714,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3ff8dd0408
+DECL|struct|__anon2c402f560408
 block|{
 DECL|member|used_count
 name|signed
@@ -2758,7 +2757,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_convert (GimpImage * gimage,GimpImageBaseType new_type,gint num_cols,GimpConvertDitherType dither,gboolean alpha_dither,gboolean remove_dups,GimpConvertPaletteType palette_type,GimpPalette * custom_palette,GimpImageConvertProgressCallback progress_callback,gpointer progress_data)
+DECL|function|gimp_image_convert (GimpImage * gimage,GimpImageBaseType new_type,gint num_cols,GimpConvertDitherType dither,gboolean alpha_dither,gboolean remove_dups,GimpConvertPaletteType palette_type,GimpPalette * custom_palette,GimpProgress * progress)
 name|gimp_image_convert
 parameter_list|(
 name|GimpImage
@@ -2788,11 +2787,9 @@ name|GimpPalette
 modifier|*
 name|custom_palette
 parameter_list|,
-name|GimpImageConvertProgressCallback
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 block|{
 name|QuantizeObj
@@ -2846,6 +2843,18 @@ operator|!=
 name|gimp_image_base_type
 argument_list|(
 name|gimage
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|progress
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_PROGRESS
+argument_list|(
+name|progress
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3007,9 +3016,7 @@ name|palette_type
 argument_list|,
 name|alpha_dither
 argument_list|,
-name|progress_callback
-argument_list|,
-name|progress_data
+name|progress
 argument_list|)
 expr_stmt|;
 if|if
@@ -3120,9 +3127,7 @@ name|num_cols
 argument_list|,
 name|alpha_dither
 argument_list|,
-name|progress_callback
-argument_list|,
-name|progress_data
+name|progress
 argument_list|,
 name|nth_layer
 argument_list|,
@@ -3132,6 +3137,20 @@ expr_stmt|;
 comment|/* 	       * Note: generate_histogram_rgb may set needs_quantize if 	       *  the image contains more colours than the limit specified 	       *  by the user. 	       */
 block|}
 block|}
+if|if
+condition|(
+name|progress
+condition|)
+name|gimp_progress_set_text
+argument_list|(
+name|progress
+argument_list|,
+name|_
+argument_list|(
+literal|"Converting to indexed (stage 2)..."
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|old_type
@@ -3168,9 +3187,7 @@ name|palette_type
 argument_list|,
 name|alpha_dither
 argument_list|,
-name|progress_callback
-argument_list|,
-name|progress_data
+name|progress
 argument_list|)
 expr_stmt|;
 comment|/* We can skip the first pass (palette creation) */
@@ -3285,6 +3302,20 @@ name|color_quicksort
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|progress
+condition|)
+name|gimp_progress_set_text
+argument_list|(
+name|progress
+argument_list|,
+name|_
+argument_list|(
+literal|"Converting to indexed (stage 3)..."
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* Initialise data which must persist across indexed layer iterations */
 switch|switch
 condition|(
@@ -5048,7 +5079,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|generate_histogram_rgb (CFHistogram histogram,GimpLayer * layer,gint col_limit,gboolean alpha_dither,GimpImageConvertProgressCallback progress_callback,gpointer progress_data,gint nth_layer,gint n_layers)
+DECL|function|generate_histogram_rgb (CFHistogram histogram,GimpLayer * layer,gint col_limit,gboolean alpha_dither,GimpProgress * progress,gint nth_layer,gint n_layers)
 name|generate_histogram_rgb
 parameter_list|(
 name|CFHistogram
@@ -5064,11 +5095,9 @@ parameter_list|,
 name|gboolean
 name|alpha_dither
 parameter_list|,
-name|GimpImageConvertProgressCallback
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|gint
 name|nth_layer
@@ -5195,15 +5224,13 @@ name|height
 expr_stmt|;
 if|if
 condition|(
-name|progress_callback
+name|progress
 condition|)
-name|progress_callback
+name|gimp_progress_set_value
 argument_list|(
-literal|1
+name|progress
 argument_list|,
 literal|0.0
-argument_list|,
-name|progress_data
 argument_list|)
 expr_stmt|;
 for|for
@@ -5749,11 +5776,11 @@ block|}
 block|}
 if|if
 condition|(
-name|progress_callback
+name|progress
 condition|)
-name|progress_callback
+name|gimp_progress_set_value
 argument_list|(
-literal|1
+name|progress
 argument_list|,
 operator|(
 name|nth_layer
@@ -5772,8 +5799,6 @@ operator|(
 name|gdouble
 operator|)
 name|n_layers
-argument_list|,
-name|progress_data
 argument_list|)
 expr_stmt|;
 block|}
@@ -7919,7 +7944,7 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|median_cut_rgb (CFHistogram histogram,boxptr boxlist,int numboxes,int desired_colors,GimpImageConvertProgressCallback progress_callback,gpointer progress_data)
+DECL|function|median_cut_rgb (CFHistogram histogram,boxptr boxlist,int numboxes,int desired_colors,GimpProgress * progress)
 name|median_cut_rgb
 parameter_list|(
 name|CFHistogram
@@ -7934,11 +7959,9 @@ parameter_list|,
 name|int
 name|desired_colors
 parameter_list|,
-name|GimpImageConvertProgressCallback
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 comment|/* Repeatedly select and split the largest box until we have enough boxes */
 block|{
@@ -8198,22 +8221,18 @@ operator|++
 expr_stmt|;
 if|if
 condition|(
-name|progress_callback
+name|progress
 condition|)
-name|progress_callback
+name|gimp_progress_set_value
 argument_list|(
-literal|2
+name|progress
 argument_list|,
-operator|(
 operator|(
 name|gdouble
 operator|)
 name|numboxes
-operator|)
 operator|/
 name|desired_colors
-argument_list|,
-name|progress_data
 argument_list|)
 expr_stmt|;
 name|update_box_rgb
@@ -9349,11 +9368,7 @@ name|desired
 argument_list|,
 name|quantobj
 operator|->
-name|progress_callback
-argument_list|,
-name|quantobj
-operator|->
-name|progress_data
+name|progress
 argument_list|)
 expr_stmt|;
 name|quantobj
@@ -12704,13 +12719,13 @@ if|if
 condition|(
 name|quantobj
 operator|->
-name|progress_callback
+name|progress
 condition|)
+name|gimp_progress_set_value
+argument_list|(
 name|quantobj
 operator|->
-name|progress_callback
-argument_list|(
-literal|3
+name|progress
 argument_list|,
 operator|(
 name|nth_layer
@@ -12729,10 +12744,6 @@ operator|(
 name|gdouble
 operator|)
 name|n_layers
-argument_list|,
-name|quantobj
-operator|->
-name|progress_data
 argument_list|)
 expr_stmt|;
 block|}
@@ -13425,13 +13436,13 @@ if|if
 condition|(
 name|quantobj
 operator|->
-name|progress_callback
+name|progress
 condition|)
+name|gimp_progress_set_value
+argument_list|(
 name|quantobj
 operator|->
-name|progress_callback
-argument_list|(
-literal|3
+name|progress
 argument_list|,
 operator|(
 name|nth_layer
@@ -13450,10 +13461,6 @@ operator|(
 name|gdouble
 operator|)
 name|n_layers
-argument_list|,
-name|quantobj
-operator|->
-name|progress_data
 argument_list|)
 expr_stmt|;
 block|}
@@ -17125,13 +17132,13 @@ if|if
 condition|(
 name|quantobj
 operator|->
-name|progress_callback
+name|progress
 condition|)
+name|gimp_progress_set_value
+argument_list|(
 name|quantobj
 operator|->
-name|progress_callback
-argument_list|(
-literal|3
+name|progress
 argument_list|,
 operator|(
 name|nth_layer
@@ -17150,10 +17157,6 @@ operator|(
 name|gdouble
 operator|)
 name|n_layers
-argument_list|,
-name|quantobj
-operator|->
-name|progress_data
 argument_list|)
 expr_stmt|;
 block|}
@@ -17241,7 +17244,7 @@ begin_function
 specifier|static
 name|QuantizeObj
 modifier|*
-DECL|function|initialize_median_cut (GimpImageBaseType type,gint num_colors,GimpConvertDitherType dither_type,GimpConvertPaletteType palette_type,gboolean want_alpha_dither,GimpImageConvertProgressCallback progress_callback,gpointer progress_data)
+DECL|function|initialize_median_cut (GimpImageBaseType type,gint num_colors,GimpConvertDitherType dither_type,GimpConvertPaletteType palette_type,gboolean want_alpha_dither,GimpProgress * progress)
 name|initialize_median_cut
 parameter_list|(
 name|GimpImageBaseType
@@ -17259,11 +17262,9 @@ parameter_list|,
 name|gboolean
 name|want_alpha_dither
 parameter_list|,
-name|GimpImageConvertProgressCallback
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 block|{
 name|QuantizeObj
@@ -17338,15 +17339,9 @@ name|want_alpha_dither
 expr_stmt|;
 name|quantobj
 operator|->
-name|progress_callback
+name|progress
 operator|=
-name|progress_callback
-expr_stmt|;
-name|quantobj
-operator|->
-name|progress_data
-operator|=
-name|progress_data
+name|progress
 expr_stmt|;
 switch|switch
 condition|(

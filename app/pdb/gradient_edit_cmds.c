@@ -464,7 +464,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_get_left_color_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradient_segment_get_left_color_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_get_left_color_invoker
 parameter_list|(
 name|Gimp
@@ -474,6 +474,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -810,7 +814,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_set_left_color_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradient_segment_set_left_color_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_set_left_color_invoker
 parameter_list|(
 name|Gimp
@@ -820,6 +824,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1143,7 +1151,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_get_right_color_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradient_segment_get_right_color_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_get_right_color_invoker
 parameter_list|(
 name|Gimp
@@ -1153,6 +1161,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1489,7 +1501,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_set_right_color_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradient_segment_set_right_color_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_set_right_color_invoker
 parameter_list|(
 name|Gimp
@@ -1499,6 +1511,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1822,7 +1838,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_get_left_pos_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradient_segment_get_left_pos_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_get_left_pos_invoker
 parameter_list|(
 name|Gimp
@@ -1832,6 +1848,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -2135,7 +2155,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_set_left_pos_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradient_segment_set_left_pos_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_set_left_pos_invoker
 parameter_list|(
 name|Gimp
@@ -2145,6 +2165,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -2486,7 +2510,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_get_middle_pos_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradient_segment_get_middle_pos_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_get_middle_pos_invoker
 parameter_list|(
 name|Gimp
@@ -2496,6 +2520,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -2799,7 +2827,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_set_middle_pos_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradient_segment_set_middle_pos_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_set_middle_pos_invoker
 parameter_list|(
 name|Gimp
@@ -2809,6 +2837,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -3150,7 +3182,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_get_right_pos_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradient_segment_get_right_pos_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_get_right_pos_invoker
 parameter_list|(
 name|Gimp
@@ -3160,6 +3192,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -3463,7 +3499,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_set_right_pos_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradient_segment_set_right_pos_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_set_right_pos_invoker
 parameter_list|(
 name|Gimp
@@ -3473,6 +3509,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -3814,7 +3854,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_get_blending_function_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradient_segment_get_blending_function_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_get_blending_function_invoker
 parameter_list|(
 name|Gimp
@@ -3824,6 +3864,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -4127,7 +4171,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_get_coloring_type_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradient_segment_get_coloring_type_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_get_coloring_type_invoker
 parameter_list|(
 name|Gimp
@@ -4137,6 +4181,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -4440,7 +4488,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_range_set_blending_function_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradient_segment_range_set_blending_function_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_range_set_blending_function_invoker
 parameter_list|(
 name|Gimp
@@ -4450,6 +4498,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -4811,7 +4863,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_range_set_coloring_type_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradient_segment_range_set_coloring_type_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_range_set_coloring_type_invoker
 parameter_list|(
 name|Gimp
@@ -4821,6 +4873,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -5182,7 +5238,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_range_flip_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradient_segment_range_flip_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_range_flip_invoker
 parameter_list|(
 name|Gimp
@@ -5192,6 +5248,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -5519,7 +5579,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_range_replicate_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradient_segment_range_replicate_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_range_replicate_invoker
 parameter_list|(
 name|Gimp
@@ -5529,6 +5589,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -5894,7 +5958,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_range_split_midpoint_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradient_segment_range_split_midpoint_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_range_split_midpoint_invoker
 parameter_list|(
 name|Gimp
@@ -5904,6 +5968,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -6231,7 +6299,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_range_split_uniform_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradient_segment_range_split_uniform_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_range_split_uniform_invoker
 parameter_list|(
 name|Gimp
@@ -6241,6 +6309,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -6606,7 +6678,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_range_delete_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradient_segment_range_delete_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_range_delete_invoker
 parameter_list|(
 name|Gimp
@@ -6616,6 +6688,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -6943,7 +7019,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_range_redistribute_handles_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradient_segment_range_redistribute_handles_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_range_redistribute_handles_invoker
 parameter_list|(
 name|Gimp
@@ -6953,6 +7029,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -7276,7 +7356,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_range_blend_colors_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradient_segment_range_blend_colors_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_range_blend_colors_invoker
 parameter_list|(
 name|Gimp
@@ -7286,6 +7366,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -7623,7 +7707,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_range_blend_opacity_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradient_segment_range_blend_opacity_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_range_blend_opacity_invoker
 parameter_list|(
 name|Gimp
@@ -7633,6 +7717,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -7970,7 +8058,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradient_segment_range_move_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradient_segment_range_move_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradient_segment_range_move_invoker
 parameter_list|(
 name|Gimp
@@ -7980,6 +8068,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*

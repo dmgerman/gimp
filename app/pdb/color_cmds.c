@@ -370,7 +370,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|brightness_contrast_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|brightness_contrast_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|brightness_contrast_invoker
 parameter_list|(
 name|Gimp
@@ -380,6 +380,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -790,7 +794,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|levels_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|levels_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|levels_invoker
 parameter_list|(
 name|Gimp
@@ -800,6 +804,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1441,7 +1449,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|levels_auto_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|levels_auto_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|levels_auto_invoker
 parameter_list|(
 name|Gimp
@@ -1451,6 +1459,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1848,7 +1860,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|posterize_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|posterize_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|posterize_invoker
 parameter_list|(
 name|Gimp
@@ -1858,6 +1870,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -2224,7 +2240,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|desaturate_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|desaturate_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|desaturate_invoker
 parameter_list|(
 name|Gimp
@@ -2234,6 +2250,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -2388,7 +2408,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|equalize_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|equalize_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|equalize_invoker
 parameter_list|(
 name|Gimp
@@ -2398,6 +2418,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -2581,7 +2605,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|invert_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|invert_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|invert_invoker
 parameter_list|(
 name|Gimp
@@ -2591,6 +2615,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -2746,7 +2774,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|curves_spline_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|curves_spline_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|curves_spline_invoker
 parameter_list|(
 name|Gimp
@@ -2756,6 +2784,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -3310,7 +3342,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|curves_explicit_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|curves_explicit_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|curves_explicit_invoker
 parameter_list|(
 name|Gimp
@@ -3320,6 +3352,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -3831,7 +3867,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|color_balance_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|color_balance_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|color_balance_invoker
 parameter_list|(
 name|Gimp
@@ -3841,6 +3877,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -4381,7 +4421,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|histogram_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|histogram_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|histogram_invoker
 parameter_list|(
 name|Gimp
@@ -4391,6 +4431,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -4948,7 +4992,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|hue_saturation_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|hue_saturation_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|hue_saturation_invoker
 parameter_list|(
 name|Gimp
@@ -4958,6 +5002,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -5467,7 +5515,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|threshold_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|threshold_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|threshold_invoker
 parameter_list|(
 name|Gimp
@@ -5477,6 +5525,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*

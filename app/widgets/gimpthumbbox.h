@@ -122,6 +122,15 @@ name|GtkWidget
 modifier|*
 name|info
 decl_stmt|;
+DECL|member|thumb_progress
+name|GtkWidget
+modifier|*
+name|thumb_progress
+decl_stmt|;
+DECL|member|progress_active
+name|gboolean
+name|progress_active
+decl_stmt|;
 DECL|member|progress
 name|GtkWidget
 modifier|*

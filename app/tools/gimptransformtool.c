@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpprogress.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimptoolinfo.h"
 end_include
 
@@ -139,12 +145,6 @@ begin_include
 include|#
 directive|include
 file|"display/gimpdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"display/gimpprogress.h"
 end_include
 
 begin_include
@@ -3756,17 +3756,16 @@ name|progress
 operator|=
 name|gimp_progress_start
 argument_list|(
+name|GIMP_PROGRESS
+argument_list|(
 name|gdisp
+argument_list|)
 argument_list|,
 name|tr_tool
 operator|->
 name|progress_text
 argument_list|,
 name|FALSE
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -3806,12 +3805,6 @@ argument_list|,
 name|options
 operator|->
 name|clip
-argument_list|,
-name|progress
-condition|?
-name|gimp_progress_update_and_flush
-else|:
-name|NULL
 argument_list|,
 name|progress
 argument_list|)
@@ -3897,12 +3890,6 @@ argument_list|,
 name|clip_result
 argument_list|,
 name|progress
-condition|?
-name|gimp_progress_update_and_flush
-else|:
-name|NULL
-argument_list|,
-name|progress
 argument_list|)
 expr_stmt|;
 block|}
@@ -3940,12 +3927,6 @@ argument_list|,
 name|options
 operator|->
 name|clip
-argument_list|,
-name|progress
-condition|?
-name|gimp_progress_update_and_flush
-else|:
-name|NULL
 argument_list|,
 name|progress
 argument_list|)

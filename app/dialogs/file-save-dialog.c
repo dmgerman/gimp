@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpprogress.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file/file-save.h"
 end_include
 
@@ -1079,6 +1085,11 @@ argument_list|(
 name|gimage
 operator|->
 name|gimp
+argument_list|)
+argument_list|,
+name|GIMP_PROGRESS
+argument_list|(
+name|save_dialog
 argument_list|)
 argument_list|,
 name|uri

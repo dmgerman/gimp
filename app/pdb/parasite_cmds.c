@@ -264,7 +264,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|parasite_find_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|parasite_find_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|parasite_find_invoker
 parameter_list|(
 name|Gimp
@@ -274,6 +274,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -470,7 +474,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|parasite_attach_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|parasite_attach_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|parasite_attach_invoker
 parameter_list|(
 name|Gimp
@@ -480,6 +484,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -623,7 +631,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|parasite_detach_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|parasite_detach_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|parasite_detach_invoker
 parameter_list|(
 name|Gimp
@@ -633,6 +641,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -768,7 +780,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|parasite_list_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|parasite_list_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|parasite_list_invoker
 parameter_list|(
 name|Gimp
@@ -778,6 +790,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -913,7 +929,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_parasite_find_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|drawable_parasite_find_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_parasite_find_invoker
 parameter_list|(
 name|Gimp
@@ -923,6 +939,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1177,7 +1197,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_parasite_attach_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|drawable_parasite_attach_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_parasite_attach_invoker
 parameter_list|(
 name|Gimp
@@ -1187,6 +1207,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1388,7 +1412,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_parasite_detach_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|drawable_parasite_detach_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_parasite_detach_invoker
 parameter_list|(
 name|Gimp
@@ -1398,6 +1422,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1591,7 +1619,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_parasite_list_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|drawable_parasite_list_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|drawable_parasite_list_invoker
 parameter_list|(
 name|Gimp
@@ -1601,6 +1629,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1822,7 +1854,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_parasite_find_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|image_parasite_find_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_parasite_find_invoker
 parameter_list|(
 name|Gimp
@@ -1832,6 +1864,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -2068,7 +2104,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_parasite_attach_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|image_parasite_attach_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_parasite_attach_invoker
 parameter_list|(
 name|Gimp
@@ -2078,6 +2114,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -2261,7 +2301,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_parasite_detach_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|image_parasite_detach_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_parasite_detach_invoker
 parameter_list|(
 name|Gimp
@@ -2271,6 +2311,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -2446,7 +2490,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_parasite_list_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|image_parasite_list_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|image_parasite_list_invoker
 parameter_list|(
 name|Gimp
@@ -2456,6 +2500,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*

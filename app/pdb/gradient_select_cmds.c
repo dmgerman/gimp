@@ -114,7 +114,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradients_popup_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradients_popup_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradients_popup_invoker
 parameter_list|(
 name|Gimp
@@ -124,6 +124,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -428,7 +432,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradients_close_popup_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradients_close_popup_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradients_close_popup_invoker
 parameter_list|(
 name|Gimp
@@ -438,6 +442,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -600,7 +608,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradients_set_popup_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|gradients_set_popup_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|gradients_set_popup_invoker
 parameter_list|(
 name|Gimp
@@ -610,6 +618,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*

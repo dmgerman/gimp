@@ -51,6 +51,12 @@ directive|include
 file|"gimplist.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpprogress.h"
+end_include
+
 begin_comment
 comment|/*  public functions  */
 end_comment
@@ -485,7 +491,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_item_linked_transform (GimpItem * item,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gimp_item_linked_transform (GimpItem * item,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,gboolean clip_result,GimpProgress * progress)
 name|gimp_item_linked_transform
 parameter_list|(
 name|GimpItem
@@ -516,11 +522,9 @@ parameter_list|,
 name|gboolean
 name|clip_result
 parameter_list|,
-name|GimpProgressFunc
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 block|{
 name|GimpImage
@@ -559,6 +563,18 @@ name|item
 argument_list|)
 operator|==
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|progress
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_PROGRESS
+argument_list|(
+name|progress
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimage
@@ -625,9 +641,7 @@ name|recursion_level
 argument_list|,
 name|clip_result
 argument_list|,
-name|progress_callback
-argument_list|,
-name|progress_data
+name|progress
 argument_list|)
 expr_stmt|;
 name|g_list_free

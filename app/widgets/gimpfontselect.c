@@ -458,6 +458,8 @@ name|dialog
 operator|->
 name|context
 argument_list|,
+name|NULL
+argument_list|,
 name|dialog
 operator|->
 name|callback_name

@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpprogress.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb/procedural_db.h"
 end_include
 
@@ -125,6 +131,10 @@ name|ProcRecord
 modifier|*
 name|proc_rec
 parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
+parameter_list|,
 name|Argument
 modifier|*
 name|args
@@ -159,7 +169,7 @@ end_comment
 begin_function
 name|Argument
 modifier|*
-DECL|function|plug_in_run (Gimp * gimp,GimpContext * context,ProcRecord * proc_rec,Argument * args,gint argc,gboolean synchronous,gboolean destroy_return_vals,gint gdisp_ID)
+DECL|function|plug_in_run (Gimp * gimp,GimpContext * context,GimpProgress * progress,ProcRecord * proc_rec,Argument * args,gint argc,gboolean synchronous,gboolean destroy_return_vals,gint gdisp_ID)
 name|plug_in_run
 parameter_list|(
 name|Gimp
@@ -169,6 +179,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|ProcRecord
 modifier|*
@@ -223,6 +237,20 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|progress
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_PROGRESS
+argument_list|(
+name|progress
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
 name|proc_rec
 operator|!=
 name|NULL
@@ -257,6 +285,8 @@ operator|=
 name|plug_in_temp_run
 argument_list|(
 name|proc_rec
+argument_list|,
+name|progress
 argument_list|,
 name|args
 argument_list|,
@@ -318,6 +348,19 @@ goto|goto
 name|done
 goto|;
 block|}
+if|if
+condition|(
+name|progress
+condition|)
+name|plug_in
+operator|->
+name|progress
+operator|=
+name|g_object_ref
+argument_list|(
+name|progress
+argument_list|)
+expr_stmt|;
 name|config
 operator|.
 name|version
@@ -698,7 +741,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_repeat (Gimp * gimp,GimpContext * context,gint display_ID,gint image_ID,gint drawable_ID,gboolean with_interface)
+DECL|function|plug_in_repeat (Gimp * gimp,GimpContext * context,GimpProgress * progress,gint display_ID,gint image_ID,gint drawable_ID,gboolean with_interface)
 name|plug_in_repeat
 parameter_list|(
 name|Gimp
@@ -708,6 +751,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|gint
 name|display_ID
@@ -742,6 +789,18 @@ argument_list|(
 name|GIMP_IS_CONTEXT
 argument_list|(
 name|context
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|progress
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_PROGRESS
+argument_list|(
+name|progress
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -843,6 +902,8 @@ name|gimp
 argument_list|,
 name|context
 argument_list|,
+name|progress
+argument_list|,
 operator|&
 name|gimp
 operator|->
@@ -886,12 +947,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|plug_in_temp_run (ProcRecord * proc_rec,Argument * args,gint argc)
+DECL|function|plug_in_temp_run (ProcRecord * proc_rec,GimpProgress * progress,Argument * args,gint argc)
 name|plug_in_temp_run
 parameter_list|(
 name|ProcRecord
 modifier|*
 name|proc_rec
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*

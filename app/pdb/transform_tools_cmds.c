@@ -186,7 +186,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|flip_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|flip_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|flip_invoker
 parameter_list|(
 name|Gimp
@@ -196,6 +196,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -442,7 +446,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|perspective_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|perspective_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|perspective_invoker
 parameter_list|(
 name|Gimp
@@ -452,6 +456,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -989,7 +997,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|rotate_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|rotate_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|rotate_invoker
 parameter_list|(
 name|Gimp
@@ -999,6 +1007,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1337,7 +1349,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|scale_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|scale_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|scale_invoker
 parameter_list|(
 name|Gimp
@@ -1347,6 +1359,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1797,7 +1813,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|shear_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|shear_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|shear_invoker
 parameter_list|(
 name|Gimp
@@ -1807,6 +1823,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -2183,7 +2203,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|transform_2d_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|transform_2d_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|transform_2d_invoker
 parameter_list|(
 name|Gimp
@@ -2193,6 +2213,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*

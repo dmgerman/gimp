@@ -753,6 +753,8 @@ argument_list|(
 name|gimp
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 name|proc_rec
 argument_list|,
 name|args
@@ -1076,6 +1078,8 @@ argument_list|(
 name|gimp
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 name|proc_rec
 argument_list|,
 name|args
@@ -1167,6 +1171,8 @@ name|gimp_get_user_context
 argument_list|(
 name|gimp
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 literal|"extension_gimp_help_temp"
 argument_list|,

@@ -132,6 +132,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpprogress.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpselection.h"
 end_include
 
@@ -409,7 +415,7 @@ end_comment
 begin_function
 name|TileManager
 modifier|*
-DECL|function|gimp_drawable_transform_tiles_affine (GimpDrawable * drawable,GimpContext * context,TileManager * orig_tiles,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gimp_drawable_transform_tiles_affine (GimpDrawable * drawable,GimpContext * context,TileManager * orig_tiles,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,gboolean clip_result,GimpProgress * progress)
 name|gimp_drawable_transform_tiles_affine
 parameter_list|(
 name|GimpDrawable
@@ -444,11 +450,9 @@ parameter_list|,
 name|gboolean
 name|clip_result
 parameter_list|,
-name|GimpProgressFunc
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 block|{
 name|GimpImage
@@ -593,6 +597,20 @@ argument_list|(
 name|matrix
 operator|!=
 name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|progress
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_PROGRESS
+argument_list|(
+name|progress
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1289,7 +1307,7 @@ control|)
 block|{
 if|if
 condition|(
-name|progress_callback
+name|progress
 operator|&&
 operator|!
 operator|(
@@ -1298,18 +1316,27 @@ operator|&
 literal|0xf
 operator|)
 condition|)
+name|gimp_progress_set_value
+argument_list|(
+name|progress
+argument_list|,
 call|(
-modifier|*
-name|progress_callback
+name|gdouble
 call|)
 argument_list|(
-name|y1
-argument_list|,
-name|y2
-argument_list|,
 name|y
-argument_list|,
-name|progress_data
+operator|-
+name|y1
+argument_list|)
+operator|/
+call|(
+name|gdouble
+call|)
+argument_list|(
+name|y2
+operator|-
+name|y1
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* set up inverse transform steps */
@@ -4449,8 +4476,6 @@ argument_list|,
 name|recursion_level
 argument_list|,
 name|FALSE
-argument_list|,
-name|NULL
 argument_list|,
 name|NULL
 argument_list|)

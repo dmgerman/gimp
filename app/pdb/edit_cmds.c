@@ -236,7 +236,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_cut_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|edit_cut_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_cut_invoker
 parameter_list|(
 name|Gimp
@@ -246,6 +246,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -457,7 +461,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_copy_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|edit_copy_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_copy_invoker
 parameter_list|(
 name|Gimp
@@ -467,6 +471,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -678,7 +686,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_paste_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|edit_paste_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_paste_invoker
 parameter_list|(
 name|Gimp
@@ -688,6 +696,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -971,7 +983,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_clear_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|edit_clear_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_clear_invoker
 parameter_list|(
 name|Gimp
@@ -981,6 +993,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1143,7 +1159,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_fill_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|edit_fill_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_fill_invoker
 parameter_list|(
 name|Gimp
@@ -1153,6 +1169,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1356,7 +1376,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_bucket_fill_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|edit_bucket_fill_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_bucket_fill_invoker
 parameter_list|(
 name|Gimp
@@ -1366,6 +1386,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -1784,7 +1808,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_blend_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|edit_blend_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_blend_invoker
 parameter_list|(
 name|Gimp
@@ -1794,6 +1818,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*
@@ -2253,8 +2281,6 @@ argument_list|,
 name|y2
 argument_list|,
 name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -2452,7 +2478,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_stroke_invoker (Gimp * gimp,GimpContext * context,Argument * args)
+DECL|function|edit_stroke_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
 name|edit_stroke_invoker
 parameter_list|(
 name|Gimp
@@ -2462,6 +2488,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|Argument
 modifier|*

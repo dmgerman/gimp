@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bcc62340103
+DECL|enum|__anon29be794b0103
 block|{
 DECL|enumerator|GIMP_ITEM_LINKED_LAYERS
 name|GIMP_ITEM_LINKED_LAYERS
@@ -161,11 +161,9 @@ parameter_list|,
 name|gboolean
 name|clip_result
 parameter_list|,
-name|GimpProgressFunc
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 function_decl|;
 end_function_decl
