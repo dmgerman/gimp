@@ -1433,10 +1433,6 @@ name|GtkWidget
 modifier|*
 name|label
 decl_stmt|;
-name|GtkWidget
-modifier|*
-name|option_menu
-decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
