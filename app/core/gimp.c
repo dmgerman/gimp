@@ -249,7 +249,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c094a3a0103
+DECL|enum|__anon2a3077c80103
 block|{
 DECL|enumerator|EXIT
 name|EXIT
@@ -4033,7 +4033,6 @@ name|gimp
 operator|->
 name|default_context
 condition|)
-block|{
 name|g_object_unref
 argument_list|(
 name|gimp
@@ -4041,7 +4040,6 @@ operator|->
 name|default_context
 argument_list|)
 expr_stmt|;
-block|}
 name|gimp
 operator|->
 name|default_context
@@ -4054,7 +4052,6 @@ name|gimp
 operator|->
 name|default_context
 condition|)
-block|{
 name|g_object_ref
 argument_list|(
 name|gimp
@@ -4062,7 +4059,6 @@ operator|->
 name|default_context
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -4134,7 +4130,6 @@ name|gimp
 operator|->
 name|user_context
 condition|)
-block|{
 name|g_object_unref
 argument_list|(
 name|gimp
@@ -4142,7 +4137,6 @@ operator|->
 name|user_context
 argument_list|)
 expr_stmt|;
-block|}
 name|gimp
 operator|->
 name|user_context
@@ -4155,7 +4149,6 @@ name|gimp
 operator|->
 name|user_context
 condition|)
-block|{
 name|g_object_ref
 argument_list|(
 name|gimp
@@ -4163,7 +4156,6 @@ operator|->
 name|user_context
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -4235,7 +4227,6 @@ name|gimp
 operator|->
 name|current_context
 condition|)
-block|{
 name|g_object_unref
 argument_list|(
 name|gimp
@@ -4243,7 +4234,6 @@ operator|->
 name|current_context
 argument_list|)
 expr_stmt|;
-block|}
 name|gimp
 operator|->
 name|current_context
@@ -4256,7 +4246,6 @@ name|gimp
 operator|->
 name|current_context
 condition|)
-block|{
 name|g_object_ref
 argument_list|(
 name|gimp
@@ -4264,7 +4253,6 @@ operator|->
 name|current_context
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
