@@ -134,6 +134,7 @@ specifier|static
 name|gint32
 name|compose
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|compose_type
@@ -142,7 +143,7 @@ name|gint32
 modifier|*
 name|compose_ID
 parameter_list|,
-name|gint
+name|gboolean
 name|compose_by_drawable
 parameter_list|)
 function_decl|;
@@ -153,6 +154,7 @@ specifier|static
 name|gint32
 name|create_new_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -400,7 +402,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|compose_dialog
 parameter_list|(
 name|gchar
@@ -415,7 +417,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|check_gray
 parameter_list|(
 name|gint32
@@ -493,20 +495,23 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e895430108
+DECL|struct|__anon2c73bd180108
 block|{
 DECL|member|compose_type
+specifier|const
 name|gchar
 modifier|*
 name|compose_type
 decl_stmt|;
-comment|/* Type of composition ("RGB", "RGBA",...) */
+comment|/*  Type of composition ("RGB", "RGBA",...)  */
 DECL|member|num_images
 name|gint
 name|num_images
 decl_stmt|;
-comment|/* Number of input images needed */
+comment|/*  Number of input images needed            */
+comment|/*  Channel names and stock ids for dialog   */
 DECL|member|channel_name
+specifier|const
 name|gchar
 modifier|*
 name|channel_name
@@ -514,14 +519,23 @@ index|[
 name|MAX_COMPOSE_IMAGES
 index|]
 decl_stmt|;
-comment|/* channel names for dialog */
+DECL|member|channel_icon
+specifier|const
+name|gchar
+modifier|*
+name|channel_icon
+index|[
+name|MAX_COMPOSE_IMAGES
+index|]
+decl_stmt|;
 DECL|member|filename
+specifier|const
 name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-comment|/* Name of new image */
-comment|/* Compose functon */
+comment|/*  Name of new image                        */
+comment|/*  Compose functon                          */
 DECL|member|compose_fun
 name|void
 function_decl|(
@@ -556,14 +570,6 @@ begin_comment
 comment|/* Array of available compositions. */
 end_comment
 
-begin_define
-DECL|macro|CHNL_NA
-define|#
-directive|define
-name|CHNL_NA
-value|"-"
-end_define
-
 begin_decl_stmt
 DECL|variable|compose_dsc
 specifier|static
@@ -596,7 +602,17 @@ argument_list|(
 literal|"Blue:"
 argument_list|)
 block|,
-name|CHNL_NA
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_STOCK_CHANNEL_RED
+block|,
+name|GIMP_STOCK_CHANNEL_GREEN
+block|,
+name|GIMP_STOCK_CHANNEL_BLUE
+block|,
+name|NULL
 block|}
 block|,
 literal|"rgb-compose"
@@ -634,6 +650,16 @@ literal|"Alpha:"
 argument_list|)
 block|}
 block|,
+block|{
+name|GIMP_STOCK_CHANNEL_RED
+block|,
+name|GIMP_STOCK_CHANNEL_GREEN
+block|,
+name|GIMP_STOCK_CHANNEL_BLUE
+block|,
+name|GIMP_STOCK_CHANNEL_ALPHA
+block|}
+block|,
 literal|"rgba-compose"
 block|,
 name|compose_rgba
@@ -663,7 +689,17 @@ argument_list|(
 literal|"Value:"
 argument_list|)
 block|,
-name|CHNL_NA
+name|NULL
+block|}
+block|,
+block|{
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
 block|}
 block|,
 literal|"hsv-compose"
@@ -695,7 +731,17 @@ argument_list|(
 literal|"Yellow:"
 argument_list|)
 block|,
-name|CHNL_NA
+name|NULL
+block|}
+block|,
+block|{
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
 block|}
 block|,
 literal|"cmy-compose"
@@ -733,6 +779,16 @@ literal|"Black:"
 argument_list|)
 block|}
 block|,
+block|{
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
 literal|"cmyk-compose"
 block|,
 name|compose_cmyk
@@ -759,7 +815,17 @@ argument_list|(
 literal|"Redness_cr470:"
 argument_list|)
 block|,
-name|CHNL_NA
+name|NULL
+block|}
+block|,
+block|{
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
 block|}
 block|,
 literal|"ycbcr470-compose"
@@ -788,7 +854,17 @@ argument_list|(
 literal|"Redness_cr709:"
 argument_list|)
 block|,
-name|CHNL_NA
+name|NULL
+block|}
+block|,
+block|{
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
 block|}
 block|,
 literal|"ycbcr709-compose"
@@ -817,7 +893,17 @@ argument_list|(
 literal|"Redness_cr470f:"
 argument_list|)
 block|,
-name|CHNL_NA
+name|NULL
+block|}
+block|,
+block|{
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
 block|}
 block|,
 literal|"ycbcr470F-compose"
@@ -846,7 +932,17 @@ argument_list|(
 literal|"Redness_cr709f:"
 argument_list|)
 block|,
-name|CHNL_NA
+name|NULL
+block|}
+block|,
+block|{
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
 block|}
 block|,
 literal|"ycbcr709F-compose"
@@ -868,7 +964,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e895430208
+DECL|struct|__anon2c73bd180208
 block|{
 DECL|member|compose_ID
 name|gint32
@@ -899,7 +995,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e895430308
+DECL|struct|__anon2c73bd180308
 block|{
 DECL|member|width
 DECL|member|height
@@ -918,6 +1014,15 @@ name|MAX_COMPOSE_IMAGES
 index|]
 decl_stmt|;
 comment|/* The labels to change */
+DECL|member|channel_icon
+name|GtkWidget
+modifier|*
+name|channel_icon
+index|[
+name|MAX_COMPOSE_IMAGES
+index|]
+decl_stmt|;
+comment|/* The icons  */
 DECL|member|channel_menu
 name|GtkWidget
 modifier|*
@@ -944,7 +1049,7 @@ index|]
 decl_stmt|;
 comment|/* toggle data of compose type */
 DECL|member|run
-name|gint
+name|gboolean
 name|run
 decl_stmt|;
 DECL|typedef|ComposeInterface
@@ -1010,6 +1115,11 @@ name|NULL
 block|}
 block|,
 comment|/* Label Widgets */
+block|{
+name|NULL
+block|}
+block|,
+comment|/* Icon Widgets */
 block|{
 name|NULL
 block|}
@@ -1575,6 +1685,7 @@ index|[
 literal|0
 index|]
 operator|=
+operator|(
 name|compose_by_drawable
 condition|?
 name|param
@@ -1594,6 +1705,7 @@ operator|.
 name|data
 operator|.
 name|d_int32
+operator|)
 expr_stmt|;
 name|composevals
 operator|.
@@ -1825,9 +1937,10 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|compose (gchar * compose_type,gint32 * compose_ID,gint compose_by_drawable)
+DECL|function|compose (const gchar * compose_type,gint32 * compose_ID,gboolean compose_by_drawable)
 name|compose
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|compose_type
@@ -1836,7 +1949,7 @@ name|gint32
 modifier|*
 name|compose_ID
 parameter_list|,
-name|gint
+name|gboolean
 name|compose_by_drawable
 parameter_list|)
 block|{
@@ -2634,9 +2747,10 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|create_new_image (gchar * filename,guint width,guint height,GimpImageType gdtype,gint32 * layer_ID,GimpDrawable ** drawable,GimpPixelRgn * pixel_rgn)
+DECL|function|create_new_image (const gchar * filename,guint width,guint height,GimpImageType gdtype,gint32 * layer_ID,GimpDrawable ** drawable,GimpPixelRgn * pixel_rgn)
 name|create_new_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -2727,6 +2841,10 @@ name|gimp_image_set_filename
 argument_list|(
 name|image_ID
 argument_list|,
+operator|(
+name|gchar
+operator|*
+operator|)
 name|filename
 argument_list|)
 expr_stmt|;
@@ -5276,7 +5394,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|compose_dialog (gchar * compose_type,gint32 drawable_ID)
 name|compose_dialog
 parameter_list|(
@@ -5324,6 +5442,10 @@ name|table
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|image
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|image_option_menu
 decl_stmt|,
 modifier|*
@@ -5337,8 +5459,6 @@ name|gint
 name|j
 decl_stmt|,
 name|compose_idx
-decl_stmt|,
-name|sensitive
 decl_stmt|;
 comment|/* Check default compose type */
 name|compose_idx
@@ -5672,7 +5792,7 @@ name|gtk_table_new
 argument_list|(
 name|MAX_COMPOSE_IMAGES
 argument_list|,
-literal|2
+literal|3
 argument_list|,
 name|FALSE
 argument_list|)
@@ -5718,7 +5838,6 @@ argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
-comment|/* Channel names */
 for|for
 control|(
 name|j
@@ -5733,17 +5852,83 @@ name|j
 operator|++
 control|)
 block|{
+specifier|const
+name|gchar
+modifier|*
+name|text
+decl_stmt|;
+name|image
+operator|=
+name|gtk_image_new_from_stock
+argument_list|(
+name|compose_dsc
+index|[
+name|compose_idx
+index|]
+operator|.
+name|channel_icon
+index|[
+name|j
+index|]
+argument_list|,
+name|GTK_ICON_SIZE_BUTTON
+argument_list|)
+expr_stmt|;
 name|composeint
 operator|.
-name|channel_label
+name|channel_icon
 index|[
 name|j
 index|]
 operator|=
-name|label
-operator|=
-name|gtk_label_new
+name|image
+expr_stmt|;
+name|gtk_table_attach
 argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+name|image
+argument_list|,
+literal|0
+argument_list|,
+literal|1
+argument_list|,
+name|j
+argument_list|,
+name|j
+operator|+
+literal|1
+argument_list|,
+name|GTK_FILL
+argument_list|,
+name|GTK_FILL
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
+name|text
+operator|=
+operator|(
+name|compose_dsc
+index|[
+name|compose_idx
+index|]
+operator|.
+name|channel_name
+index|[
+name|j
+index|]
+condition|?
 name|gettext
 argument_list|(
 name|compose_dsc
@@ -5756,6 +5941,22 @@ index|[
 name|j
 index|]
 argument_list|)
+else|:
+name|NULL
+operator|)
+expr_stmt|;
+name|composeint
+operator|.
+name|channel_label
+index|[
+name|j
+index|]
+operator|=
+name|label
+operator|=
+name|gtk_label_new
+argument_list|(
+name|text
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -5779,9 +5980,9 @@ argument_list|)
 argument_list|,
 name|label
 argument_list|,
-literal|0
-argument_list|,
 literal|1
+argument_list|,
+literal|2
 argument_list|,
 name|j
 argument_list|,
@@ -5803,56 +6004,6 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
-block|}
-comment|/* Set sensitivity of last label */
-name|sensitive
-operator|=
-operator|(
-name|strcmp
-argument_list|(
-name|compose_dsc
-index|[
-name|compose_idx
-index|]
-operator|.
-name|channel_name
-index|[
-literal|3
-index|]
-argument_list|,
-name|CHNL_NA
-argument_list|)
-operator|!=
-literal|0
-operator|)
-expr_stmt|;
-name|gtk_widget_set_sensitive
-argument_list|(
-name|composeint
-operator|.
-name|channel_label
-index|[
-literal|3
-index|]
-argument_list|,
-name|sensitive
-argument_list|)
-expr_stmt|;
-comment|/* Menues to select images */
-for|for
-control|(
-name|j
-operator|=
-literal|0
-init|;
-name|j
-operator|<
-name|MAX_COMPOSE_IMAGES
-condition|;
-name|j
-operator|++
-control|)
-block|{
 name|composeint
 operator|.
 name|select_ID
@@ -5909,9 +6060,9 @@ argument_list|)
 argument_list|,
 name|image_option_menu
 argument_list|,
-literal|1
-argument_list|,
 literal|2
+argument_list|,
+literal|3
 argument_list|,
 name|j
 argument_list|,
@@ -5948,6 +6099,7 @@ name|image_menu
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* Set sensitivity of last menu */
 name|gtk_widget_set_sensitive
 argument_list|(
 name|composeint
@@ -5957,7 +6109,17 @@ index|[
 literal|3
 index|]
 argument_list|,
-name|sensitive
+name|compose_dsc
+index|[
+name|compose_idx
+index|]
+operator|.
+name|channel_name
+index|[
+literal|3
+index|]
+operator|!=
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Compose types */
@@ -6106,9 +6268,6 @@ expr_stmt|;
 name|gtk_main
 argument_list|()
 expr_stmt|;
-name|gdk_flush
-argument_list|()
-expr_stmt|;
 return|return
 name|composeint
 operator|.
@@ -6123,7 +6282,7 @@ end_comment
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|check_gray (gint32 image_id,gint32 drawable_id,gpointer data)
 name|check_gray
 parameter_list|(
@@ -6315,7 +6474,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|gint
+name|gboolean
 modifier|*
 name|toggle_val
 decl_stmt|;
@@ -6324,13 +6483,10 @@ name|compose_idx
 decl_stmt|,
 name|j
 decl_stmt|;
-name|gint
-name|sensitive
-decl_stmt|;
 name|toggle_val
 operator|=
 operator|(
-name|gint
+name|gboolean
 operator|*
 operator|)
 name|data
@@ -6345,6 +6501,11 @@ operator|->
 name|active
 condition|)
 block|{
+specifier|const
+name|gchar
+modifier|*
+name|text
+decl_stmt|;
 operator|*
 name|toggle_val
 operator|=
@@ -6377,6 +6538,36 @@ condition|;
 name|j
 operator|++
 control|)
+block|{
+name|text
+operator|=
+operator|(
+name|compose_dsc
+index|[
+name|compose_idx
+index|]
+operator|.
+name|channel_name
+index|[
+name|j
+index|]
+condition|?
+name|gettext
+argument_list|(
+name|compose_dsc
+index|[
+name|compose_idx
+index|]
+operator|.
+name|channel_name
+index|[
+name|j
+index|]
+argument_list|)
+else|:
+name|NULL
+operator|)
+expr_stmt|;
 name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
@@ -6389,51 +6580,36 @@ name|j
 index|]
 argument_list|)
 argument_list|,
-name|compose_dsc
-index|[
-name|compose_idx
-index|]
+name|text
+argument_list|)
+expr_stmt|;
+name|gtk_image_set_from_stock
+argument_list|(
+name|GTK_IMAGE
+argument_list|(
+name|composeint
 operator|.
-name|channel_name
+name|channel_icon
 index|[
 name|j
 index|]
 argument_list|)
-expr_stmt|;
-comment|/* Set sensitivity of last label */
-name|sensitive
-operator|=
-operator|(
-name|strcmp
-argument_list|(
+argument_list|,
 name|compose_dsc
 index|[
 name|compose_idx
 index|]
 operator|.
-name|channel_name
+name|channel_icon
 index|[
-literal|3
+name|j
 index|]
 argument_list|,
-name|CHNL_NA
-argument_list|)
-operator|!=
-literal|0
-operator|)
-expr_stmt|;
-name|gtk_widget_set_sensitive
-argument_list|(
-name|composeint
-operator|.
-name|channel_label
-index|[
-literal|3
-index|]
-argument_list|,
-name|sensitive
+name|GTK_ICON_SIZE_BUTTON
 argument_list|)
 expr_stmt|;
+block|}
+comment|/* Set sensitivity of last menu */
 name|gtk_widget_set_sensitive
 argument_list|(
 name|composeint
@@ -6443,16 +6619,28 @@ index|[
 literal|3
 index|]
 argument_list|,
-name|sensitive
+name|compose_dsc
+index|[
+name|compose_idx
+index|]
+operator|.
+name|channel_name
+index|[
+literal|3
+index|]
+operator|!=
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 operator|*
 name|toggle_val
 operator|=
 name|FALSE
 expr_stmt|;
+block|}
 block|}
 end_function
 
