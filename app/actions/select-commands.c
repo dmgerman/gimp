@@ -523,6 +523,10 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
+name|GList
+modifier|*
+name|children
+decl_stmt|;
 name|return_if_no_display
 argument_list|(
 name|gdisp
@@ -606,13 +610,9 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* eeek */
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|g_list_nth_data
-argument_list|(
-name|gtk_container_children
+name|children
+operator|=
+name|gtk_container_get_children
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -624,9 +624,14 @@ operator|->
 name|vbox
 argument_list|)
 argument_list|)
-argument_list|,
-literal|0
-argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|children
+operator|->
+name|data
 argument_list|)
 argument_list|,
 name|edge_lock
@@ -636,6 +641,11 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|g_list_free
+argument_list|(
+name|children
 argument_list|)
 expr_stmt|;
 name|g_object_set_data

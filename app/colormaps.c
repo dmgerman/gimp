@@ -9,6 +9,29 @@ directive|include
 file|"config.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|FIXME: GDK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GDK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -191,16 +214,16 @@ end_function
 
 begin_function
 name|gulong
-DECL|function|get_color (int red,int green,int blue)
+DECL|function|get_color (gint red,gint green,gint blue)
 name|get_color
 parameter_list|(
-name|int
+name|gint
 name|red
 parameter_list|,
-name|int
+name|gint
 name|green
 parameter_list|,
-name|int
+name|gint
 name|blue
 parameter_list|)
 block|{
@@ -233,33 +256,6 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-if|if
-condition|(
-name|gtk_check_version
-argument_list|(
-literal|1
-argument_list|,
-literal|2
-argument_list|,
-literal|8
-argument_list|)
-condition|)
-name|gimprc
-operator|.
-name|min_colors
-operator|=
-name|CLAMP
-argument_list|(
-name|gimprc
-operator|.
-name|min_colors
-argument_list|,
-literal|27
-argument_list|,
-literal|216
-argument_list|)
-expr_stmt|;
-else|else
 name|gimprc
 operator|.
 name|min_colors

@@ -211,7 +211,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29818b430103
+DECL|enum|__anon274f5ec40103
 block|{
 DECL|enumerator|ST_MODULE_ERROR
 name|ST_MODULE_ERROR
@@ -240,7 +240,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29818b430203
+DECL|enum|__anon274f5ec40203
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -956,7 +956,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29818b430308
+DECL|struct|__anon274f5ec40308
 block|{
 DECL|member|table
 name|GtkWidget
@@ -4586,7 +4586,7 @@ name|info
 decl_stmt|;
 name|dlist
 operator|=
-name|gtk_container_children
+name|gtk_container_get_children
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -4838,7 +4838,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29818b430408
+DECL|struct|__anon274f5ec40408
 block|{
 DECL|member|search_key
 specifier|const

@@ -1182,7 +1182,7 @@ argument_list|)
 expr_stmt|;
 name|children
 operator|=
-name|gtk_container_children
+name|gtk_container_get_children
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -1260,6 +1260,11 @@ name|separator
 argument_list|)
 expr_stmt|;
 block|}
+name|g_list_free
+argument_list|(
+name|children
+argument_list|)
+expr_stmt|;
 name|gtk_container_remove
 argument_list|(
 name|GTK_CONTAINER

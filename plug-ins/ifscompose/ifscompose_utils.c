@@ -21,6 +21,29 @@ directive|include
 file|<string.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|FIXME: GDK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GDK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -40,9 +63,9 @@ file|"ifscompose.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon29b362e40108
 typedef|typedef
 struct|struct
+DECL|struct|__anon2abce8170108
 block|{
 DECL|member|point
 name|GdkPoint
@@ -71,7 +94,7 @@ name|AffElement
 modifier|*
 name|elem
 parameter_list|,
-name|int
+name|gint
 name|num_elements
 parameter_list|,
 name|gdouble
@@ -4102,7 +4125,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|aff_element_compute_boundary (AffElement * elem,gint width,gint height,AffElement ** elements,int num_elements)
+DECL|function|aff_element_compute_boundary (AffElement * elem,gint width,gint height,AffElement ** elements,gint num_elements)
 name|aff_element_compute_boundary
 parameter_list|(
 name|AffElement
@@ -4120,7 +4143,7 @@ modifier|*
 modifier|*
 name|elements
 parameter_list|,
-name|int
+name|gint
 name|num_elements
 parameter_list|)
 block|{
