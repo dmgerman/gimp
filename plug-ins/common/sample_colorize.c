@@ -370,7 +370,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon290f95db0108
+DECL|struct|__anon295a92940108
 typedef|typedef
 struct|struct
 block|{
@@ -439,7 +439,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon290f95db0208
+DECL|struct|__anon295a92940208
 typedef|typedef
 struct|struct
 block|{
@@ -557,7 +557,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon290f95db0308
+DECL|struct|__anon295a92940308
 typedef|typedef
 struct|struct
 block|{
@@ -586,7 +586,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon290f95db0408
+DECL|struct|__anon295a92940408
 typedef|typedef
 struct|struct
 block|{
@@ -613,7 +613,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon290f95db0508
+DECL|struct|__anon295a92940508
 typedef|typedef
 struct|struct
 block|{
@@ -2299,6 +2299,14 @@ operator|.
 name|sample_preview
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|g_di
+operator|.
+name|apply_button
+operator|!=
+name|NULL
+condition|)
 name|gtk_widget_set_sensitive
 argument_list|(
 name|g_di
@@ -2308,6 +2316,14 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|g_di
+operator|.
+name|get_smp_colors_button
+operator|!=
+name|NULL
+condition|)
 name|gtk_widget_set_sensitive
 argument_list|(
 name|g_di
@@ -2397,6 +2413,14 @@ argument_list|(
 name|id_ptr
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|g_di
+operator|.
+name|get_smp_colors_button
+operator|!=
+name|NULL
+condition|)
 name|gtk_widget_set_sensitive
 argument_list|(
 name|g_di
@@ -4459,6 +4483,14 @@ literal|0
 condition|)
 comment|/* do not colorize, just analyze sample colors */
 block|{
+if|if
+condition|(
+name|g_di
+operator|.
+name|apply_button
+operator|!=
+name|NULL
+condition|)
 name|gtk_widget_set_sensitive
 argument_list|(
 name|g_di
@@ -13547,8 +13579,6 @@ name|l_offsety
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
 name|gimp_selection_bounds
 argument_list|(
 name|l_image_id
@@ -13568,6 +13598,10 @@ argument_list|,
 operator|&
 name|l_y2
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|non_empty
 operator|&&
 operator|(
 name|l_sel_channel_id
