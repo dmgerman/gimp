@@ -142,7 +142,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5fe1220108
+DECL|struct|__anon2af77cb00108
 block|{
 DECL|member|circle
 name|gdouble
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5fe1220208
+DECL|struct|__anon2af77cb00208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -213,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5fe1220308
+DECL|struct|__anon2af77cb00308
 block|{
 DECL|member|col
 DECL|member|row
@@ -5298,6 +5298,7 @@ index|]
 operator|=
 literal|0
 expr_stmt|;
+break|break;
 case|case
 literal|3
 case|:
@@ -5332,6 +5333,7 @@ index|]
 operator|=
 literal|255
 expr_stmt|;
+break|break;
 case|case
 literal|4
 case|:
