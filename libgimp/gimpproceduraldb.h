@@ -85,7 +85,7 @@ modifier|*
 name|return_vals
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_procedural_db_get_data
 parameter_list|(
 name|gchar
@@ -96,7 +96,7 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_procedural_db_set_data
 parameter_list|(
 name|gchar

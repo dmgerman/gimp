@@ -54,7 +54,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_image_set_cmap (gint32 image_ID,guchar * cmap,gint num_colors)
 name|gimp_image_set_cmap
 parameter_list|(
@@ -69,6 +69,7 @@ name|gint
 name|num_colors
 parameter_list|)
 block|{
+return|return
 name|_gimp_image_set_cmap
 argument_list|(
 name|image_ID
@@ -79,7 +80,7 @@ literal|3
 argument_list|,
 name|cmap
 argument_list|)
-expr_stmt|;
+return|;
 block|}
 end_function
 

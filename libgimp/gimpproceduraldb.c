@@ -284,7 +284,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_procedural_db_get_data (gchar * identifier,gpointer data)
 name|gimp_procedural_db_get_data
 parameter_list|(
@@ -303,6 +303,11 @@ name|guint8
 modifier|*
 name|hack
 decl_stmt|;
+name|gboolean
+name|success
+decl_stmt|;
+name|success
+operator|=
 name|_gimp_procedural_db_get_data
 argument_list|(
 name|identifier
@@ -342,11 +347,14 @@ name|hack
 argument_list|)
 expr_stmt|;
 block|}
+return|return
+name|success
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_procedural_db_set_data (gchar * identifier,gpointer data,guint32 bytes)
 name|gimp_procedural_db_set_data
 parameter_list|(
@@ -361,6 +369,7 @@ name|guint32
 name|bytes
 parameter_list|)
 block|{
+return|return
 name|_gimp_procedural_db_set_data
 argument_list|(
 name|identifier
@@ -369,7 +378,7 @@ name|bytes
 argument_list|,
 name|data
 argument_list|)
-expr_stmt|;
+return|;
 block|}
 end_function
 

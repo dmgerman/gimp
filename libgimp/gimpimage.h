@@ -62,7 +62,7 @@ modifier|*
 name|num_colors
 parameter_list|)
 function_decl|;
-name|void
+name|gboolean
 name|gimp_image_set_cmap
 parameter_list|(
 name|gint32
