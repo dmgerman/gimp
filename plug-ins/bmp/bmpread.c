@@ -2351,7 +2351,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Unrecognized or invalid BMP compression format."
+literal|"Unsupported or invalid bitdepth."
 argument_list|)
 argument_list|)
 expr_stmt|;
