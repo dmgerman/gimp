@@ -98,6 +98,17 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_display_shell_popup_menu
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_display_shell_canvas_tool_events
 parameter_list|(
 name|GtkWidget

@@ -263,6 +263,14 @@ name|NULL
 block|}
 block|,
 comment|/*<Image>/File  */
+name|MENU_BRANCH
+argument_list|(
+name|N_
+argument_list|(
+literal|"/_File"
+argument_list|)
+argument_list|)
+block|,
 block|{
 block|{
 name|N_
@@ -497,6 +505,14 @@ literal|"/File/---moved"
 argument_list|)
 block|,
 comment|/*<Image>/Edit  */
+name|MENU_BRANCH
+argument_list|(
+name|N_
+argument_list|(
+literal|"/_Edit"
+argument_list|)
+argument_list|)
+block|,
 block|{
 block|{
 name|N_
@@ -870,30 +886,13 @@ literal|"/Edit/---"
 argument_list|)
 block|,
 comment|/*<Image>/Select  */
-block|{
-block|{
+name|MENU_BRANCH
+argument_list|(
 name|N_
 argument_list|(
-literal|"/Select/Invert"
+literal|"/_Select"
 argument_list|)
-block|,
-literal|"<control>I"
-block|,
-name|select_invert_cmd_callback
-block|,
-literal|0
-block|,
-literal|"<StockItem>"
-block|,
-name|GIMP_STOCK_INVERT
-block|}
-block|,
-name|NULL
-block|,
-literal|"select/invert.html"
-block|,
-name|NULL
-block|}
+argument_list|)
 block|,
 block|{
 block|{
@@ -949,6 +948,31 @@ block|{
 block|{
 name|N_
 argument_list|(
+literal|"/Select/Invert"
+argument_list|)
+block|,
+literal|"<control>I"
+block|,
+name|select_invert_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_INVERT
+block|}
+block|,
+name|NULL
+block|,
+literal|"select/invert.html"
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
 literal|"/Select/Float"
 argument_list|)
 block|,
@@ -978,7 +1002,7 @@ argument_list|(
 literal|"/Select/Feather..."
 argument_list|)
 block|,
-literal|"<control><shift>F"
+name|NULL
 block|,
 name|select_feather_cmd_callback
 block|,
@@ -999,7 +1023,7 @@ argument_list|(
 literal|"/Select/Sharpen"
 argument_list|)
 block|,
-literal|"<control><shift>H"
+name|NULL
 block|,
 name|select_sharpen_cmd_callback
 block|,
@@ -1140,6 +1164,14 @@ name|NULL
 block|}
 block|,
 comment|/*<Image>/View  */
+name|MENU_BRANCH
+argument_list|(
+name|N_
+argument_list|(
+literal|"/_View"
+argument_list|)
+argument_list|)
+block|,
 block|{
 block|{
 name|N_
@@ -1762,6 +1794,15 @@ block|,
 name|NULL
 block|}
 block|,
+comment|/*<Image>/Image  */
+name|MENU_BRANCH
+argument_list|(
+name|N_
+argument_list|(
+literal|"/_Image"
+argument_list|)
+argument_list|)
+block|,
 comment|/*<Image>/Image/Mode  */
 block|{
 block|{
@@ -1770,7 +1811,7 @@ argument_list|(
 literal|"/Image/Mode/RGB"
 argument_list|)
 block|,
-literal|"<alt>R"
+name|NULL
 block|,
 name|image_convert_rgb_cmd_callback
 block|,
@@ -1795,7 +1836,7 @@ argument_list|(
 literal|"/Image/Mode/Grayscale"
 argument_list|)
 block|,
-literal|"<alt>G"
+name|NULL
 block|,
 name|image_convert_grayscale_cmd_callback
 block|,
@@ -1820,7 +1861,7 @@ argument_list|(
 literal|"/Image/Mode/Indexed..."
 argument_list|)
 block|,
-literal|"<alt>I"
+name|NULL
 block|,
 name|image_convert_indexed_cmd_callback
 block|,
@@ -2010,6 +2051,14 @@ name|NULL
 block|}
 block|,
 comment|/*<Image>/Layer  */
+name|MENU_BRANCH
+argument_list|(
+name|N_
+argument_list|(
+literal|"/_Layer"
+argument_list|)
+argument_list|)
+block|,
 comment|/*<Image>/Layer/Stack  */
 block|{
 block|{
@@ -2659,6 +2708,14 @@ literal|"/Layer/---"
 argument_list|)
 block|,
 comment|/*<Image>/Tools  */
+name|MENU_BRANCH
+argument_list|(
+name|N_
+argument_list|(
+literal|"/_Tools"
+argument_list|)
+argument_list|)
+block|,
 block|{
 block|{
 name|N_
@@ -2730,27 +2787,6 @@ block|,
 name|NULL
 block|}
 block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/Tools/Swap Contexts"
-argument_list|)
-block|,
-literal|"<alt>X"
-block|,
-name|tools_swap_contexts_cmd_callback
-block|,
-literal|0
-block|}
-block|,
-name|NULL
-block|,
-literal|"toolbox/toolbox.html#swap_colors"
-block|,
-name|NULL
-block|}
-block|,
 name|MENU_SEPARATOR
 argument_list|(
 literal|"/Tools/---"
@@ -2781,6 +2817,14 @@ argument_list|)
 argument_list|)
 block|,
 comment|/*<Image>/Dialogs  */
+name|MENU_BRANCH
+argument_list|(
+name|N_
+argument_list|(
+literal|"/_Dialogs"
+argument_list|)
+argument_list|)
+block|,
 block|{
 block|{
 name|N_
@@ -3268,12 +3312,20 @@ block|,
 name|NULL
 block|}
 block|,
+comment|/*<Image>/Filters  */
 name|MENU_SEPARATOR
 argument_list|(
 literal|"/filters-separator"
 argument_list|)
 block|,
-comment|/*<Image>/Filters  */
+name|MENU_BRANCH
+argument_list|(
+name|N_
+argument_list|(
+literal|"/Filte_rs"
+argument_list|)
+argument_list|)
+block|,
 block|{
 block|{
 name|N_
@@ -3281,7 +3333,7 @@ argument_list|(
 literal|"/Filters/Repeat Last"
 argument_list|)
 block|,
-literal|"<alt>F"
+literal|"<control>F"
 block|,
 name|plug_in_repeat_cmd_callback
 block|,
@@ -3309,7 +3361,7 @@ argument_list|(
 literal|"/Filters/Re-Show Last"
 argument_list|)
 block|,
-literal|"<alt><shift>F"
+literal|"<control><shift>F"
 block|,
 name|plug_in_repeat_cmd_callback
 block|,

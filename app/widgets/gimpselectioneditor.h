@@ -108,11 +108,6 @@ name|GtkWidget
 modifier|*
 name|preview
 decl_stmt|;
-DECL|member|invert_button
-name|GtkWidget
-modifier|*
-name|invert_button
-decl_stmt|;
 DECL|member|all_button
 name|GtkWidget
 modifier|*
@@ -122,6 +117,11 @@ DECL|member|none_button
 name|GtkWidget
 modifier|*
 name|none_button
+decl_stmt|;
+DECL|member|invert_button
+name|GtkWidget
+modifier|*
+name|invert_button
 decl_stmt|;
 DECL|member|save_button
 name|GtkWidget

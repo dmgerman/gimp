@@ -250,7 +250,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b41fc90103
+DECL|enum|__anon2bce77980103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -635,6 +635,12 @@ operator|->
 name|delete_event
 operator|=
 name|gimp_display_shell_delete_event
+expr_stmt|;
+name|widget_class
+operator|->
+name|popup_menu
+operator|=
+name|gimp_display_shell_popup_menu
 expr_stmt|;
 name|klass
 operator|->
