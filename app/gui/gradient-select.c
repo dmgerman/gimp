@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gradient-editor.h"
+file|"dialogs-constructors.h"
 end_include
 
 begin_include
@@ -155,18 +155,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|gradient_select_edit_gradient
-parameter_list|(
-name|GimpData
-modifier|*
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/*  list of active dialogs   */
 end_comment
@@ -190,21 +178,6 @@ DECL|variable|gradient_select_dialog
 name|GradientSelect
 modifier|*
 name|gradient_select_dialog
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/*  the main gradient editor dialog  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|gradient_editor_dialog
-specifier|static
-name|GradientEditor
-modifier|*
-name|gradient_editor_dialog
 init|=
 name|NULL
 decl_stmt|;
@@ -573,7 +546,7 @@ name|GIMP_VIEW_TYPE_LIST
 argument_list|,
 name|global_gradient_factory
 argument_list|,
-name|gradient_select_edit_gradient
+name|dialogs_edit_gradient_func
 argument_list|,
 name|gsp
 operator|->
@@ -1211,50 +1184,6 @@ name|gsp
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gradient_select_edit_gradient (GimpData * data)
-name|gradient_select_edit_gradient
-parameter_list|(
-name|GimpData
-modifier|*
-name|data
-parameter_list|)
-block|{
-name|GimpGradient
-modifier|*
-name|gradient
-decl_stmt|;
-name|gradient
-operator|=
-name|GIMP_GRADIENT
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|gradient_editor_dialog
-condition|)
-block|{
-name|gradient_editor_dialog
-operator|=
-name|gradient_editor_new
-argument_list|()
-expr_stmt|;
-block|}
-name|gradient_editor_set_gradient
-argument_list|(
-name|gradient_editor_dialog
-argument_list|,
-name|gradient
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 

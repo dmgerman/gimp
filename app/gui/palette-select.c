@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"dialogs-constructors.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdnd.h"
 end_include
 
@@ -154,18 +160,6 @@ modifier|*
 name|widget
 parameter_list|,
 name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|palette_select_edit_palette
-parameter_list|(
-name|GimpData
-modifier|*
 name|data
 parameter_list|)
 function_decl|;
@@ -492,7 +486,7 @@ name|GIMP_VIEW_TYPE_LIST
 argument_list|,
 name|global_palette_factory
 argument_list|,
-name|palette_select_edit_palette
+name|dialogs_edit_palette_func
 argument_list|,
 name|psp
 operator|->
@@ -726,25 +720,6 @@ expr_stmt|;
 name|palette_select_free
 argument_list|(
 name|psp
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|palette_select_edit_palette (GimpData * data)
-name|palette_select_edit_palette
-parameter_list|(
-name|GimpData
-modifier|*
-name|data
-parameter_list|)
-block|{
-name|palette_dialog_edit_palette
-argument_list|(
-name|data
 argument_list|)
 expr_stmt|;
 block|}

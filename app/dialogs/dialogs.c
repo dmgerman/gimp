@@ -425,6 +425,27 @@ name|FALSE
 block|,
 name|FALSE
 block|}
+block|,
+comment|/* these will go to image_dock_entries */
+block|{
+literal|"gimp:layer-list"
+block|,
+name|dialogs_layer_list_view_new
+block|,
+name|FALSE
+block|,
+name|FALSE
+block|}
+block|,
+block|{
+literal|"gimp:channel-list"
+block|,
+name|dialogs_channel_list_view_new
+block|,
+name|FALSE
+block|,
+name|FALSE
+block|}
 block|}
 decl_stmt|;
 end_decl_stmt

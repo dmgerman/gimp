@@ -57,6 +57,14 @@ directive|include
 file|"gimpdnd.h"
 end_include
 
+begin_define
+DECL|macro|GIMP_DOCK_MINIMAL_WIDTH
+define|#
+directive|define
+name|GIMP_DOCK_MINIMAL_WIDTH
+value|280
+end_define
+
 begin_function_decl
 specifier|static
 name|void
@@ -366,6 +374,19 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_usize
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|dock
+argument_list|)
+argument_list|,
+name|GIMP_DOCK_MINIMAL_WIDTH
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|dock
