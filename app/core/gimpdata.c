@@ -99,7 +99,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dfdef30103
+DECL|enum|__anon2b1d63800103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -1098,12 +1098,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_data_set_filename:  * @data:     A #GimpData object  * @filename: File name to assign to @data.  * @writable: %TRUE if we want to be able to write to this file.  *  * This function assigns a file name to @data, and sets some flags  * according to the properties of the file.  If @writable is %TRUE,  * and the user has permission to write or overwrite the requested file  * name, and a "save" method exists for @data's object type, then  * @data is marked as writable.  **/
+comment|/**  * gimp_data_set_filename:  * @data:     A #GimpData object  * @filename: File name to assign to @data.  * @writable: %TRUE if we want to be able to write to this file.  * @deletable: %TRUE if we want to be able to delete this file.  *  * This function assigns a file name to @data, and sets some flags  * according to the properties of the file.  If @writable is %TRUE,  * and the user has permission to write or overwrite the requested file  * name, and a "save" method exists for @data's object type, then  * @data is marked as writable.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_data_set_filename (GimpData * data,const gchar * filename,gboolean writable)
+DECL|function|gimp_data_set_filename (GimpData * data,const gchar * filename,gboolean writable,gboolean deletable)
 name|gimp_data_set_filename
 parameter_list|(
 name|GimpData
@@ -1117,6 +1117,9 @@ name|filename
 parameter_list|,
 name|gboolean
 name|writable
+parameter_list|,
+name|gboolean
+name|deletable
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1183,10 +1186,12 @@ name|deletable
 operator|=
 name|FALSE
 expr_stmt|;
-comment|/*  if the data is supposed to be writable, still check if it really is  */
+comment|/*  if the data is supposed to be writable or deletable,    *  still check if it really is    */
 if|if
 condition|(
 name|writable
+operator|||
+name|deletable
 condition|)
 block|{
 name|gchar
@@ -1249,13 +1254,21 @@ name|data
 operator|->
 name|writable
 operator|=
+name|writable
+condition|?
 name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 name|data
 operator|->
 name|deletable
 operator|=
+name|deletable
+condition|?
 name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 block|}
 name|g_free
@@ -1511,6 +1524,8 @@ argument_list|(
 name|data
 argument_list|,
 name|fullpath
+argument_list|,
+name|TRUE
 argument_list|,
 name|TRUE
 argument_list|)

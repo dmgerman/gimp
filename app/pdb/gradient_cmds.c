@@ -561,9 +561,9 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|GimpGradient
+name|GimpData
 modifier|*
-name|gradient
+name|data
 init|=
 name|NULL
 decl_stmt|;
@@ -608,12 +608,15 @@ condition|(
 name|success
 condition|)
 block|{
-name|gradient
+if|if
+condition|(
+name|strlen
+argument_list|(
+name|name
+argument_list|)
+condition|)
+name|data
 operator|=
-operator|(
-name|GimpGradient
-operator|*
-operator|)
 name|gimp_data_factory_data_new
 argument_list|(
 name|gimp
@@ -622,6 +625,14 @@ name|gradient_factory
 argument_list|,
 name|name
 argument_list|)
+expr_stmt|;
+name|success
+operator|=
+operator|(
+name|data
+operator|!=
+name|NULL
+operator|)
 expr_stmt|;
 block|}
 name|return_args
@@ -651,7 +662,7 @@ name|g_strdup
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
-name|gradient
+name|data
 argument_list|)
 operator|->
 name|name
@@ -806,9 +817,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -831,6 +840,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|name
+operator|&&
 name|strlen
 argument_list|(
 name|name
@@ -955,7 +966,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the gradient to duplicate"
+literal|"The gradient name (\"\" means currently active gradient)"
 block|}
 block|}
 decl_stmt|;
@@ -1083,9 +1094,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -1144,6 +1153,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|name
+operator|&&
 name|strlen
 argument_list|(
 name|name
@@ -1257,7 +1268,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the gradient to rename"
+literal|"The gradient name (\"\" means currently active gradient)"
 block|}
 block|,
 block|{
@@ -1385,9 +1396,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -1410,6 +1419,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|name
+operator|&&
 name|strlen
 argument_list|(
 name|name
@@ -1533,7 +1544,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the gradient to delete"
+literal|"The gradient name (\"\" means currently active gradient)"
 block|}
 block|}
 decl_stmt|;
@@ -1649,9 +1660,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -1695,6 +1704,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|name
+operator|&&
 name|strlen
 argument_list|(
 name|name
@@ -1848,7 +1859,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the gradient to operate on"
+literal|"The gradient name (\"\" means currently active gradient)"
 block|}
 block|,
 block|{
@@ -1993,9 +2004,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -2075,6 +2084,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|name
+operator|&&
 name|strlen
 argument_list|(
 name|name
@@ -2196,7 +2207,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the gradient to operate on"
+literal|"The gradient name (\"\" means currently active gradient)"
 block|}
 block|,
 block|{
@@ -2336,9 +2347,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -2382,6 +2391,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|name
+operator|&&
 name|strlen
 argument_list|(
 name|name
@@ -2535,7 +2546,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the gradient to operate on"
+literal|"The gradient name (\"\" means currently active gradient)"
 block|}
 block|,
 block|{
@@ -2680,9 +2691,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -2762,6 +2771,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|name
+operator|&&
 name|strlen
 argument_list|(
 name|name
@@ -2883,7 +2894,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the gradient to operate on"
+literal|"The gradient name (\"\" means currently active gradient)"
 block|}
 block|,
 block|{
@@ -3020,9 +3031,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -3066,6 +3075,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|name
+operator|&&
 name|strlen
 argument_list|(
 name|name
@@ -3197,7 +3208,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the gradient to operate on"
+literal|"The gradient name (\"\" means currently active gradient)"
 block|}
 block|,
 block|{
@@ -3340,9 +3351,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -3411,6 +3420,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|name
+operator|&&
 name|strlen
 argument_list|(
 name|name
@@ -3544,7 +3555,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the gradient to operate on"
+literal|"The gradient name (\"\" means currently active gradient)"
 block|}
 block|,
 block|{
@@ -3692,9 +3703,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -3738,6 +3747,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|name
+operator|&&
 name|strlen
 argument_list|(
 name|name
@@ -3869,7 +3880,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the gradient to operate on"
+literal|"The gradient name (\"\" means currently active gradient)"
 block|}
 block|,
 block|{
@@ -4012,9 +4023,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -4083,6 +4092,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|name
+operator|&&
 name|strlen
 argument_list|(
 name|name
@@ -4216,7 +4227,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the gradient to operate on"
+literal|"The gradient name (\"\" means currently active gradient)"
 block|}
 block|,
 block|{
@@ -4364,9 +4375,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -4410,6 +4419,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|name
+operator|&&
 name|strlen
 argument_list|(
 name|name
@@ -4541,7 +4552,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the gradient to operate on"
+literal|"The gradient name (\"\" means currently active gradient)"
 block|}
 block|,
 block|{
@@ -4684,9 +4695,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -4755,6 +4764,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|name
+operator|&&
 name|strlen
 argument_list|(
 name|name
@@ -4888,7 +4899,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the gradient to operate on"
+literal|"The gradient name (\"\" means currently active gradient)"
 block|}
 block|,
 block|{
@@ -5036,9 +5047,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -5082,6 +5091,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|name
+operator|&&
 name|strlen
 argument_list|(
 name|name
@@ -5213,7 +5224,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the gradient to operate on"
+literal|"The gradient name (\"\" means currently active gradient)"
 block|}
 block|,
 block|{
@@ -5353,9 +5364,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -5399,6 +5408,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|name
+operator|&&
 name|strlen
 argument_list|(
 name|name
@@ -5530,7 +5541,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the gradient to operate on"
+literal|"The gradient name (\"\" means currently active gradient)"
 block|}
 block|,
 block|{
@@ -5667,9 +5678,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -5749,6 +5758,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|name
+operator|&&
 name|strlen
 argument_list|(
 name|name
@@ -5908,7 +5919,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the gradient to operate on."
+literal|"The gradient name (\"\" means currently active gradient)"
 block|}
 block|,
 block|{
@@ -6042,9 +6053,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -6124,6 +6133,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|name
+operator|&&
 name|strlen
 argument_list|(
 name|name
@@ -6283,7 +6294,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the gradient to operate on."
+literal|"The gradient name (\"\" means currently active gradient)"
 block|}
 block|,
 block|{
@@ -6414,9 +6425,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -6471,6 +6480,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|name
+operator|&&
 name|strlen
 argument_list|(
 name|name
@@ -6632,7 +6643,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the gradient to operate on."
+literal|"The gradient name (\"\" means currently active gradient)"
 block|}
 block|,
 block|{
@@ -6758,9 +6769,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -6840,6 +6849,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|name
+operator|&&
 name|strlen
 argument_list|(
 name|name
@@ -7003,7 +7014,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the gradient to operate on."
+literal|"The gradient name (\"\" means currently active gradient)"
 block|}
 block|,
 block|{
@@ -7134,9 +7145,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -7191,6 +7200,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|name
+operator|&&
 name|strlen
 argument_list|(
 name|name
@@ -7352,7 +7363,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the gradient to operate on."
+literal|"The gradient name (\"\" means currently active gradient)"
 block|}
 block|,
 block|{
@@ -7478,9 +7489,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -7560,6 +7569,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|name
+operator|&&
 name|strlen
 argument_list|(
 name|name
@@ -7723,7 +7734,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the gradient to operate on."
+literal|"The gradient name (\"\" means currently active gradient)"
 block|}
 block|,
 block|{
@@ -7854,9 +7865,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -7911,6 +7920,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|name
+operator|&&
 name|strlen
 argument_list|(
 name|name
@@ -8072,7 +8083,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the gradient to operate on."
+literal|"The gradient name (\"\" means currently active gradient)"
 block|}
 block|,
 block|{
@@ -8195,9 +8206,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -8252,6 +8261,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|name
+operator|&&
 name|strlen
 argument_list|(
 name|name
@@ -8409,7 +8420,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the gradient to operate on."
+literal|"The gradient name (\"\" means currently active gradient)"
 block|}
 block|,
 block|{
@@ -8532,9 +8543,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -8589,6 +8598,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|name
+operator|&&
 name|strlen
 argument_list|(
 name|name
@@ -8760,7 +8771,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the gradient to operate on."
+literal|"The gradient name (\"\" means currently active gradient)"
 block|}
 block|,
 block|{
@@ -8883,9 +8894,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -8940,6 +8949,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|name
+operator|&&
 name|strlen
 argument_list|(
 name|name
@@ -9111,7 +9122,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the gradient to operate on."
+literal|"The gradient name (\"\" means currently active gradient)"
 block|}
 block|,
 block|{
@@ -9249,9 +9260,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -9347,6 +9356,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|name
+operator|&&
 name|strlen
 argument_list|(
 name|name
@@ -9529,7 +9540,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the gradient to operate on."
+literal|"The gradient name (\"\" means currently active gradient)"
 block|}
 block|,
 block|{

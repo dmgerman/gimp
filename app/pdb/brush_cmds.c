@@ -235,9 +235,9 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|GimpBrush
+name|GimpData
 modifier|*
-name|brush
+name|data
 init|=
 name|NULL
 decl_stmt|;
@@ -282,12 +282,15 @@ condition|(
 name|success
 condition|)
 block|{
-name|brush
+if|if
+condition|(
+name|strlen
+argument_list|(
+name|name
+argument_list|)
+condition|)
+name|data
 operator|=
-operator|(
-name|GimpBrush
-operator|*
-operator|)
 name|gimp_data_factory_data_new
 argument_list|(
 name|gimp
@@ -296,6 +299,14 @@ name|brush_factory
 argument_list|,
 name|name
 argument_list|)
+expr_stmt|;
+name|success
+operator|=
+operator|(
+name|data
+operator|!=
+name|NULL
+operator|)
 expr_stmt|;
 block|}
 name|return_args
@@ -325,7 +336,7 @@ name|g_strdup
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
-name|brush
+name|data
 argument_list|)
 operator|->
 name|name
@@ -480,9 +491,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -631,7 +640,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the brush to duplicate"
+literal|"The brush name (\"\" means currently active brush)"
 block|}
 block|}
 decl_stmt|;
@@ -759,9 +768,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -935,7 +942,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the brush to rename"
+literal|"The brush name (\"\" means currently active brush)"
 block|}
 block|,
 block|{
@@ -1063,9 +1070,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -1213,7 +1218,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the brush to delete"
+literal|"The brush name (\"\" means currently active brush)"
 block|}
 block|}
 decl_stmt|;

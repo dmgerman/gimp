@@ -105,7 +105,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_duplicate:  * @name: The name of the palette to duplicate.  *  * Duplicates a palette  *  * This procedure creates an identical palette by a different name  *  * Returns: The name of the palette's copy.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_palette_duplicate:  * @name: The palette name (\"\" means currently active palette).  *  * Duplicates a palette  *  * This procedure creates an identical palette by a different name  *  * Returns: The name of the palette's copy.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -190,7 +190,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_rename:  * @name: The name of the palette to rename.  * @new_name: The new name of the palette.  *  * Rename a palette  *  * This procedure renames a palette  *  * Returns: The actual new name of the palette.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_palette_rename:  * @name: The palette name (\"\" means currently active palette).  * @new_name: The new name of the palette.  *  * Rename a palette  *  * This procedure renames a palette  *  * Returns: The actual new name of the palette.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -284,7 +284,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_delete:  * @name: The name of the palette to delete.  *  * Deletes a palette  *  * This procedure deletes a palette  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_palette_delete:  * @name: The palette name (\"\" means currently active palette).  *  * Deletes a palette  *  * This procedure deletes a palette  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function

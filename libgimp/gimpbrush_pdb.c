@@ -105,7 +105,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_duplicate:  * @name: The name of the brush to duplicate.  *  * Duplicates a brush  *  * This procedure creates an identical brush by a different name  *  * Returns: The name of the brush's copy.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_brush_duplicate:  * @name: The brush name (\"\" means currently active brush).  *  * Duplicates a brush  *  * This procedure creates an identical brush by a different name  *  * Returns: The name of the brush's copy.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -190,7 +190,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_rename:  * @name: The name of the brush to rename.  * @new_name: The new name of the brush.  *  * Rename a brush  *  * This procedure renames a brush  *  * Returns: The actual new name of the brush.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_brush_rename:  * @name: The brush name (\"\" means currently active brush).  * @new_name: The new name of the brush.  *  * Rename a brush  *  * This procedure renames a brush  *  * Returns: The actual new name of the brush.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -284,7 +284,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_delete:  * @name: The name of the brush to delete.  *  * Deletes a brush  *  * This procedure deletes a brush  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_brush_delete:  * @name: The brush name (\"\" means currently active brush).  *  * Deletes a brush  *  * This procedure deletes a brush  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function

@@ -1164,6 +1164,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+operator|*
+name|name
+operator|!=
+literal|'\0'
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gradient
 operator|=
 name|g_object_new

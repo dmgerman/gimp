@@ -299,9 +299,9 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|GimpPalette
+name|GimpData
 modifier|*
-name|palette
+name|data
 init|=
 name|NULL
 decl_stmt|;
@@ -346,12 +346,15 @@ condition|(
 name|success
 condition|)
 block|{
-name|palette
+if|if
+condition|(
+name|strlen
+argument_list|(
+name|name
+argument_list|)
+condition|)
+name|data
 operator|=
-operator|(
-name|GimpPalette
-operator|*
-operator|)
 name|gimp_data_factory_data_new
 argument_list|(
 name|gimp
@@ -360,6 +363,14 @@ name|palette_factory
 argument_list|,
 name|name
 argument_list|)
+expr_stmt|;
+name|success
+operator|=
+operator|(
+name|data
+operator|!=
+name|NULL
+operator|)
 expr_stmt|;
 block|}
 name|return_args
@@ -389,7 +400,7 @@ name|g_strdup
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
-name|palette
+name|data
 argument_list|)
 operator|->
 name|name
@@ -544,9 +555,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -695,7 +704,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the palette to duplicate"
+literal|"The palette name (\"\" means currently active palette)"
 block|}
 block|}
 decl_stmt|;
@@ -823,9 +832,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -999,7 +1006,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the palette to rename"
+literal|"The palette name (\"\" means currently active palette)"
 block|}
 block|,
 block|{
@@ -1127,9 +1134,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -1277,7 +1282,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The name of the palette to delete"
+literal|"The palette name (\"\" means currently active palette)"
 block|}
 block|}
 decl_stmt|;
