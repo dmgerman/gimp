@@ -125,7 +125,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b86ca790103
+DECL|enum|__anon2bf2b2960103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -142,7 +142,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b86ca790208
+DECL|struct|__anon2bf2b2960208
 block|{
 DECL|member|interlace
 name|gint
@@ -632,13 +632,6 @@ operator|==
 literal|0
 condition|)
 block|{
-name|gimp_ui_init
-argument_list|(
-literal|"gif"
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 name|image_ID
 operator|=
 name|orig_image_ID
@@ -675,6 +668,13 @@ case|:
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
+name|gimp_ui_init
+argument_list|(
+literal|"gif"
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|export
 operator|=
 name|gimp_export_image
