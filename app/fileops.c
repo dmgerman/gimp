@@ -8951,6 +8951,7 @@ operator|(
 literal|0
 operator|)
 return|;
+comment|/*         * to anybody reading this: is strtol's parsing behaviour (e.g. "0x" prefix)        * broken on some systems or why do we do the base detection ourselves?        * */
 if|if
 condition|(
 name|value
@@ -8985,7 +8986,11 @@ condition|)
 comment|/* hexadecimal */
 name|num_testval
 operator|=
-name|strtol
+operator|(
+name|unsigned
+name|long
+operator|)
+name|strtoul
 argument_list|(
 name|value
 operator|+
