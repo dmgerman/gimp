@@ -529,15 +529,10 @@ name|GtkWidget
 modifier|*
 name|filechooser
 decl_stmt|;
-DECL|member|cursor_wait
+DECL|member|cursor_busy
 name|GdkCursor
 modifier|*
-name|cursor_wait
-decl_stmt|;
-DECL|member|cursor_acitve
-name|GdkCursor
-modifier|*
-name|cursor_acitve
+name|cursor_busy
 decl_stmt|;
 DECL|member|drawable
 name|GimpDrawable
@@ -707,7 +702,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a551110108
+DECL|struct|__anon27cd29040108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -761,7 +756,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a551110208
+DECL|struct|__anon27cd29040208
 block|{
 DECL|member|y
 name|gint32
@@ -5637,7 +5632,7 @@ argument_list|,
 name|cd
 argument_list|)
 expr_stmt|;
-comment|/*  active and waiting cursor  */
+comment|/*  busy cursor  */
 name|display
 operator|=
 name|gtk_widget_get_display
@@ -5649,24 +5644,13 @@ argument_list|)
 expr_stmt|;
 name|cd
 operator|->
-name|cursor_wait
+name|cursor_busy
 operator|=
 name|gdk_cursor_new_for_display
 argument_list|(
 name|display
 argument_list|,
 name|GDK_WATCH
-argument_list|)
-expr_stmt|;
-name|cd
-operator|->
-name|cursor_acitve
-operator|=
-name|gdk_cursor_new_for_display
-argument_list|(
-name|display
-argument_list|,
-name|GDK_TOP_LEFT_ARROW
 argument_list|)
 expr_stmt|;
 comment|/*  The main hbox  */
@@ -7224,10 +7208,10 @@ name|int
 name|update
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|int
+name|gint
 name|other
 decl_stmt|;
 if|if
@@ -7250,7 +7234,7 @@ name|window
 argument_list|,
 name|cd
 operator|->
-name|cursor_wait
+name|cursor_busy
 argument_list|)
 expr_stmt|;
 name|gdk_flush
@@ -7327,9 +7311,7 @@ argument_list|)
 operator|->
 name|window
 argument_list|,
-name|cd
-operator|->
-name|cursor_acitve
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
