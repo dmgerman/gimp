@@ -48,7 +48,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|idea_add
+name|document_index_add
 parameter_list|(
 name|gchar
 modifier|*
@@ -60,7 +60,7 @@ end_function_decl
 begin_function_decl
 name|FILE
 modifier|*
-name|idea_manager_parse_init
+name|document_index_parse_init
 parameter_list|(
 name|void
 parameter_list|)
@@ -70,7 +70,7 @@ end_function_decl
 begin_function_decl
 name|gchar
 modifier|*
-name|idea_manager_parse_line
+name|document_index_parse_line
 parameter_list|(
 name|FILE
 modifier|*

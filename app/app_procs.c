@@ -702,13 +702,13 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|gimp_init (int gimp_argc,char ** gimp_argv)
+DECL|function|gimp_init (gint gimp_argc,gchar ** gimp_argv)
 name|gimp_init
 parameter_list|(
-name|int
+name|gint
 name|gimp_argc
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 modifier|*
 name|gimp_argv
@@ -2698,7 +2698,7 @@ condition|(
 operator|(
 name|fp
 operator|=
-name|idea_manager_parse_init
+name|document_index_parse_init
 argument_list|()
 operator|)
 condition|)
@@ -2725,7 +2725,7 @@ index|[
 name|i
 index|]
 operator|=
-name|idea_manager_parse_line
+name|document_index_parse_line
 argument_list|(
 name|fp
 argument_list|)

@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b61de480108
+DECL|struct|__anon2a4005000108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -135,7 +135,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b61de480208
+DECL|struct|__anon2a4005000208
 block|{
 DECL|member|boole
 name|gboolean
@@ -666,8 +666,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|idea_add (gchar * title)
-name|idea_add
+DECL|function|document_index_add (gchar * title)
+name|document_index_add
 parameter_list|(
 name|gchar
 modifier|*
@@ -687,8 +687,8 @@ end_function
 begin_function
 name|FILE
 modifier|*
-DECL|function|idea_manager_parse_init (void)
-name|idea_manager_parse_init
+DECL|function|document_index_parse_init (void)
+name|document_index_parse_init
 parameter_list|(
 name|void
 parameter_list|)
@@ -700,6 +700,9 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|desktopfile
+decl_stmt|;
+name|gint
+name|dummy
 decl_stmt|;
 name|desktopfile
 operator|=
@@ -717,6 +720,54 @@ argument_list|,
 literal|"r"
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|fp
+operator|!=
+name|NULL
+condition|)
+block|{
+comment|/*  eventually strip away the old file format's first line  */
+if|if
+condition|(
+name|fscanf
+argument_list|(
+name|fp
+argument_list|,
+literal|"%i %i %i %i"
+argument_list|,
+operator|&
+name|dummy
+argument_list|,
+operator|&
+name|dummy
+argument_list|,
+operator|&
+name|dummy
+argument_list|,
+operator|&
+name|dummy
+argument_list|)
+operator|!=
+literal|4
+condition|)
+block|{
+name|fclose
+argument_list|(
+name|fp
+argument_list|)
+expr_stmt|;
+name|fp
+operator|=
+name|fopen
+argument_list|(
+name|desktopfile
+argument_list|,
+literal|"r"
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 name|g_free
 argument_list|(
 name|desktopfile
@@ -731,8 +782,8 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|idea_manager_parse_line (FILE * fp)
-name|idea_manager_parse_line
+DECL|function|document_index_parse_line (FILE * fp)
+name|document_index_parse_line
 parameter_list|(
 name|FILE
 modifier|*
@@ -864,7 +915,7 @@ name|idea_list
 condition|)
 name|fp
 operator|=
-name|idea_manager_parse_init
+name|document_index_parse_init
 argument_list|()
 expr_stmt|;
 if|if
@@ -900,7 +951,7 @@ condition|(
 operator|(
 name|title
 operator|=
-name|idea_manager_parse_line
+name|document_index_parse_line
 argument_list|(
 name|fp
 argument_list|)
@@ -1681,7 +1732,7 @@ name|fp
 decl_stmt|;
 name|fp
 operator|=
-name|idea_manager_parse_init
+name|document_index_parse_init
 argument_list|()
 expr_stmt|;
 if|if
@@ -1698,7 +1749,7 @@ condition|(
 operator|(
 name|filename
 operator|=
-name|idea_manager_parse_line
+name|document_index_parse_line
 argument_list|(
 name|fp
 argument_list|)
@@ -3431,7 +3482,7 @@ operator|->
 name|child
 argument_list|)
 argument_list|,
-literal|8
+literal|12
 argument_list|,
 literal|0
 argument_list|)
