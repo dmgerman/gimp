@@ -4082,14 +4082,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_define
-DECL|macro|CURSOR_STR_LENGTH
-define|#
-directive|define
-name|CURSOR_STR_LENGTH
-value|256
-end_define
-
 begin_function
 name|void
 DECL|function|gdisplay_update_cursor (GDisplay * gdisp,int x,int y)

@@ -130,6 +130,22 @@ file|"pixmaps.h"
 end_include
 
 begin_comment
+comment|/* This #define is also in gdisplay.c and should */
+end_comment
+
+begin_comment
+comment|/* probably be moved in to gdisplay.h instead.   */
+end_comment
+
+begin_define
+DECL|macro|CURSOR_STR_LENGTH
+define|#
+directive|define
+name|CURSOR_STR_LENGTH
+value|256
+end_define
+
+begin_comment
 comment|/*  local functions  */
 end_comment
 
@@ -2708,6 +2724,15 @@ decl_stmt|;
 name|int
 name|contextid
 decl_stmt|;
+name|char
+name|buffer
+index|[
+name|CURSOR_STR_LENGTH
+index|]
+decl_stmt|;
+name|int
+name|cursor_label_width
+decl_stmt|;
 comment|/*  adjust the initial scale -- so that window fits on screen */
 block|{
 name|s_width
@@ -3808,14 +3833,45 @@ argument_list|(
 literal|" 0000, 0000 "
 argument_list|)
 expr_stmt|;
-comment|/* This usize should be more intelligent and get the information    * size of the above string or some similar method */
+name|g_snprintf
+argument_list|(
+name|buffer
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
+argument_list|,
+literal|" %d, %d "
+argument_list|,
+name|width
+argument_list|,
+name|height
+argument_list|)
+expr_stmt|;
+name|cursor_label_width
+operator|=
+name|gdk_string_measure
+argument_list|(
+name|gtk_widget_get_style
+argument_list|(
+name|gdisp
+operator|->
+name|cursor_label
+argument_list|)
+operator|->
+name|font
+argument_list|,
+name|buffer
+argument_list|)
+expr_stmt|;
 name|gtk_widget_set_usize
 argument_list|(
 name|gdisp
 operator|->
 name|cursor_label
 argument_list|,
-literal|50
+name|cursor_label_width
 argument_list|,
 operator|-
 literal|1

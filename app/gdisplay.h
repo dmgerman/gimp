@@ -115,6 +115,18 @@ begin_comment
 comment|/* unused - == MIN */
 end_comment
 
+begin_comment
+comment|/* maximal width of the strinf holding the cursor-coordinates for    the status line */
+end_comment
+
+begin_define
+DECL|macro|CURSOR_STR_LENGTH
+define|#
+directive|define
+name|CURSOR_STR_LENGTH
+value|256
+end_define
+
 begin_typedef
 DECL|struct|_IdleRenderStruct
 typedef|typedef
