@@ -5280,6 +5280,15 @@ modifier|*
 name|tr_tool
 parameter_list|)
 block|{
+name|GimpTool
+modifier|*
+name|tool
+init|=
+name|GIMP_TOOL
+argument_list|(
+name|tr_tool
+argument_list|)
+decl_stmt|;
 name|GimpToolInfo
 modifier|*
 name|tool_info
@@ -5306,10 +5315,7 @@ condition|)
 return|return;
 name|tool_info
 operator|=
-name|GIMP_TOOL
-argument_list|(
-name|tr_tool
-argument_list|)
+name|tool
 operator|->
 name|tool_info
 expr_stmt|;
@@ -5348,14 +5354,8 @@ name|tr_tool
 operator|->
 name|shell_desc
 argument_list|,
-name|GIMP_TOOL
-argument_list|(
-name|tr_tool
-argument_list|)
-operator|->
-name|gdisp
-operator|->
-name|shell
+name|NULL
+comment|/* tool->gdisp->shell */
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,

@@ -1120,14 +1120,8 @@ name|tool
 operator|->
 name|tool_info
 argument_list|,
-name|GIMP_TOOL
-argument_list|(
-name|picker_tool
-argument_list|)
-operator|->
-name|gdisp
-operator|->
-name|shell
+name|NULL
+comment|/* tool->gdisp->shell */
 argument_list|,
 name|_
 argument_list|(

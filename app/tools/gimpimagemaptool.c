@@ -883,9 +883,8 @@ name|gimp_tool_dialog_new
 argument_list|(
 name|tool_info
 argument_list|,
-name|gdisp
-operator|->
-name|shell
+name|NULL
+comment|/* gdisp->shell */
 argument_list|,
 name|klass
 operator|->
