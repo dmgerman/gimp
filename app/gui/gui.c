@@ -1393,8 +1393,7 @@ endif|#
 directive|endif
 if|if
 condition|(
-operator|!
-name|GTK_CHECK_VERSION
+name|gtk_check_version
 argument_list|(
 literal|2
 argument_list|,
@@ -1402,6 +1401,8 @@ literal|2
 argument_list|,
 literal|2
 argument_list|)
+operator|!=
+name|NULL
 condition|)
 name|gimp_message_box
 argument_list|(
