@@ -369,6 +369,31 @@ function_decl|;
 end_function_decl
 
 begin_comment
+comment|/*  private variables  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|fill_type
+specifier|static
+name|GimpFillType
+name|fill_type
+init|=
+name|GIMP_TRANSPARENT_FILL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|layer_name
+specifier|static
+name|gchar
+modifier|*
+name|layer_name
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
 comment|/*  public functions  */
 end_comment
 
@@ -2607,27 +2632,6 @@ block|}
 struct|;
 end_struct
 
-begin_decl_stmt
-DECL|variable|fill_type
-specifier|static
-name|GimpFillType
-name|fill_type
-init|=
-name|GIMP_TRANSPARENT_FILL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|layer_name
-specifier|static
-name|gchar
-modifier|*
-name|layer_name
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
 begin_function
 specifier|static
 name|void
@@ -3284,7 +3288,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacing
@@ -3296,7 +3300,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4365,16 +4369,14 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_table_set_col_spacing
+name|gtk_table_set_col_spacings
 argument_list|(
 name|GTK_TABLE
 argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|0
-argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacings
@@ -4384,7 +4386,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5148,10 +5150,6 @@ name|options
 init|=
 name|data
 decl_stmt|;
-name|GimpLayer
-modifier|*
-name|layer
-decl_stmt|;
 if|if
 condition|(
 name|options
@@ -5169,16 +5167,6 @@ operator|->
 name|height
 operator|>
 literal|0
-operator|&&
-operator|(
-name|layer
-operator|=
-operator|(
-name|options
-operator|->
-name|layer
-operator|)
-operator|)
 condition|)
 block|{
 name|GimpImage
@@ -5189,6 +5177,8 @@ name|gimp_item_get_image
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
+name|options
+operator|->
 name|layer
 argument_list|)
 argument_list|)
@@ -5231,6 +5221,8 @@ name|gimp_item_scale_by_origin
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
+name|options
+operator|->
 name|layer
 argument_list|)
 argument_list|,
@@ -5501,10 +5493,6 @@ name|options
 init|=
 name|data
 decl_stmt|;
-name|GimpLayer
-modifier|*
-name|layer
-decl_stmt|;
 if|if
 condition|(
 name|options
@@ -5522,16 +5510,6 @@ operator|->
 name|height
 operator|>
 literal|0
-operator|&&
-operator|(
-name|layer
-operator|=
-operator|(
-name|options
-operator|->
-name|layer
-operator|)
-operator|)
 condition|)
 block|{
 name|GimpImage
@@ -5542,6 +5520,8 @@ name|gimp_item_get_image
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
+name|options
+operator|->
 name|layer
 argument_list|)
 argument_list|)
@@ -5561,6 +5541,8 @@ name|gimp_item_resize
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
+name|options
+operator|->
 name|layer
 argument_list|)
 argument_list|,
