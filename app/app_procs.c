@@ -2455,6 +2455,7 @@ argument_list|(
 name|RECT_SELECT
 argument_list|)
 expr_stmt|;
+comment|/* FIXME: This needs to go in preferences */
 name|message_handler
 operator|=
 name|MESSAGE_BOX

@@ -124,7 +124,7 @@ value|((a&256)? (~(a>>31)) : a)
 end_define
 
 begin_typedef
-DECL|enum|__anon2a4592980103
+DECL|enum|__anon2b88f7b00103
 typedef|typedef
 enum|enum
 block|{
@@ -133,6 +133,9 @@ name|MESSAGE_BOX
 block|,
 DECL|enumerator|CONSOLE
 name|CONSOLE
+block|,
+DECL|enumerator|ERROR_CONSOLE
+name|ERROR_CONSOLE
 DECL|typedef|MessageHandlerType
 block|}
 name|MessageHandlerType
