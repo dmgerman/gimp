@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289b6eb80103
+DECL|enum|__anon27c5123d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1074,7 +1074,7 @@ directive|ifdef
 name|__GNUC__
 warning|#
 directive|warning
-warning|FIXME: remove this has as soon as we depend on GTK+ 2.4.3
+warning|FIXME: remove this hack as soon as we depend on GTK+ 2.4.3
 endif|#
 directive|endif
 if|if
@@ -1330,7 +1330,7 @@ directive|ifdef
 name|__GNUC__
 warning|#
 directive|warning
-warning|FIXME: remove this has as soon as we depend on GTK+ 2.4.3
+warning|FIXME: remove this hack as soon as we depend on GTK+ 2.4.3
 endif|#
 directive|endif
 if|if
@@ -1617,7 +1617,7 @@ directive|ifdef
 name|__GNUC__
 warning|#
 directive|warning
-warning|FIXME: remove this has as soon as we depend on GTK+ 2.4.3
+warning|FIXME: remove this hack as soon as we depend on GTK+ 2.4.3
 endif|#
 directive|endif
 if|if
@@ -1880,7 +1880,7 @@ directive|ifdef
 name|__GNUC__
 warning|#
 directive|warning
-warning|FIXME: remove this has as soon as we depend on GTK+ 2.4.3
+warning|FIXME: remove this hack as soon as we depend on GTK+ 2.4.3
 endif|#
 directive|endif
 if|if
@@ -2124,7 +2124,7 @@ directive|ifdef
 name|__GNUC__
 warning|#
 directive|warning
-warning|FIXME: remove this has as soon as we depend on GTK+ 2.4.3
+warning|FIXME: remove this hack as soon as we depend on GTK+ 2.4.3
 endif|#
 directive|endif
 if|if
@@ -2344,7 +2344,7 @@ directive|ifdef
 name|__GNUC__
 warning|#
 directive|warning
-warning|FIXME: remove this has as soon as we depend on GTK+ 2.4.3
+warning|FIXME: remove this hack as soon as we depend on GTK+ 2.4.3
 endif|#
 directive|endif
 if|if
