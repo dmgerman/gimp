@@ -97,19 +97,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpmisc.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimppatternselect.h>
 end_include
 
 begin_include
 include|#
 directive|include
+file|<libgimp/gimppixelfetcher.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimppixelrgn.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpregioniterator.h>
 end_include
 
 begin_include
