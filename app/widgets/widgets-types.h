@@ -583,6 +583,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpToolView
+typedef|typedef
+name|struct
+name|_GimpToolView
+name|GimpToolView
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpDataFactoryView
 typedef|typedef
 name|struct

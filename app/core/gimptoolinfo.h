@@ -150,9 +150,9 @@ name|gchar
 modifier|*
 name|help_id
 decl_stmt|;
-DECL|member|in_toolbox
+DECL|member|visible
 name|gboolean
-name|in_toolbox
+name|visible
 decl_stmt|;
 DECL|member|tool_options
 name|GimpToolOptions
