@@ -500,7 +500,7 @@ argument_list|)
 argument_list|,
 name|OPAQUE_OPACITY
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 name|tile_manager_destroy

@@ -3889,7 +3889,7 @@ name|name
 argument_list|,
 literal|255
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 name|g_free

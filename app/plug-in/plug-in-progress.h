@@ -336,29 +336,6 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  Add a plug-in to the list of valid plug-ins and query the plug-in  *  for information if necessary.  */
-end_comment
-
-begin_function_decl
-name|void
-name|plug_in_add
-parameter_list|(
-name|gchar
-modifier|*
-name|name
-parameter_list|,
-name|gchar
-modifier|*
-name|menu_path
-parameter_list|,
-name|gchar
-modifier|*
-name|accelerator
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/* Get the "image_types" the plug-in works on. */
 end_comment
 

@@ -3122,7 +3122,7 @@ name|col
 argument_list|,
 name|opacity
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -3158,7 +3158,7 @@ name|col
 argument_list|,
 name|opacity
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|,
 name|NULL
 argument_list|,

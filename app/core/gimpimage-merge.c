@@ -771,7 +771,7 @@ name|GimpLayer
 modifier|*
 name|bottom_layer
 decl_stmt|;
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|bottom_mode
 decl_stmt|;
 name|guchar
@@ -881,7 +881,7 @@ name|NULL
 expr_stmt|;
 name|bottom_mode
 operator|=
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 expr_stmt|;
 comment|/*  Get the layer extents  */
 name|count
@@ -1334,7 +1334,7 @@ argument_list|)
 argument_list|,
 name|OPAQUE_OPACITY
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 if|if
@@ -1461,7 +1461,7 @@ literal|"merged layer"
 argument_list|,
 name|OPAQUE_OPACITY
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 if|if
@@ -1591,13 +1591,13 @@ name|bottom_layer
 operator|->
 name|mode
 operator|!=
-name|DISSOLVE_MODE
+name|GIMP_DISSOLVE_MODE
 condition|)
 name|gimp_layer_set_mode
 argument_list|(
 name|bottom_layer
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 block|}

@@ -362,11 +362,11 @@ if|if
 condition|(
 name|check_type
 operator|<
-name|LIGHT_CHECKS
+name|GIMP_LIGHT_CHECKS
 operator|||
 name|check_type
 operator|>
-name|BLACK_ONLY
+name|GIMP_BLACK_ONLY
 condition|)
 name|g_error
 argument_list|(
@@ -379,11 +379,11 @@ if|if
 condition|(
 name|check_size
 operator|<
-name|SMALL_CHECKS
+name|GIMP_SMALL_CHECKS
 operator|||
 name|check_size
 operator|>
-name|LARGE_CHECKS
+name|GIMP_LARGE_CHECKS
 condition|)
 name|g_error
 argument_list|(
@@ -565,7 +565,7 @@ name|check_size
 condition|)
 block|{
 case|case
-name|SMALL_CHECKS
+name|GIMP_SMALL_CHECKS
 case|:
 name|check_mod
 operator|=
@@ -577,7 +577,7 @@ literal|2
 expr_stmt|;
 break|break;
 case|case
-name|MEDIUM_CHECKS
+name|GIMP_MEDIUM_CHECKS
 case|:
 name|check_mod
 operator|=
@@ -589,7 +589,7 @@ literal|3
 expr_stmt|;
 break|break;
 case|case
-name|LARGE_CHECKS
+name|GIMP_LARGE_CHECKS
 case|:
 name|check_mod
 operator|=

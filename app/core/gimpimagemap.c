@@ -84,7 +84,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bad3b6f0103
+DECL|enum|__anon2b7be3ce0103
 block|{
 DECL|enumerator|IMAGE_MAP_WAITING
 name|IMAGE_MAP_WAITING
@@ -1752,7 +1752,7 @@ name|FALSE
 argument_list|,
 name|OPAQUE_OPACITY
 argument_list|,
-name|REPLACE_MODE
+name|GIMP_REPLACE_MODE
 argument_list|,
 name|NULL
 argument_list|,

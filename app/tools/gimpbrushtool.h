@@ -30,7 +30,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon277247520103
+DECL|enum|__anon2bcdfdf10103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -69,7 +69,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon277247520203
+DECL|enum|__anon2bcdfdf10203
 block|{
 DECL|enumerator|TOOL_CAN_HANDLE_CHANGING_BRUSH
 name|TOOL_CAN_HANDLE_CHANGING_BRUSH
@@ -508,7 +508,7 @@ parameter_list|,
 name|gint
 name|image_opacity
 parameter_list|,
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|paint_mode
 parameter_list|,
 name|BrushApplicationMode

@@ -16,6 +16,10 @@ directive|define
 name|__BASE_ENUMS_H__
 end_define
 
+begin_comment
+comment|/* These enums that are registered with the type system. */
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_INTERPOLATION_TYPE
 define|#
@@ -37,7 +41,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bbcae360103
+DECL|enum|__anon2a46896b0103
 block|{
 DECL|enumerator|GIMP_LINEAR_INTERPOLATION
 name|GIMP_LINEAR_INTERPOLATION
@@ -53,13 +57,113 @@ name|GimpInterpolationType
 typedef|;
 end_typedef
 
+begin_define
+DECL|macro|GIMP_TYPE_LAYER_MODE_EFFECTS
+define|#
+directive|define
+name|GIMP_TYPE_LAYER_MODE_EFFECTS
+value|(gimp_layer_mode_effects_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_layer_mode_effects_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2a46896b0203
+block|{
+DECL|enumerator|GIMP_NORMAL_MODE
+name|GIMP_NORMAL_MODE
+block|,
+DECL|enumerator|GIMP_DISSOLVE_MODE
+name|GIMP_DISSOLVE_MODE
+block|,
+DECL|enumerator|GIMP_BEHIND_MODE
+name|GIMP_BEHIND_MODE
+block|,
+DECL|enumerator|GIMP_MULTIPLY_MODE
+name|GIMP_MULTIPLY_MODE
+block|,
+DECL|enumerator|GIMP_SCREEN_MODE
+name|GIMP_SCREEN_MODE
+block|,
+DECL|enumerator|GIMP_OVERLAY_MODE
+name|GIMP_OVERLAY_MODE
+block|,
+DECL|enumerator|GIMP_DIFFERENCE_MODE
+name|GIMP_DIFFERENCE_MODE
+block|,
+DECL|enumerator|GIMP_ADDITION_MODE
+name|GIMP_ADDITION_MODE
+block|,
+DECL|enumerator|GIMP_SUBTRACT_MODE
+name|GIMP_SUBTRACT_MODE
+block|,
+DECL|enumerator|GIMP_DARKEN_ONLY_MODE
+name|GIMP_DARKEN_ONLY_MODE
+block|,
+DECL|enumerator|GIMP_LIGHTEN_ONLY_MODE
+name|GIMP_LIGHTEN_ONLY_MODE
+block|,
+DECL|enumerator|GIMP_HUE_MODE
+name|GIMP_HUE_MODE
+block|,
+DECL|enumerator|GIMP_SATURATION_MODE
+name|GIMP_SATURATION_MODE
+block|,
+DECL|enumerator|GIMP_COLOR_MODE
+name|GIMP_COLOR_MODE
+block|,
+DECL|enumerator|GIMP_VALUE_MODE
+name|GIMP_VALUE_MODE
+block|,
+DECL|enumerator|GIMP_DIVIDE_MODE
+name|GIMP_DIVIDE_MODE
+block|,
+DECL|enumerator|GIMP_DODGE_MODE
+name|GIMP_DODGE_MODE
+block|,
+DECL|enumerator|GIMP_BURN_MODE
+name|GIMP_BURN_MODE
+block|,
+DECL|enumerator|GIMP_HARDLIGHT_MODE
+name|GIMP_HARDLIGHT_MODE
+block|,
+DECL|enumerator|GIMP_COLOR_ERASE_MODE
+name|GIMP_COLOR_ERASE_MODE
+block|,
+DECL|enumerator|GIMP_ERASE_MODE
+name|GIMP_ERASE_MODE
+block|,
+comment|/*< skip>*/
+DECL|enumerator|GIMP_REPLACE_MODE
+name|GIMP_REPLACE_MODE
+block|,
+comment|/*< skip>*/
+DECL|enumerator|GIMP_ANTI_ERASE_MODE
+name|GIMP_ANTI_ERASE_MODE
+comment|/*< skip>*/
+DECL|typedef|GimpLayerModeEffects
+block|}
+name|GimpLayerModeEffects
+typedef|;
+end_typedef
+
 begin_endif
 endif|#
 directive|endif
 end_endif
 
 begin_comment
-comment|/* __BASE_TYPES_H__ */
+comment|/* __BASE_ENUMS_H__ */
 end_comment
 
 end_unit

@@ -580,7 +580,7 @@ name|view
 argument_list|,
 name|FALSE
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1566,13 +1566,13 @@ condition|(
 name|layer
 condition|)
 block|{
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|mode
 decl_stmt|;
 name|mode
 operator|=
 operator|(
-name|LayerModeEffects
+name|GimpLayerModeEffects
 operator|)
 name|GPOINTER_TO_INT
 argument_list|(

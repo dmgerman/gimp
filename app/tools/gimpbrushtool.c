@@ -581,7 +581,7 @@ parameter_list|,
 name|gint
 name|image_opacity
 parameter_list|,
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|paint_mode
 parameter_list|,
 name|PaintApplicationMode
@@ -5634,7 +5634,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_paint_tool_paste_canvas (GimpPaintTool * paint_tool,GimpDrawable * drawable,gint brush_opacity,gint image_opacity,LayerModeEffects paint_mode,BrushApplicationMode brush_hardness,gdouble brush_scale,PaintApplicationMode mode)
+DECL|function|gimp_paint_tool_paste_canvas (GimpPaintTool * paint_tool,GimpDrawable * drawable,gint brush_opacity,gint image_opacity,GimpLayerModeEffects paint_mode,BrushApplicationMode brush_hardness,gdouble brush_scale,PaintApplicationMode mode)
 name|gimp_paint_tool_paste_canvas
 parameter_list|(
 name|GimpPaintTool
@@ -5651,7 +5651,7 @@ parameter_list|,
 name|gint
 name|image_opacity
 parameter_list|,
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|paint_mode
 parameter_list|,
 name|BrushApplicationMode
@@ -7370,7 +7370,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_paint_tool_paste (GimpPaintTool * paint_tool,MaskBuf * brush_mask,GimpDrawable * drawable,gint brush_opacity,gint image_opacity,LayerModeEffects paint_mode,PaintApplicationMode mode)
+DECL|function|gimp_paint_tool_paste (GimpPaintTool * paint_tool,MaskBuf * brush_mask,GimpDrawable * drawable,gint brush_opacity,gint image_opacity,GimpLayerModeEffects paint_mode,PaintApplicationMode mode)
 name|gimp_paint_tool_paste
 parameter_list|(
 name|GimpPaintTool
@@ -7391,7 +7391,7 @@ parameter_list|,
 name|gint
 name|image_opacity
 parameter_list|,
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|paint_mode
 parameter_list|,
 name|PaintApplicationMode
@@ -7786,7 +7786,7 @@ name|brush_opacity
 argument_list|,
 name|image_opacity
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|,
 name|mode
 argument_list|)

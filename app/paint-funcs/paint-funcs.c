@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a68c6b0103
+DECL|enum|__anon2ac290a10103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -188,7 +188,7 @@ name|LayerMode
 name|layer_modes
 index|[]
 init|=
-comment|/* This must obviously be in the same 			        * order as the corresponding values 		         	* in the LayerModeEffects enumeration. 				*/
+comment|/* This must obviously be in the same 			        * order as the corresponding values 		         	* in the GimpLayerModeEffects enumeration. 				*/
 block|{
 block|{
 name|TRUE
@@ -198,7 +198,7 @@ block|,
 name|FALSE
 block|, }
 block|,
-comment|/*  NORMAL_MODE        */
+comment|/*  GIMP_NORMAL_MODE        */
 block|{
 name|TRUE
 block|,
@@ -207,7 +207,7 @@ block|,
 name|FALSE
 block|, }
 block|,
-comment|/*  DISSOLVE_MODE      */
+comment|/*  GIMP_DISSOLVE_MODE      */
 block|{
 name|TRUE
 block|,
@@ -216,7 +216,7 @@ block|,
 name|FALSE
 block|, }
 block|,
-comment|/*  BEHIND_MODE        */
+comment|/*  GIMP_BEHIND_MODE        */
 block|{
 name|FALSE
 block|,
@@ -225,7 +225,7 @@ block|,
 name|FALSE
 block|, }
 block|,
-comment|/*  MULTIPLY_MODE      */
+comment|/*  GIMP_MULTIPLY_MODE      */
 block|{
 name|FALSE
 block|,
@@ -234,7 +234,7 @@ block|,
 name|FALSE
 block|, }
 block|,
-comment|/*  SCREEN_MODE        */
+comment|/*  GIMP_SCREEN_MODE        */
 block|{
 name|FALSE
 block|,
@@ -243,7 +243,7 @@ block|,
 name|FALSE
 block|, }
 block|,
-comment|/*  OVERLAY_MODE       */
+comment|/*  GIMP_OVERLAY_MODE       */
 block|{
 name|FALSE
 block|,
@@ -252,7 +252,7 @@ block|,
 name|FALSE
 block|, }
 block|,
-comment|/*  DIFFERENCE_MODE    */
+comment|/*  GIMP_DIFFERENCE_MODE    */
 block|{
 name|FALSE
 block|,
@@ -261,7 +261,7 @@ block|,
 name|FALSE
 block|, }
 block|,
-comment|/*  ADDITION_MODE      */
+comment|/*  GIMP_ADDITION_MODE      */
 block|{
 name|FALSE
 block|,
@@ -270,7 +270,7 @@ block|,
 name|FALSE
 block|, }
 block|,
-comment|/*  SUBTRACT_MODE      */
+comment|/*  GIMP_SUBTRACT_MODE      */
 block|{
 name|FALSE
 block|,
@@ -279,7 +279,7 @@ block|,
 name|FALSE
 block|, }
 block|,
-comment|/*  DARKEN_ONLY_MODE   */
+comment|/*  GIMP_DARKEN_ONLY_MODE   */
 block|{
 name|FALSE
 block|,
@@ -288,7 +288,7 @@ block|,
 name|FALSE
 block|, }
 block|,
-comment|/*  LIGHTEN_ONLY_MODE  */
+comment|/*  GIMP_LIGHTEN_ONLY_MODE  */
 block|{
 name|FALSE
 block|,
@@ -297,7 +297,7 @@ block|,
 name|FALSE
 block|, }
 block|,
-comment|/*  HUE_MODE           */
+comment|/*  GIMP_HUE_MODE           */
 block|{
 name|FALSE
 block|,
@@ -306,7 +306,7 @@ block|,
 name|FALSE
 block|, }
 block|,
-comment|/*  SATURATION_MODE    */
+comment|/*  GIMP_SATURATION_MODE    */
 block|{
 name|FALSE
 block|,
@@ -315,7 +315,7 @@ block|,
 name|FALSE
 block|, }
 block|,
-comment|/*  COLOR_MODE         */
+comment|/*  GIMP_COLOR_MODE         */
 block|{
 name|FALSE
 block|,
@@ -324,7 +324,7 @@ block|,
 name|FALSE
 block|, }
 block|,
-comment|/*  VALUE_MODE         */
+comment|/*  GIMP_VALUE_MODE         */
 block|{
 name|FALSE
 block|,
@@ -333,7 +333,7 @@ block|,
 name|FALSE
 block|, }
 block|,
-comment|/*  DIVIDE_MODE        */
+comment|/*  GIMP_DIVIDE_MODE        */
 block|{
 name|FALSE
 block|,
@@ -342,7 +342,7 @@ block|,
 name|FALSE
 block|, }
 block|,
-comment|/*  DODGE_MODE         */
+comment|/*  GIMP_DODGE_MODE         */
 block|{
 name|FALSE
 block|,
@@ -351,7 +351,7 @@ block|,
 name|FALSE
 block|, }
 block|,
-comment|/*  BURN_MODE          */
+comment|/*  GIMP_BURN_MODE          */
 block|{
 name|FALSE
 block|,
@@ -360,16 +360,7 @@ block|,
 name|FALSE
 block|, }
 block|,
-comment|/*  HARDLIGHT_MODE     */
-block|{
-name|TRUE
-block|,
-name|FALSE
-block|,
-name|TRUE
-block|,  }
-block|,
-comment|/*  COLOR_ERASE_MODE   */
+comment|/*  GIMP_HARDLIGHT_MODE     */
 block|{
 name|TRUE
 block|,
@@ -378,7 +369,16 @@ block|,
 name|TRUE
 block|,  }
 block|,
-comment|/*  ERASE_MODE         */
+comment|/*  GIMP_COLOR_ERASE_MODE   */
+block|{
+name|TRUE
+block|,
+name|FALSE
+block|,
+name|TRUE
+block|,  }
+block|,
+comment|/*  GIMP_ERASE_MODE         */
 block|{
 name|TRUE
 block|,
@@ -387,7 +387,7 @@ block|,
 name|TRUE
 block|,  }
 block|,
-comment|/*  REPLACE_MODE       */
+comment|/*  GIMP_REPLACE_MODE       */
 block|{
 name|TRUE
 block|,
@@ -395,7 +395,7 @@ name|TRUE
 block|,
 name|FALSE
 block|, }
-comment|/*  ANTI_ERASE_MODE    */
+comment|/*  GIMP_ANTI_ERASE_MODE    */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1757,56 +1757,56 @@ condition|)
 block|{
 name|layer_mode_funcs
 index|[
-name|DIFFERENCE_MODE
+name|GIMP_DIFFERENCE_MODE
 index|]
 operator|=
 name|layer_difference_mode_mmx
 expr_stmt|;
 name|layer_mode_funcs
 index|[
-name|ADDITION_MODE
+name|GIMP_ADDITION_MODE
 index|]
 operator|=
 name|layer_addition_mode_mmx
 expr_stmt|;
 name|layer_mode_funcs
 index|[
-name|SUBTRACT_MODE
+name|GIMP_SUBTRACT_MODE
 index|]
 operator|=
 name|layer_subtract_mode_mmx
 expr_stmt|;
 name|layer_mode_funcs
 index|[
-name|OVERLAY_MODE
+name|GIMP_OVERLAY_MODE
 index|]
 operator|=
 name|layer_overlay_mode_mmx
 expr_stmt|;
 name|layer_mode_funcs
 index|[
-name|SCREEN_MODE
+name|GIMP_SCREEN_MODE
 index|]
 operator|=
 name|layer_screen_mode_mmx
 expr_stmt|;
 name|layer_mode_funcs
 index|[
-name|MULTIPLY_MODE
+name|GIMP_MULTIPLY_MODE
 index|]
 operator|=
 name|layer_multiply_mode_mmx
 expr_stmt|;
 name|layer_mode_funcs
 index|[
-name|DARKEN_ONLY_MODE
+name|GIMP_DARKEN_ONLY_MODE
 index|]
 operator|=
 name|layer_darken_only_mode_mmx
 expr_stmt|;
 name|layer_mode_funcs
 index|[
-name|LIGHTEN_ONLY_MODE
+name|GIMP_LIGHTEN_ONLY_MODE
 index|]
 operator|=
 name|layer_lighten_only_mode_mmx
@@ -9931,7 +9931,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|convolve_region (PixelRegion * srcR,PixelRegion * destR,gint * matrix,gint size,gint divisor,ConvolutionType mode)
+DECL|function|convolve_region (PixelRegion * srcR,PixelRegion * destR,gint * matrix,gint size,gint divisor,GimpConvolutionType mode)
 name|convolve_region
 parameter_list|(
 name|PixelRegion
@@ -9952,7 +9952,7 @@ parameter_list|,
 name|gint
 name|divisor
 parameter_list|,
-name|ConvolutionType
+name|GimpConvolutionType
 name|mode
 parameter_list|)
 block|{
@@ -10018,7 +10018,7 @@ if|if
 condition|(
 name|mode
 operator|==
-name|NEGATIVE_CONVOL
+name|GIMP_NEGATIVE_CONVOL
 condition|)
 block|{
 name|offset
@@ -10027,7 +10027,7 @@ literal|128
 expr_stmt|;
 name|mode
 operator|=
-name|NORMAL_CONVOL
+name|GIMP_NORMAL_CONVOL
 expr_stmt|;
 block|}
 else|else
@@ -10342,7 +10342,7 @@ literal|0
 operator|&&
 name|mode
 operator|!=
-name|NORMAL_CONVOL
+name|GIMP_NORMAL_CONVOL
 condition|)
 name|total
 index|[
@@ -20881,7 +20881,7 @@ name|guint
 name|opacity
 decl_stmt|;
 DECL|member|mode
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|mode
 decl_stmt|;
 DECL|member|affect
@@ -20951,7 +20951,7 @@ decl_stmt|;
 name|guint
 name|opacity
 decl_stmt|;
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|mode
 decl_stmt|;
 name|gboolean
@@ -21125,7 +21125,7 @@ if|if
 condition|(
 name|mode
 operator|==
-name|DISSOLVE_MODE
+name|GIMP_DISSOLVE_MODE
 condition|)
 block|{
 name|dissolve_pixels
@@ -21215,7 +21215,7 @@ if|if
 condition|(
 name|mode
 operator|==
-name|DISSOLVE_MODE
+name|GIMP_DISSOLVE_MODE
 condition|)
 block|{
 name|dissolve_pixels
@@ -21325,7 +21325,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|initial_region (PixelRegion * src,PixelRegion * dest,PixelRegion * mask,guchar * data,gint opacity,LayerModeEffects mode,gboolean * affect,InitialMode type)
+DECL|function|initial_region (PixelRegion * src,PixelRegion * dest,PixelRegion * mask,guchar * data,gint opacity,GimpLayerModeEffects mode,gboolean * affect,InitialMode type)
 name|initial_region
 parameter_list|(
 name|PixelRegion
@@ -21347,7 +21347,7 @@ parameter_list|,
 name|gint
 name|opacity
 parameter_list|,
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|mode
 parameter_list|,
 name|gboolean
@@ -21424,7 +21424,7 @@ name|guint
 name|opacity
 decl_stmt|;
 DECL|member|mode
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|mode
 decl_stmt|;
 DECL|member|affect
@@ -21457,7 +21457,7 @@ begin_function
 specifier|static
 specifier|inline
 name|CombinationMode
-DECL|function|apply_indexed_layer_mode (guchar * src1,guchar * src2,guchar ** dest,LayerModeEffects mode,CombinationMode cmode)
+DECL|function|apply_indexed_layer_mode (guchar * src1,guchar * src2,guchar ** dest,GimpLayerModeEffects mode,CombinationMode cmode)
 name|apply_indexed_layer_mode
 parameter_list|(
 name|guchar
@@ -21473,7 +21473,7 @@ modifier|*
 modifier|*
 name|dest
 parameter_list|,
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|mode
 parameter_list|,
 name|CombinationMode
@@ -21487,7 +21487,7 @@ name|mode
 condition|)
 block|{
 case|case
-name|REPLACE_MODE
+name|GIMP_REPLACE_MODE
 case|:
 operator|*
 name|dest
@@ -21500,7 +21500,7 @@ name|REPLACE_INDEXED
 expr_stmt|;
 break|break;
 case|case
-name|BEHIND_MODE
+name|GIMP_BEHIND_MODE
 case|:
 operator|*
 name|dest
@@ -21524,7 +21524,7 @@ name|NO_COMBINATION
 expr_stmt|;
 break|break;
 case|case
-name|ERASE_MODE
+name|GIMP_ERASE_MODE
 case|:
 operator|*
 name|dest
@@ -21588,7 +21588,7 @@ decl_stmt|;
 name|guint
 name|opacity
 decl_stmt|;
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|mode
 decl_stmt|;
 name|gboolean
@@ -22726,7 +22726,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_regions (PixelRegion * src1,PixelRegion * src2,PixelRegion * dest,PixelRegion * mask,guchar * data,guint opacity,LayerModeEffects mode,gboolean * affect,CombinationMode type)
+DECL|function|combine_regions (PixelRegion * src1,PixelRegion * src2,PixelRegion * dest,PixelRegion * mask,guchar * data,guint opacity,GimpLayerModeEffects mode,gboolean * affect,CombinationMode type)
 name|combine_regions
 parameter_list|(
 name|PixelRegion
@@ -22752,7 +22752,7 @@ parameter_list|,
 name|guint
 name|opacity
 parameter_list|,
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|mode
 parameter_list|,
 name|gboolean

@@ -1118,9 +1118,9 @@ literal|255
 argument_list|,
 name|anti_erase
 condition|?
-name|ANTI_ERASE_MODE
+name|GIMP_ANTI_ERASE_MODE
 else|:
-name|ERASE_MODE
+name|GIMP_ERASE_MODE
 argument_list|,
 name|hard
 condition|?

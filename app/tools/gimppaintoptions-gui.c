@@ -342,7 +342,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|paint_mode
 parameter_list|,
 name|gpointer
@@ -4025,7 +4025,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|paint_mode
 decl_stmt|;
 name|PaintOptions
@@ -4035,7 +4035,7 @@ decl_stmt|;
 name|paint_mode
 operator|=
 operator|(
-name|LayerModeEffects
+name|GimpLayerModeEffects
 operator|)
 name|g_object_get_data
 argument_list|(
@@ -4105,14 +4105,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|paint_options_paint_mode_changed (GimpContext * context,LayerModeEffects paint_mode,gpointer data)
+DECL|function|paint_options_paint_mode_changed (GimpContext * context,GimpLayerModeEffects paint_mode,gpointer data)
 name|paint_options_paint_mode_changed
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|paint_mode
 parameter_list|,
 name|gpointer

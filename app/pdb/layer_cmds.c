@@ -40,7 +40,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/base-types.h"
+file|"base/base-enums.h"
 end_include
 
 begin_include
@@ -805,11 +805,11 @@ if|if
 condition|(
 name|mode
 operator|<
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 operator|||
 name|mode
 operator|>
-name|COLOR_ERASE_MODE
+name|GIMP_COLOR_ERASE_MODE
 condition|)
 name|success
 operator|=
@@ -855,7 +855,7 @@ argument_list|,
 name|opacity
 argument_list|,
 operator|(
-name|LayerModeEffects
+name|GimpLayerModeEffects
 operator|)
 name|mode
 argument_list|)
@@ -965,7 +965,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"mode"
 block|,
-literal|"The layer combination mode: { NORMAL_MODE (0), DISSOLVE_MODE (1), BEHIND_MODE (2), MULTIPLY_MODE (3), SCREEN_MODE (4), OVERLAY_MODE (5), DIFFERENCE_MODE (6), ADDITION_MODE (7), SUBTRACT_MODE (8), DARKEN_ONLY_MODE (9), LIGHTEN_ONLY_MODE (10), HUE_MODE (11), SATURATION_MODE (12), COLOR_MODE (13), VALUE_MODE (14), DIVIDE_MODE (15), DODGE_MODE (16), BURN_MODE (17), HARDLIGHT_MODE (18), COLOR_ERASE_MODE (19) }"
+literal|"The layer combination mode: { GIMP_NORMAL_MODE (0), GIMP_DISSOLVE_MODE (1), GIMP_BEHIND_MODE (2), GIMP_MULTIPLY_MODE (3), GIMP_SCREEN_MODE (4), GIMP_OVERLAY_MODE (5), GIMP_DIFFERENCE_MODE (6), GIMP_ADDITION_MODE (7), GIMP_SUBTRACT_MODE (8), GIMP_DARKEN_ONLY_MODE (9), GIMP_LIGHTEN_ONLY_MODE (10), GIMP_HUE_MODE (11), GIMP_SATURATION_MODE (12), GIMP_COLOR_MODE (13), GIMP_VALUE_MODE (14), GIMP_DIVIDE_MODE (15), GIMP_DODGE_MODE (16), GIMP_BURN_MODE (17), GIMP_HARDLIGHT_MODE (18), GIMP_COLOR_ERASE_MODE (19) }"
 block|}
 block|}
 decl_stmt|;
@@ -5957,11 +5957,11 @@ if|if
 condition|(
 name|mode
 operator|<
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 operator|||
 name|mode
 operator|>
-name|COLOR_ERASE_MODE
+name|GIMP_COLOR_ERASE_MODE
 condition|)
 name|success
 operator|=

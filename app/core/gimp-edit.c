@@ -573,7 +573,7 @@ argument_list|)
 argument_list|,
 name|OPAQUE_OPACITY
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 else|else
@@ -597,7 +597,7 @@ argument_list|)
 argument_list|,
 name|OPAQUE_OPACITY
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 if|if
@@ -904,7 +904,7 @@ argument_list|)
 argument_list|,
 name|OPAQUE_OPACITY
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 if|if
@@ -1180,7 +1180,7 @@ name|TRUE
 argument_list|,
 name|OPAQUE_OPACITY
 argument_list|,
-name|ERASE_MODE
+name|GIMP_ERASE_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -1559,7 +1559,7 @@ name|TRUE
 argument_list|,
 name|OPAQUE_OPACITY
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|,
 name|NULL
 argument_list|,

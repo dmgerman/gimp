@@ -30,7 +30,7 @@ parameter_list|,
 name|gboolean
 name|with_behind_mode
 parameter_list|,
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|initial
 parameter_list|)
 function_decl|;

@@ -42,7 +42,7 @@ end_include
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_paint_mode_menu_new (GtkSignalFunc callback,gpointer data,gboolean with_behind_mode,LayerModeEffects initial)
+DECL|function|gimp_paint_mode_menu_new (GtkSignalFunc callback,gpointer data,gboolean with_behind_mode,GimpLayerModeEffects initial)
 name|gimp_paint_mode_menu_new
 parameter_list|(
 name|GtkSignalFunc
@@ -54,7 +54,7 @@ parameter_list|,
 name|gboolean
 name|with_behind_mode
 parameter_list|,
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|initial
 parameter_list|)
 block|{
@@ -90,7 +90,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -102,7 +102,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|DISSOLVE_MODE
+name|GIMP_DISSOLVE_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -114,7 +114,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|BEHIND_MODE
+name|GIMP_BEHIND_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -126,7 +126,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|COLOR_ERASE_MODE
+name|GIMP_COLOR_ERASE_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -147,7 +147,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|MULTIPLY_MODE
+name|GIMP_MULTIPLY_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -159,7 +159,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|DIVIDE_MODE
+name|GIMP_DIVIDE_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -171,7 +171,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|SCREEN_MODE
+name|GIMP_SCREEN_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -183,7 +183,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|OVERLAY_MODE
+name|GIMP_OVERLAY_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -204,7 +204,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|DODGE_MODE
+name|GIMP_DODGE_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -216,7 +216,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|BURN_MODE
+name|GIMP_BURN_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -228,7 +228,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|HARDLIGHT_MODE
+name|GIMP_HARDLIGHT_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -249,7 +249,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|DIFFERENCE_MODE
+name|GIMP_DIFFERENCE_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -261,7 +261,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|ADDITION_MODE
+name|GIMP_ADDITION_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -273,7 +273,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|SUBTRACT_MODE
+name|GIMP_SUBTRACT_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -285,7 +285,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|DARKEN_ONLY_MODE
+name|GIMP_DARKEN_ONLY_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -297,7 +297,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|LIGHTEN_ONLY_MODE
+name|GIMP_LIGHTEN_ONLY_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -318,7 +318,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|HUE_MODE
+name|GIMP_HUE_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -330,7 +330,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|SATURATION_MODE
+name|GIMP_SATURATION_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -342,7 +342,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|COLOR_MODE
+name|GIMP_COLOR_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -354,7 +354,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|VALUE_MODE
+name|GIMP_VALUE_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -387,7 +387,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -399,7 +399,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|DISSOLVE_MODE
+name|GIMP_DISSOLVE_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -420,7 +420,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|MULTIPLY_MODE
+name|GIMP_MULTIPLY_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -432,7 +432,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|DIVIDE_MODE
+name|GIMP_DIVIDE_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -444,7 +444,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|SCREEN_MODE
+name|GIMP_SCREEN_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -456,7 +456,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|OVERLAY_MODE
+name|GIMP_OVERLAY_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -477,7 +477,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|DODGE_MODE
+name|GIMP_DODGE_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -489,7 +489,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|BURN_MODE
+name|GIMP_BURN_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -501,7 +501,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|HARDLIGHT_MODE
+name|GIMP_HARDLIGHT_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -522,7 +522,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|DIFFERENCE_MODE
+name|GIMP_DIFFERENCE_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -534,7 +534,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|ADDITION_MODE
+name|GIMP_ADDITION_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -546,7 +546,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|SUBTRACT_MODE
+name|GIMP_SUBTRACT_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -558,7 +558,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|DARKEN_ONLY_MODE
+name|GIMP_DARKEN_ONLY_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -570,7 +570,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|LIGHTEN_ONLY_MODE
+name|GIMP_LIGHTEN_ONLY_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -591,7 +591,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|HUE_MODE
+name|GIMP_HUE_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -603,7 +603,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|SATURATION_MODE
+name|GIMP_SATURATION_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -615,7 +615,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|COLOR_MODE
+name|GIMP_COLOR_MODE
 argument_list|,
 name|NULL
 argument_list|,
@@ -627,7 +627,7 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|VALUE_MODE
+name|GIMP_VALUE_MODE
 argument_list|,
 name|NULL
 argument_list|,

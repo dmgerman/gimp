@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296493d20103
+DECL|enum|__anon2acfc0260103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -2005,7 +2005,7 @@ name|undo
 argument_list|,
 name|OPAQUE_OPACITY
 argument_list|,
-name|REPLACE_MODE
+name|GIMP_REPLACE_MODE
 argument_list|,
 name|NULL
 argument_list|,

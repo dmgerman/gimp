@@ -867,11 +867,11 @@ if|if
 condition|(
 name|channel
 operator|<
-name|VALUE_LUT
+name|GIMP_VALUE_LUT
 operator|||
 name|channel
 operator|>
-name|ALPHA_LUT
+name|GIMP_ALPHA_LUT
 condition|)
 name|success
 operator|=
@@ -1023,7 +1023,7 @@ argument_list|)
 operator|&&
 name|channel
 operator|==
-name|ALPHA_LUT
+name|GIMP_ALPHA_LUT
 operator|)
 operator|||
 operator|(
@@ -1034,11 +1034,11 @@ argument_list|)
 operator|&&
 name|channel
 operator|!=
-name|GRAY_LUT
+name|GIMP_GRAY_LUT
 operator|&&
 name|channel
 operator|!=
-name|ALPHA_LUT
+name|GIMP_ALPHA_LUT
 operator|)
 condition|)
 name|success
@@ -1315,7 +1315,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"channel"
 block|,
-literal|"The channel to modify: { VALUE_LUT (0), RED_LUT (1), GREEN_LUT (2), BLUE_LUT (3), ALPHA_LUT (4) }"
+literal|"The channel to modify: { GIMP_VALUE_LUT (0), GIMP_RED_LUT (1), GIMP_GREEN_LUT (2), GIMP_BLUE_LUT (3), GIMP_ALPHA_LUT (4) }"
 block|}
 block|,
 block|{
@@ -2300,11 +2300,11 @@ if|if
 condition|(
 name|channel
 operator|<
-name|VALUE_LUT
+name|GIMP_VALUE_LUT
 operator|||
 name|channel
 operator|>
-name|ALPHA_LUT
+name|GIMP_ALPHA_LUT
 condition|)
 name|success
 operator|=
@@ -2376,7 +2376,7 @@ argument_list|)
 operator|&&
 name|channel
 operator|!=
-name|GRAY_LUT
+name|GIMP_GRAY_LUT
 operator|)
 condition|)
 name|success
@@ -2768,7 +2768,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"channel"
 block|,
-literal|"The channel to modify: { VALUE_LUT (0), RED_LUT (1), GREEN_LUT (2), BLUE_LUT (3), ALPHA_LUT (4) }"
+literal|"The channel to modify: { GIMP_VALUE_LUT (0), GIMP_RED_LUT (1), GIMP_GREEN_LUT (2), GIMP_BLUE_LUT (3), GIMP_ALPHA_LUT (4) }"
 block|}
 block|,
 block|{
@@ -2926,11 +2926,11 @@ if|if
 condition|(
 name|channel
 operator|<
-name|VALUE_LUT
+name|GIMP_VALUE_LUT
 operator|||
 name|channel
 operator|>
-name|ALPHA_LUT
+name|GIMP_ALPHA_LUT
 condition|)
 name|success
 operator|=
@@ -2998,7 +2998,7 @@ argument_list|)
 operator|&&
 name|channel
 operator|!=
-name|GRAY_LUT
+name|GIMP_GRAY_LUT
 operator|)
 condition|)
 name|success
@@ -3293,7 +3293,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"channel"
 block|,
-literal|"The channel to modify: { VALUE_LUT (0), RED_LUT (1), GREEN_LUT (2), BLUE_LUT (3), ALPHA_LUT (4) }"
+literal|"The channel to modify: { GIMP_VALUE_LUT (0), GIMP_RED_LUT (1), GIMP_GREEN_LUT (2), GIMP_BLUE_LUT (3), GIMP_ALPHA_LUT (4) }"
 block|}
 block|,
 block|{
@@ -4054,11 +4054,11 @@ if|if
 condition|(
 name|channel
 operator|<
-name|VALUE_LUT
+name|GIMP_VALUE_LUT
 operator|||
 name|channel
 operator|>
-name|ALPHA_LUT
+name|GIMP_ALPHA_LUT
 condition|)
 name|success
 operator|=
@@ -4134,7 +4134,7 @@ argument_list|)
 operator|&&
 name|channel
 operator|!=
-name|GRAY_LUT
+name|GIMP_GRAY_LUT
 operator|)
 condition|)
 name|success
@@ -4471,7 +4471,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"channel"
 block|,
-literal|"The channel to modify: { VALUE_LUT (0), RED_LUT (1), GREEN_LUT (2), BLUE_LUT (3), ALPHA_LUT (4) }"
+literal|"The channel to modify: { GIMP_VALUE_LUT (0), GIMP_RED_LUT (1), GIMP_GREEN_LUT (2), GIMP_BLUE_LUT (3), GIMP_ALPHA_LUT (4) }"
 block|}
 block|,
 block|{

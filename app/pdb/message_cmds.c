@@ -304,7 +304,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"handler"
 block|,
-literal|"The current handler type: { MESSAGE_BOX (0), CONSOLE (1), ERROR_CONSOLE (2) }"
+literal|"The current handler type: { GIMP_MESSAGE_BOX (0), GIMP_CONSOLE (1), GIMP_ERROR_CONSOLE (2) }"
 block|}
 block|}
 decl_stmt|;
@@ -432,7 +432,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"handler"
 block|,
-literal|"The new handler type: { MESSAGE_BOX (0), CONSOLE (1), ERROR_CONSOLE (2) }"
+literal|"The new handler type: { GIMP_MESSAGE_BOX (0), GIMP_CONSOLE (1), GIMP_ERROR_CONSOLE (2) }"
 block|}
 block|}
 decl_stmt|;

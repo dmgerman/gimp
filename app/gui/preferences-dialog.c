@@ -156,7 +156,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279813670103
+DECL|enum|__anon2c77a1d30103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -8920,7 +8920,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|LIGHT_CHECKS
+name|GIMP_LIGHT_CHECKS
 argument_list|)
 argument_list|,
 name|NULL
@@ -8932,7 +8932,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|GRAY_CHECKS
+name|GIMP_GRAY_CHECKS
 argument_list|)
 argument_list|,
 name|NULL
@@ -8944,7 +8944,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|DARK_CHECKS
+name|GIMP_DARK_CHECKS
 argument_list|)
 argument_list|,
 name|NULL
@@ -8956,7 +8956,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|WHITE_ONLY
+name|GIMP_WHITE_ONLY
 argument_list|)
 argument_list|,
 name|NULL
@@ -8968,7 +8968,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|GRAY_ONLY
+name|GIMP_GRAY_ONLY
 argument_list|)
 argument_list|,
 name|NULL
@@ -8980,7 +8980,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|BLACK_ONLY
+name|GIMP_BLACK_ONLY
 argument_list|)
 argument_list|,
 name|NULL
@@ -9045,7 +9045,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|SMALL_CHECKS
+name|GIMP_SMALL_CHECKS
 argument_list|)
 argument_list|,
 name|NULL
@@ -9057,7 +9057,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|MEDIUM_CHECKS
+name|GIMP_MEDIUM_CHECKS
 argument_list|)
 argument_list|,
 name|NULL
@@ -9069,7 +9069,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|LARGE_CHECKS
+name|GIMP_LARGE_CHECKS
 argument_list|)
 argument_list|,
 name|NULL
@@ -13811,7 +13811,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon279813670208
+DECL|struct|__anon2c77a1d30208
 block|{
 DECL|member|label
 name|gchar
@@ -14029,7 +14029,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon279813670308
+DECL|struct|__anon2c77a1d30308
 block|{
 DECL|member|tree_label
 name|gchar

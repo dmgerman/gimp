@@ -563,7 +563,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|paint_mode
 parameter_list|)
 function_decl|;
@@ -1119,7 +1119,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a7798a0103
+DECL|enum|__anon2b15d3aa0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1171,7 +1171,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a7798a0203
+DECL|enum|__anon2b15d3aa0203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -2409,6 +2409,7 @@ name|G_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* FIXME: convert to enum property */
 name|g_object_class_install_property
 argument_list|(
 name|object_class
@@ -2426,11 +2427,11 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|,
-name|ANTI_ERASE_MODE
+name|GIMP_ANTI_ERASE_MODE
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
@@ -2672,7 +2673,7 @@ name|context
 operator|->
 name|paint_mode
 operator|=
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 expr_stmt|;
 name|context
 operator|->
@@ -5600,7 +5601,7 @@ endif|#
 directive|endif
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a7798a0308
+DECL|struct|__anon2b15d3aa0308
 block|{
 DECL|member|foo
 name|GimpObject
@@ -7181,7 +7182,7 @@ comment|/*  paint mode  ********************************************************
 end_comment
 
 begin_function
-name|LayerModeEffects
+name|GimpLayerModeEffects
 DECL|function|gimp_context_get_paint_mode (GimpContext * context)
 name|gimp_context_get_paint_mode
 parameter_list|(
@@ -7197,7 +7198,7 @@ argument_list|(
 name|context
 argument_list|)
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 return|return
@@ -7210,14 +7211,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_context_set_paint_mode (GimpContext * context,LayerModeEffects paint_mode)
+DECL|function|gimp_context_set_paint_mode (GimpContext * context,GimpLayerModeEffects paint_mode)
 name|gimp_context_set_paint_mode
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|paint_mode
 parameter_list|)
 block|{
@@ -7289,14 +7290,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_context_real_set_paint_mode (GimpContext * context,LayerModeEffects paint_mode)
+DECL|function|gimp_context_real_set_paint_mode (GimpContext * context,GimpLayerModeEffects paint_mode)
 name|gimp_context_real_set_paint_mode
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|paint_mode
 parameter_list|)
 block|{

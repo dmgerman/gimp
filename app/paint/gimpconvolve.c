@@ -182,7 +182,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd8d3820103
+DECL|enum|__anon297d69150103
 block|{
 DECL|enumerator|CONVOLVE_NCLIP
 name|CONVOLVE_NCLIP
@@ -1838,7 +1838,7 @@ name|matrix_size
 argument_list|,
 name|matrix_divisor
 argument_list|,
-name|NORMAL_CONVOL
+name|GIMP_NORMAL_CONVOL
 argument_list|)
 expr_stmt|;
 comment|/*  Free the allocated temp space  */
@@ -2315,7 +2315,7 @@ name|matrix_size
 argument_list|,
 name|matrix_divisor
 argument_list|,
-name|NORMAL_CONVOL
+name|GIMP_NORMAL_CONVOL
 argument_list|)
 expr_stmt|;
 comment|/* Crop and copy to destination */

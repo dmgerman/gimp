@@ -107,31 +107,31 @@ DECL|member|opacity
 name|gint
 name|opacity
 decl_stmt|;
-comment|/*  layer opacity                  */
+comment|/*  layer opacity              */
 DECL|member|mode
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|mode
 decl_stmt|;
-comment|/*  layer combination mode         */
+comment|/*  layer combination mode     */
 DECL|member|preserve_trans
 name|gboolean
 name|preserve_trans
 decl_stmt|;
-comment|/*  preserve transparency          */
+comment|/*  preserve transparency      */
 DECL|member|linked
 name|gboolean
 name|linked
 decl_stmt|;
-comment|/*  control linkage                */
+comment|/*  control linkage            */
 DECL|member|mask
 name|GimpLayerMask
 modifier|*
 name|mask
 decl_stmt|;
-comment|/*  possible layer mask            */
+comment|/*  possible layer mask        */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon29089d650108
+DECL|struct|__anon2abc92f30108
 block|{
 DECL|member|backing_store
 name|TileManager
@@ -338,7 +338,7 @@ parameter_list|,
 name|gint
 name|opacity
 parameter_list|,
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|mode
 parameter_list|)
 function_decl|;
@@ -382,7 +382,7 @@ parameter_list|,
 name|gint
 name|opacity
 parameter_list|,
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|mode
 parameter_list|)
 function_decl|;
@@ -666,14 +666,14 @@ name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|mode
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|gimp_layer_get_mode
 parameter_list|(
 name|GimpLayer

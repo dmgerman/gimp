@@ -222,7 +222,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1a7f780103
+DECL|enum|__anon297a0a3a0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -6688,7 +6688,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_image_apply_image (GimpImage * gimage,GimpDrawable * drawable,PixelRegion * src2PR,gboolean undo,gint opacity,LayerModeEffects mode,TileManager * src1_tiles,gint x,gint y)
+DECL|function|gimp_image_apply_image (GimpImage * gimage,GimpDrawable * drawable,PixelRegion * src2PR,gboolean undo,gint opacity,GimpLayerModeEffects mode,TileManager * src1_tiles,gint x,gint y)
 name|gimp_image_apply_image
 parameter_list|(
 name|GimpImage
@@ -6709,7 +6709,7 @@ parameter_list|,
 name|gint
 name|opacity
 parameter_list|,
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|mode
 parameter_list|,
 comment|/*  alternative to using drawable tiles as src1: */
@@ -6774,7 +6774,6 @@ name|gimp_image_mask_is_empty
 argument_list|(
 name|gimage
 argument_list|)
-operator|)
 condition|?
 name|NULL
 else|:
@@ -6782,6 +6781,7 @@ name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
+operator|)
 expr_stmt|;
 comment|/*  configure the active channel array  */
 name|gimp_image_get_active_components

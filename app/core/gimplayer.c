@@ -135,7 +135,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc451e10103
+DECL|enum|__anon2a1053480103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -616,7 +616,7 @@ name|layer
 operator|->
 name|mode
 operator|=
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 expr_stmt|;
 comment|/*  floating selection  */
 name|layer
@@ -1049,7 +1049,7 @@ end_comment
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_layer_new (GimpImage * gimage,gint width,gint height,GimpImageType type,const gchar * name,gint opacity,LayerModeEffects mode)
+DECL|function|gimp_layer_new (GimpImage * gimage,gint width,gint height,GimpImageType type,const gchar * name,gint opacity,GimpLayerModeEffects mode)
 name|gimp_layer_new
 parameter_list|(
 name|GimpImage
@@ -1073,7 +1073,7 @@ parameter_list|,
 name|gint
 name|opacity
 parameter_list|,
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|mode
 parameter_list|)
 block|{
@@ -1738,7 +1738,7 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_layer_new_from_tiles (GimpImage * gimage,GimpImageType layer_type,TileManager * tiles,gchar * name,gint opacity,LayerModeEffects mode)
+DECL|function|gimp_layer_new_from_tiles (GimpImage * gimage,GimpImageType layer_type,TileManager * tiles,gchar * name,gint opacity,GimpLayerModeEffects mode)
 name|gimp_layer_new_from_tiles
 parameter_list|(
 name|GimpImage
@@ -1759,7 +1759,7 @@ parameter_list|,
 name|gint
 name|opacity
 parameter_list|,
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|mode
 parameter_list|)
 block|{
@@ -5934,14 +5934,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_layer_set_mode (GimpLayer * layer,LayerModeEffects mode)
+DECL|function|gimp_layer_set_mode (GimpLayer * layer,GimpLayerModeEffects mode)
 name|gimp_layer_set_mode
 parameter_list|(
 name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|mode
 parameter_list|)
 block|{
@@ -6014,7 +6014,7 @@ block|}
 end_function
 
 begin_function
-name|LayerModeEffects
+name|GimpLayerModeEffects
 DECL|function|gimp_layer_get_mode (GimpLayer * layer)
 name|gimp_layer_get_mode
 parameter_list|(
@@ -6030,7 +6030,7 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 return|return

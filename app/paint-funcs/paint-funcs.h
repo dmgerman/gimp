@@ -1226,7 +1226,7 @@ name|int
 parameter_list|,
 name|int
 parameter_list|,
-name|ConvolutionType
+name|GimpConvolutionType
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1454,7 +1454,7 @@ modifier|*
 parameter_list|,
 name|int
 parameter_list|,
-name|LayerModeEffects
+name|GimpLayerModeEffects
 parameter_list|,
 name|int
 modifier|*
@@ -1485,7 +1485,7 @@ modifier|*
 parameter_list|,
 name|guint
 parameter_list|,
-name|LayerModeEffects
+name|GimpLayerModeEffects
 parameter_list|,
 name|int
 modifier|*

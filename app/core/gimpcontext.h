@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291281630103
+DECL|enum|__anon2c4095010103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_IMAGE
 name|GIMP_CONTEXT_PROP_IMAGE
@@ -77,7 +77,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291281630203
+DECL|enum|__anon2c4095010203
 block|{
 DECL|enumerator|GIMP_CONTEXT_IMAGE_MASK
 name|GIMP_CONTEXT_IMAGE_MASK
@@ -341,7 +341,7 @@ name|gdouble
 name|opacity
 decl_stmt|;
 DECL|member|paint_mode
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|paint_mode
 decl_stmt|;
 DECL|member|brush
@@ -512,7 +512,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|paint_mode
 parameter_list|)
 function_decl|;
@@ -1168,7 +1168,7 @@ comment|/*  paint mode  */
 end_comment
 
 begin_function_decl
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|gimp_context_get_paint_mode
 parameter_list|(
 name|GimpContext
@@ -1186,7 +1186,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|paint_mode
 parameter_list|)
 function_decl|;

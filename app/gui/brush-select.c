@@ -202,7 +202,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|paint_mode
 parameter_list|,
 name|BrushSelect
@@ -1978,14 +1978,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|brush_select_paint_mode_changed (GimpContext * context,LayerModeEffects paint_mode,BrushSelect * bsp)
+DECL|function|brush_select_paint_mode_changed (GimpContext * context,GimpLayerModeEffects paint_mode,BrushSelect * bsp)
 name|brush_select_paint_mode_changed
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|paint_mode
 parameter_list|,
 name|BrushSelect
@@ -2112,7 +2112,7 @@ name|BrushSelect
 modifier|*
 name|bsp
 decl_stmt|;
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|paint_mode
 decl_stmt|;
 name|bsp
@@ -2126,7 +2126,7 @@ expr_stmt|;
 name|paint_mode
 operator|=
 operator|(
-name|LayerModeEffects
+name|GimpLayerModeEffects
 operator|)
 name|GPOINTER_TO_INT
 argument_list|(

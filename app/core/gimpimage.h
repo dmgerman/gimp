@@ -1482,7 +1482,7 @@ parameter_list|,
 name|gint
 name|opacity
 parameter_list|,
-name|LayerModeEffects
+name|GimpLayerModeEffects
 name|mode
 parameter_list|,
 name|TileManager
