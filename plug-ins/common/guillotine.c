@@ -903,20 +903,7 @@ argument_list|(
 name|new_image
 argument_list|)
 expr_stmt|;
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp_undo_push_group_start"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|PARAM_IMAGE
-argument_list|,
-name|new_image
-argument_list|,
-name|PARAM_END
-argument_list|)
-expr_stmt|;
+comment|/*  	  gimp_undo_push_group_start (new_image); */
 comment|/* 	  printf("(%dx%d:%d,%d:%d,%d)\n", */
 comment|/* 		 (vguides[x+1]-vguides[x]), */
 comment|/* 		 (hguides[y+1]-hguides[y]), */
@@ -981,20 +968,7 @@ argument_list|,
 name|PARAM_END
 argument_list|)
 expr_stmt|;
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp_undo_push_group_end"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|PARAM_IMAGE
-argument_list|,
-name|new_image
-argument_list|,
-name|PARAM_END
-argument_list|)
-expr_stmt|;
+comment|/*  	  gimp_undo_push_group_end (new_image); */
 name|gimp_image_undo_enable
 argument_list|(
 name|new_image

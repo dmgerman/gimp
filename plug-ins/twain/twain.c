@@ -504,7 +504,7 @@ comment|/* Currently unused... Eventually may be used  * to track dialog data.  
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bdbd6820108
+DECL|struct|__anon28c6d1bb0108
 typedef|typedef
 struct|struct
 block|{
@@ -1524,49 +1524,6 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * twainDisplayImage  *  * Display the image specified by the image id.  */
-end_comment
-
-begin_function
-specifier|static
-name|gint
-DECL|function|twainDisplayImage (gint32 image)
-name|twainDisplayImage
-parameter_list|(
-name|gint32
-name|image
-parameter_list|)
-block|{
-name|GParam
-modifier|*
-name|params
-decl_stmt|;
-name|gint
-name|retval
-decl_stmt|;
-name|params
-operator|=
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp_display_new"
-argument_list|,
-operator|&
-name|retval
-argument_list|,
-name|PARAM_IMAGE
-argument_list|,
-name|image
-argument_list|,
-name|PARAM_END
-argument_list|)
-expr_stmt|;
-return|return
-name|retval
-return|;
-block|}
-end_function
-
-begin_comment
 comment|/* Return values storage */
 end_comment
 
@@ -1877,7 +1834,7 @@ comment|/* Data used to carry data between each of  * the callback function call
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bdbd6820208
+DECL|struct|__anon28c6d1bb0208
 typedef|typedef
 struct|struct
 block|{
@@ -3623,7 +3580,7 @@ operator|->
 name|image_id
 argument_list|)
 expr_stmt|;
-name|twainDisplayImage
+name|gimp_display_new
 argument_list|(
 name|theClientData
 operator|->

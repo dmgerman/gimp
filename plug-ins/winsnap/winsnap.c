@@ -306,7 +306,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|void
 name|sendBMPToGimp
 parameter_list|(
 name|HBITMAP
@@ -358,7 +358,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b9329920108
+DECL|struct|__anon2bcd0df40108
 typedef|typedef
 struct|struct
 block|{
@@ -399,7 +399,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b9329920208
+DECL|struct|__anon2bcd0df40208
 typedef|typedef
 struct|struct
 block|{
@@ -4101,7 +4101,7 @@ end_comment
 
 begin_function
 specifier|static
-name|gint
+name|void
 DECL|function|sendBMPToGimp (HBITMAP hBMP,HDC hDC,RECT rect)
 name|sendBMPToGimp
 parameter_list|(
@@ -4128,18 +4128,11 @@ name|imageType
 decl_stmt|,
 name|layerType
 decl_stmt|;
-name|gint
-name|retval
-decl_stmt|;
 name|gint32
 name|image_id
 decl_stmt|;
 name|gint32
 name|layer_id
-decl_stmt|;
-name|GParam
-modifier|*
-name|params
 decl_stmt|;
 name|GPixelRgn
 name|pixel_rgn
@@ -4367,25 +4360,12 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
-name|params
-operator|=
-name|gimp_run_procedure
+name|gimp_display_new
 argument_list|(
-literal|"gimp_display_new"
-argument_list|,
-operator|&
-name|retval
-argument_list|,
-name|PARAM_IMAGE
-argument_list|,
 name|image_id
-argument_list|,
-name|PARAM_END
 argument_list|)
 expr_stmt|;
-return|return
-name|retval
-return|;
+return|return;
 block|}
 end_function
 
