@@ -120,7 +120,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baf6bb90108
+DECL|struct|__anon28f66dc20108
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -17127,6 +17127,8 @@ index|[
 name|plist_count
 index|]
 operator|.
+name|v
+operator|.
 name|output_to
 argument_list|,
 literal|"PRINT /D:LPT%d /B "
@@ -17140,6 +17142,8 @@ name|plist
 index|[
 name|plist_count
 index|]
+operator|.
+name|v
 operator|.
 name|driver
 argument_list|,
