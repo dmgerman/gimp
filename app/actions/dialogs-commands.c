@@ -249,10 +249,6 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GtkWidget
-modifier|*
-name|widget
-decl_stmt|;
 specifier|static
 specifier|const
 name|gchar
@@ -269,6 +265,10 @@ literal|"gimp-vectors-list"
 block|,
 literal|"gimp-undo-history"
 block|}
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|widget
 decl_stmt|;
 name|return_if_no_widget
 argument_list|(
@@ -310,10 +310,6 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GtkWidget
-modifier|*
-name|widget
-decl_stmt|;
 specifier|static
 specifier|const
 name|gchar
@@ -332,6 +328,10 @@ literal|"gimp-palette-list"
 block|,
 literal|"gimp-font-list"
 block|}
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|widget
 decl_stmt|;
 name|return_if_no_widget
 argument_list|(
@@ -373,10 +373,6 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GtkWidget
-modifier|*
-name|widget
-decl_stmt|;
 specifier|static
 specifier|const
 name|gchar
@@ -393,6 +389,10 @@ literal|"gimp-document-list"
 block|,
 literal|"gimp-template-list"
 block|}
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|widget
 decl_stmt|;
 name|return_if_no_widget
 argument_list|(
