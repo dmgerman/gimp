@@ -621,20 +621,24 @@ name|argv
 argument_list|)
 condition|)
 block|{
-name|g_print
-argument_list|(
+specifier|const
+name|gchar
+modifier|*
+name|msg
+decl_stmt|;
+name|msg
+operator|=
 name|_
 argument_list|(
-literal|"ERROR: GIMP could not initialize the GUI.\n\n"
-argument_list|)
+literal|"GIMP could not initialize the GUI.\n"
+literal|"Make sure a proper setup for your display environment exists."
 argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-name|_
-argument_list|(
-literal|"Make sure a proper setup for your display environment exists.\n"
-argument_list|)
+literal|"%s\n\n"
+argument_list|,
+name|msg
 argument_list|)
 expr_stmt|;
 name|gimp_text_console_exit
@@ -1999,13 +2003,9 @@ argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"  --enable-stack-trace<never | query | always>\n"
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
 name|_
 argument_list|(
+literal|"  --enable-stack-trace<never | query | always>\n"
 literal|"                           Debugging mode for fatal signals.\n\n"
 argument_list|)
 argument_list|)

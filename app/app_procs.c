@@ -314,28 +314,25 @@ condition|(
 name|no_interface
 condition|)
 block|{
-name|g_print
-argument_list|(
+specifier|const
+name|gchar
+modifier|*
+name|msg
+decl_stmt|;
+name|msg
+operator|=
 name|_
 argument_list|(
-literal|"The GIMP is not properly installed for the current user\n"
-argument_list|)
+literal|"GIMP is not properly installed for the current user.\n"
+literal|"User installation was skipped because the '--nointerface' flag was used.\n"
+literal|"To perform user installation, run the GIMP without the '--nointerface' flag."
 argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-name|_
-argument_list|(
-literal|"User installation was skipped because the '--nointerface' flag was encountered\n"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-name|_
-argument_list|(
-literal|"To perform user installation, run the GIMP without the '--nointerface' flag\n"
-argument_list|)
+literal|"%s\n\n"
+argument_list|,
+name|msg
 argument_list|)
 expr_stmt|;
 block|}
