@@ -180,6 +180,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"brushes-commands.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"channels-commands.h"
 end_include
 
@@ -240,13 +246,31 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gradients-commands.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"layers-commands.h"
 end_include
 
 begin_include
 include|#
 directive|include
+file|"menus.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"palette-editor.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"palettes-commands.h"
 end_include
 
 begin_include
@@ -259,6 +283,12 @@ begin_include
 include|#
 directive|include
 file|"pattern-select.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"patterns-commands.h"
 end_include
 
 begin_include
@@ -1226,6 +1256,8 @@ argument_list|,
 literal|5
 argument_list|,
 literal|3
+argument_list|,
+name|brushes_show_context_menu
 argument_list|)
 expr_stmt|;
 return|return
@@ -1285,6 +1317,8 @@ argument_list|,
 literal|5
 argument_list|,
 literal|3
+argument_list|,
+name|patterns_show_context_menu
 argument_list|)
 expr_stmt|;
 return|return
@@ -1346,6 +1380,8 @@ argument_list|,
 literal|5
 argument_list|,
 literal|3
+argument_list|,
+name|gradients_show_context_menu
 argument_list|)
 expr_stmt|;
 return|return
@@ -1405,6 +1441,8 @@ argument_list|,
 literal|5
 argument_list|,
 literal|3
+argument_list|,
+name|palettes_show_context_menu
 argument_list|)
 expr_stmt|;
 return|return
@@ -1517,6 +1555,8 @@ argument_list|,
 literal|5
 argument_list|,
 literal|3
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return
@@ -1637,6 +1677,8 @@ argument_list|,
 literal|5
 argument_list|,
 literal|3
+argument_list|,
+name|brushes_show_context_menu
 argument_list|)
 expr_stmt|;
 return|return
@@ -1696,6 +1738,8 @@ argument_list|,
 literal|5
 argument_list|,
 literal|3
+argument_list|,
+name|patterns_show_context_menu
 argument_list|)
 expr_stmt|;
 return|return
@@ -1755,6 +1799,8 @@ argument_list|,
 literal|5
 argument_list|,
 literal|3
+argument_list|,
+name|gradients_show_context_menu
 argument_list|)
 expr_stmt|;
 return|return
@@ -1814,6 +1860,8 @@ argument_list|,
 literal|5
 argument_list|,
 literal|3
+argument_list|,
+name|palettes_show_context_menu
 argument_list|)
 expr_stmt|;
 return|return
@@ -1926,6 +1974,8 @@ argument_list|,
 literal|5
 argument_list|,
 literal|3
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return

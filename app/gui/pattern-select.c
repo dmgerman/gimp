@@ -612,6 +612,8 @@ argument_list|,
 name|STD_PATTERN_COLUMNS
 argument_list|,
 name|STD_PATTERN_ROWS
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

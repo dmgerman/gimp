@@ -23,17 +23,17 @@ file|<gtk/gtkvbox.h>
 end_include
 
 begin_typedef
-DECL|typedef|GimpContainerEditFunc
+DECL|typedef|GimpContainerContextFunc
 typedef|typedef
 name|void
 function_decl|(
 modifier|*
-name|GimpContainerEditFunc
+name|GimpContainerContextFunc
 function_decl|)
 parameter_list|(
-name|GimpContainer
+name|GimpContainerEditor
 modifier|*
-name|container
+name|editor
 parameter_list|)
 function_decl|;
 end_typedef
@@ -41,7 +41,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4f89d90103
+DECL|enum|__anon2761358d0103
 block|{
 DECL|enumerator|GIMP_VIEW_TYPE_GRID
 name|GIMP_VIEW_TYPE_GRID
@@ -123,6 +123,10 @@ block|{
 DECL|member|parent_instance
 name|GtkVBox
 name|parent_instance
+decl_stmt|;
+DECL|member|context_func
+name|GimpContainerContextFunc
+name|context_func
 decl_stmt|;
 DECL|member|view
 name|GimpContainerView
@@ -239,6 +243,9 @@ name|min_items_x
 parameter_list|,
 name|gint
 name|min_items_y
+parameter_list|,
+name|GimpContainerContextFunc
+name|context_func
 parameter_list|)
 function_decl|;
 end_function_decl

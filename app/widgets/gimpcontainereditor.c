@@ -187,6 +187,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|gimp_container_editor_real_context_item
+parameter_list|(
+name|GimpContainerEditor
+modifier|*
+name|editor
+parameter_list|,
+name|GimpViewable
+modifier|*
+name|viewable
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
@@ -325,7 +341,7 @@ name|klass
 operator|->
 name|context_item
 operator|=
-name|NULL
+name|gimp_container_editor_real_context_item
 expr_stmt|;
 block|}
 end_function
@@ -341,6 +357,12 @@ modifier|*
 name|view
 parameter_list|)
 block|{
+name|view
+operator|->
+name|context_func
+operator|=
+name|NULL
+expr_stmt|;
 name|view
 operator|->
 name|view
@@ -442,7 +464,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_container_editor_construct (GimpContainerEditor * editor,GimpViewType view_type,GimpContainer * container,GimpContext * context,gint preview_size,gint min_items_x,gint min_items_y)
+DECL|function|gimp_container_editor_construct (GimpContainerEditor * editor,GimpViewType view_type,GimpContainer * container,GimpContext * context,gint preview_size,gint min_items_x,gint min_items_y,GimpContainerContextFunc context_func)
 name|gimp_container_editor_construct
 parameter_list|(
 name|GimpContainerEditor
@@ -468,6 +490,9 @@ name|min_items_x
 parameter_list|,
 name|gint
 name|min_items_y
+parameter_list|,
+name|GimpContainerContextFunc
+name|context_func
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -565,6 +590,12 @@ literal|64
 argument_list|,
 name|FALSE
 argument_list|)
+expr_stmt|;
+name|editor
+operator|->
+name|context_func
+operator|=
+name|context_func
 expr_stmt|;
 switch|switch
 condition|(
@@ -1275,6 +1306,57 @@ argument_list|,
 name|viewable
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_container_editor_real_context_item (GimpContainerEditor * editor,GimpViewable * viewable)
+name|gimp_container_editor_real_context_item
+parameter_list|(
+name|GimpContainerEditor
+modifier|*
+name|editor
+parameter_list|,
+name|GimpViewable
+modifier|*
+name|viewable
+parameter_list|)
+block|{
+if|if
+condition|(
+name|viewable
+operator|&&
+name|gimp_container_have
+argument_list|(
+name|editor
+operator|->
+name|view
+operator|->
+name|container
+argument_list|,
+name|GIMP_OBJECT
+argument_list|(
+name|viewable
+argument_list|)
+argument_list|)
+condition|)
+block|{
+if|if
+condition|(
+name|editor
+operator|->
+name|context_func
+condition|)
+name|editor
+operator|->
+name|context_func
+argument_list|(
+name|editor
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 

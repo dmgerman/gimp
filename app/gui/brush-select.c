@@ -767,6 +767,8 @@ argument_list|,
 name|STD_BRUSH_COLUMNS
 argument_list|,
 name|STD_BRUSH_ROWS
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

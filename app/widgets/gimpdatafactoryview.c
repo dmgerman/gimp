@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -637,7 +643,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_data_factory_view_new (GimpViewType view_type,GimpDataFactory * factory,GimpDataEditFunc edit_func,GimpContext * context,gint preview_size,gint min_items_x,gint min_items_y)
+DECL|function|gimp_data_factory_view_new (GimpViewType view_type,GimpDataFactory * factory,GimpDataEditFunc edit_func,GimpContext * context,gint preview_size,gint min_items_x,gint min_items_y,GimpContainerContextFunc context_func)
 name|gimp_data_factory_view_new
 parameter_list|(
 name|GimpViewType
@@ -662,6 +668,9 @@ name|min_items_x
 parameter_list|,
 name|gint
 name|min_items_y
+parameter_list|,
+name|GimpContainerContextFunc
+name|context_func
 parameter_list|)
 block|{
 name|GimpDataFactoryView
@@ -695,6 +704,8 @@ argument_list|,
 name|min_items_x
 argument_list|,
 name|min_items_y
+argument_list|,
+name|context_func
 argument_list|)
 condition|)
 block|{
@@ -721,7 +732,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_data_factory_view_construct (GimpDataFactoryView * factory_view,GimpViewType view_type,GimpDataFactory * factory,GimpDataEditFunc edit_func,GimpContext * context,gint preview_size,gint min_items_x,gint min_items_y)
+DECL|function|gimp_data_factory_view_construct (GimpDataFactoryView * factory_view,GimpViewType view_type,GimpDataFactory * factory,GimpDataEditFunc edit_func,GimpContext * context,gint preview_size,gint min_items_x,gint min_items_y,GimpContainerContextFunc context_func)
 name|gimp_data_factory_view_construct
 parameter_list|(
 name|GimpDataFactoryView
@@ -750,6 +761,9 @@ name|min_items_x
 parameter_list|,
 name|gint
 name|min_items_y
+parameter_list|,
+name|GimpContainerContextFunc
+name|context_func
 parameter_list|)
 block|{
 name|GimpContainerEditor
@@ -868,6 +882,8 @@ argument_list|,
 name|min_items_x
 argument_list|,
 name|min_items_y
+argument_list|,
+name|context_func
 argument_list|)
 condition|)
 block|{
@@ -1737,10 +1753,6 @@ name|GimpDataFactoryView
 modifier|*
 name|view
 decl_stmt|;
-name|GimpData
-modifier|*
-name|data
-decl_stmt|;
 name|gboolean
 name|duplicate_sensitive
 init|=
@@ -1784,16 +1796,9 @@ argument_list|(
 name|editor
 argument_list|)
 expr_stmt|;
-name|data
-operator|=
-name|GIMP_DATA
-argument_list|(
-name|viewable
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
-name|data
+name|viewable
 operator|&&
 name|gimp_container_have
 argument_list|(
@@ -1805,7 +1810,7 @@ name|container
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
-name|data
+name|viewable
 argument_list|)
 argument_list|)
 condition|)
@@ -1817,7 +1822,7 @@ name|GIMP_DATA_CLASS
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|data
+name|viewable
 argument_list|)
 operator|->
 name|klass

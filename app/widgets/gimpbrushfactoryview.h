@@ -166,6 +166,9 @@ name|min_items_x
 parameter_list|,
 name|gint
 name|min_items_y
+parameter_list|,
+name|GimpContainerContextFunc
+name|context_func
 parameter_list|)
 function_decl|;
 end_function_decl

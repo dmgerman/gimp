@@ -141,16 +141,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|num_empty_n
-specifier|static
-name|gint
-name|num_empty_n
-init|=
-literal|0
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|empty_segs_c
 specifier|static
 name|gint
@@ -158,16 +148,6 @@ modifier|*
 name|empty_segs_c
 init|=
 name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|num_empty_c
-specifier|static
-name|gint
-name|num_empty_c
-init|=
-literal|0
 decl_stmt|;
 end_decl_stmt
 
@@ -183,37 +163,12 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|num_empty_l
-specifier|static
-name|gint
-name|num_empty_l
-init|=
-literal|0
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|max_empty_segs
 specifier|static
 name|gint
 name|max_empty_segs
 init|=
 literal|0
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/* global state variables--improve parameter efficiency */
-end_comment
-
-begin_decl_stmt
-DECL|variable|cur_PR
-specifier|static
-name|PixelRegion
-modifier|*
-name|cur_PR
-init|=
-name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -290,7 +245,9 @@ specifier|static
 name|void
 name|allocate_vert_segs
 parameter_list|(
-name|void
+name|PixelRegion
+modifier|*
+name|PR
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -300,7 +257,9 @@ specifier|static
 name|void
 name|allocate_empty_segs
 parameter_list|(
-name|void
+name|PixelRegion
+modifier|*
+name|PR
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -360,6 +319,10 @@ specifier|static
 name|void
 name|generate_boundary
 parameter_list|(
+name|PixelRegion
+modifier|*
+name|PR
+parameter_list|,
 name|BoundaryType
 name|type
 parameter_list|,
@@ -1051,10 +1014,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|allocate_vert_segs (void)
+DECL|function|allocate_vert_segs (PixelRegion * PR)
 name|allocate_vert_segs
 parameter_list|(
-name|void
+name|PixelRegion
+modifier|*
+name|PR
 parameter_list|)
 block|{
 name|gint
@@ -1076,11 +1041,11 @@ operator|)
 name|vert_segs
 argument_list|,
 operator|(
-name|cur_PR
+name|PR
 operator|->
 name|w
 operator|+
-name|cur_PR
+name|PR
 operator|->
 name|x
 operator|+
@@ -1102,11 +1067,11 @@ init|;
 name|i
 operator|<=
 operator|(
-name|cur_PR
+name|PR
 operator|->
 name|w
 operator|+
-name|cur_PR
+name|PR
 operator|->
 name|x
 operator|)
@@ -1128,10 +1093,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|allocate_empty_segs (void)
+DECL|function|allocate_empty_segs (PixelRegion * PR)
 name|allocate_empty_segs
 parameter_list|(
-name|void
+name|PixelRegion
+modifier|*
+name|PR
 parameter_list|)
 block|{
 name|gint
@@ -1140,7 +1107,7 @@ decl_stmt|;
 comment|/*  find the maximum possible number of empty segments given the current mask  */
 name|need_num_segs
 operator|=
-name|cur_PR
+name|PR
 operator|->
 name|w
 operator|+
@@ -1479,9 +1446,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|generate_boundary (BoundaryType type,gint x1,gint y1,gint x2,gint y2)
+DECL|function|generate_boundary (PixelRegion * PR,BoundaryType type,gint x1,gint y1,gint x2,gint y2)
 name|generate_boundary
 parameter_list|(
+name|PixelRegion
+modifier|*
+name|PR
+parameter_list|,
 name|BoundaryType
 name|type
 parameter_list|,
@@ -1513,6 +1484,21 @@ name|gint
 modifier|*
 name|tmp_segs
 decl_stmt|;
+name|gint
+name|num_empty_n
+init|=
+literal|0
+decl_stmt|;
+name|gint
+name|num_empty_c
+init|=
+literal|0
+decl_stmt|;
+name|gint
+name|num_empty_l
+init|=
+literal|0
+decl_stmt|;
 name|start
 operator|=
 literal|0
@@ -1523,11 +1509,15 @@ literal|0
 expr_stmt|;
 comment|/*  array for determining the vertical line segments which must be drawn  */
 name|allocate_vert_segs
-argument_list|()
+argument_list|(
+name|PR
+argument_list|)
 expr_stmt|;
 comment|/*  make sure there is enough space for the empty segment array  */
 name|allocate_empty_segs
-argument_list|()
+argument_list|(
+name|PR
+argument_list|)
 expr_stmt|;
 name|num_segs
 operator|=
@@ -1559,17 +1549,17 @@ condition|)
 block|{
 name|start
 operator|=
-name|cur_PR
+name|PR
 operator|->
 name|y
 expr_stmt|;
 name|end
 operator|=
-name|cur_PR
+name|PR
 operator|->
 name|y
 operator|+
-name|cur_PR
+name|PR
 operator|->
 name|h
 expr_stmt|;
@@ -1577,7 +1567,7 @@ block|}
 comment|/*  Find the empty segments for the previous and current scanlines  */
 name|find_empty_segs
 argument_list|(
-name|cur_PR
+name|PR
 argument_list|,
 name|start
 operator|-
@@ -1603,7 +1593,7 @@ argument_list|)
 expr_stmt|;
 name|find_empty_segs
 argument_list|(
-name|cur_PR
+name|PR
 argument_list|,
 name|start
 argument_list|,
@@ -1642,7 +1632,7 @@ block|{
 comment|/*  find the empty segment list for the next scanline  */
 name|find_empty_segs
 argument_list|(
-name|cur_PR
+name|PR
 argument_list|,
 name|scanline
 operator|+
@@ -1799,13 +1789,11 @@ init|=
 name|NULL
 decl_stmt|;
 comment|/*  The mask paramater can be any PixelRegion.  If the region    *  has more than 1 bytes/pixel, the last byte of each pixel is    *  used to determine the boundary outline.    */
-name|cur_PR
-operator|=
-name|maskPR
-expr_stmt|;
 comment|/*  Calculate the boundary  */
 name|generate_boundary
 argument_list|(
+name|maskPR
+argument_list|,
 name|type
 argument_list|,
 name|x1

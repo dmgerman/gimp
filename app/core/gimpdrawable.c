@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f39ebd0103
+DECL|enum|__anon2b81e4250103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -1428,12 +1428,11 @@ argument_list|,
 name|bpp
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_set_visible
-argument_list|(
 name|drawable
-argument_list|,
+operator|->
+name|visible
+operator|=
 name|TRUE
-argument_list|)
 expr_stmt|;
 if|if
 condition|(

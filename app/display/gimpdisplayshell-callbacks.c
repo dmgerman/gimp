@@ -908,7 +908,6 @@ operator|*
 operator|)
 name|event
 expr_stmt|;
-comment|/*printf(" EXP:%d,%d(%dx%d) ",eevent->area.x, eevent->area.y, 	eevent->area.width, eevent->area.height);fflush(stdout);*/
 name|gdisplay_redraw
 argument_list|(
 name|gdisp
@@ -942,7 +941,6 @@ break|break;
 case|case
 name|GDK_CONFIGURE
 case|:
-comment|/*printf(" CNF ");fflush(stdout);*/
 if|if
 condition|(
 operator|(
@@ -2095,14 +2093,12 @@ name|mevent
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* Operator update support: Bug #XXXX */
 if|if
 condition|(
-comment|/* Should we have a tool...      */
+comment|/* Should we have a tool... */
 name|active_tool
 operator|&&
-comment|/* and this event is NOT driving */
-comment|/* button press handlers ...     */
+comment|/* and this event is NOT driving 	   * button press handlers ... 	   */
 operator|!
 operator|(
 name|state
@@ -2117,8 +2113,7 @@ operator|)
 operator|)
 condition|)
 block|{
-comment|/* ...then preconditions to modify a tool */
-comment|/* operator state have been met.          */
+comment|/* ...then preconditions to modify a tool 	   * operator state have been met. 	   */
 name|gimp_tool_oper_update
 argument_list|(
 name|active_tool
@@ -2502,6 +2497,17 @@ operator|==
 literal|0
 condition|)
 block|{
+name|active_tool
+operator|=
+name|tool_manager_get_active
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|active_tool

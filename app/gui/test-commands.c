@@ -755,6 +755,8 @@ argument_list|,
 literal|5
 argument_list|,
 literal|5
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
