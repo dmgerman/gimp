@@ -46,6 +46,16 @@ define|\
 value|setlocale(LC_MESSAGES, ""); \   bindtextdomain("gimp-std-plugins", LOCALEDIR); \   textdomain("gimp-std-plugins")
 end_define
 
+begin_define
+DECL|macro|INIT_I18N_UI ()
+define|#
+directive|define
+name|INIT_I18N_UI
+parameter_list|()
+define|\
+value|gtk_set_locale(); \   INIT_I18N();
+end_define
+
 begin_else
 else|#
 directive|else
@@ -59,6 +69,16 @@ name|INIT_I18N
 parameter_list|()
 define|\
 value|bindtextdomain("gimp-std-plugins", LOCALEDIR); \   textdomain("gimp-std-plugins")
+end_define
+
+begin_define
+DECL|macro|INIT_I18N_UI ()
+define|#
+directive|define
+name|INIT_I18N_UI
+parameter_list|()
+define|\
+value|gtk_set_locale(); \   INIT_I18N();
 end_define
 
 begin_endif

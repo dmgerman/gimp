@@ -2884,7 +2884,6 @@ index|[
 literal|2
 index|]
 expr_stmt|;
-comment|/* info->gdisp->cd_convert (info->gdisp->cd_ID, x, y, 				       src[0], src[1], src[2], dest); */
 name|src
 operator|+=
 literal|3

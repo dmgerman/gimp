@@ -156,26 +156,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|store_color
-parameter_list|(
-name|gulong
-modifier|*
-name|pixel
-parameter_list|,
-name|int
-name|red
-parameter_list|,
-name|int
-name|green
-parameter_list|,
-name|int
-name|blue
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|get_standard_colormaps
 parameter_list|(
 name|void

@@ -728,15 +728,8 @@ name|fg
 operator|.
 name|pixel
 operator|=
-name|old_color_pixel
-expr_stmt|;
-name|store_color
+name|get_color
 argument_list|(
-operator|&
-name|fg
-operator|.
-name|pixel
-argument_list|,
 name|color_panel
 operator|->
 name|color

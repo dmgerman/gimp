@@ -454,6 +454,13 @@ argument_list|,
 name|LOCALEDIR
 argument_list|)
 expr_stmt|;
+name|bindtextdomain
+argument_list|(
+literal|"gimp-std-plugins"
+argument_list|,
+name|LOCALEDIR
+argument_list|)
+expr_stmt|;
 else|#
 directive|else
 name|bindtextdomain
@@ -2011,7 +2018,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf17ace0108
+DECL|struct|__anon2abf026d0108
 block|{
 DECL|member|test_gint32
 name|gint32

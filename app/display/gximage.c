@@ -133,16 +133,11 @@ name|gximage
 decl_stmt|;
 name|gximage
 operator|=
-operator|(
-name|GXImage
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|GXImage
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|gximage
@@ -225,9 +220,11 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gximage_init ()
+DECL|function|gximage_init (void)
 name|gximage_init
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|gximage
 operator|=
@@ -245,9 +242,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|gximage_free ()
+DECL|function|gximage_free (void)
 name|gximage_free
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|delete_gximage
 argument_list|(
@@ -260,9 +259,11 @@ end_function
 begin_function
 name|guchar
 modifier|*
-DECL|function|gximage_get_data ()
+DECL|function|gximage_get_data (void)
 name|gximage_get_data
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 return|return
 name|gximage
@@ -274,9 +275,11 @@ end_function
 
 begin_function
 name|int
-DECL|function|gximage_get_bpp ()
+DECL|function|gximage_get_bpp (void)
 name|gximage_get_bpp
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 return|return
 literal|3
@@ -286,9 +289,11 @@ end_function
 
 begin_function
 name|int
-DECL|function|gximage_get_bpl ()
+DECL|function|gximage_get_bpl (void)
 name|gximage_get_bpl
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 return|return
 literal|3
@@ -300,9 +305,11 @@ end_function
 
 begin_function
 name|int
-DECL|function|gximage_get_byte_order ()
+DECL|function|gximage_get_byte_order (void)
 name|gximage_get_byte_order
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 return|return
 name|GDK_MSB_FIRST
