@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8337920103
+DECL|enum|__anon2ba58ff20103
 block|{
 DECL|enumerator|COLORBLIND_DEFICIENCY_NONE
 name|COLORBLIND_DEFICIENCY_NONE
@@ -580,7 +580,7 @@ name|name
 operator|=
 name|_
 argument_list|(
-literal|"Colorblind"
+literal|"Color Deficient Vision"
 argument_list|)
 expr_stmt|;
 name|display_class
