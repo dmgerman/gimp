@@ -285,7 +285,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2979f7520103
+DECL|enum|__anon2b4a4ec60103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -299,7 +299,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2979f7520208
+DECL|struct|__anon2b4a4ec60208
 block|{
 DECL|member|dirname
 specifier|const
@@ -1781,7 +1781,7 @@ name|s_str
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%ld"
+literal|"%lld"
 argument_list|,
 name|image_size
 argument_list|)
@@ -3388,7 +3388,7 @@ name|sscanf
 argument_list|(
 name|option
 argument_list|,
-literal|"%ld"
+literal|"%lld"
 argument_list|,
 operator|&
 name|thumb_image_size
@@ -3913,7 +3913,7 @@ name|s_str
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%ld"
+literal|"%lld"
 argument_list|,
 name|image_size
 argument_list|)
