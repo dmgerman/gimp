@@ -8677,6 +8677,10 @@ name|gchar
 modifier|*
 name|savename
 decl_stmt|;
+name|gchar
+modifier|*
+name|message
+decl_stmt|;
 name|savename
 operator|=
 name|filename
@@ -8696,14 +8700,33 @@ operator|!
 name|fp
 condition|)
 block|{
-name|g_message
+name|message
+operator|=
+name|g_strconcat
 argument_list|(
 name|_
 argument_list|(
-literal|"Error opening '%.100s' could not save"
+literal|"Error opening: %s"
+argument_list|)
+argument_list|,
+literal|"\n"
+argument_list|,
+name|_
+argument_list|(
+literal|"Could not save."
 argument_list|)
 argument_list|,
 name|savename
+argument_list|)
+expr_stmt|;
+name|g_message
+argument_list|(
+name|message
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|message
 argument_list|)
 expr_stmt|;
 return|return;

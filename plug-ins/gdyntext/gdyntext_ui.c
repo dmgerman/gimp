@@ -135,7 +135,7 @@ file|"graphics/text_load.xpm"
 end_include
 
 begin_typedef
-DECL|struct|__anon2c5119c80108
+DECL|struct|__anon2ac03ead0108
 typedef|typedef
 struct|struct
 block|{
@@ -720,7 +720,7 @@ DECL|macro|DEFAULT_FONT_PREVIEW_TEXT
 define|#
 directive|define
 name|DEFAULT_FONT_PREVIEW_TEXT
-value|"ABCDEFGHIJKLMNOPQRSTUVWXYZ"\ 																	"abcdefghijklmnopqrstuvwxyz"\ 																	"0123456789"
+value|"ABCDEFGHIJKLMNOPQRSTUVWXYZ"\                                         "abcdefghijklmnopqrstuvwxyz"\ 					"0123456789"
 end_define
 
 begin_define
@@ -731,13 +731,13 @@ name|TO_RGB
 parameter_list|(
 name|val
 parameter_list|)
-value|( \ 	((gint32)(val[0] * 255.0)<< 16) + \ 	((gint32)(val[1] * 255.0)<< 8) + \ 	(gint32)(val[2] * 255.0) \ )
+value|( \ 	((gint32)(val[0] * 255.0)<< 16) + \ 	((gint32)(val[1] * 255.0)<< 8) + \ 	 (gint32)(val[2] * 255.0) \ )
 end_define
 
 begin_function
-DECL|function|create_message_window (GtkWidget ** mw)
 name|GtkWidget
 modifier|*
+DECL|function|create_message_window (GtkWidget ** mw)
 name|create_message_window
 parameter_list|(
 name|GtkWidget
@@ -753,9 +753,7 @@ name|message_window_new
 argument_list|(
 name|_
 argument_list|(
-literal|"GDynText "
-name|GDYNTEXT_VERSION
-literal|": Messages Window"
+literal|"GDynText Message Window"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -830,9 +828,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|create_about_dialog (void)
 name|GtkWidget
 modifier|*
+DECL|function|create_about_dialog (void)
 name|create_about_dialog
 parameter_list|(
 name|void
@@ -904,9 +902,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"GDynText "
-name|GDYNTEXT_VERSION
-literal|": About ..."
+literal|"About GDynText"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1259,9 +1255,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|create_color_selection_dialog (void)
 name|GtkWidget
 modifier|*
+DECL|function|create_color_selection_dialog (void)
 name|create_color_selection_dialog
 parameter_list|(
 name|void
@@ -1285,9 +1281,7 @@ name|gtk_color_selection_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"GDynText "
-name|GDYNTEXT_VERSION
-literal|": Select Color"
+literal|"GDynText: Select Color"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1420,9 +1414,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|create_main_window (GdtMainWindow ** main_window,GdtVals * data)
 name|GdtMainWindow
 modifier|*
+DECL|function|create_main_window (GdtMainWindow ** main_window,GdtVals * data)
 name|create_main_window
 parameter_list|(
 name|GdtMainWindow
@@ -2935,7 +2929,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Line spacing"
+literal|"Line Spacing"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4048,8 +4042,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|gdt_create_ui (GdtVals * data)
 name|gboolean
+DECL|function|gdt_create_ui (GdtVals * data)
 name|gdt_create_ui
 parameter_list|(
 name|GdtVals
@@ -4291,8 +4285,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|set_gdt_vals (GdtVals * data)
 name|void
+DECL|function|set_gdt_vals (GdtVals * data)
 name|set_gdt_vals
 parameter_list|(
 name|GdtVals
@@ -4454,8 +4448,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|update_font_color_preview (void)
 name|void
+DECL|function|update_font_color_preview (void)
 name|update_font_color_preview
 parameter_list|(
 name|void
@@ -4672,8 +4666,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|on_main_window_apply_clicked (GtkWidget * widget,gpointer data0)
 name|void
+DECL|function|on_main_window_apply_clicked (GtkWidget * widget,gpointer data0)
 name|on_main_window_apply_clicked
 parameter_list|(
 name|GtkWidget
@@ -4766,8 +4760,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|on_main_window_cancel_clicked (GtkWidget * widget,gpointer data)
 name|void
+DECL|function|on_main_window_cancel_clicked (GtkWidget * widget,gpointer data)
 name|on_main_window_cancel_clicked
 parameter_list|(
 name|GtkWidget
@@ -4794,8 +4788,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|on_main_window_ok_press_event (GtkWidget * widget,GdkEvent * event,gpointer data)
 name|void
+DECL|function|on_main_window_ok_press_event (GtkWidget * widget,GdkEvent * event,gpointer data)
 name|on_main_window_ok_press_event
 parameter_list|(
 name|GtkWidget
@@ -4840,8 +4834,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|on_main_window_ok_clicked (GtkWidget * widget,gpointer data)
 name|void
+DECL|function|on_main_window_ok_clicked (GtkWidget * widget,gpointer data)
 name|on_main_window_ok_clicked
 parameter_list|(
 name|GtkWidget
@@ -4911,8 +4905,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|on_main_window_about_clicked (GtkWidget * widget,gpointer data)
 name|void
+DECL|function|on_main_window_about_clicked (GtkWidget * widget,gpointer data)
 name|on_main_window_about_clicked
 parameter_list|(
 name|GtkWidget
@@ -4943,8 +4937,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|on_about_dialog_close (GtkWidget * widget,gpointer data)
 name|void
+DECL|function|on_about_dialog_close (GtkWidget * widget,gpointer data)
 name|on_about_dialog_close
 parameter_list|(
 name|GtkWidget
@@ -4964,8 +4958,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|on_about_dialog_destroy (GtkWidget * widget,gpointer data)
 name|void
+DECL|function|on_about_dialog_destroy (GtkWidget * widget,gpointer data)
 name|on_about_dialog_destroy
 parameter_list|(
 name|GtkWidget
@@ -4984,8 +4978,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|on_main_window_font_color_clicked (GtkWidget * widget,gpointer data)
 name|void
+DECL|function|on_main_window_font_color_clicked (GtkWidget * widget,gpointer data)
 name|on_main_window_font_color_clicked
 parameter_list|(
 name|GtkWidget
@@ -5055,8 +5049,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|on_color_selection_dialog_ok_clicked (GtkWidget * widget,gpointer data)
 name|void
+DECL|function|on_color_selection_dialog_ok_clicked (GtkWidget * widget,gpointer data)
 name|on_color_selection_dialog_ok_clicked
 parameter_list|(
 name|GtkWidget
@@ -5094,8 +5088,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|on_color_selection_dialog_cancel_clicked (GtkWidget * widget,gpointer data)
 name|void
+DECL|function|on_color_selection_dialog_cancel_clicked (GtkWidget * widget,gpointer data)
 name|on_color_selection_dialog_cancel_clicked
 parameter_list|(
 name|GtkWidget
@@ -5130,8 +5124,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|on_main_window_align_l_clicked (GtkWidget * widget,gpointer data)
 name|void
+DECL|function|on_main_window_align_l_clicked (GtkWidget * widget,gpointer data)
 name|on_main_window_align_l_clicked
 parameter_list|(
 name|GtkWidget
@@ -5155,8 +5149,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|on_main_window_align_c_clicked (GtkWidget * widget,gpointer data)
 name|void
+DECL|function|on_main_window_align_c_clicked (GtkWidget * widget,gpointer data)
 name|on_main_window_align_c_clicked
 parameter_list|(
 name|GtkWidget
@@ -5180,8 +5174,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|on_main_window_align_r_clicked (GtkWidget * widget,gpointer data)
 name|void
+DECL|function|on_main_window_align_r_clicked (GtkWidget * widget,gpointer data)
 name|on_main_window_align_r_clicked
 parameter_list|(
 name|GtkWidget
@@ -5205,8 +5199,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|on_font_preview_toggled (GtkWidget * widget,gpointer data)
 name|void
+DECL|function|on_font_preview_toggled (GtkWidget * widget,gpointer data)
 name|on_font_preview_toggled
 parameter_list|(
 name|GtkWidget
@@ -5274,8 +5268,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|gtk_text_set_font (GtkText * text,GdkFont * font)
 name|void
+DECL|function|gtk_text_set_font (GtkText * text,GdkFont * font)
 name|gtk_text_set_font
 parameter_list|(
 name|GtkText
@@ -5382,6 +5376,7 @@ argument_list|)
 operator|>
 literal|0
 condition|)
+block|{
 name|gtk_text_insert
 argument_list|(
 name|text
@@ -5400,6 +5395,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+block|}
 else|else
 block|{
 name|gtk_text_insert
@@ -5465,8 +5461,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|on_font_selection_changed (GtkWidget * widget,gpointer data)
 name|void
+DECL|function|on_font_selection_changed (GtkWidget * widget,gpointer data)
 name|on_font_selection_changed
 parameter_list|(
 name|GtkWidget
@@ -5585,6 +5581,7 @@ argument_list|(
 name|charmap_window
 argument_list|)
 condition|)
+block|{
 name|charmap_set_font
 argument_list|(
 name|CHARMAP
@@ -5608,11 +5605,12 @@ name|font
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 end_function
 
 begin_function
-DECL|function|on_font_preview_button_clicked (GtkWidget * widget,gpointer data)
 name|void
+DECL|function|on_font_preview_button_clicked (GtkWidget * widget,gpointer data)
 name|on_font_preview_button_clicked
 parameter_list|(
 name|GtkWidget
@@ -5643,8 +5641,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|on_button_toggled (GtkWidget * widget,gpointer data)
 name|void
+DECL|function|on_button_toggled (GtkWidget * widget,gpointer data)
 name|on_button_toggled
 parameter_list|(
 name|GtkWidget
@@ -5674,8 +5672,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|on_charmap_button_toggled (GtkWidget * widget,gpointer data)
 name|void
+DECL|function|on_charmap_button_toggled (GtkWidget * widget,gpointer data)
 name|on_charmap_button_toggled
 parameter_list|(
 name|GtkWidget
@@ -5709,9 +5707,7 @@ name|charmap_window_new
 argument_list|(
 name|_
 argument_list|(
-literal|"GDynText "
-name|GDYNTEXT_VERSION
-literal|" : CharMap"
+literal|"GDynText: CharMap"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5853,8 +5849,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|toggle_button_update (GtkWidget * widget,GtkWidget * window)
 name|void
+DECL|function|toggle_button_update (GtkWidget * widget,GtkWidget * window)
 name|toggle_button_update
 parameter_list|(
 name|GtkWidget
@@ -5887,8 +5883,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|on_window_close (GtkWidget * widget,gpointer data)
 name|void
+DECL|function|on_window_close (GtkWidget * widget,gpointer data)
 name|on_window_close
 parameter_list|(
 name|GtkWidget
@@ -5921,8 +5917,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|on_window_destroy (GtkWidget * widget,gpointer data)
 name|void
+DECL|function|on_window_destroy (GtkWidget * widget,gpointer data)
 name|on_window_destroy
 parameter_list|(
 name|GtkWidget
@@ -5967,8 +5963,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|on_charmap_window_insert (GtkWidget * widget,gpointer data)
 name|void
+DECL|function|on_charmap_window_insert (GtkWidget * widget,gpointer data)
 name|on_charmap_window_insert
 parameter_list|(
 name|GtkWidget
@@ -6053,8 +6049,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|on_load_text_clicked (GtkWidget * widget,gpointer data)
 name|void
+DECL|function|on_load_text_clicked (GtkWidget * widget,gpointer data)
 name|on_load_text_clicked
 parameter_list|(
 name|GtkWidget
@@ -6077,9 +6073,7 @@ name|gtk_file_selection_new
 argument_list|(
 name|_
 argument_list|(
-literal|"GDynText "
-name|GDYNTEXT_VERSION
-literal|": Load text"
+literal|"GDynText: Load Text"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6171,8 +6165,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|load_text (GtkWidget * widget,gpointer data)
 name|void
+DECL|function|load_text (GtkWidget * widget,gpointer data)
 name|load_text
 parameter_list|(
 name|GtkWidget
@@ -6319,7 +6313,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Warning file \"%s\" is larger than the maximum allowed text length (%d).\n"
+literal|"Warning file \"%s\" is larger than the maximum allowed text length (%d)."
 argument_list|)
 argument_list|,
 name|file
@@ -6408,7 +6402,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Error opening \"%s\"!\n"
+literal|"Error opening \"%s\"!"
 argument_list|)
 argument_list|,
 name|file
