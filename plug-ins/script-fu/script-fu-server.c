@@ -353,7 +353,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b5bba50108
+DECL|struct|__anon29a425a70108
 block|{
 DECL|member|command
 name|gchar
@@ -377,7 +377,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b5bba50208
+DECL|struct|__anon29a425a70208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -2374,7 +2374,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacings
@@ -2384,7 +2384,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -2394,7 +2394,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2411,9 +2411,9 @@ argument_list|)
 argument_list|,
 name|table
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -2454,7 +2454,7 @@ argument_list|(
 literal|"Server Port:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -2464,7 +2464,7 @@ name|port_entry
 argument_list|,
 literal|1
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  The server logfile  */
@@ -2491,7 +2491,7 @@ argument_list|(
 literal|"Server Logfile:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -2501,7 +2501,7 @@ name|log_entry
 argument_list|,
 literal|1
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
