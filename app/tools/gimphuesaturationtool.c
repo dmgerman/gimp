@@ -832,12 +832,6 @@ operator|->
 name|hue_saturation
 argument_list|)
 expr_stmt|;
-name|hs_tool
-operator|->
-name|hue_partition
-operator|=
-name|GIMP_ALL_HUES
-expr_stmt|;
 name|GIMP_TOOL_CLASS
 argument_list|(
 name|parent_class
@@ -971,7 +965,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2be6d92a0108
+DECL|struct|__anon28ac418c0108
 block|{
 DECL|member|label
 specifier|const
