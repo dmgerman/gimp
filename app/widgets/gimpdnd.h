@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275dfc620103
+DECL|enum|__anon2901d6ae0103
 block|{
 DECL|enumerator|GIMP_DND_TYPE_NONE
 name|GIMP_DND_TYPE_NONE
@@ -96,25 +96,30 @@ name|GIMP_DND_TYPE_PALETTE
 init|=
 literal|14
 block|,
+DECL|enumerator|GIMP_DND_TYPE_FONT
+name|GIMP_DND_TYPE_FONT
+init|=
+literal|15
+block|,
 DECL|enumerator|GIMP_DND_TYPE_BUFFER
 name|GIMP_DND_TYPE_BUFFER
 init|=
-literal|15
+literal|16
 block|,
 DECL|enumerator|GIMP_DND_TYPE_IMAGEFILE
 name|GIMP_DND_TYPE_IMAGEFILE
 init|=
-literal|16
+literal|17
 block|,
 DECL|enumerator|GIMP_DND_TYPE_TOOL
 name|GIMP_DND_TYPE_TOOL
 init|=
-literal|17
+literal|18
 block|,
 DECL|enumerator|GIMP_DND_TYPE_DIALOG
 name|GIMP_DND_TYPE_DIALOG
 init|=
-literal|18
+literal|19
 block|,
 DECL|enumerator|GIMP_DND_TYPE_LAST
 name|GIMP_DND_TYPE_LAST
@@ -250,6 +255,15 @@ directive|define
 name|GIMP_TARGET_PALETTE
 define|\
 value|{ "GIMP_PALETTE", 0, GIMP_DND_TYPE_PALETTE }
+end_define
+
+begin_define
+DECL|macro|GIMP_TARGET_FONT
+define|#
+directive|define
+name|GIMP_TARGET_FONT
+define|\
+value|{ "GIMP_FONT", 0, GIMP_DND_TYPE_FONT }
 end_define
 
 begin_define
