@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c666ee80103
+DECL|enum|__anon27947d4f0103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -2281,19 +2281,6 @@ expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
-argument_list|(
-name|gimage
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IMAGE_TYPE_BASE_TYPE
-argument_list|(
-name|type
-argument_list|)
-operator|==
-name|gimp_image_base_type
 argument_list|(
 name|gimage
 argument_list|)
