@@ -1153,16 +1153,14 @@ operator|++
 expr_stmt|;
 block|}
 block|}
-comment|/* This I hope frees up internal stuff */
 if|if
 condition|(
 name|search_str
 condition|)
-name|free
+name|regfree
 argument_list|(
+operator|&
 name|sregex
-operator|.
-name|buffer
 argument_list|)
 expr_stmt|;
 name|return_args
