@@ -1289,7 +1289,7 @@ end_function
 begin_function
 specifier|inline
 name|void
-DECL|function|shade_pixels (const guchar * src,guchar * dest,const guchar * col,guchar blend,guint w,guint bytes,guint has_alpha)
+DECL|function|shade_pixels (const guchar * src,guchar * dest,const guchar * col,guchar blend,guint w,guint bytes,gboolean has_alpha)
 name|shade_pixels
 parameter_list|(
 specifier|const
@@ -1315,7 +1315,7 @@ parameter_list|,
 name|guint
 name|bytes
 parameter_list|,
-name|guint
+name|gboolean
 name|has_alpha
 parameter_list|)
 block|{
@@ -5654,7 +5654,7 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|replace_pixels (guchar * src1,guchar * src2,guchar * dest,guchar * mask,gint length,gint opacity,gboolean * affect,gint bytes1,gint bytes2)
+DECL|function|replace_pixels (guchar * src1,guchar * src2,guchar * dest,guchar * mask,gint length,gint opacity,const gboolean * affect,gint bytes1,gint bytes2)
 name|replace_pixels
 parameter_list|(
 name|guchar
@@ -5679,6 +5679,7 @@ parameter_list|,
 name|gint
 name|opacity
 parameter_list|,
+specifier|const
 name|gboolean
 modifier|*
 name|affect
@@ -7134,7 +7135,7 @@ end_function
 begin_function
 specifier|inline
 name|void
-DECL|function|initial_inten_pixels (const guchar * src,guchar * dest,const guchar * mask,const guchar * no_mask,guint opacity,const gint * affect,guint length,guint bytes)
+DECL|function|initial_inten_pixels (const guchar * src,guchar * dest,const guchar * mask,const guchar * no_mask,guint opacity,const gboolean * affect,guint length,guint bytes)
 name|initial_inten_pixels
 parameter_list|(
 specifier|const
@@ -7160,7 +7161,7 @@ name|guint
 name|opacity
 parameter_list|,
 specifier|const
-name|gint
+name|gboolean
 modifier|*
 name|affect
 parameter_list|,

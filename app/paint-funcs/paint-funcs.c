@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2d4a400103
+DECL|enum|__anon28b4305c0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -176,7 +176,7 @@ name|LayerMode
 name|layer_modes
 index|[]
 init|=
-comment|/* This must obviously be in the same 			        * order as the corresponding values 		         	* in the GimpLayerModeEffects enumeration. 				*/
+comment|/* This must obviously be in the same                                 * order as the corresponding values                                  * in the GimpLayerModeEffects enumeration.                                 */
 block|{
 block|{
 name|TRUE
@@ -587,6 +587,7 @@ parameter_list|,
 name|guint
 name|bytes2
 parameter_list|,
+specifier|const
 name|gboolean
 modifier|*
 name|affect
@@ -3394,11 +3395,11 @@ block|}
 end_function
 
 begin_comment
-comment|/*orig #define alphify(src2_alpha,new_alpha) \ 	if (new_alpha == 0 || src2_alpha == 0)							\ 	  {											\ 	    for (b = 0; b< alpha; b++)								\ 	      dest[b] = src1 [b];								\ 	  }											\ 	else if (src2_alpha == new_alpha){							\ 	  for (b = 0; b< alpha; b++)								\ 	    dest [b] = affect [b] ? src2 [b] : src1 [b];					\ 	} else {										\ 	  ratio = (float) src2_alpha / new_alpha;						\ 	  compl_ratio = 1.0 - ratio;								\ 	  											\ 	  for (b = 0; b< alpha; b++)								\ 	    dest[b] = affect[b] ?								\ 	      (guchar) (src2[b] * ratio + src1[b] * compl_ratio + EPSILON) : src1[b];	\ 	}*/
+comment|/*orig #define alphify(src2_alpha,new_alpha) \         if (new_alpha == 0 || src2_alpha == 0)                                                        \           {                                                                                        \             for (b = 0; b< alpha; b++)                                                                \               dest[b] = src1 [b];                                                                \           }                                                                                        \         else if (src2_alpha == new_alpha){                                                        \           for (b = 0; b< alpha; b++)                                                                \             dest [b] = affect [b] ? src2 [b] : src1 [b];                                        \         } else {                                                                                \           ratio = (float) src2_alpha / new_alpha;                                                \           compl_ratio = 1.0 - ratio;                                                                \                                                                                                   \           for (b = 0; b< alpha; b++)                                                                \             dest[b] = affect[b] ?                                                                \               (guchar) (src2[b] * ratio + src1[b] * compl_ratio + EPSILON) : src1[b];        \         }*/
 end_comment
 
 begin_comment
-comment|/*shortened #define alphify(src2_alpha,new_alpha) \ 	if (src2_alpha != 0&& new_alpha != 0)							\ 	  {											\ 	    if (src2_alpha == new_alpha){							\ 	      for (b = 0; b< alpha; b++)							\ 	      dest [b] = affect [b] ? src2 [b] : src1 [b];					\ 	    } else {										\ 	      ratio = (float) src2_alpha / new_alpha;						\ 	      compl_ratio = 1.0 - ratio;							\ 	  											\ 	      for (b = 0; b< alpha; b++)							\ 	        dest[b] = affect[b] ?								\ 	          (guchar) (src2[b] * ratio + src1[b] * compl_ratio + EPSILON) : src1[b];\ 	    }                                                                                   \ 	  }*/
+comment|/*shortened #define alphify(src2_alpha,new_alpha) \         if (src2_alpha != 0&& new_alpha != 0)                                                        \           {                                                                                        \             if (src2_alpha == new_alpha){                                                        \               for (b = 0; b< alpha; b++)                                                        \               dest [b] = affect [b] ? src2 [b] : src1 [b];                                        \             } else {                                                                                \               ratio = (float) src2_alpha / new_alpha;                                                \               compl_ratio = 1.0 - ratio;                                                        \                                                                                                   \               for (b = 0; b< alpha; b++)                                                        \                 dest[b] = affect[b] ?                                                                \                   (guchar) (src2[b] * ratio + src1[b] * compl_ratio + EPSILON) : src1[b];\             }                                                                                   \           }*/
 end_comment
 
 begin_define
@@ -3412,16 +3413,16 @@ parameter_list|,
 name|new_alpha
 parameter_list|)
 define|\
-value|if (src2_alpha != 0&& new_alpha != 0)							\ 	  {											\             b = alpha; \ 	    if (src2_alpha == new_alpha){							\ 	      do { \ 	      b--; dest [b] = affect [b] ? src2 [b] : src1 [b];} while (b);	\ 	    } else {										\ 	      ratio = (float) src2_alpha / new_alpha;						\ 	      compl_ratio = 1.0 - ratio;							\ 	  											\               do { b--; \ 	        dest[b] = affect[b] ?								\ 	          (guchar) (src2[b] * ratio + src1[b] * compl_ratio + EPSILON) : src1[b];\          	  } while (b); \ 	    }    \ 	  }
+value|if (src2_alpha != 0&& new_alpha != 0)                                                        \           {                                                                                        \             b = alpha; \             if (src2_alpha == new_alpha){                                                        \               do { \               b--; dest [b] = affect [b] ? src2 [b] : src1 [b];} while (b);        \             } else {                                                                                \               ratio = (float) src2_alpha / new_alpha;                                                \               compl_ratio = 1.0 - ratio;                                                        \                                                                                                   \               do { b--; \                 dest[b] = affect[b] ?                                                                \                   (guchar) (src2[b] * ratio + src1[b] * compl_ratio + EPSILON) : src1[b];\                    } while (b); \             }    \           }
 end_define
 
 begin_comment
-comment|/*special #define alphify4(src2_alpha,new_alpha) \ 	if (src2_alpha != 0&& new_alpha != 0)							\ 	  {											\ 	    if (src2_alpha == new_alpha){							\ 	      dest [0] = affect [0] ? src2 [0] : src1 [0];					\ 	      dest [1] = affect [1] ? src2 [1] : src1 [1];					\ 	      dest [2] = affect [2] ? src2 [2] : src1 [2];					\ 	    } else {										\ 	      ratio = (float) src2_alpha / new_alpha;						\ 	      compl_ratio = 1.0 - ratio;							\ 	  											\ 	      dest[0] = affect[0] ?								\ 	        (guchar) (src2[0] * ratio + src1[0] * compl_ratio + EPSILON) : src1[0];  \ 	      dest[1] = affect[1] ?								\ 	        (guchar) (src2[1] * ratio + src1[1] * compl_ratio + EPSILON) : src1[1];  \ 	      dest[2] = affect[2] ?								\ 	        (guchar) (src2[2] * ratio + src1[2] * compl_ratio + EPSILON) : src1[2];  \ 	    }                                                                                   \ 	  }*/
+comment|/*special #define alphify4(src2_alpha,new_alpha) \         if (src2_alpha != 0&& new_alpha != 0)                                                        \           {                                                                                        \             if (src2_alpha == new_alpha){                                                        \               dest [0] = affect [0] ? src2 [0] : src1 [0];                                        \               dest [1] = affect [1] ? src2 [1] : src1 [1];                                        \               dest [2] = affect [2] ? src2 [2] : src1 [2];                                        \             } else {                                                                                \               ratio = (float) src2_alpha / new_alpha;                                                \               compl_ratio = 1.0 - ratio;                                                        \                                                                                                   \               dest[0] = affect[0] ?                                                                \                 (guchar) (src2[0] * ratio + src1[0] * compl_ratio + EPSILON) : src1[0];  \               dest[1] = affect[1] ?                                                                \                 (guchar) (src2[1] * ratio + src1[1] * compl_ratio + EPSILON) : src1[1];  \               dest[2] = affect[2] ?                                                                \                 (guchar) (src2[2] * ratio + src1[2] * compl_ratio + EPSILON) : src1[2];  \             }                                                                                   \           }*/
 end_comment
 
 begin_function
 name|void
-DECL|function|combine_inten_a_and_inten_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,guint opacity,const gboolean * affect,guint mode_affect,guint length,guint bytes)
+DECL|function|combine_inten_a_and_inten_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,guint opacity,const gboolean * affect,gboolean mode_affect,guint length,guint bytes)
 name|combine_inten_a_and_inten_pixels
 parameter_list|(
 specifier|const
@@ -3451,7 +3452,7 @@ name|gboolean
 modifier|*
 name|affect
 parameter_list|,
-name|guint
+name|gboolean
 name|mode_affect
 parameter_list|,
 comment|/*  how does the combination mode affect alpha?  */
@@ -3881,7 +3882,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_inten_a_and_inten_a_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,guint opacity,const gboolean * affect,guint mode_affect,guint length,guint bytes)
+DECL|function|combine_inten_a_and_inten_a_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,guint opacity,const gboolean * affect,gboolean mode_affect,guint length,guint bytes)
 name|combine_inten_a_and_inten_a_pixels
 parameter_list|(
 specifier|const
@@ -3911,7 +3912,7 @@ name|gboolean
 modifier|*
 name|affect
 parameter_list|,
-name|guint
+name|gboolean
 name|mode_affect
 parameter_list|,
 comment|/*  how does the combination mode affect alpha?  */
@@ -8224,7 +8225,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|extract_from_inten_pixels (guchar * src,guchar * dest,const guchar * mask,const guchar * bg,guint cut,guint length,guint bytes,guint has_alpha)
+DECL|function|extract_from_inten_pixels (guchar * src,guchar * dest,const guchar * mask,const guchar * bg,gboolean cut,guint length,guint bytes,gboolean has_alpha)
 name|extract_from_inten_pixels
 parameter_list|(
 name|guchar
@@ -8245,7 +8246,7 @@ name|guchar
 modifier|*
 name|bg
 parameter_list|,
-name|guint
+name|gboolean
 name|cut
 parameter_list|,
 name|guint
@@ -8254,7 +8255,7 @@ parameter_list|,
 name|guint
 name|bytes
 parameter_list|,
-name|guint
+name|gboolean
 name|has_alpha
 parameter_list|)
 block|{
@@ -8463,7 +8464,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|extract_from_indexed_pixels (guchar * src,guchar * dest,const guchar * mask,const guchar * cmap,const guchar * bg,guint cut,guint length,guint bytes,guint has_alpha)
+DECL|function|extract_from_indexed_pixels (guchar * src,guchar * dest,const guchar * mask,const guchar * cmap,const guchar * bg,gboolean cut,guint length,guint bytes,gboolean has_alpha)
 name|extract_from_indexed_pixels
 parameter_list|(
 name|guchar
@@ -8489,7 +8490,7 @@ name|guchar
 modifier|*
 name|bg
 parameter_list|,
-name|guint
+name|gboolean
 name|cut
 parameter_list|,
 name|guint
@@ -8498,7 +8499,7 @@ parameter_list|,
 name|guint
 name|bytes
 parameter_list|,
-name|guint
+name|gboolean
 name|has_alpha
 parameter_list|)
 block|{
@@ -9138,7 +9139,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|blend_region (PixelRegion * src1,PixelRegion * src2,PixelRegion * dest,gint blend)
+DECL|function|blend_region (PixelRegion * src1,PixelRegion * src2,PixelRegion * dest,guchar blend)
 name|blend_region
 parameter_list|(
 name|PixelRegion
@@ -9153,7 +9154,7 @@ name|PixelRegion
 modifier|*
 name|dest
 parameter_list|,
-name|gint
+name|guchar
 name|blend
 parameter_list|)
 block|{
@@ -9275,7 +9276,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|shade_region (PixelRegion * src,PixelRegion * dest,guchar * col,gint blend)
+DECL|function|shade_region (PixelRegion * src,PixelRegion * dest,guchar * color,guchar blend)
 name|shade_region
 parameter_list|(
 name|PixelRegion
@@ -9288,9 +9289,9 @@ name|dest
 parameter_list|,
 name|guchar
 modifier|*
-name|col
+name|color
 parameter_list|,
-name|gint
+name|guchar
 name|blend
 parameter_list|)
 block|{
@@ -9993,7 +9994,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|extract_from_region (PixelRegion * src,PixelRegion * dest,PixelRegion * mask,guchar * cmap,guchar * bg,guint type,guint has_alpha,guint cut)
+DECL|function|extract_from_region (PixelRegion * src,PixelRegion * dest,PixelRegion * mask,guchar * cmap,guchar * bg,gint type,gboolean has_alpha,gboolean cut)
 name|extract_from_region
 parameter_list|(
 name|PixelRegion
@@ -10016,13 +10017,13 @@ name|guchar
 modifier|*
 name|bg
 parameter_list|,
-name|guint
+name|gint
 name|type
 parameter_list|,
-name|guint
+name|gboolean
 name|has_alpha
 parameter_list|,
-name|guint
+name|gboolean
 name|cut
 parameter_list|)
 block|{
@@ -11020,7 +11021,7 @@ name|x
 operator|++
 control|)
 block|{
-comment|/* predicate is equivalent to: 	     (((s[bytes - 1] - 1)& 255) + 2)& 256 	     */
+comment|/* predicate is equivalent to:              (((s[bytes - 1] - 1)& 255) + 2)& 256              */
 if|if
 condition|(
 name|s
@@ -15897,7 +15898,7 @@ operator|!=
 literal|0
 condition|)
 block|{
-comment|/*  If min_left != min_prev use the previous fraction 	       *   if it is less than the one found 	       */
+comment|/*  If min_left != min_prev use the previous fraction                *   if it is less than the one found                */
 if|if
 condition|(
 name|min_left
@@ -17059,7 +17060,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|thin_region (PixelRegion * src,gint16 xradius,gint16 yradius,gint edge_lock)
+DECL|function|thin_region (PixelRegion * src,gint16 xradius,gint16 yradius,gboolean edge_lock)
 name|thin_region
 parameter_list|(
 name|PixelRegion
@@ -17072,7 +17073,7 @@ parameter_list|,
 name|gint16
 name|yradius
 parameter_list|,
-name|gint
+name|gboolean
 name|edge_lock
 parameter_list|)
 block|{
@@ -20504,7 +20505,7 @@ name|guchar
 modifier|*
 name|m
 decl_stmt|;
-name|gint
+name|guint
 name|opacity
 init|=
 operator|*
@@ -20634,7 +20635,7 @@ name|guchar
 modifier|*
 name|m
 decl_stmt|;
-name|gint
+name|guint
 name|opacity
 init|=
 operator|*
@@ -20973,6 +20974,7 @@ name|GimpLayerModeEffects
 name|mode
 decl_stmt|;
 DECL|member|affect
+specifier|const
 name|gboolean
 modifier|*
 name|affect
@@ -21040,6 +21042,7 @@ decl_stmt|;
 name|GimpLayerModeEffects
 name|mode
 decl_stmt|;
+specifier|const
 name|gboolean
 modifier|*
 name|affect
@@ -21721,7 +21724,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|initial_region (PixelRegion * src,PixelRegion * dest,PixelRegion * mask,guchar * data,gint opacity,GimpLayerModeEffects mode,gboolean * affect,InitialMode type)
+DECL|function|initial_region (PixelRegion * src,PixelRegion * dest,PixelRegion * mask,guchar * data,guint opacity,GimpLayerModeEffects mode,const gboolean * affect,InitialMode type)
 name|initial_region
 parameter_list|(
 name|PixelRegion
@@ -21740,12 +21743,13 @@ name|guchar
 modifier|*
 name|data
 parameter_list|,
-name|gint
+name|guint
 name|opacity
 parameter_list|,
 name|GimpLayerModeEffects
 name|mode
 parameter_list|,
+specifier|const
 name|gboolean
 modifier|*
 name|affect
@@ -21824,6 +21828,7 @@ name|GimpLayerModeEffects
 name|mode
 decl_stmt|;
 DECL|member|affect
+specifier|const
 name|gboolean
 modifier|*
 name|affect
@@ -21951,6 +21956,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|combine_sub_region (struct combine_regions_struct * st,PixelRegion * src1,PixelRegion * src2,PixelRegion * dest,PixelRegion * mask)
 name|combine_sub_region
@@ -21994,6 +22000,7 @@ decl_stmt|;
 name|GimpLayerModeEffects
 name|mode
 decl_stmt|;
+specifier|const
 name|gboolean
 modifier|*
 name|affect
@@ -22009,10 +22016,10 @@ decl_stmt|;
 name|CombinationMode
 name|type
 decl_stmt|;
-name|guint
+name|gboolean
 name|mode_affect
 init|=
-literal|0
+name|FALSE
 decl_stmt|;
 name|guchar
 modifier|*
@@ -22842,7 +22849,7 @@ break|break;
 case|case
 name|COMBINE_INTEN_A_INDEXED_A
 case|:
-comment|/*  assume the data passed to this procedure is the 	   *  indexed layer's colormap 	   */
+comment|/*  assume the data passed to this procedure is the            *  indexed layer's colormap            */
 name|combine_inten_a_and_indexed_a_pixels
 argument_list|(
 name|s1
@@ -22870,7 +22877,7 @@ break|break;
 case|case
 name|COMBINE_INTEN_A_CHANNEL_MASK
 case|:
-comment|/*  assume the data passed to this procedure is the 	   *  indexed layer's colormap 	   */
+comment|/*  assume the data passed to this procedure is the            *  indexed layer's colormap            */
 name|combine_inten_a_and_channel_mask_pixels
 argument_list|(
 name|s1
@@ -23412,7 +23419,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_regions (PixelRegion * src1,PixelRegion * src2,PixelRegion * dest,PixelRegion * mask,guchar * data,guint opacity,GimpLayerModeEffects mode,gboolean * affect,CombinationMode type)
+DECL|function|combine_regions (PixelRegion * src1,PixelRegion * src2,PixelRegion * dest,PixelRegion * mask,guchar * data,guint opacity,GimpLayerModeEffects mode,const gboolean * affect,CombinationMode type)
 name|combine_regions
 parameter_list|(
 name|PixelRegion
@@ -23441,6 +23448,7 @@ parameter_list|,
 name|GimpLayerModeEffects
 name|mode
 parameter_list|,
+specifier|const
 name|gboolean
 modifier|*
 name|affect
@@ -23702,7 +23710,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_regions_replace (PixelRegion * src1,PixelRegion * src2,PixelRegion * dest,PixelRegion * mask,guchar * data,guint opacity,gboolean * affect,CombinationMode type)
+DECL|function|combine_regions_replace (PixelRegion * src1,PixelRegion * src2,PixelRegion * dest,PixelRegion * mask,guchar * data,guint opacity,const gboolean * affect,CombinationMode type)
 name|combine_regions_replace
 parameter_list|(
 name|PixelRegion
@@ -23728,6 +23736,7 @@ parameter_list|,
 name|guint
 name|opacity
 parameter_list|,
+specifier|const
 name|gboolean
 modifier|*
 name|affect
@@ -23897,7 +23906,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|apply_layer_mode_replace (guchar * src1,guchar * src2,guchar * dest,guchar * mask,gint x,gint y,guint opacity,guint length,guint bytes1,guint bytes2,gboolean * affect)
+DECL|function|apply_layer_mode_replace (guchar * src1,guchar * src2,guchar * dest,guchar * mask,gint x,gint y,guint opacity,guint length,guint bytes1,guint bytes2,const gboolean * affect)
 name|apply_layer_mode_replace
 parameter_list|(
 name|guchar
@@ -23934,6 +23943,7 @@ parameter_list|,
 name|guint
 name|bytes2
 parameter_list|,
+specifier|const
 name|gboolean
 modifier|*
 name|affect
