@@ -296,7 +296,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2beee58b0108
+DECL|struct|__anon2b5f99780108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -807,12 +807,18 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|divided_tile_cache_size
+specifier|static
+name|int
+name|divided_tile_cache_size
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|mem_size_unit
 specifier|static
 name|int
 name|mem_size_unit
-init|=
-literal|1
 decl_stmt|;
 end_decl_stmt
 
@@ -952,6 +958,12 @@ modifier|*
 name|dlg
 parameter_list|)
 block|{
+name|edit_tile_cache_size
+operator|=
+name|mem_size_unit
+operator|*
+name|divided_tile_cache_size
+expr_stmt|;
 if|if
 condition|(
 name|levels_of_undo
@@ -1451,11 +1463,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-operator|(
 name|edit_tile_cache_size
-operator|*
-name|mem_size_unit
-operator|)
 operator|!=
 name|tile_cache_size
 condition|)
@@ -1472,8 +1480,6 @@ expr_stmt|;
 name|tile_cache_size
 operator|=
 name|edit_tile_cache_size
-operator|*
-name|mem_size_unit
 expr_stmt|;
 name|restart_notification
 operator|=
@@ -2337,9 +2343,6 @@ block|{
 name|int
 name|new_unit
 decl_stmt|;
-name|int
-name|new_size
-decl_stmt|;
 name|new_unit
 operator|=
 operator|(
@@ -2355,17 +2358,13 @@ operator|!=
 name|mem_size_unit
 condition|)
 block|{
-name|new_size
+name|divided_tile_cache_size
 operator|=
-name|edit_tile_cache_size
+name|divided_tile_cache_size
 operator|*
 name|mem_size_unit
 operator|/
 name|new_unit
-expr_stmt|;
-name|edit_tile_cache_size
-operator|=
-name|new_size
 expr_stmt|;
 name|mem_size_unit
 operator|=
@@ -2381,7 +2380,7 @@ argument_list|,
 operator|(
 name|float
 operator|)
-name|edit_tile_cache_size
+name|divided_tile_cache_size
 argument_list|)
 expr_stmt|;
 block|}
@@ -2584,12 +2583,6 @@ modifier|*
 name|group
 decl_stmt|;
 name|char
-name|buffer
-index|[
-literal|32
-index|]
-decl_stmt|;
-name|char
 modifier|*
 name|transparencies
 index|[]
@@ -2651,7 +2644,7 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon2beee58b0208
+DECL|struct|__anon2b5f99780208
 struct|struct
 block|{
 DECL|member|label
@@ -2691,7 +2684,7 @@ operator|)
 block|}
 block|}
 struct|;
-DECL|struct|__anon2beee58b0308
+DECL|struct|__anon2b5f99780308
 struct|struct
 block|{
 DECL|member|label
@@ -2760,7 +2753,7 @@ name|edit_plug_in_path
 block|}
 block|}
 struct|;
-DECL|struct|__anon2beee58b0408
+DECL|struct|__anon2b5f99780408
 struct|struct
 block|{
 DECL|member|label
@@ -2956,7 +2949,6 @@ name|edit_tile_cache_size
 operator|=
 name|tile_cache_size
 expr_stmt|;
-comment|/* take care! edit_tile_cache_size 							 will be divided by mem_size_unit */
 name|edit_install_cmap
 operator|=
 name|install_cmap
@@ -3135,7 +3127,7 @@ operator|.
 name|unit
 expr_stmt|;
 block|}
-name|edit_tile_cache_size
+name|divided_tile_cache_size
 operator|=
 name|edit_tile_cache_size
 operator|/
@@ -5693,7 +5685,7 @@ operator|*
 operator|)
 name|gtk_adjustment_new
 argument_list|(
-name|edit_tile_cache_size
+name|divided_tile_cache_size
 argument_list|,
 literal|0.0
 argument_list|,
@@ -5783,7 +5775,7 @@ operator|)
 name|file_prefs_spinbutton_callback
 argument_list|,
 operator|&
-name|edit_tile_cache_size
+name|divided_tile_cache_size
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
