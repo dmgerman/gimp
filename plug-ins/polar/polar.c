@@ -169,7 +169,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon275983650108
+DECL|struct|__anon279fa28f0108
 typedef|typedef
 struct|struct
 block|{
@@ -200,7 +200,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon275983650208
+DECL|struct|__anon279fa28f0208
 typedef|typedef
 struct|struct
 block|{
@@ -240,7 +240,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon275983650308
+DECL|struct|__anon279fa28f0308
 typedef|typedef
 struct|struct
 block|{
@@ -5575,8 +5575,12 @@ name|py
 decl_stmt|;
 name|double
 name|cx
+init|=
+literal|0.0
 decl_stmt|,
 name|cy
+init|=
+literal|0.0
 decl_stmt|;
 name|int
 name|ix

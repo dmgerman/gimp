@@ -4,7 +4,7 @@ comment|/* bmp.c                                          */
 end_comment
 
 begin_comment
-comment|/* Version 0.42	                                  */
+comment|/* Version 0.43	                                  */
 end_comment
 
 begin_comment
@@ -57,6 +57,14 @@ end_comment
 
 begin_comment
 comment|/*            06.04.1998 Bugfix in Padding        */
+end_comment
+
+begin_comment
+comment|/*            11.04.1998 Arch. cleanup (-Wall)    */
+end_comment
+
+begin_comment
+comment|/*                       Parses gtkrc             */
 end_comment
 
 begin_comment

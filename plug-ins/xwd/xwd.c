@@ -8,7 +8,7 @@ comment|/*  * XWD-input/output was written by Peter Kirchgessner (pkirchg@aol.co
 end_comment
 
 begin_comment
-comment|/* Event history:  * V 1.00, PK, xx-Aug-96: First try  * V 1.01, PK, 03-Sep-96: Check for bitmap_bit_order  * V 1.90, PK, 17-Mar-97: Upgrade to work with GIMP V0.99  *                        Use visual class 3 to write indexed image  *                        Set gimp b/w-colormap if no xwdcolormap present  * V 1.91, PK, 05-Apr-97: Return all arguments, even in case of an error  * V 1.92, PK, 12-Oct-97: No progress bars for non-interactive mode  */
+comment|/* Event history:  * V 1.00, PK, xx-Aug-96: First try  * V 1.01, PK, 03-Sep-96: Check for bitmap_bit_order  * V 1.90, PK, 17-Mar-97: Upgrade to work with GIMP V0.99  *                        Use visual class 3 to write indexed image  *                        Set gimp b/w-colormap if no xwdcolormap present  * V 1.91, PK, 05-Apr-97: Return all arguments, even in case of an error  * V 1.92, PK, 12-Oct-97: No progress bars for non-interactive mode  * V 1.93, PK, 11-Apr-98: Fix problem with overwriting memory  */
 end_comment
 
 begin_decl_stmt
@@ -18,7 +18,7 @@ name|char
 name|ident
 index|[]
 init|=
-literal|"@(#) GIMP XWD file-plugin v1.92  12-Oct-97"
+literal|"@(#) GIMP XWD file-plugin v1.93  11-Apr-98"
 decl_stmt|;
 end_decl_stmt
 
@@ -86,7 +86,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a3e59d90108
+DECL|struct|__anon2974718b0108
 typedef|typedef
 struct|struct
 block|{
@@ -220,7 +220,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a3e59d90208
+DECL|struct|__anon2974718b0208
 typedef|typedef
 struct|struct
 block|{
@@ -278,7 +278,7 @@ value|((1<< MAPPERBITS)-1)
 end_define
 
 begin_typedef
-DECL|struct|__anon2a3e59d90308
+DECL|struct|__anon2974718b0308
 typedef|typedef
 struct|struct
 block|{
@@ -304,7 +304,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a3e59d90408
+DECL|struct|__anon2974718b0408
 typedef|typedef
 struct|struct
 block|{
@@ -6907,7 +6907,7 @@ expr_stmt|;
 comment|/* Get memory for mapping 16 bit XWD-pixel to GIMP-RGB */
 name|maxval
 operator|=
-literal|0xffff
+literal|0x10000
 operator|*
 literal|3
 expr_stmt|;

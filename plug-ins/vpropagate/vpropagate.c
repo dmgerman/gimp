@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* vpropagate.c -- This is a plug-in for the GIMP (1.0's API)  * Author: Shuji Narazaki<narazaki@InetQ.or.jp>  * Time-stamp:<1997/10/24 20:09:07 narazaki@InetQ.or.jp>  * Version: 0.89  *  * Copyright (C) 1996-1997 Shuji Narazaki<narazaki@InetQ.or.jp>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  */
+comment|/* vpropagate.c -- This is a plug-in for the GIMP (1.0's API)  * Author: Shuji Narazaki<narazaki@InetQ.or.jp>  * Time-stamp:<1998/04/11 19:46:08 narazaki@InetQ.or.jp>  * Version: 0.89a  *  * Copyright (C) 1996-1997 Shuji Narazaki<narazaki@InetQ.or.jp>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  */
 end_comment
 
 begin_comment
@@ -929,7 +929,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2784c2f40108
+DECL|struct|__anon2bb0e7230108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -1073,7 +1073,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2784c2f40208
+DECL|struct|__anon2bb0e7230208
 block|{
 DECL|member|applicable_image_type
 name|int
@@ -1294,7 +1294,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2784c2f40308
+DECL|struct|__anon2bb0e7230308
 block|{
 DECL|member|run
 name|gint
@@ -1462,7 +1462,7 @@ literal|"1996-1997"
 argument_list|,
 name|MENU_POSITION
 argument_list|,
-literal|"RGB*"
+literal|"RGB*,GRAY*"
 argument_list|,
 name|PROC_PLUG_IN
 argument_list|,
@@ -3944,7 +3944,7 @@ end_block
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2784c2f40408
+DECL|struct|__anon2bb0e7230408
 block|{
 DECL|member|min_modified
 name|short

@@ -94,7 +94,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bed13a90108
+DECL|struct|__anon2c39fa0a0108
 block|{
 DECL|member|run
 name|gint

@@ -92,7 +92,7 @@ name|buffer
 parameter_list|,
 name|len
 parameter_list|)
-value|(Write(file,buffer,len) != 0)
+value|(Write(buffer, len, file) != 0)
 end_define
 
 begin_function_decl
@@ -313,7 +313,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2ab999ec0108
+DECL|struct|__anon2c40bf790108
 block|{
 DECL|member|bfSize
 name|unsigned
@@ -347,7 +347,7 @@ end_struct
 
 begin_struct
 struct|struct
-DECL|struct|__anon2ab999ec0208
+DECL|struct|__anon2c40bf790208
 block|{
 DECL|member|biWidth
 name|unsigned
@@ -418,7 +418,7 @@ end_struct
 
 begin_struct
 struct|struct
-DECL|struct|__anon2ab999ec0308
+DECL|struct|__anon2c40bf790308
 block|{
 DECL|member|bcWidth
 name|unsigned
