@@ -4131,7 +4131,7 @@ expr_stmt|;
 while|while
 condition|(
 name|ndigits
-operator|<=
+operator|<
 literal|3
 condition|)
 block|{
