@@ -2286,9 +2286,11 @@ name|progress
 argument_list|)
 expr_stmt|;
 comment|/* Headers */
-name|bzero
+name|memset
 argument_list|(
 name|header
+argument_list|,
+literal|0
 argument_list|,
 literal|32
 argument_list|)

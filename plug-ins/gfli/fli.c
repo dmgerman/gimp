@@ -28,6 +28,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"fli.h"
 end_include
 
