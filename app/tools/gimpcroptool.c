@@ -138,6 +138,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptoolcontrol.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tool_manager.h"
 end_include
 
@@ -165,7 +171,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c1a4670103
+DECL|enum|__anon2b925a500103
 block|{
 DECL|enumerator|CREATING
 name|CREATING

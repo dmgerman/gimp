@@ -22,12 +22,6 @@ directive|include
 file|"core/gimpobject.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimptoolcontrol.h"
-end_include
-
 begin_define
 DECL|macro|GIMP_TYPE_TOOL
 define|#

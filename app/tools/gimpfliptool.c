@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptoolcontrol.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"path_transform.h"
 end_include
 

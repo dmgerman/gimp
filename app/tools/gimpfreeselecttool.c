@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptoolcontrol.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 

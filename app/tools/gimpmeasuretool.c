@@ -137,6 +137,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptoolcontrol.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tool_manager.h"
 end_include
 
