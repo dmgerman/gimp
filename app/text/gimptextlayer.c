@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b6b1630103
+DECL|enum|__anon27ec3e810103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1852,6 +1852,9 @@ name|GimpText
 modifier|*
 name|text
 decl_stmt|;
+name|gboolean
+name|undo_group
+decl_stmt|;
 name|va_list
 name|var_args
 decl_stmt|;
@@ -1891,14 +1894,28 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  If the layer contains a mask,    *  gimp_text_layer_render() might have to resize it.    */
-if|if
-condition|(
+name|undo_group
+operator|=
+operator|(
+operator|(
 name|GIMP_LAYER
 argument_list|(
 name|layer
 argument_list|)
 operator|->
 name|mask
+operator|!=
+name|NULL
+operator|)
+operator|||
+name|layer
+operator|->
+name|modified
+operator|)
+expr_stmt|;
+if|if
+condition|(
+name|undo_group
 condition|)
 name|gimp_image_undo_group_start
 argument_list|(
@@ -1944,12 +1961,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GIMP_LAYER
-argument_list|(
-name|layer
-argument_list|)
-operator|->
-name|mask
+name|undo_group
 condition|)
 name|gimp_image_undo_group_end
 argument_list|(
