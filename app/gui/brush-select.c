@@ -608,7 +608,7 @@ name|context
 argument_list|,
 name|FALSE
 argument_list|,
-name|GIMP_PREVIEW_SIZE_EXTRA_SMALL
+name|GIMP_PREVIEW_SIZE_MEDIUM
 argument_list|,
 literal|5
 argument_list|,

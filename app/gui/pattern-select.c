@@ -435,11 +435,11 @@ name|psp
 operator|->
 name|context
 argument_list|,
-name|GIMP_PREVIEW_SIZE_SMALL
+name|GIMP_PREVIEW_SIZE_MEDIUM
 argument_list|,
-literal|5
+literal|6
 argument_list|,
-literal|5
+literal|6
 argument_list|,
 name|global_menu_factory
 argument_list|,

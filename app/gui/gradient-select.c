@@ -444,7 +444,7 @@ name|gsp
 operator|->
 name|context
 argument_list|,
-name|GIMP_PREVIEW_SIZE_EXTRA_SMALL
+name|GIMP_PREVIEW_SIZE_MEDIUM
 argument_list|,
 literal|6
 argument_list|,
