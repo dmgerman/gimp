@@ -25,67 +25,73 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpchainbutton.h"
+file|"gimpchainbutton.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpcolorbutton.h"
+file|"gimpcolorbutton.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpdialog.h"
+file|"gimpdialog.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpexport.h"
+file|"gimpexport.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpfileselection.h"
+file|"gimpfileselection.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimphelpui.h"
+file|"gimphelpui.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpmenu.h"
+file|"gimpmenu.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimppatheditor.h"
+file|"gimppatheditor.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpsizeentry.h"
+file|"gimpquerybox.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpunitmenu.h"
+file|"gimpsizeentry.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpwidgets.h"
+file|"gimpunitmenu.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpwidgets.h"
 end_include
 
 begin_endif

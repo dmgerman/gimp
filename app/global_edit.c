@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2958100b0103
+DECL|enum|__anon2b2d28eb0103
 block|{
 DECL|enumerator|PASTE
 name|PASTE
@@ -195,7 +195,7 @@ modifier|*
 name|buf
 decl_stmt|;
 DECL|member|name
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
@@ -209,6 +209,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|named_buffers
+specifier|static
 name|GSList
 modifier|*
 name|named_buffers
@@ -238,14 +239,14 @@ end_comment
 begin_function
 name|TileManager
 modifier|*
-DECL|function|crop_buffer (TileManager * tiles,int border)
+DECL|function|crop_buffer (TileManager * tiles,gboolean border)
 name|crop_buffer
 parameter_list|(
 name|TileManager
 modifier|*
 name|tiles
 parameter_list|,
-name|int
+name|gboolean
 name|border
 parameter_list|)
 block|{
@@ -256,20 +257,19 @@ name|TileManager
 modifier|*
 name|new_tiles
 decl_stmt|;
-name|int
+name|gint
 name|bytes
 decl_stmt|,
 name|alpha
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|data
 decl_stmt|;
-name|int
+name|gint
 name|empty
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -278,25 +278,24 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|int
+name|gint
 name|ex
 decl_stmt|,
 name|ey
 decl_stmt|;
-name|int
+name|gint
 name|found
 decl_stmt|;
 name|void
 modifier|*
 name|pr
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|black
 index|[
 name|MAX_CHANNELS
@@ -874,7 +873,7 @@ name|TileManager
 modifier|*
 name|cropped_cut
 decl_stmt|;
-name|int
+name|gint
 name|empty
 decl_stmt|;
 if|if
@@ -1031,7 +1030,7 @@ name|TileManager
 modifier|*
 name|cropped_copy
 decl_stmt|;
-name|int
+name|gint
 name|empty
 decl_stmt|;
 if|if
@@ -1154,7 +1153,7 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|edit_paste (GImage * gimage,GimpDrawable * drawable,TileManager * paste,int paste_into)
+DECL|function|edit_paste (GImage * gimage,GimpDrawable * drawable,TileManager * paste,gboolean paste_into)
 name|edit_paste
 parameter_list|(
 name|GImage
@@ -1169,7 +1168,7 @@ name|TileManager
 modifier|*
 name|paste
 parameter_list|,
-name|int
+name|gboolean
 name|paste_into
 parameter_list|)
 block|{
@@ -1177,7 +1176,7 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -1186,12 +1185,12 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|int
+name|gint
 name|cx
 decl_stmt|,
 name|cy
 decl_stmt|;
-comment|/*  Make a new layer: iff drawable == NULL, user is pasting into an empty display. */
+comment|/*  Make a new layer: iff drawable == NULL,    *  user is pasting into an empty display.    */
 if|if
 condition|(
 name|drawable
@@ -1442,7 +1441,6 @@ return|return
 name|layer
 return|;
 block|}
-else|else
 return|return
 name|NULL
 return|;
@@ -1450,7 +1448,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|edit_paste_as_new (GImage * invoke,TileManager * paste)
 name|edit_paste_as_new
 parameter_list|(
@@ -1600,7 +1598,6 @@ return|return
 name|TRUE
 return|;
 block|}
-else|else
 return|return
 name|FALSE
 return|;
@@ -1628,7 +1625,7 @@ decl_stmt|;
 name|PixelRegion
 name|bufPR
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -1637,8 +1634,7 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|col
 index|[
 name|MAX_CHANNELS
@@ -1880,7 +1876,7 @@ decl_stmt|;
 name|PixelRegion
 name|bufPR
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -1889,8 +1885,7 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|col
 index|[
 name|MAX_CHANNELS
@@ -2112,33 +2107,21 @@ block|}
 end_function
 
 begin_function
-name|int
-DECL|function|global_edit_cut (void * gdisp_ptr)
+name|gboolean
+DECL|function|global_edit_cut (GDisplay * gdisp)
 name|global_edit_cut
 parameter_list|(
-name|void
+name|GDisplay
 modifier|*
-name|gdisp_ptr
+name|gdisp
 parameter_list|)
 block|{
-name|GDisplay
-modifier|*
-name|gdisp
-decl_stmt|;
 comment|/*  stop any active tool  */
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|active_tool_control
 argument_list|(
 name|HALT
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 if|if
@@ -2161,8 +2144,6 @@ condition|)
 return|return
 name|FALSE
 return|;
-else|else
-block|{
 comment|/*  flush the display  */
 name|gdisplays_flush
 argument_list|()
@@ -2171,31 +2152,18 @@ return|return
 name|TRUE
 return|;
 block|}
-block|}
 end_function
 
 begin_function
-name|int
-DECL|function|global_edit_copy (void * gdisp_ptr)
+name|gboolean
+DECL|function|global_edit_copy (GDisplay * gdisp)
 name|global_edit_copy
 parameter_list|(
-name|void
+name|GDisplay
 modifier|*
-name|gdisp_ptr
+name|gdisp
 parameter_list|)
 block|{
-name|GDisplay
-modifier|*
-name|gdisp
-decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -2216,7 +2184,6 @@ condition|)
 return|return
 name|FALSE
 return|;
-else|else
 return|return
 name|TRUE
 return|;
@@ -2224,36 +2191,24 @@ block|}
 end_function
 
 begin_function
-name|int
-DECL|function|global_edit_paste (void * gdisp_ptr,int paste_into)
+name|gboolean
+DECL|function|global_edit_paste (GDisplay * gdisp,gboolean paste_into)
 name|global_edit_paste
 parameter_list|(
-name|void
+name|GDisplay
 modifier|*
-name|gdisp_ptr
+name|gdisp
 parameter_list|,
-name|int
+name|gboolean
 name|paste_into
 parameter_list|)
 block|{
-name|GDisplay
-modifier|*
-name|gdisp
-decl_stmt|;
 comment|/*  stop any active tool  */
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|active_tool_control
 argument_list|(
 name|HALT
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 if|if
@@ -2280,8 +2235,6 @@ condition|)
 return|return
 name|FALSE
 return|;
-else|else
-block|{
 comment|/*  flush the display  */
 name|gdisplays_update_title
 argument_list|(
@@ -2297,23 +2250,18 @@ return|return
 name|TRUE
 return|;
 block|}
-block|}
 end_function
 
 begin_function
-name|int
-DECL|function|global_edit_paste_as_new (void * gdisp_ptr)
+name|gboolean
+DECL|function|global_edit_paste_as_new (GDisplay * gdisp)
 name|global_edit_paste_as_new
 parameter_list|(
-name|void
-modifier|*
-name|gdisp_ptr
-parameter_list|)
-block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|;
+parameter_list|)
+block|{
 if|if
 condition|(
 operator|!
@@ -2323,23 +2271,14 @@ return|return
 name|FALSE
 return|;
 comment|/*  stop any active tool  */
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|active_tool_control
 argument_list|(
 name|HALT
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|edit_paste_as_new
 argument_list|(
 name|gdisp
@@ -2348,16 +2287,17 @@ name|gimage
 argument_list|,
 name|global_buf
 argument_list|)
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|global_edit_free ()
+DECL|function|global_edit_free (void)
 name|global_edit_free
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -2419,14 +2359,21 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+for|for
+control|(
 name|list
 operator|=
 name|named_buffers
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|list
-condition|)
+condition|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 block|{
 name|nb
 operator|=
@@ -2437,13 +2384,6 @@ operator|)
 name|list
 operator|->
 name|data
-expr_stmt|;
-name|list
-operator|=
-name|g_slist_next
-argument_list|(
-name|list
-argument_list|)
 expr_stmt|;
 name|list_item
 operator|=
@@ -2464,11 +2404,6 @@ argument_list|,
 name|list_item
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|list_item
-argument_list|)
-expr_stmt|;
 name|gtk_object_set_user_data
 argument_list|(
 name|GTK_OBJECT
@@ -2482,6 +2417,11 @@ operator|)
 name|nb
 argument_list|)
 expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|list_item
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_function
@@ -2489,15 +2429,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|named_buffer_paste_foreach (GtkWidget * w,gpointer client_data)
+DECL|function|named_buffer_paste_foreach (GtkWidget * widget,gpointer data)
 name|named_buffer_paste_foreach
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|PasteNamedDlg
@@ -2510,7 +2450,7 @@ name|nb
 decl_stmt|;
 if|if
 condition|(
-name|w
+name|widget
 operator|->
 name|state
 operator|==
@@ -2523,7 +2463,7 @@ operator|(
 name|PasteNamedDlg
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 name|nb
 operator|=
@@ -2535,7 +2475,7 @@ name|gtk_object_get_user_data
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|w
+name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2629,15 +2569,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|named_buffer_paste_callback (GtkWidget * w,gpointer client_data)
+DECL|function|named_buffer_paste_callback (GtkWidget * widget,gpointer data)
 name|named_buffer_paste_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|PasteNamedDlg
@@ -2650,7 +2590,7 @@ operator|(
 name|PasteNamedDlg
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 name|pn_dlg
 operator|->
@@ -2670,7 +2610,7 @@ name|list
 argument_list|,
 name|named_buffer_paste_foreach
 argument_list|,
-name|client_data
+name|data
 argument_list|)
 expr_stmt|;
 comment|/*  Destroy the box  */
@@ -2696,15 +2636,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|named_buffer_paste_into_callback (GtkWidget * w,gpointer client_data)
+DECL|function|named_buffer_paste_into_callback (GtkWidget * widget,gpointer data)
 name|named_buffer_paste_into_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|PasteNamedDlg
@@ -2717,7 +2657,7 @@ operator|(
 name|PasteNamedDlg
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 name|pn_dlg
 operator|->
@@ -2737,7 +2677,7 @@ name|list
 argument_list|,
 name|named_buffer_paste_foreach
 argument_list|,
-name|client_data
+name|data
 argument_list|)
 expr_stmt|;
 comment|/*  Destroy the box  */
@@ -2763,15 +2703,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|named_buffer_paste_as_new_callback (GtkWidget * w,gpointer client_data)
+DECL|function|named_buffer_paste_as_new_callback (GtkWidget * widget,gpointer data)
 name|named_buffer_paste_as_new_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|PasteNamedDlg
@@ -2784,7 +2724,7 @@ operator|(
 name|PasteNamedDlg
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 name|pn_dlg
 operator|->
@@ -2804,7 +2744,7 @@ name|list
 argument_list|,
 name|named_buffer_paste_foreach
 argument_list|,
-name|client_data
+name|data
 argument_list|)
 expr_stmt|;
 comment|/*  Destroy the box  */
@@ -2830,15 +2770,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|named_buffer_delete_foreach (GtkWidget * w,gpointer client_data)
+DECL|function|named_buffer_delete_foreach (GtkWidget * widget,gpointer data)
 name|named_buffer_delete_foreach
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|PasteNamedDlg
@@ -2851,7 +2791,7 @@ name|nb
 decl_stmt|;
 if|if
 condition|(
-name|w
+name|widget
 operator|->
 name|state
 operator|==
@@ -2864,7 +2804,7 @@ operator|(
 name|PasteNamedDlg
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 name|nb
 operator|=
@@ -2876,7 +2816,7 @@ name|gtk_object_get_user_data
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|w
+name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2919,15 +2859,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|named_buffer_delete_callback (GtkWidget * w,gpointer client_data)
+DECL|function|named_buffer_delete_callback (GtkWidget * widget,gpointer data)
 name|named_buffer_delete_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|PasteNamedDlg
@@ -2940,7 +2880,7 @@ operator|(
 name|PasteNamedDlg
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 name|gtk_container_foreach
 argument_list|(
@@ -2954,7 +2894,7 @@ name|list
 argument_list|,
 name|named_buffer_delete_foreach
 argument_list|,
-name|client_data
+name|data
 argument_list|)
 expr_stmt|;
 name|set_list_of_named_buffers
@@ -3450,14 +3390,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|new_named_buffer (TileManager * tiles,char * name)
+DECL|function|new_named_buffer (TileManager * tiles,gchar * name)
 name|new_named_buffer
 parameter_list|(
 name|TileManager
 modifier|*
 name|tiles
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -3597,18 +3537,19 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|cut_named_buffer_callback (GtkWidget * widget,gpointer client_data,gpointer call_data)
+DECL|function|cut_named_buffer_callback (GtkWidget * widget,gchar * name,gpointer data)
 name|cut_named_buffer_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gpointer
-name|client_data
+name|gchar
+modifier|*
+name|name
 parameter_list|,
 name|gpointer
-name|call_data
+name|data
 parameter_list|)
 block|{
 name|TileManager
@@ -3619,28 +3560,13 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|char
-modifier|*
-name|name
-decl_stmt|;
 name|gdisp
 operator|=
 operator|(
 name|GDisplay
 operator|*
 operator|)
-name|client_data
-expr_stmt|;
-name|name
-operator|=
-name|g_strdup
-argument_list|(
-operator|(
-name|char
-operator|*
-operator|)
-name|call_data
-argument_list|)
+name|data
 expr_stmt|;
 name|new_tiles
 operator|=
@@ -3676,37 +3602,25 @@ block|}
 end_function
 
 begin_function
-name|int
-DECL|function|named_edit_cut (void * gdisp_ptr)
+name|gboolean
+DECL|function|named_edit_cut (GDisplay * gdisp)
 name|named_edit_cut
 parameter_list|(
-name|void
+name|GDisplay
 modifier|*
-name|gdisp_ptr
+name|gdisp
 parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
 name|qbox
 decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisp
-decl_stmt|;
 comment|/*  stop any active tool  */
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|active_tool_control
 argument_list|(
 name|HALT
 argument_list|,
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 name|qbox
@@ -3757,18 +3671,19 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|copy_named_buffer_callback (GtkWidget * widget,gpointer client_data,gpointer call_data)
+DECL|function|copy_named_buffer_callback (GtkWidget * widget,gchar * name,gpointer data)
 name|copy_named_buffer_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gpointer
-name|client_data
+name|gchar
+modifier|*
+name|name
 parameter_list|,
 name|gpointer
-name|call_data
+name|data
 parameter_list|)
 block|{
 name|TileManager
@@ -3779,28 +3694,13 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|char
-modifier|*
-name|name
-decl_stmt|;
 name|gdisp
 operator|=
 operator|(
 name|GDisplay
 operator|*
 operator|)
-name|client_data
-expr_stmt|;
-name|name
-operator|=
-name|g_strdup
-argument_list|(
-operator|(
-name|char
-operator|*
-operator|)
-name|call_data
-argument_list|)
+name|data
 expr_stmt|;
 name|new_tiles
 operator|=
@@ -3833,31 +3733,19 @@ block|}
 end_function
 
 begin_function
-name|int
-DECL|function|named_edit_copy (void * gdisp_ptr)
+name|gboolean
+DECL|function|named_edit_copy (GDisplay * gdisp)
 name|named_edit_copy
 parameter_list|(
-name|void
+name|GDisplay
 modifier|*
-name|gdisp_ptr
+name|gdisp
 parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
 name|qbox
 decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisp
-decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
 name|qbox
 operator|=
 name|gimp_query_string_box
@@ -3904,22 +3792,18 @@ block|}
 end_function
 
 begin_function
-name|int
-DECL|function|named_edit_paste (void * gdisp_ptr)
+name|gboolean
+DECL|function|named_edit_paste (GDisplay * gdisp)
 name|named_edit_paste
 parameter_list|(
-name|void
+name|GDisplay
 modifier|*
-name|gdisp_ptr
+name|gdisp
 parameter_list|)
 block|{
 name|paste_named_buffer
 argument_list|(
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
+name|gdisp
 argument_list|)
 expr_stmt|;
 name|gdisplays_flush
@@ -3933,9 +3817,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|named_buffers_free ()
+DECL|function|named_buffers_free (void)
 name|named_buffers_free
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GSList
 modifier|*
@@ -3945,14 +3831,21 @@ name|NamedBuffer
 modifier|*
 name|nb
 decl_stmt|;
+for|for
+control|(
 name|list
 operator|=
 name|named_buffers
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|list
-condition|)
+condition|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 block|{
 name|nb
 operator|=
@@ -3981,13 +3874,6 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|nb
-argument_list|)
-expr_stmt|;
-name|list
-operator|=
-name|g_slist_next
-argument_list|(
-name|list
 argument_list|)
 expr_stmt|;
 block|}
