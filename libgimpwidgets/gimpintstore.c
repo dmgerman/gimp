@@ -622,7 +622,7 @@ name|store
 operator|->
 name|empty_iter
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|GtkTreeIter
 argument_list|,
