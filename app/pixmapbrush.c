@@ -179,7 +179,7 @@ name|int
 name|y
 parameter_list|,
 name|int
-name|y2
+name|offset_y
 parameter_list|,
 name|int
 name|bytes
@@ -917,6 +917,27 @@ operator|&
 name|destPR
 argument_list|)
 expr_stmt|;
+comment|/* to handle the case of the left side of the image */
+if|if
+condition|(
+name|area
+operator|->
+name|x
+operator|==
+literal|0
+condition|)
+name|offset_x
+operator|=
+name|destPR
+operator|.
+name|w
+expr_stmt|;
+else|else
+name|offset_x
+operator|=
+literal|0
+expr_stmt|;
+comment|/* FIXME handle the top of the image properly */
 for|for
 control|(
 init|;
@@ -972,11 +993,9 @@ name|x
 argument_list|,
 name|offset_x
 argument_list|,
-name|area
-operator|->
 name|y
 argument_list|,
-name|y
+name|offset_y
 argument_list|,
 name|destPR
 operator|.
@@ -1095,7 +1114,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|paint_line_pixmap_mask (GImage * dest,GimpDrawable * drawable,GimpBrushPixmap * brush,unsigned char * d,int x,int offset_x,int y,int y2,int bytes,int width)
+DECL|function|paint_line_pixmap_mask (GImage * dest,GimpDrawable * drawable,GimpBrushPixmap * brush,unsigned char * d,int x,int offset_x,int y,int offset_y,int bytes,int width)
 name|paint_line_pixmap_mask
 parameter_list|(
 name|GImage
@@ -1125,7 +1144,7 @@ name|int
 name|y
 parameter_list|,
 name|int
-name|y2
+name|offset_y
 parameter_list|,
 name|int
 name|bytes
@@ -1150,35 +1169,6 @@ decl_stmt|;
 name|int
 name|i
 decl_stmt|;
-comment|/*  Make sure x, y are positive  */
-while|while
-condition|(
-name|x
-operator|<
-literal|0
-condition|)
-name|x
-operator|+=
-name|brush
-operator|->
-name|pixmap_mask
-operator|->
-name|width
-expr_stmt|;
-while|while
-condition|(
-name|y
-operator|<
-literal|0
-condition|)
-name|y
-operator|+=
-name|brush
-operator|->
-name|pixmap_mask
-operator|->
-name|height
-expr_stmt|;
 comment|/* point to the approriate scanline */
 comment|/* use "pat" here because i'm c&p from pattern clone */
 name|pat
@@ -1191,7 +1181,7 @@ name|pixmap_mask
 argument_list|)
 operator|+
 operator|(
-name|y2
+name|y
 operator|*
 name|brush
 operator|->
@@ -1239,7 +1229,7 @@ operator|+
 operator|(
 operator|(
 name|i
-operator|+
+operator|-
 name|offset_x
 operator|)
 operator|%
