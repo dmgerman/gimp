@@ -131,7 +131,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2976b4e20103
+DECL|enum|__anon29c3581f0103
 typedef|typedef
 enum|enum
 block|{
@@ -195,7 +195,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2976b4e20203
+DECL|enum|__anon29c3581f0203
 typedef|typedef
 enum|enum
 block|{
@@ -235,7 +235,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2976b4e20303
+DECL|enum|__anon29c3581f0303
 typedef|typedef
 enum|enum
 block|{
@@ -267,7 +267,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2976b4e20403
+DECL|enum|__anon29c3581f0403
 typedef|typedef
 enum|enum
 block|{
@@ -295,7 +295,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2976b4e20503
+DECL|enum|__anon29c3581f0503
 typedef|typedef
 enum|enum
 block|{
@@ -323,7 +323,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2976b4e20603
+DECL|enum|__anon29c3581f0603
 typedef|typedef
 enum|enum
 block|{
@@ -345,7 +345,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2976b4e20703
+DECL|enum|__anon29c3581f0703
 typedef|typedef
 enum|enum
 block|{
@@ -381,7 +381,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2976b4e20803
+DECL|enum|__anon29c3581f0803
 typedef|typedef
 enum|enum
 block|{
@@ -401,7 +401,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2976b4e20903
+DECL|enum|__anon29c3581f0903
 typedef|typedef
 enum|enum
 block|{
@@ -449,7 +449,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2976b4e20a03
+DECL|enum|__anon29c3581f0a03
 typedef|typedef
 enum|enum
 block|{
@@ -473,7 +473,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2976b4e20b03
+DECL|enum|__anon29c3581f0b03
 typedef|typedef
 enum|enum
 block|{
@@ -534,7 +534,7 @@ comment|/* The following have been reverse engineered.  * If a new version of th
 end_comment
 
 begin_typedef
-DECL|enum|__anon2976b4e20c03
+DECL|enum|__anon29c3581f0c03
 typedef|typedef
 enum|enum
 block|{
@@ -607,7 +607,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2976b4e20d08
+DECL|struct|__anon29c3581f0d08
 block|{
 DECL|member|width
 DECL|member|height
@@ -767,7 +767,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2976b4e20e08
+DECL|struct|__anon29c3581f0e08
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -782,7 +782,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2976b4e20f08
+DECL|struct|__anon29c3581f0f08
 block|{
 DECL|member|run
 name|gint
@@ -1038,38 +1038,7 @@ argument_list|,
 name|load_return_vals
 argument_list|)
 expr_stmt|;
-name|gimp_install_procedure
-argument_list|(
-literal|"file_psp_save"
-argument_list|,
-literal|"saves images in the Paint Shop Pro PSP file format"
-argument_list|,
-literal|"This plug-in loads and saves images in "
-literal|"Paint Shop Pro's native PSP format. "
-literal|"Vector layers aren't handled. Saving isn't "
-literal|"yet implemented."
-argument_list|,
-literal|"Tor Lillqvist"
-argument_list|,
-literal|"Tor Lillqvist"
-argument_list|,
-literal|"1999"
-argument_list|,
-literal|"<Save>/PSP"
-argument_list|,
-literal|"RGB*, GRAY*, INDEXED*"
-argument_list|,
-name|PROC_PLUG_IN
-argument_list|,
-name|nsave_args
-argument_list|,
-literal|0
-argument_list|,
-name|save_args
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
+comment|/* Removed until Saving is implemented -- njl195@zepler.org   gimp_install_procedure ("file_psp_save",                           "saves images in the Paint Shop Pro PSP file format",                           "This plug-in loads and saves images in " 			  "Paint Shop Pro's native PSP format. " 			  "Vector layers aren't handled. Saving isn't " 			  "yet implemented.",                           "Tor Lillqvist",                           "Tor Lillqvist",                           "1999",                           "<Save>/PSP", 			  "RGB*, GRAY*, INDEXED*",                           PROC_PLUG_IN,                           nsave_args, 0,                           save_args, NULL); */
 name|gimp_register_magic_load_handler
 argument_list|(
 literal|"file_psp_load"
@@ -1081,15 +1050,7 @@ argument_list|,
 literal|"0,string,Paint Shop Pro Image File\n\032"
 argument_list|)
 expr_stmt|;
-name|gimp_register_save_handler
-argument_list|(
-literal|"file_psp_save"
-argument_list|,
-literal|"psp,tub"
-argument_list|,
-literal|""
-argument_list|)
-expr_stmt|;
+comment|/* Removed until Saving is implemented -- njl195@zepler.org   gimp_register_save_handler ("file_psp_save", "psp,tub", ""); */
 block|}
 end_function
 
