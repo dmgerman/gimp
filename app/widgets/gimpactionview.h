@@ -103,6 +103,15 @@ DECL|member|parent_instance
 name|GtkTreeView
 name|parent_instance
 decl_stmt|;
+DECL|member|manager
+name|GimpUIManager
+modifier|*
+name|manager
+decl_stmt|;
+DECL|member|show_shortcuts
+name|gboolean
+name|show_shortcuts
+decl_stmt|;
 block|}
 struct|;
 end_struct
