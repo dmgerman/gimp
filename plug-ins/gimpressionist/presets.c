@@ -147,6 +147,17 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|presetsavebutton
+specifier|static
+name|GtkWidget
+modifier|*
+name|presetsavebutton
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|store
 specifier|static
 name|GtkListStore
@@ -176,6 +187,35 @@ init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
+
+begin_function
+DECL|function|preset_save_button_set_sensitive (gboolean s)
+name|void
+name|preset_save_button_set_sensitive
+parameter_list|(
+name|gboolean
+name|s
+parameter_list|)
+block|{
+if|if
+condition|(
+name|GTK_IS_WIDGET
+argument_list|(
+name|presetsavebutton
+argument_list|)
+condition|)
+name|gtk_widget_set_sensitive
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|presetsavebutton
+argument_list|)
+argument_list|,
+name|s
+argument_list|)
+expr_stmt|;
+block|}
+end_function
 
 begin_function
 DECL|function|preset_free (void)

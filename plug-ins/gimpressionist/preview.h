@@ -45,6 +45,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|preview_set_button_label
+parameter_list|(
+name|gchar
+modifier|*
+name|text
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

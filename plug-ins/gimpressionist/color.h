@@ -32,7 +32,7 @@ end_enum
 
 begin_function_decl
 name|void
-name|color_type_restore
+name|color_restore
 parameter_list|(
 name|void
 parameter_list|)

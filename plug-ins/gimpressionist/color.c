@@ -61,10 +61,21 @@ index|]
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|colornoiseadjust
+specifier|static
+name|GtkObject
+modifier|*
+name|colornoiseadjust
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
 begin_function
-DECL|function|color_type_restore (void)
+DECL|function|color_restore (void)
 name|void
-name|color_type_restore
+name|color_restore
 parameter_list|(
 name|void
 parameter_list|)
@@ -82,6 +93,18 @@ index|]
 argument_list|)
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|gtk_adjustment_set_value
+argument_list|(
+name|GTK_ADJUSTMENT
+argument_list|(
+name|colornoiseadjust
+argument_list|)
+argument_list|,
+name|pcvals
+operator|.
+name|colornoise
 argument_list|)
 expr_stmt|;
 block|}
@@ -249,9 +272,6 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-name|color_type_restore
-argument_list|()
-expr_stmt|;
 name|table
 operator|=
 name|gtk_table_new
@@ -361,6 +381,9 @@ name|pcvals
 operator|.
 name|colornoise
 argument_list|)
+expr_stmt|;
+name|color_restore
+argument_list|()
 expr_stmt|;
 name|gtk_notebook_append_page_menu
 argument_list|(

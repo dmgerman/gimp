@@ -48,6 +48,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|create_placementpage
+parameter_list|(
+name|GtkNotebook
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

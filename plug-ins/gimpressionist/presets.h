@@ -47,14 +47,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
-specifier|extern
-name|GtkWidget
-modifier|*
-name|presetsavebutton
-decl_stmt|;
-end_decl_stmt
-
 begin_function_decl
 name|int
 name|select_preset
@@ -72,6 +64,16 @@ name|void
 name|preset_free
 parameter_list|(
 name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|preset_save_button_set_sensitive
+parameter_list|(
+name|gboolean
+name|s
 parameter_list|)
 function_decl|;
 end_function_decl

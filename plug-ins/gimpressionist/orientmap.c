@@ -61,6 +61,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"infile.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"preview.h"
 end_include
 
@@ -1335,30 +1341,8 @@ name|lastval
 operator|)
 condition|)
 block|{
-if|if
-condition|(
-operator|!
-name|infile
-operator|.
-name|col
-condition|)
-name|updatepreview
+name|infile_copy_to_ppm
 argument_list|(
-name|NULL
-argument_list|,
-operator|(
-name|void
-operator|*
-operator|)
-literal|2
-argument_list|)
-expr_stmt|;
-comment|/* Force grabarea() */
-name|copyppm
-argument_list|(
-operator|&
-name|infile
-argument_list|,
 operator|&
 name|backup
 argument_list|)

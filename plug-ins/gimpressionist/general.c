@@ -155,6 +155,17 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|devthreshadjust
+specifier|static
+name|GtkObject
+modifier|*
+name|devthreshadjust
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 DECL|function|normalize_bg (int n)
 specifier|static
@@ -299,6 +310,17 @@ argument_list|)
 operator|->
 name|value
 expr_stmt|;
+name|pcvals
+operator|.
+name|devthresh
+operator|=
+name|GTK_ADJUSTMENT
+argument_list|(
+name|devthreshadjust
+argument_list|)
+operator|->
+name|value
+expr_stmt|;
 block|}
 end_function
 
@@ -423,6 +445,18 @@ operator|&
 name|pcvals
 operator|.
 name|color
+argument_list|)
+expr_stmt|;
+name|gtk_adjustment_set_value
+argument_list|(
+name|GTK_ADJUSTMENT
+argument_list|(
+name|devthreshadjust
+argument_list|)
+argument_list|,
+name|pcvals
+operator|.
+name|devthresh
 argument_list|)
 expr_stmt|;
 block|}

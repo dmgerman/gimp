@@ -32,6 +32,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"infile.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpressionist.h"
 end_include
 
@@ -51,6 +57,12 @@ begin_include
 include|#
 directive|include
 file|"presets.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"random.h"
 end_include
 
 begin_include
@@ -142,6 +154,97 @@ modifier|*
 name|drawable
 decl_stmt|;
 end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|infile
+specifier|static
+name|ppm_t
+name|infile
+init|=
+block|{
+literal|0
+block|,
+literal|0
+block|,
+name|NULL
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|inalpha
+specifier|static
+name|ppm_t
+name|inalpha
+init|=
+block|{
+literal|0
+block|,
+literal|0
+block|,
+name|NULL
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_function
+DECL|function|infile_copy_to_ppm (ppm_t * p)
+name|void
+name|infile_copy_to_ppm
+parameter_list|(
+name|ppm_t
+modifier|*
+name|p
+parameter_list|)
+block|{
+if|if
+condition|(
+operator|!
+name|infile
+operator|.
+name|col
+condition|)
+name|grabarea
+argument_list|()
+expr_stmt|;
+if|#
+directive|if
+literal|0
+block|updatepreview (NULL, (void *)2);
+comment|/* Force grabarea() */
+endif|#
+directive|endif
+name|copyppm
+argument_list|(
+operator|&
+name|infile
+argument_list|,
+name|p
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+DECL|function|infile_copy_alpha_to_ppm (ppm_t * p)
+name|void
+name|infile_copy_alpha_to_ppm
+parameter_list|(
+name|ppm_t
+modifier|*
+name|p
+parameter_list|)
+block|{
+name|copyppm
+argument_list|(
+operator|&
+name|inalpha
+argument_list|,
+name|p
+argument_list|)
+expr_stmt|;
+block|}
+end_function
 
 begin_macro
 DECL|function|MAIN ()
@@ -428,7 +531,7 @@ operator|->
 name|drawable_id
 argument_list|)
 expr_stmt|;
-name|gr
+name|random_generator
 operator|=
 name|g_rand_new
 argument_list|()
@@ -584,7 +687,7 @@ block|}
 comment|/* Resources Cleanup */
 name|g_rand_free
 argument_list|(
-name|gr
+name|random_generator
 argument_list|)
 expr_stmt|;
 name|free_parsepath_cache

@@ -41,6 +41,12 @@ directive|include
 file|"ppmtool.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"random.h"
+end_include
+
 begin_function
 DECL|function|pfix (int n)
 specifier|static
@@ -241,7 +247,7 @@ name|turb
 operator|*
 name|g_rand_double_range
 argument_list|(
-name|gr
+name|random_generator
 argument_list|,
 operator|-
 name|xr
@@ -303,7 +309,7 @@ name|turb
 operator|*
 name|g_rand_double_range
 argument_list|(
-name|gr
+name|random_generator
 argument_list|,
 operator|-
 name|xr
@@ -365,7 +371,7 @@ name|turb
 operator|*
 name|g_rand_double_range
 argument_list|(
-name|gr
+name|random_generator
 argument_list|,
 operator|-
 name|yr
@@ -427,7 +433,7 @@ name|turb
 operator|*
 name|g_rand_double_range
 argument_list|(
-name|gr
+name|random_generator
 argument_list|,
 operator|-
 name|yr
@@ -507,7 +513,7 @@ name|turb
 operator|*
 name|g_rand_double_range
 argument_list|(
-name|gr
+name|random_generator
 argument_list|,
 operator|-
 operator|(
@@ -697,7 +703,7 @@ argument_list|)
 operator|=
 name|g_rand_int_range
 argument_list|(
-name|gr
+name|random_generator
 argument_list|,
 literal|1
 argument_list|,
@@ -715,7 +721,7 @@ argument_list|)
 operator|=
 name|g_rand_int_range
 argument_list|(
-name|gr
+name|random_generator
 argument_list|,
 literal|1
 argument_list|,
@@ -733,7 +739,7 @@ argument_list|)
 operator|=
 name|g_rand_int_range
 argument_list|(
-name|gr
+name|random_generator
 argument_list|,
 literal|1
 argument_list|,
@@ -751,7 +757,7 @@ argument_list|)
 operator|=
 name|g_rand_int_range
 argument_list|(
-name|gr
+name|random_generator
 argument_list|,
 literal|1
 argument_list|,
