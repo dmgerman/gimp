@@ -533,16 +533,6 @@ directive|ifdef
 name|G_OS_WIN32
 end_ifdef
 
-begin_function_decl
-name|void
-name|set_gimp_PLUG_IN_INFO_PTR
-parameter_list|(
-name|GimpPlugInInfo
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/* Define WinMain() because plug-ins are built as GUI applications. Also  * define a main() in case some plug-in still is built as a console  * application.  */
 end_comment
@@ -584,28 +574,7 @@ directive|define
 name|MAIN
 parameter_list|()
 define|\
-value|static int				\    win32_gimp_main (int argc, char **argv)	\    {					\      set_gimp_PLUG_IN_INFO_PTR(&PLUG_IN_INFO);	\      return gimp_main (argc, argv);	\    }					\ 					\    struct HINSTANCE__;			\    int _stdcall				\    WinMain (struct HINSTANCE__ *hInstance, \ 	    struct HINSTANCE__ *hPrevInstance,	\ 	    char *lpszCmdLine,		\ 	    int   nCmdShow)		\    {					\      return win32_gimp_main (__argc, __argv);	\    }					\ 					\    int					\    main (int argc, char *argv[])	\    {					\      return win32_gimp_main (argc, argv);	\    }
-end_define
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|__EMX__
-end_ifndef
-
-begin_define
-DECL|macro|MAIN ()
-define|#
-directive|define
-name|MAIN
-parameter_list|()
-define|\
-value|int					\    main (int argc, char *argv[])	\    {					\      return gimp_main (argc, argv);	\    }
+value|struct HINSTANCE__;					\    int _stdcall						\    WinMain (struct HINSTANCE__ *hInstance, 		\ 	    struct HINSTANCE__ *hPrevInstance,		\ 	    char *lpszCmdLine,				\ 	    int   nCmdShow)				\    {							\      return gimp_main (&PLUG_IN_INFO, __argc, __argv);	\    }							\ 							\    int							\    main (int argc, char *argv[])			\    {							\      return gimp_main (&PLUG_IN_INFO, argc, argv);	\    }
 end_define
 
 begin_else
@@ -620,13 +589,8 @@ directive|define
 name|MAIN
 parameter_list|()
 define|\
-value|int						\    main (int argc, char *argv[])		\    {						\      set_gimp_PLUG_IN_INFO(&PLUG_IN_INFO);	\      return gimp_main (argc, argv);		\    }
+value|int							\    main (int argc, char *argv[])			\    {							\      return gimp_main (&PLUG_IN_INFO, argc, argv);	\    }
 end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_endif
 endif|#
@@ -634,13 +598,18 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* The main procedure that should be called with the  *  'argc' and 'argv' that are passed to "main".  */
+comment|/* The main procedure that should be called with the PLUG_IN_INFO structure  * and the 'argc' and 'argv' that are passed to "main".  */
 end_comment
 
 begin_function_decl
 name|gint
 name|gimp_main
 parameter_list|(
+specifier|const
+name|GimpPlugInInfo
+modifier|*
+name|info
+parameter_list|,
 name|gint
 name|argc
 parameter_list|,

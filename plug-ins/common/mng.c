@@ -384,11 +384,6 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_macro
-name|MAIN
-argument_list|()
-end_macro
-
 begin_comment
 comment|/* The output FILE pointer which is used by libmng;  * passed around as user data. */
 end_comment
@@ -6738,6 +6733,11 @@ name|run
 block|}
 decl_stmt|;
 end_decl_stmt
+
+begin_macro
+name|MAIN
+argument_list|()
+end_macro
 
 end_unit
 
