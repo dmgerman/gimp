@@ -391,7 +391,7 @@ name|context
 operator|->
 name|gamma
 operator|=
-literal|2.2
+literal|1.0
 expr_stmt|;
 name|context
 operator|->
@@ -437,11 +437,6 @@ name|i
 index|]
 operator|=
 name|i
-expr_stmt|;
-name|gamma_create_lookup_table
-argument_list|(
-name|context
-argument_list|)
 expr_stmt|;
 return|return
 name|context
