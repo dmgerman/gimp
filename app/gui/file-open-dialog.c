@@ -566,6 +566,7 @@ argument_list|(
 name|basename
 argument_list|)
 expr_stmt|;
+comment|/*  NOT g_build_filename() because this is a relative URI */
 name|help_page
 operator|=
 name|g_strconcat
@@ -663,6 +664,11 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|help_page
 argument_list|)
 expr_stmt|;
 block|}

@@ -717,6 +717,11 @@ expr_stmt|;
 block|}
 name|g_free
 argument_list|(
+name|lowercase_page
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
 name|menu_entry
 argument_list|)
 expr_stmt|;
