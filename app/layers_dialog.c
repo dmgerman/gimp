@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -10989,7 +10995,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3afee80108
+DECL|struct|__anon287d296c0108
 block|{
 DECL|member|gimage
 name|GimpImage

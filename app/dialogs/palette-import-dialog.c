@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -148,7 +154,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dedba40103
+DECL|enum|__anon2b8b28b90103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT

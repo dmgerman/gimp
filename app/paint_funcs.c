@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib.h>
 end_include
 
@@ -187,7 +193,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c499b250103
+DECL|enum|__anon2c752f770103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY

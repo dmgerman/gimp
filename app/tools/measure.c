@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<stdlib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -142,7 +148,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29752cd10103
+DECL|enum|__anon293836040103
 block|{
 DECL|enumerator|CREATING
 name|CREATING

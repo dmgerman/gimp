@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -29,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e9e5340103
+DECL|enum|__anon2a06cca40103
 block|{
 DECL|enumerator|NAME_CHANGED
 name|NAME_CHANGED
@@ -42,7 +48,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e9e5340203
+DECL|enum|__anon2a06cca40203
 block|{
 DECL|enumerator|ARG_0
 name|ARG_0
