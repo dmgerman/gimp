@@ -36,9 +36,9 @@ name|Dobject
 modifier|*
 name|obj
 parameter_list|,
-name|FILE
+name|GString
 modifier|*
-name|to
+name|string
 parameter_list|)
 function_decl|;
 end_function_decl

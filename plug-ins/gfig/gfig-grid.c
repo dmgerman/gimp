@@ -1481,7 +1481,9 @@ name|loop
 expr_stmt|;
 name|gdk_draw_arc
 argument_list|(
-name|gfig_preview
+name|gfig_context
+operator|->
+name|preview
 operator|->
 name|window
 argument_list|,
@@ -1594,7 +1596,9 @@ argument_list|)
 expr_stmt|;
 name|gdk_draw_line
 argument_list|(
-name|gfig_preview
+name|gfig_context
+operator|->
+name|preview
 operator|->
 name|window
 argument_list|,
@@ -1677,7 +1681,9 @@ control|)
 block|{
 name|gdk_draw_line
 argument_list|(
-name|gfig_preview
+name|gfig_context
+operator|->
+name|preview
 operator|->
 name|window
 argument_list|,
@@ -1711,7 +1717,9 @@ control|)
 block|{
 name|gdk_draw_line
 argument_list|(
-name|gfig_preview
+name|gfig_context
+operator|->
+name|preview
 operator|->
 name|window
 argument_list|,
@@ -1799,7 +1807,9 @@ control|)
 block|{
 name|gdk_draw_line
 argument_list|(
-name|gfig_preview
+name|gfig_context
+operator|->
+name|preview
 operator|->
 name|window
 argument_list|,
@@ -1906,7 +1916,9 @@ control|)
 block|{
 name|gdk_draw_line
 argument_list|(
-name|gfig_preview
+name|gfig_context
+operator|->
+name|preview
 operator|->
 name|window
 argument_list|,
@@ -1937,7 +1949,9 @@ argument_list|)
 expr_stmt|;
 name|gdk_draw_line
 argument_list|(
-name|gfig_preview
+name|gfig_context
+operator|->
+name|preview
 operator|->
 name|window
 argument_list|,
@@ -2153,8 +2167,6 @@ name|opts
 operator|.
 name|gridspacing
 operator|)
-operator|||
-name|drawing_pic
 condition|)
 block|{
 comment|/* Don't draw if they don't fit */
@@ -2172,7 +2184,9 @@ name|drawgc
 operator|=
 name|gfig_get_grid_gc
 argument_list|(
-name|gfig_preview
+name|gfig_context
+operator|->
+name|preview
 argument_list|,
 name|grid_gc_type
 argument_list|)

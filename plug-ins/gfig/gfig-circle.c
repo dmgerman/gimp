@@ -81,37 +81,23 @@ end_function_decl
 begin_function
 specifier|static
 name|void
-DECL|function|d_save_circle (Dobject * obj,FILE * to)
+DECL|function|d_save_circle (Dobject * obj,GString * string)
 name|d_save_circle
 parameter_list|(
 name|Dobject
 modifier|*
 name|obj
 parameter_list|,
-name|FILE
+name|GString
 modifier|*
-name|to
+name|string
 parameter_list|)
 block|{
-name|fprintf
-argument_list|(
-name|to
-argument_list|,
-literal|"<CIRCLE>\n"
-argument_list|)
-expr_stmt|;
 name|do_save_obj
 argument_list|(
 name|obj
 argument_list|,
-name|to
-argument_list|)
-expr_stmt|;
-name|fprintf
-argument_list|(
-name|to
-argument_list|,
-literal|"</CIRCLE>\n"
+name|string
 argument_list|)
 expr_stmt|;
 block|}
@@ -160,6 +146,19 @@ literal|0
 argument_list|)
 condition|)
 block|{
+comment|/* kludge */
+if|if
+condition|(
+name|buf
+index|[
+literal|0
+index|]
+operator|==
+literal|'<'
+condition|)
+return|return
+name|new_obj
+return|;
 if|if
 condition|(
 name|sscanf
@@ -178,17 +177,6 @@ operator|!=
 literal|2
 condition|)
 block|{
-comment|/* Must be the end */
-if|if
-condition|(
-name|strcmp
-argument_list|(
-literal|"</CIRCLE>"
-argument_list|,
-name|buf
-argument_list|)
-condition|)
-block|{
 name|g_warning
 argument_list|(
 literal|"[%d] Internal load error while loading circle"
@@ -198,10 +186,6 @@ argument_list|)
 expr_stmt|;
 return|return
 name|NULL
-return|;
-block|}
-return|return
-name|new_obj
 return|;
 block|}
 if|if
@@ -219,7 +203,6 @@ name|ypnt
 argument_list|)
 expr_stmt|;
 else|else
-block|{
 name|new_obj
 operator|->
 name|points
@@ -233,7 +216,6 @@ argument_list|,
 name|ypnt
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 name|g_warning
 argument_list|(
@@ -596,7 +578,9 @@ argument_list|)
 expr_stmt|;
 name|gimp_ellipse_select
 argument_list|(
-name|gfig_image
+name|gfig_context
+operator|->
+name|image_id
 argument_list|,
 name|dpnts
 index|[
@@ -647,12 +631,16 @@ condition|)
 return|return;
 name|gimp_edit_stroke
 argument_list|(
-name|gfig_drawable
+name|gfig_context
+operator|->
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|gimp_selection_clear
 argument_list|(
-name|gfig_image
+name|gfig_context
+operator|->
+name|image_id
 argument_list|)
 expr_stmt|;
 block|}
@@ -876,7 +864,9 @@ argument_list|)
 expr_stmt|;
 name|gdk_draw_arc
 argument_list|(
-name|gfig_preview
+name|gfig_context
+operator|->
+name|preview
 operator|->
 name|window
 argument_list|,
@@ -975,7 +965,9 @@ argument_list|)
 expr_stmt|;
 name|gdk_draw_arc
 argument_list|(
-name|gfig_preview
+name|gfig_context
+operator|->
+name|preview
 operator|->
 name|window
 argument_list|,
@@ -1116,6 +1108,8 @@ argument_list|)
 expr_stmt|;
 name|add_to_all_obj
 argument_list|(
+name|gfig_context
+operator|->
 name|current_obj
 argument_list|,
 name|obj_creating
