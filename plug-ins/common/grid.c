@@ -200,7 +200,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af688050108
+DECL|struct|__anon29ffd2a70108
 block|{
 DECL|member|hwidth
 name|gint
@@ -375,7 +375,7 @@ name|PARAM_INT32
 block|,
 literal|"hwidth"
 block|,
-literal|"Horizontal Width"
+literal|"Horizontal Width   (>= 0)"
 block|}
 block|,
 block|{
@@ -383,7 +383,7 @@ name|PARAM_INT32
 block|,
 literal|"hspace"
 block|,
-literal|"Horizontal Spacing"
+literal|"Horizontal Spacing (>= 0)"
 block|}
 block|,
 block|{
@@ -391,7 +391,7 @@ name|PARAM_INT32
 block|,
 literal|"hoffset"
 block|,
-literal|"Horizontal Offset"
+literal|"Horizontal Offset  (>= 0)"
 block|}
 block|,
 block|{
@@ -415,7 +415,7 @@ name|PARAM_INT32
 block|,
 literal|"vwidth"
 block|,
-literal|"Vertical Width"
+literal|"Vertical Width   (>= 0)"
 block|}
 block|,
 block|{
@@ -423,7 +423,7 @@ name|PARAM_INT32
 block|,
 literal|"vspace"
 block|,
-literal|"Vertical Spacing"
+literal|"Vertical Spacing (>= 0)"
 block|}
 block|,
 block|{
@@ -431,7 +431,7 @@ name|PARAM_INT32
 block|,
 literal|"voffset"
 block|,
-literal|"Vertical Offset"
+literal|"Vertical Offset  (>= 0)"
 block|}
 block|,
 block|{
@@ -455,7 +455,7 @@ name|PARAM_INT32
 block|,
 literal|"iwidth"
 block|,
-literal|"Intersection Width"
+literal|"Intersection Width   (>= 0)"
 block|}
 block|,
 block|{
@@ -463,7 +463,7 @@ name|PARAM_INT32
 block|,
 literal|"ispace"
 block|,
-literal|"Intersection Spacing"
+literal|"Intersection Spacing (>= 0)"
 block|}
 block|,
 block|{
@@ -471,7 +471,7 @@ name|PARAM_INT32
 block|,
 literal|"ioffset"
 block|,
-literal|"Intersection Offset"
+literal|"Intersection Offset  (>= 0)"
 block|}
 block|,
 block|{
@@ -685,6 +685,10 @@ name|grid_cfg
 operator|.
 name|hwidth
 operator|=
+name|MAX
+argument_list|(
+literal|0
+argument_list|,
 name|param
 index|[
 literal|3
@@ -693,11 +697,16 @@ operator|.
 name|data
 operator|.
 name|d_int32
+argument_list|)
 expr_stmt|;
 name|grid_cfg
 operator|.
 name|hspace
 operator|=
+name|MAX
+argument_list|(
+literal|0
+argument_list|,
 name|param
 index|[
 literal|4
@@ -706,11 +715,16 @@ operator|.
 name|data
 operator|.
 name|d_int32
+argument_list|)
 expr_stmt|;
 name|grid_cfg
 operator|.
 name|hoffset
 operator|=
+name|MAX
+argument_list|(
+literal|0
+argument_list|,
 name|param
 index|[
 literal|5
@@ -719,6 +733,7 @@ operator|.
 name|data
 operator|.
 name|d_int32
+argument_list|)
 expr_stmt|;
 name|grid_cfg
 operator|.
@@ -794,6 +809,10 @@ name|grid_cfg
 operator|.
 name|vwidth
 operator|=
+name|MAX
+argument_list|(
+literal|0
+argument_list|,
 name|param
 index|[
 literal|8
@@ -802,11 +821,16 @@ operator|.
 name|data
 operator|.
 name|d_int32
+argument_list|)
 expr_stmt|;
 name|grid_cfg
 operator|.
 name|vspace
 operator|=
+name|MAX
+argument_list|(
+literal|0
+argument_list|,
 name|param
 index|[
 literal|9
@@ -815,11 +839,16 @@ operator|.
 name|data
 operator|.
 name|d_int32
+argument_list|)
 expr_stmt|;
 name|grid_cfg
 operator|.
 name|voffset
 operator|=
+name|MAX
+argument_list|(
+literal|0
+argument_list|,
 name|param
 index|[
 literal|10
@@ -828,6 +857,7 @@ operator|.
 name|data
 operator|.
 name|d_int32
+argument_list|)
 expr_stmt|;
 name|grid_cfg
 operator|.
@@ -903,6 +933,10 @@ name|grid_cfg
 operator|.
 name|iwidth
 operator|=
+name|MAX
+argument_list|(
+literal|0
+argument_list|,
 name|param
 index|[
 literal|13
@@ -911,11 +945,16 @@ operator|.
 name|data
 operator|.
 name|d_int32
+argument_list|)
 expr_stmt|;
 name|grid_cfg
 operator|.
 name|ispace
 operator|=
+name|MAX
+argument_list|(
+literal|0
+argument_list|,
 name|param
 index|[
 literal|14
@@ -924,11 +963,16 @@ operator|.
 name|data
 operator|.
 name|d_int32
+argument_list|)
 expr_stmt|;
 name|grid_cfg
 operator|.
 name|ioffset
 operator|=
+name|MAX
+argument_list|(
+literal|0
+argument_list|,
 name|param
 index|[
 literal|15
@@ -937,6 +981,7 @@ operator|.
 name|data
 operator|.
 name|d_int32
+argument_list|)
 expr_stmt|;
 name|grid_cfg
 operator|.
@@ -1493,15 +1538,23 @@ argument_list|)
 expr_stmt|;
 name|y_offset
 operator|=
-name|grid_cfg
-operator|.
-name|vspace
-operator|+
 name|y
 operator|-
 name|grid_cfg
 operator|.
 name|voffset
+expr_stmt|;
+while|while
+condition|(
+name|y_offset
+operator|<
+literal|0
+condition|)
+name|y_offset
+operator|+=
+name|grid_cfg
+operator|.
+name|vspace
 expr_stmt|;
 if|if
 condition|(
@@ -1614,6 +1667,18 @@ name|grid_cfg
 operator|.
 name|hoffset
 expr_stmt|;
+while|while
+condition|(
+name|x_offset
+operator|<
+literal|0
+condition|)
+name|x_offset
+operator|+=
+name|grid_cfg
+operator|.
+name|hspace
+expr_stmt|;
 if|if
 condition|(
 operator|(
@@ -1724,6 +1789,18 @@ operator|-
 name|grid_cfg
 operator|.
 name|hoffset
+expr_stmt|;
+while|while
+condition|(
+name|x_offset
+operator|<
+literal|0
+condition|)
+name|x_offset
+operator|+=
+name|grid_cfg
+operator|.
+name|hspace
 expr_stmt|;
 if|if
 condition|(
