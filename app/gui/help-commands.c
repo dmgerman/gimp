@@ -76,7 +76,9 @@ name|action
 parameter_list|)
 block|{
 name|gimp_context_help
-argument_list|()
+argument_list|(
+name|widget
+argument_list|)
 expr_stmt|;
 block|}
 end_function
