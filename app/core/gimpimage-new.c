@@ -371,9 +371,12 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"%lu Bytes"
+literal|"%d Bytes"
 argument_list|)
 argument_list|,
+operator|(
+name|gint
+operator|)
 name|memsize
 argument_list|)
 return|;
@@ -447,9 +450,12 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"%lu KB"
+literal|"%d KB"
 argument_list|)
 argument_list|,
+operator|(
+name|gint
+operator|)
 name|memsize
 operator|/
 literal|1024
