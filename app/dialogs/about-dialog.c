@@ -168,7 +168,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd5cf5b0108
+DECL|struct|__anon2a1fc7b10108
 block|{
 DECL|member|about_dialog
 name|GtkWidget
@@ -552,6 +552,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|scroll_text
 specifier|static
+specifier|const
 name|gchar
 modifier|*
 modifier|*
