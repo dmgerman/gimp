@@ -251,6 +251,11 @@ block|{
 name|GimpEditor
 modifier|*
 name|editor
+init|=
+name|GIMP_EDITOR
+argument_list|(
+name|data
+argument_list|)
 decl_stmt|;
 name|GimpContext
 modifier|*
@@ -264,13 +269,6 @@ name|GtkWidget
 modifier|*
 name|qbox
 decl_stmt|;
-name|editor
-operator|=
-name|GIMP_EDITOR
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
 name|context
 operator|=
 name|gimp_get_user_context

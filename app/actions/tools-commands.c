@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdock.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -80,7 +86,7 @@ parameter_list|,
 name|data
 parameter_list|)
 define|\
-value|if (GIMP_IS_DISPLAY (data)) \     gimp = ((GimpDisplay *) data)->gimage->gimp; \   else if (GIMP_IS_GIMP (data)) \     gimp = data; \   else \     gimp = NULL; \   if (! gimp) \     return
+value|if (GIMP_IS_DISPLAY (data)) \     gimp = ((GimpDisplay *) data)->gimage->gimp; \   else if (GIMP_IS_GIMP (data)) \     gimp = data; \   else if (GIMP_IS_DOCK (data)) \     gimp = ((GimpDock *) data)->context->gimp; \   else \     gimp = NULL; \   if (! gimp) \     return
 end_define
 
 begin_function

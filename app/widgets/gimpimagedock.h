@@ -121,6 +121,15 @@ DECL|member|auto_follow_active
 name|gboolean
 name|auto_follow_active
 decl_stmt|;
+DECL|member|item_factory
+name|GimpItemFactory
+modifier|*
+name|item_factory
+decl_stmt|;
+DECL|member|image_flush_handler_id
+name|GQuark
+name|image_flush_handler_id
+decl_stmt|;
 DECL|member|option_menu
 name|GtkWidget
 modifier|*

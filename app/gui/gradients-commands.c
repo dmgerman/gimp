@@ -124,14 +124,12 @@ block|{
 name|GimpContainerEditor
 modifier|*
 name|editor
-decl_stmt|;
-name|editor
-operator|=
+init|=
 name|GIMP_CONTAINER_EDITOR
 argument_list|(
 name|data
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gradients_save_as_pov_query
 argument_list|(
 name|editor

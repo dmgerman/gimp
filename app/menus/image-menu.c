@@ -5978,6 +5978,11 @@ name|n_screens
 init|=
 literal|1
 decl_stmt|;
+name|gboolean
+name|display_items
+init|=
+name|TRUE
+decl_stmt|;
 name|gimp
 operator|=
 name|GIMP_ITEM_FACTORY
@@ -5989,7 +5994,24 @@ name|gimp
 expr_stmt|;
 if|if
 condition|(
+operator|!
+name|gtk_item_factory_get_item
+argument_list|(
+name|item_factory
+argument_list|,
+literal|"/View/New View"
+argument_list|)
+condition|)
+name|display_items
+operator|=
+name|FALSE
+expr_stmt|;
+if|if
+condition|(
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
 name|data
+argument_list|)
 condition|)
 block|{
 name|shell
@@ -6004,6 +6026,32 @@ operator|=
 name|shell
 operator|->
 name|gdisp
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|data
+argument_list|)
+condition|)
+block|{
+name|gdisp
+operator|=
+name|GIMP_DISPLAY
+argument_list|(
+name|data
+argument_list|)
+expr_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
+argument_list|)
 expr_stmt|;
 block|}
 if|if
@@ -6699,6 +6747,11 @@ name|fs
 argument_list|)
 expr_stmt|;
 comment|/*  View  */
+if|if
+condition|(
+name|display_items
+condition|)
+block|{
 name|SET_SENSITIVE
 argument_list|(
 literal|"/View/New View"
@@ -7033,6 +7086,7 @@ operator|>
 literal|1
 argument_list|)
 expr_stmt|;
+block|}
 comment|/*  Image  */
 name|SET_SENSITIVE
 argument_list|(
@@ -7282,6 +7336,11 @@ operator|&&
 name|sel
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|display_items
+condition|)
+block|{
 name|SET_SENSITIVE
 argument_list|(
 literal|"/Layer/Stack/Select Previous Layer"
@@ -7442,6 +7501,7 @@ literal|1
 operator|)
 argument_list|)
 expr_stmt|;
+block|}
 name|SET_SENSITIVE
 argument_list|(
 literal|"/Layer/Colors/Color Balance..."

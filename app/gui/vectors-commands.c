@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdock.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -182,7 +188,7 @@ parameter_list|,
 name|data
 parameter_list|)
 define|\
-value|if (GIMP_IS_DISPLAY (data)) \     gimage = ((GimpDisplay *) data)->gimage; \   else if (GIMP_IS_GIMP (data)) \     gimage = gimp_context_get_image (gimp_get_user_context (GIMP (data))); \   else if (GIMP_IS_ITEM_TREE_VIEW (data)) \     gimage = ((GimpItemTreeView *) data)->gimage; \   else \     gimage = NULL; \   \   if (! gimage) \     return
+value|if (GIMP_IS_DISPLAY (data)) \     gimage = ((GimpDisplay *) data)->gimage; \   else if (GIMP_IS_GIMP (data)) \     gimage = gimp_context_get_image (gimp_get_user_context (GIMP (data))); \   else if (GIMP_IS_DOCK (data)) \     gimage = gimp_context_get_image (((GimpDock *) data)->context); \   else if (GIMP_IS_ITEM_TREE_VIEW (data)) \     gimage = ((GimpItemTreeView *) data)->gimage; \   else \     gimage = NULL; \   \   if (! gimage) \     return
 end_define
 
 begin_define
