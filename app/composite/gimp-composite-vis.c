@@ -81,8 +81,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_composite_altivec_init (void)
-name|gimp_composite_altivec_init
+DECL|function|gimp_composite_vis_init (void)
+name|gimp_composite_vis_init
 parameter_list|(
 name|void
 parameter_list|)
