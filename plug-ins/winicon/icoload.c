@@ -55,70 +55,6 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_if
-if|#
-directive|if
-operator|(
-name|G_BYTE_ORDER
-operator|==
-name|G_BIG_ENDIAN
-operator|)
-end_if
-
-begin_define
-DECL|macro|A_VAL (p)
-define|#
-directive|define
-name|A_VAL
-parameter_list|(
-name|p
-parameter_list|)
-value|((guchar *)(p))[0]
-end_define
-
-begin_define
-DECL|macro|R_VAL (p)
-define|#
-directive|define
-name|R_VAL
-parameter_list|(
-name|p
-parameter_list|)
-value|((guchar *)(p))[1]
-end_define
-
-begin_define
-DECL|macro|G_VAL (p)
-define|#
-directive|define
-name|G_VAL
-parameter_list|(
-name|p
-parameter_list|)
-value|((guchar *)(p))[2]
-end_define
-
-begin_define
-DECL|macro|B_VAL (p)
-define|#
-directive|define
-name|B_VAL
-parameter_list|(
-name|p
-parameter_list|)
-value|((guchar *)(p))[3]
-end_define
-
-begin_elif
-elif|#
-directive|elif
-operator|(
-name|G_BYTE_ORDER
-operator|==
-name|G_LITTLE_ENDIAN
-operator|)
-end_elif
-
 begin_define
 DECL|macro|A_VAL (p)
 define|#
@@ -163,10 +99,49 @@ parameter_list|)
 value|((guchar *)(p))[0]
 end_define
 
-begin_endif
-endif|#
-directive|endif
-end_endif
+begin_define
+DECL|macro|A_VAL_GIMP (p)
+define|#
+directive|define
+name|A_VAL_GIMP
+parameter_list|(
+name|p
+parameter_list|)
+value|((guchar *)(p))[3]
+end_define
+
+begin_define
+DECL|macro|R_VAL_GIMP (p)
+define|#
+directive|define
+name|R_VAL_GIMP
+parameter_list|(
+name|p
+parameter_list|)
+value|((guchar *)(p))[0]
+end_define
+
+begin_define
+DECL|macro|G_VAL_GIMP (p)
+define|#
+directive|define
+name|G_VAL_GIMP
+parameter_list|(
+name|p
+parameter_list|)
+value|((guchar *)(p))[1]
+end_define
+
+begin_define
+DECL|macro|B_VAL_GIMP (p)
+define|#
+directive|define
+name|B_VAL_GIMP
+parameter_list|(
+name|p
+parameter_list|)
+value|((guchar *)(p))[2]
+end_define
 
 begin_function_decl
 specifier|static
@@ -1290,7 +1265,7 @@ name|ico
 operator|->
 name|cp
 operator|+=
-name|ico_read_int32
+name|ico_read_int8
 argument_list|(
 name|ico
 operator|->
@@ -1303,6 +1278,8 @@ argument_list|,
 name|data
 operator|->
 name|used_clrs
+operator|*
+literal|4
 argument_list|)
 expr_stmt|;
 block|}
@@ -2267,7 +2244,7 @@ name|x
 index|]
 operator|)
 decl_stmt|;
-name|B_VAL
+name|R_VAL_GIMP
 argument_list|(
 name|dest
 argument_list|)
@@ -2278,7 +2255,7 @@ operator|&
 name|color
 argument_list|)
 expr_stmt|;
-name|G_VAL
+name|G_VAL_GIMP
 argument_list|(
 name|dest
 argument_list|)
@@ -2289,7 +2266,7 @@ operator|&
 name|color
 argument_list|)
 expr_stmt|;
-name|R_VAL
+name|B_VAL_GIMP
 argument_list|(
 name|dest
 argument_list|)
@@ -2315,7 +2292,7 @@ operator|+
 name|x
 argument_list|)
 condition|)
-name|A_VAL
+name|A_VAL_GIMP
 argument_list|(
 name|dest
 argument_list|)
@@ -2323,7 +2300,7 @@ operator|=
 literal|0
 expr_stmt|;
 else|else
-name|A_VAL
+name|A_VAL_GIMP
 argument_list|(
 name|dest
 argument_list|)
@@ -2403,7 +2380,7 @@ name|x
 index|]
 operator|)
 decl_stmt|;
-name|B_VAL
+name|R_VAL_GIMP
 argument_list|(
 name|dest
 argument_list|)
@@ -2414,7 +2391,7 @@ operator|&
 name|color
 argument_list|)
 expr_stmt|;
-name|G_VAL
+name|G_VAL_GIMP
 argument_list|(
 name|dest
 argument_list|)
@@ -2425,7 +2402,7 @@ operator|&
 name|color
 argument_list|)
 expr_stmt|;
-name|R_VAL
+name|B_VAL_GIMP
 argument_list|(
 name|dest
 argument_list|)
@@ -2451,7 +2428,7 @@ operator|+
 name|x
 argument_list|)
 condition|)
-name|A_VAL
+name|A_VAL_GIMP
 argument_list|(
 name|dest
 argument_list|)
@@ -2459,7 +2436,7 @@ operator|=
 literal|0
 expr_stmt|;
 else|else
-name|A_VAL
+name|A_VAL_GIMP
 argument_list|(
 name|dest
 argument_list|)
@@ -2539,7 +2516,7 @@ name|x
 index|]
 operator|)
 decl_stmt|;
-name|B_VAL
+name|R_VAL_GIMP
 argument_list|(
 name|dest
 argument_list|)
@@ -2550,7 +2527,7 @@ operator|&
 name|color
 argument_list|)
 expr_stmt|;
-name|G_VAL
+name|G_VAL_GIMP
 argument_list|(
 name|dest
 argument_list|)
@@ -2561,7 +2538,7 @@ operator|&
 name|color
 argument_list|)
 expr_stmt|;
-name|R_VAL
+name|B_VAL_GIMP
 argument_list|(
 name|dest
 argument_list|)
@@ -2587,7 +2564,7 @@ operator|+
 name|x
 argument_list|)
 condition|)
-name|A_VAL
+name|A_VAL_GIMP
 argument_list|(
 name|dest
 argument_list|)
@@ -2595,7 +2572,7 @@ operator|=
 literal|0
 expr_stmt|;
 else|else
-name|A_VAL
+name|A_VAL_GIMP
 argument_list|(
 name|dest
 argument_list|)
@@ -2664,7 +2641,7 @@ name|x
 index|]
 operator|)
 decl_stmt|;
-name|R_VAL
+name|B_VAL_GIMP
 argument_list|(
 name|dest
 argument_list|)
@@ -2682,7 +2659,7 @@ operator|*
 name|bytespp
 index|]
 expr_stmt|;
-name|G_VAL
+name|G_VAL_GIMP
 argument_list|(
 name|dest
 argument_list|)
@@ -2702,7 +2679,7 @@ operator|+
 literal|1
 index|]
 expr_stmt|;
-name|B_VAL
+name|R_VAL_GIMP
 argument_list|(
 name|dest
 argument_list|)
@@ -2746,7 +2723,7 @@ operator|+
 name|x
 argument_list|)
 condition|)
-name|A_VAL
+name|A_VAL_GIMP
 argument_list|(
 name|dest
 argument_list|)
@@ -2754,7 +2731,7 @@ operator|=
 literal|0
 expr_stmt|;
 else|else
-name|A_VAL
+name|A_VAL_GIMP
 argument_list|(
 name|dest
 argument_list|)
@@ -2764,7 +2741,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|A_VAL
+name|A_VAL_GIMP
 argument_list|(
 name|dest
 argument_list|)
