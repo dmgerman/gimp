@@ -200,7 +200,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b16f2fe0108
+DECL|struct|__anon299fafea0108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -249,7 +249,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b16f2fe0208
+DECL|struct|__anon299fafea0208
 block|{
 DECL|member|run
 name|gint
@@ -2821,7 +2821,7 @@ literal|"value_changed"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|gimp_int_adjustment_update
+name|gimp_double_adjustment_update
 argument_list|)
 argument_list|,
 operator|&
