@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c22da740103
+DECL|enum|__anon296d34590103
 block|{
 DECL|enumerator|COLOR_NOTEBOOK_OK
 name|COLOR_NOTEBOOK_OK

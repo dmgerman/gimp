@@ -32,19 +32,10 @@ comment|/* __cplusplus */
 comment|/* For information look into the C source or the html documentation */
 comment|/*  Color conversion routines  */
 comment|/*  GimpRGB function  */
-DECL|macro|GIMP_HSV_UNDEFINED
-define|#
-directive|define
-name|GIMP_HSV_UNDEFINED
-value|-1.0
-DECL|macro|GIMP_HSL_UNDEFINED
-define|#
-directive|define
-name|GIMP_HSL_UNDEFINED
-value|-1.0
 name|void
 name|gimp_rgb_to_hsv
 parameter_list|(
+specifier|const
 name|GimpRGB
 modifier|*
 name|rgb
@@ -57,6 +48,7 @@ function_decl|;
 name|void
 name|gimp_rgb_to_hsl
 parameter_list|(
+specifier|const
 name|GimpRGB
 modifier|*
 name|rgb
@@ -77,6 +69,7 @@ function_decl|;
 name|void
 name|gimp_hsv_to_rgb
 parameter_list|(
+specifier|const
 name|GimpHSV
 modifier|*
 name|hsv
@@ -106,6 +99,7 @@ function_decl|;
 name|void
 name|gimp_rgb_to_hwb
 parameter_list|(
+specifier|const
 name|GimpRGB
 modifier|*
 name|rgb

@@ -27,6 +27,22 @@ directive|include
 file|"gimpmath.h"
 end_include
 
+begin_define
+DECL|macro|GIMP_HSV_UNDEFINED
+define|#
+directive|define
+name|GIMP_HSV_UNDEFINED
+value|-1.0
+end_define
+
+begin_define
+DECL|macro|GIMP_HSL_UNDEFINED
+define|#
+directive|define
+name|GIMP_HSL_UNDEFINED
+value|-1.0
+end_define
+
 begin_comment
 comment|/*********************************  *   color conversion routines   *  *********************************/
 end_comment
@@ -37,9 +53,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_rgb_to_hsv (GimpRGB * rgb,GimpHSV * hsv)
+DECL|function|gimp_rgb_to_hsv (const GimpRGB * rgb,GimpHSV * hsv)
 name|gimp_rgb_to_hsv
 parameter_list|(
+specifier|const
 name|GimpRGB
 modifier|*
 name|rgb
@@ -110,6 +127,16 @@ operator|=
 name|delta
 operator|/
 name|max
+expr_stmt|;
+if|if
+condition|(
+name|delta
+operator|==
+literal|0.0
+condition|)
+name|delta
+operator|=
+literal|1.0
 expr_stmt|;
 if|if
 condition|(
@@ -243,7 +270,7 @@ name|hsv
 operator|->
 name|h
 operator|=
-name|GIMP_HSV_UNDEFINED
+literal|0.0
 expr_stmt|;
 block|}
 name|hsv
@@ -259,9 +286,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_hsv_to_rgb (GimpHSV * hsv,GimpRGB * rgb)
+DECL|function|gimp_hsv_to_rgb (const GimpHSV * hsv,GimpRGB * rgb)
 name|gimp_hsv_to_rgb
 parameter_list|(
+specifier|const
 name|GimpHSV
 modifier|*
 name|hsv
@@ -282,6 +310,9 @@ decl_stmt|,
 name|q
 decl_stmt|,
 name|t
+decl_stmt|;
+name|gdouble
+name|hue
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -304,12 +335,6 @@ operator|->
 name|s
 operator|==
 literal|0.0
-operator|||
-name|hsv
-operator|->
-name|h
-operator|==
-name|GIMP_HSV_UNDEFINED
 condition|)
 block|{
 name|rgb
@@ -339,23 +364,23 @@ expr_stmt|;
 block|}
 else|else
 block|{
-if|if
-condition|(
+name|hue
+operator|=
 name|hsv
 operator|->
 name|h
+expr_stmt|;
+if|if
+condition|(
+name|hue
 operator|==
 literal|1.0
 condition|)
-name|hsv
-operator|->
-name|h
+name|hue
 operator|=
 literal|0.0
 expr_stmt|;
-name|hsv
-operator|->
-name|h
+name|hue
 operator|*=
 literal|6.0
 expr_stmt|;
@@ -364,15 +389,11 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|hsv
-operator|->
-name|h
+name|hue
 expr_stmt|;
 name|f
 operator|=
-name|hsv
-operator|->
-name|h
+name|hue
 operator|-
 name|i
 expr_stmt|;
@@ -594,9 +615,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_rgb_to_hsl (GimpRGB * rgb,gdouble * hue,gdouble * saturation,gdouble * lightness)
+DECL|function|gimp_rgb_to_hsl (const GimpRGB * rgb,gdouble * hue,gdouble * saturation,gdouble * lightness)
 name|gimp_rgb_to_hsl
 parameter_list|(
+specifier|const
 name|GimpRGB
 modifier|*
 name|rgb
@@ -739,6 +761,16 @@ operator|=
 name|max
 operator|-
 name|min
+expr_stmt|;
+if|if
+condition|(
+name|delta
+operator|==
+literal|0.0
+condition|)
+name|delta
+operator|=
+literal|1.0
 expr_stmt|;
 if|if
 condition|(
@@ -1123,9 +1155,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_rgb_to_hwb (GimpRGB * rgb,gdouble * hue,gdouble * whiteness,gdouble * blackness)
+DECL|function|gimp_rgb_to_hwb (const GimpRGB * rgb,gdouble * hue,gdouble * whiteness,gdouble * blackness)
 name|gimp_rgb_to_hwb
 parameter_list|(
+specifier|const
 name|GimpRGB
 modifier|*
 name|rgb
@@ -2888,6 +2921,16 @@ name|min
 expr_stmt|;
 if|if
 condition|(
+name|delta
+operator|==
+literal|0.0
+condition|)
+name|delta
+operator|=
+literal|1.0
+expr_stmt|;
+if|if
+condition|(
 name|r
 operator|==
 name|max
@@ -3413,6 +3456,16 @@ operator|=
 name|max
 operator|-
 name|min
+expr_stmt|;
+if|if
+condition|(
+name|delta
+operator|==
+literal|0.0
+condition|)
+name|delta
+operator|=
+literal|1.0
 expr_stmt|;
 if|if
 condition|(
