@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"color-notebook.h"
+file|"color-history.h"
 end_include
 
 begin_include
@@ -107,7 +107,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2795f26c0103
+DECL|enum|__anon2bde9a140103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO
@@ -442,7 +442,7 @@ condition|)
 goto|goto
 name|error
 goto|;
-name|color_history_add_color_from_rc
+name|color_history_add_from_rc
 argument_list|(
 operator|&
 name|color

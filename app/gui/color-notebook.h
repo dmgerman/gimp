@@ -16,20 +16,10 @@ directive|define
 name|__COLOR_NOTEBOOK_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_comment
-comment|/* for FILE */
-end_comment
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9c33b70103
+DECL|enum|__anon2af41d390103
 block|{
 DECL|enumerator|COLOR_NOTEBOOK_OK
 name|COLOR_NOTEBOOK_OK
@@ -237,32 +227,6 @@ parameter_list|,
 name|GimpRGB
 modifier|*
 name|color
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/*  color history functions  */
-end_comment
-
-begin_function_decl
-name|void
-name|color_history_add_color_from_rc
-parameter_list|(
-name|GimpRGB
-modifier|*
-name|color
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|color_history_write
-parameter_list|(
-name|FILE
-modifier|*
-name|fp
 parameter_list|)
 function_decl|;
 end_function_decl
