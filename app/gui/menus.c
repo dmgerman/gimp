@@ -5778,7 +5778,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Add Tab/Image List..."
+literal|"/Add Tab/Layer List..."
 argument_list|)
 block|,
 name|NULL
@@ -5787,8 +5787,48 @@ name|dialogs_add_tab_cmd_callback
 block|,
 name|GPOINTER_TO_UINT
 argument_list|(
-literal|"gimp:image-list"
+literal|"gimp:layer-list"
 argument_list|)
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Add Tab/Channel List..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|dialogs_add_tab_cmd_callback
+block|,
+name|GPOINTER_TO_UINT
+argument_list|(
+literal|"gimp:channel-list"
+argument_list|)
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+literal|"/Add Tab/---"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|0
+block|,
+literal|"<Separator>"
 block|}
 block|,
 name|NULL
@@ -5822,6 +5862,46 @@ block|{
 block|{
 name|N_
 argument_list|(
+literal|"/Add Tab/Brush Grid..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|dialogs_add_tab_cmd_callback
+block|,
+name|GPOINTER_TO_UINT
+argument_list|(
+literal|"gimp:brush-grid"
+argument_list|)
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+literal|"/Add Tab/---"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|0
+block|,
+literal|"<Separator>"
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
 literal|"/Add Tab/Pattern List..."
 argument_list|)
 block|,
@@ -5833,6 +5913,46 @@ name|GPOINTER_TO_UINT
 argument_list|(
 literal|"gimp:pattern-list"
 argument_list|)
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Add Tab/Pattern Grid..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|dialogs_add_tab_cmd_callback
+block|,
+name|GPOINTER_TO_UINT
+argument_list|(
+literal|"gimp:pattern-grid"
+argument_list|)
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+literal|"/Add Tab/---"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|0
+block|,
+literal|"<Separator>"
 block|}
 block|,
 name|NULL
@@ -5866,7 +5986,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Add Tab/Palette List..."
+literal|"/Add Tab/Gradient Grid..."
 argument_list|)
 block|,
 name|NULL
@@ -5875,29 +5995,7 @@ name|dialogs_add_tab_cmd_callback
 block|,
 name|GPOINTER_TO_UINT
 argument_list|(
-literal|"gimp:palette-list"
-argument_list|)
-block|}
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/Add Tab/Tool List..."
-argument_list|)
-block|,
-name|NULL
-block|,
-name|dialogs_add_tab_cmd_callback
-block|,
-name|GPOINTER_TO_UINT
-argument_list|(
-literal|"gimp:tool-list"
+literal|"gimp:gradient-grid"
 argument_list|)
 block|}
 block|,
@@ -5928,7 +6026,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Add Tab/Image Grid..."
+literal|"/Add Tab/Palette List..."
 argument_list|)
 block|,
 name|NULL
@@ -5937,73 +6035,7 @@ name|dialogs_add_tab_cmd_callback
 block|,
 name|GPOINTER_TO_UINT
 argument_list|(
-literal|"gimp:image-grid"
-argument_list|)
-block|}
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/Add Tab/Brush Grid..."
-argument_list|)
-block|,
-name|NULL
-block|,
-name|dialogs_add_tab_cmd_callback
-block|,
-name|GPOINTER_TO_UINT
-argument_list|(
-literal|"gimp:brush-grid"
-argument_list|)
-block|}
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/Add Tab/Pattern Grid..."
-argument_list|)
-block|,
-name|NULL
-block|,
-name|dialogs_add_tab_cmd_callback
-block|,
-name|GPOINTER_TO_UINT
-argument_list|(
-literal|"gimp:pattern-grid"
-argument_list|)
-block|}
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/Add Tab/Gradient Grid..."
-argument_list|)
-block|,
-name|NULL
-block|,
-name|dialogs_add_tab_cmd_callback
-block|,
-name|GPOINTER_TO_UINT
-argument_list|(
-literal|"gimp:gradient-grid"
+literal|"gimp:palette-list"
 argument_list|)
 block|}
 block|,
@@ -6026,6 +6058,46 @@ block|,
 name|GPOINTER_TO_UINT
 argument_list|(
 literal|"gimp:palette-grid"
+argument_list|)
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+literal|"/Add Tab/---"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|0
+block|,
+literal|"<Separator>"
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Add Tab/Tool List..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|dialogs_add_tab_cmd_callback
+block|,
+name|GPOINTER_TO_UINT
+argument_list|(
+literal|"gimp:tool-list"
 argument_list|)
 block|}
 block|,
@@ -6078,7 +6150,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Add Tab/Layer List..."
+literal|"/Add Tab/Image List..."
 argument_list|)
 block|,
 name|NULL
@@ -6087,7 +6159,7 @@ name|dialogs_add_tab_cmd_callback
 block|,
 name|GPOINTER_TO_UINT
 argument_list|(
-literal|"gimp:layer-list"
+literal|"gimp:image-list"
 argument_list|)
 block|}
 block|,
@@ -6100,7 +6172,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Add Tab/Channel List..."
+literal|"/Add Tab/Image Grid..."
 argument_list|)
 block|,
 name|NULL
@@ -6109,7 +6181,7 @@ name|dialogs_add_tab_cmd_callback
 block|,
 name|GPOINTER_TO_UINT
 argument_list|(
-literal|"gimp:channel-list"
+literal|"gimp:image-grid"
 argument_list|)
 block|}
 block|,
