@@ -180,12 +180,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"scroll.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"selection.h"
 end_include
 
@@ -215,12 +209,6 @@ end_endif
 begin_comment
 comment|/* DISPLAY_FILTERS */
 end_comment
-
-begin_include
-include|#
-directive|include
-file|"tools/bezier_selectP.h"
-end_include
 
 begin_include
 include|#

@@ -76,7 +76,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppreviewcache.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"layer.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"parasitelist.h"
 end_include
 
 begin_include
@@ -94,25 +106,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"temp_buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"parasitelist.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"undo.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimppreviewcache.h"
+file|"temp_buf.h"
 end_include
 
 begin_include

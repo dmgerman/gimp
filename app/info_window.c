@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"colormaps.h"
 end_include
 
@@ -72,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gximage.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"info_dialog.h"
 end_include
 
@@ -85,12 +73,6 @@ begin_include
 include|#
 directive|include
 file|"info_window.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"scroll.h"
 end_include
 
 begin_include
@@ -1278,7 +1260,8 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|title
-decl_stmt|,
+decl_stmt|;
+name|gchar
 modifier|*
 name|title_buf
 decl_stmt|;
@@ -1728,9 +1711,7 @@ operator|||
 operator|!
 name|gdisp
 condition|)
-block|{
 return|return;
-block|}
 name|gimage
 operator|=
 name|gdisp
@@ -1893,12 +1874,10 @@ name|info_window_auto
 operator|!=
 name|NULL
 condition|)
-block|{
 name|info_win
 operator|=
 name|info_window_auto
 expr_stmt|;
-block|}
 if|if
 condition|(
 operator|!
@@ -1936,20 +1915,18 @@ expr_stmt|;
 if|if
 condition|(
 name|force_update
-operator|==
-name|TRUE
 condition|)
 block|{
 name|gchar
 modifier|*
-name|title_buf
+name|title
 decl_stmt|;
 name|info_window_update
 argument_list|(
 name|gdisp
 argument_list|)
 expr_stmt|;
-name|title_buf
+name|title
 operator|=
 name|info_window_title
 argument_list|(
@@ -1965,12 +1942,12 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
-name|title_buf
+name|title
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|title_buf
+name|title
 argument_list|)
 expr_stmt|;
 block|}
@@ -1979,11 +1956,10 @@ condition|(
 operator|!
 name|iwd
 operator|||
+operator|!
 name|iwd
 operator|->
 name|showingPreview
-operator|==
-name|FALSE
 condition|)
 return|return;
 comment|/* gimp_image_active_drawable (gdisp->gimage) */
@@ -2261,13 +2237,6 @@ block|{
 name|InfoWinData
 modifier|*
 name|iwd
-decl_stmt|;
-specifier|extern
-name|gint
-name|gimage_image_count
-argument_list|(
-name|void
-argument_list|)
 decl_stmt|;
 if|if
 condition|(

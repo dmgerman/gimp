@@ -108,12 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gximage.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"nav_window.h"
 end_include
 
@@ -214,7 +208,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon288443aa0103
+DECL|enum|__anon2b9d5ea80103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW

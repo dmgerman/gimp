@@ -98,7 +98,7 @@ begin_decl_stmt
 DECL|variable|startx
 DECL|variable|starty
 specifier|static
-name|int
+name|gint
 name|startx
 decl_stmt|,
 name|starty
@@ -106,7 +106,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|scrollbar_vert_update (GtkAdjustment * adjustment,gpointer data)
 name|scrollbar_vert_update
 parameter_list|(
@@ -154,7 +154,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|scrollbar_horz_update (GtkAdjustment * adjustment,gpointer data)
 name|scrollbar_horz_update
 parameter_list|(
@@ -319,9 +319,7 @@ name|canvas
 operator|->
 name|window
 condition|)
-block|{
 return|return;
-block|}
 name|scroll_display
 argument_list|(
 name|gdisp
@@ -364,12 +362,12 @@ modifier|*
 name|mevent
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|child_x
 decl_stmt|,
 name|child_y
 decl_stmt|;
-name|int
+name|gint
 name|off_x
 decl_stmt|,
 name|off_y
@@ -538,7 +536,7 @@ block|}
 end_function
 
 begin_macro
-unit|}   int
+unit|}  gboolean
 DECL|function|scroll_display (GDisplay * gdisp,gint x_offset,gint y_offset)
 name|scroll_display
 argument_list|(
@@ -552,17 +550,17 @@ end_macro
 
 begin_block
 block|{
-name|int
+name|gint
 name|old_x
 decl_stmt|,
 name|old_y
 decl_stmt|;
-name|int
+name|gint
 name|src_x
 decl_stmt|,
 name|src_y
 decl_stmt|;
-name|int
+name|gint
 name|dest_x
 decl_stmt|,
 name|dest_y
@@ -940,11 +938,11 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-literal|1
+name|TRUE
 return|;
 block|}
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 end_block

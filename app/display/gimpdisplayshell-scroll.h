@@ -57,7 +57,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|gboolean
 name|scrollbar_vert_update
 parameter_list|(
 name|GtkAdjustment
@@ -71,7 +71,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|gboolean
 name|scrollbar_horz_update
 parameter_list|(
 name|GtkAdjustment
@@ -153,15 +153,18 @@ comment|/* generic scroll-by-offset function */
 end_comment
 
 begin_function_decl
-name|gint
+name|gboolean
 name|scroll_display
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|,
 name|gint
+name|x_offset
 parameter_list|,
 name|gint
+name|y_offset
 parameter_list|)
 function_decl|;
 end_function_decl

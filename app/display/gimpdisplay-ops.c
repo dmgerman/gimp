@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"fileops.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdisplay_ops.h"
 end_include
 
@@ -61,24 +55,6 @@ begin_include
 include|#
 directive|include
 file|"gimpui.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gximage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"menus.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"scale.h"
 end_include
 
 begin_include

@@ -83,9 +83,11 @@ name|unique_name
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|,
 name|gchar
 modifier|*
+name|cstr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -435,9 +437,7 @@ operator|=
 name|y
 expr_stmt|;
 return|return
-operator|(
 name|pathpoint
-operator|)
 return|;
 block|}
 end_function
@@ -591,9 +591,7 @@ name|bezier_sel
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|ret
-operator|)
 return|;
 block|}
 end_function
@@ -624,11 +622,9 @@ literal|0
 return|;
 block|}
 return|return
-operator|(
 name|p
 operator|->
 name|tattoo
-operator|)
 return|;
 block|}
 end_function
@@ -689,16 +685,23 @@ operator|(
 name|NULL
 operator|)
 return|;
+for|for
+control|(
 name|tlist
 operator|=
 name|plp
 operator|->
 name|bz_paths
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|tlist
-condition|)
+condition|;
+name|tlist
+operator|=
+name|g_slist_next
+argument_list|(
+name|tlist
+argument_list|)
+control|)
 block|{
 name|Path
 modifier|*
@@ -727,13 +730,6 @@ operator|(
 name|p
 operator|)
 return|;
-name|tlist
-operator|=
-name|g_slist_next
-argument_list|(
-name|tlist
-argument_list|)
-expr_stmt|;
 block|}
 return|return
 operator|(
@@ -995,7 +991,6 @@ operator|==
 name|BEZIER_MOVE
 condition|)
 block|{
-comment|/* 	  printf("Close last curve off\n"); */
 name|bezier_sel
 operator|->
 name|last_point
@@ -1047,7 +1042,6 @@ operator|->
 name|x
 argument_list|)
 argument_list|,
-comment|/* ALT add rint() */
 name|RINT
 argument_list|(
 name|pdata
@@ -1343,7 +1337,9 @@ block|{
 name|gchar
 modifier|*
 name|test_str
-init|=
+decl_stmt|;
+name|test_str
+operator|=
 operator|(
 operator|(
 name|Path
@@ -1357,7 +1353,7 @@ operator|)
 operator|)
 operator|->
 name|name
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 name|strcmp

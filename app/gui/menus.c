@@ -114,19 +114,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint_funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"preferences_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"scale.h"
 end_include
 
 begin_include
@@ -7579,7 +7567,8 @@ block|{
 name|gchar
 modifier|*
 name|filename
-decl_stmt|,
+decl_stmt|;
+name|gchar
 modifier|*
 name|raw_filename
 decl_stmt|;
