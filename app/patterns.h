@@ -139,6 +139,21 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GPatternP
+name|pattern_list_get_pattern
+parameter_list|(
+name|GSList
+modifier|*
+name|list
+parameter_list|,
+name|char
+modifier|*
+name|name
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|create_pattern_dialog
 parameter_list|(

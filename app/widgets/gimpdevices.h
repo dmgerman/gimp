@@ -23,7 +23,7 @@ file|"tools.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon29f428cb0103
+DECL|enum|__anon27a438f80103
 typedef|typedef
 enum|enum
 block|{
@@ -68,6 +68,13 @@ init|=
 literal|1
 operator|<<
 literal|5
+block|,
+DECL|enumerator|DEVICE_PATTERN
+name|DEVICE_PATTERN
+init|=
+literal|1
+operator|<<
+literal|6
 block|, }
 DECL|typedef|DeviceValues
 name|DeviceValues
@@ -198,6 +205,10 @@ parameter_list|,
 name|guchar
 name|foreground
 index|[]
+parameter_list|,
+name|gchar
+modifier|*
+name|pattern_name
 parameter_list|)
 function_decl|;
 end_function_decl
