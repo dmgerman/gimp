@@ -5957,18 +5957,7 @@ name|lmu
 operator|->
 name|type
 argument_list|)
-condition|)
-block|{
-name|gimp_drawable_alpha_changed
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
+operator|&&
 name|undo
 operator|->
 name|gimage
@@ -5979,6 +5968,7 @@ name|num_children
 operator|==
 literal|1
 condition|)
+block|{
 name|gimp_image_alpha_changed
 argument_list|(
 name|undo

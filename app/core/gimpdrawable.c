@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288ed0e40103
+DECL|enum|__anon2797ba7e0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2385,6 +2385,9 @@ name|GimpImageType
 name|type
 parameter_list|)
 block|{
+name|gboolean
+name|old_has_alpha
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|tile_manager_bpp
@@ -2396,6 +2399,13 @@ name|GIMP_IMAGE_TYPE_BYTES
 argument_list|(
 name|type
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|old_has_alpha
+operator|=
+name|gimp_drawable_has_alpha
+argument_list|(
+name|drawable
 argument_list|)
 expr_stmt|;
 if|if
@@ -2442,6 +2452,20 @@ operator|=
 name|GIMP_IMAGE_TYPE_HAS_ALPHA
 argument_list|(
 name|type
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|old_has_alpha
+operator|!=
+name|gimp_drawable_has_alpha
+argument_list|(
+name|drawable
+argument_list|)
+condition|)
+name|gimp_drawable_alpha_changed
+argument_list|(
+name|drawable
 argument_list|)
 expr_stmt|;
 block|}
