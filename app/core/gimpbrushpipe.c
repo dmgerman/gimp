@@ -1891,12 +1891,17 @@ index|[
 name|i
 index|]
 operator|=
+name|MAX
+argument_list|(
+literal|1
+argument_list|,
 name|params
 operator|.
 name|rank
 index|[
 name|i
 index|]
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
