@@ -148,7 +148,7 @@ name|ROUND_TO_INT
 parameter_list|(
 name|val
 parameter_list|)
-value|((val) + 0.5)
+value|((int) ((val) + 0.5))
 end_define
 
 begin_typedef
@@ -246,7 +246,7 @@ value|1L
 end_define
 
 begin_typedef
-DECL|struct|__anon2be38fe00108
+DECL|struct|__anon27aa6c170108
 typedef|typedef
 struct|struct
 block|{
@@ -347,7 +347,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2be38fe00208
+DECL|struct|__anon27aa6c170208
 typedef|typedef
 struct|struct
 block|{
@@ -1495,7 +1495,7 @@ modifier|*
 name|p
 parameter_list|)
 block|{
-DECL|struct|__anon2be38fe00308
+DECL|struct|__anon27aa6c170308
 DECL|member|r
 DECL|member|g
 DECL|member|b
