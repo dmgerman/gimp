@@ -1612,6 +1612,11 @@ comment|/* draw the grid */
 name|gimp_display_shell_draw_grid
 argument_list|(
 name|shell
+argument_list|,
+operator|&
+name|eevent
+operator|->
+name|area
 argument_list|)
 expr_stmt|;
 comment|/* and the cursor (if we have a software cursor) */
@@ -1694,14 +1699,12 @@ block|{
 name|GimpDisplayShell
 modifier|*
 name|shell
-decl_stmt|;
-name|shell
-operator|=
+init|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|widget
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gimp_context_set_display
 argument_list|(
 name|gimp_get_user_context

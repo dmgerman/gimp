@@ -52,6 +52,11 @@ parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
+parameter_list|,
+specifier|const
+name|GdkRectangle
+modifier|*
+name|area
 parameter_list|)
 function_decl|;
 end_function_decl

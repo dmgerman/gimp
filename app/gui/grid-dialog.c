@@ -285,6 +285,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gtk_window_set_resizable
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|dialog
