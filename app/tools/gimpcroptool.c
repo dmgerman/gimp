@@ -194,7 +194,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon289268cd0103
+DECL|enum|__anon2aaf45b50103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -4357,6 +4357,20 @@ argument_list|,
 name|GIMP_CROP_MODE_CROP
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_dialog_set_default_response
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|crop
+operator|->
+name|crop_info
+operator|->
+name|shell
+argument_list|)
+argument_list|,
+name|GIMP_CROP_MODE_CROP
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
