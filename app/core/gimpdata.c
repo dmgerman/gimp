@@ -82,7 +82,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f4d1d80103
+DECL|enum|__anon2ac329810103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -630,17 +630,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|data
-operator|->
-name|filename
-operator|!=
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|data
@@ -658,6 +647,17 @@ return|return
 name|TRUE
 return|;
 block|}
+name|g_return_val_if_fail
+argument_list|(
+name|data
+operator|->
+name|filename
+operator|!=
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|GIMP_DATA_GET_CLASS
