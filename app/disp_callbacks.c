@@ -288,8 +288,10 @@ name|y1
 operator|)
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush
-argument_list|()
+name|gdisplay_flush_displays_only
+argument_list|(
+name|gdisp
+argument_list|)
 expr_stmt|;
 block|}
 block|}

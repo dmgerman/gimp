@@ -411,18 +411,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|gdisplay_flush_displays_only
-parameter_list|(
-name|GDisplay
-modifier|*
-name|gdisp
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_decl_stmt
 DECL|variable|display_ht
 specifier|static
@@ -2512,7 +2500,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|gdisplay_flush_displays_only (GDisplay * gdisp)
 name|gdisplay_flush_displays_only
@@ -2858,6 +2845,11 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
+name|g_warning
+argument_list|(
+literal|"gdisplay_flush"
+argument_list|)
+expr_stmt|;
 comment|/* Redraw on idle time */
 name|gdisplay_flush_whenever
 argument_list|(
@@ -2879,6 +2871,11 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
+name|g_warning
+argument_list|(
+literal|"gdisplay_flush_now"
+argument_list|)
+expr_stmt|;
 comment|/* Redraw NOW */
 name|gdisplay_flush_whenever
 argument_list|(
@@ -9483,6 +9480,11 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+name|g_warning
+argument_list|(
+literal|"gdisplays_flush"
+argument_list|)
+expr_stmt|;
 name|gdisplays_flush_whenever
 argument_list|(
 name|FALSE
@@ -9499,6 +9501,11 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+name|g_warning
+argument_list|(
+literal|"gdisplays_flush_now"
+argument_list|)
+expr_stmt|;
 name|gdisplays_flush_whenever
 argument_list|(
 name|TRUE

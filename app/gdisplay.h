@@ -1163,6 +1163,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gdisplay_flush_displays_only
+parameter_list|(
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* no rerender! */
+end_comment
+
 begin_endif
 endif|#
 directive|endif
