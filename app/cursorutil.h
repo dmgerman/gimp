@@ -72,7 +72,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3256220108
+DECL|struct|__anon27b2c9530108
 block|{
 DECL|member|bits
 name|guchar
@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3256220203
+DECL|enum|__anon27b2c9530203
 block|{
 DECL|enumerator|CURSOR_MODE_TOOL_ICON
 name|CURSOR_MODE_TOOL_ICON
@@ -141,7 +141,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3256220303
+DECL|enum|__anon27b2c9530303
 block|{
 DECL|enumerator|CURSOR_MODIFIER_NONE
 name|CURSOR_MODIFIER_NONE
@@ -167,6 +167,15 @@ block|,
 DECL|enumerator|CURSOR_MODIFIER_ANCHOR
 name|CURSOR_MODIFIER_ANCHOR
 block|,
+DECL|enumerator|CURSOR_MODIFIER_FOREGROUND
+name|CURSOR_MODIFIER_FOREGROUND
+block|,
+DECL|enumerator|CURSOR_MODIFIER_BACKGROUND
+name|CURSOR_MODIFIER_BACKGROUND
+block|,
+DECL|enumerator|CURSOR_MODIFIER_PATTERN
+name|CURSOR_MODIFIER_PATTERN
+block|,
 DECL|enumerator|CURSOR_MODIFIER_HAND
 name|CURSOR_MODIFIER_HAND
 DECL|typedef|CursorModifier
@@ -178,7 +187,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3256220403
+DECL|enum|__anon27b2c9530403
 block|{
 DECL|enumerator|GIMP_MOUSE_CURSOR
 name|GIMP_MOUSE_CURSOR

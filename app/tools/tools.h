@@ -71,7 +71,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2acab6740103
+DECL|enum|__anon2c3850f30103
 block|{
 DECL|enumerator|INACTIVE
 name|INACTIVE
@@ -102,7 +102,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2acab6740203
+DECL|enum|__anon2c3850f30203
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -129,6 +129,9 @@ name|SELECTION_MOVE_MASK
 block|,
 DECL|enumerator|SELECTION_MOVE
 name|SELECTION_MOVE
+block|,
+DECL|enumerator|SELECTION_ANCHOR
+name|SELECTION_ANCHOR
 DECL|typedef|SelectOps
 block|}
 name|SelectOps
