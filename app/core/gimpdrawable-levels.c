@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpbaseconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp.h"
 end_include
 
@@ -590,16 +584,7 @@ comment|/* Build the histogram */
 name|hist
 operator|=
 name|gimp_histogram_new
-argument_list|(
-name|GIMP_BASE_CONFIG
-argument_list|(
-name|context
-operator|->
-name|gimp
-operator|->
-name|config
-argument_list|)
-argument_list|)
+argument_list|()
 expr_stmt|;
 name|gimp_drawable_calculate_histogram
 argument_list|(
