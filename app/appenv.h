@@ -19,6 +19,12 @@ end_define
 begin_include
 include|#
 directive|include
+file|"glib.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gdk/gdkx.h"
 end_include
 
@@ -43,7 +49,7 @@ value|((Display *) GDK_DISPLAY())
 end_define
 
 begin_comment
-comment|/*   important macros  */
+comment|/*   important macros - we reuse the ones from glib */
 end_comment
 
 begin_define
@@ -58,7 +64,7 @@ name|x
 parameter_list|,
 name|y
 parameter_list|)
-value|((a< x) ? x : ((a> y) ? y : a))
+value|CLAMP(a,x,y)
 end_define
 
 begin_define
@@ -71,7 +77,7 @@ name|x
 parameter_list|,
 name|y
 parameter_list|)
-value|((x< y) ? x : y)
+value|MIN(x,y)
 end_define
 
 begin_define
@@ -84,11 +90,41 @@ name|x
 parameter_list|,
 name|y
 parameter_list|)
-value|((x> y) ? x : y)
+value|MAX(x,y)
+end_define
+
+begin_comment
+comment|/* limit a (0->511) int to 255 */
+end_comment
+
+begin_define
+DECL|macro|MAX255 (a)
+define|#
+directive|define
+name|MAX255
+parameter_list|(
+name|a
+parameter_list|)
+value|(a | ((a& 256) - ((a& 256)>> 8)))
+end_define
+
+begin_comment
+comment|/* clamp a int32-range int between 0 and 255 inclusive */
+end_comment
+
+begin_define
+DECL|macro|CLAMP0255 (a)
+define|#
+directive|define
+name|CLAMP0255
+parameter_list|(
+name|a
+parameter_list|)
+value|((a&256)? (~(a>>31)) : a)
 end_define
 
 begin_typedef
-DECL|enum|__anon2bb79e480103
+DECL|enum|__anon2a4592980103
 typedef|typedef
 enum|enum
 block|{

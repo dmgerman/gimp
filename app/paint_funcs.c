@@ -137,7 +137,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf6462c0103
+DECL|enum|__anon279d631d0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -2983,15 +2983,12 @@ index|[
 name|b
 index|]
 operator|=
-operator|(
+name|MINIMUM
+argument_list|(
 name|result
-operator|>
+argument_list|,
 literal|255
-operator|)
-condition|?
-literal|255
-else|:
-name|result
+argument_list|)
 expr_stmt|;
 block|}
 if|if
@@ -3522,16 +3519,14 @@ index|[
 name|b
 index|]
 operator|=
-operator|(
+name|MAX255
+argument_list|(
 name|sum
-operator|>
-literal|255
-operator|)
-condition|?
-literal|255
-else|:
-name|sum
+argument_list|)
 expr_stmt|;
+comment|/* dest[b] = sum | ((sum&256) - ((sum&256)>> 8)); */
+comment|/* dest[b] = (sum> 255) ? 255 : sum; */
+comment|/* older, little slower */
 block|}
 if|if
 condition|(

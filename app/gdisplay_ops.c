@@ -624,7 +624,7 @@ name|border_y
 expr_stmt|;
 name|x
 operator|=
-name|HIGHPASS
+name|MINIMUM
 argument_list|(
 name|shell_x
 argument_list|,
@@ -642,7 +642,7 @@ argument_list|)
 expr_stmt|;
 name|y
 operator|=
-name|HIGHPASS
+name|MINIMUM
 argument_list|(
 name|shell_y
 argument_list|,
@@ -785,7 +785,7 @@ name|border_y
 expr_stmt|;
 name|x
 operator|=
-name|HIGHPASS
+name|MINIMUM
 argument_list|(
 name|shell_x
 argument_list|,
@@ -803,7 +803,7 @@ argument_list|)
 expr_stmt|;
 name|y
 operator|=
-name|HIGHPASS
+name|MINIMUM
 argument_list|(
 name|shell_y
 argument_list|,
@@ -965,7 +965,7 @@ argument_list|)
 expr_stmt|;
 name|width
 operator|=
-name|HIGHPASS
+name|MINIMUM
 argument_list|(
 name|sx
 argument_list|,
@@ -976,7 +976,7 @@ argument_list|)
 expr_stmt|;
 name|height
 operator|=
-name|HIGHPASS
+name|MINIMUM
 argument_list|(
 name|sy
 argument_list|,

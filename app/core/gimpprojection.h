@@ -101,23 +101,18 @@ parameter_list|)
 value|((x>0) ? x : 0)
 end_define
 
-begin_define
-DECL|macro|HIGHPASS (x,y)
-define|#
-directive|define
-name|HIGHPASS
-parameter_list|(
-name|x
-parameter_list|,
-name|y
-parameter_list|)
-value|((x>y) ? y : x)
-end_define
+begin_comment
+comment|/* #define HIGHPASS(x,y) ((x>y) ? y : x) */
+end_comment
+
+begin_comment
+comment|/* unused - == MIN */
+end_comment
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296c6c510103
+DECL|enum|__anon28ed27970103
 block|{
 DECL|enumerator|SelectionOff
 name|SelectionOff
