@@ -97,6 +97,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpwidgets/gimpcontroller.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpwidgets/gimpdialog.h>
 end_include
 

@@ -2489,6 +2489,14 @@ value|"gimp-prefs-input-devices"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_PREFS_INPUT_CONTROLLERS
+define|#
+directive|define
+name|GIMP_HELP_PREFS_INPUT_CONTROLLERS
+value|"gimp-prefs-input-controllers"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_PREFS_IMAGE_WINDOW
 define|#
 directive|define

@@ -65,6 +65,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpContainer
+modifier|*
+name|gimp_controllers_get_list
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpController
 modifier|*
 name|gimp_controllers_get_wheel

@@ -78,7 +78,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c61a320108
+DECL|struct|__anon2c0581800108
 block|{
 DECL|member|code
 name|__u16
@@ -418,7 +418,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c61a320203
+DECL|enum|__anon2c0581800203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -561,7 +561,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|linux_input_finalize
+name|linux_input_dispose
 parameter_list|(
 name|GObject
 modifier|*
@@ -908,9 +908,9 @@ argument_list|)
 expr_stmt|;
 name|object_class
 operator|->
-name|finalize
+name|dispose
 operator|=
-name|linux_input_finalize
+name|linux_input_dispose
 expr_stmt|;
 name|object_class
 operator|->
@@ -981,8 +981,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|linux_input_finalize (GObject * object)
-name|linux_input_finalize
+DECL|function|linux_input_dispose (GObject * object)
+name|linux_input_dispose
 parameter_list|(
 name|GObject
 modifier|*
@@ -1010,7 +1010,7 @@ argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|finalize
+name|dispose
 argument_list|(
 name|object
 argument_list|)
@@ -1488,6 +1488,23 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+name|g_object_set
+argument_list|(
+name|controller
+argument_list|,
+literal|"name"
+argument_list|,
+name|_
+argument_list|(
+literal|"Unknown device"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
 name|controller
 operator|->
 name|io
@@ -1536,19 +1553,57 @@ return|;
 block|}
 else|else
 block|{
-name|g_printerr
+name|gchar
+modifier|*
+name|name
+init|=
+name|g_strdup_printf
 argument_list|(
-literal|"controller_linux_input: Cannot open device '%s': %s\n"
-argument_list|,
-name|device
+name|_
+argument_list|(
+literal|"Device not available: %s"
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
 name|errno
 argument_list|)
 argument_list|)
+decl_stmt|;
+name|g_object_set
+argument_list|(
+name|controller
+argument_list|,
+literal|"name"
+argument_list|,
+name|name
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|name
+argument_list|)
 expr_stmt|;
 block|}
+block|}
+else|else
+block|{
+name|g_object_set
+argument_list|(
+name|controller
+argument_list|,
+literal|"name"
+argument_list|,
+name|_
+argument_list|(
+literal|"No device configured"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 block|}
 return|return
 name|FALSE

@@ -91,6 +91,37 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+name|void
+name|gimp_controller_wheel_init
+parameter_list|(
+name|GimpControllerWheel
+modifier|*
+name|wheel
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|GObject
+modifier|*
+name|gimp_controller_wheel_constructor
+parameter_list|(
+name|GType
+name|type
+parameter_list|,
+name|guint
+name|n_params
+parameter_list|,
+name|GObjectConstructParam
+modifier|*
+name|params
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|gint
 name|gimp_controller_wheel_get_n_events
 parameter_list|(
@@ -168,7 +199,7 @@ literal|"scroll-up-shift-control-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Alt + Control + Shift + Scroll Up"
+literal|"Scroll Up (Shift + Control + Alt)"
 argument_list|)
 block|}
 block|,
@@ -183,7 +214,7 @@ literal|"scroll-up-control-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Alt + Control + Scroll Up"
+literal|"Scroll Up (Control + Alt)"
 argument_list|)
 block|}
 block|,
@@ -198,7 +229,7 @@ literal|"scroll-up-shift-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Alt + Shift + Scroll Up"
+literal|"Scroll Up (Shift + Alt)"
 argument_list|)
 block|}
 block|,
@@ -213,7 +244,7 @@ literal|"scroll-up-shift-control"
 block|,
 name|N_
 argument_list|(
-literal|"Control + Shift + Scroll Up"
+literal|"Scroll Up (Shift + Control)"
 argument_list|)
 block|}
 block|,
@@ -226,7 +257,7 @@ literal|"scroll-up-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Alt + Scroll Up"
+literal|"Scroll Up (Alt)"
 argument_list|)
 block|}
 block|,
@@ -239,7 +270,7 @@ literal|"scroll-up-control"
 block|,
 name|N_
 argument_list|(
-literal|"Control + Scroll Up"
+literal|"Scroll Up (Control)"
 argument_list|)
 block|}
 block|,
@@ -252,7 +283,7 @@ literal|"scroll-up-shift"
 block|,
 name|N_
 argument_list|(
-literal|"Shift + Scroll Up"
+literal|"Scroll Up (Shift)"
 argument_list|)
 block|}
 block|,
@@ -282,7 +313,7 @@ literal|"scroll-down-shift-control-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Alt + Control + Shift + Scroll Down"
+literal|"Scroll Down (Shift + Control + Alt)"
 argument_list|)
 block|}
 block|,
@@ -297,7 +328,7 @@ literal|"scroll-down-control-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Alt + Control + Scroll Down"
+literal|"Scroll Down (Control + Alt)"
 argument_list|)
 block|}
 block|,
@@ -312,7 +343,7 @@ literal|"scroll-down-shift-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Alt + Shift + Scroll Down"
+literal|"Scroll Down (Shift + Alt)"
 argument_list|)
 block|}
 block|,
@@ -327,7 +358,7 @@ literal|"scroll-down-shift-control"
 block|,
 name|N_
 argument_list|(
-literal|"Control + Shift + Scroll Down"
+literal|"Scroll Down (Shift + Control)"
 argument_list|)
 block|}
 block|,
@@ -340,7 +371,7 @@ literal|"scroll-down-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Alt + Scroll Down"
+literal|"Scroll Down (Alt)"
 argument_list|)
 block|}
 block|,
@@ -353,7 +384,7 @@ literal|"scroll-down-control"
 block|,
 name|N_
 argument_list|(
-literal|"Control + Scroll Down"
+literal|"Scroll Down (Control)"
 argument_list|)
 block|}
 block|,
@@ -366,7 +397,7 @@ literal|"scroll-down-shift"
 block|,
 name|N_
 argument_list|(
-literal|"Shift + Scroll Down"
+literal|"Scroll Down (Shift)"
 argument_list|)
 block|}
 block|,
@@ -396,7 +427,7 @@ literal|"scroll-left-shift-control-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Alt + Control + Shift + Scroll Left"
+literal|"Scroll Left (Shift + Control + Alt)"
 argument_list|)
 block|}
 block|,
@@ -411,7 +442,7 @@ literal|"scroll-left-control-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Alt + Control + Scroll Left"
+literal|"Scroll Left (Control + Alt)"
 argument_list|)
 block|}
 block|,
@@ -426,7 +457,7 @@ literal|"scroll-left-shift-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Alt + Shift + Scroll Left"
+literal|"Scroll Left (Shift + Alt)"
 argument_list|)
 block|}
 block|,
@@ -441,7 +472,7 @@ literal|"scroll-left-shift-control"
 block|,
 name|N_
 argument_list|(
-literal|"Control + Shift + Scroll Left"
+literal|"Scroll Left (Shift + Control)"
 argument_list|)
 block|}
 block|,
@@ -454,7 +485,7 @@ literal|"scroll-left-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Alt + Scroll Left"
+literal|"Scroll Left (Alt)"
 argument_list|)
 block|}
 block|,
@@ -467,7 +498,7 @@ literal|"scroll-left-control"
 block|,
 name|N_
 argument_list|(
-literal|"Control + Scroll Left"
+literal|"Scroll Left (Control)"
 argument_list|)
 block|}
 block|,
@@ -480,7 +511,7 @@ literal|"scroll-left-shift"
 block|,
 name|N_
 argument_list|(
-literal|"Shift + Scroll Left"
+literal|"Scroll Left (Shift)"
 argument_list|)
 block|}
 block|,
@@ -510,7 +541,7 @@ literal|"scroll-right-shift-control-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Alt + Control + Shift + Scroll Right"
+literal|"Scroll Right (Shift + Control + Alt)"
 argument_list|)
 block|}
 block|,
@@ -525,7 +556,7 @@ literal|"scroll-right-control-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Alt + Control + Scroll Right"
+literal|"Scroll Right (Control + Alt)"
 argument_list|)
 block|}
 block|,
@@ -540,7 +571,7 @@ literal|"scroll-right-shift-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Alt + Shift + Scroll Right"
+literal|"Scroll Right (Shift + Alt)"
 argument_list|)
 block|}
 block|,
@@ -555,7 +586,7 @@ literal|"scroll-right-shift-control"
 block|,
 name|N_
 argument_list|(
-literal|"Control + Shift + Scroll Right"
+literal|"Scroll Right (Shift + Control)"
 argument_list|)
 block|}
 block|,
@@ -568,7 +599,7 @@ literal|"scroll-right-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Alt + Scroll Right"
+literal|"Scroll Right (Alt)"
 argument_list|)
 block|}
 block|,
@@ -581,7 +612,7 @@ literal|"scroll-right-control"
 block|,
 name|N_
 argument_list|(
-literal|"Control + Scroll Right"
+literal|"Scroll Right (Control)"
 argument_list|)
 block|}
 block|,
@@ -594,7 +625,7 @@ literal|"scroll-right-shift"
 block|,
 name|N_
 argument_list|(
-literal|"Shift + Scroll Right"
+literal|"Scroll Right (Shift)"
 argument_list|)
 block|}
 block|,
@@ -674,9 +705,11 @@ block|,
 literal|0
 block|,
 comment|/* n_preallocs    */
-name|NULL
-comment|/* instance_init  */
-block|}
+operator|(
+name|GInstanceInitFunc
+operator|)
+name|gimp_controller_wheel_init
+block|,       }
 decl_stmt|;
 name|controller_type
 operator|=
@@ -710,6 +743,15 @@ modifier|*
 name|klass
 parameter_list|)
 block|{
+name|GObjectClass
+modifier|*
+name|object_class
+init|=
+name|G_OBJECT_CLASS
+argument_list|(
+name|klass
+argument_list|)
+decl_stmt|;
 name|GimpControllerClass
 modifier|*
 name|controller_class
@@ -725,6 +767,12 @@ name|g_type_class_peek_parent
 argument_list|(
 name|klass
 argument_list|)
+expr_stmt|;
+name|object_class
+operator|->
+name|constructor
+operator|=
+name|gimp_controller_wheel_constructor
 expr_stmt|;
 name|controller_class
 operator|->
@@ -753,6 +801,77 @@ name|get_event_blurb
 operator|=
 name|gimp_controller_wheel_get_event_blurb
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_controller_wheel_init (GimpControllerWheel * wheel)
+name|gimp_controller_wheel_init
+parameter_list|(
+name|GimpControllerWheel
+modifier|*
+name|wheel
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+specifier|static
+name|GObject
+modifier|*
+DECL|function|gimp_controller_wheel_constructor (GType type,guint n_params,GObjectConstructParam * params)
+name|gimp_controller_wheel_constructor
+parameter_list|(
+name|GType
+name|type
+parameter_list|,
+name|guint
+name|n_params
+parameter_list|,
+name|GObjectConstructParam
+modifier|*
+name|params
+parameter_list|)
+block|{
+name|GObject
+modifier|*
+name|object
+decl_stmt|;
+name|object
+operator|=
+name|G_OBJECT_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|constructor
+argument_list|(
+name|type
+argument_list|,
+name|n_params
+argument_list|,
+name|params
+argument_list|)
+expr_stmt|;
+name|g_object_set
+argument_list|(
+name|object
+argument_list|,
+literal|"name"
+argument_list|,
+name|_
+argument_list|(
+literal|"Main Mouse Wheel"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|object
+return|;
 block|}
 end_function
 
