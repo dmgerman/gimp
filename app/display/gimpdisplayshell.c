@@ -334,7 +334,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28944b420103
+DECL|enum|__anon2afba2da0103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -927,6 +927,12 @@ expr_stmt|;
 name|shell
 operator|->
 name|canvas
+operator|=
+name|NULL
+expr_stmt|;
+name|shell
+operator|->
+name|grid_gc
 operator|=
 name|NULL
 expr_stmt|;
