@@ -2899,6 +2899,10 @@ block|,
 name|dialogs_create_toplevel_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_DEVICE_STATUS
 block|}
 block|,
 literal|"gimp-device-status-dialog"
@@ -2925,6 +2929,10 @@ block|,
 name|dialogs_create_dockable_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_LAYERS
 block|}
 block|,
 literal|"gimp-layer-list"
@@ -2946,6 +2954,10 @@ block|,
 name|dialogs_create_dockable_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_CHANNELS
 block|}
 block|,
 literal|"gimp-channel-list"
@@ -2967,6 +2979,10 @@ block|,
 name|dialogs_create_dockable_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_PATHS
 block|}
 block|,
 literal|"gimp-vectors-list"
@@ -3248,6 +3264,10 @@ block|,
 name|dialogs_create_dockable_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_IMAGES
 block|}
 block|,
 literal|"gimp-image-list"
