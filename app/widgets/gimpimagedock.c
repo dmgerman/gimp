@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpimagedock.c  * Copyright (C) 2001 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpimagedock.c  * Copyright (C) 2001-2004 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -19,6 +19,12 @@ begin_include
 include|#
 directive|include
 file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_include
@@ -55,6 +61,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimplist.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimptoolinfo.h"
 end_include
 
 begin_include
@@ -959,6 +971,10 @@ name|GtkItemFactory
 modifier|*
 name|item_factory
 decl_stmt|;
+name|GList
+modifier|*
+name|list
+decl_stmt|;
 name|object
 operator|=
 name|G_OBJECT_CLASS
@@ -1197,6 +1213,83 @@ argument_list|(
 literal|"/Layer/Stack/Layer to Bottom"
 argument_list|)
 expr_stmt|;
+name|DESTROY
+argument_list|(
+literal|"/Tools/Toolbox"
+argument_list|)
+expr_stmt|;
+name|DESTROY
+argument_list|(
+literal|"/Tools/Default Colors"
+argument_list|)
+expr_stmt|;
+name|DESTROY
+argument_list|(
+literal|"/Tools/Swap Colors"
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|list
+operator|=
+name|GIMP_LIST
+argument_list|(
+name|GIMP_DOCK
+argument_list|(
+name|dock
+argument_list|)
+operator|->
+name|context
+operator|->
+name|gimp
+operator|->
+name|tool_info_list
+argument_list|)
+operator|->
+name|list
+init|;
+name|list
+condition|;
+name|list
+operator|=
+name|g_list_next
+argument_list|(
+name|list
+argument_list|)
+control|)
+block|{
+name|GimpToolInfo
+modifier|*
+name|tool_info
+init|=
+name|list
+operator|->
+name|data
+decl_stmt|;
+name|gchar
+modifier|*
+name|menu_path
+decl_stmt|;
+name|menu_path
+operator|=
+name|gimp_strip_uline
+argument_list|(
+name|tool_info
+operator|->
+name|menu_path
+argument_list|)
+expr_stmt|;
+name|DESTROY
+argument_list|(
+name|menu_path
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|menu_path
+argument_list|)
+expr_stmt|;
+block|}
 undef|#
 directive|undef
 name|DESTROY
