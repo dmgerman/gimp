@@ -3605,7 +3605,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2c3c0a8e0103
+DECL|enum|__anon28a5588a0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
@@ -4545,6 +4545,13 @@ argument_list|,
 name|blob
 argument_list|)
 expr_stmt|;
+comment|/* check to make sure there is actually a canvas to draw on */
+if|if
+condition|(
+operator|!
+name|canvas_buf
+condition|)
+return|return;
 name|gimage_get_foreground
 argument_list|(
 name|gimage
