@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -155,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28afb9640103
+DECL|enum|__anon27dffd2a0103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
