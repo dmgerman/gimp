@@ -245,7 +245,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a4551610103
+DECL|enum|__anon276dd8bc0103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -2217,9 +2217,12 @@ condition|(
 name|size_changed
 condition|)
 block|{
-name|gimp_image_size_changed
+name|gimp_viewable_size_changed
+argument_list|(
+name|GIMP_VIEWABLE
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|size_changed

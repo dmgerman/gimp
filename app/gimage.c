@@ -524,24 +524,6 @@ name|gimage
 parameter_list|)
 block|{
 comment|/*  shrink wrap and update all views  */
-name|gimp_image_invalidate_layer_previews
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
-name|gimp_image_invalidate_channel_previews
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
-name|gimp_viewable_invalidate_preview
-argument_list|(
-name|GIMP_VIEWABLE
-argument_list|(
-name|gimage
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gdisplays_resize_cursor_label
 argument_list|(
 name|gimage

@@ -1719,25 +1719,9 @@ name|gchar
 modifier|*
 name|title
 decl_stmt|;
-name|gchar
-modifier|*
-name|title_buf
-decl_stmt|;
 name|gint
 name|type
 decl_stmt|;
-name|title
-operator|=
-name|g_basename
-argument_list|(
-name|gimp_image_filename
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|type
 operator|=
 name|gimp_image_base_type
@@ -1747,8 +1731,7 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
-comment|/*  create the info dialog  */
-name|title_buf
+name|title
 operator|=
 name|info_window_title
 argument_list|(
@@ -1759,7 +1742,7 @@ name|info_win
 operator|=
 name|info_dialog_notebook_new
 argument_list|(
-name|title_buf
+name|title
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
@@ -1768,7 +1751,7 @@ argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|title_buf
+name|title
 argument_list|)
 expr_stmt|;
 comment|/*  create the action area  */
@@ -1982,13 +1965,13 @@ parameter_list|)
 block|{
 name|gchar
 modifier|*
-name|title
+name|basename
 decl_stmt|;
 name|gchar
 modifier|*
-name|title_buf
-decl_stmt|;
 name|title
+decl_stmt|;
+name|basename
 operator|=
 name|g_basename
 argument_list|(
@@ -2000,8 +1983,7 @@ name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  create the info dialog  */
-name|title_buf
+name|title
 operator|=
 name|g_strdup_printf
 argument_list|(
@@ -2010,7 +1992,7 @@ argument_list|(
 literal|"Info: %s-%d.%d"
 argument_list|)
 argument_list|,
-name|title
+name|basename
 argument_list|,
 name|gimp_image_get_ID
 argument_list|(
@@ -2025,7 +2007,7 @@ name|instance
 argument_list|)
 expr_stmt|;
 return|return
-name|title_buf
+name|title
 return|;
 block|}
 end_function
@@ -2040,14 +2022,12 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-comment|/* NOT USED */
 name|GDisplay
 modifier|*
 name|newdisp
 parameter_list|,
 name|gpointer
 name|data
-comment|/* Not used */
 parameter_list|)
 block|{
 name|GDisplay
@@ -2145,14 +2125,25 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
 name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
+name|context
+operator|=
+name|gimp_context_get_user
+argument_list|()
+expr_stmt|;
 name|gdisp
 operator|=
-name|gdisplay_active
-argument_list|()
+name|gimp_context_get_display
+argument_list|(
+name|context
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -2170,10 +2161,6 @@ name|info_window_auto
 operator|=
 name|info_window_create
 argument_list|(
-operator|(
-name|void
-operator|*
-operator|)
 name|gdisp
 argument_list|)
 expr_stmt|;
@@ -2181,8 +2168,7 @@ name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|gimp_context_get_user
-argument_list|()
+name|context
 argument_list|)
 argument_list|,
 literal|"display_changed"
@@ -2200,14 +2186,12 @@ argument_list|(
 name|gdisp
 argument_list|)
 expr_stmt|;
-comment|/* Update to include the info */
 block|}
 name|info_dialog_popup
 argument_list|(
 name|info_window_auto
 argument_list|)
 expr_stmt|;
-comment|/*   iwd = (NavWinData *)nav_window_auto->user_data;   gtk_widget_set_sensitive(nav_window_auto->vbox,TRUE);   iwd->frozen = FALSE;   */
 block|}
 end_function
 
@@ -2482,7 +2466,7 @@ name|iwd
 operator|->
 name|unit_str
 operator|!=
-name|gimp_unit_get_plural
+name|gimp_unit_get_abbreviation
 argument_list|(
 name|gdisp
 operator|->
@@ -2496,7 +2480,7 @@ name|iwd
 operator|->
 name|unit_str
 operator|=
-name|gimp_unit_get_plural
+name|gimp_unit_get_abbreviation
 argument_list|(
 name|gdisp
 operator|->
@@ -2694,7 +2678,6 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* fill in color information */
-comment|/* gimp_image_active_drawable (gdisp->gimage) */
 if|if
 condition|(
 operator|!
@@ -3001,7 +2984,6 @@ name|info_win
 operator|->
 name|user_data
 expr_stmt|;
-comment|/* Make it sensitive... */
 if|if
 condition|(
 name|info_window_auto

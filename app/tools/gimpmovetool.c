@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"selection.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"undo.h"
 end_include
 
@@ -1594,11 +1588,11 @@ name|gdisp
 argument_list|)
 expr_stmt|;
 block|}
-name|selection_resume
+name|gdisplay_selection_visibility
 argument_list|(
 name|gdisp
-operator|->
-name|select
+argument_list|,
+name|SELECTION_RESUME
 argument_list|)
 expr_stmt|;
 name|gdisplays_flush
@@ -2297,11 +2291,11 @@ argument_list|(
 name|tool
 argument_list|)
 expr_stmt|;
-name|selection_pause
+name|gdisplay_selection_visibility
 argument_list|(
 name|gdisp
-operator|->
-name|select
+argument_list|,
+name|SELECTION_PAUSE
 argument_list|)
 expr_stmt|;
 name|tool
@@ -2407,11 +2401,11 @@ argument_list|(
 name|tool
 argument_list|)
 expr_stmt|;
-name|selection_pause
+name|gdisplay_selection_visibility
 argument_list|(
 name|gdisp
-operator|->
-name|select
+argument_list|,
+name|SELECTION_PAUSE
 argument_list|)
 expr_stmt|;
 name|tool

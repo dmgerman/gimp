@@ -103,6 +103,10 @@ DECL|member|border_width
 name|gint
 name|border_width
 decl_stmt|;
+DECL|member|dot_for_dot
+name|gboolean
+name|dot_for_dot
+decl_stmt|;
 DECL|member|border_color
 name|GimpRGB
 name|border_color
@@ -120,6 +124,10 @@ name|gboolean
 name|show_popup
 decl_stmt|;
 comment|/*< private>*/
+DECL|member|size
+name|gint
+name|size
+decl_stmt|;
 DECL|member|in_button
 name|gboolean
 name|in_button
@@ -350,6 +358,17 @@ name|border_width
 parameter_list|)
 function_decl|;
 name|void
+name|gimp_preview_set_dot_for_dot
+parameter_list|(
+name|GimpPreview
+modifier|*
+name|preview
+parameter_list|,
+name|gboolean
+name|dot_for_dot
+parameter_list|)
+function_decl|;
+name|void
 name|gimp_preview_set_border_color
 parameter_list|(
 name|GimpPreview
@@ -374,6 +393,10 @@ comment|/*  protected  */
 name|void
 name|gimp_preview_calc_size
 parameter_list|(
+name|GimpPreview
+modifier|*
+name|preview
+parameter_list|,
 name|gint
 name|aspect_width
 parameter_list|,
@@ -385,6 +408,12 @@ name|width
 parameter_list|,
 name|gint
 name|height
+parameter_list|,
+name|gdouble
+name|xresolution
+parameter_list|,
+name|gdouble
+name|yresolution
 parameter_list|,
 name|gint
 modifier|*

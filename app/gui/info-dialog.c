@@ -92,7 +92,7 @@ name|GtkSignalFunc
 name|callback
 parameter_list|,
 name|gpointer
-name|client_data
+name|callback_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -131,7 +131,7 @@ end_function_decl
 begin_function
 specifier|static
 name|void
-DECL|function|info_field_new (InfoDialog * idialog,InfoFieldType field_type,gchar * title,GtkWidget * widget,GtkObject * obj,void * value_ptr,GtkSignalFunc callback,gpointer client_data)
+DECL|function|info_field_new (InfoDialog * idialog,InfoFieldType field_type,gchar * title,GtkWidget * widget,GtkObject * obj,gpointer value_ptr,GtkSignalFunc callback,gpointer callback_data)
 name|info_field_new
 parameter_list|(
 name|InfoDialog
@@ -153,15 +153,14 @@ name|GtkObject
 modifier|*
 name|obj
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|value_ptr
 parameter_list|,
 name|GtkSignalFunc
 name|callback
 parameter_list|,
 name|gpointer
-name|client_data
+name|callback_data
 parameter_list|)
 block|{
 name|GtkWidget
@@ -359,9 +358,9 @@ name|callback
 expr_stmt|;
 name|field
 operator|->
-name|client_data
+name|callback_data
 operator|=
-name|client_data
+name|callback_data
 expr_stmt|;
 name|idialog
 operator|->
@@ -373,10 +372,6 @@ name|idialog
 operator|->
 name|field_list
 argument_list|,
-operator|(
-name|void
-operator|*
-operator|)
 name|field
 argument_list|)
 expr_stmt|;
@@ -426,7 +421,7 @@ name|field_type
 operator|!=
 name|INFO_LABEL
 condition|)
-name|gtk_signal_handler_block_by_data
+name|gtk_signal_handler_block_by_func
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
@@ -437,7 +432,11 @@ argument_list|)
 argument_list|,
 name|field
 operator|->
-name|client_data
+name|callback
+argument_list|,
+name|field
+operator|->
+name|callback_data
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -643,7 +642,7 @@ name|field_type
 operator|!=
 name|INFO_LABEL
 condition|)
-name|gtk_signal_handler_unblock_by_data
+name|gtk_signal_handler_unblock_by_func
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
@@ -654,7 +653,11 @@ argument_list|)
 argument_list|,
 name|field
 operator|->
-name|client_data
+name|callback
+argument_list|,
+name|field
+operator|->
+name|callback_data
 argument_list|)
 expr_stmt|;
 block|}

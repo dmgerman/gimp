@@ -135,7 +135,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c9780d0103
+DECL|enum|__anon29df8d1e0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -671,6 +671,25 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
+if|if
+condition|(
+name|GIMP_VIEWABLE_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|invalidate_preview
+condition|)
+name|GIMP_VIEWABLE_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|invalidate_preview
+argument_list|(
+name|viewable
+argument_list|)
+expr_stmt|;
 name|layer
 operator|=
 name|GIMP_LAYER
@@ -685,35 +704,11 @@ argument_list|(
 name|layer
 argument_list|)
 condition|)
-block|{
 name|floating_sel_invalidate
 argument_list|(
 name|layer
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-if|if
-condition|(
-name|GIMP_VIEWABLE_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|invalidate_preview
-condition|)
-name|GIMP_VIEWABLE_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|invalidate_preview
-argument_list|(
-name|viewable
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -5427,7 +5422,7 @@ name|gdisplays_selection_visibility
 argument_list|(
 name|gimage
 argument_list|,
-name|SelectionOff
+name|SELECTION_OFF
 argument_list|)
 expr_stmt|;
 comment|/*  clear the affected region surrounding the layer  */
@@ -5435,7 +5430,7 @@ name|gdisplays_selection_visibility
 argument_list|(
 name|gimage
 argument_list|,
-name|SelectionLayerOff
+name|SELECTION_LAYER_OFF
 argument_list|)
 expr_stmt|;
 comment|/*  get the selection mask channel  */

@@ -29,22 +29,22 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b88beb60103
+DECL|enum|__anon2c72994d0103
 block|{
-DECL|enumerator|SelectionOff
-name|SelectionOff
+DECL|enumerator|SELECTION_OFF
+name|SELECTION_OFF
 block|,
-DECL|enumerator|SelectionLayerOff
-name|SelectionLayerOff
+DECL|enumerator|SELECTION_LAYER_OFF
+name|SELECTION_LAYER_OFF
 block|,
-DECL|enumerator|SelectionOn
-name|SelectionOn
+DECL|enumerator|SELECTION_ON
+name|SELECTION_ON
 block|,
-DECL|enumerator|SelectionPause
-name|SelectionPause
+DECL|enumerator|SELECTION_PAUSE
+name|SELECTION_PAUSE
 block|,
-DECL|enumerator|SelectionResume
-name|SelectionResume
+DECL|enumerator|SELECTION_RESUME
+name|SELECTION_RESUME
 DECL|typedef|SelectionControl
 block|}
 name|SelectionControl
@@ -308,7 +308,6 @@ DECL|member|idleid
 name|guint
 name|idleid
 decl_stmt|;
-comment|/*guint handlerid;*/
 DECL|member|active
 name|gboolean
 name|active
@@ -352,15 +351,16 @@ name|canvas
 decl_stmt|;
 comment|/*  canvas widget for this gdisplay         */
 DECL|member|hsb
-DECL|member|vsb
 name|GtkWidget
 modifier|*
 name|hsb
-decl_stmt|,
+decl_stmt|;
+comment|/*  widgets for scroll bars                 */
+DECL|member|vsb
+name|GtkWidget
 modifier|*
 name|vsb
 decl_stmt|;
-comment|/*  widgets for scroll bars                 */
 DECL|member|qmaskoff
 name|GtkWidget
 modifier|*
@@ -437,19 +437,25 @@ name|InfoDialog
 modifier|*
 name|window_info_dialog
 decl_stmt|;
-comment|/*  dialog box for image information        */
+comment|/*  dialog box for image information  */
 DECL|member|window_nav_dialog
-name|InfoDialog
+name|NavigationDialog
 modifier|*
 name|window_nav_dialog
 decl_stmt|;
-comment|/*  dialog box for image navigation         */
+comment|/*  dialog box for image navigation   */
 DECL|member|nav_popup
-name|GtkWidget
+name|NavigationDialog
 modifier|*
 name|nav_popup
 decl_stmt|;
-comment|/*  widget for the popup navigation window  */
+comment|/*  the popup navigation window       */
+DECL|member|warning_dialog
+name|GtkWidget
+modifier|*
+name|warning_dialog
+decl_stmt|;
+comment|/* "Changes were made to %s. Close anyway?" */
 DECL|member|hsbdata
 name|GtkAdjustment
 modifier|*
@@ -480,17 +486,17 @@ name|iconsize
 decl_stmt|;
 comment|/*  The size of the icon pixmap             */
 DECL|member|icon_needs_update
-name|guint
+name|gboolean
 name|icon_needs_update
 decl_stmt|;
 comment|/*  Do we need to render a new icon?        */
 DECL|member|icon_timeout_id
-name|gint
+name|guint
 name|icon_timeout_id
 decl_stmt|;
 comment|/*  The ID of the timeout-function          */
 DECL|member|icon_idle_id
-name|gint
+name|guint
 name|icon_idle_id
 decl_stmt|;
 comment|/*  The ID of the idle-function             */
@@ -650,12 +656,6 @@ comment|/* color display filter dialog              */
 endif|#
 directive|endif
 comment|/* DISPLAY_FILTERS */
-DECL|member|warning_dialog
-name|GtkWidget
-modifier|*
-name|warning_dialog
-decl_stmt|;
-comment|/* "Changes were made to %s. Close anyway?" */
 block|}
 struct|;
 end_struct
@@ -999,6 +999,20 @@ parameter_list|(
 name|GDisplay
 modifier|*
 name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gdisplay_selection_visibility
+parameter_list|(
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|,
+name|SelectionControl
+name|function
 parameter_list|)
 function_decl|;
 end_function_decl

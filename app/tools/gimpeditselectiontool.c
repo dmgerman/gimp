@@ -1270,11 +1270,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  pause the current selection  */
-name|selection_pause
+name|gdisplay_selection_visibility
 argument_list|(
 name|gdisp
-operator|->
-name|select
+argument_list|,
+name|SELECTION_PAUSE
 argument_list|)
 expr_stmt|;
 comment|/* initialize the statusbar display */
@@ -1371,11 +1371,11 @@ name|tool
 argument_list|)
 expr_stmt|;
 comment|/*  resume the current selection and ungrab the pointer  */
-name|selection_resume
+name|gdisplay_selection_visibility
 argument_list|(
 name|gdisp
-operator|->
-name|select
+argument_list|,
+name|SELECTION_RESUME
 argument_list|)
 expr_stmt|;
 name|gdk_pointer_ungrab

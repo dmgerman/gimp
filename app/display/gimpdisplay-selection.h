@@ -112,7 +112,7 @@ name|paused
 decl_stmt|;
 comment|/*  count of pause requests           */
 DECL|member|recalc
-name|gint
+name|gboolean
 name|recalc
 decl_stmt|;
 comment|/*  flag to recalculate the selection */
@@ -122,13 +122,13 @@ name|speed
 decl_stmt|;
 comment|/*  speed of marching ants            */
 DECL|member|hidden
-name|gint
+name|gboolean
 name|hidden
 decl_stmt|;
 comment|/*  is the selection hidden?          */
-DECL|member|timer
-name|gint
-name|timer
+DECL|member|timeout_id
+name|guint
+name|timeout_id
 decl_stmt|;
 comment|/*  timer for successive draws        */
 DECL|member|cycle
@@ -176,10 +176,6 @@ block|}
 struct|;
 end_struct
 
-begin_comment
-comment|/*  Function declarations  */
-end_comment
-
 begin_function_decl
 name|Selection
 modifier|*
@@ -187,11 +183,11 @@ name|selection_create
 parameter_list|(
 name|GdkWindow
 modifier|*
-name|win
+name|window
 parameter_list|,
 name|GDisplay
 modifier|*
-name|disp
+name|gdisp
 parameter_list|,
 name|gint
 name|size
@@ -201,6 +197,17 @@ name|width
 parameter_list|,
 name|gint
 name|speed
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|selection_free
+parameter_list|(
+name|Selection
+modifier|*
+name|select
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -235,7 +242,7 @@ name|Selection
 modifier|*
 name|select
 parameter_list|,
-name|gint
+name|gboolean
 name|recalc
 parameter_list|)
 function_decl|;
@@ -265,22 +272,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|selection_hide
-parameter_list|(
-name|Selection
-modifier|*
-name|select
-parameter_list|,
-name|GDisplay
-modifier|*
-name|gdisp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|selection_free
+name|selection_toggle
 parameter_list|(
 name|Selection
 modifier|*

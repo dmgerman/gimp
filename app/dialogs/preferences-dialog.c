@@ -150,7 +150,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b68b2850103
+DECL|enum|__anon2b6ea6170103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -4052,18 +4052,6 @@ operator|(
 name|GFunc
 operator|)
 name|gimp_image_invalidate_layer_previews
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_container_foreach
-argument_list|(
-name|image_context
-argument_list|,
-operator|(
-name|GFunc
-operator|)
-name|gimp_viewable_invalidate_preview
 argument_list|,
 name|NULL
 argument_list|)
@@ -13225,7 +13213,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b68b2850208
+DECL|struct|__anon2b6ea6170208
 block|{
 DECL|member|label
 name|gchar
@@ -13454,7 +13442,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b68b2850308
+DECL|struct|__anon2b6ea6170308
 block|{
 DECL|member|tree_label
 name|gchar

@@ -524,7 +524,7 @@ name|gdisplays_selection_visibility
 argument_list|(
 name|gimage
 argument_list|,
-name|SelectionOff
+name|SELECTION_OFF
 argument_list|)
 expr_stmt|;
 name|mask

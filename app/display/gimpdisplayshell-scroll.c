@@ -782,14 +782,27 @@ condition|)
 name|gdisplays_flush
 argument_list|()
 expr_stmt|;
-name|nav_window_update_window_marker
+name|nav_dialog_update_window_marker
 argument_list|(
 name|gdisp
 operator|->
 name|window_nav_dialog
 argument_list|)
 expr_stmt|;
-comment|/* Make sure graphics expose events are processed before scrolling        * again */
+if|if
+condition|(
+name|gdisp
+operator|->
+name|nav_popup
+condition|)
+name|nav_dialog_update_window_marker
+argument_list|(
+name|gdisp
+operator|->
+name|nav_popup
+argument_list|)
+expr_stmt|;
+comment|/* Make sure graphics expose events are processed before scrolling        * again        */
 while|while
 condition|(
 operator|(
@@ -804,8 +817,6 @@ operator|->
 name|window
 argument_list|)
 operator|)
-operator|!=
-name|NULL
 condition|)
 block|{
 name|gtk_widget_event

@@ -4793,7 +4793,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|SelectionPause
+name|SELECTION_PAUSE
 argument_list|)
 expr_stmt|;
 comment|/* add motion memory if you press mod1 first ^ perfectmouse */
@@ -5015,7 +5015,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|SelectionResume
+name|SELECTION_RESUME
 argument_list|)
 expr_stmt|;
 name|gdk_pointer_ungrab
@@ -6385,7 +6385,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2a33a8220103
+DECL|enum|__anon2be15d600103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

@@ -233,7 +233,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29cfa25f0103
+DECL|enum|__anon297aa78e0103
 block|{
 DECL|enumerator|PAINT
 name|PAINT
@@ -1921,7 +1921,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|SelectionPause
+name|SELECTION_PAUSE
 argument_list|)
 expr_stmt|;
 comment|/* add motion memory if perfectmouse is set */
@@ -2298,7 +2298,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|SelectionResume
+name|SELECTION_RESUME
 argument_list|)
 expr_stmt|;
 name|gdk_pointer_ungrab

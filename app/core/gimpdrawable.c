@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc172f10103
+DECL|enum|__anon2c3af3a90103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -1193,11 +1193,13 @@ if|if
 condition|(
 name|gimage
 condition|)
+name|gimp_viewable_invalidate_preview
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
 name|gimage
-operator|->
-name|comp_preview_valid
-operator|=
-name|FALSE
+argument_list|)
+argument_list|)
 expr_stmt|;
 block|}
 end_function
