@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpguiconfig.h"
+file|"gimprc.h"
 end_include
 
 begin_function_decl
@@ -102,9 +102,9 @@ name|argv
 index|[]
 parameter_list|)
 block|{
-name|GObject
+name|GimpRc
 modifier|*
-name|config
+name|gimprc
 decl_stmt|;
 specifier|const
 name|gchar
@@ -180,14 +180,10 @@ argument_list|(
 literal|"Testing GimpConfig ...\n\n"
 argument_list|)
 expr_stmt|;
-name|config
+name|gimprc
 operator|=
-name|g_object_new
-argument_list|(
-name|GIMP_TYPE_GUI_CONFIG
-argument_list|,
-name|NULL
-argument_list|)
+name|gimp_rc_new
+argument_list|()
 expr_stmt|;
 name|g_print
 argument_list|(
@@ -197,7 +193,7 @@ name|g_type_name
 argument_list|(
 name|G_TYPE_FROM_INSTANCE
 argument_list|(
-name|config
+name|gimprc
 argument_list|)
 argument_list|)
 argument_list|,
@@ -206,7 +202,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_config_serialize
 argument_list|(
-name|config
+name|G_OBJECT
+argument_list|(
+name|gimprc
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -218,7 +217,10 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|config
+name|G_OBJECT
+argument_list|(
+name|gimprc
+argument_list|)
 argument_list|,
 literal|"notify"
 argument_list|,
@@ -239,7 +241,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_config_deserialize
 argument_list|(
-name|config
+name|G_OBJECT
+argument_list|(
+name|gimprc
+argument_list|)
 argument_list|,
 name|filename
 argument_list|,
@@ -252,7 +257,10 @@ literal|"\n  Unknown string tokens:\n"
 expr_stmt|;
 name|gimp_config_foreach_unknown_token
 argument_list|(
-name|config
+name|G_OBJECT
+argument_list|(
+name|gimprc
+argument_list|)
 argument_list|,
 name|output_unknown_token
 argument_list|,
@@ -267,7 +275,10 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|config
+name|G_OBJECT
+argument_list|(
+name|gimprc
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_print
