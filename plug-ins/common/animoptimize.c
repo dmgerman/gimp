@@ -1,14 +1,14 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * Animation Optimizer plug-in version 0.70.0  *  * by Adam D. Moss, 1997-98  *     adam@gimp.org  *     adam@foxbox.org  *  * This is part of the GIMP package and falls under the GPL.  */
+comment|/*  * Animation Optimizer plug-in version 1.0.0  *  * by Adam D. Moss, 1997-98  *     adam@gimp.org  *     adam@foxbox.org  *  * This is part of the GIMP package and falls under the GPL.  */
 end_comment
 
 begin_comment
-comment|/*  * REVISION HISTORY:  *  * 98.04.19 : version 0.70.0  *            Plug-in doubles up as Animation UnOptimize too!  (This  *            is somewhat more useful than it sounds.)  *  * 98.03.16 : version 0.61.0  *            Support more rare opaque/transparent combinations.  *  * 97.12.09 : version 0.60.0  *            Added support for INDEXED* and GRAY* images.  *  * 97.12.09 : version 0.52.0  *            Fixed some bugs.  *  * 97.12.08 : version 0.51.0  *            Relaxed bounding box on optimized layers marked  *            'replace'.  *  * 97.12.07 : version 0.50.0  *            Initial release.  */
+comment|/*  * REVISION HISTORY:  *  * 98.05.17 : version 1.0.0  *            Finally preserves frame timings / layer names.  Has  *            a progress bar now.  No longer beta, I suppose.  *  * 98.04.19 : version 0.70.0  *            Plug-in doubles up as Animation UnOptimize too!  (This  *            is somewhat more useful than it sounds.)  *  * 98.03.16 : version 0.61.0  *            Support more rare opaque/transparent combinations.  *  * 97.12.09 : version 0.60.0  *            Added support for INDEXED* and GRAY* images.  *  * 97.12.09 : version 0.52.0  *            Fixed some bugs.  *  * 97.12.08 : version 0.51.0  *            Relaxed bounding box on optimized layers marked  *            'replace'.  *  * 97.12.07 : version 0.50.0  *            Initial release.  */
 end_comment
 
 begin_comment
-comment|/*  * BUGS:  *  Probably a few  */
+comment|/*  * BUGS:  *  ?  */
 end_comment
 
 begin_comment
@@ -45,16 +45,10 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gtk/gtk.h"
-end_include
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8163b80103
+DECL|enum|__anon2b4fcdb90103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -146,21 +140,6 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
-name|window_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|DisposeType
 name|get_frame_disposal
 parameter_list|(
@@ -195,14 +174,6 @@ end_decl_stmt
 begin_comment
 comment|/* Global widgets'n'stuff */
 end_comment
-
-begin_decl_stmt
-DECL|variable|progress
-name|GtkWidget
-modifier|*
-name|progress
-decl_stmt|;
-end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|width
@@ -608,33 +579,13 @@ expr_stmt|;
 block|}
 end_function
 
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_comment
-comment|/* function is presently not used */
-end_comment
-
-begin_endif
-unit|static int parse_ms_tag (char *str) {   gint sum = 0;   gint offset = 0;   gint length;    length = strlen(str);    while ((offset<length)&& (str[offset]!='('))     offset++;      if (offset>=length)     return(-1);    if (!isdigit(str[++offset]))     return(-2);    do     {       sum *= 10;       sum += str[offset] - '0';       offset++;     }   while ((offset<length)&& (isdigit(str[offset])));      if (length-offset<= 2)     return(-3);    if ((toupper(str[offset]) != 'M') || (toupper(str[offset+1]) != 'S'))     return(-4);    return (sum); }
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* parse_ms_tag */
-end_comment
-
 begin_function
 specifier|static
 name|DisposeType
-DECL|function|parse_disposal_tag (char * str)
+DECL|function|parse_disposal_tag (gchar * str)
 name|parse_disposal_tag
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|str
 parameter_list|)
@@ -722,44 +673,148 @@ comment|/* FIXME */
 block|}
 end_function
 
-begin_if
-if|#
-directive|if
+begin_function
+specifier|static
+name|gchar
+modifier|*
+DECL|function|remove_disposal_tag (gchar * str)
+name|remove_disposal_tag
+parameter_list|(
+name|gchar
+modifier|*
+name|str
+parameter_list|)
+block|{
+name|gchar
+modifier|*
+name|dest
+decl_stmt|;
+name|gint
+name|offset
+init|=
 literal|0
-end_if
-
-begin_comment
-comment|/* function is presently unused */
-end_comment
-
-begin_comment
-unit|static void build_dialog(GImageType basetype, 	     char*      imagename) {   gchar** argv;   gint argc;    gchar* windowname;    GtkWidget* dlg;   GtkWidget* button;   GtkWidget* toggle;   GtkWidget* label;   GtkWidget* entry;   GtkWidget* frame;   GtkWidget* frame2;   GtkWidget* vbox;   GtkWidget* vbox2;   GtkWidget* hbox;   GtkWidget* hbox2;   guchar* color_cube;   GSList* group = NULL;    argc = 1;   argv = g_new (gchar *, 1);   argv[0] = g_strdup ("animationoptimize");   gtk_init (&argc,&argv);   gtk_rc_parse (gimp_gtkrc ());   gdk_set_use_xshm (gimp_use_xshm ());
-comment|/*  gtk_preview_set_gamma (gimp_gamma ());   gtk_preview_set_install_cmap (gimp_install_cmap ());   color_cube = gimp_color_cube ();   gtk_preview_set_color_cube (color_cube[0], color_cube[1],                               color_cube[2], color_cube[3]);   gtk_widget_set_default_visual (gtk_preview_get_visual ());   gtk_widget_set_default_colormap (gtk_preview_get_cmap ());*/
-end_comment
-
-begin_comment
-unit|dlg = gtk_dialog_new ();   windowname = g_malloc(strlen("Animation Playback: ")+strlen(imagename)+1);   strcpy(windowname,"Animation Playback: ");   strcat(windowname,imagename);   gtk_window_set_title (GTK_WINDOW (dlg), windowname);   g_free(windowname);   gtk_window_position (GTK_WINDOW (dlg), GTK_WIN_POS_MOUSE);   gtk_signal_connect (GTK_OBJECT (dlg), "destroy", 		      (GtkSignalFunc) window_close_callback, 		      NULL);
-comment|/* Action area - 'close' button only. */
-end_comment
-
-begin_comment
-unit|button = gtk_button_new_with_label ("Close");   GTK_WIDGET_SET_FLAGS (button, GTK_CAN_DEFAULT);   gtk_signal_connect_object (GTK_OBJECT (button), "clicked", 			     (GtkSignalFunc) window_close_callback, 			     NULL);   gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dlg)->action_area), 		      button, TRUE, TRUE, 0);   gtk_widget_grab_default (button);   gtk_widget_show (button);       {
-comment|/* The 'playback' half of the dialog */
-end_comment
-
-begin_comment
-comment|/*    windowname = g_malloc(strlen("Playback: ")+strlen(imagename)+1);     strcpy(windowname,"Playback: ");     strcat(windowname,imagename);     frame = gtk_frame_new (windowname);     g_free(windowname);     gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_ETCHED_IN);     gtk_container_border_width (GTK_CONTAINER (frame), 3);     gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dlg)->vbox), 			frame, TRUE, TRUE, 0);          {       hbox = gtk_hbox_new (FALSE, 5);       gtk_container_border_width (GTK_CONTAINER (hbox), 3);       gtk_container_add (GTK_CONTAINER (frame), hbox);              { 	vbox = gtk_vbox_new (FALSE, 5); 	gtk_container_border_width (GTK_CONTAINER (vbox), 3); 	gtk_container_add (GTK_CONTAINER (hbox), vbox); 	 	{ 	  progress = gtk_progress_bar_new (); 	  gtk_widget_set_usize (progress, 150, 15); 	  gtk_box_pack_start (GTK_BOX (vbox), progress, TRUE, TRUE, 0); 	  gtk_widget_show (progress);  	  hbox2 = gtk_hbox_new (FALSE, 0); 	  gtk_container_border_width (GTK_CONTAINER (hbox2), 0); 	  gtk_box_pack_start (GTK_BOX (vbox), hbox2, TRUE, TRUE, 0); 	   	  { 	    button = gtk_button_new_with_label ("Play/Stop"); 	    gtk_signal_connect (GTK_OBJECT (button), "clicked", 				(GtkSignalFunc) playstop_callback, NULL); 	    gtk_box_pack_start (GTK_BOX (hbox2), button, TRUE, TRUE, 0); 	    gtk_widget_show (button); 	     	    button = gtk_button_new_with_label ("Rewind"); 	    gtk_signal_connect (GTK_OBJECT (button), "clicked", 				(GtkSignalFunc) rewind_callback, NULL); 	    gtk_box_pack_start (GTK_BOX (hbox2), button, TRUE, TRUE, 0); 	    gtk_widget_show (button); 	     	    button = gtk_button_new_with_label ("Step"); 	    gtk_signal_connect (GTK_OBJECT (button), "clicked", 				(GtkSignalFunc) step_callback, NULL); 	    gtk_box_pack_start (GTK_BOX (hbox2), button, TRUE, TRUE, 0); 	    gtk_widget_show (button); 	  } 	  if (total_frames<=1) gtk_widget_set_sensitive (hbox2, FALSE); 	  gtk_widget_show(hbox2);  	  frame2 = gtk_frame_new (NULL); 	  gtk_frame_set_shadow_type (GTK_FRAME (frame2), GTK_SHADOW_ETCHED_IN); 	  gtk_box_pack_start (GTK_BOX (vbox), frame2, FALSE, FALSE, 0); 	     	  { 	    preview = gtk_preview_new (GTK_PREVIEW_COLOR); 	    gtk_preview_size (GTK_PREVIEW (preview), width, height); 	    gtk_container_add (GTK_CONTAINER (frame2), preview); 	    gtk_widget_show(preview); 	  } 	  gtk_widget_show(frame2); 	} 	gtk_widget_show(vbox); 	       }       gtk_widget_show(hbox);            }     gtk_widget_show(frame);     */
-end_comment
-
-begin_endif
-unit|}   gtk_widget_show(dlg); }
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* build_dialog */
-end_comment
+decl_stmt|;
+name|gint
+name|destoffset
+init|=
+literal|0
+decl_stmt|;
+name|gint
+name|length
+decl_stmt|;
+name|length
+operator|=
+name|strlen
+argument_list|(
+name|str
+argument_list|)
+expr_stmt|;
+name|dest
+operator|=
+name|g_malloc
+argument_list|(
+name|length
+operator|+
+literal|11
+argument_list|)
+expr_stmt|;
+name|memset
+argument_list|(
+name|dest
+argument_list|,
+literal|0
+argument_list|,
+name|length
+operator|+
+literal|11
+argument_list|)
+expr_stmt|;
+name|strcpy
+argument_list|(
+name|dest
+argument_list|,
+name|str
+argument_list|)
+expr_stmt|;
+while|while
+condition|(
+operator|(
+name|offset
+operator|+
+literal|9
+operator|)
+operator|<=
+name|length
+condition|)
+block|{
+if|if
+condition|(
+name|strncmp
+argument_list|(
+operator|&
+name|str
+index|[
+name|offset
+index|]
+argument_list|,
+literal|"(combine)"
+argument_list|,
+literal|9
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|offset
+operator|+=
+literal|9
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|strncmp
+argument_list|(
+operator|&
+name|str
+index|[
+name|offset
+index|]
+argument_list|,
+literal|"(replace)"
+argument_list|,
+literal|9
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|offset
+operator|+=
+literal|9
+expr_stmt|;
+block|}
+name|dest
+index|[
+name|destoffset
+index|]
+operator|=
+name|str
+index|[
+name|offset
+index|]
+expr_stmt|;
+name|destoffset
+operator|++
+expr_stmt|;
+name|offset
+operator|++
+expr_stmt|;
+block|}
+return|return
+name|dest
+return|;
+block|}
+end_function
 
 begin_comment
 comment|/* Rendering Functions */
@@ -881,6 +936,14 @@ name|opti_frame
 init|=
 name|NULL
 decl_stmt|;
+name|gchar
+modifier|*
+name|oldlayer_name
+decl_stmt|;
+name|gchar
+modifier|*
+name|newlayer_name
+decl_stmt|;
 name|gboolean
 name|can_combine
 decl_stmt|;
@@ -902,6 +965,21 @@ name|rbox_left
 decl_stmt|,
 name|rbox_right
 decl_stmt|;
+if|if
+condition|(
+name|optimize
+condition|)
+name|gimp_progress_init
+argument_list|(
+literal|"Optimizing Animation..."
+argument_list|)
+expr_stmt|;
+else|else
+name|gimp_progress_init
+argument_list|(
+literal|"UnOptimizing Animation..."
+argument_list|)
+expr_stmt|;
 name|width
 operator|=
 name|gimp_image_width
@@ -1127,12 +1205,8 @@ operator|==
 literal|0
 condition|)
 block|{
-name|window_close_callback
-argument_list|(
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
+name|gimp_quit
+argument_list|()
 expr_stmt|;
 block|}
 name|dispose
@@ -2937,17 +3011,58 @@ name|frame_sizebytes
 argument_list|)
 expr_stmt|;
 comment|/*        *        * PUT THIS FRAME INTO A NEW LAYER IN THE NEW IMAGE        *        */
-name|new_layer_id
+name|oldlayer_name
 operator|=
-name|gimp_layer_new
+name|gimp_layer_get_name
 argument_list|(
-name|new_image_id
+name|layers
+index|[
+name|total_frames
+operator|-
+operator|(
+name|this_frame_num
+operator|+
+literal|1
+operator|)
+index|]
+argument_list|)
+expr_stmt|;
+name|newlayer_name
+operator|=
+name|remove_disposal_tag
+argument_list|(
+name|oldlayer_name
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|oldlayer_name
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|this_frame_num
+operator|>
+literal|0
+condition|)
+name|strcat
+argument_list|(
+name|newlayer_name
 argument_list|,
 name|can_combine
 condition|?
 literal|"(combine)"
 else|:
 literal|"(replace)"
+argument_list|)
+expr_stmt|;
+name|new_layer_id
+operator|=
+name|gimp_layer_new
+argument_list|(
+name|new_image_id
+argument_list|,
+name|newlayer_name
 argument_list|,
 name|bbox_right
 operator|-
@@ -2962,6 +3077,11 @@ argument_list|,
 literal|100.0
 argument_list|,
 name|NORMAL_MODE
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|newlayer_name
 argument_list|)
 expr_stmt|;
 name|gimp_image_add_layer
@@ -3049,6 +3169,25 @@ operator|)
 name|bbox_top
 argument_list|)
 expr_stmt|;
+name|gimp_progress_update
+argument_list|(
+operator|(
+operator|(
+name|double
+operator|)
+name|this_frame_num
+operator|+
+literal|1.0
+operator|)
+operator|/
+operator|(
+operator|(
+name|double
+operator|)
+name|total_frames
+operator|)
+argument_list|)
+expr_stmt|;
 block|}
 name|gimp_display_new
 argument_list|(
@@ -3096,36 +3235,6 @@ end_function
 
 begin_comment
 comment|/* Util. */
-end_comment
-
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_comment
-comment|/* function is presently unused */
-end_comment
-
-begin_comment
-unit|static guint32 get_frame_duration (guint whichframe) {   gchar* layer_name;   gint   duration;    layer_name = gimp_layer_get_name(layers[total_frames-(whichframe+1)]);   duration = parse_ms_tag(layer_name);   g_free(layer_name);    if (duration< 0) duration = 100;
-comment|/* FIXME for default-if-not-said  */
-end_comment
-
-begin_comment
-unit|if (duration == 0) duration = 60;
-comment|/* FIXME - 0-wait is nasty */
-end_comment
-
-begin_endif
-unit|return ((guint32) duration); }
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* get_frame_duration */
 end_comment
 
 begin_function
@@ -3178,30 +3287,6 @@ operator|(
 name|disposal
 operator|)
 return|;
-block|}
-end_function
-
-begin_comment
-comment|/*  Callbacks  */
-end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|window_close_callback (GtkWidget * widget,gpointer data)
-name|window_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|gtk_main_quit
-argument_list|()
-expr_stmt|;
 block|}
 end_function
 

@@ -1366,7 +1366,7 @@ parameter_list|)
 block|{
 ifdef|#
 directive|ifdef
-name|__GNUC__
+name|__AAARGH_GNUC__
 name|unsigned
 name|int
 name|dy
@@ -1620,7 +1620,7 @@ control|)
 block|{
 ifdef|#
 directive|ifdef
-name|__GNUC__
+name|__AAARGH_GNUC__
 name|unsigned
 name|int
 name|__attribute__
@@ -1792,7 +1792,7 @@ parameter_list|)
 block|{
 ifdef|#
 directive|ifdef
-name|__GNUC__
+name|__AAARGH_GNUC__
 name|unsigned
 name|int
 name|dy
@@ -2046,7 +2046,7 @@ control|)
 block|{
 ifdef|#
 directive|ifdef
-name|__GNUC__
+name|__AAARGH_GNUC__
 name|unsigned
 name|int
 name|__attribute__
