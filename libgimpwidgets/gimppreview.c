@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1fab440103
+DECL|enum|__anon2c0a31a70103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1fab440203
+DECL|enum|__anon2c0a31a70203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4056,7 +4056,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_set_bounds:  * @preview: a #GimpPreview widget  * @xmin:  * @ymin:  * @xmax:  * @ymax:  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_preview_set_bounds:  * @preview: a #GimpPreview widget  * @xmin:  * @ymin:  * @xmax:  * @ymax:  *  * Sets the lower and upper limits for the previewed area. The  * difference between the upper and lower value is used to set the  * maximum size of the #GimpPreviewArea used in the @preview.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -4204,7 +4204,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_get_posistion:  * @preview: a #GimpPreview widget  * @x:       return location for the horizontal offset  * @y:       return location for the vertical offset  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_preview_get_position:  * @preview: a #GimpPreview widget  * @x:       return location for the horizontal offset  * @y:       return location for the vertical offset  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
