@@ -8,7 +8,7 @@ comment|/* JPEG loading and saving routines adapted for the GIMP XJT fileformat 
 end_comment
 
 begin_comment
-comment|/* revision history:  * version 1.00.00; 1998/10/26  hof: 1.st (pre) release  */
+comment|/* revision history:  * version 1.1.15a; 2000/01/25  hof: use g_malloc, g_free  * version 1.00.00; 1998/10/26  hof: 1.st (pre) release  */
 end_comment
 
 begin_include
@@ -2480,7 +2480,7 @@ operator|(
 name|guchar
 operator|*
 operator|)
-name|malloc
+name|g_malloc
 argument_list|(
 name|cinfo
 operator|.
@@ -2497,7 +2497,7 @@ operator|(
 name|guchar
 operator|*
 operator|)
-name|malloc
+name|g_malloc
 argument_list|(
 name|rowstride
 operator|*
@@ -2859,12 +2859,12 @@ name|cinfo
 argument_list|)
 expr_stmt|;
 comment|/* free the temporary buffer */
-name|free
+name|g_free
 argument_list|(
 name|temp
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|data
 argument_list|)
