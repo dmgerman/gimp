@@ -236,12 +236,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppathtool.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimppenciltool.h"
 end_include
 
@@ -403,8 +397,6 @@ block|,
 name|gimp_move_tool_register
 block|,
 comment|/*  non-modifying tools  */
-name|gimp_path_tool_register
-block|,
 name|gimp_vector_tool_register
 block|,
 name|gimp_measure_tool_register
