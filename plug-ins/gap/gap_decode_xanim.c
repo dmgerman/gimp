@@ -603,10 +603,7 @@ index|]
 operator|.
 name|label_txt
 operator|=
-name|_
-argument_list|(
 literal|"--------------------------------------------"
-argument_list|)
 expr_stmt|;
 name|l_idx
 operator|++
@@ -1422,9 +1419,15 @@ name|TRUE
 operator|==
 name|p_array_dialog
 argument_list|(
+name|_
+argument_list|(
 literal|"Split any Xanim readable Video to Frames"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Select Framerange"
+argument_list|)
 argument_list|,
 name|XADIALOG_NUM_ARGS
 argument_list|,
