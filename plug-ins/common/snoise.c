@@ -107,7 +107,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1dd17b0108
+DECL|struct|__anon2c3728870108
 block|{
 DECL|member|tilable
 name|gboolean
@@ -200,7 +200,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpAspectPreview
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -948,14 +948,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|solid_noise (GimpDrawable * drawable,GimpAspectPreview * preview)
+DECL|function|solid_noise (GimpDrawable * drawable,GimpPreview * preview)
 name|solid_noise
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpAspectPreview
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -1008,10 +1008,7 @@ literal|0
 expr_stmt|;
 name|gimp_preview_get_size
 argument_list|(
-name|GIMP_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|width
@@ -1298,7 +1295,7 @@ condition|(
 name|preview
 condition|)
 block|{
-name|gimp_aspect_preview_draw_buffer
+name|gimp_preview_draw_buffer
 argument_list|(
 name|preview
 argument_list|,

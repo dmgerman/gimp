@@ -78,7 +78,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e99afa0108
+DECL|struct|__anon27f8e0d10108
 block|{
 DECL|member|from
 name|GimpRGB
@@ -155,7 +155,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpDrawablePreview
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -3199,14 +3199,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|exchange (GimpDrawable * drawable,GimpDrawablePreview * preview)
+DECL|function|exchange (GimpDrawable * drawable,GimpPreview * preview)
 name|exchange
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpDrawablePreview
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -3292,10 +3292,7 @@ condition|)
 block|{
 name|gimp_preview_get_position
 argument_list|(
-name|GIMP_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|x1
@@ -3306,10 +3303,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_preview_get_size
 argument_list|(
-name|GIMP_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|width
@@ -3895,7 +3889,10 @@ condition|)
 block|{
 name|gimp_drawable_preview_draw_region
 argument_list|(
+name|GIMP_DRAWABLE_PREVIEW
+argument_list|(
 name|preview
+argument_list|)
 argument_list|,
 operator|&
 name|destPR

@@ -160,25 +160,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|gimp_aspect_preview_draw_buffer
-parameter_list|(
-name|GimpAspectPreview
-modifier|*
-name|preview
-parameter_list|,
-specifier|const
-name|guchar
-modifier|*
-name|buffer
-parameter_list|,
-name|gint
-name|rowstride
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_macro
 name|G_END_DECLS
 end_macro

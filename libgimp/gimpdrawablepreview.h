@@ -173,25 +173,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_drawable_preview_draw_buffer
-parameter_list|(
-name|GimpDrawablePreview
-modifier|*
-name|preview
-parameter_list|,
-specifier|const
-name|guchar
-modifier|*
-name|buffer
-parameter_list|,
-name|gint
-name|rowstride
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gimp_drawable_preview_draw_region
 parameter_list|(
 name|GimpDrawablePreview

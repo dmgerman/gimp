@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7763530108
+DECL|struct|__anon27b4c6a30108
 block|{
 DECL|member|mask_radius
 name|gdouble
@@ -153,7 +153,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpDrawablePreview
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -789,14 +789,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|photocopy (GimpDrawable * drawable,GimpDrawablePreview * preview)
+DECL|function|photocopy (GimpDrawable * drawable,GimpPreview * preview)
 name|photocopy
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpDrawablePreview
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -1013,10 +1013,7 @@ condition|)
 block|{
 name|gimp_preview_get_position
 argument_list|(
-name|GIMP_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|x1
@@ -1027,10 +1024,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_preview_get_size
 argument_list|(
-name|GIMP_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|width
@@ -3080,7 +3074,10 @@ condition|)
 block|{
 name|gimp_drawable_preview_draw_region
 argument_list|(
+name|GIMP_DRAWABLE_PREVIEW
+argument_list|(
 name|preview
+argument_list|)
 argument_list|,
 operator|&
 name|dest_rgn

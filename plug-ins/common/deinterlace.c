@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon293d29ee0103
+DECL|enum|__anon29d97a5c0103
 block|{
 DECL|enumerator|ODD_FIELDS
 name|ODD_FIELDS
@@ -49,7 +49,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293d29ee0208
+DECL|struct|__anon29d97a5c0208
 block|{
 DECL|member|evenness
 name|gint
@@ -118,7 +118,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpDrawablePreview
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -569,14 +569,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|deinterlace (GimpDrawable * drawable,GimpDrawablePreview * preview)
+DECL|function|deinterlace (GimpDrawable * drawable,GimpPreview * preview)
 name|deinterlace
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpDrawablePreview
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -642,10 +642,7 @@ condition|)
 block|{
 name|gimp_preview_get_position
 argument_list|(
-name|GIMP_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|x1
@@ -656,10 +653,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_preview_get_size
 argument_list|(
-name|GIMP_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|width
@@ -1136,7 +1130,7 @@ condition|(
 name|preview
 condition|)
 block|{
-name|gimp_drawable_preview_draw_buffer
+name|gimp_preview_draw_buffer
 argument_list|(
 name|preview
 argument_list|,

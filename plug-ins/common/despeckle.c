@@ -3298,12 +3298,9 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*    * Update the screen...    */
-name|gimp_drawable_preview_draw_buffer
-argument_list|(
-name|GIMP_DRAWABLE_PREVIEW
+name|gimp_preview_draw_buffer
 argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 name|rgba
 argument_list|,

@@ -99,7 +99,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4065970103
+DECL|enum|__anon28c446f30103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -125,7 +125,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4065970208
+DECL|struct|__anon28c446f30208
 block|{
 DECL|member|amount
 name|gdouble
@@ -222,7 +222,7 @@ specifier|static
 name|void
 name|edge_preview_update
 parameter_list|(
-name|GimpDrawablePreview
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -3803,15 +3803,19 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|edge_preview_update (GimpDrawablePreview * preview)
+DECL|function|edge_preview_update (GimpPreview * preview)
 name|edge_preview_update
 parameter_list|(
-name|GimpDrawablePreview
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
 block|{
 comment|/* drawable */
+name|GimpDrawable
+modifier|*
+name|drawable
+decl_stmt|;
 name|glong
 name|bytes
 decl_stmt|;
@@ -3867,12 +3871,20 @@ decl_stmt|,
 name|y
 decl_stmt|;
 comment|/* Get drawable info */
+name|drawable
+operator|=
+name|gimp_drawable_preview_get_drawable
+argument_list|(
+name|GIMP_DRAWABLE_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|bytes
 operator|=
 name|gimp_drawable_bpp
 argument_list|(
-name|preview
-operator|->
 name|drawable
 operator|->
 name|drawable_id
@@ -3886,8 +3898,6 @@ name|has_alpha
 operator|=
 name|gimp_drawable_has_alpha
 argument_list|(
-name|preview
-operator|->
 name|drawable
 operator|->
 name|drawable_id
@@ -3903,10 +3913,7 @@ expr_stmt|;
 comment|/*    * Setup for filter...    */
 name|gimp_preview_get_position
 argument_list|(
-name|GIMP_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|x1
@@ -3917,10 +3924,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_preview_get_size
 argument_list|(
-name|GIMP_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|width
@@ -3935,8 +3939,6 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|preview
-operator|->
 name|drawable
 argument_list|,
 name|x1
@@ -4236,7 +4238,7 @@ name|bytes
 expr_stmt|;
 block|}
 comment|/*    * Draw the preview image on the screen...    */
-name|gimp_drawable_preview_draw_buffer
+name|gimp_preview_draw_buffer
 argument_list|(
 name|preview
 argument_list|,

@@ -46,7 +46,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b512c70108
+DECL|struct|__anon2c1631920108
 block|{
 DECL|member|inner
 name|gdouble
@@ -219,7 +219,7 @@ specifier|static
 name|void
 name|preview_update_preview
 parameter_list|(
-name|GimpDrawablePreview
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|,
@@ -4277,10 +4277,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|preview_update_preview (GimpDrawablePreview * preview,GimpDrawable * drawable)
+DECL|function|preview_update_preview (GimpPreview * preview,GimpDrawable * drawable)
 name|preview_update_preview
 parameter_list|(
-name|GimpDrawablePreview
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|,
@@ -4333,10 +4333,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_preview_get_position
 argument_list|(
-name|GIMP_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|x1
@@ -4347,10 +4344,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_preview_get_size
 argument_list|(
-name|GIMP_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|width
@@ -4561,7 +4555,7 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_preview_draw_buffer
+name|gimp_preview_draw_buffer
 argument_list|(
 name|preview
 argument_list|,

@@ -40873,7 +40873,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3c52d90103
+DECL|enum|__anon2bcb3b090103
 block|{
 DECL|enumerator|TOP_RIGHT
 name|TOP_RIGHT
@@ -40893,7 +40893,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3c52d90208
+DECL|struct|__anon2bcb3b090208
 block|{
 DECL|member|direction
 name|gint
@@ -40978,7 +40978,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpDrawablePreview
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -41980,14 +41980,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|strucpi (GimpDrawable * drawable,GimpDrawablePreview * preview)
+DECL|function|strucpi (GimpDrawable * drawable,GimpPreview * preview)
 name|strucpi
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpDrawablePreview
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -42059,10 +42059,7 @@ condition|)
 block|{
 name|gimp_preview_get_position
 argument_list|(
-name|GIMP_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|x1
@@ -42073,10 +42070,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_preview_get_size
 argument_list|(
-name|GIMP_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|width
@@ -42719,7 +42713,7 @@ condition|(
 name|preview
 condition|)
 block|{
-name|gimp_drawable_preview_draw_buffer
+name|gimp_preview_draw_buffer
 argument_list|(
 name|preview
 argument_list|,

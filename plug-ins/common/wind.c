@@ -110,7 +110,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0509dc0103
+DECL|enum|__anon29ed52000103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -126,7 +126,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0509dc0203
+DECL|enum|__anon29ed52000203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -142,7 +142,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0509dc0303
+DECL|enum|__anon29ed52000303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -219,7 +219,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpDrawablePreview
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -247,7 +247,7 @@ parameter_list|,
 name|edge_t
 name|edge
 parameter_list|,
-name|GimpDrawablePreview
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -275,7 +275,7 @@ parameter_list|,
 name|edge_t
 name|edge
 parameter_list|,
-name|GimpDrawablePreview
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -991,14 +991,14 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|render_effect (GimpDrawable * drawable,GimpDrawablePreview * preview)
+DECL|function|render_effect (GimpDrawable * drawable,GimpPreview * preview)
 name|render_effect
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpDrawablePreview
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -1079,7 +1079,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|render_blast (GimpDrawable * drawable,gint threshold,gint strength,direction_t direction,edge_t edge,GimpDrawablePreview * preview)
+DECL|function|render_blast (GimpDrawable * drawable,gint threshold,gint strength,direction_t direction,edge_t edge,GimpPreview * preview)
 name|render_blast
 parameter_list|(
 name|GimpDrawable
@@ -1098,7 +1098,7 @@ parameter_list|,
 name|edge_t
 name|edge
 parameter_list|,
-name|GimpDrawablePreview
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -1160,10 +1160,7 @@ condition|)
 block|{
 name|gimp_preview_get_position
 argument_list|(
-name|GIMP_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|x1
@@ -1174,10 +1171,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_preview_get_size
 argument_list|(
-name|GIMP_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|width
@@ -1579,7 +1573,7 @@ condition|(
 name|preview
 condition|)
 block|{
-name|gimp_drawable_preview_draw_buffer
+name|gimp_preview_draw_buffer
 argument_list|(
 name|preview
 argument_list|,
@@ -1634,7 +1628,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|render_wind (GimpDrawable * drawable,gint threshold,gint strength,direction_t direction,edge_t edge,GimpDrawablePreview * preview)
+DECL|function|render_wind (GimpDrawable * drawable,gint threshold,gint strength,direction_t direction,edge_t edge,GimpPreview * preview)
 name|render_wind
 parameter_list|(
 name|GimpDrawable
@@ -1653,7 +1647,7 @@ parameter_list|,
 name|edge_t
 name|edge
 parameter_list|,
-name|GimpDrawablePreview
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -1715,10 +1709,7 @@ condition|)
 block|{
 name|gimp_preview_get_position
 argument_list|(
-name|GIMP_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|x1
@@ -1729,10 +1720,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_preview_get_size
 argument_list|(
-name|GIMP_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|width
@@ -2020,7 +2008,7 @@ condition|(
 name|preview
 condition|)
 block|{
-name|gimp_drawable_preview_draw_buffer
+name|gimp_preview_draw_buffer
 argument_list|(
 name|preview
 argument_list|,

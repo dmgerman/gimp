@@ -40,7 +40,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ad848c0108
+DECL|struct|__anon277310050108
 block|{
 DECL|member|radius
 name|gdouble
@@ -115,7 +115,7 @@ parameter_list|,
 name|gdouble
 name|amount
 parameter_list|,
-name|GtkWidget
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -139,7 +139,7 @@ specifier|static
 name|void
 name|neon_preview_update
 parameter_list|(
-name|GtkWidget
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -745,7 +745,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|neon (GimpDrawable * drawable,gdouble radius,gdouble amount,GtkWidget * preview)
+DECL|function|neon (GimpDrawable * drawable,gdouble radius,gdouble amount,GimpPreview * preview)
 name|neon
 parameter_list|(
 name|GimpDrawable
@@ -758,7 +758,7 @@ parameter_list|,
 name|gdouble
 name|amount
 parameter_list|,
-name|GtkWidget
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -909,10 +909,7 @@ condition|)
 block|{
 name|gimp_preview_get_position
 argument_list|(
-name|GIMP_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|x1
@@ -923,10 +920,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_preview_get_size
 argument_list|(
-name|GIMP_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|width
@@ -2236,12 +2230,9 @@ condition|(
 name|preview
 condition|)
 block|{
-name|gimp_drawable_preview_draw_buffer
-argument_list|(
-name|GIMP_DRAWABLE_PREVIEW
+name|gimp_preview_draw_buffer
 argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 name|preview_buffer2
 argument_list|,
@@ -3724,10 +3715,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|neon_preview_update (GtkWidget * preview)
+DECL|function|neon_preview_update (GimpPreview * preview)
 name|neon_preview_update
 parameter_list|(
-name|GtkWidget
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)

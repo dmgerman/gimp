@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ba11050103
+DECL|enum|__anon2c2a4bc00103
 block|{
 DECL|enumerator|BLUR_IIR
 name|BLUR_IIR
@@ -70,7 +70,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ba11050208
+DECL|struct|__anon2c2a4bc00208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -2129,12 +2129,13 @@ parameter_list|)
 block|{
 name|gauss
 argument_list|(
+name|gimp_drawable_preview_get_drawable
+argument_list|(
 name|GIMP_DRAWABLE_PREVIEW
 argument_list|(
 name|preview
 argument_list|)
-operator|->
-name|drawable
+argument_list|)
 argument_list|,
 name|gimp_size_entry_get_refval
 argument_list|(
@@ -4789,9 +4790,9 @@ condition|(
 name|preview
 condition|)
 block|{
-name|gimp_drawable_preview_draw_buffer
+name|gimp_preview_draw_buffer
 argument_list|(
-name|GIMP_DRAWABLE_PREVIEW
+name|GIMP_PREVIEW
 argument_list|(
 name|preview
 argument_list|)

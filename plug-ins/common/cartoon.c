@@ -52,7 +52,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9f044b0108
+DECL|struct|__anon28ef5f370108
 block|{
 DECL|member|mask_radius
 name|gdouble
@@ -129,7 +129,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpDrawablePreview
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -711,14 +711,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|cartoon (GimpDrawable * drawable,GimpDrawablePreview * preview)
+DECL|function|cartoon (GimpDrawable * drawable,GimpPreview * preview)
 name|cartoon
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpDrawablePreview
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -956,10 +956,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_preview_get_size
 argument_list|(
-name|GIMP_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|width
@@ -3012,7 +3009,7 @@ condition|(
 name|preview
 condition|)
 block|{
-name|gimp_drawable_preview_draw_buffer
+name|gimp_preview_draw_buffer
 argument_list|(
 name|preview
 argument_list|,

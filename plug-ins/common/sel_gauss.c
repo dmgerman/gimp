@@ -36,7 +36,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274742610108
+DECL|struct|__anon29bd7ad40108
 block|{
 DECL|member|radius
 name|gdouble
@@ -135,7 +135,7 @@ specifier|static
 name|void
 name|preview_update
 parameter_list|(
-name|GimpDrawablePreview
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -1996,10 +1996,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|preview_update (GimpDrawablePreview * preview)
+DECL|function|preview_update (GimpPreview * preview)
 name|preview_update
 parameter_list|(
-name|GimpDrawablePreview
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -2007,11 +2007,6 @@ block|{
 name|GimpDrawable
 modifier|*
 name|drawable
-init|=
-name|gimp_drawable_preview_get_drawable
-argument_list|(
-name|preview
-argument_list|)
 decl_stmt|;
 name|glong
 name|bytes
@@ -2059,6 +2054,16 @@ name|gdouble
 name|radius
 decl_stmt|;
 comment|/* Get drawable info */
+name|drawable
+operator|=
+name|gimp_drawable_preview_get_drawable
+argument_list|(
+name|GIMP_DRAWABLE_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|bytes
 operator|=
 name|drawable
@@ -2068,10 +2073,7 @@ expr_stmt|;
 comment|/*    * Setup for filter...    */
 name|gimp_preview_get_position
 argument_list|(
-name|GIMP_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|x1
@@ -2082,10 +2084,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_preview_get_size
 argument_list|(
-name|GIMP_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|width
@@ -2290,7 +2289,7 @@ name|src
 argument_list|)
 expr_stmt|;
 comment|/*    * Draw the preview image on the screen...    */
-name|gimp_drawable_preview_draw_buffer
+name|gimp_preview_draw_buffer
 argument_list|(
 name|preview
 argument_list|,

@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e8c69e0108
+DECL|struct|__anon2b8401c60108
 block|{
 DECL|member|height
 name|gint
@@ -137,7 +137,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpDrawablePreview
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -151,7 +151,7 @@ literal|0
 end_if
 
 begin_endif
-unit|static void      engrave_large  (GimpDrawable        *drawable,                                  gint                 height,                                  gboolean             limit,                                  GimpDrawablePreview *preview);
+unit|static void      engrave_large  (GimpDrawable *drawable,                                  gint          height,                                  gboolean      limit,                                  GimpPreview  *preview);
 endif|#
 directive|endif
 end_endif
@@ -174,7 +174,7 @@ parameter_list|,
 name|gint
 name|tile_width
 parameter_list|,
-name|GimpDrawablePreview
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -1044,14 +1044,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|engrave (GimpDrawable * drawable,GimpDrawablePreview * preview)
+DECL|function|engrave (GimpDrawable * drawable,GimpPreview * preview)
 name|engrave
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpDrawablePreview
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -1112,7 +1112,7 @@ literal|0
 end_if
 
 begin_comment
-unit|static void engrave_large (GimpDrawable        *drawable,                gint                 height,                gboolean             limit,                GimpDrawablePreview *preview) {   GimpPixelRgn  src_rgn, dest_rgn;   guchar       *src_row, *dest_row;   guchar       *src, *dest;   gulong       *average;   gint          row, col, b, bpp;   gint          x, y, y_step, inten, v;   gulong        count;   gint          x1, y1, x2, y2;   gint          progress, max_progress;   gpointer      pr;    gimp_drawable_mask_bounds (drawable->drawable_id,&x1,&y1,&x2,&y2);    bpp = (gimp_drawable_is_rgb (drawable->drawable_id)) ? 3 : 1;   average = g_new (gulong, bpp);
+unit|static void engrave_large (GimpDrawable *drawable,                gint          height,                gboolean      limit,                GimpPreview  *preview) {   GimpPixelRgn  src_rgn, dest_rgn;   guchar       *src_row, *dest_row;   guchar       *src, *dest;   gulong       *average;   gint          row, col, b, bpp;   gint          x, y, y_step, inten, v;   gulong        count;   gint          x1, y1, x2, y2;   gint          progress, max_progress;   gpointer      pr;    gimp_drawable_mask_bounds (drawable->drawable_id,&x1,&y1,&x2,&y2);    bpp = (gimp_drawable_is_rgb (drawable->drawable_id)) ? 3 : 1;   average = g_new (gulong, bpp);
 comment|/* Initialize progress */
 end_comment
 
@@ -1127,12 +1127,12 @@ comment|/* Update progress */
 end_comment
 
 begin_comment
-unit|progress += dest_rgn.w * dest_rgn.h;               gimp_progress_update((double) progress / (double) max_progress);             }         }     }    g_free(average);
+unit|progress += dest_rgn.w * dest_rgn.h;               gimp_progress_update((double) progress / (double) max_progress);             }         }     }    g_free (average);
 comment|/*  update the engraved region  */
 end_comment
 
 begin_endif
-unit|gimp_drawable_flush(drawable);   gimp_drawable_merge_shadow(drawable->drawable_id, TRUE);   gimp_drawable_update(drawable->drawable_id, x1, y1, x2 - x1, y2 - y1); }
+unit|gimp_drawable_flush( drawable);   gimp_drawable_merge_shadow (drawable->drawable_id, TRUE);   gimp_drawable_update (drawable->drawable_id, x1, y1, x2 - x1, y2 - y1); }
 endif|#
 directive|endif
 end_endif
@@ -1140,7 +1140,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e8c69e0208
+DECL|struct|__anon2b8401c60208
 block|{
 DECL|member|x
 DECL|member|y
@@ -1177,7 +1177,7 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|engrave_small (GimpDrawable * drawable,gint line_height,gboolean limit,gint tile_width,GimpDrawablePreview * preview)
+DECL|function|engrave_small (GimpDrawable * drawable,gint line_height,gboolean limit,gint tile_width,GimpPreview * preview)
 name|engrave_small
 parameter_list|(
 name|GimpDrawable
@@ -1193,7 +1193,7 @@ parameter_list|,
 name|gint
 name|tile_width
 parameter_list|,
-name|GimpDrawablePreview
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -1235,10 +1235,7 @@ condition|)
 block|{
 name|gimp_preview_get_position
 argument_list|(
-name|GIMP_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|x1
@@ -1249,10 +1246,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_preview_get_size
 argument_list|(
-name|GIMP_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|width
@@ -1611,7 +1605,10 @@ condition|)
 block|{
 name|gimp_drawable_preview_draw_region
 argument_list|(
+name|GIMP_DRAWABLE_PREVIEW
+argument_list|(
 name|preview
+argument_list|)
 argument_list|,
 operator|&
 name|dest_rgn

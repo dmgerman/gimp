@@ -56,7 +56,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298003fe0108
+DECL|struct|__anon2c03d2600108
 block|{
 DECL|member|horizontal
 name|gboolean
@@ -2040,12 +2040,9 @@ condition|(
 name|preview
 condition|)
 block|{
-name|gimp_drawable_preview_draw_buffer
-argument_list|(
-name|GIMP_DRAWABLE_PREVIEW
+name|gimp_preview_draw_buffer
 argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 name|preview_buffer
 argument_list|,
