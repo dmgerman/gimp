@@ -322,7 +322,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c63ccbb0103
+DECL|enum|__anon28dc8f050103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -338,7 +338,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c63ccbb0203
+DECL|enum|__anon28dc8f050203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1568,6 +1568,18 @@ name|shell
 argument_list|)
 argument_list|,
 name|gimp_display_shell_drop_svg
+argument_list|,
+name|shell
+argument_list|)
+expr_stmt|;
+name|gimp_dnd_component_dest_add
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|shell
+argument_list|)
+argument_list|,
+name|gimp_display_shell_drop_component
 argument_list|,
 name|shell
 argument_list|)
