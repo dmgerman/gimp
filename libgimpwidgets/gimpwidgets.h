@@ -115,6 +115,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpwidgets/gimppickbutton.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpwidgets/gimppixmap.h>
 end_include
 
