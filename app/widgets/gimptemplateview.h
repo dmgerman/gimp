@@ -123,6 +123,10 @@ DECL|member|parent_instance
 name|GimpContainerEditor
 name|parent_instance
 decl_stmt|;
+DECL|member|create_image_func
+name|GimpTemplateActionFunc
+name|create_image_func
+decl_stmt|;
 DECL|member|new_template_func
 name|GimpTemplateActionFunc
 name|new_template_func
@@ -131,9 +135,10 @@ DECL|member|edit_template_func
 name|GimpTemplateActionFunc
 name|edit_template_func
 decl_stmt|;
-DECL|member|create_image_func
-name|GimpTemplateActionFunc
-name|create_image_func
+DECL|member|create_button
+name|GtkWidget
+modifier|*
+name|create_button
 decl_stmt|;
 DECL|member|new_button
 name|GtkWidget
@@ -149,11 +154,6 @@ DECL|member|edit_button
 name|GtkWidget
 modifier|*
 name|edit_button
-decl_stmt|;
-DECL|member|create_button
-name|GtkWidget
-modifier|*
-name|create_button
 decl_stmt|;
 DECL|member|delete_button
 name|GtkWidget

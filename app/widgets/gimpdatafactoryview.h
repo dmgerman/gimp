@@ -128,6 +128,11 @@ DECL|member|data_edit_func
 name|GimpDataEditFunc
 name|data_edit_func
 decl_stmt|;
+DECL|member|edit_button
+name|GtkWidget
+modifier|*
+name|edit_button
+decl_stmt|;
 DECL|member|new_button
 name|GtkWidget
 modifier|*
@@ -137,11 +142,6 @@ DECL|member|duplicate_button
 name|GtkWidget
 modifier|*
 name|duplicate_button
-decl_stmt|;
-DECL|member|edit_button
-name|GtkWidget
-modifier|*
-name|edit_button
 decl_stmt|;
 DECL|member|delete_button
 name|GtkWidget

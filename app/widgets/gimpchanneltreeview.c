@@ -404,6 +404,21 @@ name|gimp_image_remove_channel
 expr_stmt|;
 name|item_view_class
 operator|->
+name|edit_desc
+operator|=
+name|_
+argument_list|(
+literal|"Edit Channel Attributes"
+argument_list|)
+expr_stmt|;
+name|item_view_class
+operator|->
+name|edit_help_id
+operator|=
+name|GIMP_HELP_CHANNEL_EDIT
+expr_stmt|;
+name|item_view_class
+operator|->
 name|new_desc
 operator|=
 name|_
@@ -431,21 +446,6 @@ operator|->
 name|duplicate_help_id
 operator|=
 name|GIMP_HELP_CHANNEL_DUPLICATE
-expr_stmt|;
-name|item_view_class
-operator|->
-name|edit_desc
-operator|=
-name|_
-argument_list|(
-literal|"Edit Channel Attributes"
-argument_list|)
-expr_stmt|;
-name|item_view_class
-operator|->
-name|edit_help_id
-operator|=
-name|GIMP_HELP_CHANNEL_EDIT
 expr_stmt|;
 name|item_view_class
 operator|->
