@@ -525,7 +525,7 @@ name|gimp_viewable_get_dummy_preview
 parameter_list|(
 name|GimpViewable
 modifier|*
-name|vieable
+name|viewable
 parameter_list|,
 name|gint
 name|width
