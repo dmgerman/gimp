@@ -7392,11 +7392,16 @@ value|gimp_drawable_transform_cubic(dx, \             (arow)[0]              * (
 end_define
 
 begin_comment
-comment|/* Note: cubic function no longer clips result */
+comment|/*  Note: cubic function no longer clips result. */
+end_comment
+
+begin_comment
+comment|/*  Inlining this function makes sample_cubic() run about 10% faster. (Sven) */
 end_comment
 
 begin_function
 specifier|static
+specifier|inline
 name|gdouble
 DECL|function|gimp_drawable_transform_cubic (gdouble dx,gint jm1,gint j,gint jp1,gint jp2)
 name|gimp_drawable_transform_cubic
