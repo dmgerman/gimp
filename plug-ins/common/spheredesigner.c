@@ -2,6 +2,12 @@ begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -23,11 +29,22 @@ directive|include
 file|<sys/time.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -50,8 +67,37 @@ end_include
 begin_include
 include|#
 directive|include
+file|<time.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimp.h>
 end_include
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|G_PI
+end_ifndef
+
+begin_comment
+comment|/* G_PI will be in GLib eventually */
+end_comment
+
+begin_define
+DECL|macro|G_PI
+define|#
+directive|define
+name|G_PI
+value|3.14159265358979323846
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_define
 DECL|macro|PREVIEWSIZE
@@ -186,7 +232,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon28d45ab40103
+DECL|enum|__anon2a1d3b030103
 enum|enum
 block|{
 DECL|enumerator|TRIANGLE
@@ -211,7 +257,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon28d45ab40203
+DECL|enum|__anon2a1d3b030203
 enum|enum
 block|{
 DECL|enumerator|SOLID
@@ -260,7 +306,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon28d45ab40303
+DECL|enum|__anon2a1d3b030303
 enum|enum
 block|{
 DECL|enumerator|PERSPECTIVE
@@ -276,7 +322,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon28d45ab40403
+DECL|enum|__anon2a1d3b030403
 enum|enum
 block|{
 DECL|enumerator|FOG
@@ -322,7 +368,7 @@ value|0x00000001
 end_define
 
 begin_typedef
-DECL|struct|__anon28d45ab40508
+DECL|struct|__anon2a1d3b030508
 typedef|typedef
 struct|struct
 block|{
@@ -343,7 +389,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28d45ab40608
+DECL|struct|__anon2a1d3b030608
 typedef|typedef
 struct|struct
 block|{
@@ -367,7 +413,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28d45ab40708
+DECL|struct|__anon2a1d3b030708
 typedef|typedef
 struct|struct
 block|{
@@ -396,7 +442,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28d45ab40808
+DECL|struct|__anon2a1d3b030808
 typedef|typedef
 struct|struct
 block|{
@@ -488,7 +534,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28d45ab40908
+DECL|struct|__anon2a1d3b030908
 typedef|typedef
 struct|struct
 block|{
@@ -515,7 +561,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28d45ab40a08
+DECL|struct|__anon2a1d3b030a08
 typedef|typedef
 struct|struct
 block|{
@@ -557,7 +603,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28d45ab40b08
+DECL|struct|__anon2a1d3b030b08
 typedef|typedef
 struct|struct
 block|{
@@ -582,7 +628,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28d45ab40c08
+DECL|struct|__anon2a1d3b030c08
 typedef|typedef
 struct|struct
 block|{
@@ -608,7 +654,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28d45ab40d08
+DECL|struct|__anon2a1d3b030d08
 typedef|typedef
 struct|struct
 block|{
@@ -631,7 +677,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28d45ab40e08
+DECL|struct|__anon2a1d3b030e08
 typedef|typedef
 struct|struct
 block|{
@@ -656,7 +702,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28d45ab40f08
+DECL|struct|__anon2a1d3b030f08
 typedef|typedef
 struct|struct
 block|{
@@ -679,7 +725,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28d45ab41008
+DECL|struct|__anon2a1d3b031008
 typedef|typedef
 struct|struct
 block|{
@@ -702,7 +748,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28d45ab41108
+DECL|struct|__anon2a1d3b031108
 typedef|typedef
 struct|struct
 block|{
@@ -728,7 +774,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|union|__anon28d45ab4120a
+DECL|union|__anon2a1d3b03120a
 typedef|typedef
 union|union
 block|{
@@ -1037,7 +1083,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon28d45ab41308
+DECL|struct|__anon2a1d3b031308
 struct|struct
 block|{
 DECL|member|solid
@@ -1312,9 +1358,12 @@ decl_stmt|,
 name|s
 decl_stmt|;
 comment|/* Create an array of random gradient vectors uniformly on the unit sphere */
-name|srandom
+name|SRAND_FUNC
 argument_list|(
-literal|1
+name|time
+argument_list|(
+name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -1357,7 +1406,7 @@ name|double
 call|)
 argument_list|(
 operator|(
-name|random
+name|RAND_FUNC
 argument_list|()
 operator|%
 operator|(
@@ -1479,7 +1528,7 @@ name|p
 index|[
 name|j
 operator|=
-name|random
+name|RAND_FUNC
 argument_list|()
 operator|%
 name|B
@@ -2598,7 +2647,7 @@ name|ang
 operator|/
 literal|180.0
 operator|*
-name|M_PI
+name|G_PI
 decl_stmt|;
 name|double
 name|ax
@@ -5608,7 +5657,7 @@ operator|.
 name|z
 argument_list|)
 operator|/
-name|M_PI
+name|G_PI
 operator|/
 literal|2
 operator|+
@@ -5796,7 +5845,7 @@ name|cos
 argument_list|(
 name|f
 operator|*
-name|M_PI
+name|G_PI
 argument_list|)
 expr_stmt|;
 if|if
@@ -6208,7 +6257,7 @@ parameter_list|)
 block|{
 return|return
 operator|(
-name|rand
+name|RAND_FUNC
 argument_list|()
 operator|/
 operator|(

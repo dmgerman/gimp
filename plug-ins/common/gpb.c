@@ -103,7 +103,7 @@ comment|/* Parameters applicable each time we save a gpb or gih, saved  * in the
 end_comment
 
 begin_struct
-DECL|struct|__anon2c52dc2b0108
+DECL|struct|__anon2a1c253a0108
 specifier|static
 struct|struct
 block|{
@@ -157,7 +157,7 @@ comment|/* Parameters related to one single gih file, collected in a struct  * j
 end_comment
 
 begin_struct
-DECL|struct|__anon2c52dc2b0208
+DECL|struct|__anon2a1c253a0208
 specifier|static
 struct|struct
 block|{
@@ -3159,6 +3159,22 @@ name|selection
 index|[
 name|i
 index|]
+argument_list|)
+expr_stmt|;
+else|else
+name|gtk_entry_set_text
+argument_list|(
+name|GTK_ENTRY
+argument_list|(
+name|GTK_COMBO
+argument_list|(
+name|cb
+argument_list|)
+operator|->
+name|entry
+argument_list|)
+argument_list|,
+literal|"random"
 argument_list|)
 expr_stmt|;
 name|gtk_entry_set_editable
