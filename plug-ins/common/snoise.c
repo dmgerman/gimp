@@ -4,7 +4,7 @@ comment|/* Solid Noise plug-in -- creates solid noise textures  * Copyright (C) 
 end_comment
 
 begin_comment
-comment|/* Solid Noise plug-in version 1.03, Apr 1998  *  * This plug-in generates solid noise textures based on the  * `Noise' and `Turbulence' functions described in the paper  *     *    Perlin, K, and Hoffert, E. M., "Hypertexture",  *    Computer Graphics 23, 3 (August 1989)  *  * The algorithm implemented here also makes possible the  * creation of seamless tiles.  *  * You can contact me at<malheiro@dca.fee.unicamp.br>.  * Comments and improvements for this code are welcome.  *  * The overall plug-in structure is based on the Whirl plug-in,  * which is Copyright (C) 1997 Federico Mena Quintero  */
+comment|/* Solid Noise plug-in version 1.03, Apr 1998  *  * This plug-in generates solid noise textures based on the  * `Noise' and `Turbulence' functions described in the paper  *  *    Perlin, K, and Hoffert, E. M., "Hypertexture",  *    Computer Graphics 23, 3 (August 1989)  *  * The algorithm implemented here also makes possible the  * creation of seamless tiles.  *  * You can contact me at<malheiro@dca.fee.unicamp.br>.  * Comments and improvements for this code are welcome.  *  * The overall plug-in structure is based on the Whirl plug-in,  * which is Copyright (C) 1997 Federico Mena Quintero  */
 end_comment
 
 begin_comment
@@ -85,10 +85,18 @@ value|128
 end_define
 
 begin_define
-DECL|macro|SCALE_MAX
+DECL|macro|SIZE_MIN
 define|#
 directive|define
-name|SCALE_MAX
+name|SIZE_MIN
+value|0.1
+end_define
+
+begin_define
+DECL|macro|SIZE_MAX
+define|#
+directive|define
+name|SIZE_MAX
 value|16.0
 end_define
 
@@ -99,7 +107,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9469dd0108
+DECL|struct|__anon278fe9720108
 block|{
 DECL|member|tilable
 name|gint
@@ -134,7 +142,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9469dd0208
+DECL|struct|__anon278fe9720208
 block|{
 DECL|member|run
 name|gint
@@ -1294,47 +1302,50 @@ name|g_rand_new
 argument_list|()
 expr_stmt|;
 comment|/*  Force sane parameters  */
-if|if
-condition|(
-name|snvals
-operator|.
-name|detail
-operator|<
-literal|0
-condition|)
 name|snvals
 operator|.
 name|detail
 operator|=
-literal|0
-expr_stmt|;
-if|if
-condition|(
+name|CLAMP
+argument_list|(
 name|snvals
 operator|.
 name|detail
-operator|>
+argument_list|,
+literal|0
+argument_list|,
 literal|15
-condition|)
-name|snvals
-operator|.
-name|detail
-operator|=
-literal|15
+argument_list|)
 expr_stmt|;
-if|if
-condition|(
 name|snvals
 operator|.
-name|seed
-operator|<
-literal|0
-condition|)
-name|snvals
-operator|.
-name|seed
+name|xsize
 operator|=
-literal|0
+name|CLAMP
+argument_list|(
+name|snvals
+operator|.
+name|xsize
+argument_list|,
+name|SIZE_MIN
+argument_list|,
+name|SIZE_MAX
+argument_list|)
+expr_stmt|;
+name|snvals
+operator|.
+name|ysize
+operator|=
+name|CLAMP
+argument_list|(
+name|snvals
+operator|.
+name|ysize
+argument_list|,
+name|SIZE_MIN
+argument_list|,
+name|SIZE_MAX
+argument_list|)
 expr_stmt|;
 comment|/*  Set scaling factors  */
 if|if
@@ -2393,9 +2404,9 @@ name|snvals
 operator|.
 name|xsize
 argument_list|,
-literal|0.1
+name|SIZE_MIN
 argument_list|,
-name|SCALE_MAX
+name|SIZE_MAX
 argument_list|,
 literal|0.1
 argument_list|,
@@ -2458,9 +2469,9 @@ name|snvals
 operator|.
 name|ysize
 argument_list|,
-literal|0.1
+name|SIZE_MIN
 argument_list|,
-name|SCALE_MAX
+name|SIZE_MAX
 argument_list|,
 literal|0.1
 argument_list|,
