@@ -509,6 +509,17 @@ name|clickable
 operator|=
 name|TRUE
 expr_stmt|;
+name|GIMP_PREVIEW
+argument_list|(
+name|list_item
+operator|->
+name|preview
+argument_list|)
+operator|->
+name|eat_button_events
+operator|=
+name|FALSE
+expr_stmt|;
 name|drawable_item
 operator|=
 name|GIMP_DRAWABLE_LIST_ITEM

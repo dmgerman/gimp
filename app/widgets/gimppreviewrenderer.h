@@ -152,6 +152,10 @@ DECL|member|clickable
 name|gboolean
 name|clickable
 decl_stmt|;
+DECL|member|eat_button_events
+name|gboolean
+name|eat_button_events
+decl_stmt|;
 DECL|member|show_popup
 name|gboolean
 name|show_popup

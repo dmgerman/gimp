@@ -131,7 +131,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon288380ca0103
+DECL|enum|__anon2adb297e0103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -952,6 +952,12 @@ name|FALSE
 expr_stmt|;
 name|preview
 operator|->
+name|eat_button_events
+operator|=
+name|TRUE
+expr_stmt|;
+name|preview
+operator|->
 name|show_popup
 operator|=
 name|FALSE
@@ -1703,7 +1709,13 @@ expr_stmt|;
 block|}
 block|}
 return|return
+name|preview
+operator|->
+name|eat_button_events
+condition|?
 name|TRUE
+else|:
+name|FALSE
 return|;
 block|}
 end_function
@@ -1872,7 +1884,13 @@ name|FALSE
 return|;
 block|}
 return|return
+name|preview
+operator|->
+name|eat_button_events
+condition|?
 name|TRUE
+else|:
+name|FALSE
 return|;
 block|}
 end_function

@@ -1903,6 +1903,17 @@ name|clickable
 operator|=
 name|TRUE
 expr_stmt|;
+name|GIMP_PREVIEW
+argument_list|(
+name|layer_item
+operator|->
+name|mask_preview
+argument_list|)
+operator|->
+name|eat_button_events
+operator|=
+name|FALSE
+expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
