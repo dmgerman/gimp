@@ -249,7 +249,7 @@ name|fprintf
 argument_list|(
 name|file
 argument_list|,
-literal|"<?xml version=\"1.0\" standalone=\"no\"?>\n"
+literal|"<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n"
 literal|"<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 20010904//EN\"\n"
 literal|"              \"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd\">\n"
 argument_list|)
