@@ -654,6 +654,8 @@ name|preview
 operator|->
 name|viewable
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|gimage
@@ -680,6 +682,8 @@ argument_list|(
 name|preview
 operator|->
 name|viewable
+argument_list|,
+name|NULL
 argument_list|,
 name|TRUE
 argument_list|,
