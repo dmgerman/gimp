@@ -36,7 +36,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6179540103
+DECL|enum|__anon2ac262f40103
 block|{
 DECL|enumerator|MEDIAN
 name|MEDIAN
@@ -49,7 +49,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6179540208
+DECL|struct|__anon2ac262f40208
 block|{
 DECL|member|diameter
 name|gint
@@ -383,6 +383,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+specifier|inline
 name|guchar
 name|pixel_intensity
 parameter_list|(
@@ -399,6 +400,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+specifier|inline
 name|void
 name|pixel_copy
 parameter_list|(
@@ -412,7 +414,7 @@ modifier|*
 name|src
 parameter_list|,
 name|gint
-name|n
+name|bpp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2916,7 +2918,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* * This Quickselect routine is based on the algorithm described in * "Numerical recipes in C", Second Edition, * Cambridge University Press, 1992, Section 8.5, ISBN 0-521-43108-5 * This code by Nicolas Devillard - 1998. Public domain. * * modified to swap pointers: swap is done by comparing intensity value * for the pointer to RGB */
+comment|/*  * This Quickselect routine is based on the algorithm described in  * "Numerical recipes in C", Second Edition,  * Cambridge University Press, 1992, Section 8.5, ISBN 0-521-43108-5  * This code by Nicolas Devillard - 1998. Public domain.  *  * Modified to swap pointers: swap is done by comparing intensity  * value for the pointer to RGB.  */
 end_comment
 
 begin_function
@@ -2940,31 +2942,19 @@ parameter_list|)
 block|{
 name|gint
 name|low
-decl_stmt|,
-name|high
-decl_stmt|;
-name|gint
-name|median
-decl_stmt|;
-name|gint
-name|middle
-decl_stmt|,
-name|ll
-decl_stmt|,
-name|hh
-decl_stmt|;
-name|low
-operator|=
+init|=
 literal|0
-expr_stmt|;
+decl_stmt|;
+name|gint
 name|high
-operator|=
+init|=
 name|n
 operator|-
 literal|1
-expr_stmt|;
+decl_stmt|;
+name|gint
 name|median
-operator|=
+init|=
 operator|(
 name|low
 operator|+
@@ -2972,13 +2962,19 @@ name|high
 operator|)
 operator|/
 literal|2
-expr_stmt|;
-for|for
-control|(
-init|;
-condition|;
-control|)
+decl_stmt|;
+while|while
+condition|(
+name|TRUE
+condition|)
 block|{
+name|gint
+name|middle
+decl_stmt|,
+name|ll
+decl_stmt|,
+name|hh
+decl_stmt|;
 if|if
 condition|(
 name|high
@@ -3192,12 +3188,19 @@ argument_list|)
 expr_stmt|;
 name|POINTER_SWAP
 argument_list|(
-argument|p[middle]
+name|p
+index|[
+name|middle
+index|]
 argument_list|,
-argument|p[low+
+name|p
+index|[
+name|low
+operator|+
 literal|1
-argument|]
+index|]
 argument_list|)
+expr_stmt|;
 comment|/* Nibble from each end towards middle, swapping items when stuck */
 name|ll
 operator|=
@@ -3209,11 +3212,10 @@ name|hh
 operator|=
 name|high
 expr_stmt|;
-for|for
-control|(
-init|;
-condition|;
-control|)
+while|while
+condition|(
+name|TRUE
+condition|)
 block|{
 do|do
 name|ll
@@ -3340,7 +3342,7 @@ end_function
 begin_function
 specifier|static
 name|guchar
-DECL|function|pixel_intensity (const guchar * p,gint n)
+DECL|function|pixel_intensity (const guchar * p,gint bpp)
 name|pixel_intensity
 parameter_list|(
 specifier|const
@@ -3349,21 +3351,32 @@ modifier|*
 name|p
 parameter_list|,
 name|gint
-name|n
+name|bpp
 parameter_list|)
 block|{
-if|if
+switch|switch
 condition|(
-name|n
-operator|!=
-literal|3
+name|bpp
 condition|)
+block|{
+case|case
+literal|1
+case|:
+case|case
+literal|2
+case|:
 return|return
 name|p
 index|[
 literal|0
 index|]
 return|;
+case|case
+literal|3
+case|:
+case|case
+literal|4
+case|:
 return|return
 name|GIMP_RGB_INTENSITY
 argument_list|(
@@ -3383,13 +3396,20 @@ literal|2
 index|]
 argument_list|)
 return|;
+default|default:
+return|return
+literal|0
+return|;
+comment|/* should not be reached */
+block|}
 block|}
 end_function
 
 begin_function
 specifier|static
+specifier|inline
 name|void
-DECL|function|pixel_copy (guchar * dest,const guchar * src,gint n)
+DECL|function|pixel_copy (guchar * dest,const guchar * src,gint bpp)
 name|pixel_copy
 parameter_list|(
 name|guchar
@@ -3402,17 +3422,17 @@ modifier|*
 name|src
 parameter_list|,
 name|gint
-name|n
+name|bpp
 parameter_list|)
 block|{
 for|for
 control|(
 init|;
-name|n
+name|bpp
 operator|>
 literal|0
 condition|;
-name|n
+name|bpp
 operator|--
 operator|,
 name|dest
