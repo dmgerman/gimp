@@ -4394,6 +4394,7 @@ name|text
 decl_stmt|;
 if|if
 condition|(
+operator|(
 name|image
 operator|=
 name|g_object_get_data
@@ -4405,6 +4406,7 @@ argument_list|)
 argument_list|,
 literal|"tool-icon"
 argument_list|)
+operator|)
 condition|)
 name|gtk_image_set_from_stock
 argument_list|(

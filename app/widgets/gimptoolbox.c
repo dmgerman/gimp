@@ -1373,7 +1373,10 @@ argument_list|)
 expr_stmt|;
 name|gtk_button_set_relief
 argument_list|(
+name|GTK_BUTTON
+argument_list|(
 name|tool_button
+argument_list|)
 argument_list|,
 name|relief
 argument_list|)
