@@ -203,6 +203,10 @@ parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GimpDrawable
+modifier|*
+name|template
 parameter_list|)
 function_decl|;
 end_typedef

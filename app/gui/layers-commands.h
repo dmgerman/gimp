@@ -415,6 +415,10 @@ parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GimpLayer
+modifier|*
+name|tamplate
 parameter_list|)
 function_decl|;
 end_function_decl
