@@ -358,20 +358,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|comment_entry_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
+begin_comment
+comment|/* DISABLED - see http://bugzilla.gnome.org/show_bug.cgi?id=82763 */
+end_comment
+
+begin_endif
+unit|static void   comment_entry_callback  (GtkWidget *widget, 				       gpointer   data);
+endif|#
+directive|endif
+end_endif
 
 begin_function_decl
 specifier|static
@@ -3820,20 +3821,14 @@ name|FALSE
 return|;
 block|}
 comment|/* Maybe write the image comment. */
-if|if
-condition|(
-operator|*
-name|comment
-condition|)
-name|fprintf
-argument_list|(
-name|fp
-argument_list|,
-literal|"/* %s */\n"
-argument_list|,
-name|comment
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+comment|/* DISABLED - see http://bugzilla.gnome.org/show_bug.cgi?id=82763 */
+comment|/* a future version should write the comment at the end of the file */
+block|if (*comment)     fprintf (fp, "/* %s */\n", comment);
+endif|#
+directive|endif
 comment|/* Write out the image height and width. */
 name|fprintf
 argument_list|(
@@ -4745,87 +4740,13 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* comment string. */
-name|entry
-operator|=
-name|gtk_entry_new
-argument_list|()
-expr_stmt|;
-name|gtk_entry_set_max_length
-argument_list|(
-name|GTK_ENTRY
-argument_list|(
-name|entry
-argument_list|)
-argument_list|,
-name|MAX_COMMENT
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_size_request
-argument_list|(
-name|entry
-argument_list|,
-literal|240
-argument_list|,
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
-name|gtk_entry_set_text
-argument_list|(
-name|GTK_ENTRY
-argument_list|(
-name|entry
-argument_list|)
-argument_list|,
-name|xsvals
-operator|.
-name|comment
-argument_list|)
-expr_stmt|;
-name|gimp_table_attach_aligned
-argument_list|(
-name|GTK_TABLE
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
+if|#
+directive|if
 literal|0
-argument_list|,
-literal|1
-argument_list|,
-name|_
-argument_list|(
-literal|"Comment:"
-argument_list|)
-argument_list|,
-literal|1.0
-argument_list|,
-literal|0.5
-argument_list|,
-name|entry
-argument_list|,
-literal|1
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|entry
-argument_list|)
-argument_list|,
-literal|"changed"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|comment_entry_callback
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
+comment|/* DISABLED - see http://bugzilla.gnome.org/show_bug.cgi?id=82763 */
+block|entry = gtk_entry_new ();   gtk_entry_set_max_length (GTK_ENTRY (entry), MAX_COMMENT);   gtk_widget_set_size_request (entry, 240, -1);   gtk_entry_set_text (GTK_ENTRY (entry), xsvals.comment);   gimp_table_attach_aligned (GTK_TABLE (table), 0, 1, 			     _("Comment:"), 1.0, 0.5, 			     entry, 1, TRUE);   g_signal_connect (G_OBJECT (entry), "changed",                     G_CALLBACK (comment_entry_callback),                     NULL);
+endif|#
+directive|endif
 comment|/* hotspot toggle */
 name|toggle
 operator|=
@@ -5403,55 +5324,21 @@ begin_comment
 comment|/* Update the comment string. */
 end_comment
 
-begin_function
-specifier|static
-name|void
-DECL|function|comment_entry_callback (GtkWidget * widget,gpointer data)
-name|comment_entry_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|memset
-argument_list|(
-name|xsvals
-operator|.
-name|comment
-argument_list|,
+begin_if
+if|#
+directive|if
 literal|0
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|xsvals
-operator|.
-name|comment
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|strncpy
-argument_list|(
-name|xsvals
-operator|.
-name|comment
-argument_list|,
-name|gtk_entry_get_text
-argument_list|(
-name|GTK_ENTRY
-argument_list|(
-name|widget
-argument_list|)
-argument_list|)
-argument_list|,
-name|MAX_COMMENT
-argument_list|)
-expr_stmt|;
-block|}
-end_function
+end_if
+
+begin_comment
+comment|/* DISABLED - see http://bugzilla.gnome.org/show_bug.cgi?id=82763 */
+end_comment
+
+begin_endif
+unit|static void comment_entry_callback (GtkWidget *widget, 			gpointer   data) {   memset (xsvals.comment, 0, sizeof (xsvals.comment));   strncpy (xsvals.comment, 	   gtk_entry_get_text (GTK_ENTRY (widget)), MAX_COMMENT); }
+endif|#
+directive|endif
+end_endif
 
 begin_function
 specifier|static
