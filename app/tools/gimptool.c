@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell-cursor.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpstatusbar.h"
 end_include
 

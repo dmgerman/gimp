@@ -75,6 +75,12 @@ directive|include
 file|"gimpdisplayshell-selection.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpdisplayshell-transform.h"
+end_include
+
 begin_undef
 undef|#
 directive|undef

@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-title.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpstatusbar.h"
 end_include
 

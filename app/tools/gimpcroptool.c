@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell-transform.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gui/info-dialog.h"
 end_include
 
@@ -159,7 +165,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d02c820103
+DECL|enum|__anon28e5fd290103
 block|{
 DECL|enumerator|CREATING
 name|CREATING

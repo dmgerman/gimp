@@ -57,6 +57,12 @@ directive|include
 file|"gimpdisplayshell.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpdisplayshell-cursor.h"
+end_include
+
 begin_function
 name|gboolean
 DECL|function|gimp_displays_dirty (Gimp * gimp)

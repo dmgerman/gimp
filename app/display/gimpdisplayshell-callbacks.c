@@ -168,6 +168,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-cursor.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplayshell-layer-select.h"
 end_include
 
@@ -193,6 +199,18 @@ begin_include
 include|#
 directive|include
 file|"gimpdisplayshell-selection.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdisplayshell-title.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdisplayshell-transform.h"
 end_include
 
 begin_include
