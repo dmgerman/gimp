@@ -115,7 +115,7 @@ argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|buffers_paste_buffer_cmd_callback
+name|buffers_paste_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_BUFFER_PASTE
@@ -140,7 +140,7 @@ argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|buffers_paste_buffer_into_cmd_callback
+name|buffers_paste_into_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_BUFFER_PASTE_INTO
@@ -165,7 +165,7 @@ argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|buffers_paste_buffer_as_new_cmd_callback
+name|buffers_paste_as_new_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_BUFFER_PASTE_AS_NEW
@@ -190,7 +190,7 @@ argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|buffers_delete_buffer_cmd_callback
+name|buffers_delete_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_BUFFER_DELETE

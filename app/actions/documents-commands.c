@@ -191,8 +191,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|documents_open_document_cmd_callback (GtkAction * action,gpointer data)
-name|documents_open_document_cmd_callback
+DECL|function|documents_open_cmd_callback (GtkAction * action,gpointer data)
+name|documents_open_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -293,8 +293,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|documents_raise_or_open_document_cmd_callback (GtkAction * action,gpointer data)
-name|documents_raise_or_open_document_cmd_callback
+DECL|function|documents_raise_or_open_cmd_callback (GtkAction * action,gpointer data)
+name|documents_raise_or_open_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -518,8 +518,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|documents_remove_document_cmd_callback (GtkAction * action,gpointer data)
-name|documents_remove_document_cmd_callback
+DECL|function|documents_remove_cmd_callback (GtkAction * action,gpointer data)
+name|documents_remove_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -756,8 +756,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|documents_delete_dangling_foreach (GimpImagefile * imagefile,GimpContainer * container)
-name|documents_delete_dangling_foreach
+DECL|function|documents_remove_dangling_foreach (GimpImagefile * imagefile,GimpContainer * container)
+name|documents_remove_dangling_foreach
 parameter_list|(
 name|GimpImagefile
 modifier|*
@@ -796,8 +796,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|documents_delete_dangling_documents_cmd_callback (GtkAction * action,gpointer data)
-name|documents_delete_dangling_documents_cmd_callback
+DECL|function|documents_remove_dangling_cmd_callback (GtkAction * action,gpointer data)
+name|documents_remove_dangling_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -836,7 +836,7 @@ argument_list|,
 operator|(
 name|GFunc
 operator|)
-name|documents_delete_dangling_foreach
+name|documents_remove_dangling_foreach
 argument_list|,
 name|container
 argument_list|)

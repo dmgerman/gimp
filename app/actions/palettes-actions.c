@@ -127,7 +127,7 @@ argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|data_new_data_cmd_callback
+name|data_new_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_PALETTE_NEW
@@ -152,7 +152,7 @@ argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|palettes_import_palette_cmd_callback
+name|palettes_import_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_PALETTE_IMPORT
@@ -177,7 +177,7 @@ argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|data_duplicate_data_cmd_callback
+name|data_duplicate_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_PALETTE_DUPLICATE
@@ -202,7 +202,7 @@ argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|palettes_merge_palettes_cmd_callback
+name|palettes_merge_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_PALETTE_MERGE
@@ -227,7 +227,7 @@ argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|data_delete_data_cmd_callback
+name|data_delete_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_PALETTE_DELETE
@@ -252,7 +252,7 @@ argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|data_refresh_data_cmd_callback
+name|data_refresh_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_PALETTE_REFRESH
@@ -329,7 +329,7 @@ argument_list|)
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|data_edit_data_cmd_callback
+name|data_edit_cmd_callback
 argument_list|)
 argument_list|)
 expr_stmt|;

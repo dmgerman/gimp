@@ -18,7 +18,7 @@ end_define
 
 begin_function_decl
 name|void
-name|palettes_import_palette_cmd_callback
+name|palettes_import_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -32,7 +32,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|palettes_merge_palettes_cmd_callback
+name|palettes_merge_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

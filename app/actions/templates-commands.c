@@ -176,7 +176,7 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|templates_new_template_response
+name|templates_new_response
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -195,7 +195,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|templates_edit_template_response
+name|templates_edit_response
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -214,7 +214,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|templates_delete_template_response
+name|templates_delete_response
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -371,8 +371,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|templates_new_template_cmd_callback (GtkAction * action,gpointer data)
-name|templates_new_template_cmd_callback
+DECL|function|templates_new_cmd_callback (GtkAction * action,gpointer data)
+name|templates_new_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -450,7 +450,7 @@ literal|"response"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|templates_new_template_response
+name|templates_new_response
 argument_list|)
 argument_list|,
 name|options
@@ -468,8 +468,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|templates_duplicate_template_cmd_callback (GtkAction * action,gpointer data)
-name|templates_duplicate_template_cmd_callback
+DECL|function|templates_duplicate_cmd_callback (GtkAction * action,gpointer data)
+name|templates_duplicate_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -583,7 +583,7 @@ argument_list|(
 name|new_template
 argument_list|)
 expr_stmt|;
-name|templates_edit_template_cmd_callback
+name|templates_edit_cmd_callback
 argument_list|(
 name|action
 argument_list|,
@@ -596,8 +596,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|templates_edit_template_cmd_callback (GtkAction * action,gpointer data)
-name|templates_edit_template_cmd_callback
+DECL|function|templates_edit_cmd_callback (GtkAction * action,gpointer data)
+name|templates_edit_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -714,7 +714,7 @@ literal|"response"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|templates_edit_template_response
+name|templates_edit_response
 argument_list|)
 argument_list|,
 name|options
@@ -733,8 +733,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|templates_delete_template_cmd_callback (GtkAction * action,gpointer data)
-name|templates_delete_template_cmd_callback
+DECL|function|templates_delete_cmd_callback (GtkAction * action,gpointer data)
+name|templates_delete_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -906,7 +906,7 @@ literal|"response"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|templates_delete_template_response
+name|templates_delete_response
 argument_list|)
 argument_list|,
 name|delete_data
@@ -952,8 +952,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|templates_new_template_response (GtkWidget * dialog,gint response_id,TemplateOptionsDialog * options)
-name|templates_new_template_response
+DECL|function|templates_new_response (GtkWidget * dialog,gint response_id,TemplateOptionsDialog * options)
+name|templates_new_response
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1031,8 +1031,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|templates_edit_template_response (GtkWidget * dialog,gint response_id,TemplateOptionsDialog * options)
-name|templates_edit_template_response
+DECL|function|templates_edit_response (GtkWidget * dialog,gint response_id,TemplateOptionsDialog * options)
+name|templates_edit_response
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1095,8 +1095,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|templates_delete_template_response (GtkWidget * dialog,gint response_id,TemplateDeleteData * delete_data)
-name|templates_delete_template_response
+DECL|function|templates_delete_response (GtkWidget * dialog,gint response_id,TemplateDeleteData * delete_data)
+name|templates_delete_response
 parameter_list|(
 name|GtkWidget
 modifier|*

@@ -18,7 +18,7 @@ end_define
 
 begin_function_decl
 name|void
-name|buffers_paste_buffer_cmd_callback
+name|buffers_paste_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -32,7 +32,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|buffers_paste_buffer_into_cmd_callback
+name|buffers_paste_into_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -46,7 +46,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|buffers_paste_buffer_as_new_cmd_callback
+name|buffers_paste_as_new_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -60,7 +60,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|buffers_delete_buffer_cmd_callback
+name|buffers_delete_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

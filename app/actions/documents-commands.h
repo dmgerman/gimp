@@ -18,7 +18,7 @@ end_define
 
 begin_function_decl
 name|void
-name|documents_open_document_cmd_callback
+name|documents_open_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -32,7 +32,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|documents_raise_or_open_document_cmd_callback
+name|documents_raise_or_open_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -60,7 +60,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|documents_remove_document_cmd_callback
+name|documents_remove_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -102,7 +102,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|documents_delete_dangling_documents_cmd_callback
+name|documents_remove_dangling_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

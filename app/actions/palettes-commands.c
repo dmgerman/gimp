@@ -100,7 +100,7 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|palettes_merge_palettes_callback
+name|palettes_merge_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -123,8 +123,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|palettes_import_palette_cmd_callback (GtkAction * action,gpointer data)
-name|palettes_import_palette_cmd_callback
+DECL|function|palettes_import_cmd_callback (GtkAction * action,gpointer data)
+name|palettes_import_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -168,8 +168,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|palettes_merge_palettes_cmd_callback (GtkAction * action,gpointer data)
-name|palettes_merge_palettes_cmd_callback
+DECL|function|palettes_merge_cmd_callback (GtkAction * action,gpointer data)
+name|palettes_merge_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -224,7 +224,7 @@ argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
-name|palettes_merge_palettes_callback
+name|palettes_merge_callback
 argument_list|,
 name|editor
 argument_list|)
@@ -244,8 +244,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|palettes_merge_palettes_callback (GtkWidget * widget,const gchar * palette_name,gpointer data)
-name|palettes_merge_palettes_callback
+DECL|function|palettes_merge_callback (GtkWidget * widget,const gchar * palette_name,gpointer data)
+name|palettes_merge_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -265,7 +265,7 @@ directive|ifdef
 name|__GNUC__
 warning|#
 directive|warning
-warning|FIXME: reimplement palettes_merge_palettes_callback()
+warning|FIXME: reimplement palettes_merge_callback()
 endif|#
 directive|endif
 if|#

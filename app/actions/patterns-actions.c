@@ -146,7 +146,7 @@ argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|data_new_data_cmd_callback
+name|data_new_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_PATTERN_NEW
@@ -171,7 +171,7 @@ argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|data_duplicate_data_cmd_callback
+name|data_duplicate_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_PATTERN_DUPLICATE
@@ -196,7 +196,7 @@ argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|data_delete_data_cmd_callback
+name|data_delete_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_PATTERN_DELETE
@@ -221,7 +221,7 @@ argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|data_refresh_data_cmd_callback
+name|data_refresh_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_PATTERN_REFRESH
@@ -298,7 +298,7 @@ argument_list|)
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|data_edit_data_cmd_callback
+name|data_edit_cmd_callback
 argument_list|)
 argument_list|)
 expr_stmt|;

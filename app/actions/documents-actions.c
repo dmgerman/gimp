@@ -115,7 +115,7 @@ argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|documents_open_document_cmd_callback
+name|documents_open_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_DOCUMENT_OPEN
@@ -140,7 +140,7 @@ argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|documents_raise_or_open_document_cmd_callback
+name|documents_raise_or_open_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_DOCUMENT_OPEN
@@ -190,7 +190,7 @@ argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|documents_remove_document_cmd_callback
+name|documents_remove_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_DOCUMENT_REMOVE
@@ -265,7 +265,7 @@ argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|documents_delete_dangling_documents_cmd_callback
+name|documents_remove_dangling_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_DOCUMENT_REFRESH

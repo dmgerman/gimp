@@ -361,8 +361,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|data_new_data_cmd_callback (GtkAction * action,gpointer user_data)
-name|data_new_data_cmd_callback
+DECL|function|data_new_cmd_callback (GtkAction * action,gpointer user_data)
+name|data_new_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -464,8 +464,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|data_duplicate_data_cmd_callback (GtkAction * action,gpointer user_data)
-name|data_duplicate_data_cmd_callback
+DECL|function|data_duplicate_cmd_callback (GtkAction * action,gpointer user_data)
+name|data_duplicate_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -597,8 +597,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|data_delete_data_cmd_callback (GtkAction * action,gpointer user_data)
-name|data_delete_data_cmd_callback
+DECL|function|data_delete_cmd_callback (GtkAction * action,gpointer user_data)
+name|data_delete_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -807,8 +807,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|data_refresh_data_cmd_callback (GtkAction * action,gpointer user_data)
-name|data_refresh_data_cmd_callback
+DECL|function|data_refresh_cmd_callback (GtkAction * action,gpointer user_data)
+name|data_refresh_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -848,8 +848,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|data_edit_data_cmd_callback (GtkAction * action,const gchar * value,gpointer user_data)
-name|data_edit_data_cmd_callback
+DECL|function|data_edit_cmd_callback (GtkAction * action,const gchar * value,gpointer user_data)
+name|data_edit_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

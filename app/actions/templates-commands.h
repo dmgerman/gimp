@@ -32,7 +32,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|templates_new_template_cmd_callback
+name|templates_new_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -46,7 +46,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|templates_duplicate_template_cmd_callback
+name|templates_duplicate_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -60,7 +60,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|templates_edit_template_cmd_callback
+name|templates_edit_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -74,7 +74,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|templates_delete_template_cmd_callback
+name|templates_delete_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

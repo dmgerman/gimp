@@ -32,7 +32,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|data_new_data_cmd_callback
+name|data_new_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -46,7 +46,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|data_duplicate_data_cmd_callback
+name|data_duplicate_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -60,7 +60,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|data_delete_data_cmd_callback
+name|data_delete_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -74,7 +74,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|data_refresh_data_cmd_callback
+name|data_refresh_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -88,7 +88,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|data_edit_data_cmd_callback
+name|data_edit_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

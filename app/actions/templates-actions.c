@@ -140,7 +140,7 @@ argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|templates_new_template_cmd_callback
+name|templates_new_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_TEMPLATE_NEW
@@ -165,7 +165,7 @@ argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|templates_duplicate_template_cmd_callback
+name|templates_duplicate_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_TEMPLATE_DUPLICATE
@@ -190,7 +190,7 @@ argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|templates_edit_template_cmd_callback
+name|templates_edit_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_TEMPLATE_EDIT
@@ -215,7 +215,7 @@ argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|templates_delete_template_cmd_callback
+name|templates_delete_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_TEMPLATE_DELETE
