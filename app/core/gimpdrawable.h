@@ -88,8 +88,11 @@ end_function_decl
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d711f40103
+DECL|enum|__anon29cfb0740103
 block|{
+DECL|enumerator|FOREGROUND_FILL
+name|FOREGROUND_FILL
+block|,
 DECL|enumerator|BACKGROUND_FILL
 name|BACKGROUND_FILL
 block|,
@@ -101,9 +104,6 @@ name|TRANSPARENT_FILL
 block|,
 DECL|enumerator|NO_FILL
 name|NO_FILL
-block|,
-DECL|enumerator|FOREGROUND_FILL
-name|FOREGROUND_FILL
 DECL|typedef|GimpFillType
 block|}
 name|GimpFillType
