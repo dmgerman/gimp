@@ -25,7 +25,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gfig-dobject.h"
+file|"gfig-style.h"
 end_include
 
 begin_define
@@ -47,7 +47,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291b74af0108
+DECL|struct|__anon2a1c6deb0108
 block|{
 DECL|member|gridspacing
 name|gint
@@ -82,7 +82,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291b74af0208
+DECL|struct|__anon2a1c6deb0208
 block|{
 DECL|member|type
 name|SelectionType
@@ -282,7 +282,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291b74af0308
+DECL|struct|__anon2a1c6deb0308
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -481,7 +481,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291b74af0408
+DECL|struct|__anon2a1c6deb0408
 block|{
 DECL|member|debug_styles
 name|gboolean

@@ -28,16 +28,6 @@ directive|include
 file|"gfig-style.h"
 end_include
 
-begin_struct_decl
-struct_decl|struct
-name|Dobject
-struct_decl|;
-end_struct_decl
-
-begin_comment
-comment|/* fwd declaration for DobjFunc */
-end_comment
-
 begin_typedef
 DECL|typedef|DobjFunc
 typedef|typedef
@@ -47,7 +37,6 @@ modifier|*
 name|DobjFunc
 function_decl|)
 parameter_list|(
-name|struct
 name|Dobject
 modifier|*
 parameter_list|)
@@ -57,7 +46,6 @@ end_typedef
 begin_typedef
 DECL|typedef|DobjGenFunc
 typedef|typedef
-name|struct
 name|Dobject
 modifier|*
 function_decl|(
@@ -65,7 +53,6 @@ modifier|*
 name|DobjGenFunc
 function_decl|)
 parameter_list|(
-name|struct
 name|Dobject
 modifier|*
 parameter_list|)
@@ -75,7 +62,6 @@ end_typedef
 begin_typedef
 DECL|typedef|DobjLoadFunc
 typedef|typedef
-name|struct
 name|Dobject
 modifier|*
 function_decl|(
@@ -98,7 +84,6 @@ modifier|*
 name|DobjSaveFunc
 function_decl|)
 parameter_list|(
-name|struct
 name|Dobject
 modifier|*
 parameter_list|,
@@ -111,7 +96,6 @@ end_typedef
 begin_typedef
 DECL|typedef|DobjCreateFunc
 typedef|typedef
-name|struct
 name|Dobject
 modifier|*
 function_decl|(
@@ -155,7 +139,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2495640108
+DECL|struct|__anon2bbb7b3c0108
 block|{
 DECL|member|type
 name|DobjType
@@ -202,11 +186,10 @@ begin_comment
 comment|/* The object itself */
 end_comment
 
-begin_typedef
-DECL|struct|Dobject
-typedef|typedef
+begin_struct
+DECL|struct|_Dobject
 struct|struct
-name|Dobject
+name|_Dobject
 block|{
 DECL|member|type
 name|DobjType
@@ -240,20 +223,16 @@ name|gint
 name|style_no
 decl_stmt|;
 comment|/* style index of this specific object */
-DECL|typedef|Dobject
 block|}
-name|Dobject
-typedef|;
-end_typedef
+struct|;
+end_struct
 
-begin_typedef
-DECL|struct|DAllObjs
-typedef|typedef
+begin_struct
+DECL|struct|_DAllObjs
 struct|struct
-name|DAllObjs
+name|_DAllObjs
 block|{
 DECL|member|next
-name|struct
 name|DAllObjs
 modifier|*
 name|next
@@ -264,11 +243,9 @@ modifier|*
 name|obj
 decl_stmt|;
 comment|/* Object on list */
-DECL|typedef|DAllObjs
 block|}
-name|DAllObjs
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_comment
 comment|/* States of the object */

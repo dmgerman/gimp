@@ -22,10 +22,10 @@ directive|include
 file|<libgimp/gimpui.h>
 end_include
 
-begin_typedef
-typedef|typedef
+begin_struct
+DECL|struct|_Style
 struct|struct
-DECL|struct|__anon2b558e7c0108
+name|_Style
 block|{
 DECL|member|name
 name|gchar
@@ -99,11 +99,9 @@ DECL|member|reverselines
 name|gboolean
 name|reverselines
 decl_stmt|;
-DECL|typedef|Style
 block|}
-name|Style
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_function_decl
 name|void
