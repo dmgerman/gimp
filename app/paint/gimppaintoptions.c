@@ -92,7 +92,7 @@ DECL|macro|DEFAULT_PRESSURE_PRESSURE
 define|#
 directive|define
 name|DEFAULT_PRESSURE_PRESSURE
-value|TRUE
+value|FALSE
 end_define
 
 begin_define
@@ -185,7 +185,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9b06dd0103
+DECL|enum|__anon291db4bc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
