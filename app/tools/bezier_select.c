@@ -310,7 +310,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2c8042bd0108
+DECL|struct|__anon28b34bcc0108
 typedef|typedef
 struct|struct
 block|{
@@ -347,7 +347,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c8042bd0208
+DECL|struct|__anon28b34bcc0208
 typedef|typedef
 struct|struct
 block|{
@@ -402,7 +402,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c8042bd0308
+DECL|struct|__anon28b34bcc0308
 typedef|typedef
 struct|struct
 block|{
@@ -13494,7 +13494,7 @@ name|points
 argument_list|,
 name|SUBDIVIDE
 argument_list|,
-name|IMAGE_COORDS
+name|AA_IMAGE_COORDS
 argument_list|,
 name|bezier_stack_points
 argument_list|,
@@ -13751,6 +13751,10 @@ name|offset_x
 decl_stmt|,
 name|offset_y
 decl_stmt|;
+name|gdouble
+modifier|*
+name|ptr
+decl_stmt|;
 name|drawable
 operator|=
 name|gimage_active_drawable
@@ -13771,25 +13775,6 @@ operator|&
 name|offset_y
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|(
-name|offset_x
-operator|!=
-literal|0
-operator|)
-operator|||
-operator|(
-name|offset_y
-operator|!=
-literal|0
-operator|)
-condition|)
-block|{
-name|gdouble
-modifier|*
-name|ptr
-decl_stmt|;
 name|ptr
 operator|=
 name|rpnts
@@ -13815,9 +13800,19 @@ condition|)
 block|{
 operator|*
 name|ptr
+operator|/=
+name|SUPERSAMPLE
+expr_stmt|;
+operator|*
+name|ptr
 operator|++
 operator|-=
 name|offset_x
+expr_stmt|;
+operator|*
+name|ptr
+operator|/=
+name|SUPERSAMPLE
 expr_stmt|;
 operator|*
 name|ptr
@@ -13825,7 +13820,6 @@ operator|++
 operator|-=
 name|offset_y
 expr_stmt|;
-block|}
 block|}
 comment|/* Stroke with the correct tool */
 name|return_vals

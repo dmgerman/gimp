@@ -3741,7 +3741,7 @@ modifier|*
 name|drawable
 parameter_list|)
 block|{
-name|int
+name|double
 name|n
 decl_stmt|;
 name|vector2d
@@ -4017,7 +4017,11 @@ name|paint_core
 operator|->
 name|distance
 operator|<=
+operator|(
 name|total
+operator|+
+name|EPSILON
+operator|)
 condition|)
 block|{
 name|t

@@ -2446,12 +2446,6 @@ index|[
 literal|1
 index|]
 expr_stmt|;
-if|if
-condition|(
-name|num_strokes
-operator|==
-literal|1
-condition|)
 name|paintbrush_non_gui_paint_func
 argument_list|(
 operator|&

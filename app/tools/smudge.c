@@ -1944,6 +1944,10 @@ name|pressure
 expr_stmt|;
 name|non_gui_paint_core
 operator|.
+name|curx
+operator|=
+name|non_gui_paint_core
+operator|.
 name|startx
 operator|=
 name|non_gui_paint_core
@@ -1957,6 +1961,10 @@ index|]
 expr_stmt|;
 name|non_gui_paint_core
 operator|.
+name|cury
+operator|=
+name|non_gui_paint_core
+operator|.
 name|starty
 operator|=
 name|non_gui_paint_core
@@ -1968,12 +1976,6 @@ index|[
 literal|1
 index|]
 expr_stmt|;
-if|if
-condition|(
-name|num_strokes
-operator|==
-literal|1
-condition|)
 name|smudge_non_gui_paint_func
 argument_list|(
 operator|&

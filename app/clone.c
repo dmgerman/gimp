@@ -142,7 +142,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2a0aa50103
+DECL|enum|__anon2bbd1bca0103
 block|{
 DECL|enumerator|AlignNo
 name|AlignNo
@@ -3532,12 +3532,6 @@ operator|.
 name|starty
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|num_strokes
-operator|==
-literal|1
-condition|)
 name|clone_non_gui_paint_func
 argument_list|(
 operator|&
