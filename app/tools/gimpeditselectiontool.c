@@ -1490,7 +1490,7 @@ operator|->
 name|cumlx
 operator|!=
 literal|0
-operator|&&
+operator|||
 name|edit_select
 operator|->
 name|cumly
