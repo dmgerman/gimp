@@ -197,7 +197,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f2636c0103
+DECL|enum|__anon29d1c6480103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -222,7 +222,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f2636c0203
+DECL|enum|__anon29d1c6480203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -434,7 +434,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f2636c0303
+DECL|enum|__anon29d1c6480303
 block|{
 DECL|enumerator|TREE_ITEM_DO_NOTHING
 name|TREE_ITEM_DO_NOTHING
@@ -456,7 +456,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29f2636c0408
+DECL|struct|__anon29d1c6480408
 block|{
 DECL|member|directory
 name|gboolean
@@ -2024,6 +2024,21 @@ argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_dialog_set_alternative_button_order
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|,
+name|GTK_RESPONSE_CANCEL
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

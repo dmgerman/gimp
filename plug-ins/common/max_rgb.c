@@ -161,7 +161,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5480700103
+DECL|enum|__anon29acc1fe0103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -179,7 +179,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5480700208
+DECL|struct|__anon29acc1fe0208
 block|{
 DECL|member|max_p
 name|gint
@@ -551,7 +551,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2c5480700308
+DECL|struct|__anon29acc1fe0308
 typedef|typedef
 struct|struct
 block|{
@@ -1060,6 +1060,21 @@ argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_dialog_set_alternative_button_order
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|,
+name|GTK_RESPONSE_CANCEL
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|main_vbox

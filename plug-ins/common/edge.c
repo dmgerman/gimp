@@ -99,7 +99,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c46bd40103
+DECL|enum|__anon296cfc690103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -125,7 +125,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c46bd40208
+DECL|struct|__anon296cfc690208
 block|{
 DECL|member|amount
 name|gdouble
@@ -3123,6 +3123,21 @@ argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_dialog_set_alternative_button_order
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|,
+name|GTK_RESPONSE_CANCEL
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|main_vbox

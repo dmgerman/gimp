@@ -201,7 +201,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon2c22f26d0103
+DECL|enum|__anon28cb71cd0103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -221,7 +221,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c22f26d0208
+DECL|struct|__anon28cb71cd0208
 block|{
 DECL|member|x1
 name|gdouble
@@ -424,7 +424,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c22f26d0308
+DECL|struct|__anon28cb71cd0308
 block|{
 DECL|member|x1
 name|gint
@@ -467,7 +467,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c22f26d0408
+DECL|struct|__anon28cb71cd0408
 block|{
 DECL|member|width
 name|gint
@@ -1022,7 +1022,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c22f26d0508
+DECL|struct|__anon28cb71cd0508
 block|{
 DECL|member|r
 name|guchar
@@ -2906,7 +2906,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c22f26d0608
+DECL|struct|__anon28cb71cd0608
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -3887,6 +3887,21 @@ argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_dialog_set_alternative_button_order
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|,
+name|GTK_RESPONSE_CANCEL
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|mainbox

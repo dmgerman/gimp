@@ -104,7 +104,7 @@ value|GDK_EXPOSURE_MASK | \                         GDK_ENTER_NOTIFY_MASK | \   
 end_define
 
 begin_typedef
-DECL|struct|__anon298853e80108
+DECL|struct|__anon2ac260890108
 typedef|typedef
 struct|struct
 block|{
@@ -119,7 +119,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon298853e80208
+DECL|struct|__anon2ac260890208
 typedef|typedef
 struct|struct
 block|{
@@ -153,7 +153,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon298853e80303
+DECL|enum|__anon2ac260890303
 typedef|typedef
 enum|enum
 block|{
@@ -175,7 +175,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon298853e80403
+DECL|enum|__anon2ac260890403
 enum|enum
 block|{
 DECL|enumerator|NONEATALL
@@ -207,7 +207,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon298853e80503
+DECL|enum|__anon2ac260890503
 enum|enum
 block|{
 DECL|enumerator|BY_HUE
@@ -226,7 +226,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon298853e80603
+DECL|enum|__anon2ac260890603
 enum|enum
 block|{
 DECL|enumerator|RED
@@ -254,7 +254,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon298853e80703
+DECL|enum|__anon2ac260890703
 enum|enum
 block|{
 DECL|enumerator|DOWN
@@ -272,7 +272,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon298853e80808
+DECL|struct|__anon2ac260890808
 typedef|typedef
 struct|struct
 block|{
@@ -318,7 +318,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon298853e80908
+DECL|struct|__anon2ac260890908
 typedef|typedef
 struct|struct
 block|{
@@ -1272,7 +1272,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon298853e80a08
+DECL|struct|__anon2ac260890a08
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -6087,6 +6087,23 @@ argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_dialog_set_alternative_button_order
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dlg
+argument_list|)
+argument_list|,
+name|RESPONSE_RESET
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|,
+name|GTK_RESPONSE_CANCEL
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

@@ -124,7 +124,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab33a440108
+DECL|struct|__anon27c3e0b50108
 block|{
 DECL|member|period
 name|gint
@@ -923,7 +923,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2ab33a440208
+DECL|struct|__anon27c3e0b50208
 typedef|typedef
 struct|struct
 block|{
@@ -2131,6 +2131,21 @@ argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_dialog_set_alternative_button_order
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|,
+name|GTK_RESPONSE_CANCEL
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 comment|/*  The main vbox  */

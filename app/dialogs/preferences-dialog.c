@@ -5135,6 +5135,21 @@ argument_list|,
 name|dialog
 argument_list|)
 expr_stmt|;
+name|gtk_dialog_set_alternative_button_order
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|,
+name|GTK_RESPONSE_CANCEL
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
 comment|/* The main hbox */
 name|hbox
 operator|=
@@ -7936,7 +7951,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2af7bbe90108
+DECL|struct|__anon275738d90108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9099,7 +9114,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2af7bbe90208
+DECL|struct|__anon275738d90208
 block|{
 DECL|member|label
 specifier|const
@@ -10377,7 +10392,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2af7bbe90308
+DECL|struct|__anon275738d90308
 block|{
 DECL|member|label
 specifier|const
@@ -10534,7 +10549,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2af7bbe90408
+DECL|struct|__anon275738d90408
 block|{
 DECL|member|tree_label
 specifier|const

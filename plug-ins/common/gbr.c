@@ -159,7 +159,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9221fc0108
+DECL|struct|__anon2a0824e40108
 block|{
 DECL|member|description
 name|gchar
@@ -1987,7 +1987,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2c9221fc020a
+DECL|union|__anon2a0824e4020a
 block|{
 DECL|member|u
 name|guint16
@@ -2842,6 +2842,21 @@ argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_dialog_set_alternative_button_order
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dlg
+argument_list|)
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|,
+name|GTK_RESPONSE_CANCEL
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 comment|/* The main table */

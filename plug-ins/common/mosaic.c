@@ -164,7 +164,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd41a610108
+DECL|struct|__anon2c6a5e2a0108
 block|{
 DECL|member|x
 DECL|member|y
@@ -182,7 +182,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd41a610208
+DECL|struct|__anon2c6a5e2a0208
 block|{
 DECL|member|npts
 name|guint
@@ -204,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd41a610308
+DECL|struct|__anon2c6a5e2a0308
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -233,7 +233,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd41a610408
+DECL|struct|__anon2c6a5e2a0408
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -2681,6 +2681,21 @@ argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_dialog_set_alternative_button_order
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|,
+name|GTK_RESPONSE_CANCEL
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|main_vbox

@@ -130,7 +130,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29797bdd0103
+DECL|enum|__anon2964a4140103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -148,7 +148,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29797bdd0203
+DECL|enum|__anon2964a4140203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -164,7 +164,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29797bdd0308
+DECL|struct|__anon2964a4140308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -223,7 +223,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29797bdd0408
+DECL|struct|__anon2964a4140408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -268,7 +268,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29797bdd0508
+DECL|struct|__anon2964a4140508
 block|{
 DECL|member|mouse_x
 name|gint
@@ -3419,6 +3419,21 @@ argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_dialog_set_alternative_button_order
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|,
+name|GTK_RESPONSE_CANCEL
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|paned

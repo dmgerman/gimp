@@ -85,7 +85,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fc99420103
+DECL|enum|__anon2b4342da0103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -105,7 +105,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fc99420208
+DECL|struct|__anon2b4342da0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -1507,6 +1507,21 @@ argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_dialog_set_alternative_button_order
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dlg
+argument_list|)
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|,
+name|GTK_RESPONSE_CANCEL
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|vbox

@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dc01f70108
+DECL|struct|__anon29f2bb6a0108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -504,7 +504,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dc01f70203
+DECL|enum|__anon29f2bb6a0203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -523,7 +523,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dc01f70308
+DECL|struct|__anon29f2bb6a0308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -593,7 +593,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dc01f70408
+DECL|struct|__anon29f2bb6a0408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -1343,6 +1343,21 @@ argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_dialog_set_alternative_button_order
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dlg
+argument_list|)
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|,
+name|GTK_RESPONSE_CANCEL
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|main_vbox

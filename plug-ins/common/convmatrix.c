@@ -91,7 +91,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277a202f0103
+DECL|enum|__anon2767cbbf0103
 block|{
 DECL|enumerator|EXTEND
 name|EXTEND
@@ -302,7 +302,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277a202f0208
+DECL|struct|__anon2767cbbf0208
 block|{
 DECL|member|matrix
 name|gfloat
@@ -459,7 +459,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon277a202f0308
+DECL|struct|__anon2767cbbf0308
 block|{
 DECL|member|matrix
 name|GtkWidget
@@ -3883,6 +3883,23 @@ argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_dialog_set_alternative_button_order
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dlg
+argument_list|)
+argument_list|,
+name|RESPONSE_RESET
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|,
+name|GTK_RESPONSE_CANCEL
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
