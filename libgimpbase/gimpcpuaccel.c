@@ -77,7 +77,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ad95610103
+DECL|enum|__anon2c1a69a70103
 block|{
 DECL|enumerator|ARCH_X86_VENDOR_NONE
 name|ARCH_X86_VENDOR_NONE
@@ -124,7 +124,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ad95610203
+DECL|enum|__anon2c1a69a70203
 block|{
 DECL|enumerator|ARCH_X86_INTEL_FEATURE_MMX
 name|ARCH_X86_INTEL_FEATURE_MMX
@@ -615,9 +615,12 @@ parameter_list|)
 block|{
 name|guint32
 name|caps
-init|=
-literal|0
 decl_stmt|;
+name|caps
+operator|=
+name|arch_accel_intel
+argument_list|()
+expr_stmt|;
 ifdef|#
 directive|ifdef
 name|USE_MMX
@@ -651,8 +654,7 @@ operator|<
 literal|0x80000001
 condition|)
 return|return
-name|arch_accel_intel
-argument_list|()
+name|caps
 return|;
 ifdef|#
 directive|ifdef
@@ -714,9 +716,12 @@ parameter_list|)
 block|{
 name|guint32
 name|caps
-init|=
-literal|0
 decl_stmt|;
+name|caps
+operator|=
+name|arch_accel_intel
+argument_list|()
+expr_stmt|;
 ifdef|#
 directive|ifdef
 name|USE_MMX
@@ -750,8 +755,7 @@ operator|<
 literal|0x80000001
 condition|)
 return|return
-name|arch_accel_intel
-argument_list|()
+name|caps
 return|;
 name|cpuid
 argument_list|(
@@ -823,9 +827,12 @@ parameter_list|)
 block|{
 name|guint32
 name|caps
-init|=
-literal|0
 decl_stmt|;
+name|caps
+operator|=
+name|arch_accel_intel
+argument_list|()
+expr_stmt|;
 ifdef|#
 directive|ifdef
 name|USE_MMX
@@ -859,8 +866,7 @@ operator|!=
 literal|2
 condition|)
 return|return
-name|arch_accel_intel
-argument_list|()
+name|caps
 return|;
 name|cpuid
 argument_list|(
