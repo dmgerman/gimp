@@ -2855,6 +2855,9 @@ name|unsigned
 name|char
 modifier|*
 name|data
+decl_stmt|,
+modifier|*
+name|data1
 decl_stmt|;
 name|int
 name|x
@@ -3016,6 +3019,8 @@ name|pr
 argument_list|)
 control|)
 block|{
+name|data1
+operator|=
 name|data
 operator|=
 name|maskPR
@@ -3160,6 +3165,12 @@ name|ey
 condition|;
 name|y
 operator|++
+operator|,
+name|data1
+operator|+=
+name|maskPR
+operator|.
+name|rowstride
 control|)
 block|{
 for|for
@@ -3169,6 +3180,10 @@ operator|=
 name|maskPR
 operator|.
 name|x
+operator|,
+name|data
+operator|=
+name|data1
 init|;
 name|x
 operator|<
