@@ -1579,10 +1579,6 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|GtkStyle
-modifier|*
-name|style
-decl_stmt|;
 if|if
 condition|(
 name|no_interface
@@ -1600,6 +1596,10 @@ block|{
 name|GtkWidget
 modifier|*
 name|vbox
+decl_stmt|;
+name|GtkStyle
+modifier|*
+name|style
 decl_stmt|;
 name|win_initstatus
 operator|=
