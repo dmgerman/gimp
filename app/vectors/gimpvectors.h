@@ -94,6 +94,11 @@ DECL|member|parent_instance
 name|GimpViewable
 name|parent_instance
 decl_stmt|;
+DECL|member|gimage
+name|GimpImage
+modifier|*
+name|gimage
+decl_stmt|;
 DECL|member|visible
 name|gboolean
 name|visible
@@ -447,6 +452,34 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|void
+name|gimp_vectors_set_image
+parameter_list|(
+name|GimpVectors
+modifier|*
+name|vectors
+parameter_list|,
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpImage
+modifier|*
+name|gimp_vectors_get_image
+parameter_list|(
+specifier|const
+name|GimpVectors
+modifier|*
+name|vectors
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_comment
 comment|/* accessing / modifying the anchors */
