@@ -59,7 +59,7 @@ begin_typedef
 typedef|typedef
 struct|struct
 comment|/**** Printer List ****/
-DECL|struct|__anon2944a6c10108
+DECL|struct|__anon287f25470108
 block|{
 DECL|member|active
 name|int
@@ -184,7 +184,6 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-specifier|const
 name|gchar
 modifier|*
 name|image_filename

@@ -677,6 +677,9 @@ argument_list|)
 argument_list|,
 literal|"textdomain"
 argument_list|,
+operator|(
+name|gpointer
+operator|)
 name|menu_entry
 operator|->
 name|domain

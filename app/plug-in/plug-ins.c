@@ -237,6 +237,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|std_plugins_domain
+specifier|const
 name|gchar
 modifier|*
 name|std_plugins_domain

@@ -337,8 +337,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|image_filename
-specifier|const
-name|char
+name|gchar
 modifier|*
 name|image_filename
 decl_stmt|;
@@ -346,14 +345,14 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|image_width
-name|int
+name|gint
 name|image_width
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|image_height
-name|int
+name|gint
 name|image_height
 decl_stmt|;
 end_decl_stmt
@@ -703,23 +702,6 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|gint
-name|nargs
-init|=
-sizeof|sizeof
-argument_list|(
-name|args
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|args
-index|[
-literal|0
-index|]
-argument_list|)
-decl_stmt|;
-specifier|static
 name|gchar
 modifier|*
 name|blurb
@@ -777,7 +759,10 @@ name|types
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
-name|nargs
+name|G_N_ELEMENTS
+argument_list|(
+name|args
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -1051,8 +1036,10 @@ name|ncolors
 decl_stmt|;
 comment|/* Number of colors in colormap */
 name|GimpParam
-modifier|*
 name|values
+index|[
+literal|1
+index|]
 decl_stmt|;
 comment|/* Return values */
 ifdef|#
@@ -1159,15 +1146,6 @@ operator|.
 name|data
 operator|.
 name|d_int32
-expr_stmt|;
-name|values
-operator|=
-name|g_new
-argument_list|(
-name|GimpParam
-argument_list|,
-literal|1
-argument_list|)
 expr_stmt|;
 name|values
 index|[

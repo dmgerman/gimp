@@ -195,6 +195,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
+specifier|const
 name|gchar
 modifier|*
 name|std_plugins_domain

@@ -188,11 +188,13 @@ modifier|*
 name|proc_def
 decl_stmt|;
 DECL|member|domain
+specifier|const
 name|gchar
 modifier|*
 name|domain
 decl_stmt|;
 DECL|member|help_path
+specifier|const
 name|gchar
 modifier|*
 name|help_path
