@@ -107,6 +107,11 @@ modifier|*
 modifier|*
 name|ret_segment_start
 parameter_list|,
+name|GimpAnchor
+modifier|*
+modifier|*
+name|ret_segment_end
+parameter_list|,
 name|gdouble
 modifier|*
 name|ret_pos
@@ -1967,6 +1972,7 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/* dragging close to endpoints just moves the handle related to    * the endpoint. Just make sure that feel_good is in the range from    * 0 to 1. The 1.0 / 6.0 and 5.0 / 6.0 are duplicated in     * tools/gimpvectortool.c.  */
 if|if
 condition|(
 name|position
@@ -2752,7 +2758,7 @@ end_function
 begin_function
 specifier|static
 name|gdouble
-DECL|function|gimp_bezier_stroke_nearest_point_get (const GimpStroke * stroke,const GimpCoords * coord,const gdouble precision,GimpCoords * ret_point,GimpAnchor ** ret_segment_start,gdouble * ret_pos)
+DECL|function|gimp_bezier_stroke_nearest_point_get (const GimpStroke * stroke,const GimpCoords * coord,const gdouble precision,GimpCoords * ret_point,GimpAnchor ** ret_segment_start,GimpAnchor ** ret_segment_end,gdouble * ret_pos)
 name|gimp_bezier_stroke_nearest_point_get
 parameter_list|(
 specifier|const
@@ -2777,6 +2783,11 @@ name|GimpAnchor
 modifier|*
 modifier|*
 name|ret_segment_start
+parameter_list|,
+name|GimpAnchor
+modifier|*
+modifier|*
+name|ret_segment_end
 parameter_list|,
 name|gdouble
 modifier|*
@@ -2806,6 +2817,9 @@ decl_stmt|;
 name|GimpAnchor
 modifier|*
 name|segment_start
+decl_stmt|,
+modifier|*
+name|segment_end
 decl_stmt|,
 modifier|*
 name|anchor
@@ -2917,6 +2931,12 @@ operator|==
 literal|4
 condition|)
 block|{
+name|segment_end
+operator|=
+name|anchorlist
+operator|->
+name|data
+expr_stmt|;
 name|dist
 operator|=
 name|gimp_bezier_stroke_segment_nearest_point_get
@@ -2977,6 +2997,15 @@ operator|*
 name|ret_segment_start
 operator|=
 name|segment_start
+expr_stmt|;
+if|if
+condition|(
+name|ret_segment_end
+condition|)
+operator|*
+name|ret_segment_end
+operator|=
+name|segment_end
 expr_stmt|;
 block|}
 name|segment_start
@@ -3054,10 +3083,8 @@ if|if
 condition|(
 name|anchorlist
 condition|)
-name|segmentcoords
-index|[
-literal|3
-index|]
+block|{
+name|segment_end
 operator|=
 name|GIMP_ANCHOR
 argument_list|(
@@ -3065,9 +3092,17 @@ name|anchorlist
 operator|->
 name|data
 argument_list|)
+expr_stmt|;
+name|segmentcoords
+index|[
+literal|3
+index|]
+operator|=
+name|segment_end
 operator|->
 name|position
 expr_stmt|;
+block|}
 name|dist
 operator|=
 name|gimp_bezier_stroke_segment_nearest_point_get
@@ -3128,6 +3163,15 @@ operator|*
 name|ret_segment_start
 operator|=
 name|segment_start
+expr_stmt|;
+if|if
+condition|(
+name|ret_segment_end
+condition|)
+operator|*
+name|ret_segment_end
+operator|=
+name|segment_end
 expr_stmt|;
 block|}
 block|}

@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28cae3740103
+DECL|enum|__anon29bd08250103
 block|{
 DECL|enumerator|VECTORS_SELECT_VECTOR
 name|VECTORS_SELECT_VECTOR
@@ -216,6 +216,12 @@ modifier|*
 name|cur_anchor
 decl_stmt|;
 comment|/* the current Anchor                */
+DECL|member|cur_anchor2
+name|GimpAnchor
+modifier|*
+name|cur_anchor2
+decl_stmt|;
+comment|/* secondary Anchor (end on_curve)   */
 DECL|member|cur_stroke
 name|GimpStroke
 modifier|*

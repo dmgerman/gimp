@@ -999,6 +999,8 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 operator|&
 name|vectors
 argument_list|)
@@ -2336,6 +2338,8 @@ argument_list|,
 literal|7
 argument_list|,
 literal|7
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

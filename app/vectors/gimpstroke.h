@@ -198,6 +198,11 @@ modifier|*
 modifier|*
 name|ret_segment_start
 parameter_list|,
+name|GimpAnchor
+modifier|*
+modifier|*
+name|ret_segment_end
+parameter_list|,
 name|gdouble
 modifier|*
 name|ret_pos
@@ -832,6 +837,11 @@ name|GimpAnchor
 modifier|*
 modifier|*
 name|ret_segment_start
+parameter_list|,
+name|GimpAnchor
+modifier|*
+modifier|*
+name|ret_segment_end
 parameter_list|,
 name|gdouble
 modifier|*

@@ -3926,7 +3926,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_draw_tool_on_vectors_curve (GimpDrawTool * draw_tool,GimpDisplay * gdisp,GimpVectors * vectors,GimpCoords * coord,gint width,gint height,GimpCoords * ret_coords,gdouble * ret_pos,GimpAnchor ** ret_segment_start,GimpStroke ** ret_stroke)
+DECL|function|gimp_draw_tool_on_vectors_curve (GimpDrawTool * draw_tool,GimpDisplay * gdisp,GimpVectors * vectors,GimpCoords * coord,gint width,gint height,GimpCoords * ret_coords,gdouble * ret_pos,GimpAnchor ** ret_segment_start,GimpAnchor ** ret_segment_end,GimpStroke ** ret_stroke)
 name|gimp_draw_tool_on_vectors_curve
 parameter_list|(
 name|GimpDrawTool
@@ -3964,6 +3964,11 @@ modifier|*
 modifier|*
 name|ret_segment_start
 parameter_list|,
+name|GimpAnchor
+modifier|*
+modifier|*
+name|ret_segment_end
+parameter_list|,
 name|GimpStroke
 modifier|*
 modifier|*
@@ -3979,6 +3984,10 @@ decl_stmt|;
 name|GimpAnchor
 modifier|*
 name|segment_start
+decl_stmt|;
+name|GimpAnchor
+modifier|*
+name|segment_end
 decl_stmt|;
 name|GimpCoords
 name|min_coords
@@ -4062,6 +4071,15 @@ name|NULL
 expr_stmt|;
 if|if
 condition|(
+name|ret_segment_start
+condition|)
+operator|*
+name|ret_segment_end
+operator|=
+name|NULL
+expr_stmt|;
+if|if
+condition|(
 name|ret_stroke
 condition|)
 operator|*
@@ -4103,6 +4121,9 @@ name|cur_coords
 argument_list|,
 operator|&
 name|segment_start
+argument_list|,
+operator|&
+name|segment_end
 argument_list|,
 operator|&
 name|cur_pos
@@ -4153,6 +4174,15 @@ operator|*
 name|ret_segment_start
 operator|=
 name|segment_start
+expr_stmt|;
+if|if
+condition|(
+name|ret_segment_end
+condition|)
+operator|*
+name|ret_segment_end
+operator|=
+name|segment_end
 expr_stmt|;
 if|if
 condition|(
@@ -4217,7 +4247,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_draw_tool_on_vectors (GimpDrawTool * draw_tool,GimpDisplay * gdisp,GimpCoords * coords,gint width,gint height,GimpCoords * ret_coords,gdouble * ret_pos,GimpAnchor ** ret_segment_start,GimpStroke ** ret_stroke,GimpVectors ** ret_vectors)
+DECL|function|gimp_draw_tool_on_vectors (GimpDrawTool * draw_tool,GimpDisplay * gdisp,GimpCoords * coords,gint width,gint height,GimpCoords * ret_coords,gdouble * ret_pos,GimpAnchor ** ret_segment_start,GimpAnchor ** ret_segment_end,GimpStroke ** ret_stroke,GimpVectors ** ret_vectors)
 name|gimp_draw_tool_on_vectors
 parameter_list|(
 name|GimpDrawTool
@@ -4250,6 +4280,11 @@ name|GimpAnchor
 modifier|*
 modifier|*
 name|ret_segment_start
+parameter_list|,
+name|GimpAnchor
+modifier|*
+modifier|*
+name|ret_segment_end
 parameter_list|,
 name|GimpStroke
 modifier|*
@@ -4299,6 +4334,15 @@ name|ret_segment_start
 condition|)
 operator|*
 name|ret_segment_start
+operator|=
+name|NULL
+expr_stmt|;
+if|if
+condition|(
+name|ret_segment_end
+condition|)
+operator|*
+name|ret_segment_end
 operator|=
 name|NULL
 expr_stmt|;
@@ -4384,6 +4428,8 @@ argument_list|,
 name|ret_pos
 argument_list|,
 name|ret_segment_start
+argument_list|,
+name|ret_segment_end
 argument_list|,
 name|ret_stroke
 argument_list|)

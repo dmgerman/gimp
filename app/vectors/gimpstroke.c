@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b7a60f0103
+DECL|enum|__anon2abae29f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -185,6 +185,11 @@ name|GimpAnchor
 modifier|*
 modifier|*
 name|ret_segment_start
+parameter_list|,
+name|GimpAnchor
+modifier|*
+modifier|*
+name|ret_segment_end
 parameter_list|,
 name|gdouble
 modifier|*
@@ -1657,7 +1662,7 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_stroke_nearest_point_get (const GimpStroke * stroke,const GimpCoords * coord,const gdouble precision,GimpCoords * ret_point,GimpAnchor ** ret_segment_start,gdouble * ret_pos)
+DECL|function|gimp_stroke_nearest_point_get (const GimpStroke * stroke,const GimpCoords * coord,const gdouble precision,GimpCoords * ret_point,GimpAnchor ** ret_segment_start,GimpAnchor ** ret_segment_end,gdouble * ret_pos)
 name|gimp_stroke_nearest_point_get
 parameter_list|(
 specifier|const
@@ -1682,6 +1687,11 @@ name|GimpAnchor
 modifier|*
 modifier|*
 name|ret_segment_start
+parameter_list|,
+name|GimpAnchor
+modifier|*
+modifier|*
+name|ret_segment_end
 parameter_list|,
 name|gdouble
 modifier|*
@@ -1725,6 +1735,8 @@ name|ret_point
 argument_list|,
 name|ret_segment_start
 argument_list|,
+name|ret_segment_end
+argument_list|,
 name|ret_pos
 argument_list|)
 return|;
@@ -1734,7 +1746,7 @@ end_function
 begin_function
 specifier|static
 name|gdouble
-DECL|function|gimp_stroke_real_nearest_point_get (const GimpStroke * stroke,const GimpCoords * coord,const gdouble precision,GimpCoords * ret_point,GimpAnchor ** ret_segment_start,gdouble * ret_pos)
+DECL|function|gimp_stroke_real_nearest_point_get (const GimpStroke * stroke,const GimpCoords * coord,const gdouble precision,GimpCoords * ret_point,GimpAnchor ** ret_segment_start,GimpAnchor ** ret_segment_end,gdouble * ret_pos)
 name|gimp_stroke_real_nearest_point_get
 parameter_list|(
 specifier|const
@@ -1759,6 +1771,11 @@ name|GimpAnchor
 modifier|*
 modifier|*
 name|ret_segment_start
+parameter_list|,
+name|GimpAnchor
+modifier|*
+modifier|*
+name|ret_segment_end
 parameter_list|,
 name|gdouble
 modifier|*

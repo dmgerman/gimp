@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27867a510103
+DECL|enum|__anon2c369bbf0103
 block|{
 DECL|enumerator|GIMP_HANDLE_SQUARE
 name|GIMP_HANDLE_SQUARE
@@ -742,6 +742,11 @@ modifier|*
 modifier|*
 name|ret_segment_start
 parameter_list|,
+name|GimpAnchor
+modifier|*
+modifier|*
+name|ret_segment_end
+parameter_list|,
 name|GimpStroke
 modifier|*
 modifier|*
@@ -784,6 +789,11 @@ name|GimpAnchor
 modifier|*
 modifier|*
 name|ret_segment_start
+parameter_list|,
+name|GimpAnchor
+modifier|*
+modifier|*
+name|ret_segment_end
 parameter_list|,
 name|GimpStroke
 modifier|*
