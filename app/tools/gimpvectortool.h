@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d982e00103
+DECL|enum|__anon2a8d991c0103
 block|{
 DECL|enumerator|VECTORS_CREATE_VECTOR
 name|VECTORS_CREATE_VECTOR
@@ -184,25 +184,30 @@ name|GimpAnchor
 modifier|*
 name|cur_anchor
 decl_stmt|;
-comment|/*  The current Anchor            */
+comment|/*  The current Anchor                */
 DECL|member|cur_stroke
 name|GimpStroke
 modifier|*
 name|cur_stroke
 decl_stmt|;
-comment|/*  The current Stroke            */
+comment|/*  The current Stroke                */
+DECL|member|cur_position
+name|gdouble
+name|cur_position
+decl_stmt|;
+comment|/*  The current Position on a segment */
 DECL|member|vectors
 name|GimpVectors
 modifier|*
 name|vectors
 decl_stmt|;
-comment|/*  The current Vector data       */
+comment|/*  The current Vector data           */
 DECL|member|active_anchors
 name|GList
 modifier|*
 name|active_anchors
 decl_stmt|;
-comment|/*  The currently active anchors  */
+comment|/*  The currently active anchors      */
 block|}
 struct|;
 end_struct
