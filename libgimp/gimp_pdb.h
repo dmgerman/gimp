@@ -149,12 +149,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpmisctools_pdb.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimppainttools_pdb.h>
 end_include
 

@@ -274,17 +274,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|register_misc_tools_procs
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|register_paint_tools_procs
 parameter_list|(
 name|Gimp
@@ -666,7 +655,7 @@ argument_list|(
 literal|"File Operations"
 argument_list|)
 argument_list|,
-literal|0.233
+literal|0.239
 argument_list|)
 expr_stmt|;
 name|register_fileops_procs
@@ -686,7 +675,7 @@ argument_list|(
 literal|"Floating selections"
 argument_list|)
 argument_list|,
-literal|0.256
+literal|0.262
 argument_list|)
 expr_stmt|;
 name|register_floating_sel_procs
@@ -706,7 +695,7 @@ argument_list|(
 literal|"Font UI"
 argument_list|)
 argument_list|,
-literal|0.274
+literal|0.28
 argument_list|)
 expr_stmt|;
 name|register_font_select_procs
@@ -726,7 +715,7 @@ argument_list|(
 literal|"Fonts"
 argument_list|)
 argument_list|,
-literal|0.282
+literal|0.288
 argument_list|)
 expr_stmt|;
 name|register_fonts_procs
@@ -746,7 +735,7 @@ argument_list|(
 literal|"Gimprc procedures"
 argument_list|)
 argument_list|,
-literal|0.288
+literal|0.294
 argument_list|)
 expr_stmt|;
 name|register_gimprc_procs
@@ -766,7 +755,7 @@ argument_list|(
 literal|"Gradient UI"
 argument_list|)
 argument_list|,
-literal|0.305
+literal|0.311
 argument_list|)
 expr_stmt|;
 name|register_gradient_select_procs
@@ -786,7 +775,7 @@ argument_list|(
 literal|"Gradients"
 argument_list|)
 argument_list|,
-literal|0.314
+literal|0.32
 argument_list|)
 expr_stmt|;
 name|register_gradients_procs
@@ -806,7 +795,7 @@ argument_list|(
 literal|"Guide procedures"
 argument_list|)
 argument_list|,
-literal|0.334
+literal|0.34
 argument_list|)
 expr_stmt|;
 name|register_guides_procs
@@ -826,7 +815,7 @@ argument_list|(
 literal|"Help procedures"
 argument_list|)
 argument_list|,
-literal|0.352
+literal|0.357
 argument_list|)
 expr_stmt|;
 name|register_help_procs
@@ -846,7 +835,7 @@ argument_list|(
 literal|"Image"
 argument_list|)
 argument_list|,
-literal|0.354
+literal|0.36
 argument_list|)
 expr_stmt|;
 name|register_image_procs
@@ -866,7 +855,7 @@ argument_list|(
 literal|"Layer"
 argument_list|)
 argument_list|,
-literal|0.527
+literal|0.536
 argument_list|)
 expr_stmt|;
 name|register_layer_procs
@@ -886,7 +875,7 @@ argument_list|(
 literal|"Message procedures"
 argument_list|)
 argument_list|,
-literal|0.602
+literal|0.611
 argument_list|)
 expr_stmt|;
 name|register_message_procs
@@ -906,30 +895,10 @@ argument_list|(
 literal|"Miscellaneous"
 argument_list|)
 argument_list|,
-literal|0.611
+literal|0.62
 argument_list|)
 expr_stmt|;
 name|register_misc_procs
-argument_list|(
-name|gimp
-argument_list|)
-expr_stmt|;
-call|(
-modifier|*
-name|status_callback
-call|)
-argument_list|(
-name|NULL
-argument_list|,
-name|_
-argument_list|(
-literal|"Misc Tool procedures"
-argument_list|)
-argument_list|,
-literal|0.617
-argument_list|)
-expr_stmt|;
-name|register_misc_tools_procs
 argument_list|(
 name|gimp
 argument_list|)

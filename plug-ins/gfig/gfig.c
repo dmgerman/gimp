@@ -902,7 +902,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0ea2d30108
+DECL|struct|__anon2952a1ed0108
 block|{
 DECL|member|gridspacing
 name|void
@@ -16054,7 +16054,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|gimp_bucket_fill
+name|gimp_edit_bucket_fill
 argument_list|(
 name|gfig_drawable
 argument_list|,
