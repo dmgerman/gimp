@@ -637,7 +637,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"About the GIMP"
+literal|"About The GIMP"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1357,7 +1357,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Please visit http://www.gimp.org/ for more info"
+literal|"Visit http://www.gimp.org/ for more information"
 argument_list|)
 argument_list|)
 expr_stmt|;

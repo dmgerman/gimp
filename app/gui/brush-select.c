@@ -1662,7 +1662,11 @@ name|GIMP_PDB_SUCCESS
 condition|)
 name|g_message
 argument_list|(
-literal|"failed to run brush callback function"
+name|_
+argument_list|(
+literal|"Unable to run brush callback.\n"
+literal|"The corresponding plug-in may have crashed."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|procedural_db_destroy_args

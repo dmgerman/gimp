@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297b2e330103
+DECL|enum|__anon2b82c7700103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -887,36 +887,43 @@ name|toggle_titles
 index|[]
 init|=
 block|{
+comment|/* Hue */
 name|N_
 argument_list|(
 literal|"H"
 argument_list|)
 block|,
+comment|/* Saturation */
 name|N_
 argument_list|(
 literal|"S"
 argument_list|)
 block|,
+comment|/* Value */
 name|N_
 argument_list|(
 literal|"V"
 argument_list|)
 block|,
+comment|/* Red */
 name|N_
 argument_list|(
 literal|"R"
 argument_list|)
 block|,
+comment|/* Green */
 name|N_
 argument_list|(
 literal|"G"
 argument_list|)
 block|,
+comment|/* Blue */
 name|N_
 argument_list|(
 literal|"B"
 argument_list|)
 block|,
+comment|/* Alpha */
 name|N_
 argument_list|(
 literal|"A"
@@ -4293,7 +4300,9 @@ expr_stmt|;
 block|}
 name|g_warning
 argument_list|(
-literal|"unknown color selector id %p"
+literal|"%s: unknown color selector ID %p"
+argument_list|,
+name|G_STRLOC
 argument_list|,
 name|id
 argument_list|)
@@ -4406,7 +4415,9 @@ expr_stmt|;
 block|}
 name|g_warning
 argument_list|(
-literal|"color selector %p not found, can't happen!"
+literal|"%s: color selector %p not found."
+argument_list|,
+name|G_STRLOC
 argument_list|,
 name|info
 argument_list|)

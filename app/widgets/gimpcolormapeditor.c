@@ -129,7 +129,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c37d8430103
+DECL|enum|__anon2b76ce4a0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -1133,7 +1133,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Index:"
+literal|"Color Index:"
 argument_list|)
 argument_list|,
 literal|1.0
