@@ -317,7 +317,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abe07100108
+DECL|struct|__anon29f237390108
 block|{
 DECL|member|url
 name|char
@@ -435,17 +435,6 @@ name|int
 name|nreturn_vals
 init|=
 literal|0
-decl_stmt|;
-specifier|static
-name|gchar
-name|G_GNUC_UNUSED
-modifier|*
-name|dummy_entries
-init|=
-name|N_
-argument_list|(
-literal|"<Toolbox>/Xtns/Web Browser"
-argument_list|)
 decl_stmt|;
 name|INIT_I18N
 argument_list|()
