@@ -1475,8 +1475,6 @@ index|]
 index|[
 literal|2
 index|]
-operator|-
-literal|0.5
 expr_stmt|;
 name|tv
 index|[
@@ -1514,8 +1512,6 @@ index|]
 index|[
 literal|2
 index|]
-operator|-
-literal|0.5
 expr_stmt|;
 name|tw
 index|[
@@ -1590,8 +1586,6 @@ index|]
 index|[
 literal|2
 index|]
-operator|-
-literal|0.5
 expr_stmt|;
 name|tv
 index|[
@@ -1629,8 +1623,6 @@ index|]
 index|[
 literal|2
 index|]
-operator|-
-literal|0.5
 expr_stmt|;
 name|tw
 index|[
@@ -1705,8 +1697,6 @@ index|]
 index|[
 literal|2
 index|]
-operator|-
-literal|0.5
 expr_stmt|;
 name|tv
 index|[
@@ -1744,8 +1734,6 @@ index|]
 index|[
 literal|2
 index|]
-operator|-
-literal|0.5
 expr_stmt|;
 name|tw
 index|[
@@ -1820,8 +1808,6 @@ index|]
 index|[
 literal|2
 index|]
-operator|-
-literal|0.5
 expr_stmt|;
 name|tv
 index|[
@@ -1859,8 +1845,6 @@ index|]
 index|[
 literal|2
 index|]
-operator|-
-literal|0.5
 expr_stmt|;
 name|tw
 index|[
