@@ -271,9 +271,12 @@ name|gimage
 argument_list|)
 expr_stmt|;
 comment|/*  Make sure we're not caching any old selection info  */
-name|gimp_layer_invalidate_boundary
+name|gimp_drawable_invalidate_boundary
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -514,9 +517,12 @@ name|gimage
 argument_list|)
 expr_stmt|;
 comment|/*  Make sure we're not caching any old selection info  */
-name|gimp_layer_invalidate_boundary
+name|gimp_drawable_invalidate_boundary
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
