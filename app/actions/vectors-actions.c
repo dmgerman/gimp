@@ -1099,6 +1099,8 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"vectors-selection-to-vectors"
 argument_list|,
+name|gimage
+operator|&&
 operator|!
 name|mask_empty
 argument_list|)
@@ -1107,6 +1109,8 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"vectors-selection-to-vectors-short"
 argument_list|,
+name|gimage
+operator|&&
 operator|!
 name|mask_empty
 argument_list|)
@@ -1115,6 +1119,8 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"vectors-selection-to-vectors-advanced"
 argument_list|,
+name|gimage
+operator|&&
 operator|!
 name|mask_empty
 argument_list|)
