@@ -114,7 +114,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b0589b0103
+DECL|enum|__anon2a4d7a0f0103
 block|{
 DECL|enumerator|RECT_CREATING
 name|RECT_CREATING
@@ -189,6 +189,11 @@ name|GtkWidget
 modifier|*
 name|dimensions_entry
 decl_stmt|;
+DECL|member|selection_tool
+name|gboolean
+name|selection_tool
+decl_stmt|;
+comment|/* is this a selection tool? */
 DECL|member|startx
 name|gint
 name|startx
@@ -209,6 +214,16 @@ name|gint
 name|lasty
 decl_stmt|;
 comment|/*  previous y coord            */
+DECL|member|pressx
+name|gint
+name|pressx
+decl_stmt|;
+comment|/*  x where button pressed      */
+DECL|member|pressy
+name|gint
+name|pressy
+decl_stmt|;
+comment|/*  y where button pressed      */
 DECL|member|x1
 DECL|member|y1
 name|gint
@@ -229,7 +244,6 @@ DECL|member|function
 name|guint
 name|function
 decl_stmt|;
-comment|/*  moving or resizing          */
 DECL|member|dx1
 DECL|member|dy1
 name|gint
@@ -253,7 +267,7 @@ name|dcw
 decl_stmt|,
 name|dch
 decl_stmt|;
-comment|/*  width and height of corners */
+comment|/*  width and height of edges   */
 DECL|member|orig_vals
 name|gdouble
 name|orig_vals
@@ -268,19 +282,6 @@ index|[
 literal|2
 index|]
 decl_stmt|;
-DECL|member|aspect_ratio
-name|gdouble
-name|aspect_ratio
-decl_stmt|;
-DECL|member|change_aspect_ratio
-name|gboolean
-name|change_aspect_ratio
-decl_stmt|;
-comment|/* Boolean for the rectangle_info_update function */
-comment|/* aspect_ratio should not be changed whith   */
-comment|/* rectangle_info_update when it is called from      */
-comment|/* rectangle_aspect_changed, due to the inaccurate*/
-comment|/* decimal precision                         */
 block|}
 struct|;
 end_struct
