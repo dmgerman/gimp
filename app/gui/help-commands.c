@@ -6,18 +6,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"appenv.h"
 end_include
 
@@ -36,19 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"brightness_contrast.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpbrushlist.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"by_color_select.h"
 end_include
 
 begin_include
@@ -72,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"color_balance.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"commands.h"
 end_include
 
@@ -85,12 +55,6 @@ begin_include
 include|#
 directive|include
 file|"convert.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"curves.h"
 end_include
 
 begin_include
@@ -174,18 +138,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"histogram_tool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"hue_saturation.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"image_render.h"
 end_include
 
@@ -222,12 +174,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"levels.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"module_db.h"
 end_include
 
@@ -252,12 +198,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"posterize.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"resize.h"
 end_include
 
@@ -265,12 +205,6 @@ begin_include
 include|#
 directive|include
 file|"scale.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"threshold.h"
 end_include
 
 begin_include
@@ -312,7 +246,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287b7de60108
+DECL|struct|__anon27dfe2900108
 block|{
 DECL|member|resize
 name|Resize
@@ -342,7 +276,7 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|int
+name|gboolean
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2687,10 +2621,6 @@ argument_list|)
 expr_stmt|;
 name|image_equalize
 argument_list|(
-operator|(
-name|void
-operator|*
-operator|)
 name|gdisp
 operator|->
 name|gimage
@@ -2726,10 +2656,6 @@ argument_list|)
 expr_stmt|;
 name|image_invert
 argument_list|(
-operator|(
-name|void
-operator|*
-operator|)
 name|gdisp
 operator|->
 name|gimage
@@ -2765,10 +2691,6 @@ argument_list|)
 expr_stmt|;
 name|image_desaturate
 argument_list|(
-operator|(
-name|void
-operator|*
-operator|)
 name|gdisp
 operator|->
 name|gimage
@@ -2804,10 +2726,6 @@ argument_list|)
 expr_stmt|;
 name|channel_ops_duplicate
 argument_list|(
-operator|(
-name|void
-operator|*
-operator|)
 name|gdisp
 operator|->
 name|gimage
@@ -2840,10 +2758,6 @@ argument_list|)
 expr_stmt|;
 name|channel_ops_offset
 argument_list|(
-operator|(
-name|void
-operator|*
-operator|)
 name|gdisp
 operator|->
 name|gimage
@@ -2876,10 +2790,6 @@ argument_list|)
 expr_stmt|;
 name|convert_to_rgb
 argument_list|(
-operator|(
-name|void
-operator|*
-operator|)
 name|gdisp
 operator|->
 name|gimage
@@ -2912,10 +2822,6 @@ argument_list|)
 expr_stmt|;
 name|convert_to_grayscale
 argument_list|(
-operator|(
-name|void
-operator|*
-operator|)
 name|gdisp
 operator|->
 name|gimage
@@ -2948,10 +2854,6 @@ argument_list|)
 expr_stmt|;
 name|convert_to_indexed
 argument_list|(
-operator|(
-name|void
-operator|*
-operator|)
 name|gdisp
 operator|->
 name|gimage
@@ -2999,16 +2901,11 @@ expr_stmt|;
 comment|/*  the ImageResize structure  */
 name|image_resize
 operator|=
-operator|(
-name|ImageResize
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|ImageResize
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|image_resize
@@ -3116,16 +3013,11 @@ expr_stmt|;
 comment|/*  the ImageResize structure  */
 name|image_scale
 operator|=
-operator|(
-name|ImageResize
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|ImageResize
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|image_scale
@@ -4326,12 +4218,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|image_resize_callback (GtkWidget * w,gpointer client_data)
+DECL|function|image_resize_callback (GtkWidget * widget,gpointer client_data)
 name|image_resize_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -4424,7 +4316,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Resize Error: Both width and height must be greater than zero."
+literal|"Resize Error: Both width and height must be "
+literal|"greater than zero."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4449,12 +4342,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|image_scale_callback (GtkWidget * w,gpointer client_data)
+DECL|function|image_scale_callback (GtkWidget * widget,gpointer client_data)
 name|image_scale_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data
@@ -4673,16 +4566,16 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|image_delete_callback (GtkWidget * w,GdkEvent * e,gpointer client_data)
+DECL|function|image_delete_callback (GtkWidget * widget,GdkEvent * event,gpointer client_data)
 name|image_delete_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GdkEvent
 modifier|*
-name|e
+name|event
 parameter_list|,
 name|gpointer
 name|client_data
@@ -4690,7 +4583,7 @@ parameter_list|)
 block|{
 name|image_cancel_callback
 argument_list|(
-name|w
+name|widget
 argument_list|,
 name|client_data
 argument_list|)
@@ -4704,12 +4597,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|image_cancel_callback (GtkWidget * w,gpointer client_data)
+DECL|function|image_cancel_callback (GtkWidget * widget,gpointer client_data)
 name|image_cancel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|client_data

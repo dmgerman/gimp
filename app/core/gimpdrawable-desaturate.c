@@ -6,24 +6,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"appenv.h"
 end_include
 
@@ -37,12 +19,6 @@ begin_include
 include|#
 directive|include
 file|"desaturate.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"interface.h"
 end_include
 
 begin_include
@@ -65,32 +41,18 @@ end_include
 
 begin_function
 name|void
-DECL|function|image_desaturate (gimage_ptr)
+DECL|function|image_desaturate (GimpImage * gimage)
 name|image_desaturate
 parameter_list|(
-name|gimage_ptr
-parameter_list|)
-name|void
-modifier|*
-name|gimage_ptr
-decl_stmt|;
-block|{
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|)
+block|{
 name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|gimage
-operator|=
-operator|(
-name|GImage
-operator|*
-operator|)
-name|gimage_ptr
-expr_stmt|;
 name|drawable
 operator|=
 name|gimage_active_drawable

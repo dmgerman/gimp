@@ -6,24 +6,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"drawable.h"
 end_include
 
@@ -65,30 +47,18 @@ end_include
 
 begin_function
 name|void
-DECL|function|image_equalize (void * gimage_ptr)
+DECL|function|image_equalize (GimpImage * gimage)
 name|image_equalize
 parameter_list|(
-name|void
-modifier|*
-name|gimage_ptr
-parameter_list|)
-block|{
 name|GimpImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|)
+block|{
 name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|gimage
-operator|=
-operator|(
-name|GimpImage
-operator|*
-operator|)
-name|gimage_ptr
-expr_stmt|;
 name|drawable
 operator|=
 name|gimage_active_drawable

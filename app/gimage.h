@@ -470,6 +470,14 @@ value|gimp_image_lower_layer_to_bottom
 end_define
 
 begin_define
+DECL|macro|gimage_position_layer
+define|#
+directive|define
+name|gimage_position_layer
+value|gimp_image_position_layer
+end_define
+
+begin_define
 DECL|macro|gimage_merge_visible_layers
 define|#
 directive|define

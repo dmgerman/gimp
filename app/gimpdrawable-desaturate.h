@@ -19,6 +19,12 @@ end_define
 begin_include
 include|#
 directive|include
+file|"gimpimageF.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdrawableF.h"
 end_include
 
@@ -30,8 +36,9 @@ begin_function_decl
 name|void
 name|image_desaturate
 parameter_list|(
-name|void
+name|GimpImage
 modifier|*
+name|gimage
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -42,6 +49,7 @@ name|desaturate
 parameter_list|(
 name|GimpDrawable
 modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl

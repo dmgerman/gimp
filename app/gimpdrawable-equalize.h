@@ -36,8 +36,9 @@ begin_function_decl
 name|void
 name|image_equalize
 parameter_list|(
-name|void
+name|GimpImage
 modifier|*
+name|gimage
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -48,11 +49,14 @@ name|equalize
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|,
 name|GimpDrawable
 modifier|*
+name|drawable
 parameter_list|,
 name|gboolean
+name|mask_only
 parameter_list|)
 function_decl|;
 end_function_decl
