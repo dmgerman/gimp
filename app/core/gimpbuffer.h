@@ -159,6 +159,7 @@ begin_function_decl
 name|gint
 name|gimp_buffer_get_width
 parameter_list|(
+specifier|const
 name|GimpBuffer
 modifier|*
 name|buffer
@@ -170,6 +171,7 @@ begin_function_decl
 name|gint
 name|gimp_buffer_get_height
 parameter_list|(
+specifier|const
 name|GimpBuffer
 modifier|*
 name|buffer

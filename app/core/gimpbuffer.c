@@ -739,9 +739,10 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_buffer_get_width (GimpBuffer * buffer)
+DECL|function|gimp_buffer_get_width (const GimpBuffer * buffer)
 name|gimp_buffer_get_width
 parameter_list|(
+specifier|const
 name|GimpBuffer
 modifier|*
 name|buffer
@@ -770,9 +771,10 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_buffer_get_height (GimpBuffer * buffer)
+DECL|function|gimp_buffer_get_height (const GimpBuffer * buffer)
 name|gimp_buffer_get_height
 parameter_list|(
+specifier|const
 name|GimpBuffer
 modifier|*
 name|buffer

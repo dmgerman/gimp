@@ -54,18 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/tile-manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"base/tile.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpchannel.h"
 end_include
 

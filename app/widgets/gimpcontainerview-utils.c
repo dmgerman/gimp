@@ -670,8 +670,17 @@ return|;
 block|}
 name|g_warning
 argument_list|(
-literal|"gimp_container_view_get_name_func_preview(): "
-literal|"widget type does not match"
+literal|"%s: widget type %s does not contain a GimpPreview"
+argument_list|,
+name|G_STRLOC
+argument_list|,
+name|g_type_name
+argument_list|(
+name|G_TYPE_FROM_INSTANCE
+argument_list|(
+name|widget
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

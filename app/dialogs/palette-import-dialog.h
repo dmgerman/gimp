@@ -36,21 +36,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/* FIXME */
-end_comment
-
-begin_function_decl
-name|void
-name|palette_import_image_renamed
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif

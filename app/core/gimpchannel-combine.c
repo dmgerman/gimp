@@ -1017,6 +1017,18 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
+comment|/*  Allocate the new channel  */
+name|new_tiles
+operator|=
+name|tile_manager_new
+argument_list|(
+name|new_width
+argument_list|,
+name|new_height
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
 comment|/*  Configure the pixel regions  */
 name|pixel_region_init
 argument_list|(
@@ -1051,18 +1063,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/*  Allocate the new channel, configure dest region  */
-name|new_tiles
-operator|=
-name|tile_manager_new
-argument_list|(
-name|new_width
-argument_list|,
-name|new_height
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
 name|pixel_region_init
 argument_list|(
 operator|&
@@ -1081,7 +1081,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/*  Add an alpha channel  */
+comment|/*  Sclae the channel  */
 name|scale_region
 argument_list|(
 operator|&
@@ -1232,11 +1232,13 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
 name|new_width
+operator|==
+literal|0
 operator|||
-operator|!
 name|new_height
+operator|==
+literal|0
 condition|)
 return|return;
 name|x1
