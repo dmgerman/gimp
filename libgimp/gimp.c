@@ -339,7 +339,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2760bd3b0103
+DECL|enum|__anon2a0cf79c0103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -4924,7 +4924,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Could not execute plug-in \"%s\"\n(%s)"
+literal|"Could not execute plug-in \"%s\"\n(%s)\n"
 literal|"because the GIMP is using an older version of the "
 literal|"plug-in protocol."
 argument_list|,
@@ -4950,7 +4950,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Could not execute plug-in \"%s\"\n(%s)"
+literal|"Could not execute plug-in \"%s\"\n(%s)\n"
 literal|"because it uses an obsolete version of the "
 literal|"plug-in protocol."
 argument_list|,
