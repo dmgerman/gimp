@@ -105,7 +105,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1183990108
+DECL|struct|__anon291af28e0108
 block|{
 DECL|member|tilable
 name|gint
@@ -145,7 +145,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1183990208
+DECL|struct|__anon291af28e0208
 block|{
 DECL|member|run
 name|gint
@@ -2259,7 +2259,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Random Seed:"
+literal|"_Random Seed:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -2313,7 +2313,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Detail:"
+literal|"_Detail:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -2354,7 +2354,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Turbulent"
+literal|"T_urbulent"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2430,7 +2430,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Tilable"
+literal|"T_ilable"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2515,7 +2515,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"X Size:"
+literal|"_X Size:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2583,7 +2583,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"Y Size:"
+literal|"_Y Size:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH

@@ -99,56 +99,10 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_struct
-DECL|struct|Grgb
+begin_typedef
+typedef|typedef
 struct|struct
-name|Grgb
-block|{
-DECL|member|red
-name|guint8
-name|red
-decl_stmt|;
-DECL|member|green
-name|guint8
-name|green
-decl_stmt|;
-DECL|member|blue
-name|guint8
-name|blue
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
-begin_struct
-DECL|struct|GRegion
-struct|struct
-name|GRegion
-block|{
-DECL|member|x
-name|gint32
-name|x
-decl_stmt|;
-DECL|member|y
-name|gint32
-name|y
-decl_stmt|;
-DECL|member|width
-name|gint32
-name|width
-decl_stmt|;
-DECL|member|height
-name|gint32
-name|height
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
-begin_struct
-DECL|struct|piArgs
-struct|struct
-name|piArgs
+DECL|struct|__anon292b2a300108
 block|{
 DECL|member|img
 name|gint32
@@ -170,14 +124,16 @@ DECL|member|filter
 name|gint
 name|filter
 decl_stmt|;
+DECL|typedef|piArgs
 block|}
-struct|;
-end_struct
+name|piArgs
+typedef|;
+end_typedef
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ac6a5d0103
+DECL|enum|__anon292b2a300203
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -197,10 +153,10 @@ begin_comment
 comment|/*  preview stuff -- to be removed as soon as we have a real libgimp preview  */
 end_comment
 
-begin_struct
-DECL|struct|mwPreview
+begin_typedef
+typedef|typedef
 struct|struct
-name|mwPreview
+DECL|struct|__anon292b2a300308
 block|{
 DECL|member|width
 name|gint
@@ -223,9 +179,11 @@ name|guchar
 modifier|*
 name|bits
 decl_stmt|;
+DECL|typedef|mwPreview
 block|}
-struct|;
-end_struct
+name|mwPreview
+typedef|;
+end_typedef
 
 begin_define
 DECL|macro|PREVIEW_SIZE
@@ -248,7 +206,6 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|thePreview
 specifier|static
-name|struct
 name|mwPreview
 modifier|*
 name|thePreview
@@ -265,7 +222,6 @@ name|GtkWidget
 modifier|*
 name|parent
 parameter_list|,
-name|struct
 name|mwPreview
 modifier|*
 name|mwp
@@ -275,7 +231,6 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|struct
 name|mwPreview
 modifier|*
 name|mw_preview_build
@@ -334,7 +289,6 @@ specifier|static
 name|gint
 name|pluginCore
 parameter_list|(
-name|struct
 name|piArgs
 modifier|*
 name|argp
@@ -347,7 +301,6 @@ specifier|static
 name|gint
 name|pluginCoreIA
 parameter_list|(
-name|struct
 name|piArgs
 modifier|*
 name|argp
@@ -582,7 +535,6 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-name|struct
 name|piArgs
 name|args
 decl_stmt|;
@@ -608,7 +560,6 @@ literal|0
 argument_list|,
 sizeof|sizeof
 argument_list|(
-expr|struct
 name|piArgs
 argument_list|)
 argument_list|)
@@ -783,7 +734,6 @@ name|args
 argument_list|,
 sizeof|sizeof
 argument_list|(
-expr|struct
 name|piArgs
 argument_list|)
 argument_list|)
@@ -921,10 +871,9 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|pluginCore (struct piArgs * argp)
+DECL|function|pluginCore (piArgs * argp)
 name|pluginCore
 parameter_list|(
-name|struct
 name|piArgs
 modifier|*
 name|argp
@@ -964,7 +913,7 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|,
-name|Bpp
+name|bpp
 decl_stmt|;
 name|gint
 name|filtno
@@ -998,7 +947,7 @@ name|drw
 operator|->
 name|height
 expr_stmt|;
-name|Bpp
+name|bpp
 operator|=
 name|drw
 operator|->
@@ -1008,7 +957,7 @@ name|rowsize
 operator|=
 name|width
 operator|*
-name|Bpp
+name|bpp
 expr_stmt|;
 name|exrowsize
 operator|=
@@ -1018,7 +967,7 @@ operator|+
 literal|2
 operator|)
 operator|*
-name|Bpp
+name|bpp
 expr_stmt|;
 name|p_update
 operator|=
@@ -1108,7 +1057,7 @@ name|lastrow
 operator|=
 name|srcbuf
 operator|+
-name|Bpp
+name|bpp
 expr_stmt|;
 name|thisrow
 operator|=
@@ -1167,11 +1116,11 @@ name|memcpy
 argument_list|(
 name|thisrow
 operator|-
-name|Bpp
+name|bpp
 argument_list|,
 name|thisrow
 argument_list|,
-name|Bpp
+name|bpp
 argument_list|)
 expr_stmt|;
 name|memcpy
@@ -1184,9 +1133,9 @@ name|thisrow
 operator|+
 name|rowsize
 operator|-
-name|Bpp
+name|bpp
 argument_list|,
-name|Bpp
+name|bpp
 argument_list|)
 expr_stmt|;
 comment|/* copy whole thisrow to lastrow */
@@ -1194,11 +1143,11 @@ name|memcpy
 argument_list|(
 name|lastrow
 operator|-
-name|Bpp
+name|bpp
 argument_list|,
 name|thisrow
 operator|-
-name|Bpp
+name|bpp
 argument_list|,
 name|exrowsize
 argument_list|)
@@ -1262,11 +1211,11 @@ name|memcpy
 argument_list|(
 name|nextrow
 operator|-
-name|Bpp
+name|bpp
 argument_list|,
 name|nextrow
 argument_list|,
-name|Bpp
+name|bpp
 argument_list|)
 expr_stmt|;
 name|memcpy
@@ -1279,9 +1228,9 @@ name|nextrow
 operator|+
 name|rowsize
 operator|-
-name|Bpp
+name|bpp
 argument_list|,
-name|Bpp
+name|bpp
 argument_list|)
 expr_stmt|;
 name|nlfiltRow
@@ -1296,7 +1245,7 @@ name|dstbuf
 argument_list|,
 name|width
 argument_list|,
-name|Bpp
+name|bpp
 argument_list|,
 name|filtno
 argument_list|)
@@ -1338,11 +1287,11 @@ name|memcpy
 argument_list|(
 name|nextrow
 operator|-
-name|Bpp
+name|bpp
 argument_list|,
 name|thisrow
 operator|-
-name|Bpp
+name|bpp
 argument_list|,
 name|exrowsize
 argument_list|)
@@ -1359,7 +1308,7 @@ name|dstbuf
 argument_list|,
 name|width
 argument_list|,
-name|Bpp
+name|bpp
 argument_list|,
 name|filtno
 argument_list|)
@@ -1542,10 +1491,9 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|pluginCoreIA (struct piArgs * argp)
+DECL|function|pluginCoreIA (piArgs * argp)
 name|pluginCoreIA
 parameter_list|(
-name|struct
 name|piArgs
 modifier|*
 name|argp
@@ -1795,7 +1743,7 @@ name|filter
 argument_list|,
 name|_
 argument_list|(
-literal|"Alpha Trimmed Mean"
+literal|"_Alpha Trimmed Mean"
 argument_list|)
 argument_list|,
 operator|(
@@ -1807,7 +1755,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Optimal Estimation"
+literal|"Op_timal Estimation"
 argument_list|)
 argument_list|,
 operator|(
@@ -1819,7 +1767,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Edge Enhancement"
+literal|"_Edge Enhancement"
 argument_list|)
 argument_list|,
 operator|(
@@ -1960,7 +1908,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Alpha:"
+literal|"A_lpha:"
 argument_list|)
 argument_list|,
 literal|0
@@ -2027,7 +1975,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Radius:"
+literal|"_Radius:"
 argument_list|)
 argument_list|,
 literal|0
@@ -2102,12 +2050,6 @@ condition|(
 name|run_flag
 condition|)
 block|{
-if|#
-directive|if
-literal|0
-block|fprintf (stderr, "running:\n");       fprintf (stderr, "\t(image %d)\n", argp->img);       fprintf (stderr, "\t(drawable %d)\n", argp->drw);       fprintf (stderr, "\t(alpha %f)\n", argp->alpha);       fprintf (stderr, "\t(radius %f)\n", argp->radius);
-endif|#
-directive|endif
 return|return
 name|pluginCore
 argument_list|(
@@ -2142,7 +2084,6 @@ name|theWidget
 init|=
 name|NULL
 decl_stmt|;
-name|struct
 name|piArgs
 modifier|*
 name|ap
@@ -2378,7 +2319,6 @@ end_function
 
 begin_function
 specifier|static
-name|struct
 name|mwPreview
 modifier|*
 DECL|function|mw_preview_build_virgin (GimpDrawable * drw)
@@ -2389,7 +2329,6 @@ modifier|*
 name|drw
 parameter_list|)
 block|{
-name|struct
 name|mwPreview
 modifier|*
 name|mwp
@@ -2398,7 +2337,6 @@ name|mwp
 operator|=
 name|g_new
 argument_list|(
-expr|struct
 name|mwPreview
 argument_list|,
 literal|1
@@ -2507,7 +2445,6 @@ end_function
 
 begin_function
 specifier|static
-name|struct
 name|mwPreview
 modifier|*
 DECL|function|mw_preview_build (GimpDrawable * drw)
@@ -2518,7 +2455,6 @@ modifier|*
 name|drw
 parameter_list|)
 block|{
-name|struct
 name|mwPreview
 modifier|*
 name|mwp
@@ -2731,14 +2667,13 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|mw_preview_new (GtkWidget * parent,struct mwPreview * mwp)
+DECL|function|mw_preview_new (GtkWidget * parent,mwPreview * mwp)
 name|mw_preview_new
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|parent
 parameter_list|,
-name|struct
 name|mwPreview
 modifier|*
 name|mwp
@@ -2921,7 +2856,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Do Preview"
+literal|"_Do Preview"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3393,13 +3328,13 @@ value|((x)>> SCALEB)
 end_define
 
 begin_comment
-comment|/* Note: modified by David Hodson, nlfiltRow now accesses  * srclast, srcthis, and srcnext from [-Bpp] to [width*Bpp-1].  * Beware if you use this code anywhere else!  */
+comment|/* Note: modified by David Hodson, nlfiltRow now accesses  * srclast, srcthis, and srcnext from [-bpp] to [width*bpp-1].  * Beware if you use this code anywhere else!  */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|nlfiltRow (guchar * srclast,guchar * srcthis,guchar * srcnext,guchar * dst,gint width,gint Bpp,gint filtno)
+DECL|function|nlfiltRow (guchar * srclast,guchar * srcthis,guchar * srcnext,guchar * dst,gint width,gint bpp,gint filtno)
 name|nlfiltRow
 parameter_list|(
 name|guchar
@@ -3422,7 +3357,7 @@ name|gint
 name|width
 parameter_list|,
 name|gint
-name|Bpp
+name|bpp
 parameter_list|,
 name|gint
 name|filtno
@@ -3460,7 +3395,7 @@ name|dst
 operator|+
 name|width
 operator|*
-name|Bpp
+name|bpp
 expr_stmt|;
 name|ip0
 operator|=
@@ -3514,7 +3449,7 @@ operator|*
 operator|(
 name|ip1
 operator|-
-name|Bpp
+name|bpp
 operator|)
 expr_stmt|;
 name|pf
@@ -3526,7 +3461,7 @@ operator|*
 operator|(
 name|ip2
 operator|-
-name|Bpp
+name|bpp
 operator|)
 expr_stmt|;
 name|pf
@@ -3548,7 +3483,7 @@ operator|*
 operator|(
 name|ip2
 operator|+
-name|Bpp
+name|bpp
 operator|)
 expr_stmt|;
 name|pf
@@ -3560,7 +3495,7 @@ operator|*
 operator|(
 name|ip1
 operator|+
-name|Bpp
+name|bpp
 operator|)
 expr_stmt|;
 name|pf
@@ -3572,7 +3507,7 @@ operator|*
 operator|(
 name|ip0
 operator|+
-name|Bpp
+name|bpp
 operator|)
 expr_stmt|;
 name|pf
@@ -3594,7 +3529,7 @@ operator|*
 operator|(
 name|ip0
 operator|-
-name|Bpp
+name|bpp
 operator|)
 expr_stmt|;
 operator|*

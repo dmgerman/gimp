@@ -267,7 +267,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288e46dd0108
+DECL|struct|__anon2768dff90108
 block|{
 DECL|member|xcenter
 name|gint
@@ -302,7 +302,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288e46dd0208
+DECL|struct|__anon2768dff90208
 block|{
 DECL|member|run
 name|gint
@@ -317,7 +317,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288e46dd0308
+DECL|struct|__anon2768dff90308
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -2180,7 +2180,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Color:"
+literal|"Co_lor:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -2246,7 +2246,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"Radius:"
+literal|"_Radius:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2330,7 +2330,7 @@ literal|4
 argument_list|,
 name|_
 argument_list|(
-literal|"Spokes:"
+literal|"_Spokes:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2414,7 +2414,7 @@ literal|5
 argument_list|,
 name|_
 argument_list|(
-literal|"Random Hue:"
+literal|"R_andom Hue:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2802,11 +2802,11 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"X:"
+literal|"_X:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2916,6 +2916,16 @@ argument_list|(
 name|spinbutton
 argument_list|)
 expr_stmt|;
+name|gtk_label_set_mnemonic_widget
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|spinbutton
+argument_list|)
+expr_stmt|;
 name|g_object_set_data
 argument_list|(
 name|G_OBJECT
@@ -2954,11 +2964,11 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Y:"
+literal|"_Y:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3065,6 +3075,16 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|spinbutton
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_mnemonic_widget
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
 name|spinbutton
 argument_list|)
 expr_stmt|;
@@ -3250,7 +3270,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Show Cursor"
+literal|"S_how Cursor"
 argument_list|)
 argument_list|)
 expr_stmt|;

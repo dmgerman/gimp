@@ -1257,11 +1257,11 @@ expr_stmt|;
 comment|/*   toggle = gtk_check_button_new_with_label (_("Use Bump Mapping"));   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (toggle), 				mapvals.bump_mapped);   gtk_box_pack_start (GTK_BOX (vbox), toggle, FALSE, FALSE, 0);   g_signal_connect (G_OBJECT (toggle), "toggled", 		    G_CALLBACK (togglebump_update),&mapvals.bump_mapped);   gtk_widget_show (toggle);    gimp_help_set_help_data (toggle, 			   _("Enable/disable bump-mapping (image depth)"), 			   NULL);      toggle = gtk_check_button_new_with_label (_("Use Environment Mapping"));   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (toggle), 				mapvals.env_mapped);   gtk_box_pack_start (GTK_BOX (vbox), toggle, FALSE, FALSE, 0);   g_signal_connect (G_OBJECT (toggle), "toggled", 		    G_CALLBACK (toggleenvironment_update),&mapvals.env_mapped);   gtk_widget_show (toggle);    gimp_help_set_help_data (toggle, 			   _("Enable/disable environment mapping (reflection)"), 			   NULL);   */
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Transparent Background"
+literal|"T_ransparent Background"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1333,11 +1333,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Create New Image"
+literal|"Cre_ate New Image"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1408,11 +1408,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"High Quality Preview"
+literal|"High _Quality Preview"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1549,11 +1549,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Enable Antialiasing"
+literal|"E_nable Antialiasing"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1711,7 +1711,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Depth:"
+literal|"_Depth:"
 argument_list|)
 argument_list|,
 literal|0
@@ -1782,7 +1782,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Threshold:"
+literal|"T_hreshold:"
 argument_list|)
 argument_list|,
 literal|0
@@ -2097,7 +2097,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Light Type:"
+literal|"L_ight Type:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -2181,7 +2181,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Light Color:"
+literal|"Lig_ht Color:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -2348,7 +2348,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"X:"
+literal|"_X:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -2442,7 +2442,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Y:"
+literal|"_Y:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -2536,7 +2536,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Z:"
+literal|"_Z:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -3012,6 +3012,10 @@ name|table
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|label
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|hbox
 decl_stmt|;
 name|GtkWidget
@@ -3160,6 +3164,8 @@ argument_list|(
 name|amb1_xpm
 argument_list|)
 expr_stmt|;
+name|label
+operator|=
 name|gimp_table_attach_aligned
 argument_list|(
 name|GTK_TABLE
@@ -3173,7 +3179,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Ambient:"
+literal|"_Ambient:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -3269,6 +3275,16 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|spinbutton
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_mnemonic_widget
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
 name|spinbutton
 argument_list|)
 expr_stmt|;
@@ -3335,6 +3351,8 @@ argument_list|(
 name|diffint1_xpm
 argument_list|)
 expr_stmt|;
+name|label
+operator|=
 name|gimp_table_attach_aligned
 argument_list|(
 name|GTK_TABLE
@@ -3348,7 +3366,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Diffuse:"
+literal|"_Diffuse:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -3444,6 +3462,16 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|spinbutton
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_mnemonic_widget
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
 name|spinbutton
 argument_list|)
 expr_stmt|;
@@ -3617,6 +3645,8 @@ argument_list|(
 name|diffref1_xpm
 argument_list|)
 expr_stmt|;
+name|label
+operator|=
 name|gimp_table_attach_aligned
 argument_list|(
 name|GTK_TABLE
@@ -3630,7 +3660,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Diffuse:"
+literal|"D_iffuse:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -3726,6 +3756,16 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|spinbutton
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_mnemonic_widget
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
 name|spinbutton
 argument_list|)
 expr_stmt|;
@@ -3792,6 +3832,8 @@ argument_list|(
 name|specref1_xpm
 argument_list|)
 expr_stmt|;
+name|label
+operator|=
 name|gimp_table_attach_aligned
 argument_list|(
 name|GTK_TABLE
@@ -3805,7 +3847,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Specular:"
+literal|"_Specular:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -3901,6 +3943,16 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|spinbutton
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_mnemonic_widget
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
 name|spinbutton
 argument_list|)
 expr_stmt|;
@@ -3966,6 +4018,8 @@ argument_list|(
 name|high1_xpm
 argument_list|)
 expr_stmt|;
+name|label
+operator|=
 name|gimp_table_attach_aligned
 argument_list|(
 name|GTK_TABLE
@@ -3979,7 +4033,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Highlight:"
+literal|"_Highlight:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -4075,6 +4129,16 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|spinbutton
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_mnemonic_widget
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
 name|spinbutton
 argument_list|)
 expr_stmt|;
@@ -4279,11 +4343,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Enable Bump Mapping"
+literal|"E_nable Bump Mapping"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4468,7 +4532,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Bumpmap Image:"
+literal|"Bumpm_ap Image:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -4569,7 +4633,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Curve:"
+literal|"Cu_rve:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -4622,7 +4686,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Maximum Height:"
+literal|"Ma_ximum Height:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -4707,7 +4771,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"Minimum Height:"
+literal|"M_inimum Height:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -4755,11 +4819,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Autostretch to Fit Value Range"
+literal|"Auto_stretch to Fit Value Range"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4965,11 +5029,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Enable Environment Mapping"
+literal|"E_nable Environment Mapping"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5154,7 +5218,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Environment Image:"
+literal|"En_vironment Image:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -5250,11 +5314,11 @@ name|options_note_book
 argument_list|,
 name|page
 argument_list|,
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Options"
+literal|"Op_tions"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -5270,11 +5334,11 @@ name|options_note_book
 argument_list|,
 name|page
 argument_list|,
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Light"
+literal|"_Light"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -5290,11 +5354,11 @@ name|options_note_book
 argument_list|,
 name|page
 argument_list|,
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Material"
+literal|"_Material"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -5310,11 +5374,11 @@ name|options_note_book
 argument_list|,
 name|page
 argument_list|,
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Bump Map"
+literal|"_Bump Map"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -5330,11 +5394,11 @@ name|options_note_book
 argument_list|,
 name|page
 argument_list|,
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Environment Map"
+literal|"_Environment Map"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -5713,11 +5777,11 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Update Preview"
+literal|"_Update Preview"
 argument_list|)
 argument_list|)
 expr_stmt|;

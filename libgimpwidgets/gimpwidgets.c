@@ -2649,11 +2649,11 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_toggle_button_new_with_label
+name|gtk_toggle_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Time"
+literal|"_Time"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2814,7 +2814,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c65d6b00108
+DECL|struct|__anon27e8ace60108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -3694,7 +3694,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c65d6b00208
+DECL|struct|__anon27e8ace60208
 block|{
 DECL|member|adjustment
 name|GtkAdjustment

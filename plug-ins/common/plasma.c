@@ -143,7 +143,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb6a06e0108
+DECL|struct|__anon2b5d69a00108
 block|{
 DECL|member|seed
 name|gint
@@ -167,7 +167,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb6a06e0208
+DECL|struct|__anon2b5d69a00208
 block|{
 DECL|member|run
 name|gint
@@ -1467,7 +1467,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Random Seed:"
+literal|"_Random Seed:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -1536,7 +1536,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Turbulence:"
+literal|"T_urbulence:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH

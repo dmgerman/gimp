@@ -119,7 +119,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3885fe0108
+DECL|struct|__anon295bd50a0108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -182,7 +182,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3885fe0208
+DECL|struct|__anon295bd50a0208
 block|{
 DECL|member|run
 name|gint
@@ -1711,7 +1711,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Luminosity Threshold:"
+literal|"Luminosity _Threshold:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -1781,7 +1781,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Flare Intensity:"
+literal|"F_lare Intensity:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -1851,7 +1851,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Spike Length:"
+literal|"_Spike Length:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -1921,7 +1921,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"Spike Points:"
+literal|"Sp_ike Points:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -1991,7 +1991,7 @@ literal|4
 argument_list|,
 name|_
 argument_list|(
-literal|"Spike Angle (-1: Random):"
+literal|"Spi_ke Angle (-1: Random):"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2063,7 +2063,7 @@ literal|5
 argument_list|,
 name|_
 argument_list|(
-literal|"Spike Density:"
+literal|"Spik_e Density:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2133,7 +2133,7 @@ literal|6
 argument_list|,
 name|_
 argument_list|(
-literal|"Opacity:"
+literal|"Op_acity:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2203,7 +2203,7 @@ literal|7
 argument_list|,
 name|_
 argument_list|(
-literal|"Random Hue:"
+literal|"_Random Hue:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2274,7 +2274,7 @@ literal|8
 argument_list|,
 name|_
 argument_list|(
-literal|"Random Saturation:"
+literal|"Rando_m Saturation:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2418,11 +2418,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Preserve Luminosity"
+literal|"_Preserve Luminosity"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2493,11 +2493,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Inverse"
+literal|"In_verse"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2568,11 +2568,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Add Border"
+literal|"A_dd Border"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2695,7 +2695,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Natural Color"
+literal|"_Natural Color"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -2708,7 +2708,7 @@ name|r1
 argument_list|,
 name|_
 argument_list|(
-literal|"Foreground Color"
+literal|"_Foreground Color"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -2721,7 +2721,7 @@ name|r2
 argument_list|,
 name|_
 argument_list|(
-literal|"Background Color"
+literal|"_Background Color"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER

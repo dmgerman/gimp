@@ -200,7 +200,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b6f8ad0108
+DECL|struct|__anon2bce574e0108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -249,7 +249,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b6f8ad0208
+DECL|struct|__anon2bce574e0208
 block|{
 DECL|member|run
 name|gint
@@ -2377,6 +2377,10 @@ name|table
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|label
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|seed_hbox
 decl_stmt|;
 name|GtkObject
@@ -2597,6 +2601,8 @@ argument_list|,
 name|SEED_USER
 argument_list|)
 expr_stmt|;
+name|label
+operator|=
 name|gimp_table_attach_aligned
 argument_list|(
 name|GTK_TABLE
@@ -2610,7 +2616,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Random Seed:"
+literal|"_Random Seed:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -2622,6 +2628,19 @@ argument_list|,
 literal|1
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_mnemonic_widget
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|GIMP_RANDOM_SEED_SPINBUTTON
+argument_list|(
+name|seed_hbox
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*    *  Randomization percentage label& scale (1 to 100)    */
@@ -2640,7 +2659,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Randomization (%):"
+literal|"R_andomization (%):"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2711,7 +2730,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Repeat:"
+literal|"R_epeat:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
