@@ -4,7 +4,7 @@ DECL|macro|MAZE_TITLE
 define|#
 directive|define
 name|MAZE_TITLE
-value|"Maze 0.6.2"
+value|"Maze 1.2.1"
 end_define
 
 begin_define
@@ -12,7 +12,7 @@ DECL|macro|MAZE_URL
 define|#
 directive|define
 name|MAZE_URL
-value|"http://www.poboxes.com/kevint/gimp/maze.html"
+value|"http://www.poboxes.com/kevint/gimp/maze-help.html"
 end_define
 
 begin_define
@@ -35,14 +35,54 @@ name|DIVBOX_LOOKS_LIKE_SPINBUTTON
 value|FALSE
 end_define
 
+begin_comment
+comment|/* Don't update the progress for every cell when creating a maze.    Instead, update every . . . */
+end_comment
+
+begin_define
+DECL|macro|PRIMS_PROGRESS_UPDATE
+define|#
+directive|define
+name|PRIMS_PROGRESS_UPDATE
+value|256
+end_define
+
+begin_comment
+comment|/* Don't draw in anything that has less than     this value in the selection channel. */
+end_comment
+
+begin_define
+DECL|macro|MAZE_ALPHA_THRESHOLD
+define|#
+directive|define
+name|MAZE_ALPHA_THRESHOLD
+value|127
+end_define
+
 begin_include
 include|#
 directive|include
-file|"gtk/gtk.h"
+file|"glib.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon29fbe35a0108
+DECL|enum|__anon29f8c2170103
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|DEPTH_FIRST
+name|DEPTH_FIRST
+block|,
+DECL|enumerator|PRIMS_ALGORITHM
+name|PRIMS_ALGORITHM
+DECL|typedef|MazeAlgoType
+block|}
+name|MazeAlgoType
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|struct|__anon29f8c2170208
 typedef|typedef
 struct|struct
 block|{
@@ -55,7 +95,7 @@ name|gint
 name|height
 decl_stmt|;
 DECL|member|seed
-name|gint
+name|guint
 name|seed
 decl_stmt|;
 DECL|member|tile
@@ -70,6 +110,10 @@ DECL|member|offset
 name|gint
 name|offset
 decl_stmt|;
+DECL|member|algorithm
+name|MazeAlgoType
+name|algorithm
+decl_stmt|;
 comment|/* Interface options. */
 DECL|member|timeseed
 name|gboolean
@@ -80,6 +124,26 @@ block|}
 name|MazeValues
 typedef|;
 end_typedef
+
+begin_enum
+DECL|enum|CellTypes
+enum|enum
+name|CellTypes
+block|{
+DECL|enumerator|OUT
+name|OUT
+block|,
+DECL|enumerator|IN
+name|IN
+block|,
+DECL|enumerator|FRONTIER
+name|FRONTIER
+block|,
+DECL|enumerator|MASKED
+name|MASKED
+block|}
+enum|;
+end_enum
 
 end_unit
 
