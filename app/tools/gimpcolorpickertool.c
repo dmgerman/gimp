@@ -352,6 +352,8 @@ specifier|static
 name|gchar
 name|alpha_buf
 index|[
+literal|3
+operator|*
 name|MAX_INFO_BUF
 index|]
 decl_stmt|;
@@ -1517,11 +1519,25 @@ name|g_snprintf
 argument_list|(
 name|alpha_buf
 argument_list|,
-name|MAX_INFO_BUF
+sizeof|sizeof
+argument_list|(
+name|alpha_buf
+argument_list|)
 argument_list|,
-literal|"%d"
+literal|"%d (%d %%)"
 argument_list|,
 name|a
+argument_list|,
+call|(
+name|gint
+call|)
+argument_list|(
+name|color
+operator|->
+name|a
+operator|*
+literal|100.0
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
