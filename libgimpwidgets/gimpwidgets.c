@@ -1800,7 +1800,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_spin_button_new (GtkObject ** adjustment,gfloat value,gfloat lower,gfloat upper,gfloat step_increment,gfloat page_increment,gfloat page_size,gfloat climb_rate,guint digits)
+DECL|function|gimp_spin_button_new (GtkObject ** adjustment,gdouble value,gdouble lower,gdouble upper,gdouble step_increment,gdouble page_increment,gdouble page_size,gdouble climb_rate,guint digits)
 name|gimp_spin_button_new
 parameter_list|(
 name|GtkObject
@@ -1809,25 +1809,25 @@ modifier|*
 name|adjustment
 parameter_list|,
 comment|/* return value */
-name|gfloat
+name|gdouble
 name|value
 parameter_list|,
-name|gfloat
+name|gdouble
 name|lower
 parameter_list|,
-name|gfloat
+name|gdouble
 name|upper
 parameter_list|,
-name|gfloat
+name|gdouble
 name|step_increment
 parameter_list|,
-name|gfloat
+name|gdouble
 name|page_increment
 parameter_list|,
-name|gfloat
+name|gdouble
 name|page_size
 parameter_list|,
-name|gfloat
+name|gdouble
 name|climb_rate
 parameter_list|,
 name|guint
@@ -1936,7 +1936,7 @@ begin_function
 specifier|static
 name|GtkObject
 modifier|*
-DECL|function|gimp_scale_entry_new_internal (gboolean color_scale,GtkTable * table,gint column,gint row,const gchar * text,gint scale_width,gint spinbutton_width,gfloat value,gfloat lower,gfloat upper,gfloat step_increment,gfloat page_increment,guint digits,gboolean constrain,gfloat unconstrained_lower,gfloat unconstrained_upper,const gchar * tooltip,const gchar * help_data)
+DECL|function|gimp_scale_entry_new_internal (gboolean color_scale,GtkTable * table,gint column,gint row,const gchar * text,gint scale_width,gint spinbutton_width,gdouble value,gdouble lower,gdouble upper,gdouble step_increment,gdouble page_increment,guint digits,gboolean constrain,gdouble unconstrained_lower,gdouble unconstrained_upper,const gchar * tooltip,const gchar * help_data)
 name|gimp_scale_entry_new_internal
 parameter_list|(
 name|gboolean
@@ -1963,19 +1963,19 @@ parameter_list|,
 name|gint
 name|spinbutton_width
 parameter_list|,
-name|gfloat
+name|gdouble
 name|value
 parameter_list|,
-name|gfloat
+name|gdouble
 name|lower
 parameter_list|,
-name|gfloat
+name|gdouble
 name|upper
 parameter_list|,
-name|gfloat
+name|gdouble
 name|step_increment
 parameter_list|,
-name|gfloat
+name|gdouble
 name|page_increment
 parameter_list|,
 name|guint
@@ -1984,10 +1984,10 @@ parameter_list|,
 name|gboolean
 name|constrain
 parameter_list|,
-name|gfloat
+name|gdouble
 name|unconstrained_lower
 parameter_list|,
-name|gfloat
+name|gdouble
 name|unconstrained_upper
 parameter_list|,
 specifier|const
@@ -2481,7 +2481,7 @@ end_comment
 begin_function
 name|GtkObject
 modifier|*
-DECL|function|gimp_scale_entry_new (GtkTable * table,gint column,gint row,const gchar * text,gint scale_width,gint spinbutton_width,gfloat value,gfloat lower,gfloat upper,gfloat step_increment,gfloat page_increment,guint digits,gboolean constrain,gfloat unconstrained_lower,gfloat unconstrained_upper,const gchar * tooltip,const gchar * help_data)
+DECL|function|gimp_scale_entry_new (GtkTable * table,gint column,gint row,const gchar * text,gint scale_width,gint spinbutton_width,gdouble value,gdouble lower,gdouble upper,gdouble step_increment,gdouble page_increment,guint digits,gboolean constrain,gdouble unconstrained_lower,gdouble unconstrained_upper,const gchar * tooltip,const gchar * help_data)
 name|gimp_scale_entry_new
 parameter_list|(
 name|GtkTable
@@ -2505,19 +2505,19 @@ parameter_list|,
 name|gint
 name|spinbutton_width
 parameter_list|,
-name|gfloat
+name|gdouble
 name|value
 parameter_list|,
-name|gfloat
+name|gdouble
 name|lower
 parameter_list|,
-name|gfloat
+name|gdouble
 name|upper
 parameter_list|,
-name|gfloat
+name|gdouble
 name|step_increment
 parameter_list|,
-name|gfloat
+name|gdouble
 name|page_increment
 parameter_list|,
 name|guint
@@ -2526,10 +2526,10 @@ parameter_list|,
 name|gboolean
 name|constrain
 parameter_list|,
-name|gfloat
+name|gdouble
 name|unconstrained_lower
 parameter_list|,
-name|gfloat
+name|gdouble
 name|unconstrained_upper
 parameter_list|,
 specifier|const
@@ -2587,13 +2587,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_scale_entry_new:  * @table:               The #GtkTable the widgets will be attached to.  * @column:              The column to start with.  * @row:                 The row to attach the widgets.  * @text:                The text for the #GtkLabel which will appear  *                       left of the #GtkHScale.  * @scale_width:         The minimum horizontal size of the #GtkHScale.  * @spinbutton_width:    The minimum horizontal size of the #GtkSpinButton.  * @value:               The initial value.  * @lower:               The lower boundary.  * @upper:               The upper boundary.  * @step_increment:      The step increment.  * @page_increment:      The page increment.  * @digits:              The number of decimal digits.  * @tooltip:             A tooltip message for the scale and the spinbutton.  * @help_data:           The widgets' help_data (see gimp_help_set_help_data()).  *  * This function creates a #GtkLabel, a #GtkHScale and a #GtkSpinButton and  * attaches them to a 3-column #GtkTable.  *  * Note that if you pass a @tooltip or @help_data to this function you'll  * have to initialize GIMP's help system with gimp_help_init() before using it.  *  * Returns: The #GtkSpinButton's #GtkAdjustment.  **/
+comment|/**  * gimp_color_scale_entry_new:  * @table:               The #GtkTable the widgets will be attached to.  * @column:              The column to start with.  * @row:                 The row to attach the widgets.  * @text:                The text for the #GtkLabel which will appear  *                       left of the #GtkHScale.  * @scale_width:         The minimum horizontal size of the #GtkHScale.  * @spinbutton_width:    The minimum horizontal size of the #GtkSpinButton.  * @value:               The initial value.  * @lower:               The lower boundary.  * @upper:               The upper boundary.  * @step_increment:      The step increment.  * @page_increment:      The page increment.  * @digits:              The number of decimal digits.  * @tooltip:             A tooltip message for the scale and the spinbutton.  * @help_data:           The widgets' help_data (see gimp_help_set_help_data()).  *  * This function creates a #GtkLabel, a #GimpColorScale and a  * #GtkSpinButton and attaches them to a 3-column #GtkTable.  *  * Note that if you pass a @tooltip or @help_data to this function you'll  * have to initialize GIMP's help system with gimp_help_init() before using it.  *  * Returns: The #GtkSpinButton's #GtkAdjustment.  **/
 end_comment
 
 begin_function
 name|GtkObject
 modifier|*
-DECL|function|gimp_color_scale_entry_new (GtkTable * table,gint column,gint row,const gchar * text,gint scale_width,gint spinbutton_width,gfloat value,gfloat lower,gfloat upper,gfloat step_increment,gfloat page_increment,guint digits,const gchar * tooltip,const gchar * help_data)
+DECL|function|gimp_color_scale_entry_new (GtkTable * table,gint column,gint row,const gchar * text,gint scale_width,gint spinbutton_width,gdouble value,gdouble lower,gdouble upper,gdouble step_increment,gdouble page_increment,guint digits,const gchar * tooltip,const gchar * help_data)
 name|gimp_color_scale_entry_new
 parameter_list|(
 name|GtkTable
@@ -2617,19 +2617,19 @@ parameter_list|,
 name|gint
 name|spinbutton_width
 parameter_list|,
-name|gfloat
+name|gdouble
 name|value
 parameter_list|,
-name|gfloat
+name|gdouble
 name|lower
 parameter_list|,
-name|gfloat
+name|gdouble
 name|upper
 parameter_list|,
-name|gfloat
+name|gdouble
 name|step_increment
 parameter_list|,
-name|gfloat
+name|gdouble
 name|page_increment
 parameter_list|,
 name|guint
@@ -3038,7 +3038,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be4f4530108
+DECL|struct|__anon2c9b475f0108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -4423,7 +4423,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_int_adjustment_update:  * @adjustment: A #GtkAdjustment.  * @data:       A pointer to a #gint variable which will store the  *              @adjustment's value.  *  * Note that the #GtkAdjustment's value (which is a #gfloat) will be rounded  * with RINT().  **/
+comment|/**  * gimp_int_adjustment_update:  * @adjustment: A #GtkAdjustment.  * @data:       A pointer to a #gint variable which will store the  *              @adjustment's value.  *  * Note that the #GtkAdjustment's value (which is a #gdouble) will be  * rounded with RINT().  **/
 end_comment
 
 begin_function
@@ -4465,7 +4465,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_uint_adjustment_update:  * @adjustment: A #GtkAdjustment.  * @data:       A pointer to a #guint variable which will store the  *              @adjustment's value.  *  * Note that the #GtkAdjustment's value (which is a #gfloat) will be rounded  * with (#guint) (value + 0.5).  **/
+comment|/**  * gimp_uint_adjustment_update:  * @adjustment: A #GtkAdjustment.  * @data:       A pointer to a #guint variable which will store the  *              @adjustment's value.  *  * Note that the #GtkAdjustment's value (which is a #gdouble) will be rounded  * with (#guint) (value + 0.5).  **/
 end_comment
 
 begin_function
@@ -4511,7 +4511,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_float_adjustment_update:  * @adjustment: A #GtkAdjustment.  * @data:       A pointer to a #gfloat varaiable which willl store the  *              @adjustment's value.  **/
+comment|/**  * gimp_float_adjustment_update:  * @adjustment: A #GtkAdjustment.  * @data:       A pointer to a #gfloat varaiable which will store the  *              @adjustment's value.  **/
 end_comment
 
 begin_function
