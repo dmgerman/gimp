@@ -402,6 +402,8 @@ decl_stmt|;
 name|GimpParasite
 modifier|*
 name|parasite
+init|=
+name|NULL
 decl_stmt|;
 name|return_vals
 operator|=
@@ -436,7 +438,6 @@ name|d_status
 operator|==
 name|STATUS_SUCCESS
 condition|)
-block|{
 name|parasite
 operator|=
 name|gimp_parasite_copy
@@ -451,12 +452,6 @@ name|data
 operator|.
 name|d_parasite
 argument_list|)
-expr_stmt|;
-block|}
-else|else
-name|parasite
-operator|=
-name|NULL
 expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
