@@ -122,17 +122,8 @@ literal|"Michael Hammel"
 block|,
 literal|"Henrik Hansen"
 block|,
-ifndef|#
-directive|ifndef
-name|GDK_USE_UTF8_MBS
-literal|"Ville Hautamäki"
-block|,
-else|#
-directive|else
 literal|"Ville HautamÃ¤ki"
 block|,
-endif|#
-directive|endif
 literal|"James Henstridge"
 block|,
 literal|"Eric Hernes"
@@ -253,17 +244,8 @@ literal|"Tim Newsome"
 block|,
 literal|"Erik Nygren"
 block|,
-ifndef|#
-directive|ifndef
-name|GDK_USE_UTF8_MBS
-literal|"Tomas Ögren"
-block|,
-else|#
-directive|else
 literal|"Tomas Ãgren"
 block|,
-endif|#
-directive|endif
 literal|"Miles O'Neal"
 block|,
 literal|"Thom van Os"
