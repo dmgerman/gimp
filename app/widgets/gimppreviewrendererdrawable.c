@@ -24,19 +24,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdrawable.h"
+file|"widgets-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"gimpdrawablepreview.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdrawable.h"
 end_include
 
 begin_include

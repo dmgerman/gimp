@@ -30,7 +30,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"widgets-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdnd.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimplayerlistitem.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimppreview.h"
 end_include
 
 begin_include
@@ -60,18 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdnd.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimplayerlistitem.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpimage.h"
 end_include
 
@@ -85,12 +91,6 @@ begin_include
 include|#
 directive|include
 file|"gimplayermask.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimppreview.h"
 end_include
 
 begin_include

@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/widgets-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdialogfactory.h"
 end_include
 

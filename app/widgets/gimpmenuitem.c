@@ -18,13 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcontainer.h"
+file|"widgets-types.h"
 end_include
 
 begin_include
@@ -42,13 +36,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpmarshal.h"
+file|"gimppreview.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimppreview.h"
+file|"gimpcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpmarshal.h"
 end_include
 
 begin_include
@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e5cac50103
+DECL|enum|__anon2a47c41c0103
 block|{
 DECL|enumerator|SET_VIEWABLE
 name|SET_VIEWABLE

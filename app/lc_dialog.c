@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/widgets-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdialogfactory.h"
 end_include
 
@@ -1664,7 +1670,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29aad3230108
+DECL|struct|__anon2965e1910108
 block|{
 DECL|member|def
 name|GimpImage

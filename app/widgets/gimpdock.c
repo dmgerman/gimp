@@ -24,13 +24,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"widgets-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"gimpdialogfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdnd.h"
 end_include
 
 begin_include
@@ -49,12 +55,6 @@ begin_include
 include|#
 directive|include
 file|"gimpdockbook.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdnd.h"
 end_include
 
 begin_define

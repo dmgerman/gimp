@@ -18,13 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcontainer.h"
+file|"widgets-types.h"
 end_include
 
 begin_include
@@ -36,13 +30,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcontext.h"
+file|"gimpdnd.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpdnd.h"
+file|"gimpcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpcontext.h"
 end_include
 
 begin_include
@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4bfd780103
+DECL|enum|__anon297c935c0103
 block|{
 DECL|enumerator|SET_CONTAINER
 name|SET_CONTAINER

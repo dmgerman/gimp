@@ -100,6 +100,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/widgets-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools/gimptool.h"
 end_include
 
@@ -276,7 +282,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c13bc0e0103
+DECL|enum|__anon2b394a0c0103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING

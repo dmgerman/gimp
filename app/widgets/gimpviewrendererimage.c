@@ -18,19 +18,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpimage.h"
+file|"widgets-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"gimpimagepreview.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpimage.h"
 end_include
 
 begin_include

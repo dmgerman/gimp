@@ -16,6 +16,16 @@ directive|define
 name|__HISTOGRAM_TOOL_H__
 end_define
 
+begin_comment
+comment|/* FIXME: remove the dependency from pdb/color_cmds.c */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|"widgets/widgets-types.h"
+end_include
+
 begin_define
 DECL|macro|HISTOGRAM_WIDTH
 define|#

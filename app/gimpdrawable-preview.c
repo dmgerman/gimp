@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpdrawablepreview.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpchannel.h"
 end_include
 

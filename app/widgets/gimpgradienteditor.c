@@ -97,12 +97,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpcontainerlistview.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"color-notebook.h"
 end_include
 
@@ -299,7 +293,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a21f0890103
+DECL|enum|__anon2b5c2ce30103
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -339,7 +333,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a21f0890203
+DECL|enum|__anon2b5c2ce30203
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE

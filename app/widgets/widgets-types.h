@@ -16,6 +16,18 @@ directive|define
 name|__WIDGETS_TYPES_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"libgimpwidgets/gimpwidgetstypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
+end_include
+
 begin_comment
 comment|/*  non-widget objects  */
 end_comment

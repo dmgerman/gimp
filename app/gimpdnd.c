@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/widgets-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools/gimptool.h"
 end_include
 
@@ -190,7 +196,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c13af0c0103
+DECL|enum|__anon2ab12df20103
 block|{
 DECL|enumerator|GIMP_DND_DATA_NONE
 name|GIMP_DND_DATA_NONE

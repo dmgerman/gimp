@@ -18,19 +18,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimppalette.h"
+file|"widgets-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"gimppalettepreview.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimppalette.h"
 end_include
 
 begin_include

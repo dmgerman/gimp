@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"widgets-types.h"
 end_include
 
 begin_include
@@ -43,6 +43,12 @@ begin_include
 include|#
 directive|include
 file|"gimpcontainermenuimpl.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdnd.h"
 end_include
 
 begin_include
@@ -73,12 +79,6 @@ begin_include
 include|#
 directive|include
 file|"gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdnd.h"
 end_include
 
 begin_include

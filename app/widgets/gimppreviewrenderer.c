@@ -42,19 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"widgets-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"tools/gimptoolinfo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpbrush.h"
 end_include
 
 begin_include
@@ -72,19 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdrawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdrawablepreview.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpgradient.h"
 end_include
 
 begin_include
@@ -96,13 +78,49 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage.h"
+file|"gimpimagepreview.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpimagepreview.h"
+file|"gimppalettepreview.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimppatternpreview.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimptoolinfopreview.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpbrush.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdrawable.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpgradient.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpimage.h"
 end_include
 
 begin_include
@@ -120,31 +138,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppalettepreview.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimppattern.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimppatternpreview.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimppreview.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimptoolinfopreview.h"
 end_include
 
 begin_include
@@ -189,7 +189,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc132e60103
+DECL|enum|__anon2b9fdff10103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED

@@ -42,31 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcontainer.h"
+file|"widgets-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"gimpcontainerview.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdata.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdatafactory.h"
 end_include
 
 begin_include
@@ -90,13 +72,31 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcontext.h"
+file|"gimpdnd.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpdnd.h"
+file|"gimpcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdata.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdatafactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpcontext.h"
 end_include
 
 begin_include

@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"widgets-types.h"
 end_include
 
 begin_include
@@ -55,12 +55,6 @@ begin_include
 include|#
 directive|include
 file|"gimpdrawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdnd.h"
 end_include
 
 begin_include
@@ -97,6 +91,12 @@ begin_include
 include|#
 directive|include
 file|"gimpchannellistview.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdnd.h"
 end_include
 
 begin_include
@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27eaeb770103
+DECL|enum|__anon2bb190070103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE

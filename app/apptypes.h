@@ -19,6 +19,12 @@ end_define
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpunit.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpcolor/gimpcolortypes.h"
 end_include
 
@@ -26,12 +32,6 @@ begin_include
 include|#
 directive|include
 file|"libgimpmath/gimpmathtypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpwidgets/gimpwidgetstypes.h"
 end_include
 
 begin_include
@@ -45,23 +45,6 @@ include|#
 directive|include
 file|"appenums.h"
 end_include
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GTK_H__
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|"widgets/widgets-types.h"
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_comment
 comment|/*  base objects  */

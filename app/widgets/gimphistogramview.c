@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"widgets-types.h"
 end_include
 
 begin_include
@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af18f8f0103
+DECL|enum|__anon2c5202f30103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
