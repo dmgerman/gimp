@@ -256,7 +256,7 @@ DECL|macro|CURSOR_FORMAT_LENGTH
 define|#
 directive|define
 name|CURSOR_FORMAT_LENGTH
-value|16
+value|32
 end_define
 
 begin_typedef
