@@ -131,7 +131,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27afd4690103
+DECL|enum|__anon297d3cab0103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -152,7 +152,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27afd4690203
+DECL|enum|__anon297d3cab0203
 block|{
 DECL|enumerator|GIMP_DIALOG_SHOW_ALL
 name|GIMP_DIALOG_SHOW_ALL
@@ -2458,6 +2458,9 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
+name|gboolean
+name|toplevel
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DIALOG_FACTORY
@@ -2547,15 +2550,6 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-if|if
-condition|(
-name|entry
-condition|)
-comment|/* dialog is a toplevel (but not a GimpDock) or a GimpDockable */
-block|{
-name|gboolean
-name|toplevel
-decl_stmt|;
 name|toplevel
 operator|=
 name|GTK_WIDGET_TOPLEVEL
@@ -2563,6 +2557,12 @@ argument_list|(
 name|dialog
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|entry
+condition|)
+comment|/* dialog is a toplevel (but not a GimpDock) or a GimpDockable */
+block|{
 name|D
 argument_list|(
 name|g_print
@@ -2709,6 +2709,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|toplevel
+operator|&&
 name|entry
 operator|->
 name|session_managed
@@ -3021,12 +3023,8 @@ name|entry
 operator|->
 name|session_managed
 operator|&&
-name|GTK_WIDGET_TOPLEVEL
-argument_list|(
-name|dialog
-argument_list|)
+name|toplevel
 condition|)
-block|{
 name|g_signal_connect_object
 argument_list|(
 name|dialog
@@ -3043,7 +3041,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -3963,6 +3960,39 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+ifdef|#
+directive|ifdef
+name|DEBUG_FACTORY
+name|GimpDialogFactoryEntry
+modifier|*
+name|entry
+decl_stmt|;
+name|gimp_dialog_factory_from_widget
+argument_list|(
+name|dialog
+argument_list|,
+operator|&
+name|entry
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|entry
+condition|)
+name|g_print
+argument_list|(
+literal|"%s: setting GDK_HINT_USER_POS for \"%s\"\n"
+argument_list|,
+name|G_GNUC_FUNCTION
+argument_list|,
+name|entry
+operator|->
+name|identifier
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
+comment|/* DEBUG_FACTORY */
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|dialog
@@ -4134,7 +4164,7 @@ name|D
 argument_list|(
 name|g_print
 argument_list|(
-literal|"%s: updating session info for \"%s\"\n"
+literal|"%s: updating session info for \"%s\" from window geometry\n"
 argument_list|,
 name|G_GNUC_FUNCTION
 argument_list|,
