@@ -1216,6 +1216,16 @@ operator|->
 name|tool_options
 argument_list|)
 expr_stmt|;
+comment|/* do nothing if we are an FINISHED state */
+if|if
+condition|(
+name|vector_tool
+operator|->
+name|function
+operator|==
+name|VECTORS_FINISHED
+condition|)
+return|return;
 name|g_return_if_fail
 argument_list|(
 name|vector_tool
