@@ -1968,9 +1968,12 @@ name|ToolType
 name|tool_type
 parameter_list|)
 block|{
-comment|/*  Care for switching to the tool's private context  */
-name|context_manager_set_tool
+comment|/*  Care for switching to the tool's private context _before_ actually    *  switching the tool itself (the context manager needs to know the    *  old tool)    */
+name|gimp_context_set_tool
 argument_list|(
+name|gimp_context_get_user
+argument_list|()
+argument_list|,
 name|tool_type
 argument_list|)
 expr_stmt|;

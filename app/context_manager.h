@@ -56,16 +56,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|context_manager_set_tool
-parameter_list|(
-name|ToolType
-name|tool_type
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif

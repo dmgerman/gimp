@@ -4531,7 +4531,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2bbf8b300108
+DECL|struct|__anon2c2795ed0108
 typedef|typedef
 struct|struct
 block|{
@@ -8511,7 +8511,7 @@ name|gimp_context_get_user
 argument_list|()
 argument_list|,
 operator|(
-name|int
+name|LayerModeEffects
 operator|)
 name|data
 argument_list|)

@@ -379,7 +379,7 @@ name|context
 argument_list|)
 argument_list|,
 operator|(
-name|long
+name|LayerModeEffects
 operator|)
 name|data
 argument_list|)
