@@ -307,7 +307,7 @@ end_macro
 begin_function
 specifier|static
 name|void
-name|query_2
+name|query
 parameter_list|(
 name|void
 parameter_list|)
@@ -315,6 +315,37 @@ block|{
 specifier|static
 name|GimpParamDef
 name|args
+index|[]
+init|=
+block|{
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"run_mode"
+block|,
+literal|"Interactive, non-interactive"
+block|}
+block|,
+block|{
+name|GIMP_PDB_IMAGE
+block|,
+literal|"image"
+block|,
+literal|"Input image (unused)"
+block|}
+block|,
+block|{
+name|GIMP_PDB_DRAWABLE
+block|,
+literal|"drawable"
+block|,
+literal|"Input drawable"
+block|}
+block|,   }
+decl_stmt|;
+specifier|static
+name|GimpParamDef
+name|advanced_args
 index|[]
 init|=
 block|{
@@ -503,107 +534,6 @@ literal|"tangent_surround"
 block|}
 block|,   }
 decl_stmt|;
-specifier|static
-name|GimpParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
-name|int
-name|nreturn_vals
-init|=
-literal|0
-decl_stmt|;
-name|gimp_install_procedure
-argument_list|(
-literal|"plug_in_sel2path_advanced"
-argument_list|,
-literal|"Converts a selection to a path (with advanced user menu)"
-argument_list|,
-literal|"Converts a selection to a path (with advanced user menu)"
-argument_list|,
-literal|"Andy Thomas"
-argument_list|,
-literal|"Andy Thomas"
-argument_list|,
-literal|"1999"
-argument_list|,
-name|NULL
-argument_list|,
-literal|"RGB*, INDEXED*, GRAY*"
-argument_list|,
-name|GIMP_PLUGIN
-argument_list|,
-name|G_N_ELEMENTS
-argument_list|(
-name|args
-argument_list|)
-argument_list|,
-name|nreturn_vals
-argument_list|,
-name|args
-argument_list|,
-name|return_vals
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|query (void)
-name|query
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|GimpParamDef
-name|args
-index|[]
-init|=
-block|{
-block|{
-name|GIMP_PDB_INT32
-block|,
-literal|"run_mode"
-block|,
-literal|"Interactive, non-interactive"
-block|}
-block|,
-block|{
-name|GIMP_PDB_IMAGE
-block|,
-literal|"image"
-block|,
-literal|"Input image (unused)"
-block|}
-block|,
-block|{
-name|GIMP_PDB_DRAWABLE
-block|,
-literal|"drawable"
-block|,
-literal|"Input drawable"
-block|}
-block|,   }
-decl_stmt|;
-specifier|static
-name|GimpParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
-name|int
-name|nreturn_vals
-init|=
-literal|0
-decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_sel2path"
@@ -632,15 +562,44 @@ argument_list|(
 name|args
 argument_list|)
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
-name|query_2
-argument_list|()
+name|gimp_install_procedure
+argument_list|(
+literal|"plug_in_sel2path_advanced"
+argument_list|,
+literal|"Converts a selection to a path (with advanced user menu)"
+argument_list|,
+literal|"Converts a selection to a path (with advanced user menu)"
+argument_list|,
+literal|"Andy Thomas"
+argument_list|,
+literal|"Andy Thomas"
+argument_list|,
+literal|"1999"
+argument_list|,
+name|NULL
+argument_list|,
+literal|"RGB*, INDEXED*, GRAY*"
+argument_list|,
+name|GIMP_PLUGIN
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|advanced_args
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|advanced_args
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -2390,20 +2349,15 @@ argument_list|(
 name|olt
 argument_list|)
 expr_stmt|;
-name|gimp_selection_none
-argument_list|(
-name|image_ID
-argument_list|)
-expr_stmt|;
-name|gimp_displays_flush
-argument_list|()
-expr_stmt|;
 name|do_points
 argument_list|(
 name|splines
 argument_list|,
 name|image_ID
 argument_list|)
+expr_stmt|;
+name|gimp_displays_flush
+argument_list|()
 expr_stmt|;
 return|return
 name|TRUE
