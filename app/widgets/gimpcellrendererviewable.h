@@ -104,7 +104,7 @@ name|GtkCellRenderer
 name|parent_instance
 decl_stmt|;
 DECL|member|renderer
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 decl_stmt|;

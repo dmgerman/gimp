@@ -893,11 +893,11 @@ comment|/*  preview renderers  */
 end_comment
 
 begin_typedef
-DECL|typedef|GimpPreviewRenderer
+DECL|typedef|GimpViewRenderer
 typedef|typedef
 name|struct
-name|_GimpPreviewRenderer
-name|GimpPreviewRenderer
+name|_GimpViewRenderer
+name|GimpViewRenderer
 typedef|;
 end_typedef
 

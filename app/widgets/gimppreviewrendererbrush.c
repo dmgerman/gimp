@@ -86,7 +86,7 @@ specifier|static
 name|void
 name|gimp_preview_renderer_brush_render
 parameter_list|(
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|,
@@ -111,7 +111,7 @@ end_function_decl
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
-name|GimpPreviewRendererClass
+name|GimpViewRendererClass
 modifier|*
 name|parent_class
 init|=
@@ -185,7 +185,7 @@ name|renderer_type
 operator|=
 name|g_type_register_static
 argument_list|(
-name|GIMP_TYPE_PREVIEW_RENDERER
+name|GIMP_TYPE_VIEW_RENDERER
 argument_list|,
 literal|"GimpPreviewRendererBrush"
 argument_list|,
@@ -217,7 +217,7 @@ name|GObjectClass
 modifier|*
 name|object_class
 decl_stmt|;
-name|GimpPreviewRendererClass
+name|GimpViewRendererClass
 modifier|*
 name|renderer_class
 decl_stmt|;
@@ -230,7 +230,7 @@ argument_list|)
 expr_stmt|;
 name|renderer_class
 operator|=
-name|GIMP_PREVIEW_RENDERER_CLASS
+name|GIMP_VIEW_RENDERER_CLASS
 argument_list|(
 name|klass
 argument_list|)
@@ -340,10 +340,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_preview_renderer_brush_render (GimpPreviewRenderer * renderer,GtkWidget * widget)
+DECL|function|gimp_preview_renderer_brush_render (GimpViewRenderer * renderer,GtkWidget * widget)
 name|gimp_preview_renderer_brush_render
 parameter_list|(
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|,
@@ -499,7 +499,7 @@ operator|->
 name|is_popup
 condition|)
 block|{
-name|gimp_preview_renderer_render_buffer
+name|gimp_view_renderer_render_buffer
 argument_list|(
 name|renderer
 argument_list|,
@@ -508,9 +508,9 @@ argument_list|,
 operator|-
 literal|1
 argument_list|,
-name|GIMP_PREVIEW_BG_WHITE
+name|GIMP_VIEW_BG_WHITE
 argument_list|,
-name|GIMP_PREVIEW_BG_WHITE
+name|GIMP_VIEW_BG_WHITE
 argument_list|)
 expr_stmt|;
 name|temp_buf_free
@@ -548,7 +548,7 @@ expr_stmt|;
 block|}
 return|return;
 block|}
-name|gimp_preview_renderer_render_buffer
+name|gimp_view_renderer_render_buffer
 argument_list|(
 name|renderer
 argument_list|,
@@ -557,9 +557,9 @@ argument_list|,
 operator|-
 literal|1
 argument_list|,
-name|GIMP_PREVIEW_BG_WHITE
+name|GIMP_VIEW_BG_WHITE
 argument_list|,
-name|GIMP_PREVIEW_BG_WHITE
+name|GIMP_VIEW_BG_WHITE
 argument_list|)
 expr_stmt|;
 name|temp_buf_free
@@ -1351,7 +1351,7 @@ name|GimpPreviewRendererBrush
 modifier|*
 name|renderbrush
 decl_stmt|;
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 decl_stmt|;
@@ -1376,7 +1376,7 @@ argument_list|)
 expr_stmt|;
 name|renderer
 operator|=
-name|GIMP_PREVIEW_RENDERER
+name|GIMP_VIEW_RENDERER
 argument_list|(
 name|data
 argument_list|)
@@ -1467,7 +1467,7 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-name|gimp_preview_renderer_render_buffer
+name|gimp_view_renderer_render_buffer
 argument_list|(
 name|renderer
 argument_list|,
@@ -1476,9 +1476,9 @@ argument_list|,
 operator|-
 literal|1
 argument_list|,
-name|GIMP_PREVIEW_BG_WHITE
+name|GIMP_VIEW_BG_WHITE
 argument_list|,
-name|GIMP_PREVIEW_BG_WHITE
+name|GIMP_VIEW_BG_WHITE
 argument_list|)
 expr_stmt|;
 name|temp_buf_free
@@ -1486,7 +1486,7 @@ argument_list|(
 name|temp_buf
 argument_list|)
 expr_stmt|;
-name|gimp_preview_renderer_update
+name|gimp_view_renderer_update
 argument_list|(
 name|renderer
 argument_list|)

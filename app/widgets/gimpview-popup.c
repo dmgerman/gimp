@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimppreview-popup.h  * Copyright (C) 2001 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpview-popup.c  * Copyright (C) 2001 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -42,36 +42,36 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreviewrenderer.h"
+file|"gimpviewrenderer.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimppreview-popup.h"
+file|"gimpview-popup.h"
 end_include
 
 begin_define
-DECL|macro|PREVIEW_POPUP_DELAY
+DECL|macro|VIEW_POPUP_DELAY
 define|#
 directive|define
-name|PREVIEW_POPUP_DELAY
+name|VIEW_POPUP_DELAY
 value|150
 end_define
 
 begin_typedef
-DECL|typedef|GimpPreviewPopup
+DECL|typedef|GimpViewPopup
 typedef|typedef
 name|struct
-name|_GimpPreviewPopup
-name|GimpPreviewPopup
+name|_GimpViewPopup
+name|GimpViewPopup
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpPreviewPopup
+DECL|struct|_GimpViewPopup
 struct|struct
-name|_GimpPreviewPopup
+name|_GimpViewPopup
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -127,9 +127,9 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|gimp_preview_popup_hide
+name|gimp_view_popup_hide
 parameter_list|(
-name|GimpPreviewPopup
+name|GimpViewPopup
 modifier|*
 name|popup
 parameter_list|)
@@ -139,7 +139,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_preview_popup_button_release
+name|gimp_view_popup_button_release
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -149,7 +149,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GimpPreviewPopup
+name|GimpViewPopup
 modifier|*
 name|popup
 parameter_list|)
@@ -159,13 +159,13 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_preview_popup_unmap
+name|gimp_view_popup_unmap
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpPreviewPopup
+name|GimpViewPopup
 modifier|*
 name|popup
 parameter_list|)
@@ -175,9 +175,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_preview_popup_timeout
+name|gimp_view_popup_timeout
 parameter_list|(
-name|GimpPreviewPopup
+name|GimpViewPopup
 modifier|*
 name|popup
 parameter_list|)
@@ -190,8 +190,8 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_preview_popup_show (GtkWidget * widget,GdkEventButton * bevent,GimpViewable * viewable,gint preview_width,gint preview_height,gboolean dot_for_dot)
-name|gimp_preview_popup_show
+DECL|function|gimp_view_popup_show (GtkWidget * widget,GdkEventButton * bevent,GimpViewable * viewable,gint view_width,gint view_height,gboolean dot_for_dot)
+name|gimp_view_popup_show
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -206,16 +206,16 @@ modifier|*
 name|viewable
 parameter_list|,
 name|gint
-name|preview_width
+name|view_width
 parameter_list|,
 name|gint
-name|preview_height
+name|view_height
 parameter_list|,
 name|gboolean
 name|dot_for_dot
 parameter_list|)
 block|{
-name|GimpPreviewPopup
+name|GimpViewPopup
 modifier|*
 name|popup
 decl_stmt|;
@@ -261,9 +261,9 @@ name|gimp_viewable_get_popup_size
 argument_list|(
 name|viewable
 argument_list|,
-name|preview_width
+name|view_width
 argument_list|,
-name|preview_height
+name|view_height
 argument_list|,
 name|dot_for_dot
 argument_list|,
@@ -281,7 +281,7 @@ name|popup
 operator|=
 name|g_new0
 argument_list|(
-name|GimpPreviewPopup
+name|GimpViewPopup
 argument_list|,
 literal|1
 argument_list|)
@@ -377,7 +377,7 @@ literal|"button_release_event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_preview_popup_button_release
+name|gimp_view_popup_button_release
 argument_list|)
 argument_list|,
 name|popup
@@ -391,7 +391,7 @@ literal|"unmap"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_preview_popup_unmap
+name|gimp_view_popup_unmap
 argument_list|)
 argument_list|,
 name|popup
@@ -403,12 +403,12 @@ name|timeout_id
 operator|=
 name|g_timeout_add
 argument_list|(
-name|PREVIEW_POPUP_DELAY
+name|VIEW_POPUP_DELAY
 argument_list|,
 operator|(
 name|GSourceFunc
 operator|)
-name|gimp_preview_popup_timeout
+name|gimp_view_popup_timeout
 argument_list|,
 name|popup
 argument_list|)
@@ -420,14 +420,14 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-literal|"gimp-preview-popup"
+literal|"gimp-view-popup"
 argument_list|,
 name|popup
 argument_list|,
 operator|(
 name|GDestroyNotify
 operator|)
-name|gimp_preview_popup_hide
+name|gimp_view_popup_hide
 argument_list|)
 expr_stmt|;
 name|gtk_grab_add
@@ -448,10 +448,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_preview_popup_hide (GimpPreviewPopup * popup)
-name|gimp_preview_popup_hide
+DECL|function|gimp_view_popup_hide (GimpViewPopup * popup)
+name|gimp_view_popup_hide
 parameter_list|(
-name|GimpPreviewPopup
+name|GimpViewPopup
 modifier|*
 name|popup
 parameter_list|)
@@ -488,7 +488,7 @@ name|popup
 operator|->
 name|widget
 argument_list|,
-name|gimp_preview_popup_button_release
+name|gimp_view_popup_button_release
 argument_list|,
 name|popup
 argument_list|)
@@ -499,7 +499,7 @@ name|popup
 operator|->
 name|widget
 argument_list|,
-name|gimp_preview_popup_unmap
+name|gimp_view_popup_unmap
 argument_list|,
 name|popup
 argument_list|)
@@ -522,8 +522,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_preview_popup_button_release (GtkWidget * widget,GdkEventButton * bevent,GimpPreviewPopup * popup)
-name|gimp_preview_popup_button_release
+DECL|function|gimp_view_popup_button_release (GtkWidget * widget,GdkEventButton * bevent,GimpViewPopup * popup)
+name|gimp_view_popup_button_release
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -533,7 +533,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GimpPreviewPopup
+name|GimpViewPopup
 modifier|*
 name|popup
 parameter_list|)
@@ -557,7 +557,7 @@ operator|->
 name|widget
 argument_list|)
 argument_list|,
-literal|"gimp-preview-popup"
+literal|"gimp-view-popup"
 argument_list|,
 name|NULL
 argument_list|)
@@ -571,14 +571,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_preview_popup_unmap (GtkWidget * widget,GimpPreviewPopup * popup)
-name|gimp_preview_popup_unmap
+DECL|function|gimp_view_popup_unmap (GtkWidget * widget,GimpViewPopup * popup)
+name|gimp_view_popup_unmap
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpPreviewPopup
+name|GimpViewPopup
 modifier|*
 name|popup
 parameter_list|)
@@ -592,7 +592,7 @@ operator|->
 name|widget
 argument_list|)
 argument_list|,
-literal|"gimp-preview-popup"
+literal|"gimp-view-popup"
 argument_list|,
 name|NULL
 argument_list|)
@@ -603,10 +603,10 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_preview_popup_timeout (GimpPreviewPopup * popup)
-name|gimp_preview_popup_timeout
+DECL|function|gimp_view_popup_timeout (GimpViewPopup * popup)
+name|gimp_view_popup_timeout
 parameter_list|(
-name|GimpPreviewPopup
+name|GimpViewPopup
 modifier|*
 name|popup
 parameter_list|)
@@ -738,7 +738,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_preview_renderer_set_dot_for_dot
+name|gimp_view_renderer_set_dot_for_dot
 argument_list|(
 name|GIMP_VIEW
 argument_list|(

@@ -1,105 +1,105 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimppreviewrenderer.h  * Copyright (C) 2003 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpviewrenderer.h  * Copyright (C) 2003 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_PREVIEW_RENDERER_H__
+name|__GIMP_VIEW_RENDERER_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_PREVIEW_RENDERER_H__
+DECL|macro|__GIMP_VIEW_RENDERER_H__
 define|#
 directive|define
-name|__GIMP_PREVIEW_RENDERER_H__
+name|__GIMP_VIEW_RENDERER_H__
 end_define
 
 begin_define
-DECL|macro|GIMP_PREVIEW_MAX_BORDER_WIDTH
+DECL|macro|GIMP_VIEW_MAX_BORDER_WIDTH
 define|#
 directive|define
-name|GIMP_PREVIEW_MAX_BORDER_WIDTH
+name|GIMP_VIEW_MAX_BORDER_WIDTH
 value|16
 end_define
 
 begin_define
-DECL|macro|GIMP_TYPE_PREVIEW_RENDERER
+DECL|macro|GIMP_TYPE_VIEW_RENDERER
 define|#
 directive|define
-name|GIMP_TYPE_PREVIEW_RENDERER
-value|(gimp_preview_renderer_get_type ())
+name|GIMP_TYPE_VIEW_RENDERER
+value|(gimp_view_renderer_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_PREVIEW_RENDERER (obj)
+DECL|macro|GIMP_VIEW_RENDERER (obj)
 define|#
 directive|define
-name|GIMP_PREVIEW_RENDERER
+name|GIMP_VIEW_RENDERER
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_PREVIEW_RENDERER, GimpPreviewRenderer))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_VIEW_RENDERER, GimpViewRenderer))
 end_define
 
 begin_define
-DECL|macro|GIMP_PREVIEW_RENDERER_CLASS (klass)
+DECL|macro|GIMP_VIEW_RENDERER_CLASS (klass)
 define|#
 directive|define
-name|GIMP_PREVIEW_RENDERER_CLASS
+name|GIMP_VIEW_RENDERER_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_PREVIEW_RENDERER, GimpPreviewRendererClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_VIEW_RENDERER, GimpViewRendererClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_PREVIEW_RENDERER (obj)
+DECL|macro|GIMP_IS_VIEW_RENDERER (obj)
 define|#
 directive|define
-name|GIMP_IS_PREVIEW_RENDERER
+name|GIMP_IS_VIEW_RENDERER
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE (obj, GIMP_TYPE_PREVIEW_RENDERER))
+value|(G_TYPE_CHECK_INSTANCE_TYPE (obj, GIMP_TYPE_VIEW_RENDERER))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_PREVIEW_RENDERER_CLASS (klass)
+DECL|macro|GIMP_IS_VIEW_RENDERER_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_PREVIEW_RENDERER_CLASS
+name|GIMP_IS_VIEW_RENDERER_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PREVIEW_RENDERER))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_VIEW_RENDERER))
 end_define
 
 begin_define
-DECL|macro|GIMP_PREVIEW_RENDERER_GET_CLASS (obj)
+DECL|macro|GIMP_VIEW_RENDERER_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_PREVIEW_RENDERER_GET_CLASS
+name|GIMP_VIEW_RENDERER_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_PREVIEW_RENDERER, GimpPreviewRendererClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_VIEW_RENDERER, GimpViewRendererClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpPreviewRendererClass
+DECL|typedef|GimpViewRendererClass
 typedef|typedef
 name|struct
-name|_GimpPreviewRendererClass
-name|GimpPreviewRendererClass
+name|_GimpViewRendererClass
+name|GimpViewRendererClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpPreviewRenderer
+DECL|struct|_GimpViewRenderer
 struct|struct
-name|_GimpPreviewRenderer
+name|_GimpViewRenderer
 block|{
 DECL|member|parent_instance
 name|GObject
@@ -135,7 +135,7 @@ name|gboolean
 name|is_popup
 decl_stmt|;
 DECL|member|border_type
-name|GimpPreviewBorderType
+name|GimpViewBorderType
 name|border_type
 decl_stmt|;
 DECL|member|border_color
@@ -161,10 +161,10 @@ DECL|member|bytes
 name|gint
 name|bytes
 decl_stmt|;
-DECL|member|no_preview_pixbuf
+DECL|member|no_view_pixbuf
 name|GdkPixbuf
 modifier|*
-name|no_preview_pixbuf
+name|no_view_pixbuf
 decl_stmt|;
 DECL|member|bg_stock_id
 name|gchar
@@ -188,9 +188,9 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpPreviewRendererClass
+DECL|struct|_GimpViewRendererClass
 struct|struct
-name|_GimpPreviewRendererClass
+name|_GimpViewRendererClass
 block|{
 DECL|member|parent_class
 name|GObjectClass
@@ -204,7 +204,7 @@ modifier|*
 name|update
 function_decl|)
 parameter_list|(
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|)
@@ -217,7 +217,7 @@ modifier|*
 name|draw
 function_decl|)
 parameter_list|(
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|,
@@ -247,7 +247,7 @@ modifier|*
 name|render
 function_decl|)
 parameter_list|(
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|,
@@ -262,7 +262,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_preview_renderer_get_type
+name|gimp_view_renderer_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -271,9 +271,9 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
-name|gimp_preview_renderer_new
+name|gimp_view_renderer_new
 parameter_list|(
 name|GType
 name|viewable_type
@@ -291,9 +291,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
-name|gimp_preview_renderer_new_full
+name|gimp_view_renderer_new_full
 parameter_list|(
 name|GType
 name|viewable_type
@@ -315,9 +315,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_preview_renderer_set_viewable
+name|gimp_view_renderer_set_viewable
 parameter_list|(
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|,
@@ -330,9 +330,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_preview_renderer_set_size
+name|gimp_view_renderer_set_size
 parameter_list|(
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|,
@@ -347,9 +347,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_preview_renderer_set_size_full
+name|gimp_view_renderer_set_size_full
 parameter_list|(
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|,
@@ -367,9 +367,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_preview_renderer_set_dot_for_dot
+name|gimp_view_renderer_set_dot_for_dot
 parameter_list|(
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|,
@@ -381,13 +381,13 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_preview_renderer_set_border_type
+name|gimp_view_renderer_set_border_type
 parameter_list|(
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|,
-name|GimpPreviewBorderType
+name|GimpViewBorderType
 name|border_type
 parameter_list|)
 function_decl|;
@@ -395,9 +395,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_preview_renderer_set_border_color
+name|gimp_view_renderer_set_border_color
 parameter_list|(
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|,
@@ -411,9 +411,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_preview_renderer_set_background
+name|gimp_view_renderer_set_background
 parameter_list|(
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|,
@@ -427,9 +427,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_preview_renderer_unrealize
+name|gimp_view_renderer_unrealize
 parameter_list|(
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|)
@@ -438,9 +438,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_preview_renderer_invalidate
+name|gimp_view_renderer_invalidate
 parameter_list|(
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|)
@@ -449,9 +449,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_preview_renderer_update
+name|gimp_view_renderer_update
 parameter_list|(
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|)
@@ -460,9 +460,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_preview_renderer_update_idle
+name|gimp_view_renderer_update_idle
 parameter_list|(
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|)
@@ -471,9 +471,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_preview_renderer_remove_idle
+name|gimp_view_renderer_remove_idle
 parameter_list|(
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|)
@@ -482,9 +482,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_preview_renderer_draw
+name|gimp_view_renderer_draw
 parameter_list|(
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|,
@@ -515,9 +515,9 @@ end_comment
 
 begin_function_decl
 name|void
-name|gimp_preview_renderer_default_render_buffer
+name|gimp_view_renderer_default_render_buffer
 parameter_list|(
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|,
@@ -534,9 +534,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_preview_renderer_default_render_stock
+name|gimp_view_renderer_default_render_stock
 parameter_list|(
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|,
@@ -554,9 +554,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_preview_renderer_render_buffer
+name|gimp_view_renderer_render_buffer
 parameter_list|(
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|,
@@ -567,10 +567,10 @@ parameter_list|,
 name|gint
 name|channel
 parameter_list|,
-name|GimpPreviewBG
+name|GimpViewBG
 name|inside_bg
 parameter_list|,
-name|GimpPreviewBG
+name|GimpViewBG
 name|outside_bg
 parameter_list|)
 function_decl|;
@@ -582,7 +582,7 @@ end_comment
 
 begin_function_decl
 name|void
-name|gimp_preview_render_to_buffer
+name|gimp_view_render_to_buffer
 parameter_list|(
 name|TempBuf
 modifier|*
@@ -591,10 +591,10 @@ parameter_list|,
 name|gint
 name|channel
 parameter_list|,
-name|GimpPreviewBG
+name|GimpViewBG
 name|inside_bg
 parameter_list|,
-name|GimpPreviewBG
+name|GimpViewBG
 name|outside_bg
 parameter_list|,
 name|guchar
@@ -622,7 +622,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_PREVIEW_RENDERER_H__ */
+comment|/* __GIMP_VIEW_RENDERER_H__ */
 end_comment
 
 end_unit

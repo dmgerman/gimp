@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreviewrenderer.h"
+file|"gimpviewrenderer.h"
 end_include
 
 begin_include
@@ -1009,7 +1009,7 @@ argument_list|(
 name|data
 argument_list|)
 decl_stmt|;
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 decl_stmt|;
@@ -1117,7 +1117,7 @@ name|path
 argument_list|)
 condition|)
 block|{
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 decl_stmt|;

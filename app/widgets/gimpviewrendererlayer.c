@@ -56,7 +56,7 @@ specifier|static
 name|void
 name|gimp_preview_renderer_layer_render
 parameter_list|(
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|,
@@ -171,13 +171,13 @@ modifier|*
 name|klass
 parameter_list|)
 block|{
-name|GimpPreviewRendererClass
+name|GimpViewRendererClass
 modifier|*
 name|renderer_class
 decl_stmt|;
 name|renderer_class
 operator|=
-name|GIMP_PREVIEW_RENDERER_CLASS
+name|GIMP_VIEW_RENDERER_CLASS
 argument_list|(
 name|klass
 argument_list|)
@@ -201,10 +201,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_preview_renderer_layer_render (GimpPreviewRenderer * renderer,GtkWidget * widget)
+DECL|function|gimp_preview_renderer_layer_render (GimpViewRenderer * renderer,GtkWidget * widget)
 name|gimp_preview_renderer_layer_render
 parameter_list|(
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|,
@@ -266,7 +266,7 @@ if|if
 condition|(
 name|stock_id
 condition|)
-name|gimp_preview_renderer_default_render_stock
+name|gimp_view_renderer_default_render_stock
 argument_list|(
 name|renderer
 argument_list|,
@@ -276,7 +276,7 @@ name|stock_id
 argument_list|)
 expr_stmt|;
 else|else
-name|GIMP_PREVIEW_RENDERER_CLASS
+name|GIMP_VIEW_RENDERER_CLASS
 argument_list|(
 name|parent_class
 argument_list|)

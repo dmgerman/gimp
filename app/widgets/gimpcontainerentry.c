@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreviewrenderer.h"
+file|"gimpviewrenderer.h"
 end_include
 
 begin_define
@@ -260,7 +260,7 @@ specifier|static
 name|void
 name|gimp_container_entry_renderer_update
 parameter_list|(
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|,
@@ -525,7 +525,7 @@ name|gtk_list_store_new
 argument_list|(
 name|GIMP_CONTAINER_ENTRY_NUM_COLUMNS
 argument_list|,
-name|GIMP_TYPE_PREVIEW_RENDERER
+name|GIMP_TYPE_VIEW_RENDERER
 argument_list|,
 name|G_TYPE_STRING
 argument_list|)
@@ -849,7 +849,7 @@ argument_list|(
 name|entry
 argument_list|)
 decl_stmt|;
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 decl_stmt|;
@@ -871,7 +871,7 @@ argument_list|)
 expr_stmt|;
 name|renderer
 operator|=
-name|gimp_preview_renderer_new
+name|gimp_view_renderer_new
 argument_list|(
 name|G_TYPE_FROM_INSTANCE
 argument_list|(
@@ -885,14 +885,14 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_preview_renderer_set_viewable
+name|gimp_view_renderer_set_viewable
 argument_list|(
 name|renderer
 argument_list|,
 name|viewable
 argument_list|)
 expr_stmt|;
-name|gimp_preview_renderer_remove_idle
+name|gimp_view_renderer_remove_idle
 argument_list|(
 name|renderer
 argument_list|)
@@ -1540,7 +1540,7 @@ name|iter
 argument_list|)
 control|)
 block|{
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 decl_stmt|;
@@ -1560,7 +1560,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_preview_renderer_set_size
+name|gimp_view_renderer_set_size
 argument_list|(
 name|renderer
 argument_list|,
@@ -1653,10 +1653,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_container_entry_renderer_update (GimpPreviewRenderer * renderer,GimpContainerView * view)
+DECL|function|gimp_container_entry_renderer_update (GimpViewRenderer * renderer,GimpContainerView * view)
 name|gimp_container_entry_renderer_update
 parameter_list|(
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|,

@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimppreviewrenderer.h"
+file|"widgets/gimpviewrenderer.h"
 end_include
 
 begin_include
@@ -1790,7 +1790,7 @@ operator|->
 name|view
 argument_list|)
 decl_stmt|;
-name|gimp_preview_renderer_set_size
+name|gimp_view_renderer_set_size
 argument_list|(
 name|view
 operator|->
@@ -2203,7 +2203,7 @@ argument_list|,
 name|shell
 argument_list|)
 expr_stmt|;
-name|gimp_preview_renderer_set_background
+name|gimp_view_renderer_set_background
 argument_list|(
 name|GIMP_VIEW
 argument_list|(
@@ -3014,7 +3014,7 @@ modifier|*
 name|editor
 parameter_list|)
 block|{
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 decl_stmt|;
@@ -3065,7 +3065,7 @@ name|shell
 operator|->
 name|dot_for_dot
 condition|)
-name|gimp_preview_renderer_set_dot_for_dot
+name|gimp_view_renderer_set_dot_for_dot
 argument_list|(
 name|renderer
 argument_list|,

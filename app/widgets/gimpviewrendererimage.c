@@ -74,7 +74,7 @@ specifier|static
 name|void
 name|gimp_preview_renderer_image_render
 parameter_list|(
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|,
@@ -88,7 +88,7 @@ end_function_decl
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
-name|GimpPreviewRendererClass
+name|GimpViewRendererClass
 modifier|*
 name|parent_class
 init|=
@@ -162,7 +162,7 @@ name|renderer_type
 operator|=
 name|g_type_register_static
 argument_list|(
-name|GIMP_TYPE_PREVIEW_RENDERER
+name|GIMP_TYPE_VIEW_RENDERER
 argument_list|,
 literal|"GimpPreviewRendererImage"
 argument_list|,
@@ -190,13 +190,13 @@ modifier|*
 name|klass
 parameter_list|)
 block|{
-name|GimpPreviewRendererClass
+name|GimpViewRendererClass
 modifier|*
 name|renderer_class
 decl_stmt|;
 name|renderer_class
 operator|=
-name|GIMP_PREVIEW_RENDERER_CLASS
+name|GIMP_VIEW_RENDERER_CLASS
 argument_list|(
 name|klass
 argument_list|)
@@ -241,10 +241,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_preview_renderer_image_render (GimpPreviewRenderer * renderer,GtkWidget * widget)
+DECL|function|gimp_preview_renderer_image_render (GimpViewRenderer * renderer,GtkWidget * widget)
 name|gimp_preview_renderer_image_render
 parameter_list|(
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|,
@@ -517,7 +517,7 @@ operator|->
 name|channel
 argument_list|)
 expr_stmt|;
-name|gimp_preview_renderer_render_buffer
+name|gimp_view_renderer_render_buffer
 argument_list|(
 name|renderer
 argument_list|,
@@ -525,9 +525,9 @@ name|render_buf
 argument_list|,
 name|component_index
 argument_list|,
-name|GIMP_PREVIEW_BG_CHECKS
+name|GIMP_VIEW_BG_CHECKS
 argument_list|,
-name|GIMP_PREVIEW_BG_WHITE
+name|GIMP_VIEW_BG_WHITE
 argument_list|)
 expr_stmt|;
 name|temp_buf_free
@@ -610,7 +610,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
-name|gimp_preview_renderer_default_render_stock
+name|gimp_view_renderer_default_render_stock
 argument_list|(
 name|renderer
 argument_list|,

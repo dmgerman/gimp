@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreviewrenderer.h"
+file|"gimpviewrenderer.h"
 end_include
 
 begin_define
@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0b58920103
+DECL|enum|__anon28e3d48c0103
 block|{
 DECL|enumerator|MARKER_CHANGED
 name|MARKER_CHANGED

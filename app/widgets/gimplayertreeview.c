@@ -156,7 +156,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreviewrenderer.h"
+file|"gimpviewrenderer.h"
 end_include
 
 begin_include
@@ -627,7 +627,7 @@ specifier|static
 name|void
 name|gimp_layer_tree_view_renderer_update
 parameter_list|(
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|,
@@ -1240,7 +1240,7 @@ operator|->
 name|n_model_columns
 index|]
 operator|=
-name|GIMP_TYPE_PREVIEW_RENDERER
+name|GIMP_TYPE_VIEW_RENDERER
 expr_stmt|;
 name|tree_view
 operator|->
@@ -2154,7 +2154,7 @@ name|iter
 argument_list|)
 control|)
 block|{
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 decl_stmt|;
@@ -2183,7 +2183,7 @@ condition|(
 name|renderer
 condition|)
 block|{
-name|gimp_preview_renderer_unrealize
+name|gimp_view_renderer_unrealize
 argument_list|(
 name|renderer
 argument_list|)
@@ -2886,7 +2886,7 @@ name|iter
 argument_list|)
 control|)
 block|{
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 decl_stmt|;
@@ -2915,7 +2915,7 @@ condition|(
 name|renderer
 condition|)
 block|{
-name|gimp_preview_renderer_set_size
+name|gimp_view_renderer_set_size
 argument_list|(
 name|renderer
 argument_list|,
@@ -3962,7 +3962,7 @@ directive|define
 name|BLOCK
 parameter_list|()
 define|\
-value|g_signal_handlers_block_by_func (layer, \ 	gimp_layer_tree_view_layer_signal_handler, view)
+value|g_signal_handlers_block_by_func (layer, \         gimp_layer_tree_view_layer_signal_handler, view)
 end_define
 
 begin_define
@@ -3972,7 +3972,7 @@ directive|define
 name|UNBLOCK
 parameter_list|()
 define|\
-value|g_signal_handlers_unblock_by_func (layer, \ 	gimp_layer_tree_view_layer_signal_handler, view)
+value|g_signal_handlers_unblock_by_func (layer, \         gimp_layer_tree_view_layer_signal_handler, view)
 end_define
 
 begin_function
@@ -4756,7 +4756,7 @@ name|GimpLayerMask
 modifier|*
 name|mask
 decl_stmt|;
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 init|=
@@ -4805,7 +4805,7 @@ name|TRUE
 expr_stmt|;
 name|renderer
 operator|=
-name|gimp_preview_renderer_new
+name|gimp_view_renderer_new
 argument_list|(
 name|G_TYPE_FROM_INSTANCE
 argument_list|(
@@ -4819,7 +4819,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_preview_renderer_set_viewable
+name|gimp_view_renderer_set_viewable
 argument_list|(
 name|renderer
 argument_list|,
@@ -4940,7 +4940,7 @@ argument_list|,
 name|iter
 argument_list|)
 expr_stmt|;
-name|gimp_preview_renderer_remove_idle
+name|gimp_view_renderer_remove_idle
 argument_list|(
 name|renderer
 argument_list|)
@@ -5013,10 +5013,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_layer_tree_view_renderer_update (GimpPreviewRenderer * renderer,GimpLayerTreeView * layer_view)
+DECL|function|gimp_layer_tree_view_renderer_update (GimpViewRenderer * renderer,GimpLayerTreeView * layer_view)
 name|gimp_layer_tree_view_renderer_update
 parameter_list|(
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|,
@@ -5140,11 +5140,11 @@ argument_list|(
 name|layer_view
 argument_list|)
 decl_stmt|;
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|layer_renderer
 decl_stmt|;
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|mask_renderer
 decl_stmt|;
@@ -5154,10 +5154,10 @@ name|mask
 init|=
 name|NULL
 decl_stmt|;
-name|GimpPreviewBorderType
+name|GimpViewBorderType
 name|layer_type
 init|=
-name|GIMP_PREVIEW_BORDER_BLACK
+name|GIMP_VIEW_BORDER_BLACK
 decl_stmt|;
 name|gtk_tree_model_get
 argument_list|(
@@ -5215,9 +5215,9 @@ operator|)
 condition|)
 name|layer_type
 operator|=
-name|GIMP_PREVIEW_BORDER_WHITE
+name|GIMP_VIEW_BORDER_WHITE
 expr_stmt|;
-name|gimp_preview_renderer_set_border_type
+name|gimp_view_renderer_set_border_type
 argument_list|(
 name|layer_renderer
 argument_list|,
@@ -5229,10 +5229,10 @@ condition|(
 name|mask
 condition|)
 block|{
-name|GimpPreviewBorderType
+name|GimpViewBorderType
 name|mask_color
 init|=
-name|GIMP_PREVIEW_BORDER_BLACK
+name|GIMP_VIEW_BORDER_BLACK
 decl_stmt|;
 if|if
 condition|(
@@ -5244,7 +5244,7 @@ condition|)
 block|{
 name|mask_color
 operator|=
-name|GIMP_PREVIEW_BORDER_GREEN
+name|GIMP_VIEW_BORDER_GREEN
 expr_stmt|;
 block|}
 elseif|else
@@ -5259,7 +5259,7 @@ condition|)
 block|{
 name|mask_color
 operator|=
-name|GIMP_PREVIEW_BORDER_RED
+name|GIMP_VIEW_BORDER_RED
 expr_stmt|;
 block|}
 elseif|else
@@ -5273,10 +5273,10 @@ condition|)
 block|{
 name|mask_color
 operator|=
-name|GIMP_PREVIEW_BORDER_WHITE
+name|GIMP_VIEW_BORDER_WHITE
 expr_stmt|;
 block|}
-name|gimp_preview_renderer_set_border_type
+name|gimp_view_renderer_set_border_type
 argument_list|(
 name|mask_renderer
 argument_list|,
@@ -5420,7 +5420,7 @@ name|path
 argument_list|)
 condition|)
 block|{
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 decl_stmt|;
@@ -5578,7 +5578,7 @@ name|path
 argument_list|)
 condition|)
 block|{
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 decl_stmt|;

@@ -143,7 +143,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreviewrenderer.h"
+file|"gimpviewrenderer.h"
 end_include
 
 begin_include
@@ -492,7 +492,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_preview_renderer_set_background
+name|gimp_view_renderer_set_background
 argument_list|(
 name|GIMP_VIEW
 argument_list|(
@@ -1021,7 +1021,7 @@ argument_list|(
 name|editor
 argument_list|)
 decl_stmt|;
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 decl_stmt|;
@@ -1460,7 +1460,7 @@ modifier|*
 name|editor
 parameter_list|)
 block|{
-name|gimp_preview_renderer_invalidate
+name|gimp_view_renderer_invalidate
 argument_list|(
 name|GIMP_VIEW
 argument_list|(

@@ -108,7 +108,7 @@ modifier|*
 name|viewable
 decl_stmt|;
 DECL|member|renderer
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 decl_stmt|;

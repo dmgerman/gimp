@@ -111,7 +111,7 @@ block|{
 name|GType
 name|type
 init|=
-name|GIMP_TYPE_PREVIEW_RENDERER
+name|GIMP_TYPE_VIEW_RENDERER
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(

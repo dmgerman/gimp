@@ -78,13 +78,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreview-popup.h"
+file|"gimpview-popup.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimppreviewrenderer.h"
+file|"gimpviewrenderer.h"
 end_include
 
 begin_include
@@ -103,7 +103,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a50b6190103
+DECL|enum|__anon288e54f80103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -321,7 +321,7 @@ specifier|static
 name|void
 name|gimp_view_update_callback
 parameter_list|(
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|,
@@ -1030,7 +1030,7 @@ name|view
 operator|->
 name|renderer
 condition|)
-name|gimp_preview_renderer_unrealize
+name|gimp_view_renderer_unrealize
 argument_list|(
 name|view
 operator|->
@@ -1520,7 +1520,7 @@ operator|/
 name|scaled_height
 expr_stmt|;
 block|}
-name|gimp_preview_renderer_set_size
+name|gimp_view_renderer_set_size
 argument_list|(
 name|view
 operator|->
@@ -1539,7 +1539,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_preview_renderer_set_size_full
+name|gimp_view_renderer_set_size_full
 argument_list|(
 name|view
 operator|->
@@ -1553,7 +1553,7 @@ name|border_width
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_preview_renderer_remove_idle
+name|gimp_view_renderer_remove_idle
 argument_list|(
 name|view
 operator|->
@@ -1720,7 +1720,7 @@ condition|)
 return|return
 name|FALSE
 return|;
-name|gimp_preview_renderer_draw
+name|gimp_view_renderer_draw
 argument_list|(
 name|GIMP_VIEW
 argument_list|(
@@ -1920,7 +1920,7 @@ operator|->
 name|viewable
 condition|)
 block|{
-name|gimp_preview_popup_show
+name|gimp_view_popup_show
 argument_list|(
 name|widget
 argument_list|,
@@ -1967,7 +1967,7 @@ name|button
 operator|==
 literal|2
 condition|)
-name|gimp_preview_popup_show
+name|gimp_view_popup_show
 argument_list|(
 name|widget
 argument_list|,
@@ -2385,7 +2385,7 @@ argument_list|,
 name|viewable
 argument_list|)
 expr_stmt|;
-name|gimp_preview_renderer_remove_idle
+name|gimp_view_renderer_remove_idle
 argument_list|(
 name|GIMP_VIEW
 argument_list|(
@@ -2482,7 +2482,7 @@ argument_list|,
 name|viewable
 argument_list|)
 expr_stmt|;
-name|gimp_preview_renderer_remove_idle
+name|gimp_view_renderer_remove_idle
 argument_list|(
 name|GIMP_VIEW
 argument_list|(
@@ -2520,7 +2520,7 @@ name|gboolean
 name|is_popup
 parameter_list|)
 block|{
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 decl_stmt|;
@@ -2573,14 +2573,14 @@ literal|0
 operator|&&
 name|border_width
 operator|<=
-name|GIMP_PREVIEW_MAX_BORDER_WIDTH
+name|GIMP_VIEW_MAX_BORDER_WIDTH
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
 name|renderer
 operator|=
-name|gimp_preview_renderer_new
+name|gimp_view_renderer_new
 argument_list|(
 name|viewable_type
 argument_list|,
@@ -2669,7 +2669,7 @@ name|gboolean
 name|show_popup
 parameter_list|)
 block|{
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 decl_stmt|;
@@ -2735,14 +2735,14 @@ literal|0
 operator|&&
 name|border_width
 operator|<=
-name|GIMP_PREVIEW_MAX_BORDER_WIDTH
+name|GIMP_VIEW_MAX_BORDER_WIDTH
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
 name|renderer
 operator|=
-name|gimp_preview_renderer_new_full
+name|gimp_view_renderer_new_full
 argument_list|(
 name|viewable_type
 argument_list|,
@@ -3013,7 +3013,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|gimp_preview_renderer_set_viewable
+name|gimp_view_renderer_set_viewable
 argument_list|(
 name|view
 operator|->
@@ -3117,10 +3117,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_view_update_callback (GimpPreviewRenderer * renderer,GimpView * view)
+DECL|function|gimp_view_update_callback (GimpViewRenderer * renderer,GimpView * view)
 name|gimp_view_update_callback
 parameter_list|(
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|,

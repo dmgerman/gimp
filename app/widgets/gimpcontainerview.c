@@ -72,12 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreviewrenderer.h"
+file|"gimpviewrenderer.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2773a3640103
+DECL|enum|__anon293beea60103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -783,7 +783,7 @@ name|NULL
 argument_list|,
 literal|0
 argument_list|,
-name|GIMP_PREVIEW_MAX_BORDER_WIDTH
+name|GIMP_VIEW_MAX_BORDER_WIDTH
 argument_list|,
 literal|1
 argument_list|,
@@ -1924,7 +1924,7 @@ literal|0
 operator|&&
 name|preview_border_width
 operator|<=
-name|GIMP_PREVIEW_MAX_BORDER_WIDTH
+name|GIMP_VIEW_MAX_BORDER_WIDTH
 argument_list|)
 expr_stmt|;
 name|private

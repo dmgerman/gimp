@@ -96,7 +96,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreviewrenderer.h"
+file|"gimpviewrenderer.h"
 end_include
 
 begin_include
@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2913e2d20103
+DECL|enum|__anon2c3df9150103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -1418,7 +1418,7 @@ literal|0
 operator|&&
 name|preview_border_width
 operator|<=
-name|GIMP_PREVIEW_MAX_BORDER_WIDTH
+name|GIMP_VIEW_MAX_BORDER_WIDTH
 argument_list|,
 name|NULL
 argument_list|)

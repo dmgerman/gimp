@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimppreviewrenderer.h"
+file|"gimpviewrenderer.h"
 end_include
 
 begin_define
@@ -100,7 +100,7 @@ struct|struct
 name|_GimpPreviewRendererDrawable
 block|{
 DECL|member|parent_instance
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 name|parent_instance
 decl_stmt|;
 block|}
@@ -113,7 +113,7 @@ struct|struct
 name|_GimpPreviewRendererDrawableClass
 block|{
 DECL|member|parent_class
-name|GimpPreviewRendererClass
+name|GimpViewRendererClass
 name|parent_class
 decl_stmt|;
 block|}

@@ -78,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreviewrenderer.h"
+file|"gimpviewrenderer.h"
 end_include
 
 begin_include
@@ -926,7 +926,7 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
-name|gimp_preview_renderer_set_size_full
+name|gimp_view_renderer_set_size_full
 argument_list|(
 name|GIMP_VIEW
 argument_list|(

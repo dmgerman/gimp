@@ -138,7 +138,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreviewrenderer.h"
+file|"gimpviewrenderer.h"
 end_include
 
 begin_include
@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27598e0b0103
+DECL|enum|__anon298613c30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -183,7 +183,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27598e0b0203
+DECL|enum|__anon298613c30203
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -2632,7 +2632,7 @@ literal|0
 operator|&&
 name|preview_border_width
 operator|<=
-name|GIMP_PREVIEW_MAX_BORDER_WIDTH
+name|GIMP_VIEW_MAX_BORDER_WIDTH
 argument_list|,
 name|NULL
 argument_list|)
@@ -5103,7 +5103,7 @@ name|path
 argument_list|)
 condition|)
 block|{
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 decl_stmt|;
@@ -5648,7 +5648,7 @@ name|path
 argument_list|)
 condition|)
 block|{
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 decl_stmt|;

@@ -84,7 +84,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreviewrenderer.h"
+file|"gimpviewrenderer.h"
 end_include
 
 begin_include
@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b17f4400103
+DECL|enum|__anon2b8c027b0103
 block|{
 DECL|enumerator|MOVE_CURSOR
 name|MOVE_CURSOR
@@ -1125,7 +1125,7 @@ literal|0
 operator|&&
 name|view_border_width
 operator|<=
-name|GIMP_PREVIEW_MAX_BORDER_WIDTH
+name|GIMP_VIEW_MAX_BORDER_WIDTH
 argument_list|,
 name|NULL
 argument_list|)
@@ -1816,7 +1816,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_preview_renderer_set_border_type
+name|gimp_view_renderer_set_border_type
 argument_list|(
 name|GIMP_VIEW
 argument_list|(
@@ -1825,10 +1825,10 @@ argument_list|)
 operator|->
 name|renderer
 argument_list|,
-name|GIMP_PREVIEW_BORDER_WHITE
+name|GIMP_VIEW_BORDER_WHITE
 argument_list|)
 expr_stmt|;
-name|gimp_preview_renderer_remove_idle
+name|gimp_view_renderer_remove_idle
 argument_list|(
 name|GIMP_VIEW
 argument_list|(
@@ -2311,7 +2311,7 @@ operator|->
 name|widget
 argument_list|)
 decl_stmt|;
-name|gimp_preview_renderer_set_size
+name|gimp_view_renderer_set_size
 argument_list|(
 name|view
 operator|->
@@ -2584,7 +2584,7 @@ operator|!=
 name|preview
 condition|)
 block|{
-name|gimp_preview_renderer_set_border_type
+name|gimp_view_renderer_set_border_type
 argument_list|(
 name|grid_view
 operator|->
@@ -2592,10 +2592,10 @@ name|selected_item
 operator|->
 name|renderer
 argument_list|,
-name|GIMP_PREVIEW_BORDER_WHITE
+name|GIMP_VIEW_BORDER_WHITE
 argument_list|)
 expr_stmt|;
-name|gimp_preview_renderer_update
+name|gimp_view_renderer_update
 argument_list|(
 name|grid_view
 operator|->
@@ -2738,16 +2738,16 @@ name|page_size
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_preview_renderer_set_border_type
+name|gimp_view_renderer_set_border_type
 argument_list|(
 name|preview
 operator|->
 name|renderer
 argument_list|,
-name|GIMP_PREVIEW_BORDER_BLACK
+name|GIMP_VIEW_BORDER_BLACK
 argument_list|)
 expr_stmt|;
-name|gimp_preview_renderer_update
+name|gimp_view_renderer_update
 argument_list|(
 name|preview
 operator|->

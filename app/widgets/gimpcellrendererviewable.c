@@ -42,18 +42,18 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreview-popup.h"
+file|"gimpview-popup.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimppreviewrenderer.h"
+file|"gimpviewrenderer.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f18e0e0103
+DECL|enum|__anon2c649efd0103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f18e0e0203
+DECL|enum|__anon2c649efd0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -506,7 +506,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_TYPE_PREVIEW_RENDERER
+name|GIMP_TYPE_VIEW_RENDERER
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
@@ -697,14 +697,14 @@ case|case
 name|PROP_RENDERER
 case|:
 block|{
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 modifier|*
 name|renderer
 decl_stmt|;
 name|renderer
 operator|=
 operator|(
-name|GimpPreviewRenderer
+name|GimpViewRenderer
 operator|*
 operator|)
 name|g_value_dup_object
@@ -788,12 +788,12 @@ modifier|*
 name|cellviewable
 decl_stmt|;
 name|gint
-name|preview_width
+name|view_width
 init|=
 literal|0
 decl_stmt|;
 name|gint
-name|preview_height
+name|view_height
 init|=
 literal|0
 decl_stmt|;
@@ -817,7 +817,7 @@ operator|->
 name|renderer
 condition|)
 block|{
-name|preview_width
+name|view_width
 operator|=
 operator|(
 name|cellviewable
@@ -835,7 +835,7 @@ operator|->
 name|border_width
 operator|)
 expr_stmt|;
-name|preview_height
+name|view_height
 operator|=
 operator|(
 name|cellviewable
@@ -865,7 +865,7 @@ name|xpad
 operator|*
 literal|2
 operator|+
-name|preview_width
+name|view_width
 expr_stmt|;
 name|calc_height
 operator|=
@@ -878,7 +878,7 @@ name|ypad
 operator|*
 literal|2
 operator|+
-name|preview_height
+name|view_height
 expr_stmt|;
 if|if
 condition|(
@@ -902,11 +902,11 @@ if|if
 condition|(
 name|cell_area
 operator|&&
-name|preview_width
+name|view_width
 operator|>
 literal|0
 operator|&&
-name|preview_height
+name|view_height
 operator|>
 literal|0
 condition|)
@@ -1104,7 +1104,7 @@ name|GTK_CELL_RENDERER_SELECTED
 operator|)
 condition|)
 block|{
-comment|/* this is an ugly hack. The cell state should be passed to            * the preview renderer, so that it can adjust its border.            * (or something like this) */
+comment|/* this is an ugly hack. The cell state should be passed to            * the view renderer, so that it can adjust its border.            * (or something like this) */
 if|if
 condition|(
 name|cellviewable
@@ -1113,18 +1113,18 @@ name|renderer
 operator|->
 name|border_type
 operator|==
-name|GIMP_PREVIEW_BORDER_WHITE
+name|GIMP_VIEW_BORDER_WHITE
 condition|)
-name|gimp_preview_renderer_set_border_type
+name|gimp_view_renderer_set_border_type
 argument_list|(
 name|cellviewable
 operator|->
 name|renderer
 argument_list|,
-name|GIMP_PREVIEW_BORDER_BLACK
+name|GIMP_VIEW_BORDER_BLACK
 argument_list|)
 expr_stmt|;
-name|gimp_preview_renderer_remove_idle
+name|gimp_view_renderer_remove_idle
 argument_list|(
 name|cellviewable
 operator|->
@@ -1132,7 +1132,7 @@ name|renderer
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_preview_renderer_draw
+name|gimp_view_renderer_draw
 argument_list|(
 name|cellviewable
 operator|->
@@ -1405,7 +1405,7 @@ literal|2
 operator|)
 condition|)
 block|{
-name|gimp_preview_popup_show
+name|gimp_view_popup_show
 argument_list|(
 name|gtk_get_event_widget
 argument_list|(

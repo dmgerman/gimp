@@ -90,7 +90,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppreviewrenderer.h"
+file|"gimpviewrenderer.h"
 end_include
 
 begin_include
@@ -1091,7 +1091,7 @@ operator|&
 name|view_border_width
 argument_list|)
 expr_stmt|;
-name|gimp_preview_renderer_set_size
+name|gimp_view_renderer_set_size
 argument_list|(
 name|view
 operator|->
