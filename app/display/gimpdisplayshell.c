@@ -39,6 +39,12 @@ directive|include
 file|"tools/tools-types.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"widgets/widgets-types.h"
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -209,6 +215,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpviewabledialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpwidgets-utils.h"
 end_include
 
@@ -334,7 +346,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9c26f90103
+DECL|enum|__anon299c0c1e0103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -466,7 +478,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_display_shell_close_warning_callback
+name|gimp_display_shell_close_warning_response
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -5957,7 +5969,7 @@ argument_list|(
 name|_
 argument_list|(
 literal|"Changes were made to '%s'. "
-literal|"Close anyway?"
+literal|"Unsaved changes will be lost."
 argument_list|)
 argument_list|,
 name|name
@@ -5967,9 +5979,24 @@ name|shell
 operator|->
 name|warning_dialog
 operator|=
-name|gimp_query_boolean_box
+name|gimp_viewable_dialog_new
 argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|shell
+operator|->
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+argument_list|,
 name|title
+argument_list|,
+literal|"gimp-display-shell-close"
+argument_list|,
+name|GIMP_STOCK_QUESTION
+argument_list|,
+name|warning
 argument_list|,
 name|GTK_WIDGET
 argument_list|(
@@ -5980,23 +6007,45 @@ name|gimp_standard_help_func
 argument_list|,
 name|GIMP_HELP_FILE_CLOSE_CONFIRM
 argument_list|,
-name|GIMP_STOCK_QUESTION
+name|_
+argument_list|(
+literal|"Discard changes"
+argument_list|)
 argument_list|,
-name|warning
+name|GTK_RESPONSE_CLOSE
 argument_list|,
-name|GTK_STOCK_CLOSE
+name|_
+argument_list|(
+literal|"Cancel"
+argument_list|)
 argument_list|,
-name|GTK_STOCK_CANCEL
+name|GTK_RESPONSE_CANCEL
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|shell
+operator|->
+name|warning_dialog
 argument_list|,
-name|NULL
+literal|"response"
 argument_list|,
-name|gimp_display_shell_close_warning_callback
+name|G_CALLBACK
+argument_list|(
+name|gimp_display_shell_close_warning_response
+argument_list|)
 argument_list|,
 name|shell
 argument_list|)
 expr_stmt|;
+if|#
+directive|if
+literal|0
+block|gimp_query_boolean_box (title,                             GTK_WIDGET (shell), 			    gimp_standard_help_func, 			    GIMP_HELP_FILE_CLOSE_CONFIRM, 			    GIMP_STOCK_QUESTION, 			    warning, 			    GTK_STOCK_CLOSE, GTK_STOCK_CANCEL, 			    NULL, NULL, 			    gimp_display_shell_close_warning_callback, 			    shell);
+endif|#
+directive|endif
 name|g_free
 argument_list|(
 name|name
@@ -6025,15 +6074,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_close_warning_callback (GtkWidget * widget,gboolean close,gpointer data)
-name|gimp_display_shell_close_warning_callback
+DECL|function|gimp_display_shell_close_warning_response (GtkWidget * widget,gint response_id,gpointer data)
+name|gimp_display_shell_close_warning_response
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gboolean
-name|close
+name|gint
+name|response_id
 parameter_list|,
 name|gpointer
 name|data
@@ -6050,15 +6099,21 @@ argument_list|(
 name|data
 argument_list|)
 expr_stmt|;
+name|gtk_widget_destroy
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
 name|shell
 operator|->
 name|warning_dialog
-operator|=
-name|NULL
+argument_list|)
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|close
+name|response_id
+operator|==
+name|GTK_RESPONSE_CLOSE
 condition|)
 name|gimp_display_delete
 argument_list|(
