@@ -17,14 +17,19 @@ name|_IMAP_DEFAULT_DIALOG_H
 end_define
 
 begin_typedef
-DECL|struct|__anon2bd34f8e0108
 typedef|typedef
 struct|struct
+DECL|struct|__anon2c2d8c570108
 block|{
 DECL|member|dialog
 name|GtkWidget
 modifier|*
 name|dialog
+decl_stmt|;
+DECL|member|vbox
+name|GtkWidget
+modifier|*
+name|vbox
 decl_stmt|;
 DECL|member|ok
 name|GtkWidget
@@ -40,11 +45,6 @@ DECL|member|cancel
 name|GtkWidget
 modifier|*
 name|cancel
-decl_stmt|;
-DECL|member|help
-name|GtkWidget
-modifier|*
-name|help
 decl_stmt|;
 DECL|member|ok_cb
 name|void

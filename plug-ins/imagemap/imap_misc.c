@@ -346,7 +346,7 @@ argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -369,7 +369,7 @@ name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,
-literal|10
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

@@ -469,7 +469,7 @@ argument_list|(
 name|toolbar
 argument_list|)
 argument_list|,
-literal|5
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_container_add

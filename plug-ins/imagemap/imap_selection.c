@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_commands.h"
 end_include
 
@@ -751,7 +757,7 @@ argument_list|(
 name|toolbar
 argument_list|)
 argument_list|,
-literal|5
+literal|0
 argument_list|)
 expr_stmt|;
 name|data
@@ -2074,7 +2080,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -2112,22 +2118,12 @@ expr_stmt|;
 comment|/* Create selection */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
 literal|"Selection"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-literal|10
 argument_list|)
 expr_stmt|;
 name|gtk_container_add

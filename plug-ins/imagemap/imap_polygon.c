@@ -1672,7 +1672,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2adf9a010108
+DECL|struct|__anon2babdb5c0108
 typedef|typedef
 struct|struct
 block|{
@@ -2676,7 +2676,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -2701,16 +2701,6 @@ argument_list|(
 name|NULL
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|swin
-argument_list|)
-argument_list|,
-literal|10
 argument_list|)
 expr_stmt|;
 name|gtk_scrolled_window_set_policy
@@ -2918,16 +2908,6 @@ argument_list|,
 literal|3
 argument_list|,
 name|FALSE
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|10
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacings

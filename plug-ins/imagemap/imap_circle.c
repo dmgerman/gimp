@@ -1307,7 +1307,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon29db924a0108
+DECL|struct|__anon2ad29f920108
 typedef|typedef
 struct|struct
 block|{
@@ -1577,16 +1577,6 @@ name|frame
 argument_list|)
 argument_list|,
 name|table
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacings

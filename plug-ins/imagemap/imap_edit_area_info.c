@@ -925,7 +925,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|10
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacings
@@ -1761,7 +1761,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|10
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1960,7 +1960,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|10
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacings
@@ -2739,7 +2739,7 @@ argument_list|(
 name|notebook
 argument_list|)
 argument_list|,
-literal|10
+literal|12
 argument_list|)
 expr_stmt|;
 name|g_signal_connect_after

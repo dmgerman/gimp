@@ -70,7 +70,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon290973780108
+DECL|struct|__anon29bffc8b0108
 typedef|typedef
 struct|struct
 block|{
@@ -714,7 +714,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -1002,17 +1002,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|hbox
-argument_list|)
-argument_list|,
-literal|10
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach_defaults
@@ -1053,14 +1043,20 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
 name|label
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|data
@@ -1084,6 +1080,18 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|data
+operator|->
+name|url
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_mnemonic_widget
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
 name|data
 operator|->
 name|url
@@ -1212,7 +1220,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon290973780208
+DECL|struct|__anon29bffc8b0208
 typedef|typedef
 struct|struct
 block|{
