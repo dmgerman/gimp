@@ -519,7 +519,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_option_menu_new2:  * @menu_only:          #TRUE if the function should return a #GtkMenu only.  * @menu_item_callback: The callback each menu item's "activate" signal will  *                      be connected with.  * @callback_data:      The data which will be passed to g_signal_connect().  * @initial:            The @item_data of the initially selected menu item.  * @...:                A #NULL terminated @va_list describing the menu items.  *  * Returns: A #GtkOptionMenu or a #GtkMenu (depending on @menu_only).  **/
+comment|/**  * gimp_option_menu_new2:  * @menu_only:          #TRUE if the function should return a #GtkMenu only.  * @menu_item_callback: The callback each menu item's "activate" signal will  *                      be connected with.  * @menu_item_callback_data:  *                      The data which will be passed to g_signal_connect().  * @initial:            The @item_data of the initially selected menu item.  * @...:                A #NULL terminated @va_list describing the menu items.  *  * Returns: A #GtkOptionMenu or a #GtkMenu (depending on @menu_only).  **/
 end_comment
 
 begin_function
@@ -1392,7 +1392,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_radio_group_new2:  * @in_frame:              #TRUE if you want a #GtkFrame around the  *                         radio button group.  * @frame_title:           The title of the Frame or #NULL if you don't want  *                         a title.  * @radio_button_callback: The callback each button's "toggled" signal will  *                         be connected with.  * @callback_data:         The data which will be passed to  *                         g_signal_connect().  * @initial:               The @item_data of the initially pressed radio button.  * @...:                   A #NULL terminated @va_list describing  *                         the radio buttons.  *  * Returns: A #GtkFrame or #GtkVbox (depending on @in_frame).  **/
+comment|/**  * gimp_radio_group_new2:  * @in_frame:              #TRUE if you want a #GtkFrame around the  *                         radio button group.  * @frame_title:           The title of the Frame or #NULL if you don't want  *                         a title.  * @radio_button_callback: The callback each button's "toggled" signal will  *                         be connected with.  * @radio_button_callback_data: The data which will be passed to  *                         g_signal_connect().  * @initial:               The @item_data of the initially pressed radio button.  * @...:                   A #NULL terminated @va_list describing  *                         the radio buttons.  *  * Returns: A #GtkFrame or #GtkVbox (depending on @in_frame).  **/
 end_comment
 
 begin_function
@@ -2814,7 +2814,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29539c520108
+DECL|struct|__anon2c65d6b00108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -3694,7 +3694,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29539c520208
+DECL|struct|__anon2c65d6b00208
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
