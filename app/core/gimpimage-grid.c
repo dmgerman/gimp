@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage-undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpimage-undo-push.h"
 end_include
 
@@ -182,11 +176,6 @@ name|grid
 argument_list|)
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gimp_image_grid_changed
-argument_list|(
-name|gimage
 argument_list|)
 expr_stmt|;
 block|}
