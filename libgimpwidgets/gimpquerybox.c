@@ -101,6 +101,10 @@ name|GObject
 modifier|*
 name|object
 decl_stmt|;
+DECL|member|response_handler
+name|gulong
+name|response_handler
+decl_stmt|;
 DECL|member|callback
 name|GCallback
 name|callback
@@ -457,6 +461,10 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|query_box
+operator|->
+name|response_handler
+operator|=
 name|g_signal_connect
 argument_list|(
 name|query_box
@@ -1741,6 +1749,32 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+comment|/*  disconnect the response callback to avoid that it may be run twice  */
+if|if
+condition|(
+name|query_box
+operator|->
+name|response_handler
+condition|)
+block|{
+name|g_signal_handler_disconnect
+argument_list|(
+name|query_box
+operator|->
+name|qbox
+argument_list|,
+name|query_box
+operator|->
+name|response_handler
+argument_list|)
+expr_stmt|;
+name|query_box
+operator|->
+name|response_handler
+operator|=
+literal|0
+expr_stmt|;
+block|}
 comment|/*  disconnect, if we are connected to some signal  */
 if|if
 condition|(
