@@ -57,21 +57,13 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_define
-DECL|macro|EPSILON
-define|#
-directive|define
-name|EPSILON
-value|5
-end_define
-
 begin_comment
 comment|/*  public functions  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_snap_x (GimpImage * gimage,gdouble x,gint * tx,gboolean snap_to_guides,gboolean snap_to_grid)
+DECL|function|gimp_image_snap_x (GimpImage * gimage,gdouble x,gint * tx,gdouble epsilon_x,gboolean snap_to_guides,gboolean snap_to_grid)
 name|gimp_image_snap_x
 parameter_list|(
 name|GimpImage
@@ -84,6 +76,9 @@ parameter_list|,
 name|gint
 modifier|*
 name|tx
+parameter_list|,
+name|gdouble
+name|epsilon_x
 parameter_list|,
 name|gboolean
 name|snap_to_guides
@@ -253,7 +248,7 @@ name|dist
 operator|<
 name|MIN
 argument_list|(
-name|EPSILON
+name|epsilon_x
 argument_list|,
 name|mindist
 argument_list|)
@@ -352,7 +347,7 @@ name|dist
 operator|<
 name|MIN
 argument_list|(
-name|EPSILON
+name|epsilon_x
 argument_list|,
 name|mindist
 argument_list|)
@@ -382,7 +377,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_snap_y (GimpImage * gimage,gdouble y,gint * ty,gboolean snap_to_guides,gboolean snap_to_grid)
+DECL|function|gimp_image_snap_y (GimpImage * gimage,gdouble y,gint * ty,gdouble epsilon_y,gboolean snap_to_guides,gboolean snap_to_grid)
 name|gimp_image_snap_y
 parameter_list|(
 name|GimpImage
@@ -395,6 +390,9 @@ parameter_list|,
 name|gint
 modifier|*
 name|ty
+parameter_list|,
+name|gdouble
+name|epsilon_y
 parameter_list|,
 name|gboolean
 name|snap_to_guides
@@ -564,7 +562,7 @@ name|dist
 operator|<
 name|MIN
 argument_list|(
-name|EPSILON
+name|epsilon_y
 argument_list|,
 name|mindist
 argument_list|)
@@ -663,7 +661,7 @@ name|dist
 operator|<
 name|MIN
 argument_list|(
-name|EPSILON
+name|epsilon_y
 argument_list|,
 name|mindist
 argument_list|)
@@ -693,7 +691,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_snap_point (GimpImage * gimage,gdouble x,gdouble y,gint * tx,gint * ty,gboolean snap_to_guides,gboolean snap_to_grid)
+DECL|function|gimp_image_snap_point (GimpImage * gimage,gdouble x,gdouble y,gint * tx,gint * ty,gdouble epsilon_x,gdouble epsilon_y,gboolean snap_to_guides,gboolean snap_to_grid)
 name|gimp_image_snap_point
 parameter_list|(
 name|GimpImage
@@ -713,6 +711,12 @@ parameter_list|,
 name|gint
 modifier|*
 name|ty
+parameter_list|,
+name|gdouble
+name|epsilon_x
+parameter_list|,
+name|gdouble
+name|epsilon_y
 parameter_list|,
 name|gboolean
 name|snap_to_guides
@@ -924,7 +928,7 @@ name|dist
 operator|<
 name|MIN
 argument_list|(
-name|EPSILON
+name|epsilon_y
 argument_list|,
 name|minydist
 argument_list|)
@@ -967,7 +971,7 @@ name|dist
 operator|<
 name|MIN
 argument_list|(
-name|EPSILON
+name|epsilon_x
 argument_list|,
 name|minxdist
 argument_list|)
@@ -1079,7 +1083,7 @@ name|dist
 operator|<
 name|MIN
 argument_list|(
-name|EPSILON
+name|epsilon_x
 argument_list|,
 name|minxdist
 argument_list|)
@@ -1139,7 +1143,7 @@ name|dist
 operator|<
 name|MIN
 argument_list|(
-name|EPSILON
+name|epsilon_y
 argument_list|,
 name|minydist
 argument_list|)
@@ -1169,7 +1173,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_snap_rectangle (GimpImage * gimage,gdouble x1,gdouble y1,gdouble x2,gdouble y2,gint * tx1,gint * ty1,gboolean snap_to_guides,gboolean snap_to_grid)
+DECL|function|gimp_image_snap_rectangle (GimpImage * gimage,gdouble x1,gdouble y1,gdouble x2,gdouble y2,gint * tx1,gint * ty1,gdouble epsilon_x,gdouble epsilon_y,gboolean snap_to_guides,gboolean snap_to_grid)
 name|gimp_image_snap_rectangle
 parameter_list|(
 name|GimpImage
@@ -1195,6 +1199,12 @@ parameter_list|,
 name|gint
 modifier|*
 name|ty1
+parameter_list|,
+name|gdouble
+name|epsilon_x
+parameter_list|,
+name|gdouble
+name|epsilon_y
 parameter_list|,
 name|gboolean
 name|snap_to_guides
@@ -1288,6 +1298,8 @@ argument_list|,
 operator|&
 name|nx1
 argument_list|,
+name|epsilon_x
+argument_list|,
 name|snap_to_guides
 argument_list|,
 name|snap_to_grid
@@ -1303,6 +1315,8 @@ name|x2
 argument_list|,
 operator|&
 name|nx2
+argument_list|,
+name|epsilon_x
 argument_list|,
 name|snap_to_guides
 argument_list|,
@@ -1320,6 +1334,8 @@ argument_list|,
 operator|&
 name|ny1
 argument_list|,
+name|epsilon_y
+argument_list|,
 name|snap_to_guides
 argument_list|,
 name|snap_to_grid
@@ -1335,6 +1351,8 @@ name|y2
 argument_list|,
 operator|&
 name|ny2
+argument_list|,
+name|epsilon_y
 argument_list|,
 name|snap_to_guides
 argument_list|,

@@ -328,7 +328,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6cad680103
+DECL|enum|__anon291399010103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -344,6 +344,14 @@ name|LAST_SIGNAL
 block|}
 enum|;
 end_enum
+
+begin_define
+DECL|macro|SNAP_WIDTH
+define|#
+directive|define
+name|SNAP_WIDTH
+value|5.0
+end_define
 
 begin_comment
 comment|/*  local function prototypes  */
@@ -4402,6 +4410,20 @@ argument_list|,
 operator|&
 name|ty
 argument_list|,
+name|FUNSCALEX
+argument_list|(
+name|shell
+argument_list|,
+name|SNAP_WIDTH
+argument_list|)
+argument_list|,
+name|FUNSCALEY
+argument_list|(
+name|shell
+argument_list|,
+name|SNAP_WIDTH
+argument_list|)
+argument_list|,
 name|snap_to_guides
 argument_list|,
 name|snap_to_grid
@@ -4437,6 +4459,20 @@ name|tx
 argument_list|,
 operator|&
 name|ty
+argument_list|,
+name|FUNSCALEX
+argument_list|(
+name|shell
+argument_list|,
+name|SNAP_WIDTH
+argument_list|)
+argument_list|,
+name|FUNSCALEY
+argument_list|(
+name|shell
+argument_list|,
+name|SNAP_WIDTH
+argument_list|)
 argument_list|,
 name|snap_to_guides
 argument_list|,

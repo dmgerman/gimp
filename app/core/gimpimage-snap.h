@@ -31,6 +31,9 @@ name|gint
 modifier|*
 name|tx
 parameter_list|,
+name|gdouble
+name|epsilon_x
+parameter_list|,
 name|gboolean
 name|snap_to_guides
 parameter_list|,
@@ -54,6 +57,9 @@ parameter_list|,
 name|gint
 modifier|*
 name|ty
+parameter_list|,
+name|gdouble
+name|epsilon_y
 parameter_list|,
 name|gboolean
 name|snap_to_guides
@@ -85,6 +91,12 @@ parameter_list|,
 name|gint
 modifier|*
 name|ty
+parameter_list|,
+name|gdouble
+name|epsilon_x
+parameter_list|,
+name|gdouble
+name|epsilon_y
 parameter_list|,
 name|gboolean
 name|snap_to_guides
@@ -122,6 +134,12 @@ parameter_list|,
 name|gint
 modifier|*
 name|ty1
+parameter_list|,
+name|gdouble
+name|epsilon_x
+parameter_list|,
+name|gdouble
+name|epsilon_y
 parameter_list|,
 name|gboolean
 name|snap_to_guides
