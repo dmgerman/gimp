@@ -43,7 +43,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf609fc0103
+DECL|enum|__anon29ff1c690103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -56,7 +56,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf609fc0203
+DECL|enum|__anon29ff1c690203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1622,6 +1622,8 @@ condition|(
 name|celltoggle
 operator|->
 name|activatable
+operator|&&
+name|event
 condition|)
 block|{
 name|GdkModifierType
