@@ -300,7 +300,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2781591b0103
+DECL|enum|__anon27c8dbaf0103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -10102,6 +10102,10 @@ operator|&&
 name|palette
 operator|->
 name|entries
+operator|&&
+name|palette
+operator|->
+name|color
 condition|)
 block|{
 operator|*
