@@ -705,51 +705,6 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Allow a singular temorary anchor (marking the "working point")? */
-end_comment
-
-begin_function_decl
-name|GimpAnchor
-modifier|*
-name|gimp_vectors_temp_anchor_get
-parameter_list|(
-specifier|const
-name|GimpVectors
-modifier|*
-name|vectors
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GimpAnchor
-modifier|*
-name|gimp_vectors_temp_anchor_set
-parameter_list|(
-name|GimpVectors
-modifier|*
-name|vectors
-parameter_list|,
-specifier|const
-name|GimpCoords
-modifier|*
-name|coord
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gimp_vectors_temp_anchor_fix
-parameter_list|(
-name|GimpVectors
-modifier|*
-name|vectors
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/* usually overloaded */
 end_comment
 
