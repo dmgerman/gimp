@@ -132,6 +132,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|gimp_drawable_mask_intersect
 argument_list|(
 name|drawable
