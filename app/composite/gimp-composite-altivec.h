@@ -36,11 +36,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_ifdef
-ifdef|#
-directive|ifdef
+begin_if
+if|#
+directive|if
+name|defined
+argument_list|(
+name|USE_ALTIVEC
+argument_list|)
+end_if
+
+begin_if
+if|#
+directive|if
+name|defined
+argument_list|(
 name|ARCH_PPC
-end_ifdef
+argument_list|)
+end_if
 
 begin_if
 if|#
@@ -57,6 +69,39 @@ directive|define
 name|COMPILE_ALTIVEC_IS_OKAY
 value|(1)
 end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* __GNUC__>= 3 */
+end_comment
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* defined(ARCH_PPC) */
+end_comment
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* defined(USE_ALTIVEC) */
+end_comment
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|COMPILE_ALTIVEC_IS_OKAY
+end_ifdef
 
 begin_function_decl
 specifier|extern
@@ -100,16 +145,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GNUC__> 3 */
-end_comment
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* ARCH_PPC */
+comment|/* COMPILE_IS_OKAY */
 end_comment
 
 begin_endif

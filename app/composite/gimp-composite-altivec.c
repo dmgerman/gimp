@@ -68,47 +68,121 @@ endif|#
 directive|endif
 end_endif
 
+begin_comment
+comment|/* Paper over differences between official gcc and Apple's weird gcc */
+end_comment
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_ALTIVEC_H
+end_ifdef
+
+begin_define
+DECL|macro|INIT_VECTOR (v...)
+define|#
+directive|define
+name|INIT_VECTOR
+parameter_list|(
+name|v
+modifier|...
+parameter_list|)
+value|{v}
+end_define
+
+begin_define
+DECL|macro|CONST_BUFFER (b)
+define|#
+directive|define
+name|CONST_BUFFER
+parameter_list|(
+name|b
+parameter_list|)
+value|(b)
+end_define
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_define
+DECL|macro|INIT_VECTOR (v...)
+define|#
+directive|define
+name|INIT_VECTOR
+parameter_list|(
+name|v
+modifier|...
+parameter_list|)
+value|(v)
+end_define
+
+begin_define
+DECL|macro|CONST_BUFFER (b)
+define|#
+directive|define
+name|CONST_BUFFER
+parameter_list|(
+name|b
+parameter_list|)
+value|((const guchar *)(b))
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_decl_stmt
 DECL|variable|alphamask
+specifier|static
 specifier|const
 name|vector
 name|unsigned
 name|char
 name|alphamask
 init|=
-block|{
+operator|(
+specifier|const
+name|vector
+name|unsigned
+name|char
+operator|)
+name|INIT_VECTOR
+argument_list|(
 literal|0
-block|,
+argument_list|,
 literal|0
-block|,
+argument_list|,
 literal|0
-block|,
+argument_list|,
 literal|0xff
-block|,
+argument_list|,
 literal|0
-block|,
+argument_list|,
 literal|0
-block|,
+argument_list|,
 literal|0
-block|,
+argument_list|,
 literal|0xff
-block|,
+argument_list|,
 literal|0
-block|,
+argument_list|,
 literal|0
-block|,
+argument_list|,
 literal|0
-block|,
+argument_list|,
 literal|0xff
-block|,
+argument_list|,
 literal|0
-block|,
+argument_list|,
 literal|0
-block|,
+argument_list|,
 literal|0
-block|,
+argument_list|,
 literal|0xff
-block|}
+argument_list|)
 decl_stmt|;
 end_decl_stmt
 
@@ -117,6 +191,7 @@ comment|/* Load a vector from an unaligned location in memory */
 end_comment
 
 begin_function
+specifier|static
 specifier|inline
 name|vector
 name|unsigned
@@ -205,6 +280,7 @@ comment|/* Load less than a vector from an unaligned location in memory */
 end_comment
 
 begin_function
+specifier|static
 specifier|inline
 name|vector
 name|unsigned
@@ -318,6 +394,7 @@ comment|/* Store a vector to an unaligned location in memory */
 end_comment
 
 begin_function
+specifier|static
 specifier|inline
 name|void
 DECL|function|StoreUnaligned (vector unsigned char v,const guchar * where)
@@ -465,7 +542,10 @@ name|low
 argument_list|,
 literal|0
 argument_list|,
+name|CONST_BUFFER
+argument_list|(
 name|where
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|vec_st
@@ -474,7 +554,10 @@ name|high
 argument_list|,
 literal|16
 argument_list|,
+name|CONST_BUFFER
+argument_list|(
 name|where
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -487,7 +570,10 @@ name|v
 argument_list|,
 literal|0
 argument_list|,
+name|CONST_BUFFER
+argument_list|(
 name|where
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -499,6 +585,7 @@ comment|/* Store less than a vector to an unaligned location in memory */
 end_comment
 
 begin_function
+specifier|static
 specifier|inline
 name|void
 DECL|function|StoreUnalignedLess (vector unsigned char v,const guchar * where,int n)
@@ -563,14 +650,16 @@ name|v
 argument_list|,
 name|i
 argument_list|,
+name|CONST_BUFFER
+argument_list|(
 name|where
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
 end_function
 
 begin_function
-specifier|extern
 name|void
 DECL|function|gimp_composite_addition_rgba8_rgba8_rgba8_altivec (GimpCompositeContext * ctx)
 name|gimp_composite_addition_rgba8_rgba8_rgba8_altivec
@@ -839,7 +928,6 @@ empty_stmt|;
 end_empty_stmt
 
 begin_function
-specifier|extern
 name|void
 DECL|function|gimp_composite_subtract_rgba8_rgba8_rgba8_altivec (GimpCompositeContext * ctx)
 name|gimp_composite_subtract_rgba8_rgba8_rgba8_altivec
@@ -1108,7 +1196,6 @@ empty_stmt|;
 end_empty_stmt
 
 begin_function
-specifier|extern
 name|void
 DECL|function|gimp_composite_swap_rgba8_rgba8_rgba8_altivec (GimpCompositeContext * ctx)
 name|gimp_composite_swap_rgba8_rgba8_rgba8_altivec
@@ -1252,6 +1339,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* COMPILE_IS_OKAY */
+end_comment
 
 begin_function
 name|gboolean
