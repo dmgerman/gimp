@@ -345,7 +345,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|PlugInProcFrame
+modifier|*
 name|plug_in_proc_frame_push
 parameter_list|(
 name|PlugIn

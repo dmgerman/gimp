@@ -2162,6 +2162,11 @@ argument_list|(
 name|plug_in
 argument_list|)
 expr_stmt|;
+name|plug_in_proc_frame_pop
+argument_list|(
+name|plug_in
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{

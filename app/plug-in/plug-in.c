@@ -3416,7 +3416,8 @@ block|}
 end_function
 
 begin_function
-name|void
+name|PlugInProcFrame
+modifier|*
 DECL|function|plug_in_proc_frame_push (PlugIn * plug_in,GimpContext * context,GimpProgress * progress,ProcRecord * proc_rec)
 name|plug_in_proc_frame_push
 parameter_list|(
@@ -3441,22 +3442,26 @@ name|PlugInProcFrame
 modifier|*
 name|proc_frame
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|plug_in
 operator|!=
 name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_CONTEXT
 argument_list|(
 name|context
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|progress
 operator|==
@@ -3466,12 +3471,16 @@ name|GIMP_IS_PROGRESS
 argument_list|(
 name|progress
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|proc_rec
 operator|!=
+name|NULL
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -3499,6 +3508,9 @@ argument_list|,
 name|proc_frame
 argument_list|)
 expr_stmt|;
+return|return
+name|proc_frame
+return|;
 block|}
 end_function
 
@@ -3544,7 +3556,7 @@ name|temp_proc_frames
 operator|->
 name|data
 expr_stmt|;
-name|plug_in_proc_frame_free
+name|plug_in_proc_frame_unref
 argument_list|(
 name|proc_frame
 argument_list|,
