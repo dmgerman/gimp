@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -1019,7 +1019,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3cb5da0103
+DECL|enum|__anon2c1a64c10103
 block|{
 DECL|enumerator|DOMAIN_START
 name|DOMAIN_START
@@ -1044,7 +1044,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3cb5da0208
+DECL|struct|__anon2c1a64c10208
 block|{
 DECL|member|filename
 specifier|const

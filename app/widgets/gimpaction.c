@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpconfig-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpmarshal.h"
 end_include
 
@@ -77,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8899b40103
+DECL|enum|__anon2b3d52830103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

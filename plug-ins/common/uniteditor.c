@@ -49,7 +49,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon277102df0103
+DECL|enum|__anon289fe2660103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -170,7 +170,7 @@ end_macro
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277102df0208
+DECL|struct|__anon289fe2660208
 block|{
 DECL|member|title
 specifier|const
@@ -2186,29 +2186,38 @@ name|NUM_COLUMNS
 argument_list|,
 name|G_TYPE_BOOLEAN
 argument_list|,
+comment|/*  SAVE          */
 name|G_TYPE_STRING
 argument_list|,
+comment|/*  IDENTIFIER    */
 name|G_TYPE_DOUBLE
 argument_list|,
+comment|/*  FACTOR        */
 name|G_TYPE_INT
 argument_list|,
+comment|/*  DIGITS        */
 name|G_TYPE_STRING
 argument_list|,
+comment|/*  SYMBOL        */
 name|G_TYPE_STRING
 argument_list|,
+comment|/*  ABBREVIATION  */
 name|G_TYPE_STRING
 argument_list|,
+comment|/*  SINGULAR      */
 name|G_TYPE_STRING
 argument_list|,
-name|G_TYPE_INT
+comment|/*  PLURAL        */
+name|GIMP_TYPE_UNIT
 argument_list|,
+comment|/*  UNIT          */
 name|G_TYPE_BOOLEAN
 argument_list|,
-name|GDK_TYPE_COLOR
-argument_list|,
+comment|/*  USER_UNIT     */
 name|GDK_TYPE_COLOR
 argument_list|)
 expr_stmt|;
+comment|/*  BG_COLOR      */
 name|tv
 operator|=
 name|gtk_tree_view_new_with_model

@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -52,7 +52,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c406ef00108
+DECL|struct|__anon278069de0108
 block|{
 DECL|member|factor
 name|gdouble

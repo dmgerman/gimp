@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpconfig-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"config/gimpconfigwriter.h"
 end_include
 
@@ -1275,7 +1269,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdbed700103
+DECL|enum|__anon2bfec6250103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1289,7 +1283,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdbed700203
+DECL|enum|__anon2bfec6250203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0

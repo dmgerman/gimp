@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpconfig-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"config/gimpconfig-utils.h"
 end_include
 

@@ -16,9 +16,32 @@ directive|define
 name|__GIMP_UNIT_H__
 end_define
 
-begin_function_decl
+begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
+DECL|macro|GIMP_TYPE_UNIT
+define|#
+directive|define
+name|GIMP_TYPE_UNIT
+value|(gimp_unit_get_type ())
+DECL|macro|GIMP_VALUE_HOLDS_UNIT (value)
+define|#
+directive|define
+name|GIMP_VALUE_HOLDS_UNIT
+parameter_list|(
+name|value
+parameter_list|)
+value|(G_TYPE_CHECK_VALUE_TYPE ((value), GIMP_TYPE_UNIT))
+name|GType
+name|gimp_unit_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_function_decl
 name|gint
 name|gimp_unit_get_number_of_units
 parameter_list|(
