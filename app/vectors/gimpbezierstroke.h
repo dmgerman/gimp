@@ -127,10 +127,7 @@ name|GimpStroke
 modifier|*
 name|gimp_bezier_stroke_new
 parameter_list|(
-specifier|const
-name|GimpCoords
-modifier|*
-name|start
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl

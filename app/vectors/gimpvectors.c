@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a77b680103
+DECL|enum|__anon295a71ef0103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
