@@ -977,8 +977,6 @@ expr_stmt|;
 block|}
 block|}
 block|}
-else|else
-block|{
 name|GIMP_DRAW_TOOL_CLASS
 argument_list|(
 name|parent_class
@@ -989,7 +987,6 @@ argument_list|(
 name|draw_tool
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -1012,6 +1009,11 @@ block|{
 name|GObject
 modifier|*
 name|config
+init|=
+name|G_OBJECT
+argument_list|(
+name|tool_options
+argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -1021,13 +1023,6 @@ name|GtkWidget
 modifier|*
 name|frame
 decl_stmt|;
-name|config
-operator|=
-name|G_OBJECT
-argument_list|(
-name|tool_options
-argument_list|)
-expr_stmt|;
 name|vbox
 operator|=
 name|gimp_paint_options_gui
