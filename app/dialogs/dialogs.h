@@ -10,10 +10,10 @@ name|__DIALOGS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__DISLOGS_H__
+DECL|macro|__DIALOGS_H__
 define|#
 directive|define
-name|__DISLOGS_H__
+name|__DIALOGS_H__
 end_define
 
 begin_decl_stmt
