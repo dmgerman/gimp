@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29004e320103
+DECL|enum|__anon2bdfb3f40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -296,7 +296,7 @@ name|NULL
 argument_list|,
 literal|1.0
 argument_list|,
-literal|30.0
+literal|300.0
 argument_list|,
 literal|3.0
 argument_list|,
@@ -523,6 +523,10 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
+name|GtkObject
+modifier|*
+name|adj
+decl_stmt|;
 if|if
 condition|(
 name|GIMP_IS_HISTOGRAM_OPTIONS
@@ -663,6 +667,8 @@ argument_list|,
 name|table
 argument_list|)
 expr_stmt|;
+name|adj
+operator|=
 name|gimp_prop_scale_entry_new
 argument_list|(
 name|config
@@ -685,7 +691,7 @@ argument_list|)
 argument_list|,
 literal|1.0
 argument_list|,
-literal|3.0
+literal|10.0
 argument_list|,
 literal|0
 argument_list|,
@@ -694,6 +700,13 @@ argument_list|,
 literal|0.0
 argument_list|,
 literal|0.0
+argument_list|)
+expr_stmt|;
+name|gimp_scale_entry_set_logarithmic
+argument_list|(
+name|adj
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 return|return
