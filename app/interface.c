@@ -2784,17 +2784,6 @@ index|]
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_widget_destroy
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|tool_widgets
-index|[
-name|i
-index|]
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 name|gtk_object_destroy
 argument_list|(
