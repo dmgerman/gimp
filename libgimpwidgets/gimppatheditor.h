@@ -42,7 +42,7 @@ name|GIMP_PATH_EDITOR
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_PATH_EDITOR, GimpPathEditor))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_PATH_EDITOR, GimpPathEditor))
 DECL|macro|GIMP_PATH_EDITOR_CLASS (klass)
 define|#
 directive|define
@@ -50,7 +50,7 @@ name|GIMP_PATH_EDITOR_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_PATH_EDITOR, GimpPathEditorClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_PATH_EDITOR, GimpPathEditorClass))
 DECL|macro|GIMP_IS_PATH_EDITOR (obj)
 define|#
 directive|define
@@ -58,7 +58,7 @@ name|GIMP_IS_PATH_EDITOR
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE (obj, GIMP_TYPE_PATH_EDITOR))
+value|(G_TYPE_CHECK_INSTANCE_TYPE (obj, GIMP_TYPE_PATH_EDITOR))
 DECL|macro|GIMP_IS_PATH_EDITOR_CLASS (klass)
 define|#
 directive|define
@@ -66,7 +66,7 @@ name|GIMP_IS_PATH_EDITOR_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PATH_EDITOR))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PATH_EDITOR))
 DECL|typedef|GimpPathEditorClass
 typedef|typedef
 name|struct
@@ -150,7 +150,7 @@ function_decl|;
 block|}
 struct|;
 comment|/* For information look into the C source or the html documentation */
-name|GtkType
+name|GType
 name|gimp_path_editor_get_type
 parameter_list|(
 name|void

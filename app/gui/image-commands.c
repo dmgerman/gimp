@@ -621,7 +621,7 @@ name|ResizeWidget
 argument_list|,
 name|ResizeImage
 argument_list|,
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gimage
 argument_list|)
@@ -652,7 +652,10 @@ name|gdisp
 operator|->
 name|dot_for_dot
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|image_resize_callback
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -757,7 +760,7 @@ name|ScaleWidget
 argument_list|,
 name|ResizeImage
 argument_list|,
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gimage
 argument_list|)
@@ -788,7 +791,10 @@ name|gdisp
 operator|->
 name|dot_for_dot
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|image_scale_callback
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

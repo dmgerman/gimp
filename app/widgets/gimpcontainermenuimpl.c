@@ -349,9 +349,9 @@ name|klass
 expr_stmt|;
 name|parent_class
 operator|=
-name|gtk_type_class
+name|g_type_class_peek_parent
 argument_list|(
-name|GIMP_TYPE_CONTAINER_MENU
+name|klass
 argument_list|)
 expr_stmt|;
 name|object_class
@@ -576,8 +576,6 @@ name|empty_item
 operator|->
 name|style
 operator|->
-name|klass
-operator|->
 name|ythickness
 argument_list|)
 expr_stmt|;
@@ -597,9 +595,9 @@ operator|->
 name|empty_item
 argument_list|)
 expr_stmt|;
-name|gtk_menu_append
+name|gtk_menu_shell_append
 argument_list|(
-name|GTK_MENU
+name|GTK_MENU_SHELL
 argument_list|(
 name|menu
 argument_list|)
@@ -706,9 +704,9 @@ argument_list|,
 name|menu
 argument_list|)
 expr_stmt|;
-name|gtk_menu_insert
+name|gtk_menu_shell_insert
 argument_list|(
-name|GTK_MENU
+name|GTK_MENU_SHELL
 argument_list|(
 name|menu
 argument_list|)

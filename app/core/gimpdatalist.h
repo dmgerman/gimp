@@ -38,7 +38,7 @@ name|GIMP_DATA_LIST
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_DATA_LIST, GimpDataList))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_DATA_LIST, GimpDataList))
 end_define
 
 begin_define
@@ -49,7 +49,7 @@ name|GIMP_DATA_LIST_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST (klass, GIMP_TYPE_DATA_LIST, GimpDataListClass))
+value|(G_TYPE_CHECK_CLASS_CAST (klass, GIMP_TYPE_DATA_LIST, GimpDataListClass))
 end_define
 
 begin_define
@@ -60,7 +60,7 @@ name|GIMP_IS_DATA_LIST
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_DATA_LIST))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_DATA_LIST))
 end_define
 
 begin_define
@@ -71,7 +71,7 @@ name|GIMP_IS_DATA_LIST_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DATA_LIST))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DATA_LIST))
 end_define
 
 begin_typedef

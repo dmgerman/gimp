@@ -366,9 +366,9 @@ name|klass
 expr_stmt|;
 name|parent_class
 operator|=
-name|gtk_type_class
+name|g_type_class_peek_parent
 argument_list|(
-name|GIMP_TYPE_CONTAINER_EDITOR
+name|klass
 argument_list|)
 expr_stmt|;
 name|object_class
@@ -431,7 +431,10 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_buffer_view_paste_clicked
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|view
@@ -451,7 +454,10 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_buffer_view_paste_into_clicked
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|view
@@ -471,7 +477,10 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_buffer_view_paste_as_new_clicked
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|view
@@ -491,7 +500,10 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_buffer_view_delete_clicked
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive

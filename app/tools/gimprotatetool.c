@@ -1055,7 +1055,10 @@ name|FALSE
 argument_list|,
 name|GIMP_SIZE_ENTRY_UPDATE_SIZE
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|rotate_center_changed
+argument_list|)
 argument_list|,
 name|tool
 argument_list|)

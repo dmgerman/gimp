@@ -47,7 +47,7 @@ name|GIMP_CHANNEL_LIST_ITEM
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_CHANNEL_LIST_ITEM, GimpChannelListItem))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_CHANNEL_LIST_ITEM, GimpChannelListItem))
 DECL|macro|GIMP_CHANNEL_LIST_ITEM_CLASS (klass)
 define|#
 directive|define
@@ -55,7 +55,7 @@ name|GIMP_CHANNEL_LIST_ITEM_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_CHANNEL_LIST_ITEM, GimpChannelListItemClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_CHANNEL_LIST_ITEM, GimpChannelListItemClass))
 DECL|macro|GIMP_IS_CHANNEL_LIST_ITEM (obj)
 define|#
 directive|define
@@ -63,7 +63,7 @@ name|GIMP_IS_CHANNEL_LIST_ITEM
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_CHANNEL_LIST_ITEM))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_CHANNEL_LIST_ITEM))
 DECL|macro|GIMP_IS_CHANNEL_LIST_ITEM_CLASS (klass)
 define|#
 directive|define
@@ -71,7 +71,7 @@ name|GIMP_IS_CHANNEL_LIST_ITEM_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CHANNEL_LIST_ITEM))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CHANNEL_LIST_ITEM))
 DECL|typedef|GimpChannelListItemClass
 typedef|typedef
 name|struct

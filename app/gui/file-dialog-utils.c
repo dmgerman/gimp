@@ -195,6 +195,7 @@ operator|->
 name|extensions_list
 condition|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|text

@@ -64,7 +64,7 @@ name|GIMP_HISTOGRAM_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_HISTOGRAM_TOOL, GimpHistogramTool))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_HISTOGRAM_TOOL, GimpHistogramTool))
 end_define
 
 begin_define
@@ -75,7 +75,7 @@ name|GIMP_IS_HISTOGRAM_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_HISTOGRAM_TOOL))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_HISTOGRAM_TOOL))
 end_define
 
 begin_define
@@ -86,7 +86,7 @@ name|GIMP_HISTOGRAM_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_HISTOGRAM_TOOL, GimpHistogramToolClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_HISTOGRAM_TOOL, GimpHistogramToolClass))
 end_define
 
 begin_define
@@ -97,7 +97,7 @@ name|GIMP_IS_HISTOGRAM_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_HISTOGRAM_TOOL))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_HISTOGRAM_TOOL))
 end_define
 
 begin_typedef

@@ -877,7 +877,10 @@ name|paint_mode_w
 operator|=
 name|gimp_paint_mode_menu_new
 argument_list|(
+name|G_CALLBACK
+argument_list|(
 name|paint_options_paint_mode_update
+argument_list|)
 argument_list|,
 name|options
 argument_list|,
@@ -2760,16 +2763,6 @@ argument_list|,
 literal|0.0
 argument_list|)
 expr_stmt|;
-name|gtk_spin_button_set_shadow_type
-argument_list|(
-name|GTK_SPIN_BUTTON
-argument_list|(
-name|spinbutton
-argument_list|)
-argument_list|,
-name|GTK_SHADOW_NONE
-argument_list|)
-expr_stmt|;
 name|gtk_spin_button_set_numeric
 argument_list|(
 name|GTK_SPIN_BUTTON
@@ -3124,16 +3117,6 @@ argument_list|,
 literal|0.0
 argument_list|)
 expr_stmt|;
-name|gtk_spin_button_set_shadow_type
-argument_list|(
-name|GTK_SPIN_BUTTON
-argument_list|(
-name|spinbutton
-argument_list|)
-argument_list|,
-name|GTK_SHADOW_NONE
-argument_list|)
-expr_stmt|;
 name|gtk_spin_button_set_numeric
 argument_list|(
 name|GTK_SPIN_BUTTON
@@ -3395,7 +3378,10 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_menu_item_update
+argument_list|)
 argument_list|,
 operator|&
 name|gradient
@@ -3414,10 +3400,10 @@ argument_list|(
 literal|"Once Forward"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|ONCE_FORWARD
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -3426,10 +3412,10 @@ argument_list|(
 literal|"Once Backward"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|ONCE_BACKWARDS
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -3438,10 +3424,10 @@ argument_list|(
 literal|"Loop Sawtooth"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|LOOP_SAWTOOTH
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -3450,10 +3436,10 @@ argument_list|(
 literal|"Loop Triangle"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|LOOP_TRIANGLE
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,

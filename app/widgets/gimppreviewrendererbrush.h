@@ -47,7 +47,7 @@ name|GIMP_BRUSH_PREVIEW
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_BRUSH_PREVIEW, GimpBrushPreview))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_BRUSH_PREVIEW, GimpBrushPreview))
 DECL|macro|GIMP_BRUSH_PREVIEW_CLASS (klass)
 define|#
 directive|define
@@ -55,7 +55,7 @@ name|GIMP_BRUSH_PREVIEW_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_BRUSH_PREVIEW, GimpBrushPreviewClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_BRUSH_PREVIEW, GimpBrushPreviewClass))
 DECL|macro|GIMP_IS_BRUSH_PREVIEW (obj)
 define|#
 directive|define
@@ -63,7 +63,7 @@ name|GIMP_IS_BRUSH_PREVIEW
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE (obj, GIMP_TYPE_BRUSH_PREVIEW))
+value|(G_TYPE_CHECK_INSTANCE_TYPE (obj, GIMP_TYPE_BRUSH_PREVIEW))
 DECL|macro|GIMP_IS_BRUSH_PREVIEW_CLASS (klass)
 define|#
 directive|define
@@ -71,7 +71,7 @@ name|GIMP_IS_BRUSH_PREVIEW_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_BRUSH_PREVIEW))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_BRUSH_PREVIEW))
 DECL|typedef|GimpBrushPreviewClass
 typedef|typedef
 name|struct

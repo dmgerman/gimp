@@ -1683,7 +1683,10 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|histogram_tool_channel_callback
+argument_list|)
 argument_list|,
 name|htd
 argument_list|,

@@ -1479,6 +1479,7 @@ modifier|*
 name|brush_editor
 parameter_list|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|entry_text

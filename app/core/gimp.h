@@ -92,7 +92,7 @@ name|GIMP
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_GIMP, Gimp))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_GIMP, Gimp))
 end_define
 
 begin_define
@@ -103,7 +103,7 @@ name|GIMP_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_GIMP, GimpClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_GIMP, GimpClass))
 end_define
 
 begin_define
@@ -114,7 +114,7 @@ name|GIMP_IS_GIMP
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_GIMP))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_GIMP))
 end_define
 
 begin_define
@@ -125,7 +125,7 @@ name|GIMP_IS_GIMP_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_GIMP))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_GIMP))
 end_define
 
 begin_typedef

@@ -42,7 +42,7 @@ name|GIMP_UNIT_MENU
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_UNIT_MENU, GimpUnitMenu))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_UNIT_MENU, GimpUnitMenu))
 DECL|macro|GIMP_UNIT_MENU_CLASS (klass)
 define|#
 directive|define
@@ -50,7 +50,7 @@ name|GIMP_UNIT_MENU_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_UNIT_MENU, GimpUnitMenuClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_UNIT_MENU, GimpUnitMenuClass))
 DECL|macro|GIMP_IS_UNIT_MENU (obj)
 define|#
 directive|define
@@ -58,7 +58,7 @@ name|GIMP_IS_UNIT_MENU
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE (obj, GIMP_TYPE_UNIT_MENU))
+value|(G_TYPE_CHECK_INSTANCE_TYPE (obj, GIMP_TYPE_UNIT_MENU))
 DECL|macro|GIMP_IS_UNIT_MENU_CLASS (klass)
 define|#
 directive|define
@@ -66,7 +66,7 @@ name|GIMP_IS_UNIT_MENU_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_UNIT_MENU))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_UNIT_MENU))
 DECL|typedef|GimpUnitMenuClass
 typedef|typedef
 name|struct

@@ -2092,7 +2092,10 @@ name|gimp_option_menu_new2
 argument_list|(
 name|FALSE
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|levels_channel_callback
+argument_list|)
 argument_list|,
 name|ld
 argument_list|,
@@ -8259,6 +8262,7 @@ name|FILE
 modifier|*
 name|f
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|filename

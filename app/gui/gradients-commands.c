@@ -283,14 +283,9 @@ literal|"Duplicate Gradient"
 argument_list|,
 name|gradient
 operator|&&
-name|GIMP_DATA_CLASS
-argument_list|(
-name|GTK_OBJECT
+name|GIMP_DATA_GET_CLASS
 argument_list|(
 name|gradient
-argument_list|)
-operator|->
-name|klass
 argument_list|)
 operator|->
 name|duplicate
@@ -578,6 +573,7 @@ name|GtkFileSelection
 modifier|*
 name|filesel
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|filename

@@ -42,7 +42,7 @@ name|GIMP_PIXMAP
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_PIXMAP, GimpPixmap))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_PIXMAP, GimpPixmap))
 DECL|macro|GIMP_PIXMAP_CLASS (klass)
 define|#
 directive|define
@@ -50,7 +50,7 @@ name|GIMP_PIXMAP_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_PIXMAP, GimpPixmapClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_PIXMAP, GimpPixmapClass))
 DECL|macro|GIMP_IS_PIXMAP (obj)
 define|#
 directive|define
@@ -58,7 +58,7 @@ name|GIMP_IS_PIXMAP
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_PIXMAP))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_PIXMAP))
 DECL|macro|GIMP_IS_PIXMAP_CLASS (klass)
 define|#
 directive|define
@@ -66,7 +66,7 @@ name|GIMP_IS_PIXMAP_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PIXMAP))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PIXMAP))
 DECL|typedef|GimpPixmapClass
 typedef|typedef
 name|struct

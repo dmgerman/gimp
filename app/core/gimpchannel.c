@@ -288,9 +288,9 @@ name|klass
 expr_stmt|;
 name|parent_class
 operator|=
-name|gtk_type_class
+name|g_type_class_peek_parent
 argument_list|(
-name|GIMP_TYPE_DRAWABLE
+name|klass
 argument_list|)
 expr_stmt|;
 name|object_class
@@ -7578,9 +7578,9 @@ name|destPR
 argument_list|)
 expr_stmt|;
 comment|/*  free the temporary mask  */
-name|gtk_object_unref
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|tmp_mask
 argument_list|)

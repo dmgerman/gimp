@@ -117,7 +117,7 @@ name|GIMP_DATA_FACTORY
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_DATA_FACTORY, GimpDataFactory))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_DATA_FACTORY, GimpDataFactory))
 end_define
 
 begin_define
@@ -128,7 +128,7 @@ name|GIMP_DATA_FACTORY_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DATA_FACTORY, GimpDataFactoryClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DATA_FACTORY, GimpDataFactoryClass))
 end_define
 
 begin_define
@@ -139,7 +139,7 @@ name|GIMP_IS_DATA_FACTORY
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_DATA_FACTORY))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_DATA_FACTORY))
 end_define
 
 begin_define
@@ -150,7 +150,7 @@ name|GIMP_IS_DATA_FACTORY_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DATA_FACTORY))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DATA_FACTORY))
 end_define
 
 begin_typedef

@@ -189,14 +189,9 @@ literal|"Duplicate Pattern"
 argument_list|,
 name|pattern
 operator|&&
-name|GIMP_DATA_CLASS
-argument_list|(
-name|GTK_OBJECT
+name|GIMP_DATA_GET_CLASS
 argument_list|(
 name|pattern
-argument_list|)
-operator|->
-name|klass
 argument_list|)
 operator|->
 name|duplicate

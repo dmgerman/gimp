@@ -450,6 +450,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|raw_filename

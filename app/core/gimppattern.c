@@ -245,7 +245,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-name|GtkType
+name|GType
 DECL|function|gimp_pattern_get_type (void)
 name|gimp_pattern_get_type
 parameter_list|(
@@ -253,7 +253,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GtkType
+name|GType
 name|pattern_type
 init|=
 literal|0
@@ -370,9 +370,9 @@ name|klass
 expr_stmt|;
 name|parent_class
 operator|=
-name|gtk_type_class
+name|g_type_class_peek_parent
 argument_list|(
-name|GIMP_TYPE_DATA
+name|klass
 argument_list|)
 expr_stmt|;
 name|object_class
@@ -450,6 +450,7 @@ name|pattern
 operator|->
 name|mask
 condition|)
+block|{
 name|temp_buf_free
 argument_list|(
 name|pattern
@@ -457,6 +458,13 @@ operator|->
 name|mask
 argument_list|)
 expr_stmt|;
+name|pattern
+operator|->
+name|mask
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|GTK_OBJECT_CLASS
@@ -1523,9 +1531,9 @@ if|if
 condition|(
 name|pattern
 condition|)
-name|gtk_object_unref
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|pattern
 argument_list|)
@@ -1564,15 +1572,6 @@ modifier|*
 name|pattern
 parameter_list|)
 block|{
-name|g_return_val_if_fail
-argument_list|(
-name|pattern
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_PATTERN

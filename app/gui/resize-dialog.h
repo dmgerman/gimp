@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277e49bd0103
+DECL|enum|__anon29026e430103
 block|{
 DECL|enumerator|ScaleWidget
 name|ScaleWidget
@@ -35,7 +35,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277e49bd0203
+DECL|enum|__anon29026e430203
 block|{
 DECL|enumerator|ResizeImage
 name|ResizeImage
@@ -118,7 +118,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277e49bd0308
+DECL|struct|__anon29026e430308
 block|{
 DECL|member|resize
 name|Resize
@@ -151,10 +151,11 @@ parameter_list|,
 name|ResizeTarget
 name|target
 parameter_list|,
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|signal
@@ -177,10 +178,10 @@ parameter_list|,
 name|gboolean
 name|dot_for_dot
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|ok_cb
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|cancel_cb
 parameter_list|,
 name|gpointer

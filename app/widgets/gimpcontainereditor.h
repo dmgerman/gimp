@@ -41,7 +41,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2761358d0103
+DECL|enum|__anon2c53e6330103
 block|{
 DECL|enumerator|GIMP_VIEW_TYPE_GRID
 name|GIMP_VIEW_TYPE_GRID
@@ -70,7 +70,7 @@ name|GIMP_CONTAINER_EDITOR
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_CONTAINER_EDITOR, GimpContainerEditor))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_CONTAINER_EDITOR, GimpContainerEditor))
 end_define
 
 begin_define
@@ -81,7 +81,7 @@ name|GIMP_CONTAINER_EDITOR_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_CONTAINER_EDITOR, GimpContainerEditorClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_CONTAINER_EDITOR, GimpContainerEditorClass))
 end_define
 
 begin_define
@@ -92,7 +92,7 @@ name|GIMP_IS_CONTAINER_EDITOR
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_CONTAINER_EDITOR))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_CONTAINER_EDITOR))
 end_define
 
 begin_define
@@ -103,7 +103,18 @@ name|GIMP_IS_CONTAINER_EDITOR_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CONTAINER_EDITOR))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CONTAINER_EDITOR))
+end_define
+
+begin_define
+DECL|macro|GIMP_CONTAINER_EDITOR_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_CONTAINER_EDITOR_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_CONTAINER_EDITOR, GimpContainerEditorClass))
 end_define
 
 begin_typedef
@@ -204,7 +215,7 @@ struct|;
 end_struct
 
 begin_function_decl
-name|GtkType
+name|GType
 name|gimp_container_editor_get_type
 parameter_list|(
 name|void
@@ -274,7 +285,7 @@ name|gchar
 modifier|*
 name|help_data
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|callback
 parameter_list|)
 function_decl|;

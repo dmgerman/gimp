@@ -38,7 +38,7 @@ name|GIMP_LAYER
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_LAYER, GimpLayer))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_LAYER, GimpLayer))
 end_define
 
 begin_define
@@ -49,7 +49,7 @@ name|GIMP_LAYER_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_LAYER, GimpLayerClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_LAYER, GimpLayerClass))
 end_define
 
 begin_define
@@ -60,7 +60,7 @@ name|GIMP_IS_LAYER
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_LAYER))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_LAYER))
 end_define
 
 begin_define
@@ -71,7 +71,7 @@ name|GIMP_IS_LAYER_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_LAYER))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_LAYER))
 end_define
 
 begin_typedef
@@ -120,7 +120,7 @@ decl_stmt|;
 comment|/*  possible layer mask            */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon28be3cf00108
+DECL|struct|__anon2c2ffc120108
 block|{
 DECL|member|backing_store
 name|TileManager

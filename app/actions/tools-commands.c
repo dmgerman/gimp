@@ -305,14 +305,9 @@ expr_stmt|;
 comment|/*  Complete the initialisation by doing the same stuff    *  tools_initialize() does after it did what tools_select() does    */
 if|if
 condition|(
-name|GIMP_TOOL_CLASS
-argument_list|(
-name|GTK_OBJECT
+name|GIMP_TOOL_GET_CLASS
 argument_list|(
 name|active_tool
-argument_list|)
-operator|->
-name|klass
 argument_list|)
 operator|->
 name|initialize

@@ -7022,9 +7022,12 @@ operator|=
 name|gtk_menu_item_new
 argument_list|()
 expr_stmt|;
-name|gtk_menu_insert
+name|gtk_menu_shell_insert
+argument_list|(
+name|GTK_MENU_SHELL
 argument_list|(
 name|menu
+argument_list|)
 argument_list|,
 name|separator
 argument_list|,
@@ -10413,9 +10416,9 @@ operator|=
 name|gtk_menu_item_new
 argument_list|()
 expr_stmt|;
-name|gtk_menu_insert
+name|gtk_menu_shell_insert
 argument_list|(
-name|GTK_MENU
+name|GTK_MENU_SHELL
 argument_list|(
 name|menu_item
 operator|->

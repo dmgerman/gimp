@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9614200103
+DECL|enum|__anon296e59a60103
 block|{
 DECL|enumerator|GRAD_LINEAR
 name|GRAD_LINEAR
@@ -60,7 +60,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9614200203
+DECL|enum|__anon296e59a60203
 block|{
 DECL|enumerator|GRAD_RGB
 name|GRAD_RGB
@@ -153,7 +153,7 @@ name|GIMP_GRADIENT
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_GRADIENT, GimpGradient))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_GRADIENT, GimpGradient))
 end_define
 
 begin_define
@@ -164,7 +164,7 @@ name|GIMP_GRADIENT_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_GRADIENT, GimpGradientClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_GRADIENT, GimpGradientClass))
 end_define
 
 begin_define
@@ -175,7 +175,7 @@ name|GIMP_IS_GRADIENT
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_GRADIENT))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_GRADIENT))
 end_define
 
 begin_define
@@ -186,7 +186,7 @@ name|GIMP_IS_GRADIENT_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_GRADIENT))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_GRADIENT))
 end_define
 
 begin_typedef
@@ -236,7 +236,7 @@ struct|;
 end_struct
 
 begin_function_decl
-name|GtkType
+name|GType
 name|gimp_gradient_get_type
 parameter_list|(
 name|void

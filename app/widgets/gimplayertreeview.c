@@ -612,7 +612,10 @@ name|paint_mode_menu
 operator|=
 name|gimp_paint_mode_menu_new
 argument_list|(
+name|G_CALLBACK
+argument_list|(
 name|gimp_layer_list_view_paint_mode_menu_callback
+argument_list|)
 argument_list|,
 name|view
 argument_list|,
@@ -723,9 +726,9 @@ operator|->
 name|preserve_trans_toggle
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|view
 operator|->
@@ -734,7 +737,7 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_layer_list_view_preserve_button_toggled
 argument_list|)
@@ -842,9 +845,9 @@ literal|0.0
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|view
 operator|->
@@ -853,7 +856,7 @@ argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_layer_list_view_opacity_scale_changed
 argument_list|)
@@ -975,9 +978,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|view
 operator|->
@@ -986,7 +989,7 @@ argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_layer_list_view_anchor_clicked
 argument_list|)
@@ -1244,7 +1247,10 @@ name|container
 argument_list|,
 literal|"mode_changed"
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_layer_list_view_layer_signal_handler
+argument_list|)
 argument_list|,
 name|view
 argument_list|)
@@ -1261,7 +1267,10 @@ name|container
 argument_list|,
 literal|"opacity_changed"
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_layer_list_view_layer_signal_handler
+argument_list|)
 argument_list|,
 name|view
 argument_list|)
@@ -1278,7 +1287,10 @@ name|container
 argument_list|,
 literal|"preserve_trans_changed"
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_layer_list_view_layer_signal_handler
+argument_list|)
 argument_list|,
 name|view
 argument_list|)
@@ -1687,7 +1699,7 @@ directive|define
 name|BLOCK
 parameter_list|()
 define|\
-value|gtk_signal_handler_block_by_func (GTK_OBJECT (layer), \ 	gimp_layer_list_view_layer_signal_handler, view)
+value|g_signal_handlers_block_by_func (G_OBJECT (layer), \ 	gimp_layer_list_view_layer_signal_handler, view)
 end_define
 
 begin_define
@@ -1697,7 +1709,7 @@ directive|define
 name|UNBLOCK
 parameter_list|()
 define|\
-value|gtk_signal_handler_unblock_by_func (GTK_OBJECT (layer), \ 	gimp_layer_list_view_layer_signal_handler, view)
+value|g_signal_handlers_unblock_by_func (G_OBJECT (layer), \ 	gimp_layer_list_view_layer_signal_handler, view)
 end_define
 
 begin_function
@@ -1760,12 +1772,14 @@ name|LayerModeEffects
 operator|)
 name|GPOINTER_TO_INT
 argument_list|(
-name|gtk_object_get_user_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
+argument_list|,
+literal|"user_data"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2060,7 +2074,7 @@ parameter_list|,
 name|function
 parameter_list|)
 define|\
-value|gtk_signal_handler_block_by_func (GTK_OBJECT (object), \ 	                                  (function), view)
+value|g_signal_handlers_block_by_func (G_OBJECT (object), \ 	                                 (function), view)
 end_define
 
 begin_define
@@ -2074,7 +2088,7 @@ parameter_list|,
 name|function
 parameter_list|)
 define|\
-value|gtk_signal_handler_unblock_by_func (GTK_OBJECT (object), \ 	                                    (function), view)
+value|g_signal_handlers_unblock_by_func (G_OBJECT (object), \ 	                                   (function), view)
 end_define
 
 begin_function

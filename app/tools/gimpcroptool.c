@@ -4702,7 +4702,10 @@ name|FALSE
 argument_list|,
 name|GIMP_SIZE_ENTRY_UPDATE_SIZE
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|crop_orig_changed
+argument_list|)
 argument_list|,
 name|crop_info
 argument_list|)
@@ -4822,7 +4825,10 @@ name|FALSE
 argument_list|,
 name|GIMP_SIZE_ENTRY_UPDATE_SIZE
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|crop_size_changed
+argument_list|)
 argument_list|,
 name|crop_info
 argument_list|)
@@ -6509,7 +6515,10 @@ argument_list|(
 literal|"Tool Toggle"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|options

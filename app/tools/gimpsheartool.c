@@ -824,7 +824,10 @@ literal|1
 argument_list|,
 literal|0
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|shear_x_mag_changed
+argument_list|)
 argument_list|,
 name|tool
 argument_list|)
@@ -856,7 +859,10 @@ literal|1
 argument_list|,
 literal|0
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|shear_y_mag_changed
+argument_list|)
 argument_list|,
 name|tool
 argument_list|)

@@ -651,9 +651,6 @@ name|shell
 argument_list|)
 expr_stmt|;
 block|}
-name|gdk_key_repeat_disable
-argument_list|()
-expr_stmt|;
 name|gdk_keyboard_grab
 argument_list|(
 name|layer_select
@@ -969,9 +966,6 @@ name|guint32
 name|time
 parameter_list|)
 block|{
-name|gdk_key_repeat_restore
-argument_list|()
-expr_stmt|;
 name|gdk_keyboard_ungrab
 argument_list|(
 name|time

@@ -237,9 +237,9 @@ name|klass
 expr_stmt|;
 name|parent_class
 operator|=
-name|gtk_type_class
+name|g_type_class_peek_parent
 argument_list|(
-name|GIMP_TYPE_VIEWABLE
+name|klass
 argument_list|)
 expr_stmt|;
 name|object_class

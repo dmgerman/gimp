@@ -47,7 +47,7 @@ name|GIMP_DRAWABLE_PREVIEW
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_DRAWABLE_PREVIEW, GimpDrawablePreview))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_DRAWABLE_PREVIEW, GimpDrawablePreview))
 DECL|macro|GIMP_DRAWABLE_PREVIEW_CLASS (klass)
 define|#
 directive|define
@@ -55,7 +55,7 @@ name|GIMP_DRAWABLE_PREVIEW_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DRAWABLE_PREVIEW, GimpDrawablePreviewClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DRAWABLE_PREVIEW, GimpDrawablePreviewClass))
 DECL|macro|GIMP_IS_DRAWABLE_PREVIEW (obj)
 define|#
 directive|define
@@ -63,7 +63,7 @@ name|GIMP_IS_DRAWABLE_PREVIEW
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE (obj, GIMP_TYPE_DRAWABLE_PREVIEW))
+value|(G_TYPE_CHECK_INSTANCE_TYPE (obj, GIMP_TYPE_DRAWABLE_PREVIEW))
 DECL|macro|GIMP_IS_DRAWABLE_PREVIEW_CLASS (klass)
 define|#
 directive|define
@@ -71,7 +71,7 @@ name|GIMP_IS_DRAWABLE_PREVIEW_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DRAWABLE_PREVIEW))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DRAWABLE_PREVIEW))
 DECL|typedef|GimpDrawablePreviewClass
 typedef|typedef
 name|struct

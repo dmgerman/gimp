@@ -84,6 +84,7 @@ condition|(
 name|action
 condition|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|identifier
@@ -134,6 +135,7 @@ condition|(
 name|action
 condition|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|identifier
@@ -205,6 +207,7 @@ name|GtkWidget
 modifier|*
 name|dockable
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|identifier

@@ -54,7 +54,7 @@ name|GTK_WRAP_BOX
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GTK_TYPE_WRAP_BOX, GtkWrapBox))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_WRAP_BOX, GtkWrapBox))
 DECL|macro|GTK_WRAP_BOX_CLASS (klass)
 define|#
 directive|define
@@ -62,7 +62,7 @@ name|GTK_WRAP_BOX_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GTK_TYPE_WRAP_BOX, GtkWrapBoxClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GTK_TYPE_WRAP_BOX, GtkWrapBoxClass))
 DECL|macro|GTK_IS_WRAP_BOX (obj)
 define|#
 directive|define
@@ -70,7 +70,7 @@ name|GTK_IS_WRAP_BOX
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GTK_TYPE_WRAP_BOX))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GTK_TYPE_WRAP_BOX))
 DECL|macro|GTK_IS_WRAP_BOX_CLASS (klass)
 define|#
 directive|define
@@ -78,7 +78,7 @@ name|GTK_IS_WRAP_BOX_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GTK_TYPE_WRAP_BOX))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GTK_TYPE_WRAP_BOX))
 DECL|macro|GTK_WRAP_BOX_GET_CLASS (obj)
 define|#
 directive|define
@@ -86,7 +86,7 @@ name|GTK_WRAP_BOX_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_WRAP_BOX_CLASS (((GtkObject*) (obj))->klass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GTK_TYPE_WRAP_BOX, GtkWrapBoxClass))
 comment|/* --- typedefs --- */
 DECL|typedef|GtkWrapBox
 typedef|typedef

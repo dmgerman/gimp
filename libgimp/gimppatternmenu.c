@@ -404,7 +404,7 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-name|gtk_widget_popup
+name|gtk_widget_set_uposition
 argument_list|(
 name|psel
 operator|->
@@ -413,6 +413,13 @@ argument_list|,
 name|x
 argument_list|,
 name|y
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|psel
+operator|->
+name|device_patpopup
 argument_list|)
 expr_stmt|;
 comment|/*  Draw the pattern  */

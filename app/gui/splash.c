@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29801eb30103
+DECL|enum|__anon2c4af5a30103
 block|{
 DECL|enumerator|SPLASH_SHOW_LOGO_NEVER
 name|SPLASH_SHOW_LOGO_NEVER
@@ -305,7 +305,17 @@ name|win_initstatus
 operator|=
 name|gtk_window_new
 argument_list|(
-name|GTK_WINDOW_DIALOG
+name|GTK_WINDOW_TOPLEVEL
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_type_hint
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|win_initstatus
+argument_list|)
+argument_list|,
+name|GDK_WINDOW_TYPE_HINT_DIALOG
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_title

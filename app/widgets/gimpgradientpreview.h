@@ -47,7 +47,7 @@ name|GIMP_GRADIENT_PREVIEW
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_GRADIENT_PREVIEW, GimpGradientPreview))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_GRADIENT_PREVIEW, GimpGradientPreview))
 DECL|macro|GIMP_GRADIENT_PREVIEW_CLASS (klass)
 define|#
 directive|define
@@ -55,7 +55,7 @@ name|GIMP_GRADIENT_PREVIEW_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_GRADIENT_PREVIEW, GimpGradientPreviewClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_GRADIENT_PREVIEW, GimpGradientPreviewClass))
 DECL|macro|GIMP_IS_GRADIENT_PREVIEW (obj)
 define|#
 directive|define
@@ -63,7 +63,7 @@ name|GIMP_IS_GRADIENT_PREVIEW
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE (obj, GIMP_TYPE_GRADIENT_PREVIEW))
+value|(G_TYPE_CHECK_INSTANCE_TYPE (obj, GIMP_TYPE_GRADIENT_PREVIEW))
 DECL|macro|GIMP_IS_GRADIENT_PREVIEW_CLASS (klass)
 define|#
 directive|define
@@ -71,7 +71,7 @@ name|GIMP_IS_GRADIENT_PREVIEW_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_GRADIENT_PREVIEW))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_GRADIENT_PREVIEW))
 DECL|typedef|GimpGradientPreviewClass
 typedef|typedef
 name|struct

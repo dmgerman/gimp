@@ -38,7 +38,7 @@ name|HISTOGRAM_WIDGET
 parameter_list|(
 name|obj
 parameter_list|)
-value|GTK_CHECK_CAST (obj, histogram_widget_get_type (), HistogramWidget)
+value|G_TYPE_CHECK_INSTANCE_CAST (obj, histogram_widget_get_type (), HistogramWidget)
 end_define
 
 begin_define
@@ -49,7 +49,7 @@ name|IS_HISTOGRAM_WIDGET
 parameter_list|(
 name|obj
 parameter_list|)
-value|GTK_CHECK_TYPE (obj, histogram_widget_get_type ())
+value|G_TYPE_CHECK_INSTANCE_TYPE (obj, histogram_widget_get_type ())
 end_define
 
 begin_define
@@ -60,7 +60,7 @@ name|HISTOGRAM_WIDGET_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|GTK_CHECK_CLASS_CAST (klass, histogram_widget_get_type (), HistogramWidget)
+value|G_TYPE_CHECK_CLASS_CAST (klass, histogram_widget_get_type (), HistogramWidget)
 end_define
 
 begin_typedef

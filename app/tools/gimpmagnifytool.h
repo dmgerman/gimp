@@ -38,7 +38,7 @@ name|GIMP_MAGNIFY_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_MAGNIFY_TOOL, GimpMagnifyTool))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_MAGNIFY_TOOL, GimpMagnifyTool))
 end_define
 
 begin_define
@@ -49,7 +49,7 @@ name|GIMP_IS_MAGNIFY_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_MAGNIFY_TOOL))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_MAGNIFY_TOOL))
 end_define
 
 begin_define
@@ -60,7 +60,7 @@ name|GIMP_MAGNIFY_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_MAGNIFY_TOOL, GimpMagnifyToolClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_MAGNIFY_TOOL, GimpMagnifyToolClass))
 end_define
 
 begin_define
@@ -71,7 +71,7 @@ name|GIMP_IS_MAGNIFY_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_MAGNIFY_TOOL))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_MAGNIFY_TOOL))
 end_define
 
 begin_typedef

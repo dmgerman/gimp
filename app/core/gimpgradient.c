@@ -282,7 +282,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-name|GtkType
+name|GType
 DECL|function|gimp_gradient_get_type (void)
 name|gimp_gradient_get_type
 parameter_list|(
@@ -290,7 +290,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GtkType
+name|GType
 name|gradient_type
 init|=
 literal|0
@@ -407,9 +407,9 @@ name|klass
 expr_stmt|;
 name|parent_class
 operator|=
-name|gtk_type_class
+name|g_type_class_peek_parent
 argument_list|(
-name|GIMP_TYPE_DATA
+name|klass
 argument_list|)
 expr_stmt|;
 name|object_class
@@ -1993,13 +1993,6 @@ name|rgb
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|gradient
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
 name|GIMP_IS_GRADIENT
 argument_list|(
 name|gradient
@@ -2593,15 +2586,6 @@ name|GimpGradientSegment
 modifier|*
 name|seg
 decl_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|gradient
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_GRADIENT

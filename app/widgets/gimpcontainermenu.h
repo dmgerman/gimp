@@ -42,7 +42,7 @@ name|GIMP_CONTAINER_MENU
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_CONTAINER_MENU, GimpContainerMenu))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_CONTAINER_MENU, GimpContainerMenu))
 end_define
 
 begin_define
@@ -53,7 +53,7 @@ name|GIMP_CONTAINER_MENU_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_CONTAINER_MENU, GimpContainerMenuClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_CONTAINER_MENU, GimpContainerMenuClass))
 end_define
 
 begin_define
@@ -64,7 +64,7 @@ name|GIMP_IS_CONTAINER_MENU
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_CONTAINER_MENU))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_CONTAINER_MENU))
 end_define
 
 begin_define
@@ -75,7 +75,7 @@ name|GIMP_IS_CONTAINER_MENU_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CONTAINER_MENU))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CONTAINER_MENU))
 end_define
 
 begin_typedef

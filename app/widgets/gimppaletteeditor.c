@@ -1638,6 +1638,7 @@ name|GimpPalette
 modifier|*
 name|palette
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|entry_text
@@ -1745,9 +1746,9 @@ literal|"New"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_menu_append
+name|gtk_menu_shell_append
 argument_list|(
-name|GTK_MENU
+name|GTK_MENU_SHELL
 argument_list|(
 name|menu
 argument_list|)
@@ -1787,9 +1788,9 @@ literal|"Edit"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_menu_append
+name|gtk_menu_shell_append
 argument_list|(
-name|GTK_MENU
+name|GTK_MENU_SHELL
 argument_list|(
 name|menu
 argument_list|)
@@ -1852,9 +1853,9 @@ argument_list|,
 name|palette_editor
 argument_list|)
 expr_stmt|;
-name|gtk_menu_append
+name|gtk_menu_shell_append
 argument_list|(
-name|GTK_MENU
+name|GTK_MENU_SHELL
 argument_list|(
 name|menu
 argument_list|)

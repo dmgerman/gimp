@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7659830103
+DECL|enum|__anon2bdf38aa0103
 block|{
 DECL|enumerator|SMUDGE_TYPE_SMUDGE
 name|SMUDGE_TYPE_SMUDGE
@@ -41,7 +41,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7659830203
+DECL|enum|__anon2bdf38aa0203
 block|{
 DECL|enumerator|SMUDGE_MODE_HIGHLIGHTS
 name|SMUDGE_MODE_HIGHLIGHTS
@@ -73,7 +73,7 @@ name|GIMP_SMUDGE_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_SMUDGE_TOOL, GimpSmudgeTool))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_SMUDGE_TOOL, GimpSmudgeTool))
 end_define
 
 begin_define
@@ -84,7 +84,7 @@ name|GIMP_IS_SMUDGE_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_SMUDGE_TOOL))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_SMUDGE_TOOL))
 end_define
 
 begin_define
@@ -95,7 +95,7 @@ name|GIMP_SMUDGE_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_SMUDGE_TOOL, GimpSmudgeToolClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_SMUDGE_TOOL, GimpSmudgeToolClass))
 end_define
 
 begin_define
@@ -106,7 +106,7 @@ name|GIMP_IS_SMUDGE_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_SMUDGE_TOOL))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_SMUDGE_TOOL))
 end_define
 
 begin_typedef

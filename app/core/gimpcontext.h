@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c7ace60103
+DECL|enum|__anon2bb870740103
 block|{
 DECL|enumerator|GIMP_CONTEXT_ARG_IMAGE
 name|GIMP_CONTEXT_ARG_IMAGE
@@ -74,7 +74,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c7ace60203
+DECL|enum|__anon2bb870740203
 block|{
 DECL|enumerator|GIMP_CONTEXT_IMAGE_MASK
 name|GIMP_CONTEXT_IMAGE_MASK
@@ -218,7 +218,7 @@ name|GIMP_CONTEXT
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_CONTEXT, GimpContext))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_CONTEXT, GimpContext))
 end_define
 
 begin_define
@@ -229,7 +229,7 @@ name|GIMP_CONTEXT_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST (klass, GIMP_TYPE_CONTEXT, GimpContextClass))
+value|(G_TYPE_CHECK_CLASS_CAST (klass, GIMP_TYPE_CONTEXT, GimpContextClass))
 end_define
 
 begin_define
@@ -240,7 +240,7 @@ name|GIMP_IS_CONTEXT
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_CONTEXT))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_CONTEXT))
 end_define
 
 begin_define
@@ -251,7 +251,7 @@ name|GIMP_IS_CONTEXT_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CONTEXT))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CONTEXT))
 end_define
 
 begin_typedef
@@ -575,7 +575,7 @@ struct|;
 end_struct
 
 begin_function_decl
-name|GtkType
+name|GType
 name|gimp_context_get_type
 parameter_list|(
 name|void
@@ -766,14 +766,14 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  manipulate by GtkType  */
+comment|/*  manipulate by GType  */
 end_comment
 
 begin_function_decl
 name|GimpContextArgType
 name|gimp_context_type_to_arg
 parameter_list|(
-name|GtkType
+name|GType
 name|type
 parameter_list|)
 function_decl|;
@@ -785,7 +785,7 @@ name|gchar
 modifier|*
 name|gimp_context_type_to_signal_name
 parameter_list|(
-name|GtkType
+name|GType
 name|type
 parameter_list|)
 function_decl|;
@@ -800,7 +800,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GtkType
+name|GType
 name|type
 parameter_list|)
 function_decl|;
@@ -814,7 +814,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GtkType
+name|GType
 name|type
 parameter_list|,
 name|GimpObject
@@ -832,7 +832,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GtkType
+name|GType
 name|type
 parameter_list|)
 function_decl|;

@@ -1264,10 +1264,12 @@ name|GtkFileSelection
 modifier|*
 name|fs
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|filename
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|raw_filename

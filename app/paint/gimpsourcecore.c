@@ -191,7 +191,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3cb36c0103
+DECL|enum|__anon29dffa0e0103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO
@@ -3216,7 +3216,10 @@ argument_list|(
 literal|"Source"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|options
@@ -3301,7 +3304,10 @@ argument_list|(
 literal|"Alignment"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|options

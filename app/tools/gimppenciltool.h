@@ -42,7 +42,7 @@ name|GIMP_PENCIL_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_PENCIL_TOOL, GimpPencilTool))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_PENCIL_TOOL, GimpPencilTool))
 end_define
 
 begin_define
@@ -53,7 +53,7 @@ name|GIMP_IS_PENCIL_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_PENCIL_TOOL))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_PENCIL_TOOL))
 end_define
 
 begin_define
@@ -64,7 +64,7 @@ name|GIMP_PENCIL_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_PENCIL_TOOL, GimpPencilToolClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_PENCIL_TOOL, GimpPencilToolClass))
 end_define
 
 begin_define
@@ -75,7 +75,7 @@ name|GIMP_IS_PENCIL_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PENCIL_TOOL))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PENCIL_TOOL))
 end_define
 
 begin_typedef

@@ -207,7 +207,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bed5d320103
+DECL|enum|__anon2bdfa45d0103
 block|{
 DECL|enumerator|CONVOLVE_NCLIP
 name|CONVOLVE_NCLIP
@@ -3115,7 +3115,10 @@ argument_list|(
 literal|"Convolve Type"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|options

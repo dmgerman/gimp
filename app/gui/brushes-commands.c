@@ -189,14 +189,9 @@ literal|"Duplicate Brush"
 argument_list|,
 name|brush
 operator|&&
-name|GIMP_DATA_CLASS
-argument_list|(
-name|GTK_OBJECT
+name|GIMP_DATA_GET_CLASS
 argument_list|(
 name|brush
-argument_list|)
-operator|->
-name|klass
 argument_list|)
 operator|->
 name|duplicate

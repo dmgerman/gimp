@@ -122,7 +122,7 @@ parameter_list|(
 name|gboolean
 name|menu_only
 parameter_list|,
-comment|/* specify menu items as va_list: 				     *  gchar          *label, 				     *  GtkSignalFunc   callback, 				     *  gpointer        data, 				     *  gpointer        user_data, 				     *  GtkWidget     **widget_ptr, 				     *  gboolean        active 				     */
+comment|/* specify menu items as va_list: 				     *  gchar          *label, 				     *  GCallback       callback, 				     *  gpointer        data, 				     *  gpointer        user_data, 				     *  GtkWidget     **widget_ptr, 				     *  gboolean        active 				     */
 modifier|...
 parameter_list|)
 function_decl|;
@@ -133,7 +133,7 @@ parameter_list|(
 name|gboolean
 name|menu_only
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|menu_item_callback
 parameter_list|,
 name|gpointer
@@ -170,7 +170,7 @@ name|gchar
 modifier|*
 name|frame_title
 parameter_list|,
-comment|/* specify radio buttons as va_list: 				     *  const gchar    *label, 				     *  GtkSignalFunc   callback, 				     *  gpointer        data, 				     *  gpointer        user_data, 				     *  GtkWidget     **widget_ptr, 				     *  gboolean        active, 				     */
+comment|/* specify radio buttons as va_list: 				     *  const gchar    *label, 				     *  GCallback       callback, 				     *  gpointer        data, 				     *  gpointer        user_data, 				     *  GtkWidget     **widget_ptr, 				     *  gboolean        active, 				     */
 modifier|...
 parameter_list|)
 function_decl|;
@@ -186,7 +186,7 @@ name|gchar
 modifier|*
 name|frame_title
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|radio_button_callback
 parameter_list|,
 name|gpointer

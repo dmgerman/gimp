@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a8656e0103
+DECL|enum|__anon2b2ef4940103
 block|{
 DECL|enumerator|IMAGE_CLONE
 name|IMAGE_CLONE
@@ -54,7 +54,7 @@ name|GIMP_CLONE_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_CLONE_TOOL, GimpCloneTool))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_CLONE_TOOL, GimpCloneTool))
 end_define
 
 begin_define
@@ -65,7 +65,7 @@ name|GIMP_IS_CLONE_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_CLONE_TOOL))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_CLONE_TOOL))
 end_define
 
 begin_define
@@ -76,7 +76,7 @@ name|GIMP_CLONE_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_CLONE_TOOL, GimpCloneToolClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_CLONE_TOOL, GimpCloneToolClass))
 end_define
 
 begin_define
@@ -87,7 +87,7 @@ name|GIMP_IS_CLONE_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CLONE_TOOL))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CLONE_TOOL))
 end_define
 
 begin_typedef

@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c485de50103
+DECL|enum|__anon2a22c6cf0103
 block|{
 DECL|enumerator|CROP_CROP
 name|CROP_CROP
@@ -58,7 +58,7 @@ name|GIMP_CROP_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_CROP_TOOL, GimpCropTool))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_CROP_TOOL, GimpCropTool))
 end_define
 
 begin_define
@@ -69,7 +69,7 @@ name|GIMP_IS_CROP_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_CROP_TOOL))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_CROP_TOOL))
 end_define
 
 begin_define
@@ -80,7 +80,7 @@ name|GIMP_CROP_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_CROP_TOOL, GimpCropToolClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_CROP_TOOL, GimpCropToolClass))
 end_define
 
 begin_typedef

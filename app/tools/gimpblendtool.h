@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a429f40103
+DECL|enum|__anon2bbe9b7d0103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -73,7 +73,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=_MODE>*/
-DECL|enum|__anon28a429f40203
+DECL|enum|__anon2bbe9b7d0203
 block|{
 DECL|enumerator|FG_BG_RGB_MODE
 name|FG_BG_RGB_MODE
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a429f40303
+DECL|enum|__anon2bbe9b7d0303
 block|{
 DECL|enumerator|REPEAT_NONE
 name|REPEAT_NONE
@@ -135,7 +135,7 @@ name|GIMP_BLEND_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_BLEND_TOOL, GimpBlendTool))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_BLEND_TOOL, GimpBlendTool))
 end_define
 
 begin_define
@@ -146,7 +146,7 @@ name|GIMP_IS_BLEND_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_BLEND_TOOL))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_BLEND_TOOL))
 end_define
 
 begin_define
@@ -157,7 +157,7 @@ name|GIMP_BLEND_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_BLEND_TOOL, GimpBlendToolClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_BLEND_TOOL, GimpBlendToolClass))
 end_define
 
 begin_define
@@ -168,7 +168,7 @@ name|GIMP_IS_BLEND_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_BLEND_TOOL))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_BLEND_TOOL))
 end_define
 
 begin_typedef

@@ -48,7 +48,7 @@ name|GTK_VWRAP_BOX
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GTK_TYPE_VWRAP_BOX, GtkVWrapBox))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_VWRAP_BOX, GtkVWrapBox))
 DECL|macro|GTK_VWRAP_BOX_CLASS (klass)
 define|#
 directive|define
@@ -56,7 +56,7 @@ name|GTK_VWRAP_BOX_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GTK_TYPE_VWRAP_BOX, GtkVWrapBoxClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GTK_TYPE_VWRAP_BOX, GtkVWrapBoxClass))
 DECL|macro|GTK_IS_VWRAP_BOX (obj)
 define|#
 directive|define
@@ -64,7 +64,7 @@ name|GTK_IS_VWRAP_BOX
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GTK_TYPE_VWRAP_BOX))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GTK_TYPE_VWRAP_BOX))
 DECL|macro|GTK_IS_VWRAP_BOX_CLASS (klass)
 define|#
 directive|define
@@ -72,7 +72,7 @@ name|GTK_IS_VWRAP_BOX_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GTK_TYPE_VWRAP_BOX))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GTK_TYPE_VWRAP_BOX))
 DECL|macro|GTK_VWRAP_BOX_GET_CLASS (obj)
 define|#
 directive|define

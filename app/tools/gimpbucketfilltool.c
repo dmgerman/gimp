@@ -1177,29 +1177,32 @@ argument_list|(
 literal|"Fill Type"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|options
 operator|->
 name|fill_mode
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|options
 operator|->
 name|fill_mode
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"FG Color Fill"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|FG_BUCKET_FILL
+argument_list|)
 argument_list|,
 operator|&
 name|options
@@ -1214,10 +1217,10 @@ argument_list|(
 literal|"BG Color Fill"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|BG_BUCKET_FILL
+argument_list|)
 argument_list|,
 operator|&
 name|options
@@ -1232,10 +1235,10 @@ argument_list|(
 literal|"Pattern Fill"
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|PATTERN_BUCKET_FILL
+argument_list|)
 argument_list|,
 operator|&
 name|options

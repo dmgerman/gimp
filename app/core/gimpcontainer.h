@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6e82310103
+DECL|enum|__anon2a2050c30103
 block|{
 DECL|enumerator|GIMP_CONTAINER_POLICY_STRONG
 name|GIMP_CONTAINER_POLICY_STRONG
@@ -54,7 +54,7 @@ name|GIMP_CONTAINER
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_CONTAINER, GimpContainer))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_CONTAINER, GimpContainer))
 end_define
 
 begin_define
@@ -65,7 +65,7 @@ name|GIMP_CONTAINER_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_CONTAINER, GimpContainerClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_CONTAINER, GimpContainerClass))
 end_define
 
 begin_define
@@ -76,7 +76,7 @@ name|GIMP_IS_CONTAINER
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_CONTAINER))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_CONTAINER))
 end_define
 
 begin_define
@@ -87,7 +87,7 @@ name|GIMP_IS_CONTAINER_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CONTAINER))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CONTAINER))
 end_define
 
 begin_typedef
@@ -110,7 +110,7 @@ name|parent_instance
 decl_stmt|;
 comment|/*  public, read-only  */
 DECL|member|children_type
-name|GtkType
+name|GType
 name|children_type
 decl_stmt|;
 DECL|member|policy
@@ -307,7 +307,7 @@ struct|;
 end_struct
 
 begin_function_decl
-name|GtkType
+name|GType
 name|gimp_container_get_type
 parameter_list|(
 name|void
@@ -316,7 +316,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GtkType
+name|GType
 name|gimp_container_children_type
 parameter_list|(
 specifier|const
@@ -546,11 +546,11 @@ name|gchar
 modifier|*
 name|signame
 parameter_list|,
-name|GtkSignalFunc
-name|handler
+name|GCallback
+name|callback
 parameter_list|,
 name|gpointer
-name|user_data
+name|callback_data
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -270,9 +270,9 @@ name|klass
 expr_stmt|;
 name|parent_class
 operator|=
-name|gtk_type_class
+name|g_type_class_peek_parent
 argument_list|(
-name|GIMP_TYPE_LIST
+name|klass
 argument_list|)
 expr_stmt|;
 name|container_class
@@ -407,7 +407,10 @@ argument_list|(
 name|object
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_data_list_object_renamed_callback
+argument_list|)
 argument_list|,
 name|container
 argument_list|)
@@ -794,7 +797,10 @@ argument_list|(
 name|object
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_data_list_object_renamed_callback
+argument_list|)
 argument_list|,
 name|data_list
 argument_list|)
@@ -817,7 +823,10 @@ argument_list|(
 name|object
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_data_list_object_renamed_callback
+argument_list|)
 argument_list|,
 name|data_list
 argument_list|)

@@ -344,14 +344,9 @@ literal|"Duplicate Palette"
 argument_list|,
 name|palette
 operator|&&
-name|GIMP_DATA_CLASS
-argument_list|(
-name|GTK_OBJECT
+name|GIMP_DATA_GET_CLASS
 argument_list|(
 name|palette
-argument_list|)
-operator|->
-name|klass
 argument_list|)
 operator|->
 name|duplicate

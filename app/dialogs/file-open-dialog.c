@@ -202,10 +202,12 @@ specifier|static
 name|gint
 name|file_open_with_proc_and_display
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|raw_filename
@@ -655,9 +657,10 @@ end_function
 
 begin_function
 name|gint
-DECL|function|file_open_with_display (gchar * filename)
+DECL|function|file_open_with_display (const gchar * filename)
 name|file_open_with_display
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -683,13 +686,15 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|file_open_with_proc_and_display (gchar * filename,gchar * raw_filename,PlugInProcDef * file_proc)
+DECL|function|file_open_with_proc_and_display (const gchar * filename,const gchar * raw_filename,PlugInProcDef * file_proc)
 name|file_open_with_proc_and_display
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|raw_filename
@@ -2082,6 +2087,7 @@ name|gchar
 modifier|*
 name|pname
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|fname
@@ -2685,11 +2691,10 @@ name|gint
 name|row
 parameter_list|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|fullfname
-init|=
-name|NULL
 decl_stmt|;
 name|fullfname
 operator|=
@@ -2771,6 +2776,8 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|filedirname
+init|=
+name|NULL
 decl_stmt|;
 name|struct
 name|stat
@@ -2850,9 +2857,12 @@ argument_list|)
 expr_stmt|;
 name|filedirname
 operator|=
+name|g_strdup
+argument_list|(
 name|gtk_file_selection_get_filename
 argument_list|(
 name|fs
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -3081,12 +3091,10 @@ block|{
 if|if
 condition|(
 operator|!
-operator|(
 name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
-operator|)
 condition|)
 block|{
 name|full_filename
@@ -3138,6 +3146,11 @@ name|toplist
 operator|=
 name|NULL
 expr_stmt|;
+name|g_free
+argument_list|(
+name|filedirname
+argument_list|)
+expr_stmt|;
 block|}
 name|gtk_widget_set_sensitive
 argument_list|(
@@ -3183,6 +3196,7 @@ name|gchar
 modifier|*
 name|raw_filename
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|filedirname
@@ -3206,13 +3220,18 @@ argument_list|)
 expr_stmt|;
 name|full_filename
 operator|=
+name|g_strdup
+argument_list|(
 name|gtk_file_selection_get_filename
 argument_list|(
 name|fs
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|raw_filename
 operator|=
+name|g_strdup
+argument_list|(
 name|gtk_entry_get_text
 argument_list|(
 name|GTK_ENTRY
@@ -3220,6 +3239,7 @@ argument_list|(
 name|fs
 operator|->
 name|selection_entry
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3424,6 +3444,11 @@ condition|(
 name|list
 condition|)
 block|{
+name|g_free
+argument_list|(
+name|full_filename
+argument_list|)
+expr_stmt|;
 name|full_filename
 operator|=
 name|g_strconcat
@@ -3492,6 +3517,7 @@ argument_list|(
 name|full_filename
 argument_list|,
 operator|(
+specifier|const
 name|gchar
 operator|*
 operator|)
@@ -3538,11 +3564,6 @@ block|}
 block|}
 name|g_free
 argument_list|(
-name|full_filename
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
 name|list
 operator|->
 name|data
@@ -3573,11 +3594,6 @@ argument_list|,
 name|raw_filename
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|raw_filename
-argument_list|)
-expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
 name|GTK_WIDGET
@@ -3586,6 +3602,16 @@ name|fs
 argument_list|)
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|full_filename
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|raw_filename
 argument_list|)
 expr_stmt|;
 block|}

@@ -38,7 +38,7 @@ name|GIMP_FLIP_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_FLIP_TOOL, GimpFlipTool))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_FLIP_TOOL, GimpFlipTool))
 end_define
 
 begin_define
@@ -49,7 +49,7 @@ name|GIMP_IS_FLIP_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_FLIP_TOOL))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_FLIP_TOOL))
 end_define
 
 begin_define
@@ -60,7 +60,7 @@ name|GIMP_FLIP_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_FLIP_TOOL, GimpFlipToolClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_FLIP_TOOL, GimpFlipToolClass))
 end_define
 
 begin_define
@@ -71,7 +71,7 @@ name|GIMP_IS_FLIP_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_FLIP_TOOL))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_FLIP_TOOL))
 end_define
 
 begin_typedef

@@ -316,17 +316,19 @@ end_comment
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|file_save (GimpImage * gimage,gchar * filename,gchar * raw_filename,RunModeType run_mode,gboolean set_filename)
+DECL|function|file_save (GimpImage * gimage,const gchar * filename,const gchar * raw_filename,RunModeType run_mode,gboolean set_filename)
 name|file_save
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|filename
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|raw_filename
@@ -816,17 +818,19 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|file_save_with_proc (GimpImage * gimage,gchar * full_filename,gchar * raw_filename,PlugInProcDef * save_proc,gboolean set_filename)
+DECL|function|file_save_with_proc (GimpImage * gimage,const gchar * full_filename,const gchar * raw_filename,PlugInProcDef * save_proc,gboolean set_filename)
 name|file_save_with_proc
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|full_filename
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|raw_filename

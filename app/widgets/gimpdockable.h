@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gtk/gtkvbox.h>
+file|<gtk/gtkbin.h>
 end_include
 
 begin_typedef
@@ -82,7 +82,7 @@ name|GIMP_DOCKABLE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_DOCKABLE, GimpDockable))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_DOCKABLE, GimpDockable))
 end_define
 
 begin_define
@@ -93,7 +93,7 @@ name|GIMP_DOCKABLE_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DOCKABLE, GimpDockableClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DOCKABLE, GimpDockableClass))
 end_define
 
 begin_define
@@ -104,7 +104,7 @@ name|GIMP_IS_DOCKABLE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_DOCKABLE))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_DOCKABLE))
 end_define
 
 begin_define
@@ -115,7 +115,18 @@ name|GIMP_IS_DOCKABLE_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DOCKABLE))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DOCKABLE))
+end_define
+
+begin_define
+DECL|macro|GIMP_DOCKABLE_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_DOCKABLE_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_DOCKABLE, GimpDockableClass))
 end_define
 
 begin_typedef
@@ -151,6 +162,11 @@ name|GimpDockbook
 modifier|*
 name|dockbook
 decl_stmt|;
+DECL|member|context
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
 DECL|member|get_tab_func
 name|GimpDockableGetTabFunc
 name|get_tab_func
@@ -177,7 +193,7 @@ struct|;
 end_struct
 
 begin_function_decl
-name|GtkType
+name|GType
 name|gimp_dockable_get_type
 parameter_list|(
 name|void

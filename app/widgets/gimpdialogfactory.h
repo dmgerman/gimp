@@ -175,7 +175,7 @@ name|GIMP_DIALOG_FACTORY
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_DIALOG_FACTORY, GimpDialogFactory))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_DIALOG_FACTORY, GimpDialogFactory))
 end_define
 
 begin_define
@@ -186,7 +186,7 @@ name|GIMP_DIALOG_FACTORY_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DIALOG_FACTORY, GimpDialogFactoryClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DIALOG_FACTORY, GimpDialogFactoryClass))
 end_define
 
 begin_define
@@ -197,7 +197,7 @@ name|GIMP_IS_DIALOG_FACTORY
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_DIALOG_FACTORY))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_DIALOG_FACTORY))
 end_define
 
 begin_define
@@ -208,7 +208,18 @@ name|GIMP_IS_DIALOG_FACTORY_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DIALOG_FACTORY))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DIALOG_FACTORY))
+end_define
+
+begin_define
+DECL|macro|GIMP_DIALOG_FACTORY_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_DIALOG_FACTORY_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_DIALOG_FACTORY, GimpDialogFactoryClass))
 end_define
 
 begin_typedef

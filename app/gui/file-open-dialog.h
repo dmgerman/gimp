@@ -47,6 +47,7 @@ begin_function_decl
 name|gint
 name|file_open_with_display
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename

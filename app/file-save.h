@@ -32,10 +32,12 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|filename
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|raw_filename
@@ -57,10 +59,12 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|full_filename
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|raw_filename

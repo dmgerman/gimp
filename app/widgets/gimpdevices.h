@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7796190103
+DECL|enum|__anon2c6436080103
 block|{
 DECL|enumerator|DEVICE_MODE
 name|DEVICE_MODE
@@ -166,7 +166,8 @@ begin_function_decl
 name|void
 name|select_device
 parameter_list|(
-name|guint32
+name|GdkDevice
+modifier|*
 name|device
 parameter_list|)
 function_decl|;
@@ -249,12 +250,13 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  Current device id  */
+comment|/*  Current device  */
 end_comment
 
 begin_decl_stmt
 specifier|extern
-name|gint
+name|GdkDevice
+modifier|*
 name|current_device
 decl_stmt|;
 end_decl_stmt

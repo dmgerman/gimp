@@ -2756,7 +2756,10 @@ argument_list|(
 literal|"Type"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|options
@@ -2842,7 +2845,10 @@ argument_list|(
 literal|"Mode"
 argument_list|)
 argument_list|,
+name|G_CALLBACK
+argument_list|(
 name|gimp_radio_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|options

@@ -194,7 +194,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d8be690103
+DECL|enum|__anon27ddab540103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -2132,7 +2132,7 @@ literal|2
 else|:
 name|y
 expr_stmt|;
-name|gtk_widget_popup
+name|gtk_widget_set_uposition
 argument_list|(
 name|nav_dialog
 operator|->
@@ -2141,6 +2141,13 @@ argument_list|,
 name|x
 argument_list|,
 name|y
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|nav_dialog
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 name|gdk_flush
