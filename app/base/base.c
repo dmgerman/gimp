@@ -357,7 +357,9 @@ name|path
 argument_list|)
 expr_stmt|;
 name|paint_funcs_setup
-argument_list|()
+argument_list|(
+name|use_mmx
+argument_list|)
 expr_stmt|;
 block|}
 end_function

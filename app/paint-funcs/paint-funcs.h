@@ -24,7 +24,8 @@ begin_function_decl
 name|void
 name|paint_funcs_setup
 parameter_list|(
-name|void
+name|gboolean
+name|use_mmx
 parameter_list|)
 function_decl|;
 end_function_decl

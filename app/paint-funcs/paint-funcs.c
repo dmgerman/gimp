@@ -93,12 +93,6 @@ directive|include
 file|"paint-funcs-mmx.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"appenv.h"
-end_include
-
 begin_define
 DECL|macro|RANDOM_SEED
 define|#
@@ -118,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294edaf00103
+DECL|enum|__anon29598f5a0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -1704,10 +1698,11 @@ end_comment
 
 begin_function
 name|void
-DECL|function|paint_funcs_setup (void)
+DECL|function|paint_funcs_setup (gboolean use_mmx)
 name|paint_funcs_setup
 parameter_list|(
-name|void
+name|gboolean
+name|use_mmx
 parameter_list|)
 block|{
 name|guint
