@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c134f140103
+DECL|enum|__anon29b7a60f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -243,6 +243,9 @@ parameter_list|,
 name|GimpAnchor
 modifier|*
 name|anchor
+parameter_list|,
+name|gboolean
+name|selected
 parameter_list|,
 name|gboolean
 name|exclusive
@@ -2165,7 +2168,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_stroke_anchor_select (GimpStroke * stroke,GimpAnchor * anchor,gboolean exclusive)
+DECL|function|gimp_stroke_anchor_select (GimpStroke * stroke,GimpAnchor * anchor,gboolean selected,gboolean exclusive)
 name|gimp_stroke_anchor_select
 parameter_list|(
 name|GimpStroke
@@ -2175,6 +2178,9 @@ parameter_list|,
 name|GimpAnchor
 modifier|*
 name|anchor
+parameter_list|,
+name|gboolean
+name|selected
 parameter_list|,
 name|gboolean
 name|exclusive
@@ -2199,6 +2205,8 @@ name|stroke
 argument_list|,
 name|anchor
 argument_list|,
+name|selected
+argument_list|,
 name|exclusive
 argument_list|)
 expr_stmt|;
@@ -2208,7 +2216,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_stroke_real_anchor_select (GimpStroke * stroke,GimpAnchor * anchor,gboolean exclusive)
+DECL|function|gimp_stroke_real_anchor_select (GimpStroke * stroke,GimpAnchor * anchor,gboolean selected,gboolean exclusive)
 name|gimp_stroke_real_anchor_select
 parameter_list|(
 name|GimpStroke
@@ -2218,6 +2226,9 @@ parameter_list|,
 name|GimpAnchor
 modifier|*
 name|anchor
+parameter_list|,
+name|gboolean
+name|selected
 parameter_list|,
 name|gboolean
 name|exclusive
@@ -2236,10 +2247,6 @@ expr_stmt|;
 if|if
 condition|(
 name|exclusive
-operator|||
-name|anchor
-operator|==
-name|NULL
 condition|)
 block|{
 while|while
@@ -2291,7 +2298,7 @@ argument_list|)
 operator|->
 name|selected
 operator|=
-name|TRUE
+name|selected
 expr_stmt|;
 block|}
 end_function

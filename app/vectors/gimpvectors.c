@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d6afb60103
+DECL|enum|__anon2c60e29f0103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -3423,7 +3423,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_vectors_anchor_select (GimpVectors * vectors,GimpStroke * target_stroke,GimpAnchor * anchor,gboolean exclusive)
+DECL|function|gimp_vectors_anchor_select (GimpVectors * vectors,GimpStroke * target_stroke,GimpAnchor * anchor,gboolean selected,gboolean exclusive)
 name|gimp_vectors_anchor_select
 parameter_list|(
 name|GimpVectors
@@ -3437,6 +3437,9 @@ parameter_list|,
 name|GimpAnchor
 modifier|*
 name|anchor
+parameter_list|,
+name|gboolean
+name|selected
 parameter_list|,
 name|gboolean
 name|exclusive
@@ -3488,6 +3491,8 @@ condition|?
 name|anchor
 else|:
 name|NULL
+argument_list|,
+name|selected
 argument_list|,
 name|exclusive
 argument_list|)

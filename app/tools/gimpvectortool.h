@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ecebd10103
+DECL|enum|__anon28cae3740103
 block|{
 DECL|enumerator|VECTORS_SELECT_VECTOR
 name|VECTORS_SELECT_VECTOR
@@ -45,6 +45,9 @@ name|VECTORS_ADD_ANCHOR
 block|,
 DECL|enumerator|VECTORS_MOVE_ANCHOR
 name|VECTORS_MOVE_ANCHOR
+block|,
+DECL|enumerator|VECTORS_MOVE_ANCHORSET
+name|VECTORS_MOVE_ANCHORSET
 block|,
 DECL|enumerator|VECTORS_MOVE_HANDLE
 name|VECTORS_MOVE_HANDLE

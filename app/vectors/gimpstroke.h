@@ -238,6 +238,9 @@ modifier|*
 name|anchor
 parameter_list|,
 name|gboolean
+name|selected
+parameter_list|,
+name|gboolean
 name|exclusive
 parameter_list|)
 function_decl|;
@@ -870,6 +873,9 @@ parameter_list|,
 name|GimpAnchor
 modifier|*
 name|anchor
+parameter_list|,
+name|gboolean
+name|selected
 parameter_list|,
 name|gboolean
 name|exclusive

@@ -3365,7 +3365,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_draw_tool_on_vectors_handle (GimpDrawTool * draw_tool,GimpDisplay * gdisp,GimpVectors * vectors,GimpCoords * coord,gint width,gint height,GimpAnchorType preferred,GimpAnchor ** ret_anchor,GimpStroke ** ret_stroke)
+DECL|function|gimp_draw_tool_on_vectors_handle (GimpDrawTool * draw_tool,GimpDisplay * gdisp,GimpVectors * vectors,GimpCoords * coord,gint width,gint height,GimpAnchorType preferred,gboolean exclusive,GimpAnchor ** ret_anchor,GimpStroke ** ret_stroke)
 name|gimp_draw_tool_on_vectors_handle
 parameter_list|(
 name|GimpDrawTool
@@ -3392,6 +3392,9 @@ name|height
 parameter_list|,
 name|GimpAnchorType
 name|preferred
+parameter_list|,
+name|gboolean
+name|exclusive
 parameter_list|,
 name|GimpAnchor
 modifier|*
@@ -3840,6 +3843,9 @@ block|}
 elseif|else
 if|if
 condition|(
+operator|!
+name|exclusive
+operator|&&
 name|anchor
 operator|&&
 name|gimp_draw_tool_on_handle
@@ -3894,6 +3900,24 @@ return|return
 name|TRUE
 return|;
 block|}
+if|if
+condition|(
+name|ret_anchor
+condition|)
+operator|*
+name|ret_anchor
+operator|=
+name|NULL
+expr_stmt|;
+if|if
+condition|(
+name|ret_stroke
+condition|)
+operator|*
+name|ret_stroke
+operator|=
+name|NULL
+expr_stmt|;
 return|return
 name|FALSE
 return|;
