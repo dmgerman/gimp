@@ -146,6 +146,8 @@ specifier|static
 name|Dobject
 modifier|*
 name|operation_obj
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 

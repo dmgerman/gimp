@@ -941,12 +941,10 @@ index|[
 name|nitems
 index|]
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
+name|gchar
+argument_list|,
 name|MAX_LOAD_LINE
 argument_list|)
 expr_stmt|;
@@ -2148,24 +2146,24 @@ name|current_style
 operator|->
 name|brush_name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
+name|g_strdup
+argument_list|(
 name|brush_name
+argument_list|)
 expr_stmt|;
+comment|/* DDX */
 name|gfig_context
 operator|->
 name|default_style
 operator|.
 name|brush_name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
+name|g_strdup
+argument_list|(
 name|brush_name
+argument_list|)
 expr_stmt|;
+comment|/* DDX */
 comment|/* this will soon be unneeded */
 name|gfig_context
 operator|->
@@ -2173,12 +2171,12 @@ name|bdesc
 operator|.
 name|name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
+name|g_strdup
+argument_list|(
 name|brush_name
+argument_list|)
 expr_stmt|;
+comment|/* DDX */
 name|gfig_context
 operator|->
 name|bdesc
