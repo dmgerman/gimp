@@ -88,7 +88,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c07a34b0103
+DECL|enum|__anon2b38f20d0103
 block|{
 DECL|enumerator|CROP_CROP
 name|CROP_CROP
@@ -201,6 +201,15 @@ end_struct
 begin_function_decl
 name|void
 name|gimp_crop_tool_register
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GtkType
+name|gimp_crop_tool_get_type
 parameter_list|(
 name|void
 parameter_list|)
