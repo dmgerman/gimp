@@ -642,6 +642,15 @@ name|gimp_hue_saturation_tool_initialize
 expr_stmt|;
 name|image_map_tool_class
 operator|->
+name|shell_desc
+operator|=
+name|_
+argument_list|(
+literal|"Adjust Hue / Lightness / Saturation"
+argument_list|)
+expr_stmt|;
+name|image_map_tool_class
+operator|->
 name|map
 operator|=
 name|gimp_hue_saturation_tool_map
@@ -672,24 +681,6 @@ modifier|*
 name|hs_tool
 parameter_list|)
 block|{
-name|GimpImageMapTool
-modifier|*
-name|image_map_tool
-init|=
-name|GIMP_IMAGE_MAP_TOOL
-argument_list|(
-name|hs_tool
-argument_list|)
-decl_stmt|;
-name|image_map_tool
-operator|->
-name|shell_desc
-operator|=
-name|_
-argument_list|(
-literal|"Adjust Hue / Lightness / Saturation"
-argument_list|)
-expr_stmt|;
 name|hs_tool
 operator|->
 name|hue_saturation
@@ -983,7 +974,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon27caefdb0108
+DECL|struct|__anon296a2fcd0108
 block|{
 DECL|member|label
 specifier|const

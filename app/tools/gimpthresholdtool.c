@@ -496,6 +496,15 @@ name|gimp_threshold_tool_initialize
 expr_stmt|;
 name|image_map_tool_class
 operator|->
+name|shell_desc
+operator|=
+name|_
+argument_list|(
+literal|"Apply Threshold"
+argument_list|)
+expr_stmt|;
+name|image_map_tool_class
+operator|->
 name|map
 operator|=
 name|gimp_threshold_tool_map
@@ -526,24 +535,6 @@ modifier|*
 name|t_tool
 parameter_list|)
 block|{
-name|GimpImageMapTool
-modifier|*
-name|image_map_tool
-init|=
-name|GIMP_IMAGE_MAP_TOOL
-argument_list|(
-name|t_tool
-argument_list|)
-decl_stmt|;
-name|image_map_tool
-operator|->
-name|shell_desc
-operator|=
-name|_
-argument_list|(
-literal|"Apply Threshold"
-argument_list|)
-expr_stmt|;
 name|t_tool
 operator|->
 name|threshold

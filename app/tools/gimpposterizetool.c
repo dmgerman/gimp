@@ -430,6 +430,15 @@ name|gimp_posterize_tool_initialize
 expr_stmt|;
 name|image_map_tool_class
 operator|->
+name|shell_desc
+operator|=
+name|_
+argument_list|(
+literal|"Posterize (Reduce Number of Colors)"
+argument_list|)
+expr_stmt|;
+name|image_map_tool_class
+operator|->
 name|map
 operator|=
 name|gimp_posterize_tool_map
@@ -460,24 +469,6 @@ modifier|*
 name|posterize_tool
 parameter_list|)
 block|{
-name|GimpImageMapTool
-modifier|*
-name|image_map_tool
-init|=
-name|GIMP_IMAGE_MAP_TOOL
-argument_list|(
-name|posterize_tool
-argument_list|)
-decl_stmt|;
-name|image_map_tool
-operator|->
-name|shell_desc
-operator|=
-name|_
-argument_list|(
-literal|"Posterize (Reduce Number of Colors)"
-argument_list|)
-expr_stmt|;
 name|posterize_tool
 operator|->
 name|levels
