@@ -897,7 +897,7 @@ init|=
 block|{
 literal|"gimp_selection_is_empty"
 block|,
-literal|"Determine whether the selection in empty."
+literal|"Determine whether the selection is empty."
 block|,
 literal|"This procedure returns non-zero if the selection for the specified image is not empty."
 block|,

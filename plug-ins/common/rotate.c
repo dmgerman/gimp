@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*    *  Rotate plug-in v0.8 by Sven Neumann<sven@gimp.org>    *  1999/10/09  *  *  Any suggestions, bug-reports or patches are very welcome.  *   *  A lot of changes in version 0.3 were inspired by (or even simply   *  copied from) the similar rotators-plug-in by Adam D. Moss.   *  *  As I still prefer my version I have not stopped developing it.  *  Probably this will result in one plug-in that includes the advantages   *  of both approaches.  */
+comment|/*    *  Rotate plug-in v0.9 by Sven Neumann<sven@gimp.org>    *  1999/11/13  *  *  Any suggestions, bug-reports or patches are very welcome.  *   *  A lot of changes in version 0.3 were inspired by (or even simply   *  copied from) the similar rotators-plug-in by Adam D. Moss.   *  *  As I still prefer my version I have not stopped developing it.  *  Probably this will result in one plug-in that includes the advantages   *  of both approaches.  */
 end_comment
 
 begin_comment
@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Revision history  *  (09/28/97)  v0.1   first development release   *  (09/29/97)  v0.2   nicer dialog,  *                     changed the menu-location to Filters/Transforms  *  (10/01/97)  v0.3   now handles layered images and undo  *  (10/13/97)  v0.3a  small bugfix, no real changes  *  (10/17/97)  v0.4   now handles selections  *  (01/09/98)  v0.5   a few fixes to support portability  *  (01/15/98)  v0.6   fixed a line that caused rotate to crash on some   *                     systems                 *  (05/28/98)  v0.7   use the new gimp_message function for error output  *  (10/09/99)  v0.8   rotate guides too  */
+comment|/* Revision history  *  (09/28/97)  v0.1   first development release   *  (09/29/97)  v0.2   nicer dialog,  *                     changed the menu-location to Filters/Transforms  *  (10/01/97)  v0.3   now handles layered images and undo  *  (10/13/97)  v0.3a  small bugfix, no real changes  *  (10/17/97)  v0.4   now handles selections  *  (01/09/98)  v0.5   a few fixes to support portability  *  (01/15/98)  v0.6   fixed a line that caused rotate to crash on some   *                     systems                 *  (05/28/98)  v0.7   use the new gimp_message function for error output  *  (10/09/99)  v0.8   rotate guides too  *  (11/13/99)  v0.9   code cleanup  */
 end_comment
 
 begin_comment
@@ -151,7 +151,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b0a54250108
+DECL|struct|__anon2b04aa870108
 typedef|typedef
 struct|struct
 block|{
@@ -170,7 +170,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b0a54250208
+DECL|struct|__anon2b04aa870208
 typedef|typedef
 struct|struct
 block|{
@@ -187,7 +187,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0a54250308
+DECL|struct|__anon2b04aa870308
 block|{
 DECL|member|ID
 name|gint32
@@ -379,31 +379,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|gint32
-name|my_gimp_selection_float
-parameter_list|(
-name|gint32
-name|image_ID
-parameter_list|,
-name|gint32
-name|drawable_ID
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|gint32
-name|my_gimp_selection_is_empty
-parameter_list|(
-name|gint32
-name|image_ID
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/* Global Variables */
 end_comment
@@ -554,27 +529,22 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
-comment|/* name of plugin */
 name|gint
 name|nparams
 parameter_list|,
-comment|/* number of in-paramters */
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-comment|/* in-parameters */
 name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-comment|/* number of out-parameters */
 name|GParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
-comment|/* out-parameters */
 block|{
 comment|/* Get the runmode from the in-parameters */
 name|GRunModeType
@@ -640,17 +610,13 @@ name|run_mode
 operator|!=
 name|RUN_INTERACTIVE
 condition|)
-block|{
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
-block|}
 else|else
-block|{
 name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
-block|}
 comment|/* get image and drawable */
 name|image_ID
 operator|=
@@ -814,7 +780,7 @@ comment|/* Run the main function */
 name|rotate
 argument_list|()
 expr_stmt|;
-comment|/* If run mode is interactive, flush displays, else (script) don't         do it, as the screen updates would make the scripts slow */
+comment|/* If run mode is interactive, flush displays, else (script) don't  	 do it, as the screen updates would make the scripts slow */
 if|if
 condition|(
 name|run_mode
@@ -856,180 +822,6 @@ name|d_status
 operator|=
 name|status
 expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/* Some helper functions */
-end_comment
-
-begin_function
-specifier|static
-name|gint32
-DECL|function|my_gimp_selection_is_empty (gint32 image_ID)
-name|my_gimp_selection_is_empty
-parameter_list|(
-name|gint32
-name|image_ID
-parameter_list|)
-block|{
-name|GParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
-name|gint32
-name|is_empty
-decl_stmt|;
-comment|/* initialize */
-name|is_empty
-operator|=
-literal|0
-expr_stmt|;
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp_selection_is_empty"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|PARAM_IMAGE
-argument_list|,
-name|image_ID
-argument_list|,
-name|PARAM_END
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|STATUS_SUCCESS
-condition|)
-name|is_empty
-operator|=
-name|return_vals
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
-name|gimp_destroy_params
-argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
-argument_list|)
-expr_stmt|;
-return|return
-name|is_empty
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|gint32
-DECL|function|my_gimp_selection_float (gint32 image_ID,gint32 drawable_ID)
-name|my_gimp_selection_float
-parameter_list|(
-name|gint32
-name|image_ID
-parameter_list|,
-name|gint32
-name|drawable_ID
-parameter_list|)
-block|{
-name|GParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
-name|gint32
-name|layer_ID
-decl_stmt|;
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp_selection_float"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|PARAM_IMAGE
-argument_list|,
-name|image_ID
-argument_list|,
-name|PARAM_DRAWABLE
-argument_list|,
-name|drawable_ID
-argument_list|,
-name|PARAM_INT32
-argument_list|,
-literal|0
-argument_list|,
-name|PARAM_INT32
-argument_list|,
-literal|0
-argument_list|,
-name|PARAM_END
-argument_list|)
-expr_stmt|;
-name|layer_ID
-operator|=
-literal|0
-expr_stmt|;
-if|if
-condition|(
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|STATUS_SUCCESS
-condition|)
-name|layer_ID
-operator|=
-name|return_vals
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_layer
-expr_stmt|;
-name|gimp_destroy_params
-argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
-argument_list|)
-expr_stmt|;
-return|return
-name|layer_ID
-return|;
 block|}
 end_function
 
@@ -1310,24 +1102,10 @@ literal|2
 condition|)
 comment|/* we're rotating by 180° */
 block|{
-if|if
-condition|(
-operator|!
-name|gimp_drawable_is_layer
-argument_list|(
-name|drawable
-operator|->
-name|id
-argument_list|)
-condition|)
-name|exit
-expr_stmt|;
-comment|/* not a layer, probably a channel, abort operation */
 name|gimp_tile_cache_ntiles
 argument_list|(
 literal|2
 operator|*
-operator|(
 operator|(
 name|width
 operator|/
@@ -1336,7 +1114,6 @@ argument_list|()
 operator|)
 operator|+
 literal|1
-operator|)
 argument_list|)
 expr_stmt|;
 name|gimp_pixel_rgn_init
@@ -1592,16 +1369,6 @@ operator|=
 name|height
 operator|)
 expr_stmt|;
-if|if
-condition|(
-name|gimp_drawable_is_layer
-argument_list|(
-name|drawable
-operator|->
-name|id
-argument_list|)
-condition|)
-block|{
 name|gimp_layer_resize
 argument_list|(
 name|drawable
@@ -1617,11 +1384,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_flush
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
 name|drawable
 operator|=
 name|gimp_drawable_get
@@ -1631,10 +1393,10 @@ operator|->
 name|id
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-comment|/* not a layer... probably a channel... abort operation */
-name|exit
+name|gimp_drawable_flush
+argument_list|(
+name|drawable
+argument_list|)
 expr_stmt|;
 name|gimp_tile_cache_ntiles
 argument_list|(
@@ -2030,9 +1792,6 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|gint
-name|nreturn_vals
-decl_stmt|;
 name|GDrawable
 modifier|*
 name|drawable
@@ -2074,7 +1833,7 @@ literal|0
 condition|)
 return|return;
 comment|/* if there's a selection and we try to rotate the whole image */
-comment|/* create an error message and exit */
+comment|/* create an error message and exit                            */
 if|if
 condition|(
 name|rotvals
@@ -2085,7 +1844,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|my_gimp_selection_is_empty
+name|gimp_selection_is_empty
 argument_list|(
 name|image_ID
 argument_list|)
@@ -2132,6 +1891,36 @@ expr_stmt|;
 return|return;
 block|}
 block|}
+else|else
+comment|/* if we are trying to rotate a chennel or a mask, create an error message and exit */
+block|{
+if|if
+condition|(
+operator|!
+name|gimp_drawable_is_layer
+argument_list|(
+name|active_drawable
+operator|->
+name|id
+argument_list|)
+condition|)
+block|{
+name|gimp_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Sorry, channels and masks can not be rotated."
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_drawable_detach
+argument_list|(
+name|active_drawable
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
+block|}
 name|gimp_progress_init
 argument_list|(
 name|_
@@ -2140,18 +1929,9 @@ literal|"Rotating..."
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_run_procedure
+name|gimp_undo_push_group_start
 argument_list|(
-literal|"gimp_undo_push_group_start"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|PARAM_IMAGE
-argument_list|,
 name|image_ID
-argument_list|,
-name|PARAM_END
 argument_list|)
 expr_stmt|;
 if|if
@@ -2584,7 +2364,7 @@ comment|/* check for active selection and float it */
 if|if
 condition|(
 operator|!
-name|my_gimp_selection_is_empty
+name|gimp_selection_is_empty
 argument_list|(
 name|image_ID
 argument_list|)
@@ -2601,13 +2381,17 @@ name|active_drawable
 operator|=
 name|gimp_drawable_get
 argument_list|(
-name|my_gimp_selection_float
+name|gimp_selection_float
 argument_list|(
 name|image_ID
 argument_list|,
 name|active_drawable
 operator|->
 name|id
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2622,18 +2406,9 @@ name|active_drawable
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_run_procedure
+name|gimp_undo_push_group_end
 argument_list|(
-literal|"gimp_undo_push_group_end"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|PARAM_IMAGE
-argument_list|,
 name|image_ID
-argument_list|,
-name|PARAM_END
 argument_list|)
 expr_stmt|;
 return|return;

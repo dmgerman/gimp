@@ -2693,6 +2693,30 @@ modifier|*
 name|bytes
 parameter_list|)
 function_decl|;
+comment|/****************************************  *              Selections              *  ****************************************/
+name|gint32
+name|gimp_selection_is_empty
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|)
+function_decl|;
+name|gint32
+name|gimp_selection_float
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|,
+name|gint32
+name|drawable_ID
+parameter_list|,
+name|gint32
+name|x_offset
+parameter_list|,
+name|gint32
+name|y_offset
+parameter_list|)
+function_decl|;
 comment|/****************************************  *               GTiles                  *  ****************************************/
 name|void
 name|gimp_tile_ref
