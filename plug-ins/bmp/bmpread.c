@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"bmpos2.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -304,6 +310,55 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/* Is it a Windows (R) Bitmap or not */
+if|if
+condition|(
+name|Bitmap_File_Head
+operator|.
+name|biSize
+operator|==
+literal|12
+condition|)
+comment|/* OS/2 */
+block|{
+if|if
+condition|(
+operator|!
+name|read_os2_head1
+argument_list|(
+name|fd
+argument_list|,
+name|Bitmap_File_Head
+operator|.
+name|biSize
+operator|-
+literal|4
+argument_list|,
+operator|&
+name|Bitmap_Head
+argument_list|)
+condition|)
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"%s: error reading BMP file header\n"
+argument_list|)
+argument_list|,
+name|prog_name
+argument_list|)
+expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
+block|}
+name|Maps
+operator|=
+literal|3
+expr_stmt|;
+block|}
+elseif|else
 if|if
 condition|(
 name|Bitmap_File_Head
@@ -1090,7 +1145,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* this one is for old os2 Bitmaps, but it dosn't work well */
+comment|/* this one is for old os2 Bitmaps */
 name|buffer
 index|[
 name|i
@@ -1101,7 +1156,7 @@ index|]
 operator|=
 name|rgb
 index|[
-literal|1
+literal|2
 index|]
 expr_stmt|;
 name|buffer
@@ -1114,7 +1169,7 @@ index|]
 operator|=
 name|rgb
 index|[
-literal|0
+literal|1
 index|]
 expr_stmt|;
 name|buffer
@@ -1127,7 +1182,7 @@ index|]
 operator|=
 name|rgb
 index|[
-literal|2
+literal|0
 index|]
 expr_stmt|;
 block|}
