@@ -49,6 +49,24 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpwidgets/gimpcolordisplay.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimpwidgets/gimpcolorselector.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimpwidgets/gimpcolorselect.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpwidgets/gimpdialog.h>
 end_include
 

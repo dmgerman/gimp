@@ -96,12 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplayshell-filter.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"display/gimpdisplayshell-render.h"
 end_include
 
@@ -127,12 +121,6 @@ begin_include
 include|#
 directive|include
 file|"widgets/gimpwidgets-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"color-select.h"
 end_include
 
 begin_include
@@ -479,6 +467,11 @@ endif|#
 directive|endif
 name|gimp_widgets_init
 argument_list|()
+expr_stmt|;
+name|g_type_class_ref
+argument_list|(
+name|GIMP_TYPE_COLOR_SELECT
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -864,9 +857,6 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-name|color_display_init
-argument_list|()
-expr_stmt|;
 name|render_setup
 argument_list|(
 name|gimprc
@@ -949,9 +939,6 @@ name|menus_restore
 argument_list|(
 name|gimp
 argument_list|)
-expr_stmt|;
-name|color_select_init
-argument_list|()
 expr_stmt|;
 name|gimp_devices_restore
 argument_list|(
@@ -1131,6 +1118,14 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+name|g_type_class_unref
+argument_list|(
+name|g_type_class_peek
+argument_list|(
+name|GIMP_TYPE_COLOR_SELECT
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

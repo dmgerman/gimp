@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display-types.h"
 end_include
 
@@ -1222,13 +1228,11 @@ name|list
 operator|->
 name|data
 expr_stmt|;
-name|node
-operator|->
-name|cd_convert
+name|gimp_color_display_convert
 argument_list|(
 name|node
 operator|->
-name|cd_ID
+name|color_display
 argument_list|,
 name|shell
 operator|->

@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMPMODULE_H__
+name|__GIMP_MODULE_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMPMODULE_H__
+DECL|macro|__GIMP_MODULE_H__
 define|#
 directive|define
-name|__GIMPMODULE_H__
+name|__GIMP_MODULE_H__
 end_define
 
 begin_include
@@ -31,22 +31,6 @@ comment|/* For information look at the html documentation */
 end_comment
 
 begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon27852f9a0103
-block|{
-DECL|enumerator|GIMP_MODULE_OK
-name|GIMP_MODULE_OK
-block|,
-DECL|enumerator|GIMP_MODULE_UNLOAD
-name|GIMP_MODULE_UNLOAD
-DECL|typedef|GimpModuleStatus
-block|}
-name|GimpModuleStatus
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpModuleInfo
 typedef|typedef
 name|struct
@@ -60,10 +44,6 @@ DECL|struct|_GimpModuleInfo
 struct|struct
 name|_GimpModuleInfo
 block|{
-DECL|member|shutdown_data
-name|gpointer
-name|shutdown_data
-decl_stmt|;
 DECL|member|purpose
 specifier|const
 name|gchar
@@ -98,19 +78,19 @@ block|}
 struct|;
 end_struct
 
-begin_comment
-comment|/*  Module initialization  */
-end_comment
-
 begin_typedef
-DECL|typedef|GimpModuleInitFunc
+DECL|typedef|GimpModuleRegisterFunc
 typedef|typedef
-name|GimpModuleStatus
+name|gboolean
 function_decl|(
 modifier|*
-name|GimpModuleInitFunc
+name|GimpModuleRegisterFunc
 function_decl|)
 parameter_list|(
+name|GTypeModule
+modifier|*
+name|module
+parameter_list|,
 name|GimpModuleInfo
 modifier|*
 modifier|*
@@ -118,98 +98,6 @@ name|module_info
 parameter_list|)
 function_decl|;
 end_typedef
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|MODULE_COMPILATION
-end_ifndef
-
-begin_comment
-comment|/*  On Win32 this declaration clashes with the definition  *  (which uses G_MODULE_EXPORT) and thus should be bypassed  *  when compiling the module itself.  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|module_init
-name|GimpModuleInitFunc
-name|module_init
-decl_stmt|;
-end_decl_stmt
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* ! MODULE_COMPILATION */
-end_comment
-
-begin_comment
-comment|/*  Module unload  */
-end_comment
-
-begin_typedef
-DECL|typedef|GimpModuleCompletedCB
-typedef|typedef
-name|void
-function_decl|(
-modifier|*
-name|GimpModuleCompletedCB
-function_decl|)
-parameter_list|(
-name|gpointer
-name|completed_data
-parameter_list|)
-function_decl|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpModuleUnloadFunc
-typedef|typedef
-name|void
-function_decl|(
-modifier|*
-name|GimpModuleUnloadFunc
-function_decl|)
-parameter_list|(
-name|gpointer
-name|shutdown_data
-parameter_list|,
-name|GimpModuleCompletedCB
-name|completed_cb
-parameter_list|,
-name|gpointer
-name|completed_data
-parameter_list|)
-function_decl|;
-end_typedef
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|MODULE_COMPILATION
-end_ifndef
-
-begin_comment
-comment|/*  The same as for module_init.  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|module_unload
-name|GimpModuleUnloadFunc
-name|module_unload
-decl_stmt|;
-end_decl_stmt
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* ! MODULE_COMPILATION */
-end_comment
 
 begin_macro
 name|G_END_DECLS
@@ -221,7 +109,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMPMODULE_H__ */
+comment|/* __GIMP_MODULE_H__ */
 end_comment
 
 end_unit

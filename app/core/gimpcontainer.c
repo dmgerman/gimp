@@ -170,7 +170,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2757f98c0103
+DECL|enum|__anon27e67bed0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2757f98c0203
+DECL|enum|__anon27e67bed0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -660,7 +660,7 @@ name|G_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|GIMP_TYPE_OBJECT
+name|G_TYPE_OBJECT
 argument_list|)
 expr_stmt|;
 name|container_signals
@@ -696,7 +696,7 @@ name|G_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|GIMP_TYPE_OBJECT
+name|G_TYPE_OBJECT
 argument_list|)
 expr_stmt|;
 name|container_signals
@@ -732,7 +732,7 @@ name|G_TYPE_NONE
 argument_list|,
 literal|2
 argument_list|,
-name|GIMP_TYPE_OBJECT
+name|G_TYPE_OBJECT
 argument_list|,
 name|G_TYPE_INT
 argument_list|)
@@ -1370,7 +1370,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2757f98c0308
+DECL|struct|__anon27e67bed0308
 block|{
 DECL|member|fd
 name|gint
@@ -1421,6 +1421,8 @@ specifier|const
 name|gchar
 modifier|*
 name|name
+init|=
+name|NULL
 decl_stmt|;
 name|config_iface
 operator|=
@@ -1479,6 +1481,13 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|GIMP_IS_OBJECT
+argument_list|(
+name|object
+argument_list|)
+condition|)
 name|name
 operator|=
 name|gimp_object_get_name
