@@ -1279,11 +1279,6 @@ operator|!=
 name|gdisp
 condition|)
 block|{
-name|g_print
-argument_list|(
-literal|"calling  draw_tool_stop\n"
-argument_list|)
-expr_stmt|;
 name|gimp_draw_tool_stop
 argument_list|(
 name|draw_tool

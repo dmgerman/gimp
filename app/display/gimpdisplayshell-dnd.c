@@ -135,6 +135,47 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_comment
+comment|/* #define DEBUG_DND */
+end_comment
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|DEBUG_DND
+end_ifdef
+
+begin_define
+DECL|macro|D (stmnt)
+define|#
+directive|define
+name|D
+parameter_list|(
+name|stmnt
+parameter_list|)
+value|stmnt
+end_define
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_define
+DECL|macro|D (stmnt)
+define|#
+directive|define
+name|D
+parameter_list|(
+name|stmnt
+parameter_list|)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_function
 name|void
 DECL|function|gimp_display_shell_drop_drawable (GtkWidget * widget,GimpViewable * viewable,gpointer data)
@@ -562,9 +603,12 @@ operator|->
 name|busy
 condition|)
 return|return;
+name|D
+argument_list|(
 name|g_print
 argument_list|(
 literal|"drop SVG on canvas\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

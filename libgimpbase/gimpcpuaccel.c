@@ -56,7 +56,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c854b130103
+DECL|enum|__anon27c8d4820103
 block|{
 DECL|enumerator|ARCH_X86_VENDOR_NONE
 name|ARCH_X86_VENDOR_NONE
@@ -103,7 +103,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c854b130203
+DECL|enum|__anon27c8d4820203
 block|{
 DECL|enumerator|ARCH_X86_INTEL_FEATURE_MMX
 name|ARCH_X86_INTEL_FEATURE_MMX
@@ -1040,11 +1040,6 @@ name|gint
 name|n
 parameter_list|)
 block|{
-name|g_printerr
-argument_list|(
-literal|"OS lacks support for SSE instructions.\n"
-argument_list|)
-expr_stmt|;
 name|longjmp
 argument_list|(
 name|sigill_return

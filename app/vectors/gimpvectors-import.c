@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae4b8ca0108
+DECL|struct|__anon2a28d0470108
 block|{
 DECL|member|stack
 name|GQueue
@@ -216,7 +216,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae4b8ca0208
+DECL|struct|__anon2a28d0470208
 block|{
 DECL|member|id
 name|gchar
@@ -3003,11 +3003,16 @@ block|}
 else|else
 comment|/* disable rendering of the element */
 block|{
+ifdef|#
+directive|ifdef
+name|DEBUG_VECTORS_IMPORT
 name|g_printerr
 argument_list|(
 literal|"empty viewBox"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 operator|*
 name|width
 operator|=
@@ -3648,7 +3653,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae4b8ca0308
+DECL|struct|__anon2a28d0470308
 block|{
 DECL|member|strokes
 name|GList

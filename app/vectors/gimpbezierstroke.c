@@ -3471,16 +3471,7 @@ index|[
 literal|3
 index|]
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|depth
-condition|)
-name|g_printerr
-argument_list|(
-literal|"Hit rekursion depth limit!\n"
-argument_list|)
-expr_stmt|;
+comment|/* if (!depth) g_printerr ("Hit rekursion depth limit!\n"); */
 name|gimp_bezier_coords_average
 argument_list|(
 operator|&
@@ -9121,16 +9112,7 @@ index|[
 literal|3
 index|]
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|depth
-condition|)
-name|g_printerr
-argument_list|(
-literal|"Hit rekursion depth limit!\n"
-argument_list|)
-expr_stmt|;
+comment|/* if (!depth) g_printerr ("Hit rekursion depth limit!\n"); */
 name|gimp_bezier_coords_average
 argument_list|(
 operator|&
