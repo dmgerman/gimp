@@ -55,6 +55,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpbrushselect.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpchannel.h>
 end_include
 
@@ -62,6 +68,18 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpdrawable.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpfontselect.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpgradientselect.h>
 end_include
 
 begin_include
@@ -80,6 +98,12 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpmisc.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimppatternselect.h>
 end_include
 
 begin_include

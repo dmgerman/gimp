@@ -152,7 +152,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1e81150108
+DECL|struct|__anon299268890108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1e81150208
+DECL|struct|__anon299268890208
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -217,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1e81150308
+DECL|struct|__anon299268890308
 block|{
 DECL|member|name
 name|gchar
@@ -245,7 +245,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1e81150408
+DECL|struct|__anon299268890408
 block|{
 DECL|member|list
 name|GSList
@@ -265,7 +265,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2b1e8115050a
+DECL|union|__anon29926889050a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -336,7 +336,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1e81150608
+DECL|struct|__anon299268890608
 block|{
 DECL|member|script_name
 name|gchar
@@ -422,7 +422,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1e81150708
+DECL|struct|__anon299268890708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -6769,7 +6769,7 @@ index|[
 name|i
 index|]
 operator|=
-name|gimp_font_select_widget
+name|gimp_font_select_widget_new
 argument_list|(
 name|_
 argument_list|(
@@ -6809,7 +6809,7 @@ index|[
 name|i
 index|]
 operator|=
-name|gimp_pattern_select_widget
+name|gimp_pattern_select_widget_new
 argument_list|(
 name|_
 argument_list|(
@@ -6849,7 +6849,7 @@ index|[
 name|i
 index|]
 operator|=
-name|gimp_gradient_select_widget
+name|gimp_gradient_select_widget_new
 argument_list|(
 name|_
 argument_list|(
@@ -6889,7 +6889,7 @@ index|[
 name|i
 index|]
 operator|=
-name|gimp_brush_select_widget
+name|gimp_brush_select_widget_new
 argument_list|(
 name|_
 argument_list|(
@@ -7323,7 +7323,7 @@ block|{
 case|case
 name|SF_FONT
 case|:
-name|gimp_font_select_widget_close_popup
+name|gimp_font_select_widget_close
 argument_list|(
 name|sf_interface
 operator|->
@@ -7337,7 +7337,7 @@ break|break;
 case|case
 name|SF_PATTERN
 case|:
-name|gimp_pattern_select_widget_close_popup
+name|gimp_pattern_select_widget_close
 argument_list|(
 name|sf_interface
 operator|->
@@ -7351,7 +7351,7 @@ break|break;
 case|case
 name|SF_GRADIENT
 case|:
-name|gimp_gradient_select_widget_close_popup
+name|gimp_gradient_select_widget_close
 argument_list|(
 name|sf_interface
 operator|->
@@ -7365,7 +7365,7 @@ break|break;
 case|case
 name|SF_BRUSH
 case|:
-name|gimp_brush_select_widget_close_popup
+name|gimp_brush_select_widget_close
 argument_list|(
 name|sf_interface
 operator|->
@@ -9824,7 +9824,7 @@ break|break;
 case|case
 name|SF_FONT
 case|:
-name|gimp_font_select_widget_set_popup
+name|gimp_font_select_widget_set
 argument_list|(
 name|sf_interface
 operator|->
@@ -9847,7 +9847,7 @@ break|break;
 case|case
 name|SF_PATTERN
 case|:
-name|gimp_pattern_select_widget_set_popup
+name|gimp_pattern_select_widget_set
 argument_list|(
 name|sf_interface
 operator|->
@@ -9870,7 +9870,7 @@ break|break;
 case|case
 name|SF_GRADIENT
 case|:
-name|gimp_gradient_select_widget_set_popup
+name|gimp_gradient_select_widget_set
 argument_list|(
 name|sf_interface
 operator|->
@@ -9893,7 +9893,7 @@ break|break;
 case|case
 name|SF_BRUSH
 case|:
-name|gimp_brush_select_widget_set_popup
+name|gimp_brush_select_widget_set
 argument_list|(
 name|sf_interface
 operator|->

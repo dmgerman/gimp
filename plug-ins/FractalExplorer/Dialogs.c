@@ -5078,7 +5078,7 @@ argument_list|)
 expr_stmt|;
 name|gradient
 operator|=
-name|gimp_gradient_select_widget
+name|gimp_gradient_select_widget_new
 argument_list|(
 name|_
 argument_list|(

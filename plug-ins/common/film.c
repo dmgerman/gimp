@@ -115,7 +115,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0e18d20108
+DECL|struct|__anon2be3151b0108
 block|{
 DECL|member|film_height
 name|gint
@@ -219,7 +219,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0e18d20208
+DECL|struct|__anon2be3151b0208
 block|{
 DECL|member|advanced_adj
 name|GtkObject
@@ -6012,7 +6012,7 @@ expr_stmt|;
 comment|/* Fontfamily for numbering */
 name|font_sel
 operator|=
-name|gimp_font_select_widget
+name|gimp_font_select_widget_new
 argument_list|(
 name|NULL
 argument_list|,

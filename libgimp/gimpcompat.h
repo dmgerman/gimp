@@ -61,8 +61,88 @@ directive|define
 name|gimp_help_free
 parameter_list|()
 value|((void) 0)
+DECL|macro|gimp_interactive_selection_brush
+define|#
+directive|define
+name|gimp_interactive_selection_brush
+value|gimp_brush_select_new
+DECL|macro|gimp_brush_select_widget
+define|#
+directive|define
+name|gimp_brush_select_widget
+value|gimp_brush_select_widget_new
+DECL|macro|gimp_brush_select_widget_set_popup
+define|#
+directive|define
+name|gimp_brush_select_widget_set_popup
+value|gimp_brush_select_widget_set
+DECL|macro|gimp_brush_select_widget_close_popup
+define|#
+directive|define
+name|gimp_brush_select_widget_close_popup
+value|gimp_brush_select_widget_close
+DECL|macro|gimp_interactive_selection_font
+define|#
+directive|define
+name|gimp_interactive_selection_font
+value|gimp_font_select_new
+DECL|macro|gimp_gradient_select_widget
+define|#
+directive|define
+name|gimp_gradient_select_widget
+value|gimp_gradient_select_widget_new
+DECL|macro|gimp_gradient_select_widget_set_popup
+define|#
+directive|define
+name|gimp_gradient_select_widget_set_popup
+value|gimp_gradient_select_widget_set
+DECL|macro|gimp_gradient_select_widget_close_popup
+define|#
+directive|define
+name|gimp_gradient_select_widget_close_popup
+value|gimp_gradient_select_widget_close
+DECL|macro|gimp_interactive_selection_gradient
+define|#
+directive|define
+name|gimp_interactive_selection_gradient
+value|gimp_gradient_select_new
+DECL|macro|gimp_font_select_widget
+define|#
+directive|define
+name|gimp_font_select_widget
+value|gimp_font_select_widget_new
+DECL|macro|gimp_font_select_widget_set_popup
+define|#
+directive|define
+name|gimp_font_select_widget_set_popup
+value|gimp_font_select_widget_set
+DECL|macro|gimp_font_select_widget_close_popup
+define|#
+directive|define
+name|gimp_font_select_widget_close_popup
+value|gimp_font_select_widget_close
+DECL|macro|gimp_interactive_selection_pattern
+define|#
+directive|define
+name|gimp_interactive_selection_pattern
+value|gimp_pattern_select_new
+DECL|macro|gimp_pattern_select_widget
+define|#
+directive|define
+name|gimp_pattern_select_widget
+value|gimp_pattern_select_widget_new
+DECL|macro|gimp_pattern_select_widget_set_popup
+define|#
+directive|define
+name|gimp_pattern_select_widget_set_popup
+value|gimp_pattern_select_widget_set
+DECL|macro|gimp_pattern_select_widget_close_popup
+define|#
+directive|define
+name|gimp_pattern_select_widget_close_popup
+value|gimp_pattern_select_widget_close
 name|enum
-DECL|enum|__anon2792fdba0103
+DECL|enum|__anon27d584310103
 type|{
 DECL|enumerator|GIMP_WHITE_MASK
 name|GIMP_WHITE_MASK
@@ -103,7 +183,7 @@ end_decl_stmt
 begin_enum
 unit|};
 enum|enum
-DECL|enum|__anon2792fdba0203
+DECL|enum|__anon27d584310203
 block|{
 DECL|enumerator|GIMP_ADD
 name|GIMP_ADD
@@ -130,7 +210,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2792fdba0303
+DECL|enum|__anon27d584310303
 block|{
 DECL|enumerator|GIMP_FG_BG_RGB
 name|GIMP_FG_BG_RGB
@@ -157,7 +237,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2792fdba0403
+DECL|enum|__anon27d584310403
 block|{
 DECL|enumerator|GIMP_FG_IMAGE_FILL
 name|GIMP_FG_IMAGE_FILL
@@ -189,7 +269,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2792fdba0503
+DECL|enum|__anon27d584310503
 block|{
 DECL|enumerator|GIMP_APPLY
 name|GIMP_APPLY
@@ -206,7 +286,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2792fdba0603
+DECL|enum|__anon27d584310603
 block|{
 DECL|enumerator|GIMP_ONCE_FORWARD
 name|GIMP_ONCE_FORWARD
@@ -233,7 +313,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2792fdba0703
+DECL|enum|__anon27d584310703
 block|{
 DECL|enumerator|GIMP_HARD
 name|GIMP_HARD
@@ -250,7 +330,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2792fdba0803
+DECL|enum|__anon27d584310803
 block|{
 DECL|enumerator|GIMP_CONTINUOUS
 name|GIMP_CONTINUOUS
@@ -267,7 +347,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2792fdba0903
+DECL|enum|__anon27d584310903
 block|{
 DECL|enumerator|GIMP_HORIZONTAL
 name|GIMP_HORIZONTAL
