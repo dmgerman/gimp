@@ -16,6 +16,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp.h"
 end_include
 
@@ -105,7 +111,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_duplicate:  * @name: The gradient name (\"\" means currently active gradient).  *  * Duplicates a gradient  *  * This procedure creates an identical gradient by a different name  *  * Returns: The name of the gradient's copy.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_gradient_duplicate:  * @name: The gradient name.  *  * Duplicates a gradient  *  * This procedure creates an identical gradient by a different name  *  * Returns: The name of the gradient's copy.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -190,7 +196,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_rename:  * @name: The gradient name (\"\" means currently active gradient).  * @new_name: The new name of the gradient.  *  * Rename a gradient  *  * This procedure renames a gradient  *  * Returns: The actual new name of the gradient.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_gradient_rename:  * @name: The gradient name.  * @new_name: The new name of the gradient.  *  * Rename a gradient  *  * This procedure renames a gradient  *  * Returns: The actual new name of the gradient.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -284,7 +290,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_delete:  * @name: The gradient name (\"\" means currently active gradient).  *  * Deletes a gradient  *  * This procedure deletes a gradient  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_gradient_delete:  * @name: The gradient name.  *  * Deletes a gradient  *  * This procedure deletes a gradient  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -353,7 +359,324 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_get_left_color:  * @name: The gradient name (\"\" means currently active gradient).  * @segment: The index of the segment within the gradient.  * @color: The return color.  * @opacity: The opacity of the endpoint.  *  * Retrieves the left endpoint color of the specified gradient and  * segment  *  * This procedure retrieves the left endpoint color of the specified  * segment of the specified gradient.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_gradient_get_uniform_samples:  * @name: The gradient name.  * @num_samples: The number of samples to take.  * @reverse: Use the reverse gradient.  * @num_color_samples: Length of the color_samples array (4 * num_samples).  * @color_samples: Color samples: { R1, G1, B1, A1, ..., Rn, Gn, Bn, An }.  *  * Sample the specified in uniform parts.  *  * This procedure samples the active gradient in the specified number  * of uniform parts. It returns a list of floating-point values which  * correspond to the RGBA values for each sample. The minimum number of  * samples to take is 2, in which case the returned colors will  * correspond to the { 0.0, 1.0 } positions in the gradient. For  * example, if the number of samples is 3, the procedure will return  * the colors at positions { 0.0, 0.5, 1.0 }.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_gradient_get_uniform_samples (const gchar * name,gint num_samples,gboolean reverse,gint * num_color_samples,gdouble ** color_samples)
+name|gimp_gradient_get_uniform_samples
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|,
+name|gint
+name|num_samples
+parameter_list|,
+name|gboolean
+name|reverse
+parameter_list|,
+name|gint
+modifier|*
+name|num_color_samples
+parameter_list|,
+name|gdouble
+modifier|*
+modifier|*
+name|color_samples
+parameter_list|)
+block|{
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp_gradient_get_uniform_samples"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_STRING
+argument_list|,
+name|name
+argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|num_samples
+argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|reverse
+argument_list|,
+name|GIMP_PDB_END
+argument_list|)
+expr_stmt|;
+operator|*
+name|num_color_samples
+operator|=
+literal|0
+expr_stmt|;
+operator|*
+name|color_samples
+operator|=
+name|NULL
+expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
+if|if
+condition|(
+name|success
+condition|)
+block|{
+operator|*
+name|num_color_samples
+operator|=
+name|return_vals
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+operator|*
+name|color_samples
+operator|=
+name|g_new
+argument_list|(
+name|gdouble
+argument_list|,
+operator|*
+name|num_color_samples
+argument_list|)
+expr_stmt|;
+name|memcpy
+argument_list|(
+operator|*
+name|color_samples
+argument_list|,
+name|return_vals
+index|[
+literal|2
+index|]
+operator|.
+name|data
+operator|.
+name|d_floatarray
+argument_list|,
+operator|*
+name|num_color_samples
+operator|*
+sizeof|sizeof
+argument_list|(
+name|gdouble
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+return|return
+name|success
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_gradient_get_custom_samples:  * @name: The gradient name.  * @num_samples: The number of samples to take.  * @positions: The list of positions to sample along the gradient.  * @reverse: Use the reverse gradient.  * @num_color_samples: Length of the color_samples array (4 * num_samples).  * @color_samples: Color samples: { R1, G1, B1, A1, ..., Rn, Gn, Bn, An }.  *  * Sample the spacified gradient in custom positions.  *  * This procedure samples the active gradient in the specified number  * of points. The procedure will sample the gradient in the specified  * positions from the list. The left endpoint of the gradient  * corresponds to position 0.0, and the right endpoint corresponds to  * 1.0. The procedure returns a list of floating-point values which  * correspond to the RGBA values for each sample.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_gradient_get_custom_samples (const gchar * name,gint num_samples,const gdouble * positions,gboolean reverse,gint * num_color_samples,gdouble ** color_samples)
+name|gimp_gradient_get_custom_samples
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|,
+name|gint
+name|num_samples
+parameter_list|,
+specifier|const
+name|gdouble
+modifier|*
+name|positions
+parameter_list|,
+name|gboolean
+name|reverse
+parameter_list|,
+name|gint
+modifier|*
+name|num_color_samples
+parameter_list|,
+name|gdouble
+modifier|*
+modifier|*
+name|color_samples
+parameter_list|)
+block|{
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp_gradient_get_custom_samples"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_STRING
+argument_list|,
+name|name
+argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|num_samples
+argument_list|,
+name|GIMP_PDB_FLOATARRAY
+argument_list|,
+name|positions
+argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|reverse
+argument_list|,
+name|GIMP_PDB_END
+argument_list|)
+expr_stmt|;
+operator|*
+name|num_color_samples
+operator|=
+literal|0
+expr_stmt|;
+operator|*
+name|color_samples
+operator|=
+name|NULL
+expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
+if|if
+condition|(
+name|success
+condition|)
+block|{
+operator|*
+name|num_color_samples
+operator|=
+name|return_vals
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+operator|*
+name|color_samples
+operator|=
+name|g_new
+argument_list|(
+name|gdouble
+argument_list|,
+operator|*
+name|num_color_samples
+argument_list|)
+expr_stmt|;
+name|memcpy
+argument_list|(
+operator|*
+name|color_samples
+argument_list|,
+name|return_vals
+index|[
+literal|2
+index|]
+operator|.
+name|data
+operator|.
+name|d_floatarray
+argument_list|,
+operator|*
+name|num_color_samples
+operator|*
+sizeof|sizeof
+argument_list|(
+name|gdouble
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+return|return
+name|success
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_gradient_segment_get_left_color:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @color: The return color.  * @opacity: The opacity of the endpoint.  *  * Retrieves the left endpoint color of the specified gradient and  * segment  *  * This procedure retrieves the left endpoint color of the specified  * segment of the specified gradient.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -472,7 +795,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_set_left_color:  * @name: The gradient name (\"\" means currently active gradient).  * @segment: The index of the segment within the gradient.  * @color: The color to set.  * @opacity: The opacity to set for the endpoint.  *  * Retrieves the left endpoint color of the specified gradient and  * segment  *  * This procedure retrieves the left endpoint color of the specified  * segment of the specified gradient.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_gradient_segment_set_left_color:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @color: The color to set.  * @opacity: The opacity to set for the endpoint.  *  * Retrieves the left endpoint color of the specified gradient and  * segment  *  * This procedure retrieves the left endpoint color of the specified  * segment of the specified gradient.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -564,7 +887,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_get_right_color:  * @name: The gradient name (\"\" means currently active gradient).  * @segment: The index of the segment within the gradient.  * @color: The return color.  * @opacity: The opacity of the endpoint.  *  * Retrieves the right endpoint color of the specified gradient and  * segment  *  * This procedure retrieves the right endpoint color of the specified  * segment of the specified gradient.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_gradient_segment_get_right_color:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @color: The return color.  * @opacity: The opacity of the endpoint.  *  * Retrieves the right endpoint color of the specified gradient and  * segment  *  * This procedure retrieves the right endpoint color of the specified  * segment of the specified gradient.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -683,7 +1006,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_set_right_color:  * @name: The gradient name (\"\" means currently active gradient).  * @segment: The index of the segment within the gradient.  * @color: The color to set.  * @opacity: The opacity to set for the endpoint.  *  * Retrieves the right endpoint color of the specified gradient and  * segment  *  * This procedure retrieves the right endpoint color of the specified  * segment of the specified gradient.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_gradient_segment_set_right_color:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @color: The color to set.  * @opacity: The opacity to set for the endpoint.  *  * Retrieves the right endpoint color of the specified gradient and  * segment  *  * This procedure retrieves the right endpoint color of the specified  * segment of the specified gradient.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -775,7 +1098,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_get_left_pos:  * @name: The gradient name (\"\" means currently active gradient).  * @segment: The index of the segment within the gradient.  * @pos: The return position.  *  * Retrieves the left endpoint position of the specified gradient and  * segment  *  * This procedure retrieves the left endpoint position of the specified  * segment of the specified gradient.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_gradient_segment_get_left_pos:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @pos: The return position.  *  * Retrieves the left endpoint position of the specified gradient and  * segment  *  * This procedure retrieves the left endpoint position of the specified  * segment of the specified gradient.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -876,7 +1199,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_set_left_pos:  * @name: The gradient name (\"\" means currently active gradient).  * @segment: The index of the segment within the gradient.  * @pos: The position to set the guidepoint in.  * @final_pos: The return position.  *  * Sets the left endpoint position of the specified gradient and  * segment  *  * This procedure sets the left endpoint position of the specified  * segment of the specified gradient. The final position will be  * between the position of the middle point to the left to the middle  * point of the current segement. This procedure returns the final  * position.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_gradient_segment_set_left_pos:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @pos: The position to set the guidepoint in.  * @final_pos: The return position.  *  * Sets the left endpoint position of the specified gradient and  * segment  *  * This procedure sets the left endpoint position of the specified  * segment of the specified gradient. The final position will be  * between the position of the middle point to the left to the middle  * point of the current segement. This procedure returns the final  * position.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -984,7 +1307,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_get_middle_pos:  * @name: The gradient name (\"\" means currently active gradient).  * @segment: The index of the segment within the gradient.  * @pos: The return position.  *  * Retrieves the middle point position of the specified gradient and  * segment  *  * This procedure retrieves the middle point position of the specified  * segment of the specified gradient.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_gradient_segment_get_middle_pos:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @pos: The return position.  *  * Retrieves the middle point position of the specified gradient and  * segment  *  * This procedure retrieves the middle point position of the specified  * segment of the specified gradient.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -1085,7 +1408,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_set_middle_pos:  * @name: The gradient name (\"\" means currently active gradient).  * @segment: The index of the segment within the gradient.  * @pos: The position to set the guidepoint in.  * @final_pos: The return position.  *  * Sets the middle point position of the specified gradient and segment  *  * This procedure sets the middle point position of the specified  * segment of the specified gradient. The final position will be  * between the two endpoints of the segment. This procedure returns the  * final position.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_gradient_segment_set_middle_pos:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @pos: The position to set the guidepoint in.  * @final_pos: The return position.  *  * Sets the middle point position of the specified gradient and segment  *  * This procedure sets the middle point position of the specified  * segment of the specified gradient. The final position will be  * between the two endpoints of the segment. This procedure returns the  * final position.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -1193,7 +1516,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_get_right_pos:  * @name: The gradient name (\"\" means currently active gradient).  * @segment: The index of the segment within the gradient.  * @pos: The return position.  *  * Retrieves the right endpoint position of the specified gradient and  * segment  *  * This procedure retrieves the right endpoint position of the  * specified segment of the specified gradient.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_gradient_segment_get_right_pos:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @pos: The return position.  *  * Retrieves the right endpoint position of the specified gradient and  * segment  *  * This procedure retrieves the right endpoint position of the  * specified segment of the specified gradient.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -1294,7 +1617,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_set_right_pos:  * @name: The gradient name (\"\" means currently active gradient).  * @segment: The index of the segment within the gradient.  * @pos: The position to set the guidepoint in.  * @final_pos: The return position.  *  * Sets the right endpoint position of the specified gradient and  * segment  *  * This procedure sets the right endpoint position of the specified  * segment of the specified gradient. The final position will be  * between the position of the middle point of the current segment and  * the middle point of the segment to the right. This procedure returns  * the final position.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_gradient_segment_set_right_pos:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @pos: The position to set the guidepoint in.  * @final_pos: The return position.  *  * Sets the right endpoint position of the specified gradient and  * segment  *  * This procedure sets the right endpoint position of the specified  * segment of the specified gradient. The final position will be  * between the position of the middle point of the current segment and  * the middle point of the segment to the right. This procedure returns  * the final position.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -1402,7 +1725,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_get_blending_function:  * @name: The gradient name (\"\" means currently active gradient).  * @segment: The index of the segment within the gradient.  * @blend_func: The blending function of the segment.  *  * Retrieves the gradient segment's blending function  *  * This procedure retrieves the blending function of the segment at the  * specified gradient name and segment index.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_gradient_segment_get_blending_function:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @blend_func: The blending function of the segment.  *  * Retrieves the gradient segment's blending function  *  * This procedure retrieves the blending function of the segment at the  * specified gradient name and segment index.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -1503,7 +1826,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_get_coloring_type:  * @name: The gradient name (\"\" means currently active gradient).  * @segment: The index of the segment within the gradient.  * @coloring_type: The coloring type of the segment.  *  * Retrieves the gradient segment's coloring type  *  * This procedure retrieves the coloring type of the segment at the  * specified gradient name and segment index.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_gradient_segment_get_coloring_type:  * @name: The gradient name.  * @segment: The index of the segment within the gradient.  * @coloring_type: The coloring type of the segment.  *  * Retrieves the gradient segment's coloring type  *  * This procedure retrieves the coloring type of the segment at the  * specified gradient name and segment index.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -1604,7 +1927,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_range_set_blending_function:  * @name: The gradient name (\"\" means currently active gradient).  * @start_segment: The index of the first segment to operate on.  * @end_segment: The index of the last segment to operate on. If negative, the selection will extend to the end of the string.  * @blending_function: The Blending Function.  *  * Change the blending function of a segments range  *  * This function changes the blending function of a segment range to  * the specified blending function.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_gradient_segment_range_set_blending_function:  * @name: The gradient name.  * @start_segment: The index of the first segment to operate on.  * @end_segment: The index of the last segment to operate on. If negative, the selection will extend to the end of the string.  * @blending_function: The Blending Function.  *  * Change the blending function of a segments range  *  * This function changes the blending function of a segment range to  * the specified blending function.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -1694,7 +2017,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_range_set_coloring_type:  * @name: The gradient name (\"\" means currently active gradient).  * @start_segment: The index of the first segment to operate on.  * @end_segment: The index of the last segment to operate on. If negative, the selection will extend to the end of the string.  * @coloring_type: The Coloring Type.  *  * Change the coloring type of a segments range  *  * This function changes the coloring type of a segment range to the  * specified coloring type.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_gradient_segment_range_set_coloring_type:  * @name: The gradient name.  * @start_segment: The index of the first segment to operate on.  * @end_segment: The index of the last segment to operate on. If negative, the selection will extend to the end of the string.  * @coloring_type: The Coloring Type.  *  * Change the coloring type of a segments range  *  * This function changes the coloring type of a segment range to the  * specified coloring type.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -1784,7 +2107,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_range_flip:  * @name: The gradient name (\"\" means currently active gradient).  * @start_segment: The index of the first segment to operate on.  * @end_segment: The index of the last segment to operate on. If negative, the selection will extend to the end of the string.  *  * Flip the segment range  *  * This function flips a segment range.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_gradient_segment_range_flip:  * @name: The gradient name.  * @start_segment: The index of the first segment to operate on.  * @end_segment: The index of the last segment to operate on. If negative, the selection will extend to the end of the string.  *  * Flip the segment range  *  * This function flips a segment range.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -1867,7 +2190,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_range_replicate:  * @name: The gradient name (\"\" means currently active gradient).  * @start_segment: The index of the first segment to operate on.  * @end_segment: The index of the last segment to operate on. If negative, the selection will extend to the end of the string.  * @replicate_times: The number of times to replicate.  *  * Replicate the segment range  *  * This function replicates a segment range a given number of times.  * Instead of the original segment range, several smaller scaled copies  * of it will appear in equal widths.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_gradient_segment_range_replicate:  * @name: The gradient name.  * @start_segment: The index of the first segment to operate on.  * @end_segment: The index of the last segment to operate on. If negative, the selection will extend to the end of the string.  * @replicate_times: The number of times to replicate.  *  * Replicate the segment range  *  * This function replicates a segment range a given number of times.  * Instead of the original segment range, several smaller scaled copies  * of it will appear in equal widths.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -1957,7 +2280,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_range_split_midpoint:  * @name: The gradient name (\"\" means currently active gradient).  * @start_segment: The index of the first segment to operate on.  * @end_segment: The index of the last segment to operate on. If negative, the selection will extend to the end of the string.  *  * Splits each segment in the segment range at midpoint  *  * This function splits each segment in the segment range at its  * midpoint.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_gradient_segment_range_split_midpoint:  * @name: The gradient name.  * @start_segment: The index of the first segment to operate on.  * @end_segment: The index of the last segment to operate on. If negative, the selection will extend to the end of the string.  *  * Splits each segment in the segment range at midpoint  *  * This function splits each segment in the segment range at its  * midpoint.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -2040,7 +2363,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_range_split_uniform:  * @name: The gradient name (\"\" means currently active gradient).  * @start_segment: The index of the first segment to operate on.  * @end_segment: The index of the last segment to operate on. If negative, the selection will extend to the end of the string.  * @split_parts: The number of uniform divisions to split each segment to.  *  * Splits each segment in the segment range uniformly  *  * This function splits each segment in the segment range uniformly  * according to the number of times specified by the parameter.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_gradient_segment_range_split_uniform:  * @name: The gradient name.  * @start_segment: The index of the first segment to operate on.  * @end_segment: The index of the last segment to operate on. If negative, the selection will extend to the end of the string.  * @split_parts: The number of uniform divisions to split each segment to.  *  * Splits each segment in the segment range uniformly  *  * This function splits each segment in the segment range uniformly  * according to the number of times specified by the parameter.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -2130,7 +2453,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_range_delete:  * @name: The gradient name (\"\" means currently active gradient).  * @start_segment: The index of the first segment to operate on.  * @end_segment: The index of the last segment to operate on. If negative, the selection will extend to the end of the string.  *  * Delete the segment range  *  * This function deletes a segment range.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_gradient_segment_range_delete:  * @name: The gradient name.  * @start_segment: The index of the first segment to operate on.  * @end_segment: The index of the last segment to operate on. If negative, the selection will extend to the end of the string.  *  * Delete the segment range  *  * This function deletes a segment range.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -2213,7 +2536,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_range_redistribute_handles:  * @name: The gradient name (\"\" means currently active gradient).  * @start_segment: The index of the first segment to operate on.  * @end_segment: The index of the last segment to operate on. If negative, the selection will extend to the end of the string.  *  * Uniformly redistribute the segment range's handles  *  * This function redistributes the handles of the specified segment  * range of the specified gradient, so they'll be evenly spaced.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_gradient_segment_range_redistribute_handles:  * @name: The gradient name.  * @start_segment: The index of the first segment to operate on.  * @end_segment: The index of the last segment to operate on. If negative, the selection will extend to the end of the string.  *  * Uniformly redistribute the segment range's handles  *  * This function redistributes the handles of the specified segment  * range of the specified gradient, so they'll be evenly spaced.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -2296,7 +2619,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_range_blend_colors:  * @name: The gradient name (\"\" means currently active gradient).  * @start_segment: The index of the first segment to operate on.  * @end_segment: The index of the last segment to operate on. If negative, the selection will extend to the end of the string.  *  * Blend the colors of the segment range.  *  * This function blends the colors (but not the opacity) of the  * segments' range of the gradient. Using it, the colors' transition  * will be uniform across the range.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_gradient_segment_range_blend_colors:  * @name: The gradient name.  * @start_segment: The index of the first segment to operate on.  * @end_segment: The index of the last segment to operate on. If negative, the selection will extend to the end of the string.  *  * Blend the colors of the segment range.  *  * This function blends the colors (but not the opacity) of the  * segments' range of the gradient. Using it, the colors' transition  * will be uniform across the range.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -2379,7 +2702,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_range_blend_opacity:  * @name: The gradient name (\"\" means currently active gradient).  * @start_segment: The index of the first segment to operate on.  * @end_segment: The index of the last segment to operate on. If negative, the selection will extend to the end of the string.  *  * Blend the opacity of the segment range.  *  * This function blends the opacity (but not the colors) of the  * segments' range of the gradient. Using it, the opacity's transition  * will be uniform across the range.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_gradient_segment_range_blend_opacity:  * @name: The gradient name.  * @start_segment: The index of the first segment to operate on.  * @end_segment: The index of the last segment to operate on. If negative, the selection will extend to the end of the string.  *  * Blend the opacity of the segment range.  *  * This function blends the opacity (but not the colors) of the  * segments' range of the gradient. Using it, the opacity's transition  * will be uniform across the range.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -2462,7 +2785,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_segment_range_move:  * @name: The gradient name (\"\" means currently active gradient).  * @start_segment: The index of the first segment to operate on.  * @end_segment: The index of the last segment to operate on. If negative, the selection will extend to the end of the string.  * @delta: The delta to move the segment range.  * @control_compress: Whether or not to compress the neighboring segments.  *  * Move the position of an entire segment range by a delta.  *  * This funtions moves the position of an entire segment range by a  * delta. The actual delta (which is returned) will be limited by the  * control points of the neighboring segments.  *  * Returns: The final delta by which the range moved.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_gradient_segment_range_move:  * @name: The gradient name.  * @start_segment: The index of the first segment to operate on.  * @end_segment: The index of the last segment to operate on. If negative, the selection will extend to the end of the string.  * @delta: The delta to move the segment range.  * @control_compress: Whether or not to compress the neighboring segments.  *  * Move the position of an entire segment range by a delta.  *  * This funtions moves the position of an entire segment range by a  * delta. The actual delta (which is returned) will be limited by the  * control points of the neighboring segments.  *  * Returns: The final delta by which the range moved.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function

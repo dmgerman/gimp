@@ -1041,15 +1041,15 @@ init|=
 block|{
 literal|"gimp_patterns_get_pattern_data"
 block|,
-literal|"Retrieve information about the currently active pattern (including data)."
+literal|"This procedure is deprecated! Use 'gimp_pattern_get_data' instead."
 block|,
-literal|"This procedure retrieves information about the currently active pattern. This includes the pattern name, and the pattern extents (width and height). It also returns the pattern data."
+literal|"This procedure is deprecated! Use 'gimp_pattern_get_data' instead."
 block|,
-literal|"Andy Thomas"
+literal|""
 block|,
-literal|"Andy Thomas"
+literal|""
 block|,
-literal|"1998"
+literal|""
 block|,
 name|GIMP_INTERNAL
 block|,

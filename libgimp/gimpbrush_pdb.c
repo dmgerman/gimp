@@ -16,6 +16,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp.h"
 end_include
 
@@ -105,7 +111,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_duplicate:  * @name: The brush name (\"\" means currently active brush).  *  * Duplicates a brush  *  * This procedure creates an identical brush by a different name  *  * Returns: The name of the brush's copy.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_brush_duplicate:  * @name: The brush name.  *  * Duplicates a brush  *  * This procedure creates an identical brush by a different name  *  * Returns: The name of the brush's copy.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -190,7 +196,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_rename:  * @name: The brush name (\"\" means currently active brush).  * @new_name: The new name of the brush.  *  * Rename a brush  *  * This procedure renames a brush  *  * Returns: The actual new name of the brush.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_brush_rename:  * @name: The brush name.  * @new_name: The new name of the brush.  *  * Rename a brush  *  * This procedure renames a brush  *  * Returns: The actual new name of the brush.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -284,7 +290,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_delete:  * @name: The brush name (\"\" means currently active brush).  *  * Deletes a brush  *  * This procedure deletes a brush  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_brush_delete:  * @name: The brush name.  *  * Deletes a brush  *  * This procedure deletes a brush  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -353,7 +359,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_get_info:  * @name: The brush name (\"\" means currently active brush).  * @width: The brush width.  * @height: The brush height.  *  * Retrieve information about the specified brush.  *  * This procedure retrieves information about the specified brush. This  * includes the brush name, and the brush extents (width and height).  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_brush_get_info:  * @name: The brush name.  * @width: The brush width.  * @height: The brush height.  *  * Retrieve information about the specified brush.  *  * This procedure retrieves information about the specified brush. This  * includes the brush name, and the brush extents (width and height).  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -470,7 +476,189 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_get_spacing:  * @name: The brush name (\"\" means currently active brush).  * @spacing: The brush spacing.  *  * Get the brush spacing.  *  * This procedure returns the spacing setting for the specified brush.  * The return value is an integer between 0 and 1000 which represents  * percentage of the maximum of the width and height of the mask.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_brush_get_pixels:  * @name: The brush name.  * @width: The brush width.  * @height: The brush height.  * @num_mask_bytes: Length of brush mask data.  * @mask_bytes: The brush mask data.  *  * Retrieve information about the specified brush.  *  * This procedure retrieves information about the specified brush. This  * includes the brush extents (width and height) and its pixels data.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_brush_get_pixels (const gchar * name,gint * width,gint * height,gint * num_mask_bytes,guint8 ** mask_bytes)
+name|gimp_brush_get_pixels
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|,
+name|gint
+modifier|*
+name|width
+parameter_list|,
+name|gint
+modifier|*
+name|height
+parameter_list|,
+name|gint
+modifier|*
+name|num_mask_bytes
+parameter_list|,
+name|guint8
+modifier|*
+modifier|*
+name|mask_bytes
+parameter_list|)
+block|{
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp_brush_get_pixels"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_STRING
+argument_list|,
+name|name
+argument_list|,
+name|GIMP_PDB_END
+argument_list|)
+expr_stmt|;
+operator|*
+name|width
+operator|=
+literal|0
+expr_stmt|;
+operator|*
+name|height
+operator|=
+literal|0
+expr_stmt|;
+operator|*
+name|num_mask_bytes
+operator|=
+literal|0
+expr_stmt|;
+operator|*
+name|mask_bytes
+operator|=
+name|NULL
+expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
+if|if
+condition|(
+name|success
+condition|)
+block|{
+operator|*
+name|width
+operator|=
+name|return_vals
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+operator|*
+name|height
+operator|=
+name|return_vals
+index|[
+literal|2
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+operator|*
+name|num_mask_bytes
+operator|=
+name|return_vals
+index|[
+literal|3
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+operator|*
+name|mask_bytes
+operator|=
+name|g_new
+argument_list|(
+name|guint8
+argument_list|,
+operator|*
+name|num_mask_bytes
+argument_list|)
+expr_stmt|;
+name|memcpy
+argument_list|(
+operator|*
+name|mask_bytes
+argument_list|,
+name|return_vals
+index|[
+literal|4
+index|]
+operator|.
+name|data
+operator|.
+name|d_int8array
+argument_list|,
+operator|*
+name|num_mask_bytes
+operator|*
+sizeof|sizeof
+argument_list|(
+name|guint8
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+return|return
+name|success
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_brush_get_spacing:  * @name: The brush name.  * @spacing: The brush spacing.  *  * Get the brush spacing.  *  * This procedure returns the spacing setting for the specified brush.  * The return value is an integer between 0 and 1000 which represents  * percentage of the maximum of the width and height of the mask.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -564,7 +752,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_set_spacing:  * @name: The brush name (\"\" means currently active brush).  * @spacing: The brush spacing.  *  * Set the brush spacing.  *  * This procedure modifies the spacing setting for the specified brush.  * The value should be a integer between 0 and 1000.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_brush_set_spacing:  * @name: The brush name.  * @spacing: The brush spacing.  *  * Set the brush spacing.  *  * This procedure modifies the spacing setting for the specified brush.  * The value should be a integer between 0 and 1000.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function

@@ -555,7 +555,9 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|&&
+operator|==
+name|NULL
+operator|||
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -576,16 +578,6 @@ condition|(
 name|success
 condition|)
 block|{
-if|if
-condition|(
-name|name
-operator|&&
-name|strlen
-argument_list|(
-name|name
-argument_list|)
-condition|)
-block|{
 name|palette
 operator|=
 operator|(
@@ -603,17 +595,6 @@ argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|palette
-operator|=
-name|gimp_context_get_palette
-argument_list|(
-name|context
-argument_list|)
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|palette
@@ -704,7 +685,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The palette name (\"\" means currently active palette)"
+literal|"The palette name."
 block|}
 block|}
 decl_stmt|;
@@ -832,7 +813,9 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|&&
+operator|==
+name|NULL
+operator|||
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -889,16 +872,6 @@ condition|(
 name|success
 condition|)
 block|{
-if|if
-condition|(
-name|name
-operator|&&
-name|strlen
-argument_list|(
-name|name
-argument_list|)
-condition|)
-block|{
 name|palette
 operator|=
 operator|(
@@ -916,17 +889,6 @@ argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|palette
-operator|=
-name|gimp_context_get_palette
-argument_list|(
-name|context
-argument_list|)
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|palette
@@ -1006,7 +968,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The palette name (\"\" means currently active palette)"
+literal|"The palette name."
 block|}
 block|,
 block|{
@@ -1134,7 +1096,9 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|&&
+operator|==
+name|NULL
+operator|||
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -1155,16 +1119,6 @@ condition|(
 name|success
 condition|)
 block|{
-if|if
-condition|(
-name|name
-operator|&&
-name|strlen
-argument_list|(
-name|name
-argument_list|)
-condition|)
-block|{
 name|palette
 operator|=
 operator|(
@@ -1182,17 +1136,6 @@ argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|palette
-operator|=
-name|gimp_context_get_palette
-argument_list|(
-name|context
-argument_list|)
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|palette
@@ -1282,7 +1225,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The palette name (\"\" means currently active palette)"
+literal|"The palette name."
 block|}
 block|}
 decl_stmt|;
@@ -1387,7 +1330,9 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|&&
+operator|==
+name|NULL
+operator|||
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -1408,16 +1353,6 @@ condition|(
 name|success
 condition|)
 block|{
-if|if
-condition|(
-name|name
-operator|&&
-name|strlen
-argument_list|(
-name|name
-argument_list|)
-condition|)
-block|{
 name|palette
 operator|=
 operator|(
@@ -1435,17 +1370,6 @@ argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|palette
-operator|=
-name|gimp_context_get_palette
-argument_list|(
-name|context
-argument_list|)
-expr_stmt|;
-block|}
 name|success
 operator|=
 operator|(
@@ -1501,7 +1425,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The palette name (\"\" means currently active palette)"
+literal|"The palette name."
 block|}
 block|}
 decl_stmt|;
@@ -1638,7 +1562,9 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|&&
+operator|==
+name|NULL
+operator|||
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -1704,16 +1630,6 @@ condition|(
 name|success
 condition|)
 block|{
-if|if
-condition|(
-name|name
-operator|&&
-name|strlen
-argument_list|(
-name|name
-argument_list|)
-condition|)
-block|{
 name|palette
 operator|=
 operator|(
@@ -1731,17 +1647,6 @@ argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|palette
-operator|=
-name|gimp_context_get_palette
-argument_list|(
-name|context
-argument_list|)
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|palette
@@ -1817,7 +1722,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The palette name (\"\" means currently active palette)"
+literal|"The palette name."
 block|}
 block|,
 block|{
@@ -1962,7 +1867,9 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|&&
+operator|==
+name|NULL
+operator|||
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -1994,16 +1901,6 @@ condition|(
 name|success
 condition|)
 block|{
-if|if
-condition|(
-name|name
-operator|&&
-name|strlen
-argument_list|(
-name|name
-argument_list|)
-condition|)
-block|{
 name|palette
 operator|=
 operator|(
@@ -2021,17 +1918,6 @@ argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|palette
-operator|=
-name|gimp_context_get_palette
-argument_list|(
-name|context
-argument_list|)
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|palette
@@ -2113,7 +1999,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The palette name (\"\" means currently active palette)"
+literal|"The palette name."
 block|}
 block|,
 block|{
@@ -2238,7 +2124,9 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|&&
+operator|==
+name|NULL
+operator|||
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -2270,16 +2158,6 @@ condition|(
 name|success
 condition|)
 block|{
-if|if
-condition|(
-name|name
-operator|&&
-name|strlen
-argument_list|(
-name|name
-argument_list|)
-condition|)
-block|{
 name|palette
 operator|=
 operator|(
@@ -2297,17 +2175,6 @@ argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|palette
-operator|=
-name|gimp_context_get_palette
-argument_list|(
-name|context
-argument_list|)
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|palette
@@ -2400,7 +2267,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The palette name (\"\" means currently active palette)"
+literal|"The palette name."
 block|}
 block|,
 block|{
@@ -2540,7 +2407,9 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|&&
+operator|==
+name|NULL
+operator|||
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -2583,16 +2452,6 @@ condition|(
 name|success
 condition|)
 block|{
-if|if
-condition|(
-name|name
-operator|&&
-name|strlen
-argument_list|(
-name|name
-argument_list|)
-condition|)
-block|{
 name|palette
 operator|=
 operator|(
@@ -2610,17 +2469,6 @@ argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|palette
-operator|=
-name|gimp_context_get_palette
-argument_list|(
-name|context
-argument_list|)
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|palette
@@ -2709,7 +2557,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The palette name (\"\" means currently active palette)"
+literal|"The palette name."
 block|}
 block|,
 block|{
@@ -2839,7 +2687,9 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|&&
+operator|==
+name|NULL
+operator|||
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -2871,16 +2721,6 @@ condition|(
 name|success
 condition|)
 block|{
-if|if
-condition|(
-name|name
-operator|&&
-name|strlen
-argument_list|(
-name|name
-argument_list|)
-condition|)
-block|{
 name|palette
 operator|=
 operator|(
@@ -2898,17 +2738,6 @@ argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|palette
-operator|=
-name|gimp_context_get_palette
-argument_list|(
-name|context
-argument_list|)
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|palette
@@ -2998,7 +2827,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The palette name (\"\" means currently active palette)"
+literal|"The palette name."
 block|}
 block|,
 block|{
@@ -3139,7 +2968,9 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|&&
+operator|==
+name|NULL
+operator|||
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -3205,16 +3036,6 @@ condition|(
 name|success
 condition|)
 block|{
-if|if
-condition|(
-name|name
-operator|&&
-name|strlen
-argument_list|(
-name|name
-argument_list|)
-condition|)
-block|{
 name|palette
 operator|=
 operator|(
@@ -3232,17 +3053,6 @@ argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|palette
-operator|=
-name|gimp_context_get_palette
-argument_list|(
-name|context
-argument_list|)
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|palette
@@ -3341,7 +3151,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"The palette name (\"\" means currently active palette)"
+literal|"The palette name."
 block|}
 block|,
 block|{

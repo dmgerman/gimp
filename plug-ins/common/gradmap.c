@@ -453,7 +453,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f1676d0108
+DECL|struct|__anon28dd263c0108
 block|{
 DECL|member|samples
 name|guchar
@@ -706,6 +706,13 @@ modifier|*
 name|drawable
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|gradient_name
+decl_stmt|;
+name|gint
+name|n_f_samples
+decl_stmt|;
 name|gdouble
 modifier|*
 name|f_samples
@@ -736,6 +743,11 @@ name|i
 decl_stmt|,
 name|j
 decl_stmt|;
+name|gradient_name
+operator|=
+name|gimp_context_get_gradient
+argument_list|()
+expr_stmt|;
 ifdef|#
 directive|ifdef
 name|__GNUC__
@@ -744,13 +756,19 @@ directive|warning
 warning|FIXME: "reverse" hardcoded to FALSE.
 endif|#
 directive|endif
-name|f_samples
-operator|=
-name|gimp_gradients_sample_uniform
+name|gimp_gradient_get_uniform_samples
 argument_list|(
+name|gradient_name
+argument_list|,
 name|NSAMPLES
 argument_list|,
 name|FALSE
+argument_list|,
+operator|&
+name|n_f_samples
+argument_list|,
+operator|&
+name|f_samples
 argument_list|)
 expr_stmt|;
 name|bpp

@@ -1382,15 +1382,15 @@ init|=
 block|{
 literal|"gimp_brushes_get_brush_data"
 block|,
-literal|"Retrieve information about the currently active brush (including data)."
+literal|"This procedure is deprecated! Use 'gimp_brush_get_pixels' instead."
 block|,
-literal|"This procedure retrieves information about the currently active brush. This includes the brush name, and the brush extents (width and height). It also returns the brush data."
+literal|"This procedure is deprecated! Use 'gimp_brush_get_pixels' instead."
 block|,
-literal|"Andy Thomas"
+literal|""
 block|,
-literal|"Andy Thomas"
+literal|""
 block|,
-literal|"1998"
+literal|""
 block|,
 name|GIMP_INTERNAL
 block|,

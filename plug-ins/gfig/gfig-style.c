@@ -2731,7 +2731,9 @@ argument_list|()
 expr_stmt|;
 name|gimp_brush_get_info
 argument_list|(
-name|NULL
+name|style
+operator|->
+name|brush_name
 argument_list|,
 operator|&
 name|style
@@ -2746,7 +2748,9 @@ argument_list|)
 expr_stmt|;
 name|gimp_brush_get_spacing
 argument_list|(
-name|NULL
+name|style
+operator|->
+name|brush_name
 argument_list|,
 operator|&
 name|style
@@ -3194,11 +3198,20 @@ modifier|*
 name|height
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|name
+init|=
+name|gimp_context_get_brush
+argument_list|()
+decl_stmt|;
 if|if
 condition|(
+name|name
+operator|&&
 name|gimp_brush_get_info
 argument_list|(
-name|NULL
+name|name
 argument_list|,
 name|width
 argument_list|,
@@ -3245,6 +3258,11 @@ operator|=
 literal|48
 expr_stmt|;
 block|}
+name|g_free
+argument_list|(
+name|name
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
