@@ -139,6 +139,14 @@ DECL|member|block_height
 name|gint
 name|block_height
 decl_stmt|;
+DECL|member|edit_mode
+name|gboolean
+name|edit_mode
+decl_stmt|;
+DECL|member|edit_button_x0
+name|gint
+name|edit_button_x0
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -152,7 +160,6 @@ DECL|member|parent_class
 name|GtkDrawingAreaClass
 name|parent_class
 decl_stmt|;
-comment|/*   void (* range_changed) (GimpDashEditor *view, 			  gint               start, 			  gint               end);   */
 block|}
 struct|;
 end_struct
