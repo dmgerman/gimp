@@ -7941,6 +7941,12 @@ name|guint
 name|scale
 decl_stmt|;
 name|gchar
+name|buf
+index|[
+literal|16
+index|]
+decl_stmt|;
+name|gchar
 modifier|*
 name|label
 decl_stmt|;
@@ -8036,6 +8042,32 @@ literal|"/View/Zoom/1:16"
 expr_stmt|;
 break|break;
 block|}
+name|g_snprintf
+argument_list|(
+name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
+argument_list|,
+name|shell
+operator|->
+name|scale
+operator|>=
+literal|0.15
+condition|?
+literal|"%.0f%%"
+else|:
+literal|"%.2f%%"
+argument_list|,
+name|shell
+operator|->
+name|scale
+operator|*
+literal|100.0
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -8050,27 +8082,12 @@ name|label
 operator|=
 name|g_strdup_printf
 argument_list|(
-name|shell
-operator|->
-name|scale
-operator|>=
-literal|0.15
-condition|?
 name|_
 argument_list|(
-literal|"Other (%.0f%%) ..."
-argument_list|)
-else|:
-name|_
-argument_list|(
-literal|"Other (%.2f%%) ..."
+literal|"Other (%s) ..."
 argument_list|)
 argument_list|,
-name|shell
-operator|->
-name|scale
-operator|*
-literal|100.0
+name|buf
 argument_list|)
 expr_stmt|;
 name|gimp_item_factory_set_label
@@ -8109,27 +8126,12 @@ name|label
 operator|=
 name|g_strdup_printf
 argument_list|(
-name|shell
-operator|->
-name|scale
-operator|>=
-literal|0.15
-condition|?
 name|_
 argument_list|(
-literal|"_Zoom (%.0f%%)"
-argument_list|)
-else|:
-name|_
-argument_list|(
-literal|"_Zoom (%.2f%%)"
+literal|"_Zoom (%s)"
 argument_list|)
 argument_list|,
-name|shell
-operator|->
-name|scale
-operator|*
-literal|100.0
+name|buf
 argument_list|)
 expr_stmt|;
 name|gimp_item_factory_set_label
