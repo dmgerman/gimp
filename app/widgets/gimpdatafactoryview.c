@@ -776,6 +776,13 @@ name|factory_view
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|edit_func
+operator|!=
+name|NULL
+condition|)
+block|{
 name|factory_view
 operator|->
 name|edit_button
@@ -808,6 +815,7 @@ argument_list|,
 name|editor
 argument_list|)
 expr_stmt|;
+block|}
 name|factory_view
 operator|->
 name|new_button
@@ -971,6 +979,13 @@ name|children_type
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|factory_view
+operator|->
+name|edit_button
+condition|)
+block|{
 name|gimp_container_view_enable_dnd
 argument_list|(
 name|editor
@@ -991,6 +1006,7 @@ operator|->
 name|children_type
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_container_view_enable_dnd
 argument_list|(
 name|editor
@@ -1816,6 +1832,12 @@ operator|->
 name|deletable
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|view
+operator|->
+name|edit_button
+condition|)
 name|gtk_widget_set_sensitive
 argument_list|(
 name|view

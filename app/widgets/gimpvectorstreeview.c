@@ -605,6 +605,17 @@ argument_list|(
 name|view
 argument_list|)
 expr_stmt|;
+comment|/*  Hide basically useless Edit button  */
+name|gtk_widget_hide
+argument_list|(
+name|GIMP_ITEM_TREE_VIEW
+argument_list|(
+name|view
+argument_list|)
+operator|->
+name|edit_button
+argument_list|)
+expr_stmt|;
 name|str
 operator|=
 name|g_strdup_printf
