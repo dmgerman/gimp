@@ -202,7 +202,7 @@ name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -603,7 +603,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_eraser_tool_modifier_key (GimpTool * tool,GdkEventKey * kevent,GDisplay * gdisp)
+DECL|function|gimp_eraser_tool_modifier_key (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
 name|gimp_eraser_tool_modifier_key
 parameter_list|(
 name|GimpTool
@@ -614,7 +614,7 @@ name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)

@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimptoolinfo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -55,12 +61,6 @@ begin_include
 include|#
 directive|include
 file|"tools/tool_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"app_procs.h"
 end_include
 
 begin_function
@@ -80,7 +80,10 @@ name|gimp_context_set_default_colors
 argument_list|(
 name|gimp_get_user_context
 argument_list|(
-name|the_gimp
+name|GIMP
+argument_list|(
+name|data
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -104,7 +107,10 @@ name|gimp_context_swap_colors
 argument_list|(
 name|gimp_get_user_context
 argument_list|(
-name|the_gimp
+name|GIMP
+argument_list|(
+name|data
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -138,6 +144,17 @@ name|temp_context
 init|=
 name|NULL
 decl_stmt|;
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
+name|gimp
+operator|=
+name|GIMP
+argument_list|(
+name|data
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -148,13 +165,13 @@ name|swap_context
 operator|=
 name|gimp_create_context
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|,
 literal|"Swap Context"
 argument_list|,
 name|gimp_get_user_context
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -162,7 +179,7 @@ name|temp_context
 operator|=
 name|gimp_create_context
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|,
 literal|"Temp Context"
 argument_list|,
@@ -174,7 +191,7 @@ name|gimp_context_copy_properties
 argument_list|(
 name|gimp_get_user_context
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|)
 argument_list|,
 name|temp_context
@@ -188,7 +205,7 @@ name|swap_context
 argument_list|,
 name|gimp_get_user_context
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|)
 argument_list|,
 name|GIMP_CONTEXT_ALL_PROPS_MASK
@@ -222,9 +239,6 @@ name|guint
 name|action
 parameter_list|)
 block|{
-name|GtkType
-name|tool_type
-decl_stmt|;
 name|GimpToolInfo
 modifier|*
 name|tool_info
@@ -237,20 +251,11 @@ name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|tool_type
-operator|=
-operator|(
-name|GtkType
-operator|)
-name|action
-expr_stmt|;
 name|tool_info
 operator|=
-name|tool_manager_get_info_by_type
+name|GIMP_TOOL_INFO
 argument_list|(
-name|the_gimp
-argument_list|,
-name|tool_type
+name|data
 argument_list|)
 expr_stmt|;
 name|gdisp
@@ -259,7 +264,9 @@ name|gimp_context_get_display
 argument_list|(
 name|gimp_get_user_context
 argument_list|(
-name|the_gimp
+name|tool_info
+operator|->
+name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -267,7 +274,9 @@ name|gimp_context_set_tool
 argument_list|(
 name|gimp_get_user_context
 argument_list|(
-name|the_gimp
+name|tool_info
+operator|->
+name|gimp
 argument_list|)
 argument_list|,
 name|tool_info
@@ -285,7 +294,9 @@ name|active_tool
 operator|=
 name|tool_manager_get_active
 argument_list|(
-name|the_gimp
+name|tool_info
+operator|->
+name|gimp
 argument_list|)
 expr_stmt|;
 comment|/*  Paranoia  */

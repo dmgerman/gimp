@@ -52,7 +52,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
+file|"core/gimp.h"
 end_include
 
 begin_include
@@ -300,6 +300,8 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
+name|gimp
+operator|->
 name|no_interface
 condition|)
 name|plug_in_progress_init
@@ -345,7 +347,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"gdisplay"
 block|,
-literal|"GDisplay to update progressbar in, or -1 for a seperate window"
+literal|"GimpDisplay to update progressbar in, or -1 for a seperate window"
 block|}
 block|}
 decl_stmt|;
@@ -440,6 +442,8 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
+name|gimp
+operator|->
 name|no_interface
 condition|)
 name|plug_in_progress_update

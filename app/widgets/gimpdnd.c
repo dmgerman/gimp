@@ -2464,6 +2464,8 @@ name|data
 decl_stmt|;
 name|file_open_with_display
 argument_list|(
+name|the_gimp
+argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;

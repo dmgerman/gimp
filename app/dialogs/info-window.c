@@ -128,12 +128,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"colormaps.h"
 end_include
 
@@ -166,7 +160,7 @@ struct|struct
 name|_InfoWinData
 block|{
 DECL|member|gdisp
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -308,7 +302,7 @@ name|gchar
 modifier|*
 name|info_window_title
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -337,7 +331,7 @@ name|gchar
 modifier|*
 name|title
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -366,7 +360,7 @@ expr_stmt|;
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|iwd
@@ -512,12 +506,16 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|info_window_create_extended (InfoDialog * info_win)
+DECL|function|info_window_create_extended (InfoDialog * info_win,Gimp * gimp)
 name|info_window_create_extended
 parameter_list|(
 name|InfoDialog
 modifier|*
 name|info_win
+parameter_list|,
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|GtkWidget
@@ -738,7 +736,7 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|tool_manager_get_info_by_type
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|,
 name|GIMP_TYPE_MOVE_TOOL
 argument_list|)
@@ -1235,7 +1233,7 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|tool_manager_get_info_by_type
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|,
 name|GIMP_TYPE_COLOR_PICKER_TOOL
 argument_list|)
@@ -1703,17 +1701,13 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*  displays information:  *    image name  *    image width, height  *    zoom ratio  *    image color type  *    Display info:  *      visual class  *      visual depth  */
-end_comment
-
 begin_function
 name|InfoDialog
 modifier|*
-DECL|function|info_window_create (GDisplay * gdisp)
+DECL|function|info_window_create (GimpDisplay * gdisp)
 name|info_window_create
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1920,6 +1914,12 @@ comment|/*  Add extra tabs  */
 name|info_window_create_extended
 argument_list|(
 name|info_win
+argument_list|,
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
 argument_list|)
 expr_stmt|;
 comment|/*  keep track of image name changes  */
@@ -1963,10 +1963,10 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|info_window_title (GDisplay * gdisp)
+DECL|function|info_window_title (GimpDisplay * gdisp)
 name|info_window_title
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -2028,14 +2028,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|info_window_change_display (GimpContext * context,GDisplay * newdisp,gpointer data)
+DECL|function|info_window_change_display (GimpContext * context,GimpDisplay * newdisp,gpointer data)
 name|info_window_change_display
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|newdisp
 parameter_list|,
@@ -2043,13 +2043,13 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 init|=
 name|newdisp
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|old_gdisp
 decl_stmt|;
@@ -2074,7 +2074,7 @@ expr_stmt|;
 name|old_gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|iwd
@@ -2136,25 +2136,35 @@ end_function
 
 begin_function
 name|void
-DECL|function|info_window_follow_auto (void)
+DECL|function|info_window_follow_auto (Gimp * gimp)
 name|info_window_follow_auto
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|GimpContext
 modifier|*
 name|context
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|context
 operator|=
 name|gimp_get_user_context
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|)
 expr_stmt|;
 name|gdisp
@@ -2220,10 +2230,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|info_window_update_extended (GDisplay * gdisp,gdouble tx,gdouble ty)
+DECL|function|info_window_update_extended (GimpDisplay * gdisp,gdouble tx,gdouble ty)
 name|info_window_update_extended
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -2965,10 +2975,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|info_window_update (GDisplay * gdisp)
+DECL|function|info_window_update (GimpDisplay * gdisp)
 name|info_window_update
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)

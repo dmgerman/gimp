@@ -96,12 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -700,12 +694,9 @@ operator|(
 name|SelectionOptions
 operator|*
 operator|)
-name|tool_manager_get_info_by_tool
-argument_list|(
-name|the_gimp
-argument_list|,
 name|tool
-argument_list|)
+operator|->
+name|tool_info
 operator|->
 name|tool_options
 expr_stmt|;

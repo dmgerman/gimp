@@ -114,12 +114,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -142,7 +136,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bac87930103
+DECL|enum|__anon2b1e03cf0103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -262,6 +256,11 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
+DECL|member|gimp
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -303,10 +302,23 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-comment|/*  Popup grad edit box ....  */
+name|ImportDialog
+modifier|*
+name|import_dialog
+decl_stmt|;
+name|import_dialog
+operator|=
+operator|(
+name|ImportDialog
+operator|*
+operator|)
+name|data
+expr_stmt|;
 name|gradient_dialog_create
 argument_list|(
-name|the_gimp
+name|import_dialog
+operator|->
+name|gimp
 argument_list|)
 expr_stmt|;
 block|}
@@ -1268,9 +1280,13 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|palette_import_image_menu_activate (gint redo,ImportType type,GimpImage * del_image)
+DECL|function|palette_import_image_menu_activate (ImportDialog * import_dialog,gint redo,ImportType type,GimpImage * del_image)
 name|palette_import_image_menu_activate
 parameter_list|(
+name|ImportDialog
+modifier|*
+name|import_dialog
+parameter_list|,
 name|gint
 name|redo
 parameter_list|,
@@ -1322,12 +1338,6 @@ name|gchar
 modifier|*
 name|lab
 decl_stmt|;
-if|if
-condition|(
-operator|!
-name|import_dialog
-condition|)
-return|return;
 if|if
 condition|(
 name|import_dialog
@@ -1398,7 +1408,9 @@ condition|)
 block|{
 name|gimp_container_foreach
 argument_list|(
-name|the_gimp
+name|import_dialog
+operator|->
+name|gimp
 operator|->
 name|images
 argument_list|,
@@ -1413,7 +1425,9 @@ else|else
 block|{
 name|gimp_container_foreach
 argument_list|(
-name|the_gimp
+name|import_dialog
+operator|->
+name|gimp
 operator|->
 name|images
 argument_list|,
@@ -1777,6 +1791,17 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
+name|gimp
+operator|=
+name|GIMP
+argument_list|(
+name|data
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|import_dialog
@@ -1792,7 +1817,7 @@ name|gimp_context_get_gradient
 argument_list|(
 name|gimp_get_user_context
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1899,8 +1924,22 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+name|ImportDialog
+modifier|*
+name|import_dialog
+decl_stmt|;
+name|import_dialog
+operator|=
+operator|(
+name|ImportDialog
+operator|*
+operator|)
+name|data
+expr_stmt|;
 name|palette_import_image_menu_activate
 argument_list|(
+name|import_dialog
+argument_list|,
 name|FALSE
 argument_list|,
 name|IMAGE_IMPORT
@@ -1943,8 +1982,22 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+name|ImportDialog
+modifier|*
+name|import_dialog
+decl_stmt|;
+name|import_dialog
+operator|=
+operator|(
+name|ImportDialog
+operator|*
+operator|)
+name|data
+expr_stmt|;
 name|palette_import_image_menu_activate
 argument_list|(
+name|import_dialog
+argument_list|,
 name|FALSE
 argument_list|,
 name|INDEXED_IMPORT
@@ -1980,9 +2033,13 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|palette_import_image_count (ImportType type)
+DECL|function|palette_import_image_count (Gimp * gimp,ImportType type)
 name|palette_import_image_count
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|ImportType
 name|type
 parameter_list|)
@@ -2007,7 +2064,7 @@ condition|)
 block|{
 name|gimp_container_foreach
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|images
 argument_list|,
@@ -2022,7 +2079,7 @@ else|else
 block|{
 name|gimp_container_foreach
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|images
 argument_list|,
@@ -2144,6 +2201,8 @@ condition|)
 block|{
 name|palette_import_image_menu_activate
 argument_list|(
+name|import_dialog
+argument_list|,
 name|TRUE
 argument_list|,
 name|import_dialog
@@ -2185,6 +2244,10 @@ if|if
 condition|(
 name|palette_import_image_count
 argument_list|(
+name|import_dialog
+operator|->
+name|gimp
+argument_list|,
 name|import_dialog
 operator|->
 name|import_type
@@ -2247,6 +2310,8 @@ condition|)
 block|{
 name|palette_import_image_menu_activate
 argument_list|(
+name|import_dialog
+argument_list|,
 name|TRUE
 argument_list|,
 name|import_dialog
@@ -2292,6 +2357,8 @@ condition|)
 block|{
 name|palette_import_image_menu_activate
 argument_list|(
+name|import_dialog
+argument_list|,
 name|TRUE
 argument_list|,
 name|import_dialog
@@ -2356,6 +2423,10 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+name|ImportDialog
+modifier|*
+name|import_dialog
+decl_stmt|;
 name|GimpPalette
 modifier|*
 name|palette
@@ -2376,12 +2447,14 @@ decl_stmt|;
 name|gint
 name|threshold
 decl_stmt|;
-if|if
-condition|(
-operator|!
 name|import_dialog
-condition|)
-return|return;
+operator|=
+operator|(
+name|ImportDialog
+operator|*
+operator|)
+name|data
+expr_stmt|;
 name|palette_name
 operator|=
 operator|(
@@ -2434,7 +2507,9 @@ name|gimp_context_get_gradient
 argument_list|(
 name|gimp_get_user_context
 argument_list|(
-name|the_gimp
+name|import_dialog
+operator|->
+name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2528,7 +2603,9 @@ name|palette
 condition|)
 name|gimp_container_add
 argument_list|(
-name|the_gimp
+name|import_dialog
+operator|->
+name|gimp
 operator|->
 name|palette_factory
 operator|->
@@ -2558,10 +2635,12 @@ begin_function
 specifier|static
 name|ImportDialog
 modifier|*
-DECL|function|palette_import_dialog_new (void)
+DECL|function|palette_import_dialog_new (Gimp * gimp)
 name|palette_import_dialog_new
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|GtkWidget
@@ -2622,12 +2701,18 @@ name|hscale
 decl_stmt|;
 name|import_dialog
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|ImportDialog
 argument_list|,
 literal|1
 argument_list|)
+expr_stmt|;
+name|import_dialog
+operator|->
+name|gimp
+operator|=
+name|gimp
 expr_stmt|;
 name|import_dialog
 operator|->
@@ -2956,7 +3041,7 @@ name|gimp_context_get_gradient
 argument_list|(
 name|gimp_get_user_context
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3119,7 +3204,7 @@ argument_list|(
 name|palette_import_grad_callback
 argument_list|)
 argument_list|,
-name|NULL
+name|gimp
 argument_list|)
 expr_stmt|;
 name|menuitem
@@ -3157,6 +3242,8 @@ name|menuitem
 argument_list|,
 name|palette_import_image_count
 argument_list|(
+name|gimp
+argument_list|,
 name|IMAGE_IMPORT
 argument_list|)
 operator|>
@@ -3215,6 +3302,8 @@ name|menuitem
 argument_list|,
 name|palette_import_image_count
 argument_list|(
+name|gimp
+argument_list|,
 name|INDEXED_IMPORT
 argument_list|)
 operator|>
@@ -3710,7 +3799,7 @@ argument_list|(
 name|palette_import_select_grad_callback
 argument_list|)
 argument_list|,
-name|image
+name|import_dialog
 argument_list|)
 expr_stmt|;
 comment|/*  Fill with the selected gradient  */
@@ -3722,7 +3811,7 @@ name|gimp_context_get_gradient
 argument_list|(
 name|gimp_get_user_context
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|)
 argument_list|)
 argument_list|)
@@ -3739,7 +3828,7 @@ name|G_OBJECT
 argument_list|(
 name|gimp_get_user_context
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|)
 argument_list|)
 argument_list|,
@@ -3758,7 +3847,7 @@ name|g_signal_connect
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|images
 argument_list|)
@@ -3777,7 +3866,7 @@ name|g_signal_connect
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|images
 argument_list|)
@@ -3800,19 +3889,31 @@ end_function
 
 begin_function
 name|void
-DECL|function|palette_import_dialog_show (void)
+DECL|function|palette_import_dialog_show (Gimp * gimp)
 name|palette_import_dialog_show
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
 name|import_dialog
 condition|)
 name|palette_import_dialog_new
-argument_list|()
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 if|if
 condition|(

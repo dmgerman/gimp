@@ -148,7 +148,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -168,7 +168,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -188,7 +188,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -208,7 +208,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -227,7 +227,7 @@ parameter_list|,
 name|ToolAction
 name|tool_action
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -239,7 +239,7 @@ specifier|static
 name|void
 name|move_create_gc
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -566,7 +566,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|move_tool_control (GimpTool * tool,ToolAction action,GDisplay * gdisp)
+DECL|function|move_tool_control (GimpTool * tool,ToolAction action,GimpDisplay * gdisp)
 name|move_tool_control
 parameter_list|(
 name|GimpTool
@@ -576,7 +576,7 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -675,7 +675,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|move_tool_button_press (GimpTool * tool,GdkEventButton * bevent,GDisplay * gdisp)
+DECL|function|move_tool_button_press (GimpTool * tool,GdkEventButton * bevent,GimpDisplay * gdisp)
 name|move_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -686,7 +686,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1048,10 +1048,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|move_draw_guide (GDisplay * gdisp,GimpGuide * guide)
+DECL|function|move_draw_guide (GimpDisplay * gdisp,GimpGuide * guide)
 name|move_draw_guide
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -1290,7 +1290,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|move_tool_button_release (GimpTool * tool,GdkEventButton * bevent,GDisplay * gdisp)
+DECL|function|move_tool_button_release (GimpTool * tool,GdkEventButton * bevent,GimpDisplay * gdisp)
 name|move_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -1301,7 +1301,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1663,7 +1663,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|move_tool_motion (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+DECL|function|move_tool_motion (GimpTool * tool,GdkEventMotion * mevent,GimpDisplay * gdisp)
 name|move_tool_motion
 parameter_list|(
 name|GimpTool
@@ -1674,7 +1674,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1809,7 +1809,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|move_tool_cursor_update (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+DECL|function|move_tool_cursor_update (GimpTool * tool,GdkEventMotion * mevent,GimpDisplay * gdisp)
 name|move_tool_cursor_update
 parameter_list|(
 name|GimpTool
@@ -1820,7 +1820,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -2149,10 +2149,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|move_create_gc (GDisplay * gdisp)
+DECL|function|move_create_gc (GimpDisplay * gdisp)
 name|move_create_gc
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -2205,14 +2205,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_move_tool_start_hguide (GimpTool * tool,GDisplay * gdisp)
+DECL|function|gimp_move_tool_start_hguide (GimpTool * tool,GimpDisplay * gdisp)
 name|gimp_move_tool_start_hguide
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -2315,14 +2315,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_move_tool_start_vguide (GimpTool * tool,GDisplay * gdisp)
+DECL|function|gimp_move_tool_start_vguide (GimpTool * tool,GimpDisplay * gdisp)
 name|gimp_move_tool_start_vguide
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)

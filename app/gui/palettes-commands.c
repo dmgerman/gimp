@@ -185,7 +185,15 @@ name|editor
 condition|)
 return|return;
 name|palette_import_dialog_show
-argument_list|()
+argument_list|(
+name|editor
+operator|->
+name|view
+operator|->
+name|context
+operator|->
+name|gimp
+argument_list|)
 expr_stmt|;
 block|}
 end_function

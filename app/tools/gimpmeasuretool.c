@@ -238,7 +238,7 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -258,7 +258,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -278,7 +278,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -298,7 +298,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -318,7 +318,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -736,7 +736,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_measure_tool_control (GimpTool * tool,ToolAction action,GDisplay * gdisp)
+DECL|function|gimp_measure_tool_control (GimpTool * tool,ToolAction action,GimpDisplay * gdisp)
 name|gimp_measure_tool_control
 parameter_list|(
 name|GimpTool
@@ -746,7 +746,7 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -831,7 +831,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_measure_tool_button_press (GimpTool * tool,GdkEventButton * bevent,GDisplay * gdisp)
+DECL|function|gimp_measure_tool_button_press (GimpTool * tool,GdkEventButton * bevent,GimpDisplay * gdisp)
 name|gimp_measure_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -842,7 +842,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -889,7 +889,7 @@ operator|->
 name|gdisp
 condition|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|old_gdisp
 init|=
@@ -1749,7 +1749,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_measure_tool_button_release (GimpTool * tool,GdkEventButton * bevent,GDisplay * gdisp)
+DECL|function|gimp_measure_tool_button_release (GimpTool * tool,GdkEventButton * bevent,GimpDisplay * gdisp)
 name|gimp_measure_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -1760,7 +1760,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1798,7 +1798,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_measure_tool_motion (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+DECL|function|gimp_measure_tool_motion (GimpTool * tool,GdkEventMotion * mevent,GimpDisplay * gdisp)
 name|gimp_measure_tool_motion
 parameter_list|(
 name|GimpTool
@@ -1809,7 +1809,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -3032,7 +3032,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_measure_tool_cursor_update (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+DECL|function|gimp_measure_tool_cursor_update (GimpTool * tool,GdkEventMotion * mevent,GimpDisplay * gdisp)
 name|gimp_measure_tool_cursor_update
 parameter_list|(
 name|GimpTool
@@ -3043,7 +3043,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)

@@ -71,7 +71,9 @@ begin_function_decl
 name|void
 name|info_window_follow_auto
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -189,7 +189,7 @@ name|GimpTransformTool
 modifier|*
 name|transform_tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -208,7 +208,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -224,7 +224,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -571,7 +571,7 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|gimp_shear_tool_shear (GimpImage * gimage,GimpDrawable * drawable,GDisplay * gdisp,TileManager * float_tiles,gboolean interpolation,GimpMatrix3 matrix)
+DECL|function|gimp_shear_tool_shear (GimpImage * gimage,GimpDrawable * drawable,GimpDisplay * gdisp,TileManager * float_tiles,gboolean interpolation,GimpMatrix3 matrix)
 name|gimp_shear_tool_shear
 parameter_list|(
 name|GimpImage
@@ -582,7 +582,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -668,14 +668,14 @@ begin_function
 specifier|static
 name|TileManager
 modifier|*
-DECL|function|gimp_shear_tool_transform (GimpTransformTool * transform_tool,GDisplay * gdisp,TransformState state)
+DECL|function|gimp_shear_tool_transform (GimpTransformTool * transform_tool,GimpDisplay * gdisp,TransformState state)
 name|gimp_shear_tool_transform
 parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|transform_tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -1192,14 +1192,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|shear_tool_motion (GimpTool * tool,GDisplay * gdisp)
+DECL|function|shear_tool_motion (GimpTool * tool,GimpDisplay * gdisp)
 name|shear_tool_motion
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1503,14 +1503,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|shear_tool_recalc (GimpTool * tool,GDisplay * gdisp)
+DECL|function|shear_tool_recalc (GimpTool * tool,GimpDisplay * gdisp)
 name|shear_tool_recalc
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)

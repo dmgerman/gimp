@@ -172,12 +172,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"plug_in.h"
 end_include
 
@@ -202,6 +196,10 @@ specifier|static
 name|gint
 name|file_open_with_proc_and_display
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -224,7 +222,9 @@ specifier|static
 name|void
 name|file_open_dialog_create
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -255,6 +255,9 @@ name|widget
 parameter_list|,
 name|gint
 name|row
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -423,10 +426,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|file_open_dialog_menu_init (void)
+DECL|function|file_open_dialog_menu_init (Gimp * gimp)
 name|file_open_dialog_menu_init
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|GimpItemFactoryEntry
@@ -440,10 +445,22 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp
+operator|->
 name|load_procs
 operator|=
 name|g_slist_reverse
 argument_list|(
+name|gimp
+operator|->
 name|load_procs
 argument_list|)
 expr_stmt|;
@@ -451,6 +468,8 @@ for|for
 control|(
 name|list
 operator|=
+name|gimp
+operator|->
 name|load_procs
 init|;
 name|list
@@ -618,19 +637,31 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_open_dialog_show (void)
+DECL|function|file_open_dialog_show (Gimp * gimp)
 name|file_open_dialog_show
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
 name|fileload
 condition|)
 name|file_open_dialog_create
-argument_list|()
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
@@ -683,19 +714,35 @@ block|}
 end_function
 
 begin_function
-name|gint
-DECL|function|file_open_with_display (const gchar * filename)
+name|GimpPDBStatusType
+DECL|function|file_open_with_display (Gimp * gimp,const gchar * filename)
 name|file_open_with_display
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
 name|filename
 parameter_list|)
 block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|GIMP_PDB_CALLING_ERROR
+argument_list|)
+expr_stmt|;
 return|return
 name|file_open_with_proc_and_display
 argument_list|(
+name|gimp
+argument_list|,
 name|filename
 argument_list|,
 name|filename
@@ -713,9 +760,13 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|file_open_with_proc_and_display (const gchar * filename,const gchar * raw_filename,PlugInProcDef * file_proc)
+DECL|function|file_open_with_proc_and_display (Gimp * gimp,const gchar * filename,const gchar * raw_filename,PlugInProcDef * file_proc)
 name|file_open_with_proc_and_display
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -739,7 +790,7 @@ name|gchar
 modifier|*
 name|absolute
 decl_stmt|;
-name|gint
+name|GimpPDBStatusType
 name|status
 decl_stmt|;
 if|if
@@ -749,7 +800,7 @@ name|gimage
 operator|=
 name|file_open_image
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|,
 name|filename
 argument_list|,
@@ -798,12 +849,14 @@ name|absolute
 operator|=
 name|file_open_absolute_filename
 argument_list|(
+name|gimp
+argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;
 name|gimp_documents_add
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|,
 name|filename
 argument_list|)
@@ -823,10 +876,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_open_dialog_create (void)
+DECL|function|file_open_dialog_create (Gimp * gimp)
 name|file_open_dialog_create
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|GtkFileSelection
@@ -841,6 +896,18 @@ name|_
 argument_list|(
 literal|"Open Image"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_set_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|fileload
+argument_list|)
+argument_list|,
+literal|"gimp"
+argument_list|,
+name|gimp
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_position
@@ -2072,9 +2139,13 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|set_preview (const gchar * fullfname,guchar * RGB_source,gint RGB_w,gint RGB_h)
+DECL|function|set_preview (Gimp * gimp,const gchar * fullfname,guchar * RGB_source,gint RGB_w,gint RGB_h)
 name|set_preview
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -2539,7 +2610,7 @@ else|else
 block|{
 switch|switch
 condition|(
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -2702,7 +2773,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_open_clistrow_callback (GtkWidget * widget,gint row)
+DECL|function|file_open_clistrow_callback (GtkWidget * widget,gint row,gpointer data)
 name|file_open_clistrow_callback
 parameter_list|(
 name|GtkWidget
@@ -2711,21 +2782,51 @@ name|widget
 parameter_list|,
 name|gint
 name|row
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 block|{
+name|GtkFileSelection
+modifier|*
+name|fileload
+decl_stmt|;
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
 name|fullfname
 decl_stmt|;
+name|fileload
+operator|=
+name|GTK_FILE_SELECTION
+argument_list|(
+name|data
+argument_list|)
+expr_stmt|;
+name|gimp
+operator|=
+name|GIMP
+argument_list|(
+name|g_object_get_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|fileload
+argument_list|)
+argument_list|,
+literal|"gimp"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|fullfname
 operator|=
 name|gtk_file_selection_get_filename
 argument_list|(
-name|GTK_FILE_SELECTION
-argument_list|(
 name|fileload
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
@@ -2740,6 +2841,8 @@ argument_list|)
 expr_stmt|;
 name|set_preview
 argument_list|(
+name|gimp
+argument_list|,
 name|fullfname
 argument_list|,
 name|NULL
@@ -2784,6 +2887,10 @@ decl_stmt|;
 name|gint
 name|RGBbuf_h
 decl_stmt|;
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
 comment|/* added for multi-file preview generation... */
 name|GtkFileSelection
 modifier|*
@@ -2815,6 +2922,21 @@ argument_list|(
 name|data
 argument_list|)
 expr_stmt|;
+name|gimp
+operator|=
+name|GIMP
+argument_list|(
+name|g_object_get_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|fs
+argument_list|)
+argument_list|,
+literal|"gimp"
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -2830,7 +2952,7 @@ return|return;
 block|}
 name|gimp_set_busy
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
@@ -2938,14 +3060,14 @@ operator|)
 condition|)
 block|{
 comment|/* Is not directory. */
-name|gint
+name|GimpPDBStatusType
 name|dummy
 decl_stmt|;
 name|gimage_to_be_thumbed
 operator|=
 name|file_open_image
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|,
 name|full_filename
 argument_list|,
@@ -2990,7 +3112,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -3009,6 +3131,8 @@ expr_stmt|;
 block|}
 name|set_preview
 argument_list|(
+name|gimp
+argument_list|,
 name|full_filename
 argument_list|,
 name|RGBbuf
@@ -3156,7 +3280,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_unset_busy
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|)
 expr_stmt|;
 block|}
@@ -3180,6 +3304,10 @@ name|GtkFileSelection
 modifier|*
 name|fs
 decl_stmt|;
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
 name|gchar
 modifier|*
 name|full_filename
@@ -3200,7 +3328,7 @@ decl_stmt|;
 name|gint
 name|err
 decl_stmt|;
-name|gint
+name|GimpPDBStatusType
 name|status
 decl_stmt|;
 name|fs
@@ -3208,6 +3336,21 @@ operator|=
 name|GTK_FILE_SELECTION
 argument_list|(
 name|data
+argument_list|)
+expr_stmt|;
+name|gimp
+operator|=
+name|GIMP
+argument_list|(
+name|g_object_get_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|fs
+argument_list|)
+argument_list|,
+literal|"gimp"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|full_filename
@@ -3353,6 +3496,8 @@ name|status
 operator|=
 name|file_open_with_proc_and_display
 argument_list|(
+name|gimp
+argument_list|,
 name|full_filename
 argument_list|,
 name|raw_filename
@@ -3506,6 +3651,8 @@ name|status
 operator|=
 name|file_open_with_proc_and_display
 argument_list|(
+name|gimp
+argument_list|,
 name|full_filename
 argument_list|,
 operator|(

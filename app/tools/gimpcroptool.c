@@ -386,7 +386,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -406,7 +406,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -426,7 +426,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -446,7 +446,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -465,7 +465,7 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -485,7 +485,7 @@ name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -505,7 +505,7 @@ name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1100,7 +1100,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_crop_tool_control (GimpTool * tool,ToolAction action,GDisplay * gdisp)
+DECL|function|gimp_crop_tool_control (GimpTool * tool,ToolAction action,GimpDisplay * gdisp)
 name|gimp_crop_tool_control
 parameter_list|(
 name|GimpTool
@@ -1110,7 +1110,7 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1189,7 +1189,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_crop_tool_button_press (GimpTool * tool,GdkEventButton * bevent,GDisplay * gdisp)
+DECL|function|gimp_crop_tool_button_press (GimpTool * tool,GdkEventButton * bevent,GimpDisplay * gdisp)
 name|gimp_crop_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -1200,7 +1200,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1688,7 +1688,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_crop_tool_button_release (GimpTool * tool,GdkEventButton * bevent,GDisplay * gdisp)
+DECL|function|gimp_crop_tool_button_release (GimpTool * tool,GdkEventButton * bevent,GimpDisplay * gdisp)
 name|gimp_crop_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -1699,7 +1699,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1849,7 +1849,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_crop_tool_motion (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+DECL|function|gimp_crop_tool_motion (GimpTool * tool,GdkEventMotion * mevent,GimpDisplay * gdisp)
 name|gimp_crop_tool_motion
 parameter_list|(
 name|GimpTool
@@ -1860,7 +1860,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -2675,7 +2675,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_crop_tool_cursor_update (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+DECL|function|gimp_crop_tool_cursor_update (GimpTool * tool,GdkEventMotion * mevent,GimpDisplay * gdisp)
 name|gimp_crop_tool_cursor_update
 parameter_list|(
 name|GimpTool
@@ -2686,7 +2686,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -3029,7 +3029,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_crop_tool_arrow_key (GimpTool * tool,GdkEventKey * kevent,GDisplay * gdisp)
+DECL|function|gimp_crop_tool_arrow_key (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
 name|gimp_crop_tool_arrow_key
 parameter_list|(
 name|GimpTool
@@ -3040,7 +3040,7 @@ name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -3446,7 +3446,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_crop_tool_modifier_key (GimpTool * tool,GdkEventKey * kevent,GDisplay * gdisp)
+DECL|function|gimp_crop_tool_modifier_key (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
 name|gimp_crop_tool_modifier_key
 parameter_list|(
 name|GimpTool
@@ -3457,7 +3457,7 @@ name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -4071,7 +4071,7 @@ name|crop
 parameter_list|)
 block|{
 specifier|static
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|old_gdisp
 init|=
@@ -4470,7 +4470,7 @@ modifier|*
 name|tool
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -4489,7 +4489,7 @@ decl_stmt|;
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|tool
@@ -5351,7 +5351,7 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -5561,7 +5561,7 @@ name|GimpDrawTool
 modifier|*
 name|draw
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;

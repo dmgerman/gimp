@@ -90,7 +90,7 @@ struct|struct
 name|_ColorDisplayDialog
 block|{
 DECL|member|gdisp
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -145,7 +145,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bbea910103
+DECL|enum|__anon27c736e00103
 block|{
 DECL|enumerator|BUTTON_ADD
 name|BUTTON_ADD
@@ -1131,7 +1131,7 @@ name|cdd
 init|=
 name|data
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 init|=
@@ -1250,7 +1250,7 @@ name|cdd
 init|=
 name|data
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 init|=
@@ -1439,7 +1439,7 @@ name|cdd
 init|=
 name|data
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 init|=
@@ -1571,7 +1571,7 @@ name|cdd
 init|=
 name|data
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 init|=
@@ -1694,7 +1694,7 @@ name|cdd
 init|=
 name|data
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 init|=
@@ -1802,7 +1802,7 @@ name|cdd
 init|=
 name|data
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 init|=
@@ -1928,7 +1928,7 @@ name|cdd
 init|=
 name|data
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 init|=
@@ -2019,10 +2019,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_color_ui_new (GDisplay * gdisp)
+DECL|function|gdisplay_color_ui_new (GimpDisplay * gdisp)
 name|gdisplay_color_ui_new
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)

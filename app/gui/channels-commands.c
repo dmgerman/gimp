@@ -96,12 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -1142,7 +1136,9 @@ argument_list|)
 argument_list|,
 name|gimp_get_user_context
 argument_list|(
-name|the_gimp
+name|gimage
+operator|->
+name|gimp
 argument_list|)
 argument_list|,
 name|TRANSPARENT_FILL

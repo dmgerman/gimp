@@ -144,15 +144,17 @@ value|"revert-confirm-dialog"
 end_define
 
 begin_define
-DECL|macro|return_if_no_display (gdisp)
+DECL|macro|return_if_no_display (gdisp,data)
 define|#
 directive|define
 name|return_if_no_display
 parameter_list|(
 name|gdisp
+parameter_list|,
+name|data
 parameter_list|)
 define|\
-value|gdisp = gimp_context_get_display (gimp_get_user_context (the_gimp)); \         if (!gdisp) return
+value|gdisp = gimp_context_get_display (gimp_get_user_context (GIMP (data))); \   if (!gdisp) return
 end_define
 
 begin_comment
@@ -197,9 +199,9 @@ name|guint
 name|action
 parameter_list|)
 block|{
-name|GimpDisplay
+name|Gimp
 modifier|*
-name|gdisp
+name|gimp
 decl_stmt|;
 name|GimpImage
 modifier|*
@@ -207,35 +209,34 @@ name|gimage
 init|=
 name|NULL
 decl_stmt|;
-comment|/*  Before we try to determine the responsible gdisplay,    *  make sure this wasn't called from the toolbox    */
+name|gimp
+operator|=
+name|GIMP
+argument_list|(
+name|data
+argument_list|)
+expr_stmt|;
+comment|/*  if called from the image menu  */
 if|if
 condition|(
 name|action
 condition|)
 block|{
-name|gdisp
+name|gimage
 operator|=
-name|gimp_context_get_display
+name|gimp_context_get_image
 argument_list|(
 name|gimp_get_user_context
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|)
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|gdisp
-condition|)
-name|gimage
-operator|=
-name|gdisp
-operator|->
-name|gimage
 expr_stmt|;
 block|}
 name|file_new_dialog_create
 argument_list|(
+name|gimp
+argument_list|,
 name|gimage
 argument_list|)
 expr_stmt|;
@@ -275,7 +276,12 @@ name|data
 parameter_list|)
 block|{
 name|file_open_dialog_show
-argument_list|()
+argument_list|(
+name|GIMP
+argument_list|(
+name|data
+argument_list|)
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -296,6 +302,10 @@ name|guint
 name|action
 parameter_list|)
 block|{
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
 name|GimpImagefile
 modifier|*
 name|imagefile
@@ -306,11 +316,18 @@ decl_stmt|;
 name|gint
 name|status
 decl_stmt|;
+name|gimp
+operator|=
+name|GIMP
+argument_list|(
+name|data
+argument_list|)
+expr_stmt|;
 name|num_entries
 operator|=
 name|gimp_container_num_children
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|documents
 argument_list|)
@@ -330,7 +347,7 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_index
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|documents
 argument_list|,
@@ -346,6 +363,8 @@ name|status
 operator|=
 name|file_open_with_display
 argument_list|(
+name|gimp
+argument_list|,
 name|GIMP_OBJECT
 argument_list|(
 name|imagefile
@@ -424,6 +443,8 @@ decl_stmt|;
 name|return_if_no_display
 argument_list|(
 name|gdisp
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 if|if
@@ -515,6 +536,8 @@ name|filename
 argument_list|,
 name|basename
 argument_list|,
+name|NULL
+argument_list|,
 name|RUN_WITH_LAST_VALS
 argument_list|,
 name|TRUE
@@ -577,6 +600,8 @@ decl_stmt|;
 name|return_if_no_display
 argument_list|(
 name|gdisp
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|file_save_dialog_show
@@ -609,6 +634,8 @@ decl_stmt|;
 name|return_if_no_display
 argument_list|(
 name|gdisp
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|file_save_a_copy_dialog_show
@@ -650,6 +677,8 @@ decl_stmt|;
 name|return_if_no_display
 argument_list|(
 name|gdisp
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|filename
@@ -832,6 +861,8 @@ decl_stmt|;
 name|return_if_no_display
 argument_list|(
 name|gdisp
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|gdisplay_close_window
@@ -924,7 +955,7 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-name|gint
+name|GimpPDBStatusType
 name|status
 decl_stmt|;
 name|filename

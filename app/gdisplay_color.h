@@ -100,7 +100,7 @@ name|ColorDisplayNode
 modifier|*
 name|gdisplay_color_attach
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -117,7 +117,7 @@ name|ColorDisplayNode
 modifier|*
 name|gdisplay_color_attach_clone
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -132,7 +132,7 @@ begin_function_decl
 name|void
 name|gdisplay_color_detach
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -147,7 +147,7 @@ begin_function_decl
 name|void
 name|gdisplay_color_detach_destroy
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -162,7 +162,7 @@ begin_function_decl
 name|void
 name|gdisplay_color_detach_all
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -173,7 +173,7 @@ begin_function_decl
 name|void
 name|gdisplay_color_reorder_up
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -188,7 +188,7 @@ begin_function_decl
 name|void
 name|gdisplay_color_reorder_down
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,

@@ -498,7 +498,7 @@ literal|0
 end_if
 
 begin_endif
-unit|void     path_tool_button_press    (Tool *, GdkEventButton *, gpointer); void     path_tool_button_release  (Tool *, GdkEventButton *, gpointer); void     path_tool_motion          (Tool *, GdkEventMotion *, gpointer); void     path_tool_cursor_update   (Tool *, GdkEventMotion *, gpointer); void     path_tool_control         (Tool *, ToolAction,       gpointer); void     path_tool_draw            (Tool *); void     path_tool_draw_curve      (Tool *, PathCurve *); void     path_tool_draw_segment    (Tool *, PathSegment *);  gdouble  path_tool_on_curve        (Tool *, gint, gint, gint, 				    NPath**, PathCurve**, PathSegment**);  gint path_tool_button_press_canvas (Tool *, GdkEventButton *, GDisplay *); gint path_tool_button_press_anchor (Tool *, GdkEventButton *, GDisplay *); gint path_tool_button_press_handle (Tool *, GdkEventButton *, GDisplay *); gint path_tool_button_press_curve  (Tool *, GdkEventButton *, GDisplay *); void path_tool_motion_anchor       (Tool *, GdkEventMotion *, GDisplay *); void path_tool_motion_handle       (Tool *, GdkEventMotion *, GDisplay *); void path_tool_motion_curve        (Tool *, GdkEventMotion *, GDisplay *);
+unit|void     path_tool_button_press    (Tool *, GdkEventButton *, gpointer); void     path_tool_button_release  (Tool *, GdkEventButton *, gpointer); void     path_tool_motion          (Tool *, GdkEventMotion *, gpointer); void     path_tool_cursor_update   (Tool *, GdkEventMotion *, gpointer); void     path_tool_control         (Tool *, ToolAction,       gpointer); void     path_tool_draw            (Tool *); void     path_tool_draw_curve      (Tool *, PathCurve *); void     path_tool_draw_segment    (Tool *, PathSegment *);  gdouble  path_tool_on_curve        (Tool *, gint, gint, gint, 				    NPath**, PathCurve**, PathSegment**);  gint path_tool_button_press_canvas (Tool *, GdkEventButton *, GimpDisplay *); gint path_tool_button_press_anchor (Tool *, GdkEventButton *, GimpDisplay *); gint path_tool_button_press_handle (Tool *, GdkEventButton *, GimpDisplay *); gint path_tool_button_press_curve  (Tool *, GdkEventButton *, GimpDisplay *); void path_tool_motion_anchor       (Tool *, GdkEventMotion *, GimpDisplay *); void path_tool_motion_handle       (Tool *, GdkEventMotion *, GimpDisplay *); void path_tool_motion_curve        (Tool *, GdkEventMotion *, GimpDisplay *);
 endif|#
 directive|endif
 end_endif
@@ -2773,7 +2773,7 @@ comment|/**************************************************************  * The c
 end_comment
 
 begin_ifdef
-unit|void path_tool_button_press (Tool           *tool, 			GdkEventButton *bevent, 			GDisplay       *gdisp) {    PathTool * path_tool;    gint grab_pointer=0;    gint x, y, halfwidth, dummy;
+unit|void path_tool_button_press (Tool           *tool, 			GdkEventButton *bevent, 			GimpDisplay    *gdisp) {    PathTool * path_tool;    gint grab_pointer=0;    gint x, y, halfwidth, dummy;
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
@@ -2816,7 +2816,7 @@ comment|/* determine point, where clicked,     * switch accordingly.     */
 end_comment
 
 begin_ifdef
-unit|path_tool->click_type = path_tool_cursor_position (tool, x, y, halfwidth,&(path_tool->click_path),&(path_tool->click_curve),&(path_tool->click_segment),&(path_tool->click_position),&(path_tool->click_handle_id));       switch (path_tool->click_type)    {    case ON_CANVAS:       grab_pointer = path_tool_button_press_canvas(tool, bevent, gdisp);       break;     case ON_ANCHOR:       grab_pointer = path_tool_button_press_anchor(tool, bevent, gdisp);       break;     case ON_HANDLE:       grab_pointer = path_tool_button_press_handle(tool, bevent, gdisp);       break;     case ON_CURVE:       grab_pointer = path_tool_button_press_curve(tool, bevent, gdisp);       break;     default:       g_message("Huh? Whats happening here? (button_press_*)");    }       if (grab_pointer)       gdk_pointer_grab (gdisp->canvas->window, FALSE, 		        GDK_POINTER_MOTION_HINT_MASK | 			GDK_BUTTON1_MOTION_MASK | 			GDK_BUTTON_RELEASE_MASK, 			NULL, NULL, bevent->time);     tool->state = ACTIVE;  }  gint path_tool_button_press_anchor (Tool *tool,                                GdkEventButton *bevent,                                GDisplay *gdisp) {    static guint32 last_click_time=0;    gboolean doubleclick=FALSE;    PathTool *path_tool = tool->private;        NPath * cur_path = path_tool->cur_path;    PathSegment *p_sas;    gint grab_pointer;
+unit|path_tool->click_type = path_tool_cursor_position (tool, x, y, halfwidth,&(path_tool->click_path),&(path_tool->click_curve),&(path_tool->click_segment),&(path_tool->click_position),&(path_tool->click_handle_id));       switch (path_tool->click_type)    {    case ON_CANVAS:       grab_pointer = path_tool_button_press_canvas(tool, bevent, gdisp);       break;     case ON_ANCHOR:       grab_pointer = path_tool_button_press_anchor(tool, bevent, gdisp);       break;     case ON_HANDLE:       grab_pointer = path_tool_button_press_handle(tool, bevent, gdisp);       break;     case ON_CURVE:       grab_pointer = path_tool_button_press_curve(tool, bevent, gdisp);       break;     default:       g_message("Huh? Whats happening here? (button_press_*)");    }       if (grab_pointer)       gdk_pointer_grab (gdisp->canvas->window, FALSE, 		        GDK_POINTER_MOTION_HINT_MASK | 			GDK_BUTTON1_MOTION_MASK | 			GDK_BUTTON_RELEASE_MASK, 			NULL, NULL, bevent->time);     tool->state = ACTIVE;  }  gint path_tool_button_press_anchor (Tool *tool,                                GdkEventButton *bevent,                                GimpDisplay *gdisp) {    static guint32 last_click_time=0;    gboolean doubleclick=FALSE;    PathTool *path_tool = tool->private;        NPath * cur_path = path_tool->cur_path;    PathSegment *p_sas;    gint grab_pointer;
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
@@ -2907,7 +2907,7 @@ comment|/* Maybe CTRL-ALT Click should remove the whole curve? Or the active poi
 end_comment
 
 begin_ifdef
-unit|}    else if (!(path_tool->click_segment->flags& SEGMENT_ACTIVE))    {       path_set_flags (path_tool, cur_path, NULL, NULL, 0, SEGMENT_ACTIVE);       path_set_flags (path_tool, cur_path, path_tool->click_curve, path_tool->click_segment, SEGMENT_ACTIVE, 0);    }         draw_core_resume(path_tool->core, tool);     return grab_pointer; }   gint path_tool_button_press_handle (Tool *tool,                                GdkEventButton *bevent,                                GDisplay *gdisp) {    static guint32 last_click_time=0;    gboolean doubleclick=FALSE;    PathTool *path_tool = tool->private;        NPath * cur_path = path_tool->cur_path;    gint grab_pointer;
+unit|}    else if (!(path_tool->click_segment->flags& SEGMENT_ACTIVE))    {       path_set_flags (path_tool, cur_path, NULL, NULL, 0, SEGMENT_ACTIVE);       path_set_flags (path_tool, cur_path, path_tool->click_curve, path_tool->click_segment, SEGMENT_ACTIVE, 0);    }         draw_core_resume(path_tool->core, tool);     return grab_pointer; }   gint path_tool_button_press_handle (Tool *tool,                                GdkEventButton *bevent,                                GimpDisplay *gdisp) {    static guint32 last_click_time=0;    gboolean doubleclick=FALSE;    PathTool *path_tool = tool->private;        NPath * cur_path = path_tool->cur_path;    gint grab_pointer;
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
@@ -2954,7 +2954,7 @@ endif|PATH_TOOL_DEBUG
 end_endif
 
 begin_ifdef
-unit|} else       doubleclick=FALSE;    last_click_time = bevent->time;     return grab_pointer; }  gint path_tool_button_press_canvas (Tool *tool,                                GdkEventButton *bevent,                                GDisplay *gdisp) {    PathTool *path_tool = tool->private;        NPath * cur_path = path_tool->cur_path;    PathCurve * cur_curve;    PathSegment * cur_segment;    gint grab_pointer;
+unit|} else       doubleclick=FALSE;    last_click_time = bevent->time;     return grab_pointer; }  gint path_tool_button_press_canvas (Tool *tool,                                GdkEventButton *bevent,                                GimpDisplay *gdisp) {    PathTool *path_tool = tool->private;        NPath * cur_path = path_tool->cur_path;    PathCurve * cur_curve;    PathSegment * cur_segment;    gint grab_pointer;
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
@@ -2982,7 +2982,7 @@ endif|PATH_TOOL_DEBUG
 end_endif
 
 begin_ifdef
-unit|return 0;    }        draw_core_pause (path_tool->core, tool);        if (path_tool->active_count == 1&& path_tool->single_active_segment != NULL&& (path_tool->single_active_segment->prev == NULL || path_tool->single_active_segment->next == NULL)) {       cur_segment = path_tool->single_active_segment;       cur_curve = cur_segment->parent;        path_set_flags (path_tool, cur_path, NULL, NULL, 0, SEGMENT_ACTIVE);        if (cur_segment->next == NULL) 	 cur_curve->cur_segment = path_append_segment(cur_path, cur_curve, SEGMENT_BEZIER, path_tool->click_x, path_tool->click_y);       else 	 cur_curve->cur_segment = path_prepend_segment(cur_path, cur_curve, SEGMENT_BEZIER, path_tool->click_x, path_tool->click_y);       if (cur_curve->cur_segment) { 	 path_set_flags (path_tool, cur_path, cur_curve, cur_curve->cur_segment, SEGMENT_ACTIVE, 0);       }    } else {       if (path_tool->active_count == 0) { 	 path_set_flags (path_tool, cur_path, NULL, NULL, 0, SEGMENT_ACTIVE); 	 cur_path->cur_curve = path_add_curve(cur_path, path_tool->click_x, path_tool->click_y); 	 path_set_flags (path_tool, cur_path, cur_path->cur_curve, cur_path->cur_curve->segments, SEGMENT_ACTIVE, 0);       } else { 	 path_set_flags (path_tool, cur_path, NULL, NULL, 0, SEGMENT_ACTIVE);       }    }        draw_core_resume(path_tool->core, tool);     return 0; }  gint path_tool_button_press_curve (Tool *tool, 			      GdkEventButton *bevent, 			      GDisplay *gdisp) {    PathTool *path_tool = tool->private;        NPath * cur_path = path_tool->cur_path;    PathSegment * cur_segment;    gint grab_pointer;
+unit|return 0;    }        draw_core_pause (path_tool->core, tool);        if (path_tool->active_count == 1&& path_tool->single_active_segment != NULL&& (path_tool->single_active_segment->prev == NULL || path_tool->single_active_segment->next == NULL)) {       cur_segment = path_tool->single_active_segment;       cur_curve = cur_segment->parent;        path_set_flags (path_tool, cur_path, NULL, NULL, 0, SEGMENT_ACTIVE);        if (cur_segment->next == NULL) 	 cur_curve->cur_segment = path_append_segment(cur_path, cur_curve, SEGMENT_BEZIER, path_tool->click_x, path_tool->click_y);       else 	 cur_curve->cur_segment = path_prepend_segment(cur_path, cur_curve, SEGMENT_BEZIER, path_tool->click_x, path_tool->click_y);       if (cur_curve->cur_segment) { 	 path_set_flags (path_tool, cur_path, cur_curve, cur_curve->cur_segment, SEGMENT_ACTIVE, 0);       }    } else {       if (path_tool->active_count == 0) { 	 path_set_flags (path_tool, cur_path, NULL, NULL, 0, SEGMENT_ACTIVE); 	 cur_path->cur_curve = path_add_curve(cur_path, path_tool->click_x, path_tool->click_y); 	 path_set_flags (path_tool, cur_path, cur_path->cur_curve, cur_path->cur_curve->segments, SEGMENT_ACTIVE, 0);       } else { 	 path_set_flags (path_tool, cur_path, NULL, NULL, 0, SEGMENT_ACTIVE);       }    }        draw_core_resume(path_tool->core, tool);     return 0; }  gint path_tool_button_press_curve (Tool *tool, 			      GdkEventButton *bevent, 			      GimpDisplay *gdisp) {    PathTool *path_tool = tool->private;        NPath * cur_path = path_tool->cur_path;    PathSegment * cur_segment;    gint grab_pointer;
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
@@ -3010,7 +3010,7 @@ endif|PATH_TOOL_DEBUG
 end_endif
 
 begin_ifdef
-unit|return 0;    }        draw_core_pause (path_tool->core, tool);        if (path_tool->click_modifier& GDK_SHIFT_MASK) {       cur_segment = path_curve_insert_anchor (path_tool, path_tool->click_segment, path_tool->click_position);       path_set_flags (path_tool, cur_path, NULL, NULL, 0, SEGMENT_ACTIVE);       path_set_flags (path_tool, cur_path, path_tool->click_curve, cur_segment, SEGMENT_ACTIVE, 0);       path_tool->click_type = ON_ANCHOR;       path_tool->click_segment = cur_segment;     } else {       path_set_flags (path_tool, cur_path, NULL, NULL, 0, SEGMENT_ACTIVE);       path_set_flags (path_tool, cur_path, path_tool->click_curve, path_tool->click_segment, SEGMENT_ACTIVE, 0);       path_set_flags (path_tool, cur_path, path_tool->click_curve, path_tool->click_segment->next, SEGMENT_ACTIVE, 0);    }    draw_core_resume(path_tool->core, tool);     return 0; }  void path_tool_button_release (Tool           *tool, 			  GdkEventButton *bevent, 			  GDisplay       *gdisp) {    PathTool * path_tool;
+unit|return 0;    }        draw_core_pause (path_tool->core, tool);        if (path_tool->click_modifier& GDK_SHIFT_MASK) {       cur_segment = path_curve_insert_anchor (path_tool, path_tool->click_segment, path_tool->click_position);       path_set_flags (path_tool, cur_path, NULL, NULL, 0, SEGMENT_ACTIVE);       path_set_flags (path_tool, cur_path, path_tool->click_curve, cur_segment, SEGMENT_ACTIVE, 0);       path_tool->click_type = ON_ANCHOR;       path_tool->click_segment = cur_segment;     } else {       path_set_flags (path_tool, cur_path, NULL, NULL, 0, SEGMENT_ACTIVE);       path_set_flags (path_tool, cur_path, path_tool->click_curve, path_tool->click_segment, SEGMENT_ACTIVE, 0);       path_set_flags (path_tool, cur_path, path_tool->click_curve, path_tool->click_segment->next, SEGMENT_ACTIVE, 0);    }    draw_core_resume(path_tool->core, tool);     return 0; }  void path_tool_button_release (Tool           *tool, 			  GdkEventButton *bevent, 			  GimpDisplay    *gdisp) {    PathTool * path_tool;
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
@@ -3029,7 +3029,7 @@ comment|/**************************************************************  * The m
 end_comment
 
 begin_comment
-unit|void path_tool_motion (Tool           *tool, 		  GdkEventMotion *mevent, 		  GDisplay       *gdisp) {    PathTool * path_tool;     if (gtk_events_pending()) return;        path_tool = (PathTool *) tool->private;     switch (path_tool->click_type) {    case ON_ANCHOR:       path_tool_motion_anchor (tool, mevent, gdisp);       break;    case ON_HANDLE:       path_tool_motion_handle (tool, mevent, gdisp);       break;    case ON_CURVE:       path_tool_motion_curve (tool, mevent, gdisp);       break;    default:       return;    }  }  void path_tool_motion_anchor (Tool           *tool, 		         GdkEventMotion *mevent, 		         GDisplay       *gdisp) {    PathTool * path_tool;    gdouble dx, dy, d;    gint x,y;    static gint dxsum = 0;    static gint dysum = 0;        path_tool = (PathTool *) tool->private;
+unit|void path_tool_motion (Tool           *tool, 		  GdkEventMotion *mevent, 		  GimpDisplay    *gdisp) {    PathTool * path_tool;     if (gtk_events_pending()) return;        path_tool = (PathTool *) tool->private;     switch (path_tool->click_type) {    case ON_ANCHOR:       path_tool_motion_anchor (tool, mevent, gdisp);       break;    case ON_HANDLE:       path_tool_motion_handle (tool, mevent, gdisp);       break;    case ON_CURVE:       path_tool_motion_curve (tool, mevent, gdisp);       break;    default:       return;    }  }  void path_tool_motion_anchor (Tool           *tool, 		         GdkEventMotion *mevent, 		         GimpDisplay    *gdisp) {    PathTool * path_tool;    gdouble dx, dy, d;    gint x,y;    static gint dxsum = 0;    static gint dysum = 0;        path_tool = (PathTool *) tool->private;
 comment|/*     * Dont do anything, if the user clicked with pressed CONTROL-Key,     * because he deleted an anchor.     */
 end_comment
 
@@ -3039,12 +3039,12 @@ comment|/* restrict to horizontal/vertical lines, if modifiers are pressed     *
 end_comment
 
 begin_comment
-unit|if (mevent->state& GDK_MOD1_MASK)    {       if (mevent->state& GDK_CONTROL_MASK)       { 	 d  = (fabs(dx) + fabs(dy)) / 2;   	 d  = (fabs(x - path_tool->click_x) + fabs(y - path_tool->click_y)) / 2;   	  	 dx = ((x< path_tool->click_x) ? -d : d ) - dxsum; 	 dy = ((y< path_tool->click_y) ? -d : d ) - dysum;       }       else 	 dx = - dxsum;    }    else if (mevent->state& GDK_CONTROL_MASK)       dy = - dysum;         path_tool->draw |= PATH_TOOL_REDRAW_ACTIVE;        draw_core_pause(path_tool->core, tool);     path_offset_active (path_tool->cur_path, dx, dy);     dxsum += dx;    dysum += dy;     draw_core_resume (path_tool->core, tool);        path_tool->draw&= ~PATH_TOOL_REDRAW_ACTIVE;  }  void path_tool_motion_handle (Tool           *tool, 		         GdkEventMotion *mevent, 		         GDisplay       *gdisp) {    PathTool * path_tool;    gdouble dx, dy;    gint x,y;    static gint dxsum = 0;    static gint dysum = 0;        path_tool = (PathTool *) tool->private;
+unit|if (mevent->state& GDK_MOD1_MASK)    {       if (mevent->state& GDK_CONTROL_MASK)       { 	 d  = (fabs(dx) + fabs(dy)) / 2;   	 d  = (fabs(x - path_tool->click_x) + fabs(y - path_tool->click_y)) / 2;   	  	 dx = ((x< path_tool->click_x) ? -d : d ) - dxsum; 	 dy = ((y< path_tool->click_y) ? -d : d ) - dysum;       }       else 	 dx = - dxsum;    }    else if (mevent->state& GDK_CONTROL_MASK)       dy = - dysum;         path_tool->draw |= PATH_TOOL_REDRAW_ACTIVE;        draw_core_pause(path_tool->core, tool);     path_offset_active (path_tool->cur_path, dx, dy);     dxsum += dx;    dysum += dy;     draw_core_resume (path_tool->core, tool);        path_tool->draw&= ~PATH_TOOL_REDRAW_ACTIVE;  }  void path_tool_motion_handle (Tool           *tool, 		         GdkEventMotion *mevent, 		         GimpDisplay    *gdisp) {    PathTool * path_tool;    gdouble dx, dy;    gint x,y;    static gint dxsum = 0;    static gint dysum = 0;        path_tool = (PathTool *) tool->private;
 comment|/*     * Dont do anything, if the user clicked with pressed CONTROL-Key,     * because he moved the handle to the anchor an anchor.      * XXX: Not yet! :-)     */
 end_comment
 
 begin_ifdef
-unit|if (path_tool->click_modifier& GDK_CONTROL_MASK)       return;        if (!(path_tool->state& PATH_TOOL_DRAG))    {       path_tool->state |= PATH_TOOL_DRAG;       dxsum = 0;       dysum = 0;    }     gdisplay_untransform_coords (gdisp, mevent->x, mevent->y,&x,&y, TRUE, 0);        dx = x - path_tool->click_x - dxsum;    dy = y - path_tool->click_y - dysum;        path_tool->draw |= PATH_TOOL_REDRAW_ACTIVE;        draw_core_pause(path_tool->core, tool);     path_curve_drag_handle (path_tool, path_tool->click_segment, dx, dy, path_tool->click_handle_id);     dxsum += dx;    dysum += dy;     draw_core_resume (path_tool->core, tool);        path_tool->draw&= ~PATH_TOOL_REDRAW_ACTIVE;  }      void path_tool_motion_curve (Tool           *tool, 		        GdkEventMotion *mevent, 		        GDisplay       *gdisp) {    PathTool * path_tool;    gdouble dx, dy;    gint x,y;    static gint dxsum = 0;    static gint dysum = 0;        path_tool = (PathTool *) tool->private;        if (!(path_tool->state& PATH_TOOL_DRAG))    {       path_tool->state |= PATH_TOOL_DRAG;       dxsum = 0;       dysum = 0;    }     gdisplay_untransform_coords (gdisp, mevent->x, mevent->y,&x,&y, TRUE, 0);        dx = x - path_tool->click_x - dxsum;    dy = y - path_tool->click_y - dysum;        path_tool->draw |= PATH_TOOL_REDRAW_ACTIVE;        draw_core_pause(path_tool->core, tool);     path_curve_drag_segment (path_tool, path_tool->click_segment, path_tool->click_position, dx, dy);     dxsum += dx;    dysum += dy;     draw_core_resume (path_tool->core, tool);        path_tool->draw&= ~PATH_TOOL_REDRAW_ACTIVE;  }      void path_tool_cursor_update (Tool           *tool, 			 GdkEventMotion *mevent, 			 GDisplay       *gdisp) {    PathTool *path_tool;    gint     x, y, halfwidth, dummy, cursor_location;
+unit|if (path_tool->click_modifier& GDK_CONTROL_MASK)       return;        if (!(path_tool->state& PATH_TOOL_DRAG))    {       path_tool->state |= PATH_TOOL_DRAG;       dxsum = 0;       dysum = 0;    }     gdisplay_untransform_coords (gdisp, mevent->x, mevent->y,&x,&y, TRUE, 0);        dx = x - path_tool->click_x - dxsum;    dy = y - path_tool->click_y - dysum;        path_tool->draw |= PATH_TOOL_REDRAW_ACTIVE;        draw_core_pause(path_tool->core, tool);     path_curve_drag_handle (path_tool, path_tool->click_segment, dx, dy, path_tool->click_handle_id);     dxsum += dx;    dysum += dy;     draw_core_resume (path_tool->core, tool);        path_tool->draw&= ~PATH_TOOL_REDRAW_ACTIVE;  }      void path_tool_motion_curve (Tool           *tool, 		        GdkEventMotion *mevent, 		        GimpDisplay    *gdisp) {    PathTool * path_tool;    gdouble dx, dy;    gint x,y;    static gint dxsum = 0;    static gint dysum = 0;        path_tool = (PathTool *) tool->private;        if (!(path_tool->state& PATH_TOOL_DRAG))    {       path_tool->state |= PATH_TOOL_DRAG;       dxsum = 0;       dysum = 0;    }     gdisplay_untransform_coords (gdisp, mevent->x, mevent->y,&x,&y, TRUE, 0);        dx = x - path_tool->click_x - dxsum;    dy = y - path_tool->click_y - dysum;        path_tool->draw |= PATH_TOOL_REDRAW_ACTIVE;        draw_core_pause(path_tool->core, tool);     path_curve_drag_segment (path_tool, path_tool->click_segment, path_tool->click_position, dx, dy);     dxsum += dx;    dysum += dy;     draw_core_resume (path_tool->core, tool);        path_tool->draw&= ~PATH_TOOL_REDRAW_ACTIVE;  }      void path_tool_cursor_update (Tool           *tool, 			 GdkEventMotion *mevent, 			 GimpDisplay    *gdisp) {    PathTool *path_tool;    gint     x, y, halfwidth, dummy, cursor_location;
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
@@ -3071,7 +3071,7 @@ comment|/**************************************************************  * Tool-
 end_comment
 
 begin_ifdef
-unit|void path_tool_control (Tool       *tool, 		   ToolAction  action, 		   GDisplay   *gdisp) {    PathTool * path_tool;
+unit|void path_tool_control (Tool        *tool, 		   ToolAction   action, 		   GimpDisplay *gdisp) {    PathTool * path_tool;
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
@@ -3118,7 +3118,7 @@ comment|/*  The tool options  */
 end_comment
 
 begin_ifdef
-unit|if (! path_options)       {          path_options = tool_options_new (_("Path Tool"));          tools_register (PATH_TOOL, (GimpToolOptions *) path_options);       }     tool = tools_new_tool (PATH_TOOL);    private = g_new0 (PathTool, 1);     private->click_type       = ON_CANVAS;    private->click_x         = 0;    private->click_y         = 0;    private->click_halfwidth = 0;    private->click_modifier  = 0;    private->click_path      = NULL;    private->click_curve     = NULL;    private->click_segment   = NULL;    private->click_position  = -1;     private->active_count    = 0;    private->single_active_segment = NULL;     private->state           = 0;    private->draw            = PATH_TOOL_REDRAW_ALL;    private->core            = draw_core_new (path_tool_draw);    private->cur_path        = g_new0(NPath, 1);    private->scanlines       = NULL;      tool->private = (void *) private;      tool->button_press_func   = path_tool_button_press;    tool->button_release_func = path_tool_button_release;    tool->motion_func         = path_tool_motion;    tool->cursor_update_func  = path_tool_cursor_update;    tool->control_func        = path_tool_control;     private->cur_path->curves    = NULL;    private->cur_path->cur_curve = NULL;    private->cur_path->name      = g_string_new("Path 0");    private->cur_path->state     = 0;    private->cur_path->path_tool = private;        return tool; }  void tools_free_path_tool (Tool *tool) {    GDisplay * gdisp;    PathTool * path_tool;
+unit|if (! path_options)       {          path_options = tool_options_new (_("Path Tool"));          tools_register (PATH_TOOL, (GimpToolOptions *) path_options);       }     tool = tools_new_tool (PATH_TOOL);    private = g_new0 (PathTool, 1);     private->click_type       = ON_CANVAS;    private->click_x         = 0;    private->click_y         = 0;    private->click_halfwidth = 0;    private->click_modifier  = 0;    private->click_path      = NULL;    private->click_curve     = NULL;    private->click_segment   = NULL;    private->click_position  = -1;     private->active_count    = 0;    private->single_active_segment = NULL;     private->state           = 0;    private->draw            = PATH_TOOL_REDRAW_ALL;    private->core            = draw_core_new (path_tool_draw);    private->cur_path        = g_new0(NPath, 1);    private->scanlines       = NULL;      tool->private = (void *) private;      tool->button_press_func   = path_tool_button_press;    tool->button_release_func = path_tool_button_release;    tool->motion_func         = path_tool_motion;    tool->cursor_update_func  = path_tool_cursor_update;    tool->control_func        = path_tool_control;     private->cur_path->curves    = NULL;    private->cur_path->cur_curve = NULL;    private->cur_path->name      = g_string_new("Path 0");    private->cur_path->state     = 0;    private->cur_path->path_tool = private;        return tool; }  void tools_free_path_tool (Tool *tool) {    GimpDisplay * gdisp;    PathTool * path_tool;
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
@@ -3156,7 +3156,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon292d64490108
+DECL|struct|__anon28dd23000108
 typedef|typedef
 struct|struct
 block|{
@@ -3514,7 +3514,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon292d64490208
+DECL|struct|__anon28dd23000208
 typedef|typedef
 struct|struct
 block|{
@@ -3856,7 +3856,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon292d64490308
+DECL|struct|__anon28dd23000308
 typedef|typedef
 struct|struct
 block|{
@@ -4174,7 +4174,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon292d64490408
+DECL|struct|__anon28dd23000408
 typedef|typedef
 struct|struct
 block|{
@@ -4332,7 +4332,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon292d64490508
+DECL|struct|__anon28dd23000508
 typedef|typedef
 struct|struct
 block|{
@@ -4655,7 +4655,7 @@ block|{
 if|#
 directive|if
 literal|0
-block|Tool     * tool = (Tool *) tool_ptr;    GDisplay * gdisp;    PathTool * path_tool;    DrawCore * core;    gint x1, y1;    gboolean draw = TRUE;        if (!tool) {
+block|Tool     * tool = (Tool *) tool_ptr;    GimpDisplay * gdisp;    PathTool * path_tool;    DrawCore * core;    gint x1, y1;    gboolean draw = TRUE;        if (!tool) {
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
@@ -4683,7 +4683,7 @@ literal|0
 end_if
 
 begin_ifdef
-unit|void path_tool_draw (Tool *tool) {    GDisplay * gdisp;    NPath * cur_path;    PathTool * path_tool;
+unit|void path_tool_draw (Tool *tool) {    GimpDisplay * gdisp;    NPath * cur_path;    PathTool * path_tool;
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG

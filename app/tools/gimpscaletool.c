@@ -119,7 +119,7 @@ name|GimpTransformTool
 modifier|*
 name|tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -138,7 +138,7 @@ name|GimpScaleTool
 modifier|*
 name|tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -154,7 +154,7 @@ name|GimpScaleTool
 modifier|*
 name|tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -639,14 +639,14 @@ begin_function
 specifier|static
 name|TileManager
 modifier|*
-DECL|function|gimp_scale_tool_transform (GimpTransformTool * tr_tool,GDisplay * gdisp,TransformState state)
+DECL|function|gimp_scale_tool_transform (GimpTransformTool * tr_tool,GimpDisplay * gdisp,TransformState state)
 name|gimp_scale_tool_transform
 parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tr_tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -1892,14 +1892,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_scale_tool_motion (GimpScaleTool * sc_tool,GDisplay * gdisp)
+DECL|function|gimp_scale_tool_motion (GimpScaleTool * sc_tool,GimpDisplay * gdisp)
 name|gimp_scale_tool_motion
 parameter_list|(
 name|GimpScaleTool
 modifier|*
 name|sc_tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -2449,14 +2449,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_scale_tool_recalc (GimpScaleTool * sc_tool,GDisplay * gdisp)
+DECL|function|gimp_scale_tool_recalc (GimpScaleTool * sc_tool,GimpDisplay * gdisp)
 name|gimp_scale_tool_recalc
 parameter_list|(
 name|GimpScaleTool
 modifier|*
 name|sc_tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -2849,7 +2849,7 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|gimp_scale_tool_scale (GimpImage * gimage,GimpDrawable * drawable,GDisplay * gdisp,gdouble * trans_info,TileManager * float_tiles,gboolean interpolation,GimpMatrix3 matrix)
+DECL|function|gimp_scale_tool_scale (GimpImage * gimage,GimpDrawable * drawable,GimpDisplay * gdisp,gdouble * trans_info,TileManager * float_tiles,gboolean interpolation,GimpMatrix3 matrix)
 name|gimp_scale_tool_scale
 parameter_list|(
 name|GimpImage
@@ -2860,7 +2860,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,

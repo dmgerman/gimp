@@ -20,7 +20,9 @@ begin_function_decl
 name|void
 name|file_open_dialog_menu_init
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -38,15 +40,21 @@ begin_function_decl
 name|void
 name|file_open_dialog_show
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|GimpPDBStatusType
 name|file_open_with_display
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*

@@ -96,12 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
 end_include
 
@@ -112,15 +106,17 @@ file|"nav_window.h"
 end_include
 
 begin_define
-DECL|macro|return_if_no_display (gdisp)
+DECL|macro|return_if_no_display (gdisp,data)
 define|#
 directive|define
 name|return_if_no_display
 parameter_list|(
 name|gdisp
+parameter_list|,
+name|data
 parameter_list|)
 define|\
-value|gdisp = gimp_context_get_display (gimp_get_user_context (the_gimp)); \         if (!gdisp) return
+value|gdisp = gimp_context_get_display (gimp_get_user_context (GIMP (data))); \   if (! gdisp) \     return
 end_define
 
 begin_function
@@ -143,6 +139,8 @@ decl_stmt|;
 name|return_if_no_display
 argument_list|(
 name|gdisp
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|gimp_display_scale
@@ -175,6 +173,8 @@ decl_stmt|;
 name|return_if_no_display
 argument_list|(
 name|gdisp
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|gimp_display_scale
@@ -210,6 +210,8 @@ decl_stmt|;
 name|return_if_no_display
 argument_list|(
 name|gdisp
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|gimp_display_scale
@@ -242,6 +244,8 @@ decl_stmt|;
 name|return_if_no_display
 argument_list|(
 name|gdisp
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|gdisplay_set_dot_for_dot
@@ -279,6 +283,8 @@ decl_stmt|;
 name|return_if_no_display
 argument_list|(
 name|gdisp
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 if|if
@@ -321,7 +327,13 @@ block|}
 else|else
 block|{
 name|info_window_follow_auto
-argument_list|()
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -347,6 +359,8 @@ decl_stmt|;
 name|return_if_no_display
 argument_list|(
 name|gdisp
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 if|if
@@ -412,6 +426,8 @@ decl_stmt|;
 name|return_if_no_display
 argument_list|(
 name|gdisp
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|new_val
@@ -469,6 +485,8 @@ decl_stmt|;
 name|return_if_no_display
 argument_list|(
 name|gdisp
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 if|if
@@ -598,6 +616,8 @@ decl_stmt|;
 name|return_if_no_display
 argument_list|(
 name|gdisp
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 if|if
@@ -668,12 +688,14 @@ name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|gint
+name|gboolean
 name|old_val
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
 name|gdisp
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|old_val
@@ -742,6 +764,8 @@ decl_stmt|;
 name|return_if_no_display
 argument_list|(
 name|gdisp
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|gdisp
@@ -778,6 +802,8 @@ decl_stmt|;
 name|return_if_no_display
 argument_list|(
 name|gdisp
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|gdisplay_new_view
@@ -808,6 +834,8 @@ decl_stmt|;
 name|return_if_no_display
 argument_list|(
 name|gdisp
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|gimp_display_scale_shrink_wrap

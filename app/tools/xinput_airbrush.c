@@ -3287,7 +3287,7 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -3327,7 +3327,7 @@ decl_stmt|;
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|gdisp_ptr
@@ -3733,7 +3733,7 @@ name|gpointer
 name|gdisp_ptr
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -3748,7 +3748,7 @@ decl_stmt|;
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|gdisp_ptr
@@ -4155,7 +4155,7 @@ name|gpointer
 name|gdisp_ptr
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -4228,7 +4228,7 @@ decl_stmt|;
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|gdisp_ptr
@@ -4805,7 +4805,7 @@ name|gpointer
 name|gdisp_ptr
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -4826,7 +4826,7 @@ decl_stmt|;
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|gdisp_ptr

@@ -132,12 +132,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"colormaps.h"
 end_include
 
@@ -174,7 +168,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28cbaf3a0103
+DECL|enum|__anon29472f100103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -199,7 +193,9 @@ specifier|static
 name|PrefsState
 name|prefs_check_settings
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1132,11 +1128,11 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|prefs_dlg
+DECL|variable|prefs_dialog
 specifier|static
 name|GtkWidget
 modifier|*
-name|prefs_dlg
+name|prefs_dialog
 init|=
 name|NULL
 decl_stmt|;
@@ -1265,16 +1261,18 @@ end_function
 begin_function
 specifier|static
 name|PrefsState
-DECL|function|prefs_check_settings (void)
+DECL|function|prefs_check_settings (Gimp * gimp)
 name|prefs_check_settings
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 comment|/*  First, check for invalid values...  */
 if|if
 condition|(
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -1291,7 +1289,7 @@ literal|"Error: Levels of undo must be zero or greater."
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -1332,7 +1330,7 @@ return|;
 block|}
 if|if
 condition|(
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -1349,7 +1347,7 @@ literal|"Error: Default width must be one or greater."
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -1363,7 +1361,7 @@ return|;
 block|}
 if|if
 condition|(
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -1380,7 +1378,7 @@ literal|"Error: Default height must be one or greater."
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -1394,7 +1392,7 @@ return|;
 block|}
 if|if
 condition|(
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -1402,7 +1400,7 @@ name|default_units
 operator|<
 name|GIMP_UNIT_INCH
 operator|||
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -1420,7 +1418,7 @@ literal|"Error: Default unit must be within unit range."
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -1434,7 +1432,7 @@ return|;
 block|}
 if|if
 condition|(
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -1442,7 +1440,7 @@ name|default_xresolution
 operator|<
 name|GIMP_MIN_RESOLUTION
 operator|||
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -1459,7 +1457,7 @@ literal|"Error: Default resolution must not be zero."
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -1467,7 +1465,7 @@ name|default_xresolution
 operator|=
 name|old_default_xresolution
 expr_stmt|;
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -1481,7 +1479,7 @@ return|;
 block|}
 if|if
 condition|(
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -1489,7 +1487,7 @@ name|default_resolution_units
 operator|<
 name|GIMP_UNIT_INCH
 operator|||
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -1507,7 +1505,7 @@ literal|"Error: Default resolution unit must be within unit range."
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -1749,7 +1747,7 @@ name|prefs_save_callback
 argument_list|(
 name|widget
 argument_list|,
-name|prefs_dlg
+name|prefs_dialog
 argument_list|)
 expr_stmt|;
 name|gtk_widget_destroy
@@ -1966,13 +1964,34 @@ modifier|*
 name|dlg
 parameter_list|)
 block|{
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
 name|PrefsState
 name|state
 decl_stmt|;
+name|gimp
+operator|=
+name|GIMP
+argument_list|(
+name|g_object_get_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|dlg
+argument_list|)
+argument_list|,
+literal|"gimp"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|state
 operator|=
 name|prefs_check_settings
-argument_list|()
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 switch|switch
 condition|(
@@ -1989,7 +2008,7 @@ name|PREFS_RESTART
 case|:
 name|gtk_widget_set_sensitive
 argument_list|(
-name|prefs_dlg
+name|prefs_dialog
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2039,17 +2058,13 @@ break|break;
 block|}
 if|if
 condition|(
-name|prefs_dlg
+name|prefs_dialog
 condition|)
 block|{
 name|gtk_widget_destroy
 argument_list|(
-name|prefs_dlg
+name|prefs_dialog
 argument_list|)
-expr_stmt|;
-name|prefs_dlg
-operator|=
-name|NULL
 expr_stmt|;
 block|}
 block|}
@@ -2070,6 +2085,13 @@ modifier|*
 name|dlg
 parameter_list|)
 block|{
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
+name|PrefsState
+name|state
+decl_stmt|;
 name|GList
 modifier|*
 name|update
@@ -2084,9 +2106,6 @@ init|=
 name|NULL
 decl_stmt|;
 comment|/*  options that should be commented out       */
-name|PrefsState
-name|state
-decl_stmt|;
 name|gboolean
 name|save_stingy_memory_use
 decl_stmt|;
@@ -2147,10 +2166,27 @@ name|gchar
 modifier|*
 name|save_theme_path
 decl_stmt|;
+name|gimp
+operator|=
+name|GIMP
+argument_list|(
+name|g_object_get_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|dlg
+argument_list|)
+argument_list|,
+literal|"gimp"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|state
 operator|=
 name|prefs_check_settings
-argument_list|()
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 switch|switch
 condition|(
@@ -2167,7 +2203,7 @@ name|PREFS_RESTART
 case|:
 name|gtk_widget_set_sensitive
 argument_list|(
-name|prefs_dlg
+name|prefs_dialog
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2215,12 +2251,8 @@ break|break;
 block|}
 name|gtk_widget_destroy
 argument_list|(
-name|prefs_dlg
+name|prefs_dialog
 argument_list|)
-expr_stmt|;
-name|prefs_dlg
-operator|=
-name|NULL
 expr_stmt|;
 comment|/*  Save variables so that we can restore them later  */
 name|save_stingy_memory_use
@@ -2285,7 +2317,7 @@ name|swap_path
 expr_stmt|;
 name|save_plug_in_path
 operator|=
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -2293,7 +2325,7 @@ name|plug_in_path
 expr_stmt|;
 name|save_module_path
 operator|=
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -2301,7 +2333,7 @@ name|module_path
 expr_stmt|;
 name|save_brush_path
 operator|=
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -2309,7 +2341,7 @@ name|brush_path
 expr_stmt|;
 name|save_pattern_path
 operator|=
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -2317,7 +2349,7 @@ name|pattern_path
 expr_stmt|;
 name|save_palette_path
 operator|=
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -2325,7 +2357,7 @@ name|palette_path
 expr_stmt|;
 name|save_gradient_path
 operator|=
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -2339,7 +2371,7 @@ name|theme_path
 expr_stmt|;
 if|if
 condition|(
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -2669,7 +2701,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -2677,7 +2709,7 @@ name|default_width
 operator|!=
 name|old_default_width
 operator|||
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -2698,7 +2730,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -2721,7 +2753,7 @@ if|if
 condition|(
 name|ABS
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -2747,7 +2779,7 @@ if|if
 condition|(
 name|ABS
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -2771,7 +2803,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -2792,7 +2824,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -2815,7 +2847,7 @@ if|if
 condition|(
 name|prefs_strcmp
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -3110,7 +3142,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -3558,7 +3590,7 @@ name|edit_plug_in_path
 argument_list|)
 condition|)
 block|{
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -3586,7 +3618,7 @@ name|edit_module_path
 argument_list|)
 condition|)
 block|{
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -3614,7 +3646,7 @@ name|edit_brush_path
 argument_list|)
 condition|)
 block|{
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -3642,7 +3674,7 @@ name|edit_pattern_path
 argument_list|)
 condition|)
 block|{
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -3670,7 +3702,7 @@ name|edit_palette_path
 argument_list|)
 condition|)
 block|{
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -3698,7 +3730,7 @@ name|edit_gradient_path
 argument_list|)
 condition|)
 block|{
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -3855,7 +3887,7 @@ name|swap_path
 operator|=
 name|save_swap_path
 expr_stmt|;
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -3863,7 +3895,7 @@ name|plug_in_path
 operator|=
 name|save_plug_in_path
 expr_stmt|;
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -3871,7 +3903,7 @@ name|module_path
 operator|=
 name|save_module_path
 expr_stmt|;
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -3879,7 +3911,7 @@ name|brush_path
 operator|=
 name|save_brush_path
 expr_stmt|;
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -3887,7 +3919,7 @@ name|pattern_path
 operator|=
 name|save_pattern_path
 expr_stmt|;
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -3895,7 +3927,7 @@ name|palette_path
 operator|=
 name|save_palette_path
 expr_stmt|;
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -3938,14 +3970,29 @@ modifier|*
 name|dlg
 parameter_list|)
 block|{
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
+name|gimp
+operator|=
+name|GIMP
+argument_list|(
+name|g_object_get_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|dlg
+argument_list|)
+argument_list|,
+literal|"gimp"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
 name|dlg
 argument_list|)
-expr_stmt|;
-name|prefs_dlg
-operator|=
-name|NULL
 expr_stmt|;
 comment|/*  restore ordinary gimprc variables  */
 name|base_config
@@ -3960,7 +4007,7 @@ name|num_processors
 operator|=
 name|old_num_processors
 expr_stmt|;
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -3968,7 +4015,7 @@ name|default_type
 operator|=
 name|old_default_type
 expr_stmt|;
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -3976,7 +4023,7 @@ name|default_width
 operator|=
 name|old_default_width
 expr_stmt|;
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -3984,7 +4031,7 @@ name|default_height
 operator|=
 name|old_default_height
 expr_stmt|;
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -3992,7 +4039,7 @@ name|default_units
 operator|=
 name|old_default_units
 expr_stmt|;
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -4000,7 +4047,7 @@ name|default_xresolution
 operator|=
 name|old_default_xresolution
 expr_stmt|;
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -4008,7 +4055,7 @@ name|default_yresolution
 operator|=
 name|old_default_yresolution
 expr_stmt|;
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -4016,7 +4063,7 @@ name|default_resolution_units
 operator|=
 name|old_default_resolution_units
 expr_stmt|;
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -4024,7 +4071,7 @@ name|levels_of_undo
 operator|=
 name|old_levels_of_undo
 expr_stmt|;
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -4236,7 +4283,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_container_foreach
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|images
 argument_list|,
@@ -4268,7 +4315,7 @@ expr_stmt|;
 name|prefs_strset
 argument_list|(
 operator|&
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -4279,7 +4326,7 @@ argument_list|)
 expr_stmt|;
 name|tool_manager_set_global_paint_options
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|,
 name|old_global_paint_options
 argument_list|)
@@ -4411,10 +4458,40 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+name|GtkWidget
+modifier|*
+name|dialog
+decl_stmt|;
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
 name|gint
 modifier|*
 name|val
 decl_stmt|;
+name|dialog
+operator|=
+name|gtk_widget_get_toplevel
+argument_list|(
+name|widget
+argument_list|)
+expr_stmt|;
+name|gimp
+operator|=
+name|GIMP
+argument_list|(
+name|g_object_get_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+literal|"gimp"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|val
 operator|=
 operator|(
@@ -4578,7 +4655,7 @@ operator|||
 name|data
 operator|==
 operator|&
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -4587,7 +4664,7 @@ operator|||
 name|data
 operator|==
 operator|&
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -4684,7 +4761,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_container_foreach
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|images
 argument_list|,
@@ -4716,7 +4793,7 @@ condition|)
 block|{
 name|tool_manager_set_global_paint_options
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|,
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -5155,7 +5232,18 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|the_gimp
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
+name|gimp
+operator|=
+name|GIMP
+argument_list|(
+name|data
+argument_list|)
+expr_stmt|;
+name|gimp
 operator|->
 name|config
 operator|->
@@ -5174,7 +5262,7 @@ literal|0
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -5193,7 +5281,7 @@ literal|1
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -5226,6 +5314,14 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
+name|dialog
+decl_stmt|;
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|size_sizeentry
 decl_stmt|;
 specifier|static
@@ -5246,6 +5342,28 @@ decl_stmt|;
 name|gdouble
 name|new_yres
 decl_stmt|;
+name|dialog
+operator|=
+name|gtk_widget_get_toplevel
+argument_list|(
+name|widget
+argument_list|)
+expr_stmt|;
+name|gimp
+operator|=
+name|GIMP
+argument_list|(
+name|g_object_get_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+literal|"gimp"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|new_xres
 operator|=
 name|gimp_size_entry_get_refval
@@ -5401,7 +5519,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -5420,7 +5538,7 @@ literal|0
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -5439,7 +5557,7 @@ literal|1
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -5447,7 +5565,7 @@ name|default_xresolution
 operator|=
 name|xres
 expr_stmt|;
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -5455,7 +5573,7 @@ name|default_yresolution
 operator|=
 name|yres
 expr_stmt|;
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -6245,7 +6363,7 @@ name|g_object_get_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|prefs_dlg
+name|prefs_dialog
 argument_list|)
 argument_list|,
 literal|"notebook"
@@ -6300,10 +6418,12 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|preferences_dialog_create (void)
+DECL|function|preferences_dialog_create (Gimp * gimp)
 name|preferences_dialog_create
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|GtkWidget
@@ -6430,12 +6550,22 @@ name|gchar
 modifier|*
 name|pixels_per_unit
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
-name|prefs_dlg
+name|prefs_dialog
 condition|)
 return|return
-name|prefs_dlg
+name|prefs_dialog
 return|;
 if|if
 condition|(
@@ -6521,7 +6651,7 @@ name|edit_plug_in_path
 operator|=
 name|prefs_strdup
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -6532,7 +6662,7 @@ name|edit_module_path
 operator|=
 name|prefs_strdup
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -6543,7 +6673,7 @@ name|edit_brush_path
 operator|=
 name|prefs_strdup
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -6554,7 +6684,7 @@ name|edit_pattern_path
 operator|=
 name|prefs_strdup
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -6565,7 +6695,7 @@ name|edit_palette_path
 operator|=
 name|prefs_strdup
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -6576,7 +6706,7 @@ name|edit_gradient_path
 operator|=
 name|prefs_strdup
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -6615,7 +6745,7 @@ name|num_processors
 expr_stmt|;
 name|old_default_type
 operator|=
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -6623,7 +6753,7 @@ name|default_type
 expr_stmt|;
 name|old_default_width
 operator|=
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -6631,7 +6761,7 @@ name|default_width
 expr_stmt|;
 name|old_default_height
 operator|=
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -6639,7 +6769,7 @@ name|default_height
 expr_stmt|;
 name|old_default_units
 operator|=
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -6647,7 +6777,7 @@ name|default_units
 expr_stmt|;
 name|old_default_xresolution
 operator|=
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -6655,7 +6785,7 @@ name|default_xresolution
 expr_stmt|;
 name|old_default_yresolution
 operator|=
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -6663,7 +6793,7 @@ name|default_yresolution
 expr_stmt|;
 name|old_default_resolution_units
 operator|=
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -6671,7 +6801,7 @@ name|default_resolution_units
 expr_stmt|;
 name|old_levels_of_undo
 operator|=
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -6679,7 +6809,7 @@ name|levels_of_undo
 expr_stmt|;
 name|old_thumbnail_mode
 operator|=
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -6862,7 +6992,7 @@ argument_list|(
 operator|&
 name|old_default_comment
 argument_list|,
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -6984,7 +7114,7 @@ operator|=
 name|edit_tile_cache_size
 expr_stmt|;
 comment|/* Create the dialog */
-name|prefs_dlg
+name|prefs_dialog
 operator|=
 name|gimp_dialog_new
 argument_list|(
@@ -7052,6 +7182,32 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_object_set_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|prefs_dialog
+argument_list|)
+argument_list|,
+literal|"gimp"
+argument_list|,
+name|gimp
+argument_list|)
+expr_stmt|;
+name|g_object_add_weak_pointer
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|prefs_dialog
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+operator|&
+name|prefs_dialog
+argument_list|)
+expr_stmt|;
 comment|/* The main hbox */
 name|hbox
 operator|=
@@ -7078,7 +7234,7 @@ name|GTK_CONTAINER
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|prefs_dlg
+name|prefs_dialog
 argument_list|)
 operator|->
 name|vbox
@@ -7273,7 +7429,7 @@ name|g_object_set_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|prefs_dlg
+name|prefs_dialog
 argument_list|)
 argument_list|,
 literal|"notebook"
@@ -7435,7 +7591,7 @@ name|gimp_size_entry_new
 argument_list|(
 literal|2
 argument_list|,
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -7520,7 +7676,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -7538,7 +7694,7 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|,
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -7584,7 +7740,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -7600,7 +7756,7 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|,
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -7621,7 +7777,7 @@ argument_list|(
 name|prefs_default_size_callback
 argument_list|)
 argument_list|,
-name|NULL
+name|gimp
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -7638,7 +7794,7 @@ argument_list|(
 name|prefs_default_size_callback
 argument_list|)
 argument_list|,
-name|NULL
+name|gimp
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -7655,7 +7811,7 @@ argument_list|(
 name|prefs_default_size_callback
 argument_list|)
 argument_list|,
-name|NULL
+name|gimp
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -7764,7 +7920,7 @@ name|gimp_size_entry_new
 argument_list|(
 literal|2
 argument_list|,
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -7794,13 +7950,13 @@ if|if
 condition|(
 name|ABS
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
 name|default_xresolution
 operator|-
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -7948,7 +8104,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -7964,7 +8120,7 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|,
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -8147,7 +8303,7 @@ name|prefs_toggle_callback
 argument_list|)
 argument_list|,
 operator|&
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -8155,7 +8311,7 @@ name|default_type
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -8433,7 +8589,7 @@ name|gtk_text_buffer_set_text
 argument_list|(
 name|text_buffer
 argument_list|,
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -8498,7 +8654,7 @@ name|prefs_text_callback
 argument_list|)
 argument_list|,
 operator|&
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -11706,7 +11862,7 @@ argument_list|(
 operator|&
 name|adjustment
 argument_list|,
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -11769,7 +11925,7 @@ name|gimp_int_adjustment_update
 argument_list|)
 argument_list|,
 operator|&
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -12251,7 +12407,7 @@ name|prefs_toggle_callback
 argument_list|)
 argument_list|,
 operator|&
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -12259,7 +12415,7 @@ name|thumbnail_mode
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|config
 operator|->
@@ -13558,7 +13714,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28cbaf3a0208
+DECL|struct|__anon29472f100208
 block|{
 DECL|member|label
 name|gchar
@@ -13787,7 +13943,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28cbaf3a0308
+DECL|struct|__anon29472f100308
 block|{
 DECL|member|tree_label
 name|gchar
@@ -14147,7 +14303,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-name|prefs_dlg
+name|prefs_dialog
 return|;
 block|}
 end_function

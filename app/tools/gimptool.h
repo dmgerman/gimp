@@ -131,6 +131,11 @@ DECL|member|parent_instance
 name|GimpObject
 name|parent_instance
 decl_stmt|;
+DECL|member|tool_info
+name|GimpToolInfo
+modifier|*
+name|tool_info
+decl_stmt|;
 DECL|member|ID
 name|gint
 name|ID

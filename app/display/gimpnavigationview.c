@@ -200,7 +200,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2942b18e0103
+DECL|enum|__anon292c05e60103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -253,7 +253,7 @@ modifier|*
 name|preview
 decl_stmt|;
 DECL|member|gdisp
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -351,7 +351,7 @@ name|NavigationDialog
 modifier|*
 name|nav_dialog_new
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -367,7 +367,7 @@ name|gchar
 modifier|*
 name|nav_dialog_title
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -411,7 +411,7 @@ name|NavigationDialog
 modifier|*
 name|nav_dialog
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -548,7 +548,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -560,7 +560,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|nav_dialog_get_gdisp
 parameter_list|(
@@ -645,7 +645,7 @@ modifier|*
 name|nav_dialog
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -894,10 +894,10 @@ end_function
 begin_function
 name|NavigationDialog
 modifier|*
-DECL|function|nav_dialog_create (GDisplay * gdisp)
+DECL|function|nav_dialog_create (GimpDisplay * gdisp)
 name|nav_dialog_create
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1385,10 +1385,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|nav_dialog_free (GDisplay * del_gdisp,NavigationDialog * nav_dialog)
+DECL|function|nav_dialog_free (GimpDisplay * del_gdisp,NavigationDialog * nav_dialog)
 name|nav_dialog_free
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|del_gdisp
 parameter_list|,
@@ -1411,7 +1411,7 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -1623,7 +1623,7 @@ name|GimpContext
 modifier|*
 name|context
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -1935,7 +1935,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 init|=
@@ -2388,10 +2388,10 @@ begin_function
 specifier|static
 name|NavigationDialog
 modifier|*
-DECL|function|nav_dialog_new (GDisplay * gdisp,NavWinType ptype)
+DECL|function|nav_dialog_new (GimpDisplay * gdisp,NavWinType ptype)
 name|nav_dialog_new
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -2578,10 +2578,10 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|nav_dialog_title (GDisplay * gdisp)
+DECL|function|nav_dialog_title (GimpDisplay * gdisp)
 name|nav_dialog_title
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -2679,14 +2679,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|nav_dialog_disp_area (NavigationDialog * nav_dialog,GDisplay * gdisp)
+DECL|function|nav_dialog_disp_area (NavigationDialog * nav_dialog,GimpDisplay * gdisp)
 name|nav_dialog_disp_area
 parameter_list|(
 name|NavigationDialog
 modifier|*
 name|nav_dialog
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -3449,7 +3449,7 @@ modifier|*
 name|nav_dialog
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -3822,7 +3822,7 @@ modifier|*
 name|nav_dialog
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -5158,7 +5158,7 @@ name|gint
 name|ty
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -5624,7 +5624,7 @@ name|NavigationDialog
 modifier|*
 name|nav_dialog
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -7001,14 +7001,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|nav_dialog_display_changed (GimpContext * context,GDisplay * gdisp,gpointer data)
+DECL|function|nav_dialog_display_changed (GimpContext * context,GimpDisplay * gdisp,gpointer data)
 name|nav_dialog_display_changed
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -7016,7 +7016,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|old_gdisp
 decl_stmt|;
@@ -7226,7 +7226,7 @@ end_function
 
 begin_function
 specifier|static
-name|GDisplay
+name|GimpDisplay
 modifier|*
 DECL|function|nav_dialog_get_gdisp (void)
 name|nav_dialog_get_gdisp
@@ -7265,7 +7265,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;

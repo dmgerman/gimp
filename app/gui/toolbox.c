@@ -413,29 +413,6 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|toolbox_n_targets
-specifier|static
-name|guint
-name|toolbox_n_targets
-init|=
-operator|(
-sizeof|sizeof
-argument_list|(
-name|toolbox_target_table
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|toolbox_target_table
-index|[
-literal|0
-index|]
-argument_list|)
-operator|)
-decl_stmt|;
-end_decl_stmt
-
 begin_function
 specifier|static
 name|void
@@ -478,7 +455,9 @@ name|gimp_context_set_tool
 argument_list|(
 name|gimp_get_user_context
 argument_list|(
-name|the_gimp
+name|tool_info
+operator|->
+name|gimp
 argument_list|)
 argument_list|,
 name|tool_info
@@ -738,12 +717,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|create_color_area (GtkWidget * parent)
+DECL|function|create_color_area (GtkWidget * parent,GimpContext * context)
 name|create_color_area
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|parent
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|GtkWidget
@@ -918,6 +901,8 @@ name|col_area
 operator|=
 name|color_area_create
 argument_list|(
+name|context
+argument_list|,
 literal|54
 argument_list|,
 literal|42
@@ -1662,6 +1647,8 @@ expr_stmt|;
 name|create_color_area
 argument_list|(
 name|wbox
+argument_list|,
+name|context
 argument_list|)
 expr_stmt|;
 if|if
@@ -1685,7 +1672,10 @@ name|GTK_DEST_DEFAULT_ALL
 argument_list|,
 name|toolbox_target_table
 argument_list|,
-name|toolbox_n_targets
+name|G_N_ELEMENTS
+argument_list|(
+name|toolbox_target_table
+argument_list|)
 argument_list|,
 name|GDK_ACTION_COPY
 argument_list|)

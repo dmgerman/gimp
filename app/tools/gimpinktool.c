@@ -430,7 +430,7 @@ name|GdkEventButton
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -450,7 +450,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -470,7 +470,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -490,7 +490,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -509,7 +509,7 @@ parameter_list|,
 name|ToolAction
 name|tool_action
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -4743,7 +4743,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ink_button_press (GimpTool * tool,GdkEventButton * bevent,GDisplay * gdisp)
+DECL|function|ink_button_press (GimpTool * tool,GdkEventButton * bevent,GimpDisplay * gdisp)
 name|ink_button_press
 parameter_list|(
 name|GimpTool
@@ -4754,7 +4754,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -5031,7 +5031,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ink_button_release (GimpTool * tool,GdkEventButton * bevent,GDisplay * gdisp)
+DECL|function|ink_button_release (GimpTool * tool,GdkEventButton * bevent,GimpDisplay * gdisp)
 name|ink_button_release
 parameter_list|(
 name|GimpTool
@@ -5042,7 +5042,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -5449,7 +5449,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ink_motion (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+DECL|function|ink_motion (GimpTool * tool,GdkEventMotion * mevent,GimpDisplay * gdisp)
 name|ink_motion
 parameter_list|(
 name|GimpTool
@@ -5460,7 +5460,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -5801,7 +5801,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ink_cursor_update (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+DECL|function|ink_cursor_update (GimpTool * tool,GdkEventMotion * mevent,GimpDisplay * gdisp)
 name|ink_cursor_update
 parameter_list|(
 name|GimpTool
@@ -5812,7 +5812,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -5977,7 +5977,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ink_control (GimpTool * tool,ToolAction action,GDisplay * gdisp)
+DECL|function|ink_control (GimpTool * tool,ToolAction action,GimpDisplay * gdisp)
 name|ink_control
 parameter_list|(
 name|GimpTool
@@ -5987,7 +5987,7 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -6457,7 +6457,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2b3e780a0103
+DECL|enum|__anon275cbff90103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

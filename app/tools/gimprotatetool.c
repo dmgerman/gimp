@@ -206,7 +206,7 @@ name|GimpTransformTool
 modifier|*
 name|transform_tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -225,7 +225,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -241,7 +241,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -642,7 +642,7 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|gimp_rotate_tool_rotate (GimpImage * gimage,GimpDrawable * drawable,GDisplay * gdisp,gdouble angle,TileManager * float_tiles,gboolean interpolation,GimpMatrix3 matrix)
+DECL|function|gimp_rotate_tool_rotate (GimpImage * gimage,GimpDrawable * drawable,GimpDisplay * gdisp,gdouble angle,TileManager * float_tiles,gboolean interpolation,GimpMatrix3 matrix)
 name|gimp_rotate_tool_rotate
 parameter_list|(
 name|GimpImage
@@ -653,7 +653,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -742,14 +742,14 @@ begin_function
 specifier|static
 name|TileManager
 modifier|*
-DECL|function|gimp_rotate_tool_transform (GimpTransformTool * transform_tool,GDisplay * gdisp,TransformState state)
+DECL|function|gimp_rotate_tool_transform (GimpTransformTool * transform_tool,GimpDisplay * gdisp,TransformState state)
 name|gimp_rotate_tool_transform
 parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|transform_tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -1697,14 +1697,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|rotate_tool_motion (GimpTool * tool,GDisplay * gdisp)
+DECL|function|rotate_tool_motion (GimpTool * tool,GimpDisplay * gdisp)
 name|rotate_tool_motion
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -2003,14 +2003,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|rotate_tool_recalc (GimpTool * tool,GDisplay * gdisp)
+DECL|function|rotate_tool_recalc (GimpTool * tool,GimpDisplay * gdisp)
 name|rotate_tool_recalc
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)

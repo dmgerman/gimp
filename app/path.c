@@ -488,7 +488,7 @@ name|GimpBezierSelectTool
 modifier|*
 name|bezier_sel
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;

@@ -16,17 +16,11 @@ directive|define
 name|__GDISPLAY_COLOR_UI_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gdisplayF.h"
-end_include
-
 begin_function_decl
 name|void
 name|gdisplay_color_ui_new
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)

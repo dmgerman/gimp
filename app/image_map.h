@@ -52,7 +52,7 @@ name|ImageMap
 modifier|*
 name|image_map_create
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,

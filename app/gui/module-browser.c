@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -80,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276928dd0108
+DECL|struct|__anon287b1c0a0108
 block|{
 DECL|member|table
 name|GtkWidget
@@ -123,6 +117,11 @@ decl_stmt|;
 DECL|member|modules_handler_id
 name|GQuark
 name|modules_handler_id
+decl_stmt|;
+DECL|member|gimp
+name|Gimp
+modifier|*
+name|gimp
 decl_stmt|;
 DECL|typedef|BrowserState
 block|}
@@ -318,10 +317,12 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|module_browser_new (void)
+DECL|function|module_browser_new (Gimp * gimp)
 name|module_browser_new
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|GtkWidget
@@ -348,6 +349,16 @@ name|BrowserState
 modifier|*
 name|st
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|shell
 operator|=
 name|gimp_dialog_new
@@ -489,6 +500,12 @@ argument_list|)
 expr_stmt|;
 name|st
 operator|->
+name|gimp
+operator|=
+name|gimp
+expr_stmt|;
+name|st
+operator|->
 name|list
 operator|=
 name|gtk_list_new
@@ -520,7 +537,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_container_foreach
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|modules
 argument_list|,
@@ -796,7 +813,7 @@ name|modules_handler_id
 operator|=
 name|gimp_container_add_handler
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|modules
 argument_list|,
@@ -814,7 +831,7 @@ name|g_signal_connect
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|modules
 argument_list|)
@@ -833,7 +850,7 @@ name|g_signal_connect
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|modules
 argument_list|)
@@ -924,7 +941,9 @@ name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|the_gimp
+name|st
+operator|->
+name|gimp
 operator|->
 name|modules
 argument_list|)
@@ -938,7 +957,9 @@ name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|the_gimp
+name|st
+operator|->
+name|gimp
 operator|->
 name|modules
 argument_list|)
@@ -950,7 +971,9 @@ argument_list|)
 expr_stmt|;
 name|gimp_container_remove_handler
 argument_list|(
-name|the_gimp
+name|st
+operator|->
+name|gimp
 operator|->
 name|modules
 argument_list|,
@@ -1035,7 +1058,9 @@ operator|->
 name|last_update
 argument_list|)
 expr_stmt|;
-name|the_gimp
+name|st
+operator|->
+name|gimp
 operator|->
 name|write_modulerc
 operator|=
@@ -1191,9 +1216,17 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+name|BrowserState
+modifier|*
+name|st
+init|=
+name|data
+decl_stmt|;
 name|gimp_modules_refresh
 argument_list|(
-name|the_gimp
+name|st
+operator|->
+name|gimp
 argument_list|)
 expr_stmt|;
 block|}

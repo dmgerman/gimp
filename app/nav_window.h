@@ -21,7 +21,7 @@ name|NavigationDialog
 modifier|*
 name|nav_dialog_create
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -32,7 +32,7 @@ begin_function_decl
 name|void
 name|nav_dialog_free
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,

@@ -14,7 +14,9 @@ name|GtkWidget
 modifier|*
 name|module_browser_new
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl

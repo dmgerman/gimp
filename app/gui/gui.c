@@ -299,7 +299,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|,
@@ -1116,10 +1116,14 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 name|file_open_dialog_menu_init
-argument_list|()
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 name|file_save_dialog_menu_init
-argument_list|()
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 name|menus_restore
 argument_list|(
@@ -1271,7 +1275,9 @@ argument_list|)
 expr_stmt|;
 comment|/*  handle this in the dialog factory:  */
 name|tool_options_dialog_free
-argument_list|()
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 name|toolbox_free
 argument_list|(
@@ -1495,7 +1501,7 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -1875,14 +1881,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gui_display_changed (GimpContext * context,GDisplay * display,gpointer data)
+DECL|function|gui_display_changed (GimpContext * context,GimpDisplay * display,gpointer data)
 name|gui_display_changed
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|display
 parameter_list|,

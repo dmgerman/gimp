@@ -341,7 +341,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d218250108
+DECL|struct|__anon29d299e80108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -398,7 +398,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d218250208
+DECL|struct|__anon29d299e80208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -492,7 +492,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -512,7 +512,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -532,7 +532,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -552,7 +552,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1095,29 +1095,6 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|blend_n_targets
-specifier|static
-name|guint
-name|blend_n_targets
-init|=
-operator|(
-sizeof|sizeof
-argument_list|(
-name|blend_target_table
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|blend_target_table
-index|[
-literal|0
-index|]
-argument_list|)
-operator|)
-decl_stmt|;
-end_decl_stmt
-
 begin_function
 name|void
 DECL|function|gimp_blend_tool_register (Gimp * gimp)
@@ -1452,7 +1429,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_blend_tool_button_press (GimpTool * tool,GdkEventButton * bevent,GDisplay * gdisp)
+DECL|function|gimp_blend_tool_button_press (GimpTool * tool,GdkEventButton * bevent,GimpDisplay * gdisp)
 name|gimp_blend_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -1463,7 +1440,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1650,7 +1627,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_blend_tool_button_release (GimpTool * tool,GdkEventButton * bevent,GDisplay * gdisp)
+DECL|function|gimp_blend_tool_button_release (GimpTool * tool,GdkEventButton * bevent,GimpDisplay * gdisp)
 name|gimp_blend_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -1661,7 +1638,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -2089,7 +2066,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_blend_tool_motion (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+DECL|function|gimp_blend_tool_motion (GimpTool * tool,GdkEventMotion * mevent,GimpDisplay * gdisp)
 name|gimp_blend_tool_motion
 parameter_list|(
 name|GimpTool
@@ -2100,7 +2077,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -2547,7 +2524,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_blend_tool_cursor_update (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+DECL|function|gimp_blend_tool_cursor_update (GimpTool * tool,GdkEventMotion * mevent,GimpDisplay * gdisp)
 name|gimp_blend_tool_cursor_update
 parameter_list|(
 name|GimpTool
@@ -2558,7 +2535,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -2997,7 +2974,10 @@ name|GTK_DEST_DEFAULT_DROP
 argument_list|,
 name|blend_target_table
 argument_list|,
-name|blend_n_targets
+name|G_N_ELEMENTS
+argument_list|(
+name|blend_target_table
+argument_list|)
 argument_list|,
 name|GDK_ACTION_COPY
 argument_list|)

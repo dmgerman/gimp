@@ -75,7 +75,7 @@ begin_function_decl
 name|void
 name|path_transform_draw_current
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gimage
 parameter_list|,

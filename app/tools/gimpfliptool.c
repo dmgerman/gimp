@@ -220,7 +220,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -240,7 +240,7 @@ name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -257,7 +257,7 @@ name|GimpTransformTool
 modifier|*
 name|tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -975,7 +975,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_flip_tool_cursor_update (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+DECL|function|gimp_flip_tool_cursor_update (GimpTool * tool,GdkEventMotion * mevent,GimpDisplay * gdisp)
 name|gimp_flip_tool_cursor_update
 parameter_list|(
 name|GimpTool
@@ -986,7 +986,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1178,7 +1178,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_flip_tool_modifier_key (GimpTool * tool,GdkEventKey * kevent,GDisplay * gdisp)
+DECL|function|gimp_flip_tool_modifier_key (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
 name|gimp_flip_tool_modifier_key
 parameter_list|(
 name|GimpTool
@@ -1189,7 +1189,7 @@ name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1277,14 +1277,14 @@ begin_function
 specifier|static
 name|TileManager
 modifier|*
-DECL|function|gimp_flip_tool_transform (GimpTransformTool * trans_tool,GDisplay * gdisp,TransformState state)
+DECL|function|gimp_flip_tool_transform (GimpTransformTool * trans_tool,GimpDisplay * gdisp,TransformState state)
 name|gimp_flip_tool_transform
 parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|trans_tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,

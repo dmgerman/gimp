@@ -120,12 +120,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"floating_sel.h"
 end_include
 
@@ -4033,6 +4027,8 @@ name|resize
 operator|=
 name|resize_widget_new
 argument_list|(
+name|gimage
+argument_list|,
 name|ScaleWidget
 argument_list|,
 name|ResizeLayer
@@ -4384,6 +4380,8 @@ name|resize
 operator|=
 name|resize_widget_new
 argument_list|(
+name|gimage
+argument_list|,
 name|ResizeWidget
 argument_list|,
 name|ResizeLayer

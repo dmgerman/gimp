@@ -286,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a2813a0108
+DECL|struct|__anon2ac23d2c0108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -322,7 +322,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a2813a0208
+DECL|struct|__anon2ac23d2c0208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -377,7 +377,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a2813a0308
+DECL|struct|__anon2ac23d2c0308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -543,7 +543,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a2813a0403
+DECL|enum|__anon2ac23d2c0403
 block|{
 DECL|enumerator|BEZIER_SELECT
 name|BEZIER_SELECT
@@ -12483,10 +12483,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|bezier_paste_bezierselect_to_current (GDisplay * gdisp,GimpBezierSelectTool * bsel)
+DECL|function|bezier_paste_bezierselect_to_current (GimpDisplay * gdisp,GimpBezierSelectTool * bsel)
 name|bezier_paste_bezierselect_to_current
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -12937,7 +12937,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|bezier_to_sel_internal (GimpBezierSelectTool * bezier_sel,GimpTool * tool,GDisplay * gdisp,ChannelOps op)
+DECL|function|bezier_to_sel_internal (GimpBezierSelectTool * bezier_sel,GimpTool * tool,GimpDisplay * gdisp,ChannelOps op)
 name|bezier_to_sel_internal
 parameter_list|(
 name|GimpBezierSelectTool
@@ -12948,7 +12948,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -14306,14 +14306,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|bezier_to_selection (GimpBezierSelectTool * bezier_sel,GDisplay * gdisp)
+DECL|function|bezier_to_selection (GimpBezierSelectTool * bezier_sel,GimpDisplay * gdisp)
 name|bezier_to_selection
 parameter_list|(
 name|GimpBezierSelectTool
 modifier|*
 name|bezier_sel
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -15544,14 +15544,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|bezier_stroke (GimpBezierSelectTool * bezier_sel,GDisplay * gdisp,gint subdivisions,gint open_path)
+DECL|function|bezier_stroke (GimpBezierSelectTool * bezier_sel,GimpDisplay * gdisp,gint subdivisions,gint open_path)
 name|bezier_stroke
 parameter_list|(
 name|GimpBezierSelectTool
 modifier|*
 name|bezier_sel
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,

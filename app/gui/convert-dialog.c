@@ -24,13 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/tools-types.h"
+file|"gui-types.h"
 end_include
 
 begin_include
@@ -90,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"palette-select.h"
 end_include
 
@@ -108,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c39dfa0108
+DECL|struct|__anon2ade8b6e0108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -256,7 +244,9 @@ name|GtkWidget
 modifier|*
 name|build_palette_button
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1090,7 +1080,11 @@ operator|->
 name|custom_palette_button
 operator|=
 name|build_palette_button
-argument_list|()
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -2395,10 +2389,12 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|build_palette_button (void)
+DECL|function|build_palette_button (Gimp * gimp)
 name|build_palette_button
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|GList
@@ -2429,7 +2425,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|palette_factory
 operator|->
@@ -2573,7 +2569,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|palette_factory
 operator|->
@@ -3152,7 +3148,11 @@ name|palette_select
 operator|=
 name|palette_select_new
 argument_list|(
-name|the_gimp
+name|dialog
+operator|->
+name|gimage
+operator|->
+name|gimp
 argument_list|,
 name|_
 argument_list|(

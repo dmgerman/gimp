@@ -20,6 +20,10 @@ begin_function_decl
 name|void
 name|file_new_dialog_create
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GimpImage
 modifier|*
 name|gimage

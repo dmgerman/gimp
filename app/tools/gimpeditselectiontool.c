@@ -396,7 +396,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -416,7 +416,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -435,7 +435,7 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -455,7 +455,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -474,7 +474,7 @@ name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -734,14 +734,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_edit_selection_tool_snap (GimpEditSelectionTool * edit_select,GDisplay * gdisp,gdouble x,gdouble y)
+DECL|function|gimp_edit_selection_tool_snap (GimpEditSelectionTool * edit_select,GimpDisplay * gdisp,gdouble x,gdouble y)
 name|gimp_edit_selection_tool_snap
 parameter_list|(
 name|GimpEditSelectionTool
 modifier|*
 name|edit_select
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -969,14 +969,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|init_edit_selection (GimpTool * tool,GDisplay * gdisp,GdkEventButton * bevent,EditType edit_type)
+DECL|function|init_edit_selection (GimpTool * tool,GimpDisplay * gdisp,GdkEventButton * bevent,EditType edit_type)
 name|init_edit_selection
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -1294,7 +1294,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_edit_selection_tool_button_release (GimpTool * tool,GdkEventButton * bevent,GDisplay * gdisp)
+DECL|function|gimp_edit_selection_tool_button_release (GimpTool * tool,GdkEventButton * bevent,GimpDisplay * gdisp)
 name|gimp_edit_selection_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -1305,7 +1305,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1604,7 +1604,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_edit_selection_tool_motion (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+DECL|function|gimp_edit_selection_tool_motion (GimpTool * tool,GdkEventMotion * mevent,GimpDisplay * gdisp)
 name|gimp_edit_selection_tool_motion
 parameter_list|(
 name|GimpTool
@@ -1615,7 +1615,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -2261,14 +2261,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|selection_transform_segs (GimpEditSelectionTool * edit_select,GDisplay * gdisp,BoundSeg * src_segs,GdkSegment * dest_segs,gint num_segs)
+DECL|function|selection_transform_segs (GimpEditSelectionTool * edit_select,GimpDisplay * gdisp,BoundSeg * src_segs,GdkSegment * dest_segs,gint num_segs)
 name|selection_transform_segs
 parameter_list|(
 name|GimpEditSelectionTool
 modifier|*
 name|edit_select
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -2435,7 +2435,7 @@ name|GimpTool
 modifier|*
 name|tool
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -3026,7 +3026,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_edit_selection_tool_control (GimpTool * tool,ToolAction action,GDisplay * gdisp)
+DECL|function|gimp_edit_selection_tool_control (GimpTool * tool,ToolAction action,GimpDisplay * gdisp)
 name|gimp_edit_selection_tool_control
 parameter_list|(
 name|GimpTool
@@ -3036,7 +3036,7 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -3090,7 +3090,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_edit_selection_tool_cursor_update (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+DECL|function|gimp_edit_selection_tool_cursor_update (GimpTool * tool,GdkEventMotion * mevent,GimpDisplay * gdisp)
 name|gimp_edit_selection_tool_cursor_update
 parameter_list|(
 name|GimpTool
@@ -3101,7 +3101,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -3551,7 +3551,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_edit_selection_tool_arrow_key (GimpTool * tool,GdkEventKey * kevent,GDisplay * gdisp)
+DECL|function|gimp_edit_selection_tool_arrow_key (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
 name|gimp_edit_selection_tool_arrow_key
 parameter_list|(
 name|GimpTool
@@ -3562,7 +3562,7 @@ name|GdkEventKey
 modifier|*
 name|kevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)

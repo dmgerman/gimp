@@ -176,7 +176,7 @@ specifier|static
 name|void
 name|edit_qmask_channel_query
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -378,12 +378,12 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 init|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|data
@@ -414,10 +414,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|qmask_buttons_update (GDisplay * gdisp)
+DECL|function|qmask_buttons_update (GimpDisplay * gdisp)
 name|qmask_buttons_update
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -565,14 +565,14 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|data
@@ -613,14 +613,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|qmask_deactivate_callback (GtkWidget * widget,GDisplay * gdisp)
+DECL|function|qmask_deactivate_callback (GtkWidget * widget,GimpDisplay * gdisp)
 name|qmask_deactivate_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -729,14 +729,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|qmask_activate_callback (GtkWidget * widget,GDisplay * gdisp)
+DECL|function|qmask_activate_callback (GtkWidget * widget,GimpDisplay * gdisp)
 name|qmask_activate_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -989,10 +989,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|edit_qmask_channel_query (GDisplay * gdisp)
+DECL|function|edit_qmask_channel_query (GimpDisplay * gdisp)
 name|edit_qmask_channel_query
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)

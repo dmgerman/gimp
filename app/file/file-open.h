@@ -16,14 +16,6 @@ directive|define
 name|__FILE_OPEN_H__
 end_define
 
-begin_decl_stmt
-specifier|extern
-name|GSList
-modifier|*
-name|load_procs
-decl_stmt|;
-end_decl_stmt
-
 begin_function_decl
 name|GimpImage
 modifier|*
@@ -55,7 +47,7 @@ parameter_list|,
 name|RunModeType
 name|run_mode
 parameter_list|,
-name|gint
+name|GimpPDBStatusType
 modifier|*
 name|status
 parameter_list|)
@@ -67,6 +59,10 @@ name|gchar
 modifier|*
 name|file_open_absolute_filename
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*

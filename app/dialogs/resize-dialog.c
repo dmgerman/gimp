@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -391,9 +385,13 @@ end_function_decl
 begin_function
 name|Resize
 modifier|*
-DECL|function|resize_widget_new (ResizeType type,ResizeTarget target,GObject * object,const gchar * signal,gint width,gint height,gdouble resolution_x,gdouble resolution_y,GimpUnit unit,gboolean dot_for_dot,GCallback ok_cb,GCallback cancel_cb,gpointer user_data)
+DECL|function|resize_widget_new (GimpImage * gimage,ResizeType type,ResizeTarget target,GObject * object,const gchar * signal,gint width,gint height,gdouble resolution_x,gdouble resolution_y,GimpUnit unit,gboolean dot_for_dot,GCallback ok_cb,GCallback cancel_cb,gpointer user_data)
 name|resize_widget_new
 parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
 name|ResizeType
 name|type
 parameter_list|,
@@ -481,6 +479,26 @@ name|GtkObject
 modifier|*
 name|adjustment
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_OBJECT
+argument_list|(
+name|object
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|abox
 operator|=
 name|NULL
@@ -3617,7 +3635,9 @@ name|gimp_size_entry_new
 argument_list|(
 literal|1
 argument_list|,
-name|the_gimp
+name|gimage
+operator|->
+name|gimp
 operator|->
 name|config
 operator|->

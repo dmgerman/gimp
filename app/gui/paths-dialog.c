@@ -3189,7 +3189,7 @@ name|GimpBezierSelectTool
 modifier|*
 name|bsel
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -4638,7 +4638,7 @@ name|GimpBezierSelectTool
 modifier|*
 name|bsel
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -4756,7 +4756,7 @@ name|bsel
 init|=
 name|NULL
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 init|=
@@ -5013,7 +5013,7 @@ decl_stmt|;
 name|gint
 name|tmprow
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -5698,7 +5698,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -5886,7 +5886,7 @@ name|GimpBezierSelectTool
 modifier|*
 name|bezier_sel
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -7348,14 +7348,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|paths_first_button_press (GimpBezierSelectTool * bezier_sel,GDisplay * gdisp)
+DECL|function|paths_first_button_press (GimpBezierSelectTool * bezier_sel,GimpDisplay * gdisp)
 name|paths_first_button_press
 parameter_list|(
 name|GimpBezierSelectTool
 modifier|*
 name|bezier_sel
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -7480,14 +7480,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|paths_newpoint_current (GimpBezierSelectTool * bezier_sel,GDisplay * gdisp)
+DECL|function|paths_newpoint_current (GimpBezierSelectTool * bezier_sel,GimpDisplay * gdisp)
 name|paths_newpoint_current
 parameter_list|(
 name|GimpBezierSelectTool
 modifier|*
 name|bezier_sel
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -9755,10 +9755,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|path_transform_draw_current (GDisplay * gdisp,GimpDrawTool * draw_tool,GimpMatrix3 transform)
+DECL|function|path_transform_draw_current (GimpDisplay * gdisp,GimpDrawTool * draw_tool,GimpMatrix3 transform)
 name|path_transform_draw_current
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -10505,7 +10505,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;

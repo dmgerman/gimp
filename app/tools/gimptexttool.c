@@ -144,12 +144,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp_glue.h"
 end_include
 
@@ -316,7 +310,7 @@ parameter_list|,
 name|ToolAction
 name|tool_action
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -336,7 +330,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -356,7 +350,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -376,7 +370,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1423,7 +1417,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|text_tool_control (GimpTool * tool,ToolAction action,GDisplay * gdisp)
+DECL|function|text_tool_control (GimpTool * tool,ToolAction action,GimpDisplay * gdisp)
 name|text_tool_control
 parameter_list|(
 name|GimpTool
@@ -1433,7 +1427,7 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1464,7 +1458,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|text_tool_button_press (GimpTool * tool,GdkEventButton * bevent,GDisplay * gdisp)
+DECL|function|text_tool_button_press (GimpTool * tool,GdkEventButton * bevent,GimpDisplay * gdisp)
 name|text_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -1475,7 +1469,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1597,7 +1591,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|text_tool_button_release (GimpTool * tool,GdkEventButton * bevent,GDisplay * gdisp)
+DECL|function|text_tool_button_release (GimpTool * tool,GdkEventButton * bevent,GimpDisplay * gdisp)
 name|text_tool_button_release
 parameter_list|(
 name|GimpTool
@@ -1608,7 +1602,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1625,7 +1619,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|text_tool_cursor_update (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+DECL|function|text_tool_cursor_update (GimpTool * tool,GdkEventMotion * mevent,GimpDisplay * gdisp)
 name|text_tool_cursor_update
 parameter_list|(
 name|GimpTool
@@ -1636,7 +1630,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1737,7 +1731,7 @@ modifier|*
 name|text_tool
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;

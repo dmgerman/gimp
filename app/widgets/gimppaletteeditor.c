@@ -685,29 +685,6 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|n_color_palette_targets
-specifier|static
-name|guint
-name|n_color_palette_targets
-init|=
-operator|(
-sizeof|sizeof
-argument_list|(
-name|color_palette_target_table
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|color_palette_target_table
-index|[
-literal|0
-index|]
-argument_list|)
-operator|)
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
 comment|/*  called from color_picker.h  *********************************************/
 end_comment
@@ -1279,7 +1256,10 @@ name|GDK_BUTTON2_MASK
 argument_list|,
 name|color_palette_target_table
 argument_list|,
-name|n_color_palette_targets
+name|G_N_ELEMENTS
+argument_list|(
+name|color_palette_target_table
+argument_list|)
 argument_list|,
 name|GDK_ACTION_COPY
 operator||
@@ -1307,7 +1287,10 @@ name|GTK_DEST_DEFAULT_DROP
 argument_list|,
 name|color_palette_target_table
 argument_list|,
-name|n_color_palette_targets
+name|G_N_ELEMENTS
+argument_list|(
+name|color_palette_target_table
+argument_list|)
 argument_list|,
 name|GDK_ACTION_COPY
 argument_list|)

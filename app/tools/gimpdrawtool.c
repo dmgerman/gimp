@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c716aa0103
+DECL|enum|__anon29544abb0103
 block|{
 DECL|enumerator|DRAW
 name|DRAW
@@ -100,7 +100,7 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -427,7 +427,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_draw_tool_control (GimpTool * tool,ToolAction action,GDisplay * gdisp)
+DECL|function|gimp_draw_tool_control (GimpTool * tool,ToolAction action,GimpDisplay * gdisp)
 name|gimp_draw_tool_control
 parameter_list|(
 name|GimpTool
@@ -437,7 +437,7 @@ parameter_list|,
 name|ToolAction
 name|action
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)

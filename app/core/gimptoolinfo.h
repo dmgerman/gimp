@@ -103,6 +103,11 @@ DECL|member|parent_instance
 name|GimpData
 name|parent_instance
 decl_stmt|;
+DECL|member|gimp
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
 DECL|member|tool_type
 name|GType
 name|tool_type
@@ -194,6 +199,10 @@ name|GimpToolInfo
 modifier|*
 name|gimp_tool_info_new
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GimpContext
 modifier|*
 name|context

@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29026e430103
+DECL|enum|__anon27b246890103
 block|{
 DECL|enumerator|ScaleWidget
 name|ScaleWidget
@@ -35,7 +35,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29026e430203
+DECL|enum|__anon27b246890203
 block|{
 DECL|enumerator|ResizeImage
 name|ResizeImage
@@ -118,7 +118,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29026e430308
+DECL|struct|__anon27b246890308
 block|{
 DECL|member|resize
 name|Resize
@@ -145,6 +145,10 @@ name|Resize
 modifier|*
 name|resize_widget_new
 parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
 name|ResizeType
 name|type
 parameter_list|,

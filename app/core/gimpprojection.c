@@ -190,12 +190,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"colormaps.h"
 end_include
 
@@ -1198,9 +1192,23 @@ index|[
 name|MAX_TITLE_BUF
 index|]
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 comment|/*  If there isn't an interface, never create a gdisplay  */
 if|if
 condition|(
+name|gimage
+operator|->
+name|gimp
+operator|->
 name|no_interface
 condition|)
 return|return

@@ -336,12 +336,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"devices.h"
 end_include
 
@@ -391,7 +385,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286e76d30108
+DECL|struct|__anon2c4271070108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -777,7 +771,11 @@ parameter_list|)
 block|{
 return|return
 name|tool_options_dialog_create
-argument_list|()
+argument_list|(
+name|context
+operator|->
+name|gimp
+argument_list|)
 return|;
 block|}
 end_function
@@ -925,7 +923,11 @@ parameter_list|)
 block|{
 return|return
 name|preferences_dialog_create
-argument_list|()
+argument_list|(
+name|context
+operator|->
+name|gimp
+argument_list|)
 return|;
 block|}
 end_function
@@ -969,7 +971,11 @@ parameter_list|)
 block|{
 return|return
 name|module_browser_new
-argument_list|()
+argument_list|(
+name|context
+operator|->
+name|gimp
+argument_list|)
 return|;
 block|}
 end_function
@@ -1074,7 +1080,7 @@ block|{
 ifdef|#
 directive|ifdef
 name|DISPLAY_FILTERS
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;

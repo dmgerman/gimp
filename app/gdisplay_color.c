@@ -128,7 +128,7 @@ specifier|static
 name|void
 name|gdisplay_color_detach_real
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -289,7 +289,7 @@ name|ColorDisplayInfo
 modifier|*
 name|info
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -327,7 +327,7 @@ block|{
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|refs
@@ -531,10 +531,10 @@ end_function
 begin_function
 name|ColorDisplayNode
 modifier|*
-DECL|function|gdisplay_color_attach (GDisplay * gdisp,const gchar * name)
+DECL|function|gdisplay_color_attach (GimpDisplay * gdisp,const gchar * name)
 name|gdisplay_color_attach
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -699,10 +699,10 @@ end_function
 begin_function
 name|ColorDisplayNode
 modifier|*
-DECL|function|gdisplay_color_attach_clone (GDisplay * gdisp,ColorDisplayNode * node)
+DECL|function|gdisplay_color_attach_clone (GimpDisplay * gdisp,ColorDisplayNode * node)
 name|gdisplay_color_attach_clone
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -856,10 +856,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_color_detach (GDisplay * gdisp,ColorDisplayNode * node)
+DECL|function|gdisplay_color_detach (GimpDisplay * gdisp,ColorDisplayNode * node)
 name|gdisplay_color_detach
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -893,10 +893,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_color_detach_destroy (GDisplay * gdisp,ColorDisplayNode * node)
+DECL|function|gdisplay_color_detach_destroy (GimpDisplay * gdisp,ColorDisplayNode * node)
 name|gdisplay_color_detach_destroy
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -939,10 +939,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_color_detach_all (GDisplay * gdisp)
+DECL|function|gdisplay_color_detach_all (GimpDisplay * gdisp)
 name|gdisplay_color_detach_all
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -1006,10 +1006,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_color_detach_real (GDisplay * gdisp,ColorDisplayNode * node,gboolean unref)
+DECL|function|gdisplay_color_detach_real (GimpDisplay * gdisp,ColorDisplayNode * node,gboolean unref)
 name|gdisplay_color_detach_real
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -1129,10 +1129,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_color_reorder_up (GDisplay * gdisp,ColorDisplayNode * node)
+DECL|function|gdisplay_color_reorder_up (GimpDisplay * gdisp,ColorDisplayNode * node)
 name|gdisplay_color_reorder_up
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -1187,10 +1187,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_color_reorder_down (GDisplay * gdisp,ColorDisplayNode * node)
+DECL|function|gdisplay_color_reorder_down (GimpDisplay * gdisp,ColorDisplayNode * node)
 name|gdisplay_color_reorder_down
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,

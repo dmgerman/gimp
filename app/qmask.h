@@ -42,7 +42,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -57,7 +57,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -68,7 +68,7 @@ begin_function_decl
 name|void
 name|qmask_buttons_update
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)

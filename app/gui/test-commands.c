@@ -174,12 +174,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
 end_include
 
@@ -188,18 +182,6 @@ include|#
 directive|include
 file|"libgimp/gimpintl.h"
 end_include
-
-begin_define
-DECL|macro|return_if_no_display (gdisp)
-define|#
-directive|define
-name|return_if_no_display
-parameter_list|(
-name|gdisp
-parameter_list|)
-define|\
-value|gdisp = gdisplay_active (); \         if (!gdisp) return
-end_define
 
 begin_comment
 comment|/*****  Container View Test Dialogs  *****/
@@ -386,7 +368,11 @@ name|gimp_container_view_set_container
 argument_list|(
 name|view
 argument_list|,
-name|the_gimp
+name|view
+operator|->
+name|context
+operator|->
+name|gimp
 operator|->
 name|images
 argument_list|)
@@ -1004,7 +990,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|test_multi_container_list_view_cmd_callback (GtkWidget * widget,gpointer client_data)
+DECL|function|test_multi_container_list_view_cmd_callback (GtkWidget * widget,gpointer data)
 name|test_multi_container_list_view_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -1012,16 +998,27 @@ modifier|*
 name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
+name|gimp
+operator|=
+name|GIMP
+argument_list|(
+name|data
+argument_list|)
+expr_stmt|;
 name|container_multi_view_new
 argument_list|(
 name|TRUE
 argument_list|,
 literal|"Multi List"
 argument_list|,
-name|the_gimp
+name|gimp
 operator|->
 name|brush_factory
 operator|->
@@ -1029,7 +1026,7 @@ name|container
 argument_list|,
 name|gimp_get_user_context
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|)
 argument_list|,
 literal|24
@@ -1040,7 +1037,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|test_multi_container_grid_view_cmd_callback (GtkWidget * widget,gpointer client_data)
+DECL|function|test_multi_container_grid_view_cmd_callback (GtkWidget * widget,gpointer data)
 name|test_multi_container_grid_view_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -1048,16 +1045,27 @@ modifier|*
 name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
+name|gimp
+operator|=
+name|GIMP
+argument_list|(
+name|data
+argument_list|)
+expr_stmt|;
 name|container_multi_view_new
 argument_list|(
 name|FALSE
 argument_list|,
 literal|"Multi Grid"
 argument_list|,
-name|the_gimp
+name|gimp
 operator|->
 name|brush_factory
 operator|->
@@ -1065,7 +1073,7 @@ name|container
 argument_list|,
 name|gimp_get_user_context
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|)
 argument_list|,
 literal|32

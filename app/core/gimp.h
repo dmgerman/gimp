@@ -159,6 +159,10 @@ DECL|member|no_data
 name|gboolean
 name|no_data
 decl_stmt|;
+DECL|member|no_interface
+name|gboolean
+name|no_interface
+decl_stmt|;
 DECL|member|create_display_func
 name|GimpCreateDisplayFunc
 name|create_display_func
@@ -264,6 +268,16 @@ name|GHashTable
 modifier|*
 name|procedural_ht
 decl_stmt|;
+DECL|member|load_procs
+name|GSList
+modifier|*
+name|load_procs
+decl_stmt|;
+DECL|member|save_procs
+name|GSList
+modifier|*
+name|save_procs
+decl_stmt|;
 DECL|member|tool_info_list
 name|GimpContainer
 modifier|*
@@ -365,6 +379,9 @@ name|be_verbose
 parameter_list|,
 name|gboolean
 name|no_data
+parameter_list|,
+name|gboolean
+name|no_interface
 parameter_list|)
 function_decl|;
 end_function_decl

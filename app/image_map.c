@@ -78,7 +78,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c610bd80103
+DECL|enum|__anon2b4231540103
 block|{
 DECL|enumerator|IMAGE_MAP_WAITING
 name|IMAGE_MAP_WAITING
@@ -97,7 +97,7 @@ struct|struct
 name|_ImageMap
 block|{
 DECL|member|gdisp
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
@@ -166,10 +166,10 @@ end_comment
 begin_function
 name|ImageMap
 modifier|*
-DECL|function|image_map_create (GDisplay * gdisp,GimpDrawable * drawable)
+DECL|function|image_map_create (GimpDisplay * gdisp,GimpDrawable * drawable)
 name|image_map_create
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,

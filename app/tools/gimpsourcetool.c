@@ -178,7 +178,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad104110103
+DECL|enum|__anon28d31dfc0103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO
@@ -322,7 +322,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
@@ -630,7 +630,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|the_src_gdisp
 specifier|static
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|the_src_gdisp
 init|=
@@ -1113,11 +1113,11 @@ name|PaintState
 name|state
 parameter_list|)
 block|{
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|src_gdisp
 decl_stmt|;
@@ -1147,7 +1147,7 @@ decl_stmt|;
 name|gdisp
 operator|=
 operator|(
-name|GDisplay
+name|GimpDisplay
 operator|*
 operator|)
 name|tool_manager_get_active
@@ -1527,7 +1527,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_clone_tool_cursor_update (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+DECL|function|gimp_clone_tool_cursor_update (GimpTool * tool,GdkEventMotion * mevent,GimpDisplay * gdisp)
 name|gimp_clone_tool_cursor_update
 parameter_list|(
 name|GimpTool
@@ -1538,7 +1538,7 @@ name|GdkEventMotion
 modifier|*
 name|mevent
 parameter_list|,
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
