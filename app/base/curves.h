@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29fabdbc0103
+DECL|enum|__anon2744b8f50103
 block|{
 DECL|enumerator|CURVES_SMOOTH
 name|CURVES_SMOOTH
@@ -90,7 +90,7 @@ name|Curves
 modifier|*
 name|curves
 parameter_list|,
-name|gint
+name|GimpHistogramChannel
 name|channel
 parameter_list|)
 function_decl|;
@@ -104,7 +104,7 @@ name|Curves
 modifier|*
 name|curves
 parameter_list|,
-name|gint
+name|GimpHistogramChannel
 name|channel
 parameter_list|)
 function_decl|;

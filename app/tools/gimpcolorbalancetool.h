@@ -148,6 +148,11 @@ name|GtkAdjustment
 modifier|*
 name|yellow_blue_adj
 decl_stmt|;
+DECL|member|preserve_toggle
+name|GtkWidget
+modifier|*
+name|preserve_toggle
+decl_stmt|;
 block|}
 struct|;
 end_struct

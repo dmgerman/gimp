@@ -117,7 +117,7 @@ name|gboolean
 name|color
 decl_stmt|;
 DECL|member|channel
-name|gint
+name|GimpHistogramChannel
 name|channel
 decl_stmt|;
 DECL|member|grab_point
