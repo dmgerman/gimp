@@ -430,6 +430,12 @@ index|[
 literal|0
 index|]
 expr_stmt|;
+comment|/* Initialize i18n support */
+name|INIT_LOCALE
+argument_list|(
+literal|"gimp"
+argument_list|)
+expr_stmt|;
 name|gtk_init
 argument_list|(
 operator|&
@@ -439,12 +445,14 @@ operator|&
 name|argv
 argument_list|)
 expr_stmt|;
-comment|/* Initialize i18n support */
-name|INIT_LOCALE
+name|setlocale
 argument_list|(
-literal|"gimp"
+name|LC_NUMERIC
+argument_list|,
+literal|"C"
 argument_list|)
 expr_stmt|;
+comment|/* gtk seems to zap this during init.. */
 ifdef|#
 directive|ifdef
 name|HAVE_PUTENV
@@ -1975,7 +1983,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cc1b4b0108
+DECL|struct|__anon2baed6790108
 block|{
 DECL|member|test_gint32
 name|gint32

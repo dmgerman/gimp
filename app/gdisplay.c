@@ -3002,6 +3002,9 @@ expr_stmt|;
 comment|/*  ensure the consistency of the tear-off menus  */
 if|if
 condition|(
+operator|!
+name|now
+operator|&&
 name|gimp_context_get_display
 argument_list|(
 name|gimp_context_get_user
@@ -7572,6 +7575,11 @@ init|=
 operator|-
 literal|1
 decl_stmt|;
+name|g_print
+argument_list|(
+literal|"boo\n"
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gdisp
