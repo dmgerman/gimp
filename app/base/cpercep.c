@@ -19,14 +19,14 @@ directive|include
 file|<math.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|_MSC_VER
-end_ifdef
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|__GLIBC__
+end_ifndef
 
 begin_comment
-comment|/* msvc does not now cbrt() is it nonstandard ? */
+comment|/* cbrt() is a GNU extension */
 end_comment
 
 begin_define
@@ -45,6 +45,12 @@ endif|#
 directive|endif
 end_endif
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|GIMP_COMPILATION
+end_ifdef
+
 begin_include
 include|#
 directive|include
@@ -54,6 +60,11 @@ end_include
 begin_comment
 comment|/* to get working 'inline' */
 end_comment
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_comment
 comment|/* defines:     SANITY: emits warnings when passed non-sane colours (and usually    corrects them) -- useful when debugging.     APPROX: speeds up the conversion from RGB to the colourspace by    assuming that the RGB values passed in are integral and definitely    in the range 0->255     SRGB: assumes that the RGB values being passed in (and out) are    destined for an sRGB-alike display device (a typical modern monitor)    -- if you change this then you'll probably want to change ASSUMED_GAMMA,    the phosphor colours and the white point definition. */
@@ -373,6 +384,12 @@ index|]
 decl_stmt|;
 end_decl_stmt
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|CLAMP
+end_ifndef
+
 begin_define
 DECL|macro|CLAMP (x,l,u)
 define|#
@@ -387,6 +404,11 @@ name|u
 parameter_list|)
 value|((x)<(l)?(l):((x)>(u)?(u):(x)))
 end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function
 specifier|static

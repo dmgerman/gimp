@@ -1526,6 +1526,10 @@ operator|=
 name|g_dir_open
 argument_list|(
 name|subdir
+argument_list|,
+literal|0
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -1546,9 +1550,7 @@ operator|!
 operator|(
 name|de
 operator|=
-name|g_dir_read
-operator|-
-name|name
+name|g_dir_read_name
 argument_list|(
 name|dir
 argument_list|)

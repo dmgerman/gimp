@@ -483,7 +483,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2d7e080103
+DECL|enum|__anon2be5ac4d0103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -510,7 +510,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2d7e080203
+DECL|enum|__anon2be5ac4d0203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -531,7 +531,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2d7e080308
+DECL|struct|__anon2be5ac4d0308
 block|{
 DECL|member|name
 name|gchar
@@ -672,7 +672,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2d7e080408
+DECL|struct|__anon2be5ac4d0408
 block|{
 DECL|member|fp
 name|FILE
@@ -692,7 +692,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2d7e080503
+DECL|enum|__anon2be5ac4d0503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -720,7 +720,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2d7e080608
+DECL|struct|__anon2be5ac4d0608
 block|{
 DECL|member|init
 name|gint
@@ -742,7 +742,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b2d7e080708
+DECL|struct|__anon2be5ac4d0708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -816,7 +816,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2d7e080808
+DECL|struct|__anon2be5ac4d0808
 block|{
 DECL|member|init
 name|gint
@@ -886,7 +886,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2d7e080908
+DECL|struct|__anon2be5ac4d0908
 block|{
 DECL|member|x0
 name|gdouble
@@ -913,7 +913,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2d7e080a08
+DECL|struct|__anon2be5ac4d0a08
 block|{
 DECL|member|init
 name|gint
@@ -1083,7 +1083,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2d7e080b08
+DECL|struct|__anon2be5ac4d0b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1110,7 +1110,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2d7e080c08
+DECL|struct|__anon2be5ac4d0c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1151,7 +1151,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2d7e080d08
+DECL|struct|__anon2be5ac4d0d08
 block|{
 DECL|member|tile
 name|GimpTile
@@ -1377,7 +1377,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2d7e080e08
+DECL|struct|__anon2be5ac4d0e08
 block|{
 DECL|member|tag
 name|gint
@@ -1454,7 +1454,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2d7e080f08
+DECL|struct|__anon2be5ac4d0f08
 block|{
 DECL|member|xcenter
 name|gint
@@ -1512,7 +1512,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2d7e081008
+DECL|struct|__anon2be5ac4d1008
 block|{
 DECL|member|run
 name|gint
@@ -1601,6 +1601,7 @@ name|GFlare
 modifier|*
 name|gflare_new_with_default
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|new_name
@@ -1618,6 +1619,7 @@ name|GFlare
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|new_name
@@ -1647,10 +1649,12 @@ name|GFlare
 modifier|*
 name|gflare_load
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -1679,6 +1683,7 @@ name|gchar
 modifier|*
 name|dest
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|src
@@ -1704,6 +1709,7 @@ name|GFlare
 modifier|*
 name|gflares_list_lookup
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -6437,9 +6443,10 @@ end_function
 begin_function
 name|GFlare
 modifier|*
-DECL|function|gflare_new_with_default (gchar * new_name)
+DECL|function|gflare_new_with_default (const gchar * new_name)
 name|gflare_new_with_default
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|new_name
@@ -6469,13 +6476,14 @@ end_function
 begin_function
 name|GFlare
 modifier|*
-DECL|function|gflare_dup (GFlare * src,gchar * new_name)
+DECL|function|gflare_dup (GFlare * src,const gchar * new_name)
 name|gflare_dup
 parameter_list|(
 name|GFlare
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|new_name
@@ -6658,14 +6666,16 @@ end_function
 begin_function
 name|GFlare
 modifier|*
-DECL|function|gflare_load (char * filename,char * name)
+DECL|function|gflare_load (const gchar * filename,const gchar * name)
 name|gflare_load
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -8330,13 +8340,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gflare_name_copy (gchar * dest,gchar * src)
+DECL|function|gflare_name_copy (gchar * dest,const gchar * src)
 name|gflare_name_copy
 parameter_list|(
 name|gchar
 modifier|*
 name|dest
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|src
@@ -8486,9 +8497,10 @@ end_function
 begin_function
 name|GFlare
 modifier|*
-DECL|function|gflares_list_lookup (gchar * name)
+DECL|function|gflares_list_lookup (const gchar * name)
 name|gflares_list_lookup
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -9528,7 +9540,7 @@ DECL|function|calc_sample_one_gradient ()
 name|calc_sample_one_gradient
 parameter_list|()
 block|{
-DECL|struct|__anon2b2d7e081108
+DECL|struct|__anon2be5ac4d1108
 specifier|static
 struct|struct
 block|{
@@ -15968,7 +15980,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon2b2d7e081208
+DECL|struct|__anon2be5ac4d1208
 block|{
 DECL|member|label
 name|gchar
