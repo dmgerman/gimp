@@ -524,7 +524,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon274f09e60103
+DECL|enum|__anon296f94e50103
 enum|enum
 block|{
 DECL|enumerator|TARGET_URI_LIST
@@ -7234,6 +7234,13 @@ operator|=
 name|gtk_label_new
 argument_list|(
 name|message
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_justify
+argument_list|(
+name|label
+argument_list|,
+name|GTK_JUSTIFY_LEFT
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
