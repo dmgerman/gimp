@@ -156,21 +156,16 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
-name|gimp_rc_write_changes
+name|void
+name|gimp_rc_save
 parameter_list|(
 name|GimpRc
 modifier|*
-name|new_rc
+name|user_rc
 parameter_list|,
 name|GimpRc
 modifier|*
-name|old_rc
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|filename
+name|global_rc
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -82,7 +82,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b81ddc30103
+DECL|enum|__anon2bf035cb0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -165,10 +165,13 @@ name|gimp_parasite_list_serialize
 parameter_list|(
 name|GObject
 modifier|*
-name|object
+name|list
 parameter_list|,
 name|gint
 name|fd
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -180,11 +183,14 @@ name|gimp_parasite_list_deserialize
 parameter_list|(
 name|GObject
 modifier|*
-name|object
+name|list
 parameter_list|,
 name|GScanner
 modifier|*
 name|scanner
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -836,7 +842,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_parasite_list_serialize (GObject * list,gint fd)
+DECL|function|gimp_parasite_list_serialize (GObject * list,gint fd,gpointer data)
 name|gimp_parasite_list_serialize
 parameter_list|(
 name|GObject
@@ -845,6 +851,9 @@ name|list
 parameter_list|,
 name|gint
 name|fd
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 block|{
 if|if
@@ -888,7 +897,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_parasite_list_deserialize (GObject * list,GScanner * scanner)
+DECL|function|gimp_parasite_list_deserialize (GObject * list,GScanner * scanner,gpointer data)
 name|gimp_parasite_list_deserialize
 parameter_list|(
 name|GObject
@@ -898,6 +907,9 @@ parameter_list|,
 name|GScanner
 modifier|*
 name|scanner
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 block|{
 name|GTokenType

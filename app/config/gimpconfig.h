@@ -19,16 +19,16 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad3e92d0103
+DECL|enum|__anon2a2f15950103
 block|{
-DECL|enumerator|GIMP_CONFIG_ERROR_ENOENT
-name|GIMP_CONFIG_ERROR_ENOENT
-block|,
-comment|/*  file does not exist  */
 DECL|enumerator|GIMP_CONFIG_ERROR_OPEN
 name|GIMP_CONFIG_ERROR_OPEN
 block|,
 comment|/*  open failed          */
+DECL|enumerator|GIMP_CONFIG_ERROR_OPEN_ENOENT
+name|GIMP_CONFIG_ERROR_OPEN_ENOENT
+block|,
+comment|/*  file does not exist  */
 DECL|enumerator|GIMP_CONFIG_ERROR_WRITE
 name|GIMP_CONFIG_ERROR_WRITE
 block|,
@@ -92,6 +92,9 @@ name|object
 parameter_list|,
 name|gint
 name|fd
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 DECL|member|deserialize
@@ -108,6 +111,9 @@ parameter_list|,
 name|GScanner
 modifier|*
 name|scanner
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 DECL|member|duplicate
@@ -201,6 +207,9 @@ name|gchar
 modifier|*
 name|footer
 parameter_list|,
+name|gpointer
+name|data
+parameter_list|,
 name|GError
 modifier|*
 modifier|*
@@ -221,6 +230,9 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|,
 name|GError
 modifier|*

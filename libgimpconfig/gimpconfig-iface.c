@@ -125,6 +125,9 @@ name|object
 parameter_list|,
 name|gint
 name|fd
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -141,6 +144,9 @@ parameter_list|,
 name|GScanner
 modifier|*
 name|scanner
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -304,7 +310,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_config_iface_serialize (GObject * object,gint fd)
+DECL|function|gimp_config_iface_serialize (GObject * object,gint fd,gpointer data)
 name|gimp_config_iface_serialize
 parameter_list|(
 name|GObject
@@ -313,6 +319,9 @@ name|object
 parameter_list|,
 name|gint
 name|fd
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 block|{
 return|return
@@ -329,7 +338,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_config_iface_deserialize (GObject * object,GScanner * scanner)
+DECL|function|gimp_config_iface_deserialize (GObject * object,GScanner * scanner,gpointer data)
 name|gimp_config_iface_deserialize
 parameter_list|(
 name|GObject
@@ -339,6 +348,9 @@ parameter_list|,
 name|GScanner
 modifier|*
 name|scanner
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 block|{
 return|return
@@ -578,12 +590,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_serialize:  * @object: a #GObject that implements the #GimpConfigInterface.  * @filename: the name of the file to write the configuration to.  * @header: optional file header (should be a comment)  * @footer: optional file footer (should be a comment)  * @error:  *   * Serializes the object properties of @object to the file specified  * by @filename. If a file with that name already exists, it is   * overwritten. Basically this function opens @filename for you and  * calls the serialize function of the @object's #GimpConfigInterface.  *  * Return value: %TRUE if serialization succeeded, %FALSE otherwise.  **/
+comment|/**  * gimp_config_serialize:  * @object: a #GObject that implements the #GimpConfigInterface.  * @filename: the name of the file to write the configuration to.  * @header: optional file header (should be a comment)  * @footer: optional file footer (should be a comment)  * @data: user data passed to the serialize implementation.  * @error:  *   * Serializes the object properties of @object to the file specified  * by @filename. If a file with that name already exists, it is   * overwritten. Basically this function opens @filename for you and  * calls the serialize function of the @object's #GimpConfigInterface.  *  * Return value: %TRUE if serialization succeeded, %FALSE otherwise.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_config_serialize (GObject * object,const gchar * filename,const gchar * header,const gchar * footer,GError ** error)
+DECL|function|gimp_config_serialize (GObject * object,const gchar * filename,const gchar * header,const gchar * footer,gpointer data,GError ** error)
 name|gimp_config_serialize
 parameter_list|(
 name|GObject
@@ -604,6 +616,9 @@ specifier|const
 name|gchar
 modifier|*
 name|footer
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|,
 name|GError
 modifier|*
@@ -768,6 +783,8 @@ argument_list|(
 name|object
 argument_list|,
 name|fd
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 if|if
@@ -891,12 +908,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_deserialize:  * @object: a #GObject that implements the #GimpConfigInterface.  * @filename: the name of the file to read configuration from.  * @error:   *   * Opens the file specified by @filename, reads configuration data  * from it and configures @object accordingly. Basically this function  * creates a properly configured #GScanner for you and calls the  * deserialize function of the @object's #GimpConfigInterface.  *   * Return value: %TRUE if deserialization succeeded, %FALSE otherwise.   **/
+comment|/**  * gimp_config_deserialize:  * @object: a #GObject that implements the #GimpConfigInterface.  * @filename: the name of the file to read configuration from.  * @data: user data passed to the serialize implementation.  * @error:   *   * Opens the file specified by @filename, reads configuration data  * from it and configures @object accordingly. Basically this function  * creates a properly configured #GScanner for you and calls the  * deserialize function of the @object's #GimpConfigInterface.  *   * Return value: %TRUE if deserialization succeeded, %FALSE otherwise.   **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_config_deserialize (GObject * object,const gchar * filename,GError ** error)
+DECL|function|gimp_config_deserialize (GObject * object,const gchar * filename,gpointer data,GError ** error)
 name|gimp_config_deserialize
 parameter_list|(
 name|GObject
@@ -907,6 +924,9 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|,
 name|GError
 modifier|*
@@ -1005,7 +1025,7 @@ name|errno
 operator|==
 name|ENOENT
 condition|?
-name|GIMP_CONFIG_ERROR_ENOENT
+name|GIMP_CONFIG_ERROR_OPEN_ENOENT
 else|:
 name|GIMP_CONFIG_ERROR_OPEN
 operator|)
@@ -1089,6 +1109,8 @@ argument_list|(
 name|object
 argument_list|,
 name|scanner
+argument_list|,
+name|data
 argument_list|)
 expr_stmt|;
 name|g_scanner_destroy
@@ -1357,7 +1379,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab075f20108
+DECL|struct|__anon29fa5b1b0108
 block|{
 DECL|member|key
 name|gchar

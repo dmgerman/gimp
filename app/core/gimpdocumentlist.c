@@ -95,10 +95,13 @@ name|gimp_document_list_serialize
 parameter_list|(
 name|GObject
 modifier|*
-name|object
+name|list
 parameter_list|,
 name|gint
 name|fd
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -110,11 +113,14 @@ name|gimp_document_list_deserialize
 parameter_list|(
 name|GObject
 modifier|*
-name|object
+name|list
 parameter_list|,
 name|GScanner
 modifier|*
 name|scanner
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -264,7 +270,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_document_list_serialize (GObject * document_list,gint fd)
+DECL|function|gimp_document_list_serialize (GObject * document_list,gint fd,gpointer data)
 name|gimp_document_list_serialize
 parameter_list|(
 name|GObject
@@ -273,6 +279,9 @@ name|document_list
 parameter_list|,
 name|gint
 name|fd
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 block|{
 name|GList
@@ -382,16 +391,19 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_document_list_deserialize (GObject * list,GScanner * scanner)
+DECL|function|gimp_document_list_deserialize (GObject * document_list,GScanner * scanner,gpointer data)
 name|gimp_document_list_deserialize
 parameter_list|(
 name|GObject
 modifier|*
-name|list
+name|document_list
 parameter_list|,
 name|GScanner
 modifier|*
 name|scanner
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 block|{
 name|GTokenType
@@ -400,17 +412,11 @@ decl_stmt|;
 name|gint
 name|size
 decl_stmt|;
-comment|/* FIXME, add user_data to deserialize */
 name|size
 operator|=
 name|GPOINTER_TO_INT
 argument_list|(
-name|g_object_get_data
-argument_list|(
-name|list
-argument_list|,
-literal|"thumbnail_size"
-argument_list|)
+name|data
 argument_list|)
 expr_stmt|;
 name|g_scanner_scope_add_symbol
@@ -539,7 +545,7 @@ name|gimp_container_add
 argument_list|(
 name|GIMP_CONTAINER
 argument_list|(
-name|list
+name|document_list
 argument_list|)
 argument_list|,
 name|GIMP_OBJECT
@@ -572,7 +578,7 @@ condition|)
 do|;
 name|GIMP_LIST
 argument_list|(
-name|list
+name|document_list
 argument_list|)
 operator|->
 name|list
@@ -581,7 +587,7 @@ name|g_list_reverse
 argument_list|(
 name|GIMP_LIST
 argument_list|(
-name|list
+name|document_list
 argument_list|)
 operator|->
 name|list

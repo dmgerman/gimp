@@ -329,11 +329,21 @@ argument_list|)
 argument_list|,
 name|filename
 argument_list|,
+name|NULL
+argument_list|,
 operator|&
 name|error
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+name|error
+operator|->
+name|code
+operator|!=
+name|GIMP_CONFIG_ERROR_OPEN_ENOENT
+condition|)
 name|g_message
 argument_list|(
 name|error
@@ -380,6 +390,7 @@ name|gchar
 modifier|*
 name|footer
 init|=
+literal|"\n"
 literal|"# end of parasiterc"
 decl_stmt|;
 name|gchar
@@ -434,6 +445,8 @@ argument_list|,
 name|header
 argument_list|,
 name|footer
+argument_list|,
+name|NULL
 argument_list|,
 operator|&
 name|error
