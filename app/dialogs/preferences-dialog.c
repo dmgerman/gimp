@@ -5151,7 +5151,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Default _Navigation Preview Size:"
+literal|"_Navigation Preview Size:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -6797,7 +6797,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2baea7f80108
+DECL|struct|__anon2b0032580108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9238,7 +9238,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2baea7f80208
+DECL|struct|__anon2b0032580208
 block|{
 DECL|member|label
 specifier|const
@@ -9397,7 +9397,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2baea7f80308
+DECL|struct|__anon2b0032580308
 block|{
 DECL|member|tree_label
 specifier|const
