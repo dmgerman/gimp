@@ -111,7 +111,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29750fe00103
+DECL|enum|__anon28d376060103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -127,7 +127,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29750fe00203
+DECL|enum|__anon28d376060203
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -1699,7 +1699,7 @@ argument_list|(
 literal|"You can drop dockable dialogs here."
 argument_list|)
 argument_list|,
-name|NULL
+literal|"gimp-dock-separator"
 argument_list|)
 expr_stmt|;
 name|gtk_drag_dest_set

@@ -934,7 +934,7 @@ argument_list|(
 literal|"Close this Tab"
 argument_list|)
 argument_list|,
-name|NULL
+literal|"gimp-dockable-close-tab"
 argument_list|)
 expr_stmt|;
 name|image
