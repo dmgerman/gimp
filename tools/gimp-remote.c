@@ -1182,15 +1182,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: add this code as soon as we depend on gtk+-2.6
-endif|#
-directive|endif
-comment|/* g_option_context_add_group (context, gtk_get_option_group (TRUE));    */
+name|g_option_context_add_group
+argument_list|(
+name|context
+argument_list|,
+name|gtk_get_option_group
+argument_list|(
+name|TRUE
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
