@@ -1494,6 +1494,13 @@ operator|)
 expr_stmt|;
 if|if
 condition|(
+name|offset
+operator|!=
+literal|0
+condition|)
+block|{
+if|if
+condition|(
 name|fseek
 argument_list|(
 name|fp
@@ -1536,6 +1543,7 @@ literal|1
 return|;
 block|}
 comment|/* Eventually actually handle version 2 TGA here */
+block|}
 block|}
 block|}
 if|if
