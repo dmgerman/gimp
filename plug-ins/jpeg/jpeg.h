@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8921e00108
+DECL|struct|__anon2c4af1260108
 block|{
 DECL|member|quality
 name|gdouble
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8921e00208
+DECL|struct|__anon2c4af1260208
 block|{
 DECL|member|cinfo
 name|struct
@@ -6208,7 +6208,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Preview (in image window, will modify image's undo history!)"
+literal|"Preview in image window"
 argument_list|)
 argument_list|)
 expr_stmt|;
