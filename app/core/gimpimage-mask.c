@@ -150,7 +150,7 @@ name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_selection_push_undo
+name|gimp_channel_push_undo
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
@@ -181,11 +181,14 @@ name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_selection_invalidate
+name|gimp_drawable_invalidate_boundary
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -126,7 +126,7 @@ decl_stmt|;
 comment|/*  possible layer mask        */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon2b666fd00108
+DECL|struct|__anon2b933eba0108
 block|{
 DECL|member|backing_store
 name|TileManager
@@ -392,17 +392,6 @@ parameter_list|,
 name|gint
 modifier|*
 name|num_segs
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_layer_invalidate_boundary
-parameter_list|(
-name|GimpLayer
-modifier|*
-name|layer
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -6246,9 +6246,12 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  Make sure we're not caching any old selection info  */
-name|gimp_layer_invalidate_boundary
+name|gimp_drawable_invalidate_boundary
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  record the current position  */
@@ -6502,11 +6505,14 @@ name|lu
 operator|->
 name|prev_layer
 condition|)
-name|gimp_layer_invalidate_boundary
+name|gimp_drawable_invalidate_boundary
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|lu
 operator|->
 name|prev_layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  if this is a floating selection, set the fs pointer  */
@@ -7075,9 +7081,12 @@ operator|->
 name|offset_y
 expr_stmt|;
 comment|/*  Make sure we're not caching any old selection info  */
-name|gimp_layer_invalidate_boundary
+name|gimp_drawable_invalidate_boundary
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GIMP_DRAWABLE
@@ -12167,11 +12176,14 @@ operator|=
 name|TRUE
 expr_stmt|;
 comment|/*  clear the selection  */
-name|gimp_layer_invalidate_boundary
+name|gimp_drawable_invalidate_boundary
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|fsu
 operator|->
 name|floating_layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Update the preview for the gimage and underlying drawable  */
@@ -12245,11 +12257,14 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  clear the selection  */
-name|gimp_layer_invalidate_boundary
+name|gimp_drawable_invalidate_boundary
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|fsu
 operator|->
 name|floating_layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  update the pointers  */

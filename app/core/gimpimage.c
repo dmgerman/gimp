@@ -252,7 +252,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b604140103
+DECL|enum|__anon2b52fde40103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -8937,9 +8937,12 @@ name|layer
 argument_list|)
 expr_stmt|;
 comment|/*  Don't cache selection info for the previous active layer  */
-name|gimp_layer_invalidate_boundary
+name|gimp_drawable_invalidate_boundary
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -9107,11 +9110,14 @@ name|active_layer
 condition|)
 block|{
 comment|/*  Don't cache selection info for the previous active layer  */
-name|gimp_layer_invalidate_boundary
+name|gimp_drawable_invalidate_boundary
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|gimage
 operator|->
 name|active_layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimage
@@ -10441,9 +10447,12 @@ name|layer
 argument_list|)
 expr_stmt|;
 comment|/*  Make sure we're not caching any old selection info  */
-name|gimp_layer_invalidate_boundary
+name|gimp_drawable_invalidate_boundary
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_container_remove

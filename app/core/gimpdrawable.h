@@ -154,6 +154,7 @@ DECL|member|parent_class
 name|GimpItemClass
 name|parent_class
 decl_stmt|;
+comment|/*  signals  */
 DECL|member|visibility_changed
 name|void
 function_decl|(
@@ -171,6 +172,19 @@ name|void
 function_decl|(
 modifier|*
 name|alpha_changed
+function_decl|)
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+function_decl|;
+comment|/*  virtual functions  */
+DECL|member|invalidate_boundary
+name|void
+function_decl|(
+modifier|*
+name|invalidate_boundary
 function_decl|)
 parameter_list|(
 name|GimpDrawable
@@ -522,6 +536,17 @@ end_function_decl
 begin_function_decl
 name|void
 name|gimp_drawable_alpha_changed
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_drawable_invalidate_boundary
 parameter_list|(
 name|GimpDrawable
 modifier|*

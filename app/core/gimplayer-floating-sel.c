@@ -770,9 +770,12 @@ name|drawable
 argument_list|)
 expr_stmt|;
 comment|/*  clear the selection  */
-name|gimp_layer_invalidate_boundary
+name|gimp_drawable_invalidate_boundary
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Set pointers  */
