@@ -57,6 +57,12 @@ end_undef
 begin_undef
 undef|#
 directive|undef
+name|HAVE_PROGRESSIVE_JPEG
+end_undef
+
+begin_undef
+undef|#
+directive|undef
 name|HAVE_PUTENV
 end_undef
 
@@ -154,6 +160,12 @@ begin_undef
 undef|#
 directive|undef
 name|USE_PTHREADS
+end_undef
+
+begin_undef
+undef|#
+directive|undef
+name|WITH_SYMBOL_UNDERSCORE
 end_undef
 
 begin_escape
