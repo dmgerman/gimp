@@ -3903,11 +3903,6 @@ name|color_picker_info
 operator|=
 name|NULL
 expr_stmt|;
-name|color_panel_free
-argument_list|(
-name|color_panel
-argument_list|)
-expr_stmt|;
 name|color_panel
 operator|=
 name|NULL

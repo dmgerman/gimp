@@ -6,7 +6,13 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"gdk/gdkkeysyms.h"
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gdk/gdkkeysyms.h>
 end_include
 
 begin_include
@@ -115,12 +121,6 @@ begin_include
 include|#
 directive|include
 file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config.h"
 end_include
 
 begin_include
@@ -235,24 +235,11 @@ name|GtkAccelGroup
 modifier|*
 name|accel_group
 decl_stmt|;
-DECL|member|num_components
-name|gint
-name|num_components
-decl_stmt|;
-DECL|member|base_type
-name|gint
-name|base_type
-decl_stmt|;
-DECL|member|components
-name|ChannelType
-name|components
-index|[
-literal|3
-index|]
-decl_stmt|;
-DECL|member|ratio
-name|gdouble
-name|ratio
+comment|/*  state information  */
+DECL|member|gimage
+name|GimpImage
+modifier|*
+name|gimage
 decl_stmt|;
 DECL|member|image_width
 DECL|member|image_height
@@ -268,11 +255,24 @@ name|gimage_width
 decl_stmt|,
 name|gimage_height
 decl_stmt|;
-comment|/*  state information  */
-DECL|member|gimage
-name|GimpImage
-modifier|*
-name|gimage
+DECL|member|ratio
+name|gdouble
+name|ratio
+decl_stmt|;
+DECL|member|num_components
+name|gint
+name|num_components
+decl_stmt|;
+DECL|member|base_type
+name|gint
+name|base_type
+decl_stmt|;
+DECL|member|components
+name|ChannelType
+name|components
+index|[
+literal|3
+index|]
 decl_stmt|;
 DECL|member|active_channel
 name|Channel
@@ -332,8 +332,14 @@ name|GtkWidget
 modifier|*
 name|label
 decl_stmt|;
+DECL|member|channel_pixmap
+name|GdkPixmap
+modifier|*
+name|channel_pixmap
+decl_stmt|;
+comment|/*  state information  */
 DECL|member|gimage
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
@@ -342,10 +348,12 @@ name|Channel
 modifier|*
 name|channel
 decl_stmt|;
-DECL|member|channel_pixmap
-name|GdkPixmap
-modifier|*
-name|channel_pixmap
+DECL|member|width
+DECL|member|height
+name|gint
+name|width
+decl_stmt|,
+name|height
 decl_stmt|;
 DECL|member|type
 name|ChannelType
@@ -354,13 +362,6 @@ decl_stmt|;
 DECL|member|ID
 name|gint
 name|ID
-decl_stmt|;
-DECL|member|width
-DECL|member|height
-name|gint
-name|width
-decl_stmt|,
-name|height
 decl_stmt|;
 DECL|member|visited
 name|gboolean
@@ -638,7 +639,7 @@ name|ChannelWidget
 modifier|*
 name|channel_widget_create
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -830,6 +831,9 @@ parameter_list|,
 name|GdkEvent
 modifier|*
 name|event
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -846,6 +850,9 @@ parameter_list|,
 name|GdkEvent
 modifier|*
 name|event
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2009,13 +2016,13 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|ChannelWidget
-modifier|*
-name|cw
-decl_stmt|;
 name|Channel
 modifier|*
 name|channel
+decl_stmt|;
+name|ChannelWidget
+modifier|*
+name|cw
 decl_stmt|;
 name|GSList
 modifier|*
@@ -2133,7 +2140,7 @@ name|channelsD
 operator|->
 name|base_type
 operator|=
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -2487,17 +2494,17 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|ChannelWidget
-modifier|*
-name|cw
-decl_stmt|;
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
 name|Channel
 modifier|*
 name|channel
+decl_stmt|;
+name|ChannelWidget
+modifier|*
+name|cw
 decl_stmt|;
 name|GSList
 modifier|*
@@ -2545,7 +2552,7 @@ name|gimage_height
 operator|)
 operator|||
 operator|(
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -2567,8 +2574,9 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-return|return;
 block|}
+else|else
+block|{
 comment|/*  Set all current channel widgets to visited = FALSE  */
 for|for
 control|(
@@ -2814,6 +2822,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 end_function
 
 begin_function
@@ -2869,7 +2878,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
@@ -2960,7 +2969,7 @@ operator|->
 name|image_width
 operator|=
 call|(
-name|int
+name|gint
 call|)
 argument_list|(
 name|channelsD
@@ -2977,7 +2986,7 @@ operator|->
 name|image_height
 operator|=
 call|(
-name|int
+name|gint
 call|)
 argument_list|(
 name|channelsD
@@ -3340,7 +3349,7 @@ block|{
 comment|/*  turn on the specified auxillary channel  */
 name|index
 operator|=
-name|gimage_get_channel_index
+name|gimp_image_get_channel_index
 argument_list|(
 name|channel_widget
 operator|->
@@ -3530,7 +3539,7 @@ argument_list|,
 name|channel_widget
 argument_list|)
 expr_stmt|;
-comment|/* 	  channels_dialog_scroll_index (0); */
+comment|/* channels_dialog_scroll_index (0); */
 block|}
 block|}
 name|suspend_gimage_notify
@@ -3590,7 +3599,7 @@ block|{
 comment|/*  turn off the specified auxillary channel  */
 name|index
 operator|=
-name|gimage_get_channel_index
+name|gimp_image_get_channel_index
 argument_list|(
 name|channel_widget
 operator|->
@@ -3937,7 +3946,7 @@ name|ChannelWidget
 modifier|*
 name|channel_widget
 decl_stmt|;
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
@@ -3994,7 +4003,7 @@ argument_list|)
 expr_stmt|;
 name|position
 operator|=
-name|gimage_get_channel_index
+name|gimp_image_get_channel_index
 argument_list|(
 name|gimage
 argument_list|,
@@ -4171,25 +4180,6 @@ name|type
 condition|)
 block|{
 case|case
-name|GDK_2BUTTON_PRESS
-case|:
-if|if
-condition|(
-name|channel_widget
-operator|->
-name|type
-operator|==
-name|AUXILLARY_CHANNEL
-condition|)
-name|channels_dialog_edit_channel_query
-argument_list|(
-name|channel_widget
-argument_list|)
-expr_stmt|;
-return|return
-name|TRUE
-return|;
-case|case
 name|GDK_BUTTON_PRESS
 case|:
 name|bevent
@@ -4240,6 +4230,25 @@ name|TRUE
 return|;
 block|}
 break|break;
+case|case
+name|GDK_2BUTTON_PRESS
+case|:
+if|if
+condition|(
+name|channel_widget
+operator|->
+name|type
+operator|==
+name|AUXILLARY_CHANNEL
+condition|)
+name|channels_dialog_edit_channel_query
+argument_list|(
+name|channel_widget
+argument_list|)
+expr_stmt|;
+return|return
+name|TRUE
+return|;
 default|default:
 break|break;
 block|}
@@ -4336,6 +4345,18 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/***********************************/
+end_comment
+
+begin_comment
+comment|/*  callbacks exported to menus.c  */
+end_comment
+
+begin_comment
+comment|/***********************************/
+end_comment
+
 begin_function
 name|void
 DECL|function|channels_dialog_new_channel_callback (GtkWidget * widget,gpointer data)
@@ -4384,7 +4405,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
@@ -4412,7 +4433,7 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|gimage_raise_channel
+name|gimp_image_raise_channel
 argument_list|(
 name|gimage
 argument_list|,
@@ -4441,7 +4462,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
@@ -4469,7 +4490,7 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|gimage_lower_channel
+name|gimp_image_lower_channel
 argument_list|(
 name|gimage
 argument_list|,
@@ -4498,7 +4519,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
@@ -4530,7 +4551,7 @@ condition|(
 operator|(
 name|active_channel
 operator|=
-name|gimage_get_active_channel
+name|gimp_image_get_active_channel
 argument_list|(
 name|gimage
 argument_list|)
@@ -4544,7 +4565,7 @@ argument_list|(
 name|active_channel
 argument_list|)
 expr_stmt|;
-name|gimage_add_channel
+name|gimp_image_add_channel
 argument_list|(
 name|gimage
 argument_list|,
@@ -4574,7 +4595,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
@@ -4602,7 +4623,7 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|gimage_remove_channel
+name|gimp_image_remove_channel
 argument_list|(
 name|gimage
 argument_list|,
@@ -4631,7 +4652,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
@@ -4688,7 +4709,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
@@ -4720,7 +4741,7 @@ condition|(
 operator|(
 name|active_channel
 operator|=
-name|gimage_get_active_channel
+name|gimp_image_get_active_channel
 argument_list|(
 name|gimage
 argument_list|)
@@ -4731,7 +4752,7 @@ name|new_channel
 operator|=
 name|channel_copy
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -4783,7 +4804,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
@@ -4815,7 +4836,7 @@ condition|(
 operator|(
 name|active_channel
 operator|=
-name|gimage_get_active_channel
+name|gimp_image_get_active_channel
 argument_list|(
 name|gimage
 argument_list|)
@@ -4826,7 +4847,7 @@ name|new_channel
 operator|=
 name|channel_copy
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -4878,7 +4899,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
@@ -4910,7 +4931,7 @@ condition|(
 operator|(
 name|active_channel
 operator|=
-name|gimage_get_active_channel
+name|gimp_image_get_active_channel
 argument_list|(
 name|gimage
 argument_list|)
@@ -4921,7 +4942,7 @@ name|new_channel
 operator|=
 name|channel_copy
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -5096,7 +5117,7 @@ name|Channel
 modifier|*
 name|channel
 decl_stmt|;
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
@@ -5216,7 +5237,7 @@ argument_list|,
 name|off_y
 argument_list|)
 expr_stmt|;
-name|gimage_add_channel
+name|gimp_image_add_channel
 argument_list|(
 name|gimage
 argument_list|,
@@ -5626,16 +5647,23 @@ condition|)
 return|return
 name|NULL
 return|;
+for|for
+control|(
 name|list
 operator|=
 name|channelsD
 operator|->
 name|channel_widgets
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|list
-condition|)
+condition|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 block|{
 name|lw
 operator|=
@@ -5658,13 +5686,6 @@ condition|)
 return|return
 name|lw
 return|;
-name|list
-operator|=
-name|g_slist_next
-argument_list|(
-name|list
-argument_list|)
-expr_stmt|;
 block|}
 return|return
 name|NULL
@@ -5676,10 +5697,10 @@ begin_function
 specifier|static
 name|ChannelWidget
 modifier|*
-DECL|function|channel_widget_create (GImage * gimage,Channel * channel,ChannelType type)
+DECL|function|channel_widget_create (GimpImage * gimage,Channel * channel,ChannelType type)
 name|channel_widget_create
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -5834,10 +5855,10 @@ argument_list|)
 argument_list|,
 literal|"select"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|channel_widget_select_update
+argument_list|)
 argument_list|,
 name|channel_widget
 argument_list|)
@@ -5851,10 +5872,10 @@ argument_list|)
 argument_list|,
 literal|"deselect"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|channel_widget_select_update
+argument_list|)
 argument_list|,
 name|channel_widget
 argument_list|)
@@ -5974,10 +5995,10 @@ argument_list|)
 argument_list|,
 literal|"event"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|channel_widget_button_events
+argument_list|)
 argument_list|,
 name|channel_widget
 argument_list|)
@@ -6018,7 +6039,7 @@ argument_list|(
 name|alignment
 argument_list|)
 expr_stmt|;
-comment|/*  The preview  */
+comment|/*  The channel preview  */
 name|alignment
 operator|=
 name|gtk_alignment_new
@@ -6098,10 +6119,10 @@ argument_list|)
 argument_list|,
 literal|"event"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|channel_widget_preview_events
+argument_list|)
 argument_list|,
 name|channel_widget
 argument_list|)
@@ -6627,7 +6648,7 @@ condition|)
 block|{
 name|src_index
 operator|=
-name|gimage_get_channel_index
+name|gimp_image_get_channel_index
 argument_list|(
 name|channelsD
 operator|->
@@ -6640,7 +6661,7 @@ argument_list|)
 expr_stmt|;
 name|dest_index
 operator|=
-name|gimage_get_channel_index
+name|gimp_image_get_channel_index
 argument_list|(
 name|channelsD
 operator|->
@@ -6855,7 +6876,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2937373c0108
+DECL|struct|__anon2c87e2390108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -7040,7 +7061,7 @@ condition|)
 block|{
 name|src_index
 operator|=
-name|gimage_get_channel_index
+name|gimp_image_get_channel_index
 argument_list|(
 name|channelsD
 operator|->
@@ -7053,7 +7074,7 @@ argument_list|)
 expr_stmt|;
 name|dest_index
 operator|=
-name|gimage_get_channel_index
+name|gimp_image_get_channel_index
 argument_list|(
 name|channelsD
 operator|->
@@ -7713,7 +7734,7 @@ operator|==
 name|GTK_STATE_SELECTED
 condition|)
 comment|/*  set the gimage's active channel to be this channel  */
-name|gimage_set_active_channel
+name|gimp_image_set_active_channel
 argument_list|(
 name|channel_widget
 operator|->
@@ -7726,7 +7747,7 @@ argument_list|)
 expr_stmt|;
 else|else
 comment|/*  unset the gimage's active channel  */
-name|gimage_unset_active_channel
+name|gimp_image_unset_active_channel
 argument_list|(
 name|channel_widget
 operator|->
@@ -7755,7 +7776,7 @@ name|state
 operator|==
 name|GTK_STATE_SELECTED
 condition|)
-name|gimage_set_component_active
+name|gimp_image_set_component_active
 argument_list|(
 name|channel_widget
 operator|->
@@ -7769,7 +7790,7 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 else|else
-name|gimage_set_component_active
+name|gimp_image_set_component_active
 argument_list|(
 name|channel_widget
 operator|->
@@ -7790,7 +7811,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|channel_widget_button_events (GtkWidget * widget,GdkEvent * event)
+DECL|function|channel_widget_button_events (GtkWidget * widget,GdkEvent * event,gpointer data)
 name|channel_widget_button_events
 parameter_list|(
 name|GtkWidget
@@ -7800,6 +7821,9 @@ parameter_list|,
 name|GdkEvent
 modifier|*
 name|event
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 block|{
 name|ChannelWidget
@@ -7860,6 +7884,10 @@ name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|return_val
+operator|=
+name|FALSE
+expr_stmt|;
 switch|switch
 condition|(
 name|channel_widget
@@ -7907,7 +7935,7 @@ break|break;
 default|default:
 name|visible
 operator|=
-name|gimage_get_component_visible
+name|gimp_image_get_component_visible
 argument_list|(
 name|channel_widget
 operator|->
@@ -7936,10 +7964,6 @@ name|height
 expr_stmt|;
 break|break;
 block|}
-name|return_val
-operator|=
-name|FALSE
-expr_stmt|;
 switch|switch
 condition|(
 name|event
@@ -8091,7 +8115,7 @@ operator|!
 name|visible
 expr_stmt|;
 else|else
-name|gimage_set_component_visible
+name|gimp_image_set_component_visible
 argument_list|(
 name|channel_widget
 operator|->
@@ -8260,7 +8284,7 @@ operator|!
 name|visible
 expr_stmt|;
 else|else
-name|gimage_set_component_visible
+name|gimp_image_set_component_visible
 argument_list|(
 name|channel_widget
 operator|->
@@ -8295,7 +8319,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|channel_widget_preview_events (GtkWidget * widget,GdkEvent * event)
+DECL|function|channel_widget_preview_events (GtkWidget * widget,GdkEvent * event,gpointer data)
 name|channel_widget_preview_events
 parameter_list|(
 name|GtkWidget
@@ -8305,6 +8329,9 @@ parameter_list|,
 name|GdkEvent
 modifier|*
 name|event
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 block|{
 name|ChannelWidget
@@ -8322,6 +8349,10 @@ decl_stmt|;
 name|gboolean
 name|valid
 decl_stmt|;
+name|valid
+operator|=
+name|FALSE
+expr_stmt|;
 name|channel_widget
 operator|=
 operator|(
@@ -8432,7 +8463,7 @@ break|break;
 default|default:
 name|valid
 operator|=
-name|gimage_preview_valid
+name|gimp_image_preview_valid
 argument_list|(
 name|channel_widget
 operator|->
@@ -8663,7 +8694,7 @@ operator|->
 name|width
 operator|=
 call|(
-name|int
+name|gint
 call|)
 argument_list|(
 name|channelsD
@@ -8678,7 +8709,7 @@ operator|->
 name|height
 operator|=
 call|(
-name|int
+name|gint
 call|)
 argument_list|(
 name|channelsD
@@ -8728,7 +8759,7 @@ operator|->
 name|width
 operator|=
 call|(
-name|int
+name|gint
 call|)
 argument_list|(
 name|channelsD
@@ -8743,7 +8774,7 @@ operator|->
 name|height
 operator|=
 call|(
-name|int
+name|gint
 call|)
 argument_list|(
 name|channelsD
@@ -8755,7 +8786,7 @@ argument_list|)
 expr_stmt|;
 name|preview_buf
 operator|=
-name|gimage_composite_preview
+name|gimp_image_composite_preview
 argument_list|(
 name|channel_widget
 operator|->
@@ -8949,7 +8980,7 @@ name|gchar
 modifier|*
 name|bits
 decl_stmt|;
-name|int
+name|gint
 name|width
 decl_stmt|,
 name|height
@@ -8961,12 +8992,6 @@ operator|->
 name|list_item
 operator|->
 name|state
-expr_stmt|;
-name|widget
-operator|=
-name|channel_widget
-operator|->
-name|channel_preview
 expr_stmt|;
 name|pixmap_normal
 operator|=
@@ -8991,6 +9016,12 @@ name|channel_pixmap
 index|[
 name|INSENSITIVE
 index|]
+expr_stmt|;
+name|widget
+operator|=
+name|channel_widget
+operator|->
+name|channel_preview
 expr_stmt|;
 name|bits
 operator|=
@@ -9382,7 +9413,7 @@ break|break;
 default|default:
 name|visible
 operator|=
-name|gimage_get_component_visible
+name|gimp_image_get_component_visible
 argument_list|(
 name|channel_widget
 operator|->
@@ -9678,16 +9709,23 @@ name|channelsD
 condition|)
 return|return;
 comment|/*  First determine if _any_ other channel widgets are set to visible  */
+for|for
+control|(
 name|list
 operator|=
 name|channelsD
 operator|->
 name|channel_widgets
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|list
-condition|)
+condition|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 block|{
 name|cw
 operator|=
@@ -9731,7 +9769,7 @@ break|break;
 default|default:
 name|visible
 operator||=
-name|gimage_get_component_visible
+name|gimp_image_get_component_visible
 argument_list|(
 name|cw
 operator|->
@@ -9745,25 +9783,25 @@ expr_stmt|;
 break|break;
 block|}
 block|}
+block|}
+comment|/*  Now, toggle the visibility for all channels except the specified one  */
+for|for
+control|(
+name|list
+operator|=
+name|channelsD
+operator|->
+name|channel_widgets
+init|;
+name|list
+condition|;
 name|list
 operator|=
 name|g_slist_next
 argument_list|(
 name|list
 argument_list|)
-expr_stmt|;
-block|}
-comment|/*  Now, toggle the visibility for all channels except the specified one  */
-name|list
-operator|=
-name|channelsD
-operator|->
-name|channel_widgets
-expr_stmt|;
-while|while
-condition|(
-name|list
-condition|)
+control|)
 block|{
 name|cw
 operator|=
@@ -9805,7 +9843,7 @@ name|visible
 expr_stmt|;
 break|break;
 default|default:
-name|gimage_set_component_visible
+name|gimp_image_set_component_visible
 argument_list|(
 name|cw
 operator|->
@@ -9845,7 +9883,7 @@ name|TRUE
 expr_stmt|;
 break|break;
 default|default:
-name|gimage_set_component_visible
+name|gimp_image_set_component_visible
 argument_list|(
 name|cw
 operator|->
@@ -9863,13 +9901,6 @@ block|}
 name|channel_widget_eye_redraw
 argument_list|(
 name|cw
-argument_list|)
-expr_stmt|;
-name|list
-operator|=
-name|g_slist_next
-argument_list|(
-name|list
 argument_list|)
 expr_stmt|;
 block|}
@@ -9894,8 +9925,10 @@ name|ChannelWidget
 modifier|*
 name|channel_widget
 decl_stmt|;
-name|int
+name|gboolean
 name|update_preview
+init|=
+name|FALSE
 decl_stmt|;
 name|channel_widget
 operator|=
@@ -9911,7 +9944,7 @@ name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/***  Sensitivity  ***/
+comment|/*  Set sensitivity  */
 comment|/*  If there is a floating selection...  */
 if|if
 condition|(
@@ -10036,7 +10069,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/***  Selection  ***/
+comment|/*  Set selection  */
 comment|/*  If this is an auxillary channel  */
 if|if
 condition|(
@@ -10078,7 +10111,7 @@ block|{
 comment|/*  If the component is active, select. otherwise, deselect  */
 if|if
 condition|(
-name|gimage_get_component_active
+name|gimp_image_get_component_active
 argument_list|(
 name|channel_widget
 operator|->
@@ -10128,7 +10161,7 @@ default|default:
 name|update_preview
 operator|=
 operator|!
-name|gimage_preview_valid
+name|gimp_image_preview_valid
 argument_list|(
 name|channel_widget
 operator|->
@@ -10261,7 +10294,7 @@ name|Channel
 modifier|*
 name|new_channel
 decl_stmt|;
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
@@ -10384,7 +10417,7 @@ index|[
 name|i
 index|]
 expr_stmt|;
-name|gimage_add_channel
+name|gimp_image_add_channel
 argument_list|(
 name|gimage
 argument_list|,
@@ -10398,97 +10431,12 @@ name|gdisplays_flush
 argument_list|()
 expr_stmt|;
 block|}
-name|color_panel_free
-argument_list|(
-name|options
-operator|->
-name|color_panel
-argument_list|)
-expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
 name|options
 operator|->
 name|query_box
 argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|options
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|new_channel_query_cancel_callback (GtkWidget * widget,gpointer data)
-name|new_channel_query_cancel_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|NewChannelOptions
-modifier|*
-name|options
-decl_stmt|;
-name|options
-operator|=
-operator|(
-name|NewChannelOptions
-operator|*
-operator|)
-name|data
-expr_stmt|;
-name|color_panel_free
-argument_list|(
-name|options
-operator|->
-name|color_panel
-argument_list|)
-expr_stmt|;
-name|gtk_widget_destroy
-argument_list|(
-name|options
-operator|->
-name|query_box
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|options
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|new_channel_query_scale_update (GtkAdjustment * adjustment,gdouble * scale_val)
-name|new_channel_query_scale_update
-parameter_list|(
-name|GtkAdjustment
-modifier|*
-name|adjustment
-parameter_list|,
-name|gdouble
-modifier|*
-name|scale_val
-parameter_list|)
-block|{
-operator|*
-name|scale_val
-operator|=
-name|adjustment
-operator|->
-name|value
 expr_stmt|;
 block|}
 end_function
@@ -10615,11 +10563,11 @@ argument_list|(
 literal|"Cancel"
 argument_list|)
 argument_list|,
-name|new_channel_query_cancel_callback
-argument_list|,
-name|options
+name|gtk_widget_destroy
 argument_list|,
 name|NULL
+argument_list|,
+literal|1
 argument_list|,
 name|NULL
 argument_list|,
@@ -10628,6 +10576,29 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_signal_connect_object
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|options
+operator|->
+name|query_box
+argument_list|)
+argument_list|,
+literal|"destroy"
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|g_free
+argument_list|)
+argument_list|,
+operator|(
+name|GtkObject
+operator|*
+operator|)
+name|options
 argument_list|)
 expr_stmt|;
 comment|/*  The main hbox  */
@@ -10989,10 +10960,10 @@ argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|new_channel_query_scale_update
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_double_adjustment_update
+argument_list|)
 argument_list|,
 operator|&
 name|options
@@ -11332,71 +11303,11 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-name|color_panel_free
-argument_list|(
-name|options
-operator|->
-name|color_panel
-argument_list|)
-expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
 name|options
 operator|->
 name|query_box
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|options
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|edit_channel_query_cancel_callback (GtkWidget * widget,gpointer data)
-name|edit_channel_query_cancel_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|EditChannelOptions
-modifier|*
-name|options
-decl_stmt|;
-name|options
-operator|=
-operator|(
-name|EditChannelOptions
-operator|*
-operator|)
-name|data
-expr_stmt|;
-name|color_panel_free
-argument_list|(
-name|options
-operator|->
-name|color_panel
-argument_list|)
-expr_stmt|;
-name|gtk_widget_destroy
-argument_list|(
-name|options
-operator|->
-name|query_box
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|options
 argument_list|)
 expr_stmt|;
 block|}
@@ -11571,11 +11482,11 @@ argument_list|(
 literal|"Cancel"
 argument_list|)
 argument_list|,
-name|edit_channel_query_cancel_callback
-argument_list|,
-name|options
+name|gtk_widget_destroy
 argument_list|,
 name|NULL
+argument_list|,
+literal|1
 argument_list|,
 name|NULL
 argument_list|,
@@ -11584,6 +11495,29 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_signal_connect_object
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|options
+operator|->
+name|query_box
+argument_list|)
+argument_list|,
+literal|"destroy"
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|g_free
+argument_list|)
+argument_list|,
+operator|(
+name|GtkObject
+operator|*
+operator|)
+name|options
 argument_list|)
 expr_stmt|;
 comment|/*  The main hbox  */
@@ -11931,10 +11865,10 @@ argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|new_channel_query_scale_update
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_double_adjustment_update
+argument_list|)
 argument_list|,
 operator|&
 name|options

@@ -1682,13 +1682,6 @@ operator|/
 literal|255
 expr_stmt|;
 block|}
-name|color_panel_free
-argument_list|(
-name|options
-operator|->
-name|color_panel
-argument_list|)
-expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
 name|options
@@ -1729,13 +1722,6 @@ name|EditQmaskOptions
 operator|*
 operator|)
 name|client_data
-expr_stmt|;
-name|color_panel_free
-argument_list|(
-name|options
-operator|->
-name|color_panel
-argument_list|)
 expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
