@@ -185,13 +185,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcoloroptions.h"
+file|"gimpcurvestool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpcurvestool.h"
+file|"gimphistogramoptions.h"
 end_include
 
 begin_include
@@ -722,9 +722,9 @@ call|)
 argument_list|(
 name|GIMP_TYPE_CURVES_TOOL
 argument_list|,
-name|GIMP_TYPE_COLOR_OPTIONS
+name|GIMP_TYPE_HISTOGRAM_OPTIONS
 argument_list|,
-name|gimp_color_options_gui
+name|gimp_histogram_options_gui
 argument_list|,
 literal|0
 argument_list|,
@@ -2077,6 +2077,10 @@ argument_list|(
 name|image_map_tool
 argument_list|)
 decl_stmt|;
+name|GimpToolOptions
+modifier|*
+name|tool_options
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|hbox
@@ -2688,6 +2692,32 @@ name|curves_graph_expose
 argument_list|)
 argument_list|,
 name|c_tool
+argument_list|)
+expr_stmt|;
+name|tool_options
+operator|=
+name|GIMP_TOOL
+argument_list|(
+name|c_tool
+argument_list|)
+operator|->
+name|tool_info
+operator|->
+name|tool_options
+expr_stmt|;
+name|gimp_histogram_options_connect_view
+argument_list|(
+name|GIMP_HISTOGRAM_OPTIONS
+argument_list|(
+name|tool_options
+argument_list|)
+argument_list|,
+name|GIMP_HISTOGRAM_VIEW
+argument_list|(
+name|c_tool
+operator|->
+name|graph
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  The range drawing area  */
