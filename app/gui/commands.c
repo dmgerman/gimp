@@ -264,7 +264,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277459640108
+DECL|struct|__anon2c8a324a0108
 block|{
 DECL|member|resize
 name|Resize
@@ -2251,6 +2251,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|nav_window_per_display
+condition|)
+block|{
+if|if
+condition|(
 operator|!
 name|gdisp
 operator|->
@@ -2276,6 +2281,13 @@ operator|->
 name|window_nav_dialog
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|nav_window_follow_auto
+argument_list|()
+expr_stmt|;
+block|}
 block|}
 end_function
 

@@ -206,7 +206,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon27b7a86f0103
+DECL|enum|__anon2a28490a0103
 typedef|typedef
 enum|enum
 block|{
@@ -953,6 +953,15 @@ name|int
 name|use_help
 init|=
 name|TRUE
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|nav_window_per_display
+name|int
+name|nav_window_per_display
+init|=
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
@@ -2593,6 +2602,28 @@ name|NULL
 block|,
 operator|&
 name|use_help
+block|}
+block|,
+block|{
+literal|"nav-window-per-display"
+block|,
+name|TT_BOOLEAN
+block|,
+operator|&
+name|nav_window_per_display
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"nav-window-follows-auto"
+block|,
+name|TT_BOOLEAN
+block|,
+name|NULL
+block|,
+operator|&
+name|nav_window_per_display
 block|}
 block|}
 decl_stmt|;

@@ -1297,12 +1297,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gdisp
-operator|->
-name|window_nav_dialog
-condition|)
 name|nav_window_update_window_marker
 argument_list|(
 name|gdisp

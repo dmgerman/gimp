@@ -37,6 +37,9 @@ begin_function_decl
 name|void
 name|nav_window_free
 parameter_list|(
+name|GDisplay
+modifier|*
+parameter_list|,
 name|InfoDialog
 modifier|*
 parameter_list|)

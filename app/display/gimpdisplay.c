@@ -1594,15 +1594,11 @@ operator|->
 name|window_info_dialog
 argument_list|)
 expr_stmt|;
-comment|/* Remove navigation dialog if we have one */
-if|if
-condition|(
-name|gdisp
-operator|->
-name|window_nav_dialog
-condition|)
+comment|/* Remove navigation dialog */
 name|nav_window_free
 argument_list|(
+name|gdisp
+argument_list|,
 name|gdisp
 operator|->
 name|window_nav_dialog
