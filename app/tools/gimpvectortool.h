@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27437e270103
+DECL|enum|__anon2926f9cf0103
 block|{
 DECL|enumerator|VCREATING
 name|VCREATING
@@ -201,6 +201,12 @@ modifier|*
 name|cur_anchor
 decl_stmt|;
 comment|/*  The current Anchor         */
+DECL|member|cur_stroke
+name|GimpStroke
+modifier|*
+name|cur_stroke
+decl_stmt|;
+comment|/*  The current Stroke         */
 DECL|member|vectors
 name|GimpVectors
 modifier|*

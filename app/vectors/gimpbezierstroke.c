@@ -53,7 +53,7 @@ specifier|static
 name|void
 name|gimp_bezier_stroke_class_init
 parameter_list|(
-name|GimpStrokeClass
+name|GimpBezierStrokeClass
 modifier|*
 name|klass
 parameter_list|)
@@ -174,10 +174,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_bezier_stroke_class_init (GimpStrokeClass * klass)
+DECL|function|gimp_bezier_stroke_class_init (GimpBezierStrokeClass * klass)
 name|gimp_bezier_stroke_class_init
 parameter_list|(
-name|GimpStrokeClass
+name|GimpBezierStrokeClass
 modifier|*
 name|klass
 parameter_list|)

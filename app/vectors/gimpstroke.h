@@ -93,6 +93,11 @@ name|GList
 modifier|*
 name|anchors
 decl_stmt|;
+DECL|member|next
+name|GimpStroke
+modifier|*
+name|next
+decl_stmt|;
 comment|/* Stuff missing */
 block|}
 struct|;
@@ -104,7 +109,7 @@ struct|struct
 name|_GimpStrokeClass
 block|{
 DECL|member|parent_class
-name|GObject
+name|GObjectClass
 name|parent_class
 decl_stmt|;
 DECL|member|changed

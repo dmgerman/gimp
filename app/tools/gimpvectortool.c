@@ -815,10 +815,14 @@ decl_stmt|;
 name|GimpAnchor
 modifier|*
 name|anchor
+init|=
+name|NULL
 decl_stmt|;
 name|GimpStroke
 modifier|*
 name|stroke
+init|=
+name|NULL
 decl_stmt|;
 name|vector_tool
 operator|=
@@ -901,6 +905,9 @@ operator|->
 name|vectors
 argument_list|,
 name|coords
+argument_list|,
+operator|&
+name|stroke
 argument_list|)
 expr_stmt|;
 if|if
@@ -953,6 +960,12 @@ operator|->
 name|function
 operator|=
 name|VMOVING
+expr_stmt|;
+name|vector_tool
+operator|->
+name|cur_stroke
+operator|=
+name|stroke
 expr_stmt|;
 name|vector_tool
 operator|->
@@ -1014,6 +1027,12 @@ name|vectors
 argument_list|,
 name|stroke
 argument_list|)
+expr_stmt|;
+name|vector_tool
+operator|->
+name|cur_stroke
+operator|=
+name|stroke
 expr_stmt|;
 name|vector_tool
 operator|->
@@ -1210,11 +1229,11 @@ if|if
 condition|(
 name|anchor
 condition|)
-name|gimp_vectors_anchor_move_absolute
+name|gimp_stroke_anchor_move_absolute
 argument_list|(
 name|vector_tool
 operator|->
-name|vectors
+name|cur_stroke
 argument_list|,
 name|vector_tool
 operator|->
@@ -1318,6 +1337,8 @@ operator|->
 name|vectors
 argument_list|,
 name|coords
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -1506,13 +1527,6 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|g_printerr
-argument_list|(
-literal|"drawing %p\n"
-argument_list|,
-name|cur_anchor
-argument_list|)
-expr_stmt|;
 name|gimp_draw_tool_draw_handle
 argument_list|(
 name|draw_tool
@@ -1539,9 +1553,6 @@ name|GTK_ANCHOR_CENTER
 argument_list|,
 name|FALSE
 argument_list|)
-expr_stmt|;
-name|G_BREAKPOINT
-argument_list|()
 expr_stmt|;
 block|}
 block|}
