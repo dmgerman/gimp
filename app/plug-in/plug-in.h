@@ -87,30 +87,11 @@ range|:
 literal|1
 decl_stmt|;
 comment|/*  Is the plug-in running synchronously?   */
-if|#
-directive|if
-name|GLIB_CHECK_VERSION
-argument_list|(
-literal|2
-operator|,
-literal|3
-operator|,
-literal|5
-argument_list|)
 DECL|member|pid
 name|GPid
 name|pid
 decl_stmt|;
 comment|/*  Plug-in's process id                    */
-else|#
-directive|else
-DECL|member|pid
-name|pid_t
-name|pid
-decl_stmt|;
-comment|/*  Plug-in's process id                    */
-endif|#
-directive|endif
 DECL|member|name
 name|gchar
 modifier|*
