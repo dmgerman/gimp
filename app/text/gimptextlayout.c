@@ -1161,6 +1161,7 @@ name|extents
 operator|.
 name|x
 operator|=
+operator|-
 name|x1
 expr_stmt|;
 name|layout
@@ -1169,6 +1170,7 @@ name|extents
 operator|.
 name|y
 operator|=
+operator|-
 name|y1
 expr_stmt|;
 name|layout
