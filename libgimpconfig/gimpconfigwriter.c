@@ -94,7 +94,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpconfig.h"
+file|"gimpconfig-error.h"
 end_include
 
 begin_include

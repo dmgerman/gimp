@@ -82,6 +82,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpconfig-error.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpconfig-params.h"
 end_include
 
@@ -117,7 +123,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc3bade0103
+DECL|enum|__anon27917dba0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

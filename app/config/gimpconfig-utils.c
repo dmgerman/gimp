@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995-1997 Spencer Kimball and Peter Mattis  *  * Utitility functions for GimpConfig.  * Copyright (C) 2001  Sven Neumann<sven@gimp.org>  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995-1997 Spencer Kimball and Peter Mattis  *  * Utitility functions for GimpConfig.  * Copyright (C) 2001-2003  Sven Neumann<sven@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -52,7 +52,7 @@ file|"gimpconfig-utils.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_config_diff:  * @a: a #GObject  * @b: another #GObject of the same type as @a  * @flags: a mask of GParamFlags  *   * Compares all properties of @a and @b that have all @flags set. If  * @flags is 0, all properties are compared.  *   * Return value: a GList of differing GParamSpecs.  **/
+comment|/**  * gimp_config_diff:  * @a: a #GObject  * @b: another #GObject of the same type as @a  * @flags: a mask of GParamFlags  *  * Compares all properties of @a and @b that have all @flags set. If  * @flags is 0, all properties are compared.  *  * Return value: a GList of differing GParamSpecs.  **/
 end_comment
 
 begin_function
@@ -369,7 +369,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_connect:  * @src: a #GObject  * @dest: another #GObject of the same type as @src  *   * Connects @dest with @src so that all property changes of @src are  * applied to @dest using a "notify" handler.  **/
+comment|/**  * gimp_config_connect:  * @src: a #GObject  * @dest: another #GObject of the same type as @src  *  * Connects @dest with @src so that all property changes of @src are  * applied to @dest using a "notify" handler.  **/
 end_comment
 
 begin_function
@@ -435,7 +435,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_disconnect:  * @src: a #GObject  * @dest: another #GObject of the same type as @src  *   * Removes a connection between @dest and @src that was previously set  * up using gimp_config_connect().  **/
+comment|/**  * gimp_config_disconnect:  * @src: a #GObject  * @dest: another #GObject of the same type as @src  *  * Removes a connection between @dest and @src that was previously set  * up using gimp_config_connect().  **/
 end_comment
 
 begin_function
@@ -484,7 +484,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_copy_properties:  * @src: a #GObject  * @dest: another #GObject of the same type as @src  *   * Retrieves all read and writeable property settings from @src and  * applies the values to @dest.  **/
+comment|/**  * gimp_config_copy_properties:  * @src: a #GObject  * @dest: another #GObject of the same type as @src  *  * Retrieves all read and writeable property settings from @src and  * applies the values to @dest.  **/
 end_comment
 
 begin_function
@@ -815,7 +815,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_reset_properties:  * @object: a #GObject  *   * Resets all writable properties of @object to the default values as  * defined in their #GParamSpec.  **/
+comment|/**  * gimp_config_reset_properties:  * @object: a #GObject  *  * Resets all writable properties of @object to the default values as  * defined in their #GParamSpec.  **/
 end_comment
 
 begin_function
@@ -1057,7 +1057,7 @@ comment|/*  * GimpConfig string utilities  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_config_string_append_escaped:  * @string: pointer to a #GString  * @val: a string to append or %NULL  *   * Escapes and quotes @val and appends it to @string. The escape  * algorithm is different from the one used by g_strescape() since it  * leaves non-ASCII characters intact and thus preserves UTF-8  * strings. Only control characters and quotes are being escaped.  **/
+comment|/**  * gimp_config_string_append_escaped:  * @string: pointer to a #GString  * @val: a string to append or %NULL  *  * Escapes and quotes @val and appends it to @string. The escape  * algorithm is different from the one used by g_strescape() since it  * leaves non-ASCII characters intact and thus preserves UTF-8  * strings. Only control characters and quotes are being escaped.  **/
 end_comment
 
 begin_function
@@ -1361,6 +1361,61 @@ literal|2
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_config_string_indent (GString * string,gint indent_level)
+name|gimp_config_string_indent
+parameter_list|(
+name|GString
+modifier|*
+name|string
+parameter_list|,
+name|gint
+name|indent_level
+parameter_list|)
+block|{
+name|gint
+name|i
+decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|string
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|indent_level
+operator|>=
+literal|0
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|indent_level
+condition|;
+name|i
+operator|++
+control|)
+name|g_string_append_len
+argument_list|(
+name|string
+argument_list|,
+literal|"    "
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

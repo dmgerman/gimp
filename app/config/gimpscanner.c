@@ -106,7 +106,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpconfig.h"
+file|"gimpconfig-error.h"
 end_include
 
 begin_include
@@ -124,7 +124,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae8bd390108
+DECL|struct|__anon2b27f33e0108
 block|{
 DECL|member|fd
 name|gint
@@ -992,7 +992,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae8bd390203
+DECL|enum|__anon2b27f33e0203
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB

@@ -30,6 +30,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"config/gimpconfig-error.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp.h"
 end_include
 
@@ -43,12 +55,6 @@ begin_include
 include|#
 directive|include
 file|"gimpparasitelist.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfig.h"
 end_include
 
 begin_function

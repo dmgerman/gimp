@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpconfig-error.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"config/gimpcoreconfig.h"
 end_include
 
