@@ -472,7 +472,10 @@ name|alert
 argument_list|,
 name|error
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|default_dialog_show
