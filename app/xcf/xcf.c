@@ -236,7 +236,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon286e60bc0103
+DECL|enum|__anon276ef1760103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -371,7 +371,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon286e60bc0203
+DECL|enum|__anon276ef1760203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -11344,6 +11344,8 @@ argument_list|(
 name|layer
 argument_list|,
 name|layer_mask
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|layer

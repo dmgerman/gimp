@@ -135,7 +135,7 @@ decl_stmt|;
 comment|/*  layer combination mode         */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon27ea4fbf0108
+DECL|struct|__anon2b5eb5c30108
 block|{
 DECL|member|backing_store
 name|TileManager
@@ -187,6 +187,18 @@ DECL|member|parent_class
 name|GimpDrawableClass
 name|parent_class
 decl_stmt|;
+DECL|member|mask_changed
+name|void
+function_decl|(
+modifier|*
+name|mask_changed
+function_decl|)
+parameter_list|(
+name|GimpLayer
+modifier|*
+name|layer
+parameter_list|)
+function_decl|;
 block|}
 struct|;
 end_struct
@@ -375,6 +387,9 @@ parameter_list|,
 name|GimpLayerMask
 modifier|*
 name|mask
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -389,6 +404,9 @@ name|layer
 parameter_list|,
 name|MaskApplyMode
 name|mode
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl

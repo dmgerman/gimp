@@ -129,9 +129,6 @@ parameter_list|,
 name|GimpViewable
 modifier|*
 name|viewable
-parameter_list|,
-name|gint
-name|preview_size
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -576,7 +573,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_list_item_set_viewable (GimpListItem * list_item,GimpViewable * viewable,gint preview_size)
+DECL|function|gimp_drawable_list_item_set_viewable (GimpListItem * list_item,GimpViewable * viewable)
 name|gimp_drawable_list_item_set_viewable
 parameter_list|(
 name|GimpListItem
@@ -586,9 +583,6 @@ parameter_list|,
 name|GimpViewable
 modifier|*
 name|viewable
-parameter_list|,
-name|gint
-name|preview_size
 parameter_list|)
 block|{
 name|GimpDrawableListItem
@@ -621,8 +615,6 @@ argument_list|(
 name|list_item
 argument_list|,
 name|viewable
-argument_list|,
-name|preview_size
 argument_list|)
 expr_stmt|;
 name|drawable_item

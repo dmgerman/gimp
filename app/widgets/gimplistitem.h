@@ -101,6 +101,11 @@ name|GtkWidget
 modifier|*
 name|name_label
 decl_stmt|;
+comment|/*< protected>*/
+DECL|member|preview_size
+name|gint
+name|preview_size
+decl_stmt|;
 comment|/*< private>*/
 DECL|member|reorderable
 name|gboolean
@@ -139,9 +144,6 @@ parameter_list|,
 name|GimpViewable
 modifier|*
 name|viewable
-parameter_list|,
-name|gint
-name|preview_size
 parameter_list|)
 function_decl|;
 block|}

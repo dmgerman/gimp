@@ -417,6 +417,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpLayerListItem
+typedef|typedef
+name|struct
+name|_GimpLayerListItem
+name|GimpLayerListItem
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|HistogramWidget
 typedef|typedef
 name|struct

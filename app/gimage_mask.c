@@ -1320,10 +1320,8 @@ name|drawable
 argument_list|)
 condition|)
 block|{
-name|gimp_image_remove_layer_mask
+name|gimp_layer_apply_mask
 argument_list|(
-name|gimage
-argument_list|,
 name|gimp_layer_mask_get_layer
 argument_list|(
 name|GIMP_LAYER_MASK
@@ -1333,6 +1331,8 @@ argument_list|)
 argument_list|)
 argument_list|,
 name|DISCARD
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
