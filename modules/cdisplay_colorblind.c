@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c4284c0103
+DECL|enum|__anon28ea613e0103
 block|{
 DECL|enumerator|COLORBLIND_DEFICIENCY_PROTANOPIA
 name|COLORBLIND_DEFICIENCY_PROTANOPIA
@@ -370,7 +370,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c4284c0203
+DECL|enum|__anon28ea613e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -925,9 +925,7 @@ name|CDISPLAY_TYPE_COLORBLIND_DEFICIENCY
 argument_list|,
 name|DEFAULT_DEFICIENCY
 argument_list|,
-name|G_PARAM_READWRITE
-operator||
-name|G_PARAM_CONSTRUCT
+literal|0
 argument_list|)
 expr_stmt|;
 name|display_class
