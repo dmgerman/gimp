@@ -183,13 +183,14 @@ name|batch_interpreter
 argument_list|)
 expr_stmt|;
 block|}
+comment|/*  script-fu text console, hardcoded for backward compatibility  */
 if|if
 condition|(
 name|strcmp
 argument_list|(
 name|batch_interpreter
 argument_list|,
-name|BATCH_DEFAULT_EVAL_PROC
+literal|"plug_in_script_fu_eval"
 argument_list|)
 operator|==
 literal|0
