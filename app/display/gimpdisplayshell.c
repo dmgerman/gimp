@@ -322,7 +322,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c96403a0103
+DECL|enum|__anon275c93e10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -338,7 +338,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c96403a0203
+DECL|enum|__anon275c93e10203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -5385,7 +5385,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_pause:  * @shell: a display shell  *  * This function decrements the pause count for the display shell.  * If this brings it to zero, then the current tool is resumed.  * It is an error to call this function without having previously  * called gimp_display_shell_pause().  **/
+comment|/**  * gimp_display_shell_resume:  * @shell: a display shell  *  * This function decrements the pause count for the display shell.  * If this brings it to zero, then the current tool is resumed.  * It is an error to call this function without having previously  * called gimp_display_shell_pause().  **/
 end_comment
 
 begin_function
