@@ -136,7 +136,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2b9ff15d0103
+DECL|enum|__anon2c73cfc50103
 typedef|typedef
 enum|enum
 block|{
@@ -673,7 +673,7 @@ DECL|variable|save_window_positions_on_exit
 name|int
 name|save_window_positions_on_exit
 init|=
-name|TRUE
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
