@@ -33,7 +33,7 @@ end_macro
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2baa06e10103
+DECL|enum|__anon27f098150103
 block|{
 DECL|enumerator|GIMP_CHAIN_TOP
 name|GIMP_CHAIN_TOP
@@ -183,7 +183,7 @@ function_decl|)
 parameter_list|(
 name|GimpChainButton
 modifier|*
-name|gcb
+name|button
 parameter_list|)
 function_decl|;
 block|}
@@ -217,7 +217,7 @@ name|gimp_chain_button_set_active
 parameter_list|(
 name|GimpChainButton
 modifier|*
-name|gcb
+name|button
 parameter_list|,
 name|gboolean
 name|active
@@ -231,7 +231,7 @@ name|gimp_chain_button_get_active
 parameter_list|(
 name|GimpChainButton
 modifier|*
-name|gcb
+name|button
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4222d90103
+DECL|enum|__anon27c8a5d60103
 block|{
 DECL|enumerator|TOGGLED
 name|TOGGLED
@@ -59,7 +59,7 @@ name|gimp_chain_button_init
 parameter_list|(
 name|GimpChainButton
 modifier|*
-name|gcb
+name|button
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -75,14 +75,14 @@ name|widget
 parameter_list|,
 name|GimpChainButton
 modifier|*
-name|gcb
+name|button
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|gimp_chain_button_draw_lines
 parameter_list|(
 name|GtkWidget
@@ -95,7 +95,7 @@ name|eevent
 parameter_list|,
 name|GimpChainButton
 modifier|*
-name|gcb
+name|button
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -157,20 +157,20 @@ parameter_list|)
 block|{
 specifier|static
 name|GType
-name|gcb_type
+name|button_type
 init|=
 literal|0
 decl_stmt|;
 if|if
 condition|(
 operator|!
-name|gcb_type
+name|button_type
 condition|)
 block|{
 specifier|static
 specifier|const
 name|GTypeInfo
-name|gcb_info
+name|button_info
 init|=
 block|{
 sizeof|sizeof
@@ -213,7 +213,7 @@ operator|)
 name|gimp_chain_button_init
 block|,       }
 decl_stmt|;
-name|gcb_type
+name|button_type
 operator|=
 name|g_type_register_static
 argument_list|(
@@ -222,14 +222,14 @@ argument_list|,
 literal|"GimpChainButton"
 argument_list|,
 operator|&
-name|gcb_info
+name|button_info
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|gcb_type
+name|button_type
 return|;
 block|}
 end_function
@@ -298,48 +298,48 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_chain_button_init (GimpChainButton * gcb)
+DECL|function|gimp_chain_button_init (GimpChainButton * button)
 name|gimp_chain_button_init
 parameter_list|(
 name|GimpChainButton
 modifier|*
-name|gcb
+name|button
 parameter_list|)
 block|{
-name|gcb
+name|button
 operator|->
 name|position
 operator|=
 name|GIMP_CHAIN_TOP
 expr_stmt|;
-name|gcb
+name|button
 operator|->
 name|active
 operator|=
 name|FALSE
 expr_stmt|;
-name|gcb
+name|button
 operator|->
 name|line1
 operator|=
 name|gtk_drawing_area_new
 argument_list|()
 expr_stmt|;
-name|gcb
+name|button
 operator|->
 name|line2
 operator|=
 name|gtk_drawing_area_new
 argument_list|()
 expr_stmt|;
-name|gcb
+name|button
 operator|->
 name|image
 operator|=
 name|gtk_image_new
 argument_list|()
 expr_stmt|;
-name|gcb
+name|button
 operator|->
 name|button
 operator|=
@@ -350,7 +350,7 @@ name|gtk_button_set_relief
 argument_list|(
 name|GTK_BUTTON
 argument_list|(
-name|gcb
+name|button
 operator|->
 name|button
 argument_list|)
@@ -362,19 +362,19 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|gcb
+name|button
 operator|->
 name|button
 argument_list|)
 argument_list|,
-name|gcb
+name|button
 operator|->
 name|image
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|gcb
+name|button
 operator|->
 name|image
 argument_list|)
@@ -383,7 +383,7 @@ name|g_signal_connect
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gcb
+name|button
 operator|->
 name|button
 argument_list|)
@@ -395,14 +395,14 @@ argument_list|(
 name|gimp_chain_button_clicked_callback
 argument_list|)
 argument_list|,
-name|gcb
+name|button
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gcb
+name|button
 operator|->
 name|line1
 argument_list|)
@@ -414,14 +414,14 @@ argument_list|(
 name|gimp_chain_button_draw_lines
 argument_list|)
 argument_list|,
-name|gcb
+name|button
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gcb
+name|button
 operator|->
 name|line2
 argument_list|)
@@ -433,7 +433,7 @@ argument_list|(
 name|gimp_chain_button_draw_lines
 argument_list|)
 argument_list|,
-name|gcb
+name|button
 argument_list|)
 expr_stmt|;
 block|}
@@ -455,9 +455,9 @@ parameter_list|)
 block|{
 name|GimpChainButton
 modifier|*
-name|gcb
+name|button
 decl_stmt|;
-name|gcb
+name|button
 operator|=
 name|g_object_new
 argument_list|(
@@ -466,7 +466,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gcb
+name|button
 operator|->
 name|position
 operator|=
@@ -476,7 +476,7 @@ name|gtk_image_set_from_stock
 argument_list|(
 name|GTK_IMAGE
 argument_list|(
-name|gcb
+name|button
 operator|->
 name|image
 argument_list|)
@@ -494,7 +494,7 @@ literal|1
 operator|)
 operator|+
 operator|!
-name|gcb
+name|button
 operator|->
 name|active
 index|]
@@ -514,7 +514,7 @@ name|gtk_table_resize
 argument_list|(
 name|GTK_TABLE
 argument_list|(
-name|gcb
+name|button
 argument_list|)
 argument_list|,
 literal|3
@@ -526,10 +526,10 @@ name|gtk_table_attach
 argument_list|(
 name|GTK_TABLE
 argument_list|(
-name|gcb
+name|button
 argument_list|)
 argument_list|,
-name|gcb
+name|button
 operator|->
 name|button
 argument_list|,
@@ -554,10 +554,10 @@ name|gtk_table_attach_defaults
 argument_list|(
 name|GTK_TABLE
 argument_list|(
-name|gcb
+name|button
 argument_list|)
 argument_list|,
-name|gcb
+name|button
 operator|->
 name|line1
 argument_list|,
@@ -574,10 +574,10 @@ name|gtk_table_attach_defaults
 argument_list|(
 name|GTK_TABLE
 argument_list|(
-name|gcb
+name|button
 argument_list|)
 argument_list|,
-name|gcb
+name|button
 operator|->
 name|line2
 argument_list|,
@@ -597,7 +597,7 @@ name|gtk_table_resize
 argument_list|(
 name|GTK_TABLE
 argument_list|(
-name|gcb
+name|button
 argument_list|)
 argument_list|,
 literal|1
@@ -609,10 +609,10 @@ name|gtk_table_attach
 argument_list|(
 name|GTK_TABLE
 argument_list|(
-name|gcb
+name|button
 argument_list|)
 argument_list|,
-name|gcb
+name|button
 operator|->
 name|button
 argument_list|,
@@ -637,10 +637,10 @@ name|gtk_table_attach_defaults
 argument_list|(
 name|GTK_TABLE
 argument_list|(
-name|gcb
+name|button
 argument_list|)
 argument_list|,
-name|gcb
+name|button
 operator|->
 name|line1
 argument_list|,
@@ -657,10 +657,10 @@ name|gtk_table_attach_defaults
 argument_list|(
 name|GTK_TABLE
 argument_list|(
-name|gcb
+name|button
 argument_list|)
 argument_list|,
-name|gcb
+name|button
 operator|->
 name|line2
 argument_list|,
@@ -676,21 +676,21 @@ expr_stmt|;
 block|}
 name|gtk_widget_show
 argument_list|(
-name|gcb
+name|button
 operator|->
 name|button
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|gcb
+name|button
 operator|->
 name|line1
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|gcb
+name|button
 operator|->
 name|line2
 argument_list|)
@@ -698,24 +698,24 @@ expr_stmt|;
 return|return
 name|GTK_WIDGET
 argument_list|(
-name|gcb
+name|button
 argument_list|)
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**   * gimp_chain_button_set_active:  * @gcb:    Pointer to a #GimpChainButton.  * @active: The new state.  *   * Sets the state of the #GimpChainButton to be either locked (#TRUE) or   * unlocked (#FALSE) and changes the showed pixmap to reflect the new state.  */
+comment|/**   * gimp_chain_button_set_active:  * @button:    Pointer to a #GimpChainButton.  * @active: The new state.  *   * Sets the state of the #GimpChainButton to be either locked (#TRUE) or   * unlocked (#FALSE) and changes the showed pixmap to reflect the new state.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_chain_button_set_active (GimpChainButton * gcb,gboolean active)
+DECL|function|gimp_chain_button_set_active (GimpChainButton * button,gboolean active)
 name|gimp_chain_button_set_active
 parameter_list|(
 name|GimpChainButton
 modifier|*
-name|gcb
+name|button
 parameter_list|,
 name|gboolean
 name|active
@@ -725,20 +725,20 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_CHAIN_BUTTON
 argument_list|(
-name|gcb
+name|button
 argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gcb
+name|button
 operator|->
 name|active
 operator|!=
 name|active
 condition|)
 block|{
-name|gcb
+name|button
 operator|->
 name|active
 operator|=
@@ -752,7 +752,7 @@ name|gtk_image_set_from_stock
 argument_list|(
 name|GTK_IMAGE
 argument_list|(
-name|gcb
+name|button
 operator|->
 name|image
 argument_list|)
@@ -761,7 +761,7 @@ name|gimp_chain_stock_items
 index|[
 operator|(
 operator|(
-name|gcb
+name|button
 operator|->
 name|position
 operator|&
@@ -772,7 +772,7 @@ literal|1
 operator|)
 operator|+
 operator|!
-name|gcb
+name|button
 operator|->
 name|active
 index|]
@@ -785,31 +785,31 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_chain_button_get_active  * @gcb: Pointer to a #GimpChainButton.  *   * Checks the state of the #GimpChainButton.   *  * Returns: TRUE if the #GimpChainButton is active (locked).  */
+comment|/**  * gimp_chain_button_get_active  * @button: Pointer to a #GimpChainButton.  *   * Checks the state of the #GimpChainButton.   *  * Returns: TRUE if the #GimpChainButton is active (locked).  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_chain_button_get_active (GimpChainButton * gcb)
+DECL|function|gimp_chain_button_get_active (GimpChainButton * button)
 name|gimp_chain_button_get_active
 parameter_list|(
 name|GimpChainButton
 modifier|*
-name|gcb
+name|button
 parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_CHAIN_BUTTON
 argument_list|(
-name|gcb
+name|button
 argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
 return|return
-name|gcb
+name|button
 operator|->
 name|active
 return|;
@@ -819,7 +819,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_chain_button_clicked_callback (GtkWidget * widget,GimpChainButton * gcb)
+DECL|function|gimp_chain_button_clicked_callback (GtkWidget * widget,GimpChainButton * button)
 name|gimp_chain_button_clicked_callback
 parameter_list|(
 name|GtkWidget
@@ -828,23 +828,23 @@ name|widget
 parameter_list|,
 name|GimpChainButton
 modifier|*
-name|gcb
+name|button
 parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_CHAIN_BUTTON
 argument_list|(
-name|gcb
+name|button
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_chain_button_set_active
 argument_list|(
-name|gcb
+name|button
 argument_list|,
 operator|!
-name|gcb
+name|button
 operator|->
 name|active
 argument_list|)
@@ -853,7 +853,7 @@ name|g_signal_emit
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gcb
+name|button
 argument_list|)
 argument_list|,
 name|gimp_chain_button_signals
@@ -869,8 +869,8 @@ end_function
 
 begin_function
 specifier|static
-name|gint
-DECL|function|gimp_chain_button_draw_lines (GtkWidget * widget,GdkEventExpose * eevent,GimpChainButton * gcb)
+name|gboolean
+DECL|function|gimp_chain_button_draw_lines (GtkWidget * widget,GdkEventExpose * eevent,GimpChainButton * button)
 name|gimp_chain_button_draw_lines
 parameter_list|(
 name|GtkWidget
@@ -883,7 +883,7 @@ name|eevent
 parameter_list|,
 name|GimpChainButton
 modifier|*
-name|gcb
+name|button
 parameter_list|)
 block|{
 name|GdkPoint
@@ -911,7 +911,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_CHAIN_BUTTON
 argument_list|(
-name|gcb
+name|button
 argument_list|)
 argument_list|,
 name|FALSE
@@ -952,7 +952,7 @@ operator|=
 operator|(
 name|widget
 operator|==
-name|gcb
+name|button
 operator|->
 name|line1
 operator|)
@@ -964,7 +964,7 @@ literal|1
 expr_stmt|;
 switch|switch
 condition|(
-name|gcb
+name|button
 operator|->
 name|position
 condition|)

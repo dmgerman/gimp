@@ -160,7 +160,7 @@ function_decl|)
 parameter_list|(
 name|GimpFileSelection
 modifier|*
-name|gfs
+name|selection
 parameter_list|)
 function_decl|;
 block|}
@@ -208,7 +208,7 @@ name|gimp_file_selection_get_filename
 parameter_list|(
 name|GimpFileSelection
 modifier|*
-name|gfs
+name|selection
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -219,7 +219,7 @@ name|gimp_file_selection_set_filename
 parameter_list|(
 name|GimpFileSelection
 modifier|*
-name|gfs
+name|selection
 parameter_list|,
 specifier|const
 name|gchar

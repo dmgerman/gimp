@@ -207,7 +207,7 @@ comment|/*  *  Widget Constructors  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_option_menu_new:  * @menu_only: #TRUE if the function should return a #GtkMenu only.  * @...:       A #NULL terminated @va_list describing the menu items.  *  * Returns: A #GtkOptionMenu or a #GtkMenu (depending on @menu_only).  **/
+comment|/**  * gimp_option_menu_new:  * @menu_only: #TRUE if the function should return a #GtkMenu only.  * @...:       A #NULL terminated @va_list describing the menu items.  *  * Convenience function to create a #GtkOptionMenu or a #GtkMenu.  *  * Returns: A #GtkOptionMenu or a #GtkMenu (depending on @menu_only).  **/
 end_comment
 
 begin_function
@@ -525,7 +525,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_option_menu_new2:  * @menu_only:          #TRUE if the function should return a #GtkMenu only.  * @menu_item_callback: The callback each menu item's "activate" signal will  *                      be connected with.  * @menu_item_callback_data:  *                      The data which will be passed to g_signal_connect().  * @initial:            The @item_data of the initially selected menu item.  * @...:                A #NULL terminated @va_list describing the menu items.  *  * Returns: A #GtkOptionMenu or a #GtkMenu (depending on @menu_only).  **/
+comment|/**  * gimp_option_menu_new2:  * @menu_only:          #TRUE if the function should return a #GtkMenu only.  * @menu_item_callback: The callback each menu item's "activate" signal will  *                      be connected with.  * @menu_item_callback_data:  *                      The data which will be passed to g_signal_connect().  * @initial:            The @item_data of the initially selected menu item.  * @...:                A #NULL terminated @va_list describing the menu items.  *  * Convenience function to create a #GtkOptionMenu or a #GtkMenu.  *  * Returns: A #GtkOptionMenu or a #GtkMenu (depending on @menu_only).  **/
 end_comment
 
 begin_function
@@ -819,7 +819,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_option_menu_set_history:  * @option_menu: A #GtkOptionMenu as returned by gimp_option_menu_new() or  *               gimp_option_menu_new2().  * @item_data:   The @item_data of the menu item you want to select.  **/
+comment|/**  * gimp_option_menu_set_history:  * @option_menu: A #GtkOptionMenu as returned by gimp_option_menu_new() or  *               gimp_option_menu_new2().  * @item_data:   The @item_data of the menu item you want to select.  *  * Iterates over all entries in a #GtkOptionMenu and selects the one with the  * matching @item_data. Probably only makes sense to use with a #GtkOptionMenu  * that was created using gimp_option_menu_new() or gimp_option_menu_new2().  **/
 end_comment
 
 begin_function
@@ -1061,7 +1061,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_radio_group_new:  * @in_frame:    #TRUE if you want a #GtkFrame around the radio button group.  * @frame_title: The title of the Frame or #NULL if you don't want a title.  * @...:         A #NULL terminated @va_list describing the radio buttons.  *  * Returns: A #GtkFrame or #GtkVbox (depending on @in_frame).  **/
+comment|/**  * gimp_radio_group_new:  * @in_frame:    #TRUE if you want a #GtkFrame around the radio button group.  * @frame_title: The title of the Frame or #NULL if you don't want a title.  * @...:         A #NULL terminated @va_list describing the radio buttons.  *  * Convenience function to create a group of radio buttons embedded into  * a #GtkFrame or #GtkVbox.  *  * Returns: A #GtkFrame or #GtkVbox (depending on @in_frame).  **/
 end_comment
 
 begin_function
@@ -1398,7 +1398,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_radio_group_new2:  * @in_frame:              #TRUE if you want a #GtkFrame around the  *                         radio button group.  * @frame_title:           The title of the Frame or #NULL if you don't want  *                         a title.  * @radio_button_callback: The callback each button's "toggled" signal will  *                         be connected with.  * @radio_button_callback_data:  *                         The data which will be passed to g_signal_connect().  * @initial:               The @item_data of the initially pressed radio button.  * @...:                   A #NULL terminated @va_list describing  *                         the radio buttons.  *  * Returns: A #GtkFrame or #GtkVbox (depending on @in_frame).  **/
+comment|/**  * gimp_radio_group_new2:  * @in_frame:              #TRUE if you want a #GtkFrame around the  *                         radio button group.  * @frame_title:           The title of the Frame or #NULL if you don't want  *                         a title.  * @radio_button_callback: The callback each button's "toggled" signal will  *                         be connected with.  * @radio_button_callback_data:  *                         The data which will be passed to g_signal_connect().  * @initial:               The @item_data of the initially pressed radio button.  * @...:                   A #NULL terminated @va_list describing  *                         the radio buttons.  *  * Convenience function to create a group of radio buttons embedded into  * a #GtkFrame or #GtkVbox.  *  * Returns: A #GtkFrame or #GtkVbox (depending on @in_frame).  **/
 end_comment
 
 begin_function
@@ -1710,6 +1710,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_radio_group_set_active:  * @radio_button: Pointer to a #GtkRadioButton.  * @item_data: The @item_data of the radio button you want to select.  *  * Calls gtk_toggle_button_set_active() with the radio button that was created  * with a matching @item_data.  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_radio_group_set_active (GtkRadioButton * radio_button,gpointer item_data)
@@ -1944,6 +1948,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|GtkObject
 modifier|*
 DECL|function|gimp_scale_entry_new_internal (gboolean color_scale,GtkTable * table,gint column,gint row,const gchar * text,gint scale_width,gint spinbutton_width,gfloat value,gfloat lower,gfloat upper,gfloat step_increment,gfloat page_increment,guint digits,gboolean constrain,gfloat unconstrained_lower,gfloat unconstrained_upper,const gchar * tooltip,const gchar * help_data)
@@ -3054,7 +3059,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a2103d0108
+DECL|struct|__anon293834190108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -3392,7 +3397,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_coordinates_new:  * @unit:                   The initial unit of the #GimpUnitMenu.  * @unit_format:            The unit format string as passed to  *                          gimp_size_entry_new().  * @menu_show_pixels:       #TRUE if the #GimpUnitMenu should contain an item for  *                          GIMP_UNIT_PIXEL.  * @menu_show_percent:      #TRUE if the #GimpUnitMenu should contain an item for  *                          GIMP_UNIT_PERCENT.  * @spinbutton_width:       The horizontal size of the #GimpSizeEntry's  *                           #GtkSpinButton's.  * @update_policy:          The update policy for the #GimpSizeEntry.  * @chainbutton_active:     #TRUE if the attached #GimpChainButton should be  *                          active.  * @chain_constrains_ratio: #TRUE if the chainbutton should constrain the  *                          fields' aspect ratio. If #FALSE, the values will  *                          be constrained.  * @xlabel:                 The label for the X coordinate.  * @x:                      The initial value of the X coordinate.  * @xres:                   The horizontal resolution in DPI.  * @lower_boundary_x:       The lower boundary of the X coordinate.  * @upper_boundary_x:       The upper boundary of the X coordinate.  * @xsize_0:                The X value which will be treated as 0%.  * @xsize_100:              The X value which will be treated as 100%.  * @ylabel:                 The label for the Y coordinate.  * @y:                      The initial value of the Y coordinate.  * @yres:                   The vertical resolution in DPI.  * @lower_boundary_y:       The lower boundary of the Y coordinate.  * @upper_boundary_y:       The upper boundary of the Y coordinate.  * @ysize_0:                The Y value which will be treated as 0%.  * @ysize_100:              The Y value which will be treated as 100%.  *  * Returns: A #GimpSizeEntry with two fields for x/y coordinates/sizes with  *          a #GimpChainButton attached to constrain either the two fields'  *          values or the ratio between them.  **/
+comment|/**  * gimp_coordinates_new:  * @unit:                   The initial unit of the #GimpUnitMenu.  * @unit_format:            The unit format string as passed to  *                          gimp_size_entry_new().  * @menu_show_pixels:       #TRUE if the #GimpUnitMenu should contain an item for  *                          GIMP_UNIT_PIXEL.  * @menu_show_percent:      #TRUE if the #GimpUnitMenu should contain an item for  *                          GIMP_UNIT_PERCENT.  * @spinbutton_width:       The horizontal size of the #GimpSizeEntry's  *                           #GtkSpinButton's.  * @update_policy:          The update policy for the #GimpSizeEntry.  * @chainbutton_active:     #TRUE if the attached #GimpChainButton should be  *                          active.  * @chain_constrains_ratio: #TRUE if the chainbutton should constrain the  *                          fields' aspect ratio. If #FALSE, the values will  *                          be constrained.  * @xlabel:                 The label for the X coordinate.  * @x:                      The initial value of the X coordinate.  * @xres:                   The horizontal resolution in DPI.  * @lower_boundary_x:       The lower boundary of the X coordinate.  * @upper_boundary_x:       The upper boundary of the X coordinate.  * @xsize_0:                The X value which will be treated as 0%.  * @xsize_100:              The X value which will be treated as 100%.  * @ylabel:                 The label for the Y coordinate.  * @y:                      The initial value of the Y coordinate.  * @yres:                   The vertical resolution in DPI.  * @lower_boundary_y:       The lower boundary of the Y coordinate.  * @upper_boundary_y:       The upper boundary of the Y coordinate.  * @ysize_0:                The Y value which will be treated as 0%.  * @ysize_100:              The Y value which will be treated as 100%.  *  * Convenience function that creates a #GimpSizeEntry with two fields for x/y  * coordinates/sizes with a #GimpChainButton attached to constrain either the  * two fields' values or the ratio between them.  *  * Returns: The new #GimpSizeEntry.  **/
 end_comment
 
 begin_function
@@ -3967,7 +3972,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pixmap_button_new:  * @xpm_data: The XPM data which will be passed to gimp_pixmap_new().  * @text:     An optional text which will appear right of the pixmap.  *  * Returns: A #GtkButton with a #GimpPixmap and an optional #GtkLabel.  **/
+comment|/**  * gimp_pixmap_button_new:  * @xpm_data: The XPM data which will be passed to gimp_pixmap_new().  * @text:     An optional text which will appear right of the pixmap.  *  * Convenience function that creates a #GtkButton with a #GimpPixmap and an  * optional #GtkLabel.  *   * Returns: The new #GtkButton.  **/
 end_comment
 
 begin_function

@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e9f4390103
+DECL|enum|__anon2aad88a50103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -1051,7 +1051,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_area_set_color:  * @area: Pointer to a #GimpColorArea.  * @color:  *   **/
+comment|/**  * gimp_color_area_set_color:  * @area: Pointer to a #GimpColorArea.  * @color: Pointer to a #GimpRGB struct that defines the new color.  *   * Sets @area to a different @color.  **/
 end_comment
 
 begin_function
@@ -1139,6 +1139,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_color_area_get_color:  * @area: Pointer to a #GimpColorArea.  * @color: Pointer to a #GimpRGB struct that is used to return the color.  *  * Retrieves the current color of the @area.  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_color_area_get_color (GimpColorArea * area,GimpRGB * color)
@@ -1178,6 +1182,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_color_area_has_alpha:  * @area: Pointer to a #GimpColorArea.  *  * Checks whether the @area shows transparency information. This is determined  * via the @area's #GimpColorAreaType.  *  * Returns: %TRUE if @area shows transparency information, %FALSE otherwise.  **/
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_color_area_has_alpha (GimpColorArea * area)
@@ -1207,6 +1215,10 @@ name|GIMP_COLOR_AREA_FLAT
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_color_area_set_type:  * @area: Pointer to a #GimpColorArea.  * @type: A #GimpColorAreaType.   *  * Allows to change the type of @area. The #GimpColorAreaType determines  * whether the widget shows transparency information and chooses the size of  * the checkerboard used to do that.  **/
+end_comment
 
 begin_function
 name|void

@@ -580,7 +580,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_create_action_areav:  * @dialog: The #GimpDialog you want to create the action_area for.  * @args: A @va_list as obtained with va_start() describing the action_area  *        buttons.  **/
+comment|/**  * gimp_dialog_create_action_areav:  * @dialog: The #GimpDialog you want to create the action_area for.  * @args: A @va_list as obtained with va_start() describing the action_area  *        buttons.  *  * This function creates the action area of a #GimpDialog. You will rarely  * need to call it directly. Instead use gimp_dialog_new() or its variants.  **/
 end_comment
 
 begin_function

@@ -163,7 +163,7 @@ function_decl|)
 parameter_list|(
 name|GimpColorArea
 modifier|*
-name|gca
+name|area
 parameter_list|)
 function_decl|;
 block|}

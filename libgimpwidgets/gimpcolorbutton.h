@@ -153,7 +153,7 @@ function_decl|)
 parameter_list|(
 name|GimpColorButton
 modifier|*
-name|gcb
+name|button
 parameter_list|)
 function_decl|;
 block|}
@@ -203,7 +203,7 @@ name|gimp_color_button_set_color
 parameter_list|(
 name|GimpColorButton
 modifier|*
-name|gcb
+name|button
 parameter_list|,
 specifier|const
 name|GimpRGB
@@ -219,7 +219,7 @@ name|gimp_color_button_get_color
 parameter_list|(
 name|GimpColorButton
 modifier|*
-name|gcb
+name|button
 parameter_list|,
 name|GimpRGB
 modifier|*
@@ -234,7 +234,7 @@ name|gimp_color_button_has_alpha
 parameter_list|(
 name|GimpColorButton
 modifier|*
-name|gcb
+name|button
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -245,7 +245,7 @@ name|gimp_color_button_set_type
 parameter_list|(
 name|GimpColorButton
 modifier|*
-name|gcb
+name|button
 parameter_list|,
 name|GimpColorAreaType
 name|type

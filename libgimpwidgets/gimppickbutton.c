@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c26a5770103
+DECL|enum|__anon276172a00103
 block|{
 DECL|enumerator|COLOR_PICKED
 name|COLOR_PICKED
@@ -579,6 +579,10 @@ end_function
 
 begin_comment
 comment|/*  public functions  */
+end_comment
+
+begin_comment
+comment|/**  * gimp_pick_button_new:  *  * Creates a new #GimpPickButton widget.  *   * Returns: A new #GimpPickButton widget.  **/
 end_comment
 
 begin_function

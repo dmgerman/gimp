@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2bcb020103
+DECL|enum|__anon29b5a6d20103
 block|{
 DECL|enumerator|GIMP_COLOR_BUTTON_COLOR_FG
 name|GIMP_COLOR_BUTTON_COLOR_FG
@@ -97,7 +97,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2bcb020203
+DECL|enum|__anon29b5a6d20203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -127,7 +127,7 @@ name|gimp_color_button_init
 parameter_list|(
 name|GimpColorButton
 modifier|*
-name|gcb
+name|button
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -386,20 +386,20 @@ parameter_list|)
 block|{
 specifier|static
 name|GType
-name|gcb_type
+name|button_type
 init|=
 literal|0
 decl_stmt|;
 if|if
 condition|(
 operator|!
-name|gcb_type
+name|button_type
 condition|)
 block|{
 specifier|static
 specifier|const
 name|GTypeInfo
-name|gcb_info
+name|button_info
 init|=
 block|{
 sizeof|sizeof
@@ -442,7 +442,7 @@ operator|)
 name|gimp_color_button_init
 block|,       }
 decl_stmt|;
-name|gcb_type
+name|button_type
 operator|=
 name|g_type_register_static
 argument_list|(
@@ -451,14 +451,14 @@ argument_list|,
 literal|"GimpColorButton"
 argument_list|,
 operator|&
-name|gcb_info
+name|button_info
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|gcb_type
+name|button_type
 return|;
 block|}
 end_function
@@ -584,24 +584,24 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_button_init (GimpColorButton * gcb)
+DECL|function|gimp_color_button_init (GimpColorButton * button)
 name|gimp_color_button_init
 parameter_list|(
 name|GimpColorButton
 modifier|*
-name|gcb
+name|button
 parameter_list|)
 block|{
 name|GimpRGB
 name|color
 decl_stmt|;
-name|gcb
+name|button
 operator|->
 name|title
 operator|=
 name|NULL
 expr_stmt|;
-name|gcb
+name|button
 operator|->
 name|dialog
 operator|=
@@ -621,7 +621,7 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
-name|gcb
+name|button
 operator|->
 name|color_area
 operator|=
@@ -639,7 +639,7 @@ name|g_signal_connect
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gcb
+name|button
 operator|->
 name|color_area
 argument_list|)
@@ -651,30 +651,30 @@ argument_list|(
 name|gimp_color_button_color_changed
 argument_list|)
 argument_list|,
-name|gcb
+name|button
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|gcb
+name|button
 argument_list|)
 argument_list|,
-name|gcb
+name|button
 operator|->
 name|color_area
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|gcb
+name|button
 operator|->
 name|color_area
 argument_list|)
 expr_stmt|;
 comment|/* right-click opens a popup */
-name|gcb
+name|button
 operator|->
 name|item_factory
 operator|=
@@ -689,7 +689,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_item_factory_set_translate_func
 argument_list|(
-name|gcb
+name|button
 operator|->
 name|item_factory
 argument_list|,
@@ -702,7 +702,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_item_factory_create_items
 argument_list|(
-name|gcb
+name|button
 operator|->
 name|item_factory
 argument_list|,
@@ -713,7 +713,7 @@ argument_list|)
 argument_list|,
 name|menu_items
 argument_list|,
-name|gcb
+name|button
 argument_list|)
 expr_stmt|;
 block|}
@@ -732,9 +732,9 @@ parameter_list|)
 block|{
 name|GimpColorButton
 modifier|*
-name|gcb
+name|button
 decl_stmt|;
-name|gcb
+name|button
 operator|=
 name|GIMP_COLOR_BUTTON
 argument_list|(
@@ -743,19 +743,19 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gcb
+name|button
 operator|->
 name|title
 condition|)
 block|{
 name|g_free
 argument_list|(
-name|gcb
+name|button
 operator|->
 name|title
 argument_list|)
 expr_stmt|;
-name|gcb
+name|button
 operator|->
 name|title
 operator|=
@@ -764,19 +764,19 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|gcb
+name|button
 operator|->
 name|dialog
 condition|)
 block|{
 name|gtk_widget_destroy
 argument_list|(
-name|gcb
+name|button
 operator|->
 name|dialog
 argument_list|)
 expr_stmt|;
-name|gcb
+name|button
 operator|->
 name|dialog
 operator|=
@@ -785,19 +785,19 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|gcb
+name|button
 operator|->
 name|color_area
 condition|)
 block|{
 name|gtk_widget_destroy
 argument_list|(
-name|gcb
+name|button
 operator|->
 name|color_area
 argument_list|)
 expr_stmt|;
-name|gcb
+name|button
 operator|->
 name|color_area
 operator|=
@@ -843,7 +843,7 @@ parameter_list|)
 block|{
 name|GimpColorButton
 modifier|*
-name|gcb
+name|button
 decl_stmt|;
 name|gint
 name|x
@@ -851,7 +851,7 @@ decl_stmt|;
 name|gint
 name|y
 decl_stmt|;
-name|gcb
+name|button
 operator|=
 name|GIMP_COLOR_BUTTON
 argument_list|(
@@ -901,7 +901,7 @@ name|y
 expr_stmt|;
 name|gtk_item_factory_popup
 argument_list|(
-name|gcb
+name|button
 operator|->
 name|item_factory
 argument_list|,
@@ -1058,7 +1058,7 @@ parameter_list|)
 block|{
 name|GimpColorButton
 modifier|*
-name|gcb
+name|button
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -1069,7 +1069,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gcb
+name|button
 operator|=
 name|g_object_new
 argument_list|(
@@ -1078,7 +1078,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gcb
+name|button
 operator|->
 name|title
 operator|=
@@ -1091,7 +1091,7 @@ name|gtk_widget_set_size_request
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|gcb
+name|button
 operator|->
 name|color_area
 argument_list|)
@@ -1105,7 +1105,7 @@ name|gimp_color_area_set_color
 argument_list|(
 name|GIMP_COLOR_AREA
 argument_list|(
-name|gcb
+name|button
 operator|->
 name|color_area
 argument_list|)
@@ -1117,7 +1117,7 @@ name|gimp_color_area_set_type
 argument_list|(
 name|GIMP_COLOR_AREA
 argument_list|(
-name|gcb
+name|button
 operator|->
 name|color_area
 argument_list|)
@@ -1128,24 +1128,24 @@ expr_stmt|;
 return|return
 name|GTK_WIDGET
 argument_list|(
-name|gcb
+name|button
 argument_list|)
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_button_set_color:  * @gcb: Pointer to a #GimpColorButton.  * @color: Pointer to the new #GimpRGB color.  *   **/
+comment|/**  * gimp_color_button_set_color:  * @button: Pointer to a #GimpColorButton.  * @color: Pointer to the new #GimpRGB color.  *   * Sets the @button to the given @color.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_color_button_set_color (GimpColorButton * gcb,const GimpRGB * color)
+DECL|function|gimp_color_button_set_color (GimpColorButton * button,const GimpRGB * color)
 name|gimp_color_button_set_color
 parameter_list|(
 name|GimpColorButton
 modifier|*
-name|gcb
+name|button
 parameter_list|,
 specifier|const
 name|GimpRGB
@@ -1157,7 +1157,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_COLOR_BUTTON
 argument_list|(
-name|gcb
+name|button
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1172,7 +1172,7 @@ name|gimp_color_area_set_color
 argument_list|(
 name|GIMP_COLOR_AREA
 argument_list|(
-name|gcb
+name|button
 operator|->
 name|color_area
 argument_list|)
@@ -1184,17 +1184,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_button_get_color:  * @gcb: Pointer to a #GimpColorButton.  * @color:  *   **/
+comment|/**  * gimp_color_button_get_color:  * @button: Pointer to a #GimpColorButton.  * @color: Pointer to a #GimpRGB struct used to return the color.  *   * Retrieves the currently set color from the @button.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_color_button_get_color (GimpColorButton * gcb,GimpRGB * color)
+DECL|function|gimp_color_button_get_color (GimpColorButton * button,GimpRGB * color)
 name|gimp_color_button_get_color
 parameter_list|(
 name|GimpColorButton
 modifier|*
-name|gcb
+name|button
 parameter_list|,
 name|GimpRGB
 modifier|*
@@ -1205,7 +1205,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_COLOR_BUTTON
 argument_list|(
-name|gcb
+name|button
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1220,7 +1220,7 @@ name|gimp_color_area_get_color
 argument_list|(
 name|GIMP_COLOR_AREA
 argument_list|(
-name|gcb
+name|button
 operator|->
 name|color_area
 argument_list|)
@@ -1232,24 +1232,24 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_button_has_alpha:  * @gcb: Pointer to a #GimpColorButton.  *  *  * Returns:  **/
+comment|/**  * gimp_color_button_has_alpha:  * @button: Pointer to a #GimpColorButton.  *  * Checks whether the @buttons shows transparency information.  *  * Returns: %TRUE if the @button shows transparency information, %FALSE  * otherwise.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_color_button_has_alpha (GimpColorButton * gcb)
+DECL|function|gimp_color_button_has_alpha (GimpColorButton * button)
 name|gimp_color_button_has_alpha
 parameter_list|(
 name|GimpColorButton
 modifier|*
-name|gcb
+name|button
 parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_COLOR_BUTTON
 argument_list|(
-name|gcb
+name|button
 argument_list|)
 argument_list|,
 name|FALSE
@@ -1260,7 +1260,7 @@ name|gimp_color_area_has_alpha
 argument_list|(
 name|GIMP_COLOR_AREA
 argument_list|(
-name|gcb
+name|button
 operator|->
 name|color_area
 argument_list|)
@@ -1269,14 +1269,18 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_color_button_set_type:  * @button: Pointer to a #GimpColorButton.  * @type: the new #GimpColorAreaType  *  * Sets the @button to the given @type. See also gimp_color_area_set_type().  **/
+end_comment
+
 begin_function
 name|void
-DECL|function|gimp_color_button_set_type (GimpColorButton * gcb,GimpColorAreaType type)
+DECL|function|gimp_color_button_set_type (GimpColorButton * button,GimpColorAreaType type)
 name|gimp_color_button_set_type
 parameter_list|(
 name|GimpColorButton
 modifier|*
-name|gcb
+name|button
 parameter_list|,
 name|GimpColorAreaType
 name|type
@@ -1286,7 +1290,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_COLOR_BUTTON
 argument_list|(
-name|gcb
+name|button
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1294,7 +1298,7 @@ name|gimp_color_area_set_type
 argument_list|(
 name|GIMP_COLOR_AREA
 argument_list|(
-name|gcb
+name|button
 operator|->
 name|color_area
 argument_list|)
@@ -1318,7 +1322,11 @@ parameter_list|)
 block|{
 name|GimpColorButton
 modifier|*
-name|gcb
+name|color_button
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|dialog
 decl_stmt|;
 name|GimpRGB
 name|color
@@ -1337,7 +1345,7 @@ name|button
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gcb
+name|color_button
 operator|=
 name|GIMP_COLOR_BUTTON
 argument_list|(
@@ -1346,7 +1354,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_color_button_get_color
 argument_list|(
-name|gcb
+name|color_button
 argument_list|,
 operator|&
 name|color
@@ -1394,21 +1402,23 @@ operator|.
 name|a
 argument_list|)
 expr_stmt|;
+name|dialog
+operator|=
+name|color_button
+operator|->
+name|dialog
+expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gcb
-operator|->
 name|dialog
 condition|)
 block|{
-name|gcb
-operator|->
 name|dialog
 operator|=
 name|gtk_color_selection_dialog_new
 argument_list|(
-name|gcb
+name|color_button
 operator|->
 name|title
 argument_list|)
@@ -1419,8 +1429,6 @@ name|GTK_COLOR_SELECTION
 argument_list|(
 name|GTK_COLOR_SELECTION_DIALOG
 argument_list|(
-name|gcb
-operator|->
 name|dialog
 argument_list|)
 operator|->
@@ -1434,8 +1442,6 @@ name|gtk_widget_destroy
 argument_list|(
 name|GTK_COLOR_SELECTION_DIALOG
 argument_list|(
-name|gcb
-operator|->
 name|dialog
 argument_list|)
 operator|->
@@ -1446,8 +1452,6 @@ name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|gcb
-operator|->
 name|dialog
 argument_list|)
 argument_list|,
@@ -1458,8 +1462,6 @@ name|g_signal_connect
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gcb
-operator|->
 name|dialog
 argument_list|)
 argument_list|,
@@ -1471,7 +1473,7 @@ name|gtk_widget_destroyed
 argument_list|)
 argument_list|,
 operator|&
-name|gcb
+name|color_button
 operator|->
 name|dialog
 argument_list|)
@@ -1482,8 +1484,6 @@ name|G_OBJECT
 argument_list|(
 name|GTK_COLOR_SELECTION_DIALOG
 argument_list|(
-name|gcb
-operator|->
 name|dialog
 argument_list|)
 operator|->
@@ -1497,7 +1497,7 @@ argument_list|(
 name|gimp_color_button_dialog_ok
 argument_list|)
 argument_list|,
-name|gcb
+name|color_button
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -1506,8 +1506,6 @@ name|G_OBJECT
 argument_list|(
 name|GTK_COLOR_SELECTION_DIALOG
 argument_list|(
-name|gcb
-operator|->
 name|dialog
 argument_list|)
 operator|->
@@ -1521,20 +1519,24 @@ argument_list|(
 name|gimp_color_button_dialog_cancel
 argument_list|)
 argument_list|,
-name|gcb
+name|color_button
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_position
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
-name|gcb
-operator|->
 name|dialog
 argument_list|)
 argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|)
+expr_stmt|;
+name|color_button
+operator|->
+name|dialog
+operator|=
+name|dialog
 expr_stmt|;
 block|}
 name|gtk_color_selection_set_current_color
@@ -1543,8 +1545,6 @@ name|GTK_COLOR_SELECTION
 argument_list|(
 name|GTK_COLOR_SELECTION_DIALOG
 argument_list|(
-name|gcb
-operator|->
 name|dialog
 argument_list|)
 operator|->
@@ -1561,8 +1561,6 @@ name|GTK_COLOR_SELECTION
 argument_list|(
 name|GTK_COLOR_SELECTION_DIALOG
 argument_list|(
-name|gcb
-operator|->
 name|dialog
 argument_list|)
 operator|->
@@ -1574,8 +1572,6 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|gcb
-operator|->
 name|dialog
 argument_list|)
 expr_stmt|;
@@ -1598,7 +1594,7 @@ parameter_list|)
 block|{
 name|GimpColorButton
 modifier|*
-name|gcb
+name|button
 decl_stmt|;
 name|GimpRGB
 name|color
@@ -1617,7 +1613,7 @@ name|data
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gcb
+name|button
 operator|=
 name|GIMP_COLOR_BUTTON
 argument_list|(
@@ -1630,7 +1626,7 @@ name|GTK_COLOR_SELECTION
 argument_list|(
 name|GTK_COLOR_SELECTION_DIALOG
 argument_list|(
-name|gcb
+name|button
 operator|->
 name|dialog
 argument_list|)
@@ -1650,7 +1646,7 @@ name|GTK_COLOR_SELECTION
 argument_list|(
 name|GTK_COLOR_SELECTION_DIALOG
 argument_list|(
-name|gcb
+name|button
 operator|->
 name|dialog
 argument_list|)
@@ -1703,7 +1699,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_color_button_set_color
 argument_list|(
-name|gcb
+name|button
 argument_list|,
 operator|&
 name|color
@@ -1711,7 +1707,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_hide
 argument_list|(
-name|gcb
+name|button
 operator|->
 name|dialog
 argument_list|)
@@ -1883,7 +1879,7 @@ parameter_list|)
 block|{
 name|GimpColorButton
 modifier|*
-name|gcb
+name|button
 init|=
 name|GIMP_COLOR_BUTTON
 argument_list|(
@@ -1892,7 +1888,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|gcb
+name|button
 operator|->
 name|dialog
 condition|)
@@ -1965,7 +1961,7 @@ name|GTK_COLOR_SELECTION
 argument_list|(
 name|GTK_COLOR_SELECTION_DIALOG
 argument_list|(
-name|gcb
+name|button
 operator|->
 name|dialog
 argument_list|)
@@ -1983,7 +1979,7 @@ name|GTK_COLOR_SELECTION
 argument_list|(
 name|GTK_COLOR_SELECTION_DIALOG
 argument_list|(
-name|gcb
+name|button
 operator|->
 name|dialog
 argument_list|)
@@ -1999,7 +1995,7 @@ name|g_signal_emit
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gcb
+name|button
 argument_list|)
 argument_list|,
 name|gimp_color_button_signals

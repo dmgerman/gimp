@@ -43,7 +43,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c83f610103
+DECL|enum|__anon2a55b5270103
 block|{
 DECL|enumerator|OFFSETS_CHANGED
 name|OFFSETS_CHANGED
@@ -713,7 +713,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_offset_area_set_size:  * @offset_area: a #GimpOffsetArea.  * @width: the X offset  * @height: the Y offset  *   * Sets the offsets of the image/drawable displayed by the #GimpOffsetArea.  * It does not emit the %offsets_changed signal.  **/
+comment|/**  * gimp_offset_area_set_offsets:  * @offset_area: a #GimpOffsetArea.  * @offset_x: the X offset  * @offset_y: the Y offset  *   * Sets the offsets of the image/drawable displayed by the #GimpOffsetArea.  * It does not emit the %offsets_changed signal.  **/
 end_comment
 
 begin_function
