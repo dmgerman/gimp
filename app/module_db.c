@@ -131,7 +131,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e8dd160103
+DECL|enum|__anon2b93ffc00103
 block|{
 DECL|enumerator|ST_MODULE_ERROR
 name|ST_MODULE_ERROR
@@ -305,7 +305,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e8dd160208
+DECL|struct|__anon2b93ffc00208
 block|{
 DECL|member|parent_instance
 name|GtkObject
@@ -420,7 +420,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e8dd160308
+DECL|struct|__anon2b93ffc00308
 block|{
 DECL|member|table
 name|GtkWidget
@@ -1735,7 +1735,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e8dd160403
+DECL|enum|__anon2b93ffc00403
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -3803,6 +3803,21 @@ break|break;
 case|case
 name|ST_UNLOAD_REQUESTED
 case|:
+name|gtk_label_set_text
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|st
+operator|->
+name|button_label
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Unload"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
 name|GTK_WIDGET
@@ -4680,7 +4695,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e8dd160508
+DECL|struct|__anon2b93ffc00508
 block|{
 DECL|member|search_key
 specifier|const
