@@ -270,6 +270,9 @@ parameter_list|,
 name|gint
 name|offset_y
 parameter_list|,
+name|GimpImageResizeLayers
+name|resize_layers
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -1637,7 +1640,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|image_resize_callback (GtkWidget * dialog,GimpViewable * viewable,gint width,gint height,gint offset_x,gint offset_y,gpointer data)
+DECL|function|image_resize_callback (GtkWidget * dialog,GimpViewable * viewable,gint width,gint height,gint offset_x,gint offset_y,GimpImageResizeLayers resize_layers,gpointer data)
 name|image_resize_callback
 parameter_list|(
 name|GtkWidget
@@ -1659,6 +1662,9 @@ name|offset_x
 parameter_list|,
 name|gint
 name|offset_y
+parameter_list|,
+name|GimpImageResizeLayers
+name|resize_layers
 parameter_list|,
 name|gpointer
 name|data
@@ -1747,7 +1753,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_image_resize
+name|gimp_image_resize_with_layers
 argument_list|(
 name|image
 argument_list|,
@@ -1760,6 +1766,8 @@ argument_list|,
 name|offset_x
 argument_list|,
 name|offset_y
+argument_list|,
+name|resize_layers
 argument_list|,
 name|progress
 argument_list|)

@@ -45,6 +45,9 @@ parameter_list|,
 name|gint
 name|offset_y
 parameter_list|,
+name|GimpImageResizeLayers
+name|resize_layers
+parameter_list|,
 name|gpointer
 name|user_data
 parameter_list|)
