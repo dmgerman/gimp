@@ -126,12 +126,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"docindex.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpenv.h"
 end_include
 
@@ -721,7 +715,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|raise_idea_callback
+name|dialogs_document_index_cmd_callback
 block|,
 literal|0
 block|}
@@ -3314,7 +3308,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|raise_idea_callback
+name|dialogs_document_index_cmd_callback
 block|,
 literal|0
 block|}

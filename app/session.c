@@ -456,6 +456,36 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|document_index_session_info
+name|SessionInfo
+name|document_index_session_info
+init|=
+block|{
+literal|"document-index"
+block|,
+operator|(
+name|GtkItemFactoryCallback
+operator|)
+name|dialogs_document_index_cmd_callback
+block|,
+name|LEFT_OFFSET
+block|,
+name|TOP_OFFSET
+operator|+
+literal|300
+block|,
+literal|400
+block|,
+literal|150
+block|,
+literal|0
+block|,
+name|FALSE
+block|}
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/* public functions */
 end_comment

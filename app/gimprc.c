@@ -222,7 +222,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae08f010103
+DECL|enum|__anon289f97d00103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -2824,6 +2824,9 @@ name|device_status_session_info
 block|,
 operator|&
 name|error_console_session_info
+block|,
+operator|&
+name|document_index_session_info
 block|}
 decl_stmt|;
 end_decl_stmt

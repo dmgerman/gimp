@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"docindex.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"channel_ops.h"
 end_include
 
@@ -4313,6 +4319,25 @@ name|client_data
 parameter_list|)
 block|{
 name|device_status_create
+argument_list|()
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|dialogs_document_index_cmd_callback (GtkWidget * widget,gpointer client_data)
+name|dialogs_document_index_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|client_data
+parameter_list|)
+block|{
+name|document_index_create
 argument_list|()
 expr_stmt|;
 block|}
