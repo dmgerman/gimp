@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b07ee960103
+DECL|enum|__anon27b2708f0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -21008,7 +21008,7 @@ name|ctx
 operator|.
 name|pixelformat_A
 operator|=
-name|GIMP_PIXELFORMAT_ANY
+name|GIMP_PIXELFORMAT_RGBA8
 expr_stmt|;
 name|ctx
 operator|.
@@ -21066,12 +21066,9 @@ name|ctx
 operator|.
 name|pixelformat_D
 operator|=
-name|gimp_composite_pixel_alpha
-index|[
 name|ctx
 operator|.
-name|pixelformat_A
-index|]
+name|pixelformat_B
 expr_stmt|;
 name|ctx
 operator|.
@@ -21254,7 +21251,7 @@ name|ctx
 operator|.
 name|pixelformat_A
 operator|=
-name|GIMP_PIXELFORMAT_ANY
+name|GIMP_PIXELFORMAT_RGBA8
 expr_stmt|;
 name|ctx
 operator|.
@@ -21312,12 +21309,9 @@ name|ctx
 operator|.
 name|pixelformat_D
 operator|=
-name|gimp_composite_pixel_alpha
-index|[
 name|ctx
 operator|.
-name|pixelformat_A
-index|]
+name|pixelformat_B
 expr_stmt|;
 name|ctx
 operator|.
