@@ -1134,9 +1134,12 @@ argument_list|(
 name|children
 argument_list|)
 expr_stmt|;
-name|gtk_widget_destroy
+name|gtk_object_sink
+argument_list|(
+name|GTK_OBJECT
 argument_list|(
 name|hbox
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
