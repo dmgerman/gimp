@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<locale.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdio.h>
 end_include
 
@@ -172,7 +166,7 @@ specifier|static
 name|RETSIGTYPE
 name|on_signal
 parameter_list|(
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -188,7 +182,7 @@ specifier|static
 name|RETSIGTYPE
 name|on_sig_child
 parameter_list|(
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -217,7 +211,9 @@ begin_function_decl
 specifier|static
 name|void
 name|test_gserialize
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 
@@ -251,64 +247,82 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|no_interface
-name|int
+name|gint
 name|no_interface
+init|=
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|no_data
-name|int
+name|gint
 name|no_data
+init|=
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|no_splash
-name|int
+name|gint
 name|no_splash
+init|=
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|no_splash_image
-name|int
+name|gint
 name|no_splash_image
+init|=
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|be_verbose
-name|int
+name|gint
 name|be_verbose
+init|=
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|use_shm
-name|int
+name|gint
 name|use_shm
+init|=
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|use_debug_handler
-name|int
+name|gint
 name|use_debug_handler
+init|=
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|console_messages
-name|int
+name|gint
 name|console_messages
+init|=
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|restore_session
-name|int
+name|gint
 name|restore_session
+init|=
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
@@ -317,6 +331,8 @@ DECL|variable|image_context
 name|GimpSet
 modifier|*
 name|image_context
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -324,6 +340,8 @@ begin_decl_stmt
 DECL|variable|message_handler
 name|MessageHandlerType
 name|message_handler
+init|=
+name|CONSOLE
 decl_stmt|;
 end_decl_stmt
 
@@ -332,6 +350,8 @@ DECL|variable|prog_name
 name|gchar
 modifier|*
 name|prog_name
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -345,6 +365,8 @@ DECL|variable|alternate_gimprc
 name|gchar
 modifier|*
 name|alternate_gimprc
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -353,6 +375,8 @@ DECL|variable|alternate_system_gimprc
 name|gchar
 modifier|*
 name|alternate_system_gimprc
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -362,6 +386,8 @@ name|gchar
 modifier|*
 modifier|*
 name|batch_cmds
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -422,6 +448,8 @@ DECL|variable|gimp_argc
 specifier|static
 name|gint
 name|gimp_argc
+init|=
+literal|0
 decl_stmt|;
 end_decl_stmt
 
@@ -432,6 +460,8 @@ name|gchar
 modifier|*
 modifier|*
 name|gimp_argv
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -453,13 +483,17 @@ modifier|*
 name|argv
 parameter_list|)
 block|{
-name|int
+name|gint
 name|show_version
+init|=
+name|FALSE
 decl_stmt|;
-name|int
+name|gint
 name|show_help
+init|=
+name|FALSE
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -468,9 +502,6 @@ ifdef|#
 directive|ifdef
 name|HAVE_PUTENV
 name|gchar
-modifier|*
-name|display_name
-decl_stmt|,
 modifier|*
 name|display_env
 decl_stmt|;
@@ -498,6 +529,13 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|ENABLE_NLS
+name|bindtextdomain
+argument_list|(
+literal|"gimp-libgimp"
+argument_list|,
+name|LOCALEDIR
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -543,42 +581,16 @@ comment|/* gtk seems to zap this during init.. */
 ifdef|#
 directive|ifdef
 name|HAVE_PUTENV
-name|display_name
+name|display_env
 operator|=
+name|g_strconcat
+argument_list|(
+literal|"DISPLAY="
+argument_list|,
 name|gdk_get_display
 argument_list|()
-expr_stmt|;
-name|display_env
-operator|=
-name|g_new
-argument_list|(
-name|gchar
 argument_list|,
-name|strlen
-argument_list|(
-name|display_name
-argument_list|)
-operator|+
-literal|9
-argument_list|)
-expr_stmt|;
-operator|*
-name|display_env
-operator|=
-literal|0
-expr_stmt|;
-name|strcat
-argument_list|(
-name|display_env
-argument_list|,
-literal|"DISPLAY="
-argument_list|)
-expr_stmt|;
-name|strcat
-argument_list|(
-name|display_env
-argument_list|,
-name|display_name
+name|NULL
 argument_list|)
 expr_stmt|;
 name|putenv
@@ -588,22 +600,6 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-name|no_interface
-operator|=
-name|FALSE
-expr_stmt|;
-name|no_data
-operator|=
-name|FALSE
-expr_stmt|;
-name|no_splash
-operator|=
-name|FALSE
-expr_stmt|;
-name|no_splash_image
-operator|=
-name|FALSE
-expr_stmt|;
 if|#
 directive|if
 name|defined
@@ -619,30 +615,8 @@ name|use_shm
 operator|=
 name|TRUE
 expr_stmt|;
-else|#
-directive|else
-name|use_shm
-operator|=
-name|FALSE
-expr_stmt|;
 endif|#
 directive|endif
-name|use_debug_handler
-operator|=
-name|FALSE
-expr_stmt|;
-name|restore_session
-operator|=
-name|FALSE
-expr_stmt|;
-name|console_messages
-operator|=
-name|FALSE
-expr_stmt|;
-name|message_handler
-operator|=
-name|CONSOLE
-expr_stmt|;
 name|batch_cmds
 operator|=
 name|g_new
@@ -659,22 +633,6 @@ literal|0
 index|]
 operator|=
 name|NULL
-expr_stmt|;
-name|alternate_gimprc
-operator|=
-name|NULL
-expr_stmt|;
-name|alternate_system_gimprc
-operator|=
-name|NULL
-expr_stmt|;
-name|show_version
-operator|=
-name|FALSE
-expr_stmt|;
-name|show_help
-operator|=
-name|FALSE
 expr_stmt|;
 name|test_gserialize
 argument_list|()
@@ -1276,7 +1234,7 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-comment|/*  *    ANYTHING ELSE starting with a '-' is an error.  */
+comment|/*        *    ANYTHING ELSE starting with a '-' is an error.        */
 elseif|else
 if|if
 condition|(
@@ -1875,10 +1833,10 @@ end_ifndef
 begin_function
 specifier|static
 name|RETSIGTYPE
-DECL|function|on_signal (int sig_num)
+DECL|function|on_signal (gint sig_num)
 name|on_signal
 parameter_list|(
-name|int
+name|gint
 name|sig_num
 parameter_list|)
 block|{
@@ -2056,10 +2014,10 @@ name|int
 name|sig_num
 parameter_list|)
 block|{
-name|int
+name|gint
 name|pid
 decl_stmt|;
-name|int
+name|gint
 name|status
 decl_stmt|;
 while|while
@@ -2111,7 +2069,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6132120108
+DECL|struct|__anon28b0e6130108
 block|{
 DECL|member|test_gint32
 name|gint32

@@ -24,18 +24,8 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<time.h>
 end_include
-
-begin_comment
-comment|/* for seed of random number */
-end_comment
 
 begin_include
 include|#
@@ -75,46 +65,6 @@ define|#
 directive|define
 name|SHORT_NAME
 value|"scatter_hsv"
-end_define
-
-begin_define
-DECL|macro|MAIN_FUNCTION
-define|#
-directive|define
-name|MAIN_FUNCTION
-value|scatter_hsv
-end_define
-
-begin_define
-DECL|macro|INTERFACE
-define|#
-directive|define
-name|INTERFACE
-value|scatter_hsv_interface
-end_define
-
-begin_define
-DECL|macro|DIALOG
-define|#
-directive|define
-name|DIALOG
-value|scatter_hsv_dialog
-end_define
-
-begin_define
-DECL|macro|VALS
-define|#
-directive|define
-name|VALS
-value|scatter_hsv_vals
-end_define
-
-begin_define
-DECL|macro|OK_CALLBACK
-define|#
-directive|define
-name|OK_CALLBACK
-value|scatter_hsv_ok_callback
 end_define
 
 begin_function_decl
@@ -158,7 +108,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|GStatusType
-name|MAIN_FUNCTION
+name|scatter_hsv
 parameter_list|(
 name|gint32
 name|drawable_id
@@ -167,6 +117,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|void
 name|scatter_hsv_scatter
 parameter_list|(
@@ -187,22 +138,22 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|randomize_value
 parameter_list|(
-name|int
+name|gint
 name|now
 parameter_list|,
-name|int
+name|gint
 name|min
 parameter_list|,
-name|int
+name|gint
 name|max
 parameter_list|,
-name|int
+name|gint
 name|mod_p
 parameter_list|,
-name|int
+name|gint
 name|rand_max
 parameter_list|)
 function_decl|;
@@ -211,7 +162,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gint
-name|DIALOG
+name|scatter_hsv_dialog
 parameter_list|(
 name|void
 parameter_list|)
@@ -221,7 +172,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|OK_CALLBACK
+name|scatter_hsv_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -274,10 +225,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/* gtkWrapper functions */
-end_comment
-
 begin_define
 DECL|macro|PROGRESS_UPDATE_NUM
 define|#
@@ -294,15 +241,6 @@ name|PREVIEW_WIDTH
 value|128
 end_define
 
-begin_decl_stmt
-DECL|variable|preview_width
-name|gint
-name|preview_width
-init|=
-name|PREVIEW_WIDTH
-decl_stmt|;
-end_decl_stmt
-
 begin_define
 DECL|macro|PREVIEW_HEIGHT
 define|#
@@ -311,15 +249,6 @@ name|PREVIEW_HEIGHT
 value|128
 end_define
 
-begin_decl_stmt
-DECL|variable|preview_height
-name|gint
-name|preview_height
-init|=
-name|PREVIEW_HEIGHT
-decl_stmt|;
-end_decl_stmt
-
 begin_define
 DECL|macro|SCALE_WIDTH
 define|#
@@ -327,6 +256,26 @@ directive|define
 name|SCALE_WIDTH
 value|100
 end_define
+
+begin_decl_stmt
+DECL|variable|preview_width
+specifier|static
+name|gint
+name|preview_width
+init|=
+name|PREVIEW_WIDTH
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|preview_height
+specifier|static
+name|gint
+name|preview_height
+init|=
+name|PREVIEW_HEIGHT
+decl_stmt|;
+end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
@@ -353,7 +302,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b53c7910108
+DECL|struct|__anon2900252a0108
 block|{
 comment|/* gint, gdouble, and so on */
 DECL|member|holdness
@@ -399,7 +348,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b53c7910208
+DECL|struct|__anon2900252a0208
 block|{
 DECL|member|run
 name|gint
@@ -425,6 +374,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|drawable_id
+specifier|static
 name|gint
 name|drawable_id
 decl_stmt|;
@@ -432,6 +382,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|preview
+specifier|static
 name|GtkWidget
 modifier|*
 name|preview
@@ -440,6 +391,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|preview_start_x
+specifier|static
 name|gint
 name|preview_start_x
 init|=
@@ -448,16 +400,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|preview_end_x
-name|gint
-name|preview_end_x
-init|=
-literal|0
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|preview_start_y
+specifier|static
 name|gint
 name|preview_start_y
 init|=
@@ -466,16 +410,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|preview_end_y
-name|gint
-name|preview_end_y
-init|=
-literal|0
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|preview_buffer
+specifier|static
 name|guchar
 modifier|*
 name|preview_buffer
@@ -486,6 +422,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|preview_offset_x
+specifier|static
 name|gint
 name|preview_offset_x
 init|=
@@ -495,6 +432,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|preview_offset_y
+specifier|static
 name|gint
 name|preview_offset_y
 init|=
@@ -504,6 +442,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|preview_dragging
+specifier|static
 name|gint
 name|preview_dragging
 init|=
@@ -513,6 +452,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|preview_drag_start_x
+specifier|static
 name|gint
 name|preview_drag_start_x
 init|=
@@ -522,6 +462,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|preview_drag_start_y
+specifier|static
 name|gint
 name|preview_drag_start_y
 init|=
@@ -607,14 +548,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
-name|GParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
-name|int
+name|gint
 name|nargs
 init|=
 sizeof|sizeof
@@ -629,12 +563,6 @@ index|[
 literal|0
 index|]
 argument_list|)
-decl_stmt|;
-specifier|static
-name|int
-name|nreturn_vals
-init|=
-literal|0
 decl_stmt|;
 name|INIT_I18N
 argument_list|()
@@ -670,11 +598,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -812,7 +740,7 @@ block|}
 if|if
 condition|(
 operator|!
-name|DIALOG
+name|scatter_hsv_dialog
 argument_list|()
 condition|)
 return|return;
@@ -894,7 +822,7 @@ break|break;
 block|}
 name|status
 operator|=
-name|MAIN_FUNCTION
+name|scatter_hsv
 argument_list|(
 name|drawable_id
 argument_list|)
@@ -957,8 +885,8 @@ end_function
 begin_function
 specifier|static
 name|GStatusType
-DECL|function|MAIN_FUNCTION (gint32 drawable_id)
-name|MAIN_FUNCTION
+DECL|function|scatter_hsv (gint32 drawable_id)
+name|scatter_hsv
 parameter_list|(
 name|gint32
 name|drawable_id
@@ -1132,7 +1060,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"scatter_hsv: scattering..."
+literal|"Scatter HSV: Scattering..."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1438,28 +1366,28 @@ block|}
 end_function
 
 begin_function
-DECL|function|randomize_value (int now,int min,int max,int mod_p,int rand_max)
 specifier|static
-name|int
+name|gint
+DECL|function|randomize_value (gint now,gint min,gint max,gint mod_p,gint rand_max)
 name|randomize_value
 parameter_list|(
-name|int
+name|gint
 name|now
 parameter_list|,
-name|int
+name|gint
 name|min
 parameter_list|,
-name|int
+name|gint
 name|max
 parameter_list|,
-name|int
+name|gint
 name|mod_p
 parameter_list|,
-name|int
+name|gint
 name|rand_max
 parameter_list|)
 block|{
-name|int
+name|gint
 name|flag
 decl_stmt|,
 name|new
@@ -1468,7 +1396,7 @@ name|steps
 decl_stmt|,
 name|index
 decl_stmt|;
-name|double
+name|gdouble
 name|rand_val
 decl_stmt|;
 name|steps
@@ -1644,21 +1572,21 @@ modifier|*
 name|b
 parameter_list|)
 block|{
-name|int
+name|gint
 name|h
 decl_stmt|,
 name|s
 decl_stmt|,
 name|v
 decl_stmt|;
-name|int
+name|gint
 name|h1
 decl_stmt|,
 name|s1
 decl_stmt|,
 name|v1
 decl_stmt|;
-name|int
+name|gint
 name|h2
 decl_stmt|,
 name|s2
@@ -1888,9 +1816,9 @@ end_comment
 
 begin_function
 specifier|static
-name|int
-DECL|function|DIALOG (void)
-name|DIALOG
+name|gint
+DECL|function|scatter_hsv_dialog (void)
+name|scatter_hsv_dialog
 parameter_list|(
 name|void
 parameter_list|)
@@ -1956,7 +1884,7 @@ index|]
 operator|=
 name|g_strdup
 argument_list|(
-name|PLUG_IN_NAME
+name|SHORT_NAME
 argument_list|)
 expr_stmt|;
 name|gtk_init
@@ -2041,7 +1969,7 @@ argument_list|(
 literal|"Scatter HSV"
 argument_list|)
 argument_list|,
-literal|"scatter_hsv"
+name|SHORT_NAME
 argument_list|,
 name|gimp_plugin_help_func
 argument_list|,
@@ -2060,7 +1988,7 @@ argument_list|(
 literal|"OK"
 argument_list|)
 argument_list|,
-name|OK_CALLBACK
+name|scatter_hsv_ok_callback
 argument_list|,
 name|NULL
 argument_list|,
@@ -3531,8 +3459,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|OK_CALLBACK (GtkWidget * widget,gpointer data)
-name|OK_CALLBACK
+DECL|function|scatter_hsv_ok_callback (GtkWidget * widget,gpointer data)
+name|scatter_hsv_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*

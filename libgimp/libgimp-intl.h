@@ -70,7 +70,7 @@ name|N_
 parameter_list|(
 name|String
 parameter_list|)
-value|dgettext_noop ("gimp-libgimp", String)
+value|gettext_noop (String)
 end_define
 
 begin_else
