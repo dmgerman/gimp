@@ -1274,7 +1274,7 @@ name|undo_motion
 operator|=
 name|FALSE
 expr_stmt|;
-comment|/* Save the current modifier state */
+comment|/* save the current modifier state */
 name|vector_tool
 operator|->
 name|saved_state
@@ -1619,7 +1619,7 @@ operator|->
 name|sel_stroke
 expr_stmt|;
 block|}
-comment|/* Insertion of an anchor in a curve segment */
+comment|/* insertion of an anchor in a curve segment */
 if|if
 condition|(
 name|vector_tool
@@ -4581,6 +4581,27 @@ break|break;
 case|case
 name|VECTORS_MOVE_CURVE
 case|:
+if|if
+condition|(
+name|GIMP_VECTOR_OPTIONS
+argument_list|(
+name|tool
+operator|->
+name|tool_info
+operator|->
+name|tool_options
+argument_list|)
+operator|->
+name|polygonal
+condition|)
+name|new_status
+operator|=
+name|_
+argument_list|(
+literal|"Click-Drag to move the anchors around."
+argument_list|)
+expr_stmt|;
+else|else
 name|new_status
 operator|=
 name|_
