@@ -106,6 +106,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -113,6 +114,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -189,11 +191,13 @@ specifier|static
 name|void
 name|compose_rgb
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|gint
 modifier|*
 name|incr
@@ -213,11 +217,13 @@ specifier|static
 name|void
 name|compose_rgba
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|gint
 modifier|*
 name|incr
@@ -237,11 +243,13 @@ specifier|static
 name|void
 name|compose_hsv
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|gint
 modifier|*
 name|incr
@@ -261,11 +269,13 @@ specifier|static
 name|void
 name|compose_cmy
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|gint
 modifier|*
 name|incr
@@ -285,11 +295,13 @@ specifier|static
 name|void
 name|compose_cmyk
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|gint
 modifier|*
 name|incr
@@ -309,11 +321,13 @@ specifier|static
 name|void
 name|compose_ycbcr470
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|gint
 modifier|*
 name|incr
@@ -333,11 +347,13 @@ specifier|static
 name|void
 name|compose_ycbcr709
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|gint
 modifier|*
 name|incr
@@ -357,11 +373,13 @@ specifier|static
 name|void
 name|compose_ycbcr470f
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|gint
 modifier|*
 name|incr
@@ -381,11 +399,13 @@ specifier|static
 name|void
 name|compose_ycbcr709f
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|gint
 modifier|*
 name|incr
@@ -405,6 +425,7 @@ specifier|static
 name|gboolean
 name|compose_dialog
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|compose_type
@@ -495,7 +516,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac3cef50108
+DECL|struct|__anon292c426e0108
 block|{
 DECL|member|compose_type
 specifier|const
@@ -543,11 +564,13 @@ modifier|*
 name|compose_fun
 function_decl|)
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|gint
 modifier|*
 name|incr_src
@@ -964,7 +987,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac3cef50208
+DECL|struct|__anon292c426e0208
 block|{
 DECL|member|compose_ID
 name|gint32
@@ -995,7 +1018,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac3cef50308
+DECL|struct|__anon292c426e0308
 block|{
 DECL|member|width
 DECL|member|height
@@ -1401,9 +1424,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -1411,6 +1435,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -2929,14 +2954,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|compose_rgb (guchar ** src,gint * incr_src,gint numpix,guchar * dst)
+DECL|function|compose_rgb (const guchar ** src,const gint * incr_src,gint numpix,guchar * dst)
 name|compose_rgb
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|gint
 modifier|*
 name|incr_src
@@ -2950,6 +2977,7 @@ name|dst
 parameter_list|)
 block|{
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|red_src
@@ -2960,6 +2988,7 @@ literal|0
 index|]
 decl_stmt|;
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|green_src
@@ -2970,6 +2999,7 @@ literal|1
 index|]
 decl_stmt|;
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|blue_src
@@ -3138,14 +3168,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|compose_rgba (guchar ** src,gint * incr_src,gint numpix,guchar * dst)
+DECL|function|compose_rgba (const guchar ** src,const gint * incr_src,gint numpix,guchar * dst)
 name|compose_rgba
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|gint
 modifier|*
 name|incr_src
@@ -3159,6 +3191,7 @@ name|dst
 parameter_list|)
 block|{
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|red_src
@@ -3169,6 +3202,7 @@ literal|0
 index|]
 decl_stmt|;
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|green_src
@@ -3179,6 +3213,7 @@ literal|1
 index|]
 decl_stmt|;
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|blue_src
@@ -3189,6 +3224,7 @@ literal|2
 index|]
 decl_stmt|;
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|alpha_src
@@ -3395,14 +3431,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|compose_hsv (guchar ** src,gint * incr_src,gint numpix,guchar * dst)
+DECL|function|compose_hsv (const guchar ** src,const gint * incr_src,gint numpix,guchar * dst)
 name|compose_hsv
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|gint
 modifier|*
 name|incr_src
@@ -3416,6 +3454,7 @@ name|dst
 parameter_list|)
 block|{
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|hue_src
@@ -3426,6 +3465,7 @@ literal|0
 index|]
 decl_stmt|;
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|sat_src
@@ -3436,6 +3476,7 @@ literal|1
 index|]
 decl_stmt|;
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|val_src
@@ -3540,14 +3581,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|compose_cmy (guchar ** src,gint * incr_src,gint numpix,guchar * dst)
+DECL|function|compose_cmy (const guchar ** src,const gint * incr_src,gint numpix,guchar * dst)
 name|compose_cmy
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|gint
 modifier|*
 name|incr_src
@@ -3561,6 +3604,7 @@ name|dst
 parameter_list|)
 block|{
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|cyan_src
@@ -3571,6 +3615,7 @@ literal|0
 index|]
 decl_stmt|;
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|magenta_src
@@ -3581,6 +3626,7 @@ literal|1
 index|]
 decl_stmt|;
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|yellow_src
@@ -3763,14 +3809,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|compose_cmyk (guchar ** src,gint * incr_src,gint numpix,guchar * dst)
+DECL|function|compose_cmyk (const guchar ** src,const gint * incr_src,gint numpix,guchar * dst)
 name|compose_cmyk
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|gint
 modifier|*
 name|incr_src
@@ -3784,6 +3832,7 @@ name|dst
 parameter_list|)
 block|{
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|cyan_src
@@ -3794,6 +3843,7 @@ literal|0
 index|]
 decl_stmt|;
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|magenta_src
@@ -3804,6 +3854,7 @@ literal|1
 index|]
 decl_stmt|;
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|yellow_src
@@ -3814,6 +3865,7 @@ literal|2
 index|]
 decl_stmt|;
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|black_src
@@ -4091,14 +4143,16 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|compose_ycbcr470 (guchar ** src,gint * incr_src,gint numpix,guchar * dst)
+DECL|function|compose_ycbcr470 (const guchar ** src,const gint * incr_src,gint numpix,guchar * dst)
 name|compose_ycbcr470
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|gint
 modifier|*
 name|incr_src
@@ -4112,6 +4166,7 @@ name|dst
 parameter_list|)
 block|{
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|y_src
@@ -4122,6 +4177,7 @@ literal|0
 index|]
 decl_stmt|;
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|cb_src
@@ -4132,6 +4188,7 @@ literal|1
 index|]
 decl_stmt|;
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|cr_src
@@ -4418,14 +4475,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|compose_ycbcr709 (guchar ** src,gint * incr_src,gint numpix,guchar * dst)
+DECL|function|compose_ycbcr709 (const guchar ** src,const gint * incr_src,gint numpix,guchar * dst)
 name|compose_ycbcr709
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|gint
 modifier|*
 name|incr_src
@@ -4439,6 +4498,7 @@ name|dst
 parameter_list|)
 block|{
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|y_src
@@ -4449,6 +4509,7 @@ literal|0
 index|]
 decl_stmt|;
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|cb_src
@@ -4459,6 +4520,7 @@ literal|1
 index|]
 decl_stmt|;
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|cr_src
@@ -4745,14 +4807,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|compose_ycbcr470f (guchar ** src,gint * incr_src,gint numpix,guchar * dst)
+DECL|function|compose_ycbcr470f (const guchar ** src,const gint * incr_src,gint numpix,guchar * dst)
 name|compose_ycbcr470f
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|gint
 modifier|*
 name|incr_src
@@ -4766,6 +4830,7 @@ name|dst
 parameter_list|)
 block|{
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|y_src
@@ -4776,6 +4841,7 @@ literal|0
 index|]
 decl_stmt|;
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|cb_src
@@ -4786,6 +4852,7 @@ literal|1
 index|]
 decl_stmt|;
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|cr_src
@@ -5070,14 +5137,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|compose_ycbcr709f (guchar ** src,gint * incr_src,gint numpix,guchar * dst)
+DECL|function|compose_ycbcr709f (const guchar ** src,const gint * incr_src,gint numpix,guchar * dst)
 name|compose_ycbcr709f
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|gint
 modifier|*
 name|incr_src
@@ -5091,6 +5160,7 @@ name|dst
 parameter_list|)
 block|{
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|y_src
@@ -5101,6 +5171,7 @@ literal|0
 index|]
 decl_stmt|;
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|cb_src
@@ -5111,6 +5182,7 @@ literal|1
 index|]
 decl_stmt|;
 specifier|register
+specifier|const
 name|guchar
 modifier|*
 name|cr_src
@@ -5395,9 +5467,10 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|compose_dialog (gchar * compose_type,gint32 drawable_ID)
+DECL|function|compose_dialog (const gchar * compose_type,gint32 drawable_ID)
 name|compose_dialog
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|compose_type

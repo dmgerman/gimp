@@ -137,6 +137,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -144,6 +145,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -403,7 +405,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|run_filter
-name|gint
+name|gboolean
 name|run_filter
 init|=
 name|FALSE
@@ -520,9 +522,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -530,6 +533,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -754,7 +758,7 @@ argument_list|)
 operator|)
 condition|)
 block|{
-comment|/* 	   * Set the tile cache size... 	   */
+comment|/*            * Set the tile cache size...            */
 name|gimp_tile_cache_ntiles
 argument_list|(
 operator|(
@@ -772,11 +776,11 @@ name|gimp_tile_width
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|/* 	   * Run! 	   */
+comment|/*            * Run!            */
 name|destripe
 argument_list|()
 expr_stmt|;
-comment|/* 	   * If run mode is interactive, flush displays... 	   */
+comment|/*            * If run mode is interactive, flush displays...            */
 if|if
 condition|(
 name|run_mode
@@ -786,7 +790,7 @@ condition|)
 name|gimp_displays_flush
 argument_list|()
 expr_stmt|;
-comment|/* 	   * Store data... 	   */
+comment|/*            * Store data...            */
 if|if
 condition|(
 name|run_mode
@@ -2711,7 +2715,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  button = gtk_check_button_new_with_label("Recursive");   gtk_table_attach_defaults (GTK_TABLE (table), button, 0, 1, 1, 2);   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (button),                                 (filter_type& FILTER_RECURSIVE) ? TRUE : FALSE);   g_signal_connect (button, "toggled", 	            G_CALLBACK (dialog_recursive_callback), 		    NULL);   gtk_widget_show (button);*/
+comment|/*  button = gtk_check_button_new_with_label("Recursive");   gtk_table_attach_defaults (GTK_TABLE (table), button, 0, 1, 1, 2);   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (button),                                 (filter_type& FILTER_RECURSIVE) ? TRUE : FALSE);   g_signal_connect (button, "toggled",                     G_CALLBACK (dialog_recursive_callback),                     NULL);   gtk_widget_show (button);*/
 comment|/*    * Box size (radius) control...    */
 name|adj
 operator|=

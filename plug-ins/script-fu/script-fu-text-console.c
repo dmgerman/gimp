@@ -68,9 +68,10 @@ end_function_decl
 
 begin_function
 name|void
-DECL|function|script_fu_text_console_run (gchar * name,gint nparams,GimpParam * params,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|script_fu_text_console_run (const gchar * name,gint nparams,const GimpParam * params,gint * nreturn_vals,GimpParam ** return_vals)
 name|script_fu_text_console_run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -78,6 +79,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|params

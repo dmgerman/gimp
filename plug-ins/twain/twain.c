@@ -422,20 +422,27 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
+name|name
 parameter_list|,
-name|int
+name|gint
+name|nparams
+parameter_list|,
+specifier|const
+name|GimpParam
+modifier|*
+name|param
+parameter_list|,
+name|gint
+modifier|*
+name|nreturn_vals
 parameter_list|,
 name|GimpParam
 modifier|*
-parameter_list|,
-name|int
 modifier|*
-parameter_list|,
-name|GimpParam
-modifier|*
-modifier|*
+name|return_vals
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -502,7 +509,7 @@ comment|/* Currently unused... Eventually may be used  * to track dialog data.  
 end_comment
 
 begin_typedef
-DECL|struct|__anon29bcd0930108
+DECL|struct|__anon298517e60108
 typedef|typedef
 struct|struct
 block|{
@@ -1584,34 +1591,31 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
 parameter_list|,
-comment|/* name of plugin */
 name|gint
 name|nparams
 parameter_list|,
-comment|/* number of in-paramters */
+specifier|const
 name|GimpParam
 modifier|*
 name|param
 parameter_list|,
-comment|/* in-parameters */
 name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-comment|/* number of out-parameters */
 name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
-comment|/* out-parameters */
 block|{
 name|GimpRunMode
 name|run_mode
@@ -1869,7 +1873,7 @@ comment|/* Data used to carry data between each of  * the callback function call
 end_comment
 
 begin_typedef
-DECL|struct|__anon29bcd0930208
+DECL|struct|__anon298517e60208
 typedef|typedef
 struct|struct
 block|{

@@ -80,6 +80,7 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function_decl
+specifier|static
 name|void
 name|query
 parameter_list|(
@@ -89,21 +90,24 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -215,6 +219,7 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
+specifier|static
 name|void
 name|query
 parameter_list|(
@@ -991,22 +996,25 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_function
+specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GimpParam * param,int * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,

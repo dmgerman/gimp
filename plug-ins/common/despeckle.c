@@ -213,6 +213,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -220,6 +221,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -524,7 +526,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|run_filter
-name|gint
+name|gboolean
 name|run_filter
 init|=
 name|FALSE
@@ -688,48 +690,42 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
 parameter_list|,
-comment|/* I - Name of filter program. */
 name|gint
 name|nparams
 parameter_list|,
-comment|/* I - Number of parameters passed in */
+specifier|const
 name|GimpParam
 modifier|*
 name|param
 parameter_list|,
-comment|/* I - Parameter values */
 name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-comment|/* O - Number of return values */
 name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
-comment|/* O - Return values */
 block|{
 name|GimpRunMode
 name|run_mode
 decl_stmt|;
-comment|/* Current run mode */
 name|GimpPDBStatusType
 name|status
 decl_stmt|;
-comment|/* Return status */
 name|GimpParam
 modifier|*
 name|values
 decl_stmt|;
-comment|/* Return values */
 name|INIT_I18N
 argument_list|()
 expr_stmt|;

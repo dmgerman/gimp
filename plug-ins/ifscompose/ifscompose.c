@@ -143,7 +143,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2addafa90103
+DECL|enum|__anon28c362e70103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -163,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2addafa90203
+DECL|enum|__anon28c362e70203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -179,7 +179,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2addafa90308
+DECL|struct|__anon28c362e70308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -201,7 +201,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2addafa9040a
+DECL|union|__anon28c362e7040a
 block|{
 DECL|member|d
 name|gdouble
@@ -230,7 +230,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2addafa90508
+DECL|struct|__anon28c362e70508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -260,7 +260,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2addafa90608
+DECL|struct|__anon28c362e70608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -295,7 +295,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2addafa90708
+DECL|struct|__anon28c362e70708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -331,7 +331,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2addafa90808
+DECL|struct|__anon28c362e70808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -398,7 +398,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2addafa90908
+DECL|struct|__anon28c362e70908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -600,7 +600,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2addafa90a08
+DECL|struct|__anon28c362e70a08
 block|{
 DECL|member|run
 name|gboolean
@@ -631,6 +631,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -638,6 +639,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -1623,9 +1625,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -1633,6 +1636,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param

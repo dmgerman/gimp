@@ -56,6 +56,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -63,6 +64,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -107,6 +109,7 @@ specifier|static
 name|void
 name|vinvert_render_row
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -244,9 +247,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -254,6 +258,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -486,22 +491,13 @@ operator|&
 name|ncols
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|cmap
-operator|==
-name|NULL
-condition|)
-block|{
-name|g_print
+name|g_return_if_fail
 argument_list|(
-literal|"vinvert: cmap was NULL!  Quitting...\n"
+name|cmap
+operator|!=
+name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_quit
-argument_list|()
-expr_stmt|;
-block|}
 name|vinvert_render_row
 argument_list|(
 name|cmap
@@ -522,15 +518,21 @@ argument_list|,
 name|ncols
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|cmap
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|vinvert_func (guchar * src,guchar * dest,gint bpp,gpointer data)
+DECL|function|vinvert_func (const guchar * src,guchar * dest,gint bpp,gpointer data)
 name|vinvert_func
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -647,9 +649,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|vinvert_render_row (guchar * src,guchar * dest,gint row_width,gint bpp)
+DECL|function|vinvert_render_row (const guchar * src,guchar * dest,gint row_width,gint bpp)
 name|vinvert_render_row
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src

@@ -56,6 +56,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -63,6 +64,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -226,9 +228,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -236,6 +239,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -780,7 +784,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon27716b930108
+DECL|struct|__anon290df53e0108
 typedef|typedef
 struct|struct
 block|{
@@ -816,9 +820,10 @@ end_typedef
 begin_function
 specifier|static
 name|void
-DECL|function|find_min_max (guchar * src,gint bpp,gpointer data)
+DECL|function|find_min_max (const guchar * src,gint bpp,gpointer data)
 name|find_min_max
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -922,9 +927,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|normalize_func (guchar * src,guchar * dest,gint bpp,gpointer data)
+DECL|function|normalize_func (const guchar * src,guchar * dest,gint bpp,gpointer data)
 name|normalize_func
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src

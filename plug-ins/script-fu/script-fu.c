@@ -99,7 +99,7 @@ file|"script-fu-intl.h"
 end_include
 
 begin_comment
-comment|/* Declare local functions.  */
+comment|/* Declare local functions. */
 end_comment
 
 begin_function_decl
@@ -127,6 +127,7 @@ specifier|static
 name|void
 name|script_fu_run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -134,9 +135,10 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
-name|param
+name|params
 parameter_list|,
 name|gint
 modifier|*
@@ -165,6 +167,7 @@ specifier|static
 name|void
 name|script_fu_refresh_proc
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -172,6 +175,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|params
@@ -501,9 +505,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|script_fu_run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|script_fu_run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -511,6 +516,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -832,9 +838,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_refresh_proc (gchar * name,gint nparams,GimpParam * params,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|script_fu_refresh_proc (const gchar * name,gint nparams,const GimpParam * params,gint * nreturn_vals,GimpParam ** return_vals)
 name|script_fu_refresh_proc
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -842,6 +849,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|params

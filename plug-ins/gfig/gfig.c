@@ -354,6 +354,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -361,6 +362,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -952,7 +954,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295f2e560103
+DECL|enum|__anon2932ad160103
 block|{
 DECL|enumerator|LINE
 name|LINE
@@ -1004,7 +1006,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295f2e560203
+DECL|enum|__anon2932ad160203
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -1025,7 +1027,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295f2e560303
+DECL|enum|__anon2932ad160303
 block|{
 DECL|enumerator|ORIGINAL_LAYER
 name|ORIGINAL_LAYER
@@ -1046,7 +1048,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295f2e560403
+DECL|enum|__anon2932ad160403
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -1073,7 +1075,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295f2e560503
+DECL|enum|__anon2932ad160503
 block|{
 DECL|enumerator|PAINT_BRUSH_TYPE
 name|PAINT_BRUSH_TYPE
@@ -1094,7 +1096,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295f2e560603
+DECL|enum|__anon2932ad160603
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -1262,7 +1264,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295f2e560708
+DECL|struct|__anon2932ad160708
 block|{
 DECL|member|gridspacing
 name|gint
@@ -1301,7 +1303,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295f2e560808
+DECL|struct|__anon2932ad160808
 block|{
 DECL|member|gridspacing
 name|void
@@ -1350,7 +1352,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295f2e560908
+DECL|struct|__anon2932ad160908
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -1520,7 +1522,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295f2e560a03
+DECL|enum|__anon2932ad160a03
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1544,7 +1546,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295f2e560b03
+DECL|enum|__anon2932ad160b03
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -1562,7 +1564,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295f2e560c03
+DECL|enum|__anon2932ad160c03
 block|{
 DECL|enumerator|FILL_FOREGROUND
 name|FILL_FOREGROUND
@@ -1583,7 +1585,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295f2e560d03
+DECL|enum|__anon2932ad160d03
 block|{
 DECL|enumerator|FILL_EACH
 name|FILL_EACH
@@ -2189,6 +2191,7 @@ name|gint16
 name|y_off
 decl_stmt|;
 DECL|member|popup
+specifier|const
 name|gchar
 modifier|*
 name|popup
@@ -3701,9 +3704,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -3711,6 +3715,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param

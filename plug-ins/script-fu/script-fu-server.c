@@ -359,7 +359,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288df08f0108
+DECL|struct|__anon2b67f5680108
 block|{
 DECL|member|command
 name|gchar
@@ -383,7 +383,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288df08f0208
+DECL|struct|__anon2b67f5680208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -677,9 +677,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|script_fu_server_run (gchar * name,gint nparams,GimpParam * params,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|script_fu_server_run (const gchar * name,gint nparams,const GimpParam * params,gint * nreturn_vals,GimpParam ** return_vals)
 name|script_fu_server_run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -687,6 +688,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|params

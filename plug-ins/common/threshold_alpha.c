@@ -92,6 +92,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -99,6 +100,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -184,7 +186,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cceef40108
+DECL|struct|__anon276a82a30108
 block|{
 DECL|member|threshold
 name|gint
@@ -211,10 +213,10 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cceef40208
+DECL|struct|__anon276a82a30208
 block|{
 DECL|member|run
-name|gint
+name|gboolean
 name|run
 decl_stmt|;
 DECL|typedef|Interface
@@ -329,9 +331,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -339,6 +342,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -609,9 +613,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|threshold_alpha_func (guchar * src,guchar * dest,gint bpp,gpointer data)
+DECL|function|threshold_alpha_func (const guchar * src,guchar * dest,gint bpp,gpointer data)
 name|threshold_alpha_func
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src

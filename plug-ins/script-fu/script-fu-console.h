@@ -20,6 +20,7 @@ begin_function_decl
 name|void
 name|script_fu_console_run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -27,6 +28,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|params
@@ -47,6 +49,7 @@ begin_function_decl
 name|void
 name|script_fu_eval_run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -54,6 +57,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|params

@@ -354,7 +354,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon28e41dfb0108
+DECL|struct|__anon2a56f78a0108
 typedef|typedef
 struct|struct
 block|{
@@ -423,7 +423,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28e41dfb0208
+DECL|struct|__anon2a56f78a0208
 typedef|typedef
 struct|struct
 block|{
@@ -541,7 +541,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28e41dfb0308
+DECL|struct|__anon2a56f78a0308
 typedef|typedef
 struct|struct
 block|{
@@ -570,7 +570,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28e41dfb0408
+DECL|struct|__anon2a56f78a0408
 typedef|typedef
 struct|struct
 block|{
@@ -597,7 +597,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28e41dfb0508
+DECL|struct|__anon2a56f78a0508
 typedef|typedef
 struct|struct
 block|{
@@ -869,6 +869,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -876,6 +877,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -1105,6 +1107,7 @@ name|guchar
 modifier|*
 name|pixel
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|original
@@ -1414,9 +1417,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -1424,6 +1428,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -14502,13 +14507,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|p_remap_pixel (guchar * pixel,guchar * original,gint bpp2)
+DECL|function|p_remap_pixel (guchar * pixel,const guchar * original,gint bpp2)
 name|p_remap_pixel
 parameter_list|(
 name|guchar
 modifier|*
 name|pixel
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|original
@@ -15458,9 +15464,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|colorize_func (guchar * src,guchar * dest,gint bpp,gpointer data)
+DECL|function|colorize_func (const guchar * src,guchar * dest,gint bpp,gpointer data)
 name|colorize_func
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src

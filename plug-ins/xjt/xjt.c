@@ -239,10 +239,10 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6b69a00108
+DECL|struct|__anon2baecd0f0108
 block|{
 DECL|member|run
-name|gint
+name|gboolean
 name|run
 decl_stmt|;
 DECL|typedef|JpegSaveInterface
@@ -258,7 +258,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6b69a00203
+DECL|enum|__anon2baecd0f0203
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -458,7 +458,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6b69a00303
+DECL|enum|__anon2baecd0f0303
 block|{
 DECL|enumerator|PTYP_NOT_SUPPORTED
 name|PTYP_NOT_SUPPORTED
@@ -518,7 +518,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6b69a00403
+DECL|enum|__anon2baecd0f0403
 block|{
 DECL|enumerator|XJT_IMAGE_PARASITE
 name|XJT_IMAGE_PARASITE
@@ -548,7 +548,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6b69a00503
+DECL|enum|__anon2baecd0f0503
 block|{
 DECL|enumerator|XJT_RGB
 name|XJT_RGB
@@ -570,7 +570,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6b69a00603
+DECL|enum|__anon2baecd0f0603
 block|{
 DECL|enumerator|XJT_PATHTYPE_UNDEF
 name|XJT_PATHTYPE_UNDEF
@@ -590,7 +590,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6b69a00703
+DECL|enum|__anon2baecd0f0703
 block|{
 DECL|enumerator|XJT_UNIT_PIXEL
 name|XJT_UNIT_PIXEL
@@ -625,7 +625,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6b69a00803
+DECL|enum|__anon2baecd0f0803
 block|{
 DECL|enumerator|XJT_NORMAL_MODE
 name|XJT_NORMAL_MODE
@@ -750,7 +750,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6b69a00908
+DECL|struct|__anon2baecd0f0908
 block|{
 DECL|member|prop_id
 name|t_proptype
@@ -786,7 +786,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6b69a00a08
+DECL|struct|__anon2baecd0f0a08
 block|{
 DECL|member|int_val1
 name|gint32
@@ -835,7 +835,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6b69a00b08
+DECL|struct|__anon2baecd0f0b08
 block|{
 DECL|member|parasite_type
 name|t_parasitetype
@@ -872,7 +872,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6b69a00c08
+DECL|struct|__anon2baecd0f0c08
 block|{
 DECL|member|path_type
 name|gint32
@@ -922,7 +922,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6b69a00d08
+DECL|struct|__anon2baecd0f0d08
 block|{
 DECL|member|active_channel
 name|gint
@@ -996,7 +996,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6b69a00e08
+DECL|struct|__anon2baecd0f0e08
 block|{
 DECL|member|active_layer
 name|gint
@@ -1081,7 +1081,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6b69a00f08
+DECL|struct|__anon2baecd0f0f08
 block|{
 DECL|member|position
 name|gint32
@@ -1105,7 +1105,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6b69a01008
+DECL|struct|__anon2baecd0f1008
 block|{
 DECL|member|version
 name|gchar
@@ -1732,6 +1732,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -1739,6 +1740,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -1760,6 +1762,7 @@ specifier|static
 name|gint32
 name|load_xjt_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -1772,6 +1775,7 @@ specifier|static
 name|gint
 name|save_xjt_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -2200,9 +2204,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -2210,6 +2215,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -7457,9 +7463,10 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|save_xjt_image (gchar * filename,gint32 image_id,gint32 drawable_id)
+DECL|function|save_xjt_image (const gchar * filename,gint32 image_id,gint32 drawable_id)
 name|save_xjt_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -14263,9 +14270,10 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_xjt_image (gchar * filename)
+DECL|function|load_xjt_image (const gchar * filename)
 name|load_xjt_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename

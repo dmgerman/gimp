@@ -182,20 +182,27 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
+name|name
 parameter_list|,
-name|int
+name|gint
+name|nparams
+parameter_list|,
+specifier|const
+name|GimpParam
+modifier|*
+name|param
+parameter_list|,
+name|gint
+modifier|*
+name|nreturn_vals
 parameter_list|,
 name|GimpParam
 modifier|*
-parameter_list|,
-name|int
 modifier|*
-parameter_list|,
-name|GimpParam
-modifier|*
-modifier|*
+name|return_vals
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -205,7 +212,8 @@ specifier|static
 name|int
 name|do_print_dialog
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|proc_name
 parameter_list|)
@@ -986,34 +994,31 @@ end_endif
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
 parameter_list|,
-comment|/* I - Name of print program. */
 name|gint
 name|nparams
 parameter_list|,
-comment|/* I - Number of parameters passed in */
+specifier|const
 name|GimpParam
 modifier|*
 name|param
 parameter_list|,
-comment|/* I - Parameter values */
 name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-comment|/* O - Number of return values */
 name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
-comment|/* O - Return values */
 block|{
 name|GimpDrawable
 modifier|*
@@ -2502,9 +2507,10 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|do_print_dialog (gchar * proc_name)
+DECL|function|do_print_dialog (const gchar * proc_name)
 name|do_print_dialog
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|proc_name
@@ -2519,9 +2525,6 @@ name|gimp_create_main_window
 argument_list|()
 expr_stmt|;
 name|gtk_main
-argument_list|()
-expr_stmt|;
-name|gdk_flush
 argument_list|()
 expr_stmt|;
 comment|/*    * Set printrc options...    */

@@ -72,9 +72,29 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimpressionist_main
+name|run
 parameter_list|(
-name|void
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|,
+name|gint
+name|nparams
+parameter_list|,
+specifier|const
+name|GimpParam
+modifier|*
+name|param
+parameter_list|,
+name|gint
+modifier|*
+name|nreturn_vals
+parameter_list|,
+name|GimpParam
+modifier|*
+modifier|*
+name|return_vals
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -82,22 +102,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|run
+name|gimpressionist_main
 parameter_list|(
-name|char
-modifier|*
-parameter_list|,
-name|int
-parameter_list|,
-name|GimpParam
-modifier|*
-parameter_list|,
-name|int
-modifier|*
-parameter_list|,
-name|GimpParam
-modifier|*
-modifier|*
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -388,15 +395,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimpressionist_get_data (char * name,void * ptr)
+DECL|function|gimpressionist_get_data (char * name,gpointer ptr)
 name|gimpressionist_get_data
 parameter_list|(
 name|char
 modifier|*
 name|name
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|ptr
 parameter_list|)
 block|{
@@ -417,9 +423,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -427,6 +434,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param

@@ -2053,15 +2053,17 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-DECL|function|fits_open (char * filename,char * openmode)
+DECL|function|fits_open (const char * filename,const char * openmode)
 name|FITS_FILE
 modifier|*
 name|fits_open
 parameter_list|(
+specifier|const
 name|char
 modifier|*
 name|filename
 parameter_list|,
+specifier|const
 name|char
 modifier|*
 name|openmode

@@ -152,7 +152,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299268890108
+DECL|struct|__anon297860460108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299268890208
+DECL|struct|__anon297860460208
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -217,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299268890308
+DECL|struct|__anon297860460308
 block|{
 DECL|member|name
 name|gchar
@@ -245,7 +245,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299268890408
+DECL|struct|__anon297860460408
 block|{
 DECL|member|list
 name|GSList
@@ -265,7 +265,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon29926889050a
+DECL|union|__anon29786046050a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -336,7 +336,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299268890608
+DECL|struct|__anon297860460608
 block|{
 DECL|member|script_name
 name|gchar
@@ -422,7 +422,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299268890708
+DECL|struct|__anon297860460708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -541,6 +541,7 @@ specifier|static
 name|void
 name|script_fu_script_proc
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -548,6 +549,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|params
@@ -3819,9 +3821,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_script_proc (gchar * name,gint nparams,GimpParam * params,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|script_fu_script_proc (const gchar * name,gint nparams,const GimpParam * params,gint * nreturn_vals,GimpParam ** return_vals)
 name|script_fu_script_proc
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -3829,6 +3832,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|params
