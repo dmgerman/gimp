@@ -1294,6 +1294,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gtk_window_set_type_hint
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|shell
+argument_list|)
+argument_list|,
+name|GDK_WINDOW_TYPE_HINT_UTILITY
+argument_list|)
+expr_stmt|;
 name|vbox
 operator|=
 name|gtk_vbox_new
