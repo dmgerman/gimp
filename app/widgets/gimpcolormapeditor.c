@@ -86,11 +86,22 @@ directive|include
 file|"widgets-types.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
 begin_warning
 warning|#
 directive|warning
 warning|FIXME #include "display/display-types.h"
 end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -158,7 +169,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b27602f0103
+DECL|enum|__anon2c4f43250103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -1915,7 +1926,9 @@ name|g_new
 argument_list|(
 name|guchar
 argument_list|,
-name|width
+name|xn
+operator|*
+name|cellsize
 operator|*
 literal|3
 argument_list|)

@@ -45,11 +45,22 @@ directive|include
 file|"display-types.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
 begin_warning
 warning|#
 directive|warning
 warning|FIXME #include "gui/gui-types.h"
 end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -277,7 +288,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be2e9f10103
+DECL|enum|__anon2b43a5f30103
 block|{
 DECL|enumerator|SCALED
 name|SCALED

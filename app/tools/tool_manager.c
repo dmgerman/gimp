@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimptool/gimptoolcontrol.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gui/brush-select.h"
 end_include
 

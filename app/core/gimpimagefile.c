@@ -74,6 +74,44 @@ directive|ifdef
 name|G_OS_WIN32
 end_ifdef
 
+begin_include
+include|#
+directive|include
+file|<direct.h>
+end_include
+
+begin_define
+DECL|macro|mkdir (n,a)
+define|#
+directive|define
+name|mkdir
+parameter_list|(
+name|n
+parameter_list|,
+name|a
+parameter_list|)
+value|_mkdir(n)
+end_define
+
+begin_include
+include|#
+directive|include
+file|<io.h>
+end_include
+
+begin_define
+DECL|macro|chmod (n,f)
+define|#
+directive|define
+name|chmod
+parameter_list|(
+name|n
+parameter_list|,
+name|f
+parameter_list|)
+value|_chmod(n,f)
+end_define
+
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -247,7 +285,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bc7fbd0103
+DECL|enum|__anon2979f7520103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -261,7 +299,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bc7fbd0208
+DECL|struct|__anon2979f7520208
 block|{
 DECL|member|dirname
 specifier|const

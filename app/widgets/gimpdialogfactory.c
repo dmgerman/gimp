@@ -110,14 +110,11 @@ name|DEBUG_FACTORY
 end_ifdef
 
 begin_define
-DECL|macro|DEBUG (...)
+DECL|macro|DEBUG
 define|#
 directive|define
 name|DEBUG
-parameter_list|(
-modifier|...
-parameter_list|)
-value|g_print(...)
+value|g_print
 end_define
 
 begin_else
@@ -126,13 +123,10 @@ directive|else
 end_else
 
 begin_define
-DECL|macro|DEBUG (...)
+DECL|macro|DEBUG
 define|#
 directive|define
 name|DEBUG
-parameter_list|(
-modifier|...
-parameter_list|)
 end_define
 
 begin_endif
@@ -143,7 +137,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292f4e700103
+DECL|enum|__anon29bf11940103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -164,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292f4e700203
+DECL|enum|__anon29bf11940203
 block|{
 DECL|enumerator|GIMP_DIALOG_SHOW_ALL
 name|GIMP_DIALOG_SHOW_ALL

@@ -45,11 +45,22 @@ directive|include
 file|"tools-types.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
 begin_warning
 warning|#
 directive|warning
 warning|FIXME #include "gui/gui-types.h"
 end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -171,7 +182,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2e80f10103
+DECL|enum|__anon2ade473e0103
 block|{
 DECL|enumerator|CREATING
 name|CREATING

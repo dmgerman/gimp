@@ -60,11 +60,22 @@ directive|include
 file|"widgets-types.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
 begin_warning
 warning|#
 directive|warning
 warning|FIXME #include "gui/gui-types.h"
 end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -138,7 +149,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1e0b450103
+DECL|enum|__anon2a23000a0103
 block|{
 DECL|enumerator|FORE_AREA
 name|FORE_AREA

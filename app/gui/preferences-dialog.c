@@ -197,7 +197,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277129240103
+DECL|enum|__anon29fda07d0103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -6221,6 +6221,15 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|g_file_test
+argument_list|(
+name|filename
+argument_list|,
+name|G_FILE_TEST_IS_REGULAR
+argument_list|)
+condition|)
 name|pixbuf
 operator|=
 name|gdk_pixbuf_new_from_file
@@ -6229,6 +6238,11 @@ name|filename
 argument_list|,
 name|NULL
 argument_list|)
+expr_stmt|;
+else|else
+name|pixbuf
+operator|=
+name|NULL
 expr_stmt|;
 name|g_free
 argument_list|(
@@ -13146,7 +13160,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon277129240208
+DECL|struct|__anon29fda07d0208
 block|{
 DECL|member|label
 name|gchar
@@ -13326,7 +13340,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon277129240308
+DECL|struct|__anon29fda07d0308
 block|{
 DECL|member|tree_label
 name|gchar

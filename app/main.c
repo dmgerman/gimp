@@ -397,7 +397,8 @@ argument_list|(
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
 argument_list|,
-name|LOCALEDIR
+name|gimp_locale_directory
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|bind_textdomain_codeset
@@ -412,7 +413,8 @@ name|bindtextdomain
 argument_list|(
 name|GETTEXT_PACKAGE
 argument_list|,
-name|LOCALEDIR
+name|gimp_locale_directory
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|bind_textdomain_codeset

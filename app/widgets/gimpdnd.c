@@ -2150,6 +2150,12 @@ while|while
 condition|(
 operator|*
 name|buffer
+operator|&&
+name|buffer
+operator|-
+name|vals
+operator|<
+name|length
 condition|)
 block|{
 name|gchar

@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -133,7 +139,8 @@ name|bindtextdomain
 argument_list|(
 name|std_plugins_domain
 argument_list|,
-name|LOCALEDIR
+name|gimp_locale_directory
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|bind_textdomain_codeset
@@ -324,7 +331,8 @@ name|bindtextdomain
 argument_list|(
 name|domain
 argument_list|,
-name|LOCALEDIR
+name|gimp_locale_directory
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|bind_textdomain_codeset
