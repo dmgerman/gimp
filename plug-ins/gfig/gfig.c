@@ -902,7 +902,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d3be4b0108
+DECL|struct|__anon2932d4100108
 block|{
 DECL|member|gridspacing
 name|void
@@ -16079,7 +16079,7 @@ operator|->
 name|name
 argument_list|)
 expr_stmt|;
-name|gimp_undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|gfig_image
 argument_list|)
@@ -16260,7 +16260,7 @@ condition|)
 name|paint_layer_fill
 argument_list|()
 expr_stmt|;
-name|gimp_undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|gfig_image
 argument_list|)

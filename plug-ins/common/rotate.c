@@ -1,14 +1,14 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  *  Rotate plug-in v1.0  *  Copyright 1997-2000 by Sven Neumann<sven@gimp.org>   *& Adam D. Moss<adam@gimp.org>  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  *  Rotate plug-in v1.0  *  Copyright 1997-2000 by Sven Neumann<sven@gimp.org>  *& Adam D. Moss<adam@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_comment
-comment|/* Revision history  *  (09/28/97)  v0.1   first development release   *  (09/29/97)  v0.2   nicer dialog,  *                     changed the menu-location to Filters/Transforms  *  (10/01/97)  v0.3   now handles layered images and undo  *  (10/13/97)  v0.3a  small bugfix, no real changes  *  (10/17/97)  v0.4   now handles selections  *  (01/09/98)  v0.5   a few fixes to support portability  *  (01/15/98)  v0.6   fixed a line that caused rotate to crash on some   *                     systems                 *  (05/28/98)  v0.7   use the new gimp_message function for error output  *  (10/09/99)  v0.8   rotate guides too  *  (11/13/99)  v0.9   merge rotators and rotate plug-ins   *                     -> drop the dialog, register directly into menus instead  *  (06/18/00)  v1.0   speed up 180° rotations,   *                     declare version 1.0 for gimp-1.2 release  */
+comment|/* Revision history  *  (09/28/97)  v0.1   first development release  *  (09/29/97)  v0.2   nicer dialog,  *                     changed the menu-location to Filters/Transforms  *  (10/01/97)  v0.3   now handles layered images and undo  *  (10/13/97)  v0.3a  small bugfix, no real changes  *  (10/17/97)  v0.4   now handles selections  *  (01/09/98)  v0.5   a few fixes to support portability  *  (01/15/98)  v0.6   fixed a line that caused rotate to crash on some  *                     systems  *  (05/28/98)  v0.7   use the new gimp_message function for error output  *  (10/09/99)  v0.8   rotate guides too  *  (11/13/99)  v0.9   merge rotators and rotate plug-ins  *                     -> drop the dialog, register directly into menus instead  *  (06/18/00)  v1.0   speed up 180° rotations,  *                     declare version 1.0 for gimp-1.2 release  */
 end_comment
 
 begin_comment
-comment|/* TODO List  *  - handle channels and masks  *  - rewrite the main function to make it work on tiles rather than  *    process the image row by row. This should result in a significant  *    speedup (thanks to quartic for this suggestion).   *  - do something magical so that only one rotate can be occuring at a time!  */
+comment|/* TODO List  *  - handle channels and masks  *  - rewrite the main function to make it work on tiles rather than  *    process the image row by row. This should result in a significant  *    speedup (thanks to quartic for this suggestion).  *  - do something magical so that only one rotate can be occuring at a time!  */
 end_comment
 
 begin_include
@@ -80,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2bba920108
+DECL|struct|__anon273dd2c50108
 block|{
 DECL|member|angle
 name|gint
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2bba920208
+DECL|struct|__anon273dd2c50208
 block|{
 DECL|member|ID
 name|gint32
@@ -421,7 +421,7 @@ name|data
 operator|.
 name|d_int32
 decl_stmt|;
-comment|/* status variable, use it to check for errors in invocation usualy only       during non-interactive calling */
+comment|/* status variable, use it to check for errors in invocation usualy only      during non-interactive calling */
 name|GimpPDBStatusType
 name|status
 init|=
@@ -635,7 +635,7 @@ comment|/* Run the main function */
 name|rotate
 argument_list|()
 expr_stmt|;
-comment|/* If run mode is interactive, flush displays, else (script) don't  	 do it, as the screen updates would make the scripts slow */
+comment|/* If run mode is interactive, flush displays, else (script) don't 	 do it, as the screen updates would make the scripts slow */
 if|if
 condition|(
 name|run_mode
@@ -1752,7 +1752,7 @@ literal|"Rotating..."
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|image_ID
 argument_list|)
@@ -2229,7 +2229,7 @@ name|active_drawable
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|image_ID
 argument_list|)

@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4ecd530108
+DECL|struct|__anon2b9732a10108
 block|{
 DECL|member|do_curl_shade
 name|gint
@@ -4992,7 +4992,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|gimp_undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|image_id
 argument_list|)
@@ -5014,7 +5014,7 @@ expr_stmt|;
 name|clear_curled_region
 argument_list|()
 expr_stmt|;
-name|gimp_undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|image_id
 argument_list|)

@@ -1114,7 +1114,7 @@ argument_list|(
 literal|1.00
 argument_list|)
 expr_stmt|;
-name|gimp_undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|image_id
 argument_list|)
@@ -1146,7 +1146,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gimp_undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|image_id
 argument_list|)
@@ -1204,11 +1204,9 @@ index|[
 name|b
 index|]
 condition|)
-block|{
 return|return
 name|FALSE
 return|;
-block|}
 block|}
 return|return
 name|TRUE

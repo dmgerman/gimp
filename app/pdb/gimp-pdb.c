@@ -351,7 +351,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27ddb7230108
+DECL|struct|__anon2a1ccb770108
 block|{
 DECL|member|old_name
 specifier|const
@@ -530,6 +530,18 @@ block|{
 literal|"gimp_patterns_list"
 block|,
 literal|"gimp_patterns_get_list"
+block|}
+block|,
+block|{
+literal|"gimp_undo_push_group_start"
+block|,
+literal|"gimp_image_undo_group_start"
+block|}
+block|,
+block|{
+literal|"gimp_undo_push_group_end"
+block|,
+literal|"gimp_image_undo_group_end"
 block|}
 block|}
 struct|;

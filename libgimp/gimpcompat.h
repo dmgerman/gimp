@@ -192,6 +192,16 @@ define|#
 directive|define
 name|gimp_gradients_set_active
 value|gimp_gradients_set_gradient
+DECL|macro|gimp_undo_push_group_start
+define|#
+directive|define
+name|gimp_undo_push_group_start
+value|gimp_image_undo_group_start
+DECL|macro|gimp_undo_push_group_end
+define|#
+directive|define
+name|gimp_undo_push_group_end
+value|gimp_image_undo_group_end
 DECL|macro|gimp_help_init ()
 define|#
 directive|define
@@ -337,7 +347,7 @@ directive|define
 name|GIMP_IS_FILE_SELECTION
 value|GIMP_IS_FILE_ENTRY
 name|enum
-DECL|enum|__anon29e0af740103
+DECL|enum|__anon27e99e110103
 type|{
 DECL|enumerator|GIMP_WHITE_MASK
 name|GIMP_WHITE_MASK
@@ -369,7 +379,7 @@ end_decl_stmt
 begin_enum
 unit|};
 enum|enum
-DECL|enum|__anon29e0af740203
+DECL|enum|__anon27e99e110203
 block|{
 DECL|enumerator|GIMP_ADD
 name|GIMP_ADD
@@ -396,7 +406,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e0af740303
+DECL|enum|__anon27e99e110303
 block|{
 DECL|enumerator|GIMP_FG_BG_RGB
 name|GIMP_FG_BG_RGB
@@ -423,7 +433,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e0af740403
+DECL|enum|__anon27e99e110403
 block|{
 DECL|enumerator|GIMP_FG_IMAGE_FILL
 name|GIMP_FG_IMAGE_FILL
@@ -455,7 +465,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e0af740503
+DECL|enum|__anon27e99e110503
 block|{
 DECL|enumerator|GIMP_APPLY
 name|GIMP_APPLY
@@ -472,7 +482,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e0af740603
+DECL|enum|__anon27e99e110603
 block|{
 DECL|enumerator|GIMP_HARD
 name|GIMP_HARD
@@ -489,7 +499,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e0af740703
+DECL|enum|__anon27e99e110703
 block|{
 DECL|enumerator|GIMP_CONTINUOUS
 name|GIMP_CONTINUOUS
@@ -506,7 +516,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e0af740803
+DECL|enum|__anon27e99e110803
 block|{
 DECL|enumerator|GIMP_HORIZONTAL
 name|GIMP_HORIZONTAL
@@ -528,7 +538,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e0af740903
+DECL|enum|__anon27e99e110903
 block|{
 DECL|enumerator|GIMP_LINEAR
 name|GIMP_LINEAR

@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27914b150108
+DECL|struct|__anon296915980108
 block|{
 DECL|member|new_width
 name|gint
@@ -1012,7 +1012,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|image_id
 argument_list|)
@@ -1372,11 +1372,13 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-name|gimp_undo_push_group_end
+block|{
+name|gimp_image_undo_group_end
 argument_list|(
 name|image_id
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_drawable_flush
 argument_list|(
 name|drawable

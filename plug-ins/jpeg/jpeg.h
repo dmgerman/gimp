@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2933e4930108
+DECL|struct|__anon299a27640108
 block|{
 DECL|member|quality
 name|gdouble
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2933e4930208
+DECL|struct|__anon299a27640208
 block|{
 DECL|member|cinfo
 name|struct
@@ -1704,7 +1704,7 @@ name|preview
 condition|)
 block|{
 comment|/* we start an undo_group and immediately freeze undo saving                  so that we can avoid sucking up tile cache with our unneeded                  preview steps. */
-name|gimp_undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|image_ID
 argument_list|)
@@ -1749,7 +1749,7 @@ argument_list|(
 name|image_ID
 argument_list|)
 expr_stmt|;
-name|gimp_undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|image_ID
 argument_list|)
@@ -5819,7 +5819,7 @@ name|undo_touched
 condition|)
 block|{
 comment|/* we start an undo_group and immediately freeze undo saving              so that we can avoid sucking up tile cache with our unneeded              preview steps. */
-name|gimp_undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|image_ID_global
 argument_list|)
@@ -5895,14 +5895,12 @@ if|if
 condition|(
 name|abort_me
 condition|)
-block|{
 operator|*
 name|abort_me
 operator|=
 name|TRUE
 expr_stmt|;
 comment|/* signal the background save to stop */
-block|}
 if|if
 condition|(
 name|drawable_global

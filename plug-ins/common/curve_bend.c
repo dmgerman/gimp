@@ -738,7 +738,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2876a4e60108
+DECL|struct|__anon2c2a92eb0108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -792,7 +792,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2876a4e60208
+DECL|struct|__anon2c2a92eb0208
 block|{
 DECL|member|y
 name|gint32
@@ -2904,7 +2904,7 @@ name|data
 operator|.
 name|d_drawable
 expr_stmt|;
-name|gimp_undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|l_image_id
 argument_list|)
@@ -3394,7 +3394,7 @@ operator|=
 name|GIMP_PDB_CANCEL
 expr_stmt|;
 block|}
-name|gimp_undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|l_image_id
 argument_list|)
@@ -3411,7 +3411,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|l_image_id
 argument_list|)

@@ -62,7 +62,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8726440108
+DECL|struct|__anon2b3a6f460108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -522,7 +522,7 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-name|gimp_undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|image_ID
 argument_list|)
@@ -587,11 +587,17 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
-name|gimp_undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|image_ID
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|run_mode
+operator|!=
+name|GIMP_RUN_NONINTERACTIVE
+condition|)
 name|gimp_displays_flush
 argument_list|()
 expr_stmt|;
@@ -1086,7 +1092,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*<clahey>   so if a1> c1, a2> c2, and a3> c2 and a1 - c1> a2-c2, a3-c3,              then a1 = b1 * alpha + c1 * (1-alpha)              So, maximizing alpha without taking b1 above 1 gives 	     a1 = alpha + c1(1-alpha) and therefore alpha = (a1-c1) / (1-c1).<sjburges> clahey: btw, the ordering of that a2, a3 in the white->alpha didn't              matter<clahey>   sjburges: You mean that it could be either a1, a2, a3 or a1, a3, a2?<sjburges> yeah<sjburges> because neither one uses the other<clahey>   sjburges: That's exactly as it should be.  They are both just getting              reduced to the same amount, limited by the the darkest color.<clahey>   Then a2 = b2 * alpha + c2 * ( 1- alpha).  Solving for b2 gives              b2 = (a1-c2)/alpha + c2.<sjburges> yeah<clahey>   That gives us are formula for if the background is darker than the              foreground? Yep.<clahey>   Next if a1< c1, a2< c2, a3< c3, and c1-a1> c2-a2, c3-a3, and by our              desired result a1 = b1 * alpha + c1 * (1-alpha), we maximize alpha              without taking b1 negative gives alpha = 1 - a1 / c1.<clahey>   And then again, b2 = (a2-c2) / alpha + c2 by the same formula.              (Actually, I think we can use that formula for all cases, though it              may possibly introduce rounding error.<clahey>   sjburges: I like the idea of using floats to avoid rounding error.              Good call. */
+comment|/*<clahey>   so if a1> c1, a2> c2, and a3> c2 and a1 - c1> a2-c2, a3-c3,              then a1 = b1 * alpha + c1 * (1-alpha)              So, maximizing alpha without taking b1 above 1 gives 	     a1 = alpha + c1(1-alpha) and therefore alpha = (a1-c1) / (1-c1).<sjburges> clahey: btw, the ordering of that a2, a3 in the white->alpha didn't              matter<clahey>   sjburges: You mean that it could be either a1, a2, a3 or a1, a3, a2?<sjburges> yeah<sjburges> because neither one uses the other<clahey>   sjburges: That's exactly as it should be.  They are both just getting              reduced to the same amount, limited by the the darkest color.<clahey>   Then a2 = b2 * alpha + c2 * (1- alpha).  Solving for b2 gives              b2 = (a1-c2)/alpha + c2.<sjburges> yeah<clahey>   That gives us are formula for if the background is darker than the              foreground? Yep.<clahey>   Next if a1< c1, a2< c2, a3< c3, and c1-a1> c2-a2, c3-a3, and by our              desired result a1 = b1 * alpha + c1 * (1-alpha), we maximize alpha              without taking b1 negative gives alpha = 1 - a1 / c1.<clahey>   And then again, b2 = (a2-c2) / alpha + c2 by the same formula.              (Actually, I think we can use that formula for all cases, though it              may possibly introduce rounding error.<clahey>   sjburges: I like the idea of using floats to avoid rounding error.              Good call. */
 end_comment
 
 begin_function

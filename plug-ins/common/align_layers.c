@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ea4da00103
+DECL|enum|__anon2afbe45c0103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ea4da00203
+DECL|enum|__anon2afbe45c0203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -115,7 +115,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ea4da00303
+DECL|enum|__anon2afbe45c0303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ea4da00403
+DECL|enum|__anon2afbe45c0403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -260,7 +260,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ea4da00508
+DECL|struct|__anon2afbe45c0508
 block|{
 DECL|member|h_style
 name|gint
@@ -1074,7 +1074,7 @@ operator|=
 name|min_y
 expr_stmt|;
 block|}
-name|gimp_undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|image_id
 argument_list|)
@@ -1348,7 +1348,7 @@ name|y
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|image_id
 argument_list|)

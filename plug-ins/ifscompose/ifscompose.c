@@ -173,7 +173,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2774ccff0103
+DECL|enum|__anon2907cea40103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -193,7 +193,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2774ccff0203
+DECL|enum|__anon2907cea40203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2774ccff0308
+DECL|struct|__anon2907cea40308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -231,7 +231,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2774ccff040a
+DECL|union|__anon2907cea4040a
 block|{
 DECL|member|d
 name|gdouble
@@ -260,7 +260,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2774ccff0508
+DECL|struct|__anon2907cea40508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -290,7 +290,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2774ccff0608
+DECL|struct|__anon2907cea40608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -325,7 +325,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2774ccff0708
+DECL|struct|__anon2907cea40708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -361,7 +361,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2774ccff0808
+DECL|struct|__anon2907cea40808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -428,7 +428,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2774ccff0908
+DECL|struct|__anon2907cea40908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -630,7 +630,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2774ccff0a08
+DECL|struct|__anon2907cea40a08
 block|{
 DECL|member|run
 name|gboolean
@@ -2028,7 +2028,7 @@ name|GimpParasite
 modifier|*
 name|parasite
 decl_stmt|;
-name|gimp_undo_push_group_start
+name|gimp_image_undo_group_start
 argument_list|(
 name|image_id
 argument_list|)
@@ -2103,7 +2103,7 @@ argument_list|(
 name|str
 argument_list|)
 expr_stmt|;
-name|gimp_undo_push_group_end
+name|gimp_image_undo_group_end
 argument_list|(
 name|image_id
 argument_list|)
