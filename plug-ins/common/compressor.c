@@ -539,7 +539,7 @@ literal|"bzip2"
 block|,
 literal|"-cfd"
 block|,
-name|NULL
+literal|"bzip2 -cfd"
 block|,
 literal|"file_bz2_save"
 block|,
@@ -551,7 +551,7 @@ literal|"bzip2"
 block|,
 literal|"-cf"
 block|,
-name|NULL
+literal|"bzip2 -cf"
 block|}
 block|}
 decl_stmt|;
