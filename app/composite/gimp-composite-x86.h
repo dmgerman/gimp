@@ -131,7 +131,7 @@ value|"movd %%" #dividend ",%%eax; " \                                          
 end_define
 
 begin_comment
-comment|/*  * Quadword divide.  No adjustment for subsequent unsigned packing  * (high-order bit of each word is left alone)  */
+comment|/*  * Quadword divide.  No adjustment for subsequent unsigned packing  * (high-order bit of each word is left alone)  * clobber list must include: "%eax", "%ecx", "%edx", divisor quotient  */
 end_comment
 
 begin_define
@@ -147,6 +147,14 @@ parameter_list|,
 name|quotient
 parameter_list|)
 value|"movd   %%" #dividend ",%%eax; " \                                           "movd   %%" #divisor  ",%%ecx; " \                                           "xorl   %%edx,%%edx; "           \                                           "divw   %%cx; "                  \                                           "roll   $16, %%eax; "            \                                           "roll   $16, %%ecx; "            \                                           "xorl   %%edx,%%edx; "           \                                           "divw   %%cx; "                  \                                           "roll   $16, %%eax; "            \                                           "movd   %%eax,%%" #quotient "; " \                                           "psrlq $32,%%" #dividend ";"     \                                           "psrlq $32,%%" #divisor ";"      \                                           "movd   %%" #dividend ",%%eax; " \                                           "movd   %%" #divisor  ",%%ecx; " \                                           "xorl   %%edx,%%edx; "           \                                           "divw   %%cx; "                  \                                           "roll   $16, %%eax; "            \                                           "roll   $16, %%ecx; "            \                                           "xorl   %%edx,%%edx; "           \                                           "divw   %%cx; "                  \                                           "roll   $16, %%eax; "            \                                           "movd   %%eax,%%" #divisor ";"   \                                           "psllq  $32,%%" #divisor ";"     \                                           "por    %%" #divisor ",%%" #quotient ";"
+end_define
+
+begin_define
+DECL|macro|pdivwqX_clobber
+define|#
+directive|define
+name|pdivwqX_clobber
+value|"%eax", "%ecx", "%edx"
 end_define
 
 begin_comment
