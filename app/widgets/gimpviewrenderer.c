@@ -118,7 +118,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29882cba0103
+DECL|enum|__anon29c6aa800103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2906,6 +2906,8 @@ block|{
 name|GdkPixbuf
 modifier|*
 name|pixbuf
+init|=
+name|NULL
 decl_stmt|;
 name|GtkIconSize
 name|icon_size
@@ -2994,6 +2996,10 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|icon_size
+condition|)
 name|pixbuf
 operator|=
 name|gtk_widget_render_icon
