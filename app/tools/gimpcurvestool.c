@@ -7413,6 +7413,7 @@ argument_list|(
 name|drawable
 argument_list|)
 condition|)
+block|{
 if|if
 condition|(
 name|int_value
@@ -7423,6 +7424,7 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -7431,6 +7433,7 @@ argument_list|(
 name|drawable
 argument_list|)
 condition|)
+block|{
 if|if
 condition|(
 name|int_value
@@ -7445,6 +7448,7 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
+block|}
 else|else
 name|success
 operator|=
@@ -8143,6 +8147,7 @@ argument_list|(
 name|drawable
 argument_list|)
 condition|)
+block|{
 if|if
 condition|(
 name|int_value
@@ -8153,6 +8158,7 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -8161,6 +8167,7 @@ argument_list|(
 name|drawable
 argument_list|)
 condition|)
+block|{
 if|if
 condition|(
 name|int_value
@@ -8175,6 +8182,7 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
+block|}
 else|else
 name|success
 operator|=

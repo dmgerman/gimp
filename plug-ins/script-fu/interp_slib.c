@@ -791,10 +791,11 @@ modifier|*
 name|ptr
 decl_stmt|;
 specifier|static
+name|int
 name|siod_lib_set
-operator|=
+init|=
 literal|0
-expr_stmt|;
+decl_stmt|;
 if|#
 directive|if
 operator|!
@@ -8981,6 +8982,7 @@ if|if NNULLP
 condition|(
 name|args
 condition|)
+block|{
 if|if NULLP
 condition|(
 name|car
@@ -8997,6 +8999,7 @@ name|gc_status_flag
 operator|=
 literal|1
 expr_stmt|;
+block|}
 name|gc_mark_and_sweep
 argument_list|()
 expr_stmt|;
@@ -9134,6 +9137,7 @@ if|if NNULLP
 condition|(
 name|args
 condition|)
+block|{
 if|if NULLP
 condition|(
 name|car
@@ -9150,6 +9154,7 @@ name|gc_status_flag
 operator|=
 literal|1
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|gc_kind_copying
@@ -14470,6 +14475,7 @@ name|c
 operator|==
 name|EOF
 condition|)
+block|{
 if|if
 condition|(
 name|eoferr
@@ -14487,6 +14493,7 @@ operator|(
 name|c
 operator|)
 return|;
+block|}
 if|if
 condition|(
 name|commentp

@@ -334,7 +334,7 @@ comment|/* Gradient segment type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2960f36f0103
+DECL|enum|__anon2be0ab360103
 typedef|typedef
 enum|enum
 block|{
@@ -361,7 +361,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2960f36f0203
+DECL|enum|__anon2be0ab360203
 typedef|typedef
 enum|enum
 block|{
@@ -506,7 +506,7 @@ comment|/* Gradient editor type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2960f36f0303
+DECL|enum|__anon2be0ab360303
 typedef|typedef
 enum|enum
 block|{
@@ -530,7 +530,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2960f36f0408
+DECL|struct|__anon2be0ab360408
 typedef|typedef
 struct|struct
 block|{
@@ -810,7 +810,7 @@ name|int
 name|replicate_times
 decl_stmt|;
 comment|/* Saved colors */
-DECL|struct|__anon2960f36f0508
+DECL|struct|__anon2be0ab360508
 struct|struct
 block|{
 DECL|member|r
@@ -12293,6 +12293,7 @@ condition|(
 operator|!
 name|is_first
 condition|)
+block|{
 if|if
 condition|(
 operator|!
@@ -12332,11 +12333,13 @@ operator|->
 name|left
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 operator|!
 name|is_last
 condition|)
+block|{
 if|if
 condition|(
 operator|!
@@ -12376,6 +12379,7 @@ operator|->
 name|right
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|delta
 return|;

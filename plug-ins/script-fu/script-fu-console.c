@@ -75,6 +75,12 @@ directive|include
 file|"script-fu-console.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|<plug-ins/dbbrowser/dbbrowser.h>
+end_include
+
 begin_define
 DECL|macro|TEXT_WIDTH
 define|#
@@ -110,7 +116,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad7e1fd0108
+DECL|struct|__anon276a86700108
 block|{
 DECL|member|console
 name|GtkWidget

@@ -5383,6 +5383,7 @@ name|mask
 operator|!=
 literal|0x80
 condition|)
+block|{
 if|if
 condition|(
 name|putc
@@ -5417,6 +5418,7 @@ operator|)
 operator|+=
 literal|1
 expr_stmt|;
+block|}
 comment|/*  fclose (bit_file->file );       free ((char *) bit_file);  */
 block|}
 end_function

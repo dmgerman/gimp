@@ -2819,6 +2819,8 @@ name|intermediate_val
 decl_stmt|;
 name|LISP
 name|return_val
+init|=
+name|NIL
 decl_stmt|;
 name|char
 modifier|*

@@ -100,7 +100,7 @@ file|"drawable_pvt.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2bff6c180103
+DECL|enum|__anon2b3033c90103
 enum|enum
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
@@ -495,6 +495,7 @@ if|if
 condition|(
 name|drawable
 condition|)
+block|{
 if|if
 condition|(
 operator|!
@@ -545,6 +546,7 @@ argument_list|,
 name|sparse
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

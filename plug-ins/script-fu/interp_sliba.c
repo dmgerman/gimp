@@ -9011,6 +9011,8 @@ literal|0
 decl_stmt|;
 name|double
 name|result
+init|=
+literal|0.0
 decl_stmt|;
 name|str
 operator|=
@@ -9797,6 +9799,10 @@ name|j
 control|)
 name|base64_decode_table
 index|[
+operator|(
+name|unsigned
+name|char
+operator|)
 name|base64_encode_table
 index|[
 name|j
@@ -10312,6 +10318,7 @@ index|[
 literal|64
 index|]
 condition|)
+block|{
 if|if
 condition|(
 name|s
@@ -10335,6 +10342,7 @@ name|leftover
 operator|=
 literal|2
 expr_stmt|;
+block|}
 else|else
 name|leftover
 operator|=
@@ -11702,6 +11710,7 @@ if|if CONSP
 condition|(
 name|l
 condition|)
+block|{
 if|if NULLP
 condition|(
 name|CDR
@@ -11734,6 +11743,7 @@ argument_list|)
 argument_list|)
 operator|)
 return|;
+block|}
 return|return
 operator|(
 name|err
@@ -12292,6 +12302,8 @@ name|n
 decl_stmt|;
 name|LISP
 name|value
+init|=
+name|NIL
 decl_stmt|;
 name|n
 operator|=
@@ -12396,6 +12408,8 @@ argument_list|)
 decl_stmt|;
 name|LISP
 name|value
+init|=
+name|NULL
 decl_stmt|;
 name|n
 operator|=
@@ -12458,6 +12472,8 @@ name|n
 decl_stmt|;
 name|LISP
 name|value
+init|=
+name|NIL
 decl_stmt|;
 name|n
 operator|=

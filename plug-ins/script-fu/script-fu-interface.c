@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad5b7d60108
+DECL|struct|__anon2aab68220108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -133,7 +133,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2ad5b7d6020a
+DECL|union|__anon2aab6822020a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad5b7d60308
+DECL|struct|__anon2aab68220308
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -254,7 +254,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad5b7d60408
+DECL|struct|__anon2aab68220408
 block|{
 DECL|member|cc
 name|GtkWidget
@@ -2725,6 +2725,8 @@ decl_stmt|;
 name|char
 modifier|*
 name|text
+init|=
+name|NULL
 decl_stmt|;
 name|char
 modifier|*
@@ -4968,6 +4970,8 @@ decl_stmt|;
 name|char
 modifier|*
 name|text
+init|=
+name|NULL
 decl_stmt|;
 name|char
 modifier|*
