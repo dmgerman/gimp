@@ -234,12 +234,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"lc_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"plug_in.h"
 end_include
 
@@ -3842,9 +3836,6 @@ name|offset_y
 argument_list|)
 expr_stmt|;
 name|gdisplays_flush
-argument_list|()
-expr_stmt|;
-name|lc_dialog_update_image_list
 argument_list|()
 expr_stmt|;
 block|}

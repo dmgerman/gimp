@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"lc_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gui/palette-import-dialog.h"
 end_include
 
@@ -564,9 +558,6 @@ name|gdisplays_update_title
 argument_list|(
 name|gimage
 argument_list|)
-expr_stmt|;
-name|lc_dialog_update_image_list
-argument_list|()
 expr_stmt|;
 name|palette_import_image_renamed
 argument_list|(

@@ -132,12 +132,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"lc_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"menus.h"
 end_include
 
@@ -457,9 +451,6 @@ name|dialogs_exit
 argument_list|()
 expr_stmt|;
 comment|/*  handle this in the dialog factory:  */
-name|lc_dialog_free
-argument_list|()
-expr_stmt|;
 name|document_index_free
 argument_list|()
 expr_stmt|;

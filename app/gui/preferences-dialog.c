@@ -120,12 +120,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"lc_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"resolution_calibrate.h"
 end_include
 
@@ -156,7 +150,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2797ca4a0103
+DECL|enum|__anon294d23c90103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -3660,11 +3654,7 @@ operator|!=
 name|old_preview_size
 condition|)
 block|{
-name|lc_dialog_rebuild
-argument_list|(
-name|old_preview_size
-argument_list|)
-expr_stmt|;
+comment|/* lc_dialog_rebuild (old_preview_size); FIXME: update preview size */
 name|layer_select_update_preview_size
 argument_list|()
 expr_stmt|;
@@ -4180,20 +4170,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|lc_dialog_rebuild
-argument_list|(
-operator|(
-name|long
-operator|)
-name|gtk_object_get_user_data
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|widget
-argument_list|)
-argument_list|)
-argument_list|)
-expr_stmt|;
+comment|/* FIXME: update preview size      lc_dialog_rebuild ((long) gtk_object_get_user_data (GTK_OBJECT (widget)));   */
 name|layer_select_update_preview_size
 argument_list|()
 expr_stmt|;
@@ -12452,7 +12429,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2797ca4a0208
+DECL|struct|__anon294d23c90208
 block|{
 DECL|member|label
 name|gchar
@@ -12681,7 +12658,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2797ca4a0308
+DECL|struct|__anon294d23c90308
 block|{
 DECL|member|tree_label
 name|gchar

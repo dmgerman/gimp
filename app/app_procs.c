@@ -276,12 +276,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"lc_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"plug_in.h"
 end_include
 

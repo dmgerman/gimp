@@ -138,12 +138,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"lc_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gui/menus.h"
 end_include
 
@@ -971,11 +965,6 @@ name|GTK_OBJECT
 argument_list|(
 name|gimage
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|lc_dialog_preview_update
-argument_list|(
-name|gimage
 argument_list|)
 expr_stmt|;
 comment|/* We're interested in clean and dirty signals so we can update the    * title if need be. */
@@ -11227,10 +11216,6 @@ name|now
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  for convenience, we call the L&C flush here  */
-name|lc_dialog_flush
-argument_list|()
-expr_stmt|;
 name|flushing
 operator|=
 name|FALSE

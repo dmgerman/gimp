@@ -545,6 +545,22 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GtkWidget
+modifier|*
+name|dialogs_path_list_view_new
+parameter_list|(
+name|GimpDialogFactory
+modifier|*
+name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|dialogs_edit_brush_func
 parameter_list|(
