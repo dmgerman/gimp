@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Event history:  * V 1.00, PK, 26-Oct-98: Creation.  * V 1.01, PK, 21-Nov-99: Fix problem with working on layered images  *                        Internationalization  * V 1.02, PK, 19-Mar-00: Better explaining text/dialogue  *                        Preview added  *                        Fix problem with divide by zero  */
+comment|/* Event history:  * V 1.00, PK, 26-Oct-98: Creation.  * V 1.01, PK, 21-Nov-99: Fix problem with working on layered images  *                        Internationalization  * V 1.02, PK, 19-Mar-00: Better explaining text/dialogue  *                        Preview added  *                        Fix problem with divide by zero  * V 1.03,neo, 22-May-00: Fixed divide by zero in preview code.  */
 end_comment
 
 begin_define
@@ -12,7 +12,7 @@ DECL|macro|VERSIO
 define|#
 directive|define
 name|VERSIO
-value|1.02
+value|1.03
 end_define
 
 begin_decl_stmt
@@ -22,7 +22,7 @@ name|char
 name|dversio
 index|[]
 init|=
-literal|"v1.02  19-Mar-00"
+literal|"v1.03  22-May-00"
 decl_stmt|;
 end_decl_stmt
 
@@ -33,7 +33,7 @@ name|char
 name|ident
 index|[]
 init|=
-literal|"@(#) GIMP mapcolor plug-in v1.02  19-Mar-00"
+literal|"@(#) GIMP mapcolor plug-in v1.03  22-May-00"
 decl_stmt|;
 end_decl_stmt
 
@@ -110,7 +110,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f5981f0108
+DECL|struct|__anon28dabc3f0108
 block|{
 DECL|member|colors
 name|guchar
@@ -192,7 +192,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f5981f0208
+DECL|struct|__anon28dabc3f0208
 block|{
 DECL|member|width
 DECL|member|height
@@ -215,7 +215,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f5981f0308
+DECL|struct|__anon28dabc3f0308
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -1231,20 +1231,12 @@ block|{
 name|src_y
 operator|=
 operator|(
-operator|(
 name|drw_height
-operator|-
-literal|1
-operator|)
 operator|*
 name|y
 operator|)
 operator|/
-operator|(
 name|prv_height
-operator|-
-literal|1
-operator|)
 expr_stmt|;
 if|if
 condition|(
@@ -1338,20 +1330,12 @@ block|{
 name|src_x
 operator|=
 operator|(
-operator|(
 name|drw_width
-operator|-
-literal|1
-operator|)
 operator|*
 name|x
 operator|)
 operator|/
-operator|(
 name|prv_width
-operator|-
-literal|1
-operator|)
 expr_stmt|;
 name|memcpy
 argument_list|(
