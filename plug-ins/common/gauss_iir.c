@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b44c16f0108
+DECL|struct|__anon28a3f4ed0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -77,7 +77,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b44c16f0208
+DECL|struct|__anon28a3f4ed0208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -96,7 +96,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b44c16f0308
+DECL|struct|__anon28a3f4ed0308
 block|{
 DECL|member|size
 name|GtkWidget
@@ -2014,6 +2014,8 @@ name|xres
 argument_list|,
 literal|0
 argument_list|,
+literal|8
+operator|*
 name|MAX
 argument_list|(
 name|drawable
@@ -2042,6 +2044,8 @@ name|yres
 argument_list|,
 literal|0
 argument_list|,
+literal|8
+operator|*
 name|MAX
 argument_list|(
 name|drawable
