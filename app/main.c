@@ -461,21 +461,6 @@ argument_list|)
 expr_stmt|;
 ifdef|#
 directive|ifdef
-name|HAVE_LIBGLE
-name|gle_init
-argument_list|(
-operator|&
-name|argc
-argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* !HAVE_LIBGLE */
-ifdef|#
-directive|ifdef
 name|HAVE_PUTENV
 name|display_name
 operator|=
@@ -1675,9 +1660,11 @@ end_endif
 begin_function
 specifier|static
 name|void
-DECL|function|init ()
+DECL|function|init (void)
 name|init
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 comment|/*  Continue initializing  */
 name|gimp_init
@@ -2010,7 +1997,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf2b94b0108
+DECL|struct|__anon2b5fffe40108
 block|{
 DECL|member|test_gint32
 name|gint32
@@ -2041,11 +2028,13 @@ typedef|;
 end_typedef
 
 begin_function
-DECL|function|test_gserialize ()
 specifier|static
 name|void
+DECL|function|test_gserialize (void)
 name|test_gserialize
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GSerialDescription
 modifier|*
@@ -2122,22 +2111,20 @@ block|}
 decl_stmt|;
 name|ts
 operator|=
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|test_struct
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|to
 operator|=
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|test_struct
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|test_struct_descript
@@ -2215,13 +2202,10 @@ name|ts
 operator|->
 name|test_array
 operator|=
-name|g_malloc
+name|g_new
 argument_list|(
-sizeof|sizeof
-argument_list|(
-name|short
-argument_list|)
-operator|*
+name|guint16
+argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;

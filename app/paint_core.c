@@ -2110,6 +2110,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|(
 name|layer
 operator|=
 name|gimage_get_active_layer
@@ -2118,6 +2119,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|)
+operator|)
 condition|)
 block|{
 comment|/* If Ctrl or Mod1 is pressed, pick colors */

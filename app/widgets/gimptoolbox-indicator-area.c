@@ -1403,7 +1403,10 @@ expr_stmt|;
 block|}
 name|gtk_preview_draw_row
 argument_list|(
+name|GTK_PREVIEW
+argument_list|(
 name|pattern_preview
+argument_list|)
 argument_list|,
 name|buffer
 argument_list|,

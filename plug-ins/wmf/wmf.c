@@ -4324,7 +4324,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b181cc80108
+DECL|struct|__anon298eddc20108
 block|{
 DECL|member|scale
 name|double
@@ -4352,7 +4352,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b181cc80208
+DECL|struct|__anon298eddc20208
 block|{
 DECL|member|run
 name|gint
@@ -4379,7 +4379,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b181cc80308
+DECL|struct|__anon298eddc20308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -4400,7 +4400,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b181cc80403
+DECL|enum|__anon298eddc20403
 block|{
 DECL|enumerator|OBJ_BITMAP
 name|OBJ_BITMAP
@@ -4431,7 +4431,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b181cc80508
+DECL|struct|__anon298eddc20508
 block|{
 DECL|member|dummy
 name|int
@@ -4446,7 +4446,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b181cc80608
+DECL|struct|__anon298eddc20608
 block|{
 DECL|member|color
 name|GdkColor
@@ -4473,7 +4473,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b181cc80708
+DECL|struct|__anon298eddc20708
 block|{
 DECL|member|dummy
 name|int
@@ -4488,7 +4488,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b181cc80808
+DECL|struct|__anon298eddc20808
 block|{
 DECL|member|color
 name|GdkColor
@@ -4515,7 +4515,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b181cc80908
+DECL|struct|__anon298eddc20908
 block|{
 DECL|member|font
 name|GdkFont
@@ -4531,7 +4531,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b181cc80a08
+DECL|struct|__anon298eddc20a08
 block|{
 DECL|member|dummy
 name|int
@@ -4546,14 +4546,14 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b181cc80b08
+DECL|struct|__anon298eddc20b08
 block|{
 DECL|member|type
 name|ObjectType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2b181cc80c0a
+DECL|union|__anon298eddc20c0a
 block|{
 DECL|member|bitmap
 name|BitmapObject
@@ -4592,7 +4592,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b181cc80d08
+DECL|struct|__anon298eddc20d08
 block|{
 DECL|member|gc
 name|GdkGC
@@ -4645,7 +4645,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b181cc80e08
+DECL|struct|__anon298eddc20e08
 block|{
 DECL|member|pixmap
 name|GdkPixmap
@@ -4696,7 +4696,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b181cc80f08
+DECL|struct|__anon298eddc20f08
 block|{
 DECL|member|valid
 name|gboolean
@@ -7185,7 +7185,7 @@ operator|-
 literal|1
 return|;
 block|}
-name|memmove
+name|g_memmove
 argument_list|(
 operator|&
 name|apm_head
@@ -7236,7 +7236,7 @@ operator|-
 literal|1
 return|;
 block|}
-name|memmove
+name|g_memmove
 argument_list|(
 operator|&
 name|apm_head
@@ -7250,7 +7250,7 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|memmove
+name|g_memmove
 argument_list|(
 operator|&
 name|apm_head
@@ -7264,7 +7264,7 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|memmove
+name|g_memmove
 argument_list|(
 operator|&
 name|apm_head
@@ -7278,7 +7278,7 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|memmove
+name|g_memmove
 argument_list|(
 operator|&
 name|apm_head
@@ -7292,7 +7292,7 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|memmove
+name|g_memmove
 argument_list|(
 operator|&
 name|apm_head
@@ -7460,7 +7460,7 @@ literal|72
 expr_stmt|;
 endif|#
 directive|endif
-name|memmove
+name|g_memmove
 argument_list|(
 operator|&
 name|wmf_head
@@ -7474,7 +7474,7 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|memmove
+name|g_memmove
 argument_list|(
 operator|&
 name|wmf_head
@@ -7488,7 +7488,7 @@ argument_list|,
 literal|4
 argument_list|)
 expr_stmt|;
-name|memmove
+name|g_memmove
 argument_list|(
 operator|&
 name|wmf_head
@@ -7598,7 +7598,7 @@ operator|-
 literal|1
 return|;
 block|}
-name|memmove
+name|g_memmove
 argument_list|(
 operator|&
 name|record
@@ -7610,7 +7610,7 @@ argument_list|,
 literal|4
 argument_list|)
 expr_stmt|;
-name|memmove
+name|g_memmove
 argument_list|(
 operator|&
 name|record

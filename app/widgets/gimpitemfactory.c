@@ -2736,9 +2736,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|menus_quit ()
+DECL|function|menus_quit (void)
 name|menus_quit
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|gchar
 modifier|*
@@ -2879,9 +2881,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|menus_last_opened_update_labels ()
+DECL|function|menus_last_opened_update_labels (void)
 name|menus_last_opened_update_labels
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GSList
 modifier|*
@@ -3451,9 +3455,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|menus_init_toolbox ()
+DECL|function|menus_init_toolbox (void)
 name|menus_init_toolbox
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GtkItemFactoryEntry
 modifier|*
