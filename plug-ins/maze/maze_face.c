@@ -112,7 +112,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29ed49c60108
+DECL|struct|__anon29c7d7340108
 typedef|typedef
 struct|struct
 block|{
@@ -3177,6 +3177,12 @@ block|{
 name|void
 modifier|*
 name|bar
+init|=
+operator|(
+name|void
+operator|*
+operator|)
+name|NULL
 decl_stmt|;
 name|gint
 name|baz

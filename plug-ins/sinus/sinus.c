@@ -237,7 +237,7 @@ value|1
 end_define
 
 begin_typedef
-DECL|struct|__anon278055210108
+DECL|struct|__anon29ec0e840108
 typedef|typedef
 struct|struct
 block|{
@@ -338,7 +338,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon278055210208
+DECL|struct|__anon29ec0e840208
 typedef|typedef
 struct|struct
 block|{
@@ -1486,7 +1486,7 @@ modifier|*
 name|p
 parameter_list|)
 block|{
-DECL|struct|__anon278055210308
+DECL|struct|__anon29ec0e840308
 DECL|member|r
 DECL|member|g
 DECL|member|b
@@ -4356,6 +4356,10 @@ argument_list|)
 expr_stmt|;
 name|data
 operator|=
+operator|(
+name|guchar
+operator|*
+operator|)
 name|logo_data
 expr_stmt|;
 for|for
@@ -4409,6 +4413,10 @@ argument_list|(
 name|logo
 argument_list|)
 argument_list|,
+operator|(
+name|guchar
+operator|*
+operator|)
 name|buf
 argument_list|,
 literal|0

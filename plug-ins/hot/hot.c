@@ -131,7 +131,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon295fb5c60103
+DECL|enum|__anon2a59a98d0103
 typedef|typedef
 enum|enum
 block|{
@@ -156,7 +156,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon295fb5c60203
+DECL|enum|__anon2a59a98d0203
 typedef|typedef
 enum|enum
 block|{
@@ -206,7 +206,7 @@ comment|/*  * RGB to YIQ encoding matrix.  */
 end_comment
 
 begin_struct
-DECL|struct|__anon295fb5c60308
+DECL|struct|__anon2a59a98d0308
 struct|struct
 block|{
 DECL|member|pedestal
@@ -2630,6 +2630,7 @@ comment|/*  * build_tab: Build multiply lookup table.  *  * For each possible pi
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|build_tab (int m)
 name|build_tab
@@ -3060,6 +3061,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|int
 DECL|function|hotp (register guint8 r,register guint8 g,register guint8 b)
 name|hotp

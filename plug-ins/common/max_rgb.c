@@ -438,7 +438,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2f623c0108
+DECL|struct|__anon28c481dd0108
 block|{
 DECL|member|max_p
 name|gint
@@ -466,7 +466,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2f623c0208
+DECL|struct|__anon28c481dd0208
 block|{
 DECL|member|run
 name|gint
@@ -504,16 +504,15 @@ name|hold_min
 decl_stmt|;
 end_decl_stmt
 
-begin_expr_stmt
+begin_macro
+DECL|function|MAIN ()
 name|MAIN
 argument_list|()
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_function
 specifier|static
 name|void
-DECL|function|query ()
 name|query
 parameter_list|()
 block|{
@@ -761,6 +760,10 @@ name|ERROR_DIALOG
 argument_list|(
 literal|1
 argument_list|,
+operator|(
+name|guchar
+operator|*
+operator|)
 literal|"RGB drawable is not selected."
 argument_list|)
 expr_stmt|;

@@ -92,7 +92,7 @@ comment|/* Declare local data types  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon278cb6c20108
+DECL|struct|__anon27ba00e40108
 typedef|typedef
 struct|struct
 block|{
@@ -1353,6 +1353,10 @@ argument_list|(
 operator|&
 name|pixel_rgn
 argument_list|,
+operator|(
+name|guchar
+operator|*
+operator|)
 name|buffer
 argument_list|,
 literal|0

@@ -50,7 +50,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dd4d580108
+DECL|struct|__anon2c6f45b30108
 block|{
 DECL|member|fromred
 DECL|member|fromgreen
@@ -1761,7 +1761,10 @@ name|GtkSignalFunc
 operator|)
 name|gtk_widget_destroy
 argument_list|,
+name|GTK_OBJECT
+argument_list|(
 name|dialog
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

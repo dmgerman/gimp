@@ -130,7 +130,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon28b79f1a0108
+DECL|struct|__anon28932a400108
 typedef|typedef
 struct|struct
 block|{
@@ -165,7 +165,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28b79f1a0208
+DECL|struct|__anon28932a400208
 typedef|typedef
 struct|struct
 block|{
@@ -6271,7 +6271,10 @@ argument_list|(
 name|gtk_widget_hide
 argument_list|)
 argument_list|,
+name|GTK_OBJECT
+argument_list|(
 name|logodlg
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

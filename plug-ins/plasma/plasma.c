@@ -84,7 +84,7 @@ value|32
 end_define
 
 begin_typedef
-DECL|struct|__anon2be70bb00108
+DECL|struct|__anon2b92f1d20108
 typedef|typedef
 struct|struct
 block|{
@@ -103,7 +103,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2be70bb00208
+DECL|struct|__anon2b92f1d20208
 typedef|typedef
 struct|struct
 block|{
@@ -1315,6 +1315,10 @@ argument_list|)
 expr_stmt|;
 name|sprintf
 argument_list|(
+operator|(
+name|char
+operator|*
+operator|)
 name|buffer
 argument_list|,
 literal|"%d"
@@ -1331,6 +1335,10 @@ argument_list|(
 name|entry
 argument_list|)
 argument_list|,
+operator|(
+name|gchar
+operator|*
+operator|)
 name|buffer
 argument_list|)
 expr_stmt|;

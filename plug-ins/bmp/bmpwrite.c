@@ -76,7 +76,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277bd3090108
+DECL|struct|__anon2bf401bc0108
 block|{
 DECL|member|run
 name|gint
@@ -576,7 +576,7 @@ comment|/* fetch the image */
 name|pixels
 operator|=
 operator|(
-name|guchar
+name|char
 operator|*
 operator|)
 name|g_malloc

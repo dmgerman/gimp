@@ -439,16 +439,15 @@ name|server_mode
 decl_stmt|;
 end_decl_stmt
 
-begin_expr_stmt
+begin_macro
+DECL|function|MAIN ()
 name|MAIN
 argument_list|()
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_function
 specifier|static
 name|void
-DECL|function|sfquit ()
 name|sfquit
 parameter_list|()
 block|{ }

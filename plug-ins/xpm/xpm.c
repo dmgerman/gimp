@@ -80,7 +80,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c52e45f0108
+DECL|struct|__anon290094ba0108
 block|{
 DECL|member|threshold
 name|gdouble
@@ -95,7 +95,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c52e45f0208
+DECL|struct|__anon290094ba0208
 block|{
 DECL|member|run
 name|gint
@@ -110,7 +110,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c52e45f0308
+DECL|struct|__anon290094ba0308
 block|{
 DECL|member|r
 name|guchar
@@ -362,16 +362,15 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_expr_stmt
+begin_macro
+DECL|function|MAIN ()
 name|MAIN
 argument_list|()
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_function
 specifier|static
 name|void
-DECL|function|query ()
 name|query
 parameter_list|()
 block|{

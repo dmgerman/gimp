@@ -110,7 +110,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7248f30108
+DECL|struct|__anon29c86fb10108
 block|{
 DECL|member|interlace
 name|int
@@ -137,7 +137,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7248f30208
+DECL|struct|__anon29c86fb10208
 block|{
 DECL|member|run
 name|gint
@@ -1538,7 +1538,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c7248f30308
+DECL|struct|__anon29c86fb10308
 block|{
 DECL|member|Width
 name|unsigned
@@ -1588,7 +1588,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c7248f30408
+DECL|struct|__anon29c86fb10408
 block|{
 DECL|member|transparent
 name|int
@@ -3114,10 +3114,18 @@ return|;
 default|default:
 name|str
 operator|=
+operator|(
+name|char
+operator|*
+operator|)
 name|buf
 expr_stmt|;
 name|sprintf
 argument_list|(
+operator|(
+name|char
+operator|*
+operator|)
 name|buf
 argument_list|,
 literal|"UNKNOWN (0x%02x)"

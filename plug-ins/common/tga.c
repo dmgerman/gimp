@@ -295,7 +295,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2790b6b20108
+DECL|struct|__anon27dfd3c80108
 block|{
 DECL|member|extensionAreaOffset
 name|guint32
@@ -478,11 +478,10 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_expr_stmt
+begin_macro
 name|MAIN
 argument_list|()
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_ifdef
 ifdef|#
@@ -491,7 +490,6 @@ name|VERBOSE
 end_ifdef
 
 begin_decl_stmt
-DECL|variable|verbose
 specifier|static
 name|int
 name|verbose
@@ -4235,6 +4233,7 @@ comment|/*read_image*/
 end_comment
 
 begin_function
+specifier|static
 name|gint
 DECL|function|save_image (char * filename,gint32 image_ID,gint32 drawable_ID)
 name|save_image
@@ -4363,6 +4362,10 @@ argument_list|)
 expr_stmt|;
 name|sprintf
 argument_list|(
+operator|(
+name|char
+operator|*
+operator|)
 name|name_buf
 argument_list|,
 literal|"Saving %s:"
@@ -4372,6 +4375,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_progress_init
 argument_list|(
+operator|(
+name|char
+operator|*
+operator|)
 name|name_buf
 argument_list|)
 expr_stmt|;

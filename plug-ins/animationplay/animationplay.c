@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0c11580103
+DECL|enum|__anon288d08e90103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -1183,6 +1183,10 @@ name|GtkSignalFunc
 operator|)
 name|window_close_callback
 argument_list|,
+operator|(
+name|GtkObject
+operator|*
+operator|)
 name|dlg
 argument_list|)
 expr_stmt|;

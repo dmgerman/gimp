@@ -978,7 +978,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon2bf8a91a0108
+DECL|struct|__anon2782689a0108
 specifier|static
 struct|struct
 block|{
@@ -2364,6 +2364,7 @@ end_function
 
 begin_function
 DECL|function|save_image (char * filename,gint32 image,gint32 layer)
+specifier|static
 name|gint
 name|save_image
 parameter_list|(

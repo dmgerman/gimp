@@ -260,7 +260,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bae018c0108
+DECL|struct|__anon2c4859e80108
 block|{
 DECL|member|raw
 name|gint
@@ -276,7 +276,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bae018c0208
+DECL|struct|__anon2c4859e80208
 block|{
 DECL|member|run
 name|gint
@@ -2155,6 +2155,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|pnm_load_ascii (PNMScanner * scan,PNMInfo * info,GPixelRgn * pixel_rgn)
 name|pnm_load_ascii
@@ -2513,6 +2514,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|pnm_load_raw (PNMScanner * scan,PNMInfo * info,GPixelRgn * pixel_rgn)
 name|pnm_load_raw
@@ -2803,6 +2805,7 @@ end_function
 begin_function
 name|void
 DECL|function|pnm_load_rawpbm (PNMScanner * scan,PNMInfo * info,GPixelRgn * pixel_rgn)
+specifier|static
 name|pnm_load_rawpbm
 parameter_list|(
 name|PNMScanner
@@ -4837,6 +4840,7 @@ comment|/* pnmscanner_create ---  *    Creates a new scanner based on a file des
 end_comment
 
 begin_function
+specifier|static
 name|PNMScanner
 modifier|*
 DECL|function|pnmscanner_create (int fd)
@@ -4920,6 +4924,7 @@ comment|/* pnmscanner_destroy ---  *    Destroys a scanner and its resources.  D
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|pnmscanner_destroy (PNMScanner * s)
 name|pnmscanner_destroy
@@ -4955,6 +4960,7 @@ comment|/* pnmscanner_createbuffer ---  *    Creates a buffer so we can do buffe
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|pnmscanner_createbuffer (PNMScanner * s,int bufsize)
 name|pnmscanner_createbuffer
@@ -5018,6 +5024,7 @@ comment|/* pnmscanner_gettoken ---  *    Gets the next token, eating any leading
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|pnmscanner_gettoken (PNMScanner * s,char * buf,int bufsize)
 name|pnmscanner_gettoken
@@ -5107,6 +5114,7 @@ comment|/* pnmscanner_getchar ---  *    Reads a character from the input stream 
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|pnmscanner_getchar (PNMScanner * s)
 name|pnmscanner_getchar
@@ -5222,6 +5230,7 @@ comment|/* pnmscanner_eatwhitespace ---  *    Eats up whitespace from the input 
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|pnmscanner_eatwhitespace (PNMScanner * s)
 name|pnmscanner_eatwhitespace

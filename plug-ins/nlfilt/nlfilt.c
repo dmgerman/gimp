@@ -146,7 +146,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon2b0c16760103
+DECL|enum|__anon2b397eb70103
 typedef|typedef
 enum|enum
 block|{
@@ -2456,6 +2456,7 @@ value|((x)>> SCALEB)
 end_define
 
 begin_function
+specifier|static
 name|void
 DECL|function|nlfiltRow (guchar * src,guchar * dst,gint width,gint Bpp,gint filtno)
 name|nlfiltRow
@@ -2948,6 +2949,8 @@ comment|/* Table initialisation function - return alpha range */
 end_comment
 
 begin_function
+specifier|static
+specifier|inline
 name|gint
 DECL|function|nlfiltInit (gdouble alpha,gdouble radius,FilterType filter)
 name|nlfiltInit

@@ -2517,6 +2517,10 @@ name|qbist
 argument_list|(
 name|qbist_info
 argument_list|,
+operator|(
+name|guchar
+operator|*
+operator|)
 name|row_data
 argument_list|,
 literal|0
@@ -2898,6 +2902,10 @@ operator|%
 literal|9
 index|]
 argument_list|,
+operator|(
+name|gchar
+operator|*
+operator|)
 name|buf
 argument_list|,
 literal|0

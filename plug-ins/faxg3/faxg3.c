@@ -77,7 +77,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-specifier|static
 name|void
 name|query
 parameter_list|(
@@ -154,7 +153,6 @@ argument_list|()
 end_macro
 
 begin_function
-specifier|static
 name|void
 name|query
 parameter_list|()

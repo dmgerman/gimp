@@ -146,7 +146,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c071a850108
+DECL|struct|__anon2c27befa0108
 typedef|typedef
 struct|struct
 block|{
@@ -611,7 +611,7 @@ comment|/* The "explict tile"& family */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c071a850203
+DECL|enum|__anon2c27befa0203
 typedef|typedef
 enum|enum
 block|{
@@ -623,14 +623,14 @@ name|ALT
 block|,
 DECL|enumerator|EXPLICT
 name|EXPLICT
-block|, }
 DECL|typedef|AppliedTo
+block|}
 name|AppliedTo
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c071a850308
+DECL|struct|__anon2c27befa0308
 typedef|typedef
 struct|struct
 block|{
@@ -716,7 +716,7 @@ comment|/* The reset button needs to know some toggle widgets.. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c071a850408
+DECL|struct|__anon2c27befa0408
 typedef|typedef
 struct|struct
 block|{

@@ -411,7 +411,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7e32a50108
+DECL|struct|__anon28911c730108
 block|{
 DECL|member|name
 name|guchar
@@ -900,7 +900,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7e32a50208
+DECL|struct|__anon28911c730208
 block|{
 DECL|member|h_style
 name|gint
@@ -963,7 +963,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7e32a50308
+DECL|struct|__anon28911c730308
 block|{
 DECL|member|run
 name|gint
@@ -991,16 +991,15 @@ begin_comment
 comment|/* gint	link_after_alignment = 0;*/
 end_comment
 
-begin_expr_stmt
+begin_macro
+DECL|function|MAIN ()
 name|MAIN
 argument_list|()
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_function
 specifier|static
 name|void
-DECL|function|query ()
 name|query
 parameter_list|()
 block|{

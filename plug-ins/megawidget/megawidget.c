@@ -1791,6 +1791,10 @@ name|cs
 operator|->
 name|name
 operator|=
+operator|(
+name|guchar
+operator|*
+operator|)
 name|name
 expr_stmt|;
 name|cs
@@ -1959,6 +1963,10 @@ name|name
 argument_list|,
 name|varp
 argument_list|,
+operator|(
+name|guchar
+operator|*
+operator|)
 name|buffer
 argument_list|,
 operator|(
@@ -2018,6 +2026,10 @@ name|name
 argument_list|,
 name|varp
 argument_list|,
+operator|(
+name|guchar
+operator|*
+operator|)
 name|buffer
 argument_list|,
 operator|(
@@ -3300,6 +3312,11 @@ argument_list|(
 name|entry
 argument_list|)
 argument_list|,
+operator|(
+specifier|const
+name|gchar
+operator|*
+operator|)
 name|buffer
 argument_list|)
 expr_stmt|;
@@ -4556,6 +4573,11 @@ name|window
 operator|=
 name|gtk_color_selection_dialog_new
 argument_list|(
+operator|(
+specifier|const
+name|gchar
+operator|*
+operator|)
 name|cs
 operator|->
 name|name

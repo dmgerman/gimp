@@ -267,7 +267,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf8a4190108
+DECL|struct|__anon29e343ba0108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -295,7 +295,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf8a4190208
+DECL|struct|__anon29e343ba0208
 block|{
 DECL|member|name
 name|guchar
@@ -1521,7 +1521,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf8a4190308
+DECL|struct|__anon29e343ba0308
 block|{
 DECL|member|function
 name|gint
@@ -1594,7 +1594,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf8a4190408
+DECL|struct|__anon29e343ba0408
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -2360,7 +2360,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf8a4190508
+DECL|struct|__anon29e343ba0508
 block|{
 DECL|member|run
 name|gint
@@ -2408,7 +2408,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf8a4190608
+DECL|struct|__anon29e343ba0608
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -2595,16 +2595,15 @@ literal|0
 decl_stmt|;
 end_decl_stmt
 
-begin_expr_stmt
+begin_macro
+DECL|function|MAIN ()
 name|MAIN
 argument_list|()
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_function
 specifier|static
 name|void
-DECL|function|query ()
 name|query
 parameter_list|()
 block|{

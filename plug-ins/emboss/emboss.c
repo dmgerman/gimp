@@ -933,6 +933,7 @@ value|255.9
 end_define
 
 begin_function
+specifier|static
 name|void
 DECL|function|EmbossInit (gdouble azimuth,gdouble elevation,gushort width45)
 name|EmbossInit
@@ -1045,6 +1046,8 @@ comment|/*  * ANSI C code from the article  * "Fast Embossing Effects on Raster 
 end_comment
 
 begin_function
+specifier|static
+specifier|inline
 name|void
 DECL|function|EmbossRow (guchar * src,guchar * texture,guchar * dst,guint xSize,guint bypp,gint alpha)
 name|EmbossRow

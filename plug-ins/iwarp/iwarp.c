@@ -127,7 +127,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e5f1390108
+DECL|struct|__anon290c652a0108
 block|{
 DECL|member|x
 name|gfloat
@@ -146,7 +146,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e5f1390208
+DECL|struct|__anon290c652a0208
 block|{
 DECL|member|run
 name|gint
@@ -161,7 +161,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e5f1390308
+DECL|struct|__anon290c652a0308
 block|{
 DECL|member|deform_area_radius
 name|gint
@@ -1092,16 +1092,15 @@ name|layer_alpha
 decl_stmt|;
 end_decl_stmt
 
-begin_expr_stmt
+begin_macro
+DECL|function|MAIN ()
 name|MAIN
 argument_list|()
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_function
 specifier|static
 name|void
-DECL|function|query ()
 name|query
 parameter_list|()
 block|{
@@ -3984,6 +3983,7 @@ end_function
 
 begin_function
 DECL|function|iwarp ()
+specifier|static
 name|void
 name|iwarp
 parameter_list|()

@@ -805,6 +805,10 @@ name|moreframes
 operator|=
 name|GetMPEGFrame
 argument_list|(
+operator|(
+name|char
+operator|*
+operator|)
 name|data
 argument_list|)
 expr_stmt|;

@@ -610,7 +610,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bba5030108
+DECL|struct|__anon2b819f1e0108
 block|{
 comment|/* gint, gdouble, and so on */
 DECL|member|holdness
@@ -656,7 +656,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bba5030208
+DECL|struct|__anon2b819f1e0208
 block|{
 DECL|member|run
 name|gint
@@ -786,16 +786,15 @@ literal|0
 decl_stmt|;
 end_decl_stmt
 
-begin_expr_stmt
+begin_macro
+DECL|function|MAIN ()
 name|MAIN
 argument_list|()
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_function
 specifier|static
 name|void
-DECL|function|query ()
 name|query
 parameter_list|()
 block|{
@@ -1047,6 +1046,10 @@ name|scatter_hsv_error_dialog
 argument_list|(
 literal|1
 argument_list|,
+operator|(
+name|guchar
+operator|*
+operator|)
 literal|"RGB drawable is not selected."
 argument_list|)
 expr_stmt|;
@@ -3365,6 +3368,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+operator|(
+name|char
+operator|*
+operator|)
 name|message
 argument_list|)
 expr_stmt|;

@@ -933,7 +933,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2945747e0108
+DECL|struct|__anon29259e490108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -1077,7 +1077,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2945747e0208
+DECL|struct|__anon29259e490208
 block|{
 DECL|member|applicable_image_type
 name|int
@@ -1298,7 +1298,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2945747e0308
+DECL|struct|__anon29259e490308
 block|{
 DECL|member|run
 name|gint
@@ -1329,16 +1329,15 @@ name|drawable_id
 decl_stmt|;
 end_decl_stmt
 
-begin_expr_stmt
+begin_macro
+DECL|function|MAIN ()
 name|MAIN
 argument_list|()
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_function
 specifier|static
 name|void
-DECL|function|query ()
 name|query
 parameter_list|()
 block|{
@@ -3949,7 +3948,7 @@ end_block
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2945747e0408
+DECL|struct|__anon29259e490408
 block|{
 DECL|member|min_modified
 name|short
