@@ -16,12 +16,6 @@ directive|define
 name|__QMASK_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"pixmaps.h"
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
