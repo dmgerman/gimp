@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpdock.h"
+file|"widgets/gimpimagedock.h"
 end_include
 
 begin_include
@@ -931,6 +931,28 @@ block|{
 return|return
 name|about_dialog_create
 argument_list|()
+return|;
+block|}
+end_function
+
+begin_function
+name|GtkWidget
+modifier|*
+DECL|function|dialogs_dock_new (GimpDialogFactory * factory)
+name|dialogs_dock_new
+parameter_list|(
+name|GimpDialogFactory
+modifier|*
+name|factory
+parameter_list|)
+block|{
+return|return
+name|gimp_image_dock_new
+argument_list|(
+name|factory
+argument_list|,
+name|image_context
+argument_list|)
 return|;
 block|}
 end_function

@@ -924,6 +924,25 @@ block|}
 block|,
 block|{
 block|{
+name|N_
+argument_list|(
+literal|"/File/Test Dialogs/Image Dock..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|test_image_dock_cmd_callback
+block|,
+literal|1
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
 literal|"/File/Test Dialogs/---"
 block|,
 name|NULL

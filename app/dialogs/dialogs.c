@@ -72,16 +72,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|global_image_dock_factory
-name|GimpDialogFactory
-modifier|*
-name|global_image_dock_factory
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|toplevel_entries
 specifier|static
 specifier|const
@@ -426,7 +416,6 @@ block|,
 name|FALSE
 block|}
 block|,
-comment|/* these will go to image_dock_entries */
 block|{
 literal|"gimp:layer-list"
 block|,
@@ -475,10 +464,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* static const GimpDialogFactoryEntry image_dock_entries[] = { }; static const gint n_image_dock_entries = (sizeof (image_dock_entries) / 					  sizeof (image_dock_entries[0])); */
-end_comment
-
-begin_comment
 comment|/*  public functions  */
 end_comment
 
@@ -503,6 +488,8 @@ name|gimp_context_get_user
 argument_list|()
 argument_list|,
 name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|global_dock_factory
@@ -516,18 +503,8 @@ argument_list|()
 argument_list|,
 name|menus_get_dialogs_factory
 argument_list|()
-argument_list|)
-expr_stmt|;
-name|global_image_dock_factory
-operator|=
-name|gimp_dialog_factory_new
-argument_list|(
-literal|"image-dock"
 argument_list|,
-name|gimp_context_get_user
-argument_list|()
-argument_list|,
-name|NULL
+name|dialogs_dock_new
 argument_list|)
 expr_stmt|;
 for|for
@@ -622,7 +599,6 @@ operator|.
 name|session_managed
 argument_list|)
 expr_stmt|;
-comment|/*   for (i = 0; i< n_image_dock_entries; i++)     gimp_dialog_factory_register (global_image_dock_factory, 				  image_dock_entries[i].identifier, 				  image_dock_entries[i].new_func, 				  image_dock_entries[i].singleton, 				  image_dock_entries[i].session_managed);   */
 block|}
 end_function
 
@@ -650,23 +626,11 @@ name|global_dock_factory
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_object_unref
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|global_image_dock_factory
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|global_dialog_factory
 operator|=
 name|NULL
 expr_stmt|;
 name|global_dock_factory
-operator|=
-name|NULL
-expr_stmt|;
-name|global_image_dock_factory
 operator|=
 name|NULL
 expr_stmt|;

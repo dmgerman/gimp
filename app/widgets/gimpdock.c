@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpdock.c  * Copyright (C) 2001 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpdock.c  * Copyright (C) 2001 Michael Natterer  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -391,6 +391,36 @@ argument_list|)
 expr_stmt|;
 name|dock
 operator|->
+name|main_vbox
+operator|=
+name|gtk_vbox_new
+argument_list|(
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_container_add
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|dock
+argument_list|)
+argument_list|,
+name|dock
+operator|->
+name|main_vbox
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|dock
+operator|->
+name|main_vbox
+argument_list|)
+expr_stmt|;
+name|dock
+operator|->
 name|vbox
 operator|=
 name|gtk_vbox_new
@@ -405,6 +435,8 @@ argument_list|(
 name|GTK_CONTAINER
 argument_list|(
 name|dock
+operator|->
+name|main_vbox
 argument_list|)
 argument_list|,
 name|dock
@@ -498,74 +530,6 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|GtkWidget
-modifier|*
-DECL|function|gimp_dock_new (GimpDialogFactory * factory)
-name|gimp_dock_new
-parameter_list|(
-name|GimpDialogFactory
-modifier|*
-name|factory
-parameter_list|)
-block|{
-name|GimpDock
-modifier|*
-name|dock
-decl_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|factory
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_DIALOG_FACTORY
-argument_list|(
-name|factory
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|dock
-operator|=
-name|gtk_type_new
-argument_list|(
-name|GIMP_TYPE_DOCK
-argument_list|)
-expr_stmt|;
-name|dock
-operator|->
-name|factory
-operator|=
-name|factory
-expr_stmt|;
-name|gimp_dialog_factory_add_toplevel
-argument_list|(
-name|dock
-operator|->
-name|factory
-argument_list|,
-name|GTK_WIDGET
-argument_list|(
-name|dock
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return
-name|GTK_WIDGET
-argument_list|(
-name|dock
-argument_list|)
-return|;
 block|}
 end_function
 
@@ -1395,7 +1359,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* static void gimp_dock_tab_drag_begin (GtkWidget      *widget, 			  GdkDragContext *context, 			  gpointer        data) {   GimpDockable *dockable;   GtkWidget    *window;   GtkWidget    *frame;   GtkWidget    *label;    dockable = GIMP_DOCKABLE (data);    window = gtk_window_new (GTK_WINDOW_POPUP);    frame = gtk_frame_new (NULL);   gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_OUT);   gtk_container_add (GTK_CONTAINER (window), frame);   gtk_widget_show (frame);    label = gtk_label_new (dockable->name);   gtk_misc_set_padding (GTK_MISC (label), 10, 5);   gtk_container_add (GTK_CONTAINER (frame), label);   gtk_widget_show (label);    gtk_widget_show (window);    gtk_object_set_data_full (GTK_OBJECT (dockable), "gimp_dock_drag_widget", 			    window, 			    (GtkDestroyNotify) gtk_widget_destroy);    gtk_drag_set_icon_widget (context, window, 			    -8, -8); }  static void gimp_dock_tab_drag_end (GtkWidget      *widget, 			GdkDragContext *context, 			gpointer        data) {   GimpDockable *dockable;   GtkWidget    *drag_widget;    dockable = GIMP_DOCKABLE (data);    drag_widget = gtk_object_get_data (GTK_OBJECT (dockable), 				     "gimp_dock_drag_widget");    if (drag_widget)     {       GtkWidget *dock;        gtk_object_set_data (GTK_OBJECT (dockable), "gimp_dock_drag_widget", NULL);        dock = gimp_dock_new ();        gtk_window_set_position (GTK_WINDOW (dock), GTK_WIN_POS_MOUSE);        gtk_object_ref (GTK_OBJECT (dockable));        gimp_dock_remove (dockable->dock, dockable);       gimp_dock_add (GIMP_DOCK (dock), dockable, -1, -1);        gtk_object_unref (GTK_OBJECT (dockable));        gtk_widget_show (dock);     } } */
+comment|/* static void gimp_dock_tab_drag_begin (GtkWidget      *widget, 			  GdkDragContext *context, 			  gpointer        data) {   GimpDockable *dockable;   GtkWidget    *window;   GtkWidget    *frame;   GtkWidget    *label;    dockable = GIMP_DOCKABLE (data);    window = gtk_window_new (GTK_WINDOW_POPUP);    frame = gtk_frame_new (NULL);   gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_OUT);   gtk_container_add (GTK_CONTAINER (window), frame);   gtk_widget_show (frame);    label = gtk_label_new (dockable->name);   gtk_misc_set_padding (GTK_MISC (label), 10, 5);   gtk_container_add (GTK_CONTAINER (frame), label);   gtk_widget_show (label);    gtk_widget_show (window);    gtk_object_set_data_full (GTK_OBJECT (dockable), "gimp-dock-drag-widget", 			    window, 			    (GtkDestroyNotify) gtk_widget_destroy);    gtk_drag_set_icon_widget (context, window, 			    -8, -8); }  static void gimp_dock_tab_drag_end (GtkWidget      *widget, 			GdkDragContext *context, 			gpointer        data) {   GimpDockable *dockable;   GtkWidget    *drag_widget;    dockable = GIMP_DOCKABLE (data);    drag_widget = gtk_object_get_data (GTK_OBJECT (dockable), 				     "gimp-dock-drag-widget");    if (drag_widget)     {       GtkWidget *dock;        gtk_object_set_data (GTK_OBJECT (dockable), "gimp-dock-drag-widget", NULL);        dock = gimp_dock_new ();        gtk_window_set_position (GTK_WINDOW (dock), GTK_WIN_POS_MOUSE);        gtk_object_ref (GTK_OBJECT (dockable));        gimp_dock_remove (dockable->dock, dockable);       gimp_dock_add (GIMP_DOCK (dock), dockable, -1, -1);        gtk_object_unref (GTK_OBJECT (dockable));        gtk_widget_show (dock);     } } */
 end_comment
 
 begin_function
@@ -1495,7 +1459,7 @@ argument_list|(
 name|src_dockable
 argument_list|)
 argument_list|,
-literal|"gimp_dock_drag_widget"
+literal|"gimp-dock-drag-widget"
 argument_list|,
 name|NULL
 argument_list|)

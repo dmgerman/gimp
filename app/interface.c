@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"interface.h"
 end_include
 
@@ -258,7 +264,7 @@ end_function
 
 begin_function
 specifier|static
-name|gboolean
+name|gpointer
 DECL|function|gdisplay_get_accel_context (gpointer data)
 name|gdisplay_get_accel_context
 parameter_list|(
