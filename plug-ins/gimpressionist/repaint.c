@@ -132,10 +132,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|pixval (double dir)
+DECL|function|get_pixel_value (double dir)
 specifier|static
 name|int
-name|pixval
+name|get_pixel_value
 parameter_list|(
 name|double
 name|dir
@@ -172,10 +172,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|prepbrush (ppm_t * p)
+DECL|function|prepare_brush (ppm_t * p)
 specifier|static
 name|void
-name|prepbrush
+name|prepare_brush
 parameter_list|(
 name|ppm_t
 modifier|*
@@ -349,10 +349,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|sumbrush (ppm_t * p)
+DECL|function|sum_brush (ppm_t * p)
 specifier|static
 name|double
-name|sumbrush
+name|sum_brush
 parameter_list|(
 name|ppm_t
 modifier|*
@@ -405,10 +405,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|gethue (guchar * rgb)
+DECL|function|get_hue (guchar * rgb)
 specifier|static
 name|int
-name|gethue
+name|get_hue
 parameter_list|(
 name|guchar
 modifier|*
@@ -646,10 +646,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|bestbrush (ppm_t * p,ppm_t * a,int tx,int ty,ppm_t * brushes,int numbrush,double * brushsum,int start,int step)
+DECL|function|choose_best_brush (ppm_t * p,ppm_t * a,int tx,int ty,ppm_t * brushes,int num_brushes,double * brushes_sum,int start,int step)
 specifier|static
 name|int
-name|bestbrush
+name|choose_best_brush
 parameter_list|(
 name|ppm_t
 modifier|*
@@ -670,11 +670,11 @@ modifier|*
 name|brushes
 parameter_list|,
 name|int
-name|numbrush
+name|num_brushes
 parameter_list|,
 name|double
 modifier|*
-name|brushsum
+name|brushes_sum
 parameter_list|,
 name|int
 name|start
@@ -730,7 +730,7 @@ name|start
 init|;
 name|i
 operator|<
-name|numbrush
+name|num_brushes
 condition|;
 name|i
 operator|+=
@@ -755,7 +755,7 @@ endif|#
 directive|endif
 name|thissum
 operator|=
-name|brushsum
+name|brushes_sum
 index|[
 name|i
 index|]
@@ -1254,10 +1254,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|applybrush (ppm_t * brush,ppm_t * shadow,ppm_t * p,ppm_t * a,int tx,int ty,int r,int g,int b)
+DECL|function|apply_brush (ppm_t * brush,ppm_t * shadow,ppm_t * p,ppm_t * a,int tx,int ty,int r,int g,int b)
 specifier|static
 name|void
-name|applybrush
+name|apply_brush
 parameter_list|(
 name|ppm_t
 modifier|*
@@ -2158,7 +2158,7 @@ decl_stmt|,
 name|sn
 decl_stmt|;
 name|int
-name|numbrush
+name|num_brushes
 decl_stmt|,
 name|maxbrushwidth
 decl_stmt|,
@@ -2196,7 +2196,7 @@ name|NULL
 decl_stmt|;
 name|double
 modifier|*
-name|brushsum
+name|brushes_sum
 decl_stmt|;
 name|int
 name|cx
@@ -2225,7 +2225,7 @@ name|int
 name|max_progress
 decl_stmt|;
 name|ppm_t
-name|paperppm
+name|paper_ppm
 init|=
 block|{
 literal|0
@@ -2343,7 +2343,7 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|numbrush
+name|num_brushes
 operator|=
 name|runningvals
 operator|.
@@ -2393,7 +2393,7 @@ name|brushes
 operator|=
 name|g_malloc
 argument_list|(
-name|numbrush
+name|num_brushes
 operator|*
 sizeof|sizeof
 argument_list|(
@@ -2401,11 +2401,11 @@ name|ppm_t
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|brushsum
+name|brushes_sum
 operator|=
 name|g_malloc
 argument_list|(
-name|numbrush
+name|num_brushes
 operator|*
 sizeof|sizeof
 argument_list|(
@@ -2421,7 +2421,7 @@ name|shadows
 operator|=
 name|g_malloc
 argument_list|(
-name|numbrush
+name|num_brushes
 operator|*
 sizeof|sizeof
 argument_list|(
@@ -2649,7 +2649,7 @@ literal|1
 init|;
 name|i
 operator|<
-name|numbrush
+name|num_brushes
 condition|;
 name|i
 operator|++
@@ -2817,7 +2817,7 @@ comment|/* Brush-debugging */
 if|#
 directive|if
 literal|0
-block|for(i = 0; i< numbrush; i++) {     char tmp[1000];     g_snprintf (tmp, sizeof (tmp), "/tmp/_brush%03d.ppm", i);     ppm_save(&brushes[i], tmp);   }
+block|for(i = 0; i< num_brushes; i++) {     char tmp[1000];     g_snprintf (tmp, sizeof (tmp), "/tmp/_brush%03d.ppm", i);     ppm_save(&brushes[i], tmp);   }
 endif|#
 directive|endif
 for|for
@@ -2828,7 +2828,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|numbrush
+name|num_brushes
 condition|;
 name|i
 operator|++
@@ -2841,7 +2841,7 @@ name|runningvals
 operator|.
 name|colorbrushes
 condition|)
-name|prepbrush
+name|prepare_brush
 argument_list|(
 operator|&
 name|brushes
@@ -2850,12 +2850,12 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-name|brushsum
+name|brushes_sum
 index|[
 name|i
 index|]
 operator|=
-name|sumbrush
+name|sum_brush
 argument_list|(
 operator|&
 name|brushes
@@ -2875,7 +2875,7 @@ index|]
 expr_stmt|;
 name|thissum
 operator|=
-name|brushsum
+name|brushes_sum
 index|[
 literal|0
 index|]
@@ -2894,7 +2894,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|numbrush
+name|num_brushes
 condition|;
 name|i
 operator|++
@@ -2949,7 +2949,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|numbrush
+name|num_brushes
 condition|;
 name|i
 operator|++
@@ -3047,7 +3047,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|numbrush
+name|num_brushes
 condition|;
 name|i
 operator|++
@@ -3384,21 +3384,21 @@ operator|.
 name|selectedpaper
 argument_list|,
 operator|&
-name|paperppm
+name|paper_ppm
 argument_list|)
 expr_stmt|;
 name|resize
 argument_list|(
 operator|&
-name|paperppm
+name|paper_ppm
 argument_list|,
-name|paperppm
+name|paper_ppm
 operator|.
 name|width
 operator|*
 name|scale
 argument_list|,
-name|paperppm
+name|paper_ppm
 operator|.
 name|height
 operator|*
@@ -3414,7 +3414,7 @@ condition|)
 name|ppm_apply_gamma
 argument_list|(
 operator|&
-name|paperppm
+name|paper_ppm
 argument_list|,
 operator|-
 literal|1.0
@@ -3447,7 +3447,7 @@ name|rx
 init|=
 name|x
 operator|%
-name|paperppm
+name|paper_ppm
 operator|.
 name|width
 decl_stmt|;
@@ -3472,7 +3472,7 @@ name|ry
 init|=
 name|y
 operator|%
-name|paperppm
+name|paper_ppm
 operator|.
 name|height
 decl_stmt|;
@@ -3497,13 +3497,13 @@ literal|3
 index|]
 argument_list|,
 operator|&
-name|paperppm
+name|paper_ppm
 operator|.
 name|col
 index|[
 name|ry
 operator|*
-name|paperppm
+name|paper_ppm
 operator|.
 name|width
 operator|*
@@ -4083,7 +4083,7 @@ operator|*
 literal|3
 index|]
 operator|=
-name|gethue
+name|get_hue
 argument_list|(
 operator|&
 name|srcrow
@@ -4233,7 +4233,7 @@ operator|*
 literal|3
 index|]
 operator|=
-name|pixval
+name|get_pixel_value
 argument_list|(
 literal|90
 operator|-
@@ -4833,7 +4833,7 @@ operator|*
 literal|3
 index|]
 operator|=
-name|gethue
+name|get_hue
 argument_list|(
 operator|&
 name|srcrow
@@ -5843,7 +5843,7 @@ condition|)
 block|{
 name|n
 operator|=
-name|bestbrush
+name|choose_best_brush
 argument_list|(
 name|p
 argument_list|,
@@ -5863,9 +5863,9 @@ literal|2
 argument_list|,
 name|brushes
 argument_list|,
-name|numbrush
+name|num_brushes
 argument_list|,
-name|brushsum
+name|brushes_sum
 argument_list|,
 literal|0
 argument_list|,
@@ -5894,7 +5894,7 @@ name|orientnum
 decl_stmt|;
 name|n
 operator|=
-name|bestbrush
+name|choose_best_brush
 argument_list|(
 name|p
 argument_list|,
@@ -5920,7 +5920,7 @@ name|runningvals
 operator|.
 name|orientnum
 argument_list|,
-name|brushsum
+name|brushes_sum
 argument_list|,
 name|st
 argument_list|,
@@ -5940,7 +5940,7 @@ condition|)
 block|{
 name|n
 operator|=
-name|bestbrush
+name|choose_best_brush
 argument_list|(
 name|p
 argument_list|,
@@ -5960,9 +5960,9 @@ literal|2
 argument_list|,
 name|brushes
 argument_list|,
-name|numbrush
+name|num_brushes
 argument_list|,
-name|brushsum
+name|brushes_sum
 argument_list|,
 name|on
 argument_list|,
@@ -6001,11 +6001,11 @@ if|if
 condition|(
 name|n
 operator|>=
-name|numbrush
+name|num_brushes
 condition|)
 name|n
 operator|=
-name|numbrush
+name|num_brushes
 operator|-
 literal|1
 expr_stmt|;
@@ -6043,7 +6043,7 @@ index|]
 expr_stmt|;
 name|thissum
 operator|=
-name|brushsum
+name|brushes_sum
 index|[
 name|n
 index|]
@@ -6372,7 +6372,7 @@ undef|#
 directive|undef
 name|MYASSIGN
 block|}
-name|applybrush
+name|apply_brush
 argument_list|(
 name|brush
 argument_list|,
@@ -6407,7 +6407,7 @@ name|general_paint_edges
 condition|)
 block|{
 name|int
-name|origwidth
+name|orig_width
 init|=
 name|tmp
 operator|.
@@ -6418,7 +6418,7 @@ operator|*
 name|maxbrushwidth
 decl_stmt|;
 name|int
-name|origheight
+name|orig_height
 init|=
 name|tmp
 operator|.
@@ -6444,7 +6444,7 @@ operator|<
 name|maxbrushwidth
 condition|)
 block|{
-name|applybrush
+name|apply_brush
 argument_list|(
 name|brush
 argument_list|,
@@ -6458,7 +6458,7 @@ name|atmp
 argument_list|,
 name|tx
 operator|+
-name|origwidth
+name|orig_width
 argument_list|,
 name|ty
 argument_list|,
@@ -6480,10 +6480,10 @@ if|if
 condition|(
 name|tx
 operator|>
-name|origwidth
+name|orig_width
 condition|)
 block|{
-name|applybrush
+name|apply_brush
 argument_list|(
 name|brush
 argument_list|,
@@ -6497,7 +6497,7 @@ name|atmp
 argument_list|,
 name|tx
 operator|-
-name|origwidth
+name|orig_width
 argument_list|,
 name|ty
 argument_list|,
@@ -6520,7 +6520,7 @@ operator|<
 name|maxbrushheight
 condition|)
 block|{
-name|applybrush
+name|apply_brush
 argument_list|(
 name|brush
 argument_list|,
@@ -6536,7 +6536,7 @@ name|tx
 argument_list|,
 name|ty
 operator|+
-name|origheight
+name|orig_height
 argument_list|,
 name|r
 argument_list|,
@@ -6555,10 +6555,10 @@ if|if
 condition|(
 name|ty
 operator|>
-name|origheight
+name|orig_height
 condition|)
 block|{
-name|applybrush
+name|apply_brush
 argument_list|(
 name|brush
 argument_list|,
@@ -6574,7 +6574,7 @@ name|tx
 argument_list|,
 name|ty
 operator|-
-name|origheight
+name|orig_height
 argument_list|,
 name|r
 argument_list|,
@@ -6600,7 +6600,7 @@ name|dox
 operator|<
 literal|0
 condition|)
-name|applybrush
+name|apply_brush
 argument_list|(
 name|brush
 argument_list|,
@@ -6614,13 +6614,13 @@ name|atmp
 argument_list|,
 name|tx
 operator|+
-name|origwidth
+name|orig_width
 argument_list|,
 name|ty
 operator|+
 name|doy
 operator|*
-name|origheight
+name|orig_height
 argument_list|,
 name|r
 argument_list|,
@@ -6635,7 +6635,7 @@ name|dox
 operator|>
 literal|0
 condition|)
-name|applybrush
+name|apply_brush
 argument_list|(
 name|brush
 argument_list|,
@@ -6649,13 +6649,13 @@ name|atmp
 argument_list|,
 name|tx
 operator|-
-name|origwidth
+name|orig_width
 argument_list|,
 name|ty
 operator|+
 name|doy
 operator|*
-name|origheight
+name|orig_height
 argument_list|,
 name|r
 argument_list|,
@@ -6675,7 +6675,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|numbrush
+name|num_brushes
 condition|;
 name|i
 operator|++
@@ -6703,7 +6703,7 @@ argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|brushsum
+name|brushes_sum
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -6861,16 +6861,16 @@ literal|100.0
 expr_stmt|;
 if|if
 condition|(
-name|paperppm
+name|paper_ppm
 operator|.
 name|col
 condition|)
 block|{
 name|tmp
 operator|=
-name|paperppm
+name|paper_ppm
 expr_stmt|;
-name|paperppm
+name|paper_ppm
 operator|.
 name|col
 operator|=
@@ -7297,16 +7297,17 @@ name|tmp
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* TODO : Replace these conditionals simply with ppm_kill().    * (if ppm_kill() cannot handle NULL col's properly - replace it.    * */
 if|if
 condition|(
-name|paperppm
+name|paper_ppm
 operator|.
 name|col
 condition|)
 name|ppm_kill
 argument_list|(
 operator|&
-name|paperppm
+name|paper_ppm
 argument_list|)
 expr_stmt|;
 if|if
