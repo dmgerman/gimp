@@ -890,6 +890,7 @@ name|g_filename_from_uri
 argument_list|(
 name|dnd_crap
 argument_list|,
+operator|&
 name|hostname
 argument_list|,
 name|NULL

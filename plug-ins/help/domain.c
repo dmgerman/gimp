@@ -282,7 +282,8 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gchar
-name|help_filename_from_uri
+modifier|*
+name|filename_from_uri
 parameter_list|(
 specifier|const
 name|gchar
@@ -1160,7 +1161,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3cbbaa0103
+DECL|enum|__anon29fc0ec60103
 block|{
 DECL|enumerator|DOMAIN_START
 name|DOMAIN_START
@@ -1185,7 +1186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3cbbaa0208
+DECL|struct|__anon29fc0ec60208
 block|{
 DECL|member|filename
 specifier|const
@@ -1580,7 +1581,7 @@ name|domain
 operator|->
 name|help_root
 operator|=
-name|help_filename_from_uri
+name|filename_from_uri
 argument_list|(
 name|domain
 operator|->
@@ -2815,8 +2816,9 @@ end_function
 begin_function
 specifier|static
 name|gchar
-DECL|function|help_filename_from_uri (const gchar * uri)
-name|help_filename_from_uri
+modifier|*
+DECL|function|filename_from_uri (const gchar * uri)
+name|filename_from_uri
 parameter_list|(
 specifier|const
 name|gchar

@@ -112,7 +112,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297464640103
+DECL|enum|__anon2ac5c9cc0103
 block|{
 DECL|enumerator|BUTTON_INDEX
 name|BUTTON_INDEX
@@ -128,7 +128,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297464640203
+DECL|enum|__anon2ac5c9cc0203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -393,6 +393,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gchar
+modifier|*
 name|filename_from_uri
 parameter_list|(
 specifier|const
@@ -2884,6 +2885,7 @@ end_function
 begin_function
 specifier|static
 name|gchar
+modifier|*
 DECL|function|filename_from_uri (const gchar * uri)
 name|filename_from_uri
 parameter_list|(
