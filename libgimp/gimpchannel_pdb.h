@@ -63,16 +63,6 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_channel_delete
-parameter_list|(
-name|gint32
-name|channel_ID
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
 name|gimp_channel_combine_masks
 parameter_list|(
 name|gint32

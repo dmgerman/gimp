@@ -2362,11 +2362,6 @@ argument_list|,
 name|channel_ID
 argument_list|)
 expr_stmt|;
-name|gimp_channel_delete
-argument_list|(
-name|channel_ID
-argument_list|)
-expr_stmt|;
 block|}
 return|return
 name|FALSE

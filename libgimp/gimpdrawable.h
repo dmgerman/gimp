@@ -125,17 +125,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gimp_drawable_delete
-parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|GimpTile
 modifier|*
 name|gimp_drawable_get_tile
