@@ -214,7 +214,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fd19c30108
+DECL|struct|__anon27e55dec0108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -241,7 +241,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fd19c30203
+DECL|enum|__anon27e55dec0203
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -364,7 +364,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fd19c30303
+DECL|enum|__anon27e55dec0303
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -503,7 +503,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fd19c30403
+DECL|enum|__anon27e55dec0403
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -602,7 +602,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fd19c30503
+DECL|enum|__anon27e55dec0503
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -694,7 +694,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fd19c30608
+DECL|struct|__anon27e55dec0608
 block|{
 DECL|member|function
 name|gint
@@ -767,7 +767,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fd19c30708
+DECL|struct|__anon27e55dec0708
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1539,7 +1539,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fd19c30808
+DECL|struct|__anon27e55dec0808
 block|{
 DECL|member|run
 name|gint
@@ -1589,7 +1589,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fd19c30908
+DECL|struct|__anon27e55dec0908
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -1654,6 +1654,15 @@ block|,
 literal|0
 block|}
 block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|gr
+specifier|static
+name|GRand
+modifier|*
+name|gr
 decl_stmt|;
 end_decl_stmt
 
@@ -2261,10 +2270,6 @@ name|saux
 decl_stmt|,
 modifier|*
 name|vaux
-decl_stmt|;
-name|GRand
-modifier|*
-name|gr
 decl_stmt|;
 comment|/* open THE drawable */
 name|drawable
@@ -4698,15 +4703,6 @@ decl_stmt|;
 name|gint
 name|index
 decl_stmt|;
-name|GRand
-modifier|*
-name|gr
-decl_stmt|;
-name|gr
-operator|=
-name|g_rand_new
-argument_list|()
-expr_stmt|;
 name|self_mod_rate
 operator|=
 operator|(
@@ -5516,11 +5512,6 @@ argument_list|,
 literal|0.0
 argument_list|,
 literal|1
-argument_list|)
-expr_stmt|;
-name|g_rand_free
-argument_list|(
-name|gr
 argument_list|)
 expr_stmt|;
 return|return
