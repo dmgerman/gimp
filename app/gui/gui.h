@@ -104,25 +104,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|gui_get_screen_resolution
-parameter_list|(
-name|GdkScreen
-modifier|*
-name|screen
-parameter_list|,
-name|gdouble
-modifier|*
-name|xres
-parameter_list|,
-name|gdouble
-modifier|*
-name|yres
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif

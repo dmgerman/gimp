@@ -128,7 +128,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui.h"
+file|"widgets/gimpwidgets-utils.h"
 end_include
 
 begin_include
@@ -203,7 +203,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ecaa560103
+DECL|enum|__anon2a3118b70103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -231,7 +231,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ecaa560203
+DECL|enum|__anon2a3118b70203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -476,7 +476,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ecaa560303
+DECL|enum|__anon2a3118b70303
 block|{
 DECL|enumerator|TREE_ITEM_DONT
 name|TREE_ITEM_DONT
@@ -502,7 +502,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29ecaa560408
+DECL|struct|__anon2a3118b70408
 block|{
 DECL|member|directory
 name|gboolean
@@ -5307,7 +5307,7 @@ name|gchar
 modifier|*
 name|str
 decl_stmt|;
-name|gui_get_screen_resolution
+name|gimp_get_screen_resolution
 argument_list|(
 name|NULL
 argument_list|,

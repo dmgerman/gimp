@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gui.h"
 end_include
 
@@ -1512,7 +1518,7 @@ condition|(
 name|from_gdk
 condition|)
 block|{
-name|gui_get_screen_resolution
+name|gimp_get_screen_resolution
 argument_list|(
 name|NULL
 argument_list|,
@@ -6639,7 +6645,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b3b1b270108
+DECL|struct|__anon27bafed30108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -7385,7 +7391,7 @@ name|gchar
 modifier|*
 name|str
 decl_stmt|;
-name|gui_get_screen_resolution
+name|gimp_get_screen_resolution
 argument_list|(
 name|NULL
 argument_list|,
@@ -8262,7 +8268,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b3b1b270208
+DECL|struct|__anon27bafed30208
 block|{
 DECL|member|label
 specifier|const
@@ -8421,7 +8427,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b3b1b270308
+DECL|struct|__anon27bafed30308
 block|{
 DECL|member|tree_label
 specifier|const

@@ -73,13 +73,15 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
-name|void
-name|app_init
+name|gboolean
+name|app_gui_libs_init
 parameter_list|(
 name|gint
+modifier|*
 name|gimp_argc
 parameter_list|,
 name|gchar
+modifier|*
 modifier|*
 modifier|*
 name|gimp_argv
@@ -88,15 +90,13 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
-name|app_gui_init
+name|void
+name|app_init
 parameter_list|(
 name|gint
-modifier|*
 name|gimp_argc
 parameter_list|,
 name|gchar
-modifier|*
 modifier|*
 modifier|*
 name|gimp_argv

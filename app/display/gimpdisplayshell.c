@@ -167,7 +167,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/gui.h"
+file|"widgets/gimpwidgets-utils.h"
 end_include
 
 begin_include
@@ -268,7 +268,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c37f4a0103
+DECL|enum|__anon29e2998c0103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1666,7 +1666,7 @@ operator|->
 name|monitor_res_from_gdk
 condition|)
 block|{
-name|gui_get_screen_resolution
+name|gimp_get_screen_resolution
 argument_list|(
 name|gtk_widget_get_screen
 argument_list|(
