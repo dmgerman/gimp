@@ -2703,10 +2703,19 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 comment|/* we are in the plug_in : kill the gtk application */
+name|gtk_widget_destroy
+argument_list|(
+name|dbbrowser
+operator|->
+name|dlg
+argument_list|)
+expr_stmt|;
 name|gtk_main_quit
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 end_function
 

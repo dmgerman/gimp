@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29810ed00103
+DECL|enum|__anon2c5369530103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -1183,7 +1183,7 @@ name|GtkSignalFunc
 operator|)
 name|window_close_callback
 argument_list|,
-name|NULL
+name|dlg
 argument_list|)
 expr_stmt|;
 comment|/* Action area - 'close' button only. */
@@ -1215,7 +1215,7 @@ name|GtkSignalFunc
 operator|)
 name|window_close_callback
 argument_list|,
-name|NULL
+name|dlg
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3850,6 +3850,14 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+name|gtk_widget_destroy
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|data
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gtk_main_quit
 argument_list|()
 expr_stmt|;
