@@ -31,6 +31,10 @@ name|TILE_HEIGHT
 value|gimp_tile_height()
 end_define
 
+begin_comment
+comment|/**  * gimp_drawable_get:  * @drawable_ID: the ID (in the core) of the drawable  *  * This function creates a #GimpDrawable structure, and sets its values to   * the correct ones for @drawable_id.  The returned structure contains some  * basic information about the drawable, and also provides a list to hold  * tile data for transfer to and from the core.  The tile list is  * initially empty.  *  * Note that the name of this function is somewhat misleading, because it   * suggests that it simply returns a handle.  This is not the case:  if the  * function is called multiple times, it creates separate tile lists each  * time, which will usually produce undesired results.  *  * When a plug-in has finished working with a drawable, before exiting  * it should call gimp_drawable_detach() to make sure that all tile data is   * transferred back to the core.  */
+end_comment
+
 begin_function
 name|GimpDrawable
 modifier|*
@@ -159,6 +163,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/*  * gimp_drawable_detach:  * @drawable: The #GimpDrawable to detach from the core  *  * This function is called when a plug-in is finished working  * with a drawable.  It forces all tile data held in the tile  * list of the #GimpDrawable to be transferred to the core, and  * then frees all associated memory.  */
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_drawable_detach (GimpDrawable * drawable)
@@ -220,6 +228,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/*  * gimp_drawable_flush:  * @drawable: The #GimpDrawable whose tile data is to be transferred to the core.  *  * This function causes all tile data in the tile list of @drawable to be  * transferred to the core.  It is usually called in situations where a  * plug-in acts on a drawable, and then needs to read the results of its  * actions.  Data transferred back from the core will not generally be valid  * unless gimp_drawable_flush() has been called beforehand.  *  * Note that in some situations where a tile cache is used, it is necessary to  * call _gimp_tile_cache_flush_drawable() after gimp_drawable_flush() in  * order to get valid results.  */
+end_comment
 
 begin_function
 name|void
