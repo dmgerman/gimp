@@ -311,9 +311,9 @@ block|{
 block|{
 literal|"context-foreground-red-set"
 block|,
-name|NULL
+name|GTK_STOCK_JUMP_TO
 block|,
-literal|"Set Foreground Red"
+literal|"Foreground Red Set"
 block|,
 name|NULL
 block|,
@@ -434,9 +434,9 @@ block|{
 block|{
 literal|"context-foreground-green-set"
 block|,
-name|NULL
+name|GTK_STOCK_JUMP_TO
 block|,
-literal|"Set Foreground Green"
+literal|"Foreground Green Set"
 block|,
 name|NULL
 block|,
@@ -557,9 +557,9 @@ block|{
 block|{
 literal|"context-foreground-blue-set"
 block|,
-name|NULL
+name|GTK_STOCK_JUMP_TO
 block|,
-literal|"Set Foreground Blue"
+literal|"Foreground Blue Set"
 block|,
 name|NULL
 block|,
@@ -680,9 +680,9 @@ block|{
 block|{
 literal|"context-background-red-set"
 block|,
-name|NULL
+name|GTK_STOCK_JUMP_TO
 block|,
-literal|"Set Background Red"
+literal|"Background Red Set"
 block|,
 name|NULL
 block|,
@@ -803,9 +803,9 @@ block|{
 block|{
 literal|"context-background-green-set"
 block|,
-name|NULL
+name|GTK_STOCK_JUMP_TO
 block|,
-literal|"Set Background Green"
+literal|"Background Green Set"
 block|,
 name|NULL
 block|,
@@ -926,9 +926,9 @@ block|{
 block|{
 literal|"context-background-blue-set"
 block|,
-name|NULL
+name|GTK_STOCK_JUMP_TO
 block|,
-literal|"Set Background Blue"
+literal|"Background Blue Set"
 block|,
 name|NULL
 block|,
@@ -1049,7 +1049,7 @@ block|{
 block|{
 literal|"context-opacity-set"
 block|,
-name|NULL
+name|GTK_STOCK_JUMP_TO
 block|,
 literal|"Set Transparency"
 block|,
@@ -1681,7 +1681,7 @@ block|{
 block|{
 literal|"context-brush-radius-set"
 block|,
-name|NULL
+name|GTK_STOCK_JUMP_TO
 block|,
 literal|"Set Brush Radius"
 block|,
@@ -1804,7 +1804,7 @@ block|{
 block|{
 literal|"context-brush-spikes-set"
 block|,
-name|NULL
+name|GTK_STOCK_JUMP_TO
 block|,
 literal|"Set Brush Spikes"
 block|,
@@ -1927,7 +1927,7 @@ block|{
 block|{
 literal|"context-brush-hardness-set"
 block|,
-name|NULL
+name|GTK_STOCK_JUMP_TO
 block|,
 literal|"Set Brush Hardness"
 block|,
@@ -2050,7 +2050,7 @@ block|{
 block|{
 literal|"context-brush-aspect-set"
 block|,
-name|NULL
+name|GTK_STOCK_JUMP_TO
 block|,
 literal|"Set Brush Aspect"
 block|,
@@ -2173,7 +2173,7 @@ block|{
 block|{
 literal|"context-brush-angle-set"
 block|,
-name|NULL
+name|GTK_STOCK_JUMP_TO
 block|,
 literal|"Set Brush Angle"
 block|,
