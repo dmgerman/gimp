@@ -699,12 +699,18 @@ modifier|*
 name|scanner
 parameter_list|)
 block|{
+name|GimpConfigInterface
+modifier|*
+name|gimp_config_iface
+decl_stmt|;
 name|GParamSpec
 modifier|*
 name|prop_spec
 decl_stmt|;
 name|GTokenType
 name|token
+init|=
+name|G_TOKEN_RIGHT_PAREN
 decl_stmt|;
 name|GValue
 name|value
@@ -734,6 +740,53 @@ operator|->
 name|value_type
 argument_list|)
 expr_stmt|;
+name|gimp_config_iface
+operator|=
+name|g_type_interface_peek
+argument_list|(
+name|g_type_class_peek
+argument_list|(
+name|prop_spec
+operator|->
+name|owner_type
+argument_list|)
+argument_list|,
+name|GIMP_TYPE_CONFIG_INTERFACE
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimp_config_iface
+operator|&&
+name|gimp_config_iface
+operator|->
+name|deserialize_property
+operator|&&
+name|gimp_config_iface
+operator|->
+name|deserialize_property
+argument_list|(
+name|object
+argument_list|,
+name|prop_spec
+operator|->
+name|param_id
+argument_list|,
+operator|&
+name|value
+argument_list|,
+name|prop_spec
+argument_list|,
+name|scanner
+argument_list|,
+operator|&
+name|token
+argument_list|)
+condition|)
+block|{
+comment|/* nop */
+block|}
+elseif|else
 if|if
 condition|(
 name|G_TYPE_FUNDAMENTAL
@@ -855,8 +908,8 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
-comment|/*  This fallback will only work for value_types that  */
 block|{
+comment|/*  This fallback will only work for value_types that  */
 comment|/*  can be transformed from a string value.            */
 name|token
 operator|=
@@ -1626,7 +1679,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1cc15a0103
+DECL|enum|__anon28fbffcd0103
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB

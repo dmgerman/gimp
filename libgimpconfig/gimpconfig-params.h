@@ -382,6 +382,24 @@ define|default)\   g_object_class_install_property (class, id,\                 
 end_define
 
 begin_define
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_OBJECT (class,id,name,object_type)
+define|#
+directive|define
+name|GIMP_CONFIG_INSTALL_PROP_OBJECT
+parameter_list|(
+name|class
+parameter_list|,
+name|id
+parameter_list|,
+name|name
+parameter_list|,
+name|object_type
+parameter_list|)
+define|\
+value|g_object_class_install_property (class, id,\                                    g_param_spec_object (name, NULL, NULL,\                                    object_type,\                                    GIMP_CONFIG_PARAM_FLAGS))
+end_define
+
+begin_define
 DECL|macro|GIMP_CONFIG_INSTALL_PROP_PATH (class,id,name,default)
 define|#
 directive|define
