@@ -17,8 +17,9 @@ name|__OFFSET_DIALOG_H__
 end_define
 
 begin_function_decl
-name|void
-name|offset_dialog_create
+name|GtkWidget
+modifier|*
+name|offset_dialog_new
 parameter_list|(
 name|GimpDrawable
 modifier|*

@@ -192,9 +192,10 @@ comment|/*  public functions  */
 end_comment
 
 begin_function
-name|void
-DECL|function|offset_dialog_create (GimpDrawable * drawable,GtkWidget * parent)
-name|offset_dialog_create
+name|GtkWidget
+modifier|*
+DECL|function|offset_dialog_new (GimpDrawable * drawable,GtkWidget * parent)
+name|offset_dialog_new
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -248,20 +249,24 @@ name|title
 init|=
 name|NULL
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DRAWABLE
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GTK_IS_WIDGET
 argument_list|(
 name|parent
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|off_d
@@ -1100,13 +1105,11 @@ argument_list|(
 name|vbox
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
+return|return
 name|off_d
 operator|->
 name|dlg
-argument_list|)
-expr_stmt|;
+return|;
 block|}
 end_function
 
