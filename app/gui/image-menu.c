@@ -644,7 +644,7 @@ argument_list|(
 literal|"/Edit/_Redo"
 argument_list|)
 block|,
-literal|"<control><shift>Z"
+literal|"<control>Y"
 block|,
 name|edit_redo_cmd_callback
 block|,

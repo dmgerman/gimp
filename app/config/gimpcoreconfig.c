@@ -258,7 +258,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e730010103
+DECL|enum|__anon29faf6450103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -799,7 +799,7 @@ name|G_MAXULONG
 argument_list|,
 literal|1
 operator|<<
-literal|20
+literal|22
 argument_list|,
 name|GIMP_PARAM_CONFIRM
 argument_list|)

@@ -776,7 +776,7 @@ define|#
 directive|define
 name|UNDO_SIZE_BLURB
 define|\
-value|N_("Sets an upper limit to the memory that is used per image to keep " \    "operations on the undo stack.")
+value|N_("Sets an upper limit to the memory that is used per image to keep " \    "operations on the undo stack. Regardless of this setting, at least " \    "as many undo-levels as configured can be undone.")
 end_define
 
 begin_define
