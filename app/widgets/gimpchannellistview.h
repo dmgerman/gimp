@@ -103,15 +103,10 @@ DECL|member|parent_instance
 name|GimpDrawableListView
 name|parent_instance
 decl_stmt|;
-DECL|member|component_frame
+DECL|member|component_editor
 name|GtkWidget
 modifier|*
-name|component_frame
-decl_stmt|;
-DECL|member|component_list
-name|GtkWidget
-modifier|*
-name|component_list
+name|component_editor
 decl_stmt|;
 DECL|member|toselection_button
 name|GtkWidget

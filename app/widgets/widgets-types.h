@@ -259,6 +259,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpComponentEditor
+typedef|typedef
+name|struct
+name|_GimpComponentEditor
+name|GimpComponentEditor
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpDataEditor
 typedef|typedef
 name|struct
@@ -489,15 +498,6 @@ typedef|typedef
 name|struct
 name|_GimpLayerListItem
 name|GimpLayerListItem
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpComponentListItem
-typedef|typedef
-name|struct
-name|_GimpComponentListItem
-name|GimpComponentListItem
 typedef|;
 end_typedef
 

@@ -1174,6 +1174,21 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gint
+name|gimp_image_get_component_index
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|GimpChannelType
+name|channel
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_image_set_component_active
 parameter_list|(

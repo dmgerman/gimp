@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcomponentlistitem.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdnd.h"
 end_include
 

@@ -160,7 +160,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c90c0d20103
+DECL|enum|__anon2aaa66c00103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -1425,6 +1425,12 @@ operator|->
 name|activate_item_func
 operator|=
 name|activate_item_func
+expr_stmt|;
+name|list_view
+operator|->
+name|menu_factory
+operator|=
+name|menu_factory
 expr_stmt|;
 name|list_view
 operator|->
