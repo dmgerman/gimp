@@ -191,12 +191,16 @@ begin_comment
 comment|/* #define HAVE_PROGRESSIVE_JPEG  if your library knows how to handle it */
 end_comment
 
+begin_comment
+comment|/* See bugs #63610 and #61088 for a discussion about the quality settings */
+end_comment
+
 begin_define
 DECL|macro|DEFAULT_QUALITY
 define|#
 directive|define
 name|DEFAULT_QUALITY
-value|0.75
+value|0.85
 end_define
 
 begin_define
@@ -347,7 +351,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac3583f0108
+DECL|struct|__anon28fcfd760108
 block|{
 DECL|member|quality
 name|gdouble
@@ -394,7 +398,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac3583f0208
+DECL|struct|__anon28fcfd760208
 block|{
 DECL|member|run
 name|gboolean
@@ -409,7 +413,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac3583f0308
+DECL|struct|__anon28fcfd760308
 block|{
 DECL|member|cinfo
 name|struct
