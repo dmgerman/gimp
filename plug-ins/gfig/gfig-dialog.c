@@ -465,7 +465,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e701280108
+DECL|struct|__anon2a483a7a0108
 block|{
 DECL|member|gridspacing
 name|void
@@ -7585,7 +7585,7 @@ operator|->
 name|obj
 argument_list|)
 expr_stmt|;
-name|gimp_selection_clear
+name|gimp_selection_none
 argument_list|(
 name|gfig_context
 operator|->

@@ -669,7 +669,7 @@ operator|->
 name|image_id
 argument_list|)
 condition|)
-name|gimp_selection_clear
+name|gimp_selection_none
 argument_list|(
 name|gfig_context
 operator|->
