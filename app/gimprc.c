@@ -248,7 +248,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b64b37d0103
+DECL|enum|__anon2c0a829e0103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -3183,8 +3183,18 @@ name|gimp_system_rc_file
 argument_list|()
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
 name|parse_gimprc_file
 argument_list|(
+name|libfilename
+argument_list|)
+condition|)
+name|g_message
+argument_list|(
+literal|"Can't open '%s' for reading."
+argument_list|,
 name|libfilename
 argument_list|)
 expr_stmt|;

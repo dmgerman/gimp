@@ -1877,6 +1877,10 @@ condition|(
 name|blist
 operator|==
 name|NULL
+operator|||
+name|name
+operator|==
+name|NULL
 condition|)
 return|return
 name|NULL
@@ -1887,7 +1891,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|brush_list
+name|blist
 argument_list|)
 operator|->
 name|list

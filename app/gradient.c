@@ -301,7 +301,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a55d540103
+DECL|enum|__anon2bffb4f80103
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -341,7 +341,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a55d540203
+DECL|enum|__anon2bffb4f80203
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -365,7 +365,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a55d540308
+DECL|struct|__anon2bffb4f80308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -648,7 +648,7 @@ name|replicate_times
 decl_stmt|;
 comment|/*  Saved colors  */
 struct|struct
-DECL|struct|__anon28a55d540408
+DECL|struct|__anon2bffb4f80408
 block|{
 DECL|member|r
 DECL|member|g
@@ -3243,6 +3243,15 @@ name|gradient_t
 modifier|*
 name|gradient
 decl_stmt|;
+if|if
+condition|(
+name|name
+operator|==
+name|NULL
+condition|)
+return|return
+name|NULL
+return|;
 for|for
 control|(
 init|;

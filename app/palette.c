@@ -336,7 +336,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d73de70103
+DECL|enum|__anon2af91c510103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -1992,6 +1992,8 @@ expr_stmt|;
 comment|/*  Check if the current palette is the default one  */
 if|if
 condition|(
+name|default_palette
+operator|&&
 name|strcmp
 argument_list|(
 name|default_palette

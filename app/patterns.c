@@ -623,6 +623,15 @@ name|GPattern
 modifier|*
 name|pattern
 decl_stmt|;
+if|if
+condition|(
+name|name
+operator|==
+name|NULL
+condition|)
+return|return
+name|NULL
+return|;
 for|for
 control|(
 init|;
