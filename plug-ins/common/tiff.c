@@ -52,7 +52,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2952137b0108
+DECL|struct|__anon2c0a75860108
 block|{
 DECL|member|compression
 name|gint
@@ -71,7 +71,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2952137b0208
+DECL|struct|__anon2c0a75860208
 block|{
 DECL|member|run
 name|gint
@@ -86,7 +86,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2952137b0308
+DECL|struct|__anon2c0a75860308
 block|{
 DECL|member|ID
 name|gint32
@@ -1488,9 +1488,6 @@ name|fmt
 argument_list|,
 name|ap
 argument_list|)
-expr_stmt|;
-name|gimp_quit
-argument_list|()
 expr_stmt|;
 block|}
 end_function
