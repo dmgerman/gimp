@@ -2108,7 +2108,7 @@ name|factory
 operator|->
 name|menu_factory
 argument_list|,
-literal|"<Gradients>"
+literal|"<Palettes>"
 argument_list|)
 expr_stmt|;
 return|return
@@ -2628,7 +2628,7 @@ name|factory
 operator|->
 name|menu_factory
 argument_list|,
-literal|"<Gradients>"
+literal|"<Palettes>"
 argument_list|)
 expr_stmt|;
 return|return
