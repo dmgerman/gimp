@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2923a4a50103
+DECL|enum|__anon2b2646810103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -2093,26 +2093,6 @@ return|return
 name|FALSE
 return|;
 block|}
-name|pixel_region_init
-argument_list|(
-operator|&
-name|shadowPR
-argument_list|,
-name|gimage
-operator|->
-name|shadow
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 comment|/*  Process up to 16 tiles in one go. This reduces the overhead    *  caused by updating the display while the imagemap is being    *  applied and gives us a tiny speedup.    */
 for|for
 control|(
@@ -2188,10 +2168,14 @@ name|destPR
 operator|.
 name|h
 expr_stmt|;
-name|pixel_region_resize
+name|pixel_region_init
 argument_list|(
 operator|&
 name|shadowPR
+argument_list|,
+name|gimage
+operator|->
+name|shadow
 argument_list|,
 name|x
 argument_list|,
@@ -2200,6 +2184,8 @@ argument_list|,
 name|w
 argument_list|,
 name|h
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_apply_region
