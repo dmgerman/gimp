@@ -161,8 +161,6 @@ name|new_image_height
 decl_stmt|;
 name|gboolean
 name|size_changed
-init|=
-name|FALSE
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -303,6 +301,11 @@ operator|=
 name|FALSE
 expr_stmt|;
 break|break;
+default|default:
+name|g_assert_not_reached
+argument_list|()
+expr_stmt|;
+return|return;
 block|}
 comment|/*  Rotate all channels  */
 for|for
