@@ -16,12 +16,6 @@ directive|define
 name|__PALETTE_P_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"palette_entries.h"
-end_include
-
 begin_function_decl
 name|void
 name|palette_clist_init
@@ -57,9 +51,9 @@ name|GdkGC
 modifier|*
 name|gc
 parameter_list|,
-name|PaletteEntries
+name|GimpPalette
 modifier|*
-name|entries
+name|palette
 parameter_list|,
 name|gint
 name|pos
@@ -80,9 +74,9 @@ begin_function_decl
 name|void
 name|palette_create_edit
 parameter_list|(
-name|PaletteEntries
+name|GimpPalette
 modifier|*
-name|entries
+name|palette
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -24,19 +24,25 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppalette.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpui.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"palette_entries.h"
+file|"palette_select.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"palette_select.h"
+file|"palette.h"
 end_include
 
 begin_include
@@ -126,19 +132,21 @@ end_comment
 begin_function
 name|PaletteSelect
 modifier|*
-DECL|function|palette_select_new (gchar * title,gchar * initial_palette)
+DECL|function|palette_select_new (const gchar * title,const gchar * initial_palette)
 name|palette_select_new
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|title
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|initial_palette
 parameter_list|)
 block|{
-name|PaletteEntries
+name|GimpPalette
 modifier|*
 name|p_entries
 init|=
@@ -522,7 +530,7 @@ for|for
 control|(
 name|list
 operator|=
-name|palette_entries_list
+name|palettes_list
 init|;
 name|list
 condition|;
@@ -537,7 +545,7 @@ block|{
 name|p_entries
 operator|=
 operator|(
-name|PaletteEntries
+name|GimpPalette
 operator|*
 operator|)
 name|list
@@ -548,7 +556,10 @@ if|if
 condition|(
 name|strcmp
 argument_list|(
+name|GIMP_OBJECT
+argument_list|(
 name|p_entries
+argument_list|)
 operator|->
 name|name
 argument_list|,
@@ -708,15 +719,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|palette_select_clist_insert_all (PaletteEntries * p_entries)
+DECL|function|palette_select_clist_insert_all (GimpPalette * p_entries)
 name|palette_select_clist_insert_all
 parameter_list|(
-name|PaletteEntries
+name|GimpPalette
 modifier|*
 name|p_entries
 parameter_list|)
 block|{
-name|PaletteEntries
+name|GimpPalette
 modifier|*
 name|chk_entries
 decl_stmt|;
@@ -737,7 +748,7 @@ for|for
 control|(
 name|list
 operator|=
-name|palette_entries_list
+name|palettes_list
 init|;
 name|list
 condition|;
@@ -752,7 +763,7 @@ block|{
 name|chk_entries
 operator|=
 operator|(
-name|PaletteEntries
+name|GimpPalette
 operator|*
 operator|)
 name|list
@@ -771,11 +782,17 @@ if|if
 condition|(
 name|strcmp
 argument_list|(
+name|GIMP_OBJECT
+argument_list|(
 name|p_entries
+argument_list|)
 operator|->
 name|name
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
 name|chk_entries
+argument_list|)
 operator|->
 name|name
 argument_list|)
@@ -858,15 +875,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|palette_select_set_text_all (PaletteEntries * entries)
+DECL|function|palette_select_set_text_all (GimpPalette * entries)
 name|palette_select_set_text_all
 parameter_list|(
-name|PaletteEntries
+name|GimpPalette
 modifier|*
 name|entries
 parameter_list|)
 block|{
-name|PaletteEntries
+name|GimpPalette
 modifier|*
 name|p_entries
 init|=
@@ -893,7 +910,7 @@ for|for
 control|(
 name|list
 operator|=
-name|palette_entries_list
+name|palettes_list
 init|;
 name|list
 condition|;
@@ -908,7 +925,7 @@ block|{
 name|p_entries
 operator|=
 operator|(
-name|PaletteEntries
+name|GimpPalette
 operator|*
 operator|)
 name|list
@@ -1168,7 +1185,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|PaletteEntries
+name|GimpPalette
 modifier|*
 name|p_entries
 init|=
@@ -1221,7 +1238,7 @@ expr_stmt|;
 name|p_entries
 operator|=
 operator|(
-name|PaletteEntries
+name|GimpPalette
 operator|*
 operator|)
 name|gtk_clist_get_row_data

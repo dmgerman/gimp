@@ -238,6 +238,15 @@ name|GimpBrushPipe
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpPalette
+typedef|typedef
+name|struct
+name|_GimpPalette
+name|GimpPalette
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  widgets  */
 end_comment
@@ -422,24 +431,6 @@ typedef|typedef
 name|struct
 name|_PaintCore
 name|PaintCore
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|PaletteEntries
-typedef|typedef
-name|struct
-name|_PaletteEntries
-name|PaletteEntries
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|PaletteEntry
-typedef|typedef
-name|struct
-name|_PaletteEntry
-name|PaletteEntry
 typedef|;
 end_typedef
 

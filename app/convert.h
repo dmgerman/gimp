@@ -23,7 +23,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3eab930103
+DECL|enum|__anon2c2d5bc50103
 block|{
 DECL|enumerator|MAKE_PALETTE
 name|MAKE_PALETTE
@@ -62,7 +62,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3eab930203
+DECL|enum|__anon2c2d5bc50203
 block|{
 DECL|enumerator|NO_DITHER
 name|NO_DITHER
@@ -168,7 +168,7 @@ end_function_decl
 
 begin_decl_stmt
 specifier|extern
-name|PaletteEntries
+name|GimpPalette
 modifier|*
 name|theCustomPalette
 decl_stmt|;

@@ -75,10 +75,12 @@ name|PaletteSelect
 modifier|*
 name|palette_select_new
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|title
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|initial_palette
@@ -90,9 +92,9 @@ begin_function_decl
 name|void
 name|palette_select_clist_insert_all
 parameter_list|(
-name|PaletteEntries
+name|GimpPalette
 modifier|*
-name|p_entries
+name|palette
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -101,9 +103,9 @@ begin_function_decl
 name|void
 name|palette_select_set_text_all
 parameter_list|(
-name|PaletteEntries
+name|GimpPalette
 modifier|*
-name|entries
+name|palette
 parameter_list|)
 function_decl|;
 end_function_decl

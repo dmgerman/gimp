@@ -152,7 +152,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"palette_entries.h"
+file|"gimppalette.h"
 end_include
 
 begin_include
@@ -34951,7 +34951,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a064fb60108
+DECL|struct|__anon28b16aba0108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -35028,7 +35028,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a064fb60208
+DECL|struct|__anon28b16aba0208
 block|{
 DECL|member|ncolors
 name|long
@@ -35047,7 +35047,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a064fb60308
+DECL|struct|__anon28b16aba0308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -35366,7 +35366,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|theCustomPalette
-name|PaletteEntries
+name|GimpPalette
 modifier|*
 name|theCustomPalette
 init|=
@@ -37549,19 +37549,20 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
-name|PaletteEntries
+name|GimpPalette
 modifier|*
-name|entries
+name|palette
 decl_stmt|;
-name|PaletteEntries
+name|GimpPalette
 modifier|*
 name|theWebPalette
 init|=
 name|NULL
 decl_stmt|;
-name|int
+name|gint
 name|i
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|default_palette
 decl_stmt|;
 name|UserHasWebPal
@@ -37571,7 +37572,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|palette_entries_list
+name|palettes_list
 condition|)
 block|{
 name|palettes_init
@@ -37582,7 +37583,7 @@ expr_stmt|;
 block|}
 name|list
 operator|=
-name|palette_entries_list
+name|palettes_list
 expr_stmt|;
 if|if
 condition|(
@@ -37602,7 +37603,7 @@ literal|0
 operator|,
 name|list
 operator|=
-name|palette_entries_list
+name|palettes_list
 operator|,
 name|default_palette
 operator|=
@@ -37622,10 +37623,10 @@ name|list
 argument_list|)
 control|)
 block|{
-name|entries
+name|palette
 operator|=
 operator|(
-name|PaletteEntries
+name|GimpPalette
 operator|*
 operator|)
 name|list
@@ -37641,7 +37642,10 @@ name|NULL
 operator|&&
 name|g_strcasecmp
 argument_list|(
-name|entries
+name|GIMP_OBJECT
+argument_list|(
+name|palette
+argument_list|)
 operator|->
 name|name
 argument_list|,
@@ -37653,7 +37657,7 @@ condition|)
 block|{
 name|theWebPalette
 operator|=
-name|entries
+name|palette
 expr_stmt|;
 name|UserHasWebPal
 operator|=
@@ -37663,7 +37667,7 @@ block|}
 comment|/* We can't dither to> 256 colors */
 if|if
 condition|(
-name|entries
+name|palette
 operator|->
 name|n_colors
 operator|<=
@@ -37674,7 +37678,7 @@ if|if
 condition|(
 name|theCustomPalette
 operator|==
-name|entries
+name|palette
 condition|)
 block|{
 name|default_palette
@@ -37718,7 +37722,7 @@ literal|0
 operator|,
 name|list
 operator|=
-name|palette_entries_list
+name|palettes_list
 init|;
 name|list
 operator|&&
@@ -37738,10 +37742,10 @@ name|list
 argument_list|)
 control|)
 block|{
-name|entries
+name|palette
 operator|=
 operator|(
-name|PaletteEntries
+name|GimpPalette
 operator|*
 operator|)
 name|list
@@ -37750,7 +37754,7 @@ name|data
 expr_stmt|;
 if|if
 condition|(
-name|entries
+name|palette
 operator|->
 name|n_colors
 operator|<=
@@ -37759,7 +37763,7 @@ condition|)
 block|{
 name|theCustomPalette
 operator|=
-name|entries
+name|palette
 expr_stmt|;
 name|default_palette
 operator|=
@@ -37783,7 +37787,10 @@ else|else
 return|return
 name|gtk_button_new_with_label
 argument_list|(
+name|GIMP_OBJECT
+argument_list|(
 name|theCustomPalette
+argument_list|)
 operator|->
 name|name
 argument_list|)
@@ -38197,14 +38204,14 @@ operator|*
 operator|)
 name|data
 decl_stmt|;
-name|PaletteEntries
+name|GimpPalette
 modifier|*
-name|p_entries
+name|palette
 decl_stmt|;
-name|p_entries
+name|palette
 operator|=
 operator|(
-name|PaletteEntries
+name|GimpPalette
 operator|*
 operator|)
 name|gtk_clist_get_row_data
@@ -38216,12 +38223,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|p_entries
+name|palette
 condition|)
 block|{
 if|if
 condition|(
-name|p_entries
+name|palette
 operator|->
 name|n_colors
 operator|<=
@@ -38230,7 +38237,7 @@ condition|)
 block|{
 name|theCustomPalette
 operator|=
-name|p_entries
+name|palette
 expr_stmt|;
 name|gtk_label_set_text
 argument_list|(
@@ -38246,7 +38253,10 @@ operator|->
 name|child
 argument_list|)
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
 name|theCustomPalette
+argument_list|)
 operator|->
 name|name
 argument_list|)
@@ -38315,7 +38325,10 @@ argument_list|(
 literal|"Select Custom Palette"
 argument_list|)
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
 name|theCustomPalette
+argument_list|)
 operator|->
 name|name
 argument_list|)
@@ -38387,7 +38400,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a064fb60408
+DECL|struct|__anon28b16aba0408
 block|{
 DECL|member|used_count
 name|signed
@@ -47328,11 +47341,11 @@ block|{
 name|gint
 name|i
 decl_stmt|;
-name|GSList
+name|GList
 modifier|*
 name|list
 decl_stmt|;
-name|PaletteEntry
+name|GimpPaletteEntry
 modifier|*
 name|entry
 decl_stmt|;
@@ -47363,7 +47376,7 @@ operator|++
 operator|,
 name|list
 operator|=
-name|g_slist_next
+name|g_list_next
 argument_list|(
 name|list
 argument_list|)
@@ -47372,7 +47385,7 @@ block|{
 name|entry
 operator|=
 operator|(
-name|PaletteEntry
+name|GimpPaletteEntry
 operator|*
 operator|)
 name|list

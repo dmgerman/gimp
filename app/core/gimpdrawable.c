@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b260f0d0103
+DECL|enum|__anon28efbe470103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -445,6 +445,12 @@ operator|->
 name|name_changed
 operator|=
 name|gimp_drawable_name_changed
+expr_stmt|;
+name|klass
+operator|->
+name|removed
+operator|=
+name|NULL
 expr_stmt|;
 name|klass
 operator|->

@@ -52,13 +52,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"palette.h"
+file|"gimppalette.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"palette_entries.h"
+file|"palette.h"
 end_include
 
 begin_decl_stmt
@@ -609,11 +609,11 @@ operator|)
 operator|)
 condition|)
 block|{
-name|PaletteEntries
+name|GimpPalette
 modifier|*
-name|entries
+name|palette
 decl_stmt|;
-name|PaletteEntries
+name|GimpPalette
 modifier|*
 name|the_palette
 init|=
@@ -687,7 +687,7 @@ case|:
 if|if
 condition|(
 operator|!
-name|palette_entries_list
+name|palettes_list
 condition|)
 name|palettes_init
 argument_list|(
@@ -698,7 +698,7 @@ for|for
 control|(
 name|list
 operator|=
-name|palette_entries_list
+name|palettes_list
 init|;
 name|list
 condition|;
@@ -709,10 +709,10 @@ operator|->
 name|next
 control|)
 block|{
-name|entries
+name|palette
 operator|=
 operator|(
-name|PaletteEntries
+name|GimpPalette
 operator|*
 operator|)
 name|list
@@ -726,7 +726,10 @@ name|strcmp
 argument_list|(
 name|palette_name
 argument_list|,
-name|entries
+name|GIMP_OBJECT
+argument_list|(
+name|palette
+argument_list|)
 operator|->
 name|name
 argument_list|)
@@ -734,7 +737,7 @@ condition|)
 block|{
 name|the_palette
 operator|=
-name|entries
+name|palette
 expr_stmt|;
 break|break;
 block|}
