@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"cursorutil.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"draw_core.h"
 end_include
 
@@ -1484,7 +1490,7 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GDK_DIAMOND_CROSS
+name|GIMP_SELECTION_MOVE_CURSOR
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -2058,9 +2064,11 @@ end_function
 begin_function
 name|Tool
 modifier|*
-DECL|function|tools_new_move_tool ()
+DECL|function|tools_new_move_tool (void)
 name|tools_new_move_tool
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|Tool
 modifier|*

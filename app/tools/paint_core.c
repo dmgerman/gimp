@@ -58,12 +58,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"errors.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdisplay.h"
 end_include
 
@@ -134,8 +128,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"tile.h"
 end_include
+
+begin_comment
+comment|/* ick. */
+end_comment
 
 begin_include
 include|#
@@ -146,12 +144,8 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tile.h"
+file|"libgimp/gimpintl.h"
 end_include
-
-begin_comment
-comment|/* ick. */
-end_comment
 
 begin_comment
 comment|/*  target size  */
@@ -1333,7 +1327,7 @@ decl_stmt|;
 name|gboolean
 name|draw_line
 decl_stmt|;
-name|double
+name|gdouble
 name|x
 decl_stmt|,
 name|y
@@ -1468,6 +1462,12 @@ operator|!=
 name|tool
 operator|->
 name|gdisp_ptr
+operator|||
+name|paint_core
+operator|->
+name|context_id
+operator|<
+literal|1
 condition|)
 block|{
 comment|/* initialize the statusbar display */
@@ -1672,7 +1672,7 @@ operator|&
 name|GDK_CONTROL_MASK
 condition|)
 block|{
-name|int
+name|gint
 name|tangens2
 index|[
 literal|6
@@ -1692,7 +1692,7 @@ block|,
 literal|1944
 block|}
 decl_stmt|;
-name|int
+name|gint
 name|cosinus
 index|[
 literal|7
@@ -1714,7 +1714,7 @@ block|,
 literal|0
 block|}
 decl_stmt|;
-name|int
+name|gint
 name|dx
 decl_stmt|,
 name|dy
@@ -2716,7 +2716,7 @@ name|ctype
 init|=
 name|GDK_TOP_LEFT_ARROW
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -2755,6 +2755,39 @@ argument_list|,
 name|tool
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gdisp_ptr
+operator|!=
+name|tool
+operator|->
+name|gdisp_ptr
+operator|||
+name|paint_core
+operator|->
+name|context_id
+operator|<
+literal|1
+condition|)
+block|{
+comment|/* initialize the statusbar display */
+name|paint_core
+operator|->
+name|context_id
+operator|=
+name|gtk_statusbar_get_context_id
+argument_list|(
+name|GTK_STATUSBAR
+argument_list|(
+name|gdisp
+operator|->
+name|statusbar
+argument_list|)
+argument_list|,
+literal|"paint"
+argument_list|)
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|paint_core
@@ -2880,17 +2913,17 @@ operator|&
 name|GDK_CONTROL_MASK
 condition|)
 block|{
-name|int
+name|gint
 name|idx
 init|=
 name|dx
 decl_stmt|;
-name|int
+name|gint
 name|idy
 init|=
 name|dy
 decl_stmt|;
-name|int
+name|gint
 name|tangens2
 index|[
 literal|6
@@ -2910,7 +2943,7 @@ block|,
 literal|1944
 block|}
 decl_stmt|;
-name|int
+name|gint
 name|cosinus
 index|[
 literal|7
@@ -2932,7 +2965,7 @@ block|,
 literal|0
 block|}
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|radius
@@ -3156,6 +3189,7 @@ argument_list|)
 decl_stmt|;
 name|d
 operator|=
+operator|(
 name|gimp_unit_get_factor
 argument_list|(
 name|gdisp
@@ -3189,6 +3223,7 @@ operator|->
 name|yresolution
 argument_list|)
 argument_list|)
+operator|)
 expr_stmt|;
 name|g_snprintf
 argument_list|(
@@ -3308,7 +3343,7 @@ block|}
 comment|/* Normal operation -- no modifier pressed or first stroke */
 else|else
 block|{
-name|int
+name|gint
 name|off_x
 decl_stmt|,
 name|off_y
@@ -3562,7 +3597,7 @@ name|PaintCore
 modifier|*
 name|paint_core
 decl_stmt|;
-name|int
+name|gint
 name|tx1
 decl_stmt|,
 name|ty1
@@ -3645,7 +3680,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/* Only draw line if it's in the visible area          thus preventing from drawing rubbish		*/
+comment|/*  Only draw line if it's in the visible area        *  thus preventing from drawing rubbish        */
 if|if
 condition|(
 name|tx2
@@ -4010,8 +4045,8 @@ block|}
 end_function
 
 begin_function
-name|int
-DECL|function|paint_core_init (PaintCore * paint_core,GimpDrawable * drawable,double x,double y)
+name|gboolean
+DECL|function|paint_core_init (PaintCore * paint_core,GimpDrawable * drawable,gdouble x,gdouble y)
 name|paint_core_init
 parameter_list|(
 name|PaintCore
@@ -4022,10 +4057,10 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|)
 block|{
@@ -4330,40 +4365,40 @@ end_function
 
 begin_function
 name|void
-DECL|function|paint_core_get_color_from_gradient (PaintCore * paint_core,double gradient_length,double * r,double * g,double * b,double * a,int mode)
+DECL|function|paint_core_get_color_from_gradient (PaintCore * paint_core,gdouble gradient_length,gdouble * r,gdouble * g,gdouble * b,gdouble * a,gint mode)
 name|paint_core_get_color_from_gradient
 parameter_list|(
 name|PaintCore
 modifier|*
 name|paint_core
 parameter_list|,
-name|double
+name|gdouble
 name|gradient_length
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|r
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|g
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|b
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|a
 parameter_list|,
-name|int
+name|gint
 name|mode
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|y
 decl_stmt|;
-name|double
+name|gdouble
 name|distance
 decl_stmt|;
 comment|/* distance in current brush stroke */
@@ -5094,7 +5129,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|paint_core_finish (PaintCore * paint_core,GimpDrawable * drawable,int tool_id)
+DECL|function|paint_core_finish (PaintCore * paint_core,GimpDrawable * drawable,gint tool_id)
 name|paint_core_finish
 parameter_list|(
 name|PaintCore
@@ -5105,7 +5140,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|gint
 name|tool_id
 parameter_list|)
 block|{
@@ -5163,16 +5198,11 @@ argument_list|)
 expr_stmt|;
 name|pu
 operator|=
-operator|(
-name|PaintUndo
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|PaintUndo
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|pu
@@ -5290,9 +5320,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|paint_core_cleanup ()
+DECL|function|paint_core_cleanup (void)
 name|paint_core_cleanup
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 comment|/*  CLEANUP  */
 comment|/*  If the undo tiles exist, nuke them  */
@@ -5364,12 +5396,12 @@ name|gdouble
 name|scale
 parameter_list|)
 block|{
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -5378,15 +5410,15 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|int
+name|gint
 name|bytes
 decl_stmt|;
-name|int
+name|gint
 name|dwidth
 decl_stmt|,
 name|dheight
 decl_stmt|;
-name|int
+name|gint
 name|bwidth
 decl_stmt|,
 name|bheight
@@ -5581,7 +5613,7 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|paint_core_get_orig_image (PaintCore * paint_core,GimpDrawable * drawable,int x1,int y1,int x2,int y2)
+DECL|function|paint_core_get_orig_image (PaintCore * paint_core,GimpDrawable * drawable,gint x1,gint y1,gint x2,gint y2)
 name|paint_core_get_orig_image
 parameter_list|(
 name|PaintCore
@@ -5592,16 +5624,16 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|gint
 name|x1
 parameter_list|,
-name|int
+name|gint
 name|y1
 parameter_list|,
-name|int
+name|gint
 name|x2
 parameter_list|,
-name|int
+name|gint
 name|y2
 parameter_list|)
 block|{
@@ -5614,22 +5646,21 @@ name|Tile
 modifier|*
 name|undo_tile
 decl_stmt|;
-name|int
+name|gint
 name|h
 decl_stmt|;
-name|int
+name|gint
 name|refd
 decl_stmt|;
-name|int
+name|gint
 name|pixelwidth
 decl_stmt|;
-name|int
+name|gint
 name|dwidth
 decl_stmt|,
 name|dheight
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|s
 decl_stmt|,
@@ -6046,7 +6077,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|paint_core_paste_canvas (PaintCore * paint_core,GimpDrawable * drawable,int brush_opacity,int image_opacity,LayerModeEffects paint_mode,BrushApplicationMode brush_hardness,gdouble brush_scale,PaintApplicationMode mode)
+DECL|function|paint_core_paste_canvas (PaintCore * paint_core,GimpDrawable * drawable,gint brush_opacity,gint image_opacity,LayerModeEffects paint_mode,BrushApplicationMode brush_hardness,gdouble brush_scale,PaintApplicationMode mode)
 name|paint_core_paste_canvas
 parameter_list|(
 name|PaintCore
@@ -6057,10 +6088,10 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|gint
 name|brush_opacity
 parameter_list|,
-name|int
+name|gint
 name|image_opacity
 parameter_list|,
 name|LayerModeEffects
@@ -6119,7 +6150,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|paint_core_replace_canvas (PaintCore * paint_core,GimpDrawable * drawable,int brush_opacity,int image_opacity,BrushApplicationMode brush_hardness,gdouble brush_scale,PaintApplicationMode mode)
+DECL|function|paint_core_replace_canvas (PaintCore * paint_core,GimpDrawable * drawable,gint brush_opacity,gint image_opacity,BrushApplicationMode brush_hardness,gdouble brush_scale,PaintApplicationMode mode)
 name|paint_core_replace_canvas
 parameter_list|(
 name|PaintCore
@@ -6130,10 +6161,10 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|gint
 name|brush_opacity
 parameter_list|,
-name|int
+name|gint
 name|image_opacity
 parameter_list|,
 name|BrushApplicationMode
@@ -6240,21 +6271,21 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|paint_core_calculate_brush_size (MaskBuf * mask,double scale,int * width,int * height)
+DECL|function|paint_core_calculate_brush_size (MaskBuf * mask,gdouble scale,gint * width,gint * height)
 name|paint_core_calculate_brush_size
 parameter_list|(
 name|MaskBuf
 modifier|*
 name|mask
 parameter_list|,
-name|double
+name|gdouble
 name|scale
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|width
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|height
 parameter_list|)
@@ -6283,7 +6314,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|double
+name|gdouble
 name|ratio
 decl_stmt|;
 if|if
@@ -6358,17 +6389,17 @@ begin_function
 specifier|static
 name|MaskBuf
 modifier|*
-DECL|function|paint_core_subsample_mask (MaskBuf * mask,double x,double y)
+DECL|function|paint_core_subsample_mask (MaskBuf * mask,gdouble x,gdouble y)
 name|paint_core_subsample_mask
 parameter_list|(
 name|MaskBuf
 modifier|*
 name|mask
 parameter_list|,
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|)
 block|{
@@ -6376,11 +6407,10 @@ name|MaskBuf
 modifier|*
 name|dest
 decl_stmt|;
-name|double
+name|gdouble
 name|left
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|m
 decl_stmt|,
@@ -6388,29 +6418,29 @@ modifier|*
 name|d
 decl_stmt|;
 specifier|const
-name|int
+name|gint
 modifier|*
 name|k
 decl_stmt|;
-name|int
+name|gint
 name|index1
 decl_stmt|,
 name|index2
 decl_stmt|;
 specifier|const
-name|int
+name|gint
 modifier|*
 name|kernel
 decl_stmt|;
-name|int
+name|gint
 name|new_val
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|int
+name|gint
 name|r
 decl_stmt|,
 name|s
@@ -6772,20 +6802,20 @@ begin_function
 specifier|static
 name|MaskBuf
 modifier|*
-DECL|function|paint_core_pressurize_mask (MaskBuf * brush_mask,double x,double y,double pressure)
+DECL|function|paint_core_pressurize_mask (MaskBuf * brush_mask,gdouble x,gdouble y,gdouble pressure)
 name|paint_core_pressurize_mask
 parameter_list|(
 name|MaskBuf
 modifier|*
 name|brush_mask
 parameter_list|,
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|,
-name|double
+name|gdouble
 name|pressure
 parameter_list|)
 block|{
@@ -6797,20 +6827,17 @@ init|=
 name|NULL
 decl_stmt|;
 specifier|static
-name|unsigned
-name|char
+name|guchar
 name|mapi
 index|[
 literal|256
 index|]
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|source
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|dest
 decl_stmt|;
@@ -6818,20 +6845,20 @@ name|MaskBuf
 modifier|*
 name|subsample_mask
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 ifdef|#
 directive|ifdef
 name|FANCY_PRESSURE
 specifier|static
-name|double
+name|gdouble
 name|map
 index|[
 literal|256
 index|]
 decl_stmt|;
-name|double
+name|gdouble
 name|ds
 decl_stmt|,
 name|s
@@ -7217,13 +7244,12 @@ name|last_brush
 init|=
 name|NULL
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|data
 decl_stmt|,
@@ -7735,7 +7761,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|paint_core_paste (PaintCore * paint_core,MaskBuf * brush_mask,GimpDrawable * drawable,int brush_opacity,int image_opacity,LayerModeEffects paint_mode,PaintApplicationMode mode)
+DECL|function|paint_core_paste (PaintCore * paint_core,MaskBuf * brush_mask,GimpDrawable * drawable,gint brush_opacity,gint image_opacity,LayerModeEffects paint_mode,PaintApplicationMode mode)
 name|paint_core_paste
 parameter_list|(
 name|PaintCore
@@ -7750,10 +7776,10 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|gint
 name|brush_opacity
 parameter_list|,
-name|int
+name|gint
 name|image_opacity
 parameter_list|,
 name|LayerModeEffects
@@ -7776,7 +7802,7 @@ name|alt
 init|=
 name|NULL
 decl_stmt|;
-name|int
+name|gint
 name|offx
 decl_stmt|,
 name|offy
@@ -8081,7 +8107,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|paint_core_replace (PaintCore * paint_core,MaskBuf * brush_mask,GimpDrawable * drawable,int brush_opacity,int image_opacity,PaintApplicationMode mode)
+DECL|function|paint_core_replace (PaintCore * paint_core,MaskBuf * brush_mask,GimpDrawable * drawable,gint brush_opacity,gint image_opacity,PaintApplicationMode mode)
 name|paint_core_replace
 parameter_list|(
 name|PaintCore
@@ -8096,10 +8122,10 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|gint
 name|brush_opacity
 parameter_list|,
-name|int
+name|gint
 name|image_opacity
 parameter_list|,
 name|PaintApplicationMode
@@ -8121,7 +8147,7 @@ name|alt
 init|=
 name|NULL
 decl_stmt|;
-name|int
+name|gint
 name|offx
 decl_stmt|,
 name|offy
@@ -8633,7 +8659,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|brush_to_canvas_tiles (PaintCore * paint_core,MaskBuf * brush_mask,int brush_opacity)
+DECL|function|brush_to_canvas_tiles (PaintCore * paint_core,MaskBuf * brush_mask,gint brush_opacity)
 name|brush_to_canvas_tiles
 parameter_list|(
 name|PaintCore
@@ -8644,7 +8670,7 @@ name|MaskBuf
 modifier|*
 name|brush_mask
 parameter_list|,
-name|int
+name|gint
 name|brush_opacity
 parameter_list|)
 block|{
@@ -8653,12 +8679,12 @@ name|srcPR
 decl_stmt|,
 name|maskPR
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|int
+name|gint
 name|xoff
 decl_stmt|,
 name|yoff
@@ -8835,7 +8861,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|brush_to_canvas_buf (PaintCore * paint_core,MaskBuf * brush_mask,int brush_opacity)
+DECL|function|brush_to_canvas_buf (PaintCore * paint_core,MaskBuf * brush_mask,gint brush_opacity)
 name|brush_to_canvas_buf
 parameter_list|(
 name|PaintCore
@@ -8846,7 +8872,7 @@ name|MaskBuf
 modifier|*
 name|brush_mask
 parameter_list|,
-name|int
+name|gint
 name|brush_opacity
 parameter_list|)
 block|{
@@ -8855,12 +8881,12 @@ name|srcPR
 decl_stmt|,
 name|maskPR
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|int
+name|gint
 name|xoff
 decl_stmt|,
 name|yoff
@@ -9072,7 +9098,7 @@ literal|0
 end_if
 
 begin_comment
-unit|static void paint_to_canvas_tiles (PaintCore *paint_core,  		       MaskBuf   *brush_mask,  		       int        brush_opacity) {   PixelRegion srcPR, maskPR;   int x, y;   int xoff, yoff;
+unit|static void paint_to_canvas_tiles (PaintCore *paint_core,  		       MaskBuf   *brush_mask,  		       gint       brush_opacity) {   PixelRegion srcPR, maskPR;   gint x, y;   gint xoff, yoff;
 comment|/*   combine the brush mask and the canvas tiles  */
 end_comment
 
@@ -9092,7 +9118,7 @@ comment|/*  apply the canvas tiles to the canvas buf  */
 end_comment
 
 begin_comment
-unit|apply_mask_to_region (&srcPR,&maskPR, OPAQUE_OPACITY); }  static void paint_to_canvas_buf (PaintCore *paint_core,  		     MaskBuf   *brush_mask,  		     int        brush_opacity) {   PixelRegion srcPR, maskPR;   int x, y;   int xoff, yoff;    x = (int) paint_core->curx - (brush_mask->width>> 1);   y = (int) paint_core->cury - (brush_mask->height>> 1);   xoff = (x< 0) ? -x : 0;   yoff = (y< 0) ? -y : 0;
+unit|apply_mask_to_region (&srcPR,&maskPR, OPAQUE_OPACITY); }  static void paint_to_canvas_buf (PaintCore *paint_core,  		     MaskBuf   *brush_mask,  		     gint       brush_opacity) {   PixelRegion srcPR, maskPR;   gint x, y;   gint xoff, yoff;    x = (int) paint_core->curx - (brush_mask->width>> 1);   y = (int) paint_core->cury - (brush_mask->height>> 1);   xoff = (x< 0) ? -x : 0;   yoff = (y< 0) ? -y : 0;
 comment|/*  combine the canvas buf and the brush mask to the canvas buf  */
 end_comment
 
@@ -9110,27 +9136,27 @@ end_endif
 begin_function
 specifier|static
 name|void
-DECL|function|set_undo_tiles (GimpDrawable * drawable,int x,int y,int w,int h)
+DECL|function|set_undo_tiles (GimpDrawable * drawable,gint x,gint y,gint w,gint h)
 name|set_undo_tiles
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -9281,23 +9307,23 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|set_canvas_tiles (int x,int y,int w,int h)
+DECL|function|set_canvas_tiles (gint x,gint y,gint w,gint h)
 name|set_canvas_tiles
 parameter_list|(
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -9447,9 +9473,11 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|free_paint_buffers ()
+DECL|function|free_paint_buffers (void)
 name|free_paint_buffers
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -9494,7 +9522,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|paint_core_color_area_with_pixmap (PaintCore * paint_core,GImage * dest,GimpDrawable * drawable,TempBuf * area,gdouble scale,int mode)
+DECL|function|paint_core_color_area_with_pixmap (PaintCore * paint_core,GImage * dest,GimpDrawable * drawable,TempBuf * area,gdouble scale,gint mode)
 name|paint_core_color_area_with_pixmap
 parameter_list|(
 name|PaintCore
@@ -9516,7 +9544,7 @@ parameter_list|,
 name|gdouble
 name|scale
 parameter_list|,
-name|int
+name|gint
 name|mode
 parameter_list|)
 block|{
@@ -9531,7 +9559,7 @@ name|guchar
 modifier|*
 name|d
 decl_stmt|;
-name|int
+name|gint
 name|ulx
 decl_stmt|,
 name|uly
@@ -9800,7 +9828,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|paint_line_pixmap_mask (GImage * dest,GimpDrawable * drawable,TempBuf * pixmap_mask,TempBuf * brush_mask,guchar * d,int x,int y,int bytes,int width,int mode)
+DECL|function|paint_line_pixmap_mask (GImage * dest,GimpDrawable * drawable,TempBuf * pixmap_mask,TempBuf * brush_mask,guchar * d,gint x,gint y,gint bytes,gint width,gint mode)
 name|paint_line_pixmap_mask
 parameter_list|(
 name|GImage
@@ -9823,19 +9851,19 @@ name|guchar
 modifier|*
 name|d
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|bytes
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|mode
 parameter_list|)
 block|{
@@ -9846,7 +9874,7 @@ decl_stmt|,
 modifier|*
 name|p
 decl_stmt|;
-name|int
+name|gint
 name|x_index
 decl_stmt|;
 name|gdouble

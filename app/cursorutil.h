@@ -66,7 +66,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c51c74e0103
+DECL|enum|__anon2bc8b3800103
 block|{
 DECL|enumerator|GIMP_MOUSE_CURSOR
 name|GIMP_MOUSE_CURSOR
@@ -106,6 +106,9 @@ name|GIMP_SELECTION_SUBTRACT_CURSOR
 block|,
 DECL|enumerator|GIMP_SELECTION_INTERSECT_CURSOR
 name|GIMP_SELECTION_INTERSECT_CURSOR
+block|,
+DECL|enumerator|GIMP_SELECTION_MOVE_CURSOR
+name|GIMP_SELECTION_MOVE_CURSOR
 block|,
 DECL|enumerator|GIMP_BAD_CURSOR
 name|GIMP_BAD_CURSOR

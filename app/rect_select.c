@@ -2727,7 +2727,7 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GDK_DIAMOND_CROSS
+name|GIMP_SELECTION_MOVE_CURSOR
 argument_list|)
 expr_stmt|;
 break|break;
