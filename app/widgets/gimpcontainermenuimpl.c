@@ -876,6 +876,8 @@ operator|->
 name|empty_item
 argument_list|)
 expr_stmt|;
+block|}
+comment|/* FIXME: this is due to gtkoptionmenu brokenness */
 name|gimp_container_menu_impl_set_history
 argument_list|(
 name|menu
@@ -883,7 +885,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 end_function

@@ -80,6 +80,10 @@ DECL|member|session_managed
 name|gboolean
 name|session_managed
 decl_stmt|;
+DECL|member|remember_size
+name|gboolean
+name|remember_size
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -363,6 +367,9 @@ name|singleton
 parameter_list|,
 name|gboolean
 name|session_managed
+parameter_list|,
+name|gboolean
+name|remember_size
 parameter_list|)
 function_decl|;
 end_function_decl
