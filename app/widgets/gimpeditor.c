@@ -60,7 +60,7 @@ DECL|macro|DEFAULT_BUTTON_ICON_SIZE
 define|#
 directive|define
 name|DEFAULT_BUTTON_ICON_SIZE
-value|GTK_ICON_SIZE_BUTTON
+value|GTK_ICON_SIZE_MENU
 end_define
 
 begin_function_decl
