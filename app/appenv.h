@@ -40,6 +40,12 @@ directive|include
 file|"gimpsetF.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"colormap_dialog.t.h"
+end_include
+
 begin_define
 DECL|macro|DISPLAY
 define|#
@@ -124,7 +130,7 @@ value|((a&256)? (~(a>>31)) : a)
 end_define
 
 begin_typedef
-DECL|enum|__anon2b88f7b00103
+DECL|enum|__anon27c7c2670103
 typedef|typedef
 enum|enum
 block|{

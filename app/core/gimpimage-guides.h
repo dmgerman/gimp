@@ -92,10 +92,10 @@ value|GTK_CHECK_CAST (obj, GIMP_TYPE_IMAGE, GimpImage)
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_GIMAGE (obj)
+DECL|macro|GIMP_IS_IMAGE (obj)
 define|#
 directive|define
-name|GIMP_IS_GIMAGE
+name|GIMP_IS_IMAGE
 parameter_list|(
 name|obj
 parameter_list|)
@@ -109,7 +109,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c412e270103
+DECL|enum|__anon29311afe0103
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -212,7 +212,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c412e270203
+DECL|enum|__anon29311afe0203
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -255,7 +255,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c412e270303
+DECL|enum|__anon29311afe0303
 block|{
 DECL|enumerator|Red
 name|Red
@@ -283,7 +283,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c412e270403
+DECL|enum|__anon29311afe0403
 block|{
 DECL|enumerator|ExpandAsNecessary
 name|ExpandAsNecessary
@@ -782,6 +782,24 @@ name|gimp_image_get_new_tattoo
 parameter_list|(
 name|GimpImage
 modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* Temporary hack till colormap manipulation is encapsulated in functions.    Call this whenever you modify an image's colormap. The ncol argument    specifies which color has changed, or negative if there's a bigger change.    Currently, use this also when the image's base type is changed to/from    indexed.  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_image_colormap_changed
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+name|gint
+name|ncol
 parameter_list|)
 function_decl|;
 end_function_decl

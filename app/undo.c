@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"indexed_palette.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"layer.h"
 end_include
 
@@ -8795,8 +8789,13 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|indexed_palette_update_image_list
-argument_list|()
+name|gimp_image_colormap_changed
+argument_list|(
+name|gimage
+argument_list|,
+operator|-
+literal|1
+argument_list|)
 expr_stmt|;
 if|if
 condition|(

@@ -42,6 +42,11 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
+DECL|member|handlers
+name|GArray
+modifier|*
+name|handlers
+decl_stmt|;
 DECL|member|weak
 name|gboolean
 name|weak

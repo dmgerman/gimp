@@ -80,12 +80,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"indexed_palette.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"interface.h"
 end_include
 
@@ -1828,7 +1822,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2766eb6b0108
+DECL|struct|__anon2c3c30000108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1875,7 +1869,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2766eb6b0208
+DECL|struct|__anon2c3c30000208
 block|{
 DECL|member|ncolors
 name|long
@@ -1894,7 +1888,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2766eb6b0308
+DECL|struct|__anon2c3c30000308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -5459,8 +5453,13 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|indexed_palette_update_image_list
-argument_list|()
+name|gimp_image_colormap_changed
+argument_list|(
+name|gimage
+argument_list|,
+operator|-
+literal|1
+argument_list|)
 expr_stmt|;
 block|}
 end_function
