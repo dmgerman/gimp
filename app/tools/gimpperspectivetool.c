@@ -681,6 +681,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|perspective_tool_motion (tool,gdisp_ptr)
 name|perspective_tool_motion

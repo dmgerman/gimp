@@ -1945,6 +1945,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
+specifier|static
 name|ColorBalanceDialog
 modifier|*
 DECL|function|color_balance_new_dialog ()

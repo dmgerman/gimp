@@ -589,32 +589,25 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
-DECL|function|eraser_motion (paint_core,drawable,hard,incremental)
+DECL|function|eraser_motion (PaintCore * paint_core,GimpDrawable * drawable,gboolean hard,gboolean incremental)
 name|eraser_motion
 parameter_list|(
-name|paint_core
-parameter_list|,
-name|drawable
-parameter_list|,
-name|hard
-parameter_list|,
-name|incremental
-parameter_list|)
 name|PaintCore
 modifier|*
 name|paint_core
-decl_stmt|;
+parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
-decl_stmt|;
+parameter_list|,
 name|gboolean
 name|hard
-decl_stmt|;
+parameter_list|,
 name|gboolean
 name|incremental
-decl_stmt|;
+parameter_list|)
 block|{
 name|GImage
 modifier|*

@@ -1580,6 +1580,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
+specifier|static
 name|BrightnessContrastDialog
 modifier|*
 DECL|function|brightness_contrast_new_dialog ()

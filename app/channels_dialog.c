@@ -2613,6 +2613,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|channels_dialog_set_channel (ChannelWidget * channel_widget)
 name|channels_dialog_set_channel
@@ -2847,6 +2848,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|channels_dialog_unset_channel (ChannelWidget * channel_widget)
 name|channels_dialog_unset_channel
@@ -3081,6 +3083,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|channels_dialog_position_channel (ChannelWidget * channel_widget,int new_index)
 name|channels_dialog_position_channel
@@ -3162,6 +3165,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|channels_dialog_add_channel (Channel * channel)
 name|channels_dialog_add_channel
@@ -3286,6 +3290,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|channels_dialog_remove_channel (ChannelWidget * channel_widget)
 name|channels_dialog_remove_channel

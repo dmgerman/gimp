@@ -258,6 +258,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|pencil_motion (paint_core,drawable)
 name|pencil_motion

@@ -12811,7 +12811,7 @@ name|alpha_mult
 operator|=
 name|g_new
 argument_list|(
-name|int
+name|guint
 argument_list|,
 literal|256
 argument_list|)

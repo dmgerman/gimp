@@ -251,6 +251,10 @@ argument_list|)
 expr_stmt|;
 name|read_tips_file
 argument_list|(
+operator|(
+name|char
+operator|*
+operator|)
 name|temp
 argument_list|)
 expr_stmt|;
@@ -481,6 +485,10 @@ argument_list|)
 expr_stmt|;
 name|src
 operator|=
+operator|(
+name|guchar
+operator|*
+operator|)
 name|wilber_data
 expr_stmt|;
 for|for

@@ -723,6 +723,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|paintbrush_motion (PaintCore * paint_core,GimpDrawable * drawable,double fade_out,gboolean incremental)
 name|paintbrush_motion

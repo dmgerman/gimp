@@ -15948,6 +15948,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|layers_dialog_add_mask_query (Layer * layer)
 name|layers_dialog_add_mask_query

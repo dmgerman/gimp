@@ -903,6 +903,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|scale_tool_motion (tool,gdisp_ptr)
 name|scale_tool_motion

@@ -100,7 +100,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be471980103
+DECL|enum|__anon2c5cc87b0103
 block|{
 DECL|enumerator|FgColorFill
 name|FgColorFill
@@ -1350,6 +1350,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|bucket_fill_button_press (tool,bevent,gdisp_ptr)
 name|bucket_fill_button_press
@@ -1483,6 +1484,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|bucket_fill_button_release (tool,bevent,gdisp_ptr)
 name|bucket_fill_button_release

@@ -2275,6 +2275,7 @@ comment|/**************************/
 end_comment
 
 begin_function
+specifier|static
 name|CurvesDialog
 modifier|*
 DECL|function|curves_new_dialog ()

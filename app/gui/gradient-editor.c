@@ -311,7 +311,7 @@ comment|/* Gradient segment type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774dc100103
+DECL|enum|__anon289078b00103
 typedef|typedef
 enum|enum
 block|{
@@ -338,7 +338,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2774dc100203
+DECL|enum|__anon289078b00203
 typedef|typedef
 enum|enum
 block|{
@@ -483,7 +483,7 @@ comment|/* Gradient editor type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2774dc100303
+DECL|enum|__anon289078b00303
 typedef|typedef
 enum|enum
 block|{
@@ -507,7 +507,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2774dc100408
+DECL|struct|__anon289078b00408
 typedef|typedef
 struct|struct
 block|{
@@ -787,7 +787,7 @@ name|int
 name|replicate_times
 decl_stmt|;
 comment|/* Saved colors */
-DECL|struct|__anon2774dc100508
+DECL|struct|__anon289078b00508
 struct|struct
 block|{
 DECL|member|r
@@ -5602,6 +5602,7 @@ comment|/*****/
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|ed_fetch_foreground (double * fg_r,double * fg_g,double * fg_b,double * fg_a)
 name|ed_fetch_foreground
@@ -27115,6 +27116,7 @@ comment|/* gradients_get_list_proc */
 end_comment
 
 begin_function
+specifier|static
 name|Argument
 modifier|*
 DECL|function|gradients_get_list_invoker (Argument * args)
@@ -27497,6 +27499,7 @@ comment|/* gradients_set_active_proc */
 end_comment
 
 begin_function
+specifier|static
 name|Argument
 modifier|*
 DECL|function|gradients_set_active_invoker (Argument * args)
@@ -27772,6 +27775,7 @@ comment|/* gradients_sample_uniform_proc */
 end_comment
 
 begin_function
+specifier|static
 name|Argument
 modifier|*
 DECL|function|gradients_sample_uniform_invoker (Argument * args)
@@ -28104,6 +28108,7 @@ comment|/* gradients_sample_custom_proc */
 end_comment
 
 begin_function
+specifier|static
 name|Argument
 modifier|*
 DECL|function|gradients_sample_custom_invoker (Argument * args)

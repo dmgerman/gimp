@@ -556,6 +556,7 @@ comment|/*  Functions  */
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|crop_button_press (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
 name|crop_button_press
@@ -1057,6 +1058,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|crop_button_release (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
 name|crop_button_release
@@ -1198,6 +1200,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|crop_adjust_guides (GImage * gimage,int x1,int y1,int x2,int y2)
 name|crop_adjust_guides
@@ -1387,6 +1390,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|crop_motion (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
 name|crop_motion
@@ -1936,6 +1940,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|crop_cursor_update (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
 name|crop_cursor_update
@@ -2302,6 +2307,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|crop_arrow_keys_func (Tool * tool,GdkEventKey * kevent,gpointer gdisp_ptr)
 name|crop_arrow_keys_func
@@ -2609,6 +2615,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|crop_control (Tool * tool,int action,gpointer gdisp_ptr)
 name|crop_control

@@ -78,7 +78,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b131600103
+DECL|enum|__anon2c81df660103
 block|{
 DECL|enumerator|Blur
 name|Blur
@@ -1104,6 +1104,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|convolve_motion (PaintCore * paint_core,GimpDrawable * drawable)
 name|convolve_motion

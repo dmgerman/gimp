@@ -2142,6 +2142,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
+specifier|static
 name|HueSaturationDialog
 modifier|*
 DECL|function|hue_saturation_new_dialog ()

@@ -2058,6 +2058,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
+specifier|static
 name|HistogramToolDialog
 modifier|*
 DECL|function|histogram_tool_new_dialog ()

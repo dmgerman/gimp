@@ -828,6 +828,7 @@ comment|/*  Rectangular selection apparatus  */
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|rect_select (GImage * gimage,int x,int y,int w,int h,int op,int feather,double feather_radius)
 name|rect_select

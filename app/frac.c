@@ -1545,6 +1545,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|decompressTile (Tile * destTile,gint num_channels)
 name|decompressTile
@@ -1734,6 +1735,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|decompressChannelTile (guchar * channelTileData,gint _x,gint _y)
 name|decompressChannelTile
@@ -3603,6 +3605,7 @@ end_comment
 
 begin_function
 DECL|function|dominfo_init (gint x_size,gint y_size,gint density)
+specifier|static
 name|void
 name|dominfo_init
 parameter_list|(
@@ -5142,6 +5145,7 @@ end_comment
 
 begin_function
 DECL|function|free_array (void ** array,gint rows)
+specifier|static
 name|void
 name|free_array
 parameter_list|(

@@ -1683,6 +1683,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
+specifier|static
 name|ThresholdDialog
 modifier|*
 DECL|function|threshold_new_dialog ()

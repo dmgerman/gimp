@@ -625,6 +625,11 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
+operator|(
+name|unsigned
+name|char
+operator|*
+operator|)
 name|filled
 argument_list|)
 expr_stmt|;

@@ -1207,6 +1207,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
+specifier|static
 name|PosterizeDialog
 modifier|*
 DECL|function|posterize_new_dialog ()

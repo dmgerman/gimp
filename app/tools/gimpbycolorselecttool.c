@@ -2500,6 +2500,7 @@ comment|/****************************/
 end_comment
 
 begin_function
+specifier|static
 name|ByColorDialog
 modifier|*
 DECL|function|by_color_select_new_dialog ()

@@ -167,7 +167,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1814fa0103
+DECL|enum|__anon2c4e1fa00103
 block|{
 DECL|enumerator|Linear
 name|Linear
@@ -204,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1814fa0203
+DECL|enum|__anon2c4e1fa00203
 block|{
 DECL|enumerator|FG_BG_RGB_MODE
 name|FG_BG_RGB_MODE
@@ -226,7 +226,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1814fa0303
+DECL|enum|__anon2c4e1fa00303
 block|{
 DECL|enumerator|REPEAT_NONE
 name|REPEAT_NONE
@@ -236,8 +236,8 @@ name|REPEAT_SAWTOOTH
 block|,
 DECL|enumerator|REPEAT_TRIANGULAR
 name|REPEAT_TRIANGULAR
-block|, }
 DECL|typedef|RepeatMode
+block|}
 name|RepeatMode
 typedef|;
 end_typedef
@@ -360,7 +360,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2a1814fa0408
+DECL|struct|__anon2c4e1fa00408
 typedef|typedef
 struct|struct
 block|{
@@ -412,7 +412,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a1814fa0508
+DECL|struct|__anon2c4e1fa00508
 typedef|typedef
 struct|struct
 block|{

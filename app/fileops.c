@@ -5260,6 +5260,10 @@ literal|'\0'
 expr_stmt|;
 name|sscanf
 argument_list|(
+operator|(
+name|char
+operator|*
+operator|)
 name|tmp
 argument_list|,
 literal|"%o"

@@ -838,6 +838,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|move_tool_button_release (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
 name|move_tool_button_release
@@ -1223,6 +1224,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|move_tool_motion (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
 name|move_tool_motion
@@ -1348,6 +1350,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|move_tool_cursor_update (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
 name|move_tool_cursor_update

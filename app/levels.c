@@ -2692,6 +2692,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
+specifier|static
 name|LevelsDialog
 modifier|*
 DECL|function|levels_new_dialog ()

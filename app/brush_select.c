@@ -2346,6 +2346,10 @@ argument_list|)
 expr_stmt|;
 name|src
 operator|=
+operator|(
+name|gchar
+operator|*
+operator|)
 name|temp_buf_data
 argument_list|(
 name|brush
@@ -2410,6 +2414,10 @@ operator|->
 name|brush_preview
 argument_list|)
 argument_list|,
+operator|(
+name|guchar
+operator|*
+operator|)
 name|buf
 argument_list|,
 literal|0
