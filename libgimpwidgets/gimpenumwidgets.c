@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpenumwidgets.c  * Copyright (C) 2002-2004  Sven Neumann<sven@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpenumwidgets.c  * Copyright (C) 2002-2004  Sven Neumann<sven@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpenumwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpframe.h"
 end_include
 
@@ -39,14 +45,8 @@ directive|include
 file|"gimphelpui.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimpenumwidgets.h"
-end_include
-
 begin_comment
-comment|/**  * gimp_enum_radio_box_new:  * @enum_type: the #GType of an enum.  * @callback: a callback to connect to the "toggled" signal of each  *            #GtkRadioButton that is created.  * @callback_data: data to pass to the @callback.  * @first_button: returns the first button in the created group.  *  * Creates a new group of #GtkRadioButtons representing the enum  * values.  A group of radiobuttons is a good way to represent enums  * with up to three or four values. Often it is better to use a  * #GimpEnumComboBox instead.  *  * Return value: a new #GtkVBox holding a group of #GtkRadioButtons.  **/
+comment|/**  * gimp_enum_radio_box_new:  * @enum_type: the #GType of an enum.  * @callback: a callback to connect to the "toggled" signal of each  *            #GtkRadioButton that is created.  * @callback_data: data to pass to the @callback.  * @first_button: returns the first button in the created group.  *  * Creates a new group of #GtkRadioButtons representing the enum  * values.  A group of radiobuttons is a good way to represent enums  * with up to three or four values. Often it is better to use a  * #GimpEnumComboBox instead.  *  * Return value: a new #GtkVBox holding a group of #GtkRadioButtons.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -128,7 +128,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_radio_box_new_with_range:  * @minimum:  * @maximum:  * @enum_type: the #GType of an enum.  * @callback: a callback to connect to the "toggled" signal of each  *            #GtkRadioButton that is created.  * @callback_data: data to pass to the @callback.  * @first_button: returns the first button in the created group.  *  * Just like gimp_enum_radio_box_new(), this function creates a group  * of radio buttons, but it allows to limit the range of available  * enum values.  *  * Return value: a new #GtkVBox holding a group of #GtkRadioButtons.  **/
+comment|/**  * gimp_enum_radio_box_new_with_range:  * @minimum:  * @maximum:  * @enum_type: the #GType of an enum.  * @callback: a callback to connect to the "toggled" signal of each  *            #GtkRadioButton that is created.  * @callback_data: data to pass to the @callback.  * @first_button: returns the first button in the created group.  *  * Just like gimp_enum_radio_box_new(), this function creates a group  * of radio buttons, but it allows to limit the range of available  * enum values.  *  * Return value: a new #GtkVBox holding a group of #GtkRadioButtons.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -369,7 +369,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_radio_frame_new:  * @enum_type: the #GType of an enum.  * @label_widget: a widget to put into the frame that will hold the radio box.  * @callback: a callback to connect to the "toggled" signal of each  *            #GtkRadioButton that is created.  * @callback_data: data to pass to the @callback.  * @first_button: returns the first button in the created group.  *  * Calls gimp_enum_radio_box_new() and puts the resulting vbox into a  * #GtkFrame.  *  * Return value: a new #GtkFrame holding a group of #GtkRadioButtons.  **/
+comment|/**  * gimp_enum_radio_frame_new:  * @enum_type: the #GType of an enum.  * @label_widget: a widget to use as label for the frame that will  *                hold the radio box.  * @callback: a callback to connect to the "toggled" signal of each  *            #GtkRadioButton that is created.  * @callback_data: data to pass to the @callback.  * @first_button: returns the first button in the created group.  *  * Calls gimp_enum_radio_box_new() and puts the resulting vbox into a  * #GtkFrame.  *  * Return value: a new #GtkFrame holding a group of #GtkRadioButtons.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -492,7 +492,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_radio_frame_new_with_range:  * @enum_type: the #GType of an enum.  * @minimum:  * @maximum:  * @label_widget: a widget to put into the frame that will hold the radio box.  * @callback: a callback to connect to the "toggled" signal of each  *            #GtkRadioButton that is created.  * @callback_data: data to pass to the @callback.  * @first_button: returns the first button in the created group.  *  * Calls gimp_enum_radio_box_new_with_range() and puts the resulting  * vbox into a #GtkFrame.  *  * Return value: a new #GtkFrame holding a group of #GtkRadioButtons.  **/
+comment|/**  * gimp_enum_radio_frame_new_with_range:  * @enum_type: the #GType of an enum.  * @minimum:  * @maximum:  * @label_widget: a widget to put into the frame that will hold the radio box.  * @callback: a callback to connect to the "toggled" signal of each  *            #GtkRadioButton that is created.  * @callback_data: data to pass to the @callback.  * @first_button: returns the first button in the created group.  *  * Calls gimp_enum_radio_box_new_with_range() and puts the resulting  * vbox into a #GtkFrame.  *  * Return value: a new #GtkFrame holding a group of #GtkRadioButtons.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -625,7 +625,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_stock_box_new:  * @enum_type: the #GType of an enum.  * @stock_prefix: the prefix of the group of stock ids to use.  * @icon_size:  * @callback: a callback to connect to the "toggled" signal of each  *            #GtkRadioButton that is created.  * @callback_data: data to pass to the @callback.  * @first_button: returns the first button in the created group.  *  * Creates a horizontal box of radio buttons with stock icons.  The  * stock_id for each icon is created by appending the enum_value's  * nick to the given @stock_prefix.  *  * Return value: a new #GtkHbox holding a group of #GtkRadioButtons.  **/
+comment|/**  * gimp_enum_stock_box_new:  * @enum_type: the #GType of an enum.  * @stock_prefix: the prefix of the group of stock ids to use.  * @icon_size:  * @callback: a callback to connect to the "toggled" signal of each  *            #GtkRadioButton that is created.  * @callback_data: data to pass to the @callback.  * @first_button: returns the first button in the created group.  *  * Creates a horizontal box of radio buttons with stock icons.  The  * stock_id for each icon is created by appending the enum_value's  * nick to the given @stock_prefix.  *  * Return value: a new #GtkHbox holding a group of #GtkRadioButtons.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -719,7 +719,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_stock_box_new_with_range:  * @enum_type: the #GType of an enum.  * @minimum:  * @maximum:  * @stock_prefix: the prefix of the group of stock ids to use.  * @icon_size:  * @callback: a callback to connect to the "toggled" signal of each  *            #GtkRadioButton that is created.  * @callback_data: data to pass to the @callback.  * @first_button: returns the first button in the created group.  *  * Just like gimp_enum_stock_box_new(), this function creates a group  * of radio buttons, but it allows to limit the range of available  * enum values.  *  * Return value: a new #GtkHbox holding a group of #GtkRadioButtons.  **/
+comment|/**  * gimp_enum_stock_box_new_with_range:  * @enum_type: the #GType of an enum.  * @minimum:  * @maximum:  * @stock_prefix: the prefix of the group of stock ids to use.  * @icon_size:  * @callback: a callback to connect to the "toggled" signal of each  *            #GtkRadioButton that is created.  * @callback_data: data to pass to the @callback.  * @first_button: returns the first button in the created group.  *  * Just like gimp_enum_stock_box_new(), this function creates a group  * of radio buttons, but it allows to limit the range of available  * enum values.  *  * Return value: a new #GtkHbox holding a group of #GtkRadioButtons.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1043,7 +1043,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_stock_box_set_child_padding:  * @stock_box: a stock box widget  * @xpad: horizontal padding  * @ypad: vertical padding  *  * Sets the padding of all buttons in a box created by  * gimp_enum_stock_box_new().  **/
+comment|/**  * gimp_enum_stock_box_set_child_padding:  * @stock_box: a stock box widget  * @xpad: horizontal padding  * @ypad: vertical padding  *  * Sets the padding of all buttons in a box created by  * gimp_enum_stock_box_new().  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
