@@ -3043,24 +3043,6 @@ modifier|*
 name|view
 parameter_list|)
 block|{
-name|g_print
-argument_list|(
-literal|"%p: image changed %s\n"
-argument_list|,
-name|context
-argument_list|,
-name|gimage
-condition|?
-name|GIMP_OBJECT
-argument_list|(
-name|gimage
-argument_list|)
-operator|->
-name|name
-else|:
-literal|"NULL"
-argument_list|)
-expr_stmt|;
 name|gimp_drawable_list_view_set_image
 argument_list|(
 name|view
