@@ -262,17 +262,10 @@ argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
-name|run_mode
-operator|=
-name|param
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
+comment|/* No parameters have been defined: asking for one */
+comment|/* seg-faults, since param[0] == NULL              */
+comment|/* See helper_query                       -garo-   */
+comment|/* run_mode = param[0].data.d_int32; */
 operator|*
 name|nreturn_vals
 operator|=
