@@ -70,7 +70,7 @@ DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
 name|PLUG_IN_VERSION
-value|"1.2.2 - 14 April 2000"
+value|"1.2.3 - 21 April 2000"
 end_define
 
 begin_define
@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a18f3d00108
+DECL|struct|__anon2ad3c6640108
 block|{
 DECL|member|interlaced
 name|gint
@@ -1113,10 +1113,12 @@ modifier|*
 name|fp
 decl_stmt|;
 comment|/* File pointer */
+specifier|volatile
 name|gint32
 name|image
 decl_stmt|,
-comment|/* Image */
+comment|/* Image -- preserved against setjmp() */
+name|gint32
 name|layer
 decl_stmt|;
 comment|/* Layer */
