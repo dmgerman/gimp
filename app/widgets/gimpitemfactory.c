@@ -9256,10 +9256,6 @@ name|factory
 decl_stmt|;
 name|gchar
 modifier|*
-name|fullpath
-decl_stmt|;
-name|gchar
-modifier|*
 name|translation
 decl_stmt|;
 name|gchar
@@ -9378,7 +9374,12 @@ name|domain
 condition|)
 comment|/* use the plugin textdomain */
 block|{
-name|fullpath
+name|g_free
+argument_list|(
+name|menupath
+argument_list|)
+expr_stmt|;
+name|menupath
 operator|=
 name|g_strconcat
 argument_list|(
@@ -9442,7 +9443,7 @@ name|strcmp
 argument_list|(
 name|complete
 argument_list|,
-name|fullpath
+name|menupath
 argument_list|)
 condition|)
 block|{
@@ -9485,6 +9486,11 @@ block|}
 else|else
 break|break;
 block|}
+name|g_free
+argument_list|(
+name|complete
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -9494,7 +9500,7 @@ name|dgettext
 argument_list|(
 name|domain
 argument_list|,
-name|fullpath
+name|menupath
 argument_list|)
 expr_stmt|;
 block|}
@@ -9525,16 +9531,38 @@ argument_list|(
 name|factory
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|complete
+condition|)
+block|{
+name|g_free
+argument_list|(
+name|menupath
+argument_list|)
+expr_stmt|;
+name|menupath
+operator|=
+name|translation
+expr_stmt|;
+block|}
 block|}
 else|else
 block|{
 name|g_warning
 argument_list|(
-literal|"bad translation for menupath: %s (%s)"
+literal|"bad translation for menupath: %s"
 argument_list|,
-name|fullpath
-argument_list|,
-name|translation
+name|menupath
+argument_list|)
+expr_stmt|;
+name|retval
+operator|=
+name|menupath
+operator|+
+name|strlen
+argument_list|(
+name|factory
 argument_list|)
 expr_stmt|;
 if|if
