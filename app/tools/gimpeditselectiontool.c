@@ -91,6 +91,14 @@ name|ARROW_VELOCITY
 value|25
 end_define
 
+begin_define
+DECL|macro|STATUSBAR_SIZE
+define|#
+directive|define
+name|STATUSBAR_SIZE
+value|128
+end_define
+
 begin_typedef
 DECL|typedef|EditSelection
 typedef|typedef
@@ -432,10 +440,6 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-name|gchar
-modifier|*
-name|offset
-decl_stmt|;
 name|int
 name|x
 decl_stmt|,
@@ -682,16 +686,6 @@ argument_list|,
 literal|"edit_select"
 argument_list|)
 expr_stmt|;
-name|offset
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-argument_list|,
-literal|11
-argument_list|)
-expr_stmt|;
-comment|/* strlen("Move: 0, 0") */
 name|gtk_statusbar_push
 argument_list|(
 name|GTK_STATUSBAR
@@ -706,11 +700,6 @@ operator|.
 name|context_id
 argument_list|,
 literal|"Move: 0, 0"
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|offset
 argument_list|)
 expr_stmt|;
 comment|/*  Create and start the selection core  */
@@ -1295,8 +1284,10 @@ modifier|*
 name|gdisp
 decl_stmt|;
 name|gchar
-modifier|*
 name|offset
+index|[
+name|STATUSBAR_SIZE
+index|]
 decl_stmt|;
 if|if
 condition|(
@@ -1351,21 +1342,11 @@ operator|.
 name|context_id
 argument_list|)
 expr_stmt|;
-name|offset
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-argument_list|,
-literal|22
-argument_list|)
-expr_stmt|;
-comment|/* strlen("Move:  x ") + 2*6 */
 name|g_snprintf
 argument_list|(
 name|offset
 argument_list|,
-literal|22
+name|STATUSBAR_SIZE
 argument_list|,
 literal|"Move: %d, %d"
 argument_list|,
@@ -1403,11 +1384,6 @@ name|edit_select
 operator|.
 name|context_id
 argument_list|,
-name|offset
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
 name|offset
 argument_list|)
 expr_stmt|;

@@ -83,6 +83,14 @@ name|FIXED_ENTRY_MAX_CHARS
 value|10
 end_define
 
+begin_define
+DECL|macro|STATUSBAR_SIZE
+define|#
+directive|define
+name|STATUSBAR_SIZE
+value|128
+end_define
+
 begin_decl_stmt
 specifier|extern
 name|SelectionOptions
@@ -1604,8 +1612,10 @@ modifier|*
 name|rect_sel
 decl_stmt|;
 name|gchar
-modifier|*
 name|select_mode
+index|[
+name|STATUSBAR_SIZE
+index|]
 decl_stmt|;
 name|int
 name|x
@@ -1965,6 +1975,7 @@ operator|=
 name|REPLACE
 expr_stmt|;
 block|}
+comment|/* initialize the statusbar display */
 name|rect_sel
 operator|->
 name|context_id
@@ -1981,16 +1992,6 @@ argument_list|,
 literal|"selection"
 argument_list|)
 expr_stmt|;
-name|select_mode
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-argument_list|,
-literal|21
-argument_list|)
-expr_stmt|;
-comment|/* strlen("Selection: INTERSECT") */
 switch|switch
 condition|(
 name|rect_sel
@@ -2005,7 +2006,7 @@ name|g_snprintf
 argument_list|(
 name|select_mode
 argument_list|,
-literal|21
+name|STATUSBAR_SIZE
 argument_list|,
 literal|"Selection: ADD"
 argument_list|)
@@ -2018,7 +2019,7 @@ name|g_snprintf
 argument_list|(
 name|select_mode
 argument_list|,
-literal|21
+name|STATUSBAR_SIZE
 argument_list|,
 literal|"Selection: SUBTRACT"
 argument_list|)
@@ -2031,7 +2032,7 @@ name|g_snprintf
 argument_list|(
 name|select_mode
 argument_list|,
-literal|21
+name|STATUSBAR_SIZE
 argument_list|,
 literal|"Selection: INTERSECT"
 argument_list|)
@@ -2044,7 +2045,7 @@ name|g_snprintf
 argument_list|(
 name|select_mode
 argument_list|,
-literal|21
+name|STATUSBAR_SIZE
 argument_list|,
 literal|"Selection: REPLACE"
 argument_list|)
@@ -2066,11 +2067,6 @@ name|rect_sel
 operator|->
 name|context_id
 argument_list|,
-name|select_mode
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
 name|select_mode
 argument_list|)
 expr_stmt|;
@@ -2470,8 +2466,10 @@ modifier|*
 name|gdisp
 decl_stmt|;
 name|gchar
-modifier|*
 name|size
+index|[
+name|STATUSBAR_SIZE
+index|]
 decl_stmt|;
 name|int
 name|ox
@@ -2995,21 +2993,11 @@ operator|->
 name|context_id
 argument_list|)
 expr_stmt|;
-name|size
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-argument_list|,
-literal|25
-argument_list|)
-expr_stmt|;
-comment|/* strlen("Selection:  x ") + 2*5 */
 name|g_snprintf
 argument_list|(
 name|size
 argument_list|,
-literal|25
+name|STATUSBAR_SIZE
 argument_list|,
 literal|"Selection: %d x %d"
 argument_list|,
@@ -3041,11 +3029,6 @@ name|rect_sel
 operator|->
 name|context_id
 argument_list|,
-name|size
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
 name|size
 argument_list|)
 expr_stmt|;

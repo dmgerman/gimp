@@ -193,6 +193,14 @@ begin_comment
 comment|/* M_PI */
 end_comment
 
+begin_define
+DECL|macro|STATUSBAR_SIZE
+define|#
+directive|define
+name|STATUSBAR_SIZE
+value|128
+end_define
+
 begin_comment
 comment|/*  the Blend structures  */
 end_comment
@@ -200,7 +208,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bceaf510103
+DECL|enum|__anon28d4d25b0103
 block|{
 DECL|enumerator|Linear
 name|Linear
@@ -237,7 +245,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bceaf510203
+DECL|enum|__anon28d4d25b0203
 block|{
 DECL|enumerator|FG_BG_RGB_MODE
 name|FG_BG_RGB_MODE
@@ -259,7 +267,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bceaf510303
+DECL|enum|__anon28d4d25b0303
 block|{
 DECL|enumerator|REPEAT_NONE
 name|REPEAT_NONE
@@ -329,6 +337,11 @@ name|int
 name|endy
 decl_stmt|;
 comment|/*  ending y coord              */
+DECL|member|context_id
+name|guint
+name|context_id
+decl_stmt|;
+comment|/*  for the statusbar           */
 block|}
 struct|;
 end_struct
@@ -398,7 +411,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2bceaf510408
+DECL|struct|__anon28d4d25b0408
 typedef|typedef
 struct|struct
 block|{
@@ -450,7 +463,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bceaf510508
+DECL|struct|__anon28d4d25b0508
 typedef|typedef
 struct|struct
 block|{
@@ -3482,6 +3495,39 @@ name|state
 operator|=
 name|ACTIVE
 expr_stmt|;
+comment|/* initialize the statusbar display */
+name|blend_tool
+operator|->
+name|context_id
+operator|=
+name|gtk_statusbar_get_context_id
+argument_list|(
+name|GTK_STATUSBAR
+argument_list|(
+name|gdisp
+operator|->
+name|statusbar
+argument_list|)
+argument_list|,
+literal|"blend"
+argument_list|)
+expr_stmt|;
+name|gtk_statusbar_push
+argument_list|(
+name|GTK_STATUSBAR
+argument_list|(
+name|gdisp
+operator|->
+name|statusbar
+argument_list|)
+argument_list|,
+name|blend_tool
+operator|->
+name|context_id
+argument_list|,
+literal|"Blend: 0, 0"
+argument_list|)
+expr_stmt|;
 comment|/*  Start drawing the blend tool  */
 name|draw_core_start
 argument_list|(
@@ -3519,6 +3565,10 @@ name|gpointer
 name|gdisp_ptr
 parameter_list|)
 block|{
+name|GDisplay
+modifier|*
+name|gdisp
+decl_stmt|;
 name|GImage
 modifier|*
 name|gimage
@@ -3534,15 +3584,17 @@ decl_stmt|;
 name|int
 name|nreturn_vals
 decl_stmt|;
-name|gimage
+name|gdisp
 operator|=
-operator|(
 operator|(
 name|GDisplay
 operator|*
 operator|)
 name|gdisp_ptr
-operator|)
+expr_stmt|;
+name|gimage
+operator|=
+name|gdisp
 operator|->
 name|gimage
 expr_stmt|;
@@ -3565,6 +3617,20 @@ argument_list|)
 expr_stmt|;
 name|gdk_flush
 argument_list|()
+expr_stmt|;
+name|gtk_statusbar_pop
+argument_list|(
+name|GTK_STATUSBAR
+argument_list|(
+name|gdisp
+operator|->
+name|statusbar
+argument_list|)
+argument_list|,
+name|blend_tool
+operator|->
+name|context_id
+argument_list|)
 expr_stmt|;
 name|draw_core_stop
 argument_list|(
@@ -3821,6 +3887,12 @@ name|BlendTool
 modifier|*
 name|blend_tool
 decl_stmt|;
+name|gchar
+name|vector
+index|[
+name|STATUSBAR_SIZE
+index|]
+decl_stmt|;
 name|gdisp
 operator|=
 operator|(
@@ -3875,6 +3947,67 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|1
+argument_list|)
+expr_stmt|;
+name|gtk_statusbar_pop
+argument_list|(
+name|GTK_STATUSBAR
+argument_list|(
+name|gdisp
+operator|->
+name|statusbar
+argument_list|)
+argument_list|,
+name|blend_tool
+operator|->
+name|context_id
+argument_list|)
+expr_stmt|;
+name|g_snprintf
+argument_list|(
+name|vector
+argument_list|,
+name|STATUSBAR_SIZE
+argument_list|,
+literal|"Blend: %d, %d"
+argument_list|,
+name|abs
+argument_list|(
+name|blend_tool
+operator|->
+name|endx
+operator|-
+name|blend_tool
+operator|->
+name|startx
+argument_list|)
+argument_list|,
+name|abs
+argument_list|(
+name|blend_tool
+operator|->
+name|endy
+operator|-
+name|blend_tool
+operator|->
+name|starty
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_statusbar_push
+argument_list|(
+name|GTK_STATUSBAR
+argument_list|(
+name|gdisp
+operator|->
+name|statusbar
+argument_list|)
+argument_list|,
+name|blend_tool
+operator|->
+name|context_id
+argument_list|,
+name|vector
 argument_list|)
 expr_stmt|;
 comment|/*  redraw the current tool  */
