@@ -146,7 +146,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28b3a3650108
+DECL|struct|__anon296461160108
 typedef|typedef
 struct|struct
 block|{
@@ -251,7 +251,7 @@ value|100
 end_define
 
 begin_struct
-DECL|struct|__anon28b3a3650208
+DECL|struct|__anon296461160208
 struct|struct
 block|{
 DECL|member|ninputs
@@ -3806,7 +3806,10 @@ index|[
 name|n
 index|]
 operator|=
-operator|(
+call|(
+name|gint32
+call|)
+argument_list|(
 operator|(
 name|GckListBoxItem
 operator|*
@@ -3814,7 +3817,7 @@ operator|)
 name|sel
 operator|->
 name|data
-operator|)
+argument_list|)
 operator|->
 name|user_data
 expr_stmt|;
