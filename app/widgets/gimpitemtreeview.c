@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291f775c0103
+DECL|enum|__anon2904b74d0103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -1227,35 +1227,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_item_tree_view_context_changed (GimpContext * context,GimpImage * gimage,GimpItemTreeView * view)
-name|gimp_item_tree_view_context_changed
-parameter_list|(
-name|GimpContext
-modifier|*
-name|context
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
-name|GimpItemTreeView
-modifier|*
-name|view
-parameter_list|)
-block|{
-name|gimp_item_tree_view_set_image
-argument_list|(
-name|view
-argument_list|,
-name|gimage
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
 DECL|function|gimp_item_tree_view_set_context (GimpDocked * docked,GimpContext * context)
 name|gimp_item_tree_view_set_context
 parameter_list|(
@@ -1296,7 +1267,7 @@ name|view
 operator|->
 name|context
 argument_list|,
-name|gimp_item_tree_view_context_changed
+name|gimp_item_tree_view_set_image
 argument_list|,
 name|view
 argument_list|)
@@ -1313,7 +1284,7 @@ condition|(
 name|context
 condition|)
 block|{
-name|g_signal_connect
+name|g_signal_connect_swapped
 argument_list|(
 name|context
 argument_list|,
@@ -1321,7 +1292,7 @@ literal|"image_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_item_tree_view_context_changed
+name|gimp_item_tree_view_set_image
 argument_list|)
 argument_list|,
 name|view
