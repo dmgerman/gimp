@@ -190,6 +190,10 @@ DECL|member|press_state
 name|guint
 name|press_state
 decl_stmt|;
+DECL|member|idle_id
+name|guint
+name|idle_id
+decl_stmt|;
 DECL|member|needs_render
 name|gboolean
 name|needs_render
