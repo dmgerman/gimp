@@ -468,7 +468,7 @@ name|new
 operator|->
 name|data
 expr_stmt|;
-comment|/*  If we cannot create a new temp buf--either because our parameters are        *  degenerate or something else failed, simply return an unsuccessful push.        */
+comment|/*  If we cannot create a new temp buf -- either because our        *  parameters are degenerate or something else failed, simply        *  return an unsuccessful push.        */
 name|tiles
 operator|=
 name|tile_manager_new
@@ -1122,7 +1122,7 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
-comment|/* TRUE */
+comment|/*TRUE*/
 argument_list|)
 expr_stmt|;
 name|dest_tile
@@ -6003,16 +6003,16 @@ name|lmu
 operator|->
 name|layer
 operator|=
-name|g_object_ref
-argument_list|(
-name|mask
-argument_list|)
+name|layer
 expr_stmt|;
 name|lmu
 operator|->
 name|mask
 operator|=
+name|g_object_ref
+argument_list|(
 name|mask
+argument_list|)
 expr_stmt|;
 return|return
 name|TRUE
