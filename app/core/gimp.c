@@ -237,7 +237,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon277db23a0103
+DECL|enum|__anon2a1ece1d0103
 block|{
 DECL|enumerator|EXIT
 name|EXIT
@@ -2316,6 +2316,9 @@ operator|&
 name|GIMP_PARAM_RESTART
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|GIMP_CONFIG_DEBUG
 name|g_print
 argument_list|(
 literal|"NOT Applying edit_config change of '%s' to global_config "
@@ -2326,9 +2329,14 @@ operator|->
 name|name
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 block|}
 else|else
 block|{
+ifdef|#
+directive|ifdef
+name|GIMP_CONFIG_DEBUG
 name|g_print
 argument_list|(
 literal|"Applying edit_config change of '%s' to global_config\n"
@@ -2338,6 +2346,8 @@ operator|->
 name|name
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|g_signal_handlers_block_by_func
 argument_list|(
 name|global_config
