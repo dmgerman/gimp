@@ -490,11 +490,13 @@ decl_stmt|;
 name|va_list
 name|args
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|format
 operator|!=
 name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|va_start
