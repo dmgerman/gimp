@@ -697,14 +697,14 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Crop"
+literal|"Crop& Resize"
 argument_list|)
 block|,
 literal|8
 block|,
 name|N_
 argument_list|(
-literal|"/Tools/Crop"
+literal|"/Tools/Crop& Resize"
 argument_list|)
 block|,
 literal|"<shift>C"
@@ -718,7 +718,7 @@ name|crop_bits
 block|,
 name|N_
 argument_list|(
-literal|"Crop the image"
+literal|"Crop or resize the image"
 argument_list|)
 block|,
 literal|"ContextHelp/crop"

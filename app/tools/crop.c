@@ -638,7 +638,7 @@ comment|/* Crop area-select functions */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bd0e1560103
+DECL|enum|__anon27d22ba10103
 typedef|typedef
 enum|enum
 block|{
@@ -941,7 +941,7 @@ name|options
 argument_list|,
 name|_
 argument_list|(
-literal|"Crop Options"
+literal|"Crop& Resize Options"
 argument_list|)
 argument_list|,
 name|crop_options_reset
@@ -5798,7 +5798,7 @@ name|info_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Crop Information"
+literal|"Crop& Resize Information"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7414,7 +7414,7 @@ operator|-
 literal|1
 init|;
 name|y
-operator|>
+operator|>=
 name|y1
 operator|&&
 operator|!
@@ -7572,7 +7572,7 @@ operator|-
 literal|1
 init|;
 name|x
-operator|>
+operator|>=
 name|x1
 operator|&&
 operator|!
