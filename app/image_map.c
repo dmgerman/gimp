@@ -425,16 +425,11 @@ name|_image_map
 decl_stmt|;
 name|_image_map
 operator|=
-operator|(
-name|_ImageMap
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|_ImageMap
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|_image_map
@@ -494,7 +489,7 @@ name|_ImageMap
 modifier|*
 name|_image_map
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -1032,7 +1027,7 @@ name|_ImageMap
 modifier|*
 name|_image_map
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -1416,16 +1411,16 @@ begin_function
 name|unsigned
 name|char
 modifier|*
-DECL|function|image_map_get_color_at (ImageMap image_map,int x,int y)
+DECL|function|image_map_get_color_at (ImageMap image_map,gint x,gint y)
 name|image_map_get_color_at
 parameter_list|(
 name|ImageMap
 name|image_map
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|)
 block|{

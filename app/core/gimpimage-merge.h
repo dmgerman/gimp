@@ -211,7 +211,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b98518c0103
+DECL|enum|__anon2ba5608f0103
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -230,7 +230,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b98518c0203
+DECL|enum|__anon2ba5608f0203
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -249,7 +249,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b98518c0303
+DECL|enum|__anon2ba5608f0303
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -277,7 +277,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b98518c0403
+DECL|enum|__anon2ba5608f0403
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -804,7 +804,7 @@ name|gimp_image_parasite_list
 parameter_list|(
 name|GimpImage
 modifier|*
-name|image
+name|gimage
 parameter_list|,
 name|gint
 modifier|*
@@ -851,7 +851,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|gimp_image_set_tattoo_state
 parameter_list|(
 name|GimpImage

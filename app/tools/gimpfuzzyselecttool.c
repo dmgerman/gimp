@@ -1768,6 +1768,11 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|drawable
+condition|)
+comment|/* NULL if sample_merged is active */
 name|drawable_offsets
 argument_list|(
 name|drawable
@@ -1778,6 +1783,13 @@ argument_list|,
 operator|&
 name|off_y
 argument_list|)
+expr_stmt|;
+else|else
+name|off_x
+operator|=
+name|off_y
+operator|=
+literal|0
 expr_stmt|;
 if|if
 condition|(
