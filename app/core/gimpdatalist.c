@@ -874,15 +874,11 @@ condition|)
 continue|continue;
 if|if
 condition|(
-name|strcmp
+name|gimp_data_list_data_compare_func
 argument_list|(
 name|object
-operator|->
-name|name
 argument_list|,
 name|object2
-operator|->
-name|name
 argument_list|)
 operator|>
 literal|0
@@ -899,7 +895,6 @@ name|new_index
 operator|!=
 name|old_index
 condition|)
-block|{
 name|gimp_container_reorder
 argument_list|(
 name|GIMP_CONTAINER
@@ -912,7 +907,6 @@ argument_list|,
 name|new_index
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 end_function
