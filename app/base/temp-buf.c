@@ -1296,8 +1296,10 @@ name|buf
 operator|->
 name|data
 operator|=
-name|g_realloc
+name|g_renew
 argument_list|(
+name|guchar
+argument_list|,
 name|buf
 operator|->
 name|data

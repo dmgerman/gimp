@@ -151,8 +151,10 @@ name|ps
 operator|->
 name|buff
 operator|=
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|ps
 operator|->
 name|buff_size
