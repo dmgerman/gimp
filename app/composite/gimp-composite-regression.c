@@ -33,6 +33,37 @@ directive|include
 file|<sys/time.h>
 end_include
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|timersub
+end_ifndef
+
+begin_comment
+comment|/*  * Linux<sys/time.h> has a handy macro for finding the difference between  * two timers.  This is lifted directly from<sys/time.h> on a GLIBC 2.2.x  * system.  */
+end_comment
+
+begin_define
+DECL|macro|timersub (a,b,result)
+define|#
+directive|define
+name|timersub
+parameter_list|(
+name|a
+parameter_list|,
+name|b
+parameter_list|,
+name|result
+parameter_list|)
+define|\
+value|do {                                               \     (result)->tv_sec = (a)->tv_sec - (b)->tv_sec;    \     (result)->tv_usec = (a)->tv_usec - (b)->tv_usec; \     if ((result)->tv_usec< 0)                       \       {                                              \         --(result)->tv_sec;                          \         (result)->tv_usec += 1000000;                \       }                                              \   } while (0)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include
@@ -70,7 +101,7 @@ file|"gimp-composite-generic.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_composite_regression_print_vector:  * @vector:   * @format:   * @n_pixels:   *   *   **/
+comment|/**  * gimp_composite_regression_print_vector:  * @vector:  * @format:  * @n_pixels:  *  *  **/
 end_comment
 
 begin_function
@@ -167,7 +198,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_regression_print_vector_v8:  * @v:   * @n_pixels:   *   *   **/
+comment|/**  * gimp_composite_regression_print_vector_v8:  * @v:  * @n_pixels:  *  *  **/
 end_comment
 
 begin_function
@@ -219,7 +250,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_regression_print_vector_va8:  * @v:   * @n_pixels:   *   *   **/
+comment|/**  * gimp_composite_regression_print_vector_va8:  * @v:  * @n_pixels:  *  *  **/
 end_comment
 
 begin_function
@@ -278,7 +309,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_regression_print_vector_rgb8:  * @rgb8:   * @n_pixels:   *   *   **/
+comment|/**  * gimp_composite_regression_print_vector_rgb8:  * @rgb8:  * @n_pixels:  *  *  **/
 end_comment
 
 begin_function
@@ -344,7 +375,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_regression_print_vector_rgba8:  * @v:   * @n_pixels:   *   *   **/
+comment|/**  * gimp_composite_regression_print_vector_rgba8:  * @v:  * @n_pixels:  *  *  **/
 end_comment
 
 begin_function
@@ -417,7 +448,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_regression_print_rgba8:  * @rgba8:   *   *   **/
+comment|/**  * gimp_composite_regression_print_rgba8:  * @rgba8:  *  *  **/
 end_comment
 
 begin_function
@@ -460,7 +491,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_regression_print_va8:  * @va8:   *   *   **/
+comment|/**  * gimp_composite_regression_print_va8:  * @va8:  *  *  **/
 end_comment
 
 begin_function
@@ -495,7 +526,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_regression_compare_contexts:  * @operation:   * @ctx1:   * @ctx2:   *   *   *   * Return value:   **/
+comment|/**  * gimp_composite_regression_compare_contexts:  * @operation:  * @ctx1:  * @ctx2:  *  *  *  * Return value:  **/
 end_comment
 
 begin_function
@@ -1072,7 +1103,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_regression_comp_rgba8:  * @str:   * @rgba8A:   * @rgba8B:   * @expected:   * @actual:   * @length:   *   *   *   * Return value:   **/
+comment|/**  * gimp_composite_regression_comp_rgba8:  * @str:  * @rgba8A:  * @rgba8B:  * @expected:  * @actual:  * @length:  *  *  *  * Return value:  **/
 end_comment
 
 begin_function
@@ -1326,7 +1357,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_regression_comp_va8:  * @str:   * @va8A:   * @va8B:   * @expected:   * @actual:   * @length:   *   *   *   * Return value:   **/
+comment|/**  * gimp_composite_regression_comp_va8:  * @str:  * @va8A:  * @va8B:  * @expected:  * @actual:  * @length:  *  *  *  * Return value:  **/
 end_comment
 
 begin_function
@@ -1541,7 +1572,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_regression_dump_rgba8:  * @str:   * @rgba:   * @n_pixels:   *   *   **/
+comment|/**  * gimp_composite_regression_dump_rgba8:  * @str:  * @rgba:  * @n_pixels:  *  *  **/
 end_comment
 
 begin_function
@@ -1637,7 +1668,7 @@ value|printf("%-17s %17.7f %17.7f %17.7f%c\n", name, tv_to_secs(t1), tv_to_secs(
 end_define
 
 begin_comment
-comment|/**  * gimp_composite_regression_timer_report:  * @name:   * @t1:   * @t2:   *   *   **/
+comment|/**  * gimp_composite_regression_timer_report:  * @name:  * @t1:  * @t2:  *  *  **/
 end_comment
 
 begin_function
@@ -1685,7 +1716,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_regression_time_function:  * @iterations:   * @func:   *   *   *   * Return value:   **/
+comment|/**  * gimp_composite_regression_time_function:  * @iterations:  * @func:  *  *  *  * Return value:  **/
 end_comment
 
 begin_function
@@ -1786,7 +1817,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_regression_random_rgba8:  * @n_pixels:   *   *   *   * Return value:   **/
+comment|/**  * gimp_composite_regression_random_rgba8:  * @n_pixels:  *  *  *  * Return value:  **/
 end_comment
 
 begin_function
@@ -1900,7 +1931,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_regression_fixed_rgba8:  * @n_pixels:   *   *   *   * Return value:   **/
+comment|/**  * gimp_composite_regression_fixed_rgba8:  * @n_pixels:  *  *  *  * Return value:  **/
 end_comment
 
 begin_function
@@ -2011,7 +2042,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_context_init:  * @ctx:   * @op:   * @a_format:   * @b_format:   * @d_format:   * @m_format:   * @n_pixels:   * @A:   * @B:   * @M:   * @D:   *   *   *   * Return value:   **/
+comment|/**  * gimp_composite_context_init:  * @ctx:  * @op:  * @a_format:  * @b_format:  * @d_format:  * @m_format:  * @n_pixels:  * @A:  * @B:  * @M:  * @D:  *  *  *  * Return value:  **/
 end_comment
 
 begin_function
