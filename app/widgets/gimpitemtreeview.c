@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c67b3510103
+DECL|enum|__anon28fb782d0103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -994,11 +994,14 @@ operator|->
 name|item_factory
 condition|)
 block|{
-name|g_free
+name|g_object_unref
+argument_list|(
+name|G_OBJECT
 argument_list|(
 name|view
 operator|->
 name|item_factory
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|view
@@ -1033,7 +1036,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_drawable_list_view_new (gint preview_size,GimpImage * gimage,GType drawable_type,const gchar * signal_name,GimpGetContainerFunc get_container_func,GimpGetDrawableFunc get_drawable_func,GimpSetDrawableFunc set_drawable_func,GimpReorderDrawableFunc reorder_drawable_func,GimpAddDrawableFunc add_drawable_func,GimpRemoveDrawableFunc remove_drawable_func,GimpCopyDrawableFunc copy_drawable_func,GimpConvertDrawableFunc convert_drawable_func,GimpNewDrawableFunc new_drawable_func,GimpEditDrawableFunc edit_drawable_func,const gchar * item_factory)
+DECL|function|gimp_drawable_list_view_new (gint preview_size,GimpImage * gimage,GType drawable_type,const gchar * signal_name,GimpGetContainerFunc get_container_func,GimpGetDrawableFunc get_drawable_func,GimpSetDrawableFunc set_drawable_func,GimpReorderDrawableFunc reorder_drawable_func,GimpAddDrawableFunc add_drawable_func,GimpRemoveDrawableFunc remove_drawable_func,GimpCopyDrawableFunc copy_drawable_func,GimpConvertDrawableFunc convert_drawable_func,GimpNewDrawableFunc new_drawable_func,GimpEditDrawableFunc edit_drawable_func,GimpItemFactory * item_factory)
 name|gimp_drawable_list_view_new
 parameter_list|(
 name|gint
@@ -1081,8 +1084,7 @@ parameter_list|,
 name|GimpEditDrawableFunc
 name|edit_drawable_func
 parameter_list|,
-specifier|const
-name|gchar
+name|GimpItemFactory
 modifier|*
 name|item_factory
 parameter_list|)
@@ -1214,9 +1216,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|GIMP_IS_ITEM_FACTORY
+argument_list|(
 name|item_factory
-operator|!=
-name|NULL
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -1366,9 +1369,16 @@ name|list_view
 operator|->
 name|item_factory
 operator|=
-name|g_strdup
-argument_list|(
 name|item_factory
+expr_stmt|;
+name|g_object_ref
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|list_view
+operator|->
+name|item_factory
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  connect "drop to new" manually as it makes a difference whether    *  it was clicked or dropped    */
@@ -2077,9 +2087,9 @@ name|gpointer
 name|insert_data
 parameter_list|)
 block|{
-name|GtkItemFactory
+name|GimpDrawableListView
 modifier|*
-name|factory
+name|drawable_view
 decl_stmt|;
 if|if
 condition|(
@@ -2104,26 +2114,25 @@ argument_list|,
 name|insert_data
 argument_list|)
 expr_stmt|;
-name|factory
+name|drawable_view
 operator|=
-name|gtk_item_factory_from_path
-argument_list|(
 name|GIMP_DRAWABLE_LIST_VIEW
 argument_list|(
 name|view
 argument_list|)
-operator|->
-name|item_factory
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|factory
+name|drawable_view
+operator|->
+name|item_factory
 condition|)
 block|{
 name|gimp_item_factory_popup_with_data
 argument_list|(
-name|factory
+name|drawable_view
+operator|->
+name|item_factory
 argument_list|,
 name|gimp_drawable_gimage
 argument_list|(

@@ -7924,7 +7924,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|toolbox_factory
 specifier|static
-name|GtkItemFactory
+name|GimpItemFactory
 modifier|*
 name|toolbox_factory
 init|=
@@ -7935,7 +7935,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|image_factory
 specifier|static
-name|GtkItemFactory
+name|GimpItemFactory
 modifier|*
 name|image_factory
 init|=
@@ -7946,7 +7946,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|load_factory
 specifier|static
-name|GtkItemFactory
+name|GimpItemFactory
 modifier|*
 name|load_factory
 init|=
@@ -7957,7 +7957,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|save_factory
 specifier|static
-name|GtkItemFactory
+name|GimpItemFactory
 modifier|*
 name|save_factory
 init|=
@@ -7968,7 +7968,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|layers_factory
 specifier|static
-name|GtkItemFactory
+name|GimpItemFactory
 modifier|*
 name|layers_factory
 init|=
@@ -7979,7 +7979,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|channels_factory
 specifier|static
-name|GtkItemFactory
+name|GimpItemFactory
 modifier|*
 name|channels_factory
 init|=
@@ -7990,7 +7990,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|paths_factory
 specifier|static
-name|GtkItemFactory
+name|GimpItemFactory
 modifier|*
 name|paths_factory
 init|=
@@ -8001,7 +8001,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|dialogs_factory
 specifier|static
-name|GtkItemFactory
+name|GimpItemFactory
 modifier|*
 name|dialogs_factory
 init|=
@@ -8012,7 +8012,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|brushes_factory
 specifier|static
-name|GtkItemFactory
+name|GimpItemFactory
 modifier|*
 name|brushes_factory
 init|=
@@ -8023,7 +8023,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|patterns_factory
 specifier|static
-name|GtkItemFactory
+name|GimpItemFactory
 modifier|*
 name|patterns_factory
 init|=
@@ -8034,7 +8034,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradient_editor_factory
 specifier|static
-name|GtkItemFactory
+name|GimpItemFactory
 modifier|*
 name|gradient_editor_factory
 init|=
@@ -8045,7 +8045,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gradients_factory
 specifier|static
-name|GtkItemFactory
+name|GimpItemFactory
 modifier|*
 name|gradients_factory
 init|=
@@ -8056,7 +8056,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|palettes_factory
 specifier|static
-name|GtkItemFactory
+name|GimpItemFactory
 modifier|*
 name|palettes_factory
 init|=
@@ -8067,7 +8067,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|buffers_factory
 specifier|static
-name|GtkItemFactory
+name|GimpItemFactory
 modifier|*
 name|buffers_factory
 init|=
@@ -8078,7 +8078,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|documents_factory
 specifier|static
-name|GtkItemFactory
+name|GimpItemFactory
 modifier|*
 name|documents_factory
 init|=
@@ -8089,7 +8089,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|qmask_factory
 specifier|static
-name|GtkItemFactory
+name|GimpItemFactory
 modifier|*
 name|qmask_factory
 init|=
@@ -8369,7 +8369,10 @@ control|)
 block|{
 name|gimp_item_factory_set_visible
 argument_list|(
+name|GTK_ITEM_FACTORY
+argument_list|(
 name|toolbox_factory
+argument_list|)
 argument_list|,
 name|last_opened_entries
 index|[
@@ -8386,7 +8389,10 @@ expr_stmt|;
 block|}
 name|gimp_item_factory_set_sensitive
 argument_list|(
+name|GTK_ITEM_FACTORY
+argument_list|(
 name|toolbox_factory
+argument_list|)
 argument_list|,
 literal|"/File/Open Recent/(None)"
 argument_list|,
@@ -8848,7 +8854,10 @@ name|menu_item
 operator|=
 name|gtk_item_factory_get_widget
 argument_list|(
+name|GTK_ITEM_FACTORY
+argument_list|(
 name|image_factory
+argument_list|)
 argument_list|,
 name|tool_info
 operator|->
@@ -8958,7 +8967,10 @@ name|menu_item
 operator|=
 name|gtk_item_factory_get_widget
 argument_list|(
+name|GTK_ITEM_FACTORY
+argument_list|(
 name|image_factory
+argument_list|)
 argument_list|,
 name|tool_info
 operator|->
@@ -9574,7 +9586,7 @@ block|,
 literal|"<Toolbox>/Xtns"
 block|}
 decl_stmt|;
-name|GtkItemFactory
+name|GimpItemFactory
 modifier|*
 name|item_factory
 decl_stmt|;
@@ -9616,7 +9628,10 @@ name|menu_item
 operator|=
 name|gtk_item_factory_get_widget
 argument_list|(
+name|GTK_ITEM_FACTORY
+argument_list|(
 name|toolbox_factory
+argument_list|)
 argument_list|,
 literal|"/Xtns/Module Browser..."
 argument_list|)
@@ -9742,7 +9757,10 @@ name|menu_item
 operator|=
 name|gtk_item_factory_get_widget
 argument_list|(
+name|GTK_ITEM_FACTORY
+argument_list|(
 name|image_factory
+argument_list|)
 argument_list|,
 literal|"/Filters/Filter all Layers..."
 argument_list|)
@@ -9899,7 +9917,10 @@ name|menu_item
 operator|=
 name|gtk_item_factory_get_widget
 argument_list|(
+name|GTK_ITEM_FACTORY
+argument_list|(
 name|image_factory
+argument_list|)
 argument_list|,
 name|path
 argument_list|)
@@ -9976,7 +9997,10 @@ name|menu_item
 operator|=
 name|gtk_item_factory_get_widget
 argument_list|(
+name|GTK_ITEM_FACTORY
+argument_list|(
 name|image_factory
+argument_list|)
 argument_list|,
 name|path
 argument_list|)
@@ -10050,7 +10074,10 @@ name|menu_item
 operator|=
 name|gtk_item_factory_get_widget
 argument_list|(
+name|GTK_ITEM_FACTORY
+argument_list|(
 name|image_factory
+argument_list|)
 argument_list|,
 name|path
 argument_list|)
@@ -10104,7 +10131,7 @@ control|)
 block|{
 name|item_factory
 operator|=
-name|gtk_item_factory_from_path
+name|gimp_item_factory_from_path
 argument_list|(
 name|reorder_submenus
 index|[
@@ -10116,7 +10143,10 @@ name|menu
 operator|=
 name|gtk_item_factory_get_widget
 argument_list|(
+name|GTK_ITEM_FACTORY
+argument_list|(
 name|item_factory
+argument_list|)
 argument_list|,
 name|reorder_submenus
 index|[
@@ -10163,7 +10193,7 @@ control|)
 block|{
 name|item_factory
 operator|=
-name|gtk_item_factory_from_path
+name|gimp_item_factory_from_path
 argument_list|(
 name|reorder_subsubmenus
 index|[
@@ -10175,7 +10205,10 @@ name|menu
 operator|=
 name|gtk_item_factory_get_widget
 argument_list|(
+name|GTK_ITEM_FACTORY
+argument_list|(
 name|item_factory
+argument_list|)
 argument_list|,
 name|reorder_subsubmenus
 index|[
@@ -10251,7 +10284,10 @@ name|menu_item
 operator|=
 name|gtk_item_factory_get_widget
 argument_list|(
+name|GTK_ITEM_FACTORY
+argument_list|(
 name|image_factory
+argument_list|)
 argument_list|,
 literal|"/Filters/---INSERT"
 argument_list|)
@@ -10296,7 +10332,10 @@ name|menu_item
 operator|=
 name|gtk_item_factory_get_widget
 argument_list|(
+name|GTK_ITEM_FACTORY
+argument_list|(
 name|image_factory
+argument_list|)
 argument_list|,
 literal|"/Filters/Toys"
 argument_list|)
@@ -10717,7 +10756,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_item_factory_set_visible
 argument_list|(
+name|GTK_ITEM_FACTORY
+argument_list|(
 name|toolbox_factory
+argument_list|)
 argument_list|,
 literal|"/File/Open Recent/(None)"
 argument_list|,
@@ -10761,7 +10803,10 @@ name|widget
 operator|=
 name|gtk_item_factory_get_widget
 argument_list|(
+name|GTK_ITEM_FACTORY
+argument_list|(
 name|toolbox_factory
+argument_list|)
 argument_list|,
 name|path_str
 argument_list|)
@@ -11171,7 +11216,7 @@ expr_stmt|;
 block|}
 name|item_factory
 operator|=
-name|gtk_item_factory_from_path
+name|gimp_item_factory_from_path
 argument_list|(
 name|path
 argument_list|)

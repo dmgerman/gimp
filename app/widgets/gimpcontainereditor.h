@@ -104,7 +104,7 @@ name|GtkVBox
 name|parent_instance
 decl_stmt|;
 DECL|member|item_factory
-name|gchar
+name|GimpItemFactory
 modifier|*
 name|item_factory
 decl_stmt|;
@@ -223,8 +223,7 @@ parameter_list|,
 name|gint
 name|min_items_y
 parameter_list|,
-specifier|const
-name|gchar
+name|GimpItemFactory
 modifier|*
 name|item_factory
 parameter_list|)

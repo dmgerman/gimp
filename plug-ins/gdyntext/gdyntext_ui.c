@@ -208,7 +208,7 @@ file|"graphics/layer_align_9.xpm"
 end_include
 
 begin_typedef
-DECL|struct|__anon2909a2b30108
+DECL|struct|__anon2a559aff0108
 typedef|typedef
 struct|struct
 block|{
@@ -929,16 +929,12 @@ literal|"GDynText: About ..."
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_window_set_policy
+name|gtk_window_set_resizable
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
 name|window
 argument_list|)
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1614,7 +1610,7 @@ argument_list|(
 name|title
 argument_list|)
 expr_stmt|;
-name|gtk_window_set_policy
+name|gtk_window_set_resizable
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -1624,10 +1620,6 @@ name|window
 argument_list|)
 argument_list|,
 name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_usize

@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpitemfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"dialogs.h"
 end_include
 
@@ -731,7 +737,7 @@ argument_list|(
 name|gimp
 argument_list|)
 argument_list|,
-name|gtk_item_factory_from_path
+name|gimp_item_factory_from_path
 argument_list|(
 literal|"<Dialogs>"
 argument_list|)

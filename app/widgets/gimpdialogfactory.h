@@ -253,7 +253,7 @@ modifier|*
 name|context
 decl_stmt|;
 DECL|member|item_factory
-name|GtkItemFactory
+name|GimpItemFactory
 modifier|*
 name|item_factory
 decl_stmt|;
@@ -323,7 +323,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GtkItemFactory
+name|GimpItemFactory
 modifier|*
 name|item_factory
 parameter_list|,

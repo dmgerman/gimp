@@ -452,7 +452,7 @@ name|GimpContext
 modifier|*
 name|context
 decl_stmt|;
-name|GtkItemFactory
+name|GimpItemFactory
 modifier|*
 name|toolbox_factory
 decl_stmt|;
@@ -521,7 +521,7 @@ literal|"The GIMP"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_window_set_policy
+name|gtk_window_set_resizable
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -529,10 +529,6 @@ name|window
 argument_list|)
 argument_list|,
 name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -681,7 +677,7 @@ argument_list|)
 expr_stmt|;
 name|toolbox_factory
 operator|=
-name|gtk_item_factory_from_path
+name|gimp_item_factory_from_path
 argument_list|(
 literal|"<Toolbox>"
 argument_list|)
@@ -693,7 +689,10 @@ argument_list|(
 name|main_vbox
 argument_list|)
 argument_list|,
+name|GTK_ITEM_FACTORY
+argument_list|(
 name|toolbox_factory
+argument_list|)
 operator|->
 name|widget
 argument_list|,
@@ -706,7 +705,10 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|GTK_ITEM_FACTORY
+argument_list|(
 name|toolbox_factory
+argument_list|)
 operator|->
 name|widget
 argument_list|)
@@ -718,7 +720,10 @@ argument_list|(
 name|window
 argument_list|)
 argument_list|,
+name|GTK_ITEM_FACTORY
+argument_list|(
 name|toolbox_factory
+argument_list|)
 operator|->
 name|accel_group
 argument_list|)

@@ -768,7 +768,7 @@ argument_list|,
 literal|4
 argument_list|)
 expr_stmt|;
-name|gtk_window_set_policy
+name|gtk_window_set_resizable
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -776,10 +776,15 @@ name|cmw
 argument_list|)
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_size_request
+argument_list|(
+name|cmw
 argument_list|,
-name|TRUE
+literal|0
 argument_list|,
-name|FALSE
+literal|0
 argument_list|)
 expr_stmt|;
 return|return

@@ -132,6 +132,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpitemfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdockable.h"
 end_include
 
@@ -391,7 +397,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8a31b00108
+DECL|struct|__anon27c976c90108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -1519,7 +1525,10 @@ literal|5
 argument_list|,
 literal|3
 argument_list|,
+name|gimp_item_factory_from_path
+argument_list|(
 literal|"<Brushes>"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1583,7 +1592,10 @@ literal|5
 argument_list|,
 literal|3
 argument_list|,
+name|gimp_item_factory_from_path
+argument_list|(
 literal|"<Patterns>"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1647,7 +1659,10 @@ literal|5
 argument_list|,
 literal|3
 argument_list|,
+name|gimp_item_factory_from_path
+argument_list|(
 literal|"<Gradients>"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1711,7 +1726,10 @@ literal|5
 argument_list|,
 literal|3
 argument_list|,
+name|gimp_item_factory_from_path
+argument_list|(
 literal|"<Palettes>"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1833,7 +1851,10 @@ literal|5
 argument_list|,
 literal|3
 argument_list|,
+name|gimp_item_factory_from_path
+argument_list|(
 literal|"<Buffers>"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1963,7 +1984,10 @@ literal|5
 argument_list|,
 literal|3
 argument_list|,
+name|gimp_item_factory_from_path
+argument_list|(
 literal|"<Brushes>"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2027,7 +2051,10 @@ literal|5
 argument_list|,
 literal|3
 argument_list|,
+name|gimp_item_factory_from_path
+argument_list|(
 literal|"<Patterns>"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2091,7 +2118,10 @@ literal|5
 argument_list|,
 literal|3
 argument_list|,
+name|gimp_item_factory_from_path
+argument_list|(
 literal|"<Gradients>"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2155,7 +2185,10 @@ literal|5
 argument_list|,
 literal|3
 argument_list|,
+name|gimp_item_factory_from_path
+argument_list|(
 literal|"<Gradients>"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2277,7 +2310,10 @@ literal|5
 argument_list|,
 literal|3
 argument_list|,
+name|gimp_item_factory_from_path
+argument_list|(
 literal|"<Buffers>"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2400,7 +2436,10 @@ name|GimpEditDrawableFunc
 operator|)
 name|layers_edit_layer_query
 argument_list|,
+name|gimp_item_factory_from_path
+argument_list|(
 literal|"<Layers>"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|dockable
@@ -2533,7 +2572,10 @@ name|GimpEditDrawableFunc
 operator|)
 name|channels_edit_channel_query
 argument_list|,
+name|gimp_item_factory_from_path
+argument_list|(
 literal|"<Channels>"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|dockable
@@ -2792,7 +2834,10 @@ literal|5
 argument_list|,
 literal|3
 argument_list|,
+name|gimp_item_factory_from_path
+argument_list|(
 literal|"<Documents>"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

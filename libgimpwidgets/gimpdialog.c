@@ -538,6 +538,14 @@ argument_list|,
 name|position
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: need a new API for gimp_dialog_new()
+endif|#
+directive|endif
 name|gtk_window_set_policy
 argument_list|(
 name|GTK_WINDOW

@@ -100,7 +100,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"gui-types.h"
 end_include
 
 begin_include
@@ -920,7 +920,7 @@ literal|"open/dialogs/file_open.html"
 argument_list|)
 expr_stmt|;
 block|{
-name|GtkItemFactory
+name|GimpItemFactory
 modifier|*
 name|item_factory
 decl_stmt|;
@@ -1077,7 +1077,7 @@ argument_list|)
 expr_stmt|;
 name|item_factory
 operator|=
-name|gtk_item_factory_from_path
+name|gimp_item_factory_from_path
 argument_list|(
 literal|"<Load>"
 argument_list|)
@@ -1089,7 +1089,10 @@ argument_list|(
 name|option_menu
 argument_list|)
 argument_list|,
+name|GTK_ITEM_FACTORY
+argument_list|(
 name|item_factory
+argument_list|)
 operator|->
 name|widget
 argument_list|)

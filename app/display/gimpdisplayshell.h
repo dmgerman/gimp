@@ -142,10 +142,10 @@ name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-DECL|member|ifactory
-name|GtkItemFactory
+DECL|member|item_factory
+name|GimpItemFactory
 modifier|*
-name|ifactory
+name|item_factory
 decl_stmt|;
 DECL|member|offset_x
 name|gint

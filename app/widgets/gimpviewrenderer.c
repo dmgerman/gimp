@@ -207,7 +207,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29419d330103
+DECL|enum|__anon28ee3f200103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -3123,7 +3123,7 @@ argument_list|(
 name|GTK_WINDOW_POPUP
 argument_list|)
 expr_stmt|;
-name|gtk_window_set_policy
+name|gtk_window_set_resizable
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -3131,10 +3131,6 @@ name|window
 argument_list|)
 argument_list|,
 name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|frame

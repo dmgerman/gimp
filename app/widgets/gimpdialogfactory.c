@@ -93,10 +93,16 @@ directive|include
 file|"gimpimagedock.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpitemfactory.h"
+end_include
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7fc4e90103
+DECL|enum|__anon2b6d4ecd0103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -117,7 +123,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7fc4e90203
+DECL|enum|__anon2b6d4ecd0203
 block|{
 DECL|enumerator|GIMP_DIALOG_SHOW_ALL
 name|GIMP_DIALOG_SHOW_ALL
@@ -681,7 +687,7 @@ end_function
 begin_function
 name|GimpDialogFactory
 modifier|*
-DECL|function|gimp_dialog_factory_new (const gchar * name,GimpContext * context,GtkItemFactory * item_factory,GimpDialogNewFunc new_dock_func)
+DECL|function|gimp_dialog_factory_new (const gchar * name,GimpContext * context,GimpItemFactory * item_factory,GimpDialogNewFunc new_dock_func)
 name|gimp_dialog_factory_new
 parameter_list|(
 specifier|const
@@ -693,7 +699,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GtkItemFactory
+name|GimpItemFactory
 modifier|*
 name|item_factory
 parameter_list|,
@@ -733,7 +739,7 @@ argument_list|(
 operator|!
 name|item_factory
 operator|||
-name|GTK_IS_ITEM_FACTORY
+name|GIMP_IS_ITEM_FACTORY
 argument_list|(
 name|item_factory
 argument_list|)

@@ -363,7 +363,7 @@ name|GimpEditDrawableFunc
 name|edit_drawable_func
 decl_stmt|;
 DECL|member|item_factory
-name|gchar
+name|GimpItemFactory
 modifier|*
 name|item_factory
 decl_stmt|;
@@ -490,10 +490,9 @@ parameter_list|,
 name|GimpEditDrawableFunc
 name|edit_drawable_func
 parameter_list|,
-specifier|const
-name|gchar
+name|GimpItemFactory
 modifier|*
-name|item_factory
+name|item_facotry
 parameter_list|)
 function_decl|;
 end_function_decl

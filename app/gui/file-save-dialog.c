@@ -949,7 +949,7 @@ literal|"save/dialogs/file_save.html"
 argument_list|)
 expr_stmt|;
 block|{
-name|GtkItemFactory
+name|GimpItemFactory
 modifier|*
 name|item_factory
 decl_stmt|;
@@ -1107,7 +1107,7 @@ argument_list|)
 expr_stmt|;
 name|item_factory
 operator|=
-name|gtk_item_factory_from_path
+name|gimp_item_factory_from_path
 argument_list|(
 literal|"<Save>"
 argument_list|)
@@ -1119,7 +1119,10 @@ argument_list|(
 name|option_menu
 argument_list|)
 argument_list|,
+name|GTK_ITEM_FACTORY
+argument_list|(
 name|item_factory
+argument_list|)
 operator|->
 name|widget
 argument_list|)

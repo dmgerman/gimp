@@ -172,16 +172,12 @@ argument_list|,
 name|GTK_WIN_POS_CENTER
 argument_list|)
 expr_stmt|;
-name|gtk_window_set_policy
+name|gtk_window_set_resizable
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
 name|win_initstatus
 argument_list|)
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
 argument_list|,
 name|FALSE
 argument_list|)
