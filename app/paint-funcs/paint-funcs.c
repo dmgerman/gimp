@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2984ecc10103
+DECL|enum|__anon2b1e0c3b0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -391,10 +391,10 @@ comment|/*  REPLACE_MODE       */
 block|{
 name|TRUE
 block|,
-name|FALSE
-block|,
 name|TRUE
-block|,  }
+block|,
+name|FALSE
+block|, }
 comment|/*  ANTI_ERASE_MODE    */
 block|}
 decl_stmt|;
