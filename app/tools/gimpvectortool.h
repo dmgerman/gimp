@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29bd08250103
+DECL|enum|__anon2b8d41b90103
 block|{
 DECL|enumerator|VECTORS_SELECT_VECTOR
 name|VECTORS_SELECT_VECTOR
@@ -174,6 +174,19 @@ DECL|member|parent_instance
 name|GimpDrawTool
 name|parent_instance
 decl_stmt|;
+comment|/* this is silly! */
+DECL|member|status_gdisp
+name|GimpDisplay
+modifier|*
+name|status_gdisp
+decl_stmt|;
+comment|/* keep track of the statusmessages  */
+DECL|member|status_msg
+name|gchar
+modifier|*
+name|status_msg
+decl_stmt|;
+comment|/* and the message itself            */
 DECL|member|function
 name|GimpVectorFunction
 name|function
