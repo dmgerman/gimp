@@ -165,6 +165,14 @@ decl_stmt|,
 name|cumly
 decl_stmt|;
 comment|/*  cumulative changes to x and yed */
+DECL|member|offset_x
+DECL|member|offset_y
+name|gint
+name|offset_x
+decl_stmt|,
+name|offset_y
+decl_stmt|;
+comment|/*  Offset of display at start sel  */
 DECL|member|x
 DECL|member|y
 name|gint
@@ -586,6 +594,22 @@ operator|.
 name|cumly
 operator|=
 literal|0
+expr_stmt|;
+name|edit_select
+operator|.
+name|offset_x
+operator|=
+name|gdisp
+operator|->
+name|offset_x
+expr_stmt|;
+name|edit_select
+operator|.
+name|offset_y
+operator|=
+name|gdisp
+operator|->
+name|offset_y
 expr_stmt|;
 comment|/*  Make a check to see if it should be a floating selection translation  */
 if|if
@@ -2543,6 +2567,14 @@ name|edit_select
 operator|.
 name|cumlx
 argument_list|)
+operator|-
+name|gdisp
+operator|->
+name|offset_x
+operator|+
+name|edit_select
+operator|.
+name|offset_x
 expr_stmt|;
 name|diff_y
 operator|=
@@ -2554,6 +2586,14 @@ name|edit_select
 operator|.
 name|cumly
 argument_list|)
+operator|-
+name|gdisp
+operator|->
+name|offset_y
+operator|+
+name|edit_select
+operator|.
+name|offset_y
 expr_stmt|;
 name|seg
 operator|=
