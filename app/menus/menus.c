@@ -3492,6 +3492,25 @@ block|}
 block|,
 block|{
 block|{
+name|N_
+argument_list|(
+literal|"/Tools/Swap Contexts"
+argument_list|)
+block|,
+literal|"<shift>X"
+block|,
+name|tools_swap_contexts_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+literal|"toolbox/toolbox.html#swap_colors"
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
 literal|"/Tools/---"
 block|,
 name|NULL

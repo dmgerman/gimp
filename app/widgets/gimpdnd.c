@@ -190,7 +190,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29268cde0103
+DECL|enum|__anon2b54482b0103
 block|{
 DECL|enumerator|GIMP_DND_DATA_COLOR
 name|GIMP_DND_DATA_COLOR
@@ -2798,7 +2798,7 @@ if|if
 condition|(
 name|type
 operator|==
-name|GIMP_TYPE_TOOL
+name|GIMP_TYPE_TOOL_INFO
 condition|)
 block|{
 name|target_table

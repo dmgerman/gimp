@@ -327,6 +327,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpToolInfoPreview
+typedef|typedef
+name|struct
+name|_GimpToolInfoPreview
+name|GimpToolInfoPreview
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpContainerView
 typedef|typedef
 name|struct
