@@ -934,17 +934,17 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_container_editor_add_button (GimpContainerEditor * editor,gchar ** xpm_data,const gchar * tooltip,const gchar * help_data,GCallback callback)
+DECL|function|gimp_container_editor_add_button (GimpContainerEditor * editor,const gchar * stock_id,const gchar * tooltip,const gchar * help_data,GCallback callback)
 name|gimp_container_editor_add_button
 parameter_list|(
 name|GimpContainerEditor
 modifier|*
 name|editor
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
-modifier|*
-name|xpm_data
+name|stock_id
 parameter_list|,
 specifier|const
 name|gchar
@@ -962,11 +962,11 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
-name|pixmap
+name|button
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|button
+name|image
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -980,7 +980,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|xpm_data
+name|stock_id
 operator|!=
 name|NULL
 argument_list|,
@@ -1048,11 +1048,13 @@ argument_list|,
 name|editor
 argument_list|)
 expr_stmt|;
-name|pixmap
+name|image
 operator|=
-name|gimp_pixmap_new
+name|gtk_image_new_from_stock
 argument_list|(
-name|xpm_data
+name|stock_id
+argument_list|,
+name|GTK_ICON_SIZE_BUTTON
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -1062,12 +1064,12 @@ argument_list|(
 name|button
 argument_list|)
 argument_list|,
-name|pixmap
+name|image
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|pixmap
+name|image
 argument_list|)
 expr_stmt|;
 return|return

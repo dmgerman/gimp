@@ -41,7 +41,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279564c20103
+DECL|enum|__anon2c6eb0a90103
 block|{
 DECL|enumerator|GIMP_VIEW_TYPE_GRID
 name|GIMP_VIEW_TYPE_GRID
@@ -270,10 +270,10 @@ name|GimpContainerEditor
 modifier|*
 name|editor
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
-modifier|*
-name|xpm_data
+name|stock_id
 parameter_list|,
 specifier|const
 name|gchar

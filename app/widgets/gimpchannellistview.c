@@ -711,9 +711,9 @@ name|toselection_button
 argument_list|,
 name|_
 argument_list|(
-literal|"Channel to Selection \n"
-literal|"<Shift> Add          "
-literal|"<Ctrl> Subtract      "
+literal|"Channel to Selection\n"
+literal|"<Shift> Add\n"
+literal|"<Ctrl> Subtract\n"
 literal|"<Shift><Ctrl> Intersect"
 argument_list|)
 argument_list|,

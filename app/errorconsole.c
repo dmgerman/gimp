@@ -178,7 +178,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2963a1ce0103
+DECL|enum|__anon2c2c4a550103
 block|{
 DECL|enumerator|ERRORS_ALL
 name|ERRORS_ALL
@@ -1077,10 +1077,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Clear"
-argument_list|)
+name|GTK_STOCK_CLEAR
 argument_list|,
 name|error_console_clear_callback
 argument_list|,

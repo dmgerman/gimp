@@ -487,7 +487,16 @@ name|dockbook
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|//gtk_notebook_set_scrollable (GTK_NOTEBOOK (dockbook), TRUE);
+name|gtk_notebook_set_scrollable
+argument_list|(
+name|GTK_NOTEBOOK
+argument_list|(
+name|dockbook
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gtk_drag_dest_set
 argument_list|(
 name|GTK_WIDGET

@@ -18,6 +18,23 @@ end_define
 
 begin_function_decl
 name|void
+name|gui_libs_init
+parameter_list|(
+name|gint
+modifier|*
+name|argc
+parameter_list|,
+name|gchar
+modifier|*
+modifier|*
+modifier|*
+name|argv
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gui_init
 parameter_list|(
 name|Gimp

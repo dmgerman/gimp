@@ -90,7 +90,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac64ee70108
+DECL|struct|__anon2c4c18c70108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1456,10 +1456,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Reset"
-argument_list|)
+name|GIMP_STOCK_RESET
 argument_list|,
 name|file_new_reset_callback
 argument_list|,

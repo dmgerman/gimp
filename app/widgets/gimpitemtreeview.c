@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0344380103
+DECL|enum|__anon29f156ee0103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -1082,7 +1082,7 @@ name|raise_button
 argument_list|,
 name|_
 argument_list|(
-literal|"Raise          \n"
+literal|"Raise\n"
 literal|"<Shift> To Top"
 argument_list|)
 argument_list|,
@@ -1194,7 +1194,7 @@ name|lower_button
 argument_list|,
 name|_
 argument_list|(
-literal|"Lower             \n"
+literal|"Lower\n"
 literal|"<Shift> To Bottom"
 argument_list|)
 argument_list|,

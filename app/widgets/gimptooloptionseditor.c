@@ -358,10 +358,7 @@ name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,
-name|_
-argument_list|(
-literal|"Reset"
-argument_list|)
+name|GIMP_STOCK_RESET
 argument_list|,
 name|tool_options_dialog_reset_callback
 argument_list|,

@@ -443,7 +443,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2890297e0103
+DECL|enum|__anon2c39f8810103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -2378,10 +2378,7 @@ name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,
-name|_
-argument_list|(
-literal|"Refresh"
-argument_list|)
+name|GIMP_STOCK_REFRESH
 argument_list|,
 name|refresh_callback
 argument_list|,

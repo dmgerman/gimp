@@ -424,70 +424,13 @@ operator|!
 name|no_interface
 condition|)
 block|{
-specifier|const
-name|gchar
-modifier|*
-name|gtkrc
-decl_stmt|;
-name|gchar
-modifier|*
-name|filename
-decl_stmt|;
-comment|/*  parse the systemwide gtkrc  */
-name|gtkrc
-operator|=
-name|gimp_gtkrc
-argument_list|()
-expr_stmt|;
-if|if
-condition|(
-name|be_verbose
-condition|)
-name|g_print
+name|gui_libs_init
 argument_list|(
-name|_
-argument_list|(
-literal|"parsing \"%s\"\n"
-argument_list|)
+operator|&
+name|gimp_argc
 argument_list|,
-name|gtkrc
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gtkrc
-argument_list|)
-expr_stmt|;
-comment|/*  parse the user gtkrc  */
-name|filename
-operator|=
-name|gimp_personal_rc_file
-argument_list|(
-literal|"gtkrc"
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|be_verbose
-condition|)
-name|g_print
-argument_list|(
-name|_
-argument_list|(
-literal|"parsing \"%s\"\n"
-argument_list|)
-argument_list|,
-name|filename
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|filename
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|filename
+operator|&
+name|gimp_argv
 argument_list|)
 expr_stmt|;
 block|}
@@ -565,15 +508,6 @@ argument_list|(
 name|the_gimp
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|DISPLAY_FILTERS
-name|color_display_init
-argument_list|()
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* DISPLAY_FILTERS */
 comment|/*  Initialize the xcf file format routines    */
 name|xcf_init
 argument_list|(
@@ -624,6 +558,15 @@ condition|)
 name|splash_destroy
 argument_list|()
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|DISPLAY_FILTERS
+name|color_display_init
+argument_list|()
+expr_stmt|;
+endif|#
+directive|endif
+comment|/* DISPLAY_FILTERS */
 name|gui_init
 argument_list|(
 name|the_gimp

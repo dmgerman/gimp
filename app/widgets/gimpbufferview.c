@@ -87,30 +87,6 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"pixmaps/paste.xpm"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"pixmaps/paste-into.xpm"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"pixmaps/paste-as-new.xpm"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"pixmaps/delete.xpm"
-end_include
-
 begin_function_decl
 specifier|static
 name|void
@@ -422,7 +398,7 @@ name|gimp_container_editor_add_button
 argument_list|(
 name|editor
 argument_list|,
-name|paste_xpm
+name|GIMP_STOCK_PASTE
 argument_list|,
 name|_
 argument_list|(
@@ -445,7 +421,7 @@ name|gimp_container_editor_add_button
 argument_list|(
 name|editor
 argument_list|,
-name|paste_into_xpm
+name|GIMP_STOCK_PASTE_INTO
 argument_list|,
 name|_
 argument_list|(
@@ -468,7 +444,7 @@ name|gimp_container_editor_add_button
 argument_list|(
 name|editor
 argument_list|,
-name|paste_as_new_xpm
+name|GIMP_STOCK_PASTE_AS_NEW
 argument_list|,
 name|_
 argument_list|(
@@ -491,7 +467,7 @@ name|gimp_container_editor_add_button
 argument_list|(
 name|editor
 argument_list|,
-name|delete_xpm
+name|GIMP_STOCK_DELETE
 argument_list|,
 name|_
 argument_list|(
