@@ -573,8 +573,6 @@ literal|"Ed Mackey"
 block|,
 literal|"Vidar Madsen"
 block|,
-literal|"Marcelo Malheiros"
-block|,
 literal|"Ian Main"
 block|,
 literal|"Kjartan Maraas"
@@ -623,7 +621,7 @@ literal|"Miles O'Neal"
 block|,
 literal|"Thom van Os"
 block|,
-literal|"Gary Osgood"
+literal|"Garry R. Osgood"
 block|,
 literal|"Alan Paeth"
 block|,
@@ -1623,6 +1621,16 @@ name|offset
 operator|=
 literal|0
 expr_stmt|;
+name|cur_scroll_text
+operator|=
+literal|0
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|double_speed
+condition|)
+block|{
 for|for
 control|(
 name|i
@@ -1659,7 +1667,7 @@ name|i
 operator|++
 control|)
 block|{
-name|int
+name|gint
 name|j
 decl_stmt|;
 name|j
@@ -1676,7 +1684,7 @@ operator|!=
 name|j
 condition|)
 block|{
-name|int
+name|gint
 name|t
 decl_stmt|;
 name|t
@@ -1712,6 +1720,7 @@ argument_list|()
 operator|%
 name|nscroll_texts
 expr_stmt|;
+block|}
 block|}
 else|else
 block|{
@@ -2461,6 +2470,9 @@ name|height
 init|=
 literal|0
 decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
 if|if
 condition|(
 name|do_animation
@@ -2689,6 +2701,88 @@ name|gdk_bitmap_unref
 argument_list|(
 name|mask
 argument_list|)
+expr_stmt|;
+name|scroll_text
+index|[
+literal|0
+index|]
+operator|=
+literal|"We are The GIMP."
+expr_stmt|;
+name|scroll_text
+index|[
+literal|1
+index|]
+operator|=
+literal|"Prepare to be assimilated."
+expr_stmt|;
+name|scroll_text
+index|[
+literal|2
+index|]
+operator|=
+literal|"Resistance is futile."
+expr_stmt|;
+name|nscroll_texts
+operator|=
+literal|3
+expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|nscroll_texts
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|shuffle_array
+index|[
+name|i
+index|]
+operator|=
+name|i
+expr_stmt|;
+name|scroll_text_widths
+index|[
+name|i
+index|]
+operator|=
+name|gdk_string_width
+argument_list|(
+name|scroll_area
+operator|->
+name|style
+operator|->
+name|font
+argument_list|,
+name|scroll_text
+index|[
+name|i
+index|]
+argument_list|)
+expr_stmt|;
+block|}
+name|scroll_state
+operator|=
+literal|0
+expr_stmt|;
+name|cur_scroll_index
+operator|=
+literal|0
+expr_stmt|;
+name|cur_scroll_text
+operator|=
+literal|0
+expr_stmt|;
+name|offset
+operator|=
+literal|0
 expr_stmt|;
 name|double_speed
 operator|=
