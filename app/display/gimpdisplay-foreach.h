@@ -17,22 +17,6 @@ name|__GIMP_DISPLAY_FOREACH_H__
 end_define
 
 begin_function_decl
-name|GimpDisplay
-modifier|*
-name|gdisplays_check_valid
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|gboolean
 name|gimp_displays_dirty
 parameter_list|(

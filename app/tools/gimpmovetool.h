@@ -122,11 +122,6 @@ name|GimpGuide
 modifier|*
 name|guide
 decl_stmt|;
-DECL|member|guide_disp
-name|GimpDisplay
-modifier|*
-name|guide_disp
-decl_stmt|;
 DECL|member|moving_guide
 name|gboolean
 name|moving_guide
