@@ -539,11 +539,14 @@ name|comment
 decl_stmt|;
 name|comment
 operator|=
+name|g_strdup
+argument_list|(
 name|gimp
 operator|->
 name|config
 operator|->
 name|default_comment
+argument_list|)
 expr_stmt|;
 name|success
 operator|=
