@@ -1734,7 +1734,7 @@ name|gimp
 operator|->
 name|gui_set_busy_func
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|)
 expr_stmt|;
 block|}
@@ -1871,7 +1871,7 @@ name|gimp
 operator|->
 name|gui_unset_busy_func
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|)
 expr_stmt|;
 comment|/* FIXME: gimp_busy HACK */

@@ -139,12 +139,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"errors.h"
 end_include
 
@@ -275,7 +269,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b175dce0103
+DECL|enum|__anon2b5f13050103
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -315,7 +309,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b175dce0203
+DECL|enum|__anon2b5f13050203
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -2295,10 +2289,12 @@ end_comment
 begin_function
 name|GradientEditor
 modifier|*
-DECL|function|gradient_editor_new (void)
+DECL|function|gradient_editor_new (Gimp * gimp)
 name|gradient_editor_new
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|GradientEditor
@@ -2347,7 +2343,7 @@ name|context
 operator|=
 name|gimp_create_context
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|,
 name|NULL
 argument_list|,
@@ -3661,7 +3657,7 @@ if|if
 condition|(
 name|gimp_container_num_children
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|gradient_factory
 operator|->
@@ -3679,7 +3675,7 @@ name|GIMP_GRADIENT
 argument_list|(
 name|gimp_container_get_child_by_index
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|gradient_factory
 operator|->
@@ -3712,7 +3708,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_container_add
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|gradient_factory
 operator|->

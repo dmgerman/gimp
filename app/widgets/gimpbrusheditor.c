@@ -275,10 +275,12 @@ end_comment
 begin_function
 name|BrushEditor
 modifier|*
-DECL|function|brush_editor_new (void)
+DECL|function|brush_editor_new (Gimp * gimp)
 name|brush_editor_new
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|BrushEditor

@@ -128,12 +128,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"undo.h"
 end_include
 
@@ -35088,7 +35082,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2356650108
+DECL|struct|__anon27d7213a0108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -35165,7 +35159,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2356650208
+DECL|struct|__anon27d7213a0208
 block|{
 DECL|member|ncolors
 name|long
@@ -35356,7 +35350,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2356650308
+DECL|struct|__anon27d7213a0308
 block|{
 DECL|member|used_count
 name|signed
@@ -37434,38 +37428,6 @@ expr_stmt|;
 name|undo_push_group_end
 argument_list|(
 name|gimage
-argument_list|)
-expr_stmt|;
-comment|/*  shrink wrap and update all views  */
-name|gimp_image_invalidate_layer_previews
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
-name|gimp_viewable_invalidate_preview
-argument_list|(
-name|GIMP_VIEWABLE
-argument_list|(
-name|gimage
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gdisplays_update_title
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
-name|gdisplays_update_full
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
-name|gimp_image_colormap_changed
-argument_list|(
-name|gimage
-argument_list|,
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 name|gimp_image_mode_changed
