@@ -4744,6 +4744,9 @@ expr_stmt|;
 name|gdisplays_flush
 argument_list|()
 expr_stmt|;
+name|lc_dialog_update_image_list
+argument_list|()
+expr_stmt|;
 block|}
 else|else
 block|{
