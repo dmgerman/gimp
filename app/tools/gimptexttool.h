@@ -114,6 +114,11 @@ name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
+DECL|member|text
+name|GimpText
+modifier|*
+name|text
+decl_stmt|;
 DECL|member|buffer
 name|GtkTextBuffer
 modifier|*
