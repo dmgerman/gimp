@@ -745,7 +745,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"GRAD-RGB"
+literal|"GRADIENT-SEGMENT-RGB"
 argument_list|)
 argument_list|,
 name|flocons
@@ -760,7 +760,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"GRAD-HSV-CCW"
+literal|"GRADIENT-SEGMENT-HSV-CCW"
 argument_list|)
 argument_list|,
 name|flocons
@@ -775,7 +775,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"GRAD-HSV-CW"
+literal|"GRADIENT-SEGMENT-HSV-CW"
 argument_list|)
 argument_list|,
 name|flocons
@@ -790,7 +790,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"GRAD-LINEAR"
+literal|"GRADIENT-SEGMENT-LINEAR"
 argument_list|)
 argument_list|,
 name|flocons
@@ -805,7 +805,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"GRAD-CURVED"
+literal|"GRADIENT-SEGMENT-CURVED"
 argument_list|)
 argument_list|,
 name|flocons
@@ -820,7 +820,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"GRAD-SINE"
+literal|"GRADIENT-SEGMENT-SINE"
 argument_list|)
 argument_list|,
 name|flocons
@@ -835,7 +835,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"GRAD-SPHERE-INCREASING"
+literal|"GRADIENT-SEGMENT-SPHERE-INCREASING"
 argument_list|)
 argument_list|,
 name|flocons
@@ -850,7 +850,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"GRAD-SPHERE-DECREASING"
+literal|"GRADIENT-SEGMENT-SPHERE-DECREASING"
 argument_list|)
 argument_list|,
 name|flocons

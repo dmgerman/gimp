@@ -239,7 +239,7 @@ name|segments
 operator|->
 name|color
 operator|=
-name|GIMP_GRAD_HSV_CCW
+name|GIMP_GRADIENT_SEGMENT_HSV_CCW
 expr_stmt|;
 name|gradient
 operator|=
@@ -261,7 +261,7 @@ name|segments
 operator|->
 name|color
 operator|=
-name|GIMP_GRAD_HSV_CW
+name|GIMP_GRADIENT_SEGMENT_HSV_CW
 expr_stmt|;
 name|gradient
 operator|=
