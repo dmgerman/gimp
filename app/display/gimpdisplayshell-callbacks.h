@@ -21,7 +21,7 @@ DECL|macro|GIMP_DISPLAY_SHELL_CANVAS_EVENT_MASK
 define|#
 directive|define
 name|GIMP_DISPLAY_SHELL_CANVAS_EVENT_MASK
-value|(GDK_EXPOSURE_MASK            | \                                               GDK_POINTER_MOTION_MASK      | \                                               GDK_POINTER_MOTION_HINT_MASK | \                                               GDK_BUTTON_PRESS_MASK        | \                                               GDK_BUTTON_RELEASE_MASK      | \                                               GDK_STRUCTURE_MASK           | \                                               GDK_ENTER_NOTIFY_MASK        | \                                               GDK_LEAVE_NOTIFY_MASK        | \                                               GDK_KEY_PRESS_MASK           | \                                               GDK_KEY_RELEASE_MASK         | \                                               GDK_PROXIMITY_OUT_MASK)
+value|(GDK_EXPOSURE_MASK            | \                                               GDK_POINTER_MOTION_MASK      | \                                               GDK_POINTER_MOTION_HINT_MASK | \                                               GDK_BUTTON_PRESS_MASK        | \                                               GDK_BUTTON_RELEASE_MASK      | \                                               GDK_STRUCTURE_MASK           | \                                               GDK_ENTER_NOTIFY_MASK        | \                                               GDK_LEAVE_NOTIFY_MASK        | \                                               GDK_FOCUS_CHANGE_MASK        | \                                               GDK_KEY_PRESS_MASK           | \                                               GDK_KEY_RELEASE_MASK         | \                                               GDK_PROXIMITY_OUT_MASK)
 end_define
 
 begin_function_decl
@@ -88,44 +88,6 @@ parameter_list|,
 name|GdkEventExpose
 modifier|*
 name|eevent
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gimp_display_shell_canvas_focus_in
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GdkEventFocus
-modifier|*
-name|fevent
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gimp_display_shell_canvas_focus_out
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GdkEventFocus
-modifier|*
-name|fevent
 parameter_list|,
 name|GimpDisplayShell
 modifier|*
