@@ -964,14 +964,87 @@ name|edit_select
 operator|.
 name|old_auto_snap_to
 expr_stmt|;
+comment|/* MaskTranslate is performed here at movement end, not 'live' like    *  the other translation types.    */
+if|if
+condition|(
+name|edit_select
+operator|.
+name|edit_type
+operator|==
+name|MaskTranslate
+condition|)
+block|{
+name|edit_selection_snap
+argument_list|(
+name|gdisp
+argument_list|,
+name|bevent
+operator|->
+name|x
+argument_list|,
+name|bevent
+operator|->
+name|y
+argument_list|)
+expr_stmt|;
+name|x
+operator|=
+name|edit_select
+operator|.
+name|x
+expr_stmt|;
+name|y
+operator|=
+name|edit_select
+operator|.
+name|y
+expr_stmt|;
+comment|/* move the selection -- whether there has been net movement or not!      * (to ensure that there's something on the undo stack)      */
+name|gimage_mask_translate
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|,
+name|edit_select
+operator|.
+name|cumlx
+argument_list|,
+name|edit_select
+operator|.
+name|cumly
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|edit_select
+operator|.
+name|first_move
+condition|)
+block|{
+name|gimp_image_undo_freeze
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+expr_stmt|;
+name|edit_select
+operator|.
+name|first_move
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
+block|}
 if|#
 directive|if
 literal|0
-comment|/****************************************************************************/
+comment|/********************************************************************a.d.m.**/
 comment|/****************************************************************************/
 comment|/*  This work is all done in the motion handler now - will be removed soon  */
 comment|/****************************************************************************/
-comment|/****************************************************************************/
+comment|/*************************************************& this time I mean it. ***/
 comment|/*  If the cancel button is down...Do nothing  */
 block|if (! (bevent->state& GDK_BUTTON3_MASK))     {       edit_selection_snap (gdisp, bevent->x, bevent->y);       x = edit_select.x;       y = edit_select.y;
 comment|/* if there has been movement, move the selection  */
@@ -1302,39 +1375,8 @@ case|case
 name|MaskTranslate
 case|:
 comment|/*  translate the selection  */
-name|gimage_mask_translate
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|,
-name|xoffset
-argument_list|,
-name|yoffset
-argument_list|)
-expr_stmt|;
-comment|/*g_warning("%d,%d  %d,%d  %d,%d  %d,%d  %d,%d  %d,%d", 		      edit_select.origx,edit_select.origy, 		      edit_select.cumlx,edit_select.cumly, 		      xoffset,yoffset, 		      x,y, 		      edit_select.x1,edit_select.y1, 		      edit_select.x2,edit_select.y2);*/
-if|if
-condition|(
-name|edit_select
-operator|.
-name|first_move
-condition|)
-block|{
-name|gimp_image_undo_freeze
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|)
-expr_stmt|;
-name|edit_select
-operator|.
-name|first_move
-operator|=
-name|FALSE
-expr_stmt|;
-block|}
+comment|/*	    gimage_mask_translate (gdisp->gimage, xoffset, yoffset); 	    g_warning("%d,%d  %d,%d  %d,%d  %d,%d  %d,%d  %d,%d", 		      edit_select.origx,edit_select.origy, 		      edit_select.cumlx,edit_select.cumly, 		      xoffset,yoffset, 		      x,y, 		      edit_select.x1,edit_select.y1, 		      edit_select.x2,edit_select.y2);*/
+comment|/* 	    if (edit_select.first_move) 	      { 		gimp_image_undo_freeze (gdisp->gimage); 		edit_select.first_move = FALSE; 	      } 	    */
 name|edit_select
 operator|.
 name|origx
