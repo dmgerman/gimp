@@ -98,6 +98,36 @@ block|{
 block|{
 name|N_
 argument_list|(
+literal|"/_Edit Layer Attributes..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|layers_edit_attributes_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_EDIT
+block|}
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_LAYER_EDIT
+block|,
+name|NULL
+block|}
+block|,
+name|MENU_SEPARATOR
+argument_list|(
+literal|"/---"
+argument_list|)
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
 literal|"/_New Layer..."
 argument_list|)
 block|,
@@ -601,36 +631,6 @@ name|GIMP_HELP_IMAGE_FLATTEN
 block|,
 name|NULL
 block|}
-block|,
-name|MENU_SEPARATOR
-argument_list|(
-literal|"/---"
-argument_list|)
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/_Edit Layer Attributes..."
-argument_list|)
-block|,
-name|NULL
-block|,
-name|layers_edit_attributes_cmd_callback
-block|,
-literal|0
-block|,
-literal|"<StockItem>"
-block|,
-name|GIMP_STOCK_EDIT
-block|}
-block|,
-name|NULL
-block|,
-name|GIMP_HELP_LAYER_EDIT
-block|,
-name|NULL
-block|}
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -889,6 +889,19 @@ name|condition
 parameter_list|)
 define|\
 value|gimp_item_factory_set_sensitive (factory, menu, (condition) != 0)
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Edit Layer Attributes..."
+argument_list|,
+name|layer
+operator|&&
+operator|!
+name|fs
+operator|&&
+operator|!
+name|ac
+argument_list|)
+expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"/New Layer..."
@@ -1151,19 +1164,6 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"/Flatten Image"
-argument_list|,
-name|layer
-operator|&&
-operator|!
-name|fs
-operator|&&
-operator|!
-name|ac
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/Edit Layer Attributes..."
 argument_list|,
 name|layer
 operator|&&

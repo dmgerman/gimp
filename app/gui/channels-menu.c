@@ -98,6 +98,36 @@ block|{
 block|{
 name|N_
 argument_list|(
+literal|"/_Edit Channel Attributes..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|channels_edit_attributes_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_EDIT
+block|}
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_CHANNEL_EDIT
+block|,
+name|NULL
+block|}
+block|,
+name|MENU_SEPARATOR
+argument_list|(
+literal|"/---"
+argument_list|)
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
 literal|"/_New Channel..."
 argument_list|)
 block|,
@@ -323,36 +353,6 @@ name|GIMP_HELP_CHANNEL_SELECTION_INTERSECT
 block|,
 name|NULL
 block|}
-block|,
-name|MENU_SEPARATOR
-argument_list|(
-literal|"/---"
-argument_list|)
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/_Edit Channel Attributes..."
-argument_list|)
-block|,
-name|NULL
-block|,
-name|channels_edit_attributes_cmd_callback
-block|,
-literal|0
-block|,
-literal|"<StockItem>"
-block|,
-name|GIMP_STOCK_EDIT
-block|}
-block|,
-name|NULL
-block|,
-name|GIMP_HELP_CHANNEL_EDIT
-block|,
-name|NULL
-block|}
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -563,6 +563,16 @@ define|\
 value|gimp_item_factory_set_sensitive (factory, menu, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
+literal|"/Edit Channel Attributes..."
+argument_list|,
+operator|!
+name|fs
+operator|&&
+name|channel
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
 literal|"/New Channel..."
 argument_list|,
 operator|!
@@ -673,16 +683,6 @@ name|channel
 operator|||
 name|component
 operator|)
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/Edit Channel Attributes..."
-argument_list|,
-operator|!
-name|fs
-operator|&&
-name|channel
 argument_list|)
 expr_stmt|;
 undef|#

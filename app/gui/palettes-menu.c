@@ -110,6 +110,36 @@ block|{
 block|{
 name|N_
 argument_list|(
+literal|"/_Edit Palette..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|data_edit_data_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_EDIT
+block|}
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_PALETTE_EDIT
+block|,
+name|NULL
+block|}
+block|,
+name|MENU_SEPARATOR
+argument_list|(
+literal|"/---"
+argument_list|)
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
 literal|"/_New Palette"
 argument_list|)
 block|,
@@ -127,6 +157,31 @@ block|,
 name|NULL
 block|,
 name|GIMP_HELP_PALETTE_NEW
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/_Import Palette..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|palettes_import_palette_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GTK_STOCK_CONVERT
+block|}
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_PALETTE_IMPORT
 block|,
 name|NULL
 block|}
@@ -160,23 +215,19 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/_Edit Palette..."
+literal|"/_Merge Palettes..."
 argument_list|)
 block|,
 name|NULL
 block|,
-name|data_edit_data_cmd_callback
+name|palettes_merge_palettes_cmd_callback
 block|,
 literal|0
-block|,
-literal|"<StockItem>"
-block|,
-name|GIMP_STOCK_EDIT
 block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_PALETTE_EDIT
+name|GIMP_HELP_PALETTE_MERGE
 block|,
 name|NULL
 block|}
@@ -232,57 +283,6 @@ block|,
 name|NULL
 block|,
 name|GIMP_HELP_PALETTE_REFRESH
-block|,
-name|NULL
-block|}
-block|,
-name|MENU_SEPARATOR
-argument_list|(
-literal|"/---"
-argument_list|)
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/_Import Palette..."
-argument_list|)
-block|,
-name|NULL
-block|,
-name|palettes_import_palette_cmd_callback
-block|,
-literal|0
-block|,
-literal|"<StockItem>"
-block|,
-name|GTK_STOCK_CONVERT
-block|}
-block|,
-name|NULL
-block|,
-name|GIMP_HELP_PALETTE_IMPORT
-block|,
-name|NULL
-block|}
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/_Merge Palettes..."
-argument_list|)
-block|,
-name|NULL
-block|,
-name|palettes_merge_palettes_cmd_callback
-block|,
-literal|0
-block|}
-block|,
-name|NULL
-block|,
-name|GIMP_HELP_PALETTE_MERGE
 block|,
 name|NULL
 block|}
@@ -370,6 +370,20 @@ define|\
 value|gimp_item_factory_set_sensitive (factory, menu, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
+literal|"/Edit Palette..."
+argument_list|,
+name|palette
+operator|&&
+name|GIMP_DATA_FACTORY_VIEW
+argument_list|(
+name|editor
+argument_list|)
+operator|->
+name|data_edit_func
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
 literal|"/Duplicate Palette"
 argument_list|,
 name|palette
@@ -384,18 +398,12 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Edit Palette..."
+literal|"/Merge Palettes..."
 argument_list|,
-name|palette
-operator|&&
-name|GIMP_DATA_FACTORY_VIEW
-argument_list|(
-name|editor
-argument_list|)
-operator|->
-name|data_edit_func
+name|FALSE
 argument_list|)
 expr_stmt|;
+comment|/* FIXME palette&& GIMP_IS_CONTAINER_LIST_VIEW (editor->view)); */
 name|SET_SENSITIVE
 argument_list|(
 literal|"/Delete Palette..."
@@ -412,14 +420,6 @@ operator|->
 name|internal
 argument_list|)
 expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/Merge Palettes..."
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-comment|/* FIXME palette&& GIMP_IS_CONTAINER_LIST_VIEW (editor->view)); */
 undef|#
 directive|undef
 name|SET_SENSITIVE

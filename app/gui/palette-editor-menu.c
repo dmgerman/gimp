@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"menus.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"palette-editor-commands.h"
 end_include
 
@@ -70,6 +76,36 @@ name|palette_editor_menu_entries
 index|[]
 init|=
 block|{
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/_Edit Color..."
+argument_list|)
+block|,
+literal|""
+block|,
+name|palette_editor_edit_color_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_EDIT
+block|}
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_PALETTE_EDITOR_EDIT
+block|,
+name|NULL
+block|}
+block|,
+name|MENU_SEPARATOR
+argument_list|(
+literal|"/---"
+argument_list|)
+block|,
 block|{
 block|{
 name|N_
@@ -99,31 +135,6 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/_Edit Color..."
-argument_list|)
-block|,
-literal|""
-block|,
-name|palette_editor_edit_color_cmd_callback
-block|,
-literal|0
-block|,
-literal|"<StockItem>"
-block|,
-name|GIMP_STOCK_EDIT
-block|}
-block|,
-name|NULL
-block|,
-name|GIMP_HELP_PALETTE_EDITOR_EDIT
-block|,
-name|NULL
-block|}
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
 literal|"/_Delete Color"
 argument_list|)
 block|,
@@ -145,27 +156,10 @@ block|,
 name|NULL
 block|}
 block|,
-block|{
-block|{
+name|MENU_SEPARATOR
+argument_list|(
 literal|"/---"
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-literal|0
-block|,
-literal|"<Separator>"
-block|,
-name|NULL
-block|}
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
+argument_list|)
 block|,
 block|{
 block|{
@@ -323,13 +317,6 @@ define|\
 value|gimp_item_factory_set_sensitive (factory, menu, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
-literal|"/New Color"
-argument_list|,
-name|editable
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
 literal|"/Edit Color..."
 argument_list|,
 name|editable
@@ -337,6 +324,13 @@ operator|&&
 name|editor
 operator|->
 name|color
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/New Color"
+argument_list|,
+name|editable
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE

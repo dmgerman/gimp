@@ -89,7 +89,7 @@ argument_list|(
 literal|"/_Paste Buffer"
 argument_list|)
 block|,
-name|NULL
+literal|""
 block|,
 name|buffers_paste_buffer_cmd_callback
 block|,
@@ -164,7 +164,7 @@ argument_list|(
 literal|"/_Delete Buffer"
 argument_list|)
 block|,
-name|NULL
+literal|""
 block|,
 name|buffers_delete_buffer_cmd_callback
 block|,

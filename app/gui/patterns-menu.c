@@ -104,6 +104,36 @@ block|{
 block|{
 name|N_
 argument_list|(
+literal|"/Edit Pattern..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|data_edit_data_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_EDIT
+block|}
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_PATTERN_EDIT
+block|,
+name|NULL
+block|}
+block|,
+name|MENU_SEPARATOR
+argument_list|(
+literal|"/---"
+argument_list|)
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
 literal|"/New Pattern"
 argument_list|)
 block|,
@@ -146,31 +176,6 @@ block|,
 name|NULL
 block|,
 name|GIMP_HELP_PATTERN_DUPLICATE
-block|,
-name|NULL
-block|}
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/Edit Pattern..."
-argument_list|)
-block|,
-name|NULL
-block|,
-name|data_edit_data_cmd_callback
-block|,
-literal|0
-block|,
-literal|"<StockItem>"
-block|,
-name|GIMP_STOCK_EDIT
-block|}
-block|,
-name|NULL
-block|,
-name|GIMP_HELP_PATTERN_EDIT
 block|,
 name|NULL
 block|}
@@ -313,20 +318,6 @@ define|\
 value|gimp_item_factory_set_sensitive (factory, menu, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Duplicate Pattern"
-argument_list|,
-name|pattern
-operator|&&
-name|GIMP_DATA_GET_CLASS
-argument_list|(
-name|data
-argument_list|)
-operator|->
-name|duplicate
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
 literal|"/Edit Pattern..."
 argument_list|,
 name|pattern
@@ -337,6 +328,20 @@ name|editor
 argument_list|)
 operator|->
 name|data_edit_func
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Duplicate Pattern"
+argument_list|,
+name|pattern
+operator|&&
+name|GIMP_DATA_GET_CLASS
+argument_list|(
+name|data
+argument_list|)
+operator|->
+name|duplicate
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE

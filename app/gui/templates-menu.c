@@ -92,6 +92,36 @@ block|{
 block|{
 name|N_
 argument_list|(
+literal|"/_Create Image from Template..."
+argument_list|)
+block|,
+literal|""
+block|,
+name|templates_create_image_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_IMAGE
+block|}
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_TEMPLATE_IMAGE_NEW
+block|,
+name|NULL
+block|}
+block|,
+name|MENU_SEPARATOR
+argument_list|(
+literal|"/---"
+argument_list|)
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
 literal|"/_New Template..."
 argument_list|)
 block|,
@@ -159,31 +189,6 @@ block|,
 name|NULL
 block|,
 name|GIMP_HELP_TEMPLATE_EDIT
-block|,
-name|NULL
-block|}
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/_Create Image from Template..."
-argument_list|)
-block|,
-literal|""
-block|,
-name|templates_create_image_cmd_callback
-block|,
-literal|0
-block|,
-literal|"<StockItem>"
-block|,
-name|GIMP_STOCK_IMAGE
-block|}
-block|,
-name|NULL
-block|,
-name|GIMP_HELP_TEMPLATE_IMAGE_NEW
 block|,
 name|NULL
 block|}
@@ -279,6 +284,13 @@ define|\
 value|gimp_item_factory_set_sensitive (factory, menu, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
+literal|"/Create Image from Template..."
+argument_list|,
+name|template
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
 literal|"/New Template..."
 argument_list|,
 name|TRUE
@@ -294,13 +306,6 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"/Edit Template..."
-argument_list|,
-name|template
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/Create Image from Template..."
 argument_list|,
 name|template
 argument_list|)

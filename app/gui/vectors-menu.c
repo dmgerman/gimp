@@ -98,6 +98,61 @@ block|{
 block|{
 name|N_
 argument_list|(
+literal|"/Path _Tool"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|vectors_vectors_tool_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_TOOL_PATH
+block|}
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_TOOL_VECTORS
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/_Edit Path Attributes..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|vectors_edit_attributes_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_EDIT
+block|}
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_PATH_EDIT
+block|,
+name|NULL
+block|}
+block|,
+name|MENU_SEPARATOR
+argument_list|(
+literal|"/---"
+argument_list|)
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
 literal|"/_New Path..."
 argument_list|)
 block|,
@@ -478,61 +533,6 @@ name|GIMP_HELP_PATH_EXPORT
 block|,
 name|NULL
 block|}
-block|,
-name|MENU_SEPARATOR
-argument_list|(
-literal|"/---"
-argument_list|)
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/Path _Tool"
-argument_list|)
-block|,
-name|NULL
-block|,
-name|vectors_vectors_tool_cmd_callback
-block|,
-literal|0
-block|,
-literal|"<StockItem>"
-block|,
-name|GIMP_STOCK_TOOL_PATH
-block|}
-block|,
-name|NULL
-block|,
-name|GIMP_HELP_TOOL_VECTORS
-block|,
-name|NULL
-block|}
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/_Edit Path Attributes..."
-argument_list|)
-block|,
-name|NULL
-block|,
-name|vectors_edit_attributes_cmd_callback
-block|,
-literal|0
-block|,
-literal|"<StockItem>"
-block|,
-name|GIMP_STOCK_EDIT
-block|}
-block|,
-name|NULL
-block|,
-name|GIMP_HELP_PATH_EDIT
-block|,
-name|NULL
-block|}
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -699,6 +699,20 @@ define|\
 value|gimp_item_factory_set_sensitive (factory, menu, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
+literal|"/Path Tool"
+argument_list|,
+name|vectors
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Edit Path Attributes..."
+argument_list|,
+name|vectors
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
 literal|"/New Path..."
 argument_list|,
 name|gimage
@@ -803,20 +817,6 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"/Export Path..."
-argument_list|,
-name|vectors
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/Path Tool"
-argument_list|,
-name|vectors
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/Edit Path Attributes..."
 argument_list|,
 name|vectors
 argument_list|)

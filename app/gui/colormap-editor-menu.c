@@ -74,31 +74,6 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/_Add Color"
-argument_list|)
-block|,
-name|NULL
-block|,
-name|colormap_editor_add_color_cmd_callback
-block|,
-literal|0
-block|,
-literal|"<StockItem>"
-block|,
-name|GTK_STOCK_NEW
-block|}
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
 literal|"/_Edit Color..."
 argument_list|)
 block|,
@@ -119,7 +94,32 @@ name|NULL
 block|,
 name|NULL
 block|}
-block|, }
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/_Add Color"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|colormap_editor_add_color_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GTK_STOCK_NEW
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|}
 decl_stmt|;
 end_decl_stmt
 
@@ -201,6 +201,13 @@ define|\
 value|gimp_item_factory_set_sensitive (factory, menu, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
+literal|"/Edit Color..."
+argument_list|,
+name|gimage
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
 literal|"/Add Color"
 argument_list|,
 name|gimage
@@ -208,13 +215,6 @@ operator|&&
 name|num_colors
 operator|<
 literal|256
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/Edit Color..."
-argument_list|,
-name|gimage
 argument_list|)
 expr_stmt|;
 undef|#

@@ -110,6 +110,36 @@ block|{
 block|{
 name|N_
 argument_list|(
+literal|"/_Edit Gradient..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|data_edit_data_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_EDIT
+block|}
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_GRADIENT_EDIT
+block|,
+name|NULL
+block|}
+block|,
+name|MENU_SEPARATOR
+argument_list|(
+literal|"/---"
+argument_list|)
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
 literal|"/_New Gradient"
 argument_list|)
 block|,
@@ -160,23 +190,23 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/_Edit Gradient..."
+literal|"/Save as _POV-Ray..."
 argument_list|)
 block|,
 name|NULL
 block|,
-name|data_edit_data_cmd_callback
+name|gradients_save_as_pov_ray_cmd_callback
 block|,
 literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_EDIT
+name|GTK_STOCK_SAVE_AS
 block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_GRADIENT_EDIT
+name|GIMP_HELP_GRADIENT_SAVE_AS_POV
 block|,
 name|NULL
 block|}
@@ -232,36 +262,6 @@ block|,
 name|NULL
 block|,
 name|GIMP_HELP_GRADIENT_REFRESH
-block|,
-name|NULL
-block|}
-block|,
-name|MENU_SEPARATOR
-argument_list|(
-literal|"/---"
-argument_list|)
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/Save as _POV-Ray..."
-argument_list|)
-block|,
-name|NULL
-block|,
-name|gradients_save_as_pov_ray_cmd_callback
-block|,
-literal|0
-block|,
-literal|"<StockItem>"
-block|,
-name|GTK_STOCK_SAVE_AS
-block|}
-block|,
-name|NULL
-block|,
-name|GIMP_HELP_GRADIENT_SAVE_AS_POV
 block|,
 name|NULL
 block|}
@@ -349,6 +349,20 @@ define|\
 value|gimp_item_factory_set_sensitive (factory, menu, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
+literal|"/Edit Gradient..."
+argument_list|,
+name|gradient
+operator|&&
+name|GIMP_DATA_FACTORY_VIEW
+argument_list|(
+name|editor
+argument_list|)
+operator|->
+name|data_edit_func
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
 literal|"/Duplicate Gradient"
 argument_list|,
 name|gradient
@@ -363,16 +377,9 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Edit Gradient..."
+literal|"/Save as POV-Ray..."
 argument_list|,
 name|gradient
-operator|&&
-name|GIMP_DATA_FACTORY_VIEW
-argument_list|(
-name|editor
-argument_list|)
-operator|->
-name|data_edit_func
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -389,13 +396,6 @@ operator|!
 name|data
 operator|->
 name|internal
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/Save as POV-Ray..."
-argument_list|,
-name|gradient
 argument_list|)
 expr_stmt|;
 undef|#

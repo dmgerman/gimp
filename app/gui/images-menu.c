@@ -89,7 +89,7 @@ argument_list|(
 literal|"/_Raise Displays"
 argument_list|)
 block|,
-name|NULL
+literal|""
 block|,
 name|images_raise_displays_cmd_callback
 block|,
@@ -114,7 +114,7 @@ argument_list|(
 literal|"/_New Display"
 argument_list|)
 block|,
-name|NULL
+literal|""
 block|,
 name|images_new_display_cmd_callback
 block|,
@@ -139,7 +139,7 @@ argument_list|(
 literal|"/_Delete Image"
 argument_list|)
 block|,
-name|NULL
+literal|""
 block|,
 name|images_delete_image_cmd_callback
 block|,
