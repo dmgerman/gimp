@@ -631,14 +631,13 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: need gimp_vectors_from_mask(or something)
-endif|#
-directive|endif
+name|vectors_selection_to_vectors
+argument_list|(
+name|gimage
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
