@@ -1010,6 +1010,20 @@ operator|=
 name|gtk_entry_new
 argument_list|()
 expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|scales
+operator|->
+name|hex_entry
+argument_list|,
+name|_
+argument_list|(
+literal|"Hexadecimal color notation as used in HTML"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gtk_entry_set_width_chars
 argument_list|(
 name|GTK_ENTRY
@@ -1019,7 +1033,7 @@ operator|->
 name|hex_entry
 argument_list|)
 argument_list|,
-literal|8
+literal|7
 argument_list|)
 expr_stmt|;
 name|gtk_entry_set_max_length
@@ -1031,7 +1045,7 @@ operator|->
 name|hex_entry
 argument_list|)
 argument_list|,
-literal|7
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end
@@ -1105,6 +1119,18 @@ name|_
 argument_list|(
 literal|"He_x Triplet:"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_mnemonic_widget
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|scales
+operator|->
+name|hex_entry
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end
@@ -1723,7 +1749,7 @@ argument_list|(
 name|buffer
 argument_list|)
 argument_list|,
-literal|"#%.2x%.2x%.2x"
+literal|"%.2x%.2x%.2x"
 argument_list|,
 name|values
 index|[
@@ -2136,15 +2162,16 @@ name|GimpColorSelector
 modifier|*
 name|selector
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|hex_color
+decl_stmt|;
 name|gchar
 name|buffer
 index|[
 literal|8
 index|]
-decl_stmt|;
-name|gchar
-modifier|*
-name|hex_color
 decl_stmt|;
 name|guint
 name|hex_rgb
@@ -2194,8 +2221,6 @@ name|GDK_FOCUS_CHANGE
 case|:
 name|hex_color
 operator|=
-name|g_strdup
-argument_list|(
 name|gtk_entry_get_text
 argument_list|(
 name|GTK_ENTRY
@@ -2203,7 +2228,6 @@ argument_list|(
 name|scales
 operator|->
 name|hex_entry
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2233,7 +2257,7 @@ argument_list|(
 name|buffer
 argument_list|)
 argument_list|,
-literal|"#%.2x%.2x%.2x"
+literal|"%.2x%.2x%.2x"
 argument_list|,
 name|r
 argument_list|,
@@ -2250,7 +2274,7 @@ argument_list|(
 name|hex_color
 argument_list|)
 operator|==
-literal|7
+literal|6
 operator|)
 operator|&&
 operator|(
@@ -2272,7 +2296,7 @@ name|sscanf
 argument_list|(
 name|hex_color
 argument_list|,
-literal|"#%x"
+literal|"%x"
 argument_list|,
 operator|&
 name|hex_rgb
@@ -2350,11 +2374,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|g_free
-argument_list|(
-name|hex_color
-argument_list|)
-expr_stmt|;
 break|break;
 default|default:
 comment|/*  do nothing  */
