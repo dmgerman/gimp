@@ -5282,7 +5282,7 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-name|INIT_I18N
+name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
 name|gimp_install_temp_proc
