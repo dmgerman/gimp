@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimprc.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpui.h"
 end_include
 
@@ -165,10 +171,7 @@ DECL|member|threshold
 name|gdouble
 name|threshold
 decl_stmt|;
-DECL|member|threshold_d
-name|gdouble
-name|threshold_d
-decl_stmt|;
+comment|/* gdouble      threshold_d; (from gimprc) */
 DECL|member|threshold_w
 name|GtkObject
 modifier|*
@@ -375,9 +378,7 @@ operator|->
 name|threshold_w
 argument_list|)
 argument_list|,
-name|options
-operator|->
-name|threshold_d
+name|default_threshold
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -476,11 +477,7 @@ name|options
 operator|->
 name|threshold
 operator|=
-name|options
-operator|->
-name|threshold_d
-operator|=
-literal|15.0
+name|default_threshold
 expr_stmt|;
 name|options
 operator|->
@@ -580,9 +577,7 @@ name|threshold_w
 operator|=
 name|gtk_adjustment_new
 argument_list|(
-name|options
-operator|->
-name|threshold_d
+name|default_threshold
 argument_list|,
 literal|1.0
 argument_list|,

@@ -100,6 +100,20 @@ directive|include
 file|"gimpwidgets.h"
 end_include
 
+begin_function_decl
+name|void
+name|gimp_ui_init
+parameter_list|(
+name|gchar
+modifier|*
+name|prog_name
+parameter_list|,
+name|gboolean
+name|preview
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
