@@ -16,13 +16,6 @@ directive|define
 name|__MAIN_H__
 end_define
 
-begin_decl_stmt
-specifier|extern
-name|gboolean
-name|interactive_ico
-decl_stmt|;
-end_decl_stmt
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -362,6 +355,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* __MAIN_H__ */
+end_comment
 
 end_unit
 

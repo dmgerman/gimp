@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -2003,10 +1997,6 @@ block|{
 name|GimpPixelRgn
 name|pixel_rgn
 decl_stmt|;
-if|if
-condition|(
-name|interactive_ico
-condition|)
 name|gimp_progress_update
 argument_list|(
 operator|(
@@ -2840,10 +2830,6 @@ argument_list|,
 name|first_layer
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|interactive_ico
-condition|)
 name|gimp_progress_update
 argument_list|(
 literal|1.0
@@ -2866,26 +2852,23 @@ modifier|*
 name|filename
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|temp
+decl_stmt|;
 name|gint32
 name|image_ID
 decl_stmt|;
 name|MsIcon
 name|ico
 decl_stmt|;
-if|if
-condition|(
-name|interactive_ico
-condition|)
-block|{
-name|guchar
-modifier|*
 name|temp
-init|=
+operator|=
 name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Loading %s:"
+literal|"Opening '%s'..."
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -2893,7 +2876,7 @@ argument_list|(
 name|filename
 argument_list|)
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|gimp_progress_init
 argument_list|(
 name|temp
@@ -2904,7 +2887,6 @@ argument_list|(
 name|temp
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 operator|!

@@ -66,5 +66,9 @@ endif|#
 directive|endif
 end_endif
 
+begin_comment
+comment|/* __ICO_DIALOG_H__ */
+end_comment
+
 end_unit
 

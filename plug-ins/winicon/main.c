@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -66,15 +60,6 @@ include|#
 directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
-
-begin_decl_stmt
-DECL|variable|interactive_ico
-name|gboolean
-name|interactive_ico
-init|=
-name|FALSE
-decl_stmt|;
-end_decl_stmt
 
 begin_function_decl
 specifier|static
@@ -474,18 +459,10 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-name|interactive_ico
-operator|=
-name|TRUE
-expr_stmt|;
 break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-name|interactive_ico
-operator|=
-name|FALSE
-expr_stmt|;
 if|if
 condition|(
 name|nparams
@@ -622,18 +599,10 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-name|interactive_ico
-operator|=
-name|TRUE
-expr_stmt|;
 break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-name|interactive_ico
-operator|=
-name|FALSE
-expr_stmt|;
 comment|/*  Make sure all the arguments are there!  */
 if|if
 condition|(
@@ -649,10 +618,6 @@ break|break;
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-name|interactive_ico
-operator|=
-name|FALSE
-expr_stmt|;
 break|break;
 default|default:
 break|break;
@@ -1562,7 +1527,7 @@ name|num_colors
 argument_list|)
 condition|)
 block|{
-comment|/* Damn. Windows icons with color maps need the color black. 	     We need to eliminate one more color to make room for black: */
+comment|/* Damn. Windows icons with color maps need the color black.              We need to eliminate one more color to make room for black: */
 name|result
 operator|=
 name|gimp_image_convert_rgb

@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -3098,10 +3092,6 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|interactive_ico
-condition|)
 name|gimp_progress_update
 argument_list|(
 operator|(
@@ -3195,10 +3185,6 @@ index|]
 operator|.
 name|and_len
 expr_stmt|;
-if|if
-condition|(
-name|interactive_ico
-condition|)
 name|gimp_progress_update
 argument_list|(
 literal|0.3
@@ -3272,10 +3258,6 @@ index|]
 operator|.
 name|size
 expr_stmt|;
-if|if
-condition|(
-name|interactive_ico
-condition|)
 name|gimp_progress_update
 argument_list|(
 literal|0.6
@@ -3294,10 +3276,6 @@ literal|0.3
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|interactive_ico
-condition|)
 name|gimp_progress_update
 argument_list|(
 literal|1.0
@@ -3801,6 +3779,10 @@ block|{
 name|MsIcon
 name|ico
 decl_stmt|;
+name|gchar
+modifier|*
+name|temp_buf
+decl_stmt|;
 name|gint
 modifier|*
 name|icon_depths
@@ -3884,20 +3866,13 @@ condition|)
 return|return
 name|GIMP_PDB_CANCEL
 return|;
-if|if
-condition|(
-name|interactive_ico
-condition|)
-block|{
-name|guchar
-modifier|*
 name|temp_buf
-init|=
+operator|=
 name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving %s:"
+literal|"Saving '%s'..."
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -3905,7 +3880,7 @@ argument_list|(
 name|filename
 argument_list|)
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|gimp_progress_init
 argument_list|(
 name|temp_buf
@@ -3916,7 +3891,6 @@ argument_list|(
 name|temp_buf
 argument_list|)
 expr_stmt|;
-block|}
 comment|/* Okay, let's actually save the thing with the depths the      user specified. */
 if|if
 condition|(
