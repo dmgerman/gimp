@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae8c6dc0103
+DECL|enum|__anon2ba8060c0103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -1296,6 +1296,27 @@ condition|(
 name|context
 condition|)
 block|{
+if|if
+condition|(
+operator|!
+name|GIMP_CONTAINER_TREE_VIEW
+argument_list|(
+name|view
+argument_list|)
+operator|->
+name|dnd_gimp
+condition|)
+name|GIMP_CONTAINER_TREE_VIEW
+argument_list|(
+name|view
+argument_list|)
+operator|->
+name|dnd_gimp
+operator|=
+name|context
+operator|->
+name|gimp
+expr_stmt|;
 name|g_signal_connect_swapped
 argument_list|(
 name|context

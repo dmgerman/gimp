@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279518720103
+DECL|enum|__anon2c84192c0103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -651,6 +651,12 @@ expr_stmt|;
 name|klass
 operator|->
 name|drop_svg
+operator|=
+name|NULL
+expr_stmt|;
+name|klass
+operator|->
+name|drop_component
 operator|=
 name|NULL
 expr_stmt|;
