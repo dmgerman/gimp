@@ -2009,13 +2009,6 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"view-info-window"
-argument_list|,
-name|gdisp
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
 literal|"view-navigation-window"
 argument_list|,
 name|gdisp
