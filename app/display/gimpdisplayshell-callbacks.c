@@ -1696,6 +1696,10 @@ condition|)
 return|return
 name|TRUE
 return|;
+name|update_cursor
+operator|=
+name|TRUE
+expr_stmt|;
 block|}
 break|break;
 case|case

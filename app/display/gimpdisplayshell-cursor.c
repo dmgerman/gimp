@@ -385,11 +385,11 @@ operator|->
 name|proximity
 operator|&&
 name|x
-operator|>
+operator|>=
 literal|0
 operator|&&
 name|y
-operator|>
+operator|>=
 literal|0
 operator|)
 expr_stmt|;
@@ -472,11 +472,11 @@ expr_stmt|;
 if|if
 condition|(
 name|x
-operator|>
+operator|>=
 literal|0
 operator|&&
 name|y
-operator|>
+operator|>=
 literal|0
 condition|)
 block|{
