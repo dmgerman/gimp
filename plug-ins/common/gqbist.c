@@ -85,19 +85,19 @@ value|36
 end_define
 
 begin_define
-DECL|macro|NUM_TRANSFORMS
-define|#
-directive|define
-name|NUM_TRANSFORMS
-value|9
-end_define
-
-begin_define
 DECL|macro|NUM_REGISTERS
 define|#
 directive|define
 name|NUM_REGISTERS
 value|6
+end_define
+
+begin_define
+DECL|macro|PREVIEW_SIZE
+define|#
+directive|define
+name|PREVIEW_SIZE
+value|64
 end_define
 
 begin_define
@@ -114,14 +114,6 @@ define|#
 directive|define
 name|PLUG_IN_VERSION
 value|"January 2001, 1.12"
-end_define
-
-begin_define
-DECL|macro|PREVIEW_SIZE
-define|#
-directive|define
-name|PREVIEW_SIZE
-value|64
 end_define
 
 begin_comment
@@ -145,11 +137,56 @@ end_typedef
 
 begin_typedef
 typedef|typedef
+enum|enum
+DECL|enum|__anon274fb0840103
+block|{
+DECL|enumerator|PROJECTION
+name|PROJECTION
+block|,
+DECL|enumerator|SHIFT
+name|SHIFT
+block|,
+DECL|enumerator|SHIFTBACK
+name|SHIFTBACK
+block|,
+DECL|enumerator|ROTATE
+name|ROTATE
+block|,
+DECL|enumerator|ROTATE2
+name|ROTATE2
+block|,
+DECL|enumerator|MULTIPLY
+name|MULTIPLY
+block|,
+DECL|enumerator|SINE
+name|SINE
+block|,
+DECL|enumerator|CONDITIONAL
+name|CONDITIONAL
+block|,
+DECL|enumerator|COMPLEMENT
+name|COMPLEMENT
+DECL|typedef|TransformType
+block|}
+name|TransformType
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|NUM_TRANSFORMS
+define|#
+directive|define
+name|NUM_TRANSFORMS
+value|(COMPLEMENT + 1)
+end_define
+
+begin_typedef
+typedef|typedef
 struct|struct
-DECL|struct|__anon2ae9bca00108
+DECL|struct|__anon274fb0840208
 block|{
 DECL|member|transformSequence
-name|gint
+name|TransformType
 name|transformSequence
 index|[
 name|MAX_TRANSFORMS
@@ -177,18 +214,18 @@ name|MAX_TRANSFORMS
 index|]
 decl_stmt|;
 block|}
-DECL|typedef|EXP_INFO
-name|EXP_INFO
+DECL|typedef|ExpInfo
+name|ExpInfo
 typedef|;
 end_typedef
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae9bca00208
+DECL|struct|__anon274fb0840308
 block|{
 DECL|member|info
-name|EXP_INFO
+name|ExpInfo
 name|info
 decl_stmt|;
 DECL|member|oversampling
@@ -196,89 +233,17 @@ name|gint
 name|oversampling
 decl_stmt|;
 DECL|member|path
-name|char
+name|gchar
 name|path
 index|[
 name|PATH_MAX
 index|]
 decl_stmt|;
 block|}
-DECL|typedef|QBIST_INFO
-name|QBIST_INFO
+DECL|typedef|QbistInfo
+name|QbistInfo
 typedef|;
 end_typedef
-
-begin_define
-DECL|macro|PROJECTION
-define|#
-directive|define
-name|PROJECTION
-value|0
-end_define
-
-begin_define
-DECL|macro|SHIFT
-define|#
-directive|define
-name|SHIFT
-value|1
-end_define
-
-begin_define
-DECL|macro|SHIFTBACK
-define|#
-directive|define
-name|SHIFTBACK
-value|2
-end_define
-
-begin_define
-DECL|macro|ROTATE
-define|#
-directive|define
-name|ROTATE
-value|3
-end_define
-
-begin_define
-DECL|macro|ROTATE2
-define|#
-directive|define
-name|ROTATE2
-value|4
-end_define
-
-begin_define
-DECL|macro|MULTIPLY
-define|#
-directive|define
-name|MULTIPLY
-value|5
-end_define
-
-begin_define
-DECL|macro|SINE
-define|#
-directive|define
-name|SINE
-value|6
-end_define
-
-begin_define
-DECL|macro|CONDITIONAL
-define|#
-directive|define
-name|CONDITIONAL
-value|7
-end_define
-
-begin_define
-DECL|macro|COMPLEMENT
-define|#
-directive|define
-name|COMPLEMENT
-value|8
-end_define
 
 begin_comment
 comment|/** prototypes **************************************************************/
@@ -371,7 +336,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|EXP_INFO
+name|ExpInfo
 modifier|*
 name|n_info
 parameter_list|)
@@ -381,7 +346,7 @@ end_function_decl
 begin_decl_stmt
 DECL|variable|qbist_info
 specifier|static
-name|QBIST_INFO
+name|QbistInfo
 name|qbist_info
 decl_stmt|;
 end_decl_stmt
@@ -393,15 +358,15 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|create_info (EXP_INFO * info)
+DECL|function|create_info (ExpInfo * info)
 name|create_info
 parameter_list|(
-name|EXP_INFO
+name|ExpInfo
 modifier|*
 name|info
 parameter_list|)
 block|{
-name|int
+name|gint
 name|k
 decl_stmt|;
 for|for
@@ -473,19 +438,19 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|modify_info (EXP_INFO * o_info,EXP_INFO * n_info)
+DECL|function|modify_info (ExpInfo * o_info,ExpInfo * n_info)
 name|modify_info
 parameter_list|(
-name|EXP_INFO
+name|ExpInfo
 modifier|*
 name|o_info
 parameter_list|,
-name|EXP_INFO
+name|ExpInfo
 modifier|*
 name|n_info
 parameter_list|)
 block|{
-name|int
+name|gint
 name|k
 decl_stmt|,
 name|n
@@ -498,7 +463,7 @@ name|o_info
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|EXP_INFO
+name|ExpInfo
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -641,16 +606,16 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|check_last_modified (EXP_INFO info,int p,int n)
+DECL|function|check_last_modified (ExpInfo info,gint p,gint n)
 name|check_last_modified
 parameter_list|(
-name|EXP_INFO
+name|ExpInfo
 name|info
 parameter_list|,
-name|int
+name|gint
 name|p
 parameter_list|,
-name|int
+name|gint
 name|n
 parameter_list|)
 block|{
@@ -736,14 +701,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|optimize (EXP_INFO info)
+DECL|function|optimize (ExpInfo info)
 name|optimize
 parameter_list|(
-name|EXP_INFO
+name|ExpInfo
 name|info
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 comment|/* double-arg fix: */
@@ -816,6 +781,8 @@ name|i
 index|]
 expr_stmt|;
 break|break;
+default|default:
+break|break;
 block|}
 block|}
 comment|/* check for last modified item */
@@ -834,35 +801,35 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|qbist (EXP_INFO info,gchar * buffer,int xp,int yp,int num,int width,int height,int bpp,int oversampling)
+DECL|function|qbist (ExpInfo info,gchar * buffer,gint xp,gint yp,gint num,gint width,gint height,gint bpp,gint oversampling)
 name|qbist
 parameter_list|(
-name|EXP_INFO
+name|ExpInfo
 name|info
 parameter_list|,
 name|gchar
 modifier|*
 name|buffer
 parameter_list|,
-name|int
+name|gint
 name|xp
 parameter_list|,
-name|int
+name|gint
 name|yp
 parameter_list|,
-name|int
+name|gint
 name|num
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
-name|int
+name|gint
 name|bpp
 parameter_list|,
-name|int
+name|gint
 name|oversampling
 parameter_list|)
 block|{
@@ -935,7 +902,7 @@ name|yy
 operator|++
 control|)
 block|{
-name|int
+name|gint
 name|xx
 decl_stmt|;
 for|for
@@ -2538,7 +2505,7 @@ name|qbist_info
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|QBIST_INFO
+name|QbistInfo
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2850,7 +2817,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|info
 specifier|static
-name|EXP_INFO
+name|ExpInfo
 name|info
 index|[
 literal|9
@@ -3089,14 +3056,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|dialog_select_preview (GtkWidget * widget,EXP_INFO * n_info)
+DECL|function|dialog_select_preview (GtkWidget * widget,ExpInfo * n_info)
 name|dialog_select_preview
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|EXP_INFO
+name|ExpInfo
 modifier|*
 name|n_info
 parameter_list|)
@@ -3115,7 +3082,7 @@ name|n_info
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|EXP_INFO
+name|ExpInfo
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3207,7 +3174,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|load_data (gchar * name)
 name|load_data
 parameter_list|(
@@ -3216,7 +3183,7 @@ modifier|*
 name|name
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|FILE
@@ -3246,7 +3213,7 @@ name|NULL
 condition|)
 block|{
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 if|if
@@ -3277,7 +3244,7 @@ name|f
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 name|fclose
@@ -3438,14 +3405,14 @@ literal|3
 argument_list|)
 expr_stmt|;
 return|return
-literal|1
+name|TRUE
 return|;
 block|}
 end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|save_data (gchar * name)
 name|save_data
 parameter_list|(
@@ -3454,7 +3421,7 @@ modifier|*
 name|name
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 init|=
 literal|0
@@ -3486,7 +3453,7 @@ name|NULL
 condition|)
 block|{
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 for|for
@@ -3661,7 +3628,7 @@ name|f
 argument_list|)
 expr_stmt|;
 return|return
-literal|1
+name|TRUE
 return|;
 block|}
 end_function
@@ -4261,7 +4228,7 @@ name|qbist_info
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|EXP_INFO
+name|ExpInfo
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4427,7 +4394,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Antialaising"
+literal|"Antialiasing"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4632,7 +4599,7 @@ condition|)
 name|memcpy
 argument_list|(
 operator|(
-name|char
+name|gchar
 operator|*
 operator|)
 operator|&
@@ -4641,7 +4608,7 @@ operator|.
 name|info
 argument_list|,
 operator|(
-name|char
+name|gchar
 operator|*
 operator|)
 operator|&
@@ -4654,7 +4621,7 @@ operator|)
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|EXP_INFO
+name|ExpInfo
 argument_list|)
 argument_list|)
 expr_stmt|;
