@@ -36,18 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpprogress.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"pixel_region.h"
 end_include
 
@@ -62,14 +50,6 @@ include|#
 directive|include
 file|"tile.h"
 end_include
-
-begin_comment
-comment|/*********************/
-end_comment
-
-begin_comment
-comment|/*  Local Variables  */
-end_comment
 
 begin_comment
 comment|/*********************/
@@ -1271,16 +1251,11 @@ name|ap
 decl_stmt|;
 name|PRI
 operator|=
-operator|(
-name|PixelRegionIterator
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|PixelRegionIterator
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|PRI
@@ -1339,16 +1314,11 @@ argument_list|)
 expr_stmt|;
 name|PRH
 operator|=
-operator|(
-name|PixelRegionHolder
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|PixelRegionHolder
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|PRH

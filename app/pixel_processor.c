@@ -84,12 +84,6 @@ directive|include
 file|"pixel_region.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
