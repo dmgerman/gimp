@@ -274,7 +274,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1547bb0108
+DECL|struct|__anon27dfc11e0108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -310,7 +310,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1547bb0208
+DECL|struct|__anon27dfc11e0208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -365,7 +365,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1547bb0308
+DECL|struct|__anon27dfc11e0308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -531,7 +531,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1547bb0403
+DECL|enum|__anon27dfc11e0403
 block|{
 DECL|enumerator|BEZIER_SELECT
 name|BEZIER_SELECT
@@ -588,16 +588,6 @@ parameter_list|(
 name|GimpBezierSelectTool
 modifier|*
 name|bezier_select
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_bezier_select_tool_options_reset
-parameter_list|(
-name|void
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1488,17 +1478,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|gimp_bezier_select_tool_options_reset (void)
-specifier|static
-name|void
-name|gimp_bezier_select_tool_options_reset
-parameter_list|(
-name|void
-parameter_list|)
-block|{ }
-end_function
-
-begin_function
 specifier|static
 name|void
 DECL|function|gimp_bezier_select_tool_init (GimpBezierSelectTool * bezier_select)
@@ -1543,7 +1522,7 @@ name|selection_options_new
 argument_list|(
 name|GIMP_TYPE_BEZIER_SELECT_TOOL
 argument_list|,
-name|gimp_bezier_select_tool_options_reset
+name|selection_options_reset
 argument_list|)
 expr_stmt|;
 name|tool_manager_register_tool_options

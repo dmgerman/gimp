@@ -657,16 +657,6 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|iscissors_options_reset
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|iscissors_convert
 parameter_list|(
 name|GimpIscissorsTool
@@ -1638,33 +1628,6 @@ end_function
 
 begin_function
 specifier|static
-name|void
-DECL|function|iscissors_options_reset (void)
-name|iscissors_options_reset
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-name|IScissorsOptions
-modifier|*
-name|options
-init|=
-name|iscissors_options
-decl_stmt|;
-name|selection_options_reset
-argument_list|(
-operator|(
-name|SelectionOptions
-operator|*
-operator|)
-name|options
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
 name|IScissorsOptions
 modifier|*
 DECL|function|iscissors_options_new (void)
@@ -1697,7 +1660,7 @@ name|options
 argument_list|,
 name|GIMP_TYPE_ISCISSORS_TOOL
 argument_list|,
-name|iscissors_options_reset
+name|selection_options_reset
 argument_list|)
 expr_stmt|;
 return|return

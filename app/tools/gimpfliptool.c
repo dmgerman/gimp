@@ -313,7 +313,9 @@ specifier|static
 name|void
 name|flip_options_reset
 parameter_list|(
-name|void
+name|ToolOptions
+modifier|*
+name|tool_options
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1484,7 +1486,6 @@ name|GtkWidget
 modifier|*
 name|frame
 decl_stmt|;
-comment|/*  the new flip tool options structure  */
 name|options
 operator|=
 name|g_new0
@@ -1619,18 +1620,26 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|flip_options_reset (void)
+DECL|function|flip_options_reset (ToolOptions * tool_options)
 name|flip_options_reset
 parameter_list|(
-name|void
+name|ToolOptions
+modifier|*
+name|tool_options
 parameter_list|)
 block|{
 name|FlipOptions
 modifier|*
 name|options
-init|=
-name|flip_options
 decl_stmt|;
+name|options
+operator|=
+operator|(
+name|FlipOptions
+operator|*
+operator|)
+name|tool_options
+expr_stmt|;
 name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON

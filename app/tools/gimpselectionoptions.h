@@ -193,9 +193,9 @@ begin_function_decl
 name|void
 name|selection_options_reset
 parameter_list|(
-name|SelectionOptions
+name|ToolOptions
 modifier|*
-name|options
+name|tool_options
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -516,7 +516,9 @@ specifier|static
 name|void
 name|text_tool_options_reset
 parameter_list|(
-name|void
+name|ToolOptions
+modifier|*
+name|tool_options
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -991,18 +993,26 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|text_tool_options_reset (void)
+DECL|function|text_tool_options_reset (ToolOptions * tool_options)
 name|text_tool_options_reset
 parameter_list|(
-name|void
+name|ToolOptions
+modifier|*
+name|tool_options
 parameter_list|)
 block|{
 name|TextOptions
 modifier|*
 name|options
-init|=
-name|text_tool_options
 decl_stmt|;
+name|options
+operator|=
+operator|(
+name|TextOptions
+operator|*
+operator|)
+name|tool_options
+expr_stmt|;
 name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON

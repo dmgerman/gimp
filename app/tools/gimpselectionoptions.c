@@ -1726,14 +1726,26 @@ end_function
 
 begin_function
 name|void
-DECL|function|selection_options_reset (SelectionOptions * options)
+DECL|function|selection_options_reset (ToolOptions * tool_options)
 name|selection_options_reset
 parameter_list|(
+name|ToolOptions
+modifier|*
+name|tool_options
+parameter_list|)
+block|{
 name|SelectionOptions
 modifier|*
 name|options
-parameter_list|)
-block|{
+decl_stmt|;
+name|options
+operator|=
+operator|(
+name|SelectionOptions
+operator|*
+operator|)
+name|tool_options
+expr_stmt|;
 if|if
 condition|(
 name|options

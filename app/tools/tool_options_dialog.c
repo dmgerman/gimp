@@ -1270,7 +1270,11 @@ operator|->
 name|tool_options
 operator|->
 name|reset_func
-argument_list|()
+argument_list|(
+name|tool_info
+operator|->
+name|tool_options
+argument_list|)
 expr_stmt|;
 block|}
 end_function

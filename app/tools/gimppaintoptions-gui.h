@@ -285,6 +285,10 @@ name|GtkWidget
 modifier|*
 name|incremental_w
 decl_stmt|;
+DECL|member|incremental_save
+name|gboolean
+name|incremental_save
+decl_stmt|;
 comment|/*  the pressure-sensitivity options  */
 DECL|member|pressure_options
 name|PaintPressureOptions
@@ -345,9 +349,9 @@ begin_function_decl
 name|void
 name|paint_options_reset
 parameter_list|(
-name|PaintOptions
+name|ToolOptions
 modifier|*
-name|options
+name|tool_options
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -297,7 +297,9 @@ specifier|static
 name|void
 name|gimp_eraser_tool_options_reset
 parameter_list|(
-name|void
+name|ToolOptions
+modifier|*
+name|tool_options
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1382,7 +1384,7 @@ name|vbox
 decl_stmt|;
 name|options
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|EraserOptions
 argument_list|,
@@ -1592,25 +1594,29 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_eraser_tool_options_reset (void)
+DECL|function|gimp_eraser_tool_options_reset (ToolOptions * tool_options)
 name|gimp_eraser_tool_options_reset
 parameter_list|(
-name|void
+name|ToolOptions
+modifier|*
+name|tool_options
 parameter_list|)
 block|{
 name|EraserOptions
 modifier|*
 name|options
-init|=
-name|eraser_options
 decl_stmt|;
-name|paint_options_reset
-argument_list|(
+name|options
+operator|=
 operator|(
-name|PaintOptions
+name|EraserOptions
 operator|*
 operator|)
-name|options
+name|tool_options
+expr_stmt|;
+name|paint_options_reset
+argument_list|(
+name|tool_options
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active

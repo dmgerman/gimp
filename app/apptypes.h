@@ -882,7 +882,9 @@ modifier|*
 name|ToolOptionsResetFunc
 function_decl|)
 parameter_list|(
-name|void
+name|ToolOptions
+modifier|*
+name|tool_options
 parameter_list|)
 function_decl|;
 end_typedef

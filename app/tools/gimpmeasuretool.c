@@ -379,7 +379,9 @@ specifier|static
 name|void
 name|measure_tool_options_reset
 parameter_list|(
-name|void
+name|ToolOptions
+modifier|*
+name|tool_options
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -3880,18 +3882,26 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|measure_tool_options_reset (void)
+DECL|function|measure_tool_options_reset (ToolOptions * tool_options)
 name|measure_tool_options_reset
 parameter_list|(
-name|void
+name|ToolOptions
+modifier|*
+name|tool_options
 parameter_list|)
 block|{
 name|MeasureOptions
 modifier|*
 name|options
-init|=
-name|measure_tool_options
 decl_stmt|;
+name|options
+operator|=
+operator|(
+name|MeasureOptions
+operator|*
+operator|)
+name|tool_options
+expr_stmt|;
 name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
@@ -3927,10 +3937,9 @@ name|GtkWidget
 modifier|*
 name|vbox
 decl_stmt|;
-comment|/*  the new measure tool options structure  */
 name|options
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|MeasureOptions
 argument_list|,

@@ -629,25 +629,29 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dodgeburn_tool_options_reset (void)
+DECL|function|gimp_dodgeburn_tool_options_reset (ToolOptions * tool_options)
 name|gimp_dodgeburn_tool_options_reset
 parameter_list|(
-name|void
+name|ToolOptions
+modifier|*
+name|tool_options
 parameter_list|)
 block|{
 name|DodgeBurnOptions
 modifier|*
 name|options
-init|=
-name|dodgeburn_options
 decl_stmt|;
-name|paint_options_reset
-argument_list|(
+name|options
+operator|=
 operator|(
-name|PaintOptions
+name|DodgeBurnOptions
 operator|*
 operator|)
-name|options
+name|tool_options
+expr_stmt|;
+name|paint_options_reset
+argument_list|(
+name|tool_options
 argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
@@ -735,7 +739,6 @@ name|GtkWidget
 modifier|*
 name|frame
 decl_stmt|;
-comment|/*  the new dodgeburn tool options structure  */
 name|options
 operator|=
 name|g_new0

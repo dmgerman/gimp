@@ -380,7 +380,9 @@ specifier|static
 name|void
 name|gimp_color_picker_tool_options_reset
 parameter_list|(
-name|void
+name|ToolOptions
+modifier|*
+name|tool_options
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -991,18 +993,26 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_picker_tool_options_reset (void)
+DECL|function|gimp_color_picker_tool_options_reset (ToolOptions * tool_options)
 name|gimp_color_picker_tool_options_reset
 parameter_list|(
-name|void
+name|ToolOptions
+modifier|*
+name|tool_options
 parameter_list|)
 block|{
 name|GimpColorPickerToolOptions
 modifier|*
 name|options
-init|=
-name|gimp_color_picker_tool_options
 decl_stmt|;
+name|options
+operator|=
+operator|(
+name|GimpColorPickerToolOptions
+operator|*
+operator|)
+name|tool_options
+expr_stmt|;
 name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
@@ -1096,10 +1106,9 @@ name|GtkWidget
 modifier|*
 name|scale
 decl_stmt|;
-comment|/*  the new color picker tool options structure  */
 name|options
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|GimpColorPickerToolOptions
 argument_list|,

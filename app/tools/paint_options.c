@@ -551,7 +551,19 @@ name|FALSE
 expr_stmt|;
 name|options
 operator|->
+name|incremental_save
+operator|=
+name|FALSE
+expr_stmt|;
+name|options
+operator|->
 name|pressure_options
+operator|=
+name|NULL
+expr_stmt|;
+name|options
+operator|->
+name|gradient_options
 operator|=
 name|NULL
 expr_stmt|;
@@ -1210,18 +1222,30 @@ end_function
 
 begin_function
 name|void
-DECL|function|paint_options_reset (PaintOptions * options)
+DECL|function|paint_options_reset (ToolOptions * tool_options)
 name|paint_options_reset
 parameter_list|(
+name|ToolOptions
+modifier|*
+name|tool_options
+parameter_list|)
+block|{
 name|PaintOptions
 modifier|*
 name|options
-parameter_list|)
-block|{
+decl_stmt|;
 name|GimpContext
 modifier|*
 name|default_context
 decl_stmt|;
+name|options
+operator|=
+operator|(
+name|PaintOptions
+operator|*
+operator|)
+name|tool_options
+expr_stmt|;
 name|default_context
 operator|=
 name|gimp_context_get_default
@@ -4576,20 +4600,6 @@ modifier|*
 name|options
 parameter_list|)
 block|{
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|(FIXME make incremental_save part of the struct)
-endif|#
-directive|endif
-specifier|static
-name|gboolean
-name|incremental_save
-init|=
-name|FALSE
-decl_stmt|;
 name|gimp_toggle_button_update
 argument_list|(
 name|widget
@@ -4611,6 +4621,8 @@ operator|->
 name|use_gradient
 condition|)
 block|{
+name|options
+operator|->
 name|incremental_save
 operator|=
 name|options
@@ -4641,6 +4653,8 @@ operator|->
 name|incremental_w
 argument_list|)
 argument_list|,
+name|options
+operator|->
 name|incremental_save
 argument_list|)
 expr_stmt|;

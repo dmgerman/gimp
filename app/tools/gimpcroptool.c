@@ -704,7 +704,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289c04c50103
+DECL|enum|__anon290f32b90103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -897,18 +897,26 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|crop_options_reset (void)
+DECL|function|crop_options_reset (ToolOptions * tool_options)
 name|crop_options_reset
 parameter_list|(
-name|void
+name|ToolOptions
+modifier|*
+name|tool_options
 parameter_list|)
 block|{
 name|CropOptions
 modifier|*
 name|options
-init|=
-name|crop_options
 decl_stmt|;
+name|options
+operator|=
+operator|(
+name|CropOptions
+operator|*
+operator|)
+name|tool_options
+expr_stmt|;
 name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
@@ -979,10 +987,9 @@ name|GtkWidget
 modifier|*
 name|frame
 decl_stmt|;
-comment|/*  the new crop tool options structure  */
 name|options
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|CropOptions
 argument_list|,

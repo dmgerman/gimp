@@ -165,16 +165,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|gimp_ellipse_select_tool_options_reset
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
@@ -670,7 +660,7 @@ name|selection_options_new
 argument_list|(
 name|GIMP_TYPE_ELLIPSE_SELECT_TOOL
 argument_list|,
-name|gimp_ellipse_select_tool_options_reset
+name|selection_options_reset
 argument_list|)
 expr_stmt|;
 name|tool_manager_register_tool_options
@@ -1012,23 +1002,6 @@ argument_list|,
 name|sel_options
 operator|->
 name|feather_radius
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_ellipse_select_tool_options_reset (void)
-name|gimp_ellipse_select_tool_options_reset
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-name|selection_options_reset
-argument_list|(
-name|ellipse_options
 argument_list|)
 expr_stmt|;
 block|}

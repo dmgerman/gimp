@@ -357,7 +357,9 @@ specifier|static
 name|void
 name|magnify_options_reset
 parameter_list|(
-name|void
+name|ToolOptions
+modifier|*
+name|tool_options
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -733,18 +735,26 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|magnify_options_reset (void)
+DECL|function|magnify_options_reset (ToolOptions * tool_options)
 name|magnify_options_reset
 parameter_list|(
-name|void
+name|ToolOptions
+modifier|*
+name|tool_options
 parameter_list|)
 block|{
 name|MagnifyOptions
 modifier|*
 name|options
-init|=
-name|magnify_options
 decl_stmt|;
+name|options
+operator|=
+operator|(
+name|MagnifyOptions
+operator|*
+operator|)
+name|tool_options
+expr_stmt|;
 name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON

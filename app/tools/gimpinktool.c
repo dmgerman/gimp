@@ -410,7 +410,9 @@ specifier|static
 name|void
 name|ink_options_reset
 parameter_list|(
-name|void
+name|ToolOptions
+modifier|*
+name|tool_options
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1255,7 +1257,13 @@ name|ink_options
 argument_list|)
 expr_stmt|;
 name|ink_options_reset
-argument_list|()
+argument_list|(
+operator|(
+name|ToolOptions
+operator|*
+operator|)
+name|ink_options
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -1371,25 +1379,29 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ink_options_reset (void)
+DECL|function|ink_options_reset (ToolOptions * tool_options)
 name|ink_options_reset
 parameter_list|(
-name|void
+name|ToolOptions
+modifier|*
+name|tool_options
 parameter_list|)
 block|{
 name|InkOptions
 modifier|*
 name|options
-init|=
-name|ink_options
 decl_stmt|;
-name|paint_options_reset
-argument_list|(
+name|options
+operator|=
 operator|(
-name|PaintOptions
+name|InkOptions
 operator|*
 operator|)
-name|options
+name|tool_options
+expr_stmt|;
+name|paint_options_reset
+argument_list|(
+name|tool_options
 argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
@@ -1599,7 +1611,6 @@ name|GdkPixmap
 modifier|*
 name|pixmap
 decl_stmt|;
-comment|/*  the new ink tool options structure  */
 name|options
 operator|=
 name|g_new0
@@ -6365,7 +6376,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon28d828120103
+DECL|enum|__anon2c82f8e80103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

@@ -258,16 +258,6 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_free_select_tool_options_reset
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|gimp_free_select_tool_add_point
 parameter_list|(
 name|GimpFreeSelectTool
@@ -724,7 +714,7 @@ name|selection_options_new
 argument_list|(
 name|GIMP_TYPE_FREE_SELECT_TOOL
 argument_list|,
-name|gimp_free_select_tool_options_reset
+name|selection_options_reset
 argument_list|)
 expr_stmt|;
 name|tool_manager_register_tool_options
@@ -1475,23 +1465,6 @@ name|y
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_free_select_tool_options_reset (void)
-name|gimp_free_select_tool_options_reset
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-name|selection_options_reset
-argument_list|(
-name|free_options
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 

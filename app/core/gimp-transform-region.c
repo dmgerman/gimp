@@ -233,7 +233,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0975230103
+DECL|enum|__anon276ded3a0103
 block|{
 DECL|enumerator|TRANSFORM
 name|TRANSFORM
@@ -714,7 +714,9 @@ specifier|static
 name|void
 name|transform_options_reset
 parameter_list|(
-name|void
+name|ToolOptions
+modifier|*
+name|tool_options
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1153,7 +1155,13 @@ argument_list|)
 expr_stmt|;
 comment|/*  press all default buttons  */
 name|transform_options_reset
-argument_list|()
+argument_list|(
+operator|(
+name|ToolOptions
+operator|*
+operator|)
+name|transform_options
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -7780,18 +7788,26 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|transform_options_reset (void)
+DECL|function|transform_options_reset (ToolOptions * tool_options)
 name|transform_options_reset
 parameter_list|(
-name|void
+name|ToolOptions
+modifier|*
+name|tool_options
 parameter_list|)
 block|{
 name|TransformOptions
 modifier|*
 name|options
-init|=
-name|transform_options
 decl_stmt|;
+name|options
+operator|=
+operator|(
+name|TransformOptions
+operator|*
+operator|)
+name|tool_options
+expr_stmt|;
 comment|/* FIXME this is gross. */
 name|gtk_toggle_button_set_active
 argument_list|(
@@ -8028,7 +8044,6 @@ name|GtkWidget
 modifier|*
 name|grid_density
 decl_stmt|;
-comment|/*  the new transform tool options structure  */
 name|options
 operator|=
 name|g_new0
@@ -8059,7 +8074,7 @@ name|type_d
 operator|=
 name|GIMP_TYPE_SCALE_TOOL
 expr_stmt|;
-comment|//GIMP_TYPE_ROTATE_TOOL;
+comment|/* FIXME: GIMP_TYPE_ROTATE_TOOL; */
 name|options
 operator|->
 name|smoothing
