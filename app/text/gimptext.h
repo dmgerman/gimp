@@ -139,14 +139,6 @@ DECL|member|fixed_width
 name|gint
 name|fixed_width
 decl_stmt|;
-DECL|member|fixed_height
-name|gint
-name|fixed_height
-decl_stmt|;
-DECL|member|gravity
-name|GimpGravityType
-name|gravity
-decl_stmt|;
 comment|/* for historical reasons, don't use */
 DECL|member|border
 name|gint
