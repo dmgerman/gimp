@@ -2979,7 +2979,7 @@ modifier|*
 name|help_data
 parameter_list|)
 block|{
-name|gimp_help
+name|gimp_standard_help_func
 argument_list|(
 name|tool_info
 index|[

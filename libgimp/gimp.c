@@ -5224,6 +5224,21 @@ expr_stmt|;
 block|}
 end_function
 
+begin_function
+name|gchar
+modifier|*
+DECL|function|gimp_get_progname (void)
+name|gimp_get_progname
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|progname
+return|;
+block|}
+end_function
+
 begin_ifndef
 ifndef|#
 directive|ifndef

@@ -35,7 +35,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c02dd7e0103
+DECL|enum|__anon2c266cbb0103
 block|{
 DECL|enumerator|PDB_INT32
 name|PDB_INT32
@@ -118,7 +118,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c02dd7e0203
+DECL|enum|__anon2c266cbb0203
 block|{
 DECL|enumerator|PDB_EXECUTION_ERROR
 name|PDB_EXECUTION_ERROR
@@ -148,7 +148,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=PDB_>*/
-DECL|enum|__anon2c02dd7e0303
+DECL|enum|__anon2c266cbb0303
 block|{
 DECL|enumerator|PDB_INTERNAL
 name|PDB_INTERNAL
@@ -389,13 +389,13 @@ name|arg_type
 decl_stmt|;
 comment|/*  Argument type (int, char, char *, etc)  */
 DECL|member|name
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
 comment|/*  Argument name  */
 DECL|member|description
-name|char
+name|gchar
 modifier|*
 name|description
 decl_stmt|;
@@ -523,6 +523,18 @@ struct|;
 end_struct
 
 begin_comment
+comment|/*  Variables  */
+end_comment
+
+begin_decl_stmt
+specifier|extern
+name|GHashTable
+modifier|*
+name|procedural_ht
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
 comment|/*  Functions  */
 end_comment
 
@@ -550,6 +562,7 @@ name|procedural_db_register
 parameter_list|(
 name|ProcRecord
 modifier|*
+name|procedure
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -560,6 +573,7 @@ name|procedural_db_unregister
 parameter_list|(
 name|gchar
 modifier|*
+name|name
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -571,6 +585,7 @@ name|procedural_db_lookup
 parameter_list|(
 name|gchar
 modifier|*
+name|name
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -582,9 +597,11 @@ name|procedural_db_execute
 parameter_list|(
 name|gchar
 modifier|*
+name|name
 parameter_list|,
 name|Argument
 modifier|*
+name|args
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -596,9 +613,11 @@ name|procedural_db_run_proc
 parameter_list|(
 name|gchar
 modifier|*
+name|name
 parameter_list|,
 name|gint
 modifier|*
+name|nreturn_vals
 parameter_list|,
 modifier|...
 parameter_list|)
@@ -612,8 +631,10 @@ name|procedural_db_return_args
 parameter_list|(
 name|ProcRecord
 modifier|*
+name|procedure
 parameter_list|,
-name|int
+name|gboolean
+name|success
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -624,8 +645,10 @@ name|procedural_db_destroy_args
 parameter_list|(
 name|Argument
 modifier|*
+name|args
 parameter_list|,
-name|int
+name|gint
+name|nargs
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -680,7 +703,7 @@ end_comment
 
 begin_function_decl
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|pdb_type_name
 parameter_list|(
@@ -693,14 +716,6 @@ end_function_decl
 begin_comment
 comment|/* really exists in _cmds.c file */
 end_comment
-
-begin_decl_stmt
-specifier|extern
-name|GHashTable
-modifier|*
-name|procedural_ht
-decl_stmt|;
-end_decl_stmt
 
 begin_endif
 endif|#

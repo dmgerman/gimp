@@ -4562,7 +4562,7 @@ name|gpointer
 name|client_data
 parameter_list|)
 block|{
-name|gimp_help
+name|gimp_standard_help_func
 argument_list|(
 name|NULL
 argument_list|)

@@ -274,7 +274,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dcbc670103
+DECL|enum|__anon2b63ee250103
 block|{
 DECL|enumerator|RED
 name|RED
@@ -1533,7 +1533,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_help
+name|gimp_standard_help_func
 argument_list|(
 name|help_path
 argument_list|)

@@ -128,6 +128,11 @@ define|#
 directive|define
 name|gimp_image_thaw_undo
 value|gimp_image_undo_thaw
+DECL|macro|gimp_plugin_help_func
+define|#
+directive|define
+name|gimp_plugin_help_func
+value|gimp_standard_help_func
 endif|#
 directive|endif
 comment|/* GIMP_DISABLE_COMPAT_H */

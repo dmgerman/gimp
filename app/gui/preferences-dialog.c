@@ -120,7 +120,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad088750103
+DECL|enum|__anon28fad3cd0103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -5549,7 +5549,7 @@ argument_list|,
 literal|"gimp_help_data"
 argument_list|)
 expr_stmt|;
-name|gimp_help
+name|gimp_standard_help_func
 argument_list|(
 name|help_data
 argument_list|)
@@ -12017,7 +12017,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ad088750208
+DECL|struct|__anon28fad3cd0208
 block|{
 DECL|member|label
 name|gchar
@@ -12246,7 +12246,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ad088750308
+DECL|struct|__anon28fad3cd0308
 block|{
 DECL|member|tree_label
 name|gchar

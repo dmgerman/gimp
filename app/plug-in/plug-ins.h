@@ -105,7 +105,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287d3d780103
+DECL|enum|__anon27c9a2fb0103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -138,14 +138,14 @@ name|open
 range|:
 literal|1
 decl_stmt|;
-comment|/* Is the plug-in open */
+comment|/* Is the plug-in open* */
 DECL|member|destroy
 name|guint
 name|destroy
 range|:
 literal|1
 decl_stmt|;
-comment|/* Should the plug-in by destroyed */
+comment|/* Should the plug-in by destroyed* */
 DECL|member|query
 name|guint
 name|query
@@ -159,7 +159,7 @@ name|synchronous
 range|:
 literal|1
 decl_stmt|;
-comment|/* Is the plug-in running synchronously or not */
+comment|/* Is the plug-in running synchronously? */
 DECL|member|recurse
 name|guint
 name|recurse
@@ -189,25 +189,27 @@ index|]
 decl_stmt|;
 comment|/* Plug-ins command line arguments */
 DECL|member|my_read
-DECL|member|my_write
 name|GIOChannel
 modifier|*
 name|my_read
-decl_stmt|,
+decl_stmt|;
+comment|/* App's read and write channels */
+DECL|member|my_write
+name|GIOChannel
 modifier|*
 name|my_write
 decl_stmt|;
-comment|/* App's read and write channels */
 DECL|member|his_read
-DECL|member|his_write
 name|GIOChannel
 modifier|*
 name|his_read
-decl_stmt|,
+decl_stmt|;
+comment|/* Plug-in's read and write channels */
+DECL|member|his_write
+name|GIOChannel
 modifier|*
 name|his_write
 decl_stmt|;
-comment|/* Plug-in's read and write channels */
 ifdef|#
 directive|ifdef
 name|G_OS_WIN32
@@ -287,12 +289,17 @@ name|gchar
 modifier|*
 name|locale_path
 decl_stmt|;
+DECL|member|help_path
+name|gchar
+modifier|*
+name|help_path
+decl_stmt|;
 DECL|member|mtime
 name|time_t
 name|mtime
 decl_stmt|;
 DECL|member|query
-name|gint
+name|gboolean
 name|query
 decl_stmt|;
 block|}
@@ -397,7 +404,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Add a plug-in to the list of valid plug-ins  *  and query the plug-in for information if  *  necessary.  */
+comment|/*  Add a plug-in to the list of valid plug-ins and query the plug-in  *  for information if necessary.  */
 end_comment
 
 begin_function_decl
@@ -420,7 +427,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Get the "image_types" the plug-in works on.  */
+comment|/* Get the "image_types" the plug-in works on. */
 end_comment
 
 begin_function_decl
@@ -436,7 +443,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Add in the file load/save handler fields procedure.  */
+comment|/* Add in the file load/save handler fields procedure. */
 end_comment
 
 begin_function_decl
@@ -464,7 +471,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Add a plug-in definition.  */
+comment|/* Add a plug-in definition. */
 end_comment
 
 begin_function_decl
@@ -479,7 +486,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Allocate and free a plug-in definition.  */
+comment|/* Allocate and free a plug-in definition. */
 end_comment
 
 begin_function_decl
@@ -509,7 +516,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Retrieve a plug-ins menu path  */
+comment|/* Retrieve a plug-ins menu path */
 end_comment
 
 begin_function_decl
@@ -520,6 +527,22 @@ parameter_list|(
 name|gchar
 modifier|*
 name|name
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* Retrieve a plug-ins help path */
+end_comment
+
+begin_function_decl
+name|gchar
+modifier|*
+name|plug_in_help_path
+parameter_list|(
+name|gchar
+modifier|*
+name|prog_name
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -541,7 +564,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Destroy a plug-in structure. This will close the plug-in  *  first if necessary.  */
+comment|/*  Destroy a plug-in structure.  *  This will close the plug-in first if necessary.  */
 end_comment
 
 begin_function_decl
@@ -556,7 +579,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Open a plug-in. This cause the plug-in to run.  * If returns TRUE, you must destroy the plugin.    * If returns FALSE, you must not destroy the plugin.  */
+comment|/* Open a plug-in. This cause the plug-in to run.  * If returns TRUE, you must destroy the plugin.  * If returns FALSE, you must not destroy the plugin.  */
 end_comment
 
 begin_function_decl
@@ -571,7 +594,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Close a plug-in. This kills the plug-in and releases  *  its resources.  */
+comment|/* Close a plug-in. This kills the plug-in and releases its resources. */
 end_comment
 
 begin_function_decl
@@ -582,7 +605,7 @@ name|PlugIn
 modifier|*
 name|plug_in
 parameter_list|,
-name|int
+name|gboolean
 name|kill_it
 parameter_list|)
 function_decl|;
@@ -621,7 +644,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Run the last plug-in again with the same arguments. Extensions  *  are exempt from this "privelege".  */
+comment|/*  Run the last plug-in again with the same arguments. Extensions  *  are exempt from this "privelege".  */
 end_comment
 
 begin_function_decl
@@ -635,7 +658,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Set the sensitivity for plug-in menu items based on the image  * type.  */
+comment|/* Set the sensitivity for plug-in menu items based on the image type. */
 end_comment
 
 begin_function_decl

@@ -72,7 +72,7 @@ parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
-comment|/*  the standard gimp help function  */
+comment|/*  the standard gimp help function  *  (has different implementations in the main app and in libgimp)  */
 name|void
 name|gimp_standard_help_func
 parameter_list|(

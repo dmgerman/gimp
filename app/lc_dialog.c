@@ -1668,7 +1668,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2881296e0108
+DECL|struct|__anon29bf7af30108
 block|{
 DECL|member|def
 name|GImage
@@ -3225,7 +3225,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_help
+name|gimp_standard_help_func
 argument_list|(
 name|help_page
 argument_list|)

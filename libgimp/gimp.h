@@ -1204,6 +1204,13 @@ parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
+name|gchar
+modifier|*
+name|gimp_get_progname
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
 comment|/****************************************  *              Images                  *  ****************************************/
 name|gint32
 name|gimp_image_new
@@ -3258,19 +3265,23 @@ parameter_list|)
 function_decl|;
 comment|/****************************************  *                Help                  *  ****************************************/
 name|void
-name|gimp_plugin_help_func
+name|gimp_help
 parameter_list|(
+name|gchar
+modifier|*
+name|prog_name
+parameter_list|,
 name|gchar
 modifier|*
 name|help_data
 parameter_list|)
 function_decl|;
 name|void
-name|gimp_help
+name|gimp_plugin_help_register
 parameter_list|(
 name|gchar
 modifier|*
-name|help_data
+name|help_path
 parameter_list|)
 function_decl|;
 comment|/****************************************  *           Localisation               *  ****************************************/

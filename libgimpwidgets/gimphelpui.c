@@ -28,21 +28,6 @@ file|"gimphelpui.h"
 end_include
 
 begin_comment
-comment|/*  external functions  */
-end_comment
-
-begin_function_decl
-name|void
-name|gimp_help
-parameter_list|(
-name|gchar
-modifier|*
-name|help_data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/*  local function prototypes  */
 end_comment
 
@@ -948,7 +933,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_help
+name|gimp_standard_help_func
 argument_list|(
 name|help_text
 argument_list|)
@@ -962,7 +947,7 @@ block|}
 block|}
 else|else
 block|{
-name|gimp_help
+name|gimp_standard_help_func
 argument_list|(
 name|help_data
 argument_list|)

@@ -30,7 +30,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297bcb170103
+DECL|enum|__anon2ae6bb480103
 block|{
 DECL|enumerator|HELP_BROWSER_GIMP
 name|HELP_BROWSER_GIMP
@@ -49,6 +49,10 @@ begin_function_decl
 name|void
 name|gimp_help
 parameter_list|(
+name|gchar
+modifier|*
+name|help_path
+parameter_list|,
 name|gchar
 modifier|*
 name|help_data
