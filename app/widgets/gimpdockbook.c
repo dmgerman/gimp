@@ -96,26 +96,26 @@ value|0
 end_define
 
 begin_define
-DECL|macro|DEFAULT_TAB_SIZE
+DECL|macro|DEFAULT_TAB_ICON_SIZE
 define|#
 directive|define
-name|DEFAULT_TAB_SIZE
+name|DEFAULT_TAB_ICON_SIZE
 value|GTK_ICON_SIZE_BUTTON
 end_define
 
 begin_define
-DECL|macro|DND_WIDGET_SIZE
+DECL|macro|DND_WIDGET_ICON_SIZE
 define|#
 directive|define
-name|DND_WIDGET_SIZE
+name|DND_WIDGET_ICON_SIZE
 value|GTK_ICON_SIZE_DND
 end_define
 
 begin_define
-DECL|macro|MENU_WIDGET_SIZE
+DECL|macro|MENU_WIDGET_ICON_SIZE
 define|#
 directive|define
-name|MENU_WIDGET_SIZE
+name|MENU_WIDGET_ICON_SIZE
 value|GTK_ICON_SIZE_MENU
 end_define
 
@@ -543,7 +543,7 @@ name|widget_class
 argument_list|,
 name|g_param_spec_enum
 argument_list|(
-literal|"tab_size"
+literal|"tab_icon_size"
 argument_list|,
 name|NULL
 argument_list|,
@@ -551,7 +551,7 @@ name|NULL
 argument_list|,
 name|GTK_TYPE_ICON_SIZE
 argument_list|,
-name|DEFAULT_TAB_SIZE
+name|DEFAULT_TAB_ICON_SIZE
 argument_list|,
 name|G_PARAM_READABLE
 argument_list|)
@@ -1101,7 +1101,7 @@ name|dockable
 argument_list|,
 name|dockbook
 argument_list|,
-name|MENU_WIDGET_SIZE
+name|MENU_WIDGET_ICON_SIZE
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -1589,7 +1589,7 @@ decl_stmt|;
 name|GtkIconSize
 name|tab_size
 init|=
-name|DEFAULT_TAB_SIZE
+name|DEFAULT_TAB_ICON_SIZE
 decl_stmt|;
 name|gtk_widget_style_get
 argument_list|(
@@ -1598,7 +1598,7 @@ argument_list|(
 name|dockbook
 argument_list|)
 argument_list|,
-literal|"tab_size"
+literal|"tab_icon_size"
 argument_list|,
 operator|&
 name|tab_size
@@ -2216,7 +2216,7 @@ name|dockable
 operator|->
 name|dockbook
 argument_list|,
-name|DND_WIDGET_SIZE
+name|DND_WIDGET_ICON_SIZE
 argument_list|)
 expr_stmt|;
 if|if
