@@ -104,7 +104,6 @@ name|gboolean
 name|locked
 decl_stmt|;
 comment|/* transformation locking         */
-comment|/* Should the following be a GList of GimpStrokes? */
 DECL|member|strokes
 name|GList
 modifier|*
@@ -125,6 +124,7 @@ DECL|member|parent_class
 name|GimpItemClass
 name|parent_class
 decl_stmt|;
+comment|/*  signals  */
 DECL|member|changed
 name|void
 function_decl|(
@@ -137,6 +137,7 @@ modifier|*
 name|vectors
 parameter_list|)
 function_decl|;
+comment|/*  virtual functions  */
 DECL|member|stroke_add
 name|void
 function_decl|(
