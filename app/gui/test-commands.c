@@ -2441,7 +2441,13 @@ name|dockable
 operator|=
 name|gimp_dockable_new
 argument_list|(
+name|view_type
+operator|==
+name|GIMP_VIEW_TYPE_LIST
+condition|?
 literal|"Brush List"
+else|:
+literal|"Brush Grid"
 argument_list|,
 literal|"Brushes"
 argument_list|,
@@ -2505,7 +2511,13 @@ name|dockable
 operator|=
 name|gimp_dockable_new
 argument_list|(
+name|view_type
+operator|==
+name|GIMP_VIEW_TYPE_LIST
+condition|?
 literal|"Pattern List"
+else|:
+literal|"Pattern Grid"
 argument_list|,
 literal|"Patterns"
 argument_list|,
@@ -2569,7 +2581,13 @@ name|dockable
 operator|=
 name|gimp_dockable_new
 argument_list|(
+name|view_type
+operator|==
+name|GIMP_VIEW_TYPE_LIST
+condition|?
 literal|"Gradient List"
+else|:
+literal|"Gradient Grid"
 argument_list|,
 literal|"Gradients"
 argument_list|,
@@ -2633,7 +2651,13 @@ name|dockable
 operator|=
 name|gimp_dockable_new
 argument_list|(
+name|view_type
+operator|==
+name|GIMP_VIEW_TYPE_LIST
+condition|?
 literal|"Palette List"
+else|:
+literal|"Palette Grid"
 argument_list|,
 literal|"Palettes"
 argument_list|,

@@ -274,7 +274,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dfc11e0108
+DECL|struct|__anon2acc64520108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -310,7 +310,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dfc11e0208
+DECL|struct|__anon2acc64520208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -365,7 +365,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dfc11e0308
+DECL|struct|__anon2acc64520308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -531,7 +531,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dfc11e0403
+DECL|enum|__anon2acc64520403
 block|{
 DECL|enumerator|BEZIER_SELECT
 name|BEZIER_SELECT
@@ -1492,6 +1492,10 @@ name|GimpTool
 modifier|*
 name|tool
 decl_stmt|;
+name|GimpDrawTool
+modifier|*
+name|draw_tool
+decl_stmt|;
 name|GimpSelectionTool
 modifier|*
 name|select_tool
@@ -1499,6 +1503,13 @@ decl_stmt|;
 name|tool
 operator|=
 name|GIMP_TOOL
+argument_list|(
+name|bezier_select
+argument_list|)
+expr_stmt|;
+name|draw_tool
+operator|=
+name|GIMP_DRAW_TOOL
 argument_list|(
 name|bezier_select
 argument_list|)
@@ -1537,6 +1548,18 @@ name|bezier_options
 argument_list|)
 expr_stmt|;
 block|}
+name|bezier_select
+operator|->
+name|num_points
+operator|=
+literal|0
+expr_stmt|;
+name|bezier_select
+operator|->
+name|mask
+operator|=
+name|NULL
+expr_stmt|;
 name|tool
 operator|->
 name|tool_cursor
@@ -1550,6 +1573,18 @@ operator|=
 name|FALSE
 expr_stmt|;
 comment|/*  Don't preserve on drawable change  */
+name|curCore
+operator|=
+name|draw_tool
+expr_stmt|;
+name|curSel
+operator|=
+name|bezier_select
+expr_stmt|;
+name|curTool
+operator|=
+name|tool
+expr_stmt|;
 name|bezier_select_reset
 argument_list|(
 name|bezier_select
@@ -3701,7 +3736,10 @@ argument_list|(
 name|gimp_context_get_user
 argument_list|()
 argument_list|,
-name|BEZIER_SELECT
+name|tool_manager_get_info_by_type
+argument_list|(
+name|GIMP_TYPE_BEZIER_SELECT_TOOL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|tool
@@ -12324,7 +12362,10 @@ argument_list|(
 name|gimp_context_get_user
 argument_list|()
 argument_list|,
-name|BEZIER_SELECT
+name|tool_manager_get_info_by_type
+argument_list|(
+name|GIMP_TYPE_BEZIER_SELECT_TOOL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|active_tool

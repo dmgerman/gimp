@@ -743,8 +743,6 @@ operator|=
 name|event_box
 expr_stmt|;
 block|}
-else|else
-block|{
 name|gimp_help_set_help_data
 argument_list|(
 name|tab_widget
@@ -756,7 +754,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-block|}
 name|gtk_object_set_data
 argument_list|(
 name|GTK_OBJECT
