@@ -1617,14 +1617,6 @@ argument_list|(
 name|canvas
 argument_list|)
 expr_stmt|;
-name|gdk_pointer_ungrab
-argument_list|(
-name|bevent
-operator|->
-name|time
-argument_list|)
-expr_stmt|;
-comment|/* fixes pointer grab bug */
 if|if
 condition|(
 name|active_tool
@@ -2419,17 +2411,13 @@ condition|)
 return|return
 name|TRUE
 return|;
-comment|/* Cursor update support                               */
-comment|/* no_cursor_updating is TRUE (=1) when                */
-comment|/*<Toolbox>/File/Preferences.../Interface/...         */
-comment|/* Image Windows/Disable Cursor Updating is TOGGLED ON */
+comment|/*  Cursor update support    *  no_cursor_updating is TRUE (=1) when    *<Toolbox>/File/Preferences.../Interface/...    *  Image Windows/Disable Cursor Updating is TOGGLED ON    */
 if|if
 condition|(
+operator|!
 name|gimprc
 operator|.
 name|no_cursor_updating
-operator|==
-literal|0
 condition|)
 block|{
 name|active_tool
@@ -3066,7 +3054,7 @@ name|time
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* Return TRUE to stop signal emission so the button doesn't grab the    * pointer away from us. */
+comment|/* Return TRUE to stop signal emission so the button doesn't grab the    * pointer away from us.    */
 return|return
 name|TRUE
 return|;
@@ -3526,12 +3514,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gdisplay_bucket_fill (GtkWidget * widget,BucketFillMode fill_mode,guchar orig_color[],TempBuf * orig_pat_buf,gpointer data)
+DECL|function|gdisplay_bucket_fill (GDisplay * gdisp,BucketFillMode fill_mode,guchar orig_color[],TempBuf * orig_pat_buf)
 name|gdisplay_bucket_fill
 parameter_list|(
-name|GtkWidget
+name|GDisplay
 modifier|*
-name|widget
+name|gdisp
 parameter_list|,
 name|BucketFillMode
 name|fill_mode
@@ -3543,9 +3531,6 @@ parameter_list|,
 name|TempBuf
 modifier|*
 name|orig_pat_buf
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 block|{
 name|GimpImage
@@ -3605,13 +3590,7 @@ name|FALSE
 decl_stmt|;
 name|gimage
 operator|=
-operator|(
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|data
-operator|)
+name|gdisp
 operator|->
 name|gimage
 expr_stmt|;
@@ -4110,6 +4089,18 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+name|GDisplay
+modifier|*
+name|gdisp
+decl_stmt|;
+name|gdisp
+operator|=
+operator|(
+name|GDisplay
+operator|*
+operator|)
+name|data
+expr_stmt|;
 if|if
 condition|(
 name|GIMP_IS_PATTERN
@@ -4120,7 +4111,7 @@ condition|)
 block|{
 name|gdisplay_bucket_fill
 argument_list|(
-name|widget
+name|gdisp
 argument_list|,
 name|PATTERN_BUCKET_FILL
 argument_list|,
@@ -4132,8 +4123,6 @@ name|viewable
 argument_list|)
 operator|->
 name|mask
-argument_list|,
-name|data
 argument_list|)
 expr_stmt|;
 block|}
@@ -4158,12 +4147,24 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+name|GDisplay
+modifier|*
+name|gdisp
+decl_stmt|;
 name|guchar
 name|color
 index|[
 literal|4
 index|]
 decl_stmt|;
+name|gdisp
+operator|=
+operator|(
+name|GDisplay
+operator|*
+operator|)
+name|data
+expr_stmt|;
 name|gimp_rgba_get_uchar
 argument_list|(
 name|drop_color
@@ -4195,15 +4196,13 @@ argument_list|)
 expr_stmt|;
 name|gdisplay_bucket_fill
 argument_list|(
-name|widget
+name|gdisp
 argument_list|,
 name|FG_BUCKET_FILL
 argument_list|,
 name|color
 argument_list|,
 name|NULL
-argument_list|,
-name|data
 argument_list|)
 expr_stmt|;
 block|}

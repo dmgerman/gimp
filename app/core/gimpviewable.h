@@ -74,6 +74,17 @@ parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_VIEWABLE))
 end_define
 
+begin_define
+DECL|macro|GIMP_VIEWABLE_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_VIEWABLE_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_VIEWABLE, GimpViewableClass))
+end_define
+
 begin_typedef
 DECL|typedef|GimpViewableClass
 typedef|typedef
@@ -105,6 +116,7 @@ DECL|member|parent_class
 name|GimpObjectClass
 name|parent_class
 decl_stmt|;
+comment|/*  signals  */
 DECL|member|invalidate_preview
 name|void
 function_decl|(
@@ -129,6 +141,7 @@ modifier|*
 name|viewable
 parameter_list|)
 function_decl|;
+comment|/*  virtual functions  */
 DECL|member|get_preview
 name|TempBuf
 modifier|*

@@ -72,6 +72,14 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PREVIEW))
+DECL|macro|GIMP_PREVIEW_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_PREVIEW_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_PREVIEW, GimpPreviewClass))
 DECL|typedef|GimpPreviewClass
 typedef|typedef
 name|struct
@@ -162,6 +170,7 @@ DECL|member|parent_class
 name|GtkPreviewClass
 name|parent_class
 decl_stmt|;
+comment|/*  signals  */
 DECL|member|clicked
 name|void
 function_decl|(
@@ -213,6 +222,7 @@ modifier|*
 name|preview
 parameter_list|)
 function_decl|;
+comment|/*  virtual functions  */
 DECL|member|render
 name|void
 function_decl|(
@@ -275,7 +285,7 @@ parameter_list|)
 function_decl|;
 block|}
 struct|;
-name|GtkType
+name|GType
 name|gimp_preview_get_type
 parameter_list|(
 name|void

@@ -251,7 +251,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4491590103
+DECL|enum|__anon278bfd5a0103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -12187,14 +12187,6 @@ block|}
 struct|;
 end_struct
 
-begin_define
-DECL|macro|NUM_NAMES
-define|#
-directive|define
-name|NUM_NAMES
-value|(sizeof (undo_name) / sizeof (struct undo_name_t))
-end_define
-
 begin_function
 specifier|static
 specifier|const
@@ -12218,7 +12210,10 @@ literal|0
 init|;
 name|i
 operator|<
-name|NUM_NAMES
+name|G_N_ELEMENTS
+argument_list|(
+name|undo_name
+argument_list|)
 condition|;
 name|i
 operator|++
