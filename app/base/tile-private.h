@@ -47,40 +47,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_typedef
-DECL|typedef|TileLink
-typedef|typedef
-name|struct
-name|_TileLink
-name|TileLink
-typedef|;
-end_typedef
-
-begin_struct
-DECL|struct|_TileLink
-struct|struct
-name|_TileLink
-block|{
-DECL|member|next
-name|TileLink
-modifier|*
-name|next
-decl_stmt|;
-DECL|member|tile_num
-name|int
-name|tile_num
-decl_stmt|;
-comment|/* the number of this tile within the drawable */
-DECL|member|tm
-name|void
-modifier|*
-name|tm
-decl_stmt|;
-comment|/* A pointer to the tile manager for this tile. 		       *  We need this in order to call the tile managers  		       *  validate proc whenever the tile is referenced yet  		       *  invalid. 		       */
-block|}
-struct|;
-end_struct
-
 begin_struct
 DECL|struct|_Tile
 struct|struct
@@ -111,6 +77,18 @@ modifier|*
 name|data
 decl_stmt|;
 comment|/* the data for the tile. this may be NULL in which 		       *  case the tile data is on disk. 		       */
+DECL|member|real_tile_ptr
+name|Tile
+modifier|*
+name|real_tile_ptr
+decl_stmt|;
+comment|/* if this tile's 'data' pointer is just a copy-on-write 		       *  mirror of another's, this is that source tile. 		       *  (real_tile itself can actually be a virtual tile 		       *  too.)  This is NULL if this tile is not a virtual 		       *  tile. 		       */
+DECL|member|mirrored_by
+name|Tile
+modifier|*
+name|mirrored_by
+decl_stmt|;
+comment|/* If another tile is mirroring this one, this is 		       *  a pointer to that tile, otherwise this is NULL. 		       *  Note that only one tile may be _directly_ mirroring 		       *  another given tile.  This ensures that the graph 		       *  of mirrorings is no more complex than a linked 		       *  list. 		       */
 DECL|member|ewidth
 name|int
 name|ewidth
@@ -127,6 +105,11 @@ name|int
 name|bpp
 decl_stmt|;
 comment|/* the bytes per pixel (1, 2, 3 or 4) */
+DECL|member|tile_num
+name|int
+name|tile_num
+decl_stmt|;
+comment|/* the number of this tile within the drawable */
 DECL|member|swap_num
 name|int
 name|swap_num
@@ -137,10 +120,12 @@ name|off_t
 name|swap_offset
 decl_stmt|;
 comment|/* the offset within the swap file of the tile data. 		       *  if the tile data is in memory this will be set to -1. 		       */
-DECL|member|tlink
-name|TileLink
-name|tlink
+DECL|member|tm
+name|void
+modifier|*
+name|tm
 decl_stmt|;
+comment|/* A pointer to the tile manager for this tile. 		       *  We need this in order to call the tile managers validate 		       *  proc whenever the tile is referenced yet invalid. 		       */
 DECL|member|next
 name|Tile
 modifier|*
