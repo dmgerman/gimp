@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2766bd8c0103
+DECL|enum|__anon29c7c63b0103
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -877,6 +877,25 @@ operator|-
 literal|1
 argument_list|,
 name|separator_height
+argument_list|)
+expr_stmt|;
+name|gimp_dock_separator_realize
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|list
+operator|->
+name|data
+argument_list|)
+argument_list|,
+name|GTK_BIN
+argument_list|(
+name|list
+operator|->
+name|data
+argument_list|)
+operator|->
+name|child
 argument_list|)
 expr_stmt|;
 block|}
