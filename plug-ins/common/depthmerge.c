@@ -4222,7 +4222,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Depth Map:"
+literal|"Depth map:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4458,7 +4458,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Depth Map:"
+literal|"Depth map:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4586,7 +4586,7 @@ literal|4
 argument_list|,
 name|_
 argument_list|(
-literal|"Overlap:"
+literal|"O_verlap:"
 argument_list|)
 argument_list|,
 literal|0
@@ -4668,7 +4668,7 @@ literal|5
 argument_list|,
 name|_
 argument_list|(
-literal|"Offset:"
+literal|"O_ffset:"
 argument_list|)
 argument_list|,
 literal|0
@@ -4751,7 +4751,7 @@ literal|6
 argument_list|,
 name|_
 argument_list|(
-literal|"Scale 1:"
+literal|"Sc_ale 1:"
 argument_list|)
 argument_list|,
 literal|0
@@ -4834,7 +4834,7 @@ literal|7
 argument_list|,
 name|_
 argument_list|(
-literal|"Scale 2:"
+literal|"Sca_le 2:"
 argument_list|)
 argument_list|,
 literal|0

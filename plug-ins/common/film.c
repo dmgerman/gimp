@@ -7,10 +7,6 @@ begin_comment
 comment|/*  * This plug-in generates a film roll with several images  */
 end_comment
 
-begin_comment
-comment|/* Event history:  * V 1.00, PK, 01-Jul-97, Creation  * V 1.01, PK, 24-Jul-97, Fix problem with previews on Irix  * V 1.02, PK, 24-Sep-97, Try different font sizes when inquire failed.  *                        Fit film height to images  * V 1.03, nn, 20-Dec-97, Initialize layers in film()  * V 1.04, PK, 08-Oct-99, Fix problem with image id zero  *                        Internationalization  */
-end_comment
-
 begin_decl_stmt
 DECL|variable|ident
 specifier|static
@@ -109,7 +105,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fcd0df0108
+DECL|struct|__anon2a31dd350108
 block|{
 DECL|member|film_height
 name|gint
@@ -213,7 +209,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fcd0df0208
+DECL|struct|__anon2a31dd350208
 block|{
 DECL|member|advanced_adj
 name|GtkObject
@@ -5427,7 +5423,7 @@ name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Selection"
+literal|"Selection"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -5537,7 +5533,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Fit Height to Images"
+literal|"_Fit height to images"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5989,7 +5985,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Start _Index:"
+literal|"Start _index:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -6177,12 +6173,12 @@ name|j
 condition|?
 name|_
 argument_list|(
-literal|"At _Bottom"
+literal|"At _bottom"
 argument_list|)
 else|:
 name|_
 argument_list|(
-literal|"At _Top"
+literal|"At _top"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6551,7 +6547,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Image _Height:"
+literal|"Image _height:"
 argument_list|)
 argument_list|,
 literal|0
@@ -6623,7 +6619,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Image Spac_ing:"
+literal|"Image spac_ing:"
 argument_list|)
 argument_list|,
 literal|0
@@ -6695,7 +6691,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"_Hole Offset:"
+literal|"_Hole offset:"
 argument_list|)
 argument_list|,
 literal|0
@@ -6767,7 +6763,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Ho_le Width:"
+literal|"Ho_le width:"
 argument_list|)
 argument_list|,
 literal|0
@@ -6839,7 +6835,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Hol_e Height:"
+literal|"Hol_e height:"
 argument_list|)
 argument_list|,
 literal|0
@@ -6911,7 +6907,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Hole Sp_acing:"
+literal|"Hole sp_acing:"
 argument_list|)
 argument_list|,
 literal|0
@@ -6983,7 +6979,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"_Number Height:"
+literal|"_Number height:"
 argument_list|)
 argument_list|,
 literal|0

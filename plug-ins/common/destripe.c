@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  *   Destripe filter for The GIMP -- an image manipulation  *   program  *  *   Copyright 1997 Marc Lehmann, heavily modified from a filter by  *   Michael Sweet.  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the filter...  *   destripe()                  - Destripe an image.  *   destripe_dialog()           - Popup a dialog window...  *   preview_init()              - Initialize the preview window...  *   preview_scroll_callback()   - Update the preview when a scrollbar is moved.  *   preview_update()            - Update the preview window.  *   preview_exit()              - Free all memory used by the preview window...  *   dialog_iscale_update()      - Update the value field using the scale.  *   dialog_histogram_callback()  *  *   1997/08/16 * Initial Revision.  *   1998/02/06 * Minor changes.  */
+comment|/*  *   Destripe filter for The GIMP -- an image manipulation  *   program  *  *   Copyright 1997 Marc Lehmann, heavily modified from a filter by  *   Michael Sweet.  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_include
@@ -355,7 +355,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b995e20108
+DECL|struct|__anon2a54bb250108
 block|{
 DECL|member|histogram
 name|gboolean
@@ -2614,7 +2614,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Create _Histogram"
+literal|"Create _histogram"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2728,17 +2728,6 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|gint
-name|width
-decl_stmt|;
-comment|/* Byte width of the image */
-comment|/*    * Setup for preview filter...    */
-name|width
-operator|=
-name|preview_width
-operator|*
-name|img_bpp
-expr_stmt|;
 name|preview_x1
 operator|=
 name|sel_x1

@@ -95,7 +95,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9ef40c0108
+DECL|struct|__anon2790accb0108
 block|{
 DECL|member|from
 name|GimpRGB
@@ -2122,7 +2122,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"R_ed Threshold:"
+literal|"R_ed threshold:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2496,7 +2496,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"G_reen Threshold:"
+literal|"G_reen threshold:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2870,7 +2870,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"B_lue Threshold:"
+literal|"B_lue threshold:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -3011,7 +3011,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Lock _Thresholds"
+literal|"Lock _thresholds"
 argument_list|)
 argument_list|)
 expr_stmt|;

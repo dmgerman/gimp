@@ -158,7 +158,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9723950108
+DECL|struct|__anon290059610108
 block|{
 DECL|member|lam_r
 name|gdouble
@@ -217,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9723950208
+DECL|struct|__anon290059610208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -1171,7 +1171,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2a9723950308
+DECL|struct|__anon290059610308
 typedef|typedef
 struct|struct
 block|{
@@ -2471,7 +2471,7 @@ name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Frequencies"
+literal|"Frequencies"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2732,7 +2732,7 @@ name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Co_ntours"
+literal|"Contours"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2993,7 +2993,7 @@ name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Sharp edges"
+literal|"Sharp edges"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3255,7 +3255,7 @@ name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"O_ther options"
+literal|"Other options"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* edge filter for the GIMP  *  -Peter Mattis  *  * This filter performs edge detection on the input image.  *  The code for this filter is based on "pgmedge", a program  *  that is part of the netpbm package.  */
+comment|/* edge filter for the GIMP  *  -Peter Mattis  *  * This filter performs edge detection on the input image.  *  The code for this filter is based on "pgmedge", a program  *  that is part of the netpbm package.  *  * The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_comment
@@ -8,7 +8,7 @@ comment|/* pgmedge.c - edge-detect a portable graymap ** ** Copyright (C) 1989 b
 end_comment
 
 begin_comment
-comment|/*  *  Ported to GIMP Plug-in API 1.0  *  version 1.07  *  This version requires GIMP v0.99.10 or above.  *  *  This plug-in performs edge detection. The code is based on edge.c  *  for GIMP 0.54 by Peter Mattis.  *  *      Eiichi Takamori<taka@ma1.seikyou.ne.jp>  *      http://ha1.seikyou.ne.jp/home/taka/gimp/  *  *  Tips: you can enter arbitrary value into entry.  *      (not bounded between 1.0 and 10.0)  *  *  Changes from version 1.06 to version 1.07:  *  - Added entry  *  - Cleaned up code a bit  *  *  Differences from Peter Mattis's original `edge' plug-in:  *    - Added Wrapmode. (useful for tilable images)  *    - Enhanced speed in this version.  *    - It works with the alpha channel.  */
+comment|/*  *  Ported to GIMP Plug-in API 1.0  *  version 1.07  *  This version requires GIMP v0.99.10 or above.  *  *  This plug-in performs edge detection. The code is based on edge.c  *  for GIMP 0.54 by Peter Mattis.  *  *      Eiichi Takamori<taka@ma1.seikyou.ne.jp>  *      http://ha1.seikyou.ne.jp/home/taka/gimp/  *  *  Tips: you can enter arbitrary value into entry.  *      (not bounded between 1.0 and 10.0)  */
 end_comment
 
 begin_comment
@@ -105,7 +105,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d20ff50103
+DECL|enum|__anon2a4722310103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -131,7 +131,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d20ff50208
+DECL|struct|__anon2a4722310208
 block|{
 DECL|member|amount
 name|gdouble
@@ -823,7 +823,6 @@ modifier|*
 name|drawable
 parameter_list|)
 block|{
-comment|/*    * this function is too long, so I must split this into a few    * functions later ...  -- taka    */
 name|GimpPixelRgn
 name|src_rgn
 decl_stmt|,
@@ -1787,7 +1786,10 @@ expr_stmt|;
 break|break;
 block|}
 return|return
+name|CLAMP0255
+argument_list|(
 name|ret
+argument_list|)
 return|;
 block|}
 end_function
@@ -1921,8 +1923,6 @@ index|]
 expr_stmt|;
 block|}
 return|return
-name|CLAMP
-argument_list|(
 name|sqrt
 argument_list|(
 name|v_grad
@@ -1940,11 +1940,6 @@ operator|*
 name|evals
 operator|.
 name|amount
-argument_list|)
-argument_list|,
-literal|0
-argument_list|,
-literal|255
 argument_list|)
 return|;
 block|}
@@ -2429,18 +2424,11 @@ name|k
 index|]
 expr_stmt|;
 return|return
-name|CLAMP
-argument_list|(
 name|evals
 operator|.
 name|amount
 operator|*
 name|max
-argument_list|,
-literal|0
-argument_list|,
-literal|255
-argument_list|)
 return|;
 block|}
 end_function
@@ -2570,8 +2558,6 @@ index|]
 expr_stmt|;
 block|}
 return|return
-name|CLAMP
-argument_list|(
 name|sqrt
 argument_list|(
 name|v_grad
@@ -2589,11 +2575,6 @@ operator|*
 name|evals
 operator|.
 name|amount
-argument_list|)
-argument_list|,
-literal|0
-argument_list|,
-literal|255
 argument_list|)
 return|;
 block|}
@@ -2724,8 +2705,6 @@ index|]
 expr_stmt|;
 block|}
 return|return
-name|CLAMP
-argument_list|(
 name|sqrt
 argument_list|(
 name|v_grad
@@ -2743,11 +2722,6 @@ operator|*
 name|evals
 operator|.
 name|amount
-argument_list|)
-argument_list|,
-literal|0
-argument_list|,
-literal|255
 argument_list|)
 return|;
 block|}
@@ -2880,8 +2854,6 @@ index|]
 expr_stmt|;
 block|}
 return|return
-name|CLAMP
-argument_list|(
 name|sqrt
 argument_list|(
 name|v_grad
@@ -2899,11 +2871,6 @@ operator|*
 name|evals
 operator|.
 name|amount
-argument_list|)
-argument_list|,
-literal|0
-argument_list|,
-literal|255
 argument_list|)
 return|;
 block|}
@@ -2989,18 +2956,11 @@ index|]
 expr_stmt|;
 block|}
 return|return
-name|CLAMP
-argument_list|(
 name|grad
 operator|*
 name|evals
 operator|.
 name|amount
-argument_list|,
-literal|0
-argument_list|,
-literal|255
-argument_list|)
 return|;
 block|}
 end_function

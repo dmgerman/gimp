@@ -1,18 +1,12 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* Deinterlace 1.00 - image processing plug-in for the Gimp 1.0 API  *  * Copyright (C) 1997 Andrew Kieschnick (andrewk@mail.utexas.edu)  *  * Original deinterlace for the Gimp 0.54 API by Federico Mena Quintero  *  * Copyright (C) 1996 Federico Mena Quintero  *  * Any bugs in this code are probably my (Andrew Kieschnick's) fault, as I  * pretty much rewrote it from scratch.  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* Deinterlace 1.00 - image processing plug-in for the Gimp  *  * Copyright (C) 1997 Andrew Kieschnick (andrewk@mail.utexas.edu)  *  * Original deinterlace for the Gimp 0.54 API by Federico Mena Quintero  *  * Copyright (C) 1996 Federico Mena Quintero  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
 include|#
 directive|include
 file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
 end_include
 
 begin_include
@@ -41,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b65c6070103
+DECL|enum|__anon29c6d47b0103
 block|{
 DECL|enumerator|ODD_FIELDS
 name|ODD_FIELDS
@@ -588,7 +582,6 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-comment|/* Get the input area. This is the bounding box of the selection in    *  the image (or the entire image if there is no selection). Only    *  operating on the input area is simply an optimization. It doesn't    *  need to be done for correct operation. (It simply makes it go    *  faster, since fewer pixels need to be operated on).    */
 name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
@@ -749,11 +742,9 @@ name|x1
 argument_list|,
 name|row
 argument_list|,
-operator|(
 name|x2
 operator|-
 name|x1
-operator|)
 argument_list|)
 expr_stmt|;
 comment|/* Only do interpolation if the row: 	 (1) Isn't one we want to keep 	 (2) Has both an upper and a lower row 	 Otherwise, just duplicate the source row       */
@@ -800,11 +791,9 @@ name|row
 operator|-
 literal|1
 argument_list|,
-operator|(
 name|x2
 operator|-
 name|x1
-operator|)
 argument_list|)
 expr_stmt|;
 name|gimp_pixel_rgn_get_row
@@ -820,11 +809,9 @@ name|row
 operator|+
 literal|1
 argument_list|,
-operator|(
 name|x2
 operator|-
 name|x1
-operator|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -978,14 +965,12 @@ init|;
 name|col
 operator|<
 operator|(
-operator|(
 name|x2
 operator|-
 name|x1
 operator|)
 operator|*
 name|bytes
-operator|)
 condition|;
 name|col
 operator|++
@@ -1006,8 +991,8 @@ index|[
 name|col
 index|]
 operator|)
-operator|>>
-literal|1
+operator|/
+literal|2
 expr_stmt|;
 block|}
 block|}
@@ -1022,11 +1007,9 @@ name|x1
 argument_list|,
 name|row
 argument_list|,
-operator|(
 name|x2
 operator|-
 name|x1
-operator|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -1082,17 +1065,13 @@ name|x1
 argument_list|,
 name|y1
 argument_list|,
-operator|(
 name|x2
 operator|-
 name|x1
-operator|)
 argument_list|,
-operator|(
 name|y2
 operator|-
 name|y1
-operator|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1190,7 +1169,7 @@ name|DeinterlaceValue
 argument_list|,
 name|_
 argument_list|(
-literal|"Keep O_dd Fields"
+literal|"Keep o_dd Fields"
 argument_list|)
 argument_list|,
 name|ODD_FIELDS
@@ -1199,7 +1178,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Keep _Even Fields"
+literal|"Keep _even Fields"
 argument_list|)
 argument_list|,
 name|EVEN_FIELDS

@@ -82,7 +82,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3029650103
+DECL|enum|__anon28e72f2f0103
 block|{
 DECL|enumerator|FUNCTION_BUMPMAP
 name|FUNCTION_BUMPMAP
@@ -100,7 +100,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3029650208
+DECL|struct|__anon28e72f2f0208
 block|{
 DECL|member|img
 name|gint32
@@ -178,7 +178,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3029650308
+DECL|struct|__anon28e72f2f0308
 block|{
 DECL|member|width
 name|gint
@@ -3654,7 +3654,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Do _Preview"
+literal|"Do pre_view"
 argument_list|)
 argument_list|)
 expr_stmt|;

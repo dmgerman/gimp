@@ -836,7 +836,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3d41cd0108
+DECL|struct|__anon2c225bab0108
 block|{
 DECL|member|type
 name|gchar
@@ -1457,7 +1457,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3d41cd0208
+DECL|struct|__anon2c225bab0208
 block|{
 DECL|member|extract_type
 name|gchar
@@ -1479,7 +1479,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3d41cd0308
+DECL|struct|__anon2c225bab0308
 block|{
 DECL|member|extract_flag
 name|gint
@@ -6970,11 +6970,11 @@ expr_stmt|;
 block|}
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Decompose to _Layers"
+literal|"Decompose to _layers"
 argument_list|)
 argument_list|)
 expr_stmt|;

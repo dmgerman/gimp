@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   Despeckle (adaptive median) filter for The GIMP -- an image manipulation  *   program  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the filter...  *   despeckle()                 - Despeckle an image using a median filter.  *   despeckle_dialog()          -  Popup a dialog window for the filter box size...  *   preview_init()              - Initialize the preview window...  *   preview_scroll_callback()   - Update the preview when a scrollbar is moved.  *   preview_update()            - Update the preview window.  *   preview_exit()              - Free all memory used by the preview window...  *   dialog_iscale_update()      - Update the value field using the scale.  *   dialog_adaptive_callback()  - Update the filter type...  *   dialog_recursive_callback() - Update the filter type...  *  *  * Revision History:  *  *   See ChangeLog  */
+comment|/*  * "$Id$"  *  *   Despeckle (adaptive median) filter for The GIMP -- an image manipulation  *   program  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -373,6 +373,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|preview
+specifier|static
 name|GtkWidget
 modifier|*
 name|preview
@@ -386,6 +387,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|preview_width
+specifier|static
 name|gint
 name|preview_width
 decl_stmt|,
@@ -418,6 +420,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|preview_src
+specifier|static
 name|guchar
 modifier|*
 name|preview_src
@@ -443,6 +446,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|hscroll_data
+specifier|static
 name|GtkObject
 modifier|*
 name|hscroll_data
@@ -461,6 +465,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|drawable
+specifier|static
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -476,6 +481,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|sel_x1
+specifier|static
 name|gint
 name|sel_x1
 decl_stmt|,
@@ -493,6 +499,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|sel_width
+specifier|static
 name|gint
 name|sel_width
 decl_stmt|,
@@ -509,6 +516,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|img_bpp
+specifier|static
 name|gint
 name|img_bpp
 decl_stmt|;
@@ -521,6 +529,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|despeckle_vals
+specifier|static
 name|gint
 name|despeckle_vals
 index|[
@@ -2962,7 +2971,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"_Black Level:"
+literal|"_Black level:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -3024,7 +3033,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"_White Level:"
+literal|"_White level:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
