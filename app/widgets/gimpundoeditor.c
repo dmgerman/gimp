@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcontainerlistview.h"
+file|"gimpcontainertreeview.h"
 end_include
 
 begin_include
@@ -350,7 +350,7 @@ name|undo_editor
 operator|->
 name|view
 operator|=
-name|gimp_container_list_view_new
+name|gimp_container_tree_view_new
 argument_list|(
 name|NULL
 argument_list|,

@@ -370,7 +370,7 @@ literal|0
 operator|&&
 name|preview_size
 operator|<=
-name|GIMP_PREVIEW_MAX_POPUP_SIZE
+name|GIMP_VIEWABLE_MAX_POPUP_SIZE
 argument_list|,
 name|NULL
 argument_list|)

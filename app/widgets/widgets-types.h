@@ -124,15 +124,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpGradientPreview
-typedef|typedef
-name|struct
-name|_GimpGradientPreview
-name|GimpGradientPreview
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpImagePreview
 typedef|typedef
 name|struct
@@ -147,24 +138,6 @@ typedef|typedef
 name|struct
 name|_GimpNavigationPreview
 name|GimpNavigationPreview
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpPalettePreview
-typedef|typedef
-name|struct
-name|_GimpPalettePreview
-name|GimpPalettePreview
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpPatternPreview
-typedef|typedef
-name|struct
-name|_GimpPatternPreview
-name|GimpPatternPreview
 typedef|;
 end_typedef
 
