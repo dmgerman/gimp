@@ -90,13 +90,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdrawable-invert.h"
+file|"gimpdrawable-convert.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpimage-convert.h"
+file|"gimpdrawable-invert.h"
 end_include
 
 begin_include
@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292e176f0103
+DECL|enum|__anon29195b3d0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED

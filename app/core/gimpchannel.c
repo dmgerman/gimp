@@ -114,13 +114,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage.h"
+file|"gimpdrawable-convert.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpimage-convert.h"
+file|"gimpimage.h"
 end_include
 
 begin_include
@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a405e00103
+DECL|enum|__anon28ef4ec60103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED

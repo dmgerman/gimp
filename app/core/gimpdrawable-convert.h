@@ -6,58 +6,48 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_IMAGE_CONVERT_H__
+name|__GIMP_DRAWABLE_CONVERT_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_IMAGE_CONVERT_H__
+DECL|macro|__GIMP_DRAWABLE_CONVERT_H__
 define|#
 directive|define
-name|__GIMP_IMAGE_CONVERT_H__
-end_define
-
-begin_define
-DECL|macro|MAXNUMCOLORS
-define|#
-directive|define
-name|MAXNUMCOLORS
-value|256
+name|__GIMP_DRAWABLE_CONVERT_H__
 end_define
 
 begin_function_decl
 name|void
-name|gimp_image_convert
+name|gimp_drawable_convert_rgb
 parameter_list|(
-name|GimpImage
+name|GimpDrawable
 modifier|*
-name|gimage
+name|drawable
+parameter_list|,
+name|TileManager
+modifier|*
+name|new_tiles
 parameter_list|,
 name|GimpImageBaseType
-name|new_type
-parameter_list|,
-comment|/* The following params used only for                                      * new_type == GIMP_INDEXED                                      */
-name|gint
-name|num_cols
-parameter_list|,
-name|GimpConvertDitherType
-name|dither
-parameter_list|,
-name|gboolean
-name|alpha_dither
-parameter_list|,
-name|gboolean
-name|remove_dups
-parameter_list|,
-name|GimpConvertPaletteType
-name|palette_type
-parameter_list|,
-name|GimpPalette
+name|old_base_type
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_drawable_convert_grayscale
+parameter_list|(
+name|GimpDrawable
 modifier|*
-name|custom_palette
+name|drawable
 parameter_list|,
-name|GimpProgress
+name|TileManager
 modifier|*
-name|progress
+name|new_tiles
+parameter_list|,
+name|GimpImageBaseType
+name|old_base_type
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -68,7 +58,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_IMAGE_CONVERT_H__  */
+comment|/*  __GIMP_DRAWABLE_CONVERT_H__  */
 end_comment
 
 end_unit
