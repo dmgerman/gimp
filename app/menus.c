@@ -9943,11 +9943,7 @@ block|{
 comment|/* Unregister if dialog is deleted as well */
 name|dialog_unregister
 argument_list|(
-operator|(
-name|GtkWidget
-operator|*
-operator|)
-name|data
+name|widget
 argument_list|)
 expr_stmt|;
 return|return
@@ -10030,7 +10026,7 @@ argument_list|(
 name|top
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect_object
+name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
@@ -10044,10 +10040,7 @@ argument_list|(
 name|tearoff_delete_cb
 argument_list|)
 argument_list|,
-name|GTK_OBJECT
-argument_list|(
-name|top
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_object_set_data
