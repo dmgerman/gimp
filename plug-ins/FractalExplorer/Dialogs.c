@@ -9418,7 +9418,10 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|savename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -9476,7 +9479,10 @@ argument_list|(
 literal|"Could not write '%s': %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|savename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -10731,7 +10737,10 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -10774,7 +10783,10 @@ argument_list|(
 literal|"'%s' is not a FractalExplorer file"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -10796,7 +10808,10 @@ argument_list|(
 literal|"'%s' is corrupt. Line %d Option section incorrect"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|line_no
 argument_list|)

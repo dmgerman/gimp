@@ -202,7 +202,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a397afa0108
+DECL|struct|__anon27fd7bb60108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -229,7 +229,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a397afa0203
+DECL|enum|__anon27fd7bb60203
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -352,7 +352,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a397afa0303
+DECL|enum|__anon27fd7bb60303
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -491,7 +491,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a397afa0403
+DECL|enum|__anon27fd7bb60403
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -590,7 +590,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a397afa0503
+DECL|enum|__anon27fd7bb60503
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -682,7 +682,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a397afa0608
+DECL|struct|__anon27fd7bb60608
 block|{
 DECL|member|function
 name|gint
@@ -755,7 +755,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a397afa0708
+DECL|struct|__anon27fd7bb60708
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1533,7 +1533,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a397afa0808
+DECL|struct|__anon27fd7bb60808
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -11811,7 +11811,10 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -12248,7 +12251,10 @@ argument_list|(
 literal|"Parameters were Saved to '%s'"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|strncpy
@@ -12949,7 +12955,10 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -13080,7 +13089,10 @@ argument_list|(
 literal|"Warning: '%s' is an old format file."
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -13097,7 +13109,10 @@ literal|"Warning: '%s' is a parameter file for newer "
 literal|"CML_explorer than me."
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

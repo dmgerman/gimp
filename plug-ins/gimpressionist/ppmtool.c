@@ -4043,7 +4043,10 @@ argument_list|(
 literal|"Failed to save PPM file '%s': %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|fn
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(

@@ -163,7 +163,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bba9e80108
+DECL|struct|__anon27967a890108
 block|{
 DECL|member|description
 name|gchar
@@ -1070,7 +1070,10 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1092,7 +1095,10 @@ argument_list|(
 literal|"Opening '%s'..."
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init
@@ -1383,7 +1389,10 @@ argument_list|(
 literal|"Error in GIMP brush file '%s'"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|close
@@ -1796,7 +1805,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon27bba9e8020a
+DECL|union|__anon27967a89020a
 block|{
 DECL|member|u
 name|guint16
@@ -2156,7 +2165,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"GIMP brushes are either GRAYSCALE or RGBA\n"
+literal|"GIMP brushes are either GRAYSCALE or RGBA"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2196,7 +2205,10 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -2217,7 +2229,10 @@ argument_list|(
 literal|"Saving '%s'..."
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init

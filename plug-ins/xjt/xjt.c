@@ -243,7 +243,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296f277f0103
+DECL|enum|__anon2800cc030103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -443,7 +443,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296f277f0203
+DECL|enum|__anon2800cc030203
 block|{
 DECL|enumerator|PTYP_NOT_SUPPORTED
 name|PTYP_NOT_SUPPORTED
@@ -503,7 +503,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296f277f0303
+DECL|enum|__anon2800cc030303
 block|{
 DECL|enumerator|XJT_IMAGE_PARASITE
 name|XJT_IMAGE_PARASITE
@@ -533,7 +533,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296f277f0403
+DECL|enum|__anon2800cc030403
 block|{
 DECL|enumerator|XJT_RGB
 name|XJT_RGB
@@ -555,7 +555,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296f277f0503
+DECL|enum|__anon2800cc030503
 block|{
 DECL|enumerator|XJT_PATHTYPE_UNDEF
 name|XJT_PATHTYPE_UNDEF
@@ -575,7 +575,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296f277f0603
+DECL|enum|__anon2800cc030603
 block|{
 DECL|enumerator|XJT_UNIT_PIXEL
 name|XJT_UNIT_PIXEL
@@ -610,7 +610,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296f277f0703
+DECL|enum|__anon2800cc030703
 block|{
 DECL|enumerator|XJT_NORMAL_MODE
 name|XJT_NORMAL_MODE
@@ -735,7 +735,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296f277f0808
+DECL|struct|__anon2800cc030808
 block|{
 DECL|member|prop_id
 name|t_proptype
@@ -771,7 +771,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296f277f0908
+DECL|struct|__anon2800cc030908
 block|{
 DECL|member|int_val1
 name|gint32
@@ -820,7 +820,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296f277f0a08
+DECL|struct|__anon2800cc030a08
 block|{
 DECL|member|parasite_type
 name|t_parasitetype
@@ -857,7 +857,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296f277f0b08
+DECL|struct|__anon2800cc030b08
 block|{
 DECL|member|path_type
 name|gint32
@@ -907,7 +907,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296f277f0c08
+DECL|struct|__anon2800cc030c08
 block|{
 DECL|member|active_channel
 name|gint
@@ -981,7 +981,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296f277f0d08
+DECL|struct|__anon2800cc030d08
 block|{
 DECL|member|active_layer
 name|gint
@@ -1066,7 +1066,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296f277f0e08
+DECL|struct|__anon2800cc030e08
 block|{
 DECL|member|position
 name|gint32
@@ -1090,7 +1090,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296f277f0f08
+DECL|struct|__anon2800cc030f08
 block|{
 DECL|member|version
 name|gchar
@@ -5453,7 +5453,10 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|l_parasite_file
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -7502,7 +7505,10 @@ argument_list|(
 literal|"Could not create working folder '%s': %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|l_dirname
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -7538,7 +7544,10 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|l_prop_file
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -11200,7 +11209,10 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|l_parasite_file
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -11238,7 +11250,10 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|l_parasite_file
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -13713,7 +13728,10 @@ argument_list|(
 literal|"Error: Could not read XJT property file '%s'."
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|prop_filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 goto|goto
@@ -13734,7 +13752,10 @@ argument_list|(
 literal|"Error: XJT property file '%s' is empty."
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|prop_filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 goto|goto
@@ -14230,7 +14251,10 @@ argument_list|(
 literal|"Could not create working folder '%s': %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|l_dirname
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(

@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"domain.h"
 end_include
 
@@ -569,7 +575,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6324c40103
+DECL|enum|__anon2acccf070103
 block|{
 DECL|enumerator|DOMAIN_START
 name|DOMAIN_START
@@ -591,7 +597,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6324c40208
+DECL|struct|__anon2acccf070208
 block|{
 DECL|member|filename
 specifier|const
@@ -964,7 +970,10 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(

@@ -131,7 +131,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e326dd0103
+DECL|enum|__anon2ad4289e0103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -319,7 +319,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e326dd0208
+DECL|struct|__anon2ad4289e0208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -568,7 +568,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28e326dd0308
+DECL|struct|__anon2ad4289e0308
 block|{
 DECL|member|signature
 name|gchar
@@ -7380,7 +7380,10 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|name
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -7402,7 +7405,10 @@ argument_list|(
 literal|"Opening '%s'..."
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|name
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init

@@ -7151,7 +7151,10 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -7172,7 +7175,10 @@ argument_list|(
 literal|"Saving '%s'..."
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init
@@ -7186,11 +7192,14 @@ name|name_buf
 argument_list|)
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_print
 argument_list|(
 literal|"      File \"%s\" has been opened\n"
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|get_image_data

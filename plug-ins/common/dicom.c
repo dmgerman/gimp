@@ -987,28 +987,6 @@ name|toggle_endian
 init|=
 name|FALSE
 decl_stmt|;
-name|temp
-operator|=
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Opening '%s'..."
-argument_list|)
-argument_list|,
-name|filename
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|temp
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|temp
-argument_list|)
-expr_stmt|;
 comment|/* open the file */
 name|DICOM
 operator|=
@@ -1032,7 +1010,10 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1045,6 +1026,31 @@ operator|-
 literal|1
 return|;
 block|}
+name|temp
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Opening '%s'..."
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_progress_init
+argument_list|(
+name|temp
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|temp
+argument_list|)
+expr_stmt|;
 comment|/* allocate the necessary structures */
 name|dicominfo
 operator|=
@@ -1088,7 +1094,10 @@ argument_list|(
 literal|"'%s' is a PAPYRUS DICOM file.\n"
 literal|"This plug-in does not support this type yet."
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1129,7 +1138,10 @@ argument_list|(
 literal|"'%s' is not a DICOM file."
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2574,7 +2586,10 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(

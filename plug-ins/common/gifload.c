@@ -710,7 +710,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2baf389b0108
+DECL|struct|__anon2b1e09890108
 block|{
 DECL|member|Width
 name|unsigned
@@ -760,7 +760,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2baf389b0208
+DECL|struct|__anon2b1e09890208
 block|{
 DECL|member|transparent
 name|int
@@ -1029,7 +1029,10 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1051,7 +1054,10 @@ argument_list|(
 literal|"Opening '%s'..."
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init

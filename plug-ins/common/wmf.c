@@ -76,7 +76,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297dffff0108
+DECL|struct|__anon293e426b0108
 block|{
 DECL|member|scale
 name|gdouble
@@ -1599,7 +1599,10 @@ argument_list|(
 literal|"Could not open '%s' for reading."
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -1615,7 +1618,10 @@ argument_list|(
 literal|"Opening '%s'..."
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init
@@ -1651,7 +1657,10 @@ name|g_message
 argument_list|(
 literal|"Could not allocate new image for '%s'"
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_quit

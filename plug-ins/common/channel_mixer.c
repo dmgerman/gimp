@@ -144,7 +144,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c6b80a0103
+DECL|enum|__anon275082880103
 block|{
 DECL|enumerator|CM_RED_CHANNEL
 name|CM_RED_CHANNEL
@@ -163,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c6b80a0208
+DECL|struct|__anon275082880208
 block|{
 DECL|member|red_gain
 name|gdouble
@@ -186,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c6b80a0308
+DECL|struct|__anon275082880308
 block|{
 DECL|member|red
 name|CmChannelType
@@ -278,7 +278,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c6b80a0408
+DECL|struct|__anon275082880408
 block|{
 DECL|member|width
 name|gint
@@ -5597,9 +5597,12 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|mix
 operator|->
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -5902,7 +5905,10 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -5942,7 +5948,10 @@ argument_list|(
 literal|"Parameters were Saved to '%s'"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_hide

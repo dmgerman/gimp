@@ -1296,7 +1296,10 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1318,7 +1321,10 @@ argument_list|(
 literal|"Opening '%s'..."
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init
@@ -1369,10 +1375,13 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Cannot read footer from\n'%s'"
+literal|"Cannot read footer from '%s'"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1474,10 +1483,13 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Cannot read extension from\n'%s'"
+literal|"Cannot read extension from '%s'"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1519,9 +1531,12 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Cannot read header from\n'%s'"
+literal|"Cannot read header from '%s'"
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1854,9 +1869,12 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Unhandled sub-format in\n'%s'"
+literal|"Unhandled sub-format in '%s'"
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1897,9 +1915,12 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Unhandled sub-format in\n'%s'"
+literal|"Unhandled sub-format in '%s'"
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1944,9 +1965,12 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Unhandled sub-format in\n'%s'"
+literal|"Unhandled sub-format in '%s'"
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1958,9 +1982,12 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
-literal|"Unknown image type for\n'%s'"
+literal|"Unknown image type for '%s'"
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2088,9 +2115,12 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"File '%s'\nis truncated or corrupted"
+literal|"File '%s' is truncated or corrupted"
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -3572,9 +3602,12 @@ else|else
 block|{
 name|g_message
 argument_list|(
-literal|"File '%s'\nis truncated or corrupted"
+literal|"File '%s' is truncated or corrupted"
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -4152,9 +4185,15 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Could not open '%s' for writing: %s"
+argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -4175,7 +4214,10 @@ argument_list|(
 literal|"Saving '%s'..."
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init

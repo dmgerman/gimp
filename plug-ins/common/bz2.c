@@ -1016,7 +1016,10 @@ name|g_message
 argument_list|(
 literal|"bzip2 exited abnormally on file '%s'"
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|tmpname
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1318,7 +1321,10 @@ name|g_message
 argument_list|(
 literal|"bzip2 exited abnormally on file '%s'"
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free

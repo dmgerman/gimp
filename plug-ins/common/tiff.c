@@ -64,7 +64,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cc9e690108
+DECL|struct|__anon275de9970108
 block|{
 DECL|member|compression
 name|gint
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cc9e690208
+DECL|struct|__anon275de9970208
 block|{
 DECL|member|ID
 name|gint32
@@ -1684,7 +1684,10 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1705,7 +1708,10 @@ argument_list|(
 literal|"Opening '%s'..."
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init
@@ -1798,7 +1804,10 @@ name|g_message
 argument_list|(
 literal|"Could not get image width from '%s'"
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -1823,7 +1832,10 @@ name|g_message
 argument_list|(
 literal|"Could not get image length from '%s'"
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -1849,7 +1861,10 @@ argument_list|(
 literal|"Could not get photometric from '%s'. "
 literal|"Assuming min-is-black"
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* old AppleScan software misses out the photometric tag (and            * incidentally assumes min-is-white, but xv assumes min-is-black,            * so we follow xv's lead.  It's not much hardship to invert the            * image later). */
@@ -1943,7 +1958,10 @@ argument_list|(
 literal|"alpha channel type not defined for file %s. "
 literal|"Assuming alpha is not premultiplied"
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|alpha
@@ -2571,7 +2589,10 @@ name|g_message
 argument_list|(
 literal|"Could not get colormaps from '%s'"
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -7200,7 +7221,10 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -7221,7 +7245,10 @@ argument_list|(
 literal|"Saving '%s'..."
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init

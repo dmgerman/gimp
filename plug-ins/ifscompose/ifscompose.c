@@ -173,7 +173,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af095040103
+DECL|enum|__anon2c5ad2b20103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -193,7 +193,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af095040203
+DECL|enum|__anon2c5ad2b20203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af095040308
+DECL|struct|__anon2c5ad2b20308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -231,7 +231,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2af09504040a
+DECL|union|__anon2c5ad2b2040a
 block|{
 DECL|member|d
 name|gdouble
@@ -260,7 +260,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af095040508
+DECL|struct|__anon2c5ad2b20508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -290,7 +290,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af095040608
+DECL|struct|__anon2c5ad2b20608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -325,7 +325,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af095040708
+DECL|struct|__anon2c5ad2b20708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -361,7 +361,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af095040808
+DECL|struct|__anon2c5ad2b20808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -428,7 +428,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af095040908
+DECL|struct|__anon2c5ad2b20908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -630,7 +630,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af095040a08
+DECL|struct|__anon2c5ad2b20a08
 block|{
 DECL|member|run
 name|gboolean
@@ -13850,7 +13850,10 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -14279,7 +14282,10 @@ literal|"File '%s' doesn't seem to be "
 literal|"an IFS Compose file."
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|ifscompose_message_dialog

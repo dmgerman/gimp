@@ -902,7 +902,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2952a1ed0108
+DECL|struct|__anon296661f30108
 block|{
 DECL|member|gridspacing
 name|void
@@ -3106,7 +3106,10 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -3172,9 +3175,12 @@ name|g_message
 argument_list|(
 literal|"File '%s' is not a gfig file"
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|gfig
 operator|->
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -3289,7 +3295,10 @@ name|g_message
 argument_list|(
 literal|"File '%s' corrupt file - Line %d Option section incorrect"
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|line_no
 argument_list|)
@@ -3329,7 +3338,10 @@ name|g_message
 argument_list|(
 literal|"File '%s' corrupt file - Line %d Object count to small"
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|line_no
 argument_list|)
@@ -4566,10 +4578,6 @@ modifier|*
 name|savename
 decl_stmt|;
 name|gchar
-modifier|*
-name|message
-decl_stmt|;
-name|gchar
 name|buf
 index|[
 name|G_ASCII_DTOSTR_BUF_SIZE
@@ -4606,31 +4614,22 @@ operator|!
 name|fp
 condition|)
 block|{
-name|message
-operator|=
-name|g_strdup_printf
+name|g_message
 argument_list|(
 name|_
 argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|savename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
 name|errno
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_message
-argument_list|(
-name|message
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|message
 argument_list|)
 expr_stmt|;
 return|return;
@@ -13750,7 +13749,10 @@ literal|"gfig-path"
 argument_list|,
 name|esc_path
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|gimprc
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free

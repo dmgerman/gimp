@@ -488,7 +488,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon288d9d6b0108
+DECL|struct|__anon2a4d1aff0108
 block|{
 DECL|member|randomize
 name|gint
@@ -1927,7 +1927,10 @@ argument_list|(
 literal|"'%s' is not a regular file"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1955,7 +1958,10 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -2074,7 +2080,10 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(

@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2977c7640108
+DECL|struct|__anon292af7860108
 block|{
 DECL|member|receipt
 name|gchar
@@ -1254,7 +1254,10 @@ name|g_message
 argument_list|(
 literal|"mail didnt work or something on file\n'%s'"
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|tmpname
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free

@@ -149,7 +149,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
-comment|/**********************************************************************   Global variables    *********************************************************************/
+comment|/**********************************************************************   Global variables  *********************************************************************/
 end_comment
 
 begin_decl_stmt
@@ -4931,7 +4931,10 @@ argument_list|(
 literal|"File '%s' is not a FractalExplorer file"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -4960,7 +4963,10 @@ argument_list|(
 literal|"File '%s' is corrupt.\nLine %d Option section incorrect"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|line_no
 argument_list|)
