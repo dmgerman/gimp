@@ -198,7 +198,7 @@ modifier|*
 name|object
 parameter_list|,
 name|gboolean
-name|use_set_name
+name|notify
 parameter_list|)
 function_decl|;
 end_function_decl

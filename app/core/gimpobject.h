@@ -235,6 +235,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_object_name_free
+parameter_list|(
+name|GimpObject
+modifier|*
+name|object
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 name|gimp_object_name_collate
 parameter_list|(

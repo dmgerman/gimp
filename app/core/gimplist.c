@@ -1401,9 +1401,13 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_list_uniquefy_name:  * @gimp_list: a #GimpList  * @object:    a #GimpObject  * @notify:    whether to notify listeners about the name change  *  * This function ensures that @object has a name that isn't already  * used by another object in @gimp_list. If the name of @object needs  * to be changed, the value of @notify decides if the "name_changed"  * signal should be emitted or if the name should be changed silently.  * The latter might be useful under certain circumstances in order to  * avoid recursion.  **/
+end_comment
+
 begin_function
 name|void
-DECL|function|gimp_list_uniquefy_name (GimpList * gimp_list,GimpObject * object,gboolean use_set_name)
+DECL|function|gimp_list_uniquefy_name (GimpList * gimp_list,GimpObject * object,gboolean notify)
 name|gimp_list_uniquefy_name
 parameter_list|(
 name|GimpList
@@ -1415,7 +1419,7 @@ modifier|*
 name|object
 parameter_list|,
 name|gboolean
-name|use_set_name
+name|notify
 parameter_list|)
 block|{
 name|GList
@@ -1425,10 +1429,6 @@ decl_stmt|;
 name|GList
 modifier|*
 name|list2
-decl_stmt|;
-name|GimpObject
-modifier|*
-name|object2
 decl_stmt|;
 name|gint
 name|unique_ext
@@ -1479,15 +1479,17 @@ name|list
 argument_list|)
 control|)
 block|{
+name|GimpObject
+modifier|*
 name|object2
-operator|=
+init|=
 name|GIMP_OBJECT
 argument_list|(
 name|list
 operator|->
 name|data
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|object
@@ -1673,7 +1675,7 @@ condition|)
 do|;
 if|if
 condition|(
-name|use_set_name
+name|notify
 condition|)
 block|{
 name|gimp_object_set_name
@@ -1691,11 +1693,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_free
+name|gimp_object_name_free
 argument_list|(
 name|object
-operator|->
-name|name
 argument_list|)
 expr_stmt|;
 name|object
