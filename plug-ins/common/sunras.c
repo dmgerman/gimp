@@ -8,7 +8,7 @@ comment|/* This program was written using pages 625-629 of the book  * "Encyclop
 end_comment
 
 begin_comment
-comment|/* Event history:  * V 1.00, PK, 25-Jul-96: First try  * V 1.90, PK, 15-Mar-97: Upgrade to work with GIMP V0.99  * V 1.91, PK, 05-Apr-97: Return all arguments, even in case of an error  * V 1.92, PK, 18-May-97: Ignore EOF-error on reading image data  * V 1.93, PK, 05-Oct-97: Parse rc file  * V 1.94, PK, 12-Oct-97: No progress bars for non-interactive mode  * V 1.95, nn, 20-Dec-97: Initialize some variable  * V 1.96, PK, 21-Nov-99: Internationalization  */
+comment|/* Event history:  * V 1.00, PK, 25-Jul-96: First try  * V 1.90, PK, 15-Mar-97: Upgrade to work with GIMP V0.99  * V 1.91, PK, 05-Apr-97: Return all arguments, even in case of an error  * V 1.92, PK, 18-May-97: Ignore EOF-error on reading image data  * V 1.93, PK, 05-Oct-97: Parse rc file  * V 1.94, PK, 12-Oct-97: No progress bars for non-interactive mode  * V 1.95, nn, 20-Dec-97: Initialize some variable  * V 1.96, PK, 21-Nov-99: Internationalization  * V 1.97, PK, 20-Dec-00: Recognize extensions .rs and .ras too  */
 end_comment
 
 begin_decl_stmt
@@ -18,7 +18,7 @@ name|char
 name|ident
 index|[]
 init|=
-literal|"@(#) GIMP SunRaster file-plugin v1.96  21-Nov-99"
+literal|"@(#) GIMP SunRaster file-plugin v1.97  20-Dec-00"
 decl_stmt|;
 end_decl_stmt
 
@@ -137,7 +137,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d4bd360108
+DECL|struct|__anon2bc084a60108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -226,7 +226,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d4bd360208
+DECL|struct|__anon2bc084a60208
 block|{
 DECL|member|val
 name|gint
@@ -827,7 +827,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d4bd360308
+DECL|struct|__anon2bc084a60308
 block|{
 DECL|member|rle
 name|gint
@@ -843,7 +843,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d4bd360408
+DECL|struct|__anon2bc084a60408
 block|{
 DECL|member|run
 name|gint
@@ -1126,7 +1126,7 @@ name|gimp_register_magic_load_handler
 argument_list|(
 literal|"file_sunras_load"
 argument_list|,
-literal|"im1,im8,im24,im32"
+literal|"im1,im8,im24,im32,rs,ras"
 argument_list|,
 literal|""
 argument_list|,
@@ -1137,7 +1137,7 @@ name|gimp_register_save_handler
 argument_list|(
 literal|"file_sunras_save"
 argument_list|,
-literal|"im1,im8,im24,im32"
+literal|"im1,im8,im24,im32,rs,ras"
 argument_list|,
 literal|""
 argument_list|)
