@@ -203,7 +203,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon291b2e460103
+DECL|enum|__anon2a1294630103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -231,7 +231,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291b2e460203
+DECL|enum|__anon2a1294630203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -442,7 +442,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291b2e460303
+DECL|enum|__anon2a1294630303
 block|{
 DECL|enumerator|TREE_ITEM_DO_NOTHING
 name|TREE_ITEM_DO_NOTHING
@@ -465,7 +465,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon291b2e460408
+DECL|struct|__anon2a1294630408
 block|{
 DECL|member|directory
 name|gboolean
@@ -2044,21 +2044,6 @@ operator|)
 name|g_object_unref
 argument_list|,
 name|gimprc
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dialog
-argument_list|)
-operator|->
-name|action_area
-argument_list|)
-argument_list|,
-literal|8
 argument_list|)
 expr_stmt|;
 name|eek_box

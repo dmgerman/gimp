@@ -93,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c670d2b0103
+DECL|enum|__anon2be023300103
 block|{
 DECL|enumerator|PATH_COLUMN
 name|PATH_COLUMN
@@ -483,7 +483,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -493,7 +493,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_add

@@ -198,7 +198,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2988d23f0108
+DECL|struct|__anon29aca1270108
 block|{
 DECL|member|resize
 name|Resize
@@ -1675,7 +1675,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_add

@@ -563,7 +563,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|10
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -573,7 +573,7 @@ argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
-literal|10
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -649,7 +649,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|g_object_set_data
@@ -703,7 +703,7 @@ operator|->
 name|vbox
 argument_list|)
 argument_list|,
-literal|10
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_add

@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b254600108
+DECL|struct|__anon2ab194e00108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -526,7 +526,7 @@ argument_list|(
 name|main_vbox
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
