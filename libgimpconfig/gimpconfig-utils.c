@@ -914,7 +914,7 @@ argument_list|(
 name|a
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -924,7 +924,7 @@ argument_list|(
 name|b
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if

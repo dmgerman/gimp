@@ -322,7 +322,7 @@ name|ps
 operator|->
 name|tile
 operator|=
-literal|0
+name|NULL
 expr_stmt|;
 block|}
 comment|/* copy pixels, one by one */
@@ -552,7 +552,7 @@ name|ps
 operator|->
 name|tile
 operator|=
-literal|0
+name|NULL
 expr_stmt|;
 block|}
 block|}
@@ -586,7 +586,7 @@ name|ps
 operator|->
 name|buff
 operator|=
-literal|0
+name|NULL
 expr_stmt|;
 name|ps
 operator|->

@@ -237,7 +237,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon276a5b610103
+DECL|enum|__anon29c2ca8f0103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -2019,8 +2019,6 @@ operator|==
 name|G_TOKEN_LEFT_PAREN
 condition|)
 block|{
-name|token
-operator|=
 name|token
 operator|=
 name|g_scanner_get_next_token

@@ -102,7 +102,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8af7e00103
+DECL|enum|__anon2aaaf3530103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1825,7 +1825,7 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-literal|0
+name|NULL
 argument_list|)
 expr_stmt|;
 name|centerp

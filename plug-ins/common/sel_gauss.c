@@ -36,7 +36,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bba5c3a0108
+DECL|struct|__anon2b52a1f10108
 block|{
 DECL|member|radius
 name|gdouble
@@ -990,9 +990,9 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

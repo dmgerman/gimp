@@ -1069,7 +1069,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c8abe090108
+DECL|struct|__anon2b395e7d0108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -2488,7 +2488,7 @@ name|guchar
 modifier|*
 name|cmap
 init|=
-literal|0
+name|NULL
 decl_stmt|,
 modifier|*
 name|pixels

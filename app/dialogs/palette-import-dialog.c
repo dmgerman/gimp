@@ -140,7 +140,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277d32e30103
+DECL|enum|__anon2c35734c0103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -1196,7 +1196,7 @@ argument_list|(
 literal|"Select palette file"
 argument_list|)
 argument_list|,
-literal|0
+name|NULL
 argument_list|,
 name|FALSE
 argument_list|,

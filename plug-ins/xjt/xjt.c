@@ -243,7 +243,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c232e230103
+DECL|enum|__anon29983dd20103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -443,7 +443,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c232e230203
+DECL|enum|__anon29983dd20203
 block|{
 DECL|enumerator|PTYP_NOT_SUPPORTED
 name|PTYP_NOT_SUPPORTED
@@ -503,7 +503,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c232e230303
+DECL|enum|__anon29983dd20303
 block|{
 DECL|enumerator|XJT_IMAGE_PARASITE
 name|XJT_IMAGE_PARASITE
@@ -533,7 +533,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c232e230403
+DECL|enum|__anon29983dd20403
 block|{
 DECL|enumerator|XJT_RGB
 name|XJT_RGB
@@ -555,7 +555,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c232e230503
+DECL|enum|__anon29983dd20503
 block|{
 DECL|enumerator|XJT_PATHTYPE_UNDEF
 name|XJT_PATHTYPE_UNDEF
@@ -575,7 +575,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c232e230603
+DECL|enum|__anon29983dd20603
 block|{
 DECL|enumerator|XJT_UNIT_PIXEL
 name|XJT_UNIT_PIXEL
@@ -610,7 +610,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c232e230703
+DECL|enum|__anon29983dd20703
 block|{
 DECL|enumerator|XJT_NORMAL_MODE
 name|XJT_NORMAL_MODE
@@ -735,7 +735,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c232e230808
+DECL|struct|__anon29983dd20808
 block|{
 DECL|member|prop_id
 name|t_proptype
@@ -771,7 +771,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c232e230908
+DECL|struct|__anon29983dd20908
 block|{
 DECL|member|int_val1
 name|gint32
@@ -820,7 +820,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c232e230a08
+DECL|struct|__anon29983dd20a08
 block|{
 DECL|member|parasite_type
 name|t_parasitetype
@@ -857,7 +857,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c232e230b08
+DECL|struct|__anon29983dd20b08
 block|{
 DECL|member|path_type
 name|gint32
@@ -907,7 +907,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c232e230c08
+DECL|struct|__anon29983dd20c08
 block|{
 DECL|member|active_channel
 name|gint
@@ -981,7 +981,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c232e230d08
+DECL|struct|__anon29983dd20d08
 block|{
 DECL|member|active_layer
 name|gint
@@ -1066,7 +1066,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c232e230e08
+DECL|struct|__anon29983dd20e08
 block|{
 DECL|member|position
 name|gint32
@@ -1090,7 +1090,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c232e230f08
+DECL|struct|__anon29983dd20f08
 block|{
 DECL|member|version
 name|gchar
@@ -8403,11 +8403,13 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_new_layer_prop ()
+DECL|function|p_new_layer_prop (void)
 name|t_layer_props
 modifier|*
 name|p_new_layer_prop
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|t_layer_props
 modifier|*
@@ -8662,11 +8664,13 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_new_channel_prop ()
+DECL|function|p_new_channel_prop (void)
 name|t_channel_props
 modifier|*
 name|p_new_channel_prop
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|t_channel_props
 modifier|*
@@ -8887,11 +8891,13 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_new_guide_prop ()
+DECL|function|p_new_guide_prop (void)
 name|t_guide_props
 modifier|*
 name|p_new_guide_prop
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|t_guide_props
 modifier|*
@@ -8940,11 +8946,13 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_new_parasite_prop ()
+DECL|function|p_new_parasite_prop (void)
 name|t_parasite_props
 modifier|*
 name|p_new_parasite_prop
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|t_parasite_props
 modifier|*
@@ -9013,11 +9021,13 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_new_path_prop ()
+DECL|function|p_new_path_prop (void)
 name|t_path_props
 modifier|*
 name|p_new_path_prop
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|t_path_props
 modifier|*
@@ -9113,11 +9123,13 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_new_image_prop ()
+DECL|function|p_new_image_prop (void)
 name|t_image_props
 modifier|*
 name|p_new_image_prop
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|t_image_props
 modifier|*

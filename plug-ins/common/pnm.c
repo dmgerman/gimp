@@ -309,7 +309,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279628650108
+DECL|struct|__anon28999a880108
 block|{
 DECL|member|raw
 name|gint
@@ -4623,7 +4623,7 @@ name|s
 operator|->
 name|inbuf
 operator|=
-literal|0
+name|NULL
 expr_stmt|;
 name|s
 operator|->

@@ -39,9 +39,11 @@ end_comment
 
 begin_function
 name|curve_type
-DECL|function|new_curve ()
+DECL|function|new_curve (void)
 name|new_curve
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|curve_type
 name|curve
@@ -334,9 +336,11 @@ end_comment
 
 begin_function
 name|curve_list_type
-DECL|function|new_curve_list ()
+DECL|function|new_curve_list (void)
 name|new_curve_list
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|curve_list_type
 name|curve_list
@@ -491,9 +495,11 @@ end_comment
 
 begin_function
 name|curve_list_array_type
-DECL|function|new_curve_list_array ()
+DECL|function|new_curve_list_array (void)
 name|new_curve_list_array
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|curve_list_array_type
 name|curve_list_array

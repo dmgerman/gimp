@@ -168,7 +168,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7f91ba0108
+DECL|struct|__anon2bd5cf5b0108
 block|{
 DECL|member|about_dialog
 name|GtkWidget
@@ -392,7 +392,7 @@ name|about_info
 init|=
 block|{
 literal|0
-block|}
+block|, }
 decl_stmt|;
 end_decl_stmt
 

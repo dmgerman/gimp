@@ -85,9 +85,11 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|place_restore ()
+DECL|function|place_restore (void)
 name|place_restore
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|gtk_toggle_button_set_active
 argument_list|(
@@ -153,9 +155,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|place_store ()
+DECL|function|place_store (void)
 name|place_store
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|pcvals
 operator|.

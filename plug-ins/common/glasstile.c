@@ -50,7 +50,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b4341a0108
+DECL|struct|__anon2b9e547a0108
 block|{
 DECL|member|xblock
 name|gint
@@ -78,7 +78,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b4341a0208
+DECL|struct|__anon2b9e547a0208
 block|{
 DECL|member|gval
 name|GlassValues
@@ -668,7 +668,7 @@ name|glasstile
 argument_list|(
 name|drawable
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if

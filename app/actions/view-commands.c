@@ -2511,7 +2511,7 @@ name|shell
 argument_list|,
 name|NULL
 argument_list|,
-literal|0
+name|NULL
 argument_list|,
 literal|"Enter destination screen"
 argument_list|,

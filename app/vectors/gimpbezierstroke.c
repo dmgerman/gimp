@@ -1114,7 +1114,7 @@ argument_list|(
 name|stroke
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -1127,7 +1127,7 @@ name|type
 operator|==
 name|GIMP_ANCHOR_ANCHOR
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|list
@@ -1153,7 +1153,7 @@ name|next
 operator|!=
 name|NULL
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|list

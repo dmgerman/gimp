@@ -1520,7 +1520,7 @@ name|GimpLayerMask
 modifier|*
 name|mask
 init|=
-name|FALSE
+name|NULL
 decl_stmt|;
 comment|/*  layer mask             */
 name|gboolean

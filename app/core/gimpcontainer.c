@@ -142,7 +142,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon277a319d0103
+DECL|enum|__anon2c6d7d7b0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -167,7 +167,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon277a319d0203
+DECL|enum|__anon2c6d7d7b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1279,7 +1279,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277a319d0308
+DECL|struct|__anon2c6d7d7b0308
 block|{
 DECL|member|writer
 name|GimpConfigWriter
@@ -1807,7 +1807,7 @@ name|nest_level
 operator|+
 literal|1
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 condition|)
 block|{

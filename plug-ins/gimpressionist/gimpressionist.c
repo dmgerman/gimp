@@ -1031,7 +1031,7 @@ name|updatepreview
 argument_list|(
 name|NULL
 argument_list|,
-literal|0
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*    * This is to make sure the values from the pcvals will be reflected    * in the GUI here. Otherwise they will be set to the defaults.    * */

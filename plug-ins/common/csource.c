@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3d6b8c0108
+DECL|struct|__anon27f24d1d0108
 block|{
 DECL|member|file_name
 name|gchar
@@ -3626,9 +3626,9 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

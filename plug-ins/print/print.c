@@ -285,7 +285,7 @@ DECL|variable|current_printer
 name|stp_printer_t
 name|current_printer
 init|=
-literal|0
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -2897,7 +2897,7 @@ name|gchar
 modifier|*
 name|current_printer
 init|=
-literal|0
+name|NULL
 decl_stmt|;
 comment|/* printer to select */
 name|check_plist

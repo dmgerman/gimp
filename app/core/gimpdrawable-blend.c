@@ -120,7 +120,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bafccb40108
+DECL|struct|__anon2935e1c00108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -181,7 +181,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bafccb40208
+DECL|struct|__anon2935e1c00208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -584,6 +584,14 @@ comment|/* data */
 name|NULL
 block|,
 comment|/* tiles */
+name|NULL
+block|,
+comment|/* curtile */
+literal|0
+block|,
+literal|0
+block|,
+comment|/* offx, offy */
 literal|0
 block|,
 comment|/* rowstride */
@@ -591,15 +599,18 @@ literal|0
 block|,
 literal|0
 block|,
-comment|/* w, h */
-literal|0
-block|,
-literal|0
-block|,
 comment|/* x, y */
+literal|0
+block|,
+literal|0
+block|,
+comment|/* w, h */
 literal|4
 block|,
 comment|/* bytes */
+name|FALSE
+block|,
+comment|/* dirty */
 literal|0
 comment|/* process count */
 block|}

@@ -82,7 +82,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon29fec2130103
+DECL|enum|__anon2acb4f640103
 DECL|enumerator|GRID_HIDDEN
 DECL|enumerator|GRID_LINES
 DECL|enumerator|GRID_CROSSES
@@ -101,7 +101,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29fec2130208
+DECL|struct|__anon2acb4f640208
 typedef|typedef
 struct|struct
 block|{
@@ -874,9 +874,11 @@ begin_function
 specifier|static
 name|GridDialog_t
 modifier|*
-DECL|function|create_grid_settings_dialog ()
+DECL|function|create_grid_settings_dialog (void)
 name|create_grid_settings_dialog
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GridDialog_t
 modifier|*

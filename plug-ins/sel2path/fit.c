@@ -6996,9 +6996,11 @@ end_comment
 begin_function
 specifier|static
 name|index_list_type
-DECL|function|new_index_list ()
+DECL|function|new_index_list (void)
 name|new_index_list
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|index_list_type
 name|index_list

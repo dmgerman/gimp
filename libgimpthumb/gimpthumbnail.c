@@ -236,7 +236,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dc15a40103
+DECL|enum|__anon2933b9930103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -893,7 +893,7 @@ name|thumbnail
 operator|->
 name|image_type
 operator|=
-literal|0
+name|NULL
 expr_stmt|;
 name|thumbnail
 operator|->

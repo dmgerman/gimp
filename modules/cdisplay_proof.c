@@ -293,7 +293,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ddf56d0103
+DECL|enum|__anon29d12a350103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -919,7 +919,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|,
 name|G_PARAM_READWRITE
 operator||

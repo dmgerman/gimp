@@ -2927,7 +2927,7 @@ literal|"Received invalid font data!"
 argument_list|)
 expr_stmt|;
 return|return
-name|FALSE
+name|NULL
 return|;
 block|}
 name|name

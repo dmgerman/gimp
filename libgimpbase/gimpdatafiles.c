@@ -385,10 +385,6 @@ parameter_list|)
 block|{
 name|GimpDatafileData
 name|file_data
-init|=
-block|{
-literal|0
-block|}
 decl_stmt|;
 name|struct
 name|stat

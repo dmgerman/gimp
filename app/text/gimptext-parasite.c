@@ -216,7 +216,7 @@ name|parasite
 operator|!=
 name|NULL
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -234,7 +234,7 @@ argument_list|)
 operator|==
 literal|0
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -248,7 +248,7 @@ name|error
 operator|==
 name|NULL
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|str
@@ -264,7 +264,7 @@ name|str
 operator|!=
 name|NULL
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|text
@@ -335,7 +335,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f9b2e50103
+DECL|enum|__anon2c4707180103
 block|{
 DECL|enumerator|TEXT
 name|TEXT

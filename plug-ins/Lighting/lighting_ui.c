@@ -5525,7 +5525,7 @@ literal|16
 argument_list|,
 name|FALSE
 argument_list|,
-literal|0
+name|NULL
 argument_list|)
 expr_stmt|;
 name|dir
@@ -6123,7 +6123,7 @@ literal|16
 argument_list|,
 name|FALSE
 argument_list|,
-literal|0
+name|NULL
 argument_list|)
 expr_stmt|;
 name|dir

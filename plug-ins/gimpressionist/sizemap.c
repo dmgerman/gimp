@@ -962,9 +962,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|size_map_free_resources ()
+DECL|function|size_map_free_resources (void)
 name|size_map_free_resources
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|ppm_kill
 argument_list|(

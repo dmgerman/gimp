@@ -217,7 +217,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c09e9a30108
+DECL|struct|__anon28a3df840108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -734,7 +734,7 @@ name|gchar
 modifier|*
 name|rndm_type_str
 init|=
-literal|'\0'
+literal|""
 decl_stmt|;
 name|gchar
 name|prog_label

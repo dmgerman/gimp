@@ -245,7 +245,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ec51440108
+DECL|struct|__anon2b957eba0108
 block|{
 DECL|member|hwidth
 name|gint
@@ -1310,7 +1310,8 @@ block|}
 end_function
 
 begin_function
-name|G_INLINE_FUNC
+specifier|static
+specifier|inline
 name|void
 DECL|function|pix_composite (guchar * p1,guchar p2[4],gint bytes,gboolean blend,gboolean alpha)
 name|pix_composite

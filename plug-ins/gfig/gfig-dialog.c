@@ -465,7 +465,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a483a7a0108
+DECL|struct|__anon2bec98160108
 block|{
 DECL|member|gridspacing
 name|void
@@ -3226,7 +3226,7 @@ literal|16
 argument_list|,
 name|FALSE
 argument_list|,
-literal|0
+name|NULL
 argument_list|)
 expr_stmt|;
 name|dir
@@ -7712,9 +7712,11 @@ end_comment
 
 begin_function
 name|void
-DECL|function|draw_grid_clear ()
+DECL|function|draw_grid_clear (void)
 name|draw_grid_clear
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 comment|/* wipe slate and start again */
 name|gtk_widget_queue_draw

@@ -276,7 +276,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a999810103
+DECL|enum|__anon2a0fccf70103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -346,7 +346,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a999810203
+DECL|enum|__anon2a0fccf70203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6070,7 +6070,7 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return

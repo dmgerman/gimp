@@ -1926,7 +1926,7 @@ name|stp_param_t
 modifier|*
 name|printer_list
 init|=
-literal|0
+name|NULL
 decl_stmt|;
 end_decl_stmt
 

@@ -480,7 +480,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|gimp_thumb_initialized
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|size
@@ -522,7 +522,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|gimp_thumb_initialized
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail

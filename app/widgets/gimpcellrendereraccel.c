@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ad79370103
+DECL|enum|__anon2a993b2f0103
 block|{
 DECL|enumerator|ACCEL_EDITED
 name|ACCEL_EDITED
@@ -72,7 +72,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ad79370203
+DECL|enum|__anon2a993b2f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1486,7 +1486,7 @@ name|FALSE
 argument_list|,
 name|GDK_BUTTON_PRESS_MASK
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

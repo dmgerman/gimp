@@ -45,9 +45,11 @@ end_comment
 
 begin_function
 name|spline_type
-DECL|function|new_spline ()
+DECL|function|new_spline (void)
 name|new_spline
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|real_coordinate_type
 name|coord
@@ -564,9 +566,11 @@ end_comment
 begin_function
 name|spline_list_type
 modifier|*
-DECL|function|new_spline_list ()
+DECL|function|new_spline_list (void)
 name|new_spline_list
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|spline_list_type
 modifier|*
@@ -884,9 +888,11 @@ end_comment
 
 begin_function
 name|spline_list_array_type
-DECL|function|new_spline_list_array ()
+DECL|function|new_spline_list_array (void)
 name|new_spline_list_array
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|spline_list_array_type
 name|answer

@@ -542,9 +542,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|d_circle_object_class_init ()
+DECL|function|d_circle_object_class_init (void)
 name|d_circle_object_class_init
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|DobjClass
 modifier|*

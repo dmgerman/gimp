@@ -1981,7 +1981,7 @@ name|d_parasite
 operator|.
 name|name
 operator|=
-literal|0
+name|NULL
 expr_stmt|;
 name|params
 index|[
@@ -2020,7 +2020,7 @@ name|d_parasite
 operator|.
 name|data
 operator|=
-literal|0
+name|NULL
 expr_stmt|;
 block|}
 else|else
@@ -2079,7 +2079,7 @@ name|d_parasite
 operator|.
 name|name
 operator|=
-literal|0
+name|NULL
 expr_stmt|;
 name|params
 index|[
@@ -2118,7 +2118,7 @@ name|d_parasite
 operator|.
 name|data
 operator|=
-literal|0
+name|NULL
 expr_stmt|;
 block|}
 else|else
@@ -2481,7 +2481,7 @@ name|d_parasite
 operator|.
 name|name
 operator|=
-literal|0
+name|NULL
 expr_stmt|;
 name|params
 index|[
@@ -2494,7 +2494,7 @@ name|d_parasite
 operator|.
 name|data
 operator|=
-literal|0
+name|NULL
 expr_stmt|;
 block|}
 break|break;

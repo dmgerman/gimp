@@ -3226,9 +3226,11 @@ begin_function
 specifier|static
 name|PreferencesDialog_t
 modifier|*
-DECL|function|create_preferences_dialog ()
+DECL|function|create_preferences_dialog (void)
 name|create_preferences_dialog
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|PreferencesDialog_t
 modifier|*

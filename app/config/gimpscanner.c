@@ -124,7 +124,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa9db0e0108
+DECL|struct|__anon2893b3200108
 block|{
 DECL|member|fd
 name|gint
@@ -1083,7 +1083,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aa9db0e0203
+DECL|enum|__anon2893b3200203
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB
@@ -1587,7 +1587,10 @@ name|scope_id
 argument_list|,
 literal|"matrix"
 argument_list|,
+name|GINT_TO_POINTER
+argument_list|(
 literal|0
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|token

@@ -58,7 +58,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon27f585da0108
+DECL|struct|__anon2b3b42eb0108
 typedef|typedef
 struct|struct
 block|{
@@ -329,9 +329,11 @@ begin_function
 specifier|static
 name|SettingsDialog_t
 modifier|*
-DECL|function|create_settings_dialog ()
+DECL|function|create_settings_dialog (void)
 name|create_settings_dialog
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|SettingsDialog_t
 modifier|*

@@ -315,7 +315,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278299470108
+DECL|struct|__anon2779cd280108
 block|{
 DECL|member|root
 name|gboolean
@@ -848,7 +848,7 @@ condition|(
 operator|!
 name|gdk_init_check
 argument_list|(
-literal|0
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)

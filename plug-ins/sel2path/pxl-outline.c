@@ -222,9 +222,11 @@ end_comment
 
 begin_function
 name|pixel_outline_list_type
-DECL|function|find_outline_pixels ()
+DECL|function|find_outline_pixels (void)
 name|find_outline_pixels
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|pixel_outline_list_type
 name|outline_list
@@ -686,9 +688,11 @@ end_comment
 
 begin_function
 name|pixel_outline_type
-DECL|function|new_pixel_outline ()
+DECL|function|new_pixel_outline (void)
 name|new_pixel_outline
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|pixel_outline_type
 name|pixel_outline

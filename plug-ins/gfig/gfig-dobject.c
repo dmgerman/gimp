@@ -750,9 +750,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|gfig_init_object_classes ()
+DECL|function|gfig_init_object_classes (void)
 name|gfig_init_object_classes
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|d_arc_object_class_init
 argument_list|()
@@ -1689,7 +1691,7 @@ argument_list|)
 expr_stmt|;
 name|move_all_pnt
 operator|=
-literal|0
+name|NULL
 expr_stmt|;
 block|}
 comment|/* Special case - if copying mode MUST be copy when button up received */
@@ -3526,9 +3528,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
-literal|0
-operator|)
+name|NULL
 return|;
 block|}
 ifdef|#
@@ -3545,9 +3545,7 @@ endif|#
 directive|endif
 comment|/* DEBUG */
 return|return
-operator|(
 name|ret
-operator|)
 return|;
 block|}
 end_function

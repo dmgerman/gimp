@@ -2638,9 +2638,11 @@ end_function
 begin_function
 name|GString
 modifier|*
-DECL|function|gfig_save_as_string ()
+DECL|function|gfig_save_as_string (void)
 name|gfig_save_as_string
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|DAllObjs
 modifier|*
@@ -2829,9 +2831,11 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gfig_save_as_parasite ()
+DECL|function|gfig_save_as_parasite (void)
 name|gfig_save_as_parasite
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GimpParasite
 modifier|*
@@ -2921,9 +2925,11 @@ end_function
 begin_function
 name|GFigObj
 modifier|*
-DECL|function|gfig_load_from_parasite ()
+DECL|function|gfig_load_from_parasite (void)
 name|gfig_load_from_parasite
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|FILE
 modifier|*

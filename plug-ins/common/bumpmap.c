@@ -130,7 +130,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ea1d980103
+DECL|enum|__anon2c6ec7890103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -148,7 +148,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ea1d980203
+DECL|enum|__anon2c6ec7890203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -164,7 +164,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ea1d980308
+DECL|struct|__anon2c6ec7890308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -223,7 +223,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ea1d980408
+DECL|struct|__anon2c6ec7890408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -268,7 +268,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ea1d980508
+DECL|struct|__anon2c6ec7890508
 block|{
 DECL|member|mouse_x
 name|gint
@@ -753,17 +753,17 @@ block|,
 comment|/* bm_has_alpha */
 block|{
 literal|0
-block|}
+block|, }
 block|,
 comment|/* src_rgn */
 block|{
 literal|0
-block|}
+block|, }
 block|,
 comment|/* bm_rgn */
 block|{
 literal|0
-block|}
+block|, }
 comment|/* params */
 block|}
 decl_stmt|;

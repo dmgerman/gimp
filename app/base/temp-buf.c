@@ -1777,14 +1777,14 @@ name|srcPR
 init|=
 block|{
 literal|0
-block|}
+block|, }
 decl_stmt|;
 name|PixelRegion
 name|destPR
 init|=
 block|{
 literal|0
-block|}
+block|, }
 decl_stmt|;
 name|guchar
 name|empty
