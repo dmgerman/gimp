@@ -129,7 +129,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b87deb60103
+DECL|enum|__anon277455050103
 block|{
 DECL|enumerator|CM_RED_CHANNEL
 name|CM_RED_CHANNEL
@@ -148,7 +148,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b87deb60208
+DECL|struct|__anon277455050208
 block|{
 DECL|member|red_gain
 name|gdouble
@@ -171,7 +171,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b87deb60308
+DECL|struct|__anon277455050308
 block|{
 DECL|member|red
 name|CmChannelType
@@ -798,7 +798,7 @@ literal|"2002"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Channel Mi_xer.."
+literal|"Channel Mi_xer..."
 argument_list|)
 argument_list|,
 literal|"RGB*"
