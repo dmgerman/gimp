@@ -160,7 +160,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c5a7cb0103
+DECL|enum|__anon294339460103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -1495,9 +1495,7 @@ name|menu_identifier
 argument_list|,
 name|GTK_TYPE_MENU
 argument_list|,
-name|menu_factory
-operator|->
-name|gimp
+name|list_view
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2193,7 +2191,7 @@ name|item_view
 operator|->
 name|item_factory
 argument_list|,
-name|gimage
+name|item_view
 argument_list|,
 name|NULL
 argument_list|)

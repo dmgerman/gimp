@@ -2173,7 +2173,7 @@ name|shell
 operator|->
 name|popup_factory
 argument_list|,
-name|gimage
+name|gdisp
 argument_list|,
 name|NULL
 argument_list|)
@@ -3389,6 +3389,11 @@ name|state
 condition|)
 block|{
 comment|/* Hide or show all dialogs */
+name|g_print
+argument_list|(
+literal|"toggle dialogs\n"
+argument_list|)
+expr_stmt|;
 name|gimp_dialog_factories_toggle
 argument_list|(
 name|global_toolbox_factory
@@ -5576,8 +5581,6 @@ argument_list|,
 name|shell
 operator|->
 name|gdisp
-operator|->
-name|gimage
 argument_list|,
 name|NULL
 argument_list|,

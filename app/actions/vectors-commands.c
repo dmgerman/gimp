@@ -114,13 +114,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpviewabledialog.h"
+file|"widgets/gimpitemlistview.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"widgets/gimpwidgets-utils.h"
+file|"widgets/gimpviewabledialog.h"
 end_include
 
 begin_include
@@ -176,7 +176,7 @@ parameter_list|,
 name|data
 parameter_list|)
 define|\
-value|gimage = (GimpImage *) gimp_widget_get_callback_context (widget); \   if (! GIMP_IS_IMAGE (gimage)) { \     if (GIMP_IS_DISPLAY (data)) \       gimage = ((GimpDisplay *) data)->gimage; \     else if (GIMP_IS_GIMP (data)) \       gimage = gimp_context_get_image (gimp_get_user_context (GIMP (data))); \     else \       gimage = NULL; \   } \   if (! gimage) \     return
+value|if (GIMP_IS_DISPLAY (data)) \     gimage = ((GimpDisplay *) data)->gimage; \   else if (GIMP_IS_GIMP (data)) \     gimage = gimp_context_get_image (gimp_get_user_context (GIMP (data))); \   else if (GIMP_IS_ITEM_LIST_VIEW (data)) \     gimage = ((GimpItemListView *) data)->gimage; \   else \     gimage = NULL; \   \   if (! gimage) \     return
 end_define
 
 begin_define
@@ -2436,10 +2436,12 @@ name|NULL
 decl_stmt|;
 name|gimage
 operator|=
-name|GIMP_IMAGE
+name|GIMP_ITEM_LIST_VIEW
 argument_list|(
 name|data
 argument_list|)
+operator|->
+name|gimage
 expr_stmt|;
 name|vectors
 operator|=

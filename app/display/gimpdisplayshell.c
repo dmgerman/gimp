@@ -179,12 +179,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpwidgets-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gui/info-window.h"
 end_include
 
@@ -304,7 +298,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2979ec270103
+DECL|enum|__anon28d96cf10103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -373,17 +367,6 @@ parameter_list|,
 name|GdkEventAny
 modifier|*
 name|aevent
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|gpointer
-name|gimp_display_shell_get_accel_context
-parameter_list|(
-name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1923,7 +1906,7 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  The accelerator table for images  */
-name|gimp_window_add_accel_group
+name|gtk_window_add_accel_group
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -1936,10 +1919,8 @@ name|shell
 operator|->
 name|menubar_factory
 argument_list|)
-argument_list|,
-name|gimp_display_shell_get_accel_context
-argument_list|,
-name|shell
+operator|->
+name|accel_group
 argument_list|)
 expr_stmt|;
 comment|/*  GtkTable widgets are not able to shrink a row/column correctly if    *  widgets are attached with GTK_EXPAND even if those widgets have    *  other rows/columns in their rowspan/colspan where they could    *  nicely expand without disturbing the row/column which is supposed    *  to shrink. --Mitch    *    *  Changed the packing to use hboxes and vboxes which behave nicer:    *    *  main_vbox    *     |    *     +-- menubar    *     |    *     +-- disp_vbox    *     |      |    *     |      +-- upper_hbox    *     |      |      |    *     |      |      +-- inner_table    *     |      |      |      |    *     |      |      |      +-- origin    *     |      |      |      +-- hruler    *     |      |      |      +-- vruler    *     |      |      |      +-- canvas    *     |      |      |         *     |      |      +-- right_vbox    *     |      |             |    *     |      |             +-- padding_button    *     |      |             +-- vscrollbar    *     |      |        *     |      +-- lower_hbox    *     |             |    *     |             +-- qmask    *     |             +-- hscrollbar    *     |             +-- navbutton    *     |    *     +-- statusbar    */
@@ -8334,45 +8315,6 @@ end_function
 begin_comment
 comment|/*  private functions  */
 end_comment
-
-begin_function
-specifier|static
-name|gpointer
-DECL|function|gimp_display_shell_get_accel_context (gpointer data)
-name|gimp_display_shell_get_accel_context
-parameter_list|(
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|GimpDisplayShell
-modifier|*
-name|shell
-decl_stmt|;
-name|shell
-operator|=
-operator|(
-name|GimpDisplayShell
-operator|*
-operator|)
-name|data
-expr_stmt|;
-if|if
-condition|(
-name|shell
-condition|)
-return|return
-name|shell
-operator|->
-name|gdisp
-operator|->
-name|gimage
-return|;
-return|return
-name|NULL
-return|;
-block|}
-end_function
 
 begin_function
 specifier|static
