@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -24,62 +30,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtkfeatures.h>
-end_include
-
-begin_if
-if|#
-directive|if
-name|GTK_CHECK_VERSION
-argument_list|(
-literal|1
-operator|,
-literal|3
-operator|,
-literal|0
-argument_list|)
-end_if
-
-begin_include
-include|#
-directive|include
-file|<gdk/gdkprivate.h>
-end_include
-
-begin_comment
-comment|/* For gdk_error_warnings, really needed? */
-end_comment
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_include
-include|#
-directive|include
 file|<gdk/gdkx.h>
-end_include
-
-begin_comment
-comment|/* Need Xlib headers */
-end_comment
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
-file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"font_selection.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_function_decl
@@ -143,7 +106,7 @@ value|32767
 end_define
 
 begin_enum
-DECL|enum|__anon2b1a45ff0103
+DECL|enum|__anon288af3740103
 enum|enum
 block|{
 DECL|enumerator|FONT_CHANGED

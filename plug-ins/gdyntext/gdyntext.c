@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -19,12 +25,6 @@ begin_include
 include|#
 directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<math.h>
 end_include
 
 begin_include
@@ -49,6 +49,12 @@ begin_include
 include|#
 directive|include
 file|"gdyntext_ui.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_function_decl
@@ -153,7 +159,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f832580103
+DECL|enum|__anon2755bc1a0103
 block|{
 DECL|enumerator|TEXT
 name|TEXT
@@ -3180,7 +3186,7 @@ name|image_id
 argument_list|,
 name|_
 argument_list|(
-literal|"GDynText Layer "
+literal|"GDynText Layer"
 argument_list|)
 argument_list|,
 name|layer_width

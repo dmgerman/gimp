@@ -16,12 +16,6 @@ directive|define
 name|_GDYNTEXT_H_
 end_define
 
-begin_include
-include|#
-directive|include
-file|"libgimp/stdplugins-intl.h"
-end_include
-
 begin_define
 DECL|macro|GDYNTEXT_VERSION
 define|#
@@ -165,7 +159,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ad499c0103
+DECL|enum|__anon291d24fe0103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -188,7 +182,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28ad499c0208
+DECL|struct|__anon291d24fe0208
 typedef|typedef
 struct|struct
 block|{

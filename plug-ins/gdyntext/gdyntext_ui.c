@@ -59,13 +59,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gdk/gdk.h>
+file|"gdyntext_ui.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gdyntext_ui.h"
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_include
@@ -135,7 +135,7 @@ file|"graphics/text_load.xpm"
 end_include
 
 begin_typedef
-DECL|struct|__anon2ac03ead0108
+DECL|struct|__anon28d10a0c0108
 typedef|typedef
 struct|struct
 block|{
@@ -4089,9 +4089,6 @@ name|g_strdup
 argument_list|(
 literal|"gdyntext"
 argument_list|)
-expr_stmt|;
-name|gtk_set_locale
-argument_list|()
 expr_stmt|;
 name|gtk_init
 argument_list|(

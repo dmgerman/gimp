@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -18,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/stdplugins-intl.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"charmap.h"
 end_include
 
@@ -31,6 +31,12 @@ begin_include
 include|#
 directive|include
 file|"charmap_window.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_function_decl

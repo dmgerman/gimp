@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -18,13 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/stdplugins-intl.h"
+file|"charmap.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"charmap.h"
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_function_decl
@@ -66,7 +72,7 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon2c76ccb30103
+DECL|enum|__anon2bf787ed0103
 enum|enum
 block|{
 DECL|enumerator|CHAR_SELECTED
