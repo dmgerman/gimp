@@ -174,12 +174,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdnd.h"
 end_include
 
@@ -1162,6 +1156,49 @@ block|}
 block|}
 decl_stmt|;
 end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|the_dnd_gimp
+specifier|static
+name|Gimp
+modifier|*
+name|the_dnd_gimp
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_function
+name|void
+DECL|function|gimp_dnd_init (Gimp * gimp)
+name|gimp_dnd_init
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|the_dnd_gimp
+operator|==
+name|NULL
+argument_list|)
+expr_stmt|;
+name|the_dnd_gimp
+operator|=
+name|gimp
+expr_stmt|;
+block|}
+end_function
 
 begin_comment
 comment|/********************************/
@@ -3208,7 +3245,7 @@ name|gimage
 operator|=
 name|file_open_with_display
 argument_list|(
-name|the_gimp
+name|the_dnd_gimp
 argument_list|,
 name|uri
 argument_list|,
@@ -4770,7 +4807,7 @@ name|gimage
 operator|=
 name|gimp_image_get_by_ID
 argument_list|(
-name|the_gimp
+name|the_dnd_gimp
 argument_list|,
 name|ID
 argument_list|)
@@ -4995,7 +5032,7 @@ name|item
 operator|=
 name|gimp_item_get_by_ID
 argument_list|(
-name|the_gimp
+name|the_dnd_gimp
 argument_list|,
 name|ID
 argument_list|)
@@ -5256,7 +5293,7 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|the_gimp
+name|the_dnd_gimp
 operator|->
 name|brush_factory
 operator|->
@@ -5395,7 +5432,7 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|the_gimp
+name|the_dnd_gimp
 operator|->
 name|pattern_factory
 operator|->
@@ -5534,7 +5571,7 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|the_gimp
+name|the_dnd_gimp
 operator|->
 name|gradient_factory
 operator|->
@@ -5673,7 +5710,7 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|the_gimp
+name|the_dnd_gimp
 operator|->
 name|palette_factory
 operator|->
@@ -5809,7 +5846,7 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|the_gimp
+name|the_dnd_gimp
 operator|->
 name|fonts
 argument_list|,
@@ -5926,7 +5963,7 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|the_gimp
+name|the_dnd_gimp
 operator|->
 name|named_buffers
 argument_list|,
@@ -6043,7 +6080,7 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|the_gimp
+name|the_dnd_gimp
 operator|->
 name|documents
 argument_list|,
@@ -6160,7 +6197,7 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|the_gimp
+name|the_dnd_gimp
 operator|->
 name|templates
 argument_list|,
@@ -6269,13 +6306,6 @@ operator|*
 operator|)
 name|vals
 expr_stmt|;
-name|g_print
-argument_list|(
-literal|"gimp_dnd_set_tool_data() got>>%s<<\n"
-argument_list|,
-name|name
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|strcmp
@@ -6291,7 +6321,7 @@ name|tool_info
 operator|=
 name|gimp_tool_info_get_standard
 argument_list|(
-name|the_gimp
+name|the_dnd_gimp
 argument_list|)
 expr_stmt|;
 else|else
@@ -6303,7 +6333,7 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|the_gimp
+name|the_dnd_gimp
 operator|->
 name|tool_info_list
 argument_list|,

@@ -138,6 +138,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdnd.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimphelp.h"
 end_include
 
@@ -764,6 +770,11 @@ expr_stmt|;
 name|the_gui_gimp
 operator|=
 name|gimp
+expr_stmt|;
+name|gimp_dnd_init
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 name|themes_init
 argument_list|(

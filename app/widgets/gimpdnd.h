@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5a09980103
+DECL|enum|__anon2b3f80460103
 block|{
 DECL|enumerator|GIMP_DND_TYPE_NONE
 name|GIMP_DND_TYPE_NONE
@@ -315,6 +315,21 @@ name|GIMP_TARGET_DIALOG
 define|\
 value|{ "GIMP_DIALOG", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_DIALOG }
 end_define
+
+begin_comment
+comment|/*  dnd initialization  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_dnd_init
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_comment
 comment|/*  file / url dnd functions  */
