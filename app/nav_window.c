@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppreviewcache.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpset.h"
 end_include
 
@@ -184,7 +190,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac3e4dd0103
+DECL|enum|__anon2bd4c83f0103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -1461,14 +1467,11 @@ operator|->
 name|nav_preview_width
 expr_stmt|;
 comment|/*     pheight  = sel_height * pwidth / sel_width; */
+comment|/*iwd->ratio = MIN (1.0, (gdouble) pwidth / (gdouble) sel_width);*/
 name|iwd
 operator|->
 name|ratio
 operator|=
-name|MIN
-argument_list|(
-literal|1.0
-argument_list|,
 operator|(
 name|gdouble
 operator|)
@@ -1478,7 +1481,6 @@ operator|(
 name|gdouble
 operator|)
 name|sel_width
-argument_list|)
 expr_stmt|;
 block|}
 else|else
@@ -1490,14 +1492,11 @@ operator|->
 name|nav_preview_height
 expr_stmt|;
 comment|/*     pwidth  = sel_width * pheight / sel_height; */
+comment|/*iwd->ratio = MIN (1.0, (gdouble) pheight / (gdouble) sel_height);*/
 name|iwd
 operator|->
 name|ratio
 operator|=
-name|MIN
-argument_list|(
-literal|1.0
-argument_list|,
 operator|(
 name|gdouble
 operator|)
@@ -1507,7 +1506,6 @@ operator|(
 name|gdouble
 operator|)
 name|sel_height
-argument_list|)
 expr_stmt|;
 block|}
 name|pwidth
@@ -2169,10 +2167,6 @@ name|sel_height
 condition|)
 name|tratio
 operator|=
-name|MIN
-argument_list|(
-literal|1.0
-argument_list|,
 operator|(
 name|gdouble
 operator|)
@@ -2186,15 +2180,10 @@ name|gdouble
 operator|)
 name|sel_width
 operator|)
-argument_list|)
 expr_stmt|;
 else|else
 name|tratio
 operator|=
-name|MIN
-argument_list|(
-literal|1.0
-argument_list|,
 operator|(
 name|gdouble
 operator|)
@@ -2208,7 +2197,6 @@ name|gdouble
 operator|)
 name|sel_height
 operator|)
-argument_list|)
 expr_stmt|;
 name|pwidth
 operator|=
@@ -2227,6 +2215,54 @@ operator|+
 literal|0.5
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|iwd
+operator|->
+name|ratio
+operator|>
+literal|1.0
+condition|)
+comment|/*  Preview is scaling up!  */
+block|{
+name|TempBuf
+modifier|*
+name|tmp
+decl_stmt|;
+name|tmp
+operator|=
+name|gimp_image_construct_composite_preview
+argument_list|(
+name|gimage
+argument_list|,
+name|gimage
+operator|->
+name|width
+argument_list|,
+name|gimage
+operator|->
+name|height
+argument_list|)
+expr_stmt|;
+name|preview_buf
+operator|=
+name|gimp_preview_scale
+argument_list|(
+name|tmp
+argument_list|,
+name|pwidth
+argument_list|,
+name|pheight
+argument_list|)
+expr_stmt|;
+name|temp_buf_free
+argument_list|(
+name|tmp
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|preview_buf
 operator|=
 name|gimp_image_construct_composite_preview
@@ -2248,7 +2284,9 @@ literal|2
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 comment|/* reset& get new preview */
+comment|/*  FIXME: should use gimp_preview_scale()  */
 if|if
 condition|(
 operator|!
@@ -3580,9 +3618,6 @@ name|GdkCursor
 modifier|*
 name|cursor
 decl_stmt|;
-name|int
-name|ret
-decl_stmt|;
 name|iwd
 operator|->
 name|sq_grabbed
@@ -3601,8 +3636,6 @@ argument_list|(
 name|GDK_CROSSHAIR
 argument_list|)
 expr_stmt|;
-name|ret
-operator|=
 name|gdk_pointer_grab
 argument_list|(
 name|widget

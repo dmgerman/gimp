@@ -130,7 +130,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon292c8c0c0103
+DECL|enum|__anon296e7bef0103
 enum|enum
 block|{
 DECL|enumerator|REMOVED
@@ -2089,11 +2089,10 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|TempBuf
 modifier|*
-DECL|function|channel_preview_private (Channel * channel,gint width,gint height)
-name|channel_preview_private
+DECL|function|channel_preview (Channel * channel,gint width,gint height)
+name|channel_preview
 parameter_list|(
 name|Channel
 modifier|*
@@ -2122,6 +2121,25 @@ name|TempBuf
 modifier|*
 name|ret_buf
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|channel
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CHANNEL
+argument_list|(
+name|channel
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 comment|/*  The easy way  */
 if|if
 condition|(
@@ -2379,85 +2397,6 @@ return|return
 name|preview_buf
 return|;
 block|}
-block|}
-end_function
-
-begin_function
-name|TempBuf
-modifier|*
-DECL|function|channel_preview (Channel * channel,gint width,gint height)
-name|channel_preview
-parameter_list|(
-name|Channel
-modifier|*
-name|channel
-parameter_list|,
-name|gint
-name|width
-parameter_list|,
-name|gint
-name|height
-parameter_list|)
-block|{
-comment|/* Ok prime the cache with a large preview if the cache is invalid */
-if|if
-condition|(
-operator|!
-name|GIMP_DRAWABLE
-argument_list|(
-name|channel
-argument_list|)
-operator|->
-name|preview_valid
-operator|&&
-name|width
-operator|<=
-name|PREVIEW_CACHE_PRIME_WIDTH
-operator|&&
-name|height
-operator|<=
-name|PREVIEW_CACHE_PRIME_HEIGHT
-condition|)
-block|{
-name|TempBuf
-modifier|*
-name|tb
-init|=
-name|channel_preview_private
-argument_list|(
-name|channel
-argument_list|,
-name|PREVIEW_CACHE_PRIME_WIDTH
-argument_list|,
-name|PREVIEW_CACHE_PRIME_HEIGHT
-argument_list|)
-decl_stmt|;
-comment|/* Save the 2nd call */
-if|if
-condition|(
-name|width
-operator|==
-name|PREVIEW_CACHE_PRIME_WIDTH
-operator|&&
-name|height
-operator|==
-name|PREVIEW_CACHE_PRIME_HEIGHT
-condition|)
-return|return
-name|tb
-return|;
-block|}
-comment|/* Second call - should NOT visit the tile cache...*/
-return|return
-name|channel_preview_private
-argument_list|(
-name|channel
-argument_list|,
-name|width
-argument_list|,
-name|height
-argument_list|)
-return|;
 block|}
 end_function
 
