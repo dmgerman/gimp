@@ -84,7 +84,7 @@ file|"tile_manager_pvt.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2c4099290108
+DECL|struct|__anon2b045ce40108
 typedef|typedef
 struct|struct
 block|{
@@ -3330,7 +3330,7 @@ name|menuitem
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
-literal|"Inch"
+literal|"inches"
 argument_list|)
 expr_stmt|;
 name|gtk_menu_append
@@ -3369,7 +3369,7 @@ name|menuitem
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
-literal|"Cm"
+literal|"cm"
 argument_list|)
 expr_stmt|;
 name|gtk_menu_append
@@ -3662,7 +3662,7 @@ name|menuitem
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
-literal|"Inch"
+literal|"inch"
 argument_list|)
 expr_stmt|;
 name|gtk_menu_append
@@ -3701,7 +3701,7 @@ name|menuitem
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
-literal|"Cm"
+literal|"cm"
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
