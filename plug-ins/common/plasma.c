@@ -110,7 +110,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277eace60108
+DECL|struct|__anon2afc861c0108
 block|{
 DECL|member|seed
 name|gint
@@ -134,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277eace60208
+DECL|struct|__anon2afc861c0208
 block|{
 DECL|member|run
 name|gint
@@ -974,7 +974,7 @@ name|gimp_ui_init
 argument_list|(
 literal|"plasma"
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|dlg

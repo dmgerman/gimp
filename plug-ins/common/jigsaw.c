@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon273a4cf40103
+DECL|enum|__anon2bd59f470103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -72,7 +72,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon273a4cf40203
+DECL|enum|__anon2bd59f470203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -14762,7 +14762,7 @@ name|gimp_ui_init
 argument_list|(
 literal|"jigsaw"
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|dlg

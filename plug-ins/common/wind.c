@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2798cd150103
+DECL|enum|__anon28ed071d0103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -128,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2798cd150203
+DECL|enum|__anon28ed071d0203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -144,7 +144,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2798cd150303
+DECL|enum|__anon28ed071d0303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -3664,7 +3664,7 @@ name|gimp_ui_init
 argument_list|(
 literal|"wind"
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|dlg
