@@ -43,6 +43,12 @@ directive|include
 file|"gimp-composite-mmx.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|USE_MMX
+end_ifdef
+
 begin_undef
 undef|#
 directive|undef
@@ -2081,6 +2087,15 @@ unit|: "r" (op.A), "r" (op.B), "r" (op.D), "m" (va8_b255), "m" (va8_w1), "m" (va
 endif|#
 directive|endif
 end_endif
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* USE_MMX */
+end_comment
 
 begin_function
 name|void
