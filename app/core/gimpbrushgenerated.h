@@ -167,6 +167,11 @@ name|GimpData
 modifier|*
 name|gimp_brush_generated_new
 parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|,
 name|gfloat
 name|radius
 parameter_list|,
