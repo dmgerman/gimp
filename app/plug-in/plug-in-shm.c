@@ -942,7 +942,7 @@ literal|4
 argument_list|,
 name|IPC_CREAT
 operator||
-literal|0777
+literal|0600
 argument_list|)
 expr_stmt|;
 if|if
