@@ -35,7 +35,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a549930103
+DECL|enum|__anon2790c5c70103
 block|{
 DECL|enumerator|PAUSE
 name|PAUSE
@@ -67,7 +67,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a549930203
+DECL|enum|__anon2790c5c70203
 block|{
 DECL|enumerator|FIRST_TOOLBOX_TOOL
 name|FIRST_TOOLBOX_TOOL
@@ -149,10 +149,16 @@ block|,
 DECL|enumerator|INK
 name|INK
 block|,
+DECL|enumerator|DODGEBURN
+name|DODGEBURN
+block|,
+DECL|enumerator|SMUDGE
+name|SMUDGE
+block|,
 DECL|enumerator|LAST_TOOLBOX_TOOL
 name|LAST_TOOLBOX_TOOL
 init|=
-name|INK
+name|SMUDGE
 block|,
 comment|/*  Non-toolbox tools  */
 DECL|enumerator|BY_COLOR_SELECT

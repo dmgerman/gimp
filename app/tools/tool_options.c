@@ -3038,10 +3038,36 @@ argument_list|(
 literal|"Ink Options"
 argument_list|)
 else|:
+operator|(
+operator|(
+name|tool_type
+operator|==
+name|DODGEBURN
+operator|)
+condition|?
+name|N_
+argument_list|(
+literal|"Dodge or Burn Options"
+argument_list|)
+else|:
+operator|(
+operator|(
+name|tool_type
+operator|==
+name|SMUDGE
+operator|)
+condition|?
+name|N_
+argument_list|(
+literal|"Smudge Options"
+argument_list|)
+else|:
 name|N_
 argument_list|(
 literal|"ERROR: Unknown Paint Type"
 argument_list|)
+operator|)
+operator|)
 operator|)
 operator|)
 operator|)

@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"dodgeburn.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"eraser.h"
 end_include
 
@@ -205,6 +211,12 @@ begin_include
 include|#
 directive|include
 file|"session.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"smudge.h"
 end_include
 
 begin_include
@@ -1305,6 +1317,86 @@ block|,
 name|NULL
 block|}
 block|,
+block|{
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Dodge or Burn"
+argument_list|)
+block|,
+literal|22
+block|,
+name|N_
+argument_list|(
+literal|"/Tools/DodgeBurn"
+argument_list|)
+block|,
+literal|"<shift>D"
+block|,
+operator|(
+name|char
+operator|*
+operator|*
+operator|)
+name|dodge_bits
+block|,
+name|N_
+argument_list|(
+literal|"Dodge or Burn"
+argument_list|)
+block|,
+literal|"ContextHelp/dodgeburn"
+block|,
+name|DODGEBURN
+block|,
+name|tools_new_dodgeburn
+block|,
+name|tools_free_dodgeburn
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Smudge"
+argument_list|)
+block|,
+literal|23
+block|,
+name|N_
+argument_list|(
+literal|"/Tools/Smudge"
+argument_list|)
+block|,
+literal|"<shift>S"
+block|,
+operator|(
+name|char
+operator|*
+operator|*
+operator|)
+name|smudge_bits
+block|,
+name|N_
+argument_list|(
+literal|"Smudge"
+argument_list|)
+block|,
+literal|"ContextHelp/smudge"
+block|,
+name|SMUDGE
+block|,
+name|tools_new_smudge
+block|,
+name|tools_free_smudge
+block|,
+name|NULL
+block|}
+block|,
 comment|/*  Non-toolbox tools  */
 block|{
 name|NULL
@@ -1314,7 +1406,7 @@ argument_list|(
 literal|"By Color Select"
 argument_list|)
 block|,
-literal|22
+literal|24
 block|,
 name|N_
 argument_list|(
@@ -1346,7 +1438,7 @@ argument_list|(
 literal|"Color Balance"
 argument_list|)
 block|,
-literal|23
+literal|25
 block|,
 name|N_
 argument_list|(
@@ -1378,7 +1470,7 @@ argument_list|(
 literal|"Brightness-Contrast"
 argument_list|)
 block|,
-literal|24
+literal|26
 block|,
 name|N_
 argument_list|(
@@ -1410,7 +1502,7 @@ argument_list|(
 literal|"Hue-Saturation"
 argument_list|)
 block|,
-literal|25
+literal|27
 block|,
 name|N_
 argument_list|(
@@ -1442,7 +1534,7 @@ argument_list|(
 literal|"Posterize"
 argument_list|)
 block|,
-literal|26
+literal|28
 block|,
 name|N_
 argument_list|(
@@ -1474,7 +1566,7 @@ argument_list|(
 literal|"Threshold"
 argument_list|)
 block|,
-literal|27
+literal|29
 block|,
 name|N_
 argument_list|(
@@ -1506,7 +1598,7 @@ argument_list|(
 literal|"Curves"
 argument_list|)
 block|,
-literal|28
+literal|30
 block|,
 name|N_
 argument_list|(
@@ -1538,7 +1630,7 @@ argument_list|(
 literal|"Levels"
 argument_list|)
 block|,
-literal|29
+literal|31
 block|,
 name|N_
 argument_list|(
@@ -1570,7 +1662,7 @@ argument_list|(
 literal|"Histogram"
 argument_list|)
 block|,
-literal|30
+literal|32
 block|,
 name|N_
 argument_list|(
