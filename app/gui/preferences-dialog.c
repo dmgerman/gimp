@@ -4887,7 +4887,7 @@ literal|"can-change-accels"
 argument_list|,
 name|_
 argument_list|(
-literal|"Dynamic _Keyboard Shortcuts (does not work in GNOME2 yet)"
+literal|"Dynamic _Keyboard Shortcuts"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -6233,7 +6233,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c01dcf90108
+DECL|struct|__anon2c8f3cc40108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -7854,7 +7854,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c01dcf90208
+DECL|struct|__anon2c8f3cc40208
 block|{
 DECL|member|label
 specifier|const
@@ -8013,7 +8013,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c01dcf90308
+DECL|struct|__anon2c8f3cc40308
 block|{
 DECL|member|tree_label
 specifier|const
