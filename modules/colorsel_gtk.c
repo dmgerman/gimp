@@ -347,7 +347,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a31d90b0108
+DECL|struct|__anon27f2f8cd0108
 block|{
 DECL|member|selector
 name|GtkWidget
@@ -480,9 +480,9 @@ name|rgb
 argument_list|)
 expr_stmt|;
 comment|/* EEK: to be removed */
-name|gtk_signal_connect_object_after
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|GTK_COLOR_SELECTION
 argument_list|(
@@ -496,13 +496,11 @@ argument_list|)
 argument_list|,
 literal|"realize"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|colorsel_gtk_widget_hide
 argument_list|)
 argument_list|,
-name|GTK_OBJECT
-argument_list|(
 name|GTK_COLOR_SELECTION
 argument_list|(
 name|p
@@ -513,12 +511,15 @@ operator|->
 name|sample_area
 operator|->
 name|parent
-argument_list|)
+argument_list|,
+name|G_CONNECT_SWAPPED
+operator||
+name|G_CONNECT_AFTER
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|p
 operator|->
@@ -527,7 +528,7 @@ argument_list|)
 argument_list|,
 literal|"color_changed"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|colorsel_gtk_update
 argument_list|)

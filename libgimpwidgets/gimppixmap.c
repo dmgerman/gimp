@@ -576,7 +576,7 @@ if|if
 condition|(
 name|gdk_pixmap
 condition|)
-name|gdk_pixmap_unref
+name|gdk_drawable_unref
 argument_list|(
 name|gdk_pixmap
 argument_list|)
@@ -585,7 +585,7 @@ if|if
 condition|(
 name|mask
 condition|)
-name|gdk_bitmap_unref
+name|gdk_drawable_unref
 argument_list|(
 name|mask
 argument_list|)

@@ -228,7 +228,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e35aef0103
+DECL|enum|__anon297697100103
 block|{
 DECL|enumerator|FILENAME_CHANGED
 name|FILENAME_CHANGED
@@ -344,7 +344,7 @@ operator|->
 name|yes_pixmap
 condition|)
 block|{
-name|gdk_pixmap_unref
+name|gdk_drawable_unref
 argument_list|(
 name|gfs
 operator|->
@@ -365,7 +365,7 @@ operator|->
 name|yes_mask
 condition|)
 block|{
-name|gdk_bitmap_unref
+name|gdk_drawable_unref
 argument_list|(
 name|gfs
 operator|->
@@ -386,7 +386,7 @@ operator|->
 name|no_pixmap
 condition|)
 block|{
-name|gdk_pixmap_unref
+name|gdk_drawable_unref
 argument_list|(
 name|gfs
 operator|->
@@ -407,7 +407,7 @@ operator|->
 name|no_mask
 condition|)
 block|{
-name|gdk_bitmap_unref
+name|gdk_drawable_unref
 argument_list|(
 name|gfs
 operator|->
