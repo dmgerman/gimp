@@ -742,10 +742,10 @@ end_function
 begin_function
 name|GimpContainer
 modifier|*
-DECL|function|gimp_list_new (GtkType children_type,GimpContainerPolicy policy)
+DECL|function|gimp_list_new (GType children_type,GimpContainerPolicy policy)
 name|gimp_list_new
 parameter_list|(
-name|GtkType
+name|GType
 name|children_type
 parameter_list|,
 name|GimpContainerPolicy
@@ -783,9 +783,11 @@ argument_list|)
 expr_stmt|;
 name|list
 operator|=
-name|gtk_type_new
+name|g_object_new
 argument_list|(
 name|GIMP_TYPE_LIST
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|GIMP_CONTAINER

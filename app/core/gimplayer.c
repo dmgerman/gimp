@@ -129,7 +129,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5c3a5e0103
+DECL|enum|__anon2bf0a2070103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -980,9 +980,11 @@ return|;
 block|}
 name|layer
 operator|=
-name|gtk_type_new
+name|g_object_new
 argument_list|(
 name|GIMP_TYPE_LAYER
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_configure

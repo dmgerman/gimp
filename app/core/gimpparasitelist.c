@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2946d67f0103
+DECL|enum|__anon2b53a4b20103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -347,9 +347,11 @@ name|list
 decl_stmt|;
 name|list
 operator|=
-name|gtk_type_new
+name|g_object_new
 argument_list|(
 name|GIMP_TYPE_PARASITE_LIST
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return

@@ -973,9 +973,11 @@ name|standard_palette
 operator|=
 name|GIMP_PALETTE
 argument_list|(
-name|gtk_type_new
+name|g_object_new
 argument_list|(
 name|GIMP_TYPE_PALETTE
+argument_list|,
+name|NULL
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1178,9 +1180,11 @@ return|;
 block|}
 name|palette
 operator|=
-name|gtk_type_new
+name|g_object_new
 argument_list|(
 name|GIMP_TYPE_PALETTE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_data_set_filename

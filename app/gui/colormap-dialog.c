@@ -129,7 +129,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a45fca80103
+DECL|enum|__anon29c7e1b00103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -812,9 +812,11 @@ argument_list|)
 expr_stmt|;
 name|ipal
 operator|=
-name|gtk_type_new
+name|g_object_new
 argument_list|(
 name|GIMP_TYPE_COLORMAP_DIALOG
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_set_spacing

@@ -295,7 +295,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b940d8a0103
+DECL|enum|__anon29ce4d3e0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -832,10 +832,11 @@ argument_list|)
 expr_stmt|;
 name|gcb
 operator|=
-name|gtk_type_new
+name|g_object_new
 argument_list|(
-name|gimp_color_button_get_type
-argument_list|()
+name|GIMP_TYPE_COLOR_BUTTON
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gcb

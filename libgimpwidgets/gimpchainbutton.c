@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29abeee20103
+DECL|enum|__anon2768a14e0103
 block|{
 DECL|enumerator|TOGGLED
 name|TOGGLED
@@ -477,10 +477,11 @@ name|gcb
 operator|->
 name|pixmap
 operator|=
-name|gtk_type_new
+name|g_object_new
 argument_list|(
-name|gtk_pixmap_get_type
-argument_list|()
+name|GTK_TYPE_PIXMAP
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_pixmap_set_build_insensitive
@@ -711,10 +712,11 @@ name|gcb
 decl_stmt|;
 name|gcb
 operator|=
-name|gtk_type_new
+name|g_object_new
 argument_list|(
-name|gimp_chain_button_get_type
-argument_list|()
+name|GIMP_TYPE_CHAIN_BUTTON
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gcb

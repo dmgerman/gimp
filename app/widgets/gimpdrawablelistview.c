@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a18857e0103
+DECL|enum|__anon279b2ae90103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -1232,9 +1232,11 @@ condition|)
 block|{
 name|list_view
 operator|=
-name|gtk_type_new
+name|g_object_new
 argument_list|(
 name|GIMP_TYPE_LAYER_LIST_VIEW
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -1248,9 +1250,11 @@ condition|)
 block|{
 name|list_view
 operator|=
-name|gtk_type_new
+name|g_object_new
 argument_list|(
 name|GIMP_TYPE_CHANNEL_LIST_VIEW
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -1258,9 +1262,11 @@ else|else
 block|{
 name|list_view
 operator|=
-name|gtk_type_new
+name|g_object_new
 argument_list|(
 name|GIMP_TYPE_DRAWABLE_LIST_VIEW
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

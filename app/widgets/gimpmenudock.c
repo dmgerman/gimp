@@ -658,9 +658,11 @@ argument_list|)
 expr_stmt|;
 name|image_dock
 operator|=
-name|gtk_type_new
+name|g_object_new
 argument_list|(
 name|GIMP_TYPE_IMAGE_DOCK
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|dock

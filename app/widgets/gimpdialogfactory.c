@@ -82,7 +82,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294684b50103
+DECL|enum|__anon2c4ef2a90103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -103,7 +103,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294684b50203
+DECL|enum|__anon2c4ef2a90203
 block|{
 DECL|enumerator|GIMP_DIALOG_SHOW_ALL
 name|GIMP_DIALOG_SHOW_ALL
@@ -744,9 +744,11 @@ return|;
 block|}
 name|factory
 operator|=
-name|gtk_type_new
+name|g_object_new
 argument_list|(
 name|GIMP_TYPE_DIALOG_FACTORY
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_name

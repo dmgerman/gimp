@@ -433,9 +433,11 @@ argument_list|)
 expr_stmt|;
 name|factory
 operator|=
-name|gtk_type_new
+name|g_object_new
 argument_list|(
 name|GIMP_TYPE_DATA_FACTORY
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|factory

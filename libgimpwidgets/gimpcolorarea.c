@@ -75,7 +75,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0d9e9d0103
+DECL|enum|__anon297725540103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -775,10 +775,11 @@ argument_list|)
 expr_stmt|;
 name|gca
 operator|=
-name|gtk_type_new
+name|g_object_new
 argument_list|(
-name|gimp_color_area_get_type
-argument_list|()
+name|GIMP_TYPE_COLOR_AREA
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gca

@@ -37,7 +37,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon291a1a100103
+DECL|enum|__anon2a4550390103
 block|{
 DECL|enumerator|OFFSETS_CHANGED
 name|OFFSETS_CHANGED
@@ -461,10 +461,11 @@ argument_list|)
 expr_stmt|;
 name|offset_area
 operator|=
-name|gtk_type_new
+name|g_object_new
 argument_list|(
-name|gimp_offset_area_get_type
-argument_list|()
+name|GIMP_TYPE_OFFSET_AREA
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|offset_area

@@ -236,7 +236,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f1a9dd0103
+DECL|enum|__anon2bf35f6c0103
 block|{
 DECL|enumerator|FILENAME_CHANGED
 name|FILENAME_CHANGED
@@ -736,9 +736,11 @@ name|gfs
 decl_stmt|;
 name|gfs
 operator|=
-name|gtk_type_new
+name|g_object_new
 argument_list|(
 name|GIMP_TYPE_FILE_SELECTION
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gfs

@@ -630,9 +630,11 @@ name|buffer
 operator|=
 name|GIMP_BUFFER
 argument_list|(
-name|gtk_type_new
+name|g_object_new
 argument_list|(
 name|GIMP_TYPE_BUFFER
+argument_list|,
+name|NULL
 argument_list|)
 argument_list|)
 expr_stmt|;

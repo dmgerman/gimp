@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b7d8ed0103
+DECL|enum|__anon289156ee0103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED
@@ -489,9 +489,11 @@ name|layer_mask
 decl_stmt|;
 name|layer_mask
 operator|=
-name|gtk_type_new
+name|g_object_new
 argument_list|(
 name|GIMP_TYPE_LAYER_MASK
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_configure

@@ -604,9 +604,11 @@ argument_list|)
 expr_stmt|;
 name|dockable
 operator|=
-name|gtk_type_new
+name|g_object_new
 argument_list|(
 name|GIMP_TYPE_DOCKABLE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|dockable

@@ -194,7 +194,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b26e3c70103
+DECL|enum|__anon28a80e290103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -758,6 +758,8 @@ block|{
 name|GtkAdjustment
 modifier|*
 name|adj
+init|=
+name|NULL
 decl_stmt|;
 name|gdouble
 name|value
@@ -805,6 +807,13 @@ name|vsbdata
 expr_stmt|;
 break|break;
 block|}
+name|g_assert
+argument_list|(
+name|adj
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|value
 operator|=
 name|adj

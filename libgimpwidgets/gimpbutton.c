@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon278032b20103
+DECL|enum|__anon2c2ff8970103
 block|{
 DECL|enumerator|EXTENDED_CLICKED
 name|EXTENDED_CLICKED
@@ -329,9 +329,11 @@ name|button
 decl_stmt|;
 name|button
 operator|=
-name|gtk_type_new
+name|g_object_new
 argument_list|(
 name|GIMP_TYPE_BUTTON
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return

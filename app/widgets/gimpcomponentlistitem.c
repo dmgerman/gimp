@@ -567,9 +567,11 @@ argument_list|)
 expr_stmt|;
 name|list_item
 operator|=
-name|gtk_type_new
+name|g_object_new
 argument_list|(
 name|GIMP_TYPE_COMPONENT_LIST_ITEM
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|list_item

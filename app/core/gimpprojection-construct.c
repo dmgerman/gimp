@@ -775,7 +775,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c670fe20103
+DECL|enum|__anon28a648520103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -2525,9 +2525,11 @@ name|gimage
 operator|=
 name|GIMP_IMAGE
 argument_list|(
-name|gtk_type_new
+name|g_object_new
 argument_list|(
 name|GIMP_TYPE_IMAGE
+argument_list|,
+name|NULL
 argument_list|)
 argument_list|)
 expr_stmt|;

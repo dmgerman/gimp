@@ -103,7 +103,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28be6f2b0103
+DECL|enum|__anon2a23e2850103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -1011,9 +1011,11 @@ name|histogram
 operator|=
 name|HISTOGRAM_WIDGET
 argument_list|(
-name|gtk_type_new
+name|g_object_new
 argument_list|(
 name|HISTOGRAM_WIDGET_TYPE
+argument_list|,
+name|NULL
 argument_list|)
 argument_list|)
 expr_stmt|;

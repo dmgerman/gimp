@@ -530,9 +530,11 @@ argument_list|)
 expr_stmt|;
 name|menu_impl
 operator|=
-name|gtk_type_new
+name|g_object_new
 argument_list|(
 name|GIMP_TYPE_CONTAINER_MENU_IMPL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|menu

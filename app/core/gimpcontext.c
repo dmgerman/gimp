@@ -1005,7 +1005,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afb65ae0103
+DECL|enum|__anon2bf7dca60103
 block|{
 DECL|enumerator|ARG_0
 name|ARG_0
@@ -1051,7 +1051,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afb65ae0203
+DECL|enum|__anon2bf7dca60203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -3174,15 +3174,6 @@ name|context
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|gimp
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
 name|GIMP_IS_GIMP
 argument_list|(
 name|gimp
@@ -3215,9 +3206,11 @@ argument_list|)
 expr_stmt|;
 name|context
 operator|=
-name|gtk_type_new
+name|g_object_new
 argument_list|(
 name|GIMP_TYPE_CONTEXT
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|context

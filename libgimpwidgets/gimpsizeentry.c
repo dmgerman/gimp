@@ -60,7 +60,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9646d00103
+DECL|enum|__anon294adac90103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -753,9 +753,11 @@ argument_list|)
 expr_stmt|;
 name|gse
 operator|=
-name|gtk_type_new
+name|g_object_new
 argument_list|(
 name|GIMP_TYPE_SIZE_ENTRY
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gse

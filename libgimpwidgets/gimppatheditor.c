@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbfb23b0103
+DECL|enum|__anon2c4c22380103
 block|{
 DECL|enumerator|PATH_CHANGED
 name|PATH_CHANGED
@@ -913,10 +913,11 @@ argument_list|)
 expr_stmt|;
 name|gpe
 operator|=
-name|gtk_type_new
+name|g_object_new
 argument_list|(
-name|gimp_path_editor_get_type
-argument_list|()
+name|GIMP_TYPE_PATH_EDITOR
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gpe

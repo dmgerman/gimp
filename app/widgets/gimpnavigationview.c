@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2899ff090103
+DECL|enum|__anon27950fee0103
 block|{
 DECL|enumerator|MARKER_CHANGED
 name|MARKER_CHANGED
@@ -2024,9 +2024,11 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gtk_type_new
+name|g_object_new
 argument_list|(
 name|GIMP_TYPE_NAVIGATION_PREVIEW
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|preview

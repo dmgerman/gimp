@@ -2248,11 +2248,13 @@ condition|)
 block|{
 name|new_tool
 operator|=
-name|gtk_type_new
+name|g_object_new
 argument_list|(
 name|tool_info
 operator|->
 name|tool_type
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

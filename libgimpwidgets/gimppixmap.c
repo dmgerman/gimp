@@ -242,9 +242,11 @@ name|pixmap
 decl_stmt|;
 name|pixmap
 operator|=
-name|gtk_type_new
+name|g_object_new
 argument_list|(
 name|GIMP_TYPE_PIXMAP
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_pixmap_set_build_insensitive

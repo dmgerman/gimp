@@ -123,7 +123,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-name|GtkType
+name|GType
 DECL|function|gimp_image_preview_get_type (void)
 name|gimp_image_preview_get_type
 parameter_list|(
@@ -131,7 +131,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GtkType
+name|GType
 name|preview_type
 init|=
 literal|0
@@ -234,9 +234,9 @@ name|klass
 expr_stmt|;
 name|parent_class
 operator|=
-name|gtk_type_class
+name|g_type_class_peek_parent
 argument_list|(
-name|GIMP_TYPE_PREVIEW
+name|klass
 argument_list|)
 expr_stmt|;
 name|preview_class

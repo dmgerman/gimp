@@ -102,7 +102,7 @@ name|parent_class
 decl_stmt|;
 block|}
 struct|;
-name|GtkType
+name|GType
 name|gimp_image_preview_get_type
 parameter_list|(
 name|void

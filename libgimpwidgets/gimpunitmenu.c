@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a31b67f0103
+DECL|enum|__anon2be7352e0103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -525,10 +525,11 @@ name|TRUE
 expr_stmt|;
 name|gum
 operator|=
-name|gtk_type_new
+name|g_object_new
 argument_list|(
-name|gimp_unit_menu_get_type
-argument_list|()
+name|GIMP_TYPE_UNIT_MENU
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gum
