@@ -3617,7 +3617,10 @@ expr_stmt|;
 block|}
 else|#
 directive|else
-comment|/* Zero means infinite wait for us, but g_poll and    * g_io_channel_win32_wait_for_condition use -1 to indicate    * infinite wait.    */
+comment|/* Zero means infinite wait for us, but g_poll and    * g_io_channel_win32_poll use -1 to indicate    * infinite wait.    */
+name|GPollFD
+name|pollfd
+decl_stmt|;
 if|if
 condition|(
 name|timeout
@@ -3629,13 +3632,24 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
-if|if
-condition|(
-name|g_io_channel_win32_wait_for_condition
+name|g_io_channel_win32_make_pollfd
 argument_list|(
 name|_readchannel
 argument_list|,
 name|G_IO_IN
+argument_list|,
+operator|&
+name|pollfd
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|g_io_channel_win32_poll
+argument_list|(
+operator|&
+name|pollfd
+argument_list|,
+literal|1
 argument_list|,
 name|timeout
 argument_list|)
