@@ -156,7 +156,7 @@ begin_function_decl
 name|void
 name|gimp_selection_push_undo
 parameter_list|(
-name|GimpSelection
+name|GimpChannel
 modifier|*
 name|selection
 parameter_list|,
@@ -172,7 +172,7 @@ begin_function_decl
 name|void
 name|gimp_selection_invalidate
 parameter_list|(
-name|GimpSelection
+name|GimpChannel
 modifier|*
 name|selection
 parameter_list|)
