@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279fb4210103
+DECL|enum|__anon2a591f960103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -210,7 +210,7 @@ name|GimpOrientationType
 name|flip_type
 parameter_list|,
 name|gboolean
-name|center
+name|auto_center
 parameter_list|,
 name|gdouble
 name|axis
@@ -235,6 +235,18 @@ name|context
 parameter_list|,
 name|GimpRotationType
 name|rotate_type
+parameter_list|,
+name|gboolean
+name|auto_center
+parameter_list|,
+name|gdouble
+name|center_x
+parameter_list|,
+name|gdouble
+name|center_y
+parameter_list|,
+name|gboolean
+name|clip_result
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -823,7 +823,7 @@ argument_list|(
 name|orig_tiles
 argument_list|)
 expr_stmt|;
-comment|/*  Always clip unfloated channels since they must keep their size  */
+comment|/*  Always clip unfloated tiles since they must keep their size  */
 if|if
 condition|(
 name|G_TYPE_FROM_INSTANCE
@@ -4452,7 +4452,7 @@ name|TileManager
 modifier|*
 name|new_tiles
 decl_stmt|;
-comment|/*  always clip unfloated channels so they keep their size  */
+comment|/*  always clip unfloated tiles so they keep their size  */
 if|if
 condition|(
 name|GIMP_IS_CHANNEL
@@ -4492,7 +4492,7 @@ name|supersample
 argument_list|,
 name|recursion_level
 argument_list|,
-name|FALSE
+name|clip_result
 argument_list|,
 name|progress
 argument_list|)
@@ -4540,7 +4540,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_transform_flip (GimpDrawable * drawable,GimpContext * context,GimpOrientationType flip_type,gboolean center,gdouble axis,gboolean clip_result)
+DECL|function|gimp_drawable_transform_flip (GimpDrawable * drawable,GimpContext * context,GimpOrientationType flip_type,gboolean auto_center,gdouble axis,gboolean clip_result)
 name|gimp_drawable_transform_flip
 parameter_list|(
 name|GimpDrawable
@@ -4555,7 +4555,7 @@ name|GimpOrientationType
 name|flip_type
 parameter_list|,
 name|gboolean
-name|center
+name|auto_center
 parameter_list|,
 name|gdouble
 name|axis
@@ -4658,6 +4658,11 @@ name|TileManager
 modifier|*
 name|new_tiles
 decl_stmt|;
+if|if
+condition|(
+name|auto_center
+condition|)
+block|{
 name|gint
 name|off_x
 decl_stmt|,
@@ -4693,11 +4698,6 @@ argument_list|(
 name|orig_tiles
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|center
-condition|)
-block|{
 switch|switch
 condition|(
 name|flip_type
@@ -4747,6 +4747,25 @@ default|default:
 break|break;
 block|}
 block|}
+comment|/*  always clip unfloated tiles so they keep their size  */
+if|if
+condition|(
+name|GIMP_IS_CHANNEL
+argument_list|(
+name|drawable
+argument_list|)
+operator|&&
+name|tile_manager_bpp
+argument_list|(
+name|orig_tiles
+argument_list|)
+operator|==
+literal|1
+condition|)
+name|clip_result
+operator|=
+name|TRUE
+expr_stmt|;
 comment|/* transform the buffer */
 name|new_tiles
 operator|=
@@ -4808,7 +4827,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_transform_rotate (GimpDrawable * drawable,GimpContext * context,GimpRotationType rotate_type)
+DECL|function|gimp_drawable_transform_rotate (GimpDrawable * drawable,GimpContext * context,GimpRotationType rotate_type,gboolean auto_center,gdouble center_x,gdouble center_y,gboolean clip_result)
 name|gimp_drawable_transform_rotate
 parameter_list|(
 name|GimpDrawable
@@ -4821,6 +4840,18 @@ name|context
 parameter_list|,
 name|GimpRotationType
 name|rotate_type
+parameter_list|,
+name|gboolean
+name|auto_center
+parameter_list|,
+name|gdouble
+name|center_x
+parameter_list|,
+name|gdouble
+name|center_y
+parameter_list|,
+name|gboolean
+name|clip_result
 parameter_list|)
 block|{
 name|GimpImage
@@ -4917,6 +4948,11 @@ name|TileManager
 modifier|*
 name|new_tiles
 decl_stmt|;
+if|if
+condition|(
+name|auto_center
+condition|)
+block|{
 name|gint
 name|off_x
 decl_stmt|,
@@ -4926,11 +4962,6 @@ name|gint
 name|width
 decl_stmt|,
 name|height
-decl_stmt|;
-name|gdouble
-name|center_x
-decl_stmt|,
-name|center_y
 decl_stmt|;
 name|tile_manager_get_offsets
 argument_list|(
@@ -4985,6 +5016,26 @@ name|height
 operator|/
 literal|2.0
 expr_stmt|;
+block|}
+comment|/*  always clip unfloated tiles so they keep their size  */
+if|if
+condition|(
+name|GIMP_IS_CHANNEL
+argument_list|(
+name|drawable
+argument_list|)
+operator|&&
+name|tile_manager_bpp
+argument_list|(
+name|orig_tiles
+argument_list|)
+operator|==
+literal|1
+condition|)
+name|clip_result
+operator|=
+name|TRUE
+expr_stmt|;
 comment|/* transform the buffer */
 name|new_tiles
 operator|=
@@ -5002,7 +5053,7 @@ name|center_x
 argument_list|,
 name|center_y
 argument_list|,
-name|FALSE
+name|clip_result
 argument_list|)
 expr_stmt|;
 comment|/* Free the cut/copied buffer */
