@@ -276,7 +276,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289bbc9e0103
+DECL|enum|__anon2b1d515d0103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -1234,316 +1234,194 @@ name|GimpRc
 name|gimprc
 init|=
 block|{
-operator|.
-name|plug_in_path
-operator|=
+comment|/* plug_in_path              */
 name|NULL
 block|,
-operator|.
-name|brush_path
-operator|=
+comment|/* brush_path                */
 name|NULL
 block|,
-operator|.
-name|default_brush
-operator|=
+comment|/* default_brush             */
 name|NULL
 block|,
-operator|.
-name|pattern_path
-operator|=
+comment|/* pattern_path              */
 name|NULL
 block|,
-operator|.
-name|default_pattern
-operator|=
+comment|/* default_pattern           */
 name|NULL
 block|,
-operator|.
-name|palette_path
-operator|=
+comment|/* palette_path              */
 name|NULL
 block|,
-operator|.
-name|default_palette
-operator|=
+comment|/* default_palette           */
 name|NULL
 block|,
-operator|.
-name|gradient_path
-operator|=
+comment|/* gradient_path             */
 name|NULL
 block|,
-operator|.
-name|default_gradient
-operator|=
+comment|/* default_gradient          */
 name|NULL
 block|,
-operator|.
-name|pluginrc_path
-operator|=
+comment|/* pluginrc_path             */
 name|NULL
 block|,
-operator|.
-name|module_path
-operator|=
+comment|/* module_path               */
 name|NULL
 block|,
-operator|.
-name|marching_speed
-operator|=
+comment|/* marching_speed            */
 literal|300
 block|,
 comment|/* 300 ms */
-operator|.
-name|gamma_val
-operator|=
+comment|/* gamma_val                 */
 literal|1.0
 block|,
-operator|.
-name|transparency_type
-operator|=
+comment|/* transparency_type         */
 literal|1
 block|,
 comment|/* Mid-Tone Checks */
-operator|.
-name|perfectmouse
-operator|=
+comment|/* perfectmouse              */
 name|FALSE
 block|,
 comment|/* off (fast and sloppy) */
-operator|.
-name|transparency_size
-operator|=
+comment|/* transparency_size         */
 literal|1
 block|,
 comment|/* Medium sized */
-operator|.
-name|levels_of_undo
-operator|=
+comment|/* levels_of_undo            */
 literal|5
 block|,
-operator|.
-name|last_opened_size
-operator|=
+comment|/* last_opened_size          */
 literal|4
 block|,
-operator|.
-name|min_colors
-operator|=
+comment|/* min_colors                */
 literal|144
 block|,
 comment|/* 6*6*4 */
-operator|.
-name|install_cmap
-operator|=
+comment|/* install_cmap              */
 name|FALSE
 block|,
-operator|.
-name|cycled_marching_ants
-operator|=
+comment|/* cycled_marching_ants      */
 literal|0
 block|,
-operator|.
-name|default_threshold
-operator|=
+comment|/* default_threshold         */
 literal|15
 block|,
-operator|.
-name|allow_resize_windows
-operator|=
+comment|/* allow_resize_windows      */
 name|FALSE
 block|,
-operator|.
-name|no_cursor_updating
-operator|=
+comment|/* no_cursor_updating        */
 name|FALSE
 block|,
-operator|.
-name|preview_size
-operator|=
+comment|/* preview_size              */
 literal|32
 block|,
-operator|.
-name|nav_preview_size
-operator|=
+comment|/* nav_preview_size          */
 literal|112
 block|,
-operator|.
-name|show_rulers
-operator|=
+comment|/* show_rulers               */
 name|TRUE
 block|,
-operator|.
-name|show_statusbar
-operator|=
+comment|/* show_statusbar            */
 name|TRUE
 block|,
-operator|.
-name|default_units
-operator|=
+comment|/* default_units             */
 name|GIMP_UNIT_INCH
 block|,
-operator|.
-name|auto_save
-operator|=
+comment|/* auto_save                 */
 name|TRUE
 block|,
-operator|.
-name|confirm_on_close
-operator|=
+comment|/* confirm_on_close          */
 name|TRUE
 block|,
-operator|.
-name|save_session_info
-operator|=
+comment|/* save_session_info         */
 name|TRUE
 block|,
-operator|.
-name|save_device_status
-operator|=
+comment|/* save_device_status        */
 name|FALSE
 block|,
-operator|.
-name|always_restore_session
-operator|=
+comment|/* always_restore_session    */
 name|TRUE
 block|,
-operator|.
-name|default_width
-operator|=
+comment|/* default_width             */
 literal|256
 block|,
-operator|.
-name|default_height
-operator|=
+comment|/* default_height            */
 literal|256
 block|,
-operator|.
-name|default_type
-operator|=
+comment|/* default_type              */
 name|RGB
 block|,
-operator|.
-name|default_xresolution
-operator|=
+comment|/* default_xresolution       */
 literal|72.0
 block|,
-operator|.
-name|default_yresolution
-operator|=
+comment|/* default_yresolution       */
 literal|72.0
 block|,
-operator|.
-name|default_resolution_units
-operator|=
+comment|/* default_resolution_units  */
 name|GIMP_UNIT_INCH
 block|,
-operator|.
-name|default_comment
-operator|=
+comment|/* default_comment           */
 name|NULL
 block|,
-operator|.
-name|default_dot_for_dot
-operator|=
+comment|/* default_dot_for_dot       */
 name|TRUE
 block|,
-operator|.
-name|show_tips
-operator|=
+comment|/* show_tips                 */
 name|TRUE
 block|,
-operator|.
-name|last_tip
-operator|=
+comment|/* last_tip                  */
 operator|-
 literal|1
 block|,
-operator|.
-name|show_tool_tips
-operator|=
+comment|/* show_tool_tips            */
 name|TRUE
 block|,
-operator|.
-name|monitor_xres
-operator|=
+comment|/* monitor_xres              */
 literal|72.0
 block|,
-operator|.
-name|monitor_yres
-operator|=
+comment|/* monitor_yres              */
 literal|72.0
 block|,
-operator|.
-name|using_xserver_resolution
-operator|=
+comment|/* using_xserver_resolution  */
 name|FALSE
 block|,
-operator|.
-name|image_title_format
-operator|=
+comment|/* image_title_format        */
 name|NULL
 block|,
-operator|.
-name|global_paint_options
-operator|=
+comment|/* global_paint_options      */
 name|FALSE
 block|,
-operator|.
-name|module_db_load_inhibit
-operator|=
+comment|/* module_db_load_inhibit    */
 name|NULL
 block|,
-operator|.
-name|show_indicators
-operator|=
+comment|/* show_indicators           */
 name|TRUE
 block|,
-operator|.
-name|max_new_image_size
-operator|=
+comment|/* max_new_image_size        */
 literal|33554432
 block|,
 comment|/* 32 MB */
-operator|.
-name|thumbnail_mode
-operator|=
+comment|/* thumbnail_mode            */
 literal|1
 block|,
-operator|.
-name|trust_dirty_flag
-operator|=
+comment|/* trust_dirty_flag          */
 name|FALSE
 block|,
-operator|.
-name|use_help
-operator|=
+comment|/* use_help                  */
 name|TRUE
 block|,
-operator|.
-name|nav_window_per_display
-operator|=
+comment|/* nav_window_per_display    */
 name|FALSE
 block|,
-operator|.
-name|info_window_follows_mouse
-operator|=
+comment|/* info_window_follows_mouse */
 name|TRUE
 block|,
-operator|.
-name|help_browser
-operator|=
+comment|/* help_browser              */
 name|HELP_BROWSER_GIMP
 block|,
-operator|.
-name|cursor_mode
-operator|=
+comment|/* cursor_mode               */
 name|CURSOR_MODE_TOOL_ICON
 block|,
-operator|.
-name|disable_tearoff_menus
-operator|=
+comment|/* disable_tearoff_menus     */
 name|FALSE
 block|}
 decl_stmt|;
