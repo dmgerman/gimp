@@ -491,7 +491,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon29c5ab1f0103
+DECL|enum|__anon2b1e940d0103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -11795,6 +11795,14 @@ argument_list|(
 name|gimage
 argument_list|,
 name|lu
+argument_list|)
+expr_stmt|;
+comment|/* Send out REMOVED signal from layer */
+name|layer_removed
+argument_list|(
+name|layer
+argument_list|,
+name|gimage
 argument_list|)
 expr_stmt|;
 comment|/*  invalidate the composite preview  */

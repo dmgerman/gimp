@@ -433,6 +433,18 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|layer_removed
+parameter_list|(
+name|Layer
+modifier|*
+parameter_list|,
+name|gpointer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|layer_apply_mask
 parameter_list|(
 name|Layer

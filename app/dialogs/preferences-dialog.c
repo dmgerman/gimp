@@ -242,12 +242,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"resize.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"scale.h"
 end_include
 
@@ -292,31 +286,6 @@ include|#
 directive|include
 file|"libgimp/gimpintl.h"
 end_include
-
-begin_typedef
-typedef|typedef
-struct|struct
-DECL|struct|__anon2a33efdc0108
-block|{
-DECL|member|shell
-name|GtkWidget
-modifier|*
-name|shell
-decl_stmt|;
-DECL|member|resize
-name|Resize
-modifier|*
-name|resize
-decl_stmt|;
-DECL|member|gimage_id
-name|int
-name|gimage_id
-decl_stmt|;
-DECL|typedef|ImageResize
-block|}
-name|ImageResize
-typedef|;
-end_typedef
 
 begin_comment
 comment|/*  preferences local functions  */
@@ -3533,7 +3502,7 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon2a33efdc0208
+DECL|struct|__anon29ec957c0108
 specifier|static
 specifier|const
 struct|struct
@@ -3584,7 +3553,7 @@ operator|)
 block|}
 block|}
 struct|;
-DECL|struct|__anon2a33efdc0308
+DECL|struct|__anon29ec957c0208
 specifier|static
 specifier|const
 struct|struct
@@ -3676,7 +3645,7 @@ name|edit_plug_in_path
 block|}
 block|}
 struct|;
-DECL|struct|__anon2a33efdc0408
+DECL|struct|__anon29ec957c0308
 specifier|static
 specifier|const
 struct|struct

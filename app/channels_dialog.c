@@ -132,12 +132,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"resize.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tools/eye.xbm"
 end_include
 
