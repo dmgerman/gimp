@@ -644,6 +644,32 @@ block|}
 end_function
 
 begin_function
+name|void
+DECL|function|gimp_devices_clear (Gimp * gimp)
+name|gimp_devices_clear
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|"TODO: implement gimp_devices_clear()\n"
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 name|GdkDevice
 modifier|*
 DECL|function|gimp_devices_get_current (Gimp * gimp)

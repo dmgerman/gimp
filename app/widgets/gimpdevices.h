@@ -80,6 +80,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_devices_clear
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GdkDevice
 modifier|*
 name|gimp_devices_get_current

@@ -81,7 +81,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3e69d10103
+DECL|enum|__anon2bb5f9c50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -674,6 +674,16 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gtk_box_set_spacing
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|editor
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
 name|frame
 operator|=
 name|gtk_frame_new
@@ -723,7 +733,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacings

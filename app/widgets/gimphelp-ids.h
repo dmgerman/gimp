@@ -2425,6 +2425,14 @@ value|"gimp-prefs-environment"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_PREFS_SESSION
+define|#
+directive|define
+name|GIMP_HELP_PREFS_SESSION
+value|"gimp-prefs-session"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_PREFS_FOLDERS
 define|#
 directive|define

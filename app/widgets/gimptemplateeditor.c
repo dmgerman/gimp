@@ -134,7 +134,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1bcd560103
+DECL|enum|__anon2ac29bb90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -771,6 +771,16 @@ operator|->
 name|template
 operator|!=
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_box_set_spacing
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|editor
+argument_list|)
+argument_list|,
+literal|4
 argument_list|)
 expr_stmt|;
 comment|/*  Image size frame  */
