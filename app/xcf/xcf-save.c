@@ -4076,6 +4076,7 @@ block|{
 name|GimpUnit
 name|unit
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|unit_strings
@@ -4375,6 +4376,11 @@ name|info
 operator|->
 name|fp
 argument_list|,
+operator|(
+name|gchar
+operator|*
+operator|*
+operator|)
 name|unit_strings
 argument_list|,
 literal|5

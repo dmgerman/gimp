@@ -74,6 +74,24 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
+begin_define
+DECL|macro|GIMP_TYPE_UNIT
+define|#
+directive|define
+name|GIMP_TYPE_UNIT
+value|(gimp_unit_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_unit_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
 begin_endif
 endif|#
 directive|endif

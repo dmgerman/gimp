@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2772d6300108
+DECL|struct|__anon2b4360bf0108
 block|{
 DECL|member|delete_on_exit
 name|gboolean
@@ -757,6 +757,7 @@ block|}
 end_function
 
 begin_function
+specifier|const
 name|gchar
 modifier|*
 DECL|function|_gimp_unit_get_identifier (Gimp * gimp,GimpUnit unit)
@@ -845,6 +846,7 @@ block|}
 end_function
 
 begin_function
+specifier|const
 name|gchar
 modifier|*
 DECL|function|_gimp_unit_get_symbol (Gimp * gimp,GimpUnit unit)
@@ -933,6 +935,7 @@ block|}
 end_function
 
 begin_function
+specifier|const
 name|gchar
 modifier|*
 DECL|function|_gimp_unit_get_abbreviation (Gimp * gimp,GimpUnit unit)
@@ -1021,6 +1024,7 @@ block|}
 end_function
 
 begin_function
+specifier|const
 name|gchar
 modifier|*
 DECL|function|_gimp_unit_get_singular (Gimp * gimp,GimpUnit unit)
@@ -1121,6 +1125,7 @@ block|}
 end_function
 
 begin_function
+specifier|const
 name|gchar
 modifier|*
 DECL|function|_gimp_unit_get_plural (Gimp * gimp,GimpUnit unit)

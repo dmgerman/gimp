@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_BASE_CONFIG_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"base/base-enums.h"
-end_include
-
 begin_define
 DECL|macro|GIMP_TYPE_BASE_CONFIG
 define|#

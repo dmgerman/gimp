@@ -19,12 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|"core/core-enums.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpbaseconfig.h"
 end_include
 
@@ -174,7 +168,32 @@ DECL|member|default_image_height
 name|gint
 name|default_image_height
 decl_stmt|;
-comment|/* the remaining fields are not yet implemented as properties    GimpUnit             default_units;   gdouble              default_xresolution;   gdouble              default_yresolution;   GimpUnit             default_resolution_units;    gint                 levels_of_undo;   gchar               *pluginrc_path;   gchar               *module_db_load_inhibit;   gint                 thumbnail_mode;    */
+DECL|member|default_unit
+name|GimpUnit
+name|default_unit
+decl_stmt|;
+DECL|member|default_xresolution
+name|gdouble
+name|default_xresolution
+decl_stmt|;
+DECL|member|default_yresolution
+name|gdouble
+name|default_yresolution
+decl_stmt|;
+DECL|member|default_resolution_unit
+name|GimpUnit
+name|default_resolution_unit
+decl_stmt|;
+DECL|member|levels_of_undo
+name|gint
+name|levels_of_undo
+decl_stmt|;
+DECL|member|plug_in_rc_path
+name|gchar
+modifier|*
+name|plug_in_rc_path
+decl_stmt|;
+comment|/* the remaining fields are not yet implemented as properties    gchar               *module_db_load_inhibit;   gint                 thumbnail_mode;    */
 block|}
 struct|;
 end_struct
