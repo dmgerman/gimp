@@ -344,7 +344,7 @@ name|help_id_mapping
 condition|)
 name|g_message
 argument_list|(
-literal|"Failed to open help domain:\n\n%s"
+literal|"Failed to open help files:\n%s"
 argument_list|,
 name|error
 operator|->
@@ -354,7 +354,7 @@ expr_stmt|;
 else|else
 name|g_message
 argument_list|(
-literal|"Parse error in help domain:\n\n%s\n\n"
+literal|"Parse error in help domain:\n%s\n\n"
 literal|"(Added entires before error anyway)"
 argument_list|,
 name|error
@@ -554,7 +554,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274fb7fe0103
+DECL|enum|__anon27f133720103
 block|{
 DECL|enumerator|DOMAIN_START
 name|DOMAIN_START
@@ -576,7 +576,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274fb7fe0208
+DECL|struct|__anon27f133720208
 block|{
 DECL|member|filename
 specifier|const
@@ -905,6 +905,20 @@ operator|!
 name|fp
 condition|)
 block|{
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|domain
+operator|->
+name|help_uri
+argument_list|,
+literal|"file:///usr/local/share/gimp/1.3/help"
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
 name|g_set_error
 argument_list|(
 name|error
@@ -913,18 +927,27 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-literal|"Could not open gimp-help.xml mapping file from '%s': %s"
-argument_list|,
-name|domain
-operator|->
-name|help_uri
-argument_list|,
-name|g_strerror
-argument_list|(
-name|errno
-argument_list|)
+literal|"The GIMP help files are not installed."
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|"The requested help file %s could not be opened.\n"
+literal|"Please check your installation."
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
+block|}
 name|g_free
 argument_list|(
 name|filename
