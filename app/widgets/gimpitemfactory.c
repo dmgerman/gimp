@@ -3725,7 +3725,7 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-comment|/*  For any key except F1, continue with the standard    *  GtkItemFactory callback and assign a new shortcut, but don't    *  assign a shortcut to the help menu entries...    */
+comment|/*  For any valid accelerator key except F1, continue with the    *  standard GtkItemFactory callback and assign a new shortcut, but    *  don't assign a shortcut to the help menu entries ...    */
 if|if
 condition|(
 name|kevent
@@ -3738,6 +3738,15 @@ block|{
 if|if
 condition|(
 name|help_page
+operator|&&
+name|gtk_accelerator_valid
+argument_list|(
+name|kevent
+operator|->
+name|keyval
+argument_list|,
+literal|0
+argument_list|)
 operator|&&
 operator|(
 name|item_factory
