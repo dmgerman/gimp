@@ -809,7 +809,7 @@ name|attr
 operator|=
 name|pango_attr_scale_new
 argument_list|(
-name|PANGO_SCALE_X_LARGE
+name|PANGO_SCALE_LARGE
 argument_list|)
 expr_stmt|;
 name|attr

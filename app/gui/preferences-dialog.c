@@ -4112,7 +4112,7 @@ name|attr
 operator|=
 name|pango_attr_scale_new
 argument_list|(
-name|PANGO_SCALE_X_LARGE
+name|PANGO_SCALE_LARGE
 argument_list|)
 expr_stmt|;
 name|attr
@@ -6774,7 +6774,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2a09a9020108
+DECL|struct|__anon2b15b2320108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -8397,7 +8397,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a09a9020208
+DECL|struct|__anon2b15b2320208
 block|{
 DECL|member|label
 specifier|const
@@ -8556,7 +8556,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a09a9020308
+DECL|struct|__anon2b15b2320308
 block|{
 DECL|member|tree_label
 specifier|const
