@@ -77,6 +77,25 @@ begin_comment
 comment|/*  defines  */
 end_comment
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__EMX__
+end_ifdef
+
+begin_define
+DECL|macro|chdir
+define|#
+directive|define
+name|chdir
+value|_chdir2
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_define
 DECL|macro|EEEK
 define|#
@@ -110,7 +129,7 @@ value|"help"
 end_define
 
 begin_enum
-DECL|enum|__anon2c8048e40103
+DECL|enum|__anon27981ec70103
 enum|enum
 block|{
 DECL|enumerator|CONTENTS
@@ -126,7 +145,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2c8048e40203
+DECL|enum|__anon27981ec70203
 enum|enum
 block|{
 DECL|enumerator|URL_UNKNOWN
@@ -158,7 +177,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8048e40308
+DECL|struct|__anon27981ec70308
 block|{
 DECL|member|index
 name|gint
@@ -198,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8048e40408
+DECL|struct|__anon27981ec70408
 block|{
 DECL|member|title
 name|gchar
@@ -1758,6 +1777,16 @@ goto|goto
 name|FINISH
 goto|;
 block|}
+comment|/*    *  handle basename like: filename.html#11111 -> filename.html    */
+name|g_strdelimit
+argument_list|(
+name|new_base
+argument_list|,
+literal|"#"
+argument_list|,
+literal|'\0'
+argument_list|)
+expr_stmt|;
 name|afile
 operator|=
 name|fopen
