@@ -3309,6 +3309,10 @@ name|gimage
 operator|)
 condition|)
 return|return;
+comment|/*  Make sure the gimage is not notified of this change  */
+name|suspend_gimage_notify
+operator|++
+expr_stmt|;
 comment|/*  Check if the gimage extents have changed  */
 if|if
 condition|(
@@ -3601,6 +3605,9 @@ name|layer_widget_layer_flush
 argument_list|,
 name|NULL
 argument_list|)
+expr_stmt|;
+name|suspend_gimage_notify
+operator|--
 expr_stmt|;
 block|}
 end_function
