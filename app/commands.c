@@ -318,7 +318,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297766590108
+DECL|struct|__anon29f3c6c20108
 block|{
 DECL|member|resize
 name|Resize
@@ -1304,12 +1304,12 @@ argument_list|()
 expr_stmt|;
 name|query_size_box
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"Border Selection"
 argument_list|)
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Border selection by:"
 argument_list|)
@@ -1356,6 +1356,8 @@ operator|->
 name|gimage
 argument_list|)
 argument_list|,
+literal|"destroy"
+argument_list|,
 name|gimage_mask_border_callback
 argument_list|,
 name|gdisp
@@ -1390,12 +1392,12 @@ argument_list|()
 expr_stmt|;
 name|query_size_box
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"Feather Selection"
 argument_list|)
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Feather selection by:"
 argument_list|)
@@ -1441,6 +1443,8 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|)
+argument_list|,
+literal|"destroy"
 argument_list|,
 name|gimage_mask_feather_callback
 argument_list|,
@@ -1528,6 +1532,8 @@ operator|->
 name|gimage
 argument_list|)
 argument_list|,
+literal|"destroy"
+argument_list|,
 name|gimage_mask_grow_callback
 argument_list|,
 name|gdisp
@@ -1613,6 +1619,8 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|)
+argument_list|,
+literal|"destroy"
 argument_list|,
 name|gimage_mask_shrink_callback
 argument_list|,

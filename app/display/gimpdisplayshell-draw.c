@@ -4235,13 +4235,16 @@ name|QueryBox
 modifier|*
 name|create_query_box
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 parameter_list|,
 name|GtkObject
+modifier|*
+parameter_list|,
+name|gchar
 modifier|*
 parameter_list|,
 name|QueryFunc
@@ -4339,20 +4342,24 @@ end_comment
 begin_function
 name|QueryBox
 modifier|*
-DECL|function|create_query_box (char * title,char * message,GtkObject * object,QueryFunc callback,gpointer data)
+DECL|function|create_query_box (gchar * title,gchar * message,GtkObject * object,gchar * signal,QueryFunc callback,gpointer data)
 name|create_query_box
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|title
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|message
 parameter_list|,
 name|GtkObject
 modifier|*
 name|object
+parameter_list|,
+name|gchar
+modifier|*
+name|signal
 parameter_list|,
 name|QueryFunc
 name|callback
@@ -4456,7 +4463,7 @@ argument_list|,
 name|query_box
 argument_list|)
 expr_stmt|;
-comment|/* if we are associated with an object, connect to that object's    * "destroy" signal    */
+comment|/* if we are associated with an object, connect to the provided signal    */
 if|if
 condition|(
 name|object
@@ -4465,6 +4472,8 @@ name|GTK_IS_OBJECT
 argument_list|(
 name|object
 argument_list|)
+operator|&&
+name|signal
 condition|)
 name|gtk_signal_connect
 argument_list|(
@@ -4473,7 +4482,7 @@ argument_list|(
 name|object
 argument_list|)
 argument_list|,
-literal|"destroy"
+name|signal
 argument_list|,
 operator|(
 name|GtkSignalFunc
@@ -4732,24 +4741,28 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|query_string_box (char * title,char * message,char * initial,GtkObject * object,QueryFunc callback,gpointer data)
+DECL|function|query_string_box (gchar * title,gchar * message,gchar * initial,GtkObject * object,gchar * signal,QueryFunc callback,gpointer data)
 name|query_string_box
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|title
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|message
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|initial
 parameter_list|,
 name|GtkObject
 modifier|*
 name|object
+parameter_list|,
+name|gchar
+modifier|*
+name|signal
 parameter_list|,
 name|QueryFunc
 name|callback
@@ -4775,6 +4788,8 @@ argument_list|,
 name|message
 argument_list|,
 name|object
+argument_list|,
+name|signal
 argument_list|,
 name|callback
 argument_list|,
@@ -4874,29 +4889,33 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|query_int_box (char * title,char * message,int initial,int lower,int upper,GtkObject * object,QueryFunc callback,gpointer data)
+DECL|function|query_int_box (gchar * title,gchar * message,gint initial,gint lower,gint upper,GtkObject * object,gchar * signal,QueryFunc callback,gpointer data)
 name|query_int_box
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|title
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|message
 parameter_list|,
-name|int
+name|gint
 name|initial
 parameter_list|,
-name|int
+name|gint
 name|lower
 parameter_list|,
-name|int
+name|gint
 name|upper
 parameter_list|,
 name|GtkObject
 modifier|*
 name|object
+parameter_list|,
+name|gchar
+modifier|*
+name|signal
 parameter_list|,
 name|QueryFunc
 name|callback
@@ -4926,6 +4945,8 @@ argument_list|,
 name|message
 argument_list|,
 name|object
+argument_list|,
+name|signal
 argument_list|,
 name|callback
 argument_list|,
@@ -5034,32 +5055,36 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|query_float_box (char * title,char * message,float initial,float lower,float upper,int digits,GtkObject * object,QueryFunc callback,gpointer data)
+DECL|function|query_float_box (gchar * title,gchar * message,gfloat initial,gfloat lower,gfloat upper,gint digits,GtkObject * object,gchar * signal,QueryFunc callback,gpointer data)
 name|query_float_box
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|title
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|message
 parameter_list|,
-name|float
+name|gfloat
 name|initial
 parameter_list|,
-name|float
+name|gfloat
 name|lower
 parameter_list|,
-name|float
+name|gfloat
 name|upper
 parameter_list|,
-name|int
+name|gint
 name|digits
 parameter_list|,
 name|GtkObject
 modifier|*
 name|object
+parameter_list|,
+name|gchar
+modifier|*
+name|signal
 parameter_list|,
 name|QueryFunc
 name|callback
@@ -5089,6 +5114,8 @@ argument_list|,
 name|message
 argument_list|,
 name|object
+argument_list|,
+name|signal
 argument_list|,
 name|callback
 argument_list|,
@@ -5197,38 +5224,42 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|query_size_box (char * title,char * message,float initial,float lower,float upper,int digits,GUnit unit,float resolution,GtkObject * object,QueryFunc callback,gpointer data)
+DECL|function|query_size_box (gchar * title,gchar * message,gfloat initial,gfloat lower,gfloat upper,gint digits,GUnit unit,gfloat resolution,GtkObject * object,gchar * signal,QueryFunc callback,gpointer data)
 name|query_size_box
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|title
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|message
 parameter_list|,
-name|float
+name|gfloat
 name|initial
 parameter_list|,
-name|float
+name|gfloat
 name|lower
 parameter_list|,
-name|float
+name|gfloat
 name|upper
 parameter_list|,
-name|int
+name|gint
 name|digits
 parameter_list|,
 name|GUnit
 name|unit
 parameter_list|,
-name|float
+name|gfloat
 name|resolution
 parameter_list|,
 name|GtkObject
 modifier|*
 name|object
+parameter_list|,
+name|gchar
+modifier|*
+name|signal
 parameter_list|,
 name|QueryFunc
 name|callback
@@ -5254,6 +5285,8 @@ argument_list|,
 name|message
 argument_list|,
 name|object
+argument_list|,
+name|signal
 argument_list|,
 name|callback
 argument_list|,
@@ -5459,7 +5492,7 @@ operator|*
 operator|)
 name|client_data
 expr_stmt|;
-comment|/*  disconnect, if we are connected to some object's "destroy" signal  */
+comment|/*  disconnect, if we are connected to some signal  */
 if|if
 condition|(
 name|query_box
@@ -5509,7 +5542,7 @@ name|QueryBox
 modifier|*
 name|query_box
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|string
 decl_stmt|;
@@ -5521,7 +5554,7 @@ operator|*
 operator|)
 name|client_data
 expr_stmt|;
-comment|/*  disconnect, if we are connected to some object's "destroy" signal  */
+comment|/*  disconnect, if we are connected to some signal  */
 if|if
 condition|(
 name|query_box
@@ -5607,7 +5640,7 @@ name|QueryBox
 modifier|*
 name|query_box
 decl_stmt|;
-name|int
+name|gint
 modifier|*
 name|integer_value
 decl_stmt|;
@@ -5619,7 +5652,7 @@ operator|*
 operator|)
 name|client_data
 expr_stmt|;
-comment|/*  disconnect, if we are connected to some object's "destroy" signal  */
+comment|/*  disconnect, if we are connected to some signal  */
 if|if
 condition|(
 name|query_box
@@ -5642,7 +5675,7 @@ name|g_malloc
 argument_list|(
 sizeof|sizeof
 argument_list|(
-name|int
+name|gint
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5713,7 +5746,7 @@ name|QueryBox
 modifier|*
 name|query_box
 decl_stmt|;
-name|float
+name|gfloat
 modifier|*
 name|float_value
 decl_stmt|;
@@ -5725,7 +5758,7 @@ operator|*
 operator|)
 name|client_data
 expr_stmt|;
-comment|/*  disconnect, if we are connected to some object's "destroy" signal  */
+comment|/*  disconnect, if we are connected to some signal  */
 if|if
 condition|(
 name|query_box
@@ -5748,7 +5781,7 @@ name|g_malloc
 argument_list|(
 sizeof|sizeof
 argument_list|(
-name|float
+name|gfloat
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5819,7 +5852,7 @@ name|QueryBox
 modifier|*
 name|query_box
 decl_stmt|;
-name|float
+name|gfloat
 modifier|*
 name|float_value
 decl_stmt|;
@@ -5831,7 +5864,7 @@ operator|*
 operator|)
 name|client_data
 expr_stmt|;
-comment|/*  disconnect, if we are connected to some object's "destroy" signal  */
+comment|/*  disconnect, if we are connected to some signal  */
 if|if
 condition|(
 name|query_box
@@ -5854,7 +5887,7 @@ name|g_malloc
 argument_list|(
 sizeof|sizeof
 argument_list|(
-name|float
+name|gfloat
 argument_list|)
 argument_list|)
 expr_stmt|;

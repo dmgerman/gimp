@@ -3276,12 +3276,12 @@ argument_list|)
 expr_stmt|;
 name|query_string_box
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"Cut Named"
 argument_list|)
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Enter a name for this buffer"
 argument_list|)
@@ -3294,6 +3294,8 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|)
+argument_list|,
+literal|"destroy"
 argument_list|,
 name|cut_named_buffer_callback
 argument_list|,
@@ -3408,12 +3410,12 @@ name|gdisp_ptr
 expr_stmt|;
 name|query_string_box
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"Copy Named"
 argument_list|)
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Enter a name for this buffer"
 argument_list|)
@@ -3426,6 +3428,8 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|)
+argument_list|,
+literal|"destroy"
 argument_list|,
 name|copy_named_buffer_callback
 argument_list|,

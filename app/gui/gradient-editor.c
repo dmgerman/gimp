@@ -7181,20 +7181,22 @@ parameter_list|)
 block|{
 name|query_string_box
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"New gradient"
 argument_list|)
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Enter a name for the new gradient"
 argument_list|)
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"untitled"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -7636,17 +7638,19 @@ argument_list|)
 expr_stmt|;
 name|query_string_box
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"Copy gradient"
 argument_list|)
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Enter a name for the copied gradient"
 argument_list|)
 argument_list|,
 name|name
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -8610,12 +8614,12 @@ condition|)
 return|return;
 name|query_string_box
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"Rename gradient"
 argument_list|)
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Enter a new name for the gradient"
 argument_list|)
@@ -8623,6 +8627,8 @@ argument_list|,
 name|curr_gradient
 operator|->
 name|name
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -11430,7 +11436,7 @@ name|NULL
 condition|)
 name|ed_set_hint
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"Drag: move    Shift+drag: move& compress"
 argument_list|)
@@ -11439,7 +11445,7 @@ expr_stmt|;
 else|else
 name|ed_set_hint
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"Click: select    Shift+click: extend selection"
 argument_list|)
@@ -11449,7 +11455,7 @@ block|}
 else|else
 name|ed_set_hint
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"Click: select    Shift+click: extend selection"
 argument_list|)
@@ -11461,7 +11467,7 @@ name|GRAD_DRAG_MIDDLE
 case|:
 name|ed_set_hint
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"Click: select    Shift+click: extend selection    "
 literal|"Drag: move"
@@ -11491,7 +11497,7 @@ block|}
 else|else
 name|ed_set_hint
 argument_list|(
-name|N_
+name|_
 argument_list|(
 literal|"Click: select    Shift+click: extend selection    "
 literal|"Drag: move    Shift+drag: move& compress"

@@ -3548,11 +3548,6 @@ decl_stmt|;
 name|GUnit
 name|unit
 decl_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|unit
-argument_list|)
-expr_stmt|;
 name|return_vals
 operator|=
 name|gimp_run_procedure
