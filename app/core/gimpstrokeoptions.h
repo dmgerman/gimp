@@ -103,6 +103,10 @@ DECL|member|parent_instance
 name|GimpContext
 name|parent_instance
 decl_stmt|;
+DECL|member|style
+name|GimpStrokeStyle
+name|style
+decl_stmt|;
 DECL|member|width
 name|gdouble
 name|width
