@@ -273,7 +273,7 @@ block|{
 name|gboolean
 name|success
 init|=
-name|FALSE
+name|TRUE
 decl_stmt|;
 name|gchar
 modifier|*
@@ -297,6 +297,25 @@ name|value
 operator|.
 name|pdb_pointer
 expr_stmt|;
+if|if
+condition|(
+name|message
+operator|&&
+operator|!
+name|g_utf8_validate
+argument_list|(
+name|message
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+name|NULL
+argument_list|)
+condition|)
+name|success
+operator|=
+name|FALSE
+expr_stmt|;
 name|gdisplay
 operator|=
 name|args
@@ -310,6 +329,11 @@ name|pdb_int
 expr_stmt|;
 if|if
 condition|(
+name|success
+condition|)
+block|{
+if|if
+condition|(
 name|gimp
 operator|->
 name|current_plug_in
@@ -321,10 +345,6 @@ operator|->
 name|open
 condition|)
 block|{
-name|success
-operator|=
-name|TRUE
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -342,6 +362,12 @@ name|message
 argument_list|,
 name|gdisplay
 argument_list|)
+expr_stmt|;
+block|}
+else|else
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 return|return
@@ -1592,7 +1618,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"domain_name"
 block|,
-literal|"The name of the textdomain (must be unique)."
+literal|"The name of the textdomain (must be unique)"
 block|}
 block|,
 block|{
@@ -1600,7 +1626,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"domain_path"
 block|,
-literal|"The absolute path to the compiled message catalog (may be NULL)."
+literal|"The absolute path to the compiled message catalog (may be NULL)"
 block|}
 block|}
 decl_stmt|;
