@@ -225,6 +225,78 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_define
+DECL|macro|VIEW_ZOOM_16_1
+define|#
+directive|define
+name|VIEW_ZOOM_16_1
+value|"/View/Zoom/16:1  (1600%)"
+end_define
+
+begin_define
+DECL|macro|VIEW_ZOOM_8_1
+define|#
+directive|define
+name|VIEW_ZOOM_8_1
+value|"/View/Zoom/8:1  (800%)"
+end_define
+
+begin_define
+DECL|macro|VIEW_ZOOM_4_1
+define|#
+directive|define
+name|VIEW_ZOOM_4_1
+value|"/View/Zoom/4:1  (400%)"
+end_define
+
+begin_define
+DECL|macro|VIEW_ZOOM_2_1
+define|#
+directive|define
+name|VIEW_ZOOM_2_1
+value|"/View/Zoom/2:1  (200%)"
+end_define
+
+begin_define
+DECL|macro|VIEW_ZOOM_1_1
+define|#
+directive|define
+name|VIEW_ZOOM_1_1
+value|"/View/Zoom/1:1  (100%)"
+end_define
+
+begin_define
+DECL|macro|VIEW_ZOOM_1_2
+define|#
+directive|define
+name|VIEW_ZOOM_1_2
+value|"/View/Zoom/1:2  (50%)"
+end_define
+
+begin_define
+DECL|macro|VIEW_ZOOM_1_4
+define|#
+directive|define
+name|VIEW_ZOOM_1_4
+value|"/View/Zoom/1:4  (25%)"
+end_define
+
+begin_define
+DECL|macro|VIEW_ZOOM_1_8
+define|#
+directive|define
+name|VIEW_ZOOM_1_8
+value|"/View/Zoom/1:8  (12.5%)"
+end_define
+
+begin_define
+DECL|macro|VIEW_ZOOM_1_16
+define|#
+directive|define
+name|VIEW_ZOOM_1_16
+value|"/View/Zoom/1:16  (6.25%)"
+end_define
+
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
@@ -1574,7 +1646,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/View/Zoom/16:1"
+literal|"/View/Zoom/16:1  (1600%)"
 argument_list|)
 block|,
 name|NULL
@@ -1597,7 +1669,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/View/Zoom/8:1"
+literal|"/View/Zoom/8:1  (800%)"
 argument_list|)
 block|,
 name|NULL
@@ -1606,7 +1678,7 @@ name|view_zoom_cmd_callback
 block|,
 literal|80000
 block|,
-literal|"/View/Zoom/16:1"
+name|VIEW_ZOOM_16_1
 block|}
 block|,
 name|NULL
@@ -1620,7 +1692,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/View/Zoom/4:1"
+literal|"/View/Zoom/4:1  (400%)"
 argument_list|)
 block|,
 name|NULL
@@ -1629,7 +1701,7 @@ name|view_zoom_cmd_callback
 block|,
 literal|40000
 block|,
-literal|"/View/Zoom/16:1"
+name|VIEW_ZOOM_16_1
 block|}
 block|,
 name|NULL
@@ -1643,7 +1715,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/View/Zoom/2:1"
+literal|"/View/Zoom/2:1  (200%)"
 argument_list|)
 block|,
 name|NULL
@@ -1652,7 +1724,7 @@ name|view_zoom_cmd_callback
 block|,
 literal|20000
 block|,
-literal|"/View/Zoom/16:1"
+name|VIEW_ZOOM_16_1
 block|}
 block|,
 name|NULL
@@ -1666,7 +1738,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/View/Zoom/1:1"
+literal|"/View/Zoom/1:1  (100%)"
 argument_list|)
 block|,
 literal|"1"
@@ -1675,7 +1747,7 @@ name|view_zoom_cmd_callback
 block|,
 literal|10000
 block|,
-literal|"/View/Zoom/16:1"
+name|VIEW_ZOOM_16_1
 block|}
 block|,
 name|NULL
@@ -1689,7 +1761,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/View/Zoom/1:2"
+literal|"/View/Zoom/1:2  (50%)"
 argument_list|)
 block|,
 name|NULL
@@ -1698,7 +1770,7 @@ name|view_zoom_cmd_callback
 block|,
 literal|5000
 block|,
-literal|"/View/Zoom/16:1"
+name|VIEW_ZOOM_16_1
 block|}
 block|,
 name|NULL
@@ -1712,7 +1784,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/View/Zoom/1:4"
+literal|"/View/Zoom/1:4  (25%)"
 argument_list|)
 block|,
 name|NULL
@@ -1721,7 +1793,7 @@ name|view_zoom_cmd_callback
 block|,
 literal|2500
 block|,
-literal|"/View/Zoom/16:1"
+name|VIEW_ZOOM_16_1
 block|}
 block|,
 name|NULL
@@ -1735,7 +1807,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/View/Zoom/1:8"
+literal|"/View/Zoom/1:8  (12.5%)"
 argument_list|)
 block|,
 name|NULL
@@ -1744,7 +1816,7 @@ name|view_zoom_cmd_callback
 block|,
 literal|1250
 block|,
-literal|"/View/Zoom/16:1"
+name|VIEW_ZOOM_16_1
 block|}
 block|,
 name|NULL
@@ -1758,7 +1830,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/View/Zoom/1:16"
+literal|"/View/Zoom/1:16  (6.25%)"
 argument_list|)
 block|,
 name|NULL
@@ -1767,7 +1839,7 @@ name|view_zoom_cmd_callback
 block|,
 literal|625
 block|,
-literal|"/View/Zoom/16:1"
+name|VIEW_ZOOM_16_1
 block|}
 block|,
 name|NULL
@@ -1792,7 +1864,7 @@ name|view_zoom_other_cmd_callback
 block|,
 literal|0
 block|,
-literal|"/View/Zoom/16:1"
+name|VIEW_ZOOM_16_1
 block|}
 block|,
 name|NULL
@@ -6800,63 +6872,63 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/View/Zoom/16:1"
+name|VIEW_ZOOM_16_1
 argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/View/Zoom/8:1"
+name|VIEW_ZOOM_8_1
 argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/View/Zoom/4:1"
+name|VIEW_ZOOM_4_1
 argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/View/Zoom/2:1"
+name|VIEW_ZOOM_2_1
 argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/View/Zoom/1:1"
+name|VIEW_ZOOM_1_1
 argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/View/Zoom/1:2"
+name|VIEW_ZOOM_1_2
 argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/View/Zoom/1:4"
+name|VIEW_ZOOM_1_4
 argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/View/Zoom/1:8"
+name|VIEW_ZOOM_1_8
 argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/View/Zoom/1:16"
+name|VIEW_ZOOM_1_16
 argument_list|,
 name|gdisp
 argument_list|)
@@ -7971,7 +8043,7 @@ literal|16000
 case|:
 name|menu
 operator|=
-literal|"/View/Zoom/16:1"
+name|VIEW_ZOOM_16_1
 expr_stmt|;
 break|break;
 case|case
@@ -7979,7 +8051,7 @@ literal|8000
 case|:
 name|menu
 operator|=
-literal|"/View/Zoom/8:1"
+name|VIEW_ZOOM_8_1
 expr_stmt|;
 break|break;
 case|case
@@ -7987,7 +8059,7 @@ literal|4000
 case|:
 name|menu
 operator|=
-literal|"/View/Zoom/4:1"
+name|VIEW_ZOOM_4_1
 expr_stmt|;
 break|break;
 case|case
@@ -7995,7 +8067,7 @@ literal|2000
 case|:
 name|menu
 operator|=
-literal|"/View/Zoom/2:1"
+name|VIEW_ZOOM_2_1
 expr_stmt|;
 break|break;
 case|case
@@ -8003,7 +8075,7 @@ literal|1000
 case|:
 name|menu
 operator|=
-literal|"/View/Zoom/1:1"
+name|VIEW_ZOOM_1_1
 expr_stmt|;
 break|break;
 case|case
@@ -8011,7 +8083,7 @@ literal|500
 case|:
 name|menu
 operator|=
-literal|"/View/Zoom/1:2"
+name|VIEW_ZOOM_1_2
 expr_stmt|;
 break|break;
 case|case
@@ -8019,7 +8091,7 @@ literal|250
 case|:
 name|menu
 operator|=
-literal|"/View/Zoom/1:4"
+name|VIEW_ZOOM_1_4
 expr_stmt|;
 break|break;
 case|case
@@ -8027,7 +8099,7 @@ literal|125
 case|:
 name|menu
 operator|=
-literal|"/View/Zoom/1:8"
+name|VIEW_ZOOM_1_8
 expr_stmt|;
 break|break;
 case|case
@@ -8038,7 +8110,7 @@ literal|62
 case|:
 name|menu
 operator|=
-literal|"/View/Zoom/1:16"
+name|VIEW_ZOOM_1_16
 expr_stmt|;
 break|break;
 block|}
