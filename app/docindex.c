@@ -579,6 +579,13 @@ argument_list|(
 name|ideas
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|ideas
+operator|->
+name|menubar
+condition|)
+block|{
 name|menu
 operator|=
 name|ideas
@@ -608,6 +615,12 @@ argument_list|)
 argument_list|,
 name|accel
 argument_list|)
+expr_stmt|;
+block|}
+else|else
+name|menu
+operator|=
+name|NULL
 expr_stmt|;
 comment|/* Setup the status bar */
 name|ideas
@@ -649,6 +662,10 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|menu
+condition|)
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -715,6 +732,10 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|menu
+condition|)
 name|gtk_widget_show
 argument_list|(
 name|menu
