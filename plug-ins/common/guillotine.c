@@ -607,11 +607,11 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-specifier|const
 name|gchar
 modifier|*
 name|hformat
-decl_stmt|,
+decl_stmt|;
+name|gchar
 modifier|*
 name|format
 decl_stmt|;
