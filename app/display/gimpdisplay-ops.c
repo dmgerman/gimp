@@ -402,7 +402,7 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-comment|/* FIXME: There's something wrong here - ..set_usize() seems to not      be doing the right thing when it could... GTK problem? */
+comment|/* FIXME: Still not perfect - have to hide and show the window to     * get it to work.  Adding a queue_resize to the shell doesn't     * seem to help. Anyone have any good ideas here?     */
 name|gint
 name|x
 decl_stmt|,
@@ -607,25 +607,36 @@ name|height
 else|:
 name|max_auto_height
 expr_stmt|;
-name|gtk_widget_set_usize
+comment|/* I don't know why, but if I don't hide the window, it doesn't work */
+name|gtk_widget_hide
+argument_list|(
+name|gdisp
+operator|->
+name|shell
+argument_list|)
+expr_stmt|;
+name|gtk_drawing_area_size
+argument_list|(
+name|GTK_DRAWING_AREA
 argument_list|(
 name|gdisp
 operator|->
 name|canvas
+argument_list|)
 argument_list|,
 name|width
 argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
-comment|/*printf("1w:%d/%d d:%d/%d s:%d/%d b:%d/%d\n", 	     width, height, 	     disp_width, disp_height, 	     shell_width, shell_height, 	     border_x, border_y);fflush(stdout);*/
 name|gtk_widget_show
 argument_list|(
 name|gdisp
 operator|->
-name|canvas
+name|shell
 argument_list|)
 expr_stmt|;
+comment|/*printf("1w:%d/%d d:%d/%d s:%d/%d b:%d/%d\n", 	     width, height, 	     disp_width, disp_height, 	     shell_width, shell_height, 	     border_x, border_y);fflush(stdout);*/
 name|gdk_window_get_origin
 argument_list|(
 name|gdisp
@@ -769,25 +780,36 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+comment|/* I don't know why, but if I don't hide the window, it doesn't work */
+name|gtk_widget_hide
+argument_list|(
+name|gdisp
+operator|->
+name|shell
+argument_list|)
+expr_stmt|;
+name|gtk_drawing_area_size
+argument_list|(
+name|GTK_DRAWING_AREA
 argument_list|(
 name|gdisp
 operator|->
 name|canvas
+argument_list|)
 argument_list|,
-name|max_auto_width
+name|width
 argument_list|,
-name|max_auto_height
+name|height
 argument_list|)
 expr_stmt|;
-comment|/*printf("2w:%d/%d d:%d/%d s:%d/%d b:%d/%d\n", 	     width, height, 	     disp_width, disp_height, 	     shell_width, shell_height, 	     border_x, border_y);fflush(stdout);*/
 name|gtk_widget_show
 argument_list|(
 name|gdisp
 operator|->
-name|canvas
+name|shell
 argument_list|)
 expr_stmt|;
+comment|/*printf("2w:%d/%d d:%d/%d s:%d/%d b:%d/%d\n", 	     width, height, 	     disp_width, disp_height, 	     shell_width, shell_height, 	     border_x, border_y);fflush(stdout);*/
 name|gdk_window_get_origin
 argument_list|(
 name|gdisp
