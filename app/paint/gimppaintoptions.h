@@ -138,10 +138,10 @@ DECL|struct|_GimpGradientOptions
 struct|struct
 name|_GimpGradientOptions
 block|{
-DECL|member|frame
+DECL|member|fade_frame
 name|GtkWidget
 modifier|*
-name|frame
+name|fade_frame
 decl_stmt|;
 DECL|member|use_fade
 name|gboolean
@@ -181,6 +181,11 @@ DECL|member|fade_unit_w
 name|GtkWidget
 modifier|*
 name|fade_unit_w
+decl_stmt|;
+DECL|member|gradient_frame
+name|GtkWidget
+modifier|*
+name|gradient_frame
 decl_stmt|;
 DECL|member|use_gradient
 name|gboolean

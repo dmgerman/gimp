@@ -146,7 +146,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1e2d910103
+DECL|enum|__anon2c545cb60103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -1255,6 +1255,18 @@ name|color_entry
 operator|=
 name|gtk_entry_new
 argument_list|()
+expr_stmt|;
+name|gtk_entry_set_width_chars
+argument_list|(
+name|GTK_ENTRY
+argument_list|(
+name|editor
+operator|->
+name|color_entry
+argument_list|)
+argument_list|,
+literal|7
+argument_list|)
 expr_stmt|;
 name|gtk_entry_set_max_length
 argument_list|(
@@ -3732,11 +3744,10 @@ name|gimage
 decl_stmt|;
 name|editor
 operator|=
-operator|(
-name|GimpColormapEditor
-operator|*
-operator|)
+name|GIMP_COLORMAP_EDITOR
+argument_list|(
 name|data
+argument_list|)
 expr_stmt|;
 name|gimage
 operator|=
@@ -3840,11 +3851,10 @@ name|gimage
 decl_stmt|;
 name|editor
 operator|=
-operator|(
-name|GimpColormapEditor
-operator|*
-operator|)
+name|GIMP_COLORMAP_EDITOR
+argument_list|(
 name|data
+argument_list|)
 expr_stmt|;
 name|gimage
 operator|=
@@ -3854,9 +3864,9 @@ name|gimage
 expr_stmt|;
 if|if
 condition|(
+operator|(
 name|gimage
 operator|&&
-operator|(
 name|gimp_image_base_type
 argument_list|(
 name|gimage
@@ -3864,7 +3874,10 @@ argument_list|)
 operator|==
 name|GIMP_INDEXED
 operator|)
-operator|&&
+condition|)
+block|{
+if|if
+condition|(
 name|gimage
 operator|->
 name|num_cols
@@ -3938,6 +3951,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+block|}
 end_function
 
 begin_function
@@ -3957,12 +3971,11 @@ parameter_list|)
 block|{
 if|if
 condition|(
-operator|!
 name|editor
 operator|->
 name|gimage
 condition|)
-return|return;
+block|{
 name|gimp_colormap_editor_set_index
 argument_list|(
 name|editor
@@ -3985,6 +3998,7 @@ name|editor
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 end_function
 
 begin_function
@@ -4001,6 +4015,13 @@ name|GimpColormapEditor
 modifier|*
 name|editor
 parameter_list|)
+block|{
+if|if
+condition|(
+name|editor
+operator|->
+name|gimage
+condition|)
 block|{
 specifier|const
 name|gchar
@@ -4102,6 +4123,7 @@ argument_list|(
 name|editor
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
