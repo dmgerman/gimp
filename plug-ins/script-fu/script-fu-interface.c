@@ -114,7 +114,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ce4f3a0108
+DECL|struct|__anon2c59f0560108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -793,6 +793,20 @@ operator|*
 name|buf
 operator|=
 literal|'\0'
+expr_stmt|;
+name|buf
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Script-Fu: %s"
+argument_list|)
+argument_list|,
+name|sf_interface
+operator|->
+name|title
+argument_list|)
 expr_stmt|;
 name|sf_interface
 operator|->
