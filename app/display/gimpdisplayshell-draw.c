@@ -3042,14 +3042,14 @@ argument_list|)
 expr_stmt|;
 comment|/*create_tool_label (vbox);*/
 comment|/*create_progress_area (vbox);*/
-name|gtk_widget_show
-argument_list|(
-name|window
-argument_list|)
-expr_stmt|;
 name|create_color_area
 argument_list|(
 name|vbox
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|window
 argument_list|)
 expr_stmt|;
 name|toolbox_shell
