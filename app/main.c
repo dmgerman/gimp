@@ -188,16 +188,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|on_sig_child
-parameter_list|(
-name|gint
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
@@ -1543,14 +1533,25 @@ argument_list|,
 name|on_signal
 argument_list|)
 expr_stmt|;
-comment|/* Handle child exits */
-name|gimp_signal_syscallrestart
+ifndef|#
+directive|ifndef
+name|__EMX__
+comment|/* OS/2 may not support SA_NOCLDSTOP -GRO */
+comment|/* Disable child exit notification.  This doesn't just block */
+comment|/* receipt of SIGCHLD, it in fact completely disables the    */
+comment|/* generation of the signal by the OS.  This behavior is     */
+comment|/* mandated by POSIX.1.                                      */
+name|gimp_signal_private
 argument_list|(
 name|SIGCHLD
 argument_list|,
-name|on_sig_child
+name|NULL
+argument_list|,
+name|SA_NOCLDSTOP
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 endif|#
 directive|endif
 name|g_log_set_handler
@@ -1872,54 +1873,6 @@ argument_list|(
 literal|"unknown signal"
 argument_list|)
 expr_stmt|;
-break|break;
-block|}
-block|}
-end_function
-
-begin_comment
-comment|/* gimp core signal handler for death-of-child signals */
-end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|on_sig_child (gint sig_num)
-name|on_sig_child
-parameter_list|(
-name|gint
-name|sig_num
-parameter_list|)
-block|{
-name|gint
-name|pid
-decl_stmt|;
-name|gint
-name|status
-decl_stmt|;
-while|while
-condition|(
-literal|1
-condition|)
-block|{
-name|pid
-operator|=
-name|waitpid
-argument_list|(
-name|WAIT_ANY
-argument_list|,
-operator|&
-name|status
-argument_list|,
-name|WNOHANG
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|pid
-operator|<=
-literal|0
-condition|)
 break|break;
 block|}
 block|}

@@ -49,8 +49,15 @@ name|struct
 name|sigaction
 name|osa
 decl_stmt|;
-comment|/* this field is a union of sa_sighandler.sa_sighandler1 and */
-comment|/* sa_sigaction1 - don't set both at once...                 */
+comment|/* The sa_handler (mandated by POSIX.1) and sa_sigaction (a      */
+comment|/* common extension) are often implemented by the OS as members  */
+comment|/* of a union.  This means you CAN NOT set both, you set one or  */
+comment|/* the other.  Caveat programmer!                                */
+comment|/* Passing gimp_signal_private a gimp_sighandler of NULL is not  */
+comment|/* an error, and generally results in the action for that signal */
+comment|/* being set to SIG_DFL (default behavior).  Many OSes define    */
+comment|/* SIG_DFL as (void (*)()0, so setting sa_handler to NULL is     */
+comment|/* the same thing as passing SIG_DFL to it.                      */
 name|sa
 operator|.
 name|sa_handler
