@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b64d38e0103
+DECL|enum|__anon28e3c6c20103
 block|{
 DECL|enumerator|COLORBLIND_DEFICIENCY_PROTANOPIA
 name|COLORBLIND_DEFICIENCY_PROTANOPIA
@@ -345,7 +345,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b64d38e0203
+DECL|enum|__anon28e3c6c20203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1130,9 +1130,14 @@ name|offset
 init|=
 literal|128
 decl_stmt|;
+name|gint
+name|step
+init|=
+literal|64
+decl_stmt|;
 while|while
 condition|(
-name|TRUE
+name|step
 condition|)
 block|{
 if|if
@@ -1160,11 +1165,10 @@ index|]
 operator|>=
 name|value
 condition|)
-return|return
+break|break;
 name|offset
-return|;
-name|offset
-operator|++
+operator|+=
+name|step
 expr_stmt|;
 block|}
 else|else
@@ -1184,14 +1188,20 @@ index|]
 operator|<
 name|value
 condition|)
+break|break;
+name|offset
+operator|-=
+name|step
+expr_stmt|;
+block|}
+name|step
+operator|/=
+literal|2
+expr_stmt|;
+block|}
 return|return
 name|offset
 return|;
-name|offset
-operator|--
-expr_stmt|;
-block|}
-block|}
 block|}
 end_function
 
