@@ -1951,7 +1951,10 @@ operator|)
 return|;
 elif|#
 directive|elif
+name|defined
+argument_list|(
 name|G_OS_WIN32
+argument_list|)
 name|FILETIME
 name|creation
 decl_stmt|,
