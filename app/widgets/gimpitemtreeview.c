@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4176db0103
+DECL|enum|__anon28decf880103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -189,7 +189,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4176db0203
+DECL|enum|__anon28decf880203
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -3818,14 +3818,6 @@ name|GimpContainer
 modifier|*
 name|container
 decl_stmt|;
-name|GimpObject
-modifier|*
-name|src_object
-decl_stmt|;
-name|GimpObject
-modifier|*
-name|dest_object
-decl_stmt|;
 name|gint
 name|src_index
 decl_stmt|;
@@ -3839,27 +3831,16 @@ argument_list|(
 name|container_view
 argument_list|)
 expr_stmt|;
-name|src_object
-operator|=
-name|GIMP_OBJECT
-argument_list|(
-name|src_viewable
-argument_list|)
-expr_stmt|;
-name|dest_object
-operator|=
-name|GIMP_OBJECT
-argument_list|(
-name|dest_viewable
-argument_list|)
-expr_stmt|;
 name|src_index
 operator|=
 name|gimp_container_get_child_index
 argument_list|(
 name|container
 argument_list|,
-name|src_object
+name|GIMP_OBJECT
+argument_list|(
+name|src_viewable
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|dest_index
@@ -3868,7 +3849,10 @@ name|gimp_container_get_child_index
 argument_list|(
 name|container
 argument_list|,
-name|dest_object
+name|GIMP_OBJECT
+argument_list|(
+name|dest_viewable
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|item_view_class
@@ -3984,7 +3968,7 @@ name|gimage
 argument_list|,
 name|GIMP_ITEM
 argument_list|(
-name|src_object
+name|src_viewable
 argument_list|)
 argument_list|,
 name|dest_index
