@@ -4451,7 +4451,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2c8556bf0108
+DECL|struct|__anon2c2da3610108
 typedef|typedef
 struct|struct
 block|{
@@ -16216,6 +16216,11 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
+DECL|member|gimage
+name|GImage
+modifier|*
+name|gimage
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -16301,6 +16306,13 @@ operator|->
 name|name_entry
 argument_list|)
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimage_dirty
+argument_list|(
+name|options
+operator|->
+name|gimage
 argument_list|)
 expr_stmt|;
 block|}
@@ -16478,6 +16490,14 @@ operator|=
 name|layer_widget
 operator|->
 name|layer
+expr_stmt|;
+name|options
+operator|->
+name|gimage
+operator|=
+name|layer_widget
+operator|->
+name|gimage
 expr_stmt|;
 comment|/*  the dialog  */
 name|options
