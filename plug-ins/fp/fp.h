@@ -56,7 +56,7 @@ value|GDK_EXPOSURE_MASK | \                         GDK_ENTER_NOTIFY_MASK | \   
 end_define
 
 begin_typedef
-DECL|struct|__anon29eaabf30108
+DECL|struct|__anon2c4132680108
 typedef|typedef
 struct|struct
 block|{
@@ -79,7 +79,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29eaabf30208
+DECL|struct|__anon2c4132680208
 typedef|typedef
 struct|struct
 block|{
@@ -113,7 +113,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon29eaabf30303
+DECL|enum|__anon2c4132680303
 typedef|typedef
 enum|enum
 block|{
@@ -135,7 +135,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon29eaabf30403
+DECL|enum|__anon2c4132680403
 enum|enum
 block|{
 DECL|enumerator|NONEATALL
@@ -167,7 +167,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon29eaabf30503
+DECL|enum|__anon2c4132680503
 enum|enum
 block|{
 DECL|enumerator|RED
@@ -195,7 +195,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon29eaabf30603
+DECL|enum|__anon2c4132680603
 enum|enum
 block|{
 DECL|enumerator|DOWN
@@ -213,7 +213,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon29eaabf30703
+DECL|enum|__anon2c4132680703
 enum|enum
 block|{
 DECL|enumerator|BY_HUE
@@ -232,7 +232,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon29eaabf30808
+DECL|struct|__anon2c4132680808
 typedef|typedef
 struct|struct
 block|{
@@ -278,7 +278,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29eaabf30908
+DECL|struct|__anon2c4132680908
 typedef|typedef
 struct|struct
 block|{
@@ -765,6 +765,7 @@ parameter_list|,
 name|GtkWidget
 modifier|*
 parameter_list|,
+specifier|const
 name|char
 modifier|*
 parameter_list|)
