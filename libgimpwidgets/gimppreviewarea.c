@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28bfa3790103
+DECL|enum|__anon2c2c8f0b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3526,7 +3526,7 @@ block|{
 name|guchar
 name|inter
 index|[
-literal|1
+literal|2
 index|]
 decl_stmt|;
 name|inter
@@ -6306,7 +6306,7 @@ block|{
 name|guchar
 name|inter
 index|[
-literal|1
+literal|2
 index|]
 decl_stmt|;
 name|inter
