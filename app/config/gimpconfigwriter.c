@@ -542,6 +542,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_config_writer_comment_mode:  * @writer: a #GimpConfigWriter  * @enable: %TRUE to enable comment mode, %FALSE to disable it  *  * This function toggles whether the @writer should create commented  * or uncommented output. This feature is used to generate the  * system-wide installed gimprc that documents the default settings.  *  * Since comments have to start at the beginning of a line, this  * funtion will insert a newline if necessary.  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_config_writer_comment_mode (GimpConfigWriter * writer,gboolean enable)
@@ -581,7 +585,33 @@ operator|)
 expr_stmt|;
 if|if
 condition|(
+name|writer
+operator|->
+name|comment
+operator|==
 name|enable
+condition|)
+return|return;
+name|writer
+operator|->
+name|comment
+operator|=
+name|enable
+expr_stmt|;
+if|if
+condition|(
+name|enable
+condition|)
+block|{
+if|if
+condition|(
+name|writer
+operator|->
+name|buffer
+operator|->
+name|len
+operator|==
+literal|0
 condition|)
 name|g_string_append_len
 argument_list|(
@@ -594,14 +624,19 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
+else|else
+name|gimp_config_writer_newline
+argument_list|(
 name|writer
-operator|->
-name|comment
-operator|=
-name|enable
+argument_list|)
 expr_stmt|;
 block|}
+block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_config_writer_open:  * @writer: a #GimpConfigWriter  * @name: name of the element to open  *  * This function writes the opening parenthese followed by @name.  * It also increases the indentation level and sets a mark that  * can be used by gimp_config_writer_revert().  **/
+end_comment
 
 begin_function
 name|void
@@ -681,6 +716,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_config_writer_print:  * @writer: a #GimpConfigWriter  * @string: a string to write  * @len: number of bytes from @string or -1 if @string is NUL-terminated.  *  * Appends a space followed by @string to the @writer. Note that string  * must not contain any special characters that might need to be escaped.  **/
+end_comment
 
 begin_function
 name|void
@@ -766,6 +805,10 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_config_writer_printf:  * @writer: a #GimpConfigWriter  * @format: a format string as described for g_strdup_printf().  * @Varargs: list of arguments according to @format  *  * A printf-like function for #GimpConfigWriter.  **/
+end_comment
 
 begin_function
 name|void
@@ -859,6 +902,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_config_writer_string:  * @writer: a #GimpConfigWriter  * @string: a NUL-terminated string  *  * Writes a string value to @writer. The @string is quoted and special  * characters are escaped.  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_config_writer_string (GimpConfigWriter * writer,const gchar * string)
@@ -908,6 +955,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_config_writer_revert:  * @writer: a #GimpConfigWriter  *  * Reverts all changes to @writer that were done since the last call  * to gimp_config_writer_open(). This can only work if you didn't call  * gimp_config_writer_close() yet.  **/
+end_comment
 
 begin_function
 name|void
@@ -977,6 +1028,10 @@ literal|1
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_config_writer_close:  * @writer: a #GimpConfigWriter  *  * Closes an element opened with gimp_config_writer_open().  **/
+end_comment
 
 begin_function
 name|void
@@ -1053,6 +1108,10 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_config_writer_finish:  * @writer: a #GimpConfigWriter  * @footer: text to include as comment at the bottom of the file  * @error: return location for possible errors  *  * This function finishes the work of @writer and frees it afterwards.  * It closes all open elements, appends an optional comment and  * releases all resources allocated by @writer. You must not access  * the @writer afterwards.  *  * Return value: %TRUE if everything could be successfully written,  *               %FALSE otherwise  **/
+end_comment
 
 begin_function
 name|gboolean
@@ -1315,6 +1374,9 @@ name|gchar
 modifier|*
 name|s
 decl_stmt|;
+name|gboolean
+name|comment_mode
+decl_stmt|;
 name|gint
 name|i
 decl_stmt|,
@@ -1356,29 +1418,24 @@ operator|!
 name|comment
 condition|)
 return|return;
+name|comment_mode
+operator|=
+name|writer
+operator|->
+name|comment
+expr_stmt|;
+name|gimp_config_writer_comment_mode
+argument_list|(
+name|writer
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|len
 operator|=
 name|strlen
 argument_list|(
 name|comment
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|writer
-operator|->
-name|comment
-condition|)
-name|g_string_append_len
-argument_list|(
-name|writer
-operator|->
-name|buffer
-argument_list|,
-literal|"# "
-argument_list|,
-literal|2
 argument_list|)
 expr_stmt|;
 while|while
@@ -1469,17 +1526,6 @@ argument_list|,
 name|i
 argument_list|)
 expr_stmt|;
-name|g_string_append_len
-argument_list|(
-name|writer
-operator|->
-name|buffer
-argument_list|,
-literal|"\n# "
-argument_list|,
-literal|3
-argument_list|)
-expr_stmt|;
 name|i
 operator|++
 expr_stmt|;
@@ -1491,20 +1537,28 @@ name|len
 operator|-=
 name|i
 expr_stmt|;
-block|}
-name|g_string_truncate
+if|if
+condition|(
+name|len
+operator|>
+literal|0
+condition|)
+name|gimp_config_writer_newline
 argument_list|(
 name|writer
-operator|->
-name|buffer
-argument_list|,
+argument_list|)
+expr_stmt|;
+block|}
+name|gimp_config_writer_comment_mode
+argument_list|(
 name|writer
-operator|->
-name|buffer
-operator|->
-name|len
-operator|-
-literal|2
+argument_list|,
+name|comment_mode
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_newline
+argument_list|(
+name|writer
 argument_list|)
 expr_stmt|;
 if|if
