@@ -4583,7 +4583,7 @@ argument_list|(
 name|list_item
 argument_list|)
 argument_list|,
-literal|"factralexplorer"
+literal|"fractalexplorer"
 argument_list|,
 name|g
 argument_list|)
