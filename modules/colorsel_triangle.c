@@ -131,20 +131,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|colorsel_triangle_set_channel
-parameter_list|(
-name|gpointer
-name|selector_data
-parameter_list|,
-name|GimpColorSelectorChannelType
-name|channel
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/* local methods */
 end_comment
@@ -162,7 +148,8 @@ name|colorsel_triangle_free
 block|,
 name|colorsel_triangle_set_color
 block|,
-name|colorsel_triangle_set_channel
+name|NULL
+comment|/*  set_channel  */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -253,7 +240,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278657e10103
+DECL|enum|__anon2a2c60c70103
 block|{
 DECL|enumerator|HUE
 name|HUE
@@ -813,21 +800,6 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|colorsel_triangle_set_channel (gpointer selector_data,GimpColorSelectorChannelType channel)
-name|colorsel_triangle_set_channel
-parameter_list|(
-name|gpointer
-name|selector_data
-parameter_list|,
-name|GimpColorSelectorChannelType
-name|channel
-parameter_list|)
-block|{ }
 end_function
 
 begin_comment

@@ -96,7 +96,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bde0c500108
+DECL|struct|__anon2b7750e80108
 block|{
 DECL|member|rgb
 name|GimpRGB
@@ -208,20 +208,6 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|colorsel_water_set_channel
-parameter_list|(
-name|gpointer
-name|data
-parameter_list|,
-name|GimpColorSelectorChannelType
-name|channel
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|colorsel_water_update
 parameter_list|(
 name|ColorselWater
@@ -248,7 +234,8 @@ name|colorsel_water_free
 block|,
 name|colorsel_water_set_color
 block|,
-name|colorsel_water_set_channel
+name|NULL
+comment|/*  set_channel  */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -2214,21 +2201,6 @@ operator|*
 name|rgb
 expr_stmt|;
 block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|colorsel_water_set_channel (gpointer data,GimpColorSelectorChannelType channel)
-name|colorsel_water_set_channel
-parameter_list|(
-name|gpointer
-name|data
-parameter_list|,
-name|GimpColorSelectorChannelType
-name|channel
-parameter_list|)
-block|{ }
 end_function
 
 begin_function

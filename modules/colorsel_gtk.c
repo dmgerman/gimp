@@ -128,20 +128,6 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|colorsel_gtk_set_channel
-parameter_list|(
-name|gpointer
-name|data
-parameter_list|,
-name|GimpColorSelectorChannelType
-name|channel
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|colorsel_gtk_update
 parameter_list|(
 name|GtkWidget
@@ -201,7 +187,8 @@ name|colorsel_gtk_free
 block|,
 name|colorsel_gtk_set_color
 block|,
-name|colorsel_gtk_set_channel
+name|NULL
+comment|/*  set_channel  */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -366,7 +353,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c07f6810108
+DECL|struct|__anon28ef345f0108
 block|{
 DECL|member|selector
 name|GtkWidget
@@ -745,21 +732,6 @@ name|color
 argument_list|)
 expr_stmt|;
 block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|colorsel_gtk_set_channel (gpointer data,GimpColorSelectorChannelType channel)
-name|colorsel_gtk_set_channel
-parameter_list|(
-name|gpointer
-name|data
-parameter_list|,
-name|GimpColorSelectorChannelType
-name|channel
-parameter_list|)
-block|{ }
 end_function
 
 begin_function
