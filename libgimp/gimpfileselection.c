@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<sys/types.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<sys/stat.h>
 end_include
 
@@ -147,7 +153,7 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon2921859d0103
+DECL|enum|__anon2b019ec60103
 enum|enum
 block|{
 DECL|enumerator|GFS_FILENAME_CHANGED_SIGNAL
