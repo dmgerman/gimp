@@ -343,7 +343,7 @@ DECL|macro|PREVIEW_MASK
 define|#
 directive|define
 name|PREVIEW_MASK
-value|GDK_EXPOSURE_MASK | \                        GDK_MOTION_NOTIFY | \ 		       GDK_POINTER_MOTION_MASK | \                        GDK_BUTTON_PRESS_MASK | \ 		       GDK_BUTTON_RELEASE_MASK | \ 		       GDK_BUTTON_MOTION_MASK | \ 		       GDK_KEY_PRESS_MASK | \ 		       GDK_KEY_RELEASE_MASK
+value|(GDK_EXPOSURE_MASK       | \ 		       GDK_POINTER_MOTION_MASK | \                        GDK_BUTTON_PRESS_MASK   | \ 		       GDK_BUTTON_RELEASE_MASK | \ 		       GDK_BUTTON_MOTION_MASK  | \ 		       GDK_KEY_PRESS_MASK      | \ 		       GDK_KEY_RELEASE_MASK)
 end_define
 
 begin_decl_stmt
@@ -1098,7 +1098,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aaf0faf0103
+DECL|enum|__anon2b3db7de0103
 block|{
 DECL|enumerator|LINE
 name|LINE
@@ -1150,7 +1150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aaf0faf0203
+DECL|enum|__anon2b3db7de0203
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -1171,7 +1171,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aaf0faf0303
+DECL|enum|__anon2b3db7de0303
 block|{
 DECL|enumerator|ORIGINAL_LAYER
 name|ORIGINAL_LAYER
@@ -1192,7 +1192,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aaf0faf0403
+DECL|enum|__anon2b3db7de0403
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -1219,7 +1219,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aaf0faf0503
+DECL|enum|__anon2b3db7de0503
 block|{
 DECL|enumerator|PAINT_BRUSH_TYPE
 name|PAINT_BRUSH_TYPE
@@ -1240,7 +1240,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aaf0faf0603
+DECL|enum|__anon2b3db7de0603
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -1408,7 +1408,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aaf0faf0708
+DECL|struct|__anon2b3db7de0708
 block|{
 DECL|member|gridspacing
 name|gint
@@ -1447,7 +1447,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aaf0faf0808
+DECL|struct|__anon2b3db7de0808
 block|{
 DECL|member|gridspacing
 name|void
@@ -1496,7 +1496,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aaf0faf0908
+DECL|struct|__anon2b3db7de0908
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -1674,7 +1674,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aaf0faf0a03
+DECL|enum|__anon2b3db7de0a03
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1704,7 +1704,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aaf0faf0b03
+DECL|enum|__anon2b3db7de0b03
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -1720,7 +1720,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aaf0faf0c03
+DECL|enum|__anon2b3db7de0c03
 block|{
 DECL|enumerator|FILL_FOREGROUND
 name|FILL_FOREGROUND
@@ -1745,7 +1745,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aaf0faf0d03
+DECL|enum|__anon2b3db7de0d03
 block|{
 DECL|enumerator|FILL_EACH
 name|FILL_EACH
