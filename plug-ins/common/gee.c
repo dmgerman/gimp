@@ -71,9 +71,12 @@ begin_comment
 comment|/* Is the plug-in hidden?  Hey, if you can read this, you may    as well comment-out the next line...! */
 end_comment
 
-begin_comment
-comment|//#define HIDDEN
-end_comment
+begin_define
+DECL|macro|HIDDEN
+define|#
+directive|define
+name|HIDDEN
+end_define
 
 begin_comment
 comment|/* Declare local functions. */
