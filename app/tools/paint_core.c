@@ -3619,6 +3619,18 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
+comment|/* Only draw line if it's in the visible area          thus preventing from drawing rubbish		*/
+if|if
+condition|(
+name|tx2
+operator|>
+literal|0
+operator|&&
+name|ty2
+operator|>
+literal|0
+condition|)
+block|{
 comment|/*  Draw start target  */
 name|gdk_draw_line
 argument_list|(
@@ -3785,6 +3797,7 @@ argument_list|,
 name|ty2
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 return|return;
 block|}
