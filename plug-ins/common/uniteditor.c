@@ -15,6 +15,29 @@ directive|include
 file|<string.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -49,7 +72,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a74bd50103
+DECL|enum|__anon2b0d9ab70103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -170,7 +193,7 @@ end_macro
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a74bd50208
+DECL|struct|__anon2b0d9ab70208
 block|{
 DECL|member|title
 specifier|const
@@ -1651,7 +1674,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|gtk_tree_model_get_iter_root
+name|gtk_tree_model_get_iter_first
 argument_list|(
 name|GTK_TREE_MODEL
 argument_list|(
@@ -1734,7 +1757,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gtk_tree_model_get_iter_root
+name|gtk_tree_model_get_iter_first
 argument_list|(
 name|model
 argument_list|,
@@ -1894,7 +1917,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gtk_tree_model_get_iter_root
+name|gtk_tree_model_get_iter_first
 argument_list|(
 name|model
 argument_list|,

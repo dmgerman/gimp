@@ -316,14 +316,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_drawing_area_size
-argument_list|(
-name|GTK_DRAWING_AREA
+name|gtk_widget_set_size_request
 argument_list|(
 name|gfig_context
 operator|->
 name|preview
-argument_list|)
 argument_list|,
 name|preview_width
 argument_list|,

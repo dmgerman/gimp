@@ -1571,7 +1571,6 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/* set up the dialog */
 name|dialog
 operator|=
 name|gimp_dialog_new
@@ -1607,7 +1606,7 @@ argument_list|,
 literal|6
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
