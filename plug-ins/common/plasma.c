@@ -143,7 +143,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2989673f0108
+DECL|struct|__anon2bb6a06e0108
 block|{
 DECL|member|seed
 name|gint
@@ -167,7 +167,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2989673f0208
+DECL|struct|__anon2bb6a06e0208
 block|{
 DECL|member|run
 name|gint
