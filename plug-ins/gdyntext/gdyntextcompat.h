@@ -153,7 +153,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ab0e060103
+DECL|enum|__anon28d935890103
 block|{
 DECL|enumerator|C_TEXT
 name|C_TEXT
@@ -209,46 +209,6 @@ block|}
 name|GDTCompatBlock
 typedef|;
 end_typedef
-
-begin_comment
-comment|/* gimp-1.1.14+ function names reorganization forgotten something */
-end_comment
-
-begin_if
-if|#
-directive|if
-name|defined
-argument_list|(
-name|GIMP_HAVE_PARASITES
-argument_list|)
-operator|&&
-name|GIMP_MINOR_VERSION
-operator|<
-literal|2
-operator|&&
-name|GIMP_MICRO_VERSION
-operator|<
-literal|14
-end_if
-
-begin_warning
-warning|#
-directive|warning
-warning|Replacing missing function 'gimp_drawable_parasite_find'
-end_warning
-
-begin_define
-DECL|macro|gimp_drawable_parasite_find
-define|#
-directive|define
-name|gimp_drawable_parasite_find
-value|gimp_drawable_parasite_find
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_function_decl
 name|gboolean

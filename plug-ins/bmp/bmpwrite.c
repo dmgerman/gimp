@@ -127,7 +127,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af920fa0108
+DECL|struct|__anon2c8adb710108
 block|{
 DECL|member|run
 name|gint
@@ -901,9 +901,6 @@ name|SpZeile
 operator|*
 name|rows
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_RESOLUTION_INFO
 block|{
 name|gdouble
 name|xresolution
@@ -964,24 +961,6 @@ literal|2.54
 expr_stmt|;
 block|}
 block|}
-else|#
-directive|else
-comment|/* GIMP_HAVE_RESOLUTION_INFO */
-name|Bitmap_Head
-operator|.
-name|biXPels
-operator|=
-literal|1
-expr_stmt|;
-name|Bitmap_Head
-operator|.
-name|biYPels
-operator|=
-literal|1
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* GIMP_HAVE_RESOLUTION_INFO */
 if|if
 condition|(
 name|BitsPerPixel

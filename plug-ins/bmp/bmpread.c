@@ -1262,9 +1262,6 @@ argument_list|,
 name|Grey
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_RESOLUTION_INFO
 if|if
 condition|(
 name|Bitmap_Head
@@ -1287,7 +1284,7 @@ decl_stmt|;
 name|gdouble
 name|yresolution
 decl_stmt|;
-comment|/* I don't agree with scott's feeling that Gimp should be      * trying to "fix" metric resolution translations, in the      * long term Gimp should be SI (metric) anyway, but we      * haven't told the Americans that yet  */
+comment|/* I don't agree with scott's feeling that Gimp should be        * trying to "fix" metric resolution translations, in the        * long term Gimp should be SI (metric) anyway, but we        * haven't told the Americans that yet  */
 name|xresolution
 operator|=
 name|Bitmap_Head
@@ -1314,9 +1311,6 @@ name|yresolution
 argument_list|)
 expr_stmt|;
 block|}
-endif|#
-directive|endif
-comment|/* GIMP_HAVE_RESOLUTION_INFO */
 return|return
 operator|(
 name|image_ID

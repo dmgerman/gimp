@@ -141,32 +141,6 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|GIMP_CHECK_VERSION
-end_ifndef
-
-begin_define
-DECL|macro|GIMP_CHECK_VERSION (a,b,c)
-define|#
-directive|define
-name|GIMP_CHECK_VERSION
-parameter_list|(
-name|a
-parameter_list|,
-name|b
-parameter_list|,
-name|c
-parameter_list|)
-value|0
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -300,16 +274,6 @@ condition|)
 return|return
 name|lastpath
 return|;
-if|#
-directive|if
-name|GIMP_CHECK_VERSION
-argument_list|(
-literal|1
-operator|,
-literal|1
-operator|,
-literal|0
-argument_list|)
 name|gimpdatasubdir
 operator|=
 name|g_strconcat
@@ -342,25 +306,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-else|#
-directive|else
-name|defaultpath
-operator|=
-name|DEFAULTPATH
-expr_stmt|;
-name|gimpdatasubdir
-operator|=
-name|strchr
-argument_list|(
-name|defaultpath
-argument_list|,
-literal|':'
-argument_list|)
-operator|+
-literal|1
-expr_stmt|;
-endif|#
-directive|endif
 if|if
 condition|(
 name|standalone
@@ -409,16 +354,6 @@ argument_list|)
 condition|)
 block|{
 comment|/* No gimpressionist-path parameter, 	       * and the default doesn't exist */
-if|#
-directive|if
-name|GIMP_CHECK_VERSION
-argument_list|(
-literal|1
-operator|,
-literal|1
-operator|,
-literal|0
-argument_list|)
 name|g_message
 argument_list|(
 literal|"*** Warning ***\n"
@@ -433,20 +368,6 @@ literal|"gimpressionist\")\n"
 literal|"(or similar) to your gimprc file.\n"
 argument_list|)
 expr_stmt|;
-else|#
-directive|else
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"*** Warning ***\nIt is highly recommended to add\n  (gimpressionist-path \"%s\")\n(or similar) to your gimprc file.\n"
-argument_list|)
-argument_list|,
-name|defaultpath
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
 block|}
 name|tmps
 operator|=

@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpfeatures.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -71,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb731460103
+DECL|enum|__anon29801eb30103
 block|{
 DECL|enumerator|SPLASH_SHOW_LOGO_NEVER
 name|SPLASH_SHOW_LOGO_NEVER

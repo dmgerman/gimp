@@ -310,7 +310,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acbccb20108
+DECL|struct|__anon2c0b8a450108
 block|{
 DECL|member|quality
 name|gdouble
@@ -357,7 +357,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acbccb20208
+DECL|struct|__anon2c0b8a450208
 block|{
 DECL|member|run
 name|gint
@@ -372,7 +372,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acbccb20308
+DECL|struct|__anon2c0b8a450308
 block|{
 DECL|member|cinfo
 name|struct
@@ -1103,16 +1103,10 @@ init|=
 operator|-
 literal|1
 decl_stmt|;
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_PARASITES
 name|GimpParasite
 modifier|*
 name|parasite
 decl_stmt|;
-endif|#
-directive|endif
-comment|/* GIMP_HAVE_PARASITES */
 name|gboolean
 name|err
 decl_stmt|;
@@ -1378,9 +1372,6 @@ name|image_comment
 operator|=
 name|NULL
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_PARASITES
 name|parasite
 operator|=
 name|gimp_image_parasite_find
@@ -1410,9 +1401,6 @@ name|parasite
 argument_list|)
 expr_stmt|;
 block|}
-endif|#
-directive|endif
-comment|/* GIMP_HAVE_PARASITES */
 if|if
 condition|(
 operator|!
@@ -1496,9 +1484,6 @@ operator|&
 name|jsvals
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_PARASITES
 comment|/* load up the previously used values */
 name|parasite
 operator|=
@@ -1664,9 +1649,6 @@ name|parasite
 argument_list|)
 expr_stmt|;
 block|}
-endif|#
-directive|endif
-comment|/* GIMP_HAVE_PARASITES */
 comment|/* we start an undo_group and immediately freeze undo saving 	     so that we can avoid sucking up tile cache with our unneeded 	     preview steps. */
 name|gimp_undo_push_group_start
 argument_list|(
@@ -1963,9 +1945,6 @@ operator|&
 name|jsvals
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_PARASITES
 name|parasite
 operator|=
 name|gimp_image_parasite_find
@@ -2120,9 +2099,6 @@ name|parasite
 argument_list|)
 expr_stmt|;
 block|}
-endif|#
-directive|endif
-comment|/* GIMP_HAVE_PARASITES */
 break|break;
 default|default:
 break|break;
@@ -2208,9 +2184,6 @@ name|image_ID
 argument_list|)
 expr_stmt|;
 block|}
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_PARASITES
 comment|/* pw - now we need to change the defaults to be whatever        * was used to save this image.  Dump the old parasites        * and add new ones. */
 name|gimp_image_parasite_detach
 argument_list|(
@@ -2296,9 +2269,6 @@ argument_list|(
 name|parasite
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
-comment|/* Have Parasites */
 block|}
 else|else
 block|{
@@ -2661,9 +2631,6 @@ name|start
 decl_stmt|,
 name|end
 decl_stmt|;
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_PARASITES
 name|JpegSaveVals
 name|local_save_vals
 decl_stmt|;
@@ -2681,9 +2648,6 @@ name|vals_parasite
 init|=
 name|NULL
 decl_stmt|;
-endif|#
-directive|endif
-comment|/* GIMP_HAVE_PARASITES */
 comment|/* We set up the normal JPEG error routines. */
 name|cinfo
 operator|.
@@ -2863,9 +2827,6 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/* We can ignore the return value from jpeg_read_header since    *   (a) suspension is not possible with the stdio data source, and    *   (b) we passed TRUE to reject a tables-only JPEG file as an error.    * See libjpeg.doc for more info.    */
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_PARASITES
 if|if
 condition|(
 operator|!
@@ -3017,9 +2978,6 @@ name|local_save_vals
 argument_list|)
 expr_stmt|;
 block|}
-endif|#
-directive|endif
-comment|/* GIMP_HAVE_PARASITES */
 comment|/* Step 4: set parameters for decompression */
 comment|/* In this example, we don't need to change any of the defaults set by    * jpeg_read_header(), so we do nothing here.    */
 comment|/* Step 5: Start decompressor */
@@ -3304,9 +3262,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_RESOLUTION_INFO
 comment|/* Step 5.1: if the file had resolution information, set it on the image */
 if|if
 condition|(
@@ -3419,9 +3374,6 @@ name|yresolution
 argument_list|)
 expr_stmt|;
 block|}
-endif|#
-directive|endif
-comment|/* GIMP_HAVE_RESOLUTION_INFO */
 comment|/* Step 6: while (scan lines remain to be read) */
 comment|/*           jpeg_read_scanlines(...); */
 comment|/* Here we use the library's state variable cinfo.output_scanline as the    * loop counter, so that we don't have to keep track ourselves.    */
@@ -3749,9 +3701,6 @@ name|drawable
 argument_list|)
 expr_stmt|;
 comment|/* pw - Last of all, attach the parasites (couldn't do it earlier -      there was no image. */
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_PARASITES
 if|if
 condition|(
 operator|!
@@ -3795,9 +3744,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-endif|#
-directive|endif
-comment|/* GIMP_HAVE_PARASITES */
 return|return
 name|image_ID
 return|;
@@ -4985,9 +4931,6 @@ name|JDCT_FLOAT
 expr_stmt|;
 break|break;
 block|}
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_RESOLUTION_INFO
 block|{
 name|gdouble
 name|xresolution
@@ -5083,9 +5026,6 @@ name|yresolution
 expr_stmt|;
 block|}
 block|}
-endif|#
-directive|endif
-comment|/* GIMP_HAVE_RESOLUTION_INFO */
 comment|/* Step 4: Start compressor */
 comment|/* TRUE ensures that we will write a complete interchange-JPEG file.    * Pass TRUE unless you are very sure of what you're doing.    */
 name|jpeg_start_compress

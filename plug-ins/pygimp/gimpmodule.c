@@ -110,33 +110,6 @@ end_decl_stmt
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|GIMP_CHECK_VERSION
-end_ifndef
-
-begin_define
-DECL|macro|GIMP_CHECK_VERSION (major,minor,micro)
-define|#
-directive|define
-name|GIMP_CHECK_VERSION
-parameter_list|(
-name|major
-parameter_list|,
-name|minor
-parameter_list|,
-name|micro
-parameter_list|)
-define|\
-value|(GIMP_MAJOR_VERSION> (major) || \      (GIMP_MAJOR_VERSION == (major)&& GIMP_MINOR_VERSION> (minor)) || \      (GIMP_MAJOR_VERSION == (major)&& GIMP_MINOR_VERSION == (minor)&& \       GIMP_MICRO_VERSION>= (micro)))
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_ifndef
-ifndef|#
-directive|ifndef
 name|PG_DEBUG
 end_ifndef
 
@@ -162,7 +135,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a0c8d280108
+DECL|struct|__anon27de54320108
 typedef|typedef
 struct|struct
 block|{
@@ -202,7 +175,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a0c8d280208
+DECL|struct|__anon27de54320208
 typedef|typedef
 struct|struct
 block|{
@@ -311,7 +284,7 @@ comment|/* Declarations for objects of type Image */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a0c8d280308
+DECL|struct|__anon27de54320308
 typedef|typedef
 struct|struct
 block|{
@@ -365,7 +338,7 @@ comment|/* Declarations for objects of type Display */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a0c8d280408
+DECL|struct|__anon27de54320408
 typedef|typedef
 struct|struct
 block|{
@@ -419,7 +392,7 @@ comment|/* Declarations for objects of type Layer and channel */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a0c8d280508
+DECL|struct|__anon27de54320508
 typedef|typedef
 struct|struct
 block|{
@@ -543,7 +516,7 @@ comment|/* Declarations for objects of type Tile */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a0c8d280608
+DECL|struct|__anon27de54320608
 typedef|typedef
 struct|struct
 block|{
@@ -609,7 +582,7 @@ comment|/* Declarations for objects of type PixelRegion */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a0c8d280708
+DECL|struct|__anon27de54320708
 typedef|typedef
 struct|struct
 block|{
@@ -678,18 +651,12 @@ begin_comment
 comment|/* ---------------------------------------------------------------- */
 end_comment
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_PARASITES
-end_ifdef
-
 begin_comment
 comment|/* Declarations for objects of type GimpParasite */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a0c8d280808
+DECL|struct|__anon27de54320808
 typedef|typedef
 struct|struct
 block|{
@@ -736,11 +703,6 @@ name|para
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_comment
 comment|/* ---------------------------------------------------------------- */
@@ -2314,9 +2276,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_PARASITES
 case|case
 name|GIMP_PDB_PARASITE
 case|:
@@ -2350,8 +2309,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
-endif|#
-directive|endif
 case|case
 name|GIMP_PDB_STATUS
 case|:
@@ -3725,16 +3682,11 @@ name|item
 argument_list|)
 expr_stmt|;
 break|break;
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_PARASITES
 case|case
 name|GIMP_PDB_PARASITE
 case|:
 comment|/* can't do anything, since size of GimpParasite is not known */
 break|break;
-endif|#
-directive|endif
 case|case
 name|GIMP_PDB_STATUS
 case|:
@@ -5161,66 +5113,6 @@ name|self
 return|;
 block|}
 end_function
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|GIMP_HAVE_DESTROY_PARAMDEFS
-end_ifndef
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_destroy_paramdefs (GimpParamDef * paramdefs,int nparams)
-name|gimp_destroy_paramdefs
-parameter_list|(
-name|GimpParamDef
-modifier|*
-name|paramdefs
-parameter_list|,
-name|int
-name|nparams
-parameter_list|)
-block|{
-while|while
-condition|(
-name|nparams
-operator|--
-condition|)
-block|{
-name|g_free
-argument_list|(
-name|paramdefs
-index|[
-name|nparams
-index|]
-operator|.
-name|name
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|paramdefs
-index|[
-name|nparams
-index|]
-operator|.
-name|description
-argument_list|)
-expr_stmt|;
-block|}
-name|g_free
-argument_list|(
-name|paramdefs
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_function
 specifier|static
@@ -7649,12 +7541,6 @@ return|;
 block|}
 end_function
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_PARASITES
-end_ifdef
-
 begin_function
 specifier|static
 name|PyObject
@@ -7923,38 +7809,9 @@ return|;
 block|}
 end_function
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_RESOLUTION_INFO
-end_ifdef
-
 begin_comment
 comment|/* gimp_image_set_resolution  * gimp_image_get_resolution  * gimp_set_unit  * gimp_get_unit  */
 end_comment
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_if
-if|#
-directive|if
-name|GIMP_CHECK_VERSION
-argument_list|(
-literal|1
-operator|,
-literal|1
-operator|,
-literal|0
-argument_list|)
-end_if
 
 begin_function
 specifier|static
@@ -8416,11 +8273,6 @@ return|;
 block|}
 end_function
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_decl_stmt
 DECL|variable|img_methods
 specifier|static
@@ -8661,9 +8513,6 @@ block|,
 name|METH_VARARGS
 block|}
 block|,
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_PARASITES
 block|{
 literal|"parasite_find"
 block|,
@@ -8708,18 +8557,6 @@ block|,
 name|METH_VARARGS
 block|}
 block|,
-endif|#
-directive|endif
-if|#
-directive|if
-name|GIMP_CHECK_VERSION
-argument_list|(
-literal|1
-operator|,
-literal|1
-operator|,
-literal|0
-argument_list|)
 block|{
 literal|"get_layer_by_tattoo"
 block|,
@@ -8808,8 +8645,6 @@ block|,
 name|METH_VARARGS
 block|}
 block|,
-endif|#
-directive|endif
 block|{
 name|NULL
 block|,
@@ -8965,17 +8800,8 @@ condition|)
 return|return
 name|Py_BuildValue
 argument_list|(
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_RESOLUTION_INFO
 literal|"[ssssssssssss]"
 argument_list|,
-else|#
-directive|else
-literal|"[ssssssssss]"
-argument_list|,
-endif|#
-directive|endif
 literal|"ID"
 argument_list|,
 literal|"active_channel"
@@ -8996,22 +8822,12 @@ literal|"height"
 argument_list|,
 literal|"layers"
 argument_list|,
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_RESOLUTION_INFO
 literal|"resolution"
 argument_list|,
-endif|#
-directive|endif
 literal|"selection"
 argument_list|,
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_RESOLUTION_INFO
 literal|"unit"
 argument_list|,
-endif|#
-directive|endif
 literal|"width"
 argument_list|)
 return|;
@@ -9452,9 +9268,6 @@ name|ID
 argument_list|)
 argument_list|)
 return|;
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_RESOLUTION_INFO
 if|if
 condition|(
 operator|!
@@ -9516,8 +9329,6 @@ name|ID
 argument_list|)
 argument_list|)
 return|;
-endif|#
-directive|endif
 return|return
 name|Py_FindMethod
 argument_list|(
@@ -9788,9 +9599,6 @@ return|return
 literal|0
 return|;
 block|}
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_RESOLUTION_INFO
 if|if
 condition|(
 operator|!
@@ -9919,8 +9727,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-endif|#
-directive|endif
 if|if
 condition|(
 operator|!
@@ -11049,12 +10855,6 @@ return|;
 block|}
 end_function
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_PARASITES
-end_ifdef
-
 begin_function
 specifier|static
 name|PyObject
@@ -11323,20 +11123,9 @@ return|;
 block|}
 end_function
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_comment
 comment|/* for inclusion with the methods of layer and channel objects */
 end_comment
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_PARASITES
-end_ifdef
 
 begin_define
 DECL|macro|drw_methods ()
@@ -11347,26 +11136,6 @@ parameter_list|()
 define|\
 value|{"flush",	(PyCFunction)drw_flush,	METH_VARARGS}, \     {"update",	(PyCFunction)drw_update,	METH_VARARGS}, \     {"merge_shadow",	(PyCFunction)drw_merge_shadow,	METH_VARARGS}, \     {"fill",	(PyCFunction)drw_fill,	METH_VARARGS}, \     {"get_tile",	(PyCFunction)drw_get_tile,	METH_VARARGS}, \     {"get_tile2",	(PyCFunction)drw_get_tile2,	METH_VARARGS}, \     {"get_pixel_rgn", (PyCFunction)drw_get_pixel_rgn, METH_VARARGS}, \     {"parasite_find",       (PyCFunction)drw_parasite_find, METH_VARARGS}, \     {"parasite_attach",     (PyCFunction)drw_parasite_attach, METH_VARARGS},\     {"attach_new_parasite",(PyCFunction)drw_attach_new_parasite,METH_VARARGS},\     {"parasite_detach",     (PyCFunction)drw_parasite_detach, METH_VARARGS}
 end_define
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_define
-DECL|macro|drw_methods ()
-define|#
-directive|define
-name|drw_methods
-parameter_list|()
-define|\
-value|{"flush",	(PyCFunction)drw_flush,	METH_VARARGS}, \     {"update",	(PyCFunction)drw_update,	METH_VARARGS}, \     {"merge_shadow",	(PyCFunction)drw_merge_shadow,	METH_VARARGS}, \     {"fill",	(PyCFunction)drw_fill,	METH_VARARGS}, \     {"get_tile",	(PyCFunction)drw_get_tile,	METH_VARARGS}, \     {"get_tile2",	(PyCFunction)drw_get_tile2,	METH_VARARGS}, \     {"get_pixel_rgn", (PyCFunction)drw_get_pixel_rgn, METH_VARARGS}
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_comment
 comment|/* ---------- */
@@ -12010,19 +11779,6 @@ return|;
 block|}
 end_function
 
-begin_if
-if|#
-directive|if
-name|GIMP_CHECK_VERSION
-argument_list|(
-literal|1
-operator|,
-literal|1
-operator|,
-literal|0
-argument_list|)
-end_if
-
 begin_function
 specifier|static
 name|PyObject
@@ -12069,11 +11825,6 @@ argument_list|)
 return|;
 block|}
 end_function
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_decl_stmt
 DECL|variable|lay_methods
@@ -12161,16 +11912,6 @@ block|,
 name|METH_VARARGS
 block|}
 block|,
-if|#
-directive|if
-name|GIMP_CHECK_VERSION
-argument_list|(
-literal|1
-operator|,
-literal|1
-operator|,
-literal|0
-argument_list|)
 block|{
 literal|"get_tattoo"
 block|,
@@ -12182,8 +11923,6 @@ block|,
 name|METH_VARARGS
 block|}
 block|,
-endif|#
-directive|endif
 name|drw_methods
 argument_list|()
 block|,
@@ -13917,19 +13656,6 @@ return|;
 block|}
 end_function
 
-begin_if
-if|#
-directive|if
-name|GIMP_CHECK_VERSION
-argument_list|(
-literal|1
-operator|,
-literal|1
-operator|,
-literal|0
-argument_list|)
-end_if
-
 begin_function
 specifier|static
 name|PyObject
@@ -13977,11 +13703,6 @@ return|;
 block|}
 end_function
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_decl_stmt
 DECL|variable|chn_methods
 specifier|static
@@ -14002,16 +13723,6 @@ block|,
 name|METH_VARARGS
 block|}
 block|,
-if|#
-directive|if
-name|GIMP_CHECK_VERSION
-argument_list|(
-literal|1
-operator|,
-literal|1
-operator|,
-literal|0
-argument_list|)
 block|{
 literal|"get_tattoo"
 block|,
@@ -14023,8 +13734,6 @@ block|,
 name|METH_VARARGS
 block|}
 block|,
-endif|#
-directive|endif
 name|drw_methods
 argument_list|()
 block|,
@@ -19110,12 +18819,6 @@ begin_comment
 comment|/* -------------------------------------------------------- */
 end_comment
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_PARASITES
-end_ifdef
-
 begin_function
 specifier|static
 name|PyObject
@@ -19457,16 +19160,6 @@ literal|"__members__"
 argument_list|)
 condition|)
 block|{
-if|#
-directive|if
-name|GIMP_CHECK_VERSION
-argument_list|(
-literal|1
-operator|,
-literal|1
-operator|,
-literal|5
-argument_list|)
 return|return
 name|Py_BuildValue
 argument_list|(
@@ -19483,24 +19176,6 @@ argument_list|,
 literal|"name"
 argument_list|)
 return|;
-else|#
-directive|else
-return|return
-name|Py_BuildValue
-argument_list|(
-literal|"[ssss]"
-argument_list|,
-literal|"data"
-argument_list|,
-literal|"flags"
-argument_list|,
-literal|"is_persistent"
-argument_list|,
-literal|"name"
-argument_list|)
-return|;
-endif|#
-directive|endif
 block|}
 if|if
 condition|(
@@ -19523,16 +19198,6 @@ name|para
 argument_list|)
 argument_list|)
 return|;
-if|#
-directive|if
-name|GIMP_CHECK_VERSION
-argument_list|(
-literal|1
-operator|,
-literal|1
-operator|,
-literal|5
-argument_list|)
 if|if
 condition|(
 operator|!
@@ -19554,8 +19219,6 @@ name|para
 argument_list|)
 argument_list|)
 return|;
-endif|#
-directive|endif
 if|if
 condition|(
 operator|!
@@ -19849,11 +19512,6 @@ end_comment
 begin_comment
 comment|/* -------------------------------------------------------- */
 end_comment
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
@@ -24399,12 +24057,6 @@ return|;
 block|}
 end_block
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_PARASITES
-end_ifdef
-
 begin_function
 specifier|static
 name|PyObject
@@ -24746,17 +24398,6 @@ return|;
 block|}
 end_block
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_DEFAULT_DISPLAY
-end_ifdef
-
 begin_function
 specifier|static
 name|PyObject
@@ -24805,11 +24446,6 @@ argument_list|)
 return|;
 block|}
 end_block
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_function
 specifier|static
@@ -25470,9 +25106,6 @@ block|,
 name|METH_VARARGS
 block|}
 block|,
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_PARASITES
 block|{
 literal|"parasite"
 block|,
@@ -25528,11 +25161,6 @@ block|,
 name|METH_VARARGS
 block|}
 block|,
-endif|#
-directive|endif
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_DEFAULT_DISPLAY
 block|{
 literal|"default_display"
 block|,
@@ -25544,8 +25172,6 @@ block|,
 name|METH_VARARGS
 block|}
 block|,
-endif|#
-directive|endif
 block|{
 literal|"_id2image"
 block|,
@@ -25843,9 +25469,6 @@ operator|&
 name|Prtype
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_PARASITES
 name|PyDict_SetItemString
 argument_list|(
 name|d
@@ -25860,8 +25483,6 @@ operator|&
 name|Paratype
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 name|PyDict_SetItemString
 argument_list|(
 name|d

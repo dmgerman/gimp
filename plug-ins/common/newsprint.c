@@ -512,7 +512,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad8231c0108
+DECL|struct|__anon2b03bea40108
 block|{
 DECL|member|name
 specifier|const
@@ -772,7 +772,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad8231c0208
+DECL|struct|__anon2b03bea40208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -845,7 +845,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad8231c0308
+DECL|struct|__anon2b03bea40308
 block|{
 DECL|member|input_spi
 name|gint
@@ -871,7 +871,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad8231c0408
+DECL|struct|__anon2b03bea40408
 block|{
 DECL|member|run
 name|gint
@@ -890,7 +890,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad8231c0508
+DECL|struct|__anon2b03bea40508
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -997,7 +997,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad8231c0608
+DECL|struct|__anon2b03bea40608
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1181,7 +1181,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad8231c0708
+DECL|struct|__anon2b03bea40708
 block|{
 DECL|member|name
 specifier|const
@@ -4811,6 +4811,11 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|gdouble
+name|xres
+decl_stmt|,
+name|yres
+decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 literal|"newsprint"
@@ -5114,15 +5119,6 @@ argument_list|,
 name|table
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_RESOLUTION_INFO
-block|{
-name|double
-name|xres
-decl_stmt|,
-name|yres
-decl_stmt|;
 name|gimp_image_get_resolution
 argument_list|(
 name|gimp_drawable_image_id
@@ -5139,16 +5135,13 @@ operator|&
 name|yres
 argument_list|)
 expr_stmt|;
-comment|/* XXX hack: should really note both resolutions, and use      * rectangular cells, not square cells.  But I'm being lazy,      * and the majority of the world works with xres == yres */
+comment|/* XXX hack: should really note both resolutions, and use    * rectangular cells, not square cells.  But I'm being lazy,    * and the majority of the world works with xres == yres */
 name|pvals_ui
 operator|.
 name|input_spi
 operator|=
 name|xres
 expr_stmt|;
-block|}
-endif|#
-directive|endif
 name|st
 operator|.
 name|input_spi
@@ -6935,7 +6928,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad8231c0808
+DECL|struct|__anon2b03bea40808
 block|{
 DECL|member|index
 name|gint

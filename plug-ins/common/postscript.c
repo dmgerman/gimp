@@ -128,7 +128,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f5fc580108
+DECL|struct|__anon28a3aaad0108
 block|{
 DECL|member|resolution
 name|guint
@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f5fc580208
+DECL|struct|__anon28a3aaad0208
 block|{
 DECL|member|run
 name|gint
@@ -246,7 +246,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f5fc580308
+DECL|struct|__anon28a3aaad0308
 block|{
 DECL|member|width
 DECL|member|height
@@ -308,7 +308,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f5fc580408
+DECL|struct|__anon28a3aaad0408
 block|{
 DECL|member|run
 name|gint
@@ -848,7 +848,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f5fc580508
+DECL|struct|__anon28a3aaad0508
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1719,7 +1719,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f5fc580608
+DECL|struct|__anon28a3aaad0608
 block|{
 DECL|member|eol
 name|long
@@ -2373,12 +2373,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_RESOLUTION_INFO
-end_ifdef
-
 begin_function
 specifier|static
 name|void
@@ -2542,11 +2536,6 @@ name|ih
 expr_stmt|;
 block|}
 end_function
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_function
 specifier|static
@@ -3002,9 +2991,6 @@ name|eps
 operator|=
 literal|1
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_RESOLUTION_INFO
 name|ps_set_save_size
 argument_list|(
 operator|&
@@ -3013,8 +2999,6 @@ argument_list|,
 name|orig_image_ID
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 comment|/*  First acquire information with a dialog  */
 if|if
 condition|(
@@ -3225,9 +3209,6 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_RESOLUTION_INFO
 if|if
 condition|(
 operator|(
@@ -3254,8 +3235,6 @@ argument_list|,
 name|orig_image_ID
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 name|check_save_vals
 argument_list|()
 expr_stmt|;
@@ -3960,9 +3939,6 @@ operator|-
 literal|1
 condition|)
 break|break;
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_RESOLUTION_INFO
 name|gimp_image_set_resolution
 argument_list|(
 name|image_ID
@@ -3982,8 +3958,6 @@ operator|.
 name|resolution
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 if|if
 condition|(
 name|n_images

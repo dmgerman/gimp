@@ -70,12 +70,8 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpfeatures.h"
+file|"libgimpbase/gimpversion.h"
 end_include
-
-begin_comment
-comment|/*  for GIMP_VERSION        */
-end_comment
 
 begin_decl_stmt
 DECL|variable|start_new

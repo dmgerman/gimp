@@ -119,12 +119,6 @@ begin_comment
 comment|/* Does the version of GIMP we're compiling for support    data attachments to images?  ('Parasites') */
 end_comment
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_PARASITES
-end_ifdef
-
 begin_define
 DECL|macro|FACEHUGGERS
 define|#
@@ -132,11 +126,6 @@ directive|define
 name|FACEHUGGERS
 value|aieee
 end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_comment
 comment|/* PS: I know that technically facehuggers aren't parasites,    the pupal-forms are.  But facehuggers are ky00te. */
@@ -766,7 +755,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b8521790108
+DECL|struct|__anon287cbe120108
 block|{
 DECL|member|Width
 name|unsigned
@@ -816,7 +805,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b8521790208
+DECL|struct|__anon287cbe120208
 block|{
 DECL|member|transparent
 name|int

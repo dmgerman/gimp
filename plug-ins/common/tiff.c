@@ -52,7 +52,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2758f2860108
+DECL|struct|__anon28c5a43c0108
 block|{
 DECL|member|compression
 name|gint
@@ -71,7 +71,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2758f2860208
+DECL|struct|__anon28c5a43c0208
 block|{
 DECL|member|run
 name|gint
@@ -86,7 +86,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2758f2860308
+DECL|struct|__anon28c5a43c0308
 block|{
 DECL|member|ID
 name|gint32
@@ -831,16 +831,10 @@ name|status
 init|=
 name|GIMP_PDB_SUCCESS
 decl_stmt|;
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_PARASITES
 name|GimpParasite
 modifier|*
 name|parasite
 decl_stmt|;
-endif|#
-directive|endif
-comment|/* GIMP_HAVE_PARASITES */
 name|gint32
 name|image
 decl_stmt|;
@@ -1074,9 +1068,6 @@ break|break;
 default|default:
 break|break;
 block|}
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_PARASITES
 name|parasite
 operator|=
 name|gimp_image_parasite_find
@@ -1104,9 +1095,6 @@ argument_list|(
 name|parasite
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
-comment|/* GIMP_HAVE_PARASITES */
 if|if
 condition|(
 operator|!
@@ -1136,9 +1124,6 @@ operator|&
 name|tsvals
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_PARASITES
 name|parasite
 operator|=
 name|gimp_image_parasite_find
@@ -1175,9 +1160,6 @@ argument_list|(
 name|parasite
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
-comment|/* GIMP_HAVE_PARASITES */
 comment|/*  First acquire information with a dialog  */
 if|if
 condition|(
@@ -1294,9 +1276,6 @@ operator|&
 name|tsvals
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_PARASITES
 name|parasite
 operator|=
 name|gimp_image_parasite_find
@@ -1333,9 +1312,6 @@ argument_list|(
 name|parasite
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
-comment|/* GIMP_HAVE_PARASITES */
 break|break;
 default|default:
 break|break;
@@ -1582,16 +1558,10 @@ decl_stmt|;
 name|TiffSaveVals
 name|save_vals
 decl_stmt|;
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_PARASITES
 name|GimpParasite
 modifier|*
 name|parasite
 decl_stmt|;
-endif|#
-directive|endif
-comment|/* GIMP_HAVE_PARASITES */
 name|guint16
 name|tmp
 decl_stmt|;
@@ -2024,9 +1994,6 @@ name|icc_profile
 argument_list|)
 condition|)
 block|{
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_PARASITES
 name|parasite
 operator|=
 name|gimp_parasite_new
@@ -2052,8 +2019,6 @@ argument_list|(
 name|parasite
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 block|}
 endif|#
 directive|endif
@@ -2084,9 +2049,6 @@ name|compression
 operator|=
 name|tmp
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_PARASITES
 name|parasite
 operator|=
 name|gimp_parasite_new
@@ -2116,13 +2078,7 @@ argument_list|(
 name|parasite
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
-comment|/* GIMP_HAVE_PARASITES */
 comment|/* Attach a parasite containing the image description.  Pretend to    * be a gimp comment so other plugins will use this description as    * an image comment where appropriate. */
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_PARASITES
 block|{
 name|char
 modifier|*
@@ -2198,13 +2154,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-endif|#
-directive|endif
-comment|/* GIMP_HAVE_PARASITES */
 comment|/* any resolution info in the file? */
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_RESOLUTION_INFO
 block|{
 name|gfloat
 name|xres
@@ -2376,9 +2326,6 @@ block|}
 comment|/* no x res tag => we assume we have no resolution info, so we      * don't care.  Older versions of this plugin used to write files      * with no resolution tags at all. */
 comment|/* TODO: haven't caught the case where yres tag is present, but        not xres.  This is left as an exercise for the reader - they        should feel free to shoot the author of the broken program        that produced the damaged TIFF file in the first place. */
 block|}
-endif|#
-directive|endif
-comment|/* GIMP_HAVE_RESOLUTION_INFO */
 comment|/* Install colormap for INDEXED images only */
 if|if
 condition|(
@@ -6710,9 +6657,6 @@ argument_list|,
 name|PLANARCONFIG_CONTIG
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_RESOLUTION_INFO
 comment|/* resolution fields */
 block|{
 name|gdouble
@@ -6862,13 +6806,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-endif|#
-directive|endif
-comment|/* GIMP_HAVE_RESOLUTION_INFO */
 comment|/* do we have a comment?  If so, create a new parasite to hold it,    * and attach it to the image. The attach function automatically    * detaches a previous incarnation of the parasite. */
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_PARASITES
 if|if
 condition|(
 name|image_comment
@@ -6923,13 +6861,7 @@ name|parasite
 argument_list|)
 expr_stmt|;
 block|}
-endif|#
-directive|endif
-comment|/* GIMP_HAVE_PARASITES */
 comment|/* do we have an ICC profile? If so, write it to the TIFF file */
-ifdef|#
-directive|ifdef
-name|GIMP_HAVE_PARASITES
 ifdef|#
 directive|ifdef
 name|TIFFTAG_ICCPROFILE
@@ -6991,8 +6923,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-endif|#
-directive|endif
 endif|#
 directive|endif
 if|if
