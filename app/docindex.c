@@ -1109,6 +1109,12 @@ name|feof
 argument_list|(
 name|fp
 argument_list|)
+operator|&&
+operator|!
+name|ferror
+argument_list|(
+name|fp
+argument_list|)
 condition|)
 block|{
 name|length
@@ -2163,6 +2169,12 @@ while|while
 condition|(
 operator|!
 name|feof
+argument_list|(
+name|fp
+argument_list|)
+operator|&&
+operator|!
+name|ferror
 argument_list|(
 name|fp
 argument_list|)

@@ -124,6 +124,11 @@ name|GtkWidget
 modifier|*
 name|brush_preview
 decl_stmt|;
+DECL|member|edit_button
+name|GtkWidget
+modifier|*
+name|edit_button
+decl_stmt|;
 block|}
 struct|;
 end_struct

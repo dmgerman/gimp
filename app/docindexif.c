@@ -563,7 +563,7 @@ modifier|*
 name|fp
 parameter_list|)
 block|{
-name|gchar
+name|int
 name|nextchar
 decl_stmt|;
 while|while
@@ -580,6 +580,12 @@ argument_list|)
 condition|)
 comment|/* empty statement */
 empty_stmt|;
+if|if
+condition|(
+name|nextchar
+operator|!=
+name|EOF
+condition|)
 name|ungetc
 argument_list|(
 name|nextchar
