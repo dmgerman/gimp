@@ -23,7 +23,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e8c0640103
+DECL|enum|__anon2be073cc0103
 block|{
 DECL|enumerator|SF_IMAGE
 name|SF_IMAGE
@@ -47,6 +47,9 @@ name|SF_TOGGLE
 block|,
 DECL|enumerator|SF_VALUE
 name|SF_VALUE
+block|,
+DECL|enumerator|SF_STRING
+name|SF_STRING
 DECL|typedef|SFArgType
 block|}
 name|SFArgType
