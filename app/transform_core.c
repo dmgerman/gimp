@@ -6242,12 +6242,9 @@ operator|==
 literal|0.0
 condition|)
 block|{
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"homogeneous coordinate = 0...\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
