@@ -2741,6 +2741,13 @@ argument_list|(
 name|view
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|tree_view
+operator|->
+name|model
+condition|)
+block|{
 name|GimpLayerTreeView
 modifier|*
 name|layer_view
@@ -2844,6 +2851,7 @@ argument_list|(
 name|renderer
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 name|parent_view_iface

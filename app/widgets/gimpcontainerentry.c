@@ -1505,6 +1505,12 @@ decl_stmt|;
 name|gint
 name|border_width
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|model
+condition|)
+return|return;
 name|preview_size
 operator|=
 name|gimp_container_view_get_preview_size

@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291bcf100103
+DECL|enum|__anon294869430103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -778,6 +778,8 @@ argument_list|,
 name|GIMP_VIEW_SIZE_MEDIUM
 argument_list|,
 name|G_PARAM_READWRITE
+operator||
+name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -800,6 +802,8 @@ argument_list|,
 literal|1
 argument_list|,
 name|G_PARAM_READWRITE
+operator||
+name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
