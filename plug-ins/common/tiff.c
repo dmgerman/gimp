@@ -40,7 +40,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd3b0340108
+DECL|struct|__anon2c5254020108
 block|{
 DECL|member|compression
 name|gint
@@ -59,7 +59,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd3b0340208
+DECL|struct|__anon2c5254020208
 block|{
 DECL|member|run
 name|gint
@@ -72,7 +72,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bd3b0340308
+DECL|struct|__anon2c5254020308
 typedef|typedef
 struct|struct
 block|{
@@ -2010,20 +2010,15 @@ block|{
 name|float
 name|xres
 init|=
-literal|0
+literal|0.0
 decl_stmt|,
 name|yres
 init|=
-literal|0
+literal|0.0
 decl_stmt|;
 name|unsigned
 name|short
 name|units
-decl_stmt|;
-name|float
-name|res
-init|=
-literal|0.0
 decl_stmt|;
 if|if
 condition|(
@@ -2053,32 +2048,6 @@ condition|)
 block|{
 if|if
 condition|(
-name|abs
-argument_list|(
-name|xres
-operator|-
-name|yres
-argument_list|)
-operator|>
-literal|1e-5
-condition|)
-name|g_message
-argument_list|(
-literal|"TIFF warning: x resolution differs "
-literal|"from y resolution (%g != %g)\n"
-literal|"Using x resolution\n"
-argument_list|,
-name|xres
-argument_list|,
-name|yres
-argument_list|)
-expr_stmt|;
-name|res
-operator|=
-name|xres
-expr_stmt|;
-if|if
-condition|(
 name|TIFFGetField
 argument_list|(
 name|tif
@@ -2105,7 +2074,11 @@ literal|"TIFF warning: resolution units meaningless, "
 literal|"forcing 72 dpi\n"
 argument_list|)
 expr_stmt|;
-name|res
+name|xres
+operator|=
+literal|72.0
+expr_stmt|;
+name|yres
 operator|=
 literal|72.0
 expr_stmt|;
@@ -2117,15 +2090,12 @@ break|break;
 case|case
 name|RESUNIT_CENTIMETER
 case|:
-name|res
-operator|=
-operator|(
-operator|(
-name|float
-operator|)
 name|xres
-operator|)
-operator|*
+operator|*=
+literal|2.54
+expr_stmt|;
+name|yres
+operator|*=
 literal|2.54
 expr_stmt|;
 break|break;
@@ -2160,11 +2130,19 @@ argument_list|(
 literal|"TIFF warning: no y resolution info, assuming same as x\n"
 argument_list|)
 expr_stmt|;
+name|yres
+operator|=
+name|xres
+expr_stmt|;
 block|}
 comment|/* sanity check, since division by zero later could be embarrassing */
 if|if
 condition|(
-name|res
+name|xres
+operator|<
+literal|1e-5
+operator|||
+name|yres
 operator|<
 literal|1e-5
 condition|)
@@ -2174,7 +2152,11 @@ argument_list|(
 literal|"TIFF: image resolution is zero: forcing 72 dpi\n"
 argument_list|)
 expr_stmt|;
-name|res
+name|xres
+operator|=
+literal|72.0
+expr_stmt|;
+name|yres
 operator|=
 literal|72.0
 expr_stmt|;
@@ -2184,7 +2166,9 @@ name|gimp_image_set_resolution
 argument_list|(
 name|image
 argument_list|,
-name|res
+name|xres
+argument_list|,
+name|yres
 argument_list|)
 expr_stmt|;
 block|}
@@ -5658,16 +5642,31 @@ name|GIMP_HAVE_RESOLUTION_INFO
 comment|/* resolution fields */
 block|{
 name|float
-name|resolution
-init|=
+name|xresolution
+decl_stmt|;
+name|float
+name|yresolution
+decl_stmt|;
 name|gimp_image_get_resolution
 argument_list|(
 name|image
+argument_list|,
+operator|&
+name|xresolution
+argument_list|,
+operator|&
+name|yresolution
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
-name|resolution
+name|xresolution
+operator|>
+literal|1e-5
+operator|&&
+name|yresolution
+operator|>
+literal|1e-5
 condition|)
 block|{
 name|TIFFSetField
@@ -5676,7 +5675,7 @@ name|tif
 argument_list|,
 name|TIFFTAG_XRESOLUTION
 argument_list|,
-name|resolution
+name|xresolution
 argument_list|)
 expr_stmt|;
 name|TIFFSetField
@@ -5685,7 +5684,7 @@ name|tif
 argument_list|,
 name|TIFFTAG_YRESOLUTION
 argument_list|,
-name|resolution
+name|yresolution
 argument_list|)
 expr_stmt|;
 name|TIFFSetField

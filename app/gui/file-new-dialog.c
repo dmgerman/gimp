@@ -90,7 +90,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon27efd6e80108
+DECL|struct|__anon297d582a0108
 typedef|typedef
 struct|struct
 block|{
@@ -698,9 +698,14 @@ operator|->
 name|type
 argument_list|)
 expr_stmt|;
+comment|/* XXX for the moment, we set both x and y resolution to the same,    * since we don't have the UI to get both values from the user, and    * besides, that's what PhotoShop seems to do. */
 name|gimp_image_set_resolution
 argument_list|(
 name|gimage
+argument_list|,
+name|vals
+operator|->
+name|resolution
 argument_list|,
 name|vals
 operator|->
@@ -2262,7 +2267,7 @@ name|gdisp
 operator|->
 name|gimage
 operator|->
-name|resolution
+name|xresolution
 expr_stmt|;
 name|vals
 operator|->

@@ -109,7 +109,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289281c50103
+DECL|enum|__anon2a1863a20103
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -212,7 +212,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289281c50203
+DECL|enum|__anon2a1863a20203
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -255,7 +255,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289281c50303
+DECL|enum|__anon2a1863a20303
 block|{
 DECL|enumerator|Red
 name|Red
@@ -283,7 +283,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289281c50403
+DECL|enum|__anon2a1863a20403
 block|{
 DECL|enumerator|ExpandAsNecessary
 name|ExpandAsNecessary
@@ -412,15 +412,23 @@ name|GimpImage
 modifier|*
 parameter_list|,
 name|float
+parameter_list|,
+name|float
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|float
+name|void
 name|gimp_image_get_resolution
 parameter_list|(
 name|GimpImage
+modifier|*
+parameter_list|,
+name|float
+modifier|*
+parameter_list|,
+name|float
 modifier|*
 parameter_list|)
 function_decl|;

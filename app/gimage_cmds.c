@@ -8715,15 +8715,22 @@ modifier|*
 name|gimage
 decl_stmt|;
 name|float
-name|resolution
+name|xresolution
+decl_stmt|;
+name|float
+name|yresolution
 decl_stmt|;
 name|Argument
 modifier|*
 name|return_args
 decl_stmt|;
-name|resolution
+name|xresolution
 operator|=
-literal|0
+literal|0.0
+expr_stmt|;
+name|yresolution
+operator|=
+literal|0.0
 expr_stmt|;
 name|success
 operator|=
@@ -8756,17 +8763,27 @@ name|int_value
 argument_list|)
 operator|)
 condition|)
-name|resolution
+block|{
+name|xresolution
 operator|=
 name|gimage
 operator|->
-name|resolution
+name|xresolution
 expr_stmt|;
+name|yresolution
+operator|=
+name|gimage
+operator|->
+name|yresolution
+expr_stmt|;
+block|}
 else|else
+block|{
 name|success
 operator|=
 name|FALSE
 expr_stmt|;
+block|}
 block|}
 name|return_args
 operator|=
@@ -8782,6 +8799,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|return_args
 index|[
 literal|1
@@ -8791,8 +8809,20 @@ name|value
 operator|.
 name|pdb_float
 operator|=
-name|resolution
+name|xresolution
 expr_stmt|;
+name|return_args
+index|[
+literal|2
+index|]
+operator|.
+name|value
+operator|.
+name|pdb_float
+operator|=
+name|yresolution
+expr_stmt|;
+block|}
 return|return
 name|return_args
 return|;
@@ -8831,9 +8861,17 @@ block|{
 block|{
 name|PDB_FLOAT
 block|,
-literal|"resolution"
+literal|"xresolution"
 block|,
-literal|"the image's resolution, in dots per inch"
+literal|"the image's resolution in the x-axis, in dots per inch"
+block|}
+block|,
+block|{
+name|PDB_FLOAT
+block|,
+literal|"yresolution"
+block|,
+literal|"the image's resolution in the y-axis, in dots per inch"
 block|}
 block|}
 decl_stmt|;
@@ -8865,7 +8903,7 @@ block|,
 name|gimage_get_resolution_args
 block|,
 comment|/*  Output arguments  */
-literal|1
+literal|2
 block|,
 name|gimage_get_resolution_out_args
 block|,
@@ -8962,7 +9000,24 @@ name|pdb_float
 expr_stmt|;
 name|gimage
 operator|->
-name|resolution
+name|xresolution
+operator|=
+name|float_value
+expr_stmt|;
+name|float_value
+operator|=
+name|args
+index|[
+literal|2
+index|]
+operator|.
+name|value
+operator|.
+name|pdb_float
+expr_stmt|;
+name|gimage
+operator|->
+name|yresolution
 operator|=
 name|float_value
 expr_stmt|;
@@ -9005,9 +9060,17 @@ block|,
 block|{
 name|PDB_FLOAT
 block|,
-literal|"resolution"
+literal|"xresolution"
 block|,
-literal|"resolution in dots per inch"
+literal|"resolution in x-axis, in dots per inch"
+block|}
+block|,
+block|{
+name|PDB_FLOAT
+block|,
+literal|"yresolution"
+block|,
+literal|"resolution in y-axis, in dots per inch"
 block|}
 block|}
 decl_stmt|;
@@ -9034,7 +9097,7 @@ block|,
 name|PDB_INTERNAL
 block|,
 comment|/*  Input arguments  */
-literal|2
+literal|3
 block|,
 name|gimage_set_resolution_args
 block|,

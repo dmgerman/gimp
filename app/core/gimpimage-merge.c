@@ -473,7 +473,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2a2abc800103
+DECL|enum|__anon2bd392dd0103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -855,11 +855,17 @@ argument_list|)
 expr_stmt|;
 name|gimage
 operator|->
-name|resolution
+name|xresolution
 operator|=
 literal|72.0
 expr_stmt|;
 comment|/* maybe should be rc-supplied default? */
+name|gimage
+operator|->
+name|yresolution
+operator|=
+literal|72.0
+expr_stmt|;
 name|gimage
 operator|->
 name|save_proc
@@ -1365,7 +1371,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_set_resolution (GimpImage * gimage,float resolution)
+DECL|function|gimp_image_set_resolution (GimpImage * gimage,float xresolution,float yresolution)
 name|gimp_image_set_resolution
 parameter_list|(
 name|GimpImage
@@ -1373,33 +1379,66 @@ modifier|*
 name|gimage
 parameter_list|,
 name|float
-name|resolution
+name|xresolution
+parameter_list|,
+name|float
+name|yresolution
 parameter_list|)
 block|{
 name|gimage
 operator|->
-name|resolution
+name|xresolution
 operator|=
-name|resolution
+name|xresolution
+expr_stmt|;
+name|gimage
+operator|->
+name|yresolution
+operator|=
+name|yresolution
 expr_stmt|;
 block|}
 end_function
 
 begin_function
-name|float
-DECL|function|gimp_image_get_resolution (GimpImage * gimage)
+name|void
+DECL|function|gimp_image_get_resolution (GimpImage * gimage,float * xresolution,float * yresolution)
 name|gimp_image_get_resolution
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|float
+modifier|*
+name|xresolution
+parameter_list|,
+name|float
+modifier|*
+name|yresolution
 parameter_list|)
 block|{
-return|return
+name|g_return_if_fail
+argument_list|(
+name|xresolution
+operator|&&
+name|yresolution
+argument_list|)
+expr_stmt|;
+operator|*
+name|xresolution
+operator|=
 name|gimage
 operator|->
-name|resolution
-return|;
+name|xresolution
+expr_stmt|;
+operator|*
+name|yresolution
+operator|=
+name|gimage
+operator|->
+name|yresolution
+expr_stmt|;
 block|}
 end_function
 

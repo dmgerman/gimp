@@ -3355,12 +3355,20 @@ block|}
 end_function
 
 begin_function
-name|float
-DECL|function|gimp_image_get_resolution (gint32 image_ID)
+name|void
+DECL|function|gimp_image_get_resolution (gint32 image_ID,float * xresolution,float * yresolution)
 name|gimp_image_get_resolution
 parameter_list|(
 name|gint32
 name|image_ID
+parameter_list|,
+name|float
+modifier|*
+name|xresolution
+parameter_list|,
+name|float
+modifier|*
+name|yresolution
 parameter_list|)
 block|{
 name|GParam
@@ -3371,8 +3379,18 @@ name|int
 name|nreturn_vals
 decl_stmt|;
 name|float
-name|result
+name|xres
 decl_stmt|;
+name|float
+name|yres
+decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|xresolution
+operator|&&
+name|yresolution
+argument_list|)
+expr_stmt|;
 name|return_vals
 operator|=
 name|gimp_run_procedure
@@ -3389,11 +3407,15 @@ argument_list|,
 name|PARAM_END
 argument_list|)
 expr_stmt|;
-name|result
+comment|/* error return values */
+name|xres
 operator|=
 literal|0.0
 expr_stmt|;
-comment|/* error return value */
+name|yres
+operator|=
+literal|0.0
+expr_stmt|;
 if|if
 condition|(
 name|return_vals
@@ -3407,7 +3429,8 @@ name|d_status
 operator|==
 name|STATUS_SUCCESS
 condition|)
-name|result
+block|{
+name|xres
 operator|=
 name|return_vals
 index|[
@@ -3418,6 +3441,18 @@ name|data
 operator|.
 name|d_float
 expr_stmt|;
+name|yres
+operator|=
+name|return_vals
+index|[
+literal|2
+index|]
+operator|.
+name|data
+operator|.
+name|d_float
+expr_stmt|;
+block|}
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -3425,22 +3460,32 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
-return|return
-name|result
-return|;
+operator|*
+name|xresolution
+operator|=
+name|xres
+expr_stmt|;
+operator|*
+name|yresolution
+operator|=
+name|yres
+expr_stmt|;
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_set_resolution (gint32 image_ID,float resolution)
+DECL|function|gimp_image_set_resolution (gint32 image_ID,float xresolution,float yresolution)
 name|gimp_image_set_resolution
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
 name|float
-name|resolution
+name|xresolution
+parameter_list|,
+name|float
+name|yresolution
 parameter_list|)
 block|{
 name|GParam
@@ -3465,7 +3510,11 @@ name|image_ID
 argument_list|,
 name|PARAM_FLOAT
 argument_list|,
-name|resolution
+name|xresolution
+argument_list|,
+name|PARAM_FLOAT
+argument_list|,
+name|yresolution
 argument_list|,
 name|PARAM_END
 argument_list|)

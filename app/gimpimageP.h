@@ -102,11 +102,16 @@ decl_stmt|,
 name|height
 decl_stmt|;
 comment|/*  width and height attributes  */
-DECL|member|resolution
+DECL|member|xresolution
 name|float
-name|resolution
+name|xresolution
 decl_stmt|;
-comment|/*  image res, in dpi            */
+comment|/*  image x-res, in dpi          */
+DECL|member|yresolution
+name|float
+name|yresolution
+decl_stmt|;
+comment|/*  image y-res, in dpi          */
 DECL|member|base_type
 name|int
 name|base_type

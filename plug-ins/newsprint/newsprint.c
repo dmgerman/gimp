@@ -540,7 +540,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2c3e7fcb0108
+DECL|struct|__anon2c9a61a50108
 typedef|typedef
 struct|struct
 block|{
@@ -785,7 +785,7 @@ comment|/* Some of these are here merely to save them across calls.  They are  *
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c3e7fcb0208
+DECL|struct|__anon2c9a61a50208
 typedef|typedef
 struct|struct
 block|{
@@ -858,7 +858,7 @@ comment|/* bits of state used by the UI, but not visible from the PDB */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c3e7fcb0308
+DECL|struct|__anon2c9a61a50308
 typedef|typedef
 struct|struct
 block|{
@@ -884,7 +884,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c3e7fcb0408
+DECL|struct|__anon2c9a61a50408
 typedef|typedef
 struct|struct
 block|{
@@ -917,7 +917,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2c3e7fcb0503
+DECL|enum|__anon2c9a61a50503
 typedef|typedef
 enum|enum
 block|{
@@ -933,7 +933,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c3e7fcb0608
+DECL|struct|__anon2c9a61a50608
 typedef|typedef
 struct|struct
 block|{
@@ -991,7 +991,7 @@ comment|/* state for the preview widgets */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c3e7fcb0708
+DECL|struct|__anon2c9a61a50708
 typedef|typedef
 struct|struct
 block|{
@@ -1093,7 +1093,7 @@ comment|/* State associated with the configuration dialog and passed to its  * c
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c3e7fcb0808
+DECL|struct|__anon2c9a61a50808
 typedef|typedef
 struct|struct
 block|{
@@ -1281,7 +1281,7 @@ comment|/* channel templates */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c3e7fcb0908
+DECL|struct|__anon2c9a61a50908
 typedef|typedef
 struct|struct
 block|{
@@ -5420,10 +5420,12 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|GIMP_HAVE_RESOLUTION_INFO
-name|pvals_ui
-operator|.
-name|input_spi
-operator|=
+block|{
+name|float
+name|xres
+decl_stmt|,
+name|yres
+decl_stmt|;
 name|gimp_image_get_resolution
 argument_list|(
 name|gimp_drawable_image_id
@@ -5432,8 +5434,22 @@ name|drawable
 operator|->
 name|id
 argument_list|)
+argument_list|,
+operator|&
+name|xres
+argument_list|,
+operator|&
+name|yres
 argument_list|)
 expr_stmt|;
+comment|/* XXX hack: should really note both resolutions, and use 	 * rectangular cells, not square cells.  But I'm being lazy, 	 * and the majority of the world works with xres == yres */
+name|pvals_ui
+operator|.
+name|input_spi
+operator|=
+name|xres
+expr_stmt|;
+block|}
 endif|#
 directive|endif
 name|st
@@ -7341,7 +7357,7 @@ comment|/* Each call of the spot function results in one of these */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c3e7fcb0a08
+DECL|struct|__anon2c9a61a50a08
 typedef|typedef
 struct|struct
 block|{

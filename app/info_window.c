@@ -750,13 +750,19 @@ name|iwd
 operator|->
 name|resolution_str
 argument_list|,
-literal|"%g dpi"
+literal|"%g x %g dpi"
 argument_list|,
 name|gdisp
 operator|->
 name|gimage
 operator|->
-name|resolution
+name|xresolution
+argument_list|,
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|yresolution
 argument_list|)
 expr_stmt|;
 comment|/*  zoom ratio  */
