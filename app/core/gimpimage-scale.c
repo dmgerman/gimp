@@ -558,7 +558,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2951fe160103
+DECL|enum|__anon2ac516610103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -2520,7 +2520,7 @@ control|)
 block|{
 name|layer
 operator|=
-name|remove
+name|list
 operator|->
 name|data
 expr_stmt|;
