@@ -217,7 +217,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a087010103
+DECL|enum|__anon28e7f7f80103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -2467,12 +2467,12 @@ expr_stmt|;
 block|}
 break|break;
 default|default:
-block|{
 while|while
 condition|(
 name|w
 operator|--
 condition|)
+block|{
 name|memcpy
 argument_list|(
 name|dest
@@ -2481,6 +2481,10 @@ name|color
 argument_list|,
 name|bytes
 argument_list|)
+expr_stmt|;
+name|dest
+operator|+=
+name|bytes
 expr_stmt|;
 block|}
 block|}
