@@ -244,6 +244,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_editor_set_box_style
+parameter_list|(
+name|GimpEditor
+modifier|*
+name|editor
+parameter_list|,
+name|GtkBox
+modifier|*
+name|box
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
