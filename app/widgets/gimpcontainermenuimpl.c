@@ -456,7 +456,7 @@ literal|0
 operator|&&
 name|preview_size
 operator|<=
-literal|64
+name|GIMP_PREVIEW_MAX_SIZE
 argument_list|,
 name|NULL
 argument_list|)

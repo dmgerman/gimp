@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppreview.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpwidgets-utils.h"
 end_include
 
@@ -597,7 +603,7 @@ literal|0
 operator|&&
 name|preview_size
 operator|<=
-literal|64
+name|GIMP_PREVIEW_MAX_SIZE
 argument_list|,
 name|FALSE
 argument_list|)

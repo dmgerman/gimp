@@ -143,7 +143,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c621150103
+DECL|enum|__anon2c4fd61c0103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -164,7 +164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c621150203
+DECL|enum|__anon2c4fd61c0203
 block|{
 DECL|enumerator|GIMP_DIALOG_SHOW_ALL
 name|GIMP_DIALOG_SHOW_ALL
@@ -1625,7 +1625,7 @@ if|if
 condition|(
 name|preview_size
 operator|<
-literal|16
+name|GIMP_PREVIEW_SIZE_TINY
 condition|)
 name|preview_size
 operator|=
@@ -3870,7 +3870,7 @@ name|view
 operator|->
 name|preview_size
 operator|>=
-literal|16
+name|GIMP_PREVIEW_SIZE_TINY
 condition|)
 block|{
 name|preview_size
@@ -4250,7 +4250,11 @@ if|if
 condition|(
 name|preview_size
 operator|<
-literal|16
+name|GIMP_PREVIEW_SIZE_TINY
+operator|||
+name|preview_size
+operator|>
+name|GIMP_PREVIEW_SIZE_GIGANTIC
 condition|)
 name|preview_size
 operator|=

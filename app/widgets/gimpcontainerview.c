@@ -69,9 +69,15 @@ directive|include
 file|"gimpdnd.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimppreview.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon27ced7810103
+DECL|enum|__anon2bef8ab90103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -1518,8 +1524,7 @@ literal|0
 operator|&&
 name|preview_size
 operator|<=
-literal|256
-comment|/* FIXME: 64 */
+name|GIMP_PREVIEW_MAX_SIZE
 argument_list|)
 expr_stmt|;
 if|if
