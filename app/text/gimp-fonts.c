@@ -248,7 +248,9 @@ condition|(
 operator|!
 name|config
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 name|fonts_conf
 operator|=
 name|gimp_personal_rc_file
@@ -266,7 +268,9 @@ argument_list|,
 name|fonts_conf
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 name|fonts_conf
 operator|=
 name|g_build_filename
@@ -289,7 +293,9 @@ argument_list|,
 name|fonts_conf
 argument_list|)
 condition|)
-return|return;
+goto|goto
+name|cleanup
+goto|;
 name|path
 operator|=
 name|gimp_config_path_expand
@@ -331,7 +337,9 @@ argument_list|(
 name|config
 argument_list|)
 expr_stmt|;
-return|return;
+goto|goto
+name|cleanup
+goto|;
 block|}
 name|FcConfigSetCurrent
 argument_list|(
@@ -348,6 +356,8 @@ name|fonts
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|cleanup
+label|:
 name|gimp_container_thaw
 argument_list|(
 name|GIMP_CONTAINER
@@ -384,6 +394,13 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp
+operator|->
+name|no_fonts
+condition|)
+return|return;
 comment|/* We clear the default config here, so any subsequent fontconfig use will    * reinit the library with defaults. (Maybe we should call FcFini here too?)    */
 name|FcConfigSetCurrent
 argument_list|(
@@ -533,6 +550,5 @@ expr_stmt|;
 block|}
 end_function
 
-unit|\
 end_unit
 

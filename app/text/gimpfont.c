@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f75b4c0103
+DECL|enum|__anon28b2e30c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -435,7 +435,7 @@ name|viewable_class
 operator|->
 name|default_stock_id
 operator|=
-literal|"gtk-font"
+literal|"gtk-select-font"
 expr_stmt|;
 name|param_spec
 operator|=
