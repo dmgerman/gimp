@@ -16,6 +16,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"drawable.h"
 end_include
 
@@ -96,7 +102,7 @@ comment|/* ick. */
 end_comment
 
 begin_enum
-DECL|enum|__anon2b8d2e2a0103
+DECL|enum|__anon276e9d220103
 enum|enum
 block|{
 DECL|enumerator|LAST_SIGNAL

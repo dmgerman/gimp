@@ -701,6 +701,13 @@ name|gimage_invalidate_preview
 value|gimp_image_invalidate_preview
 end_define
 
+begin_decl_stmt
+specifier|extern
+name|guint32
+name|next_guide_id
+decl_stmt|;
+end_decl_stmt
+
 begin_endif
 endif|#
 directive|endif

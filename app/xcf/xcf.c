@@ -164,7 +164,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9e7b7d0103
+DECL|enum|__anon29e977700103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -269,7 +269,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9e7b7d0203
+DECL|enum|__anon29e977700203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -6839,6 +6839,13 @@ operator|->
 name|orientation
 operator|=
 name|orientation
+expr_stmt|;
+name|guide
+operator|->
+name|guide_ID
+operator|=
+name|next_guide_id
+operator|++
 expr_stmt|;
 name|gimage
 operator|->
