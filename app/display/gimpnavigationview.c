@@ -158,7 +158,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_navigation_view_set_docked_context
+name|gimp_navigation_view_set_context
 parameter_list|(
 name|GimpDocked
 modifier|*
@@ -167,10 +167,6 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
-parameter_list|,
-name|GimpContext
-modifier|*
-name|prev_context
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -785,7 +781,7 @@ name|docked_iface
 operator|->
 name|set_context
 operator|=
-name|gimp_navigation_view_set_docked_context
+name|gimp_navigation_view_set_context
 expr_stmt|;
 block|}
 end_function
@@ -793,8 +789,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_navigation_view_docked_context_changed (GimpContext * context,GimpDisplay * gdisp,GimpNavigationView * view)
-name|gimp_navigation_view_docked_context_changed
+DECL|function|gimp_navigation_view_context_changed (GimpContext * context,GimpDisplay * gdisp,GimpNavigationView * view)
+name|gimp_navigation_view_context_changed
 parameter_list|(
 name|GimpContext
 modifier|*
@@ -841,8 +837,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_navigation_view_set_docked_context (GimpDocked * docked,GimpContext * context,GimpContext * prev_context)
-name|gimp_navigation_view_set_docked_context
+DECL|function|gimp_navigation_view_set_context (GimpDocked * docked,GimpContext * context)
+name|gimp_navigation_view_set_context
 parameter_list|(
 name|GimpDocked
 modifier|*
@@ -851,10 +847,6 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
-parameter_list|,
-name|GimpContext
-modifier|*
-name|prev_context
 parameter_list|)
 block|{
 name|GimpNavigationView
@@ -880,16 +872,28 @@ name|NULL
 decl_stmt|;
 if|if
 condition|(
-name|prev_context
+name|view
+operator|->
+name|context
 condition|)
+block|{
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|prev_context
+name|view
+operator|->
+name|context
 argument_list|,
-name|gimp_navigation_view_docked_context_changed
+name|gimp_navigation_view_context_changed
 argument_list|,
 name|view
 argument_list|)
+expr_stmt|;
+block|}
+name|view
+operator|->
+name|context
+operator|=
+name|context
 expr_stmt|;
 if|if
 condition|(
@@ -904,7 +908,7 @@ literal|"display_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_navigation_view_docked_context_changed
+name|gimp_navigation_view_context_changed
 argument_list|)
 argument_list|,
 name|view
@@ -955,14 +959,12 @@ block|{
 name|GimpNavigationView
 modifier|*
 name|view
-decl_stmt|;
-name|view
-operator|=
+init|=
 name|GIMP_NAVIGATION_VIEW
 argument_list|(
 name|object
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|view

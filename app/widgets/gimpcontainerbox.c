@@ -167,10 +167,6 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
-parameter_list|,
-name|GimpContext
-modifier|*
-name|prev_context
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -723,7 +719,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_container_box_set_context (GimpDocked * docked,GimpContext * context,GimpContext * prev_context)
+DECL|function|gimp_container_box_set_context (GimpDocked * docked,GimpContext * context)
 name|gimp_container_box_set_context
 parameter_list|(
 name|GimpDocked
@@ -733,10 +729,6 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
-parameter_list|,
-name|GimpContext
-modifier|*
-name|prev_context
 parameter_list|)
 block|{
 name|gimp_container_view_set_context

@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b8ba5d0103
+DECL|enum|__anon290f71d60103
 block|{
 DECL|enumerator|TITLE_CHANGED
 name|TITLE_CHANGED
@@ -548,7 +548,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_docked_set_context (GimpDocked * docked,GimpContext * context,GimpContext * prev_context)
+DECL|function|gimp_docked_set_context (GimpDocked * docked,GimpContext * context)
 name|gimp_docked_set_context
 parameter_list|(
 name|GimpDocked
@@ -558,10 +558,6 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
-parameter_list|,
-name|GimpContext
-modifier|*
-name|prev_context
 parameter_list|)
 block|{
 name|GimpDockedInterface
@@ -588,18 +584,6 @@ name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|prev_context
-operator|==
-name|NULL
-operator|||
-name|GIMP_IS_CONTEXT
-argument_list|(
-name|prev_context
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|docked_iface
 operator|=
 name|GIMP_DOCKED_GET_INTERFACE
@@ -620,8 +604,6 @@ argument_list|(
 name|docked
 argument_list|,
 name|context
-argument_list|,
-name|prev_context
 argument_list|)
 expr_stmt|;
 block|}

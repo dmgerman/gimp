@@ -90,7 +90,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_editor_set_docked_context
+name|gimp_image_editor_set_context
 parameter_list|(
 name|GimpDocked
 modifier|*
@@ -99,10 +99,6 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
-parameter_list|,
-name|GimpContext
-modifier|*
-name|prev_context
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -364,7 +360,7 @@ name|docked_iface
 operator|->
 name|set_context
 operator|=
-name|gimp_image_editor_set_docked_context
+name|gimp_image_editor_set_context
 expr_stmt|;
 block|}
 end_function
@@ -372,8 +368,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_editor_docked_context_changed (GimpContext * context,GimpImage * gimage,GimpImageEditor * editor)
-name|gimp_image_editor_docked_context_changed
+DECL|function|gimp_image_editor_context_changed (GimpContext * context,GimpImage * gimage,GimpImageEditor * editor)
+name|gimp_image_editor_context_changed
 parameter_list|(
 name|GimpContext
 modifier|*
@@ -401,8 +397,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_editor_set_docked_context (GimpDocked * docked,GimpContext * context,GimpContext * prev_context)
-name|gimp_image_editor_set_docked_context
+DECL|function|gimp_image_editor_set_context (GimpDocked * docked,GimpContext * context)
+name|gimp_image_editor_set_context
 parameter_list|(
 name|GimpDocked
 modifier|*
@@ -411,10 +407,6 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
-parameter_list|,
-name|GimpContext
-modifier|*
-name|prev_context
 parameter_list|)
 block|{
 name|GimpImageEditor
@@ -434,16 +426,28 @@ name|NULL
 decl_stmt|;
 if|if
 condition|(
-name|prev_context
+name|editor
+operator|->
+name|context
 condition|)
+block|{
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|prev_context
+name|editor
+operator|->
+name|context
 argument_list|,
-name|gimp_image_editor_docked_context_changed
+name|gimp_image_editor_context_changed
 argument_list|,
 name|editor
 argument_list|)
+expr_stmt|;
+block|}
+name|editor
+operator|->
+name|context
+operator|=
+name|context
 expr_stmt|;
 if|if
 condition|(
@@ -458,7 +462,7 @@ literal|"image_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_image_editor_docked_context_changed
+name|gimp_image_editor_context_changed
 argument_list|)
 argument_list|,
 name|editor

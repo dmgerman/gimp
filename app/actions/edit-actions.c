@@ -974,7 +974,7 @@ argument_list|,
 name|undo_enabled
 operator|&&
 operator|(
-name|redo_name
+name|undo_name
 operator|||
 name|redo_name
 operator|)

@@ -188,10 +188,6 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
-parameter_list|,
-name|GimpContext
-modifier|*
-name|prev_context
 parameter_list|)
 function_decl|;
 block|}
@@ -310,10 +306,6 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
-parameter_list|,
-name|GimpContext
-modifier|*
-name|prev_context
 parameter_list|)
 function_decl|;
 end_function_decl

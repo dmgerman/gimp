@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0f0ce10103
+DECL|enum|__anon27f2a2aa0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -189,7 +189,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0f0ce10203
+DECL|enum|__anon27f2a2aa0203
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -255,7 +255,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_item_tree_view_set_docked_context
+name|gimp_item_tree_view_set_context
 parameter_list|(
 name|GimpDocked
 modifier|*
@@ -264,10 +264,6 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
-parameter_list|,
-name|GimpContext
-modifier|*
-name|prev_context
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1807,7 +1803,7 @@ name|docked_iface
 operator|->
 name|set_context
 operator|=
-name|gimp_item_tree_view_set_docked_context
+name|gimp_item_tree_view_set_context
 expr_stmt|;
 block|}
 end_function
@@ -1815,8 +1811,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_item_tree_view_docked_context_changed (GimpContext * context,GimpImage * gimage,GimpItemTreeView * view)
-name|gimp_item_tree_view_docked_context_changed
+DECL|function|gimp_item_tree_view_context_changed (GimpContext * context,GimpImage * gimage,GimpItemTreeView * view)
+name|gimp_item_tree_view_context_changed
 parameter_list|(
 name|GimpContext
 modifier|*
@@ -1844,8 +1840,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_item_tree_view_set_docked_context (GimpDocked * docked,GimpContext * context,GimpContext * prev_context)
-name|gimp_item_tree_view_set_docked_context
+DECL|function|gimp_item_tree_view_set_context (GimpDocked * docked,GimpContext * context)
+name|gimp_item_tree_view_set_context
 parameter_list|(
 name|GimpDocked
 modifier|*
@@ -1854,10 +1850,6 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
-parameter_list|,
-name|GimpContext
-modifier|*
-name|prev_context
 parameter_list|)
 block|{
 name|GimpItemTreeView
@@ -1877,16 +1869,28 @@ name|NULL
 decl_stmt|;
 if|if
 condition|(
-name|prev_context
+name|view
+operator|->
+name|context
 condition|)
+block|{
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|prev_context
+name|view
+operator|->
+name|context
 argument_list|,
-name|gimp_item_tree_view_docked_context_changed
+name|gimp_item_tree_view_context_changed
 argument_list|,
 name|view
 argument_list|)
+expr_stmt|;
+block|}
+name|view
+operator|->
+name|context
+operator|=
+name|context
 expr_stmt|;
 if|if
 condition|(
@@ -1901,7 +1905,7 @@ literal|"image_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_item_tree_view_docked_context_changed
+name|gimp_item_tree_view_context_changed
 argument_list|)
 argument_list|,
 name|view
