@@ -307,7 +307,7 @@ empty_stmt|;
 end_empty_stmt
 
 begin_typedef
-DECL|struct|__anon29d3cf830108
+DECL|struct|__anon28c38d2a0108
 typedef|typedef
 struct|struct
 block|{
@@ -351,7 +351,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d3cf830208
+DECL|struct|__anon28c38d2a0208
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -4507,7 +4507,7 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon29d3cf830308
+DECL|struct|__anon28c38d2a0308
 struct|struct
 block|{
 DECL|member|label
@@ -4576,7 +4576,7 @@ name|edit_plug_in_path
 block|}
 block|}
 struct|;
-DECL|struct|__anon29d3cf830408
+DECL|struct|__anon28c38d2a0408
 struct|struct
 block|{
 DECL|member|label
@@ -11110,6 +11110,44 @@ name|active_layer
 argument_list|)
 expr_stmt|;
 name|gdisplays_flush
+argument_list|()
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|tools_default_colors_cmd_callback (GtkWidget * widget,gpointer client_data)
+name|tools_default_colors_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|client_data
+parameter_list|)
+block|{
+name|palette_set_default_colors
+argument_list|()
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|tools_swap_colors_cmd_callback (GtkWidget * widget,gpointer client_data)
+name|tools_swap_colors_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|client_data
+parameter_list|)
+block|{
+name|palette_swap_colors
 argument_list|()
 expr_stmt|;
 block|}

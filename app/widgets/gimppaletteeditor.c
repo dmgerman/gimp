@@ -2106,6 +2106,104 @@ end_function
 
 begin_function
 name|void
+DECL|function|palette_set_default_colors (void)
+name|palette_set_default_colors
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|palette_set_foreground
+argument_list|(
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|palette_set_background
+argument_list|(
+literal|255
+argument_list|,
+literal|255
+argument_list|,
+literal|255
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|palette_swap_colors (void)
+name|palette_swap_colors
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|unsigned
+name|char
+name|fg_r
+decl_stmt|,
+name|fg_g
+decl_stmt|,
+name|fg_b
+decl_stmt|;
+name|unsigned
+name|char
+name|bg_r
+decl_stmt|,
+name|bg_g
+decl_stmt|,
+name|bg_b
+decl_stmt|;
+name|palette_get_foreground
+argument_list|(
+operator|&
+name|fg_r
+argument_list|,
+operator|&
+name|fg_g
+argument_list|,
+operator|&
+name|fg_b
+argument_list|)
+expr_stmt|;
+name|palette_get_background
+argument_list|(
+operator|&
+name|bg_r
+argument_list|,
+operator|&
+name|bg_g
+argument_list|,
+operator|&
+name|bg_b
+argument_list|)
+expr_stmt|;
+name|palette_set_foreground
+argument_list|(
+name|bg_r
+argument_list|,
+name|bg_g
+argument_list|,
+name|bg_b
+argument_list|)
+expr_stmt|;
+name|palette_set_background
+argument_list|(
+name|fg_r
+argument_list|,
+name|fg_g
+argument_list|,
+name|fg_b
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|palette_init_palettes (void)
 name|palette_init_palettes
 parameter_list|(
@@ -7265,6 +7363,186 @@ comment|/*  Exec method  */
 block|{
 block|{
 name|palette_set_background_invoker
+block|}
+block|}
+block|, }
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/*******************************/
+end_comment
+
+begin_comment
+comment|/*  PALETTE_SET_DEFAULT_COLORS */
+end_comment
+
+begin_function
+specifier|static
+name|Argument
+modifier|*
+DECL|function|palette_set_default_colors_invoker (Argument * args)
+name|palette_set_default_colors_invoker
+parameter_list|(
+name|Argument
+modifier|*
+name|args
+parameter_list|)
+block|{
+name|int
+name|success
+decl_stmt|;
+name|success
+operator|=
+name|TRUE
+expr_stmt|;
+if|if
+condition|(
+name|success
+condition|)
+name|palette_set_default_colors
+argument_list|()
+expr_stmt|;
+return|return
+name|procedural_db_return_args
+argument_list|(
+operator|&
+name|palette_set_background_proc
+argument_list|,
+name|success
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/*  The procedure definition  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|palette_set_default_colors_proc
+name|ProcRecord
+name|palette_set_default_colors_proc
+init|=
+block|{
+literal|"gimp_palette_set_default_colors"
+block|,
+literal|"Set the current GIMP foreground and background colors to black and white"
+block|,
+literal|"This procedure sets the current GIMP foreground and background colors to their initial default values, black and white."
+block|,
+literal|"Spencer Kimball& Peter Mattis"
+block|,
+literal|"Spencer Kimball& Peter Mattis"
+block|,
+literal|"1995-1996"
+block|,
+name|PDB_INTERNAL
+block|,
+comment|/*  Input arguments  */
+literal|0
+block|,
+name|NULL
+block|,
+comment|/*  Output arguments  */
+literal|0
+block|,
+name|NULL
+block|,
+comment|/*  Exec method  */
+block|{
+block|{
+name|palette_set_default_colors_invoker
+block|}
+block|}
+block|, }
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/************************/
+end_comment
+
+begin_comment
+comment|/*  PALETTE_SWAP_COLORS */
+end_comment
+
+begin_function
+specifier|static
+name|Argument
+modifier|*
+DECL|function|palette_swap_colors_invoker (Argument * args)
+name|palette_swap_colors_invoker
+parameter_list|(
+name|Argument
+modifier|*
+name|args
+parameter_list|)
+block|{
+name|int
+name|success
+decl_stmt|;
+name|success
+operator|=
+name|TRUE
+expr_stmt|;
+if|if
+condition|(
+name|success
+condition|)
+name|palette_swap_colors
+argument_list|()
+expr_stmt|;
+return|return
+name|procedural_db_return_args
+argument_list|(
+operator|&
+name|palette_swap_colors_proc
+argument_list|,
+name|success
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/*  The procedure definition  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|palette_swap_colors_proc
+name|ProcRecord
+name|palette_swap_colors_proc
+init|=
+block|{
+literal|"gimp_palette_swap_colors"
+block|,
+literal|"Swap the current GIMP foreground and background colors"
+block|,
+literal|"This procedure swaps the current GIMP foreground and background colors, so that the new foreground color becomes the old background color and vice versa."
+block|,
+literal|"Spencer Kimball& Peter Mattis"
+block|,
+literal|"Spencer Kimball& Peter Mattis"
+block|,
+literal|"1995-1996"
+block|,
+name|PDB_INTERNAL
+block|,
+comment|/*  Input arguments  */
+literal|0
+block|,
+name|NULL
+block|,
+comment|/*  Output arguments  */
+literal|0
+block|,
+name|NULL
+block|,
+comment|/*  Exec method  */
+block|{
+block|{
+name|palette_swap_colors_invoker
 block|}
 block|}
 block|, }

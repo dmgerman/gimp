@@ -1425,6 +1425,26 @@ name|CONVOLVE
 block|}
 block|,
 block|{
+literal|"<Image>/Tools/Default Colors"
+block|,
+literal|"D"
+block|,
+name|tools_default_colors_cmd_callback
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"<Image>/Tools/Swap Colors"
+block|,
+literal|"X"
+block|,
+name|tools_swap_colors_cmd_callback
+block|,
+name|NULL
+block|}
+block|,
+block|{
 literal|"<Image>/Tools/<separator>"
 block|,
 name|NULL

@@ -187,6 +187,24 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|palette_set_default_colors
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|palette_swap_colors
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_struct
 DECL|struct|_PaletteEntries
 struct|struct
@@ -326,6 +344,20 @@ begin_decl_stmt
 specifier|extern
 name|ProcRecord
 name|palette_set_background_proc
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|ProcRecord
+name|palette_set_default_colors_proc
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|ProcRecord
+name|palette_swap_colors_proc
 decl_stmt|;
 end_decl_stmt
 
