@@ -357,7 +357,7 @@ argument_list|,
 operator|&
 name|view_info
 argument_list|,
-literal|0
+name|G_TYPE_FLAG_ABSTRACT
 argument_list|)
 expr_stmt|;
 name|g_type_add_interface_static

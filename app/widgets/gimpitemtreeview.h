@@ -260,15 +260,6 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-DECL|member|item_type
-name|GType
-name|item_type
-decl_stmt|;
-DECL|member|signal_name
-name|gchar
-modifier|*
-name|signal_name
-decl_stmt|;
 DECL|member|edit_button
 name|GtkWidget
 modifier|*
@@ -356,6 +347,16 @@ modifier|*
 name|gimage
 parameter_list|)
 function_decl|;
+DECL|member|item_type
+name|GType
+name|item_type
+decl_stmt|;
+DECL|member|signal_name
+specifier|const
+name|gchar
+modifier|*
+name|signal_name
+decl_stmt|;
 comment|/*  virtual functions for manipulating the image's item tree  */
 DECL|member|get_container
 name|GimpGetContainerFunc
@@ -478,6 +479,9 @@ name|GtkWidget
 modifier|*
 name|gimp_item_tree_view_new
 parameter_list|(
+name|GType
+name|view_type
+parameter_list|,
 name|gint
 name|preview_size
 parameter_list|,
@@ -487,14 +491,6 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|gimage
-parameter_list|,
-name|GType
-name|item_type
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|signal_name
 parameter_list|,
 name|GimpMenuFactory
 modifier|*

@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpchannel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpcontext.h"
 end_include
 
@@ -55,18 +49,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage-colormap.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimplayer.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"vectors/gimpvectors.h"
 end_include
 
 begin_include
@@ -91,6 +73,12 @@ begin_include
 include|#
 directive|include
 file|"widgets/gimpbufferview.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"widgets/gimpchanneltreeview.h"
 end_include
 
 begin_include
@@ -204,7 +192,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpitemtreeview.h"
+file|"widgets/gimplayertreeview.h"
 end_include
 
 begin_include
@@ -1890,6 +1878,8 @@ expr_stmt|;
 return|return
 name|gimp_item_tree_view_new
 argument_list|(
+name|GIMP_TYPE_LAYER_TREE_VIEW
+argument_list|,
 name|preview_size
 argument_list|,
 literal|2
@@ -1898,10 +1888,6 @@ name|gimp_context_get_image
 argument_list|(
 name|context
 argument_list|)
-argument_list|,
-name|GIMP_TYPE_LAYER
-argument_list|,
-literal|"active_layer_changed"
 argument_list|,
 name|factory
 operator|->
@@ -1952,6 +1938,8 @@ expr_stmt|;
 return|return
 name|gimp_item_tree_view_new
 argument_list|(
+name|GIMP_TYPE_CHANNEL_TREE_VIEW
+argument_list|,
 name|preview_size
 argument_list|,
 literal|1
@@ -1960,10 +1948,6 @@ name|gimp_context_get_image
 argument_list|(
 name|context
 argument_list|)
-argument_list|,
-name|GIMP_TYPE_CHANNEL
-argument_list|,
-literal|"active_channel_changed"
 argument_list|,
 name|factory
 operator|->
@@ -2014,6 +1998,8 @@ expr_stmt|;
 return|return
 name|gimp_item_tree_view_new
 argument_list|(
+name|GIMP_TYPE_VECTORS_TREE_VIEW
+argument_list|,
 name|preview_size
 argument_list|,
 literal|1
@@ -2022,10 +2008,6 @@ name|gimp_context_get_image
 argument_list|(
 name|context
 argument_list|)
-argument_list|,
-name|GIMP_TYPE_VECTORS
-argument_list|,
-literal|"active_vectors_changed"
 argument_list|,
 name|factory
 operator|->
