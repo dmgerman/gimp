@@ -88,7 +88,7 @@ name|colorradio
 index|[
 name|pcvals
 operator|.
-name|colortype
+name|color_type
 index|]
 argument_list|)
 argument_list|,
@@ -104,7 +104,7 @@ argument_list|)
 argument_list|,
 name|pcvals
 operator|.
-name|colornoise
+name|color_noise
 argument_list|)
 expr_stmt|;
 block|}
@@ -208,7 +208,7 @@ argument_list|,
 operator|&
 name|pcvals
 operator|.
-name|colortype
+name|color_type
 argument_list|,
 literal|0
 argument_list|,
@@ -359,7 +359,7 @@ literal|1
 argument_list|,
 name|pcvals
 operator|.
-name|colornoise
+name|color_noise
 argument_list|,
 literal|0.0
 argument_list|,
@@ -399,7 +399,7 @@ argument_list|,
 operator|&
 name|pcvals
 operator|.
-name|colornoise
+name|color_noise
 argument_list|)
 expr_stmt|;
 name|color_restore

@@ -205,7 +205,7 @@ name|brush_list
 argument_list|,
 name|pcvals
 operator|.
-name|selectedbrush
+name|selected_brush
 argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
@@ -229,7 +229,7 @@ argument_list|)
 argument_list|,
 name|pcvals
 operator|.
-name|brushrelief
+name|brush_relief
 argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
@@ -241,7 +241,7 @@ argument_list|)
 argument_list|,
 name|pcvals
 operator|.
-name|brushaspect
+name|brush_aspect
 argument_list|)
 expr_stmt|;
 block|}
@@ -303,7 +303,7 @@ name|brush_reload
 argument_list|(
 name|pcvals
 operator|.
-name|selectedbrush
+name|selected_brush
 argument_list|,
 name|p
 argument_list|)
@@ -371,7 +371,7 @@ parameter_list|)
 block|{
 name|pcvals
 operator|.
-name|colorbrushes
+name|color_brushes
 operator|=
 name|file_is_color
 argument_list|(
@@ -870,14 +870,14 @@ literal|3
 condition|)
 name|pcvals
 operator|.
-name|colorbrushes
+name|color_brushes
 operator|=
 literal|1
 expr_stmt|;
 else|else
 name|pcvals
 operator|.
-name|colorbrushes
+name|color_brushes
 operator|=
 literal|0
 expr_stmt|;
@@ -1955,7 +1955,7 @@ name|g_strlcpy
 argument_list|(
 name|pcvals
 operator|.
-name|selectedbrush
+name|selected_brush
 argument_list|,
 name|fname
 argument_list|,
@@ -1963,7 +1963,7 @@ sizeof|sizeof
 argument_list|(
 name|pcvals
 operator|.
-name|selectedbrush
+name|selected_brush
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2049,7 +2049,7 @@ name|update_brush_preview
 argument_list|(
 name|pcvals
 operator|.
-name|selectedbrush
+name|selected_brush
 argument_list|)
 expr_stmt|;
 block|}
@@ -2481,7 +2481,7 @@ argument_list|)
 argument_list|,
 name|pcvals
 operator|.
-name|selectedbrush
+name|selected_brush
 argument_list|)
 expr_stmt|;
 name|gimp_help_set_help_data
@@ -2755,7 +2755,7 @@ literal|1
 argument_list|,
 name|pcvals
 operator|.
-name|brushaspect
+name|brush_aspect
 argument_list|,
 operator|-
 literal|1.0
@@ -2806,7 +2806,7 @@ argument_list|,
 operator|&
 name|pcvals
 operator|.
-name|brushaspect
+name|brush_aspect
 argument_list|)
 expr_stmt|;
 name|brush_relief_adjust
@@ -2834,7 +2834,7 @@ literal|1
 argument_list|,
 name|pcvals
 operator|.
-name|brushrelief
+name|brush_relief
 argument_list|,
 literal|0.0
 argument_list|,
@@ -2884,7 +2884,7 @@ argument_list|,
 operator|&
 name|pcvals
 operator|.
-name|brushrelief
+name|brush_relief
 argument_list|)
 expr_stmt|;
 name|brush_select
@@ -2900,7 +2900,7 @@ name|view
 argument_list|,
 name|pcvals
 operator|.
-name|selectedbrush
+name|selected_brush
 argument_list|)
 expr_stmt|;
 comment|/*     * This is so the "changed signal won't get sent to the brushes' list    * and reset the gamma and stuff.    * */

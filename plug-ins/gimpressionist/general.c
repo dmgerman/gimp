@@ -218,7 +218,7 @@ parameter_list|)
 block|{
 name|pcvals
 operator|.
-name|generalbgtype
+name|general_background_type
 operator|=
 name|normalize_bg
 argument_list|(
@@ -252,7 +252,7 @@ name|active
 expr_stmt|;
 name|pcvals
 operator|.
-name|generaldarkedge
+name|general_dark_edge
 operator|=
 name|GTK_ADJUSTMENT
 argument_list|(
@@ -285,7 +285,7 @@ name|active
 expr_stmt|;
 name|pcvals
 operator|.
-name|generalshadowdarkness
+name|general_shadow_darkness
 operator|=
 name|GTK_ADJUSTMENT
 argument_list|(
@@ -368,7 +368,7 @@ name|normalize_bg
 argument_list|(
 name|pcvals
 operator|.
-name|generalbgtype
+name|general_background_type
 argument_list|)
 index|]
 argument_list|)
@@ -397,7 +397,7 @@ argument_list|)
 argument_list|,
 name|pcvals
 operator|.
-name|generaldarkedge
+name|general_dark_edge
 argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
@@ -409,7 +409,7 @@ argument_list|)
 argument_list|,
 name|pcvals
 operator|.
-name|generalshadowdarkness
+name|general_shadow_darkness
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -906,7 +906,7 @@ name|general_bg_radio
 index|[
 name|pcvals
 operator|.
-name|generalbgtype
+name|general_background_type
 index|]
 argument_list|)
 argument_list|,
@@ -1224,7 +1224,7 @@ literal|6
 argument_list|,
 name|pcvals
 operator|.
-name|generaldarkedge
+name|general_dark_edge
 argument_list|,
 literal|0.0
 argument_list|,
@@ -1274,7 +1274,7 @@ literal|6
 argument_list|,
 name|pcvals
 operator|.
-name|generalshadowdarkness
+name|general_shadow_darkness
 argument_list|,
 literal|0.0
 argument_list|,

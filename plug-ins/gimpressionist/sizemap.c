@@ -206,11 +206,11 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|sizevoronoi
+DECL|variable|size_voronoi
 specifier|static
 name|GtkWidget
 modifier|*
-name|sizevoronoi
+name|size_voronoi
 init|=
 name|NULL
 decl_stmt|;
@@ -286,7 +286,7 @@ name|value
 argument_list|,
 name|GTK_TOGGLE_BUTTON
 argument_list|(
-name|sizevoronoi
+name|size_voronoi
 argument_list|)
 operator|->
 name|active
@@ -1631,7 +1631,7 @@ operator|++
 control|)
 name|pcvals
 operator|.
-name|sizevector
+name|size_vectors
 index|[
 name|i
 index|]
@@ -1643,13 +1643,13 @@ index|]
 expr_stmt|;
 name|pcvals
 operator|.
-name|numsizevector
+name|num_size_vectors
 operator|=
 name|numsmvect
 expr_stmt|;
 name|pcvals
 operator|.
-name|sizestrexp
+name|size_strength_exponent
 operator|=
 name|GTK_ADJUSTMENT
 argument_list|(
@@ -1660,11 +1660,11 @@ name|value
 expr_stmt|;
 name|pcvals
 operator|.
-name|sizevoronoi
+name|size_voronoi
 operator|=
 name|GTK_TOGGLE_BUTTON
 argument_list|(
-name|sizevoronoi
+name|size_voronoi
 argument_list|)
 operator|->
 name|active
@@ -1699,7 +1699,7 @@ if|if
 condition|(
 name|pcvals
 operator|.
-name|numsizevector
+name|num_size_vectors
 condition|)
 block|{
 name|gint
@@ -1709,7 +1709,7 @@ name|numsmvect
 operator|=
 name|pcvals
 operator|.
-name|numsizevector
+name|num_size_vectors
 expr_stmt|;
 for|for
 control|(
@@ -1732,7 +1732,7 @@ index|]
 operator|=
 name|pcvals
 operator|.
-name|sizevector
+name|size_vectors
 index|[
 name|i
 index|]
@@ -1805,7 +1805,7 @@ literal|0
 end_if
 
 begin_endif
-unit|static void update_sizemap_dialog(void) {   if (smwindow)     {       initsmvectors();        gtk_adjustment_set_value(GTK_ADJUSTMENT(smstrexpadjust),                                   pcvals.sizestrexp);       gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(sizevoronoi),                                        pcvals.sizevoronoi);        updatesmvectorprev();       updatesmpreviewprev();     } }
+unit|static void update_sizemap_dialog(void) {   if (smwindow)     {       initsmvectors();        gtk_adjustment_set_value(GTK_ADJUSTMENT(smstrexpadjust),                                   pcvals.size_strength_exponent);       gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(size_voronoi),                                        pcvals.size_voronoi);        updatesmvectorprev();       updatesmpreviewprev();     } }
 endif|#
 directive|endif
 end_endif
@@ -2818,7 +2818,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|sizevoronoi
+name|size_voronoi
 operator|=
 name|tmpw
 operator|=
@@ -2872,7 +2872,7 @@ argument_list|)
 argument_list|,
 name|pcvals
 operator|.
-name|sizevoronoi
+name|size_voronoi
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

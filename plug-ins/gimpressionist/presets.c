@@ -1254,7 +1254,7 @@ condition|)
 return|return;
 name|pcvals
 operator|.
-name|orientvector
+name|orient_vectors
 index|[
 name|n
 index|]
@@ -1286,7 +1286,7 @@ condition|)
 return|return;
 name|pcvals
 operator|.
-name|orientvector
+name|orient_vectors
 index|[
 name|n
 index|]
@@ -1318,7 +1318,7 @@ condition|)
 return|return;
 name|pcvals
 operator|.
-name|orientvector
+name|orient_vectors
 index|[
 name|n
 index|]
@@ -1350,7 +1350,7 @@ condition|)
 return|return;
 name|pcvals
 operator|.
-name|orientvector
+name|orient_vectors
 index|[
 name|n
 index|]
@@ -1382,7 +1382,7 @@ condition|)
 return|return;
 name|pcvals
 operator|.
-name|orientvector
+name|orient_vectors
 index|[
 name|n
 index|]
@@ -1414,7 +1414,7 @@ condition|)
 return|return;
 name|pcvals
 operator|.
-name|orientvector
+name|orient_vectors
 index|[
 name|n
 index|]
@@ -1446,7 +1446,7 @@ condition|)
 return|return;
 name|pcvals
 operator|.
-name|orientvector
+name|orient_vectors
 index|[
 name|n
 index|]
@@ -1508,7 +1508,7 @@ condition|)
 return|return;
 name|pcvals
 operator|.
-name|sizevector
+name|size_vectors
 index|[
 name|n
 index|]
@@ -1540,7 +1540,7 @@ condition|)
 return|return;
 name|pcvals
 operator|.
-name|sizevector
+name|size_vectors
 index|[
 name|n
 index|]
@@ -1572,7 +1572,7 @@ condition|)
 return|return;
 name|pcvals
 operator|.
-name|sizevector
+name|size_vectors
 index|[
 name|n
 index|]
@@ -1604,7 +1604,7 @@ condition|)
 return|return;
 name|pcvals
 operator|.
-name|sizevector
+name|size_vectors
 index|[
 name|n
 index|]
@@ -1719,7 +1719,7 @@ argument_list|)
 condition|)
 name|pcvals
 operator|.
-name|orientnum
+name|orient_num
 operator|=
 name|atoi
 argument_list|(
@@ -1739,7 +1739,7 @@ argument_list|)
 condition|)
 name|pcvals
 operator|.
-name|orientfirst
+name|orient_first
 operator|=
 name|g_ascii_strtod
 argument_list|(
@@ -1761,7 +1761,7 @@ argument_list|)
 condition|)
 name|pcvals
 operator|.
-name|orientlast
+name|orient_last
 operator|=
 name|g_ascii_strtod
 argument_list|(
@@ -1783,7 +1783,7 @@ argument_list|)
 condition|)
 name|pcvals
 operator|.
-name|orienttype
+name|orient_type
 operator|=
 name|orientation_type_input
 argument_list|(
@@ -1806,7 +1806,7 @@ argument_list|)
 condition|)
 name|pcvals
 operator|.
-name|sizenum
+name|size_num
 operator|=
 name|atoi
 argument_list|(
@@ -1826,7 +1826,7 @@ argument_list|)
 condition|)
 name|pcvals
 operator|.
-name|sizefirst
+name|size_first
 operator|=
 name|g_ascii_strtod
 argument_list|(
@@ -1848,7 +1848,7 @@ argument_list|)
 condition|)
 name|pcvals
 operator|.
-name|sizelast
+name|size_last
 operator|=
 name|g_ascii_strtod
 argument_list|(
@@ -1870,7 +1870,7 @@ argument_list|)
 condition|)
 name|pcvals
 operator|.
-name|sizetype
+name|size_type
 operator|=
 name|size_type_input
 argument_list|(
@@ -1893,7 +1893,7 @@ argument_list|)
 condition|)
 name|pcvals
 operator|.
-name|brushrelief
+name|brush_relief
 operator|=
 name|g_ascii_strtod
 argument_list|(
@@ -1917,17 +1917,17 @@ block|{
 comment|/* For compatibility */
 name|pcvals
 operator|.
-name|sizenum
+name|size_num
 operator|=
 literal|1
 expr_stmt|;
 name|pcvals
 operator|.
-name|sizefirst
+name|size_first
 operator|=
 name|pcvals
 operator|.
-name|sizelast
+name|size_last
 operator|=
 name|g_ascii_strtod
 argument_list|(
@@ -1950,7 +1950,7 @@ argument_list|)
 condition|)
 name|pcvals
 operator|.
-name|brushdensity
+name|brush_density
 operator|=
 name|g_ascii_strtod
 argument_list|(
@@ -1994,7 +1994,7 @@ argument_list|)
 condition|)
 name|pcvals
 operator|.
-name|brushaspect
+name|brush_aspect
 operator|=
 name|g_ascii_strtod
 argument_list|(
@@ -2016,7 +2016,7 @@ argument_list|)
 condition|)
 name|pcvals
 operator|.
-name|generalbgtype
+name|general_background_type
 operator|=
 name|general_bg_type_input
 argument_list|(
@@ -2039,7 +2039,7 @@ argument_list|)
 condition|)
 name|pcvals
 operator|.
-name|generaldarkedge
+name|general_dark_edge
 operator|=
 name|g_ascii_strtod
 argument_list|(
@@ -2121,7 +2121,7 @@ argument_list|)
 condition|)
 name|pcvals
 operator|.
-name|generalshadowdarkness
+name|general_shadow_darkness
 operator|=
 name|g_ascii_strtod
 argument_list|(
@@ -2205,7 +2205,7 @@ argument_list|)
 condition|)
 name|pcvals
 operator|.
-name|paperrelief
+name|paper_relief
 operator|=
 name|g_ascii_strtod
 argument_list|(
@@ -2227,7 +2227,7 @@ argument_list|)
 condition|)
 name|pcvals
 operator|.
-name|paperscale
+name|paper_scale
 operator|=
 name|g_ascii_strtod
 argument_list|(
@@ -2289,7 +2289,7 @@ argument_list|)
 condition|)
 name|pcvals
 operator|.
-name|placetype
+name|place_type
 operator|=
 name|place_type_input
 argument_list|(
@@ -2334,7 +2334,7 @@ name|g_strlcpy
 argument_list|(
 name|pcvals
 operator|.
-name|selectedbrush
+name|selected_brush
 argument_list|,
 name|val
 argument_list|,
@@ -2342,7 +2342,7 @@ sizeof|sizeof
 argument_list|(
 name|pcvals
 operator|.
-name|selectedbrush
+name|selected_brush
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2361,7 +2361,7 @@ name|g_strlcpy
 argument_list|(
 name|pcvals
 operator|.
-name|selectedpaper
+name|selected_paper
 argument_list|,
 name|val
 argument_list|,
@@ -2369,7 +2369,7 @@ sizeof|sizeof
 argument_list|(
 name|pcvals
 operator|.
-name|selectedpaper
+name|selected_paper
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2433,7 +2433,7 @@ argument_list|)
 condition|)
 name|pcvals
 operator|.
-name|numorientvector
+name|num_orient_vectors
 operator|=
 name|atoi
 argument_list|(
@@ -2469,7 +2469,7 @@ argument_list|)
 condition|)
 name|pcvals
 operator|.
-name|orientangoff
+name|orient_angle_offset
 operator|=
 name|g_ascii_strtod
 argument_list|(
@@ -2491,7 +2491,7 @@ argument_list|)
 condition|)
 name|pcvals
 operator|.
-name|orientstrexp
+name|orient_strength_exponent
 operator|=
 name|g_ascii_strtod
 argument_list|(
@@ -2533,7 +2533,7 @@ argument_list|)
 condition|)
 name|pcvals
 operator|.
-name|numsizevector
+name|num_size_vectors
 operator|=
 name|atoi
 argument_list|(
@@ -2569,7 +2569,7 @@ argument_list|)
 condition|)
 name|pcvals
 operator|.
-name|sizestrexp
+name|size_strength_exponent
 operator|=
 name|g_ascii_strtod
 argument_list|(
@@ -2591,7 +2591,7 @@ argument_list|)
 condition|)
 name|pcvals
 operator|.
-name|sizevoronoi
+name|size_voronoi
 operator|=
 name|atoi
 argument_list|(
@@ -2611,7 +2611,7 @@ argument_list|)
 condition|)
 name|pcvals
 operator|.
-name|colortype
+name|color_type
 operator|=
 name|color_type_input
 argument_list|(
@@ -2634,7 +2634,7 @@ argument_list|)
 condition|)
 name|pcvals
 operator|.
-name|colornoise
+name|color_noise
 operator|=
 name|g_ascii_strtod
 argument_list|(
@@ -2906,7 +2906,7 @@ name|set_colorbrushes
 argument_list|(
 name|pcvals
 operator|.
-name|selectedbrush
+name|selected_brush
 argument_list|)
 expr_stmt|;
 block|}
@@ -3851,7 +3851,7 @@ literal|"orientnum=%d\n"
 argument_list|,
 name|pcvals
 operator|.
-name|orientnum
+name|orient_num
 argument_list|)
 expr_stmt|;
 name|fprintf
@@ -3870,7 +3870,7 @@ literal|"%f"
 argument_list|,
 name|pcvals
 operator|.
-name|orientfirst
+name|orient_first
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3890,7 +3890,7 @@ literal|"%f"
 argument_list|,
 name|pcvals
 operator|.
-name|orientlast
+name|orient_last
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3902,7 +3902,7 @@ literal|"orienttype=%d\n"
 argument_list|,
 name|pcvals
 operator|.
-name|orienttype
+name|orient_type
 argument_list|)
 expr_stmt|;
 name|fprintf
@@ -3913,7 +3913,7 @@ literal|"sizenum=%d\n"
 argument_list|,
 name|pcvals
 operator|.
-name|sizenum
+name|size_num
 argument_list|)
 expr_stmt|;
 name|fprintf
@@ -3932,7 +3932,7 @@ literal|"%f"
 argument_list|,
 name|pcvals
 operator|.
-name|sizefirst
+name|size_first
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3952,7 +3952,7 @@ literal|"%f"
 argument_list|,
 name|pcvals
 operator|.
-name|sizelast
+name|size_last
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3964,7 +3964,7 @@ literal|"sizetype=%d\n"
 argument_list|,
 name|pcvals
 operator|.
-name|sizetype
+name|size_type
 argument_list|)
 expr_stmt|;
 name|fprintf
@@ -3983,7 +3983,7 @@ literal|"%f"
 argument_list|,
 name|pcvals
 operator|.
-name|brushrelief
+name|brush_relief
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4003,7 +4003,7 @@ literal|"%f"
 argument_list|,
 name|pcvals
 operator|.
-name|brushdensity
+name|brush_density
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4043,7 +4043,7 @@ literal|"%f"
 argument_list|,
 name|pcvals
 operator|.
-name|brushaspect
+name|brush_aspect
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4055,7 +4055,7 @@ literal|"generalbgtype=%d\n"
 argument_list|,
 name|pcvals
 operator|.
-name|generalbgtype
+name|general_background_type
 argument_list|)
 expr_stmt|;
 name|fprintf
@@ -4074,7 +4074,7 @@ literal|"%f"
 argument_list|,
 name|pcvals
 operator|.
-name|generaldarkedge
+name|general_dark_edge
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4127,7 +4127,7 @@ literal|"%f"
 argument_list|,
 name|pcvals
 operator|.
-name|generalshadowdarkness
+name|general_shadow_darkness
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4189,7 +4189,7 @@ literal|"%f"
 argument_list|,
 name|pcvals
 operator|.
-name|paperrelief
+name|paper_relief
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4209,7 +4209,7 @@ literal|"%f"
 argument_list|,
 name|pcvals
 operator|.
-name|paperscale
+name|paper_scale
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4243,7 +4243,7 @@ literal|"selectedbrush=%s\n"
 argument_list|,
 name|pcvals
 operator|.
-name|selectedbrush
+name|selected_brush
 argument_list|)
 expr_stmt|;
 name|fprintf
@@ -4254,7 +4254,7 @@ literal|"selectedpaper=%s\n"
 argument_list|,
 name|pcvals
 operator|.
-name|selectedpaper
+name|selected_paper
 argument_list|)
 expr_stmt|;
 name|gimp_rgb_get_uchar
@@ -4313,7 +4313,7 @@ literal|"placetype=%d\n"
 argument_list|,
 name|pcvals
 operator|.
-name|placetype
+name|place_type
 argument_list|)
 expr_stmt|;
 name|fprintf
@@ -4335,7 +4335,7 @@ literal|"numorientvector=%d\n"
 argument_list|,
 name|pcvals
 operator|.
-name|numorientvector
+name|num_orient_vectors
 argument_list|)
 expr_stmt|;
 for|for
@@ -4348,7 +4348,7 @@ name|i
 operator|<
 name|pcvals
 operator|.
-name|numorientvector
+name|num_orient_vectors
 condition|;
 name|i
 operator|++
@@ -4367,7 +4367,7 @@ literal|"%f"
 argument_list|,
 name|pcvals
 operator|.
-name|orientvector
+name|orient_vectors
 index|[
 name|i
 index|]
@@ -4388,7 +4388,7 @@ literal|"%f"
 argument_list|,
 name|pcvals
 operator|.
-name|orientvector
+name|orient_vectors
 index|[
 name|i
 index|]
@@ -4409,7 +4409,7 @@ literal|"%f"
 argument_list|,
 name|pcvals
 operator|.
-name|orientvector
+name|orient_vectors
 index|[
 name|i
 index|]
@@ -4430,7 +4430,7 @@ literal|"%f"
 argument_list|,
 name|pcvals
 operator|.
-name|orientvector
+name|orient_vectors
 index|[
 name|i
 index|]
@@ -4451,7 +4451,7 @@ literal|"%f"
 argument_list|,
 name|pcvals
 operator|.
-name|orientvector
+name|orient_vectors
 index|[
 name|i
 index|]
@@ -4472,7 +4472,7 @@ literal|"%f"
 argument_list|,
 name|pcvals
 operator|.
-name|orientvector
+name|orient_vectors
 index|[
 name|i
 index|]
@@ -4520,7 +4520,7 @@ index|]
 argument_list|,
 name|pcvals
 operator|.
-name|orientvector
+name|orient_vectors
 index|[
 name|i
 index|]
@@ -4545,7 +4545,7 @@ literal|"%f"
 argument_list|,
 name|pcvals
 operator|.
-name|orientangoff
+name|orient_angle_offset
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4565,7 +4565,7 @@ literal|"%f"
 argument_list|,
 name|pcvals
 operator|.
-name|orientstrexp
+name|orient_strength_exponent
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4588,7 +4588,7 @@ literal|"numsizevector=%d\n"
 argument_list|,
 name|pcvals
 operator|.
-name|numsizevector
+name|num_size_vectors
 argument_list|)
 expr_stmt|;
 for|for
@@ -4601,7 +4601,7 @@ name|i
 operator|<
 name|pcvals
 operator|.
-name|numsizevector
+name|num_size_vectors
 condition|;
 name|i
 operator|++
@@ -4620,7 +4620,7 @@ literal|"%f"
 argument_list|,
 name|pcvals
 operator|.
-name|sizevector
+name|size_vectors
 index|[
 name|i
 index|]
@@ -4641,7 +4641,7 @@ literal|"%f"
 argument_list|,
 name|pcvals
 operator|.
-name|sizevector
+name|size_vectors
 index|[
 name|i
 index|]
@@ -4662,7 +4662,7 @@ literal|"%f"
 argument_list|,
 name|pcvals
 operator|.
-name|sizevector
+name|size_vectors
 index|[
 name|i
 index|]
@@ -4683,7 +4683,7 @@ literal|"%f"
 argument_list|,
 name|pcvals
 operator|.
-name|sizevector
+name|size_vectors
 index|[
 name|i
 index|]
@@ -4737,7 +4737,7 @@ literal|"%f"
 argument_list|,
 name|pcvals
 operator|.
-name|sizestrexp
+name|size_strength_exponent
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4749,7 +4749,7 @@ literal|"sizevoronoi=%d\n"
 argument_list|,
 name|pcvals
 operator|.
-name|sizevoronoi
+name|size_voronoi
 argument_list|)
 expr_stmt|;
 name|fprintf
@@ -4760,7 +4760,7 @@ literal|"colortype=%d\n"
 argument_list|,
 name|pcvals
 operator|.
-name|colortype
+name|color_type
 argument_list|)
 expr_stmt|;
 name|fprintf
@@ -4779,7 +4779,7 @@ literal|"%f"
 argument_list|,
 name|pcvals
 operator|.
-name|colornoise
+name|color_noise
 argument_list|)
 argument_list|)
 expr_stmt|;

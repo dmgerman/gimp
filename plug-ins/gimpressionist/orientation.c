@@ -109,7 +109,7 @@ parameter_list|)
 block|{
 name|pcvals
 operator|.
-name|orienttype
+name|orient_type
 operator|=
 name|GPOINTER_TO_INT
 argument_list|(
@@ -155,7 +155,7 @@ name|orient_radio
 index|[
 name|pcvals
 operator|.
-name|orienttype
+name|orient_type
 index|]
 argument_list|)
 argument_list|,
@@ -171,7 +171,7 @@ argument_list|)
 argument_list|,
 name|pcvals
 operator|.
-name|orientnum
+name|orient_num
 argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
@@ -183,7 +183,7 @@ argument_list|)
 argument_list|,
 name|pcvals
 operator|.
-name|orientfirst
+name|orient_first
 argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
@@ -195,7 +195,7 @@ argument_list|)
 argument_list|,
 name|pcvals
 operator|.
-name|orientlast
+name|orient_last
 argument_list|)
 expr_stmt|;
 block|}
@@ -231,7 +231,7 @@ block|}
 end_function
 
 begin_function
-DECL|function|create_orientradio_button (GtkWidget * box,int orienttype,gchar * label,gchar * help_string,GSList ** radio_group)
+DECL|function|create_orientradio_button (GtkWidget * box,int orient_type,gchar * label,gchar * help_string,GSList ** radio_group)
 specifier|static
 name|void
 name|create_orientradio_button
@@ -241,7 +241,7 @@ modifier|*
 name|box
 parameter_list|,
 name|int
-name|orienttype
+name|orient_type
 parameter_list|,
 name|gchar
 modifier|*
@@ -261,7 +261,7 @@ name|create_radio_button
 argument_list|(
 name|box
 argument_list|,
-name|orienttype
+name|orient_type
 argument_list|,
 name|orientation_store
 argument_list|,
@@ -428,7 +428,7 @@ literal|1
 argument_list|,
 name|pcvals
 operator|.
-name|orientnum
+name|orient_num
 argument_list|,
 literal|1.0
 argument_list|,
@@ -468,7 +468,7 @@ argument_list|,
 operator|&
 name|pcvals
 operator|.
-name|orientnum
+name|orient_num
 argument_list|)
 expr_stmt|;
 name|orient_first_adjust
@@ -496,7 +496,7 @@ literal|1
 argument_list|,
 name|pcvals
 operator|.
-name|orientfirst
+name|orient_first
 argument_list|,
 literal|0.0
 argument_list|,
@@ -536,7 +536,7 @@ argument_list|,
 operator|&
 name|pcvals
 operator|.
-name|orientfirst
+name|orient_first
 argument_list|)
 expr_stmt|;
 name|orient_last_adjust
@@ -564,7 +564,7 @@ literal|1
 argument_list|,
 name|pcvals
 operator|.
-name|orientlast
+name|orient_last
 argument_list|,
 literal|0.0
 argument_list|,
@@ -604,7 +604,7 @@ argument_list|,
 operator|&
 name|pcvals
 operator|.
-name|orientlast
+name|orient_last
 argument_list|)
 expr_stmt|;
 name|box2

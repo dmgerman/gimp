@@ -97,7 +97,7 @@ name|placement_radio
 index|[
 name|pcvals
 operator|.
-name|placetype
+name|place_type
 index|]
 argument_list|)
 argument_list|,
@@ -125,7 +125,7 @@ argument_list|)
 argument_list|,
 name|pcvals
 operator|.
-name|brushdensity
+name|brush_density
 argument_list|)
 expr_stmt|;
 block|}
@@ -251,7 +251,7 @@ argument_list|,
 operator|&
 name|pcvals
 operator|.
-name|placetype
+name|place_type
 argument_list|,
 literal|0
 argument_list|,
@@ -343,7 +343,7 @@ name|placement_radio
 index|[
 name|pcvals
 operator|.
-name|placetype
+name|place_type
 index|]
 argument_list|)
 argument_list|,
@@ -417,7 +417,7 @@ literal|1
 argument_list|,
 name|pcvals
 operator|.
-name|brushdensity
+name|brush_density
 argument_list|,
 literal|1.0
 argument_list|,
@@ -457,7 +457,7 @@ argument_list|,
 operator|&
 name|pcvals
 operator|.
-name|brushdensity
+name|brush_density
 argument_list|)
 expr_stmt|;
 name|placement_center

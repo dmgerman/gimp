@@ -119,19 +119,19 @@ name|y
 argument_list|,
 name|pcvals
 operator|.
-name|numsizevector
+name|num_size_vectors
 argument_list|,
 name|pcvals
 operator|.
-name|sizevector
+name|size_vectors
 argument_list|,
 name|pcvals
 operator|.
-name|sizestrexp
+name|size_strength_exponent
 argument_list|,
 name|pcvals
 operator|.
-name|sizevoronoi
+name|size_voronoi
 argument_list|)
 return|;
 block|}
@@ -409,6 +409,10 @@ name|sum
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/* TODO : Use r = rgb[0]; g = rgb[1] ; b = rgb[2]; instead of   * the direct references here.  * */
+end_comment
 
 begin_function
 DECL|function|get_hue (guchar * rgb)
@@ -766,6 +770,7 @@ index|[
 name|i
 index|]
 expr_stmt|;
+comment|/* TODO: Pointer-arithmeticize this code */
 name|r
 operator|=
 name|g
@@ -1320,14 +1325,14 @@ literal|1.0
 operator|-
 name|runningvals
 operator|.
-name|generaldarkedge
+name|general_dark_edge
 decl_stmt|;
 name|double
 name|relief
 init|=
 name|runningvals
 operator|.
-name|brushrelief
+name|brush_relief
 operator|/
 literal|100.0
 decl_stmt|;
@@ -1564,7 +1569,7 @@ literal|255.0
 operator|*
 name|runningvals
 operator|.
-name|generalshadowdarkness
+name|general_shadow_darkness
 operator|/
 literal|100.0
 operator|)
@@ -1730,7 +1735,7 @@ if|if
 condition|(
 name|runningvals
 operator|.
-name|colorbrushes
+name|color_brushes
 condition|)
 block|{
 name|v
@@ -2353,35 +2358,35 @@ name|num_brushes
 operator|=
 name|runningvals
 operator|.
-name|orientnum
+name|orient_num
 operator|*
 name|runningvals
 operator|.
-name|sizenum
+name|size_num
 expr_stmt|;
 name|startangle
 operator|=
 name|runningvals
 operator|.
-name|orientfirst
+name|orient_first
 expr_stmt|;
 name|anglespan
 operator|=
 name|runningvals
 operator|.
-name|orientlast
+name|orient_last
 expr_stmt|;
 name|density
 operator|=
 name|runningvals
 operator|.
-name|brushdensity
+name|brush_density
 expr_stmt|;
 if|if
 condition|(
 name|runningvals
 operator|.
-name|placetype
+name|place_type
 operator|==
 name|PLACEMENT_TYPE_EVEN_DIST
 condition|)
@@ -2486,7 +2491,7 @@ literal|10
 argument_list|,
 name|runningvals
 operator|.
-name|brushaspect
+name|brush_aspect
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2494,7 +2499,7 @@ name|scale
 operator|=
 name|runningvals
 operator|.
-name|sizelast
+name|size_last
 operator|/
 name|MAX
 argument_list|(
@@ -2696,7 +2701,7 @@ name|i
 operator|<
 name|runningvals
 operator|.
-name|sizenum
+name|size_num
 condition|;
 name|i
 operator|++
@@ -2709,7 +2714,7 @@ if|if
 condition|(
 name|runningvals
 operator|.
-name|sizenum
+name|size_num
 operator|>
 literal|1
 condition|)
@@ -2720,7 +2725,7 @@ operator|/
 operator|(
 name|runningvals
 operator|.
-name|sizenum
+name|size_num
 operator|-
 literal|1.0
 operator|)
@@ -2740,7 +2745,7 @@ name|j
 operator|<
 name|runningvals
 operator|.
-name|orientnum
+name|orient_num
 condition|;
 name|j
 operator|++
@@ -2754,7 +2759,7 @@ name|i
 operator|*
 name|runningvals
 operator|.
-name|orientnum
+name|orient_num
 expr_stmt|;
 name|free_rotate
 argument_list|(
@@ -2772,7 +2777,7 @@ name|anglespan
 operator|/
 name|runningvals
 operator|.
-name|orientnum
+name|orient_num
 argument_list|)
 expr_stmt|;
 name|rescale
@@ -2788,7 +2793,7 @@ name|sv
 operator|*
 name|runningvals
 operator|.
-name|sizefirst
+name|size_first
 operator|+
 operator|(
 literal|1.0
@@ -2798,12 +2803,12 @@ operator|)
 operator|*
 name|runningvals
 operator|.
-name|sizelast
+name|size_last
 operator|)
 operator|/
 name|runningvals
 operator|.
-name|sizelast
+name|size_last
 argument_list|)
 expr_stmt|;
 name|autocrop
@@ -2845,7 +2850,7 @@ condition|(
 operator|!
 name|runningvals
 operator|.
-name|colorbrushes
+name|color_brushes
 condition|)
 name|prepare_brush
 argument_list|(
@@ -3222,7 +3227,7 @@ if|if
 condition|(
 name|runningvals
 operator|.
-name|generalbgtype
+name|general_background_type
 operator|==
 name|BG_TYPE_TRANSPARENT
 condition|)
@@ -3280,7 +3285,7 @@ if|if
 condition|(
 name|runningvals
 operator|.
-name|generalbgtype
+name|general_background_type
 operator|==
 name|BG_TYPE_SOLID
 condition|)
@@ -3345,7 +3350,7 @@ if|if
 condition|(
 name|runningvals
 operator|.
-name|generalbgtype
+name|general_background_type
 operator|==
 name|BG_TYPE_KEEP_ORIGINAL
 condition|)
@@ -3365,7 +3370,7 @@ name|scale
 operator|=
 name|runningvals
 operator|.
-name|paperscale
+name|paper_scale
 operator|/
 literal|100.0
 expr_stmt|;
@@ -3387,7 +3392,7 @@ name|ppm_load
 argument_list|(
 name|runningvals
 operator|.
-name|selectedpaper
+name|selected_paper
 argument_list|,
 operator|&
 name|paper_ppm
@@ -3559,7 +3564,7 @@ switch|switch
 condition|(
 name|runningvals
 operator|.
-name|orienttype
+name|orient_type
 condition|)
 block|{
 case|case
@@ -4282,7 +4287,7 @@ if|if
 condition|(
 name|runningvals
 operator|.
-name|sizetype
+name|size_type
 operator|==
 name|SIZE_TYPE_VALUE
 condition|)
@@ -4413,7 +4418,7 @@ if|if
 condition|(
 name|runningvals
 operator|.
-name|sizetype
+name|size_type
 operator|==
 name|SIZE_TYPE_RADIUS
 condition|)
@@ -4533,7 +4538,7 @@ if|if
 condition|(
 name|runningvals
 operator|.
-name|sizetype
+name|size_type
 operator|==
 name|SIZE_TYPE_RADIAL
 condition|)
@@ -4640,7 +4645,7 @@ if|if
 condition|(
 name|runningvals
 operator|.
-name|sizetype
+name|size_type
 operator|==
 name|SIZE_TYPE_FLOWING
 condition|)
@@ -4745,7 +4750,7 @@ if|if
 condition|(
 name|runningvals
 operator|.
-name|sizetype
+name|size_type
 operator|==
 name|SIZE_TYPE_HUE
 condition|)
@@ -4858,7 +4863,7 @@ if|if
 condition|(
 name|runningvals
 operator|.
-name|sizetype
+name|size_type
 operator|==
 name|SIZE_TYPE_ADAPTIVE
 condition|)
@@ -4905,7 +4910,7 @@ if|if
 condition|(
 name|runningvals
 operator|.
-name|sizetype
+name|size_type
 operator|==
 name|SIZE_TYPE_MANUAL
 condition|)
@@ -5048,7 +5053,7 @@ if|if
 condition|(
 name|runningvals
 operator|.
-name|placetype
+name|place_type
 operator|==
 name|PLACEMENT_TYPE_RANDOM
 condition|)
@@ -5079,7 +5084,7 @@ if|if
 condition|(
 name|runningvals
 operator|.
-name|placetype
+name|place_type
 operator|==
 name|PLACEMENT_TYPE_EVEN_DIST
 condition|)
@@ -5157,7 +5162,7 @@ if|if
 condition|(
 name|runningvals
 operator|.
-name|placetype
+name|place_type
 operator|==
 name|PLACEMENT_TYPE_EVEN_DIST
 condition|)
@@ -5440,7 +5445,7 @@ if|if
 condition|(
 name|runningvals
 operator|.
-name|placetype
+name|place_type
 operator|==
 name|PLACEMENT_TYPE_RANDOM
 condition|)
@@ -5489,7 +5494,7 @@ if|if
 condition|(
 name|runningvals
 operator|.
-name|placetype
+name|place_type
 operator|==
 name|PLACEMENT_TYPE_EVEN_DIST
 condition|)
@@ -5660,7 +5665,7 @@ switch|switch
 condition|(
 name|runningvals
 operator|.
-name|orienttype
+name|orient_type
 condition|)
 block|{
 case|case
@@ -5676,7 +5681,7 @@ literal|0
 argument_list|,
 name|runningvals
 operator|.
-name|orientnum
+name|orient_num
 argument_list|)
 expr_stmt|;
 break|break;
@@ -5702,7 +5707,7 @@ name|on
 operator|=
 name|runningvals
 operator|.
-name|orientnum
+name|orient_num
 operator|*
 name|dirmap
 operator|.
@@ -5745,7 +5750,7 @@ switch|switch
 condition|(
 name|runningvals
 operator|.
-name|sizetype
+name|size_type
 condition|)
 block|{
 case|case
@@ -5761,7 +5766,7 @@ literal|0
 argument_list|,
 name|runningvals
 operator|.
-name|sizenum
+name|size_num
 argument_list|)
 expr_stmt|;
 break|break;
@@ -5787,7 +5792,7 @@ name|sn
 operator|=
 name|runningvals
 operator|.
-name|sizenum
+name|size_num
 operator|*
 name|sizmap
 operator|.
@@ -5817,7 +5822,7 @@ comment|/* Handled below */
 default|default:
 name|g_printerr
 argument_list|(
-literal|"Internal error; Unknown sizetype\n"
+literal|"Internal error; Unknown size_type\n"
 argument_list|)
 expr_stmt|;
 name|sn
@@ -5831,7 +5836,7 @@ if|if
 condition|(
 name|runningvals
 operator|.
-name|orienttype
+name|orient_type
 operator|==
 name|ORIENTATION_ADAPTIVE
 condition|)
@@ -5840,7 +5845,7 @@ if|if
 condition|(
 name|runningvals
 operator|.
-name|sizetype
+name|size_type
 operator|==
 name|SIZE_TYPE_ADAPTIVE
 condition|)
@@ -5884,7 +5889,7 @@ name|sn
 operator|*
 name|runningvals
 operator|.
-name|orientnum
+name|orient_num
 decl_stmt|;
 name|n
 operator|=
@@ -5912,7 +5917,7 @@ name|st
 operator|+
 name|runningvals
 operator|.
-name|orientnum
+name|orient_num
 argument_list|,
 name|brushes_sum
 argument_list|,
@@ -5929,7 +5934,7 @@ if|if
 condition|(
 name|runningvals
 operator|.
-name|sizetype
+name|size_type
 operator|==
 name|SIZE_TYPE_ADAPTIVE
 condition|)
@@ -5963,7 +5968,7 @@ name|on
 argument_list|,
 name|runningvals
 operator|.
-name|orientnum
+name|orient_num
 argument_list|)
 expr_stmt|;
 else|else
@@ -5973,7 +5978,7 @@ name|sn
 operator|*
 name|runningvals
 operator|.
-name|orientnum
+name|orient_num
 operator|+
 name|on
 expr_stmt|;
@@ -6046,7 +6051,7 @@ if|if
 condition|(
 name|runningvals
 operator|.
-name|colortype
+name|color_type
 operator|==
 literal|0
 condition|)
@@ -6223,7 +6228,7 @@ if|if
 condition|(
 name|runningvals
 operator|.
-name|colortype
+name|color_type
 operator|==
 literal|1
 condition|)
@@ -6300,7 +6305,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* No such colortype! */
+comment|/* No such color_type! */
 name|r
 operator|=
 name|g
@@ -6314,7 +6319,7 @@ if|if
 condition|(
 name|runningvals
 operator|.
-name|colornoise
+name|color_noise
 operator|>
 literal|0.0
 condition|)
@@ -6324,7 +6329,7 @@ name|v
 init|=
 name|runningvals
 operator|.
-name|colornoise
+name|color_noise
 decl_stmt|;
 DECL|macro|BOUNDS (a)
 define|#
@@ -6833,7 +6838,7 @@ name|relief
 operator|=
 name|runningvals
 operator|.
-name|paperrelief
+name|paper_relief
 operator|/
 literal|100.0
 expr_stmt|;
@@ -6848,7 +6853,7 @@ name|scale
 operator|=
 name|runningvals
 operator|.
-name|paperscale
+name|paper_scale
 operator|/
 literal|100.0
 expr_stmt|;
@@ -6884,7 +6889,7 @@ name|ppm_load
 argument_list|(
 name|runningvals
 operator|.
-name|selectedpaper
+name|selected_paper
 argument_list|,
 operator|&
 name|tmp

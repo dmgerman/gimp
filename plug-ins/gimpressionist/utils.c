@@ -156,7 +156,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|if (from == 0)     {       n = numsmvect;       vec = smvector;       smstrexp = GTK_ADJUSTMENT(smstrexpadjust)->value;       voronoi = GTK_TOGGLE_BUTTON(sizevoronoi)->active;     }   else     {       n = pcvals.numsizevector;       vec = pcvals.sizevector;       smstrexp = pcvals.sizestrexp;       voronoi = pcvals.sizevoronoi;     }
+block|if (from == 0)     {       n = numsmvect;       vec = smvector;       smstrexp = GTK_ADJUSTMENT(smstrexpadjust)->value;       voronoi = GTK_TOGGLE_BUTTON(size_voronoi)->active;     }   else     {       n = pcvals.num_size_vectors;       vec = pcvals.size_vectors;       smstrexp = pcvals.size_strength_exponent;       voronoi = pcvals.size_voronoi;     }
 endif|#
 directive|endif
 if|if
@@ -1440,11 +1440,11 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * Creates a radio button.  * box - the containing box.  * orienttype - The orientation ID  * label, help_string - self-describing  * radio_group -  *      A pointer to a radio group. The function assigns its value  *      as the radio group of the radio button. Afterwards, it assigns it  *      a new value of the new radio group of the button.  *      This is useful to group buttons. Just reset the variable to NULL,  *      to create a new group.  * */
+comment|/*  * Creates a radio button.  * box - the containing box.  * orient_type - The orientation ID  * label, help_string - self-describing  * radio_group -  *      A pointer to a radio group. The function assigns its value  *      as the radio group of the radio button. Afterwards, it assigns it  *      a new value of the new radio group of the button.  *      This is useful to group buttons. Just reset the variable to NULL,  *      to create a new group.  * */
 end_comment
 
 begin_function
-DECL|function|create_radio_button (GtkWidget * box,int orienttype,void (* callback)(GtkWidget * wg,void * d),gchar * label,gchar * help_string,GSList ** radio_group,GtkWidget ** buttons_array)
+DECL|function|create_radio_button (GtkWidget * box,int orient_type,void (* callback)(GtkWidget * wg,void * d),gchar * label,gchar * help_string,GSList ** radio_group,GtkWidget ** buttons_array)
 name|GtkWidget
 modifier|*
 name|create_radio_button
@@ -1454,7 +1454,7 @@ modifier|*
 name|box
 parameter_list|,
 name|int
-name|orienttype
+name|orient_type
 parameter_list|,
 name|void
 function_decl|(
@@ -1496,7 +1496,7 @@ name|tmpw
 decl_stmt|;
 name|buttons_array
 index|[
-name|orienttype
+name|orient_type
 index|]
 operator|=
 name|tmpw
@@ -1545,7 +1545,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|orienttype
+name|orient_type
 argument_list|)
 argument_list|)
 expr_stmt|;

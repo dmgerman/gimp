@@ -180,7 +180,7 @@ name|ppm_load
 argument_list|(
 name|pcvals
 operator|.
-name|selectedpaper
+name|selected_paper
 argument_list|,
 operator|&
 name|p
@@ -447,7 +447,7 @@ name|g_strlcpy
 argument_list|(
 name|pcvals
 operator|.
-name|selectedpaper
+name|selected_paper
 argument_list|,
 name|fname
 argument_list|,
@@ -455,7 +455,7 @@ sizeof|sizeof
 argument_list|(
 name|pcvals
 operator|.
-name|selectedpaper
+name|selected_paper
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -491,7 +491,7 @@ name|paper_list
 argument_list|,
 name|pcvals
 operator|.
-name|selectedpaper
+name|selected_paper
 argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
@@ -503,7 +503,7 @@ argument_list|)
 argument_list|,
 name|pcvals
 operator|.
-name|paperrelief
+name|paper_relief
 argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
@@ -515,7 +515,7 @@ argument_list|)
 argument_list|,
 name|pcvals
 operator|.
-name|paperscale
+name|paper_scale
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -1065,7 +1065,7 @@ literal|1
 argument_list|,
 name|pcvals
 operator|.
-name|paperscale
+name|paper_scale
 argument_list|,
 literal|3.0
 argument_list|,
@@ -1105,7 +1105,7 @@ argument_list|,
 operator|&
 name|pcvals
 operator|.
-name|paperscale
+name|paper_scale
 argument_list|)
 expr_stmt|;
 name|paper_relief_adjust
@@ -1133,7 +1133,7 @@ literal|1
 argument_list|,
 name|pcvals
 operator|.
-name|paperrelief
+name|paper_relief
 argument_list|,
 literal|0.0
 argument_list|,
@@ -1173,7 +1173,7 @@ argument_list|,
 operator|&
 name|pcvals
 operator|.
-name|paperrelief
+name|paper_relief
 argument_list|)
 expr_stmt|;
 if|if
@@ -1212,7 +1212,7 @@ name|view
 argument_list|,
 name|pcvals
 operator|.
-name|selectedpaper
+name|selected_paper
 argument_list|)
 expr_stmt|;
 name|gtk_notebook_append_page_menu

@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"orientmap.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"placement.h"
 end_include
 
