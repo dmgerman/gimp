@@ -153,7 +153,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3d2f2b0103
+DECL|enum|__anon27ab0e060103
 block|{
 DECL|enumerator|C_TEXT
 name|C_TEXT

@@ -83,7 +83,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon298f88a60103
+DECL|enum|__anon290b5f0a0103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -108,7 +108,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon298f88a60203
+DECL|enum|__anon290b5f0a0203
 block|{
 DECL|enumerator|TEXT
 name|TEXT
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon298f88a60303
+DECL|enum|__anon290b5f0a0303
 block|{
 DECL|enumerator|XLFD_NONE
 name|XLFD_NONE
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon298f88a60403
+DECL|enum|__anon290b5f0a0403
 block|{
 DECL|enumerator|LA_NONE
 name|LA_NONE
@@ -301,7 +301,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon298f88a60508
+DECL|struct|__anon290b5f0a0508
 typedef|typedef
 struct|struct
 block|{
@@ -342,7 +342,7 @@ literal|1024
 index|]
 decl_stmt|;
 DECL|member|color
-name|gint32
+name|GimpRGB
 name|color
 decl_stmt|;
 DECL|member|antialias
