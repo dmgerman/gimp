@@ -1496,9 +1496,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|colors_equal (guchar * col1,guchar * col2,int bytes)
 specifier|static
 name|int
+DECL|function|colors_equal (guchar * col1,guchar * col2,int bytes)
 name|colors_equal
 parameter_list|(
 name|guchar
@@ -1521,6 +1521,43 @@ decl_stmt|;
 name|int
 name|b
 decl_stmt|;
+if|if
+condition|(
+operator|(
+name|bytes
+operator|==
+literal|2
+operator|||
+name|bytes
+operator|==
+literal|4
+operator|)
+operator|&&
+comment|/* HACK! */
+name|col1
+index|[
+name|bytes
+operator|-
+literal|1
+index|]
+operator|==
+literal|0
+operator|&&
+name|col2
+index|[
+name|bytes
+operator|-
+literal|1
+index|]
+operator|==
+literal|0
+condition|)
+block|{
+return|return
+literal|1
+return|;
+comment|/* handle zero alpha */
+block|}
 for|for
 control|(
 name|b
