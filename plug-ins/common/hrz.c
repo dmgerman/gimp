@@ -164,7 +164,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a31b60c0108
+DECL|struct|__anon2be761020108
 block|{
 DECL|member|run
 name|gboolean
@@ -253,7 +253,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* static gint   save_dialog      (void); static void   save_ok_callback (GtkWidget *widget, 				gpointer   data); */
+comment|/* static gboolean save_dialog (void); */
 end_comment
 
 begin_define
@@ -1658,40 +1658,11 @@ name|drawable_ID
 argument_list|)
 condition|)
 block|{
-comment|/* gimp_message ("HRZ save cannot handle images with alpha channels.");  */
-return|return
-name|FALSE
-return|;
-block|}
-comment|/* open the file */
-name|fp
-operator|=
-name|fopen
-argument_list|(
-name|filename
-argument_list|,
-literal|"wb"
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|fp
-operator|==
-name|NULL
-condition|)
-block|{
 name|g_message
 argument_list|(
-literal|"Could not open '%s' for writing: %s"
-argument_list|,
-name|gimp_filename_to_utf8
+name|_
 argument_list|(
-name|filename
-argument_list|)
-argument_list|,
-name|g_strerror
-argument_list|(
-name|errno
+literal|"Cannot save images with alpha channel."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1750,6 +1721,45 @@ argument_list|(
 name|_
 argument_list|(
 literal|"Image must be RGB or GRAY"
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
+block|}
+comment|/* open the file */
+name|fp
+operator|=
+name|fopen
+argument_list|(
+name|filename
+argument_list|,
+literal|"wb"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|fp
+operator|==
+name|NULL
+condition|)
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Could not open '%s' for writing: %s"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1945,7 +1955,7 @@ comment|/*********** Save dialog ************/
 end_comment
 
 begin_comment
-comment|/* static gint save_dialog (void) {   GtkWidget *dlg;    dlg = gimp_dialog_new (_("Save as HRZ"), "hrz", 			 gimp_standard_help_func, "filters/hrz.html", 			 GTK_WIN_POS_MOUSE, 			 FALSE, TRUE, FALSE,  			 GTK_STOCK_CANCEL, gtk_widget_destroy, 			 NULL, 1, NULL, FALSE, TRUE, 			 GTK_STOCK_OK, save_ok_callback, 			 NULL, NULL, NULL, TRUE, FALSE,  			 NULL);    g_signal_connect (dlg, "destroy",                     G_CALLBACK (gtk_main_quit), 		    NULL);    gtk_main ();   gdk_flush ();    return psint.run; }  static void save_ok_callback (GtkWidget *widget, 		  gpointer   data) {   psint.run = TRUE;    gtk_widget_destroy (GTK_WIDGET (data)); } */
+comment|/* static gboolean save_dialog (void) {   GtkWidget *dlg;   gboolean   run;    dlg = gimp_dialog_new (_("Save as HRZ"), "hrz", 			 NULL, 0,                          gimp_standard_help_func, "filters/hrz.html",  			 GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL, 			 GTK_STOCK_OK,     GTK_RESPONSE_OK,  			 NULL);    gtk_widget_show (dlg);    run = (gimp_dialog_run (GIMP_DIALOG (dlg)) == GTK_RESPONSE_OK);    gtk_widget_destroy (dlg);    return run; } */
 end_comment
 
 end_unit

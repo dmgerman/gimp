@@ -957,7 +957,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Could not open '%s' for reading."
+argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
@@ -1596,9 +1599,7 @@ name|drawable
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|image
-operator|)
 return|;
 block|}
 end_function

@@ -891,7 +891,15 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"fopen() failed: %s"
+name|_
+argument_list|(
+literal|"Could not open '%s' for writing: %s"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1195,7 +1203,15 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"fopen() failed: %s"
+name|_
+argument_list|(
+literal|"Could not open '%s' for writing: %s"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|tmpname
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
