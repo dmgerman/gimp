@@ -109,6 +109,11 @@ DECL|member|parent_instance
 name|GimpObject
 name|parent_instance
 decl_stmt|;
+DECL|member|stock_id
+name|gchar
+modifier|*
+name|stock_id
+decl_stmt|;
 block|}
 struct|;
 end_struct

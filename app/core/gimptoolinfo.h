@@ -19,12 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gdk-pixbuf/gdk-pixbuf.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdata.h"
 end_include
 
@@ -152,16 +146,6 @@ name|gchar
 modifier|*
 name|help_data
 decl_stmt|;
-DECL|member|stock_id
-name|gchar
-modifier|*
-name|stock_id
-decl_stmt|;
-DECL|member|stock_pixbuf
-name|GdkPixbuf
-modifier|*
-name|stock_pixbuf
-decl_stmt|;
 DECL|member|use_context
 name|gboolean
 name|use_context
@@ -265,10 +249,6 @@ specifier|const
 name|gchar
 modifier|*
 name|stock_id
-parameter_list|,
-name|GdkPixbuf
-modifier|*
-name|stock_pixbuf
 parameter_list|)
 function_decl|;
 end_function_decl
