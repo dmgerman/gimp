@@ -3,6 +3,10 @@ begin_comment
 comment|/*  * Autocrop plug-in version 1.00  * by Tim Newsome<drz@froody.bloke.com>  * thanks to quartic for finding a nasty bug for me  */
 end_comment
 
+begin_comment
+comment|/* 1999/04/09 -- Sven Neumann<sven@gimp.org>  * Fixed bad crash that occured when running on an entirely blank image.  * Cleaned up the code a bit, while I was at it.   */
+end_comment
+
 begin_include
 include|#
 directive|include
@@ -222,7 +226,7 @@ literal|"drawable"
 block|,
 literal|"Input drawable"
 block|}
-block|, 	}
+block|,   }
 decl_stmt|;
 specifier|static
 name|GParamDef
@@ -369,12 +373,10 @@ name|n_params
 operator|!=
 literal|3
 condition|)
-block|{
 name|status
 operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
-block|}
 block|}
 if|if
 condition|(
@@ -455,14 +457,6 @@ literal|1
 operator|)
 argument_list|)
 expr_stmt|;
-name|srand
-argument_list|(
-name|time
-argument_list|(
-name|NULL
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|doit
 argument_list|(
 name|drawable
@@ -479,7 +473,6 @@ condition|)
 name|gimp_displays_flush
 argument_list|()
 expr_stmt|;
-comment|/* if (run_mode == RUN_INTERACTIVE) 				gimp_set_data("plug_in_autocrop",&my_config, sizeof(my_config)); */
 block|}
 else|else
 block|{
@@ -487,8 +480,6 @@ name|status
 operator|=
 name|STATUS_EXECUTION_ERROR
 expr_stmt|;
-block|}
-comment|/*gimp_drawable_detach(drawable);*/
 block|}
 name|values
 index|[
@@ -510,6 +501,7 @@ name|d_status
 operator|=
 name|status
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -632,7 +624,7 @@ expr_stmt|;
 comment|/* First, let's figure out what exactly to crop. */
 name|buffer
 operator|=
-name|malloc
+name|g_malloc
 argument_list|(
 operator|(
 name|width
@@ -739,11 +731,17 @@ operator|==
 name|height
 condition|)
 block|{
-name|free
+name|g_free
 argument_list|(
 name|buffer
 argument_list|)
 expr_stmt|;
+name|gimp_drawable_detach
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
+return|return;
 block|}
 name|y
 operator|--
@@ -1019,7 +1017,7 @@ name|nx
 operator|+
 literal|2
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|buffer
 argument_list|)
@@ -1071,11 +1069,6 @@ name|PARAM_END
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  update the timred region  */
-comment|/*gimp_drawable_merge_shadow(drawable->id, TRUE);*/
-name|gimp_displays_flush
-argument_list|()
-expr_stmt|;
 block|}
 end_function
 
@@ -1176,7 +1169,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/* Algorithm pinched from pnmcrop. 	 * To guess the background, first see if 3 corners are equal. 	 * Then if two are equal. 	 * Otherwise average the colors. 	 */
+comment|/* Algorithm pinched from pnmcrop.    * To guess the background, first see if 3 corners are equal.    * Then if two are equal.    * Otherwise average the colors.    */
 if|if
 condition|(
 name|colors_equal
