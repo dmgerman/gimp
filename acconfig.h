@@ -75,6 +75,12 @@ end_undef
 begin_undef
 undef|#
 directive|undef
+name|HAVE_RINT
+end_undef
+
+begin_undef
+undef|#
+directive|undef
 name|HAVE_SHM_H
 end_undef
 
@@ -99,6 +105,12 @@ end_undef
 begin_undef
 undef|#
 directive|undef
+name|HAVE_SYS_PARAM_H
+end_undef
+
+begin_undef
+undef|#
+directive|undef
 name|HAVE_SYS_SELECT_H
 end_undef
 
@@ -106,6 +118,12 @@ begin_undef
 undef|#
 directive|undef
 name|HAVE_SYS_TIME_H
+end_undef
+
+begin_undef
+undef|#
+directive|undef
+name|HAVE_SYS_TIMES_H
 end_undef
 
 begin_undef
