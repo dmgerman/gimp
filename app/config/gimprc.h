@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"config/gimpguiconfig.h"
+file|"config/gimppluginconfig.h"
 end_include
 
 begin_define
@@ -89,7 +89,7 @@ struct|struct
 name|_GimpRc
 block|{
 DECL|member|parent_instance
-name|GimpGuiConfig
+name|GimpPluginConfig
 name|parent_instance
 decl_stmt|;
 DECL|member|user_gimprc
@@ -124,7 +124,7 @@ struct|struct
 name|_GimpRcClass
 block|{
 DECL|member|parent_class
-name|GimpGuiConfigClass
+name|GimpPluginConfigClass
 name|parent_class
 decl_stmt|;
 block|}

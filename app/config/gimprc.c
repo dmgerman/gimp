@@ -64,12 +64,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpbase.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"config-types.h"
 end_include
 
@@ -89,6 +83,12 @@ begin_include
 include|#
 directive|include
 file|"gimpconfig-params.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpconfig-path.h"
 end_include
 
 begin_include
@@ -116,7 +116,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2bf7e1260103
+DECL|enum|__anon2bbd016e0103
 enum|enum
 block|{
 DECL|enumerator|PROP_0
@@ -434,7 +434,7 @@ name|rc_type
 operator|=
 name|g_type_register_static
 argument_list|(
-name|GIMP_TYPE_GUI_CONFIG
+name|GIMP_TYPE_PLUGIN_CONFIG
 argument_list|,
 literal|"GimpRc"
 argument_list|,
@@ -1875,6 +1875,41 @@ argument_list|(
 name|property_specs
 argument_list|)
 expr_stmt|;
+comment|/* for backward compatibility, expand the value */
+if|if
+condition|(
+name|retval
+condition|)
+block|{
+name|gchar
+modifier|*
+name|tmp
+init|=
+name|gimp_config_path_expand
+argument_list|(
+name|retval
+argument_list|,
+name|FALSE
+argument_list|,
+name|NULL
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|tmp
+condition|)
+block|{
+name|g_free
+argument_list|(
+name|retval
+argument_list|)
+expr_stmt|;
+name|retval
+operator|=
+name|tmp
+expr_stmt|;
+block|}
+block|}
 return|return
 name|retval
 return|;

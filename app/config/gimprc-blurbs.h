@@ -170,6 +170,15 @@ value|"Set the default vertical resolution for new images and for the " \ "File/
 end_define
 
 begin_define
+DECL|macro|FRACTALEXPLORER_PATH_BLURB
+define|#
+directive|define
+name|FRACTALEXPLORER_PATH_BLURB
+define|\
+value|"This path will be searched for fractals when you use the "\ "Fractal Explorer plug-in."
+end_define
+
+begin_define
 DECL|macro|GAMMA_CORRECTION_BLURB
 define|#
 directive|define
@@ -189,6 +198,33 @@ unit|"Set the gamma correction value for the display. 1.0 corresponds to no " \ 
 endif|#
 directive|endif
 end_endif
+
+begin_define
+DECL|macro|GFIG_PATH_BLURB
+define|#
+directive|define
+name|GFIG_PATH_BLURB
+define|\
+value|"Where to search for GFig figures used by the GFig plug-in."
+end_define
+
+begin_define
+DECL|macro|GFLARE_PATH_BLURB
+define|#
+directive|define
+name|GFLARE_PATH_BLURB
+define|\
+value|"Where to search for gflares used by the GFlare plug-in."
+end_define
+
+begin_define
+DECL|macro|GIMPRESSIONIST_PATH_BLURB
+define|#
+directive|define
+name|GIMPRESSIONIST_PATH_BLURB
+define|\
+value|"Where to search for data used by the Gimpressionist plug-in."
+end_define
 
 begin_define
 DECL|macro|GRADIENT_PATH_BLURB

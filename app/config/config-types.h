@@ -53,6 +53,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpPluginConfig
+typedef|typedef
+name|struct
+name|_GimpPluginConfig
+name|GimpPluginConfig
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpRc
 typedef|typedef
 name|struct
