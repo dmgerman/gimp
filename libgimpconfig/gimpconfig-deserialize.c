@@ -372,7 +372,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_config_deserialize_properties (GimpConfig * config,GScanner * scanner,gint nest_level,gboolean unused)
+DECL|function|gimp_config_deserialize_properties (GimpConfig * config,GScanner * scanner,gint nest_level)
 name|gimp_config_deserialize_properties
 parameter_list|(
 name|GimpConfig
@@ -385,9 +385,6 @@ name|scanner
 parameter_list|,
 name|gint
 name|nest_level
-parameter_list|,
-name|gboolean
-name|unused
 parameter_list|)
 block|{
 name|GObjectClass

@@ -30,9 +30,6 @@ name|scanner
 parameter_list|,
 name|gint
 name|nest_level
-parameter_list|,
-name|gboolean
-name|unused
 parameter_list|)
 function_decl|;
 end_function_decl

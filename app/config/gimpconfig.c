@@ -373,8 +373,6 @@ argument_list|,
 name|scanner
 argument_list|,
 name|nest_level
-argument_list|,
-name|FALSE
 argument_list|)
 return|;
 block|}
