@@ -354,7 +354,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon2bc04b560108
+DECL|struct|__anon2c1be3390108
 typedef|typedef
 struct|struct
 block|{
@@ -415,7 +415,7 @@ DECL|member|tol_col_err
 name|float
 name|tol_col_err
 decl_stmt|;
-comment|/* 0.0% upto 100.0%                              * this is uesd to findout colors of the same 			    * colortone, while analyzing sample colors, 			    * It does not make much sense for the user to adjust this 			    * value. (I used a param file to findout a suitable value)                             */
+comment|/* 0.0% upto 100.0%                             * this is uesd to findout colors of the same 			    * colortone, while analyzing sample colors, 			    * It does not make much sense for the user to adjust this 			    * value. (I used a param file to findout a suitable value)                             */
 DECL|typedef|t_values
 block|}
 name|t_values
@@ -423,7 +423,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bc04b560208
+DECL|struct|__anon2c1be3390208
 typedef|typedef
 struct|struct
 block|{
@@ -541,7 +541,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bc04b560308
+DECL|struct|__anon2c1be3390308
 typedef|typedef
 struct|struct
 block|{
@@ -570,7 +570,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bc04b560408
+DECL|struct|__anon2c1be3390408
 typedef|typedef
 struct|struct
 block|{
@@ -597,7 +597,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bc04b560508
+DECL|struct|__anon2c1be3390508
 typedef|typedef
 struct|struct
 block|{
@@ -688,7 +688,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/*  * Some globals   */
+comment|/*  * Some globals  */
 end_comment
 
 begin_decl_stmt
@@ -2380,11 +2380,13 @@ name|id_ptr
 decl_stmt|;
 if|if
 condition|(
-name|g_Sdebug
+name|TRUE
 condition|)
 name|printf
 argument_list|(
-literal|"MENU_CB: data %p,  dst: %x, samp %x\n"
+literal|"MENU_CB: id: %d,  data %p,  dst: %x, samp %x\n"
+argument_list|,
+name|id
 argument_list|,
 name|data
 argument_list|,
@@ -10683,7 +10685,7 @@ comment|/* end p_free_colors */
 end_comment
 
 begin_comment
-comment|/* setup lum transformer table according to input_levels, gamma and output levels  * (uses sam algorithm as GIMP Level Tool)   */
+comment|/* setup lum transformer table according to input_levels, gamma and output levels  * (uses sam algorithm as GIMP Level Tool)  */
 end_comment
 
 begin_function
@@ -12812,6 +12814,10 @@ name|gimp_gradients_sample_uniform
 argument_list|(
 literal|256
 comment|/* n_samples */
+argument_list|,
+name|mode
+operator|==
+name|SMP_INV_GRADIENT
 argument_list|)
 expr_stmt|;
 for|for
@@ -12828,13 +12834,6 @@ name|l_lum
 operator|++
 control|)
 block|{
-if|if
-condition|(
-name|mode
-operator|==
-name|SMP_GRADIENT
-condition|)
-block|{
 name|f_samp
 operator|=
 operator|&
@@ -12845,24 +12844,6 @@ operator|*
 literal|4
 index|]
 expr_stmt|;
-block|}
-else|else
-block|{
-name|f_samp
-operator|=
-operator|&
-name|f_samples
-index|[
-operator|(
-literal|255
-operator|-
-name|l_lum
-operator|)
-operator|*
-literal|4
-index|]
-expr_stmt|;
-block|}
 name|g_sample_color_tab
 index|[
 name|l_lum
@@ -12977,28 +12958,6 @@ name|drawable_id
 parameter_list|)
 block|{
 comment|/* return -1 if layer has become invalid */
-name|gint32
-modifier|*
-name|layers
-decl_stmt|;
-name|gint32
-modifier|*
-name|images
-decl_stmt|;
-name|gint
-name|nlayers
-decl_stmt|;
-name|gint
-name|nimages
-decl_stmt|;
-name|gint
-name|l_idi
-decl_stmt|,
-name|l_idl
-decl_stmt|;
-name|gint
-name|l_found
-decl_stmt|;
 if|if
 condition|(
 name|drawable_id
@@ -13011,105 +12970,14 @@ operator|-
 literal|1
 return|;
 block|}
-comment|/* gimp_layer_get_image_id:  crash in gimp 1.1.2 if called with invalid drawable_id   *                           gimp 1.0.2 works fine !!   */
-comment|/*  *   if(gimp_layer_get_image_id(drawable_id)< 0)  *   {  *      printf("sample colorize: invalid image_id (maybe Image was closed)\n");  *      return (-1);  *   }  */
-name|images
-operator|=
-name|gimp_image_list
-argument_list|(
-operator|&
-name|nimages
-argument_list|)
-expr_stmt|;
-name|l_idi
-operator|=
-name|nimages
-operator|-
-literal|1
-expr_stmt|;
-name|l_found
-operator|=
-name|FALSE
-expr_stmt|;
-while|while
-condition|(
-operator|(
-name|l_idi
-operator|>=
-literal|0
-operator|)
-operator|&&
-name|images
-condition|)
-block|{
-name|layers
-operator|=
-name|gimp_image_get_layers
-argument_list|(
-name|images
-index|[
-name|l_idi
-index|]
-argument_list|,
-operator|&
-name|nlayers
-argument_list|)
-expr_stmt|;
-name|l_idl
-operator|=
-name|nlayers
-operator|-
-literal|1
-expr_stmt|;
-while|while
-condition|(
-operator|(
-name|l_idl
-operator|>=
-literal|0
-operator|)
-operator|&&
-name|layers
-condition|)
-block|{
 if|if
 condition|(
+name|gimp_layer_get_image_id
+argument_list|(
 name|drawable_id
-operator|==
-name|layers
-index|[
-name|l_idl
-index|]
-condition|)
-block|{
-name|l_found
-operator|=
-name|TRUE
-expr_stmt|;
-break|break;
-block|}
-name|l_idl
-operator|--
-expr_stmt|;
-block|}
-name|g_free
-argument_list|(
-name|layers
 argument_list|)
-expr_stmt|;
-name|l_idi
-operator|--
-expr_stmt|;
-block|}
-name|g_free
-argument_list|(
-name|images
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|l_found
+operator|<
+literal|0
 condition|)
 block|{
 name|printf
@@ -13132,10 +13000,6 @@ name|drawable_id
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/* end p_is_layer_alive */
-end_comment
 
 begin_function
 specifier|static
@@ -13678,7 +13542,7 @@ name|sel_gdrw
 operator|=
 name|NULL
 expr_stmt|;
-comment|/* offset delta between drawable and selection         * (selection always has image size and should always have offsets of 0 )        */
+comment|/* offset delta between drawable and selection        * (selection always has image size and should always have offsets of 0 )        */
 name|gimp_drawable_offsets
 argument_list|(
 name|l_sel_channel_id

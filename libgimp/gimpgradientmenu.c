@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpgradientmenu.c  * Copyright (C) 1998 Andy Thomas                  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpgradientmenu.c  * Copyright (C) 1998 Andy Thomas  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -121,6 +121,10 @@ DECL|member|sample_size
 name|gint
 name|sample_size
 decl_stmt|;
+DECL|member|reverse
+name|gboolean
+name|reverse
+decl_stmt|;
 DECL|member|temp_gradient_callback
 specifier|const
 name|gchar
@@ -215,7 +219,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_gradient_select_widget_new:  * @title:         Title of the dialog to use or %NULL to use the default title.  * @gradient_name: Initial gradient name or %NULL to use current selection.   * @callback:      A function to call when the selected gradient changes.  * @data:          A pointer to arbitary data to be used in the call to  *                 @callback.  *  * Creates a new #GtkWidget that completely controls the selection of  * a gradient.  This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  */
+comment|/**  * gimp_gradient_select_widget_new:  * @title:         Title of the dialog to use or %NULL to use the default title.  * @gradient_name: Initial gradient name or %NULL to use current selection.  * @callback:      A function to call when the selected gradient changes.  * @data:          A pointer to arbitary data to be used in the call to  *                 @callback.  *  * Creates a new #GtkWidget that completely controls the selection of  * a gradient.  This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  */
 end_comment
 
 begin_function
@@ -308,6 +312,12 @@ operator|->
 name|sample_size
 operator|=
 name|CELL_WIDTH
+expr_stmt|;
+name|gradient_sel
+operator|->
+name|reverse
+operator|=
+name|FALSE
 expr_stmt|;
 name|gradient_sel
 operator|->
@@ -404,6 +414,10 @@ argument_list|,
 name|gradient_sel
 operator|->
 name|sample_size
+argument_list|,
+name|gradient_sel
+operator|->
+name|reverse
 argument_list|,
 operator|&
 name|width
@@ -600,6 +614,10 @@ argument_list|,
 name|gradient_sel
 operator|->
 name|sample_size
+argument_list|,
+name|gradient_sel
+operator|->
+name|reverse
 argument_list|,
 operator|&
 name|width

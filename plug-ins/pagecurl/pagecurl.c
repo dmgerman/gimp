@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293f50170108
+DECL|struct|__anon2b678cb50108
 block|{
 DECL|member|do_curl_shade
 name|gint
@@ -5140,11 +5140,21 @@ name|i
 decl_stmt|,
 name|j
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: "reverse" hardcoded to FALSE.
+endif|#
+directive|endif
 name|f_samples
 operator|=
 name|gimp_gradients_sample_uniform
 argument_list|(
 name|NGRADSAMPLES
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|bpp

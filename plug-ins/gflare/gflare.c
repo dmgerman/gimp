@@ -436,7 +436,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bed24fb0103
+DECL|enum|__anon27596e4f0103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -463,7 +463,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bed24fb0203
+DECL|enum|__anon27596e4f0203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -484,7 +484,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bed24fb0308
+DECL|struct|__anon27596e4f0308
 block|{
 DECL|member|name
 name|gchar
@@ -621,7 +621,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bed24fb0408
+DECL|struct|__anon27596e4f0408
 block|{
 DECL|member|fp
 name|FILE
@@ -641,7 +641,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bed24fb0503
+DECL|enum|__anon27596e4f0503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -669,7 +669,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bed24fb0608
+DECL|struct|__anon27596e4f0608
 block|{
 DECL|member|init
 name|gint
@@ -691,7 +691,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2bed24fb0708
+DECL|struct|__anon27596e4f0708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -765,7 +765,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bed24fb0808
+DECL|struct|__anon27596e4f0808
 block|{
 DECL|member|init
 name|gint
@@ -835,7 +835,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bed24fb0908
+DECL|struct|__anon27596e4f0908
 block|{
 DECL|member|x0
 name|gdouble
@@ -862,7 +862,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bed24fb0a08
+DECL|struct|__anon27596e4f0a08
 block|{
 DECL|member|init
 name|gint
@@ -1032,7 +1032,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bed24fb0b08
+DECL|struct|__anon27596e4f0b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1059,7 +1059,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bed24fb0c08
+DECL|struct|__anon27596e4f0c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1294,7 +1294,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bed24fb0d08
+DECL|struct|__anon27596e4f0d08
 block|{
 DECL|member|tag
 name|gint
@@ -1371,7 +1371,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bed24fb0e08
+DECL|struct|__anon27596e4f0e08
 block|{
 DECL|member|xcenter
 name|gint
@@ -1429,7 +1429,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bed24fb0f08
+DECL|struct|__anon27596e4f0f08
 block|{
 DECL|member|run
 name|gboolean
@@ -3888,6 +3888,9 @@ name|values
 parameter_list|,
 name|gint
 name|nvalues
+parameter_list|,
+name|gboolean
+name|reverse
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -8527,7 +8530,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-DECL|struct|__anon2bed24fb1008
+DECL|struct|__anon27596e4f1008
 specifier|static
 struct|struct
 block|{
@@ -14512,7 +14515,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon2bed24fb1108
+DECL|struct|__anon27596e4f1108
 block|{
 DECL|member|label
 specifier|const
@@ -24076,6 +24079,14 @@ operator|!
 name|found
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: "reverse" hardcoded to FALSE.
+endif|#
+directive|endif
 name|gradient_get_values_real_external
 argument_list|(
 name|gradient_name
@@ -24085,6 +24096,8 @@ operator|->
 name|values
 argument_list|,
 name|GRADIENT_RESOLUTION
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -24296,7 +24309,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_get_values_real_external (gchar * gradient_name,guchar * values,gint nvalues)
+DECL|function|gradient_get_values_real_external (gchar * gradient_name,guchar * values,gint nvalues,gboolean reverse)
 name|gradient_get_values_real_external
 parameter_list|(
 name|gchar
@@ -24309,6 +24322,9 @@ name|values
 parameter_list|,
 name|gint
 name|nvalues
+parameter_list|,
+name|gboolean
+name|reverse
 parameter_list|)
 block|{
 name|gchar
@@ -24340,6 +24356,8 @@ operator|=
 name|gimp_gradients_sample_uniform
 argument_list|(
 name|nvalues
+argument_list|,
+name|reverse
 argument_list|)
 expr_stmt|;
 for|for

@@ -845,6 +845,9 @@ decl_stmt|;
 name|gint32
 name|i
 decl_stmt|;
+name|gboolean
+name|reverse
+decl_stmt|;
 name|gint32
 name|array_length
 init|=
@@ -891,6 +894,21 @@ literal|2
 condition|)
 name|success
 operator|=
+name|FALSE
+expr_stmt|;
+name|reverse
+operator|=
+name|args
+index|[
+literal|1
+index|]
+operator|.
+name|value
+operator|.
+name|pdb_int
+condition|?
+name|TRUE
+else|:
 name|FALSE
 expr_stmt|;
 if|if
@@ -951,7 +969,7 @@ name|gradient
 argument_list|,
 name|pos
 argument_list|,
-name|FALSE
+name|reverse
 argument_list|,
 operator|&
 name|color
@@ -1054,6 +1072,14 @@ literal|"num_samples"
 block|,
 literal|"The number of samples to take"
 block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"reverse"
+block|,
+literal|"Use the reverse gradient (TRUE or FALSE)"
+block|}
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1106,7 +1132,7 @@ literal|"1997"
 block|,
 name|GIMP_INTERNAL
 block|,
-literal|1
+literal|2
 block|,
 name|gradients_sample_uniform_inargs
 block|,
@@ -1154,6 +1180,9 @@ decl_stmt|;
 name|gdouble
 modifier|*
 name|pos
+decl_stmt|;
+name|gboolean
+name|reverse
 decl_stmt|;
 name|gint32
 name|array_length
@@ -1213,6 +1242,21 @@ name|value
 operator|.
 name|pdb_pointer
 expr_stmt|;
+name|reverse
+operator|=
+name|args
+index|[
+literal|2
+index|]
+operator|.
+name|value
+operator|.
+name|pdb_int
+condition|?
+name|TRUE
+else|:
+name|FALSE
+expr_stmt|;
 if|if
 condition|(
 name|success
@@ -1258,7 +1302,7 @@ argument_list|,
 operator|*
 name|pos
 argument_list|,
-name|FALSE
+name|reverse
 argument_list|,
 operator|&
 name|color
@@ -1368,6 +1412,14 @@ literal|"positions"
 block|,
 literal|"The list of positions to sample along the gradient"
 block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"reverse"
+block|,
+literal|"Use the reverse gradient (TRUE or FALSE)"
+block|}
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1420,7 +1472,7 @@ literal|"1997"
 block|,
 name|GIMP_INTERNAL
 block|,
-literal|2
+literal|3
 block|,
 name|gradients_sample_custom_inargs
 block|,
@@ -1468,6 +1520,9 @@ name|name
 decl_stmt|;
 name|gint32
 name|sample_size
+decl_stmt|;
+name|gboolean
+name|reverse
 decl_stmt|;
 name|gdouble
 modifier|*
@@ -1530,6 +1585,21 @@ condition|)
 name|sample_size
 operator|=
 name|GIMP_GRADIENT_DEFAULT_SAMPLE_SIZE
+expr_stmt|;
+name|reverse
+operator|=
+name|args
+index|[
+literal|2
+index|]
+operator|.
+name|value
+operator|.
+name|pdb_int
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 if|if
 condition|(
@@ -1651,7 +1721,7 @@ name|gradient
 argument_list|,
 name|pos
 argument_list|,
-name|FALSE
+name|reverse
 argument_list|,
 operator|&
 name|color
@@ -1784,6 +1854,14 @@ literal|"sample_size"
 block|,
 literal|"Size of the sample to return when the gradient is changed (0< sample_size<= 10000)"
 block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"reverse"
+block|,
+literal|"Use the reverse gradient (TRUE or FALSE)"
+block|}
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1844,7 +1922,7 @@ literal|"1997"
 block|,
 name|GIMP_INTERNAL
 block|,
-literal|2
+literal|3
 block|,
 name|gradients_get_gradient_data_inargs
 block|,

@@ -13,7 +13,7 @@ name|__FRACTALEXPLORER_H__
 end_define
 
 begin_comment
-comment|/**********************************************************************  Magic numbers    *********************************************************************/
+comment|/**********************************************************************  Magic numbers  *********************************************************************/
 end_comment
 
 begin_define
@@ -90,7 +90,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29574b840103
+DECL|enum|__anon2949cca40103
 block|{
 DECL|enumerator|SINUS
 name|SINUS
@@ -106,7 +106,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29574b840203
+DECL|enum|__anon2949cca40203
 block|{
 DECL|enumerator|TYPE_MANDELBROT
 name|TYPE_MANDELBROT
@@ -142,13 +142,13 @@ enum|;
 end_enum
 
 begin_comment
-comment|/**********************************************************************  Types    *********************************************************************/
+comment|/**********************************************************************  Types  *********************************************************************/
 end_comment
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29574b840308
+DECL|struct|__anon2949cca40308
 block|{
 DECL|member|fractaltype
 name|gint
@@ -211,27 +211,31 @@ name|gint
 name|bluemode
 decl_stmt|;
 DECL|member|redinvert
-name|gint
+name|gboolean
 name|redinvert
 decl_stmt|;
 DECL|member|greeninvert
-name|gint
+name|gboolean
 name|greeninvert
 decl_stmt|;
 DECL|member|blueinvert
-name|gint
+name|gboolean
 name|blueinvert
 decl_stmt|;
 DECL|member|alwayspreview
-name|gint
+name|gboolean
 name|alwayspreview
 decl_stmt|;
 DECL|member|ncolors
 name|gint
 name|ncolors
 decl_stmt|;
+DECL|member|gradinvert
+name|gboolean
+name|gradinvert
+decl_stmt|;
 DECL|member|useloglog
-name|gint
+name|gboolean
 name|useloglog
 decl_stmt|;
 DECL|typedef|explorer_vals_t
@@ -243,7 +247,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29574b840408
+DECL|struct|__anon2949cca40408
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -290,7 +294,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29574b840508
+DECL|struct|__anon2949cca40508
 block|{
 DECL|member|text
 name|GtkWidget
@@ -655,7 +659,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**********************************************************************   Global variables    *********************************************************************/
+comment|/**********************************************************************   Global variables  *********************************************************************/
 end_comment
 
 begin_decl_stmt

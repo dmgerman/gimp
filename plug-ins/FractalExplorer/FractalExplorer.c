@@ -4,7 +4,7 @@ comment|/********************************************************************** 
 end_comment
 
 begin_comment
-comment|/**********************************************************************    The GIMP -- an image manipulation program    Copyright (C) 1995 Spencer Kimball and Peter Mattis       This program is free software; you can redistribute it and/or modify    it under the terms of the GNU General Public License as published by    the Free Software Foundation; either version 2 of the License, or    (at your option) any later version.       This program is distributed in the hope that it will be useful,    but WITHOUT ANY WARRANTY; without even the implied warranty of    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the    GNU General Public License for more details.       You should have received a copy of the GNU General Public License    along with this program; if not, write to the Free Software    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *********************************************************************/
+comment|/**********************************************************************    The GIMP -- an image manipulation program    Copyright (C) 1995 Spencer Kimball and Peter Mattis     This program is free software; you can redistribute it and/or modify    it under the terms of the GNU General Public License as published by    the Free Software Foundation; either version 2 of the License, or    (at your option) any later version.     This program is distributed in the hope that it will be useful,    but WITHOUT ANY WARRANTY; without even the implied warranty of    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the    GNU General Public License for more details.     You should have received a copy of the GNU General Public License    along with this program; if not, write to the Free Software    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *********************************************************************/
 end_comment
 
 begin_comment
@@ -16,7 +16,7 @@ comment|/* Changes:  *  * 2000-01-05  Fixed a problem with strtok and got rid of
 end_comment
 
 begin_comment
-comment|/**********************************************************************  Include necessary files    *********************************************************************/
+comment|/**********************************************************************  Include necessary files  *********************************************************************/
 end_comment
 
 begin_include
@@ -598,7 +598,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/**********************************************************************  MAIN()    *********************************************************************/
+comment|/**********************************************************************  MAIN()  *********************************************************************/
 end_comment
 
 begin_macro
@@ -608,7 +608,7 @@ argument_list|()
 end_macro
 
 begin_comment
-comment|/**********************************************************************  FUNCTION: query    *********************************************************************/
+comment|/**********************************************************************  FUNCTION: query  *********************************************************************/
 end_comment
 
 begin_function
@@ -3958,7 +3958,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * Load all fractalexplorer, which are founded in fractalexplorer-path-list,   * into fractalexplorer_list.  */
+comment|/*  * Load all fractalexplorer, which are founded in fractalexplorer-path-list,  * into fractalexplorer_list.  */
 end_comment
 
 begin_function

@@ -836,6 +836,10 @@ name|wvals
 operator|.
 name|ncolors
 argument_list|,
+name|wvals
+operator|.
+name|gradinvert
+argument_list|,
 operator|&
 name|dummy
 argument_list|,
@@ -905,6 +909,10 @@ argument_list|,
 name|wvals
 operator|.
 name|ncolors
+argument_list|,
+name|wvals
+operator|.
+name|gradinvert
 argument_list|,
 operator|&
 name|dummy
@@ -5081,6 +5089,10 @@ argument_list|(
 name|wvals
 operator|.
 name|ncolors
+argument_list|,
+name|wvals
+operator|.
+name|gradinvert
 argument_list|)
 expr_stmt|;
 name|gradient
@@ -6882,6 +6894,10 @@ argument_list|(
 name|wvals
 operator|.
 name|ncolors
+argument_list|,
+name|wvals
+operator|.
+name|gradinvert
 argument_list|)
 expr_stmt|;
 name|redstretch
@@ -9498,6 +9514,14 @@ operator|=
 literal|256
 expr_stmt|;
 comment|/*  not saved  */
+name|xxx
+operator|->
+name|opts
+operator|.
+name|gradinvert
+operator|=
+name|FALSE
+expr_stmt|;
 name|get_line
 argument_list|(
 name|load_buf

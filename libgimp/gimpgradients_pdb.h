@@ -73,6 +73,9 @@ name|gimp_gradients_sample_uniform
 parameter_list|(
 name|gint
 name|num_samples
+parameter_list|,
+name|gboolean
+name|reverse
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -89,6 +92,9 @@ specifier|const
 name|gdouble
 modifier|*
 name|positions
+parameter_list|,
+name|gboolean
+name|reverse
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -105,6 +111,9 @@ name|name
 parameter_list|,
 name|gint
 name|sample_size
+parameter_list|,
+name|gboolean
+name|reverse
 parameter_list|,
 name|gint
 modifier|*

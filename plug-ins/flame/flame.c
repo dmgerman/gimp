@@ -498,7 +498,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon2c61e8be0108
+DECL|struct|__anon2a1f96400108
 block|{
 DECL|member|randomize
 name|gint
@@ -1195,6 +1195,14 @@ operator|.
 name|cmap_drawable
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: "reverse" hardcoded to FALSE.
+endif|#
+directive|endif
 name|gdouble
 modifier|*
 name|g
@@ -1202,6 +1210,8 @@ init|=
 name|gimp_gradients_sample_uniform
 argument_list|(
 literal|256
+argument_list|,
+name|FALSE
 argument_list|)
 decl_stmt|;
 for|for

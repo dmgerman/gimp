@@ -445,7 +445,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon27b969790108
+DECL|struct|__anon2c748f810108
 typedef|typedef
 struct|struct
 block|{
@@ -733,11 +733,21 @@ name|i
 decl_stmt|,
 name|j
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: "reverse" hardcoded to FALSE.
+endif|#
+directive|endif
 name|f_samples
 operator|=
 name|gimp_gradients_sample_uniform
 argument_list|(
 name|NSAMPLES
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|bpp
