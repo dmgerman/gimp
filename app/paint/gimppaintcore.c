@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -91,12 +91,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpbrush.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpcontext.h"
 end_include
 
 begin_include

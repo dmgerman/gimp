@@ -919,11 +919,11 @@ name|supersample
 argument_list|,
 name|options
 operator|->
-name|max_depth
+name|supersample_depth
 argument_list|,
 name|options
 operator|->
-name|threshold
+name|supersample_threshold
 argument_list|,
 name|blend_tool
 operator|->

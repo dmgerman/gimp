@@ -71,46 +71,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c14d23f0103
-block|{
-DECL|enumerator|HORIZONTAL
-name|HORIZONTAL
-block|,
-DECL|enumerator|VERTICAL
-name|VERTICAL
-block|,
-DECL|enumerator|UNKNOWN
-name|UNKNOWN
-DECL|typedef|OrientationType
-block|}
-name|OrientationType
-typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-enum|enum
-comment|/*< pdb-skip>*/
-DECL|enum|__anon2c14d23f0203
-block|{
-DECL|enumerator|ORIENTATION_UNKNOWN
-name|ORIENTATION_UNKNOWN
-block|,
-DECL|enumerator|ORIENTATION_HORIZONTAL
-name|ORIENTATION_HORIZONTAL
-block|,
-DECL|enumerator|ORIENTATION_VERTICAL
-name|ORIENTATION_VERTICAL
-DECL|typedef|InternalOrientationType
-block|}
-name|InternalOrientationType
-typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2c14d23f0303
+DECL|enum|__anon29f688e80103
 block|{
 DECL|enumerator|GIMP_PIXELS
 name|GIMP_PIXELS
@@ -128,7 +89,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2c14d23f0403
+DECL|enum|__anon29f688e80203
 block|{
 comment|/* NOTE: If you change this list, please update the textual mapping at    *  the bottom of undo.c as well.    */
 comment|/* Type NO_UNDO_GROUP (0) is special - in the gimpimage structure it    * means there is no undo group currently being added to.    */
@@ -352,6 +313,20 @@ end_typedef
 
 begin_comment
 DECL|typedef|GimpToolInfo
+comment|/*< proxy-include>*/
+end_comment
+
+begin_typedef
+DECL|typedef|GimpToolOptions
+typedef|typedef
+name|struct
+name|_GimpToolOptions
+name|GimpToolOptions
+typedef|;
+end_typedef
+
+begin_comment
+DECL|typedef|GimpToolOptions
 comment|/*< proxy-include>*/
 end_comment
 
@@ -635,45 +610,6 @@ name|_PathList
 name|PathList
 typedef|;
 end_typedef
-
-begin_comment
-comment|/*  stuff which is forward declared here so we don't need to cross-include it  */
-end_comment
-
-begin_typedef
-DECL|typedef|GimpToolOptions
-typedef|typedef
-name|struct
-name|_GimpToolOptions
-name|GimpToolOptions
-typedef|;
-end_typedef
-
-begin_comment
-DECL|typedef|GimpToolOptions
-comment|/*< proxy-include>*/
-end_comment
-
-begin_typedef
-DECL|typedef|GimpToolOptionsGUIFunc
-typedef|typedef
-name|void
-function_decl|(
-modifier|*
-name|GimpToolOptionsGUIFunc
-function_decl|)
-parameter_list|(
-name|GimpToolOptions
-modifier|*
-name|tool_options
-parameter_list|)
-function_decl|;
-end_typedef
-
-begin_comment
-DECL|typedef|GimpToolOptionsGUIFunc
-comment|/*< proxy-include>*/
-end_comment
 
 begin_comment
 comment|/*  functions  */

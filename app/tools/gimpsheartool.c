@@ -701,7 +701,7 @@ index|[
 name|HORZ_OR_VERT
 index|]
 operator|=
-name|ORIENTATION_UNKNOWN
+name|GIMP_ORIENTATION_UNKNOWN
 expr_stmt|;
 name|tr_tool
 operator|->
@@ -777,7 +777,7 @@ index|[
 name|HORZ_OR_VERT
 index|]
 operator|==
-name|ORIENTATION_UNKNOWN
+name|GIMP_ORIENTATION_UNKNOWN
 condition|)
 block|{
 if|if
@@ -817,13 +817,13 @@ index|[
 name|HORZ_OR_VERT
 index|]
 operator|=
-name|ORIENTATION_HORIZONTAL
+name|GIMP_ORIENTATION_HORIZONTAL
 expr_stmt|;
 name|tr_tool
 operator|->
 name|trans_info
 index|[
-name|ORIENTATION_VERTICAL
+name|XSHEAR
 index|]
 operator|=
 literal|0.0
@@ -838,13 +838,13 @@ index|[
 name|HORZ_OR_VERT
 index|]
 operator|=
-name|ORIENTATION_VERTICAL
+name|GIMP_ORIENTATION_VERTICAL
 expr_stmt|;
 name|tr_tool
 operator|->
 name|trans_info
 index|[
-name|ORIENTATION_HORIZONTAL
+name|XSHEAR
 index|]
 operator|=
 literal|0.0
@@ -882,7 +882,7 @@ index|[
 name|HORZ_OR_VERT
 index|]
 operator|!=
-name|ORIENTATION_UNKNOWN
+name|GIMP_ORIENTATION_UNKNOWN
 condition|)
 block|{
 name|dir
@@ -908,7 +908,7 @@ if|if
 condition|(
 name|dir
 operator|==
-name|ORIENTATION_HORIZONTAL
+name|GIMP_ORIENTATION_HORIZONTAL
 condition|)
 name|tr_tool
 operator|->
@@ -937,7 +937,7 @@ if|if
 condition|(
 name|dir
 operator|==
-name|ORIENTATION_HORIZONTAL
+name|GIMP_ORIENTATION_HORIZONTAL
 condition|)
 name|tr_tool
 operator|->
@@ -966,7 +966,7 @@ if|if
 condition|(
 name|dir
 operator|==
-name|ORIENTATION_HORIZONTAL
+name|GIMP_ORIENTATION_HORIZONTAL
 condition|)
 name|tr_tool
 operator|->
@@ -995,7 +995,7 @@ if|if
 condition|(
 name|dir
 operator|==
-name|ORIENTATION_HORIZONTAL
+name|GIMP_ORIENTATION_HORIZONTAL
 condition|)
 name|tr_tool
 operator|->
@@ -1051,7 +1051,7 @@ index|[
 name|HORZ_OR_VERT
 index|]
 operator|==
-name|ORIENTATION_HORIZONTAL
+name|GIMP_ORIENTATION_HORIZONTAL
 condition|)
 name|amount
 operator|=

@@ -46,7 +46,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"core/core-enums.h"
 end_include
 
 begin_include
@@ -267,11 +267,11 @@ if|if
 condition|(
 name|flip_type
 operator|<
-name|HORIZONTAL
+name|GIMP_HORIZONTAL
 operator|||
 name|flip_type
 operator|>
-name|VERTICAL
+name|GIMP_VERTICAL
 condition|)
 name|success
 operator|=
@@ -282,22 +282,6 @@ condition|(
 name|success
 condition|)
 block|{
-name|flip_type
-operator|=
-name|flip_type
-operator|==
-name|HORIZONTAL
-condition|?
-name|ORIENTATION_HORIZONTAL
-else|:
-name|flip_type
-operator|==
-name|VERTICAL
-condition|?
-name|ORIENTATION_VERTICAL
-else|:
-name|ORIENTATION_UNKNOWN
-expr_stmt|;
 name|success
 operator|=
 name|gimp_drawable_transform_flip
@@ -366,7 +350,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"flip_type"
 block|,
-literal|"Type of flip: HORIZONTAL (0) or VERTICAL (1)"
+literal|"Type of flip: GIMP_HORIZONTAL (0), GIMP_VERTICAL (1), GIMP_"
 block|}
 block|}
 decl_stmt|;
@@ -1791,11 +1775,11 @@ if|if
 condition|(
 name|shear_type
 operator|<
-name|HORIZONTAL
+name|GIMP_HORIZONTAL
 operator|||
 name|shear_type
 operator|>
-name|VERTICAL
+name|GIMP_VERTICAL
 condition|)
 name|success
 operator|=
@@ -1833,22 +1817,6 @@ argument_list|,
 operator|&
 name|y2
 argument_list|)
-expr_stmt|;
-name|shear_type
-operator|=
-name|shear_type
-operator|==
-name|HORIZONTAL
-condition|?
-name|ORIENTATION_HORIZONTAL
-else|:
-name|shear_type
-operator|==
-name|VERTICAL
-condition|?
-name|ORIENTATION_VERTICAL
-else|:
-name|ORIENTATION_UNKNOWN
 expr_stmt|;
 comment|/* Assemble the transformation matrix */
 name|gimp_drawable_transform_matrix_shear
@@ -1968,7 +1936,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"shear_type"
 block|,
-literal|"Type of shear: HORIZONTAL (0) or VERTICAL (1)"
+literal|"Type of shear: GIMP_HORIZONTAL (0), GIMP_VERTICAL (1), GIMP_"
 block|}
 block|,
 block|{

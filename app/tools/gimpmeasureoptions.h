@@ -116,15 +116,6 @@ DECL|member|use_info_window
 name|gboolean
 name|use_info_window
 decl_stmt|;
-DECL|member|use_info_window_d
-name|gboolean
-name|use_info_window_d
-decl_stmt|;
-DECL|member|use_info_window_w
-name|GtkWidget
-modifier|*
-name|use_info_window_w
-decl_stmt|;
 block|}
 struct|;
 end_struct

@@ -98,12 +98,12 @@ comment|/*  functions  */
 end_comment
 
 begin_typedef
-DECL|typedef|GimpToolOptionsResetFunc
+DECL|typedef|GimpToolOptionsGUIFunc
 typedef|typedef
 name|void
 function_decl|(
 modifier|*
-name|GimpToolOptionsResetFunc
+name|GimpToolOptionsGUIFunc
 function_decl|)
 parameter_list|(
 name|GimpToolOptions

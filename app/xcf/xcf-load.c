@@ -2086,7 +2086,7 @@ name|orientation
 condition|)
 block|{
 case|case
-name|ORIENTATION_HORIZONTAL
+name|XCF_ORIENTATION_HORIZONTAL
 case|:
 name|guide
 operator|=
@@ -2097,7 +2097,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|ORIENTATION_VERTICAL
+name|XCF_ORIENTATION_VERTICAL
 case|:
 name|guide
 operator|=

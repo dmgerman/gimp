@@ -290,7 +290,7 @@ name|orientation
 condition|)
 block|{
 case|case
-name|ORIENTATION_HORIZONTAL
+name|GIMP_ORIENTATION_HORIZONTAL
 case|:
 name|undo_push_image_guide
 argument_list|(
@@ -328,7 +328,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|ORIENTATION_VERTICAL
+name|GIMP_ORIENTATION_VERTICAL
 case|:
 name|undo_push_image_guide
 argument_list|(

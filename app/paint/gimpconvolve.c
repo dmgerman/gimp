@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -132,7 +132,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294a2d680103
+DECL|enum|__anon2a2b3c1d0103
 block|{
 DECL|enumerator|CONVOLVE_NCLIP
 name|CONVOLVE_NCLIP

@@ -116,15 +116,6 @@ DECL|member|rate
 name|gdouble
 name|rate
 decl_stmt|;
-DECL|member|rate_d
-name|gdouble
-name|rate_d
-decl_stmt|;
-DECL|member|rate_w
-name|GtkObject
-modifier|*
-name|rate_w
-decl_stmt|;
 block|}
 struct|;
 end_struct

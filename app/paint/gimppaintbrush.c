@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -539,7 +539,7 @@ name|fade_out
 operator|=
 name|gradient_options
 operator|->
-name|fade_out
+name|fade_length
 expr_stmt|;
 break|break;
 case|case
@@ -561,7 +561,7 @@ argument_list|)
 operator|*
 name|gradient_options
 operator|->
-name|fade_out
+name|fade_length
 operator|/
 literal|100
 operator|)
@@ -582,7 +582,7 @@ operator|=
 operator|(
 name|gradient_options
 operator|->
-name|fade_out
+name|fade_length
 operator|*
 name|MAX
 argument_list|(

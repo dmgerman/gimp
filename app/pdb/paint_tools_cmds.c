@@ -1314,10 +1314,18 @@ argument_list|(
 name|options
 argument_list|)
 operator|->
-name|type
+name|clone_type
 operator|=
 name|clone_type
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: re-enable clone src_drawable
+endif|#
+directive|endif
 if|#
 directive|if
 literal|0
@@ -3586,7 +3594,7 @@ name|options
 operator|->
 name|gradient_options
 operator|->
-name|fade_out
+name|fade_length
 operator|=
 name|fade_out
 expr_stmt|;

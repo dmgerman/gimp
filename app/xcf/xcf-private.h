@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297b785e0103
+DECL|enum|__anon2bebcd770103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -154,7 +154,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297b785e0203
+DECL|enum|__anon2bebcd770203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -180,6 +180,26 @@ comment|/* unused */
 DECL|typedef|XcfCompressionType
 block|}
 name|XcfCompressionType
+typedef|;
+end_typedef
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2bebcd770303
+block|{
+DECL|enumerator|XCF_ORIENTATION_HORIZONTAL
+name|XCF_ORIENTATION_HORIZONTAL
+init|=
+literal|1
+block|,
+DECL|enumerator|XCF_ORIENTATION_VERTICAL
+name|XCF_ORIENTATION_VERTICAL
+init|=
+literal|2
+DECL|typedef|XcfOrientationType
+block|}
+name|XcfOrientationType
 typedef|;
 end_typedef
 

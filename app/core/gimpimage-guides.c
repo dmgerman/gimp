@@ -119,7 +119,7 @@ name|guide
 operator|->
 name|orientation
 operator|=
-name|ORIENTATION_HORIZONTAL
+name|GIMP_ORIENTATION_HORIZONTAL
 expr_stmt|;
 name|gimage
 operator|->
@@ -202,7 +202,7 @@ name|guide
 operator|->
 name|orientation
 operator|=
-name|ORIENTATION_VERTICAL
+name|GIMP_ORIENTATION_VERTICAL
 expr_stmt|;
 name|gimage
 operator|->
@@ -466,7 +466,7 @@ name|orientation
 condition|)
 block|{
 case|case
-name|ORIENTATION_HORIZONTAL
+name|GIMP_ORIENTATION_HORIZONTAL
 case|:
 if|if
 condition|(
@@ -486,7 +486,7 @@ name|guide
 return|;
 break|break;
 case|case
-name|ORIENTATION_VERTICAL
+name|GIMP_ORIENTATION_VERTICAL
 case|:
 if|if
 condition|(
@@ -669,7 +669,7 @@ name|orientation
 condition|)
 block|{
 case|case
-name|ORIENTATION_HORIZONTAL
+name|GIMP_ORIENTATION_HORIZONTAL
 case|:
 name|dist
 operator|=
@@ -712,7 +712,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|ORIENTATION_VERTICAL
+name|GIMP_ORIENTATION_VERTICAL
 case|:
 name|dist
 operator|=

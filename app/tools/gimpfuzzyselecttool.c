@@ -1314,20 +1314,22 @@ operator|)
 operator|/
 literal|2.0
 expr_stmt|;
-name|gtk_adjustment_set_value
+name|g_object_set
 argument_list|(
-name|GTK_ADJUSTMENT
+name|G_OBJECT
 argument_list|(
 name|options
-operator|->
-name|threshold_w
 argument_list|)
+argument_list|,
+literal|"threshold"
 argument_list|,
 name|fuzzy_sel
 operator|->
 name|first_threshold
 operator|+
 name|diff
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  calculate the new fuzzy boundary  */

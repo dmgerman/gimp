@@ -27,17 +27,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|gimp_paint_options_reset
-parameter_list|(
-name|GimpToolOptions
-modifier|*
-name|tool_options
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif

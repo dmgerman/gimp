@@ -1015,7 +1015,7 @@ name|op
 operator|=
 name|options
 operator|->
-name|op
+name|operation
 expr_stmt|;
 block|}
 block|}

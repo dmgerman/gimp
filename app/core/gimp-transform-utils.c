@@ -319,7 +319,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_transform_matrix_shear (gint x1,gint y1,gint x2,gint y2,InternalOrientationType orientation,gdouble amount,GimpMatrix3 result)
+DECL|function|gimp_drawable_transform_matrix_shear (gint x1,gint y1,gint x2,gint y2,GimpOrientationType orientation,gdouble amount,GimpMatrix3 result)
 name|gimp_drawable_transform_matrix_shear
 parameter_list|(
 name|gint
@@ -334,7 +334,7 @@ parameter_list|,
 name|gint
 name|y2
 parameter_list|,
-name|InternalOrientationType
+name|GimpOrientationType
 name|orientation
 parameter_list|,
 name|gdouble
@@ -434,7 +434,7 @@ if|if
 condition|(
 name|orientation
 operator|==
-name|ORIENTATION_HORIZONTAL
+name|GIMP_ORIENTATION_HORIZONTAL
 condition|)
 name|gimp_matrix3_xshear
 argument_list|(

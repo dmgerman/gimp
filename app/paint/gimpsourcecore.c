@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -698,7 +698,7 @@ if|if
 condition|(
 name|options
 operator|->
-name|aligned
+name|align_mode
 operator|==
 name|GIMP_CLONE_ALIGN_NO
 condition|)
@@ -743,7 +743,7 @@ if|if
 condition|(
 name|options
 operator|->
-name|type
+name|clone_type
 operator|==
 name|GIMP_PATTERN_CLONE
 condition|)
@@ -831,7 +831,7 @@ if|if
 condition|(
 name|options
 operator|->
-name|aligned
+name|align_mode
 operator|==
 name|GIMP_CLONE_ALIGN_REGISTERED
 condition|)
@@ -939,7 +939,7 @@ if|if
 condition|(
 name|options
 operator|->
-name|aligned
+name|align_mode
 operator|==
 name|GIMP_CLONE_ALIGN_NO
 operator|&&
@@ -1117,7 +1117,7 @@ if|if
 condition|(
 name|options
 operator|->
-name|type
+name|clone_type
 operator|==
 name|GIMP_IMAGE_CLONE
 condition|)
@@ -1217,7 +1217,7 @@ switch|switch
 condition|(
 name|options
 operator|->
-name|type
+name|clone_type
 condition|)
 block|{
 case|case
@@ -1703,7 +1703,7 @@ switch|switch
 condition|(
 name|options
 operator|->
-name|type
+name|clone_type
 condition|)
 block|{
 case|case

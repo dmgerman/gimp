@@ -132,7 +132,7 @@ name|gint
 name|position
 decl_stmt|;
 DECL|member|orientation
-name|InternalOrientationType
+name|GimpOrientationType
 name|orientation
 decl_stmt|;
 DECL|member|guide_ID

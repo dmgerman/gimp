@@ -79,7 +79,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2780e1b60103
+DECL|enum|__anon2742d5650103
 block|{
 DECL|enumerator|GIMP_CROP
 name|GIMP_CROP
@@ -103,7 +103,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2780e1b60203
+DECL|enum|__anon2742d5650203
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -148,7 +148,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2780e1b60303
+DECL|enum|__anon2742d5650303
 block|{
 DECL|enumerator|INACTIVE
 name|INACTIVE
@@ -170,7 +170,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2780e1b60403
+DECL|enum|__anon2742d5650403
 block|{
 DECL|enumerator|PAUSE
 name|PAUSE
@@ -195,7 +195,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2780e1b60503
+DECL|enum|__anon2742d5650503
 block|{
 DECL|enumerator|GIMP_MOTION_MODE_EXACT
 name|GIMP_MOTION_MODE_EXACT
@@ -233,7 +233,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2780e1b60603
+DECL|enum|__anon2742d5650603
 block|{
 DECL|enumerator|GIMP_RECT_SELECT_MODE_FREE
 name|GIMP_RECT_SELECT_MODE_FREE
@@ -252,6 +252,47 @@ name|GimpRectSelectMode
 typedef|;
 end_typedef
 
+begin_define
+DECL|macro|GIMP_TYPE_TRANSFORM_GRID_TYPE
+define|#
+directive|define
+name|GIMP_TYPE_TRANSFORM_GRID_TYPE
+value|(gimp_transform_grid_type_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_transform_grid_type_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< pdb-skip>*/
+DECL|enum|__anon2742d5650703
+block|{
+DECL|enumerator|GIMP_TRANSFORM_GRID_TYPE_NONE
+name|GIMP_TRANSFORM_GRID_TYPE_NONE
+block|,
+comment|/*< desc="Don't Show Grid">*/
+DECL|enumerator|GIMP_TRANSFORM_GRID_TYPE_N_LINES
+name|GIMP_TRANSFORM_GRID_TYPE_N_LINES
+block|,
+comment|/*< desc="Number of Grid Lines">*/
+DECL|enumerator|GIMP_TRANSFORM_GRID_TYPE_SPACING
+name|GIMP_TRANSFORM_GRID_TYPE_SPACING
+comment|/*< desc="Grid Line Spacing">*/
+DECL|typedef|GimpTransformGridType
+block|}
+name|GimpTransformGridType
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  Possible transform functions  */
 end_comment
@@ -261,7 +302,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2780e1b60703
+DECL|enum|__anon2742d5650803
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING

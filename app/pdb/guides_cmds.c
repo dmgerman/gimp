@@ -40,7 +40,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"core/core-enums.h"
 end_include
 
 begin_include
@@ -1557,7 +1557,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"orientation"
 block|,
-literal|"The guide's orientation: { HORIZONTAL (0), VERTICAL (1) }"
+literal|"The guide's orientation: { GIMP_HORIZONTAL (0), GIMP_VERTICAL (1), GIMP_ }"
 block|}
 block|}
 decl_stmt|;

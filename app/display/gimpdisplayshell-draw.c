@@ -256,7 +256,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27de3c280103
+DECL|enum|__anon2b549e1e0103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -4704,7 +4704,7 @@ name|orientation
 condition|)
 block|{
 case|case
-name|ORIENTATION_HORIZONTAL
+name|GIMP_ORIENTATION_HORIZONTAL
 case|:
 name|gimp_display_shell_add_expose_area
 argument_list|(
@@ -4723,7 +4723,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|ORIENTATION_VERTICAL
+name|GIMP_ORIENTATION_VERTICAL
 case|:
 name|gimp_display_shell_add_expose_area
 argument_list|(
@@ -6061,7 +6061,7 @@ name|guide
 operator|->
 name|orientation
 operator|==
-name|ORIENTATION_HORIZONTAL
+name|GIMP_ORIENTATION_HORIZONTAL
 condition|)
 block|{
 name|gimp_display_shell_transform_xy
@@ -6134,7 +6134,7 @@ name|guide
 operator|->
 name|orientation
 operator|==
-name|ORIENTATION_VERTICAL
+name|GIMP_ORIENTATION_VERTICAL
 condition|)
 block|{
 name|gimp_display_shell_transform_xy

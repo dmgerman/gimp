@@ -109,13 +109,8 @@ modifier|*
 name|tool_info
 decl_stmt|;
 DECL|member|main_vbox
-name|GtkWidget
-modifier|*
+name|gpointer
 name|main_vbox
-decl_stmt|;
-DECL|member|reset_func
-name|GimpToolOptionsResetFunc
-name|reset_func
 decl_stmt|;
 block|}
 struct|;

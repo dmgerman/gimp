@@ -2257,7 +2257,7 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|gimp_drawable_transform_tiles_flip (GimpDrawable * drawable,TileManager * orig,InternalOrientationType flip_type)
+DECL|function|gimp_drawable_transform_tiles_flip (GimpDrawable * drawable,TileManager * orig,GimpOrientationType flip_type)
 name|gimp_drawable_transform_tiles_flip
 parameter_list|(
 name|GimpDrawable
@@ -2268,7 +2268,7 @@ name|TileManager
 modifier|*
 name|orig
 parameter_list|,
-name|InternalOrientationType
+name|GimpOrientationType
 name|flip_type
 parameter_list|)
 block|{
@@ -2373,7 +2373,7 @@ if|if
 condition|(
 name|flip_type
 operator|==
-name|ORIENTATION_HORIZONTAL
+name|GIMP_ORIENTATION_HORIZONTAL
 condition|)
 block|{
 for|for
@@ -2525,7 +2525,7 @@ directive|if
 literal|0
 comment|/* flip locked paths */
 comment|/* Note that the undo structures etc are setup before we enter this    * function.    */
-block|if (flip_type == ORIENTATION_HORIZONTAL)     path_transform_flip_horz (gimage);   else     path_transform_flip_vert (gimage);
+block|if (flip_type == GIMP_ORIENTATION_HORIZONTAL)     path_transform_flip_horz (gimage);   else     path_transform_flip_vert (gimage);
 endif|#
 directive|endif
 return|return
@@ -2688,14 +2688,14 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_transform_flip (GimpDrawable * drawable,InternalOrientationType flip_type)
+DECL|function|gimp_drawable_transform_flip (GimpDrawable * drawable,GimpOrientationType flip_type)
 name|gimp_drawable_transform_flip
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|InternalOrientationType
+name|GimpOrientationType
 name|flip_type
 parameter_list|)
 block|{

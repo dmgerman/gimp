@@ -110,7 +110,7 @@ parameter_list|,
 name|gint
 name|y2
 parameter_list|,
-name|InternalOrientationType
+name|GimpOrientationType
 name|orientation
 parameter_list|,
 name|gdouble

@@ -1955,7 +1955,7 @@ name|select_transparent
 argument_list|,
 name|options
 operator|->
-name|op
+name|operation
 argument_list|,
 name|options
 operator|->

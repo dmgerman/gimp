@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd428a50103
+DECL|enum|__anon2bcae72d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -338,12 +338,6 @@ name|FALSE
 argument_list|,
 literal|2
 argument_list|)
-expr_stmt|;
-name|options
-operator|->
-name|reset_func
-operator|=
-name|NULL
 expr_stmt|;
 block|}
 end_function

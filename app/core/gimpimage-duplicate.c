@@ -851,7 +851,7 @@ name|orientation
 condition|)
 block|{
 case|case
-name|ORIENTATION_HORIZONTAL
+name|GIMP_ORIENTATION_HORIZONTAL
 case|:
 name|new_guide
 operator|=
@@ -870,7 +870,7 @@ name|position
 expr_stmt|;
 break|break;
 case|case
-name|ORIENTATION_VERTICAL
+name|GIMP_ORIENTATION_VERTICAL
 case|:
 name|new_guide
 operator|=
