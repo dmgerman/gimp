@@ -65,7 +65,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon297f846f0103
+DECL|enum|__anon28c7d9a00103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -90,7 +90,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297f846f0203
+DECL|enum|__anon28c7d9a00203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1214,12 +1214,8 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|g_type_instance_is_a
+name|G_TYPE_CHECK_INSTANCE_TYPE
 argument_list|(
-operator|(
-name|GTypeInstance
-operator|*
-operator|)
 name|object
 argument_list|,
 name|container
@@ -1438,12 +1434,8 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|g_type_instance_is_a
+name|G_TYPE_CHECK_INSTANCE_TYPE
 argument_list|(
-operator|(
-name|GTypeInstance
-operator|*
-operator|)
 name|object
 argument_list|,
 name|container
@@ -1661,12 +1653,8 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|g_type_instance_is_a
+name|G_TYPE_CHECK_INSTANCE_TYPE
 argument_list|(
-operator|(
-name|GTypeInstance
-operator|*
-operator|)
 name|object
 argument_list|,
 name|container
@@ -1783,12 +1771,8 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|g_type_instance_is_a
+name|G_TYPE_CHECK_INSTANCE_TYPE
 argument_list|(
-operator|(
-name|GTypeInstance
-operator|*
-operator|)
 name|object
 argument_list|,
 name|container
@@ -2263,12 +2247,8 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|g_type_instance_is_a
+name|G_TYPE_CHECK_INSTANCE_TYPE
 argument_list|(
-operator|(
-name|GTypeInstance
-operator|*
-operator|)
 name|object
 argument_list|,
 name|container
