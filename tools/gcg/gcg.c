@@ -41,6 +41,12 @@ directive|include
 file|"output.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"marshall.h"
+end_include
+
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -607,7 +613,7 @@ name|p_write
 argument_list|(
 name|p_fmt
 argument_list|(
-literal|"~~~"
+literal|"~~~~~"
 literal|"#include \"~\"\n"
 argument_list|,
 name|p_col
@@ -626,9 +632,23 @@ argument_list|)
 argument_list|,
 name|p_col
 argument_list|(
+literal|"source_sigtypes"
+argument_list|,
+name|p_sigdemarsh_decl
+argument_list|)
+argument_list|,
+name|p_col
+argument_list|(
 literal|"source"
 argument_list|,
 name|NULL
+argument_list|)
+argument_list|,
+name|p_col
+argument_list|(
+literal|"source_sigtypes"
+argument_list|,
+name|p_demarshaller
 argument_list|)
 argument_list|,
 name|p_str
@@ -712,7 +732,12 @@ literal|"prot"
 argument_list|,
 name|p_fmt
 argument_list|(
-literal|"~~~"
+literal|"~~~~"
+argument_list|,
+name|p_func_include
+argument_list|(
+name|current_module
+argument_list|)
 argument_list|,
 name|p_col
 argument_list|(

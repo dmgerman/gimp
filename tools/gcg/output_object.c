@@ -764,11 +764,17 @@ name|output_var_import
 argument_list|(
 name|out
 argument_list|,
+name|DEF
+argument_list|(
+name|MEMBER
+argument_list|(
 name|m
+argument_list|)
 operator|->
-name|ret_type
-operator|.
-name|prim
+name|my_class
+argument_list|)
+operator|->
+name|type
 argument_list|,
 name|p_fmt
 argument_list|(
@@ -1004,18 +1010,9 @@ name|pr_put
 argument_list|(
 name|out
 argument_list|,
-literal|"class_init_head"
+literal|"source_sigtypes"
 argument_list|,
-name|p_fmt
-argument_list|(
-literal|"\textern void ~ (GtkObject*, GtkSignalFunc, "
-literal|"gpointer, GtkArg*);\n"
-argument_list|,
-name|p_signal_demarshaller_name
-argument_list|(
 name|sig
-argument_list|)
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|pr_put
@@ -1038,7 +1035,6 @@ literal|"~);\n"
 literal|"\tgtk_object_class_add_signals(obklass,\n"
 literal|"\t\t&~,\n"
 literal|"\t\t1);\n"
-literal|"\t}\n"
 argument_list|,
 name|p_signal_id
 argument_list|(
@@ -2220,7 +2216,7 @@ literal|"source_head"
 argument_list|,
 name|p_fmt
 argument_list|(
-literal|"static inline void ~ (~* klass);\n"
+literal|"static void ~ (~* klass);\n"
 argument_list|,
 name|p_varname
 argument_list|(
@@ -2293,8 +2289,8 @@ name|p_fmt
 argument_list|(
 literal|"\tGtkObjectClass* obklass = "
 literal|"(GtkObjectClass*) klass;\n"
-literal|"\t(void) obklass;\n"
 literal|"~"
+literal|"\t(void) obklass;\n"
 literal|"~"
 literal|"\t~ (klass);\n"
 argument_list|,
@@ -2378,19 +2374,6 @@ argument_list|,
 name|o
 operator|->
 name|parent
-operator|->
-name|module
-argument_list|)
-expr_stmt|;
-name|pr_put
-argument_list|(
-name|out
-argument_list|,
-literal|"prot_depends"
-argument_list|,
-name|d
-operator|->
-name|type
 operator|->
 name|module
 argument_list|)
