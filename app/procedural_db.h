@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c694f590103
+DECL|enum|__anon2c3764ae0103
 block|{
 DECL|enumerator|PDB_INT32
 name|PDB_INT32
@@ -112,7 +112,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c694f590203
+DECL|enum|__anon2c3764ae0203
 block|{
 DECL|enumerator|PDB_EXECUTION_ERROR
 name|PDB_EXECUTION_ERROR
@@ -138,7 +138,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c694f590303
+DECL|enum|__anon2c3764ae0303
 block|{
 DECL|enumerator|PDB_INTERNAL
 name|PDB_INTERNAL
@@ -562,6 +562,13 @@ begin_decl_stmt
 specifier|extern
 name|ProcRecord
 name|procedural_db_set_data_proc
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|ProcRecord
+name|procedural_db_get_data_size_proc
 decl_stmt|;
 end_decl_stmt
 

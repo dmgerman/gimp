@@ -987,7 +987,7 @@ block|,
 name|procedural_db_get_data_size_args
 block|,
 comment|/*  Output arguments  */
-literal|2
+literal|1
 block|,
 name|procedural_db_get_data_size_out_args
 block|,

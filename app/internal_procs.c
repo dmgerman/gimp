@@ -2972,6 +2972,15 @@ expr_stmt|;
 name|pcount
 operator|++
 expr_stmt|;
+name|procedural_db_register
+argument_list|(
+operator|&
+name|procedural_db_get_data_size_proc
+argument_list|)
+expr_stmt|;
+name|pcount
+operator|++
+expr_stmt|;
 block|}
 end_function
 
