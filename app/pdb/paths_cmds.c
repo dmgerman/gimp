@@ -4239,7 +4239,7 @@ name|success
 condition|)
 name|success
 operator|=
-name|gimp_vectors_import
+name|gimp_vectors_import_file
 argument_list|(
 name|gimage
 argument_list|,

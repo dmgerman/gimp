@@ -2552,7 +2552,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_vectors_import
+name|gimp_vectors_import_file
 argument_list|(
 name|gimage
 argument_list|,
@@ -2815,7 +2815,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_vectors_export
+name|gimp_vectors_export_file
 argument_list|(
 name|gimage
 argument_list|,

@@ -145,13 +145,13 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_vectors_export:  * @image: the #GimpImage from which to export vectors  * @vectors: a #GimpVectors object or %NULL to export all vectors in @image  * @filename: the name of the file to write  * @error: return location for errors  *  * Exports one or more vectors to a SVG file.  *  * Return value: %TRUE on success, %FALSE if an error occured  **/
+comment|/**  * gimp_vectors_export_file:  * @image: the #GimpImage from which to export vectors  * @vectors: a #GimpVectors object or %NULL to export all vectors in @image  * @filename: the name of the file to write  * @error: return location for errors  *  * Exports one or more vectors to a SVG file.  *  * Return value: %TRUE on success, %FALSE if an error occured  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_vectors_export (const GimpImage * image,const GimpVectors * vectors,const gchar * filename,GError ** error)
-name|gimp_vectors_export
+DECL|function|gimp_vectors_export_file (const GimpImage * image,const GimpVectors * vectors,const gchar * filename,GError ** error)
+name|gimp_vectors_export_file
 parameter_list|(
 specifier|const
 name|GimpImage
@@ -410,6 +410,77 @@ return|;
 block|}
 return|return
 name|TRUE
+return|;
+block|}
+end_function
+
+begin_function
+name|gchar
+modifier|*
+DECL|function|gimp_vectors_export_string (const GimpImage * image,const GimpVectors * vectors,GError ** error)
+name|gimp_vectors_export_string
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+specifier|const
+name|GimpVectors
+modifier|*
+name|vectors
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|vectors
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_VECTORS
+argument_list|(
+name|vectors
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_warning
+argument_list|(
+literal|"gimp_vectors_export_string: unimplemented"
+argument_list|)
+expr_stmt|;
+return|return
+name|NULL
 return|;
 block|}
 end_function
