@@ -95,7 +95,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b40b1610108
+DECL|struct|__anon29e46c940108
 block|{
 DECL|member|from
 name|GimpRGB
@@ -1899,7 +1899,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Red:"
+literal|"_Red:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2058,7 +2058,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Red Threshold:"
+literal|"R_ed Threshold:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2189,7 +2189,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"Green:"
+literal|"_Green:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2348,7 +2348,7 @@ literal|4
 argument_list|,
 name|_
 argument_list|(
-literal|"Green Threshold:"
+literal|"G_reen Threshold:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2479,7 +2479,7 @@ literal|5
 argument_list|,
 name|_
 argument_list|(
-literal|"Blue:"
+literal|"_Blue:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2638,7 +2638,7 @@ literal|6
 argument_list|,
 name|_
 argument_list|(
-literal|"Blue Threshold:"
+literal|"B_lue Threshold:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2765,11 +2765,11 @@ name|button
 decl_stmt|;
 name|button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Lock Thresholds"
+literal|"Lock _Thresholds"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -336,6 +336,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|origPreview
 DECL|variable|curPreview
+specifier|static
 name|GtkWidget
 modifier|*
 name|origPreview
@@ -349,6 +350,7 @@ begin_decl_stmt
 DECL|variable|rPreview
 DECL|variable|gPreview
 DECL|variable|bPreview
+specifier|static
 name|GtkWidget
 modifier|*
 name|rPreview
@@ -365,6 +367,7 @@ begin_decl_stmt
 DECL|variable|cPreview
 DECL|variable|yPreview
 DECL|variable|mPreview
+specifier|static
 name|GtkWidget
 modifier|*
 name|cPreview
@@ -379,6 +382,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|centerPreview
+specifier|static
 name|GtkWidget
 modifier|*
 name|centerPreview
@@ -389,6 +393,7 @@ begin_decl_stmt
 DECL|variable|darkerPreview
 DECL|variable|lighterPreview
 DECL|variable|middlePreview
+specifier|static
 name|GtkWidget
 modifier|*
 name|darkerPreview
@@ -404,6 +409,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|allOrSell
 DECL|variable|dlg
+specifier|static
 name|GtkWidget
 modifier|*
 name|allOrSell
@@ -417,6 +423,7 @@ begin_decl_stmt
 DECL|variable|plusSatPreview
 DECL|variable|SatPreview
 DECL|variable|minusSatPreview
+specifier|static
 name|GtkWidget
 modifier|*
 name|plusSatPreview
@@ -431,7 +438,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon299d3fce0108
+DECL|struct|__anon2a50be760108
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -1727,7 +1734,7 @@ name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"Shadows"
+literal|"Sha_dows"
 argument_list|)
 argument_list|,
 name|GTK_SIGNAL_FUNC
@@ -1756,7 +1763,7 @@ name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"Midtones"
+literal|"_Midtones"
 argument_list|)
 argument_list|,
 name|GTK_SIGNAL_FUNC
@@ -1785,7 +1792,7 @@ name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"Highlights"
+literal|"H_ighlights"
 argument_list|)
 argument_list|,
 name|GTK_SIGNAL_FUNC
@@ -1891,7 +1898,7 @@ name|box
 argument_list|,
 name|_
 argument_list|(
-literal|"Hue"
+literal|"_Hue"
 argument_list|)
 argument_list|,
 name|GTK_SIGNAL_FUNC
@@ -1916,7 +1923,7 @@ name|box
 argument_list|,
 name|_
 argument_list|(
-literal|"Saturation"
+literal|"_Saturation"
 argument_list|)
 argument_list|,
 name|GTK_SIGNAL_FUNC
@@ -1941,7 +1948,7 @@ name|box
 argument_list|,
 name|_
 argument_list|(
-literal|"Value"
+literal|"_Value"
 argument_list|)
 argument_list|,
 name|GTK_SIGNAL_FUNC
@@ -1966,7 +1973,7 @@ name|box
 argument_list|,
 name|_
 argument_list|(
-literal|"Advanced"
+literal|"A_dvanced"
 argument_list|)
 argument_list|,
 name|GTK_SIGNAL_FUNC
@@ -2728,7 +2735,7 @@ name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"Hue"
+literal|"H_ue"
 argument_list|)
 argument_list|,
 name|GTK_SIGNAL_FUNC
@@ -2757,7 +2764,7 @@ name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"Saturation"
+literal|"Satu_ration"
 argument_list|)
 argument_list|,
 name|GTK_SIGNAL_FUNC
@@ -2786,7 +2793,7 @@ name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"Value"
+literal|"V_alue"
 argument_list|)
 argument_list|,
 name|GTK_SIGNAL_FUNC
@@ -2892,7 +2899,7 @@ name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"Entire Image"
+literal|"_Entire Image"
 argument_list|)
 argument_list|,
 name|GTK_SIGNAL_FUNC
@@ -2918,7 +2925,7 @@ name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"Selection Only"
+literal|"Se_lection Only"
 argument_list|)
 argument_list|,
 name|GTK_SIGNAL_FUNC
@@ -2944,7 +2951,7 @@ name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"Selection In Context"
+literal|"Selec_tion In Context"
 argument_list|)
 argument_list|,
 name|GTK_SIGNAL_FUNC
@@ -3251,7 +3258,7 @@ name|button
 decl_stmt|;
 name|button
 operator|=
-name|gtk_radio_button_new_with_label
+name|gtk_radio_button_new_with_mnemonic
 argument_list|(
 name|group
 argument_list|,
@@ -3347,7 +3354,7 @@ name|button
 decl_stmt|;
 name|button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|label
 argument_list|)
@@ -3431,7 +3438,7 @@ name|button
 decl_stmt|;
 name|button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|label
 argument_list|)
@@ -3486,7 +3493,6 @@ argument_list|,
 name|frame
 argument_list|)
 expr_stmt|;
-empty|#
 name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
@@ -5742,7 +5748,6 @@ name|GTK_UPDATE_DELAYED
 argument_list|)
 expr_stmt|;
 block|}
-return|return;
 block|}
 end_function
 
@@ -5775,7 +5780,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|void
 DECL|function|fp_advanced_dialog (void)
 name|fp_advanced_dialog
 parameter_list|(
@@ -6796,9 +6801,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-return|return
-literal|1
-return|;
 block|}
 end_function
 
