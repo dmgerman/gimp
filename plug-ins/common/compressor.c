@@ -981,6 +981,10 @@ operator|==
 literal|0
 condition|)
 block|{
+if|if
+condition|(
+operator|!
+operator|(
 name|f
 operator|=
 name|fopen
@@ -989,7 +993,25 @@ name|filename
 argument_list|,
 literal|"w"
 argument_list|)
+operator|)
+condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"gz: fopen failed: %s\n"
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
 expr_stmt|;
+name|_exit
+argument_list|(
+literal|127
+argument_list|)
+expr_stmt|;
+block|}
 comment|/* make stdout for this process be the output file */
 if|if
 condition|(
@@ -1227,6 +1249,10 @@ name|FILE
 modifier|*
 name|f
 decl_stmt|;
+if|if
+condition|(
+operator|!
+operator|(
 name|f
 operator|=
 name|fopen
@@ -1235,7 +1261,25 @@ name|tmpname
 argument_list|,
 literal|"w"
 argument_list|)
+operator|)
+condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"gz: fopen failed: %s\n"
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
 expr_stmt|;
+name|_exit
+argument_list|(
+literal|127
+argument_list|)
+expr_stmt|;
+block|}
 comment|/* make stdout for this child process be the temp file */
 if|if
 condition|(
