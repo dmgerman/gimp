@@ -419,7 +419,7 @@ block|}
 block|,
 literal|"gimp-layer-list"
 block|,
-name|NULL
+name|GIMP_HELP_LAYER_DIALOG
 block|,
 name|NULL
 block|}
@@ -444,7 +444,7 @@ block|}
 block|,
 literal|"gimp-channel-list"
 block|,
-name|NULL
+name|GIMP_HELP_CHANNEL_DIALOG
 block|,
 name|NULL
 block|}
@@ -469,7 +469,7 @@ block|}
 block|,
 literal|"gimp-vectors-list"
 block|,
-name|NULL
+name|GIMP_HELP_PATH_DIALOG
 block|,
 name|NULL
 block|}
@@ -599,7 +599,7 @@ block|}
 block|,
 literal|"gimp-color-editor"
 block|,
-name|NULL
+name|GIMP_HELP_COLOR_DIALOG
 block|,
 name|NULL
 block|}

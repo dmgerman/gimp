@@ -107,6 +107,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpitemfactory.h"
 end_include
 
@@ -1314,7 +1320,7 @@ argument_list|(
 literal|"New Color"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_PALETTE_EDITOR_NEW
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1344,7 +1350,7 @@ argument_list|(
 literal|"Edit Color"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_PALETTE_EDITOR_EDIT
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1374,7 +1380,7 @@ argument_list|(
 literal|"Delete Color"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_PALETTE_EDITOR_DELETE
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1404,7 +1410,7 @@ argument_list|(
 literal|"Zoom Out"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_PALETTE_EDITOR_ZOOM_OUT
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1434,7 +1440,7 @@ argument_list|(
 literal|"Zoom In"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_PALETTE_EDITOR_ZOOM_IN
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1464,7 +1470,7 @@ argument_list|(
 literal|"Zoom All"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_PALETTE_EDITOR_ZOOM_ALL
 argument_list|,
 name|G_CALLBACK
 argument_list|(
