@@ -37,6 +37,23 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<windows.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_define
 DECL|macro|PLUG_IN_NAME
 define|#
@@ -98,6 +115,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
+end_ifndef
+
 begin_function_decl
 specifier|static
 name|gchar
@@ -121,6 +144,11 @@ name|replacement
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
@@ -369,6 +397,34 @@ modifier|*
 name|url
 parameter_list|)
 block|{
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+return|return
+operator|(
+operator|(
+name|gint
+operator|)
+name|ShellExecute
+argument_list|(
+name|HWND_DESKTOP
+argument_list|,
+literal|"open"
+argument_list|,
+name|url
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|SW_SHOWNORMAL
+argument_list|)
+operator|>
+literal|32
+operator|)
+return|;
+else|#
+directive|else
 name|GError
 modifier|*
 name|error
@@ -576,8 +632,16 @@ expr_stmt|;
 return|return
 name|retval
 return|;
+endif|#
+directive|endif
 block|}
 end_function
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
+end_ifndef
 
 begin_function
 specifier|static
@@ -668,6 +732,15 @@ name|ret
 return|;
 block|}
 end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* !G_OS_WIN32 */
+end_comment
 
 end_unit
 

@@ -149,17 +149,33 @@ name|G_OS_WIN32
 end_ifdef
 
 begin_define
+DECL|macro|DEFAULT_GIMP_HELP_BROWSER
+define|#
+directive|define
+name|DEFAULT_GIMP_HELP_BROWSER
+value|GIMP_HELP_BROWSER_WEBBROWSER
+end_define
+
+begin_define
 DECL|macro|DEFAULT_WEB_BROWSER
 define|#
 directive|define
 name|DEFAULT_WEB_BROWSER
-value|"\"C:\Program Files\Internet Explorer\iexplore.exe\" \"%s\""
+value|"not used on Windows"
 end_define
 
 begin_else
 else|#
 directive|else
 end_else
+
+begin_define
+DECL|macro|DEFAULT_GIMP_HELP_BROWSER
+define|#
+directive|define
+name|DEFAULT_GIMP_HELP_BROWSER
+value|GIMP_HELP_BROWSER_GIMP
+end_define
 
 begin_define
 DECL|macro|DEFAULT_WEB_BROWSER
@@ -176,7 +192,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon291e90ee0103
+DECL|enum|__anon29255d920103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -706,7 +722,7 @@ name|HELP_BROWSER_BLURB
 argument_list|,
 name|GIMP_TYPE_HELP_BROWSER_TYPE
 argument_list|,
-name|GIMP_HELP_BROWSER_GIMP
+name|DEFAULT_GIMP_HELP_BROWSER
 argument_list|,
 literal|0
 argument_list|)
