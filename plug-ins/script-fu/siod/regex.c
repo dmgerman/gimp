@@ -26,7 +26,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<regex.h>
+file|"regex.h"
 end_include
 
 begin_include

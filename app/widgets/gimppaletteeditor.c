@@ -739,25 +739,9 @@ begin_comment
 comment|/*  Color select dialog  */
 end_comment
 
-begin_decl_stmt
-DECL|variable|color_select
-specifier|static
-name|ColorSelectP
-name|color_select
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|color_select_active
-specifier|static
-name|int
-name|color_select_active
-init|=
-literal|0
-decl_stmt|;
-end_decl_stmt
+begin_comment
+comment|/* static ColorSelectP color_select = NULL; static int color_select_active = 0; */
+end_comment
 
 begin_decl_stmt
 DECL|variable|action_items
@@ -4743,21 +4727,9 @@ block|}
 block|}
 end_function
 
-begin_function
-specifier|static
-name|void
-DECL|function|palette_merge_entries_callback (GtkWidget * w,gpointer client_data)
-name|palette_merge_entries_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|w
-parameter_list|,
-name|gpointer
-name|client_data
-parameter_list|)
-block|{ }
-end_function
+begin_comment
+comment|/* static void palette_merge_entries_callback (GtkWidget *w, 				gpointer   client_data) { } */
+end_comment
 
 begin_function
 specifier|static
