@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2991b5b00103
+DECL|enum|__anon2b2886570103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -72,7 +72,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2991b5b00203
+DECL|enum|__anon2b2886570203
 block|{
 DECL|enumerator|UNIT_COLUMN
 name|UNIT_COLUMN
@@ -285,14 +285,12 @@ block|{
 name|GObjectClass
 modifier|*
 name|object_class
-decl_stmt|;
-name|object_class
-operator|=
+init|=
 name|G_OBJECT_CLASS
 argument_list|(
 name|klass
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|parent_class
 operator|=
 name|g_type_class_peek_parent
@@ -2681,14 +2679,12 @@ block|{
 name|GimpUnitMenu
 modifier|*
 name|menu
+init|=
+name|data
 decl_stmt|;
 name|GimpUnit
 name|new_unit
 decl_stmt|;
-name|menu
-operator|=
-name|data
-expr_stmt|;
 name|new_unit
 operator|=
 name|GPOINTER_TO_UINT
