@@ -485,7 +485,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  GParamInt, GParamDouble   unit: GimpParamUnit  */
+comment|/*  GParamInt, GParamUInt, GParamDouble   unit: GimpParamUnit  */
 end_comment
 
 begin_function_decl
