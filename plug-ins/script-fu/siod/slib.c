@@ -3270,7 +3270,7 @@ comment|/* The user could be given an option to continue here */
 block|{
 name|my_err
 argument_list|(
-literal|"the currently assigned stack limit has been exceded"
+literal|"the currently assigned stack limit has been exceeded"
 argument_list|,
 name|NIL
 argument_list|)
