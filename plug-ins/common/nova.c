@@ -28,6 +28,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<time.h>
 end_include
 
@@ -238,7 +244,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c720ce60108
+DECL|struct|__anon28f5a1100108
 block|{
 DECL|member|xcenter
 DECL|member|ycenter
@@ -275,7 +281,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c720ce60208
+DECL|struct|__anon28f5a1100208
 block|{
 DECL|member|run
 name|gint
@@ -290,7 +296,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c720ce60308
+DECL|struct|__anon28f5a1100308
 block|{
 DECL|member|drawable
 name|GimpDrawable

@@ -26,6 +26,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -74,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b8f62d0108
+DECL|struct|__anon29fe16500108
 block|{
 DECL|member|angle
 name|gint
@@ -93,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b8f62d0208
+DECL|struct|__anon29fe16500208
 block|{
 DECL|member|ID
 name|gint32

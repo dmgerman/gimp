@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -167,7 +173,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0c7d9a0108
+DECL|struct|__anon2c2a2c4d0108
 block|{
 DECL|member|division
 name|gint32

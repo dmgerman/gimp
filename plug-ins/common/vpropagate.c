@@ -28,6 +28,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -692,7 +698,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c9c5220108
+DECL|struct|__anon2a0ce3380108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -844,7 +850,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c9c5220208
+DECL|struct|__anon2a0ce3380208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -1069,7 +1075,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c9c5220308
+DECL|struct|__anon2a0ce3380308
 block|{
 DECL|member|run
 name|gint
@@ -3612,7 +3618,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c9c5220408
+DECL|struct|__anon2a0ce3380408
 block|{
 DECL|member|min_modified
 name|gshort

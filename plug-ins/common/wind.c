@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -112,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2befa7880103
+DECL|enum|__anon28ec6bd60103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -128,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2befa7880203
+DECL|enum|__anon28ec6bd60203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -144,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2befa7880303
+DECL|enum|__anon28ec6bd60303
 block|{
 DECL|enumerator|BOTH
 name|BOTH

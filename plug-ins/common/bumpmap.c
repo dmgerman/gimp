@@ -57,6 +57,12 @@ directive|include
 file|<stdlib.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<string.h>
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -132,7 +138,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b77675a0103
+DECL|enum|__anon29c39b780103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -150,7 +156,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b77675a0203
+DECL|enum|__anon29c39b780203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -169,7 +175,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b77675a0308
+DECL|struct|__anon29c39b780308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -228,7 +234,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b77675a0408
+DECL|struct|__anon29c39b780408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -273,7 +279,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b77675a0508
+DECL|struct|__anon29c39b780508
 block|{
 DECL|member|preview
 name|GtkWidget

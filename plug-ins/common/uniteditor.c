@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -437,7 +443,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5b94570103
+DECL|enum|__anon2a8f3b3a0103
 block|{
 DECL|enumerator|SAVE
 name|SAVE

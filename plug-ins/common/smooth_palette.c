@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<time.h>
 end_include
 
@@ -282,7 +288,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29074c890108
+DECL|struct|__anon29b7f6c80108
 block|{
 DECL|member|width
 name|gint

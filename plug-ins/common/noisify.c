@@ -28,6 +28,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<time.h>
 end_include
 
@@ -82,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298e56100108
+DECL|struct|__anon28b6b3780108
 block|{
 DECL|member|independent
 name|gint
@@ -105,7 +111,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298e56100208
+DECL|struct|__anon28b6b3780208
 block|{
 DECL|member|channels
 name|gint

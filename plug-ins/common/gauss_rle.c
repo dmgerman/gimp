@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -48,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0ec6720108
+DECL|struct|__anon2b12a2550108
 block|{
 DECL|member|radius
 name|gdouble
@@ -71,7 +77,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0ec6720208
+DECL|struct|__anon2b12a2550208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -90,7 +96,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0ec6720308
+DECL|struct|__anon2b12a2550308
 block|{
 DECL|member|size
 name|GtkWidget

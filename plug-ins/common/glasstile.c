@@ -22,6 +22,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -58,7 +64,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afa42bf0108
+DECL|struct|__anon2c8f1feb0108
 block|{
 DECL|member|xblock
 name|gint
@@ -77,7 +83,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afa42bf0208
+DECL|struct|__anon2c8f1feb0208
 block|{
 DECL|member|run
 name|gint

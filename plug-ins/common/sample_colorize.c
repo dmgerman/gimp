@@ -32,6 +32,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<time.h>
 end_include
 
@@ -370,7 +376,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon2b1f38590108
+DECL|struct|__anon27afeab60108
 typedef|typedef
 struct|struct
 block|{
@@ -439,7 +445,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b1f38590208
+DECL|struct|__anon27afeab60208
 typedef|typedef
 struct|struct
 block|{
@@ -557,7 +563,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b1f38590308
+DECL|struct|__anon27afeab60308
 typedef|typedef
 struct|struct
 block|{
@@ -586,7 +592,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b1f38590408
+DECL|struct|__anon27afeab60408
 typedef|typedef
 struct|struct
 block|{
@@ -613,7 +619,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b1f38590508
+DECL|struct|__anon27afeab60508
 typedef|typedef
 struct|struct
 block|{

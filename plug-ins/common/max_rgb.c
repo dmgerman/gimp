@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -228,7 +234,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a03ab5c0103
+DECL|enum|__anon2aa94d210103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -246,7 +252,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a03ab5c0208
+DECL|struct|__anon2aa94d210208
 block|{
 DECL|member|max_p
 name|gint
@@ -262,7 +268,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a03ab5c0308
+DECL|struct|__anon2aa94d210308
 block|{
 DECL|member|run
 name|gint

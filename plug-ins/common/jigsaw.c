@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -56,7 +62,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7ea1c30103
+DECL|enum|__anon29e2dd010103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -72,7 +78,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7ea1c30203
+DECL|enum|__anon29e2dd010203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
