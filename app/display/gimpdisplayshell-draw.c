@@ -239,6 +239,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-scale.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplayshell-selection.h"
 end_include
 
@@ -268,7 +274,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e2998c0103
+DECL|enum|__anon27cb7d2b0103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3967,7 +3973,7 @@ name|statusbar
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_shrink_wrap
+name|gimp_display_shell_scale_setup
 argument_list|(
 name|shell
 argument_list|)
