@@ -96,12 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gradients.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gradient_select.h"
 end_include
 
@@ -502,8 +496,10 @@ name|no_data
 operator|&&
 name|first_call
 condition|)
-name|gradients_init
+name|gimp_data_factory_data_init
 argument_list|(
+name|global_gradient_factory
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
@@ -1288,9 +1284,6 @@ name|GradientSelect
 operator|*
 operator|)
 name|data
-expr_stmt|;
-name|gradient_editor_create
-argument_list|()
 expr_stmt|;
 name|gradient_editor_set_gradient
 argument_list|(

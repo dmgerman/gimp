@@ -162,12 +162,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"brushes.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"color_transfer.h"
 end_include
 
@@ -222,6 +216,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdatafactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -247,12 +247,6 @@ begin_include
 include|#
 directive|include
 file|"gradient_select.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gradients.h"
 end_include
 
 begin_include
@@ -288,12 +282,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"palettes.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"palette.h"
 end_include
 
@@ -301,12 +289,6 @@ begin_include
 include|#
 directive|include
 file|"pattern_select.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"patterns.h"
 end_include
 
 begin_include
@@ -2544,6 +2526,7 @@ name|xcf_init
 argument_list|()
 expr_stmt|;
 comment|/*  initialize the xcf file format routines */
+comment|/*  initialize  the global parasite table  */
 name|app_init_update_status
 argument_list|(
 name|_
@@ -2562,7 +2545,7 @@ expr_stmt|;
 name|gimp_init_parasites
 argument_list|()
 expr_stmt|;
-comment|/*  initialize  the global parasite table  */
+comment|/*  initialize the list of gimp brushes    */
 name|app_init_update_status
 argument_list|(
 name|NULL
@@ -2575,12 +2558,14 @@ argument_list|,
 literal|0.20
 argument_list|)
 expr_stmt|;
-name|brushes_init
+name|gimp_data_factory_data_init
 argument_list|(
+name|global_brush_factory
+argument_list|,
 name|no_data
 argument_list|)
 expr_stmt|;
-comment|/*  initialize the list of gimp brushes    */
+comment|/*  initialize the list of gimp patterns   */
 name|app_init_update_status
 argument_list|(
 name|NULL
@@ -2593,12 +2578,14 @@ argument_list|,
 literal|0.40
 argument_list|)
 expr_stmt|;
-name|patterns_init
+name|gimp_data_factory_data_init
 argument_list|(
+name|global_pattern_factory
+argument_list|,
 name|no_data
 argument_list|)
 expr_stmt|;
-comment|/*  initialize the list of gimp patterns   */
+comment|/*  initialize the list of gimp palettes   */
 name|app_init_update_status
 argument_list|(
 name|NULL
@@ -2611,12 +2598,14 @@ argument_list|,
 literal|0.60
 argument_list|)
 expr_stmt|;
-name|palettes_init
+name|gimp_data_factory_data_init
 argument_list|(
+name|global_palette_factory
+argument_list|,
 name|no_data
 argument_list|)
 expr_stmt|;
-comment|/*  initialize the list of gimp palettes   */
+comment|/*  initialize the list of gimp gradients  */
 name|app_init_update_status
 argument_list|(
 name|NULL
@@ -2629,12 +2618,13 @@ argument_list|,
 literal|0.80
 argument_list|)
 expr_stmt|;
-name|gradients_init
+name|gimp_data_factory_data_init
 argument_list|(
+name|global_gradient_factory
+argument_list|,
 name|no_data
 argument_list|)
 expr_stmt|;
-comment|/*  initialize the list of gimp gradients  */
 name|app_init_update_status
 argument_list|(
 name|NULL
@@ -2982,25 +2972,13 @@ expr_stmt|;
 name|brush_dialog_free
 argument_list|()
 expr_stmt|;
-name|brushes_free
-argument_list|()
-expr_stmt|;
 name|pattern_dialog_free
-argument_list|()
-expr_stmt|;
-name|patterns_free
 argument_list|()
 expr_stmt|;
 name|palette_dialog_free
 argument_list|()
 expr_stmt|;
-name|palettes_free
-argument_list|()
-expr_stmt|;
 name|gradient_dialog_free
-argument_list|()
-expr_stmt|;
-name|gradients_free
 argument_list|()
 expr_stmt|;
 name|context_manager_free

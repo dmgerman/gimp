@@ -79,12 +79,6 @@ directive|include
 file|"palette.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"palettes.h"
-end_include
-
 begin_decl_stmt
 DECL|variable|convert_rgb_proc
 specifier|static
@@ -709,8 +703,10 @@ name|container
 operator|->
 name|num_children
 condition|)
-name|palettes_init
+name|gimp_data_factory_data_init
 argument_list|(
+name|global_palette_factory
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;

@@ -18,9 +18,11 @@ end_define
 
 begin_function_decl
 name|void
-name|gradient_editor_create
+name|gradient_editor_set_gradient
 parameter_list|(
-name|void
+name|GimpGradient
+modifier|*
+name|gradient
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -30,17 +32,6 @@ name|void
 name|gradient_editor_free
 parameter_list|(
 name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gradient_editor_set_gradient
-parameter_list|(
-name|GimpGradient
-modifier|*
-name|gradient
 parameter_list|)
 function_decl|;
 end_function_decl

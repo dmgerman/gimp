@@ -34,19 +34,25 @@ end_include
 begin_include
 include|#
 directive|include
+file|"context_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontext.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpimage.h"
+file|"gimpdatafactory.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"palettes.h"
+file|"gimpimage.h"
 end_include
 
 begin_include
@@ -755,11 +761,10 @@ name|args
 parameter_list|)
 block|{
 comment|/* FIXME: I've hardcoded success to be TRUE, because brushes_init() is a     *        void function right now.  It'd be nice if it returned a value at     *        some future date, so we could tell if things blew up when reparsing    *        the list (for whatever reason).     *                       - Seth "Yes, this is a kludge" Burgess    *<sjburges@ou.edu>    *   -and shamelessly stolen by Adrian Likins for use here...    */
-name|palettes_free
-argument_list|()
-expr_stmt|;
-name|palettes_init
+name|gimp_data_factory_data_init
 argument_list|(
+name|global_palette_factory
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;

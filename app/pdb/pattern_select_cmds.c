@@ -73,12 +73,6 @@ directive|include
 file|"pattern_select.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"patterns.h"
-end_include
-
 begin_decl_stmt
 DECL|variable|patterns_popup_proc
 specifier|static

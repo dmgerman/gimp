@@ -305,6 +305,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpContainerView
+typedef|typedef
+name|struct
+name|_GimpContainerView
+name|GimpContainerView
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpContainerListView
 typedef|typedef
 name|struct
@@ -319,6 +328,15 @@ typedef|typedef
 name|struct
 name|_GimpContainerGridView
 name|GimpContainerGridView
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpDataFactoryView
+typedef|typedef
+name|struct
+name|_GimpDataFactoryView
+name|GimpDataFactoryView
 typedef|;
 end_typedef
 

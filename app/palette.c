@@ -120,12 +120,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"palettes.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paletteP.h"
 end_include
 
@@ -1618,8 +1612,10 @@ name|default_palette_entries
 operator|=
 name|NULL
 expr_stmt|;
-name|palettes_init
+name|gimp_data_factory_data_init
 argument_list|(
+name|global_palette_factory
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;

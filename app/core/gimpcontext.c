@@ -884,7 +884,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2758f2230103
+DECL|enum|__anon2ac636380103
 block|{
 DECL|enumerator|ARG_0
 name|ARG_0
@@ -927,7 +927,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2758f2230203
+DECL|enum|__anon2ac636380203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -6963,7 +6963,7 @@ argument_list|(
 name|container
 argument_list|)
 condition|)
-name|gimp_context_brush_list_thaw
+name|gimp_context_pattern_list_thaw
 argument_list|(
 name|container
 argument_list|,
@@ -7606,7 +7606,7 @@ argument_list|(
 name|container
 argument_list|)
 condition|)
-name|gimp_context_brush_list_thaw
+name|gimp_context_gradient_list_thaw
 argument_list|(
 name|container
 argument_list|,
@@ -8187,7 +8187,7 @@ argument_list|(
 name|container
 argument_list|)
 condition|)
-name|gimp_context_brush_list_thaw
+name|gimp_context_palette_list_thaw
 argument_list|(
 name|container
 argument_list|,

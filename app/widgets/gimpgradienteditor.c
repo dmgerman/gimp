@@ -169,12 +169,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gradients.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpenv.h"
 end_include
 
@@ -305,7 +299,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aafec830103
+DECL|enum|__anon27bad7790103
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -345,7 +339,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aafec830203
+DECL|enum|__anon27bad7790203
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -369,7 +363,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aafec830308
+DECL|struct|__anon27bad7790308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -768,6 +762,16 @@ end_typedef
 begin_comment
 comment|/***** Local functions *****/
 end_comment
+
+begin_function_decl
+specifier|static
+name|void
+name|gradient_editor_create
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -2373,10 +2377,98 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
+comment|/***** Public gradient editor functions *****/
+end_comment
+
+begin_function
+name|void
+DECL|function|gradient_editor_set_gradient (GimpGradient * gradient)
+name|gradient_editor_set_gradient
+parameter_list|(
+name|GimpGradient
+modifier|*
+name|gradient
+parameter_list|)
+block|{
+if|if
+condition|(
+operator|!
+name|g_editor
+condition|)
+name|gradient_editor_create
+argument_list|()
+expr_stmt|;
+if|if
+condition|(
+name|gimp_container_have
+argument_list|(
+name|global_gradient_factory
+operator|->
+name|container
+argument_list|,
+name|GIMP_OBJECT
+argument_list|(
+name|gradient
+argument_list|)
+argument_list|)
+condition|)
+block|{
+name|gimp_context_set_gradient
+argument_list|(
+name|g_editor
+operator|->
+name|context
+argument_list|,
+name|gradient
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+operator|!
+name|GTK_WIDGET_VISIBLE
+argument_list|(
+name|g_editor
+operator|->
+name|shell
+argument_list|)
+condition|)
+name|gtk_widget_show
+argument_list|(
+name|g_editor
+operator|->
+name|shell
+argument_list|)
+expr_stmt|;
+else|else
+name|gdk_window_raise
+argument_list|(
+name|g_editor
+operator|->
+name|shell
+operator|->
+name|window
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gradient_editor_free (void)
+name|gradient_editor_free
+parameter_list|(
+name|void
+parameter_list|)
+block|{ }
+end_function
+
+begin_comment
 comment|/***** The main gradient editor dialog *****/
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|gradient_editor_create (void)
 name|gradient_editor_create
@@ -2412,36 +2504,7 @@ if|if
 condition|(
 name|g_editor
 condition|)
-block|{
-if|if
-condition|(
-operator|!
-name|GTK_WIDGET_VISIBLE
-argument_list|(
-name|g_editor
-operator|->
-name|shell
-argument_list|)
-condition|)
-name|gtk_widget_show
-argument_list|(
-name|g_editor
-operator|->
-name|shell
-argument_list|)
-expr_stmt|;
-else|else
-name|gdk_window_raise
-argument_list|(
-name|g_editor
-operator|->
-name|shell
-operator|->
-name|window
-argument_list|)
-expr_stmt|;
 return|return;
-block|}
 name|g_editor
 operator|=
 name|g_new
@@ -4112,60 +4175,6 @@ block|}
 end_function
 
 begin_function
-name|void
-DECL|function|gradient_editor_free (void)
-name|gradient_editor_free
-parameter_list|(
-name|void
-parameter_list|)
-block|{ }
-end_function
-
-begin_function
-name|void
-DECL|function|gradient_editor_set_gradient (GimpGradient * gradient)
-name|gradient_editor_set_gradient
-parameter_list|(
-name|GimpGradient
-modifier|*
-name|gradient
-parameter_list|)
-block|{
-if|if
-condition|(
-name|gimp_container_have
-argument_list|(
-name|global_gradient_factory
-operator|->
-name|container
-argument_list|,
-name|GIMP_OBJECT
-argument_list|(
-name|gradient
-argument_list|)
-argument_list|)
-operator|&&
-name|g_editor
-condition|)
-block|{
-name|gimp_context_set_gradient
-argument_list|(
-name|g_editor
-operator|->
-name|context
-argument_list|,
-name|gradient
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-end_function
-
-begin_comment
-comment|/***** Gradient editor functions *****/
-end_comment
-
-begin_function
 specifier|static
 name|void
 DECL|function|gradient_editor_drop_gradient (GtkWidget * widget,GimpViewable * viewable,gpointer data)
@@ -4212,9 +4221,11 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|preview_update
+name|ed_update_editor
 argument_list|(
-name|TRUE
+name|GRAD_UPDATE_PREVIEW
+operator||
+name|GRAD_RESET_CONTROL
 argument_list|)
 expr_stmt|;
 block|}
@@ -4299,10 +4310,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -4423,10 +4430,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -6378,8 +6381,10 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|gradients_init
+name|gimp_data_factory_data_init
 argument_list|(
+name|global_gradient_factory
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;

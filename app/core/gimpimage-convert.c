@@ -140,12 +140,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"palettes.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"palette_select.h"
 end_include
 
@@ -34947,7 +34941,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29113eb20108
+DECL|struct|__anon291306a20108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -35024,7 +35018,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29113eb20208
+DECL|struct|__anon291306a20208
 block|{
 DECL|member|ncolors
 name|long
@@ -35043,7 +35037,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29113eb20308
+DECL|struct|__anon291306a20308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -38394,7 +38388,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29113eb20408
+DECL|struct|__anon291306a20408
 block|{
 DECL|member|used_count
 name|signed

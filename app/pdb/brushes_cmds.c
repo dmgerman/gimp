@@ -40,12 +40,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"brushes.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"context_manager.h"
 end_include
 
@@ -257,8 +251,10 @@ name|args
 parameter_list|)
 block|{
 comment|/* FIXME: I've hardcoded success to be 1, because brushes_init() is a     *        void function right now.  It'd be nice if it returned a value at     *        some future date, so we could tell if things blew up when reparsing    *        the list (for whatever reason).     *                       - Seth "Yes, this is a kludge" Burgess    *<sjburges@gimp.org>    */
-name|brushes_init
+name|gimp_data_factory_data_init
 argument_list|(
+name|global_brush_factory
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;

@@ -75,15 +75,6 @@ value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CONTAINER_VIEW))
 end_define
 
 begin_typedef
-DECL|typedef|GimpContainerView
-typedef|typedef
-name|struct
-name|_GimpContainerView
-name|GimpContainerView
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpContainerViewClass
 typedef|typedef
 name|struct

@@ -67,12 +67,6 @@ directive|include
 file|"gimplist.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gradients.h"
-end_include
-
 begin_decl_stmt
 DECL|variable|gradients_get_list_proc
 specifier|static

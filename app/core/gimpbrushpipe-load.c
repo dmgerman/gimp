@@ -143,12 +143,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"patterns.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpbrush.h"
 end_include
 

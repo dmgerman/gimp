@@ -90,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"patterns.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"pattern_select.h"
 end_include
 
@@ -563,8 +557,10 @@ name|no_data
 operator|&&
 name|first_call
 condition|)
-name|patterns_init
+name|gimp_data_factory_data_init
 argument_list|(
+name|global_pattern_factory
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
@@ -1656,8 +1652,10 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|patterns_init
+name|gimp_data_factory_data_init
 argument_list|(
+name|global_pattern_factory
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;

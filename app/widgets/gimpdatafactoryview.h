@@ -23,9 +23,25 @@ file|<gtk/gtkvbox.h>
 end_include
 
 begin_typedef
+DECL|typedef|GimpDataEditFunc
+typedef|typedef
+name|void
+function_decl|(
+modifier|*
+name|GimpDataEditFunc
+function_decl|)
+parameter_list|(
+name|GimpData
+modifier|*
+name|data
+parameter_list|)
+function_decl|;
+end_typedef
+
+begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28811c750103
+DECL|enum|__anon292927fe0103
 block|{
 DECL|enumerator|GIMP_VIEW_TYPE_GRID
 name|GIMP_VIEW_TYPE_GRID
@@ -91,15 +107,6 @@ value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DATA_FACTORY_VIEW))
 end_define
 
 begin_typedef
-DECL|typedef|GimpDataFactoryView
-typedef|typedef
-name|struct
-name|_GimpDataFactoryView
-name|GimpDataFactoryView
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpDataFactoryViewClass
 typedef|typedef
 name|struct
@@ -121,6 +128,10 @@ DECL|member|factory
 name|GimpDataFactory
 modifier|*
 name|factory
+decl_stmt|;
+DECL|member|data_edit_func
+name|GimpDataEditFunc
+name|data_edit_func
 decl_stmt|;
 DECL|member|view
 name|GimpContainerView
@@ -194,6 +205,9 @@ parameter_list|,
 name|GimpDataFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpDataEditFunc
+name|edit_func
 parameter_list|,
 name|GimpContext
 modifier|*

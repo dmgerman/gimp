@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"brushes.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"devices.h"
 end_include
 
@@ -127,18 +121,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gradients.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"patterns.h"
 end_include
 
 begin_include

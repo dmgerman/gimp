@@ -328,25 +328,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"brushes.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gradients.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"palettes.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"patterns.h"
+file|"gradient_editor.h"
 end_include
 
 begin_include
@@ -5505,7 +5487,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|data_factory_view_new (GimpViewType view_type,gchar * title,GimpDataFactory * factory,GimpContext * context,gint preview_size)
+DECL|function|data_factory_view_new (GimpViewType view_type,gchar * title,GimpDataFactory * factory,GimpDataEditFunc edit_func,GimpContext * context,gint preview_size)
 name|data_factory_view_new
 parameter_list|(
 name|GimpViewType
@@ -5518,6 +5500,9 @@ parameter_list|,
 name|GimpDataFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpDataEditFunc
+name|edit_func
 parameter_list|,
 name|GimpContext
 modifier|*
@@ -5597,6 +5582,8 @@ argument_list|(
 name|view_type
 argument_list|,
 name|factory
+argument_list|,
+name|edit_func
 argument_list|,
 name|context
 argument_list|,
@@ -6412,6 +6399,8 @@ literal|"Brush List"
 argument_list|,
 name|global_brush_factory
 argument_list|,
+name|NULL
+argument_list|,
 name|gimp_context_get_user
 argument_list|()
 argument_list|,
@@ -6441,6 +6430,8 @@ argument_list|,
 literal|"Pattern List"
 argument_list|,
 name|global_pattern_factory
+argument_list|,
+name|NULL
 argument_list|,
 name|gimp_context_get_user
 argument_list|()
@@ -6472,6 +6463,8 @@ literal|"Gradient List"
 argument_list|,
 name|global_gradient_factory
 argument_list|,
+name|gradient_editor_set_gradient
+argument_list|,
 name|gimp_context_get_user
 argument_list|()
 argument_list|,
@@ -6501,6 +6494,8 @@ argument_list|,
 literal|"Palette List"
 argument_list|,
 name|global_palette_factory
+argument_list|,
+name|NULL
 argument_list|,
 name|gimp_context_get_user
 argument_list|()
@@ -6532,6 +6527,8 @@ literal|"Brush Grid"
 argument_list|,
 name|global_brush_factory
 argument_list|,
+name|NULL
+argument_list|,
 name|gimp_context_get_user
 argument_list|()
 argument_list|,
@@ -6561,6 +6558,8 @@ argument_list|,
 literal|"Pattern Grid"
 argument_list|,
 name|global_pattern_factory
+argument_list|,
+name|NULL
 argument_list|,
 name|gimp_context_get_user
 argument_list|()
@@ -6592,6 +6591,8 @@ literal|"Gradient Grid"
 argument_list|,
 name|global_gradient_factory
 argument_list|,
+name|gradient_editor_set_gradient
+argument_list|,
 name|gimp_context_get_user
 argument_list|()
 argument_list|,
@@ -6621,6 +6622,8 @@ argument_list|,
 literal|"Palette Grid"
 argument_list|,
 name|global_palette_factory
+argument_list|,
+name|NULL
 argument_list|,
 name|gimp_context_get_user
 argument_list|()

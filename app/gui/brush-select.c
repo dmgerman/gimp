@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"brushes.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"dialog_handler.h"
 end_include
 
@@ -801,8 +795,10 @@ name|no_data
 operator|&&
 name|first_call
 condition|)
-name|brushes_init
+name|gimp_data_factory_data_init
 argument_list|(
+name|global_brush_factory
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
@@ -3440,9 +3436,10 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-comment|/*  re-init the brush list  */
-name|brushes_init
+name|gimp_data_factory_data_init
 argument_list|(
+name|global_brush_factory
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
