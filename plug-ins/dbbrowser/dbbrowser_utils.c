@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae2a9d80108
+DECL|struct|__anon297c8e520108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -369,7 +369,7 @@ name|dbbrowser
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|hbox
+name|hpaned
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -609,26 +609,13 @@ argument_list|,
 name|dbbrowser
 argument_list|)
 expr_stmt|;
-comment|/* hbox : left=list ; right=description */
-name|hbox
+comment|/* hpaned : left=list ; right=description */
+name|hpaned
 operator|=
-name|gtk_hbox_new
-argument_list|(
-name|FALSE
-argument_list|,
-literal|4
-argument_list|)
+name|gtk_hpaned_new
+argument_list|()
 expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|hbox
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
+comment|/* gtk_container_set_border_width (GTK_CONTAINER (hbox), 4); */
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -643,7 +630,7 @@ operator|->
 name|vbox
 argument_list|)
 argument_list|,
-name|hbox
+name|hpaned
 argument_list|,
 name|TRUE
 argument_list|,
@@ -654,7 +641,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|hbox
+name|hpaned
 argument_list|)
 expr_stmt|;
 comment|/* left = vbox : the list and the search entry */
@@ -667,20 +654,18 @@ argument_list|,
 literal|4
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
+name|gtk_paned_pack1
 argument_list|(
-name|GTK_BOX
+name|GTK_PANED
 argument_list|(
-name|hbox
+name|hpaned
 argument_list|)
 argument_list|,
 name|vbox
 argument_list|,
 name|FALSE
 argument_list|,
-name|FALSE
-argument_list|,
-literal|0
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1032,11 +1017,11 @@ argument_list|,
 name|GTK_POLICY_ALWAYS
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
+name|gtk_paned_pack2
 argument_list|(
-name|GTK_BOX
+name|GTK_PANED
 argument_list|(
-name|hbox
+name|hpaned
 argument_list|)
 argument_list|,
 name|scrolled_window
@@ -1044,8 +1029,6 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|TRUE
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
