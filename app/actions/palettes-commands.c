@@ -100,18 +100,6 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|palettes_merge_palettes_query
-parameter_list|(
-name|GimpContainerEditor
-modifier|*
-name|editor
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|palettes_merge_palettes_callback
 parameter_list|(
 name|GtkWidget
@@ -200,29 +188,6 @@ argument_list|(
 name|data
 argument_list|)
 decl_stmt|;
-name|palettes_merge_palettes_query
-argument_list|(
-name|editor
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/*  private functions  */
-end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|palettes_merge_palettes_query (GimpContainerEditor * editor)
-name|palettes_merge_palettes_query
-parameter_list|(
-name|GimpContainerEditor
-modifier|*
-name|editor
-parameter_list|)
-block|{
 name|GtkWidget
 modifier|*
 name|qbox
@@ -271,6 +236,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/*  private functions  */
+end_comment
 
 begin_function
 specifier|static

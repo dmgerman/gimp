@@ -1319,6 +1319,11 @@ block|{
 name|GimpGradientEditor
 modifier|*
 name|editor
+init|=
+name|GIMP_GRADIENT_EDITOR
+argument_list|(
+name|data
+argument_list|)
 decl_stmt|;
 name|GimpContext
 modifier|*
@@ -1354,13 +1359,6 @@ decl_stmt|;
 name|gboolean
 name|delete
 decl_stmt|;
-name|editor
-operator|=
-name|GIMP_GRADIENT_EDITOR
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
 name|context
 operator|=
 name|gimp_get_user_context
@@ -1560,17 +1558,17 @@ operator|->
 name|next
 operator|)
 expr_stmt|;
-DECL|macro|SET_ACTIVE (action,active)
+DECL|macro|SET_ACTIVE (action,condition)
 define|#
 directive|define
 name|SET_ACTIVE
 parameter_list|(
 name|action
 parameter_list|,
-name|active
+name|condition
 parameter_list|)
 define|\
-value|gimp_action_group_set_action_active (group, action, (active))
+value|gimp_action_group_set_action_active (group, action, (condition) != 0)
 DECL|macro|SET_COLOR (action,color,set_label)
 define|#
 directive|define

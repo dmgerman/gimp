@@ -203,7 +203,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Buffer"
+literal|"_Buffer"
 argument_list|)
 block|}
 block|,

@@ -218,7 +218,7 @@ name|GIMP_STOCK_VISIBLE
 block|,
 name|N_
 argument_list|(
-literal|"Show in Toolbox"
+literal|"_Show in Toolbox"
 argument_list|)
 block|,
 name|NULL
@@ -633,33 +633,23 @@ block|{
 name|GimpContext
 modifier|*
 name|context
-decl_stmt|;
-name|GimpToolInfo
-modifier|*
-name|tool_info
 init|=
-name|NULL
-decl_stmt|;
-name|context
-operator|=
 name|gimp_get_user_context
 argument_list|(
 name|group
 operator|->
 name|gimp
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|context
-condition|)
+decl_stmt|;
+name|GimpToolInfo
+modifier|*
 name|tool_info
-operator|=
+init|=
 name|gimp_context_get_tool
 argument_list|(
 name|context
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 DECL|macro|SET_SENSITIVE (action,condition)
 define|#
 directive|define

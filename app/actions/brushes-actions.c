@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpdatafactoryview.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -115,7 +109,7 @@ name|GTK_STOCK_NEW
 block|,
 name|N_
 argument_list|(
-literal|"New Brush"
+literal|"_New Brush"
 argument_list|)
 block|,
 literal|""
@@ -302,6 +296,11 @@ block|{
 name|GimpContext
 modifier|*
 name|context
+init|=
+name|action_data_get_context
+argument_list|(
+name|user_data
+argument_list|)
 decl_stmt|;
 name|GimpBrush
 modifier|*
@@ -315,13 +314,6 @@ name|data
 init|=
 name|NULL
 decl_stmt|;
-name|context
-operator|=
-name|action_data_get_context
-argument_list|(
-name|user_data
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|context

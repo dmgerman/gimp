@@ -164,7 +164,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Preview Si_ze"
+literal|"_Preview Size"
 argument_list|)
 block|}
 block|,
@@ -230,7 +230,7 @@ name|GIMP_STOCK_MOVE_TO_SCREEN
 block|,
 name|N_
 argument_list|(
-literal|"Move to Screen..."
+literal|"M_ove to Screen..."
 argument_list|)
 block|,
 name|NULL
@@ -263,7 +263,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Show Image _Menu"
+literal|"_Show Image Menu"
 argument_list|)
 block|,
 name|NULL
@@ -287,7 +287,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Auto Follow Active _Image"
+literal|"Auto _Follow Active Image"
 argument_list|)
 block|,
 name|NULL

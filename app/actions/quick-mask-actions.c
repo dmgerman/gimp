@@ -239,6 +239,10 @@ modifier|*
 name|group
 parameter_list|)
 block|{
+name|GtkAction
+modifier|*
+name|action
+decl_stmt|;
 name|gimp_action_group_add_actions
 argument_list|(
 name|group
@@ -282,6 +286,45 @@ name|qmask_invert_cmd_callback
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|action
+operator|=
+name|gtk_action_group_get_action
+argument_list|(
+name|GTK_ACTION_GROUP
+argument_list|(
+name|group
+argument_list|)
+argument_list|,
+literal|"qmask-active"
+argument_list|)
+expr_stmt|;
+name|gtk_action_set_accel_path
+argument_list|(
+name|action
+argument_list|,
+literal|"<Actions>/qmask/qmask-toggle"
+argument_list|)
+expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: remove accel_path hack
+endif|#
+directive|endif
+name|g_object_set_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|action
+argument_list|)
+argument_list|,
+literal|"gimp-accel-path"
+argument_list|,
+literal|"<Actions>/qmask/qmask-toggle"
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -301,14 +344,23 @@ block|{
 name|GimpImage
 modifier|*
 name|gimage
-decl_stmt|;
-name|gimage
-operator|=
+init|=
 name|action_data_get_image
 argument_list|(
 name|data
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+DECL|macro|SET_SENSITIVE (action,sensitive)
+define|#
+directive|define
+name|SET_SENSITIVE
+parameter_list|(
+name|action
+parameter_list|,
+name|sensitive
+parameter_list|)
+define|\
+value|gimp_action_group_set_action_sensitive (group, action, (sensitive) != 0)
 DECL|macro|SET_ACTIVE (action,active)
 define|#
 directive|define
@@ -319,7 +371,7 @@ parameter_list|,
 name|active
 parameter_list|)
 define|\
-value|gimp_action_group_set_action_active (group, action, (active))
+value|gimp_action_group_set_action_active (group, action, (active) != 0)
 DECL|macro|SET_COLOR (action,color)
 define|#
 directive|define
@@ -331,6 +383,20 @@ name|color
 parameter_list|)
 define|\
 value|gimp_action_group_set_action_color (group, action, (color), FALSE)
+name|SET_SENSITIVE
+argument_list|(
+literal|"qmask-active"
+argument_list|,
+name|gimage
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"qmask-toggle"
+argument_list|,
+name|gimage
+argument_list|)
+expr_stmt|;
 name|SET_ACTIVE
 argument_list|(
 literal|"qmask-active"
@@ -351,6 +417,20 @@ operator|&&
 name|gimage
 operator|->
 name|qmask_state
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"qmask-invert-on"
+argument_list|,
+name|gimage
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"qmask-invert-off"
+argument_list|,
+name|gimage
 argument_list|)
 expr_stmt|;
 if|if
@@ -376,6 +456,13 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"qmask-configure"
+argument_list|,
+name|gimage
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimage
@@ -393,6 +480,9 @@ expr_stmt|;
 undef|#
 directive|undef
 name|SET_SENSITIVE
+undef|#
+directive|undef
+name|SET_ACTIVE
 undef|#
 directive|undef
 name|SET_COLOR

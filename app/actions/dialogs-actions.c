@@ -363,7 +363,7 @@ name|GIMP_STOCK_UNDO_HISTORY
 block|,
 name|N_
 argument_list|(
-literal|"_Undo History"
+literal|"Undo _History"
 argument_list|)
 block|,
 name|NULL
@@ -401,7 +401,7 @@ name|GIMP_STOCK_BRUSH
 block|,
 name|N_
 argument_list|(
-literal|"Brus_hes"
+literal|"_Brushes"
 argument_list|)
 block|,
 literal|"<control><shift>B"
@@ -496,7 +496,7 @@ name|GIMP_STOCK_BUFFER
 block|,
 name|N_
 argument_list|(
-literal|"_Buffers"
+literal|"B_uffers"
 argument_list|)
 block|,
 literal|""

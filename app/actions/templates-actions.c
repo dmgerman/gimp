@@ -265,6 +265,11 @@ block|{
 name|GimpContext
 modifier|*
 name|context
+init|=
+name|action_data_get_context
+argument_list|(
+name|data
+argument_list|)
 decl_stmt|;
 name|GimpTemplate
 modifier|*
@@ -272,13 +277,6 @@ name|template
 init|=
 name|NULL
 decl_stmt|;
-name|context
-operator|=
-name|action_data_get_context
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|context
@@ -312,7 +310,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"templates-new"
 argument_list|,
-name|TRUE
+name|context
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE

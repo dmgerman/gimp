@@ -1626,7 +1626,10 @@ name|GimpDisplay
 modifier|*
 name|gdisp
 init|=
-name|NULL
+name|action_data_get_display
+argument_list|(
+name|data
+argument_list|)
 decl_stmt|;
 name|GimpDisplayShell
 modifier|*
@@ -1656,13 +1659,6 @@ name|n_screens
 init|=
 literal|1
 decl_stmt|;
-name|gdisp
-operator|=
-name|action_data_get_display
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|gdisp

@@ -240,6 +240,11 @@ block|{
 name|GimpContext
 modifier|*
 name|context
+init|=
+name|action_data_get_context
+argument_list|(
+name|data
+argument_list|)
 decl_stmt|;
 name|GimpBuffer
 modifier|*
@@ -247,13 +252,6 @@ name|buffer
 init|=
 name|NULL
 decl_stmt|;
-name|context
-operator|=
-name|action_data_get_context
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|context

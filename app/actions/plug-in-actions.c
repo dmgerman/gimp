@@ -638,6 +638,11 @@ block|{
 name|GimpImage
 modifier|*
 name|gimage
+init|=
+name|action_data_get_image
+argument_list|(
+name|data
+argument_list|)
 decl_stmt|;
 name|GimpImageType
 name|type
@@ -649,13 +654,6 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
-name|gimage
-operator|=
-name|action_data_get_image
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|gimage

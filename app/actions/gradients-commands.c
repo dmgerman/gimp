@@ -76,19 +76,7 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|gradients_save_as_pov_query
-parameter_list|(
-name|GimpContainerEditor
-modifier|*
-name|editor
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gradients_save_as_pov_response
+name|gradients_save_as_pov_ray_response
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -130,29 +118,6 @@ argument_list|(
 name|data
 argument_list|)
 decl_stmt|;
-name|gradients_save_as_pov_query
-argument_list|(
-name|editor
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/*  private functions  */
-end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|gradients_save_as_pov_query (GimpContainerEditor * editor)
-name|gradients_save_as_pov_query
-parameter_list|(
-name|GimpContainerEditor
-modifier|*
-name|editor
-parameter_list|)
-block|{
 name|GimpContext
 modifier|*
 name|context
@@ -281,7 +246,7 @@ literal|"response"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gradients_save_as_pov_response
+name|gradients_save_as_pov_ray_response
 argument_list|)
 argument_list|,
 name|gradient
@@ -347,11 +312,15 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*  private functions  */
+end_comment
+
 begin_function
 specifier|static
 name|void
-DECL|function|gradients_save_as_pov_response (GtkWidget * dialog,gint response_id,GimpGradient * gradient)
-name|gradients_save_as_pov_response
+DECL|function|gradients_save_as_pov_ray_response (GtkWidget * dialog,gint response_id,GimpGradient * gradient)
+name|gradients_save_as_pov_ray_response
 parameter_list|(
 name|GtkWidget
 modifier|*

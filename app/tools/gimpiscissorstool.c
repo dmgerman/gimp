@@ -1209,7 +1209,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Intelligent Scissors"
+literal|"Intelligent _Scissors"
 argument_list|)
 argument_list|,
 literal|"I"
