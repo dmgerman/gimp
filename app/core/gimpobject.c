@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd289930103
+DECL|enum|__anon29d409360103
 block|{
 DECL|enumerator|DISCONNECT
 name|DISCONNECT
@@ -63,7 +63,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd289930203
+DECL|enum|__anon29d409360203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1099,7 +1099,7 @@ name|object2
 argument_list|)
 expr_stmt|;
 return|return
-name|strcoll
+name|strcmp
 argument_list|(
 name|object1
 operator|->
