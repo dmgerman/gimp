@@ -1969,7 +1969,7 @@ argument_list|(
 literal|2
 argument_list|)
 expr_stmt|;
-name|gtk_clist_set_border
+name|gtk_clist_set_shadow_type
 argument_list|(
 name|GTK_CLIST
 argument_list|(

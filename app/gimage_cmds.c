@@ -14804,6 +14804,8 @@ decl_stmt|;
 name|Layer
 modifier|*
 name|layer
+init|=
+name|NULL
 decl_stmt|;
 comment|/*  the gimage  */
 if|if
@@ -15052,6 +15054,8 @@ decl_stmt|;
 name|Channel
 modifier|*
 name|channel
+init|=
+name|NULL
 decl_stmt|;
 comment|/*  the gimage  */
 if|if
