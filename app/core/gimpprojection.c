@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -137,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcbfa120103
+DECL|enum|__anon27935fb80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1864,17 +1858,8 @@ name|data
 expr_stmt|;
 name|new_area
 operator|=
-name|g_new
+name|g_memdup
 argument_list|(
-name|GimpArea
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|memcpy
-argument_list|(
-name|new_area
-argument_list|,
 name|area
 argument_list|,
 sizeof|sizeof
