@@ -1086,7 +1086,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"   (position %d %d)\n"
+literal|"    (position %d %d)\n"
 argument_list|,
 name|info
 operator|->
@@ -1101,7 +1101,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"   (size %d %d)"
+literal|"    (size %d %d)"
 argument_list|,
 name|info
 operator|->
@@ -1122,7 +1122,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"\n   (open-on-exit)"
+literal|"\n    (open-on-exit)"
 argument_list|)
 expr_stmt|;
 name|fprintf

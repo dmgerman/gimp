@@ -124,7 +124,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2880905e0103
+DECL|enum|__anon275e712c0103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -5434,7 +5434,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"\n    (color %f %f %f %f)"
+literal|"\n    (color-rgba %f %f %f %f)"
 argument_list|,
 name|color_history
 index|[

@@ -2368,7 +2368,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"\n        (mode %s)"
+literal|"\n    (mode %s)"
 argument_list|,
 name|mode
 argument_list|)
@@ -2377,7 +2377,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"\n        (axes %d"
+literal|"\n    (axes %d"
 argument_list|,
 name|gdk_info
 condition|?
@@ -2524,7 +2524,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"\n        (keys %d"
+literal|"\n    (keys %d"
 argument_list|,
 name|gdk_info
 condition|?
@@ -2744,7 +2744,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"\n        (tool \"%s\")"
+literal|"\n    (tool \"%s\")"
 argument_list|,
 name|tool_info
 index|[
@@ -2778,7 +2778,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"\n        (foreground %f %f %f %f)"
+literal|"\n    (foreground (color-rgb %f %f %f))"
 argument_list|,
 name|color
 operator|.
@@ -2791,10 +2791,6 @@ argument_list|,
 name|color
 operator|.
 name|b
-argument_list|,
-name|color
-operator|.
-name|a
 argument_list|)
 expr_stmt|;
 name|gimp_context_get_background
@@ -2811,7 +2807,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"\n        (background %f %f %f %f)"
+literal|"\n    (background (color-rgb %f %f %f))"
 argument_list|,
 name|color
 operator|.
@@ -2824,10 +2820,6 @@ argument_list|,
 name|color
 operator|.
 name|b
-argument_list|,
-name|color
-operator|.
-name|a
 argument_list|)
 expr_stmt|;
 block|}
@@ -2845,7 +2837,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"\n        (brush \"%s\")"
+literal|"\n    (brush \"%s\")"
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
@@ -2875,7 +2867,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"\n        (pattern \"%s\")"
+literal|"\n    (pattern \"%s\")"
 argument_list|,
 name|gimp_context_get_pattern
 argument_list|(
@@ -2902,7 +2894,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"\n        (gradient \"%s\")"
+literal|"\n    (gradient \"%s\")"
 argument_list|,
 name|gimp_context_get_gradient
 argument_list|(
