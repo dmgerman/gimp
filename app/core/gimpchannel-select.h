@@ -261,9 +261,9 @@ name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
-name|GimpLayer
+name|GimpDrawable
 modifier|*
-name|layer
+name|drawable
 parameter_list|,
 name|GimpChannelOps
 name|op

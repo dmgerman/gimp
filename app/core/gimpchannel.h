@@ -119,7 +119,7 @@ DECL|member|color
 name|GimpRGB
 name|color
 decl_stmt|;
-comment|/*  Also stored the opacity        */
+comment|/*  Also stores the opacity        */
 DECL|member|show_masked
 name|gboolean
 name|show_masked
@@ -556,9 +556,9 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|GimpLayer
+name|GimpDrawable
 modifier|*
-name|layer
+name|drawable
 parameter_list|,
 specifier|const
 name|gchar

@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c5f7b90103
+DECL|enum|__anon2ac23e290103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2345,6 +2345,12 @@ argument_list|,
 name|drawable
 argument_list|)
 expr_stmt|;
+comment|/*  ref new before unrefing old, they might be the same  */
+name|tile_manager_ref
+argument_list|(
+name|tiles
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|drawable
@@ -2362,10 +2368,7 @@ name|drawable
 operator|->
 name|tiles
 operator|=
-name|tile_manager_ref
-argument_list|(
 name|tiles
-argument_list|)
 expr_stmt|;
 name|drawable
 operator|->

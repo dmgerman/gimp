@@ -2982,7 +2982,10 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
+argument_list|)
 argument_list|,
 name|GIMP_CHANNEL_OP_REPLACE
 argument_list|,

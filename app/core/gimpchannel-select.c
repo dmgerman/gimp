@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimplayer.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpscanconvert.h"
 end_include
 
@@ -1209,16 +1203,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_select_alpha (GimpChannel * channel,GimpLayer * layer,GimpChannelOps op,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
+DECL|function|gimp_channel_select_alpha (GimpChannel * channel,GimpDrawable * drawable,GimpChannelOps op,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
 name|gimp_channel_select_alpha
 parameter_list|(
 name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
-name|GimpLayer
+name|GimpDrawable
 modifier|*
-name|layer
+name|drawable
 parameter_list|,
 name|GimpChannelOps
 name|op
@@ -1256,9 +1250,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_LAYER
+name|GIMP_IS_DRAWABLE
 argument_list|(
-name|layer
+name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1273,10 +1267,7 @@ if|if
 condition|(
 name|gimp_drawable_has_alpha
 argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
+name|drawable
 argument_list|)
 condition|)
 block|{
@@ -1306,7 +1297,7 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|layer
+name|drawable
 argument_list|,
 name|NULL
 argument_list|,
@@ -1331,7 +1322,7 @@ name|gimp_item_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
-name|layer
+name|drawable
 argument_list|)
 argument_list|)
 argument_list|,
@@ -1339,7 +1330,7 @@ name|gimp_item_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
-name|layer
+name|drawable
 argument_list|)
 argument_list|)
 argument_list|)
@@ -1356,7 +1347,7 @@ name|gimp_item_offsets
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
-name|layer
+name|drawable
 argument_list|)
 argument_list|,
 operator|&

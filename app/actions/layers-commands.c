@@ -1797,7 +1797,10 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
+name|GIMP_DRAWABLE
+argument_list|(
 name|active_layer
+argument_list|)
 argument_list|,
 name|op
 argument_list|,
