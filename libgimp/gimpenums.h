@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296c779a0103
+DECL|enum|__anon29c303290103
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -44,16 +44,10 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296c779a0203
+DECL|enum|__anon29c303290203
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
-init|=
-operator|-
-literal|1
-block|,
-DECL|enumerator|ORIENTATION_VERTICAL
-name|ORIENTATION_VERTICAL
 init|=
 literal|0
 block|,
@@ -61,6 +55,11 @@ DECL|enumerator|ORIENTATION_HORIZONTAL
 name|ORIENTATION_HORIZONTAL
 init|=
 literal|1
+block|,
+DECL|enumerator|ORIENTATION_VERTICAL
+name|ORIENTATION_VERTICAL
+init|=
+literal|2
 DECL|typedef|GOrientation
 block|}
 name|GOrientation
@@ -70,7 +69,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296c779a0303
+DECL|enum|__anon29c303290303
 block|{
 DECL|enumerator|RGB_IMAGE
 name|RGB_IMAGE
@@ -110,7 +109,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296c779a0403
+DECL|enum|__anon29c303290403
 block|{
 DECL|enumerator|NORMAL_MODE
 name|NORMAL_MODE
@@ -195,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296c779a0503
+DECL|enum|__anon29c303290503
 block|{
 DECL|enumerator|FG_IMAGE_FILL
 name|FG_IMAGE_FILL
@@ -220,7 +219,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296c779a0603
+DECL|enum|__anon29c303290603
 block|{
 DECL|enumerator|PARAM_INT32
 name|PARAM_INT32
@@ -299,7 +298,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296c779a0703
+DECL|enum|__anon29c303290703
 block|{
 DECL|enumerator|PROC_PLUG_IN
 name|PROC_PLUG_IN
@@ -328,7 +327,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296c779a0803
+DECL|enum|__anon29c303290803
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -353,7 +352,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296c779a0903
+DECL|enum|__anon29c303290903
 block|{
 DECL|enumerator|STATUS_EXECUTION_ERROR
 name|STATUS_EXECUTION_ERROR
