@@ -152,7 +152,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b94f6bf0103
+DECL|enum|__anon293d398a0103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -172,7 +172,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b94f6bf0203
+DECL|enum|__anon293d398a0203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -188,7 +188,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b94f6bf0308
+DECL|struct|__anon293d398a0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -210,7 +210,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2b94f6bf040a
+DECL|union|__anon293d398a040a
 block|{
 DECL|member|d
 name|gdouble
@@ -235,7 +235,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b94f6bf0508
+DECL|struct|__anon293d398a0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -265,7 +265,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b94f6bf0608
+DECL|struct|__anon293d398a0608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -300,7 +300,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b94f6bf0708
+DECL|struct|__anon293d398a0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -336,7 +336,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b94f6bf0808
+DECL|struct|__anon293d398a0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -403,7 +403,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b94f6bf0908
+DECL|struct|__anon293d398a0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -552,7 +552,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b94f6bf0a08
+DECL|struct|__anon293d398a0a08
 block|{
 DECL|member|run
 name|gboolean
@@ -6581,10 +6581,6 @@ name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|gchar
-modifier|*
-name|buffer
-decl_stmt|;
 name|guchar
 modifier|*
 name|data
@@ -6788,9 +6784,12 @@ decl_stmt|;
 name|gpointer
 name|pr
 decl_stmt|;
-name|buffer
-operator|=
-name|g_strdup_printf
+name|gimp_progress_init
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_progress_set_text
 argument_list|(
 name|_
 argument_list|(
@@ -6802,16 +6801,6 @@ operator|+
 literal|1
 argument_list|,
 name|num_bands
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|buffer
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|buffer
 argument_list|)
 expr_stmt|;
 comment|/* render the band to a buffer */
@@ -6899,9 +6888,12 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* transfer the image to the drawable */
-name|buffer
-operator|=
-name|g_strdup_printf
+name|gimp_progress_init
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_progress_set_text
 argument_list|(
 name|_
 argument_list|(
@@ -6913,16 +6905,6 @@ operator|+
 literal|1
 argument_list|,
 name|num_bands
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|buffer
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|buffer
 argument_list|)
 expr_stmt|;
 name|progress

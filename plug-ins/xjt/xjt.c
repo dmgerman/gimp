@@ -243,7 +243,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c87715f0103
+DECL|enum|__anon2b43342e0103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -443,7 +443,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c87715f0203
+DECL|enum|__anon2b43342e0203
 block|{
 DECL|enumerator|PTYP_NOT_SUPPORTED
 name|PTYP_NOT_SUPPORTED
@@ -503,7 +503,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c87715f0303
+DECL|enum|__anon2b43342e0303
 block|{
 DECL|enumerator|XJT_IMAGE_PARASITE
 name|XJT_IMAGE_PARASITE
@@ -533,7 +533,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c87715f0403
+DECL|enum|__anon2b43342e0403
 block|{
 DECL|enumerator|XJT_RGB
 name|XJT_RGB
@@ -555,7 +555,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c87715f0503
+DECL|enum|__anon2b43342e0503
 block|{
 DECL|enumerator|XJT_PATHTYPE_UNDEF
 name|XJT_PATHTYPE_UNDEF
@@ -575,7 +575,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c87715f0603
+DECL|enum|__anon2b43342e0603
 block|{
 DECL|enumerator|XJT_UNIT_PIXEL
 name|XJT_UNIT_PIXEL
@@ -610,7 +610,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c87715f0703
+DECL|enum|__anon2b43342e0703
 block|{
 DECL|enumerator|XJT_NORMAL_MODE
 name|XJT_NORMAL_MODE
@@ -735,7 +735,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c87715f0808
+DECL|struct|__anon2b43342e0808
 block|{
 DECL|member|prop_id
 name|t_proptype
@@ -771,7 +771,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c87715f0908
+DECL|struct|__anon2b43342e0908
 block|{
 DECL|member|int_val1
 name|gint32
@@ -820,7 +820,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c87715f0a08
+DECL|struct|__anon2b43342e0a08
 block|{
 DECL|member|parasite_type
 name|t_parasitetype
@@ -857,7 +857,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c87715f0b08
+DECL|struct|__anon2b43342e0b08
 block|{
 DECL|member|path_type
 name|gint32
@@ -907,7 +907,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c87715f0c08
+DECL|struct|__anon2b43342e0c08
 block|{
 DECL|member|active_channel
 name|gint
@@ -981,7 +981,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c87715f0d08
+DECL|struct|__anon2b43342e0d08
 block|{
 DECL|member|active_layer
 name|gint
@@ -1066,7 +1066,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c87715f0e08
+DECL|struct|__anon2b43342e0e08
 block|{
 DECL|member|position
 name|gint32
@@ -1090,7 +1090,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c87715f0f08
+DECL|struct|__anon2b43342e0f08
 block|{
 DECL|member|version
 name|gchar
@@ -7258,10 +7258,6 @@ name|gchar
 modifier|*
 name|l_cmd
 decl_stmt|;
-name|gchar
-modifier|*
-name|l_name
-decl_stmt|;
 name|FILE
 modifier|*
 name|l_fp_prp
@@ -7415,9 +7411,12 @@ literal|1
 return|;
 break|break;
 block|}
-name|l_name
-operator|=
-name|g_strdup_printf
+name|gimp_progress_init
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_progress_set_text
 argument_list|(
 name|_
 argument_list|(
@@ -7428,16 +7427,6 @@ name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|l_name
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|l_name
 argument_list|)
 expr_stmt|;
 comment|/* create temporary directory */
@@ -14058,10 +14047,6 @@ name|gchar
 modifier|*
 name|l_cmd
 decl_stmt|;
-name|gchar
-modifier|*
-name|l_name
-decl_stmt|;
 name|mode_t
 name|l_mode_dir
 decl_stmt|;
@@ -14169,9 +14154,12 @@ operator|-
 literal|1
 expr_stmt|;
 comment|/* -1  assume there is no floating selection */
-name|l_name
-operator|=
-name|g_strdup_printf
+name|gimp_progress_init
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_progress_set_text
 argument_list|(
 name|_
 argument_list|(
@@ -14182,16 +14170,6 @@ name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|l_name
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|l_name
 argument_list|)
 expr_stmt|;
 comment|/* create temporary directory */

@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7eed9c0108
+DECL|struct|__anon29cea0a50108
 block|{
 DECL|member|l_header_size
 name|L_CARD32
@@ -254,7 +254,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7eed9c0208
+DECL|struct|__anon29cea0a50208
 block|{
 DECL|member|l_pixel
 name|L_CARD32
@@ -312,7 +312,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7eed9c0308
+DECL|struct|__anon29cea0a50308
 block|{
 DECL|member|pixel_val
 name|L_CARD32
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7eed9c0408
+DECL|struct|__anon29cea0a50408
 block|{
 DECL|member|npixel
 name|gint
@@ -1489,10 +1489,6 @@ name|depth
 decl_stmt|,
 name|bpp
 decl_stmt|;
-name|gchar
-modifier|*
-name|temp
-decl_stmt|;
 name|gint32
 name|image_ID
 decl_stmt|;
@@ -1770,9 +1766,12 @@ operator|)
 return|;
 block|}
 block|}
-name|temp
-operator|=
-name|g_strdup_printf
+name|gimp_progress_init
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_progress_set_text
 argument_list|(
 name|_
 argument_list|(
@@ -1783,16 +1782,6 @@ name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|temp
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|temp
 argument_list|)
 expr_stmt|;
 name|depth
@@ -2048,15 +2037,11 @@ operator|==
 operator|-
 literal|1
 condition|)
-block|{
-name|temp
-operator|=
-name|g_strdup_printf
+name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"XWD-file %s has format %d, depth %d\n"
-literal|"and bits per pixel %d.\n"
+literal|"XWD-file %s has format %d, depth %d and bits per pixel %d. "
 literal|"Currently this is not supported."
 argument_list|)
 argument_list|,
@@ -2077,21 +2062,6 @@ argument_list|,
 name|bpp
 argument_list|)
 expr_stmt|;
-name|g_message
-argument_list|(
-name|temp
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|temp
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
-block|}
 return|return
 name|image_ID
 return|;

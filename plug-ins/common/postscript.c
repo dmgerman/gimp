@@ -241,7 +241,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1e621f0108
+DECL|struct|__anon278db3ce0108
 block|{
 DECL|member|resolution
 name|guint
@@ -330,7 +330,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1e621f0208
+DECL|struct|__anon278db3ce0208
 block|{
 DECL|member|width
 DECL|member|height
@@ -904,7 +904,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1e621f0308
+DECL|struct|__anon278db3ce0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1760,7 +1760,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1e621f0408
+DECL|struct|__anon278db3ce0408
 block|{
 DECL|member|eol
 name|long
@@ -4052,9 +4052,12 @@ argument_list|(
 name|ifp
 argument_list|)
 expr_stmt|;
-name|temp
-operator|=
-name|g_strdup_printf
+name|gimp_progress_init
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_progress_set_text
 argument_list|(
 name|_
 argument_list|(
@@ -4065,16 +4068,6 @@ name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|temp
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|temp
 argument_list|)
 expr_stmt|;
 name|ifp
@@ -4507,13 +4500,6 @@ decl_stmt|;
 name|gint
 name|retval
 decl_stmt|;
-name|char
-modifier|*
-name|temp
-init|=
-name|ident
-decl_stmt|;
-comment|/* Just to satisfy lint/gcc */
 comment|/* initialize */
 name|retval
 operator|=
@@ -4614,9 +4600,12 @@ return|return
 name|FALSE
 return|;
 block|}
-name|temp
-operator|=
-name|g_strdup_printf
+name|gimp_progress_init
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_progress_set_text
 argument_list|(
 name|_
 argument_list|(
@@ -4627,16 +4616,6 @@ name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|temp
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|temp
 argument_list|)
 expr_stmt|;
 name|save_ps_header

@@ -787,10 +787,6 @@ modifier|*
 name|bp
 decl_stmt|;
 comment|/* bitmap pointer */
-name|gchar
-modifier|*
-name|name
-decl_stmt|;
 name|gint
 name|row
 decl_stmt|;
@@ -804,9 +800,12 @@ decl_stmt|,
 name|hcol
 decl_stmt|;
 comment|/* column, highest column ever used */
-name|name
-operator|=
-name|g_strdup_printf
+name|gimp_progress_init
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_progress_set_text
 argument_list|(
 name|_
 argument_list|(
@@ -817,16 +816,6 @@ name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|name
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|name
 argument_list|)
 expr_stmt|;
 comment|/* initialize lookup trees */

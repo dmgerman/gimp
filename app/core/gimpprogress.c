@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ed50ea0103
+DECL|enum|__anon28e2b8500103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -267,12 +267,6 @@ if|if
 condition|(
 operator|!
 name|message
-operator|||
-operator|!
-name|strlen
-argument_list|(
-name|message
-argument_list|)
 condition|)
 name|message
 operator|=

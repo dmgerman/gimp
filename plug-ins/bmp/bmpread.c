@@ -627,10 +627,6 @@ name|FILE
 modifier|*
 name|fd
 decl_stmt|;
-name|gchar
-modifier|*
-name|temp_buf
-decl_stmt|;
 name|guchar
 name|buffer
 index|[
@@ -711,9 +707,12 @@ operator|-
 literal|1
 return|;
 block|}
-name|temp_buf
-operator|=
-name|g_strdup_printf
+name|gimp_progress_init
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_progress_set_text
 argument_list|(
 name|_
 argument_list|(
@@ -724,16 +723,6 @@ name|gimp_filename_to_utf8
 argument_list|(
 name|name
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|temp_buf
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|temp_buf
 argument_list|)
 expr_stmt|;
 comment|/* It is a File. Now is it a Bitmap? Read the shortest possible header */

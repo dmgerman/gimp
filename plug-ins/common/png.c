@@ -126,7 +126,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287e71360108
+DECL|struct|__anon28a3062d0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287e71360208
+DECL|struct|__anon28a3062d0208
 block|{
 DECL|member|run
 name|gboolean
@@ -2066,11 +2066,6 @@ modifier|*
 name|pixel
 decl_stmt|;
 comment|/* Pixel data */
-name|gchar
-modifier|*
-name|progress
-decl_stmt|;
-comment|/* Title for progress display... */
 name|guchar
 name|alpha
 index|[
@@ -2233,9 +2228,12 @@ argument_list|,
 name|fp
 argument_list|)
 expr_stmt|;
-name|progress
-operator|=
-name|g_strdup_printf
+name|gimp_progress_init
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_progress_set_text
 argument_list|(
 name|_
 argument_list|(
@@ -2246,16 +2244,6 @@ name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|progress
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|progress
 argument_list|)
 expr_stmt|;
 comment|/*    * Get the image dimensions and create the image...    */
@@ -3866,11 +3854,6 @@ modifier|*
 name|pixel
 decl_stmt|;
 comment|/* Pixel data */
-name|gchar
-modifier|*
-name|progress
-decl_stmt|;
-comment|/* Title for progress display... */
 name|gdouble
 name|xres
 decl_stmt|,
@@ -4210,9 +4193,12 @@ argument_list|,
 name|fp
 argument_list|)
 expr_stmt|;
-name|progress
-operator|=
-name|g_strdup_printf
+name|gimp_progress_init
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_progress_set_text
 argument_list|(
 name|_
 argument_list|(
@@ -4223,16 +4209,6 @@ name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|progress
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|progress
 argument_list|)
 expr_stmt|;
 comment|/*    * Get the drawable for the current image...    */

@@ -942,11 +942,6 @@ modifier|*
 name|rows
 decl_stmt|;
 comment|/* SGI image data */
-name|gchar
-modifier|*
-name|progress
-decl_stmt|;
-comment|/* Title for progress display... */
 comment|/*   * Open the file for reading...   */
 name|sgip
 operator|=
@@ -997,9 +992,12 @@ literal|1
 return|;
 block|}
 empty_stmt|;
-name|progress
-operator|=
-name|g_strdup_printf
+name|gimp_progress_init
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_progress_set_text
 argument_list|(
 name|_
 argument_list|(
@@ -1010,16 +1008,6 @@ name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|progress
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|progress
 argument_list|)
 expr_stmt|;
 comment|/*    * Get the image dimensions and create the image...    */
@@ -1707,11 +1695,6 @@ modifier|*
 name|rows
 decl_stmt|;
 comment|/* SGI image data */
-name|gchar
-modifier|*
-name|progress
-decl_stmt|;
-comment|/* Title for progress display... */
 comment|/*    * Get the drawable for the current image...    */
 name|drawable
 operator|=
@@ -1854,9 +1837,12 @@ name|FALSE
 return|;
 block|}
 empty_stmt|;
-name|progress
-operator|=
-name|g_strdup_printf
+name|gimp_progress_init
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_progress_set_text
 argument_list|(
 name|_
 argument_list|(
@@ -1867,16 +1853,6 @@ name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|progress
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|progress
 argument_list|)
 expr_stmt|;
 comment|/*    * Allocate memory for "tile_height" rows...    */

@@ -179,7 +179,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27a0e4880108
+DECL|struct|__anon2af1a3360108
 block|{
 DECL|member|spacing
 name|guint
@@ -252,7 +252,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a0e4880208
+DECL|struct|__anon2af1a3360208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -2691,10 +2691,6 @@ modifier|*
 name|filename
 parameter_list|)
 block|{
-name|gchar
-modifier|*
-name|temp
-decl_stmt|;
 name|gint
 name|fd
 decl_stmt|;
@@ -2772,9 +2768,12 @@ operator|-
 literal|1
 return|;
 block|}
-name|temp
-operator|=
-name|g_strdup_printf
+name|gimp_progress_init
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_progress_set_text
 argument_list|(
 name|_
 argument_list|(
@@ -2785,16 +2784,6 @@ name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|temp
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|temp
 argument_list|)
 expr_stmt|;
 comment|/* The file format starts with a painfully simple text header */

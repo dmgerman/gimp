@@ -132,7 +132,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297966c60108
+DECL|struct|__anon2bcd8fbc0108
 block|{
 DECL|member|threshold
 name|gint
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297966c60208
+DECL|struct|__anon2bcd8fbc0208
 block|{
 DECL|member|r
 name|guchar
@@ -1055,14 +1055,12 @@ decl_stmt|;
 name|gint32
 name|image_ID
 decl_stmt|;
-name|gchar
-modifier|*
-name|name
-decl_stmt|;
-comment|/* put up a progress bar */
-name|name
-operator|=
-name|g_strdup_printf
+name|gimp_progress_init
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_progress_set_text
 argument_list|(
 name|_
 argument_list|(
@@ -1073,16 +1071,6 @@ name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|name
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|name
 argument_list|)
 expr_stmt|;
 comment|/* read the raw file */
@@ -2331,15 +2319,12 @@ operator|)
 name|compare
 argument_list|)
 expr_stmt|;
-comment|/* put up a progress bar */
-block|{
-name|gchar
-modifier|*
-name|name
-decl_stmt|;
-name|name
-operator|=
-name|g_strdup_printf
+name|gimp_progress_init
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_progress_set_text
 argument_list|(
 name|_
 argument_list|(
@@ -2352,17 +2337,6 @@ name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|name
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|name
-argument_list|)
-expr_stmt|;
-block|}
 name|ncolors
 operator|=
 name|alpha

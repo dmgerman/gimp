@@ -426,10 +426,6 @@ name|gchar
 modifier|*
 name|timeout_msg
 decl_stmt|;
-name|gchar
-modifier|*
-name|progress
-decl_stmt|;
 DECL|macro|DEBUG (x)
 define|#
 directive|define
@@ -542,9 +538,12 @@ argument_list|,
 name|TIMEOUT
 argument_list|)
 expr_stmt|;
-name|progress
-operator|=
-name|g_strdup_printf
+name|gimp_progress_init
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_progress_set_text
 argument_list|(
 literal|"%s %s"
 argument_list|,
@@ -554,16 +553,6 @@ literal|"Connecting to server..."
 argument_list|)
 argument_list|,
 name|timeout_msg
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|progress
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|progress
 argument_list|)
 expr_stmt|;
 name|read_connect
@@ -650,9 +639,7 @@ name|buf
 argument_list|)
 expr_stmt|;
 comment|/*  The fourth line is either the network request or an error  */
-name|progress
-operator|=
-name|g_strdup_printf
+name|gimp_progress_set_text
 argument_list|(
 literal|"%s %s"
 argument_list|,
@@ -662,16 +649,6 @@ literal|"Opening URI..."
 argument_list|)
 argument_list|,
 name|timeout_msg
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|progress
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|progress
 argument_list|)
 expr_stmt|;
 if|if
@@ -948,25 +925,13 @@ argument_list|,
 name|memsize
 argument_list|)
 expr_stmt|;
-name|progress
-operator|=
-name|g_strdup_printf
+name|gimp_progress_set_text
 argument_list|(
 literal|"%s %s"
 argument_list|,
 name|message
 argument_list|,
 name|timeout_msg
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|progress
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|progress
 argument_list|)
 expr_stmt|;
 name|g_free

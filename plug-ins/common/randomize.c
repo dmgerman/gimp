@@ -217,7 +217,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b73bd560108
+DECL|struct|__anon2c620a0f0108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -736,12 +736,6 @@ name|rndm_type_str
 init|=
 literal|""
 decl_stmt|;
-name|gchar
-name|prog_label
-index|[
-literal|32
-index|]
-decl_stmt|;
 specifier|static
 name|GimpParam
 name|values
@@ -1150,10 +1144,13 @@ literal|"slur"
 expr_stmt|;
 break|break;
 block|}
-name|sprintf
+name|gimp_progress_init
 argument_list|(
-name|prog_label
-argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_progress_set_text
+argument_list|(
 literal|"%s (%s)..."
 argument_list|,
 name|gettext
@@ -1170,11 +1167,6 @@ name|gettext
 argument_list|(
 name|rndm_type_str
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|prog_label
 argument_list|)
 expr_stmt|;
 name|gimp_tile_cache_ntiles

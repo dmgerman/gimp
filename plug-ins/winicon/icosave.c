@@ -4645,10 +4645,6 @@ block|{
 name|MsIcon
 name|ico
 decl_stmt|;
-name|gchar
-modifier|*
-name|temp_buf
-decl_stmt|;
 name|gint
 modifier|*
 name|icon_depths
@@ -4732,9 +4728,12 @@ condition|)
 return|return
 name|GIMP_PDB_CANCEL
 return|;
-name|temp_buf
-operator|=
-name|g_strdup_printf
+name|gimp_progress_init
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_progress_set_text
 argument_list|(
 name|_
 argument_list|(
@@ -4745,16 +4744,6 @@ name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|temp_buf
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|temp_buf
 argument_list|)
 expr_stmt|;
 comment|/* Okay, let's actually save the thing with the depths the      user specified. */

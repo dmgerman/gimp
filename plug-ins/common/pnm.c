@@ -309,7 +309,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be74ed60108
+DECL|struct|__anon2a22e4d70108
 block|{
 DECL|member|raw
 name|gint
@@ -1723,10 +1723,6 @@ name|fd
 decl_stmt|;
 comment|/* File descriptor */
 name|char
-modifier|*
-name|temp
-decl_stmt|;
-name|char
 name|buf
 index|[
 name|BUFLEN
@@ -1788,9 +1784,12 @@ operator|-
 literal|1
 return|;
 block|}
-name|temp
-operator|=
-name|g_strdup_printf
+name|gimp_progress_init
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_progress_set_text
 argument_list|(
 name|_
 argument_list|(
@@ -1801,16 +1800,6 @@ name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|temp
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|temp
 argument_list|)
 expr_stmt|;
 comment|/* allocate the necessary structures */

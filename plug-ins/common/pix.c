@@ -954,13 +954,6 @@ name|file
 init|=
 name|NULL
 decl_stmt|;
-name|gchar
-modifier|*
-name|progMessage
-init|=
-name|ident
-decl_stmt|;
-comment|/*  only to suppress compiler warnings  */
 name|guchar
 modifier|*
 name|dest
@@ -1042,10 +1035,12 @@ operator|-
 literal|1
 return|;
 block|}
-comment|/* Set up progress display */
-name|progMessage
-operator|=
-name|g_strdup_printf
+name|gimp_progress_init
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_progress_set_text
 argument_list|(
 name|_
 argument_list|(
@@ -1056,16 +1051,6 @@ name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|progMessage
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|progMessage
 argument_list|)
 expr_stmt|;
 comment|/* Read header information */
@@ -1710,10 +1695,6 @@ name|guchar
 modifier|*
 name|src_base
 decl_stmt|;
-name|gchar
-modifier|*
-name|progMessage
-decl_stmt|;
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -1809,10 +1790,12 @@ return|return
 name|FALSE
 return|;
 block|}
-comment|/* Set up progress display */
-name|progMessage
-operator|=
-name|g_strdup_printf
+name|gimp_progress_init
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_progress_set_text
 argument_list|(
 name|_
 argument_list|(
@@ -1823,16 +1806,6 @@ name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|progMessage
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|progMessage
 argument_list|)
 expr_stmt|;
 comment|/* Write the image header */
