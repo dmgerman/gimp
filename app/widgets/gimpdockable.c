@@ -381,6 +381,12 @@ name|NULL
 expr_stmt|;
 name|dockable
 operator|->
+name|get_tab_data
+operator|=
+name|NULL
+expr_stmt|;
+name|dockable
+operator|->
 name|set_context_func
 operator|=
 name|NULL
@@ -486,13 +492,6 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|GTK_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-condition|)
 name|GTK_OBJECT_CLASS
 argument_list|(
 name|parent_class
@@ -591,7 +590,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dockable_new (const gchar * name,const gchar * short_name,const gchar * stock_id,GimpDockableGetTabFunc get_tab_func,GimpDockableSetContextFunc set_context_func)
+DECL|function|gimp_dockable_new (const gchar * name,const gchar * short_name,const gchar * stock_id,GimpDockableGetTabFunc get_tab_func,gpointer get_tab_data,GimpDockableSetContextFunc set_context_func)
 name|gimp_dockable_new
 parameter_list|(
 specifier|const
@@ -611,6 +610,9 @@ name|stock_id
 parameter_list|,
 name|GimpDockableGetTabFunc
 name|get_tab_func
+parameter_list|,
+name|gpointer
+name|get_tab_data
 parameter_list|,
 name|GimpDockableSetContextFunc
 name|set_context_func
@@ -679,6 +681,12 @@ operator|->
 name|get_tab_func
 operator|=
 name|get_tab_func
+expr_stmt|;
+name|dockable
+operator|->
+name|get_tab_data
+operator|=
+name|get_tab_data
 expr_stmt|;
 name|dockable
 operator|->
@@ -775,8 +783,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-operator|!
 name|context
+operator|==
+name|NULL
 operator|||
 name|GIMP_IS_CONTEXT
 argument_list|(
@@ -792,7 +801,6 @@ name|dockable
 operator|->
 name|context
 condition|)
-block|{
 name|GIMP_DOCKABLE_GET_CLASS
 argument_list|(
 name|dockable
@@ -805,7 +813,6 @@ argument_list|,
 name|context
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -854,7 +861,6 @@ name|dockable
 operator|->
 name|get_tab_func
 condition|)
-block|{
 return|return
 name|dockable
 operator|->
@@ -865,9 +871,12 @@ argument_list|,
 name|dockbook
 argument_list|,
 name|size
+argument_list|,
+name|dockable
+operator|->
+name|get_tab_data
 argument_list|)
 return|;
-block|}
 if|if
 condition|(
 name|dockable
@@ -920,8 +929,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-operator|!
 name|context
+operator|==
+name|NULL
 operator|||
 name|GIMP_IS_CONTEXT
 argument_list|(
@@ -935,7 +945,6 @@ name|dockable
 operator|->
 name|set_context_func
 condition|)
-block|{
 name|dockable
 operator|->
 name|set_context_func
@@ -945,7 +954,6 @@ argument_list|,
 name|context
 argument_list|)
 expr_stmt|;
-block|}
 name|dockable
 operator|->
 name|context

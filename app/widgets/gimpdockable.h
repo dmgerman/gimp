@@ -42,6 +42,9 @@ name|dockbook
 parameter_list|,
 name|GtkIconSize
 name|size
+parameter_list|,
+name|gpointer
+name|get_tab_data
 parameter_list|)
 function_decl|;
 end_typedef
@@ -176,6 +179,10 @@ DECL|member|get_tab_func
 name|GimpDockableGetTabFunc
 name|get_tab_func
 decl_stmt|;
+DECL|member|get_tab_data
+name|gpointer
+name|get_tab_data
+decl_stmt|;
 DECL|member|set_context_func
 name|GimpDockableSetContextFunc
 name|set_context_func
@@ -265,6 +272,9 @@ name|stock_id
 parameter_list|,
 name|GimpDockableGetTabFunc
 name|get_tab_func
+parameter_list|,
+name|gpointer
+name|get_tab_data
 parameter_list|,
 name|GimpDockableSetContextFunc
 name|set_context_func
