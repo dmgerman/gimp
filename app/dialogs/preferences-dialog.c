@@ -126,12 +126,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"menus.h"
 end_include
 
@@ -145,6 +139,12 @@ begin_include
 include|#
 directive|include
 file|"session.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"themes.h"
 end_include
 
 begin_include
@@ -2000,7 +2000,7 @@ name|filename
 operator|=
 name|g_build_filename
 argument_list|(
-name|gui_themes_get_theme_dir
+name|themes_get_theme_dir
 argument_list|(
 name|gimp
 argument_list|)
@@ -2046,7 +2046,6 @@ if|if
 condition|(
 name|pixbuf
 condition|)
-block|{
 name|small_pixbuf
 operator|=
 name|gdk_pixbuf_scale_simple
@@ -2060,7 +2059,6 @@ argument_list|,
 name|GDK_INTERP_BILINEAR
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 name|gtk_tree_store_append
 argument_list|(
@@ -7031,7 +7029,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b85c2370108
+DECL|struct|__anon2946eea40108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -8791,7 +8789,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b85c2370208
+DECL|struct|__anon2946eea40208
 block|{
 DECL|member|label
 specifier|const
@@ -8950,7 +8948,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b85c2370308
+DECL|struct|__anon2946eea40308
 block|{
 DECL|member|tree_label
 specifier|const
