@@ -74,15 +74,9 @@ directive|include
 file|"gimpmoduledb.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpintl.h"
-end_include
-
 begin_enum
 enum|enum
-DECL|enum|__anon28daef1b0103
+DECL|enum|__anon276e41260103
 block|{
 DECL|enumerator|ADD
 name|ADD

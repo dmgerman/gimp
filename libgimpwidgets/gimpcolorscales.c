@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"libgimp/libgimp-intl.h"
 end_include
 
 begin_define
@@ -1019,7 +1019,7 @@ operator|->
 name|hex_entry
 argument_list|)
 argument_list|,
-literal|7
+literal|8
 argument_list|)
 expr_stmt|;
 name|gtk_entry_set_max_length

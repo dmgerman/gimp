@@ -71,7 +71,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"libgimp/libgimp-intl.h"
 end_include
 
 begin_define
@@ -117,7 +117,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279e090b0103
+DECL|enum|__anon2c12c1a70103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -168,7 +168,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279e090b0203
+DECL|enum|__anon2c12c1a70203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
