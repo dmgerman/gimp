@@ -138,7 +138,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tile_pvt.h"
+file|"tile.h"
 end_include
 
 begin_comment
@@ -331,7 +331,7 @@ parameter_list|,
 name|y
 parameter_list|)
 define|\
-value|tile[i] = tile_manager_get_tile (float_tiles, x, y, 0, TRUE, FALSE); \      src[i] = tile[i]->data + tile[i]->bpp * (tile[i]->ewidth * ((y) % TILE_HEIGHT) + ((x) % TILE_WIDTH));
+value|tile[i] = tile_manager_get_tile (float_tiles, x, y, 0, TRUE, FALSE); \      src[i] = tile_data_pointer (tile[i], (x) % TILE_WIDTH, (y) % TILE_HEIGHT);
 end_define
 
 begin_function
