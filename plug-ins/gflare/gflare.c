@@ -88,17 +88,39 @@ directive|include
 file|<sys/stat.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
 
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_DIRENT_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<dirent.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -154,7 +176,7 @@ name|DEBUG_PRINT
 parameter_list|(
 name|X
 parameter_list|)
-value|printf X
+value|g_print X
 end_define
 
 begin_else
@@ -468,7 +490,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2770875a0103
+DECL|enum|__anon27a532c20103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -495,7 +517,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2770875a0203
+DECL|enum|__anon27a532c20203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -514,7 +536,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2770875a0308
+DECL|struct|__anon27a532c20308
 typedef|typedef
 struct|struct
 block|{
@@ -651,7 +673,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2770875a0408
+DECL|struct|__anon27a532c20408
 typedef|typedef
 struct|struct
 block|{
@@ -671,7 +693,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2770875a0503
+DECL|enum|__anon27a532c20503
 typedef|typedef
 enum|enum
 block|{
@@ -699,7 +721,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2770875a0608
+DECL|struct|__anon27a532c20608
 typedef|typedef
 struct|struct
 block|{
@@ -722,7 +744,7 @@ name|Preview
 modifier|*
 name|preview
 decl_stmt|;
-DECL|struct|__anon2770875a0708
+DECL|struct|__anon27a532c20708
 struct|struct
 block|{
 DECL|member|x0
@@ -808,7 +830,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2770875a0808
+DECL|struct|__anon27a532c20808
 typedef|typedef
 struct|struct
 block|{
@@ -880,7 +902,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2770875a0908
+DECL|struct|__anon27a532c20908
 block|{
 DECL|member|x0
 name|gdouble
@@ -907,7 +929,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2770875a0a08
+DECL|struct|__anon27a532c20a08
 block|{
 DECL|member|init
 name|gint
@@ -1071,13 +1093,13 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/*  * What's the difference between (structure) CalcParams and GFlare ?  * well, radius and lengths are actual length for CalcParams where  * they are typically 0 to 100 for GFlares, and angles are M_PI based  * (radian) for CalcParams where they are degree for GFlares. et cetra.  * This is because convienience for dialog processing and for calculating.  * these conversion is taken place in calc init routines. see below.  */
+comment|/*  * What's the difference between (structure) CalcParams and GFlare ?  * well, radius and lengths are actual length for CalcParams where  * they are typically 0 to 100 for GFlares, and angles are G_PI based  * (radian) for CalcParams where they are degree for GFlares. et cetra.  * This is because convienience for dialog processing and for calculating.  * these conversion is taken place in calc init routines. see below.  */
 end_comment
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2770875a0b08
+DECL|struct|__anon27a532c20b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1104,7 +1126,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2770875a0c08
+DECL|struct|__anon27a532c20c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1145,7 +1167,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2770875a0d08
+DECL|struct|__anon27a532c20d08
 block|{
 DECL|member|tile
 name|GTile
@@ -1375,7 +1397,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2770875a0e08
+DECL|struct|__anon27a532c20e08
 block|{
 DECL|member|tag
 name|gint
@@ -1450,7 +1472,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon2770875a0f03
+DECL|enum|__anon27a532c20f03
 typedef|typedef
 enum|enum
 block|{
@@ -1484,7 +1506,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2770875a1008
+DECL|struct|__anon27a532c21008
 typedef|typedef
 struct|struct
 block|{
@@ -1528,7 +1550,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2770875a1108
+DECL|struct|__anon27a532c21108
 typedef|typedef
 struct|struct
 block|{
@@ -1586,7 +1608,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2770875a1208
+DECL|struct|__anon27a532c21208
 typedef|typedef
 struct|struct
 block|{
@@ -5300,13 +5322,10 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
-comment|/* Set local path to contain temp_path, where (supposedly)    * there may be working files.    */
 name|home
 operator|=
-name|getenv
-argument_list|(
-literal|"HOME"
-argument_list|)
+name|g_get_home_dir
+argument_list|()
 expr_stmt|;
 comment|/* Search through all directories in the  path */
 name|next_token
@@ -5444,13 +5463,13 @@ operator|-
 literal|1
 index|]
 operator|!=
-literal|'/'
+name|G_DIR_SEPARATOR
 condition|)
 name|strcat
 argument_list|(
 name|path
 argument_list|,
-literal|"/"
+name|G_DIR_SEPARATOR_S
 argument_list|)
 expr_stmt|;
 name|DEBUG_PRINT
@@ -8098,29 +8117,8 @@ name|gflare
 operator|->
 name|filename
 operator|=
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
-argument_list|(
-name|path
-argument_list|)
-operator|+
-name|strlen
-argument_list|(
-name|gflare
-operator|->
-name|name
-argument_list|)
-operator|+
-literal|2
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|gflare
-operator|->
-name|filename
-argument_list|,
 literal|"%s%s"
 argument_list|,
 name|path
@@ -8981,27 +8979,8 @@ condition|)
 block|{
 name|filename
 operator|=
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
-argument_list|(
-name|path
-argument_list|)
-operator|+
-name|strlen
-argument_list|(
-name|dir_ent
-operator|->
-name|d_name
-argument_list|)
-operator|+
-literal|1
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|filename
-argument_list|,
 literal|"%s%s"
 argument_list|,
 name|path
@@ -9232,7 +9211,7 @@ name|rotation
 operator|=
 name|rotation
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|180.0
 expr_stmt|;
@@ -9248,7 +9227,7 @@ name|vangle
 operator|=
 name|vangle
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|180.0
 expr_stmt|;
@@ -9310,7 +9289,7 @@ operator|->
 name|glow_rotation
 operator|)
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|180.0
 expr_stmt|;
@@ -9326,7 +9305,7 @@ operator|->
 name|rays_rotation
 operator|)
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|180.0
 expr_stmt|;
@@ -9342,7 +9321,7 @@ operator|->
 name|sflare_rotation
 operator|)
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|180.0
 expr_stmt|;
@@ -9573,7 +9552,7 @@ name|sflare_angle
 operator|=
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 operator|(
 literal|2
@@ -9694,7 +9673,7 @@ DECL|function|calc_sample_one_gradient ()
 name|calc_sample_one_gradient
 parameter_list|()
 block|{
-DECL|struct|__anon2770875a1308
+DECL|struct|__anon27a532c21308
 specifier|static
 struct|struct
 block|{
@@ -11148,7 +11127,7 @@ operator|/
 operator|(
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|)
 expr_stmt|;
 name|angle
@@ -11425,7 +11404,7 @@ operator|/
 operator|(
 literal|2
 operator|*
-name|M_PI
+name|G_PI
 operator|)
 expr_stmt|;
 name|angle
@@ -16569,7 +16548,7 @@ decl_stmt|;
 name|int
 name|i
 decl_stmt|;
-DECL|struct|__anon2770875a1408
+DECL|struct|__anon27a532c21408
 specifier|static
 struct|struct
 block|{
@@ -28018,16 +27997,11 @@ name|button
 decl_stmt|;
 name|query_box
 operator|=
-operator|(
-name|QueryBox
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|QueryBox
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|qbox
