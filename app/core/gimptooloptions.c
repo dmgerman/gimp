@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a045da60103
+DECL|enum|__anon2be697e50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -514,7 +514,7 @@ parameter_list|)
 block|{
 name|gimp_config_reset
 argument_list|(
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|tool_options
 argument_list|)
@@ -767,7 +767,7 @@ name|retval
 operator|=
 name|gimp_config_serialize_to_file
 argument_list|(
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|tool_options
 argument_list|)
@@ -868,7 +868,7 @@ name|retval
 operator|=
 name|gimp_config_deserialize_file
 argument_list|(
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|tool_options
 argument_list|)

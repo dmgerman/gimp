@@ -116,9 +116,9 @@ specifier|static
 name|gboolean
 name|gimp_document_list_serialize
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GimpConfigWriter
 modifier|*
@@ -135,9 +135,9 @@ specifier|static
 name|gboolean
 name|gimp_document_list_deserialize
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GScanner
 modifier|*
@@ -255,7 +255,7 @@ name|g_type_add_interface_static
 argument_list|(
 name|document_list_type
 argument_list|,
-name|GIMP_TYPE_CONFIG_INTERFACE
+name|GIMP_TYPE_CONFIG
 argument_list|,
 operator|&
 name|document_list_iface_info
@@ -309,12 +309,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_document_list_serialize (GObject * object,GimpConfigWriter * writer,gpointer data)
+DECL|function|gimp_document_list_serialize (GimpConfig * config,GimpConfigWriter * writer,gpointer data)
 name|gimp_document_list_serialize
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GimpConfigWriter
 modifier|*
@@ -334,7 +334,7 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|object
+name|config
 argument_list|)
 operator|->
 name|list
@@ -384,12 +384,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_document_list_deserialize (GObject * object,GScanner * scanner,gint nest_level,gpointer data)
+DECL|function|gimp_document_list_deserialize (GimpConfig * config,GScanner * scanner,gint nest_level,gpointer data)
 name|gimp_document_list_deserialize
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GScanner
 modifier|*
@@ -405,6 +405,11 @@ block|{
 name|GimpDocumentList
 modifier|*
 name|document_list
+init|=
+name|GIMP_DOCUMENT_LIST
+argument_list|(
+name|config
+argument_list|)
 decl_stmt|;
 name|GTokenType
 name|token
@@ -412,13 +417,6 @@ decl_stmt|;
 name|gint
 name|size
 decl_stmt|;
-name|document_list
-operator|=
-name|GIMP_DOCUMENT_LIST
-argument_list|(
-name|object
-argument_list|)
-expr_stmt|;
 name|size
 operator|=
 name|GPOINTER_TO_INT

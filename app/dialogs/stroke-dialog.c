@@ -1031,7 +1031,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_config_reset
 argument_list|(
+name|GIMP_CONFIG
+argument_list|(
 name|options
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -96,9 +96,9 @@ specifier|static
 name|gboolean
 name|gimp_config_iface_serialize
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GimpConfigWriter
 modifier|*
@@ -115,9 +115,9 @@ specifier|static
 name|gboolean
 name|gimp_config_iface_deserialize
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GScanner
 modifier|*
@@ -134,13 +134,13 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GObject
+name|GimpConfig
 modifier|*
 name|gimp_config_iface_duplicate
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -150,11 +150,11 @@ specifier|static
 name|gboolean
 name|gimp_config_iface_equal
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
 name|a
 parameter_list|,
-name|GObject
+name|GimpConfig
 modifier|*
 name|b
 parameter_list|)
@@ -166,9 +166,9 @@ specifier|static
 name|void
 name|gimp_config_iface_reset
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -302,12 +302,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_config_iface_serialize (GObject * object,GimpConfigWriter * writer,gpointer data)
+DECL|function|gimp_config_iface_serialize (GimpConfig * config,GimpConfigWriter * writer,gpointer data)
 name|gimp_config_iface_serialize
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GimpConfigWriter
 modifier|*
@@ -320,7 +320,7 @@ block|{
 return|return
 name|gimp_config_serialize_properties
 argument_list|(
-name|object
+name|config
 argument_list|,
 name|writer
 argument_list|)
@@ -331,12 +331,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_config_iface_deserialize (GObject * object,GScanner * scanner,gint nest_level,gpointer data)
+DECL|function|gimp_config_iface_deserialize (GimpConfig * config,GScanner * scanner,gint nest_level,gpointer data)
 name|gimp_config_iface_deserialize
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GScanner
 modifier|*
@@ -352,7 +352,7 @@ block|{
 return|return
 name|gimp_config_deserialize_properties
 argument_list|(
-name|object
+name|config
 argument_list|,
 name|scanner
 argument_list|,
@@ -366,14 +366,14 @@ end_function
 
 begin_function
 specifier|static
-name|GObject
+name|GimpConfig
 modifier|*
-DECL|function|gimp_config_iface_duplicate (GObject * object)
+DECL|function|gimp_config_iface_duplicate (GimpConfig * config)
 name|gimp_config_iface_duplicate
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|)
 block|{
 name|GObjectClass
@@ -402,7 +402,7 @@ decl_stmt|;
 name|guint
 name|i
 decl_stmt|;
-name|GObject
+name|GimpConfig
 modifier|*
 name|dup
 decl_stmt|;
@@ -410,7 +410,7 @@ name|klass
 operator|=
 name|G_OBJECT_GET_CLASS
 argument_list|(
-name|object
+name|config
 argument_list|)
 expr_stmt|;
 name|property_specs
@@ -517,7 +517,10 @@ argument_list|)
 expr_stmt|;
 name|g_object_get_property
 argument_list|(
-name|object
+name|G_OBJECT
+argument_list|(
+name|config
+argument_list|)
 argument_list|,
 name|prop_spec
 operator|->
@@ -542,7 +545,7 @@ name|g_object_newv
 argument_list|(
 name|G_TYPE_FROM_INSTANCE
 argument_list|(
-name|object
+name|config
 argument_list|)
 argument_list|,
 name|n_construct_params
@@ -581,7 +584,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_config_copy_properties
 argument_list|(
-name|object
+name|config
 argument_list|,
 name|dup
 argument_list|)
@@ -595,14 +598,14 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_config_iface_equal (GObject * a,GObject * b)
+DECL|function|gimp_config_iface_equal (GimpConfig * a,GimpConfig * b)
 name|gimp_config_iface_equal
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
 name|a
 parameter_list|,
-name|GObject
+name|GimpConfig
 modifier|*
 name|b
 parameter_list|)
@@ -719,7 +722,10 @@ argument_list|)
 expr_stmt|;
 name|g_object_get_property
 argument_list|(
+name|G_OBJECT
+argument_list|(
 name|a
+argument_list|)
 argument_list|,
 name|prop_spec
 operator|->
@@ -731,7 +737,10 @@ argument_list|)
 expr_stmt|;
 name|g_object_get_property
 argument_list|(
+name|G_OBJECT
+argument_list|(
 name|b
+argument_list|)
 argument_list|,
 name|prop_spec
 operator|->
@@ -785,34 +794,34 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_config_iface_reset (GObject * object)
+DECL|function|gimp_config_iface_reset (GimpConfig * config)
 name|gimp_config_iface_reset
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|)
 block|{
 name|gimp_config_reset_properties
 argument_list|(
-name|object
+name|config
 argument_list|)
 expr_stmt|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_serialize_to_file:  * @object: a #GObject that implements the #GimpConfigInterface.  * @filename: the name of the file to write the configuration to.  * @header: optional file header (must be ASCII only)  * @footer: optional file footer (must be ASCII only)  * @data: user data passed to the serialize implementation.  * @error:  *  * Serializes the object properties of @object to the file specified  * by @filename. If a file with that name already exists, it is  * overwritten. Basically this function opens @filename for you and  * calls the serialize function of the @object's #GimpConfigInterface.  *  * Return value: %TRUE if serialization succeeded, %FALSE otherwise.  **/
+comment|/**  * gimp_config_serialize_to_file:  * @config: a #GObject that implements the #GimpConfigInterface.  * @filename: the name of the file to write the configuration to.  * @header: optional file header (must be ASCII only)  * @footer: optional file footer (must be ASCII only)  * @data: user data passed to the serialize implementation.  * @error:  *  * Serializes the object properties of @config to the file specified  * by @filename. If a file with that name already exists, it is  * overwritten. Basically this function opens @filename for you and  * calls the serialize function of the @config's #GimpConfigInterface.  *  * Return value: %TRUE if serialization succeeded, %FALSE otherwise.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_config_serialize_to_file (GObject * object,const gchar * filename,const gchar * header,const gchar * footer,gpointer data,GError ** error)
+DECL|function|gimp_config_serialize_to_file (GimpConfig * config,const gchar * filename,const gchar * header,const gchar * footer,gpointer data,GError ** error)
 name|gimp_config_serialize_to_file
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 specifier|const
 name|gchar
@@ -838,19 +847,15 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|GimpConfigInterface
-modifier|*
-name|gimp_config_iface
-decl_stmt|;
 name|GimpConfigWriter
 modifier|*
 name|writer
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|G_IS_OBJECT
+name|GIMP_IS_CONFIG
 argument_list|(
-name|object
+name|config
 argument_list|)
 argument_list|,
 name|FALSE
@@ -879,22 +884,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_config_iface
-operator|=
-name|GIMP_GET_CONFIG_INTERFACE
-argument_list|(
-name|object
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|gimp_config_iface
-operator|!=
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 name|writer
 operator|=
 name|gimp_config_writer_new_file
@@ -916,11 +905,14 @@ condition|)
 return|return
 name|FALSE
 return|;
-name|gimp_config_iface
+name|GIMP_CONFIG_GET_INTERFACE
+argument_list|(
+name|config
+argument_list|)
 operator|->
 name|serialize
 argument_list|(
-name|object
+name|config
 argument_list|,
 name|writer
 argument_list|,
@@ -942,12 +934,12 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_config_serialize_to_fd (GObject * object,gint fd,gpointer data)
+DECL|function|gimp_config_serialize_to_fd (GimpConfig * config,gint fd,gpointer data)
 name|gimp_config_serialize_to_fd
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|gint
 name|fd
@@ -956,19 +948,15 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GimpConfigInterface
-modifier|*
-name|gimp_config_iface
-decl_stmt|;
 name|GimpConfigWriter
 modifier|*
 name|writer
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|G_IS_OBJECT
+name|GIMP_IS_CONFIG
 argument_list|(
-name|object
+name|config
 argument_list|)
 argument_list|,
 name|FALSE
@@ -979,22 +967,6 @@ argument_list|(
 name|fd
 operator|>
 literal|0
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|gimp_config_iface
-operator|=
-name|GIMP_GET_CONFIG_INTERFACE
-argument_list|(
-name|object
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|gimp_config_iface
-operator|!=
-name|NULL
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1014,11 +986,14 @@ condition|)
 return|return
 name|FALSE
 return|;
-name|gimp_config_iface
+name|GIMP_CONFIG_GET_INTERFACE
+argument_list|(
+name|config
+argument_list|)
 operator|->
 name|serialize
 argument_list|(
-name|object
+name|config
 argument_list|,
 name|writer
 argument_list|,
@@ -1039,27 +1014,23 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_serialize_to_string:  * @object: a #GObject that implements the #GimpConfigInterface.  * @data: user data passed to the serialize implementation.  *  * Serializes the object properties of @object to a string.  *  * Return value: a newly allocated %NUL-terminated string.  **/
+comment|/**  * gimp_config_serialize_to_string:  * @config: a #GObject that implements the #GimpConfigInterface.  * @data: user data passed to the serialize implementation.  *  * Serializes the object properties of @config to a string.  *  * Return value: a newly allocated %NUL-terminated string.  **/
 end_comment
 
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_config_serialize_to_string (GObject * object,gpointer data)
+DECL|function|gimp_config_serialize_to_string (GimpConfig * config,gpointer data)
 name|gimp_config_serialize_to_string
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GimpConfigInterface
-modifier|*
-name|gimp_config_iface
-decl_stmt|;
 name|GimpConfigWriter
 modifier|*
 name|writer
@@ -1070,28 +1041,12 @@ name|str
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|G_IS_OBJECT
+name|GIMP_IS_CONFIG
 argument_list|(
-name|object
+name|config
 argument_list|)
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_config_iface
-operator|=
-name|GIMP_GET_CONFIG_INTERFACE
-argument_list|(
-name|object
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|gimp_config_iface
-operator|!=
-name|NULL
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|str
@@ -1108,11 +1063,14 @@ argument_list|(
 name|str
 argument_list|)
 expr_stmt|;
-name|gimp_config_iface
+name|GIMP_CONFIG_GET_INTERFACE
+argument_list|(
+name|config
+argument_list|)
 operator|->
 name|serialize
 argument_list|(
-name|object
+name|config
 argument_list|,
 name|writer
 argument_list|,
@@ -1140,17 +1098,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_deserialize:  * @object: a #GObject that implements the #GimpConfigInterface.  * @filename: the name of the file to read configuration from.  * @data: user data passed to the deserialize implementation.  * @error:  *  * Opens the file specified by @filename, reads configuration data  * from it and configures @object accordingly. Basically this function  * creates a properly configured #GScanner for you and calls the  * deserialize function of the @object's #GimpConfigInterface.  *  * Return value: %TRUE if deserialization succeeded, %FALSE otherwise.  **/
+comment|/**  * gimp_config_deserialize:  * @config: a #GObject that implements the #GimpConfigInterface.  * @filename: the name of the file to read configuration from.  * @data: user data passed to the deserialize implementation.  * @error:  *  * Opens the file specified by @filename, reads configuration data  * from it and configures @config accordingly. Basically this function  * creates a properly configured #GScanner for you and calls the  * deserialize function of the @config's #GimpConfigInterface.  *  * Return value: %TRUE if deserialization succeeded, %FALSE otherwise.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_config_deserialize_file (GObject * object,const gchar * filename,gpointer data,GError ** error)
+DECL|function|gimp_config_deserialize_file (GimpConfig * config,const gchar * filename,gpointer data,GError ** error)
 name|gimp_config_deserialize_file
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 specifier|const
 name|gchar
@@ -1166,10 +1124,6 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|GimpConfigInterface
-modifier|*
-name|gimp_config_iface
-decl_stmt|;
 name|GScanner
 modifier|*
 name|scanner
@@ -1179,9 +1133,9 @@ name|success
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|G_IS_OBJECT
+name|GIMP_IS_CONFIG
 argument_list|(
-name|object
+name|config
 argument_list|)
 argument_list|,
 name|FALSE
@@ -1210,22 +1164,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_config_iface
-operator|=
-name|GIMP_GET_CONFIG_INTERFACE
-argument_list|(
-name|object
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|gimp_config_iface
-operator|!=
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 name|scanner
 operator|=
 name|gimp_scanner_new_file
@@ -1245,11 +1183,14 @@ name|FALSE
 return|;
 name|success
 operator|=
-name|gimp_config_iface
+name|GIMP_CONFIG_GET_INTERFACE
+argument_list|(
+name|config
+argument_list|)
 operator|->
 name|deserialize
 argument_list|(
-name|object
+name|config
 argument_list|,
 name|scanner
 argument_list|,
@@ -1287,17 +1228,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_deserialize_string:  * @object: a #GObject that implements the #GimpConfigInterface.  * @text: string to deserialize (in UTF-8 encoding)  * @text_len: length of @text in bytes or -1  * @data:  * @error:  *  * Configures @object from @text. Basically this function creates a  * properly configured #GScanner for you and calls the deserialize  * function of the @object's #GimpConfigInterface.  *  * Returns: %TRUE if deserialization succeeded, %FALSE otherwise.  **/
+comment|/**  * gimp_config_deserialize_string:  * @config: a #GObject that implements the #GimpConfigInterface.  * @text: string to deserialize (in UTF-8 encoding)  * @text_len: length of @text in bytes or -1  * @data:  * @error:  *  * Configures @config from @text. Basically this function creates a  * properly configured #GScanner for you and calls the deserialize  * function of the @config's #GimpConfigInterface.  *  * Returns: %TRUE if deserialization succeeded, %FALSE otherwise.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_config_deserialize_string (GObject * object,const gchar * text,gint text_len,gpointer data,GError ** error)
+DECL|function|gimp_config_deserialize_string (GimpConfig * config,const gchar * text,gint text_len,gpointer data,GError ** error)
 name|gimp_config_deserialize_string
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 specifier|const
 name|gchar
@@ -1316,10 +1257,6 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|GimpConfigInterface
-modifier|*
-name|gimp_config_iface
-decl_stmt|;
 name|GScanner
 modifier|*
 name|scanner
@@ -1329,9 +1266,9 @@ name|success
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|G_IS_OBJECT
+name|GIMP_IS_CONFIG
 argument_list|(
-name|object
+name|config
 argument_list|)
 argument_list|,
 name|FALSE
@@ -1364,22 +1301,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_config_iface
-operator|=
-name|GIMP_GET_CONFIG_INTERFACE
-argument_list|(
-name|object
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|gimp_config_iface
-operator|!=
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 name|scanner
 operator|=
 name|gimp_scanner_new_string
@@ -1393,11 +1314,14 @@ argument_list|)
 expr_stmt|;
 name|success
 operator|=
-name|gimp_config_iface
+name|GIMP_CONFIG_GET_INTERFACE
+argument_list|(
+name|config
+argument_list|)
 operator|->
 name|deserialize
 argument_list|(
-name|object
+name|config
 argument_list|,
 name|scanner
 argument_list|,
@@ -1567,56 +1491,39 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_duplicate:  * @object: a #GObject that implements the #GimpConfigInterface.  *  * Creates a copy of the passed object by copying all object  * properties. The default implementation of the #GimpConfigInterface  * only works for objects that are completely defined by their  * properties.  *  * Return value: the duplicated #GObject.  **/
+comment|/**  * gimp_config_duplicate:  * @config: a #GObject that implements the #GimpConfigInterface.  *  * Creates a copy of the passed object by copying all object  * properties. The default implementation of the #GimpConfigInterface  * only works for objects that are completely defined by their  * properties.  *  * Return value: the duplicated #GObject.  **/
 end_comment
 
 begin_function
-name|GObject
+name|GimpConfig
 modifier|*
-DECL|function|gimp_config_duplicate (GObject * object)
+DECL|function|gimp_config_duplicate (GimpConfig * config)
 name|gimp_config_duplicate
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|)
 block|{
-name|GimpConfigInterface
-modifier|*
-name|gimp_config_iface
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|G_IS_OBJECT
+name|GIMP_IS_CONFIG
 argument_list|(
-name|object
+name|config
 argument_list|)
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_config_iface
-operator|=
-name|GIMP_GET_CONFIG_INTERFACE
-argument_list|(
-name|object
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|gimp_config_iface
-operator|!=
-name|NULL
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 return|return
-name|gimp_config_iface
+name|GIMP_CONFIG_GET_INTERFACE
+argument_list|(
+name|config
+argument_list|)
 operator|->
 name|duplicate
 argument_list|(
-name|object
+name|config
 argument_list|)
 return|;
 block|}
@@ -1628,25 +1535,21 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_config_is_equal_to (GObject * a,GObject * b)
+DECL|function|gimp_config_is_equal_to (GimpConfig * a,GimpConfig * b)
 name|gimp_config_is_equal_to
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
 name|a
 parameter_list|,
-name|GObject
+name|GimpConfig
 modifier|*
 name|b
 parameter_list|)
 block|{
-name|GimpConfigInterface
-modifier|*
-name|gimp_config_iface
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|G_IS_OBJECT
+name|GIMP_IS_CONFIG
 argument_list|(
 name|a
 argument_list|)
@@ -1656,7 +1559,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|G_IS_OBJECT
+name|GIMP_IS_CONFIG
 argument_list|(
 name|b
 argument_list|)
@@ -1679,24 +1582,11 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_config_iface
-operator|=
-name|GIMP_GET_CONFIG_INTERFACE
+return|return
+name|GIMP_CONFIG_GET_INTERFACE
 argument_list|(
 name|a
 argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|gimp_config_iface
-operator|!=
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-return|return
-name|gimp_config_iface
 operator|->
 name|equal
 argument_list|(
@@ -1709,50 +1599,35 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_reset:  * @object: a #GObject that implements the #GimpConfigInterface.  *  * Resets the object to its default state. The default implementation of the  * #GimpConfigInterface only works for objects that are completely defined by  * their properties.  **/
+comment|/**  * gimp_config_reset:  * @config: a #GObject that implements the #GimpConfigInterface.  *  * Resets the object to its default state. The default implementation of the  * #GimpConfigInterface only works for objects that are completely defined by  * their properties.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_config_reset (GObject * object)
+DECL|function|gimp_config_reset (GimpConfig * config)
 name|gimp_config_reset
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|)
 block|{
-name|GimpConfigInterface
-modifier|*
-name|gimp_config_iface
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|G_IS_OBJECT
+name|GIMP_IS_CONFIG
 argument_list|(
-name|object
+name|config
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_config_iface
-operator|=
-name|GIMP_GET_CONFIG_INTERFACE
+name|GIMP_CONFIG_GET_INTERFACE
 argument_list|(
-name|object
+name|config
 argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|gimp_config_iface
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_config_iface
 operator|->
 name|reset
 argument_list|(
-name|object
+name|config
 argument_list|)
 expr_stmt|;
 block|}
@@ -1773,7 +1648,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4f40700108
+DECL|struct|__anon2c74c1610108
 block|{
 DECL|member|key
 name|gchar
@@ -1804,17 +1679,17 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_config_add_unknown_token:  * @object: a #GObject.  * @key: a nul-terminated string to identify the value.  * @value: a nul-terminated string representing the value.  *  * This function allows to add arbitrary key/value pairs to a GObject.  * It's purpose is to attach additional data to a #GimpConfig object  * that can be stored along with the object properties when  * serializing the object to a configuration file. Please note however  * that the default gimp_config_serialize() implementation does not  * serialize unknown tokens.  *  * If you want to remove a key/value pair from the object, call this  * function with a %NULL @value.  **/
+comment|/**  * gimp_config_add_unknown_token:  * @config: a #GObject.  * @key: a nul-terminated string to identify the value.  * @value: a nul-terminated string representing the value.  *  * This function allows to add arbitrary key/value pairs to a GObject.  * It's purpose is to attach additional data to a #GimpConfig object  * that can be stored along with the object properties when  * serializing the object to a configuration file. Please note however  * that the default gimp_config_serialize() implementation does not  * serialize unknown tokens.  *  * If you want to remove a key/value pair from the object, call this  * function with a %NULL @value.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_config_add_unknown_token (GObject * object,const gchar * key,const gchar * value)
+DECL|function|gimp_config_add_unknown_token (GimpConfig * config,const gchar * key,const gchar * value)
 name|gimp_config_add_unknown_token
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 specifier|const
 name|gchar
@@ -1845,9 +1720,9 @@ name|list
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|G_IS_OBJECT
+name|GIMP_IS_CONFIG
 argument_list|(
-name|object
+name|config
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1866,7 +1741,10 @@ operator|*
 operator|)
 name|g_object_get_data
 argument_list|(
-name|object
+name|G_OBJECT
+argument_list|(
+name|config
+argument_list|)
 argument_list|,
 name|GIMP_CONFIG_UNKNOWN_TOKENS
 argument_list|)
@@ -1961,7 +1839,10 @@ argument_list|)
 expr_stmt|;
 name|g_object_set_data_full
 argument_list|(
-name|object
+name|G_OBJECT
+argument_list|(
+name|config
+argument_list|)
 argument_list|,
 name|GIMP_CONFIG_UNKNOWN_TOKENS
 argument_list|,
@@ -2036,7 +1917,10 @@ argument_list|)
 expr_stmt|;
 name|g_object_set_data_full
 argument_list|(
-name|object
+name|G_OBJECT
+argument_list|(
+name|config
+argument_list|)
 argument_list|,
 name|GIMP_CONFIG_UNKNOWN_TOKENS
 argument_list|,
@@ -2053,19 +1937,19 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_lookup_unknown_token:  * @object: a #GObject.  * @key: a nul-terminated string to identify the value.  *  * This function retrieves data that was previously attached using  * gimp_config_add_unknown_token(). You should not free or modify  * the returned string.  *  * Returns: a pointer to a constant string.  **/
+comment|/**  * gimp_config_lookup_unknown_token:  * @config: a #GObject.  * @key: a nul-terminated string to identify the value.  *  * This function retrieves data that was previously attached using  * gimp_config_add_unknown_token(). You should not free or modify  * the returned string.  *  * Returns: a pointer to a constant string.  **/
 end_comment
 
 begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_config_lookup_unknown_token (GObject * object,const gchar * key)
+DECL|function|gimp_config_lookup_unknown_token (GimpConfig * config,const gchar * key)
 name|gimp_config_lookup_unknown_token
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 specifier|const
 name|gchar
@@ -2087,9 +1971,9 @@ name|list
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|G_IS_OBJECT
+name|GIMP_IS_CONFIG
 argument_list|(
-name|object
+name|config
 argument_list|)
 argument_list|,
 name|NULL
@@ -2112,7 +1996,10 @@ operator|*
 operator|)
 name|g_object_get_data
 argument_list|(
-name|object
+name|G_OBJECT
+argument_list|(
+name|config
+argument_list|)
 argument_list|,
 name|GIMP_CONFIG_UNKNOWN_TOKENS
 argument_list|)
@@ -2169,17 +2056,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_foreach_unknown_token:  * @object: a #GObject.  * @func: a function to call for each key/value pair.  * @user_data: data to pass to @func.  *  * Calls @func for each key/value stored with the @object using  * gimp_config_add_unknown_token().  **/
+comment|/**  * gimp_config_foreach_unknown_token:  * @config: a #GObject.  * @func: a function to call for each key/value pair.  * @user_data: data to pass to @func.  *  * Calls @func for each key/value stored with the @config using  * gimp_config_add_unknown_token().  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_config_foreach_unknown_token (GObject * object,GimpConfigForeachFunc func,gpointer user_data)
+DECL|function|gimp_config_foreach_unknown_token (GimpConfig * config,GimpConfigForeachFunc func,gpointer user_data)
 name|gimp_config_foreach_unknown_token
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GimpConfigForeachFunc
 name|func
@@ -2202,9 +2089,9 @@ name|list
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|G_IS_OBJECT
+name|GIMP_IS_CONFIG
 argument_list|(
-name|object
+name|config
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2223,7 +2110,10 @@ operator|*
 operator|)
 name|g_object_get_data
 argument_list|(
-name|object
+name|G_OBJECT
+argument_list|(
+name|config
+argument_list|)
 argument_list|,
 name|GIMP_CONFIG_UNKNOWN_TOKENS
 argument_list|)

@@ -17,32 +17,45 @@ name|__GIMP_CONFIG_H__
 end_define
 
 begin_define
-DECL|macro|GIMP_TYPE_CONFIG_INTERFACE
+DECL|macro|GIMP_TYPE_CONFIG
 define|#
 directive|define
-name|GIMP_TYPE_CONFIG_INTERFACE
+name|GIMP_TYPE_CONFIG
 value|(gimp_config_interface_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_GET_CONFIG_INTERFACE (obj)
+DECL|macro|GIMP_IS_CONFIG (obj)
 define|#
 directive|define
-name|GIMP_GET_CONFIG_INTERFACE
+name|GIMP_IS_CONFIG
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_INTERFACE ((obj), GIMP_TYPE_CONFIG_INTERFACE, GimpConfigInterface))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_CONFIG))
 end_define
 
-begin_typedef
-DECL|typedef|GimpConfigInterface
-typedef|typedef
-name|struct
-name|_GimpConfigInterface
-name|GimpConfigInterface
-typedef|;
-end_typedef
+begin_define
+DECL|macro|GIMP_CONFIG (obj)
+define|#
+directive|define
+name|GIMP_CONFIG
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_CONFIG, GimpConfig))
+end_define
+
+begin_define
+DECL|macro|GIMP_CONFIG_GET_INTERFACE (obj)
+define|#
+directive|define
+name|GIMP_CONFIG_GET_INTERFACE
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_INTERFACE ((obj), GIMP_TYPE_CONFIG, GimpConfigInterface))
+end_define
 
 begin_struct
 DECL|struct|_GimpConfigInterface
@@ -60,9 +73,9 @@ modifier|*
 name|serialize
 function_decl|)
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GimpConfigWriter
 modifier|*
@@ -79,9 +92,9 @@ modifier|*
 name|deserialize
 function_decl|)
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GScanner
 modifier|*
@@ -101,9 +114,9 @@ modifier|*
 name|serialize_property
 function_decl|)
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|guint
 name|property_id
@@ -129,9 +142,9 @@ modifier|*
 name|deserialize_property
 function_decl|)
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|guint
 name|property_id
@@ -154,16 +167,16 @@ name|expected
 parameter_list|)
 function_decl|;
 DECL|member|duplicate
-name|GObject
+name|GimpConfig
 modifier|*
 function_decl|(
 modifier|*
 name|duplicate
 function_decl|)
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|)
 function_decl|;
 DECL|member|equal
@@ -173,11 +186,11 @@ modifier|*
 name|equal
 function_decl|)
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
 name|a
 parameter_list|,
-name|GObject
+name|GimpConfig
 modifier|*
 name|b
 parameter_list|)
@@ -189,9 +202,9 @@ modifier|*
 name|reset
 function_decl|)
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|)
 function_decl|;
 block|}
@@ -237,9 +250,9 @@ begin_function_decl
 name|gboolean
 name|gimp_config_serialize_to_file
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 specifier|const
 name|gchar
@@ -271,9 +284,9 @@ begin_function_decl
 name|gboolean
 name|gimp_config_serialize_to_fd
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|gint
 name|fd
@@ -289,9 +302,9 @@ name|gchar
 modifier|*
 name|gimp_config_serialize_to_string
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|gpointer
 name|data
@@ -303,9 +316,9 @@ begin_function_decl
 name|gboolean
 name|gimp_config_deserialize_file
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 specifier|const
 name|gchar
@@ -327,9 +340,9 @@ begin_function_decl
 name|gboolean
 name|gimp_config_deserialize_string
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 specifier|const
 name|gchar
@@ -368,13 +381,13 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GObject
+name|GimpConfig
 modifier|*
 name|gimp_config_duplicate
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -383,11 +396,11 @@ begin_function_decl
 name|gboolean
 name|gimp_config_is_equal_to
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
 name|a
 parameter_list|,
-name|GObject
+name|GimpConfig
 modifier|*
 name|b
 parameter_list|)
@@ -398,9 +411,9 @@ begin_function_decl
 name|void
 name|gimp_config_reset
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -409,9 +422,9 @@ begin_function_decl
 name|void
 name|gimp_config_add_unknown_token
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 specifier|const
 name|gchar
@@ -432,9 +445,9 @@ name|gchar
 modifier|*
 name|gimp_config_lookup_unknown_token
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 specifier|const
 name|gchar
@@ -448,9 +461,9 @@ begin_function_decl
 name|void
 name|gimp_config_foreach_unknown_token
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GimpConfigForeachFunc
 name|func

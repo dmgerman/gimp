@@ -99,7 +99,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aba7fd90103
+DECL|enum|__anon27e736f30103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -184,7 +184,7 @@ specifier|static
 name|gboolean
 name|gimp_parasite_list_serialize
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
 name|list
 parameter_list|,
@@ -203,7 +203,7 @@ specifier|static
 name|gboolean
 name|gimp_parasite_list_deserialize
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
 name|list
 parameter_list|,
@@ -440,7 +440,7 @@ name|g_type_add_interface_static
 argument_list|(
 name|list_type
 argument_list|,
-name|GIMP_TYPE_CONFIG_INTERFACE
+name|GIMP_TYPE_CONFIG
 argument_list|,
 operator|&
 name|list_iface_info
@@ -875,10 +875,10 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_parasite_list_serialize (GObject * list,GimpConfigWriter * writer,gpointer data)
+DECL|function|gimp_parasite_list_serialize (GimpConfig * list,GimpConfigWriter * writer,gpointer data)
 name|gimp_parasite_list_serialize
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
 name|list
 parameter_list|,
@@ -925,10 +925,10 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_parasite_list_deserialize (GObject * list,GScanner * scanner,gint nest_level,gpointer data)
+DECL|function|gimp_parasite_list_deserialize (GimpConfig * list,GScanner * scanner,gint nest_level,gpointer data)
 name|gimp_parasite_list_deserialize
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
 name|list
 parameter_list|,

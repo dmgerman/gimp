@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b39e0f50103
+DECL|enum|__anon29f54f760103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -355,7 +355,7 @@ name|g_type_add_interface_static
 argument_list|(
 name|text_type
 argument_list|,
-name|GIMP_TYPE_CONFIG_INTERFACE
+name|GIMP_TYPE_CONFIG
 argument_list|,
 operator|&
 name|text_iface_info
@@ -1657,7 +1657,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*   *  basically copied from gtk_get_default_language()  */
+comment|/*  *  basically copied from gtk_get_default_language()  */
 end_comment
 
 begin_function

@@ -117,7 +117,7 @@ condition|(
 operator|!
 name|gimp_config_deserialize_file
 argument_list|(
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|gimp
 operator|->
@@ -235,7 +235,7 @@ condition|(
 operator|!
 name|gimp_config_serialize_to_file
 argument_list|(
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|gimp
 operator|->

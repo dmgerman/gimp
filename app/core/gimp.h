@@ -410,7 +410,7 @@ name|GimpCoreConfig
 modifier|*
 name|edit_config
 decl_stmt|;
-comment|/* don't use this one, it's just                                        * for the preferences dialog                                        */
+comment|/* don't use this one, it's just                                         * for the preferences dialog                                         */
 DECL|member|be_verbose
 name|gboolean
 name|be_verbose

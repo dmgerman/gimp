@@ -186,7 +186,7 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GObject
+name|GimpConfig
 modifier|*
 name|config
 parameter_list|)
@@ -374,15 +374,15 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|GObject
+name|GimpConfig
 modifier|*
 name|config
 decl_stmt|;
-name|GObject
+name|GimpConfig
 modifier|*
 name|config_copy
 decl_stmt|;
-name|GObject
+name|GimpConfig
 modifier|*
 name|config_orig
 decl_stmt|;
@@ -418,7 +418,7 @@ argument_list|)
 expr_stmt|;
 name|config
 operator|=
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|gimp
 operator|->
@@ -886,7 +886,7 @@ name|Gimp
 modifier|*
 name|gimp
 decl_stmt|;
-name|GObject
+name|GimpConfig
 modifier|*
 name|config_orig
 decl_stmt|;
@@ -937,7 +937,7 @@ name|diff
 operator|=
 name|gimp_config_diff
 argument_list|(
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|gimp
 operator|->
@@ -1008,7 +1008,10 @@ argument_list|)
 expr_stmt|;
 name|g_object_get_property
 argument_list|(
+name|G_OBJECT
+argument_list|(
 name|config_orig
+argument_list|)
 argument_list|,
 name|param_spec
 operator|->
@@ -1097,7 +1100,7 @@ name|Gimp
 modifier|*
 name|gimp
 decl_stmt|;
-name|GObject
+name|GimpConfig
 modifier|*
 name|config_copy
 decl_stmt|;
@@ -1152,7 +1155,7 @@ name|confirm_diff
 operator|=
 name|gimp_config_diff
 argument_list|(
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|gimp
 operator|->
@@ -1223,7 +1226,10 @@ argument_list|)
 expr_stmt|;
 name|g_object_get_property
 argument_list|(
+name|G_OBJECT
+argument_list|(
 name|config_copy
+argument_list|)
 argument_list|,
 name|param_spec
 operator|->
@@ -1305,14 +1311,14 @@ name|restart_diff
 operator|=
 name|gimp_config_diff
 argument_list|(
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|gimp
 operator|->
 name|edit_config
 argument_list|)
 argument_list|,
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|gimp
 operator|->
@@ -3474,14 +3480,14 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|prefs_dialog_new (Gimp * gimp,GObject * config)
+DECL|function|prefs_dialog_new (Gimp * gimp,GimpConfig * config)
 name|prefs_dialog_new
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GObject
+name|GimpConfig
 modifier|*
 name|config
 parameter_list|)
@@ -3625,6 +3631,10 @@ name|gchar
 modifier|*
 name|pixels_per_unit
 decl_stmt|;
+name|GObject
+modifier|*
+name|object
+decl_stmt|;
 name|GimpCoreConfig
 modifier|*
 name|core_config
@@ -3645,12 +3655,19 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|G_IS_OBJECT
+name|GIMP_IS_CONFIG
 argument_list|(
 name|config
 argument_list|)
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|object
+operator|=
+name|G_OBJECT
+argument_list|(
+name|config
 argument_list|)
 expr_stmt|;
 name|core_config
@@ -4425,7 +4442,7 @@ name|sizeentry
 operator|=
 name|gimp_prop_coordinates_new
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"default-image-width"
 argument_list|,
@@ -4606,7 +4623,7 @@ name|sizeentry2
 operator|=
 name|gimp_prop_coordinates_new
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"default-xresolution"
 argument_list|,
@@ -4767,7 +4784,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_enum_option_menu_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"default-image-type"
 argument_list|,
@@ -4790,7 +4807,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_memsize_entry_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"max-new-image-size"
 argument_list|,
@@ -4928,7 +4945,7 @@ name|text_buffer
 operator|=
 name|gimp_prop_text_buffer_new
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"default-comment"
 argument_list|,
@@ -5110,7 +5127,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_check_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"layer-previews"
 argument_list|,
@@ -5141,7 +5158,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_enum_option_menu_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"layer-preview-size"
 argument_list|,
@@ -5164,7 +5181,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_enum_option_menu_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"navigation-preview-size"
 argument_list|,
@@ -5205,7 +5222,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_check_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"info-window-per-display"
 argument_list|,
@@ -5240,7 +5257,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_check_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"tearoff-menus"
 argument_list|,
@@ -5271,7 +5288,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_spin_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"last-opened-size"
 argument_list|,
@@ -5314,7 +5331,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_check_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"can-change-accels"
 argument_list|,
@@ -5331,7 +5348,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_check_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"save-accels"
 argument_list|,
@@ -5348,7 +5365,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_check_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"restore-accels"
 argument_list|,
@@ -5547,7 +5564,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_check_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"save-session-info"
 argument_list|,
@@ -5564,7 +5581,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_check_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"restore-session"
 argument_list|,
@@ -5806,7 +5823,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_check_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"show-tool-tips"
 argument_list|,
@@ -5823,7 +5840,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_check_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"use-help"
 argument_list|,
@@ -5840,7 +5857,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_check_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"show-tips"
 argument_list|,
@@ -5889,7 +5906,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_enum_option_menu_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"help-browser"
 argument_list|,
@@ -5987,7 +6004,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_spin_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"default-threshold"
 argument_list|,
@@ -6044,7 +6061,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_enum_option_menu_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"interpolation-type"
 argument_list|,
@@ -6213,7 +6230,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_check_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"save-device-status"
 argument_list|,
@@ -6393,7 +6410,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_check_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"default-dot-for-dot"
 argument_list|,
@@ -6424,7 +6441,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_spin_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"marching-ants-speed"
 argument_list|,
@@ -6467,7 +6484,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_check_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"resize-windows-on-zoom"
 argument_list|,
@@ -6484,7 +6501,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_check_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"resize-windows-on-resize"
 argument_list|,
@@ -6515,7 +6532,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_boolean_option_menu_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"initial-zoom-to-fit"
 argument_list|,
@@ -6559,7 +6576,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_check_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"show-brush-outline"
 argument_list|,
@@ -6576,7 +6593,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_check_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"perfect-mouse"
 argument_list|,
@@ -6593,7 +6610,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_check_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"cursor-updating"
 argument_list|,
@@ -6624,7 +6641,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_enum_option_menu_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"cursor-mode"
 argument_list|,
@@ -6708,7 +6725,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_check_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"show-menubar"
 argument_list|,
@@ -6725,7 +6742,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_check_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"show-rulers"
 argument_list|,
@@ -6742,7 +6759,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_check_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"show-scrollbars"
 argument_list|,
@@ -6759,7 +6776,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_check_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"show-statusbar"
 argument_list|,
@@ -6790,7 +6807,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_enum_option_menu_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"canvas-padding-mode"
 argument_list|,
@@ -6815,7 +6832,7 @@ name|button
 operator|=
 name|prefs_color_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"canvas-padding-color"
 argument_list|,
@@ -6870,7 +6887,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_check_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"fullscreen-show-menubar"
 argument_list|,
@@ -6887,7 +6904,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_check_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"fullscreen-show-rulers"
 argument_list|,
@@ -6904,7 +6921,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_check_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"fullscreen-show-scrollbars"
 argument_list|,
@@ -6921,7 +6938,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_check_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"fullscreen-show-statusbar"
 argument_list|,
@@ -6952,7 +6969,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_enum_option_menu_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"fullscreen-canvas-padding-mode"
 argument_list|,
@@ -6977,7 +6994,7 @@ name|button
 operator|=
 name|prefs_color_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"fullscreen-canvas-padding-color"
 argument_list|,
@@ -7115,7 +7132,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c4187ad0108
+DECL|struct|__anon2b44d62b0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -7289,7 +7306,7 @@ name|entry
 operator|=
 name|gimp_prop_entry_new
 argument_list|(
-name|config
+name|object
 argument_list|,
 name|formats
 index|[
@@ -7653,7 +7670,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_enum_option_menu_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"transparency-type"
 argument_list|,
@@ -7676,7 +7693,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_enum_option_menu_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"transparency-size"
 argument_list|,
@@ -7752,7 +7769,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_spin_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"min-colors"
 argument_list|,
@@ -7777,7 +7794,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_check_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"install-colormap"
 argument_list|,
@@ -7794,7 +7811,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_check_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"colormap-cycling"
 argument_list|,
@@ -7940,7 +7957,7 @@ name|sizeentry
 operator|=
 name|gimp_prop_coordinates_new
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"monitor-xresolution"
 argument_list|,
@@ -8481,7 +8498,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_check_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"stingy-memory-use"
 argument_list|,
@@ -8534,7 +8551,7 @@ directive|endif
 comment|/* ENABLE_MP */
 name|prefs_spin_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"undo-levels"
 argument_list|,
@@ -8559,7 +8576,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_memsize_entry_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"undo-size"
 argument_list|,
@@ -8578,7 +8595,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_memsize_entry_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"tile-cache-size"
 argument_list|,
@@ -8600,7 +8617,7 @@ directive|ifdef
 name|ENABLE_MP
 name|prefs_spin_button_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"num-processors"
 argument_list|,
@@ -8660,7 +8677,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_boolean_option_menu_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"trust-dirty-flag"
 argument_list|,
@@ -8689,7 +8706,7 @@ argument_list|)
 expr_stmt|;
 name|prefs_enum_option_menu_add
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"thumbnail-size"
 argument_list|,
@@ -8746,7 +8763,7 @@ name|fileselection
 operator|=
 name|gimp_prop_file_entry_new
 argument_list|(
-name|config
+name|object
 argument_list|,
 literal|"web-browser"
 argument_list|,
@@ -8953,7 +8970,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c4187ad0208
+DECL|struct|__anon2b44d62b0208
 block|{
 DECL|member|label
 specifier|const
@@ -9047,7 +9064,7 @@ name|fileselection
 operator|=
 name|gimp_prop_file_entry_new
 argument_list|(
-name|config
+name|object
 argument_list|,
 name|dirs
 index|[
@@ -9112,7 +9129,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c4187ad0308
+DECL|struct|__anon2b44d62b0308
 block|{
 DECL|member|tree_label
 specifier|const
@@ -9467,7 +9484,7 @@ name|patheditor
 operator|=
 name|gimp_prop_path_editor_new
 argument_list|(
-name|config
+name|object
 argument_list|,
 name|paths
 index|[

@@ -38,7 +38,7 @@ specifier|static
 name|void
 name|gimp_docked_iface_init
 parameter_list|(
-name|GimpDockedIface
+name|GimpDockedInterface
 modifier|*
 name|docked_iface
 parameter_list|)
@@ -73,7 +73,7 @@ init|=
 block|{
 sizeof|sizeof
 argument_list|(
-name|GimpDockedIface
+name|GimpDockedInterface
 argument_list|)
 block|,
 operator|(
@@ -118,10 +118,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_docked_iface_init (GimpDockedIface * docked_iface)
+DECL|function|gimp_docked_iface_init (GimpDockedInterface * docked_iface)
 name|gimp_docked_iface_init
 parameter_list|(
-name|GimpDockedIface
+name|GimpDockedInterface
 modifier|*
 name|docked_iface
 parameter_list|)
@@ -173,7 +173,7 @@ modifier|*
 name|aux_info
 parameter_list|)
 block|{
-name|GimpDockedIface
+name|GimpDockedInterface
 modifier|*
 name|docked_iface
 decl_stmt|;
@@ -221,7 +221,7 @@ modifier|*
 name|docked
 parameter_list|)
 block|{
-name|GimpDockedIface
+name|GimpDockedInterface
 modifier|*
 name|docked_iface
 decl_stmt|;
@@ -280,7 +280,7 @@ name|GtkIconSize
 name|size
 parameter_list|)
 block|{
-name|GimpDockedIface
+name|GimpDockedInterface
 modifier|*
 name|docked_iface
 decl_stmt|;
@@ -343,7 +343,7 @@ modifier|*
 name|prev_context
 parameter_list|)
 block|{
-name|GimpDockedIface
+name|GimpDockedInterface
 modifier|*
 name|docked_iface
 decl_stmt|;
@@ -421,7 +421,7 @@ modifier|*
 name|item_factory_data
 parameter_list|)
 block|{
-name|GimpDockedIface
+name|GimpDockedInterface
 modifier|*
 name|docked_iface
 decl_stmt|;

@@ -123,7 +123,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279d02d20103
+DECL|enum|__anon2b4263090103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -254,7 +254,7 @@ specifier|static
 name|gboolean
 name|gimp_rc_serialize
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
 name|object
 parameter_list|,
@@ -273,7 +273,7 @@ specifier|static
 name|gboolean
 name|gimp_rc_deserialize
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
 name|object
 parameter_list|,
@@ -292,11 +292,11 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GObject
+name|GimpConfig
 modifier|*
 name|gimp_rc_duplicate
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
 name|object
 parameter_list|)
@@ -452,7 +452,7 @@ name|g_type_add_interface_static
 argument_list|(
 name|rc_type
 argument_list|,
-name|GIMP_TYPE_CONFIG_INTERFACE
+name|GIMP_TYPE_CONFIG
 argument_list|,
 operator|&
 name|rc_iface_info
@@ -1027,12 +1027,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_rc_serialize (GObject * object,GimpConfigWriter * writer,gpointer data)
+DECL|function|gimp_rc_serialize (GimpConfig * config,GimpConfigWriter * writer,gpointer data)
 name|gimp_rc_serialize
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GimpConfigWriter
 modifier|*
@@ -1057,9 +1057,9 @@ condition|(
 operator|!
 name|gimp_config_serialize_properties_diff
 argument_list|(
-name|object
+name|config
 argument_list|,
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|data
 argument_list|)
@@ -1078,7 +1078,7 @@ condition|(
 operator|!
 name|gimp_config_serialize_properties
 argument_list|(
-name|object
+name|config
 argument_list|,
 name|writer
 argument_list|)
@@ -1090,7 +1090,7 @@ block|}
 return|return
 name|gimp_config_serialize_unknown_tokens
 argument_list|(
-name|object
+name|config
 argument_list|,
 name|writer
 argument_list|)
@@ -1101,12 +1101,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_rc_deserialize (GObject * object,GScanner * scanner,gint nest_level,gpointer data)
+DECL|function|gimp_rc_deserialize (GimpConfig * config,GScanner * scanner,gint nest_level,gpointer data)
 name|gimp_rc_deserialize
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GScanner
 modifier|*
@@ -1122,7 +1122,7 @@ block|{
 return|return
 name|gimp_config_deserialize_properties
 argument_list|(
-name|object
+name|config
 argument_list|,
 name|scanner
 argument_list|,
@@ -1156,7 +1156,7 @@ parameter_list|)
 block|{
 name|gimp_config_add_unknown_token
 argument_list|(
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|user_data
 argument_list|)
@@ -1171,17 +1171,17 @@ end_function
 
 begin_function
 specifier|static
-name|GObject
+name|GimpConfig
 modifier|*
-DECL|function|gimp_rc_duplicate (GObject * object)
+DECL|function|gimp_rc_duplicate (GimpConfig * config)
 name|gimp_rc_duplicate
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|)
 block|{
-name|GObject
+name|GimpConfig
 modifier|*
 name|dup
 init|=
@@ -1194,14 +1194,14 @@ argument_list|)
 decl_stmt|;
 name|gimp_config_copy_properties
 argument_list|(
-name|object
+name|config
 argument_list|,
 name|dup
 argument_list|)
 expr_stmt|;
 name|gimp_config_foreach_unknown_token
 argument_list|(
-name|object
+name|config
 argument_list|,
 name|gimp_rc_duplicate_unknown_token
 argument_list|,
@@ -1262,7 +1262,7 @@ condition|(
 operator|!
 name|gimp_config_deserialize_file
 argument_list|(
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|rc
 argument_list|)
@@ -1323,7 +1323,7 @@ condition|(
 operator|!
 name|gimp_config_deserialize_file
 argument_list|(
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|rc
 argument_list|)
@@ -1594,7 +1594,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rc_query:  * @rc: a #GimpRc object.  * @key: a string used as a key for the lookup.  *   * This function looks up @key in the object properties of @rc. If  * there's a matching property, a string representation of its value  * is returned. If no property is found, the list of unknown tokens  * attached to the @rc object is searched.  *   * Return value: a newly allocated string representing the value or %NULL  *               if the key couldn't be found.  **/
+comment|/**  * gimp_rc_query:  * @rc: a #GimpRc object.  * @key: a string used as a key for the lookup.  *  * This function looks up @key in the object properties of @rc. If  * there's a matching property, a string representation of its value  * is returned. If no property is found, the list of unknown tokens  * attached to the @rc object is searched.  *  * Return value: a newly allocated string representing the value or %NULL  *               if the key couldn't be found.  **/
 end_comment
 
 begin_function
@@ -1834,7 +1834,10 @@ name|g_strdup
 argument_list|(
 name|gimp_config_lookup_unknown_token
 argument_list|(
-name|rc_object
+name|GIMP_CONFIG
+argument_list|(
+name|rc
+argument_list|)
 argument_list|,
 name|key
 argument_list|)
@@ -1957,7 +1960,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rc_save:  * @gimprc: a #GimpRc object.  *   * Saves any settings that differ from the system-wide defined  * defaults to the users personal gimprc file.  **/
+comment|/**  * gimp_rc_save:  * @gimprc: a #GimpRc object.  *  * Saves any settings that differ from the system-wide defined  * defaults to the users personal gimprc file.  **/
 end_comment
 
 begin_function
@@ -2029,7 +2032,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_config_deserialize_file
 argument_list|(
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|global
 argument_list|)
@@ -2081,7 +2084,7 @@ condition|(
 operator|!
 name|gimp_config_serialize_to_file
 argument_list|(
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|rc
 argument_list|)

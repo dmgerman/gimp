@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"config/gimpconfig-utils.h"
 end_include
 
@@ -355,14 +361,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_config_copy_properties
 argument_list|(
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|editor
 operator|->
 name|template
 argument_list|)
 argument_list|,
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|template
 argument_list|)
@@ -734,14 +740,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_config_copy_properties
 argument_list|(
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|editor
 operator|->
 name|template
 argument_list|)
 argument_list|,
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|template
 argument_list|)

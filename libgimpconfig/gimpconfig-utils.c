@@ -52,20 +52,20 @@ file|"gimpconfig-utils.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_config_diff:  * @a: a #GObject  * @b: another #GObject of the same type as @a  * @flags: a mask of GParamFlags  *  * Compares all properties of @a and @b that have all @flags set. If  * @flags is 0, all properties are compared.  *  * Return value: a GList of differing GParamSpecs.  **/
+comment|/**  * gimp_config_diff:  * @a: a #GimpConfig  * @b: another #GimpConfig of the same type as @a  * @flags: a mask of GParamFlags  *  * Compares all properties of @a and @b that have all @flags set. If  * @flags is 0, all properties are compared.  *  * Return value: a GList of differing GParamSpecs.  **/
 end_comment
 
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_config_diff (GObject * a,GObject * b,GParamFlags flags)
+DECL|function|gimp_config_diff (GimpConfig * a,GimpConfig * b,GParamFlags flags)
 name|gimp_config_diff
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
 name|a
 parameter_list|,
-name|GObject
+name|GimpConfig
 modifier|*
 name|b
 parameter_list|,
@@ -215,7 +215,10 @@ argument_list|)
 expr_stmt|;
 name|g_object_get_property
 argument_list|(
+name|G_OBJECT
+argument_list|(
 name|a
+argument_list|)
 argument_list|,
 name|param_specs
 index|[
@@ -230,7 +233,10 @@ argument_list|)
 expr_stmt|;
 name|g_object_get_property
 argument_list|(
+name|G_OBJECT
+argument_list|(
 name|b
+argument_list|)
 argument_list|,
 name|param_specs
 index|[
@@ -265,7 +271,7 @@ name|GIMP_PARAM_AGGREGATE
 operator|)
 condition|)
 block|{
-name|GObject
+name|GimpConfig
 modifier|*
 name|a_object
 init|=
@@ -275,7 +281,7 @@ operator|&
 name|a_value
 argument_list|)
 decl_stmt|;
-name|GObject
+name|GimpConfig
 modifier|*
 name|b_object
 init|=
@@ -628,19 +634,19 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_copy_properties:  * @src: a #GObject  * @dest: another #GObject of the same type as @src  *  * Retrieves all read and writeable property settings from @src and  * applies the values to @dest.  **/
+comment|/**  * gimp_config_copy_properties:  * @src: a #GimpConfig  * @dest: another #GimpConfig of the same type as @src  *  * Retrieves all read and writeable property settings from @src and  * applies the values to @dest.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_config_copy_properties (GObject * src,GObject * dest)
+DECL|function|gimp_config_copy_properties (GimpConfig * src,GimpConfig * dest)
 name|gimp_config_copy_properties
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
 name|src
 parameter_list|,
-name|GObject
+name|GimpConfig
 modifier|*
 name|dest
 parameter_list|)
@@ -662,7 +668,7 @@ name|i
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|G_IS_OBJECT
+name|GIMP_IS_CONFIG
 argument_list|(
 name|src
 argument_list|)
@@ -670,7 +676,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|G_IS_OBJECT
+name|GIMP_IS_CONFIG
 argument_list|(
 name|dest
 argument_list|)
@@ -714,7 +720,10 @@ condition|)
 return|return;
 name|g_object_freeze_notify
 argument_list|(
+name|G_OBJECT
+argument_list|(
 name|dest
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -800,11 +809,11 @@ block|{
 literal|0
 block|, }
 decl_stmt|;
-name|GObject
+name|GimpConfig
 modifier|*
 name|src_object
 decl_stmt|;
-name|GObject
+name|GimpConfig
 modifier|*
 name|dest_object
 decl_stmt|;
@@ -830,7 +839,10 @@ argument_list|)
 expr_stmt|;
 name|g_object_get_property
 argument_list|(
+name|G_OBJECT
+argument_list|(
 name|src
+argument_list|)
 argument_list|,
 name|prop_spec
 operator|->
@@ -842,7 +854,10 @@ argument_list|)
 expr_stmt|;
 name|g_object_get_property
 argument_list|(
+name|G_OBJECT
+argument_list|(
 name|dest
+argument_list|)
 argument_list|,
 name|prop_spec
 operator|->
@@ -927,7 +942,10 @@ argument_list|)
 expr_stmt|;
 name|g_object_get_property
 argument_list|(
+name|G_OBJECT
+argument_list|(
 name|src
+argument_list|)
 argument_list|,
 name|prop_spec
 operator|->
@@ -939,7 +957,10 @@ argument_list|)
 expr_stmt|;
 name|g_object_set_property
 argument_list|(
+name|G_OBJECT
+argument_list|(
 name|dest
+argument_list|)
 argument_list|,
 name|prop_spec
 operator|->
@@ -965,26 +986,33 @@ argument_list|)
 expr_stmt|;
 name|g_object_thaw_notify
 argument_list|(
+name|G_OBJECT
+argument_list|(
 name|dest
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_reset_properties:  * @object: a #GObject  *  * Resets all writable properties of @object to the default values as  * defined in their #GParamSpec.  **/
+comment|/**  * gimp_config_reset_properties:  * @config: a #GimpConfig  *  * Resets all writable properties of @object to the default values as  * defined in their #GParamSpec.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_config_reset_properties (GObject * object)
+DECL|function|gimp_config_reset_properties (GimpConfig * config)
 name|gimp_config_reset_properties
 parameter_list|(
+name|GimpConfig
+modifier|*
+name|config
+parameter_list|)
+block|{
 name|GObject
 modifier|*
 name|object
-parameter_list|)
-block|{
+decl_stmt|;
 name|GObjectClass
 modifier|*
 name|klass
@@ -1009,9 +1037,9 @@ name|i
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|G_IS_OBJECT
+name|GIMP_IS_CONFIG
 argument_list|(
-name|object
+name|config
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1019,7 +1047,7 @@ name|klass
 operator|=
 name|G_OBJECT_GET_CLASS
 argument_list|(
-name|object
+name|config
 argument_list|)
 expr_stmt|;
 name|property_specs
@@ -1038,6 +1066,13 @@ operator|!
 name|property_specs
 condition|)
 return|return;
+name|object
+operator|=
+name|G_OBJECT
+argument_list|(
+name|config
+argument_list|)
+expr_stmt|;
 name|g_object_freeze_notify
 argument_list|(
 name|object
@@ -1123,7 +1158,7 @@ operator|->
 name|value_type
 argument_list|)
 argument_list|,
-name|GIMP_TYPE_CONFIG_INTERFACE
+name|GIMP_TYPE_CONFIG
 argument_list|)
 condition|)
 block|{
@@ -1151,10 +1186,13 @@ argument_list|)
 expr_stmt|;
 name|gimp_config_reset
 argument_list|(
+name|GIMP_CONFIG
+argument_list|(
 name|g_value_get_object
 argument_list|(
 operator|&
 name|value
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -1220,7 +1220,7 @@ name|GIMP_TEXT
 argument_list|(
 name|gimp_config_duplicate
 argument_list|(
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|options
 operator|->
@@ -1486,14 +1486,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_config_copy_properties
 argument_list|(
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|tool
 operator|->
 name|text
 argument_list|)
 argument_list|,
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|options
 operator|->

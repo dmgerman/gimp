@@ -561,11 +561,11 @@ comment|/* dummy typedef */
 end_comment
 
 begin_typedef
-DECL|typedef|GimpDockedIface
+DECL|typedef|GimpDockedInterface
 typedef|typedef
 name|struct
-name|_GimpDockedIface
-name|GimpDockedIface
+name|_GimpDockedInterface
+name|GimpDockedInterface
 typedef|;
 end_typedef
 

@@ -75,7 +75,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b88a380103
+DECL|enum|__anon27a486140103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -290,7 +290,7 @@ name|g_type_add_interface_static
 argument_list|(
 name|grid_type
 argument_list|,
-name|GIMP_TYPE_CONFIG_INTERFACE
+name|GIMP_TYPE_CONFIG
 argument_list|,
 operator|&
 name|grid_iface_info
@@ -1003,7 +1003,7 @@ name|str
 operator|=
 name|gimp_config_serialize_to_string
 argument_list|(
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|grid
 argument_list|)
@@ -1134,7 +1134,7 @@ condition|(
 operator|!
 name|gimp_config_deserialize_string
 argument_list|(
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|grid
 argument_list|)

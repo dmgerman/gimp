@@ -362,9 +362,9 @@ specifier|static
 name|gboolean
 name|gimp_context_serialize
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GimpConfigWriter
 modifier|*
@@ -381,9 +381,9 @@ specifier|static
 name|gboolean
 name|gimp_context_serialize_property
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|guint
 name|property_id
@@ -409,9 +409,9 @@ specifier|static
 name|gboolean
 name|gimp_context_deserialize_property
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|guint
 name|property_id
@@ -1247,7 +1247,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abdd6560103
+DECL|enum|__anon288a6e6c0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1261,7 +1261,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abdd6560203
+DECL|enum|__anon288a6e6c0203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -1608,7 +1608,7 @@ name|g_type_add_interface_static
 argument_list|(
 name|context_type
 argument_list|,
-name|GIMP_TYPE_CONFIG_INTERFACE
+name|GIMP_TYPE_CONFIG
 argument_list|,
 operator|&
 name|config_iface_info
@@ -4540,12 +4540,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_context_serialize (GObject * object,GimpConfigWriter * writer,gpointer data)
+DECL|function|gimp_context_serialize (GimpConfig * config,GimpConfigWriter * writer,gpointer data)
 name|gimp_context_serialize
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GimpConfigWriter
 modifier|*
@@ -4558,7 +4558,7 @@ block|{
 return|return
 name|gimp_config_serialize_changed_properties
 argument_list|(
-name|object
+name|config
 argument_list|,
 name|writer
 argument_list|)
@@ -4569,12 +4569,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_context_serialize_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec,GimpConfigWriter * writer)
+DECL|function|gimp_context_serialize_property (GimpConfig * config,guint property_id,const GValue * value,GParamSpec * pspec,GimpConfigWriter * writer)
 name|gimp_context_serialize_property
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|guint
 name|property_id
@@ -4605,7 +4605,7 @@ name|context
 operator|=
 name|GIMP_CONTEXT
 argument_list|(
-name|object
+name|config
 argument_list|)
 expr_stmt|;
 if|#
@@ -4698,10 +4698,10 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_context_deserialize_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec,GScanner * scanner,GTokenType * expected)
+DECL|function|gimp_context_deserialize_property (GimpConfig * object,guint property_id,GValue * value,GParamSpec * pspec,GScanner * scanner,GTokenType * expected)
 name|gimp_context_deserialize_property
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
 name|object
 parameter_list|,

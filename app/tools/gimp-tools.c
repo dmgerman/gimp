@@ -754,7 +754,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_config_deserialize_file
 argument_list|(
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|tool_info
 operator|->
@@ -952,7 +952,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_config_serialize_to_file
 argument_list|(
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|tool_info
 operator|->

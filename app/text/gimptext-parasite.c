@@ -137,7 +137,7 @@ name|str
 operator|=
 name|gimp_config_serialize_to_string
 argument_list|(
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|text
 argument_list|)
@@ -268,7 +268,7 @@ condition|(
 operator|!
 name|gimp_config_deserialize_string
 argument_list|(
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|text
 argument_list|)
@@ -342,7 +342,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8652580103
+DECL|enum|__anon2991ab150103
 block|{
 DECL|enumerator|TEXT
 name|TEXT

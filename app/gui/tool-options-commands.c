@@ -197,7 +197,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_config_copy_properties
 argument_list|(
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|options
 operator|->
@@ -206,7 +206,7 @@ operator|->
 name|tool_options
 argument_list|)
 argument_list|,
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|options
 argument_list|)
@@ -354,12 +354,12 @@ argument_list|)
 decl_stmt|;
 name|gimp_config_copy_properties
 argument_list|(
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|options
 argument_list|)
 argument_list|,
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|options
 operator|->
@@ -613,7 +613,7 @@ argument_list|(
 name|data
 argument_list|)
 decl_stmt|;
-name|GObject
+name|GimpConfig
 modifier|*
 name|copy
 decl_stmt|;
@@ -639,7 +639,7 @@ name|copy
 operator|=
 name|gimp_config_duplicate
 argument_list|(
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|tool_info
 operator|->

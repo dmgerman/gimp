@@ -176,7 +176,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e70e820103
+DECL|enum|__anon2960d5e80103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -201,7 +201,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e70e820203
+DECL|enum|__anon2960d5e80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -335,9 +335,9 @@ specifier|static
 name|gboolean
 name|gimp_container_serialize
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GimpConfigWriter
 modifier|*
@@ -354,9 +354,9 @@ specifier|static
 name|gboolean
 name|gimp_container_deserialize
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GScanner
 modifier|*
@@ -514,7 +514,7 @@ name|g_type_add_interface_static
 argument_list|(
 name|container_type
 argument_list|,
-name|GIMP_TYPE_CONFIG_INTERFACE
+name|GIMP_TYPE_CONFIG
 argument_list|,
 operator|&
 name|config_iface_info
@@ -1316,7 +1316,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e70e820308
+DECL|struct|__anon2960d5e80308
 block|{
 DECL|member|writer
 name|GimpConfigWriter
@@ -1363,7 +1363,7 @@ name|name
 decl_stmt|;
 name|config_iface
 operator|=
-name|GIMP_GET_CONFIG_INTERFACE
+name|GIMP_CONFIG_GET_INTERFACE
 argument_list|(
 name|object
 argument_list|)
@@ -1445,7 +1445,10 @@ name|config_iface
 operator|->
 name|serialize
 argument_list|(
+name|GIMP_CONFIG
+argument_list|(
 name|object
+argument_list|)
 argument_list|,
 name|serialize_data
 operator|->
@@ -1469,12 +1472,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_container_serialize (GObject * object,GimpConfigWriter * writer,gpointer data)
+DECL|function|gimp_container_serialize (GimpConfig * config,GimpConfigWriter * writer,gpointer data)
 name|gimp_container_serialize
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GimpConfigWriter
 modifier|*
@@ -1495,7 +1498,7 @@ name|container
 operator|=
 name|GIMP_CONTAINER
 argument_list|(
-name|object
+name|config
 argument_list|)
 expr_stmt|;
 name|serialize_data
@@ -1540,12 +1543,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_container_deserialize (GObject * object,GScanner * scanner,gint nest_level,gpointer data)
+DECL|function|gimp_container_deserialize (GimpConfig * config,GScanner * scanner,gint nest_level,gpointer data)
 name|gimp_container_deserialize
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GScanner
 modifier|*
@@ -1569,7 +1572,7 @@ name|container
 operator|=
 name|GIMP_CONTAINER
 argument_list|(
-name|object
+name|config
 argument_list|)
 expr_stmt|;
 name|token
@@ -1701,7 +1704,7 @@ name|g_type_is_a
 argument_list|(
 name|type
 argument_list|,
-name|GIMP_TYPE_CONFIG_INTERFACE
+name|GIMP_TYPE_CONFIG
 argument_list|)
 condition|)
 block|{
@@ -1835,26 +1838,17 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
-block|{
-name|GimpConfigInterface
-modifier|*
-name|config_iface
-decl_stmt|;
-name|config_iface
-operator|=
-name|GIMP_GET_CONFIG_INTERFACE
-argument_list|(
-name|child
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
-name|config_iface
+name|GIMP_CONFIG_GET_INTERFACE
+argument_list|(
+name|config
+argument_list|)
 operator|->
 name|deserialize
 argument_list|(
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|child
 argument_list|)
@@ -1873,7 +1867,6 @@ comment|/*  warning should be already set by child  */
 return|return
 name|FALSE
 return|;
-block|}
 block|}
 block|}
 name|token

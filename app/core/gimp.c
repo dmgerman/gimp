@@ -261,7 +261,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2992c2530103
+DECL|enum|__anon2c1145a00103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -3410,7 +3410,7 @@ name|GIMP_CORE_CONFIG
 argument_list|(
 name|gimp_config_duplicate
 argument_list|(
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|gimp
 operator|->

@@ -143,17 +143,17 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_config_serialize_properties:  * @object: a #GObject.  * @writer: a #GimpConfigWriter.  *  * This function writes all object properties to the @writer.  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise  **/
+comment|/**  * gimp_config_serialize_properties:  * @config: a #GimpConfig.  * @writer: a #GimpConfigWriter.  *  * This function writes all object properties to the @writer.  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_config_serialize_properties (GObject * object,GimpConfigWriter * writer)
+DECL|function|gimp_config_serialize_properties (GimpConfig * config,GimpConfigWriter * writer)
 name|gimp_config_serialize_properties
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GimpConfigWriter
 modifier|*
@@ -179,7 +179,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|G_IS_OBJECT
 argument_list|(
-name|object
+name|config
 argument_list|)
 argument_list|,
 name|FALSE
@@ -189,7 +189,7 @@ name|klass
 operator|=
 name|G_OBJECT_GET_CLASS
 argument_list|(
-name|object
+name|config
 argument_list|)
 expr_stmt|;
 name|property_specs
@@ -250,7 +250,7 @@ condition|(
 operator|!
 name|gimp_config_serialize_property
 argument_list|(
-name|object
+name|config
 argument_list|,
 name|prop_spec
 argument_list|,
@@ -273,17 +273,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_serialize_changed_properties:  * @object: a #GObject.  * @writer: a #GimpConfigWriter.  *  * This function writes all object properties that have been changed from  * their default values to the @writer.  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise  **/
+comment|/**  * gimp_config_serialize_changed_properties:  * @config: a #GimpConfig.  * @writer: a #GimpConfigWriter.  *  * This function writes all object properties that have been changed from  * their default values to the @writer.  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_config_serialize_changed_properties (GObject * object,GimpConfigWriter * writer)
+DECL|function|gimp_config_serialize_changed_properties (GimpConfig * config,GimpConfigWriter * writer)
 name|gimp_config_serialize_changed_properties
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GimpConfigWriter
 modifier|*
@@ -316,7 +316,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|G_IS_OBJECT
 argument_list|(
-name|object
+name|config
 argument_list|)
 argument_list|,
 name|FALSE
@@ -326,7 +326,7 @@ name|klass
 operator|=
 name|G_OBJECT_GET_CLASS
 argument_list|(
-name|object
+name|config
 argument_list|)
 expr_stmt|;
 name|property_specs
@@ -394,7 +394,10 @@ argument_list|)
 expr_stmt|;
 name|g_object_get_property
 argument_list|(
-name|object
+name|G_OBJECT
+argument_list|(
+name|config
+argument_list|)
 argument_list|,
 name|prop_spec
 operator|->
@@ -421,7 +424,7 @@ condition|(
 operator|!
 name|gimp_config_serialize_property
 argument_list|(
-name|object
+name|config
 argument_list|,
 name|prop_spec
 argument_list|,
@@ -451,19 +454,19 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_serialize_properties_diff:  * @object: a #GObject.  * @compare: a #GObject of the same type as @object.  * @writer: a #GimpConfigWriter.  *  * This function compares @object and @compare and writes all  * properties of @object that have different values than @compare to  * the @writer.  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise  **/
+comment|/**  * gimp_config_serialize_properties_diff:  * @config: a #GimpConfig.  * @compare: a #GimpConfig of the same type as @config.  * @writer: a #GimpConfigWriter.  *  * This function compares @config and @compare and writes all  * properties of @config that have different values than @compare to  * the @writer.  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_config_serialize_properties_diff (GObject * object,GObject * compare,GimpConfigWriter * writer)
+DECL|function|gimp_config_serialize_properties_diff (GimpConfig * config,GimpConfig * compare,GimpConfigWriter * writer)
 name|gimp_config_serialize_properties_diff
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
-name|GObject
+name|GimpConfig
 modifier|*
 name|compare
 parameter_list|,
@@ -488,7 +491,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|G_IS_OBJECT
 argument_list|(
-name|object
+name|config
 argument_list|)
 argument_list|,
 name|FALSE
@@ -508,7 +511,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|G_TYPE_FROM_INSTANCE
 argument_list|(
-name|object
+name|config
 argument_list|)
 operator|==
 name|G_TYPE_FROM_INSTANCE
@@ -523,14 +526,14 @@ name|klass
 operator|=
 name|G_OBJECT_GET_CLASS
 argument_list|(
-name|object
+name|config
 argument_list|)
 expr_stmt|;
 name|diff
 operator|=
 name|gimp_config_diff
 argument_list|(
-name|object
+name|config
 argument_list|,
 name|compare
 argument_list|,
@@ -590,7 +593,7 @@ condition|(
 operator|!
 name|gimp_config_serialize_property
 argument_list|(
-name|object
+name|config
 argument_list|,
 name|prop_spec
 argument_list|,
@@ -614,12 +617,12 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_config_serialize_property (GObject * object,GParamSpec * param_spec,GimpConfigWriter * writer)
+DECL|function|gimp_config_serialize_property (GimpConfig * config,GParamSpec * param_spec,GimpConfigWriter * writer)
 name|gimp_config_serialize_property
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GParamSpec
 modifier|*
@@ -682,7 +685,10 @@ argument_list|)
 expr_stmt|;
 name|g_object_get_property
 argument_list|(
-name|object
+name|G_OBJECT
+argument_list|(
+name|config
+argument_list|)
 argument_list|,
 name|param_spec
 operator|->
@@ -707,7 +713,7 @@ name|g_type_interface_peek
 argument_list|(
 name|owner_class
 argument_list|,
-name|GIMP_TYPE_CONFIG_INTERFACE
+name|GIMP_TYPE_CONFIG
 argument_list|)
 expr_stmt|;
 comment|/*  We must call deserialize_property() *only* if the *exact* class    *  which implements it is param_spec->owner_type's class.    *    *  Therefore, we ask param_spec->owner_type's immediate parent class    *  for it's GimpConfigInterface and check if we get a different pointer.    *    *  (if the pointers are the same, param_spec->owner_type's    *   GimpConfigInterface is inherited from one of it's parent classes    *   and thus not able to handle param_spec->owner_type's properties).    */
@@ -733,7 +739,7 @@ name|g_type_interface_peek
 argument_list|(
 name|owner_parent_class
 argument_list|,
-name|GIMP_TYPE_CONFIG_INTERFACE
+name|GIMP_TYPE_CONFIG
 argument_list|)
 expr_stmt|;
 block|}
@@ -754,7 +760,7 @@ name|config_iface
 operator|->
 name|serialize_property
 argument_list|(
-name|object
+name|config
 argument_list|,
 name|param_spec
 operator|->
@@ -805,11 +811,11 @@ condition|)
 block|{
 name|GimpConfigInterface
 modifier|*
-name|gimp_config_iface
+name|config_iface
 init|=
 name|NULL
 decl_stmt|;
-name|GObject
+name|GimpConfig
 modifier|*
 name|prop_object
 decl_stmt|;
@@ -825,9 +831,9 @@ if|if
 condition|(
 name|prop_object
 condition|)
-name|gimp_config_iface
+name|config_iface
 operator|=
-name|GIMP_GET_CONFIG_INTERFACE
+name|GIMP_CONFIG_GET_INTERFACE
 argument_list|(
 name|prop_object
 argument_list|)
@@ -839,7 +845,7 @@ name|TRUE
 expr_stmt|;
 if|if
 condition|(
-name|gimp_config_iface
+name|config_iface
 condition|)
 block|{
 name|gimp_config_writer_open
@@ -853,7 +859,7 @@ argument_list|)
 expr_stmt|;
 name|success
 operator|=
-name|gimp_config_iface
+name|config_iface
 operator|->
 name|serialize
 argument_list|(
@@ -985,7 +991,7 @@ name|g_type_name
 argument_list|(
 name|G_TYPE_FROM_INSTANCE
 argument_list|(
-name|object
+name|config
 argument_list|)
 argument_list|)
 argument_list|,
@@ -1679,17 +1685,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_serialize_unknown_tokens:  * @object: a #GObject.  * @writer: a #GimpConfigWriter.  *  * Writes all unknown tokens attached to #object to the @writer.  See  * gimp_config_add_unknown_token().  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise  **/
+comment|/**  * gimp_config_serialize_unknown_tokens:  * @config: a #GimpConfig.  * @writer: a #GimpConfigWriter.  *  * Writes all unknown tokens attached to @config to the @writer.  See  * gimp_config_add_unknown_token().  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_config_serialize_unknown_tokens (GObject * object,GimpConfigWriter * writer)
+DECL|function|gimp_config_serialize_unknown_tokens (GimpConfig * config,GimpConfigWriter * writer)
 name|gimp_config_serialize_unknown_tokens
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GimpConfigWriter
 modifier|*
@@ -1700,7 +1706,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|G_IS_OBJECT
 argument_list|(
-name|object
+name|config
 argument_list|)
 argument_list|,
 name|FALSE
@@ -1713,7 +1719,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_config_foreach_unknown_token
 argument_list|(
-name|object
+name|config
 argument_list|,
 name|serialize_unknown_token
 argument_list|,

@@ -1022,7 +1022,7 @@ name|GIMP_GRID
 argument_list|(
 name|gimp_config_duplicate
 argument_list|(
-name|G_OBJECT
+name|GIMP_CONFIG
 argument_list|(
 name|gimage
 operator|->

@@ -54,13 +54,13 @@ name|GIMP_DOCKED_GET_INTERFACE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_INTERFACE ((obj), GIMP_TYPE_DOCKED, GimpDockedIface))
+value|(G_TYPE_INSTANCE_GET_INTERFACE ((obj), GIMP_TYPE_DOCKED, GimpDockedInterface))
 end_define
 
 begin_struct
-DECL|struct|_GimpDockedIface
+DECL|struct|_GimpDockedInterface
 struct|struct
-name|_GimpDockedIface
+name|_GimpDockedInterface
 block|{
 DECL|member|base_iface
 name|GTypeInterface

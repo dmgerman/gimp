@@ -131,7 +131,7 @@ specifier|static
 name|GTokenType
 name|gimp_config_deserialize_unknown
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
 name|object
 parameter_list|,
@@ -147,7 +147,7 @@ specifier|static
 name|GTokenType
 name|gimp_config_deserialize_property
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
 name|object
 parameter_list|,
@@ -170,7 +170,7 @@ name|GValue
 modifier|*
 name|value
 parameter_list|,
-name|GObject
+name|GimpConfig
 modifier|*
 name|object
 parameter_list|,
@@ -314,7 +314,7 @@ name|GValue
 modifier|*
 name|value
 parameter_list|,
-name|GObject
+name|GimpConfig
 modifier|*
 name|object
 parameter_list|,
@@ -341,7 +341,7 @@ name|GValue
 modifier|*
 name|value
 parameter_list|,
-name|GObject
+name|GimpConfig
 modifier|*
 name|object
 parameter_list|,
@@ -395,17 +395,17 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_config_deserialize_properties:  * @object: a #GObject.  * @scanner: a #GScanner.  * @nest_level:  * @store_unknown_tokens: %TRUE if you want to store unknown tokens.  *  * This function uses the @scanner to configure the properties of @object.  *  * The store_unknown_tokens parameter is a special feature for #GimpRc.  * If it set to %TRUE, unknown tokens (e.g. tokens that don't refer to  * a property of @object) with string values are attached to @object as  * unknown tokens. GimpConfig has a couple of functions to handle the  * attached key/value pairs.  *  * Return value:  **/
+comment|/**  * gimp_config_deserialize_properties:  * @object: a #GimpConfig.  * @scanner: a #GScanner.  * @nest_level:  * @store_unknown_tokens: %TRUE if you want to store unknown tokens.  *  * This function uses the @scanner to configure the properties of @object.  *  * The store_unknown_tokens parameter is a special feature for #GimpRc.  * If it set to %TRUE, unknown tokens (e.g. tokens that don't refer to  * a property of @object) with string values are attached to @object as  * unknown tokens. GimpConfig has a couple of functions to handle the  * attached key/value pairs.  *  * Return value:  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_config_deserialize_properties (GObject * object,GScanner * scanner,gint nest_level,gboolean store_unknown_tokens)
+DECL|function|gimp_config_deserialize_properties (GimpConfig * config,GScanner * scanner,gint nest_level,gboolean store_unknown_tokens)
 name|gimp_config_deserialize_properties
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GScanner
 modifier|*
@@ -447,9 +447,9 @@ name|next
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|G_IS_OBJECT
+name|GIMP_IS_CONFIG
 argument_list|(
-name|object
+name|config
 argument_list|)
 argument_list|,
 name|FALSE
@@ -459,7 +459,7 @@ name|klass
 operator|=
 name|G_OBJECT_GET_CLASS
 argument_list|(
-name|object
+name|config
 argument_list|)
 expr_stmt|;
 name|property_specs
@@ -486,7 +486,7 @@ name|g_type_qname
 argument_list|(
 name|G_TYPE_FROM_INSTANCE
 argument_list|(
-name|object
+name|config
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -553,7 +553,10 @@ argument_list|)
 expr_stmt|;
 name|g_object_freeze_notify
 argument_list|(
-name|object
+name|G_OBJECT
+argument_list|(
+name|config
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|token
@@ -621,7 +624,7 @@ name|token
 operator|=
 name|gimp_config_deserialize_unknown
 argument_list|(
-name|object
+name|config
 argument_list|,
 name|scanner
 argument_list|)
@@ -634,7 +637,7 @@ name|token
 operator|=
 name|gimp_config_deserialize_property
 argument_list|(
-name|object
+name|config
 argument_list|,
 name|scanner
 argument_list|,
@@ -664,7 +667,10 @@ argument_list|)
 expr_stmt|;
 name|g_object_thaw_notify
 argument_list|(
-name|object
+name|G_OBJECT
+argument_list|(
+name|config
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* If store_unknown_tokens is TRUE but the unknown token value couldn't      be parsed the default error message is rather confusing.      We try to produce something more meaningful here ... */
@@ -723,10 +729,10 @@ end_function
 begin_function
 specifier|static
 name|GTokenType
-DECL|function|gimp_config_deserialize_unknown (GObject * object,GScanner * scanner)
+DECL|function|gimp_config_deserialize_unknown (GimpConfig * object,GScanner * scanner)
 name|gimp_config_deserialize_unknown
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
 name|object
 parameter_list|,
@@ -814,12 +820,12 @@ end_function
 begin_function
 specifier|static
 name|GTokenType
-DECL|function|gimp_config_deserialize_property (GObject * object,GScanner * scanner,gint nest_level)
+DECL|function|gimp_config_deserialize_property (GimpConfig * config,GScanner * scanner,gint nest_level)
 name|gimp_config_deserialize_property
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GScanner
 modifier|*
@@ -835,7 +841,7 @@ name|owner_class
 decl_stmt|;
 name|GimpConfigInterface
 modifier|*
-name|gimp_config_iface
+name|config_iface
 decl_stmt|;
 name|GimpConfigInterface
 modifier|*
@@ -887,19 +893,19 @@ operator|->
 name|owner_type
 argument_list|)
 expr_stmt|;
-name|gimp_config_iface
+name|config_iface
 operator|=
 name|g_type_interface_peek
 argument_list|(
 name|owner_class
 argument_list|,
-name|GIMP_TYPE_CONFIG_INTERFACE
+name|GIMP_TYPE_CONFIG
 argument_list|)
 expr_stmt|;
 comment|/*  We must call deserialize_property() *only* if the *exact* class    *  which implements it is param_spec->owner_type's class.    *    *  Therefore, we ask param_spec->owner_type's immediate parent class    *  for it's GimpConfigInterface and check if we get a different pointer.    *    *  (if the pointers are the same, param_spec->owner_type's    *   GimpConfigInterface is inherited from one of it's parent classes    *   and thus not able to handle param_spec->owner_type's properties).    */
 if|if
 condition|(
-name|gimp_config_iface
+name|config_iface
 condition|)
 block|{
 name|GTypeClass
@@ -919,28 +925,28 @@ name|g_type_interface_peek
 argument_list|(
 name|owner_parent_class
 argument_list|,
-name|GIMP_TYPE_CONFIG_INTERFACE
+name|GIMP_TYPE_CONFIG
 argument_list|)
 expr_stmt|;
 block|}
 if|if
 condition|(
-name|gimp_config_iface
+name|config_iface
 operator|&&
-name|gimp_config_iface
+name|config_iface
 operator|!=
 name|parent_iface
 operator|&&
 comment|/* see comment above */
-name|gimp_config_iface
+name|config_iface
 operator|->
 name|deserialize_property
 operator|&&
-name|gimp_config_iface
+name|config_iface
 operator|->
 name|deserialize_property
 argument_list|(
-name|object
+name|config
 argument_list|,
 name|prop_spec
 operator|->
@@ -977,7 +983,7 @@ argument_list|(
 operator|&
 name|value
 argument_list|,
-name|object
+name|config
 argument_list|,
 name|prop_spec
 argument_list|,
@@ -994,7 +1000,7 @@ argument_list|(
 operator|&
 name|value
 argument_list|,
-name|object
+name|config
 argument_list|,
 name|prop_spec
 argument_list|,
@@ -1037,7 +1043,10 @@ operator|)
 condition|)
 name|g_object_set_property
 argument_list|(
-name|object
+name|G_OBJECT
+argument_list|(
+name|config
+argument_list|)
 argument_list|,
 name|prop_spec
 operator|->
@@ -1061,7 +1070,7 @@ name|g_type_name
 argument_list|(
 name|G_TYPE_FROM_INSTANCE
 argument_list|(
-name|object
+name|config
 argument_list|)
 argument_list|)
 argument_list|,
@@ -1095,14 +1104,14 @@ end_function
 begin_function
 specifier|static
 name|GTokenType
-DECL|function|gimp_config_deserialize_value (GValue * value,GObject * object,GParamSpec * prop_spec,GScanner * scanner)
+DECL|function|gimp_config_deserialize_value (GValue * value,GimpConfig * object,GParamSpec * prop_spec,GScanner * scanner)
 name|gimp_config_deserialize_value
 parameter_list|(
 name|GValue
 modifier|*
 name|value
 parameter_list|,
-name|GObject
+name|GimpConfig
 modifier|*
 name|object
 parameter_list|,
@@ -2225,16 +2234,16 @@ end_function
 begin_function
 specifier|static
 name|GTokenType
-DECL|function|gimp_config_deserialize_object (GValue * value,GObject * object,GParamSpec * prop_spec,GScanner * scanner,gint nest_level)
+DECL|function|gimp_config_deserialize_object (GValue * value,GimpConfig * config,GParamSpec * prop_spec,GScanner * scanner,gint nest_level)
 name|gimp_config_deserialize_object
 parameter_list|(
 name|GValue
 modifier|*
 name|value
 parameter_list|,
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GParamSpec
 modifier|*
@@ -2250,15 +2259,18 @@ parameter_list|)
 block|{
 name|GimpConfigInterface
 modifier|*
-name|gimp_config_iface
+name|config_iface
 decl_stmt|;
-name|GObject
+name|GimpConfig
 modifier|*
 name|prop_object
 decl_stmt|;
 name|g_object_get_property
 argument_list|(
-name|object
+name|G_OBJECT
+argument_list|(
+name|config
+argument_list|)
 argument_list|,
 name|prop_spec
 operator|->
@@ -2282,9 +2294,9 @@ condition|)
 return|return
 name|G_TOKEN_RIGHT_PAREN
 return|;
-name|gimp_config_iface
+name|config_iface
 operator|=
-name|GIMP_GET_CONFIG_INTERFACE
+name|GIMP_CONFIG_GET_INTERFACE
 argument_list|(
 name|prop_object
 argument_list|)
@@ -2292,7 +2304,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_config_iface
+name|config_iface
 condition|)
 return|return
 name|gimp_config_deserialize_any
@@ -2307,7 +2319,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|gimp_config_iface
+name|config_iface
 operator|->
 name|deserialize
 argument_list|(
@@ -2334,16 +2346,16 @@ end_function
 begin_function
 specifier|static
 name|GTokenType
-DECL|function|gimp_config_deserialize_value_array (GValue * value,GObject * object,GParamSpec * prop_spec,GScanner * scanner)
+DECL|function|gimp_config_deserialize_value_array (GValue * value,GimpConfig * config,GParamSpec * prop_spec,GScanner * scanner)
 name|gimp_config_deserialize_value_array
 parameter_list|(
 name|GValue
 modifier|*
 name|value
 parameter_list|,
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GParamSpec
 modifier|*
@@ -2439,7 +2451,7 @@ argument_list|(
 operator|&
 name|array_value
 argument_list|,
-name|object
+name|config
 argument_list|,
 name|array_spec
 operator|->

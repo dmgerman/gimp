@@ -110,7 +110,7 @@ specifier|static
 name|void
 name|gimp_editor_docked_iface_init
 parameter_list|(
-name|GimpDockedIface
+name|GimpDockedInterface
 modifier|*
 name|docked_iface
 parameter_list|)
@@ -456,10 +456,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_editor_docked_iface_init (GimpDockedIface * docked_iface)
+DECL|function|gimp_editor_docked_iface_init (GimpDockedInterface * docked_iface)
 name|gimp_editor_docked_iface_init
 parameter_list|(
-name|GimpDockedIface
+name|GimpDockedInterface
 modifier|*
 name|docked_iface
 parameter_list|)

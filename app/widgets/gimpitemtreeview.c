@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291118850103
+DECL|enum|__anon28b468c60103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -199,7 +199,7 @@ specifier|static
 name|void
 name|gimp_item_tree_view_docked_iface_init
 parameter_list|(
-name|GimpDockedIface
+name|GimpDockedInterface
 modifier|*
 name|docked_iface
 parameter_list|)
@@ -1521,10 +1521,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_item_tree_view_docked_iface_init (GimpDockedIface * docked_iface)
+DECL|function|gimp_item_tree_view_docked_iface_init (GimpDockedInterface * docked_iface)
 name|gimp_item_tree_view_docked_iface_init
 parameter_list|(
-name|GimpDockedIface
+name|GimpDockedInterface
 modifier|*
 name|docked_iface
 parameter_list|)

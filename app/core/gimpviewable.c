@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c67947e0103
+DECL|enum|__anon2b543d630103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -78,7 +78,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c67947e0203
+DECL|enum|__anon2b543d630203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -267,9 +267,9 @@ specifier|static
 name|gboolean
 name|gimp_viewable_serialize_property
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|guint
 name|property_id
@@ -434,7 +434,7 @@ name|g_type_add_interface_static
 argument_list|(
 name|viewable_type
 argument_list|,
-name|GIMP_TYPE_CONFIG_INTERFACE
+name|GIMP_TYPE_CONFIG
 argument_list|,
 operator|&
 name|config_iface_info
@@ -1142,12 +1142,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_viewable_serialize_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec,GimpConfigWriter * writer)
+DECL|function|gimp_viewable_serialize_property (GimpConfig * config,guint property_id,const GValue * value,GParamSpec * pspec,GimpConfigWriter * writer)
 name|gimp_viewable_serialize_property
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|guint
 name|property_id
@@ -1172,7 +1172,7 @@ name|viewable
 init|=
 name|GIMP_VIEWABLE
 argument_list|(
-name|object
+name|config
 argument_list|)
 decl_stmt|;
 switch|switch

@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279765050103
+DECL|enum|__anon2bc3227f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -246,9 +246,9 @@ specifier|static
 name|gboolean
 name|gimp_template_serialize
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GimpConfigWriter
 modifier|*
@@ -265,9 +265,9 @@ specifier|static
 name|gboolean
 name|gimp_template_deserialize
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GScanner
 modifier|*
@@ -395,7 +395,7 @@ name|g_type_add_interface_static
 argument_list|(
 name|template_type
 argument_list|,
-name|GIMP_TYPE_CONFIG_INTERFACE
+name|GIMP_TYPE_CONFIG
 argument_list|,
 operator|&
 name|config_iface_info
@@ -1254,12 +1254,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_template_serialize (GObject * object,GimpConfigWriter * writer,gpointer data)
+DECL|function|gimp_template_serialize (GimpConfig * config,GimpConfigWriter * writer,gpointer data)
 name|gimp_template_serialize
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GimpConfigWriter
 modifier|*
@@ -1272,7 +1272,7 @@ block|{
 return|return
 name|gimp_config_serialize_properties
 argument_list|(
-name|object
+name|config
 argument_list|,
 name|writer
 argument_list|)
@@ -1283,12 +1283,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_template_deserialize (GObject * object,GScanner * scanner,gint nest_level,gpointer data)
+DECL|function|gimp_template_deserialize (GimpConfig * config,GScanner * scanner,gint nest_level,gpointer data)
 name|gimp_template_deserialize
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GScanner
 modifier|*
@@ -1304,7 +1304,7 @@ block|{
 return|return
 name|gimp_config_deserialize_properties
 argument_list|(
-name|object
+name|config
 argument_list|,
 name|scanner
 argument_list|,

@@ -17,6 +17,29 @@ name|__CONFIG_TYPES_H__
 end_define
 
 begin_typedef
+DECL|typedef|GimpConfig
+typedef|typedef
+name|struct
+name|_GimpConfig
+name|GimpConfig
+typedef|;
+end_typedef
+
+begin_comment
+DECL|typedef|GimpConfig
+comment|/* dummy typedef */
+end_comment
+
+begin_typedef
+DECL|typedef|GimpConfigInterface
+typedef|typedef
+name|struct
+name|_GimpConfigInterface
+name|GimpConfigInterface
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpBaseConfig
 typedef|typedef
 name|struct

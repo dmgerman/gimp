@@ -20,9 +20,9 @@ begin_function_decl
 name|gboolean
 name|gimp_config_deserialize_properties
 parameter_list|(
-name|GObject
+name|GimpConfig
 modifier|*
-name|object
+name|config
 parameter_list|,
 name|GScanner
 modifier|*

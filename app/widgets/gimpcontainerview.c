@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29100cb20103
+DECL|enum|__anon29ffa7e70103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -145,7 +145,7 @@ specifier|static
 name|void
 name|gimp_container_view_docked_iface_init
 parameter_list|(
-name|GimpDockedIface
+name|GimpDockedInterface
 modifier|*
 name|docked_iface
 parameter_list|)
@@ -938,10 +938,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_container_view_docked_iface_init (GimpDockedIface * docked_iface)
+DECL|function|gimp_container_view_docked_iface_init (GimpDockedInterface * docked_iface)
 name|gimp_container_view_docked_iface_init
 parameter_list|(
-name|GimpDockedIface
+name|GimpDockedInterface
 modifier|*
 name|docked_iface
 parameter_list|)
