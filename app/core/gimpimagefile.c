@@ -279,7 +279,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29321fb50103
+DECL|enum|__anon277ae9240103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -293,7 +293,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29321fb50208
+DECL|struct|__anon277ae9240208
 block|{
 DECL|member|dirname
 specifier|const
@@ -2187,6 +2187,17 @@ block|}
 name|g_free
 argument_list|(
 name|thumb_name
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|success
+condition|)
+name|gimp_imagefile_update
+argument_list|(
+name|imagefile
+argument_list|,
+name|thumb_size
 argument_list|)
 expr_stmt|;
 return|return
