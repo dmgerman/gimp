@@ -16,6 +16,14 @@ directive|define
 name|__CURVES_H__
 end_define
 
+begin_define
+DECL|macro|CURVES_NUM_POINTS
+define|#
+directive|define
+name|CURVES_NUM_POINTS
+value|17
+end_define
+
 begin_struct
 DECL|struct|_Curves
 struct|struct
@@ -35,7 +43,7 @@ index|[
 literal|5
 index|]
 index|[
-literal|17
+name|CURVES_NUM_POINTS
 index|]
 index|[
 literal|2

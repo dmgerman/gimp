@@ -1769,7 +1769,7 @@ literal|0
 init|;
 name|i
 operator|<
-literal|17
+name|CURVES_NUM_POINTS
 condition|;
 name|i
 operator|++
@@ -3264,7 +3264,7 @@ index|[
 literal|5
 index|]
 index|[
-literal|17
+name|CURVES_NUM_POINTS
 index|]
 decl_stmt|;
 name|gint
@@ -3273,7 +3273,7 @@ index|[
 literal|5
 index|]
 index|[
-literal|17
+name|CURVES_NUM_POINTS
 index|]
 decl_stmt|;
 if|if
@@ -3330,7 +3330,7 @@ literal|0
 init|;
 name|j
 operator|<
-literal|17
+name|CURVES_NUM_POINTS
 condition|;
 name|j
 operator|++
@@ -3415,7 +3415,7 @@ literal|0
 init|;
 name|j
 operator|<
-literal|17
+name|CURVES_NUM_POINTS
 condition|;
 name|j
 operator|++
@@ -3683,7 +3683,7 @@ literal|0
 init|;
 name|j
 operator|<
-literal|17
+name|CURVES_NUM_POINTS
 condition|;
 name|j
 operator|++
@@ -4559,7 +4559,7 @@ literal|0
 init|;
 name|i
 operator|<
-literal|17
+name|CURVES_NUM_POINTS
 condition|;
 name|i
 operator|++
@@ -4795,7 +4795,7 @@ literal|1
 init|;
 name|i
 operator|<
-literal|17
+name|CURVES_NUM_POINTS
 condition|;
 name|i
 operator|++
@@ -6101,7 +6101,7 @@ literal|0
 init|;
 name|i
 operator|<
-literal|17
+name|CURVES_NUM_POINTS
 condition|;
 name|i
 operator|++

@@ -280,7 +280,7 @@ literal|0
 init|;
 name|j
 operator|<
-literal|17
+name|CURVES_NUM_POINTS
 condition|;
 name|j
 operator|++
@@ -356,7 +356,9 @@ index|[
 name|channel
 index|]
 index|[
-literal|16
+name|CURVES_NUM_POINTS
+operator|-
+literal|1
 index|]
 index|[
 literal|0
@@ -371,7 +373,9 @@ index|[
 name|channel
 index|]
 index|[
-literal|16
+name|CURVES_NUM_POINTS
+operator|-
+literal|1
 index|]
 index|[
 literal|1
@@ -401,7 +405,7 @@ decl_stmt|;
 name|gint
 name|points
 index|[
-literal|17
+name|CURVES_NUM_POINTS
 index|]
 decl_stmt|;
 name|gint
@@ -453,7 +457,7 @@ literal|0
 init|;
 name|i
 operator|<
-literal|17
+name|CURVES_NUM_POINTS
 condition|;
 name|i
 operator|++
