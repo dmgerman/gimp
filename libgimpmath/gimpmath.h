@@ -16,11 +16,39 @@ directive|define
 name|__GIMP_MATH_H__
 end_define
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_MATH_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<math.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_IEEEFP_H
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<ieeefp.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_ifdef
 ifdef|#
@@ -208,8 +236,32 @@ parameter_list|)
 value|((angle) * 360.0 / (2.0 * G_PI))
 ifdef|#
 directive|ifdef
-name|G_OS_WIN32
+name|HAVE_FINITE
 DECL|macro|FINITE (x)
+define|#
+directive|define
+name|FINITE
+parameter_list|(
+name|x
+parameter_list|)
+value|finite(x)
+else|#
+directive|else
+ifdef|#
+directive|ifdef
+name|HAVE_ISFINITE
+define|#
+directive|define
+name|FINITE
+parameter_list|(
+name|x
+parameter_list|)
+value|isfinite(x)
+else|#
+directive|else
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
 define|#
 directive|define
 name|FINITE
@@ -229,19 +281,18 @@ parameter_list|(
 name|x
 parameter_list|)
 value|isfinite(x)
-else|#
-directive|else
-define|#
-directive|define
-name|FINITE
-parameter_list|(
-name|x
-parameter_list|)
-value|finite(x)
 endif|#
 directive|endif
+comment|/* __EMX__ */
 endif|#
 directive|endif
+comment|/* G_OS_WIN32 */
+endif|#
+directive|endif
+comment|/* HAVE_ISFINITE */
+endif|#
+directive|endif
+comment|/* HAVE_FINITE */
 ifdef|#
 directive|ifdef
 name|__cplusplus
