@@ -16,6 +16,18 @@ directive|define
 name|__GIMP_TEXT_PARASITE_H__
 end_define
 
+begin_decl_stmt
+specifier|const
+name|gchar
+modifier|*
+name|gimp_text_parasite_name
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
 begin_function_decl
 name|GimpParasite
 modifier|*
@@ -46,13 +58,26 @@ begin_decl_stmt
 specifier|const
 name|gchar
 modifier|*
-name|gimp_text_parasite_name
+name|gimp_text_gdyntext_parasite_name
 argument_list|(
 name|void
 argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|GimpText
+modifier|*
+name|gimp_text_from_gdyntext_parasite
+parameter_list|(
+specifier|const
+name|GimpParasite
+modifier|*
+name|parasite
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_endif
 endif|#
