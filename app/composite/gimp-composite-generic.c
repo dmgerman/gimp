@@ -6342,7 +6342,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_generic_init:  *  * Initialise the generic set of compositing functions.  *  * Return value:  **/
+comment|/**  * gimp_composite_generic_init:  *  * Initialise the generic set of compositing functions.  *  * Returns: boolean indicating that the initialisation was successful.  **/
 end_comment
 
 begin_function
