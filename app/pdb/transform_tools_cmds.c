@@ -1646,7 +1646,7 @@ index|]
 operator|<
 name|trans_info
 index|[
-name|X1
+name|Y1
 index|]
 operator|)
 expr_stmt|;
