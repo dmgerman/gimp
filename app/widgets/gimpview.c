@@ -131,7 +131,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ec8a1e0103
+DECL|enum|__anon2a2332640103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -2650,7 +2650,7 @@ operator|->
 name|is_popup
 condition|)
 block|{
-name|gimp_gtk_drag_source_set_by_type
+name|gimp_dnd_drag_source_set_by_type
 argument_list|(
 name|GTK_WIDGET
 argument_list|(

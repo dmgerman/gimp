@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdnd.h"
 end_include
 
@@ -75,9 +81,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/* static void   gimp_channel_list_item_drop_color (GtkWidget     *widget, 						 const GimpRGB *color, 						 gpointer       data); */
-end_comment
+begin_function_decl
+specifier|static
+name|void
+name|gimp_channel_list_item_drop_color
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+specifier|const
+name|GimpRGB
+modifier|*
+name|color
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function
 name|GType
@@ -186,13 +208,81 @@ modifier|*
 name|list_item
 parameter_list|)
 block|{
-comment|/*   static GtkTargetEntry color_target_table[] =   {     GIMP_TARGET_COLOR   };   static guint n_color_targets = (sizeof (color_target_table) / 				  sizeof (color_target_table[0]));    gtk_drag_dest_set (GTK_WIDGET (list_item),                      GTK_DEST_DEFAULT_HIGHLIGHT |                      GTK_DEST_DEFAULT_MOTION    |                      GTK_DEST_DEFAULT_DROP,                      color_target_table, n_color_targets,                      GDK_ACTION_COPY);    gimp_dnd_color_dest_set (GTK_WIDGET (list_item), 			   gimp_channel_list_item_drop_color, NULL);   */
+name|gimp_dnd_color_dest_add
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|list_item
+argument_list|)
+argument_list|,
+name|gimp_channel_list_item_drop_color
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/* static void gimp_channel_list_item_drop_color (GtkWidget     *widget, 				   const GimpRGB *color, 				   gpointer       data) {   GimpChannel *channel;    channel =     GIMP_CHANNEL (GIMP_PREVIEW (GIMP_LIST_ITEM (widget)->preview)->viewable);    if (gimp_rgba_distance (color,&channel->color)> 0.0001)     {       channel->color = *color;        drawable_update (GIMP_DRAWABLE (channel), 		       0, 0, 		       GIMP_DRAWABLE (channel)->width, 		       GIMP_DRAWABLE (channel)->height);        gdisplays_flush ();     } } */
-end_comment
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_channel_list_item_drop_color (GtkWidget * widget,const GimpRGB * color,gpointer data)
+name|gimp_channel_list_item_drop_color
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+specifier|const
+name|GimpRGB
+modifier|*
+name|color
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|GimpChannel
+modifier|*
+name|channel
+decl_stmt|;
+name|channel
+operator|=
+name|GIMP_CHANNEL
+argument_list|(
+name|GIMP_PREVIEW
+argument_list|(
+name|GIMP_LIST_ITEM
+argument_list|(
+name|widget
+argument_list|)
+operator|->
+name|preview
+argument_list|)
+operator|->
+name|viewable
+argument_list|)
+expr_stmt|;
+name|gimp_channel_set_color
+argument_list|(
+name|channel
+argument_list|,
+name|color
+argument_list|)
+expr_stmt|;
+name|gimp_image_flush
+argument_list|(
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|channel
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+end_function
 
 end_unit
 

@@ -288,7 +288,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b884bb90103
+DECL|enum|__anon28ed2b110103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -511,29 +511,6 @@ modifier|*
 name|parent_class
 init|=
 name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|display_target_table
-specifier|static
-name|GtkTargetEntry
-name|display_target_table
-index|[]
-init|=
-block|{
-name|GIMP_TARGET_LAYER
-block|,
-name|GIMP_TARGET_CHANNEL
-block|,
-name|GIMP_TARGET_LAYER_MASK
-block|,
-name|GIMP_TARGET_COLOR
-block|,
-name|GIMP_TARGET_PATTERN
-block|,
-name|GIMP_TARGET_BUFFER
-block|}
 decl_stmt|;
 end_decl_stmt
 
@@ -1160,26 +1137,7 @@ name|shell
 argument_list|)
 expr_stmt|;
 comment|/*  dnd stuff  */
-name|gtk_drag_dest_set
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|shell
-argument_list|)
-argument_list|,
-name|GTK_DEST_DEFAULT_ALL
-argument_list|,
-name|display_target_table
-argument_list|,
-name|G_N_ELEMENTS
-argument_list|(
-name|display_target_table
-argument_list|)
-argument_list|,
-name|GDK_ACTION_COPY
-argument_list|)
-expr_stmt|;
-name|gimp_dnd_viewable_dest_set
+name|gimp_dnd_viewable_dest_add
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
@@ -1193,7 +1151,7 @@ argument_list|,
 name|shell
 argument_list|)
 expr_stmt|;
-name|gimp_dnd_viewable_dest_set
+name|gimp_dnd_viewable_dest_add
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
@@ -1207,7 +1165,7 @@ argument_list|,
 name|shell
 argument_list|)
 expr_stmt|;
-name|gimp_dnd_viewable_dest_set
+name|gimp_dnd_viewable_dest_add
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
@@ -1221,7 +1179,7 @@ argument_list|,
 name|shell
 argument_list|)
 expr_stmt|;
-name|gimp_dnd_viewable_dest_set
+name|gimp_dnd_viewable_dest_add
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
@@ -1235,7 +1193,7 @@ argument_list|,
 name|shell
 argument_list|)
 expr_stmt|;
-name|gimp_dnd_viewable_dest_set
+name|gimp_dnd_viewable_dest_add
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
@@ -1249,7 +1207,7 @@ argument_list|,
 name|shell
 argument_list|)
 expr_stmt|;
-name|gimp_dnd_color_dest_set
+name|gimp_dnd_color_dest_add
 argument_list|(
 name|GTK_WIDGET
 argument_list|(

@@ -153,7 +153,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9c1dea0103
+DECL|enum|__anon28efd6c60103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -204,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9c1dea0203
+DECL|enum|__anon28efd6c60203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -1246,26 +1246,7 @@ name|csp
 argument_list|)
 expr_stmt|;
 comment|/*  dnd stuff  */
-name|gtk_drag_dest_set
-argument_list|(
-name|csp
-operator|->
-name|xy_color
-argument_list|,
-name|GTK_DEST_DEFAULT_HIGHLIGHT
-operator||
-name|GTK_DEST_DEFAULT_MOTION
-operator||
-name|GTK_DEST_DEFAULT_DROP
-argument_list|,
-name|color_select_target_table
-argument_list|,
-name|n_color_select_targets
-argument_list|,
-name|GDK_ACTION_COPY
-argument_list|)
-expr_stmt|;
-name|gimp_dnd_color_dest_set
+name|gimp_dnd_color_dest_add
 argument_list|(
 name|csp
 operator|->
@@ -7216,7 +7197,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9c1dea0308
+DECL|struct|__anon28efd6c60308
 block|{
 DECL|member|callback
 name|GimpColorSelectorCallback

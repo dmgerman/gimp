@@ -460,7 +460,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|6
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -1304,7 +1304,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gimp_gtk_drag_source_set_by_type
+name|gimp_dnd_drag_source_set_by_type
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
@@ -1504,7 +1504,15 @@ name|container
 operator|=
 name|container
 expr_stmt|;
-name|gimp_gtk_drag_dest_set_by_type
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|make gimp_dnd_drag_dest_set_by_type() _add_by_type()
+endif|#
+directive|endif
+name|gimp_dnd_drag_dest_set_by_type
 argument_list|(
 name|GTK_WIDGET
 argument_list|(

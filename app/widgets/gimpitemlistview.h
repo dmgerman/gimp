@@ -207,6 +207,9 @@ parameter_list|,
 name|GimpViewable
 modifier|*
 name|template
+parameter_list|,
+name|gboolean
+name|interactive
 parameter_list|)
 function_decl|;
 end_typedef

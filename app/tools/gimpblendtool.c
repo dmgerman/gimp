@@ -504,21 +504,6 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|blend_target_table
-specifier|static
-name|GtkTargetEntry
-name|blend_target_table
-index|[]
-init|=
-block|{
-name|GIMP_TARGET_GRADIENT
-block|,
-name|GIMP_TARGET_TOOL
-block|}
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
 comment|/*  public functions  */
 end_comment
@@ -1903,28 +1888,7 @@ operator|)
 operator|->
 name|main_vbox
 expr_stmt|;
-comment|/*  dnd stuff  */
-name|gtk_drag_dest_set
-argument_list|(
-name|vbox
-argument_list|,
-name|GTK_DEST_DEFAULT_HIGHLIGHT
-operator||
-name|GTK_DEST_DEFAULT_MOTION
-operator||
-name|GTK_DEST_DEFAULT_DROP
-argument_list|,
-name|blend_target_table
-argument_list|,
-name|G_N_ELEMENTS
-argument_list|(
-name|blend_target_table
-argument_list|)
-argument_list|,
-name|GDK_ACTION_COPY
-argument_list|)
-expr_stmt|;
-name|gimp_dnd_viewable_dest_set
+name|gimp_dnd_viewable_dest_add
 argument_list|(
 name|vbox
 argument_list|,
@@ -1935,7 +1899,7 @@ argument_list|,
 name|tool_info
 argument_list|)
 expr_stmt|;
-name|gimp_dnd_viewable_dest_set
+name|gimp_dnd_viewable_dest_add
 argument_list|(
 name|vbox
 argument_list|,

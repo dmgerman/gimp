@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b606a5f0103
+DECL|enum|__anon2798e8bf0103
 block|{
 DECL|enumerator|GIMP_DND_TYPE_NONE
 name|GIMP_DND_TYPE_NONE
@@ -317,7 +317,7 @@ end_typedef
 
 begin_function_decl
 name|void
-name|gimp_dnd_file_dest_set
+name|gimp_dnd_file_dest_add
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -334,7 +334,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_dnd_file_dest_unset
+name|gimp_dnd_file_dest_remove
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -435,7 +435,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_dnd_color_dest_set
+name|gimp_dnd_color_dest_add
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -452,7 +452,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_dnd_color_dest_unset
+name|gimp_dnd_color_dest_remove
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -510,7 +510,7 @@ end_typedef
 
 begin_function_decl
 name|void
-name|gimp_gtk_drag_source_set_by_type
+name|gimp_dnd_drag_source_set_by_type
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -518,26 +518,6 @@ name|widget
 parameter_list|,
 name|GdkModifierType
 name|start_button_mask
-parameter_list|,
-name|GType
-name|type
-parameter_list|,
-name|GdkDragAction
-name|actions
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_gtk_drag_dest_set_by_type
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GtkDestDefaults
-name|flags
 parameter_list|,
 name|GType
 name|type
@@ -584,7 +564,27 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_dnd_viewable_dest_set
+name|gimp_dnd_drag_dest_set_by_type
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GtkDestDefaults
+name|flags
+parameter_list|,
+name|GType
+name|type
+parameter_list|,
+name|GdkDragAction
+name|actions
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_dnd_viewable_dest_add
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -604,7 +604,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_dnd_viewable_dest_unset
+name|gimp_dnd_viewable_dest_remove
 parameter_list|(
 name|GtkWidget
 modifier|*

@@ -287,6 +287,9 @@ parameter_list|,
 name|GimpVectors
 modifier|*
 name|template
+parameter_list|,
+name|gboolean
+name|interactive
 parameter_list|)
 function_decl|;
 end_function_decl

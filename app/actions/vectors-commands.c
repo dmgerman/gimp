@@ -216,6 +216,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|NULL
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1295,7 +1297,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_new_vectors_query (GimpImage * gimage,GimpVectors * template)
+DECL|function|vectors_new_vectors_query (GimpImage * gimage,GimpVectors * template,gboolean interactive)
 name|vectors_new_vectors_query
 parameter_list|(
 name|GimpImage
@@ -1305,6 +1307,9 @@ parameter_list|,
 name|GimpVectors
 modifier|*
 name|template
+parameter_list|,
+name|gboolean
+name|interactive
 parameter_list|)
 block|{
 name|NewVectorsOptions
@@ -1349,6 +1354,9 @@ expr_stmt|;
 if|if
 condition|(
 name|template
+operator|||
+operator|!
+name|interactive
 condition|)
 block|{
 name|GimpVectors
@@ -1372,11 +1380,6 @@ literal|1
 argument_list|)
 expr_stmt|;
 comment|/* undo_push_group_end (gimage); */
-name|gimp_image_flush
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
 return|return;
 block|}
 comment|/*  the new options structure  */

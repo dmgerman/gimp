@@ -148,7 +148,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292409550103
+DECL|enum|__anon273bd5880103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -1443,20 +1443,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  connect "drop to new" manually as it makes a difference whether    *  it was clicked or dropped    */
-name|gimp_gtk_drag_dest_set_by_type
-argument_list|(
-name|list_view
-operator|->
-name|new_button
-argument_list|,
-name|GTK_DEST_DEFAULT_ALL
-argument_list|,
-name|item_type
-argument_list|,
-name|GDK_ACTION_COPY
-argument_list|)
-expr_stmt|;
-name|gimp_dnd_viewable_dest_set
+name|gimp_dnd_viewable_dest_add
 argument_list|(
 name|list_view
 operator|->
@@ -2198,6 +2185,8 @@ operator|->
 name|gimage
 argument_list|,
 name|NULL
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -2262,6 +2251,15 @@ operator|->
 name|gimage
 argument_list|,
 name|viewable
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|gimp_image_flush
+argument_list|(
+name|view
+operator|->
+name|gimage
 argument_list|)
 expr_stmt|;
 block|}

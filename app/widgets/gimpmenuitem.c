@@ -576,7 +576,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gimp_gtk_drag_source_set_by_type
+name|gimp_dnd_drag_source_set_by_type
 argument_list|(
 name|GTK_WIDGET
 argument_list|(

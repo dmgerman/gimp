@@ -735,7 +735,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  dnd stuff  */
-name|gimp_gtk_drag_dest_set_by_type
+name|gtk_drag_dest_set
 argument_list|(
 name|about_dialog
 argument_list|,
@@ -743,12 +743,14 @@ name|GTK_DEST_DEFAULT_MOTION
 operator||
 name|GTK_DEST_DEFAULT_DROP
 argument_list|,
-name|GIMP_TYPE_TOOL_INFO
+name|NULL
+argument_list|,
+literal|0
 argument_list|,
 name|GDK_ACTION_COPY
 argument_list|)
 expr_stmt|;
-name|gimp_dnd_viewable_dest_set
+name|gimp_dnd_viewable_dest_add
 argument_list|(
 name|about_dialog
 argument_list|,

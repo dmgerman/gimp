@@ -1873,8 +1873,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dnd_data_dest_set (GimpDndType data_type,GtkWidget * widget,gpointer set_data_func,gpointer set_data_data)
-name|gimp_dnd_data_dest_set
+DECL|function|gimp_dnd_data_dest_add (GimpDndType data_type,GtkWidget * widget,gpointer set_data_func,gpointer set_data_data)
+name|gimp_dnd_data_dest_add
 parameter_list|(
 name|GimpDndType
 name|data_type
@@ -1890,9 +1890,40 @@ name|gpointer
 name|set_data_data
 parameter_list|)
 block|{
+name|GtkTargetList
+modifier|*
+name|target_list
+decl_stmt|;
 name|gboolean
 name|drop_connected
 decl_stmt|;
+comment|/*  set a default drag dest if not already done  */
+if|if
+condition|(
+operator|!
+name|g_object_get_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+literal|"gtk-drag-dest"
+argument_list|)
+condition|)
+name|gtk_drag_dest_set
+argument_list|(
+name|widget
+argument_list|,
+name|GTK_DEST_DEFAULT_ALL
+argument_list|,
+name|NULL
+argument_list|,
+literal|0
+argument_list|,
+name|GDK_ACTION_COPY
+argument_list|)
+expr_stmt|;
 name|drop_connected
 operator|=
 name|GPOINTER_TO_INT
@@ -1981,14 +2012,63 @@ argument_list|,
 name|set_data_data
 argument_list|)
 expr_stmt|;
+name|target_list
+operator|=
+name|gtk_drag_dest_get_target_list
+argument_list|(
+name|widget
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|target_list
+condition|)
+name|gtk_target_list_add_table
+argument_list|(
+name|target_list
+argument_list|,
+operator|&
+name|dnd_data_defs
+index|[
+name|data_type
+index|]
+operator|.
+name|target_entry
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+else|else
+name|target_list
+operator|=
+name|gtk_target_list_new
+argument_list|(
+operator|&
+name|dnd_data_defs
+index|[
+name|data_type
+index|]
+operator|.
+name|target_entry
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+name|gtk_drag_dest_set_target_list
+argument_list|(
+name|widget
+argument_list|,
+name|target_list
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dnd_data_dest_unset (GimpDndType data_type,GtkWidget * widget)
-name|gimp_dnd_data_dest_unset
+DECL|function|gimp_dnd_data_dest_remove (GimpDndType data_type,GtkWidget * widget)
+name|gimp_dnd_data_dest_remove
 parameter_list|(
 name|GimpDndType
 name|data_type
@@ -1998,6 +2078,10 @@ modifier|*
 name|widget
 parameter_list|)
 block|{
+name|GtkTargetList
+modifier|*
+name|target_list
+decl_stmt|;
 name|gboolean
 name|drop_connected
 decl_stmt|;
@@ -2056,6 +2140,60 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|target_list
+operator|=
+name|gtk_drag_dest_get_target_list
+argument_list|(
+name|widget
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|target_list
+condition|)
+block|{
+name|GdkAtom
+name|atom
+decl_stmt|;
+name|atom
+operator|=
+name|gdk_atom_intern
+argument_list|(
+name|dnd_data_defs
+index|[
+name|data_type
+index|]
+operator|.
+name|target_entry
+operator|.
+name|target
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|atom
+operator|!=
+name|GDK_NONE
+condition|)
+block|{
+name|gtk_target_list_remove
+argument_list|(
+name|target_list
+argument_list|,
+name|atom
+argument_list|)
+expr_stmt|;
+name|gtk_drag_dest_set_target_list
+argument_list|(
+name|widget
+argument_list|,
+name|target_list
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 block|}
 end_function
 
@@ -2322,8 +2460,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_dnd_file_dest_set (GtkWidget * widget,GimpDndDropFileFunc set_file_func,gpointer data)
-name|gimp_dnd_file_dest_set
+DECL|function|gimp_dnd_file_dest_add (GtkWidget * widget,GimpDndDropFileFunc set_file_func,gpointer data)
+name|gimp_dnd_file_dest_add
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -2336,7 +2474,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|gimp_dnd_data_dest_set
+name|gimp_dnd_data_dest_add
 argument_list|(
 name|GIMP_DND_TYPE_URI_LIST
 argument_list|,
@@ -2350,7 +2488,7 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|gimp_dnd_data_dest_set
+name|gimp_dnd_data_dest_add
 argument_list|(
 name|GIMP_DND_TYPE_TEXT_PLAIN
 argument_list|,
@@ -2364,7 +2502,7 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|gimp_dnd_data_dest_set
+name|gimp_dnd_data_dest_add
 argument_list|(
 name|GIMP_DND_TYPE_NETSCAPE_URL
 argument_list|,
@@ -2383,29 +2521,29 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_dnd_file_dest_unset (GtkWidget * widget)
-name|gimp_dnd_file_dest_unset
+DECL|function|gimp_dnd_file_dest_remove (GtkWidget * widget)
+name|gimp_dnd_file_dest_remove
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|)
 block|{
-name|gimp_dnd_data_dest_unset
+name|gimp_dnd_data_dest_remove
 argument_list|(
 name|GIMP_DND_TYPE_URI_LIST
 argument_list|,
 name|widget
 argument_list|)
 expr_stmt|;
-name|gimp_dnd_data_dest_unset
+name|gimp_dnd_data_dest_remove
 argument_list|(
 name|GIMP_DND_TYPE_TEXT_PLAIN
 argument_list|,
 name|widget
 argument_list|)
 expr_stmt|;
-name|gimp_dnd_data_dest_unset
+name|gimp_dnd_data_dest_remove
 argument_list|(
 name|GIMP_DND_TYPE_NETSCAPE_URL
 argument_list|,
@@ -3386,8 +3524,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_dnd_color_dest_set (GtkWidget * widget,GimpDndDropColorFunc set_color_func,gpointer data)
-name|gimp_dnd_color_dest_set
+DECL|function|gimp_dnd_color_dest_add (GtkWidget * widget,GimpDndDropColorFunc set_color_func,gpointer data)
+name|gimp_dnd_color_dest_add
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -3400,7 +3538,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|gimp_dnd_data_dest_set
+name|gimp_dnd_data_dest_add
 argument_list|(
 name|GIMP_DND_TYPE_COLOR
 argument_list|,
@@ -3419,15 +3557,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_dnd_color_dest_unset (GtkWidget * widget)
-name|gimp_dnd_color_dest_unset
+DECL|function|gimp_dnd_color_dest_remove (GtkWidget * widget)
+name|gimp_dnd_color_dest_remove
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|)
 block|{
-name|gimp_dnd_data_dest_unset
+name|gimp_dnd_data_dest_remove
 argument_list|(
 name|GIMP_DND_TYPE_COLOR
 argument_list|,
@@ -3746,8 +3884,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_gtk_drag_source_set_by_type (GtkWidget * widget,GdkModifierType start_button_mask,GType type,GdkDragAction actions)
-name|gimp_gtk_drag_source_set_by_type
+DECL|function|gimp_dnd_drag_source_set_by_type (GtkWidget * widget,GdkModifierType start_button_mask,GType type,GdkDragAction actions)
+name|gimp_dnd_drag_source_set_by_type
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -3812,8 +3950,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_gtk_drag_dest_set_by_type (GtkWidget * widget,GtkDestDefaults flags,GType type,GdkDragAction actions)
-name|gimp_gtk_drag_dest_set_by_type
+DECL|function|gimp_dnd_drag_dest_set_by_type (GtkWidget * widget,GtkDestDefaults flags,GType type,GdkDragAction actions)
+name|gimp_dnd_drag_dest_set_by_type
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -3992,8 +4130,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_dnd_viewable_dest_set (GtkWidget * widget,GType type,GimpDndDropViewableFunc set_viewable_func,gpointer data)
-name|gimp_dnd_viewable_dest_set
+DECL|function|gimp_dnd_viewable_dest_add (GtkWidget * widget,GType type,GimpDndDropViewableFunc set_viewable_func,gpointer data)
+name|gimp_dnd_viewable_dest_add
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -4041,7 +4179,7 @@ operator|==
 name|GIMP_DND_TYPE_NONE
 condition|)
 return|return;
-name|gimp_dnd_data_dest_set
+name|gimp_dnd_data_dest_add
 argument_list|(
 name|dnd_type
 argument_list|,
@@ -4060,8 +4198,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_dnd_viewable_dest_unset (GtkWidget * widget,GType type)
-name|gimp_dnd_viewable_dest_unset
+DECL|function|gimp_dnd_viewable_dest_remove (GtkWidget * widget,GType type)
+name|gimp_dnd_viewable_dest_remove
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -4096,7 +4234,7 @@ operator|==
 name|GIMP_DND_TYPE_NONE
 condition|)
 return|return;
-name|gimp_dnd_data_dest_unset
+name|gimp_dnd_data_dest_remove
 argument_list|(
 name|dnd_type
 argument_list|,
