@@ -126,25 +126,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpfontselection.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimphelp-ids.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimppropwidgets.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpwidgets-utils.h"
 end_include
 
 begin_include

@@ -1050,13 +1050,6 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|gimp_font_list_load_aliases
-argument_list|(
-name|list
-argument_list|,
-name|context
-argument_list|)
-expr_stmt|;
 name|os
 operator|=
 name|FcObjectSetBuild
@@ -1145,6 +1138,22 @@ name|desc
 argument_list|)
 expr_stmt|;
 block|}
+comment|/*  only create aliases if there is at least one font available  */
+if|if
+condition|(
+name|fontset
+operator|->
+name|nfont
+operator|>
+literal|0
+condition|)
+name|gimp_font_list_load_aliases
+argument_list|(
+name|list
+argument_list|,
+name|context
+argument_list|)
+expr_stmt|;
 name|FcFontSetDestroy
 argument_list|(
 name|fontset
@@ -1157,6 +1166,10 @@ begin_else
 else|#
 directive|else
 end_else
+
+begin_comment
+comment|/* ! USE_FONTCONFIG_DIRECTLY  */
+end_comment
 
 begin_function
 specifier|static

@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -1378,6 +1384,33 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_container_num_children
+argument_list|(
+name|image
+operator|->
+name|gimp
+operator|->
+name|fonts
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Due to lack of any fonts,\n"
+literal|"text functionality is not available."
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
+block|}
 name|layout
 operator|=
 name|gimp_text_layout_new

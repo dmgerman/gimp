@@ -222,19 +222,6 @@ name|border
 operator|=
 literal|0
 expr_stmt|;
-name|g_print
-argument_list|(
-literal|"text_render: x = %d, y = %d, fontname = '%s', border = %d\n"
-argument_list|,
-name|text_x
-argument_list|,
-name|text_y
-argument_list|,
-name|fontname
-argument_list|,
-name|border
-argument_list|)
-expr_stmt|;
 name|desc
 operator|=
 name|pango_font_description_from_string
