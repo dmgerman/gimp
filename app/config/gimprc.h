@@ -204,6 +204,27 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_rc_set_unknown_token
+parameter_list|(
+name|GimpRc
+modifier|*
+name|rc
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|token
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|value
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

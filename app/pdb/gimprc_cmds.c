@@ -264,6 +264,7 @@ condition|(
 name|success
 condition|)
 block|{
+comment|/*  use edit_config because unknown tokens are set there  */
 name|value
 operator|=
 name|gimp_rc_query
@@ -272,7 +273,7 @@ name|GIMP_RC
 argument_list|(
 name|gimp
 operator|->
-name|config
+name|edit_config
 argument_list|)
 argument_list|,
 name|token
@@ -501,13 +502,14 @@ condition|(
 name|success
 condition|)
 block|{
-name|gimp_config_add_unknown_token
+comment|/*  use edit_config because that's the one that gets saved  */
+name|gimp_rc_set_unknown_token
 argument_list|(
-name|GIMP_CONFIG
+name|GIMP_RC
 argument_list|(
 name|gimp
 operator|->
-name|config
+name|edit_config
 argument_list|)
 argument_list|,
 name|token

@@ -1723,7 +1723,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1d1cf00108
+DECL|struct|__anon2b3e6aaa0108
 block|{
 DECL|member|key
 name|gchar
