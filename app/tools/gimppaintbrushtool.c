@@ -117,10 +117,17 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
+begin_define
+DECL|macro|WANT_PAINT_BRUSH_BITS
+define|#
+directive|define
+name|WANT_PAINT_BRUSH_BITS
+end_define
+
 begin_include
 include|#
 directive|include
-file|"pixmaps2.h"
+file|"icons.h"
 end_include
 
 begin_define
@@ -301,7 +308,7 @@ name|gchar
 operator|*
 operator|*
 operator|)
-name|paint_bits
+name|paint_brush_bits
 argument_list|)
 expr_stmt|;
 block|}
@@ -855,11 +862,6 @@ name|gdouble
 name|x
 decl_stmt|,
 name|paint_left
-decl_stmt|;
-name|gdouble
-name|position
-init|=
-literal|0.0
 decl_stmt|;
 name|guchar
 name|local_blend

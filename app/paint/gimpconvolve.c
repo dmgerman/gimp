@@ -117,10 +117,17 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
+begin_define
+DECL|macro|WANT_BLUR_BITS
+define|#
+directive|define
+name|WANT_BLUR_BITS
+end_define
+
 begin_include
 include|#
 directive|include
-file|"pixmaps2.h"
+file|"icons.h"
 end_include
 
 begin_define
@@ -200,7 +207,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b30b5220103
+DECL|enum|__anon2bb8f8530103
 block|{
 DECL|enumerator|CONVOLVE_NCLIP
 name|CONVOLVE_NCLIP

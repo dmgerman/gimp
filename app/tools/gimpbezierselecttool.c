@@ -159,10 +159,17 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
+begin_define
+DECL|macro|WANT_BEZIER_SELECT_BITS
+define|#
+directive|define
+name|WANT_BEZIER_SELECT_BITS
+end_define
+
 begin_include
 include|#
 directive|include
-file|"pixmaps2.h"
+file|"icons.h"
 end_include
 
 begin_define
@@ -262,7 +269,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ed3aed0108
+DECL|struct|__anon292f01580108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -298,7 +305,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ed3aed0208
+DECL|struct|__anon292f01580208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -353,7 +360,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ed3aed0308
+DECL|struct|__anon292f01580308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -519,7 +526,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ed3aed0403
+DECL|enum|__anon292f01580403
 block|{
 DECL|enumerator|BEZIER_SELECT
 name|BEZIER_SELECT
@@ -1239,7 +1246,7 @@ name|gchar
 operator|*
 operator|*
 operator|)
-name|bezier_bits
+name|bezier_select_bits
 argument_list|)
 expr_stmt|;
 block|}

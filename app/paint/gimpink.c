@@ -159,10 +159,17 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
+begin_define
+DECL|macro|WANT_INK_BITS
+define|#
+directive|define
+name|WANT_INK_BITS
+end_define
+
 begin_include
 include|#
 directive|include
-file|"pixmaps2.h"
+file|"icons.h"
 end_include
 
 begin_define
@@ -6376,7 +6383,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon295a9d950103
+DECL|enum|__anon27b75b9f0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

@@ -117,10 +117,17 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
+begin_define
+DECL|macro|WANT_RECT_SELECT_BITS
+define|#
+directive|define
+name|WANT_RECT_SELECT_BITS
+end_define
+
 begin_include
 include|#
 directive|include
-file|"pixmaps2.h"
+file|"icons.h"
 end_include
 
 begin_define
@@ -133,7 +140,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b20ee210103
+DECL|enum|__anon2b5e23f90103
 block|{
 DECL|enumerator|RECT_SELECT
 name|RECT_SELECT
@@ -360,7 +367,7 @@ name|gchar
 operator|*
 operator|*
 operator|)
-name|rect_bits
+name|rect_select_bits
 argument_list|)
 expr_stmt|;
 block|}

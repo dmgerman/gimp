@@ -153,10 +153,17 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
+begin_define
+DECL|macro|WANT_CLONE_BITS
+define|#
+directive|define
+name|WANT_CLONE_BITS
+end_define
+
 begin_include
 include|#
 directive|include
-file|"pixmaps2.h"
+file|"icons.h"
 end_include
 
 begin_define
@@ -202,7 +209,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e438620103
+DECL|enum|__anon2c73c0930103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO

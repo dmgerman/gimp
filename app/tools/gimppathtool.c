@@ -87,10 +87,17 @@ directive|include
 file|"path_tool.h"
 end_include
 
+begin_define
+DECL|macro|WANT_PATH_TOOL_BITS
+define|#
+directive|define
+name|WANT_PATH_TOOL_BITS
+end_define
+
 begin_include
 include|#
 directive|include
-file|"pixmaps2.h"
+file|"icons.h"
 end_include
 
 begin_comment
@@ -3311,15 +3318,6 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|GimpPathTool
-modifier|*
-name|path_tool
-init|=
-name|GIMP_PATH_TOOL
-argument_list|(
-name|tool
-argument_list|)
-decl_stmt|;
 if|#
 directive|if
 literal|0

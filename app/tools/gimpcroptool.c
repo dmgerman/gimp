@@ -150,13 +150,20 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pixmaps2.h"
+file|"libgimp/gimpintl.h"
 end_include
+
+begin_define
+DECL|macro|WANT_CROP_BITS
+define|#
+directive|define
+name|WANT_CROP_BITS
+end_define
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"icons.h"
 end_include
 
 begin_define
@@ -704,7 +711,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278c75330103
+DECL|enum|__anon289f3f530103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING

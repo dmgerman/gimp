@@ -183,10 +183,17 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
+begin_define
+DECL|macro|WANT_BLEND_BITS
+define|#
+directive|define
+name|WANT_BLEND_BITS
+end_define
+
 begin_include
 include|#
 directive|include
-file|"pixmaps2.h"
+file|"icons.h"
 end_include
 
 begin_comment
@@ -347,7 +354,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6222730108
+DECL|struct|__anon29107d930108
 block|{
 DECL|member|offset
 name|gdouble
@@ -399,7 +406,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6222730208
+DECL|struct|__anon29107d930208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -1162,7 +1169,7 @@ name|gchar
 operator|*
 operator|*
 operator|)
-name|gradient_bits
+name|blend_bits
 argument_list|)
 expr_stmt|;
 block|}

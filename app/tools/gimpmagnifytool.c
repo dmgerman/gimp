@@ -87,10 +87,17 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
+begin_define
+DECL|macro|WANT_MAGNIFY_BITS
+define|#
+directive|define
+name|WANT_MAGNIFY_BITS
+end_define
+
 begin_include
 include|#
 directive|include
-file|"pixmaps2.h"
+file|"icons.h"
 end_include
 
 begin_typedef

@@ -271,9 +271,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|procedural_db_unregister (gchar * name)
+DECL|function|procedural_db_unregister (const gchar * name)
 name|procedural_db_unregister
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -348,9 +349,10 @@ end_function
 begin_function
 name|ProcRecord
 modifier|*
-DECL|function|procedural_db_lookup (gchar * name)
+DECL|function|procedural_db_lookup (const gchar * name)
 name|procedural_db_lookup
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -406,9 +408,10 @@ end_function
 begin_function
 name|Argument
 modifier|*
-DECL|function|procedural_db_execute (gchar * name,Argument * args)
+DECL|function|procedural_db_execute (const gchar * name,Argument * args)
 name|procedural_db_execute
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -843,9 +846,10 @@ end_function
 begin_function
 name|Argument
 modifier|*
-DECL|function|procedural_db_run_proc (gchar * name,gint * nreturn_vals,...)
+DECL|function|procedural_db_run_proc (const gchar * name,gint * nreturn_vals,...)
 name|procedural_db_run_proc
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name

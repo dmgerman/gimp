@@ -394,6 +394,7 @@ begin_function_decl
 name|void
 name|procedural_db_unregister
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -406,6 +407,7 @@ name|ProcRecord
 modifier|*
 name|procedural_db_lookup
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -418,6 +420,7 @@ name|Argument
 modifier|*
 name|procedural_db_execute
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -434,6 +437,7 @@ name|Argument
 modifier|*
 name|procedural_db_run_proc
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name

@@ -1,27 +1,17 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
+comment|/*  Tools icons in the GIMP icon image format  */
 end_comment
 
 begin_comment
-comment|/*  Image name: airbrush  */
+comment|/*    *  Include this file and define #WANT_TOOL_BITS, replacing  *  TOOL with the tools name, e.g. #define WANT_AIRBRUSH_BITS  */
 end_comment
 
-begin_define
-DECL|macro|airbrush_width
-define|#
-directive|define
-name|airbrush_width
-value|22
-end_define
-
-begin_define
-DECL|macro|airbrush_height
-define|#
-directive|define
-name|airbrush_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_AIRBRUSH_BITS
+end_ifdef
 
 begin_decl_stmt
 DECL|variable|airbrush_bits
@@ -79,36 +69,23 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: bezier  */
-end_comment
-
-begin_define
-DECL|macro|bezier_width
-define|#
-directive|define
-name|bezier_width
-value|22
-end_define
-
-begin_define
-DECL|macro|bezier_height
-define|#
-directive|define
-name|bezier_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_BEZIER_SELECT_BITS
+end_ifdef
 
 begin_decl_stmt
-DECL|variable|bezier_bits
+DECL|variable|bezier_select_bits
 specifier|static
 name|char
 modifier|*
-name|bezier_bits
+name|bezier_select_bits
 index|[]
 init|=
 block|{
@@ -159,29 +136,16 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: blur  */
-end_comment
-
-begin_define
-DECL|macro|blur_width
-define|#
-directive|define
-name|blur_width
-value|22
-end_define
-
-begin_define
-DECL|macro|blur_height
-define|#
-directive|define
-name|blur_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_BLUR_BITS
+end_ifdef
 
 begin_decl_stmt
 DECL|variable|blur_bits
@@ -239,36 +203,23 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: circ  */
-end_comment
-
-begin_define
-DECL|macro|circ_width
-define|#
-directive|define
-name|circ_width
-value|22
-end_define
-
-begin_define
-DECL|macro|circ_height
-define|#
-directive|define
-name|circ_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_ELLIPSE_SELECT_BITS
+end_ifdef
 
 begin_decl_stmt
-DECL|variable|circ_bits
+DECL|variable|ellipse_select_bits
 specifier|static
 name|char
 modifier|*
-name|circ_bits
+name|ellipse_select_bits
 index|[]
 init|=
 block|{
@@ -319,29 +270,16 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: clone  */
-end_comment
-
-begin_define
-DECL|macro|clone_width
-define|#
-directive|define
-name|clone_width
-value|22
-end_define
-
-begin_define
-DECL|macro|clone_height
-define|#
-directive|define
-name|clone_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_CLONE_BITS
+end_ifdef
 
 begin_decl_stmt
 DECL|variable|clone_bits
@@ -399,36 +337,23 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: colorpicker  */
-end_comment
-
-begin_define
-DECL|macro|colorpicker_width
-define|#
-directive|define
-name|colorpicker_width
-value|22
-end_define
-
-begin_define
-DECL|macro|colorpicker_height
-define|#
-directive|define
-name|colorpicker_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_COLOR_PICKER_BITS
+end_ifdef
 
 begin_decl_stmt
-DECL|variable|colorpicker_bits
+DECL|variable|color_picker_bits
 specifier|static
 name|char
 modifier|*
-name|colorpicker_bits
+name|color_picker_bits
 index|[]
 init|=
 block|{
@@ -479,29 +404,16 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: crop  */
-end_comment
-
-begin_define
-DECL|macro|crop_width
-define|#
-directive|define
-name|crop_width
-value|22
-end_define
-
-begin_define
-DECL|macro|crop_height
-define|#
-directive|define
-name|crop_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_CROP_BITS
+end_ifdef
 
 begin_decl_stmt
 DECL|variable|crop_bits
@@ -559,36 +471,23 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: erase  */
-end_comment
-
-begin_define
-DECL|macro|erase_width
-define|#
-directive|define
-name|erase_width
-value|22
-end_define
-
-begin_define
-DECL|macro|erase_height
-define|#
-directive|define
-name|erase_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_ERASER_BITS
+end_ifdef
 
 begin_decl_stmt
-DECL|variable|erase_bits
+DECL|variable|eraser_bits
 specifier|static
 name|char
 modifier|*
-name|erase_bits
+name|eraser_bits
 index|[]
 init|=
 block|{
@@ -639,36 +538,23 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: fill  */
-end_comment
-
-begin_define
-DECL|macro|fill_width
-define|#
-directive|define
-name|fill_width
-value|22
-end_define
-
-begin_define
-DECL|macro|fill_height
-define|#
-directive|define
-name|fill_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_BUCKET_FILL_BITS
+end_ifdef
 
 begin_decl_stmt
-DECL|variable|fill_bits
+DECL|variable|bucket_fill_bits
 specifier|static
 name|char
 modifier|*
-name|fill_bits
+name|bucket_fill_bits
 index|[]
 init|=
 block|{
@@ -719,36 +605,23 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: free  */
-end_comment
-
-begin_define
-DECL|macro|free_width
-define|#
-directive|define
-name|free_width
-value|22
-end_define
-
-begin_define
-DECL|macro|free_height
-define|#
-directive|define
-name|free_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_FREE_SELECT_BITS
+end_ifdef
 
 begin_decl_stmt
-DECL|variable|free_bits
+DECL|variable|free_select_bits
 specifier|static
 name|char
 modifier|*
-name|free_bits
+name|free_select_bits
 index|[]
 init|=
 block|{
@@ -799,36 +672,23 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: fuzzy  */
-end_comment
-
-begin_define
-DECL|macro|fuzzy_width
-define|#
-directive|define
-name|fuzzy_width
-value|22
-end_define
-
-begin_define
-DECL|macro|fuzzy_height
-define|#
-directive|define
-name|fuzzy_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_FUZZY_SELECT_BITS
+end_ifdef
 
 begin_decl_stmt
-DECL|variable|fuzzy_bits
+DECL|variable|fuzzy_select_bits
 specifier|static
 name|char
 modifier|*
-name|fuzzy_bits
+name|fuzzy_select_bits
 index|[]
 init|=
 block|{
@@ -879,36 +739,23 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: gradient  */
-end_comment
-
-begin_define
-DECL|macro|gradient_width
-define|#
-directive|define
-name|gradient_width
-value|22
-end_define
-
-begin_define
-DECL|macro|gradient_height
-define|#
-directive|define
-name|gradient_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_BLEND_BITS
+end_ifdef
 
 begin_decl_stmt
-DECL|variable|gradient_bits
+DECL|variable|blend_bits
 specifier|static
 name|char
 modifier|*
-name|gradient_bits
+name|blend_bits
 index|[]
 init|=
 block|{
@@ -959,29 +806,16 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: horizflip  */
-end_comment
-
-begin_define
-DECL|macro|flip_width
-define|#
-directive|define
-name|flip_width
-value|22
-end_define
-
-begin_define
-DECL|macro|flip_height
-define|#
-directive|define
-name|flip_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_FLIP_BITS
+end_ifdef
 
 begin_decl_stmt
 DECL|variable|flip_bits
@@ -1039,29 +873,16 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: iscissors  */
-end_comment
-
-begin_define
-DECL|macro|iscissors_width
-define|#
-directive|define
-name|iscissors_width
-value|22
-end_define
-
-begin_define
-DECL|macro|iscissors_height
-define|#
-directive|define
-name|iscissors_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_ISCISSORS_BITS
+end_ifdef
 
 begin_decl_stmt
 DECL|variable|iscissors_bits
@@ -1119,29 +940,16 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: magnify  */
-end_comment
-
-begin_define
-DECL|macro|magnify_width
-define|#
-directive|define
-name|magnify_width
-value|22
-end_define
-
-begin_define
-DECL|macro|magnify_height
-define|#
-directive|define
-name|magnify_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_MAGNIFY_BITS
+end_ifdef
 
 begin_decl_stmt
 DECL|variable|magnify_bits
@@ -1199,29 +1007,16 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: move  */
-end_comment
-
-begin_define
-DECL|macro|move_width
-define|#
-directive|define
-name|move_width
-value|22
-end_define
-
-begin_define
-DECL|macro|move_height
-define|#
-directive|define
-name|move_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_MOVE_BITS
+end_ifdef
 
 begin_decl_stmt
 DECL|variable|move_bits
@@ -1279,60 +1074,23 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: new  */
-end_comment
-
-begin_comment
-comment|/* #define new_width 22 #define new_height 22 static char *new_bits [] = {   "......................",   "......................",   "......................",   ".....aaaaaaaaa........",   ".....ahhhhhhhaa.......",   ".....ahhhhhhhaga......",   ".....ahhhhhhhagga.....",   ".....ahhhhhhhaaaae....",   ".....ahhhhhhhhggae....",   ".....ahhhhhhhhhhae....",   ".....ahhhhhhhhhhae....",   ".....ahhhhhhhhhhae....",   ".....ahhhhhhhhhhae....",   ".....ahhhhhhhhhhae....",   ".....ahhhhhhhhhhae....",   ".....ahhhhhhhhhhae....",   ".....ahhhhhhhhhhae....",   ".....aaaaaaaaaaaae....",   "......eeeeeeeeeeee....",   "......................",   "......................",   "......................" }; */
-end_comment
-
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
-
-begin_comment
-comment|/*  Image name: open  */
-end_comment
-
-begin_comment
-comment|/* #define open_width 22 #define open_height 22 static char *open_bits [] = {   "......................",   "......................",   "......................",   "......................",   "....eaaaae............",   "...eaggggae...........",   "...aggggggaaaaaaaae...",   "...agggggggggggggga...",   ".aaaaaaaaaaaaaagggae..",   ".aegegegegegegagggae..",   "..aegegegegegegaggae..",   "..agegegegegegeaggae..",   "...agegegegegegeagae..",   "...aegegegegegegagae..",   "...agegegegegegeagae..",   "....agegegegegegeaae..",   "....aegegegegegegaae..",   ".....aaaaaaaaaaaaaae..",   "......eeeeeeeeeeeeee..",   "......................",   "......................",   "......................" }; */
-end_comment
-
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
-
-begin_comment
-comment|/*  Image name: paint  */
-end_comment
-
-begin_define
-DECL|macro|paint_width
-define|#
-directive|define
-name|paint_width
-value|22
-end_define
-
-begin_define
-DECL|macro|paint_height
-define|#
-directive|define
-name|paint_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_PAINT_BRUSH_BITS
+end_ifdef
 
 begin_decl_stmt
-DECL|variable|paint_bits
+DECL|variable|paint_brush_bits
 specifier|static
 name|char
 modifier|*
-name|paint_bits
+name|paint_brush_bits
 index|[]
 init|=
 block|{
@@ -1383,29 +1141,16 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: pencil  */
-end_comment
-
-begin_define
-DECL|macro|pencil_width
-define|#
-directive|define
-name|pencil_width
-value|22
-end_define
-
-begin_define
-DECL|macro|pencil_height
-define|#
-directive|define
-name|pencil_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_PENCIL_BITS
+end_ifdef
 
 begin_decl_stmt
 DECL|variable|pencil_bits
@@ -1463,29 +1208,16 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: perspective  */
-end_comment
-
-begin_define
-DECL|macro|perspective_width
-define|#
-directive|define
-name|perspective_width
-value|22
-end_define
-
-begin_define
-DECL|macro|perspective_height
-define|#
-directive|define
-name|perspective_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_PERSPECTIVE_BITS
+end_ifdef
 
 begin_decl_stmt
 DECL|variable|perspective_bits
@@ -1543,36 +1275,23 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: rect  */
-end_comment
-
-begin_define
-DECL|macro|rect_width
-define|#
-directive|define
-name|rect_width
-value|22
-end_define
-
-begin_define
-DECL|macro|rect_height
-define|#
-directive|define
-name|rect_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_RECT_SELECT_BITS
+end_ifdef
 
 begin_decl_stmt
-DECL|variable|rect_bits
+DECL|variable|rect_select_bits
 specifier|static
 name|char
 modifier|*
-name|rect_bits
+name|rect_select_bits
 index|[]
 init|=
 block|{
@@ -1623,29 +1342,16 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: rotate  */
-end_comment
-
-begin_define
-DECL|macro|rotate_width
-define|#
-directive|define
-name|rotate_width
-value|22
-end_define
-
-begin_define
-DECL|macro|rotate_height
-define|#
-directive|define
-name|rotate_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_ROTATE_BITS
+end_ifdef
 
 begin_decl_stmt
 DECL|variable|rotate_bits
@@ -1703,29 +1409,16 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: scale  */
-end_comment
-
-begin_define
-DECL|macro|scale_width
-define|#
-directive|define
-name|scale_width
-value|22
-end_define
-
-begin_define
-DECL|macro|scale_height
-define|#
-directive|define
-name|scale_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_SCALE_BITS
+end_ifdef
 
 begin_decl_stmt
 DECL|variable|scale_bits
@@ -1783,41 +1476,83 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: sharpen  */
-end_comment
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_SHARPEN_BITS
+end_ifdef
 
-begin_comment
-comment|/* #define sharpen_width 22 #define sharpen_height 22 static char *sharpen_bits [] = {   "......................",   "......................",   "......................",   "..........a...........",   "..........ae..........",   ".........eha..........",   ".........eha..........",   ".........ehae.........",   "........ehgga.........",   "........ehgga.........",   "........ehggae........",   ".......ehgggga........",   ".......ehgggga........",   ".......ehggggae.......",   "......ehhggggga.......",   "......ehggggggae......",   "......ehggggggae......",   ".....ehhgggggeeae.....",   "......aaaaaaaaaee.....",   ".......eeeeeeeee......",   "......................",   "......................" }; */
-end_comment
+begin_decl_stmt
+DECL|variable|sharpen_bits
+specifier|static
+name|char
+modifier|*
+name|sharpen_bits
+index|[]
+init|=
+block|{
+literal|"......................"
+block|,
+literal|"......................"
+block|,
+literal|"......................"
+block|,
+literal|"..........a..........."
+block|,
+literal|"..........ae.........."
+block|,
+literal|".........eha.........."
+block|,
+literal|".........eha.........."
+block|,
+literal|".........ehae........."
+block|,
+literal|"........ehgga........."
+block|,
+literal|"........ehgga........."
+block|,
+literal|"........ehggae........"
+block|,
+literal|".......ehgggga........"
+block|,
+literal|".......ehgggga........"
+block|,
+literal|".......ehggggae......."
+block|,
+literal|"......ehhggggga......."
+block|,
+literal|"......ehggggggae......"
+block|,
+literal|"......ehggggggae......"
+block|,
+literal|".....ehhgggggeeae....."
+block|,
+literal|"......aaaaaaaaaee....."
+block|,
+literal|".......eeeeeeeee......"
+block|,
+literal|"......................"
+block|,
+literal|"......................"
+block|}
+decl_stmt|;
+end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: skew  */
-end_comment
-
-begin_define
-DECL|macro|shear_width
-define|#
-directive|define
-name|shear_width
-value|22
-end_define
-
-begin_define
-DECL|macro|shear_height
-define|#
-directive|define
-name|shear_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_SHEAR_BITS
+end_ifdef
 
 begin_decl_stmt
 DECL|variable|shear_bits
@@ -1875,17 +1610,16 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: text  */
-end_comment
-
-begin_comment
-comment|/* FIXME name clash in text_tool.c #define text_width 22 #define text_height 22 */
-end_comment
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_TEXT_BITS
+end_ifdef
 
 begin_decl_stmt
 DECL|variable|text_bits
@@ -1943,29 +1677,16 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: ink  */
-end_comment
-
-begin_define
-DECL|macro|ink_width
-define|#
-directive|define
-name|ink_width
-value|22
-end_define
-
-begin_define
-DECL|macro|ink_height
-define|#
-directive|define
-name|ink_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_INK_BITS
+end_ifdef
 
 begin_decl_stmt
 DECL|variable|ink_bits
@@ -2023,29 +1744,16 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: dodge  */
-end_comment
-
-begin_define
-DECL|macro|dodge_width
-define|#
-directive|define
-name|dodge_width
-value|22
-end_define
-
-begin_define
-DECL|macro|dodge_height
-define|#
-directive|define
-name|dodge_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_DODGE_BITS
+end_ifdef
 
 begin_decl_stmt
 DECL|variable|dodge_bits
@@ -2103,29 +1811,16 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: smudge  */
-end_comment
-
-begin_define
-DECL|macro|smudge_width
-define|#
-directive|define
-name|smudge_width
-value|22
-end_define
-
-begin_define
-DECL|macro|smudge_height
-define|#
-directive|define
-name|smudge_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_SMUDGE_BITS
+end_ifdef
 
 begin_decl_stmt
 DECL|variable|smudge_bits
@@ -2183,29 +1878,16 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: measure  */
-end_comment
-
-begin_define
-DECL|macro|measure_width
-define|#
-directive|define
-name|measure_width
-value|22
-end_define
-
-begin_define
-DECL|macro|measure_height
-define|#
-directive|define
-name|measure_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_MEASURE_BITS
+end_ifdef
 
 begin_decl_stmt
 DECL|variable|measure_bits
@@ -2263,41 +1945,83 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: xinput_airbrush  */
-end_comment
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_XINPUT_AIRBRUSH_BITS
+end_ifdef
 
-begin_comment
-comment|/* #define xinput_airbrush_width 22 #define xinput_airbrush_height 22 static char *xinput_airbrush_bits [] = {   "......................",   "........aaaaaa........",   ".......adddddda.......",   "......affffffffa......",   ".......dddddddd.......",   "......affffffffa......",   ".......daaadddd.......",   "......affafffffa......",   ".......afaffffa.......",   "..aaaaaaaaaaaaaaaaaa..",   ".aahhhhhhaaaaaaaaaaaa.",   ".aaggggggaaaaaaaaaaaaa",   "..aaaaaaaaaaaaaaaaaaa.",   "......adeagggeda......",   ".....addeagggedda.....",   "....aadeeaaageedaa....",   "....acdegggaggedca....",   "...aaccegaagggeccaa...",   "...aaccegaggggeccaa...",   "...aaccegaaaggeccaa...",   "...aaccegggaggeccaa...",   "......................" };                */
-end_comment
+begin_decl_stmt
+DECL|variable|xinput_airbrush_bits
+specifier|static
+name|char
+modifier|*
+name|xinput_airbrush_bits
+index|[]
+init|=
+block|{
+literal|"......................"
+block|,
+literal|"........aaaaaa........"
+block|,
+literal|".......adddddda......."
+block|,
+literal|"......affffffffa......"
+block|,
+literal|".......dddddddd......."
+block|,
+literal|"......affffffffa......"
+block|,
+literal|".......daaadddd......."
+block|,
+literal|"......affafffffa......"
+block|,
+literal|".......afaffffa......."
+block|,
+literal|"..aaaaaaaaaaaaaaaaaa.."
+block|,
+literal|".aahhhhhhaaaaaaaaaaaa."
+block|,
+literal|".aaggggggaaaaaaaaaaaaa"
+block|,
+literal|"..aaaaaaaaaaaaaaaaaaa."
+block|,
+literal|"......adeagggeda......"
+block|,
+literal|".....addeagggedda....."
+block|,
+literal|"....aadeeaaageedaa...."
+block|,
+literal|"....acdegggaggedca...."
+block|,
+literal|"...aaccegaagggeccaa..."
+block|,
+literal|"...aaccegaggggeccaa..."
+block|,
+literal|"...aaccegaaaggeccaa..."
+block|,
+literal|"...aaccegggaggeccaa..."
+block|,
+literal|"......................"
+block|}
+decl_stmt|;
+end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: path_tool  */
-end_comment
-
-begin_define
-DECL|macro|path_tool_width
-define|#
-directive|define
-name|path_tool_width
-value|22
-end_define
-
-begin_define
-DECL|macro|path_tool_height
-define|#
-directive|define
-name|path_tool_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_PATH_TOOL_BITS
+end_ifdef
 
 begin_decl_stmt
 DECL|variable|path_tool_bits
@@ -2355,29 +2079,16 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: by_color_select  */
-end_comment
-
-begin_define
-DECL|macro|by_color_select_width
-define|#
-directive|define
-name|by_color_select_width
-value|22
-end_define
-
-begin_define
-DECL|macro|by_color_select_height
-define|#
-directive|define
-name|by_color_select_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_BY_COLOR_SELECT_BITS
+end_ifdef
 
 begin_decl_stmt
 DECL|variable|by_color_select_bits
@@ -2435,29 +2146,16 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: adjustment  */
-end_comment
-
-begin_define
-DECL|macro|adjustment_width
-define|#
-directive|define
-name|adjustment_width
-value|22
-end_define
-
-begin_define
-DECL|macro|adjustment_height
-define|#
-directive|define
-name|adjustment_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_ADJUSTMENT_BITS
+end_ifdef
 
 begin_decl_stmt
 DECL|variable|adjustment_bits
@@ -2515,29 +2213,16 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: curves  */
-end_comment
-
-begin_define
-DECL|macro|curves_width
-define|#
-directive|define
-name|curves_width
-value|22
-end_define
-
-begin_define
-DECL|macro|curves_height
-define|#
-directive|define
-name|curves_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_CURVES_BITS
+end_ifdef
 
 begin_decl_stmt
 DECL|variable|curves_bits
@@ -2595,29 +2280,16 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: levels  */
-end_comment
-
-begin_define
-DECL|macro|levels_width
-define|#
-directive|define
-name|levels_width
-value|22
-end_define
-
-begin_define
-DECL|macro|levels_height
-define|#
-directive|define
-name|levels_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_LEVELS_BITS
+end_ifdef
 
 begin_decl_stmt
 DECL|variable|levels_bits
@@ -2675,29 +2347,16 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_comment
-comment|/*  Image name: histogram  */
-end_comment
-
-begin_define
-DECL|macro|histogram_width
-define|#
-directive|define
-name|histogram_width
-value|22
-end_define
-
-begin_define
-DECL|macro|histogram_height
-define|#
-directive|define
-name|histogram_height
-value|22
-end_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|WANT_HISTOGRAM_BITS
+end_ifdef
 
 begin_decl_stmt
 DECL|variable|histogram_bits
@@ -2755,89 +2414,10 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/* FIXME dialog is basically a temporary pixmap so the device status  * window doesn't have problems showing the dialog devices, it doesn't  * really represent anything and really should be changed  */
-end_comment
-
-begin_comment
-comment|/*  GIMP icon image format -- S. Kimball, P. Mattis  */
-end_comment
-
-begin_comment
-comment|/*  Image name: dialog  */
-end_comment
-
-begin_define
-DECL|macro|dialog_width
-define|#
-directive|define
-name|dialog_width
-value|22
-end_define
-
-begin_define
-DECL|macro|dialog_height
-define|#
-directive|define
-name|dialog_height
-value|22
-end_define
-
-begin_decl_stmt
-DECL|variable|dialog_bits
-specifier|static
-name|char
-modifier|*
-name|dialog_bits
-index|[]
-init|=
-block|{
-literal|"......................"
-block|,
-literal|"......................"
-block|,
-literal|"......................"
-block|,
-literal|"......................"
-block|,
-literal|"........aaaaa........."
-block|,
-literal|"......aagggggaa......."
-block|,
-literal|".....aaggh.gggaa......"
-block|,
-literal|".....agggh.eggga......"
-block|,
-literal|"....aggggh.egggga....."
-block|,
-literal|"....aghhhh.ehhhga....."
-block|,
-literal|"....ag.........ga....."
-block|,
-literal|"....aggeee.eeeega....."
-block|,
-literal|"....aggggh.egggga....."
-block|,
-literal|".....agggh.eggga......"
-block|,
-literal|".....aaggg.eggaa......"
-block|,
-literal|"......aagggggaa......."
-block|,
-literal|"........aaaaa........."
-block|,
-literal|"......................"
-block|,
-literal|"......................"
-block|,
-literal|"......................"
-block|,
-literal|"......................"
-block|,
-literal|"......................"
-block|}
-decl_stmt|;
-end_decl_stmt
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 end_unit
 
