@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1ca7710108
+DECL|struct|__anon2b7a0a1e0108
 block|{
 DECL|member|list_view
 name|GtkTreeView
@@ -143,7 +143,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1ca7710208
+DECL|struct|__anon2b7a0a1e0208
 block|{
 DECL|member|menu
 name|gchar
@@ -182,7 +182,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1ca7710303
+DECL|enum|__anon2b7a0a1e0303
 block|{
 DECL|enumerator|LIST_NAME_COLUMN
 name|LIST_NAME_COLUMN
@@ -207,7 +207,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1ca7710403
+DECL|enum|__anon2b7a0a1e0403
 block|{
 DECL|enumerator|TREE_PATH_NAME_COLUMN
 name|TREE_PATH_NAME_COLUMN
@@ -449,7 +449,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_plug_in_details_gtk"
+literal|"plug_in_plug_in_details"
 argument_list|,
 literal|"Displays plugin details"
 argument_list|,
@@ -579,7 +579,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"plug_in_plug_in_details_gtk"
+literal|"plug_in_plug_in_details"
 argument_list|)
 operator|==
 literal|0
@@ -3815,7 +3815,7 @@ argument_list|(
 literal|"Plugin Descriptions"
 argument_list|)
 argument_list|,
-literal|"plugindetailsgtk2"
+literal|"plugindetails"
 argument_list|,
 name|NULL
 argument_list|,
@@ -3988,6 +3988,11 @@ name|list_store
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|list_store
+argument_list|)
+expr_stmt|;
 name|plugindesc
 operator|->
 name|list_view
@@ -3995,14 +4000,6 @@ operator|=
 name|GTK_TREE_VIEW
 argument_list|(
 name|list_view
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|list_store
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|renderer
@@ -4187,10 +4184,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|selection
-argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
@@ -4272,6 +4266,11 @@ name|tree_store
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|tree_store
+argument_list|)
+expr_stmt|;
 name|plugindesc
 operator|->
 name|tree_view
@@ -4279,14 +4278,6 @@ operator|=
 name|GTK_TREE_VIEW
 argument_list|(
 name|tree_view
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|tree_store
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|renderer
@@ -4437,10 +4428,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|selection
-argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
