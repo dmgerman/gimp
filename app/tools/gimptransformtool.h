@@ -302,6 +302,7 @@ DECL|member|parent_class
 name|GimpDrawToolClass
 name|parent_class
 decl_stmt|;
+comment|/*  virtual function  */
 DECL|member|transform
 name|TileManager
 modifier|*

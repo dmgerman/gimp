@@ -163,6 +163,7 @@ DECL|member|parent_class
 name|GimpSelectionToolClass
 name|parent_class
 decl_stmt|;
+comment|/*  virtual function  */
 DECL|member|rect_select
 name|void
 function_decl|(

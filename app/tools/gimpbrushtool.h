@@ -30,7 +30,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2894c2a40103
+DECL|enum|__anon29b1484b0103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -69,7 +69,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2894c2a40203
+DECL|enum|__anon29b1484b0203
 block|{
 DECL|enumerator|TOOL_CAN_HANDLE_CHANGING_BRUSH
 name|TOOL_CAN_HANDLE_CHANGING_BRUSH
@@ -257,6 +257,7 @@ DECL|member|parent_class
 name|GimpDrawToolClass
 name|parent_class
 decl_stmt|;
+comment|/*  virtual function  */
 DECL|member|paint
 name|void
 function_decl|(

@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bdcb53f0103
+DECL|enum|__anon28feed3d0103
 block|{
 DECL|enumerator|GIMP_DRAW_TOOL_STATE_INVISIBLE
 name|GIMP_DRAW_TOOL_STATE_INVISIBLE
@@ -41,7 +41,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bdcb53f0203
+DECL|enum|__anon28feed3d0203
 block|{
 DECL|enumerator|GIMP_HANDLE_SQUARE
 name|GIMP_HANDLE_SQUARE
@@ -199,6 +199,7 @@ DECL|member|parent_class
 name|GimpToolClass
 name|parent_class
 decl_stmt|;
+comment|/*  virtual function  */
 DECL|member|draw
 name|void
 function_decl|(

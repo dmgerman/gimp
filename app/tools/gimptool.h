@@ -205,6 +205,7 @@ DECL|member|parent_class
 name|GimpObjectClass
 name|parent_class
 decl_stmt|;
+comment|/*  virtual functions  */
 DECL|member|initialize
 name|void
 function_decl|(
