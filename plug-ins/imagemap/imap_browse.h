@@ -37,9 +37,9 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2782f5620108
 typedef|typedef
 struct|struct
+DECL|struct|__anon2755cb010108
 block|{
 DECL|member|name
 specifier|const
@@ -70,10 +70,10 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
-DECL|member|file_selection
+DECL|member|file_chooser
 name|GtkWidget
 modifier|*
-name|file_selection
+name|file_chooser
 decl_stmt|;
 DECL|typedef|BrowseWidget_t
 block|}

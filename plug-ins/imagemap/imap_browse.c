@@ -176,7 +176,7 @@ condition|(
 operator|!
 name|browse
 operator|->
-name|file_selection
+name|file_chooser
 condition|)
 block|{
 name|GtkWidget
@@ -187,7 +187,7 @@ name|dialog
 operator|=
 name|browse
 operator|->
-name|file_selection
+name|file_chooser
 operator|=
 name|gtk_file_chooser_dialog_new
 argument_list|(
@@ -262,7 +262,7 @@ name|GTK_WINDOW
 argument_list|(
 name|browse
 operator|->
-name|file_selection
+name|file_chooser
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -389,7 +389,7 @@ name|icon
 decl_stmt|;
 name|browse
 operator|->
-name|file_selection
+name|file_chooser
 operator|=
 name|NULL
 expr_stmt|;
