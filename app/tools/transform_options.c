@@ -1380,6 +1380,16 @@ operator|->
 name|clip_w
 argument_list|)
 expr_stmt|;
+comment|/* Set options to default values */
+name|transform_options_reset
+argument_list|(
+operator|(
+name|ToolOptions
+operator|*
+operator|)
+name|options
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
