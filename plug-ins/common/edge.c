@@ -20,6 +20,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<math.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -90,7 +96,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c7d8e70108
+DECL|struct|__anon29afc44c0108
 block|{
 DECL|member|amount
 name|gdouble
@@ -109,7 +115,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c7d8e70208
+DECL|struct|__anon29afc44c0208
 block|{
 DECL|member|run
 name|gint
@@ -183,17 +189,6 @@ parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|long
-name|long_sqrt
-parameter_list|(
-name|long
-name|n
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -660,164 +655,6 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/**********************************************************************    TileBuf Util Routines End  **********************************************************************/
-end_comment
-
-begin_function
-specifier|static
-name|long
-DECL|function|long_sqrt (long n)
-name|long_sqrt
-parameter_list|(
-name|long
-name|n
-parameter_list|)
-block|{
-DECL|macro|lsqrt_max4pow
-define|#
-directive|define
-name|lsqrt_max4pow
-value|(1UL<< 30)
-comment|/* lsqrt_max4pow is the (machine-specific) largest power of 4 that can    * be represented in an unsigned long.    *    * Compute the integer square root of the integer argument n    * Method is to divide n by x computing the quotient x and remainder r    * Notice that the divisor x is changing as the quotient x changes    *     * Instead of shifting the dividend/remainder left, we shift the    * quotient/divisor right. The binary point starts at the extreme    * left, and shifts two bits at a time to the extreme right.    *     * The residue contains n-x^2. (Within these comments, the ^ operator    * signifies exponentiation rather than exclusive or. Also, the /    * operator returns fractions, rather than truncating, so 1/4 means    * one fourth, not zero.)    *     * Since (x + 1/2)^2 == x^2 + x + 1/4,    * n - (x + 1/2)^2 == (n - x^2) - (x + 1/4)    * Thus, we can increase x by 1/2 if we decrease (n-x^2) by (x+1/4)    */
-name|gulong
-name|residue
-decl_stmt|;
-comment|/* n - x^2  */
-name|gulong
-name|root
-decl_stmt|;
-comment|/* x + 1/4  */
-name|gulong
-name|half
-decl_stmt|;
-comment|/* 1/2      */
-name|residue
-operator|=
-name|n
-expr_stmt|;
-comment|/* n - (x = 0)^2, with suitable alignment */
-comment|/*    * if the correct answer fits in two bits, pull it out of a magic hat    */
-if|if
-condition|(
-name|residue
-operator|<=
-literal|12
-condition|)
-return|return
-operator|(
-literal|0x03FFEA94
-operator|>>
-operator|(
-name|residue
-operator|*=
-literal|2
-operator|)
-operator|)
-operator|&
-literal|3
-return|;
-name|root
-operator|=
-name|lsqrt_max4pow
-expr_stmt|;
-comment|/* x + 1/4, shifted all the way left */
-comment|/* half = root + root; 1/2, shifted likewise */
-comment|/*     * Unwind iterations corresponding to leading zero bits     */
-while|while
-condition|(
-name|root
-operator|>
-name|residue
-condition|)
-name|root
-operator|>>=
-literal|2
-expr_stmt|;
-comment|/*    * Unwind the iteration corresponding to the first one bit    * Operations have been rearranged and combined for efficiency    * Initialization of half is folded into this iteration    */
-name|residue
-operator|-=
-name|root
-expr_stmt|;
-comment|/* Decrease (n-x^2) by (0+1/4)             */
-name|half
-operator|=
-name|root
-operator|>>
-literal|2
-expr_stmt|;
-comment|/* 1/4, with binary point shifted right 2  */
-name|root
-operator|+=
-name|half
-expr_stmt|;
-comment|/* x=1. (root is now (x=1)+1/4.)           */
-name|half
-operator|+=
-name|half
-expr_stmt|;
-comment|/* 1/2, properly aligned                   */
-comment|/*    * Normal loop (there is at least one iteration remaining)    */
-do|do
-block|{
-if|if
-condition|(
-name|root
-operator|<=
-name|residue
-condition|)
-comment|/* Whenever we can,                          */
-block|{
-name|residue
-operator|-=
-name|root
-expr_stmt|;
-comment|/* decrease (n-x^2) by (x+1/4)               */
-name|root
-operator|+=
-name|half
-expr_stmt|;
-comment|/* increase x by 1/2                         */
-block|}
-name|half
-operator|>>=
-literal|2
-expr_stmt|;
-comment|/* Shift binary point 2 places right          */
-name|root
-operator|-=
-name|half
-expr_stmt|;
-comment|/* x{ +1/2 } +1/4 - 1/8 == x { +1/2 } 1/8     */
-name|root
-operator|>>=
-literal|1
-expr_stmt|;
-comment|/* 2x{ +1 } +1/4, shifted right 2 places      */
-block|}
-do|while
-condition|(
-name|half
-condition|)
-do|;
-comment|/* When 1/2 == 0, bin. point is at far right  */
-comment|/*     * round up if (x+1/2)^2< n    */
-if|if
-condition|(
-name|root
-operator|<
-name|residue
-condition|)
-operator|++
-name|root
-expr_stmt|;
-comment|/*     * Guaranteed to be correctly rounded (or truncated)    */
-return|return
-name|root
-return|;
 block|}
 end_function
 
@@ -1429,7 +1266,11 @@ name|PIX
 comment|/* common job ... */
 name|sum
 operator|=
-name|long_sqrt
+call|(
+name|glong
+call|)
+argument_list|(
+name|sqrt
 argument_list|(
 operator|(
 name|long
@@ -1444,6 +1285,9 @@ operator|)
 name|sum2
 operator|*
 name|sum2
+argument_list|)
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|sum
@@ -1706,7 +1550,11 @@ expr_stmt|;
 comment|/* common job ... */
 name|sum
 operator|=
-name|long_sqrt
+call|(
+name|glong
+call|)
+argument_list|(
+name|sqrt
 argument_list|(
 operator|(
 name|long
@@ -1721,6 +1569,9 @@ operator|)
 name|sum2
 operator|*
 name|sum2
+argument_list|)
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|sum
