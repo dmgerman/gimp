@@ -234,6 +234,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"xinput_airbrush.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"text_tool.h"
 end_include
 
@@ -1449,6 +1455,46 @@ block|,
 name|NULL
 block|}
 block|,
+block|{
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Xinput Airbrush"
+argument_list|)
+block|,
+literal|25
+block|,
+name|N_
+argument_list|(
+literal|"/Tools/XinputAirbrush"
+argument_list|)
+block|,
+literal|"<shift>A"
+block|,
+operator|(
+name|char
+operator|*
+operator|*
+operator|)
+name|xinput_airbrush_bits
+block|,
+name|N_
+argument_list|(
+literal|"Natural Airbrush"
+argument_list|)
+block|,
+literal|"ContextHelp/xinput_airbrush"
+block|,
+name|XINPUT_AIRBRUSH
+block|,
+name|tools_new_xinput_airbrush
+block|,
+name|tools_free_xinput_airbrush
+block|,
+name|NULL
+block|}
+block|,
 comment|/*  Non-toolbox tools  */
 block|{
 name|NULL
@@ -1458,7 +1504,7 @@ argument_list|(
 literal|"By Color Select"
 argument_list|)
 block|,
-literal|25
+literal|26
 block|,
 name|N_
 argument_list|(
@@ -1490,7 +1536,7 @@ argument_list|(
 literal|"Color Balance"
 argument_list|)
 block|,
-literal|26
+literal|27
 block|,
 name|N_
 argument_list|(
@@ -1522,7 +1568,7 @@ argument_list|(
 literal|"Brightness-Contrast"
 argument_list|)
 block|,
-literal|27
+literal|28
 block|,
 name|N_
 argument_list|(
@@ -1554,7 +1600,7 @@ argument_list|(
 literal|"Hue-Saturation"
 argument_list|)
 block|,
-literal|28
+literal|29
 block|,
 name|N_
 argument_list|(
@@ -1586,7 +1632,7 @@ argument_list|(
 literal|"Posterize"
 argument_list|)
 block|,
-literal|29
+literal|30
 block|,
 name|N_
 argument_list|(
@@ -1618,7 +1664,7 @@ argument_list|(
 literal|"Threshold"
 argument_list|)
 block|,
-literal|30
+literal|31
 block|,
 name|N_
 argument_list|(
@@ -1650,7 +1696,7 @@ argument_list|(
 literal|"Curves"
 argument_list|)
 block|,
-literal|31
+literal|32
 block|,
 name|N_
 argument_list|(
@@ -1682,7 +1728,7 @@ argument_list|(
 literal|"Levels"
 argument_list|)
 block|,
-literal|32
+literal|33
 block|,
 name|N_
 argument_list|(
@@ -1714,7 +1760,7 @@ argument_list|(
 literal|"Histogram"
 argument_list|)
 block|,
-literal|33
+literal|34
 block|,
 name|N_
 argument_list|(
