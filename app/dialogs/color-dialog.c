@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2773199c0103
+DECL|enum|__anon2bcbaec90103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -1340,6 +1340,10 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|dialog_factory
+condition|)
 name|gimp_dialog_factory_add_foreign
 argument_list|(
 name|dialog_factory
