@@ -129,7 +129,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b131dd40103
+DECL|enum|__anon2a23c4270103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1260,7 +1260,7 @@ argument_list|(
 literal|"Parsing '%s'\n"
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|rc
 operator|->
@@ -1324,7 +1324,7 @@ argument_list|(
 literal|"Parsing '%s'\n"
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|rc
 operator|->
@@ -2083,7 +2083,7 @@ argument_list|(
 literal|"Saving '%s'\n"
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|rc
 operator|->

@@ -464,7 +464,7 @@ argument_list|(
 literal|"Resource configuration"
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
@@ -572,7 +572,7 @@ call|)
 argument_list|(
 name|NULL
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|basename
 argument_list|)
@@ -613,7 +613,7 @@ argument_list|(
 literal|"Querying plug-in: '%s'\n"
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in_def
 operator|->
@@ -810,7 +810,7 @@ argument_list|(
 literal|"Writing '%s'\n"
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
@@ -1189,7 +1189,7 @@ call|)
 argument_list|(
 name|NULL
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|basename
 argument_list|)
@@ -3584,7 +3584,7 @@ name|g_printerr
 argument_list|(
 literal|"skipping duplicate plug-in: '%s'\n"
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|file_data
 operator|->

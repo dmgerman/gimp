@@ -7657,7 +7657,7 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
@@ -7703,7 +7703,7 @@ operator|(
 literal|"Error in reading file '%s'."
 operator|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)

@@ -359,14 +359,14 @@ argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"sent a CONFIG message (should not happen)"
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
 name|name
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
@@ -403,14 +403,14 @@ argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"sent a TILE_ACK message (should not happen)"
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
 name|name
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
@@ -434,14 +434,14 @@ argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"sent a TILE_DATA message (should not happen)"
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
 name|name
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
@@ -491,14 +491,14 @@ argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"sent a TEMP_PROC_RUN message (should not happen)"
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
 name|name
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
@@ -536,14 +536,14 @@ argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"sent a TEMP_PROC_RETURN message (should not happen)"
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
 name|name
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
@@ -873,14 +873,14 @@ argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"requested invalid drawable (killing)"
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
 name|name
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
@@ -944,14 +944,14 @@ argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"requested invalid tile (killing)"
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
 name|name
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
@@ -1092,14 +1092,14 @@ argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"requested invalid drawable (killing)"
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
 name|name
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
@@ -1163,14 +1163,14 @@ argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"requested invalid tile (killing)"
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
 name|name
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
@@ -1502,14 +1502,14 @@ literal|"WARNING: Plug-In \"%s\"\n(%s)\n\n"
 literal|"called deprecated procedure '%s'.\n"
 literal|"It should call '%s' instead!"
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
 name|name
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
@@ -2048,14 +2048,14 @@ literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"sent a TEMP_PROC_RETURN message while not running "
 literal|"a temp proc (should not happen)"
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
 name|name
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
@@ -2188,14 +2188,14 @@ literal|"which does not take the standard<Toolbox> Plug-In "
 literal|"args.\n"
 literal|"(INT32)"
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
 name|name
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
@@ -2285,14 +2285,14 @@ literal|"which does not take the standard<Image> Plug-In "
 literal|"args.\n"
 literal|"(INT32, IMAGE, DRAWABLE)"
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
 name|name
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
@@ -2382,14 +2382,14 @@ literal|"which does not take the standard<Load> Plug-In "
 literal|"args.\n"
 literal|"(INT32, STRING, STRING)"
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
 name|name
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
@@ -2505,14 +2505,14 @@ literal|"which does not take the standard<Save> Plug-In "
 literal|"args.\n"
 literal|"(INT32, IMAGE, DRAWABLE, STRING, STRING)"
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
 name|name
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
@@ -2537,14 +2537,14 @@ literal|"in an invalid menu location.\n"
 literal|"Use either \"<Toolbox>\", \"<Image>\", "
 literal|"\"<Load>\", or \"<Save>\"."
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
 name|name
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
@@ -2645,14 +2645,14 @@ literal|"attempted to install procedure \"%s\" "
 literal|"which fails to comply with the array parameter "
 literal|"passing standard.  Argument %d is noncompliant."
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
 name|name
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
@@ -2973,14 +2973,14 @@ argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"attempted to install a procedure with invalid UTF-8 strings."
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
 name|name
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
@@ -3691,14 +3691,14 @@ literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"sent an EXTENSION_ACK message while not being started "
 literal|"as extension (should not happen)"
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
 name|name
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
@@ -3753,14 +3753,14 @@ literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"sent an HAS_INIT message while not in query() "
 literal|"(should not happen)"
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
 name|name
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->

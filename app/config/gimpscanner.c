@@ -130,7 +130,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2781acc60108
+DECL|struct|__anon296b2a170108
 block|{
 DECL|member|fd
 name|gint
@@ -294,7 +294,7 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
@@ -314,7 +314,7 @@ name|scanner
 operator|=
 name|gimp_scanner_new
 argument_list|(
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
@@ -1020,7 +1020,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2781acc60203
+DECL|enum|__anon296b2a170203
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB

@@ -65,6 +65,20 @@ empty_stmt|;
 end_empty_stmt
 
 begin_function_decl
+specifier|const
+name|gchar
+modifier|*
+name|gimp_filename_to_utf8
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|filename
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gchar
 modifier|*
 name|gimp_memsize_to_string

@@ -1430,7 +1430,7 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
@@ -1481,7 +1481,7 @@ literal|"Fatal parse error in pattern file '%s': "
 literal|"Could not read %d bytes: %s"
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
@@ -1610,7 +1610,7 @@ literal|"Fatal parse error in pattern file '%s': "
 literal|"Unknown pattern format version %d."
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
@@ -1655,7 +1655,7 @@ literal|"Unsupported pattern depth %d.\n"
 literal|"GIMP Patterns must be GRAY or RGB."
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
@@ -1731,7 +1731,7 @@ literal|"Fatal parse error in pattern file '%s': "
 literal|"Could not read %d bytes: %s"
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
@@ -1762,7 +1762,7 @@ argument_list|(
 literal|"Invalid UTF-8 string in pattern file '%s'."
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
@@ -1880,7 +1880,7 @@ literal|"Fatal parse error in pattern file '%s': "
 literal|"Could not read %d bytes: %s"
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)

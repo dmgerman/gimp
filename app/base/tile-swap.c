@@ -859,7 +859,7 @@ name|g_warning
 argument_list|(
 literal|"swap file not empty: \"%s\"\n"
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|swap_file
 operator|->

@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ea69d20103
+DECL|enum|__anon2b7adbcf0103
 block|{
 DECL|enumerator|DIR_CHANGED
 name|DIR_CHANGED
@@ -1460,7 +1460,7 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
@@ -1617,7 +1617,7 @@ argument_list|(
 literal|"Invalid UTF-8 data in file '%s'."
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)

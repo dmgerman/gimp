@@ -293,7 +293,7 @@ name|length
 operator|+=
 name|strlen
 argument_list|(
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|g_get_home_dir
 argument_list|()
@@ -569,7 +569,7 @@ operator|+
 literal|1
 index|]
 operator|=
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|s
 argument_list|)
@@ -665,7 +665,7 @@ name|strcat
 argument_list|(
 name|n
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|g_get_home_dir
 argument_list|()
@@ -676,7 +676,7 @@ name|n
 operator|+=
 name|strlen
 argument_list|(
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|g_get_home_dir
 argument_list|()

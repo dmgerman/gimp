@@ -188,7 +188,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b01a9a00103
+DECL|enum|__anon2b01eae40103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -1648,7 +1648,7 @@ argument_list|(
 literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
@@ -2237,7 +2237,7 @@ argument_list|(
 name|header
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
@@ -2403,7 +2403,7 @@ literal|"Fatal parse error in brush file '%s': "
 literal|"Unknown depth %d."
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
@@ -2445,7 +2445,7 @@ literal|"Fatal parse error in brush file '%s': "
 literal|"Unknown version %d."
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
@@ -2521,7 +2521,7 @@ literal|"Fatal parse error in brush file '%s': "
 literal|"File appears truncated."
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
@@ -2550,7 +2550,7 @@ argument_list|(
 literal|"Invalid UTF-8 string in brush file '%s'."
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
@@ -2757,7 +2757,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2b01a9a0020a
+DECL|union|__anon2b01eae4020a
 block|{
 DECL|member|u
 name|guint16
@@ -3039,7 +3039,7 @@ literal|"Unsupported brush depth %d\n"
 literal|"GIMP brushes must be GRAY or RGBA."
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
@@ -3083,7 +3083,7 @@ literal|"Fatal parse error in brush file '%s': "
 literal|"File appears truncated."
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)

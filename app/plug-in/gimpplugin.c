@@ -1351,14 +1351,14 @@ name|g_message
 argument_list|(
 literal|"Unable to run Plug-In \"%s\"\n(%s)\n\npipe() failed: %s"
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
 name|name
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
@@ -1828,14 +1828,14 @@ name|g_message
 argument_list|(
 literal|"Unable to run Plug-In \"%s\"\n(%s)\n\n%s"
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
 name|name
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
@@ -2205,7 +2205,7 @@ name|g_warning
 argument_list|(
 literal|"Terminating %s ..."
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
@@ -2705,14 +2705,14 @@ literal|"You may want to save your images and restart GIMP "
 literal|"to be on the safe side."
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
 name|name
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|plug_in
 operator|->
@@ -3006,7 +3006,7 @@ name|g_warning
 argument_list|(
 literal|"%s: plug_in_flush(): error: %s"
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|g_get_prgname
 argument_list|()
@@ -3029,7 +3029,7 @@ name|g_warning
 argument_list|(
 literal|"%s: plug_in_flush(): error"
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|g_get_prgname
 argument_list|()

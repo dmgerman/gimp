@@ -209,7 +209,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f1fc5c0103
+DECL|enum|__anon2a2d9b130103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -237,7 +237,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f1fc5c0203
+DECL|enum|__anon2a2d9b130203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -448,7 +448,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f1fc5c0303
+DECL|enum|__anon2a2d9b130303
 block|{
 DECL|enumerator|TREE_ITEM_DO_NOTHING
 name|TREE_ITEM_DO_NOTHING
@@ -471,7 +471,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29f1fc5c0408
+DECL|struct|__anon2a2d9b130408
 block|{
 DECL|member|directory
 name|gboolean
@@ -3364,7 +3364,7 @@ literal|"For a proper GIMP installation, a folder named "
 literal|"'<b>%s</b>' needs to be created."
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|gimp_directory
 argument_list|()
@@ -3543,7 +3543,7 @@ name|iter
 argument_list|,
 name|DIRENT_COLUMN
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|gimp_directory
 argument_list|()
@@ -4337,7 +4337,7 @@ argument_list|(
 literal|"Creating folder '%s'..."
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|gimp_directory
 argument_list|()
@@ -4405,7 +4405,7 @@ argument_list|(
 literal|"Cannot create folder '%s': %s"
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|gimp_directory
 argument_list|()
@@ -4502,7 +4502,7 @@ argument_list|(
 literal|"Creating folder '%s'..."
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|dest
 argument_list|)
@@ -4631,12 +4631,12 @@ argument_list|(
 literal|"Copying file '%s' from '%s'..."
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|dest
 argument_list|)
 argument_list|,
-name|file_utils_filename_to_utf8
+name|gimp_filename_to_utf8
 argument_list|(
 name|source
 argument_list|)
