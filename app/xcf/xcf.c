@@ -156,7 +156,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d87a270103
+DECL|enum|__anon2c187ea00103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -261,7 +261,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d87a270203
+DECL|enum|__anon2c187ea00203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -1513,11 +1513,12 @@ operator|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|gimage
 condition|)
 name|success
 operator|=
-name|TRUE
+name|FALSE
 expr_stmt|;
 block|}
 else|else
