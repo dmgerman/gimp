@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpconfig-blurbs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpconfig-params.h"
 end_include
 
@@ -124,7 +130,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon276e2fdc0103
+DECL|enum|__anon28f589660103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -366,6 +372,8 @@ name|PROP_INTERPOLATION_TYPE
 argument_list|,
 literal|"interpolation-type"
 argument_list|,
+name|INTERPOLATION_TYPE_BLURB
+argument_list|,
 name|GIMP_TYPE_INTERPOLATION_TYPE
 argument_list|,
 name|GIMP_INTERPOLATION_LINEAR
@@ -380,6 +388,8 @@ argument_list|,
 name|PROP_PLUG_IN_PATH
 argument_list|,
 literal|"plug-in-path"
+argument_list|,
+name|PLUG_IN_PATH_BLURB
 argument_list|,
 name|gimp_config_build_plug_in_path
 argument_list|(
@@ -397,6 +407,8 @@ name|PROP_TOOL_PLUG_IN_PATH
 argument_list|,
 literal|"tool-plug-in-path"
 argument_list|,
+name|TOOL_PLUG_IN_PATH_BLURB
+argument_list|,
 name|gimp_config_build_plug_in_path
 argument_list|(
 literal|"tool-plug-ins"
@@ -412,6 +424,8 @@ argument_list|,
 name|PROP_MODULE_PATH
 argument_list|,
 literal|"module-path"
+argument_list|,
+name|MODULE_PATH_BLURB
 argument_list|,
 name|gimp_config_build_plug_in_path
 argument_list|(
@@ -429,6 +443,8 @@ name|PROP_ENVIRON_PATH
 argument_list|,
 literal|"environ-path"
 argument_list|,
+name|ENVIRON_PATH_BLURB
+argument_list|,
 name|gimp_config_build_plug_in_path
 argument_list|(
 literal|"environ"
@@ -444,6 +460,8 @@ argument_list|,
 name|PROP_BRUSH_PATH
 argument_list|,
 literal|"brush-path"
+argument_list|,
+name|BRUSH_PATH_BLURB
 argument_list|,
 name|gimp_config_build_data_path
 argument_list|(
@@ -461,6 +479,8 @@ name|PROP_PATTERN_PATH
 argument_list|,
 literal|"pattern-path"
 argument_list|,
+name|PATTERN_PATH_BLURB
+argument_list|,
 name|gimp_config_build_data_path
 argument_list|(
 literal|"patterns"
@@ -476,6 +496,8 @@ argument_list|,
 name|PROP_PALETTE_PATH
 argument_list|,
 literal|"palette-path"
+argument_list|,
+name|PALETTE_PATH_BLURB
 argument_list|,
 name|gimp_config_build_data_path
 argument_list|(
@@ -493,6 +515,8 @@ name|PROP_GRADIENT_PATH
 argument_list|,
 literal|"gradient-path"
 argument_list|,
+name|GRADIENT_PATH_BLURB
+argument_list|,
 name|gimp_config_build_data_path
 argument_list|(
 literal|"gradients"
@@ -509,6 +533,8 @@ name|PROP_DEFAULT_BRUSH
 argument_list|,
 literal|"default-brush"
 argument_list|,
+name|DEFAULT_BRUSH_BLURB
+argument_list|,
 name|NULL
 argument_list|,
 literal|0
@@ -522,6 +548,8 @@ name|PROP_DEFAULT_PATTERN
 argument_list|,
 literal|"default-pattern"
 argument_list|,
+name|DEFAULT_PATTERN_BLURB
+argument_list|,
 name|NULL
 argument_list|,
 literal|0
@@ -531,9 +559,11 @@ name|GIMP_CONFIG_INSTALL_PROP_STRING
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_DEFAULT_PATTERN
+name|PROP_DEFAULT_PALETTE
 argument_list|,
 literal|"default-palette"
+argument_list|,
+name|DEFAULT_PALETTE_BLURB
 argument_list|,
 name|NULL
 argument_list|,
@@ -548,6 +578,8 @@ name|PROP_DEFAULT_GRADIENT
 argument_list|,
 literal|"default-gradient"
 argument_list|,
+name|DEFAULT_GRADIENT_BLURB
+argument_list|,
 name|NULL
 argument_list|,
 literal|0
@@ -561,6 +593,8 @@ name|PROP_DEFAULT_COMMENT
 argument_list|,
 literal|"default-comment"
 argument_list|,
+name|DEFAULT_COMMENT_BLURB
+argument_list|,
 literal|"Created with The GIMP"
 argument_list|,
 literal|0
@@ -573,6 +607,8 @@ argument_list|,
 name|PROP_DEFAULT_IMAGE_TYPE
 argument_list|,
 literal|"default-image-type"
+argument_list|,
+name|DEFAULT_IMAGE_TYPE_BLURB
 argument_list|,
 name|GIMP_TYPE_IMAGE_BASE_TYPE
 argument_list|,
@@ -588,6 +624,8 @@ argument_list|,
 name|PROP_DEFAULT_IMAGE_WIDTH
 argument_list|,
 literal|"default-image-width"
+argument_list|,
+name|DEFAULT_IMAGE_WIDTH_BLURB
 argument_list|,
 literal|1
 argument_list|,
@@ -606,6 +644,8 @@ name|PROP_DEFAULT_IMAGE_HEIGHT
 argument_list|,
 literal|"default-image-height"
 argument_list|,
+name|DEFAULT_IMAGE_HEIGHT_BLURB
+argument_list|,
 literal|1
 argument_list|,
 literal|0x8000
@@ -623,6 +663,8 @@ name|PROP_DEFAULT_UNIT
 argument_list|,
 literal|"default-unit"
 argument_list|,
+name|DEFAULT_UNIT_BLURB
+argument_list|,
 name|GIMP_UNIT_INCH
 argument_list|,
 literal|0
@@ -635,6 +677,8 @@ argument_list|,
 name|PROP_DEFAULT_XRESOLUTION
 argument_list|,
 literal|"default-xresolution"
+argument_list|,
+name|DEFAULT_XRESOLUTION_BLURB
 argument_list|,
 name|GIMP_MIN_RESOLUTION
 argument_list|,
@@ -653,6 +697,8 @@ name|PROP_DEFAULT_YRESOLUTION
 argument_list|,
 literal|"default-yresolution"
 argument_list|,
+name|DEFAULT_YRESOLUTION_BLURB
+argument_list|,
 name|GIMP_MIN_RESOLUTION
 argument_list|,
 name|GIMP_MAX_RESOLUTION
@@ -670,6 +716,8 @@ name|PROP_DEFAULT_RESOLUTION_UNIT
 argument_list|,
 literal|"default-resolution-unit"
 argument_list|,
+name|DEFAULT_RESOLUTION_UNIT_BLURB
+argument_list|,
 name|GIMP_UNIT_INCH
 argument_list|,
 literal|0
@@ -682,6 +730,8 @@ argument_list|,
 name|PROP_UNDO_LEVELS
 argument_list|,
 literal|"undo-levels"
+argument_list|,
+name|UNDO_LEVELS_BLURB
 argument_list|,
 literal|0
 argument_list|,
@@ -699,6 +749,8 @@ argument_list|,
 name|PROP_PLUGINRC_PATH
 argument_list|,
 literal|"pluginrc-path"
+argument_list|,
+name|PLUGINRC_PATH_BLURB
 argument_list|,
 name|g_build_filename
 argument_list|(
@@ -721,6 +773,8 @@ name|PROP_MODULE_LOAD_INHIBIT
 argument_list|,
 literal|"module-load-inhibit"
 argument_list|,
+name|MODULE_LOAD_INHIBIT_BLURB
+argument_list|,
 name|NULL
 argument_list|,
 literal|0
@@ -733,6 +787,8 @@ argument_list|,
 name|PROP_PREVIEW_SIZE
 argument_list|,
 literal|"preview-size"
+argument_list|,
+name|PREVIEW_SIZE_BLURB
 argument_list|,
 name|GIMP_TYPE_PREVIEW_SIZE
 argument_list|,
@@ -749,6 +805,8 @@ name|PROP_THUMBNAIL_SIZE
 argument_list|,
 literal|"thumbnail-size"
 argument_list|,
+name|THUMBNAIL_SIZE_BLURB
+argument_list|,
 name|GIMP_TYPE_THUMBNAIL_SIZE
 argument_list|,
 name|GIMP_THUMBNAIL_SIZE_NORMAL
@@ -763,6 +821,8 @@ argument_list|,
 name|PROP_GAMMA_CORRECTION
 argument_list|,
 literal|"gamma-correction"
+argument_list|,
+name|GAMMA_CORRECTION_BLURB
 argument_list|,
 literal|0.0
 argument_list|,
@@ -781,6 +841,8 @@ name|PROP_INSTALL_COLORMAP
 argument_list|,
 literal|"install-colormap"
 argument_list|,
+name|INSTALL_COLORMAP_BLURB
+argument_list|,
 name|FALSE
 argument_list|,
 name|GIMP_PARAM_RESTART
@@ -793,6 +855,8 @@ argument_list|,
 name|PROP_MIN_COLORS
 argument_list|,
 literal|"min-colors"
+argument_list|,
+name|MIN_COLORS_BLURB
 argument_list|,
 literal|27
 argument_list|,

@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpconfig-blurbs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpconfig-params.h"
 end_include
 
@@ -146,7 +152,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acf284f0103
+DECL|enum|__anon2af22fe30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -375,6 +381,8 @@ name|PROP_MARCHING_ANTS_SPEED
 argument_list|,
 literal|"marching-ants-speed"
 argument_list|,
+name|MARCHING_ANTS_SPEED_BLURB
+argument_list|,
 literal|50
 argument_list|,
 name|G_MAXINT
@@ -392,6 +400,8 @@ name|PROP_COLORMAP_CYCLING
 argument_list|,
 literal|"colormap-cycling"
 argument_list|,
+name|COLORMAP_CYCLING_BLURB
+argument_list|,
 name|FALSE
 argument_list|,
 name|GIMP_PARAM_RESTART
@@ -404,6 +414,8 @@ argument_list|,
 name|PROP_RESIZE_WINDOWS_ON_ZOOM
 argument_list|,
 literal|"resize-windows-on-zoom"
+argument_list|,
+name|RESIZE_WINDOWS_ON_ZOOM_BLURB
 argument_list|,
 name|FALSE
 argument_list|,
@@ -418,6 +430,8 @@ name|PROP_RESIZE_WINDOWS_ON_RESIZE
 argument_list|,
 literal|"resize-windows-on-resize"
 argument_list|,
+name|RESIZE_WINDOWS_ON_RESIZE_BLURB
+argument_list|,
 name|FALSE
 argument_list|,
 literal|0
@@ -430,6 +444,8 @@ argument_list|,
 name|PROP_DEFAULT_DOT_FOR_DOT
 argument_list|,
 literal|"default-dot-for-dot"
+argument_list|,
+name|DEFAULT_DOT_FOR_DOT_BLURB
 argument_list|,
 name|TRUE
 argument_list|,
@@ -444,6 +460,8 @@ name|PROP_PERFECT_MOUSE
 argument_list|,
 literal|"perfect-mouse"
 argument_list|,
+name|PERFECT_MOUSE_BLURB
+argument_list|,
 name|FALSE
 argument_list|,
 literal|0
@@ -456,6 +474,8 @@ argument_list|,
 name|PROP_CURSOR_MODE
 argument_list|,
 literal|"cursor-mode"
+argument_list|,
+name|CURSOR_MODE_BLURB
 argument_list|,
 name|GIMP_TYPE_CURSOR_MODE
 argument_list|,
@@ -472,6 +492,8 @@ name|PROP_CURSOR_UPDATING
 argument_list|,
 literal|"cursor-updating"
 argument_list|,
+name|CURSOR_UPDATING_BLURB
+argument_list|,
 name|TRUE
 argument_list|,
 literal|0
@@ -484,6 +506,8 @@ argument_list|,
 name|PROP_IMAGE_TITLE_FORMAT
 argument_list|,
 literal|"image-title-format"
+argument_list|,
+name|IMAGE_TITLE_FORMAT_BLURB
 argument_list|,
 name|DEFAULT_IMAGE_TITLE_FORMAT
 argument_list|,
@@ -498,6 +522,8 @@ name|PROP_IMAGE_STATUS_FORMAT
 argument_list|,
 literal|"image-status-format"
 argument_list|,
+name|IMAGE_STATUS_FORMAT_BLURB
+argument_list|,
 name|DEFAULT_IMAGE_STATUS_FORMAT
 argument_list|,
 literal|0
@@ -510,6 +536,8 @@ argument_list|,
 name|PROP_SHOW_RULERS
 argument_list|,
 literal|"show-rulers"
+argument_list|,
+name|SHOW_RULERS_BLURB
 argument_list|,
 name|TRUE
 argument_list|,
@@ -524,6 +552,8 @@ name|PROP_SHOW_STATUSBAR
 argument_list|,
 literal|"show-statusbar"
 argument_list|,
+name|SHOW_STATUSBAR_BLURB
+argument_list|,
 name|TRUE
 argument_list|,
 literal|0
@@ -537,6 +567,8 @@ name|PROP_CONFIRM_ON_CLOSE
 argument_list|,
 literal|"confirm-on-close"
 argument_list|,
+name|CONFIRM_ON_CLOSE_BLURB
+argument_list|,
 name|TRUE
 argument_list|,
 literal|0
@@ -549,6 +581,8 @@ argument_list|,
 name|PROP_MONITOR_XRESOLUTION
 argument_list|,
 literal|"monitor-xresolution"
+argument_list|,
+name|MONITOR_XRESOLUTION_BLURB
 argument_list|,
 name|GIMP_MIN_RESOLUTION
 argument_list|,
@@ -567,6 +601,8 @@ name|PROP_MONITOR_YRESOLUTION
 argument_list|,
 literal|"monitor-yresolution"
 argument_list|,
+name|MONITOR_YRESOLUTION_BLURB
+argument_list|,
 name|GIMP_MIN_RESOLUTION
 argument_list|,
 name|G_MAXDOUBLE
@@ -584,6 +620,8 @@ name|PROP_MONITOR_RES_FROM_GDK
 argument_list|,
 literal|"monitor-resolution-from-windowing-system"
 argument_list|,
+name|MONITOR_RES_FROM_GDK_BLURB
+argument_list|,
 name|TRUE
 argument_list|,
 literal|0
@@ -596,6 +634,8 @@ argument_list|,
 name|PROP_NAV_PREVIEW_SIZE
 argument_list|,
 literal|"navigation-preview-size"
+argument_list|,
+name|NAVIGATION_PREVIEW_SIZE_BLURB
 argument_list|,
 name|GIMP_TYPE_PREVIEW_SIZE
 argument_list|,
@@ -612,6 +652,8 @@ name|PROP_CANVAS_PADDING_MODE
 argument_list|,
 literal|"canvas-padding-mode"
 argument_list|,
+name|CANVAS_PADDING_MODE_BLURB
+argument_list|,
 name|GIMP_TYPE_DISPLAY_PADDING_MODE
 argument_list|,
 name|GIMP_DISPLAY_PADDING_MODE_DEFAULT
@@ -626,6 +668,8 @@ argument_list|,
 name|PROP_CANVAS_PADDING_COLOR
 argument_list|,
 literal|"canvas-padding-color"
+argument_list|,
+name|CANVAS_PADDING_COLOR_BLURB
 argument_list|,
 operator|&
 name|white

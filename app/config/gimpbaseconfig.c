@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpconfig-blurbs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpconfig-params.h"
 end_include
 
@@ -118,7 +124,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon275dd20f0103
+DECL|enum|__anon2b2806c60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -288,6 +294,8 @@ name|PROP_TEMP_PATH
 argument_list|,
 literal|"temp-path"
 argument_list|,
+name|TEMP_PATH_BLURB
+argument_list|,
 name|g_build_filename
 argument_list|(
 name|gimp_directory
@@ -309,6 +317,8 @@ name|PROP_SWAP_PATH
 argument_list|,
 literal|"swap-path"
 argument_list|,
+name|SWAP_PATH_BLURB
+argument_list|,
 name|g_strdup
 argument_list|(
 name|gimp_directory
@@ -326,6 +336,8 @@ name|PROP_STINGY_MEMORY_USE
 argument_list|,
 literal|"stingy-memory-use"
 argument_list|,
+name|STINGY_MEMORY_USE_BLURB
+argument_list|,
 name|FALSE
 argument_list|,
 name|GIMP_PARAM_RESTART
@@ -338,6 +350,8 @@ argument_list|,
 name|PROP_NUM_PROCESSORS
 argument_list|,
 literal|"num-processors"
+argument_list|,
+name|NUM_PROCESSORS_BLURB
 argument_list|,
 literal|1
 argument_list|,
@@ -355,6 +369,8 @@ argument_list|,
 name|PROP_TILE_CACHE_SIZE
 argument_list|,
 literal|"tile-cache-size"
+argument_list|,
+name|TILE_CACHE_SIZE_BLURB
 argument_list|,
 literal|0
 argument_list|,

@@ -95,7 +95,7 @@ argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"# Dump of the GIMP default configuration\n"
+literal|"# Dump of the GIMP default configuration\n\n"
 argument_list|)
 expr_stmt|;
 name|gimp_config_serialize_properties

@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpconfig-blurbs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpconfig-params.h"
 end_include
 
@@ -124,7 +130,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc1c7be0103
+DECL|enum|__anon27f029e60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -330,6 +336,8 @@ name|PROP_TRANSPARENCY_SIZE
 argument_list|,
 literal|"transparency-size"
 argument_list|,
+name|TRANSPARENCY_SIZE_BLURB
+argument_list|,
 name|GIMP_TYPE_CHECK_SIZE
 argument_list|,
 name|GIMP_MEDIUM_CHECKS
@@ -345,6 +353,8 @@ name|PROP_TRANSPARENCY_TYPE
 argument_list|,
 literal|"transparency-type"
 argument_list|,
+name|TRANSPARENCY_TYPE_BLURB
+argument_list|,
 name|GIMP_TYPE_CHECK_TYPE
 argument_list|,
 name|GIMP_GRAY_CHECKS
@@ -359,6 +369,8 @@ argument_list|,
 name|PROP_DEFAULT_THRESHOLD
 argument_list|,
 literal|"default-threshold"
+argument_list|,
+name|DEFAULT_THRESHOLD_BLURB
 argument_list|,
 literal|0
 argument_list|,
@@ -377,6 +389,8 @@ name|PROP_INFO_WINDOW_PER_DISPLAY
 argument_list|,
 literal|"info-window-per-display"
 argument_list|,
+name|INFO_WINDOW_PER_DISPLAY_BLURB
+argument_list|,
 name|FALSE
 argument_list|,
 name|GIMP_PARAM_RESTART
@@ -389,6 +403,8 @@ argument_list|,
 name|PROP_TRUST_DIRTY_FLAG
 argument_list|,
 literal|"trust-dirty-flag"
+argument_list|,
+name|TRUST_DIRTY_FLAG_BLURB
 argument_list|,
 name|FALSE
 argument_list|,
@@ -403,6 +419,8 @@ name|PROP_SAVE_DEVICE_STATUS
 argument_list|,
 literal|"save-device-status"
 argument_list|,
+name|SAVE_DEVICE_STATUS_BLURB
+argument_list|,
 name|FALSE
 argument_list|,
 literal|0
@@ -415,6 +433,8 @@ argument_list|,
 name|PROP_SAVE_SESSION_INFO
 argument_list|,
 literal|"save-session-info"
+argument_list|,
+name|SAVE_SESSION_INFO_BLURB
 argument_list|,
 name|TRUE
 argument_list|,
@@ -429,6 +449,8 @@ name|PROP_RESTORE_SESSION
 argument_list|,
 literal|"restore-session"
 argument_list|,
+name|RESTORE_SESSION_BLURB
+argument_list|,
 name|TRUE
 argument_list|,
 literal|0
@@ -441,6 +463,8 @@ argument_list|,
 name|PROP_SHOW_TIPS
 argument_list|,
 literal|"show-tips"
+argument_list|,
+name|SHOW_TIPS_BLURB
 argument_list|,
 name|TRUE
 argument_list|,
@@ -455,6 +479,8 @@ name|PROP_SHOW_TOOL_TIPS
 argument_list|,
 literal|"show-tool-tips"
 argument_list|,
+name|SHOW_TOOL_TIPS_BLURB
+argument_list|,
 name|TRUE
 argument_list|,
 literal|0
@@ -468,6 +494,8 @@ name|PROP_TEAROFF_MENUS
 argument_list|,
 literal|"tearoff-menus"
 argument_list|,
+name|TEAROFF_MENUS_BLURB
+argument_list|,
 name|TRUE
 argument_list|,
 name|GIMP_PARAM_RESTART
@@ -480,6 +508,8 @@ argument_list|,
 name|PROP_LAST_OPENED_SIZE
 argument_list|,
 literal|"last-opened-size"
+argument_list|,
+name|LAST_OPENED_SIZE_BLURB
 argument_list|,
 literal|0
 argument_list|,
@@ -497,6 +527,8 @@ argument_list|,
 name|PROP_MAX_NEW_IMAGE_SIZE
 argument_list|,
 literal|"max-new-image-size"
+argument_list|,
+name|MAX_NEW_IMAGE_SIZE_BLURB
 argument_list|,
 literal|0
 argument_list|,
@@ -517,6 +549,8 @@ name|PROP_THEME_PATH
 argument_list|,
 literal|"theme-path"
 argument_list|,
+name|THEME_PATH_BLURB
+argument_list|,
 name|gimp_config_build_data_path
 argument_list|(
 literal|"themes"
@@ -533,6 +567,8 @@ name|PROP_THEME
 argument_list|,
 literal|"theme"
 argument_list|,
+name|THEME_BLURB
+argument_list|,
 name|NULL
 argument_list|,
 literal|0
@@ -546,6 +582,8 @@ name|PROP_USE_HELP
 argument_list|,
 literal|"use-help"
 argument_list|,
+name|USE_HELP_BLURB
+argument_list|,
 name|TRUE
 argument_list|,
 literal|0
@@ -558,6 +596,8 @@ argument_list|,
 name|PROP_HELP_BROWSER
 argument_list|,
 literal|"help-browser"
+argument_list|,
+name|HELP_BROWSER_BLURB
 argument_list|,
 name|GIMP_TYPE_HELP_BROWSER_TYPE
 argument_list|,

@@ -1264,7 +1264,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fad9ab0103
+DECL|enum|__anon2a43bba80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1316,7 +1316,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fad9ab0203
+DECL|enum|__anon2a43bba80203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -2560,6 +2560,8 @@ index|[
 name|TOOL_CHANGED
 index|]
 argument_list|,
+name|NULL
+argument_list|,
 name|GIMP_TYPE_TOOL_INFO
 argument_list|,
 literal|0
@@ -2575,6 +2577,8 @@ name|gimp_context_prop_names
 index|[
 name|FOREGROUND_CHANGED
 index|]
+argument_list|,
+name|NULL
 argument_list|,
 operator|&
 name|black
@@ -2593,6 +2597,8 @@ index|[
 name|BACKGROUND_CHANGED
 index|]
 argument_list|,
+name|NULL
+argument_list|,
 operator|&
 name|white
 argument_list|,
@@ -2609,6 +2615,8 @@ name|gimp_context_prop_names
 index|[
 name|OPACITY_CHANGED
 index|]
+argument_list|,
+name|NULL
 argument_list|,
 name|GIMP_OPACITY_TRANSPARENT
 argument_list|,
@@ -2630,6 +2638,8 @@ index|[
 name|PAINT_MODE_CHANGED
 index|]
 argument_list|,
+name|NULL
+argument_list|,
 name|GIMP_TYPE_LAYER_MODE_EFFECTS
 argument_list|,
 name|GIMP_NORMAL_MODE
@@ -2648,6 +2658,8 @@ index|[
 name|BRUSH_CHANGED
 index|]
 argument_list|,
+name|NULL
+argument_list|,
 name|GIMP_TYPE_BRUSH
 argument_list|,
 literal|0
@@ -2663,6 +2675,8 @@ name|gimp_context_prop_names
 index|[
 name|PATTERN_CHANGED
 index|]
+argument_list|,
+name|NULL
 argument_list|,
 name|GIMP_TYPE_PATTERN
 argument_list|,
@@ -2680,6 +2694,8 @@ index|[
 name|GRADIENT_CHANGED
 index|]
 argument_list|,
+name|NULL
+argument_list|,
 name|GIMP_TYPE_GRADIENT
 argument_list|,
 literal|0
@@ -2695,6 +2711,8 @@ name|gimp_context_prop_names
 index|[
 name|PALETTE_CHANGED
 index|]
+argument_list|,
+name|NULL
 argument_list|,
 name|GIMP_TYPE_PALETTE
 argument_list|,

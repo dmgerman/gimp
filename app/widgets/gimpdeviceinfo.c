@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon296bd4b60103
+DECL|enum|__anon27e92ebe0103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon296bd4b60203
+DECL|enum|__anon27e92ebe0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -420,6 +420,8 @@ argument_list|,
 name|PROP_MODE
 argument_list|,
 literal|"mode"
+argument_list|,
+name|NULL
 argument_list|,
 name|GDK_TYPE_INPUT_MODE
 argument_list|,

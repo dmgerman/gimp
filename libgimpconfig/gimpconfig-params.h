@@ -297,7 +297,6 @@ comment|/* some convenience macros to install object properties */
 end_comment
 
 begin_define
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_BOOLEAN (class,id,name,default,flags)
 define|#
 directive|define
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -305,14 +304,16 @@ parameter_list|(
 name|class
 parameter_list|,
 name|id
-parameter_list|,
+parameter_list|,\
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_BOOLEAN (class,id,\\\nname,blurb,default,flags)
 name|name
 parameter_list|,
-define|default, flags)\   g_object_class_install_property (class, id,\                                    g_param_spec_boolean (name, NULL, NULL,\                                    default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
+name|blurb
+parameter_list|,
+define|default, flags)\   g_object_class_install_property (class, id,\                                    g_param_spec_boolean (name, NULL, blurb,\                                    default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
 end_define
 
 begin_define
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_COLOR (class,id,name,default,flags)
 define|#
 directive|define
 name|GIMP_CONFIG_INSTALL_PROP_COLOR
@@ -320,14 +321,16 @@ parameter_list|(
 name|class
 parameter_list|,
 name|id
-parameter_list|,
+parameter_list|,\
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_COLOR (class,id,\\\nname,blurb,default,flags)
 name|name
 parameter_list|,
-define|default, flags)\   g_object_class_install_property (class, id,\                                    gimp_param_spec_color (name, NULL, NULL,\                                    default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
+name|blurb
+parameter_list|,
+define|default, flags)\   g_object_class_install_property (class, id,\                                    gimp_param_spec_color (name, NULL, blurb,\                                    default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
 end_define
 
 begin_define
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_DOUBLE (class,id,name,min,max,default,flags)
 define|#
 directive|define
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -335,18 +338,20 @@ parameter_list|(
 name|class
 parameter_list|,
 name|id
-parameter_list|,
+parameter_list|,\
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_DOUBLE (class,id,\\\nname,blurb,min,max,default,flags)
 name|name
+parameter_list|,
+name|blurb
 parameter_list|,
 name|min
 parameter_list|,
 name|max
 parameter_list|,
-define|default, flags)\   g_object_class_install_property (class, id,\                                    g_param_spec_double (name, NULL, NULL,\                                    min, max, default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
+define|default, flags)\   g_object_class_install_property (class, id,\                                    g_param_spec_double (name, NULL, blurb,\                                    min, max, default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
 end_define
 
 begin_define
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_ENUM (class,id,name,enum_type,default,flags)
 define|#
 directive|define
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -354,16 +359,18 @@ parameter_list|(
 name|class
 parameter_list|,
 name|id
-parameter_list|,
+parameter_list|,\
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_ENUM (class,id,\\\nname,blurb,enum_type,default,flags)
 name|name
+parameter_list|,
+name|blurb
 parameter_list|,
 name|enum_type
 parameter_list|,
-define|default, flags)\   g_object_class_install_property (class, id,\                                    g_param_spec_enum (name, NULL, NULL,\                                    enum_type, default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
+define|default, flags)\   g_object_class_install_property (class, id,\                                    g_param_spec_enum (name, NULL, blurb,\                                    enum_type, default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
 end_define
 
 begin_define
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_INT (class,id,name,min,max,default,flags)
 define|#
 directive|define
 name|GIMP_CONFIG_INSTALL_PROP_INT
@@ -371,18 +378,20 @@ parameter_list|(
 name|class
 parameter_list|,
 name|id
-parameter_list|,
+parameter_list|,\
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_INT (class,id,\\\nname,blurb,min,max,default,flags)
 name|name
+parameter_list|,
+name|blurb
 parameter_list|,
 name|min
 parameter_list|,
 name|max
 parameter_list|,
-define|default, flags)\   g_object_class_install_property (class, id,\                                    g_param_spec_int (name, NULL, NULL,\                                    min, max, default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
+define|default, flags)\   g_object_class_install_property (class, id,\                                    g_param_spec_int (name, NULL, blurb,\                                    min, max, default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
 end_define
 
 begin_define
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_MEMSIZE (class,id,name,min,max,default,flags)
 define|#
 directive|define
 name|GIMP_CONFIG_INSTALL_PROP_MEMSIZE
@@ -390,18 +399,20 @@ parameter_list|(
 name|class
 parameter_list|,
 name|id
-parameter_list|,
+parameter_list|,\
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_MEMSIZE (class,id,\\\nname,blurb,min,max,default,flags)
 name|name
+parameter_list|,
+name|blurb
 parameter_list|,
 name|min
 parameter_list|,
 name|max
 parameter_list|,
-define|default, flags)\   g_object_class_install_property (class, id,\                                    gimp_param_spec_memsize (name, NULL, NULL,\                                    min, max, default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
+define|default, flags)\   g_object_class_install_property (class, id,\                                    gimp_param_spec_memsize (name, NULL, blurb,\                                    min, max, default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
 end_define
 
 begin_define
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_OBJECT (class,id,name,object_type,flags)
 define|#
 directive|define
 name|GIMP_CONFIG_INSTALL_PROP_OBJECT
@@ -409,19 +420,21 @@ parameter_list|(
 name|class
 parameter_list|,
 name|id
-parameter_list|,
+parameter_list|,\
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_OBJECT (class,id,\\\nname,blurb,object_type,flags)
 name|name
+parameter_list|,
+name|blurb
 parameter_list|,
 name|object_type
 parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|g_object_class_install_property (class, id,\                                    g_param_spec_object (name, NULL, NULL,\                                    object_type,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
+value|g_object_class_install_property (class, id,\                                    g_param_spec_object (name, NULL, blurb,\                                    object_type,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
 end_define
 
 begin_define
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_PATH (class,id,name,default,flags)
 define|#
 directive|define
 name|GIMP_CONFIG_INSTALL_PROP_PATH
@@ -429,14 +442,16 @@ parameter_list|(
 name|class
 parameter_list|,
 name|id
-parameter_list|,
+parameter_list|,\
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_PATH (class,id,\\\nname,blurb,default,flags)
 name|name
 parameter_list|,
-define|default, flags)\   g_object_class_install_property (class, id,\                                    gimp_param_spec_path (name, NULL, NULL,\                                    default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
+name|blurb
+parameter_list|,
+define|default, flags)\   g_object_class_install_property (class, id,\                                    gimp_param_spec_path (name, NULL, blurb,\                                    default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
 end_define
 
 begin_define
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_STRING (class,id,name,default,flags)
 define|#
 directive|define
 name|GIMP_CONFIG_INSTALL_PROP_STRING
@@ -444,14 +459,16 @@ parameter_list|(
 name|class
 parameter_list|,
 name|id
-parameter_list|,
+parameter_list|,\
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_STRING (class,id,\\\nname,blurb,default,flags)
 name|name
 parameter_list|,
-define|default, flags)\   g_object_class_install_property (class, id,\                                    g_param_spec_string (name, NULL, NULL,\                                    default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
+name|blurb
+parameter_list|,
+define|default, flags)\   g_object_class_install_property (class, id,\                                    g_param_spec_string (name, NULL, blurb,\                                    default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
 end_define
 
 begin_define
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_UINT (class,id,name,min,max,default,flags)
 define|#
 directive|define
 name|GIMP_CONFIG_INSTALL_PROP_UINT
@@ -459,18 +476,20 @@ parameter_list|(
 name|class
 parameter_list|,
 name|id
-parameter_list|,
+parameter_list|,\
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_UINT (class,id,\\\nname,blurb,min,max,default,flags)
 name|name
+parameter_list|,
+name|blurb
 parameter_list|,
 name|min
 parameter_list|,
 name|max
 parameter_list|,
-define|default, flags)\   g_object_class_install_property (class, id,\                                    g_param_spec_uint (name, NULL, NULL,\                                    min, max, default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
+define|default, flags)\   g_object_class_install_property (class, id,\                                    g_param_spec_uint (name, NULL, blurb,\                                    min, max, default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
 end_define
 
 begin_define
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_UNIT (class,id,name,default,flags)
 define|#
 directive|define
 name|GIMP_CONFIG_INSTALL_PROP_UNIT
@@ -478,10 +497,13 @@ parameter_list|(
 name|class
 parameter_list|,
 name|id
-parameter_list|,
+parameter_list|,\
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_UNIT (class,id,\\\nname,blurb,default,flags)
 name|name
 parameter_list|,
-define|default, flags)\   g_object_class_install_property (class, id,\                                    gimp_param_spec_unit (name, NULL, NULL,\                                    FALSE, default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
+name|blurb
+parameter_list|,
+define|default, flags)\   g_object_class_install_property (class, id,\                                    gimp_param_spec_unit (name, NULL, blurb,\                                    FALSE, default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
 end_define
 
 begin_endif
