@@ -63,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon295275530103
+DECL|enum|__anon2b67e14c0103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -76,7 +76,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon295275530203
+DECL|enum|__anon2b67e14c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1574,6 +1574,12 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+name|bevent
+operator|->
+name|type
+operator|==
+name|GDK_BUTTON_PRESS
+operator|&&
 name|bevent
 operator|->
 name|button
