@@ -343,7 +343,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8ccdf50108
+DECL|struct|__anon2c6ae6c70108
 block|{
 DECL|member|command
 name|gchar
@@ -367,7 +367,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8ccdf50208
+DECL|struct|__anon2c6ae6c70208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -2019,6 +2019,11 @@ argument_list|(
 name|buf
 argument_list|,
 name|server_log_file
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|buf
 argument_list|)
 expr_stmt|;
 if|if

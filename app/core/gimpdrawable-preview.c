@@ -855,7 +855,7 @@ expr_stmt|;
 comment|/*  allocate an array to help with the calculations  */
 name|row
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|gdouble
 argument_list|,
@@ -959,23 +959,6 @@ name|i
 index|]
 expr_stmt|;
 block|}
-comment|/*  clear the "row" array  */
-name|memset
-argument_list|(
-name|row
-argument_list|,
-literal|0
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|gdouble
-argument_list|)
-operator|*
-name|width
-operator|*
-name|bytes
-argument_list|)
-expr_stmt|;
 comment|/*  counters...  */
 name|src_row
 operator|=

@@ -161,7 +161,6 @@ name|gchar
 modifier|*
 name|token
 decl_stmt|;
-specifier|const
 name|gchar
 modifier|*
 name|value
@@ -203,9 +202,12 @@ operator|=
 operator|(
 name|value
 operator|=
+name|g_strdup
+argument_list|(
 name|gimprc_find_token
 argument_list|(
 name|token
+argument_list|)
 argument_list|)
 operator|)
 operator|!=
@@ -254,10 +256,7 @@ name|value
 operator|.
 name|pdb_pointer
 operator|=
-name|g_strdup
-argument_list|(
 name|value
-argument_list|)
 expr_stmt|;
 return|return
 name|return_args
