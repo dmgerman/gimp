@@ -90,13 +90,11 @@ name|gchar
 modifier|*
 name|full_prog_name
 parameter_list|,
-name|gint
-name|gimp_argc
-parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 modifier|*
-name|gimp_argv
+name|filenames
 parameter_list|,
 specifier|const
 name|gchar
