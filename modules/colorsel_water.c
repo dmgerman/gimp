@@ -146,7 +146,7 @@ literal|"v0.3"
 block|,
 literal|"(c) 1998-1999, released under the GPL"
 block|,
-literal|"May, 09 1999"
+literal|"May, 10 1999"
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -301,7 +301,7 @@ value|40
 end_define
 
 begin_typedef
-DECL|struct|__anon28c9b4ad0108
+DECL|struct|__anon2adf5f760108
 typedef|typedef
 struct|struct
 block|{
@@ -637,31 +637,19 @@ endif|#
 directive|endif
 name|width
 operator|=
-name|GTK_WIDGET
-argument_list|(
-name|color_preview
-index|[
+operator|(
 name|i
-index|]
-argument_list|)
-operator|->
-name|allocation
-operator|.
-name|width
+operator|==
+literal|0
+condition|?
+name|PREVIEW_SIZE
+else|:
+name|BUCKET_SIZE
+operator|)
 expr_stmt|;
 name|height
 operator|=
-name|GTK_WIDGET
-argument_list|(
-name|color_preview
-index|[
-name|i
-index|]
-argument_list|)
-operator|->
-name|allocation
-operator|.
-name|height
+name|width
 expr_stmt|;
 name|buf
 operator|=
