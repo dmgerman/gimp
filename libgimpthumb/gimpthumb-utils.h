@@ -37,7 +37,7 @@ end_function_decl
 begin_function_decl
 name|gchar
 modifier|*
-name|gimp_thumb_png_thumb_path
+name|gimp_thumb_png_thumb_name
 parameter_list|(
 specifier|const
 name|gchar

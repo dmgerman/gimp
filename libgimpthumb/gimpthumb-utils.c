@@ -347,8 +347,8 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_thumb_png_thumb_path (const gchar * uri,GimpThumbSize * size)
-name|gimp_thumb_png_thumb_path
+DECL|function|gimp_thumb_png_thumb_name (const gchar * uri,GimpThumbSize * size)
+name|gimp_thumb_png_thumb_name
 parameter_list|(
 specifier|const
 name|gchar
@@ -389,7 +389,7 @@ name|strstr
 argument_list|(
 name|uri
 argument_list|,
-literal|"/.thumbnails/"
+name|thumb_dir
 argument_list|)
 condition|)
 return|return
