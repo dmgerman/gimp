@@ -6,6 +6,22 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<glib.h>
+end_include
+
+begin_comment
+comment|/* For G_OS_WIN32 */
+end_comment
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
+end_ifndef
+
+begin_include
+include|#
+directive|include
 file|<stdarg.h>
 end_include
 
@@ -343,7 +359,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2739be270108
+DECL|struct|__anon2b9d497a0108
 block|{
 DECL|member|command
 name|gchar
@@ -367,7 +383,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2739be270208
+DECL|struct|__anon2b9d497a0208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -2420,6 +2436,15 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* G_OS_WIN32 */
+end_comment
 
 end_unit
 
