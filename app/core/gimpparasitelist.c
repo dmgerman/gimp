@@ -38,6 +38,23 @@ directive|include
 file|<glib-object.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<io.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include
@@ -76,7 +93,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28bcd1410103
+DECL|enum|__anon2b6d8ee90103
 block|{
 DECL|enumerator|ADD
 name|ADD

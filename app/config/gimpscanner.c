@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<errno.h>
 end_include
 
@@ -658,7 +664,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5335530103
+DECL|enum|__anon29e55f140103
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB

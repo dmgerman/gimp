@@ -51,11 +51,22 @@ directive|include
 file|"widgets-types.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
 begin_warning
 warning|#
 directive|warning
 warning|FIXME #include "display/display-types.h"
 end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -131,7 +142,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2332640103
+DECL|enum|__anon278afe4e0103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED

@@ -68,6 +68,23 @@ directive|include
 file|<glib-object.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<io.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include
@@ -1534,7 +1551,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c36e9600108
+DECL|struct|__anon29e91d2b0108
 block|{
 DECL|member|key
 name|gchar

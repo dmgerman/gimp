@@ -38,6 +38,23 @@ directive|include
 file|<glib-object.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<io.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include
@@ -91,14 +108,14 @@ name|DEBUG_CONTAINER
 end_ifdef
 
 begin_define
-DECL|macro|DEBUG (...)
+DECL|macro|D (stmnt)
 define|#
 directive|define
-name|DEBUG
+name|D
 parameter_list|(
-modifier|...
+name|stmnt
 parameter_list|)
-value|g_print(...)
+value|stmnt
 end_define
 
 begin_else
@@ -107,12 +124,12 @@ directive|else
 end_else
 
 begin_define
-DECL|macro|DEBUG (...)
+DECL|macro|D (stmnt)
 define|#
 directive|define
-name|DEBUG
+name|D
 parameter_list|(
-modifier|...
+name|stmnt
 parameter_list|)
 end_define
 
@@ -153,7 +170,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4e02200103
+DECL|enum|__anon2757f98c0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -178,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4e02200203
+DECL|enum|__anon2757f98c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1353,7 +1370,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4e02200308
+DECL|struct|__anon2757f98c0308
 block|{
 DECL|member|fd
 name|gint
@@ -3478,7 +3495,9 @@ argument_list|(
 name|key
 argument_list|)
 expr_stmt|;
-name|DEBUG
+name|D
+argument_list|(
+name|g_print
 argument_list|(
 literal|"%s: key = %s, id = %d\n"
 argument_list|,
@@ -3489,6 +3508,7 @@ argument_list|,
 name|handler
 operator|->
 name|quark
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -3688,7 +3708,9 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|DEBUG
+name|D
+argument_list|(
+name|g_print
 argument_list|(
 literal|"%s: id = %d\n"
 argument_list|,
@@ -3697,6 +3719,7 @@ argument_list|,
 name|handler
 operator|->
 name|quark
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_container_foreach
