@@ -370,7 +370,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f1f8d00108
+DECL|struct|__anon2b1c52040108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -439,7 +439,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f1f8d00208
+DECL|struct|__anon2b1c52040208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -547,7 +547,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f1f8d00308
+DECL|struct|__anon2b1c52040308
 block|{
 DECL|member|color
 name|guchar
@@ -576,7 +576,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f1f8d00408
+DECL|struct|__anon2b1c52040408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -603,7 +603,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f1f8d00508
+DECL|struct|__anon2b1c52040508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -1647,13 +1647,14 @@ argument_list|(
 name|TILE_CACHE_SIZE
 argument_list|)
 expr_stmt|;
-if|if
+switch|switch
 condition|(
 name|run_mode
-operator|==
-name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
+case|case
+name|GIMP_RUN_INTERACTIVE
+case|:
 name|p_smp_dialog
 argument_list|()
 expr_stmt|;
@@ -1673,16 +1674,13 @@ name|t_values
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-if|if
-condition|(
-name|run_mode
-operator|==
+name|gimp_displays_flush
+argument_list|()
+expr_stmt|;
+break|break;
+case|case
 name|GIMP_RUN_NONINTERACTIVE
-condition|)
-block|{
+case|:
 if|if
 condition|(
 name|nparams
@@ -1828,33 +1826,12 @@ operator|=
 name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
+break|break;
+case|case
+name|GIMP_RUN_WITH_LAST_VALS
+case|:
+break|break;
 block|}
-if|if
-condition|(
-name|status
-operator|!=
-name|GIMP_PDB_CALLING_ERROR
-condition|)
-block|{
-name|p_main_colorize
-argument_list|(
-name|MC_ALL
-argument_list|)
-expr_stmt|;
-name|p_free_colors
-argument_list|()
-expr_stmt|;
-block|}
-block|}
-if|if
-condition|(
-name|run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-condition|)
-name|gimp_displays_flush
-argument_list|()
-expr_stmt|;
 block|}
 else|else
 block|{
@@ -2026,15 +2003,13 @@ block|{
 name|gint32
 modifier|*
 name|toggle_val
-decl_stmt|;
-name|toggle_val
-operator|=
+init|=
 operator|(
 name|gint32
 operator|*
 operator|)
 name|data
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|GTK_TOGGLE_BUTTON
@@ -3055,8 +3030,10 @@ argument_list|)
 index|]
 expr_stmt|;
 comment|/* get brightness from (uncolorized) original */
-operator|*
 name|l_ptr
+index|[
+literal|0
+index|]
 operator|=
 name|l_lum
 expr_stmt|;
@@ -3404,9 +3381,8 @@ name|l_alpha
 decl_stmt|;
 if|if
 condition|(
+operator|!
 name|preview
-operator|==
-name|NULL
 condition|)
 return|return;
 comment|/* init gray pixel (if we are called without a sourceimage (gdwr == NULL) */
@@ -3468,7 +3444,7 @@ block|{
 name|l_scale_y
 operator|=
 operator|(
-name|float
+name|gfloat
 operator|)
 name|l_sel_height
 operator|/
@@ -3480,6 +3456,7 @@ name|l_scale_y
 expr_stmt|;
 name|l_ofx
 operator|=
+operator|(
 name|gdrw
 operator|->
 name|x1
@@ -3496,6 +3473,7 @@ operator|)
 operator|)
 operator|/
 literal|2
+operator|)
 operator|)
 expr_stmt|;
 name|l_ofy
@@ -3510,7 +3488,7 @@ block|{
 name|l_scale_x
 operator|=
 operator|(
-name|float
+name|gfloat
 operator|)
 name|l_sel_width
 operator|/
@@ -3528,6 +3506,7 @@ name|x1
 expr_stmt|;
 name|l_ofy
 operator|=
+operator|(
 name|gdrw
 operator|->
 name|y1
@@ -3544,6 +3523,7 @@ operator|)
 operator|)
 operator|/
 literal|2
+operator|)
 operator|)
 expr_stmt|;
 block|}
@@ -3568,7 +3548,7 @@ block|{
 name|l_scale_y
 operator|=
 operator|(
-name|float
+name|gfloat
 operator|)
 name|gdrw
 operator|->
@@ -3610,7 +3590,7 @@ block|{
 name|l_scale_x
 operator|=
 operator|(
-name|float
+name|gfloat
 operator|)
 name|gdrw
 operator|->
@@ -3772,21 +3752,17 @@ name|gdrw
 operator|->
 name|sel_gdrw
 argument_list|,
-operator|(
 name|l_x2
 operator|+
 name|gdrw
 operator|->
 name|seldeltax
-operator|)
 argument_list|,
-operator|(
 name|l_y2
 operator|+
 name|gdrw
 operator|->
 name|seldeltay
-operator|)
 argument_list|,
 operator|&
 name|l_maskbytes
@@ -3848,11 +3824,15 @@ literal|2
 operator|)
 condition|)
 block|{
-operator|*
 name|l_buf_ptr
+index|[
+literal|0
+index|]
 operator|=
-operator|*
 name|l_ptr
+index|[
+literal|0
+index|]
 operator|=
 name|l_pixel
 index|[
@@ -3923,7 +3903,6 @@ operator|=
 operator|*
 name|l_ptr
 expr_stmt|;
-comment|/* copy to buffer (or to dummy byte) */
 name|l_buf_ptr
 index|[
 literal|1
@@ -3937,7 +3916,6 @@ operator|=
 operator|*
 name|l_ptr
 expr_stmt|;
-comment|/* copy to buffer (or to dummy byte) */
 name|l_buf_ptr
 index|[
 literal|2
@@ -3951,7 +3929,6 @@ operator|=
 operator|*
 name|l_ptr
 expr_stmt|;
-comment|/* copy to buffer (or to dummy byte) */
 block|}
 name|l_buf_ptr
 index|[
@@ -4176,7 +4153,6 @@ operator|=
 operator|*
 name|l_ptr
 expr_stmt|;
-comment|/* copy to buffer (or to dummy byte) */
 name|l_buf_ptr
 index|[
 literal|1
@@ -4190,7 +4166,6 @@ operator|=
 operator|*
 name|l_ptr
 expr_stmt|;
-comment|/* copy to buffer (or to dummy byte) */
 name|l_buf_ptr
 index|[
 literal|2
@@ -4204,7 +4179,6 @@ operator|=
 operator|*
 name|l_ptr
 expr_stmt|;
-comment|/* copy to buffer (or to dummy byte) */
 block|}
 block|}
 name|l_buf_ptr
@@ -4352,7 +4326,7 @@ operator|<
 literal|0
 condition|)
 block|{
-comment|/* clear preview on invalid drawable id       * (SMP_GRADIENT and SMP_INV_GRADIENT)       */
+comment|/* clear preview on invalid drawable id        * (SMP_GRADIENT and SMP_INV_GRADIENT)        */
 if|if
 condition|(
 name|id_ptr
@@ -4742,8 +4716,6 @@ expr_stmt|;
 if|if
 condition|(
 name|dialog
-operator|!=
-name|NULL
 condition|)
 block|{
 if|if
@@ -4796,11 +4768,7 @@ operator|.
 name|sample_colortab_preview
 argument_list|)
 argument_list|,
-operator|&
 name|g_sample_color_tab
-index|[
-literal|0
-index|]
 argument_list|,
 literal|0
 argument_list|,
@@ -8863,9 +8831,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|p_print_ppm (gchar * ppm_name)
+DECL|function|p_print_ppm (const gchar * ppm_name)
 name|p_print_ppm
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|ppm_name
@@ -8990,7 +8959,7 @@ block|{
 name|l_r
 operator|=
 operator|(
-name|int
+name|gint
 operator|)
 name|col_ptr
 operator|->
@@ -9002,7 +8971,7 @@ expr_stmt|;
 name|l_g
 operator|=
 operator|(
-name|int
+name|gint
 operator|)
 name|col_ptr
 operator|->
@@ -9014,7 +8983,7 @@ expr_stmt|;
 name|l_b
 operator|=
 operator|(
-name|int
+name|gint
 operator|)
 name|col_ptr
 operator|->
@@ -9095,7 +9064,7 @@ argument_list|,
 literal|"  RGBA: %03d %03d %03d %03d  sum: [%d]\n"
 argument_list|,
 operator|(
-name|int
+name|gint
 operator|)
 name|col_ptr
 operator|->
@@ -9105,7 +9074,7 @@ literal|0
 index|]
 argument_list|,
 operator|(
-name|int
+name|gint
 operator|)
 name|col_ptr
 operator|->
@@ -9115,7 +9084,7 @@ literal|1
 index|]
 argument_list|,
 operator|(
-name|int
+name|gint
 operator|)
 name|col_ptr
 operator|->
@@ -9125,7 +9094,7 @@ literal|2
 index|]
 argument_list|,
 operator|(
-name|int
+name|gint
 operator|)
 name|col_ptr
 operator|->
@@ -9135,7 +9104,7 @@ literal|3
 index|]
 argument_list|,
 operator|(
-name|int
+name|gint
 operator|)
 name|col_ptr
 operator|->
@@ -9499,10 +9468,13 @@ comment|/* DEBUG: read values from file */
 end_comment
 
 begin_function
+specifier|static
 name|void
-DECL|function|p_get_filevalues ()
+DECL|function|p_get_filevalues (void)
 name|p_get_filevalues
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|FILE
 modifier|*
@@ -9589,8 +9561,9 @@ comment|/* end p_get_filevalues */
 end_comment
 
 begin_function
-DECL|function|p_color_error (guchar ref_red,guchar ref_green,guchar ref_blue,guchar cmp_red,guchar cmp_green,guchar cmp_blue)
+specifier|static
 name|gint32
+DECL|function|p_color_error (guchar ref_red,guchar ref_green,guchar ref_blue,guchar cmp_red,guchar cmp_green,guchar cmp_blue)
 name|p_color_error
 parameter_list|(
 name|guchar
@@ -9612,13 +9585,13 @@ name|guchar
 name|cmp_blue
 parameter_list|)
 block|{
-name|long
+name|glong
 name|l_ff
 decl_stmt|;
-name|long
+name|glong
 name|l_fs
 decl_stmt|;
-name|long
+name|glong
 name|cmp_h
 decl_stmt|,
 name|ref_h
@@ -10083,8 +10056,6 @@ index|[
 literal|1
 index|]
 operator|=
-literal|0
-expr_stmt|;
 name|pixel
 index|[
 literal|3
@@ -10095,6 +10066,7 @@ expr_stmt|;
 comment|/* simulate full transparent alpha channel */
 name|ptr
 operator|=
+operator|(
 name|gdrw
 operator|->
 name|tile
@@ -10119,6 +10091,7 @@ operator|*
 name|gdrw
 operator|->
 name|bpp
+operator|)
 operator|)
 expr_stmt|;
 name|memcpy
@@ -10197,9 +10170,11 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|p_clear_tables ()
+DECL|function|p_clear_tables (void)
 name|p_clear_tables
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|gint
 name|l_idx
@@ -10252,21 +10227,19 @@ name|l_idx
 expr_stmt|;
 name|g_sample_color_tab
 index|[
+literal|3
+operator|*
 name|l_idx
 operator|+
-name|l_idx
-operator|+
-name|l_idx
+literal|0
 index|]
 operator|=
 name|l_idx
 expr_stmt|;
 name|g_sample_color_tab
 index|[
-name|l_idx
-operator|+
-name|l_idx
-operator|+
+literal|3
+operator|*
 name|l_idx
 operator|+
 literal|1
@@ -10276,10 +10249,8 @@ name|l_idx
 expr_stmt|;
 name|g_sample_color_tab
 index|[
-name|l_idx
-operator|+
-name|l_idx
-operator|+
+literal|3
+operator|*
 name|l_idx
 operator|+
 literal|2
@@ -10296,10 +10267,13 @@ comment|/* free all allocated sample colors in table g_lum_tab */
 end_comment
 
 begin_function
+specifier|static
 name|void
-DECL|function|p_free_colors ()
+DECL|function|p_free_colors (void)
 name|p_free_colors
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|gint
 name|l_lum
@@ -10356,7 +10330,7 @@ name|l_col_ptr
 operator|->
 name|next
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|l_col_ptr
 argument_list|)
@@ -10395,9 +10369,11 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|p_calculate_level_transfers ()
+DECL|function|p_calculate_level_transfers (void)
 name|p_calculate_level_transfers
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|double
 name|inten
@@ -10650,11 +10626,13 @@ comment|/* alloc and init new col Element */
 end_comment
 
 begin_function
+specifier|static
 name|t_samp_color_elem
 modifier|*
-DECL|function|p_new_samp_color (guchar * color)
+DECL|function|p_new_samp_color (const guchar * color)
 name|p_new_samp_color
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|color
@@ -10666,14 +10644,11 @@ name|l_col_ptr
 decl_stmt|;
 name|l_col_ptr
 operator|=
-name|calloc
-argument_list|(
-literal|1
-argument_list|,
-sizeof|sizeof
+name|g_new0
 argument_list|(
 name|t_samp_color_elem
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 if|if
@@ -10722,9 +10697,7 @@ operator|=
 name|NULL
 expr_stmt|;
 return|return
-operator|(
 name|l_col_ptr
-operator|)
 return|;
 block|}
 end_function
@@ -10738,10 +10711,12 @@ comment|/* store color in g_lum_tab  */
 end_comment
 
 begin_function
+specifier|static
 name|void
-DECL|function|p_add_color (guchar * color)
+DECL|function|p_add_color (const guchar * color)
 name|p_add_color
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|color
@@ -10907,6 +10882,7 @@ comment|/* sort Sublists (color) by descending sum_color in g_lum_tab  */
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|p_sort_color (gint32 lum)
 name|p_sort_color
@@ -11095,6 +11071,7 @@ comment|/* end p_sort_color */
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|p_cnt_same_sample_colortones (t_samp_color_elem * ref_ptr,guchar * prev_color,guchar * color_tone,gint * csum)
 name|p_cnt_same_sample_colortones
@@ -11377,10 +11354,13 @@ comment|/* find the dominant colortones (out of all sample colors)  * for each a
 end_comment
 
 begin_function
+specifier|static
 name|void
-DECL|function|p_ideal_samples ()
+DECL|function|p_ideal_samples (void)
 name|p_ideal_samples
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|gint32
 name|l_lum
@@ -11597,10 +11577,8 @@ operator|=
 operator|&
 name|g_sample_color_tab
 index|[
-name|l_lum
-operator|+
-name|l_lum
-operator|+
+literal|3
+operator|*
 name|l_lum
 index|]
 expr_stmt|;
@@ -11626,10 +11604,13 @@ comment|/* end p_ideal_samples */
 end_comment
 
 begin_function
+specifier|static
 name|void
-DECL|function|p_guess_missing_colors ()
+DECL|function|p_guess_missing_colors (void)
 name|p_guess_missing_colors
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|gint32
 name|l_lum
@@ -11637,7 +11618,7 @@ decl_stmt|;
 name|gint32
 name|l_idx
 decl_stmt|;
-name|float
+name|gfloat
 name|l_div
 decl_stmt|;
 name|guchar
@@ -12008,10 +11989,8 @@ argument_list|(
 operator|&
 name|g_sample_color_tab
 index|[
-name|l_lum
-operator|+
-name|l_lum
-operator|+
+literal|3
+operator|*
 name|l_lum
 index|]
 argument_list|,
@@ -12036,10 +12015,8 @@ argument_list|,
 operator|&
 name|g_sample_color_tab
 index|[
-name|l_lum
-operator|+
-name|l_lum
-operator|+
+literal|3
+operator|*
 name|l_lum
 index|]
 argument_list|,
@@ -12055,10 +12032,13 @@ comment|/* end p_guess_missing_colors */
 end_comment
 
 begin_function
+specifier|static
 name|void
-DECL|function|p_fill_missing_colors ()
+DECL|function|p_fill_missing_colors (void)
 name|p_fill_missing_colors
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|gint32
 name|l_lum
@@ -12431,10 +12411,8 @@ argument_list|(
 operator|&
 name|g_sample_color_tab
 index|[
-name|l_lum
-operator|+
-name|l_lum
-operator|+
+literal|3
+operator|*
 name|l_lum
 index|]
 argument_list|,
@@ -12465,10 +12443,8 @@ argument_list|,
 operator|&
 name|g_sample_color_tab
 index|[
-name|l_lum
-operator|+
-name|l_lum
-operator|+
+literal|3
+operator|*
 name|l_lum
 index|]
 argument_list|,
@@ -12550,11 +12526,11 @@ index|]
 expr_stmt|;
 name|g_sample_color_tab
 index|[
+literal|3
+operator|*
 name|l_lum
 operator|+
-name|l_lum
-operator|+
-name|l_lum
+literal|0
 index|]
 operator|=
 name|f_samp
@@ -12566,10 +12542,8 @@ literal|255
 expr_stmt|;
 name|g_sample_color_tab
 index|[
-name|l_lum
-operator|+
-name|l_lum
-operator|+
+literal|3
+operator|*
 name|l_lum
 operator|+
 literal|1
@@ -12584,10 +12558,8 @@ literal|255
 expr_stmt|;
 name|g_sample_color_tab
 index|[
-name|l_lum
-operator|+
-name|l_lum
-operator|+
+literal|3
+operator|*
 name|l_lum
 operator|+
 literal|2
@@ -12612,10 +12584,8 @@ argument_list|(
 operator|&
 name|g_sample_color_tab
 index|[
-name|l_lum
-operator|+
-name|l_lum
-operator|+
+literal|3
+operator|*
 name|l_lum
 index|]
 argument_list|)
@@ -14159,10 +14129,8 @@ argument_list|,
 operator|&
 name|g_sample_color_tab
 index|[
-name|l_lum
-operator|+
-name|l_lum
-operator|+
+literal|3
+operator|*
 name|l_lum
 index|]
 argument_list|,
@@ -14254,7 +14222,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* Calculate therotecal RGB to reach given intensity LUM value (l_orig_lum) */
+comment|/* Calculate theoretical RGB to reach given intensity LUM            * value (l_orig_lum)            */
 name|l_mr
 operator|=
 name|mapped_color
