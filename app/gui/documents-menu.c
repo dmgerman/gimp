@@ -89,7 +89,7 @@ argument_list|(
 literal|"/Open Image"
 argument_list|)
 block|,
-name|NULL
+literal|""
 block|,
 name|documents_open_document_cmd_callback
 block|,
@@ -114,7 +114,7 @@ argument_list|(
 literal|"/Raise or Open Image"
 argument_list|)
 block|,
-name|NULL
+literal|""
 block|,
 name|documents_raise_or_open_document_cmd_callback
 block|,
@@ -139,7 +139,7 @@ argument_list|(
 literal|"/File Open Dialog..."
 argument_list|)
 block|,
-name|NULL
+literal|""
 block|,
 name|documents_file_open_dialog_cmd_callback
 block|,

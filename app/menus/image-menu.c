@@ -367,6 +367,36 @@ block|}
 block|,
 name|MENU_SEPARATOR
 argument_list|(
+literal|"/File/Open Recent/---"
+argument_list|)
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/File/Open Recent/Document History..."
+argument_list|)
+block|,
+literal|"foo"
+block|,
+name|dialogs_create_dockable_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GTK_STOCK_OPEN
+block|}
+block|,
+literal|"gimp-document-list"
+block|,
+literal|"dialogs/document_index.html"
+block|,
+name|NULL
+block|}
+block|,
+name|MENU_SEPARATOR
+argument_list|(
 literal|"/File/---"
 argument_list|)
 block|,
@@ -5270,6 +5300,13 @@ argument_list|,
 name|gdisp
 operator|&&
 name|drawable
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/File/Save as Template..."
+argument_list|,
+name|gdisp
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
