@@ -150,10 +150,6 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
-block|{
 specifier|static
 name|GimpParamDef
 name|gdt_args
@@ -249,7 +245,7 @@ literal|"fontname"
 block|,
 literal|"The fontname (conforming to the X Logical Font Description Conventions)"
 block|}
-block|,     }
+block|}
 decl_stmt|;
 specifier|static
 name|GimpParamDef
@@ -264,10 +260,10 @@ literal|"layer"
 block|,
 literal|"The text layer"
 block|}
-block|,     }
+block|}
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|ngdt_args
 init|=
 sizeof|sizeof
@@ -284,7 +280,7 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|ngdt_rets
 init|=
 sizeof|sizeof
@@ -332,7 +328,6 @@ argument_list|,
 name|gdt_rets
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
