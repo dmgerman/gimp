@@ -45,20 +45,17 @@ directive|include
 file|<ctype.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<glib.h>
 end_include
-
-begin_if
-if|#
-directive|if
-name|defined
-argument_list|(
-name|G_OS_WIN32
-argument_list|)
-end_if
 
 begin_comment
 comment|/* This just to be able to include windows.h and undef RGB */
@@ -189,7 +186,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290de4060103
+DECL|enum|__anon291311b10103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED

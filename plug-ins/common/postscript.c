@@ -70,12 +70,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -134,7 +128,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba5d2fc0108
+DECL|struct|__anon29f5fc580108
 block|{
 DECL|member|resolution
 name|guint
@@ -186,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba5d2fc0208
+DECL|struct|__anon29f5fc580208
 block|{
 DECL|member|run
 name|gint
@@ -252,7 +246,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba5d2fc0308
+DECL|struct|__anon29f5fc580308
 block|{
 DECL|member|width
 DECL|member|height
@@ -314,7 +308,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba5d2fc0408
+DECL|struct|__anon29f5fc580408
 block|{
 DECL|member|run
 name|gint
@@ -854,7 +848,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba5d2fc0508
+DECL|struct|__anon29f5fc580508
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1725,7 +1719,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba5d2fc0608
+DECL|struct|__anon29f5fc580608
 block|{
 DECL|member|eol
 name|long

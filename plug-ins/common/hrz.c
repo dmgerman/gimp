@@ -17,11 +17,22 @@ directive|include
 file|"config.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<glib.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -88,12 +99,6 @@ directive|include
 file|<string.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|<math.h>
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -150,12 +155,6 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -178,7 +177,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4fb7350108
+DECL|struct|__anon2b5529fe0108
 block|{
 DECL|member|run
 name|gint

@@ -85,18 +85,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -321,7 +309,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbd27860108
+DECL|struct|__anon27feab140108
 block|{
 DECL|member|raw
 name|gint
@@ -337,7 +325,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbd27860208
+DECL|struct|__anon27feab140208
 block|{
 DECL|member|run
 name|gint
