@@ -148,12 +148,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"frac.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -234,7 +228,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4221490103
+DECL|enum|__anon27a7fe9a0103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -369,7 +363,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4221490203
+DECL|enum|__anon27a7fe9a0203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -390,6 +384,7 @@ DECL|enumerator|COMPRESS_FRACTAL
 name|COMPRESS_FRACTAL
 init|=
 literal|3
+comment|/* Unused. */
 DECL|typedef|CompressionType
 block|}
 name|CompressionType
@@ -2251,22 +2246,6 @@ operator|=
 name|info
 operator|->
 name|cp
-expr_stmt|;
-comment|/* Initialize the fractal compression saving routines    */
-if|if
-condition|(
-name|info
-operator|->
-name|compression
-operator|==
-name|COMPRESS_FRACTAL
-condition|)
-name|xcf_save_compress_frac_init
-argument_list|(
-literal|2
-argument_list|,
-literal|2
-argument_list|)
 expr_stmt|;
 comment|/* seek to after the offset lists */
 name|xcf_seek_pos
@@ -6799,24 +6778,6 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|info
-operator|->
-name|compression
-operator|==
-name|COMPRESS_FRACTAL
-condition|)
-name|xcf_compress_frac_info
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
-operator|->
-name|type
-argument_list|)
-expr_stmt|;
 comment|/* write out the layers name */
 name|info
 operator|->
@@ -7815,16 +7776,12 @@ break|break;
 case|case
 name|COMPRESS_FRACTAL
 case|:
-name|xcf_save_frac_compressed_tile
+name|g_error
 argument_list|(
-name|info
-argument_list|,
-name|level
-operator|->
-name|tiles
-index|[
-name|i
-index|]
+name|_
+argument_list|(
+literal|"xcf: fractal compression unimplemented"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -8612,21 +8569,6 @@ condition|)
 goto|goto
 name|error
 goto|;
-if|if
-condition|(
-name|info
-operator|->
-name|compression
-operator|==
-name|COMPRESS_FRACTAL
-condition|)
-name|xcf_load_compress_frac_init
-argument_list|(
-literal|1
-argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
 while|while
 condition|(
 literal|1
@@ -8690,24 +8632,6 @@ condition|)
 goto|goto
 name|error
 goto|;
-if|if
-condition|(
-name|info
-operator|->
-name|compression
-operator|==
-name|COMPRESS_FRACTAL
-condition|)
-name|xcf_compress_frac_info
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
-operator|->
-name|type
-argument_list|)
-expr_stmt|;
 comment|/* add the layer to the image if its not the floating selection */
 if|if
 condition|(
@@ -11077,24 +11001,6 @@ condition|)
 goto|goto
 name|error
 goto|;
-if|if
-condition|(
-name|info
-operator|->
-name|compression
-operator|==
-name|COMPRESS_FRACTAL
-condition|)
-name|xcf_compress_frac_info
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
-operator|->
-name|type
-argument_list|)
-expr_stmt|;
 comment|/* read the hierarchy and layer mask offsets */
 name|info
 operator|->
