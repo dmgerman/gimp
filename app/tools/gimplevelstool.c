@@ -163,7 +163,7 @@ DECL|macro|LOW_INPUT
 define|#
 directive|define
 name|LOW_INPUT
-value|0x1
+value|(1<< 0)
 end_define
 
 begin_define
@@ -171,7 +171,7 @@ DECL|macro|GAMMA
 define|#
 directive|define
 name|GAMMA
-value|0x2
+value|(1<< 1)
 end_define
 
 begin_define
@@ -179,7 +179,7 @@ DECL|macro|HIGH_INPUT
 define|#
 directive|define
 name|HIGH_INPUT
-value|0x4
+value|(1<< 2)
 end_define
 
 begin_define
@@ -187,7 +187,7 @@ DECL|macro|LOW_OUTPUT
 define|#
 directive|define
 name|LOW_OUTPUT
-value|0x8
+value|(1<< 3)
 end_define
 
 begin_define
@@ -195,7 +195,7 @@ DECL|macro|HIGH_OUTPUT
 define|#
 directive|define
 name|HIGH_OUTPUT
-value|0x10
+value|(1<< 4)
 end_define
 
 begin_define
@@ -203,7 +203,7 @@ DECL|macro|INPUT_LEVELS
 define|#
 directive|define
 name|INPUT_LEVELS
-value|0x20
+value|(1<< 5)
 end_define
 
 begin_define
@@ -211,7 +211,7 @@ DECL|macro|OUTPUT_LEVELS
 define|#
 directive|define
 name|OUTPUT_LEVELS
-value|0x40
+value|(1<< 6)
 end_define
 
 begin_define
@@ -219,7 +219,7 @@ DECL|macro|INPUT_SLIDERS
 define|#
 directive|define
 name|INPUT_SLIDERS
-value|0x80
+value|(1<< 7)
 end_define
 
 begin_define
@@ -227,7 +227,7 @@ DECL|macro|OUTPUT_SLIDERS
 define|#
 directive|define
 name|OUTPUT_SLIDERS
-value|0x100
+value|(1<< 8)
 end_define
 
 begin_define
@@ -235,7 +235,7 @@ DECL|macro|DRAW
 define|#
 directive|define
 name|DRAW
-value|0x200
+value|(1<< 9)
 end_define
 
 begin_define
@@ -283,7 +283,7 @@ DECL|macro|LEVELS_DA_MASK
 define|#
 directive|define
 name|LEVELS_DA_MASK
-value|GDK_EXPOSURE_MASK | \                         GDK_ENTER_NOTIFY_MASK | \ 			GDK_BUTTON_PRESS_MASK | \ 			GDK_BUTTON_RELEASE_MASK | \ 			GDK_BUTTON1_MOTION_MASK | \ 			GDK_POINTER_MOTION_HINT_MASK
+value|(GDK_EXPOSURE_MASK       | \                          GDK_ENTER_NOTIFY_MASK   | \ 			 GDK_BUTTON_PRESS_MASK   | \ 			 GDK_BUTTON_RELEASE_MASK | \ 			 GDK_BUTTON1_MOTION_MASK | \ 			 GDK_POINTER_MOTION_HINT_MASK)
 end_define
 
 begin_comment
@@ -614,18 +614,6 @@ begin_function_decl
 specifier|static
 name|void
 name|file_dialog_ok_callback
-parameter_list|(
-name|GimpLevelsTool
-modifier|*
-name|l_tool
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|gboolean
-name|file_dialog_cancel_callback
 parameter_list|(
 name|GimpLevelsTool
 modifier|*
@@ -6909,23 +6897,48 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|g_signal_connect_swapped
+name|g_object_add_weak_pointer
 argument_list|(
 name|G_OBJECT
 argument_list|(
 name|file_dlg
-operator|->
-name|cancel_button
 argument_list|)
 argument_list|,
-literal|"clicked"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|file_dialog_cancel_callback
-argument_list|)
-argument_list|,
+operator|(
+name|gpointer
+operator|)
+operator|&
 name|l_tool
+operator|->
+name|file_dialog
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_transient_for
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|file_dlg
+argument_list|)
+argument_list|,
+name|GTK_WINDOW
+argument_list|(
+name|GIMP_IMAGE_MAP_TOOL
+argument_list|(
+name|l_tool
+argument_list|)
+operator|->
+name|shell
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_destroy_with_parent
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|file_dlg
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect_swapped
@@ -6952,38 +6965,18 @@ argument_list|(
 name|G_OBJECT
 argument_list|(
 name|file_dlg
-argument_list|)
-argument_list|,
-literal|"delete_event"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|file_dialog_cancel_callback
-argument_list|)
-argument_list|,
-name|l_tool
-argument_list|)
-expr_stmt|;
-name|g_signal_connect_swapped
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|GIMP_IMAGE_MAP_TOOL
-argument_list|(
-name|l_tool
-argument_list|)
 operator|->
-name|shell
+name|cancel_button
 argument_list|)
 argument_list|,
-literal|"unmap"
+literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|file_dialog_cancel_callback
+name|gtk_widget_destroy
 argument_list|)
 argument_list|,
-name|l_tool
+name|file_dlg
 argument_list|)
 expr_stmt|;
 name|temp
@@ -6994,6 +6987,8 @@ name|gimp_directory
 argument_list|()
 argument_list|,
 literal|"levels"
+argument_list|,
+literal|"."
 argument_list|,
 name|NULL
 argument_list|)
@@ -7171,32 +7166,6 @@ argument_list|(
 name|file
 argument_list|)
 expr_stmt|;
-name|file_dialog_cancel_callback
-argument_list|(
-name|l_tool
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|gboolean
-DECL|function|file_dialog_cancel_callback (GimpLevelsTool * l_tool)
-name|file_dialog_cancel_callback
-parameter_list|(
-name|GimpLevelsTool
-modifier|*
-name|l_tool
-parameter_list|)
-block|{
-if|if
-condition|(
-name|l_tool
-operator|->
-name|file_dialog
-condition|)
-block|{
 name|gtk_widget_destroy
 argument_list|(
 name|l_tool
@@ -7204,16 +7173,6 @@ operator|->
 name|file_dialog
 argument_list|)
 expr_stmt|;
-name|l_tool
-operator|->
-name|file_dialog
-operator|=
-name|NULL
-expr_stmt|;
-block|}
-return|return
-name|TRUE
-return|;
 block|}
 end_function
 

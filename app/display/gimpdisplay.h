@@ -349,6 +349,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gboolean
+name|gimp_display_coords_in_active_drawable
+parameter_list|(
+name|GimpDisplay
+modifier|*
+name|gdisp
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
