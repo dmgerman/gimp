@@ -120,7 +120,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c14b6730103
+DECL|enum|__anon2905df4f0103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -4155,7 +4155,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"The default comments is limited to %d characters."
+literal|"The default comment is limited to %d characters."
 argument_list|)
 argument_list|,
 name|MAX_COMMENT_LENGTH
@@ -11627,7 +11627,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c14b6730208
+DECL|struct|__anon2905df4f0208
 block|{
 DECL|member|label
 name|gchar
@@ -11856,7 +11856,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c14b6730308
+DECL|struct|__anon2905df4f0308
 block|{
 DECL|member|tree_label
 name|gchar
