@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file/file-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpcontainermenuimpl.h"
 end_include
 
@@ -116,7 +122,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295b1d240103
+DECL|enum|__anon291ba9d10103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -488,7 +494,7 @@ argument_list|)
 expr_stmt|;
 name|basename
 operator|=
-name|g_path_get_basename
+name|file_utils_uri_to_utf8_basename
 argument_list|(
 name|gimp_image_get_uri
 argument_list|(

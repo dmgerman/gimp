@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file/file-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpcolorpanel.h"
 end_include
 
@@ -3219,7 +3225,7 @@ name|basename
 decl_stmt|;
 name|basename
 operator|=
-name|g_path_get_basename
+name|file_utils_uri_to_utf8_basename
 argument_list|(
 name|gimp_image_get_uri
 argument_list|(
@@ -9836,7 +9842,7 @@ name|basename
 decl_stmt|;
 name|basename
 operator|=
-name|g_path_get_basename
+name|file_utils_uri_to_utf8_basename
 argument_list|(
 name|gimp_image_get_uri
 argument_list|(
@@ -9870,6 +9876,21 @@ case|case
 literal|'F'
 case|:
 comment|/* full filename */
+block|{
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
+name|filename
+operator|=
+name|file_utils_uri_to_utf8_filename
+argument_list|(
+name|gimp_image_get_uri
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|i
 operator|+=
 name|print
@@ -9882,12 +9903,15 @@ name|i
 argument_list|,
 literal|"%s"
 argument_list|,
-name|gimp_image_get_uri
-argument_list|(
-name|gimage
-argument_list|)
+name|filename
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
+block|}
 break|break;
 case|case
 literal|'p'

@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file/file-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -1989,7 +1995,7 @@ name|title
 decl_stmt|;
 name|basename
 operator|=
-name|g_path_get_basename
+name|file_utils_uri_to_utf8_basename
 argument_list|(
 name|gimp_image_get_uri
 argument_list|(

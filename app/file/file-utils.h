@@ -61,6 +61,32 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gchar
+modifier|*
+name|file_utils_uri_to_utf8_basename
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|uri
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gchar
+modifier|*
+name|file_utils_uri_to_utf8_filename
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|uri
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/* .xvpics thumbnail stuff  */
 end_comment

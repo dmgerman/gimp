@@ -99,6 +99,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file/file-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay-foreach.h"
 end_include
 
@@ -153,7 +159,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b76fd1f0108
+DECL|struct|__anon2920e9520108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -204,7 +210,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b76fd1f0208
+DECL|struct|__anon2920e9520208
 block|{
 DECL|member|clist
 name|GtkCList
@@ -3515,7 +3521,7 @@ name|title
 decl_stmt|;
 name|basename
 operator|=
-name|g_path_get_basename
+name|file_utils_uri_to_utf8_basename
 argument_list|(
 name|gimp_image_get_uri
 argument_list|(
