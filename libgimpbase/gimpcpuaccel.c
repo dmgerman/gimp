@@ -56,7 +56,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dee1cf0103
+DECL|enum|__anon2c854b130103
 block|{
 DECL|enumerator|ARCH_X86_VENDOR_NONE
 name|ARCH_X86_VENDOR_NONE
@@ -103,7 +103,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dee1cf0203
+DECL|enum|__anon2c854b130203
 block|{
 DECL|enumerator|ARCH_X86_INTEL_FEATURE_MMX
 name|ARCH_X86_INTEL_FEATURE_MMX
@@ -178,9 +178,20 @@ block|}
 enum|;
 end_enum
 
-begin_comment
-comment|/* FIXME: This should save off ebx/rbx if compiled for PIC */
-end_comment
+begin_if
+if|#
+directive|if
+operator|!
+name|defined
+argument_list|(
+name|ARCH_X86_64
+argument_list|)
+operator|&&
+name|defined
+argument_list|(
+name|PIC
+argument_list|)
+end_if
 
 begin_define
 DECL|macro|cpuid (op,eax,ebx,ecx,edx)
@@ -199,8 +210,38 @@ parameter_list|,
 name|edx
 parameter_list|)
 define|\
-value|asm ("cpuid\n\t"                \        : "=a" (eax),             \          "=b" (ebx),             \          "=c" (ecx),             \          "=d" (edx)              \        : "0" (op))
+value|__asm__ ("movl %%ebx, %%esi\n\t" \            "cpuid\n\t"             \            "xchgl %%ebx,%%esi"     \            : "=a" (eax),           \              "=S" (ebx),           \              "=c" (ecx),           \              "=d" (edx)            \            : "0" (op))
 end_define
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_define
+DECL|macro|cpuid (op,eax,ebx,ecx,edx)
+define|#
+directive|define
+name|cpuid
+parameter_list|(
+name|op
+parameter_list|,
+name|eax
+parameter_list|,
+name|ebx
+parameter_list|,
+name|ecx
+parameter_list|,
+name|edx
+parameter_list|)
+define|\
+value|__asm__ ("cpuid"                 \            : "=a" (eax),           \              "=b" (ebx),           \              "=c" (ecx),           \              "=d" (edx)            \            : "0" (op))
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function
 specifier|static
@@ -230,12 +271,12 @@ ifndef|#
 directive|ifndef
 name|ARCH_X86_64
 comment|/* Only need to check this on ia32 */
-asm|asm ("pushfl\n\t"        "pushfl\n\t"        "popl %0\n\t"        "movl %0,%1\n\t"        "xorl $0x200000,%0\n\t"        "push %0\n\t"        "popfl\n\t"        "pushfl\n\t"        "popl %0\n\t"        "popfl\n\t"        : "=a" (eax),          "=b" (ebx)        :        : "cc");
+asm|__asm__ ("pushfl\n\t"            "pushfl\n\t"            "popl %0\n\t"            "movl %0,%1\n\t"            "xorl $0x200000,%0\n\t"            "pushl %0\n\t"            "popfl\n\t"            "pushfl\n\t"            "popl %0\n\t"            "popfl"            : "=a" (eax),              "=c" (ecx)            :            : "cc");
 if|if
 condition|(
 name|eax
 operator|==
-name|ebx
+name|ecx
 condition|)
 return|return
 name|ARCH_X86_VENDOR_NONE
@@ -1251,7 +1292,9 @@ argument_list|,
 name|sigill_handler
 argument_list|)
 expr_stmt|;
-asm|__asm __volatile ("xorps %xmm0, %xmm0");
+asm|__asm__
+specifier|__volatile__
+asm|("xorps %xmm0, %xmm0");
 name|signal
 argument_list|(
 name|SIGILL

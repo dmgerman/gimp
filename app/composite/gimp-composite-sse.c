@@ -81,6 +81,21 @@ operator|>=
 literal|3
 end_if
 
+begin_if
+if|#
+directive|if
+name|defined
+argument_list|(
+name|ARCH_X86_64
+argument_list|)
+operator|||
+operator|!
+name|defined
+argument_list|(
+name|PIC
+argument_list|)
+end_if
+
 begin_define
 DECL|macro|pminub (src,dst,tmp)
 define|#
@@ -1822,6 +1837,15 @@ directive|endif
 end_endif
 
 begin_comment
+comment|/* ARCH_X86_64 || !PIC */
+end_comment
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
 comment|/* __GNUC__> 3 */
 end_comment
 
@@ -1862,6 +1886,19 @@ name|defined
 argument_list|(
 name|ARCH_X86
 argument_list|)
+operator|&&
+operator|(
+name|defined
+argument_list|(
+name|ARCH_X86_64
+argument_list|)
+operator|||
+operator|!
+name|defined
+argument_list|(
+name|PIC
+argument_list|)
+operator|)
 name|guint32
 name|cpu
 init|=
