@@ -608,7 +608,6 @@ condition|(
 operator|!
 name|active
 condition|)
-block|{
 name|active
 operator|=
 name|gimp_context_get_pattern
@@ -617,12 +616,10 @@ name|gimp_context_get_standard
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|title
 condition|)
-block|{
 name|gimp_context_set_pattern
 argument_list|(
 name|psp
@@ -632,7 +629,6 @@ argument_list|,
 name|active
 argument_list|)
 expr_stmt|;
-block|}
 comment|/*  The main vbox  */
 name|vbox
 operator|=

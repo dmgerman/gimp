@@ -700,26 +700,6 @@ end_function
 
 begin_function
 name|void
-DECL|function|palette_select_freeze_all (void)
-name|palette_select_freeze_all
-parameter_list|(
-name|void
-parameter_list|)
-block|{ }
-end_function
-
-begin_function
-name|void
-DECL|function|palette_select_thaw_all (void)
-name|palette_select_thaw_all
-parameter_list|(
-name|void
-parameter_list|)
-block|{ }
-end_function
-
-begin_function
-name|void
 DECL|function|palette_select_clist_insert_all (GimpPalette * entries)
 name|palette_select_clist_insert_all
 parameter_list|(

@@ -849,7 +849,6 @@ condition|(
 operator|!
 name|active
 condition|)
-block|{
 name|active
 operator|=
 name|gimp_context_get_brush
@@ -858,7 +857,6 @@ name|gimp_context_get_standard
 argument_list|()
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|title

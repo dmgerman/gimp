@@ -448,12 +448,6 @@ name|last_visited
 operator|=
 name|NULL
 expr_stmt|;
-name|gradient
-operator|->
-name|pixmap
-operator|=
-name|NULL
-expr_stmt|;
 block|}
 end_function
 
@@ -490,19 +484,6 @@ argument_list|(
 name|gradient
 operator|->
 name|segments
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|gradient
-operator|->
-name|pixmap
-condition|)
-name|gdk_pixmap_unref
-argument_list|(
-name|gradient
-operator|->
-name|pixmap
 argument_list|)
 expr_stmt|;
 if|if
@@ -1564,7 +1545,7 @@ return|return
 name|FALSE
 return|;
 block|}
-comment|/* File format is:    *    *   GIMP Gradient    *   number_of_segments    *   left middle right r0 g0 b0 a0 r1 g1 b1 a1 type coloring    *   left middle right r0 g0 b0 a0 r1 g1 b1 a1 type coloring    *   ...    */
+comment|/* File format is:    *    *   GIMP Gradient    *   Name: name    *   number_of_segments    *   left middle right r0 g0 b0 a0 r1 g1 b1 a1 type coloring    *   left middle right r0 g0 b0 a0 r1 g1 b1 a1 type coloring    *   ...    */
 name|fprintf
 argument_list|(
 name|file

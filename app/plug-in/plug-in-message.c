@@ -5372,7 +5372,7 @@ expr_stmt|;
 name|pattern_select_dialogs_check
 argument_list|()
 expr_stmt|;
-name|gradients_check_dialogs
+name|gradient_select_dialogs_check
 argument_list|()
 expr_stmt|;
 name|open_plug_ins

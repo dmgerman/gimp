@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b9d3240103
+DECL|enum|__anon28ff3d870103
 block|{
 DECL|enumerator|GRAD_LINEAR
 name|GRAD_LINEAR
@@ -60,7 +60,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b9d3240203
+DECL|enum|__anon28ff3d870203
 block|{
 DECL|enumerator|GRAD_RGB
 name|GRAD_RGB
@@ -212,16 +212,11 @@ name|GimpGradientSegment
 modifier|*
 name|segments
 decl_stmt|;
-comment|/* EEK */
+comment|/*< private>*/
 DECL|member|last_visited
 name|GimpGradientSegment
 modifier|*
 name|last_visited
-decl_stmt|;
-DECL|member|pixmap
-name|GdkPixmap
-modifier|*
-name|pixmap
 decl_stmt|;
 block|}
 struct|;

@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"palette_select.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"palettes.h"
 end_include
 
@@ -89,9 +83,6 @@ operator|!
 name|no_data
 condition|)
 block|{
-name|palette_select_freeze_all
-argument_list|()
-expr_stmt|;
 name|gimp_data_list_load
 argument_list|(
 name|GIMP_DATA_LIST
@@ -117,9 +108,6 @@ name|NULL
 comment|/* legacy loader */
 argument_list|)
 expr_stmt|;
-name|palette_select_thaw_all
-argument_list|()
-expr_stmt|;
 block|}
 block|}
 end_function
@@ -142,9 +130,6 @@ operator|==
 literal|0
 condition|)
 return|return;
-name|palette_select_freeze_all
-argument_list|()
-expr_stmt|;
 name|gimp_data_list_save_and_clear
 argument_list|(
 name|GIMP_DATA_LIST
@@ -156,9 +141,6 @@ name|palette_path
 argument_list|,
 name|GIMP_PALETTE_FILE_EXTENSION
 argument_list|)
-expr_stmt|;
-name|palette_select_thaw_all
-argument_list|()
 expr_stmt|;
 block|}
 end_function
