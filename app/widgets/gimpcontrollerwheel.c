@@ -809,15 +809,12 @@ return|return
 name|NULL
 return|;
 return|return
-name|gettext
-argument_list|(
 name|wheel_events
 index|[
 name|event_id
 index|]
 operator|.
 name|name
-argument_list|)
 return|;
 block|}
 end_function
