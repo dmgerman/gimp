@@ -76,7 +76,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_drawable_combo_box_new:  * @constraint: a #GimpDrawableConstraintFunc or %NULL  * @data:       a pointer that is passed to @constraint  *  * Creates a new #GimpIntComboBox filled with all currently opened  * drawables. If a @constraint function is specified, it is called for  * each drawable and only if the function returns %TRUE, the drawable  * is added to the combobox.  *  * Use gimp_int_combo_box_set_active() to get the active drawable ID  * and gimp_int_combo_box_get_active() to retrieve the ID of the  * selected drawable.  *  * Return value: a new #GimpIntComboBox.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_drawable_combo_box_new:  * @constraint: a #GimpDrawableConstraintFunc or %NULL  * @data:       a pointer that is passed to @constraint  *  * Creates a new #GimpIntComboBox filled with all currently opened  * drawables. If a @constraint function is specified, it is called for  * each drawable and only if the function returns %TRUE, the drawable  * is added to the combobox.  *  * You should use gimp_int_combo_connect() to initialize and connect  * the combo.  Use gimp_int_combo_box_set_active() to get the active  * drawable ID and gimp_int_combo_box_get_active() to retrieve the ID  * of the selected drawable.  *  * Return value: a new #GimpIntComboBox.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
