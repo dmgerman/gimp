@@ -160,7 +160,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2950250103
+DECL|enum|__anon2c537a2f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -486,7 +486,7 @@ literal|"image-state"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+literal|"State of the image associated to the thumbnail object"
 argument_list|,
 name|GIMP_TYPE_THUMB_STATE
 argument_list|,
@@ -508,7 +508,7 @@ literal|"image-uri"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+literal|"URI of the image file"
 argument_list|,
 name|NULL
 argument_list|,
@@ -528,7 +528,7 @@ literal|"image-mtime"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+literal|"Modification time of the image file in seconds since the Epoch"
 argument_list|,
 literal|0
 argument_list|,
@@ -552,7 +552,7 @@ literal|"image-filesize"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+literal|"Size of the image file in bytes"
 argument_list|,
 literal|0
 argument_list|,
@@ -576,7 +576,7 @@ literal|"image-width"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+literal|"Width of the image in pixels"
 argument_list|,
 literal|0
 argument_list|,
@@ -600,7 +600,7 @@ literal|"image-height"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+literal|"Height of the image in pixels"
 argument_list|,
 literal|0
 argument_list|,
@@ -624,7 +624,7 @@ literal|"image-type"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+literal|"String describing the type of the image format"
 argument_list|,
 name|NULL
 argument_list|,
@@ -644,7 +644,7 @@ literal|"image-num-layers"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+literal|"The number of layers in the image"
 argument_list|,
 literal|0
 argument_list|,
@@ -668,7 +668,7 @@ literal|"thumb-state"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+literal|"State of the thumbnail file"
 argument_list|,
 name|GIMP_TYPE_THUMB_STATE
 argument_list|,
@@ -1279,42 +1279,9 @@ block|}
 block|}
 end_function
 
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_thumbnail_reset_info (GimpThumbnail * thumbnail)
-name|gimp_thumbnail_reset_info
-parameter_list|(
-name|GimpThumbnail
-modifier|*
-name|thumbnail
-parameter_list|)
-block|{
-name|g_object_set
-argument_list|(
-name|thumbnail
-argument_list|,
-literal|"image-width"
-argument_list|,
-literal|0
-argument_list|,
-literal|"image-height"
-argument_list|,
-literal|0
-argument_list|,
-literal|"image-type"
-argument_list|,
-name|NULL
-argument_list|,
-literal|"image-num-layers"
-argument_list|,
-literal|0
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-block|}
-end_function
+begin_comment
+comment|/**  * gimp_thumbnail_new:  *  * Creates a new #GimpThumbnail object.  *  * Return value: a newly allocated GimpThumbnail object  **/
+end_comment
 
 begin_function
 name|GimpThumbnail
@@ -1335,6 +1302,10 @@ argument_list|)
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_thumbnail_set_uri:  * @thumbnail: a #GimpThumbnail object  * @uri: an escaped URI in UTF-8 encoding  *  * Sets the location of the image file associated with the #thumbnail.  *  * All informations stored in the #GimpThumbnail are reset.  **/
+end_comment
 
 begin_function
 name|void
@@ -1445,6 +1416,102 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_thumbnail_set_filename:  * @thumbnail: a #GimpThumbnail object  * @filename: a local filename in the encoding of the filesystem  * @error: return location for possible errors  *  * Sets the location of the image file associated with the #thumbnail.  *  * Return value: %TRUE if the filename was successfully set,  *               %FALSE otherwise  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_thumbnail_set_filename (GimpThumbnail * thumbnail,const gchar * filename,GError ** error)
+name|gimp_thumbnail_set_filename
+parameter_list|(
+name|GimpThumbnail
+modifier|*
+name|thumbnail
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|filename
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
+parameter_list|)
+block|{
+name|gchar
+modifier|*
+name|uri
+init|=
+name|NULL
+decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_THUMBNAIL
+argument_list|(
+name|thumbnail
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|filename
+condition|)
+name|uri
+operator|=
+name|g_filename_to_uri
+argument_list|(
+name|filename
+argument_list|,
+name|NULL
+argument_list|,
+name|error
+argument_list|)
+expr_stmt|;
+name|gimp_thumbnail_set_uri
+argument_list|(
+name|thumbnail
+argument_list|,
+name|uri
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|uri
+argument_list|)
+expr_stmt|;
+return|return
+operator|(
+operator|!
+name|filename
+operator|||
+name|uri
+operator|)
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_thumbnail_peek_image:  * @thumbnail: a #GimpThumbnail object  *  * Checks the image file associated with the @thumbnail and updates  * information such as state, filesize and modification time.  *  * Return value: the image's #GimpThumbState after the update  **/
+end_comment
+
 begin_function
 name|GimpThumbState
 DECL|function|gimp_thumbnail_peek_image (GimpThumbnail * thumbnail)
@@ -1493,6 +1560,10 @@ name|image_state
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_thumbnail_peek_thumb:  * @thumbnail: a #GimpThumbnail object  * @size: the preferred size of the thumbnail image  *  * Checks if a thumbnail file for the @thumbnail exists. It doesn't  * load the thumbnail image and thus cannot check if the thumbnail is  * valid and uptodate for the image file asosciated with the  * @thumbnail.  *  * Return value: the thumbnail's #GimpThumbState after the update  **/
+end_comment
 
 begin_function
 name|GimpThumbState
@@ -1550,74 +1621,6 @@ name|thumbnail
 operator|->
 name|thumb_state
 return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_thumbnail_invalidate_thumb (GimpThumbnail * thumbnail)
-name|gimp_thumbnail_invalidate_thumb
-parameter_list|(
-name|GimpThumbnail
-modifier|*
-name|thumbnail
-parameter_list|)
-block|{
-if|if
-condition|(
-name|thumbnail
-operator|->
-name|thumb_filename
-condition|)
-block|{
-name|g_free
-argument_list|(
-name|thumbnail
-operator|->
-name|thumb_filename
-argument_list|)
-expr_stmt|;
-name|thumbnail
-operator|->
-name|thumb_filename
-operator|=
-name|NULL
-expr_stmt|;
-block|}
-name|thumbnail
-operator|->
-name|thumb_filesize
-operator|=
-literal|0
-expr_stmt|;
-name|thumbnail
-operator|->
-name|thumb_mtime
-operator|=
-literal|0
-expr_stmt|;
-if|if
-condition|(
-name|thumbnail
-operator|->
-name|thumb_state
-operator|!=
-name|GIMP_THUMB_STATE_UNKNOWN
-condition|)
-block|{
-name|g_object_set
-argument_list|(
-name|thumbnail
-argument_list|,
-literal|"thumb-state"
-argument_list|,
-name|GIMP_THUMB_STATE_UNKNOWN
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -1965,85 +1968,107 @@ block|}
 end_function
 
 begin_function
-name|gboolean
-DECL|function|gimp_thumbnail_set_filename (GimpThumbnail * thumbnail,const gchar * filename,GError ** error)
-name|gimp_thumbnail_set_filename
+specifier|static
+name|void
+DECL|function|gimp_thumbnail_invalidate_thumb (GimpThumbnail * thumbnail)
+name|gimp_thumbnail_invalidate_thumb
 parameter_list|(
 name|GimpThumbnail
 modifier|*
 name|thumbnail
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|filename
-parameter_list|,
-name|GError
-modifier|*
-modifier|*
-name|error
 parameter_list|)
 block|{
-name|gchar
-modifier|*
-name|uri
-init|=
-name|NULL
-decl_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_THUMBNAIL
+if|if
+condition|(
+name|thumbnail
+operator|->
+name|thumb_filename
+condition|)
+block|{
+name|g_free
 argument_list|(
 name|thumbnail
-argument_list|)
-argument_list|,
-name|FALSE
+operator|->
+name|thumb_filename
 argument_list|)
 expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|error
-operator|==
+name|thumbnail
+operator|->
+name|thumb_filename
+operator|=
 name|NULL
-operator|||
-operator|*
-name|error
-operator|==
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|)
+expr_stmt|;
+block|}
+name|thumbnail
+operator|->
+name|thumb_filesize
+operator|=
+literal|0
+expr_stmt|;
+name|thumbnail
+operator|->
+name|thumb_mtime
+operator|=
+literal|0
 expr_stmt|;
 if|if
 condition|(
-name|filename
+name|thumbnail
+operator|->
+name|thumb_state
+operator|!=
+name|GIMP_THUMB_STATE_UNKNOWN
 condition|)
-name|uri
-operator|=
-name|g_filename_to_uri
-argument_list|(
-name|filename
-argument_list|,
-name|NULL
-argument_list|,
-name|error
-argument_list|)
-expr_stmt|;
-name|gimp_thumbnail_set_uri
+block|{
+name|g_object_set
 argument_list|(
 name|thumbnail
 argument_list|,
-name|uri
+literal|"thumb-state"
+argument_list|,
+name|GIMP_THUMB_STATE_UNKNOWN
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
-return|return
-operator|(
-operator|!
-name|filename
-operator|||
-name|uri
-operator|)
-return|;
+block|}
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_thumbnail_reset_info (GimpThumbnail * thumbnail)
+name|gimp_thumbnail_reset_info
+parameter_list|(
+name|GimpThumbnail
+modifier|*
+name|thumbnail
+parameter_list|)
+block|{
+name|g_object_set
+argument_list|(
+name|thumbnail
+argument_list|,
+literal|"image-width"
+argument_list|,
+literal|0
+argument_list|,
+literal|"image-height"
+argument_list|,
+literal|0
+argument_list|,
+literal|"image-type"
+argument_list|,
+name|NULL
+argument_list|,
+literal|"image-num-layers"
+argument_list|,
+literal|0
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -2201,6 +2226,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_thumbnail_load_thumb:  * @thumbnail: a #GimpThumbnail object  * @size: the preferred #GimpThumbSize for the preview  * @error: return location for possible errors  *  * Attempts to load a thumbnail preview for the image associated with  * @thumbnail. Before you use this function you need need to set an  * image location using gimp_thumbnail_set_uri() or  * gimp_thumbnail_set_filename(). You can also peek at the thumb  * before loading it using gimp_thumbnail_peek_thumb.  *  * This function will return the best matching pixbuf for the  * specified @size. It returns the pixbuf as loaded from disk. It is  * left to the caller to scale it to the desired size. The returned  * pixbuf may also represent an outdated preview of the image file.  * In order to verify if the preview is uptodate, you should check the  * "thumb_state" property after calling this function.  *  * Return value: a preview pixbuf or %NULL if no thumbnail was found  **/
+end_comment
+
 begin_function
 name|GdkPixbuf
 modifier|*
@@ -2244,6 +2273,7 @@ decl_stmt|;
 name|gint64
 name|image_size
 decl_stmt|;
+comment|/*  FIXME: this function needs review, it is broken!!  */
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_THUMBNAIL
@@ -2521,6 +2551,10 @@ name|pixbuf
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_thumbnail_save_thumb:  * @thumbnail: a #GimpThumbnail object  * @pixbuf: a #GdkPixbuf representing the preview thumbnail  * @software: a string describing the software saving the thumbnail  * @error: return location for possible errors  *  * Saves a preview thumbnail for the image associated with @thumbnail.  *  * The caller is responsible for setting the image file location, it's  * filesize, modification time. One way to set this info is to is to  * call gimp_thumbnail_set_uri() followed by gimp_thumbnail_peek_image().  * Since this won't work for remote images, it is left to the user of  * gimp_thumbnail_save_thumb() to do this or to set the information  * using the @thumbnail object properties.  *  * The image format type and the number of layers can optionally be  * set in order to be stored with the preview image.  *  * Return value: %TRUE if a thumbnail was successfully written,  *               %FALSE otherwise  **/
+end_comment
 
 begin_function
 name|gboolean
@@ -2919,6 +2953,10 @@ name|success
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_thumbnail_save_failure:  * @thumbnail: a #GimpThumbnail object  * @software: a string describing the software saving the thumbnail  * @error: return location for possible errors  *  * Saves a failure thumbnail for the image associated with  * @thumbnail. This is an empty pixbuf that indicates that an attempt  * to create a preview for the image file failed. It should be used to  * prevent the software from further attempts to create this thumbnail.  *  * Return value: %TRUE if a failure thumbnail was successfully written,  *               %FALSE otherwise  **/
+end_comment
 
 begin_function
 name|gboolean
