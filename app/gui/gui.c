@@ -550,6 +550,8 @@ name|name
 argument_list|,
 name|gdk_get_display
 argument_list|()
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

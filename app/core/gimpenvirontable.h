@@ -183,6 +183,11 @@ specifier|const
 name|gchar
 modifier|*
 name|value
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|separator
 parameter_list|)
 function_decl|;
 end_function_decl
