@@ -830,7 +830,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28eed1240103
+DECL|enum|__anon2be848050103
 block|{
 DECL|enumerator|SVG_STATE_OUT
 name|SVG_STATE_OUT
@@ -852,7 +852,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eed1240208
+DECL|struct|__anon2be848050208
 block|{
 DECL|member|state
 name|SvgParserState
@@ -877,7 +877,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eed1240308
+DECL|struct|__anon2be848050308
 block|{
 DECL|member|offset
 name|gdouble
@@ -1564,6 +1564,10 @@ condition|(
 name|parser
 operator|->
 name|gradient
+operator|&&
+name|parser
+operator|->
+name|stops
 operator|&&
 name|strcmp
 argument_list|(
