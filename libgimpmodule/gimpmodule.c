@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b89d0af0103
+DECL|enum|__anon2c6fc6230103
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -1279,10 +1279,6 @@ block|}
 end_function
 
 begin_comment
-comment|/*  private functions  */
-end_comment
-
-begin_comment
 comment|/**  * gimp_module_state_name:  * @state: A #GimpModuleState.  *   * Returns the translated textual representation of a #GimpModuleState.  * The returned string must not be freed.  *   * Return value: The @state's name.  **/
 end_comment
 
@@ -1351,6 +1347,10 @@ argument_list|)
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/*  private functions  */
+end_comment
 
 begin_function
 specifier|static
