@@ -178,16 +178,6 @@ name|orientation
 parameter_list|,
 name|GimpColorSelectorChannel
 name|channel
-parameter_list|,
-specifier|const
-name|GimpRGB
-modifier|*
-name|rgb
-parameter_list|,
-specifier|const
-name|GimpHSV
-modifier|*
-name|hsv
 parameter_list|)
 function_decl|;
 end_function_decl
