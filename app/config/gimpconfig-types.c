@@ -214,7 +214,7 @@ name|memsize_type
 operator|=
 name|g_type_register_static
 argument_list|(
-name|G_TYPE_UINT
+name|G_TYPE_ULONG
 argument_list|,
 literal|"GimpMemsize"
 argument_list|,
@@ -433,7 +433,7 @@ modifier|*
 name|dest_value
 parameter_list|)
 block|{
-name|guint
+name|gulong
 name|size
 decl_stmt|;
 name|gchar
@@ -442,7 +442,7 @@ name|str
 decl_stmt|;
 name|size
 operator|=
-name|g_value_get_uint
+name|g_value_get_ulong
 argument_list|(
 name|src_value
 argument_list|)
@@ -471,7 +471,7 @@ name|str
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%uG"
+literal|"%luG"
 argument_list|,
 name|size
 operator|>>
@@ -503,7 +503,7 @@ name|str
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%uM"
+literal|"%luM"
 argument_list|,
 name|size
 operator|>>
@@ -535,7 +535,7 @@ name|str
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%uk"
+literal|"%luk"
 argument_list|,
 name|size
 operator|>>
@@ -547,7 +547,7 @@ name|str
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%u"
+literal|"%lu"
 argument_list|,
 name|size
 argument_list|)
@@ -591,7 +591,7 @@ name|gchar
 modifier|*
 name|end
 decl_stmt|;
-name|guint
+name|gulong
 name|size
 decl_stmt|;
 name|str
@@ -696,7 +696,7 @@ operator|<<=
 name|shift
 expr_stmt|;
 block|}
-name|g_value_set_uint
+name|g_value_set_ulong
 argument_list|(
 name|dest_value
 argument_list|,

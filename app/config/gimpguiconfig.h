@@ -164,7 +164,7 @@ name|gboolean
 name|tearoff_menus
 decl_stmt|;
 DECL|member|max_new_image_size
-name|guint
+name|gulong
 name|max_new_image_size
 decl_stmt|;
 DECL|member|theme_path

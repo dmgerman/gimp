@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpconfig-serialize.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
 end_include
 
@@ -629,6 +635,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|notify_callback (GObject * object,GParamSpec * pspec)
 name|notify_callback
@@ -642,6 +649,17 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
+name|GString
+modifier|*
+name|str
+decl_stmt|;
+name|GValue
+name|value
+init|=
+block|{
+literal|0
+block|, }
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|G_IS_OBJECT
@@ -658,36 +676,10 @@ name|pspec
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|g_value_type_transformable
-argument_list|(
-name|pspec
-operator|->
-name|value_type
-argument_list|,
-name|G_TYPE_STRING
-argument_list|)
-condition|)
-block|{
-name|GValue
-name|src
-init|=
-block|{
-literal|0
-block|, }
-decl_stmt|;
-name|GValue
-name|dest
-init|=
-block|{
-literal|0
-block|, }
-decl_stmt|;
 name|g_value_init
 argument_list|(
 operator|&
-name|src
+name|value
 argument_list|,
 name|pspec
 operator|->
@@ -703,26 +695,29 @@ operator|->
 name|name
 argument_list|,
 operator|&
-name|src
+name|value
 argument_list|)
 expr_stmt|;
-name|g_value_init
+name|str
+operator|=
+name|g_string_new
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimp_config_serialize_value
 argument_list|(
 operator|&
-name|dest
+name|value
 argument_list|,
-name|G_TYPE_STRING
-argument_list|)
-expr_stmt|;
-name|g_value_transform
-argument_list|(
-operator|&
-name|src
+name|str
 argument_list|,
-operator|&
-name|dest
+name|TRUE
 argument_list|)
-expr_stmt|;
+condition|)
+block|{
 name|g_print
 argument_list|(
 literal|"  %s -> %s\n"
@@ -731,23 +726,9 @@ name|pspec
 operator|->
 name|name
 argument_list|,
-name|g_value_get_string
-argument_list|(
-operator|&
-name|dest
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_value_unset
-argument_list|(
-operator|&
-name|dest
-argument_list|)
-expr_stmt|;
-name|g_value_unset
-argument_list|(
-operator|&
-name|src
+name|str
+operator|->
+name|str
 argument_list|)
 expr_stmt|;
 block|}
@@ -755,7 +736,7 @@ else|else
 block|{
 name|g_print
 argument_list|(
-literal|"  %s changed\n"
+literal|"  %s changed but we failed to serialize its value!\n"
 argument_list|,
 name|pspec
 operator|->
@@ -763,6 +744,19 @@ name|name
 argument_list|)
 expr_stmt|;
 block|}
+name|g_string_free
+argument_list|(
+name|str
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|g_value_unset
+argument_list|(
+operator|&
+name|value
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

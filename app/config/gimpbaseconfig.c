@@ -112,7 +112,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b51ae9a0103
+DECL|enum|__anon27f26aa30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -344,7 +344,7 @@ literal|"tile-cache-size"
 argument_list|,
 literal|0
 argument_list|,
-name|G_MAXUINT
+name|G_MAXULONG
 argument_list|,
 literal|1
 operator|<<
@@ -515,7 +515,7 @@ name|base_config
 operator|->
 name|tile_cache_size
 operator|=
-name|g_value_get_uint
+name|g_value_get_ulong
 argument_list|(
 name|value
 argument_list|)
@@ -629,7 +629,7 @@ break|break;
 case|case
 name|PROP_TILE_CACHE_SIZE
 case|:
-name|g_value_set_uint
+name|g_value_set_ulong
 argument_list|(
 name|value
 argument_list|,
