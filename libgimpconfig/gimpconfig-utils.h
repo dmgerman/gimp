@@ -108,20 +108,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gimp_config_string_indent
-parameter_list|(
-name|GString
-modifier|*
-name|string
-parameter_list|,
-name|gint
-name|indent_level
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|gchar
 modifier|*
 name|gimp_config_build_data_path

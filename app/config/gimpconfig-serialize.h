@@ -118,22 +118,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|gimp_config_serialize_comment
-parameter_list|(
-name|GString
-modifier|*
-name|str
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|comment
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif

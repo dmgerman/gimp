@@ -113,7 +113,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e481a60103
+DECL|enum|__anon289461690103
 block|{
 DECL|enumerator|DUMP_NONE
 name|DUMP_NONE
@@ -647,23 +647,17 @@ argument_list|(
 name|comment
 argument_list|)
 expr_stmt|;
-name|write
+block|}
+name|gimp_config_writer_comment_mode
 argument_list|(
-name|fd
+name|writer
 argument_list|,
-literal|"#\n"
-argument_list|,
-literal|2
+name|TRUE
 argument_list|)
 expr_stmt|;
-block|}
-name|write
+name|gimp_config_writer_linefeed
 argument_list|(
-name|fd
-argument_list|,
-literal|"# "
-argument_list|,
-literal|2
+name|writer
 argument_list|)
 expr_stmt|;
 name|gimp_config_serialize_property
@@ -673,6 +667,13 @@ argument_list|,
 name|prop_spec
 argument_list|,
 name|writer
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_comment_mode
+argument_list|(
+name|writer
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_config_writer_linefeed
@@ -1251,6 +1252,22 @@ name|values
 operator|=
 literal|"The unit can be one inches, millimeters, points or picas plus "
 literal|"those in your user units database."
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|g_type_is_a
+argument_list|(
+name|type
+argument_list|,
+name|GIMP_TYPE_CONFIG
+argument_list|)
+condition|)
+block|{
+name|values
+operator|=
+literal|"This is a parameter list."
 expr_stmt|;
 block|}
 else|else
