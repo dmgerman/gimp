@@ -1090,6 +1090,16 @@ name|list
 argument_list|)
 control|)
 block|{
+if|if
+condition|(
+name|GIMP_IS_MENU_ITEM
+argument_list|(
+name|list
+operator|->
+name|data
+argument_list|)
+condition|)
+block|{
 name|GimpMenuItem
 modifier|*
 name|menu_item
@@ -1126,6 +1136,7 @@ operator|->
 name|border_width
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 end_function

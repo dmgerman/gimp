@@ -2218,7 +2218,6 @@ argument_list|(
 name|widget
 argument_list|)
 condition|)
-block|{
 name|widget
 operator|=
 name|gtk_menu_get_attach_widget
@@ -2229,7 +2228,6 @@ name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|GTK_IS_LABEL
@@ -2242,7 +2240,6 @@ operator|->
 name|child
 argument_list|)
 condition|)
-block|{
 name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
@@ -2258,7 +2255,6 @@ argument_list|,
 name|label
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 else|else
 block|{
@@ -2410,6 +2406,23 @@ condition|(
 name|widget
 condition|)
 block|{
+if|if
+condition|(
+name|GTK_IS_MENU
+argument_list|(
+name|widget
+argument_list|)
+condition|)
+name|widget
+operator|=
+name|gtk_menu_get_attach_widget
+argument_list|(
+name|GTK_MENU
+argument_list|(
+name|widget
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|visible
