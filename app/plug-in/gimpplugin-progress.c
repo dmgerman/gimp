@@ -11177,6 +11177,13 @@ argument_list|,
 name|LOCALEDIR
 argument_list|)
 expr_stmt|;
+name|bind_textdomain_codeset
+argument_list|(
+name|std_plugins_domain
+argument_list|,
+literal|"UTF-8"
+argument_list|)
+expr_stmt|;
 name|domains
 operator|=
 name|g_slist_append
@@ -11356,6 +11363,13 @@ argument_list|(
 name|domain
 argument_list|,
 name|LOCALEDIR
+argument_list|)
+expr_stmt|;
+name|bind_textdomain_codeset
+argument_list|(
+name|domain
+argument_list|,
+literal|"UTF-8"
 argument_list|)
 expr_stmt|;
 block|}
