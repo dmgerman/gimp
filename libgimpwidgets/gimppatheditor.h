@@ -227,6 +227,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_path_editor_set_path
+parameter_list|(
+name|GimpPathEditor
+modifier|*
+name|gpe
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|path
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro
