@@ -204,9 +204,9 @@ comment|/* Gradient segment type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c1dbb190103
 typedef|typedef
 enum|enum
+DECL|enum|__anon2a0c8b090103
 block|{
 DECL|enumerator|GRAD_LINEAR
 name|GRAD_LINEAR
@@ -231,9 +231,9 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2c1dbb190203
 typedef|typedef
 enum|enum
+DECL|enum|__anon2a0c8b090203
 block|{
 DECL|enumerator|GRAD_RGB
 name|GRAD_RGB
@@ -330,9 +330,8 @@ begin_comment
 comment|/* Complete gradient type */
 end_comment
 
-begin_typedef
+begin_struct
 DECL|struct|_gradient_t
-typedef|typedef
 struct|struct
 name|_gradient_t
 block|{
@@ -365,20 +364,18 @@ name|GdkPixmap
 modifier|*
 name|pixmap
 decl_stmt|;
-DECL|typedef|gradient_t
 block|}
-name|gradient_t
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_comment
 comment|/* Gradient editor type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c1dbb190303
 typedef|typedef
 enum|enum
+DECL|enum|__anon2a0c8b090303
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -400,9 +397,9 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c1dbb190408
 typedef|typedef
 struct|struct
+DECL|struct|__anon2a0c8b090408
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -685,8 +682,8 @@ name|int
 name|replicate_times
 decl_stmt|;
 comment|/* Saved colors */
-DECL|struct|__anon2c1dbb190508
 struct|struct
+DECL|struct|__anon2a0c8b090508
 block|{
 DECL|member|r
 DECL|member|g
@@ -836,14 +833,18 @@ end_function_decl
 begin_function_decl
 name|void
 name|grad_sel_free_all
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
 name|grad_sel_refill_all
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 
@@ -972,7 +973,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* The active gradient */
+comment|/* The active gradient   */
 end_comment
 
 begin_decl_stmt
@@ -1004,7 +1005,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* The gradient editor */
+comment|/* The gradient editor   */
 end_comment
 
 begin_decl_stmt
@@ -1121,7 +1122,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* List of active dialogs */
+comment|/* List of active dialogs    */
 end_comment
 
 begin_decl_stmt

@@ -96,12 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"devices.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"dodgeburn.h"
 end_include
 
@@ -1968,15 +1962,6 @@ name|ToolType
 name|tool_type
 parameter_list|)
 block|{
-comment|/*  Care for switching to the tool's private context _before_ actually    *  switching the tool itself (the context manager needs to know the    *  old tool)    */
-name|gimp_context_set_tool
-argument_list|(
-name|gimp_context_get_user
-argument_list|()
-argument_list|,
-name|tool_type
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|active_tool
@@ -2006,12 +1991,6 @@ argument_list|(
 name|active_tool
 operator|->
 name|type
-argument_list|)
-expr_stmt|;
-comment|/*  Update the device-information dialog  */
-name|device_status_update
-argument_list|(
-name|current_device
 argument_list|)
 expr_stmt|;
 block|}
@@ -2050,35 +2029,14 @@ name|tool_type
 operator|=
 name|RECT_SELECT
 expr_stmt|;
-comment|/*  Activate the appropriate widget.    *  Implicitly calls tools_select()    */
-if|if
-condition|(
-name|active_tool
-operator|->
-name|type
-operator|==
-name|tool_type
-condition|)
-block|{
-name|tools_select
+name|gimp_context_set_tool
 argument_list|(
+name|gimp_context_get_user
+argument_list|()
+argument_list|,
 name|tool_type
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|gtk_widget_activate
-argument_list|(
-name|tool_info
-index|[
-name|tool_type
-index|]
-operator|.
-name|tool_widget
-argument_list|)
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|tool_info

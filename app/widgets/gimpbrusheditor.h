@@ -23,8 +23,16 @@ file|"gimpbrushgenerated.h"
 end_include
 
 begin_typedef
-DECL|struct|_BrushEditGeneratedWindow
+DECL|typedef|BrushEditGeneratedWindow
 typedef|typedef
+name|struct
+name|_BrushEditGeneratedWindow
+name|BrushEditGeneratedWindow
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_BrushEditGeneratedWindow
 struct|struct
 name|_BrushEditGeneratedWindow
 block|{
@@ -90,14 +98,22 @@ modifier|*
 name|brush
 decl_stmt|;
 DECL|member|scale
-name|int
+name|gint
 name|scale
 decl_stmt|;
-DECL|typedef|BrushEditGeneratedWindow
 block|}
+struct|;
+end_struct
+
+begin_function_decl
 name|BrushEditGeneratedWindow
-typedef|;
-end_typedef
+modifier|*
+name|brush_edit_generated_new
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|void
@@ -111,14 +127,6 @@ name|GimpBrush
 modifier|*
 name|brush
 parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|BrushEditGeneratedWindow
-modifier|*
-name|brush_edit_generated_new
-parameter_list|()
 function_decl|;
 end_function_decl
 

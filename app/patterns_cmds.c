@@ -22,6 +22,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"patterns.h"
 end_include
 
@@ -121,8 +127,10 @@ operator|=
 operator|(
 name|patternp
 operator|=
-name|get_active_pattern
-argument_list|()
+name|gimp_context_get_pattern
+argument_list|(
+name|NULL
+argument_list|)
 operator|)
 operator|!=
 name|NULL
@@ -361,8 +369,10 @@ name|name
 argument_list|)
 condition|)
 block|{
-name|select_pattern
+name|gimp_context_set_pattern
 argument_list|(
+name|NULL
+argument_list|,
 name|patternp
 argument_list|)
 expr_stmt|;
@@ -783,8 +793,10 @@ operator|=
 operator|(
 name|patternp
 operator|=
-name|get_active_pattern
-argument_list|()
+name|gimp_context_get_pattern
+argument_list|(
+name|NULL
+argument_list|)
 operator|)
 operator|!=
 name|NULL

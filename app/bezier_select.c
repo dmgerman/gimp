@@ -277,7 +277,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2a3d19010108
+DECL|struct|__anon2c217ddb0108
 typedef|typedef
 struct|struct
 block|{
@@ -314,7 +314,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a3d19010208
+DECL|struct|__anon2c217ddb0208
 typedef|typedef
 struct|struct
 block|{
@@ -369,7 +369,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a3d19010308
+DECL|struct|__anon2c217ddb0308
 typedef|typedef
 struct|struct
 block|{
@@ -10429,18 +10429,11 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|gtk_widget_activate
+name|gimp_context_set_tool
 argument_list|(
-name|tool_info
-index|[
-name|BEZIER_SELECT
-index|]
-operator|.
-name|tool_widget
-argument_list|)
-expr_stmt|;
-name|tools_select
-argument_list|(
+name|gimp_context_get_user
+argument_list|()
+argument_list|,
 name|BEZIER_SELECT
 argument_list|)
 expr_stmt|;

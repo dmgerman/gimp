@@ -127,11 +127,11 @@ index|]
 decl_stmt|;
 comment|/* 4 radio buttons */
 DECL|member|smoothing
-name|int
+name|gboolean
 name|smoothing
 decl_stmt|;
 DECL|member|smoothing_d
-name|int
+name|gboolean
 name|smoothing_d
 decl_stmt|;
 DECL|member|smoothing_w
@@ -140,11 +140,11 @@ modifier|*
 name|smoothing_w
 decl_stmt|;
 DECL|member|direction
-name|int
+name|gint
 name|direction
 decl_stmt|;
 DECL|member|direction_d
-name|int
+name|gint
 name|direction_d
 decl_stmt|;
 DECL|member|direction_w
@@ -157,11 +157,11 @@ index|]
 decl_stmt|;
 comment|/* 2 radio buttons */
 DECL|member|show_grid
-name|int
+name|gboolean
 name|show_grid
 decl_stmt|;
 DECL|member|show_grid_d
-name|int
+name|gboolean
 name|show_grid_d
 decl_stmt|;
 DECL|member|show_grid_w
@@ -170,11 +170,11 @@ modifier|*
 name|show_grid_w
 decl_stmt|;
 DECL|member|grid_size
-name|int
+name|gint
 name|grid_size
 decl_stmt|;
 DECL|member|grid_size_d
-name|int
+name|gint
 name|grid_size_d
 decl_stmt|;
 DECL|member|grid_size_w
@@ -183,11 +183,11 @@ modifier|*
 name|grid_size_w
 decl_stmt|;
 DECL|member|clip
-name|int
+name|gint
 name|clip
 decl_stmt|;
 DECL|member|clip_d
-name|int
+name|gint
 name|clip_d
 decl_stmt|;
 DECL|member|clip_w
@@ -196,11 +196,11 @@ modifier|*
 name|clip_w
 decl_stmt|;
 DECL|member|showpath
-name|int
+name|gboolean
 name|showpath
 decl_stmt|;
 DECL|member|showpath_d
-name|int
+name|gboolean
 name|showpath_d
 decl_stmt|;
 DECL|member|showpath_w
@@ -1953,8 +1953,11 @@ name|type
 operator|=
 name|new_type
 expr_stmt|;
-name|tools_select
+name|gimp_context_set_tool
 argument_list|(
+name|gimp_context_get_user
+argument_list|()
+argument_list|,
 name|transform_options
 operator|->
 name|type

@@ -44,7 +44,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"palette.h"
+file|"paletteP.h"
 end_include
 
 begin_include
@@ -355,11 +355,6 @@ name|gimp_set_add
 argument_list|(
 name|image_context
 argument_list|,
-name|gimage
-argument_list|)
-expr_stmt|;
-name|palette_import_image_new
-argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
@@ -679,11 +674,6 @@ argument_list|(
 name|gimage
 operator|->
 name|guides
-argument_list|)
-expr_stmt|;
-name|palette_import_image_destroyed
-argument_list|(
-name|gimage
 argument_list|)
 expr_stmt|;
 if|if

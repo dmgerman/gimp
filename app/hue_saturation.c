@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"actionarea.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"colormaps.h"
 end_include
 
@@ -1804,7 +1798,7 @@ literal|"M"
 argument_list|)
 block|}
 decl_stmt|;
-name|ActionCallback
+name|GtkSignalFunc
 name|hue_partition_callbacks
 index|[]
 init|=

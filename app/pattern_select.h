@@ -29,15 +29,11 @@ file|"patterns.h"
 end_include
 
 begin_typedef
-DECL|typedef|_PatternSelect
-DECL|typedef|PatternSelectP
+DECL|typedef|PatternSelect
 typedef|typedef
 name|struct
 name|_PatternSelect
-name|_PatternSelect
-typedef|,
-modifier|*
-name|PatternSelectP
+name|PatternSelect
 typedef|;
 end_typedef
 
@@ -97,27 +93,29 @@ DECL|member|popup_timeout_tag
 name|guint
 name|popup_timeout_tag
 decl_stmt|;
-comment|/*  Call back function name  */
+comment|/*  Callback function name  */
 DECL|member|callback_name
 name|gchar
 modifier|*
 name|callback_name
 decl_stmt|;
-comment|/*  Current pattern  */
-DECL|member|pattern
-name|GPatternP
-name|pattern
+comment|/*  Context to store the current pattern  */
+DECL|member|context
+name|GimpContext
+modifier|*
+name|context
 decl_stmt|;
 comment|/*  Some variables to keep the GUI consistent  */
 DECL|member|cell_width
-DECL|member|cell_height
-name|int
+name|gint
 name|cell_width
-decl_stmt|,
+decl_stmt|;
+DECL|member|cell_height
+name|gint
 name|cell_height
 decl_stmt|;
 DECL|member|scroll_offset
-name|int
+name|gint
 name|scroll_offset
 decl_stmt|;
 DECL|member|old_row
@@ -140,26 +138,42 @@ block|}
 struct|;
 end_struct
 
+begin_comment
+comment|/*  list of active dialogs  */
+end_comment
+
+begin_decl_stmt
+specifier|extern
+name|GSList
+modifier|*
+name|pattern_active_dialogs
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/*  the main pattern dialog  */
+end_comment
+
+begin_decl_stmt
+specifier|extern
+name|PatternSelect
+modifier|*
+name|pattern_select_dialog
+decl_stmt|;
+end_decl_stmt
+
 begin_function_decl
-name|PatternSelectP
+name|PatternSelect
+modifier|*
 name|pattern_select_new
 parameter_list|(
 name|gchar
 modifier|*
+name|title
 parameter_list|,
 name|gchar
 modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|pattern_select_select
-parameter_list|(
-name|PatternSelectP
-parameter_list|,
-name|int
+name|initial_pattern
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -168,7 +182,23 @@ begin_function_decl
 name|void
 name|pattern_select_free
 parameter_list|(
-name|PatternSelectP
+name|PatternSelect
+modifier|*
+name|psp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|pattern_change_callbacks
+parameter_list|(
+name|PatternSelect
+modifier|*
+name|psp
+parameter_list|,
+name|gint
+name|closing
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -182,24 +212,27 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
-specifier|extern
-name|GSList
-modifier|*
-name|pattern_active_dialogs
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
-comment|/* List of active dialogs */
+comment|/*  the main pattern selection  */
 end_comment
 
-begin_decl_stmt
-specifier|extern
-name|PatternSelectP
-name|pattern_select_dialog
-decl_stmt|;
-end_decl_stmt
+begin_function_decl
+name|void
+name|pattern_dialog_create
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|pattern_dialog_free
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_endif
 endif|#

@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpui.h"
 end_include
 
@@ -61,12 +67,6 @@ begin_include
 include|#
 directive|include
 file|"interface.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"palette.h"
 end_include
 
 begin_include
@@ -2164,8 +2164,10 @@ operator|==
 name|OFFSET_BACKGROUND
 condition|)
 block|{
-name|palette_get_background
+name|gimp_context_get_background
 argument_list|(
+name|NULL
+argument_list|,
 operator|&
 name|fill
 index|[

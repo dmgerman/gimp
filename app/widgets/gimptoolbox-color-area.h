@@ -16,6 +16,22 @@ directive|define
 name|__COLOR_AREA_H__
 end_define
 
+begin_define
+DECL|macro|FOREGROUND
+define|#
+directive|define
+name|FOREGROUND
+value|0
+end_define
+
+begin_define
+DECL|macro|BACKGROUND
+define|#
+directive|define
+name|BACKGROUND
+value|1
+end_define
+
 begin_comment
 comment|/*  *  Global variables  */
 end_comment
@@ -53,15 +69,6 @@ parameter_list|,
 name|GdkPixmap
 modifier|*
 name|swap_pixmap
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|color_area_update
-parameter_list|(
-name|void
 parameter_list|)
 function_decl|;
 end_function_decl

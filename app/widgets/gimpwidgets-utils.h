@@ -94,7 +94,7 @@ parameter_list|,
 name|gint
 name|auto_shrink
 parameter_list|,
-comment|/* specify action area buttons as va_list: 				   *  gchar          *label, 				   *  GtkSignalFunc   callback, 				   *  gpointer        data, 				   *  GtkWidget     **widget_ptr, 				   *  gboolean        default_action, 				   *  gboolean        connect_delete, 				   */
+comment|/* specify action area buttons 					      * as va_list: 					      *  gchar          *label, 					      *  GtkSignalFunc   callback, 					      *  gpointer        data, 					      *  GtkWidget     **widget_ptr, 					      *  gboolean        default_action, 					      *  gboolean        connect_delete, 					      */
 modifier|...
 parameter_list|)
 function_decl|;
@@ -132,6 +132,34 @@ name|allow_grow
 parameter_list|,
 name|gint
 name|auto_shrink
+parameter_list|,
+name|va_list
+name|args
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_dialog_create_action_area
+parameter_list|(
+name|GtkDialog
+modifier|*
+name|dialog
+parameter_list|,
+comment|/* specify action area buttons 					      * as va_list: 					      *  gchar          *label, 					      *  GtkSignalFunc   callback, 					      *  gpointer        data, 					      *  GtkWidget     **widget_ptr, 					      *  gboolean        default_action, 					      *  gboolean        connect_delete, 					      */
+modifier|...
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_dialog_create_action_areav
+parameter_list|(
+name|GtkDialog
+modifier|*
+name|dialog
 parameter_list|,
 name|va_list
 name|args

@@ -6,21 +6,30 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|_GRADIENT_H_
+name|__GRADIENT_H__
 end_ifndef
 
 begin_define
-DECL|macro|_GRADIENT_H_
+DECL|macro|__GRADIENT_H__
 define|#
 directive|define
-name|_GRADIENT_H_
+name|__GRADIENT_H__
 end_define
+
+begin_typedef
+DECL|typedef|gradient_t
+typedef|typedef
+name|struct
+name|_gradient_t
+name|gradient_t
+typedef|;
+end_typedef
 
 begin_function_decl
 name|void
 name|gradients_init
 parameter_list|(
-name|int
+name|gint
 name|no_data
 parameter_list|)
 function_decl|;
@@ -36,25 +45,39 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|grad_get_color_at
+name|gradient_t
+modifier|*
+name|gradients_get_standard_gradient
 parameter_list|(
-name|double
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gradient_get_color_at
+parameter_list|(
+name|gradient_t
+modifier|*
+name|gradient
+parameter_list|,
+name|gdouble
 name|pos
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|r
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|g
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|b
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|a
 parameter_list|)
@@ -92,6 +115,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* __GRADIENT_H__ */
+end_comment
 
 end_unit
 

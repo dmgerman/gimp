@@ -76,12 +76,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrushlist.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpbrushpipe.h"
 end_include
 
@@ -111,12 +105,6 @@ begin_include
 include|#
 directive|include
 file|"paint_core.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"palette.h"
 end_include
 
 begin_include
@@ -453,7 +441,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|void
 name|paint_core_invalidate_cache
 parameter_list|(
 name|GimpBrush
@@ -1211,8 +1199,7 @@ name|int
 name|state
 parameter_list|)
 block|{
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|color
 decl_stmt|;
@@ -1240,8 +1227,11 @@ operator|&
 name|GDK_CONTROL_MASK
 operator|)
 condition|)
-name|palette_set_foreground
+name|gimp_context_set_foreground
 argument_list|(
+name|gimp_context_get_user
+argument_list|()
+argument_list|,
 name|color
 index|[
 name|RED_PIX
@@ -1259,8 +1249,11 @@ index|]
 argument_list|)
 expr_stmt|;
 else|else
-name|palette_set_background
+name|gimp_context_set_background
 argument_list|(
+name|gimp_context_get_user
+argument_list|()
+argument_list|,
 name|color
 index|[
 name|RED_PIX
@@ -3875,8 +3868,10 @@ name|brush
 operator|&&
 name|brush
 operator|!=
-name|get_active_brush
-argument_list|()
+name|gimp_context_get_brush
+argument_list|(
+name|NULL
+argument_list|)
 condition|)
 block|{
 name|gtk_signal_disconnect_by_func
@@ -3909,8 +3904,10 @@ operator|!
 operator|(
 name|brush
 operator|=
-name|get_active_brush
-argument_list|()
+name|gimp_context_get_brush
+argument_list|(
+name|NULL
+argument_list|)
 operator|)
 condition|)
 block|{
@@ -4199,8 +4196,13 @@ name|int
 operator|)
 name|y
 expr_stmt|;
-name|grad_get_color_at
+name|gradient_get_color_at
 argument_list|(
+name|gimp_context_get_gradient
+argument_list|(
+name|NULL
+argument_list|)
+argument_list|,
 name|y
 argument_list|,
 name|r
@@ -5950,17 +5952,17 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|cache_invalid
 specifier|static
-name|int
+name|gboolean
 name|cache_invalid
 init|=
-literal|0
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|paint_core_invalidate_cache (GimpBrush * brush,gpointer * blah)
 specifier|static
-name|int
+name|void
+DECL|function|paint_core_invalidate_cache (GimpBrush * brush,gpointer * blah)
 name|paint_core_invalidate_cache
 parameter_list|(
 name|GimpBrush
@@ -5981,18 +5983,10 @@ name|brush
 operator|->
 name|mask
 condition|)
-block|{
 name|cache_invalid
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
-return|return
-literal|1
-return|;
-block|}
-return|return
-literal|0
-return|;
 block|}
 end_function
 
@@ -6362,7 +6356,7 @@ name|mask
 expr_stmt|;
 name|cache_invalid
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 name|kernel_brushes
 index|[

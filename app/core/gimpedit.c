@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"actionarea.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"drawable.h"
 end_include
 
@@ -112,9 +106,9 @@ file|"drawable_pvt.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon29806e1d0103
 typedef|typedef
 enum|enum
+DECL|enum|__anon2c4dcc770103
 block|{
 DECL|enumerator|PASTE
 name|PASTE
@@ -3007,50 +3001,40 @@ name|gint
 name|i
 decl_stmt|;
 specifier|static
-name|ActionAreaItem
-name|paste_action_items
+name|gchar
+modifier|*
+name|paste_action_labels
 index|[]
 init|=
-block|{
 block|{
 name|N_
 argument_list|(
 literal|"Paste"
 argument_list|)
 block|,
-name|named_buffer_paste_callback
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
 name|N_
 argument_list|(
 literal|"Paste Into"
 argument_list|)
 block|,
-name|named_buffer_paste_into_callback
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
 name|N_
 argument_list|(
 literal|"Paste As New"
 argument_list|)
+block|,   }
+decl_stmt|;
+specifier|static
+name|GtkSignalFunc
+name|paste_action_functions
+index|[]
+init|=
+block|{
+name|named_buffer_paste_callback
+block|,
+name|named_buffer_paste_into_callback
 block|,
 name|named_buffer_paste_as_new_callback
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|}
+block|,   }
 decl_stmt|;
 name|pn_dlg
 operator|=
@@ -3354,12 +3338,10 @@ name|gtk_button_new_with_label
 argument_list|(
 name|gettext
 argument_list|(
-name|paste_action_items
+name|paste_action_labels
 index|[
 name|i
 index|]
-operator|.
-name|label
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3385,12 +3367,10 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|paste_action_items
+name|paste_action_functions
 index|[
 name|i
 index|]
-operator|.
-name|callback
 argument_list|,
 name|pn_dlg
 argument_list|)

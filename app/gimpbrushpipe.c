@@ -2024,7 +2024,7 @@ name|filename
 argument_list|)
 operator|||
 operator|!
-name|load_pattern_pattern
+name|pattern_load
 argument_list|(
 name|pattern
 argument_list|,
@@ -2340,7 +2340,7 @@ name|filename
 argument_list|)
 operator|||
 operator|!
-name|load_pattern_pattern
+name|pattern_load
 argument_list|(
 name|pattern
 argument_list|,

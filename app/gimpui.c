@@ -22,6 +22,10 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_comment
+comment|/* #include "pixmaps/wilber.xpm" */
+end_comment
+
+begin_comment
 comment|/*  *  Widget Constructors...  */
 end_comment
 
@@ -107,7 +111,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* #include "/home/mitch/gimp.xpm"  static void gimp_dialog_realize_callback (GtkWidget *widget, 			      gpointer   data)  {   static GdkPixmap *wilber_pixmap = NULL;   static GdkBitmap *wilber_mask   = NULL;   GtkStyle         *style;    style = gtk_widget_get_style (widget);    if (wilber_pixmap == NULL)     wilber_pixmap =       gdk_pixmap_create_from_xpm_d (widget->window,&wilber_mask,&style->bg[GTK_STATE_NORMAL], 				    gimp_xpm);    gdk_window_set_icon (widget->window, NULL, 		       wilber_pixmap, wilber_mask); } */
+comment|/* static void gimp_dialog_realize_callback (GtkWidget *widget, 			      gpointer   data)  {   static GdkPixmap *wilber_pixmap = NULL;   static GdkBitmap *wilber_mask   = NULL;   GtkStyle         *style;    style = gtk_widget_get_style (widget);    if (wilber_pixmap == NULL)     wilber_pixmap =       gdk_pixmap_create_from_xpm_d (widget->window,&wilber_mask,&style->bg[GTK_STATE_NORMAL], 				    gimp_xpm);    gdk_window_set_icon (widget->window, NULL, 		       wilber_pixmap, wilber_mask); } */
 end_comment
 
 begin_function
@@ -238,41 +242,6 @@ name|GtkWidget
 modifier|*
 name|dialog
 decl_stmt|;
-name|GtkWidget
-modifier|*
-name|hbbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|button
-decl_stmt|;
-comment|/*  action area variables  */
-name|gchar
-modifier|*
-name|label
-decl_stmt|;
-name|GtkSignalFunc
-name|callback
-decl_stmt|;
-name|gpointer
-name|data
-decl_stmt|;
-name|GtkWidget
-modifier|*
-modifier|*
-name|widget_ptr
-decl_stmt|;
-name|gboolean
-name|default_action
-decl_stmt|;
-name|gboolean
-name|connect_delete
-decl_stmt|;
-name|gboolean
-name|delete_connected
-init|=
-name|FALSE
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|title
@@ -343,37 +312,140 @@ name|auto_shrink
 argument_list|)
 expr_stmt|;
 comment|/*  prepare the action_area  */
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
+name|gimp_dialog_create_action_areav
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|action_area
-argument_list|)
 argument_list|,
-literal|2
+name|args
 argument_list|)
 expr_stmt|;
-name|gtk_box_set_homogeneous
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|GTK_DIALOG
+comment|/*  the realize callback sets the WM icon  */
+comment|/*   gtk_signal_connect (GTK_OBJECT (dialog), "realize", 		      (GtkSignalFunc) gimp_dialog_realize_callback, 		      NULL);   */
+comment|/*  connect the "F1" help key  */
+if|if
+condition|(
+name|help_func
+condition|)
+name|gimp_help_connect_help_accel
 argument_list|(
 name|dialog
-argument_list|)
-operator|->
-name|action_area
-argument_list|)
 argument_list|,
+name|help_func
+argument_list|,
+name|help_data
+argument_list|)
+expr_stmt|;
+return|return
+name|dialog
+return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_dialog_create_action_area (GtkDialog * dialog,...)
+name|gimp_dialog_create_action_area
+parameter_list|(
+name|GtkDialog
+modifier|*
+name|dialog
+parameter_list|,
+comment|/* specify action area buttons as va_list: 				 *  gchar          *label, 				 *  GtkSignalFunc   callback, 				 *  gpointer        data, 				 *  GtkWidget     **widget_ptr, 				 *  gboolean        default_action, 				 *  gboolean        connect_delete, 				 */
+modifier|...
+parameter_list|)
+block|{
+name|va_list
+name|args
+decl_stmt|;
+name|va_start
+argument_list|(
+name|args
+argument_list|,
+name|dialog
+argument_list|)
+expr_stmt|;
+name|gimp_dialog_create_action_areav
+argument_list|(
+name|dialog
+argument_list|,
+name|args
+argument_list|)
+expr_stmt|;
+name|va_end
+argument_list|(
+name|args
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_dialog_create_action_areav (GtkDialog * dialog,va_list args)
+name|gimp_dialog_create_action_areav
+parameter_list|(
+name|GtkDialog
+modifier|*
+name|dialog
+parameter_list|,
+name|va_list
+name|args
+parameter_list|)
+block|{
+name|GtkWidget
+modifier|*
+name|hbbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|button
+decl_stmt|;
+comment|/*  action area variables  */
+name|gchar
+modifier|*
+name|label
+decl_stmt|;
+name|GtkSignalFunc
+name|callback
+decl_stmt|;
+name|gpointer
+name|data
+decl_stmt|;
+name|GtkWidget
+modifier|*
+modifier|*
+name|widget_ptr
+decl_stmt|;
+name|gboolean
+name|default_action
+decl_stmt|;
+name|gboolean
+name|connect_delete
+decl_stmt|;
+name|gboolean
+name|delete_connected
+init|=
 name|FALSE
+decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|dialog
+operator|!=
+name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  the action_area buttons  */
+name|g_return_if_fail
+argument_list|(
+name|GTK_IS_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|)
+expr_stmt|;
+comment|/*  prepare the action_area  */
 name|label
 operator|=
 name|va_arg
@@ -389,6 +461,30 @@ condition|(
 name|label
 condition|)
 block|{
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|dialog
+operator|->
+name|action_area
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
+name|gtk_box_set_homogeneous
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|dialog
+operator|->
+name|action_area
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|hbbox
 operator|=
 name|gtk_hbutton_box_new
@@ -408,10 +504,7 @@ name|gtk_box_pack_end
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|GTK_DIALOG
-argument_list|(
 name|dialog
-argument_list|)
 operator|->
 name|action_area
 argument_list|)
@@ -430,6 +523,8 @@ argument_list|(
 name|hbbox
 argument_list|)
 expr_stmt|;
+block|}
+comment|/*  the action_area buttons  */
 while|while
 condition|(
 name|label
@@ -631,49 +726,6 @@ operator|*
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-comment|/*  catch the WM delete event if not already done  */
-if|if
-condition|(
-operator|!
-name|delete_connected
-condition|)
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|dialog
-argument_list|)
-argument_list|,
-literal|"delete_event"
-argument_list|,
-operator|(
-name|GdkEventFunc
-operator|)
-name|gimp_dialog_delete_callback
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-comment|/*  the realize callback sets the WM icon  */
-comment|/*   gtk_signal_connect (GTK_OBJECT (dialog), "realize", 		      (GtkSignalFunc) gimp_dialog_realize_callback, 		      NULL);   */
-comment|/*  connect the "F1" help key  */
-if|if
-condition|(
-name|help_func
-condition|)
-name|gimp_help_connect_help_accel
-argument_list|(
-name|dialog
-argument_list|,
-name|help_func
-argument_list|,
-name|help_data
-argument_list|)
-expr_stmt|;
-return|return
-name|dialog
-return|;
 block|}
 end_function
 

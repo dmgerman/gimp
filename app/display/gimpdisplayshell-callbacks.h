@@ -16,6 +16,12 @@ directive|define
 name|__DISP_CALLBACKS_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"gdisplay.h"
+end_include
+
 begin_define
 DECL|macro|CANVAS_EVENT_MASK
 define|#

@@ -29,15 +29,11 @@ file|"gimpbrush.h"
 end_include
 
 begin_typedef
-DECL|typedef|_BrushSelect
-DECL|typedef|BrushSelectP
+DECL|typedef|BrushSelect
 typedef|typedef
 name|struct
 name|_BrushSelect
-name|_BrushSelect
-typedef|,
-modifier|*
-name|BrushSelectP
+name|BrushSelect
 typedef|;
 end_typedef
 
@@ -123,7 +119,7 @@ name|GtkWidget
 modifier|*
 name|option_menu
 decl_stmt|;
-comment|/*  Brush preview  */
+comment|/*  Brush popup  */
 DECL|member|brush_popup
 name|GtkWidget
 modifier|*
@@ -146,53 +142,41 @@ DECL|member|popup_pipe_index
 name|guint
 name|popup_pipe_index
 decl_stmt|;
-comment|/*  Call back function name  */
+comment|/*  Callback function name  */
 DECL|member|callback_name
 name|gchar
 modifier|*
 name|callback_name
 decl_stmt|;
-comment|/*  Current brush  */
-DECL|member|brush
-name|GimpBrushP
-name|brush
+comment|/*  Context to store the current brush& paint options  */
+DECL|member|context
+name|GimpContext
+modifier|*
+name|context
 decl_stmt|;
 DECL|member|spacing_value
 name|gint
 name|spacing_value
 decl_stmt|;
-comment|/*  Current paint options  */
-DECL|member|opacity_value
-name|gdouble
-name|opacity_value
-decl_stmt|;
-DECL|member|paint_mode
-name|gint
-name|paint_mode
-decl_stmt|;
 comment|/*  Some variables to keep the GUI consistent  */
 DECL|member|cell_width
-name|int
+name|gint
 name|cell_width
 decl_stmt|;
 DECL|member|cell_height
-name|int
+name|gint
 name|cell_height
 decl_stmt|;
 DECL|member|scroll_offset
-name|int
+name|gint
 name|scroll_offset
 decl_stmt|;
-DECL|member|redraw
-name|int
-name|redraw
-decl_stmt|;
 DECL|member|old_row
-name|int
+name|gint
 name|old_row
 decl_stmt|;
 DECL|member|old_col
-name|int
+name|gint
 name|old_col
 decl_stmt|;
 DECL|member|NUM_BRUSH_COLUMNS
@@ -203,24 +187,53 @@ DECL|member|NUM_BRUSH_ROWS
 name|gint
 name|NUM_BRUSH_ROWS
 decl_stmt|;
+DECL|member|redraw
+name|gboolean
+name|redraw
+decl_stmt|;
 DECL|member|freeze
-name|int
+name|gboolean
 name|freeze
 decl_stmt|;
-comment|/* so we don't waste so much time during refresh */
+comment|/*  so we don't waste so much time during refresh  */
 block|}
 struct|;
 end_struct
 
+begin_comment
+comment|/*  list of active dialogs  */
+end_comment
+
+begin_decl_stmt
+specifier|extern
+name|GSList
+modifier|*
+name|brush_active_dialogs
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/*  the main brush dialog */
+end_comment
+
+begin_decl_stmt
+specifier|extern
+name|BrushSelect
+modifier|*
+name|brush_select_dialog
+decl_stmt|;
+end_decl_stmt
+
 begin_function_decl
-name|BrushSelectP
+name|BrushSelect
+modifier|*
 name|brush_select_new
 parameter_list|(
 name|gchar
 modifier|*
 name|title
 parameter_list|,
-comment|/*  These are the required initial vals 				 *  If init_name == NULL then use current brush 				 */
+comment|/*  These are the required initial vals 					*  If init_name == NULL then use 					*  current brush 					*/
 name|gchar
 modifier|*
 name|init_name
@@ -241,7 +254,8 @@ begin_function_decl
 name|void
 name|brush_select_free
 parameter_list|(
-name|BrushSelectP
+name|BrushSelect
+modifier|*
 name|bsp
 parameter_list|)
 function_decl|;
@@ -249,13 +263,18 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|brush_select_select
+name|brush_select_freeze_all
 parameter_list|(
-name|BrushSelectP
-name|bsp
-parameter_list|,
-name|GimpBrushP
-name|brush
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|brush_select_thaw_all
+parameter_list|(
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -264,7 +283,8 @@ begin_function_decl
 name|void
 name|brush_change_callbacks
 parameter_list|(
-name|BrushSelectP
+name|BrushSelect
+modifier|*
 name|bsp
 parameter_list|,
 name|gint
@@ -290,7 +310,8 @@ begin_function_decl
 name|void
 name|brush_select_show_paint_options
 parameter_list|(
-name|BrushSelectP
+name|BrushSelect
+modifier|*
 name|bsp
 parameter_list|,
 name|gboolean
@@ -300,27 +321,26 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* List of active dialogs */
+comment|/*  the main brush selection  */
 end_comment
 
-begin_decl_stmt
-specifier|extern
-name|GSList
-modifier|*
-name|brush_active_dialogs
-decl_stmt|;
-end_decl_stmt
+begin_function_decl
+name|void
+name|brush_dialog_free
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
-begin_comment
-comment|/* The main brush dialog */
-end_comment
-
-begin_decl_stmt
-specifier|extern
-name|BrushSelectP
-name|brush_select_dialog
-decl_stmt|;
-end_decl_stmt
+begin_function_decl
+name|void
+name|brush_dialog_create
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_endif
 endif|#

@@ -78,18 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"palette.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"patterns.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"selection.h"
 end_include
 
@@ -1606,8 +1594,10 @@ condition|)
 block|{
 name|pattern
 operator|=
-name|get_active_pattern
-argument_list|()
+name|gimp_context_get_pattern
+argument_list|(
+name|NULL
+argument_list|)
 expr_stmt|;
 if|if
 condition|(

@@ -22,6 +22,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pattern_select.h"
 end_include
 
@@ -80,7 +86,8 @@ end_function
 
 begin_function
 specifier|static
-name|PatternSelectP
+name|PatternSelect
+modifier|*
 DECL|function|pattern_get_patternselect (gchar * name)
 name|pattern_get_patternselect
 parameter_list|(
@@ -92,21 +99,32 @@ block|{
 name|GSList
 modifier|*
 name|list
-init|=
-name|pattern_active_dialogs
 decl_stmt|;
-name|PatternSelectP
+name|PatternSelect
+modifier|*
 name|psp
 decl_stmt|;
-while|while
-condition|(
+for|for
+control|(
 name|list
-condition|)
+operator|=
+name|pattern_active_dialogs
+init|;
+name|list
+condition|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 block|{
 name|psp
 operator|=
 operator|(
-name|PatternSelectP
+name|PatternSelect
+operator|*
 operator|)
 name|list
 operator|->
@@ -114,6 +132,10 @@ name|data
 expr_stmt|;
 if|if
 condition|(
+name|psp
+operator|->
+name|callback_name
+operator|&&
 operator|!
 name|strcmp
 argument_list|(
@@ -127,12 +149,6 @@ condition|)
 return|return
 name|psp
 return|;
-name|list
-operator|=
-name|list
-operator|->
-name|next
-expr_stmt|;
 block|}
 return|return
 name|NULL
@@ -173,7 +189,8 @@ name|ProcRecord
 modifier|*
 name|prec
 decl_stmt|;
-name|PatternSelectP
+name|PatternSelect
+modifier|*
 name|newdialog
 decl_stmt|;
 name|name
@@ -286,7 +303,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* Add to list of proc to run when pattern changes */
+comment|/* The callback procedure to run when pattern changes */
 name|newdialog
 operator|->
 name|callback_name
@@ -294,16 +311,6 @@ operator|=
 name|g_strdup
 argument_list|(
 name|name
-argument_list|)
-expr_stmt|;
-comment|/* Add to active pattern dialogs list */
-name|pattern_active_dialogs
-operator|=
-name|g_slist_append
-argument_list|(
-name|pattern_active_dialogs
-argument_list|,
-name|newdialog
 argument_list|)
 expr_stmt|;
 block|}
@@ -423,7 +430,8 @@ name|ProcRecord
 modifier|*
 name|prec
 decl_stmt|;
-name|PatternSelectP
+name|PatternSelect
+modifier|*
 name|psp
 decl_stmt|;
 name|name
@@ -477,15 +485,6 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|pattern_active_dialogs
-operator|=
-name|g_slist_remove
-argument_list|(
-name|pattern_active_dialogs
-argument_list|,
-name|psp
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|GTK_WIDGET_VISIBLE
@@ -628,7 +627,8 @@ name|ProcRecord
 modifier|*
 name|prec
 decl_stmt|;
-name|PatternSelectP
+name|PatternSelect
+modifier|*
 name|psp
 decl_stmt|;
 name|name
@@ -707,7 +707,8 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|GPatternP
+name|GPattern
+modifier|*
 name|active
 init|=
 name|pattern_list_get_pattern
@@ -723,19 +724,13 @@ name|active
 condition|)
 block|{
 comment|/* Must alter the wigdets on screen as well */
-name|psp
-operator|->
-name|pattern
-operator|=
-name|active
-expr_stmt|;
-name|pattern_select_select
+name|gimp_context_set_pattern
 argument_list|(
 name|psp
+operator|->
+name|context
 argument_list|,
 name|active
-operator|->
-name|index
 argument_list|)
 expr_stmt|;
 block|}

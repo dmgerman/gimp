@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrushlist.h"
+file|"brush_select.h"
 end_include
 
 begin_include
@@ -204,7 +204,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"patterns.h"
+file|"pattern_select.h"
 end_include
 
 begin_include
@@ -264,7 +264,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5c95700108
+DECL|struct|__anon2a21c99b0108
 block|{
 DECL|member|resize
 name|Resize
@@ -3827,8 +3827,11 @@ name|gpointer
 name|client_data
 parameter_list|)
 block|{
-name|palette_set_default_colors
+name|gimp_context_set_default_colors
+argument_list|(
+name|gimp_context_get_user
 argument_list|()
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -3846,8 +3849,11 @@ name|gpointer
 name|client_data
 parameter_list|)
 block|{
-name|palette_swap_colors
+name|gimp_context_swap_colors
+argument_list|(
+name|gimp_context_get_user
 argument_list|()
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -3868,6 +3874,9 @@ name|guint
 name|callback_action
 parameter_list|)
 block|{
+name|ToolType
+name|tool_type
+decl_stmt|;
 name|GDisplay
 modifier|*
 name|gdisp
@@ -3877,15 +3886,19 @@ operator|=
 name|gdisplay_active
 argument_list|()
 expr_stmt|;
-comment|/*  Activate the appropriate widget.    *  Implicitly calls tools_select()    */
-name|gtk_widget_activate
-argument_list|(
-name|tool_info
-index|[
+name|tool_type
+operator|=
+operator|(
+name|ToolType
+operator|)
 name|callback_action
-index|]
-operator|.
-name|tool_widget
+expr_stmt|;
+name|gimp_context_set_tool
+argument_list|(
+name|gimp_context_get_user
+argument_list|()
+argument_list|,
+name|tool_type
 argument_list|)
 expr_stmt|;
 comment|/*  Paranoia  */
@@ -3978,7 +3991,7 @@ name|gpointer
 name|client_data
 parameter_list|)
 block|{
-name|create_brush_dialog
+name|brush_dialog_create
 argument_list|()
 expr_stmt|;
 block|}
@@ -3997,7 +4010,7 @@ name|gpointer
 name|client_data
 parameter_list|)
 block|{
-name|create_pattern_dialog
+name|pattern_dialog_create
 argument_list|()
 expr_stmt|;
 block|}
@@ -4016,7 +4029,7 @@ name|gpointer
 name|client_data
 parameter_list|)
 block|{
-name|palette_create
+name|palette_dialog_create
 argument_list|()
 expr_stmt|;
 block|}
@@ -4125,8 +4138,11 @@ name|active_color
 operator|==
 name|FOREGROUND
 condition|)
-name|palette_set_foreground
+name|gimp_context_set_foreground
 argument_list|(
+name|gimp_context_get_user
+argument_list|()
+argument_list|,
 name|c
 index|[
 literal|0
@@ -4150,8 +4166,11 @@ name|active_color
 operator|==
 name|BACKGROUND
 condition|)
-name|palette_set_background
+name|gimp_context_set_background
 argument_list|(
+name|gimp_context_get_user
+argument_list|()
+argument_list|,
 name|c
 index|[
 literal|0
@@ -4255,7 +4274,7 @@ name|gpointer
 name|client_data
 parameter_list|)
 block|{
-name|create_input_dialog
+name|input_dialog_create
 argument_list|()
 expr_stmt|;
 block|}
@@ -4274,7 +4293,7 @@ name|gpointer
 name|client_data
 parameter_list|)
 block|{
-name|create_device_status
+name|device_status_create
 argument_list|()
 expr_stmt|;
 block|}

@@ -726,7 +726,7 @@ comment|/*  signals  */
 end_comment
 
 begin_enum
-DECL|enum|__anon278060860103
+DECL|enum|__anon2b3aa2330103
 enum|enum
 block|{
 DECL|enumerator|CLICKED
@@ -4539,12 +4539,6 @@ name|gint
 name|height
 parameter_list|)
 block|{
-name|gradient_t
-modifier|*
-name|old_gradient
-init|=
-name|curr_gradient
-decl_stmt|;
 name|guchar
 modifier|*
 name|p0
@@ -4582,10 +4576,6 @@ name|c0
 decl_stmt|,
 name|c1
 decl_stmt|;
-name|curr_gradient
-operator|=
-name|gradient
-expr_stmt|;
 name|dx
 operator|=
 literal|1.0
@@ -4640,8 +4630,10 @@ name|x
 operator|++
 control|)
 block|{
-name|grad_get_color_at
+name|gradient_get_color_at
 argument_list|(
+name|gradient
+argument_list|,
 name|cur_x
 argument_list|,
 operator|&
@@ -4862,10 +4854,6 @@ name|g_free
 argument_list|(
 name|even
 argument_list|)
-expr_stmt|;
-name|curr_gradient
-operator|=
-name|old_gradient
 expr_stmt|;
 block|}
 end_function

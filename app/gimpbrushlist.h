@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMPBRUSHELIST_H__
+name|__GIMPBRUSHLIST_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMPBRUSHELIST_H__
+DECL|macro|__GIMPBRUSHLIST_H__
 define|#
 directive|define
-name|__GIMPBRUSHELIST_H__
+name|__GIMPBRUSHLIST_H__
 end_define
 
 begin_include
@@ -70,6 +70,22 @@ parameter_list|)
 value|(GIMP_CHECK_TYPE ((obj), GIMP_TYPE_BRUSH_LIST))
 end_define
 
+begin_comment
+comment|/*  global variables  */
+end_comment
+
+begin_decl_stmt
+specifier|extern
+name|GimpBrushList
+modifier|*
+name|brush_list
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/*  function declarations  */
+end_comment
+
 begin_function_decl
 name|GimpBrushList
 modifier|*
@@ -85,6 +101,17 @@ name|GtkType
 name|gimp_brush_list_get_type
 parameter_list|(
 name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint
+name|gimp_brush_list_length
+parameter_list|(
+name|GimpBrushList
+modifier|*
+name|list
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -120,14 +147,15 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpBrushP
+name|GimpBrush
+modifier|*
 name|gimp_brush_list_get_brush
 parameter_list|(
 name|GimpBrushList
 modifier|*
 name|list
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -135,37 +163,40 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
-name|gimp_brush_list_length
+name|GimpBrush
+modifier|*
+name|gimp_brush_list_get_brush_by_index
 parameter_list|(
 name|GimpBrushList
 modifier|*
 name|list
+parameter_list|,
+name|gint
+name|index
 parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  global variables  */
-end_comment
-
-begin_decl_stmt
-specifier|extern
+begin_function_decl
+name|gint
+name|gimp_brush_list_get_brush_index
+parameter_list|(
 name|GimpBrushList
 modifier|*
-name|brush_list
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/*  function declarations  */
-end_comment
+name|list
+parameter_list|,
+name|GimpBrush
+modifier|*
+name|brush
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|void
 name|brushes_init
 parameter_list|(
-name|int
+name|gint
 name|no_data
 parameter_list|)
 function_decl|;
@@ -181,64 +212,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|brush_select_dialog_free
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|select_brush
-parameter_list|(
-name|GimpBrushP
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GimpBrushP
-name|gimp_brush_list_get_brush_by_index
-parameter_list|(
-name|GimpBrushList
-modifier|*
-parameter_list|,
-name|int
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|int
-name|gimp_brush_list_get_brush_index
-parameter_list|(
-name|GimpBrushList
-modifier|*
-parameter_list|,
 name|GimpBrush
 modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GimpBrushP
-name|get_active_brush
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* TODO: {re}move this function */
-end_comment
-
-begin_function_decl
-name|void
-name|create_brush_dialog
+name|brushes_get_standard_brush
 parameter_list|(
 name|void
 parameter_list|)
@@ -251,7 +227,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMPBRUSHELIST_H__  */
+comment|/*  __GIMPBRUSHLIST_H__  */
 end_comment
 
 end_unit

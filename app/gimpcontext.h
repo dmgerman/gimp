@@ -43,7 +43,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gradient_header.h"
+file|"gradient.h"
 end_include
 
 begin_include
@@ -119,7 +119,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275b20110103
+DECL|enum|__anon2a05196b0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_ARG_IMAGE
 name|GIMP_CONTEXT_ARG_IMAGE
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275b20110203
+DECL|enum|__anon2a05196b0203
 block|{
 DECL|enumerator|GIMP_CONTEXT_IMAGE_MASK
 name|GIMP_CONTEXT_IMAGE_MASK
@@ -350,15 +350,30 @@ name|GimpBrush
 modifier|*
 name|brush
 decl_stmt|;
+DECL|member|brush_name
+name|gchar
+modifier|*
+name|brush_name
+decl_stmt|;
 DECL|member|pattern
 name|GPattern
 modifier|*
 name|pattern
 decl_stmt|;
+DECL|member|pattern_name
+name|gchar
+modifier|*
+name|pattern_name
+decl_stmt|;
 DECL|member|gradient
 name|gradient_t
 modifier|*
 name|gradient
+decl_stmt|;
+DECL|member|gradient_name
+name|gchar
+modifier|*
+name|gradient_name
 decl_stmt|;
 block|}
 struct|;
@@ -574,7 +589,7 @@ comment|/*  TODO: - gimp_context_find ()  *  *        probably interacting with 
 end_comment
 
 begin_comment
-comment|/*  to be used by the context management system only  *  *  FIXME: move them to a private header  */
+comment|/*  to be used by the context management system only  */
 end_comment
 
 begin_function_decl
@@ -666,6 +681,21 @@ parameter_list|(
 name|GimpContext
 modifier|*
 name|context
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_context_set_name
+parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
+name|gchar
+modifier|*
+name|name
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -986,6 +1016,32 @@ function_decl|;
 end_function_decl
 
 begin_comment
+comment|/*  color utility functions  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_context_set_default_colors
+parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_context_swap_colors
+parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  opacity  */
 end_comment
 
@@ -1074,6 +1130,15 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_context_refresh_brushes
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  pattern  */
 end_comment
@@ -1105,6 +1170,26 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_context_refresh_patterns
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_context_update_patterns
+parameter_list|(
+name|GPattern
+modifier|*
+name|pattern
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  gradient  */
 end_comment
@@ -1129,6 +1214,26 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
+name|gradient_t
+modifier|*
+name|gradient
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_context_refresh_gradients
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_context_update_gradients
+parameter_list|(
 name|gradient_t
 modifier|*
 name|gradient

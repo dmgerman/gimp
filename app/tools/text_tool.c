@@ -83,12 +83,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"actionarea.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"buildmenu.h"
 end_include
 
@@ -137,12 +131,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"general.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"global_edit.h"
 end_include
 
@@ -150,12 +138,6 @@ begin_include
 include|#
 directive|include
 file|"interface.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"palette.h"
 end_include
 
 begin_include

@@ -58,11 +58,11 @@ name|tool_options
 decl_stmt|;
 comment|/*  options used by all selection tools  */
 DECL|member|feather
-name|int
+name|gboolean
 name|feather
 decl_stmt|;
 DECL|member|feather_d
-name|int
+name|gboolean
 name|feather_d
 decl_stmt|;
 DECL|member|feather_w
@@ -71,11 +71,11 @@ modifier|*
 name|feather_w
 decl_stmt|;
 DECL|member|feather_radius
-name|double
+name|gdouble
 name|feather_radius
 decl_stmt|;
 DECL|member|feather_radius_d
-name|double
+name|gdouble
 name|feather_radius_d
 decl_stmt|;
 DECL|member|feather_radius_w
@@ -85,11 +85,11 @@ name|feather_radius_w
 decl_stmt|;
 comment|/*  used by all selection tools except rect. select  */
 DECL|member|antialias
-name|int
+name|gboolean
 name|antialias
 decl_stmt|;
 DECL|member|antialias_d
-name|int
+name|gboolean
 name|antialias_d
 decl_stmt|;
 DECL|member|antialias_w
@@ -99,11 +99,11 @@ name|antialias_w
 decl_stmt|;
 comment|/*  used by fuzzy, by-color selection  */
 DECL|member|sample_merged
-name|int
+name|gboolean
 name|sample_merged
 decl_stmt|;
 DECL|member|sample_merged_d
-name|int
+name|gboolean
 name|sample_merged_d
 decl_stmt|;
 DECL|member|sample_merged_w
@@ -113,11 +113,11 @@ name|sample_merged_w
 decl_stmt|;
 comment|/*  used by rect., ellipse selection  */
 DECL|member|fixed_size
-name|int
+name|gboolean
 name|fixed_size
 decl_stmt|;
 DECL|member|fixed_size_d
-name|int
+name|gboolean
 name|fixed_size_d
 decl_stmt|;
 DECL|member|fixed_size_w
@@ -126,11 +126,11 @@ modifier|*
 name|fixed_size_w
 decl_stmt|;
 DECL|member|fixed_width
-name|double
+name|gdouble
 name|fixed_width
 decl_stmt|;
 DECL|member|fixed_width_d
-name|double
+name|gdouble
 name|fixed_width_d
 decl_stmt|;
 DECL|member|fixed_width_w
@@ -139,11 +139,11 @@ modifier|*
 name|fixed_width_w
 decl_stmt|;
 DECL|member|fixed_height
-name|double
+name|gdouble
 name|fixed_height
 decl_stmt|;
 DECL|member|fixed_height_d
-name|double
+name|gdouble
 name|fixed_height_d
 decl_stmt|;
 DECL|member|fixed_height_w
@@ -166,7 +166,7 @@ name|fixed_unit_w
 decl_stmt|;
 comment|/*  used by bezier selection  */
 DECL|member|extend
-name|int
+name|gint
 name|extend
 decl_stmt|;
 block|}

@@ -115,6 +115,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
 end_include
 
@@ -128,12 +134,6 @@ begin_include
 include|#
 directive|include
 file|"gradient.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"palette.h"
 end_include
 
 begin_include
@@ -2285,6 +2285,17 @@ comment|/* The gradient editor */
 end_comment
 
 begin_decl_stmt
+DECL|variable|standard_gradient
+specifier|static
+name|gradient_t
+modifier|*
+name|standard_gradient
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|blending_types
 specifier|static
 specifier|const
@@ -2448,12 +2459,11 @@ name|curr_gradient
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_context_refresh_gradients
+argument_list|()
+expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 name|void
@@ -2469,31 +2479,83 @@ expr_stmt|;
 block|}
 end_function
 
+begin_function
+name|gradient_t
+modifier|*
+DECL|function|gradients_get_standard_gradient (void)
+name|gradients_get_standard_gradient
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+if|if
+condition|(
+operator|!
+name|standard_gradient
+condition|)
+block|{
+name|standard_gradient
+operator|=
+name|grad_create_default_gradient
+argument_list|()
+expr_stmt|;
+name|standard_gradient
+operator|->
+name|name
+operator|=
+name|g_strdup
+argument_list|(
+literal|"Standard"
+argument_list|)
+expr_stmt|;
+name|standard_gradient
+operator|->
+name|filename
+operator|=
+name|NULL
+expr_stmt|;
+name|standard_gradient
+operator|->
+name|dirty
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
+return|return
+name|standard_gradient
+return|;
+block|}
+end_function
+
 begin_comment
 comment|/*****/
 end_comment
 
 begin_function
 name|void
-DECL|function|grad_get_color_at (double pos,double * r,double * g,double * b,double * a)
-name|grad_get_color_at
+DECL|function|gradient_get_color_at (gradient_t * gradient,gdouble pos,gdouble * r,gdouble * g,gdouble * b,gdouble * a)
+name|gradient_get_color_at
 parameter_list|(
-name|double
+name|gradient_t
+modifier|*
+name|gradient
+parameter_list|,
+name|gdouble
 name|pos
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|r
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|g
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|b
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|a
 parameter_list|)
@@ -2529,7 +2591,7 @@ decl_stmt|;
 comment|/* if there is no gradient return a totally transparent black */
 if|if
 condition|(
-name|curr_gradient
+name|gradient
 operator|==
 name|NULL
 condition|)
@@ -2577,7 +2639,7 @@ name|seg
 operator|=
 name|seg_get_segment_at
 argument_list|(
-name|curr_gradient
+name|gradient
 argument_list|,
 name|pos
 argument_list|)
@@ -2712,7 +2774,7 @@ break|break;
 default|default:
 name|grad_dump_gradient
 argument_list|(
-name|curr_gradient
+name|gradient
 argument_list|,
 name|stderr
 argument_list|)
@@ -2721,7 +2783,7 @@ name|gimp_fatal_error
 argument_list|(
 name|_
 argument_list|(
-literal|"grad_get_color_at(): Unknown gradient type %d"
+literal|"gradient_get_color_at(): Unknown gradient type %d"
 argument_list|)
 argument_list|,
 operator|(
@@ -3019,7 +3081,7 @@ break|break;
 default|default:
 name|grad_dump_gradient
 argument_list|(
-name|curr_gradient
+name|gradient
 argument_list|,
 name|stderr
 argument_list|)
@@ -3028,7 +3090,7 @@ name|gimp_fatal_error
 argument_list|(
 name|_
 argument_list|(
-literal|"grad_get_color_at(): Unknown coloring mode %d"
+literal|"gradient_get_color_at(): Unknown coloring mode %d"
 argument_list|)
 argument_list|,
 operator|(
@@ -5081,8 +5143,11 @@ name|g
 decl_stmt|,
 name|b
 decl_stmt|;
-name|palette_get_foreground
+name|gimp_context_get_foreground
 argument_list|(
+name|gimp_context_get_user
+argument_list|()
+argument_list|,
 operator|&
 name|r
 argument_list|,
@@ -5541,16 +5606,6 @@ name|c0
 decl_stmt|,
 name|c1
 decl_stmt|;
-name|gradient_t
-modifier|*
-name|oldgrad
-init|=
-name|curr_gradient
-decl_stmt|;
-name|curr_gradient
-operator|=
-name|grad
-expr_stmt|;
 name|dx
 operator|=
 operator|(
@@ -5606,8 +5661,10 @@ name|x
 operator|++
 control|)
 block|{
-name|grad_get_color_at
+name|gradient_get_color_at
 argument_list|(
+name|grad
+argument_list|,
 name|cur_x
 argument_list|,
 operator|&
@@ -5844,10 +5901,6 @@ name|g_free
 argument_list|(
 name|odd
 argument_list|)
-expr_stmt|;
-name|curr_gradient
-operator|=
-name|oldgrad
 expr_stmt|;
 block|}
 end_function
@@ -8018,6 +8071,9 @@ argument_list|(
 name|real_pos
 argument_list|)
 expr_stmt|;
+name|gimp_context_refresh_gradients
+argument_list|()
+expr_stmt|;
 block|}
 end_function
 
@@ -9605,8 +9661,10 @@ argument_list|(
 name|x
 argument_list|)
 expr_stmt|;
-name|grad_get_color_at
+name|gradient_get_color_at
 argument_list|(
+name|curr_gradient
+argument_list|,
 name|xpos
 argument_list|,
 operator|&
@@ -9729,8 +9787,10 @@ argument_list|(
 name|x
 argument_list|)
 expr_stmt|;
-name|grad_get_color_at
+name|gradient_get_color_at
 argument_list|(
+name|curr_gradient
+argument_list|,
 name|xpos
 argument_list|,
 operator|&
@@ -9746,8 +9806,11 @@ operator|&
 name|a
 argument_list|)
 expr_stmt|;
-name|palette_set_foreground
+name|gimp_context_set_foreground
 argument_list|(
+name|gimp_context_get_user
+argument_list|()
+argument_list|,
 name|r
 operator|*
 literal|255.0
@@ -9853,8 +9916,10 @@ argument_list|(
 name|x
 argument_list|)
 expr_stmt|;
-name|grad_get_color_at
+name|gradient_get_color_at
 argument_list|(
+name|curr_gradient
+argument_list|,
 name|xpos
 argument_list|,
 operator|&
@@ -9870,8 +9935,11 @@ operator|&
 name|a
 argument_list|)
 expr_stmt|;
-name|palette_set_background
+name|gimp_context_set_background
 argument_list|(
+name|gimp_context_get_user
+argument_list|()
+argument_list|,
 name|r
 operator|*
 literal|255.0
@@ -10397,8 +10465,10 @@ name|x
 operator|++
 control|)
 block|{
-name|grad_get_color_at
+name|gradient_get_color_at
 argument_list|(
+name|curr_gradient
+argument_list|,
 name|cur_x
 argument_list|,
 operator|&
@@ -20671,8 +20741,10 @@ modifier|*
 name|newseg
 decl_stmt|;
 comment|/* Get color at original segment's midpoint */
-name|grad_get_color_at
+name|gradient_get_color_at
 argument_list|(
+name|curr_gradient
+argument_list|,
 name|lseg
 operator|->
 name|middle
@@ -21575,8 +21647,10 @@ operator|)
 operator|/
 literal|2.0
 expr_stmt|;
-name|grad_get_color_at
+name|gradient_get_color_at
 argument_list|(
+name|curr_gradient
+argument_list|,
 name|seg
 operator|->
 name|left
@@ -21602,8 +21676,10 @@ operator|->
 name|a0
 argument_list|)
 expr_stmt|;
-name|grad_get_color_at
+name|gradient_get_color_at
 argument_list|(
+name|curr_gradient
+argument_list|,
 name|seg
 operator|->
 name|right

@@ -54,13 +54,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint_funcs.h"
+file|"gimpcontext.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"palette.h"
+file|"paint_funcs.h"
 end_include
 
 begin_include
@@ -540,7 +540,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2bb798140103
+DECL|enum|__anon28dec43f0103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -4016,8 +4016,10 @@ literal|3
 index|]
 decl_stmt|;
 comment|/*  Get the palette color  */
-name|palette_get_foreground
+name|gimp_context_get_foreground
 argument_list|(
+name|NULL
+argument_list|,
 operator|&
 name|pfg
 index|[
@@ -4078,8 +4080,10 @@ literal|3
 index|]
 decl_stmt|;
 comment|/*  Get the palette color  */
-name|palette_get_background
+name|gimp_context_get_background
 argument_list|(
+name|NULL
+argument_list|,
 operator|&
 name|pbg
 index|[

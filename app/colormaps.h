@@ -19,12 +19,8 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimage.h"
+file|<gdk/gdk.h>
 end_include
-
-begin_comment
-comment|/* For the image types  */
-end_comment
 
 begin_decl_stmt
 specifier|extern

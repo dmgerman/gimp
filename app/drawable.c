@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"palette.h"
+file|"gimpcontext.h"
 end_include
 
 begin_include
@@ -110,8 +110,10 @@ block|{
 case|case
 name|FOREGROUND_FILL
 case|:
-name|palette_get_foreground
+name|gimp_context_get_foreground
 argument_list|(
+name|NULL
+argument_list|,
 operator|&
 name|r
 argument_list|,
@@ -126,8 +128,10 @@ break|break;
 case|case
 name|BACKGROUND_FILL
 case|:
-name|palette_get_background
+name|gimp_context_get_background
 argument_list|(
+name|NULL
+argument_list|,
 operator|&
 name|r
 argument_list|,

@@ -23,9 +23,9 @@ file|"tools.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon275ae2c10103
 typedef|typedef
 enum|enum
+DECL|enum|__anon29e9bebc0103
 block|{
 DECL|enumerator|DEVICE_MODE
 name|DEVICE_MODE
@@ -48,33 +48,47 @@ literal|1
 operator|<<
 literal|2
 block|,
-DECL|enumerator|DEVICE_BRUSH
-name|DEVICE_BRUSH
-init|=
-literal|1
-operator|<<
-literal|3
-block|,
 DECL|enumerator|DEVICE_TOOL
 name|DEVICE_TOOL
 init|=
 literal|1
 operator|<<
-literal|4
+literal|3
 block|,
 DECL|enumerator|DEVICE_FOREGROUND
 name|DEVICE_FOREGROUND
 init|=
 literal|1
 operator|<<
+literal|4
+block|,
+DECL|enumerator|DEVICE_BACKGROUND
+name|DEVICE_BACKGROUND
+init|=
+literal|1
+operator|<<
 literal|5
+block|,
+DECL|enumerator|DEVICE_BRUSH
+name|DEVICE_BRUSH
+init|=
+literal|1
+operator|<<
+literal|6
 block|,
 DECL|enumerator|DEVICE_PATTERN
 name|DEVICE_PATTERN
 init|=
 literal|1
 operator|<<
-literal|6
+literal|7
+block|,
+DECL|enumerator|DEVICE_GRADIENT
+name|DEVICE_GRADIENT
+init|=
+literal|1
+operator|<<
+literal|8
 DECL|typedef|DeviceValues
 block|}
 name|DeviceValues
@@ -82,20 +96,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/* Create device info dialog */
-end_comment
-
-begin_function_decl
-name|void
-name|create_input_dialog
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* Initialize the input devices */
+comment|/*  Initialize the input devices  */
 end_comment
 
 begin_function_decl
@@ -108,7 +109,46 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Returns TRUE, and makes necessary global changes    event is not for current_device */
+comment|/*  Restores device settings from rc file  */
+end_comment
+
+begin_function_decl
+name|void
+name|devices_restore
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/*  Create device info dialog  */
+end_comment
+
+begin_function_decl
+name|void
+name|input_dialog_create
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/*  Create the device status dialog  */
+end_comment
+
+begin_function_decl
+name|void
+name|device_status_create
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/*  Returns TRUE, and makes necessary global changes  *  event is not for current_device  */
 end_comment
 
 begin_function_decl
@@ -123,7 +163,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Loads stored device settings (tool, cursor, ...) */
+comment|/*  Loads stored device settings (tool, cursor, ...)  */
 end_comment
 
 begin_function_decl
@@ -132,33 +172,6 @@ name|select_device
 parameter_list|(
 name|guint32
 name|device
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* Create the device status dialog */
-end_comment
-
-begin_function_decl
-name|void
-name|create_device_status
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* Update the device status dialog for a device */
-end_comment
-
-begin_function_decl
-name|void
-name|device_status_update
-parameter_list|(
-name|guint32
-name|deviceid
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -195,10 +208,6 @@ name|GdkDeviceKey
 modifier|*
 name|keys
 parameter_list|,
-name|gchar
-modifier|*
-name|brush_name
-parameter_list|,
 name|ToolType
 name|tool
 parameter_list|,
@@ -206,15 +215,27 @@ name|guchar
 name|foreground
 index|[]
 parameter_list|,
+name|guchar
+name|background
+index|[]
+parameter_list|,
+name|gchar
+modifier|*
+name|brush_name
+parameter_list|,
 name|gchar
 modifier|*
 name|pattern_name
+parameter_list|,
+name|gchar
+modifier|*
+name|gradient_name
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Free device status (only for session-managment) */
+comment|/*  Free device status (only for session-managment)  */
 end_comment
 
 begin_function_decl
@@ -227,25 +248,12 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Restores device settings from rc file */
-end_comment
-
-begin_function_decl
-name|void
-name|devices_restore
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* Current device id */
+comment|/*  Current device id  */
 end_comment
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gint
 name|current_device
 decl_stmt|;
 end_decl_stmt

@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"patterns.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"clone.h"
 end_include
 
@@ -148,7 +142,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27de05030103
+DECL|enum|__anon2a0f82ab0103
 block|{
 DECL|enumerator|AlignNo
 name|AlignNo
@@ -1531,8 +1525,10 @@ condition|)
 if|if
 condition|(
 operator|!
-name|get_active_pattern
-argument_list|()
+name|gimp_context_get_pattern
+argument_list|(
+name|NULL
+argument_list|)
 condition|)
 name|g_message
 argument_list|(
@@ -2749,8 +2745,10 @@ name|PATTERN_CLONE
 case|:
 name|pattern
 operator|=
-name|get_active_pattern
-argument_list|()
+name|gimp_context_get_pattern
+argument_list|(
+name|NULL
+argument_list|)
 expr_stmt|;
 if|if
 condition|(

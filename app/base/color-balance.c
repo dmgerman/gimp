@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"actionarea.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"color_balance.h"
 end_include
 
@@ -1186,7 +1180,7 @@ literal|"Highlights"
 argument_list|)
 block|}
 decl_stmt|;
-name|ActionCallback
+name|GtkSignalFunc
 name|appl_mode_callbacks
 index|[]
 init|=

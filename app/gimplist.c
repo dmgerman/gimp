@@ -27,7 +27,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bce1c410103
+DECL|enum|__anon277c68cd0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -278,8 +278,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|gimp_list_get_type (void)
 name|GtkType
+DECL|function|gimp_list_get_type (void)
 name|gimp_list_get_type
 parameter_list|(
 name|void
@@ -326,13 +326,15 @@ block|{
 name|GimpList
 modifier|*
 name|list
-init|=
+decl_stmt|;
+name|list
+operator|=
 name|gtk_type_new
 argument_list|(
 name|gimp_list_get_type
 argument_list|()
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|list
 operator|->
 name|type
@@ -368,12 +370,14 @@ block|{
 name|GimpList
 modifier|*
 name|list
-init|=
+decl_stmt|;
+name|list
+operator|=
 name|GIMP_LIST
 argument_list|(
 name|data
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|gimp_list_remove
 argument_list|(
 name|list

@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"palette.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"pencil.h"
 end_include
 
@@ -581,8 +575,13 @@ name|b
 decl_stmt|,
 name|a
 decl_stmt|;
-name|grad_get_color_at
+name|gradient_get_color_at
 argument_list|(
+name|gimp_context_get_gradient
+argument_list|(
+name|NULL
+argument_list|)
+argument_list|,
 name|paint_core
 operator|->
 name|curpressure

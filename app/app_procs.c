@@ -150,7 +150,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrushlist.h"
+file|"brush_select.h"
 end_include
 
 begin_include
@@ -168,7 +168,31 @@ end_include
 begin_include
 include|#
 directive|include
+file|"colormaps.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"context_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"devices.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"errorconsole.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"fileops.h"
 end_include
 
 begin_include
@@ -192,25 +216,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"colormaps.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"context_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"errorconsole.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"fileops.h"
+file|"gimpbrushlist.h"
 end_include
 
 begin_include
@@ -307,6 +313,12 @@ begin_include
 include|#
 directive|include
 file|"palette.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pattern_select.h"
 end_include
 
 begin_include
@@ -2330,6 +2342,10 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+comment|/*  Initialize the context system before loading any data  */
+name|context_manager_init
+argument_list|()
+expr_stmt|;
 comment|/*  Initialize the procedural database    *    We need to do this first because any of the init    *    procedures might install or query it as needed.    */
 name|procedural_db_init
 argument_list|()
@@ -2352,11 +2368,11 @@ expr_stmt|;
 name|parse_unitrc
 argument_list|()
 expr_stmt|;
-comment|/*  this needs to be done before gimprc loading */
+comment|/*  this needs to be done before gimprc loading  */
 name|parse_gimprc
 argument_list|()
 expr_stmt|;
-comment|/*  parse the local GIMP configuration file  */
+comment|/*  parse the local GIMP configuration file      */
 if|if
 condition|(
 name|always_restore_session
@@ -2456,7 +2472,7 @@ expr_stmt|;
 name|gimp_init_parasites
 argument_list|()
 expr_stmt|;
-comment|/*  initialize  the global parasite table */
+comment|/*  initialize  the global parasite table  */
 name|app_init_update_status
 argument_list|(
 name|NULL
@@ -2474,7 +2490,7 @@ argument_list|(
 name|no_data
 argument_list|)
 expr_stmt|;
-comment|/*  initialize the list of gimp brushes  */
+comment|/*  initialize the list of gimp brushes    */
 name|app_init_update_status
 argument_list|(
 name|NULL
@@ -2492,7 +2508,7 @@ argument_list|(
 name|no_data
 argument_list|)
 expr_stmt|;
-comment|/*  initialize the list of gimp patterns  */
+comment|/*  initialize the list of gimp patterns   */
 name|app_init_update_status
 argument_list|(
 name|NULL
@@ -2510,7 +2526,7 @@ argument_list|(
 name|no_data
 argument_list|)
 expr_stmt|;
-comment|/*  initialize the list of gimp palettes  */
+comment|/*  initialize the list of gimp palettes   */
 name|app_init_update_status
 argument_list|(
 name|NULL
@@ -2541,18 +2557,18 @@ expr_stmt|;
 name|plug_in_init
 argument_list|()
 expr_stmt|;
-comment|/*  initialize the plug in structures  */
+comment|/*  initialize the plug in structures   */
 name|module_db_init
 argument_list|()
 expr_stmt|;
-comment|/*  load any modules we need */
+comment|/*  load any modules we need            */
 name|RESET_BAR
 argument_list|()
 expr_stmt|;
 name|file_ops_post_init
 argument_list|()
 expr_stmt|;
-comment|/*  post-initialize the file types  */
+comment|/*  post-initialize the file types      */
 comment|/* Add the swap file  */
 if|if
 condition|(
@@ -2599,10 +2615,6 @@ name|g_free
 argument_list|(
 name|path
 argument_list|)
-expr_stmt|;
-comment|/* Initialize the context system */
-name|context_manager_init
-argument_list|()
 expr_stmt|;
 name|destroy_initialization_status_window
 argument_list|()
@@ -2760,24 +2772,50 @@ expr_stmt|;
 name|tools_options_dialog_new
 argument_list|()
 expr_stmt|;
-name|tools_select
+comment|/*  EEK: force signal emission  */
+if|if
+condition|(
+name|gimp_context_get_tool
 argument_list|(
+name|gimp_context_get_user
+argument_list|()
+argument_list|)
+operator|==
+name|RECT_SELECT
+condition|)
+block|{
+name|gtk_signal_emit_by_name
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|gimp_context_get_user
+argument_list|()
+argument_list|)
+argument_list|,
+literal|"tool_changed"
+argument_list|,
 name|RECT_SELECT
 argument_list|)
 expr_stmt|;
-comment|/* FIXME: This needs to go in preferences */
+block|}
+else|else
+block|{
+name|gimp_context_set_tool
+argument_list|(
+name|gimp_context_get_user
+argument_list|()
+argument_list|,
+name|RECT_SELECT
+argument_list|)
+expr_stmt|;
+block|}
+comment|/*  FIXME: This needs to go in preferences  */
 name|message_handler
 operator|=
 name|MESSAGE_BOX
 expr_stmt|;
 block|}
 name|color_transfer_init
-argument_list|()
-expr_stmt|;
-name|get_active_brush
-argument_list|()
-expr_stmt|;
-name|get_active_pattern
 argument_list|()
 expr_stmt|;
 name|paint_funcs_setup
@@ -2797,7 +2835,6 @@ block|{
 name|devices_restore
 argument_list|()
 expr_stmt|;
-comment|/* Must be done AFTER get_active_{brush|pattern}  			   * because these functions set the brush/pattern. 			   */
 name|session_restore
 argument_list|()
 expr_stmt|;
@@ -2872,25 +2909,40 @@ expr_stmt|;
 name|swapping_free
 argument_list|()
 expr_stmt|;
-name|context_manager_free
+name|brush_dialog_free
 argument_list|()
 expr_stmt|;
-name|brush_select_dialog_free
+comment|/*  there may be dialogs still waiting for brush signals  */
+if|if
+condition|(
+operator|!
+name|no_interface
+condition|)
+name|brush_select_freeze_all
 argument_list|()
 expr_stmt|;
 name|brushes_free
 argument_list|()
 expr_stmt|;
+name|pattern_dialog_free
+argument_list|()
+expr_stmt|;
 name|patterns_free
+argument_list|()
+expr_stmt|;
+name|palette_dialog_free
 argument_list|()
 expr_stmt|;
 name|palettes_free
 argument_list|()
 expr_stmt|;
+name|grad_free_gradient_editor
+argument_list|()
+expr_stmt|;
 name|gradients_free
 argument_list|()
 expr_stmt|;
-name|grad_free_gradient_editor
+name|context_manager_free
 argument_list|()
 expr_stmt|;
 name|hue_saturation_free
@@ -2900,12 +2952,6 @@ name|curves_free
 argument_list|()
 expr_stmt|;
 name|levels_free
-argument_list|()
-expr_stmt|;
-name|pattern_select_dialog_free
-argument_list|()
-expr_stmt|;
-name|palette_free
 argument_list|()
 expr_stmt|;
 name|paint_funcs_free

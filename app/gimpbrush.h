@@ -62,19 +62,19 @@ name|GimpObject
 name|gobject
 decl_stmt|;
 DECL|member|filename
-name|char
+name|gchar
 modifier|*
 name|filename
 decl_stmt|;
 comment|/*  actual filename--brush's location on disk  */
 DECL|member|name
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
 comment|/*  brush's name--for brush selection dialog   */
 DECL|member|spacing
-name|int
+name|gint
 name|spacing
 decl_stmt|;
 comment|/*  brush's spacing                            */
@@ -177,11 +177,20 @@ value|(GIMP_CHECK_TYPE ((obj), GIMP_TYPE_BRUSH))
 end_define
 
 begin_function_decl
+name|GtkType
+name|gimp_brush_get_type
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpBrush
 modifier|*
 name|gimp_brush_new
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -196,7 +205,7 @@ name|GimpBrush
 modifier|*
 name|brush
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -215,18 +224,9 @@ name|FILE
 modifier|*
 name|fp
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|filename
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GtkType
-name|gimp_brush_get_type
-parameter_list|(
-name|void
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -263,7 +263,7 @@ name|GimpBrush
 modifier|*
 name|brush
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -289,7 +289,7 @@ name|GimpBrush
 modifier|*
 name|brush
 parameter_list|,
-name|int
+name|gint
 name|spacing
 parameter_list|)
 function_decl|;

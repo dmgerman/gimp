@@ -16,6 +16,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -161,8 +167,10 @@ name|g
 decl_stmt|,
 name|b
 decl_stmt|;
-name|palette_get_foreground
+name|gimp_context_get_foreground
 argument_list|(
+name|NULL
+argument_list|,
 operator|&
 name|r
 argument_list|,
@@ -318,8 +326,10 @@ name|g
 decl_stmt|,
 name|b
 decl_stmt|;
-name|palette_get_background
+name|gimp_context_get_background
 argument_list|(
+name|NULL
+argument_list|,
 operator|&
 name|r
 argument_list|,
@@ -479,8 +489,10 @@ name|value
 operator|.
 name|pdb_pointer
 expr_stmt|;
-name|palette_set_foreground
+name|gimp_context_set_foreground
 argument_list|(
+name|NULL
+argument_list|,
 name|col
 index|[
 name|RED_PIX
@@ -597,8 +609,10 @@ name|value
 operator|.
 name|pdb_pointer
 expr_stmt|;
-name|palette_set_background
+name|gimp_context_set_background
 argument_list|(
+name|NULL
+argument_list|,
 name|col
 index|[
 name|RED_PIX
@@ -696,8 +710,10 @@ modifier|*
 name|args
 parameter_list|)
 block|{
-name|palette_set_default_colors
-argument_list|()
+name|gimp_context_set_default_colors
+argument_list|(
+name|NULL
+argument_list|)
 expr_stmt|;
 return|return
 name|procedural_db_return_args
@@ -761,8 +777,10 @@ modifier|*
 name|args
 parameter_list|)
 block|{
-name|palette_swap_colors
-argument_list|()
+name|gimp_context_swap_colors
+argument_list|(
+name|NULL
+argument_list|)
 expr_stmt|;
 return|return
 name|procedural_db_return_args

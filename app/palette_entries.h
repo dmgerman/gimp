@@ -19,14 +19,21 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gtk/gtk.h"
+file|<gtk/gtk.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|"general.h"
-end_include
+begin_typedef
+DECL|typedef|PaletteEntries
+DECL|typedef|PaletteEntriesP
+typedef|typedef
+name|struct
+name|_PaletteEntries
+name|PaletteEntries
+typedef|,
+modifier|*
+name|PaletteEntriesP
+typedef|;
+end_typedef
 
 begin_struct
 DECL|struct|_PaletteEntries
@@ -34,12 +41,12 @@ struct|struct
 name|_PaletteEntries
 block|{
 DECL|member|name
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
 DECL|member|filename
-name|char
+name|gchar
 modifier|*
 name|filename
 decl_stmt|;
@@ -49,11 +56,11 @@ modifier|*
 name|colors
 decl_stmt|;
 DECL|member|n_colors
-name|int
+name|gint
 name|n_colors
 decl_stmt|;
 DECL|member|changed
-name|int
+name|gboolean
 name|changed
 decl_stmt|;
 DECL|member|pixmap
@@ -66,15 +73,15 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|typedef|_PaletteEntries
-DECL|typedef|PaletteEntriesP
+DECL|typedef|PaletteEntry
+DECL|typedef|PaletteEntryP
 typedef|typedef
 name|struct
-name|_PaletteEntries
-name|_PaletteEntries
+name|_PaletteEntry
+name|PaletteEntry
 typedef|,
 modifier|*
-name|PaletteEntriesP
+name|PaletteEntryP
 typedef|;
 end_typedef
 
@@ -84,38 +91,24 @@ struct|struct
 name|_PaletteEntry
 block|{
 DECL|member|color
-name|unsigned
-name|char
+name|guchar
 name|color
 index|[
 literal|3
 index|]
 decl_stmt|;
 DECL|member|name
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
 DECL|member|position
-name|int
+name|gint
 name|position
 decl_stmt|;
 block|}
 struct|;
 end_struct
-
-begin_typedef
-DECL|typedef|_PaletteEntry
-DECL|typedef|PaletteEntryP
-typedef|typedef
-name|struct
-name|_PaletteEntry
-name|_PaletteEntry
-typedef|,
-modifier|*
-name|PaletteEntryP
-typedef|;
-end_typedef
 
 begin_decl_stmt
 specifier|extern
@@ -131,7 +124,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __PALETTE_H__ */
+comment|/* __PALETTE_ENTRIES_H__ */
 end_comment
 
 end_unit

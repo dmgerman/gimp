@@ -80,8 +80,23 @@ struct|;
 end_struct
 
 begin_comment
-comment|/*  function declarations  */
+comment|/*  global variables  */
 end_comment
+
+begin_decl_stmt
+specifier|extern
+name|GSList
+modifier|*
+name|pattern_list
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|gint
+name|num_patterns
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 name|void
@@ -103,19 +118,24 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|select_pattern
+name|GPattern
+modifier|*
+name|patterns_get_standard_pattern
 parameter_list|(
-name|GPatternP
-name|pattern
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GPatternP
-name|get_pattern_by_index
+name|GPattern
+modifier|*
+name|pattern_list_get_pattern_by_index
 parameter_list|(
+name|GSList
+modifier|*
+name|list
+parameter_list|,
 name|gint
 name|index
 parameter_list|)
@@ -123,16 +143,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GPatternP
-name|get_active_pattern
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GPatternP
+name|GPattern
+modifier|*
 name|pattern_list_get_pattern
 parameter_list|(
 name|GSList
@@ -146,33 +158,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|create_pattern_dialog
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|pattern_select_dialog_free
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
-comment|/* this is useful for pixmap brushes etc */
+comment|/*  this is useful for pixmap brushes etc.  */
 end_comment
 
 begin_function_decl
-name|int
-name|load_pattern_pattern
+name|gboolean
+name|pattern_load
 parameter_list|(
-name|GPatternP
+name|GPattern
+modifier|*
 name|pattern
 parameter_list|,
 name|FILE
@@ -185,25 +180,6 @@ name|filename
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/*  global variables  */
-end_comment
-
-begin_decl_stmt
-specifier|extern
-name|GSList
-modifier|*
-name|pattern_list
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|gint
-name|num_patterns
-decl_stmt|;
-end_decl_stmt
 
 begin_endif
 endif|#

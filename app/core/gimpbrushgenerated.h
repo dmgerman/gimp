@@ -33,26 +33,26 @@ name|GimpBrush
 name|gbrush
 decl_stmt|;
 DECL|member|radius
-name|float
+name|gfloat
 name|radius
 decl_stmt|;
 DECL|member|hardness
-name|float
+name|gfloat
 name|hardness
 decl_stmt|;
 comment|/* 0.0 - 1.0  */
 DECL|member|angle
-name|float
+name|gfloat
 name|angle
 decl_stmt|;
 comment|/* in degrees */
 DECL|member|aspect_ratio
-name|float
+name|gfloat
 name|aspect_ratio
 decl_stmt|;
 comment|/* y/x        */
 DECL|member|freeze
-name|int
+name|gint
 name|freeze
 decl_stmt|;
 comment|/*GSpline *profile_curve */
@@ -143,16 +143,16 @@ name|GimpBrushGenerated
 modifier|*
 name|gimp_brush_generated_new
 parameter_list|(
-name|float
+name|gfloat
 name|radius
 parameter_list|,
-name|float
+name|gfloat
 name|hardness
 parameter_list|,
-name|float
+name|gfloat
 name|angle
 parameter_list|,
-name|float
+name|gfloat
 name|aspect_ratio
 parameter_list|)
 function_decl|;
@@ -164,7 +164,7 @@ modifier|*
 name|gimp_brush_generated_load
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|file_name
 parameter_list|)
@@ -180,9 +180,20 @@ modifier|*
 name|brush
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|file_name
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_brush_generated_delete
+parameter_list|(
+name|GimpBrushGenerated
+modifier|*
+name|brush
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -210,63 +221,63 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|float
+name|gfloat
 name|gimp_brush_generated_set_radius
 parameter_list|(
 name|GimpBrushGenerated
 modifier|*
 name|brush
 parameter_list|,
-name|float
+name|gfloat
 name|radius
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|float
+name|gfloat
 name|gimp_brush_generated_set_hardness
 parameter_list|(
 name|GimpBrushGenerated
 modifier|*
 name|brush
 parameter_list|,
-name|float
+name|gfloat
 name|hardness
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|float
+name|gfloat
 name|gimp_brush_generated_set_angle
 parameter_list|(
 name|GimpBrushGenerated
 modifier|*
 name|brush
 parameter_list|,
-name|float
+name|gfloat
 name|angle
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|float
+name|gfloat
 name|gimp_brush_generated_set_aspect_ratio
 parameter_list|(
 name|GimpBrushGenerated
 modifier|*
 name|brush
 parameter_list|,
-name|float
+name|gfloat
 name|ratio
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|float
+name|gfloat
 name|gimp_brush_generated_get_radius
 parameter_list|(
 specifier|const
@@ -278,7 +289,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|float
+name|gfloat
 name|gimp_brush_generated_get_hardness
 parameter_list|(
 specifier|const
@@ -290,7 +301,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|float
+name|gfloat
 name|gimp_brush_generated_get_angle
 parameter_list|(
 specifier|const
@@ -302,7 +313,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|float
+name|gfloat
 name|gimp_brush_generated_get_aspect_ratio
 parameter_list|(
 specifier|const

@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"palette.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"rotate_tool.h"
 end_include
 

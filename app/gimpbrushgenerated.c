@@ -21,6 +21,23 @@ directive|include
 file|<string.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<unistd.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include
@@ -149,6 +166,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gimp_brush_generated_init (GimpBrushGenerated * brush)
 name|gimp_brush_generated_init
@@ -192,8 +210,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|gimp_brush_generated_get_type (void)
 name|guint
+DECL|function|gimp_brush_generated_get_type (void)
 name|gimp_brush_generated_get_type
 parameter_list|(
 name|void
@@ -267,21 +285,21 @@ block|}
 end_function
 
 begin_function
-DECL|function|gimp_brush_generated_new (float radius,float hardness,float angle,float aspect_ratio)
 name|GimpBrushGenerated
 modifier|*
+DECL|function|gimp_brush_generated_new (gfloat radius,gfloat hardness,gfloat angle,gfloat aspect_ratio)
 name|gimp_brush_generated_new
 parameter_list|(
-name|float
+name|gfloat
 name|radius
 parameter_list|,
-name|float
+name|gfloat
 name|hardness
 parameter_list|,
-name|float
+name|gfloat
 name|angle
 parameter_list|,
-name|float
+name|gfloat
 name|aspect_ratio
 parameter_list|)
 block|{
@@ -362,11 +380,11 @@ end_function
 begin_function
 name|GimpBrushGenerated
 modifier|*
-DECL|function|gimp_brush_generated_load (const char * file_name)
+DECL|function|gimp_brush_generated_load (const gchar * file_name)
 name|gimp_brush_generated_load
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|file_name
 parameter_list|)
@@ -379,16 +397,16 @@ name|FILE
 modifier|*
 name|fp
 decl_stmt|;
-name|char
+name|gchar
 name|string
 index|[
 literal|256
 index|]
 decl_stmt|;
-name|float
+name|gfloat
 name|fl
 decl_stmt|;
-name|float
+name|gfloat
 name|version
 decl_stmt|;
 if|if
@@ -665,7 +683,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_brush_generated_save (GimpBrushGenerated * brush,const char * file_name)
+DECL|function|gimp_brush_generated_save (GimpBrushGenerated * brush,const gchar * file_name)
 name|gimp_brush_generated_save
 parameter_list|(
 name|GimpBrushGenerated
@@ -673,7 +691,7 @@ modifier|*
 name|brush
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|file_name
 parameter_list|)
@@ -814,6 +832,40 @@ end_function
 
 begin_function
 name|void
+DECL|function|gimp_brush_generated_delete (GimpBrushGenerated * brush)
+name|gimp_brush_generated_delete
+parameter_list|(
+name|GimpBrushGenerated
+modifier|*
+name|brush
+parameter_list|)
+block|{
+if|if
+condition|(
+name|GIMP_BRUSH
+argument_list|(
+name|brush
+argument_list|)
+operator|->
+name|filename
+condition|)
+block|{
+name|unlink
+argument_list|(
+name|GIMP_BRUSH
+argument_list|(
+name|brush
+argument_list|)
+operator|->
+name|filename
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|gimp_brush_generated_freeze (GimpBrushGenerated * brush)
 name|gimp_brush_generated_freeze
 parameter_list|(
@@ -901,11 +953,11 @@ end_function
 
 begin_function
 specifier|static
-DECL|function|gauss (double f)
 name|double
+DECL|function|gauss (gdouble f)
 name|gauss
 parameter_list|(
-name|double
+name|gdouble
 name|f
 parameter_list|)
 block|{
@@ -1530,7 +1582,7 @@ operator|=
 literal|0.0
 expr_stmt|;
 else|else
-comment|/*      buffer[x] =  (1.0 - pow(d/brush->radius, exponent));*/
+comment|/* buffer[x] =  (1.0 - pow (d/brush->radius, exponent)); */
 name|buffer
 index|[
 name|x
@@ -1608,7 +1660,7 @@ operator|=
 literal|0.0
 expr_stmt|;
 else|else
-comment|/*      buffer[x%OVERSAMPLING] =  (1.0 - pow(d/brush->radius, exponent));*/
+comment|/* buffer[x%OVERSAMPLING] =  (1.0 - pow (d/brush->radius, exponent)); */
 name|buffer
 index|[
 name|x
@@ -1826,15 +1878,15 @@ block|}
 end_function
 
 begin_function
-name|float
-DECL|function|gimp_brush_generated_set_radius (GimpBrushGenerated * brush,float radius)
+name|gfloat
+DECL|function|gimp_brush_generated_set_radius (GimpBrushGenerated * brush,gfloat radius)
 name|gimp_brush_generated_set_radius
 parameter_list|(
 name|GimpBrushGenerated
 modifier|*
 name|brush
 parameter_list|,
-name|float
+name|gfloat
 name|radius
 parameter_list|)
 block|{
@@ -1908,15 +1960,15 @@ block|}
 end_function
 
 begin_function
-name|float
-DECL|function|gimp_brush_generated_set_hardness (GimpBrushGenerated * brush,float hardness)
+name|gfloat
+DECL|function|gimp_brush_generated_set_hardness (GimpBrushGenerated * brush,gfloat hardness)
 name|gimp_brush_generated_set_hardness
 parameter_list|(
 name|GimpBrushGenerated
 modifier|*
 name|brush
 parameter_list|,
-name|float
+name|gfloat
 name|hardness
 parameter_list|)
 block|{
@@ -1990,15 +2042,15 @@ block|}
 end_function
 
 begin_function
-name|float
-DECL|function|gimp_brush_generated_set_angle (GimpBrushGenerated * brush,float angle)
+name|gfloat
+DECL|function|gimp_brush_generated_set_angle (GimpBrushGenerated * brush,gfloat angle)
 name|gimp_brush_generated_set_angle
 parameter_list|(
 name|GimpBrushGenerated
 modifier|*
 name|brush
 parameter_list|,
-name|float
+name|gfloat
 name|angle
 parameter_list|)
 block|{
@@ -2085,15 +2137,15 @@ block|}
 end_function
 
 begin_function
-name|float
-DECL|function|gimp_brush_generated_set_aspect_ratio (GimpBrushGenerated * brush,float ratio)
+name|gfloat
+DECL|function|gimp_brush_generated_set_aspect_ratio (GimpBrushGenerated * brush,gfloat ratio)
 name|gimp_brush_generated_set_aspect_ratio
 parameter_list|(
 name|GimpBrushGenerated
 modifier|*
 name|brush
 parameter_list|,
-name|float
+name|gfloat
 name|ratio
 parameter_list|)
 block|{
@@ -2167,7 +2219,7 @@ block|}
 end_function
 
 begin_function
-name|float
+name|gfloat
 DECL|function|gimp_brush_generated_get_radius (const GimpBrushGenerated * brush)
 name|gimp_brush_generated_get_radius
 parameter_list|(
@@ -2197,7 +2249,7 @@ block|}
 end_function
 
 begin_function
-name|float
+name|gfloat
 DECL|function|gimp_brush_generated_get_hardness (const GimpBrushGenerated * brush)
 name|gimp_brush_generated_get_hardness
 parameter_list|(
@@ -2227,7 +2279,7 @@ block|}
 end_function
 
 begin_function
-name|float
+name|gfloat
 DECL|function|gimp_brush_generated_get_angle (const GimpBrushGenerated * brush)
 name|gimp_brush_generated_get_angle
 parameter_list|(
@@ -2257,7 +2309,7 @@ block|}
 end_function
 
 begin_function
-name|float
+name|gfloat
 DECL|function|gimp_brush_generated_get_aspect_ratio (const GimpBrushGenerated * brush)
 name|gimp_brush_generated_get_aspect_ratio
 parameter_list|(

@@ -106,31 +106,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"brush_select.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"colormaps.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"datafiles.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"devices.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"errors.h"
 end_include
 
 begin_include
@@ -143,24 +119,6 @@ begin_include
 include|#
 directive|include
 file|"gimpsignal.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"menus.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint_core.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint_options.h"
 end_include
 
 begin_include
@@ -190,12 +148,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialog_handler.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"general.h"
 end_include
 
@@ -210,16 +162,6 @@ comment|/*  global variables  */
 end_comment
 
 begin_decl_stmt
-DECL|variable|active_brush
-name|GimpBrush
-modifier|*
-name|active_brush
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|brush_list
 name|GimpBrushList
 modifier|*
@@ -229,39 +171,33 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
+begin_comment
+comment|/*  local variables  */
+end_comment
+
 begin_decl_stmt
-DECL|variable|brush_select_dialog
-name|BrushSelectP
-name|brush_select_dialog
+DECL|variable|standard_brush
+specifier|static
+name|GimpBrush
+modifier|*
+name|standard_brush
 init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/*  static variables  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|have_default_brush
-specifier|static
-name|int
-name|have_default_brush
-init|=
-literal|0
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/*  static function prototypes  */
+comment|/*  local function prototypes  */
 end_comment
 
 begin_function_decl
 specifier|static
 name|void
-name|create_default_brush
+name|brushes_brush_load
 parameter_list|(
-name|void
+name|gchar
+modifier|*
+name|filename
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -272,26 +208,16 @@ name|gint
 name|brush_compare_func
 parameter_list|(
 name|gconstpointer
+name|first
 parameter_list|,
 name|gconstpointer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|brush_load
-parameter_list|(
-name|char
-modifier|*
-name|filename
+name|second
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* class functions */
+comment|/*  class functions  */
 end_comment
 
 begin_decl_stmt
@@ -446,8 +372,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|gimp_brush_list_get_type (void)
 name|GtkType
+DECL|function|gimp_brush_list_get_type (void)
 name|gimp_brush_list_get_type
 parameter_list|(
 name|void
@@ -531,7 +457,9 @@ block|{
 name|GimpBrushList
 modifier|*
 name|list
-init|=
+decl_stmt|;
+name|list
+operator|=
 name|GIMP_BRUSH_LIST
 argument_list|(
 name|gtk_type_new
@@ -540,7 +468,7 @@ name|gimp_brush_list_get_type
 argument_list|()
 argument_list|)
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|GIMP_LIST
 argument_list|(
 name|list
@@ -557,7 +485,7 @@ argument_list|)
 operator|->
 name|weak
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 return|return
 name|list
@@ -594,17 +522,12 @@ expr_stmt|;
 if|if
 condition|(
 name|brush_path
-operator|==
+operator|!=
 name|NULL
-operator|||
-operator|(
+operator|&&
+operator|!
 name|no_data
-operator|)
 condition|)
-name|create_default_brush
-argument_list|()
-expr_stmt|;
-else|else
 name|datafiles_read_directories
 argument_list|(
 name|brush_path
@@ -612,21 +535,79 @@ argument_list|,
 operator|(
 name|datafile_loader_t
 operator|)
-name|brush_load
+name|brushes_brush_load
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gimp_context_refresh_brushes
+argument_list|()
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|GimpBrush
+modifier|*
+DECL|function|brushes_get_standard_brush (void)
+name|brushes_get_standard_brush
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+if|if
+condition|(
+operator|!
+name|standard_brush
+condition|)
+block|{
+name|standard_brush
+operator|=
+name|GIMP_BRUSH
+argument_list|(
+name|gimp_brush_generated_new
+argument_list|(
+literal|5.0
+argument_list|,
+literal|0.5
+argument_list|,
+literal|0.0
+argument_list|,
+literal|1.0
+argument_list|)
+argument_list|)
+expr_stmt|;
+comment|/*  set ref_cout to 2 --> never swap the standard brush  */
+name|gtk_object_ref
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|standard_brush
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_object_ref
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|standard_brush
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|standard_brush
+return|;
 block|}
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|brush_load (char * filename)
-name|brush_load
+DECL|function|brushes_brush_load (gchar * filename)
+name|brushes_brush_load
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -949,7 +930,7 @@ name|b
 argument_list|)
 condition|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|filename
 init|=
@@ -966,23 +947,23 @@ operator|!
 name|filename
 condition|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|home
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|local_path
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|first_token
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|token
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|path
 decl_stmt|;
@@ -990,7 +971,7 @@ name|FILE
 modifier|*
 name|tmp_fp
 decl_stmt|;
-name|int
+name|gint
 name|unum
 init|=
 literal|0
@@ -1000,7 +981,7 @@ condition|(
 name|brush_vbr_path
 condition|)
 block|{
-comment|/* Get the first path specified in the 		   * brush-vbr-path gimprc variable. 		   */
+comment|/* Get the first path specified in the 		       * brush-vbr-path gimprc variable. 		       */
 name|home
 operator|=
 name|g_get_home_dir
@@ -1183,7 +1164,7 @@ name|NULL
 expr_stmt|;
 block|}
 block|}
-comment|/* okay we are ready to try to save the generated file*/
+comment|/*  okay we are ready to try to save the generated file  */
 if|if
 condition|(
 name|filename
@@ -1215,95 +1196,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|have_default_brush
-operator|=
-literal|0
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|brush_select_dialog_free ()
-name|brush_select_dialog_free
-parameter_list|()
-block|{
-if|if
-condition|(
-name|brush_select_dialog
-condition|)
-block|{
-name|brush_select_free
-argument_list|(
-name|brush_select_dialog
-argument_list|)
-expr_stmt|;
-name|brush_select_dialog
-operator|=
-name|NULL
-expr_stmt|;
-block|}
-block|}
-end_function
-
-begin_function
-name|GimpBrush
-modifier|*
-DECL|function|get_active_brush ()
-name|get_active_brush
-parameter_list|()
-block|{
-if|if
-condition|(
-name|have_default_brush
-condition|)
-block|{
-name|have_default_brush
-operator|=
-literal|0
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|active_brush
-condition|)
-name|gimp_fatal_error
-argument_list|(
-name|_
-argument_list|(
-literal|"get_active_brush(): Specified default brush not found!"
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-elseif|else
-if|if
-condition|(
-operator|!
-name|active_brush
-operator|&&
-name|brush_list
-condition|)
-comment|/* need a gimp_list_get_first() type function */
-name|select_brush
-argument_list|(
-operator|(
-name|GimpBrush
-operator|*
-operator|)
-name|GIMP_LIST
-argument_list|(
-name|brush_list
-argument_list|)
-operator|->
-name|list
-operator|->
-name|data
-argument_list|)
-expr_stmt|;
-return|return
-name|active_brush
-return|;
 block|}
 end_function
 
@@ -1314,68 +1206,13 @@ literal|0
 end_if
 
 begin_endif
-unit|static GSList * insert_brush_in_list (GSList *list, GimpBrush * brush) {   return g_slist_insert_sorted (list, brush, brush_compare_func); }
+unit|static GSList * insert_brush_in_list (GSList    *list, 		      GimpBrush *brush) {   return g_slist_insert_sorted (list, brush, brush_compare_func); }
 endif|#
 directive|endif
 end_endif
 
 begin_function
-specifier|static
-name|void
-DECL|function|create_default_brush ()
-name|create_default_brush
-parameter_list|()
-block|{
-name|GimpBrushGenerated
-modifier|*
-name|brush
-decl_stmt|;
-name|brush
-operator|=
-name|gimp_brush_generated_new
-argument_list|(
-literal|5.0
-argument_list|,
-literal|.5
-argument_list|,
-literal|0.0
-argument_list|,
-literal|1.0
-argument_list|)
-expr_stmt|;
-comment|/*  Swap the brush to disk (if we're being stingy with memory) */
-if|if
-condition|(
-name|stingy_memory_use
-condition|)
-name|temp_buf_swap
-argument_list|(
-name|GIMP_BRUSH
-argument_list|(
-name|brush
-argument_list|)
-operator|->
-name|mask
-argument_list|)
-expr_stmt|;
-comment|/*  Make this the default, active brush  */
-name|select_brush
-argument_list|(
-name|GIMP_BRUSH
-argument_list|(
-name|brush
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|have_default_brush
-operator|=
-literal|1
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|int
+name|gint
 DECL|function|gimp_brush_list_get_brush_index (GimpBrushList * brush_list,GimpBrush * brush)
 name|gimp_brush_list_get_brush_index
 parameter_list|(
@@ -1408,26 +1245,26 @@ end_function
 begin_function
 name|GimpBrush
 modifier|*
-DECL|function|gimp_brush_list_get_brush_by_index (GimpBrushList * brush_list,int index)
+DECL|function|gimp_brush_list_get_brush_by_index (GimpBrushList * brush_list,gint index)
 name|gimp_brush_list_get_brush_by_index
 parameter_list|(
 name|GimpBrushList
 modifier|*
 name|brush_list
 parameter_list|,
-name|int
+name|gint
 name|index
 parameter_list|)
 block|{
-name|GSList
-modifier|*
-name|list
-decl_stmt|;
 name|GimpBrush
 modifier|*
 name|brush
 init|=
 name|NULL
+decl_stmt|;
+name|GSList
+modifier|*
+name|list
 decl_stmt|;
 comment|/* fix me: make a gimp_list function that does this? */
 name|list
@@ -1588,7 +1425,7 @@ operator|+
 literal|10
 argument_list|)
 expr_stmt|;
-comment|/* if this aint enough  						 yer screwed */
+comment|/* if this aint enough  							 yer screwed */
 name|strcpy
 argument_list|(
 name|newname
@@ -1839,9 +1676,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|brush_renamed (GimpBrush * brush,GimpBrushList * brush_list)
 specifier|static
 name|void
+DECL|function|brush_renamed (GimpBrush * brush,GimpBrushList * brush_list)
 name|brush_renamed
 parameter_list|(
 name|GimpBrush
@@ -1911,10 +1748,10 @@ argument_list|)
 argument_list|,
 literal|"rename"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|brush_renamed
+argument_list|)
 argument_list|,
 name|brush_list
 argument_list|)
@@ -1936,7 +1773,6 @@ modifier|*
 name|brush
 parameter_list|)
 block|{
-comment|/*  if (active_brush == brush)   {     select_brush(gimp_brush_list_get_brush_by_index(       brush_list, gimp_brush_list_get_brush_get_index(brush_list, brush) - 1));   }    */
 name|gtk_signal_disconnect_by_data
 argument_list|(
 name|GTK_OBJECT
@@ -1961,7 +1797,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gint
 DECL|function|gimp_brush_list_length (GimpBrushList * brush_list)
 name|gimp_brush_list_length
 parameter_list|(
@@ -1981,11 +1817,9 @@ literal|0
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|brush_list
 operator|->
 name|num_brushes
-operator|)
 return|;
 block|}
 end_function
@@ -1993,14 +1827,14 @@ end_function
 begin_function
 name|GimpBrush
 modifier|*
-DECL|function|gimp_brush_list_get_brush (GimpBrushList * blist,char * name)
+DECL|function|gimp_brush_list_get_brush (GimpBrushList * blist,gchar * name)
 name|gimp_brush_list_get_brush
 parameter_list|(
 name|GimpBrushList
 modifier|*
 name|blist
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -2022,6 +1856,8 @@ condition|)
 return|return
 name|NULL
 return|;
+for|for
+control|(
 name|list
 operator|=
 name|GIMP_LIST
@@ -2030,11 +1866,16 @@ name|brush_list
 argument_list|)
 operator|->
 name|list
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|list
-condition|)
+condition|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 block|{
 name|brushp
 operator|=
@@ -2058,180 +1899,13 @@ argument_list|,
 name|name
 argument_list|)
 condition|)
-block|{
 return|return
 name|brushp
 return|;
 block|}
-name|list
-operator|=
-name|g_slist_next
-argument_list|(
-name|list
-argument_list|)
-expr_stmt|;
-block|}
 return|return
 name|NULL
 return|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|select_brush (GimpBrush * brush)
-name|select_brush
-parameter_list|(
-name|GimpBrush
-modifier|*
-name|brush
-parameter_list|)
-block|{
-comment|/*  Make sure the active brush is swapped before we get a new one... */
-if|if
-condition|(
-name|stingy_memory_use
-operator|&&
-name|active_brush
-operator|&&
-name|active_brush
-operator|->
-name|mask
-condition|)
-name|temp_buf_swap
-argument_list|(
-name|active_brush
-operator|->
-name|mask
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|active_brush
-condition|)
-name|gtk_object_unref
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|active_brush
-argument_list|)
-argument_list|)
-expr_stmt|;
-comment|/*  Set the active brush  */
-name|active_brush
-operator|=
-name|brush
-expr_stmt|;
-name|gtk_object_ref
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|active_brush
-argument_list|)
-argument_list|)
-expr_stmt|;
-comment|/*  Make sure the active brush is unswapped... */
-if|if
-condition|(
-name|stingy_memory_use
-condition|)
-name|temp_buf_unswap
-argument_list|(
-name|brush
-operator|->
-name|mask
-argument_list|)
-expr_stmt|;
-comment|/*  Keep up appearances in the brush dialog  */
-if|if
-condition|(
-name|brush_select_dialog
-condition|)
-name|brush_select_select
-argument_list|(
-name|brush_select_dialog
-argument_list|,
-name|brush
-argument_list|)
-expr_stmt|;
-name|device_status_update
-argument_list|(
-name|current_device
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|create_brush_dialog (void)
-name|create_brush_dialog
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-if|if
-condition|(
-operator|!
-name|brush_select_dialog
-condition|)
-block|{
-comment|/*  Create the dialog...  */
-name|brush_select_dialog
-operator|=
-name|brush_select_new
-argument_list|(
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-literal|0.0
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-comment|/* register this one only */
-name|dialog_register
-argument_list|(
-name|brush_select_dialog
-operator|->
-name|shell
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-comment|/*  Popup the dialog  */
-if|if
-condition|(
-operator|!
-name|GTK_WIDGET_VISIBLE
-argument_list|(
-name|brush_select_dialog
-operator|->
-name|shell
-argument_list|)
-condition|)
-name|gtk_widget_show
-argument_list|(
-name|brush_select_dialog
-operator|->
-name|shell
-argument_list|)
-expr_stmt|;
-else|else
-name|gdk_window_raise
-argument_list|(
-name|brush_select_dialog
-operator|->
-name|shell
-operator|->
-name|window
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 end_function
 
