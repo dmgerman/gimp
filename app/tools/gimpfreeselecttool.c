@@ -130,7 +130,7 @@ name|core
 decl_stmt|;
 comment|/*  Core select object                      */
 DECL|member|op
-name|gint
+name|SelectOps
 name|op
 decl_stmt|;
 comment|/*  selection operation (ADD, SUB, etc)     */
@@ -186,7 +186,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|max_segs
 specifier|static
-name|int
+name|gint
 name|max_segs
 init|=
 literal|0
@@ -199,17 +199,17 @@ end_comment
 
 begin_function
 specifier|static
-name|int
-DECL|function|add_point (int num_pts,int x,int y)
+name|gint
+DECL|function|add_point (gint num_pts,gint x,gint y)
 name|add_point
 parameter_list|(
-name|int
+name|gint
 name|num_pts
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|)
 block|{
@@ -285,27 +285,27 @@ begin_function
 specifier|static
 name|Channel
 modifier|*
-DECL|function|scan_convert (GimpImage * gimage,int num_pts,ScanConvertPoint * pts,int width,int height,int antialias)
+DECL|function|scan_convert (GimpImage * gimage,gint num_pts,ScanConvertPoint * pts,gint width,gint height,gboolean antialias)
 name|scan_convert
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|gint
 name|num_pts
 parameter_list|,
 name|ScanConvertPoint
 modifier|*
 name|pts
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
-name|int
+name|gboolean
 name|antialias
 parameter_list|)
 block|{
@@ -371,30 +371,30 @@ end_comment
 
 begin_function
 name|void
-DECL|function|free_select (GImage * gimage,int num_pts,ScanConvertPoint * pts,int op,int antialias,int feather,double feather_radius)
+DECL|function|free_select (GImage * gimage,gint num_pts,ScanConvertPoint * pts,SelectOps op,gboolean antialias,gboolean feather,gdouble feather_radius)
 name|free_select
 parameter_list|(
 name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|gint
 name|num_pts
 parameter_list|,
 name|ScanConvertPoint
 modifier|*
 name|pts
 parameter_list|,
-name|int
+name|SelectOps
 name|op
 parameter_list|,
-name|int
+name|gboolean
 name|antialias
 parameter_list|,
-name|int
+name|gboolean
 name|feather
 parameter_list|,
-name|double
+name|gdouble
 name|feather_radius
 parameter_list|)
 block|{
@@ -408,7 +408,7 @@ if|if
 condition|(
 name|op
 operator|==
-name|REPLACE
+name|SELECTION_REPLACE
 condition|)
 name|gimage_mask_clear
 argument_list|(
@@ -681,7 +681,7 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|gdisp
@@ -742,17 +742,10 @@ condition|)
 block|{
 name|pts
 operator|=
-operator|(
-name|ScanConvertPoint
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|ScanConvertPoint
-argument_list|)
-operator|*
+argument_list|,
 name|free_sel
 operator|->
 name|num_pts
@@ -1099,7 +1092,7 @@ name|FreeSelect
 modifier|*
 name|free_sel
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|free_sel
@@ -1180,9 +1173,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|free_select_options_reset ()
+DECL|function|free_select_options_reset (void)
 name|free_select_options_reset
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|selection_options_reset
 argument_list|(

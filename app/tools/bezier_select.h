@@ -26,7 +26,7 @@ begin_typedef
 DECL|typedef|BezierPoint
 typedef|typedef
 name|struct
-name|_bezier_point
+name|_BezierPoint
 name|BezierPoint
 typedef|;
 end_typedef
@@ -35,7 +35,7 @@ begin_typedef
 DECL|typedef|BezierSelect
 typedef|typedef
 name|struct
-name|_bezier_select
+name|_BezierSelect
 name|BezierSelect
 typedef|;
 end_typedef
@@ -43,15 +43,6 @@ end_typedef
 begin_comment
 comment|/*  bezier select functions  */
 end_comment
-
-begin_function_decl
-name|void
-name|bezier_select_dialog
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 name|Tool
@@ -69,6 +60,7 @@ name|tools_free_bezier_select
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|)
 function_decl|;
 end_function_decl

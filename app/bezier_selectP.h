@@ -111,7 +111,7 @@ value|1000
 end_define
 
 begin_enum
-DECL|enum|__anon298018160103
+DECL|enum|__anon2c48a27a0103
 DECL|enumerator|EXTEND_EDIT
 DECL|enumerator|EXTEND_ADD
 DECL|enumerator|EXTEND_REMOVE
@@ -130,18 +130,18 @@ enum|;
 end_enum
 
 begin_struct
-DECL|struct|_bezier_point
+DECL|struct|_BezierPoint
 struct|struct
-name|_bezier_point
+name|_BezierPoint
 block|{
 DECL|member|type
-name|int
+name|gint
 name|type
 decl_stmt|;
 comment|/* type of point (anchor/control/move) */
 DECL|member|x
 DECL|member|y
-name|double
+name|gdouble
 name|x
 decl_stmt|,
 name|y
@@ -149,7 +149,7 @@ decl_stmt|;
 comment|/* location of point in image space  */
 DECL|member|sx
 DECL|member|sy
-name|int
+name|gint
 name|sx
 decl_stmt|,
 name|sy
@@ -183,22 +183,22 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_bezier_select
+DECL|struct|_BezierSelect
 struct|struct
-name|_bezier_select
+name|_BezierSelect
 block|{
 DECL|member|state
-name|int
+name|gint
 name|state
 decl_stmt|;
 comment|/* start, add, edit or drag          */
 DECL|member|draw
-name|int
+name|gint
 name|draw
 decl_stmt|;
 comment|/* all or part                       */
 DECL|member|closed
-name|int
+name|gint
 name|closed
 decl_stmt|;
 comment|/* is the last curve closed          */
@@ -233,7 +233,7 @@ name|last_point
 decl_stmt|;
 comment|/* the last point on the curve       */
 DECL|member|num_points
-name|int
+name|gint
 name|num_points
 decl_stmt|;
 comment|/* number of points in the curve     */
@@ -259,9 +259,9 @@ comment|/* All udata that are passed to the bezier_draw_curve must  * have this 
 end_comment
 
 begin_typedef
-DECL|struct|__anon298018160208
 typedef|typedef
 struct|struct
+DECL|struct|__anon2c48a27a0208
 block|{
 DECL|member|count
 name|gint
@@ -309,9 +309,9 @@ parameter_list|,
 name|BezierPoint
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -325,7 +325,7 @@ modifier|*
 parameter_list|,
 name|BezierPointsFunc
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
 name|gpointer
 parameter_list|)
@@ -338,6 +338,7 @@ name|bezier_select_reset
 parameter_list|(
 name|BezierSelect
 modifier|*
+name|bezier_sel
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -360,7 +361,7 @@ parameter_list|(
 name|BezierSelect
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
 name|gdouble
 parameter_list|,
@@ -375,9 +376,11 @@ name|bezier_paste_bezierselect_to_current
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|,
 name|BezierSelect
 modifier|*
+name|bezier_sel
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -397,13 +400,15 @@ name|bezier_stroke
 parameter_list|(
 name|BezierSelect
 modifier|*
+name|bezier_sel
 parameter_list|,
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -414,9 +419,11 @@ name|bezier_to_selection
 parameter_list|(
 name|BezierSelect
 modifier|*
+name|bezier_sel
 parameter_list|,
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -427,6 +434,7 @@ name|bezier_distance_along
 parameter_list|(
 name|BezierSelect
 modifier|*
+name|bezier_sel
 parameter_list|,
 name|gint
 parameter_list|,
@@ -450,9 +458,11 @@ name|bezier_draw
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|,
 name|BezierSelect
 modifier|*
+name|bezier_sel
 parameter_list|)
 function_decl|;
 end_function_decl

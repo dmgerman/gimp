@@ -32,9 +32,11 @@ name|move_tool_start_hguide
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
-name|void
+name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -45,9 +47,11 @@ name|move_tool_start_vguide
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
-name|void
+name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -68,6 +72,7 @@ name|tools_free_move_tool
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|)
 function_decl|;
 end_function_decl
