@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29660adf0103
+DECL|enum|__anon2bdf9b890103
 block|{
 DECL|enumerator|GIMP_COLOR_BUTTON_COLOR_FG
 name|GIMP_COLOR_BUTTON_COLOR_FG
@@ -97,7 +97,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29660adf0203
+DECL|enum|__anon2bdf9b890203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -1432,7 +1432,10 @@ operator|->
 name|colorsel
 argument_list|)
 argument_list|,
-name|TRUE
+name|gimp_color_button_has_alpha
+argument_list|(
+name|color_button
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_destroy
