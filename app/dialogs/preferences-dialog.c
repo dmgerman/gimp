@@ -4321,7 +4321,7 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon2baa89290108
+DECL|struct|__anon2b683bf40108
 specifier|static
 specifier|const
 struct|struct
@@ -4372,7 +4372,7 @@ operator|)
 block|}
 block|}
 struct|;
-DECL|struct|__anon2baa89290208
+DECL|struct|__anon2b683bf40208
 specifier|static
 specifier|const
 struct|struct
@@ -4429,7 +4429,7 @@ name|edit_swap_path
 block|}
 block|,     }
 struct|;
-DECL|struct|__anon2baa89290308
+DECL|struct|__anon2b683bf40308
 specifier|static
 specifier|const
 struct|struct
@@ -4531,7 +4531,7 @@ name|edit_plug_in_path
 block|}
 block|}
 struct|;
-DECL|struct|__anon2baa89290408
+DECL|struct|__anon2b683bf40408
 specifier|static
 specifier|const
 struct|struct
@@ -10507,6 +10507,17 @@ argument_list|(
 name|monitor_resolution_sizeentry
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|ABS
+argument_list|(
+name|monitor_xres
+operator|-
+name|monitor_yres
+argument_list|)
+operator|<
+literal|1e-5
+condition|)
 name|gimp_chain_button_set_active
 argument_list|(
 name|GIMP_CHAIN_BUTTON
