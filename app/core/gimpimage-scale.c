@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpchannel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpimage.h"
 end_include
 
@@ -118,35 +112,23 @@ name|gpointer
 name|progress_data
 parameter_list|)
 block|{
-name|GimpItem
-modifier|*
-name|item
-decl_stmt|;
-name|GimpLayer
-modifier|*
-name|layer
-decl_stmt|;
 name|GimpLayer
 modifier|*
 name|floating_layer
+decl_stmt|;
+name|GimpItem
+modifier|*
+name|item
 decl_stmt|;
 name|GList
 modifier|*
 name|list
 decl_stmt|;
-name|GSList
+name|GList
 modifier|*
 name|remove
 init|=
 name|NULL
-decl_stmt|;
-name|GSList
-modifier|*
-name|slist
-decl_stmt|;
-name|GimpGuide
-modifier|*
-name|guide
 decl_stmt|;
 name|gint
 name|old_width
@@ -370,7 +352,6 @@ if|if
 condition|(
 name|progress_func
 condition|)
-block|{
 call|(
 modifier|*
 name|progress_func
@@ -390,7 +371,6 @@ argument_list|,
 name|progress_data
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 comment|/*  Scale all vectors  */
 for|for
@@ -445,7 +425,6 @@ if|if
 condition|(
 name|progress_func
 condition|)
-block|{
 call|(
 modifier|*
 name|progress_func
@@ -466,9 +445,7 @@ name|progress_data
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 comment|/*  Don't forget the selection mask!  */
-comment|/*  if (channel_is_empty(gimage->selection_mask))         gimp_channel_resize(gimage->selection_mask, new_width, new_height, 0, 0)       else   */
 name|gimp_item_scale
 argument_list|(
 name|GIMP_ITEM
@@ -543,10 +520,10 @@ name|interpolation_type
 argument_list|)
 condition|)
 block|{
-comment|/* Since 0< img_scale_w, img_scale_h, failure due to one or more 	   * vanishing scaled layer dimensions. Implicit delete implemented 	   * here. Upstream warning implemented in resize_check_layer_scaling() 	   * [resize.c line 1295], which offers the user the chance to bail out. 	   */
+comment|/* Since 0< img_scale_w, img_scale_h, failure due to one or more 	   * vanishing scaled layer dimensions. Implicit delete implemented 	   * here. Upstream warning implemented in resize_check_layer_scaling(), 	   * which offers the user the chance to bail out. 	   */
 name|remove
 operator|=
-name|g_slist_append
+name|g_list_prepend
 argument_list|(
 name|remove
 argument_list|,
@@ -558,7 +535,6 @@ if|if
 condition|(
 name|progress_func
 condition|)
-block|{
 call|(
 modifier|*
 name|progress_func
@@ -579,30 +555,38 @@ name|progress_data
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 comment|/* We defer removing layers lost to scaling until now so as not to mix    * the operations of iterating over and removal from gimage->layers.    */
+name|remove
+operator|=
+name|g_list_reverse
+argument_list|(
+name|remove
+argument_list|)
+expr_stmt|;
 for|for
 control|(
-name|slist
+name|list
 operator|=
 name|remove
 init|;
-name|slist
+name|list
 condition|;
-name|slist
+name|list
 operator|=
-name|g_slist_next
+name|g_list_next
 argument_list|(
-name|slist
+name|list
 argument_list|)
 control|)
 block|{
+name|GimpLayer
+modifier|*
 name|layer
-operator|=
-name|slist
+init|=
+name|list
 operator|->
 name|data
-expr_stmt|;
+decl_stmt|;
 name|gimp_image_remove_layer
 argument_list|(
 name|gimage
@@ -611,12 +595,12 @@ name|layer
 argument_list|)
 expr_stmt|;
 block|}
-name|g_slist_free
+name|g_list_free
 argument_list|(
 name|remove
 argument_list|)
 expr_stmt|;
-comment|/*  Scale any Guides  */
+comment|/*  Scale all Guides  */
 for|for
 control|(
 name|list
@@ -635,16 +619,14 @@ name|list
 argument_list|)
 control|)
 block|{
-name|guide
-operator|=
-operator|(
 name|GimpGuide
-operator|*
-operator|)
+modifier|*
+name|guide
+init|=
 name|list
 operator|->
 name|data
-expr_stmt|;
+decl_stmt|;
 switch|switch
 condition|(
 name|guide
@@ -707,11 +689,7 @@ name|old_width
 expr_stmt|;
 break|break;
 default|default:
-name|g_error
-argument_list|(
-literal|"Unknown guide orientation II.\n"
-argument_list|)
-expr_stmt|;
+break|break;
 block|}
 block|}
 comment|/*  Make sure the projection matches the gimage size  */
@@ -821,17 +799,11 @@ block|{
 name|GimpItem
 modifier|*
 name|item
-decl_stmt|;
-name|item
-operator|=
-operator|(
-name|GimpItem
-operator|*
-operator|)
+init|=
 name|list
 operator|->
 name|data
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 operator|!
