@@ -190,9 +190,9 @@ argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|qbox
+name|dialog
 decl_stmt|;
-name|qbox
+name|dialog
 operator|=
 name|gimp_query_string_box
 argument_list|(
@@ -231,7 +231,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|qbox
+name|dialog
 argument_list|)
 expr_stmt|;
 block|}

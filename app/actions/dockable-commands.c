@@ -98,7 +98,7 @@ name|dockable_change_screen_confirm_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|query_box
+name|dialog
 parameter_list|,
 name|gint
 name|value
@@ -116,7 +116,7 @@ name|dockable_change_screen_destroy_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|query_box
+name|dialog
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -1107,7 +1107,7 @@ name|num_screens
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|qbox
+name|dialog
 decl_stmt|;
 name|dock
 operator|=
@@ -1118,7 +1118,7 @@ operator|->
 name|dock
 argument_list|)
 expr_stmt|;
-name|qbox
+name|dialog
 operator|=
 name|g_object_get_data
 argument_list|(
@@ -1132,14 +1132,14 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|qbox
+name|dialog
 condition|)
 block|{
 name|gtk_window_present
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
-name|qbox
+name|dialog
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1173,7 +1173,7 @@ argument_list|(
 name|display
 argument_list|)
 expr_stmt|;
-name|qbox
+name|dialog
 operator|=
 name|gimp_query_int_box
 argument_list|(
@@ -1216,12 +1216,12 @@ argument_list|)
 argument_list|,
 literal|"gimp-change-screen-dialog"
 argument_list|,
-name|qbox
+name|dialog
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|qbox
+name|dialog
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -1235,7 +1235,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|qbox
+name|dialog
 argument_list|)
 expr_stmt|;
 block|}
@@ -1248,12 +1248,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|dockable_change_screen_confirm_callback (GtkWidget * query_box,gint value,gpointer data)
+DECL|function|dockable_change_screen_confirm_callback (GtkWidget * dialog,gint value,gpointer data)
 name|dockable_change_screen_confirm_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|query_box
+name|dialog
 parameter_list|,
 name|gint
 name|value
@@ -1301,12 +1301,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|dockable_change_screen_destroy_callback (GtkWidget * query_box,GtkWidget * dock)
+DECL|function|dockable_change_screen_destroy_callback (GtkWidget * dialog,GtkWidget * dock)
 name|dockable_change_screen_destroy_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|query_box
+name|dialog
 parameter_list|,
 name|GtkWidget
 modifier|*
