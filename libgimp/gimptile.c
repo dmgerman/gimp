@@ -601,6 +601,8 @@ name|_writechannel
 argument_list|,
 operator|&
 name|tile_req
+argument_list|,
+name|NULL
 argument_list|)
 condition|)
 name|gimp_quit
@@ -767,6 +769,8 @@ operator|!
 name|gp_tile_ack_write
 argument_list|(
 name|_writechannel
+argument_list|,
+name|NULL
 argument_list|)
 condition|)
 name|gimp_quit
@@ -843,6 +847,8 @@ name|_writechannel
 argument_list|,
 operator|&
 name|tile_req
+argument_list|,
+name|NULL
 argument_list|)
 condition|)
 name|gimp_quit
@@ -971,6 +977,8 @@ name|_writechannel
 argument_list|,
 operator|&
 name|tile_data
+argument_list|,
+name|NULL
 argument_list|)
 condition|)
 name|gimp_quit

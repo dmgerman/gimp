@@ -26,7 +26,7 @@ directive|define
 name|GP_VERSION
 value|0x000C
 name|enum
-DECL|enum|__anon2888127b0103
+DECL|enum|__anon29573bbc0103
 type|{
 DECL|enumerator|GP_QUIT
 name|GP_QUIT
@@ -278,7 +278,7 @@ name|guint32
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2888127b020a
+DECL|union|__anon29573bbc020a
 block|{
 DECL|member|d_int32
 name|gint32
@@ -332,7 +332,7 @@ name|GimpRGB
 name|d_color
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2888127b0308
+DECL|struct|__anon29573bbc0308
 block|{
 DECL|member|x
 name|gint32
@@ -387,7 +387,7 @@ name|gint32
 name|d_path
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2888127b0408
+DECL|struct|__anon29573bbc0408
 block|{
 DECL|member|name
 name|gchar
@@ -592,6 +592,9 @@ parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -607,6 +610,9 @@ parameter_list|,
 name|GPConfig
 modifier|*
 name|config
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -622,6 +628,9 @@ parameter_list|,
 name|GPTileReq
 modifier|*
 name|tile_req
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -633,6 +642,9 @@ parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -648,6 +660,9 @@ parameter_list|,
 name|GPTileData
 modifier|*
 name|tile_data
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -663,6 +678,9 @@ parameter_list|,
 name|GPProcRun
 modifier|*
 name|proc_run
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -678,6 +696,9 @@ parameter_list|,
 name|GPProcReturn
 modifier|*
 name|proc_return
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -693,6 +714,9 @@ parameter_list|,
 name|GPProcRun
 modifier|*
 name|proc_run
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -708,6 +732,9 @@ parameter_list|,
 name|GPProcReturn
 modifier|*
 name|proc_return
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -723,6 +750,9 @@ parameter_list|,
 name|GPProcInstall
 modifier|*
 name|proc_install
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -738,6 +768,9 @@ parameter_list|,
 name|GPProcUninstall
 modifier|*
 name|proc_uninstall
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -749,6 +782,9 @@ parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -760,6 +796,9 @@ parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl

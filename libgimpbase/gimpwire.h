@@ -49,6 +49,9 @@ parameter_list|,
 name|WireMessage
 modifier|*
 name|msg
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_typedef
@@ -69,6 +72,9 @@ parameter_list|,
 name|WireMessage
 modifier|*
 name|msg
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_typedef
@@ -108,6 +114,9 @@ name|buf
 parameter_list|,
 name|gulong
 name|count
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_typedef
@@ -124,6 +133,9 @@ parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_typedef
@@ -208,6 +220,9 @@ name|buf
 parameter_list|,
 name|gsize
 name|count
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -226,6 +241,9 @@ name|buf
 parameter_list|,
 name|gsize
 name|count
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -237,6 +255,9 @@ parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -270,6 +291,9 @@ parameter_list|,
 name|WireMessage
 modifier|*
 name|msg
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -285,6 +309,9 @@ parameter_list|,
 name|WireMessage
 modifier|*
 name|msg
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -314,6 +341,9 @@ name|data
 parameter_list|,
 name|gint
 name|count
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -332,6 +362,9 @@ name|data
 parameter_list|,
 name|gint
 name|count
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -350,6 +383,9 @@ name|data
 parameter_list|,
 name|gint
 name|count
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -368,6 +404,9 @@ name|data
 parameter_list|,
 name|gint
 name|count
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -387,6 +426,9 @@ name|data
 parameter_list|,
 name|gint
 name|count
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -405,6 +447,9 @@ name|data
 parameter_list|,
 name|gint
 name|count
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -423,6 +468,9 @@ name|data
 parameter_list|,
 name|gint
 name|count
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -441,6 +489,9 @@ name|data
 parameter_list|,
 name|gint
 name|count
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -459,6 +510,9 @@ name|data
 parameter_list|,
 name|gint
 name|count
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -478,6 +532,9 @@ name|data
 parameter_list|,
 name|gint
 name|count
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl

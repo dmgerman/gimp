@@ -398,6 +398,9 @@ name|buf
 parameter_list|,
 name|gulong
 name|count
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -410,6 +413,9 @@ parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1306,6 +1312,8 @@ condition|)
 name|gp_has_init_write
 argument_list|(
 name|_writechannel
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -1467,6 +1475,8 @@ directive|endif
 name|gp_quit_write
 argument_list|(
 name|_writechannel
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -1693,6 +1703,8 @@ name|_writechannel
 argument_list|,
 operator|&
 name|proc_install
+argument_list|,
+name|NULL
 argument_list|)
 condition|)
 name|gimp_quit
@@ -1841,6 +1853,8 @@ name|_writechannel
 argument_list|,
 operator|&
 name|proc_uninstall
+argument_list|,
+name|NULL
 argument_list|)
 condition|)
 name|gimp_quit
@@ -2849,6 +2863,8 @@ name|_writechannel
 argument_list|,
 operator|&
 name|proc_run
+argument_list|,
+name|NULL
 argument_list|)
 condition|)
 name|gimp_quit
@@ -2967,6 +2983,8 @@ argument_list|(
 name|_readchannel
 argument_list|,
 name|msg
+argument_list|,
+name|NULL
 argument_list|)
 condition|)
 name|gimp_quit
@@ -3087,6 +3105,8 @@ name|_writechannel
 argument_list|,
 operator|&
 name|proc_run
+argument_list|,
+name|NULL
 argument_list|)
 condition|)
 name|gimp_quit
@@ -3434,6 +3454,8 @@ name|_readchannel
 argument_list|,
 operator|&
 name|msg
+argument_list|,
+name|NULL
 argument_list|)
 condition|)
 name|gimp_quit
@@ -3643,6 +3665,8 @@ operator|!
 name|gp_extension_ack_write
 argument_list|(
 name|_writechannel
+argument_list|,
+name|NULL
 argument_list|)
 condition|)
 name|gimp_quit
@@ -3923,7 +3947,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_write (GIOChannel * channel,guint8 * buf,gulong count)
+DECL|function|gimp_write (GIOChannel * channel,guint8 * buf,gulong count,gpointer user_data)
 name|gimp_write
 parameter_list|(
 name|GIOChannel
@@ -3936,6 +3960,9 @@ name|buf
 parameter_list|,
 name|gulong
 name|count
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 block|{
 name|gulong
@@ -3988,6 +4015,8 @@ operator|!
 name|wire_flush
 argument_list|(
 name|channel
+argument_list|,
+name|NULL
 argument_list|)
 condition|)
 return|return
@@ -4036,12 +4065,15 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_flush (GIOChannel * channel)
+DECL|function|gimp_flush (GIOChannel * channel,gpointer user_data)
 name|gimp_flush
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 block|{
 name|GIOStatus
@@ -4203,6 +4235,8 @@ name|_readchannel
 argument_list|,
 operator|&
 name|msg
+argument_list|,
+name|NULL
 argument_list|)
 condition|)
 block|{
@@ -4683,6 +4717,8 @@ name|_writechannel
 argument_list|,
 operator|&
 name|proc_return
+argument_list|,
+name|NULL
 argument_list|)
 condition|)
 name|gimp_quit
@@ -4767,7 +4803,7 @@ comment|/* No longer a return message */
 comment|/*       proc_return.name = proc_run->name; */
 comment|/*       proc_return.nparams = nreturn_vals; */
 comment|/*       proc_return.params = (GPParam*) return_vals; */
-comment|/*       if (!gp_temp_proc_return_write (_writechannel,&proc_return)) */
+comment|/*       if (! gp_temp_proc_return_write (_writechannel,&proc_return, NULL)) */
 comment|/* 	gimp_quit (); */
 block|}
 block|}

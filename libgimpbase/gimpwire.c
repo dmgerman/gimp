@@ -374,7 +374,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_read (GIOChannel * channel,guint8 * buf,gsize count)
+DECL|function|wire_read (GIOChannel * channel,guint8 * buf,gsize count,gpointer user_data)
 name|wire_read
 parameter_list|(
 name|GIOChannel
@@ -387,6 +387,9 @@ name|buf
 parameter_list|,
 name|gsize
 name|count
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 block|{
 if|if
@@ -407,6 +410,8 @@ argument_list|,
 name|buf
 argument_list|,
 name|count
+argument_list|,
+name|user_data
 argument_list|)
 condition|)
 block|{
@@ -573,7 +578,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_write (GIOChannel * channel,guint8 * buf,gsize count)
+DECL|function|wire_write (GIOChannel * channel,guint8 * buf,gsize count,gpointer user_data)
 name|wire_write
 parameter_list|(
 name|GIOChannel
@@ -586,6 +591,9 @@ name|buf
 parameter_list|,
 name|gsize
 name|count
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 block|{
 if|if
@@ -606,6 +614,8 @@ argument_list|,
 name|buf
 argument_list|,
 name|count
+argument_list|,
+name|user_data
 argument_list|)
 condition|)
 block|{
@@ -749,12 +759,15 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_flush (GIOChannel * channel)
+DECL|function|wire_flush (GIOChannel * channel,gpointer user_data)
 name|wire_flush
 parameter_list|(
 name|GIOChannel
 modifier|*
 name|channel
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 block|{
 if|if
@@ -768,6 +781,8 @@ name|wire_flush_func
 call|)
 argument_list|(
 name|channel
+argument_list|,
+name|user_data
 argument_list|)
 return|;
 return|return
@@ -807,7 +822,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_read_msg (GIOChannel * channel,WireMessage * msg)
+DECL|function|wire_read_msg (GIOChannel * channel,WireMessage * msg,gpointer user_data)
 name|wire_read_msg
 parameter_list|(
 name|GIOChannel
@@ -817,6 +832,9 @@ parameter_list|,
 name|WireMessage
 modifier|*
 name|msg
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 block|{
 name|WireHandler
@@ -844,6 +862,8 @@ operator|->
 name|type
 argument_list|,
 literal|1
+argument_list|,
+name|user_data
 argument_list|)
 condition|)
 return|return
@@ -885,6 +905,8 @@ argument_list|(
 name|channel
 argument_list|,
 name|msg
+argument_list|,
+name|user_data
 argument_list|)
 expr_stmt|;
 return|return
@@ -896,7 +918,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_write_msg (GIOChannel * channel,WireMessage * msg)
+DECL|function|wire_write_msg (GIOChannel * channel,WireMessage * msg,gpointer user_data)
 name|wire_write_msg
 parameter_list|(
 name|GIOChannel
@@ -906,6 +928,9 @@ parameter_list|,
 name|WireMessage
 modifier|*
 name|msg
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 block|{
 name|WireHandler
@@ -959,6 +984,8 @@ operator|->
 name|type
 argument_list|,
 literal|1
+argument_list|,
+name|user_data
 argument_list|)
 condition|)
 return|return
@@ -974,6 +1001,8 @@ argument_list|(
 name|channel
 argument_list|,
 name|msg
+argument_list|,
+name|user_data
 argument_list|)
 expr_stmt|;
 return|return
@@ -1038,7 +1067,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_read_int32 (GIOChannel * channel,guint32 * data,gint count)
+DECL|function|wire_read_int32 (GIOChannel * channel,guint32 * data,gint count,gpointer user_data)
 name|wire_read_int32
 parameter_list|(
 name|GIOChannel
@@ -1051,6 +1080,9 @@ name|data
 parameter_list|,
 name|gint
 name|count
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 block|{
 if|if
@@ -1076,6 +1108,8 @@ argument_list|,
 name|count
 operator|*
 literal|4
+argument_list|,
+name|user_data
 argument_list|)
 condition|)
 return|return
@@ -1109,7 +1143,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_read_int16 (GIOChannel * channel,guint16 * data,gint count)
+DECL|function|wire_read_int16 (GIOChannel * channel,guint16 * data,gint count,gpointer user_data)
 name|wire_read_int16
 parameter_list|(
 name|GIOChannel
@@ -1122,6 +1156,9 @@ name|data
 parameter_list|,
 name|gint
 name|count
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 block|{
 if|if
@@ -1147,6 +1184,8 @@ argument_list|,
 name|count
 operator|*
 literal|2
+argument_list|,
+name|user_data
 argument_list|)
 condition|)
 return|return
@@ -1180,7 +1219,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_read_int8 (GIOChannel * channel,guint8 * data,gint count)
+DECL|function|wire_read_int8 (GIOChannel * channel,guint8 * data,gint count,gpointer user_data)
 name|wire_read_int8
 parameter_list|(
 name|GIOChannel
@@ -1193,6 +1232,9 @@ name|data
 parameter_list|,
 name|gint
 name|count
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 block|{
 return|return
@@ -1203,6 +1245,8 @@ argument_list|,
 name|data
 argument_list|,
 name|count
+argument_list|,
+name|user_data
 argument_list|)
 return|;
 block|}
@@ -1210,7 +1254,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_read_double (GIOChannel * channel,gdouble * data,gint count)
+DECL|function|wire_read_double (GIOChannel * channel,gdouble * data,gint count,gpointer user_data)
 name|wire_read_double
 parameter_list|(
 name|GIOChannel
@@ -1223,6 +1267,9 @@ name|data
 parameter_list|,
 name|gint
 name|count
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 block|{
 name|gdouble
@@ -1286,6 +1333,8 @@ operator|)
 name|tmp
 argument_list|,
 literal|8
+argument_list|,
+name|user_data
 argument_list|)
 condition|)
 return|return
@@ -1347,7 +1396,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_read_string (GIOChannel * channel,gchar ** data,gint count)
+DECL|function|wire_read_string (GIOChannel * channel,gchar ** data,gint count,gpointer user_data)
 name|wire_read_string
 parameter_list|(
 name|GIOChannel
@@ -1361,6 +1410,9 @@ name|data
 parameter_list|,
 name|gint
 name|count
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 block|{
 name|guint32
@@ -1394,6 +1446,8 @@ operator|&
 name|tmp
 argument_list|,
 literal|1
+argument_list|,
+name|user_data
 argument_list|)
 condition|)
 return|return
@@ -1435,6 +1489,8 @@ name|i
 index|]
 argument_list|,
 name|tmp
+argument_list|,
+name|user_data
 argument_list|)
 condition|)
 block|{
@@ -1470,7 +1526,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_write_int32 (GIOChannel * channel,guint32 * data,gint count)
+DECL|function|wire_write_int32 (GIOChannel * channel,guint32 * data,gint count,gpointer user_data)
 name|wire_write_int32
 parameter_list|(
 name|GIOChannel
@@ -1483,6 +1539,9 @@ name|data
 parameter_list|,
 name|gint
 name|count
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 block|{
 name|guint32
@@ -1537,6 +1596,8 @@ operator|&
 name|tmp
 argument_list|,
 literal|4
+argument_list|,
+name|user_data
 argument_list|)
 condition|)
 return|return
@@ -1552,7 +1613,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_write_int16 (GIOChannel * channel,guint16 * data,gint count)
+DECL|function|wire_write_int16 (GIOChannel * channel,guint16 * data,gint count,gpointer user_data)
 name|wire_write_int16
 parameter_list|(
 name|GIOChannel
@@ -1565,6 +1626,9 @@ name|data
 parameter_list|,
 name|gint
 name|count
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 block|{
 name|guint16
@@ -1619,6 +1683,8 @@ operator|&
 name|tmp
 argument_list|,
 literal|2
+argument_list|,
+name|user_data
 argument_list|)
 condition|)
 return|return
@@ -1634,7 +1700,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_write_int8 (GIOChannel * channel,guint8 * data,gint count)
+DECL|function|wire_write_int8 (GIOChannel * channel,guint8 * data,gint count,gpointer user_data)
 name|wire_write_int8
 parameter_list|(
 name|GIOChannel
@@ -1647,6 +1713,9 @@ name|data
 parameter_list|,
 name|gint
 name|count
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 block|{
 return|return
@@ -1657,6 +1726,8 @@ argument_list|,
 name|data
 argument_list|,
 name|count
+argument_list|,
+name|user_data
 argument_list|)
 return|;
 block|}
@@ -1664,7 +1735,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_write_double (GIOChannel * channel,gdouble * data,gint count)
+DECL|function|wire_write_double (GIOChannel * channel,gdouble * data,gint count,gpointer user_data)
 name|wire_write_double
 parameter_list|(
 name|GIOChannel
@@ -1677,6 +1748,9 @@ name|data
 parameter_list|,
 name|gint
 name|count
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 block|{
 name|gdouble
@@ -1787,6 +1861,8 @@ operator|)
 name|tmp
 argument_list|,
 literal|8
+argument_list|,
+name|user_data
 argument_list|)
 condition|)
 return|return
@@ -1807,7 +1883,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_write_string (GIOChannel * channel,gchar ** data,gint count)
+DECL|function|wire_write_string (GIOChannel * channel,gchar ** data,gint count,gpointer user_data)
 name|wire_write_string
 parameter_list|(
 name|GIOChannel
@@ -1821,6 +1897,9 @@ name|data
 parameter_list|,
 name|gint
 name|count
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 block|{
 name|guint32
@@ -1878,6 +1957,8 @@ operator|&
 name|tmp
 argument_list|,
 literal|1
+argument_list|,
+name|user_data
 argument_list|)
 condition|)
 return|return
@@ -1906,6 +1987,8 @@ name|i
 index|]
 argument_list|,
 name|tmp
+argument_list|,
+name|user_data
 argument_list|)
 condition|)
 return|return
