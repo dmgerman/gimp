@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b787a00103
+DECL|enum|__anon2c37d25e0103
 block|{
 DECL|enumerator|MARKER_CHANGED
 name|MARKER_CHANGED
@@ -1489,15 +1489,6 @@ operator|=
 name|GIMP_NAVIGATION_PREVIEW
 argument_list|(
 name|widget
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"gimp_navigation_preview_scroll(%d)\n"
-argument_list|,
-name|sevent
-operator|->
-name|direction
 argument_list|)
 expr_stmt|;
 if|if

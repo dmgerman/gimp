@@ -39,6 +39,47 @@ directive|include
 file|"gimpmarshal.h"
 end_include
 
+begin_comment
+comment|/* #define DEBUG_CONTAINER */
+end_comment
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|DEBUG_CONTAINER
+end_ifdef
+
+begin_define
+DECL|macro|DEBUG (...)
+define|#
+directive|define
+name|DEBUG
+parameter_list|(
+modifier|...
+parameter_list|)
+value|g_print(...)
+end_define
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_define
+DECL|macro|DEBUG (...)
+define|#
+directive|define
+name|DEBUG
+parameter_list|(
+modifier|...
+parameter_list|)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_typedef
 DECL|struct|_GimpContainerHandler
 typedef|typedef
@@ -71,7 +112,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon275594020103
+DECL|enum|__anon29ff18c40103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -96,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon275594020203
+DECL|enum|__anon29ff18c40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2578,7 +2619,7 @@ argument_list|(
 name|key
 argument_list|)
 expr_stmt|;
-name|g_print
+name|DEBUG
 argument_list|(
 literal|"%s: key = %s, id = %d\n"
 argument_list|,
@@ -2788,7 +2829,7 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|g_print
+name|DEBUG
 argument_list|(
 literal|"%s: id = %d\n"
 argument_list|,

@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2997aed10103
+DECL|enum|__anon28fea6b20103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -546,18 +546,6 @@ expr_stmt|;
 name|drawable
 operator|->
 name|has_alpha
-operator|=
-name|FALSE
-expr_stmt|;
-name|drawable
-operator|->
-name|preview_cache
-operator|=
-name|NULL
-expr_stmt|;
-name|drawable
-operator|->
-name|preview_valid
 operator|=
 name|FALSE
 expr_stmt|;
