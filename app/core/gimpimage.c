@@ -535,7 +535,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2abb1fe60103
+DECL|enum|__anon29af05900103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -4436,6 +4436,7 @@ if|if
 condition|(
 operator|(
 operator|(
+operator|(
 name|Guide
 operator|*
 operator|)
@@ -4447,6 +4448,23 @@ operator|->
 name|guide_ID
 operator|==
 name|guide_id
+operator|)
+operator|&&
+operator|(
+operator|(
+operator|(
+name|Guide
+operator|*
+operator|)
+name|guides
+operator|->
+name|data
+operator|)
+operator|->
+name|position
+operator|>=
+literal|0
+operator|)
 condition|)
 block|{
 name|GList
@@ -4465,7 +4483,22 @@ argument_list|(
 name|guides
 argument_list|)
 expr_stmt|;
-name|gimp_image_remove_guide
+operator|(
+operator|(
+name|Guide
+operator|*
+operator|)
+name|guides
+operator|->
+name|data
+operator|)
+operator|->
+name|position
+operator|=
+operator|-
+literal|1
+expr_stmt|;
+name|undo_push_guide
 argument_list|(
 name|gimage
 argument_list|,
@@ -4480,6 +4513,7 @@ name|data
 operator|)
 argument_list|)
 expr_stmt|;
+comment|/*gimp_image_remove_guide (gimage, ((Guide*)guides->data));*/
 name|guides
 operator|=
 name|tmp_next
