@@ -16,13 +16,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
+file|<stdlib.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
+file|<string.h>
 end_include
 
 begin_include
@@ -139,7 +139,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3ba5960103
+DECL|enum|__anon2bddf6d30103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -5520,19 +5520,23 @@ modifier|*
 name|layer
 parameter_list|)
 block|{
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|layer
 operator|!=
 name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_LAYER
 argument_list|(
 name|layer
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 return|return

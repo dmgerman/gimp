@@ -564,7 +564,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon28f4dc6a0103
+DECL|enum|__anon28b7b0760103
 enum|enum
 block|{
 DECL|enumerator|CLEAN

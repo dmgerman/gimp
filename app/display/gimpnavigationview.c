@@ -184,7 +184,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278412400103
+DECL|enum|__anon2c2c348d0103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -374,12 +374,14 @@ name|nav_window_preview_events
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|GdkEvent
 modifier|*
+name|event
 parameter_list|,
 name|gpointer
-modifier|*
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -391,12 +393,14 @@ name|nav_window_expose_events
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|GdkEvent
 modifier|*
+name|event
 parameter_list|,
 name|gpointer
-modifier|*
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -408,6 +412,7 @@ name|nav_window_update_preview
 parameter_list|(
 name|NavWinData
 modifier|*
+name|iwd
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -431,6 +436,7 @@ name|destroy_preview_widget
 parameter_list|(
 name|NavWinData
 modifier|*
+name|iwd
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -442,6 +448,7 @@ name|create_preview_widget
 parameter_list|(
 name|NavWinData
 modifier|*
+name|iwd
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -453,16 +460,22 @@ name|nav_window_draw_sqr
 parameter_list|(
 name|NavWinData
 modifier|*
+name|iwd
 parameter_list|,
 name|gboolean
+name|undraw
 parameter_list|,
 name|gint
+name|x
 parameter_list|,
 name|gint
+name|y
 parameter_list|,
 name|gint
+name|w
 parameter_list|,
 name|gint
+name|h
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -474,6 +487,7 @@ name|set_size_data
 parameter_list|(
 name|NavWinData
 modifier|*
+name|iwd
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -485,6 +499,7 @@ name|nav_preview_update_do_timer
 parameter_list|(
 name|NavWinData
 modifier|*
+name|iwd
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -781,7 +796,7 @@ operator|)
 operator|+
 literal|0.5
 expr_stmt|;
-comment|/* here */
+comment|/*here*/
 name|iwd
 operator|->
 name|dispwidth
@@ -816,7 +831,7 @@ operator|)
 operator|+
 literal|0.5
 expr_stmt|;
-comment|/* here */
+comment|/*here*/
 block|}
 if|if
 condition|(
@@ -941,7 +956,7 @@ argument_list|,
 name|iwd
 operator|->
 name|pwidth
-comment|/*-BORDER_PEN_WIDTH*/
+comment|/* - BORDER_PEN_WIDTH */
 argument_list|)
 expr_stmt|;
 name|iwd
@@ -957,14 +972,12 @@ argument_list|,
 name|iwd
 operator|->
 name|pheight
-comment|/*-BORDER_PEN_WIDTH*/
+comment|/* - BORDER_PEN_WIDTH */
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 name|need_update
-operator|==
-name|TRUE
 condition|)
 block|{
 name|gtk_widget_hide
@@ -1305,12 +1318,14 @@ parameter_list|)
 block|{
 name|gint
 name|sel_width
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|sel_height
 decl_stmt|;
 name|gint
 name|pwidth
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|pheight
 decl_stmt|;
 name|GDisplay
@@ -2390,7 +2405,13 @@ decl_stmt|;
 name|guchar
 modifier|*
 name|src_pixel
-init|=
+decl_stmt|;
+name|guchar
+modifier|*
+name|dest_pixel
+decl_stmt|;
+name|src_pixel
+operator|=
 name|src_data
 operator|+
 operator|(
@@ -2424,11 +2445,9 @@ operator|*
 name|preview_buf
 operator|->
 name|bytes
-decl_stmt|;
-name|guchar
-modifier|*
+expr_stmt|;
 name|dest_pixel
-init|=
+operator|=
 name|dest_data
 operator|+
 operator|(
@@ -2444,7 +2463,7 @@ operator|*
 name|preview_buf
 operator|->
 name|bytes
-decl_stmt|;
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -2970,7 +2989,8 @@ block|{
 name|guchar
 modifier|*
 name|buf
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|dest
 decl_stmt|;
@@ -2985,9 +3005,9 @@ decl_stmt|;
 if|#
 directive|if
 literal|0
-block|GimpImage    *gimage;   GDisplay     *gdisp;    gdisp = (GDisplay *) iwd->gdisp_ptr;
+block|GimpImage *gimage;   GDisplay  *gdisp;    gdisp = (GDisplay *) iwd->gdisp_ptr;
 comment|/* Calculate preview size */
-block|gimage = ((GDisplay *)(iwd->gdisp_ptr))->gimage;
+block|gimage = ((GDisplay *) (iwd->gdisp_ptr))->gimage;
 endif|#
 directive|endif
 comment|/* 0 */
@@ -3365,7 +3385,7 @@ block|{
 name|val
 operator|=
 operator|-
-literal|1
+literal|1.0
 operator|/
 name|f
 expr_stmt|;
@@ -3647,7 +3667,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|nav_window_preview_events (GtkWidget * widget,GdkEvent * event,gpointer * data)
+DECL|function|nav_window_preview_events (GtkWidget * widget,GdkEvent * event,gpointer data)
 name|nav_window_preview_events
 parameter_list|(
 name|GtkWidget
@@ -3659,7 +3679,6 @@ modifier|*
 name|event
 parameter_list|,
 name|gpointer
-modifier|*
 name|data
 parameter_list|)
 block|{
@@ -3690,15 +3709,16 @@ name|gint
 name|tx
 init|=
 literal|0
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|ty
 init|=
 literal|0
 decl_stmt|;
-comment|/* So compiler complaints */
 name|gint
 name|mx
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|my
 decl_stmt|;
 name|gboolean
@@ -4508,7 +4528,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|nav_window_expose_events (GtkWidget * widget,GdkEvent * event,gpointer * data)
+DECL|function|nav_window_expose_events (GtkWidget * widget,GdkEvent * event,gpointer data)
 name|nav_window_expose_events
 parameter_list|(
 name|GtkWidget
@@ -4520,7 +4540,6 @@ modifier|*
 name|event
 parameter_list|,
 name|gpointer
-modifier|*
 name|data
 parameter_list|)
 block|{
@@ -4993,7 +5012,8 @@ name|gdisp
 decl_stmt|;
 name|gint
 name|scalesrc
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|scaledest
 decl_stmt|;
 name|iwd
@@ -5958,7 +5978,7 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|title
 decl_stmt|;
@@ -6232,9 +6252,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|nav_window_follow_auto ()
+DECL|function|nav_window_follow_auto (void)
 name|nav_window_follow_auto
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GDisplay
 modifier|*
@@ -6351,11 +6373,11 @@ name|GtkWidget
 modifier|*
 name|container
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|title_buf
 decl_stmt|;
-name|int
+name|GimpImageBaseType
 name|type
 decl_stmt|;
 name|gdisp
@@ -6835,9 +6857,9 @@ block|{
 name|GSList
 modifier|*
 modifier|*
-name|l
+name|list_ptr
 decl_stmt|;
-name|l
+name|list_ptr
 operator|=
 operator|(
 name|GSList
@@ -6847,12 +6869,12 @@ operator|)
 name|data
 expr_stmt|;
 operator|*
-name|l
+name|list_ptr
 operator|=
 name|g_slist_prepend
 argument_list|(
 operator|*
-name|l
+name|list_ptr
 argument_list|,
 name|im
 argument_list|)
@@ -6882,15 +6904,15 @@ name|listPtr
 init|=
 name|NULL
 decl_stmt|;
-name|GimpImage
-modifier|*
-name|gimage
-decl_stmt|;
 name|GDisplay
 modifier|*
 name|gdisp
 init|=
 name|NULL
+decl_stmt|;
+name|GimpImage
+modifier|*
+name|gimage
 decl_stmt|;
 name|gimage_foreach
 argument_list|(
