@@ -568,7 +568,6 @@ argument_list|(
 name|render_buf
 argument_list|)
 expr_stmt|;
-return|return;
 block|}
 end_function
 

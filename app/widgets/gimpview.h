@@ -258,6 +258,9 @@ name|size
 parameter_list|,
 name|gint
 name|border_width
+parameter_list|,
+name|gboolean
+name|is_popup
 parameter_list|)
 function_decl|;
 name|GtkWidget

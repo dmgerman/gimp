@@ -694,15 +694,9 @@ name|window_border
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+operator|!
 name|container
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
+operator|||
 name|GIMP_IS_CONTAINER
 argument_list|(
 name|container
@@ -853,6 +847,10 @@ operator|+
 name|window_border
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|container
+condition|)
 name|gimp_container_view_set_container
 argument_list|(
 name|view
@@ -975,6 +973,8 @@ operator|->
 name|preview_size
 argument_list|,
 literal|1
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

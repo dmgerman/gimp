@@ -824,7 +824,101 @@ directive|endif
 comment|/* DISPLAY_FILTERS */
 block|{
 block|{
-literal|"/File/Test Dialogs/List of all Images..."
+name|N_
+argument_list|(
+literal|"/File/Test Dialogs/Layer List..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|dialogs_test_layer_list_cmd_callback
+block|,
+literal|1
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/File/Test Dialogs/Layer Grid..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|dialogs_test_layer_grid_cmd_callback
+block|,
+literal|1
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/File/Test Dialogs/Channel List..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|dialogs_test_channel_list_cmd_callback
+block|,
+literal|1
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/File/Test Dialogs/Channel Grid..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|dialogs_test_channel_grid_cmd_callback
+block|,
+literal|1
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+literal|"/File/Test Dialogs/---"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|0
+block|,
+literal|"<Separator>"
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+literal|"/File/Test Dialogs/Images List..."
 block|,
 name|NULL
 block|,
@@ -840,7 +934,7 @@ block|}
 block|,
 block|{
 block|{
-literal|"/File/Test Dialogs/Grid of all Images..."
+literal|"/File/Test Dialogs/Images Grid..."
 block|,
 name|NULL
 block|,
@@ -874,7 +968,7 @@ block|}
 block|,
 block|{
 block|{
-literal|"/File/Test Dialogs/List of all Brushes..."
+literal|"/File/Test Dialogs/Brushe List..."
 block|,
 name|NULL
 block|,
@@ -890,7 +984,7 @@ block|}
 block|,
 block|{
 block|{
-literal|"/File/Test Dialogs/List of all Patterns..."
+literal|"/File/Test Dialogs/Pattern List..."
 block|,
 name|NULL
 block|,
@@ -906,7 +1000,7 @@ block|}
 block|,
 block|{
 block|{
-literal|"/File/Test Dialogs/List of all Gradients..."
+literal|"/File/Test Dialogs/Gradient List..."
 block|,
 name|NULL
 block|,
@@ -922,7 +1016,7 @@ block|}
 block|,
 block|{
 block|{
-literal|"/File/Test Dialogs/List of all Palettes..."
+literal|"/File/Test Dialogs/Palette List..."
 block|,
 name|NULL
 block|,
@@ -956,7 +1050,7 @@ block|}
 block|,
 block|{
 block|{
-literal|"/File/Test Dialogs/Grid of all Brushes..."
+literal|"/File/Test Dialogs/Brushe Grid..."
 block|,
 name|NULL
 block|,
@@ -972,7 +1066,7 @@ block|}
 block|,
 block|{
 block|{
-literal|"/File/Test Dialogs/Grid of all Patterns..."
+literal|"/File/Test Dialogs/Pattern Grid..."
 block|,
 name|NULL
 block|,
@@ -988,7 +1082,7 @@ block|}
 block|,
 block|{
 block|{
-literal|"/File/Test Dialogs/Grid of all Gradients..."
+literal|"/File/Test Dialogs/Gradient Grid..."
 block|,
 name|NULL
 block|,
@@ -1004,7 +1098,7 @@ block|}
 block|,
 block|{
 block|{
-literal|"/File/Test Dialogs/Grid of all Palettes..."
+literal|"/File/Test Dialogs/Palette Grid..."
 block|,
 name|NULL
 block|,
