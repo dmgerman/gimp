@@ -42,7 +42,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ea02d30103
+DECL|enum|__anon298473320103
 block|{
 DECL|enumerator|TIPS_START
 name|TIPS_START
@@ -70,7 +70,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ea02d30203
+DECL|enum|__anon298473320203
 block|{
 DECL|enumerator|TIPS_LOCALE_NONE
 name|TIPS_LOCALE_NONE
@@ -440,6 +440,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_tips_from_file:  * @filename: the name of the tips file to parse  * @error: return location for a #GError  *   * Reads a gimp-tips XML file, creates a new #GimpTip for  * each tip entry and returns a #GList of them. If a parser  * error occurs at some point, the uncompleted list is  * returned and @error is set (unless @error is %NULL).  * The message set in @error contains a detailed description  * of the problem.  *   * Return value: a #Glist of #GimpTips.  **/
+end_comment
 
 begin_function
 name|GList
