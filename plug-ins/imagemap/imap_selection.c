@@ -98,18 +98,6 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"arrow_up.xpm"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"arrow_down.xpm"
-end_include
-
 begin_function
 specifier|static
 name|void
@@ -728,16 +716,12 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|make_selection_toolbar (Selection_t * data,GtkWidget * window)
+DECL|function|make_selection_toolbar (Selection_t * data)
 name|make_selection_toolbar
 parameter_list|(
 name|Selection_t
 modifier|*
 name|data
-parameter_list|,
-name|GtkWidget
-modifier|*
-name|window
 parameter_list|)
 block|{
 name|GtkWidget
@@ -783,13 +767,11 @@ name|data
 operator|->
 name|arrow_up
 operator|=
-name|make_toolbar_icon
+name|make_toolbar_stock_icon
 argument_list|(
 name|toolbar
 argument_list|,
-name|window
-argument_list|,
-name|arrow_up_xpm
+name|GTK_STOCK_GO_UP
 argument_list|,
 literal|"MoveUp"
 argument_list|,
@@ -810,13 +792,11 @@ name|data
 operator|->
 name|arrow_down
 operator|=
-name|make_toolbar_icon
+name|make_toolbar_stock_icon
 argument_list|(
 name|toolbar
 argument_list|,
-name|window
-argument_list|,
-name|arrow_down_xpm
+name|GTK_STOCK_GO_DOWN
 argument_list|,
 literal|"MoveDown"
 argument_list|,
@@ -1862,13 +1842,9 @@ end_function
 begin_function
 name|Selection_t
 modifier|*
-DECL|function|make_selection (GtkWidget * window,ObjectList_t * object_list)
+DECL|function|make_selection (ObjectList_t * object_list)
 name|make_selection
 parameter_list|(
-name|GtkWidget
-modifier|*
-name|window
-parameter_list|,
 name|ObjectList_t
 modifier|*
 name|object_list
@@ -2021,8 +1997,6 @@ operator|=
 name|make_selection_toolbar
 argument_list|(
 name|data
-argument_list|,
-name|window
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -2493,6 +2467,56 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|selection_freeze (Selection_t * selection)
+name|selection_freeze
+parameter_list|(
+name|Selection_t
+modifier|*
+name|selection
+parameter_list|)
+block|{
+name|gtk_clist_freeze
+argument_list|(
+name|GTK_CLIST
+argument_list|(
+operator|(
+name|selection
+operator|)
+operator|->
+name|list
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|selection_thaw (Selection_t * selection)
+name|selection_thaw
+parameter_list|(
+name|Selection_t
+modifier|*
+name|selection
+parameter_list|)
+block|{
+name|gtk_clist_thaw
+argument_list|(
+name|GTK_CLIST
+argument_list|(
+operator|(
+name|selection
+operator|)
+operator|->
+name|list
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
