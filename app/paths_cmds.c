@@ -2412,7 +2412,7 @@ literal|"gimp_path_get_tattoo"
 block|,
 literal|"Returns the tattoo associated with the name path."
 block|,
-literal|"This procedure returns the tattoo associated with the specified path. A tattoo is a unique and permenant identifier attached to a path that can be used to uniquely identify a path within an image even between sessions."
+literal|"This procedure returns the tattoo associated with the specified path. A tattoo is a unique and permanent identifier attached to a path that can be used to uniquely identify a path within an image even between sessions."
 block|,
 literal|"Andy Thomas"
 block|,
