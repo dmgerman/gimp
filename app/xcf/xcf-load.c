@@ -223,6 +223,10 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_comment
+comment|/* #define GIMP_XCF_PATH_DEBUG */
+end_comment
+
 begin_function_decl
 specifier|static
 name|gboolean
@@ -6439,11 +6443,16 @@ decl_stmt|;
 name|guint32
 name|base
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|GIMP_XCF_PATH_DEBUG
 name|g_printerr
 argument_list|(
 literal|"xcf_load_vectors\n"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|base
 operator|=
 name|info
@@ -6516,6 +6525,9 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|GIMP_XCF_PATH_DEBUG
 name|g_printerr
 argument_list|(
 literal|"%d paths (active: %d)\n"
@@ -6525,6 +6537,8 @@ argument_list|,
 name|active_index
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 while|while
 condition|(
 name|num_paths
@@ -6571,6 +6585,9 @@ argument_list|,
 name|active_vectors
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|GIMP_XCF_PATH_DEBUG
 name|g_printerr
 argument_list|(
 literal|"xcf_load_vectors: loaded %d bytes\n"
@@ -6582,6 +6599,8 @@ operator|-
 name|base
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 return|return
 name|TRUE
 return|;
@@ -6631,11 +6650,16 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|GIMP_XCF_PATH_DEBUG
 name|g_printerr
 argument_list|(
 literal|"xcf_load_vector\n"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|info
 operator|->
 name|cp
@@ -6732,6 +6756,9 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|GIMP_XCF_PATH_DEBUG
 name|g_printerr
 argument_list|(
 literal|"name: %s, tattoo: %d, visible: %d, linked: %d, num_parasites %d, "
@@ -6750,6 +6777,8 @@ argument_list|,
 name|num_strokes
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|vectors
 operator|=
 name|gimp_vectors_new
@@ -6992,6 +7021,9 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|GIMP_XCF_PATH_DEBUG
 name|g_printerr
 argument_list|(
 literal|"stroke_type: %d, closed: %d, num_axes %d, len %d\n"
@@ -7005,6 +7037,8 @@ argument_list|,
 name|num_control_points
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 switch|switch
 condition|(
 name|stroke_type_id
@@ -7190,6 +7224,9 @@ operator|&
 name|value
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|GIMP_XCF_PATH_DEBUG
 name|g_printerr
 argument_list|(
 literal|"Anchor: %d, (%f, %f, %f, %f, %f, %f)\n"
@@ -7227,6 +7264,8 @@ literal|5
 index|]
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 block|}
 name|g_value_unset
 argument_list|(
