@@ -2807,12 +2807,12 @@ argument_list|(
 name|wbox
 argument_list|)
 argument_list|,
-literal|252.0
+literal|140.0
 operator|/
-literal|136.0
+literal|192.0
 argument_list|)
 expr_stmt|;
-comment|/*  9x3 tools  */
+comment|/* 5x5 tools */
 name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
