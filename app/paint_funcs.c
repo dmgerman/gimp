@@ -223,7 +223,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a1bbaa0103
+DECL|enum|__anon2bf968fb0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -2577,8 +2577,6 @@ name|has_alpha
 parameter_list|)
 block|{
 name|int
-name|alpha
-decl_stmt|,
 name|b
 decl_stmt|;
 name|unsigned

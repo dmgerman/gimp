@@ -3806,7 +3806,7 @@ name|orientation
 condition|)
 block|{
 case|case
-name|HORIZONTAL_GUIDE
+name|ORIENTATION_HORIZONTAL
 case|:
 name|new_guide
 operator|=
@@ -3825,7 +3825,7 @@ name|position
 expr_stmt|;
 break|break;
 case|case
-name|VERTICAL_GUIDE
+name|ORIENTATION_VERTICAL
 case|:
 name|new_guide
 operator|=

@@ -724,7 +724,7 @@ name|orientation
 condition|)
 block|{
 case|case
-name|HORIZONTAL_GUIDE
+name|ORIENTATION_HORIZONTAL
 case|:
 name|gdisplay_transform_coords
 argument_list|(
@@ -786,7 +786,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|VERTICAL_GUIDE
+name|ORIENTATION_VERTICAL
 case|:
 name|gdisplay_transform_coords
 argument_list|(
@@ -1055,7 +1055,7 @@ name|orientation
 condition|)
 block|{
 case|case
-name|HORIZONTAL_GUIDE
+name|ORIENTATION_HORIZONTAL
 case|:
 if|if
 condition|(
@@ -1085,7 +1085,7 @@ name|TRUE
 expr_stmt|;
 break|break;
 case|case
-name|VERTICAL_GUIDE
+name|ORIENTATION_VERTICAL
 case|:
 if|if
 condition|(
@@ -1359,7 +1359,7 @@ name|guide
 operator|->
 name|orientation
 operator|==
-name|HORIZONTAL_GUIDE
+name|ORIENTATION_HORIZONTAL
 condition|)
 name|private
 operator|->

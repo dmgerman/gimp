@@ -145,9 +145,18 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29bfb2c80108
+DECL|typedef|GimpColorSelectorMethods
 typedef|typedef
+name|struct
+name|_GimpColorSelectorMethods
+name|GimpColorSelectorMethods
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpColorSelectorMethods
 struct|struct
+name|_GimpColorSelectorMethods
 block|{
 DECL|member|new
 name|GimpColorSelector_NewFunc
@@ -161,11 +170,9 @@ DECL|member|setcolor
 name|GimpColorSelector_SetColorFunc
 name|setcolor
 decl_stmt|;
-DECL|typedef|GimpColorSelectorMethods
 block|}
-name|GimpColorSelectorMethods
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_typedef
 DECL|typedef|GimpColorSelectorID

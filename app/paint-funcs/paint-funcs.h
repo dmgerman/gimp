@@ -2820,11 +2820,10 @@ comment|/*  Layer Modes  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27cb2a660103
+DECL|enum|__anon2b9318520103
 typedef|typedef
 enum|enum
 block|{
-comment|/*< chop=_MODE>*/
 DECL|enumerator|NORMAL_MODE
 name|NORMAL_MODE
 block|,
@@ -2837,7 +2836,6 @@ block|,
 DECL|enumerator|MULTIPLY_MODE
 name|MULTIPLY_MODE
 block|,
-comment|/*< nick=MULTIPLY/BURN>*/
 DECL|enumerator|SCREEN_MODE
 name|SCREEN_MODE
 block|,
@@ -2874,14 +2872,16 @@ block|,
 DECL|enumerator|DIVIDE_MODE
 name|DIVIDE_MODE
 block|,
-comment|/*< nick=DIVIDE/DODGE>*/
 DECL|enumerator|ERASE_MODE
 name|ERASE_MODE
 block|,
+comment|/*< skip>*/
 DECL|enumerator|REPLACE_MODE
 name|REPLACE_MODE
-block|, }
+block|,
+comment|/*< skip>*/
 DECL|typedef|LayerModeEffects
+block|}
 name|LayerModeEffects
 typedef|;
 end_typedef

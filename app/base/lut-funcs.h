@@ -31,13 +31,11 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< chop=_LUT>*/
-DECL|enum|__anon2ad0cf810103
+DECL|enum|__anon27b69d550103
 block|{
 DECL|enumerator|VALUE_LUT
 name|VALUE_LUT
 block|,
-comment|/*< nick=VALUE/GRAY>*/
 DECL|enumerator|RED_LUT
 name|RED_LUT
 block|,

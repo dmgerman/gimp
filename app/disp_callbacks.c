@@ -117,22 +117,6 @@ directive|include
 file|"dialog_handler.h"
 end_include
 
-begin_define
-DECL|macro|HORIZONTAL
-define|#
-directive|define
-name|HORIZONTAL
-value|1
-end_define
-
-begin_define
-DECL|macro|VERTICAL
-define|#
-directive|define
-name|VERTICAL
-value|2
-end_define
-
 begin_comment
 comment|/* Function declarations */
 end_comment

@@ -3465,7 +3465,7 @@ name|guide
 operator|->
 name|orientation
 operator|==
-name|HORIZONTAL_GUIDE
+name|ORIENTATION_HORIZONTAL
 condition|)
 block|{
 name|gdisplay_transform_coords
@@ -3538,7 +3538,7 @@ name|guide
 operator|->
 name|orientation
 operator|==
-name|VERTICAL_GUIDE
+name|ORIENTATION_VERTICAL
 condition|)
 block|{
 name|gdisplay_transform_coords
@@ -3719,7 +3719,7 @@ name|orientation
 condition|)
 block|{
 case|case
-name|HORIZONTAL_GUIDE
+name|ORIENTATION_HORIZONTAL
 case|:
 name|pos
 operator|=
@@ -3772,7 +3772,7 @@ name|guide
 return|;
 break|break;
 case|case
-name|VERTICAL_GUIDE
+name|ORIENTATION_VERTICAL
 case|:
 name|pos
 operator|=
@@ -3987,7 +3987,7 @@ name|orientation
 condition|)
 block|{
 case|case
-name|HORIZONTAL_GUIDE
+name|ORIENTATION_HORIZONTAL
 case|:
 name|pos
 operator|=
@@ -4060,7 +4060,7 @@ block|}
 block|}
 break|break;
 case|case
-name|VERTICAL_GUIDE
+name|ORIENTATION_VERTICAL
 case|:
 name|pos
 operator|=
@@ -8515,7 +8515,7 @@ name|orientation
 condition|)
 block|{
 case|case
-name|HORIZONTAL_GUIDE
+name|ORIENTATION_HORIZONTAL
 case|:
 name|gdisplay_expose_area
 argument_list|(
@@ -8534,7 +8534,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|VERTICAL_GUIDE
+name|ORIENTATION_VERTICAL
 case|:
 name|gdisplay_expose_area
 argument_list|(

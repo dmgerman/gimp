@@ -1698,7 +1698,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a40c4c40108
+DECL|struct|__anon2ae2082d0108
 block|{
 DECL|member|def
 name|GImage
@@ -1772,9 +1772,6 @@ name|dwidth
 decl_stmt|;
 name|gint
 name|dheight
-decl_stmt|;
-name|gint
-name|has_alpha
 decl_stmt|;
 name|gint
 name|x

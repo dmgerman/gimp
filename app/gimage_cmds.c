@@ -16,12 +16,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -7610,7 +7604,6 @@ name|dwidth
 operator|>
 name|dheight
 condition|)
-block|{
 name|req_height
 operator|=
 operator|(
@@ -7621,9 +7614,7 @@ operator|)
 operator|/
 name|dwidth
 expr_stmt|;
-block|}
 else|else
-block|{
 name|req_width
 operator|=
 operator|(
@@ -7634,7 +7625,6 @@ operator|)
 operator|/
 name|dheight
 expr_stmt|;
-block|}
 name|buf
 operator|=
 name|gimp_image_construct_composite_preview
@@ -7662,10 +7652,6 @@ name|bytes
 expr_stmt|;
 name|thumbnail_data
 operator|=
-operator|(
-name|gint8
-operator|*
-operator|)
 name|g_new
 argument_list|(
 name|gint8

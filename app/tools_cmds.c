@@ -112,6 +112,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"paint_core.h"
 end_include
 
@@ -1479,7 +1485,7 @@ name|PDB_INT32
 block|,
 literal|"paint_mode"
 block|,
-literal|"The paint application mode: { NORMAL (0), DISSOLVE (1), BEHIND (2), MULTIPLY/BURN (3), SCREEN (4), OVERLAY (5), DIFFERENCE (6), ADDITION (7), SUBTRACT (8), DARKEN_ONLY (9), LIGHTEN_ONLY (10), HUE (11), SATURATION (12), COLOR (13), VALUE (14), DIVIDE/DODGE (15) }"
+literal|"The paint application mode: { NORMAL_MODE (0), DISSOLVE_MODE (1), BEHIND_MODE (2), MULTIPLY_MODE (3), SCREEN_MODE (4), OVERLAY_MODE (5), DIFFERENCE_MODE (6), ADDITION_MODE (7), SUBTRACT_MODE (8), DARKEN_ONLY_MODE (9), LIGHTEN_ONLY_MODE (10), HUE_MODE (11), SATURATION_MODE (12), COLOR_MODE (13), VALUE_MODE (14), DIVIDE_MODE (15) }"
 block|}
 block|,
 block|{
@@ -1896,7 +1902,7 @@ name|PDB_INT32
 block|,
 literal|"paint_mode"
 block|,
-literal|"The paint application mode: { NORMAL (0), DISSOLVE (1), BEHIND (2), MULTIPLY/BURN (3), SCREEN (4), OVERLAY (5), DIFFERENCE (6), ADDITION (7), SUBTRACT (8), DARKEN_ONLY (9), LIGHTEN_ONLY (10), HUE (11), SATURATION (12), COLOR (13), VALUE (14), DIVIDE/DODGE (15) }"
+literal|"The paint application mode: { NORMAL_MODE (0), DISSOLVE_MODE (1), BEHIND_MODE (2), MULTIPLY_MODE (3), SCREEN_MODE (4), OVERLAY_MODE (5), DIFFERENCE_MODE (6), ADDITION_MODE (7), SUBTRACT_MODE (8), DARKEN_ONLY_MODE (9), LIGHTEN_ONLY_MODE (10), HUE_MODE (11), SATURATION_MODE (12), COLOR_MODE (13), VALUE_MODE (14), DIVIDE_MODE (15) }"
 block|}
 block|,
 block|{
@@ -3513,7 +3519,7 @@ name|PDB_INT32
 block|,
 literal|"convolve_type"
 block|,
-literal|"Convolve type: { BLUR (0), SHARPEN (1) }"
+literal|"Convolve type: { BLUR_CONVOLVE (0), SHARPEN_CONVOLVE (1) }"
 block|}
 block|,
 block|{
@@ -5505,11 +5511,11 @@ if|if
 condition|(
 name|flip_type
 operator|<
-literal|0
+name|ORIENTATION_HORIZONTAL
 operator|||
 name|flip_type
 operator|>
-literal|1
+name|ORIENTATION_VERTICAL
 condition|)
 name|success
 operator|=
@@ -5558,10 +5564,10 @@ name|flip_type
 condition|)
 block|{
 case|case
-name|FLIP_HORZ
+name|ORIENTATION_HORIZONTAL
 case|:
 case|case
-name|FLIP_VERT
+name|ORIENTATION_VERTICAL
 case|:
 name|new_tiles
 operator|=
@@ -5690,7 +5696,7 @@ name|PDB_INT32
 block|,
 literal|"flip_type"
 block|,
-literal|"Type of flip: HORIZONTAL (0) or VERTICAL (1)"
+literal|"Type of flip: HORIZONTAL (1) or VERTICAL (2)"
 block|}
 block|}
 decl_stmt|;
@@ -9151,11 +9157,11 @@ if|if
 condition|(
 name|shear_type
 operator|<
-name|HORZ_SHEAR
+name|ORIENTATION_HORIZONTAL
 operator|||
 name|shear_type
 operator|>
-name|VERT_SHEAR
+name|ORIENTATION_VERTICAL
 condition|)
 name|success
 operator|=
@@ -9253,7 +9259,7 @@ if|if
 condition|(
 name|shear_type
 operator|==
-name|HORZ_SHEAR
+name|ORIENTATION_HORIZONTAL
 condition|)
 name|gimp_matrix_xshear
 argument_list|(
@@ -9271,7 +9277,7 @@ if|if
 condition|(
 name|shear_type
 operator|==
-name|VERT_SHEAR
+name|ORIENTATION_VERTICAL
 condition|)
 name|gimp_matrix_yshear
 argument_list|(
@@ -9422,7 +9428,7 @@ name|PDB_INT32
 block|,
 literal|"shear_type"
 block|,
-literal|"Type of shear: HORIZONTAL (0) or VERTICAL (1)"
+literal|"Type of shear: HORIZONTAL (1) or VERTICAL (2)"
 block|}
 block|,
 block|{

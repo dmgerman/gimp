@@ -22,30 +22,6 @@ directive|include
 file|<gtk/gtk.h>
 end_include
 
-begin_define
-DECL|macro|PULLDOWN
-define|#
-directive|define
-name|PULLDOWN
-value|0
-end_define
-
-begin_define
-DECL|macro|POPUP
-define|#
-directive|define
-name|POPUP
-value|1
-end_define
-
-begin_define
-DECL|macro|OPTION
-define|#
-directive|define
-name|OPTION
-value|2
-end_define
-
 begin_comment
 comment|/* Structures */
 end_comment

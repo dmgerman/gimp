@@ -180,6 +180,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gdisplay_color.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gdisplay_ops.h"
 end_include
 
@@ -2328,6 +2334,9 @@ expr_stmt|;
 name|internal_procs_init
 argument_list|()
 expr_stmt|;
+name|gdisplay_color_init
+argument_list|()
+expr_stmt|;
 name|RESET_BAR
 argument_list|()
 expr_stmt|;
@@ -2938,7 +2947,7 @@ name|save_sessionrc
 argument_list|()
 expr_stmt|;
 block|}
-comment|/*  gtk_exit (0); */
+comment|/* gtk_exit (0); */
 name|gtk_main_quit
 argument_list|()
 expr_stmt|;

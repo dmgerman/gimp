@@ -209,7 +209,7 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon28fcbc250103
+DECL|enum|__anon2784bf350103
 enum|enum
 block|{
 DECL|enumerator|FILENAME_CHANGED
@@ -620,9 +620,11 @@ end_function
 
 begin_function
 name|GtkType
-DECL|function|gimp_file_selection_get_type ()
+DECL|function|gimp_file_selection_get_type (void)
 name|gimp_file_selection_get_type
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GtkType

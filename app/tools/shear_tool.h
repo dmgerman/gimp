@@ -22,24 +22,6 @@ directive|include
 file|"tools.h"
 end_include
 
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon290fa4e50103
-block|{
-DECL|enumerator|HORZ_SHEAR
-name|HORZ_SHEAR
-block|,
-comment|/*< nick=HORIZONTAL>*/
-DECL|enumerator|VERT_SHEAR
-name|VERT_SHEAR
-comment|/*< nick=VERTICAL>*/
-DECL|typedef|ShearType
-block|}
-name|ShearType
-typedef|;
-end_typedef
-
 begin_function_decl
 name|void
 modifier|*

@@ -94,22 +94,27 @@ end_function_decl
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4471000103
+DECL|enum|__anon296e48790103
 block|{
 DECL|enumerator|FOREGROUND_FILL
 name|FOREGROUND_FILL
 block|,
+comment|/*< nick=FG_IMAGE_FILL>*/
 DECL|enumerator|BACKGROUND_FILL
 name|BACKGROUND_FILL
 block|,
+comment|/*< nick=BG_IMAGE_FILL>*/
 DECL|enumerator|WHITE_FILL
 name|WHITE_FILL
 block|,
+comment|/*< nick=WHITE_IMAGE_FILL>*/
 DECL|enumerator|TRANSPARENT_FILL
 name|TRANSPARENT_FILL
 block|,
+comment|/*< nick=TRANS_IMAGE_FILL>*/
 DECL|enumerator|NO_FILL
 name|NO_FILL
+comment|/*< nick=NO_IMAGE_FILL>*/
 DECL|typedef|GimpFillType
 block|}
 name|GimpFillType

@@ -99,8 +99,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< chop=RUN_>*/
-DECL|enum|__anon2c2ba1df0103
+DECL|enum|__anon2ae36bba0103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE

@@ -36,7 +36,7 @@ name|_
 parameter_list|(
 name|String
 parameter_list|)
-value|gettext(String)
+value|gettext (String)
 end_define
 
 begin_ifdef
@@ -53,7 +53,7 @@ name|N_
 parameter_list|(
 name|String
 parameter_list|)
-value|gettext_noop(String)
+value|gettext_noop (String)
 end_define
 
 begin_else
@@ -83,30 +83,8 @@ directive|else
 end_else
 
 begin_comment
-comment|/* NLS is disabled */
+comment|/* Stubs that do something close enough.  */
 end_comment
-
-begin_define
-DECL|macro|_ (String)
-define|#
-directive|define
-name|_
-parameter_list|(
-name|String
-parameter_list|)
-value|(String)
-end_define
-
-begin_define
-DECL|macro|N_ (String)
-define|#
-directive|define
-name|N_
-parameter_list|(
-name|String
-parameter_list|)
-value|(String)
-end_define
 
 begin_define
 DECL|macro|textdomain (String)
@@ -131,31 +109,31 @@ value|(String)
 end_define
 
 begin_define
-DECL|macro|dgettext (Domain,String)
+DECL|macro|dgettext (Domain,Message)
 define|#
 directive|define
 name|dgettext
 parameter_list|(
 name|Domain
 parameter_list|,
-name|String
+name|Message
 parameter_list|)
-value|(String)
+value|(Message)
 end_define
 
 begin_define
-DECL|macro|dcgettext (Domain,String,Type)
+DECL|macro|dcgettext (Domain,Message,Type)
 define|#
 directive|define
 name|dcgettext
 parameter_list|(
 name|Domain
 parameter_list|,
-name|String
+name|Message
 parameter_list|,
 name|Type
 parameter_list|)
-value|(String)
+value|(Message)
 end_define
 
 begin_define
@@ -169,6 +147,28 @@ parameter_list|,
 name|Directory
 parameter_list|)
 value|(Domain)
+end_define
+
+begin_define
+DECL|macro|_ (String)
+define|#
+directive|define
+name|_
+parameter_list|(
+name|String
+parameter_list|)
+value|(String)
+end_define
+
+begin_define
+DECL|macro|N_ (String)
+define|#
+directive|define
+name|N_
+parameter_list|(
+name|String
+parameter_list|)
+value|(String)
 end_define
 
 begin_endif

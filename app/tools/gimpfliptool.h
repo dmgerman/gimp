@@ -22,25 +22,15 @@ directive|include
 file|"tools.h"
 end_include
 
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2784dd870103
-block|{
-DECL|enumerator|FLIP_HORZ
-name|FLIP_HORZ
-block|,
-DECL|enumerator|FLIP_VERT
-name|FLIP_VERT
-DECL|typedef|FlipType
-block|}
-name|FlipType
-typedef|;
-end_typedef
-
 begin_comment
 comment|/*  Flip tool functions  */
 end_comment
+
+begin_include
+include|#
+directive|include
+file|"gimpimage.h"
+end_include
 
 begin_function_decl
 name|void
@@ -73,7 +63,7 @@ modifier|*
 parameter_list|,
 name|int
 parameter_list|,
-name|FlipType
+name|OrientationType
 parameter_list|)
 function_decl|;
 end_function_decl

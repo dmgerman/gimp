@@ -245,9 +245,9 @@ literal|2
 index|]
 init|=
 block|{
-name|FLIP_HORZ
+name|ORIENTATION_HORIZONTAL
 block|,
-name|FLIP_VERT
+name|ORIENTATION_VERTICAL
 block|}
 decl_stmt|;
 comment|/*  the new flip tool options structure  */
@@ -289,7 +289,7 @@ name|options
 operator|->
 name|type_d
 operator|=
-name|FLIP_HORZ
+name|ORIENTATION_HORIZONTAL
 expr_stmt|;
 comment|/*  the main vbox  */
 name|vbox
@@ -421,7 +421,7 @@ name|flip_options
 operator|->
 name|type
 operator|==
-name|FLIP_HORZ
+name|ORIENTATION_HORIZONTAL
 condition|)
 name|gtk_toggle_button_set_active
 argument_list|(
@@ -431,7 +431,7 @@ name|flip_options
 operator|->
 name|type_w
 index|[
-name|FLIP_VERT
+name|ORIENTATION_VERTICAL
 index|]
 argument_list|)
 argument_list|,
@@ -447,7 +447,7 @@ name|flip_options
 operator|->
 name|type_w
 index|[
-name|FLIP_HORZ
+name|ORIENTATION_HORIZONTAL
 index|]
 argument_list|)
 argument_list|,
@@ -740,7 +740,7 @@ name|flip_options
 operator|->
 name|type
 operator|==
-name|FLIP_HORZ
+name|ORIENTATION_HORIZONTAL
 condition|)
 name|ctype
 operator|=
@@ -873,10 +873,10 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|flip_tool_flip (GImage * gimage,GimpDrawable * drawable,TileManager * orig,int flip,FlipType type)
+DECL|function|flip_tool_flip (GimpImage * gimage,GimpDrawable * drawable,TileManager * orig,int flip,OrientationType type)
 name|flip_tool_flip
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -891,7 +891,7 @@ parameter_list|,
 name|int
 name|flip
 parameter_list|,
-name|FlipType
+name|OrientationType
 name|type
 parameter_list|)
 block|{
@@ -1048,7 +1048,7 @@ if|if
 condition|(
 name|type
 operator|==
-name|FLIP_HORZ
+name|ORIENTATION_HORIZONTAL
 condition|)
 for|for
 control|(

@@ -39,6 +39,11 @@ block|{
 endif|#
 directive|endif
 comment|/* __cplusplus */
+DECL|macro|GIMP_TYPE_CHAIN_BUTTON
+define|#
+directive|define
+name|GIMP_TYPE_CHAIN_BUTTON
+value|(gimp_chain_button_get_type ())
 DECL|macro|GIMP_CHAIN_BUTTON (obj)
 define|#
 directive|define
@@ -46,7 +51,7 @@ name|GIMP_CHAIN_BUTTON
 parameter_list|(
 name|obj
 parameter_list|)
-value|GTK_CHECK_CAST (obj, gimp_chain_button_get_type (), GimpChainButton)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_CHAIN_BUTTON, GimpChainButton))
 DECL|macro|GIMP_CHAIN_BUTTON_CLASS (klass)
 define|#
 directive|define
@@ -54,7 +59,7 @@ name|GIMP_CHAIN_BUTTON_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|GTK_CHECK_CLASS_CAST (klass, gimp_chain_button_get_type (), GimpChainButtonClass)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_CHAIN_BUTTON, GimpChainButtonClass))
 DECL|macro|GIMP_IS_CHAIN_BUTTON (obj)
 define|#
 directive|define
@@ -62,7 +67,15 @@ name|GIMP_IS_CHAIN_BUTTON
 parameter_list|(
 name|obj
 parameter_list|)
-value|GTK_CHECK_TYPE (obj, gimp_chain_button_get_type ())
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_CHAIN_BUTTON))
+DECL|macro|GIMP_IS_CHAIN_BUTTON_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_CHAIN_BUTTON_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CHAIN_BUTTON))
 DECL|typedef|GimpChainButton
 typedef|typedef
 name|struct
@@ -75,9 +88,9 @@ name|struct
 name|_GimpChainButtonClass
 name|GimpChainButtonClass
 typedef|;
-DECL|enum|__anon2900e4a20103
 typedef|typedef
 enum|enum
+DECL|enum|__anon2968091b0103
 block|{
 DECL|enumerator|GIMP_CHAIN_TOP
 name|GIMP_CHAIN_TOP

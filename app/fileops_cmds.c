@@ -248,7 +248,7 @@ name|PDB_INT32
 block|,
 literal|"run_mode"
 block|,
-literal|"The run mode: INTERACTIVE (0) or NONINTERACTIVE (1)"
+literal|"The run mode: RUN_INTERACTIVE (0) or RUN_NONINTERACTIVE (1)"
 block|}
 block|,
 block|{
@@ -472,7 +472,7 @@ name|PDB_INT32
 block|,
 literal|"run_mode"
 block|,
-literal|"The run mode: INTERACTIVE (0) or NONINTERACTIVE (1)"
+literal|"The run mode: RUN_INTERACTIVE (0) or RUN_NONINTERACTIVE (1)"
 block|}
 block|,
 block|{

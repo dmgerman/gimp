@@ -121,26 +121,31 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< chop=_GIMAGE>*/
-DECL|enum|__anon294a0afe0103
+DECL|enum|__anon2b4ba0390103
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
 block|,
+comment|/*< nick=RGB_IMAGE>*/
 DECL|enumerator|RGBA_GIMAGE
 name|RGBA_GIMAGE
 block|,
+comment|/*< nick=RGBA_IMAGE>*/
 DECL|enumerator|GRAY_GIMAGE
 name|GRAY_GIMAGE
 block|,
+comment|/*< nick=GRAY_IMAGE>*/
 DECL|enumerator|GRAYA_GIMAGE
 name|GRAYA_GIMAGE
 block|,
+comment|/*< nick=GRAYA_IMAGE>*/
 DECL|enumerator|INDEXED_GIMAGE
 name|INDEXED_GIMAGE
 block|,
+comment|/*< nick=INDEXED_IMAGE>*/
 DECL|enumerator|INDEXEDA_GIMAGE
 name|INDEXEDA_GIMAGE
+comment|/*< nick=INDEXEDA_IMAGE>*/
 DECL|typedef|GimpImageType
 block|}
 name|GimpImageType
@@ -225,7 +230,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294a0afe0203
+DECL|enum|__anon2b4ba0390203
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -250,28 +255,29 @@ value|768
 end_define
 
 begin_typedef
-DECL|enum|__anon294a0afe0303
+DECL|enum|__anon2b4ba0390303
 typedef|typedef
 enum|enum
 block|{
-comment|/*< chop=_GUIDE>*/
-DECL|enumerator|HORIZONTAL_GUIDE
-name|HORIZONTAL_GUIDE
-init|=
-literal|1
+comment|/*< chop=ORIENTATION_>*/
+DECL|enumerator|ORIENTATION_UNKNOWN
+name|ORIENTATION_UNKNOWN
 block|,
-DECL|enumerator|VERTICAL_GUIDE
-name|VERTICAL_GUIDE
-DECL|typedef|GuideOrientation
+DECL|enumerator|ORIENTATION_HORIZONTAL
+name|ORIENTATION_HORIZONTAL
+block|,
+DECL|enumerator|ORIENTATION_VERTICAL
+name|ORIENTATION_VERTICAL
+DECL|typedef|OrientationType
 block|}
-name|GuideOrientation
+name|OrientationType
 typedef|;
 end_typedef
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294a0afe0403
+DECL|enum|__anon2b4ba0390403
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -299,7 +305,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294a0afe0503
+DECL|enum|__anon2b4ba0390503
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY

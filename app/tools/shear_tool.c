@@ -390,7 +390,7 @@ index|[
 name|HORZ_OR_VERT
 index|]
 operator|=
-name|HORZ_SHEAR
+name|ORIENTATION_HORIZONTAL
 expr_stmt|;
 name|transform_core
 operator|->
@@ -507,9 +507,11 @@ end_function
 begin_function
 name|Tool
 modifier|*
-DECL|function|tools_new_shear_tool ()
+DECL|function|tools_new_shear_tool (void)
 name|tools_new_shear_tool
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|Tool
 modifier|*
@@ -973,13 +975,13 @@ index|[
 name|HORZ_OR_VERT
 index|]
 operator|=
-name|HORZ_SHEAR
+name|ORIENTATION_HORIZONTAL
 expr_stmt|;
 name|transform_core
 operator|->
 name|trans_info
 index|[
-name|VERT_SHEAR
+name|ORIENTATION_VERTICAL
 index|]
 operator|=
 literal|0.0
@@ -994,13 +996,13 @@ index|[
 name|HORZ_OR_VERT
 index|]
 operator|=
-name|VERT_SHEAR
+name|ORIENTATION_VERTICAL
 expr_stmt|;
 name|transform_core
 operator|->
 name|trans_info
 index|[
-name|HORZ_SHEAR
+name|ORIENTATION_HORIZONTAL
 index|]
 operator|=
 literal|0.0
@@ -1062,7 +1064,7 @@ if|if
 condition|(
 name|dir
 operator|==
-name|HORZ_SHEAR
+name|ORIENTATION_HORIZONTAL
 condition|)
 name|transform_core
 operator|->
@@ -1091,7 +1093,7 @@ if|if
 condition|(
 name|dir
 operator|==
-name|HORZ_SHEAR
+name|ORIENTATION_HORIZONTAL
 condition|)
 name|transform_core
 operator|->
@@ -1120,7 +1122,7 @@ if|if
 condition|(
 name|dir
 operator|==
-name|HORZ_SHEAR
+name|ORIENTATION_HORIZONTAL
 condition|)
 name|transform_core
 operator|->
@@ -1149,7 +1151,7 @@ if|if
 condition|(
 name|dir
 operator|==
-name|HORZ_SHEAR
+name|ORIENTATION_HORIZONTAL
 condition|)
 name|transform_core
 operator|->
@@ -1331,7 +1333,7 @@ index|[
 name|HORZ_OR_VERT
 index|]
 operator|==
-name|HORZ_SHEAR
+name|ORIENTATION_HORIZONTAL
 condition|)
 name|gimp_matrix_xshear
 argument_list|(
@@ -1410,10 +1412,10 @@ end_function
 begin_function
 name|void
 modifier|*
-DECL|function|shear_tool_shear (GImage * gimage,GimpDrawable * drawable,GDisplay * gdisp,TileManager * float_tiles,int interpolation,GimpMatrix matrix)
+DECL|function|shear_tool_shear (GimpImage * gimage,GimpDrawable * drawable,GDisplay * gdisp,TileManager * float_tiles,int interpolation,GimpMatrix matrix)
 name|shear_tool_shear
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,

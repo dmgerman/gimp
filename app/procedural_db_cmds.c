@@ -10,13 +10,13 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"config.h"
+file|"procedural_db.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"procedural_db.h"
+file|"config.h"
 end_include
 
 begin_include

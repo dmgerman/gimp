@@ -311,10 +311,12 @@ block|}
 end_function
 
 begin_function
-name|guint
-DECL|function|gimp_chain_button_get_type ()
+name|GtkType
+DECL|function|gimp_chain_button_get_type (void)
 name|gimp_chain_button_get_type
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|guint

@@ -631,7 +631,7 @@ comment|/* Crop area-select functions */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27d893ed0103
+DECL|enum|__anon2c2dec980103
 typedef|typedef
 enum|enum
 block|{
@@ -1970,7 +1970,7 @@ name|orientation
 condition|)
 block|{
 case|case
-name|HORIZONTAL_GUIDE
+name|ORIENTATION_HORIZONTAL
 case|:
 if|if
 condition|(
@@ -1996,7 +1996,7 @@ name|TRUE
 expr_stmt|;
 break|break;
 case|case
-name|VERTICAL_GUIDE
+name|ORIENTATION_VERTICAL
 case|:
 if|if
 condition|(
@@ -2058,7 +2058,7 @@ name|guide
 operator|->
 name|orientation
 operator|==
-name|HORIZONTAL_GUIDE
+name|ORIENTATION_HORIZONTAL
 condition|)
 block|{
 name|guide

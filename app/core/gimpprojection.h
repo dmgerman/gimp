@@ -37,6 +37,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/color_display.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gdisplayF.h"
 end_include
 
@@ -572,6 +578,20 @@ name|IdleRenderStruct
 name|idle_render
 decl_stmt|;
 comment|/* state of this gdisplay's render thread   */
+DECL|member|cd_name
+name|char
+modifier|*
+name|cd_name
+decl_stmt|;
+comment|/* color display conversion stuff           */
+DECL|member|cd_ID
+name|gpointer
+name|cd_ID
+decl_stmt|;
+DECL|member|cd_convert
+name|GimpColorDisplayConvert
+name|cd_convert
+decl_stmt|;
 block|}
 struct|;
 end_struct

@@ -31,8 +31,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-comment|/*< chop=_CONVOLVE>*/
-DECL|enum|__anon299ed4d70103
+DECL|enum|__anon2af587260103
 block|{
 DECL|enumerator|BLUR_CONVOLVE
 name|BLUR_CONVOLVE

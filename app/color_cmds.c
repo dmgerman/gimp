@@ -1219,7 +1219,7 @@ name|PDB_INT32
 block|,
 literal|"channel"
 block|,
-literal|"The channel to modify: { VALUE/GRAY (0), RED (1), GREEN (2), BLUE (3) }"
+literal|"The channel to modify: { VALUE_LUT (0), RED_LUT (1), GREEN_LUT (2), BLUE_LUT (3) }"
 block|}
 block|,
 block|{
@@ -2631,7 +2631,7 @@ name|PDB_INT32
 block|,
 literal|"channel"
 block|,
-literal|"The channel to modify: { VALUE/GRAY (0), RED (1), GREEN (2), BLUE (3), ALPHA (4) }"
+literal|"The channel to modify: { VALUE_LUT (0), RED_LUT (1), GREEN_LUT (2), BLUE_LUT (3), ALPHA_LUT (4) }"
 block|}
 block|,
 block|{
@@ -3150,7 +3150,7 @@ name|PDB_INT32
 block|,
 literal|"channel"
 block|,
-literal|"The channel to modify: { VALUE/GRAY (0), RED (1), GREEN (2), BLUE (3), ALPHA (4) }"
+literal|"The channel to modify: { VALUE_LUT (0), RED_LUT (1), GREEN_LUT (2), BLUE_LUT (3), ALPHA_LUT (4) }"
 block|}
 block|,
 block|{
@@ -4310,7 +4310,7 @@ name|PDB_INT32
 block|,
 literal|"channel"
 block|,
-literal|"The channel to modify: { VALUE/GRAY (0), RED (1), GREEN (2), BLUE (3), ALPHA (4) }"
+literal|"The channel to modify: { VALUE_LUT (0), RED_LUT (1), GREEN_LUT (2), BLUE_LUT (3), ALPHA_LUT (4) }"
 block|}
 block|,
 block|{

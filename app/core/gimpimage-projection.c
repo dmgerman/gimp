@@ -503,7 +503,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon275ee4a60103
+DECL|enum|__anon29917da60103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -1765,7 +1765,7 @@ name|orientation
 condition|)
 block|{
 case|case
-name|HORIZONTAL_GUIDE
+name|ORIENTATION_HORIZONTAL
 case|:
 name|guide
 operator|->
@@ -1796,7 +1796,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|VERTICAL_GUIDE
+name|ORIENTATION_VERTICAL
 case|:
 name|guide
 operator|->
@@ -2210,7 +2210,7 @@ name|orientation
 condition|)
 block|{
 case|case
-name|HORIZONTAL_GUIDE
+name|ORIENTATION_HORIZONTAL
 case|:
 name|guide
 operator|->
@@ -2228,7 +2228,7 @@ name|old_height
 expr_stmt|;
 break|break;
 case|case
-name|VERTICAL_GUIDE
+name|ORIENTATION_VERTICAL
 case|:
 name|guide
 operator|->
@@ -4457,7 +4457,7 @@ name|guide
 operator|->
 name|orientation
 operator|=
-name|HORIZONTAL_GUIDE
+name|ORIENTATION_HORIZONTAL
 expr_stmt|;
 name|gimage
 operator|->
@@ -4526,7 +4526,7 @@ name|guide
 operator|->
 name|orientation
 operator|=
-name|VERTICAL_GUIDE
+name|ORIENTATION_VERTICAL
 expr_stmt|;
 name|gimage
 operator|->

@@ -16,12 +16,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -620,7 +614,7 @@ name|PDB_INT32
 block|,
 literal|"fill_type"
 block|,
-literal|"The type of fill: FOREGROUND_FILL (0), BACKGROUND_FILL (1), WHITE_FILL (2), TRANSPARENT_FILL (3), NO_FILL (4)"
+literal|"The type of fill: FG_IMAGE_FILL (0), BG_IMAGE_FILL (1), WHITE_IMAGE_FILL (2), TRANS_IMAGE_FILL (3), NO_IMAGE_FILL (4)"
 block|}
 block|}
 decl_stmt|;
@@ -1392,7 +1386,7 @@ name|PDB_INT32
 block|,
 literal|"type"
 block|,
-literal|"The drawable's type: { RGB (0), RGBA (1), GRAY (2), GRAYA (3), INDEXED (4), INDEXEDA (5) }"
+literal|"The drawable's type: { RGB_IMAGE (0), RGBA_IMAGE (1), GRAY_IMAGE (2), GRAYA_IMAGE (3), INDEXED_IMAGE (4), INDEXEDA_IMAGE (5) }"
 block|}
 block|}
 decl_stmt|;
@@ -1672,7 +1666,7 @@ name|PDB_INT32
 block|,
 literal|"type_with_alpha"
 block|,
-literal|"The drawable's type with alpha: { RGBA (1), GRAYA (3), INDEXEDA (5) }"
+literal|"The drawable's type with alpha: { RGBA_IMAGE (1), GRAYA_IMAGE (3), INDEXEDA_IMAGE (5) }"
 block|}
 block|}
 decl_stmt|;
@@ -4211,7 +4205,6 @@ name|dwidth
 operator|>
 name|dheight
 condition|)
-block|{
 name|req_height
 operator|=
 operator|(
@@ -4222,9 +4215,7 @@ operator|)
 operator|/
 name|dwidth
 expr_stmt|;
-block|}
 else|else
-block|{
 name|req_width
 operator|=
 operator|(
@@ -4235,7 +4226,6 @@ operator|)
 operator|/
 name|dheight
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|GIMP_IS_LAYER
@@ -4288,10 +4278,6 @@ name|bytes
 expr_stmt|;
 name|thumbnail_data
 operator|=
-operator|(
-name|gint8
-operator|*
-operator|)
 name|g_new
 argument_list|(
 name|gint8
