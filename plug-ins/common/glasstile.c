@@ -56,7 +56,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b0a68f0108
+DECL|struct|__anon2b5c7ba30108
 block|{
 DECL|member|xblock
 name|gint
@@ -188,7 +188,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|preview
 specifier|static
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 decl_stmt|;
@@ -635,7 +635,7 @@ name|GlassValues
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_fixme_preview_free
+name|gimp_old_preview_free
 argument_list|(
 name|preview
 argument_list|)
@@ -787,7 +787,7 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_fixme_preview_new
+name|gimp_old_preview_new
 argument_list|(
 name|drawable
 argument_list|,
@@ -1742,7 +1742,7 @@ condition|(
 name|preview_mode
 condition|)
 block|{
-name|gimp_fixme_preview_do_row
+name|gimp_old_preview_do_row
 argument_list|(
 name|preview
 argument_list|,

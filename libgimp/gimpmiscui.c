@@ -81,10 +81,10 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_fixme_preview_put_in_frame (GimpFixMePreview * preview)
-name|gimp_fixme_preview_put_in_frame
+DECL|function|gimp_old_preview_put_in_frame (GimpOldPreview * preview)
+name|gimp_old_preview_put_in_frame
 parameter_list|(
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -203,10 +203,10 @@ block|}
 end_function
 
 begin_function
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
-DECL|function|gimp_fixme_preview_new (GimpDrawable * drawable,gboolean has_frame)
-name|gimp_fixme_preview_new
+DECL|function|gimp_old_preview_new (GimpDrawable * drawable,gboolean has_frame)
+name|gimp_old_preview_new
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -216,13 +216,13 @@ name|gboolean
 name|has_frame
 parameter_list|)
 block|{
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 init|=
 name|g_new0
 argument_list|(
-name|GimpFixMePreview
+name|GimpOldPreview
 argument_list|,
 literal|1
 argument_list|)
@@ -246,7 +246,7 @@ if|if
 condition|(
 name|drawable
 condition|)
-name|gimp_fixme_preview_fill_with_thumb
+name|gimp_old_preview_fill_with_thumb
 argument_list|(
 name|preview
 argument_list|,
@@ -259,7 +259,7 @@ if|if
 condition|(
 name|has_frame
 condition|)
-name|gimp_fixme_preview_put_in_frame
+name|gimp_old_preview_put_in_frame
 argument_list|(
 name|preview
 argument_list|)
@@ -272,10 +272,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_fixme_preview_free (GimpFixMePreview * preview)
-name|gimp_fixme_preview_free
+DECL|function|gimp_old_preview_free (GimpOldPreview * preview)
+name|gimp_old_preview_free
 parameter_list|(
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -317,10 +317,10 @@ block|}
 end_function
 
 begin_function
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
-DECL|function|gimp_fixme_preview_new2 (GimpImageType drawable_type,gboolean has_frame)
-name|gimp_fixme_preview_new2
+DECL|function|gimp_old_preview_new2 (GimpImageType drawable_type,gboolean has_frame)
+name|gimp_old_preview_new2
 parameter_list|(
 name|GimpImageType
 name|drawable_type
@@ -329,7 +329,7 @@ name|gboolean
 name|has_frame
 parameter_list|)
 block|{
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 decl_stmt|;
@@ -346,7 +346,7 @@ name|preview
 operator|=
 name|g_new0
 argument_list|(
-name|GimpFixMePreview
+name|GimpOldPreview
 argument_list|,
 literal|1
 argument_list|)
@@ -476,7 +476,7 @@ if|if
 condition|(
 name|has_frame
 condition|)
-name|gimp_fixme_preview_put_in_frame
+name|gimp_old_preview_put_in_frame
 argument_list|(
 name|preview
 argument_list|)
@@ -548,10 +548,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_fixme_preview_put_pixel (GimpFixMePreview * preview,gint x,gint y,const guchar * pixel)
-name|gimp_fixme_preview_put_pixel
+DECL|function|gimp_old_preview_put_pixel (GimpOldPreview * preview,gint x,gint y,const guchar * pixel)
+name|gimp_old_preview_put_pixel
 parameter_list|(
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 parameter_list|,
@@ -671,10 +671,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_fixme_preview_get_pixel (GimpFixMePreview * preview,gint x,gint y,guchar * pixel)
-name|gimp_fixme_preview_get_pixel
+DECL|function|gimp_old_preview_get_pixel (GimpOldPreview * preview,gint x,gint y,guchar * pixel)
+name|gimp_old_preview_get_pixel
 parameter_list|(
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 parameter_list|,
@@ -794,10 +794,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_fixme_preview_do_row (GimpFixMePreview * preview,gint row,gint width,const guchar * src)
-name|gimp_fixme_preview_do_row
+DECL|function|gimp_old_preview_do_row (GimpOldPreview * preview,gint row,gint width,const guchar * src)
+name|gimp_old_preview_do_row
 parameter_list|(
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 parameter_list|,
@@ -1266,14 +1266,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_fixme_preview_update (GimpFixMePreview * preview,GimpFixeMePreviewFunc func,gpointer data)
-name|gimp_fixme_preview_update
+DECL|function|gimp_old_preview_update (GimpOldPreview * preview,GimpOldPreviewFunc func,gpointer data)
+name|gimp_old_preview_update
 parameter_list|(
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 parameter_list|,
-name|GimpFixeMePreviewFunc
+name|GimpOldPreviewFunc
 name|func
 parameter_list|,
 name|gpointer
@@ -1382,7 +1382,7 @@ operator|+=
 name|bpp
 expr_stmt|;
 block|}
-name|gimp_fixme_preview_do_row
+name|gimp_old_preview_do_row
 argument_list|(
 name|preview
 argument_list|,
@@ -1413,10 +1413,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_fixme_preview_fill_with_thumb (GimpFixMePreview * preview,gint32 drawable_ID)
-name|gimp_fixme_preview_fill_with_thumb
+DECL|function|gimp_old_preview_fill_with_thumb (GimpOldPreview * preview,gint32 drawable_ID)
+name|gimp_old_preview_fill_with_thumb
 parameter_list|(
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 parameter_list|,
@@ -1618,7 +1618,7 @@ name|y
 operator|++
 control|)
 block|{
-name|gimp_fixme_preview_do_row
+name|gimp_old_preview_do_row
 argument_list|(
 name|preview
 argument_list|,
@@ -1680,10 +1680,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_fixme_preview_fill (GimpFixMePreview * preview,GimpDrawable * drawable)
-name|gimp_fixme_preview_fill
+DECL|function|gimp_old_preview_fill (GimpOldPreview * preview,GimpDrawable * drawable)
+name|gimp_old_preview_fill
 parameter_list|(
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 parameter_list|,
@@ -1990,7 +1990,7 @@ name|y
 operator|++
 control|)
 block|{
-name|gimp_fixme_preview_do_row
+name|gimp_old_preview_do_row
 argument_list|(
 name|preview
 argument_list|,
@@ -2061,10 +2061,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_fixme_preview_fill_scaled (GimpFixMePreview * preview,GimpDrawable * drawable)
-name|gimp_fixme_preview_fill_scaled
+DECL|function|gimp_old_preview_fill_scaled (GimpOldPreview * preview,GimpDrawable * drawable)
+name|gimp_old_preview_fill_scaled
 parameter_list|(
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 parameter_list|,
@@ -2450,7 +2450,7 @@ operator|+=
 name|dx
 expr_stmt|;
 block|}
-name|gimp_fixme_preview_do_row
+name|gimp_old_preview_do_row
 argument_list|(
 name|preview
 argument_list|,

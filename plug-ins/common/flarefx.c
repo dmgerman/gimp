@@ -72,7 +72,7 @@ DECL|macro|PREVIEW_MASK
 define|#
 directive|define
 name|PREVIEW_MASK
-value|(GDK_EXPOSURE_MASK | \ 		      GDK_BUTTON_PRESS_MASK | \ 		      GDK_BUTTON1_MOTION_MASK)
+value|(GDK_EXPOSURE_MASK | \                       GDK_BUTTON_PRESS_MASK | \                       GDK_BUTTON1_MOTION_MASK)
 end_define
 
 begin_define
@@ -106,7 +106,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a32d70c0108
+DECL|struct|__anon2b1b1f160108
 block|{
 DECL|member|posx
 name|gint
@@ -181,7 +181,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a32d70c0208
+DECL|struct|__anon2b1b1f160208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -739,7 +739,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|preview
 specifier|static
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 decl_stmt|;
@@ -836,7 +836,7 @@ argument_list|,
 comment|/* Copyright */
 literal|"May 2000"
 argument_list|,
-comment|/* don't translate '<Image>' entry, 			   * it is keyword for the gtk toolkit */
+comment|/* don't translate '<Image>' entry,                            * it is keyword for the gtk toolkit */
 name|N_
 argument_list|(
 literal|"<Image>/Filters/Light Effects/_FlareFX..."
@@ -2087,7 +2087,7 @@ condition|(
 name|preview_mode
 condition|)
 block|{
-name|gimp_fixme_preview_do_row
+name|gimp_old_preview_do_row
 argument_list|(
 name|preview
 argument_list|,
@@ -5319,7 +5319,7 @@ expr_stmt|;
 comment|/* PREVIEW */
 name|preview
 operator|=
-name|gimp_fixme_preview_new
+name|gimp_old_preview_new
 argument_list|(
 name|drawable
 argument_list|,

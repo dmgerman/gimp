@@ -110,7 +110,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28bdad8f0103
+DECL|enum|__anon2bf9fcf80103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -126,7 +126,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28bdad8f0203
+DECL|enum|__anon2bf9fcf80203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -142,7 +142,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28bdad8f0303
+DECL|enum|__anon2bf9fcf80303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -524,7 +524,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|preview
 specifier|static
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 decl_stmt|;
@@ -1404,7 +1404,7 @@ condition|(
 name|preview_mode
 condition|)
 block|{
-name|gimp_fixme_preview_do_row
+name|gimp_old_preview_do_row
 argument_list|(
 name|preview
 argument_list|,
@@ -1527,7 +1527,7 @@ argument_list|,
 name|row_stride
 argument_list|)
 expr_stmt|;
-name|gimp_fixme_preview_do_row
+name|gimp_old_preview_do_row
 argument_list|(
 name|preview
 argument_list|,
@@ -1958,7 +1958,7 @@ condition|(
 name|preview_mode
 condition|)
 block|{
-name|gimp_fixme_preview_do_row
+name|gimp_old_preview_do_row
 argument_list|(
 name|preview
 argument_list|,
@@ -3921,14 +3921,14 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_fixme_preview_new
+name|gimp_old_preview_new
 argument_list|(
 name|NULL
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_fixme_preview_fill
+name|gimp_old_preview_fill
 argument_list|(
 name|preview
 argument_list|,

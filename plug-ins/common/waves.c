@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29edb4150103
+DECL|enum|__anon2a47bd6a0103
 block|{
 DECL|enumerator|MODE_SMEAR
 name|MODE_SMEAR
@@ -61,7 +61,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29edb4150208
+DECL|struct|__anon2a47bd6a0208
 block|{
 DECL|member|amplitude
 name|gdouble
@@ -106,7 +106,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|preview
 specifier|static
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 decl_stmt|;
@@ -1958,7 +1958,7 @@ name|y
 operator|++
 control|)
 block|{
-name|gimp_fixme_preview_do_row
+name|gimp_old_preview_do_row
 argument_list|(
 name|preview
 argument_list|,
@@ -2167,15 +2167,15 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_fixme_preview_new
+name|gimp_old_preview_new
 argument_list|(
 name|drawable
 argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* FIXME: this forces gimp_fixme_preview to set its alpha correctly */
-name|gimp_fixme_preview_fill_scaled
+comment|/* FIXME: this forces gimp_old_preview to set its alpha correctly */
+name|gimp_old_preview_fill_scaled
 argument_list|(
 name|preview
 argument_list|,
@@ -2698,7 +2698,7 @@ argument_list|)
 expr_stmt|;
 comment|/* Use the formula described above. */
 comment|/* Calculate waved point and scale again to ellipsify */
-comment|/* 	   * Reflective waves are strange - the effect is much 	   * more like a mirror which is in the shape of 	   * the wave than anything else. 	   */
+comment|/*            * Reflective waves are strange - the effect is much            * more like a mirror which is in the shape of            * the wave than anything else.            */
 if|if
 condition|(
 name|reflective

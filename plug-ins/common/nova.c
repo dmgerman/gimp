@@ -142,7 +142,7 @@ end_define
 begin_decl_stmt
 DECL|variable|preview
 specifier|static
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 decl_stmt|;
@@ -161,7 +161,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3cb0830108
+DECL|struct|__anon2accd74a0108
 block|{
 DECL|member|xcenter
 name|gint
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3cb0830208
+DECL|struct|__anon2accd74a0208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -2203,7 +2203,7 @@ expr_stmt|;
 comment|/* PREVIEW */
 name|preview
 operator|=
-name|gimp_fixme_preview_new
+name|gimp_old_preview_new
 argument_list|(
 name|drawable
 argument_list|,
@@ -3949,8 +3949,8 @@ name|GIMP_RGB_COMPOSITE_BEHIND
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  	       c = CLAMP (w1 * w, 0.0, 1.0); */
-comment|/*  	       gimp_rgb_add (&color, c); */
+comment|/*             c = CLAMP (w1 * w, 0.0, 1.0); */
+comment|/*             gimp_rgb_add (&color, c); */
 name|gimp_rgb_get_uchar
 argument_list|(
 operator|&
@@ -3982,7 +3982,7 @@ name|preview
 operator|->
 name|rowstride
 expr_stmt|;
-name|gimp_fixme_preview_do_row
+name|gimp_old_preview_do_row
 argument_list|(
 name|preview
 argument_list|,

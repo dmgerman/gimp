@@ -37,7 +37,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b686e240108
+DECL|struct|__anon27e9ee5f0108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -107,19 +107,19 @@ DECL|member|is_gray
 name|gboolean
 name|is_gray
 decl_stmt|;
-DECL|typedef|GimpFixMePreview
+DECL|typedef|GimpOldPreview
 block|}
-name|GimpFixMePreview
+name|GimpOldPreview
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpFixeMePreviewFunc
+DECL|typedef|GimpOldPreviewFunc
 typedef|typedef
 name|void
 function_decl|(
 modifier|*
-name|GimpFixeMePreviewFunc
+name|GimpOldPreviewFunc
 function_decl|)
 parameter_list|(
 specifier|const
@@ -141,9 +141,9 @@ function_decl|;
 end_typedef
 
 begin_function_decl
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
-name|gimp_fixme_preview_new
+name|gimp_old_preview_new
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -156,9 +156,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
-name|gimp_fixme_preview_new2
+name|gimp_old_preview_new2
 parameter_list|(
 name|GimpImageType
 name|drawable_type
@@ -171,9 +171,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_fixme_preview_free
+name|gimp_old_preview_free
 parameter_list|(
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 parameter_list|)
@@ -182,13 +182,13 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_fixme_preview_update
+name|gimp_old_preview_update
 parameter_list|(
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 parameter_list|,
-name|GimpFixeMePreviewFunc
+name|GimpOldPreviewFunc
 name|func
 parameter_list|,
 name|gpointer
@@ -199,9 +199,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_fixme_preview_fill_with_thumb
+name|gimp_old_preview_fill_with_thumb
 parameter_list|(
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 parameter_list|,
@@ -213,9 +213,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_fixme_preview_fill
+name|gimp_old_preview_fill
 parameter_list|(
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 parameter_list|,
@@ -228,9 +228,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_fixme_preview_fill_scaled
+name|gimp_old_preview_fill_scaled
 parameter_list|(
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 parameter_list|,
@@ -243,9 +243,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_fixme_preview_do_row
+name|gimp_old_preview_do_row
 parameter_list|(
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 parameter_list|,
@@ -265,9 +265,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_fixme_preview_put_pixel
+name|gimp_old_preview_put_pixel
 parameter_list|(
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 parameter_list|,
@@ -287,9 +287,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_fixme_preview_get_pixel
+name|gimp_old_preview_get_pixel
 parameter_list|(
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 parameter_list|,

@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6360c30103
+DECL|enum|__anon27d5db170103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -70,7 +70,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6360c30203
+DECL|enum|__anon27d5db170203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -2032,7 +2032,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|preview
 specifier|static
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 decl_stmt|;
@@ -2800,7 +2800,7 @@ name|y
 operator|++
 control|)
 block|{
-name|gimp_fixme_preview_do_row
+name|gimp_old_preview_do_row
 argument_list|(
 name|preview
 argument_list|,
@@ -14805,7 +14805,7 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_fixme_preview_new
+name|gimp_old_preview_new
 argument_list|(
 name|drawable
 argument_list|,

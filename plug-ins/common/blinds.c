@@ -126,7 +126,7 @@ end_typedef
 begin_decl_stmt
 DECL|variable|preview
 specifier|static
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 decl_stmt|;
@@ -135,7 +135,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ed0b4b0108
+DECL|struct|__anon290c97a50108
 block|{
 DECL|member|img_bpp
 name|gint
@@ -958,14 +958,14 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_fixme_preview_new
+name|gimp_old_preview_new
 argument_list|(
 name|NULL
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_fixme_preview_fill_scaled
+name|gimp_old_preview_fill_scaled
 argument_list|(
 name|preview
 argument_list|,
@@ -2260,7 +2260,7 @@ argument_list|,
 name|bg
 argument_list|)
 expr_stmt|;
-name|gimp_fixme_preview_do_row
+name|gimp_old_preview_do_row
 argument_list|(
 name|preview
 argument_list|,
@@ -2508,7 +2508,7 @@ operator|)
 operator|)
 expr_stmt|;
 block|}
-name|gimp_fixme_preview_do_row
+name|gimp_old_preview_do_row
 argument_list|(
 name|preview
 argument_list|,

@@ -128,7 +128,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28932eb80108
+DECL|struct|__anon2a422a490108
 block|{
 DECL|member|circle
 name|gdouble
@@ -159,7 +159,7 @@ end_typedef
 begin_decl_stmt
 DECL|variable|preview
 specifier|static
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 decl_stmt|;
@@ -2715,7 +2715,7 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_fixme_preview_new
+name|gimp_old_preview_new
 argument_list|(
 name|drawable
 argument_list|,
@@ -3267,7 +3267,7 @@ argument_list|(
 name|dialog
 argument_list|)
 expr_stmt|;
-name|gimp_fixme_preview_free
+name|gimp_old_preview_free
 argument_list|(
 name|preview
 argument_list|)
@@ -3661,7 +3661,7 @@ operator|+=
 name|dx
 expr_stmt|;
 block|}
-name|gimp_fixme_preview_do_row
+name|gimp_old_preview_do_row
 argument_list|(
 name|preview
 argument_list|,

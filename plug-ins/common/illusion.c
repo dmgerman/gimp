@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * illusion.c  -- This is a plug-in for the GIMP 1.0  *  * Copyright (C) 1997  Hirotsuna Mizuno  *                     s1041150@u-aizu.ac.jp  *  * Preview and new mode added May 2000 by tim copperfield  * 		       timecop@japan.co.jp  * 		       http://www.ne.jp/asahi/linux/timecop  *  * This program is free software; you can redistribute it and/or modify it  * under the terms of the GNU General Public License as published by the Free  * Software Foundation; either version 2 of the License, or (at your option)  * any later version.  *  * This program is distributed in the hope that it will be useful, but WITHOUT  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or  * FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for  * more details.  *  * You should have received a copy of the GNU General Public License along with  * this program; if not, write to the Free Software Foundation, Inc.,  * 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/*  * illusion.c  -- This is a plug-in for the GIMP 1.0  *  * Copyright (C) 1997  Hirotsuna Mizuno  *                     s1041150@u-aizu.ac.jp  *  * Preview and new mode added May 2000 by tim copperfield  *                     timecop@japan.co.jp  *                     http://www.ne.jp/asahi/linux/timecop  *  * This program is free software; you can redistribute it and/or modify it  * under the terms of the GNU General Public License as published by the Free  * Software Foundation; either version 2 of the License, or (at your option)  * any later version.  *  * This program is distributed in the hope that it will be useful, but WITHOUT  * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or  * FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for  * more details.  *  * You should have received a copy of the GNU General Public License along with  * this program; if not, write to the Free Software Foundation, Inc.,  * 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_include
@@ -144,7 +144,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be502560108
+DECL|struct|__anon2893247c0108
 block|{
 DECL|member|division
 name|gint32
@@ -207,7 +207,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|preview
 specifier|static
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 decl_stmt|;
@@ -443,7 +443,7 @@ name|IllValues
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_fixme_preview_free
+name|gimp_old_preview_free
 argument_list|(
 name|preview
 argument_list|)
@@ -636,7 +636,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2be502560208
+DECL|struct|__anon2893247c0208
 typedef|typedef
 struct|struct
 block|{
@@ -1825,7 +1825,7 @@ index|]
 expr_stmt|;
 block|}
 block|}
-name|gimp_fixme_preview_do_row
+name|gimp_old_preview_do_row
 argument_list|(
 name|preview
 argument_list|,
@@ -2034,7 +2034,7 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_fixme_preview_new
+name|gimp_old_preview_new
 argument_list|(
 name|mangle
 argument_list|,

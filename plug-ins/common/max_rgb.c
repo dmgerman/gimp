@@ -171,7 +171,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1a6c1a0103
+DECL|enum|__anon2c1ecaa30103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -189,7 +189,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1a6c1a0208
+DECL|struct|__anon2c1ecaa30208
 block|{
 DECL|member|max_p
 name|gint
@@ -224,7 +224,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|preview
 specifier|static
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 decl_stmt|;
@@ -562,7 +562,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2c1a6c1a0308
+DECL|struct|__anon2c1ecaa30308
 typedef|typedef
 struct|struct
 block|{
@@ -839,7 +839,7 @@ condition|(
 name|preview_mode
 condition|)
 block|{
-name|gimp_fixme_preview_update
+name|gimp_old_preview_update
 argument_list|(
 name|preview
 argument_list|,
@@ -1006,7 +1006,7 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_fixme_preview_new
+name|gimp_old_preview_new
 argument_list|(
 name|drawable
 argument_list|,

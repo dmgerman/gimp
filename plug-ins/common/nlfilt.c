@@ -75,7 +75,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291f03000108
+DECL|struct|__anon27b9ca3c0108
 block|{
 DECL|member|img
 name|gint32
@@ -106,7 +106,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291f03000203
+DECL|enum|__anon27b9ca3c0203
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -135,7 +135,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|preview
 specifier|static
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 decl_stmt|;
@@ -2045,8 +2045,8 @@ argument_list|,
 name|filtno
 argument_list|)
 expr_stmt|;
-comment|/* 	 We should probably fix the edges!       */
-name|gimp_fixme_preview_do_row
+comment|/*          We should probably fix the edges!       */
+name|gimp_old_preview_do_row
 argument_list|(
 name|preview
 argument_list|,
@@ -2267,7 +2267,7 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_fixme_preview_new
+name|gimp_old_preview_new
 argument_list|(
 name|drawable
 argument_list|,

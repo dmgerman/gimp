@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29350e010108
+DECL|struct|__anon2bdba7880108
 block|{
 DECL|member|independent
 name|gint
@@ -97,7 +97,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29350e010208
+DECL|struct|__anon2bdba7880208
 block|{
 DECL|member|channels
 name|gint
@@ -295,7 +295,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|preview
 specifier|static
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 decl_stmt|;
@@ -969,7 +969,7 @@ if|if
 condition|(
 name|preview_mode
 condition|)
-name|gimp_fixme_preview_update
+name|gimp_old_preview_update
 argument_list|(
 name|preview
 argument_list|,
@@ -1239,7 +1239,7 @@ expr_stmt|;
 comment|/* preview */
 name|preview
 operator|=
-name|gimp_fixme_preview_new
+name|gimp_old_preview_new
 argument_list|(
 name|NULL
 argument_list|,
@@ -1271,7 +1271,7 @@ operator|->
 name|widget
 argument_list|)
 expr_stmt|;
-name|gimp_fixme_preview_fill
+name|gimp_old_preview_fill
 argument_list|(
 name|preview
 argument_list|,

@@ -244,7 +244,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|preview
 specifier|static
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 init|=
@@ -255,7 +255,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2966a3930108
+DECL|struct|__anon2b5aedcc0108
 block|{
 DECL|member|hwidth
 name|gint
@@ -767,7 +767,7 @@ name|data
 operator|.
 name|d_color
 expr_stmt|;
-comment|/*  FIXME: this used to be the alpha value 	                     param[7].data.d_int8; 	   */
+comment|/*  FIXME: this used to be the alpha value                              param[7].data.d_int8;            */
 name|grid_cfg
 operator|.
 name|vwidth
@@ -835,7 +835,7 @@ name|data
 operator|.
 name|d_color
 expr_stmt|;
-comment|/*  FIXME: this used to be the alpha value 			     param[12].data.d_int8; 	   */
+comment|/*  FIXME: this used to be the alpha value                              param[12].data.d_int8;            */
 name|grid_cfg
 operator|.
 name|iwidth
@@ -903,7 +903,7 @@ name|data
 operator|.
 name|d_color
 expr_stmt|;
-comment|/*  FIXME: this used to be the alpha value 			     param[17].data.d_int8); 	   */
+comment|/*  FIXME: this used to be the alpha value                              param[17].data.d_int8);            */
 block|}
 block|}
 else|else
@@ -942,7 +942,7 @@ operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
-name|gimp_fixme_preview_free
+name|gimp_old_preview_free
 argument_list|(
 name|preview
 argument_list|)
@@ -2291,7 +2291,7 @@ condition|(
 name|preview_mode
 condition|)
 block|{
-name|gimp_fixme_preview_do_row
+name|gimp_old_preview_do_row
 argument_list|(
 name|preview
 argument_list|,
@@ -3204,14 +3204,14 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_fixme_preview_new
+name|gimp_old_preview_new
 argument_list|(
 name|NULL
 argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_fixme_preview_fill
+name|gimp_old_preview_fill
 argument_list|(
 name|preview
 argument_list|,

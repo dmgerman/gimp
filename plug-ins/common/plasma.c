@@ -92,7 +92,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29659c490108
+DECL|struct|__anon29c82e6a0108
 block|{
 DECL|member|seed
 name|guint32
@@ -400,7 +400,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|preview
 specifier|static
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 decl_stmt|;
@@ -1051,7 +1051,7 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_fixme_preview_new2
+name|gimp_old_preview_new2
 argument_list|(
 name|drawable_type
 argument_list|,
@@ -1792,7 +1792,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_fixme_preview_get_pixel
+name|gimp_old_preview_get_pixel
 argument_list|(
 name|preview
 argument_list|,
@@ -1850,7 +1850,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_fixme_preview_put_pixel
+name|gimp_old_preview_put_pixel
 argument_list|(
 name|preview
 argument_list|,

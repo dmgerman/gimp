@@ -30519,7 +30519,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b750cb0108
+DECL|struct|__anon28b527550108
 block|{
 DECL|member|redstretch
 name|gdouble
@@ -30554,7 +30554,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b750cb0208
+DECL|struct|__anon28b527550208
 block|{
 DECL|member|run
 name|gint
@@ -30741,7 +30741,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|preview
 specifier|static
-name|GimpFixMePreview
+name|GimpOldPreview
 modifier|*
 name|preview
 decl_stmt|;
@@ -31944,14 +31944,14 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_fixme_preview_new
+name|gimp_old_preview_new
 argument_list|(
 name|NULL
 argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_fixme_preview_fill_scaled
+name|gimp_old_preview_fill_scaled
 argument_list|(
 name|preview
 argument_list|,
@@ -32667,7 +32667,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|gimp_fixme_preview_update
+name|gimp_old_preview_update
 argument_list|(
 name|preview
 argument_list|,
