@@ -752,7 +752,7 @@ block|,
 block|{
 literal|"view-zoom-minimum"
 block|,
-name|NULL
+name|GTK_STOCK_ZOOM_OUT
 block|,
 literal|"Zoom out as far as possible"
 block|,
@@ -762,13 +762,13 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_FIRST
 block|,
-name|NULL
+name|GIMP_HELP_VIEW_ZOOM_OUT
 block|}
 block|,
 block|{
 literal|"view-zoom-maximum"
 block|,
-name|NULL
+name|GTK_STOCK_ZOOM_IN
 block|,
 literal|"Zoom in as far as possible"
 block|,
@@ -778,7 +778,7 @@ name|NULL
 block|,
 name|GIMP_ACTION_SELECT_LAST
 block|,
-name|NULL
+name|GIMP_HELP_VIEW_ZOOM_IN
 block|}
 block|,
 block|{
@@ -826,41 +826,9 @@ name|GIMP_HELP_VIEW_ZOOM_IN
 block|}
 block|,
 block|{
-literal|"view-zoom-in"
-block|,
-name|NULL
-block|,
-literal|"Zoom out"
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-name|GIMP_ACTION_SELECT_NEXT
-block|,
-name|NULL
-block|}
-block|,
-block|{
 literal|"view-zoom-out-skip"
 block|,
-name|NULL
-block|,
-literal|"Zoom in a lot"
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-name|GIMP_ACTION_SELECT_SKIP_PREVIOUS
-block|,
-name|NULL
-block|}
-block|,
-block|{
-literal|"view-zoom-in-skip"
-block|,
-name|NULL
+name|GTK_STOCK_ZOOM_OUT
 block|,
 literal|"Zoom out a lot"
 block|,
@@ -868,9 +836,25 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|GIMP_ACTION_SELECT_SKIP_NEXT
+name|GIMP_ACTION_SELECT_SKIP_PREVIOUS
+block|,
+name|GIMP_HELP_VIEW_ZOOM_OUT
+block|}
+block|,
+block|{
+literal|"view-zoom-in-skip"
+block|,
+name|GTK_STOCK_ZOOM_IN
+block|,
+literal|"Zoom in a lot"
 block|,
 name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_ACTION_SELECT_SKIP_NEXT
+block|,
+name|GIMP_HELP_VIEW_ZOOM_IN
 block|}
 block|}
 decl_stmt|;
