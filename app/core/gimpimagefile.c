@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c11a43a0103
+DECL|enum|__anon29516fed0103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -1275,17 +1275,16 @@ name|imagefile
 operator|->
 name|thumbnail
 expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
+if|if
+condition|(
+operator|!
 name|thumbnail
 operator|->
 name|image_uri
-operator|!=
+condition|)
+return|return
 name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
+return|;
 if|if
 condition|(
 name|tooltip
