@@ -2658,7 +2658,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_undo_enable:  * @image_ID: The image.  *  * Enable the image's undo stack.  *  * This procedure enables the image's undo stack, allowing subsequent  * operations to store their undo steps. This is generally called in  * conjunction with 'gimp_image_undo_disable' to disable an  * image undo stack. All undo information for the image is freed.  *  * Returns: True if the image undo has been enabled.  */
+comment|/**  * gimp_image_undo_enable:  * @image_ID: The image.  *  * Enable the image's undo stack.  *  * This procedure enables the image's undo stack, allowing subsequent  * operations to store their undo steps. This is generally called in  * conjunction with 'gimp_image_undo_disable' to temporarily disable an  * image undo stack.  *  * Returns: True if the image undo has been enabled.  */
 end_comment
 
 begin_function
@@ -2736,7 +2736,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_undo_disable:  * @image_ID: The image.  *  * Disable the image's undo stack.  *  * This procedure disables the image's undo stack, allowing subsequent  * operations to ignore their undo steps. This is generally called in  * conjunction with 'gimp_image_undo_enable' to disable an image undo  * stack. This is advantageous because saving undo steps can be time   * and memory intensive.  *  * Returns: True if the image undo has been disabled.  */
+comment|/**  * gimp_image_undo_disable:  * @image_ID: The image.  *  * Disable the image's undo stack.  *  * This procedure disables the image's undo stack, allowing subsequent  * operations to ignore their undo steps. This is generally called in  * conjunction with 'gimp_image_undo_enable' to temporarily disable an  * image undo stack. This is advantageous because saving undo steps can  * be time and memory intensive.  *  * Returns: True if the image undo has been disabled.  */
 end_comment
 
 begin_function
