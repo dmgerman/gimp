@@ -1708,7 +1708,7 @@ name|list
 operator|->
 name|data
 expr_stmt|;
-comment|/*  only add layers that are visible and not floating selections         *  to the list        */
+comment|/*  only add layers that are visible and not floating selections        *  to the list        */
 if|if
 condition|(
 operator|!
@@ -1717,9 +1717,9 @@ argument_list|(
 name|layer
 argument_list|)
 operator|&&
-name|gimp_drawable_get_visible
+name|gimp_item_get_visible
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -2271,9 +2271,9 @@ name|data
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_get_visible
+name|gimp_item_get_visible
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|channel
 argument_list|)
@@ -2462,9 +2462,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_get_visible
+name|gimp_item_get_visible
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|item
 argument_list|)
@@ -2606,7 +2606,7 @@ block|(! g_slist_next (gimage->layers))&&
 comment|/* It's the only layer.  */
 block|(gimp_drawable_has_alpha (GIMP_DRAWABLE (gimage->layers->data)))&&
 comment|/* It's !flat.           */
-block|(gimp_drawable_get_visible (GIMP_DRAWABLE (gimage->layers->data)))&&
+block|(gimp_item_get_visible (GIMP_ITEM (gimage->layers->data)))&&
 comment|/* It's visible.         */
 block|(gimp_item_width  (GIMP_ITEM (gimage->layers->data)) ==        gimage->width)&&       (gimp_item_height (GIMP_ITEM (gimage->layers->data)) ==        gimage->height)&&
 comment|/* Covers all.           */
@@ -2616,7 +2616,7 @@ block|(((GimpLayer *)(gimage->layers->data))->opacity == GIMP_OPACITY_OPAQUE)
 comment|/* Opaque                */
 block|)     {       gint xoff;       gint yoff;        gimp_item_offsets (GIMP_ITEM (gimage->layers->data),&xoff,&yoff);        if ((xoff==0)&& (yoff==0))
 comment|/* Starts at 0,0         */
-block|{ 	  PixelRegion srcPR, destPR; 	  gpointer    pr; 	 	  g_warning("Can use cow-projection hack.  Yay!");  	  pixel_region_init (&srcPR, gimp_drawable_data 			     (GIMP_DRAWABLE (gimage->layers->data)), 			     x, y, w,h, FALSE); 	  pixel_region_init (&destPR, 			     gimp_image_projection (gimage), 			     x, y, w,h, TRUE);  	  for (pr = pixel_regions_register (2,&srcPR,&destPR); 	       pr != NULL; 	       pr = pixel_regions_process (pr)) 	    { 	      tile_manager_map_over_tile (destPR.tiles, 					  destPR.curtile, srcPR.curtile); 	    }  	  gimage->construct_flag = TRUE; 	  gimp_image_construct_channels (gimage, x, y, w, h);  	  return; 	}     }
+block|{ 	  PixelRegion srcPR, destPR; 	  gpointer    pr;  	  g_warning("Can use cow-projection hack.  Yay!");  	  pixel_region_init (&srcPR, gimp_drawable_data 			     (GIMP_DRAWABLE (gimage->layers->data)), 			     x, y, w,h, FALSE); 	  pixel_region_init (&destPR, 			     gimp_image_projection (gimage), 			     x, y, w,h, TRUE);  	  for (pr = pixel_regions_register (2,&srcPR,&destPR); 	       pr != NULL; 	       pr = pixel_regions_process (pr)) 	    { 	      tile_manager_map_over_tile (destPR.tiles, 					  destPR.curtile, srcPR.curtile); 	    }  	  gimage->construct_flag = TRUE; 	  gimp_image_construct_channels (gimage, x, y, w, h);  	  return; 	}     }
 else|#
 directive|else
 name|gimage

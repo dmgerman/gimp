@@ -4174,9 +4174,9 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|gimp_drawable_get_visible
+name|gimp_item_get_visible
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -4343,9 +4343,9 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_drawable_set_visible
+name|gimp_item_set_visible
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)

@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29be82ac0103
+DECL|enum|__anon2c82e8a40103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -5676,9 +5676,9 @@ argument_list|)
 operator|->
 name|height
 operator|&&
-name|gimp_drawable_get_visible
+name|gimp_item_get_visible
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)

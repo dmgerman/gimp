@@ -1968,9 +1968,9 @@ name|PROP_VISIBLE
 argument_list|,
 name|error
 argument_list|,
-name|gimp_drawable_get_visible
+name|gimp_item_get_visible
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -2434,9 +2434,9 @@ name|PROP_VISIBLE
 argument_list|,
 name|error
 argument_list|,
-name|gimp_drawable_get_visible
+name|gimp_item_get_visible
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|channel
 argument_list|)
@@ -6603,7 +6603,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d5dfd90108
+DECL|struct|__anon2afbea400108
 block|{
 DECL|member|info
 name|XcfInfo
@@ -7302,6 +7302,9 @@ name|guint32
 name|tattoo
 decl_stmt|;
 name|guint32
+name|visible
+decl_stmt|;
+name|guint32
 name|linked
 decl_stmt|;
 name|guint32
@@ -7310,7 +7313,7 @@ decl_stmt|;
 name|guint32
 name|num_strokes
 decl_stmt|;
-comment|/*        * name (string)        * tattoo (gint)        * linked (gint)        * num_parasites (gint)        * num_strokes (gint)        *        * then each parasite        * then each stroke        */
+comment|/*        * name (string)        * tattoo (gint)        * visible (gint)        * linked (gint)        * num_parasites (gint)        * num_strokes (gint)        *        * then each parasite        * then each stroke        */
 name|parasites
 operator|=
 name|GIMP_ITEM
@@ -7329,6 +7332,16 @@ operator|)
 name|gimp_object_get_name
 argument_list|(
 name|GIMP_OBJECT
+argument_list|(
+name|vectors
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|visible
+operator|=
+name|gimp_item_get_visible
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|vectors
 argument_list|)
@@ -7395,6 +7408,16 @@ argument_list|(
 name|info
 argument_list|,
 operator|&
+name|visible
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+name|xcf_write_int32_check_error
+argument_list|(
+name|info
+argument_list|,
+operator|&
 name|linked
 argument_list|,
 literal|1
@@ -7422,12 +7445,14 @@ argument_list|)
 expr_stmt|;
 name|g_printerr
 argument_list|(
-literal|"name: %s, tattoo: %d, linked: %d, num_parasites %d, "
-literal|"num_strokes %d\n"
+literal|"name: %s, tattoo: %d, visible: %d, linked: %d, "
+literal|"num_parasites %d, num_strokes %d\n"
 argument_list|,
 name|name
 argument_list|,
 name|tattoo
+argument_list|,
+name|visible
 argument_list|,
 name|linked
 argument_list|,

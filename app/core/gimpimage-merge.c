@@ -252,9 +252,9 @@ name|data
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_get_visible
+name|gimp_item_get_visible
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -442,9 +442,9 @@ name|data
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_get_visible
+name|gimp_item_get_visible
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -629,9 +629,9 @@ name|data
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_get_visible
+name|gimp_item_get_visible
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -2044,9 +2044,9 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_set_visible
+name|gimp_item_set_visible
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|merge_layer
 argument_list|)

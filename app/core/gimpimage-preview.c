@@ -688,16 +688,16 @@ expr_stmt|;
 comment|/*  only add layers that are visible to the list  */
 if|if
 condition|(
-name|gimp_drawable_get_visible
+name|gimp_item_get_visible
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
 argument_list|)
 condition|)
 block|{
-comment|/*  floating selections are added right above the layer  	   *  they are attached to 	   */
+comment|/*  floating selections are added right above the layer 	   *  they are attached to 	   */
 if|if
 condition|(
 name|gimp_layer_is_floating_sel

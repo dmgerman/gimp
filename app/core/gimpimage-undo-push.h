@@ -281,7 +281,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_image_undo_push_item_linked
+name|gimp_image_undo_push_item_visibility
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -299,13 +299,9 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  drawable undos  */
-end_comment
-
 begin_function_decl
 name|gboolean
-name|gimp_image_undo_push_drawable_visibility
+name|gimp_image_undo_push_item_linked
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -316,9 +312,9 @@ name|gchar
 modifier|*
 name|undo_desc
 parameter_list|,
-name|GimpDrawable
+name|GimpItem
 modifier|*
-name|drawable
+name|item
 parameter_list|)
 function_decl|;
 end_function_decl

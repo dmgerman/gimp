@@ -2679,9 +2679,9 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  saved selections are not visible by default  */
-name|gimp_drawable_set_visible
+name|gimp_item_set_visible
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|new_channel
 argument_list|)

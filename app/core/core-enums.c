@@ -2443,6 +2443,17 @@ literal|"group-item-displace"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_GROUP_ITEM_VISIBILITY
+block|,
+name|N_
+argument_list|(
+literal|"Item Visibility"
+argument_list|)
+block|,
+literal|"group-item-visibility"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_GROUP_ITEM_LINKED
 block|,
 name|N_
@@ -2451,17 +2462,6 @@ literal|"Linked Item"
 argument_list|)
 block|,
 literal|"group-item-linked"
-block|}
-block|,
-block|{
-name|GIMP_UNDO_GROUP_DRAWABLE_VISIBILITY
-block|,
-name|N_
-argument_list|(
-literal|"Drawable Visibility"
-argument_list|)
-block|,
-literal|"group-drawable-visibility"
 block|}
 block|,
 block|{
@@ -2762,6 +2762,17 @@ literal|"item-displace"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_ITEM_VISIBILITY
+block|,
+name|N_
+argument_list|(
+literal|"Item Visibility"
+argument_list|)
+block|,
+literal|"item-visibility"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_ITEM_LINKED
 block|,
 name|N_
@@ -2770,17 +2781,6 @@ literal|"Set Item Linked"
 argument_list|)
 block|,
 literal|"item-linked"
-block|}
-block|,
-block|{
-name|GIMP_UNDO_DRAWABLE_VISIBILITY
-block|,
-name|N_
-argument_list|(
-literal|"Drawable Visibility"
-argument_list|)
-block|,
-literal|"drawable-visibility"
 block|}
 block|,
 block|{

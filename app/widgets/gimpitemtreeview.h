@@ -344,9 +344,18 @@ name|GtkWidget
 modifier|*
 name|delete_button
 decl_stmt|;
+DECL|member|model_column_visible
+name|gint
+name|model_column_visible
+decl_stmt|;
 DECL|member|model_column_linked
 name|gint
 name|model_column_linked
+decl_stmt|;
+DECL|member|eye_cell
+name|GtkCellRenderer
+modifier|*
+name|eye_cell
 decl_stmt|;
 DECL|member|chain_cell
 name|GtkCellRenderer
@@ -354,6 +363,10 @@ modifier|*
 name|chain_cell
 decl_stmt|;
 comment|/*< private>*/
+DECL|member|visible_changed_handler_id
+name|GQuark
+name|visible_changed_handler_id
+decl_stmt|;
 DECL|member|linked_changed_handler_id
 name|GQuark
 name|linked_changed_handler_id

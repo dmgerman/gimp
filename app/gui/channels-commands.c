@@ -453,9 +453,9 @@ name|color
 argument_list|)
 expr_stmt|;
 comment|/*  copied components are invisible by default so subsequent copies        *  of components don't affect each other        */
-name|gimp_drawable_set_visible
+name|gimp_item_set_visible
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|new_channel
 argument_list|)
