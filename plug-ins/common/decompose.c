@@ -620,7 +620,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b38afb60108
+DECL|struct|__anon2b06c05f0108
 block|{
 DECL|member|type
 name|gchar
@@ -782,7 +782,7 @@ argument_list|(
 literal|"HSV"
 argument_list|)
 block|,
-name|FALSE
+name|TRUE
 block|,
 literal|3
 block|,
@@ -1089,7 +1089,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b38afb60208
+DECL|struct|__anon2b06c05f0208
 block|{
 DECL|member|extract_type
 name|gchar
@@ -1107,7 +1107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b38afb60308
+DECL|struct|__anon2b06c05f0308
 block|{
 DECL|member|extract_flag
 name|gint
@@ -1850,11 +1850,9 @@ operator|)
 name|ident
 decl_stmt|;
 comment|/* Just to satisfy gcc/lint */
-name|char
+name|gchar
+modifier|*
 name|filename
-index|[
-literal|1024
-index|]
 decl_stmt|;
 name|guchar
 modifier|*
@@ -2093,10 +2091,10 @@ name|j
 operator|++
 control|)
 block|{
-name|sprintf
-argument_list|(
 name|filename
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 literal|"%s-%s"
 argument_list|,
 name|gimp_image_get_filename
@@ -2144,6 +2142,11 @@ argument_list|,
 name|pixel_rgn_dst
 operator|+
 name|j
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 name|dst
@@ -4659,12 +4662,15 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|gettext
+argument_list|(
 name|extract
 index|[
 name|j
 index|]
 operator|.
 name|type
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
