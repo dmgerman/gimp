@@ -1321,7 +1321,7 @@ argument_list|(
 literal|"Errors"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_STOCK_WARNING
 argument_list|,
 name|NULL
 argument_list|,
@@ -3558,7 +3558,7 @@ argument_list|(
 literal|"Navigation"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_TOOL_MOVE
+name|GIMP_STOCK_NAVIGATION
 argument_list|,
 name|dialogs_stock_text_tab_func
 argument_list|,

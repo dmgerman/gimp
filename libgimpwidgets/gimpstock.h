@@ -186,6 +186,21 @@ define|#
 directive|define
 name|GIMP_STOCK_QMASK_ON
 value|"gimp-qmask-on"
+DECL|macro|GIMP_STOCK_INFO
+define|#
+directive|define
+name|GIMP_STOCK_INFO
+value|"gimp-info"
+DECL|macro|GIMP_STOCK_WARNING
+define|#
+directive|define
+name|GIMP_STOCK_WARNING
+value|"gimp-warning"
+DECL|macro|GIMP_STOCK_WILBER
+define|#
+directive|define
+name|GIMP_STOCK_WILBER
+value|"gimp-wilber"
 comment|/*  only in button size:  */
 DECL|macro|GIMP_STOCK_TOOL_AIRBRUSH
 define|#

@@ -857,7 +857,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_TOOL_MOVE
+name|GIMP_STOCK_NAVIGATION
 block|}
 block|,
 literal|"gimp-navigation-view"
@@ -925,6 +925,10 @@ block|,
 name|dialogs_create_dockable_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_WARNING
 block|}
 block|,
 literal|"gimp-error-console"
@@ -1147,6 +1151,10 @@ block|,
 name|dialogs_create_toplevel_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_INFO
 block|}
 block|,
 literal|"gimp-tips-dialog"
@@ -1168,6 +1176,10 @@ block|,
 name|dialogs_create_toplevel_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_WILBER
 block|}
 block|,
 literal|"gimp-about-dialog"
@@ -2439,7 +2451,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_TOOL_MOVE
+name|GIMP_STOCK_NAVIGATION
 block|}
 block|,
 name|NULL
@@ -3940,7 +3952,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_TOOL_MOVE
+name|GIMP_STOCK_NAVIGATION
 block|}
 block|,
 literal|"gimp-navigation-view"
@@ -4008,6 +4020,10 @@ block|,
 name|dialogs_create_dockable_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_WARNING
 block|}
 block|,
 literal|"gimp-error-console"
@@ -6083,7 +6099,7 @@ literal|"gimp-navigation-view"
 argument_list|,
 literal|"<StockItem>"
 argument_list|,
-name|GIMP_STOCK_TOOL_MOVE
+name|GIMP_STOCK_NAVIGATION
 argument_list|)
 block|,
 name|ADD_TAB
@@ -6123,9 +6139,9 @@ argument_list|)
 argument_list|,
 literal|"gimp-error-console"
 argument_list|,
-name|NULL
+literal|"<StockItem>"
 argument_list|,
-name|NULL
+name|GIMP_STOCK_WARNING
 argument_list|)
 block|,
 name|SEPARATOR
