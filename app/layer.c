@@ -138,7 +138,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2745c5740103
+DECL|enum|__anon2b4bd9790103
 enum|enum
 block|{
 DECL|enumerator|REMOVED
@@ -193,6 +193,7 @@ name|layer_invalidate_preview
 parameter_list|(
 name|GtkObject
 modifier|*
+name|object
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -591,17 +592,22 @@ name|transform_color
 parameter_list|(
 name|GImage
 modifier|*
+name|gimage
 parameter_list|,
 name|PixelRegion
 modifier|*
+name|layerPR
 parameter_list|,
 name|PixelRegion
 modifier|*
+name|bufPR
 parameter_list|,
 name|GimpDrawable
 modifier|*
+name|drawable
 parameter_list|,
 name|GimpImageBaseType
+name|type
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -611,19 +617,23 @@ specifier|static
 name|void
 name|layer_preview_scale
 parameter_list|(
-name|int
+name|GimpImageBaseType
+name|type
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
+name|cmap
 parameter_list|,
 name|PixelRegion
 modifier|*
+name|srcPR
 parameter_list|,
 name|PixelRegion
 modifier|*
+name|destPR
 parameter_list|,
-name|int
+name|gint
+name|subsample
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2532,7 +2542,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|layer_removed (Layer * layer,gpointer image)
+DECL|function|layer_removed (Layer * layer,gpointer data)
 name|layer_removed
 parameter_list|(
 name|Layer
@@ -2540,7 +2550,7 @@ modifier|*
 name|layer
 parameter_list|,
 name|gpointer
-name|image
+name|data
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -3160,7 +3170,6 @@ argument_list|)
 operator|->
 name|height
 argument_list|,
-operator|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|layer
@@ -3169,7 +3178,6 @@ operator|->
 name|bytes
 operator|+
 literal|1
-operator|)
 argument_list|)
 expr_stmt|;
 name|pixel_region_init
@@ -3903,7 +3911,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * layer_scale:  * @layer: The    layer to be transformed by width& height scale factors  * @new_width:    The width that layer will acquire  * @new_height:   The height that the layer will acquire  * @local_origin: sets fixed point of the scaling transform. See below.  *  * Sets layer dimensions to new_width and  * new_height. Derives vertical and horizontal scaling  * transforms from new width and height. If local_origin is  * TRUE, the fixed point of the scaling transform coincides  * with the layer's center point.  Otherwise, the fixed  * point is taken to be [-GIMP_DRAWABLE(layer)->offset_x,  * -GIMP_DRAWABLE(layer)->offset_y].  *  * Since this function derives scale factors from new and  * current layer dimensions, these factors will vary from  * layer to layer because of aliasing artifacts; factor  * variations among layers can be quite large where layer  * dimensions approach pixel dimensions. Use   * layer_scale_by_factors where constant scales are to  * be uniformly applied to a number of layers.  *  * Side effects: undo set created for layer.  *               Old layer imagery scaled   *& painted to new layer tiles   */
+comment|/**  * layer_scale:  * @layer:        The layer to be transformed by width& height scale factors  * @new_width:    The width that layer will acquire  * @new_height:   The height that the layer will acquire  * @local_origin: sets fixed point of the scaling transform. See below.  *  * Sets layer dimensions to new_width and  * new_height. Derives vertical and horizontal scaling  * transforms from new width and height. If local_origin is  * TRUE, the fixed point of the scaling transform coincides  * with the layer's center point.  Otherwise, the fixed  * point is taken to be [-GIMP_DRAWABLE(layer)->offset_x,  * -GIMP_DRAWABLE(layer)->offset_y].  *  * Since this function derives scale factors from new and  * current layer dimensions, these factors will vary from  * layer to layer because of aliasing artifacts; factor  * variations among layers can be quite large where layer  * dimensions approach pixel dimensions. Use   * layer_scale_by_factors where constant scales are to  * be uniformly applied to a number of layers.  *  * Side effects: undo set created for layer.  *               Old layer imagery scaled   *& painted to new layer tiles   */
 end_comment
 
 begin_function
@@ -5703,13 +5711,13 @@ name|srcPR
 decl_stmt|,
 name|destPR
 decl_stmt|;
-name|int
+name|GimpImageBaseType
 name|type
 decl_stmt|;
-name|int
+name|gint
 name|bytes
 decl_stmt|;
-name|int
+name|gint
 name|subsample
 decl_stmt|;
 name|TempBuf
@@ -5718,7 +5726,7 @@ name|ret_buf
 decl_stmt|;
 name|type
 operator|=
-literal|0
+name|RGB
 expr_stmt|;
 name|bytes
 operator|=
@@ -5788,7 +5796,7 @@ name|RGBA_GIMAGE
 case|:
 name|type
 operator|=
-literal|0
+name|RGB
 expr_stmt|;
 name|bytes
 operator|=
@@ -5808,7 +5816,7 @@ name|GRAYA_GIMAGE
 case|:
 name|type
 operator|=
-literal|1
+name|GRAY
 expr_stmt|;
 name|bytes
 operator|=
@@ -5828,7 +5836,7 @@ name|INDEXEDA_GIMAGE
 case|:
 name|type
 operator|=
-literal|2
+name|INDEXED
 expr_stmt|;
 name|bytes
 operator|=
@@ -6084,7 +6092,7 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|layer_preview (Layer * layer,gint w,gint h)
+DECL|function|layer_preview (Layer * layer,gint width,gint height)
 name|layer_preview
 parameter_list|(
 name|Layer
@@ -6092,10 +6100,10 @@ modifier|*
 name|layer
 parameter_list|,
 name|gint
-name|w
+name|width
 parameter_list|,
 name|gint
-name|h
+name|height
 parameter_list|)
 block|{
 comment|/* Ok prime the cache with a large preview if the cache is invalid */
@@ -6109,11 +6117,11 @@ argument_list|)
 operator|->
 name|preview_valid
 operator|&&
-name|w
+name|width
 operator|<=
 name|PREVIEW_CACHE_PRIME_WIDTH
 operator|&&
-name|h
+name|height
 operator|<=
 name|PREVIEW_CACHE_PRIME_HEIGHT
 condition|)
@@ -6134,11 +6142,11 @@ decl_stmt|;
 comment|/* Save the 2nd call */
 if|if
 condition|(
-name|w
+name|width
 operator|==
 name|PREVIEW_CACHE_PRIME_WIDTH
 operator|&&
-name|h
+name|height
 operator|==
 name|PREVIEW_CACHE_PRIME_HEIGHT
 condition|)
@@ -6152,9 +6160,9 @@ name|layer_preview_private
 argument_list|(
 name|layer
 argument_list|,
-name|w
+name|width
 argument_list|,
-name|h
+name|height
 argument_list|)
 return|;
 block|}
@@ -6191,7 +6199,7 @@ name|srcPR
 decl_stmt|,
 name|destPR
 decl_stmt|;
-name|int
+name|gint
 name|subsample
 decl_stmt|;
 name|TempBuf
@@ -6482,7 +6490,7 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|layer_mask_preview (Layer * layer,gint w,gint h)
+DECL|function|layer_mask_preview (Layer * layer,gint width,gint height)
 name|layer_mask_preview
 parameter_list|(
 name|Layer
@@ -6490,10 +6498,10 @@ modifier|*
 name|layer
 parameter_list|,
 name|gint
-name|w
+name|width
 parameter_list|,
 name|gint
-name|h
+name|height
 parameter_list|)
 block|{
 comment|/* Ok prime the cache with a large preview if the cache is invalid */
@@ -6509,11 +6517,11 @@ argument_list|)
 operator|->
 name|preview_valid
 operator|&&
-name|w
+name|width
 operator|<=
 name|PREVIEW_CACHE_PRIME_WIDTH
 operator|&&
-name|h
+name|height
 operator|<=
 name|PREVIEW_CACHE_PRIME_HEIGHT
 condition|)
@@ -6534,11 +6542,11 @@ decl_stmt|;
 comment|/* Save the 2nd call */
 if|if
 condition|(
-name|w
+name|width
 operator|==
 name|PREVIEW_CACHE_PRIME_WIDTH
 operator|&&
-name|h
+name|height
 operator|==
 name|PREVIEW_CACHE_PRIME_HEIGHT
 condition|)
@@ -6552,9 +6560,9 @@ name|layer_mask_preview_private
 argument_list|(
 name|layer
 argument_list|,
-name|w
+name|width
 argument_list|,
-name|h
+name|height
 argument_list|)
 return|;
 block|}
@@ -6587,7 +6595,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|layer_set_tattoo (const Layer * layer,Tattoo val)
+DECL|function|layer_set_tattoo (const Layer * layer,Tattoo value)
 name|layer_set_tattoo
 parameter_list|(
 specifier|const
@@ -6596,7 +6604,7 @@ modifier|*
 name|layer
 parameter_list|,
 name|Tattoo
-name|val
+name|value
 parameter_list|)
 block|{
 name|gimp_drawable_set_tattoo
@@ -6606,7 +6614,7 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|val
+name|value
 argument_list|)
 expr_stmt|;
 block|}
@@ -6680,10 +6688,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|layer_preview_scale (gint type,guchar * cmap,PixelRegion * srcPR,PixelRegion * destPR,gint subsample)
+DECL|function|layer_preview_scale (GimpImageBaseType type,guchar * cmap,PixelRegion * srcPR,PixelRegion * destPR,gint subsample)
 name|layer_preview_scale
 parameter_list|(
-name|gint
+name|GimpImageBaseType
 name|type
 parameter_list|,
 name|guchar
@@ -6707,68 +6715,66 @@ define|#
 directive|define
 name|EPSILON
 value|0.000001
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|src
 decl_stmt|,
 modifier|*
 name|s
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|dest
 decl_stmt|,
 modifier|*
 name|d
 decl_stmt|;
-name|double
+name|gdouble
 modifier|*
 name|row
 decl_stmt|,
 modifier|*
 name|r
 decl_stmt|;
-name|int
+name|gint
 name|destwidth
 decl_stmt|;
-name|int
+name|gint
 name|src_row
 decl_stmt|,
 name|src_col
 decl_stmt|;
-name|int
+name|gint
 name|bytes
 decl_stmt|,
 name|b
 decl_stmt|;
-name|int
+name|gint
 name|width
 decl_stmt|,
 name|height
 decl_stmt|;
-name|int
+name|gint
 name|orig_width
 decl_stmt|,
 name|orig_height
 decl_stmt|;
-name|double
+name|gdouble
 name|x_rat
 decl_stmt|,
 name|y_rat
 decl_stmt|;
-name|double
+name|gdouble
 name|x_cum
 decl_stmt|,
 name|y_cum
 decl_stmt|;
-name|double
+name|gdouble
 name|x_last
 decl_stmt|,
 name|y_last
 decl_stmt|;
-name|double
+name|gdouble
 modifier|*
 name|x_frac
 decl_stmt|,
@@ -6776,19 +6782,18 @@ name|y_frac
 decl_stmt|,
 name|tot_frac
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|int
+name|gint
 name|frac
 decl_stmt|;
-name|int
+name|gboolean
 name|advance_dest
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|rgb
 index|[
 name|MAX_CHANNELS
@@ -6838,13 +6843,10 @@ expr_stmt|;
 comment|/*  the data pointers...  */
 name|src
 operator|=
-operator|(
-name|unsigned
-name|char
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|orig_width
 operator|*
 name|bytes
@@ -6860,41 +6862,34 @@ comment|/*  find the ratios of old x to new x and old y to new y  */
 name|x_rat
 operator|=
 operator|(
-name|double
+name|gdouble
 operator|)
 name|orig_width
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|width
 expr_stmt|;
 name|y_rat
 operator|=
 operator|(
-name|double
+name|gdouble
 operator|)
 name|orig_height
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|height
 expr_stmt|;
 comment|/*  allocate an array to help with the calculations  */
 name|row
 operator|=
-operator|(
-name|double
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
-sizeof|sizeof
-argument_list|(
-name|double
-argument_list|)
-operator|*
+name|gdouble
+argument_list|,
 name|width
 operator|*
 name|bytes
@@ -6902,22 +6897,13 @@ argument_list|)
 expr_stmt|;
 name|x_frac
 operator|=
-operator|(
-name|double
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
-sizeof|sizeof
-argument_list|(
-name|double
-argument_list|)
-operator|*
-operator|(
+name|gdouble
+argument_list|,
 name|width
 operator|+
 name|orig_width
-operator|)
 argument_list|)
 expr_stmt|;
 comment|/*  initialize the pre-calculated pixel fraction array  */
@@ -6928,7 +6914,7 @@ expr_stmt|;
 name|x_cum
 operator|=
 operator|(
-name|double
+name|gdouble
 operator|)
 name|src_col
 expr_stmt|;
@@ -7013,7 +6999,7 @@ literal|0
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|double
+name|gdouble
 argument_list|)
 operator|*
 name|width
@@ -7076,7 +7062,7 @@ expr_stmt|;
 name|x_cum
 operator|=
 operator|(
-name|double
+name|gdouble
 operator|)
 name|src_col
 expr_stmt|;
@@ -7167,7 +7153,7 @@ if|if
 condition|(
 name|type
 operator|==
-literal|2
+name|INDEXED
 condition|)
 block|{
 name|map_to_color
@@ -7352,8 +7338,7 @@ name|d
 operator|++
 operator|=
 call|(
-name|unsigned
-name|char
+name|guchar
 call|)
 argument_list|(
 operator|(
@@ -7381,7 +7366,7 @@ literal|0
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|double
+name|gdouble
 argument_list|)
 operator|*
 name|destwidth
@@ -7716,7 +7701,7 @@ modifier|*
 name|layer_mask
 parameter_list|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|layer_mask_name
 decl_stmt|;
@@ -8113,13 +8098,12 @@ name|srcPR
 decl_stmt|,
 name|destPR
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|empty
 init|=
 literal|0
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1

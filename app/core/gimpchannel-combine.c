@@ -130,7 +130,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon277c00220103
+DECL|enum|__anon2c717a890103
 enum|enum
 block|{
 DECL|enumerator|REMOVED
@@ -1300,7 +1300,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|channel_removed (Channel * channel,gpointer image)
+DECL|function|channel_removed (Channel * channel,gpointer data)
 name|channel_removed
 parameter_list|(
 name|Channel
@@ -1308,7 +1308,7 @@ modifier|*
 name|channel
 parameter_list|,
 name|gpointer
-name|image
+name|data
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -2546,7 +2546,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_set_tattoo (const Channel * channel,Tattoo val)
+DECL|function|channel_set_tattoo (const Channel * channel,Tattoo value)
 name|channel_set_tattoo
 parameter_list|(
 specifier|const
@@ -2555,7 +2555,7 @@ modifier|*
 name|channel
 parameter_list|,
 name|Tattoo
-name|val
+name|value
 parameter_list|)
 block|{
 name|gimp_drawable_set_tattoo
@@ -2565,7 +2565,7 @@ argument_list|(
 name|channel
 argument_list|)
 argument_list|,
-name|val
+name|value
 argument_list|)
 expr_stmt|;
 block|}
@@ -3217,10 +3217,6 @@ name|ex
 decl_stmt|,
 name|ey
 decl_stmt|;
-name|void
-modifier|*
-name|pr
-decl_stmt|;
 name|gint
 name|tx1
 decl_stmt|,
@@ -3234,6 +3230,9 @@ name|gint
 name|minx
 decl_stmt|,
 name|maxx
+decl_stmt|;
+name|gpointer
+name|pr
 decl_stmt|;
 comment|/*  if the mask's bounds have already been reliably calculated...  */
 if|if
@@ -3806,8 +3805,7 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|void
-modifier|*
+name|gpointer
 name|pr
 decl_stmt|;
 if|if
@@ -4076,8 +4074,7 @@ decl_stmt|;
 name|gint
 name|x2
 decl_stmt|;
-name|void
-modifier|*
+name|gpointer
 name|pr
 decl_stmt|;
 comment|/*  check horizontal extents...  */
@@ -4303,8 +4300,7 @@ decl_stmt|;
 name|gint
 name|x2
 decl_stmt|;
-name|void
-modifier|*
+name|gpointer
 name|pr
 decl_stmt|;
 comment|/*  check horizontal extents...  */
@@ -4908,7 +4904,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_combine_ellipse (Channel * mask,ChannelOps op,gint x,gint y,gint w,gint h,gboolean aa)
+DECL|function|channel_combine_ellipse (Channel * mask,ChannelOps op,gint x,gint y,gint w,gint h,gboolean antialias)
 name|channel_combine_ellipse
 parameter_list|(
 name|Channel
@@ -4931,8 +4927,7 @@ name|gint
 name|h
 parameter_list|,
 name|gboolean
-name|aa
-comment|/*  antialias selection?  */
+name|antialias
 parameter_list|)
 block|{
 name|gint
@@ -5075,7 +5070,7 @@ comment|/*  Non-antialiased code  */
 if|if
 condition|(
 operator|!
-name|aa
+name|antialias
 condition|)
 block|{
 name|y_sqr

@@ -465,6 +465,14 @@ DECL|member|drop_type
 name|GimpDropType
 name|drop_type
 decl_stmt|;
+DECL|member|layer_pixmap_valid
+name|gboolean
+name|layer_pixmap_valid
+decl_stmt|;
+DECL|member|invalidate_preview_handler
+name|guint
+name|invalidate_preview_handler
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -2599,7 +2607,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  Drop to trahcan  */
+comment|/*  Drop to trashcan  */
 name|gtk_drag_dest_set
 argument_list|(
 name|layers_ops_buttons
@@ -3681,6 +3689,13 @@ comment|/*  Determine if the preview buf supplied is color    *   Generally, if 
 name|color
 operator|=
 operator|(
+name|channel
+operator|==
+operator|-
+literal|1
+operator|)
+operator|&&
+operator|(
 name|preview_buf
 operator|->
 name|bytes
@@ -3692,13 +3707,6 @@ operator|->
 name|bytes
 operator|==
 literal|4
-operator|)
-operator|&&
-operator|(
-name|channel
-operator|==
-operator|-
-literal|1
 operator|)
 expr_stmt|;
 if|if
@@ -6376,6 +6384,38 @@ end_function
 begin_function
 specifier|static
 name|void
+DECL|function|invalidate_preview_callback (GtkWidget * widget,LayerWidget * layer_widget)
+name|invalidate_preview_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|LayerWidget
+modifier|*
+name|layer_widget
+parameter_list|)
+block|{
+name|layer_widget
+operator|->
+name|layer_pixmap_valid
+operator|=
+name|FALSE
+expr_stmt|;
+comment|/* synthesize an expose event */
+name|gtk_widget_queue_draw
+argument_list|(
+name|layer_widget
+operator|->
+name|layer_preview
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
 DECL|function|layers_dialog_add_layer (Layer * layer)
 name|layers_dialog_add_layer
 parameter_list|(
@@ -6479,6 +6519,30 @@ argument_list|,
 name|position
 argument_list|)
 expr_stmt|;
+name|layer_widget
+operator|->
+name|invalidate_preview_handler
+operator|=
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|layer
+argument_list|)
+argument_list|,
+literal|"invalidate_pr"
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|invalidate_preview_callback
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|layer_widget
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -6522,6 +6586,18 @@ return|return;
 comment|/*  Make sure the gimage is not notified of this change  */
 name|suspend_gimage_notify
 operator|++
+expr_stmt|;
+name|gtk_signal_disconnect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|layer
+argument_list|)
+argument_list|,
+name|layer_widget
+operator|->
+name|invalidate_preview_handler
+argument_list|)
 expr_stmt|;
 comment|/*  Remove the requested layer from the dialog  */
 name|list
@@ -9422,6 +9498,12 @@ name|drop_type
 operator|=
 name|GIMP_DROP_NONE
 expr_stmt|;
+name|layer_widget
+operator|->
+name|layer_pixmap_valid
+operator|=
+name|FALSE
+expr_stmt|;
 if|if
 condition|(
 name|layer_get_mask
@@ -10782,7 +10864,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1fa2910108
+DECL|struct|__anon27cf627f0108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -12731,6 +12813,26 @@ operator|>
 literal|0
 operator|)
 condition|)
+block|{
+comment|/* Expose events are optimzed away by GTK+ if the widget is not 		     visible. Therefore, previews not visible in the layers_dialog 		     are not redrawn when they invalidate. Later the preview gets 		     validated by the image_preview in lc_dialog but is never 		     propagated to the layer_pixmap. We work around this by using an 		     additional flag "layer_pixmap_valid" so that the pixmap gets 		     updated once the preview scrolls into sight. 		     We should probably do the same for all drawables (masks,  		     channels), but it is much more difficult to change one of these 		     when it's not visible. 		  */
+if|if
+condition|(
+name|preview_type
+operator|==
+name|LAYER_PREVIEW
+operator|&&
+operator|!
+name|layer_widget
+operator|->
+name|layer_pixmap_valid
+condition|)
+name|layer_widget_preview_redraw
+argument_list|(
+name|layer_widget
+argument_list|,
+name|preview_type
+argument_list|)
+expr_stmt|;
 name|gdk_draw_pixmap
 argument_list|(
 name|widget
@@ -12759,6 +12861,7 @@ argument_list|,
 name|h
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 comment|/*  The boundary indicating whether layer or mask is active  */
@@ -13378,6 +13481,12 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
+name|layer_widget
+operator|->
+name|layer_pixmap_valid
+operator|=
+name|TRUE
+expr_stmt|;
 break|break;
 case|case
 name|MASK_PREVIEW
@@ -13468,7 +13577,7 @@ operator|->
 name|image_height
 argument_list|)
 expr_stmt|;
-comment|/*  make sure the image has been transfered completely to the pixmap before        *  we use it again...        */
+comment|/*  make sure the image has been transfered completely to the pixmap         *  before we use it again...        */
 name|gdk_flush
 argument_list|()
 expr_stmt|;

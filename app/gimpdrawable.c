@@ -82,7 +82,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon27cceb1d0103
+DECL|enum|__anon2ae9df8d0103
 enum|enum
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
@@ -938,12 +938,19 @@ name|preview_valid
 operator|=
 name|FALSE
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|gtk_signal_emit (GTK_OBJECT (drawable), 		   gimp_drawable_signals[INVALIDATE_PREVIEW]);
-endif|#
-directive|endif
+name|gtk_signal_emit
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
+name|gimp_drawable_signals
+index|[
+name|INVALIDATE_PREVIEW
+index|]
+argument_list|)
+expr_stmt|;
 name|gimage
 operator|=
 name|gimp_drawable_gimage
