@@ -1620,7 +1620,7 @@ name|toggle
 argument_list|,
 name|_
 argument_list|(
-literal|"Enable/disable jagged edges removal"
+literal|"Enable/disable jagged edges removal "
 literal|"(antialiasing)"
 argument_list|)
 argument_list|,
