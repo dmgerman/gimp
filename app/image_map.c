@@ -1145,8 +1145,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_map_abort (ImageMap image_map)
-name|image_map_abort
+DECL|function|image_map_clear (ImageMap image_map)
+name|image_map_clear
 parameter_list|(
 name|ImageMap
 name|image_map
@@ -1199,6 +1199,12 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+name|_image_map
+operator|->
+name|state
+operator|=
+name|WAITING
+expr_stmt|;
 comment|/*  Make sure the drawable is still valid  */
 if|if
 condition|(
@@ -1373,10 +1379,33 @@ operator|->
 name|undo_tiles
 argument_list|)
 expr_stmt|;
+name|_image_map
+operator|->
+name|undo_tiles
+operator|=
+name|NULL
+expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|image_map_abort (ImageMap image_map)
+name|image_map_abort
+parameter_list|(
+name|ImageMap
+name|image_map
+parameter_list|)
+block|{
+name|image_map_clear
+argument_list|(
+name|image_map
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
-name|_image_map
+name|image_map
 argument_list|)
 expr_stmt|;
 block|}

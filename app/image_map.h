@@ -108,6 +108,15 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|image_map_clear
+parameter_list|(
+name|ImageMap
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|image_map_abort
 parameter_list|(
 name|ImageMap
