@@ -272,14 +272,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|gfig_preview_exp_id
-specifier|static
-name|gint
-name|gfig_preview_exp_id
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|gfig_image
 specifier|static
 name|gint32
@@ -451,23 +443,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
-name|gfig_preview_expose
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GdkEvent
-modifier|*
-name|event
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|gint
+name|gboolean
 name|pic_preview_expose
 parameter_list|(
 name|GtkWidget
@@ -483,7 +459,35 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|void
+name|gfig_preview_realize
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gboolean
+name|gfig_preview_expose
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GdkEvent
+modifier|*
+name|event
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gboolean
 name|gfig_preview_events
 parameter_list|(
 name|GtkWidget
@@ -957,7 +961,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2960e8060103
+DECL|enum|__anon2bfa0d730103
 block|{
 DECL|enumerator|LINE
 name|LINE
@@ -1009,7 +1013,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2960e8060203
+DECL|enum|__anon2bfa0d730203
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -1030,7 +1034,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2960e8060303
+DECL|enum|__anon2bfa0d730303
 block|{
 DECL|enumerator|ORIGINAL_LAYER
 name|ORIGINAL_LAYER
@@ -1051,7 +1055,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2960e8060403
+DECL|enum|__anon2bfa0d730403
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -1078,7 +1082,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2960e8060503
+DECL|enum|__anon2bfa0d730503
 block|{
 DECL|enumerator|PAINT_BRUSH_TYPE
 name|PAINT_BRUSH_TYPE
@@ -1099,7 +1103,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2960e8060603
+DECL|enum|__anon2bfa0d730603
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -1267,7 +1271,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2960e8060708
+DECL|struct|__anon2bfa0d730708
 block|{
 DECL|member|gridspacing
 name|gint
@@ -1306,7 +1310,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2960e8060808
+DECL|struct|__anon2bfa0d730808
 block|{
 DECL|member|gridspacing
 name|void
@@ -1355,7 +1359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2960e8060908
+DECL|struct|__anon2bfa0d730908
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -1449,26 +1453,26 @@ operator|)
 operator|/
 literal|2
 block|,
-comment|/* Gridspacing */
+comment|/* Gridspacing     */
 name|RECT_GRID
 block|,
-comment|/* Default to rectangle type */
+comment|/* Default to rectangle type     */
 name|FALSE
 block|,
-comment|/* drawgrid */
+comment|/* drawgrid                      */
 name|FALSE
 block|,
-comment|/* snap2grid */
+comment|/* snap2grid                     */
 name|FALSE
 block|,
-comment|/* lockongrid */
+comment|/* lockongrid                    */
 name|TRUE
-comment|/* show control points */
+comment|/* show control points           */
 block|}
 block|,
 name|FALSE
 block|,
-comment|/* show image */
+comment|/* show image                    */
 name|MIN_UNDO
 operator|+
 operator|(
@@ -1480,44 +1484,44 @@ operator|/
 literal|2
 block|,
 comment|/* Max level of undos */
-name|FALSE
+name|TRUE
 block|,
-comment|/* Show pos updates */
+comment|/* Show pos updates              */
 literal|0.0
 block|,
-comment|/* Brush fade */
+comment|/* Brush fade                    */
 literal|0.0
 block|,
-comment|/* Brush gradient */
+comment|/* Brush gradient                */
 literal|20.0
 block|,
-comment|/* Air bursh pressure */
+comment|/* Air bursh pressure            */
 name|ORIGINAL_LAYER
 block|,
 comment|/* Draw all objects on one layer */
 name|LAYER_TRANS_BG
 block|,
-comment|/* New layers background */
+comment|/* New layers background         */
 name|PAINT_BRUSH_TYPE
 block|,
-comment|/* Default to use brushes */
+comment|/* Default to use brushes        */
 name|FALSE
 block|,
-comment|/* reverse lines */
+comment|/* reverse lines                 */
 name|TRUE
 block|,
-comment|/* Scale to image when painting */
+comment|/* Scale to image when painting  */
 literal|1.0
 block|,
-comment|/* Scale to image fp */
+comment|/* Scale to image fp             */
 name|FALSE
 block|,
 comment|/* Approx circles by drawing lines */
 name|BRUSH_BRUSH_TYPE
 block|,
-comment|/* Default to use a brush */
+comment|/* Default to use a brush        */
 name|LINE
-comment|/* Initial object type */
+comment|/* Initial object type           */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1525,7 +1529,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2960e8060a03
+DECL|enum|__anon2bfa0d730a03
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1549,7 +1553,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2960e8060b03
+DECL|enum|__anon2bfa0d730b03
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -1567,7 +1571,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2960e8060c03
+DECL|enum|__anon2bfa0d730c03
 block|{
 DECL|enumerator|FILL_FOREGROUND
 name|FILL_FOREGROUND
@@ -1588,7 +1592,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2960e8060d03
+DECL|enum|__anon2bfa0d730d03
 block|{
 DECL|enumerator|FILL_EACH
 name|FILL_EACH
@@ -8089,17 +8093,13 @@ end_function
 
 begin_function
 specifier|static
-name|gint
-DECL|function|select_button_press (GtkWidget * widget,GdkEventButton * event,gpointer data)
-name|select_button_press
+name|void
+DECL|function|select_button_clicked (GtkWidget * widget,gpointer data)
+name|select_button_clicked
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|GdkEventButton
-modifier|*
-name|event
 parameter_list|,
 name|gpointer
 name|data
@@ -8206,9 +8206,6 @@ block|}
 name|draw_grid_clear
 argument_list|()
 expr_stmt|;
-return|return
-name|FALSE
-return|;
 block|}
 end_function
 
@@ -8228,6 +8225,10 @@ name|button
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|image
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|hbox
 decl_stmt|,
 modifier|*
@@ -8237,7 +8238,7 @@ name|vbox
 operator|=
 name|gtk_vbox_new
 argument_list|(
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)
@@ -8279,9 +8280,19 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new
+argument_list|()
+expr_stmt|;
+name|gimp_help_set_help_data
 argument_list|(
-literal|"<"
+name|button
+argument_list|,
+name|_
+argument_list|(
+literal|"Show previous object"
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -8304,11 +8315,11 @@ name|g_signal_connect
 argument_list|(
 name|button
 argument_list|,
-literal|"button_press_event"
+literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|select_button_press
+name|select_button_clicked
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -8322,11 +8333,45 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
+name|image
+operator|=
+name|gtk_image_new_from_stock
+argument_list|(
+name|GTK_STOCK_GO_BACK
+argument_list|,
+name|GTK_ICON_SIZE_BUTTON
+argument_list|)
+expr_stmt|;
+name|gtk_container_add
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+name|image
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new
+argument_list|()
+expr_stmt|;
+name|gimp_help_set_help_data
 argument_list|(
-literal|">"
+name|button
+argument_list|,
+name|_
+argument_list|(
+literal|"Show next object"
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -8349,11 +8394,11 @@ name|g_signal_connect
 argument_list|(
 name|button
 argument_list|,
-literal|"button_press_event"
+literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|select_button_press
+name|select_button_clicked
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -8367,11 +8412,50 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
+name|image
+operator|=
+name|gtk_image_new_from_stock
+argument_list|(
+name|GTK_STOCK_GO_FORWARD
+argument_list|,
+name|GTK_ICON_SIZE_BUTTON
+argument_list|)
+expr_stmt|;
+name|gtk_container_add
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+name|image
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
-literal|"=="
+name|_
+argument_list|(
+literal|"All"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|button
+argument_list|,
+name|_
+argument_list|(
+literal|"Show all objects"
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -8394,11 +8478,11 @@ name|g_signal_connect
 argument_list|(
 name|button
 argument_list|,
-literal|"button_press_event"
+literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|select_button_press
+name|select_button_clicked
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -10436,11 +10520,9 @@ operator|->
 name|y
 argument_list|)
 expr_stmt|;
-name|gtk_widget_draw
+name|gtk_widget_queue_draw
 argument_list|(
 name|widget
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|point
@@ -12111,11 +12193,9 @@ argument_list|,
 name|bdesc
 argument_list|)
 expr_stmt|;
-name|gtk_widget_draw
+name|gtk_widget_queue_draw
 argument_list|(
 name|brush_page_pw
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -17161,12 +17241,9 @@ expr_stmt|;
 comment|/* Put buttons in */
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_from_stock
 argument_list|(
-name|_
-argument_list|(
-literal|"Rescan"
-argument_list|)
+name|GTK_STOCK_REFRESH
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -17189,8 +17266,7 @@ name|button
 argument_list|,
 name|_
 argument_list|(
-literal|"Select folder and rescan Gfig object "
-literal|"collection"
+literal|"Select folder and rescan Gfig object collections"
 argument_list|)
 argument_list|,
 name|NULL
@@ -17229,12 +17305,9 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_from_stock
 argument_list|(
-name|_
-argument_list|(
-literal|"Load"
-argument_list|)
+name|GTK_STOCK_OPEN
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -18316,17 +18389,15 @@ argument_list|,
 name|PREVIEW_MASK
 argument_list|)
 expr_stmt|;
-name|gfig_preview_exp_id
-operator|=
-name|g_signal_connect_after
+name|g_signal_connect
 argument_list|(
 name|gfig_preview
 argument_list|,
-literal|"expose_event"
+literal|"realize"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gfig_preview_expose
+name|gfig_preview_realize
 argument_list|)
 argument_list|,
 name|NULL
@@ -18341,6 +18412,20 @@ argument_list|,
 name|G_CALLBACK
 argument_list|(
 name|gfig_preview_events
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_signal_connect_after
+argument_list|(
+name|gfig_preview
+argument_list|,
+literal|"expose_event"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gfig_preview_expose
 argument_list|)
 argument_list|,
 name|NULL
@@ -19718,109 +19803,21 @@ block|}
 block|}
 end_function
 
-begin_comment
-comment|/* Update the bits we put on the screen */
-end_comment
-
 begin_function
 specifier|static
 name|void
-DECL|function|update_draw_area (GtkWidget * widget,GdkEvent * event)
-name|update_draw_area
+DECL|function|gfig_preview_realize (GtkWidget * widget)
+name|gfig_preview_realize
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|GdkEvent
-modifier|*
-name|event
-parameter_list|)
-block|{
-if|if
-condition|(
-operator|!
-name|GTK_WIDGET_DRAWABLE
-argument_list|(
-name|widget
-argument_list|)
-condition|)
-return|return;
-name|g_signal_handler_block
-argument_list|(
-name|widget
-argument_list|,
-name|gfig_preview_exp_id
-argument_list|)
-expr_stmt|;
-name|gtk_widget_draw
-argument_list|(
-name|widget
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_signal_handler_unblock
-argument_list|(
-name|widget
-argument_list|,
-name|gfig_preview_exp_id
-argument_list|)
-expr_stmt|;
-name|draw_grid
-argument_list|()
-expr_stmt|;
-name|draw_objects
-argument_list|(
-name|current_obj
-operator|->
-name|obj_list
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|gint
-DECL|function|gfig_preview_expose (GtkWidget * widget,GdkEvent * event)
-name|gfig_preview_expose
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GdkEvent
-modifier|*
-name|event
 parameter_list|)
 block|{
 name|GdkCursor
 modifier|*
 name|preview_cursor
 decl_stmt|;
-specifier|static
-name|gint
-name|changed_cursor
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|changed_cursor
-operator|&&
-name|gfig_preview
-operator|->
-name|window
-condition|)
-block|{
-name|changed_cursor
-operator|=
-literal|1
-expr_stmt|;
 name|preview_cursor
 operator|=
 name|gdk_cursor_new
@@ -19838,11 +19835,33 @@ name|preview_cursor
 argument_list|)
 expr_stmt|;
 block|}
-name|update_draw_area
-argument_list|(
+end_function
+
+begin_function
+specifier|static
+name|gboolean
+DECL|function|gfig_preview_expose (GtkWidget * widget,GdkEvent * event)
+name|gfig_preview_expose
+parameter_list|(
+name|GtkWidget
+modifier|*
 name|widget
-argument_list|,
+parameter_list|,
+name|GdkEvent
+modifier|*
 name|event
+parameter_list|)
+block|{
+name|draw_grid
+argument_list|()
+expr_stmt|;
+name|draw_objects
+argument_list|(
+name|pic_obj
+operator|->
+name|obj_list
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 return|return
@@ -19853,7 +19872,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|pic_preview_expose (GtkWidget * widget,GdkEvent * event)
 name|pic_preview_expose
 parameter_list|(
@@ -20990,7 +21009,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Enter Gfig Entry Name"
+literal|"Enter Gfig Object Name"
 argument_list|)
 argument_list|,
 literal|"gfig"
@@ -21543,11 +21562,9 @@ operator|*
 operator|)
 name|obj
 expr_stmt|;
-name|gtk_widget_draw
+name|gtk_widget_queue_draw
 argument_list|(
 name|pic_preview
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|drawing_pic
@@ -21728,7 +21745,7 @@ name|gtk_file_selection_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Load Gfig obj"
+literal|"Load Gfig object collection"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -22324,13 +22341,6 @@ expr_stmt|;
 name|ccount
 operator|++
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|gtk_progress_bar_update (GTK_PROGRESS_BAR (progress_widget), (gfloat)ccount/(gfloat)count);       gtk_widget_draw (GTK_WIDGET (progress_widget), NULL);
-endif|#
-directive|endif
-comment|/* 0 */
 block|}
 comment|/* Fill layer if required */
 if|if
@@ -22436,7 +22446,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-name|GTK_STOCK_OK
+name|GTK_STOCK_CLOSE
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,
@@ -22913,11 +22923,9 @@ operator|=
 name|NULL
 expr_stmt|;
 comment|/* Redraw areas */
-name|update_draw_area
+name|gtk_widget_queue_draw
 argument_list|(
 name|gfig_preview
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|list_button_update
@@ -23209,11 +23217,9 @@ argument_list|)
 operator|->
 name|data
 expr_stmt|;
-name|update_draw_area
+name|gtk_widget_queue_draw
 argument_list|(
 name|gfig_preview
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|list_button_update
@@ -23706,11 +23712,9 @@ name|gfig_update_stat_labels
 argument_list|()
 expr_stmt|;
 comment|/* redraw with new */
-name|update_draw_area
+name|gtk_widget_queue_draw
 argument_list|(
 name|gfig_preview
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* And preview */
@@ -23957,11 +23961,9 @@ name|obj_copies
 argument_list|)
 expr_stmt|;
 comment|/* redraw all */
-name|update_draw_area
+name|gtk_widget_queue_draw
 argument_list|(
 name|gfig_preview
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* And preview */
@@ -24122,11 +24124,9 @@ name|opts
 expr_stmt|;
 comment|/* Structure copy */
 comment|/* redraw all */
-name|update_draw_area
+name|gtk_widget_queue_draw
 argument_list|(
 name|gfig_preview
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* And preview */
@@ -24627,11 +24627,9 @@ operator|)
 operator|*
 name|org_scale_y_factor
 expr_stmt|;
-name|update_draw_area
+name|gtk_widget_queue_draw
 argument_list|(
 name|gfig_preview
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -24709,11 +24707,9 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
-name|update_draw_area
+name|gtk_widget_queue_draw
 argument_list|(
 name|gfig_preview
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -26961,27 +26957,10 @@ comment|/* wipe slate and start again */
 name|dialog_update_preview
 argument_list|()
 expr_stmt|;
-name|draw_grid
-argument_list|()
-expr_stmt|;
-name|draw_objects
-argument_list|(
-name|current_obj
-operator|->
-name|obj_list
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-name|gtk_widget_draw
+name|gtk_widget_queue_draw
 argument_list|(
 name|gfig_preview
-argument_list|,
-name|NULL
 argument_list|)
-expr_stmt|;
-name|gdk_flush
-argument_list|()
 expr_stmt|;
 block|}
 end_function
@@ -27077,11 +27056,9 @@ expr_stmt|;
 comment|/* Cancel select preview */
 block|}
 comment|/* Update draw areas */
-name|update_draw_area
+name|gtk_widget_queue_draw
 argument_list|(
 name|gfig_preview
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* And preview */
@@ -28272,11 +28249,9 @@ name|tmp_bezier
 operator|=
 name|NULL
 expr_stmt|;
-name|update_draw_area
+name|gtk_widget_queue_draw
 argument_list|(
 name|gfig_preview
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* And preview */
@@ -28344,11 +28319,9 @@ name|undo_water_mark
 operator|--
 expr_stmt|;
 comment|/* Update the screen */
-name|update_draw_area
+name|gtk_widget_queue_draw
 argument_list|(
 name|gfig_preview
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* And preview */
@@ -31519,7 +31492,7 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-comment|/*update_draw_area (gfig_preview, NULL);*/
+comment|/*gtk_widget_queue_draw (gfig_preview);*/
 block|}
 end_function
 
@@ -41210,11 +41183,9 @@ literal|0
 expr_stmt|;
 block|}
 comment|/*d_draw_arc (newarc);*/
-name|update_draw_area
+name|gtk_widget_queue_draw
 argument_list|(
 name|gfig_preview
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -47844,7 +47815,7 @@ name|gint
 name|show_single
 parameter_list|)
 block|{
-comment|/* Show_single - only one object to draw Unless shift     * is down in whcih case show all.    */
+comment|/* Show_single - only one object to draw Unless shift     * is down in which case show all.    */
 name|gint
 name|count
 init|=
