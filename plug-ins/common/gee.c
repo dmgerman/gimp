@@ -52,13 +52,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gtk/gtk.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gtk/gtk.h"
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
@@ -565,13 +571,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_the_egg"
 argument_list|,
+name|_
+argument_list|(
 literal|"A big hello from the GIMP team!"
+argument_list|)
 argument_list|,
-literal|""
+name|_
+argument_list|(
+literal|"FIXME: write help"
+argument_list|)
 argument_list|,
 literal|"Adam D. Moss<adam@gimp.org>"
 argument_list|,
@@ -579,7 +594,10 @@ literal|"Adam D. Moss<adam@gimp.org>"
 argument_list|,
 literal|"1998"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Toys/The Egg..."
+argument_list|)
 argument_list|,
 comment|/*NULL,*/
 literal|"RGB*, INDEXED*, GRAY*"
@@ -668,6 +686,9 @@ operator|.
 name|data
 operator|.
 name|d_int32
+expr_stmt|;
+name|INIT_I18N_UI
+argument_list|()
 expr_stmt|;
 comment|/*  if (run_mode == RUN_NONINTERACTIVE) {*/
 if|if
@@ -938,7 +959,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"GEE!  The GIMP E'er Egg!"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -973,7 +997,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"** Thank you for choosing GIMP **"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS

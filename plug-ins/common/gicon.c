@@ -102,10 +102,16 @@ directive|include
 file|"libgimp/gimpui.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2772dd600108
+DECL|struct|__anon2976e0120108
 block|{
 DECL|member|icon_name
 name|gchar
@@ -123,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2772dd600208
+DECL|struct|__anon2976e0120208
 block|{
 DECL|member|run
 name|gint
@@ -484,13 +490,22 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_gicon_load"
 argument_list|,
+name|_
+argument_list|(
 literal|"loads files of the .ico file format"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"FIXME: write help"
+argument_list|)
 argument_list|,
 literal|"Spencer Kimball"
 argument_list|,
@@ -517,9 +532,15 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_gicon_save"
 argument_list|,
+name|_
+argument_list|(
 literal|"saves files in the .ico file format"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"FIXME: write help"
+argument_list|)
 argument_list|,
 literal|"Spencer Kimball"
 argument_list|,
@@ -797,6 +818,9 @@ case|:
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|init_gtk
 argument_list|()
 expr_stmt|;
@@ -841,6 +865,9 @@ return|return;
 block|}
 break|break;
 default|default:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 break|break;
 block|}
 switch|switch
@@ -1072,7 +1099,10 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
+name|_
+argument_list|(
 literal|"gicon: can't open \"%s\"\n"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -1106,7 +1136,10 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
+name|_
+argument_list|(
 literal|"Not a GIcon file: %s!\n"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -1859,7 +1892,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Save As GIcon"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -1965,7 +2001,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2022,7 +2061,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2147,7 +2189,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Icon Name:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment

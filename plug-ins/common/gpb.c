@@ -77,6 +77,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"app/brush_header.h"
 end_include
 
@@ -107,7 +113,7 @@ comment|/* Parameters applicable each time we save a gpb or gih, saved  * in the
 end_comment
 
 begin_struct
-DECL|struct|__anon27ebc2170108
+DECL|struct|__anon2955bb4a0108
 specifier|static
 struct|struct
 block|{
@@ -167,7 +173,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ebc2170208
+DECL|struct|__anon2955bb4a0208
 block|{
 DECL|member|orientation
 name|GOrientation
@@ -488,15 +494,22 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_gpb_save"
 argument_list|,
+name|_
+argument_list|(
 literal|"saves images in GIMP pixmap brush format"
+argument_list|)
 argument_list|,
-literal|"This plug-in saves a layer of an image in "
-literal|"the GIMP pixmap brush format. "
-literal|"The image must have an alpha channel."
+name|_
+argument_list|(
+literal|"This plug-in saves a layer of an image in the GIMP pixmap brush format. The image must have an alpha channel."
+argument_list|)
 argument_list|,
 literal|"Tor Lillqvist"
 argument_list|,
@@ -532,14 +545,15 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_gih_save"
 argument_list|,
+name|_
+argument_list|(
 literal|"saves images in GIMP pixmap brush pipe format"
+argument_list|)
 argument_list|,
-literal|"This plug-in saves an image in "
-literal|"the GIMP pixmap brush pipe format. "
-literal|"The image must have an alpha channel."
-literal|"The image can be multi-layered, "
-literal|"and additionally the layers can be divided into "
-literal|"a rectangular array of brushes."
+name|_
+argument_list|(
+literal|"This plug-in saves an image in the GIMP pixmap brush pipe format. The image must have an alpha channel. The image can be multi-layered, and additionally the layers can be divided into a rectangular array of brushes."
+argument_list|)
 argument_list|,
 literal|"Tor Lillqvist"
 argument_list|,
@@ -1365,7 +1379,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1422,7 +1439,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1522,7 +1542,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Spacing (percent):"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -1768,7 +1791,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Description:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -1948,7 +1974,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Save As Pixmap Brush"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -2208,7 +2237,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Save As Pixmap Brush Pipe"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -2322,7 +2354,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Cell size:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2727,7 +2762,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|" pixels"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2828,7 +2866,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Number of cells:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -3103,7 +3144,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Display as:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -3237,7 +3281,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|" rows of "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3328,7 +3375,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|" columns on each layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3356,7 +3406,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|" (width mismatch!) "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3385,7 +3438,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|" (height mismatch!) "
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3482,7 +3538,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Dimension:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -3728,7 +3787,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Ranks:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -4078,7 +4140,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Selection:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -4529,7 +4594,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GPB: write error"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -5212,7 +5280,10 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"drawable has no alpha channel -- aborting!\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -5268,7 +5339,10 @@ name|temp
 operator|=
 name|g_strdup_printf
 argument_list|(
+name|_
+argument_list|(
 literal|"Saving %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -5301,7 +5375,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GPB: can't open \"%s\""
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -5453,7 +5530,10 @@ name|msg
 operator|=
 name|g_strdup_printf
 argument_list|(
+name|_
+argument_list|(
 literal|"Saving %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -5486,7 +5566,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"GPB: can't open \"%s\""
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -6112,6 +6195,9 @@ case|:
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|init_gtk
 argument_list|()
 expr_stmt|;
@@ -6163,6 +6249,9 @@ return|return;
 block|}
 break|break;
 default|default:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 break|break;
 block|}
 switch|switch
@@ -6476,7 +6565,10 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Layer %s doesn't have an alpha channel, skipped"
+argument_list|)
 argument_list|,
 name|layer_name
 argument_list|)

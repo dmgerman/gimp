@@ -28,7 +28,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_ifdef
@@ -246,25 +258,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
-name|gchar
-modifier|*
-name|help_string
-init|=
-literal|" This plug-in maps the contents of the specified drawable with"
-literal|" active gradient. It calculates luminosity of each pixel and"
-literal|" replaces the pixel by the sample of active gradient at the"
-literal|" position proportional to that luminosity. Complete black pixel"
-literal|" becomes the leftmost color of the gradient, and complete white"
-literal|" becomes the rightmost. Works on both Grayscale and RGB image"
-literal|" with/without alpha channel."
-decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gradmap"
 argument_list|,
+name|_
+argument_list|(
 literal|"Map the contents of the specified drawable with active gradient"
+argument_list|)
 argument_list|,
-name|help_string
+name|_
+argument_list|(
+literal|" This plug-in maps the contents of the specified drawable with active gradient. It calculates luminosity of each pixel and replaces the pixel by the sample of active gradient at the position proportional to that luminosity. Complete black pixel becomes the leftmost color of the gradient, and complete white becomes the rightmost. Works on both Grayscale and RGB image with/without alpha channel."
+argument_list|)
 argument_list|,
 literal|"Eiichi Takamori"
 argument_list|,
@@ -272,7 +281,10 @@ literal|"Eiichi Takamori"
 argument_list|,
 literal|"1997"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Colors/Map/Gradient Map"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -347,6 +359,9 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -412,7 +427,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Gradient Map..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_tile_cache_ntiles

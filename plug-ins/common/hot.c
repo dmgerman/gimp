@@ -46,6 +46,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -53,6 +59,12 @@ begin_include
 include|#
 directive|include
 file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_include
@@ -137,7 +149,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon2b0f19110103
+DECL|enum|__anon2a3c1d8d0103
 typedef|typedef
 enum|enum
 block|{
@@ -162,7 +174,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b0f19110203
+DECL|enum|__anon2a3c1d8d0203
 typedef|typedef
 enum|enum
 block|{
@@ -212,7 +224,7 @@ comment|/*  * RGB to YIQ encoding matrix.  */
 end_comment
 
 begin_struct
-DECL|struct|__anon2b0f19110308
+DECL|struct|__anon2a3c1d8d0308
 struct|struct
 block|{
 DECL|member|pedestal
@@ -682,17 +694,22 @@ name|nrets
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_hot"
 argument_list|,
+name|_
+argument_list|(
 literal|"Look for hot NTSC or PAL pixels "
+argument_list|)
 argument_list|,
-literal|"hot scans an image for pixels that will give "
-literal|"unsave values of chrominance or composite "
-literal|"signale amplitude when encoded into an NTSC "
-literal|"or PAL signal.  Three actions can be performed on these ``hot'' "
-literal|"pixels. (0) reduce luminance, (1) reduce saturation, or (2) Blacken."
+name|_
+argument_list|(
+literal|"hot scans an image for pixels that will give unsave values of chrominance or composite signale amplitude when encoded into an NTSC or PAL signal.  Three actions can be performed on these ``hot'' pixels. (0) reduce luminance, (1) reduce saturation, or (2) Blacken."
+argument_list|)
 argument_list|,
 literal|"Eric L. Hernes, Alan Wm Paeth"
 argument_list|,
@@ -700,7 +717,10 @@ literal|"Eric L. Hernes"
 argument_list|,
 literal|"1997"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Colors/Hot..."
+argument_list|)
 argument_list|,
 literal|"RGB"
 argument_list|,
@@ -859,6 +879,9 @@ block|{
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 comment|/* XXX: add code here for interactive running */
 if|if
 condition|(
@@ -931,6 +954,9 @@ break|break;
 case|case
 name|RUN_NONINTERACTIVE
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/* XXX: add code here for non-interactive running */
 if|if
 condition|(
@@ -1020,6 +1046,9 @@ break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/* XXX: add code here for last-values running */
 if|if
 condition|(
@@ -1443,7 +1472,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Hot"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|prog_interval
@@ -2377,19 +2409,28 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Reduce Luminance"
+argument_list|)
 block|,
 literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Reduce Saturation"
+argument_list|)
 block|,
 literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Blacken (flag)"
+argument_list|)
 block|,
 literal|0
 block|}
@@ -2409,6 +2450,44 @@ decl_stmt|;
 name|gint
 name|argc
 decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|actions
+index|[
+name|i
+index|]
+operator|.
+name|name
+operator|!=
+name|NULL
+condition|;
+name|i
+operator|++
+control|)
+name|actions
+index|[
+name|i
+index|]
+operator|.
+name|name
+operator|=
+name|gettext
+argument_list|(
+name|actions
+index|[
+name|i
+index|]
+operator|.
+name|name
+argument_list|)
+expr_stmt|;
 comment|/* Set args */
 name|argc
 operator|=
@@ -2466,7 +2545,10 @@ name|mw_app_new
 argument_list|(
 literal|"plug_in_hot"
 argument_list|,
+name|_
+argument_list|(
 literal|"Hot"
+argument_list|)
 argument_list|,
 operator|&
 name|runp
@@ -2553,7 +2635,10 @@ name|vbox
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Create New Layer"
+argument_list|)
 argument_list|,
 operator|&
 name|argp
@@ -2565,7 +2650,10 @@ name|mw_radio_group_new
 argument_list|(
 name|vbox
 argument_list|,
+name|_
+argument_list|(
 literal|"Mode"
+argument_list|)
 argument_list|,
 name|modes
 argument_list|)
@@ -2574,7 +2662,10 @@ name|mw_radio_group_new
 argument_list|(
 name|hbox
 argument_list|,
+name|_
+argument_list|(
 literal|"Action"
+argument_list|)
 argument_list|,
 name|actions
 argument_list|)

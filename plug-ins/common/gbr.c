@@ -147,6 +147,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"app/brush_header.h"
 end_include
 
@@ -155,7 +161,7 @@ comment|/* Declare local data types  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c595bd50108
+DECL|struct|__anon2b75ab280108
 typedef|typedef
 struct|struct
 block|{
@@ -531,13 +537,22 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_gbr_load"
 argument_list|,
+name|_
+argument_list|(
 literal|"loads files of the .gbr file format"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"FIXME: write help"
+argument_list|)
 argument_list|,
 literal|"Tim Newsome"
 argument_list|,
@@ -564,9 +579,15 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_gbr_save"
 argument_list|,
+name|_
+argument_list|(
 literal|"saves files in the .gbr file format"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Yeah!"
+argument_list|)
 argument_list|,
 literal|"Tim Newsome"
 argument_list|,
@@ -846,6 +867,9 @@ case|:
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|init_gtk
 argument_list|()
 expr_stmt|;
@@ -891,6 +915,9 @@ return|return;
 block|}
 break|break;
 default|default:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 break|break;
 block|}
 switch|switch
@@ -1122,7 +1149,10 @@ name|sprintf
 argument_list|(
 name|temp
 argument_list|,
+name|_
+argument_list|(
 literal|"Loading %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -1427,7 +1457,10 @@ name|gimp_layer_new
 argument_list|(
 name|image_ID
 argument_list|,
+name|_
+argument_list|(
 literal|"Background"
+argument_list|)
 argument_list|,
 name|ph
 operator|.
@@ -1681,7 +1714,10 @@ name|sprintf
 argument_list|(
 name|temp
 argument_list|,
+name|_
+argument_list|(
 literal|"Saving %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -1754,7 +1790,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Unable to open %s"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -2135,7 +2174,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Save As Brush"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -2241,7 +2283,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2298,7 +2343,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2423,7 +2471,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Spacing:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2565,7 +2616,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Description:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment

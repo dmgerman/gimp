@@ -40,6 +40,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gtk/gtk.h"
 end_include
 
@@ -47,6 +53,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
@@ -2091,15 +2103,22 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
+name|_
+argument_list|(
 literal|"Create images based on a random genetic formula"
+argument_list|)
 argument_list|,
-literal|"This Plug-in is based on an article by "
-literal|"Jörn Loviscach (appeared in c't 10/95, page 326). It generates modern art "
-literal|"pictures from a random genetic formula."
+name|_
+argument_list|(
+literal|"This Plug-in is based on an article by Jörn Loviscach (appeared in c't 10/95, page 326). It generates modern art pictures from a random genetic formula."
+argument_list|)
 argument_list|,
 literal|"Jörn Loviscach, Jens Ch. Restemeier"
 argument_list|,
@@ -2107,7 +2126,10 @@ literal|"Jörn Loviscach, Jens Ch. Restemeier"
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Render/Pattern/Qbist..."
+argument_list|)
 argument_list|,
 literal|"RGB*"
 argument_list|,
@@ -2233,6 +2255,23 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+if|if
+condition|(
+name|run_mode
+operator|==
+name|RUN_INTERACTIVE
+condition|)
+block|{
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
+block|}
+else|else
+block|{
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|param
@@ -2502,7 +2541,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Qbist ..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -3504,7 +3546,10 @@ name|file_select
 operator|=
 name|gtk_file_selection_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Load QBE file..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -3586,7 +3631,10 @@ name|file_select
 operator|=
 name|gtk_file_selection_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Save (middle transform) as QBE file..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -3797,7 +3845,10 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"G-Qbist 1.10"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -4078,7 +4129,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -4138,7 +4192,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Load"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -4198,7 +4255,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Save"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -4258,7 +4318,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect

@@ -28,6 +28,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gtk/gtk.h"
 end_include
 
@@ -37,12 +43,18 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_comment
 comment|/* Typedefs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon278417f20108
+DECL|struct|__anon2ae8ee390108
 typedef|typedef
 struct|struct
 block|{
@@ -109,7 +121,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon278417f20208
+DECL|struct|__anon2ae8ee390208
 typedef|typedef
 struct|struct
 block|{
@@ -504,13 +516,22 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_GTM_save"
 argument_list|,
+name|_
+argument_list|(
 literal|"GIMP Table Magic"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Allows you to draw an HTML table in GIMP. See help for more info."
+argument_list|)
 argument_list|,
 literal|"Daniel Dunbar"
 argument_list|,
@@ -583,6 +604,9 @@ name|GDrawable
 modifier|*
 name|drawable
 decl_stmt|;
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|drawable
 operator|=
 name|gimp_drawable_get
@@ -859,7 +883,10 @@ name|sprintf
 argument_list|(
 name|name
 argument_list|,
+name|_
+argument_list|(
 literal|"Saving %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -1699,7 +1726,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"GIMP HTML Magic"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -1882,7 +1912,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1939,7 +1972,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1995,7 +2031,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"HTML Page Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -2043,7 +2082,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Generate Full HTML Document"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -2099,7 +2141,10 @@ name|tips
 argument_list|,
 name|toggle
 argument_list|,
+name|_
+argument_list|(
 literal|"If checked GTM will output a full HTML document with<HTML>,<BODY>, etc. tags instead of just the table html."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2112,7 +2157,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Table Creation Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -2191,7 +2239,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Use Cellspan"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2263,15 +2314,21 @@ name|tips
 argument_list|,
 name|toggle
 argument_list|,
+name|_
+argument_list|(
 literal|"If checked GTM will replace any rectangular sections of identically colored blocks with one large cell with ROWSPAN and COLSPAN values."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
 name|gtk_check_button_new_with_label
+argument_list|(
+name|_
 argument_list|(
 literal|"Compress TD tags"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_table_attach
 argument_list|(
@@ -2342,14 +2399,20 @@ name|tips
 argument_list|,
 name|toggle
 argument_list|,
+name|_
+argument_list|(
 literal|"Checking this tag will cause GTM to leave no whitespace between the TD tags and the cellcontent.  This is only necessary for pixel level positioning control."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Caption"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2421,7 +2484,10 @@ name|tips
 argument_list|,
 name|toggle
 argument_list|,
+name|_
+argument_list|(
 literal|"Check if you would like to have the table captioned."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|entry
@@ -2504,14 +2570,20 @@ name|tips
 argument_list|,
 name|entry
 argument_list|,
+name|_
+argument_list|(
 literal|"The text for the table caption."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Cell Content"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2625,7 +2697,10 @@ name|tips
 argument_list|,
 name|entry
 argument_list|,
+name|_
+argument_list|(
 literal|"The text to go into each cell."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2643,7 +2718,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Table Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -2722,7 +2800,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Border"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2848,14 +2929,20 @@ name|tips
 argument_list|,
 name|entry
 argument_list|,
+name|_
+argument_list|(
 literal|"The number of pixels in the table border.  Can only be a number."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Width"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2969,14 +3056,20 @@ name|tips
 argument_list|,
 name|entry
 argument_list|,
+name|_
+argument_list|(
 literal|"The width for each table cell.  Can be a number or a percent."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Height"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -3090,15 +3183,21 @@ name|tips
 argument_list|,
 name|entry
 argument_list|,
+name|_
+argument_list|(
 literal|"The height for each table cell.  Can be a number or a percent."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|label
 operator|=
 name|gtk_label_new
+argument_list|(
+name|_
 argument_list|(
 literal|"Cell-Padding"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_table_attach
 argument_list|(
@@ -3223,14 +3322,20 @@ name|tips
 argument_list|,
 name|entry
 argument_list|,
+name|_
+argument_list|(
 literal|"The amount of cellpadding.  Can only be a number."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Cell-Spacing"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -3356,7 +3461,10 @@ name|tips
 argument_list|,
 name|entry
 argument_list|,
+name|_
+argument_list|(
 literal|"The amount of cellspacing.  Can only be a number."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

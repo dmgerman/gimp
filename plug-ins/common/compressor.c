@@ -202,7 +202,19 @@ end_endif
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
@@ -498,13 +510,22 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_gz_load"
 argument_list|,
+name|_
+argument_list|(
 literal|"loads files compressed with gzip"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"You need to have gzip installed."
+argument_list|)
 argument_list|,
 literal|"Daniel Risacher"
 argument_list|,
@@ -531,9 +552,15 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_gz_save"
 argument_list|,
+name|_
+argument_list|(
 literal|"saves files compressed with gzip"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"You need to have gzip installed"
+argument_list|)
 argument_list|,
 literal|"Daniel Risacher"
 argument_list|,
@@ -634,6 +661,9 @@ operator|.
 name|data
 operator|.
 name|d_int32
+expr_stmt|;
+name|INIT_I18N
+argument_list|()
 expr_stmt|;
 operator|*
 name|nreturn_vals
@@ -937,7 +967,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"gz: fopen failed: %s\n"
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -983,7 +1016,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"gz: dup2 failed: %s\n"
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1060,7 +1096,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"gz: spawn failed: %s\n"
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1169,7 +1208,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"gz: no sensible extension, saving as gzip'd xcf\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|ext
@@ -1309,7 +1351,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"gz: fork failed: %s\n"
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1352,7 +1397,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"gz: fopen failed: %s\n"
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1392,7 +1440,10 @@ argument_list|)
 condition|)
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"gz: dup2 failed: %s\n"
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1416,7 +1467,10 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"gz: exec failed: gzip: %s\n"
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1498,7 +1552,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"gz: gzip exited abnormally on file %s\n"
+argument_list|)
 argument_list|,
 name|tmpname
 argument_list|)
@@ -1566,7 +1623,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"gz: CreateFile failed\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1699,7 +1759,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"gz: CreateProcess failed\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1828,7 +1891,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"gz: no sensible extension, attempting to load with file magic\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1893,7 +1959,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"gz: fork failed: %s\n"
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1941,7 +2010,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"gz: fopen failed: %s\n"
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1987,7 +2059,10 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"gz: dup2 failed: %s\n"
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -2012,7 +2087,10 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"gz: exec failed: gunzip: %s\n"
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -2095,7 +2173,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"gz: gzip exited abnormally on file %s\n"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -2163,7 +2244,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"gz: CreateFile failed\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -2296,7 +2380,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"gz: CreateProcess failed: %d\n"
+argument_list|)
 argument_list|,
 name|GetLastError
 argument_list|()
