@@ -396,7 +396,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Close _without Saving"
+literal|"Do_n't save"
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_CLOSE
@@ -554,7 +554,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  The dialog is destroyed with the shell, so it should be safe    *  to keep a gimage pointer for the lifetime of the dialog.    */
+comment|/*  The dialog is destroyed with the shell, so it should be safe    *  to hold an image pointer for the lifetime of the dialog.    */
 name|g_object_set_data
 argument_list|(
 name|G_OBJECT
@@ -884,6 +884,12 @@ argument_list|)
 decl_stmt|;
 name|guint
 name|diff
+init|=
+literal|1
+operator|+
+name|now
+operator|-
+name|then
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -893,14 +899,6 @@ name|then
 argument_list|,
 name|NULL
 argument_list|)
-expr_stmt|;
-name|diff
-operator|=
-literal|1
-operator|+
-name|now
-operator|-
-name|then
 expr_stmt|;
 if|if
 condition|(
@@ -935,6 +933,32 @@ argument_list|,
 name|diff
 argument_list|)
 return|;
+comment|/*  round to the nearest minute  */
+name|diff
+operator|=
+operator|(
+name|diff
+operator|+
+literal|30
+operator|)
+operator|/
+literal|60
+expr_stmt|;
+if|if
+condition|(
+name|diff
+operator|==
+literal|1
+condition|)
+return|return
+name|g_strdup
+argument_list|(
+name|_
+argument_list|(
+literal|"minute"
+argument_list|)
+argument_list|)
+return|;
 return|return
 name|g_strdup_printf
 argument_list|(
@@ -944,8 +968,6 @@ literal|"%d minutes"
 argument_list|)
 argument_list|,
 name|diff
-operator|/
-literal|60
 argument_list|)
 return|;
 block|}
