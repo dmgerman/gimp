@@ -44,6 +44,10 @@ name|Gimp
 modifier|*
 name|gimp
 decl_stmt|;
+DECL|member|ref_count
+name|gint
+name|ref_count
+decl_stmt|;
 DECL|member|open
 name|guint
 name|open
@@ -86,6 +90,13 @@ range|:
 literal|1
 decl_stmt|;
 comment|/*  Is the plug-in busy with a temp proc?   */
+DECL|member|starting_ext
+name|guint
+name|starting_ext
+range|:
+literal|1
+decl_stmt|;
+comment|/*  Does the plug-in wait for extension_ack?*/
 DECL|member|pid
 name|pid_t
 name|pid
@@ -123,7 +134,7 @@ modifier|*
 name|his_write
 decl_stmt|;
 DECL|member|input_id
-name|guint32
+name|guint
 name|input_id
 decl_stmt|;
 comment|/*  Id of input proc                        */
@@ -230,10 +241,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  Create a new plug-in structure  */
-end_comment
-
 begin_function_decl
 name|PlugIn
 modifier|*
@@ -250,13 +257,9 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  Destroy a plug-in structure.  *  This will close the plug-in first if necessary.  */
-end_comment
-
 begin_function_decl
 name|void
-name|plug_in_destroy
+name|plug_in_ref
 parameter_list|(
 name|PlugIn
 modifier|*
@@ -265,9 +268,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  Open a plug-in. This cause the plug-in to run.  *  If returns TRUE, you must destroy the plugin.  *  If returns FALSE, you must not destroy the plugin.  */
-end_comment
+begin_function_decl
+name|void
+name|plug_in_unref
+parameter_list|(
+name|PlugIn
+modifier|*
+name|plug_in
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|gboolean
@@ -279,10 +289,6 @@ name|plug_in
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/*  Close a plug-in. This kills the plug-in and releases its resources.  */
-end_comment
 
 begin_function_decl
 name|void

@@ -202,7 +202,7 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|gui_main
+name|gui_threads_enter
 parameter_list|(
 name|Gimp
 modifier|*
@@ -214,7 +214,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gui_main_quit
+name|gui_threads_leave
 parameter_list|(
 name|Gimp
 modifier|*
@@ -949,15 +949,15 @@ argument_list|)
 expr_stmt|;
 name|gimp
 operator|->
-name|gui_main_loop_func
+name|gui_threads_enter_func
 operator|=
-name|gui_main
+name|gui_threads_enter
 expr_stmt|;
 name|gimp
 operator|->
-name|gui_main_loop_quit_func
+name|gui_threads_leave_func
 operator|=
-name|gui_main_quit
+name|gui_threads_leave
 expr_stmt|;
 name|gimp
 operator|->
@@ -1445,15 +1445,15 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gui_main (Gimp * gimp)
-name|gui_main
+DECL|function|gui_threads_enter (Gimp * gimp)
+name|gui_threads_enter
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|gtk_main
+name|GDK_THREADS_ENTER
 argument_list|()
 expr_stmt|;
 block|}
@@ -1462,15 +1462,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gui_main_quit (Gimp * gimp)
-name|gui_main_quit
+DECL|function|gui_threads_leave (Gimp * gimp)
+name|gui_threads_leave
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|gtk_main_quit
+name|GDK_THREADS_LEAVE
 argument_list|()
 expr_stmt|;
 block|}

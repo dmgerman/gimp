@@ -29,12 +29,12 @@ file|"gimpimage-new.h"
 end_include
 
 begin_typedef
-DECL|typedef|GimpMainLoopFunc
+DECL|typedef|GimpThreadFunc
 typedef|typedef
 name|void
 function_decl|(
 modifier|*
-name|GimpMainLoopFunc
+name|GimpThreadFunc
 function_decl|)
 parameter_list|(
 name|Gimp
@@ -222,18 +222,13 @@ DECL|member|stack_trace_mode
 name|GimpStackTraceMode
 name|stack_trace_mode
 decl_stmt|;
-DECL|member|main_loops
-name|GList
-modifier|*
-name|main_loops
+DECL|member|gui_threads_enter_func
+name|GimpThreadFunc
+name|gui_threads_enter_func
 decl_stmt|;
-DECL|member|gui_main_loop_func
-name|GimpMainLoopFunc
-name|gui_main_loop_func
-decl_stmt|;
-DECL|member|gui_main_loop_quit_func
-name|GimpMainLoopFunc
-name|gui_main_loop_quit_func
+DECL|member|gui_threads_leave_func
+name|GimpThreadFunc
+name|gui_threads_leave_func
 decl_stmt|;
 DECL|member|gui_create_display_func
 name|GimpCreateDisplayFunc
@@ -560,7 +555,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_main_loop
+name|gimp_threads_enter
 parameter_list|(
 name|Gimp
 modifier|*
@@ -571,7 +566,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_main_loop_quit
+name|gimp_threads_leave
 parameter_list|(
 name|Gimp
 modifier|*
