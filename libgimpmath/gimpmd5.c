@@ -142,7 +142,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_md5_get_digest:  * @buffer: byte buffer  * @buffer_size: buffer size (in bytes)  * @digest: 16 bytes buffer receiving the hash code.  *   * Get the md5 hash of a buffer. The result is put in the 16 bytes  * buffer @digest.  *  * The MD5 algorithm takes as input a message of arbitrary length and  * produces as output a 128-bit "fingerprint" or "message digest" of  * the input.  It is conjectured that it is computationally infeasible  * to produce two messages having the same message digest, or to  * produce any message having a given prespecified target message  * digest. For more information see RFC 1321.  **/
+comment|/**  * gimp_md5_get_digest:  * @buffer: byte buffer  * @buffer_size: buffer size (in bytes) or -1 if @buffer is nul-terminated.  * @digest: 16 bytes buffer receiving the hash code.  *   * Get the md5 hash of a buffer. The result is put in the 16 bytes  * buffer @digest.  *  * The MD5 algorithm takes as input a message of arbitrary length and  * produces as output a 128-bit "fingerprint" or "message digest" of  * the input.  It is conjectured that it is computationally infeasible  * to produce two messages having the same message digest, or to  * produce any message having a given prespecified target message  * digest. For more information see RFC 1321.  **/
 end_comment
 
 begin_function
@@ -168,6 +168,33 @@ block|{
 name|GimpMD5Context
 name|ctx
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|buffer
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|digest
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|buffer_size
+operator|<
+literal|0
+condition|)
+name|buffer_size
+operator|=
+name|strlen
+argument_list|(
+name|buffer
+argument_list|)
+expr_stmt|;
 name|gimp_md5_init
 argument_list|(
 operator|&
