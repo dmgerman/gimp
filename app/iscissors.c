@@ -14121,6 +14121,12 @@ init|;
 name|i
 operator|<
 name|height
+operator|-
+operator|(
+name|offy
+operator|*
+name|SUPERSAMPLE
+operator|)
 condition|;
 name|i
 operator|++
@@ -14172,6 +14178,8 @@ operator|)
 name|list
 operator|->
 name|data
+operator|+
+name|offx
 expr_stmt|;
 if|if
 condition|(
@@ -14231,8 +14239,6 @@ operator|->
 name|mask
 argument_list|,
 name|x
-operator|+
-name|offx
 argument_list|,
 name|i
 operator|+
@@ -14374,6 +14380,8 @@ operator|->
 name|drawable
 operator|.
 name|width
+operator|-
+name|offx
 argument_list|,
 name|buf
 argument_list|)
