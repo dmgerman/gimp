@@ -2980,8 +2980,8 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|gimp_hsl_value (gdouble n1,gdouble n2,gdouble hue)
-name|gimp_hsl_value
+DECL|function|gimp_hsl_value_int (gdouble n1,gdouble n2,gdouble hue)
+name|gimp_hsl_value_int
 parameter_list|(
 name|gdouble
 name|n1
@@ -3221,7 +3221,7 @@ comment|/*  chromatic case  */
 operator|*
 name|hue
 operator|=
-name|gimp_hsl_value
+name|gimp_hsl_value_int
 argument_list|(
 name|m1
 argument_list|,
@@ -3235,7 +3235,7 @@ expr_stmt|;
 operator|*
 name|saturation
 operator|=
-name|gimp_hsl_value
+name|gimp_hsl_value_int
 argument_list|(
 name|m1
 argument_list|,
@@ -3247,7 +3247,7 @@ expr_stmt|;
 operator|*
 name|lightness
 operator|=
-name|gimp_hsl_value
+name|gimp_hsl_value_int
 argument_list|(
 name|m1
 argument_list|,
