@@ -241,6 +241,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpDeviceStatus
+typedef|typedef
+name|struct
+name|_GimpDeviceStatus
+name|GimpDeviceStatus
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpErrorConsole
 typedef|typedef
 name|struct

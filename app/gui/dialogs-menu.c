@@ -167,6 +167,20 @@ argument_list|,
 name|GIMP_STOCK_TOOL_OPTIONS
 argument_list|)
 block|,
+name|ADD_TAB
+argument_list|(
+name|N_
+argument_list|(
+literal|"/Add Tab/Device Status..."
+argument_list|)
+argument_list|,
+literal|"gimp-device-status"
+argument_list|,
+literal|"<StockItem>"
+argument_list|,
+name|GIMP_STOCK_DEVICE_STATUS
+argument_list|)
+block|,
 name|MENU_SEPARATOR
 argument_list|(
 literal|"/Add Tab/---"

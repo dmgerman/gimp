@@ -372,7 +372,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|dialogs_create_toplevel_cmd_callback
+name|dialogs_create_dockable_cmd_callback
 block|,
 literal|0
 block|,
@@ -381,7 +381,7 @@ block|,
 name|GIMP_STOCK_DEVICE_STATUS
 block|}
 block|,
-literal|"gimp-device-status-dialog"
+literal|"gimp-device-status"
 block|,
 literal|"file/dialogs/device_status.html"
 block|,
