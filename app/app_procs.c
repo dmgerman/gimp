@@ -1763,15 +1763,6 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-if|if
-condition|(
-operator|!
-name|no_interface
-operator|&&
-operator|!
-name|no_splash
-condition|)
-block|{
 name|GtkWidget
 modifier|*
 name|vbox
@@ -1784,6 +1775,13 @@ name|GtkStyle
 modifier|*
 name|style
 decl_stmt|;
+if|if
+condition|(
+name|no_interface
+operator|||
+name|no_splash
+condition|)
+return|return;
 name|win_initstatus
 operator|=
 name|gtk_window_new
@@ -2061,7 +2059,7 @@ argument_list|(
 name|win_initstatus
 argument_list|)
 expr_stmt|;
-comment|/*  This is a hack: we try to compute a good guess for the maximum         *  number of charcters that will fit into the splash-screen using         *  the default_font        */
+comment|/*  This is a hack: we try to compute a good guess for the maximum     *  number of charcters that will fit into the splash-screen using     *  the default_font    */
 name|style
 operator|=
 name|gtk_widget_get_style
@@ -2071,10 +2069,11 @@ argument_list|)
 expr_stmt|;
 name|max_label_length
 operator|=
+operator|(
 literal|0.8
 operator|*
 operator|(
-name|float
+name|gfloat
 operator|)
 name|strlen
 argument_list|(
@@ -2083,12 +2082,12 @@ argument_list|)
 operator|*
 operator|(
 operator|(
-name|float
+name|gfloat
 operator|)
 name|logo_area_width
 operator|/
 operator|(
-name|float
+name|gfloat
 operator|)
 name|gdk_string_width
 argument_list|(
@@ -2099,8 +2098,8 @@ argument_list|,
 name|AUTHORS
 argument_list|)
 operator|)
+operator|)
 expr_stmt|;
-block|}
 block|}
 end_function
 

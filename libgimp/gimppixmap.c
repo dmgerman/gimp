@@ -21,25 +21,6 @@ directive|include
 file|"gimppixmap.h"
 end_include
 
-begin_struct
-DECL|struct|_GimpPixmap
-struct|struct
-name|_GimpPixmap
-block|{
-DECL|member|pixmap
-name|GtkPixmap
-name|pixmap
-decl_stmt|;
-DECL|member|xpm_data
-name|gchar
-modifier|*
-modifier|*
-name|xpm_data
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
 begin_function_decl
 specifier|static
 name|void

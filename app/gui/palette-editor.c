@@ -294,7 +294,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9962320103
+DECL|enum|__anon28ed0f860103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -782,10 +782,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|palettes_init (gint no_data)
+DECL|function|palettes_init (gboolean no_data)
 name|palettes_init
 parameter_list|(
-name|gint
+name|gboolean
 name|no_data
 parameter_list|)
 block|{

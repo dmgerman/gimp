@@ -222,7 +222,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e011940103
+DECL|enum|__anon2966f38e0103
 block|{
 DECL|enumerator|FILENAME_CHANGED
 name|FILENAME_CHANGED
@@ -1324,7 +1324,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gboolean
 DECL|function|gimp_file_selection_entry_focus_out_callback (GtkWidget * widget,GdkEvent * event,gpointer data)
 name|gimp_file_selection_entry_focus_out_callback
 parameter_list|(

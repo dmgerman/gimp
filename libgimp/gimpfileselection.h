@@ -164,7 +164,6 @@ parameter_list|)
 function_decl|;
 block|}
 struct|;
-comment|/* For information look into the C source or the html documentation */
 name|GtkType
 name|gimp_file_selection_get_type
 parameter_list|(

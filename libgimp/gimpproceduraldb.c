@@ -323,6 +323,9 @@ name|memcpy
 argument_list|(
 name|data
 argument_list|,
+operator|(
+name|gpointer
+operator|)
 name|hack
 argument_list|,
 name|size
