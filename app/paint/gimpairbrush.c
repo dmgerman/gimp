@@ -1516,6 +1516,10 @@ index|[
 literal|1
 index|]
 expr_stmt|;
+name|num_strokes
+operator|/=
+literal|2
+expr_stmt|;
 if|if
 condition|(
 name|num_strokes
