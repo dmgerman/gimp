@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -19,6 +25,12 @@ begin_include
 include|#
 directive|include
 file|<libgimp/color_selector.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpintl.h>
 end_include
 
 begin_include
@@ -133,7 +145,10 @@ init|=
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"GTK colour selector as a pluggable colour selector"
+argument_list|)
 block|,
 literal|"Austin Donnelly<austin@gimp.org>"
 block|,
@@ -288,7 +303,7 @@ comment|/* GTK colour selector methods */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b85cf3f0108
+DECL|struct|__anon2b52d5040108
 typedef|typedef
 struct|struct
 block|{

@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -25,6 +31,12 @@ begin_include
 include|#
 directive|include
 file|<libgimp/color_selector.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpintl.h>
 end_include
 
 begin_include
@@ -253,7 +265,10 @@ init|=
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Painter-style colour selector as a pluggable colour selector"
+argument_list|)
 block|,
 literal|"Simon Budig<Simon.Budig@unix-ag.org>"
 block|,
@@ -340,7 +355,7 @@ value|GDK_EXPOSURE_MASK | \                        GDK_BUTTON_PRESS_MASK | \    
 end_define
 
 begin_typedef
-DECL|enum|__anon288a65b50103
+DECL|enum|__anon27b8efdd0103
 typedef|typedef
 enum|enum
 block|{
@@ -531,7 +546,10 @@ name|id
 operator|=
 name|gimp_color_selector_register
 argument_list|(
+name|_
+argument_list|(
 literal|"Triangle"
+argument_list|)
 argument_list|,
 literal|"triangle.html"
 argument_list|,
@@ -545,7 +563,10 @@ name|id
 operator|=
 name|mod_color_selector_register
 argument_list|(
+name|_
+argument_list|(
 literal|"Triangle"
+argument_list|)
 argument_list|,
 literal|"triangle.html"
 argument_list|,

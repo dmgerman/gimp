@@ -10,6 +10,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -41,6 +47,12 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpmodule.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpintl.h>
 end_include
 
 begin_include
@@ -269,7 +281,10 @@ init|=
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Watercolor style color selector as a pluggable module"
+argument_list|)
 block|,
 literal|"Raph Levien<raph@acm.org>, Sven Neumann<sven@gimp.org>"
 block|,
@@ -330,7 +345,10 @@ name|id
 operator|=
 name|gimp_color_selector_register
 argument_list|(
+name|_
+argument_list|(
 literal|"Watercolor"
+argument_list|)
 argument_list|,
 literal|"watercolor.html"
 argument_list|,
@@ -344,7 +362,10 @@ name|id
 operator|=
 name|mod_color_selector_register
 argument_list|(
+name|_
+argument_list|(
 literal|"Watercolor"
+argument_list|)
 argument_list|,
 literal|"watercolor.html"
 argument_list|,
@@ -487,7 +508,7 @@ value|40
 end_define
 
 begin_typedef
-DECL|struct|__anon29e5122f0108
+DECL|struct|__anon29b05aa60108
 typedef|typedef
 struct|struct
 block|{
@@ -3258,7 +3279,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"New"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -3292,7 +3316,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Reset"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -3326,7 +3353,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
-literal|"Color history"
+name|_
+argument_list|(
+literal|"Color History"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3663,7 +3693,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Pressure:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

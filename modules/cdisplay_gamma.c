@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpintl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpmodule.h>
 end_include
 
@@ -37,12 +43,6 @@ begin_include
 include|#
 directive|include
 file|<libgimp/parasite.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/stdplugins-intl.h>
 end_include
 
 begin_include
@@ -62,7 +62,7 @@ DECL|macro|COLOR_DISPLAY_NAME
 define|#
 directive|define
 name|COLOR_DISPLAY_NAME
-value|"Gamma"
+value|_("Gamma")
 end_define
 
 begin_typedef
@@ -339,7 +339,10 @@ init|=
 block|{
 name|NULL
 block|,
+name|N_
+argument_list|(
 literal|"Gamma color display filter"
+argument_list|)
 block|,
 literal|"Manish Singh<yosh@gimp.org>"
 block|,

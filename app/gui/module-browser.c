@@ -137,7 +137,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|enum|__anon2c64d5f50103
+DECL|enum|__anon2b65341e0103
 typedef|typedef
 enum|enum
 block|{
@@ -311,7 +311,7 @@ comment|/* one of these objects is kept per-module */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c64d5f50208
+DECL|struct|__anon2b65341e0208
 typedef|typedef
 struct|struct
 block|{
@@ -428,7 +428,7 @@ value|7
 end_define
 
 begin_typedef
-DECL|struct|__anon2c64d5f50308
+DECL|struct|__anon2b65341e0308
 typedef|typedef
 struct|struct
 block|{
@@ -1706,7 +1706,7 @@ comment|/* module_info object glue */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c64d5f50408
+DECL|struct|__anon2b65341e0408
 typedef|typedef
 struct|struct
 block|{
@@ -1721,7 +1721,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2c64d5f50503
+DECL|enum|__anon2b65341e0503
 enum|enum
 block|{
 DECL|enumerator|MODIFIED
@@ -3584,10 +3584,13 @@ name|i
 index|]
 argument_list|)
 argument_list|,
+name|gettext
+argument_list|(
 name|text
 index|[
 name|i
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -4561,7 +4564,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2c64d5f50608
+DECL|struct|__anon2b65341e0608
 typedef|typedef
 struct|struct
 block|{
