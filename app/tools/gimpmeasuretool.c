@@ -500,7 +500,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Measure angles and legnths"
+literal|"Measure angles and lengths"
 argument_list|)
 argument_list|,
 name|N_
