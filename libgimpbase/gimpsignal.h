@@ -31,10 +31,6 @@ comment|/* For information look into the C source or the html documentation */
 end_comment
 
 begin_comment
-comment|/* A gimp-level interface to a Posix.1-compliant signal package lives here  * For 1.2, this gimp-level interface mostly passes through to posix calls  * without modification. Certain calls manipulate struct sigaction in  * ways useful to Gimp.  */
-end_comment
-
-begin_comment
 comment|/* GimpSignalHandlerFunc is a reference to a (signal handler) function  * that takes a signal ID and returns void.  * signal(2) returns such references; so does gimp_signal_private.  */
 end_comment
 
@@ -53,10 +49,6 @@ parameter_list|)
 function_decl|;
 end_typedef
 
-begin_comment
-comment|/* Internal implementation that can be DEFINEd into various flavors of  * signal(2) lookalikes.  */
-end_comment
-
 begin_function_decl
 name|GimpSignalHandlerFunc
 name|gimp_signal_private
@@ -72,23 +64,6 @@ name|flags
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/* the gimp_signal_syscallrestart() lookalike looks like signal(2) but  * quietly requests the restarting of system calls. Addresses #2742  */
-end_comment
-
-begin_define
-DECL|macro|gimp_signal_syscallrestart (signum,handler)
-define|#
-directive|define
-name|gimp_signal_syscallrestart
-parameter_list|(
-name|signum
-parameter_list|,
-name|handler
-parameter_list|)
-value|gimp_signal_private ((signum), (handler), SA_RESTART)
-end_define
 
 begin_macro
 name|G_END_DECLS
