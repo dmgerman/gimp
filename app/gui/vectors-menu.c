@@ -30,13 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage.h"
+file|"core/gimpchannel.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-mask.h"
+file|"core/gimpimage.h"
 end_include
 
 begin_include
@@ -620,9 +620,12 @@ argument_list|)
 expr_stmt|;
 name|mask_empty
 operator|=
-name|gimp_image_mask_is_empty
+name|gimp_channel_is_empty
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|global_buf

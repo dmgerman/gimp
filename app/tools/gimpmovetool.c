@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpchannel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -43,12 +49,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage-guides.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpimage-mask.h"
 end_include
 
 begin_include
@@ -923,11 +923,14 @@ operator|->
 name|move_mask
 operator|&&
 operator|!
-name|gimp_image_mask_is_empty
+name|gimp_channel_is_empty
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
+argument_list|)
 argument_list|)
 condition|)
 block|{
@@ -2017,11 +2020,14 @@ operator|->
 name|move_mask
 operator|&&
 operator|!
-name|gimp_image_mask_is_empty
+name|gimp_channel_is_empty
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
+argument_list|)
 argument_list|)
 condition|)
 block|{

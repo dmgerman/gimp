@@ -30,19 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpdrawable.h"
+file|"core/gimpchannel.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"core/gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpimage-mask.h"
 end_include
 
 begin_include
@@ -937,14 +931,23 @@ name|coords
 argument_list|)
 condition|)
 block|{
-comment|/*  One more test--is there a selected region?        *  if so, is cursor inside?        */
-if|if
-condition|(
-name|gimp_image_mask_is_empty
+name|GimpChannel
+modifier|*
+name|selection
+init|=
+name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
+argument_list|)
+decl_stmt|;
+comment|/*  One more test--is there a selected region?        *  if so, is cursor inside?        */
+if|if
+condition|(
+name|gimp_channel_is_empty
+argument_list|(
+name|selection
 argument_list|)
 condition|)
 name|ctype
@@ -954,11 +957,9 @@ expr_stmt|;
 elseif|else
 if|if
 condition|(
-name|gimp_image_mask_value
+name|gimp_channel_value
 argument_list|(
-name|gdisp
-operator|->
-name|gimage
+name|selection
 argument_list|,
 name|coords
 operator|->

@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275c90120103
+DECL|enum|__anon28c8ad370103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -3817,9 +3817,9 @@ argument_list|)
 expr_stmt|;
 name|selection_empty
 operator|=
-name|gimp_image_mask_is_empty
+name|gimp_channel_is_empty
 argument_list|(
-name|gimage
+name|selection
 argument_list|)
 expr_stmt|;
 name|gimp_rectangle_intersect

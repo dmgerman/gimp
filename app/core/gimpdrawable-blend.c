@@ -72,13 +72,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcontext.h"
+file|"gimpchannel.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpdrawable.h"
+file|"gimpcontext.h"
 end_include
 
 begin_include
@@ -97,12 +97,6 @@ begin_include
 include|#
 directive|include
 file|"gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpimage-mask.h"
 end_include
 
 begin_include
@@ -128,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bfd2520108
+DECL|struct|__anon2b564dd70108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -189,7 +183,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bfd2520208
+DECL|struct|__anon2b564dd70208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -2654,13 +2648,20 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|mask
+operator|=
+name|gimp_image_get_mask
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 comment|/*  If the gimage mask is not empty, use it as the shape burst source  */
 if|if
 condition|(
 operator|!
-name|gimp_image_mask_is_empty
+name|gimp_channel_is_empty
 argument_list|(
-name|gimage
+name|mask
 argument_list|)
 condition|)
 block|{
@@ -2710,14 +2711,6 @@ name|offx
 argument_list|,
 operator|&
 name|offy
-argument_list|)
-expr_stmt|;
-comment|/*  the selection mask  */
-name|mask
-operator|=
-name|gimp_image_get_mask
-argument_list|(
-name|gimage
 argument_list|)
 expr_stmt|;
 name|pixel_region_init

@@ -804,23 +804,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
-name|gimp_display_shell_mask_value
-parameter_list|(
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|,
-name|gint
-name|x
-parameter_list|,
-name|gint
-name|y
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|gboolean
 name|gimp_display_shell_mask_bounds
 parameter_list|(

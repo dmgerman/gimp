@@ -185,9 +185,12 @@ expr_stmt|;
 comment|/*  See if the gimage mask is empty  */
 name|empty
 operator|=
-name|gimp_image_mask_is_empty
+name|gimp_channel_is_empty
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Next, cut the mask portion from the gimage  */
@@ -389,9 +392,12 @@ expr_stmt|;
 comment|/*  See if the gimage mask is empty  */
 name|empty
 operator|=
-name|gimp_image_mask_is_empty
+name|gimp_channel_is_empty
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  First, copy the masked portion of the gimage  */
@@ -781,9 +787,12 @@ comment|/*  If there is a selection mask clear it--    *  this might not always 
 if|if
 condition|(
 operator|!
-name|gimp_image_mask_is_empty
+name|gimp_channel_is_empty
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|)
 operator|&&
 operator|!

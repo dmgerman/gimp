@@ -40,6 +40,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpchannel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable-blend.h"
 end_include
 
@@ -53,12 +59,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpdrawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpimage-mask.h"
 end_include
 
 begin_include
@@ -1017,9 +1017,10 @@ condition|(
 name|success
 condition|)
 block|{
-if|if
-condition|(
-operator|!
+name|GimpImage
+modifier|*
+name|gimage
+init|=
 name|gimp_item_get_image
 argument_list|(
 name|GIMP_ITEM
@@ -1027,6 +1028,11 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|gimage
 condition|)
 block|{
 name|success
@@ -1041,14 +1047,11 @@ name|do_seed_fill
 decl_stmt|;
 name|do_seed_fill
 operator|=
-name|gimp_image_mask_is_empty
+name|gimp_channel_is_empty
 argument_list|(
-name|gimp_item_get_image
+name|gimp_image_get_mask
 argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|drawable
-argument_list|)
+name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;

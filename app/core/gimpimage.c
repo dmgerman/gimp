@@ -252,7 +252,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2779cef20103
+DECL|enum|__anon27bfc3f20103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -6660,19 +6660,21 @@ expr_stmt|;
 comment|/*  get the selection mask if one exists  */
 name|mask
 operator|=
-operator|(
-name|gimp_image_mask_is_empty
-argument_list|(
-name|gimage
-argument_list|)
-condition|?
-name|NULL
-else|:
 name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
-operator|)
+expr_stmt|;
+if|if
+condition|(
+name|gimp_channel_is_empty
+argument_list|(
+name|mask
+argument_list|)
+condition|)
+name|mask
+operator|=
+name|NULL
 expr_stmt|;
 comment|/*  configure the active channel array  */
 name|gimp_image_get_active_components
@@ -7258,19 +7260,21 @@ expr_stmt|;
 comment|/*  get the selection mask if one exists  */
 name|mask
 operator|=
-operator|(
-name|gimp_image_mask_is_empty
-argument_list|(
-name|gimage
-argument_list|)
-operator|)
-condition|?
-name|NULL
-else|:
 name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimp_channel_is_empty
+argument_list|(
+name|mask
+argument_list|)
+condition|)
+name|mask
+operator|=
+name|NULL
 expr_stmt|;
 comment|/*  configure the active channel array  */
 name|gimp_image_get_active_components
