@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gui/dialogs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools/tool_manager.h"
 end_include
 
@@ -2415,7 +2421,9 @@ decl_stmt|;
 name|dock
 operator|=
 name|gimp_dock_new
-argument_list|()
+argument_list|(
+name|global_dialog_factory
+argument_list|)
 expr_stmt|;
 name|dockbook
 operator|=

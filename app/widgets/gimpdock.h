@@ -92,6 +92,11 @@ DECL|member|parent_instance
 name|GtkWindow
 name|parent_instance
 decl_stmt|;
+DECL|member|factory
+name|GimpDialogFactory
+modifier|*
+name|factory
+decl_stmt|;
 DECL|member|vbox
 name|GtkWidget
 modifier|*
@@ -133,7 +138,9 @@ name|GtkWidget
 modifier|*
 name|gimp_dock_new
 parameter_list|(
-name|void
+name|GimpDialogFactory
+modifier|*
+name|factory
 parameter_list|)
 function_decl|;
 end_function_decl

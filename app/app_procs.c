@@ -138,6 +138,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gui/dialogs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"paint-funcs/paint-funcs.h"
 end_include
 
@@ -2712,6 +2718,9 @@ name|transparency_type
 argument_list|,
 name|transparency_size
 argument_list|)
+expr_stmt|;
+name|dialogs_register
+argument_list|()
 expr_stmt|;
 name|devices_init
 argument_list|()

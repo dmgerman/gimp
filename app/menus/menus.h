@@ -169,6 +169,20 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  finally, all above functions will return the factory  */
+end_comment
+
+begin_function_decl
+name|GtkItemFactory
+modifier|*
+name|menus_get_dialogs_factory
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_function_decl
 name|void
 name|menus_create_item_from_full_path

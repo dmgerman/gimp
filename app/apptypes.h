@@ -328,6 +328,19 @@ typedef|;
 end_typedef
 
 begin_comment
+comment|/*  gui objects  */
+end_comment
+
+begin_typedef
+DECL|typedef|GimpDialogFactory
+typedef|typedef
+name|struct
+name|_GimpDialogFactory
+name|GimpDialogFactory
+typedef|;
+end_typedef
+
+begin_comment
 comment|/*  widgets  */
 end_comment
 
