@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -3074,7 +3068,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2c1914af0103
+DECL|enum|__anon291dd2190103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
@@ -4001,11 +3995,16 @@ condition|)
 return|return;
 name|context
 operator|=
-name|gimp_get_current_context
+name|GIMP_CONTEXT
 argument_list|(
-name|gimage
+name|GIMP_TOOL
+argument_list|(
+name|ink_tool
+argument_list|)
 operator|->
-name|gimp
+name|tool_info
+operator|->
+name|tool_options
 argument_list|)
 expr_stmt|;
 comment|/* Get the the buffer */

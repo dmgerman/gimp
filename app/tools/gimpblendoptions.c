@@ -1493,12 +1493,12 @@ name|context
 decl_stmt|;
 name|tool_options
 operator|=
-operator|(
-name|GimpToolOptions
-operator|*
-operator|)
+name|GIMP_TOOL_OPTIONS
+argument_list|(
 name|data
+argument_list|)
 expr_stmt|;
+comment|/*  use the user context to switch tools  */
 name|context
 operator|=
 name|gimp_get_user_context

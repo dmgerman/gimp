@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpdrawable.h"
 end_include
 

@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -669,6 +663,10 @@ name|GimpDodgeBurnOptions
 modifier|*
 name|options
 decl_stmt|;
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
 name|GimpPressureOptions
 modifier|*
 name|pressure_options
@@ -712,6 +710,13 @@ expr_stmt|;
 name|options
 operator|=
 name|GIMP_DODGE_BURN_OPTIONS
+argument_list|(
+name|paint_options
+argument_list|)
+expr_stmt|;
+name|context
+operator|=
+name|GIMP_CONTEXT
 argument_list|(
 name|paint_options
 argument_list|)
@@ -1151,12 +1156,7 @@ name|opacity
 operator|=
 name|gimp_context_get_opacity
 argument_list|(
-name|gimp_get_current_context
-argument_list|(
-name|gimage
-operator|->
-name|gimp
-argument_list|)
+name|context
 argument_list|)
 expr_stmt|;
 if|if

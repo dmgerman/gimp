@@ -652,6 +652,10 @@ name|GimpBucketFillOptions
 modifier|*
 name|options
 decl_stmt|;
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
 name|bucket_tool
 operator|=
 name|GIMP_BUCKET_FILL_TOOL
@@ -670,6 +674,13 @@ operator|->
 name|tool_options
 argument_list|)
 expr_stmt|;
+name|context
+operator|=
+name|GIMP_CONTEXT
+argument_list|(
+name|options
+argument_list|)
+expr_stmt|;
 comment|/*  if the 3rd button isn't pressed, fill the selected region  */
 if|if
 condition|(
@@ -681,21 +692,6 @@ name|GDK_BUTTON3_MASK
 operator|)
 condition|)
 block|{
-name|GimpContext
-modifier|*
-name|context
-decl_stmt|;
-name|context
-operator|=
-name|gimp_get_current_context
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-operator|->
-name|gimp
-argument_list|)
-expr_stmt|;
 name|gimp_drawable_bucket_fill
 argument_list|(
 name|gimp_image_active_drawable

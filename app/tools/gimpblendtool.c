@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -774,6 +768,10 @@ name|GimpBlendOptions
 modifier|*
 name|options
 decl_stmt|;
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
 name|GimpImage
 modifier|*
 name|gimage
@@ -798,6 +796,13 @@ operator|->
 name|tool_info
 operator|->
 name|tool_options
+argument_list|)
+expr_stmt|;
+name|context
+operator|=
+name|GIMP_CONTEXT
+argument_list|(
+name|options
 argument_list|)
 expr_stmt|;
 name|gimage
@@ -888,12 +893,7 @@ name|GIMP_CUSTOM_MODE
 argument_list|,
 name|gimp_context_get_paint_mode
 argument_list|(
-name|gimp_get_current_context
-argument_list|(
-name|gimage
-operator|->
-name|gimp
-argument_list|)
+name|context
 argument_list|)
 argument_list|,
 name|options
@@ -902,12 +902,7 @@ name|gradient_type
 argument_list|,
 name|gimp_context_get_opacity
 argument_list|(
-name|gimp_get_current_context
-argument_list|(
-name|gimage
-operator|->
-name|gimp
-argument_list|)
+name|context
 argument_list|)
 argument_list|,
 name|options

@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -737,11 +731,9 @@ condition|)
 return|return;
 name|context
 operator|=
-name|gimp_get_current_context
+name|GIMP_CONTEXT
 argument_list|(
-name|gimage
-operator|->
-name|gimp
+name|paint_options
 argument_list|)
 expr_stmt|;
 name|paint_appl_mode
@@ -1071,15 +1063,12 @@ argument_list|)
 expr_stmt|;
 name|rate
 operator|=
-operator|(
-operator|(
-name|GimpAirbrushOptions
-operator|*
-operator|)
+name|GIMP_AIRBRUSH_OPTIONS
+argument_list|(
 name|airbrush_timeout
 operator|.
 name|paint_options
-operator|)
+argument_list|)
 operator|->
 name|rate
 expr_stmt|;
