@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29cfcade0103
+DECL|enum|__anon29dbb3f20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2917,7 +2917,10 @@ name|editor
 operator|->
 name|stock_id_context
 argument_list|,
+name|GIMP_TEMPLATE
+argument_list|(
 name|object
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
