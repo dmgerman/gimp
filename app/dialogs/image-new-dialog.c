@@ -128,7 +128,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2781ae040108
+DECL|struct|__anon2b94aa0c0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -767,6 +767,18 @@ name|template
 argument_list|)
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gimp_container_view_select_item
+argument_list|(
+name|GIMP_CONTAINER_VIEW
+argument_list|(
+name|dialog
+operator|->
+name|combo
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 break|break;
