@@ -44,21 +44,6 @@ name|COLOR_UPDATE
 value|2
 end_define
 
-begin_comment
-comment|/* EEK */
-end_comment
-
-begin_function_decl
-name|void
-name|palette_insert_all
-parameter_list|(
-name|GimpPalette
-modifier|*
-name|palette
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_function_decl
 name|void
 name|palette_dialog_create
@@ -95,14 +80,6 @@ name|state
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_decl_stmt
-specifier|extern
-name|GimpContainer
-modifier|*
-name|global_palette_list
-decl_stmt|;
-end_decl_stmt
 
 begin_endif
 endif|#

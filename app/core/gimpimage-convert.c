@@ -68,6 +68,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"context_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"convert.h"
 end_include
 
@@ -34935,7 +34941,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0aad0c0108
+DECL|struct|__anon29cfe7c30108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -35012,7 +35018,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0aad0c0208
+DECL|struct|__anon29cfe7c30208
 block|{
 DECL|member|ncolors
 name|long
@@ -35031,7 +35037,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0aad0c0308
+DECL|struct|__anon29cfe7c30308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -37553,16 +37559,6 @@ name|UserHasWebPal
 operator|=
 name|FALSE
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|global_palette_list
-condition|)
-name|palettes_init
-argument_list|(
-name|FALSE
-argument_list|)
-expr_stmt|;
 name|list
 operator|=
 name|GIMP_LIST
@@ -38388,7 +38384,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0aad0c0408
+DECL|struct|__anon29cfe7c30408
 block|{
 DECL|member|used_count
 name|signed

@@ -77,7 +77,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2f0cf20103
+DECL|enum|__anon2be59f860103
 block|{
 DECL|enumerator|GIMP_CONTEXT_ARG_IMAGE
 name|GIMP_CONTEXT_ARG_IMAGE
@@ -123,7 +123,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2f0cf20203
+DECL|enum|__anon2be59f860203
 block|{
 DECL|enumerator|GIMP_CONTEXT_IMAGE_MASK
 name|GIMP_CONTEXT_IMAGE_MASK
@@ -1242,15 +1242,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|gimp_context_refresh_brushes
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/*  pattern  */
 end_comment
@@ -1289,15 +1280,6 @@ parameter_list|(
 name|GimpContext
 modifier|*
 name|context
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_context_refresh_patterns
-parameter_list|(
-name|void
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1344,26 +1326,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|gimp_context_refresh_gradients
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_context_update_gradients
-parameter_list|(
-name|GimpGradient
-modifier|*
-name|gradient
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/*  palette  */
 end_comment
@@ -1402,15 +1364,6 @@ parameter_list|(
 name|GimpContext
 modifier|*
 name|context
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_context_refresh_palettes
-parameter_list|(
-name|void
 parameter_list|)
 function_decl|;
 end_function_decl

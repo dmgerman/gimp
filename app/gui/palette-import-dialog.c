@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paletteP.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pixel_region.h"
 end_include
 
@@ -150,7 +156,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0cfb370103
+DECL|enum|__anon2b9a6ba40103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT

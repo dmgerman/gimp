@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"context_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"brush_select.h"
 end_include
 
@@ -54,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdatalist.h"
 end_include
 
@@ -68,20 +68,6 @@ include|#
 directive|include
 file|"gimprc.h"
 end_include
-
-begin_comment
-comment|/*  global variables  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|global_brush_list
-name|GimpContainer
-modifier|*
-name|global_brush_list
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
 
 begin_comment
 comment|/*  public functions  */
@@ -96,23 +82,8 @@ name|gboolean
 name|no_data
 parameter_list|)
 block|{
-if|if
-condition|(
-name|global_brush_list
-condition|)
 name|brushes_free
 argument_list|()
-expr_stmt|;
-else|else
-name|global_brush_list
-operator|=
-name|GIMP_CONTAINER
-argument_list|(
-name|gimp_data_list_new
-argument_list|(
-name|GIMP_TYPE_BRUSH
-argument_list|)
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -193,9 +164,6 @@ name|brush_select_thaw_all
 argument_list|()
 expr_stmt|;
 block|}
-name|gimp_context_refresh_brushes
-argument_list|()
-expr_stmt|;
 block|}
 end_function
 
@@ -209,8 +177,12 @@ parameter_list|)
 block|{
 if|if
 condition|(
-operator|!
+name|gimp_container_num_children
+argument_list|(
 name|global_brush_list
+argument_list|)
+operator|==
+literal|0
 condition|)
 return|return;
 name|brush_select_freeze_all

@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2e73590103
+DECL|enum|__anon2bf970090103
 block|{
 DECL|enumerator|GIMP_CONTAINER_POLICY_STRONG
 name|GIMP_CONTAINER_POLICY_STRONG
@@ -126,6 +126,10 @@ DECL|member|handlers
 name|GList
 modifier|*
 name|handlers
+decl_stmt|;
+DECL|member|freeze_count
+name|gint
+name|freeze_count
 decl_stmt|;
 block|}
 struct|;
@@ -455,6 +459,17 @@ end_function_decl
 begin_function_decl
 name|void
 name|gimp_container_thaw
+parameter_list|(
+name|GimpContainer
+modifier|*
+name|container
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_container_frozen
 parameter_list|(
 name|GimpContainer
 modifier|*

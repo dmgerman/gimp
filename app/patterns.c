@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcontext.h"
+file|"context_manager.h"
 end_include
 
 begin_include
@@ -64,20 +64,6 @@ file|"temp_buf.h"
 end_include
 
 begin_comment
-comment|/*  global variables  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|global_pattern_list
-name|GimpContainer
-modifier|*
-name|global_pattern_list
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
 comment|/*  public functions  */
 end_comment
 
@@ -90,23 +76,8 @@ name|gboolean
 name|no_data
 parameter_list|)
 block|{
-if|if
-condition|(
-name|global_pattern_list
-condition|)
 name|patterns_free
 argument_list|()
-expr_stmt|;
-else|else
-name|global_pattern_list
-operator|=
-name|GIMP_CONTAINER
-argument_list|(
-name|gimp_data_list_new
-argument_list|(
-name|GIMP_TYPE_PATTERN
-argument_list|)
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -144,9 +115,6 @@ name|pattern_select_thaw_all
 argument_list|()
 expr_stmt|;
 block|}
-name|gimp_context_refresh_patterns
-argument_list|()
-expr_stmt|;
 block|}
 end_function
 
@@ -160,8 +128,12 @@ parameter_list|)
 block|{
 if|if
 condition|(
-operator|!
+name|gimp_container_num_children
+argument_list|(
 name|global_pattern_list
+argument_list|)
+operator|==
+literal|0
 condition|)
 return|return;
 name|pattern_select_freeze_all

@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"context_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"brushes.h"
 end_include
 
@@ -166,7 +172,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c39e1e00103
+DECL|enum|__anon2c60f35e0103
 block|{
 DECL|enumerator|GIMP_DND_DATA_COLOR
 name|GIMP_DND_DATA_COLOR

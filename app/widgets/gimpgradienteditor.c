@@ -91,6 +91,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"context_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"cursorutil.h"
 end_include
 
@@ -313,7 +319,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be1534c0103
+DECL|enum|__anon2b1455ee0103
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -353,7 +359,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be1534c0203
+DECL|enum|__anon2b1455ee0203
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -377,7 +383,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be1534c0308
+DECL|struct|__anon2b1455ee0308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -4524,9 +4530,6 @@ argument_list|,
 name|curr_gradient
 argument_list|)
 expr_stmt|;
-name|gimp_context_refresh_gradients
-argument_list|()
-expr_stmt|;
 block|}
 comment|/* Show everything */
 name|g_editor
@@ -7206,16 +7209,6 @@ name|grad
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_data_set_filename
-argument_list|(
-name|GIMP_DATA
-argument_list|(
-name|grad
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|row
 operator|=
 name|gtk_clist_find_row_from_data
@@ -7268,11 +7261,6 @@ argument_list|(
 name|GRAD_UPDATE_PREVIEW
 operator||
 name|GRAD_RESET_CONTROL
-argument_list|)
-expr_stmt|;
-name|gimp_context_update_gradients
-argument_list|(
-name|grad
 argument_list|)
 expr_stmt|;
 block|}
@@ -7483,7 +7471,15 @@ argument_list|,
 name|row
 argument_list|)
 expr_stmt|;
-comment|/* Delete gradient from gradients list */
+if|if
+condition|(
+name|GIMP_DATA
+argument_list|(
+name|delete_gradient
+argument_list|)
+operator|->
+name|filename
+condition|)
 name|gimp_data_delete_from_disk
 argument_list|(
 name|GIMP_DATA
@@ -7501,9 +7497,6 @@ argument_list|(
 name|delete_gradient
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|gimp_context_refresh_gradients
-argument_list|()
 expr_stmt|;
 block|}
 end_function
@@ -8155,9 +8148,6 @@ argument_list|(
 name|curr_gradient
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|gimp_context_refresh_gradients
-argument_list|()
 expr_stmt|;
 block|}
 name|select_pos
@@ -9565,12 +9555,6 @@ argument_list|)
 expr_stmt|;
 comment|/*  Update all selectors that are on screen  */
 name|gradient_select_update_all
-argument_list|(
-name|curr_gradient
-argument_list|)
-expr_stmt|;
-comment|/*  Update all contexts  */
-name|gimp_context_update_gradients
 argument_list|(
 name|curr_gradient
 argument_list|)

@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"context_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"dialog_handler.h"
 end_include
 
@@ -2678,7 +2684,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275f4c3f0108
+DECL|struct|__anon275e6aba0108
 block|{
 DECL|member|psp
 name|PatternSelect

@@ -16,14 +16,6 @@ directive|define
 name|__PALETTES_H__
 end_define
 
-begin_decl_stmt
-specifier|extern
-name|GimpContainer
-modifier|*
-name|global_palette_list
-decl_stmt|;
-end_decl_stmt
-
 begin_function_decl
 name|void
 name|palettes_init

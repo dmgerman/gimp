@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"context_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"brush_scale.h"
 end_include
 
@@ -5191,7 +5197,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e181da0108
+DECL|struct|__anon2c36bd710108
 block|{
 DECL|member|bsp
 name|BrushSelect
@@ -9474,6 +9480,15 @@ name|brush
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+name|GIMP_DATA
+argument_list|(
+name|brush
+argument_list|)
+operator|->
+name|filename
+condition|)
 name|gimp_data_delete_from_disk
 argument_list|(
 name|GIMP_DATA
@@ -9487,19 +9502,13 @@ argument_list|()
 expr_stmt|;
 name|gimp_container_remove
 argument_list|(
-name|GIMP_CONTAINER
-argument_list|(
 name|global_brush_list
-argument_list|)
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
 name|brush
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|gimp_context_refresh_brushes
-argument_list|()
 expr_stmt|;
 name|brush_select_thaw_all
 argument_list|()

@@ -16,14 +16,6 @@ directive|define
 name|__BRUSHES_H__
 end_define
 
-begin_decl_stmt
-specifier|extern
-name|GimpContainer
-modifier|*
-name|global_brush_list
-decl_stmt|;
-end_decl_stmt
-
 begin_function_decl
 name|void
 name|brushes_init
