@@ -709,7 +709,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c76aeab0108
+DECL|struct|__anon2b86d7d00108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -861,7 +861,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c76aeab0208
+DECL|struct|__anon2b86d7d00208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -2433,7 +2433,7 @@ literal|"Value Propagating..."
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_palette_get_foreground
+name|gimp_context_get_foreground
 argument_list|(
 operator|&
 name|foreground
@@ -3920,7 +3920,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c76aeab0308
+DECL|struct|__anon2b86d7d00308
 block|{
 DECL|member|min_modified
 name|gshort
@@ -5062,7 +5062,7 @@ operator|)
 operator|*
 name|tmp
 expr_stmt|;
-name|gimp_palette_get_foreground
+name|gimp_context_get_foreground
 argument_list|(
 operator|&
 name|foreground
@@ -5160,7 +5160,7 @@ operator|)
 operator|*
 name|tmp
 expr_stmt|;
-name|gimp_palette_get_background
+name|gimp_context_get_background
 argument_list|(
 operator|&
 name|background

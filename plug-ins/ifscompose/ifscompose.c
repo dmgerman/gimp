@@ -158,7 +158,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276b2d460103
+DECL|enum|__anon2b8663600103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -178,7 +178,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276b2d460203
+DECL|enum|__anon2b8663600203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -194,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276b2d460308
+DECL|struct|__anon2b8663600308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -216,7 +216,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon276b2d46040a
+DECL|union|__anon2b866360040a
 block|{
 DECL|member|d
 name|gdouble
@@ -241,7 +241,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276b2d460508
+DECL|struct|__anon2b8663600508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -271,7 +271,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276b2d460608
+DECL|struct|__anon2b8663600608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -306,7 +306,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276b2d460708
+DECL|struct|__anon2b8663600708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -342,7 +342,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276b2d460808
+DECL|struct|__anon2b8663600808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -409,7 +409,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276b2d460908
+DECL|struct|__anon2b8663600908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -619,7 +619,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276b2d460a08
+DECL|struct|__anon2b8663600a08
 block|{
 DECL|member|run
 name|gboolean
@@ -7591,7 +7591,7 @@ name|subdivide
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_palette_get_background
+name|gimp_context_get_background
 argument_list|(
 operator|&
 name|color
@@ -13136,7 +13136,7 @@ decl_stmt|;
 name|GimpRGB
 name|color
 decl_stmt|;
-name|gimp_palette_get_foreground
+name|gimp_context_get_foreground
 argument_list|(
 operator|&
 name|color
@@ -14439,7 +14439,7 @@ decl_stmt|;
 name|undo_begin
 argument_list|()
 expr_stmt|;
-name|gimp_palette_get_foreground
+name|gimp_context_get_foreground
 argument_list|(
 operator|&
 name|color
@@ -15089,7 +15089,7 @@ operator|*
 name|height
 argument_list|)
 expr_stmt|;
-name|gimp_palette_get_background
+name|gimp_context_get_background
 argument_list|(
 operator|&
 name|color

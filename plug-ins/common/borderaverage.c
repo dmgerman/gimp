@@ -552,7 +552,7 @@ operator|!=
 name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
-name|gimp_palette_set_foreground
+name|gimp_context_set_foreground
 argument_list|(
 operator|&
 name|result_color
@@ -660,7 +660,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon297637980108
+DECL|struct|__anon2c6b861c0108
 typedef|typedef
 struct|struct
 block|{

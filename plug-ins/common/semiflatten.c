@@ -599,7 +599,7 @@ block|{
 name|GimpRGB
 name|background
 decl_stmt|;
-name|gimp_palette_get_background
+name|gimp_context_get_background
 argument_list|(
 operator|&
 name|background

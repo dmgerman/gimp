@@ -2069,7 +2069,7 @@ name|p
 operator|=
 name|preview_cache
 expr_stmt|;
-name|gimp_palette_get_background
+name|gimp_context_get_background
 argument_list|(
 operator|&
 name|background
@@ -2497,7 +2497,7 @@ name|sel_width
 decl_stmt|,
 name|sel_height
 decl_stmt|;
-name|gimp_palette_get_background
+name|gimp_context_get_background
 argument_list|(
 operator|&
 name|background

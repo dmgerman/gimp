@@ -610,7 +610,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon29c4b4c50108
+DECL|struct|__anon29747f890108
 typedef|typedef
 struct|struct
 block|{
@@ -803,7 +803,7 @@ decl_stmt|;
 name|GimpRGB
 name|color
 decl_stmt|;
-name|gimp_palette_get_background
+name|gimp_context_get_background
 argument_list|(
 operator|&
 name|color
@@ -823,7 +823,7 @@ operator|.
 name|bg
 argument_list|)
 expr_stmt|;
-name|gimp_palette_get_foreground
+name|gimp_context_get_foreground
 argument_list|(
 operator|&
 name|color

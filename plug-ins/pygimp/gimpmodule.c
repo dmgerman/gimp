@@ -3398,7 +3398,7 @@ name|g
 decl_stmt|,
 name|b
 decl_stmt|;
-name|gimp_palette_get_background
+name|gimp_context_get_background
 argument_list|(
 operator|&
 name|colour
@@ -3465,7 +3465,7 @@ name|g
 decl_stmt|,
 name|b
 decl_stmt|;
-name|gimp_palette_get_foreground
+name|gimp_context_get_foreground
 argument_list|(
 operator|&
 name|colour
@@ -3627,7 +3627,7 @@ argument_list|,
 name|b
 argument_list|)
 expr_stmt|;
-name|gimp_palette_set_background
+name|gimp_context_set_background
 argument_list|(
 operator|&
 name|colour
@@ -3761,7 +3761,7 @@ argument_list|,
 name|b
 argument_list|)
 expr_stmt|;
-name|gimp_palette_set_foreground
+name|gimp_context_set_foreground
 argument_list|(
 operator|&
 name|colour

@@ -295,9 +295,9 @@ name|gimp_widgets_init
 argument_list|(
 name|gimp_ui_help_func
 argument_list|,
-name|gimp_palette_get_foreground
+name|gimp_context_get_foreground
 argument_list|,
-name|gimp_palette_get_background
+name|gimp_context_get_background
 argument_list|,
 name|gimp_ensure_modules
 argument_list|)

@@ -307,17 +307,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|register_palette_procs
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|register_palette_select_procs
 parameter_list|(
 name|Gimp
@@ -628,7 +617,7 @@ argument_list|(
 literal|"Convert"
 argument_list|)
 argument_list|,
-literal|0.099
+literal|0.115
 argument_list|)
 expr_stmt|;
 name|register_convert_procs
@@ -648,7 +637,7 @@ argument_list|(
 literal|"Display procedures"
 argument_list|)
 argument_list|,
-literal|0.107
+literal|0.123
 argument_list|)
 expr_stmt|;
 name|register_display_procs
@@ -668,7 +657,7 @@ argument_list|(
 literal|"Drawable procedures"
 argument_list|)
 argument_list|,
-literal|0.117
+literal|0.133
 argument_list|)
 expr_stmt|;
 name|register_drawable_procs
@@ -688,7 +677,7 @@ argument_list|(
 literal|"Edit procedures"
 argument_list|)
 argument_list|,
-literal|0.201
+literal|0.217
 argument_list|)
 expr_stmt|;
 name|register_edit_procs
@@ -708,7 +697,7 @@ argument_list|(
 literal|"File Operations"
 argument_list|)
 argument_list|,
-literal|0.222
+literal|0.238
 argument_list|)
 expr_stmt|;
 name|register_fileops_procs
@@ -728,7 +717,7 @@ argument_list|(
 literal|"Floating selections"
 argument_list|)
 argument_list|,
-literal|0.245
+literal|0.261
 argument_list|)
 expr_stmt|;
 name|register_floating_sel_procs
@@ -748,7 +737,7 @@ argument_list|(
 literal|"Font UI"
 argument_list|)
 argument_list|,
-literal|0.261
+literal|0.277
 argument_list|)
 expr_stmt|;
 name|register_font_select_procs
@@ -768,7 +757,7 @@ argument_list|(
 literal|"Fonts"
 argument_list|)
 argument_list|,
-literal|0.269
+literal|0.285
 argument_list|)
 expr_stmt|;
 name|register_fonts_procs
@@ -788,7 +777,7 @@ argument_list|(
 literal|"Gimprc procedures"
 argument_list|)
 argument_list|,
-literal|0.274
+literal|0.29
 argument_list|)
 expr_stmt|;
 name|register_gimprc_procs
@@ -808,7 +797,7 @@ argument_list|(
 literal|"Gradient"
 argument_list|)
 argument_list|,
-literal|0.29
+literal|0.305
 argument_list|)
 expr_stmt|;
 name|register_gradient_edit_procs
@@ -828,7 +817,7 @@ argument_list|(
 literal|"Gradient UI"
 argument_list|)
 argument_list|,
-literal|0.35
+literal|0.366
 argument_list|)
 expr_stmt|;
 name|register_gradient_select_procs
@@ -848,7 +837,7 @@ argument_list|(
 literal|"Gradients"
 argument_list|)
 argument_list|,
-literal|0.358
+literal|0.373
 argument_list|)
 expr_stmt|;
 name|register_gradients_procs
@@ -868,7 +857,7 @@ argument_list|(
 literal|"Guide procedures"
 argument_list|)
 argument_list|,
-literal|0.386
+literal|0.402
 argument_list|)
 expr_stmt|;
 name|register_guides_procs
@@ -888,7 +877,7 @@ argument_list|(
 literal|"Help procedures"
 argument_list|)
 argument_list|,
-literal|0.402
+literal|0.418
 argument_list|)
 expr_stmt|;
 name|register_help_procs
@@ -908,7 +897,7 @@ argument_list|(
 literal|"Image"
 argument_list|)
 argument_list|,
-literal|0.405
+literal|0.42
 argument_list|)
 expr_stmt|;
 name|register_image_procs
@@ -928,7 +917,7 @@ argument_list|(
 literal|"Layer"
 argument_list|)
 argument_list|,
-literal|0.567
+literal|0.582
 argument_list|)
 expr_stmt|;
 name|register_layer_procs
@@ -948,7 +937,7 @@ argument_list|(
 literal|"Message procedures"
 argument_list|)
 argument_list|,
-literal|0.634
+literal|0.65
 argument_list|)
 expr_stmt|;
 name|register_message_procs
@@ -968,7 +957,7 @@ argument_list|(
 literal|"Miscellaneous"
 argument_list|)
 argument_list|,
-literal|0.642
+literal|0.658
 argument_list|)
 expr_stmt|;
 name|register_misc_procs
@@ -988,30 +977,10 @@ argument_list|(
 literal|"Paint Tool procedures"
 argument_list|)
 argument_list|,
-literal|0.648
+literal|0.663
 argument_list|)
 expr_stmt|;
 name|register_paint_tools_procs
-argument_list|(
-name|gimp
-argument_list|)
-expr_stmt|;
-call|(
-modifier|*
-name|status_callback
-call|)
-argument_list|(
-name|NULL
-argument_list|,
-name|_
-argument_list|(
-literal|"Palette"
-argument_list|)
-argument_list|,
-literal|0.687
-argument_list|)
-expr_stmt|;
-name|register_palette_procs
 argument_list|(
 name|gimp
 argument_list|)

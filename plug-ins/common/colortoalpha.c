@@ -62,7 +62,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1a04e20108
+DECL|struct|__anon2c726f430108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -462,7 +462,7 @@ operator|&
 name|pvals
 argument_list|)
 expr_stmt|;
-name|gimp_palette_get_foreground
+name|gimp_context_get_foreground
 argument_list|(
 operator|&
 name|pvals

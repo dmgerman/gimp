@@ -245,7 +245,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288bbfb50108
+DECL|struct|__anon28ec28a60108
 block|{
 DECL|member|hwidth
 name|gint
@@ -908,7 +908,7 @@ block|}
 block|}
 else|else
 block|{
-name|gimp_palette_get_foreground
+name|gimp_context_get_foreground
 argument_list|(
 operator|&
 name|grid_cfg

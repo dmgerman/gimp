@@ -153,7 +153,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292e41c90103
+DECL|enum|__anon28ee583c0103
 block|{
 DECL|enumerator|CURL_COLORS_FG_BG
 name|CURL_COLORS_FG_BG
@@ -177,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292e41c90203
+DECL|enum|__anon28ee583c0203
 block|{
 DECL|enumerator|CURL_ORIENTATION_VERTICAL
 name|CURL_ORIENTATION_VERTICAL
@@ -198,7 +198,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292e41c90303
+DECL|enum|__anon28ee583c0303
 block|{
 DECL|enumerator|CURL_EDGE_LOWER_RIGHT
 name|CURL_EDGE_LOWER_RIGHT
@@ -286,7 +286,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292e41c90408
+DECL|struct|__anon28ee583c0408
 block|{
 DECL|member|colors
 name|CurlColors
@@ -2948,7 +2948,7 @@ operator|/
 name|sel_height
 expr_stmt|;
 comment|/* Colors */
-name|gimp_palette_get_foreground
+name|gimp_context_get_foreground
 argument_list|(
 operator|&
 name|color
@@ -2978,7 +2978,7 @@ literal|2
 index|]
 argument_list|)
 expr_stmt|;
-name|gimp_palette_get_background
+name|gimp_context_get_background
 argument_list|(
 operator|&
 name|color

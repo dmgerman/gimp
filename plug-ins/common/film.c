@@ -113,7 +113,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fa2a050108
+DECL|struct|__anon299a7bfc0108
 block|{
 DECL|member|film_height
 name|gint
@@ -217,7 +217,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fa2a050208
+DECL|struct|__anon299a7bfc0208
 block|{
 DECL|member|advanced_adj
 name|GtkObject
@@ -1581,7 +1581,7 @@ name|gimp_tile_height
 argument_list|()
 expr_stmt|;
 comment|/* Save foreground colour */
-name|gimp_palette_get_foreground
+name|gimp_context_get_foreground
 argument_list|(
 operator|&
 name|foreground
@@ -2306,7 +2306,7 @@ index|]
 operator|)
 condition|)
 block|{
-name|gimp_palette_set_foreground
+name|gimp_context_set_foreground
 argument_list|(
 operator|&
 name|filmvals
@@ -2388,7 +2388,7 @@ argument_list|,
 name|number_height
 argument_list|)
 expr_stmt|;
-name|gimp_palette_set_foreground
+name|gimp_context_set_foreground
 argument_list|(
 operator|&
 name|foreground
@@ -2444,7 +2444,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Restore foreground */
-name|gimp_palette_set_foreground
+name|gimp_context_set_foreground
 argument_list|(
 operator|&
 name|foreground

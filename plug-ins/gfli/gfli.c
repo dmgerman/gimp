@@ -2463,7 +2463,7 @@ operator|=
 name|nframes
 expr_stmt|;
 block|}
-name|gimp_palette_get_background
+name|gimp_context_get_background
 argument_list|(
 operator|&
 name|background

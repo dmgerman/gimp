@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29361e810108
+DECL|struct|__anon2b8cec4e0108
 block|{
 DECL|member|npts
 name|gint
@@ -134,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29361e810208
+DECL|struct|__anon2b8cec4e0208
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -1486,7 +1486,7 @@ block|{
 name|GimpRGB
 name|color
 decl_stmt|;
-name|gimp_palette_get_background
+name|gimp_context_get_background
 argument_list|(
 operator|&
 name|color

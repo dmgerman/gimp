@@ -144,7 +144,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3b158f0108
+DECL|struct|__anon2c25b1e70108
 block|{
 DECL|member|circle
 name|gdouble
@@ -1343,7 +1343,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_palette_get_background
+name|gimp_context_get_background
 argument_list|(
 operator|&
 name|background
@@ -3307,7 +3307,7 @@ decl_stmt|;
 name|guchar
 name|k
 decl_stmt|;
-name|gimp_palette_get_background
+name|gimp_context_get_background
 argument_list|(
 operator|&
 name|background

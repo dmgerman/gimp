@@ -129,7 +129,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b223a20108
+DECL|struct|__anon296cd23a0108
 block|{
 DECL|member|whirl
 name|gdouble
@@ -152,7 +152,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b223a20208
+DECL|struct|__anon296cd23a0208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -1326,7 +1326,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_palette_get_background
+name|gimp_context_get_background
 argument_list|(
 operator|&
 name|background
@@ -3177,7 +3177,7 @@ decl_stmt|;
 name|GimpRGB
 name|background
 decl_stmt|;
-name|gimp_palette_get_background
+name|gimp_context_get_background
 argument_list|(
 operator|&
 name|background

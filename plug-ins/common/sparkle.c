@@ -127,7 +127,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b898c220108
+DECL|struct|__anon2c29227a0108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -4589,7 +4589,7 @@ break|break;
 case|case
 name|FOREGROUND
 case|:
-name|gimp_palette_get_foreground
+name|gimp_context_get_foreground
 argument_list|(
 operator|&
 name|gimp_color
@@ -4623,7 +4623,7 @@ break|break;
 case|case
 name|BACKGROUND
 case|:
-name|gimp_palette_get_background
+name|gimp_context_get_background
 argument_list|(
 operator|&
 name|gimp_color

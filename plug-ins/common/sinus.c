@@ -139,7 +139,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4515960108
+DECL|struct|__anon2c2b4e950108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -248,7 +248,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4515960208
+DECL|struct|__anon2c2b4e950208
 block|{
 DECL|member|height
 DECL|member|width
@@ -330,7 +330,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4515960308
+DECL|struct|__anon2c2b4e950308
 block|{
 DECL|member|width
 name|gint
@@ -1983,13 +1983,13 @@ break|break;
 case|case
 name|USE_FG_BG
 case|:
-name|gimp_palette_get_background
+name|gimp_context_get_background
 argument_list|(
 operator|&
 name|color1
 argument_list|)
 expr_stmt|;
-name|gimp_palette_get_foreground
+name|gimp_context_get_foreground
 argument_list|(
 operator|&
 name|color2
