@@ -436,7 +436,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae3dee00103
+DECL|enum|__anon27b520e80103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -463,7 +463,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae3dee00203
+DECL|enum|__anon27b520e80203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -484,7 +484,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae3dee00308
+DECL|struct|__anon27b520e80308
 block|{
 DECL|member|name
 name|gchar
@@ -621,7 +621,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae3dee00408
+DECL|struct|__anon27b520e80408
 block|{
 DECL|member|fp
 name|FILE
@@ -641,7 +641,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae3dee00503
+DECL|enum|__anon27b520e80503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -669,7 +669,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae3dee00608
+DECL|struct|__anon27b520e80608
 block|{
 DECL|member|init
 name|gint
@@ -691,7 +691,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2ae3dee00708
+DECL|struct|__anon27b520e80708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -765,7 +765,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae3dee00808
+DECL|struct|__anon27b520e80808
 block|{
 DECL|member|init
 name|gint
@@ -835,7 +835,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae3dee00908
+DECL|struct|__anon27b520e80908
 block|{
 DECL|member|x0
 name|gdouble
@@ -862,7 +862,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae3dee00a08
+DECL|struct|__anon27b520e80a08
 block|{
 DECL|member|init
 name|gint
@@ -1032,7 +1032,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae3dee00b08
+DECL|struct|__anon27b520e80b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1059,7 +1059,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae3dee00c08
+DECL|struct|__anon27b520e80c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1294,7 +1294,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae3dee00d08
+DECL|struct|__anon27b520e80d08
 block|{
 DECL|member|tag
 name|gint
@@ -1371,7 +1371,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae3dee00e08
+DECL|struct|__anon27b520e80e08
 block|{
 DECL|member|xcenter
 name|gint
@@ -1429,7 +1429,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae3dee00f08
+DECL|struct|__anon27b520e80f08
 block|{
 DECL|member|run
 name|gboolean
@@ -3195,6 +3195,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|new_name
@@ -3258,6 +3259,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|copy_name
@@ -5904,7 +5906,7 @@ modifier|*
 name|gflare
 parameter_list|)
 block|{
-name|g_assert
+name|g_return_if_fail
 argument_list|(
 name|gflare
 operator|!=
@@ -5968,10 +5970,12 @@ index|[
 literal|256
 index|]
 decl_stmt|;
-name|g_assert
+name|g_return_val_if_fail
 argument_list|(
 name|filename
 operator|!=
+name|NULL
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -8530,7 +8534,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-DECL|struct|__anon2ae3dee01008
+DECL|struct|__anon27b520e81008
 specifier|static
 struct|struct
 block|{
@@ -14515,7 +14519,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon2ae3dee01108
+DECL|struct|__anon27b520e81108
 block|{
 DECL|member|label
 specifier|const
@@ -15101,13 +15105,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|dlg_selector_new_ok_callback (GtkWidget * widget,gchar * new_name,gpointer data)
+DECL|function|dlg_selector_new_ok_callback (GtkWidget * widget,const gchar * new_name,gpointer data)
 name|dlg_selector_new_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|new_name
@@ -15123,7 +15128,7 @@ decl_stmt|;
 name|gint
 name|pos
 decl_stmt|;
-name|g_assert
+name|g_return_if_fail
 argument_list|(
 name|new_name
 operator|!=
@@ -15365,13 +15370,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|dlg_selector_copy_ok_callback (GtkWidget * widget,gchar * copy_name,gpointer data)
+DECL|function|dlg_selector_copy_ok_callback (GtkWidget * widget,const gchar * copy_name,gpointer data)
 name|dlg_selector_copy_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|copy_name
@@ -15387,7 +15393,7 @@ decl_stmt|;
 name|gint
 name|pos
 decl_stmt|;
-name|g_assert
+name|g_return_if_fail
 argument_list|(
 name|copy_name
 operator|!=
