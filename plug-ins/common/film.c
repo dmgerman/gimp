@@ -8,7 +8,7 @@ comment|/*  * This plug-in generates a film roll with several images  */
 end_comment
 
 begin_comment
-comment|/* Event history:  * V 1.00, PK, 01-Jul-97, Creation  * V 1.01, PK, 24-Jul-97, Fix problem with previews on Irix  * V 1.02, PK, 24-Sep-97, Try different font sizes when inquire failed.  *                        Fit film height to images  * V 1.03, nn, 20-Dec-97, Initialize layers in film()  */
+comment|/* Event history:  * V 1.00, PK, 01-Jul-97, Creation  * V 1.01, PK, 24-Jul-97, Fix problem with previews on Irix  * V 1.02, PK, 24-Sep-97, Try different font sizes when inquire failed.  *                        Fit film height to images  * V 1.03, nn, 20-Dec-97, Initialize layers in film()  * V 1.04, PK, 08-Oct-99, Fix problem with image id zero  *                        Internationalization  */
 end_comment
 
 begin_decl_stmt
@@ -18,7 +18,7 @@ name|char
 name|ident
 index|[]
 init|=
-literal|"@(#) GIMP Film plug-in v1.03a 1999-07-22"
+literal|"@(#) GIMP Film plug-in v1.04 1999-10-08"
 decl_stmt|;
 end_decl_stmt
 
@@ -62,6 +62,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
@@ -127,7 +133,7 @@ comment|/* to film_height (i.e. it should be a value from 0.0 to 1.0) */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bd091e60108
+DECL|struct|__anon29774abd0108
 typedef|typedef
 struct|struct
 block|{
@@ -241,7 +247,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd091e60208
+DECL|struct|__anon29774abd0208
 block|{
 DECL|member|activate
 name|GtkWidget
@@ -283,7 +289,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd091e60308
+DECL|struct|__anon29774abd0308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1123,21 +1129,33 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_film"
 argument_list|,
+name|_
+argument_list|(
 literal|"Compose several images to a roll film"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Compose several images to a roll film"
+argument_list|)
 argument_list|,
 literal|"Peter Kirchgessner"
 argument_list|,
-literal|"Peter Kirchgessner (pkirchg@aol.com)"
+literal|"Peter Kirchgessner (peter@kirchgessner.net)"
 argument_list|,
 literal|"1997"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Combine/Film"
+argument_list|)
 argument_list|,
 literal|"INDEXED*, GRAY*, RGB*"
 argument_list|,
@@ -1200,6 +1218,9 @@ decl_stmt|;
 name|int
 name|k
 decl_stmt|;
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -1666,7 +1687,10 @@ name|RUN_NONINTERACTIVE
 condition|)
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Composing Images..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|image_ID
@@ -1677,7 +1701,7 @@ expr_stmt|;
 if|if
 condition|(
 name|image_ID
-operator|<=
+operator|<
 literal|0
 condition|)
 block|{
@@ -2213,7 +2237,10 @@ name|image_ID_dst
 operator|=
 name|create_new_image
 argument_list|(
+name|_
+argument_list|(
 literal|"Untitled"
+argument_list|)
 argument_list|,
 operator|(
 name|guint
@@ -3559,7 +3586,10 @@ name|tmp_image
 operator|=
 name|create_new_image
 argument_list|(
+name|_
+argument_list|(
 literal|"Temporary"
+argument_list|)
 argument_list|,
 name|src_width
 argument_list|,
@@ -5039,7 +5069,10 @@ name|gimp_layer_new
 argument_list|(
 name|image_ID
 argument_list|,
+name|_
+argument_list|(
 literal|"Background"
+argument_list|)
 argument_list|,
 name|width
 argument_list|,
@@ -5398,7 +5431,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Color:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -5949,9 +5985,15 @@ name|gtk_label_new
 argument_list|(
 name|add_box_flag
 condition|?
+name|_
+argument_list|(
 literal|"Available images:"
+argument_list|)
 else|:
+name|_
+argument_list|(
 literal|"On film:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -6134,9 +6176,15 @@ name|gtk_button_new_with_label
 argument_list|(
 name|add_box_flag
 condition|?
+name|_
+argument_list|(
 literal|"add -->"
+argument_list|)
 else|:
+name|_
+argument_list|(
 literal|"remove"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_UNSET_FLAGS
@@ -6291,7 +6339,10 @@ index|]
 operator|=
 name|g_strdup
 argument_list|(
+name|_
+argument_list|(
 literal|"Film"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_init
@@ -6383,7 +6434,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Film"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -6418,7 +6472,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -6480,7 +6537,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -6628,7 +6688,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Film"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -6701,7 +6764,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Fit height to images"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -6843,7 +6909,10 @@ index|]
 operator|=
 name|add_label_with_entry
 argument_list|(
+name|_
+argument_list|(
 literal|"Height:"
+argument_list|)
 argument_list|,
 name|buffer
 argument_list|,
@@ -6877,7 +6946,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Numbering"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -7021,7 +7093,10 @@ index|]
 operator|=
 name|add_label_with_entry
 argument_list|(
+name|_
+argument_list|(
 literal|"Startindex:"
+argument_list|)
 argument_list|,
 name|buffer
 argument_list|,
@@ -7040,7 +7115,10 @@ index|]
 operator|=
 name|add_label_with_entry
 argument_list|(
+name|_
+argument_list|(
 literal|"Font:"
+argument_list|)
 argument_list|,
 name|filmvals
 operator|.
@@ -7081,9 +7159,15 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|j
 condition|?
+name|_
+argument_list|(
 literal|"at bottom"
+argument_list|)
 else|:
+name|_
+argument_list|(
 literal|"at top"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -7222,7 +7306,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Image selection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -7491,9 +7578,15 @@ operator|==
 literal|0
 operator|)
 condition|?
+name|_
+argument_list|(
 literal|"Films color Color Picker"
+argument_list|)
 else|:
+name|_
+argument_list|(
 literal|"Numbers color Color Picker"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|csd
@@ -7932,7 +8025,7 @@ if|if
 condition|(
 operator|(
 name|image_ID
-operator|>
+operator|>=
 literal|0
 operator|)
 operator|&&
