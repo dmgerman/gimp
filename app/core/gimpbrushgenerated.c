@@ -102,7 +102,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc181b80103
+DECL|enum|__anon2be632570103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3293,6 +3293,11 @@ argument_list|)
 return|;
 name|failed
 label|:
+name|fclose
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|name
