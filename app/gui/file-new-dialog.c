@@ -90,7 +90,7 @@ file|"gdisplay.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2b924e010108
+DECL|struct|__anon2a33fbda0108
 typedef|typedef
 struct|struct
 block|{
@@ -2976,7 +2976,7 @@ name|gtk_adjustment_new
 argument_list|(
 name|temp
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|32767.0
 argument_list|,
@@ -3131,7 +3131,7 @@ name|gtk_adjustment_new
 argument_list|(
 name|temp
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|32767.0
 argument_list|,
