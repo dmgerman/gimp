@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e2478b0103
+DECL|enum|__anon2b3207860103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -307,7 +307,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_VECTOR_MODE
 argument_list|,
-name|GIMP_VECTOR_MODE_CREATE
+name|GIMP_VECTOR_MODE_DESIGN
 argument_list|,
 literal|0
 argument_list|)

@@ -961,7 +961,7 @@ name|vector_tool
 operator|->
 name|saved_mode
 operator|=
-name|GIMP_VECTOR_MODE_CREATE
+name|GIMP_VECTOR_MODE_DESIGN
 expr_stmt|;
 block|}
 end_function
@@ -3124,7 +3124,7 @@ condition|)
 block|{
 name|button_mode
 operator|=
-name|GIMP_VECTOR_MODE_ADJUST
+name|GIMP_VECTOR_MODE_EDIT
 expr_stmt|;
 block|}
 elseif|else
@@ -3445,7 +3445,7 @@ name|edit_mode
 condition|)
 block|{
 case|case
-name|GIMP_VECTOR_MODE_CREATE
+name|GIMP_VECTOR_MODE_DESIGN
 case|:
 if|if
 condition|(
@@ -3697,7 +3697,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GIMP_VECTOR_MODE_ADJUST
+name|GIMP_VECTOR_MODE_EDIT
 case|:
 if|if
 condition|(

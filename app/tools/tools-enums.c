@@ -297,25 +297,25 @@ index|[]
 init|=
 block|{
 block|{
-name|GIMP_VECTOR_MODE_CREATE
+name|GIMP_VECTOR_MODE_DESIGN
 block|,
 name|N_
 argument_list|(
-literal|"Extend Stroke/Move Nodes"
+literal|"Design"
 argument_list|)
 block|,
-literal|"create"
+literal|"design"
 block|}
 block|,
 block|{
-name|GIMP_VECTOR_MODE_ADJUST
+name|GIMP_VECTOR_MODE_EDIT
 block|,
 name|N_
 argument_list|(
-literal|"Insert/Delete Nodes"
+literal|"Edit"
 argument_list|)
 block|,
-literal|"adjust"
+literal|"edit"
 block|}
 block|,
 block|{
@@ -323,7 +323,7 @@ name|GIMP_VECTOR_MODE_MOVE
 block|,
 name|N_
 argument_list|(
-literal|"Move Stroke/Path"
+literal|"Move"
 argument_list|)
 block|,
 literal|"move"
