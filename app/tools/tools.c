@@ -224,6 +224,9 @@ comment|/* gimp_pencil_tool_register (); */
 name|gimp_paintbrush_tool_register
 argument_list|()
 expr_stmt|;
+name|gimp_pencil_tool_register
+argument_list|()
+expr_stmt|;
 name|gimp_blend_tool_register
 argument_list|()
 expr_stmt|;
