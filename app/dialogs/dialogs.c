@@ -119,7 +119,7 @@ name|dialogs_preferences_get
 block|,
 literal|32
 block|,
-name|TRUE
+name|FALSE
 block|,
 name|FALSE
 block|,

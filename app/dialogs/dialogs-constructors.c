@@ -369,9 +369,11 @@ directive|include
 file|"patterns-commands.h"
 end_include
 
-begin_comment
-comment|/* #include "preferences-dialog.h" */
-end_comment
+begin_include
+include|#
+directive|include
+file|"preferences-dialog.h"
+end_include
 
 begin_include
 include|#
@@ -885,9 +887,13 @@ name|preview_size
 parameter_list|)
 block|{
 return|return
-name|NULL
+name|preferences_dialog_create
+argument_list|(
+name|context
+operator|->
+name|gimp
+argument_list|)
 return|;
-comment|/* return preferences_dialog_create (context->gimp); */
 block|}
 end_function
 

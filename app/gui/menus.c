@@ -9261,19 +9261,6 @@ argument_list|(
 name|toolbox_factory
 argument_list|)
 expr_stmt|;
-comment|/* preferences dialog is temporarily disabled */
-name|gimp_item_factory_set_sensitive
-argument_list|(
-name|GTK_ITEM_FACTORY
-argument_list|(
-name|toolbox_factory
-argument_list|)
-argument_list|,
-literal|"/File/Preferences..."
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 name|image_factory
 operator|=
 name|gimp_item_factory_new
