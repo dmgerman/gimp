@@ -147,7 +147,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|file_save_response_callback
+name|file_save_dialog_response
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -239,6 +239,10 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  private variables  */
+end_comment
+
 begin_decl_stmt
 DECL|variable|filesave
 specifier|static
@@ -289,6 +293,18 @@ argument_list|(
 name|GIMP_IS_MENU_FACTORY
 argument_list|(
 name|menu_factory
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|parent
+operator|==
+name|NULL
+operator|||
+name|GTK_IS_WIDGET
+argument_list|(
+name|parent
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -708,7 +724,7 @@ literal|"response"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|file_save_response_callback
+name|file_save_dialog_response
 argument_list|)
 argument_list|,
 name|gimp
@@ -723,8 +739,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_save_response_callback (GtkWidget * save_dialog,gint response_id,Gimp * gimp)
-name|file_save_response_callback
+DECL|function|file_save_dialog_response (GtkWidget * save_dialog,gint response_id,Gimp * gimp)
+name|file_save_dialog_response
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1333,14 +1349,12 @@ block|{
 name|gchar
 modifier|*
 name|filename
-decl_stmt|;
-name|filename
-operator|=
+init|=
 name|file_utils_uri_to_utf8_filename
 argument_list|(
 name|uri
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|g_message
 argument_list|(
 name|_

@@ -165,7 +165,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|file_open_dialog_open_image
 parameter_list|(
 name|GtkWidget
@@ -192,6 +192,10 @@ name|load_proc
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/*  private variables  */
+end_comment
 
 begin_decl_stmt
 DECL|variable|fileload
@@ -266,6 +270,18 @@ argument_list|(
 name|GIMP_IS_MENU_FACTORY
 argument_list|(
 name|menu_factory
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|parent
+operator|==
+name|NULL
+operator|||
+name|GTK_IS_WIDGET
+argument_list|(
+name|parent
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -720,6 +736,8 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
 name|file_open_dialog_open_image
 argument_list|(
 name|open_dialog
@@ -737,7 +755,14 @@ argument_list|)
 operator|->
 name|file_proc
 argument_list|)
+condition|)
+block|{
+name|file_dialog_hide
+argument_list|(
+name|open_dialog
+argument_list|)
 expr_stmt|;
+block|}
 name|g_free
 argument_list|(
 name|uri
@@ -788,6 +813,8 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
 name|file_open_dialog_open_image
 argument_list|(
 name|open_dialog
@@ -805,7 +832,14 @@ argument_list|)
 operator|->
 name|file_proc
 argument_list|)
+condition|)
+block|{
+name|file_dialog_hide
+argument_list|(
+name|open_dialog
+argument_list|)
 expr_stmt|;
+block|}
 name|g_free
 argument_list|(
 name|uri
@@ -830,7 +864,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|file_open_dialog_open_image (GtkWidget * open_dialog,Gimp * gimp,const gchar * uri,const gchar * entered_filename,PlugInProcDef * load_proc)
 name|file_open_dialog_open_image
 parameter_list|(
@@ -894,11 +928,9 @@ condition|(
 name|gimage
 condition|)
 block|{
-name|file_dialog_hide
-argument_list|(
-name|open_dialog
-argument_list|)
-expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 elseif|else
 if|if
@@ -911,14 +943,12 @@ block|{
 name|gchar
 modifier|*
 name|filename
-decl_stmt|;
-name|filename
-operator|=
+init|=
 name|file_utils_uri_to_utf8_filename
 argument_list|(
 name|uri
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|g_message
 argument_list|(
 name|_
@@ -945,6 +975,9 @@ name|filename
 argument_list|)
 expr_stmt|;
 block|}
+return|return
+name|FALSE
+return|;
 block|}
 end_function
 
