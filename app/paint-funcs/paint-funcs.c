@@ -201,7 +201,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b444c870103
+DECL|enum|__anon299c0e0e0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -18075,13 +18075,11 @@ index|[
 literal|4
 index|]
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|src_tmp
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|dest
 decl_stmt|;
@@ -18245,7 +18243,7 @@ name|src_tmp
 operator|=
 name|g_new
 argument_list|(
-name|char
+name|guchar
 argument_list|,
 name|orig_width
 operator|*

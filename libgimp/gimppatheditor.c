@@ -163,7 +163,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29420c880103
+DECL|enum|__anon297c57160103
 block|{
 DECL|enumerator|PATH_CHANGED
 name|PATH_CHANGED
@@ -177,7 +177,7 @@ end_enum
 begin_decl_stmt
 DECL|variable|gimp_path_editor_signals
 specifier|static
-name|gint
+name|guint
 name|gimp_path_editor_signals
 index|[
 name|LAST_SIGNAL

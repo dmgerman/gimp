@@ -462,7 +462,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon29c36b860103
+DECL|enum|__anon2a2238c20103
 enum|enum
 block|{
 DECL|enumerator|COLOR_CHANGED
@@ -477,7 +477,7 @@ end_enum
 begin_decl_stmt
 DECL|variable|gimp_color_button_signals
 specifier|static
-name|gint
+name|guint
 name|gimp_color_button_signals
 index|[
 name|LAST_SIGNAL

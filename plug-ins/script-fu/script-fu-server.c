@@ -331,7 +331,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278552930108
+DECL|struct|__anon28e667aa0108
 block|{
 DECL|member|command
 name|gchar
@@ -355,7 +355,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278552930208
+DECL|struct|__anon28e667aa0208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -831,7 +831,7 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|size_t
+name|gint
 name|size
 decl_stmt|;
 comment|/*  Set time struct  */

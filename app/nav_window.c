@@ -196,7 +196,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2e6a920103
+DECL|enum|__anon2a4ab6cf0103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -2512,7 +2512,7 @@ expr_stmt|;
 name|src
 operator|=
 operator|(
-name|gchar
+name|guchar
 operator|*
 operator|)
 name|temp_buf_data
@@ -2530,7 +2530,7 @@ block|{
 name|src
 operator|=
 operator|(
-name|gchar
+name|guchar
 operator|*
 operator|)
 name|temp_buf_data

@@ -4074,7 +4074,7 @@ decl_stmt|;
 name|int
 name|nreturn_vals
 decl_stmt|;
-name|gchar
+name|guchar
 modifier|*
 name|image_data
 init|=
@@ -4160,7 +4160,7 @@ name|image_data
 operator|=
 name|g_new
 argument_list|(
-name|gchar
+name|guchar
 argument_list|,
 name|return_vals
 index|[

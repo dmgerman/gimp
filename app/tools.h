@@ -59,7 +59,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d7c1250103
+DECL|enum|__anon29a43efd0103
 block|{
 DECL|enumerator|INACTIVE
 name|INACTIVE
@@ -407,7 +407,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|guchar
+name|gchar
 modifier|*
 name|tool_active_PDB_string
 parameter_list|(

@@ -73,7 +73,7 @@ comment|/* static int  gimp_size_entry_focus_in_callback  (GtkWidget *widget, 		
 end_comment
 
 begin_enum
-DECL|enum|__anon2ae1114d0103
+DECL|enum|__anon2c66a1f80103
 enum|enum
 block|{
 DECL|enumerator|VALUE_CHANGED
@@ -172,7 +172,7 @@ end_struct
 begin_decl_stmt
 DECL|variable|gimp_size_entry_signals
 specifier|static
-name|gint
+name|guint
 name|gimp_size_entry_signals
 index|[
 name|LAST_SIGNAL

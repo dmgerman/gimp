@@ -3642,7 +3642,7 @@ block|}
 end_function
 
 begin_function
-name|guchar
+name|gchar
 modifier|*
 DECL|function|tool_active_PDB_string (void)
 name|tool_active_PDB_string
@@ -3650,7 +3650,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|guchar
+name|gchar
 modifier|*
 name|toolStr
 init|=

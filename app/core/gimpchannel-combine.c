@@ -961,14 +961,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_set_color (Channel * channel,gchar * color)
+DECL|function|channel_set_color (Channel * channel,guchar * color)
 name|channel_set_color
 parameter_list|(
 name|Channel
 modifier|*
 name|channel
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 name|color
 parameter_list|)
@@ -1011,7 +1011,7 @@ block|}
 end_function
 
 begin_function
-name|gchar
+name|guchar
 modifier|*
 DECL|function|channel_get_color (Channel * channel)
 name|channel_get_color

@@ -59,7 +59,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3cee170103
+DECL|enum|__anon2afca75c0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -336,7 +336,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gchar
+name|guchar
 modifier|*
 name|channel_get_color
 parameter_list|(
@@ -353,7 +353,7 @@ parameter_list|(
 name|Channel
 modifier|*
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 parameter_list|)
 function_decl|;

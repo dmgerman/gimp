@@ -3398,7 +3398,7 @@ modifier|*
 name|pwidget
 parameter_list|)
 block|{
-name|gchar
+name|guchar
 modifier|*
 name|rgb_buf
 decl_stmt|;
@@ -3406,7 +3406,7 @@ name|rgb_buf
 operator|=
 name|g_new0
 argument_list|(
-name|gchar
+name|guchar
 argument_list|,
 operator|(
 name|paths_dialog

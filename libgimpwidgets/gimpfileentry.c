@@ -208,7 +208,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1d2c630103
+DECL|enum|__anon2c92372c0103
 block|{
 DECL|enumerator|FILENAME_CHANGED
 name|FILENAME_CHANGED
@@ -222,7 +222,7 @@ end_enum
 begin_decl_stmt
 DECL|variable|gimp_file_selection_signals
 specifier|static
-name|gint
+name|guint
 name|gimp_file_selection_signals
 index|[
 name|LAST_SIGNAL

@@ -59,7 +59,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon291fadd70103
+DECL|enum|__anon2a04c7850103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -73,7 +73,7 @@ end_enum
 begin_decl_stmt
 DECL|variable|gimp_unit_menu_signals
 specifier|static
-name|gint
+name|guint
 name|gimp_unit_menu_signals
 index|[
 name|LAST_SIGNAL

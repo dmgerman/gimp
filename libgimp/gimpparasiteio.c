@@ -184,7 +184,7 @@ modifier|*
 name|params
 parameter_list|)
 block|{
-name|guchar
+name|gchar
 modifier|*
 name|p
 decl_stmt|,

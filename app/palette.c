@@ -294,7 +294,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5b91e40103
+DECL|enum|__anon275db7750103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -12868,14 +12868,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|palette_import_create_from_image (GImage * gimage,guchar * pname)
+DECL|function|palette_import_create_from_image (GImage * gimage,gchar * pname)
 name|palette_import_create_from_image
 parameter_list|(
 name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|pname
 parameter_list|)
@@ -13244,14 +13244,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|palette_import_create_from_indexed (GImage * gimage,guchar * pname)
+DECL|function|palette_import_create_from_indexed (GImage * gimage,gchar * pname)
 name|palette_import_create_from_indexed
 parameter_list|(
 name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|guchar
+name|gchar
 modifier|*
 name|pname
 parameter_list|)
@@ -13431,7 +13431,7 @@ condition|(
 name|import_dialog
 condition|)
 block|{
-name|guchar
+name|gchar
 modifier|*
 name|pname
 decl_stmt|;

@@ -423,7 +423,7 @@ block|{
 name|GIOError
 name|error
 decl_stmt|;
-name|int
+name|guint
 name|bytes
 decl_stmt|;
 while|while
@@ -578,7 +578,7 @@ block|{
 name|GIOError
 name|error
 decl_stmt|;
-name|int
+name|guint
 name|bytes
 decl_stmt|;
 while|while

@@ -356,7 +356,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b8e76e0103
+DECL|enum|__anon2a160e360103
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -380,7 +380,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b8e76e0208
+DECL|struct|__anon2a160e360208
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -663,7 +663,7 @@ name|replicate_times
 decl_stmt|;
 comment|/*  Saved colors  */
 struct|struct
-DECL|struct|__anon27b8e76e0308
+DECL|struct|__anon2a160e360308
 block|{
 DECL|member|r
 DECL|member|g
@@ -7037,7 +7037,7 @@ name|gint
 name|pos
 parameter_list|)
 block|{
-name|gchar
+name|guchar
 name|rgb_buf
 index|[
 literal|48

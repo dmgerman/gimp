@@ -1196,13 +1196,13 @@ name|FILE
 modifier|*
 name|fp
 decl_stmt|;
-name|guchar
+name|gchar
 name|buf
 index|[
 literal|1024
 index|]
 decl_stmt|;
-name|guchar
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
