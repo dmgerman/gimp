@@ -159,7 +159,7 @@ DECL|member|mode
 name|DodgeBurnMode
 name|mode
 decl_stmt|;
-comment|/*highlights,midtones,shadows*/
+comment|/*highlights, midtones, shadows*/
 DECL|member|mode_d
 name|DodgeBurnMode
 name|mode_d
@@ -1519,9 +1519,6 @@ name|guchar
 modifier|*
 name|temp_data
 decl_stmt|;
-name|gfloat
-name|exposure
-decl_stmt|;
 name|gint
 name|opacity
 decl_stmt|;
@@ -1846,25 +1843,6 @@ name|data
 operator|=
 name|temp_data
 expr_stmt|;
-comment|/* Enable pressure sensitive exposure */
-name|exposure
-operator|=
-operator|(
-operator|(
-name|dodgeburn_exposure
-operator|)
-operator|/
-literal|100.0
-operator|*
-operator|(
-name|paint_core
-operator|->
-name|curpressure
-operator|)
-operator|/
-literal|0.5
-operator|)
-expr_stmt|;
 comment|/*  DodgeBurn the region  */
 name|gimp_lut_process
 argument_list|(
@@ -1988,7 +1966,7 @@ name|paint_core
 operator|->
 name|curpressure
 expr_stmt|;
-comment|/*Replace the newly dodgedburned area (canvas_buf) to the gimage*/
+comment|/* Replace the newly dodgedburned area (canvas_buf) to the gimage*/
 name|paint_core_replace_canvas
 argument_list|(
 name|paint_core

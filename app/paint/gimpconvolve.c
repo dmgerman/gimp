@@ -154,10 +154,10 @@ comment|/* defaults */
 end_comment
 
 begin_define
-DECL|macro|DEFAULT_CONVOLVE_PRESSURE
+DECL|macro|DEFAULT_CONVOLVE_RATE
 define|#
 directive|define
-name|DEFAULT_CONVOLVE_PRESSURE
+name|DEFAULT_CONVOLVE_RATE
 value|50.0
 end_define
 
@@ -207,18 +207,18 @@ index|[
 literal|2
 index|]
 decl_stmt|;
-DECL|member|pressure
+DECL|member|rate
 name|double
-name|pressure
+name|rate
 decl_stmt|;
-DECL|member|pressure_d
+DECL|member|rate_d
 name|double
-name|pressure_d
+name|rate_d
 decl_stmt|;
-DECL|member|pressure_w
+DECL|member|rate_w
 name|GtkObject
 modifier|*
-name|pressure_w
+name|rate_w
 decl_stmt|;
 block|}
 struct|;
@@ -279,10 +279,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|non_gui_pressure
+DECL|variable|non_gui_rate
 specifier|static
 name|double
-name|non_gui_pressure
+name|non_gui_rate
 decl_stmt|;
 end_decl_stmt
 
@@ -487,8 +487,6 @@ parameter_list|(
 name|ConvolveType
 parameter_list|,
 name|double
-parameter_list|,
-name|double
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -593,12 +591,12 @@ name|GTK_ADJUSTMENT
 argument_list|(
 name|options
 operator|->
-name|pressure_w
+name|rate_w
 argument_list|)
 argument_list|,
 name|options
 operator|->
-name|pressure_d
+name|rate_d
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -726,13 +724,13 @@ name|DEFAULT_CONVOLVE_TYPE
 expr_stmt|;
 name|options
 operator|->
-name|pressure
+name|rate
 operator|=
 name|options
 operator|->
-name|pressure_d
+name|rate_d
 operator|=
-name|DEFAULT_CONVOLVE_PRESSURE
+name|DEFAULT_CONVOLVE_RATE
 expr_stmt|;
 comment|/*  the main vbox  */
 name|vbox
@@ -747,7 +745,7 @@ operator|)
 operator|->
 name|main_vbox
 expr_stmt|;
-comment|/*  the pressure scale  */
+comment|/*  the rate scale  */
 name|hbox
 operator|=
 name|gtk_hbox_new
@@ -779,7 +777,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Pressure:"
+literal|"Rate:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -818,13 +816,13 @@ argument_list|)
 expr_stmt|;
 name|options
 operator|->
-name|pressure_w
+name|rate_w
 operator|=
 name|gtk_adjustment_new
 argument_list|(
 name|options
 operator|->
-name|pressure_d
+name|rate_d
 argument_list|,
 literal|0.0
 argument_list|,
@@ -845,7 +843,7 @@ name|GTK_ADJUSTMENT
 argument_list|(
 name|options
 operator|->
-name|pressure_w
+name|rate_w
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -891,7 +889,7 @@ name|GTK_OBJECT
 argument_list|(
 name|options
 operator|->
-name|pressure_w
+name|rate_w
 argument_list|)
 argument_list|,
 literal|"value_changed"
@@ -904,7 +902,7 @@ argument_list|,
 operator|&
 name|options
 operator|->
-name|pressure
+name|rate
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1030,7 +1028,7 @@ name|type
 argument_list|,
 name|convolve_options
 operator|->
-name|pressure
+name|rate
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1238,7 +1236,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|convolve_motion (PaintCore * paint_core,GimpDrawable * drawable,PaintPressureOptions * pressure_options,ConvolveType type,double pressure)
+DECL|function|convolve_motion (PaintCore * paint_core,GimpDrawable * drawable,PaintPressureOptions * pressure_options,ConvolveType type,double rate)
 name|convolve_motion
 parameter_list|(
 name|PaintCore
@@ -1257,7 +1255,7 @@ name|ConvolveType
 name|type
 parameter_list|,
 name|double
-name|pressure
+name|rate
 parameter_list|)
 block|{
 name|GImage
@@ -1440,15 +1438,27 @@ argument_list|(
 name|area
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|pressure_options
+operator|->
+name|rate
+condition|)
+name|rate
+operator|=
+name|rate
+operator|*
+literal|2.0
+operator|*
+name|paint_core
+operator|->
+name|curpressure
+expr_stmt|;
 name|calculate_matrix
 argument_list|(
 name|type
 argument_list|,
-name|pressure
-argument_list|,
-name|paint_core
-operator|->
-name|curpressure
+name|rate
 argument_list|)
 expr_stmt|;
 comment|/*  convolve the source image with the convolve mask  */
@@ -1800,6 +1810,12 @@ operator|*
 literal|255
 argument_list|)
 argument_list|,
+name|pressure_options
+operator|->
+name|pressure
+condition|?
+name|PRESSURE
+else|:
 name|SOFT
 argument_list|,
 name|scale
@@ -1813,17 +1829,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|calculate_matrix (ConvolveType type,double pressure,double curpressure)
+DECL|function|calculate_matrix (ConvolveType type,double rate)
 name|calculate_matrix
 parameter_list|(
 name|ConvolveType
 name|type
 parameter_list|,
 name|double
-name|pressure
-parameter_list|,
-name|double
-name|curpressure
+name|rate
 parameter_list|)
 block|{
 name|float
@@ -1832,13 +1845,14 @@ decl_stmt|;
 comment|/*  find percent of tool pressure  */
 name|percent
 operator|=
-operator|(
-name|pressure
+name|MIN
+argument_list|(
+name|rate
 operator|/
 literal|100.0
-operator|)
-operator|*
-name|curpressure
+argument_list|,
+literal|1.0
+argument_list|)
 expr_stmt|;
 comment|/*  get the appropriate convolution matrix and size and divisor  */
 switch|switch
@@ -2125,7 +2139,7 @@ name|non_gui_pressure_options
 argument_list|,
 name|non_gui_type
 argument_list|,
-name|non_gui_pressure
+name|non_gui_rate
 argument_list|)
 expr_stmt|;
 return|return
@@ -2152,9 +2166,9 @@ name|stroke_array
 parameter_list|)
 block|{
 name|double
-name|pressure
+name|rate
 init|=
-name|DEFAULT_CONVOLVE_PRESSURE
+name|DEFAULT_CONVOLVE_RATE
 decl_stmt|;
 name|ConvolveType
 name|type
@@ -2172,11 +2186,11 @@ condition|(
 name|options
 condition|)
 block|{
-name|pressure
+name|rate
 operator|=
 name|options
 operator|->
-name|pressure
+name|rate
 expr_stmt|;
 name|type
 operator|=
@@ -2190,7 +2204,7 @@ name|convolve_non_gui
 argument_list|(
 name|drawable
 argument_list|,
-name|pressure
+name|rate
 argument_list|,
 name|type
 argument_list|,
@@ -2204,7 +2218,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|convolve_non_gui (GimpDrawable * drawable,double pressure,ConvolveType type,int num_strokes,double * stroke_array)
+DECL|function|convolve_non_gui (GimpDrawable * drawable,double rate,ConvolveType type,int num_strokes,double * stroke_array)
 name|convolve_non_gui
 parameter_list|(
 name|GimpDrawable
@@ -2212,7 +2226,7 @@ modifier|*
 name|drawable
 parameter_list|,
 name|double
-name|pressure
+name|rate
 parameter_list|,
 name|ConvolveType
 name|type
@@ -2260,9 +2274,9 @@ name|non_gui_type
 operator|=
 name|type
 expr_stmt|;
-name|non_gui_pressure
+name|non_gui_rate
 operator|=
-name|pressure
+name|rate
 expr_stmt|;
 name|non_gui_paint_core
 operator|.

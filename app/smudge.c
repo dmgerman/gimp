@@ -122,10 +122,10 @@ comment|/* default defines */
 end_comment
 
 begin_define
-DECL|macro|SMUDGE_DEFAULT_PRESSURE
+DECL|macro|SMUDGE_DEFAULT_RATE
 define|#
 directive|define
-name|SMUDGE_DEFAULT_PRESSURE
+name|SMUDGE_DEFAULT_RATE
 value|50.0
 end_define
 
@@ -151,18 +151,18 @@ DECL|member|paint_options
 name|PaintOptions
 name|paint_options
 decl_stmt|;
-DECL|member|pressure
+DECL|member|rate
 name|double
-name|pressure
+name|rate
 decl_stmt|;
-DECL|member|pressure_d
+DECL|member|rate_d
 name|double
-name|pressure_d
+name|rate_d
 decl_stmt|;
-DECL|member|pressure_w
+DECL|member|rate_w
 name|GtkObject
 modifier|*
-name|pressure_w
+name|rate_w
 decl_stmt|;
 block|}
 struct|;
@@ -206,10 +206,10 @@ comment|/*  local variables */
 end_comment
 
 begin_decl_stmt
-DECL|variable|non_gui_pressure
+DECL|variable|non_gui_rate
 specifier|static
-name|double
-name|non_gui_pressure
+name|gdouble
+name|non_gui_rate
 decl_stmt|;
 end_decl_stmt
 
@@ -228,7 +228,7 @@ parameter_list|,
 name|PaintPressureOptions
 modifier|*
 parameter_list|,
-name|double
+name|gdouble
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -343,12 +343,12 @@ name|GTK_ADJUSTMENT
 argument_list|(
 name|options
 operator|->
-name|pressure_w
+name|rate_w
 argument_list|)
 argument_list|,
 name|options
 operator|->
-name|pressure_d
+name|rate_d
 argument_list|)
 expr_stmt|;
 block|}
@@ -414,13 +414,13 @@ argument_list|)
 expr_stmt|;
 name|options
 operator|->
-name|pressure
+name|rate
 operator|=
 name|options
 operator|->
-name|pressure_d
+name|rate_d
 operator|=
-name|SMUDGE_DEFAULT_PRESSURE
+name|SMUDGE_DEFAULT_RATE
 expr_stmt|;
 comment|/*  the main vbox  */
 name|vbox
@@ -435,7 +435,7 @@ operator|)
 operator|->
 name|main_vbox
 expr_stmt|;
-comment|/*  the pressure scale  */
+comment|/*  the rate scale  */
 name|hbox
 operator|=
 name|gtk_hbox_new
@@ -467,7 +467,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Pressure:"
+literal|"Rate:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -506,13 +506,13 @@ argument_list|)
 expr_stmt|;
 name|options
 operator|->
-name|pressure_w
+name|rate_w
 operator|=
 name|gtk_adjustment_new
 argument_list|(
 name|options
 operator|->
-name|pressure_d
+name|rate_d
 argument_list|,
 literal|0.0
 argument_list|,
@@ -533,7 +533,7 @@ name|GTK_ADJUSTMENT
 argument_list|(
 name|options
 operator|->
-name|pressure_w
+name|rate_w
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -579,7 +579,7 @@ name|GTK_OBJECT
 argument_list|(
 name|options
 operator|->
-name|pressure_w
+name|rate_w
 argument_list|)
 argument_list|,
 literal|"value_changed"
@@ -592,7 +592,7 @@ argument_list|,
 operator|&
 name|options
 operator|->
-name|pressure
+name|rate
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -660,7 +660,7 @@ name|pressure_options
 argument_list|,
 name|smudge_options
 operator|->
-name|pressure
+name|rate
 argument_list|,
 name|drawable
 argument_list|)
@@ -1401,7 +1401,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|smudge_motion (PaintCore * paint_core,PaintPressureOptions * pressure_options,double smudge_pressure,GimpDrawable * drawable)
+DECL|function|smudge_motion (PaintCore * paint_core,PaintPressureOptions * pressure_options,gdouble smudge_rate,GimpDrawable * drawable)
 name|smudge_motion
 parameter_list|(
 name|PaintCore
@@ -1412,8 +1412,8 @@ name|PaintPressureOptions
 modifier|*
 name|pressure_options
 parameter_list|,
-name|double
-name|smudge_pressure
+name|gdouble
+name|smudge_rate
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -1435,8 +1435,8 @@ name|destPR
 decl_stmt|,
 name|tempPR
 decl_stmt|;
-name|gfloat
-name|pressure
+name|gdouble
+name|rate
 decl_stmt|;
 name|gint
 name|opacity
@@ -1551,35 +1551,34 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Enable pressure sensitive pressure */
+comment|/* Enable pressure sensitive rate */
 if|if
 condition|(
 name|pressure_options
 operator|->
-name|pressure
+name|rate
 condition|)
-name|pressure
+name|rate
 operator|=
-operator|(
-operator|(
-name|smudge_pressure
-operator|)
+name|MIN
+argument_list|(
+name|smudge_rate
 operator|/
 literal|100.0
 operator|*
-operator|(
 name|paint_core
 operator|->
 name|curpressure
-operator|)
-operator|/
-literal|0.5
-operator|)
+operator|*
+literal|2.0
+argument_list|,
+literal|1.0
+argument_list|)
 expr_stmt|;
 else|else
-name|pressure
+name|rate
 operator|=
-name|smudge_pressure
+name|smudge_rate
 operator|/
 literal|100.0
 expr_stmt|;
@@ -1716,7 +1715,7 @@ argument_list|(
 name|area
 argument_list|)
 expr_stmt|;
-comment|/*        Smudge uses the buffer Accum.      For each successive painthit Accum is built like this 	Accum =  pressure*Accum  + (1-pressure)*I.      where I is the pixels under the current painthit.       Then the paint area (canvas_buf) is built as  	(Accum,1) (if no alpha),   */
+comment|/*        Smudge uses the buffer Accum.      For each successive painthit Accum is built like this 	Accum =  rate*Accum  + (1-rate)*I.      where I is the pixels under the current painthit.       Then the paint area (canvas_buf) is built as  	(Accum,1) (if no alpha),   */
 name|blend_region
 argument_list|(
 operator|&
@@ -1730,7 +1729,7 @@ name|tempPR
 argument_list|,
 name|ROUND
 argument_list|(
-name|pressure
+name|rate
 operator|*
 literal|255.0
 argument_list|)
@@ -1921,7 +1920,7 @@ argument_list|,
 operator|&
 name|non_gui_pressure_options
 argument_list|,
-name|non_gui_pressure
+name|non_gui_rate
 argument_list|,
 name|drawable
 argument_list|)
@@ -1949,10 +1948,10 @@ modifier|*
 name|stroke_array
 parameter_list|)
 block|{
-name|double
-name|pressure
+name|gdouble
+name|rate
 init|=
-name|SMUDGE_DEFAULT_PRESSURE
+name|SMUDGE_DEFAULT_RATE
 decl_stmt|;
 name|SmudgeOptions
 modifier|*
@@ -1964,18 +1963,18 @@ if|if
 condition|(
 name|options
 condition|)
-name|pressure
+name|rate
 operator|=
 name|options
 operator|->
-name|pressure
+name|rate
 expr_stmt|;
 return|return
 name|smudge_non_gui
 argument_list|(
 name|drawable
 argument_list|,
-name|pressure
+name|rate
 argument_list|,
 name|num_strokes
 argument_list|,
@@ -1987,15 +1986,15 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|smudge_non_gui (GimpDrawable * drawable,double pressure,int num_strokes,double * stroke_array)
+DECL|function|smudge_non_gui (GimpDrawable * drawable,gdouble rate,int num_strokes,double * stroke_array)
 name|smudge_non_gui
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|double
-name|pressure
+name|gdouble
+name|rate
 parameter_list|,
 name|int
 name|num_strokes
@@ -2044,9 +2043,9 @@ name|paint_func
 operator|=
 name|smudge_non_gui_paint_func
 expr_stmt|;
-name|non_gui_pressure
+name|non_gui_rate
 operator|=
-name|pressure
+name|rate
 expr_stmt|;
 name|non_gui_paint_core
 operator|.
