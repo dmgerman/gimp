@@ -1790,6 +1790,14 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|gimp_dialog_set_icon
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|win_initstatus
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|no_splash_image

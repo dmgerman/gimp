@@ -9,9 +9,11 @@ directive|include
 file|"libgimp/gimpdialog.h"
 end_include
 
-begin_comment
-comment|/* #include "pixmaps/wilber.xpm" */
-end_comment
+begin_include
+include|#
+directive|include
+file|"pixmaps/wilber.xpm"
+end_include
 
 begin_comment
 comment|/*  local callbacks of gimp_dialog_new ()  */
@@ -108,8 +110,72 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-return|return;
-comment|/*   static GdkPixmap *wilber_pixmap = NULL;   static GdkBitmap *wilber_mask   = NULL;   GtkStyle         *style;    style = gtk_widget_get_style (widget);    if (wilber_pixmap == NULL)     wilber_pixmap =       gdk_pixmap_create_from_xpm_d (widget->window,&wilber_mask,&style->bg[GTK_STATE_NORMAL], 				    gimp_xpm);    gdk_window_set_icon (widget->window, NULL, 		       wilber_pixmap, wilber_mask);   */
+specifier|static
+name|GdkPixmap
+modifier|*
+name|wilber_pixmap
+init|=
+name|NULL
+decl_stmt|;
+specifier|static
+name|GdkBitmap
+modifier|*
+name|wilber_mask
+init|=
+name|NULL
+decl_stmt|;
+name|GtkStyle
+modifier|*
+name|style
+decl_stmt|;
+name|style
+operator|=
+name|gtk_widget_get_style
+argument_list|(
+name|widget
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|wilber_pixmap
+operator|==
+name|NULL
+condition|)
+name|wilber_pixmap
+operator|=
+name|gdk_pixmap_create_from_xpm_d
+argument_list|(
+name|widget
+operator|->
+name|window
+argument_list|,
+operator|&
+name|wilber_mask
+argument_list|,
+operator|&
+name|style
+operator|->
+name|bg
+index|[
+name|GTK_STATE_NORMAL
+index|]
+argument_list|,
+name|wilber_xpm
+argument_list|)
+expr_stmt|;
+name|gdk_window_set_icon
+argument_list|(
+name|widget
+operator|->
+name|window
+argument_list|,
+name|NULL
+argument_list|,
+name|wilber_pixmap
+argument_list|,
+name|wilber_mask
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -345,10 +411,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_dialog_set_icon (GtkWidget * dialog)
+DECL|function|gimp_dialog_set_icon (GtkWindow * dialog)
 name|gimp_dialog_set_icon
 parameter_list|(
-name|GtkWidget
+name|GtkWindow
 modifier|*
 name|dialog
 parameter_list|)
@@ -370,12 +436,18 @@ if|if
 condition|(
 name|GTK_WIDGET_REALIZED
 argument_list|(
+name|GTK_WIDGET
+argument_list|(
 name|dialog
+argument_list|)
 argument_list|)
 condition|)
 name|gimp_dialog_realize_callback
 argument_list|(
+name|GTK_WIDGET
+argument_list|(
 name|dialog
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"interface.h"
 end_include
 
@@ -10072,6 +10078,14 @@ argument_list|,
 literal|"tearoff_menu_top"
 argument_list|,
 name|top
+argument_list|)
+expr_stmt|;
+name|gimp_dialog_set_icon
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|top
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -25,13 +25,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimphelpui.h"
+file|"gimphelpui.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpunit.h"
+file|"gimpunit.h"
 end_include
 
 begin_function_decl
@@ -118,7 +118,7 @@ begin_function_decl
 name|void
 name|gimp_dialog_set_icon
 parameter_list|(
-name|GtkWidget
+name|GtkWindow
 modifier|*
 name|dialog
 parameter_list|)

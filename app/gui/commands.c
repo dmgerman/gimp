@@ -270,7 +270,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa1f4830108
+DECL|struct|__anon29c73c1a0108
 block|{
 DECL|member|resize
 name|Resize
@@ -1245,7 +1245,7 @@ literal|"dialogs/feather_selection.html"
 argument_list|,
 name|_
 argument_list|(
-literal|"Feather selection by:"
+literal|"Feather Selection by:"
 argument_list|)
 argument_list|,
 name|selection_feather_radius
@@ -1383,9 +1383,9 @@ name|gimp_standard_help_func
 argument_list|,
 literal|"dialogs/shrink_selection.html"
 argument_list|,
-name|N_
+name|_
 argument_list|(
-literal|"Shrink selection by:"
+literal|"Shrink Selection by:"
 argument_list|)
 argument_list|,
 name|selection_shrink_pixels
@@ -1557,7 +1557,7 @@ literal|"dialogs/grow_selection.html"
 argument_list|,
 name|_
 argument_list|(
-literal|"Grow selection by:"
+literal|"Grow Selection by:"
 argument_list|)
 argument_list|,
 name|selection_grow_pixels
@@ -1658,7 +1658,7 @@ literal|"dialogs/border_selection.html"
 argument_list|,
 name|_
 argument_list|(
-literal|"Border selection by:"
+literal|"Border Selection by:"
 argument_list|)
 argument_list|,
 name|selection_border_radius
@@ -2348,7 +2348,7 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|int
+name|gint
 name|new_val
 decl_stmt|;
 name|return_if_no_display
@@ -2616,7 +2616,7 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|int
+name|gint
 name|old_val
 decl_stmt|;
 name|return_if_no_display
@@ -4166,40 +4166,40 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|dialogs_indexed_palette_select_callback (ColormapDialog * dlg,gpointer user_data)
+DECL|function|dialogs_indexed_palette_select_callback (ColormapDialog * dialog,gpointer data)
 name|dialogs_indexed_palette_select_callback
 parameter_list|(
 name|ColormapDialog
 modifier|*
-name|dlg
+name|dialog
 parameter_list|,
 name|gpointer
-name|user_data
+name|data
 parameter_list|)
 block|{
 name|guchar
 modifier|*
-name|c
+name|color
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|img
+name|image
 init|=
 name|colormap_dialog_image
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 decl_stmt|;
-name|c
+name|color
 operator|=
 operator|&
-name|img
+name|image
 operator|->
 name|cmap
 index|[
 name|colormap_dialog_col_index
 argument_list|(
-name|dlg
+name|dialog
 argument_list|)
 operator|*
 literal|3
@@ -4216,17 +4216,17 @@ argument_list|(
 name|gimp_context_get_user
 argument_list|()
 argument_list|,
-name|c
+name|color
 index|[
 literal|0
 index|]
 argument_list|,
-name|c
+name|color
 index|[
 literal|1
 index|]
 argument_list|,
-name|c
+name|color
 index|[
 literal|2
 index|]
@@ -4244,17 +4244,17 @@ argument_list|(
 name|gimp_context_get_user
 argument_list|()
 argument_list|,
-name|c
+name|color
 index|[
 literal|0
 index|]
 argument_list|,
-name|c
+name|color
 index|[
 literal|1
 index|]
 argument_list|,
-name|c
+name|color
 index|[
 literal|2
 index|]
@@ -4462,16 +4462,16 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
-name|w
+name|module_browser
 decl_stmt|;
-name|w
+name|module_browser
 operator|=
 name|module_db_browser_new
 argument_list|()
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|w
+name|module_browser
 argument_list|)
 expr_stmt|;
 block|}
