@@ -86,7 +86,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0ad89b0108
+DECL|struct|__anon2c42f5f60108
 block|{
 DECL|member|radius
 name|gdouble
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0ad89b0208
+DECL|struct|__anon2c42f5f60208
 block|{
 DECL|member|run
 name|gboolean
@@ -1340,7 +1340,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/* for the edge condition , we only use available info, and scale to one */
+comment|/* for the edge condition, we only use available info, and scale to one */
 for|for
 control|(
 init|;
@@ -1644,24 +1644,20 @@ name|x1
 argument_list|,
 name|y1
 argument_list|,
-operator|(
 name|x2
 operator|-
 name|x1
-operator|)
 argument_list|,
-operator|(
 name|y2
 operator|-
 name|y1
-operator|)
 argument_list|)
 expr_stmt|;
 block|}
 end_function
 
 begin_comment
-comment|/* perform an unsharp mask on the region, given a source region, dest.    region, width and height of the regions, and corner coordinates of    a subregion to act upon.  Everything outside the subregion is unaffected. */
+comment|/* Perform an unsharp mask on the region, given a source region, dest.  * region, width and height of the regions, and corner coordinates of  * a subregion to act upon.  Everything outside the subregion is unaffected.  */
 end_comment
 
 begin_function
@@ -1821,19 +1817,6 @@ name|x
 operator|*
 name|bytes
 argument_list|)
-expr_stmt|;
-comment|/* find height and width of subregion to act on */
-name|x
-operator|=
-name|x2
-operator|-
-name|x1
-expr_stmt|;
-name|y
-operator|=
-name|y2
-operator|-
-name|y1
 expr_stmt|;
 comment|/* blank out a region of the destination memory area, I think */
 for|for
@@ -2561,28 +2544,22 @@ operator|+=
 name|exp
 argument_list|(
 operator|-
-operator|(
+name|SQR
+argument_list|(
 name|base_x
 operator|+
 literal|0.02
 operator|*
 name|j
-operator|)
-operator|*
-operator|(
-name|base_x
-operator|+
-literal|0.02
-operator|*
-name|j
-operator|)
+argument_list|)
 operator|/
 operator|(
 literal|2
 operator|*
+name|SQR
+argument_list|(
 name|std_dev
-operator|*
-name|std_dev
+argument_list|)
 operator|)
 argument_list|)
 expr_stmt|;
@@ -2613,7 +2590,6 @@ condition|;
 name|i
 operator|++
 control|)
-block|{
 name|cmatrix
 index|[
 name|i
@@ -2628,7 +2604,6 @@ operator|-
 name|i
 index|]
 expr_stmt|;
-block|}
 comment|/* find center val -- calculate an odd number of quanta to make it symmetric,    * even if the center point is weighted slightly higher than others. */
 name|sum
 operator|=
@@ -2653,28 +2628,22 @@ operator|+=
 name|exp
 argument_list|(
 operator|-
-operator|(
+name|SQR
+argument_list|(
 literal|0.5
 operator|+
 literal|0.02
 operator|*
 name|j
-operator|)
-operator|*
-operator|(
-literal|0.5
-operator|+
-literal|0.02
-operator|*
-name|j
-operator|)
+argument_list|)
 operator|/
 operator|(
 literal|2
 operator|*
+name|SQR
+argument_list|(
 name|std_dev
-operator|*
-name|std_dev
+argument_list|)
 operator|)
 argument_list|)
 expr_stmt|;
