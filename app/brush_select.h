@@ -56,16 +56,10 @@ name|GtkWidget
 modifier|*
 name|paint_options_box
 decl_stmt|;
-comment|/*  The preview and it's vscale data  */
-DECL|member|preview
+DECL|member|view
 name|GtkWidget
 modifier|*
-name|preview
-decl_stmt|;
-DECL|member|sbar_data
-name|GtkAdjustment
-modifier|*
-name|sbar_data
+name|view
 decl_stmt|;
 DECL|member|options_box
 name|GtkWidget
@@ -107,29 +101,6 @@ name|GtkWidget
 modifier|*
 name|option_menu
 decl_stmt|;
-comment|/*  Brush popup  */
-DECL|member|brush_popup
-name|GtkWidget
-modifier|*
-name|brush_popup
-decl_stmt|;
-DECL|member|brush_preview
-name|GtkWidget
-modifier|*
-name|brush_preview
-decl_stmt|;
-DECL|member|popup_timeout_tag
-name|guint
-name|popup_timeout_tag
-decl_stmt|;
-DECL|member|popup_anim_timeout_tag
-name|guint
-name|popup_anim_timeout_tag
-decl_stmt|;
-DECL|member|popup_pipe_index
-name|guint
-name|popup_pipe_index
-decl_stmt|;
 comment|/*  Callback function name  */
 DECL|member|callback_name
 name|gchar
@@ -146,49 +117,6 @@ DECL|member|spacing_value
 name|gint
 name|spacing_value
 decl_stmt|;
-DECL|member|dnd_brush
-name|GimpBrush
-modifier|*
-name|dnd_brush
-decl_stmt|;
-comment|/*  Some variables to keep the GUI consistent  */
-DECL|member|cell_width
-name|gint
-name|cell_width
-decl_stmt|;
-DECL|member|cell_height
-name|gint
-name|cell_height
-decl_stmt|;
-DECL|member|scroll_offset
-name|gint
-name|scroll_offset
-decl_stmt|;
-DECL|member|old_row
-name|gint
-name|old_row
-decl_stmt|;
-DECL|member|old_col
-name|gint
-name|old_col
-decl_stmt|;
-DECL|member|NUM_BRUSH_COLUMNS
-name|gint
-name|NUM_BRUSH_COLUMNS
-decl_stmt|;
-DECL|member|NUM_BRUSH_ROWS
-name|gint
-name|NUM_BRUSH_ROWS
-decl_stmt|;
-DECL|member|redraw
-name|gboolean
-name|redraw
-decl_stmt|;
-DECL|member|freeze
-name|gboolean
-name|freeze
-decl_stmt|;
-comment|/*  so we don't waste so much time during refresh  */
 DECL|member|name_changed_handler_id
 name|GQuark
 name|name_changed_handler_id
@@ -234,7 +162,7 @@ name|gchar
 modifier|*
 name|title
 parameter_list|,
-comment|/*  These are the required initial vals 					*  If init_name == NULL then use 					*  current brush 					*/
+comment|/*  These are the required initial vals 					   *  If init_name == NULL then use 					   *  current brush 					   */
 name|gchar
 modifier|*
 name|init_name
@@ -264,25 +192,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|brush_select_freeze_all
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|brush_select_thaw_all
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|brushes_check_dialogs
+name|brush_select_dialogs_check
 parameter_list|(
 name|void
 parameter_list|)

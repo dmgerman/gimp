@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"brush_select.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"brushes.h"
 end_include
 
@@ -99,9 +93,6 @@ name|gchar
 modifier|*
 name|common_brush_path
 decl_stmt|;
-name|brush_select_freeze_all
-argument_list|()
-expr_stmt|;
 name|common_brush_path
 operator|=
 name|g_strconcat
@@ -160,9 +151,6 @@ argument_list|(
 name|common_brush_path
 argument_list|)
 expr_stmt|;
-name|brush_select_thaw_all
-argument_list|()
-expr_stmt|;
 block|}
 block|}
 end_function
@@ -185,9 +173,6 @@ operator|==
 literal|0
 condition|)
 return|return;
-name|brush_select_freeze_all
-argument_list|()
-expr_stmt|;
 name|gimp_data_list_save_and_clear
 argument_list|(
 name|GIMP_DATA_LIST
@@ -199,9 +184,6 @@ name|brush_vbr_path
 argument_list|,
 name|GIMP_BRUSH_GENERATED_FILE_EXTENSION
 argument_list|)
-expr_stmt|;
-name|brush_select_thaw_all
-argument_list|()
 expr_stmt|;
 block|}
 end_function

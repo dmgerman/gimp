@@ -451,11 +451,11 @@ argument_list|)
 expr_stmt|;
 name|popup_width
 operator|=
-literal|48
+literal|128
 expr_stmt|;
 name|popup_height
 operator|=
-literal|24
+literal|32
 expr_stmt|;
 return|return
 name|gimp_preview_new_full

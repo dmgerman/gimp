@@ -5366,10 +5366,10 @@ name|NULL
 expr_stmt|;
 block|}
 comment|/* Close any dialogs that this plugin might have opened */
-name|brushes_check_dialogs
+name|brush_select_dialogs_check
 argument_list|()
 expr_stmt|;
-name|patterns_check_dialogs
+name|pattern_select_dialogs_check
 argument_list|()
 expr_stmt|;
 name|gradients_check_dialogs

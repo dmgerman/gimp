@@ -141,6 +141,10 @@ DECL|member|n_colors
 name|gint
 name|n_colors
 decl_stmt|;
+DECL|member|n_columns
+name|gint
+name|n_columns
+decl_stmt|;
 comment|/* EEK */
 DECL|member|pixmap
 name|GdkPixmap

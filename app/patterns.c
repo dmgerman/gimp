@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pattern_select.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"temp_buf.h"
 end_include
 
@@ -89,9 +83,6 @@ operator|!
 name|no_data
 condition|)
 block|{
-name|pattern_select_freeze_all
-argument_list|()
-expr_stmt|;
 name|gimp_data_list_load
 argument_list|(
 name|GIMP_DATA_LIST
@@ -110,9 +101,6 @@ name|GIMP_PATTERN_FILE_EXTENSION
 argument_list|,
 name|NULL
 argument_list|)
-expr_stmt|;
-name|pattern_select_thaw_all
-argument_list|()
 expr_stmt|;
 block|}
 block|}
@@ -136,9 +124,6 @@ operator|==
 literal|0
 condition|)
 return|return;
-name|pattern_select_freeze_all
-argument_list|()
-expr_stmt|;
 name|gimp_data_list_save_and_clear
 argument_list|(
 name|GIMP_DATA_LIST
@@ -150,9 +135,6 @@ name|pattern_path
 argument_list|,
 name|GIMP_PATTERN_FILE_EXTENSION
 argument_list|)
-expr_stmt|;
-name|pattern_select_thaw_all
-argument_list|()
 expr_stmt|;
 block|}
 end_function
