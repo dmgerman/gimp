@@ -261,6 +261,12 @@ directive|include
 file|"gimptexttool.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimptoolmodule.h"
+end_include
+
 begin_function
 name|void
 DECL|function|tools_init (Gimp * gimp)
@@ -390,6 +396,7 @@ name|tool_manager_register_tool
 operator|)
 expr_stmt|;
 block|}
+comment|/*  For testing only...     {       GimpToolModule *m = gimp_tool_module_new("/home/rockwlrs/gimp/app/tools/libtestmodule.so", gimp, tool_manager_register_tool);     } */
 block|}
 end_function
 
