@@ -11042,7 +11042,7 @@ name|c1
 init|=
 literal|0
 decl_stmt|;
-DECL|enum|__anon2af582af0103
+DECL|enum|__anon27aa652a0103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -26333,7 +26333,7 @@ argument_list|(
 name|sc
 argument_list|)
 expr_stmt|;
-if|if
+while|while
 condition|(
 name|sc
 operator|->
@@ -27895,7 +27895,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2af582af0208
+DECL|struct|__anon27aa652a0208
 specifier|static
 struct|struct
 block|{
@@ -28144,7 +28144,7 @@ value|"\017"
 end_define
 
 begin_typedef
-DECL|struct|__anon2af582af0308
+DECL|struct|__anon27aa652a0308
 typedef|typedef
 struct|struct
 block|{
