@@ -118,18 +118,22 @@ endif|#
 directive|endif
 end_endif
 
-begin_ifndef
-ifndef|#
-directive|ifndef
+begin_comment
+comment|/* (Re)define S_IXUSR as _S_IREAD to get scripts, too. */
+end_comment
+
+begin_undef
+undef|#
+directive|undef
 name|S_IXUSR
-end_ifndef
+end_undef
 
 begin_define
 DECL|macro|S_IXUSR
 define|#
 directive|define
 name|S_IXUSR
-value|_S_IEXEC
+value|_S_IREAD
 end_define
 
 begin_endif
@@ -137,10 +141,9 @@ endif|#
 directive|endif
 end_endif
 
-begin_endif
-endif|#
-directive|endif
-end_endif
+begin_comment
+comment|/* G_OS_WIN32 */
+end_comment
 
 begin_include
 include|#

@@ -2558,6 +2558,11 @@ argument_list|(
 name|paint_core
 argument_list|,
 name|gimage_active_drawable
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
 argument_list|,
 name|PRETRACE_PAINT
 argument_list|)
@@ -2585,6 +2590,11 @@ argument_list|(
 name|paint_core
 argument_list|,
 name|gimage_active_drawable
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
 argument_list|,
 name|POSTTRACE_PAINT
 argument_list|)
