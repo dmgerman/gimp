@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0b02e70103
+DECL|enum|__anon29f83fe00103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0b02e70203
+DECL|enum|__anon29f83fe00203
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -941,13 +941,6 @@ operator|>
 literal|0
 operator|&&
 operator|(
-operator|(
-name|len
-operator|%
-literal|3
-operator|==
-literal|0
-operator|&&
 name|gimp_rgb_parse_hex
 argument_list|(
 operator|&
@@ -957,9 +950,7 @@ name|text
 argument_list|,
 name|len
 argument_list|)
-operator|)
 operator|||
-operator|(
 name|gimp_rgb_parse_name
 argument_list|(
 operator|&
@@ -970,7 +961,6 @@ argument_list|,
 operator|-
 literal|1
 argument_list|)
-operator|)
 operator|)
 condition|)
 block|{
