@@ -763,7 +763,7 @@ argument_list|(
 name|_
 argument_list|(
 literal|"Revert '%s' to\n"
-literal|"'%s'?"
+literal|"'%s'?\n\n"
 literal|"(You will lose all your changes,\n"
 literal|"including all undo information)"
 argument_list|)
