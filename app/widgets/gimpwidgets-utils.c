@@ -71,7 +71,7 @@ end_ifdef
 begin_include
 include|#
 directive|include
-file|"libbgimpbase/gimpwin32-io.h"
+file|"libgimpbase/gimpwin32-io.h"
 end_include
 
 begin_endif
@@ -1841,7 +1841,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon28c9053c0108
+DECL|struct|__anon2ab2b17c0108
 block|{
 DECL|member|modifiers
 name|GdkModifierType
