@@ -243,6 +243,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GdkWindowTypeHint
+name|gimp_window_type_hint_to_gdk_hint
+parameter_list|(
+name|GimpWindowTypeHint
+name|hint
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

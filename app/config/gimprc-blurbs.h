@@ -183,6 +183,15 @@ value|"Sets the default settings used when an image is viewed in fullscreen mode
 end_define
 
 begin_define
+DECL|macro|DOCK_WINDOW_TYPE_BLURB
+define|#
+directive|define
+name|DOCK_WINDOW_TYPE_BLURB
+define|\
+value|N_("The window type hint that is set on dock windows. This may affect " \    "the way your window manager decorates and handles dock windows.")
+end_define
+
+begin_define
 DECL|macro|ENVIRON_PATH_BLURB
 define|#
 directive|define
@@ -732,6 +741,15 @@ directive|define
 name|TILE_CACHE_SIZE_BLURB
 define|\
 value|N_("The tile cache is used to make sure the GIMP doesn't thrash " \    "tiles between memory and disk. Setting this value higher will " \    "cause the GIMP to use less swap space, but will also cause " \    "the GIMP to use more memory. Conversely, a smaller cache size " \    "causes the GIMP to use more swap space and less memory.")
+end_define
+
+begin_define
+DECL|macro|TOOLBOX_WINDOW_TYPE_BLURB
+define|#
+directive|define
+name|TOOLBOX_WINDOW_TYPE_BLURB
+define|\
+value|N_("The window type hint that is set on the toolbox. This may affect " \    "how your window manager decorates and handles the toolbox window.")
 end_define
 
 begin_define

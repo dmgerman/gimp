@@ -185,6 +185,14 @@ name|gchar
 modifier|*
 name|web_browser
 decl_stmt|;
+DECL|member|toolbox_window_type
+name|GimpWindowTypeHint
+name|toolbox_window_type
+decl_stmt|;
+DECL|member|dock_window_type
+name|GimpWindowTypeHint
+name|dock_window_type
+decl_stmt|;
 DECL|member|last_tip
 name|gint
 name|last_tip

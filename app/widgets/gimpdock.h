@@ -236,25 +236,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
-name|gboolean
-name|gimp_dock_construct
-parameter_list|(
-name|GimpDock
-modifier|*
-name|dock
-parameter_list|,
-name|GimpDialogFactory
-modifier|*
-name|dialog_factory
-parameter_list|,
-name|GimpContext
-modifier|*
-name|context
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gimp_dock_setup
 parameter_list|(
