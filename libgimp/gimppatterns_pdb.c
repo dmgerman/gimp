@@ -26,7 +26,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_patterns_refresh:  *  * Refresh current patterns. This function always succeeds.  *  * This procedure retrieves all patterns currently in the user's  * pattern path and updates the pattern dialogs accordingly.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_patterns_refresh:  *  * Refresh current patterns. This function always succeeds.  *  * This procedure retrieves all patterns currently in the user's  * pattern path and updates all pattern dialogs accordingly.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -88,7 +88,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_patterns_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_patterns: The number of patterns in the pattern list.  *  * Retrieve a complete listing of the available patterns.  *  * This procedure returns a complete listing of available GIMP  * patterns. Each name returned can be used as input to the  * 'gimp_patterns_set_pattern'.  *  * Returns: The list of pattern names.  */
+comment|/**  * gimp_patterns_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_patterns: The number of patterns in the pattern list.  *  * Retrieve a complete listing of the available patterns.  *  * This procedure returns a complete listing of available GIMP  * patterns. Each name returned can be used as input to the  * 'gimp_context_set_pattern'.  *  * Returns: The list of pattern names.  */
 end_comment
 
 begin_function
@@ -342,18 +342,27 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_patterns_set_pattern:  * @name: The pattern name.  *  * Set the specified pattern as the active pattern.  *  * This procedure allows the active pattern mask to be set by  * specifying its name. The name is simply a string which corresponds  * to one of the names of the installed patterns. If there is no  * matching pattern found, this procedure will return an error.  * Otherwise, the specified pattern becomes active and will be used in  * all subsequent paint operations.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_patterns_get_pattern_info:  * @name: The pattern name (\"\" means currently active pattern).  * @width: The pattern width.  * @height: The pattern height.  *  * Retrieve information about the specified pattern.  *  * This procedure retrieves information about the specified pattern.  * This includes the pattern extents (width and height).  *  * Returns: The pattern name.  */
 end_comment
 
 begin_function
-name|gboolean
-DECL|function|gimp_patterns_set_pattern (const gchar * name)
-name|gimp_patterns_set_pattern
+name|gchar
+modifier|*
+DECL|function|gimp_patterns_get_pattern_info (const gchar * name,gint * width,gint * height)
+name|gimp_patterns_get_pattern_info
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|name
+parameter_list|,
+name|gint
+modifier|*
+name|width
+parameter_list|,
+name|gint
+modifier|*
+name|height
 parameter_list|)
 block|{
 name|GimpParam
@@ -363,16 +372,17 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
-name|gboolean
-name|success
+name|gchar
+modifier|*
+name|ret_name
 init|=
-name|TRUE
+name|NULL
 decl_stmt|;
 name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_patterns_set_pattern"
+literal|"gimp_patterns_get_pattern_info"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -384,8 +394,8 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
-name|success
-operator|=
+if|if
+condition|(
 name|return_vals
 index|[
 literal|0
@@ -396,7 +406,47 @@ operator|.
 name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
+condition|)
+block|{
+name|ret_name
+operator|=
+name|g_strdup
+argument_list|(
+name|return_vals
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+argument_list|)
 expr_stmt|;
+operator|*
+name|width
+operator|=
+name|return_vals
+index|[
+literal|2
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+operator|*
+name|height
+operator|=
+name|return_vals
+index|[
+literal|3
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+block|}
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -405,7 +455,7 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|success
+name|ret_name
 return|;
 block|}
 end_function

@@ -85,6 +85,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpgradients.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpgradientselect.h>
 end_include
 
@@ -109,7 +115,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimppalettes.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimppaletteselect.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimppatterns.h>
 end_include
 
 begin_include

@@ -1048,7 +1048,7 @@ name|gradient_name
 condition|)
 name|gradient_name
 operator|=
-name|gimp_gradients_get_gradient
+name|gimp_context_get_gradient
 argument_list|()
 expr_stmt|;
 name|gimp_gradients_get_gradient_data
@@ -5881,7 +5881,7 @@ argument_list|)
 expr_stmt|;
 name|gradient_name
 operator|=
-name|gimp_gradients_get_gradient
+name|gimp_context_get_gradient
 argument_list|()
 expr_stmt|;
 name|gradient_samples

@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_palettes_refresh:  *  * Refreshes current palettes. This function always succeeds.  *  * This procedure incorporates all palettes currently in the users  * palette path.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_palettes_refresh:  *  * Refreshes current palettes. This function always succeeds.  *  * This procedure retrieves all palettes currently in the user's  * palette path and updates the palette dialogs accordingly.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -82,7 +82,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palettes_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_palettes: The number of palettes in the list.  *  * Retrieves a list of all of the available palettes  *  * This procedure returns a complete listing of available palettes.  * Each name returned can be used as input to the command  * 'gimp_palette_set_palette'.  *  * Returns: The list of palette names.  */
+comment|/**  * gimp_palettes_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_palettes: The number of palettes in the list.  *  * Retrieves a list of all of the available palettes  *  * This procedure returns a complete listing of available palettes.  * Each name returned can be used as input to the command  * 'gimp_context_set_palette'.  *  * Returns: The list of palette names.  */
 end_comment
 
 begin_function
@@ -320,18 +320,23 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palettes_set_palette:  * @name: The palette name.  *  * Set the specified palette as the active palette.  *  * This procedure allows the active palette to be set by specifying its  * name. The name is simply a string which corresponds to one of the  * names of the installed palettes. If no matching palette is found,  * this procedure will return an error. Otherwise, the specified  * palette becomes active and will be used in all subsequent palette  * operations.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_palettes_get_palette_info:  * @name: The palette name (\"\" means currently active palette).  * @num_colors: The palette num_colors.  *  * Retrieve information about the specified palette.  *  * This procedure retrieves information about the specified palette.  * This includes the name, and the number of colors.  *  * Returns: The palette name.  */
 end_comment
 
 begin_function
-name|gboolean
-DECL|function|gimp_palettes_set_palette (const gchar * name)
-name|gimp_palettes_set_palette
+name|gchar
+modifier|*
+DECL|function|gimp_palettes_get_palette_info (const gchar * name,gint * num_colors)
+name|gimp_palettes_get_palette_info
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|name
+parameter_list|,
+name|gint
+modifier|*
+name|num_colors
 parameter_list|)
 block|{
 name|GimpParam
@@ -341,16 +346,17 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
-name|gboolean
-name|success
+name|gchar
+modifier|*
+name|ret_name
 init|=
-name|TRUE
+name|NULL
 decl_stmt|;
 name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_palettes_set_palette"
+literal|"gimp_palettes_get_palette_info"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -362,8 +368,8 @@ argument_list|,
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
-name|success
-operator|=
+if|if
+condition|(
 name|return_vals
 index|[
 literal|0
@@ -374,7 +380,35 @@ operator|.
 name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
+condition|)
+block|{
+name|ret_name
+operator|=
+name|g_strdup
+argument_list|(
+name|return_vals
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+argument_list|)
 expr_stmt|;
+operator|*
+name|num_colors
+operator|=
+name|return_vals
+index|[
+literal|2
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+block|}
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -383,13 +417,13 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|success
+name|ret_name
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palettes_get_palette_entry:  * @name: the palette name (\"\" means currently active palette).  * @entry_num: The entry to retrieve.  * @num_colors: The palette num_colors.  * @color: The color requested.  *  * Gets the specified palette entry from the currently active palette.  *  * This procedure retrieves the color of the zero-based entry specifed  * for the current palette. It returns an error if the entry does not  * exist.  *  * Returns: The palette name.  */
+comment|/**  * gimp_palettes_get_palette_entry:  * @name: The palette name (\"\" means currently active palette).  * @entry_num: The entry to retrieve.  * @num_colors: The palette num_colors.  * @color: The color requested.  *  * Gets the specified palette entry from the specified palette.  *  * This procedure retrieves the color of the zero-based entry specifed  * for the specified palette. It returns an error if the entry does not  * exist.  *  * Returns: The palette name.  */
 end_comment
 
 begin_function

@@ -104,10 +104,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|patterns_set_pattern_proc
+DECL|variable|patterns_get_pattern_info_proc
 specifier|static
 name|ProcRecord
-name|patterns_set_pattern_proc
+name|patterns_get_pattern_info_proc
 decl_stmt|;
 end_decl_stmt
 
@@ -158,7 +158,7 @@ argument_list|(
 name|gimp
 argument_list|,
 operator|&
-name|patterns_set_pattern_proc
+name|patterns_get_pattern_info_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -235,7 +235,7 @@ literal|"gimp_patterns_refresh"
 block|,
 literal|"Refresh current patterns. This function always succeeds."
 block|,
-literal|"This procedure retrieves all patterns currently in the user's pattern path and updates the pattern dialogs accordingly."
+literal|"This procedure retrieves all patterns currently in the user's pattern path and updates all pattern dialogs accordingly."
 block|,
 literal|"Michael Natterer"
 block|,
@@ -464,7 +464,7 @@ literal|"gimp_patterns_get_list"
 block|,
 literal|"Retrieve a complete listing of the available patterns."
 block|,
-literal|"This procedure returns a complete listing of available GIMP patterns. Each name returned can be used as input to the 'gimp_patterns_set_pattern'."
+literal|"This procedure returns a complete listing of available GIMP patterns. Each name returned can be used as input to the 'gimp_context_set_pattern'."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -689,8 +689,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|patterns_set_pattern_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
-name|patterns_set_pattern_invoker
+DECL|function|patterns_get_pattern_info_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+name|patterns_get_pattern_info_invoker
 parameter_list|(
 name|Gimp
 modifier|*
@@ -714,6 +714,10 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
+name|Argument
+modifier|*
+name|return_args
+decl_stmt|;
 name|gchar
 modifier|*
 name|name
@@ -721,6 +725,8 @@ decl_stmt|;
 name|GimpPattern
 modifier|*
 name|pattern
+init|=
+name|NULL
 decl_stmt|;
 name|name
 operator|=
@@ -740,9 +746,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -763,6 +767,16 @@ condition|(
 name|success
 condition|)
 block|{
+if|if
+condition|(
+name|name
+operator|&&
+name|strlen
+argument_list|(
+name|name
+argument_list|)
+condition|)
+block|{
 name|pattern
 operator|=
 operator|(
@@ -780,40 +794,122 @@ argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
+block|}
+else|else
+block|{
 name|pattern
-condition|)
-name|gimp_context_set_pattern
+operator|=
+name|gimp_context_get_pattern
 argument_list|(
 name|context
-argument_list|,
-name|pattern
 argument_list|)
 expr_stmt|;
-else|else
+block|}
+if|if
+condition|(
+operator|!
+name|pattern
+condition|)
 name|success
 operator|=
 name|FALSE
 expr_stmt|;
 block|}
-return|return
+name|return_args
+operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|patterns_set_pattern_proc
+name|patterns_get_pattern_info_proc
 argument_list|,
 name|success
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|success
+condition|)
+block|{
+name|return_args
+index|[
+literal|1
+index|]
+operator|.
+name|value
+operator|.
+name|pdb_pointer
+operator|=
+name|g_strdup
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|pattern
+argument_list|)
+operator|->
+name|name
+argument_list|)
+expr_stmt|;
+name|return_args
+index|[
+literal|2
+index|]
+operator|.
+name|value
+operator|.
+name|pdb_int
+operator|=
+name|pattern
+operator|->
+name|mask
+operator|->
+name|width
+expr_stmt|;
+name|return_args
+index|[
+literal|3
+index|]
+operator|.
+name|value
+operator|.
+name|pdb_int
+operator|=
+name|pattern
+operator|->
+name|mask
+operator|->
+name|height
+expr_stmt|;
+block|}
+return|return
+name|return_args
 return|;
 block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|patterns_set_pattern_inargs
+DECL|variable|patterns_get_pattern_info_inargs
 specifier|static
 name|ProcArg
-name|patterns_set_pattern_inargs
+name|patterns_get_pattern_info_inargs
+index|[]
+init|=
+block|{
+block|{
+name|GIMP_PDB_STRING
+block|,
+literal|"name"
+block|,
+literal|"The pattern name (\"\" means currently active pattern)"
+block|}
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|patterns_get_pattern_info_outargs
+specifier|static
+name|ProcArg
+name|patterns_get_pattern_info_outargs
 index|[]
 init|=
 block|{
@@ -824,42 +920,58 @@ literal|"name"
 block|,
 literal|"The pattern name"
 block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"width"
+block|,
+literal|"The pattern width"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"height"
+block|,
+literal|"The pattern height"
+block|}
 block|}
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|patterns_set_pattern_proc
+DECL|variable|patterns_get_pattern_info_proc
 specifier|static
 name|ProcRecord
-name|patterns_set_pattern_proc
+name|patterns_get_pattern_info_proc
 init|=
 block|{
-literal|"gimp_patterns_set_pattern"
+literal|"gimp_patterns_get_pattern_info"
 block|,
-literal|"Set the specified pattern as the active pattern."
+literal|"Retrieve information about the specified pattern."
 block|,
-literal|"This procedure allows the active pattern mask to be set by specifying its name. The name is simply a string which corresponds to one of the names of the installed patterns. If there is no matching pattern found, this procedure will return an error. Otherwise, the specified pattern becomes active and will be used in all subsequent paint operations."
+literal|"This procedure retrieves information about the specified pattern. This includes the pattern extents (width and height)."
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|"Michael Natterer<mitch@gimp.org>"
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|"Michael Natterer<mitch@gimp.org>"
 block|,
-literal|"1995-1996"
+literal|"2004"
 block|,
 name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
-name|patterns_set_pattern_inargs
+name|patterns_get_pattern_info_inargs
 block|,
-literal|0
+literal|3
 block|,
-name|NULL
+name|patterns_get_pattern_info_outargs
 block|,
 block|{
 block|{
-name|patterns_set_pattern_invoker
+name|patterns_get_pattern_info_invoker
 block|}
 block|}
 block|}
@@ -938,9 +1050,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -963,6 +1073,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|name
+operator|&&
 name|strlen
 argument_list|(
 name|name

@@ -104,10 +104,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|palettes_set_palette_proc
+DECL|variable|palettes_get_palette_info_proc
 specifier|static
 name|ProcRecord
-name|palettes_set_palette_proc
+name|palettes_get_palette_info_proc
 decl_stmt|;
 end_decl_stmt
 
@@ -158,7 +158,7 @@ argument_list|(
 name|gimp
 argument_list|,
 operator|&
-name|palettes_set_palette_proc
+name|palettes_get_palette_info_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -235,7 +235,7 @@ literal|"gimp_palettes_refresh"
 block|,
 literal|"Refreshes current palettes. This function always succeeds."
 block|,
-literal|"This procedure incorporates all palettes currently in the users palette path."
+literal|"This procedure retrieves all palettes currently in the user's palette path and updates the palette dialogs accordingly."
 block|,
 literal|"Adrian Likins<adrian@gimp.org>"
 block|,
@@ -464,7 +464,7 @@ literal|"gimp_palettes_get_list"
 block|,
 literal|"Retrieves a list of all of the available palettes"
 block|,
-literal|"This procedure returns a complete listing of available palettes. Each name returned can be used as input to the command 'gimp_palette_set_palette'."
+literal|"This procedure returns a complete listing of available palettes. Each name returned can be used as input to the command 'gimp_context_set_palette'."
 block|,
 literal|"Nathan Summers<rock@gimp.org>"
 block|,
@@ -664,8 +664,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|palettes_set_palette_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
-name|palettes_set_palette_invoker
+DECL|function|palettes_get_palette_info_invoker (Gimp * gimp,GimpContext * context,GimpProgress * progress,Argument * args)
+name|palettes_get_palette_info_invoker
 parameter_list|(
 name|Gimp
 modifier|*
@@ -689,6 +689,10 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
+name|Argument
+modifier|*
+name|return_args
+decl_stmt|;
 name|gchar
 modifier|*
 name|name
@@ -696,6 +700,8 @@ decl_stmt|;
 name|GimpPalette
 modifier|*
 name|palette
+init|=
+name|NULL
 decl_stmt|;
 name|name
 operator|=
@@ -715,9 +721,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -738,6 +742,16 @@ condition|(
 name|success
 condition|)
 block|{
+if|if
+condition|(
+name|name
+operator|&&
+name|strlen
+argument_list|(
+name|name
+argument_list|)
+condition|)
+block|{
 name|palette
 operator|=
 operator|(
@@ -755,40 +769,105 @@ argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
+block|}
+else|else
+block|{
 name|palette
-condition|)
-name|gimp_context_set_palette
+operator|=
+name|gimp_context_get_palette
 argument_list|(
 name|context
-argument_list|,
-name|palette
 argument_list|)
 expr_stmt|;
-else|else
+block|}
+if|if
+condition|(
+operator|!
+name|palette
+condition|)
 name|success
 operator|=
 name|FALSE
 expr_stmt|;
 block|}
-return|return
+name|return_args
+operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|palettes_set_palette_proc
+name|palettes_get_palette_info_proc
 argument_list|,
 name|success
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|success
+condition|)
+block|{
+name|return_args
+index|[
+literal|1
+index|]
+operator|.
+name|value
+operator|.
+name|pdb_pointer
+operator|=
+name|g_strdup
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|palette
+argument_list|)
+operator|->
+name|name
+argument_list|)
+expr_stmt|;
+name|return_args
+index|[
+literal|2
+index|]
+operator|.
+name|value
+operator|.
+name|pdb_int
+operator|=
+name|palette
+operator|->
+name|n_colors
+expr_stmt|;
+block|}
+return|return
+name|return_args
 return|;
 block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|palettes_set_palette_inargs
+DECL|variable|palettes_get_palette_info_inargs
 specifier|static
 name|ProcArg
-name|palettes_set_palette_inargs
+name|palettes_get_palette_info_inargs
+index|[]
+init|=
+block|{
+block|{
+name|GIMP_PDB_STRING
+block|,
+literal|"name"
+block|,
+literal|"The palette name (\"\" means currently active palette)"
+block|}
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|palettes_get_palette_info_outargs
+specifier|static
+name|ProcArg
+name|palettes_get_palette_info_outargs
 index|[]
 init|=
 block|{
@@ -799,42 +878,50 @@ literal|"name"
 block|,
 literal|"The palette name"
 block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"num_colors"
+block|,
+literal|"The palette num_colors"
+block|}
 block|}
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|palettes_set_palette_proc
+DECL|variable|palettes_get_palette_info_proc
 specifier|static
 name|ProcRecord
-name|palettes_set_palette_proc
+name|palettes_get_palette_info_proc
 init|=
 block|{
-literal|"gimp_palettes_set_palette"
+literal|"gimp_palettes_get_palette_info"
 block|,
-literal|"Set the specified palette as the active palette."
+literal|"Retrieve information about the specified palette."
 block|,
-literal|"This procedure allows the active palette to be set by specifying its name. The name is simply a string which corresponds to one of the names of the installed palettes. If no matching palette is found, this procedure will return an error. Otherwise, the specified palette becomes active and will be used in all subsequent palette operations."
+literal|"This procedure retrieves information about the specified palette. This includes the name, and the number of colors."
 block|,
-literal|"Nathan Summers<rock@gimp.org>"
+literal|"Michael Natterer<mitch@gimp.org>"
 block|,
-literal|"Nathan Summers"
+literal|"Michael Natterer"
 block|,
-literal|"2001"
+literal|"2004"
 block|,
 name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
-name|palettes_set_palette_inargs
+name|palettes_get_palette_info_inargs
 block|,
-literal|0
+literal|2
 block|,
-name|NULL
+name|palettes_get_palette_info_outargs
 block|,
 block|{
 block|{
-name|palettes_set_palette_invoker
+name|palettes_get_palette_info_invoker
 block|}
 block|}
 block|}
@@ -908,9 +995,7 @@ expr_stmt|;
 if|if
 condition|(
 name|name
-operator|==
-name|NULL
-operator|||
+operator|&&
 operator|!
 name|g_utf8_validate
 argument_list|(
@@ -944,6 +1029,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|name
+operator|&&
 name|strlen
 argument_list|(
 name|name
@@ -1114,7 +1201,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"name"
 block|,
-literal|"the palette name (\"\" means currently active palette)"
+literal|"The palette name (\"\" means currently active palette)"
 block|}
 block|,
 block|{
@@ -1172,9 +1259,9 @@ init|=
 block|{
 literal|"gimp_palettes_get_palette_entry"
 block|,
-literal|"Gets the specified palette entry from the currently active palette."
+literal|"Gets the specified palette entry from the specified palette."
 block|,
-literal|"This procedure retrieves the color of the zero-based entry specifed for the current palette. It returns an error if the entry does not exist."
+literal|"This procedure retrieves the color of the zero-based entry specifed for the specified palette. It returns an error if the entry does not exist."
 block|,
 literal|"Nathan Summers<rock@gimp.org>"
 block|,

@@ -49,6 +49,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_DISABLE_DEPRECATED
+end_ifndef
+
 begin_function_decl
 name|gchar
 modifier|*
@@ -69,17 +75,14 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|gboolean
-name|gimp_brushes_set_brush
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|name
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* GIMP_DISABLE_DEPRECATED */
+end_comment
 
 begin_function_decl
 name|gint
@@ -95,6 +98,31 @@ name|gboolean
 name|gimp_brushes_set_spacing
 parameter_list|(
 name|gint
+name|spacing
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gchar
+modifier|*
+name|gimp_brushes_get_brush_info
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|,
+name|gint
+modifier|*
+name|width
+parameter_list|,
+name|gint
+modifier|*
+name|height
+parameter_list|,
+name|gint
+modifier|*
 name|spacing
 parameter_list|)
 function_decl|;

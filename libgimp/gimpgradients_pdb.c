@@ -88,7 +88,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradients_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_gradients: The number of loaded gradients.  *  * Retrieve the list of loaded gradients.  *  * This procedure returns a list of the gradients that are currently  * loaded in the gradient editor. You can later use the  * gimp_gradients_set_active function to set the active gradient.  *  * Returns: The list of gradient names.  */
+comment|/**  * gimp_gradients_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_gradients: The number of loaded gradients.  *  * Retrieve the list of loaded gradients.  *  * This procedure returns a list of the gradients that are currently  * loaded. You can later use the 'gimp_context_set_gradient' function  * to set the active gradient.  *  * Returns: The list of gradient names.  */
 end_comment
 
 begin_function
@@ -232,154 +232,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradients_get_gradient:  *  * Retrieve the name of the active gradient.  *  * This procedure returns the name of the active gradient in the  * gradient editor.  *  * Returns: The name of the active gradient.  */
-end_comment
-
-begin_function
-name|gchar
-modifier|*
-DECL|function|gimp_gradients_get_gradient (void)
-name|gimp_gradients_get_gradient
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-name|GimpParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
-name|gchar
-modifier|*
-name|name
-init|=
-name|NULL
-decl_stmt|;
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp_gradients_get_gradient"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|GIMP_PDB_END
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|GIMP_PDB_SUCCESS
-condition|)
-name|name
-operator|=
-name|g_strdup
-argument_list|(
-name|return_vals
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_string
-argument_list|)
-expr_stmt|;
-name|gimp_destroy_params
-argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
-argument_list|)
-expr_stmt|;
-return|return
-name|name
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_gradients_set_gradient:  * @name: The name of the gradient to set.  *  * Sets the specified gradient as the active gradient.  *  * This procedure lets you set the specified gradient as the active or  * \"current\" one. The name is simply a string which corresponds to  * one of the loaded gradients in the gradient editor. If no matching  * gradient is found, this procedure will return an error. Otherwise,  * the specified gradient will become active and will be used for  * subsequent custom gradient operations.  *  * Returns: TRUE on success.  */
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_gradients_set_gradient (const gchar * name)
-name|gimp_gradients_set_gradient
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|name
-parameter_list|)
-block|{
-name|GimpParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
-name|gboolean
-name|success
-init|=
-name|TRUE
-decl_stmt|;
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp_gradients_set_gradient"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|GIMP_PDB_STRING
-argument_list|,
-name|name
-argument_list|,
-name|GIMP_PDB_END
-argument_list|)
-expr_stmt|;
-name|success
-operator|=
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|GIMP_PDB_SUCCESS
-expr_stmt|;
-name|gimp_destroy_params
-argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
-argument_list|)
-expr_stmt|;
-return|return
-name|success
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_gradients_sample_uniform:  * @num_samples: The number of samples to take.  * @reverse: Use the reverse gradient.  *  * Sample the active gradient in uniform parts.  *  * This procedure samples the active gradient from the gradient editor  * in the specified number of uniform parts. It returns a list of  * floating-point values which correspond to the RGBA values for each  * sample. The minimum number of samples to take is 2, in which case  * the returned colors will correspond to the { 0.0, 1.0 } positions in  * the gradient. For example, if the number of samples is 3, the  * procedure will return the colors at positions { 0.0, 0.5, 1.0 }.  *  * Returns: Color samples: { R1, G1, B1, A1, ..., Rn, Gn, Bn, An }.  */
+comment|/**  * gimp_gradients_sample_uniform:  * @num_samples: The number of samples to take.  * @reverse: Use the reverse gradient.  *  * Sample the active gradient in uniform parts.  *  * This procedure samples the active gradient in the specified number  * of uniform parts. It returns a list of floating-point values which  * correspond to the RGBA values for each sample. The minimum number of  * samples to take is 2, in which case the returned colors will  * correspond to the { 0.0, 1.0 } positions in the gradient. For  * example, if the number of samples is 3, the procedure will return  * the colors at positions { 0.0, 0.5, 1.0 }.  *  * Returns: Color samples: { R1, G1, B1, A1, ..., Rn, Gn, Bn, An }.  */
 end_comment
 
 begin_function
@@ -501,7 +354,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradients_sample_custom:  * @num_samples: The number of samples to take.  * @positions: The list of positions to sample along the gradient.  * @reverse: Use the reverse gradient.  *  * Sample the active gradient in custom positions.  *  * This procedure samples the active gradient from the gradient editor  * in the specified number of points. The procedure will sample the  * gradient in the specified positions from the list. The left endpoint  * of the gradient corresponds to position 0.0, and the right endpoint  * corresponds to 1.0. The procedure returns a list of floating-point  * values which correspond to the RGBA values for each sample.  *  * Returns: Color samples: { R1, G1, B1, A1, ..., Rn, Gn, Bn, An }.  */
+comment|/**  * gimp_gradients_sample_custom:  * @num_samples: The number of samples to take.  * @positions: The list of positions to sample along the gradient.  * @reverse: Use the reverse gradient.  *  * Sample the active gradient in custom positions.  *  * This procedure samples the active gradient in the specified number  * of points. The procedure will sample the gradient in the specified  * positions from the list. The left endpoint of the gradient  * corresponds to position 0.0, and the right endpoint corresponds to  * 1.0. The procedure returns a list of floating-point values which  * correspond to the RGBA values for each sample.  *  * Returns: Color samples: { R1, G1, B1, A1, ..., Rn, Gn, Bn, An }.  */
 end_comment
 
 begin_function

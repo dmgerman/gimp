@@ -487,7 +487,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c17a66b0108
+DECL|struct|__anon279d7d960108
 block|{
 DECL|member|gridspacing
 name|void
@@ -2527,7 +2527,7 @@ name|bdesc
 operator|.
 name|name
 operator|=
-name|mygimp_brush_get
+name|gimp_context_get_brush
 argument_list|()
 expr_stmt|;
 name|mygimp_brush_info

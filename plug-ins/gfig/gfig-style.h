@@ -156,16 +156,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gchar
-modifier|*
-name|mygimp_brush_get
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gfig_read_gimp_style
 parameter_list|(

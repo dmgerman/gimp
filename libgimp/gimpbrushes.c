@@ -22,7 +22,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_brushes_get_opacity:  *  * Get the brush opacity.  *  * This procedure returns the opacity setting for brushes. This value  * is set globally and will remain the same even if the brush mask is  * changed. The return value is a floating point number between 0 and  * 100.  *  * Returns: The brush opacity.  */
+comment|/**  * gimp_brushes_get_opacity:  *  * Get the brush opacity.  *  * This procedure is deprecated! Use 'gimp_context_get_opacity' instead.  *  * Returns: The brush opacity.  */
 end_comment
 
 begin_function
@@ -41,7 +41,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brushes_set_opacity:  * @opacity: The brush opacity.  *  * Set the brush opacity.  *  * This procedure modifies the opacity setting for brushes. This value  * is set globally and will remain the same even if the brush mask is  * changed. The value should be a floating point number between 0 and  * 100.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_brushes_set_opacity:  * @opacity: The brush opacity.  *  * Set the brush opacity.  *  * This procedure is deprecated! Use 'gimp_context_set_opacity' instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -63,7 +63,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brushes_get_paint_mode:  *  * Get the brush paint mode.  *  * This procedure returns the paint-mode setting for brushes. This  * value is set globally and will not change if a different brush is  * selected. The return value is an integer which corresponds to the  * values listed in the argument description.  *  * Returns: The paint mode.  */
+comment|/**  * gimp_brushes_get_paint_mode:  *  * Get the brush paint mode.  *  * This procedure isdeprecated! Use 'gimp_context_get_paint_mode' instead.  *  * Returns: The paint mode.  */
 end_comment
 
 begin_function
@@ -82,7 +82,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brushes_set_paint_mode:  * @paint_mode: The paint mode.  *  * Set the brush paint mode.  *  * This procedure modifies the paint_mode setting for the current  * brush. This value is set globally and will not change if a different  * brush mask is selected.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_brushes_set_paint_mode:  * @paint_mode: The paint mode.  *  * Set the brush paint mode.  *  * This procedure is deprecated! Use 'gimp_context_set_paint_mode' instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -98,6 +98,30 @@ return|return
 name|gimp_context_set_paint_mode
 argument_list|(
 name|paint_mode
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_brushes_set_brush:  * @name: The brush name.  *  * Set the specified brush as the active brush.  *  * This procedure is deprecated! Use 'gimp_context_set_brush' instead.  *  * Returns: TRUE on success.  */
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_brushes_set_brush (const gchar * name)
+name|gimp_brushes_set_brush
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|)
+block|{
+return|return
+name|gimp_context_set_brush
+argument_list|(
+name|name
 argument_list|)
 return|;
 block|}
