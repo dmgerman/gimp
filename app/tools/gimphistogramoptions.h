@@ -97,8 +97,7 @@ end_typedef
 begin_typedef
 DECL|typedef|GimpHistogramOptionsClass
 typedef|typedef
-name|struct
-name|_GimpToolOptionsClass
+name|GimpColorOptionsClass
 name|GimpHistogramOptionsClass
 typedef|;
 end_typedef

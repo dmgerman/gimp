@@ -417,7 +417,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b726eed0103
+DECL|enum|__anon2ab39af30103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1445,7 +1445,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b726eed0208
+DECL|struct|__anon2ab39af30208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1522,7 +1522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b726eed0308
+DECL|struct|__anon2ab39af30308
 block|{
 DECL|member|ncolors
 name|long
@@ -1693,7 +1693,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b726eed0408
+DECL|struct|__anon2ab39af30408
 block|{
 DECL|member|used_count
 name|signed
@@ -3867,6 +3867,14 @@ operator|->
 name|actual_number_of_colors
 expr_stmt|;
 block|}
+name|gimp_image_colormap_changed
+argument_list|(
+name|gimage
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
 break|break;
 block|}
 comment|/*  Delete the quantizer object, if there is one */
