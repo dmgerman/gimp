@@ -64,7 +64,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a20fb420108
+DECL|struct|__anon2ad6d1b40108
 block|{
 DECL|member|compression
 name|gint
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a20fb420208
+DECL|struct|__anon2ad6d1b40208
 block|{
 DECL|member|ID
 name|gint32
@@ -1080,6 +1080,7 @@ if|if
 condition|(
 name|parasite
 condition|)
+block|{
 name|image_comment
 operator|=
 name|g_strdup
@@ -1094,6 +1095,7 @@ argument_list|(
 name|parasite
 argument_list|)
 expr_stmt|;
+block|}
 switch|switch
 condition|(
 name|run_mode
@@ -9142,6 +9144,10 @@ name|entry
 argument_list|)
 argument_list|,
 name|image_comment
+condition|?
+name|image_comment
+else|:
+literal|""
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
