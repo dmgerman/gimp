@@ -201,7 +201,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_hue_saturation_tool_initialize
 parameter_list|(
 name|GimpTool
@@ -767,7 +767,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_hue_saturation_tool_initialize (GimpTool * tool,GimpDisplay * gdisp)
 name|gimp_hue_saturation_tool_initialize
 parameter_list|(
@@ -807,7 +807,9 @@ condition|(
 operator|!
 name|drawable
 condition|)
-return|return;
+return|return
+name|FALSE
+return|;
 if|if
 condition|(
 operator|!
@@ -825,7 +827,9 @@ literal|"Hue-Saturation operates only on RGB color layers."
 argument_list|)
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+name|FALSE
+return|;
 block|}
 name|hue_saturation_init
 argument_list|(
@@ -853,6 +857,9 @@ argument_list|,
 name|ALL
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
@@ -970,7 +977,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2b99d2d80108
+DECL|struct|__anon27ddbc580108
 block|{
 DECL|member|label
 specifier|const

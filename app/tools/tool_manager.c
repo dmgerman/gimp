@@ -751,7 +751,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|tool_manager_initialize_active (Gimp * gimp,GimpDisplay * gdisp)
 name|tool_manager_initialize_active
 parameter_list|(
@@ -772,20 +772,24 @@ name|GimpTool
 modifier|*
 name|tool
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_GIMP
 argument_list|(
 name|gimp
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
 name|gdisp
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|tool_manager
@@ -808,13 +812,16 @@ name|tool_manager
 operator|->
 name|active_tool
 expr_stmt|;
+if|if
+condition|(
 name|gimp_tool_initialize
 argument_list|(
 name|tool
 argument_list|,
 name|gdisp
 argument_list|)
-expr_stmt|;
+condition|)
+block|{
 name|tool
 operator|->
 name|drawable
@@ -826,7 +833,14 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
+block|}
+return|return
+name|FALSE
+return|;
 block|}
 end_function
 
@@ -1895,6 +1909,8 @@ name|control
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
 name|tool_manager_initialize_active
 argument_list|(
 name|gimage
@@ -1903,7 +1919,7 @@ name|gimp
 argument_list|,
 name|gdisp
 argument_list|)
-expr_stmt|;
+condition|)
 name|tool
 operator|->
 name|gdisp

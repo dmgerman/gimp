@@ -165,7 +165,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_image_map_tool_initialize
 parameter_list|(
 name|GimpTool
@@ -719,7 +719,7 @@ end_define
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_image_map_tool_initialize (GimpTool * tool,GimpDisplay * gdisp)
 name|gimp_image_map_tool_initialize
 parameter_list|(
@@ -735,6 +735,11 @@ block|{
 name|GimpImageMapTool
 modifier|*
 name|image_map_tool
+init|=
+name|GIMP_IMAGE_MAP_TOOL
+argument_list|(
+name|tool
+argument_list|)
 decl_stmt|;
 name|GimpToolInfo
 modifier|*
@@ -744,13 +749,6 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|image_map_tool
-operator|=
-name|GIMP_IMAGE_MAP_TOOL
-argument_list|(
-name|tool
-argument_list|)
-expr_stmt|;
 name|tool_info
 operator|=
 name|tool
@@ -1060,6 +1058,9 @@ name|shell
 argument_list|)
 expr_stmt|;
 block|}
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 

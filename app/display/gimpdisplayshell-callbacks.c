@@ -2329,6 +2329,11 @@ argument_list|)
 operator|)
 condition|)
 block|{
+name|gboolean
+name|initialized
+init|=
+name|TRUE
+decl_stmt|;
 if|if
 condition|(
 name|gimp_tool_control_auto_snap_to
@@ -2400,6 +2405,8 @@ operator|->
 name|drawable
 condition|)
 block|{
+name|initialized
+operator|=
 name|tool_manager_initialize_active
 argument_list|(
 name|gimp
@@ -2440,6 +2447,8 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|initialized
+operator|=
 name|tool_manager_initialize_active
 argument_list|(
 name|gimp
@@ -2448,6 +2457,10 @@ name|gdisp
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|initialized
+condition|)
 name|tool_manager_button_press_active
 argument_list|(
 name|gimp

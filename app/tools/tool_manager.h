@@ -92,7 +92,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|tool_manager_initialize_active
 parameter_list|(
 name|Gimp

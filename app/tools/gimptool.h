@@ -155,7 +155,7 @@ name|parent_class
 decl_stmt|;
 comment|/*  virtual functions  */
 DECL|member|initialize
-name|void
+name|gboolean
 function_decl|(
 modifier|*
 name|initialize
@@ -373,7 +373,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
-name|void
+name|gboolean
 name|gimp_tool_initialize
 parameter_list|(
 name|GimpTool

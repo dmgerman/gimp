@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2880fa110103
+DECL|enum|__anon28da1c6c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -167,7 +167,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_tool_real_initialize
 parameter_list|(
 name|GimpTool
@@ -882,7 +882,7 @@ end_comment
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_tool_real_initialize (GimpTool * tool,GimpDisplay * gdisp)
 name|gimp_tool_real_initialize
 parameter_list|(
@@ -894,7 +894,11 @@ name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
-block|{ }
+block|{
+return|return
+name|TRUE
+return|;
+block|}
 end_function
 
 begin_function
@@ -1202,7 +1206,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_tool_initialize (GimpTool * tool,GimpDisplay * gdisp)
 name|gimp_tool_initialize
 parameter_list|(
@@ -1215,22 +1219,27 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_TOOL
 argument_list|(
 name|tool
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
 argument_list|(
 name|gdisp
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
+return|return
 name|GIMP_TOOL_GET_CLASS
 argument_list|(
 name|tool
@@ -1242,7 +1251,7 @@ name|tool
 argument_list|,
 name|gdisp
 argument_list|)
-expr_stmt|;
+return|;
 block|}
 end_function
 

@@ -135,7 +135,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|gimp_posterize_tool_initialize
 parameter_list|(
 name|GimpTool
@@ -544,7 +544,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_posterize_tool_initialize (GimpTool * tool,GimpDisplay * gdisp)
 name|gimp_posterize_tool_initialize
 parameter_list|(
@@ -584,7 +584,9 @@ condition|(
 operator|!
 name|drawable
 condition|)
-return|return;
+return|return
+name|FALSE
+return|;
 if|if
 condition|(
 name|gimp_drawable_is_indexed
@@ -601,7 +603,9 @@ literal|"Posterize does not operate on indexed layers."
 argument_list|)
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+name|FALSE
+return|;
 block|}
 name|posterize_tool
 operator|->
@@ -643,6 +647,9 @@ name|posterize_tool
 argument_list|)
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
