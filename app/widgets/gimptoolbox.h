@@ -113,6 +113,11 @@ name|GtkWidget
 modifier|*
 name|wbox
 decl_stmt|;
+DECL|member|trash
+name|GtkWidget
+modifier|*
+name|trash
+decl_stmt|;
 DECL|member|color_area
 name|GtkWidget
 modifier|*

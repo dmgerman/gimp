@@ -629,7 +629,7 @@ literal|"The GIMP"
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* Docks are utility windows by default, but the toolbox doesn't fit    *  into this category.  'Normal' is not correct as well but there    *  doesn't seem to be a better match :-(    */
+comment|/*  Docks are utility windows by default, but the toolbox doesn't fit    *  into this category.  'Normal' is not correct as well but there    *  doesn't seem to be a better match :-(    */
 name|gtk_window_set_type_hint
 argument_list|(
 name|GTK_WINDOW
@@ -818,6 +818,30 @@ argument_list|(
 name|toolbox
 operator|->
 name|wbox
+argument_list|)
+expr_stmt|;
+comment|/*  A container that keeps references on the buttons that are not    *  added to the toolbox. Just to make sure they are freed on exit.    */
+name|toolbox
+operator|->
+name|trash
+operator|=
+name|gtk_hbox_new
+argument_list|(
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_container_add
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+name|toolbox
+operator|->
+name|trash
 argument_list|)
 expr_stmt|;
 block|}
@@ -2659,6 +2683,21 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|image
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|gtk_container_add
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|toolbox
+operator|->
+name|trash
+argument_list|)
+argument_list|,
+name|button
 argument_list|)
 expr_stmt|;
 block|}
