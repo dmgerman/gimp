@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tool_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -971,7 +965,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2c7fbc300108
+DECL|struct|__anon2a1ac40a0108
 block|{
 DECL|member|label
 specifier|const

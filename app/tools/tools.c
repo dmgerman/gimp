@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcolorizetool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcolorpickertool.h"
 end_include
 
@@ -287,6 +293,8 @@ block|,
 name|gimp_threshold_tool_register
 block|,
 name|gimp_brightness_contrast_tool_register
+block|,
+name|gimp_colorize_tool_register
 block|,
 name|gimp_hue_saturation_tool_register
 block|,
