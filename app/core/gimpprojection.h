@@ -116,7 +116,7 @@ comment|/* unused - == MIN */
 end_comment
 
 begin_comment
-comment|/* maximal width of the strinf holding the cursor-coordinates for    the status line */
+comment|/* maximal width of the string holding the cursor-coordinates for    the status line */
 end_comment
 
 begin_define

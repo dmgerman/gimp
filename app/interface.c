@@ -130,22 +130,6 @@ file|"pixmaps.h"
 end_include
 
 begin_comment
-comment|/* This #define is also in gdisplay.c and should */
-end_comment
-
-begin_comment
-comment|/* probably be moved in to gdisplay.h instead.   */
-end_comment
-
-begin_define
-DECL|macro|CURSOR_STR_LENGTH
-define|#
-directive|define
-name|CURSOR_STR_LENGTH
-value|256
-end_define
-
-begin_comment
 comment|/*  local functions  */
 end_comment
 
