@@ -144,7 +144,7 @@ operator|(
 name|GInstanceInitFunc
 operator|)
 name|gimp_paint_info_init
-block|,       }
+block|,         }
 decl_stmt|;
 name|paint_info_type
 operator|=
@@ -236,12 +236,6 @@ name|NULL
 expr_stmt|;
 name|paint_info
 operator|->
-name|pdb_string
-operator|=
-name|NULL
-expr_stmt|;
-name|paint_info
-operator|->
 name|paint_options
 operator|=
 name|NULL
@@ -296,19 +290,19 @@ if|if
 condition|(
 name|paint_info
 operator|->
-name|pdb_string
+name|paint_options
 condition|)
 block|{
-name|g_free
+name|g_object_unref
 argument_list|(
 name|paint_info
 operator|->
-name|pdb_string
+name|paint_options
 argument_list|)
 expr_stmt|;
 name|paint_info
 operator|->
-name|pdb_string
+name|paint_options
 operator|=
 name|NULL
 expr_stmt|;
@@ -329,7 +323,7 @@ end_function
 begin_function
 name|GimpPaintInfo
 modifier|*
-DECL|function|gimp_paint_info_new (Gimp * gimp,GType paint_type,GType paint_options_type,const gchar * blurb,const gchar * pdb_string)
+DECL|function|gimp_paint_info_new (Gimp * gimp,GType paint_type,GType paint_options_type,const gchar * blurb)
 name|gimp_paint_info_new
 parameter_list|(
 name|Gimp
@@ -346,11 +340,6 @@ specifier|const
 name|gchar
 modifier|*
 name|blurb
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|pdb_string
 parameter_list|)
 block|{
 name|GimpPaintInfo
@@ -370,15 +359,6 @@ expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|blurb
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|pdb_string
 operator|!=
 name|NULL
 argument_list|,
@@ -430,11 +410,19 @@ argument_list|)
 expr_stmt|;
 name|paint_info
 operator|->
-name|pdb_string
+name|paint_options
 operator|=
-name|g_strdup
+name|g_object_new
 argument_list|(
-name|pdb_string
+name|paint_info
+operator|->
+name|paint_options_type
+argument_list|,
+literal|"gimp"
+argument_list|,
+name|gimp
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return

@@ -249,7 +249,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcd13330103
+DECL|enum|__anon2bcb294e0103
 block|{
 DECL|enumerator|EXIT
 name|EXIT
@@ -760,11 +760,6 @@ name|parasites
 operator|=
 name|gimp_parasite_list_new
 argument_list|()
-expr_stmt|;
-name|paint_init
-argument_list|(
-name|gimp
-argument_list|)
 expr_stmt|;
 name|gimp_modules_init
 argument_list|(
@@ -2988,6 +2983,11 @@ name|palette_factory
 argument_list|)
 argument_list|,
 literal|"palette factory"
+argument_list|)
+expr_stmt|;
+name|paint_init
+argument_list|(
+name|gimp
 argument_list|)
 expr_stmt|;
 comment|/* Set the last values used to default values. */

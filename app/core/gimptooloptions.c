@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d2e0640103
+DECL|enum|__anon277078f60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -303,8 +303,6 @@ argument_list|,
 name|GIMP_TYPE_TOOL_INFO
 argument_list|,
 name|G_PARAM_READWRITE
-operator||
-name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -373,13 +371,25 @@ block|{
 case|case
 name|PROP_TOOL_INFO
 case|:
+name|g_return_if_fail
+argument_list|(
+name|options
+operator|->
+name|tool_info
+operator|==
+name|NULL
+argument_list|)
+expr_stmt|;
 name|options
 operator|->
 name|tool_info
 operator|=
-name|g_value_get_object
+name|GIMP_TOOL_INFO
+argument_list|(
+name|g_value_dup_object
 argument_list|(
 name|value
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;

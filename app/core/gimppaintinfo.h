@@ -121,11 +121,6 @@ name|gchar
 modifier|*
 name|blurb
 decl_stmt|;
-DECL|member|pdb_string
-name|gchar
-modifier|*
-name|pdb_string
-decl_stmt|;
 DECL|member|paint_options
 name|GimpPaintOptions
 modifier|*
@@ -177,11 +172,6 @@ specifier|const
 name|gchar
 modifier|*
 name|blurb
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|pdb_string
 parameter_list|)
 function_decl|;
 end_function_decl
