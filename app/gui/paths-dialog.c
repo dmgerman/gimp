@@ -1742,6 +1742,8 @@ name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
+name|paths_dialog
+operator|->
 name|vbox
 argument_list|)
 argument_list|,
