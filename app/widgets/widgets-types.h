@@ -804,6 +804,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpFgBgView
+typedef|typedef
+name|struct
+name|_GimpFgBgView
+name|GimpFgBgView
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpFileProcView
 typedef|typedef
 name|struct

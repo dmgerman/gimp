@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4c575c0103
+DECL|enum|__anon2a070d190103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4c575c0203
+DECL|enum|__anon2a070d190203
 block|{
 DECL|enumerator|COLOR_CLICKED
 name|COLOR_CLICKED
@@ -95,7 +95,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4c575c0303
+DECL|enum|__anon2a070d190303
 block|{
 DECL|enumerator|INVALID_AREA
 name|INVALID_AREA
@@ -984,6 +984,17 @@ name|guchar
 modifier|*
 name|bp
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|width
+operator|>
+literal|0
+operator|&&
+name|height
+operator|>
+literal|0
+argument_list|)
+expr_stmt|;
 name|gimp_rgb_get_uchar
 argument_list|(
 name|color
@@ -1272,6 +1283,20 @@ operator|->
 name|default_icon
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|default_w
+operator|<
+name|width
+operator|/
+literal|2
+operator|&&
+name|default_h
+operator|<
+name|height
+operator|/
+literal|2
+condition|)
 name|gdk_draw_pixbuf
 argument_list|(
 name|widget
@@ -1304,6 +1329,13 @@ literal|0
 argument_list|,
 literal|0
 argument_list|)
+expr_stmt|;
+else|else
+name|default_w
+operator|=
+name|default_h
+operator|=
+literal|0
 expr_stmt|;
 comment|/*  draw the swap colors pixbuf  */
 if|if
@@ -1346,6 +1378,20 @@ operator|->
 name|swap_icon
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|swap_w
+operator|<
+name|width
+operator|/
+literal|2
+operator|&&
+name|swap_h
+operator|<
+name|height
+operator|/
+literal|2
+condition|)
 name|gdk_draw_pixbuf
 argument_list|(
 name|widget
@@ -1378,6 +1424,13 @@ literal|0
 argument_list|,
 literal|0
 argument_list|)
+expr_stmt|;
+else|else
+name|swap_w
+operator|=
+name|swap_h
+operator|=
+literal|0
 expr_stmt|;
 name|rect_h
 operator|=
