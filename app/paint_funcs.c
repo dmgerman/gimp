@@ -174,6 +174,10 @@ parameter_list|)
 value|((t) = (a) * (b) + 0x80, ((((t)>> 8) + (t))>> 8))
 end_define
 
+begin_comment
+comment|/* This version of INT_MULT3 is very fast, but suffers from some    slight roundoff errors.  It returns the correct result 99.987%    percent of the time */
+end_comment
+
 begin_define
 DECL|macro|INT_MULT3 (a,b,c,t)
 define|#
@@ -188,8 +192,16 @@ name|c
 parameter_list|,
 name|t
 parameter_list|)
-value|((t) = (a) * (b) * (c)+ 0x100, \                             ((((t)>> 16) + (t))>> 16))
+value|((t) = (a) * (b) * (c)+ 0x7F5B, \                             ((((t)>> 7) + (t))>> 16))
 end_define
+
+begin_comment
+comment|/*   This version of INT_MULT3 always gives the correct result, but runs at   approximatly one third the speed. */
+end_comment
+
+begin_comment
+comment|/*  #define INT_MULT3(a,b,c,t) (((a) * (b) * (c)+ 32512) / 65025.0) */
+end_comment
 
 begin_define
 DECL|macro|INT_BLEND (a,b,alpha,tmp)
@@ -211,7 +223,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27e6b9b60103
+DECL|enum|__anon297f4e680103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
