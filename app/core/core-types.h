@@ -67,7 +67,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1ba7820103
+DECL|enum|__anon29f5a8b90103
 block|{
 DECL|enumerator|GIMP_PIXELS
 name|GIMP_PIXELS
@@ -505,6 +505,15 @@ typedef|typedef
 name|struct
 name|_GimpPlugInDebug
 name|GimpPlugInDebug
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpScanConvert
+typedef|typedef
+name|struct
+name|_GimpScanConvert
+name|GimpScanConvert
 typedef|;
 end_typedef
 

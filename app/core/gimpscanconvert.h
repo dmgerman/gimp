@@ -16,15 +16,6 @@ directive|define
 name|__GIMP_SCAN_CONVERT_H__
 end_define
 
-begin_typedef
-DECL|typedef|GimpScanConvert
-typedef|typedef
-name|struct
-name|_GimpScanConvert
-name|GimpScanConvert
-typedef|;
-end_typedef
-
 begin_comment
 comment|/* Create a new scan conversion context.  */
 end_comment

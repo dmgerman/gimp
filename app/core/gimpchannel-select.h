@@ -16,6 +16,10 @@ directive|define
 name|__GIMP_CHANNEL_SELECT_H__
 end_define
 
+begin_comment
+comment|/*  basic selection functions  */
+end_comment
+
 begin_function_decl
 name|void
 name|gimp_channel_select_rectangle
@@ -70,6 +74,51 @@ name|w
 parameter_list|,
 name|gint
 name|h
+parameter_list|,
+name|GimpChannelOps
+name|op
+parameter_list|,
+name|gboolean
+name|antialias
+parameter_list|,
+name|gboolean
+name|feather
+parameter_list|,
+name|gdouble
+name|feather_radius_x
+parameter_list|,
+name|gdouble
+name|feather_radius_y
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/*  select by GimpScanConvert functions  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_channel_select_scan_convert
+parameter_list|(
+name|GimpChannel
+modifier|*
+name|channel
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
+parameter_list|,
+name|GimpScanConvert
+modifier|*
+name|scan_convert
+parameter_list|,
+name|gint
+name|offset_x
+parameter_list|,
+name|gint
+name|offset_y
 parameter_list|,
 name|GimpChannelOps
 name|op
@@ -161,6 +210,10 @@ name|feather_radius_y
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/*  select by GimpChannel functions  */
+end_comment
 
 begin_function_decl
 name|void
