@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292753950103
+DECL|enum|__anon2c494d260103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -171,7 +171,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon292753950203
+DECL|enum|__anon2c494d260203
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -2095,6 +2095,16 @@ argument_list|,
 name|item_view
 argument_list|)
 expr_stmt|;
+comment|/*  disable the default GimpContainerView drop handler  */
+name|GIMP_CONTAINER_VIEW
+argument_list|(
+name|tree_view
+argument_list|)
+operator|->
+name|dnd_widget
+operator|=
+name|NULL
+expr_stmt|;
 name|gimp_dnd_drag_dest_set_by_type
 argument_list|(
 name|GTK_WIDGET
@@ -2677,12 +2687,6 @@ name|preview_border_width
 argument_list|,
 name|TRUE
 argument_list|)
-expr_stmt|;
-name|view
-operator|->
-name|dnd_widget
-operator|=
-name|NULL
 expr_stmt|;
 name|item_view
 operator|->
