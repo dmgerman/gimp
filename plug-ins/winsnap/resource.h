@@ -1,18 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|//{{NO_DEPENDENCIES}}
-end_comment
-
-begin_comment
-comment|// Microsoft Developer Studio generated include file.
-end_comment
-
-begin_comment
-comment|// Used by snappy.rc
-end_comment
-
-begin_comment
-comment|//
+comment|/* {{NO_DEPENDENCIES}}  Microsoft Developer Studio generated include file.  Used by snappy.rc */
 end_comment
 
 begin_define
@@ -72,11 +60,7 @@ value|40005
 end_define
 
 begin_comment
-comment|// Next default values for new objects
-end_comment
-
-begin_comment
-comment|//
+comment|/* Next default values for new objects */
 end_comment
 
 begin_ifdef

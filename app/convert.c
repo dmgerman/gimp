@@ -34882,7 +34882,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a530340108
+DECL|struct|__anon2ab2acc90108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -34959,7 +34959,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a530340208
+DECL|struct|__anon2ab2acc90208
 block|{
 DECL|member|ncolors
 name|long
@@ -34978,7 +34978,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a530340308
+DECL|struct|__anon2ab2acc90308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -38273,7 +38273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a530340408
+DECL|struct|__anon2ab2acc90408
 block|{
 DECL|member|used_count
 name|signed
@@ -44314,7 +44314,7 @@ operator|->
 name|Bmin
 expr_stmt|;
 comment|/* Choose which axis to split the box on.      * See notes in update_box about scaling distances.      */
-comment|/*     //        R = ((b1->Rmax - b1->Rmin)<< R_SHIFT) * R_SCALE; 	//        G = ((b1->Gmax - b1->Gmin)<< G_SHIFT) * G_SCALE;         //B = ((b1->Bmax - b1->Bmin)<< B_SHIFT) * B_SCALE;     */
+comment|/*             R = ((b1->Rmax - b1->Rmin)<< R_SHIFT) * R_SCALE; 	        G = ((b1->Gmax - b1->Gmin)<< G_SHIFT) * G_SCALE;         B = ((b1->Bmax - b1->Bmin)<< B_SHIFT) * B_SCALE;     */
 name|R
 operator|=
 name|R_SCALE
