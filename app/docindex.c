@@ -91,12 +91,12 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon29a263530103
+DECL|enum|__anon2ace826b0103
 enum|enum
 block|{
 DECL|enumerator|TARGET_URI_LIST
 name|TARGET_URI_LIST
-block|, }
+block|}
 enum|;
 end_enum
 
@@ -124,7 +124,7 @@ end_function_decl
 begin_function
 specifier|static
 name|void
-DECL|function|docindex_dnd_filenames_dropped (GtkWidget * widget,GdkDragContext * context,GtkSelectionData * selection_data,guint info,guint time)
+DECL|function|docindex_dnd_filenames_dropped (GtkWidget * widget,GdkDragContext * context,gint x,gint y,GtkSelectionData * selection_data,guint info,guint time)
 name|docindex_dnd_filenames_dropped
 parameter_list|(
 name|GtkWidget
@@ -134,6 +134,12 @@ parameter_list|,
 name|GdkDragContext
 modifier|*
 name|context
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GtkSelectionData
 modifier|*
@@ -167,6 +173,10 @@ name|TARGET_URI_LIST
 case|:
 name|data
 operator|=
+operator|(
+name|gchar
+operator|*
+operator|)
 name|selection_data
 operator|->
 name|data
@@ -211,14 +221,41 @@ name|data
 operator|!=
 literal|'#'
 condition|)
-name|open_file_in_position
+block|{
+name|gchar
+modifier|*
+name|filename
+init|=
+name|strchr
 argument_list|(
 name|data
+argument_list|,
+literal|':'
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|filename
+operator|!=
+name|NULL
+condition|)
+name|filename
+operator|++
+expr_stmt|;
+else|else
+name|filename
+operator|=
+name|data
+expr_stmt|;
+name|open_file_in_position
+argument_list|(
+name|filename
 argument_list|,
 operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|end
@@ -333,7 +370,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|docindex_cell_dnd_filenames_dropped (GtkWidget * widget,GdkDragContext * context,GtkSelectionData * selection_data,guint info,guint time)
+DECL|function|docindex_cell_dnd_filenames_dropped (GtkWidget * widget,GdkDragContext * context,gint x,gint y,GtkSelectionData * selection_data,guint info,guint time)
 name|docindex_cell_dnd_filenames_dropped
 parameter_list|(
 name|GtkWidget
@@ -343,6 +380,12 @@ parameter_list|,
 name|GdkDragContext
 modifier|*
 name|context
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
 parameter_list|,
 name|GtkSelectionData
 modifier|*
@@ -393,6 +436,10 @@ name|TARGET_URI_LIST
 case|:
 name|data
 operator|=
+operator|(
+name|gchar
+operator|*
+operator|)
 name|selection_data
 operator|->
 name|data
@@ -437,13 +484,40 @@ name|data
 operator|!=
 literal|'#'
 condition|)
-name|open_file_in_position
+block|{
+name|gchar
+modifier|*
+name|filename
+init|=
+name|strchr
 argument_list|(
 name|data
+argument_list|,
+literal|':'
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|filename
+operator|!=
+name|NULL
+condition|)
+name|filename
+operator|++
+expr_stmt|;
+else|else
+name|filename
+operator|=
+name|data
+expr_stmt|;
+name|open_file_in_position
+argument_list|(
+name|filename
 argument_list|,
 name|position
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|end
