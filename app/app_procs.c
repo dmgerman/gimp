@@ -2990,7 +2990,7 @@ block|{
 name|toolbox_free
 argument_list|()
 expr_stmt|;
-name|close_idea_window
+name|document_index_free
 argument_list|()
 expr_stmt|;
 name|gximage_free
