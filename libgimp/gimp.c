@@ -377,6 +377,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|gimp_close
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_decl_stmt
 DECL|variable|_readchannel
 name|GIOChannel
@@ -918,7 +928,7 @@ name|query_proc
 call|)
 argument_list|()
 expr_stmt|;
-name|gimp_quit
+name|gimp_close
 argument_list|()
 expr_stmt|;
 return|return
@@ -980,9 +990,10 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
-DECL|function|gimp_quit ()
-name|gimp_quit
+DECL|function|gimp_close ()
+name|gimp_close
 parameter_list|()
 block|{
 if|if
@@ -1040,6 +1051,18 @@ name|gp_quit_write
 argument_list|(
 name|_writechannel
 argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_quit ()
+name|gimp_quit
+parameter_list|()
+block|{
+name|gimp_close
+argument_list|()
 expr_stmt|;
 name|exit
 argument_list|(
@@ -5078,9 +5101,12 @@ operator|&
 name|msg
 argument_list|)
 condition|)
-name|gimp_quit
+block|{
+name|gimp_close
 argument_list|()
 expr_stmt|;
+return|return;
+block|}
 switch|switch
 condition|(
 name|msg
@@ -5091,10 +5117,10 @@ block|{
 case|case
 name|GP_QUIT
 case|:
-name|gimp_quit
+name|gimp_close
 argument_list|()
 expr_stmt|;
-break|break;
+return|return;
 case|case
 name|GP_CONFIG
 case|:
@@ -5131,10 +5157,10 @@ operator|.
 name|data
 argument_list|)
 expr_stmt|;
-name|gimp_quit
+name|gimp_close
 argument_list|()
 expr_stmt|;
-break|break;
+return|return;
 case|case
 name|GP_PROC_RETURN
 case|:
