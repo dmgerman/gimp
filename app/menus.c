@@ -6166,8 +6166,6 @@ init|=
 block|{
 literal|"<Image>/Filters"
 block|,
-literal|"<Image>/Script-Fu"
-block|,
 literal|"<Toolbox>/Xtns"
 block|}
 decl_stmt|;
