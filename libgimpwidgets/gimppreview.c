@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a11f9660103
+DECL|enum|__anon2909af970103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -70,7 +70,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a11f9660203
+DECL|enum|__anon2909af970203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -804,6 +804,12 @@ operator|->
 name|yoff
 operator|=
 literal|0
+expr_stmt|;
+name|preview
+operator|->
+name|default_cursor
+operator|=
+name|NULL
 expr_stmt|;
 comment|/*  preview area  */
 name|frame
@@ -1855,7 +1861,9 @@ name|area
 operator|->
 name|window
 argument_list|,
-name|NULL
+name|preview
+operator|->
+name|default_cursor
 argument_list|)
 expr_stmt|;
 block|}
@@ -2150,7 +2158,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * gimp_preview_draw:  * @preview: a #GimpPreview widget  *  * Calls the GimpPreview::draw method. GimpPreview itself doesn't  * implement a default draw method so the behaviour is determined by  * the derived class implementing this method.  *  * #GimpDrawablePreview implements gimp_preview_draw() by drawing the  * original, unmodified drawable to the @preview.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_preview_draw:  * @preview: a #GimpPreview widget  *  * Calls the GimpPreview::draw method. GimpPreview itself doesn't  * implement a default draw method so the behaviour is determined by  * the derived class implementing this method.  *  * #GimpDrawablePreview implements gimp_preview_draw() by drawing the  * original, unmodified drawable to the @preview.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -2189,7 +2197,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * gimp_preview_draw_buffer:  * @preview:   a #GimpPreview widget  * @buffer:    a pixel buffer the size of the preview  * @rowstride: the @buffer's rowstride  *  * Calls the GimpPreview::draw_buffer method. GimpPreview itself  * doesn't implement this method so the behaviour is determined by the  * derived class implementing this method.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_preview_draw_buffer:  * @preview:   a #GimpPreview widget  * @buffer:    a pixel buffer the size of the preview  * @rowstride: the @buffer's rowstride  *  * Calls the GimpPreview::draw_buffer method. GimpPreview itself  * doesn't implement this method so the behaviour is determined by the  * derived class implementing this method.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -2240,7 +2248,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * gimp_preview_invalidate:  * @preview: a #GimpPreview widget  *  * This function starts or renews a short low-priority timeout. When  * the timeout expires, the GimpPreview::invalidated signal is emitted  * which will usually cause the @preview to be updated.  *  * This function does nothing unless the "Preview" button is checked.  *  * During the emission of the signal a busy cursor is set on the  * toplevel window containing the @preview and on the preview area  * itself.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_preview_invalidate:  * @preview: a #GimpPreview widget  *  * This function starts or renews a short low-priority timeout. When  * the timeout expires, the GimpPreview::invalidated signal is emitted  * which will usually cause the @preview to be updated.  *  * This function does nothing unless the "Preview" button is checked.  *  * During the emission of the signal a busy cursor is set on the  * toplevel window containing the @preview and on the preview area  * itself.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -2302,6 +2310,63 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_preview_set_default_cursor:  * @preview: a #GimpPreview widget  * @cursor:  a #GdkCursor or NULL  *  * Sets the default mouse cursor for the preview.  Note that this will be  * overriden by a GDK_FLEUR if the preview has scrollbars, or by a GDK_WATCH  * when the preview is invalidated.  *   * Since: GIMP 2.2  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_preview_set_default_cursor (GimpPreview * preview,GdkCursor * cursor)
+name|gimp_preview_set_default_cursor
+parameter_list|(
+name|GimpPreview
+modifier|*
+name|preview
+parameter_list|,
+name|GdkCursor
+modifier|*
+name|cursor
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|preview
+operator|->
+name|default_cursor
+condition|)
+name|gdk_cursor_unref
+argument_list|(
+name|preview
+operator|->
+name|default_cursor
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|cursor
+condition|)
+name|gdk_cursor_ref
+argument_list|(
+name|cursor
+argument_list|)
+expr_stmt|;
+name|preview
+operator|->
+name|default_cursor
+operator|=
+name|cursor
+expr_stmt|;
 block|}
 end_function
 

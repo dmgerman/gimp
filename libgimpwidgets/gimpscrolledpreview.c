@@ -1031,7 +1031,12 @@ name|GdkCursor
 modifier|*
 name|cursor
 init|=
-name|NULL
+name|GIMP_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
+operator|->
+name|default_cursor
 decl_stmt|;
 name|gint
 name|width
@@ -2974,7 +2979,9 @@ name|area
 operator|->
 name|window
 argument_list|,
-name|NULL
+name|preview
+operator|->
+name|default_cursor
 argument_list|)
 expr_stmt|;
 block|}

@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdd3db10108
+DECL|struct|__anon278d8eeb0108
 block|{
 DECL|member|xcenter
 name|gint
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdd3db10208
+DECL|struct|__anon278d8eeb0208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -2431,11 +2431,11 @@ argument_list|,
 name|GDK_HAND2
 argument_list|)
 decl_stmt|;
-name|gdk_window_set_cursor
+name|gimp_preview_set_default_cursor
 argument_list|(
-name|widget
+name|center
 operator|->
-name|window
+name|preview
 argument_list|,
 name|cursor
 argument_list|)

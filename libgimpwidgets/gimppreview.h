@@ -141,6 +141,11 @@ name|GdkCursor
 modifier|*
 name|cursor_busy
 decl_stmt|;
+DECL|member|default_cursor
+name|GdkCursor
+modifier|*
+name|default_cursor
+decl_stmt|;
 comment|/*< private>*/
 DECL|member|xoff
 DECL|member|yoff
@@ -403,6 +408,21 @@ parameter_list|(
 name|GimpPreview
 modifier|*
 name|preview
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_preview_set_default_cursor
+parameter_list|(
+name|GimpPreview
+modifier|*
+name|preview
+parameter_list|,
+name|GdkCursor
+modifier|*
+name|cursor
 parameter_list|)
 function_decl|;
 end_function_decl

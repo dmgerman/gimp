@@ -50,7 +50,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b42a36a0108
+DECL|struct|__anon27c97c960108
 block|{
 DECL|member|posx
 name|gint
@@ -105,7 +105,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b42a36a0208
+DECL|struct|__anon27c97c960208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -5408,7 +5408,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  *  Set the preview area'a cursor on realize  */
+comment|/*  *  Set the preview area's cursor on realize  */
 end_comment
 
 begin_function
@@ -5446,11 +5446,11 @@ argument_list|,
 name|GDK_HAND2
 argument_list|)
 decl_stmt|;
-name|gdk_window_set_cursor
+name|gimp_preview_set_default_cursor
 argument_list|(
-name|widget
+name|center
 operator|->
-name|window
+name|preview
 argument_list|,
 name|cursor
 argument_list|)
