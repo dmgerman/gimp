@@ -570,10 +570,6 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-name|gchar
-modifier|*
-name|p
-decl_stmt|;
 name|filename
 operator|=
 name|file_utils_uri_to_utf8_filename
@@ -585,24 +581,6 @@ argument_list|)
 operator|->
 name|name
 argument_list|)
-expr_stmt|;
-while|while
-condition|(
-operator|(
-name|p
-operator|=
-name|strchr
-argument_list|(
-name|filename
-argument_list|,
-literal|'%'
-argument_list|)
-operator|)
-condition|)
-operator|*
-name|p
-operator|=
-literal|' '
 expr_stmt|;
 name|g_message
 argument_list|(
