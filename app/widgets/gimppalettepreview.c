@@ -312,13 +312,13 @@ operator|*
 name|width
 operator|=
 name|size
-operator|*
-literal|3
 expr_stmt|;
 operator|*
 name|height
 operator|=
 name|size
+operator|/
+literal|2
 expr_stmt|;
 block|}
 end_function
