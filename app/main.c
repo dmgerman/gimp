@@ -1624,6 +1624,12 @@ directive|ifdef
 name|__GNUC__
 end_ifdef
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|_stdcall
+end_ifndef
+
 begin_define
 DECL|macro|_stdcall
 define|#
@@ -1631,6 +1637,11 @@ directive|define
 name|_stdcall
 value|__attribute__((stdcall))
 end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_endif
 endif|#

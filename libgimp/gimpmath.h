@@ -32,6 +32,14 @@ comment|/* __cplusplus */
 include|#
 directive|include
 file|<math.h>
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+include|#
+directive|include
+file|<float.h>
+endif|#
+directive|endif
 comment|/* Some portability enhancing stuff. For use both by the gimp app  * as well as plug-ins and modules.  *  * Include this instead of just<math.h>.  */
 ifndef|#
 directive|ifndef
@@ -168,6 +176,43 @@ parameter_list|(
 name|angle
 parameter_list|)
 value|((angle) * 360.0 / (2.0 * G_PI))
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+DECL|macro|ISNAN (x)
+define|#
+directive|define
+name|ISNAN
+parameter_list|(
+name|x
+parameter_list|)
+value|_isnan(x)
+DECL|macro|ISINF (x)
+define|#
+directive|define
+name|ISINF
+parameter_list|(
+name|x
+parameter_list|)
+value|(_fpclass(x)& (_FPCLASS_NINF | _FPCLASS_PINF))
+else|#
+directive|else
+define|#
+directive|define
+name|ISNAN
+parameter_list|(
+name|x
+parameter_list|)
+value|isnan(x)
+define|#
+directive|define
+name|ISINF
+parameter_list|(
+name|x
+parameter_list|)
+value|isinf(x)
+endif|#
+directive|endif
 ifdef|#
 directive|ifdef
 name|__cplusplus

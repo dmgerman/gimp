@@ -22,12 +22,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -83,6 +77,12 @@ begin_include
 include|#
 directive|include
 file|"layer_pvt.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpmath.h"
 end_include
 
 begin_include
@@ -11568,7 +11568,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|isnan
+name|ISNAN
 argument_list|(
 name|xresolution
 argument_list|)
@@ -11577,7 +11577,7 @@ name|xresolution
 operator|<
 name|GIMP_MIN_RESOLUTION
 operator|||
-name|isinf
+name|ISINF
 argument_list|(
 name|xresolution
 argument_list|)
@@ -11586,7 +11586,7 @@ name|xresolution
 operator|>
 name|GIMP_MAX_RESOLUTION
 operator|||
-name|isnan
+name|ISNAN
 argument_list|(
 name|yresolution
 argument_list|)
@@ -11595,7 +11595,7 @@ name|yresolution
 operator|<
 name|GIMP_MIN_RESOLUTION
 operator|||
-name|isinf
+name|ISINF
 argument_list|(
 name|yresolution
 argument_list|)

@@ -1169,7 +1169,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b43e5e70103
+DECL|enum|__anon2a41b99e0103
 block|{
 DECL|enumerator|LINE
 name|LINE
@@ -1221,7 +1221,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b43e5e70203
+DECL|enum|__anon2a41b99e0203
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -1242,7 +1242,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b43e5e70303
+DECL|enum|__anon2a41b99e0303
 block|{
 DECL|enumerator|SINGLE_LAYER
 name|SINGLE_LAYER
@@ -1263,7 +1263,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b43e5e70403
+DECL|enum|__anon2a41b99e0403
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -1287,7 +1287,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b43e5e70503
+DECL|enum|__anon2a41b99e0503
 block|{
 DECL|enumerator|PAINT_BRUSH_TYPE
 name|PAINT_BRUSH_TYPE
@@ -1308,7 +1308,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b43e5e70603
+DECL|enum|__anon2a41b99e0603
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -1476,7 +1476,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b43e5e70708
+DECL|struct|__anon2a41b99e0708
 block|{
 DECL|member|gridspacing
 name|gint
@@ -1515,7 +1515,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b43e5e70808
+DECL|struct|__anon2a41b99e0808
 block|{
 DECL|member|gridspacing
 name|void
@@ -1564,7 +1564,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b43e5e70908
+DECL|struct|__anon2a41b99e0908
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -1735,7 +1735,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b43e5e70a03
+DECL|enum|__anon2a41b99e0a03
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1765,7 +1765,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b43e5e70b03
+DECL|enum|__anon2a41b99e0b03
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -1781,7 +1781,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b43e5e70c03
+DECL|enum|__anon2a41b99e0c03
 block|{
 DECL|enumerator|FILL_FOREGROUND
 name|FILL_FOREGROUND
@@ -1806,7 +1806,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b43e5e70d03
+DECL|enum|__anon2a41b99e0d03
 block|{
 DECL|enumerator|FILL_EACH
 name|FILL_EACH
@@ -4425,14 +4425,42 @@ operator|==
 name|NULL
 condition|)
 block|{
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
+name|gchar
+modifier|*
+name|gimprc
+init|=
+name|gimp_personal_rc_file
+argument_list|(
+literal|"gimprc"
+argument_list|)
+decl_stmt|;
 name|g_message
 argument_list|(
 literal|"No gfig-path in gimprc:\n\n"
 literal|"You need to add an entry like\n"
 literal|"(gfig-path \"${gimp_dir}/gfig:${gimp_data_dir}/gfig\n"
-literal|"to your ~/.gimp/gimprc file\n"
+literal|"to your %s file\n"
+argument_list|,
+name|gimprc
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|gimprc
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
+name|g_message
+argument_list|(
+literal|"No gfig-path in gimprc???\n"
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -7649,6 +7677,14 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
+name|gchar
+modifier|*
+name|tmp
+init|=
+name|g_get_tmp_dir
+argument_list|()
+decl_stmt|;
 name|gtk_file_selection_set_filename
 argument_list|(
 name|GTK_FILE_SELECTION
@@ -7656,9 +7692,15 @@ argument_list|(
 name|window
 argument_list|)
 argument_list|,
-literal|"/tmp"
+name|tmp
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|tmp
+argument_list|)
+expr_stmt|;
+block|}
 if|if
 condition|(
 operator|!
@@ -24264,6 +24306,10 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|__EMX__
+if|if
+condition|(
+name|hm
+condition|)
 name|hm
 operator|=
 name|_fnslashify
@@ -24278,6 +24324,10 @@ directive|ifndef
 name|__EMX__
 if|if
 condition|(
+name|hm
+operator|!=
+name|NULL
+operator|&&
 operator|!
 name|strncmp
 argument_list|(
@@ -24297,6 +24347,10 @@ else|#
 directive|else
 if|if
 condition|(
+name|hm
+operator|!=
+name|NULL
+operator|&&
 operator|!
 name|strnicmp
 argument_list|(

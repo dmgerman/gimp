@@ -687,11 +687,16 @@ comment|/* Define WinMain() because plug-ins are built as GUI applications. Also
 ifdef|#
 directive|ifdef
 name|__GNUC__
+ifndef|#
+directive|ifndef
+name|_stdcall
 DECL|macro|_stdcall
 define|#
 directive|define
 name|_stdcall
 value|__attribute__((stdcall))
+endif|#
+directive|endif
 endif|#
 directive|endif
 DECL|macro|MAIN ()
