@@ -22,6 +22,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/* Unload all modules, in case a module needs some cleanups */
+end_comment
+
+begin_function_decl
+name|void
+name|module_db_free
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_function_decl
 name|GtkWidget
 modifier|*

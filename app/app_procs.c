@@ -2773,6 +2773,9 @@ name|we_are_exiting
 operator|=
 name|TRUE
 expr_stmt|;
+name|module_db_free
+argument_list|()
+expr_stmt|;
 name|device_status_free
 argument_list|()
 expr_stmt|;
