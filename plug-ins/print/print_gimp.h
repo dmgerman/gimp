@@ -22,17 +22,16 @@ directive|include
 file|<gtk/gtk.h>
 end_include
 
+begin_comment
+comment|/*  * We define GIMP_ENABLE_COMPAT_CRUFT here because we are still using  * the old API names. This is because we have to support 1.0 as well.  * This define is required as the default in Gimp was changed 24 Aug 00.  * This should be removed when we stop supporting 1.0.  */
+end_comment
+
 begin_define
 DECL|macro|GIMP_ENABLE_COMPAT_CRUFT
 define|#
 directive|define
 name|GIMP_ENABLE_COMPAT_CRUFT
 end_define
-
-begin_comment
-DECL|macro|GIMP_ENABLE_COMPAT_CRUFT
-comment|/*  should go away soon  */
-end_comment
 
 begin_include
 include|#
@@ -76,32 +75,6 @@ begin_comment
 comment|/*  * Constants for GUI...  */
 end_comment
 
-begin_define
-DECL|macro|PREVIEW_SIZE_VERT
-define|#
-directive|define
-name|PREVIEW_SIZE_VERT
-value|240
-end_define
-
-begin_comment
-DECL|macro|PREVIEW_SIZE_VERT
-comment|/* Assuming max media size of 24" A2 */
-end_comment
-
-begin_define
-DECL|macro|PREVIEW_SIZE_HORIZ
-define|#
-directive|define
-name|PREVIEW_SIZE_HORIZ
-value|240
-end_define
-
-begin_comment
-DECL|macro|PREVIEW_SIZE_HORIZ
-comment|/* Assuming max media size of 24" A2 */
-end_comment
-
 begin_if
 if|#
 directive|if
@@ -141,6 +114,34 @@ DECL|macro|GIMP_1_0
 define|#
 directive|define
 name|GIMP_1_0
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_if
+if|#
+directive|if
+operator|!
+name|defined
+argument_list|(
+name|GIMP_PRINT_MAINT
+argument_list|)
+operator|&&
+operator|!
+name|defined
+argument_list|(
+name|GIMP_1_0
+argument_list|)
+end_if
+
+begin_define
+DECL|macro|NEW_UI_ONLY
+define|#
+directive|define
+name|NEW_UI_ONLY
 end_define
 
 begin_endif

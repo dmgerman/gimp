@@ -1,6 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   Print plug-in Adobe PostScript driver for the GIMP.  *  *   Copyright 1997-2000 Michael Sweet (mike@easysw.com) and  *	Robert Krawitz (rlk@alum.mit.edu)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   ps_parameters()     - Return the parameter values for the given  *                            parameter.  *   ps_media_size()     - Return the size of the page.  *   ps_imageable_area() - Return the imageable area of the page.  *   ps_print()          - Print an image to a PostScript printer.  *   ps_hex()            - Print binary data as a series of hexadecimal numbers.  *   ps_ascii85()        - Print binary data as a series of base-85 numbers.  *  * Revision History:  *  *   See ChangeLog  */
+comment|/*  * "$Id$"  *  *   Print plug-in Adobe PostScript driver for the GIMP.  *  *   Copyright 1997-2000 Michael Sweet (mike@easysw.com) and  *	Robert Krawitz (rlk@alum.mit.edu)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+end_comment
+
+begin_comment
+comment|/*  * This file must include only standard C header files.  The core code must  * compile on generic platforms that don't support glib, gimp, gtk, etc.  */
 end_comment
 
 begin_include
@@ -49,6 +53,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|ps_ppd_file
 specifier|static
+specifier|const
 name|char
 modifier|*
 name|ps_ppd_file
@@ -464,7 +469,7 @@ condition|)
 continue|continue;
 if|if
 condition|(
-name|g_strcasecmp
+name|strcasecmp
 argument_list|(
 name|lname
 argument_list|,
@@ -962,6 +967,7 @@ name|printer
 operator|->
 name|model
 decl_stmt|;
+specifier|const
 name|char
 modifier|*
 name|ppd_file
@@ -970,6 +976,7 @@ name|v
 operator|->
 name|ppd_file
 decl_stmt|;
+specifier|const
 name|char
 modifier|*
 name|resolution
@@ -978,6 +985,7 @@ name|v
 operator|->
 name|resolution
 decl_stmt|;
+specifier|const
 name|char
 modifier|*
 name|media_size
@@ -986,6 +994,7 @@ name|v
 operator|->
 name|media_size
 decl_stmt|;
+specifier|const
 name|char
 modifier|*
 name|media_type
@@ -994,6 +1003,7 @@ name|v
 operator|->
 name|media_type
 decl_stmt|;
+specifier|const
 name|char
 modifier|*
 name|media_source
@@ -1016,7 +1026,7 @@ name|v
 operator|->
 name|orientation
 decl_stmt|;
-name|float
+name|double
 name|scaling
 init|=
 name|v
@@ -1115,7 +1125,7 @@ decl_stmt|;
 comment|/* Number of commands */
 struct|struct
 comment|/* PostScript commands... */
-DECL|struct|__anon296bca400108
+DECL|struct|__anon2b2598d10108
 block|{
 DECL|member|command
 name|char
@@ -1183,25 +1193,6 @@ name|image
 argument_list|)
 expr_stmt|;
 comment|/*   * Choose the correct color conversion function...   */
-if|if
-condition|(
-name|image_bpp
-operator|<
-literal|3
-operator|&&
-name|cmap
-operator|==
-name|NULL
-operator|&&
-name|output_type
-operator|==
-name|OUTPUT_COLOR
-condition|)
-name|output_type
-operator|=
-name|OUTPUT_GRAY_COLOR
-expr_stmt|;
-comment|/* Force grayscale output */
 name|colorfunc
 operator|=
 name|choose_colorfunc
@@ -1977,25 +1968,25 @@ argument_list|,
 literal|"%.3f %.3f scale\n"
 argument_list|,
 operator|(
-name|float
+name|double
 operator|)
 name|out_width
 operator|/
 operator|(
 operator|(
-name|float
+name|double
 operator|)
 name|image_width
 operator|)
 argument_list|,
 operator|(
-name|float
+name|double
 operator|)
 name|out_height
 operator|/
 operator|(
 operator|(
-name|float
+name|double
 operator|)
 name|image_height
 operator|)
@@ -3230,7 +3221,7 @@ condition|)
 continue|continue;
 if|if
 condition|(
-name|g_strncasecmp
+name|strncasecmp
 argument_list|(
 name|line
 argument_list|,
@@ -3276,7 +3267,7 @@ condition|)
 continue|continue;
 if|if
 condition|(
-name|g_strcasecmp
+name|strcasecmp
 argument_list|(
 name|lname
 argument_list|,
@@ -3285,7 +3276,7 @@ argument_list|)
 operator|==
 literal|0
 operator|&&
-name|g_strcasecmp
+name|strcasecmp
 argument_list|(
 name|loption
 argument_list|,

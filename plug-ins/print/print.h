@@ -4,7 +4,7 @@ comment|/*  * "$Id$"  *  *   Print plug-in header file for the GIMP.  *  *   Cop
 end_comment
 
 begin_comment
-comment|/*  *  * This file must not include any gimp, glib, gtk, etc. headers.  *  * Eventually I intend to port this to GhostScript and/or CUPS.  The only  * file that should have GIMP-specific code is print.c.  The rest of this  * program should be completely generic.  *  * rlk 20000112  */
+comment|/*  * This file must include only standard C header files.  The core code must  * compile on generic platforms that don't support glib, gimp, gtk, etc.  */
 end_comment
 
 begin_ifndef
@@ -23,24 +23,6 @@ end_define
 begin_comment
 comment|/*  * Include necessary header files...  */
 end_comment
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|HAVE_UNISTD_H
-end_ifndef
-
-begin_define
-DECL|macro|HAVE_UNISTD_H
-define|#
-directive|define
-name|HAVE_UNISTD_H
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_include
 include|#
@@ -65,35 +47,6 @@ include|#
 directive|include
 file|<errno.h>
 end_include
-
-begin_include
-include|#
-directive|include
-file|<sys/types.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<sys/stat.h>
-end_include
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_UNISTD_H
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<unistd.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_comment
 comment|/*  * Constants...  */
@@ -178,6 +131,32 @@ comment|/* Landscape orientation */
 end_comment
 
 begin_define
+DECL|macro|ORIENT_UPSIDEDOWN
+define|#
+directive|define
+name|ORIENT_UPSIDEDOWN
+value|2
+end_define
+
+begin_comment
+DECL|macro|ORIENT_UPSIDEDOWN
+comment|/* Reverse portrait orientation */
+end_comment
+
+begin_define
+DECL|macro|ORIENT_SEASCAPE
+define|#
+directive|define
+name|ORIENT_SEASCAPE
+value|3
+end_define
+
+begin_comment
+DECL|macro|ORIENT_SEASCAPE
+comment|/* Reverse landscape orientation */
+end_comment
+
+begin_define
 DECL|macro|MAX_CARRIAGE_WIDTH
 define|#
 directive|define
@@ -226,6 +205,66 @@ name|IMAGE_MONOCHROME
 value|3
 end_define
 
+begin_define
+DECL|macro|NIMAGE_TYPES
+define|#
+directive|define
+name|NIMAGE_TYPES
+value|4
+end_define
+
+begin_comment
+comment|/* Uncomment the next line to get performance statistics:  * look for QUANT(#) in the code. At the end of escp2-print  * run, it will print out how long and how many time did   * certain pieces of code take. Of course, don't forget about  * overhead of call to gettimeofday - it's not zero.  * If you need more detailed performance stats, just put  * QUANT() calls in the interesting spots in the code */
+end_comment
+
+begin_comment
+comment|/*#define QUANTIFY*/
+end_comment
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|QUANTIFY
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<assert.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<sys/time.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<unistd.h>
+end_include
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_define
+DECL|macro|QUANT (n)
+define|#
+directive|define
+name|QUANT
+parameter_list|(
+name|n
+parameter_list|)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_comment
 comment|/*  * Printer driver control structure.  See "print.c" for the actual list...  */
 end_comment
@@ -233,47 +272,8 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a8b36230108
-block|{
-DECL|member|steps
-name|unsigned
-name|steps
-decl_stmt|;
-DECL|member|composite
-name|unsigned
-name|short
-modifier|*
-name|composite
-decl_stmt|;
-DECL|member|red
-name|unsigned
-name|short
-modifier|*
-name|red
-decl_stmt|;
-DECL|member|green
-name|unsigned
-name|short
-modifier|*
-name|green
-decl_stmt|;
-DECL|member|blue
-name|unsigned
-name|short
-modifier|*
-name|blue
-decl_stmt|;
-DECL|typedef|lut_t
-block|}
-name|lut_t
-typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-struct|struct
 comment|/* Plug-in variables */
-DECL|struct|__anon2a8b36230208
+DECL|struct|__anon289c5ce20108
 block|{
 DECL|member|output_to
 name|char
@@ -346,7 +346,7 @@ index|]
 decl_stmt|;
 comment|/* Dithering algorithm */
 DECL|member|brightness
-name|int
+name|float
 name|brightness
 decl_stmt|;
 comment|/* Output brightness */
@@ -374,20 +374,20 @@ name|gamma
 decl_stmt|;
 comment|/* Gamma */
 DECL|member|contrast
-name|int
+name|float
 name|contrast
 decl_stmt|,
 comment|/* Output Contrast */
-DECL|member|red
-name|red
+DECL|member|cyan
+name|cyan
 decl_stmt|,
 comment|/* Output red level */
-DECL|member|green
-name|green
+DECL|member|magenta
+name|magenta
 decl_stmt|,
 comment|/* Output green level */
-DECL|member|blue
-name|blue
+DECL|member|yellow
+name|yellow
 decl_stmt|;
 comment|/* Output blue level */
 DECL|member|linear
@@ -431,7 +431,7 @@ name|page_height
 decl_stmt|;
 comment|/* Height of page in points */
 DECL|member|lut
-name|lut_t
+name|void
 modifier|*
 name|lut
 decl_stmt|;
@@ -453,7 +453,7 @@ begin_typedef
 typedef|typedef
 struct|struct
 comment|/**** Printer List ****/
-DECL|struct|__anon2a8b36230308
+DECL|struct|__anon289c5ce20208
 block|{
 DECL|member|active
 name|int
@@ -464,7 +464,7 @@ DECL|member|name
 name|char
 name|name
 index|[
-literal|17
+literal|128
 index|]
 decl_stmt|;
 comment|/* Name of printer */
@@ -498,7 +498,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a8b36230408
+DECL|struct|__anon289c5ce20308
 block|{
 DECL|member|name
 name|char
@@ -994,7 +994,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a8b36230508
+DECL|struct|__anon289c5ce20408
 block|{
 DECL|member|value
 name|double
@@ -1021,7 +1021,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a8b36230608
+DECL|struct|__anon289c5ce20508
 block|{
 DECL|member|value
 name|double
@@ -1056,7 +1056,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a8b36230708
+DECL|struct|__anon289c5ce20608
 block|{
 DECL|member|value_l
 name|double
@@ -1684,20 +1684,6 @@ end_function_decl
 begin_function_decl
 specifier|extern
 name|void
-name|dither_set_error_mix
-parameter_list|(
-name|void
-modifier|*
-name|vd
-parameter_list|,
-name|double
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|extern
-name|void
 name|free_dither
 parameter_list|(
 name|void
@@ -1729,6 +1715,9 @@ name|lastrow
 parameter_list|,
 name|int
 name|pagelength
+parameter_list|,
+name|int
+name|strategy
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1786,8 +1775,9 @@ end_function_decl
 begin_function_decl
 specifier|extern
 name|void
-name|dither_fastblack
+name|dither_monochrome
 parameter_list|(
+specifier|const
 name|unsigned
 name|short
 modifier|*
@@ -1800,6 +1790,9 @@ parameter_list|,
 name|unsigned
 name|char
 modifier|*
+parameter_list|,
+name|int
+name|duplicate_line
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1809,6 +1802,7 @@ specifier|extern
 name|void
 name|dither_black
 parameter_list|(
+specifier|const
 name|unsigned
 name|short
 modifier|*
@@ -1821,6 +1815,9 @@ parameter_list|,
 name|unsigned
 name|char
 modifier|*
+parameter_list|,
+name|int
+name|duplicate_line
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1830,6 +1827,7 @@ specifier|extern
 name|void
 name|dither_cmyk
 parameter_list|(
+specifier|const
 name|unsigned
 name|short
 modifier|*
@@ -1866,6 +1864,9 @@ parameter_list|,
 name|unsigned
 name|char
 modifier|*
+parameter_list|,
+name|int
+name|duplicate_line
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2681,7 +2682,7 @@ parameter_list|,
 name|int
 name|page_bottom
 parameter_list|,
-name|int
+name|double
 name|scaling
 parameter_list|,
 name|int
@@ -2739,6 +2740,138 @@ modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_function_decl
+specifier|extern
+specifier|const
+name|vars_t
+modifier|*
+name|print_default_settings
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|extern
+specifier|const
+name|vars_t
+modifier|*
+name|print_maximum_settings
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|extern
+specifier|const
+name|vars_t
+modifier|*
+name|print_minimum_settings
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|QUANTIFY
+end_ifdef
+
+begin_comment
+comment|/* Used for performance analysis - to be called before and after  * the interval to be quantified */
+end_comment
+
+begin_define
+DECL|macro|NUM_QUANTIFY_BUCKETS
+define|#
+directive|define
+name|NUM_QUANTIFY_BUCKETS
+value|1024
+end_define
+
+begin_decl_stmt
+specifier|extern
+name|unsigned
+name|quantify_counts
+index|[
+name|NUM_QUANTIFY_BUCKETS
+index|]
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|struct
+name|timeval
+name|quantify_buckets
+index|[
+name|NUM_QUANTIFY_BUCKETS
+index|]
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|int
+name|quantify_high_index
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|int
+name|quantify_first_time
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|struct
+name|timeval
+name|quantify_cur_time
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|struct
+name|timeval
+name|quantify_prev_time
+decl_stmt|;
+end_decl_stmt
+
+begin_define
+DECL|macro|QUANT (number)
+define|#
+directive|define
+name|QUANT
+parameter_list|(
+name|number
+parameter_list|)
+define|\
+value|{\     gettimeofday(&quantify_cur_time, NULL);\     assert(number< NUM_QUANTIFY_BUCKETS);\     quantify_counts[number]++;\ \     if (quantify_first_time) {\         quantify_first_time = 0;\     } else {\         if (number> quantify_high_index) quantify_high_index = number;\         if (quantify_prev_time.tv_usec> quantify_cur_time.tv_usec) {\            quantify_buckets[number].tv_usec += ((quantify_cur_time.tv_usec + 1000000) - quantify_prev_time.tv_usec);\            quantify_buckets[number].tv_sec += (quantify_cur_time.tv_sec - quantify_prev_time.tv_sec - 1);\         } else {\            quantify_buckets[number].tv_sec += quantify_cur_time.tv_sec - quantify_prev_time.tv_sec;\            quantify_buckets[number].tv_usec += quantify_cur_time.tv_usec - quantify_prev_time.tv_usec;\         }\         if (quantify_buckets[number].tv_usec>= 1000000)\         {\            quantify_buckets[number].tv_usec -= 1000000;\            quantify_buckets[number].tv_sec++;\         }\     }\ \     gettimeofday(&quantify_prev_time, NULL);\ }
+end_define
+
+begin_function_decl
+specifier|extern
+name|void
+name|print_timers
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_endif
 endif|#

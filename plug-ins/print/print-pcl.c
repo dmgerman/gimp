@@ -1,6 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   Print plug-in HP PCL driver for the GIMP.  *  *   Copyright 1997-2000 Michael Sweet (mike@easysw.com) and  *	Robert Krawitz (rlk@alum.mit.edu)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   pcl_parameters()     - Return the parameter values for the given  *                          parameter.  *   pcl_imageable_area() - Return the imageable area of the page.  *   pcl_get_model_capabilities()  *                        - Return the capabilities of the printer.  *   pcl_convert_media_size()  *                        - Convert media size name into PCL code.  *   pcl_print()          - Print an image to an HP printer.  *   pcl_mode0()          - Send PCL graphics using mode 0 (no) compression.  *   pcl_mode2()          - Send PCL graphics using mode 2 (TIFF) compression.  *  * Revision History:  *  *   See ChangeLog  */
+comment|/*  * "$Id$"  *  *   Print plug-in HP PCL driver for the GIMP.  *  *   Copyright 1997-2000 Michael Sweet (mike@easysw.com),  *	Robert Krawitz (rlk@alum.mit.edu) and  *      Dave Hill (dave@minnie.demon.co.uk)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+end_comment
+
+begin_comment
+comment|/*  * This file must include only standard C header files.  The core code must  * compile on generic platforms that don't support glib, gimp, gtk, etc.  */
 end_comment
 
 begin_include
@@ -66,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c54006f0108
+DECL|struct|__anon2bcc39310108
 block|{
 DECL|member|pcl_name
 name|char
@@ -704,6 +708,19 @@ value|16
 end_define
 
 begin_define
+DECL|macro|PCL_PAPERSOURCE_STANDARD
+define|#
+directive|define
+name|PCL_PAPERSOURCE_STANDARD
+value|0
+end_define
+
+begin_comment
+DECL|macro|PCL_PAPERSOURCE_STANDARD
+comment|/* Don't output code */
+end_comment
+
+begin_define
 DECL|macro|PCL_PAPERSOURCE_MANUAL
 define|#
 directive|define
@@ -846,6 +863,12 @@ index|[]
 init|=
 block|{
 block|{
+literal|"Standard"
+block|,
+name|PCL_PAPERSOURCE_STANDARD
+block|}
+block|,
+block|{
 literal|"Manual"
 block|,
 name|PCL_PAPERSOURCE_MANUAL
@@ -975,33 +998,33 @@ end_define
 
 begin_comment
 DECL|macro|PCL_RES_600_600
-comment|/* DJ 9xx ??*/
+comment|/* DJ 9xx/1220C/PhotoSmart */
 end_comment
 
 begin_define
-DECL|macro|PCL_RES_1200_1200
+DECL|macro|PCL_RES_1200_600
 define|#
 directive|define
-name|PCL_RES_1200_1200
+name|PCL_RES_1200_600
 value|32
 end_define
 
 begin_comment
-DECL|macro|PCL_RES_1200_1200
-comment|/* DJ 9xx ??*/
+DECL|macro|PCL_RES_1200_600
+comment|/* DJ 9xx/1220C/PhotoSmart */
 end_comment
 
 begin_define
-DECL|macro|PCL_RES_2400_1200
+DECL|macro|PCL_RES_2400_600
 define|#
 directive|define
-name|PCL_RES_2400_1200
+name|PCL_RES_2400_600
 value|64
 end_define
 
 begin_comment
-DECL|macro|PCL_RES_2400_1200
-comment|/* DJ 9xx */
+DECL|macro|PCL_RES_2400_600
+comment|/* DJ 9xx/1220C/PhotoSmart */
 end_comment
 
 begin_decl_stmt
@@ -1044,15 +1067,15 @@ name|PCL_RES_600_600
 block|}
 block|,
 block|{
-literal|"1200x1200 DPI"
+literal|"1200x600 DPI"
 block|,
-name|PCL_RES_1200_1200
+name|PCL_RES_1200_600
 block|}
 block|,
 block|{
-literal|"2400x1200 DPI"
+literal|"2400x600 DPI"
 block|,
-name|PCL_RES_2400_1200
+name|PCL_RES_2400_600
 block|}
 block|, }
 decl_stmt|;
@@ -1095,7 +1118,7 @@ comment|/*  * Printer capability data  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c54006f0208
+DECL|struct|__anon2bcc39310208
 typedef|typedef
 struct|struct
 block|{
@@ -1435,6 +1458,8 @@ literal|1
 block|,     }
 block|,
 block|{
+name|PCL_PAPERSOURCE_STANDARD
+block|,
 name|PCL_PAPERSOURCE_MANUAL
 block|,
 name|PCL_PAPERSOURCE_340_PCSF
@@ -1575,6 +1600,8 @@ literal|1
 block|,     }
 block|,
 block|{
+name|PCL_PAPERSOURCE_STANDARD
+block|,
 name|PCL_PAPERSOURCE_MANUAL
 block|,
 name|PCL_PAPERSOURCE_DJ_TRAY
@@ -1647,6 +1674,8 @@ literal|1
 block|,     }
 block|,
 block|{
+name|PCL_PAPERSOURCE_STANDARD
+block|,
 name|PCL_PAPERSOURCE_MANUAL
 block|,
 name|PCL_PAPERSOURCE_DJ_TRAY
@@ -1741,6 +1770,8 @@ literal|1
 block|,     }
 block|,
 block|{
+name|PCL_PAPERSOURCE_STANDARD
+block|,
 name|PCL_PAPERSOURCE_MANUAL
 block|,
 name|PCL_PAPERSOURCE_DJ_TRAY
@@ -1814,6 +1845,8 @@ literal|1
 block|,     }
 block|,
 block|{
+name|PCL_PAPERSOURCE_STANDARD
+block|,
 name|PCL_PAPERSOURCE_MANUAL
 block|,
 name|PCL_PAPERSOURCE_DJ_TRAY
@@ -1919,7 +1952,7 @@ comment|/* No selectable paper sources */
 block|}
 block|,   }
 block|,
-comment|/* Deskjet 6xx series */
+comment|/* Deskjet 6xx series, plus 810/812/840/842/895 */
 block|{
 literal|601
 block|,
@@ -2013,7 +2046,7 @@ literal|1
 block|,     }
 block|,   }
 block|,
-comment|/* Deskjet 69x series */
+comment|/* Deskjet 69x series (Photo Capable) */
 block|{
 literal|690
 block|,
@@ -2109,7 +2142,7 @@ literal|1
 block|,     }
 block|,   }
 block|,
-comment|/* Deskjet 800 series */
+comment|/* Deskjet 850/855/870/890 (C-RET) */
 block|{
 literal|800
 block|,
@@ -2126,8 +2159,6 @@ block|,
 name|PCL_RES_150_150
 operator||
 name|PCL_RES_300_300
-operator||
-name|PCL_RES_600_600_MONO
 operator||
 name|PCL_RES_600_600_MONO
 block|,
@@ -2205,7 +2236,7 @@ literal|1
 block|,     }
 block|,   }
 block|,
-comment|/* Deskjet 900 series */
+comment|/* Deskjet 900 series, 1220C, PhotoSmart P1000/P1100 */
 block|{
 literal|900
 block|,
@@ -2224,10 +2255,7 @@ operator||
 name|PCL_RES_300_300
 operator||
 name|PCL_RES_600_600
-operator||
-name|PCL_RES_1200_1200
-operator||
-name|PCL_RES_2400_1200
+comment|/* | PCL_RES_1200_600 | PCL_RES_2400_600 */
 block|,
 literal|3
 block|,
@@ -2238,8 +2266,6 @@ block|,
 literal|18
 block|,
 name|PCL_COLOR_CMYK
-operator||
-name|PCL_COLOR_CMYK4
 block|,
 name|PCL_PRINTER_DJ
 operator||
@@ -2305,7 +2331,128 @@ comment|/* No selectable paper sources */
 block|}
 block|,   }
 block|,
-comment|/* Deskjet 1100C, 1120C, 1220C */
+comment|/* Deskjet 1220C (or other large format 900) */
+block|{
+literal|901
+block|,
+literal|13
+operator|*
+literal|72
+block|,
+literal|19
+operator|*
+literal|72
+block|,
+name|PCL_RES_150_150
+operator||
+name|PCL_RES_300_300
+operator||
+name|PCL_RES_600_600
+comment|/* | PCL_RES_1200_600 | PCL_RES_2400_600 */
+block|,
+literal|3
+block|,
+literal|33
+block|,
+literal|18
+block|,
+literal|18
+block|,
+name|PCL_COLOR_CMYK
+block|,
+name|PCL_PRINTER_DJ
+operator||
+name|PCL_PRINTER_NEW_ERG
+operator||
+name|PCL_PRINTER_TIFF
+operator||
+name|PCL_PRINTER_MEDIATYPE
+operator||
+name|PCL_PRINTER_CUSTOM_SIZE
+block|,
+block|{
+name|PCL_PAPERSIZE_EXECUTIVE
+block|,
+name|PCL_PAPERSIZE_LETTER
+block|,
+name|PCL_PAPERSIZE_LEGAL
+block|,
+name|PCL_PAPERSIZE_TABLOID
+block|,
+name|PCL_PAPERSIZE_STATEMENT
+block|,
+name|PCL_PAPERSIZE_SUPER_B
+block|,
+name|PCL_PAPERSIZE_A5
+block|,
+name|PCL_PAPERSIZE_A4
+block|,
+name|PCL_PAPERSIZE_A3
+block|,
+name|PCL_PAPERSIZE_JIS_B5
+block|,
+name|PCL_PAPERSIZE_JIS_B4
+block|,
+name|PCL_PAPERSIZE_HAGAKI_CARD
+block|,
+name|PCL_PAPERSIZE_OUFUKU_CARD
+block|,
+name|PCL_PAPERSIZE_A6_CARD
+block|,
+name|PCL_PAPERSIZE_4x6
+block|,
+name|PCL_PAPERSIZE_5x8
+block|,
+name|PCL_PAPERSIZE_3x5
+block|,
+name|PCL_PAPERSIZE_HP_CARD
+block|,
+name|PCL_PAPERSIZE_MONARCH_ENV
+block|,
+name|PCL_PAPERSIZE_COMMERCIAL10_ENV
+block|,
+name|PCL_PAPERSIZE_DL_ENV
+block|,
+name|PCL_PAPERSIZE_C5_ENV
+block|,
+name|PCL_PAPERSIZE_C6_ENV
+block|,
+name|PCL_PAPERSIZE_INVITATION_ENV
+block|,
+name|PCL_PAPERSIZE_JAPANESE_3_ENV
+block|,
+name|PCL_PAPERSIZE_JAPANESE_4_ENV
+block|,
+name|PCL_PAPERSIZE_KAKU_ENV
+block|,
+operator|-
+literal|1
+block|,     }
+block|,
+block|{
+name|PCL_PAPERTYPE_PLAIN
+block|,
+name|PCL_PAPERTYPE_BOND
+block|,
+name|PCL_PAPERTYPE_PREMIUM
+block|,
+name|PCL_PAPERTYPE_GLOSSY
+block|,
+name|PCL_PAPERTYPE_TRANS
+block|,
+operator|-
+literal|1
+block|,     }
+block|,
+block|{
+operator|-
+literal|1
+block|,
+comment|/* No selectable paper sources */
+block|}
+block|,   }
+block|,
+comment|/* Deskjet 1100C, 1120C */
 block|{
 literal|1100
 block|,
@@ -2370,21 +2517,16 @@ name|PCL_PAPERSIZE_JIS_B4
 block|,
 name|PCL_PAPERSIZE_HAGAKI_CARD
 block|,
-comment|/*    PCL_PAPERSIZE_OUFUKU_CARD,	1220C supports, rest don't */
 name|PCL_PAPERSIZE_A6_CARD
 block|,
 name|PCL_PAPERSIZE_4x6
 block|,
 name|PCL_PAPERSIZE_5x8
 block|,
-comment|/*    PCL_PAPERSIZE_3x5,		1220C supports, rest don't */
-comment|/*    PCL_PAPERSIZE_HP_CARD,		1220C supports, rest don't */
-comment|/*    PCL_PAPERSIZE_MONARCH_ENV,	1220C supports, rest don't */
 name|PCL_PAPERSIZE_COMMERCIAL10_ENV
 block|,
 name|PCL_PAPERSIZE_DL_ENV
 block|,
-comment|/*    PCL_PAPERSIZE_C5_ENV,		1220C supports, rest don't */
 name|PCL_PAPERSIZE_C6_ENV
 block|,
 name|PCL_PAPERSIZE_INVITATION_ENV
@@ -2415,6 +2557,8 @@ literal|1
 block|,     }
 block|,
 block|{
+name|PCL_PAPERSOURCE_STANDARD
+block|,
 name|PCL_PAPERSOURCE_MANUAL
 block|,
 name|PCL_PAPERSOURCE_DJ_TRAY
@@ -2498,6 +2642,8 @@ literal|1
 block|,     }
 block|,
 block|{
+name|PCL_PAPERSOURCE_STANDARD
+block|,
 name|PCL_PAPERSOURCE_MANUAL
 block|,
 name|PCL_PAPERSOURCE_DJ_TRAY
@@ -2525,7 +2671,7 @@ name|PCL_RES_150_150
 operator||
 name|PCL_RES_300_300
 operator||
-name|PCL_RES_600_600_MONO
+name|PCL_RES_600_600
 block|,
 literal|12
 block|,
@@ -2600,6 +2746,8 @@ literal|1
 block|,     }
 block|,
 block|{
+name|PCL_PAPERSOURCE_STANDARD
+block|,
 name|PCL_PAPERSOURCE_MANUAL
 block|,
 name|PCL_PAPERSOURCE_DJ_TRAY
@@ -2625,7 +2773,7 @@ name|PCL_RES_150_150
 operator||
 name|PCL_RES_300_300
 operator||
-name|PCL_RES_600_600_MONO
+name|PCL_RES_600_600
 block|,
 literal|12
 block|,
@@ -2704,6 +2852,8 @@ literal|1
 block|,     }
 block|,
 block|{
+name|PCL_PAPERSOURCE_STANDARD
+block|,
 name|PCL_PAPERSOURCE_MANUAL
 block|,
 name|PCL_PAPERSOURCE_DJ_AUTO
@@ -2768,6 +2918,8 @@ comment|/* No selectable paper types */
 block|}
 block|,
 block|{
+name|PCL_PAPERSOURCE_STANDARD
+block|,
 name|PCL_PAPERSOURCE_MANUAL
 block|,
 name|PCL_PAPERSOURCE_LJ_TRAY1
@@ -2834,6 +2986,8 @@ comment|/* No selectable paper types */
 block|}
 block|,
 block|{
+name|PCL_PAPERSOURCE_STANDARD
+block|,
 name|PCL_PAPERSOURCE_MANUAL
 block|,
 name|PCL_PAPERSOURCE_LJ_TRAY1
@@ -2849,7 +3003,7 @@ literal|1
 block|,     }
 block|,   }
 block|,
-comment|/* LaserJet 4 series, 5 series, 6 series */
+comment|/* LaserJet 4 series */
 block|{
 literal|4
 block|,
@@ -2902,6 +3056,8 @@ comment|/* No selectable paper types */
 block|}
 block|,
 block|{
+name|PCL_PAPERSOURCE_STANDARD
+block|,
 name|PCL_PAPERSOURCE_MANUAL
 block|,
 name|PCL_PAPERSOURCE_LJ_TRAY1
@@ -2983,6 +3139,165 @@ comment|/* No selectable paper types */
 block|}
 block|,
 block|{
+name|PCL_PAPERSOURCE_STANDARD
+block|,
+name|PCL_PAPERSOURCE_MANUAL
+block|,
+name|PCL_PAPERSOURCE_LJ_TRAY1
+block|,
+name|PCL_PAPERSOURCE_LJ_TRAY2
+block|,
+name|PCL_PAPERSOURCE_LJ_TRAY3
+block|,
+name|PCL_PAPERSOURCE_LJ_TRAY4
+block|,
+operator|-
+literal|1
+block|,     }
+block|,   }
+block|,
+comment|/* LaserJet 5 series, 6 series */
+block|{
+literal|6
+block|,
+literal|17
+operator|*
+literal|72
+operator|/
+literal|2
+block|,
+literal|14
+operator|*
+literal|72
+block|,
+name|PCL_RES_150_150
+operator||
+name|PCL_RES_300_300
+operator||
+name|PCL_RES_600_600
+block|,
+literal|12
+block|,
+literal|12
+block|,
+literal|18
+block|,
+literal|18
+block|,
+name|PCL_COLOR_NONE
+block|,
+name|PCL_PRINTER_LJ
+operator||
+name|PCL_PRINTER_NEW_ERG
+operator||
+name|PCL_PRINTER_TIFF
+block|,
+block|{
+name|PCL_PAPERSIZE_LETTER
+block|,
+name|PCL_PAPERSIZE_LEGAL
+block|,
+name|PCL_PAPERSIZE_A4
+block|,
+operator|-
+literal|1
+block|,     }
+block|,
+block|{
+operator|-
+literal|1
+block|,
+comment|/* No selectable paper types */
+block|}
+block|,
+block|{
+name|PCL_PAPERSOURCE_STANDARD
+block|,
+name|PCL_PAPERSOURCE_MANUAL
+block|,
+name|PCL_PAPERSOURCE_LJ_TRAY1
+block|,
+name|PCL_PAPERSOURCE_LJ_TRAY2
+block|,
+name|PCL_PAPERSOURCE_LJ_TRAY3
+block|,
+name|PCL_PAPERSOURCE_LJ_TRAY4
+block|,
+operator|-
+literal|1
+block|,     }
+block|,   }
+block|,
+comment|/* LaserJet 5Si */
+block|{
+literal|7
+block|,
+literal|13
+operator|*
+literal|72
+block|,
+literal|19
+operator|*
+literal|72
+block|,
+name|PCL_RES_150_150
+operator||
+name|PCL_RES_300_300
+operator||
+name|PCL_RES_600_600
+block|,
+literal|12
+block|,
+literal|12
+block|,
+literal|18
+block|,
+literal|18
+block|,
+name|PCL_COLOR_NONE
+block|,
+name|PCL_PRINTER_LJ
+operator||
+name|PCL_PRINTER_NEW_ERG
+operator||
+name|PCL_PRINTER_TIFF
+block|,
+block|{
+name|PCL_PAPERSIZE_LETTER
+block|,
+name|PCL_PAPERSIZE_LEGAL
+block|,
+name|PCL_PAPERSIZE_TABLOID
+block|,
+name|PCL_PAPERSIZE_A5
+block|,
+name|PCL_PAPERSIZE_A4
+block|,
+name|PCL_PAPERSIZE_A3
+block|,
+name|PCL_PAPERSIZE_JIS_B5
+block|,
+name|PCL_PAPERSIZE_JIS_B4
+block|,
+comment|/* Guess */
+name|PCL_PAPERSIZE_4x6
+block|,
+name|PCL_PAPERSIZE_5x8
+block|,
+operator|-
+literal|1
+block|,     }
+block|,
+block|{
+operator|-
+literal|1
+block|,
+comment|/* No selectable paper types */
+block|}
+block|,
+block|{
+name|PCL_PAPERSOURCE_STANDARD
+block|,
 name|PCL_PAPERSOURCE_MANUAL
 block|,
 name|PCL_PAPERSOURCE_LJ_TRAY1
@@ -4585,6 +4900,7 @@ name|printer
 operator|->
 name|model
 decl_stmt|;
+specifier|const
 name|char
 modifier|*
 name|resolution
@@ -4598,6 +4914,7 @@ name|char
 modifier|*
 name|media_size
 decl_stmt|;
+specifier|const
 name|char
 modifier|*
 name|media_type
@@ -4606,6 +4923,7 @@ name|v
 operator|->
 name|media_type
 decl_stmt|;
+specifier|const
 name|char
 modifier|*
 name|media_source
@@ -4614,6 +4932,7 @@ name|v
 operator|->
 name|media_source
 decl_stmt|;
+specifier|const
 name|char
 modifier|*
 name|ink_type
@@ -4636,7 +4955,7 @@ name|v
 operator|->
 name|orientation
 decl_stmt|;
-name|float
+name|double
 name|scaling
 init|=
 name|v
@@ -4861,70 +5180,6 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-comment|/*   * Choose the correct color conversion function...   */
-if|if
-condition|(
-name|nv
-operator|.
-name|image_type
-operator|==
-name|IMAGE_MONOCHROME
-condition|)
-block|{
-name|output_type
-operator|=
-name|OUTPUT_GRAY
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|caps
-operator|.
-name|color_type
-operator|==
-name|PCL_COLOR_NONE
-condition|)
-name|output_type
-operator|=
-name|OUTPUT_GRAY
-expr_stmt|;
-elseif|else
-if|if
-condition|(
-name|image_bpp
-operator|<
-literal|3
-operator|&&
-name|cmap
-operator|==
-name|NULL
-operator|&&
-name|output_type
-operator|==
-name|OUTPUT_COLOR
-condition|)
-name|output_type
-operator|=
-name|OUTPUT_GRAY_COLOR
-expr_stmt|;
-comment|/* Force grayscale output */
-name|colorfunc
-operator|=
-name|choose_colorfunc
-argument_list|(
-name|output_type
-argument_list|,
-name|image_bpp
-argument_list|,
-name|cmap
-argument_list|,
-operator|&
-name|out_bpp
-argument_list|,
-operator|&
-name|nv
-argument_list|)
-expr_stmt|;
 comment|/*   * Figure out the output resolution...   */
 name|sscanf
 argument_list|(
@@ -4955,6 +5210,7 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
+comment|/*   * Choose the correct color conversion function...   */
 if|if
 condition|(
 operator|(
@@ -4986,18 +5242,57 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
-literal|"600x600 resolution only available in MONO, changed to 300x300\n"
+literal|"600x600 resolution only available in MONO\n"
 argument_list|)
 expr_stmt|;
-name|xdpi
+name|output_type
 operator|=
-literal|300
-expr_stmt|;
-name|ydpi
-operator|=
-literal|300
+name|OUTPUT_GRAY
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|nv
+operator|.
+name|image_type
+operator|==
+name|IMAGE_MONOCHROME
+condition|)
+block|{
+name|output_type
+operator|=
+name|OUTPUT_GRAY
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|caps
+operator|.
+name|color_type
+operator|==
+name|PCL_COLOR_NONE
+condition|)
+name|output_type
+operator|=
+name|OUTPUT_GRAY
+expr_stmt|;
+name|colorfunc
+operator|=
+name|choose_colorfunc
+argument_list|(
+name|output_type
+argument_list|,
+name|image_bpp
+argument_list|,
+name|cmap
+argument_list|,
+operator|&
+name|out_bpp
+argument_list|,
+operator|&
+name|nv
+argument_list|)
+expr_stmt|;
 name|do_cret
 operator|=
 operator|(
@@ -5365,7 +5660,7 @@ name|prn
 argument_list|)
 expr_stmt|;
 comment|/* Reset top margin to 0 */
-comment|/*   * Convert media type string to the code, if specified.   */
+comment|/*   * Convert media source string to the code, if specified.   */
 if|if
 condition|(
 name|strlen
@@ -5425,7 +5720,13 @@ argument_list|,
 name|media_source
 argument_list|)
 expr_stmt|;
-else|else
+elseif|else
+if|if
+condition|(
+name|pcl_media_source
+operator|!=
+name|PCL_PAPERSOURCE_STANDARD
+condition|)
 block|{
 comment|/* Correct the value by taking the modulus */
 name|pcl_media_source
@@ -6671,6 +6972,11 @@ name|y
 operator|++
 control|)
 block|{
+name|int
+name|duplicate_line
+init|=
+literal|1
+decl_stmt|;
 ifdef|#
 directive|ifdef
 name|DEBUG
@@ -6697,7 +7003,7 @@ condition|(
 operator|(
 name|y
 operator|&
-literal|255
+literal|63
 operator|)
 operator|==
 literal|0
@@ -6722,6 +7028,10 @@ name|errlast
 operator|=
 name|errline
 expr_stmt|;
+name|duplicate_line
+operator|=
+literal|0
+expr_stmt|;
 name|Image_get_row
 argument_list|(
 name|image
@@ -6731,7 +7041,6 @@ argument_list|,
 name|errline
 argument_list|)
 expr_stmt|;
-block|}
 call|(
 modifier|*
 name|colorfunc
@@ -6751,6 +7060,7 @@ operator|&
 name|nv
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|do_cret
@@ -6773,6 +7083,8 @@ argument_list|,
 name|dither
 argument_list|,
 name|black
+argument_list|,
+name|duplicate_line
 argument_list|)
 expr_stmt|;
 call|(
@@ -6835,6 +7147,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|black
+argument_list|,
+name|duplicate_line
 argument_list|)
 expr_stmt|;
 call|(
@@ -7098,7 +7412,7 @@ name|image_type
 operator|==
 name|IMAGE_MONOCHROME
 condition|)
-name|dither_fastblack
+name|dither_monochrome
 argument_list|(
 name|out
 argument_list|,
@@ -7107,6 +7421,8 @@ argument_list|,
 name|dither
 argument_list|,
 name|black
+argument_list|,
+name|duplicate_line
 argument_list|)
 expr_stmt|;
 else|else
@@ -7119,6 +7435,8 @@ argument_list|,
 name|dither
 argument_list|,
 name|black
+argument_list|,
+name|duplicate_line
 argument_list|)
 expr_stmt|;
 call|(
@@ -7159,6 +7477,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|black
+argument_list|,
+name|duplicate_line
 argument_list|)
 expr_stmt|;
 if|if
