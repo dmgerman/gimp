@@ -44,13 +44,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpui.h"
+file|<libgimp/gimpui.h>
 end_include
 
 begin_include
@@ -68,7 +68,7 @@ end_ifdef
 begin_decl_stmt
 DECL|variable|rcsid
 specifier|static
-name|char
+name|gchar
 name|rcsid
 index|[]
 init|=
@@ -134,7 +134,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|struct|__anon28cb96350108
+DECL|struct|__anon2760821f0108
 typedef|typedef
 struct|struct
 block|{
@@ -153,7 +153,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28cb96350208
+DECL|struct|__anon2760821f0208
 typedef|typedef
 struct|struct
 block|{
@@ -168,7 +168,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28cb96350308
+DECL|struct|__anon2760821f0308
 typedef|typedef
 struct|struct
 block|{
@@ -2686,14 +2686,6 @@ name|hbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|hbbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|button
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|toggle
 decl_stmt|;
 name|GtkWidget
@@ -2891,7 +2883,7 @@ name|gtk_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Edge Detection Options"
+literal|"Parameter Settings"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2905,14 +2897,14 @@ argument_list|,
 name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|10
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2947,14 +2939,34 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_table_set_col_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_table_set_row_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -2967,7 +2979,7 @@ argument_list|,
 name|table
 argument_list|)
 expr_stmt|;
-comment|/*     Label, scale, entry for	evals.amount    */
+comment|/*  Label, scale, entry for evals.amount  */
 name|label
 operator|=
 name|gtk_label_new
@@ -2985,7 +2997,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
 literal|0.5
 argument_list|)
@@ -3115,7 +3127,7 @@ name|GTK_FILL
 argument_list|,
 literal|0
 argument_list|,
-literal|5
+literal|0
 argument_list|,
 literal|0
 argument_list|)
@@ -3143,7 +3155,7 @@ name|GTK_FILL
 argument_list|,
 literal|0
 argument_list|,
-literal|5
+literal|0
 argument_list|,
 literal|0
 argument_list|)
@@ -3194,9 +3206,14 @@ operator|.
 name|amount
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buffer
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"%0.1f"
 argument_list|,
@@ -3252,24 +3269,14 @@ argument_list|,
 name|entry
 argument_list|)
 expr_stmt|;
-comment|/*     Radio buttons WRAP, SMEAR, BLACK ...    */
+comment|/*  Radio buttons WRAP, SMEAR, BLACK  */
 name|hbox
 operator|=
 name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|5
-argument_list|)
-expr_stmt|;
-name|gtk_container_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|hbox
-argument_list|)
-argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
