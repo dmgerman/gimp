@@ -101,6 +101,33 @@ value|1024
 end_define
 
 begin_function
+name|gboolean
+DECL|function|uri_backend_init (GError ** error)
+name|uri_backend_init
+parameter_list|(
+name|GError
+modifier|*
+modifier|*
+name|error
+parameter_list|)
+block|{
+return|return
+name|TRUE
+return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|uri_backend_shutdown (void)
+name|uri_backend_shutdown
+parameter_list|(
+name|void
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
 specifier|const
 name|gchar
 modifier|*
