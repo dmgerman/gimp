@@ -36,7 +36,7 @@ DECL|macro|DEFAULT_QUALITY
 define|#
 directive|define
 name|DEFAULT_QUALITY
-value|85
+value|85.0
 end_define
 
 begin_define
@@ -122,7 +122,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3cd0a90108
+DECL|struct|__anon275cadfc0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -243,6 +243,9 @@ name|image_ID
 parameter_list|,
 name|gint32
 name|drawable_ID
+parameter_list|,
+name|gdouble
+name|quality
 parameter_list|,
 name|gchar
 modifier|*
