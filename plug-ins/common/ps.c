@@ -170,7 +170,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcd891c0108
+DECL|struct|__anon2ad73b310108
 block|{
 DECL|member|resolution
 name|guint
@@ -259,7 +259,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcd891c0208
+DECL|struct|__anon2ad73b310208
 block|{
 DECL|member|width
 DECL|member|height
@@ -851,7 +851,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcd891c0308
+DECL|struct|__anon2ad73b310308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1707,7 +1707,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcd891c0408
+DECL|struct|__anon2ad73b310408
 block|{
 DECL|member|eol
 name|long
@@ -3576,7 +3576,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open '%s':\n%s"
+literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
 name|filename
@@ -3654,8 +3654,10 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't interpret file"
+literal|"Could not interpret '%s'"
 argument_list|)
+argument_list|,
+name|filename
 argument_list|)
 expr_stmt|;
 return|return
@@ -4104,7 +4106,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Cannot operate on unknown image types"
+literal|"Cannot operate on unknown image types."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4135,7 +4137,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open '%s' for writing:\n%s"
+literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
 name|filename

@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dd359c0108
+DECL|struct|__anon29e08e6b0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -77,7 +77,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dd359c0208
+DECL|struct|__anon29e08e6b0208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -790,11 +790,12 @@ name|vertical
 operator|)
 condition|)
 block|{
-name|gimp_message
+name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"gauss_iir: you must specify either horizontal or vertical (or both)"
+literal|"You must specify either horizontal "
+literal|"or vertical (or both)"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1110,9 +1111,12 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_message
+name|g_message
 argument_list|(
-literal|"gauss_iir: cannot operate on indexed color images"
+name|_
+argument_list|(
+literal|"Cannot operate on indexed color images."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|status

@@ -131,7 +131,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ddbc240103
+DECL|enum|__anon2b3388c00103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -148,7 +148,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ddbc240208
+DECL|struct|__anon2b3388c00208
 block|{
 DECL|member|interlace
 name|gint
@@ -1765,7 +1765,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Couldn't simply reduce colors further.\nSaving as opaque."
+literal|"Couldn't simply reduce colors further. Saving as opaque."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2613,7 +2613,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"The GIF format only supports comments in\n"
+literal|"The GIF format only supports comments in "
 literal|"7bit ASCII encoding. No comment is saved."
 argument_list|)
 argument_list|)
@@ -2848,8 +2848,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Sorry, can't save RGB images as GIFs. "
-literal|"Convert to Indexed or Grayscale first."
+literal|"Cannot save RGB color images. Convert to "
+literal|"indexed color or grayscale first."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2975,7 +2975,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open '%s' for writing:\n%s"
+literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
 name|filename

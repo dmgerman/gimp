@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3c85280108
+DECL|struct|__anon2b9682dc0108
 block|{
 DECL|member|l_header_size
 name|L_CARD32
@@ -254,7 +254,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3c85280208
+DECL|struct|__anon2b9682dc0208
 block|{
 DECL|member|l_pixel
 name|L_CARD32
@@ -312,7 +312,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3c85280308
+DECL|struct|__anon2b9682dc0308
 block|{
 DECL|member|pixel_val
 name|L_CARD32
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3c85280408
+DECL|struct|__anon2b9682dc0408
 block|{
 DECL|member|npixel
 name|gint
@@ -1504,7 +1504,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open '%s':\n%s"
+literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
 name|filename
@@ -1541,8 +1541,10 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open file as XWD file"
+literal|"Could not read XWD header from '%s'"
 argument_list|)
+argument_list|,
+name|filename
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -1551,10 +1553,8 @@ name|ifp
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 operator|-
 literal|1
-operator|)
 return|;
 block|}
 ifdef|#
@@ -2126,7 +2126,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"XWD save cannot handle images with alpha channels"
+literal|"Cannot save images with alpha channels."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2154,7 +2154,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"cannot operate on unknown image types"
+literal|"Cannot operate on unknown image types."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2185,7 +2185,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open '%s' for writing:\n%s"
+literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
 name|filename

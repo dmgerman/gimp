@@ -131,7 +131,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bc05fff0103
+DECL|enum|__anon2bb16b780103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -319,7 +319,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc05fff0208
+DECL|struct|__anon2bb16b780208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -568,7 +568,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bc05fff0308
+DECL|struct|__anon2bb16b780308
 block|{
 DECL|member|signature
 name|gchar
@@ -7307,7 +7307,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open '%s':\n%s"
+literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
 name|name

@@ -957,7 +957,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Can't open '%s'"
+literal|"Could not open '%s' for reading."
 argument_list|,
 name|filename
 argument_list|)
@@ -1085,7 +1085,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Can't allocate new image"
+literal|"Could not allocate new image"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1758,7 +1758,10 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
-literal|"Image must be of type RGB or GRAY"
+name|_
+argument_list|(
+literal|"Cannot operate on indexed color images."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1804,7 +1807,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open '%s' for writing"
+literal|"Could not open '%s' for writing."
 argument_list|)
 argument_list|,
 name|filename

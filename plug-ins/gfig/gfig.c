@@ -902,7 +902,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0047350108
+DECL|struct|__anon29934fec0108
 block|{
 DECL|member|gridspacing
 name|void
@@ -3099,11 +3099,19 @@ operator|!
 name|fp
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
-literal|"Error opening: %s"
+name|_
+argument_list|(
+literal|"Could not open '%s' for reading: %s"
+argument_list|)
 argument_list|,
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -4604,7 +4612,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Error opening file '%s':\n%s"
+literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
 name|savename
@@ -4867,7 +4875,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Save: Can't save to a folder."
+name|_
+argument_list|(
+literal|"Cannot save to a folder."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -12754,18 +12765,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_help_set_help_data
-argument_list|(
-name|toggle
-argument_list|,
-name|_
-argument_list|(
-literal|"Show grid"
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|toggle
@@ -12820,18 +12819,6 @@ operator|.
 name|opts
 operator|.
 name|snap2grid
-argument_list|)
-expr_stmt|;
-name|gimp_help_set_help_data
-argument_list|(
-name|toggle
-argument_list|,
-name|_
-argument_list|(
-literal|"Snap to grid"
-argument_list|)
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -14472,7 +14459,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"%d unsaved Gfig objects.\n"
+literal|"%d unsaved Gfig objects. "
 literal|"Continue with exiting?"
 argument_list|)
 argument_list|,
@@ -17174,7 +17161,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Are you sure you want to delete\n"
+literal|"Are you sure you want to delete "
 literal|"\"%s\" from the list and from disk?"
 argument_list|)
 argument_list|,

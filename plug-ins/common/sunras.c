@@ -143,7 +143,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dd11f30108
+DECL|struct|__anon2ab447600108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -232,7 +232,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dd11f30208
+DECL|struct|__anon2ab447600208
 block|{
 DECL|member|val
 name|gint
@@ -827,7 +827,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dd11f30308
+DECL|struct|__anon2ab447600308
 block|{
 DECL|member|rle
 name|gboolean
@@ -1560,7 +1560,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open '%s':\n%s"
+literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
 name|filename
@@ -1602,8 +1602,10 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open file as SUN-raster-file"
+literal|"Could not open '%s' as SUN-raster-file"
 argument_list|)
+argument_list|,
+name|filename
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -1779,8 +1781,10 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't read color entries"
+literal|"Could not read color entries from '%s'"
 argument_list|)
+argument_list|,
+name|filename
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -2105,7 +2109,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open '%s' for writing:\n%s"
+literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
 name|filename

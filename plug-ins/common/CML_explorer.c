@@ -214,7 +214,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29acfedc0108
+DECL|struct|__anon2bbc10a30108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -241,7 +241,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29acfedc0203
+DECL|enum|__anon2bbc10a30203
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -364,7 +364,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29acfedc0303
+DECL|enum|__anon2bbc10a30303
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -503,7 +503,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29acfedc0403
+DECL|enum|__anon2bbc10a30403
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -602,7 +602,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29acfedc0503
+DECL|enum|__anon2bbc10a30503
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -694,7 +694,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29acfedc0608
+DECL|struct|__anon2bbc10a30608
 block|{
 DECL|member|function
 name|gint
@@ -767,7 +767,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29acfedc0708
+DECL|struct|__anon2bbc10a30708
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1539,7 +1539,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29acfedc0808
+DECL|struct|__anon2bbc10a30808
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -11914,7 +11914,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open '%s' for writing:\n%s"
+literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
 name|filename
@@ -12353,7 +12353,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Parameters were Saved to\n'%s'"
+literal|"Parameters were Saved to '%s'"
 argument_list|)
 argument_list|,
 name|filename
@@ -13085,7 +13085,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open '%s':\n%s"
+literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
 name|filename
@@ -13216,7 +13216,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Warning: '%s'\nis an old format file."
+literal|"Warning: '%s' is an old format file."
 argument_list|)
 argument_list|,
 name|filename
@@ -13232,7 +13232,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Warning: '%s'\nis a parameter file for newer CML_explorer than me."
+literal|"Warning: '%s' is a parameter file for newer "
+literal|"CML_explorer than me."
 argument_list|)
 argument_list|,
 name|filename

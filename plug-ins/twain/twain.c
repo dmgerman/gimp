@@ -1,10 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*    * TWAIN Plug-in  * Copyright (C) 1999 Craig Setera  * Craig Setera<setera@home.com>  * 03/31/1999  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  *  * Based on (at least) the following plug-ins:  * Screenshot  * GIF  * Randomize  *  * Any suggestions, bug-reports or patches are welcome.  *   * This plug-in interfaces to the TWAIN support library in order  * to capture images from TWAIN devices directly into GIMP images.  * The plug-in is capable of acquiring the following type of  * images:  * - B/W (1 bit images translated to grayscale B/W)  * - Grayscale up to 16 bits per pixel  * - RGB up to 16 bits per sample (24, 30, 36, etc.)  * - Paletted images (both Gray and RGB)  *  * Prerequisites:  *  This plug-in will not compile on anything other than a Win32  *  platform.  Although the TWAIN documentation implies that there  *  is TWAIN support available on Macintosh, I neither have a   *  Macintosh nor the interest in porting this.  If anyone else  *  has an interest, consult www.twain.org for more information on  *  interfacing to TWAIN.  *  * Known problems:  * - Multiple image transfers will hang the plug-in.  The current  *   configuration compiles with a maximum of single image transfers.  */
+comment|/*  * TWAIN Plug-in  * Copyright (C) 1999 Craig Setera  * Craig Setera<setera@home.com>  * 03/31/1999  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  *  * Based on (at least) the following plug-ins:  * Screenshot  * GIF  * Randomize  *  * Any suggestions, bug-reports or patches are welcome.  *  * This plug-in interfaces to the TWAIN support library in order  * to capture images from TWAIN devices directly into GIMP images.  * The plug-in is capable of acquiring the following type of  * images:  * - B/W (1 bit images translated to grayscale B/W)  * - Grayscale up to 16 bits per pixel  * - RGB up to 16 bits per sample (24, 30, 36, etc.)  * - Paletted images (both Gray and RGB)  *  * Prerequisites:  *  This plug-in will not compile on anything other than a Win32  *  platform.  Although the TWAIN documentation implies that there  *  is TWAIN support available on Macintosh, I neither have a  *  Macintosh nor the interest in porting this.  If anyone else  *  has an interest, consult www.twain.org for more information on  *  interfacing to TWAIN.  *  * Known problems:  * - Multiple image transfers will hang the plug-in.  The current  *   configuration compiles with a maximum of single image transfers.  */
 end_comment
 
 begin_comment
-comment|/*   * Revision history  *  (02/07/99)  v0.1   First working version (internal)  *  (02/09/99)  v0.2   First release to anyone other than myself  *  (02/15/99)  v0.3   Added image dump and read support for debugging  *  (03/31/99)  v0.5   Added support for multi-byte samples and paletted   *                     images.  */
+comment|/*  * Revision history  *  (02/07/99)  v0.1   First working version (internal)  *  (02/09/99)  v0.2   First release to anyone other than myself  *  (02/15/99)  v0.3   Added image dump and read support for debugging  *  (03/31/99)  v0.5   Added support for multi-byte samples and paletted  *                     images.  */
 end_comment
 
 begin_include
@@ -234,7 +234,7 @@ value|(WM_USER + 100)
 end_define
 
 begin_comment
-comment|/*  * Definition of the run states   */
+comment|/*  * Definition of the run states  */
 end_comment
 
 begin_define
@@ -503,7 +503,7 @@ comment|/* Currently unused... Eventually may be used  * to track dialog data.  
 end_comment
 
 begin_typedef
-DECL|struct|__anon28d8ce160108
+DECL|struct|__anon297f3fb60108
 typedef|typedef
 struct|struct
 block|{
@@ -736,7 +736,7 @@ name|int
 name|nCmdShow
 parameter_list|)
 block|{
-comment|/*     * Normally, we would do all of the Windows-ish set up of    * the window classes and stuff here in WinMain.  But,    * the only time we really need the window and message    * queues is during the plug-in run.  So, all of that will    * be done during run().  This avoids all of the Windows    * setup stuff for the query().  Stash the instance handle now    * so it is available from the run() procedure.    */
+comment|/*    * Normally, we would do all of the Windows-ish set up of    * the window classes and stuff here in WinMain.  But,    * the only time we really need the window and message    * queues is during the plug-in run.  So, all of that will    * be done during run().  This avoids all of the Windows    * setup stuff for the query().  Stash the instance handle now    * so it is available from the run() procedure.    */
 name|hInst
 operator|=
 name|hInstance
@@ -1130,7 +1130,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * InitInstance  *   * Create the main window for the application.  Used to  * interface with the TWAIN datasource.  */
+comment|/*  * InitInstance  *  * Create the main window for the application.  Used to  * interface with the TWAIN datasource.  */
 end_comment
 
 begin_function
@@ -1249,7 +1249,7 @@ operator|(
 name|FALSE
 operator|)
 return|;
-comment|/*     * Call the main message processing loop...    * This call will not return until the application    * exits.    */
+comment|/*    * Call the main message processing loop...    * This call will not return until the application    * exits.    */
 return|return
 name|twainMessageLoop
 argument_list|(
@@ -1544,7 +1544,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Toolbox>/File/Acquire/TWAIN..."
+literal|"<Toolbox>/File/Acquire/_TWAIN..."
 argument_list|)
 argument_list|,
 name|NULL
@@ -1614,7 +1614,7 @@ block|{
 name|GimpRunMode
 name|run_mode
 decl_stmt|;
-comment|/* Initialize the return values    * Always return at least the status to the caller.     */
+comment|/* Initialize the return values    * Always return at least the status to the caller.    */
 name|values
 index|[
 literal|0
@@ -1867,7 +1867,7 @@ comment|/* Data used to carry data between each of  * the callback function call
 end_comment
 
 begin_typedef
-DECL|struct|__anon28d8ce160208
+DECL|struct|__anon297f3fb60208
 typedef|typedef
 struct|struct
 block|{
@@ -1929,7 +1929,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Transferring TWAIN data"
+literal|"Transferring TWAIN data..."
 argument_list|)
 argument_list|)
 expr_stmt|;

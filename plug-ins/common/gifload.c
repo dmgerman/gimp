@@ -28,7 +28,7 @@ comment|/* Also...  * 'This filter uses code taken from the "giftopnm" and "ppmt
 end_comment
 
 begin_comment
-comment|/* Additionally...  *  "The Graphics Interchange Format(c) is the Copyright property of  *  CompuServe Incorporated.  GIF(sm) is a Service Mark property of  *  CompuServe Incorporated."   */
+comment|/* Additionally...  *  "The Graphics Interchange Format(c) is the Copyright property of  *  CompuServe Incorporated.  GIF(sm) is a Service Mark property of  *  CompuServe Incorporated."  */
 end_comment
 
 begin_comment
@@ -716,7 +716,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27c9aa0e0108
+DECL|struct|__anon2ae210b70108
 block|{
 DECL|member|Width
 name|unsigned
@@ -766,7 +766,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27c9aa0e0208
+DECL|struct|__anon2ae210b70208
 block|{
 DECL|member|transparent
 name|int
@@ -1030,7 +1030,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Can't open '%s':\n%s"
+literal|"Could not open '%s' for reading: %s"
 argument_list|,
 name|filename
 argument_list|,
@@ -4241,7 +4241,8 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Ouchie!  Can't handle non-alpha RGB frames.\n     Please mail the plugin author.  (adam@gimp.org)"
+literal|"Ouchie! Can't handle non-alpha RGB frames. "
+literal|"Please mail the plugin author.  (adam@gimp.org)"
 argument_list|)
 expr_stmt|;
 name|gimp_quit

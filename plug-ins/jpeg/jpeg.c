@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29489ec90108
+DECL|struct|__anon2933e4930108
 block|{
 DECL|member|quality
 name|gdouble
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29489ec90208
+DECL|struct|__anon2933e4930208
 block|{
 DECL|member|cinfo
 name|struct
@@ -2774,7 +2774,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open '%s':\n%s"
+literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
 name|filename
@@ -4737,7 +4737,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open '%s' for writing:\n%s"
+literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
 name|filename

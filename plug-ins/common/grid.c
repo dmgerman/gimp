@@ -255,7 +255,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f809f20108
+DECL|struct|__anon291196fa0108
 block|{
 DECL|member|hwidth
 name|gint
@@ -3583,7 +3583,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Width: "
+literal|"Width:"
 argument_list|)
 argument_list|,
 literal|1
@@ -3973,7 +3973,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Spacing: "
+literal|"Spacing:"
 argument_list|)
 argument_list|,
 literal|1
@@ -4377,7 +4377,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Offset: "
+literal|"Offset:"
 argument_list|)
 argument_list|,
 literal|1

@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299dac5b0108
+DECL|struct|__anon2761285d0108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -728,7 +728,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open '%s' for writing:\n%s"
+literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
 name|filename

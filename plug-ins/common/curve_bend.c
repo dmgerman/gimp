@@ -738,7 +738,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9493660108
+DECL|struct|__anon27eb71680108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -792,7 +792,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9493660208
+DECL|struct|__anon27eb71680208
 block|{
 DECL|member|y
 name|gint32
@@ -3504,7 +3504,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Failed to write file '%s':\n%s"
+literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
 name|filename
@@ -3816,7 +3816,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Failed to open file '%s':\n%s"
+literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
 name|filename

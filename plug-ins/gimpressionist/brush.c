@@ -1243,7 +1243,7 @@ name|gtk_file_selection_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Save brush"
+literal|"Save Brush"
 argument_list|)
 argument_list|)
 expr_stmt|;

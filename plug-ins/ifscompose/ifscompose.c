@@ -167,7 +167,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29db08b50103
+DECL|enum|__anon2a4160030103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -187,7 +187,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29db08b50203
+DECL|enum|__anon2a4160030203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -203,7 +203,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29db08b50308
+DECL|struct|__anon2a4160030308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -225,7 +225,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon29db08b5040a
+DECL|union|__anon2a416003040a
 block|{
 DECL|member|d
 name|gdouble
@@ -254,7 +254,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29db08b50508
+DECL|struct|__anon2a4160030508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -284,7 +284,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29db08b50608
+DECL|struct|__anon2a4160030608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -319,7 +319,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29db08b50708
+DECL|struct|__anon2a4160030708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -355,7 +355,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29db08b50808
+DECL|struct|__anon2a4160030808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -422,7 +422,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29db08b50908
+DECL|struct|__anon2a4160030908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -624,7 +624,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29db08b50a08
+DECL|struct|__anon2a4160030a08
 block|{
 DECL|member|run
 name|gboolean
@@ -13756,9 +13756,9 @@ argument_list|,
 literal|"ifscompose-message"
 argument_list|)
 expr_stmt|;
-name|gimp_dialog_run
+name|gtk_dialog_run
 argument_list|(
-name|GIMP_DIALOG
+name|GTK_DIALOG
 argument_list|(
 name|dlg
 argument_list|)
@@ -13866,11 +13866,15 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Cannot save file '%s'.\n"
-literal|"Check the path and permissions."
+literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|ifscompose_message_dialog

@@ -90,7 +90,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2907bdc70108
+DECL|struct|__anon2c7e2a830108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -876,8 +876,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open '%s':\n"
-literal|"%s"
+literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
 name|filename
@@ -888,7 +887,10 @@ name|error
 operator|->
 name|message
 else|:
-literal|"unknown reason"
+name|_
+argument_list|(
+literal|"Unknown reason"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -2564,8 +2566,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open '%s':\n"
-literal|"%s"
+literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
 name|filename
@@ -2576,7 +2577,10 @@ name|error
 operator|->
 name|message
 else|:
-literal|"unknown reason"
+name|_
+argument_list|(
+literal|"Unknown reason"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274e86e50108
+DECL|struct|__anon2a28da550108
 block|{
 DECL|member|compression
 name|gint
@@ -77,7 +77,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274e86e50208
+DECL|struct|__anon2a28da550208
 block|{
 DECL|member|ID
 name|gint32
@@ -1539,7 +1539,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open '%s':\n%s"
+literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
 name|filename
@@ -1647,7 +1647,9 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Can't get image width"
+literal|"Could not get image width from '%s'"
+argument_list|,
+name|filename
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -1670,7 +1672,9 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Can't get image length"
+literal|"Could not get image length from '%s'"
+argument_list|,
+name|filename
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -1693,7 +1697,9 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Can't get photometric\nAssuming min-is-black"
+literal|"Could not get photometric from '%s'. Assuming min-is-black"
+argument_list|,
+name|filename
 argument_list|)
 expr_stmt|;
 comment|/* old AppleScan software misses out the photometric tag (and        * incidentally assumes min-is-white, but xv assumes min-is-black,        * so we follow xv's lead.  It's not much hardship to invert the        * image later). */
@@ -1887,7 +1893,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Can't create a new image"
+literal|"Could not create a new image"
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -2270,7 +2276,9 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Can't get colormaps"
+literal|"Could not get colormaps from '%s'"
+argument_list|,
+name|filename
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -6408,7 +6416,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open '%s' for writing:\n%s"
+literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
 name|filename

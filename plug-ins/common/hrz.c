@@ -176,7 +176,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3575e10108
+DECL|struct|__anon27ecc7c80108
 block|{
 DECL|member|run
 name|gboolean
@@ -1172,7 +1172,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open '%s':\n%s"
+literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
 name|filename
@@ -1685,7 +1685,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Can't open '%s' for writing:\n%s"
+literal|"Could not open '%s' for writing: %s"
 argument_list|,
 name|filename
 argument_list|,

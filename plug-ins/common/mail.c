@@ -382,7 +382,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27da57fb0108
+DECL|struct|__anon28820d660108
 block|{
 DECL|member|receipt
 name|gchar
@@ -1740,7 +1740,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Recipient:"
+literal|"_Recipient:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -1826,7 +1826,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Sender:"
+literal|"_Sender:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -1912,7 +1912,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Subject:"
+literal|"S_ubject:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -1998,7 +1998,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"Comment:"
+literal|"Comm_ent:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -2084,7 +2084,7 @@ literal|4
 argument_list|,
 name|_
 argument_list|(
-literal|"Filename:"
+literal|"_Filename:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -2125,6 +2125,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gtk_scrolled_window_set_shadow_type
+argument_list|(
+name|GTK_SCROLLED_WINDOW
+argument_list|(
+name|scrolled_window
+argument_list|)
+argument_list|,
+name|GTK_SHADOW_IN
+argument_list|)
+expr_stmt|;
 name|gtk_scrolled_window_set_policy
 argument_list|(
 name|GTK_SCROLLED_WINDOW
@@ -2135,16 +2145,6 @@ argument_list|,
 name|GTK_POLICY_AUTOMATIC
 argument_list|,
 name|GTK_POLICY_AUTOMATIC
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|scrolled_window
-argument_list|)
-argument_list|,
-literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2323,7 +2323,7 @@ name|encapsulation
 argument_list|,
 name|_
 argument_list|(
-literal|"Uuencode"
+literal|"_Uuencode"
 argument_list|)
 argument_list|,
 name|ENCAPSULATION_UUENCODE
@@ -2332,7 +2332,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"MIME"
+literal|"_MIME"
 argument_list|)
 argument_list|,
 name|ENCAPSULATION_MIME

@@ -548,7 +548,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0408750103
+DECL|enum|__anon29cff8be0103
 block|{
 DECL|enumerator|DOMAIN_START
 name|DOMAIN_START
@@ -570,7 +570,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0408750208
+DECL|struct|__anon29cff8be0208
 block|{
 DECL|member|filename
 specifier|const
@@ -907,8 +907,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-literal|"Could not open gimp-help.xml mapping file\n"
-literal|"from \"%s\""
+literal|"Could not open gimp-help.xml mapping file from '%s'"
 argument_list|,
 name|domain
 operator|->

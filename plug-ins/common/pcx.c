@@ -1049,7 +1049,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27715e890108
+DECL|struct|__anon295173520108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1194,7 +1194,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open '%s':\n%s"
+literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
 name|filename
@@ -1253,7 +1253,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't read header from\n'%s'"
+literal|"Could not read header from '%s'"
 argument_list|)
 argument_list|,
 name|filename
@@ -1277,7 +1277,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"'%s'\nis not a PCX file"
+literal|"'%s' is not a PCX file"
 argument_list|)
 argument_list|,
 name|filename
@@ -2698,7 +2698,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't save layers with alpha.\nFlatten your image"
+literal|"Cannot save images with alpha channel."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2726,7 +2726,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open '%s' for writing:\n%s"
+literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
 name|filename

@@ -169,7 +169,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b289fb70108
+DECL|struct|__anon2b5458bc0108
 block|{
 DECL|member|description
 name|gchar
@@ -1073,7 +1073,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open '%s':\n%s"
+literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
 name|filename
@@ -1386,7 +1386,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Error in GIMP brush file\n'%s'"
+literal|"Error in GIMP brush file '%s'"
 argument_list|)
 argument_list|,
 name|filename
@@ -1802,7 +1802,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2b289fb7020a
+DECL|union|__anon2b5458bc020a
 block|{
 DECL|member|u
 name|guint16
@@ -2199,7 +2199,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open '%s' for writing:\n%s"
+literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
 name|filename
@@ -2220,7 +2220,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Saving %s:"
+literal|"Saving '%s'..."
 argument_list|)
 argument_list|,
 name|filename

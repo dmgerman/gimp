@@ -185,7 +185,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a0f8c800108
+DECL|struct|__anon2b2b7b9c0108
 block|{
 DECL|member|spacing
 name|guint
@@ -232,7 +232,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0f8c800208
+DECL|struct|__anon2b2b7b9c0208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -2670,7 +2670,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open '%s':\n%s"
+literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
 name|filename
@@ -5916,7 +5916,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open '%s' for writing:\n%s"
+literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
 name|filename

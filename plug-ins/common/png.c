@@ -102,7 +102,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b43f16a0108
+DECL|struct|__anon2a19ace30108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -1520,7 +1520,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"'%s':\nPNG error. File corrupted?"
+literal|"Error while reading '%s'. File corrupted?"
 argument_list|)
 argument_list|,
 name|filename
@@ -1557,7 +1557,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open '%s':\n%s"
+literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
 name|filename
@@ -1910,7 +1910,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"'%s':\nUnknown PNG color model"
+literal|"Unknown color model in PNG file '%s'."
 argument_list|)
 argument_list|,
 name|filename
@@ -1947,7 +1947,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"'%s'\nCan't allocate new image"
+literal|"Could not create new image for '%s'"
 argument_list|,
 name|filename
 argument_list|)
@@ -3410,7 +3410,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"'%s':\nPNG error. Couldn't save image"
+literal|"Error while saving '%s'. Could not save image."
 argument_list|)
 argument_list|,
 name|filename
@@ -3456,7 +3456,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open '%s' for writing:\n%s"
+literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
 name|filename
@@ -3710,9 +3710,7 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
-literal|"'%s':\nImage type can't be saved as PNG"
-argument_list|,
-name|filename
+literal|"Image type can't be saved as PNG"
 argument_list|)
 expr_stmt|;
 return|return
@@ -4852,7 +4850,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Couldn't losslessly save transparency,\n"
+literal|"Couldn't losslessly save transparency, "
 literal|"saving opacity instead."
 argument_list|)
 argument_list|)

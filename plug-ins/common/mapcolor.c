@@ -133,7 +133,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a32a26a0108
+DECL|struct|__anon2c6bda210108
 block|{
 DECL|member|colors
 name|GimpRGB
@@ -220,7 +220,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a32a26a0208
+DECL|struct|__anon2c6bda210208
 block|{
 DECL|member|width
 DECL|member|height
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a32a26a0308
+DECL|struct|__anon2c6bda210308
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -1676,7 +1676,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Color Mapping / Adjust FG/BG:\nCannot operate on gray/indexed images"
+literal|"Cannot operate on gray or indexed color images."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3320,7 +3320,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Color Mapping / Adjust FG/BG:\nCannot operate on gray/indexed images"
+literal|"Cannot operate on gray or indexed color images."
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -1016,7 +1016,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"spawn failed: %s"
+literal|"spawnlp() failed: %s"
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1342,7 +1342,7 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
-literal|"exec failed: gzip: %s"
+literal|"execlp(\"gzip -cfn\") failed: %s"
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1401,7 +1401,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"gzip exited abnormally on file\n'%s'"
+literal|"gzip exited abnormally on file '%s'"
 argument_list|,
 name|tmpname
 argument_list|)
@@ -1695,8 +1695,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"No sensible extension, "
-literal|"attempting to load with file magic."
+literal|"No sensible extension, attempting to load "
+literal|"with file magic."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1896,7 +1896,7 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
-literal|"exec failed: gunzip: %s"
+literal|"execlp(\"gzip -cfd\") failed: %s"
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1956,7 +1956,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"gzip exited abnormally on file\n'%s'"
+literal|"gzip exited abnormally on file '%s'"
 argument_list|,
 name|filename
 argument_list|)

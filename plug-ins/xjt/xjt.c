@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -237,7 +243,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9ddfc80103
+DECL|enum|__anon2c0598520103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -437,7 +443,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9ddfc80203
+DECL|enum|__anon2c0598520203
 block|{
 DECL|enumerator|PTYP_NOT_SUPPORTED
 name|PTYP_NOT_SUPPORTED
@@ -497,7 +503,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9ddfc80303
+DECL|enum|__anon2c0598520303
 block|{
 DECL|enumerator|XJT_IMAGE_PARASITE
 name|XJT_IMAGE_PARASITE
@@ -527,7 +533,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9ddfc80403
+DECL|enum|__anon2c0598520403
 block|{
 DECL|enumerator|XJT_RGB
 name|XJT_RGB
@@ -549,7 +555,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9ddfc80503
+DECL|enum|__anon2c0598520503
 block|{
 DECL|enumerator|XJT_PATHTYPE_UNDEF
 name|XJT_PATHTYPE_UNDEF
@@ -569,7 +575,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9ddfc80603
+DECL|enum|__anon2c0598520603
 block|{
 DECL|enumerator|XJT_UNIT_PIXEL
 name|XJT_UNIT_PIXEL
@@ -604,7 +610,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9ddfc80703
+DECL|enum|__anon2c0598520703
 block|{
 DECL|enumerator|XJT_NORMAL_MODE
 name|XJT_NORMAL_MODE
@@ -729,7 +735,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9ddfc80808
+DECL|struct|__anon2c0598520808
 block|{
 DECL|member|prop_id
 name|t_proptype
@@ -765,7 +771,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9ddfc80908
+DECL|struct|__anon2c0598520908
 block|{
 DECL|member|int_val1
 name|gint32
@@ -814,7 +820,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9ddfc80a08
+DECL|struct|__anon2c0598520a08
 block|{
 DECL|member|parasite_type
 name|t_parasitetype
@@ -851,7 +857,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9ddfc80b08
+DECL|struct|__anon2c0598520b08
 block|{
 DECL|member|path_type
 name|gint32
@@ -901,7 +907,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9ddfc80c08
+DECL|struct|__anon2c0598520c08
 block|{
 DECL|member|active_channel
 name|gint
@@ -975,7 +981,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9ddfc80d08
+DECL|struct|__anon2c0598520d08
 block|{
 DECL|member|active_layer
 name|gint
@@ -1060,7 +1066,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9ddfc80e08
+DECL|struct|__anon2c0598520e08
 block|{
 DECL|member|position
 name|gint32
@@ -1084,7 +1090,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9ddfc80f08
+DECL|struct|__anon2c0598520f08
 block|{
 DECL|member|version
 name|gchar
@@ -5454,10 +5460,15 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open (write): %s"
+literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
 name|l_parasite_file
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -7406,7 +7417,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"xjt: cannot operate on indexed color images"
+literal|"Cannot operate on indexed color images."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7420,7 +7431,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"xjt: cannot operate on unknown image types"
+literal|"Cannot operate on unknown image types."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7498,10 +7509,15 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't create working dir: %s"
+literal|"Could not create working folder '%s': %s"
 argument_list|)
 argument_list|,
 name|l_dirname
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 goto|goto
@@ -7529,10 +7545,15 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open: %s"
+literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
 name|l_prop_file
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 goto|goto
@@ -11186,10 +11207,15 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open (read): %s"
+literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
 name|l_parasite_file
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -11219,10 +11245,15 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open (read): %s"
+literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
 name|l_parasite_file
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -13689,7 +13720,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Error: Can't read XJT propertyfile %s"
+literal|"Error: Could not read XJT property file '%s'."
 argument_list|)
 argument_list|,
 name|prop_filename
@@ -13710,7 +13741,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Error: XJT propertyfile %s is empty"
+literal|"Error: XJT property file '%s' is empty."
 argument_list|)
 argument_list|,
 name|prop_filename
@@ -14206,10 +14237,15 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't create working dir: %s"
+literal|"Could not create working folder '%s': %s"
 argument_list|)
 argument_list|,
 name|l_dirname
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 goto|goto

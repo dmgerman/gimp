@@ -3333,7 +3333,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Are you sure you want to delete\n"
+literal|"Are you sure you want to delete "
 literal|"\"%s\" from the list and from disk?"
 argument_list|)
 argument_list|,

@@ -91,7 +91,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a007f1a0103
+DECL|enum|__anon29687ac30103
 block|{
 DECL|enumerator|EXTEND
 name|EXTEND
@@ -302,7 +302,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a007f1a0208
+DECL|struct|__anon29687ac30208
 block|{
 DECL|member|matrix
 name|gfloat
@@ -459,7 +459,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2a007f1a0308
+DECL|struct|__anon29687ac30308
 block|{
 DECL|member|matrix
 name|GtkWidget
@@ -775,7 +775,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Convolution Matrix does not work\non layers smaller than 3 pixels."
+literal|"Convolution Matrix does not work on layers "
+literal|"smaller than 3 pixels."
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -518,7 +518,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Cannot operate on unknown image types or alpha images"
+literal|"Cannot save images with alpha channel."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -701,13 +701,12 @@ expr_stmt|;
 block|}
 break|break;
 default|default:
-name|fprintf
+name|g_message
 argument_list|(
-name|stderr
-argument_list|,
-literal|"%s: This should not happen\n"
-argument_list|,
-name|prog_name
+name|_
+argument_list|(
+literal|"Cannot operate on unknown image types."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -764,7 +763,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open '%s' for writing:\n%s"
+literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
 name|filename

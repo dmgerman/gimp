@@ -4040,7 +4040,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Failed to save PPM file '%s':\n%s"
+literal|"Failed to save PPM file '%s': %s"
 argument_list|)
 argument_list|,
 name|fn

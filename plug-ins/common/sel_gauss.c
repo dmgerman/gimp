@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29920a820108
+DECL|struct|__anon2c18a7730108
 block|{
 DECL|member|radius
 name|gdouble
@@ -604,7 +604,7 @@ name|gimp_message
 argument_list|(
 name|_
 argument_list|(
-literal|"sel_gauss: Cannot operate on indexed color images"
+literal|"Cannot operate on indexed color images."
 argument_list|)
 argument_list|)
 expr_stmt|;

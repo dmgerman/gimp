@@ -355,7 +355,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2acf28700108
+DECL|struct|__anon28f040ed0108
 typedef|typedef
 struct|struct
 block|{
@@ -402,7 +402,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2acf28700208
+DECL|struct|__anon28f040ed0208
 typedef|typedef
 struct|struct
 block|{
@@ -3941,7 +3941,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Toolbox>/File/Acquire/Screen Shot..."
+literal|"<Toolbox>/File/Acquire/_Screen Shot..."
 argument_list|)
 argument_list|,
 name|NULL
@@ -4396,7 +4396,7 @@ operator|!
 name|capBytes
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 name|_
 argument_list|(
