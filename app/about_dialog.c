@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphelp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpfeatures.h"
 end_include
 
@@ -714,6 +720,15 @@ name|about_dialog
 argument_list|)
 argument_list|,
 name|GTK_WIN_POS_CENTER
+argument_list|)
+expr_stmt|;
+name|gimp_help_connect_help_accel
+argument_list|(
+name|about_dialog
+argument_list|,
+name|gimp_standard_help_func
+argument_list|,
+literal|"dialogs/about.html"
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
