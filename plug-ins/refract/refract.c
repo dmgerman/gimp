@@ -110,11 +110,15 @@ end_include
 begin_include
 include|#
 directive|include
-file|"../megawidget.h"
+file|"../megawidget/megawidget.h"
 end_include
 
 begin_comment
 comment|/* For entry/scale pairs. */
+end_comment
+
+begin_comment
+comment|/* changed by adrian likins to reflect the new location of megawidget */
 end_comment
 
 begin_ifndef
@@ -150,7 +154,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|struct|__anon2ba53ab00108
+DECL|struct|__anon2949d3ae0108
 typedef|typedef
 struct|struct
 block|{
@@ -206,7 +210,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ba53ab00208
+DECL|struct|__anon2949d3ae0208
 typedef|typedef
 struct|struct
 block|{
@@ -225,7 +229,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ba53ab00308
+DECL|struct|__anon2949d3ae0308
 typedef|typedef
 struct|struct
 block|{
@@ -240,7 +244,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ba53ab00408
+DECL|struct|__anon2949d3ae0408
 typedef|typedef
 struct|struct
 block|{
