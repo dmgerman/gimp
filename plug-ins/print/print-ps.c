@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   Print plug-in Adobe PostScript driver for the GIMP.  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   ps_parameters()     - Return the parameter values for the given  *                            parameter.  *   ps_media_size()     - Return the size of the page.  *   ps_imageable_area() - Return the imageable area of the page.  *   ps_print()          - Print an image to a PostScript printer.  *   ps_hex()            - Print binary data as a series of hexadecimal numbers.  *   ps_ascii85()        - Print binary data as a series of base-85 numbers.  *  * Revision History:  *  *   $Log$  *   Revision 1.8  1998/05/14 00:32:49  yosh  *   updated print plugin  *  *   stubbed out nonworking frac code  *  *   -Yosh  *  *   Revision 1.12  1998/05/11  23:56:56  mike  *   Removed unused outptr variable.  *  *   Revision 1.11  1998/05/08  19:20:50  mike  *   Updated to support PPD files, media size, imageable area, and parameter  *   functions.  *   Added support for scaling modes - scale by percent or scale by PPI.  *   Updated Ascii85 output - some Level 2 printers are buggy and won't accept  *   whitespace in the data stream.  *   Now use image dictionaries with Level 2 printers - allows interpolation  *   flag to be sent (not all printers use this flag).  *  *   Revision 1.10  1998/01/22  15:38:46  mike  *   Updated copyright notice.  *   Whoops - wasn't encoding correctly for portrait output to level 2 printers!  *  *   Revision 1.9  1998/01/21  21:33:47  mike  *   Added support for Level 2 filters; images are now sent in hex or  *   base-85 ASCII as necessary (faster printing).  *  *   Revision 1.8  1997/11/12  15:57:48  mike  *   Minor changes for clean compiles under Digital UNIX.  *  *   Revision 1.8  1997/11/12  15:57:48  mike  *   Minor changes for clean compiles under Digital UNIX.  *  *   Revision 1.7  1997/07/30  20:33:05  mike  *   Final changes for 1.1 release.  *  *   Revision 1.7  1997/07/30  20:33:05  mike  *   Final changes for 1.1 release.  *  *   Revision 1.6  1997/07/30  18:47:39  mike  *   Added scaling, orientation, and offset options.  *  *   Revision 1.5  1997/07/26  18:38:55  mike  *   Bug - was using asctime instead of ctime...  D'oh!  *  *   Revision 1.4  1997/07/26  18:19:54  mike  *   Fixed positioning/scaling bug.  *  *   Revision 1.3  1997/07/03  13:26:46  mike  *   Updated documentation for 1.0 release.  *  *   Revision 1.2  1997/07/02  18:49:36  mike  *   Forgot to free memory buffers...  *  *   Revision 1.2  1997/07/02  18:49:36  mike  *   Forgot to free memory buffers...  *  *   Revision 1.1  1997/07/02  13:51:53  mike  *   Initial revision  */
+comment|/*  * "$Id$"  *  *   Print plug-in Adobe PostScript driver for the GIMP.  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   ps_parameters()     - Return the parameter values for the given  *                            parameter.  *   ps_media_size()     - Return the size of the page.  *   ps_imageable_area() - Return the imageable area of the page.  *   ps_print()          - Print an image to a PostScript printer.  *   ps_hex()            - Print binary data as a series of hexadecimal numbers.  *   ps_ascii85()        - Print binary data as a series of base-85 numbers.  *  * Revision History:  *  *   $Log$  *   Revision 1.9  1998/05/17 07:16:47  yosh  *   0.99.31 fun  *  *   updated print plugin  *  *   -Yosh  *  *   Revision 1.13  1998/05/15  21:01:51  mike  *   Updated image positioning code (invert top and center left/top independently)  *   Updated ps_imageable_area() to return a default imageable area when no PPD  *   file is available.  *  *   Revision 1.12  1998/05/11  23:56:56  mike  *   Removed unused outptr variable.  *  *   Revision 1.11  1998/05/08  19:20:50  mike  *   Updated to support PPD files, media size, imageable area, and parameter  *   functions.  *   Added support for scaling modes - scale by percent or scale by PPI.  *   Updated Ascii85 output - some Level 2 printers are buggy and won't accept  *   whitespace in the data stream.  *   Now use image dictionaries with Level 2 printers - allows interpolation  *   flag to be sent (not all printers use this flag).  *  *   Revision 1.10  1998/01/22  15:38:46  mike  *   Updated copyright notice.  *   Whoops - wasn't encoding correctly for portrait output to level 2 printers!  *  *   Revision 1.9  1998/01/21  21:33:47  mike  *   Added support for Level 2 filters; images are now sent in hex or  *   base-85 ASCII as necessary (faster printing).  *  *   Revision 1.8  1997/11/12  15:57:48  mike  *   Minor changes for clean compiles under Digital UNIX.  *  *   Revision 1.8  1997/11/12  15:57:48  mike  *   Minor changes for clean compiles under Digital UNIX.  *  *   Revision 1.7  1997/07/30  20:33:05  mike  *   Final changes for 1.1 release.  *  *   Revision 1.7  1997/07/30  20:33:05  mike  *   Final changes for 1.1 release.  *  *   Revision 1.6  1997/07/30  18:47:39  mike  *   Added scaling, orientation, and offset options.  *  *   Revision 1.5  1997/07/26  18:38:55  mike  *   Bug - was using asctime instead of ctime...  D'oh!  *  *   Revision 1.4  1997/07/26  18:19:54  mike  *   Fixed positioning/scaling bug.  *  *   Revision 1.3  1997/07/03  13:26:46  mike  *   Updated documentation for 1.0 release.  *  *   Revision 1.2  1997/07/02  18:49:36  mike  *   Forgot to free memory buffers...  *  *   Revision 1.2  1997/07/02  18:49:36  mike  *   Forgot to free memory buffers...  *  *   Revision 1.1  1997/07/02  13:51:53  mike  *   Initial revision  */
 end_comment
 
 begin_include
@@ -735,20 +735,42 @@ literal|0
 expr_stmt|;
 block|}
 else|else
+block|{
+name|default_media_size
+argument_list|(
+name|model
+argument_list|,
+name|ppd_file
+argument_list|,
+name|media_size
+argument_list|,
+name|right
+argument_list|,
+name|top
+argument_list|)
+expr_stmt|;
 operator|*
 name|left
 operator|=
+literal|18
+expr_stmt|;
 operator|*
 name|right
-operator|=
+operator|-=
+literal|18
+expr_stmt|;
+operator|*
+name|top
+operator|-=
+literal|36
+expr_stmt|;
 operator|*
 name|bottom
 operator|=
-operator|*
-name|top
-operator|=
-literal|0
+literal|36
 expr_stmt|;
+block|}
+empty_stmt|;
 block|}
 end_function
 
@@ -925,7 +947,7 @@ decl_stmt|;
 comment|/* Number of commands */
 struct|struct
 comment|/* PostScript commands... */
-DECL|struct|__anon291b70920108
+DECL|struct|__anon2784e1fa0108
 block|{
 DECL|member|command
 name|char
@@ -1417,15 +1439,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|top
-operator|<
-literal|0
-operator|||
 name|left
 operator|<
 literal|0
 condition|)
-block|{
 name|left
 operator|=
 operator|(
@@ -1438,6 +1455,12 @@ literal|2
 operator|+
 name|page_left
 expr_stmt|;
+if|if
+condition|(
+name|top
+operator|<
+literal|0
+condition|)
 name|top
 operator|=
 operator|(
@@ -1450,8 +1473,15 @@ literal|2
 operator|+
 name|page_bottom
 expr_stmt|;
-block|}
-empty_stmt|;
+else|else
+name|top
+operator|=
+name|page_height
+operator|-
+name|top
+operator|+
+name|page_bottom
+expr_stmt|;
 ifdef|#
 directive|ifdef
 name|DEBUG

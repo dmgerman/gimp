@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   Print plug-in EPSON ESC/P2 driver for the GIMP.  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   escp2_parameters()     - Return the parameter values for the given  *                            parameter.  *   escp2_imageable_area() - Return the imageable area of the page.  *   escp2_print()          - Print an image to an EPSON printer.  *   escp2_write()          - Send ESC/P2 graphics using TIFF packbits compression.  *  * Revision History:  *  *   $Log$  *   Revision 1.8  1998/05/14 00:32:46  yosh  *   updated print plugin  *  *   stubbed out nonworking frac code  *  *   -Yosh  *  *   Revision 1.10  1998/05/08  21:18:34  mike  *   Now enable microweaving in 720 DPI mode.  *  *   Revision 1.9  1998/05/08  20:49:43  mike  *   Updated to support media size, imageable area, and parameter functions.  *   Added support for scaling modes - scale by percent or scale by PPI.  *  *   Revision 1.8  1998/01/21  21:33:47  mike  *   Updated copyright.  *  *   Revision 1.7  1997/11/12  15:57:48  mike  *   Minor changes for clean compiles under Digital UNIX.  *  *   Revision 1.7  1997/11/12  15:57:48  mike  *   Minor changes for clean compiles under Digital UNIX.  *  *   Revision 1.6  1997/07/30  20:33:05  mike  *   Final changes for 1.1 release.  *  *   Revision 1.6  1997/07/30  20:33:05  mike  *   Final changes for 1.1 release.  *  *   Revision 1.5  1997/07/30  18:47:39  mike  *   Added scaling, orientation, and offset options.  *  *   Revision 1.4  1997/07/15  20:57:11  mike  *   Updated ESC 800/1520/3000 output code to use vertical spacing of 5 instead of 40.  *  *   Revision 1.3  1997/07/03  13:21:15  mike  *   Updated documentation for 1.0 release.  *  *   Revision 1.2  1997/07/03  13:03:57  mike  *   Added horizontal offset to try to center image.  *   Got rid of initial vertical positioning since the top margin is  *   now set properly.  *  *   Revision 1.2  1997/07/03  13:03:57  mike  *   Added horizontal offset to try to center image.  *   Got rid of initial vertical positioning since the top margin is  *   now set properly.  *  *   Revision 1.1  1997/07/02  13:51:53  mike  *   Initial revision  */
+comment|/*  * "$Id$"  *  *   Print plug-in EPSON ESC/P2 driver for the GIMP.  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   escp2_parameters()     - Return the parameter values for the given  *                            parameter.  *   escp2_imageable_area() - Return the imageable area of the page.  *   escp2_print()          - Print an image to an EPSON printer.  *   escp2_write()          - Send ESC/P2 graphics using TIFF packbits compression.  *  * Revision History:  *  *   $Log$  *   Revision 1.9  1998/05/17 07:16:45  yosh  *   0.99.31 fun  *  *   updated print plugin  *  *   -Yosh  *  *   Revision 1.11  1998/05/15  21:01:51  mike  *   Updated image positioning code (invert top and center left/top independently)  *  *   Revision 1.10  1998/05/08  21:18:34  mike  *   Now enable microweaving in 720 DPI mode.  *  *   Revision 1.9  1998/05/08  20:49:43  mike  *   Updated to support media size, imageable area, and parameter functions.  *   Added support for scaling modes - scale by percent or scale by PPI.  *  *   Revision 1.8  1998/01/21  21:33:47  mike  *   Updated copyright.  *  *   Revision 1.7  1997/11/12  15:57:48  mike  *   Minor changes for clean compiles under Digital UNIX.  *  *   Revision 1.7  1997/11/12  15:57:48  mike  *   Minor changes for clean compiles under Digital UNIX.  *  *   Revision 1.6  1997/07/30  20:33:05  mike  *   Final changes for 1.1 release.  *  *   Revision 1.6  1997/07/30  20:33:05  mike  *   Final changes for 1.1 release.  *  *   Revision 1.5  1997/07/30  18:47:39  mike  *   Added scaling, orientation, and offset options.  *  *   Revision 1.4  1997/07/15  20:57:11  mike  *   Updated ESC 800/1520/3000 output code to use vertical spacing of 5 instead of 40.  *  *   Revision 1.3  1997/07/03  13:21:15  mike  *   Updated documentation for 1.0 release.  *  *   Revision 1.2  1997/07/03  13:03:57  mike  *   Added horizontal offset to try to center image.  *   Got rid of initial vertical positioning since the top margin is  *   now set properly.  *  *   Revision 1.2  1997/07/03  13:03:57  mike  *   Added horizontal offset to try to center image.  *   Got rid of initial vertical positioning since the top margin is  *   now set properly.  *  *   Revision 1.1  1997/07/02  13:51:53  mike  *   Initial revision  */
 end_comment
 
 begin_include
@@ -1033,15 +1033,10 @@ block|}
 empty_stmt|;
 if|if
 condition|(
-name|top
-operator|<
-literal|0
-operator|||
 name|left
 operator|<
 literal|0
 condition|)
-block|{
 name|left
 operator|=
 operator|(
@@ -1051,7 +1046,15 @@ name|out_width
 operator|)
 operator|/
 literal|2
+operator|+
+name|page_left
 expr_stmt|;
+if|if
+condition|(
+name|top
+operator|<
+literal|0
+condition|)
 name|top
 operator|=
 operator|(
@@ -1061,9 +1064,18 @@ name|out_height
 operator|)
 operator|/
 literal|2
+operator|+
+name|page_bottom
 expr_stmt|;
-block|}
-empty_stmt|;
+else|else
+name|top
+operator|=
+name|page_height
+operator|-
+name|top
+operator|+
+name|page_bottom
+expr_stmt|;
 comment|/*   * Let the user know what we're doing...   */
 name|gimp_progress_init
 argument_list|(
@@ -1496,7 +1508,11 @@ name|left
 operator|=
 name|ydpi
 operator|*
+operator|(
 name|left
+operator|-
+name|page_left
+operator|)
 operator|/
 literal|72
 expr_stmt|;
