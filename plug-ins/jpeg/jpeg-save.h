@@ -60,7 +60,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c497cd0108
+DECL|struct|__anon28fdd8310108
 block|{
 DECL|member|quality
 name|gdouble
@@ -83,7 +83,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c497cd0208
+DECL|struct|__anon28fdd8310208
 block|{
 DECL|member|run
 name|gint
@@ -1063,6 +1063,7 @@ modifier|*
 name|drawable
 decl_stmt|;
 name|gint32
+specifier|volatile
 name|image_ID
 decl_stmt|;
 name|gint32
@@ -1658,6 +1659,7 @@ name|jerr
 decl_stmt|;
 name|FILE
 modifier|*
+specifier|volatile
 name|outfile
 decl_stmt|;
 name|guchar
@@ -2082,6 +2084,11 @@ operator|*
 name|gimp_tile_height
 argument_list|()
 argument_list|)
+expr_stmt|;
+comment|/* fault if cinfo.next_scanline isn't initially a multiple of    * gimp_tile_height */
+name|src
+operator|=
+name|NULL
 expr_stmt|;
 while|while
 condition|(

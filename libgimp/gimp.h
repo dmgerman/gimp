@@ -583,6 +583,7 @@ parameter_list|)
 function_decl|;
 comment|/* Forcefully causes the gimp library to exit and  *  close down its connection to main gimp application.  */
 name|void
+name|G_GNUC_NORETURN
 name|gimp_quit
 parameter_list|(
 name|void

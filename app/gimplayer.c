@@ -114,7 +114,7 @@ comment|/* ick. */
 end_comment
 
 begin_enum
-DECL|enum|__anon29d136e80103
+DECL|enum|__anon2a35edfc0103
 enum|enum
 block|{
 DECL|enumerator|LAST_SIGNAL
@@ -4661,6 +4661,18 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|layer_is_floating_sel
+argument_list|(
+name|layer
+argument_list|)
+condition|)
+name|floating_sel_invalidate
+argument_list|(
+name|layer
+argument_list|)
+expr_stmt|;
 comment|/*  clear the affected region surrounding the layer  */
 comment|/* gdisplays_selection_visibility (GIMP_DRAWABLE(layer)->gimage,      SelectionLayerOff); */
 block|}
