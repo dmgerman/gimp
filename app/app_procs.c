@@ -2033,9 +2033,17 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|(
 name|be_verbose
 operator|==
 name|TRUE
+operator|)
+operator|||
+operator|(
+name|no_splash
+operator|==
+name|TRUE
+operator|)
 condition|)
 name|g_print
 argument_list|(

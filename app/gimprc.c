@@ -124,7 +124,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2ad12b8d0103
+DECL|enum|__anon292955fe0103
 typedef|typedef
 enum|enum
 block|{
@@ -2270,9 +2270,17 @@ condition|)
 return|return;
 if|if
 condition|(
+operator|(
 name|be_verbose
 operator|==
 name|TRUE
+operator|)
+operator|||
+operator|(
+name|no_splash
+operator|==
+name|TRUE
+operator|)
 condition|)
 name|g_print
 argument_list|(
