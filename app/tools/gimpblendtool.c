@@ -1798,6 +1798,10 @@ name|frame
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|button
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|preview
 decl_stmt|;
 comment|/*  the new blend tool options structure  */
@@ -2112,6 +2116,11 @@ argument_list|(
 name|user_context
 argument_list|)
 expr_stmt|;
+name|button
+operator|=
+name|gtk_button_new
+argument_list|()
+expr_stmt|;
 name|preview
 operator|=
 name|gimp_preview_new_full
@@ -2121,7 +2130,7 @@ argument_list|(
 name|gradient
 argument_list|)
 argument_list|,
-literal|48
+literal|128
 argument_list|,
 literal|16
 argument_list|,
@@ -2129,9 +2138,24 @@ literal|0
 argument_list|,
 name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|gtk_container_add
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+name|preview
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|preview
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
@@ -2154,7 +2178,7 @@ literal|1.0
 argument_list|,
 literal|0.5
 argument_list|,
-name|preview
+name|button
 argument_list|,
 literal|2
 argument_list|,
@@ -2187,7 +2211,7 @@ name|g_signal_connect
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|preview
+name|button
 argument_list|)
 argument_list|,
 literal|"clicked"
