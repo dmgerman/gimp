@@ -846,9 +846,6 @@ name|data
 argument_list|)
 condition|)
 block|{
-name|GimpRGB
-name|color
-decl_stmt|;
 name|GimpChannelType
 name|component
 decl_stmt|;
@@ -866,20 +863,6 @@ argument_list|(
 name|gimage
 argument_list|,
 name|data
-argument_list|)
-expr_stmt|;
-name|gimp_rgba_set
-argument_list|(
-operator|&
-name|color
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|component
@@ -929,8 +912,7 @@ name|component
 argument_list|,
 name|name
 argument_list|,
-operator|&
-name|color
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  copied components are invisible by default so subsequent copies        *  of components don't affect each other        */

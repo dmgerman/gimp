@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac4bfaa0103
+DECL|enum|__anon2c8005c00103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -6613,15 +6613,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|color
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|channel
 operator|=
 name|g_object_new
@@ -6653,6 +6644,10 @@ argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|color
+condition|)
 name|channel
 operator|->
 name|color
@@ -6751,15 +6746,6 @@ name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|color
-operator|!=
-name|NULL
 argument_list|,
 name|NULL
 argument_list|)
@@ -6929,15 +6915,6 @@ name|GIMP_IS_IMAGE
 argument_list|(
 name|gimage
 argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|color
-operator|!=
-name|NULL
 argument_list|,
 name|NULL
 argument_list|)
@@ -7585,19 +7562,6 @@ name|gint
 name|height
 parameter_list|)
 block|{
-name|GimpRGB
-name|black
-init|=
-block|{
-literal|0.0
-block|,
-literal|0.0
-block|,
-literal|0.0
-block|,
-literal|0.5
-block|}
-decl_stmt|;
 name|GimpChannel
 modifier|*
 name|new_channel
@@ -7627,8 +7591,7 @@ argument_list|(
 literal|"Selection Mask"
 argument_list|)
 argument_list|,
-operator|&
-name|black
+name|NULL
 argument_list|)
 expr_stmt|;
 name|tile_manager_set_validate_proc
