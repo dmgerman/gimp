@@ -1567,6 +1567,11 @@ break|break;
 default|default:
 break|break;
 block|}
+name|gimp_display_shell_expose_full
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplay-foreach.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdisplayshell.h"
 end_include
 
@@ -1031,11 +1025,6 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-name|gimp_displays_invalidate
-argument_list|(
-name|gimp
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
