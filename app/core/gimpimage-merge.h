@@ -109,7 +109,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29311afe0103
+DECL|enum|__anon2c11dd730103
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -212,7 +212,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29311afe0203
+DECL|enum|__anon2c11dd730203
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -255,7 +255,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29311afe0303
+DECL|enum|__anon2c11dd730303
 block|{
 DECL|enumerator|Red
 name|Red
@@ -283,7 +283,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29311afe0403
+DECL|enum|__anon2c11dd730403
 block|{
 DECL|enumerator|ExpandAsNecessary
 name|ExpandAsNecessary
@@ -1302,6 +1302,8 @@ parameter_list|,
 name|int
 parameter_list|,
 name|int
+parameter_list|,
+name|gboolean
 parameter_list|)
 function_decl|;
 end_function_decl

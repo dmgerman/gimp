@@ -491,7 +491,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon29cda7f90103
+DECL|enum|__anon27a84ee10103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -6221,7 +6221,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_construct (GimpImage * gimage,int x,int y,int w,int h)
+DECL|function|gimp_image_construct (GimpImage * gimage,int x,int y,int w,int h,gboolean can_use_cowproject)
 name|gimp_image_construct
 parameter_list|(
 name|GimpImage
@@ -6239,8 +6239,49 @@ name|w
 parameter_list|,
 name|int
 name|h
+parameter_list|,
+name|gboolean
+name|can_use_cowproject
 parameter_list|)
 block|{
+if|#
+directive|if
+literal|0
+block|int xoff, yoff;         	printf("************ ty:%d by:%d op:%d\n", 	       gimage_projection_type(gimage), 	       gimage_projection_bytes(gimage), 	       gimage_projection_opacity(gimage) 	       );fflush(stdout);       if (gimage->layers) 	{ 	  gimp_drawable_offsets (GIMP_DRAWABLE((Layer*)(gimage->layers->data)),&xoff,&yoff); 	  printf("-------\n%d,%d,%d,%d,%d,%d,%d,%d,%d\n", 		 (gimage->layers != NULL) ,
+comment|/* There's a layer.      */
+block|(!g_slist_next(gimage->layers)) ,
+comment|/* It's the only layer.  */
+block|(layer_has_alpha((Layer*)(gimage->layers->data))) ,
+comment|/* It's !flat.  */
+comment|/* It's visible.         */
+block|(drawable_visible (GIMP_DRAWABLE((Layer*)(gimage->layers->data)))) , 		 (drawable_width (GIMP_DRAWABLE((Layer*)(gimage->layers->data))) == 		  gimage->width) , 		 (drawable_height (GIMP_DRAWABLE((Layer*)(gimage->layers->data))) == 		  gimage->height) ,
+comment|/* Covers all.           */
+comment|/* Not indexed.          */
+block|(!drawable_indexed (GIMP_DRAWABLE((Layer*)(gimage->layers->data)))) , 		 (((Layer*)(gimage->layers->data))->opacity == OPAQUE_OPACITY)
+comment|/*opaq */
+block|, 		 ((xoff==0)&& (yoff==0)) 		 );fflush(stdout); 	}       else 	{ 	  printf("GIMAGE @%p HAS NO LAYERS?! %d\n", 		 gimage, 		 g_slist_length(gimage->layers)); 	  fflush(stdout); 	}        if (
+comment|//can_use_cowproject&&
+block|(gimage->layers)&&
+comment|/* There's a layer.      */
+block|(!g_slist_next(gimage->layers))&&
+comment|/* It's the only layer.  */
+block|(layer_has_alpha((Layer*)(gimage->layers->data)))&&
+comment|/* It's !flat.  */
+comment|/* It's visible.         */
+block|(drawable_visible (GIMP_DRAWABLE((Layer*)(gimage->layers->data))))&&       (drawable_width (GIMP_DRAWABLE((Layer*)(gimage->layers->data))) ==        gimage->width)&&       (drawable_height (GIMP_DRAWABLE((Layer*)(gimage->layers->data))) ==        gimage->height)&&
+comment|/* Covers all.           */
+comment|/* Not indexed.          */
+block|(!drawable_indexed (GIMP_DRAWABLE((Layer*)(gimage->layers->data))))&&       (((Layer*)(gimage->layers->data))->opacity == OPAQUE_OPACITY)
+comment|/*opaq */
+block|)     {       int xoff, yoff;              gimp_drawable_offsets (GIMP_DRAWABLE((Layer*)(gimage->layers->data)),&xoff,&yoff);         if ((xoff==0)&& (yoff==0))
+comment|/* Starts at 0,0         */
+block|{ 	PixelRegion srcPR, destPR; 	void * pr; 	 	g_warning("Can use cow-projection hack.  Yay!");
+comment|//	gimp_image_initialize_projection (gimage, x, y, w, h);
+block|pixel_region_init (&srcPR, gimp_drawable_data 			   (GIMP_DRAWABLE 			    ((Layer*)(gimage->layers->data))), 			   x, y, w,h, FALSE); 	pixel_region_init (&destPR, 			   gimp_image_projection (gimage), 			   x, y, w,h, TRUE);
+comment|//	tile_manager_set_validate_proc(destPR.tiles, NULL);
+block|for (pr = pixel_regions_register (2,&srcPR,&destPR); 	     pr != NULL; 	     pr = pixel_regions_process (pr)) 	  { 	    tile_manager_validate (srcPR.tiles, 				   srcPR.curtile); 	    tile_manager_map_over_tile (destPR.tiles, 					destPR.curtile, srcPR.curtile); 	  }  	gimage->construct_flag = 1; 	return;       }     }    g_warning("Can NOT use cow-projection hack.  Boo!");
+endif|#
+directive|endif
 comment|/*  set the construct flag, used to determine if anything    *  has been written to the gimage raw image yet.    */
 name|gimage
 operator|->
@@ -6723,6 +6764,8 @@ name|endy
 operator|-
 name|starty
 operator|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -6810,6 +6853,8 @@ argument_list|,
 name|w
 argument_list|,
 name|h
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
