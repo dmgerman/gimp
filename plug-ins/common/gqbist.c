@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib/gstdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -126,7 +132,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29bd05c10103
+DECL|enum|__anon2c8023940103
 block|{
 DECL|enumerator|PROJECTION
 name|PROJECTION
@@ -171,7 +177,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bd05c10208
+DECL|struct|__anon2c8023940208
 block|{
 DECL|member|transformSequence
 name|TransformType
@@ -210,7 +216,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bd05c10308
+DECL|struct|__anon2c8023940308
 block|{
 DECL|member|info
 name|ExpInfo
