@@ -54,6 +54,16 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimagefile.h"
+end_include
+
+begin_comment
+comment|/* eek */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|"core/gimpviewable.h"
 end_include
 
@@ -71,7 +81,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28acf1e60103
+DECL|enum|__anon2b4dc4da0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1146,6 +1156,9 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
+name|gint
+name|border_width
+decl_stmt|;
 name|screen
 operator|=
 name|gtk_widget_get_screen
@@ -1169,6 +1182,20 @@ operator|&
 name|height
 argument_list|)
 expr_stmt|;
+comment|/*  FIXME: remove this hack  */
+name|border_width
+operator|=
+name|GIMP_IS_IMAGEFILE
+argument_list|(
+name|action
+operator|->
+name|viewable
+argument_list|)
+condition|?
+literal|0
+else|:
+literal|1
+expr_stmt|;
 name|view
 operator|=
 name|gimp_view_new_full
@@ -1185,7 +1212,7 @@ name|height
 operator|-
 literal|2
 argument_list|,
-literal|1
+name|border_width
 argument_list|,
 name|FALSE
 argument_list|,
