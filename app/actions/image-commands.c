@@ -453,10 +453,6 @@ argument_list|(
 name|data
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|gimage
-condition|)
 name|image_new_dialog_set
 argument_list|(
 name|dialog
