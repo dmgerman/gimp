@@ -12,7 +12,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history:  * gimp    1.1.13b; 1999/12/04  hof: some cosmetic gtk fixes  *                                   changed border_width spacing and Buttons in action area  *                                   to same style as used in dialogs of the gimp 1.1.13 main dialogs  * gimp   1.1.8a;   1999/08/31  hof: accept anim framenames without underscore '_'  * gimp   1.1.5a;   1999/05/08  hof: call fileselect in gtk+1.2 style   * version 0.99.00; 1999.03.03  hof: bugfix: update of the preview (did'nt work with gimp1.1.2)  * version 0.98.00; 1998.11.28  hof: Port to GIMP 1.1: replaced buildmenu.h, apply layermask (before rotate)  *                                   mov_imglayer_constrain must check for drawable_id -1  * version 0.97.00; 1998.10.19  hof: Set window title to "Move Path"  * version 0.96.02; 1998.07.30  hof: added clip to frame option and tooltips  * version 0.96.00; 1998.07.09  hof: bugfix (filesel did not reopen after cancel)  * version 0.95.00; 1998.05.12  hof: added rotatation capabilities  * version 0.94.00; 1998.04.25  hof: use only one point as default  *                                   bugfix: initial value for src_paintmode  *                                           fixes the problem reported in p_my_layer_copy (cant get new layer)  * version 0.90.00; 1997.12.14  hof: 1.st (pre) release  */
+comment|/* revision history:  * gimp    1.1.15a; 2000/01/26  hof: removed gimp 1.0.x support  * gimp    1.1.13b; 1999/12/04  hof: some cosmetic gtk fixes  *                                   changed border_width spacing and Buttons in action area  *                                   to same style as used in dialogs of the gimp 1.1.13 main dialogs  * gimp   1.1.8a;   1999/08/31  hof: accept anim framenames without underscore '_'  * gimp   1.1.5a;   1999/05/08  hof: call fileselect in gtk+1.2 style   * version 0.99.00; 1999.03.03  hof: bugfix: update of the preview (did'nt work with gimp1.1.2)  * version 0.98.00; 1998.11.28  hof: Port to GIMP 1.1: replaced buildmenu.h, apply layermask (before rotate)  *                                   mov_imglayer_constrain must check for drawable_id -1  * version 0.97.00; 1998.10.19  hof: Set window title to "Move Path"  * version 0.96.02; 1998.07.30  hof: added clip to frame option and tooltips  * version 0.96.00; 1998.07.09  hof: bugfix (filesel did not reopen after cancel)  * version 0.95.00; 1998.05.12  hof: added rotatation capabilities  * version 0.94.00; 1998.04.25  hof: use only one point as default  *                                   bugfix: initial value for src_paintmode  *                                           fixes the problem reported in p_my_layer_copy (cant get new layer)  * version 0.90.00; 1997.12.14  hof: 1.st (pre) release  */
 end_comment
 
 begin_comment
@@ -205,7 +205,7 @@ value|32
 end_define
 
 begin_typedef
-DECL|struct|__anon2c72e7770108
+DECL|struct|__anon2a1010020108
 typedef|typedef
 struct|struct
 block|{
@@ -220,7 +220,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c72e7770208
+DECL|struct|__anon2a1010020208
 typedef|typedef
 struct|struct
 block|{
@@ -247,7 +247,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c72e7770308
+DECL|struct|__anon2a1010020308
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -475,7 +475,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c72e7770408
+DECL|struct|__anon2a1010020408
 typedef|typedef
 struct|struct
 block|{
@@ -11701,8 +11701,6 @@ comment|/* rotate always with smoothing option turned on */
 comment|/* have to rotate the layer (rotation also changes size as needed) */
 name|p_gimp_rotate
 argument_list|(
-name|image_id
-argument_list|,
 name|l_cp_layer_id
 argument_list|,
 name|l_interpolation
