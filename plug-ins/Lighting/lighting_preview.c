@@ -1581,7 +1581,7 @@ operator|.
 name|h
 argument_list|)
 expr_stmt|;
-name|gdk_image_unref
+name|g_object_unref
 argument_list|(
 name|backbuf
 operator|.
@@ -1902,7 +1902,7 @@ name|backbuf
 operator|.
 name|image
 operator|=
-name|gdk_image_get
+name|gdk_drawable_get_image
 argument_list|(
 name|previewarea
 operator|->
@@ -2321,7 +2321,7 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|gdk_image_unref
+name|g_object_unref
 argument_list|(
 name|backbuf
 operator|.

@@ -92,7 +92,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bab0a820103
+DECL|enum|__anon27a0d5240103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -1205,6 +1205,18 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_type_hint
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|cnp
+operator|->
+name|shell
+argument_list|)
+argument_list|,
+name|GDK_WINDOW_TYPE_HINT_NORMAL
 argument_list|)
 expr_stmt|;
 name|gtk_dialog_set_has_separator
