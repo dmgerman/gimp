@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcellrendererviewable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpcontainertreeview.h"
 end_include
 
@@ -71,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aa8ce890103
+DECL|enum|__anon2a0ec0210103
 block|{
 DECL|enumerator|COLUMN_VIEWABLE
 name|COLUMN_VIEWABLE

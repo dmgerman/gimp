@@ -1204,9 +1204,12 @@ name|name
 operator|=
 name|get_name_func
 argument_list|(
+name|G_OBJECT
+argument_list|(
 name|dialog
 operator|->
 name|preview
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
