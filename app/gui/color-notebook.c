@@ -124,7 +124,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d480b80103
+DECL|enum|__anon2880905e0103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -2006,11 +2006,7 @@ name|table
 operator|=
 name|gtk_table_new
 argument_list|(
-name|show_alpha
-condition|?
 literal|8
-else|:
-literal|7
 argument_list|,
 literal|4
 argument_list|,
@@ -2085,9 +2081,9 @@ operator|<
 operator|(
 name|show_alpha
 condition|?
-literal|8
-else|:
 literal|7
+else|:
+literal|6
 operator|)
 condition|;
 name|i
@@ -2340,16 +2336,8 @@ literal|1
 argument_list|,
 literal|4
 argument_list|,
-name|show_alpha
-condition|?
 literal|8
-else|:
-literal|7
 argument_list|,
-name|show_alpha
-condition|?
-literal|8
-else|:
 literal|9
 argument_list|,
 name|GTK_FILL
@@ -3579,21 +3567,12 @@ literal|0
 init|;
 name|i
 operator|<
-literal|7
+literal|6
 condition|;
 name|i
 operator|++
 control|)
 block|{
-if|if
-condition|(
-name|cnp
-operator|->
-name|toggles
-index|[
-name|i
-index|]
-condition|)
 name|gtk_widget_set_sensitive
 argument_list|(
 name|cnp
@@ -5455,7 +5434,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"\n   (color %f %f %f %f)"
+literal|"\n    (color %f %f %f %f)"
 argument_list|,
 name|color_history
 index|[

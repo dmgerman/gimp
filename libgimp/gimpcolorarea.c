@@ -96,7 +96,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9038860103
+DECL|enum|__anon2790b57e0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -1373,7 +1373,7 @@ condition|(
 name|x
 operator|*
 name|height
-operator|<
+operator|>
 name|y
 operator|*
 name|width
@@ -1410,6 +1410,8 @@ continue|continue;
 block|}
 name|frac
 operator|=
+name|y
+operator|-
 call|(
 name|gdouble
 call|)
@@ -1423,8 +1425,6 @@ operator|(
 name|gdouble
 operator|)
 name|width
-operator|-
-name|y
 expr_stmt|;
 if|if
 condition|(
