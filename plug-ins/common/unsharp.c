@@ -141,7 +141,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4e30a50108
+DECL|struct|__anon275b84ac0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -164,7 +164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4e30a50208
+DECL|struct|__anon275b84ac0208
 block|{
 DECL|member|run
 name|gint
@@ -334,7 +334,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|gint
+name|gdouble
 name|radius
 parameter_list|,
 name|gdouble
@@ -1073,14 +1073,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|unsharp_mask (GimpDrawable * drawable,gint radius,gdouble amount)
+DECL|function|unsharp_mask (GimpDrawable * drawable,gdouble radius,gdouble amount)
 name|unsharp_mask
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|gint
+name|gdouble
 name|radius
 parameter_list|,
 name|gdouble
@@ -3932,7 +3932,7 @@ name|unsharp_params
 operator|.
 name|radius
 argument_list|,
-literal|1.0
+literal|0.1
 argument_list|,
 literal|25.0
 argument_list|,
