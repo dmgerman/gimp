@@ -491,6 +491,7 @@ argument_list|)
 expr_stmt|;
 name|right_tile
 operator|=
+operator|(
 name|drawable
 operator|->
 name|width
@@ -506,9 +507,11 @@ operator|)
 operator|*
 name|TILE_WIDTH
 operator|)
+operator|)
 expr_stmt|;
 name|bottom_tile
 operator|=
+operator|(
 name|drawable
 operator|->
 name|height
@@ -523,6 +526,7 @@ literal|1
 operator|)
 operator|*
 name|TILE_HEIGHT
+operator|)
 operator|)
 expr_stmt|;
 for|for

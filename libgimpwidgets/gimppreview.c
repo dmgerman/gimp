@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpstock.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpwidgets.h"
 end_include
 
@@ -49,7 +43,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ef06220103
+DECL|enum|__anon2b5758040103
 block|{
 DECL|enumerator|UPDATED
 name|UPDATED
@@ -62,7 +56,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ef06220203
+DECL|enum|__anon2b5758040203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -748,6 +742,13 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|preview
+operator|->
+name|hscr
+argument_list|)
+expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|preview
@@ -762,13 +763,6 @@ name|gimp_preview_button_release
 argument_list|)
 argument_list|,
 name|preview
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|preview
-operator|->
-name|hscr
 argument_list|)
 expr_stmt|;
 name|preview
@@ -880,6 +874,13 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|preview
+operator|->
+name|vscr
+argument_list|)
+expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|preview
@@ -894,13 +895,6 @@ name|gimp_preview_button_release
 argument_list|)
 argument_list|,
 name|preview
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|preview
-operator|->
-name|vscr
 argument_list|)
 expr_stmt|;
 comment|/* the area itself */
@@ -986,6 +980,13 @@ operator|->
 name|area
 argument_list|)
 expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|preview
+operator|->
+name|area
+argument_list|)
+expr_stmt|;
 name|gtk_widget_set_events
 argument_list|(
 name|preview
@@ -1015,13 +1016,6 @@ name|gimp_preview_area_event
 argument_list|)
 argument_list|,
 name|preview
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|preview
-operator|->
-name|area
 argument_list|)
 expr_stmt|;
 name|g_signal_connect_swapped
@@ -1157,7 +1151,6 @@ name|g_value_set_boolean
 argument_list|(
 name|value
 argument_list|,
-operator|&
 name|preview
 operator|->
 name|update_preview
@@ -1877,6 +1870,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|preview
 operator|->
 name|update_preview
@@ -1884,10 +1878,21 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
+name|g_object_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|toggle
+argument_list|)
+argument_list|,
+literal|"update_preview"
+argument_list|)
+expr_stmt|;
+block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_get_width:  *  **/
+comment|/**  * gimp_preview_get_width:  * @preview: a #GimpPreview widget  *  * Return value: the @preview's width  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -1907,8 +1912,7 @@ argument_list|(
 name|preview
 argument_list|)
 argument_list|,
-operator|-
-literal|1
+literal|0
 argument_list|)
 expr_stmt|;
 return|return
@@ -1920,7 +1924,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_get_height:  *  **/
+comment|/**  * gimp_preview_get_height:  * @preview: a #GimpPreview widget  *  * Return value: the @preview's height  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -1940,8 +1944,7 @@ argument_list|(
 name|preview
 argument_list|)
 argument_list|,
-operator|-
-literal|1
+literal|0
 argument_list|)
 expr_stmt|;
 return|return
@@ -1953,7 +1956,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_get_posistion:  *  **/
+comment|/**  * gimp_preview_get_posistion:  * @preview: a #GimpPreview widget  * @x:       return location for horizontal offset  * @y:       return location for vertical offset  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -1982,6 +1985,10 @@ name|preview
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|x
+condition|)
 operator|*
 name|x
 operator|=
@@ -1993,6 +2000,10 @@ name|preview
 operator|->
 name|xmin
 expr_stmt|;
+if|if
+condition|(
+name|y
+condition|)
 operator|*
 name|y
 operator|=
@@ -2006,6 +2017,10 @@ name|ymin
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_preview_show_update_toggle:  * @preview:     a #GimpPreview widget  * @show_update: whether to show the "Update Preview" toggle button  *  * Since: GIMP 2.2  **/
+end_comment
 
 begin_function
 name|void
@@ -2028,23 +2043,15 @@ name|preview
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
+name|g_object_set
+argument_list|(
+name|preview
+argument_list|,
+literal|"show_toggle_preview"
+argument_list|,
 name|show_update
-condition|)
-name|gtk_widget_show
-argument_list|(
-name|preview
-operator|->
-name|toggle_update
-argument_list|)
-expr_stmt|;
-else|else
-name|gtk_widget_hide
-argument_list|(
-name|preview
-operator|->
-name|toggle_update
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

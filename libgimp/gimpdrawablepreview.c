@@ -33,12 +33,6 @@ directive|include
 file|"gimpdrawablepreview.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"libgimp-intl.h"
-end_include
-
 begin_define
 DECL|macro|PREVIEW_SIZE
 define|#
@@ -55,18 +49,6 @@ parameter_list|(
 name|GimpDrawablePreviewClass
 modifier|*
 name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_drawable_preview_init
-parameter_list|(
-name|GimpDrawablePreview
-modifier|*
-name|preview
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -104,14 +86,14 @@ parameter_list|)
 block|{
 specifier|static
 name|GType
-name|drawable_preview_type
+name|preview_type
 init|=
 literal|0
 decl_stmt|;
 if|if
 condition|(
 operator|!
-name|drawable_preview_type
+name|preview_type
 condition|)
 block|{
 specifier|static
@@ -154,13 +136,11 @@ block|,
 literal|0
 block|,
 comment|/* n_preallocs    */
-operator|(
-name|GInstanceInitFunc
-operator|)
-name|gimp_drawable_preview_init
-block|,       }
+name|NULL
+comment|/* instance_init  */
+block|}
 decl_stmt|;
-name|drawable_preview_type
+name|preview_type
 operator|=
 name|g_type_register_static
 argument_list|(
@@ -176,7 +156,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|drawable_preview_type
+name|preview_type
 return|;
 block|}
 end_function
@@ -192,6 +172,15 @@ modifier|*
 name|klass
 parameter_list|)
 block|{
+name|GimpPreviewClass
+modifier|*
+name|preview_class
+init|=
+name|GIMP_PREVIEW_CLASS
+argument_list|(
+name|klass
+argument_list|)
+decl_stmt|;
 name|parent_class
 operator|=
 name|g_type_class_peek_parent
@@ -199,30 +188,12 @@ argument_list|(
 name|klass
 argument_list|)
 expr_stmt|;
-name|GIMP_PREVIEW_CLASS
-argument_list|(
-name|klass
-argument_list|)
+name|preview_class
 operator|->
 name|update
 operator|=
 name|gimp_drawable_preview_update
 expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_drawable_preview_init (GimpDrawablePreview * preview)
-name|gimp_drawable_preview_init
-parameter_list|(
-name|GimpDrawablePreview
-modifier|*
-name|preview
-parameter_list|)
-block|{
-comment|/* */
 block|}
 end_function
 
@@ -237,43 +208,39 @@ modifier|*
 name|preview
 parameter_list|)
 block|{
-name|guint
-name|rowstride
+name|GimpDrawablePreview
+modifier|*
+name|drawable_preview
+init|=
+name|GIMP_DRAWABLE_PREVIEW
+argument_list|(
+name|preview
+argument_list|)
 decl_stmt|;
-name|GimpPixelRgn
-name|srcPR
+name|GimpDrawable
+modifier|*
+name|drawable
+init|=
+name|drawable_preview
+operator|->
+name|drawable
 decl_stmt|;
 name|guchar
 modifier|*
 name|buffer
 decl_stmt|;
-name|GimpDrawablePreview
-modifier|*
-name|drawable_preview
+name|GimpPixelRgn
+name|srcPR
 decl_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_DRAWABLE_PREVIEW
-argument_list|(
-name|preview
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|drawable_preview
-operator|=
-name|GIMP_DRAWABLE_PREVIEW
-argument_list|(
-name|preview
-argument_list|)
-expr_stmt|;
+name|guint
+name|rowstride
+decl_stmt|;
 name|rowstride
 operator|=
 name|preview
 operator|->
 name|width
 operator|*
-name|drawable_preview
-operator|->
 name|drawable
 operator|->
 name|bpp
@@ -346,8 +313,6 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|drawable_preview
-operator|->
 name|drawable
 argument_list|,
 name|preview
@@ -434,8 +399,6 @@ name|height
 argument_list|,
 name|gimp_drawable_type
 argument_list|(
-name|drawable_preview
-operator|->
 name|drawable
 operator|->
 name|drawable_id
@@ -455,7 +418,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_preview_new:  *  * Creates a new #GimpDrawablePreview widget.  *  * Returns: A pointer to the new #GimpDrawablePreview widget.  **/
+comment|/**  * gimp_drawable_preview_new:  * @drawable: a #GimpDrawable  *  * Creates a new #GimpDrawablePreview widget for @drawable.  *  * Returns: A pointer to the new #GimpDrawablePreview widget.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -482,6 +445,15 @@ name|sel_width
 decl_stmt|,
 name|sel_height
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|drawable
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|drawable_preview
 operator|=
 name|g_object_new
@@ -672,7 +644,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_preview_new_with_toggle:  *  * Creates a new #GimpDrawablePreview widget.  *  * Returns: A pointer to the new #GimpDrawablePreview widget.  **/
+comment|/**  * gimp_drawable_preview_new_with_toggle:  * @drawable: a #GimpDrawable  * @toggle:  *  * Creates a new #GimpDrawablePreview widget for @drawable.  *  * Returns: A pointer to the new #GimpDrawablePreview widget.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -703,6 +675,24 @@ name|sel_width
 decl_stmt|,
 name|sel_height
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|drawable
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|toggle
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|drawable_preview
 operator|=
 name|g_object_new
@@ -939,6 +929,10 @@ name|GimpPreview
 modifier|*
 name|preview
 decl_stmt|;
+name|GimpDrawable
+modifier|*
+name|drawable
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DRAWABLE_PREVIEW
@@ -947,12 +941,25 @@ name|drawable_preview
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|buf
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|preview
 operator|=
 name|GIMP_PREVIEW
 argument_list|(
 name|drawable_preview
 argument_list|)
+expr_stmt|;
+name|drawable
+operator|=
+name|drawable_preview
+operator|->
+name|drawable
 expr_stmt|;
 name|gimp_preview_area_draw
 argument_list|(
@@ -977,8 +984,6 @@ name|height
 argument_list|,
 name|gimp_drawable_type
 argument_list|(
-name|drawable_preview
-operator|->
 name|drawable
 operator|->
 name|drawable_id
@@ -990,8 +995,6 @@ name|preview
 operator|->
 name|width
 operator|*
-name|drawable_preview
-operator|->
 name|drawable
 operator|->
 name|bpp
