@@ -761,6 +761,14 @@ value|"gimp-image-grid"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_IMAGE_PROPERTIES
+define|#
+directive|define
+name|GIMP_HELP_IMAGE_PROPERTIES
+value|"gimp-image-properties"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_LAYER_DIALOG
 define|#
 directive|define

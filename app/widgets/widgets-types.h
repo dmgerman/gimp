@@ -867,6 +867,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpImagePropView
+typedef|typedef
+name|struct
+name|_GimpImagePropView
+name|GimpImagePropView
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpMessageBox
 typedef|typedef
 name|struct
