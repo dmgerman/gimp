@@ -60,19 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-in-run.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpuimanager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpwidgets-utils.h"
 end_include
 
 begin_include

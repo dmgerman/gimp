@@ -1268,6 +1268,7 @@ argument_list|,
 name|path_translated
 argument_list|)
 expr_stmt|;
+block|}
 name|g_free
 argument_list|(
 name|path_original
@@ -1278,7 +1279,6 @@ argument_list|(
 name|path_translated
 argument_list|)
 expr_stmt|;
-block|}
 name|g_free
 argument_list|(
 name|help_id
