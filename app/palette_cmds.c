@@ -845,10 +845,10 @@ name|args
 parameter_list|)
 block|{
 comment|/* FIXME: I've hardcoded success to be TRUE, because brushes_init() is a     *        void function right now.  It'd be nice if it returned a value at     *        some future date, so we could tell if things blew up when reparsing    *        the list (for whatever reason).     *                       - Seth "Yes, this is a kludge" Burgess    *<sjburges@ou.edu>    *   -and shamelessly stolen by Adrian Likins for use here...    */
-name|palette_free_palettes
+name|palettes_free
 argument_list|()
 expr_stmt|;
-name|palette_init_palettes
+name|palettes_init
 argument_list|(
 name|FALSE
 argument_list|)

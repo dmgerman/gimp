@@ -665,7 +665,7 @@ condition|(
 operator|!
 name|palette_entries_list
 condition|)
-name|palette_init_palettes
+name|palettes_init
 argument_list|(
 name|FALSE
 argument_list|)

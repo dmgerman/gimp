@@ -294,7 +294,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c00d620103
+DECL|enum|__anon2b9962320103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -821,23 +821,6 @@ end_function
 
 begin_function
 name|void
-DECL|function|palette_init_palettes (gint no_data)
-name|palette_init_palettes
-parameter_list|(
-name|gint
-name|no_data
-parameter_list|)
-block|{
-name|palettes_init
-argument_list|(
-name|no_data
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
 DECL|function|palettes_free (void)
 name|palettes_free
 parameter_list|(
@@ -913,20 +896,6 @@ expr_stmt|;
 name|palette_entries_list
 operator|=
 name|NULL
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|palette_free_palettes (void)
-name|palette_free_palettes
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-name|palettes_free
-argument_list|()
 expr_stmt|;
 block|}
 end_function
