@@ -251,9 +251,7 @@ block|{
 name|gchar
 modifier|*
 name|filename
-decl_stmt|;
-name|filename
-operator|=
+init|=
 name|gtk_file_chooser_get_filename
 argument_list|(
 name|GTK_FILE_CHOOSER
@@ -261,7 +259,7 @@ argument_list|(
 name|data
 argument_list|)
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|save_as
 argument_list|(
 name|filename
@@ -281,24 +279,38 @@ name|dialog
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gtk_widget_hide
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|data
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|do_file_exists_dialog (GtkWidget * dialog)
+DECL|function|do_file_exists_dialog (GtkWidget * parent)
 name|do_file_exists_dialog
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|dialog
+name|parent
 parameter_list|)
 block|{
+name|GtkWidget
+modifier|*
+name|dialog
+decl_stmt|;
 name|gchar
 modifier|*
 name|message
-init|=
+decl_stmt|;
+name|message
+operator|=
 name|g_strdup_printf
 argument_list|(
 literal|"<span weight=\"bold\" size=\"larger\">%s</span>\n\n"
@@ -314,15 +326,14 @@ argument_list|(
 literal|"Do you really want to overwrite?"
 argument_list|)
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|dialog
 operator|=
 name|gtk_message_dialog_new_with_markup
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
-name|get_dialog
-argument_list|()
+name|parent
 argument_list|)
 argument_list|,
 name|GTK_DIALOG_DESTROY_WITH_PARENT
@@ -338,20 +349,6 @@ name|g_signal_connect
 argument_list|(
 name|dialog
 argument_list|,
-literal|"delete_event"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gtk_true
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|dialog
-argument_list|,
 literal|"response"
 argument_list|,
 name|G_CALLBACK
@@ -359,7 +356,7 @@ argument_list|(
 name|really_overwrite_cb
 argument_list|)
 argument_list|,
-name|dialog
+name|parent
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
