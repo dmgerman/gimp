@@ -319,5 +319,45 @@ return|;
 block|}
 end_function
 
+begin_function
+name|GimpFont
+modifier|*
+DECL|function|gimp_font_get_standard (void)
+name|gimp_font_get_standard
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+specifier|static
+name|GimpFont
+modifier|*
+name|standard_font
+init|=
+name|NULL
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|standard_font
+condition|)
+name|standard_font
+operator|=
+name|g_object_new
+argument_list|(
+name|GIMP_TYPE_FONT
+argument_list|,
+literal|"name"
+argument_list|,
+literal|"Sans"
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|standard_font
+return|;
+block|}
+end_function
+
 end_unit
 

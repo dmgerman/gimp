@@ -38,6 +38,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpFontList
+typedef|typedef
+name|struct
+name|_GimpFontList
+name|GimpFontList
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpText
 typedef|typedef
 name|struct
