@@ -270,7 +270,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274ce8a20103
+DECL|enum|__anon288cfb5b0103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -1205,137 +1205,179 @@ name|GimpRc
 name|gimprc
 init|=
 block|{
-comment|/* marching_speed            */
+name|marching_speed
+operator|:
 literal|300
 block|,
 comment|/* 300 ms */
-comment|/* last_opened_size          */
+name|last_opened_size
+operator|:
 literal|4
 block|,
-comment|/* gamma_val                 */
+name|gamma_val
+operator|:
 literal|1.0
 block|,
-comment|/* transparency_type         */
+name|transparency_type
+operator|:
 literal|1
 block|,
 comment|/* Mid-Tone Checks */
-comment|/* perfectmouse              */
+name|perfectmouse
+operator|:
 name|FALSE
 block|,
 comment|/* off (fast and sloppy) */
-comment|/* transparency_size         */
+name|transparency_size
+operator|:
 literal|1
 block|,
 comment|/* Medium sized */
-comment|/* min_colors                */
+name|min_colors
+operator|:
 literal|144
 block|,
 comment|/* 6*6*4 */
-comment|/* install_cmap              */
+name|install_cmap
+operator|:
 name|FALSE
 block|,
-comment|/* cycled_marching_ants      */
+name|cycled_marching_ants
+operator|:
 literal|0
 block|,
-comment|/* default_threshold         */
+name|default_threshold
+operator|:
 literal|15
 block|,
-comment|/* resize_windows_on_zoom    */
+name|resize_windows_on_zoom
+operator|:
 name|FALSE
 block|,
-comment|/* resize_windows_on_resize  */
+name|resize_windows_on_resize
+operator|:
 name|FALSE
 block|,
-comment|/* no_cursor_updating        */
+name|no_cursor_updating
+operator|:
 name|FALSE
 block|,
-comment|/* preview_size              */
+name|preview_size
+operator|:
 name|GIMP_PREVIEW_SIZE_SMALL
 block|,
-comment|/* nav_preview_size          */
+name|nav_preview_size
+operator|:
 name|GIMP_PREVIEW_SIZE_HUGE
 block|,
-comment|/* show_rulers               */
+name|show_rulers
+operator|:
 name|TRUE
 block|,
-comment|/* show_statusbar            */
+name|show_statusbar
+operator|:
 name|TRUE
 block|,
-comment|/* auto_save                 */
+name|auto_save
+operator|:
 name|TRUE
 block|,
-comment|/* confirm_on_close          */
+name|confirm_on_close
+operator|:
 name|TRUE
 block|,
-comment|/* default_dot_for_dot       */
+name|default_dot_for_dot
+operator|:
 name|TRUE
 block|,
-comment|/* save_session_info         */
+name|save_session_info
+operator|:
 name|TRUE
 block|,
-comment|/* save_device_status        */
+name|save_device_status
+operator|:
 name|FALSE
 block|,
-comment|/* always_restore_session    */
+name|always_restore_session
+operator|:
 name|TRUE
 block|,
-comment|/* show_tips                 */
+name|show_tips
+operator|:
 name|TRUE
 block|,
-comment|/* last_tip                  */
+name|last_tip
+operator|:
 operator|-
 literal|1
 block|,
-comment|/* show_tool_tips            */
+name|show_tool_tips
+operator|:
 name|TRUE
 block|,
-comment|/* monitor_xres              */
+name|monitor_xres
+operator|:
 literal|72.0
 block|,
-comment|/* monitor_yres              */
+name|monitor_yres
+operator|:
 literal|72.0
 block|,
-comment|/* using_xserver_resolution  */
+name|using_xserver_resolution
+operator|:
 name|FALSE
 block|,
-comment|/* image_title_format        */
+name|image_title_format
+operator|:
 name|NULL
 block|,
-comment|/* global_paint_options      */
+name|global_paint_options
+operator|:
 name|FALSE
 block|,
-comment|/* show_indicators           */
+name|show_indicators
+operator|:
 name|TRUE
 block|,
-comment|/* max_new_image_size        */
+name|max_new_image_size
+operator|:
 literal|33554432
 block|,
 comment|/* 32 MB */
-comment|/* trust_dirty_flag          */
+name|trust_dirty_flag
+operator|:
 name|FALSE
 block|,
-comment|/* use_help                  */
+name|use_help
+operator|:
 name|TRUE
 block|,
-comment|/* nav_window_per_display    */
+name|nav_window_per_display
+operator|:
 name|FALSE
 block|,
-comment|/* info_window_follows_mouse */
+name|info_window_follows_mouse
+operator|:
 name|TRUE
 block|,
-comment|/* help_browser              */
+name|help_browser
+operator|:
 name|HELP_BROWSER_GIMP
 block|,
-comment|/* cursor_mode               */
+name|cursor_mode
+operator|:
 name|CURSOR_MODE_TOOL_ICON
 block|,
-comment|/* disable_tearoff_menus     */
+name|disable_tearoff_menus
+operator|:
 name|FALSE
 block|,
-comment|/* theme_path                */
+name|theme_path
+operator|:
 name|NULL
 block|,
-comment|/* theme                     */
+name|theme
+operator|:
 name|NULL
 block|}
 decl_stmt|;

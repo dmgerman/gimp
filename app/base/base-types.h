@@ -26,6 +26,10 @@ begin_comment
 comment|/*  magic constants  */
 end_comment
 
+begin_comment
+comment|/* FIXME: Remove magic constants! */
+end_comment
+
 begin_define
 DECL|macro|MAX_CHANNELS
 define|#
@@ -109,7 +113,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aea139a0103
+DECL|enum|__anon2999a9180103
 block|{
 DECL|enumerator|NORMAL_MODE
 name|NORMAL_MODE
@@ -195,7 +199,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aea139a0203
+DECL|enum|__anon2999a9180203
 block|{
 DECL|enumerator|NORMAL_CONVOL
 name|NORMAL_CONVOL
@@ -217,7 +221,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aea139a0303
+DECL|enum|__anon2999a9180303
 block|{
 DECL|enumerator|LINEAR_INTERPOLATION
 name|LINEAR_INTERPOLATION
@@ -236,7 +240,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aea139a0403
+DECL|enum|__anon2999a9180403
 block|{
 DECL|enumerator|VALUE_LUT
 name|VALUE_LUT
@@ -272,7 +276,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2aea139a0503
+DECL|enum|__anon2999a9180503
 block|{
 DECL|enumerator|LIGHT_CHECKS
 name|LIGHT_CHECKS
@@ -313,7 +317,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2aea139a0603
+DECL|enum|__anon2999a9180603
 block|{
 DECL|enumerator|SMALL_CHECKS
 name|SMALL_CHECKS
@@ -339,7 +343,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2aea139a0703
+DECL|enum|__anon2999a9180703
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE

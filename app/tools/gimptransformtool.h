@@ -266,13 +266,17 @@ name|function
 decl_stmt|;
 comment|/*  current tool activity            */
 DECL|member|use_grid
-name|gboolean
+name|guint
 name|use_grid
+range|:
+literal|1
 decl_stmt|;
 comment|/*  does the tool use the grid       */
 DECL|member|use_center
-name|gboolean
+name|guint
 name|use_center
+range|:
+literal|1
 decl_stmt|;
 comment|/*  use the center handle            */
 DECL|member|ngx

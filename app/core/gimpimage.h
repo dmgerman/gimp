@@ -47,7 +47,7 @@ struct|struct
 name|_GimpGuide
 block|{
 DECL|member|ref_count
-name|gint
+name|guint
 name|ref_count
 decl_stmt|;
 DECL|member|position
@@ -166,7 +166,7 @@ decl_stmt|;
 comment|/*  last PDB save proc used      */
 DECL|member|width
 DECL|member|height
-name|gint
+name|guint
 name|width
 decl_stmt|,
 name|height
@@ -204,22 +204,24 @@ name|num_cols
 decl_stmt|;
 comment|/*  number of cols--for indexed  */
 DECL|member|dirty
-name|gint
+name|guint
 name|dirty
 decl_stmt|;
 comment|/*  dirty flag -- # of ops       */
 DECL|member|undo_on
-name|gboolean
+name|guint
 name|undo_on
+range|:
+literal|1
 decl_stmt|;
 comment|/*  Is undo enabled?             */
 DECL|member|instance_count
-name|gint
+name|guint
 name|instance_count
 decl_stmt|;
 comment|/*  number of instances          */
 DECL|member|disp_count
-name|gint
+name|guint
 name|disp_count
 decl_stmt|;
 comment|/*  number of displays           */
@@ -236,8 +238,10 @@ decl_stmt|;
 comment|/*  shadow buffer tiles          */
 comment|/*  Projection attributes  */
 DECL|member|construct_flag
-name|gboolean
+name|guint
 name|construct_flag
+range|:
+literal|1
 decl_stmt|;
 comment|/*  flag for construction        */
 DECL|member|proj_type
@@ -330,7 +334,7 @@ index|[
 name|MAX_CHANNELS
 index|]
 decl_stmt|;
-comment|/*  visible channels             */
+comment|/*  visible channels         */
 DECL|member|active
 name|gboolean
 name|active
@@ -338,17 +342,21 @@ index|[
 name|MAX_CHANNELS
 index|]
 decl_stmt|;
-comment|/*  active channels              */
+comment|/*  active channels          */
 DECL|member|qmask_state
-name|gboolean
+name|guint
 name|qmask_state
+range|:
+literal|1
 decl_stmt|;
-comment|/*  TRUE if qmask is on          */
+comment|/* TRUE if qmask is on       */
 DECL|member|qmask_inverted
-name|gboolean
+name|guint
 name|qmask_inverted
+range|:
+literal|1
 decl_stmt|;
-comment|/*  TRUE if qmask is inverted    */
+comment|/* TRUE if qmask is inverted */
 DECL|member|qmask_color
 name|GimpRGB
 name|qmask_color
@@ -368,17 +376,17 @@ name|redo_stack
 decl_stmt|;
 comment|/*  stack for redo operations    */
 DECL|member|undo_bytes
-name|gint
+name|guint
 name|undo_bytes
 decl_stmt|;
 comment|/*  bytes in undo stack          */
 DECL|member|undo_levels
-name|gint
+name|guint
 name|undo_levels
 decl_stmt|;
 comment|/*  levels in undo stack         */
 DECL|member|group_count
-name|gint
+name|guint
 name|group_count
 decl_stmt|;
 comment|/*  nested undo groups           */
@@ -408,8 +416,10 @@ name|comp_preview
 decl_stmt|;
 comment|/*  the composite preview        */
 DECL|member|comp_preview_valid
-name|gboolean
+name|guint
 name|comp_preview_valid
+range|:
+literal|1
 decl_stmt|;
 comment|/*  preview valid-1/channel      */
 block|}

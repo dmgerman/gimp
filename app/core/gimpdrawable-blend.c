@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<stdlib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib-object.h>
 end_include
 
@@ -116,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291aa2b90108
+DECL|struct|__anon2ad7ff9f0108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -173,7 +179,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291aa2b90208
+DECL|struct|__anon2ad7ff9f0208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -186,11 +192,11 @@ modifier|*
 name|row_data
 decl_stmt|;
 DECL|member|bytes
-name|gint
+name|guint
 name|bytes
 decl_stmt|;
 DECL|member|width
-name|gint
+name|guint
 name|width
 decl_stmt|;
 DECL|typedef|PutPixelData

@@ -114,8 +114,10 @@ modifier|*
 name|spacing_adjustment
 decl_stmt|;
 DECL|member|change_brush_spacing
-name|gboolean
+name|guint
 name|change_brush_spacing
+range|:
+literal|1
 decl_stmt|;
 DECL|member|spacing_changed_handler_id
 name|GQuark

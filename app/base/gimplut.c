@@ -129,7 +129,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_lut_setup (GimpLut * lut,GimpLutFunc func,void * user_data,gint nchannels)
+DECL|function|gimp_lut_setup (GimpLut * lut,GimpLutFunc func,void * user_data,guint nchannels)
 name|gimp_lut_setup
 parameter_list|(
 name|GimpLut
@@ -143,11 +143,11 @@ name|void
 modifier|*
 name|user_data
 parameter_list|,
-name|gint
+name|guint
 name|nchannels
 parameter_list|)
 block|{
-name|gint
+name|guint
 name|i
 decl_stmt|,
 name|v
@@ -281,12 +281,6 @@ argument_list|)
 operator|+
 literal|0.5
 expr_stmt|;
-if|if
-condition|(
-name|val
-operator|<
-literal|0.0
-condition|)
 name|lut
 operator|->
 name|luts
@@ -297,39 +291,14 @@ index|[
 name|v
 index|]
 operator|=
+name|CLAMP
+argument_list|(
+name|val
+argument_list|,
 literal|0
-expr_stmt|;
-elseif|else
-if|if
-condition|(
-name|val
-operator|>=
-literal|255.0
-condition|)
-name|lut
-operator|->
-name|luts
-index|[
-name|i
-index|]
-index|[
-name|v
-index|]
-operator|=
+argument_list|,
 literal|255
-expr_stmt|;
-else|else
-name|lut
-operator|->
-name|luts
-index|[
-name|i
-index|]
-index|[
-name|v
-index|]
-operator|=
-name|val
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -338,7 +307,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_lut_setup_exact (GimpLut * lut,GimpLutFunc func,void * user_data,gint nchannels)
+DECL|function|gimp_lut_setup_exact (GimpLut * lut,GimpLutFunc func,void * user_data,guint nchannels)
 name|gimp_lut_setup_exact
 parameter_list|(
 name|GimpLut
@@ -352,7 +321,7 @@ name|void
 modifier|*
 name|user_data
 parameter_list|,
-name|gint
+name|guint
 name|nchannels
 parameter_list|)
 block|{
@@ -388,7 +357,7 @@ modifier|*
 name|destPR
 parameter_list|)
 block|{
-name|gint
+name|guint
 name|h
 decl_stmt|,
 name|width
@@ -825,7 +794,7 @@ modifier|*
 name|srcPR
 parameter_list|)
 block|{
-name|gint
+name|guint
 name|h
 decl_stmt|,
 name|width

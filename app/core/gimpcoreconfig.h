@@ -81,11 +81,11 @@ name|GimpImageBaseType
 name|default_type
 decl_stmt|;
 DECL|member|default_width
-name|gint
+name|guint
 name|default_width
 decl_stmt|;
 DECL|member|default_height
-name|gint
+name|guint
 name|default_height
 decl_stmt|;
 DECL|member|default_units
@@ -105,7 +105,7 @@ name|GimpUnit
 name|default_resolution_units
 decl_stmt|;
 DECL|member|levels_of_undo
-name|gint
+name|guint
 name|levels_of_undo
 decl_stmt|;
 DECL|member|pluginrc_path
@@ -119,7 +119,7 @@ modifier|*
 name|module_db_load_inhibit
 decl_stmt|;
 DECL|member|thumbnail_mode
-name|gint
+name|guint
 name|thumbnail_mode
 decl_stmt|;
 block|}

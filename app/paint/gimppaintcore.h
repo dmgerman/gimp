@@ -30,7 +30,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon277247520103
+DECL|enum|__anon2ac672b20103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -69,7 +69,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon277247520203
+DECL|enum|__anon2ac672b20203
 block|{
 DECL|enumerator|TOOL_CAN_HANDLE_CHANGING_BRUSH
 name|TOOL_CAN_HANDLE_CHANGING_BRUSH
@@ -225,13 +225,17 @@ name|brush
 decl_stmt|;
 comment|/*  current brush	        */
 DECL|member|pick_colors
-name|gboolean
+name|guint
 name|pick_colors
+range|:
+literal|1
 decl_stmt|;
 comment|/*  pick color if ctrl or alt is pressed  */
 DECL|member|pick_state
-name|gboolean
+name|guint
 name|pick_state
+range|:
+literal|1
 decl_stmt|;
 comment|/*  was ctrl or alt pressed when clicked? */
 DECL|member|flags

@@ -149,11 +149,11 @@ modifier|*
 name|colors
 decl_stmt|;
 DECL|member|n_colors
-name|gint
+name|guint
 name|n_colors
 decl_stmt|;
 DECL|member|n_columns
-name|gint
+name|guint
 name|n_columns
 decl_stmt|;
 block|}

@@ -377,10 +377,10 @@ parameter_list|(
 name|gpointer
 name|user_data
 parameter_list|,
-name|gint
+name|guint
 name|nchannels
 parameter_list|,
-name|gint
+name|guint
 name|channel
 parameter_list|,
 name|gfloat
@@ -397,10 +397,10 @@ parameter_list|(
 name|gpointer
 name|user_data
 parameter_list|,
-name|gint
+name|guint
 name|nchannels
 parameter_list|,
-name|gint
+name|guint
 name|channel
 parameter_list|,
 name|gfloat
@@ -417,10 +417,10 @@ parameter_list|(
 name|gpointer
 name|user_data
 parameter_list|,
-name|gint
+name|guint
 name|nchannels
 parameter_list|,
-name|gint
+name|guint
 name|channel
 parameter_list|,
 name|gfloat
@@ -1788,16 +1788,16 @@ end_function
 begin_function
 specifier|static
 name|gfloat
-DECL|function|gimp_dodgeburn_tool_highlights_lut_func (gpointer user_data,gint nchannels,gint channel,gfloat value)
+DECL|function|gimp_dodgeburn_tool_highlights_lut_func (gpointer user_data,guint nchannels,guint channel,gfloat value)
 name|gimp_dodgeburn_tool_highlights_lut_func
 parameter_list|(
 name|gpointer
 name|user_data
 parameter_list|,
-name|gint
+name|guint
 name|nchannels
 parameter_list|,
-name|gint
+name|guint
 name|channel
 parameter_list|,
 name|gfloat
@@ -1867,16 +1867,16 @@ end_function
 begin_function
 specifier|static
 name|gfloat
-DECL|function|gimp_dodgeburn_tool_midtones_lut_func (gpointer user_data,gint nchannels,gint channel,gfloat value)
+DECL|function|gimp_dodgeburn_tool_midtones_lut_func (gpointer user_data,guint nchannels,guint channel,gfloat value)
 name|gimp_dodgeburn_tool_midtones_lut_func
 parameter_list|(
 name|gpointer
 name|user_data
 parameter_list|,
-name|gint
+name|guint
 name|nchannels
 parameter_list|,
-name|gint
+name|guint
 name|channel
 parameter_list|,
 name|gfloat
@@ -1968,16 +1968,16 @@ end_function
 begin_function
 specifier|static
 name|gfloat
-DECL|function|gimp_dodgeburn_tool_shadows_lut_func (gpointer user_data,gint nchannels,gint channel,gfloat value)
+DECL|function|gimp_dodgeburn_tool_shadows_lut_func (gpointer user_data,guint nchannels,guint channel,gfloat value)
 name|gimp_dodgeburn_tool_shadows_lut_func
 parameter_list|(
 name|gpointer
 name|user_data
 parameter_list|,
-name|gint
+name|guint
 name|nchannels
 parameter_list|,
-name|gint
+name|guint
 name|channel
 parameter_list|,
 name|gfloat

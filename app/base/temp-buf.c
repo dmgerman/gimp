@@ -174,6 +174,7 @@ end_comment
 
 begin_function
 specifier|static
+specifier|inline
 name|guchar
 modifier|*
 DECL|function|temp_buf_allocate (guint size)
@@ -229,7 +230,7 @@ name|guchar
 modifier|*
 name|dest
 decl_stmt|;
-name|glong
+name|gulong
 name|num_bytes
 decl_stmt|;
 name|src
@@ -323,7 +324,7 @@ name|guchar
 modifier|*
 name|dest
 decl_stmt|;
-name|glong
+name|gulong
 name|num_bytes
 decl_stmt|;
 name|gfloat
@@ -409,16 +410,16 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|temp_buf_new (gint width,gint height,gint bytes,gint x,gint y,guchar * col)
+DECL|function|temp_buf_new (guint width,guint height,guint bytes,gint x,gint y,guchar * col)
 name|temp_buf_new
 parameter_list|(
-name|gint
+name|guint
 name|width
 parameter_list|,
-name|gint
+name|guint
 name|height
 parameter_list|,
-name|gint
+name|guint
 name|bytes
 parameter_list|,
 name|gint
@@ -432,6 +433,16 @@ modifier|*
 name|col
 parameter_list|)
 block|{
+specifier|const
+name|gulong
+name|size
+init|=
+name|width
+operator|*
+name|height
+operator|*
+name|bytes
+decl_stmt|;
 name|glong
 name|i
 decl_stmt|;
@@ -448,11 +459,7 @@ name|temp
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|width
-operator|>
-literal|0
-operator|&&
-name|height
+name|size
 operator|>
 literal|0
 argument_list|,
@@ -518,11 +525,7 @@ name|data
 operator|=
 name|temp_buf_allocate
 argument_list|(
-name|width
-operator|*
-name|height
-operator|*
-name|bytes
+name|size
 argument_list|)
 expr_stmt|;
 comment|/*  initialize the data  */
@@ -750,13 +753,13 @@ end_comment
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|temp_buf_new_check (gint width,gint height,GimpCheckType check_type,GimpCheckSize check_size)
+DECL|function|temp_buf_new_check (guint width,guint height,GimpCheckType check_type,GimpCheckSize check_size)
 name|temp_buf_new_check
 parameter_list|(
-name|gint
+name|guint
 name|width
 parameter_list|,
-name|gint
+name|guint
 name|height
 parameter_list|,
 name|GimpCheckType
@@ -789,7 +792,7 @@ name|bg_color
 init|=
 literal|0
 decl_stmt|;
-name|gint
+name|guint
 name|i
 decl_stmt|,
 name|j
@@ -1191,14 +1194,14 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|temp_buf_resize (TempBuf * buf,gint bytes,gint x,gint y,gint width,gint height)
+DECL|function|temp_buf_resize (TempBuf * buf,guint bytes,gint x,gint y,guint width,guint height)
 name|temp_buf_resize
 parameter_list|(
 name|TempBuf
 modifier|*
 name|buf
 parameter_list|,
-name|gint
+name|guint
 name|bytes
 parameter_list|,
 name|gint
@@ -1207,37 +1210,32 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
-name|gint
+name|guint
 name|width
 parameter_list|,
-name|gint
+name|guint
 name|height
 parameter_list|)
 block|{
-name|gint
-name|size
-decl_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|width
-operator|>
-literal|0
-operator|&&
-name|height
-operator|>
-literal|0
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 comment|/*  calculate the requested size  */
+specifier|const
+name|gulong
 name|size
-operator|=
+init|=
 name|width
 operator|*
 name|height
 operator|*
 name|bytes
+decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|size
+operator|>
+literal|0
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 comment|/*  First, configure the canvas buffer  */
 if|if
@@ -1347,24 +1345,24 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|temp_buf_scale (TempBuf * src,gint new_width,gint new_height)
+DECL|function|temp_buf_scale (TempBuf * src,guint new_width,guint new_height)
 name|temp_buf_scale
 parameter_list|(
 name|TempBuf
 modifier|*
 name|src
 parameter_list|,
-name|gint
+name|guint
 name|new_width
 parameter_list|,
-name|gint
+name|guint
 name|new_height
 parameter_list|)
 block|{
-name|gint
+name|guint
 name|loop1
 decl_stmt|;
-name|gint
+name|guint
 name|loop2
 decl_stmt|;
 name|gdouble
@@ -1591,7 +1589,7 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|temp_buf_copy_area (TempBuf * src,TempBuf * dest,gint x,gint y,gint width,gint height,gint dest_x,gint dest_y)
+DECL|function|temp_buf_copy_area (TempBuf * src,TempBuf * dest,gint x,gint y,guint width,guint height,gint dest_x,gint dest_y)
 name|temp_buf_copy_area
 parameter_list|(
 name|TempBuf
@@ -1608,10 +1606,10 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
-name|gint
+name|guint
 name|width
 parameter_list|,
-name|gint
+name|guint
 name|height
 parameter_list|,
 name|gint
@@ -2126,13 +2124,13 @@ end_comment
 begin_function
 name|MaskBuf
 modifier|*
-DECL|function|mask_buf_new (gint width,gint height)
+DECL|function|mask_buf_new (guint width,guint height)
 name|mask_buf_new
 parameter_list|(
-name|gint
+name|guint
 name|width
 parameter_list|,
-name|gint
+name|guint
 name|height
 parameter_list|)
 block|{

@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279786f00103
+DECL|enum|__anon27b0738d0103
 block|{
 DECL|enumerator|NO_ACTION
 name|NO_ACTION
@@ -55,7 +55,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279786f00203
+DECL|enum|__anon27b0738d0203
 block|{
 DECL|enumerator|DRAW_NOTHING
 name|DRAW_NOTHING
@@ -254,15 +254,19 @@ name|curves
 decl_stmt|;
 comment|/*  the list of curves                    */
 DECL|member|first_point
-name|gboolean
+name|guint
 name|first_point
+range|:
+literal|1
 decl_stmt|;
-comment|/*  is this the first point?              */
+comment|/*  is this the first point?          */
 DECL|member|connected
-name|gboolean
+name|guint
 name|connected
+range|:
+literal|1
 decl_stmt|;
-comment|/*  is the region closed?                 */
+comment|/*  is the region closed?             */
 DECL|member|state
 name|Iscissors_state
 name|state

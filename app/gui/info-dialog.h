@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d4874f0103
+DECL|enum|__anon27596bc00103
 block|{
 DECL|enumerator|INFO_LABEL
 name|INFO_LABEL
@@ -111,7 +111,7 @@ modifier|*
 name|field_list
 decl_stmt|;
 DECL|member|nfields
-name|gint
+name|guint
 name|nfields
 decl_stmt|;
 DECL|member|user_data

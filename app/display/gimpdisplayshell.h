@@ -157,12 +157,12 @@ name|gint
 name|offset_y
 decl_stmt|;
 DECL|member|disp_width
-name|gint
+name|guint
 name|disp_width
 decl_stmt|;
 comment|/*  width of drawing area   */
 DECL|member|disp_height
-name|gint
+name|guint
 name|disp_height
 decl_stmt|;
 comment|/*  height of drawing area  */
@@ -175,10 +175,12 @@ name|gint
 name|disp_yoffset
 decl_stmt|;
 DECL|member|proximity
-name|gboolean
+name|guint
 name|proximity
+range|:
+literal|1
 decl_stmt|;
-comment|/* is a device in proximity           */
+comment|/* is a device in proximity */
 DECL|member|select
 name|Selection
 modifier|*
@@ -297,7 +299,7 @@ name|render_gc
 decl_stmt|;
 comment|/*  GC for rendering the image         */
 DECL|member|icon_size
-name|gint
+name|guint
 name|icon_size
 decl_stmt|;
 comment|/*  size of the icon pixmap            */
@@ -327,18 +329,24 @@ name|override_cursor
 decl_stmt|;
 comment|/*  Overriding cursor                  */
 DECL|member|using_override_cursor
-name|gboolean
+name|guint
 name|using_override_cursor
+range|:
+literal|1
 decl_stmt|;
-comment|/*  is the cursor overridden?      */
+comment|/*  is the cursor overridden?  */
 DECL|member|draw_cursor
-name|gboolean
+name|guint
 name|draw_cursor
+range|:
+literal|1
 decl_stmt|;
 comment|/* should we draw software cursor ?    */
 DECL|member|have_cursor
-name|gboolean
+name|guint
 name|have_cursor
+range|:
+literal|1
 decl_stmt|;
 comment|/* is cursor currently drawn ?         */
 DECL|member|cursor_x

@@ -216,8 +216,10 @@ name|gint
 name|channel
 decl_stmt|;
 DECL|member|preview
-name|gboolean
+name|guint
 name|preview
+range|:
+literal|1
 decl_stmt|;
 DECL|member|grab_point
 name|gint

@@ -27,7 +27,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fefe890103
+DECL|enum|__anon2990fe000103
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -51,7 +51,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fefe890203
+DECL|enum|__anon2990fe000203
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -138,8 +138,10 @@ name|scroll_data
 decl_stmt|;
 comment|/*  Instant update  */
 DECL|member|instant_update
-name|gboolean
+name|guint
 name|instant_update
+range|:
+literal|1
 decl_stmt|;
 comment|/*  Gradient preview  */
 DECL|member|preview_rows
@@ -156,8 +158,10 @@ name|gint
 name|preview_last_x
 decl_stmt|;
 DECL|member|preview_button_down
-name|gboolean
+name|guint
 name|preview_button_down
+range|:
+literal|1
 decl_stmt|;
 comment|/*  Gradient control  */
 DECL|member|control_pixmap
@@ -194,8 +198,10 @@ name|control_click_time
 decl_stmt|;
 comment|/* Time when mouse was pressed */
 DECL|member|control_compress
-name|gboolean
+name|guint
 name|control_compress
+range|:
+literal|1
 decl_stmt|;
 comment|/* Compressing/expanding handles */
 DECL|member|control_last_x
@@ -237,18 +243,22 @@ name|GimpGradientSegment
 modifier|*
 name|left_saved_segments
 decl_stmt|;
-DECL|member|left_saved_dirty
-name|gboolean
-name|left_saved_dirty
-decl_stmt|;
 DECL|member|right_saved_segments
 name|GimpGradientSegment
 modifier|*
 name|right_saved_segments
 decl_stmt|;
+DECL|member|left_saved_dirty
+name|guint
+name|left_saved_dirty
+range|:
+literal|1
+decl_stmt|;
 DECL|member|right_saved_dirty
-name|gboolean
+name|guint
 name|right_saved_dirty
+range|:
+literal|1
 decl_stmt|;
 block|}
 struct|;

@@ -152,25 +152,40 @@ name|paused_count
 decl_stmt|;
 comment|/*  paused control count                        */
 DECL|member|scroll_lock
-name|gboolean
+name|guint
 name|scroll_lock
+range|:
+literal|1
 decl_stmt|;
-comment|/*  allow scrolling or not                      */
+comment|/*  allow scrolling or not                  */
 DECL|member|auto_snap_to
-name|gboolean
+name|guint
 name|auto_snap_to
+range|:
+literal|1
 decl_stmt|;
-comment|/*  snap to guides automatically                */
+comment|/*  snap to guides automatically            */
 DECL|member|handle_empty_image
-name|gboolean
+name|guint
 name|handle_empty_image
+range|:
+literal|1
 decl_stmt|;
-comment|/*  invoke the tool on images without                                      *  active drawable                                      */
+comment|/*  invoke the tool on images without                                          *  active drawable                   */
 DECL|member|preserve
-name|gboolean
+name|guint
 name|preserve
+range|:
+literal|1
 decl_stmt|;
 comment|/*  Preserve this tool across drawable changes  */
+DECL|member|toggled
+name|guint
+name|toggled
+range|:
+literal|1
+decl_stmt|;
+comment|/*  Bad hack to let the paint_core show the 			       *  right toggle cursors 			       */
 DECL|member|gdisp
 name|GimpDisplay
 modifier|*
@@ -192,11 +207,6 @@ name|GimpToolCursorType
 name|toggle_cursor
 decl_stmt|;
 comment|/* one of these or both will go 				      * away once all cursor_update 				      * functions are properly 				      * virtualized 				      */
-DECL|member|toggled
-name|gboolean
-name|toggled
-decl_stmt|;
-comment|/*  Bad hack to let the paint_core show the 			       *  right toggle cursors 			       */
 block|}
 struct|;
 end_struct

@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af1add40103
+DECL|enum|__anon296f0f220103
 block|{
 DECL|enumerator|WithinBounds
 name|WithinBounds
@@ -54,12 +54,16 @@ name|gint
 name|y2
 decl_stmt|;
 DECL|member|open
-name|gboolean
+name|guint
 name|open
+range|:
+literal|1
 decl_stmt|;
 DECL|member|visited
-name|gboolean
+name|guint
 name|visited
+range|:
+literal|1
 decl_stmt|;
 block|}
 struct|;

@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2df91c0108
+DECL|struct|__anon2772d6300108
 block|{
 DECL|member|delete_on_exit
 name|gboolean
@@ -773,6 +773,7 @@ block|{
 name|g_return_val_if_fail
 argument_list|(
 operator|(
+operator|(
 name|unit
 operator|>=
 name|GIMP_UNIT_PIXEL
@@ -787,6 +788,7 @@ operator|+
 name|gimp
 operator|->
 name|n_user_units
+operator|)
 operator|)
 operator|)
 operator|||
@@ -859,6 +861,7 @@ block|{
 name|g_return_val_if_fail
 argument_list|(
 operator|(
+operator|(
 name|unit
 operator|>=
 name|GIMP_UNIT_PIXEL
@@ -873,6 +876,7 @@ operator|+
 name|gimp
 operator|->
 name|n_user_units
+operator|)
 operator|)
 operator|)
 operator|||
@@ -945,6 +949,7 @@ block|{
 name|g_return_val_if_fail
 argument_list|(
 operator|(
+operator|(
 name|unit
 operator|>=
 name|GIMP_UNIT_PIXEL
@@ -959,6 +964,7 @@ operator|+
 name|gimp
 operator|->
 name|n_user_units
+operator|)
 operator|)
 operator|)
 operator|||
@@ -1031,6 +1037,7 @@ block|{
 name|g_return_val_if_fail
 argument_list|(
 operator|(
+operator|(
 name|unit
 operator|>=
 name|GIMP_UNIT_PIXEL
@@ -1045,6 +1052,7 @@ operator|+
 name|gimp
 operator|->
 name|n_user_units
+operator|)
 operator|)
 operator|)
 operator|||
@@ -1129,6 +1137,7 @@ block|{
 name|g_return_val_if_fail
 argument_list|(
 operator|(
+operator|(
 name|unit
 operator|>=
 name|GIMP_UNIT_PIXEL
@@ -1143,6 +1152,7 @@ operator|+
 name|gimp
 operator|->
 name|n_user_units
+operator|)
 operator|)
 operator|)
 operator|||

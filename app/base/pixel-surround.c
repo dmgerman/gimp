@@ -47,7 +47,7 @@ end_include
 
 begin_function
 name|void
-DECL|function|pixel_surround_init (PixelSurround * ps,TileManager * tm,gint w,gint h,guchar bg[MAX_CHANNELS])
+DECL|function|pixel_surround_init (PixelSurround * ps,TileManager * tm,guint w,guint h,guchar bg[MAX_CHANNELS])
 name|pixel_surround_init
 parameter_list|(
 name|PixelSurround
@@ -58,10 +58,10 @@ name|TileManager
 modifier|*
 name|tm
 parameter_list|,
-name|gint
+name|guint
 name|w
 parameter_list|,
-name|gint
+name|guint
 name|h
 parameter_list|,
 name|guchar
@@ -71,7 +71,7 @@ name|MAX_CHANNELS
 index|]
 parameter_list|)
 block|{
-name|gint
+name|guint
 name|i
 decl_stmt|;
 for|for
@@ -170,21 +170,21 @@ end_function
 begin_function
 name|guchar
 modifier|*
-DECL|function|pixel_surround_lock (PixelSurround * ps,gint x,gint y)
+DECL|function|pixel_surround_lock (PixelSurround * ps,guint x,guint y)
 name|pixel_surround_lock
 parameter_list|(
 name|PixelSurround
 modifier|*
 name|ps
 parameter_list|,
-name|gint
+name|guint
 name|x
 parameter_list|,
-name|gint
+name|guint
 name|y
 parameter_list|)
 block|{
-name|gint
+name|guint
 name|i
 decl_stmt|,
 name|j
@@ -502,7 +502,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|guint
 DECL|function|pixel_surround_rowstride (PixelSurround * ps)
 name|pixel_surround_rowstride
 parameter_list|(

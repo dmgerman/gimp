@@ -118,7 +118,7 @@ value|1000
 end_define
 
 begin_typedef
-DECL|enum|__anon292ecc8a0103
+DECL|enum|__anon2a55f00a0103
 DECL|enumerator|SEGMENT_LINE
 DECL|enumerator|SEGMENT_BEZIER
 DECL|typedef|SegmentType
@@ -136,7 +136,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon292ecc8a0203
+DECL|enum|__anon2a55f00a0203
 DECL|enumerator|ON_ANCHOR
 DECL|enumerator|ON_HANDLE
 DECL|enumerator|ON_CURVE

@@ -28,7 +28,7 @@ modifier|*
 name|luts
 decl_stmt|;
 DECL|member|nchannels
-name|gint
+name|guint
 name|nchannels
 decl_stmt|;
 block|}
@@ -55,10 +55,10 @@ parameter_list|(
 name|gpointer
 name|user_data
 parameter_list|,
-name|gint
+name|guint
 name|nchannels
 parameter_list|,
-name|gint
+name|guint
 name|channel
 parameter_list|,
 name|gfloat
@@ -102,7 +102,7 @@ parameter_list|,
 name|gpointer
 name|user_data
 parameter_list|,
-name|gint
+name|guint
 name|nchannels
 parameter_list|)
 function_decl|;
@@ -126,7 +126,7 @@ parameter_list|,
 name|gpointer
 name|user_data
 parameter_list|,
-name|gint
+name|guint
 name|nchannels
 parameter_list|)
 function_decl|;

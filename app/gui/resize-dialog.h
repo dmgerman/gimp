@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278b61fd0103
+DECL|enum|__anon28c7ce3b0103
 block|{
 DECL|enumerator|ScaleWidget
 name|ScaleWidget
@@ -35,7 +35,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278b61fd0203
+DECL|enum|__anon28c7ce3b0203
 block|{
 DECL|enumerator|ResizeImage
 name|ResizeImage
@@ -76,11 +76,11 @@ name|ResizeTarget
 name|target
 decl_stmt|;
 DECL|member|width
-name|gint
+name|guint
 name|width
 decl_stmt|;
 DECL|member|height
-name|gint
+name|guint
 name|height
 decl_stmt|;
 DECL|member|resolution_x

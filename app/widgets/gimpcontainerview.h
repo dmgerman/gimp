@@ -119,12 +119,14 @@ modifier|*
 name|hash_table
 decl_stmt|;
 DECL|member|preview_size
-name|gint
+name|guint
 name|preview_size
 decl_stmt|;
 DECL|member|reorderable
-name|gboolean
+name|guint
 name|reorderable
+range|:
+literal|1
 decl_stmt|;
 DECL|member|get_name_func
 name|GimpItemGetNameFunc

@@ -121,17 +121,33 @@ name|color
 decl_stmt|;
 comment|/*  Also stored the opacity        */
 DECL|member|show_masked
-name|gboolean
+name|guint
 name|show_masked
 decl_stmt|;
 comment|/*  Show masked areas--as          */
 comment|/*  opposed to selected areas      */
 comment|/*  Selection mask variables  */
 DECL|member|boundary_known
-name|gboolean
+name|guint
 name|boundary_known
+range|:
+literal|1
 decl_stmt|;
 comment|/*  is the current boundary valid  */
+DECL|member|empty
+name|guint
+name|empty
+range|:
+literal|1
+decl_stmt|;
+comment|/*  is the region empty?           */
+DECL|member|bounds_known
+name|guint
+name|bounds_known
+range|:
+literal|1
+decl_stmt|;
+comment|/*  recalculate the bounds?        */
 DECL|member|segs_in
 name|BoundSeg
 modifier|*
@@ -145,25 +161,15 @@ name|segs_out
 decl_stmt|;
 comment|/*  outline of selected region     */
 DECL|member|num_segs_in
-name|gint
+name|guint
 name|num_segs_in
 decl_stmt|;
 comment|/*  number of lines in boundary    */
 DECL|member|num_segs_out
-name|gint
+name|guint
 name|num_segs_out
 decl_stmt|;
 comment|/*  number of lines in boundary    */
-DECL|member|empty
-name|gboolean
-name|empty
-decl_stmt|;
-comment|/*  is the region empty?           */
-DECL|member|bounds_known
-name|gboolean
-name|bounds_known
-decl_stmt|;
-comment|/*  recalculate the bounds?        */
 DECL|member|x1
 DECL|member|y1
 name|gint
@@ -291,10 +297,10 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|gint
+name|guint
 name|width
 parameter_list|,
-name|gint
+name|guint
 name|height
 parameter_list|,
 specifier|const
@@ -327,7 +333,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|guint
 name|gimp_channel_get_opacity
 parameter_list|(
 specifier|const
@@ -346,7 +352,7 @@ name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
-name|gint
+name|guint
 name|opacity
 parameter_list|)
 function_decl|;
@@ -390,10 +396,10 @@ name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
-name|gint
+name|guint
 name|new_width
 parameter_list|,
-name|gint
+name|guint
 name|new_height
 parameter_list|)
 function_decl|;
@@ -407,10 +413,10 @@ name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
-name|gint
+name|guint
 name|new_width
 parameter_list|,
-name|gint
+name|guint
 name|new_height
 parameter_list|,
 name|gint
@@ -435,10 +441,10 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|gint
+name|guint
 name|width
 parameter_list|,
-name|gint
+name|guint
 name|height
 parameter_list|)
 function_decl|;
@@ -513,7 +519,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|guchar
 name|gimp_channel_value
 parameter_list|(
 name|GimpChannel
@@ -554,10 +560,10 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
-name|gint
+name|guint
 name|width
 parameter_list|,
-name|gint
+name|guint
 name|value
 parameter_list|)
 function_decl|;
@@ -577,10 +583,10 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
-name|gint
+name|guint
 name|width
 parameter_list|,
-name|gint
+name|guint
 name|value
 parameter_list|)
 function_decl|;
@@ -603,10 +609,10 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
-name|gint
+name|guint
 name|w
 parameter_list|,
-name|gint
+name|guint
 name|h
 parameter_list|)
 function_decl|;
@@ -629,10 +635,10 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
-name|gint
+name|guint
 name|w
 parameter_list|,
-name|gint
+name|guint
 name|h
 parameter_list|,
 name|gboolean
@@ -748,10 +754,10 @@ name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
-name|gint
+name|guint
 name|radius_x
 parameter_list|,
-name|gint
+name|guint
 name|radius_y
 parameter_list|)
 function_decl|;

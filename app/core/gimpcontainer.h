@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c18667d0103
+DECL|enum|__anon28b7b5c90103
 block|{
 DECL|enumerator|GIMP_CONTAINER_POLICY_STRONG
 name|GIMP_CONTAINER_POLICY_STRONG
@@ -137,7 +137,7 @@ name|GimpContainerPolicy
 name|policy
 decl_stmt|;
 DECL|member|num_children
-name|gint
+name|guint
 name|num_children
 decl_stmt|;
 comment|/*  private  */
@@ -147,7 +147,7 @@ modifier|*
 name|handlers
 decl_stmt|;
 DECL|member|freeze_count
-name|gint
+name|guint
 name|freeze_count
 decl_stmt|;
 block|}

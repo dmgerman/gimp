@@ -71,7 +71,7 @@ modifier|*
 name|next
 decl_stmt|;
 DECL|member|tile_num
-name|gint
+name|guint
 name|tile_num
 decl_stmt|;
 comment|/* the number of this tile within the drawable */
@@ -91,17 +91,17 @@ struct|struct
 name|_Tile
 block|{
 DECL|member|ref_count
-name|gshort
+name|gushort
 name|ref_count
 decl_stmt|;
 comment|/* reference count. when the reference count is  		        *  non-zero then the "data" for this tile must 		        *  be valid. when the reference count for a tile 		        *  is 0 then the "data" for this tile must be 		        *  NULL. 		        */
 DECL|member|write_count
-name|gshort
+name|gushort
 name|write_count
 decl_stmt|;
 comment|/* write count: number of references that are 			  for write access */
 DECL|member|share_count
-name|gshort
+name|gushort
 name|share_count
 decl_stmt|;
 comment|/* share count: number of tile managers that 			  hold this tile */
@@ -120,8 +120,10 @@ literal|1
 decl_stmt|;
 comment|/* is the tile valid? */
 DECL|member|bpp
-name|guchar
+name|guint
 name|bpp
+range|:
+literal|4
 decl_stmt|;
 comment|/* the bytes per pixel (1, 2, 3 or 4) */
 DECL|member|ewidth
@@ -147,7 +149,7 @@ name|data
 decl_stmt|;
 comment|/* the data for the tile. this may be NULL in which 		       *  case the tile data is on disk. 		       */
 DECL|member|swap_num
-name|gint
+name|guint
 name|swap_num
 decl_stmt|;
 comment|/* the index into the file table of the file to be used 		       * for swapping. swap_num 1 is always the global 		       * swap file. 		       */

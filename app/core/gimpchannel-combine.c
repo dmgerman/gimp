@@ -542,17 +542,17 @@ end_function
 begin_function
 name|GimpChannel
 modifier|*
-DECL|function|gimp_channel_new (GimpImage * gimage,gint width,gint height,const gchar * name,const GimpRGB * color)
+DECL|function|gimp_channel_new (GimpImage * gimage,guint width,guint height,const gchar * name,const GimpRGB * color)
 name|gimp_channel_new
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|gint
+name|guint
 name|width
 parameter_list|,
-name|gint
+name|guint
 name|height
 parameter_list|,
 specifier|const
@@ -1081,7 +1081,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|guint
 DECL|function|gimp_channel_get_opacity (const GimpChannel * channel)
 name|gimp_channel_get_opacity
 parameter_list|(
@@ -1103,7 +1103,7 @@ argument_list|)
 expr_stmt|;
 return|return
 call|(
-name|gint
+name|guint
 call|)
 argument_list|(
 name|channel
@@ -1120,14 +1120,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_set_opacity (GimpChannel * channel,gint opacity)
+DECL|function|gimp_channel_set_opacity (GimpChannel * channel,guint opacity)
 name|gimp_channel_set_opacity
 parameter_list|(
 name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
-name|gint
+name|guint
 name|opacity
 parameter_list|)
 block|{
@@ -1165,17 +1165,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_scale (GimpChannel * channel,gint new_width,gint new_height)
+DECL|function|gimp_channel_scale (GimpChannel * channel,guint new_width,guint new_height)
 name|gimp_channel_scale
 parameter_list|(
 name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
-name|gint
+name|guint
 name|new_width
 parameter_list|,
-name|gint
+name|guint
 name|new_height
 parameter_list|)
 block|{
@@ -1388,17 +1388,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_resize (GimpChannel * channel,gint new_width,gint new_height,gint offx,gint offy)
+DECL|function|gimp_channel_resize (GimpChannel * channel,guint new_width,guint new_height,gint offx,gint offy)
 name|gimp_channel_resize
 parameter_list|(
 name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
-name|gint
+name|guint
 name|new_width
 parameter_list|,
-name|gint
+name|guint
 name|new_height
 parameter_list|,
 name|gint
@@ -1850,17 +1850,17 @@ end_comment
 begin_function
 name|GimpChannel
 modifier|*
-DECL|function|gimp_channel_new_mask (GimpImage * gimage,gint width,gint height)
+DECL|function|gimp_channel_new_mask (GimpImage * gimage,guint width,guint height)
 name|gimp_channel_new_mask
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|gint
+name|guint
 name|width
 parameter_list|,
-name|gint
+name|guint
 name|height
 parameter_list|)
 block|{
@@ -2294,7 +2294,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|guchar
 DECL|function|gimp_channel_value (GimpChannel * mask,gint x,gint y)
 name|gimp_channel_value
 parameter_list|(
@@ -2313,7 +2313,7 @@ name|Tile
 modifier|*
 name|tile
 decl_stmt|;
-name|gint
+name|guchar
 name|val
 decl_stmt|;
 name|g_return_val_if_fail
@@ -3353,7 +3353,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_add_segment (GimpChannel * mask,gint x,gint y,gint width,gint value)
+DECL|function|gimp_channel_add_segment (GimpChannel * mask,gint x,gint y,guint width,guint value)
 name|gimp_channel_add_segment
 parameter_list|(
 name|GimpChannel
@@ -3366,10 +3366,10 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
-name|gint
+name|guint
 name|width
 parameter_list|,
-name|gint
+name|guint
 name|value
 parameter_list|)
 block|{
@@ -3587,7 +3587,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_sub_segment (GimpChannel * mask,gint x,gint y,gint width,gint value)
+DECL|function|gimp_channel_sub_segment (GimpChannel * mask,gint x,gint y,guint width,guint value)
 name|gimp_channel_sub_segment
 parameter_list|(
 name|GimpChannel
@@ -3600,10 +3600,10 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
-name|gint
+name|guint
 name|width
 parameter_list|,
-name|gint
+name|guint
 name|value
 parameter_list|)
 block|{
@@ -3821,7 +3821,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_combine_rect (GimpChannel * mask,ChannelOps op,gint x,gint y,gint w,gint h)
+DECL|function|gimp_channel_combine_rect (GimpChannel * mask,ChannelOps op,gint x,gint y,guint w,guint h)
 name|gimp_channel_combine_rect
 parameter_list|(
 name|GimpChannel
@@ -3837,10 +3837,10 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
-name|gint
+name|guint
 name|w
 parameter_list|,
-name|gint
+name|guint
 name|h
 parameter_list|)
 block|{
@@ -4240,7 +4240,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_combine_ellipse (GimpChannel * mask,ChannelOps op,gint x,gint y,gint w,gint h,gboolean antialias)
+DECL|function|gimp_channel_combine_ellipse (GimpChannel * mask,ChannelOps op,gint x,gint y,guint w,guint h,gboolean antialias)
 name|gimp_channel_combine_ellipse
 parameter_list|(
 name|GimpChannel
@@ -4256,10 +4256,10 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
-name|gint
+name|guint
 name|w
 parameter_list|,
-name|gint
+name|guint
 name|h
 parameter_list|,
 name|gboolean
@@ -6572,17 +6572,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_border (GimpChannel * mask,gint radius_x,gint radius_y)
+DECL|function|gimp_channel_border (GimpChannel * mask,guint radius_x,guint radius_y)
 name|gimp_channel_border
 parameter_list|(
 name|GimpChannel
 modifier|*
 name|mask
 parameter_list|,
-name|gint
+name|guint
 name|radius_x
 parameter_list|,
-name|gint
+name|guint
 name|radius_y
 parameter_list|)
 block|{
@@ -6606,17 +6606,6 @@ name|mask
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|radius_x
-operator|<
-literal|0
-operator|||
-name|radius_y
-operator|<
-literal|0
-condition|)
-return|return;
 if|if
 condition|(
 operator|!
@@ -6840,11 +6829,11 @@ return|return;
 if|if
 condition|(
 name|radius_x
-operator|<=
+operator|<
 literal|0
 operator|&&
 name|radius_y
-operator|<=
+operator|<
 literal|0
 condition|)
 block|{
@@ -6863,17 +6852,6 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-if|if
-condition|(
-name|radius_x
-operator|<
-literal|0
-operator|||
-name|radius_y
-operator|<
-literal|0
-condition|)
-return|return;
 if|if
 condition|(
 operator|!
@@ -7109,11 +7087,11 @@ return|return;
 if|if
 condition|(
 name|radius_x
-operator|<=
+operator|<
 literal|0
 operator|&&
 name|radius_y
-operator|<=
+operator|<
 literal|0
 condition|)
 block|{
@@ -7130,17 +7108,6 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-if|if
-condition|(
-name|radius_x
-operator|<
-literal|0
-operator|||
-name|radius_y
-operator|<
-literal|0
-condition|)
-return|return;
 if|if
 condition|(
 operator|!

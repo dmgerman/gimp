@@ -87,7 +87,7 @@ name|gint
 name|y
 decl_stmt|;
 DECL|member|height
-name|gint
+name|guint
 name|height
 decl_stmt|;
 DECL|member|data

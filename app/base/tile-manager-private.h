@@ -30,27 +30,27 @@ name|y
 decl_stmt|;
 comment|/*  tile manager offsets                 */
 DECL|member|width
-name|gint
+name|guint
 name|width
 decl_stmt|;
 comment|/*  the width of the tiled area          */
 DECL|member|height
-name|gint
+name|guint
 name|height
 decl_stmt|;
 comment|/*  the height of the tiled area         */
 DECL|member|bpp
-name|gint
+name|guint
 name|bpp
 decl_stmt|;
 comment|/*  the bpp of each tile                 */
 DECL|member|ntile_rows
-name|gint
+name|guint
 name|ntile_rows
 decl_stmt|;
 comment|/*  the number of tiles in each row      */
 DECL|member|ntile_cols
-name|gint
+name|guint
 name|ntile_cols
 decl_stmt|;
 comment|/*  the number of tiles in each columns  */
@@ -98,6 +98,11 @@ name|TileManager
 modifier|*
 name|tm
 decl_stmt|;
+DECL|member|tile
+name|Tile
+modifier|*
+name|tile
+decl_stmt|;
 DECL|member|x1
 DECL|member|x2
 DECL|member|y1
@@ -112,21 +117,22 @@ decl_stmt|,
 name|y2
 decl_stmt|;
 DECL|member|readable
-name|gboolean
+name|guint
 name|readable
+range|:
+literal|1
 decl_stmt|;
 DECL|member|writeable
-name|gboolean
+name|guint
 name|writeable
+range|:
+literal|1
 decl_stmt|;
 DECL|member|local_buffer
-name|gboolean
+name|guint
 name|local_buffer
-decl_stmt|;
-DECL|member|tile
-name|Tile
-modifier|*
-name|tile
+range|:
+literal|1
 decl_stmt|;
 block|}
 struct|;

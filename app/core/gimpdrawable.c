@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296493d20103
+DECL|enum|__anon2bdfb7af0103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -1223,7 +1223,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_configure (GimpDrawable * drawable,GimpImage * gimage,gint width,gint height,GimpImageType type,const gchar * name)
+DECL|function|gimp_drawable_configure (GimpDrawable * drawable,GimpImage * gimage,guint width,guint height,GimpImageType type,const gchar * name)
 name|gimp_drawable_configure
 parameter_list|(
 name|GimpDrawable
@@ -1234,10 +1234,10 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|gint
+name|guint
 name|width
 parameter_list|,
-name|gint
+name|guint
 name|height
 parameter_list|,
 name|GimpImageType
@@ -1706,7 +1706,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_update (GimpDrawable * drawable,gint x,gint y,gint w,gint h)
+DECL|function|gimp_drawable_update (GimpDrawable * drawable,gint x,gint y,guint w,guint h)
 name|gimp_drawable_update
 parameter_list|(
 name|GimpDrawable
@@ -1719,10 +1719,10 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
-name|gint
+name|guint
 name|w
 parameter_list|,
-name|gint
+name|guint
 name|h
 parameter_list|)
 block|{
@@ -1803,7 +1803,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_apply_image (GimpDrawable * drawable,gint x1,gint y1,gint x2,gint y2,TileManager * tiles,gint sparse)
+DECL|function|gimp_drawable_apply_image (GimpDrawable * drawable,gint x1,gint y1,gint x2,gint y2,TileManager * tiles,gboolean sparse)
 name|gimp_drawable_apply_image
 parameter_list|(
 name|GimpDrawable
@@ -1826,7 +1826,7 @@ name|TileManager
 modifier|*
 name|tiles
 parameter_list|,
-name|gint
+name|gboolean
 name|sparse
 parameter_list|)
 block|{

@@ -21,17 +21,12 @@ DECL|struct|_TempBuf
 struct|struct
 name|_TempBuf
 block|{
-DECL|member|bytes
-name|gint
-name|bytes
-decl_stmt|;
-comment|/*  the necessary info                             */
 DECL|member|width
-name|gint
+name|guint
 name|width
 decl_stmt|;
 DECL|member|height
-name|gint
+name|guint
 name|height
 decl_stmt|;
 DECL|member|x
@@ -42,9 +37,18 @@ decl_stmt|,
 name|y
 decl_stmt|;
 comment|/*  origin of data source                          */
+DECL|member|bytes
+name|guint
+name|bytes
+range|:
+literal|4
+decl_stmt|;
+comment|/*  the necessary info                             */
 DECL|member|swapped
-name|gboolean
+name|guint
 name|swapped
+range|:
+literal|1
 decl_stmt|;
 comment|/*  flag indicating whether buf is cached to disk  */
 DECL|member|filename
@@ -72,13 +76,13 @@ name|TempBuf
 modifier|*
 name|temp_buf_new
 parameter_list|(
-name|gint
+name|guint
 name|width
 parameter_list|,
-name|gint
+name|guint
 name|height
 parameter_list|,
-name|gint
+name|guint
 name|bytes
 parameter_list|,
 name|gint
@@ -99,10 +103,10 @@ name|TempBuf
 modifier|*
 name|temp_buf_new_check
 parameter_list|(
-name|gint
+name|guint
 name|width
 parameter_list|,
-name|gint
+name|guint
 name|height
 parameter_list|,
 name|GimpCheckType
@@ -139,7 +143,7 @@ name|TempBuf
 modifier|*
 name|buf
 parameter_list|,
-name|gint
+name|guint
 name|bytes
 parameter_list|,
 name|gint
@@ -148,10 +152,10 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
-name|gint
+name|guint
 name|width
 parameter_list|,
-name|gint
+name|guint
 name|height
 parameter_list|)
 function_decl|;
@@ -166,10 +170,10 @@ name|TempBuf
 modifier|*
 name|buf
 parameter_list|,
-name|gint
+name|guint
 name|width
 parameter_list|,
-name|gint
+name|guint
 name|height
 parameter_list|)
 function_decl|;
@@ -194,10 +198,10 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
-name|gint
+name|guint
 name|width
 parameter_list|,
-name|gint
+name|guint
 name|height
 parameter_list|,
 name|gint
@@ -253,10 +257,10 @@ name|MaskBuf
 modifier|*
 name|mask_buf_new
 parameter_list|(
-name|gint
+name|guint
 name|width
 parameter_list|,
-name|gint
+name|guint
 name|height
 parameter_list|)
 function_decl|;

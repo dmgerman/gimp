@@ -111,24 +111,30 @@ name|gint
 name|paused
 decl_stmt|;
 comment|/*  count of pause requests           */
-DECL|member|recalc
-name|gboolean
-name|recalc
-decl_stmt|;
-comment|/*  flag to recalculate the selection */
 DECL|member|speed
-name|gint
+name|guint
 name|speed
 decl_stmt|;
 comment|/*  speed of marching ants            */
+DECL|member|recalc
+name|guint
+name|recalc
+range|:
+literal|1
+decl_stmt|;
+comment|/*  flag to recalculate the selection */
 DECL|member|hidden
-name|gboolean
+name|guint
 name|hidden
+range|:
+literal|1
 decl_stmt|;
 comment|/*  is the selection hidden?          */
 DECL|member|layer_hidden
-name|gboolean
+name|guint
 name|layer_hidden
+range|:
+literal|1
 decl_stmt|;
 comment|/*  is the layer boundary hidden?     */
 DECL|member|timeout_id

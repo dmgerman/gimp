@@ -191,8 +191,10 @@ name|gint
 name|high_threshold
 decl_stmt|;
 DECL|member|preview
-name|gboolean
+name|guint
 name|preview
+range|:
+literal|1
 decl_stmt|;
 block|}
 struct|;

@@ -193,16 +193,22 @@ modifier|*
 name|config
 decl_stmt|;
 DECL|member|be_verbose
-name|gboolean
+name|guint
 name|be_verbose
+range|:
+literal|1
 decl_stmt|;
 DECL|member|no_data
-name|gboolean
+name|guint
 name|no_data
+range|:
+literal|1
 decl_stmt|;
 DECL|member|no_interface
-name|gboolean
+name|guint
 name|no_interface
+range|:
+literal|1
 decl_stmt|;
 DECL|member|message_handler
 name|GimpMessageHandlerType
@@ -255,7 +261,7 @@ modifier|*
 name|user_units
 decl_stmt|;
 DECL|member|n_user_units
-name|gint
+name|guint
 name|n_user_units
 decl_stmt|;
 DECL|member|parasites
@@ -376,8 +382,10 @@ name|GimpImageNewValues
 name|image_new_last_values
 decl_stmt|;
 DECL|member|have_current_cut_buffer
-name|gboolean
+name|guint
 name|have_current_cut_buffer
+range|:
+literal|1
 decl_stmt|;
 comment|/*  the list of all contexts  */
 DECL|member|context_list

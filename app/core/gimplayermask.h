@@ -109,18 +109,24 @@ modifier|*
 name|layer
 decl_stmt|;
 DECL|member|apply_mask
-name|gboolean
+name|guint
 name|apply_mask
+range|:
+literal|1
 decl_stmt|;
 comment|/*  controls mask application  */
 DECL|member|edit_mask
-name|gboolean
+name|guint
 name|edit_mask
+range|:
+literal|1
 decl_stmt|;
 comment|/*  edit mask or layer?        */
 DECL|member|show_mask
-name|gboolean
+name|guint
 name|show_mask
+range|:
+literal|1
 decl_stmt|;
 comment|/*  show mask or layer?        */
 block|}

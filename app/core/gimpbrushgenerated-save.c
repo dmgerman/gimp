@@ -2088,11 +2088,10 @@ operator|--
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|brush
 operator|->
 name|freeze
-operator|==
-literal|0
 condition|)
 name|gimp_data_dirty
 argument_list|(

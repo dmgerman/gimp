@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9b20bc0103
+DECL|enum|__anon2a0e15a50103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9b20bc0203
+DECL|enum|__anon2a0e15a50203
 block|{
 DECL|enumerator|UNIT_COLUMN
 name|UNIT_COLUMN
@@ -503,6 +503,7 @@ decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 operator|(
+operator|(
 name|unit
 operator|>=
 name|GIMP_UNIT_PIXEL
@@ -513,6 +514,7 @@ name|unit
 operator|<
 name|gimp_unit_get_number_of_units
 argument_list|()
+operator|)
 operator|)
 operator|||
 operator|(

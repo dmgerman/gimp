@@ -34951,12 +34951,11 @@ end_comment
 begin_function
 specifier|static
 specifier|inline
-DECL|function|HIST_RGB (const ColorFreq * hist_ptr,const int r,const int g,const int b)
+DECL|function|HIST_RGB (ColorFreq * hist_ptr,const int r,const int g,const int b)
 name|ColorFreq
 modifier|*
 name|HIST_RGB
 parameter_list|(
-specifier|const
 name|ColorFreq
 modifier|*
 name|hist_ptr
@@ -35088,7 +35087,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2900dcc40108
+DECL|struct|__anon2baa3b2e0108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -35165,7 +35164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2900dcc40208
+DECL|struct|__anon2baa3b2e0208
 block|{
 DECL|member|ncolors
 name|long
@@ -35356,7 +35355,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2900dcc40308
+DECL|struct|__anon2baa3b2e0308
 block|{
 DECL|member|used_count
 name|signed

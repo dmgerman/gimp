@@ -51,7 +51,7 @@ modifier|*
 name|callback_name
 decl_stmt|;
 DECL|member|sample_size
-name|gint
+name|guint
 name|sample_size
 decl_stmt|;
 block|}

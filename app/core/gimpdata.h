@@ -109,8 +109,10 @@ modifier|*
 name|filename
 decl_stmt|;
 DECL|member|dirty
-name|gboolean
+name|guint
 name|dirty
+range|:
+literal|1
 decl_stmt|;
 block|}
 struct|;

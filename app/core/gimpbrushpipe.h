@@ -96,7 +96,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b09d13f0103
+DECL|enum|__anon28d932100103
 block|{
 DECL|enumerator|PIPE_SELECT_CONSTANT
 name|PIPE_SELECT_CONSTANT
@@ -174,7 +174,7 @@ name|index
 decl_stmt|;
 comment|/* Current index for incremental dimensions */
 DECL|member|nbrushes
-name|gint
+name|guint
 name|nbrushes
 decl_stmt|;
 comment|/* Might be less than the product of the 				 * ranks in some odd special case */

@@ -50,7 +50,7 @@ name|offy
 decl_stmt|;
 comment|/*  tile offsets                  */
 DECL|member|rowstride
-name|gint
+name|guint
 name|rowstride
 decl_stmt|;
 comment|/*  bytes per pixel row           */
@@ -65,27 +65,29 @@ name|y
 decl_stmt|;
 comment|/*  origin                        */
 DECL|member|w
-name|gint
+name|guint
 name|w
 decl_stmt|;
 comment|/*  width of region               */
 DECL|member|h
-name|gint
+name|guint
 name|h
 decl_stmt|;
 comment|/*  height of region              */
 DECL|member|bytes
-name|gint
+name|guint
 name|bytes
 decl_stmt|;
 comment|/*  bytes per pixel               */
 DECL|member|dirty
-name|gboolean
+name|guint
 name|dirty
+range|:
+literal|1
 decl_stmt|;
 comment|/*  will this region be dirtied?  */
 DECL|member|process_count
-name|gint
+name|guint
 name|process_count
 decl_stmt|;
 comment|/*  used internally               */
@@ -117,7 +119,7 @@ name|gint
 name|starty
 decl_stmt|;
 DECL|member|count
-name|gint
+name|guint
 name|count
 decl_stmt|;
 block|}
@@ -135,27 +137,27 @@ modifier|*
 name|pixel_regions
 decl_stmt|;
 DECL|member|dirty_tiles
-name|gint
+name|guint
 name|dirty_tiles
 decl_stmt|;
 DECL|member|region_width
-name|gint
+name|guint
 name|region_width
 decl_stmt|;
 DECL|member|region_height
-name|gint
+name|guint
 name|region_height
 decl_stmt|;
 DECL|member|portion_width
-name|gint
+name|guint
 name|portion_width
 decl_stmt|;
 DECL|member|portion_height
-name|gint
+name|guint
 name|portion_height
 decl_stmt|;
 DECL|member|process_count
-name|gint
+name|guint
 name|process_count
 decl_stmt|;
 block|}

@@ -110,13 +110,15 @@ name|tiles
 decl_stmt|;
 comment|/* tiles for drawable data        */
 DECL|member|visible
-name|gboolean
+name|guint
 name|visible
+range|:
+literal|1
 decl_stmt|;
 comment|/* controls visibility            */
 DECL|member|width
 DECL|member|height
-name|gint
+name|guint
 name|width
 decl_stmt|,
 name|height
@@ -131,10 +133,19 @@ name|offset_y
 decl_stmt|;
 comment|/* offset of layer in image       */
 DECL|member|bytes
-name|gint
+name|guint
 name|bytes
+range|:
+literal|4
 decl_stmt|;
 comment|/* bytes per pixel                */
+DECL|member|has_alpha
+name|guint
+name|has_alpha
+range|:
+literal|1
+decl_stmt|;
+comment|/* drawable has alpha             */
 DECL|member|ID
 name|gint
 name|ID
@@ -156,11 +167,6 @@ name|GimpImageType
 name|type
 decl_stmt|;
 comment|/* type of drawable               */
-DECL|member|has_alpha
-name|gboolean
-name|has_alpha
-decl_stmt|;
-comment|/* drawable has alpha             */
 DECL|member|parasites
 name|GimpParasiteList
 modifier|*
@@ -175,8 +181,10 @@ name|preview_cache
 decl_stmt|;
 comment|/* preview caches of the channel  */
 DECL|member|preview_valid
-name|gboolean
+name|guint
 name|preview_valid
+range|:
+literal|1
 decl_stmt|;
 comment|/* is the preview valid?          */
 block|}
@@ -246,10 +254,10 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|gint
+name|guint
 name|width
 parameter_list|,
-name|gint
+name|guint
 name|height
 parameter_list|,
 name|GimpImageType
@@ -331,10 +339,10 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
-name|gint
+name|guint
 name|w
 parameter_list|,
-name|gint
+name|guint
 name|h
 parameter_list|)
 function_decl|;
@@ -364,7 +372,7 @@ name|TileManager
 modifier|*
 name|tiles
 parameter_list|,
-name|gint
+name|gboolean
 name|sparse
 parameter_list|)
 function_decl|;

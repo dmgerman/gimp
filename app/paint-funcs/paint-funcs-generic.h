@@ -105,7 +105,7 @@ name|HAS_ALPHA
 parameter_list|(
 name|bytes
 parameter_list|)
-value|(~##bytes& 1)
+value|(~bytes& 1)
 end_define
 
 begin_comment

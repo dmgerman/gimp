@@ -53,8 +53,10 @@ name|pathtype
 decl_stmt|;
 comment|/* Only beziers to start with */
 DECL|member|closed
-name|gboolean
+name|guint
 name|closed
+range|:
+literal|1
 decl_stmt|;
 DECL|member|state
 name|guint32
