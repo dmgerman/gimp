@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<sys/types.h>
 end_include
 
@@ -89,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28aeea6d0103
+DECL|enum|__anon2af2dd2c0103
 block|{
 DECL|enumerator|BUTTON_INDEX
 name|BUTTON_INDEX
@@ -105,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28aeea6d0203
+DECL|enum|__anon2af2dd2c0203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -119,6 +125,27 @@ end_enum
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
+
+begin_function_decl
+specifier|static
+name|void
+name|browser_dialog_404
+parameter_list|(
+name|HtmlDocument
+modifier|*
+name|doc
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|url
+parameter_list|,
+name|GError
+modifier|*
+name|error
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -250,7 +277,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|request_url
 parameter_list|(
 name|HtmlDocument
@@ -266,8 +293,10 @@ name|HtmlStream
 modifier|*
 name|stream
 parameter_list|,
-name|gpointer
-name|data
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1450,6 +1479,12 @@ name|abs
 argument_list|)
 condition|)
 block|{
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
+decl_stmt|;
 name|html_document_clear
 argument_list|(
 name|doc
@@ -1475,6 +1510,9 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
 name|request_url
 argument_list|(
 name|doc
@@ -1485,9 +1523,26 @@ name|doc
 operator|->
 name|current_stream
 argument_list|,
-name|NULL
+operator|&
+name|error
+argument_list|)
+condition|)
+block|{
+name|browser_dialog_404
+argument_list|(
+name|doc
+argument_list|,
+name|abs
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
+name|g_error_free
+argument_list|(
+name|error
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 name|g_free
 argument_list|(
@@ -1511,14 +1566,15 @@ expr_stmt|;
 else|else
 name|gtk_adjustment_set_value
 argument_list|(
+name|gtk_layout_get_vadjustment
+argument_list|(
 name|GTK_LAYOUT
 argument_list|(
 name|html
 argument_list|)
-operator|->
-name|vadjustment
+argument_list|)
 argument_list|,
-literal|0.0
+literal|0
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1561,6 +1617,84 @@ end_function
 begin_comment
 comment|/*  private functions  */
 end_comment
+
+begin_function
+specifier|static
+name|void
+DECL|function|browser_dialog_404 (HtmlDocument * doc,const gchar * url,GError * error)
+name|browser_dialog_404
+parameter_list|(
+name|HtmlDocument
+modifier|*
+name|doc
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|url
+parameter_list|,
+name|GError
+modifier|*
+name|error
+parameter_list|)
+block|{
+name|gchar
+modifier|*
+name|msg
+init|=
+name|g_strdup_printf
+argument_list|(
+literal|"<html>"
+literal|"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />"
+literal|"<head><title>%s</title></head>"
+literal|"<body bgcolor=\"white\">"
+literal|"<div align=\"center\">"
+literal|"<div>%s</div>"
+literal|"<h3>%s</h3>"
+literal|"<tt>%s</tt>"
+literal|"<h3>%s</h3>"
+literal|"</div>"
+literal|"</body>"
+literal|"</html>"
+argument_list|,
+name|_
+argument_list|(
+literal|"Document not found"
+argument_list|)
+argument_list|,
+name|eek_png_tag
+argument_list|,
+name|_
+argument_list|(
+literal|"The requested URL could not be loaded:"
+argument_list|)
+argument_list|,
+name|url
+argument_list|,
+name|error
+operator|->
+name|message
+argument_list|)
+decl_stmt|;
+name|html_document_write_stream
+argument_list|(
+name|doc
+argument_list|,
+name|msg
+argument_list|,
+name|strlen
+argument_list|(
+name|msg
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|msg
+argument_list|)
+expr_stmt|;
+block|}
+end_function
 
 begin_function
 specifier|static
@@ -1983,8 +2117,8 @@ end_function
 
 begin_function
 specifier|static
-name|void
-DECL|function|request_url (HtmlDocument * doc,const gchar * url,HtmlStream * stream,gpointer data)
+name|gboolean
+DECL|function|request_url (HtmlDocument * doc,const gchar * url,HtmlStream * stream,GError ** error)
 name|request_url
 parameter_list|(
 name|HtmlDocument
@@ -2000,8 +2134,10 @@ name|HtmlStream
 modifier|*
 name|stream
 parameter_list|,
-name|gpointer
-name|data
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gchar
@@ -2012,18 +2148,22 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|url
 operator|!=
 name|NULL
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|stream
 operator|!=
 name|NULL
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|abs
@@ -2040,7 +2180,9 @@ condition|(
 operator|!
 name|abs
 condition|)
-return|return;
+return|return
+name|TRUE
+return|;
 name|filename
 operator|=
 name|g_filename_from_uri
@@ -2050,6 +2192,11 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|abs
 argument_list|)
 expr_stmt|;
 if|if
@@ -2072,101 +2219,10 @@ expr_stmt|;
 if|if
 condition|(
 name|fd
-operator|==
+operator|!=
 operator|-
 literal|1
 condition|)
-block|{
-name|gchar
-modifier|*
-name|name
-decl_stmt|;
-name|gchar
-modifier|*
-name|msg
-decl_stmt|;
-name|name
-operator|=
-name|g_filename_to_utf8
-argument_list|(
-name|filename
-argument_list|,
-operator|-
-literal|1
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|msg
-operator|=
-name|g_strdup_printf
-argument_list|(
-literal|"<html>"
-literal|"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />"
-literal|"<head><title>%s</title></head>"
-literal|"<body bgcolor=\"white\">"
-literal|"<div align=\"center\">"
-literal|"<div>%s</div>"
-literal|"<h3>%s</h3>"
-literal|"<tt>%s</tt>"
-literal|"</div>"
-literal|"<br /><br />"
-literal|"<div align=\"justify\">%s</div>"
-literal|"</body>"
-literal|"</html>"
-argument_list|,
-name|_
-argument_list|(
-literal|"Document Not Found"
-argument_list|)
-argument_list|,
-name|eek_png_tag
-argument_list|,
-name|_
-argument_list|(
-literal|"Could not locate help document"
-argument_list|)
-argument_list|,
-name|name
-argument_list|,
-name|_
-argument_list|(
-literal|"The requested document could not be found in your GIMP help "
-literal|"path as shown above. This means that the topic has not yet "
-literal|"been written or your installation is not complete. Ensure "
-literal|"that your installation is complete before reporting this "
-literal|"error as a bug."
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|html_document_write_stream
-argument_list|(
-name|doc
-argument_list|,
-name|msg
-argument_list|,
-name|strlen
-argument_list|(
-name|msg
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|msg
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|name
-argument_list|)
-expr_stmt|;
-block|}
-else|else
 block|{
 name|GIOChannel
 modifier|*
@@ -2216,12 +2272,39 @@ argument_list|(
 name|filename
 argument_list|)
 expr_stmt|;
-block|}
-name|g_free
+if|if
+condition|(
+name|fd
+operator|==
+operator|-
+literal|1
+condition|)
+block|{
+name|g_set_error
 argument_list|(
-name|abs
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
+return|return
+name|FALSE
+return|;
+block|}
+block|}
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
