@@ -531,7 +531,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a2bfae50108
+DECL|struct|__anon2bedd10f0108
 block|{
 DECL|member|directory
 name|gboolean
@@ -662,7 +662,7 @@ block|,
 name|N_
 argument_list|(
 literal|"This folder is used to store brushes that are created\n"
-literal|"created with the brush editor."
+literal|"with the brush editor."
 argument_list|)
 block|}
 block|,
