@@ -101,7 +101,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a169ee10103
+DECL|enum|__anon29b77fd50103
 block|{
 DECL|enumerator|RED
 name|RED
@@ -569,6 +569,16 @@ argument_list|,
 name|args
 argument_list|,
 name|return_vals
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_add
+argument_list|(
+literal|"plug_in_ccanalyze"
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/Layer/Colors/Info/Colorcube A_nalysis..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -240,7 +240,7 @@ init|=
 block|{
 literal|"gimp_xcf_load"
 block|,
-literal|"<Load>/XCF (GIMP)"
+name|NULL
 block|,
 name|NULL
 block|,
@@ -360,7 +360,7 @@ init|=
 block|{
 literal|"gimp_xcf_save"
 block|,
-literal|"<Save>/XCF (GIMP)"
+name|NULL
 block|,
 name|NULL
 block|,
@@ -477,6 +477,28 @@ operator|&
 name|xcf_plug_in_load_proc
 operator|.
 name|db_info
+argument_list|)
+expr_stmt|;
+name|xcf_plug_in_save_proc
+operator|.
+name|menu_paths
+operator|=
+name|g_list_append
+argument_list|(
+name|NULL
+argument_list|,
+literal|"<Save>/XCF (GIMP)"
+argument_list|)
+expr_stmt|;
+name|xcf_plug_in_load_proc
+operator|.
+name|menu_paths
+operator|=
+name|g_list_append
+argument_list|(
+name|NULL
+argument_list|,
+literal|"<Load>/XCF (GIMP)"
 argument_list|)
 expr_stmt|;
 name|xcf_plug_in_save_proc

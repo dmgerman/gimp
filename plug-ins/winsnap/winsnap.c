@@ -349,7 +349,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27a967200108
+DECL|struct|__anon2a3514a60108
 typedef|typedef
 struct|struct
 block|{
@@ -396,7 +396,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27a967200208
+DECL|struct|__anon2a3514a60208
 typedef|typedef
 struct|struct
 block|{
@@ -3919,6 +3919,16 @@ argument_list|,
 name|args
 argument_list|,
 name|return_vals
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_add
+argument_list|(
+name|PLUG_IN_NAME
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/File/Acquire/_Screen Shot..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -142,7 +142,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289b2e960108
+DECL|struct|__anon2b06e5880108
 block|{
 DECL|member|root
 name|gboolean
@@ -468,6 +468,16 @@ argument_list|,
 name|args
 argument_list|,
 name|return_vals
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_add
+argument_list|(
+name|PLUG_IN_NAME
+argument_list|,
+name|N_
+argument_list|(
+literal|"<Image>/File/Acquire/_Screen Shot..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

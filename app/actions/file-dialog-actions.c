@@ -144,7 +144,7 @@ condition|(
 operator|!
 name|file_proc
 operator|->
-name|menu_path
+name|menu_paths
 condition|)
 continue|continue;
 name|is_xcf
@@ -265,7 +265,9 @@ name|strstr
 argument_list|(
 name|file_proc
 operator|->
-name|menu_path
+name|menu_paths
+operator|->
+name|data
 argument_list|,
 literal|"/"
 argument_list|)

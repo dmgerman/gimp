@@ -179,7 +179,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f3c81d0108
+DECL|struct|__anon2b9e43f20108
 block|{
 DECL|member|threshold
 name|gint
@@ -272,7 +272,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Layer/Transparency/_Threshold Alpha..."
+literal|"<Image>/Layer/Transparency/Modify/_Threshold Alpha..."
 argument_list|)
 argument_list|,
 literal|"RGBA,GRAYA"

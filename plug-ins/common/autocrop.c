@@ -4,7 +4,7 @@ comment|/*  * Autocrop plug-in version 1.00  * by Tim Newsome<drz@froody.bloke.c
 end_comment
 
 begin_comment
-comment|/* 1999/04/09 -- Sven Neumann<sven@gimp.org>  * Fixed bad crash that occured when running on an entirely blank image.  * Cleaned up the code a bit, while I was at it.   */
+comment|/* 1999/04/09 -- Sven Neumann<sven@gimp.org>  * Fixed bad crash that occured when running on an entirely blank image.  * Cleaned up the code a bit, while I was at it.  */
 end_comment
 
 begin_include
@@ -246,7 +246,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Image/Transform/_Autocrop"
+literal|"<Image>/Image/Crop/_Autocrop"
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"

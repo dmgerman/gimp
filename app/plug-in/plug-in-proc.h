@@ -46,10 +46,10 @@ name|gchar
 modifier|*
 name|prog
 decl_stmt|;
-DECL|member|menu_path
-name|gchar
+DECL|member|menu_paths
+name|GList
 modifier|*
-name|menu_path
+name|menu_paths
 decl_stmt|;
 DECL|member|accelerator
 name|gchar

@@ -515,7 +515,7 @@ name|prog
 operator|&&
 name|proc_def
 operator|->
-name|menu_path
+name|menu_paths
 operator|&&
 operator|!
 name|proc_def
@@ -633,7 +633,7 @@ if|if
 condition|(
 name|proc_def
 operator|->
-name|menu_path
+name|menu_paths
 operator|&&
 name|proc_def
 operator|->
@@ -829,7 +829,9 @@ argument_list|)
 argument_list|,
 name|proc_def
 operator|->
-name|menu_path
+name|menu_paths
+operator|->
+name|data
 argument_list|)
 expr_stmt|;
 name|stripped
@@ -1127,7 +1129,9 @@ name|g_strdup
 argument_list|(
 name|proc_def
 operator|->
-name|menu_path
+name|menu_paths
+operator|->
+name|data
 argument_list|)
 expr_stmt|;
 name|path_translated

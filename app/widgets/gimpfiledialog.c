@@ -973,7 +973,7 @@ if|if
 condition|(
 name|file_proc
 operator|->
-name|menu_path
+name|menu_paths
 operator|&&
 name|file_proc
 operator|->
@@ -994,7 +994,9 @@ name|strrchr
 argument_list|(
 name|file_proc
 operator|->
-name|menu_path
+name|menu_paths
+operator|->
+name|data
 argument_list|,
 literal|'/'
 argument_list|)

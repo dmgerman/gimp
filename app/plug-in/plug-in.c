@@ -3494,7 +3494,7 @@ name|proc_def
 operator|&&
 name|proc_def
 operator|->
-name|menu_path
+name|menu_paths
 condition|)
 block|{
 specifier|const
@@ -3525,7 +3525,9 @@ argument_list|)
 argument_list|,
 name|proc_def
 operator|->
-name|menu_path
+name|menu_paths
+operator|->
+name|data
 argument_list|)
 expr_stmt|;
 name|stripped

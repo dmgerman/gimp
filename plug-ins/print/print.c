@@ -723,7 +723,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/File/Save/_Print..."
+literal|"<Image>/File/Send/_Print..."
 argument_list|)
 argument_list|,
 name|types

@@ -974,7 +974,7 @@ name|action_path
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%s/File/Open Recent/file-open-recent-placeholder"
+literal|"%s/File/Open Recent/Files"
 argument_list|,
 name|ui_path
 argument_list|)

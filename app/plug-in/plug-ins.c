@@ -2176,7 +2176,7 @@ name|magics
 operator|&&
 name|proc_def
 operator|->
-name|menu_path
+name|menu_paths
 operator|&&
 operator|(
 operator|!
@@ -2184,7 +2184,9 @@ name|strncmp
 argument_list|(
 name|proc_def
 operator|->
-name|menu_path
+name|menu_paths
+operator|->
+name|data
 argument_list|,
 literal|"<Load>"
 argument_list|,
@@ -2196,7 +2198,9 @@ name|strncmp
 argument_list|(
 name|proc_def
 operator|->
-name|menu_path
+name|menu_paths
+operator|->
+name|data
 argument_list|,
 literal|"<Save>"
 argument_list|,
@@ -2416,7 +2420,7 @@ if|if
 condition|(
 name|proc_def
 operator|->
-name|menu_path
+name|menu_paths
 condition|)
 name|gimp_menus_create_entry
 argument_list|(
@@ -2495,7 +2499,7 @@ if|if
 condition|(
 name|proc_def
 operator|->
-name|menu_path
+name|menu_paths
 condition|)
 name|gimp_menus_delete_entry
 argument_list|(
