@@ -31,7 +31,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a291eb0103
+DECL|enum|__anon2b31d8730103
 block|{
 DECL|enumerator|MESSAGE_BOX
 name|MESSAGE_BOX
@@ -49,63 +49,63 @@ end_typedef
 
 begin_decl_stmt
 specifier|extern
-name|gint
+name|gboolean
 name|no_interface
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|gint
+name|gboolean
 name|no_splash
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|gint
+name|gboolean
 name|no_splash_image
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|gint
+name|gboolean
 name|no_data
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|gint
+name|gboolean
 name|be_verbose
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|gint
+name|gboolean
 name|use_debug_handler
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|gint
+name|gboolean
 name|console_messages
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|gint
+name|gboolean
 name|restore_session
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|gint
+name|gboolean
 name|we_are_exiting
 decl_stmt|;
 end_decl_stmt
