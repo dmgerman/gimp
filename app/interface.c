@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpbuffer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -186,6 +192,8 @@ block|,
 name|GIMP_TARGET_COLOR
 block|,
 name|GIMP_TARGET_PATTERN
+block|,
+name|GIMP_TARGET_BUFFER
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -805,6 +813,19 @@ argument_list|,
 name|GIMP_TYPE_PATTERN
 argument_list|,
 name|gdisplay_drop_pattern
+argument_list|,
+name|gdisp
+argument_list|)
+expr_stmt|;
+name|gimp_dnd_viewable_dest_set
+argument_list|(
+name|gdisp
+operator|->
+name|shell
+argument_list|,
+name|GIMP_TYPE_BUFFER
+argument_list|,
+name|gdisplay_drop_buffer
 argument_list|,
 name|gdisp
 argument_list|)

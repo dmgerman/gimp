@@ -915,6 +915,11 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|invoke
+condition|)
+block|{
 name|gimp_image_set_resolution
 argument_list|(
 name|gimage
@@ -937,6 +942,7 @@ operator|->
 name|unit
 argument_list|)
 expr_stmt|;
+block|}
 name|layer
 operator|=
 name|gimp_layer_new_from_tiles
