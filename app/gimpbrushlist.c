@@ -1648,6 +1648,12 @@ comment|/*  Make sure the active brush is swapped before we get a new one... */
 if|if
 condition|(
 name|stingy_memory_use
+operator|&&
+name|active_brush
+operator|&&
+name|active_brush
+operator|->
+name|mask
 condition|)
 name|temp_buf_swap
 argument_list|(
