@@ -103,6 +103,10 @@ DECL|member|parent_instance
 name|GimpContainerEditor
 name|parent_instance
 decl_stmt|;
+DECL|member|visible_handler_id
+name|GQuark
+name|visible_handler_id
+decl_stmt|;
 DECL|member|reset_button
 name|GtkWidget
 modifier|*
