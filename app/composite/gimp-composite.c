@@ -590,7 +590,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2b28d8e90108
+DECL|struct|__anon2bb04faf0108
 block|{
 DECL|member|announce_function
 name|gchar
@@ -1395,6 +1395,11 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|GIMP_UNSTABLE
+if|if
+condition|(
+name|be_verbose
+condition|)
+block|{
 name|g_printerr
 argument_list|(
 literal|"gimp_composite: use=%s, verbose=%s\n"
@@ -1424,6 +1429,7 @@ else|:
 literal|"no"
 argument_list|)
 expr_stmt|;
+block|}
 endif|#
 directive|endif
 name|gimp_composite_generic_install
@@ -1523,9 +1529,14 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|GIMP_UNSTABLE
+if|if
+condition|(
+name|be_verbose
+condition|)
+block|{
 name|g_printerr
 argument_list|(
-literal|"supported by gimp_composite: "
+literal|"Processor instruction sets: "
 literal|"%cmmx %csse %csse2 %c3dnow %caltivec %cvis\n"
 argument_list|,
 name|can_use_mmx
@@ -1565,6 +1576,7 @@ else|:
 literal|'-'
 argument_list|)
 expr_stmt|;
+block|}
 endif|#
 directive|endif
 block|}

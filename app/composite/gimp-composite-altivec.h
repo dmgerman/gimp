@@ -36,6 +36,46 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|ARCH_PPC
+end_ifdef
+
+begin_if
+if|#
+directive|if
+name|__GNUC__
+operator|>=
+literal|3
+end_if
+
+begin_define
+DECL|macro|COMPILE_ALTIVEC_IS_OKAY
+define|#
+directive|define
+name|COMPILE_ALTIVEC_IS_OKAY
+value|(1)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* __GNUC__> 3 */
+end_comment
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* ARCH_PPC */
+end_comment
+
 begin_endif
 endif|#
 directive|endif

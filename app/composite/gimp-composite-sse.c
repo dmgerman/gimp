@@ -91,12 +91,17 @@ parameter_list|)
 value|"pmaxub " "%%" #src ", %%" #dst
 end_define
 
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
 begin_comment
 comment|/*  * Double-word divide.  Adjusted for subsequent unsigned packing  * (high-order bit of each word is cleared)  * Clobbers eax, ecx edx  */
 end_comment
 
 begin_define
-DECL|macro|pdivwX (dividend,divisor,quotient)
 define|#
 directive|define
 name|pdivwX
@@ -110,12 +115,22 @@ parameter_list|)
 value|"movd %%" #dividend ",%%eax; " \                                           "movd %%" #divisor  ",%%ecx; " \                                           "xorl %%edx,%%edx; "           \                                           "divw %%cx; "                  \                                           "roll $16, %%eax; "            \                                           "roll $16, %%ecx; "            \                                           "xorl %%edx,%%edx; "           \                                           "divw %%cx; "                  \                                           "btr $15, %%eax; "             \                                           "roll $16, %%eax; "            \                                           "btr $15, %%eax; "             \                                           "movd %%eax,%%" #quotient ";"
 end_define
 
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
 begin_comment
 comment|/*  * Quadword divide.  No adjustment for subsequent unsigned packing  * (high-order bit of each word is left alone)  */
 end_comment
 
 begin_define
-DECL|macro|pdivwqX (dividend,divisor,quotient)
 define|#
 directive|define
 name|pdivwqX
@@ -134,7 +149,6 @@ comment|/*  * Quadword divide.  Adjusted for subsequent unsigned packing  * (hig
 end_comment
 
 begin_define
-DECL|macro|pdivwuqX (dividend,divisor,quotient)
 define|#
 directive|define
 name|pdivwuqX
@@ -149,6 +163,17 @@ define|\
 value|pdivwX(dividend,divisor,quotient) \                                             "psrlq  $32,%%" #dividend ";"   \                                             "psrlq  $32,%%" #divisor ";"    \                                           pdivwX(dividend,divisor,quotient) \                                           "movd   %%eax,%%" #divisor ";"    \                                             "psllq  $32,%%" #divisor ";"    \                                             "por    %%" #divisor ",%%" #quotient ";"
 end_define
 
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
 begin_comment
 comment|/* equivalent to the INT_MULT() macro in gimp-composite-generic.c */
 end_comment
@@ -158,7 +183,6 @@ comment|/*  * opr2 = INT_MULT(opr1, opr2, t)  *  * Operates across quad-words us
 end_comment
 
 begin_define
-DECL|macro|pmulwX (opr1,opr2,w128)
 define|#
 directive|define
 name|pmulwX
@@ -173,12 +197,22 @@ define|\
 value|"\tpmullw    %%"#opr2", %%"#opr1"; " \                   "\tpaddw     %%"#w128", %%"#opr1"; " \                   "\tmovq      %%"#opr1", %%"#opr2"; " \                   "\tpsrlw     $8,        %%"#opr2"; " \                   "\tpaddw     %%"#opr1", %%"#opr2"; " \                   "\tpsrlw     $8,        %%"#opr2"\n"
 end_define
 
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
 begin_comment
 comment|/* a = INT_MULT(a,b) */
 end_comment
 
 begin_define
-DECL|macro|mmx_int_mult (a,b,w128)
 define|#
 directive|define
 name|mmx_int_mult
@@ -193,221 +227,22 @@ define|\
 value|"\tpmullw    %%"#b",    %%"#a"; " \                   "\tpaddw     %%"#w128", %%"#a"; " \                   "\tmovq      %%"#a",    %%"#b"; " \                   "\tpsrlw     $8,        %%"#b"; " \                   "\tpaddw     %%"#a",    %%"#b"; " \                   "\tpsrlw     $8,        %%"#b"\n"
 end_define
 
-begin_decl_stmt
-DECL|variable|rgba8_alpha_mask_64
-specifier|static
-specifier|const
-name|guint32
-name|rgba8_alpha_mask_64
-index|[
-literal|2
-index|]
-init|=
-block|{
-literal|0xFF000000
-block|,
-literal|0xFF000000
-block|}
-decl_stmt|;
-end_decl_stmt
+begin_endif
+endif|#
+directive|endif
+end_endif
 
-begin_decl_stmt
-DECL|variable|rgba8_b1_64
-specifier|static
-specifier|const
-name|guint32
-name|rgba8_b1_64
-index|[
-literal|2
-index|]
-init|=
-block|{
-literal|0x01010101
-block|,
-literal|0x01010101
-block|}
-decl_stmt|;
-end_decl_stmt
+begin_if
+if|#
+directive|if
+literal|0
+end_if
 
-begin_decl_stmt
-DECL|variable|rgba8_b255_64
-specifier|static
-specifier|const
-name|guint32
-name|rgba8_b255_64
-index|[
-literal|2
-index|]
-init|=
-block|{
-literal|0xFFFFFFFF
-block|,
-literal|0xFFFFFFFF
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|rgba8_w1_64
-specifier|static
-specifier|const
-name|guint32
-name|rgba8_w1_64
-index|[
-literal|2
-index|]
-init|=
-block|{
-literal|0x00010001
-block|,
-literal|0x00010001
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|rgba8_w2_64
-specifier|static
-specifier|const
-name|guint32
-name|rgba8_w2_64
-index|[
-literal|2
-index|]
-init|=
-block|{
-literal|0x00020002
-block|,
-literal|0x00020002
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|rgba8_w128_64
-specifier|static
-specifier|const
-name|guint32
-name|rgba8_w128_64
-index|[
-literal|2
-index|]
-init|=
-block|{
-literal|0x00800080
-block|,
-literal|0x00800080
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|rgba8_w256_64
-specifier|static
-specifier|const
-name|guint32
-name|rgba8_w256_64
-index|[
-literal|2
-index|]
-init|=
-block|{
-literal|0x01000100
-block|,
-literal|0x01000100
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|rgba8_w255_64
-specifier|static
-specifier|const
-name|guint32
-name|rgba8_w255_64
-index|[
-literal|2
-index|]
-init|=
-block|{
-literal|0X00FF00FF
-block|,
-literal|0X00FF00FF
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|va8_alpha_mask
-specifier|static
-specifier|const
-name|guint32
-name|va8_alpha_mask
-index|[
-literal|2
-index|]
-init|=
-block|{
-literal|0xFF00FF00
-block|,
-literal|0xFF00FF00
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|va8_b255
-specifier|static
-specifier|const
-name|guint32
-name|va8_b255
-index|[
-literal|2
-index|]
-init|=
-block|{
-literal|0xFFFFFFFF
-block|,
-literal|0xFFFFFFFF
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|va8_w1
-specifier|static
-specifier|const
-name|guint32
-name|va8_w1
-index|[
-literal|2
-index|]
-init|=
-block|{
-literal|0x00010001
-block|,
-literal|0x00010001
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|va8_w255
-specifier|static
-specifier|const
-name|guint32
-name|va8_w255
-index|[
-literal|2
-index|]
-init|=
-block|{
-literal|0x00FF00FF
-block|,
-literal|0x00FF00FF
-block|}
-decl_stmt|;
-end_decl_stmt
+begin_endif
+unit|static const guint32 rgba8_alpha_mask_64[2] = { 0xFF000000, 0xFF000000 }; static const guint32 rgba8_b1_64[2] =         { 0x01010101, 0x01010101 }; static const guint32 rgba8_b255_64[2] =       { 0xFFFFFFFF, 0xFFFFFFFF }; static const guint32 rgba8_w1_64[2] =         { 0x00010001, 0x00010001 }; static const guint32 rgba8_w2_64[2] =         { 0x00020002, 0x00020002 }; static const guint32 rgba8_w128_64[2] =       { 0x00800080, 0x00800080 }; static const guint32 rgba8_w256_64[2] =       { 0x01000100, 0x01000100 }; static const guint32 rgba8_w255_64[2] =       { 0X00FF00FF, 0X00FF00FF };  static const guint32 va8_alpha_mask[2] =   { 0xFF00FF00, 0xFF00FF00 }; static const guint32 va8_b255[2] =         { 0xFFFFFFFF, 0xFFFFFFFF }; static const guint32 va8_w1[2] =           { 0x00010001, 0x00010001 }; static const guint32 va8_w255[2] =         { 0x00FF00FF, 0x00FF00FF };
+endif|#
+directive|endif
+end_endif
 
 begin_comment
 comment|/*  *  */
@@ -423,11 +258,48 @@ modifier|*
 name|_op
 parameter_list|)
 block|{
-name|GimpCompositeContext
-name|op
+name|uint64
+modifier|*
+name|d
 init|=
+operator|(
+name|uint64
 operator|*
+operator|)
 name|_op
+operator|->
+name|D
+decl_stmt|;
+name|uint64
+modifier|*
+name|a
+init|=
+operator|(
+name|uint64
+operator|*
+operator|)
+name|_op
+operator|->
+name|A
+decl_stmt|;
+name|uint64
+modifier|*
+name|b
+init|=
+operator|(
+name|uint64
+operator|*
+operator|)
+name|_op
+operator|->
+name|B
+decl_stmt|;
+name|gulong
+name|n_pixels
+init|=
+name|_op
+operator|->
+name|n_pixels
 decl_stmt|;
 asm|asm
 specifier|volatile
@@ -437,49 +309,38 @@ asm|: "m" (*rgba8_alpha_mask_64)                 : "%mm0");
 for|for
 control|(
 init|;
-name|op
-operator|.
 name|n_pixels
 operator|>=
 literal|2
 condition|;
-name|op
-operator|.
 name|n_pixels
 operator|-=
 literal|2
 control|)
 block|{
-asm|asm ("  movq       %1, %%mm2\n"            "\tmovq       %2, %%mm3\n"            "\tmovq    %%mm2, %%mm4\n"            "\tpaddusb %%mm3, %%mm4\n"            "\tmovq    %%mm0, %%mm1\n"            "\tpandn   %%mm4, %%mm1\n"            "\tpminub  %%mm3, %%mm2\n"            "\tpand    %%mm0, %%mm2\n"            "\tpor     %%mm2, %%mm1\n"            "\tmovq    %%mm1, %0\n"            : "=m" (*op.D)            : "m" (*op.A), "m" (*op.B)            : "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
-name|op
-operator|.
-name|A
-operator|+=
-literal|8
+asm|asm
+specifier|volatile
+asm|("  movq       %1, %%mm2\n"                     "\tmovq       %2, %%mm3\n"                     "\tmovq    %%mm2, %%mm4\n"                     "\tpaddusb %%mm3, %%mm4\n"                     "\tmovq    %%mm0, %%mm1\n"                     "\tpandn   %%mm4, %%mm1\n"                     "\t" pminub(mm3, mm2, mm4) "\n"                     "\tpand    %%mm0, %%mm2\n"                     "\tpor     %%mm2, %%mm1\n"                     "\tmovq    %%mm1, %0\n"                     : "=m" (*d)                     : "m" (*a), "m" (*b)                     : "%mm0", "%mm1", "%mm2", "%mm3", "%mm4");
+name|a
+operator|++
 expr_stmt|;
-name|op
-operator|.
-name|B
-operator|+=
-literal|8
+name|b
+operator|++
 expr_stmt|;
-name|op
-operator|.
-name|D
-operator|+=
-literal|8
+name|d
+operator|++
 expr_stmt|;
 block|}
 if|if
 condition|(
-name|op
-operator|.
 name|n_pixels
+operator|>
+literal|0
 condition|)
 block|{
 asm|asm
 specifier|volatile
-asm|("  movd       %1, %%mm2\n"                     "\tmovd       %2, %%mm3\n"                     "\tmovq    %%mm2, %%mm4\n"                     "\tpaddusb %%mm3, %%mm4\n"                     "\tmovq    %%mm0, %%mm1\n"                     "\tpandn   %%mm4, %%mm1\n"                     "\tpminub  %%mm3, %%mm2\n"                     "\tpand    %%mm0, %%mm2\n"                     "\tpor     %%mm2, %%mm1\n"                     "\tmovd    %%mm1, %0\n"                     : "=m" (*op.D)                     : "m" (*op.A), "m" (*op.B)                     : "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
+asm|("  movd    %1, %%mm2\n"                     "\tmovd    %2, %%mm3\n"                     "\tmovq    %%mm2, %%mm4\n"                     "\tpaddusb %%mm3, %%mm4\n"                     "\tmovq    %%mm0, %%mm1\n"                     "\tpandn   %%mm4, %%mm1\n"                     "\t" pminub(mm3, mm2, mm4) "\n"                     "\tpand    %%mm0, %%mm2\n"                     "\tpor     %%mm2, %%mm1\n"                     "\tmovd    %%mm1, %0\n"                     : "=m" (*d)                     : "m" (*a), "m" (*b)                     : "%mm0", "%mm1", "%mm2", "%mm3", "%mm4");
 block|}
 asm|asm("emms");
 block|}
@@ -495,73 +356,101 @@ modifier|*
 name|_op
 parameter_list|)
 block|{
-name|GimpCompositeContext
-name|op
+name|uint64
+modifier|*
+name|d
 init|=
+operator|(
+name|uint64
 operator|*
+operator|)
 name|_op
+operator|->
+name|D
+decl_stmt|;
+name|uint64
+modifier|*
+name|a
+init|=
+operator|(
+name|uint64
+operator|*
+operator|)
+name|_op
+operator|->
+name|A
+decl_stmt|;
+name|uint64
+modifier|*
+name|b
+init|=
+operator|(
+name|uint64
+operator|*
+operator|)
+name|_op
+operator|->
+name|B
+decl_stmt|;
+name|gulong
+name|n_pixels
+init|=
+name|_op
+operator|->
+name|n_pixels
 decl_stmt|;
 for|for
 control|(
 init|;
-name|op
-operator|.
 name|n_pixels
 operator|>=
 literal|2
 condition|;
-name|op
-operator|.
 name|n_pixels
 operator|-=
 literal|2
 control|)
 block|{
-asm|asm ("  movq         %1,%%mm0\n"            "\tmovq         %2,%%mm1\n"             "\tmovq         %3,%%mm2\n"            "\tpsubb     %%mm0,%%mm2\n"
+asm|asm
+specifier|volatile
+asm|("  movq         %1,%%mm0\n"                     "\tmovq         %2,%%mm1\n"                      "\tmovq         %3,%%mm2\n"                     "\tpsubb     %%mm0,%%mm2\n"
 comment|/* mm2 = 255 - A */
-asm|"\tpxor      %%mm4,%%mm4\n"            "\tpunpcklbw %%mm2,%%mm4\n"
+asm|"\tpxor      %%mm4,%%mm4\n"                     "\tpunpcklbw %%mm2,%%mm4\n"
 comment|/* mm4 = (255- A) * 256  */
-asm|"\tmovq      %%mm1,%%mm3\n"            "\tpxor      %%mm5,%%mm5\n"            "\tpunpcklbw %%mm5,%%mm3\n"            "\tmovq         %4,%%mm5\n"            "\tpaddusw   %%mm3,%%mm5\n"
+asm|"\tmovq      %%mm1,%%mm3\n"                     "\tpxor      %%mm5,%%mm5\n"                     "\tpunpcklbw %%mm5,%%mm3\n"                     "\tmovq         %4,%%mm5\n"                     "\tpaddusw   %%mm3,%%mm5\n"
 comment|/* mm5 = B + 1 */
-asm|"\t" pdivwqX(mm4,mm5,mm7) "\n"             "\tmovq         %3,%%mm2\n"            "\tpsubb     %%mm0,%%mm2\n"
+asm|"\t" pdivwqX(mm4,mm5,mm7) "\n"                      "\tmovq         %3,%%mm2\n"                     "\tpsubb     %%mm0,%%mm2\n"
 comment|/* mm2 = 255 - A */
-asm|"\tpxor      %%mm4,%%mm4\n"            "\tpunpckhbw %%mm2,%%mm4\n"
+asm|"\tpxor      %%mm4,%%mm4\n"                     "\tpunpckhbw %%mm2,%%mm4\n"
 comment|/* mm4 = (255- A) * 256  */
-asm|"\tmovq      %%mm1,%%mm3\n"            "\tpxor      %%mm5,%%mm5\n"            "\tpunpckhbw %%mm5,%%mm3\n"            "\tmovq         %4,%%mm5\n"            "\tpaddusw   %%mm3,%%mm5\n"
+asm|"\tmovq      %%mm1,%%mm3\n"                     "\tpxor      %%mm5,%%mm5\n"                     "\tpunpckhbw %%mm5,%%mm3\n"                     "\tmovq         %4,%%mm5\n"                     "\tpaddusw   %%mm3,%%mm5\n"
 comment|/* mm5 = B + 1 */
-asm|"\t" pdivwqX(mm4,mm5,mm6) "\n"             "\tmovq         %5,%%mm4\n"            "\tmovq      %%mm4,%%mm5\n"            "\tpsubusw   %%mm6,%%mm4\n"            "\tpsubusw   %%mm7,%%mm5\n"             "\tpackuswb  %%mm4,%%mm5\n"             "\tpminub    %%mm0,%%mm1\n"
+asm|"\t" pdivwqX(mm4,mm5,mm6) "\n"                      "\tmovq         %5,%%mm4\n"                     "\tmovq      %%mm4,%%mm5\n"                     "\tpsubusw   %%mm6,%%mm4\n"                     "\tpsubusw   %%mm7,%%mm5\n"                      "\tpackuswb  %%mm4,%%mm5\n"                      "\t" pminub(mm0,mm1,mm3) "\n"
 comment|/* mm1 = min(mm0,mm1) clobber mm3 */
-asm|"\tmovq         %6,%%mm7\n"            "\tpand      %%mm7,%%mm1\n"
+asm|"\tmovq         %6,%%mm7\n"
+comment|/* mm6 = rgba8_alpha_mask_64 */
+asm|"\tpand      %%mm7,%%mm1\n"
 comment|/* mm1 = mm7& alpha_mask */
 asm|"\tpandn     %%mm5,%%mm7\n"
 comment|/* mm7 = ~mm7& mm5 */
 asm|"\tpor       %%mm1,%%mm7\n"
 comment|/* mm7 = mm7 | mm1 */
-asm|"\tmovq      %%mm7,%0\n"            : "=m" (*op.D)            : "m" (*op.A), "m" (*op.B), "m" (*rgba8_b255_64), "m" (*rgba8_w1_64), "m" (*rgba8_w255_64), "m" (*rgba8_alpha_mask_64)            : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
-name|op
-operator|.
-name|A
-operator|+=
-literal|8
+asm|"\tmovq      %%mm7,%0\n"                     : "=m" (*d)                     : "m" (*a), "m" (*b), "m" (*rgba8_b255_64), "m" (*rgba8_w1_64), "m" (*rgba8_w255_64), "m" (*rgba8_alpha_mask_64)                     : pdivwqX_clobber, "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
+name|d
+operator|++
 expr_stmt|;
-name|op
-operator|.
-name|B
-operator|+=
-literal|8
+name|b
+operator|++
 expr_stmt|;
-name|op
-operator|.
-name|D
-operator|+=
-literal|8
+name|a
+operator|++
 expr_stmt|;
 block|}
 if|if
 condition|(
-name|op
-operator|.
 name|n_pixels
+operator|>
+literal|0
 condition|)
 block|{
 asm|asm
@@ -578,7 +467,7 @@ asm|"\tpxor      %%mm4,%%mm4\n"                     "\tpunpckhbw %%mm2,%%mm4\n"
 comment|/* mm4 = (255- A) * 256  */
 asm|"\tmovq      %%mm1,%%mm3\n"                     "\tpxor      %%mm5,%%mm5\n"                     "\tpunpckhbw %%mm5,%%mm3\n"                     "\tmovq         %4,%%mm5\n"                     "\tpaddusw   %%mm3,%%mm5\n"
 comment|/* mm5 = B + 1 */
-asm|"\t" pdivwqX(mm4,mm5,mm6) "\n"                      "\tmovq         %5,%%mm4\n"                     "\tmovq      %%mm4,%%mm5\n"                     "\tpsubusw   %%mm6,%%mm4\n"                     "\tpsubusw   %%mm7,%%mm5\n"                      "\tpackuswb  %%mm4,%%mm5\n"                      "\tpminub    %%mm0,%%mm1\n"
+asm|"\t" pdivwqX(mm4,mm5,mm6) "\n"                      "\tmovq         %5,%%mm4\n"                     "\tmovq      %%mm4,%%mm5\n"                     "\tpsubusw   %%mm6,%%mm4\n"                     "\tpsubusw   %%mm7,%%mm5\n"                      "\tpackuswb  %%mm4,%%mm5\n"                      "\t" pminub(mm0,mm1,mm3) "\n"
 comment|/* mm1 = min(mm0,mm1) clobber mm3 */
 asm|"\tmovq         %6,%%mm7\n"                     "\tpand      %%mm7,%%mm1\n"
 comment|/* mm1 = mm7& alpha_mask */
@@ -586,7 +475,7 @@ asm|"\tpandn     %%mm5,%%mm7\n"
 comment|/* mm7 = ~mm7& mm5 */
 asm|"\tpor       %%mm1,%%mm7\n"
 comment|/* mm7 = mm7 | mm1 */
-asm|"\tmovd      %%mm7,%0\n"                     : "=m" (*op.D)                     : "m" (*op.A), "m" (*op.B), "m" (*rgba8_b255_64), "m" (*rgba8_w1_64), "m" (*rgba8_w255_64), "m" (*rgba8_alpha_mask_64)                     : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
+asm|"\tmovd      %%mm7,%0\n"                     : "=m" (*d)                     : "m" (*a), "m" (*b), "m" (*rgba8_b255_64), "m" (*rgba8_w1_64), "m" (*rgba8_w255_64), "m" (*rgba8_alpha_mask_64)                     : pdivwqX_clobber, "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
 block|}
 asm|asm("emms");
 block|}

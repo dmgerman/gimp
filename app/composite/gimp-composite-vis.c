@@ -39,58 +39,16 @@ directive|include
 file|"gimp-composite-vis.h"
 end_include
 
-begin_if
-if|#
-directive|if
-name|defined
-argument_list|(
-name|USE_VIS
-argument_list|)
-end_if
-
-begin_if
-if|#
-directive|if
-name|defined
-argument_list|(
-name|ARCH_SPARC
-argument_list|)
-end_if
-
-begin_if
-if|#
-directive|if
-name|__GNUC__
-operator|>=
-literal|3
-end_if
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|COMPILE_VIS_IS_OKAY
+end_ifdef
 
 begin_endif
 endif|#
 directive|endif
 end_endif
-
-begin_comment
-comment|/* __GNUC__> 3 */
-end_comment
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* defined(ARCH_SPARC) */
-end_comment
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* defined(USE_VIS) */
-end_comment
 
 begin_function
 name|gboolean
@@ -102,7 +60,7 @@ parameter_list|)
 block|{
 ifdef|#
 directive|ifdef
-name|ARCH_SPARC
+name|COMPILE_VIS_IS_OKAY
 return|return
 operator|(
 name|TRUE
