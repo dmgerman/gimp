@@ -48,13 +48,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"bmp.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<libgimp/gimp.h>
+file|"bmp.h"
 end_include
 
 begin_include
@@ -65,10 +65,10 @@ end_include
 
 begin_function
 name|gint32
-DECL|function|ReadBMP (char * name)
+DECL|function|ReadBMP (gchar * name)
 name|ReadBMP
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -77,17 +77,17 @@ name|FILE
 modifier|*
 name|fd
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|temp_buf
 decl_stmt|;
-name|char
+name|gchar
 name|buf
 index|[
 literal|5
 index|]
 decl_stmt|;
-name|int
+name|gint
 name|ColormapSize
 decl_stmt|,
 name|SpeicherZeile
@@ -96,8 +96,7 @@ name|Maps
 decl_stmt|,
 name|Grey
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|ColorMap
 index|[
 literal|256
@@ -422,6 +421,7 @@ operator|.
 name|bfSize
 operator|=
 operator|(
+operator|(
 name|Bitmap_File_Head
 operator|.
 name|bfSize
@@ -435,6 +435,7 @@ operator|.
 name|bfOffs
 operator|*
 literal|3
+operator|)
 operator|)
 expr_stmt|;
 name|Bitmap_Head
@@ -646,8 +647,7 @@ operator|=
 literal|4
 expr_stmt|;
 block|}
-comment|/* This means wrong file Format. I test this because it could crash the */
-comment|/* entire gimp.							  */
+comment|/* This means wrong file Format. I test this because it could crash the    * entire gimp.    */
 if|if
 condition|(
 name|Bitmap_Head
@@ -667,8 +667,7 @@ argument_list|,
 name|prog_name
 argument_list|,
 operator|(
-name|unsigned
-name|int
+name|guint
 operator|)
 name|Bitmap_Head
 operator|.
@@ -883,10 +882,10 @@ directive|ifdef
 name|GIMP_HAVE_RESOLUTION_INFO
 block|{
 comment|/* quick hack by the muppet, scott@asofyet.org, 19 dec 1999 */
-name|double
+name|gdouble
 name|xresolution
 decl_stmt|;
-name|double
+name|gdouble
 name|yresolution
 decl_stmt|;
 comment|/*      * xresolution and yresolution are in dots per inch.      * the BMP spec says that biXPels and biYPels are in      * pixels per meter as long ints (actually, "DWORDS").      * this means we've lost some accuracy in the numbers.      * typically, the dots per inch settings on BMPs will      * be integer numbers of dots per inch, which is freaky      * because they're stored in the BMP as metric.  *sigh*      * so, we'll round this off, even though the gimp wants      * a floating point number...      */
@@ -954,15 +953,14 @@ end_function
 
 begin_function
 name|gint
-DECL|function|ReadColorMap (FILE * fd,unsigned char buffer[256][3],int number,int size,int * grey)
+DECL|function|ReadColorMap (FILE * fd,guchar buffer[256][3],gint number,gint size,gint * grey)
 name|ReadColorMap
 parameter_list|(
 name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 name|buffer
 index|[
 literal|256
@@ -971,22 +969,21 @@ index|[
 literal|3
 index|]
 parameter_list|,
-name|int
+name|gint
 name|number
 parameter_list|,
-name|int
+name|gint
 name|size
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|grey
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|rgb
 index|[
 literal|4
@@ -1170,30 +1167,27 @@ operator|)
 expr_stmt|;
 block|}
 return|return
-operator|(
 literal|0
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
 name|Image
-DECL|function|ReadImage (FILE * fd,int len,int height,unsigned char cmap[256][3],int ncols,int bpp,int compression,int spzeile,int grey)
+DECL|function|ReadImage (FILE * fd,gint len,gint height,guchar cmap[256][3],gint ncols,gint bpp,gint compression,gint spzeile,gint grey)
 name|ReadImage
 parameter_list|(
 name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|int
+name|gint
 name|len
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 name|cmap
 index|[
 literal|256
@@ -1202,28 +1196,27 @@ index|[
 literal|3
 index|]
 parameter_list|,
-name|int
+name|gint
 name|ncols
 parameter_list|,
-name|int
+name|gint
 name|bpp
 parameter_list|,
-name|int
+name|gint
 name|compression
 parameter_list|,
-name|int
+name|gint
 name|spzeile
 parameter_list|,
-name|int
+name|gint
 name|grey
 parameter_list|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|name_buf
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|v
 decl_stmt|,
 name|wieviel
@@ -1231,13 +1224,13 @@ decl_stmt|;
 name|GPixelRgn
 name|pixel_rgn
 decl_stmt|;
-name|char
+name|gchar
 name|buf
 index|[
 literal|16
 index|]
 decl_stmt|;
-name|int
+name|gint
 name|xpos
 init|=
 literal|0
@@ -1274,7 +1267,7 @@ name|rowstride
 decl_stmt|,
 name|channels
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -1623,12 +1616,12 @@ condition|)
 name|gimp_progress_update
 argument_list|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|cur_progress
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|max_progress
 argument_list|)
@@ -1826,12 +1819,12 @@ condition|)
 name|gimp_progress_update
 argument_list|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|cur_progress
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|max_progress
 argument_list|)
@@ -1869,8 +1862,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|(
-name|unsigned
-name|char
+name|guchar
 operator|)
 name|buf
 index|[
@@ -1889,14 +1881,12 @@ literal|0
 init|;
 operator|(
 operator|(
-name|unsigned
-name|char
+name|guchar
 operator|)
 name|j
 operator|<
 operator|(
-name|unsigned
-name|char
+name|guchar
 operator|)
 name|buf
 index|[
@@ -1951,8 +1941,7 @@ operator|)
 operator|&&
 operator|(
 operator|(
-name|unsigned
-name|char
+name|guchar
 operator|)
 name|j
 operator|<
@@ -2058,8 +2047,7 @@ if|if
 condition|(
 operator|(
 operator|(
-name|unsigned
-name|char
+name|guchar
 operator|)
 name|buf
 index|[
@@ -2071,8 +2059,7 @@ operator|)
 operator|&&
 operator|(
 operator|(
-name|unsigned
-name|char
+name|guchar
 operator|)
 name|buf
 index|[
@@ -2273,8 +2260,7 @@ if|if
 condition|(
 operator|(
 operator|(
-name|unsigned
-name|char
+name|guchar
 operator|)
 name|buf
 index|[
@@ -2286,8 +2272,7 @@ operator|)
 operator|&&
 operator|(
 operator|(
-name|unsigned
-name|char
+name|guchar
 operator|)
 name|buf
 index|[
@@ -2328,12 +2313,12 @@ condition|)
 name|gimp_progress_update
 argument_list|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|cur_progress
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|max_progress
 argument_list|)
@@ -2343,8 +2328,7 @@ if|if
 condition|(
 operator|(
 operator|(
-name|unsigned
-name|char
+name|guchar
 operator|)
 name|buf
 index|[
@@ -2356,8 +2340,7 @@ operator|)
 operator|&&
 operator|(
 operator|(
-name|unsigned
-name|char
+name|guchar
 operator|)
 name|buf
 index|[
@@ -2375,8 +2358,7 @@ if|if
 condition|(
 operator|(
 operator|(
-name|unsigned
-name|char
+name|guchar
 operator|)
 name|buf
 index|[
@@ -2388,8 +2370,7 @@ operator|)
 operator|&&
 operator|(
 operator|(
-name|unsigned
-name|char
+name|guchar
 operator|)
 name|buf
 index|[
@@ -2404,8 +2385,7 @@ block|{
 name|xpos
 operator|+=
 operator|(
-name|unsigned
-name|char
+name|guchar
 operator|)
 name|buf
 index|[
@@ -2415,8 +2395,7 @@ expr_stmt|;
 name|ypos
 operator|+=
 operator|(
-name|unsigned
-name|char
+name|guchar
 operator|)
 name|buf
 index|[
@@ -2592,9 +2571,7 @@ name|dest
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|image
-operator|)
 return|;
 block|}
 end_function

@@ -888,9 +888,8 @@ operator|==
 name|STATUS_SUCCESS
 condition|)
 block|{
-if|if
-condition|(
-operator|!
+name|status
+operator|=
 name|WriteBMP
 argument_list|(
 name|param
@@ -906,13 +905,7 @@ name|image_ID
 argument_list|,
 name|drawable_ID
 argument_list|)
-condition|)
-block|{
-name|status
-operator|=
-name|STATUS_EXECUTION_ERROR
 expr_stmt|;
-block|}
 block|}
 if|if
 condition|(

@@ -132,7 +132,7 @@ specifier|extern
 name|gint32
 name|ReadBMP
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 parameter_list|)
 function_decl|;
@@ -140,10 +140,10 @@ end_function_decl
 
 begin_function_decl
 specifier|extern
-name|gint
+name|GStatusType
 name|WriteBMP
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 parameter_list|,
 name|gint32
@@ -161,8 +161,7 @@ parameter_list|(
 name|FILE
 modifier|*
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 index|[
 literal|256
 index|]
@@ -170,11 +169,11 @@ index|[
 literal|3
 index|]
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 modifier|*
 parameter_list|)
 function_decl|;
@@ -188,12 +187,11 @@ parameter_list|(
 name|FILE
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 index|[
 literal|256
 index|]
@@ -201,15 +199,15 @@ index|[
 literal|3
 index|]
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -222,16 +220,16 @@ parameter_list|(
 name|FILE
 modifier|*
 parameter_list|,
-name|int
+name|gint
 modifier|*
 parameter_list|,
-name|int
+name|gint
 modifier|*
 parameter_list|,
-name|int
+name|gint
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -247,33 +245,33 @@ parameter_list|,
 name|guchar
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_decl_stmt
 specifier|extern
-name|int
+name|gint
 name|interactive_bmp
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|char
+name|gchar
 modifier|*
 name|prog_name
 decl_stmt|;
@@ -281,7 +279,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|char
+name|gchar
 modifier|*
 name|filename
 decl_stmt|;
@@ -302,26 +300,22 @@ struct|struct
 name|Bitmap_File_Head_Struct
 block|{
 DECL|member|bfSize
-name|unsigned
-name|long
+name|gulong
 name|bfSize
 decl_stmt|;
 comment|/* 02 */
 DECL|member|reserverd
-name|unsigned
-name|long
+name|gulong
 name|reserverd
 decl_stmt|;
 comment|/* 06 */
 DECL|member|bfOffs
-name|unsigned
-name|long
+name|gulong
 name|bfOffs
 decl_stmt|;
 comment|/* 0A */
 DECL|member|biSize
-name|unsigned
-name|long
+name|gulong
 name|biSize
 decl_stmt|;
 comment|/* 0E */
@@ -338,62 +332,52 @@ struct|struct
 name|Bitmap_Head_Struct
 block|{
 DECL|member|biWidth
-name|unsigned
-name|long
+name|gulong
 name|biWidth
 decl_stmt|;
 comment|/* 12 */
 DECL|member|biHeight
-name|unsigned
-name|long
+name|gulong
 name|biHeight
 decl_stmt|;
 comment|/* 16 */
 DECL|member|biPlanes
-name|unsigned
-name|short
+name|gushort
 name|biPlanes
 decl_stmt|;
 comment|/* 1A */
 DECL|member|biBitCnt
-name|unsigned
-name|short
+name|gushort
 name|biBitCnt
 decl_stmt|;
 comment|/* 1C */
 DECL|member|biCompr
-name|unsigned
-name|long
+name|gulong
 name|biCompr
 decl_stmt|;
 comment|/* 1E */
 DECL|member|biSizeIm
-name|unsigned
-name|long
+name|gulong
 name|biSizeIm
 decl_stmt|;
 comment|/* 22 */
 DECL|member|biXPels
-name|unsigned
-name|long
+name|gulong
 name|biXPels
 decl_stmt|;
 comment|/* 26 */
 DECL|member|biYPels
-name|unsigned
-name|long
+name|gulong
 name|biYPels
 decl_stmt|;
 comment|/* 2A */
 DECL|member|biClrUsed
-name|unsigned
-name|long
+name|gulong
 name|biClrUsed
 decl_stmt|;
 comment|/* 2E */
 DECL|member|biClrImp
-name|unsigned
-name|long
+name|gulong
 name|biClrImp
 decl_stmt|;
 comment|/* 32 */
@@ -411,26 +395,22 @@ struct|struct
 name|Bitmap_OS2_Head_Struct
 block|{
 DECL|member|bcWidth
-name|unsigned
-name|short
+name|gushort
 name|bcWidth
 decl_stmt|;
 comment|/* 12 */
 DECL|member|bcHeight
-name|unsigned
-name|short
+name|gushort
 name|bcHeight
 decl_stmt|;
 comment|/* 14 */
 DECL|member|bcPlanes
-name|unsigned
-name|short
+name|gushort
 name|bcPlanes
 decl_stmt|;
 comment|/* 16 */
 DECL|member|bcBitCnt
-name|unsigned
-name|short
+name|gushort
 name|bcBitCnt
 decl_stmt|;
 comment|/* 18 */
