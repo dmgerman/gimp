@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpbrushhose.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpbrushlist.h"
 end_include
 
@@ -2179,6 +2185,7 @@ block|}
 comment|/* just leave this because I know as soon as i delete it i'll find a bug */
 comment|/*          printf("temp_blend: %u grad_len: %f distance: %f \n",temp_blend, gradient_length, distance); */
 comment|/*  color the pixels  */
+comment|/* we check to see if this is a pixmap, if so composite the 	 pixmap image into the are instead of the color */
 if|if
 condition|(
 name|GIMP_IS_BRUSH_PIXMAP
@@ -2205,7 +2212,7 @@ operator|->
 name|brush
 argument_list|)
 expr_stmt|;
-name|mode
+name|incremental
 operator|=
 name|INCREMENTAL
 expr_stmt|;
@@ -2236,9 +2243,6 @@ name|bytes
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*      color_pixels (temp_buf_data (area), col, */
-comment|/* 		    area->width * area->height, area->bytes); */
-comment|/*  paste the newly painted canvas to the gimage which is being worked on  */
 name|paint_core_paste_canvas
 argument_list|(
 name|paint_core

@@ -51,6 +51,12 @@ directive|include
 file|"gimprc.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpbrush.h"
+end_include
+
 begin_define
 DECL|macro|OVERSAMPLING
 define|#
@@ -196,6 +202,8 @@ block|{
 specifier|static
 name|GtkType
 name|type
+init|=
+literal|0
 decl_stmt|;
 if|if
 condition|(
@@ -229,8 +237,15 @@ name|GtkObjectInitFunc
 operator|)
 name|gimp_brush_generated_init
 block|,
+comment|/* reserved_1 */
 name|NULL
 block|,
+comment|/* reserved_2 */
+name|NULL
+block|,
+operator|(
+name|GtkClassInitFunc
+operator|)
 name|NULL
 block|}
 decl_stmt|;
