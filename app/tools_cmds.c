@@ -294,10 +294,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|rotate_invoker_proc
+DECL|variable|rotate_proc
 specifier|static
 name|ProcRecord
-name|rotate_invoker_proc
+name|rotate_proc
 decl_stmt|;
 end_decl_stmt
 
@@ -430,7 +430,7 @@ expr_stmt|;
 name|procedural_db_register
 argument_list|(
 operator|&
-name|rotate_invoker_proc
+name|rotate_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -6479,8 +6479,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|rotate_invoker_invoker (Argument * args)
-name|rotate_invoker_invoker
+DECL|function|rotate_invoker (Argument * args)
+name|rotate_invoker
 parameter_list|(
 name|Argument
 modifier|*
@@ -6745,7 +6745,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|rotate_invoker_proc
+name|rotate_proc
 argument_list|,
 name|success
 argument_list|)
@@ -6778,10 +6778,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|rotate_invoker_inargs
+DECL|variable|rotate_inargs
 specifier|static
 name|ProcArg
-name|rotate_invoker_inargs
+name|rotate_inargs
 index|[]
 init|=
 block|{
@@ -6813,10 +6813,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|rotate_invoker_outargs
+DECL|variable|rotate_outargs
 specifier|static
 name|ProcArg
-name|rotate_invoker_outargs
+name|rotate_outargs
 index|[]
 init|=
 block|{
@@ -6832,13 +6832,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|rotate_invoker_proc
+DECL|variable|rotate_proc
 specifier|static
 name|ProcRecord
-name|rotate_invoker_proc
+name|rotate_proc
 init|=
 block|{
-literal|"gimp_rotate_invoker"
+literal|"gimp_rotate"
 block|,
 literal|"Rotate the specified drawable about its center through the specified angle."
 block|,
@@ -6854,15 +6854,15 @@ name|PDB_INTERNAL
 block|,
 literal|3
 block|,
-name|rotate_invoker_inargs
+name|rotate_inargs
 block|,
 literal|1
 block|,
-name|rotate_invoker_outargs
+name|rotate_outargs
 block|,
 block|{
 block|{
-name|rotate_invoker_invoker
+name|rotate_invoker
 block|}
 block|}
 block|}
