@@ -1013,7 +1013,7 @@ name|select
 operator|->
 name|gc_in
 condition|)
-name|gdk_gc_unref
+name|g_object_unref
 argument_list|(
 name|select
 operator|->
@@ -1026,7 +1026,7 @@ name|select
 operator|->
 name|gc_out
 condition|)
-name|gdk_gc_unref
+name|g_object_unref
 argument_list|(
 name|select
 operator|->
@@ -1039,7 +1039,7 @@ name|select
 operator|->
 name|gc_layer
 condition|)
-name|gdk_gc_unref
+name|g_object_unref
 argument_list|(
 name|select
 operator|->
@@ -1052,7 +1052,7 @@ name|select
 operator|->
 name|gc_white
 condition|)
-name|gdk_gc_unref
+name|g_object_unref
 argument_list|(
 name|select
 operator|->
@@ -1065,7 +1065,7 @@ name|select
 operator|->
 name|gc_black
 condition|)
-name|gdk_gc_unref
+name|g_object_unref
 argument_list|(
 name|select
 operator|->
@@ -1850,7 +1850,7 @@ name|j
 argument_list|)
 expr_stmt|;
 block|}
-name|gdk_gc_unref
+name|g_object_unref
 argument_list|(
 name|gc
 argument_list|)

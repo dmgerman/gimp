@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2795d70103
+DECL|enum|__anon298f73b90103
 block|{
 DECL|enumerator|TOGGLED
 name|TOGGLED
@@ -602,7 +602,7 @@ operator|->
 name|broken
 condition|)
 block|{
-name|gdk_drawable_unref
+name|g_object_unref
 argument_list|(
 name|gcb
 operator|->
@@ -623,7 +623,7 @@ operator|->
 name|broken_mask
 condition|)
 block|{
-name|gdk_drawable_unref
+name|g_object_unref
 argument_list|(
 name|gcb
 operator|->
@@ -644,7 +644,7 @@ operator|->
 name|chain
 condition|)
 block|{
-name|gdk_drawable_unref
+name|g_object_unref
 argument_list|(
 name|gcb
 operator|->
@@ -665,7 +665,7 @@ operator|->
 name|chain_mask
 condition|)
 block|{
-name|gdk_drawable_unref
+name|g_object_unref
 argument_list|(
 name|gcb
 operator|->

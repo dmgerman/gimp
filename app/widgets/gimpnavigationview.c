@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2accfba30103
+DECL|enum|__anon29d2b9ca0103
 block|{
 DECL|enumerator|MARKER_CHANGED
 name|MARKER_CHANGED
@@ -705,7 +705,7 @@ operator|->
 name|gc
 condition|)
 block|{
-name|gdk_gc_unref
+name|g_object_unref
 argument_list|(
 name|nav_preview
 operator|->

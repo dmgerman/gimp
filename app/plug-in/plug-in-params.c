@@ -12223,7 +12223,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-name|g_tree_traverse
+name|g_tree_foreach
 argument_list|(
 name|menu_entries
 argument_list|,
@@ -12231,8 +12231,6 @@ operator|(
 name|GTraverseFunc
 operator|)
 name|plug_in_make_menu_entry
-argument_list|,
-name|G_IN_ORDER
 argument_list|,
 name|NULL
 argument_list|)

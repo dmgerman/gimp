@@ -120,7 +120,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be715810103
+DECL|enum|__anon2bafde240103
 block|{
 DECL|enumerator|FORE_AREA
 name|FORE_AREA
@@ -2091,12 +2091,12 @@ condition|(
 name|color_area_pixmap
 condition|)
 block|{
-name|gdk_drawable_unref
+name|g_object_unref
 argument_list|(
 name|color_area_pixmap
 argument_list|)
 expr_stmt|;
-name|gdk_drawable_unref
+name|g_object_unref
 argument_list|(
 name|color_area_mask
 argument_list|)

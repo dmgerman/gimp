@@ -429,7 +429,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon298c02590103
+DECL|enum|__anon29fc78de0103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -3187,22 +3187,22 @@ expr_stmt|;
 name|gdk_flush
 argument_list|()
 expr_stmt|;
-name|gdk_drawable_unref
+name|g_object_unref
 argument_list|(
 name|yes_pixmap
 argument_list|)
 expr_stmt|;
-name|gdk_drawable_unref
+name|g_object_unref
 argument_list|(
 name|yes_mask
 argument_list|)
 expr_stmt|;
-name|gdk_drawable_unref
+name|g_object_unref
 argument_list|(
 name|no_pixmap
 argument_list|)
 expr_stmt|;
-name|gdk_drawable_unref
+name|g_object_unref
 argument_list|(
 name|no_mask
 argument_list|)

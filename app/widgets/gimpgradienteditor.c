@@ -7726,7 +7726,7 @@ name|editor
 operator|->
 name|control_pixmap
 condition|)
-name|gdk_drawable_unref
+name|g_object_unref
 argument_list|(
 name|editor
 operator|->

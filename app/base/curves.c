@@ -2670,7 +2670,7 @@ name|curves_dialog
 operator|->
 name|pixmap
 condition|)
-name|gdk_drawable_unref
+name|g_object_unref
 argument_list|(
 name|curves_dialog
 operator|->

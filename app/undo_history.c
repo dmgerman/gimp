@@ -118,7 +118,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1ad3210108
+DECL|struct|__anon28d3c7850108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -169,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1ad3210208
+DECL|struct|__anon28d3c7850208
 block|{
 DECL|member|clist
 name|GtkCList
@@ -1767,7 +1767,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gdk_drawable_unref
+name|g_object_unref
 argument_list|(
 name|pixmap
 argument_list|)

@@ -3400,12 +3400,12 @@ argument_list|(
 name|blob
 argument_list|)
 expr_stmt|;
-name|gdk_gc_unref
+name|g_object_unref
 argument_list|(
 name|white_gc
 argument_list|)
 expr_stmt|;
-name|gdk_gc_unref
+name|g_object_unref
 argument_list|(
 name|black_gc
 argument_list|)
@@ -4720,7 +4720,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon29c889a10103
+DECL|enum|__anon2c2dc9fd0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
@@ -7499,7 +7499,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gdk_drawable_unref
+name|g_object_unref
 argument_list|(
 name|pixmap
 argument_list|)
@@ -7604,7 +7604,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gdk_drawable_unref
+name|g_object_unref
 argument_list|(
 name|pixmap
 argument_list|)
@@ -7712,7 +7712,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gdk_drawable_unref
+name|g_object_unref
 argument_list|(
 name|pixmap
 argument_list|)

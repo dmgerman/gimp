@@ -2370,12 +2370,12 @@ operator|->
 name|y_hot
 argument_list|)
 expr_stmt|;
-name|gdk_drawable_unref
+name|g_object_unref
 argument_list|(
 name|bitmap
 argument_list|)
 expr_stmt|;
-name|gdk_drawable_unref
+name|g_object_unref
 argument_list|(
 name|mask
 argument_list|)

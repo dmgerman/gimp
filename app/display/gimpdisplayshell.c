@@ -1082,7 +1082,7 @@ operator|->
 name|render_gc
 condition|)
 block|{
-name|gdk_gc_unref
+name|g_object_unref
 argument_list|(
 name|shell
 operator|->

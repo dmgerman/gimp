@@ -126,7 +126,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2afbf0520103
+DECL|enum|__anon2931fa9b0103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -146,7 +146,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2afbf0520203
+DECL|enum|__anon2931fa9b0203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afbf0520308
+DECL|struct|__anon2931fa9b0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -184,7 +184,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2afbf052040a
+DECL|union|__anon2931fa9b040a
 block|{
 DECL|member|d
 name|gdouble
@@ -213,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afbf0520508
+DECL|struct|__anon2931fa9b0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afbf0520608
+DECL|struct|__anon2931fa9b0608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -278,7 +278,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afbf0520708
+DECL|struct|__anon2931fa9b0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -314,7 +314,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afbf0520808
+DECL|struct|__anon2931fa9b0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -381,7 +381,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afbf0520908
+DECL|struct|__anon2931fa9b0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -553,7 +553,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afbf0520a08
+DECL|struct|__anon2931fa9b0a08
 block|{
 DECL|member|run
 name|gint
@@ -5805,7 +5805,7 @@ expr_stmt|;
 name|gdk_flush
 argument_list|()
 expr_stmt|;
-name|gdk_gc_unref
+name|g_object_unref
 argument_list|(
 name|ifsDesign
 operator|->
@@ -8930,7 +8930,7 @@ operator|->
 name|pixmap
 condition|)
 block|{
-name|gdk_drawable_unref
+name|g_object_unref
 argument_list|(
 name|ifsDesign
 operator|->

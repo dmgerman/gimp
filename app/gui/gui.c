@@ -1872,12 +1872,12 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
-name|gdk_drawable_unref
+name|g_object_unref
 argument_list|(
 name|pixmap
 argument_list|)
 expr_stmt|;
-name|gdk_drawable_unref
+name|g_object_unref
 argument_list|(
 name|mask
 argument_list|)
