@@ -593,9 +593,9 @@ name|GckMenuItem
 name|menu_items
 index|[]
 parameter_list|,
-name|GtkAcceleratorTable
+name|GtkAccelGroup
 modifier|*
-name|acc_table
+name|acc_group
 parameter_list|)
 function_decl|;
 name|GtkWidget
@@ -606,9 +606,9 @@ name|GckMenuItem
 modifier|*
 name|menu_items
 parameter_list|,
-name|GtkAcceleratorTable
+name|GtkAccelGroup
 modifier|*
-name|acc_table
+name|acc_group
 parameter_list|)
 function_decl|;
 name|GtkWidget

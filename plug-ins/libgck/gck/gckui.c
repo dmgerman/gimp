@@ -637,12 +637,12 @@ comment|/* Create application accelerator table */
 comment|/* ==================================== */
 name|appwin
 operator|->
-name|accelerator_table
+name|accel_group
 operator|=
-name|gtk_accelerator_table_new
+name|gtk_accel_group_new
 argument_list|()
 expr_stmt|;
-name|gtk_window_add_accelerator_table
+name|gtk_window_add_accel_group
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -653,7 +653,7 @@ argument_list|)
 argument_list|,
 name|appwin
 operator|->
-name|accelerator_table
+name|accel_group
 argument_list|)
 expr_stmt|;
 name|g_function_leave
@@ -5040,7 +5040,7 @@ comment|/******************/
 end_comment
 
 begin_function
-DECL|function|gck_menu_bar_new (GtkWidget * container,GckMenuItem menu_items[],GtkAcceleratorTable * acc_table)
+DECL|function|gck_menu_bar_new (GtkWidget * container,GckMenuItem menu_items[],GtkAccelGroup * acc_group)
 name|GtkWidget
 modifier|*
 name|gck_menu_bar_new
@@ -5053,9 +5053,9 @@ name|GckMenuItem
 name|menu_items
 index|[]
 parameter_list|,
-name|GtkAcceleratorTable
+name|GtkAccelGroup
 modifier|*
-name|acc_table
+name|acc_group
 parameter_list|)
 block|{
 name|GtkWidget
@@ -5233,7 +5233,7 @@ name|menu_items
 operator|->
 name|subitems
 argument_list|,
-name|acc_table
+name|acc_group
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5290,7 +5290,7 @@ comment|/***************/
 end_comment
 
 begin_function
-DECL|function|gck_menu_new (GckMenuItem * menu_items,GtkAcceleratorTable * acc_table)
+DECL|function|gck_menu_new (GckMenuItem * menu_items,GtkAccelGroup * acc_group)
 name|GtkWidget
 modifier|*
 name|gck_menu_new
@@ -5299,9 +5299,9 @@ name|GckMenuItem
 modifier|*
 name|menu_items
 parameter_list|,
-name|GtkAcceleratorTable
+name|GtkAccelGroup
 modifier|*
-name|acc_table
+name|acc_group
 parameter_list|)
 block|{
 name|GtkWidget
@@ -5377,13 +5377,11 @@ name|menu_items
 operator|->
 name|accelerator_key
 operator|&&
-name|acc_table
+name|acc_group
 condition|)
-name|gtk_widget_install_accelerator
+name|gtk_widget_add_accelerator
 argument_list|(
 name|menu_item
-argument_list|,
-name|acc_table
 argument_list|,
 name|menu_items
 index|[
@@ -5391,6 +5389,8 @@ name|i
 index|]
 operator|.
 name|label
+argument_list|,
+name|acc_group
 argument_list|,
 name|menu_items
 index|[
@@ -5405,6 +5405,10 @@ name|i
 index|]
 operator|.
 name|accelerator_mods
+argument_list|,
+name|GTK_ACCEL_VISIBLE
+operator||
+name|GTK_ACCEL_LOCKED
 argument_list|)
 expr_stmt|;
 name|gtk_object_set_data
@@ -5500,7 +5504,7 @@ index|]
 operator|.
 name|subitems
 argument_list|,
-name|acc_table
+name|acc_group
 argument_list|)
 argument_list|)
 expr_stmt|;

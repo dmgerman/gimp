@@ -194,7 +194,7 @@ name|GCK_HSL_UNDEFINED
 value|-1.0
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd537d50103
+DECL|enum|__anon2bae1a980103
 block|{
 DECL|enumerator|DITHER_NONE
 name|DITHER_NONE
@@ -210,7 +210,7 @@ name|GckDitherType
 typedef|;
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd537d50208
+DECL|struct|__anon2bae1a980208
 block|{
 DECL|member|r
 DECL|member|g
@@ -231,7 +231,7 @@ name|GckRGB
 typedef|;
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd537d50308
+DECL|struct|__anon2bae1a980308
 block|{
 DECL|member|r
 DECL|member|g
@@ -255,7 +255,7 @@ name|GckNamedRGB
 typedef|;
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd537d50408
+DECL|struct|__anon2bae1a980408
 block|{
 DECL|member|visual
 name|GdkVisual
@@ -438,7 +438,7 @@ parameter_list|)
 function_decl|;
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd537d50508
+DECL|struct|__anon2bae1a980508
 block|{
 DECL|member|size
 name|double
@@ -482,7 +482,7 @@ name|GckScaleValues
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd537d50603
+DECL|enum|__anon2bae1a980603
 block|{
 DECL|enumerator|GCK_RIGHT
 name|GCK_RIGHT
@@ -501,7 +501,7 @@ name|GckPosition
 typedef|;
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd537d50708
+DECL|struct|__anon2bae1a980708
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -538,7 +538,7 @@ name|GckDialogWindow
 typedef|;
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd537d50808
+DECL|struct|__anon2bae1a980808
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -550,10 +550,10 @@ name|GtkStyle
 modifier|*
 name|style
 decl_stmt|;
-DECL|member|accelerator_table
-name|GtkAcceleratorTable
+DECL|member|accel_group
+name|GtkAccelGroup
 modifier|*
-name|accelerator_table
+name|accel_group
 decl_stmt|;
 DECL|member|visinfo
 name|GckVisualInfo
@@ -607,7 +607,7 @@ name|GckMenuItem
 typedef|;
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd537d50908
+DECL|struct|__anon2bae1a980908
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -666,7 +666,7 @@ name|GckListBox
 typedef|;
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd537d50a08
+DECL|struct|__anon2bae1a980a08
 block|{
 DECL|member|label
 name|char
@@ -693,7 +693,7 @@ name|GckListBoxItem
 typedef|;
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd537d50b08
+DECL|struct|__anon2bae1a980b08
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -745,7 +745,7 @@ name|GckNoteBook
 typedef|;
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd537d50c08
+DECL|struct|__anon2bae1a980c08
 block|{
 DECL|member|label
 name|char
@@ -772,7 +772,7 @@ name|GckNoteBookTab
 typedef|;
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd537d50d08
+DECL|struct|__anon2bae1a980d08
 block|{
 DECL|member|label
 name|gchar
@@ -811,7 +811,7 @@ DECL|typedef|GckNoteBookPage
 block|}
 name|GckNoteBookPage
 typedef|;
-DECL|struct|__anon2bd537d50e08
+DECL|struct|__anon2bae1a980e08
 typedef|typedef
 struct|struct
 block|{
@@ -839,7 +839,7 @@ name|_GckBackBuffer
 typedef|;
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd537d50f08
+DECL|struct|__anon2bae1a980f08
 block|{
 DECL|member|x
 DECL|member|y
@@ -854,7 +854,7 @@ name|GckVector2
 typedef|;
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd537d51008
+DECL|struct|__anon2bae1a981008
 block|{
 DECL|member|x
 DECL|member|y
@@ -872,7 +872,7 @@ name|GckVector3
 typedef|;
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd537d51108
+DECL|struct|__anon2bae1a981108
 block|{
 DECL|member|x
 DECL|member|y
