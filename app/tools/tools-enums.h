@@ -17,7 +17,7 @@ name|__TOOLS_ENUMS_H__
 end_define
 
 begin_comment
-comment|/*  * these enums that are registered with the type system  */
+comment|/*  * these enums are registered with the type system  */
 end_comment
 
 begin_define
@@ -41,15 +41,19 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1bcc3b0103
+DECL|enum|__anon2bdc99fd0103
 block|{
+DECL|enumerator|GIMP_COLOR_PICK_MODE_NONE
+name|GIMP_COLOR_PICK_MODE_NONE
+block|,
+comment|/*< desc="Pick Only">*/
 DECL|enumerator|GIMP_COLOR_PICK_MODE_FOREGROUND
 name|GIMP_COLOR_PICK_MODE_FOREGROUND
 block|,
-comment|/*< desc="Pick Foreground Color">*/
+comment|/*< desc="Set Foreground Color">*/
 DECL|enumerator|GIMP_COLOR_PICK_MODE_BACKGROUND
 name|GIMP_COLOR_PICK_MODE_BACKGROUND
-comment|/*< desc="Pick Background Color">*/
+comment|/*< desc="Set Background Color">*/
 DECL|typedef|GimpColorPickMode
 block|}
 name|GimpColorPickMode
@@ -77,7 +81,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1bcc3b0203
+DECL|enum|__anon2bdc99fd0203
 block|{
 DECL|enumerator|GIMP_CROP_MODE_CROP
 name|GIMP_CROP_MODE_CROP
@@ -113,7 +117,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1bcc3b0303
+DECL|enum|__anon2bdc99fd0303
 block|{
 DECL|enumerator|GIMP_RECT_SELECT_MODE_FREE
 name|GIMP_RECT_SELECT_MODE_FREE
@@ -153,7 +157,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1bcc3b0403
+DECL|enum|__anon2bdc99fd0403
 block|{
 DECL|enumerator|GIMP_TRANSFORM_TYPE_LAYER
 name|GIMP_TRANSFORM_TYPE_LAYER
@@ -193,7 +197,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1bcc3b0503
+DECL|enum|__anon2bdc99fd0503
 block|{
 DECL|enumerator|GIMP_VECTOR_MODE_DESIGN
 name|GIMP_VECTOR_MODE_DESIGN
@@ -234,7 +238,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1bcc3b0603
+DECL|enum|__anon2bdc99fd0603
 block|{
 DECL|enumerator|GIMP_TRANSFORM_GRID_TYPE_NONE
 name|GIMP_TRANSFORM_GRID_TYPE_NONE
@@ -261,7 +265,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a1bcc3b0703
+DECL|enum|__anon2bdc99fd0703
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -308,7 +312,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a1bcc3b0803
+DECL|enum|__anon2bdc99fd0803
 block|{
 DECL|enumerator|PAUSE
 name|PAUSE
@@ -332,7 +336,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a1bcc3b0903
+DECL|enum|__anon2bdc99fd0903
 block|{
 DECL|enumerator|GIMP_MOTION_MODE_EXACT
 name|GIMP_MOTION_MODE_EXACT
@@ -356,7 +360,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a1bcc3b0a03
+DECL|enum|__anon2bdc99fd0a03
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING

@@ -47,11 +47,22 @@ index|[]
 init|=
 block|{
 block|{
+name|GIMP_COLOR_PICK_MODE_NONE
+block|,
+name|N_
+argument_list|(
+literal|"Pick Only"
+argument_list|)
+block|,
+literal|"none"
+block|}
+block|,
+block|{
 name|GIMP_COLOR_PICK_MODE_FOREGROUND
 block|,
 name|N_
 argument_list|(
-literal|"Pick Foreground Color"
+literal|"Set Foreground Color"
 argument_list|)
 block|,
 literal|"foreground"
@@ -62,7 +73,7 @@ name|GIMP_COLOR_PICK_MODE_BACKGROUND
 block|,
 name|N_
 argument_list|(
-literal|"Pick Background Color"
+literal|"Set Background Color"
 argument_list|)
 block|,
 literal|"background"

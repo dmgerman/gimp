@@ -156,6 +156,20 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
+begin_function_decl
+name|void
+name|gimp_paint_tool_enable_color_picker
+parameter_list|(
+name|GimpPaintTool
+modifier|*
+name|tool
+parameter_list|,
+name|GimpColorPickMode
+name|mode
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

@@ -112,10 +112,6 @@ DECL|member|parent_instance
 name|GimpColorOptions
 name|parent_instance
 decl_stmt|;
-DECL|member|update_toolbox
-name|gboolean
-name|update_toolbox
-decl_stmt|;
 DECL|member|pick_mode
 name|GimpColorPickMode
 name|pick_mode

@@ -274,7 +274,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_menu_new:  * @enum_type: the #GType of an enum.  * @callback: a callback to connect to the "activate" signal of each  *            #GtkMenuItem that is created.  * @callback_data: data to pass to the @callback.   *   * Creates a new #GimpEnumMenu, derived from #GtkMenu with menu items  * for each of the enum values. The enum needs to be registered to the  * type system and should have translatable value names.  *  * To each menu item it's enum value is attached as "gimp-item-data".  * Therefore you can use gimp_menu_item_update() from libgimpwidgets  * as @callback function.  *   * Return value: a new #GimpEnumMenu.  **/
+comment|/**  * gimp_enum_menu_new:  * @enum_type: the #GType of an enum.  * @callback: a callback to connect to the "activate" signal of each  *            #GtkMenuItem that is created.  * @callback_data: data to pass to the @callback.  *  * Creates a new #GimpEnumMenu, derived from #GtkMenu with menu items  * for each of the enum values. The enum needs to be registered to the  * type system and should have translatable value names.  *  * To each menu item it's enum value is attached as "gimp-item-data".  * Therefore you can use gimp_menu_item_update() from libgimpwidgets  * as @callback function.  *  * Return value: a new #GimpEnumMenu.  **/
 end_comment
 
 begin_function
@@ -753,7 +753,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_menu_set_stock_prefix:  * @enum_menu: a #GimpEnumMenu  * @stock_prefix: the prefix of the group of stock ids to use.  *   * Adds stock icons to the items in @enum_menu.  The stock_id for each  * icon is created by appending the enum_value's nick to the given  * @stock_prefix.  If no such stock_id exists, no icon is displayed.  **/
+comment|/**  * gimp_enum_menu_set_stock_prefix:  * @enum_menu: a #GimpEnumMenu  * @stock_prefix: the prefix of the group of stock ids to use.  *  * Adds stock icons to the items in @enum_menu.  The stock_id for each  * icon is created by appending the enum_value's nick to the given  * @stock_prefix.  If no such stock_id exists, no icon is displayed.  **/
 end_comment
 
 begin_function
@@ -911,7 +911,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_option_menu_new:  * @enum_type: the #GType of an enum.  * @callback: a callback to connect to the "activate" signal of each  *            #GtkMenuItem that is created.  * @callback_data: data to pass to the @callback.   *   * This function calls gimp_enum_menu_new() for you and attaches  * the resulting @GtkMenu to a newly created #GtkOptionMenu.  *  * Return value: a new #GtkOptionMenu.  **/
+comment|/**  * gimp_enum_option_menu_new:  * @enum_type: the #GType of an enum.  * @callback: a callback to connect to the "activate" signal of each  *            #GtkMenuItem that is created.  * @callback_data: data to pass to the @callback.  *  * This function calls gimp_enum_menu_new() for you and attaches  * the resulting @GtkMenu to a newly created #GtkOptionMenu.  *  * Return value: a new #GtkOptionMenu.  **/
 end_comment
 
 begin_function
@@ -1192,7 +1192,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_option_menu_set_stock_prefix:  * @option_menu: a #GtkOptionMenu created using gtk_enum_option_menu_new().  * @stock_prefix: the prefix of the group of stock ids to use.  *   * A convenience function that calls gimp_enum_menu_set_stock_prefix()  * with the enum menu used by @option_menu.  **/
+comment|/**  * gimp_enum_option_menu_set_stock_prefix:  * @option_menu: a #GtkOptionMenu created using gtk_enum_option_menu_new().  * @stock_prefix: the prefix of the group of stock ids to use.  *  * A convenience function that calls gimp_enum_menu_set_stock_prefix()  * with the enum menu used by @option_menu.  **/
 end_comment
 
 begin_function
@@ -1259,7 +1259,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_radio_box_new:  * @enum_type: the #GType of an enum.  * @callback: a callback to connect to the "toggled" signal of each  *            #GtkRadioButton that is created.  * @callback_data: data to pass to the @callback.   * @first_button: returns the first button in the created group.  *   * Creates a new group of #GtkRadioButtons representing the enum values.  * This is very similar to gimp_enum_menu_new().  *   * Return value: a new #GtkVBox holding a group of #GtkRadioButtons.  **/
+comment|/**  * gimp_enum_radio_box_new:  * @enum_type: the #GType of an enum.  * @callback: a callback to connect to the "toggled" signal of each  *            #GtkRadioButton that is created.  * @callback_data: data to pass to the @callback.  * @first_button: returns the first button in the created group.  *  * Creates a new group of #GtkRadioButtons representing the enum values.  * This is very similar to gimp_enum_menu_new().  *  * Return value: a new #GtkVBox holding a group of #GtkRadioButtons.  **/
 end_comment
 
 begin_function
@@ -1569,7 +1569,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_radio_frame_new:  * @enum_type: the #GType of an enum.  * @label_widget: a widget to put into the frame that will hold the radio box.  * @border_width: the border_width of the vbox inside the frame.  * @callback: a callback to connect to the "toggled" signal of each  *            #GtkRadioButton that is created.  * @callback_data: data to pass to the @callback.  * @first_button: returns the first button in the created group.  *  * Calls gimp_enum_radio_box_new() and puts the resulting vbox into a  * #GtkFrame.  *   * Return value: a new #GtkFrame holding a group of #GtkRadioButtons.  **/
+comment|/**  * gimp_enum_radio_frame_new:  * @enum_type: the #GType of an enum.  * @label_widget: a widget to put into the frame that will hold the radio box.  * @border_width: the border_width of the vbox inside the frame.  * @callback: a callback to connect to the "toggled" signal of each  *            #GtkRadioButton that is created.  * @callback_data: data to pass to the @callback.  * @first_button: returns the first button in the created group.  *  * Calls gimp_enum_radio_box_new() and puts the resulting vbox into a  * #GtkFrame.  *  * Return value: a new #GtkFrame holding a group of #GtkRadioButtons.  **/
 end_comment
 
 begin_function
@@ -1847,7 +1847,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_stock_box_new:  * @enum_type: the #GType of an enum.  * @stock_prefix: the prefix of the group of stock ids to use.  * @icon_size:  * @callback: a callback to connect to the "toggled" signal of each  *            #GtkRadioButton that is created.  * @callback_data: data to pass to the @callback.  * @first_button: returns the first button in the created group.  *  * Creates a horizontal box of radio buttons with stock icons.  The  * stock_id for each icon is created by appending the enum_value's  * nick to the given @stock_prefix.  *   * Return value: a new #GtkHbox holding a group of #GtkRadioButtons.  **/
+comment|/**  * gimp_enum_stock_box_new:  * @enum_type: the #GType of an enum.  * @stock_prefix: the prefix of the group of stock ids to use.  * @icon_size:  * @callback: a callback to connect to the "toggled" signal of each  *            #GtkRadioButton that is created.  * @callback_data: data to pass to the @callback.  * @first_button: returns the first button in the created group.  *  * Creates a horizontal box of radio buttons with stock icons.  The  * stock_id for each icon is created by appending the enum_value's  * nick to the given @stock_prefix.  *  * Return value: a new #GtkHbox holding a group of #GtkRadioButtons.  **/
 end_comment
 
 begin_function
