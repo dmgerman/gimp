@@ -6,18 +6,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -100,20 +88,25 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_define
-DECL|macro|STD_CELL_WIDTH
+DECL|macro|MIN_CELL_SIZE
 define|#
 directive|define
-name|STD_CELL_WIDTH
+name|MIN_CELL_SIZE
 value|24
 end_define
 
 begin_define
-DECL|macro|STD_CELL_HEIGHT
+DECL|macro|MAX_CELL_SIZE
 define|#
 directive|define
-name|STD_CELL_HEIGHT
+name|MAX_CELL_SIZE
 value|24
 end_define
+
+begin_comment
+DECL|macro|MAX_CELL_SIZE
+comment|/*  disable variable brush preview size  */
+end_comment
 
 begin_define
 DECL|macro|STD_BRUSH_COLUMNS
@@ -132,25 +125,25 @@ value|5
 end_define
 
 begin_define
-DECL|macro|MAX_WIN_WIDTH (p)
+DECL|macro|MAX_WIN_WIDTH (bsp)
 define|#
 directive|define
 name|MAX_WIN_WIDTH
 parameter_list|(
-name|p
+name|bsp
 parameter_list|)
-value|(STD_CELL_WIDTH * ((p)->NUM_BRUSH_COLUMNS))
+value|(MIN_CELL_SIZE * ((bsp)->NUM_BRUSH_COLUMNS))
 end_define
 
 begin_define
-DECL|macro|MAX_WIN_HEIGHT (p)
+DECL|macro|MAX_WIN_HEIGHT (bsp)
 define|#
 directive|define
 name|MAX_WIN_HEIGHT
 parameter_list|(
-name|p
+name|bsp
 parameter_list|)
-value|(STD_CELL_HEIGHT * ((p)->NUM_BRUSH_ROWS))
+value|(MIN_CELL_SIZE * ((bsp)->NUM_BRUSH_ROWS))
 end_define
 
 begin_define
@@ -393,6 +386,10 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/* static void brush_select_map_callback    (GtkWidget *, BrushSelectP); */
+end_comment
+
 begin_function_decl
 specifier|static
 name|void
@@ -518,10 +515,6 @@ name|gpointer
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/* static void paint_options_toggle_callback (GtkWidget *,     gpointer); */
-end_comment
 
 begin_comment
 comment|/*  local variables  */
@@ -857,6 +850,27 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+comment|/*  Handle the wm close signal  */
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|bsp
+operator|->
+name|shell
+argument_list|)
+argument_list|,
+literal|"delete_event"
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|brush_select_delete_callback
+argument_list|)
+argument_list|,
+name|bsp
+argument_list|)
+expr_stmt|;
+comment|/*  The main vbox  */
 name|vbox
 operator|=
 name|gtk_vbox_new
@@ -891,26 +905,6 @@ name|vbox
 argument_list|)
 argument_list|,
 name|vbox
-argument_list|)
-expr_stmt|;
-comment|/*  Handle the wm close signal  */
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|bsp
-operator|->
-name|shell
-argument_list|)
-argument_list|,
-literal|"delete_event"
-argument_list|,
-name|GTK_SIGNAL_FUNC
-argument_list|(
-name|brush_select_delete_callback
-argument_list|)
-argument_list|,
-name|bsp
 argument_list|)
 expr_stmt|;
 comment|/*  The horizontal box containing the brush list& options box */
@@ -1104,13 +1098,13 @@ name|bsp
 operator|->
 name|cell_width
 operator|=
-name|STD_CELL_WIDTH
+name|MIN_CELL_SIZE
 expr_stmt|;
 name|bsp
 operator|->
 name|cell_height
 operator|=
-name|STD_CELL_HEIGHT
+name|MIN_CELL_SIZE
 expr_stmt|;
 name|bsp
 operator|->
@@ -1129,6 +1123,23 @@ name|bsp
 operator|->
 name|preview
 argument_list|)
+argument_list|,
+name|MAX_WIN_WIDTH
+argument_list|(
+name|bsp
+argument_list|)
+argument_list|,
+name|MAX_WIN_HEIGHT
+argument_list|(
+name|bsp
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_usize
+argument_list|(
+name|bsp
+operator|->
+name|preview
 argument_list|,
 name|MAX_WIN_WIDTH
 argument_list|(
@@ -1280,7 +1291,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|5
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1328,7 +1339,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-literal|2
+literal|4
 argument_list|)
 expr_stmt|;
 name|bsp
@@ -2251,7 +2262,7 @@ argument_list|(
 name|vbox
 argument_list|)
 expr_stmt|;
-comment|/* calculate the scrollbar */
+comment|/*  Calculate the scrollbar  */
 if|if
 condition|(
 name|no_data
@@ -2261,7 +2272,7 @@ argument_list|(
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* This is done by size_allocate anyway, which is much better */
+comment|/*  This is done by size_allocate anyway, which is much better  */
 name|preview_calc_scrollbar
 argument_list|(
 name|bsp
@@ -2273,7 +2284,7 @@ argument_list|(
 name|bsp
 argument_list|)
 expr_stmt|;
-comment|/* Only for main dialog */
+comment|/*  Only for main dialog  */
 if|if
 condition|(
 operator|!
@@ -2330,49 +2341,7 @@ argument_list|,
 name|bsp
 argument_list|)
 expr_stmt|;
-comment|/*  Check if it's possible to set the dialog's size before ...  */
-if|if
-condition|(
-operator|(
-name|bsp
-operator|->
-name|shell
-operator|->
-name|allocation
-operator|.
-name|width
-operator|<=
-name|brush_select_session_info
-operator|.
-name|width
-operator|)
-operator|&&
-operator|(
-name|bsp
-operator|->
-name|shell
-operator|->
-name|allocation
-operator|.
-name|height
-operator|<=
-name|brush_select_session_info
-operator|.
-name|height
-operator|)
-condition|)
-name|session_set_window_geometry
-argument_list|(
-name|bsp
-operator|->
-name|shell
-argument_list|,
-operator|&
-name|brush_select_session_info
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
+comment|/*  set the preview's size in the callback       gtk_signal_connect (GTK_OBJECT (bsp->shell), "map", 			  GTK_SIGNAL_FUNC (brush_select_map_callback), 			  bsp);       */
 comment|/*  if we are in per-tool paint options mode, hide the paint options  */
 name|brush_select_show_paint_options
 argument_list|(
@@ -2381,51 +2350,6 @@ argument_list|,
 name|global_paint_options
 argument_list|)
 expr_stmt|;
-comment|/*  ... and after it has (eventually) changed it's size.        *  This is necessary because the brush preview follows the size of        *  the dialog and will cause ugly SIGFPE's when it's size is reduced        *  beyond it's minimum.        */
-if|if
-condition|(
-operator|(
-name|bsp
-operator|->
-name|shell
-operator|->
-name|allocation
-operator|.
-name|width
-operator|<=
-name|brush_select_session_info
-operator|.
-name|width
-operator|)
-operator|&&
-operator|(
-name|bsp
-operator|->
-name|shell
-operator|->
-name|allocation
-operator|.
-name|height
-operator|<=
-name|brush_select_session_info
-operator|.
-name|height
-operator|)
-condition|)
-name|session_set_window_geometry
-argument_list|(
-name|bsp
-operator|->
-name|shell
-argument_list|,
-operator|&
-name|brush_select_session_info
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-comment|/*  add a toggle button which switches from global to per-tool        *  paint options mode        *        *  FIXME: a shortcut like this would be nice but must look different        */
-comment|/*       abox = gtk_alignment_new (0.5, 0.5, 0.0, 0.0);       gtk_box_pack_start (GTK_BOX (GTK_DIALOG (bsp->shell)->action_area), 			  abox, FALSE, FALSE, 0);        button2 = gtk_check_button_new_with_label (_("Global Paint Options"));       gtk_container_add (GTK_CONTAINER (abox), button2);       gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (button2), 				    global_paint_options);       gtk_signal_connect (GTK_OBJECT (button2), "toggled", 			  (GtkSignalFunc) paint_options_toggle_callback, bsp);        gtk_widget_show (button2);       gtk_widget_show (abox);        sep = gtk_vseparator_new ();       gtk_box_pack_start (GTK_BOX (GTK_DIALOG (bsp->shell)->action_area), sep, 			  FALSE, FALSE, 0);       gtk_widget_show (sep);       */
 block|}
 comment|/*  update the active selection  */
 if|if
@@ -2685,6 +2609,7 @@ name|bsp
 operator|==
 name|brush_select_dialog
 condition|)
+block|{
 name|session_get_window_info
 argument_list|(
 name|bsp
@@ -2695,6 +2620,32 @@ operator|&
 name|brush_select_session_info
 argument_list|)
 expr_stmt|;
+comment|/*  save the size of the preview  */
+name|brush_select_session_info
+operator|.
+name|width
+operator|=
+name|bsp
+operator|->
+name|preview
+operator|->
+name|allocation
+operator|.
+name|width
+expr_stmt|;
+name|brush_select_session_info
+operator|.
+name|height
+operator|=
+name|bsp
+operator|->
+name|preview
+operator|->
+name|allocation
+operator|.
+name|height
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|bsp
@@ -3142,18 +3093,18 @@ name|GTK_BOX
 argument_list|(
 name|bsp
 operator|->
-name|options_box
+name|left_box
 operator|->
 name|parent
 argument_list|)
 argument_list|,
 name|bsp
 operator|->
-name|options_box
+name|left_box
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|,
@@ -3166,18 +3117,18 @@ name|GTK_BOX
 argument_list|(
 name|bsp
 operator|->
-name|left_box
+name|options_box
 operator|->
 name|parent
 argument_list|)
 argument_list|,
 name|bsp
 operator|->
-name|left_box
+name|options_box
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|,
@@ -3201,6 +3152,10 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/*  Disabled until I've figured out how gtk window resizing *really* works.  *  I don't think that the function below is the correct way to do it  *    --  Michael  * static void brush_select_map_callback (GtkWidget    *widget, 			   BrushSelectP  bsp) {   GtkAllocation allocation;   gint xdiff, ydiff;    xdiff =     bsp->shell->allocation.width - bsp->preview->allocation.width;   ydiff =     bsp->shell->allocation.height - bsp->preview->allocation.height;    allocation = bsp->shell->allocation;   allocation.width = brush_select_session_info.width + xdiff;   allocation.height = brush_select_session_info.height + ydiff;    gtk_widget_size_allocate (bsp->shell,&allocation); } */
+end_comment
 
 begin_function
 specifier|static
@@ -5107,6 +5062,70 @@ name|BrushSelectP
 name|bsp
 parameter_list|)
 block|{
+comment|/*  calculate the best-fit approximation...  */
+name|gint
+name|wid
+decl_stmt|;
+name|gint
+name|now
+decl_stmt|;
+name|gint
+name|cell_size
+decl_stmt|;
+name|wid
+operator|=
+name|widget
+operator|->
+name|allocation
+operator|.
+name|width
+expr_stmt|;
+for|for
+control|(
+name|now
+operator|=
+name|cell_size
+operator|=
+name|MIN_CELL_SIZE
+init|;
+name|now
+operator|<
+name|MAX_CELL_SIZE
+condition|;
+operator|++
+name|now
+control|)
+block|{
+if|if
+condition|(
+operator|(
+name|wid
+operator|%
+name|now
+operator|)
+operator|<
+operator|(
+name|wid
+operator|%
+name|cell_size
+operator|)
+condition|)
+name|cell_size
+operator|=
+name|now
+expr_stmt|;
+if|if
+condition|(
+operator|(
+name|wid
+operator|%
+name|cell_size
+operator|)
+operator|==
+literal|0
+condition|)
+break|break;
+block|}
 name|bsp
 operator|->
 name|NUM_BRUSH_COLUMNS
@@ -5115,15 +5134,9 @@ call|(
 name|gint
 call|)
 argument_list|(
-operator|(
-name|widget
-operator|->
-name|allocation
-operator|.
-name|width
-operator|)
+name|wid
 operator|/
-name|STD_CELL_WIDTH
+name|cell_size
 argument_list|)
 expr_stmt|;
 name|bsp
@@ -5152,13 +5165,25 @@ operator|->
 name|NUM_BRUSH_COLUMNS
 argument_list|)
 expr_stmt|;
+name|bsp
+operator|->
+name|cell_width
+operator|=
+name|cell_size
+expr_stmt|;
+name|bsp
+operator|->
+name|cell_height
+operator|=
+name|cell_size
+expr_stmt|;
 comment|/*  recalculate scrollbar extents  */
 name|preview_calc_scrollbar
 argument_list|(
 name|bsp
 argument_list|)
 expr_stmt|;
-comment|/*  render the brush into the newly created image structure  */
+comment|/*  render the brushes into the newly created image structure  */
 name|display_brushes
 argument_list|(
 name|bsp
@@ -5245,9 +5270,11 @@ name|name
 argument_list|)
 expr_stmt|;
 comment|/*  Set brush size  */
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buf
+argument_list|,
+literal|32
 argument_list|,
 literal|"(%d X %d)"
 argument_list|,

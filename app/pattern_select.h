@@ -132,10 +132,6 @@ DECL|member|NUM_PATTERN_ROWS
 name|gint
 name|NUM_PATTERN_ROWS
 decl_stmt|;
-DECL|member|STD_CELL_SIZE
-name|gint
-name|STD_CELL_SIZE
-decl_stmt|;
 block|}
 struct|;
 end_struct

@@ -155,10 +155,11 @@ name|paint_mode
 decl_stmt|;
 comment|/*  Some variables to keep the GUI consistent  */
 DECL|member|cell_width
-DECL|member|cell_height
 name|int
 name|cell_width
-decl_stmt|,
+decl_stmt|;
+DECL|member|cell_height
+name|int
 name|cell_height
 decl_stmt|;
 DECL|member|scroll_offset

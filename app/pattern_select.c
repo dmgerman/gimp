@@ -6,18 +6,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -103,9 +91,21 @@ name|MAX_CELL_SIZE
 value|45
 end_define
 
-begin_comment
-comment|/* #define STD_PATTERN_COLUMNS 6 #define STD_PATTERN_ROWS    5  */
-end_comment
+begin_define
+DECL|macro|STD_PATTERN_COLUMNS
+define|#
+directive|define
+name|STD_PATTERN_COLUMNS
+value|6
+end_define
+
+begin_define
+DECL|macro|STD_PATTERN_ROWS
+define|#
+directive|define
+name|STD_PATTERN_ROWS
+value|5
+end_define
 
 begin_define
 DECL|macro|MAX_WIN_WIDTH (psp)
@@ -354,33 +354,6 @@ begin_comment
 comment|/*  local variables  */
 end_comment
 
-begin_decl_stmt
-DECL|variable|NUM_PATTERN_COLUMNS
-name|gint
-name|NUM_PATTERN_COLUMNS
-init|=
-literal|6
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|NUM_PATTERN_ROWS
-name|gint
-name|NUM_PATTERN_ROWS
-init|=
-literal|5
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|STD_CELL_SIZE
-name|gint
-name|STD_CELL_SIZE
-init|=
-name|MIN_CELL_SIZE
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
 comment|/*  List of active dialogs  */
 end_comment
@@ -518,19 +491,13 @@ name|psp
 operator|->
 name|NUM_PATTERN_COLUMNS
 operator|=
-literal|6
+name|STD_PATTERN_COLUMNS
 expr_stmt|;
 name|psp
 operator|->
 name|NUM_PATTERN_ROWS
 operator|=
-literal|5
-expr_stmt|;
-name|psp
-operator|->
-name|STD_CELL_SIZE
-operator|=
-name|MIN_CELL_SIZE
+name|STD_PATTERN_COLUMNS
 expr_stmt|;
 comment|/*  The shell and main vbox  */
 name|psp
@@ -656,48 +623,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|vbox
-operator|=
-name|gtk_vbox_new
-argument_list|(
-name|FALSE
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|psp
-operator|->
-name|shell
-argument_list|)
-operator|->
-name|vbox
-argument_list|)
-argument_list|,
-name|vbox
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
 comment|/* handle the wm close event */
 name|gtk_signal_connect
 argument_list|(
@@ -718,6 +643,44 @@ argument_list|,
 name|psp
 argument_list|)
 expr_stmt|;
+comment|/*  The main vbox  */
+name|vbox
+operator|=
+name|gtk_vbox_new
+argument_list|(
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
+name|gtk_container_add
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|psp
+operator|->
+name|shell
+argument_list|)
+operator|->
+name|vbox
+argument_list|)
+argument_list|,
+name|vbox
+argument_list|)
+expr_stmt|;
+comment|/*  Options box  */
 name|psp
 operator|->
 name|options_box
@@ -726,7 +689,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -754,17 +717,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|label_box
-argument_list|)
-argument_list|,
-literal|2
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -782,7 +735,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-literal|0
+literal|2
 argument_list|)
 expr_stmt|;
 name|psp
@@ -812,7 +765,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-literal|2
+literal|4
 argument_list|)
 expr_stmt|;
 name|psp
@@ -839,7 +792,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-literal|5
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -998,13 +951,13 @@ name|psp
 operator|->
 name|cell_width
 operator|=
-name|STD_CELL_SIZE
+name|MIN_CELL_SIZE
 expr_stmt|;
 name|psp
 operator|->
 name|cell_height
 operator|=
-name|STD_CELL_SIZE
+name|MIN_CELL_SIZE
 expr_stmt|;
 name|psp
 operator|->
@@ -3506,9 +3459,11 @@ name|name
 argument_list|)
 expr_stmt|;
 comment|/*  Set pattern size  */
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buf
+argument_list|,
+literal|32
 argument_list|,
 literal|"(%d X %d)"
 argument_list|,
@@ -3558,12 +3513,15 @@ name|PatternSelectP
 name|psp
 parameter_list|)
 block|{
-comment|/* calculate the best-fit approximation... */
+comment|/*  calculate the best-fit approximation...  */
 name|gint
 name|wid
 decl_stmt|;
 name|gint
 name|now
+decl_stmt|;
+name|gint
+name|cell_size
 decl_stmt|;
 name|wid
 operator|=
@@ -3577,9 +3535,7 @@ for|for
 control|(
 name|now
 operator|=
-name|psp
-operator|->
-name|STD_CELL_SIZE
+name|cell_size
 operator|=
 name|MIN_CELL_SIZE
 init|;
@@ -3602,14 +3558,10 @@ operator|<
 operator|(
 name|wid
 operator|%
-name|psp
-operator|->
-name|STD_CELL_SIZE
+name|cell_size
 operator|)
 condition|)
-name|psp
-operator|->
-name|STD_CELL_SIZE
+name|cell_size
 operator|=
 name|now
 expr_stmt|;
@@ -3618,9 +3570,7 @@ condition|(
 operator|(
 name|wid
 operator|%
-name|psp
-operator|->
-name|STD_CELL_SIZE
+name|cell_size
 operator|)
 operator|==
 literal|0
@@ -3637,9 +3587,7 @@ call|)
 argument_list|(
 name|wid
 operator|/
-name|psp
-operator|->
-name|STD_CELL_SIZE
+name|cell_size
 argument_list|)
 expr_stmt|;
 name|psp
@@ -3669,19 +3617,14 @@ name|psp
 operator|->
 name|cell_width
 operator|=
-name|psp
-operator|->
-name|STD_CELL_SIZE
+name|cell_size
 expr_stmt|;
 name|psp
 operator|->
 name|cell_height
 operator|=
-name|psp
-operator|->
-name|STD_CELL_SIZE
+name|cell_size
 expr_stmt|;
-comment|/*   NUM_PATTERN_COLUMNS=(gint)(widget->allocation.width/STD_CELL_WIDTH);   NUM_PATTERN_ROWS = (num_patterns + NUM_PATTERN_COLUMNS - 1) / NUM_PATTERN_COLUMNS;   */
 comment|/*  recalculate scrollbar extents  */
 name|preview_calc_scrollbar
 argument_list|(
@@ -3694,8 +3637,6 @@ argument_list|(
 name|psp
 argument_list|)
 expr_stmt|;
-comment|/*  update the active selection  */
-comment|/*  active = get_active_pattern ();   if (active)     pattern_select_select (psp, active->index); */
 comment|/*  update the display  */
 name|draw_preview
 argument_list|(
