@@ -560,7 +560,7 @@ condition|)
 block|{
 name|object
 operator|=
-name|gimp_list_get_child_by_name
+name|gimp_container_get_child_by_name
 argument_list|(
 name|global_brush_list
 argument_list|,
@@ -1394,10 +1394,7 @@ argument_list|(
 name|char
 operator|*
 argument_list|,
-name|GIMP_CONTAINER
-argument_list|(
 name|global_brush_list
-argument_list|)
 operator|->
 name|num_children
 argument_list|)
@@ -1471,10 +1468,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|GIMP_CONTAINER
-argument_list|(
 name|global_brush_list
-argument_list|)
 operator|->
 name|num_children
 expr_stmt|;

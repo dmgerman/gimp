@@ -383,7 +383,10 @@ for|for
 control|(
 name|list
 operator|=
+name|GIMP_LIST
+argument_list|(
 name|global_pattern_list
+argument_list|)
 operator|->
 name|list
 init|;
@@ -551,10 +554,7 @@ argument_list|(
 name|gchar
 operator|*
 argument_list|,
-name|GIMP_CONTAINER
-argument_list|(
 name|global_pattern_list
-argument_list|)
 operator|->
 name|num_children
 argument_list|)
@@ -565,7 +565,10 @@ operator|(
 operator|(
 name|list
 operator|=
+name|GIMP_LIST
+argument_list|(
 name|global_pattern_list
+argument_list|)
 operator|->
 name|list
 operator|)
@@ -627,10 +630,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|GIMP_CONTAINER
-argument_list|(
 name|global_pattern_list
-argument_list|)
 operator|->
 name|num_children
 expr_stmt|;
@@ -809,7 +809,10 @@ for|for
 control|(
 name|list
 operator|=
+name|GIMP_LIST
+argument_list|(
 name|global_pattern_list
+argument_list|)
 operator|->
 name|list
 init|;

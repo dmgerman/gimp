@@ -751,7 +751,7 @@ operator|(
 name|GimpPattern
 operator|*
 operator|)
-name|gimp_list_get_child_by_name
+name|gimp_container_get_child_by_name
 argument_list|(
 name|global_pattern_list
 argument_list|,

@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontextpreview.h"
 end_include
 
@@ -79,12 +85,6 @@ begin_include
 include|#
 directive|include
 file|"gimpdrawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimplist.h"
 end_include
 
 begin_include
@@ -154,7 +154,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af355cb0103
+DECL|enum|__anon28c36bd50103
 block|{
 DECL|enumerator|GIMP_DND_DATA_COLOR
 name|GIMP_DND_DATA_COLOR
@@ -2458,7 +2458,7 @@ operator|(
 name|GimpBrush
 operator|*
 operator|)
-name|gimp_list_get_child_by_name
+name|gimp_container_get_child_by_name
 argument_list|(
 name|global_brush_list
 argument_list|,
@@ -2835,7 +2835,7 @@ operator|(
 name|GimpPattern
 operator|*
 operator|)
-name|gimp_list_get_child_by_name
+name|gimp_container_get_child_by_name
 argument_list|(
 name|global_pattern_list
 argument_list|,

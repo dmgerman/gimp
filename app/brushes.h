@@ -18,7 +18,7 @@ end_define
 
 begin_decl_stmt
 specifier|extern
-name|GimpList
+name|GimpContainer
 modifier|*
 name|global_brush_list
 decl_stmt|;

@@ -54,13 +54,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcontext.h"
+file|"gimpcontainer.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimplist.h"
+file|"gimpcontext.h"
 end_include
 
 begin_include
@@ -618,7 +618,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon292c83f90103
+DECL|enum|__anon2781146a0103
 block|{
 DECL|enumerator|ARG_0
 name|ARG_0
@@ -725,7 +725,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon292c83f90203
+DECL|enum|__anon2781146a0203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -5704,7 +5704,7 @@ operator|(
 name|GimpBrush
 operator|*
 operator|)
-name|gimp_list_get_child_by_name
+name|gimp_container_get_child_by_name
 argument_list|(
 name|global_brush_list
 argument_list|,
@@ -5740,7 +5740,7 @@ name|context
 argument_list|,
 name|GIMP_BRUSH
 argument_list|(
-name|gimp_list_get_child_by_index
+name|gimp_container_get_child_by_index
 argument_list|(
 name|global_brush_list
 argument_list|,
@@ -6411,7 +6411,7 @@ operator|(
 name|GimpPattern
 operator|*
 operator|)
-name|gimp_list_get_child_by_name
+name|gimp_container_get_child_by_name
 argument_list|(
 name|global_pattern_list
 argument_list|,
@@ -6447,7 +6447,7 @@ name|context
 argument_list|,
 name|GIMP_PATTERN
 argument_list|(
-name|gimp_list_get_child_by_index
+name|gimp_container_get_child_by_index
 argument_list|(
 name|global_pattern_list
 argument_list|,

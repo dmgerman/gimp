@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontext.h"
 end_include
 
@@ -998,7 +1004,7 @@ operator|(
 name|GimpPattern
 operator|*
 operator|)
-name|gimp_list_get_child_by_name
+name|gimp_container_get_child_by_name
 argument_list|(
 name|global_pattern_list
 argument_list|,
@@ -2359,7 +2365,7 @@ literal|0
 decl_stmt|;
 name|index
 operator|=
-name|gimp_list_get_child_index
+name|gimp_container_get_child_index
 argument_list|(
 name|global_pattern_list
 argument_list|,
@@ -2552,7 +2558,7 @@ condition|)
 return|return;
 name|index
 operator|=
-name|gimp_list_get_child_index
+name|gimp_container_get_child_index
 argument_list|(
 name|global_pattern_list
 argument_list|,
@@ -2672,7 +2678,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4f8a210108
+DECL|struct|__anon275f4c3f0108
 block|{
 DECL|member|psp
 name|PatternSelect
@@ -3919,7 +3925,10 @@ name|GList
 modifier|*
 name|list
 init|=
+name|GIMP_LIST
+argument_list|(
 name|global_pattern_list
+argument_list|)
 operator|->
 name|list
 decl_stmt|;
@@ -5036,7 +5045,7 @@ operator|(
 name|GimpPattern
 operator|*
 operator|)
-name|gimp_list_get_child_by_index
+name|gimp_container_get_child_by_index
 argument_list|(
 name|global_pattern_list
 argument_list|,
@@ -5393,7 +5402,7 @@ condition|)
 block|{
 name|index
 operator|=
-name|gimp_list_get_child_index
+name|gimp_container_get_child_index
 argument_list|(
 name|global_pattern_list
 argument_list|,

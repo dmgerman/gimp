@@ -895,7 +895,7 @@ name|GimpObject
 modifier|*
 name|object
 init|=
-name|gimp_list_get_child_by_name
+name|gimp_container_get_child_by_name
 argument_list|(
 name|global_brush_list
 argument_list|,

@@ -110,7 +110,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|global_pattern_list
-name|GimpList
+name|GimpContainer
 modifier|*
 name|global_pattern_list
 init|=
@@ -156,7 +156,7 @@ expr_stmt|;
 else|else
 name|global_pattern_list
 operator|=
-name|GIMP_LIST
+name|GIMP_CONTAINER
 argument_list|(
 name|gimp_data_list_new
 argument_list|(
@@ -215,21 +215,24 @@ argument_list|()
 expr_stmt|;
 while|while
 condition|(
+name|GIMP_LIST
+argument_list|(
 name|global_pattern_list
+argument_list|)
 operator|->
 name|list
 condition|)
 block|{
 name|gimp_container_remove
 argument_list|(
-name|GIMP_CONTAINER
-argument_list|(
 name|global_pattern_list
-argument_list|)
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
+name|GIMP_LIST
+argument_list|(
 name|global_pattern_list
+argument_list|)
 operator|->
 name|list
 operator|->
@@ -470,10 +473,7 @@ name|NULL
 condition|)
 name|gimp_container_add
 argument_list|(
-name|GIMP_CONTAINER
-argument_list|(
 name|global_pattern_list
-argument_list|)
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(

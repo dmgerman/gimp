@@ -910,12 +910,9 @@ name|index
 decl_stmt|;
 name|index
 operator|=
-name|gimp_list_get_child_index
-argument_list|(
-name|GIMP_LIST
+name|gimp_container_get_child_index
 argument_list|(
 name|container
-argument_list|)
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
