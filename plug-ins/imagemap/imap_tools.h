@@ -23,7 +23,7 @@ file|"imap_command.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon290d55a60108
+DECL|struct|__anon2a3b0c900108
 typedef|typedef
 struct|struct
 block|{
@@ -36,6 +36,11 @@ DECL|member|arrow
 name|GtkWidget
 modifier|*
 name|arrow
+decl_stmt|;
+DECL|member|fuzzy_select
+name|GtkWidget
+modifier|*
+name|fuzzy_select
 decl_stmt|;
 DECL|member|rectangle
 name|GtkWidget
