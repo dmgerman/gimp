@@ -322,7 +322,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c09bd760103
+DECL|enum|__anon2ad132b30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -338,7 +338,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c09bd760203
+DECL|enum|__anon2ad132b30203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2212,6 +2212,8 @@ operator|->
 name|menubar_manager
 argument_list|,
 name|shell
+operator|->
+name|gdisp
 argument_list|)
 expr_stmt|;
 name|user_context
@@ -2245,6 +2247,8 @@ operator|->
 name|popup_manager
 argument_list|,
 name|shell
+operator|->
+name|gdisp
 argument_list|)
 expr_stmt|;
 block|}
@@ -5309,6 +5313,8 @@ operator|->
 name|menubar_manager
 argument_list|,
 name|shell
+operator|->
+name|gdisp
 argument_list|)
 expr_stmt|;
 name|user_context
@@ -5342,6 +5348,8 @@ operator|->
 name|popup_manager
 argument_list|,
 name|shell
+operator|->
+name|gdisp
 argument_list|)
 expr_stmt|;
 block|}
