@@ -480,6 +480,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpContainerComboBox
+typedef|typedef
+name|struct
+name|_GimpContainerComboBox
+name|GimpContainerComboBox
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpContainerGridView
 typedef|typedef
 name|struct
