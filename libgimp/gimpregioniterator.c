@@ -324,15 +324,6 @@ operator|->
 name|rowstride
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|iter
-operator|->
-name|run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-condition|)
-block|{
 name|area_so_far
 operator|+=
 name|srcPR
@@ -356,7 +347,6 @@ operator|)
 name|total_area
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 end_function
@@ -717,15 +707,6 @@ operator|.
 name|rowstride
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|iter
-operator|->
-name|run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-condition|)
-block|{
 name|area_so_far
 operator|+=
 name|srcPR
@@ -749,7 +730,6 @@ operator|)
 name|total_area
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 name|gimp_drawable_flush
 argument_list|(
@@ -1283,13 +1263,6 @@ operator|.
 name|rowstride
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-condition|)
-block|{
 name|area_so_far
 operator|+=
 name|srcPR
@@ -1326,7 +1299,6 @@ operator|)
 name|total_area
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 end_function
@@ -1514,13 +1486,6 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|run_mode
-operator|!=
-name|GIMP_RUN_NONINTERACTIVE
-condition|)
-block|{
 name|area_so_far
 operator|+=
 name|srcPR
@@ -1557,7 +1522,6 @@ operator|)
 name|total_area
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 comment|/*  update the processed region  */
 name|gimp_drawable_flush
