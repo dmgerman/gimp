@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdialogfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -120,13 +126,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/file-open-dialog.h"
+file|"gui/dialogs.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gui/file-open-location-dialog.h"
+file|"gui/file-open-dialog.h"
 end_include
 
 begin_include
@@ -321,21 +327,10 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|Gimp
-modifier|*
-name|gimp
-decl_stmt|;
 name|GtkWidget
 modifier|*
 name|widget
 decl_stmt|;
-name|return_if_no_gimp
-argument_list|(
-name|gimp
-argument_list|,
-name|data
-argument_list|)
-expr_stmt|;
 name|return_if_no_widget
 argument_list|(
 name|widget
@@ -343,11 +338,21 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|file_open_location_dialog_show
+name|gimp_dialog_factory_dialog_new
 argument_list|(
-name|gimp
+name|global_dialog_factory
 argument_list|,
+name|gtk_widget_get_screen
+argument_list|(
 name|widget
+argument_list|)
+argument_list|,
+literal|"gimp-file-open-location-dialog"
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}

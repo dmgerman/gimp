@@ -17,16 +17,13 @@ name|__FILE_OPEN_LOCATION_DIALOG_H__
 end_define
 
 begin_function_decl
-name|void
-name|file_open_location_dialog_show
+name|GtkWidget
+modifier|*
+name|file_open_location_dialog_new
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|,
-name|GtkWidget
-modifier|*
-name|parent
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpdialogfactory.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -85,12 +79,6 @@ begin_include
 include|#
 directive|include
 file|"widgets/gimpwidgets-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"dialogs.h"
 end_include
 
 begin_include
@@ -153,17 +141,14 @@ comment|/*  public functions  */
 end_comment
 
 begin_function
-name|void
-DECL|function|file_open_location_dialog_show (Gimp * gimp,GtkWidget * parent)
-name|file_open_location_dialog_show
+name|GtkWidget
+modifier|*
+DECL|function|file_open_location_dialog_new (Gimp * gimp)
+name|file_open_location_dialog_new
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|,
-name|GtkWidget
-modifier|*
-name|parent
 parameter_list|)
 block|{
 name|GtkWidget
@@ -194,24 +179,14 @@ name|GtkEntryCompletion
 modifier|*
 name|completion
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_GIMP
 argument_list|(
 name|gimp
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|parent
-operator|==
+argument_list|,
 name|NULL
-operator|||
-name|GTK_IS_WIDGET
-argument_list|(
-name|parent
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|dialog
@@ -225,7 +200,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-file-open-location"
 argument_list|,
-name|parent
+name|NULL
 argument_list|,
 literal|0
 argument_list|,
@@ -242,15 +217,6 @@ argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_dialog_factory_add_foreign
-argument_list|(
-name|global_dialog_factory
-argument_list|,
-literal|"gimp-file-open-location-dialog"
-argument_list|,
-name|dialog
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -524,13 +490,15 @@ argument_list|,
 name|entry
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
+return|return
 name|dialog
-argument_list|)
-expr_stmt|;
+return|;
 block|}
 end_function
+
+begin_comment
+comment|/*  private functions  */
+end_comment
 
 begin_function
 specifier|static
