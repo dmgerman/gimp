@@ -735,7 +735,7 @@ decl_stmt|,
 name|maskPR
 decl_stmt|;
 name|guchar
-name|bg
+name|bg_color
 index|[
 name|MAX_CHANNELS
 index|]
@@ -754,8 +754,7 @@ name|gint
 name|x1
 decl_stmt|,
 name|y1
-decl_stmt|;
-name|gint
+decl_stmt|,
 name|x2
 decl_stmt|,
 name|y2
@@ -960,7 +959,7 @@ name|gimage
 argument_list|,
 name|drawable
 argument_list|,
-name|bg
+name|bg_color
 argument_list|)
 expr_stmt|;
 comment|/*  If a cut was specified, and the selection mask is not empty,    *  push an undo    */
@@ -1008,17 +1007,13 @@ name|tiles
 operator|=
 name|tile_manager_new
 argument_list|(
-operator|(
 name|x2
 operator|-
 name|x1
-operator|)
 argument_list|,
-operator|(
 name|y2
 operator|-
 name|y1
-operator|)
 argument_list|,
 name|bytes
 argument_list|)
@@ -1051,17 +1046,13 @@ name|x1
 argument_list|,
 name|y1
 argument_list|,
-operator|(
 name|x2
 operator|-
 name|x1
-operator|)
 argument_list|,
-operator|(
 name|y2
 operator|-
 name|y1
-operator|)
 argument_list|,
 name|cut_gimage
 argument_list|)
@@ -1077,26 +1068,22 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-operator|(
 name|x2
 operator|-
 name|x1
-operator|)
 argument_list|,
-operator|(
 name|y2
 operator|-
 name|y1
-operator|)
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/*  If there is a selection, extract from it  */
 if|if
 condition|(
 name|non_empty
 condition|)
+comment|/*  If there is a selection, extract from it  */
 block|{
 name|pixel_region_init
 argument_list|(
@@ -1153,7 +1140,7 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|bg
+name|bg_color
 argument_list|,
 name|base_type
 argument_list|,
@@ -1215,8 +1202,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/*  Otherwise, get the entire active layer  */
 else|else
+comment|/*  Otherwise, get the entire active layer  */
 block|{
 comment|/*  If the layer is indexed...we need to extract pixels  */
 if|if
@@ -1243,7 +1230,7 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|bg
+name|bg_color
 argument_list|,
 name|base_type
 argument_list|,
