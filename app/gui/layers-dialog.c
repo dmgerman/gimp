@@ -2159,7 +2159,10 @@ name|layersD
 operator|->
 name|preserve_trans
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Keep Transparency"
+argument_list|)
 argument_list|,
 literal|"#keep_trans_button"
 argument_list|)
@@ -10877,7 +10880,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b56a4da0108
+DECL|struct|__anon2b41b2de0108
 block|{
 DECL|member|gimage
 name|GimpImage

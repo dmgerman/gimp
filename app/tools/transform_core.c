@@ -2965,6 +2965,12 @@ argument_list|(
 name|gdisp
 argument_list|,
 name|ctype
+argument_list|,
+name|TOOL_TYPE_NONE
+argument_list|,
+name|CURSOR_MODIFIER_NONE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

@@ -5542,7 +5542,7 @@ argument_list|)
 operator|)
 condition|)
 block|{
-comment|/*  One more test--is there a selected region? 	 *  if so, is cursor inside? 	 */
+comment|/*  One more test--is there a selected region? 	   *  if so, is cursor inside? 	   */
 if|if
 condition|(
 name|gimage_mask_is_empty
@@ -5554,7 +5554,7 @@ argument_list|)
 condition|)
 name|ctype
 operator|=
-name|GDK_PENCIL
+name|GIMP_MOUSE_CURSOR
 expr_stmt|;
 elseif|else
 if|if
@@ -5572,7 +5572,7 @@ argument_list|)
 condition|)
 name|ctype
 operator|=
-name|GDK_PENCIL
+name|GIMP_MOUSE_CURSOR
 expr_stmt|;
 block|}
 block|}
@@ -5581,6 +5581,12 @@ argument_list|(
 name|gdisp
 argument_list|,
 name|ctype
+argument_list|,
+name|INK
+argument_list|,
+name|CURSOR_MODIFIER_NONE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -6090,7 +6096,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2c2672020103
+DECL|enum|__anon2c2ddf9e0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

@@ -277,7 +277,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon28b0be3b0108
+DECL|struct|__anon2c8895d90108
 typedef|typedef
 struct|struct
 block|{
@@ -314,7 +314,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28b0be3b0208
+DECL|struct|__anon2c8895d90208
 typedef|typedef
 struct|struct
 block|{
@@ -369,7 +369,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28b0be3b0308
+DECL|struct|__anon2c8895d90308
 typedef|typedef
 struct|struct
 block|{
@@ -6313,6 +6313,12 @@ argument_list|(
 name|gdisp
 argument_list|,
 name|GIMP_MOUSE_CURSOR
+argument_list|,
+name|BEZIER_SELECT
+argument_list|,
+name|CURSOR_MODIFIER_NONE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 return|return;
@@ -6460,7 +6466,13 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_SELECTION_ADD_CURSOR
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+name|RECT_SELECT
+argument_list|,
+name|CURSOR_MODIFIER_PLUS
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -6489,7 +6501,13 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_SELECTION_SUBTRACT_CURSOR
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+name|RECT_SELECT
+argument_list|,
+name|CURSOR_MODIFIER_MINUS
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -6517,7 +6535,13 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_SELECTION_INTERSECT_CURSOR
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+name|RECT_SELECT
+argument_list|,
+name|CURSOR_MODIFIER_INTERSECT
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -6527,7 +6551,13 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_SELECTION_CURSOR
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+name|RECT_SELECT
+argument_list|,
+name|CURSOR_MODIFIER_NONE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -6557,7 +6587,13 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_MOUSE_MOVE_CURSOR
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+name|BEZIER_SELECT
+argument_list|,
+name|CURSOR_MODIFIER_MOVE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -6567,7 +6603,13 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_MOUSE_MOVE_CURSOR
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+name|BEZIER_SELECT
+argument_list|,
+name|CURSOR_MODIFIER_MOVE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -6595,7 +6637,13 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_MOUSE_RECTANGLE_CURSOR
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+name|BEZIER_SELECT
+argument_list|,
+name|CURSOR_MODIFIER_CONTROL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* 	      g_print ("add to curve cursor\n"); */
@@ -6610,7 +6658,13 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_MOUSE_POINT_CURSOR
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+name|BEZIER_SELECT
+argument_list|,
+name|CURSOR_MODIFIER_NONE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* 	      g_print ("edit control point cursor\n"); */
@@ -6621,7 +6675,13 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_MOUSE_POINT_CURSOR
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+name|BEZIER_SELECT
+argument_list|,
+name|CURSOR_MODIFIER_NONE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -6638,7 +6698,13 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_MOUSE_ADD_CURSOR
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+name|BEZIER_SELECT
+argument_list|,
+name|CURSOR_MODIFIER_PLUS
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* 	      g_print ("add to curve cursor\n"); */
@@ -6650,6 +6716,12 @@ argument_list|(
 name|gdisp
 argument_list|,
 name|GIMP_MOUSE_CURSOR
+argument_list|,
+name|BEZIER_SELECT
+argument_list|,
+name|CURSOR_MODIFIER_NONE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* 	      g_print ("default no action cursor\n"); */
@@ -6667,7 +6739,13 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_MOUSE_RECTANGLE_CURSOR
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+name|BEZIER_SELECT
+argument_list|,
+name|CURSOR_MODIFIER_CONTROL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* 	      g_print ("edit control point cursor\n"); */
@@ -6679,6 +6757,12 @@ argument_list|(
 name|gdisp
 argument_list|,
 name|GIMP_MOUSE_CURSOR
+argument_list|,
+name|BEZIER_SELECT
+argument_list|,
+name|CURSOR_MODIFIER_NONE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* 	      g_print ("default no action cursor\n"); */
@@ -6702,7 +6786,13 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_MOUSE_SUBTRACT_CURSOR
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+name|BEZIER_SELECT
+argument_list|,
+name|CURSOR_MODIFIER_MINUS
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*            g_print ("delete whole curve cursor\n"); */
@@ -6717,7 +6807,13 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_MOUSE_SUBTRACT_CURSOR
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+name|BEZIER_SELECT
+argument_list|,
+name|CURSOR_MODIFIER_MINUS
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* 	      g_print ("remove point cursor\n"); */
@@ -6729,6 +6825,12 @@ argument_list|(
 name|gdisp
 argument_list|,
 name|GIMP_MOUSE_CURSOR
+argument_list|,
+name|BEZIER_SELECT
+argument_list|,
+name|CURSOR_MODIFIER_NONE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* 	      g_print ("default no action cursor\n"); */
@@ -6745,6 +6847,12 @@ argument_list|(
 name|gdisp
 argument_list|,
 name|GIMP_MOUSE_CURSOR
+argument_list|,
+name|BEZIER_SELECT
+argument_list|,
+name|CURSOR_MODIFIER_NONE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 break|break;

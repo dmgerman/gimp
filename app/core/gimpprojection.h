@@ -836,13 +836,18 @@ name|gdisp
 parameter_list|,
 name|GdkCursorType
 name|cursor_type
+parameter_list|,
+name|ToolType
+name|tool_type
+parameter_list|,
+name|CursorModifier
+name|modifier
+parameter_list|,
+name|gboolean
+name|toggle_cursor
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/*, 					      ToolType        tool_type, 					      CursorModifier  modifier, 					      gboolean        toggle_cursor); */
-end_comment
 
 begin_function_decl
 name|void

@@ -585,7 +585,7 @@ decl_stmt|;
 name|GdkCursorType
 name|ctype
 init|=
-name|GDK_TOP_LEFT_ARROW
+name|GIMP_BAD_CURSOR
 decl_stmt|;
 name|gdisp
 operator|=
@@ -739,6 +739,14 @@ argument_list|(
 name|gdisp
 argument_list|,
 name|ctype
+argument_list|,
+name|FLIP
+argument_list|,
+name|CURSOR_MODIFIER_NONE
+argument_list|,
+name|ctype
+operator|==
+name|GDK_SB_V_DOUBLE_ARROW
 argument_list|)
 expr_stmt|;
 block|}

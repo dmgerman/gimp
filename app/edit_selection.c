@@ -2831,7 +2831,13 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GDK_FLEUR
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+name|TOOL_TYPE_NONE
+argument_list|,
+name|CURSOR_MODIFIER_MOVE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

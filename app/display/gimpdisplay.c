@@ -831,6 +831,12 @@ argument_list|(
 name|gdisp
 argument_list|,
 name|default_gdisplay_cursor
+argument_list|,
+name|TOOL_TYPE_NONE
+argument_list|,
+name|CURSOR_MODIFIER_NONE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimage
@@ -7375,6 +7381,13 @@ name|gboolean
 name|always_install
 parameter_list|)
 block|{
+if|if
+condition|(
+name|cursor_type
+operator|!=
+name|GIMP_BAD_CURSOR
+condition|)
+block|{
 switch|switch
 condition|(
 name|cursor_mode
@@ -7390,14 +7403,6 @@ case|:
 name|cursor_type
 operator|=
 name|GIMP_CROSSHAIR_SMALL_CURSOR
-expr_stmt|;
-name|tool_type
-operator|=
-name|RECT_SELECT
-expr_stmt|;
-name|modifier
-operator|=
-name|CURSOR_MODIFIER_PLUS
 expr_stmt|;
 break|break;
 case|case
@@ -7416,6 +7421,7 @@ operator|=
 name|CURSOR_MODIFIER_NONE
 expr_stmt|;
 break|break;
+block|}
 block|}
 if|if
 condition|(
@@ -7493,7 +7499,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_install_tool_cursor (GDisplay * gdisp,GdkCursorType cursor_type)
+DECL|function|gdisplay_install_tool_cursor (GDisplay * gdisp,GdkCursorType cursor_type,ToolType tool_type,CursorModifier modifier,gboolean toggle_cursor)
 name|gdisplay_install_tool_cursor
 parameter_list|(
 name|GDisplay
@@ -7502,8 +7508,16 @@ name|gdisp
 parameter_list|,
 name|GdkCursorType
 name|cursor_type
+parameter_list|,
+name|ToolType
+name|tool_type
+parameter_list|,
+name|CursorModifier
+name|modifier
+parameter_list|,
+name|gboolean
+name|toggle_cursor
 parameter_list|)
-comment|/*, 			      ToolType        tool_type, 			      CursorModifier  modifier, 			      gboolean        toggle_cursor) */
 block|{
 if|if
 condition|(
@@ -7518,13 +7532,12 @@ name|gdisp
 argument_list|,
 name|cursor_type
 argument_list|,
-name|TOOL_TYPE_NONE
+name|tool_type
 argument_list|,
-name|CURSOR_MODIFIER_NONE
+name|modifier
 argument_list|,
-name|FALSE
+name|toggle_cursor
 argument_list|,
-comment|/*tool_type, 				       modifier, 				       toggle_cursor,*/
 name|FALSE
 argument_list|)
 expr_stmt|;
@@ -7642,9 +7655,13 @@ name|gdisp
 operator|->
 name|cursor_tool
 argument_list|,
-name|CURSOR_MODIFIER_NONE
+name|gdisp
+operator|->
+name|cursor_modifier
 argument_list|,
-name|FALSE
+name|gdisp
+operator|->
+name|toggle_cursor
 argument_list|,
 name|TRUE
 argument_list|)

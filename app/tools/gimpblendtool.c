@@ -352,7 +352,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c61e5700108
+DECL|struct|__anon29111c7c0108
 block|{
 DECL|member|offset
 name|gdouble
@@ -404,7 +404,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c61e5700208
+DECL|struct|__anon29111c7c0208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -3562,7 +3562,13 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GDK_TOP_LEFT_ARROW
+name|GIMP_BAD_CURSOR
+argument_list|,
+name|BLEND
+argument_list|,
+name|CURSOR_MODIFIER_NONE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3571,7 +3577,13 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GDK_TCROSS
+name|GIMP_MOUSE_CURSOR
+argument_list|,
+name|BLEND
+argument_list|,
+name|CURSOR_MODIFIER_NONE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 break|break;

@@ -142,7 +142,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b87192f0103
+DECL|enum|__anon2c70d5330103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO
@@ -1533,7 +1533,7 @@ argument_list|)
 condition|)
 name|ctype
 operator|=
-name|GDK_PENCIL
+name|GIMP_MOUSE_CURSOR
 expr_stmt|;
 elseif|else
 if|if
@@ -1551,7 +1551,7 @@ argument_list|)
 condition|)
 name|ctype
 operator|=
-name|GDK_PENCIL
+name|GIMP_MOUSE_CURSOR
 expr_stmt|;
 block|}
 block|}
@@ -1574,7 +1574,7 @@ name|GDK_CONTROL_MASK
 condition|)
 name|ctype
 operator|=
-name|GDK_CROSSHAIR
+name|GIMP_CROSSHAIR_SMALL_CURSOR
 expr_stmt|;
 elseif|else
 if|if
@@ -1592,6 +1592,18 @@ argument_list|(
 name|gdisp
 argument_list|,
 name|ctype
+argument_list|,
+name|ctype
+operator|==
+name|GIMP_CROSSHAIR_SMALL_CURSOR
+condition|?
+name|TOOL_TYPE_NONE
+else|:
+name|CLONE
+argument_list|,
+name|CURSOR_MODIFIER_NONE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

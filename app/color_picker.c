@@ -2219,6 +2219,12 @@ argument_list|(
 name|gdisp
 argument_list|,
 name|GIMP_COLOR_PICKER_CURSOR
+argument_list|,
+name|COLOR_PICKER
+argument_list|,
+name|CURSOR_MODIFIER_NONE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 else|else
@@ -2226,7 +2232,13 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GDK_TOP_LEFT_ARROW
+name|GIMP_BAD_CURSOR
+argument_list|,
+name|COLOR_PICKER
+argument_list|,
+name|CURSOR_MODIFIER_NONE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

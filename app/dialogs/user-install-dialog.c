@@ -642,7 +642,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b4aeb5d0108
+DECL|struct|__anon29d7570b0108
 block|{
 DECL|member|directory
 name|gboolean
@@ -2981,6 +2981,16 @@ name|ctree
 argument_list|)
 argument_list|,
 name|GTK_SHADOW_NONE
+argument_list|)
+expr_stmt|;
+name|gtk_clist_set_selection_mode
+argument_list|(
+name|GTK_CLIST
+argument_list|(
+name|ctree
+argument_list|)
+argument_list|,
+name|GTK_SELECTION_BROWSE
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
