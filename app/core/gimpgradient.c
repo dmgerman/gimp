@@ -925,6 +925,8 @@ name|gradient
 argument_list|,
 name|cur_x
 argument_list|,
+name|FALSE
+argument_list|,
 operator|&
 name|color
 argument_list|)
@@ -3100,7 +3102,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_gradient_get_color_at (GimpGradient * gradient,gdouble pos,GimpRGB * color)
+DECL|function|gimp_gradient_get_color_at (GimpGradient * gradient,gdouble pos,gboolean reverse,GimpRGB * color)
 name|gimp_gradient_get_color_at
 parameter_list|(
 name|GimpGradient
@@ -3109,6 +3111,9 @@ name|gradient
 parameter_list|,
 name|gdouble
 name|pos
+parameter_list|,
+name|gboolean
+name|reverse
 parameter_list|,
 name|GimpRGB
 modifier|*
@@ -3148,49 +3153,26 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* if there is no gradient return a totally transparent black */
-if|if
-condition|(
-name|gradient
-operator|==
-name|NULL
-condition|)
-block|{
-name|gimp_rgba_set
+name|pos
+operator|=
+name|CLAMP
 argument_list|(
-name|color
+name|pos
 argument_list|,
 literal|0.0
 argument_list|,
-literal|0.0
-argument_list|,
-literal|0.0
-argument_list|,
-literal|0.0
+literal|1.0
 argument_list|)
 expr_stmt|;
-return|return;
-block|}
 if|if
 condition|(
-name|pos
-operator|<
-literal|0.0
-condition|)
-name|pos
-operator|=
-literal|0.0
-expr_stmt|;
-elseif|else
-if|if
-condition|(
-name|pos
-operator|>
-literal|1.0
+name|reverse
 condition|)
 name|pos
 operator|=
 literal|1.0
+operator|-
+name|pos
 expr_stmt|;
 name|seg
 operator|=
@@ -4391,6 +4373,8 @@ name|lseg
 operator|->
 name|middle
 argument_list|,
+name|FALSE
+argument_list|,
 operator|&
 name|color
 argument_list|)
@@ -4778,6 +4762,8 @@ name|seg
 operator|->
 name|left
 argument_list|,
+name|FALSE
+argument_list|,
 operator|&
 name|seg
 operator|->
@@ -4791,6 +4777,8 @@ argument_list|,
 name|seg
 operator|->
 name|right
+argument_list|,
+name|FALSE
 argument_list|,
 operator|&
 name|seg

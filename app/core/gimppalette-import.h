@@ -25,6 +25,9 @@ name|GimpGradient
 modifier|*
 name|gradient
 parameter_list|,
+name|gboolean
+name|reverse
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*

@@ -914,6 +914,8 @@ name|gradient
 argument_list|,
 name|pos
 argument_list|,
+name|FALSE
+argument_list|,
 operator|&
 name|color
 argument_list|)

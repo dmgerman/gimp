@@ -46,7 +46,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2bf4356a0103
+DECL|enum|__anon2b26dcdf0103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -85,7 +85,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2bf4356a0203
+DECL|enum|__anon2b26dcdf0203
 block|{
 comment|/*  Set for tools that don't mind if    *  the brush changes while painting.    */
 DECL|enumerator|CORE_HANDLES_CHANGING_BRUSH
@@ -531,31 +531,6 @@ end_function_decl
 begin_comment
 comment|/*  protected functions  */
 end_comment
-
-begin_function_decl
-name|void
-name|gimp_paint_core_get_color_from_gradient
-parameter_list|(
-name|GimpPaintCore
-modifier|*
-name|core
-parameter_list|,
-name|GimpGradient
-modifier|*
-name|gradient
-parameter_list|,
-name|gdouble
-name|gradient_length
-parameter_list|,
-name|GimpRGB
-modifier|*
-name|color
-parameter_list|,
-name|GimpGradientPaintMode
-name|mode
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 name|TempBuf

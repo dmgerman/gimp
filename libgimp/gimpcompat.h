@@ -18,7 +18,7 @@ end_define
 
 begin_decl_stmt
 name|G_BEGIN_DECLS
-comment|/* This file contains aliases that are kept for historical  * reasons, because a wide code base depends on them.  *  * These defines will be removed in the next development cycle.   */
+comment|/* This file contains aliases that are kept for historical  * reasons, because a wide code base depends on them.  *  * These defines will be removed in the next development cycle.  */
 DECL|macro|GimpRunModeType
 define|#
 directive|define
@@ -142,7 +142,7 @@ directive|define
 name|gimp_pattern_select_widget_close_popup
 value|gimp_pattern_select_widget_close
 name|enum
-DECL|enum|__anon27d584310103
+DECL|enum|__anon27556fd40103
 type|{
 DECL|enumerator|GIMP_WHITE_MASK
 name|GIMP_WHITE_MASK
@@ -183,7 +183,7 @@ end_decl_stmt
 begin_enum
 unit|};
 enum|enum
-DECL|enum|__anon27d584310203
+DECL|enum|__anon27556fd40203
 block|{
 DECL|enumerator|GIMP_ADD
 name|GIMP_ADD
@@ -210,7 +210,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d584310303
+DECL|enum|__anon27556fd40303
 block|{
 DECL|enumerator|GIMP_FG_BG_RGB
 name|GIMP_FG_BG_RGB
@@ -237,7 +237,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d584310403
+DECL|enum|__anon27556fd40403
 block|{
 DECL|enumerator|GIMP_FG_IMAGE_FILL
 name|GIMP_FG_IMAGE_FILL
@@ -269,7 +269,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d584310503
+DECL|enum|__anon27556fd40503
 block|{
 DECL|enumerator|GIMP_APPLY
 name|GIMP_APPLY
@@ -286,34 +286,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d584310603
-block|{
-DECL|enumerator|GIMP_ONCE_FORWARD
-name|GIMP_ONCE_FORWARD
-init|=
-name|GIMP_GRADIENT_ONCE_FORWARD
-block|,
-DECL|enumerator|GIMP_ONCE_BACKWARDS
-name|GIMP_ONCE_BACKWARDS
-init|=
-name|GIMP_GRADIENT_ONCE_BACKWARD
-block|,
-DECL|enumerator|GIMP_LOOP_SAWTOOTH
-name|GIMP_LOOP_SAWTOOTH
-init|=
-name|GIMP_GRADIENT_LOOP_SAWTOOTH
-block|,
-DECL|enumerator|GIMP_LOOP_TRIANGLE
-name|GIMP_LOOP_TRIANGLE
-init|=
-name|GIMP_GRADIENT_LOOP_TRIANGLE
-block|, }
-enum|;
-end_enum
-
-begin_enum
-enum|enum
-DECL|enum|__anon27d584310703
+DECL|enum|__anon27556fd40603
 block|{
 DECL|enumerator|GIMP_HARD
 name|GIMP_HARD
@@ -330,7 +303,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d584310803
+DECL|enum|__anon27556fd40703
 block|{
 DECL|enumerator|GIMP_CONTINUOUS
 name|GIMP_CONTINUOUS
@@ -347,7 +320,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d584310903
+DECL|enum|__anon27556fd40803
 block|{
 DECL|enumerator|GIMP_HORIZONTAL
 name|GIMP_HORIZONTAL

@@ -120,14 +120,6 @@ DECL|member|gradient_type
 name|GimpGradientType
 name|gradient_type
 decl_stmt|;
-DECL|member|repeat
-name|GimpRepeatMode
-name|repeat
-decl_stmt|;
-DECL|member|dither
-name|gboolean
-name|dither
-decl_stmt|;
 DECL|member|supersample
 name|gboolean
 name|supersample
@@ -139,6 +131,10 @@ decl_stmt|;
 DECL|member|supersample_threshold
 name|gdouble
 name|supersample_threshold
+decl_stmt|;
+DECL|member|dither
+name|gboolean
+name|dither
 decl_stmt|;
 block|}
 struct|;

@@ -128,12 +128,16 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c88472f0108
+DECL|struct|__anon274921500108
 block|{
 DECL|member|gradient
 name|GimpGradient
 modifier|*
 name|gradient
+decl_stmt|;
+DECL|member|reverse
+name|gboolean
+name|reverse
 decl_stmt|;
 DECL|member|offset
 name|gdouble
@@ -185,7 +189,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c88472f0208
+DECL|struct|__anon274921500208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -562,7 +566,10 @@ parameter_list|,
 name|GimpRepeatMode
 name|repeat
 parameter_list|,
-name|gint
+name|gboolean
+name|reverse
+parameter_list|,
+name|gboolean
 name|supersample
 parameter_list|,
 name|gint
@@ -640,7 +647,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_drawable_blend (GimpDrawable * drawable,GimpBlendMode blend_mode,int paint_mode,GimpGradientType gradient_type,gdouble opacity,gdouble offset,GimpRepeatMode repeat,gint supersample,gint max_depth,gdouble threshold,gboolean dither,gdouble startx,gdouble starty,gdouble endx,gdouble endy,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gimp_drawable_blend (GimpDrawable * drawable,GimpBlendMode blend_mode,GimpLayerModeEffects paint_mode,GimpGradientType gradient_type,gdouble opacity,gdouble offset,GimpRepeatMode repeat,gboolean reverse,gboolean supersample,gint max_depth,gdouble threshold,gboolean dither,gdouble startx,gdouble starty,gdouble endx,gdouble endy,GimpProgressFunc progress_callback,gpointer progress_data)
 name|gimp_drawable_blend
 parameter_list|(
 name|GimpDrawable
@@ -650,7 +657,7 @@ parameter_list|,
 name|GimpBlendMode
 name|blend_mode
 parameter_list|,
-name|int
+name|GimpLayerModeEffects
 name|paint_mode
 parameter_list|,
 name|GimpGradientType
@@ -665,7 +672,10 @@ parameter_list|,
 name|GimpRepeatMode
 name|repeat
 parameter_list|,
-name|gint
+name|gboolean
+name|reverse
+parameter_list|,
+name|gboolean
 name|supersample
 parameter_list|,
 name|gint
@@ -880,6 +890,8 @@ argument_list|,
 name|offset
 argument_list|,
 name|repeat
+argument_list|,
+name|reverse
 argument_list|,
 name|supersample
 argument_list|,
@@ -3381,6 +3393,10 @@ name|gradient
 argument_list|,
 name|factor
 argument_list|,
+name|rbd
+operator|->
+name|reverse
+argument_list|,
 name|color
 argument_list|)
 expr_stmt|;
@@ -3388,6 +3404,18 @@ block|}
 else|else
 block|{
 comment|/* Blend values */
+if|if
+condition|(
+name|rbd
+operator|->
+name|reverse
+condition|)
+name|factor
+operator|=
+literal|1.0
+operator|-
+name|factor
+expr_stmt|;
 name|color
 operator|->
 name|r
@@ -4036,7 +4064,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_fill_region (GimpImage * gimage,GimpDrawable * drawable,PixelRegion * PR,gint width,gint height,GimpBlendMode blend_mode,GimpGradientType gradient_type,gdouble offset,GimpRepeatMode repeat,gint supersample,gint max_depth,gdouble threshold,gboolean dither,gdouble sx,gdouble sy,gdouble ex,gdouble ey,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gradient_fill_region (GimpImage * gimage,GimpDrawable * drawable,PixelRegion * PR,gint width,gint height,GimpBlendMode blend_mode,GimpGradientType gradient_type,gdouble offset,GimpRepeatMode repeat,gboolean reverse,gboolean supersample,gint max_depth,gdouble threshold,gboolean dither,gdouble sx,gdouble sy,gdouble ex,gdouble ey,GimpProgressFunc progress_callback,gpointer progress_data)
 name|gradient_fill_region
 parameter_list|(
 name|GimpImage
@@ -4069,7 +4097,10 @@ parameter_list|,
 name|GimpRepeatMode
 name|repeat
 parameter_list|,
-name|gint
+name|gboolean
+name|reverse
+parameter_list|,
+name|gboolean
 name|supersample
 parameter_list|,
 name|gint
@@ -4153,6 +4184,12 @@ name|gimp_context_get_gradient
 argument_list|(
 name|context
 argument_list|)
+expr_stmt|;
+name|rbd
+operator|.
+name|reverse
+operator|=
+name|reverse
 expr_stmt|;
 comment|/* Get foreground and background colors, normalized */
 name|gimp_context_get_foreground

@@ -20,12 +20,12 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_blend:  * @drawable_ID: The affected drawable.  * @blend_mode: The type of blend.  * @paint_mode: The paint application mode.  * @gradient_type: The type of gradient.  * @opacity: The opacity of the final blend.  * @offset: Offset relates to the starting and ending coordinates specified for the blend. This parameter is mode dependent.  * @repeat: Repeat mode.  * @supersample: Do adaptive supersampling.  * @max_depth: Maximum recursion levels for supersampling.  * @threshold: Supersampling threshold.  * @dither: Use dithering to reduce banding.  * @x1: The x coordinate of this blend's starting point.  * @y1: The y coordinate of this blend's starting point.  * @x2: The x coordinate of this blend's ending point.  * @y2: The y coordinate of this blend's ending point.  *  * Blend between the starting and ending coordinates with the specified  * blend mode and gradient type.  *  * This tool requires information on the paint application mode, the  * blend mode, and the gradient type. It creates the specified variety  * of blend using the starting and ending coordinates as defined for  * each gradient type.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_blend:  * @drawable_ID: The affected drawable.  * @blend_mode: The type of blend.  * @paint_mode: The paint application mode.  * @gradient_type: The type of gradient.  * @opacity: The opacity of the final blend.  * @offset: Offset relates to the starting and ending coordinates specified for the blend. This parameter is mode dependent.  * @repeat: Repeat mode.  * @reverse: Use the reverse gradient.  * @supersample: Do adaptive supersampling.  * @max_depth: Maximum recursion levels for supersampling.  * @threshold: Supersampling threshold.  * @dither: Use dithering to reduce banding.  * @x1: The x coordinate of this blend's starting point.  * @y1: The y coordinate of this blend's starting point.  * @x2: The x coordinate of this blend's ending point.  * @y2: The y coordinate of this blend's ending point.  *  * Blend between the starting and ending coordinates with the specified  * blend mode and gradient type.  *  * This tool requires information on the paint application mode, the  * blend mode, and the gradient type. It creates the specified variety  * of blend using the starting and ending coordinates as defined for  * each gradient type.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_blend (gint32 drawable_ID,GimpBlendMode blend_mode,GimpLayerModeEffects paint_mode,GimpGradientType gradient_type,gdouble opacity,gdouble offset,GimpRepeatMode repeat,gboolean supersample,gint max_depth,gdouble threshold,gboolean dither,gdouble x1,gdouble y1,gdouble x2,gdouble y2)
+DECL|function|gimp_blend (gint32 drawable_ID,GimpBlendMode blend_mode,GimpLayerModeEffects paint_mode,GimpGradientType gradient_type,gdouble opacity,gdouble offset,GimpRepeatMode repeat,gboolean reverse,gboolean supersample,gint max_depth,gdouble threshold,gboolean dither,gdouble x1,gdouble y1,gdouble x2,gdouble y2)
 name|gimp_blend
 parameter_list|(
 name|gint32
@@ -48,6 +48,9 @@ name|offset
 parameter_list|,
 name|GimpRepeatMode
 name|repeat
+parameter_list|,
+name|gboolean
+name|reverse
 parameter_list|,
 name|gboolean
 name|supersample
@@ -122,6 +125,10 @@ argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
 name|repeat
+argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|reverse
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,

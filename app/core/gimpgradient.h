@@ -283,6 +283,9 @@ parameter_list|,
 name|gdouble
 name|pos
 parameter_list|,
+name|gboolean
+name|reverse
+parameter_list|,
 name|GimpRGB
 modifier|*
 name|color

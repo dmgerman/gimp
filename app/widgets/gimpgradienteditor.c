@@ -3389,6 +3389,8 @@ argument_list|)
 argument_list|,
 name|xpos
 argument_list|,
+name|FALSE
+argument_list|,
 operator|&
 name|rgb
 argument_list|)
@@ -3568,6 +3570,8 @@ name|gradient
 argument_list|,
 name|xpos
 argument_list|,
+name|FALSE
+argument_list|,
 operator|&
 name|color
 argument_list|)
@@ -3743,6 +3747,8 @@ argument_list|(
 name|gradient
 argument_list|,
 name|xpos
+argument_list|,
+name|FALSE
 argument_list|,
 operator|&
 name|color

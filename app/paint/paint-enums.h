@@ -73,7 +73,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c272ebf0103
+DECL|enum|__anon2c31727a0103
 block|{
 DECL|enumerator|GIMP_IMAGE_CLONE
 name|GIMP_IMAGE_CLONE
@@ -110,7 +110,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c272ebf0203
+DECL|enum|__anon2c31727a0203
 block|{
 DECL|enumerator|GIMP_CLONE_ALIGN_NO
 name|GIMP_CLONE_ALIGN_NO
@@ -150,7 +150,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c272ebf0303
+DECL|enum|__anon2c31727a0303
 block|{
 DECL|enumerator|GIMP_DODGE
 name|GIMP_DODGE
@@ -162,50 +162,6 @@ comment|/*< desc="Burn">*/
 DECL|typedef|GimpDodgeBurnType
 block|}
 name|GimpDodgeBurnType
-typedef|;
-end_typedef
-
-begin_define
-DECL|macro|GIMP_TYPE_GRADIENT_PAINT_MODE
-define|#
-directive|define
-name|GIMP_TYPE_GRADIENT_PAINT_MODE
-value|(gimp_gradient_paint_mode_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_gradient_paint_mode_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2c272ebf0403
-block|{
-DECL|enumerator|GIMP_GRADIENT_ONCE_FORWARD
-name|GIMP_GRADIENT_ONCE_FORWARD
-block|,
-comment|/*< desc="Once Forward">*/
-DECL|enumerator|GIMP_GRADIENT_ONCE_BACKWARD
-name|GIMP_GRADIENT_ONCE_BACKWARD
-block|,
-comment|/*< desc="Once Backward">*/
-DECL|enumerator|GIMP_GRADIENT_LOOP_SAWTOOTH
-name|GIMP_GRADIENT_LOOP_SAWTOOTH
-block|,
-comment|/*< desc="Loop Sawtooth">*/
-DECL|enumerator|GIMP_GRADIENT_LOOP_TRIANGLE
-name|GIMP_GRADIENT_LOOP_TRIANGLE
-comment|/*< desc="Loop Triangle">*/
-DECL|typedef|GimpGradientPaintMode
-block|}
-name|GimpGradientPaintMode
 typedef|;
 end_typedef
 
@@ -230,7 +186,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c272ebf0503
+DECL|enum|__anon2c31727a0403
 block|{
 DECL|enumerator|GIMP_BLUR_CONVOLVE
 name|GIMP_BLUR_CONVOLVE
@@ -271,7 +227,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2c272ebf0603
+DECL|enum|__anon2c31727a0503
 block|{
 DECL|enumerator|GIMP_INK_BLOB_TYPE_ELLIPSE
 name|GIMP_INK_BLOB_TYPE_ELLIPSE
@@ -308,7 +264,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c272ebf0703
+DECL|enum|__anon2c31727a0603
 block|{
 DECL|enumerator|GIMP_PAINT_CONSTANT
 name|GIMP_PAINT_CONSTANT
@@ -331,7 +287,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2c272ebf0803
+DECL|enum|__anon2c31727a0703
 block|{
 DECL|enumerator|GIMP_BRUSH_HARD
 name|GIMP_BRUSH_HARD

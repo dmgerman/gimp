@@ -140,7 +140,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bfa3f180103
+DECL|enum|__anon29ab7f100103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -2696,6 +2696,8 @@ operator|=
 name|gimp_palette_import_from_gradient
 argument_list|(
 name|gradient
+argument_list|,
+name|FALSE
 argument_list|,
 name|palette_name
 argument_list|,

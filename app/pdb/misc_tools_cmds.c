@@ -190,6 +190,9 @@ name|gint32
 name|repeat
 decl_stmt|;
 name|gboolean
+name|reverse
+decl_stmt|;
+name|gboolean
 name|supersample
 decl_stmt|;
 name|gint32
@@ -391,7 +394,7 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
-name|supersample
+name|reverse
 operator|=
 name|args
 index|[
@@ -406,11 +409,26 @@ name|TRUE
 else|:
 name|FALSE
 expr_stmt|;
-name|max_depth
+name|supersample
 operator|=
 name|args
 index|[
 literal|8
+index|]
+operator|.
+name|value
+operator|.
+name|pdb_int
+condition|?
+name|TRUE
+else|:
+name|FALSE
+expr_stmt|;
+name|max_depth
+operator|=
+name|args
+index|[
+literal|9
 index|]
 operator|.
 name|value
@@ -439,7 +457,7 @@ name|threshold
 operator|=
 name|args
 index|[
-literal|9
+literal|10
 index|]
 operator|.
 name|value
@@ -468,7 +486,7 @@ name|dither
 operator|=
 name|args
 index|[
-literal|10
+literal|11
 index|]
 operator|.
 name|value
@@ -483,7 +501,7 @@ name|x1
 operator|=
 name|args
 index|[
-literal|11
+literal|12
 index|]
 operator|.
 name|value
@@ -494,7 +512,7 @@ name|y1
 operator|=
 name|args
 index|[
-literal|12
+literal|13
 index|]
 operator|.
 name|value
@@ -505,7 +523,7 @@ name|x2
 operator|=
 name|args
 index|[
-literal|13
+literal|14
 index|]
 operator|.
 name|value
@@ -516,7 +534,7 @@ name|y2
 operator|=
 name|args
 index|[
-literal|14
+literal|15
 index|]
 operator|.
 name|value
@@ -564,6 +582,8 @@ argument_list|,
 name|offset
 argument_list|,
 name|repeat
+argument_list|,
+name|reverse
 argument_list|,
 name|supersample
 argument_list|,
@@ -667,6 +687,14 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
+literal|"reverse"
+block|,
+literal|"Use the reverse gradient (TRUE or FALSE)"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
 literal|"supersample"
 block|,
 literal|"Do adaptive supersampling (TRUE or FALSE)"
@@ -752,7 +780,7 @@ literal|"1995-1996"
 block|,
 name|GIMP_INTERNAL
 block|,
-literal|15
+literal|16
 block|,
 name|blend_inargs
 block|,

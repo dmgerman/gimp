@@ -27,7 +27,7 @@ parameter_list|,
 name|GimpBlendMode
 name|blend_mode
 parameter_list|,
-name|gint
+name|GimpLayerModeEffects
 name|paint_mode
 parameter_list|,
 name|GimpGradientType
@@ -42,7 +42,10 @@ parameter_list|,
 name|GimpRepeatMode
 name|repeat
 parameter_list|,
-name|gint
+name|gboolean
+name|reverse
+parameter_list|,
+name|gboolean
 name|supersample
 parameter_list|,
 name|gint

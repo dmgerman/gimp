@@ -48,6 +48,9 @@ name|GimpRepeatMode
 name|repeat
 parameter_list|,
 name|gboolean
+name|reverse
+parameter_list|,
+name|gboolean
 name|supersample
 parameter_list|,
 name|gint

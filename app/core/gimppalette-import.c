@@ -94,12 +94,15 @@ end_comment
 begin_function
 name|GimpPalette
 modifier|*
-DECL|function|gimp_palette_import_from_gradient (GimpGradient * gradient,const gchar * palette_name,gint n_colors)
+DECL|function|gimp_palette_import_from_gradient (GimpGradient * gradient,gboolean reverse,const gchar * palette_name,gint n_colors)
 name|gimp_palette_import_from_gradient
 parameter_list|(
 name|GimpGradient
 modifier|*
 name|gradient
+parameter_list|,
+name|gboolean
+name|reverse
 parameter_list|,
 specifier|const
 name|gchar
@@ -202,6 +205,8 @@ argument_list|(
 name|gradient
 argument_list|,
 name|cur_x
+argument_list|,
+name|reverse
 argument_list|,
 operator|&
 name|color
