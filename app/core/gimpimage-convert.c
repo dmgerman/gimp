@@ -35087,7 +35087,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294ad2fa0108
+DECL|struct|__anon298f6d530108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -35164,7 +35164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294ad2fa0208
+DECL|struct|__anon298f6d530208
 block|{
 DECL|member|ncolors
 name|long
@@ -35323,7 +35323,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294ad2fa0308
+DECL|struct|__anon298f6d530308
 block|{
 DECL|member|used_count
 name|signed
@@ -44075,7 +44075,7 @@ name|g
 decl_stmt|,
 name|b
 decl_stmt|;
-comment|/* fprintf(stderr, "custompal_pass1: using (theCustomPalette %s) from (file %s)\n", 			 theCustomPalette->name, theCustomPalette->filename); */
+comment|/* fprintf (stderr,                "custompal_pass1: using (theCustomPalette %s) from (file %s)\n", 	      theCustomPalette->name, theCustomPalette->filename); */
 for|for
 control|(
 name|i
@@ -44088,6 +44088,10 @@ name|theCustomPalette
 operator|->
 name|colors
 init|;
+name|i
+operator|<
+literal|256
+operator|&&
 name|list
 condition|;
 name|i

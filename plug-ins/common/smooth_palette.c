@@ -233,6 +233,29 @@ literal|"Show Image?"
 block|}
 block|}
 decl_stmt|;
+specifier|static
+name|GimpParamDef
+name|return_vals
+index|[]
+init|=
+block|{
+block|{
+name|GIMP_PDB_IMAGE
+block|,
+literal|"new_image"
+block|,
+literal|"Output image"
+block|}
+block|,
+block|{
+name|GIMP_PDB_LAYER
+block|,
+literal|"new_layer"
+block|,
+literal|"Output layer"
+block|}
+block|}
+decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_smooth_palette"
@@ -261,11 +284,14 @@ argument_list|(
 name|args
 argument_list|)
 argument_list|,
-literal|0
+name|G_N_ELEMENTS
+argument_list|(
+name|return_vals
+argument_list|)
 argument_list|,
 name|args
 argument_list|,
-name|NULL
+name|return_vals
 argument_list|)
 expr_stmt|;
 block|}
@@ -274,7 +300,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27d8d9cd0108
+DECL|struct|__anon29b41ed30108
 block|{
 DECL|member|width
 name|gint
@@ -719,14 +745,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_define
-DECL|macro|R
-define|#
-directive|define
-name|R
-value|(rand())
-end_define
-
 begin_function
 specifier|static
 name|long
@@ -1069,7 +1087,8 @@ block|{
 name|gint
 name|x
 init|=
-name|R
+name|rand
+argument_list|()
 operator|%
 name|drawable
 operator|->
@@ -1078,7 +1097,8 @@ decl_stmt|;
 name|gint
 name|y
 init|=
-name|R
+name|rand
+argument_list|()
 operator|%
 name|drawable
 operator|->
@@ -1232,7 +1252,8 @@ name|bpp
 argument_list|,
 name|i
 argument_list|,
-name|R
+name|rand
+argument_list|()
 operator|%
 name|psize
 argument_list|)
@@ -1293,7 +1314,8 @@ init|=
 literal|1
 operator|+
 operator|(
-name|R
+name|rand
+argument_list|()
 operator|%
 operator|(
 name|psize
@@ -1308,7 +1330,8 @@ init|=
 literal|1
 operator|+
 operator|(
-name|R
+name|rand
+argument_list|()
 operator|%
 operator|(
 name|psize
@@ -1685,7 +1708,8 @@ name|i0
 init|=
 literal|1
 operator|+
-name|R
+name|rand
+argument_list|()
 operator|%
 operator|(
 name|psize
