@@ -454,27 +454,9 @@ name|bytes
 operator|=
 literal|0
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: g_io_channel_read_chars()
-endif|#
-directive|endif
-if|#
-directive|if
-literal|0
-block|status = g_io_channel_read_chars (channel, 						(gchar *) buf, count,&bytes,&error);
-endif|#
-directive|endif
 name|status
 operator|=
-name|channel
-operator|->
-name|funcs
-operator|->
-name|io_read
+name|g_io_channel_read_chars
 argument_list|(
 name|channel
 argument_list|,
@@ -508,6 +490,11 @@ operator|!=
 name|G_IO_STATUS_NORMAL
 condition|)
 block|{
+if|if
+condition|(
+name|error
+condition|)
+block|{
 name|g_warning
 argument_list|(
 literal|"%s: wire_read(): error: %s"
@@ -520,6 +507,23 @@ operator|->
 name|message
 argument_list|)
 expr_stmt|;
+name|g_error_free
+argument_list|(
+name|error
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|g_warning
+argument_list|(
+literal|"%s: wire_read(): error"
+argument_list|,
+name|g_get_prgname
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
 name|wire_error_val
 operator|=
 name|TRUE
@@ -649,27 +653,9 @@ name|bytes
 operator|=
 literal|0
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: g_io_channel_write_chars()
-endif|#
-directive|endif
-if|#
-directive|if
-literal|0
-block|status = g_io_channel_write_chars (channel, 						 (gchar *) buf, count,&bytes,&error);
-endif|#
-directive|endif
 name|status
 operator|=
-name|channel
-operator|->
-name|funcs
-operator|->
-name|io_write
+name|g_io_channel_write_chars
 argument_list|(
 name|channel
 argument_list|,
@@ -703,6 +689,11 @@ operator|!=
 name|G_IO_STATUS_NORMAL
 condition|)
 block|{
+if|if
+condition|(
+name|error
+condition|)
+block|{
 name|g_warning
 argument_list|(
 literal|"%s: wire_write(): error: %s"
@@ -715,6 +706,23 @@ operator|->
 name|message
 argument_list|)
 expr_stmt|;
+name|g_error_free
+argument_list|(
+name|error
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|g_warning
+argument_list|(
+literal|"%s: wire_write(): error"
+argument_list|,
+name|g_get_prgname
+argument_list|()
+argument_list|)
+expr_stmt|;
+block|}
 name|wire_error_val
 operator|=
 name|TRUE

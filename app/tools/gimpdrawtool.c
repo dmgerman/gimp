@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b13c5110103
+DECL|enum|__anon2b79b1c70103
 block|{
 DECL|enumerator|DRAW
 name|DRAW
@@ -394,11 +394,14 @@ operator|->
 name|gc
 condition|)
 block|{
-name|gdk_gc_destroy
+name|g_object_unref
+argument_list|(
+name|G_OBJECT
 argument_list|(
 name|draw_tool
 operator|->
 name|gc
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|draw_tool
