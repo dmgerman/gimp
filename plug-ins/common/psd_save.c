@@ -12,7 +12,7 @@ comment|/*  * Revision history:  *  *  2000.02 / v1.0 / Monigotes  *       First
 end_comment
 
 begin_comment
-comment|/*  * TODO:  */
+comment|/*  * TODO:  *       Save preview  *       Use less memory  */
 end_comment
 
 begin_comment
@@ -1666,7 +1666,6 @@ index|[
 literal|4
 index|]
 decl_stmt|;
-comment|/*  b[0] = val& 255;       b[1] = (val>> 8)& 255;       b[2] = (val>> 16)& 255;       b[3] = (val>> 24)& 255;*/
 name|b
 index|[
 literal|3
@@ -3265,14 +3264,6 @@ name|i
 decl_stmt|;
 name|gchar
 modifier|*
-modifier|*
-name|chName
-init|=
-name|NULL
-decl_stmt|;
-comment|/* Channel names */
-name|gchar
-modifier|*
 name|fileName
 decl_stmt|;
 comment|/* Image file name */
@@ -3310,80 +3301,6 @@ argument_list|(
 literal|" Function: save_resources\n"
 argument_list|)
 decl_stmt|;
-comment|/* Get channel names */
-if|if
-condition|(
-name|PSDImageData
-operator|.
-name|nChannels
-operator|>
-literal|0
-condition|)
-name|chName
-operator|=
-operator|(
-name|char
-operator|*
-operator|*
-operator|)
-name|xmalloc
-argument_list|(
-sizeof|sizeof
-argument_list|(
-name|char
-operator|*
-argument_list|)
-operator|*
-name|PSDImageData
-operator|.
-name|nChannels
-argument_list|)
-expr_stmt|;
-for|for
-control|(
-name|i
-operator|=
-literal|0
-init|;
-name|i
-operator|<
-name|PSDImageData
-operator|.
-name|nChannels
-condition|;
-name|i
-operator|++
-control|)
-block|{
-name|chName
-index|[
-name|i
-index|]
-operator|=
-name|gimp_drawable_get_name
-argument_list|(
-name|PSDImageData
-operator|.
-name|lChannels
-index|[
-name|i
-index|]
-argument_list|)
-expr_stmt|;
-name|IFDBG
-name|printf
-argument_list|(
-literal|"      Channel %d name: %s\n"
-argument_list|,
-name|i
-argument_list|,
-name|chName
-index|[
-name|i
-index|]
-argument_list|)
-decl_stmt|;
-block|}
 comment|/* Get the image title from its filename */
 name|fileName
 operator|=
@@ -3572,19 +3489,36 @@ condition|;
 name|i
 operator|--
 control|)
-comment|/*write_pascalstring (fd, chName[i], 2, "chanel name"); */
+block|{
+name|char
+modifier|*
+name|chName
+init|=
+name|gimp_drawable_get_name
+argument_list|(
+name|PSDImageData
+operator|.
+name|lChannels
+index|[
+name|i
+index|]
+argument_list|)
+decl_stmt|;
 name|write_string
 argument_list|(
 name|fd
 argument_list|,
 name|chName
-index|[
-name|i
-index|]
 argument_list|,
 literal|"channel name"
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|chName
+argument_list|)
+expr_stmt|;
+block|}
 comment|/* Calculate and write actual resource's length */
 name|eof_pos
 operator|=
@@ -3673,6 +3607,241 @@ argument_list|,
 literal|"pad byte"
 argument_list|)
 expr_stmt|;
+block|}
+comment|/* --------------- Write Guides --------------- */
+if|if
+condition|(
+name|gimp_image_find_next_guide
+argument_list|(
+name|image_id
+argument_list|,
+literal|0
+argument_list|)
+condition|)
+block|{
+name|gint
+name|n_guides
+init|=
+literal|0
+decl_stmt|;
+name|gint
+name|guide_id
+init|=
+literal|0
+decl_stmt|;
+comment|/* Count the guides */
+while|while
+condition|(
+operator|(
+name|guide_id
+operator|=
+name|gimp_image_find_next_guide
+argument_list|(
+name|image_id
+argument_list|,
+name|guide_id
+argument_list|)
+operator|)
+condition|)
+name|n_guides
+operator|++
+expr_stmt|;
+name|xfwrite
+argument_list|(
+name|fd
+argument_list|,
+literal|"8BIM"
+argument_list|,
+literal|4
+argument_list|,
+literal|"imageresources signature"
+argument_list|)
+expr_stmt|;
+name|write_gshort
+argument_list|(
+name|fd
+argument_list|,
+literal|0x0408
+argument_list|,
+literal|"0x0408 Id (Guides)"
+argument_list|)
+expr_stmt|;
+comment|/* write_pascalstring (fd, Name, "Id name"); */
+name|write_gshort
+argument_list|(
+name|fd
+argument_list|,
+literal|0
+argument_list|,
+literal|"Id name"
+argument_list|)
+expr_stmt|;
+comment|/* Set to null string (two zeros) */
+name|write_glong
+argument_list|(
+name|fd
+argument_list|,
+literal|16
+operator|+
+literal|5
+operator|*
+name|n_guides
+argument_list|,
+literal|"0x0408 resource size"
+argument_list|)
+expr_stmt|;
+comment|/* Save grid and guide header */
+name|write_glong
+argument_list|(
+name|fd
+argument_list|,
+literal|1
+argument_list|,
+literal|"grid/guide header version"
+argument_list|)
+expr_stmt|;
+name|write_glong
+argument_list|(
+name|fd
+argument_list|,
+literal|576
+argument_list|,
+literal|"grid custom spacing horizontal"
+argument_list|)
+expr_stmt|;
+comment|/* dpi*32/4??*/
+name|write_glong
+argument_list|(
+name|fd
+argument_list|,
+literal|576
+argument_list|,
+literal|"grid custom spacing vertical"
+argument_list|)
+expr_stmt|;
+comment|/* dpi*32/4??*/
+name|write_glong
+argument_list|(
+name|fd
+argument_list|,
+name|n_guides
+argument_list|,
+literal|"number of guides"
+argument_list|)
+expr_stmt|;
+comment|/* write the guides */
+while|while
+condition|(
+operator|(
+name|guide_id
+operator|=
+name|gimp_image_find_next_guide
+argument_list|(
+name|image_id
+argument_list|,
+name|guide_id
+argument_list|)
+operator|)
+condition|)
+block|{
+name|gchar
+name|orientation
+decl_stmt|;
+name|glong
+name|position
+decl_stmt|;
+name|orientation
+operator|=
+name|gimp_image_get_guide_orientation
+argument_list|(
+name|image_id
+argument_list|,
+name|guide_id
+argument_list|)
+expr_stmt|;
+name|position
+operator|=
+literal|32
+operator|*
+name|gimp_image_get_guide_position
+argument_list|(
+name|image_id
+argument_list|,
+name|guide_id
+argument_list|)
+expr_stmt|;
+name|orientation
+operator|^=
+literal|1
+expr_stmt|;
+comment|/* in the psd vert =0 , horiz = 1 */
+name|write_glong
+argument_list|(
+name|fd
+argument_list|,
+name|position
+argument_list|,
+literal|"Position of guide"
+argument_list|)
+expr_stmt|;
+name|write_gchar
+argument_list|(
+name|fd
+argument_list|,
+name|orientation
+argument_list|,
+literal|"Orientation of guide"
+argument_list|)
+expr_stmt|;
+name|n_guides
+operator|--
+expr_stmt|;
+block|}
+if|if
+condition|(
+operator|(
+name|ftell
+argument_list|(
+name|fd
+argument_list|)
+operator|&
+literal|1
+operator|)
+condition|)
+name|write_gchar
+argument_list|(
+name|fd
+argument_list|,
+literal|0
+argument_list|,
+literal|"pad byte"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|n_guides
+operator|!=
+literal|0
+condition|)
+name|g_warning
+argument_list|(
+literal|"Screwed up guide resource:: wrong number of guides\n"
+argument_list|)
+expr_stmt|;
+name|IFDBG
+name|printf
+argument_list|(
+literal|"      Total length of 0x0400 resource: %d\n"
+argument_list|,
+operator|(
+name|int
+operator|)
+sizeof|sizeof
+argument_list|(
+name|gshort
+argument_list|)
+argument_list|)
+decl_stmt|;
 block|}
 comment|/* --------------- Write Active Layer Number --------------- */
 if|if
@@ -3809,11 +3978,6 @@ argument_list|,
 name|eof_pos
 argument_list|,
 name|SEEK_SET
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|chName
 argument_list|)
 expr_stmt|;
 block|}
@@ -3995,9 +4159,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_escape
-end_escape
-
 begin_function
 specifier|static
 name|void
@@ -4034,10 +4195,6 @@ name|len
 decl_stmt|;
 comment|/* Length of compressed data */
 name|glong
-name|TotalRawLen
-decl_stmt|;
-comment|/* Total length of raw data */
-name|glong
 name|TotalCompressedLen
 decl_stmt|;
 comment|/* Total length of compressed data */
@@ -4066,26 +4223,9 @@ name|end
 decl_stmt|;
 comment|/* End position of a row in channel_data */
 name|gint32
-name|channel_length
+name|length_table_pos
 decl_stmt|;
-comment|/* Total channel's length */
-name|channel_length
-operator|=
-name|channel_cols
-operator|*
-name|channel_rows
-expr_stmt|;
-name|remdata
-operator|=
-name|g_new
-argument_list|(
-name|guchar
-argument_list|,
-name|channel_length
-operator|*
-literal|2
-argument_list|)
-expr_stmt|;
+comment|/* position in file of the length table */
 name|LengthsTable
 operator|=
 name|g_new
@@ -4095,10 +4235,75 @@ argument_list|,
 name|channel_rows
 argument_list|)
 expr_stmt|;
-comment|/* For every row in the channel */
+name|remdata
+operator|=
+name|g_new
+argument_list|(
+name|gchar
+argument_list|,
+name|channel_cols
+operator|+
+literal|10
+operator|+
+operator|(
+name|channel_cols
+operator|/
+literal|100
+operator|)
+argument_list|)
+expr_stmt|;
 name|len
 operator|=
 literal|0
+expr_stmt|;
+name|IFDBG
+name|printf
+argument_list|(
+literal|"        Saving data (RLE)\n"
+argument_list|)
+decl_stmt|;
+name|write_gshort
+argument_list|(
+name|fd
+argument_list|,
+literal|1
+argument_list|,
+literal|"Compression (RLE)"
+argument_list|)
+expr_stmt|;
+comment|/* Write compression type */
+name|length_table_pos
+operator|=
+name|ftell
+argument_list|(
+name|fd
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|channel_rows
+condition|;
+name|i
+operator|++
+control|)
+comment|/* write dummy length table */
+name|write_gshort
+argument_list|(
+name|fd
+argument_list|,
+name|LengthsTable
+index|[
+name|i
+index|]
+argument_list|,
+literal|"Dummy RLE length"
+argument_list|)
 expr_stmt|;
 for|for
 control|(
@@ -4130,7 +4335,6 @@ name|start
 operator|+
 name|channel_cols
 expr_stmt|;
-comment|/* Create compressed data for this row */
 name|pack_pb_line
 argument_list|(
 name|start
@@ -4138,8 +4342,6 @@ argument_list|,
 name|end
 argument_list|,
 name|remdata
-operator|+
-name|len
 argument_list|,
 operator|&
 name|rowlen
@@ -4156,68 +4358,29 @@ name|len
 operator|+=
 name|rowlen
 expr_stmt|;
-block|}
-comment|/* Calculate total lengths of both kinds */
-name|TotalRawLen
-operator|=
-operator|(
-name|channel_rows
-operator|*
-name|channel_cols
-operator|)
-operator|+
-sizeof|sizeof
-argument_list|(
-name|gshort
-argument_list|)
-expr_stmt|;
-name|TotalCompressedLen
-operator|=
-operator|(
-operator|(
-name|len
-operator|+
-name|channel_rows
-operator|*
-sizeof|sizeof
-argument_list|(
-name|gshort
-argument_list|)
-operator|)
-operator|+
-sizeof|sizeof
-argument_list|(
-name|gshort
-argument_list|)
-operator|)
-expr_stmt|;
-comment|/*  IFDBG printf ("\nCompressed length: %ld\n", TotalCompressedLen);   IFDBG printf ("\nRaw length: %ld\n", TotalRawLen); */
-if|if
-condition|(
-name|TotalCompressedLen
-operator|<
-name|TotalRawLen
-condition|)
-block|{
-name|IFDBG
-name|printf
-argument_list|(
-literal|"        Saving data (RLE): %ld\n"
-argument_list|,
-name|TotalCompressedLen
-argument_list|)
-decl_stmt|;
-name|write_gshort
+name|xfwrite
 argument_list|(
 name|fd
 argument_list|,
-literal|1
+name|remdata
 argument_list|,
-literal|"Compression"
+name|rowlen
+argument_list|,
+name|why
 argument_list|)
 expr_stmt|;
-comment|/* Write compression type */
+comment|/* Write compressed data */
+block|}
 comment|/* Write compressed lengths table */
+name|fseek
+argument_list|(
+name|fd
+argument_list|,
+name|length_table_pos
+argument_list|,
+name|SEEK_SET
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -4231,6 +4394,7 @@ condition|;
 name|i
 operator|++
 control|)
+comment|/* write real length table */
 name|write_gshort
 argument_list|(
 name|fd
@@ -4243,18 +4407,6 @@ argument_list|,
 literal|"RLE length"
 argument_list|)
 expr_stmt|;
-name|xfwrite
-argument_list|(
-name|fd
-argument_list|,
-name|remdata
-argument_list|,
-name|len
-argument_list|,
-name|why
-argument_list|)
-expr_stmt|;
-comment|/* Write compressed data */
 comment|/* Update total compressed length */
 name|fseek
 argument_list|(
@@ -4264,6 +4416,26 @@ name|posLong
 argument_list|,
 name|SEEK_SET
 argument_list|)
+expr_stmt|;
+name|TotalCompressedLen
+operator|=
+operator|(
+operator|(
+name|len
+operator|+
+name|channel_rows
+operator|*
+sizeof|sizeof
+argument_list|(
+name|gshort
+argument_list|)
+operator|)
+operator|+
+sizeof|sizeof
+argument_list|(
+name|gshort
+argument_list|)
+operator|)
 expr_stmt|;
 name|write_glong
 argument_list|(
@@ -4283,40 +4455,6 @@ argument_list|,
 name|SEEK_END
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|IFDBG
-name|printf
-argument_list|(
-literal|"        Write raw data: %ld\n"
-argument_list|,
-name|TotalRawLen
-argument_list|)
-decl_stmt|;
-name|write_gshort
-argument_list|(
-name|fd
-argument_list|,
-literal|0
-argument_list|,
-literal|"Compression"
-argument_list|)
-expr_stmt|;
-comment|/* Save compression type */
-name|xfwrite
-argument_list|(
-name|fd
-argument_list|,
-name|channel_data
-argument_list|,
-name|channel_length
-argument_list|,
-name|why
-argument_list|)
-expr_stmt|;
-comment|/* Save raw data */
-block|}
 name|g_free
 argument_list|(
 name|remdata
@@ -5502,6 +5640,11 @@ argument_list|,
 literal|"alpha channel"
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|alpha
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 name|RGB_to_chans
@@ -5648,6 +5791,21 @@ argument_list|,
 literal|"blue channel"
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|red
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|green
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|blue
+argument_list|)
+expr_stmt|;
 break|break;
 case|case
 name|GIMP_GRAY
@@ -5764,6 +5922,16 @@ argument_list|,
 literal|"gray channel"
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|alpha
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|gray
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -5858,6 +6026,11 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+name|g_free
+argument_list|(
+name|data
+argument_list|)
+expr_stmt|;
 block|}
 name|eof_pos
 operator|=
