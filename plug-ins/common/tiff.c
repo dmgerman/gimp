@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* tiff loading and saving for the GIMP  *  -Peter Mattis  * The TIFF loading code has been completely revamped by Nick Lamb  * njl195@zepler.org.uk -- 18 May 1998  * And it now gains support for tiles (and doubtless a zillion bugs)  * njl195@zepler.org.uk -- 12 June 1999  * LZW patent fuss continues :(  * njl195@zepler.org.uk -- 20 April 2000  * The code for this filter is based on "tifftopnm" and "pnmtotiff",  *  2 programs that are a part of the netpbm package.  * khk@khk.net -- 13 May 2000  * Added support for ICCPROFILE tiff tag. If this tag is present in a  * TIFF file, then a parasite is created and vice versa.  * peter@kirchgessner.net -- 29 Oct 2002  * Progress bar only when run interactive  */
+comment|/* tiff loading and saving for the GIMP  *  -Peter Mattis  *  * The TIFF loading code has been completely revamped by Nick Lamb  * njl195@zepler.org.uk -- 18 May 1998  * And it now gains support for tiles (and doubtless a zillion bugs)  * njl195@zepler.org.uk -- 12 June 1999  * LZW patent fuss continues :(  * njl195@zepler.org.uk -- 20 April 2000  * The code for this filter is based on "tifftopnm" and "pnmtotiff",  *  2 programs that are a part of the netpbm package.  * khk@khk.net -- 13 May 2000  * Added support for ICCPROFILE tiff tag. If this tag is present in a  * TIFF file, then a parasite is created and vice versa.  * peter@kirchgessner.net -- 29 Oct 2002  * Progress bar only when run interactive  */
 end_comment
 
 begin_comment
@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a28da550108
+DECL|struct|__anon2a545cc90108
 block|{
 DECL|member|compression
 name|gint
@@ -77,7 +77,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a28da550208
+DECL|struct|__anon2a545cc90208
 block|{
 DECL|member|ID
 name|gint32
@@ -200,7 +200,7 @@ parameter_list|,
 name|gushort
 name|photomet
 parameter_list|,
-name|gint
+name|gboolean
 name|alpha
 parameter_list|,
 name|gint
@@ -228,7 +228,7 @@ parameter_list|,
 name|gushort
 name|photomet
 parameter_list|,
-name|gint
+name|gboolean
 name|alpha
 parameter_list|,
 name|gint
@@ -268,7 +268,7 @@ parameter_list|,
 name|gint
 name|cols
 parameter_list|,
-name|gint
+name|gboolean
 name|alpha
 parameter_list|,
 name|gint
@@ -308,7 +308,7 @@ parameter_list|,
 name|gint
 name|cols
 parameter_list|,
-name|gint
+name|gboolean
 name|alpha
 parameter_list|,
 name|gint
@@ -348,7 +348,7 @@ parameter_list|,
 name|gint
 name|cols
 parameter_list|,
-name|gint
+name|gboolean
 name|alpha
 parameter_list|,
 name|gint
@@ -391,7 +391,7 @@ parameter_list|,
 name|gint
 name|cols
 parameter_list|,
-name|gint
+name|gboolean
 name|alpha
 parameter_list|,
 name|gint
@@ -634,7 +634,7 @@ literal|"Spencer Kimball, Peter Mattis& Nick Lamb"
 argument_list|,
 literal|"Nick Lamb<njl195@zepler.org.uk>"
 argument_list|,
-literal|"1995-1996,1998-2000"
+literal|"1995-1996,1998-2003"
 argument_list|,
 literal|"<Load>/Tiff"
 argument_list|,
@@ -671,7 +671,7 @@ literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
-literal|"1995-1996,2000"
+literal|"1995-1996,2000-2003"
 argument_list|,
 literal|"<Save>/Tiff"
 argument_list|,
@@ -1404,11 +1404,14 @@ name|gint
 name|cols
 decl_stmt|,
 name|rows
-decl_stmt|,
+decl_stmt|;
+name|gboolean
 name|alpha
 decl_stmt|;
 name|gint
 name|image
+init|=
+literal|0
 decl_stmt|,
 name|image_type
 init|=
@@ -1457,6 +1460,9 @@ name|i
 decl_stmt|,
 name|j
 decl_stmt|;
+name|gint
+name|ilayer
+decl_stmt|;
 name|gboolean
 name|worst_case
 init|=
@@ -1476,6 +1482,16 @@ decl_stmt|;
 name|guint16
 name|tmp
 decl_stmt|;
+name|gboolean
+name|flip_horizontal
+init|=
+name|FALSE
+decl_stmt|;
+name|gboolean
+name|flip_vertical
+init|=
+name|FALSE
+decl_stmt|;
 ifdef|#
 directive|ifdef
 name|TIFFTAG_ICCPROFILE
@@ -1488,16 +1504,6 @@ name|icc_profile
 decl_stmt|;
 endif|#
 directive|endif
-name|gboolean
-name|flip_horizontal
-init|=
-name|FALSE
-decl_stmt|;
-name|gboolean
-name|flip_vertical
-init|=
-name|FALSE
-decl_stmt|;
 name|gimp_rgb_set
 argument_list|(
 operator|&
@@ -1576,6 +1582,13 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
+comment|/* We will loop through the all pages in case of multipage TIFF      and load every page as a separate layer. */
+name|ilayer
+operator|=
+literal|0
+expr_stmt|;
+do|do
+block|{
 name|TIFFGetFieldDefaulted
 argument_list|(
 name|tif
@@ -1697,12 +1710,13 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Could not get photometric from '%s'. Assuming min-is-black"
+literal|"Could not get photometric from '%s'. "
+literal|"Assuming min-is-black"
 argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;
-comment|/* old AppleScan software misses out the photometric tag (and        * incidentally assumes min-is-white, but xv assumes min-is-black,        * so we follow xv's lead.  It's not much hardship to invert the        * image later). */
+comment|/* old AppleScan software misses out the photometric tag (and            * incidentally assumes min-is-white, but xv assumes min-is-black,            * so we follow xv's lead.  It's not much hardship to invert the            * image later). */
 name|photomet
 operator|=
 name|PHOTOMETRIC_MINISBLACK
@@ -1727,7 +1741,7 @@ condition|)
 block|{
 name|alpha
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 operator|--
 name|extra
@@ -1737,7 +1751,7 @@ else|else
 block|{
 name|alpha
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 block|}
 if|if
@@ -1755,7 +1769,7 @@ condition|)
 block|{
 name|alpha
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 name|extra
 operator|=
@@ -1780,7 +1794,7 @@ condition|)
 block|{
 name|alpha
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 name|extra
 operator|=
@@ -1874,6 +1888,12 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+operator|!
+name|image
+condition|)
+block|{
+if|if
+condition|(
 operator|(
 name|image
 operator|=
@@ -1900,6 +1920,11 @@ name|gimp_quit
 argument_list|()
 expr_stmt|;
 block|}
+name|gimp_image_undo_disable
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 name|gimp_image_set_filename
 argument_list|(
 name|image
@@ -1907,11 +1932,12 @@ argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;
-comment|/* attach a parasite containing an ICC profile - if found in the TIFF file */
+block|}
+comment|/* attach a parasite containing an ICC profile - if found in the TIFF */
 ifdef|#
 directive|ifdef
 name|TIFFTAG_ICCPROFILE
-comment|/* If TIFFTAG_ICCPROFILE is defined we are dealing with a libtiff version    * that can handle ICC profiles. Otherwise just ignore this section. */
+comment|/* If TIFFTAG_ICCPROFILE is defined we are dealing with a libtiff version        * that can handle ICC profiles. Otherwise just ignore this section. */
 if|if
 condition|(
 name|TIFFGetField
@@ -2012,7 +2038,7 @@ argument_list|(
 name|parasite
 argument_list|)
 expr_stmt|;
-comment|/* Attach a parasite containing the image description.  Pretend to    * be a gimp comment so other plugins will use this description as    * an image comment where appropriate. */
+comment|/* Attach a parasite containing the image description.  Pretend to        * be a gimp comment so other plugins will use this description as        * an image comment where appropriate. */
 block|{
 specifier|const
 name|gchar
@@ -2176,8 +2202,8 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
-literal|"File error: unknown resolution unit type %d, "
-literal|"assuming dpi"
+literal|"File error: unknown resolution "
+literal|"unit type %d, assuming dpi"
 argument_list|,
 name|read_unit
 argument_list|)
@@ -2211,7 +2237,7 @@ name|xres
 expr_stmt|;
 block|}
 comment|/* now set the new image's resolution info */
-comment|/* If it is invalid, instead of forcing 72dpi, do not set the resolution            at all. Gimp will then use the default set by the user */
+comment|/* If it is invalid, instead of forcing 72dpi, do not set the                resolution at all. Gimp will then use the default set by                the user */
 if|if
 condition|(
 name|read_unit
@@ -2243,8 +2269,8 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/* no x res tag => we assume we have no resolution info, so we      * don't care.  Older versions of this plugin used to write files      * with no resolution tags at all. */
-comment|/* TODO: haven't caught the case where yres tag is present, but        not xres.  This is left as an exercise for the reader - they        should feel free to shoot the author of the broken program        that produced the damaged TIFF file in the first place. */
+comment|/* no x res tag => we assume we have no resolution info, so we          * don't care.  Older versions of this plugin used to write files          * with no resolution tags at all. */
+comment|/* TODO: haven't caught the case where yres tag is present, but            not xres.  This is left as an exercise for the reader - they            should feel free to shoot the author of the broken program            that produced the damaged TIFF file in the first place. */
 block|}
 comment|/* Install colormap for INDEXED images only */
 if|if
@@ -2364,7 +2390,7 @@ block|}
 comment|/* Allocate channel_data for all channels, even the background layer */
 name|channel
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|channel_data
 argument_list|,
@@ -2373,16 +2399,42 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|ilayer
+operator|==
+literal|0
+condition|)
+name|name
+operator|=
+name|g_strdup
+argument_list|(
+name|_
+argument_list|(
+literal|"Background"
+argument_list|)
+argument_list|)
+expr_stmt|;
+else|else
+name|name
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Page %d"
+argument_list|)
+argument_list|,
+name|ilayer
+argument_list|)
+expr_stmt|;
 name|layer
 operator|=
 name|gimp_layer_new
 argument_list|(
 name|image
 argument_list|,
-name|_
-argument_list|(
-literal|"Background"
-argument_list|)
+name|name
 argument_list|,
 name|cols
 argument_list|,
@@ -2395,6 +2447,11 @@ argument_list|,
 name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|name
+argument_list|)
+expr_stmt|;
 name|channel
 index|[
 literal|0
@@ -2403,15 +2460,6 @@ operator|.
 name|ID
 operator|=
 name|layer
-expr_stmt|;
-name|gimp_image_add_layer
-argument_list|(
-name|image
-argument_list|,
-name|layer
-argument_list|,
-literal|0
-argument_list|)
 expr_stmt|;
 name|channel
 index|[
@@ -2670,17 +2718,6 @@ block|}
 if|if
 condition|(
 name|flip_horizontal
-operator|||
-name|flip_vertical
-condition|)
-name|gimp_image_undo_disable
-argument_list|(
-name|image
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|flip_horizontal
 condition|)
 name|gimp_flip
 argument_list|(
@@ -2700,23 +2737,32 @@ argument_list|,
 name|GIMP_ORIENTATION_VERTICAL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|flip_horizontal
-operator|||
-name|flip_vertical
-condition|)
-name|gimp_image_undo_enable
+block|}
+name|gimp_drawable_flush
 argument_list|(
-name|image
+name|channel
+index|[
+literal|0
+index|]
+operator|.
+name|drawable
 argument_list|)
 expr_stmt|;
-block|}
+name|gimp_drawable_detach
+argument_list|(
+name|channel
+index|[
+literal|0
+index|]
+operator|.
+name|drawable
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|i
 operator|=
-literal|0
+literal|1
 init|;
 operator|!
 name|worst_case
@@ -2750,6 +2796,56 @@ name|drawable
 argument_list|)
 expr_stmt|;
 block|}
+name|g_free
+argument_list|(
+name|channel
+argument_list|)
+expr_stmt|;
+name|channel
+operator|=
+name|NULL
+expr_stmt|;
+if|if
+condition|(
+name|ilayer
+operator|>
+literal|0
+operator|&&
+operator|!
+name|alpha
+condition|)
+name|gimp_layer_add_alpha
+argument_list|(
+name|layer
+argument_list|)
+expr_stmt|;
+name|gimp_image_add_layer
+argument_list|(
+name|image
+argument_list|,
+name|layer
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+name|ilayer
+operator|++
+expr_stmt|;
+block|}
+do|while
+condition|(
+name|TIFFReadDirectory
+argument_list|(
+name|tif
+argument_list|)
+condition|)
+do|;
+name|gimp_image_undo_enable
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 return|return
 name|image
 return|;
@@ -2952,7 +3048,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|load_tiles (TIFF * tif,channel_data * channel,unsigned short bps,unsigned short photomet,int alpha,int extra)
+DECL|function|load_tiles (TIFF * tif,channel_data * channel,gushort bps,gushort photomet,gboolean alpha,gint extra)
 name|load_tiles
 parameter_list|(
 name|TIFF
@@ -2963,18 +3059,16 @@ name|channel_data
 modifier|*
 name|channel
 parameter_list|,
-name|unsigned
-name|short
+name|gushort
 name|bps
 parameter_list|,
-name|unsigned
-name|short
+name|gushort
 name|photomet
 parameter_list|,
-name|int
+name|gboolean
 name|alpha
 parameter_list|,
-name|int
+name|gint
 name|extra
 parameter_list|)
 block|{
@@ -3351,7 +3445,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|load_lines (TIFF * tif,channel_data * channel,unsigned short bps,unsigned short photomet,int alpha,int extra)
+DECL|function|load_lines (TIFF * tif,channel_data * channel,gushort bps,gushort photomet,gboolean alpha,gint extra)
 name|load_lines
 parameter_list|(
 name|TIFF
@@ -3362,18 +3456,16 @@ name|channel_data
 modifier|*
 name|channel
 parameter_list|,
-name|unsigned
-name|short
+name|gushort
 name|bps
 parameter_list|,
-name|unsigned
-name|short
+name|gushort
 name|photomet
 parameter_list|,
-name|int
+name|gboolean
 name|alpha
 parameter_list|,
-name|int
+name|gint
 name|extra
 parameter_list|)
 block|{
@@ -3824,7 +3916,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|read_16bit (guchar * source,channel_data * channel,gushort photomet,gint startrow,gint startcol,gint rows,gint cols,gint alpha,gint extra,gint align)
+DECL|function|read_16bit (guchar * source,channel_data * channel,gushort photomet,gint startrow,gint startcol,gint rows,gint cols,gboolean alpha,gint extra,gint align)
 name|read_16bit
 parameter_list|(
 name|guchar
@@ -3850,7 +3942,7 @@ parameter_list|,
 name|gint
 name|cols
 parameter_list|,
-name|gint
+name|gboolean
 name|alpha
 parameter_list|,
 name|gint
@@ -4539,7 +4631,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|read_8bit (guchar * source,channel_data * channel,gushort photomet,gint startrow,gint startcol,gint rows,gint cols,gint alpha,gint extra,gint align)
+DECL|function|read_8bit (guchar * source,channel_data * channel,gushort photomet,gint startrow,gint startcol,gint rows,gint cols,gboolean alpha,gint extra,gint align)
 name|read_8bit
 parameter_list|(
 name|guchar
@@ -4565,7 +4657,7 @@ parameter_list|,
 name|gint
 name|cols
 parameter_list|,
-name|gint
+name|gboolean
 name|alpha
 parameter_list|,
 name|gint
@@ -5205,7 +5297,7 @@ end_define
 begin_function
 specifier|static
 name|void
-DECL|function|read_default (guchar * source,channel_data * channel,gushort bps,gushort photomet,gint startrow,gint startcol,gint rows,gint cols,gint alpha,gint extra,gint align)
+DECL|function|read_default (guchar * source,channel_data * channel,gushort bps,gushort photomet,gint startrow,gint startcol,gint rows,gint cols,gboolean alpha,gint extra,gint align)
 name|read_default
 parameter_list|(
 name|guchar
@@ -5234,7 +5326,7 @@ parameter_list|,
 name|gint
 name|cols
 parameter_list|,
-name|gint
+name|gboolean
 name|alpha
 parameter_list|,
 name|gint
@@ -5913,7 +6005,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|read_separate (guchar * source,channel_data * channel,gushort bps,gushort photomet,gint startrow,gint startcol,gint rows,gint cols,gint alpha,gint extra,gint sample)
+DECL|function|read_separate (guchar * source,channel_data * channel,gushort bps,gushort photomet,gint startrow,gint startcol,gint rows,gint cols,gboolean alpha,gint extra,gint sample)
 name|read_separate
 parameter_list|(
 name|guchar
@@ -5942,7 +6034,7 @@ parameter_list|,
 name|gint
 name|cols
 parameter_list|,
-name|gint
+name|gboolean
 name|alpha
 parameter_list|,
 name|gint
@@ -6300,7 +6392,7 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-name|gint
+name|gboolean
 name|alpha
 decl_stmt|;
 name|gshort
@@ -6535,7 +6627,7 @@ literal|3
 expr_stmt|;
 name|alpha
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 break|break;
 case|case
@@ -6559,7 +6651,7 @@ name|cols
 expr_stmt|;
 name|alpha
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 break|break;
 case|case
@@ -6589,7 +6681,7 @@ literal|4
 expr_stmt|;
 name|alpha
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 break|break;
 case|case
@@ -6615,7 +6707,7 @@ literal|2
 expr_stmt|;
 name|alpha
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 break|break;
 case|case
@@ -6639,7 +6731,7 @@ name|cols
 expr_stmt|;
 name|alpha
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 name|cmap
 operator|=
@@ -8025,9 +8117,7 @@ specifier|const
 name|gchar
 modifier|*
 name|text
-decl_stmt|;
-name|text
-operator|=
+init|=
 name|gtk_entry_get_text
 argument_list|(
 name|GTK_ENTRY
@@ -8035,7 +8125,7 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|g_free
 argument_list|(
 name|image_comment
@@ -8048,7 +8138,6 @@ argument_list|(
 name|text
 argument_list|)
 expr_stmt|;
-comment|/* g_print ("COMMENT: %s\n", image_comment); */
 block|}
 end_function
 
