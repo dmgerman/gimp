@@ -2306,7 +2306,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|0
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2552,7 +2552,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|0
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end
