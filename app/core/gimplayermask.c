@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon286d43520103
+DECL|enum|__anon288840830103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED
@@ -530,7 +530,7 @@ operator|->
 name|show_mask
 expr_stmt|;
 return|return
-name|item
+name|new_item
 return|;
 block|}
 end_function
