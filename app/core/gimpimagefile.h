@@ -32,10 +32,26 @@ directive|include
 file|"gimpviewable.h"
 end_include
 
+begin_define
+DECL|macro|GIMP_IMAGEFILE_THUMB_SIZE_NORMAL
+define|#
+directive|define
+name|GIMP_IMAGEFILE_THUMB_SIZE_NORMAL
+value|128
+end_define
+
+begin_define
+DECL|macro|GIMP_IMAGEFILE_THUMB_SIZE_LARGE
+define|#
+directive|define
+name|GIMP_IMAGEFILE_THUMB_SIZE_LARGE
+value|256
+end_define
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29999b080103
+DECL|enum|__anon2c59daf50103
 block|{
 DECL|enumerator|GIMP_IMAGEFILE_STATE_UNKNOWN
 name|GIMP_IMAGEFILE_STATE_UNKNOWN

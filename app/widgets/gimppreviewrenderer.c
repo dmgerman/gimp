@@ -119,7 +119,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon291349830103
+DECL|enum|__anon275f1f1f0103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -772,6 +772,15 @@ operator|->
 name|destroy
 operator|=
 name|gimp_preview_destroy
+expr_stmt|;
+name|widget_class
+operator|->
+name|activate_signal
+operator|=
+name|preview_signals
+index|[
+name|CLICKED
+index|]
 expr_stmt|;
 name|widget_class
 operator|->
