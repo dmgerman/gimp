@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8727400103
+DECL|enum|__anon2b6f10010103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -232,7 +232,7 @@ begin_function_decl
 specifier|static
 name|GimpItem
 modifier|*
-name|gimp_vectors_convert
+name|gimp_vectors_convert_from
 parameter_list|(
 name|GimpItem
 modifier|*
@@ -951,9 +951,9 @@ name|gimp_vectors_duplicate
 expr_stmt|;
 name|item_class
 operator|->
-name|convert
+name|convert_from
 operator|=
-name|gimp_vectors_convert
+name|gimp_vectors_convert_from
 expr_stmt|;
 name|item_class
 operator|->
@@ -1497,8 +1497,8 @@ begin_function
 specifier|static
 name|GimpItem
 modifier|*
-DECL|function|gimp_vectors_convert (GimpItem * item,GimpImage * dest_image,GType new_type,gboolean add_alpha)
-name|gimp_vectors_convert
+DECL|function|gimp_vectors_convert_from (GimpItem * item,GimpImage * dest_image,GType new_type,gboolean add_alpha)
+name|gimp_vectors_convert_from
 parameter_list|(
 name|GimpItem
 modifier|*
@@ -1538,7 +1538,7 @@ argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|convert
+name|convert_from
 argument_list|(
 name|item
 argument_list|,

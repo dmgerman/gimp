@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afb8d350103
+DECL|enum|__anon29633fbf0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -221,7 +221,7 @@ begin_function_decl
 specifier|static
 name|GimpItem
 modifier|*
-name|gimp_item_real_convert
+name|gimp_item_real_convert_from
 parameter_list|(
 name|GimpItem
 modifier|*
@@ -662,9 +662,15 @@ name|gimp_item_real_duplicate
 expr_stmt|;
 name|klass
 operator|->
-name|convert
+name|convert_from
 operator|=
-name|gimp_item_real_convert
+name|gimp_item_real_convert_from
+expr_stmt|;
+name|klass
+operator|->
+name|convert_to
+operator|=
+name|NULL
 expr_stmt|;
 name|klass
 operator|->
@@ -1302,8 +1308,8 @@ begin_function
 specifier|static
 name|GimpItem
 modifier|*
-DECL|function|gimp_item_real_convert (GimpItem * item,GimpImage * dest_image,GType new_type,gboolean add_alpha)
-name|gimp_item_real_convert
+DECL|function|gimp_item_real_convert_from (GimpItem * item,GimpImage * dest_image,GType new_type,gboolean add_alpha)
+name|gimp_item_real_convert_from
 parameter_list|(
 name|GimpItem
 modifier|*
@@ -2027,7 +2033,7 @@ argument_list|(
 name|item
 argument_list|)
 operator|->
-name|convert
+name|convert_from
 argument_list|(
 name|item
 argument_list|,
@@ -2038,6 +2044,11 @@ argument_list|,
 name|add_alpha
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|new_item
+condition|)
+block|{
 if|if
 condition|(
 name|dest_image
@@ -2053,6 +2064,28 @@ argument_list|,
 name|dest_image
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|GIMP_ITEM_GET_CLASS
+argument_list|(
+name|new_item
+argument_list|)
+operator|->
+name|convert_to
+condition|)
+name|GIMP_ITEM_GET_CLASS
+argument_list|(
+name|new_item
+argument_list|)
+operator|->
+name|convert_to
+argument_list|(
+name|new_item
+argument_list|,
+name|item
+argument_list|)
+expr_stmt|;
+block|}
 return|return
 name|new_item
 return|;
