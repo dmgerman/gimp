@@ -237,6 +237,12 @@ directive|include
 file|"layer_pvt.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"dialog_handler.h"
+end_include
+
 begin_define
 DECL|macro|PREVIEW_EVENT_MASK
 define|#
@@ -2315,6 +2321,12 @@ name|lc_shell
 operator|=
 name|gtk_dialog_new
 argument_list|()
+expr_stmt|;
+comment|/* register this one only */
+name|dialog_register
+argument_list|(
+name|lc_shell
+argument_list|)
 expr_stmt|;
 name|gtk_window_set_title
 argument_list|(
@@ -4439,7 +4451,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon27771da20108
+DECL|struct|__anon296d8b920108
 typedef|typedef
 struct|struct
 block|{

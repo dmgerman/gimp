@@ -252,6 +252,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"dialog_handler.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"config.h"
 end_include
 
@@ -2081,6 +2087,12 @@ name|options_shell
 operator|=
 name|gtk_dialog_new
 argument_list|()
+expr_stmt|;
+comment|/* Register dialog */
+name|dialog_register
+argument_list|(
+name|options_shell
+argument_list|)
 expr_stmt|;
 name|gtk_window_set_wmclass
 argument_list|(

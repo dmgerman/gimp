@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"dialog_handler.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -801,6 +807,12 @@ name|error_console
 operator|=
 name|gtk_dialog_new
 argument_list|()
+expr_stmt|;
+comment|/* register this one only */
+name|dialog_register
+argument_list|(
+name|error_console
+argument_list|)
 expr_stmt|;
 name|gtk_window_set_title
 argument_list|(

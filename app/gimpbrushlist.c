@@ -162,6 +162,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"dialog_handler.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -1742,6 +1748,14 @@ argument_list|,
 literal|0
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+comment|/* register this one only */
+name|dialog_register
+argument_list|(
+name|brush_select_dialog
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 block|}

@@ -2219,6 +2219,12 @@ argument_list|(
 name|GTK_WINDOW_TOPLEVEL
 argument_list|)
 expr_stmt|;
+comment|/* Register dialog */
+name|dialog_register_toolbox
+argument_list|(
+name|window
+argument_list|)
+expr_stmt|;
 name|gtk_window_set_wmclass
 argument_list|(
 name|GTK_WINDOW

@@ -105,6 +105,12 @@ directive|include
 file|"gimage.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"dialog_handler.h"
+end_include
+
 begin_define
 DECL|macro|HORIZONTAL
 define|#
@@ -1583,6 +1589,17 @@ name|kevent
 operator|->
 name|time
 argument_list|)
+expr_stmt|;
+comment|/* Hide or show all dialogs */
+if|if
+condition|(
+operator|!
+name|kevent
+operator|->
+name|state
+condition|)
+name|dialog_toggle
+argument_list|()
 expr_stmt|;
 name|return_val
 operator|=
