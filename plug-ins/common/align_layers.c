@@ -284,7 +284,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29be7da70108
+DECL|struct|__anon288c61060108
 block|{
 DECL|member|name
 name|gchar
@@ -823,7 +823,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29be7da70208
+DECL|struct|__anon288c61060208
 block|{
 DECL|member|h_style
 name|gint
@@ -886,7 +886,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29be7da70308
+DECL|struct|__anon288c61060308
 block|{
 DECL|member|run
 name|gint
@@ -1019,7 +1019,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"align visible layers"
+literal|"Align visible layers"
 argument_list|)
 argument_list|,
 literal|"Shuji Narazaki<narazaki@InetQ.or.jp>"
