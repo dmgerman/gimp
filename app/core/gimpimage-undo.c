@@ -132,7 +132,7 @@ name|GimpDirtyMask
 name|gimp_image_undo_dirty_from_type
 parameter_list|(
 name|GimpUndoType
-name|type
+name|undo_type
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -318,7 +318,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_undo_group_start (GimpImage * gimage,GimpUndoType type,const gchar * name)
+DECL|function|gimp_image_undo_group_start (GimpImage * gimage,GimpUndoType undo_type,const gchar * name)
 name|gimp_image_undo_group_start
 parameter_list|(
 name|GimpImage
@@ -326,7 +326,7 @@ modifier|*
 name|gimage
 parameter_list|,
 name|GimpUndoType
-name|type
+name|undo_type
 parameter_list|,
 specifier|const
 name|gchar
@@ -353,11 +353,11 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|type
+name|undo_type
 operator|>
 name|GIMP_UNDO_GROUP_FIRST
 operator|&&
-name|type
+name|undo_type
 operator|<=
 name|GIMP_UNDO_GROUP_LAST
 argument_list|,
@@ -373,14 +373,14 @@ name|name
 operator|=
 name|gimp_undo_type_to_name
 argument_list|(
-name|type
+name|undo_type
 argument_list|)
 expr_stmt|;
 name|dirty_mask
 operator|=
 name|gimp_image_undo_dirty_from_type
 argument_list|(
-name|type
+name|undo_type
 argument_list|)
 expr_stmt|;
 comment|/* Notify listeners that the image will be modified */
@@ -476,7 +476,7 @@ argument_list|)
 operator|->
 name|undo_type
 operator|=
-name|type
+name|undo_type
 expr_stmt|;
 name|GIMP_UNDO
 argument_list|(
@@ -503,7 +503,7 @@ name|gimage
 operator|->
 name|pushing_undo_group
 operator|=
-name|type
+name|undo_type
 expr_stmt|;
 return|return
 name|TRUE
@@ -603,7 +603,7 @@ end_function
 begin_function
 name|GimpUndo
 modifier|*
-DECL|function|gimp_image_undo_push (GimpImage * gimage,GType undo_gtype,gint64 size,gsize struct_size,GimpUndoType type,const gchar * name,GimpDirtyMask dirty_mask,GimpUndoPopFunc pop_func,GimpUndoFreeFunc free_func,...)
+DECL|function|gimp_image_undo_push (GimpImage * gimage,GType object_type,gint64 size,gsize struct_size,GimpUndoType undo_type,const gchar * name,GimpDirtyMask dirty_mask,GimpUndoPopFunc pop_func,GimpUndoFreeFunc free_func,...)
 name|gimp_image_undo_push
 parameter_list|(
 name|GimpImage
@@ -611,7 +611,7 @@ modifier|*
 name|gimage
 parameter_list|,
 name|GType
-name|undo_gtype
+name|object_type
 parameter_list|,
 name|gint64
 name|size
@@ -620,7 +620,7 @@ name|gsize
 name|struct_size
 parameter_list|,
 name|GimpUndoType
-name|type
+name|undo_type
 parameter_list|,
 specifier|const
 name|gchar
@@ -676,7 +676,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|g_type_is_a
 argument_list|(
-name|undo_gtype
+name|object_type
 argument_list|,
 name|GIMP_TYPE_UNDO
 argument_list|)
@@ -686,7 +686,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|type
+name|undo_type
 operator|>
 name|GIMP_UNDO_GROUP_LAST
 argument_list|,
@@ -727,7 +727,7 @@ name|name
 operator|=
 name|gimp_undo_type_to_name
 argument_list|(
-name|type
+name|undo_type
 argument_list|)
 expr_stmt|;
 if|if
@@ -747,7 +747,7 @@ name|params
 operator|=
 name|gimp_parameters_append
 argument_list|(
-name|undo_gtype
+name|object_type
 argument_list|,
 name|params
 argument_list|,
@@ -764,7 +764,7 @@ name|gimage
 argument_list|,
 literal|"undo-type"
 argument_list|,
-name|type
+name|undo_type
 argument_list|,
 literal|"dirty-mask"
 argument_list|,
@@ -800,7 +800,7 @@ name|params
 operator|=
 name|gimp_parameters_append_valist
 argument_list|(
-name|undo_gtype
+name|object_type
 argument_list|,
 name|params
 argument_list|,
@@ -819,7 +819,7 @@ name|undo
 operator|=
 name|g_object_newv
 argument_list|(
-name|undo_gtype
+name|object_type
 argument_list|,
 name|n_params
 argument_list|,
@@ -930,6 +930,93 @@ expr_stmt|;
 return|return
 name|undo
 return|;
+block|}
+return|return
+name|NULL
+return|;
+block|}
+end_function
+
+begin_function
+name|GimpUndo
+modifier|*
+DECL|function|gimp_image_undo_can_compress (GimpImage * gimage,GType object_type,GimpUndoType undo_type)
+name|gimp_image_undo_can_compress
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|GType
+name|object_type
+parameter_list|,
+name|GimpUndoType
+name|undo_type
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimage
+operator|->
+name|dirty
+operator|!=
+literal|0
+operator|&&
+operator|!
+name|gimp_undo_stack_peek
+argument_list|(
+name|gimage
+operator|->
+name|redo_stack
+argument_list|)
+condition|)
+block|{
+name|GimpUndo
+modifier|*
+name|undo
+init|=
+name|gimp_undo_stack_peek
+argument_list|(
+name|gimage
+operator|->
+name|undo_stack
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|undo
+operator|&&
+name|undo
+operator|->
+name|undo_type
+operator|==
+name|undo_type
+operator|&&
+name|g_type_is_a
+argument_list|(
+name|G_TYPE_FROM_INSTANCE
+argument_list|(
+name|undo
+argument_list|)
+argument_list|,
+name|object_type
+argument_list|)
+condition|)
+block|{
+return|return
+name|undo
+return|;
+block|}
 block|}
 return|return
 name|NULL
@@ -1439,16 +1526,16 @@ end_function
 begin_function
 specifier|static
 name|GimpDirtyMask
-DECL|function|gimp_image_undo_dirty_from_type (GimpUndoType type)
+DECL|function|gimp_image_undo_dirty_from_type (GimpUndoType undo_type)
 name|gimp_image_undo_dirty_from_type
 parameter_list|(
 name|GimpUndoType
-name|type
+name|undo_type
 parameter_list|)
 block|{
 switch|switch
 condition|(
-name|type
+name|undo_type
 condition|)
 block|{
 case|case
