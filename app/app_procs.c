@@ -469,6 +469,33 @@ block|, }
 decl_stmt|;
 end_decl_stmt
 
+begin_comment
+comment|/*  Warning: This is a hack.  This makes the files load _after_ the gtk_main     loop starts.  This means that if a file is on the command line, the     file handling plug-in's gtk_main won't cause any dialogs that have     set a gtk_quit_add_destroy (...) to die when the plug-in ends.     Thanks to Owen for this. */
+end_comment
+
+begin_function
+DECL|function|file_open_wrapper (char * name)
+name|GtkFunction
+name|file_open_wrapper
+parameter_list|(
+name|char
+modifier|*
+name|name
+parameter_list|)
+block|{
+name|file_open
+argument_list|(
+name|name
+argument_list|,
+name|name
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
+block|}
+end_function
+
 begin_function
 name|void
 DECL|function|gimp_init (int gimp_argc,char ** gimp_argv)
@@ -505,10 +532,13 @@ condition|(
 operator|*
 name|gimp_argv
 condition|)
-name|file_open
+name|gtk_idle_add
 argument_list|(
+operator|(
+name|GtkFunction
 operator|*
-name|gimp_argv
+operator|)
+name|file_open_wrapper
 argument_list|,
 operator|*
 name|gimp_argv
