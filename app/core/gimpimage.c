@@ -252,7 +252,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd322cc0103
+DECL|enum|__anon28919a2a0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -2588,6 +2588,12 @@ argument_list|)
 operator|)
 operator|)
 expr_stmt|;
+if|if
+condition|(
+name|gimage
+operator|->
+name|grid
+condition|)
 name|memsize
 operator|+=
 name|gimp_object_get_memsize

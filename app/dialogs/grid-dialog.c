@@ -477,11 +477,11 @@ argument_list|)
 expr_stmt|;
 name|show_button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Show Grid"
+literal|"S_how Grid"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -528,11 +528,11 @@ argument_list|)
 expr_stmt|;
 name|snap_button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Snap to Grid"
+literal|"S_nap to Grid"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -694,7 +694,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Line Style:"
+literal|"Line _Style:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -744,7 +744,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Foreground Color:"
+literal|"_Foreground Color:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -794,7 +794,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Background Color:"
+literal|"_Background Color:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -1660,6 +1660,10 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|GimpGrid
 modifier|*
 name|grid
@@ -1674,6 +1678,18 @@ name|dialog
 argument_list|)
 argument_list|,
 literal|"gimage"
+argument_list|)
+expr_stmt|;
+name|shell
+operator|=
+name|g_object_get_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+literal|"shell"
 argument_list|)
 expr_stmt|;
 name|grid
@@ -1710,6 +1726,12 @@ argument_list|(
 name|dialog
 argument_list|)
 expr_stmt|;
+name|shell
+operator|->
+name|grid_dialog
+operator|=
+name|NULL
+expr_stmt|;
 block|}
 end_function
 
@@ -1728,10 +1750,26 @@ modifier|*
 name|dialog
 parameter_list|)
 block|{
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|GimpGrid
 modifier|*
 name|grid
 decl_stmt|;
+name|shell
+operator|=
+name|g_object_get_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+literal|"shell"
+argument_list|)
+expr_stmt|;
 name|grid
 operator|=
 name|g_object_get_data
@@ -1756,6 +1794,12 @@ name|gtk_widget_destroy
 argument_list|(
 name|dialog
 argument_list|)
+expr_stmt|;
+name|shell
+operator|->
+name|grid_dialog
+operator|=
+name|NULL
 expr_stmt|;
 block|}
 end_function
@@ -1961,6 +2005,12 @@ name|gtk_widget_destroy
 argument_list|(
 name|dialog
 argument_list|)
+expr_stmt|;
+name|shell
+operator|->
+name|grid_dialog
+operator|=
+name|NULL
 expr_stmt|;
 block|}
 end_function

@@ -2788,13 +2788,6 @@ name|grid
 operator|=
 name|tmp
 expr_stmt|;
-name|gimp_image_grid_changed
-argument_list|(
-name|undo
-operator|->
-name|gimage
-argument_list|)
-expr_stmt|;
 return|return
 name|TRUE
 return|;
