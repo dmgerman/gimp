@@ -2866,8 +2866,10 @@ name|list
 operator|->
 name|data
 decl_stmt|;
+operator|(
 operator|*
 name|help_domains
+operator|)
 index|[
 name|i
 index|]
@@ -2879,8 +2881,10 @@ operator|->
 name|domain_name
 argument_list|)
 expr_stmt|;
+operator|(
 operator|*
 name|help_uris
+operator|)
 index|[
 name|i
 index|]
