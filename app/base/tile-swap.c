@@ -1671,10 +1671,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"unable to open swap file...BAD THINGS WILL HAPPEN SOON"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1996,10 +1993,7 @@ name|seek_err_msg
 condition|)
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"unable to seek to tile location on disk: %d"
-argument_list|)
 argument_list|,
 name|err
 argument_list|)
@@ -2091,10 +2085,7 @@ name|read_err_msg
 condition|)
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"unable to read tile data from disk: %d/%d ( %d ) bytes read"
-argument_list|)
 argument_list|,
 name|err
 argument_list|,
@@ -2246,10 +2237,7 @@ name|seek_err_msg
 condition|)
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"unable to seek to tile location on disk: %d"
-argument_list|)
 argument_list|,
 name|errno
 argument_list|)
@@ -2308,10 +2296,7 @@ name|write_err_msg
 condition|)
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"unable to write tile data to disk: %d ( %d ) bytes written"
-argument_list|)
 argument_list|,
 name|err
 argument_list|,

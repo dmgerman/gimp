@@ -228,7 +228,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3df1190103
+DECL|enum|__anon2aaf16cd0103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -363,7 +363,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3df1190203
+DECL|enum|__anon2aaf16cd0203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -7766,10 +7766,7 @@ name|COMPRESS_ZLIB
 case|:
 name|g_error
 argument_list|(
-name|_
-argument_list|(
 literal|"xcf: zlib compression unimplemented"
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -7778,10 +7775,7 @@ name|COMPRESS_FRACTAL
 case|:
 name|g_error
 argument_list|(
-name|_
-argument_list|(
 literal|"xcf: fractal compression unimplemented"
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -8401,10 +8395,7 @@ operator|)
 condition|)
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"xcf: uh oh! xcf rle tile saving error: %d"
-argument_list|)
 argument_list|,
 name|count
 argument_list|)
@@ -9153,10 +9144,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"unknown compression type: %d"
-argument_list|)
 argument_list|,
 operator|(
 name|int
@@ -9382,10 +9370,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"Warning, resolution out of range in XCF file"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|xres
@@ -9491,10 +9476,7 @@ name|prop_size
 condition|)
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"Error detected while loading an image's parasites"
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -9534,10 +9516,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"Warning, unit out of range in XCF file, falling back to inches"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|unit
@@ -9814,10 +9793,7 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"unexpected/unknown image property: %d (skipping)"
-argument_list|)
 argument_list|,
 name|prop_type
 argument_list|)
@@ -10346,10 +10322,7 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"unexpected/unknown layer property: %d (skipping)"
-argument_list|)
 argument_list|,
 name|prop_type
 argument_list|)
@@ -10714,10 +10687,7 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"unexpected/unknown channel property: %d (skipping)"
-argument_list|)
 argument_list|,
 name|prop_type
 argument_list|)
@@ -12142,10 +12112,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"not enough tiles found in level"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -12271,10 +12238,7 @@ name|COMPRESS_ZLIB
 case|:
 name|g_error
 argument_list|(
-name|_
-argument_list|(
 literal|"xcf: zlib compression unimplemented"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|fail
@@ -12287,10 +12251,7 @@ name|COMPRESS_FRACTAL
 case|:
 name|g_error
 argument_list|(
-name|_
-argument_list|(
 literal|"xcf: fractal compression unimplemented"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|fail
@@ -13160,10 +13121,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"unable to read tile data from xcf file: %d ( %d ) bytes read"
-argument_list|)
 argument_list|,
 name|err
 argument_list|,

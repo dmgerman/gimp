@@ -356,7 +356,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2762385b0103
+DECL|enum|__anon299208c40103
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -380,7 +380,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2762385b0208
+DECL|struct|__anon299208c40208
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -663,7 +663,7 @@ name|replicate_times
 decl_stmt|;
 comment|/*  Saved colors  */
 struct|struct
-DECL|struct|__anon2762385b0308
+DECL|struct|__anon299208c40308
 block|{
 DECL|member|r
 DECL|member|g
@@ -9600,10 +9600,7 @@ name|file
 condition|)
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"Could not open \"%s\""
-argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -26377,11 +26374,8 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"grad_load_gradient(): "
 literal|"invalid number of segments in \"%s\""
-argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -26545,12 +26539,9 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"grad_load_gradient(): badly formatted "
 literal|"gradient segment %d in \"%s\" --- bad things may "
 literal|"happen soon"
-argument_list|)
 argument_list|,
 name|i
 argument_list|,
@@ -26642,11 +26633,8 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"grad_save_gradient(): "
 literal|"can not save gradient with NULL filename"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -26668,10 +26656,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"grad_save_gradient(): can't open \"%s\""
-argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -27466,11 +27451,8 @@ argument_list|)
 expr_stmt|;
 name|gimp_fatal_error
 argument_list|(
-name|_
-argument_list|(
 literal|"seg_get_segment_at(): "
 literal|"No matching segment for position %0.15f"
-argument_list|)
 argument_list|,
 name|pos
 argument_list|)

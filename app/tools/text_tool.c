@@ -3426,10 +3426,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"text_render: could not allocate image"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|tile_manager_destroy
