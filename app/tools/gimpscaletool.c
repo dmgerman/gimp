@@ -1570,6 +1570,8 @@ argument_list|)
 expr_stmt|;
 name|dot
 operator|=
+name|dir_x
+operator|*
 name|diff_x
 operator|*
 operator|(
@@ -1582,6 +1584,8 @@ operator|->
 name|x1
 operator|)
 operator|+
+name|dir_y
+operator|*
 name|diff_y
 operator|*
 operator|(
@@ -1603,6 +1607,8 @@ condition|)
 block|{
 name|diff_x
 operator|=
+name|dir_x
+operator|*
 operator|(
 name|tr_tool
 operator|->
@@ -1623,6 +1629,8 @@ operator|)
 expr_stmt|;
 name|diff_y
 operator|=
+name|dir_y
+operator|*
 operator|(
 name|tr_tool
 operator|->
