@@ -471,6 +471,11 @@ define|#
 directive|define
 name|GIMP_STOCK_LAYER
 value|"gimp-layer"
+DECL|macro|GIMP_STOCK_TEXT_LAYER
+define|#
+directive|define
+name|GIMP_STOCK_TEXT_LAYER
+value|"gimp-text-layer"
 DECL|macro|GIMP_STOCK_CHANNEL
 define|#
 directive|define
@@ -576,6 +581,16 @@ define|#
 directive|define
 name|GIMP_STOCK_DEVICE_STATUS
 value|"gimp-device-status"
+DECL|macro|GIMP_STOCK_LIST
+define|#
+directive|define
+name|GIMP_STOCK_LIST
+value|"gimp-list"
+DECL|macro|GIMP_STOCK_GRID
+define|#
+directive|define
+name|GIMP_STOCK_GRID
+value|"gimp-grid"
 comment|/*  in dialog size:  */
 DECL|macro|GIMP_STOCK_ERROR
 define|#

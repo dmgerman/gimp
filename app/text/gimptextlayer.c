@@ -389,7 +389,7 @@ name|viewable_class
 operator|->
 name|default_stock_id
 operator|=
-literal|"gimp-tool-text"
+literal|"gimp-text-layer"
 expr_stmt|;
 name|viewable_class
 operator|->
