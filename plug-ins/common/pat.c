@@ -98,6 +98,12 @@ directive|include
 file|<libgimp/gimpui.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -488,11 +494,17 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_pat_load"
 argument_list|,
+name|_
+argument_list|(
 literal|"loads files of the .pat file format"
+argument_list|)
 argument_list|,
 literal|"FIXME: write help"
 argument_list|,
@@ -521,7 +533,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_pat_save"
 argument_list|,
+name|_
+argument_list|(
 literal|"saves files in the .pat file format"
+argument_list|)
 argument_list|,
 literal|"Yeah!"
 argument_list|,
@@ -691,6 +706,9 @@ operator|==
 literal|0
 condition|)
 block|{
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|image_ID
 operator|=
 name|load_image
@@ -803,6 +821,9 @@ case|:
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|init_gtk
 argument_list|()
 expr_stmt|;
@@ -849,6 +870,9 @@ return|return;
 block|}
 break|break;
 default|default:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 break|break;
 block|}
 switch|switch
@@ -1029,21 +1053,12 @@ name|pixel_rgn
 decl_stmt|;
 name|temp
 operator|=
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
+name|_
 argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|11
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|temp
-argument_list|,
 literal|"Loading %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -1285,7 +1300,10 @@ name|gimp_layer_new
 argument_list|(
 name|image_ID
 argument_list|,
+name|_
+argument_list|(
 literal|"Background"
+argument_list|)
 argument_list|,
 name|ph
 operator|.
@@ -1509,21 +1527,12 @@ name|temp
 decl_stmt|;
 name|temp
 operator|=
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
+name|_
 argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|10
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|temp
-argument_list|,
 literal|"Saving %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -1957,7 +1966,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Save As Pattern"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -2063,7 +2075,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2120,7 +2135,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2245,7 +2263,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Description:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment

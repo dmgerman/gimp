@@ -113,7 +113,7 @@ comment|/* Parameters applicable each time we save a gpb or gih, saved  * in the
 end_comment
 
 begin_struct
-DECL|struct|__anon29871f3f0108
+DECL|struct|__anon2ae3b5270108
 specifier|static
 struct|struct
 block|{
@@ -173,7 +173,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29871f3f0208
+DECL|struct|__anon2ae3b5270208
 block|{
 DECL|member|orientation
 name|GOrientation
@@ -6139,6 +6139,23 @@ name|STATUS_CALLING_ERROR
 expr_stmt|;
 if|if
 condition|(
+name|run_mode
+operator|==
+name|RUN_INTERACTIVE
+condition|)
+block|{
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
+block|}
+else|else
+block|{
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
+block|}
+if|if
+condition|(
 name|strcmp
 argument_list|(
 name|name
@@ -6183,9 +6200,6 @@ case|:
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 name|init_gtk
 argument_list|()
 expr_stmt|;
@@ -6237,9 +6251,6 @@ return|return;
 block|}
 break|break;
 default|default:
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 break|break;
 block|}
 switch|switch

@@ -59,6 +59,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gtk/gtk.h"
 end_include
 
@@ -72,6 +78,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
@@ -419,13 +431,22 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_pix_load"
 argument_list|,
+name|_
+argument_list|(
 literal|"loads files of the PIX file format"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"loads files of the PIX file format"
+argument_list|)
 argument_list|,
 literal|"Michael Taylor"
 argument_list|,
@@ -452,9 +473,15 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_pix_save"
 argument_list|,
+name|_
+argument_list|(
 literal|"save file in the Alias|Wavefront pix/matte file format"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"save file in the Alias|Wavefront pix/matte file format"
+argument_list|)
 argument_list|,
 literal|"Michael Taylor"
 argument_list|,
@@ -605,6 +632,9 @@ operator|==
 literal|0
 condition|)
 block|{
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/* Perform the image load */
 name|image_ID
 operator|=
@@ -729,6 +759,9 @@ case|:
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|init_gtk
 argument_list|()
 expr_stmt|;
@@ -773,6 +806,9 @@ return|return;
 block|}
 break|break;
 default|default:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 break|break;
 block|}
 if|if
@@ -1024,29 +1060,12 @@ decl_stmt|;
 comment|/* Set up progress display */
 name|progMessage
 operator|=
-name|malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
+name|_
 argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|12
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|progMessage
-condition|)
-name|gimp_quit
-argument_list|()
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|progMessage
-argument_list|,
 literal|"Loading %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -1210,7 +1229,10 @@ name|gimp_layer_new
 argument_list|(
 name|image_ID
 argument_list|,
+name|_
+argument_list|(
 literal|"Background"
+argument_list|)
 argument_list|,
 name|width
 argument_list|,
@@ -1864,29 +1886,12 @@ block|}
 comment|/* Set up progress display */
 name|progMessage
 operator|=
-name|malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
+name|_
 argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|12
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|progMessage
-condition|)
-name|gimp_quit
-argument_list|()
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|progMessage
-argument_list|,
 literal|"Saving %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)

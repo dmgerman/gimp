@@ -56,6 +56,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gtk/gtk.h"
 end_include
 
@@ -69,6 +75,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
@@ -383,11 +395,17 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_pcx_load"
 argument_list|,
+name|_
+argument_list|(
 literal|"Loads files in Zsoft PCX file format"
+argument_list|)
 argument_list|,
 literal|"FIXME: write help for pcx_load"
 argument_list|,
@@ -416,7 +434,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_pcx_save"
 argument_list|,
+name|_
+argument_list|(
 literal|"Saves files in ZSoft PCX file format"
+argument_list|)
 argument_list|,
 literal|"FIXME: write help for pcx_save"
 argument_list|,
@@ -800,6 +821,9 @@ operator|==
 literal|0
 condition|)
 block|{
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|image_ID
 operator|=
 name|load_image
@@ -921,6 +945,9 @@ case|:
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|init_gtk
 argument_list|()
 expr_stmt|;
@@ -967,6 +994,9 @@ return|return;
 block|}
 break|break;
 default|default:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 break|break;
 block|}
 switch|switch
@@ -1146,7 +1176,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon2bcd0feb0108
+DECL|struct|__anon2ae512e60108
 specifier|static
 struct|struct
 block|{
@@ -1275,21 +1305,12 @@ index|]
 decl_stmt|;
 name|message
 operator|=
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
+name|_
 argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|11
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|message
-argument_list|,
 literal|"Loading %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -1457,7 +1478,10 @@ name|gimp_layer_new
 argument_list|(
 name|image
 argument_list|,
+name|_
+argument_list|(
 literal|"Background"
+argument_list|)
 argument_list|,
 name|width
 argument_list|,
@@ -1490,7 +1514,10 @@ name|gimp_layer_new
 argument_list|(
 name|image
 argument_list|,
+name|_
+argument_list|(
 literal|"Background"
+argument_list|)
 argument_list|,
 name|width
 argument_list|,
@@ -2639,21 +2666,12 @@ argument_list|)
 expr_stmt|;
 name|message
 operator|=
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
+name|_
 argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|11
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|message
-argument_list|,
 literal|"Saving %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)

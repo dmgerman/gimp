@@ -26,6 +26,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gtk/gtk.h"
 end_include
 
@@ -39,6 +45,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_ifdef
@@ -92,7 +104,7 @@ value|40
 end_define
 
 begin_typedef
-DECL|struct|__anon27df3b0d0108
+DECL|struct|__anon2b37e8800108
 typedef|typedef
 struct|struct
 block|{
@@ -107,7 +119,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27df3b0d0208
+DECL|struct|__anon2b37e8800208
 typedef|typedef
 struct|struct
 block|{
@@ -122,7 +134,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27df3b0d0308
+DECL|struct|__anon2b37e8800308
 typedef|typedef
 struct|struct
 block|{
@@ -173,7 +185,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27df3b0d0408
+DECL|struct|__anon2b37e8800408
 typedef|typedef
 struct|struct
 block|{
@@ -574,13 +586,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_pixelize"
 argument_list|,
+name|_
+argument_list|(
 literal|"Pixelize the contents of the specified drawable"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Pixelize the contents of the specified drawable with speficied pixelizing width."
+argument_list|)
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis, Tracy Scott, (ported to 1.0 by) Eiichi Takamori"
 argument_list|,
@@ -588,7 +609,10 @@ literal|"Spencer Kimball& Peter Mattis, Tracy Scott"
 argument_list|,
 literal|"1995"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Blur/Pixelize..."
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -716,6 +740,9 @@ block|{
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
@@ -744,6 +771,9 @@ break|break;
 case|case
 name|RUN_NONINTERACTIVE
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/*  Make sure all the arguments are there!  */
 if|if
 condition|(
@@ -801,6 +831,9 @@ break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
@@ -841,7 +874,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Pixelizing..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  set the tile cache size  */
@@ -1000,7 +1036,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Pixelize"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -1106,7 +1145,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1163,7 +1205,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1219,7 +1264,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Parameter Settings"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -1302,7 +1350,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Pixel Width:"
+argument_list|)
 argument_list|,
 operator|&
 name|pvals
