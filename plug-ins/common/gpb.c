@@ -103,7 +103,7 @@ comment|/* Parameters applicable each time we save a gpb or gih, saved  * in the
 end_comment
 
 begin_struct
-DECL|struct|__anon29f1ab1a0108
+DECL|struct|__anon2c52dc2b0108
 specifier|static
 struct|struct
 block|{
@@ -157,7 +157,7 @@ comment|/* Parameters related to one single gih file, collected in a struct  * j
 end_comment
 
 begin_struct
-DECL|struct|__anon29f1ab1a0208
+DECL|struct|__anon2c52dc2b0208
 specifier|static
 struct|struct
 block|{
@@ -3226,11 +3226,6 @@ name|cb
 argument_list|)
 expr_stmt|;
 block|}
-name|g_list_free
-argument_list|(
-name|cbitems
-argument_list|)
-expr_stmt|;
 name|gtk_table_attach
 argument_list|(
 name|GTK_TABLE

@@ -116,7 +116,7 @@ value|4
 end_define
 
 begin_struct
-DECL|struct|__anon2af8a1a40108
+DECL|struct|__anon298fce8d0108
 specifier|static
 struct|struct
 block|{
@@ -463,7 +463,7 @@ name|i
 decl_stmt|,
 name|brushix
 decl_stmt|,
-name|value
+name|ix
 decl_stmt|;
 name|double
 name|angle
@@ -540,16 +540,7 @@ block|{
 case|case
 name|PIPE_SELECT_CONSTANT
 case|:
-comment|/* What constant? */
-name|value
-operator|=
-literal|0
-expr_stmt|;
-break|break;
-case|case
-name|PIPE_SELECT_INCREMENTAL
-case|:
-name|value
+name|ix
 operator|=
 name|pipe
 operator|->
@@ -557,6 +548,12 @@ name|index
 index|[
 name|i
 index|]
+expr_stmt|;
+break|break;
+case|case
+name|PIPE_SELECT_INCREMENTAL
+case|:
+name|ix
 operator|=
 operator|(
 name|pipe
@@ -601,6 +598,12 @@ operator|->
 name|lastx
 argument_list|)
 expr_stmt|;
+comment|/* Offset angle to be compatible with PSP tubes */
+name|angle
+operator|+=
+name|G_PI_2
+expr_stmt|;
+comment|/* Map it to the [0..2*G_PI) interval */
 if|if
 condition|(
 name|angle
@@ -613,7 +616,22 @@ literal|2.
 operator|*
 name|G_PI
 expr_stmt|;
-name|value
+elseif|else
+if|if
+condition|(
+name|angle
+operator|>
+literal|2.
+operator|*
+name|G_PI
+condition|)
+name|angle
+operator|-=
+literal|2.
+operator|*
+name|G_PI
+expr_stmt|;
+name|ix
 operator|=
 name|RINT
 argument_list|(
@@ -638,7 +656,7 @@ case|case
 name|PIPE_SELECT_RANDOM
 case|:
 comment|/* This probably isn't the right way */
-name|value
+name|ix
 operator|=
 name|rand
 argument_list|()
@@ -654,7 +672,7 @@ break|break;
 case|case
 name|PIPE_SELECT_PRESSURE
 case|:
-name|value
+name|ix
 operator|=
 name|RINT
 argument_list|(
@@ -678,7 +696,7 @@ break|break;
 case|case
 name|PIPE_SELECT_TILT_X
 case|:
-name|value
+name|ix
 operator|=
 name|RINT
 argument_list|(
@@ -709,7 +727,7 @@ break|break;
 case|case
 name|PIPE_SELECT_TILT_Y
 case|:
-name|value
+name|ix
 operator|=
 name|RINT
 argument_list|(
@@ -738,6 +756,29 @@ literal|2
 expr_stmt|;
 break|break;
 block|}
+name|pipe
+operator|->
+name|index
+index|[
+name|i
+index|]
+operator|=
+name|BOUNDS
+argument_list|(
+name|ix
+argument_list|,
+literal|0
+argument_list|,
+name|pipe
+operator|->
+name|rank
+index|[
+name|i
+index|]
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
 name|brushix
 operator|+=
 name|pipe
@@ -747,11 +788,16 @@ index|[
 name|i
 index|]
 operator|*
-name|value
+name|pipe
+operator|->
+name|index
+index|[
+name|i
+index|]
 expr_stmt|;
-comment|/* g_print ("value at %d: %d, brushix: %d\n", i, value, brushix); */
+comment|/* g_print ("ix at %d: %d, brushix: %d\n", i, ix, brushix); */
 block|}
-comment|/* If out of bounds, just select the first brush... */
+comment|/* Make sure is inside bounds */
 name|brushix
 operator|=
 name|BOUNDS
