@@ -381,7 +381,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Image/Colors/Posterize..."
+literal|"/Layer/Colors/Posterize..."
 argument_list|)
 argument_list|,
 name|NULL

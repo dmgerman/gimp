@@ -82,7 +82,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|norma
+name|normalize
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -94,7 +94,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|indexed_norma
+name|indexed_normalize
 parameter_list|(
 name|gint32
 name|image_ID
@@ -169,23 +169,6 @@ literal|"Input drawable"
 block|}
 block|}
 decl_stmt|;
-specifier|static
-name|gint
-name|nargs
-init|=
-sizeof|sizeof
-argument_list|(
-name|args
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|args
-index|[
-literal|0
-index|]
-argument_list|)
-decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_normalize"
@@ -210,14 +193,17 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Image/Colors/Auto/Normalize"
+literal|"<Image>/Layer/Colors/Auto/Normalize"
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
-name|nargs
+name|G_N_ELEMENTS
+argument_list|(
+name|args
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -360,7 +346,7 @@ literal|1
 operator|)
 argument_list|)
 expr_stmt|;
-name|norma
+name|normalize
 argument_list|(
 name|drawable
 argument_list|)
@@ -386,7 +372,7 @@ name|drawable_id
 argument_list|)
 condition|)
 block|{
-name|indexed_norma
+name|indexed_normalize
 argument_list|(
 name|image_ID
 argument_list|)
@@ -450,8 +436,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|indexed_norma (gint32 image_ID)
-name|indexed_norma
+DECL|function|indexed_normalize (gint32 image_ID)
+name|indexed_normalize
 parameter_list|(
 name|gint32
 name|image_ID
@@ -791,8 +777,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|norma (GimpDrawable * drawable)
-name|norma
+DECL|function|normalize (GimpDrawable * drawable)
+name|normalize
 parameter_list|(
 name|GimpDrawable
 modifier|*

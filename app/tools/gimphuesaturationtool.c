@@ -593,7 +593,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Image/Colors/Hue-Saturation..."
+literal|"/Layer/Colors/Hue-Saturation..."
 argument_list|)
 argument_list|,
 name|NULL

@@ -80,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c70bc950108
+DECL|struct|__anon295b958b0108
 block|{
 DECL|member|angle
 name|gint
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c70bc950208
+DECL|struct|__anon295b958b0208
 block|{
 DECL|member|ID
 name|gint32
@@ -340,23 +340,6 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
-name|gint
-name|nargs
-init|=
-sizeof|sizeof
-argument_list|(
-name|args
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|args
-index|[
-literal|0
-index|]
-argument_list|)
-decl_stmt|;
-specifier|static
 name|GimpParamDef
 name|menuargs
 index|[]
@@ -387,23 +370,6 @@ literal|"Input drawable"
 block|}
 block|}
 decl_stmt|;
-specifier|static
-name|gint
-name|nmenuargs
-init|=
-sizeof|sizeof
-argument_list|(
-name|menuargs
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|menuargs
-index|[
-literal|0
-index|]
-argument_list|)
-decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_rotate"
@@ -427,7 +393,10 @@ name|PLUG_IN_IMAGE_TYPES
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
-name|nargs
+name|G_N_ELEMENTS
+argument_list|(
+name|args
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -452,14 +421,17 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Layers/Rotate/90 degrees"
+literal|"<Image>/Layer/Transform/Rotate 90 degrees"
 argument_list|)
 argument_list|,
 name|PLUG_IN_IMAGE_TYPES
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
-name|nmenuargs
+name|G_N_ELEMENTS
+argument_list|(
+name|menuargs
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -484,14 +456,17 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Layers/Rotate/180 degrees"
+literal|"<Image>/Layer/Transform/Rotate 180 degrees"
 argument_list|)
 argument_list|,
 name|PLUG_IN_IMAGE_TYPES
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
-name|nmenuargs
+name|G_N_ELEMENTS
+argument_list|(
+name|menuargs
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -516,14 +491,17 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Layers/Rotate/270 degrees"
+literal|"<Image>/Layer/Transform/Rotate 270 degrees"
 argument_list|)
 argument_list|,
 name|PLUG_IN_IMAGE_TYPES
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
-name|nmenuargs
+name|G_N_ELEMENTS
+argument_list|(
+name|menuargs
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -548,14 +526,17 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Image/Transforms/Rotate/90 degrees"
+literal|"<Image>/Image/Transform/Rotate 90 degrees"
 argument_list|)
 argument_list|,
 name|PLUG_IN_IMAGE_TYPES
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
-name|nmenuargs
+name|G_N_ELEMENTS
+argument_list|(
+name|menuargs
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -580,14 +561,17 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Image/Transforms/Rotate/180 degrees"
+literal|"<Image>/Image/Transform/Rotate 180 degrees"
 argument_list|)
 argument_list|,
 name|PLUG_IN_IMAGE_TYPES
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
-name|nmenuargs
+name|G_N_ELEMENTS
+argument_list|(
+name|menuargs
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -612,14 +596,17 @@ name|PLUG_IN_VERSION
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Image/Transforms/Rotate/270 degrees"
+literal|"<Image>/Image/Transform/Rotate 270 degrees"
 argument_list|)
 argument_list|,
 name|PLUG_IN_IMAGE_TYPES
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
-name|nmenuargs
+name|G_N_ELEMENTS
+argument_list|(
+name|menuargs
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,

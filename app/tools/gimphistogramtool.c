@@ -426,7 +426,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Image/Histogram..."
+literal|"/Layer/Colors/Histogram..."
 argument_list|)
 argument_list|,
 name|NULL

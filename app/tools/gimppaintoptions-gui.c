@@ -156,12 +156,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
 end_include
 
@@ -1317,7 +1311,11 @@ name|default_context
 operator|=
 name|gimp_get_default_context
 argument_list|(
-name|the_gimp
+name|tool_options
+operator|->
+name|tool_info
+operator|->
+name|gimp
 argument_list|)
 expr_stmt|;
 if|if

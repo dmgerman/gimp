@@ -176,7 +176,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a22ad7a0108
+DECL|struct|__anon2c0c9da80108
 block|{
 DECL|member|threshold
 name|gint
@@ -203,7 +203,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a22ad7a0208
+DECL|struct|__anon2c0c9da80208
 block|{
 DECL|member|run
 name|gint
@@ -280,23 +280,6 @@ literal|"Threshold"
 block|}
 block|}
 decl_stmt|;
-specifier|static
-name|gint
-name|nargs
-init|=
-sizeof|sizeof
-argument_list|(
-name|args
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|args
-index|[
-literal|0
-index|]
-argument_list|)
-decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
@@ -313,14 +296,17 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Image/Alpha/Threshold Alpha..."
+literal|"<Image>/Layer/Alpha/Threshold Alpha..."
 argument_list|)
 argument_list|,
 literal|"RGBA,GRAYA"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
-name|nargs
+name|G_N_ELEMENTS
+argument_list|(
+name|args
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,

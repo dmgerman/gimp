@@ -1317,6 +1317,11 @@ block|,
 name|NULL
 block|}
 block|,
+name|SEPARATOR
+argument_list|(
+literal|"/File/---"
+argument_list|)
+block|,
 block|{
 block|{
 name|N_
@@ -2731,136 +2736,18 @@ argument_list|(
 literal|"/Image/Mode/---"
 argument_list|)
 block|,
-comment|/*<Image>/Image/Colors  */
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/Image/Colors/Desaturate"
-argument_list|)
-block|,
-name|NULL
-block|,
-name|image_desaturate_cmd_callback
-block|,
-literal|0
-block|}
-block|,
-name|NULL
-block|,
-literal|"image/colors/desaturate.html"
-block|,
-name|NULL
-block|}
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/Image/Colors/Invert"
-argument_list|)
-block|,
-name|NULL
-block|,
-name|image_invert_cmd_callback
-block|,
-literal|0
-block|}
-block|,
-name|NULL
-block|,
-literal|"image/colors/invert.html"
-block|,
-name|NULL
-block|}
-block|,
-name|SEPARATOR
-argument_list|(
-literal|"/Image/Colors/---"
-argument_list|)
-block|,
-comment|/*<Image>/Image/Colors/Auto  */
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/Image/Colors/Auto/Equalize"
-argument_list|)
-block|,
-name|NULL
-block|,
-name|image_equalize_cmd_callback
-block|,
-literal|0
-block|}
-block|,
-name|NULL
-block|,
-literal|"image/colors/auto/equalize.html"
-block|,
-name|NULL
-block|}
-block|,
-name|SEPARATOR
-argument_list|(
-literal|"/Image/Colors/---"
-argument_list|)
-block|,
-comment|/*<Image>/Image/Alpha  */
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/Image/Alpha/Add Alpha Channel"
-argument_list|)
-block|,
-name|NULL
-block|,
-name|layers_add_alpha_channel_cmd_callback
-block|,
-literal|0
-block|}
-block|,
-name|NULL
-block|,
-literal|"layers/add_alpha_channel.html"
-block|,
-name|NULL
-block|}
-block|,
-comment|/*<Image>/Image/Transforms  */
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/Image/Transforms/Offset..."
-argument_list|)
-block|,
-literal|"<control><shift>O"
-block|,
-name|image_offset_cmd_callback
-block|,
-literal|0
-block|}
-block|,
-name|NULL
-block|,
-literal|"image/transforms/dialogs/offset.html"
-block|,
-name|NULL
-block|}
-block|,
+comment|/*<Image>/Image/Transform  */
 name|BRANCH
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Image/Transforms/Rotate"
+literal|"/Image/Transform"
 argument_list|)
 argument_list|)
 block|,
 name|SEPARATOR
 argument_list|(
-literal|"/Image/Transforms/---"
+literal|"/Image/Transform/---"
 argument_list|)
 block|,
 name|SEPARATOR
@@ -2944,39 +2831,13 @@ argument_list|(
 literal|"/Image/---"
 argument_list|)
 block|,
-comment|/*<Image>/Layers  */
+comment|/*<Image>/Layer  */
+comment|/*<Image>/Layer/Stack  */
 block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layers/Layers, Channels& Paths..."
-argument_list|)
-block|,
-literal|"<control>L"
-block|,
-name|dialogs_create_lc_cmd_callback
-block|,
-literal|0
-block|}
-block|,
-name|NULL
-block|,
-literal|"dialogs/layers_and_channels.html"
-block|,
-name|NULL
-block|}
-block|,
-name|SEPARATOR
-argument_list|(
-literal|"/Layers/---"
-argument_list|)
-block|,
-comment|/*<Image>/Layers/Stack  */
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/Layers/Stack/Previous Layer"
+literal|"/Layer/Stack/Previous Layer"
 argument_list|)
 block|,
 literal|"Prior"
@@ -2997,7 +2858,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layers/Stack/Next Layer"
+literal|"/Layer/Stack/Next Layer"
 argument_list|)
 block|,
 literal|"Next"
@@ -3018,7 +2879,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layers/Stack/Raise Layer"
+literal|"/Layer/Stack/Raise Layer"
 argument_list|)
 block|,
 literal|"<shift>Prior"
@@ -3043,7 +2904,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layers/Stack/Lower Layer"
+literal|"/Layer/Stack/Lower Layer"
 argument_list|)
 block|,
 literal|"<shift>Next"
@@ -3068,7 +2929,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layers/Stack/Layer to Top"
+literal|"/Layer/Stack/Layer to Top"
 argument_list|)
 block|,
 literal|"<control>Prior"
@@ -3093,7 +2954,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layers/Stack/Layer to Bottom"
+literal|"/Layer/Stack/Layer to Bottom"
 argument_list|)
 block|,
 literal|"<control>Next"
@@ -3116,28 +2977,64 @@ block|}
 block|,
 name|SEPARATOR
 argument_list|(
-literal|"/Layers/Stack/---"
-argument_list|)
-block|,
-comment|/*<Image>/Layers/Rotate  */
-name|BRANCH
-argument_list|(
-name|N_
-argument_list|(
-literal|"/Layers/Rotate"
-argument_list|)
-argument_list|)
-block|,
-name|SEPARATOR
-argument_list|(
-literal|"/Layers/---"
+literal|"/Layer/Stack/---"
 argument_list|)
 block|,
 block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layers/Anchor Layer"
+literal|"/Layer/New Layer..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|layers_new_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_NEW
+block|}
+block|,
+name|NULL
+block|,
+literal|"layers/dialogs/new_layer.html"
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Layer/Duplicate Layer"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|layers_duplicate_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_DUPLICATE
+block|}
+block|,
+name|NULL
+block|,
+literal|"layers/duplicate_layer.html"
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Layer/Anchor Layer"
 argument_list|)
 block|,
 literal|"<control>H"
@@ -3158,16 +3055,87 @@ block|,
 name|NULL
 block|}
 block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Layer/Delete Layer"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|layers_delete_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_DELETE
+block|}
+block|,
+name|NULL
+block|,
+literal|"layers/delete_layer.html"
+block|,
+name|NULL
+block|}
+block|,
 name|SEPARATOR
 argument_list|(
-literal|"/Layers/---"
+literal|"/Layer/---"
 argument_list|)
 block|,
 block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layers/Layer to Imagesize"
+literal|"/Layer/Layer Boundary Size..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|layers_resize_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+name|NULL
+block|,
+literal|"layers/dialogs/layer_boundary_size.html"
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Layer/Scale Layer..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|layers_scale_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_TOOL_SCALE
+block|}
+block|,
+name|NULL
+block|,
+literal|"layers/dialogs/scale_layer.html"
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Layer/Layer to Imagesize"
 argument_list|)
 block|,
 name|NULL
@@ -3184,16 +3152,43 @@ block|,
 name|NULL
 block|}
 block|,
+comment|/*<Image>/Layer/Transform  */
 name|SEPARATOR
 argument_list|(
-literal|"/Layers/---"
+literal|"/Layer/Transform/---"
 argument_list|)
 block|,
 block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layers/Merge Visible Layers..."
+literal|"/Layer/Transform/Offset..."
+argument_list|)
+block|,
+literal|"<control><shift>O"
+block|,
+name|layers_offset_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+name|NULL
+block|,
+literal|"layers/dialogs/offset.html"
+block|,
+name|NULL
+block|}
+block|,
+name|SEPARATOR
+argument_list|(
+literal|"/Layer/---"
+argument_list|)
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Layer/Merge Visible Layers..."
 argument_list|)
 block|,
 literal|"<control>M"
@@ -3214,7 +3209,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layers/Merge Down"
+literal|"/Layer/Merge Down"
 argument_list|)
 block|,
 literal|"<control><shift>M"
@@ -3235,7 +3230,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layers/Flatten Image"
+literal|"/Layer/Flatten Image"
 argument_list|)
 block|,
 name|NULL
@@ -3254,14 +3249,153 @@ block|}
 block|,
 name|SEPARATOR
 argument_list|(
-literal|"/Layers/---"
+literal|"/Layer/---"
 argument_list|)
+block|,
+comment|/*<Image>/Layer/Colors  */
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Layer/Colors/Desaturate"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|layers_desaturate_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+name|NULL
+block|,
+literal|"layers/colors/desaturate.html"
+block|,
+name|NULL
+block|}
 block|,
 block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layers/Mask to Selection"
+literal|"/Layer/Colors/Invert"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|layers_invert_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+name|NULL
+block|,
+literal|"layers/colors/invert.html"
+block|,
+name|NULL
+block|}
+block|,
+name|SEPARATOR
+argument_list|(
+literal|"/Layer/Colors/---"
+argument_list|)
+block|,
+comment|/*<Image>/Layer/Colors/Auto  */
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Layer/Colors/Auto/Equalize"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|layers_equalize_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+name|NULL
+block|,
+literal|"layers/colors/auto/equalize.html"
+block|,
+name|NULL
+block|}
+block|,
+name|SEPARATOR
+argument_list|(
+literal|"/Layer/Colors/---"
+argument_list|)
+block|,
+comment|/*<Image>/Layer/Mask  */
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Layer/Mask/Add Layer Mask..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|layers_add_layer_mask_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+name|NULL
+block|,
+literal|"layers/dialogs/add_layer_mask.html"
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Layer/Mask/Apply Layer Mask"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|layers_apply_layer_mask_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+name|NULL
+block|,
+literal|"layers/apply_mask.html"
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Layer/Mask/Delete Layer Mask"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|layers_delete_layer_mask_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+name|NULL
+block|,
+literal|"layers/delete_mask.html"
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Layer/Mask/Mask to Selection"
 argument_list|)
 block|,
 name|NULL
@@ -3278,16 +3412,12 @@ block|,
 name|NULL
 block|}
 block|,
-name|SEPARATOR
-argument_list|(
-literal|"/Layers/---"
-argument_list|)
-block|,
+comment|/*<Image>/Layer/Alpha  */
 block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layers/Add Alpha Channel"
+literal|"/Layer/Alpha/Add Alpha Channel"
 argument_list|)
 block|,
 name|NULL
@@ -3308,7 +3438,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layers/Alpha to Selection"
+literal|"/Layer/Alpha/Alpha to Selection"
 argument_list|)
 block|,
 name|NULL
@@ -3327,7 +3457,12 @@ block|}
 block|,
 name|SEPARATOR
 argument_list|(
-literal|"/Layers/---"
+literal|"/Layer/Alpha/---"
+argument_list|)
+block|,
+name|SEPARATOR
+argument_list|(
+literal|"/Layer/---"
 argument_list|)
 block|,
 comment|/*<Image>/Tools  */
@@ -3661,7 +3796,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"gimp:buffer-list"
+literal|"gimp:image-list"
 block|,
 name|NULL
 block|,
@@ -4149,12 +4284,11 @@ block|,
 name|NULL
 block|}
 block|,
-comment|/*<Layers>/Stack  */
 block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Stack/Raise Layer"
+literal|"/Raise Layer"
 argument_list|)
 block|,
 literal|"<control>F"
@@ -4179,32 +4313,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Stack/Lower Layer"
-argument_list|)
-block|,
-literal|"<control>B"
-block|,
-name|layers_lower_cmd_callback
-block|,
-literal|0
-block|,
-literal|"<StockItem>"
-block|,
-name|GIMP_STOCK_LOWER
-block|}
-block|,
-name|NULL
-block|,
-literal|"stack/stack.html#lower_layer"
-block|,
-name|NULL
-block|}
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/Stack/Layer to Top"
+literal|"/Layer to Top"
 argument_list|)
 block|,
 literal|"<control><shift>F"
@@ -4229,7 +4338,32 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Stack/Layer to Bottom"
+literal|"/Lower Layer"
+argument_list|)
+block|,
+literal|"<control>B"
+block|,
+name|layers_lower_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_LOWER
+block|}
+block|,
+name|NULL
+block|,
+literal|"stack/stack.html#lower_layer"
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Layer to Bottom"
 argument_list|)
 block|,
 literal|"<control><shift>B"
@@ -4355,27 +4489,6 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layer to Imagesize"
-argument_list|)
-block|,
-name|NULL
-block|,
-name|layers_resize_to_image_cmd_callback
-block|,
-literal|0
-block|}
-block|,
-name|NULL
-block|,
-literal|"layer_to_image_size.html"
-block|,
-name|NULL
-block|}
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
 literal|"/Scale Layer..."
 argument_list|)
 block|,
@@ -4393,6 +4506,27 @@ block|,
 name|NULL
 block|,
 literal|"dialogs/scale_layer.html"
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Layer to Imagesize"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|layers_resize_to_image_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+name|NULL
+block|,
+literal|"layer_to_image_size.html"
 block|,
 name|NULL
 block|}
@@ -9395,11 +9529,11 @@ name|rotate_plugins
 index|[]
 init|=
 block|{
-literal|"90 degrees"
+literal|"Rotate 90 degrees"
 block|,
-literal|"180 degrees"
+literal|"Rotate 180 degrees"
 block|,
-literal|"270 degrees"
+literal|"Rotate 270 degrees"
 block|}
 decl_stmt|;
 specifier|static
@@ -9728,7 +9862,7 @@ block|}
 comment|/*  Reorder Rotate plugin menu entries */
 name|pos
 operator|=
-literal|2
+literal|1
 expr_stmt|;
 for|for
 control|(
@@ -9751,7 +9885,7 @@ name|path
 operator|=
 name|g_strconcat
 argument_list|(
-literal|"/Image/Transforms/Rotate/"
+literal|"/Image/Transform/"
 argument_list|,
 name|rotate_plugins
 index|[
@@ -9805,7 +9939,7 @@ block|}
 block|}
 name|pos
 operator|=
-literal|2
+literal|1
 expr_stmt|;
 for|for
 control|(
@@ -9828,7 +9962,7 @@ name|path
 operator|=
 name|g_strconcat
 argument_list|(
-literal|"/Layers/Rotate/"
+literal|"/Layer/Transform/"
 argument_list|,
 name|rotate_plugins
 index|[

@@ -449,7 +449,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Image/Colors/Color Balance..."
+literal|"/Layer/Colors/Color Balance..."
 argument_list|)
 argument_list|,
 name|NULL

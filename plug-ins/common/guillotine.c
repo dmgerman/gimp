@@ -190,7 +190,7 @@ literal|"1998"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Image/Transforms/Guillotine"
+literal|"<Image>/Image/Transform/Guillotine"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"

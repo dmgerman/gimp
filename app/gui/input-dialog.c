@@ -114,12 +114,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"devices.h"
 end_include
 
@@ -1476,7 +1470,7 @@ name|context
 operator|=
 name|gimp_create_context
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|,
 name|device_info
 operator|->
@@ -1500,7 +1494,7 @@ name|gimp_context_copy_properties
 argument_list|(
 name|gimp_get_user_context
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|)
 argument_list|,
 name|device_info
@@ -1709,7 +1703,7 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|tool_info_list
 argument_list|,
@@ -1808,7 +1802,7 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|brush_factory
 operator|->
@@ -1835,7 +1829,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|the_gimp
+name|gimp
 operator|->
 name|no_data
 condition|)
@@ -1881,7 +1875,7 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|pattern_factory
 operator|->
@@ -1908,7 +1902,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|the_gimp
+name|gimp
 operator|->
 name|no_data
 condition|)
@@ -1954,7 +1948,7 @@ operator|*
 operator|)
 name|gimp_container_get_child_by_name
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|gradient_factory
 operator|->
@@ -1981,7 +1975,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|the_gimp
+name|gimp
 operator|->
 name|no_data
 condition|)
@@ -2082,7 +2076,7 @@ name|context
 operator|=
 name|gimp_get_user_context
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|)
 expr_stmt|;
 name|gimp_context_copy_properties

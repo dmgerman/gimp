@@ -20,9 +20,9 @@ begin_function_decl
 name|void
 name|offset_dialog_create
 parameter_list|(
-name|GimpImage
+name|GimpDrawable
 modifier|*
-name|gimage
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl

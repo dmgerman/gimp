@@ -980,7 +980,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Image/Colors/Levels..."
+literal|"/Layer/Colors/Levels..."
 argument_list|)
 argument_list|,
 name|NULL

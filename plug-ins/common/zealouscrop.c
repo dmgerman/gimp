@@ -195,23 +195,6 @@ literal|"Input drawable"
 block|}
 block|}
 decl_stmt|;
-specifier|static
-name|gint
-name|nargs
-init|=
-sizeof|sizeof
-argument_list|(
-name|args
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|args
-index|[
-literal|0
-index|]
-argument_list|)
-decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_zealouscrop"
@@ -229,14 +212,17 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Image/Transforms/Zealous Crop"
+literal|"<Image>/Layer/Transform/Zealous Crop"
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
-name|nargs
+name|G_N_ELEMENTS
+argument_list|(
+name|args
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,

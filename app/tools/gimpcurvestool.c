@@ -971,7 +971,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Image/Colors/Curves..."
+literal|"/Layer/Colors/Curves..."
 argument_list|)
 argument_list|,
 name|NULL
