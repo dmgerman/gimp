@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpdrawtool.h"
+file|"gimpcolortool.h"
 end_include
 
 begin_define
@@ -100,19 +100,14 @@ struct|struct
 name|_GimpPaintTool
 block|{
 DECL|member|parent_instance
-name|GimpDrawTool
+name|GimpColorTool
 name|parent_instance
 decl_stmt|;
 DECL|member|pick_colors
 name|gboolean
 name|pick_colors
 decl_stmt|;
-comment|/*  pick color if ctrl or alt is pressed   */
-DECL|member|pick_state
-name|gboolean
-name|pick_state
-decl_stmt|;
-comment|/*  was ctrl or alt pressed when clicked?  */
+comment|/*  pick color if ctrl is pressed   */
 DECL|member|core
 name|GimpPaintCore
 modifier|*
@@ -128,7 +123,7 @@ struct|struct
 name|_GimpPaintToolClass
 block|{
 DECL|member|parent_class
-name|GimpDrawToolClass
+name|GimpColorToolClass
 name|parent_class
 decl_stmt|;
 block|}
