@@ -824,7 +824,7 @@ expr_stmt|;
 comment|/*  Create the paint mode option menu  */
 name|bsp
 operator|->
-name|option_menu
+name|paint_mode_menu
 operator|=
 name|gimp_paint_mode_menu_new
 argument_list|(
@@ -867,7 +867,7 @@ literal|0.5
 argument_list|,
 name|bsp
 operator|->
-name|option_menu
+name|paint_mode_menu
 argument_list|,
 literal|2
 argument_list|,
@@ -1503,7 +1503,7 @@ name|GTK_OPTION_MENU
 argument_list|(
 name|bsp
 operator|->
-name|option_menu
+name|paint_mode_menu
 argument_list|)
 argument_list|,
 name|paint_mode

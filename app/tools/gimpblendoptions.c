@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpenummenu.h"
+file|"widgets/gimpenumcombobox.h"
 end_include
 
 begin_include
@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cd9e710103
+DECL|enum|__anon2c7f53710103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -199,7 +199,7 @@ name|pspec
 parameter_list|,
 name|GtkWidget
 modifier|*
-name|repeat_menu
+name|repeat_combo
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -808,7 +808,7 @@ name|frame
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|menu
+name|combo
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -875,9 +875,9 @@ literal|0.0
 argument_list|)
 expr_stmt|;
 comment|/*  the gradient type menu  */
-name|menu
+name|combo
 operator|=
-name|gimp_prop_enum_option_menu_new
+name|gimp_prop_enum_combo_box_new
 argument_list|(
 name|config
 argument_list|,
@@ -888,11 +888,11 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gimp_enum_option_menu_set_stock_prefix
+name|gimp_enum_combo_box_set_stock_prefix
 argument_list|(
-name|GTK_OPTION_MENU
+name|GIMP_ENUM_COMBO_BOX
 argument_list|(
-name|menu
+name|combo
 argument_list|)
 argument_list|,
 literal|"gimp-gradient"
@@ -918,7 +918,7 @@ literal|1.0
 argument_list|,
 literal|0.5
 argument_list|,
-name|menu
+name|combo
 argument_list|,
 literal|2
 argument_list|,
@@ -926,9 +926,9 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  the repeat option  */
-name|menu
+name|combo
 operator|=
-name|gimp_prop_enum_option_menu_new
+name|gimp_prop_enum_combo_box_new
 argument_list|(
 name|config
 argument_list|,
@@ -959,7 +959,7 @@ literal|1.0
 argument_list|,
 literal|0.5
 argument_list|,
-name|menu
+name|combo
 argument_list|,
 literal|2
 argument_list|,
@@ -977,7 +977,7 @@ argument_list|(
 name|blend_options_gradient_type_notify
 argument_list|)
 argument_list|,
-name|menu
+name|combo
 argument_list|)
 expr_stmt|;
 name|button
@@ -1232,7 +1232,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|blend_options_gradient_type_notify (GimpBlendOptions * options,GParamSpec * pspec,GtkWidget * repeat_menu)
+DECL|function|blend_options_gradient_type_notify (GimpBlendOptions * options,GParamSpec * pspec,GtkWidget * repeat_combo)
 name|blend_options_gradient_type_notify
 parameter_list|(
 name|GimpBlendOptions
@@ -1245,12 +1245,12 @@ name|pspec
 parameter_list|,
 name|GtkWidget
 modifier|*
-name|repeat_menu
+name|repeat_combo
 parameter_list|)
 block|{
 name|gtk_widget_set_sensitive
 argument_list|(
-name|repeat_menu
+name|repeat_combo
 argument_list|,
 name|options
 operator|->

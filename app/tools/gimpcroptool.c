@@ -78,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpenummenu.h"
+file|"widgets/gimpenumwidgets.h"
 end_include
 
 begin_include
@@ -194,7 +194,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abbaef90103
+DECL|enum|__anon28b2d88f0103
 block|{
 DECL|enumerator|CREATING
 name|CREATING

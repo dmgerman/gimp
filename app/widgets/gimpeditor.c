@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpenummenu.h"
+file|"gimpenumwidgets.h"
 end_include
 
 begin_include

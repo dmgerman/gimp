@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28cae3f50103
+DECL|enum|__anon27952dc80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1093,7 +1093,7 @@ name|table
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|optionmenu
+name|combo
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -1300,9 +1300,9 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
-name|optionmenu
+name|combo
 operator|=
-name|gimp_prop_enum_option_menu_new
+name|gimp_prop_enum_combo_box_new
 argument_list|(
 name|config
 argument_list|,
@@ -1320,7 +1320,7 @@ argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
-name|optionmenu
+name|combo
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1331,7 +1331,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|optionmenu
+name|combo
 argument_list|)
 expr_stmt|;
 comment|/*  the supersample toggle button  */
@@ -1436,9 +1436,9 @@ name|frame
 argument_list|)
 expr_stmt|;
 comment|/*  the grid type menu  */
-name|optionmenu
+name|combo
 operator|=
-name|gimp_prop_enum_option_menu_new
+name|gimp_prop_enum_combo_box_new
 argument_list|(
 name|config
 argument_list|,
@@ -1456,12 +1456,12 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-name|optionmenu
+name|combo
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|optionmenu
+name|combo
 argument_list|)
 expr_stmt|;
 comment|/*  the grid density scale  */

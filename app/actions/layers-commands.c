@@ -138,7 +138,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpenummenu.h"
+file|"widgets/gimpenumwidgets.h"
 end_include
 
 begin_include

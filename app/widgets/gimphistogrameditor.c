@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpenummenu.h"
+file|"gimpenumcombobox.h"
 end_include
 
 begin_include
@@ -620,7 +620,7 @@ name|menu
 operator|=
 name|menu
 operator|=
-name|gimp_prop_enum_option_menu_new
+name|gimp_prop_enum_combo_box_new
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -634,9 +634,9 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gimp_enum_option_menu_set_stock_prefix
+name|gimp_enum_combo_box_set_stock_prefix
 argument_list|(
-name|GTK_OPTION_MENU
+name|GIMP_ENUM_COMBO_BOX
 argument_list|(
 name|menu
 argument_list|)
@@ -1757,25 +1757,13 @@ name|GIMP_HISTOGRAM_VALUE
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_int_option_menu_set_sensitive
-argument_list|(
-name|GTK_OPTION_MENU
-argument_list|(
-name|editor
-operator|->
-name|menu
-argument_list|)
-argument_list|,
-operator|(
-name|GimpIntOptionMenuSensitivityCallback
-operator|)
-name|gimp_histogram_editor_item_sensitive
-argument_list|,
-name|editor
-operator|->
-name|drawable
-argument_list|)
-expr_stmt|;
+comment|/*  FIXME: regression!  */
+if|#
+directive|if
+literal|0
+block|gimp_int_option_menu_set_sensitive (GTK_OPTION_MENU (editor->menu),                                       (GimpIntOptionMenuSensitivityCallback) gimp_histogram_editor_item_sensitive,                                       editor->drawable);
+endif|#
+directive|endif
 block|}
 end_function
 

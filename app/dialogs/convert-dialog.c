@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpenummenu.h"
+file|"widgets/gimpenumwidgets.h"
 end_include
 
 begin_include
@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b26fd7b0108
+DECL|struct|__anon28c8d3440108
 block|{
 DECL|member|shell
 name|GtkWidget

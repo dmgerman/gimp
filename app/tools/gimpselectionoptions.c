@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29dba33c0103
+DECL|enum|__anon2c52371d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2017,6 +2017,10 @@ name|table
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|combo
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|menu
 decl_stmt|;
 name|GtkWidget
@@ -2202,9 +2206,9 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-name|menu
+name|combo
 operator|=
-name|gimp_prop_enum_option_menu_new
+name|gimp_prop_enum_combo_box_new
 argument_list|(
 name|config
 argument_list|,
@@ -2222,12 +2226,12 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-name|menu
+name|combo
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|menu
+name|combo
 argument_list|)
 expr_stmt|;
 name|table

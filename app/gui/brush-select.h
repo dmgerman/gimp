@@ -59,10 +59,10 @@ name|GtkAdjustment
 modifier|*
 name|opacity_data
 decl_stmt|;
-DECL|member|option_menu
+DECL|member|paint_mode_menu
 name|GtkWidget
 modifier|*
-name|option_menu
+name|paint_mode_menu
 decl_stmt|;
 block|}
 struct|;

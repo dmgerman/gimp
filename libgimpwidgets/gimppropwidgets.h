@@ -108,7 +108,7 @@ end_comment
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_prop_enum_option_menu_new
+name|gimp_prop_enum_combo_box_new
 parameter_list|(
 name|GObject
 modifier|*

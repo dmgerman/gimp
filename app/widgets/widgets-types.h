@@ -250,11 +250,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpEnumMenu
+DECL|typedef|GimpEnumComboBox
 typedef|typedef
 name|struct
-name|_GimpEnumMenu
-name|GimpEnumMenu
+name|_GimpEnumComboBox
+name|GimpEnumComboBox
 typedef|;
 end_typedef
 

@@ -3290,8 +3290,8 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|prefs_enum_option_menu_add (GObject * config,const gchar * property_name,gint minimum,gint maximum,const gchar * label,GtkTable * table,gint table_row)
-name|prefs_enum_option_menu_add
+DECL|function|prefs_enum_combo_box_add (GObject * config,const gchar * property_name,gint minimum,gint maximum,const gchar * label,GtkTable * table,gint table_row)
+name|prefs_enum_combo_box_add
 parameter_list|(
 name|GObject
 modifier|*
@@ -3323,11 +3323,11 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
-name|menu
+name|combo_box
 decl_stmt|;
-name|menu
+name|combo_box
 operator|=
-name|gimp_prop_enum_option_menu_new
+name|gimp_prop_enum_combo_box_new
 argument_list|(
 name|config
 argument_list|,
@@ -3340,7 +3340,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|menu
+name|combo_box
 condition|)
 name|gimp_table_attach_aligned
 argument_list|(
@@ -3356,7 +3356,7 @@ literal|1.0
 argument_list|,
 literal|0.5
 argument_list|,
-name|menu
+name|combo_box
 argument_list|,
 literal|1
 argument_list|,
@@ -3364,7 +3364,7 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 return|return
-name|menu
+name|combo_box
 return|;
 block|}
 end_function
@@ -3912,7 +3912,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|prefs_enum_option_menu_add
+name|prefs_enum_combo_box_add
 argument_list|(
 name|object
 argument_list|,
@@ -5298,7 +5298,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|prefs_enum_option_menu_add
+name|prefs_enum_combo_box_add
 argument_list|(
 name|object
 argument_list|,
@@ -5321,7 +5321,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|prefs_enum_option_menu_add
+name|prefs_enum_combo_box_add
 argument_list|(
 name|object
 argument_list|,
@@ -5344,7 +5344,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|prefs_enum_option_menu_add
+name|prefs_enum_combo_box_add
 argument_list|(
 name|object
 argument_list|,
@@ -6079,7 +6079,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|prefs_enum_option_menu_add
+name|prefs_enum_combo_box_add
 argument_list|(
 name|object
 argument_list|,
@@ -6373,7 +6373,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|prefs_enum_option_menu_add
+name|prefs_enum_combo_box_add
 argument_list|(
 name|object
 argument_list|,
@@ -6926,7 +6926,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|prefs_enum_option_menu_add
+name|prefs_enum_combo_box_add
 argument_list|(
 name|object
 argument_list|,
@@ -7139,7 +7139,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2bbe32ef0108
+DECL|struct|__anon2acf85f80108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -7649,7 +7649,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|prefs_enum_option_menu_add
+name|prefs_enum_combo_box_add
 argument_list|(
 name|object
 argument_list|,
@@ -7672,7 +7672,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|prefs_enum_option_menu_add
+name|prefs_enum_combo_box_add
 argument_list|(
 name|object
 argument_list|,
@@ -8473,7 +8473,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|prefs_enum_option_menu_add
+name|prefs_enum_combo_box_add
 argument_list|(
 name|object
 argument_list|,
@@ -8496,7 +8496,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|prefs_enum_option_menu_add
+name|prefs_enum_combo_box_add
 argument_list|(
 name|object
 argument_list|,
@@ -8838,7 +8838,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|prefs_enum_option_menu_add
+name|prefs_enum_combo_box_add
 argument_list|(
 name|object
 argument_list|,
@@ -9580,7 +9580,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bbe32ef0208
+DECL|struct|__anon2acf85f80208
 block|{
 DECL|member|label
 specifier|const
@@ -9739,7 +9739,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bbe32ef0308
+DECL|struct|__anon2acf85f80308
 block|{
 DECL|member|tree_label
 specifier|const

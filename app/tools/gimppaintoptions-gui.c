@@ -1892,7 +1892,7 @@ name|unitmenu
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|enummenu
+name|combo
 decl_stmt|;
 name|config
 operator|=
@@ -2149,9 +2149,9 @@ name|spinbutton
 argument_list|)
 expr_stmt|;
 comment|/*  the repeat type  */
-name|enummenu
+name|combo
 operator|=
-name|gimp_prop_enum_option_menu_new
+name|gimp_prop_enum_combo_box_new
 argument_list|(
 name|config
 argument_list|,
@@ -2182,7 +2182,7 @@ literal|1.0
 argument_list|,
 literal|0.5
 argument_list|,
-name|enummenu
+name|combo
 argument_list|,
 literal|2
 argument_list|,

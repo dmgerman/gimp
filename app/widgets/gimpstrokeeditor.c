@@ -42,19 +42,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppropwidgets.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdasheditor.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpenummenu.h"
+file|"gimpenumcombobox.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimppropwidgets.h"
 end_include
 
 begin_include
@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ae2ed60103
+DECL|enum|__anon286e373c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -189,7 +189,7 @@ modifier|*
 name|event
 parameter_list|,
 name|gpointer
-name|user_data
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -204,7 +204,7 @@ modifier|*
 name|widget
 parameter_list|,
 name|gpointer
-name|user_data
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1131,9 +1131,16 @@ argument_list|)
 expr_stmt|;
 name|box
 operator|=
-name|gimp_enum_option_menu_new
+name|gimp_enum_combo_box_new
 argument_list|(
 name|GIMP_TYPE_DASH_PRESET
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|box
+argument_list|,
+literal|"changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1155,7 +1162,7 @@ literal|"dash_info_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gtk_option_menu_set_history
+name|gimp_enum_combo_box_set_active
 argument_list|)
 argument_list|,
 name|box
@@ -1424,7 +1431,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_stroke_editor_paint_button (GtkWidget * widget,GdkEventExpose * event,gpointer user_data)
+DECL|function|gimp_stroke_editor_paint_button (GtkWidget * widget,GdkEventExpose * event,gpointer data)
 name|gimp_stroke_editor_paint_button
 parameter_list|(
 name|GtkWidget
@@ -1436,25 +1443,21 @@ modifier|*
 name|event
 parameter_list|,
 name|gpointer
-name|user_data
+name|data
 parameter_list|)
 block|{
 name|GtkAllocation
 modifier|*
 name|alloc
-decl_stmt|;
-name|gint
-name|w
-decl_stmt|;
-name|alloc
-operator|=
+init|=
 operator|&
 name|widget
 operator|->
 name|allocation
-expr_stmt|;
+decl_stmt|;
+name|gint
 name|w
-operator|=
+init|=
 name|MIN
 argument_list|(
 name|alloc
@@ -1469,7 +1472,7 @@ operator|*
 literal|2
 operator|/
 literal|3
-expr_stmt|;
+decl_stmt|;
 name|gtk_paint_arrow
 argument_list|(
 name|widget
@@ -1495,7 +1498,7 @@ name|widget
 argument_list|,
 name|NULL
 argument_list|,
-name|user_data
+name|data
 condition|?
 name|GTK_ARROW_LEFT
 else|:
@@ -1545,7 +1548,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_stroke_editor_dash_preset (GtkWidget * widget,gpointer user_data)
+DECL|function|gimp_stroke_editor_dash_preset (GtkWidget * widget,gpointer data)
 name|gimp_stroke_editor_dash_preset
 parameter_list|(
 name|GtkWidget
@@ -1553,32 +1556,30 @@ modifier|*
 name|widget
 parameter_list|,
 name|gpointer
-name|user_data
+name|data
 parameter_list|)
 block|{
 name|gint
 name|value
 decl_stmt|;
-name|value
-operator|=
-name|GPOINTER_TO_INT
+if|if
+condition|(
+name|gimp_enum_combo_box_get_active
 argument_list|(
-name|g_object_get_data
-argument_list|(
-name|G_OBJECT
+name|GIMP_ENUM_COMBO_BOX
 argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-literal|"gimp-item-data"
+operator|&
+name|value
 argument_list|)
-argument_list|)
-expr_stmt|;
+condition|)
 name|gimp_stroke_options_set_dash_preset
 argument_list|(
 name|GIMP_STROKE_OPTIONS
 argument_list|(
-name|user_data
+name|data
 argument_list|)
 argument_list|,
 name|value
