@@ -257,7 +257,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279898020103
+DECL|enum|__anon2be7e0c10103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -856,7 +856,16 @@ name|Undo
 modifier|*
 name|new
 decl_stmt|;
-comment|/* Does this undo dirty the image?  If so, we always want to mark    * image dirty, even if we can't actually push the undo. */
+name|g_return_val_if_fail
+argument_list|(
+name|type
+operator|>
+name|LAST_UNDO_GROUP
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+comment|/* Does this undo dirty the image?  If so, we always want to mark    * image dirty, even if we can't actually push the undo.    */
 if|if
 condition|(
 name|dirties_image
@@ -1965,6 +1974,30 @@ name|Undo
 modifier|*
 name|boundary_marker
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+comment|/* Bad idea to push NO_UNDO_GROUP as the group type, since that    * won't be recognized as the start of the group later.    */
+name|g_return_val_if_fail
+argument_list|(
+name|type
+operator|>
+name|FIRST_UNDO_GROUP
+operator|&&
+name|type
+operator|<=
+name|LAST_UNDO_GROUP
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -1975,16 +2008,6 @@ condition|)
 return|return
 name|FALSE
 return|;
-comment|/* Bad idea to push 0 as the group type, since that won't    * be recognized as the start of the group later.    */
-name|g_return_val_if_fail
-argument_list|(
-name|type
-operator|!=
-literal|0
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 name|gimage
 operator|->
 name|group_count
@@ -2137,6 +2160,16 @@ name|Undo
 modifier|*
 name|boundary_marker
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -12747,6 +12780,24 @@ block|,
 name|N_
 argument_list|(
 literal|"Paint"
+argument_list|)
+block|}
+block|,
+block|{
+name|PARASITE_ATTACH_UNDO_GROUP
+block|,
+name|N_
+argument_list|(
+literal|"Attach Parasite"
+argument_list|)
+block|}
+block|,
+block|{
+name|PARASITE_REMOVE_UNDO_GROUP
+block|,
+name|N_
+argument_list|(
+literal|"Remove Parasite"
 argument_list|)
 block|}
 block|,

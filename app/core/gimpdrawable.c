@@ -162,12 +162,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"undo_types.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"undo.h"
 end_include
 
@@ -179,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5c95e80103
+DECL|enum|__anon2bffcfc00103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -3933,7 +3927,7 @@ name|drawable
 operator|->
 name|gimage
 argument_list|,
-name|PARASITE_ATTACH_UNDO
+name|PARASITE_ATTACH_UNDO_GROUP
 argument_list|)
 expr_stmt|;
 name|undo_push_drawable_parasite
