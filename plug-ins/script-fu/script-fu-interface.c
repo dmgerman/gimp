@@ -88,6 +88,14 @@ value|100
 end_define
 
 begin_define
+DECL|macro|COLOR_SAMPLE_WIDTH
+define|#
+directive|define
+name|COLOR_SAMPLE_WIDTH
+value|60
+end_define
+
+begin_define
 DECL|macro|COLOR_SAMPLE_HEIGHT
 define|#
 directive|define
@@ -106,7 +114,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad536c10108
+DECL|struct|__anon2757e2550108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1017,20 +1025,17 @@ argument_list|(
 name|GTK_SIZE_GROUP_HORIZONTAL
 argument_list|)
 expr_stmt|;
+for|for
+control|(
 name|i
 operator|=
-operator|(
 name|script
 operator|->
 name|image_based
-operator|)
 condition|?
 literal|2
 else|:
 literal|0
-expr_stmt|;
-for|for
-control|(
 init|;
 name|i
 operator|<
@@ -1285,8 +1290,7 @@ argument_list|(
 literal|"Script-Fu Color Selection"
 argument_list|)
 argument_list|,
-operator|-
-literal|1
+name|COLOR_SAMPLE_WIDTH
 argument_list|,
 name|COLOR_SAMPLE_HEIGHT
 argument_list|,
@@ -4228,11 +4232,9 @@ name|dialog
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_standard_help_func
+name|NULL
 argument_list|,
-name|script
-operator|->
-name|pdb_name
+name|NULL
 argument_list|,
 name|GTK_STOCK_CLOSE
 argument_list|,
