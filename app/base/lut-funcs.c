@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -944,7 +944,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276744f10108
+DECL|struct|__anon2796d8860108
 block|{
 DECL|member|gamma
 name|gdouble
@@ -1630,7 +1630,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276744f10208
+DECL|struct|__anon2796d8860208
 block|{
 DECL|member|histogram
 name|GimpHistogram

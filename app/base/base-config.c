@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -112,7 +112,7 @@ name|INIT_MEMBER
 argument_list|(
 name|interpolation_type
 argument_list|,
-name|LINEAR_INTERPOLATION
+name|GIMP_LINEAR_INTERPOLATION
 argument_list|)
 block|,
 name|INIT_MEMBER

@@ -270,7 +270,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274ce8a20103
+DECL|enum|__anon2a2d717a0103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -6593,7 +6593,7 @@ block|{
 name|gint
 name|token
 decl_stmt|;
-name|InterpolationType
+name|GimpInterpolationType
 modifier|*
 name|typep
 decl_stmt|;
@@ -6607,7 +6607,7 @@ expr_stmt|;
 name|typep
 operator|=
 operator|(
-name|InterpolationType
+name|GimpInterpolationType
 operator|*
 operator|)
 name|val1p
@@ -6650,7 +6650,7 @@ condition|)
 operator|*
 name|typep
 operator|=
-name|NEAREST_NEIGHBOR_INTERPOLATION
+name|GIMP_NEAREST_NEIGHBOR_INTERPOLATION
 expr_stmt|;
 elseif|else
 if|if
@@ -6667,7 +6667,7 @@ condition|)
 operator|*
 name|typep
 operator|=
-name|LINEAR_INTERPOLATION
+name|GIMP_LINEAR_INTERPOLATION
 expr_stmt|;
 elseif|else
 if|if
@@ -6684,7 +6684,7 @@ condition|)
 operator|*
 name|typep
 operator|=
-name|CUBIC_INTERPOLATION
+name|GIMP_CUBIC_INTERPOLATION
 expr_stmt|;
 else|else
 return|return
@@ -14280,7 +14280,7 @@ name|gpointer
 name|val2p
 parameter_list|)
 block|{
-name|InterpolationType
+name|GimpInterpolationType
 name|type
 decl_stmt|;
 name|type
@@ -14288,7 +14288,7 @@ operator|=
 operator|*
 operator|(
 operator|(
-name|InterpolationType
+name|GimpInterpolationType
 operator|*
 operator|)
 name|val1p
@@ -14300,7 +14300,7 @@ name|type
 condition|)
 block|{
 case|case
-name|LINEAR_INTERPOLATION
+name|GIMP_LINEAR_INTERPOLATION
 case|:
 return|return
 name|g_strdup
@@ -14309,7 +14309,7 @@ literal|"linear"
 argument_list|)
 return|;
 case|case
-name|CUBIC_INTERPOLATION
+name|GIMP_CUBIC_INTERPOLATION
 case|:
 return|return
 name|g_strdup
@@ -14318,7 +14318,7 @@ literal|"cubic"
 argument_list|)
 return|;
 case|case
-name|NEAREST_NEIGHBOR_INTERPOLATION
+name|GIMP_NEAREST_NEIGHBOR_INTERPOLATION
 case|:
 return|return
 name|g_strdup

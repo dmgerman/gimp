@@ -20,9 +20,9 @@ begin_function_decl
 name|void
 name|gimp_config_serialize_properties
 parameter_list|(
-name|GimpConfig
+name|GObject
 modifier|*
-name|config
+name|object
 parameter_list|,
 name|FILE
 modifier|*

@@ -449,7 +449,7 @@ name|base_config
 operator|->
 name|interpolation_type
 operator|==
-name|NEAREST_NEIGHBOR_INTERPOLATION
+name|GIMP_NEAREST_NEIGHBOR_INTERPOLATION
 condition|)
 name|interpolation
 operator|=
@@ -931,7 +931,7 @@ name|base_config
 operator|->
 name|interpolation_type
 operator|==
-name|CUBIC_INTERPOLATION
+name|GIMP_CUBIC_INTERPOLATION
 condition|)
 block|{
 name|pixel_surround_init
@@ -1236,7 +1236,7 @@ name|base_config
 operator|->
 name|interpolation_type
 operator|==
-name|CUBIC_INTERPOLATION
+name|GIMP_CUBIC_INTERPOLATION
 condition|)
 block|{
 comment|/*  ttx& tty are the subpixel coordinates of the point in 		   *  the original selection's floating buffer. 		   *  We need the four integer pixel coords around them: 		   *  itx to itx + 3, ity to ity + 3                    */

@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1f44940103
+DECL|enum|__anon27a68c6b0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -12506,7 +12506,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|expand_line (gdouble * dest,gdouble * src,guint bytes,guint old_width,gint width,InterpolationType interp)
+DECL|function|expand_line (gdouble * dest,gdouble * src,guint bytes,guint old_width,gint width,GimpInterpolationType interp)
 name|expand_line
 parameter_list|(
 name|gdouble
@@ -12526,7 +12526,7 @@ parameter_list|,
 name|gint
 name|width
 parameter_list|,
-name|InterpolationType
+name|GimpInterpolationType
 name|interp
 parameter_list|)
 block|{
@@ -12564,7 +12564,7 @@ name|interp
 condition|)
 block|{
 case|case
-name|CUBIC_INTERPOLATION
+name|GIMP_CUBIC_INTERPOLATION
 case|:
 for|for
 control|(
@@ -12684,7 +12684,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|LINEAR_INTERPOLATION
+name|GIMP_LINEAR_INTERPOLATION
 case|:
 for|for
 control|(
@@ -12794,14 +12794,14 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|NEAREST_NEIGHBOR_INTERPOLATION
+name|GIMP_NEAREST_NEIGHBOR_INTERPOLATION
 case|:
 name|g_error
 argument_list|(
-literal|"sampling_type can't be "
-literal|"NEAREST_NEIGHBOR_INTERPOLATION"
+literal|"sampling_type can't be GIMP_NEAREST_NEIGHBOR_INTERPOLATION"
 argument_list|)
 expr_stmt|;
+break|break;
 block|}
 block|}
 end_function
@@ -12809,7 +12809,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|shrink_line (gdouble * dest,gdouble * src,guint bytes,gint old_width,gint width,InterpolationType interp)
+DECL|function|shrink_line (gdouble * dest,gdouble * src,guint bytes,gint old_width,gint width,GimpInterpolationType interp)
 name|shrink_line
 parameter_list|(
 name|gdouble
@@ -12829,7 +12829,7 @@ parameter_list|,
 name|gint
 name|width
 parameter_list|,
-name|InterpolationType
+name|GimpInterpolationType
 name|interp
 parameter_list|)
 block|{
@@ -13340,7 +13340,7 @@ name|base_config
 operator|->
 name|interpolation_type
 operator|==
-name|NEAREST_NEIGHBOR_INTERPOLATION
+name|GIMP_NEAREST_NEIGHBOR_INTERPOLATION
 condition|)
 block|{
 name|scale_region_no_resample
@@ -13866,7 +13866,7 @@ name|interpolation_type
 condition|)
 block|{
 case|case
-name|CUBIC_INTERPOLATION
+name|GIMP_CUBIC_INTERPOLATION
 case|:
 block|{
 name|double
@@ -14016,7 +14016,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|LINEAR_INTERPOLATION
+name|GIMP_LINEAR_INTERPOLATION
 case|:
 block|{
 name|double
@@ -14084,14 +14084,15 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|NEAREST_NEIGHBOR_INTERPOLATION
+name|GIMP_NEAREST_NEIGHBOR_INTERPOLATION
 case|:
 name|g_error
 argument_list|(
 literal|"sampling_type can't be "
-literal|"NEAREST_NEIGHBOR_INTERPOLATION"
+literal|"GIMP_NEAREST_NEIGHBOR_INTERPOLATION"
 argument_list|)
 expr_stmt|;
+break|break;
 block|}
 block|}
 else|else

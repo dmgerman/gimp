@@ -3576,7 +3576,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"dodgeburn_mode"
 block|,
-literal|"The mode: { SHADOWS (0), MIDTONES (1), HIGHLIGHTS (2) }"
+literal|"The mode: { GIMP_SHADOWS (0), GIMP_MIDTONES (1), GIMP_HIGHLIGHTS (2) }"
 block|}
 block|,
 block|{

@@ -70,7 +70,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<glib-object.h>
 end_include
 
 begin_ifdef

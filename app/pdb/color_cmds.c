@@ -3839,7 +3839,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"transfer_mode"
 block|,
-literal|"Transfer mode: { SHADOWS (0), MIDTONES (1), HIGHLIGHTS (2) }"
+literal|"Transfer mode: { GIMP_SHADOWS (0), GIMP_MIDTONES (1), GIMP_HIGHLIGHTS (2) }"
 block|}
 block|,
 block|{
