@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -131,7 +137,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|enum|__anon287796d60103
+DECL|enum|__anon28a0d3a60103
 typedef|typedef
 enum|enum
 block|{
@@ -262,7 +268,7 @@ comment|/* one of these objects is kept per-module */
 end_comment
 
 begin_typedef
-DECL|struct|__anon287796d60208
+DECL|struct|__anon28a0d3a60208
 typedef|typedef
 struct|struct
 block|{
@@ -379,7 +385,7 @@ value|7
 end_define
 
 begin_typedef
-DECL|struct|__anon287796d60308
+DECL|struct|__anon28a0d3a60308
 typedef|typedef
 struct|struct
 block|{
@@ -1696,7 +1702,7 @@ comment|/* module_info object glue */
 end_comment
 
 begin_typedef
-DECL|struct|__anon287796d60408
+DECL|struct|__anon28a0d3a60408
 typedef|typedef
 struct|struct
 block|{
@@ -1711,7 +1717,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon287796d60503
+DECL|enum|__anon28a0d3a60503
 enum|enum
 block|{
 DECL|enumerator|MODIFIED
@@ -4573,7 +4579,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon287796d60608
+DECL|struct|__anon28a0d3a60608
 typedef|typedef
 struct|struct
 block|{

@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -116,6 +122,28 @@ include|#
 directive|include
 file|"libgimp/gimpintl.h"
 end_include
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|HAVE_RINT
+end_ifndef
+
+begin_define
+DECL|macro|rint (x)
+define|#
+directive|define
+name|rint
+parameter_list|(
+name|x
+parameter_list|)
+value|floor (x + 0.5)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_comment
 comment|/* Bezier extensions made by Raphael FRANCOIS (fraph@ibm.net)    BEZIER_EXTENDS VER 1.0     - work as the cut/copy/paste named functions.   - allow to add/remove/replace bezier curves   - allow to modify the control/anchor points even if the selection is made   - allow to add/remove control/anchor points on a curve   - allow to update a previous saved curve    - cannot operate on open or multiple curves simultaneously */
@@ -300,7 +328,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon277116600108
+DECL|struct|__anon29d979e80108
 typedef|typedef
 struct|struct
 block|{
@@ -337,7 +365,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon277116600208
+DECL|struct|__anon29d979e80208
 typedef|typedef
 struct|struct
 block|{
@@ -392,7 +420,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon277116600308
+DECL|struct|__anon29d979e80308
 typedef|typedef
 struct|struct
 block|{

@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -279,6 +285,28 @@ directive|include
 file|"pixmaps/locked.xpm"
 end_include
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|HAVE_RINT
+end_ifndef
+
+begin_define
+DECL|macro|rint (x)
+define|#
+directive|define
+name|rint
+parameter_list|(
+name|x
+parameter_list|)
+value|floor (x + 0.5)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_define
 DECL|macro|PREVIEW_EVENT_MASK
 define|#
@@ -304,7 +332,7 @@ value|150
 end_define
 
 begin_typedef
-DECL|struct|__anon2c60f2bd0108
+DECL|struct|__anon2bbe97ae0108
 typedef|typedef
 struct|struct
 block|{
@@ -428,7 +456,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2c60f2bd0208
+DECL|struct|__anon2bbe97ae0208
 typedef|typedef
 struct|struct
 block|{
@@ -457,7 +485,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c60f2bd0308
+DECL|struct|__anon2bbe97ae0308
 typedef|typedef
 struct|struct
 block|{
@@ -476,7 +504,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c60f2bd0408
+DECL|struct|__anon2bbe97ae0408
 typedef|typedef
 struct|struct
 block|{

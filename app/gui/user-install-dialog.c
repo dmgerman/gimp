@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -468,7 +474,7 @@ name|GdkFont
 modifier|*
 name|font
 decl_stmt|;
-DECL|struct|__anon278b8c970108
+DECL|struct|__anon2c5d107a0108
 specifier|static
 specifier|const
 struct|struct

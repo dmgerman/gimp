@@ -4113,7 +4113,7 @@ name|plug_in
 operator|->
 name|pid
 operator|=
-name|spawnv
+name|_spawnv
 argument_list|(
 name|_P_NOWAIT
 argument_list|,

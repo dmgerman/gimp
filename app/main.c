@@ -1601,6 +1601,41 @@ begin_comment
 comment|/* In case we build this as a windowed application */
 end_comment
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_define
+DECL|macro|_stdcall
+define|#
+directive|define
+name|_stdcall
+value|__attribute__((stdcall))
+end_define
+
+begin_define
+DECL|macro|__argc
+define|#
+directive|define
+name|__argc
+value|_argc
+end_define
+
+begin_define
+DECL|macro|__argv
+define|#
+directive|define
+name|__argv
+value|_argv
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_function
 name|int
 name|_stdcall
@@ -1975,7 +2010,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b055940108
+DECL|struct|__anon2bf2b94b0108
 block|{
 DECL|member|test_gint32
 name|gint32
@@ -2397,11 +2432,16 @@ index|]
 argument_list|)
 expr_stmt|;
 comment|/*  really should free the memory... */
+ifndef|#
+directive|ifndef
+name|NATIVE_WIN32
 name|g_message
 argument_list|(
 literal|"Passed serialization test\n"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 block|}
 end_function
 
