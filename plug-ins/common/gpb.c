@@ -56,7 +56,7 @@ comment|/* Declare local data types  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e659880108
+DECL|struct|__anon2b30c39c0108
 typedef|typedef
 struct|struct
 block|{
@@ -1884,10 +1884,25 @@ operator|.
 name|d_int32
 argument_list|)
 condition|)
+block|{
+name|gimp_set_data
+argument_list|(
+literal|"file_gpb_save"
+argument_list|,
+operator|&
+name|info
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|info
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|status
 operator|=
 name|STATUS_SUCCESS
 expr_stmt|;
+block|}
 else|else
 name|status
 operator|=

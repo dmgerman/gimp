@@ -16,7 +16,7 @@ DECL|macro|PSP_DEBUG
 define|#
 directive|define
 name|PSP_DEBUG
-value|3
+value|0
 end_define
 
 begin_comment
@@ -119,7 +119,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b1fffbe0103
+DECL|enum|__anon2a15be710103
 typedef|typedef
 enum|enum
 block|{
@@ -183,7 +183,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b1fffbe0203
+DECL|enum|__anon2a15be710203
 typedef|typedef
 enum|enum
 block|{
@@ -223,7 +223,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b1fffbe0303
+DECL|enum|__anon2a15be710303
 typedef|typedef
 enum|enum
 block|{
@@ -255,7 +255,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b1fffbe0403
+DECL|enum|__anon2a15be710403
 typedef|typedef
 enum|enum
 block|{
@@ -283,7 +283,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b1fffbe0503
+DECL|enum|__anon2a15be710503
 typedef|typedef
 enum|enum
 block|{
@@ -311,7 +311,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b1fffbe0603
+DECL|enum|__anon2a15be710603
 typedef|typedef
 enum|enum
 block|{
@@ -333,7 +333,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b1fffbe0703
+DECL|enum|__anon2a15be710703
 typedef|typedef
 enum|enum
 block|{
@@ -369,7 +369,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b1fffbe0803
+DECL|enum|__anon2a15be710803
 typedef|typedef
 enum|enum
 block|{
@@ -389,7 +389,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b1fffbe0903
+DECL|enum|__anon2a15be710903
 typedef|typedef
 enum|enum
 block|{
@@ -437,7 +437,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b1fffbe0a03
+DECL|enum|__anon2a15be710a03
 typedef|typedef
 enum|enum
 block|{
@@ -461,7 +461,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b1fffbe0b03
+DECL|enum|__anon2a15be710b03
 typedef|typedef
 enum|enum
 block|{
@@ -522,7 +522,7 @@ comment|/* The following have been reverse engineered.  * If a new version of th
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b1fffbe0c03
+DECL|enum|__anon2a15be710c03
 typedef|typedef
 enum|enum
 block|{
@@ -595,7 +595,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1fffbe0d08
+DECL|struct|__anon2a15be710d08
 block|{
 DECL|member|width
 DECL|member|height
@@ -755,7 +755,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1fffbe0e08
+DECL|struct|__anon2a15be710e08
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -770,7 +770,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1fffbe0f08
+DECL|struct|__anon2a15be710f08
 block|{
 DECL|member|run
 name|gint
