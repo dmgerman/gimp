@@ -609,6 +609,11 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
+name|gimp_viewable_invalidate_preview
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 return|return
 name|gimage
 return|;
