@@ -82,7 +82,13 @@ parameter_list|,
 name|gint
 name|blue
 parameter_list|,
-name|GimpColorSelector_Callback
+name|gint
+name|alpha
+parameter_list|,
+name|gboolean
+name|show_alpha
+parameter_list|,
+name|GimpColorSelectorCallback
 name|callback
 parameter_list|,
 name|gpointer
@@ -122,6 +128,9 @@ name|green
 parameter_list|,
 name|gint
 name|blue
+parameter_list|,
+name|gint
+name|alpha
 parameter_list|,
 name|gint
 name|set_current
@@ -335,9 +344,9 @@ value|GDK_EXPOSURE_MASK | \                        GDK_BUTTON_PRESS_MASK | \    
 end_define
 
 begin_typedef
-DECL|enum|__anon2911cf5c0103
 typedef|typedef
 enum|enum
+DECL|enum|__anon29d74f320103
 block|{
 DECL|enumerator|HUE
 name|HUE
@@ -359,23 +368,8 @@ block|,
 DECL|enumerator|BLUE
 name|BLUE
 block|,
-DECL|enumerator|HUE_SATURATION
-name|HUE_SATURATION
-block|,
-DECL|enumerator|HUE_VALUE
-name|HUE_VALUE
-block|,
-DECL|enumerator|SATURATION_VALUE
-name|SATURATION_VALUE
-block|,
-DECL|enumerator|RED_GREEN
-name|RED_GREEN
-block|,
-DECL|enumerator|RED_BLUE
-name|RED_BLUE
-block|,
-DECL|enumerator|GREEN_BLUE
-name|GREEN_BLUE
+DECL|enumerator|ALPHA
+name|ALPHA
 DECL|typedef|ColorSelectFillType
 block|}
 name|ColorSelectFillType
@@ -391,7 +385,7 @@ DECL|member|values
 name|gint
 name|values
 index|[
-literal|6
+literal|7
 index|]
 decl_stmt|;
 DECL|member|oldsat
@@ -417,7 +411,7 @@ modifier|*
 name|color_preview
 decl_stmt|;
 DECL|member|callback
-name|GimpColorSelector_Callback
+name|GimpColorSelectorCallback
 name|callback
 decl_stmt|;
 DECL|member|data
@@ -595,20 +589,14 @@ end_function
 begin_function
 name|G_MODULE_EXPORT
 name|void
-DECL|function|module_unload (gpointer shutdown_data,void (* completed_cb)(gpointer),gpointer completed_data)
+DECL|function|module_unload (gpointer shutdown_data,GimpColorSelectorFinishedCB completed_cb,gpointer completed_data)
 name|module_unload
 parameter_list|(
 name|gpointer
 name|shutdown_data
 parameter_list|,
-name|void
-function_decl|(
-modifier|*
+name|GimpColorSelectorFinishedCB
 name|completed_cb
-function_decl|)
-parameter_list|(
-name|gpointer
-parameter_list|)
 parameter_list|,
 name|gpointer
 name|completed_data
@@ -654,7 +642,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|colorsel_triangle_new (gint red,gint green,gint blue,GimpColorSelector_Callback callback,gpointer callback_data,gpointer * selector_data)
+DECL|function|colorsel_triangle_new (gint red,gint green,gint blue,gint alpha,gboolean show_alpha,GimpColorSelectorCallback callback,gpointer callback_data,gpointer * selector_data)
 name|colorsel_triangle_new
 parameter_list|(
 name|gint
@@ -666,7 +654,13 @@ parameter_list|,
 name|gint
 name|blue
 parameter_list|,
-name|GimpColorSelector_Callback
+name|gint
+name|alpha
+parameter_list|,
+name|gboolean
+name|show_alpha
+parameter_list|,
+name|GimpColorSelectorCallback
 name|callback
 parameter_list|,
 name|gpointer
@@ -704,12 +698,11 @@ name|vbox
 decl_stmt|;
 name|coldata
 operator|=
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|ColorSelect
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|coldata
@@ -738,6 +731,15 @@ name|BLUE
 index|]
 operator|=
 name|blue
+expr_stmt|;
+name|coldata
+operator|->
+name|values
+index|[
+name|ALPHA
+index|]
+operator|=
+name|alpha
 expr_stmt|;
 name|color_select_update_hsv_values
 argument_list|(
@@ -965,7 +967,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|colorsel_triangle_setcolor (gpointer selector_data,gint red,gint green,gint blue,gint set_current)
+DECL|function|colorsel_triangle_setcolor (gpointer selector_data,gint red,gint green,gint blue,gint alpha,gint set_current)
 name|colorsel_triangle_setcolor
 parameter_list|(
 name|gpointer
@@ -979,6 +981,9 @@ name|green
 parameter_list|,
 name|gint
 name|blue
+parameter_list|,
+name|gint
+name|alpha
 parameter_list|,
 name|gint
 name|set_current
@@ -1018,6 +1023,15 @@ name|BLUE
 index|]
 operator|=
 name|blue
+expr_stmt|;
+name|coldata
+operator|->
+name|values
+index|[
+name|ALPHA
+index|]
+operator|=
+name|alpha
 expr_stmt|;
 name|color_select_update_hsv_values
 argument_list|(
@@ -1188,7 +1202,7 @@ decl_stmt|;
 name|hue
 operator|=
 operator|(
-name|double
+name|gdouble
 operator|)
 name|csp
 operator|->
@@ -1202,7 +1216,7 @@ expr_stmt|;
 name|sat
 operator|=
 operator|(
-name|double
+name|gdouble
 operator|)
 name|csp
 operator|->
@@ -1216,7 +1230,7 @@ expr_stmt|;
 name|val
 operator|=
 operator|(
-name|double
+name|gdouble
 operator|)
 name|csp
 operator|->
@@ -3394,6 +3408,13 @@ name|values
 index|[
 name|BLUE
 index|]
+argument_list|,
+name|coldata
+operator|->
+name|values
+index|[
+name|ALPHA
+index|]
 argument_list|)
 expr_stmt|;
 return|return
@@ -4232,6 +4253,13 @@ name|values
 index|[
 name|BLUE
 index|]
+argument_list|,
+name|coldata
+operator|->
+name|values
+index|[
+name|ALPHA
+index|]
 argument_list|)
 expr_stmt|;
 return|return
@@ -4931,6 +4959,20 @@ index|]
 operator|/
 literal|256
 expr_stmt|;
+name|coldata
+operator|->
+name|values
+index|[
+name|ALPHA
+index|]
+operator|=
+name|vals
+index|[
+literal|3
+index|]
+operator|/
+literal|256
+expr_stmt|;
 name|color_select_update_hsv_values
 argument_list|(
 name|coldata
@@ -5039,7 +5081,14 @@ index|[
 literal|3
 index|]
 operator|=
-literal|0xffff
+name|coldata
+operator|->
+name|values
+index|[
+name|ALPHA
+index|]
+operator|*
+literal|256
 expr_stmt|;
 name|gtk_selection_data_set
 argument_list|(

@@ -263,6 +263,8 @@ name|gint
 parameter_list|,
 name|gint
 parameter_list|,
+name|gint
+parameter_list|,
 name|ColorNotebookState
 parameter_list|,
 name|gpointer
@@ -499,7 +501,7 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|palette_drag_color (GtkWidget * widget,guchar * r,guchar * g,guchar * b,gpointer data)
+DECL|function|palette_drag_color (GtkWidget * widget,guchar * r,guchar * g,guchar * b,guchar * a,gpointer data)
 name|palette_drag_color
 parameter_list|(
 name|GtkWidget
@@ -517,6 +519,10 @@ parameter_list|,
 name|guchar
 modifier|*
 name|b
+parameter_list|,
+name|guchar
+modifier|*
+name|a
 parameter_list|,
 name|gpointer
 name|data
@@ -591,13 +597,18 @@ operator|+
 literal|2
 index|]
 expr_stmt|;
+operator|*
+name|a
+operator|=
+literal|255
+expr_stmt|;
 block|}
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|palette_drop_color (GtkWidget * widget,guchar r,guchar g,guchar b,gpointer data)
+DECL|function|palette_drop_color (GtkWidget * widget,guchar r,guchar g,guchar b,guchar a,gpointer data)
 name|palette_drop_color
 parameter_list|(
 name|GtkWidget
@@ -612,6 +623,9 @@ name|g
 parameter_list|,
 name|guchar
 name|b
+parameter_list|,
+name|guchar
+name|a
 parameter_list|,
 name|gpointer
 name|data
@@ -4503,9 +4517,13 @@ name|g
 argument_list|,
 name|b
 argument_list|,
+literal|255
+argument_list|,
 name|ipal_select_callback
 argument_list|,
 name|ipal
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|)
@@ -4532,7 +4550,9 @@ name|g
 argument_list|,
 name|b
 argument_list|,
-literal|1
+literal|255
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -4578,7 +4598,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ipal_select_callback (gint r,gint g,gint b,ColorNotebookState state,gpointer data)
+DECL|function|ipal_select_callback (gint r,gint g,gint b,gint a,ColorNotebookState state,gpointer data)
 name|ipal_select_callback
 parameter_list|(
 name|gint
@@ -4589,6 +4609,9 @@ name|g
 parameter_list|,
 name|gint
 name|b
+parameter_list|,
+name|gint
+name|a
 parameter_list|,
 name|ColorNotebookState
 name|state
@@ -5058,7 +5081,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b63fa9a0108
+DECL|struct|__anon28e442360108
 block|{
 DECL|member|def
 name|GimpImage

@@ -170,7 +170,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4b112c0103
+DECL|enum|__anon2a0d0c910103
 block|{
 DECL|enumerator|COLOR_SELECT_OK
 name|COLOR_SELECT_OK
@@ -189,7 +189,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4b112c0203
+DECL|enum|__anon2a0d0c910203
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -210,6 +210,9 @@ name|COLOR_SELECT_GREEN
 block|,
 DECL|enumerator|COLOR_SELECT_BLUE
 name|COLOR_SELECT_BLUE
+block|,
+DECL|enumerator|COLOR_SELECT_ALPHA
+name|COLOR_SELECT_ALPHA
 block|,
 DECL|enumerator|COLOR_SELECT_HUE_SATURATION
 name|COLOR_SELECT_HUE_SATURATION
@@ -237,7 +240,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4b112c0303
+DECL|enum|__anon2a0d0c910303
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -308,24 +311,21 @@ name|gint
 parameter_list|,
 name|gint
 parameter_list|,
+name|gint
+parameter_list|,
 name|ColorSelectState
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 parameter_list|)
 function_decl|;
 end_typedef
 
 begin_typedef
 DECL|typedef|ColorSelect
-DECL|typedef|ColorSelectP
 typedef|typedef
 name|struct
 name|_ColorSelect
 name|ColorSelect
-typedef|,
-modifier|*
-name|ColorSelectP
 typedef|;
 end_typedef
 
@@ -386,7 +386,7 @@ DECL|member|values
 name|gint
 name|values
 index|[
-literal|6
+literal|7
 index|]
 decl_stmt|;
 DECL|member|z_color_fill
@@ -401,7 +401,7 @@ DECL|member|orig_values
 name|gint
 name|orig_values
 index|[
-literal|3
+literal|4
 index|]
 decl_stmt|;
 DECL|member|wants_updates
@@ -418,8 +418,7 @@ name|ColorSelectCallback
 name|callback
 decl_stmt|;
 DECL|member|client_data
-name|void
-modifier|*
+name|gpointer
 name|client_data
 decl_stmt|;
 block|}
@@ -499,6 +498,8 @@ parameter_list|,
 name|gint
 parameter_list|,
 name|gint
+parameter_list|,
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -509,6 +510,9 @@ name|void
 name|color_select_drag_new_color
 parameter_list|(
 name|GtkWidget
+modifier|*
+parameter_list|,
+name|guchar
 modifier|*
 parameter_list|,
 name|guchar
@@ -539,6 +543,8 @@ name|guchar
 parameter_list|,
 name|guchar
 parameter_list|,
+name|guchar
+parameter_list|,
 name|gpointer
 parameter_list|)
 function_decl|;
@@ -550,6 +556,9 @@ name|void
 name|color_select_drag_old_color
 parameter_list|(
 name|GtkWidget
+modifier|*
+parameter_list|,
+name|guchar
 modifier|*
 parameter_list|,
 name|guchar
@@ -972,13 +981,15 @@ name|gint
 parameter_list|,
 name|gint
 parameter_list|,
-name|GimpColorSelector_Callback
+name|gint
 parameter_list|,
-name|void
-modifier|*
+name|gboolean
 parameter_list|,
-name|void
-modifier|*
+name|GimpColorSelectorCallback
+parameter_list|,
+name|gpointer
+parameter_list|,
+name|gpointer
 modifier|*
 parameter_list|)
 function_decl|;
@@ -989,8 +1000,7 @@ specifier|static
 name|void
 name|color_select_notebook_free
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1000,8 +1010,9 @@ specifier|static
 name|void
 name|color_select_notebook_setcolor
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
+parameter_list|,
+name|gint
 parameter_list|,
 name|gint
 parameter_list|,
@@ -1025,10 +1036,11 @@ name|gint
 parameter_list|,
 name|gint
 parameter_list|,
+name|gint
+parameter_list|,
 name|ColorSelectState
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1057,6 +1069,9 @@ name|color_select_update_green
 block|,
 name|color_select_update_blue
 block|,
+name|NULL
+block|,
+comment|/* alpha */
 name|color_select_update_hue_saturation
 block|,
 name|color_select_update_hue_value
@@ -1152,7 +1167,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|color_select_widget_new (ColorSelect * csp,gint r,gint g,gint b)
+DECL|function|color_select_widget_new (ColorSelect * csp,gint r,gint g,gint b,gint a)
 name|color_select_widget_new
 parameter_list|(
 name|ColorSelect
@@ -1167,8 +1182,64 @@ name|g
 parameter_list|,
 name|gint
 name|b
+parameter_list|,
+name|gint
+name|a
 parameter_list|)
 block|{
+name|GtkWidget
+modifier|*
+name|main_vbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|main_hbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|xy_frame
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|z_frame
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|colors_frame
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|colors_hbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|right_vbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|table
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|hex_hbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|label
+decl_stmt|;
+name|GSList
+modifier|*
+name|group
+decl_stmt|;
+name|gchar
+name|buffer
+index|[
+literal|16
+index|]
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
 specifier|static
 name|gchar
 modifier|*
@@ -1290,59 +1361,6 @@ literal|16
 block|,
 literal|16
 block|}
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|main_vbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|main_hbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|xy_frame
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|z_frame
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|colors_frame
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|colors_hbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|right_vbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|table
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|hex_hbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|label
-decl_stmt|;
-name|GSList
-modifier|*
-name|group
-decl_stmt|;
-name|gchar
-name|buffer
-index|[
-literal|16
-index|]
-decl_stmt|;
-name|gint
-name|i
 decl_stmt|;
 name|main_vbox
 operator|=
@@ -1497,10 +1515,10 @@ argument_list|)
 argument_list|,
 literal|"expose_event"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|color_select_xy_expose
+argument_list|)
 argument_list|,
 name|csp
 argument_list|)
@@ -1516,10 +1534,10 @@ argument_list|)
 argument_list|,
 literal|"event"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|color_select_xy_events
+argument_list|)
 argument_list|,
 name|csp
 argument_list|)
@@ -1668,10 +1686,10 @@ argument_list|)
 argument_list|,
 literal|"expose_event"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|color_select_z_expose
+argument_list|)
 argument_list|,
 name|csp
 argument_list|)
@@ -1687,10 +1705,10 @@ argument_list|)
 argument_list|,
 literal|"event"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|color_select_z_events
+argument_list|)
 argument_list|,
 name|csp
 argument_list|)
@@ -1860,10 +1878,10 @@ argument_list|)
 argument_list|,
 literal|"event"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|color_select_color_events
+argument_list|)
 argument_list|,
 name|csp
 argument_list|)
@@ -2008,10 +2026,10 @@ argument_list|)
 argument_list|,
 literal|"event"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|color_select_color_events
+argument_list|)
 argument_list|,
 name|csp
 argument_list|)
@@ -2267,10 +2285,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|color_select_toggle_update
+argument_list|)
 argument_list|,
 name|csp
 argument_list|)
@@ -2363,10 +2381,10 @@ argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|color_select_scale_update
+argument_list|)
 argument_list|,
 name|csp
 argument_list|)
@@ -2483,10 +2501,10 @@ argument_list|)
 argument_list|,
 literal|"focus_out_event"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|color_select_hex_entry_events
+argument_list|)
 argument_list|,
 name|csp
 argument_list|)
@@ -2502,10 +2520,10 @@ argument_list|)
 argument_list|,
 literal|"key_press_event"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|color_select_hex_entry_events
+argument_list|)
 argument_list|,
 name|csp
 argument_list|)
@@ -2557,7 +2575,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_select_drag_new_color (GtkWidget * widget,guchar * r,guchar * g,guchar * b,gpointer data)
+DECL|function|color_select_drag_new_color (GtkWidget * widget,guchar * r,guchar * g,guchar * b,guchar * a,gpointer data)
 name|color_select_drag_new_color
 parameter_list|(
 name|GtkWidget
@@ -2576,6 +2594,10 @@ name|guchar
 modifier|*
 name|b
 parameter_list|,
+name|guchar
+modifier|*
+name|a
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -2631,13 +2653,26 @@ index|[
 name|COLOR_SELECT_BLUE
 index|]
 expr_stmt|;
+operator|*
+name|a
+operator|=
+operator|(
+name|guchar
+operator|)
+name|csp
+operator|->
+name|values
+index|[
+name|COLOR_SELECT_ALPHA
+index|]
+expr_stmt|;
 block|}
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|color_select_drop_new_color (GtkWidget * widget,guchar r,guchar g,guchar b,gpointer data)
+DECL|function|color_select_drop_new_color (GtkWidget * widget,guchar r,guchar g,guchar b,guchar a,gpointer data)
 name|color_select_drop_new_color
 parameter_list|(
 name|GtkWidget
@@ -2653,6 +2688,9 @@ parameter_list|,
 name|guchar
 name|b
 parameter_list|,
+name|guchar
+name|a
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -2704,6 +2742,18 @@ operator|(
 name|gint
 operator|)
 name|b
+expr_stmt|;
+name|csp
+operator|->
+name|values
+index|[
+name|COLOR_SELECT_ALPHA
+index|]
+operator|=
+operator|(
+name|gint
+operator|)
+name|a
 expr_stmt|;
 name|color_select_update_hsv_values
 argument_list|(
@@ -2750,7 +2800,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_select_drag_old_color (GtkWidget * widget,guchar * r,guchar * g,guchar * b,gpointer data)
+DECL|function|color_select_drag_old_color (GtkWidget * widget,guchar * r,guchar * g,guchar * b,guchar * a,gpointer data)
 name|color_select_drag_old_color
 parameter_list|(
 name|GtkWidget
@@ -2769,6 +2819,10 @@ name|guchar
 modifier|*
 name|b
 parameter_list|,
+name|guchar
+modifier|*
+name|a
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -2824,13 +2878,26 @@ index|[
 literal|2
 index|]
 expr_stmt|;
+operator|*
+name|a
+operator|=
+operator|(
+name|guchar
+operator|)
+name|csp
+operator|->
+name|orig_values
+index|[
+literal|3
+index|]
+expr_stmt|;
 block|}
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|color_select_set_color (ColorSelect * csp,gint r,gint g,gint b,gboolean set_current)
+DECL|function|color_select_set_color (ColorSelect * csp,gint r,gint g,gint b,gint a,gboolean set_current)
 name|color_select_set_color
 parameter_list|(
 name|ColorSelect
@@ -2846,15 +2913,19 @@ parameter_list|,
 name|gint
 name|b
 parameter_list|,
+name|gint
+name|a
+parameter_list|,
 name|gboolean
 name|set_current
 parameter_list|)
 block|{
 if|if
 condition|(
+operator|!
 name|csp
 condition|)
-block|{
+return|return;
 name|csp
 operator|->
 name|orig_values
@@ -2881,6 +2952,15 @@ literal|2
 index|]
 operator|=
 name|b
+expr_stmt|;
+name|csp
+operator|->
+name|orig_values
+index|[
+literal|3
+index|]
+operator|=
+name|a
 expr_stmt|;
 name|color_select_update_colors
 argument_list|(
@@ -2921,6 +3001,15 @@ index|]
 operator|=
 name|b
 expr_stmt|;
+name|csp
+operator|->
+name|values
+index|[
+name|COLOR_SELECT_ALPHA
+index|]
+operator|=
+name|a
+expr_stmt|;
 name|color_select_update_hsv_values
 argument_list|(
 name|csp
@@ -2960,7 +3049,6 @@ argument_list|,
 name|UPDATE_XY_COLOR
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 end_function
@@ -2981,9 +3069,10 @@ parameter_list|)
 block|{
 if|if
 condition|(
+operator|!
 name|csp
 condition|)
-block|{
+return|return;
 if|if
 condition|(
 name|update
@@ -3129,7 +3218,6 @@ name|csp
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 end_function
 
 begin_function
@@ -3184,6 +3272,13 @@ index|[
 name|COLOR_SELECT_BLUE
 index|]
 argument_list|,
+name|csp
+operator|->
+name|values
+index|[
+name|COLOR_SELECT_ALPHA
+index|]
+argument_list|,
 name|COLOR_SELECT_UPDATE
 argument_list|,
 name|csp
@@ -3208,9 +3303,10 @@ parameter_list|)
 block|{
 if|if
 condition|(
+operator|!
 name|csp
 condition|)
-block|{
+return|return;
 switch|switch
 condition|(
 name|csp
@@ -3570,7 +3666,6 @@ expr_stmt|;
 break|break;
 block|}
 block|}
-block|}
 end_function
 
 begin_function
@@ -3602,9 +3697,10 @@ name|t
 decl_stmt|;
 if|if
 condition|(
+operator|!
 name|csp
 condition|)
-block|{
+return|return;
 name|h
 operator|=
 name|csp
@@ -3977,7 +4073,6 @@ break|break;
 block|}
 block|}
 block|}
-block|}
 end_function
 
 begin_function
@@ -4015,9 +4110,10 @@ name|delta
 decl_stmt|;
 if|if
 condition|(
+operator|!
 name|csp
 condition|)
-block|{
+return|return;
 name|r
 operator|=
 name|csp
@@ -4150,10 +4246,12 @@ name|s
 operator|==
 literal|0
 condition|)
+block|{
 name|h
 operator|=
 literal|0
 expr_stmt|;
+block|}
 else|else
 block|{
 name|h
@@ -4278,7 +4376,6 @@ operator|/
 literal|255
 expr_stmt|;
 block|}
-block|}
 end_function
 
 begin_function
@@ -4294,9 +4391,10 @@ parameter_list|)
 block|{
 if|if
 condition|(
+operator|!
 name|csp
 condition|)
-block|{
+return|return;
 switch|switch
 condition|(
 name|csp
@@ -4618,7 +4716,6 @@ expr_stmt|;
 break|break;
 block|}
 block|}
-block|}
 end_function
 
 begin_function
@@ -4646,9 +4743,10 @@ name|i
 decl_stmt|;
 if|if
 condition|(
+operator|!
 name|csp
 condition|)
-block|{
+return|return;
 for|for
 control|(
 name|i
@@ -4766,7 +4864,6 @@ name|buffer
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 end_function
 
 begin_function
@@ -4804,9 +4901,10 @@ name|height
 decl_stmt|;
 if|if
 condition|(
+operator|!
 name|csp
 condition|)
-block|{
+return|return;
 if|if
 condition|(
 name|which
@@ -4886,7 +4984,7 @@ name|COLOR_SELECT_BLUE
 index|]
 expr_stmt|;
 block|}
-comment|/* if we haven't yet been realised, there's no need to redraw        * anything. */
+comment|/* if we haven't yet been realized, there's no need to redraw    * anything.    */
 if|if
 condition|(
 operator|!
@@ -4983,7 +5081,6 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-block|}
 block|}
 block|}
 end_function
@@ -6240,9 +6337,10 @@ name|data
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|csp
 condition|)
-block|{
+return|return;
 for|for
 control|(
 name|i
@@ -6521,7 +6619,6 @@ name|UPDATE_NEW_COLOR
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 end_function
 
 begin_function
@@ -6571,9 +6668,10 @@ name|data
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|csp
 condition|)
-block|{
+return|return;
 for|for
 control|(
 name|i
@@ -6725,7 +6823,6 @@ operator||
 name|UPDATE_XY_COLOR
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -6930,6 +7027,8 @@ name|hex_rgb
 operator|&
 literal|0x0000ff
 argument_list|,
+literal|0
+argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
@@ -7049,6 +7148,12 @@ name|height
 operator|--
 condition|)
 block|{
+if|if
+condition|(
+name|csf
+operator|.
+name|update
+condition|)
 call|(
 modifier|*
 name|csf
@@ -7125,11 +7230,12 @@ name|miny
 decl_stmt|;
 if|if
 condition|(
+operator|!
 name|csp
 operator|->
 name|gc
 condition|)
-block|{
+return|return;
 name|y
 operator|=
 operator|(
@@ -7302,7 +7408,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-block|}
 end_function
 
 begin_function
@@ -7338,11 +7443,12 @@ name|miny
 decl_stmt|;
 if|if
 condition|(
+operator|!
 name|csp
 operator|->
 name|gc
 condition|)
-block|{
+return|return;
 name|x
 operator|=
 operator|(
@@ -7572,7 +7678,6 @@ argument_list|,
 name|GDK_COPY
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -10367,20 +10472,20 @@ block|}
 end_function
 
 begin_comment
-comment|/*****************************/
+comment|/****************************/
 end_comment
 
 begin_comment
-comment|/* Colour notebook glue      */
+comment|/* Color notebook glue      */
 end_comment
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4b112c0408
+DECL|struct|__anon2a0d0c910408
 block|{
 DECL|member|callback
-name|GimpColorSelector_Callback
+name|GimpColorSelectorCallback
 name|callback
 decl_stmt|;
 DECL|member|client_data
@@ -10408,7 +10513,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|color_select_notebook_new (gint r,gint g,gint b,GimpColorSelector_Callback callback,gpointer data,void ** selector_data)
+DECL|function|color_select_notebook_new (gint r,gint g,gint b,gint a,gboolean show_alpha,GimpColorSelectorCallback callback,gpointer data,gpointer * selector_data)
 name|color_select_notebook_new
 parameter_list|(
 name|gint
@@ -10420,15 +10525,20 @@ parameter_list|,
 name|gint
 name|b
 parameter_list|,
-name|GimpColorSelector_Callback
+name|gint
+name|a
+parameter_list|,
+name|gboolean
+name|show_alpha
+parameter_list|,
+name|GimpColorSelectorCallback
 name|callback
 parameter_list|,
 name|gpointer
 name|data
 parameter_list|,
 comment|/* RETURNS: */
-name|void
-modifier|*
+name|gpointer
 modifier|*
 name|selector_data
 parameter_list|)
@@ -10561,6 +10671,22 @@ index|]
 operator|=
 name|b
 expr_stmt|;
+name|csp
+operator|->
+name|values
+index|[
+name|COLOR_SELECT_ALPHA
+index|]
+operator|=
+name|csp
+operator|->
+name|orig_values
+index|[
+literal|3
+index|]
+operator|=
+name|a
+expr_stmt|;
 name|color_select_update_hsv_values
 argument_list|(
 name|csp
@@ -10584,6 +10710,8 @@ argument_list|,
 name|g
 argument_list|,
 name|b
+argument_list|,
+name|a
 argument_list|)
 expr_stmt|;
 name|color_select_image_fill
@@ -10616,10 +10744,8 @@ operator|->
 name|values
 argument_list|)
 expr_stmt|;
-operator|(
 operator|*
 name|selector_data
-operator|)
 operator|=
 name|glue
 expr_stmt|;
@@ -10634,11 +10760,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_select_notebook_free (void * data)
+DECL|function|color_select_notebook_free (gpointer data)
 name|color_select_notebook_free
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
 name|data
 parameter_list|)
 block|{
@@ -10664,7 +10789,7 @@ operator|->
 name|csp
 argument_list|)
 expr_stmt|;
-comment|/* don't need to destroy the widget, since it's done by the caller    * of this function */
+comment|/* don't need to destroy the widget, since it's done by the caller    * of this function    */
 name|g_free
 argument_list|(
 name|glue
@@ -10676,23 +10801,25 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_select_notebook_setcolor (void * data,int r,int g,int b,int set_current)
+DECL|function|color_select_notebook_setcolor (gpointer data,gint r,gint g,gint b,gint a,gint set_current)
 name|color_select_notebook_setcolor
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
 name|data
 parameter_list|,
-name|int
+name|gint
 name|r
 parameter_list|,
-name|int
+name|gint
 name|g
 parameter_list|,
-name|int
+name|gint
 name|b
 parameter_list|,
-name|int
+name|gint
+name|a
+parameter_list|,
+name|gint
 name|set_current
 parameter_list|)
 block|{
@@ -10714,6 +10841,8 @@ name|g
 argument_list|,
 name|b
 argument_list|,
+name|a
+argument_list|,
 name|set_current
 argument_list|)
 expr_stmt|;
@@ -10723,7 +10852,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_select_notebook_update_callback (gint r,gint g,gint b,ColorSelectState state,void * data)
+DECL|function|color_select_notebook_update_callback (gint r,gint g,gint b,gint a,ColorSelectState state,gpointer data)
 name|color_select_notebook_update_callback
 parameter_list|(
 name|gint
@@ -10735,11 +10864,13 @@ parameter_list|,
 name|gint
 name|b
 parameter_list|,
+name|gint
+name|a
+parameter_list|,
 name|ColorSelectState
 name|state
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|data
 parameter_list|)
 block|{
@@ -10770,6 +10901,8 @@ argument_list|,
 name|g
 argument_list|,
 name|b
+argument_list|,
+name|a
 argument_list|)
 expr_stmt|;
 break|break;

@@ -4124,7 +4124,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_drop_color (GtkWidget * widget,guchar r,guchar g,guchar b,gpointer data)
+DECL|function|gdisplay_drop_color (GtkWidget * widget,guchar r,guchar g,guchar b,guchar a,gpointer data)
 name|gdisplay_drop_color
 parameter_list|(
 name|GtkWidget
@@ -4140,6 +4140,9 @@ parameter_list|,
 name|guchar
 name|b
 parameter_list|,
+name|guchar
+name|a
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -4147,7 +4150,7 @@ block|{
 name|guchar
 name|color
 index|[
-literal|3
+literal|4
 index|]
 decl_stmt|;
 name|color
@@ -4170,6 +4173,13 @@ literal|2
 index|]
 operator|=
 name|b
+expr_stmt|;
+name|color
+index|[
+literal|3
+index|]
+operator|=
+name|a
 expr_stmt|;
 name|gdisplay_bucket_fill
 argument_list|(

@@ -156,6 +156,9 @@ parameter_list|,
 name|guchar
 name|b
 parameter_list|,
+name|guchar
+name|a
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)

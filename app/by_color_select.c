@@ -371,6 +371,9 @@ parameter_list|,
 name|guchar
 name|b
 parameter_list|,
+name|guchar
+name|a
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -5409,7 +5412,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|by_color_select_color_drop (GtkWidget * widget,guchar r,guchar g,guchar b,gpointer data)
+DECL|function|by_color_select_color_drop (GtkWidget * widget,guchar r,guchar g,guchar b,guchar a,gpointer data)
 name|by_color_select_color_drop
 parameter_list|(
 name|GtkWidget
@@ -5424,6 +5427,9 @@ name|g
 parameter_list|,
 name|guchar
 name|b
+parameter_list|,
+name|guchar
+name|a
 parameter_list|,
 name|gpointer
 name|data

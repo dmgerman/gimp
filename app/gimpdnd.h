@@ -18,7 +18,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a16cfe00103
+DECL|enum|__anon2b06db760103
 block|{
 DECL|enumerator|GIMP_DND_TYPE_URI_LIST
 name|GIMP_DND_TYPE_URI_LIST
@@ -206,7 +206,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a16cfe00203
+DECL|enum|__anon2b06db760203
 block|{
 DECL|enumerator|GIMP_DROP_NONE
 name|GIMP_DROP_NONE
@@ -248,6 +248,9 @@ parameter_list|,
 name|guchar
 name|b
 parameter_list|,
+name|guchar
+name|a
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -278,6 +281,10 @@ parameter_list|,
 name|guchar
 modifier|*
 name|b
+parameter_list|,
+name|guchar
+modifier|*
+name|a
 parameter_list|,
 name|gpointer
 name|data

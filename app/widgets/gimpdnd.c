@@ -142,7 +142,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28839d570103
+DECL|enum|__anon2b3f40a80103
 block|{
 DECL|enumerator|GIMP_DND_DATA_COLOR
 name|GIMP_DND_DATA_COLOR
@@ -1753,6 +1753,8 @@ decl_stmt|,
 name|g
 decl_stmt|,
 name|b
+decl_stmt|,
+name|a
 decl_stmt|;
 name|guchar
 name|row
@@ -1783,6 +1785,9 @@ name|g
 operator|,
 operator|&
 name|b
+operator|,
+operator|&
+name|a
 operator|,
 name|get_color_data
 operator|)
@@ -1925,6 +1930,8 @@ decl_stmt|,
 name|g
 decl_stmt|,
 name|b
+decl_stmt|,
+name|a
 decl_stmt|;
 operator|(
 operator|*
@@ -1944,6 +1951,9 @@ name|g
 operator|,
 operator|&
 name|b
+operator|,
+operator|&
+name|a
 operator|,
 name|get_color_data
 operator|)
@@ -2001,7 +2011,13 @@ index|[
 literal|3
 index|]
 operator|=
-literal|0xffff
+name|a
+operator|+
+operator|(
+name|a
+operator|<<
+literal|8
+operator|)
 expr_stmt|;
 operator|*
 name|format
@@ -2060,6 +2076,8 @@ decl_stmt|,
 name|g
 decl_stmt|,
 name|b
+decl_stmt|,
+name|a
 decl_stmt|;
 if|if
 condition|(
@@ -2118,6 +2136,15 @@ index|]
 operator|>>
 literal|8
 expr_stmt|;
+name|a
+operator|=
+name|color_vals
+index|[
+literal|3
+index|]
+operator|>>
+literal|8
+expr_stmt|;
 operator|(
 operator|*
 operator|(
@@ -2133,6 +2160,8 @@ operator|,
 name|g
 operator|,
 name|b
+operator|,
+name|a
 operator|,
 name|set_color_data
 operator|)

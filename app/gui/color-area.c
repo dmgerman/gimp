@@ -98,7 +98,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289102190103
+DECL|enum|__anon28ddb2390103
 block|{
 DECL|enumerator|FORE_AREA
 name|FORE_AREA
@@ -142,6 +142,9 @@ parameter_list|,
 name|guchar
 name|b
 parameter_list|,
+name|guchar
+name|a
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -169,6 +172,10 @@ name|guchar
 modifier|*
 name|b
 parameter_list|,
+name|guchar
+modifier|*
+name|a
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
@@ -192,6 +199,9 @@ name|g
 parameter_list|,
 name|gint
 name|b
+parameter_list|,
+name|gint
+name|a
 parameter_list|,
 name|gpointer
 name|data
@@ -1380,7 +1390,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_area_select_callback (gint r,gint g,gint b,ColorNotebookState state,void * client_data)
+DECL|function|color_area_select_callback (gint r,gint g,gint b,gint a,ColorNotebookState state,void * client_data)
 name|color_area_select_callback
 parameter_list|(
 name|gint
@@ -1391,6 +1401,9 @@ name|g
 parameter_list|,
 name|gint
 name|b
+parameter_list|,
+name|gint
+name|a
 parameter_list|,
 name|ColorNotebookState
 name|state
@@ -1614,11 +1627,15 @@ name|g
 argument_list|,
 name|b
 argument_list|,
+literal|255
+argument_list|,
 name|color_area_select_callback
 argument_list|,
 name|NULL
 argument_list|,
 name|TRUE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|color_notebook_active
@@ -1663,6 +1680,8 @@ argument_list|,
 name|g
 argument_list|,
 name|b
+argument_list|,
+literal|255
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2287,7 +2306,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_area_drag_color (GtkWidget * widget,guchar * r,guchar * g,guchar * b,gpointer data)
+DECL|function|color_area_drag_color (GtkWidget * widget,guchar * r,guchar * g,guchar * b,guchar * a,gpointer data)
 name|color_area_drag_color
 parameter_list|(
 name|GtkWidget
@@ -2306,10 +2325,19 @@ name|guchar
 modifier|*
 name|b
 parameter_list|,
+name|guchar
+modifier|*
+name|a
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
 block|{
+operator|*
+name|a
+operator|=
+literal|255
+expr_stmt|;
 if|if
 condition|(
 name|active_color
@@ -2347,7 +2375,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_area_drop_color (GtkWidget * widget,guchar r,guchar g,guchar b,gpointer data)
+DECL|function|color_area_drop_color (GtkWidget * widget,guchar r,guchar g,guchar b,guchar a,gpointer data)
 name|color_area_drop_color
 parameter_list|(
 name|GtkWidget
@@ -2362,6 +2390,9 @@ name|g
 parameter_list|,
 name|guchar
 name|b
+parameter_list|,
+name|guchar
+name|a
 parameter_list|,
 name|gpointer
 name|data
@@ -2385,6 +2416,8 @@ argument_list|,
 name|g
 argument_list|,
 name|b
+argument_list|,
+literal|255
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2430,7 +2463,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_area_color_changed (GimpContext * context,gint r,gint g,gint b,gpointer data)
+DECL|function|color_area_color_changed (GimpContext * context,gint r,gint g,gint b,gint a,gpointer data)
 name|color_area_color_changed
 parameter_list|(
 name|GimpContext
@@ -2445,6 +2478,9 @@ name|g
 parameter_list|,
 name|gint
 name|b
+parameter_list|,
+name|gint
+name|a
 parameter_list|,
 name|gpointer
 name|data

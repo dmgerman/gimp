@@ -112,9 +112,9 @@ name|char
 modifier|*
 name|help_page
 decl_stmt|;
-DECL|member|m
+DECL|member|methods
 name|GimpColorSelectorMethods
-name|m
+name|methods
 decl_stmt|;
 DECL|member|refs
 name|int
@@ -231,6 +231,9 @@ name|green
 parameter_list|,
 name|gint
 name|blue
+parameter_list|,
+name|gint
+name|alpha
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -296,7 +299,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d4e3220103
+DECL|enum|__anon27f907680103
 block|{
 DECL|enumerator|RED
 name|RED
@@ -307,6 +310,9 @@ block|,
 DECL|enumerator|BLUE
 name|BLUE
 block|,
+DECL|enumerator|ALPHA
+name|ALPHA
+block|,
 DECL|enumerator|NUM_COLORS
 name|NUM_COLORS
 block|}
@@ -316,7 +322,7 @@ end_enum
 begin_function
 name|ColorNotebook
 modifier|*
-DECL|function|color_notebook_new (gint red,gint green,gint blue,ColorNotebookCallback callback,gpointer client_data,gboolean wants_updates)
+DECL|function|color_notebook_new (gint red,gint green,gint blue,gint alpha,ColorNotebookCallback callback,gpointer client_data,gboolean wants_updates,gboolean show_alpha)
 name|color_notebook_new
 parameter_list|(
 name|gint
@@ -328,6 +334,9 @@ parameter_list|,
 name|gint
 name|blue
 parameter_list|,
+name|gint
+name|alpha
+parameter_list|,
 name|ColorNotebookCallback
 name|callback
 parameter_list|,
@@ -336,6 +345,9 @@ name|client_data
 parameter_list|,
 name|gboolean
 name|wants_updates
+parameter_list|,
+name|gboolean
+name|show_alpha
 parameter_list|)
 block|{
 name|ColorNotebook
@@ -453,6 +465,24 @@ name|BLUE
 index|]
 operator|=
 name|blue
+operator|&
+literal|0xff
+expr_stmt|;
+name|cnp
+operator|->
+name|values
+index|[
+name|ALPHA
+index|]
+operator|=
+name|cnp
+operator|->
+name|orig_values
+index|[
+name|ALPHA
+index|]
+operator|=
+name|alpha
 operator|&
 literal|0xff
 expr_stmt|;
@@ -645,7 +675,7 @@ name|frame
 operator|=
 name|info
 operator|->
-name|m
+name|methods
 operator|.
 name|new
 argument_list|(
@@ -654,6 +684,10 @@ argument_list|,
 name|green
 argument_list|,
 name|blue
+argument_list|,
+name|alpha
+argument_list|,
+name|show_alpha
 argument_list|,
 name|color_notebook_update_callback
 argument_list|,
@@ -834,10 +868,10 @@ argument_list|)
 argument_list|,
 literal|"switch_page"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|color_notebook_page_switch
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -956,7 +990,7 @@ name|csel
 operator|->
 name|info
 operator|->
-name|m
+name|methods
 operator|.
 name|free
 argument_list|(
@@ -1016,7 +1050,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|color_notebook_set_color (ColorNotebook * cnp,gint red,gint green,gint blue,gboolean set_current)
+DECL|function|color_notebook_set_color (ColorNotebook * cnp,gint red,gint green,gint blue,gint alpha,gboolean set_current)
 name|color_notebook_set_color
 parameter_list|(
 name|ColorNotebook
@@ -1031,6 +1065,9 @@ name|green
 parameter_list|,
 name|gint
 name|blue
+parameter_list|,
+name|gint
+name|alpha
 parameter_list|,
 name|gboolean
 name|set_current
@@ -1074,6 +1111,15 @@ index|]
 operator|=
 name|blue
 expr_stmt|;
+name|cnp
+operator|->
+name|orig_values
+index|[
+name|ALPHA
+index|]
+operator|=
+name|alpha
+expr_stmt|;
 if|if
 condition|(
 name|set_current
@@ -1106,6 +1152,15 @@ index|]
 operator|=
 name|blue
 expr_stmt|;
+name|cnp
+operator|->
+name|values
+index|[
+name|ALPHA
+index|]
+operator|=
+name|alpha
+expr_stmt|;
 block|}
 name|csel
 operator|=
@@ -1117,7 +1172,7 @@ name|csel
 operator|->
 name|info
 operator|->
-name|m
+name|methods
 operator|.
 name|setcolor
 argument_list|(
@@ -1130,6 +1185,8 @@ argument_list|,
 name|green
 argument_list|,
 name|blue
+argument_list|,
+name|alpha
 argument_list|,
 name|set_current
 argument_list|)
@@ -1144,7 +1201,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|color_notebook_update_callback (gpointer data,gint red,gint green,gint blue)
+DECL|function|color_notebook_update_callback (gpointer data,gint red,gint green,gint blue,gint alpha)
 name|color_notebook_update_callback
 parameter_list|(
 name|gpointer
@@ -1158,6 +1215,9 @@ name|green
 parameter_list|,
 name|gint
 name|blue
+parameter_list|,
+name|gint
+name|alpha
 parameter_list|)
 block|{
 name|ColorSelectorInstance
@@ -1216,6 +1276,15 @@ index|]
 operator|=
 name|blue
 expr_stmt|;
+name|cnp
+operator|->
+name|values
+index|[
+name|ALPHA
+index|]
+operator|=
+name|alpha
+expr_stmt|;
 if|if
 condition|(
 name|cnp
@@ -1253,6 +1322,13 @@ operator|->
 name|values
 index|[
 name|BLUE
+index|]
+argument_list|,
+name|cnp
+operator|->
+name|values
+index|[
+name|ALPHA
 index|]
 argument_list|,
 name|COLOR_NOTEBOOK_UPDATE
@@ -1326,6 +1402,13 @@ index|[
 name|BLUE
 index|]
 argument_list|,
+name|cnp
+operator|->
+name|values
+index|[
+name|ALPHA
+index|]
+argument_list|,
 name|COLOR_NOTEBOOK_OK
 argument_list|,
 name|cnp
@@ -1394,6 +1477,13 @@ operator|->
 name|orig_values
 index|[
 name|BLUE
+index|]
+argument_list|,
+name|cnp
+operator|->
+name|orig_values
+index|[
+name|ALPHA
 index|]
 argument_list|,
 name|COLOR_NOTEBOOK_CANCEL
@@ -1477,7 +1567,7 @@ name|csel
 operator|->
 name|info
 operator|->
-name|m
+name|methods
 operator|.
 name|setcolor
 argument_list|(
@@ -1504,6 +1594,13 @@ operator|->
 name|values
 index|[
 name|BLUE
+index|]
+argument_list|,
+name|cnp
+operator|->
+name|values
+index|[
+name|ALPHA
 index|]
 argument_list|,
 name|TRUE
@@ -1664,7 +1761,7 @@ argument_list|)
 expr_stmt|;
 name|info
 operator|->
-name|m
+name|methods
 operator|=
 operator|*
 name|methods

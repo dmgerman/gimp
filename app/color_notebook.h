@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4240900103
+DECL|enum|__anon2b54c5a60103
 block|{
 DECL|enumerator|COLOR_NOTEBOOK_OK
 name|COLOR_NOTEBOOK_OK
@@ -52,6 +52,9 @@ name|green
 parameter_list|,
 name|gint
 name|blue
+parameter_list|,
+name|gint
+name|alpha
 parameter_list|,
 name|ColorNotebookState
 name|state
@@ -99,14 +102,14 @@ DECL|member|values
 name|gint
 name|values
 index|[
-literal|3
+literal|4
 index|]
 decl_stmt|;
 DECL|member|orig_values
 name|gint
 name|orig_values
 index|[
-literal|3
+literal|4
 index|]
 decl_stmt|;
 DECL|member|callback
@@ -149,6 +152,9 @@ parameter_list|,
 name|gint
 name|blue
 parameter_list|,
+name|gint
+name|alpha
+parameter_list|,
 name|ColorNotebookCallback
 name|callback
 parameter_list|,
@@ -157,6 +163,9 @@ name|data
 parameter_list|,
 name|gboolean
 name|wants_update
+parameter_list|,
+name|gboolean
+name|show_aplha
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -210,6 +219,9 @@ name|green
 parameter_list|,
 name|gint
 name|blue
+parameter_list|,
+name|gint
+name|alpha
 parameter_list|,
 name|gboolean
 name|set_current

@@ -336,7 +336,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d8c88e0103
+DECL|enum|__anon2ba67c720103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -4122,7 +4122,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|palette_select_callback (gint r,gint g,gint b,ColorNotebookState state,void * data)
+DECL|function|palette_select_callback (gint r,gint g,gint b,gint a,ColorNotebookState state,void * data)
 name|palette_select_callback
 parameter_list|(
 name|gint
@@ -4133,6 +4133,9 @@ name|g
 parameter_list|,
 name|gint
 name|b
+parameter_list|,
+name|gint
+name|a
 parameter_list|,
 name|ColorNotebookState
 name|state
@@ -4511,9 +4514,13 @@ index|[
 literal|2
 index|]
 argument_list|,
+literal|255
+argument_list|,
 name|palette_select_callback
 argument_list|,
 name|palette
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|)
@@ -4570,7 +4577,9 @@ index|[
 literal|2
 index|]
 argument_list|,
-literal|1
+literal|255
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -8318,7 +8327,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|palette_dialog_drag_color (GtkWidget * widget,guchar * r,guchar * g,guchar * b,gpointer data)
+DECL|function|palette_dialog_drag_color (GtkWidget * widget,guchar * r,guchar * g,guchar * b,guchar * a,gpointer data)
 name|palette_dialog_drag_color
 parameter_list|(
 name|GtkWidget
@@ -8336,6 +8345,10 @@ parameter_list|,
 name|guchar
 modifier|*
 name|b
+parameter_list|,
+name|guchar
+modifier|*
+name|a
 parameter_list|,
 name|gpointer
 name|data
@@ -8411,6 +8424,14 @@ index|[
 literal|2
 index|]
 expr_stmt|;
+operator|*
+name|a
+operator|=
+operator|(
+name|guchar
+operator|)
+literal|255
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -8432,7 +8453,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|palette_dialog_drop_color (GtkWidget * widget,guchar r,guchar g,guchar b,gpointer data)
+DECL|function|palette_dialog_drop_color (GtkWidget * widget,guchar r,guchar g,guchar b,guchar a,gpointer data)
 name|palette_dialog_drop_color
 parameter_list|(
 name|GtkWidget
@@ -8447,6 +8468,9 @@ name|g
 parameter_list|,
 name|guchar
 name|b
+parameter_list|,
+name|guchar
+name|a
 parameter_list|,
 name|gpointer
 name|data
