@@ -1187,10 +1187,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|window
-argument_list|)
 argument_list|,
 literal|"key_press_event"
 argument_list|,
@@ -1204,10 +1201,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|window
-argument_list|)
 argument_list|,
 literal|"key_release_event"
 argument_list|,
@@ -1269,10 +1263,7 @@ condition|)
 block|{
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|window
-argument_list|)
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1284,10 +1275,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|window
-argument_list|)
 argument_list|,
 name|G_CALLBACK
 argument_list|(

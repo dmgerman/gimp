@@ -125,10 +125,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|pixbuf
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|set
@@ -1355,7 +1352,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27c779dc0108
+DECL|struct|__anon294fd0f80108
 block|{
 DECL|member|stock_id
 specifier|const
@@ -1781,7 +1778,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27c779dc0208
+DECL|struct|__anon294fd0f80208
 block|{
 DECL|member|stock_id
 specifier|const

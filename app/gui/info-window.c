@@ -1786,12 +1786,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|info_win
 operator|->
 name|info_notebook
-argument_list|)
 argument_list|,
 literal|"switch_page"
 argument_list|,
@@ -2215,10 +2212,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|context
-argument_list|)
 argument_list|,
 literal|"display_changed"
 argument_list|,

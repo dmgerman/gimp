@@ -2268,12 +2268,9 @@ name|src_drawable
 condition|)
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|clone
 operator|->
 name|src_drawable
-argument_list|)
 argument_list|,
 name|gimp_clone_src_drawable_disconnect_cb
 argument_list|,
@@ -2295,12 +2292,9 @@ condition|)
 block|{
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|clone
 operator|->
 name|src_drawable
-argument_list|)
 argument_list|,
 literal|"disconnect"
 argument_list|,

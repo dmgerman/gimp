@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3b845d0103
+DECL|enum|__anon2761a1f00103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -1193,10 +1193,7 @@ expr_stmt|;
 block|}
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|image_map
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1413,10 +1410,7 @@ endif|#
 directive|endif
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|image_map
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1516,10 +1510,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|image_map
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1974,10 +1965,7 @@ name|interactive
 condition|)
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|image_map
-argument_list|)
 argument_list|,
 name|image_map_signals
 index|[

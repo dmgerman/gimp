@@ -305,10 +305,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gimprc
-argument_list|)
 argument_list|,
 literal|"notify"
 argument_list|,
@@ -388,10 +385,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_set
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gimprc
-argument_list|)
 argument_list|,
 literal|"use-help"
 argument_list|,
@@ -425,10 +419,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gimprc2
-argument_list|)
 argument_list|,
 literal|"notify"
 argument_list|,
@@ -447,10 +438,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_set
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gimprc2
-argument_list|)
 argument_list|,
 literal|"show-tips"
 argument_list|,
@@ -556,10 +544,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gimprc2
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_print
@@ -614,10 +599,7 @@ return|;
 block|}
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gimprc
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_print

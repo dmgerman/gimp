@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276172a00103
+DECL|enum|__anon2c89ab1e0103
 block|{
 DECL|enumerator|COLOR_PICKED
 name|COLOR_PICKED
@@ -1147,12 +1147,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
 operator|->
 name|grab_widget
-argument_list|)
 argument_list|,
 literal|"button_press_event"
 argument_list|,
@@ -1166,12 +1163,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
 operator|->
 name|grab_widget
-argument_list|)
 argument_list|,
 literal|"key_press_event"
 argument_list|,
@@ -1222,10 +1216,7 @@ condition|)
 block|{
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|invisible
-argument_list|)
 argument_list|,
 literal|"motion_notify_event"
 argument_list|,
@@ -1239,10 +1230,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|invisible
-argument_list|)
 argument_list|,
 literal|"button_release_event"
 argument_list|,
@@ -1256,10 +1244,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|invisible
-argument_list|)
 argument_list|,
 name|gimp_pick_button_mouse_press
 argument_list|,
@@ -1268,10 +1253,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|invisible
-argument_list|)
 argument_list|,
 name|gimp_pick_button_key_press
 argument_list|,
@@ -1323,10 +1305,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|invisible
-argument_list|)
 argument_list|,
 name|gimp_pick_button_mouse_press
 argument_list|,
@@ -1335,10 +1314,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|invisible
-argument_list|)
 argument_list|,
 name|gimp_pick_button_key_press
 argument_list|,
@@ -1447,10 +1423,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|invisible
-argument_list|)
 argument_list|,
 name|gimp_pick_button_mouse_motion
 argument_list|,
@@ -1459,10 +1432,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|invisible
-argument_list|)
 argument_list|,
 name|gimp_pick_button_mouse_release
 argument_list|,
@@ -1622,10 +1592,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 name|pick_button_signals
 index|[

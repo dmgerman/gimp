@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1db0030103
+DECL|enum|__anon2b89d0af0103
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -1212,10 +1212,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|module
-argument_list|)
 argument_list|,
 name|module_signals
 index|[

@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275c92820103
+DECL|enum|__anon273a0def0103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -1355,15 +1355,12 @@ expr_stmt|;
 block|}
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|GIMP_ITEM
 argument_list|(
 name|new_drawable
 argument_list|)
 operator|->
 name|parasites
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|GIMP_ITEM
@@ -2825,10 +2822,7 @@ name|visible
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|drawable
-argument_list|)
 argument_list|,
 name|gimp_drawable_signals
 index|[

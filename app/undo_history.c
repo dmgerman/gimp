@@ -153,7 +153,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6302140108
+DECL|struct|__anon2948c3e90108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -204,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6302140208
+DECL|struct|__anon2948c3e90208
 block|{
 DECL|member|clist
 name|GtkCList
@@ -2051,12 +2051,9 @@ condition|)
 block|{
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|st
 operator|->
 name|gimage
-argument_list|)
 argument_list|,
 name|undo_history_undo_event
 argument_list|,
@@ -2065,12 +2062,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|st
 operator|->
 name|gimage
-argument_list|)
 argument_list|,
 name|undo_history_gimage_rename_callback
 argument_list|,
@@ -2079,12 +2073,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|st
 operator|->
 name|gimage
-argument_list|)
 argument_list|,
 name|undo_history_clean_callback
 argument_list|,
@@ -2093,12 +2084,9 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|st
 operator|->
 name|gimage
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2421,12 +2409,9 @@ expr_stmt|;
 comment|/* block select events */
 name|g_signal_handlers_block_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|st
 operator|->
 name|clist
-argument_list|)
 argument_list|,
 name|undo_history_select_row_callback
 argument_list|,
@@ -2822,12 +2807,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|st
 operator|->
 name|clist
-argument_list|)
 argument_list|,
 name|undo_history_select_row_callback
 argument_list|,
@@ -2900,12 +2882,9 @@ return|return;
 comment|/* Disable undo_event signals while we do these multiple undo or    * redo actions. */
 name|g_signal_handlers_block_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|st
 operator|->
 name|gimage
-argument_list|)
 argument_list|,
 name|undo_history_undo_event
 argument_list|,
@@ -3010,12 +2989,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|st
 operator|->
 name|gimage
-argument_list|)
 argument_list|,
 name|undo_history_undo_event
 argument_list|,
@@ -3387,10 +3363,7 @@ name|gimage
 expr_stmt|;
 name|g_object_ref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gimage
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|st
@@ -3408,10 +3381,7 @@ expr_stmt|;
 comment|/*  gimage signals  */
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gimage
-argument_list|)
 argument_list|,
 literal|"undo_event"
 argument_list|,
@@ -3425,10 +3395,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gimage
-argument_list|)
 argument_list|,
 literal|"name_changed"
 argument_list|,
@@ -3442,10 +3409,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gimage
-argument_list|)
 argument_list|,
 literal|"clean"
 argument_list|,
@@ -3547,12 +3511,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|st
 operator|->
 name|shell
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -3880,12 +3841,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|st
 operator|->
 name|clist
-argument_list|)
 argument_list|,
 literal|"select_row"
 argument_list|,
@@ -4055,10 +4013,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -4107,10 +4062,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,

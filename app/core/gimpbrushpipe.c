@@ -587,15 +587,12 @@ index|]
 condition|)
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|pipe
 operator|->
 name|brushes
 index|[
 name|i
 index|]
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1654,10 +1651,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|pipe
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_string_free
@@ -2306,10 +2300,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|pipe
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

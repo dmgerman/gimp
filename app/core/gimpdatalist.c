@@ -367,10 +367,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|object
-argument_list|)
 argument_list|,
 literal|"name_changed"
 argument_list|,
@@ -413,10 +410,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|object
-argument_list|)
 argument_list|,
 name|gimp_data_list_object_renamed_callback
 argument_list|,
@@ -789,10 +783,7 @@ name|have
 condition|)
 name|g_signal_handlers_block_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|object
-argument_list|)
 argument_list|,
 name|gimp_data_list_object_renamed_callback
 argument_list|,
@@ -812,10 +803,7 @@ name|have
 condition|)
 name|g_signal_handlers_unblock_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|object
-argument_list|)
 argument_list|,
 name|gimp_data_list_object_renamed_callback
 argument_list|,

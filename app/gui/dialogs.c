@@ -899,10 +899,7 @@ condition|)
 block|{
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|global_dialog_factory
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|global_dialog_factory
@@ -918,10 +915,7 @@ condition|)
 block|{
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|global_toolbox_factory
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|global_toolbox_factory
@@ -936,10 +930,7 @@ condition|)
 block|{
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|global_dock_factory
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|global_dock_factory

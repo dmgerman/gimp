@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a4c5620103
+DECL|enum|__anon2a0f9ce50103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -898,10 +898,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|selector
-argument_list|)
 argument_list|,
 name|selector_signals
 index|[
@@ -944,10 +941,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|selector
-argument_list|)
 argument_list|,
 name|selector_signals
 index|[

@@ -170,7 +170,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2955311a0103
+DECL|enum|__anon29af7d550103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2955311a0203
+DECL|enum|__anon29af7d550203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1370,7 +1370,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2955311a0308
+DECL|struct|__anon29af7d550308
 block|{
 DECL|member|fd
 name|gint
@@ -2000,10 +2000,7 @@ name|GIMP_CONTAINER_POLICY_STRONG
 condition|)
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|child
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2316,10 +2313,7 @@ name|handler_id
 operator|=
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|object
-argument_list|)
 argument_list|,
 name|handler
 operator|->
@@ -2364,10 +2358,7 @@ name|GIMP_CONTAINER_POLICY_STRONG
 case|:
 name|g_object_ref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|object
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2376,10 +2367,7 @@ name|GIMP_CONTAINER_POLICY_WEAK
 case|:
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|object
-argument_list|)
 argument_list|,
 literal|"disconnect"
 argument_list|,
@@ -2400,10 +2388,7 @@ operator|++
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|container
-argument_list|)
 argument_list|,
 name|container_signals
 index|[
@@ -2557,10 +2542,7 @@ condition|)
 block|{
 name|g_signal_handler_disconnect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|object
-argument_list|)
 argument_list|,
 name|handler_id
 argument_list|)
@@ -2588,10 +2570,7 @@ operator|--
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|container
-argument_list|)
 argument_list|,
 name|container_signals
 index|[
@@ -2615,10 +2594,7 @@ name|GIMP_CONTAINER_POLICY_STRONG
 case|:
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|object
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2627,10 +2603,7 @@ name|GIMP_CONTAINER_POLICY_WEAK
 case|:
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|object
-argument_list|)
 argument_list|,
 name|gimp_container_disconnect_callback
 argument_list|,
@@ -2857,10 +2830,7 @@ return|;
 block|}
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|container
-argument_list|)
 argument_list|,
 name|container_signals
 index|[
@@ -2913,10 +2883,7 @@ literal|1
 condition|)
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|container
-argument_list|)
 argument_list|,
 name|container_signals
 index|[
@@ -2970,10 +2937,7 @@ literal|0
 condition|)
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|container
-argument_list|)
 argument_list|,
 name|container_signals
 index|[
@@ -3327,10 +3291,7 @@ name|handler_id
 operator|=
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|object
-argument_list|)
 argument_list|,
 name|handler
 operator|->
@@ -3590,10 +3551,7 @@ condition|)
 block|{
 name|g_signal_handler_disconnect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|object
-argument_list|)
 argument_list|,
 name|handler_id
 argument_list|)

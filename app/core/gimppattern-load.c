@@ -1155,10 +1155,7 @@ block|}
 comment|/*  set ref_count to 2 --> never swap the standard pattern  */
 name|g_object_ref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|standard_pattern
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1768,10 +1765,7 @@ name|pattern
 condition|)
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|pattern
-argument_list|)
 argument_list|)
 expr_stmt|;
 elseif|else

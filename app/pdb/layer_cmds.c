@@ -2220,10 +2220,7 @@ condition|)
 block|{
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|layer
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|success

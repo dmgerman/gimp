@@ -36,7 +36,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c02da1a0103
+DECL|enum|__anon2bdeb05e0103
 block|{
 DECL|enumerator|OPS_BUTTON_MODIFIER_NONE
 name|OPS_BUTTON_MODIFIER_NONE
@@ -212,10 +212,7 @@ condition|)
 block|{
 name|g_signal_connect_swapped
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -234,10 +231,7 @@ else|else
 block|{
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"extended_clicked"
 argument_list|,

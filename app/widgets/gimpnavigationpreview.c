@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1ed1f60103
+DECL|enum|__anon27a401320103
 block|{
 DECL|enumerator|MARKER_CHANGED
 name|MARKER_CHANGED
@@ -1107,10 +1107,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|GTK_OBJECT
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 name|preview_signals
 index|[
@@ -1511,10 +1508,7 @@ condition|)
 block|{
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|widget
-argument_list|)
 argument_list|,
 name|preview_signals
 index|[
@@ -1531,10 +1525,7 @@ else|else
 block|{
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|widget
-argument_list|)
 argument_list|,
 name|preview_signals
 index|[
@@ -1591,10 +1582,7 @@ expr_stmt|;
 block|}
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|widget
-argument_list|)
 argument_list|,
 name|preview_signals
 index|[

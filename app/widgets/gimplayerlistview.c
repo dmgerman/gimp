@@ -633,12 +633,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|view
 operator|->
 name|preserve_trans_toggle
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -750,12 +747,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|view
 operator|->
 name|opacity_adjustment
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -1413,7 +1407,7 @@ directive|define
 name|BLOCK
 parameter_list|()
 define|\
-value|g_signal_handlers_block_by_func (G_OBJECT (layer), \ 	gimp_layer_list_view_layer_signal_handler, view)
+value|g_signal_handlers_block_by_func (layer, \ 	gimp_layer_list_view_layer_signal_handler, view)
 end_define
 
 begin_define
@@ -1423,7 +1417,7 @@ directive|define
 name|UNBLOCK
 parameter_list|()
 define|\
-value|g_signal_handlers_unblock_by_func (G_OBJECT (layer), \ 	gimp_layer_list_view_layer_signal_handler, view)
+value|g_signal_handlers_unblock_by_func (layer, \ 	gimp_layer_list_view_layer_signal_handler, view)
 end_define
 
 begin_function
@@ -1805,7 +1799,7 @@ parameter_list|,
 name|function
 parameter_list|)
 define|\
-value|g_signal_handlers_block_by_func (G_OBJECT (object), \ 	                                 (function), view)
+value|g_signal_handlers_block_by_func ((object), (function), view)
 end_define
 
 begin_define
@@ -1819,7 +1813,7 @@ parameter_list|,
 name|function
 parameter_list|)
 define|\
-value|g_signal_handlers_unblock_by_func (G_OBJECT (object), \ 	                                   (function), view)
+value|g_signal_handlers_unblock_by_func ((object), (function), view)
 end_define
 
 begin_function

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296907920103
+DECL|enum|__anon28d513b90103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED
@@ -716,10 +716,7 @@ expr_stmt|;
 block|}
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|layer_mask
-argument_list|)
 argument_list|,
 name|layer_mask_signals
 index|[
@@ -804,10 +801,7 @@ name|FALSE
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|layer_mask
-argument_list|)
 argument_list|,
 name|layer_mask_signals
 index|[
@@ -932,10 +926,7 @@ expr_stmt|;
 block|}
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|layer_mask
-argument_list|)
 argument_list|,
 name|layer_mask_signals
 index|[

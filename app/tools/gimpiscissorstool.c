@@ -2316,12 +2316,9 @@ name|mask
 condition|)
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|iscissors
 operator|->
 name|mask
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|iscissors
@@ -4221,12 +4218,9 @@ condition|)
 block|{
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|iscissors
 operator|->
 name|mask
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|iscissors

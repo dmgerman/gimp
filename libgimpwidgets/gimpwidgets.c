@@ -369,10 +369,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|menuitem
-argument_list|)
 argument_list|,
 literal|"activate"
 argument_list|,
@@ -661,10 +658,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|menuitem
-argument_list|)
 argument_list|,
 literal|"activate"
 argument_list|,
@@ -1312,10 +1306,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -1625,10 +1616,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -1913,10 +1901,7 @@ parameter_list|)
 block|{
 name|g_signal_handlers_block_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|other_adj
-argument_list|)
 argument_list|,
 name|gimp_scale_entry_unconstrained_adjustment_callback
 argument_list|,
@@ -1934,10 +1919,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|other_adj
-argument_list|)
 argument_list|,
 name|gimp_scale_entry_unconstrained_adjustment_callback
 argument_list|,
@@ -2914,10 +2896,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adj
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -2978,10 +2957,7 @@ expr_stmt|;
 comment|/* Send spinbutton as data so that we can change the value in     * gimp_random_seed_update() */
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -3059,7 +3035,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293834190108
+DECL|struct|__anon2b2f23300108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -3160,10 +3136,7 @@ condition|)
 block|{
 name|g_signal_stop_emission_by_name
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|widget
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|)
@@ -3921,10 +3894,7 @@ name|y
 expr_stmt|;
 name|g_signal_connect_swapped
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|sizeentry
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -3938,10 +3908,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|sizeentry
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,

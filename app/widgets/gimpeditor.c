@@ -724,10 +724,7 @@ name|callback
 condition|)
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -742,10 +739,7 @@ name|extended_callback
 condition|)
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"extended_clicked"
 argument_list|,

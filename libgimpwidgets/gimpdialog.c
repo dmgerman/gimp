@@ -766,10 +766,7 @@ name|slot_object
 condition|)
 name|g_signal_connect_swapped
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -784,10 +781,7 @@ expr_stmt|;
 else|else
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,

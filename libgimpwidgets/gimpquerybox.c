@@ -465,12 +465,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|query_box
 operator|->
 name|qbox
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -523,10 +520,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_closure
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|object
-argument_list|)
 argument_list|,
 name|signal
 argument_list|,

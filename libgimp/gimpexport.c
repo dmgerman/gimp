@@ -59,7 +59,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f93a0d0108
+DECL|struct|__anon27ee29550108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -1261,10 +1261,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dialog
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -1538,10 +1535,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dialog
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -1949,10 +1943,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,

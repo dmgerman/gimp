@@ -660,10 +660,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_set
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|widget
-argument_list|)
 argument_list|,
 literal|"tab_border"
 argument_list|,
@@ -836,10 +833,7 @@ condition|)
 block|{
 name|g_object_ref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dockable
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_dockbook_remove
@@ -866,10 +860,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dockable
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1251,10 +1242,7 @@ block|{
 comment|/*  disconnect GtkNotebook's handler  */
 name|g_signal_handlers_disconnect_matched
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|menu_item
-argument_list|)
 argument_list|,
 name|G_SIGNAL_MATCH_DATA
 argument_list|,
@@ -1272,10 +1260,7 @@ expr_stmt|;
 comment|/*  and install our own  */
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|menu_item
-argument_list|)
 argument_list|,
 literal|"activate"
 argument_list|,
@@ -1574,10 +1559,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|tab_widget
-argument_list|)
 argument_list|,
 literal|"drag_begin"
 argument_list|,
@@ -1591,10 +1573,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|tab_widget
-argument_list|)
 argument_list|,
 literal|"drag_end"
 argument_list|,
@@ -1627,10 +1606,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|tab_widget
-argument_list|)
 argument_list|,
 literal|"drag_drop"
 argument_list|,
@@ -1644,10 +1620,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|tab_widget
-argument_list|)
 argument_list|,
 literal|"button_press_event"
 argument_list|,
@@ -1741,10 +1714,7 @@ name|menu
 expr_stmt|;
 name|g_object_ref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|notebook_menu
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_menu_detach
@@ -1772,19 +1742,13 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|notebook_menu
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  release gimp_dockbook_tab_button_press()'s reference  */
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dockbook
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1969,10 +1933,7 @@ name|menu
 expr_stmt|;
 name|g_object_ref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|notebook_menu
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_menu_detach
@@ -2004,20 +1965,14 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|notebook_menu
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
 comment|/*  an item factory callback may destroy the dockbook, so reference        *  if for gimp_dockbook_menu_end()        */
 name|g_object_ref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dockbook
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_item_factory_popup_with_data
@@ -2494,10 +2449,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_ref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dockable
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_dockbook_remove
@@ -2523,10 +2475,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dockable
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2665,10 +2614,7 @@ condition|)
 block|{
 name|g_object_ref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|src_dockable
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_dockbook_remove
@@ -2693,10 +2639,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|src_dockable
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

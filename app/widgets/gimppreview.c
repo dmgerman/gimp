@@ -142,7 +142,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon274dc7240103
+DECL|enum|__anon28fd1acb0103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -1727,10 +1727,7 @@ condition|)
 block|{
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|widget
-argument_list|)
 argument_list|,
 name|preview_signals
 index|[
@@ -1770,10 +1767,7 @@ condition|)
 block|{
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|widget
-argument_list|)
 argument_list|,
 name|preview_signals
 index|[
@@ -1916,10 +1910,7 @@ condition|)
 block|{
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|widget
-argument_list|)
 argument_list|,
 name|preview_signals
 index|[
@@ -1938,10 +1929,7 @@ else|else
 block|{
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|widget
-argument_list|)
 argument_list|,
 name|preview_signals
 index|[
@@ -2625,12 +2613,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|preview
 operator|->
 name|viewable
-argument_list|)
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2642,12 +2627,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|preview
 operator|->
 name|viewable
-argument_list|)
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2734,12 +2716,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_swapped
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|preview
 operator|->
 name|viewable
-argument_list|)
 argument_list|,
 literal|"invalidate_preview"
 argument_list|,
@@ -2753,12 +2732,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_swapped
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|preview
 operator|->
 name|viewable
-argument_list|)
 argument_list|,
 literal|"size_changed"
 argument_list|,

@@ -285,7 +285,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon297af5d70103
+DECL|enum|__anon28d286040103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -299,7 +299,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297af5d70208
+DECL|struct|__anon28d286040208
 block|{
 DECL|member|dirname
 specifier|const
@@ -1617,10 +1617,7 @@ expr_stmt|;
 block|}
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gimage
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2362,10 +2359,7 @@ name|emit_always
 condition|)
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|imagefile
-argument_list|)
 argument_list|,
 name|gimp_imagefile_signals
 index|[
@@ -4086,10 +4080,7 @@ expr_stmt|;
 block|}
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|pixbuf
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free

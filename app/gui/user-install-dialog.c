@@ -203,7 +203,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4563310103
+DECL|enum|__anon2a230f5b0103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -231,7 +231,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4563310203
+DECL|enum|__anon2a230f5b0203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -476,7 +476,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a4563310303
+DECL|enum|__anon2a230f5b0303
 block|{
 DECL|enumerator|TREE_ITEM_DONT
 name|TREE_ITEM_DONT
@@ -502,7 +502,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a4563310408
+DECL|struct|__anon2a230f5b0408
 block|{
 DECL|member|directory
 name|gboolean
@@ -1262,18 +1262,12 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|title_style
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|page_style
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_destroy
@@ -2743,10 +2737,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|darea
-argument_list|)
 argument_list|,
 literal|"expose_event"
 argument_list|,
@@ -2813,10 +2804,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|darea
-argument_list|)
 argument_list|,
 literal|"expose_event"
 argument_list|,
@@ -3442,10 +3430,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|sel
-argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
@@ -5826,10 +5811,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -5867,10 +5849,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|toggle
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,

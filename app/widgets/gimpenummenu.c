@@ -487,10 +487,7 @@ name|callback
 condition|)
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|menu_item
-argument_list|)
 argument_list|,
 literal|"activate"
 argument_list|,
@@ -729,10 +726,7 @@ name|callback
 condition|)
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|menu_item
-argument_list|)
 argument_list|,
 literal|"activate"
 argument_list|,
@@ -1327,10 +1321,7 @@ name|callback
 condition|)
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,

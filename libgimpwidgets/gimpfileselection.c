@@ -135,7 +135,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cb10f80103
+DECL|enum|__anon299fe2870103
 block|{
 DECL|enumerator|FILENAME_CHANGED
 name|FILENAME_CHANGED
@@ -519,12 +519,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|selection
 operator|->
 name|browse_button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -570,12 +567,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|selection
 operator|->
 name|entry
-argument_list|)
 argument_list|,
 literal|"activate"
 argument_list|,
@@ -589,12 +583,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|selection
 operator|->
 name|entry
-argument_list|)
 argument_list|,
 literal|"focus_out_event"
 argument_list|,
@@ -1024,12 +1015,9 @@ literal|'\0'
 expr_stmt|;
 name|g_signal_handlers_block_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|selection
 operator|->
 name|entry
-argument_list|)
 argument_list|,
 name|gimp_file_selection_entry_callback
 argument_list|,
@@ -1050,12 +1038,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|selection
 operator|->
 name|entry
-argument_list|)
 argument_list|,
 name|gimp_file_selection_entry_callback
 argument_list|,
@@ -1105,10 +1090,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|selection
-argument_list|)
 argument_list|,
 name|gimp_file_selection_signals
 index|[
@@ -1421,8 +1403,6 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|GTK_FILE_SELECTION
 argument_list|(
 name|selection
@@ -1431,7 +1411,6 @@ name|file_selection
 argument_list|)
 operator|->
 name|ok_button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -1445,8 +1424,6 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|GTK_FILE_SELECTION
 argument_list|(
 name|selection
@@ -1455,7 +1432,6 @@ name|file_selection
 argument_list|)
 operator|->
 name|selection_entry
-argument_list|)
 argument_list|,
 literal|"activate"
 argument_list|,
@@ -1469,8 +1445,6 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_swapped
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|GTK_FILE_SELECTION
 argument_list|(
 name|selection
@@ -1479,7 +1453,6 @@ name|file_selection
 argument_list|)
 operator|->
 name|cancel_button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -1495,10 +1468,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_swapped
 argument_list|(
-name|GTK_OBJECT
-argument_list|(
 name|selection
-argument_list|)
 argument_list|,
 literal|"unmap"
 argument_list|,
@@ -1514,12 +1484,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_swapped
 argument_list|(
-name|GTK_OBJECT
-argument_list|(
 name|selection
 operator|->
 name|file_selection
-argument_list|)
 argument_list|,
 literal|"delete_event"
 argument_list|,

@@ -3920,12 +3920,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|options
 operator|->
 name|use_info_window_w
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,

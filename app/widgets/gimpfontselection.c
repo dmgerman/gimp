@@ -192,7 +192,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2989c6840103
+DECL|enum|__anon27e19e320103
 block|{
 DECL|enumerator|FONT_CHANGED
 name|FONT_CHANGED
@@ -566,12 +566,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|fontsel
 operator|->
 name|entry
-argument_list|)
 argument_list|,
 literal|"activate"
 argument_list|,
@@ -585,12 +582,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|fontsel
 operator|->
 name|entry
-argument_list|)
 argument_list|,
 literal|"focus_out_event"
 argument_list|,
@@ -654,10 +648,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -713,12 +704,9 @@ name|context
 condition|)
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|fontsel
 operator|->
 name|context
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -789,12 +777,9 @@ name|context
 expr_stmt|;
 name|g_object_ref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|fontsel
 operator|->
 name|context
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -826,10 +811,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|fontsel
-argument_list|)
 argument_list|,
 name|gimp_font_selection_signals
 index|[

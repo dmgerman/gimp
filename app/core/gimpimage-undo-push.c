@@ -251,7 +251,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c509f8b0103
+DECL|enum|__anon2924451f0103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -6403,10 +6403,7 @@ name|undo_free_layer
 expr_stmt|;
 name|g_object_ref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|layer
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|lu
@@ -6843,12 +6840,9 @@ name|lu_ptr
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|lu
 operator|->
 name|layer
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -7764,10 +7758,7 @@ name|undo_free_layer_mask
 expr_stmt|;
 name|g_object_ref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|mask
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|lmu
@@ -7913,12 +7904,9 @@ name|lmu_ptr
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|lmu
 operator|->
 name|mask
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -9024,10 +9012,7 @@ name|undo_free_channel
 expr_stmt|;
 name|g_object_ref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|channel
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|cu
@@ -9307,12 +9292,9 @@ name|cu_ptr
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|cu
 operator|->
 name|channel
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -10277,10 +10259,7 @@ name|undo_free_vectors
 expr_stmt|;
 name|g_object_ref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|vectors
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|vu
@@ -10494,12 +10473,9 @@ name|vu_ptr
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|vu
 operator|->
 name|vectors
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -10737,7 +10713,7 @@ name|NULL
 expr_stmt|;
 comment|/* gimp_vectors_duplicate (vmu->vectors); */
 comment|/* gimp_vectors_copy_strokes (temp, vmu->vectors); */
-comment|/* g_object_unref (G_OBJECT (temp)); */
+comment|/* g_object_unref (temp); */
 return|return
 name|TRUE
 return|;
@@ -10772,7 +10748,7 @@ operator|*
 operator|)
 name|vmu_ptr
 expr_stmt|;
-comment|/* g_object_unref (G_OBJECT (vmu->undo_vectors)); */
+comment|/* g_object_unref (vmu->undo_vectors); */
 name|g_free
 argument_list|(
 name|vmu

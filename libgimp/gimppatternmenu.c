@@ -1503,10 +1503,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|pattern
-argument_list|)
 argument_list|,
 literal|"event"
 argument_list|,
@@ -1690,10 +1687,7 @@ name|button
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,

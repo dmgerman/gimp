@@ -1138,10 +1138,7 @@ condition|)
 block|{
 name|g_signal_connect_after
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|menu_item
-argument_list|)
 argument_list|,
 literal|"realize"
 argument_list|,
@@ -1743,10 +1740,7 @@ name|child
 expr_stmt|;
 name|g_object_ref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|label
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_remove
@@ -1846,10 +1840,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|label
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_set_data
@@ -3546,12 +3537,9 @@ condition|)
 block|{
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|widget
 operator|->
 name|parent
-argument_list|)
 argument_list|,
 literal|"key_press_event"
 argument_list|,

@@ -1024,10 +1024,7 @@ decl_stmt|;
 comment|/* Catch file-list clicks so we can update the preview thumbnail */
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|tree_sel
-argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
@@ -1120,10 +1117,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|ebox
-argument_list|)
 argument_list|,
 literal|"button_press_event"
 argument_list|,
@@ -1253,10 +1247,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"button_press_event"
 argument_list|,
@@ -1270,10 +1261,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"button_release_event"
 argument_list|,
@@ -1287,10 +1275,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"enter_notify_event"
 argument_list|,
@@ -1304,10 +1289,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"leave_notify_event"
 argument_list|,
@@ -1485,10 +1467,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|open_options_preview
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -1502,10 +1481,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|open_options_preview
-argument_list|)
 argument_list|,
 literal|"extended_clicked"
 argument_list|,
@@ -1626,10 +1602,7 @@ expr_stmt|;
 block|}
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|open_options_imagefile
-argument_list|)
 argument_list|,
 literal|"info_changed"
 argument_list|,
@@ -2169,10 +2142,7 @@ expr_stmt|;
 block|}
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|imagefile
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|basename

@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e6f0290103
+DECL|enum|__anon2b5445640103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -620,12 +620,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|entry
 operator|->
 name|adjustment
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -924,10 +921,7 @@ name|shift
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|entry
-argument_list|)
 argument_list|,
 name|gimp_memsize_entry_signals
 index|[

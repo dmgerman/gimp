@@ -673,14 +673,11 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|grid_view
 operator|->
 name|wrap_box
 operator|->
 name|parent
-argument_list|)
 argument_list|,
 literal|"size_allocate"
 argument_list|,
@@ -1078,10 +1075,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -1095,10 +1089,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 literal|"double_clicked"
 argument_list|,
@@ -1112,10 +1103,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 literal|"context"
 argument_list|,

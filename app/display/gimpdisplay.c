@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon293580500103
+DECL|enum|__anon29a52cae0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -961,10 +961,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gdisp
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

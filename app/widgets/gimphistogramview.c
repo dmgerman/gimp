@@ -55,7 +55,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8c07f90103
+DECL|enum|__anon28dd95250103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -948,10 +948,7 @@ expr_stmt|;
 block|}
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|view
-argument_list|)
 argument_list|,
 name|histogram_view_signals
 index|[
@@ -1110,10 +1107,7 @@ literal|1
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|view
-argument_list|)
 argument_list|,
 literal|"event"
 argument_list|,
@@ -1256,10 +1250,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|view
-argument_list|)
 argument_list|,
 name|histogram_view_signals
 index|[
@@ -1317,10 +1308,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|view
-argument_list|)
 argument_list|,
 name|histogram_view_signals
 index|[

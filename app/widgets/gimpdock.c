@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2882645e0103
+DECL|enum|__anon290df84b0103
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -732,12 +732,9 @@ condition|)
 block|{
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dock
 operator|->
 name|context
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|dock
@@ -1064,10 +1061,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|event_box
-argument_list|)
 argument_list|,
 literal|"drag_drop"
 argument_list|,
@@ -1081,10 +1075,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|event_box
-argument_list|)
 argument_list|,
 literal|"button_press_event"
 argument_list|,
@@ -1098,10 +1089,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|event_box
-argument_list|)
 argument_list|,
 literal|"button_release_event"
 argument_list|,
@@ -1181,12 +1169,9 @@ name|context
 expr_stmt|;
 name|g_object_ref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dock
 operator|->
 name|context
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1581,10 +1566,7 @@ expr_stmt|;
 block|}
 name|g_object_ref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|old_book
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_remove
@@ -1720,10 +1702,7 @@ expr_stmt|;
 block|}
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|old_book
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1737,10 +1716,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dock
-argument_list|)
 argument_list|,
 name|dock_signals
 index|[
@@ -1969,10 +1945,7 @@ name|child1
 expr_stmt|;
 name|g_object_ref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|other_book
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_remove
@@ -2050,19 +2023,13 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|other_book
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dock
-argument_list|)
 argument_list|,
 name|dock_signals
 index|[
@@ -2171,7 +2138,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* static void gimp_dock_tab_drag_begin (GtkWidget      *widget, 			  GdkDragContext *context, 			  gpointer        data) {   GimpDockable *dockable;   GtkWidget    *window;   GtkWidget    *frame;   GtkWidget    *label;    dockable = GIMP_DOCKABLE (data);    window = gtk_window_new (GTK_WINDOW_POPUP);    frame = gtk_frame_new (NULL);   gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_OUT);   gtk_container_add (GTK_CONTAINER (window), frame);   gtk_widget_show (frame);    label = gtk_label_new (dockable->name);   gtk_misc_set_padding (GTK_MISC (label), 10, 5);   gtk_container_add (GTK_CONTAINER (frame), label);   gtk_widget_show (label);    gtk_widget_show (window);    g_object_set_data_full (G_OBJECT (dockable), "gimp-dock-drag-widget", 			  window, 			  (GDestroyNotify) gtk_widget_destroy);    gtk_drag_set_icon_widget (context, window, 			    -8, -8); }  static void gimp_dock_tab_drag_end (GtkWidget      *widget, 			GdkDragContext *context, 			gpointer        data) {   GimpDockable *dockable;   GtkWidget    *drag_widget;    dockable = GIMP_DOCKABLE (data);    drag_widget = g_object_get_data (G_OBJECT (dockable), 				     "gimp-dock-drag-widget");    if (drag_widget)     {       GtkWidget *dock;        g_object_set_data (G_OBJECT (dockable), "gimp-dock-drag-widget", NULL);        dock = gimp_dock_new ();        gtk_window_set_position (GTK_WINDOW (dock), GTK_WIN_POS_MOUSE);        g_object_ref (G_OBJECT (dockable));        gimp_dock_remove (dockable->dock, dockable);       gimp_dock_add (GIMP_DOCK (dock), dockable, -1, -1);        g_object_unref (G_OBJECT (dockable));        gtk_widget_show (dock);     } } */
+comment|/* static void gimp_dock_tab_drag_begin (GtkWidget      *widget, 			  GdkDragContext *context, 			  gpointer        data) {   GimpDockable *dockable;   GtkWidget    *window;   GtkWidget    *frame;   GtkWidget    *label;    dockable = GIMP_DOCKABLE (data);    window = gtk_window_new (GTK_WINDOW_POPUP);    frame = gtk_frame_new (NULL);   gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_OUT);   gtk_container_add (GTK_CONTAINER (window), frame);   gtk_widget_show (frame);    label = gtk_label_new (dockable->name);   gtk_misc_set_padding (GTK_MISC (label), 10, 5);   gtk_container_add (GTK_CONTAINER (frame), label);   gtk_widget_show (label);    gtk_widget_show (window);    g_object_set_data_full (G_OBJECT (dockable), "gimp-dock-drag-widget", 			  window, 			  (GDestroyNotify) gtk_widget_destroy);    gtk_drag_set_icon_widget (context, window, 			    -8, -8); }  static void gimp_dock_tab_drag_end (GtkWidget      *widget, 			GdkDragContext *context, 			gpointer        data) {   GimpDockable *dockable;   GtkWidget    *drag_widget;    dockable = GIMP_DOCKABLE (data);    drag_widget = g_object_get_data (G_OBJECT (dockable), 				     "gimp-dock-drag-widget");    if (drag_widget)     {       GtkWidget *dock;        g_object_set_data (G_OBJECT (dockable), "gimp-dock-drag-widget", NULL);        dock = gimp_dock_new ();        gtk_window_set_position (GTK_WINDOW (dock), GTK_WIN_POS_MOUSE);        g_object_ref (dockable);        gimp_dock_remove (dockable->dock, dockable);       gimp_dock_add (GIMP_DOCK (dock), dockable, -1, -1);        g_object_unref (dockable);        gtk_widget_show (dock);     } } */
 end_comment
 
 begin_function
@@ -2326,10 +2293,7 @@ literal|1
 expr_stmt|;
 name|g_object_ref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|src_dockable
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_dockbook_remove
@@ -2373,10 +2337,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|src_dockable
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

@@ -960,7 +960,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2bb7c2d90108
+DECL|struct|__anon29994c190108
 block|{
 DECL|member|label
 specifier|const
@@ -1541,10 +1541,7 @@ expr_stmt|;
 block|}
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -1763,10 +1760,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|data
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -1854,10 +1848,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|data
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -1945,12 +1936,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|hs_tool
 operator|->
 name|saturation_data
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -2025,10 +2013,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,

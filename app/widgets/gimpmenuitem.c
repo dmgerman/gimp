@@ -554,10 +554,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_object
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|viewable
-argument_list|)
 argument_list|,
 name|GIMP_VIEWABLE_GET_CLASS
 argument_list|(

@@ -941,10 +941,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|data
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -1034,10 +1031,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|data
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,

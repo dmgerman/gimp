@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b5a6d20103
+DECL|enum|__anon29660adf0103
 block|{
 DECL|enumerator|GIMP_COLOR_BUTTON_COLOR_FG
 name|GIMP_COLOR_BUTTON_COLOR_FG
@@ -97,7 +97,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b5a6d20203
+DECL|enum|__anon29660adf0203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -637,12 +637,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
 operator|->
 name|color_area
-argument_list|)
 argument_list|,
 literal|"color_changed"
 argument_list|,
@@ -1460,10 +1457,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dialog
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -1480,15 +1474,12 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|GTK_COLOR_SELECTION_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
 operator|->
 name|ok_button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -1502,15 +1493,12 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|GTK_COLOR_SELECTION_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
 operator|->
 name|cancel_button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -1993,10 +1981,7 @@ expr_stmt|;
 block|}
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 name|gimp_color_button_signals
 index|[

@@ -76,7 +76,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e017120103
+DECL|enum|__anon2c19b2360103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1290,10 +1290,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|module
-argument_list|)
 argument_list|,
 literal|"modified"
 argument_list|,
@@ -1320,10 +1317,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|db
-argument_list|)
 argument_list|,
 name|db_signals
 index|[
@@ -1724,10 +1718,7 @@ name|user_data
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|module
-argument_list|)
 argument_list|,
 name|gimp_module_db_module_modified
 argument_list|,
@@ -1745,10 +1736,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|db
-argument_list|)
 argument_list|,
 name|db_signals
 index|[
@@ -1780,10 +1768,7 @@ parameter_list|)
 block|{
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|db
-argument_list|)
 argument_list|,
 name|db_signals
 index|[

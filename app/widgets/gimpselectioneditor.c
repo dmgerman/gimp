@@ -572,10 +572,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|abox
-argument_list|)
 argument_list|,
 literal|"size_allocate"
 argument_list|,
@@ -623,12 +620,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|selection_editor
 operator|->
 name|preview
-argument_list|)
 argument_list|,
 literal|"button_press_event"
 argument_list|,
@@ -956,12 +950,9 @@ condition|)
 block|{
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|editor
 operator|->
 name|gimage
-argument_list|)
 argument_list|,
 name|gimp_selection_editor_mask_changed
 argument_list|,
@@ -999,10 +990,7 @@ condition|)
 block|{
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gimage
-argument_list|)
 argument_list|,
 literal|"mask_changed"
 argument_list|,

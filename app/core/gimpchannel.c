@@ -7588,10 +7588,7 @@ expr_stmt|;
 comment|/*  free the temporary mask  */
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|tmp_mask
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

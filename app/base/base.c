@@ -279,10 +279,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|config
-argument_list|)
 argument_list|,
 literal|"notify::tile-cache-size"
 argument_list|,
@@ -309,10 +306,7 @@ name|swap_path
 condition|)
 name|g_object_set
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|config
-argument_list|)
 argument_list|,
 literal|"swap_path"
 argument_list|,
@@ -413,10 +407,7 @@ argument_list|()
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|base_config
-argument_list|)
 argument_list|,
 name|base_tile_cache_size_notify
 argument_list|,

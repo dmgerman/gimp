@@ -315,12 +315,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gimp
 operator|->
 name|user_context
-argument_list|)
 argument_list|,
 literal|"foreground_changed"
 argument_list|,
@@ -334,12 +331,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gimp
 operator|->
 name|user_context
-argument_list|)
 argument_list|,
 literal|"background_changed"
 argument_list|,
@@ -464,10 +458,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gradient
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_set_data

@@ -298,10 +298,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|device_info
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_device_info_set_from_device
@@ -353,12 +350,9 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|manager
 operator|->
 name|device_info_list
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_set_data

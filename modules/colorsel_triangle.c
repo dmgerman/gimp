@@ -941,10 +941,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 literal|"motion_notify_event"
 argument_list|,
@@ -958,10 +955,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 literal|"button_press_event"
 argument_list|,
@@ -975,10 +969,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 literal|"button_release_event"
 argument_list|,

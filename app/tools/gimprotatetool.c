@@ -903,10 +903,7 @@ name|cy
 expr_stmt|;
 name|g_signal_handlers_block_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|sizeentry
-argument_list|)
 argument_list|,
 name|rotate_center_changed
 argument_list|,
@@ -1094,10 +1091,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|sizeentry
-argument_list|)
 argument_list|,
 name|rotate_center_changed
 argument_list|,

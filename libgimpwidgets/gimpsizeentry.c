@@ -60,7 +60,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c58ef1e0103
+DECL|enum|__anon277904f80103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -1126,12 +1126,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gsef
 operator|->
 name|value_adjustment
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -1240,12 +1237,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gsef
 operator|->
 name|refval_adjustment
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -1364,12 +1358,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gse
 operator|->
 name|unitmenu
-argument_list|)
 argument_list|,
 literal|"unit_changed"
 argument_list|,
@@ -1588,12 +1579,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gsef
 operator|->
 name|value_adjustment
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -1635,12 +1623,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gsef
 operator|->
 name|refval_adjustment
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -2903,12 +2888,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gsef
 operator|->
 name|gse
-argument_list|)
 argument_list|,
 name|gimp_size_entry_signals
 index|[
@@ -3829,12 +3811,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gsef
 operator|->
 name|gse
-argument_list|)
 argument_list|,
 name|gimp_size_entry_signals
 index|[
@@ -4060,12 +4039,9 @@ expr_stmt|;
 comment|/* hack !!! */
 name|g_signal_handlers_block_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gsef
 operator|->
 name|value_adjustment
-argument_list|)
 argument_list|,
 name|gimp_size_entry_value_callback
 argument_list|,
@@ -4089,12 +4065,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gsef
 operator|->
 name|value_adjustment
-argument_list|)
 argument_list|,
 name|gimp_size_entry_value_callback
 argument_list|,
@@ -4104,10 +4077,7 @@ expr_stmt|;
 block|}
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gse
-argument_list|)
 argument_list|,
 name|gimp_size_entry_signals
 index|[
@@ -4225,10 +4195,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|data
-argument_list|)
 argument_list|,
 name|gimp_size_entry_signals
 index|[

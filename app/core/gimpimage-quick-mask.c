@@ -343,10 +343,7 @@ expr_stmt|;
 comment|/* connect to the removed signal, so the buttons get updated */
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|mask
-argument_list|)
 argument_list|,
 literal|"removed"
 argument_list|,

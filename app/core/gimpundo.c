@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a07fc2e0103
+DECL|enum|__anon29bf32f50103
 block|{
 DECL|enumerator|PUSH
 name|PUSH
@@ -745,10 +745,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|undo
-argument_list|)
 argument_list|,
 name|undo_signals
 index|[
@@ -795,10 +792,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|undo
-argument_list|)
 argument_list|,
 name|undo_signals
 index|[

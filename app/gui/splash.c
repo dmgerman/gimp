@@ -184,10 +184,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|win_initstatus
-argument_list|)
 argument_list|,
 literal|"delete_event"
 argument_list|,

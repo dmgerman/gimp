@@ -565,10 +565,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -582,10 +579,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_object
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|context
-argument_list|)
 argument_list|,
 literal|"brush_changed"
 argument_list|,
@@ -594,10 +588,7 @@ argument_list|(
 name|gimp_preview_set_viewable
 argument_list|)
 argument_list|,
-name|G_OBJECT
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 name|G_CONNECT_SWAPPED
 argument_list|)
@@ -655,10 +646,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -672,10 +660,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_object
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|context
-argument_list|)
 argument_list|,
 literal|"pattern_changed"
 argument_list|,
@@ -684,10 +669,7 @@ argument_list|(
 name|gimp_preview_set_viewable
 argument_list|)
 argument_list|,
-name|G_OBJECT
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 name|G_CONNECT_SWAPPED
 argument_list|)
@@ -745,10 +727,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -762,10 +741,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_object
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|context
-argument_list|)
 argument_list|,
 literal|"gradient_changed"
 argument_list|,
@@ -774,10 +750,7 @@ argument_list|(
 name|gimp_preview_set_viewable
 argument_list|)
 argument_list|,
-name|G_OBJECT
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 name|G_CONNECT_SWAPPED
 argument_list|)
@@ -835,10 +808,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -852,10 +822,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_object
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|context
-argument_list|)
 argument_list|,
 literal|"palette_changed"
 argument_list|,
@@ -864,10 +831,7 @@ argument_list|(
 name|gimp_preview_set_viewable
 argument_list|)
 argument_list|,
-name|G_OBJECT
-argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 name|G_CONNECT_SWAPPED
 argument_list|)
@@ -875,7 +839,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|preview =     gimp_preview_new_full (GIMP_VIEWABLE (gimp_context_get_image (context)), 			   32, 32, 1, 			   FALSE, TRUE, FALSE);   gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->action_area), preview, 		      FALSE, FALSE, 0);   gtk_widget_show (preview);    g_signal_connect (G_OBJECT (preview), "clicked", 		    G_CALLBACK (images_callback), 		    view);    g_signal_connect_object (G_OBJECT (context), "pattern_changed", 			   G_CALLBACK (gimp_preview_set_viewable), 			   G_OBJECT (preview), 			   G_CONNECT_SWAPPED);
+block|preview =     gimp_preview_new_full (GIMP_VIEWABLE (gimp_context_get_image (context)), 			   32, 32, 1, 			   FALSE, TRUE, FALSE);   gtk_box_pack_start (GTK_BOX (GTK_DIALOG (dialog)->action_area), preview, 		      FALSE, FALSE, 0);   gtk_widget_show (preview);    g_signal_connect (preview, "clicked", 		    G_CALLBACK (images_callback), 		    view);    g_signal_connect_object (context, "pattern_changed", 			   G_CALLBACK (gimp_preview_set_viewable), 			   preview, 			   G_CONNECT_SWAPPED);
 endif|#
 directive|endif
 name|gtk_container_add
@@ -953,10 +917,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|adjustment
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,

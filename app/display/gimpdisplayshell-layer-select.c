@@ -390,12 +390,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|layer_select
 operator|->
 name|shell
-argument_list|)
 argument_list|,
 literal|"event"
 argument_list|,

@@ -88,7 +88,7 @@ value|170
 end_define
 
 begin_enum
-DECL|enum|__anon289cc9c10103
+DECL|enum|__anon2a23ccdc0103
 enum|enum
 block|{
 DECL|enumerator|FAMILY_COLUMN
@@ -101,7 +101,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon289cc9c10203
+DECL|enum|__anon2a23ccdc0203
 enum|enum
 block|{
 DECL|enumerator|FACE_COLUMN
@@ -541,12 +541,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dialog
 operator|->
 name|preview
-argument_list|)
 argument_list|,
 literal|"size_allocate"
 argument_list|,
@@ -560,12 +557,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dialog
 operator|->
 name|preview
-argument_list|)
 argument_list|,
 literal|"expose_event"
 argument_list|,

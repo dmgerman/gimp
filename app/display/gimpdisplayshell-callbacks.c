@@ -519,12 +519,9 @@ name|NULL
 decl_stmt|;
 name|g_object_get
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gtk_widget_get_settings
 argument_list|(
 name|widget
-argument_list|)
 argument_list|)
 argument_list|,
 literal|"gtk-menu-bar-accel"
@@ -1023,12 +1020,9 @@ expr_stmt|;
 comment|/*  set up the scrollbar observers  */
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|shell
 operator|->
 name|hsbdata
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
@@ -1042,12 +1036,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|shell
 operator|->
 name|vsbdata
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,

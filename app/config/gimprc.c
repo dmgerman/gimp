@@ -116,7 +116,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2bbd016e0103
+DECL|enum|__anon290d89b30103
 enum|enum
 block|{
 DECL|enumerator|PROP_0
@@ -1585,10 +1585,7 @@ name|autosave
 condition|)
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|rc
-argument_list|)
 argument_list|,
 literal|"notify"
 argument_list|,
@@ -1603,10 +1600,7 @@ expr_stmt|;
 else|else
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|rc
-argument_list|)
 argument_list|,
 name|gimp_rc_notify
 argument_list|,

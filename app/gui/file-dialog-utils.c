@@ -241,12 +241,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_swapped
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|fs
 operator|->
 name|cancel_button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -260,10 +257,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|filesel
-argument_list|)
 argument_list|,
 literal|"delete_event"
 argument_list|,
@@ -277,12 +271,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|fs
 operator|->
 name|ok_button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,

@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a178e4e0103
+DECL|enum|__anon2b02849f0103
 block|{
 DECL|enumerator|DISCONNECT
 name|DISCONNECT
@@ -51,7 +51,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a178e4e0203
+DECL|enum|__anon2b02849f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -502,10 +502,7 @@ condition|)
 block|{
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|object
-argument_list|)
 argument_list|,
 name|object_signals
 index|[
@@ -863,10 +860,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|object
-argument_list|)
 argument_list|,
 name|object_signals
 index|[

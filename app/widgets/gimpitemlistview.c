@@ -154,7 +154,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4b9e520103
+DECL|enum|__anon28c2c5740103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -1043,12 +1043,9 @@ condition|)
 block|{
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|view
 operator|->
 name|item_factory
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|view
@@ -1474,12 +1471,9 @@ name|item_factory
 expr_stmt|;
 name|g_object_ref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|list_view
 operator|->
 name|item_factory
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  connect "drop to new" manually as it makes a difference whether    *  it was clicked or dropped    */
@@ -1589,10 +1583,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|view
-argument_list|)
 argument_list|,
 name|view_signals
 index|[
@@ -1659,12 +1650,9 @@ condition|)
 block|{
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|view
 operator|->
 name|gimage
-argument_list|)
 argument_list|,
 name|gimp_item_list_view_item_changed
 argument_list|,
@@ -1673,12 +1661,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|view
 operator|->
 name|gimage
-argument_list|)
 argument_list|,
 name|gimp_item_list_view_size_changed
 argument_list|,
@@ -1736,12 +1721,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|view
 operator|->
 name|gimage
-argument_list|)
 argument_list|,
 name|view
 operator|->
@@ -1757,12 +1739,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|view
 operator|->
 name|gimage
-argument_list|)
 argument_list|,
 literal|"size_changed"
 argument_list|,

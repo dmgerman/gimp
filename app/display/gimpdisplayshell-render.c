@@ -211,8 +211,7 @@ specifier|static
 name|void
 name|render_setup_notify
 parameter_list|(
-name|GObject
-modifier|*
+name|gpointer
 name|config
 parameter_list|,
 name|GParamSpec
@@ -393,12 +392,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gimp
 operator|->
 name|config
-argument_list|)
 argument_list|,
 literal|"notify::transparency-size"
 argument_list|,
@@ -412,12 +408,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gimp
 operator|->
 name|config
-argument_list|)
 argument_list|,
 literal|"notify::transparency-type"
 argument_list|,
@@ -431,12 +424,9 @@ argument_list|)
 expr_stmt|;
 name|render_setup_notify
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gimp
 operator|->
 name|config
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -466,12 +456,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gimp
 operator|->
 name|config
-argument_list|)
 argument_list|,
 name|render_setup_notify
 argument_list|,
@@ -574,11 +561,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|render_setup_notify (GObject * config,GParamSpec * param_spec,Gimp * gimp)
+DECL|function|render_setup_notify (gpointer config,GParamSpec * param_spec,Gimp * gimp)
 name|render_setup_notify
 parameter_list|(
-name|GObject
-modifier|*
+name|gpointer
 name|config
 parameter_list|,
 name|GParamSpec

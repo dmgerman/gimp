@@ -93,7 +93,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6d8ee90103
+DECL|enum|__anon29ec83dd0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1348,10 +1348,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|list
-argument_list|)
 argument_list|,
 name|parasite_list_signals
 index|[
@@ -1425,10 +1422,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|list
-argument_list|)
 argument_list|,
 name|parasite_list_signals
 index|[

@@ -240,12 +240,9 @@ condition|)
 block|{
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gimp
 operator|->
 name|paint_info_list
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp
@@ -438,10 +435,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|paint_info
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

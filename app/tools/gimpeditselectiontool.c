@@ -1189,10 +1189,7 @@ name|gdisp
 expr_stmt|;
 name|g_object_ref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|edit_select
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|tool_manager_push_tool
@@ -1527,10 +1524,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|edit_select
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

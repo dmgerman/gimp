@@ -1862,10 +1862,7 @@ condition|)
 block|{
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gimage
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|success
@@ -6132,10 +6129,7 @@ name|success
 condition|)
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|mask
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

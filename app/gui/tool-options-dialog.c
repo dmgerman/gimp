@@ -369,10 +369,7 @@ name|editor
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|options_shell
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -566,10 +563,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_object
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|user_context
-argument_list|)
 argument_list|,
 literal|"tool_changed"
 argument_list|,
@@ -578,10 +572,7 @@ argument_list|(
 name|tool_options_dialog_tool_changed
 argument_list|)
 argument_list|,
-name|G_OBJECT
-argument_list|(
 name|options_shell
-argument_list|)
 argument_list|,
 literal|0
 argument_list|)
@@ -655,12 +646,9 @@ control|)
 block|{
 name|g_object_ref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|list
 operator|->
 name|data
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_remove

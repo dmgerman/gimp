@@ -376,7 +376,7 @@ if|#
 directive|if
 literal|0
 comment|/* solely for debugging */
-block|g_signal_connect (G_OBJECT (gimprc), "notify",                     G_CALLBACK (gimprc_notify_callback),                     NULL);
+block|g_signal_connect (gimprc, "notify",                     G_CALLBACK (gimprc_notify_callback),                     NULL);
 endif|#
 directive|endif
 comment|/*  initialize lowlevel stuff  */
@@ -517,10 +517,7 @@ block|}
 comment|/*  connect our "exit" callbacks after gui_restore() so they are    *  invoked after the GUI's "exit" callbacks    */
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|the_gimp
-argument_list|)
 argument_list|,
 literal|"exit"
 argument_list|,
@@ -534,10 +531,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_after
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|the_gimp
-argument_list|)
 argument_list|,
 literal|"exit"
 argument_list|,
@@ -783,10 +777,7 @@ parameter_list|)
 block|{
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gimp
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|the_gimp

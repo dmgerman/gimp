@@ -1632,14 +1632,11 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|htd
 operator|->
 name|histogram_box
 operator|->
 name|histogram
-argument_list|)
 argument_list|,
 literal|"range_changed"
 argument_list|,

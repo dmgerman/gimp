@@ -286,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b73657b0108
+DECL|struct|__anon2b14049d0108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -322,7 +322,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b73657b0208
+DECL|struct|__anon2b14049d0208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -377,7 +377,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b73657b0308
+DECL|struct|__anon2b14049d0308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -4061,12 +4061,9 @@ condition|)
 block|{
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|bezier_sel
 operator|->
 name|mask
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|bezier_sel
@@ -9420,12 +9417,9 @@ condition|)
 block|{
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|bezier_sel
 operator|->
 name|mask
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|bezier_sel

@@ -440,12 +440,9 @@ condition|)
 block|{
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|draw_tool
 operator|->
 name|gc
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|draw_tool
@@ -805,12 +802,9 @@ condition|)
 block|{
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|draw_tool
 operator|->
 name|gc
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|draw_tool

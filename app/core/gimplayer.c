@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c64b6d00103
+DECL|enum|__anon29edcb250103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -764,12 +764,9 @@ condition|)
 block|{
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|layer
 operator|->
 name|mask
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|layer
@@ -2224,12 +2221,9 @@ name|mask
 expr_stmt|;
 name|g_object_ref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|layer
 operator|->
 name|mask
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_layer_mask_set_layer
@@ -2280,10 +2274,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|layer
-argument_list|)
 argument_list|,
 name|layer_signals
 index|[
@@ -3193,12 +3184,9 @@ expr_stmt|;
 block|}
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|layer
 operator|->
 name|mask
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|layer
@@ -3277,10 +3265,7 @@ expr_stmt|;
 block|}
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|layer
-argument_list|)
 argument_list|,
 name|layer_signals
 index|[
@@ -6102,10 +6087,7 @@ name|opacity
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|layer
-argument_list|)
 argument_list|,
 name|layer_signals
 index|[
@@ -6212,10 +6194,7 @@ name|mode
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|layer
-argument_list|)
 argument_list|,
 name|layer_signals
 index|[
@@ -6326,10 +6305,7 @@ name|FALSE
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|layer
-argument_list|)
 argument_list|,
 name|layer_signals
 index|[
@@ -6414,10 +6390,7 @@ name|FALSE
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|layer
-argument_list|)
 argument_list|,
 name|layer_signals
 index|[

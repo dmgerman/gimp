@@ -176,7 +176,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b03d4db0103
+DECL|enum|__anon2b75e66f0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -1423,10 +1423,7 @@ expr_stmt|;
 comment|/*  set ref_count to 2 --> never swap the standard brush  */
 name|g_object_ref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|standard_brush
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1964,10 +1961,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|brush
-argument_list|)
 argument_list|,
 name|brush_signals
 index|[
@@ -2489,10 +2483,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|brush
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2646,10 +2637,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|brush
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

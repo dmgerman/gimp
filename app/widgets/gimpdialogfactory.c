@@ -143,7 +143,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4fd61c0103
+DECL|enum|__anon2bdd48400103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -164,7 +164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4fd61c0203
+DECL|enum|__anon2bdd48400203
 block|{
 DECL|enumerator|GIMP_DIALOG_SHOW_ALL
 name|GIMP_DIALOG_SHOW_ALL
@@ -2784,10 +2784,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_object
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|dialog
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,

@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c8a5d60103
+DECL|enum|__anon27984d120103
 block|{
 DECL|enumerator|TOGGLED
 name|TOGGLED
@@ -381,12 +381,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
 operator|->
 name|button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -400,12 +397,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
 operator|->
 name|line1
-argument_list|)
 argument_list|,
 literal|"expose_event"
 argument_list|,
@@ -419,12 +413,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
 operator|->
 name|line2
-argument_list|)
 argument_list|,
 literal|"expose_event"
 argument_list|,
@@ -851,10 +842,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 name|gimp_chain_button_signals
 index|[

@@ -132,7 +132,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9bad3e0103
+DECL|enum|__anon2a2d57b60103
 block|{
 DECL|enumerator|FORE_AREA
 name|FORE_AREA
@@ -489,10 +489,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|color_area
-argument_list|)
 argument_list|,
 literal|"event"
 argument_list|,
@@ -545,10 +542,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_swapped
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|context
-argument_list|)
 argument_list|,
 literal|"foreground_changed"
 argument_list|,
@@ -562,10 +556,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_swapped
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|context
-argument_list|)
 argument_list|,
 literal|"background_changed"
 argument_list|,

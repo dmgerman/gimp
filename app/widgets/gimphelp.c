@@ -578,12 +578,9 @@ name|use_netscape
 condition|)
 name|g_object_set
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gimp
 operator|->
 name|config
-argument_list|)
 argument_list|,
 literal|"help-browser"
 argument_list|,

@@ -316,10 +316,7 @@ name|undos
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|undos
-argument_list|)
 argument_list|,
 literal|"add"
 argument_list|,
@@ -333,10 +330,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|undos
-argument_list|)
 argument_list|,
 literal|"remove"
 argument_list|,
@@ -388,12 +382,9 @@ condition|)
 block|{
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|stack
 operator|->
 name|undos
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|stack
@@ -582,10 +573,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|undo
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

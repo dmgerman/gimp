@@ -1696,10 +1696,7 @@ condition|)
 block|{
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|widget
-argument_list|)
 argument_list|,
 literal|"drag_begin"
 argument_list|,
@@ -1713,10 +1710,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|widget
-argument_list|)
 argument_list|,
 literal|"drag_end"
 argument_list|,
@@ -1730,10 +1724,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|widget
-argument_list|)
 argument_list|,
 literal|"drag_data_get"
 argument_list|,
@@ -1954,10 +1945,7 @@ condition|)
 block|{
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|widget
-argument_list|)
 argument_list|,
 literal|"drag_data_received"
 argument_list|,

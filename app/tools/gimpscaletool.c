@@ -724,10 +724,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|sizeentry
-argument_list|)
 argument_list|,
 literal|"unit_changed"
 argument_list|,
@@ -860,10 +857,7 @@ name|y1
 expr_stmt|;
 name|g_signal_handlers_block_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|sizeentry
-argument_list|)
 argument_list|,
 name|gimp_scale_tool_size_changed
 argument_list|,
@@ -872,10 +866,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_block_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|sizeentry
-argument_list|)
 argument_list|,
 name|gimp_scale_tool_unit_changed
 argument_list|,
@@ -1047,10 +1038,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|sizeentry
-argument_list|)
 argument_list|,
 name|gimp_scale_tool_size_changed
 argument_list|,
@@ -1059,10 +1047,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|sizeentry
-argument_list|)
 argument_list|,
 name|gimp_scale_tool_unit_changed
 argument_list|,

@@ -378,12 +378,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|psp
 operator|->
 name|context
-argument_list|)
 argument_list|,
 literal|"palette_changed"
 argument_list|,
@@ -572,12 +569,9 @@ name|context
 condition|)
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|psp
 operator|->
 name|context
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free

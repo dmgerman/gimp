@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ef37210103
+DECL|enum|__anon2c171fc10103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -666,10 +666,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|display
-argument_list|)
 argument_list|,
 name|display_signals
 index|[

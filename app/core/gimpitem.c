@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf7af510103
+DECL|enum|__anon279591360103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -528,12 +528,9 @@ condition|)
 block|{
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|item
 operator|->
 name|parasites
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|item
@@ -1009,10 +1006,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|item
-argument_list|)
 argument_list|,
 name|gimp_item_signals
 index|[

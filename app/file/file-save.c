@@ -439,10 +439,7 @@ block|}
 comment|/* ref the image, so it can't get deleted during save */
 name|g_object_ref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gimage
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|proc
@@ -749,10 +746,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gimage
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

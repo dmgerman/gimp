@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ee9e140103
+DECL|enum|__anon29b3abff0103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ee9e140203
+DECL|enum|__anon29b3abff0203
 block|{
 DECL|enumerator|UNIT_COLUMN
 name|UNIT_COLUMN
@@ -656,10 +656,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|menuitem
-argument_list|)
 argument_list|,
 literal|"activate"
 argument_list|,
@@ -752,10 +749,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|menuitem
-argument_list|)
 argument_list|,
 literal|"activate"
 argument_list|,
@@ -855,10 +849,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|menuitem
-argument_list|)
 argument_list|,
 literal|"activate"
 argument_list|,
@@ -947,10 +938,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|menuitem
-argument_list|)
 argument_list|,
 literal|"activate"
 argument_list|,
@@ -1384,10 +1372,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|menuitem
-argument_list|)
 argument_list|,
 literal|"activate"
 argument_list|,
@@ -1993,10 +1978,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gum
-argument_list|)
 argument_list|,
 name|gimp_unit_menu_signals
 index|[
@@ -2169,10 +2151,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_object
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gum
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -2181,22 +2160,16 @@ argument_list|(
 name|gtk_widget_destroy
 argument_list|)
 argument_list|,
-name|G_OBJECT
-argument_list|(
 name|gum
 operator|->
 name|selection
-argument_list|)
 argument_list|,
 name|G_CONNECT_SWAPPED
 argument_list|)
 expr_stmt|;
 name|g_signal_connect_object
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gum
-argument_list|)
 argument_list|,
 literal|"unmap"
 argument_list|,
@@ -2205,12 +2178,9 @@ argument_list|(
 name|gtk_widget_destroy
 argument_list|)
 argument_list|,
-name|G_OBJECT
-argument_list|(
 name|gum
 operator|->
 name|selection
-argument_list|)
 argument_list|,
 name|G_CONNECT_SWAPPED
 argument_list|)
@@ -2500,12 +2470,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gum
 operator|->
 name|tv
-argument_list|)
 argument_list|,
 literal|"row_activated"
 argument_list|,
@@ -2526,12 +2493,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gum
 operator|->
 name|tv
-argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -2812,10 +2776,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gum
-argument_list|)
 argument_list|,
 name|gimp_unit_menu_signals
 index|[

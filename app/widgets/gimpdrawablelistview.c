@@ -483,12 +483,9 @@ condition|)
 block|{
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|item_view
 operator|->
 name|gimage
-argument_list|)
 argument_list|,
 name|gimp_drawable_list_view_floating_selection_changed
 argument_list|,
@@ -517,12 +514,9 @@ condition|)
 block|{
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|item_view
 operator|->
 name|gimage
-argument_list|)
 argument_list|,
 literal|"floating_selection_changed"
 argument_list|,

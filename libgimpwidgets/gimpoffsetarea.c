@@ -43,7 +43,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a55b5270103
+DECL|enum|__anon296de2220103
 block|{
 DECL|enumerator|OFFSETS_CHANGED
 name|OFFSETS_CHANGED
@@ -686,10 +686,7 @@ condition|)
 block|{
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|offset_area
-argument_list|)
 argument_list|,
 name|gimp_offset_area_signals
 index|[
@@ -1307,10 +1304,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|offset_area
-argument_list|)
 argument_list|,
 name|gimp_offset_area_signals
 index|[

@@ -1393,10 +1393,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|imagefile
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

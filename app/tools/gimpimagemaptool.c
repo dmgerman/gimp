@@ -890,10 +890,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|toggle
-argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
@@ -967,12 +964,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|image_map_tool
 operator|->
 name|image_map
-argument_list|)
 argument_list|,
 literal|"flush"
 argument_list|,

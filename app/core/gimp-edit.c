@@ -285,14 +285,11 @@ name|global_buffer
 condition|)
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gimage
 operator|->
 name|gimp
 operator|->
 name|global_buffer
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Set the global edit buffer  */
@@ -487,14 +484,11 @@ name|global_buffer
 condition|)
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gimage
 operator|->
 name|gimp
 operator|->
 name|global_buffer
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Set the global edit buffer  */
@@ -979,10 +973,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|gimage
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27fd74510103
+DECL|enum|__anon28777cac0103
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -547,10 +547,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|viewable
-argument_list|)
 argument_list|,
 name|viewable_signals
 index|[
@@ -583,10 +580,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|viewable
-argument_list|)
 argument_list|,
 name|viewable_signals
 index|[

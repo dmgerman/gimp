@@ -78,7 +78,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be774b00103
+DECL|enum|__anon2783415a0103
 block|{
 DECL|enumerator|GIMP_WIDGET_HELP_TYPE_HELP
 name|GIMP_WIDGET_HELP_TYPE_HELP
@@ -236,10 +236,7 @@ expr_stmt|;
 comment|/* take ownership of the tooltips */
 name|g_object_ref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|tool_tips
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_object_sink
@@ -267,10 +264,7 @@ parameter_list|)
 block|{
 name|g_object_unref
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|tool_tips
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|tool_tips
@@ -434,10 +428,7 @@ argument_list|()
 expr_stmt|;
 name|g_object_set
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|tips_query
-argument_list|)
 argument_list|,
 literal|"emit_always"
 argument_list|,
@@ -448,10 +439,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|tips_query
-argument_list|)
 argument_list|,
 literal|"widget_selected"
 argument_list|,
@@ -487,10 +475,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|widget
-argument_list|)
 argument_list|,
 literal|"show_help"
 argument_list|,
