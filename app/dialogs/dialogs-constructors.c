@@ -715,7 +715,6 @@ argument_list|)
 argument_list|,
 operator|(
 name|gpointer
-operator|*
 operator|)
 operator|&
 name|view
@@ -791,7 +790,6 @@ argument_list|)
 argument_list|,
 operator|(
 name|gpointer
-operator|*
 operator|)
 operator|&
 name|view
@@ -874,7 +872,6 @@ argument_list|)
 argument_list|,
 operator|(
 name|gpointer
-operator|*
 operator|)
 operator|&
 name|view

@@ -462,7 +462,6 @@ argument_list|)
 argument_list|,
 operator|(
 name|gpointer
-operator|*
 operator|)
 operator|&
 name|prefs_dialog
@@ -1691,7 +1690,6 @@ argument_list|)
 argument_list|,
 operator|(
 name|gpointer
-operator|*
 operator|)
 operator|&
 name|input_dialog
@@ -7139,7 +7137,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon28b7d1a10108
+DECL|struct|__anon2c0cabef0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9580,7 +9578,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28b7d1a10208
+DECL|struct|__anon2c0cabef0208
 block|{
 DECL|member|label
 specifier|const
@@ -9739,7 +9737,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28b7d1a10308
+DECL|struct|__anon2c0cabef0308
 block|{
 DECL|member|tree_label
 specifier|const
