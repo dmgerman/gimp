@@ -859,6 +859,7 @@ name|tool_type
 argument_list|)
 argument_list|)
 expr_stmt|;
+return|return;
 block|}
 name|tool_info
 operator|->

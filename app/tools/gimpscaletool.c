@@ -90,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pixmaps2.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tools/tool_options.h"
 end_include
 
@@ -139,6 +133,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pixmaps2.h"
 end_include
 
 begin_comment
@@ -546,12 +546,21 @@ modifier|*
 name|sc_tool
 parameter_list|)
 block|{
-comment|/*GimpTool          *tool;*/
+name|GimpTool
+modifier|*
+name|tool
+decl_stmt|;
 name|GimpTransformTool
 modifier|*
 name|tr_tool
 decl_stmt|;
-comment|/* tool = GIMP_TOOL (sc_tool); */
+name|tool
+operator|=
+name|GIMP_TOOL
+argument_list|(
+name|sc_tool
+argument_list|)
+expr_stmt|;
 name|tr_tool
 operator|=
 name|GIMP_TRANSFORM_TOOL
@@ -559,7 +568,12 @@ argument_list|(
 name|sc_tool
 argument_list|)
 expr_stmt|;
-comment|/* FIXME! tool->tool_cursor = GIMP_RESIZE_TOOL_CURSOR; */
+name|tool
+operator|->
+name|tool_cursor
+operator|=
+name|GIMP_RESIZE_TOOL_CURSOR
+expr_stmt|;
 comment|/*  set the scale specific transformation attributes  */
 name|tr_tool
 operator|->
@@ -2123,7 +2137,11 @@ operator|-
 literal|1
 expr_stmt|;
 break|break;
-default|default :
+case|case
+name|TRANSFORM_HANDLE_CENTER
+case|:
+return|return;
+default|default:
 return|return;
 block|}
 comment|/*  if just the mod1 key is down, affect only the height  */
@@ -2673,7 +2691,25 @@ operator|->
 name|y1
 expr_stmt|;
 break|break;
-default|default :
+case|case
+name|TRANSFORM_HANDLE_CENTER
+case|:
+name|cx
+operator|=
+name|x1
+expr_stmt|;
+name|cy
+operator|=
+name|y1
+expr_stmt|;
+name|diffx
+operator|=
+name|diffy
+operator|=
+literal|0
+expr_stmt|;
+break|break;
+default|default:
 name|cx
 operator|=
 name|x1

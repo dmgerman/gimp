@@ -63,6 +63,24 @@ parameter_list|)
 value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_SCALE_TOOL, GimpScaleToolClass))
 end_define
 
+begin_typedef
+DECL|typedef|GimpScaleTool
+typedef|typedef
+name|struct
+name|_GimpScaleTool
+name|GimpScaleTool
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpScaleToolClass
+typedef|typedef
+name|struct
+name|_GimpScaleToolClass
+name|GimpScaleToolClass
+typedef|;
+end_typedef
+
 begin_struct
 DECL|struct|_GimpScaleTool
 struct|struct
@@ -88,24 +106,6 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
-
-begin_typedef
-DECL|typedef|GimpScaleTool
-typedef|typedef
-name|struct
-name|_GimpScaleTool
-name|GimpScaleTool
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpScaleToolClass
-typedef|typedef
-name|struct
-name|_GimpScaleToolClass
-name|GimpScaleToolClass
-typedef|;
-end_typedef
 
 begin_function_decl
 name|TileManager
@@ -142,8 +142,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GtkType
-name|gimp_scale_tool_get_type
+name|void
+name|gimp_scale_tool_register
 parameter_list|(
 name|void
 parameter_list|)
@@ -151,9 +151,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpTool
-modifier|*
-name|gimp_scale_tool_new
+name|GtkType
+name|gimp_scale_tool_get_type
 parameter_list|(
 name|void
 parameter_list|)
