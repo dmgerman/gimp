@@ -3581,8 +3581,8 @@ comment|/* insrow == -1 -> append else insert at insrow */
 end_comment
 
 begin_function
-DECL|function|paths_add_path (PATHP bzp,gint insrow)
 name|void
+DECL|function|paths_add_path (PATHP bzp,gint insrow)
 name|paths_add_path
 parameter_list|(
 name|PATHP
@@ -6055,6 +6055,9 @@ operator|->
 name|current_path_list
 operator|=
 name|NULL
+expr_stmt|;
+name|paths_dialog_set_menu_sensitivity
+argument_list|()
 expr_stmt|;
 block|}
 if|if
