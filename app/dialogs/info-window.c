@@ -642,7 +642,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -1645,7 +1645,7 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|title
 decl_stmt|;
@@ -1803,9 +1803,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|info_window_follow_auto ()
+DECL|function|info_window_follow_auto (void)
 name|info_window_follow_auto
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GDisplay
 modifier|*
