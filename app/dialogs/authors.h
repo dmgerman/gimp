@@ -172,7 +172,7 @@ literal|"Tim Janik"
 block|,
 literal|"Fellmann Joaquim"
 block|,
-literal|"Roman Joost"
+literal|"RÃ³man Joost"
 block|,
 literal|"Geert Jordaens"
 block|,
