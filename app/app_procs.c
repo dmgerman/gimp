@@ -298,7 +298,7 @@ block|{
 name|GimpInitStatusFunc
 name|update_status_func
 init|=
-name|app_init_update_none
+name|NULL
 decl_stmt|;
 comment|/*  Create an instance of the "Gimp" object which is the root of the    *  core object system    */
 name|the_gimp
@@ -559,12 +559,14 @@ argument_list|,
 name|no_splash_image
 argument_list|)
 expr_stmt|;
-name|g_assert
-argument_list|(
+if|if
+condition|(
+operator|!
 name|update_status_func
-operator|!=
-name|NULL
-argument_list|)
+condition|)
+name|update_status_func
+operator|=
+name|app_init_update_none
 expr_stmt|;
 comment|/*  connect our "exit" callbacks after gui_init() so they are    *  invoked after the GUI's "exit" callbacks    */
 name|g_signal_connect_after
