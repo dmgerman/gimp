@@ -1841,7 +1841,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon27fa4a570108
+DECL|struct|__anon2af9b60a0108
 block|{
 DECL|member|modifiers
 name|GdkModifierType
@@ -3200,8 +3200,6 @@ argument_list|,
 name|S_IRUSR
 operator||
 name|S_IWUSR
-argument_list|,
-literal|0600
 argument_list|)
 expr_stmt|;
 if|if
