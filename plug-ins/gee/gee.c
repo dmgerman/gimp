@@ -2732,7 +2732,7 @@ expr_stmt|;
 block|}
 endif|#
 directive|endif
-comment|//      memcpy(preview_data1, seed_data, 256*256*3);
+comment|/*      memcpy(preview_data1, seed_data, 256*256*3); */
 if|if
 condition|(
 name|frame
@@ -2803,7 +2803,7 @@ comment|/* Quick specialized clamp */
 block|}
 block|}
 else|else
-comment|// if (0)
+comment|/* if (0) */
 block|{
 name|gint
 name|pixwords

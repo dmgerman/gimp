@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"histogram.h"
+file|"gimphistogram.h"
 end_include
 
 begin_include

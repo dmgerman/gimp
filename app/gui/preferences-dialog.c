@@ -3690,7 +3690,7 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon2b2455340108
+DECL|struct|__anon29218ba20108
 specifier|static
 specifier|const
 struct|struct
@@ -3741,7 +3741,7 @@ operator|)
 block|}
 block|}
 struct|;
-DECL|struct|__anon2b2455340208
+DECL|struct|__anon29218ba20208
 specifier|static
 specifier|const
 struct|struct
@@ -3833,7 +3833,7 @@ name|edit_plug_in_path
 block|}
 block|}
 struct|;
-DECL|struct|__anon2b2455340308
+DECL|struct|__anon29218ba20308
 specifier|static
 specifier|const
 struct|struct
@@ -7783,6 +7783,9 @@ argument_list|(
 name|hbox
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|ENABLE_MP
 name|label
 operator|=
 name|gtk_label_new
@@ -7914,6 +7917,9 @@ argument_list|(
 name|num_processors_spinbutton
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
+comment|/* ENABLE_MP */
 name|button
 operator|=
 name|gtk_check_button_new_with_label

@@ -58,7 +58,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon28c85c160103
+DECL|enum|__anon2a32f0910103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -219,7 +219,7 @@ name|gimp_signal_new
 argument_list|(
 literal|"dirty"
 argument_list|,
-literal|0
+name|GTK_RUN_FIRST
 argument_list|,
 name|type
 argument_list|,
@@ -237,7 +237,7 @@ name|gimp_signal_new
 argument_list|(
 literal|"rename"
 argument_list|,
-literal|0
+name|GTK_RUN_FIRST
 argument_list|,
 name|type
 argument_list|,

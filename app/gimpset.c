@@ -42,7 +42,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bdb3a2f0108
+DECL|struct|__anon2b62a5f50108
 typedef|typedef
 struct|struct
 block|{
@@ -67,7 +67,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdb3a2f0203
+DECL|enum|__anon2b62a5f50203
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -318,7 +318,7 @@ name|gimp_signal_new
 argument_list|(
 literal|"add"
 argument_list|,
-literal|0
+name|GTK_RUN_FIRST
 argument_list|,
 name|type
 argument_list|,
@@ -336,7 +336,7 @@ name|gimp_signal_new
 argument_list|(
 literal|"remove"
 argument_list|,
-literal|0
+name|GTK_RUN_FIRST
 argument_list|,
 name|type
 argument_list|,

@@ -491,7 +491,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2742ea1f0103
+DECL|enum|__anon27a609000103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -603,7 +603,7 @@ name|gimp_signal_new
 argument_list|(
 literal|"dirty"
 argument_list|,
-literal|0
+name|GTK_RUN_FIRST
 argument_list|,
 name|type
 argument_list|,
@@ -621,7 +621,7 @@ name|gimp_signal_new
 argument_list|(
 literal|"repaint"
 argument_list|,
-literal|0
+name|GTK_RUN_FIRST
 argument_list|,
 name|type
 argument_list|,
@@ -639,7 +639,7 @@ name|gimp_signal_new
 argument_list|(
 literal|"rename"
 argument_list|,
-literal|0
+name|GTK_RUN_FIRST
 argument_list|,
 name|type
 argument_list|,
@@ -657,7 +657,7 @@ name|gimp_signal_new
 argument_list|(
 literal|"resize"
 argument_list|,
-literal|0
+name|GTK_RUN_FIRST
 argument_list|,
 name|type
 argument_list|,
@@ -675,7 +675,7 @@ name|gimp_signal_new
 argument_list|(
 literal|"restructure"
 argument_list|,
-literal|0
+name|GTK_RUN_FIRST
 argument_list|,
 name|type
 argument_list|,
@@ -693,7 +693,7 @@ name|gimp_signal_new
 argument_list|(
 literal|"colormap_changed"
 argument_list|,
-literal|0
+name|GTK_RUN_FIRST
 argument_list|,
 name|type
 argument_list|,
