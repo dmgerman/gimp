@@ -481,6 +481,27 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|TempBuf
+modifier|*
+name|gimp_viewable_get_dummy_preview
+parameter_list|(
+name|GimpViewable
+modifier|*
+name|vieable
+parameter_list|,
+name|gint
+name|width
+parameter_list|,
+name|gint
+name|height
+parameter_list|,
+name|gint
+name|bpp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GdkPixbuf
 modifier|*
 name|gimp_viewable_get_preview_pixbuf

@@ -58,6 +58,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -6862,6 +6868,10 @@ condition|(
 name|req_width
 operator|<=
 literal|0
+operator|||
+name|req_width
+operator|>
+literal|256
 condition|)
 name|success
 operator|=
@@ -6883,6 +6893,10 @@ condition|(
 name|req_height
 operator|<=
 literal|0
+operator|||
+name|req_height
+operator|>
+literal|256
 condition|)
 name|success
 operator|=
@@ -6893,6 +6907,18 @@ condition|(
 name|success
 condition|)
 block|{
+name|GimpImage
+modifier|*
+name|gimage
+init|=
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+decl_stmt|;
 name|TempBuf
 modifier|*
 name|buf
@@ -6902,17 +6928,6 @@ name|dwidth
 decl_stmt|,
 name|dheight
 decl_stmt|;
-if|if
-condition|(
-name|req_width
-operator|<=
-literal|128
-operator|&&
-name|req_height
-operator|<=
-literal|128
-condition|)
-block|{
 comment|/* Adjust the width/height ratio */
 name|dwidth
 operator|=
@@ -6971,9 +6986,19 @@ operator|/
 name|dheight
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimage
+operator|->
+name|gimp
+operator|->
+name|config
+operator|->
+name|layer_previews
+condition|)
 name|buf
 operator|=
-name|gimp_viewable_get_preview
+name|gimp_viewable_get_new_preview
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
@@ -6983,6 +7008,30 @@ argument_list|,
 name|req_width
 argument_list|,
 name|req_height
+argument_list|)
+expr_stmt|;
+else|else
+name|buf
+operator|=
+name|gimp_viewable_get_dummy_preview
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
+name|req_width
+argument_list|,
+name|req_height
+argument_list|,
+name|gimp_drawable_has_alpha
+argument_list|(
+name|drawable
+argument_list|)
+condition|?
+literal|4
+else|:
+literal|3
 argument_list|)
 expr_stmt|;
 if|if
@@ -7034,7 +7083,18 @@ name|buf
 operator|->
 name|bytes
 expr_stmt|;
+name|temp_buf_free
+argument_list|(
+name|buf
+argument_list|)
+expr_stmt|;
 block|}
+else|else
+block|{
+name|success
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 block|}
 name|return_args
@@ -7211,7 +7271,7 @@ literal|"gimp_drawable_thumbnail"
 block|,
 literal|"Get a thumbnail of a drawable."
 block|,
-literal|"This function gets data from which a thumbnail of a drawable preview can be created. Maximum x or y dimension is 128 pixels. The pixels are returned in the RGB[A] format. The bpp return value gives the number of bytes in the image. The alpha channel is also returned if the drawable has one."
+literal|"This function gets data from which a thumbnail of a drawable preview can be created. Maximum x or y dimension is 256 pixels. The pixels are returned in the RGB[A] format. The bpp return value gives the number of bytes in the image. The alpha channel is also returned if the drawable has one."
 block|,
 literal|"Andy Thomas"
 block|,
