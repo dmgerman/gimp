@@ -259,7 +259,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba709610108
+DECL|struct|__anon2c3dcf590108
 block|{
 DECL|member|raw
 name|gint
@@ -275,7 +275,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba709610208
+DECL|struct|__anon2c3dcf590208
 block|{
 DECL|member|run
 name|gint
@@ -1343,7 +1343,7 @@ if|if
 condition|(
 name|nparams
 operator|!=
-literal|5
+literal|6
 condition|)
 name|status
 operator|=

@@ -89,6 +89,14 @@ name|aspect_x
 decl_stmt|,
 name|aspect_y
 decl_stmt|;
+DECL|member|oframe1
+DECL|member|oframe2
+name|unsigned
+name|long
+name|oframe1
+decl_stmt|,
+name|oframe2
+decl_stmt|;
 DECL|typedef|s_fli_header
 block|}
 name|s_fli_header
@@ -235,7 +243,7 @@ DECL|macro|FLI_COLOR_2
 define|#
 directive|define
 name|FLI_COLOR_2
-value|2
+value|4
 end_define
 
 begin_define
@@ -358,6 +366,7 @@ name|char
 modifier|*
 name|old_framebuf
 parameter_list|,
+name|unsigned
 name|char
 modifier|*
 name|old_cmap
@@ -367,6 +376,7 @@ name|char
 modifier|*
 name|framebuf
 parameter_list|,
+name|unsigned
 name|char
 modifier|*
 name|cmap
@@ -386,10 +396,12 @@ name|s_fli_header
 modifier|*
 name|fli_header
 parameter_list|,
+name|unsigned
 name|char
 modifier|*
 name|old_cmap
 parameter_list|,
+name|unsigned
 name|char
 modifier|*
 name|cmap
@@ -409,10 +421,12 @@ name|s_fli_header
 modifier|*
 name|fli_header
 parameter_list|,
+name|unsigned
 name|char
 modifier|*
 name|old_cmap
 parameter_list|,
+name|unsigned
 name|char
 modifier|*
 name|cmap
@@ -562,6 +576,7 @@ name|char
 modifier|*
 name|old_framebuf
 parameter_list|,
+name|unsigned
 name|char
 modifier|*
 name|old_cmap
@@ -571,6 +586,7 @@ name|char
 modifier|*
 name|framebuf
 parameter_list|,
+name|unsigned
 name|char
 modifier|*
 name|cmap
@@ -594,10 +610,12 @@ name|s_fli_header
 modifier|*
 name|fli_header
 parameter_list|,
+name|unsigned
 name|char
 modifier|*
 name|old_cmap
 parameter_list|,
+name|unsigned
 name|char
 modifier|*
 name|cmap
@@ -617,10 +635,12 @@ name|s_fli_header
 modifier|*
 name|fli_header
 parameter_list|,
+name|unsigned
 name|char
 modifier|*
 name|old_cmap
 parameter_list|,
+name|unsigned
 name|char
 modifier|*
 name|cmap

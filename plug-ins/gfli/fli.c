@@ -28,12 +28,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"fli.h"
 end_include
 
@@ -44,7 +38,6 @@ end_comment
 begin_function
 DECL|function|fli_read_char (FILE * f)
 specifier|static
-specifier|inline
 name|unsigned
 name|char
 name|fli_read_char
@@ -79,7 +72,6 @@ end_function
 begin_function
 DECL|function|fli_read_short (FILE * f)
 specifier|static
-specifier|inline
 name|unsigned
 name|short
 name|fli_read_short
@@ -133,7 +125,6 @@ end_function
 begin_function
 DECL|function|fli_read_long (FILE * f)
 specifier|static
-specifier|inline
 name|unsigned
 name|long
 name|fli_read_long
@@ -205,7 +196,6 @@ end_function
 begin_function
 DECL|function|fli_write_char (FILE * f,unsigned char b)
 specifier|static
-specifier|inline
 name|void
 name|fli_write_char
 parameter_list|(
@@ -236,7 +226,6 @@ end_function
 begin_function
 DECL|function|fli_write_short (FILE * f,unsigned short w)
 specifier|static
-specifier|inline
 name|void
 name|fli_write_short
 parameter_list|(
@@ -296,7 +285,6 @@ end_function
 begin_function
 DECL|function|fli_write_long (FILE * f,unsigned long l)
 specifier|static
-specifier|inline
 name|void
 name|fli_write_long
 parameter_list|(
@@ -670,6 +658,35 @@ name|speed
 argument_list|)
 expr_stmt|;
 comment|/* 16 */
+name|fseek
+argument_list|(
+name|f
+argument_list|,
+literal|80
+argument_list|,
+name|SEEK_SET
+argument_list|)
+expr_stmt|;
+name|fli_write_long
+argument_list|(
+name|f
+argument_list|,
+name|fli_header
+operator|->
+name|oframe1
+argument_list|)
+expr_stmt|;
+comment|/* 80 */
+name|fli_write_long
+argument_list|(
+name|f
+argument_list|,
+name|fli_header
+operator|->
+name|oframe2
+argument_list|)
+expr_stmt|;
+comment|/* 84 */
 block|}
 else|else
 block|{
@@ -686,7 +703,7 @@ block|}
 end_function
 
 begin_function
-DECL|function|fli_read_frame (FILE * f,s_fli_header * fli_header,unsigned char * old_framebuf,char * old_cmap,unsigned char * framebuf,char * cmap)
+DECL|function|fli_read_frame (FILE * f,s_fli_header * fli_header,unsigned char * old_framebuf,unsigned char * old_cmap,unsigned char * framebuf,unsigned char * cmap)
 name|void
 name|fli_read_frame
 parameter_list|(
@@ -703,6 +720,7 @@ name|char
 modifier|*
 name|old_framebuf
 parameter_list|,
+name|unsigned
 name|char
 modifier|*
 name|old_cmap
@@ -712,6 +730,7 @@ name|char
 modifier|*
 name|framebuf
 parameter_list|,
+name|unsigned
 name|char
 modifier|*
 name|cmap
@@ -990,7 +1009,7 @@ block|}
 end_function
 
 begin_function
-DECL|function|fli_write_frame (FILE * f,s_fli_header * fli_header,unsigned char * old_framebuf,char * old_cmap,unsigned char * framebuf,char * cmap,unsigned short codec_mask)
+DECL|function|fli_write_frame (FILE * f,s_fli_header * fli_header,unsigned char * old_framebuf,unsigned char * old_cmap,unsigned char * framebuf,unsigned char * cmap,unsigned short codec_mask)
 name|void
 name|fli_write_frame
 parameter_list|(
@@ -1007,6 +1026,7 @@ name|char
 modifier|*
 name|old_framebuf
 parameter_list|,
+name|unsigned
 name|char
 modifier|*
 name|old_cmap
@@ -1016,6 +1036,7 @@ name|char
 modifier|*
 name|framebuf
 parameter_list|,
+name|unsigned
 name|char
 modifier|*
 name|cmap
@@ -1052,6 +1073,34 @@ argument_list|,
 name|SEEK_SET
 argument_list|)
 expr_stmt|;
+switch|switch
+condition|(
+name|fli_header
+operator|->
+name|frames
+condition|)
+block|{
+case|case
+literal|0
+case|:
+name|fli_header
+operator|->
+name|oframe1
+operator|=
+name|framepos
+expr_stmt|;
+break|break;
+case|case
+literal|1
+case|:
+name|fli_header
+operator|->
+name|oframe2
+operator|=
+name|framepos
+expr_stmt|;
+break|break;
+block|}
 name|fli_frame
 operator|.
 name|size
@@ -1080,13 +1129,6 @@ operator|==
 name|HEADER_FLI
 condition|)
 block|{
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"fli_color\n"
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|fli_write_color
@@ -1117,13 +1159,6 @@ operator|==
 name|HEADER_FLC
 condition|)
 block|{
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"fli_color_2\n"
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|fli_write_color_2
@@ -1270,7 +1305,7 @@ comment|/*  * palette chunks from the classical Autodesk Animator.  */
 end_comment
 
 begin_function
-DECL|function|fli_read_color (FILE * f,s_fli_header * fli_header,char * old_cmap,char * cmap)
+DECL|function|fli_read_color (FILE * f,s_fli_header * fli_header,unsigned char * old_cmap,unsigned char * cmap)
 name|void
 name|fli_read_color
 parameter_list|(
@@ -1282,10 +1317,12 @@ name|s_fli_header
 modifier|*
 name|fli_header
 parameter_list|,
+name|unsigned
 name|char
 modifier|*
 name|old_cmap
 parameter_list|,
+name|unsigned
 name|char
 modifier|*
 name|cmap
@@ -1380,9 +1417,8 @@ operator|<<
 literal|2
 expr_stmt|;
 block|}
+return|return;
 block|}
-else|else
-block|{
 for|for
 control|(
 name|col_cnt
@@ -1509,11 +1545,10 @@ expr_stmt|;
 block|}
 block|}
 block|}
-block|}
 end_function
 
 begin_function
-DECL|function|fli_write_color (FILE * f,s_fli_header * fli_header,char * old_cmap,char * cmap)
+DECL|function|fli_write_color (FILE * f,s_fli_header * fli_header,unsigned char * old_cmap,unsigned char * cmap)
 name|int
 name|fli_write_color
 parameter_list|(
@@ -1525,10 +1560,12 @@ name|s_fli_header
 modifier|*
 name|fli_header
 parameter_list|,
+name|unsigned
 name|char
 modifier|*
 name|old_cmap
 parameter_list|,
+name|unsigned
 name|char
 modifier|*
 name|cmap
@@ -1845,16 +1882,12 @@ operator|&
 literal|255
 argument_list|)
 expr_stmt|;
-for|for
-control|(
-init|;
+while|while
+condition|(
 name|cnt_col
 operator|>
 literal|0
-condition|;
-name|cnt_col
-operator|--
-control|)
+condition|)
 block|{
 name|fli_write_char
 argument_list|(
@@ -1894,6 +1927,9 @@ index|]
 operator|>>
 literal|2
 argument_list|)
+expr_stmt|;
+name|cnt_col
+operator|--
 expr_stmt|;
 block|}
 block|}
@@ -2014,7 +2050,7 @@ comment|/*  * palette chunks from Autodesk Animator pro  */
 end_comment
 
 begin_function
-DECL|function|fli_read_color_2 (FILE * f,s_fli_header * fli_header,char * old_cmap,char * cmap)
+DECL|function|fli_read_color_2 (FILE * f,s_fli_header * fli_header,unsigned char * old_cmap,unsigned char * cmap)
 name|void
 name|fli_read_color_2
 parameter_list|(
@@ -2026,10 +2062,12 @@ name|s_fli_header
 modifier|*
 name|fli_header
 parameter_list|,
+name|unsigned
 name|char
 modifier|*
 name|old_cmap
 parameter_list|,
+name|unsigned
 name|char
 modifier|*
 name|cmap
@@ -2122,9 +2160,8 @@ name|f
 argument_list|)
 expr_stmt|;
 block|}
+return|return;
 block|}
-else|else
-block|{
 for|for
 control|(
 name|col_cnt
@@ -2245,11 +2282,10 @@ expr_stmt|;
 block|}
 block|}
 block|}
-block|}
 end_function
 
 begin_function
-DECL|function|fli_write_color_2 (FILE * f,s_fli_header * fli_header,char * old_cmap,char * cmap)
+DECL|function|fli_write_color_2 (FILE * f,s_fli_header * fli_header,unsigned char * old_cmap,unsigned char * cmap)
 name|int
 name|fli_write_color_2
 parameter_list|(
@@ -2261,10 +2297,12 @@ name|s_fli_header
 modifier|*
 name|fli_header
 parameter_list|,
+name|unsigned
 name|char
 modifier|*
 name|old_cmap
 parameter_list|,
+name|unsigned
 name|char
 modifier|*
 name|cmap
@@ -2756,7 +2794,6 @@ modifier|*
 name|framebuf
 parameter_list|)
 block|{
-comment|/* Wow, this is heavy stuff. */
 name|memset
 argument_list|(
 name|framebuf
@@ -3030,6 +3067,7 @@ name|unsigned
 name|short
 name|yc
 decl_stmt|;
+name|unsigned
 name|char
 modifier|*
 name|pos
@@ -3117,18 +3155,15 @@ name|unsigned
 name|short
 name|len
 decl_stmt|;
-name|ps
-operator|^=
-literal|0xFF
-expr_stmt|;
-name|ps
-operator|+=
-literal|1
-expr_stmt|;
 for|for
 control|(
 name|len
 operator|=
+operator|-
+operator|(
+name|signed
+name|char
+operator|)
 name|ps
 init|;
 name|len
@@ -3690,6 +3725,7 @@ name|firstline
 decl_stmt|,
 name|numline
 decl_stmt|;
+name|unsigned
 name|char
 modifier|*
 name|pos
@@ -3822,12 +3858,13 @@ name|char
 name|val
 decl_stmt|;
 name|ps
-operator|^=
-literal|0xFF
-expr_stmt|;
+operator|=
+operator|-
+operator|(
+name|signed
+name|char
+operator|)
 name|ps
-operator|+=
-literal|1
 expr_stmt|;
 name|val
 operator|=
@@ -4644,6 +4681,7 @@ name|lc
 decl_stmt|,
 name|numline
 decl_stmt|;
+name|unsigned
 name|char
 modifier|*
 name|pos
@@ -4729,15 +4767,15 @@ operator|&
 literal|0x4000
 condition|)
 block|{
-comment|/* yc+=pc& 0x3FFF; */
-comment|/* BANG! */
 name|yc
 operator|+=
-literal|0x10000
 operator|-
+operator|(
+name|signed
+name|short
+operator|)
 name|pc
 expr_stmt|;
-comment|/* better */
 block|}
 else|else
 block|{
@@ -4828,11 +4866,13 @@ decl_stmt|,
 name|v2
 decl_stmt|;
 name|ps
-operator|^=
-literal|0xFF
-expr_stmt|;
+operator|=
+operator|-
+operator|(
+name|signed
+name|char
+operator|)
 name|ps
-operator|++
 expr_stmt|;
 name|v1
 operator|=

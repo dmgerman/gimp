@@ -212,7 +212,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b20a5ce0108
+DECL|struct|__anon288fd0c50108
 typedef|typedef
 struct|struct
 block|{
@@ -289,7 +289,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b20a5ce0208
+DECL|struct|__anon288fd0c50208
 typedef|typedef
 struct|struct
 block|{
@@ -509,7 +509,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b20a5ce0308
+DECL|struct|__anon288fd0c50308
 typedef|typedef
 struct|struct
 block|{
@@ -552,7 +552,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b20a5ce0408
+DECL|struct|__anon288fd0c50408
 typedef|typedef
 struct|struct
 block|{
@@ -1102,7 +1102,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b20a5ce0508
+DECL|struct|__anon288fd0c50508
 typedef|typedef
 struct|struct
 block|{
@@ -3627,7 +3627,7 @@ value|200
 end_define
 
 begin_typedef
-DECL|struct|__anon2b20a5ce0608
+DECL|struct|__anon288fd0c50608
 typedef|typedef
 struct|struct
 block|{
@@ -4282,72 +4282,6 @@ name|dialog_preview_store
 argument_list|()
 expr_stmt|;
 block|}
-block|}
-end_function
-
-begin_function
-DECL|function|dialog_preview_free (void)
-specifier|static
-name|void
-name|dialog_preview_free
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-name|gint
-name|y
-decl_stmt|;
-for|for
-control|(
-name|y
-operator|=
-literal|0
-init|;
-name|y
-operator|<
-name|preview
-operator|.
-name|height
-condition|;
-name|y
-operator|++
-control|)
-block|{
-name|free
-argument_list|(
-name|preview
-operator|.
-name|source
-index|[
-name|y
-index|]
-argument_list|)
-expr_stmt|;
-name|free
-argument_list|(
-name|preview
-operator|.
-name|pixels
-index|[
-name|y
-index|]
-argument_list|)
-expr_stmt|;
-block|}
-name|free
-argument_list|(
-name|preview
-operator|.
-name|source
-argument_list|)
-expr_stmt|;
-name|free
-argument_list|(
-name|preview
-operator|.
-name|pixels
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
