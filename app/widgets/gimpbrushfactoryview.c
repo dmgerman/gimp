@@ -407,7 +407,10 @@ literal|0.0
 argument_list|,
 literal|0.0
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Percentage of width of brush"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
