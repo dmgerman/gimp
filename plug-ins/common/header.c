@@ -698,7 +698,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"#define HEADER_PIXEL(data,pixel) {\\\n  pixel[0] = (((data[0] - 33)<< 2) | ((data[1] - 33)>> 4)); \\\n  pixel[1] = ((((data[1] - 33)& 0xF)<< 4) | ((data[2] - 33)>> 2)); \\\n  pixel[2] = ((((data[2] - 33)& 0x3)<< 6) | ((data[3] - 33))); \\\n  data += 4;\n}\n"
+literal|"#define HEADER_PIXEL(data,pixel) {\\\n  pixel[0] = (((data[0] - 33)<< 2) | ((data[1] - 33)>> 4)); \\\n  pixel[1] = ((((data[1] - 33)& 0xF)<< 4) | ((data[2] - 33)>> 2)); \\\n  pixel[2] = ((((data[2] - 33)& 0x3)<< 6) | ((data[3] - 33))); \\\n  data += 4; \\\n}\n"
 argument_list|)
 expr_stmt|;
 name|fprintf
