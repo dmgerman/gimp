@@ -1083,7 +1083,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b05ad210103
+DECL|enum|__anon2be772f20103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1097,7 +1097,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b05ad210203
+DECL|enum|__anon2be772f20203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -2227,7 +2227,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_TOOL_INFO
 argument_list|,
-literal|0
+name|G_PARAM_WRITABLE
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_COLOR
