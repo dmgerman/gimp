@@ -76,17 +76,17 @@ value|4
 end_define
 
 begin_comment
-comment|/* Uncomment this line to get a rough estimate of  * how long the plug-in takes to run.  */
+comment|/* Uncomment this line to get a rough estimate of how long the plug-in  * takes to run.  */
 end_comment
 
 begin_comment
-comment|/* #define TIMER */
+comment|/*  #define TIMER  */
 end_comment
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292003650108
+DECL|struct|__anon28c958880108
 block|{
 DECL|member|radius
 name|gdouble
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292003650208
+DECL|struct|__anon28c958880208
 block|{
 DECL|member|run
 name|gboolean
@@ -171,7 +171,6 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-specifier|inline
 name|void
 name|blur_line
 parameter_list|(
@@ -198,7 +197,7 @@ modifier|*
 name|dest
 parameter_list|,
 name|gint
-name|y
+name|len
 parameter_list|,
 name|glong
 name|bytes
@@ -830,6 +829,8 @@ argument_list|,
 name|g_timer_elapsed
 argument_list|(
 name|timer
+argument_list|,
+name|NULL
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -849,9 +850,8 @@ end_comment
 
 begin_function
 specifier|static
-specifier|inline
 name|void
-DECL|function|blur_line (const gdouble * ctable,const gdouble * cmatrix,gint cmatrix_length,const guchar * src,guchar * dest,gint y,glong bytes)
+DECL|function|blur_line (const gdouble * ctable,const gdouble * cmatrix,gint cmatrix_length,const guchar * src,guchar * dest,gint len,glong bytes)
 name|blur_line
 parameter_list|(
 specifier|const
@@ -877,7 +877,7 @@ modifier|*
 name|dest
 parameter_list|,
 name|gint
-name|y
+name|len
 parameter_list|,
 name|glong
 name|bytes
@@ -929,16 +929,12 @@ name|guchar
 modifier|*
 name|src_p1
 decl_stmt|;
-name|guchar
-modifier|*
-name|dest_p
-decl_stmt|;
 comment|/* this first block is the same as the non-optimized version --    * it is only used for very small pictures, so speed isn't a    * big concern.    */
 if|if
 condition|(
 name|cmatrix_length
 operator|>
-name|y
+name|len
 condition|)
 block|{
 for|for
@@ -949,7 +945,7 @@ literal|0
 init|;
 name|row
 operator|<
-name|y
+name|len
 condition|;
 name|row
 operator|++
@@ -968,7 +964,7 @@ literal|0
 init|;
 name|j
 operator|<
-name|y
+name|len
 condition|;
 name|j
 operator|++
@@ -977,7 +973,6 @@ block|{
 comment|/* if the index is in bounds, add it to the scale counter */
 if|if
 condition|(
-operator|(
 name|j
 operator|+
 name|cmatrix_middle
@@ -985,9 +980,7 @@ operator|-
 name|row
 operator|>=
 literal|0
-operator|)
 operator|&&
-operator|(
 name|j
 operator|+
 name|cmatrix_middle
@@ -995,7 +988,6 @@ operator|-
 name|row
 operator|<
 name|cmatrix_length
-operator|)
 condition|)
 name|scale
 operator|+=
@@ -1023,6 +1015,10 @@ name|i
 operator|++
 control|)
 block|{
+name|src_p1
+operator|=
+name|src_p
+expr_stmt|;
 name|sum
 operator|=
 literal|0
@@ -1035,7 +1031,7 @@ literal|0
 init|;
 name|j
 operator|<
-name|y
+name|len
 condition|;
 name|j
 operator|++
@@ -1043,21 +1039,17 @@ control|)
 block|{
 if|if
 condition|(
-operator|(
 name|j
 operator|>=
 name|row
 operator|-
 name|cmatrix_middle
-operator|)
 operator|&&
-operator|(
 name|j
 operator|<=
 name|row
 operator|+
 name|cmatrix_middle
-operator|)
 condition|)
 name|sum
 operator|+=
@@ -1076,14 +1068,9 @@ name|j
 index|]
 expr_stmt|;
 block|}
-name|dest
-index|[
-name|row
 operator|*
-name|bytes
-operator|+
-name|i
-index|]
+name|dest
+operator|++
 operator|=
 operator|(
 name|guchar
@@ -1175,7 +1162,6 @@ condition|;
 name|j
 operator|++
 control|)
-block|{
 name|sum
 operator|+=
 name|src
@@ -1198,19 +1184,10 @@ index|[
 name|j
 index|]
 expr_stmt|;
-block|}
-name|dest
-index|[
-name|row
 operator|*
-name|bytes
-operator|+
-name|i
-index|]
+name|dest
+operator|++
 operator|=
-operator|(
-name|guchar
-operator|)
 name|ROUND
 argument_list|(
 name|sum
@@ -1221,20 +1198,12 @@ expr_stmt|;
 block|}
 block|}
 comment|/* go through each pixel in each col */
-name|dest_p
-operator|=
-name|dest
-operator|+
-name|row
-operator|*
-name|bytes
-expr_stmt|;
 for|for
 control|(
 init|;
 name|row
 operator|<
-name|y
+name|len
 operator|-
 name|cmatrix_middle
 condition|;
@@ -1244,6 +1213,8 @@ control|)
 block|{
 name|src_p
 operator|=
+name|src
+operator|+
 operator|(
 name|row
 operator|-
@@ -1251,8 +1222,6 @@ name|cmatrix_middle
 operator|)
 operator|*
 name|bytes
-operator|+
-name|src
 expr_stmt|;
 for|for
 control|(
@@ -1268,10 +1237,6 @@ name|i
 operator|++
 control|)
 block|{
-name|sum
-operator|=
-literal|0
-expr_stmt|;
 name|cmatrix_p
 operator|=
 name|cmatrix
@@ -1283,6 +1248,10 @@ expr_stmt|;
 name|ctable_p
 operator|=
 name|ctable
+expr_stmt|;
+name|sum
+operator|=
+literal|0
 expr_stmt|;
 for|for
 control|(
@@ -1321,10 +1290,8 @@ name|src_p
 operator|++
 expr_stmt|;
 operator|*
-operator|(
-name|dest_p
+name|dest
 operator|++
-operator|)
 operator|=
 name|ROUND
 argument_list|(
@@ -1339,7 +1306,7 @@ control|(
 init|;
 name|row
 operator|<
-name|y
+name|len
 condition|;
 name|row
 operator|++
@@ -1358,7 +1325,7 @@ literal|0
 init|;
 name|j
 operator|<
-name|y
+name|len
 operator|-
 name|row
 operator|+
@@ -1400,7 +1367,7 @@ literal|0
 init|;
 name|j
 operator|<
-name|y
+name|len
 operator|-
 name|row
 operator|+
@@ -1409,7 +1376,6 @@ condition|;
 name|j
 operator|++
 control|)
-block|{
 name|sum
 operator|+=
 name|src
@@ -1432,19 +1398,10 @@ index|[
 name|j
 index|]
 expr_stmt|;
-block|}
-name|dest
-index|[
-name|row
 operator|*
-name|bytes
-operator|+
-name|i
-index|]
+name|dest
+operator|++
 operator|=
-operator|(
-name|guchar
-operator|)
 name|ROUND
 argument_list|(
 name|sum
