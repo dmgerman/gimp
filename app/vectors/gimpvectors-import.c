@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293697d30108
+DECL|struct|__anon2b1c7e4e0108
 block|{
 DECL|member|stack
 name|GQueue
@@ -216,7 +216,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293697d30208
+DECL|struct|__anon2b1c7e4e0208
 block|{
 DECL|member|id
 name|gchar
@@ -575,7 +575,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_vectors_import_file:  * @image: the #GimpImage to add the paths to  * @filename: name of a SVG file  * @merge: should multiple paths be merged into a single #GimpVectors object  * @scale: should the SVG be scaled to fit the image dimensions  * @error: location to store possible errors  *  * Imports one or more paths from a SVG file.  *  * Return value: %TRUE on success, %FALSE if an error occured  **/
+comment|/**  * gimp_vectors_import_file:  * @image:    the #GimpImage to add the paths to  * @filename: name of a SVG file  * @merge:    should multiple paths be merged into a single #GimpVectors object  * @scale:    should the SVG be scaled to fit the image dimensions  * @position: position in the image's vectors stack where to add the vectors  * @error:    location to store possible errors  *  * Imports one or more paths from a SVG file.  *  * Return value: %TRUE on success, %FALSE if an error occured  **/
 end_comment
 
 begin_function
@@ -3678,7 +3678,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293697d30308
+DECL|struct|__anon2b1c7e4e0308
 block|{
 DECL|member|strokes
 name|GList

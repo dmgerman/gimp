@@ -32,7 +32,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|file_open_location_cmd_callback
+name|file_open_from_image_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -46,7 +46,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|file_open_from_image_cmd_callback
+name|file_open_location_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

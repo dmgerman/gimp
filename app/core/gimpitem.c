@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b88db870103
+DECL|enum|__anon2aa93f580103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -1700,7 +1700,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_configure:  * @item: The #GimpItem to configure.  * @gimage: The #GimpImage to which the item belongs.  * @offset_x: The X offset to assign the item.  * @offset_y: The Y offset to assign the item.  * @width: The width to assign the item.  * @height: The height to assign the item.  * @name: The name to assign the item.  *  * This function is used to configure a new item.  First, if the item  * does not already have an ID, it is assigned the next available  * one, and then inserted into the Item Hash Table.  Next, it is  * given basic item properties as specified by the arguments.  */
+comment|/**  * gimp_item_configure:  * @item:     The #GimpItem to configure.  * @gimage:   The #GimpImage to which the item belongs.  * @offset_x: The X offset to assign the item.  * @offset_y: The Y offset to assign the item.  * @width:    The width to assign the item.  * @height:   The height to assign the item.  * @name:     The name to assign the item.  *  * This function is used to configure a new item.  First, if the item  * does not already have an ID, it is assigned the next available  * one, and then inserted into the Item Hash Table.  Next, it is  * given basic item properties as specified by the arguments.  */
 end_comment
 
 begin_function
@@ -1879,7 +1879,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_duplicate:  * @item: The #GimpItem to duplicate.  * @new_type: The type to make the new item.  * @add_alpha: #TRUE if an alpha channel should be added to the new item.  *  * Returns: the newly created item.  */
+comment|/**  * gimp_item_duplicate:  * @item:      The #GimpItem to duplicate.  * @new_type:  The type to make the new item.  * @add_alpha: #TRUE if an alpha channel should be added to the new item.  *  * Returns: the newly created item.  */
 end_comment
 
 begin_function
@@ -1952,7 +1952,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_convert:  * @item: The @GimpItem to convert.  * @dest_image: The #GimpImage in which to place the converted item.  * @new_type: The type to convert the item to.  * @add_alpha: #TRUE if an alpha channel should be added to the converted item.  *  * Returns: the new item that results from the conversion.  */
+comment|/**  * gimp_item_convert:  * @item:       The #GimpItem to convert.  * @dest_image: The #GimpImage in which to place the converted item.  * @new_type:   The type to convert the item to.  * @add_alpha:  #TRUE if an alpha channel should be added to the converted item.  *  * Returns: the new item that results from the conversion.  */
 end_comment
 
 begin_function
@@ -2064,7 +2064,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_rename:  * @item: The #GimpItem to rename.  * @new_name: The new name to give the item.  *  * This function assigns a new name to the item, if the desired name is  * different from the name it already has, and pushes an entry onto the  * undo stack for the item's image.  If @new_name is NULL or empty, the  * default name for the item's class is used.  If the name is changed,  * the "name_changed" signal is emitted for the item.  *  * Returns: %TRUE if the @item could be renamed, %FALSE otherwise.  */
+comment|/**  * gimp_item_rename:  * @item:     The #GimpItem to rename.  * @new_name: The new name to give the item.  *  * This function assigns a new name to the item, if the desired name is  * different from the name it already has, and pushes an entry onto the  * undo stack for the item's image.  If @new_name is NULL or empty, the  * default name for the item's class is used.  If the name is changed,  * the "name_changed" signal is emitted for the item.  *  * Returns: %TRUE if the @item could be renamed, %FALSE otherwise.  */
 end_comment
 
 begin_function
@@ -2222,12 +2222,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_offsets:  * @item: The #GimpItem to check.  * @off_x: Return location for the item's X offset.  * @off_y: Return location for the item's Y offset.  *  * Reveals the X and Y offsets of the item.  */
+comment|/**  * gimp_item_offsets:  * @item:     The #GimpItem to check.  * @offset_x: Return location for the item's X offset.  * @offset_y: Return location for the item's Y offset.  *  * Reveals the X and Y offsets of the item.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_item_offsets (const GimpItem * item,gint * off_x,gint * off_y)
+DECL|function|gimp_item_offsets (const GimpItem * item,gint * offset_x,gint * offset_y)
 name|gimp_item_offsets
 parameter_list|(
 specifier|const
@@ -2237,11 +2237,11 @@ name|item
 parameter_list|,
 name|gint
 modifier|*
-name|off_x
+name|offset_x
 parameter_list|,
 name|gint
 modifier|*
-name|off_y
+name|offset_y
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -2254,10 +2254,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|off_x
+name|offset_x
 condition|)
 operator|*
-name|off_x
+name|offset_x
 operator|=
 name|item
 operator|->
@@ -2265,10 +2265,10 @@ name|offset_x
 expr_stmt|;
 if|if
 condition|(
-name|off_y
+name|offset_y
 condition|)
 operator|*
-name|off_y
+name|offset_y
 operator|=
 name|item
 operator|->
@@ -2278,12 +2278,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_translate:  * @item: The #GimpItem to move.  * @off_x: Increment to the X offset of the item.  * @off_y: Increment to the Y offset of the item.  * @push_undo: If #TRUE, create an entry in the image's undo stack  *             for this action.  *  * Adds the specified increments to the X and Y offsets for the item.  */
+comment|/**  * gimp_item_translate:  * @item:      The #GimpItem to move.  * @offset_x:  Increment to the X offset of the item.  * @offset_y:  Increment to the Y offset of the item.  * @push_undo: If #TRUE, create an entry in the image's undo stack  *             for this action.  *  * Adds the specified increments to the X and Y offsets for the item.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_item_translate (GimpItem * item,gint off_x,gint off_y,gboolean push_undo)
+DECL|function|gimp_item_translate (GimpItem * item,gint offset_x,gint offset_y,gboolean push_undo)
 name|gimp_item_translate
 parameter_list|(
 name|GimpItem
@@ -2291,10 +2291,10 @@ modifier|*
 name|item
 parameter_list|,
 name|gint
-name|off_x
+name|offset_x
 parameter_list|,
 name|gint
-name|off_y
+name|offset_y
 parameter_list|,
 name|gboolean
 name|push_undo
@@ -2351,9 +2351,9 @@ name|translate
 argument_list|(
 name|item
 argument_list|,
-name|off_x
+name|offset_x
 argument_list|,
-name|off_y
+name|offset_y
 argument_list|,
 name|push_undo
 argument_list|)
