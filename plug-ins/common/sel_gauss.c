@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3405b50108
+DECL|struct|__anon288b36dd0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -67,7 +67,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3405b50208
+DECL|struct|__anon288b36dd0208
 block|{
 DECL|member|run
 name|gint
@@ -461,7 +461,7 @@ if|if
 condition|(
 name|nparams
 operator|!=
-literal|7
+literal|5
 condition|)
 name|status
 operator|=
