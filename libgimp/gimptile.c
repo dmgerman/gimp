@@ -46,7 +46,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/*  This is the percentage of the maximum cache size that   *  should be cleared from the cache when an eviction is   *  necessary.  */
+comment|/*  This is the percentage of the maximum cache size that  *  should be cleared from the cache when an eviction is  *  necessary.  */
 end_comment
 
 begin_define
@@ -111,28 +111,6 @@ begin_function_decl
 specifier|static
 name|void
 name|gimp_tile_cache_flush
-parameter_list|(
-name|GimpTile
-modifier|*
-name|tile
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_tile_cache_zorch
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|guint
-name|gimp_tile_hash
 parameter_list|(
 name|GimpTile
 modifier|*
@@ -222,8 +200,7 @@ block|{
 name|tile
 operator|->
 name|ref_count
-operator|+=
-literal|1
+operator|++
 expr_stmt|;
 if|if
 condition|(
@@ -265,16 +242,17 @@ modifier|*
 name|tile
 parameter_list|)
 block|{
-if|if
-condition|(
+name|g_return_if_fail
+argument_list|(
 name|tile
-condition|)
-block|{
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|tile
 operator|->
 name|ref_count
-operator|+=
-literal|1
+operator|++
 expr_stmt|;
 if|if
 condition|(
@@ -284,12 +262,11 @@ name|ref_count
 operator|==
 literal|1
 condition|)
-block|{
 name|tile
 operator|->
 name|data
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|guchar
 argument_list|,
@@ -306,34 +283,11 @@ operator|->
 name|bpp
 argument_list|)
 expr_stmt|;
-name|memset
-argument_list|(
-name|tile
-operator|->
-name|data
-argument_list|,
-literal|0
-argument_list|,
-name|tile
-operator|->
-name|ewidth
-operator|*
-name|tile
-operator|->
-name|eheight
-operator|*
-name|tile
-operator|->
-name|bpp
-argument_list|)
-expr_stmt|;
-block|}
 name|gimp_tile_cache_insert
 argument_list|(
 name|tile
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -350,16 +304,17 @@ name|gboolean
 name|dirty
 parameter_list|)
 block|{
-if|if
-condition|(
+name|g_return_if_fail
+argument_list|(
 name|tile
-condition|)
-block|{
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|tile
 operator|->
 name|ref_count
-operator|-=
-literal|1
+operator|--
 expr_stmt|;
 name|tile
 operator|->
@@ -396,7 +351,6 @@ name|NULL
 expr_stmt|;
 block|}
 block|}
-block|}
 end_function
 
 begin_function
@@ -409,10 +363,15 @@ modifier|*
 name|tile
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|tile
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
-name|tile
-operator|&&
 name|tile
 operator|->
 name|data
@@ -437,6 +396,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_tile_cache_size:  * @kilobytes: new cache size in kilobytes  *  * Sets the size of the tile cache on the plug-in side. The tile cache  * is used to reduce the number of tiles exchanged between the GIMP core  * and the plug-in. See also gimp_tile_cache_ntiles().  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_tile_cache_size (gulong kilobytes)
@@ -455,6 +418,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_tile_cache_ntiles:  * @ntiles: number of tiles that should fit into the cache  *  * Sets the size of the tile cache on the plug-in side. This function  * is similar to gimp_tile_cache_size() but allows to specify the  * number of tiles directly.  *  * If your plug-in access pixels tile-by-tile, it doesn't need a tile  * cache at all. If however the plug-in accesses drawable pixel data  * row-by-row, it should set the tile cache large enough to hold the  * number of tiles per row. Double this size if your plug-in uses  * shadow tiles.  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_tile_cache_ntiles (gulong ntiles)
@@ -466,10 +433,7 @@ parameter_list|)
 block|{
 name|gimp_tile_cache_size
 argument_list|(
-call|(
-name|gulong
-call|)
-argument_list|(
+operator|(
 name|ntiles
 operator|*
 name|gimp_tile_width
@@ -481,7 +445,7 @@ operator|*
 literal|4
 operator|+
 literal|1023
-argument_list|)
+operator|)
 operator|/
 literal|1024
 argument_list|)
@@ -573,7 +537,6 @@ name|data
 expr_stmt|;
 if|if
 condition|(
-operator|(
 name|tile_data
 operator|->
 name|drawable_ID
@@ -583,9 +546,7 @@ operator|->
 name|drawable
 operator|->
 name|drawable_id
-operator|)
 operator|||
-operator|(
 name|tile_data
 operator|->
 name|tile_num
@@ -593,9 +554,7 @@ operator|!=
 name|tile
 operator|->
 name|tile_num
-operator|)
 operator|||
-operator|(
 name|tile_data
 operator|->
 name|shadow
@@ -603,9 +562,7 @@ operator|!=
 name|tile
 operator|->
 name|shadow
-operator|)
 operator|||
-operator|(
 name|tile_data
 operator|->
 name|width
@@ -613,9 +570,7 @@ operator|!=
 name|tile
 operator|->
 name|ewidth
-operator|)
 operator|||
-operator|(
 name|tile_data
 operator|->
 name|height
@@ -623,9 +578,7 @@ operator|!=
 name|tile
 operator|->
 name|eheight
-operator|)
 operator|||
-operator|(
 name|tile_data
 operator|->
 name|bpp
@@ -633,12 +586,11 @@ operator|!=
 name|tile
 operator|->
 name|bpp
-operator|)
 condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"received tile info did not match computed tile info\n"
+literal|"received tile info did not match computed tile info"
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -656,29 +608,8 @@ name|tile
 operator|->
 name|data
 operator|=
-name|g_new
+name|g_memdup
 argument_list|(
-name|guchar
-argument_list|,
-name|tile
-operator|->
-name|ewidth
-operator|*
-name|tile
-operator|->
-name|eheight
-operator|*
-name|tile
-operator|->
-name|bpp
-argument_list|)
-expr_stmt|;
-name|memcpy
-argument_list|(
-name|tile
-operator|->
-name|data
-argument_list|,
 name|gimp_shm_addr
 argument_list|()
 argument_list|,
@@ -976,10 +907,7 @@ name|tile_hash_table
 operator|=
 name|g_hash_table_new
 argument_list|(
-operator|(
-name|GHashFunc
-operator|)
-name|gimp_tile_hash
+name|g_direct_hash
 argument_list|,
 name|NULL
 argument_list|)
@@ -1118,9 +1046,19 @@ operator|)
 operator|>
 name|max_cache_size
 condition|)
-name|gimp_tile_cache_zorch
-argument_list|()
+block|{
+name|gimp_tile_cache_flush
+argument_list|(
+operator|(
+name|GimpTile
+operator|*
+operator|)
+name|tile_list_head
+operator|->
+name|data
+argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 operator|(
@@ -1178,8 +1116,7 @@ comment|/* Reference the tile so that it won't be returned to        *  the main
 name|tile
 operator|->
 name|ref_count
-operator|+=
-literal|1
+operator|++
 expr_stmt|;
 if|if
 condition|(
@@ -1226,30 +1163,7 @@ condition|(
 operator|!
 name|tile_hash_table
 condition|)
-block|{
-name|tile_hash_table
-operator|=
-name|g_hash_table_new
-argument_list|(
-operator|(
-name|GHashFunc
-operator|)
-name|gimp_tile_hash
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|max_tile_size
-operator|=
-name|gimp_tile_width
-argument_list|()
-operator|*
-name|gimp_tile_height
-argument_list|()
-operator|*
-literal|4
-expr_stmt|;
-block|}
+return|return;
 comment|/* Find where the tile is in the cache.    */
 name|tmp
 operator|=
@@ -1323,53 +1237,6 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_tile_cache_zorch (void)
-name|gimp_tile_cache_zorch
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-if|if
-condition|(
-name|tile_list_head
-condition|)
-name|gimp_tile_cache_flush
-argument_list|(
-operator|(
-name|GimpTile
-operator|*
-operator|)
-name|tile_list_head
-operator|->
-name|data
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|guint
-DECL|function|gimp_tile_hash (GimpTile * tile)
-name|gimp_tile_hash
-parameter_list|(
-name|GimpTile
-modifier|*
-name|tile
-parameter_list|)
-block|{
-return|return
-operator|(
-name|gulong
-operator|)
-name|tile
-return|;
 block|}
 end_function
 
