@@ -209,6 +209,51 @@ function_decl|;
 end_function_decl
 
 begin_comment
+comment|/*  component  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_selection_data_set_component
+parameter_list|(
+name|GtkSelectionData
+modifier|*
+name|selection
+parameter_list|,
+name|GdkAtom
+name|atom
+parameter_list|,
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|GimpChannelType
+name|channel
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpImage
+modifier|*
+name|gimp_selection_data_get_component
+parameter_list|(
+name|GtkSelectionData
+modifier|*
+name|selection
+parameter_list|,
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|GimpChannelType
+modifier|*
+name|channel
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  item  */
 end_comment
 
