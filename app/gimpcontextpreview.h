@@ -86,7 +86,7 @@ name|GimpContextPreviewClass
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7810f40103
+DECL|enum|__anon27d580120103
 block|{
 DECL|enumerator|GCP_BRUSH
 name|GCP_BRUSH
@@ -95,6 +95,9 @@ literal|0
 block|,
 DECL|enumerator|GCP_PATTERN
 name|GCP_PATTERN
+block|,
+DECL|enumerator|GCP_GRADIENT
+name|GCP_GRADIENT
 block|,
 DECL|enumerator|GCP_LAST
 name|GCP_LAST

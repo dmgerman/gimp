@@ -115,6 +115,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"indicator_area.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"interface.h"
 end_include
 
@@ -1149,6 +1155,10 @@ operator|->
 name|name
 argument_list|)
 expr_stmt|;
+name|gradient_area_update
+argument_list|()
+expr_stmt|;
+comment|/*  update the indicator_area  */
 name|import_palette_grad_update
 argument_list|(
 name|gsp
@@ -1199,7 +1209,7 @@ argument_list|(
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/* Set the current gradient in this dailog to the "real  current"*/
+comment|/* Set the current gradient in this dialog to the "real  current"*/
 if|if
 condition|(
 name|gsp

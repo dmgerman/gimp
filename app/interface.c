@@ -1234,11 +1234,7 @@ expr_stmt|;
 name|ind_area
 operator|=
 name|indicator_area_create
-argument_list|(
-literal|54
-argument_list|,
-literal|42
-argument_list|)
+argument_list|()
 expr_stmt|;
 name|gtk_container_add
 argument_list|(
