@@ -455,7 +455,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291debcb0108
+DECL|struct|__anon2b1513db0108
 block|{
 DECL|member|name
 specifier|const
@@ -715,7 +715,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291debcb0208
+DECL|struct|__anon2b1513db0208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -788,7 +788,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291debcb0308
+DECL|struct|__anon2b1513db0308
 block|{
 DECL|member|input_spi
 name|gint
@@ -814,10 +814,10 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291debcb0408
+DECL|struct|__anon2b1513db0408
 block|{
 DECL|member|run
-name|gint
+name|gboolean
 name|run
 decl_stmt|;
 DECL|typedef|NewsprintInterface
@@ -833,7 +833,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291debcb0508
+DECL|struct|__anon2b1513db0508
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -940,7 +940,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291debcb0608
+DECL|struct|__anon2b1513db0608
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1124,7 +1124,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291debcb0708
+DECL|struct|__anon2b1513db0708
 block|{
 DECL|member|name
 specifier|const
@@ -1592,6 +1592,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -1599,6 +1600,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -1988,9 +1990,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -1998,6 +2001,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -6875,7 +6879,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291debcb0808
+DECL|struct|__anon2b1513db0808
 block|{
 DECL|member|index
 name|gint

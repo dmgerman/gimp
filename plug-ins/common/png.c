@@ -102,7 +102,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae6d2310108
+DECL|struct|__anon27d5f9000108
 block|{
 DECL|member|interlaced
 name|gint
@@ -157,6 +157,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -164,6 +165,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -185,6 +187,7 @@ specifier|static
 name|gint32
 name|load_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -197,6 +200,7 @@ specifier|static
 name|gint
 name|save_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -793,9 +797,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -803,6 +808,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -1347,14 +1353,14 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (gchar * filename)
+DECL|function|load_image (const gchar * filename)
 name|load_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
 parameter_list|)
-comment|/* I - File to load */
 block|{
 name|int
 name|i
@@ -2730,26 +2736,23 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|save_image (gchar * filename,gint32 image_ID,gint32 drawable_ID,gint32 orig_image_ID)
+DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID,gint32 orig_image_ID)
 name|save_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
 parameter_list|,
-comment|/* I - File to save to */
 name|gint32
 name|image_ID
 parameter_list|,
-comment|/* I - Image to save */
 name|gint32
 name|drawable_ID
 parameter_list|,
-comment|/* I - Current drawable */
 name|gint32
 name|orig_image_ID
 parameter_list|)
-comment|/* I - Original image before export */
 block|{
 name|int
 name|i

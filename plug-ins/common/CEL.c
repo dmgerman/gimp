@@ -139,10 +139,12 @@ specifier|static
 name|gint32
 name|load_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|file
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|brief
@@ -155,10 +157,12 @@ specifier|static
 name|gint
 name|save_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|file
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|brief
@@ -177,6 +181,7 @@ specifier|static
 name|void
 name|palette_dialog
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|title
@@ -866,13 +871,15 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (gchar * file,gchar * brief)
+DECL|function|load_image (const gchar * file,const gchar * brief)
 name|load_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|file
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|brief
@@ -2102,13 +2109,15 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|save_image (gchar * file,gchar * brief,gint32 image,gint32 layer)
+DECL|function|save_image (const gchar * file,const gchar * brief,gint32 image,gint32 layer)
 name|save_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|file
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|brief
@@ -2814,9 +2823,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|palette_dialog (gchar * title)
+DECL|function|palette_dialog (const gchar * title)
 name|palette_dialog
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|title

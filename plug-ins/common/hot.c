@@ -70,7 +70,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab2234d0108
+DECL|struct|__anon2c2e2b9b0108
 block|{
 DECL|member|image
 name|gint32
@@ -101,7 +101,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ab2234d0203
+DECL|enum|__anon2c2e2b9b0203
 block|{
 DECL|enumerator|ACT_LREDUX
 name|ACT_LREDUX
@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ab2234d0303
+DECL|enum|__anon2c2e2b9b0303
 block|{
 DECL|enumerator|MODE_NTSC
 name|MODE_NTSC
@@ -165,7 +165,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon2ab2234d0408
+DECL|struct|__anon2c2e2b9b0408
 block|{
 DECL|member|pedestal
 name|gdouble
@@ -384,6 +384,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -391,6 +392,7 @@ parameter_list|,
 name|gint
 name|nparam
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -652,9 +654,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparam,GimpParam * param,gint * nretvals,GimpParam ** retvals)
+DECL|function|run (const gchar * name,gint nparam,const GimpParam * param,gint * nretvals,GimpParam ** retvals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -662,6 +665,7 @@ parameter_list|,
 name|gint
 name|nparam
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param

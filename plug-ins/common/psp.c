@@ -143,7 +143,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a3f33df0103
+DECL|enum|__anon28913dc90103
 typedef|typedef
 enum|enum
 block|{
@@ -207,7 +207,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a3f33df0203
+DECL|enum|__anon28913dc90203
 typedef|typedef
 enum|enum
 block|{
@@ -247,7 +247,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a3f33df0303
+DECL|enum|__anon28913dc90303
 typedef|typedef
 enum|enum
 block|{
@@ -279,7 +279,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a3f33df0403
+DECL|enum|__anon28913dc90403
 typedef|typedef
 enum|enum
 block|{
@@ -307,7 +307,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a3f33df0503
+DECL|enum|__anon28913dc90503
 typedef|typedef
 enum|enum
 block|{
@@ -335,7 +335,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a3f33df0603
+DECL|enum|__anon28913dc90603
 typedef|typedef
 enum|enum
 block|{
@@ -357,7 +357,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a3f33df0703
+DECL|enum|__anon28913dc90703
 typedef|typedef
 enum|enum
 block|{
@@ -393,7 +393,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a3f33df0803
+DECL|enum|__anon28913dc90803
 typedef|typedef
 enum|enum
 block|{
@@ -413,7 +413,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a3f33df0903
+DECL|enum|__anon28913dc90903
 typedef|typedef
 enum|enum
 block|{
@@ -461,7 +461,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a3f33df0a03
+DECL|enum|__anon28913dc90a03
 typedef|typedef
 enum|enum
 block|{
@@ -485,7 +485,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a3f33df0b03
+DECL|enum|__anon28913dc90b03
 typedef|typedef
 enum|enum
 block|{
@@ -546,7 +546,7 @@ comment|/* The following have been reverse engineered.  * If a new version of th
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a3f33df0c03
+DECL|enum|__anon28913dc90c03
 typedef|typedef
 enum|enum
 block|{
@@ -619,7 +619,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3f33df0d08
+DECL|struct|__anon28913dc90d08
 block|{
 DECL|member|width
 DECL|member|height
@@ -681,6 +681,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -688,6 +689,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -709,6 +711,7 @@ specifier|static
 name|gint32
 name|load_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -721,6 +724,7 @@ specifier|static
 name|gint
 name|save_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -767,7 +771,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3f33df0e08
+DECL|struct|__anon28913dc90e08
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -782,7 +786,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3f33df0f08
+DECL|struct|__anon28913dc90f08
 block|{
 DECL|member|run
 name|gint
@@ -6136,9 +6140,10 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (gchar * filename)
+DECL|function|load_image (const gchar * filename)
 name|load_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -6853,9 +6858,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|save_image (gchar * filename,gint32 image_ID,gint32 drawable_ID)
+DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID)
 name|save_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -6881,9 +6887,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -6891,6 +6898,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param

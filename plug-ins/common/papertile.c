@@ -74,7 +74,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2956bd250103
+DECL|enum|__anon291e3ab80103
 block|{
 DECL|enumerator|BACKGROUND_TYPE_TRANSPARENT
 name|BACKGROUND_TYPE_TRANSPARENT
@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2956bd250203
+DECL|enum|__anon291e3ab80203
 block|{
 DECL|enumerator|FRACTIONAL_TYPE_BACKGROUND
 name|FRACTIONAL_TYPE_BACKGROUND
@@ -190,7 +190,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2956bd250308
+DECL|struct|__anon291e3ab80308
 block|{
 DECL|member|params
 name|PluginParams
@@ -210,7 +210,7 @@ name|gboolean
 name|drawable_has_alpha
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2956bd250408
+DECL|struct|__anon291e3ab80408
 block|{
 DECL|member|x0
 name|gint
@@ -577,7 +577,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2956bd250508
+DECL|struct|__anon291e3ab80508
 block|{
 DECL|member|tile_size_adj
 name|GtkObject
@@ -4833,9 +4833,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|plugin_run (gchar * name,gint numof_params,GimpParam * params,gint * numof_return_vals,GimpParam ** return_vals)
+DECL|function|plugin_run (const gchar * name,gint numof_params,const GimpParam * params,gint * numof_return_vals,GimpParam ** return_vals)
 name|plugin_run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -4843,6 +4844,7 @@ parameter_list|,
 name|gint
 name|numof_params
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|params

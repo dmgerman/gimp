@@ -131,7 +131,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4db8450103
+DECL|enum|__anon279397750103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -319,7 +319,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4db8450208
+DECL|struct|__anon279397750208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -446,6 +446,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -453,6 +454,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -521,6 +523,7 @@ specifier|static
 name|gint32
 name|load_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -565,7 +568,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b4db8450308
+DECL|struct|__anon279397750308
 block|{
 DECL|member|signature
 name|gchar
@@ -1174,21 +1177,23 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GimpParam * param,int * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -6985,10 +6990,11 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (char * name)
+DECL|function|load_image (const gchar * name)
 name|load_image
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|name
 parameter_list|)

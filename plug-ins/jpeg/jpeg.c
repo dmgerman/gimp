@@ -347,7 +347,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bef00680108
+DECL|struct|__anon28da53ab0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -394,10 +394,10 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bef00680208
+DECL|struct|__anon28da53ab0208
 block|{
 DECL|member|run
-name|gint
+name|gboolean
 name|run
 decl_stmt|;
 DECL|typedef|JpegSaveInterface
@@ -409,7 +409,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bef00680308
+DECL|struct|__anon28da53ab0308
 block|{
 DECL|member|cinfo
 name|struct
@@ -458,6 +458,7 @@ name|GimpPixelRgn
 name|pixel_rgn
 decl_stmt|;
 DECL|member|file_name
+specifier|const
 name|gchar
 modifier|*
 name|file_name
@@ -502,6 +503,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -509,6 +511,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -530,6 +533,7 @@ specifier|static
 name|gint32
 name|load_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -548,6 +552,7 @@ specifier|static
 name|gboolean
 name|save_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -1068,9 +1073,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -1078,6 +1084,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -2644,9 +2651,10 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (gchar * filename,GimpRunMode runmode,gboolean preview)
+DECL|function|load_image (const gchar * filename,GimpRunMode runmode,gboolean preview)
 name|load_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -4278,13 +4286,6 @@ operator|->
 name|file_name
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|pp
-operator|->
-name|file_name
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|abort_me
@@ -4506,9 +4507,10 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|save_image (gchar * filename,gint32 image_ID,gint32 drawable_ID,gint32 orig_image_ID,gboolean preview)
+DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID,gint32 orig_image_ID,gboolean preview)
 name|save_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename

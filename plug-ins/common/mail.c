@@ -191,6 +191,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -198,6 +199,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -219,6 +221,7 @@ specifier|static
 name|GimpPDBStatusType
 name|save_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -295,6 +298,7 @@ specifier|static
 name|gint
 name|valid_file
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -316,10 +320,11 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|char
+name|gchar
 modifier|*
 name|find_extension
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -392,7 +397,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae6c85a0108
+DECL|struct|__anon298708760108
 block|{
 DECL|member|receipt
 name|gchar
@@ -619,9 +624,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -629,6 +635,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -975,9 +982,10 @@ end_function
 begin_function
 specifier|static
 name|GimpPDBStatusType
-DECL|function|save_image (gchar * filename,gint32 image_ID,gint32 drawable_ID,gint32 run_mode)
+DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID,gint32 run_mode)
 name|save_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -2458,9 +2466,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|valid_file (gchar * filename)
+DECL|function|valid_file (const gchar * filename)
 name|valid_file
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -2513,15 +2522,17 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|find_content_type (gchar * filename)
+DECL|function|find_content_type (const gchar * filename)
 name|find_content_type
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
 parameter_list|)
 block|{
 comment|/* This function returns a MIME Content-type: value based on the      filename it is given.  */
+specifier|const
 name|gchar
 modifier|*
 name|type_mappings
@@ -2579,8 +2590,10 @@ name|gchar
 modifier|*
 name|mimetype
 init|=
-name|malloc
+name|g_new
 argument_list|(
+name|gchar
+argument_list|,
 literal|100
 argument_list|)
 decl_stmt|;
@@ -2694,9 +2707,10 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|find_extension (gchar * filename)
+DECL|function|find_extension (const gchar * filename)
 name|find_extension
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -3100,19 +3114,17 @@ operator|==
 name|ENCAPSULATION_MIME
 condition|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|content
-decl_stmt|;
-name|content
-operator|=
+init|=
 name|find_content_type
 argument_list|(
 name|mail_info
 operator|.
 name|filename
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|fprintf
 argument_list|(
 name|mailpipe
@@ -3158,7 +3170,7 @@ operator|.
 name|filename
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|content
 argument_list|)

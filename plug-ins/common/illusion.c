@@ -82,6 +82,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -89,6 +90,7 @@ parameter_list|,
 name|gint
 name|nparam
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -142,7 +144,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287dc9ea0108
+DECL|struct|__anon2ae3d1d10108
 block|{
 DECL|member|division
 name|gint32
@@ -323,9 +325,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * params,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * params,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -333,6 +336,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|params

@@ -170,7 +170,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af64ea70108
+DECL|struct|__anon274e34b50108
 block|{
 DECL|member|resolution
 name|guint
@@ -222,13 +222,12 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af64ea70208
+DECL|struct|__anon274e34b50208
 block|{
 DECL|member|run
-name|gint
+name|gboolean
 name|run
 decl_stmt|;
-comment|/*  run  */
 DECL|typedef|PSLoadInterface
 block|}
 name|PSLoadInterface
@@ -288,7 +287,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af64ea70308
+DECL|struct|__anon274e34b50308
 block|{
 DECL|member|width
 DECL|member|height
@@ -350,13 +349,12 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af64ea70408
+DECL|struct|__anon274e34b50408
 block|{
 DECL|member|run
-name|gint
+name|gboolean
 name|run
 decl_stmt|;
-comment|/*  run  */
 DECL|typedef|PSSaveInterface
 block|}
 name|PSSaveInterface
@@ -436,6 +434,7 @@ specifier|static
 name|void
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -443,6 +442,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -464,6 +464,7 @@ specifier|static
 name|gint32
 name|load_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -476,6 +477,7 @@ specifier|static
 name|gint
 name|save_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -566,6 +568,7 @@ specifier|static
 name|gint32
 name|create_new_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -638,6 +641,7 @@ specifier|static
 name|gint
 name|get_bbox
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -667,6 +671,7 @@ name|FILE
 modifier|*
 name|ps_open
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -728,6 +733,7 @@ specifier|static
 name|gint32
 name|load_ps
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -763,6 +769,7 @@ name|FILE
 modifier|*
 name|ofp
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -890,7 +897,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af64ea70508
+DECL|struct|__anon274e34b50508
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1761,7 +1768,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af64ea70608
+DECL|struct|__anon274e34b50608
 block|{
 DECL|member|eol
 name|long
@@ -2522,9 +2529,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (const gchar * name,gint nparams,const GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -2532,6 +2540,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|param
@@ -3494,9 +3503,10 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (gchar * filename)
+DECL|function|load_image (const gchar * filename)
 name|load_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -4070,9 +4080,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|save_image (gchar * filename,gint32 image_ID,gint32 drawable_ID)
+DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID)
 name|save_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -5302,9 +5313,10 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|get_bbox (gchar * filename,gint * x0,gint * y0,gint * x1,gint * y1)
+DECL|function|get_bbox (const gchar * filename,gint * x0,gint * y0,gint * x1,gint * y1)
 name|get_bbox
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -5584,9 +5596,10 @@ begin_function
 specifier|static
 name|FILE
 modifier|*
-DECL|function|ps_open (gchar * filename,const PSLoadVals * loadopt,gint * llx,gint * lly,gint * urx,gint * ury,gint * is_epsf)
+DECL|function|ps_open (const gchar * filename,const PSLoadVals * loadopt,gint * llx,gint * lly,gint * urx,gint * ury,gint * is_epsf)
 name|ps_open
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -7032,9 +7045,10 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|create_new_image (gchar * filename,guint pagenum,guint width,guint height,GimpImageBaseType type,gint32 * layer_ID,GimpDrawable ** drawable,GimpPixelRgn * pixel_rgn)
+DECL|function|create_new_image (const gchar * filename,guint pagenum,guint width,guint height,GimpImageBaseType type,gint32 * layer_ID,GimpDrawable ** drawable,GimpPixelRgn * pixel_rgn)
 name|create_new_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -7408,9 +7422,10 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_ps (gchar * filename,guint pagenum,FILE * ifp,gint llx,gint lly,gint urx,gint ury)
+DECL|function|load_ps (const gchar * filename,guint pagenum,FILE * ifp,gint llx,gint lly,gint urx,gint ury)
 name|load_ps
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -8297,7 +8312,7 @@ comment|/* Write out the PostScript file header */
 end_comment
 
 begin_function
-DECL|function|save_ps_header (FILE * ofp,gchar * filename)
+DECL|function|save_ps_header (FILE * ofp,const gchar * filename)
 specifier|static
 name|void
 name|save_ps_header
@@ -8306,6 +8321,7 @@ name|FILE
 modifier|*
 name|ofp
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|filename
