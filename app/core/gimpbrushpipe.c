@@ -1274,7 +1274,7 @@ end_function
 begin_function
 name|GimpData
 modifier|*
-DECL|function|gimp_brush_pipe_load (const gchar * filename,gboolean stingy_memory_use)
+DECL|function|gimp_brush_pipe_load (const gchar * filename,gboolean stingy_memory_use,GError ** error)
 name|gimp_brush_pipe_load
 parameter_list|(
 specifier|const
@@ -1284,6 +1284,11 @@ name|filename
 parameter_list|,
 name|gboolean
 name|stingy_memory_use
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpBrushPipe
@@ -1329,6 +1334,20 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|fd
 operator|=
 name|open
@@ -1348,11 +1367,17 @@ operator|-
 literal|1
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_OPEN
+argument_list|,
 name|_
 argument_list|(
-literal|"Failed to open file: '%s': %s"
+literal|"Failed to open '%s' for reading: %s"
 argument_list|)
 argument_list|,
 name|filename
@@ -1503,8 +1528,14 @@ operator|!
 name|pipe
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_READ
+argument_list|,
 name|_
 argument_list|(
 literal|"Fatal parsing error:\n"
@@ -1599,8 +1630,14 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_READ
+argument_list|,
 name|_
 argument_list|(
 literal|"Fatal parsing error:\n"
@@ -2209,6 +2246,8 @@ argument_list|(
 name|fd
 argument_list|,
 name|filename
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -2243,8 +2282,14 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_READ
+argument_list|,
 name|_
 argument_list|(
 literal|"Fatal parsing error:\n"
@@ -2369,6 +2414,15 @@ name|close
 argument_list|(
 name|fd
 argument_list|)
+expr_stmt|;
+name|GIMP_DATA
+argument_list|(
+name|pipe
+argument_list|)
+operator|->
+name|dirty
+operator|=
+name|FALSE
 expr_stmt|;
 return|return
 name|GIMP_DATA

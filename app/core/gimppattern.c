@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -1168,7 +1174,7 @@ end_function
 begin_function
 name|GimpData
 modifier|*
-DECL|function|gimp_pattern_load (const gchar * filename,gboolean stingy_memory_use)
+DECL|function|gimp_pattern_load (const gchar * filename,gboolean stingy_memory_use,GError ** error)
 name|gimp_pattern_load
 parameter_list|(
 specifier|const
@@ -1178,6 +1184,11 @@ name|filename
 parameter_list|,
 name|gboolean
 name|stingy_memory_use
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpPattern
@@ -1210,6 +1221,20 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|fd
 operator|=
 name|open
@@ -1228,9 +1253,32 @@ operator|==
 operator|-
 literal|1
 condition|)
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_OPEN
+argument_list|,
+name|_
+argument_list|(
+literal|"Could not open '%s' for reading: %s"
+argument_list|)
+argument_list|,
+name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
+expr_stmt|;
 return|return
 name|NULL
 return|;
+block|}
 comment|/*  Read in the header size  */
 if|if
 condition|(
@@ -1252,9 +1300,37 @@ argument_list|(
 name|header
 argument_list|)
 condition|)
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_READ
+argument_list|,
+name|_
+argument_list|(
+literal|"Could not read %d bytes from '%s': %s"
+argument_list|)
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|header
+argument_list|)
+argument_list|,
+name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
+expr_stmt|;
 goto|goto
 name|error
 goto|;
+block|}
 comment|/*  rearrange the bytes in each unsigned int  */
 name|header
 operator|.
@@ -1347,8 +1423,14 @@ name|header
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_READ
+argument_list|,
 name|_
 argument_list|(
 literal|"Unknown pattern format version %d in '%s'."
@@ -1381,8 +1463,14 @@ operator|!=
 literal|3
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_READ
+argument_list|,
 name|_
 argument_list|(
 literal|"Unsupported pattern depth %d\n"
@@ -1445,8 +1533,14 @@ operator|<
 name|bn_size
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_READ
+argument_list|,
 name|_
 argument_list|(
 literal|"Error in GIMP pattern file '%s'."
@@ -1585,11 +1679,18 @@ operator|.
 name|bytes
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_READ
+argument_list|,
 name|_
 argument_list|(
-literal|"Fatal parsing error: Pattern file '%s' appears truncated."
+literal|"Fatal parsing error: "
+literal|"Pattern file '%s' appears truncated."
 argument_list|)
 argument_list|,
 name|filename
@@ -1640,6 +1741,15 @@ name|pattern
 operator|->
 name|mask
 argument_list|)
+expr_stmt|;
+name|GIMP_DATA
+argument_list|(
+name|pattern
+argument_list|)
+operator|->
+name|dirty
+operator|=
+name|FALSE
 expr_stmt|;
 return|return
 name|GIMP_DATA

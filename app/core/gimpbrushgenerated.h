@@ -197,6 +197,11 @@ name|file_name
 parameter_list|,
 name|gboolean
 name|stingy_memory_use
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -170,7 +176,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7877270103
+DECL|enum|__anon2776db7a0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -1436,7 +1442,7 @@ end_function
 begin_function
 name|GimpData
 modifier|*
-DECL|function|gimp_brush_load (const gchar * filename,gboolean stingy_memory_use)
+DECL|function|gimp_brush_load (const gchar * filename,gboolean stingy_memory_use,GError ** error)
 name|gimp_brush_load
 parameter_list|(
 specifier|const
@@ -1446,6 +1452,11 @@ name|filename
 parameter_list|,
 name|gboolean
 name|stingy_memory_use
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpBrush
@@ -1459,6 +1470,20 @@ name|g_return_val_if_fail
 argument_list|(
 name|filename
 operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
 name|NULL
 argument_list|,
 name|NULL
@@ -1482,9 +1507,32 @@ operator|==
 operator|-
 literal|1
 condition|)
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_OPEN
+argument_list|,
+name|_
+argument_list|(
+literal|"Could not open '%s' for reading: %s"
+argument_list|)
+argument_list|,
+name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
+expr_stmt|;
 return|return
 name|NULL
 return|;
+block|}
 name|brush
 operator|=
 name|gimp_brush_load_brush
@@ -1492,6 +1540,8 @@ argument_list|(
 name|fd
 argument_list|,
 name|filename
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 name|close
@@ -1544,6 +1594,15 @@ name|pixmap
 argument_list|)
 expr_stmt|;
 block|}
+name|GIMP_DATA
+argument_list|(
+name|brush
+argument_list|)
+operator|->
+name|dirty
+operator|=
+name|FALSE
+expr_stmt|;
 return|return
 name|GIMP_DATA
 argument_list|(
@@ -1924,7 +1983,7 @@ end_function
 begin_function
 name|GimpBrush
 modifier|*
-DECL|function|gimp_brush_load_brush (gint fd,const gchar * filename)
+DECL|function|gimp_brush_load_brush (gint fd,const gchar * filename,GError ** error)
 name|gimp_brush_load_brush
 parameter_list|(
 name|gint
@@ -1934,6 +1993,11 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpBrush
@@ -1974,6 +2038,20 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 comment|/*  Read in the header size  */
 if|if
 condition|(
@@ -1995,9 +2073,37 @@ argument_list|(
 name|header
 argument_list|)
 condition|)
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_READ
+argument_list|,
+name|_
+argument_list|(
+literal|"Could not read %d bytes from '%s': %s"
+argument_list|)
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|header
+argument_list|)
+argument_list|,
+name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
+expr_stmt|;
 return|return
 name|NULL
 return|;
+block|}
 comment|/*  rearrange the bytes in each unsigned int  */
 name|header
 operator|.
@@ -2101,8 +2207,14 @@ literal|2
 operator|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_READ
+argument_list|,
 name|_
 argument_list|(
 literal|"Fatal parsing error (unknown version %d):\n"
@@ -2198,8 +2310,14 @@ operator|<
 name|bn_size
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_READ
+argument_list|,
 name|_
 argument_list|(
 literal|"Fatal parsing error:\n"
@@ -2344,8 +2462,14 @@ operator|.
 name|height
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_READ
+argument_list|,
 name|_
 argument_list|(
 literal|"Fatal parsing error:\n"
@@ -2495,8 +2619,14 @@ operator|!=
 literal|1
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_READ
+argument_list|,
 name|_
 argument_list|(
 literal|"Fatal parsing error:\n"
@@ -2526,11 +2656,20 @@ block|}
 block|}
 break|break;
 default|default:
-name|g_message
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_READ
+argument_list|,
+name|_
 argument_list|(
 literal|"Unsupported brush depth %d\n"
 literal|"in file '%s'.\n"
 literal|"GIMP brushes must be GRAY or RGBA."
+argument_list|)
 argument_list|,
 name|header
 operator|.

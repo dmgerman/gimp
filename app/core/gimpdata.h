@@ -22,6 +22,32 @@ directive|include
 file|"gimpviewable.h"
 end_include
 
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2a0ef5220103
+block|{
+DECL|enumerator|GIMP_DATA_ERROR_OPEN
+name|GIMP_DATA_ERROR_OPEN
+block|,
+comment|/*  opening data file failed   */
+DECL|enumerator|GIMP_DATA_ERROR_READ
+name|GIMP_DATA_ERROR_READ
+block|,
+comment|/*  reading data file failed   */
+DECL|enumerator|GIMP_DATA_ERROR_WRITE
+name|GIMP_DATA_ERROR_WRITE
+block|,
+comment|/*  writing data file failed   */
+DECL|enumerator|GIMP_DATA_ERROR_DELETE
+name|GIMP_DATA_ERROR_DELETE
+comment|/*  deleting data file failed  */
+DECL|typedef|GimpDataError
+block|}
+name|GimpDataError
+typedef|;
+end_typedef
+
 begin_define
 DECL|macro|GIMP_TYPE_DATA
 define|#
@@ -129,6 +155,7 @@ DECL|member|parent_class
 name|GimpViewableClass
 name|parent_class
 decl_stmt|;
+comment|/*  signals  */
 DECL|member|dirty
 name|void
 function_decl|(
@@ -141,6 +168,7 @@ modifier|*
 name|data
 parameter_list|)
 function_decl|;
+comment|/*  virtual functions  */
 DECL|member|save
 name|gboolean
 function_decl|(
@@ -151,6 +179,11 @@ parameter_list|(
 name|GimpData
 modifier|*
 name|data
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 DECL|member|get_extension
@@ -203,6 +236,11 @@ parameter_list|(
 name|GimpData
 modifier|*
 name|data
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -274,7 +312,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|filename
+name|basename
 parameter_list|,
 specifier|const
 name|gchar
@@ -298,6 +336,24 @@ name|stingy_memory_use
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_define
+DECL|macro|GIMP_DATA_ERROR
+define|#
+directive|define
+name|GIMP_DATA_ERROR
+value|(gimp_data_error_quark ())
+end_define
+
+begin_decl_stmt
+name|GQuark
+name|gimp_data_error_quark
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
 
 begin_endif
 endif|#

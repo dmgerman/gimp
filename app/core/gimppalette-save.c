@@ -177,6 +177,11 @@ parameter_list|(
 name|GimpData
 modifier|*
 name|data
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1172,7 +1177,7 @@ end_function
 begin_function
 name|GimpData
 modifier|*
-DECL|function|gimp_palette_load (const gchar * filename,gboolean stingy_memory_use)
+DECL|function|gimp_palette_load (const gchar * filename,gboolean stingy_memory_use,GError ** error)
 name|gimp_palette_load
 parameter_list|(
 specifier|const
@@ -1182,6 +1187,11 @@ name|filename
 parameter_list|,
 name|gboolean
 name|stingy_memory_use
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpPalette
@@ -1234,6 +1244,20 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|r
 operator|=
 name|g
@@ -1258,11 +1282,17 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_OPEN
+argument_list|,
 name|_
 argument_list|(
-literal|"Failed to open palette file '%s': %s"
+literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
 name|filename
@@ -1323,8 +1353,14 @@ argument_list|,
 literal|"GIMP Palette\r"
 argument_list|)
 condition|)
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_READ
+argument_list|,
 name|_
 argument_list|(
 literal|"Loading palette '%s':\n"
@@ -1336,8 +1372,14 @@ name|filename
 argument_list|)
 expr_stmt|;
 else|else
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_READ
+argument_list|,
 name|_
 argument_list|(
 literal|"Loading palette '%s':\n"
@@ -1388,8 +1430,14 @@ name|fp
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_READ
+argument_list|,
 name|_
 argument_list|(
 literal|"Loading palette '%s':\nRead error in line %d."
@@ -1509,8 +1557,14 @@ name|fp
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_READ
+argument_list|,
 name|_
 argument_list|(
 literal|"Loading palette '%s':\nRead error in line %d."
@@ -1625,8 +1679,14 @@ name|fp
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_READ
+argument_list|,
 name|_
 argument_list|(
 literal|"Loading palette '%s':\nRead error in line %d."
@@ -1915,8 +1975,14 @@ name|fp
 argument_list|)
 condition|)
 break|break;
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_READ
+argument_list|,
 name|_
 argument_list|(
 literal|"Loading palette '%s':\nRead error in line %d."
@@ -2007,12 +2073,17 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_palette_save (GimpData * data)
+DECL|function|gimp_palette_save (GimpData * data,GError ** error)
 name|gimp_palette_save
 parameter_list|(
 name|GimpData
 modifier|*
 name|data
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpPalette
@@ -2053,10 +2124,7 @@ name|fp
 operator|=
 name|fopen
 argument_list|(
-name|GIMP_DATA
-argument_list|(
-name|palette
-argument_list|)
+name|data
 operator|->
 name|filename
 argument_list|,
@@ -2065,17 +2133,20 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|GIMP_DATA_ERROR
+argument_list|,
+name|GIMP_DATA_ERROR_OPEN
+argument_list|,
 name|_
 argument_list|(
-literal|"Cannot save palette '%s':\n%s"
+literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
-name|GIMP_DATA
-argument_list|(
-name|palette
-argument_list|)
+name|data
 operator|->
 name|filename
 argument_list|,
@@ -2196,26 +2267,6 @@ argument_list|(
 name|fp
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|GIMP_DATA_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|save
-condition|)
-return|return
-name|GIMP_DATA_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|save
-argument_list|(
-name|data
-argument_list|)
-return|;
 return|return
 name|TRUE
 return|;
