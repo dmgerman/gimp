@@ -165,6 +165,12 @@ name|GtkWidget
 modifier|*
 name|paint_mode_w
 decl_stmt|;
+comment|/*  this tool's private context  */
+DECL|member|context
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
 comment|/*  the incremental toggle  */
 DECL|member|incremental
 name|gboolean
