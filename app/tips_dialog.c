@@ -1,4 +1,8 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
+begin_comment
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+end_comment
+
 begin_include
 include|#
 directive|include
@@ -87,7 +91,26 @@ end_define
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
+name|tips_dialog_delete
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GdkEvent
+modifier|*
+name|event
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
 name|tips_dialog_hide
 parameter_list|(
 name|GtkWidget
@@ -102,7 +125,22 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|void
+name|tips_show_previous
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
 name|tips_show_next
 parameter_list|(
 name|GtkWidget
@@ -135,7 +173,7 @@ specifier|static
 name|void
 name|read_tips_file
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -165,7 +203,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|tips_text
 specifier|static
-name|char
+name|gchar
 modifier|*
 modifier|*
 name|tips_text
@@ -177,7 +215,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|tips_count
 specifier|static
-name|int
+name|gint
 name|tips_count
 init|=
 literal|0
@@ -187,16 +225,18 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|old_show_tips
 specifier|static
-name|int
+name|gint
 name|old_show_tips
 decl_stmt|;
 end_decl_stmt
 
 begin_function
 name|void
-DECL|function|tips_dialog_create ()
+DECL|function|tips_dialog_create (void)
 name|tips_dialog_create
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
@@ -266,10 +306,10 @@ name|guchar
 modifier|*
 name|dest
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|;
-name|int
+name|gint
 name|y
 decl_stmt|;
 if|if
@@ -367,6 +407,20 @@ argument_list|,
 name|GTK_WIN_POS_CENTER
 argument_list|)
 expr_stmt|;
+name|gtk_window_set_policy
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|tips_dialog
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -378,7 +432,7 @@ literal|"delete_event"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|tips_dialog_hide
+name|tips_dialog_delete
 argument_list|)
 argument_list|,
 name|NULL
@@ -811,13 +865,10 @@ literal|"clicked"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|tips_show_next
+name|tips_show_previous
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
-literal|"prev"
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -866,10 +917,7 @@ argument_list|(
 name|tips_show_next
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
-literal|"next"
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -1083,7 +1131,38 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
+DECL|function|tips_dialog_delete (GtkWidget * widget,GdkEvent * event,gpointer data)
+name|tips_dialog_delete
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GdkEvent
+modifier|*
+name|event
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|tips_dialog_hide
+argument_list|(
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|TRUE
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
 DECL|function|tips_dialog_hide (GtkWidget * widget,gpointer data)
 name|tips_dialog_hide
 parameter_list|(
@@ -1164,17 +1243,14 @@ argument_list|(
 name|remove
 argument_list|)
 expr_stmt|;
-return|return
-name|TRUE
-return|;
 block|}
 end_function
 
 begin_function
 specifier|static
-name|int
-DECL|function|tips_show_next (GtkWidget * widget,gpointer data)
-name|tips_show_next
+name|void
+DECL|function|tips_show_previous (GtkWidget * widget,gpointer data)
+name|tips_show_previous
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1183,21 +1259,6 @@ parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
-block|{
-if|if
-condition|(
-operator|!
-name|strcmp
-argument_list|(
-operator|(
-name|char
-operator|*
-operator|)
-name|data
-argument_list|,
-literal|"prev"
-argument_list|)
-condition|)
 block|{
 name|last_tip
 operator|--
@@ -1214,8 +1275,35 @@ name|tips_count
 operator|-
 literal|1
 expr_stmt|;
+name|gtk_label_set
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|tips_label
+argument_list|)
+argument_list|,
+name|tips_text
+index|[
+name|last_tip
+index|]
+argument_list|)
+expr_stmt|;
 block|}
-else|else
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|tips_show_next (GtkWidget * widget,gpointer data)
+name|tips_show_next
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
 block|{
 name|last_tip
 operator|++
@@ -1230,7 +1318,6 @@ name|last_tip
 operator|=
 literal|0
 expr_stmt|;
-block|}
 name|gtk_label_set
 argument_list|(
 name|GTK_LABEL
@@ -1244,9 +1331,6 @@ name|last_tip
 index|]
 argument_list|)
 expr_stmt|;
-return|return
-name|FALSE
-return|;
 block|}
 end_function
 
@@ -1264,14 +1348,14 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|int
+name|gint
 modifier|*
 name|toggle_val
 decl_stmt|;
 name|toggle_val
 operator|=
 operator|(
-name|int
+name|gint
 operator|*
 operator|)
 name|data
@@ -1302,10 +1386,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|store_tip (char * str)
+DECL|function|store_tip (gchar * str)
 name|store_tip
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|str
 parameter_list|)
@@ -1321,7 +1405,7 @@ name|tips_text
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|char
+name|gchar
 operator|*
 argument_list|)
 operator|*
@@ -1343,10 +1427,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|read_tips_file (char * filename)
+DECL|function|read_tips_file (gchar * filename)
 name|read_tips_file
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -1355,13 +1439,13 @@ name|FILE
 modifier|*
 name|fp
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|tip
 init|=
 name|NULL
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|str
 init|=

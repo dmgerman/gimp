@@ -3127,7 +3127,7 @@ name|GTK_WIN_POS_MOUSE
 argument_list|,
 name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,

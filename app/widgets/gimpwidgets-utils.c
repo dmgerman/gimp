@@ -966,6 +966,8 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|frame
+init|=
+name|NULL
 decl_stmt|;
 name|GtkWidget
 modifier|*
