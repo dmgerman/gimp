@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpguiconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -3752,6 +3758,20 @@ name|widget
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|factory
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+operator|->
+name|tearoff_menus
+condition|)
+block|{
 name|gimp_item_factory_set_visible
 argument_list|(
 name|GTK_ITEM_FACTORY
@@ -3764,6 +3784,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_item_factory_set_visible
 argument_list|(
 name|GTK_ITEM_FACTORY
