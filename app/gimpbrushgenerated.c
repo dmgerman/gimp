@@ -310,7 +310,7 @@ name|name
 operator|=
 name|g_strdup
 argument_list|(
-literal|"AAAGenerated"
+literal|"Untitled"
 argument_list|)
 expr_stmt|;
 name|GIMP_BRUSH
@@ -743,7 +743,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"%f "
+literal|"%f\n"
 argument_list|,
 operator|(
 name|float
@@ -761,7 +761,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"%f "
+literal|"%f\n"
 argument_list|,
 name|brush
 operator|->
@@ -773,7 +773,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"%f "
+literal|"%f\n"
 argument_list|,
 name|brush
 operator|->
@@ -785,7 +785,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"%f "
+literal|"%f\n"
 argument_list|,
 name|brush
 operator|->
@@ -797,7 +797,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"%f"
+literal|"%f\n"
 argument_list|,
 name|brush
 operator|->
@@ -1822,7 +1822,6 @@ argument_list|,
 literal|"dirty"
 argument_list|)
 expr_stmt|;
-comment|/*  brush_changed_notify(GIMP_BRUSH(brush)); */
 block|}
 end_function
 

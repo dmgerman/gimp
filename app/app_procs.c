@@ -2860,6 +2860,9 @@ expr_stmt|;
 name|context_manager_free
 argument_list|()
 expr_stmt|;
+name|brush_select_dialog_free
+argument_list|()
+expr_stmt|;
 name|brushes_free
 argument_list|()
 expr_stmt|;
@@ -2882,9 +2885,6 @@ name|curves_free
 argument_list|()
 expr_stmt|;
 name|levels_free
-argument_list|()
-expr_stmt|;
-name|brush_select_dialog_free
 argument_list|()
 expr_stmt|;
 name|pattern_select_dialog_free

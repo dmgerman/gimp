@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"brush_select.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"bucket_fill.h"
 end_include
 

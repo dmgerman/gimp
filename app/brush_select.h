@@ -113,6 +113,11 @@ name|GtkWidget
 modifier|*
 name|edit_button
 decl_stmt|;
+DECL|member|delete_button
+name|GtkWidget
+modifier|*
+name|delete_button
+decl_stmt|;
 DECL|member|option_menu
 name|GtkWidget
 modifier|*
@@ -190,6 +195,11 @@ DECL|member|NUM_BRUSH_ROWS
 name|gint
 name|NUM_BRUSH_ROWS
 decl_stmt|;
+DECL|member|freeze
+name|int
+name|freeze
+decl_stmt|;
+comment|/* so we don't waste so much time during refresh */
 block|}
 struct|;
 end_struct
