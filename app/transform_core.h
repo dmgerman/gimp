@@ -78,6 +78,14 @@ name|HANDLE_4
 value|4
 end_define
 
+begin_define
+DECL|macro|HANDLE_CENTER
+define|#
+directive|define
+name|HANDLE_CENTER
+value|5
+end_define
+
 begin_comment
 comment|/* the different states that the transformation function can be called with  */
 end_comment
@@ -123,7 +131,7 @@ DECL|macro|MAX_INFO_BUF
 define|#
 directive|define
 name|MAX_INFO_BUF
-value|12
+value|40
 end_define
 
 begin_define
@@ -279,6 +287,14 @@ decl_stmt|,
 name|y2
 decl_stmt|;
 comment|/*  lower right hand coords     */
+DECL|member|cx
+DECL|member|cy
+name|int
+name|cx
+decl_stmt|,
+name|cy
+decl_stmt|;
+comment|/*  center point (for rotation) */
 DECL|member|tx1
 DECL|member|ty1
 name|double
@@ -309,6 +325,14 @@ name|double
 name|tx4
 decl_stmt|,
 name|ty4
+decl_stmt|;
+comment|/*                              */
+DECL|member|tcx
+DECL|member|tcy
+name|double
+name|tcx
+decl_stmt|,
+name|tcy
 decl_stmt|;
 comment|/*                              */
 DECL|member|sx1
@@ -343,6 +367,14 @@ decl_stmt|,
 name|sy4
 decl_stmt|;
 comment|/*                              */
+DECL|member|scx
+DECL|member|scy
+name|int
+name|scx
+decl_stmt|,
+name|scy
+decl_stmt|;
+comment|/*  and center for rotation     */
 DECL|member|transform
 name|Matrix
 name|transform
@@ -379,7 +411,6 @@ name|int
 name|bpressed
 decl_stmt|;
 comment|/* Bug work around make sure we have  				 * a button pressed before we deal with 				 * motion events. ALT. 				 */
-comment|/* The following fields are used by 				   the "new UI".  */
 DECL|member|ngx
 DECL|member|ngy
 name|int
@@ -433,10 +464,6 @@ decl_stmt|;
 DECL|member|trans_info
 name|TranInfo
 name|trans_info
-decl_stmt|;
-DECL|member|first
-name|int
-name|first
 decl_stmt|;
 DECL|member|original
 name|TileManager
@@ -592,6 +619,15 @@ modifier|*
 parameter_list|,
 name|void
 modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|transform_core_grid_density_changed
+parameter_list|(
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl

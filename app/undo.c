@@ -4428,14 +4428,7 @@ operator|=
 name|d
 expr_stmt|;
 block|}
-comment|/*  if this is the first transform in a string, swap the    *  original buffer--the source buffer for repeated transforms    */
-if|if
-condition|(
-name|tu
-operator|->
-name|first
-condition|)
-block|{
+comment|/*  swap the original buffer--the source buffer for repeated transforms    */
 name|temp
 operator|=
 name|tu
@@ -4483,7 +4476,6 @@ argument_list|,
 name|active_tool
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 return|return
 name|TRUE

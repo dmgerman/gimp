@@ -51,7 +51,16 @@ end_function_decl
 
 begin_function_decl
 name|int
-name|transform_tool_new_ui
+name|transform_tool_clip
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|int
+name|transform_tool_direction
 parameter_list|(
 name|void
 parameter_list|)
@@ -66,6 +75,26 @@ name|void
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/*  transform directions  */
+end_comment
+
+begin_define
+DECL|macro|TRANSFORM_CORRECTIVE
+define|#
+directive|define
+name|TRANSFORM_CORRECTIVE
+value|0
+end_define
+
+begin_define
+DECL|macro|TRANSFORM_TRADITIONAL
+define|#
+directive|define
+name|TRANSFORM_TRADITIONAL
+value|1
+end_define
 
 begin_endif
 endif|#
