@@ -279,7 +279,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon277ae9240103
+DECL|enum|__anon294693e80103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -293,7 +293,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277ae9240208
+DECL|struct|__anon294693e80208
 block|{
 DECL|member|dirname
 specifier|const
@@ -2143,15 +2143,12 @@ operator|&
 name|thumb_size
 argument_list|)
 expr_stmt|;
-comment|/*  the thumbnail directory doesn't exist and couldn't be created */
+comment|/*  the thumbnail directory exists or could be created */
 if|if
 condition|(
-operator|!
 name|thumb_name
 condition|)
-return|return
-name|FALSE
-return|;
+block|{
 if|if
 condition|(
 name|gimp_imagefile_test
@@ -2189,15 +2186,10 @@ argument_list|(
 name|thumb_name
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|success
-condition|)
-name|gimp_imagefile_update
+block|}
+name|g_free
 argument_list|(
-name|imagefile
-argument_list|,
-name|thumb_size
+name|filename
 argument_list|)
 expr_stmt|;
 return|return
@@ -3507,9 +3499,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
 name|option
-operator|||
+operator|&&
 name|sscanf
 argument_list|(
 name|option
@@ -3526,6 +3517,7 @@ condition|)
 goto|goto
 name|cleanup
 goto|;
+comment|/* TAG_THUMB_SIZE is optional but must match if present */
 if|if
 condition|(
 name|thumb_image_mtime
@@ -3534,6 +3526,11 @@ name|imagefile
 operator|->
 name|image_mtime
 operator|&&
+operator|(
+name|option
+operator|==
+name|NULL
+operator|||
 name|thumb_image_size
 operator|==
 operator|(
@@ -3542,6 +3539,7 @@ operator|)
 name|imagefile
 operator|->
 name|image_size
+operator|)
 condition|)
 block|{
 if|if
