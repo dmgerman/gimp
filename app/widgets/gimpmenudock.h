@@ -130,15 +130,10 @@ DECL|member|image_flush_handler_id
 name|GQuark
 name|image_flush_handler_id
 decl_stmt|;
-DECL|member|option_menu
+DECL|member|image_combo
 name|GtkWidget
 modifier|*
-name|option_menu
-decl_stmt|;
-DECL|member|menu
-name|GtkWidget
-modifier|*
-name|menu
+name|image_combo
 decl_stmt|;
 DECL|member|auto_button
 name|GtkWidget

@@ -128,7 +128,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fc05540108
+DECL|struct|__anon2afa87b70108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -194,9 +194,9 @@ specifier|static
 name|void
 name|file_new_template_select
 parameter_list|(
-name|GimpContainerMenu
+name|GimpContainerView
 modifier|*
-name|menu
+name|view
 parameter_list|,
 name|GimpTemplate
 modifier|*
@@ -820,12 +820,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_new_template_select (GimpContainerMenu * menu,GimpTemplate * template,gpointer insert_data,FileNewDialog * dialog)
+DECL|function|file_new_template_select (GimpContainerView * view,GimpTemplate * template,gpointer insert_data,FileNewDialog * dialog)
 name|file_new_template_select
 parameter_list|(
-name|GimpContainerMenu
+name|GimpContainerView
 modifier|*
-name|menu
+name|view
 parameter_list|,
 name|GimpTemplate
 modifier|*
