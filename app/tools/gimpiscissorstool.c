@@ -165,64 +165,6 @@ directive|include
 file|"libgimp/gimpmath.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|DEBUG
-end_ifdef
-
-begin_define
-DECL|macro|TRC (x)
-define|#
-directive|define
-name|TRC
-parameter_list|(
-name|x
-parameter_list|)
-value|g_print x
-end_define
-
-begin_define
-DECL|macro|D (x)
-define|#
-directive|define
-name|D
-parameter_list|(
-name|x
-parameter_list|)
-value|x
-end_define
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_define
-DECL|macro|TRC (x)
-define|#
-directive|define
-name|TRC
-parameter_list|(
-name|x
-parameter_list|)
-end_define
-
-begin_define
-DECL|macro|D (x)
-define|#
-directive|define
-name|D
-parameter_list|(
-name|x
-parameter_list|)
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_comment
 comment|/*  local structures  */
 end_comment
@@ -271,7 +213,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274e860b0103
+DECL|enum|__anon299a33430103
 block|{
 DECL|enumerator|NO_ACTION
 name|NO_ACTION
@@ -297,7 +239,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274e860b0203
+DECL|enum|__anon299a33430203
 block|{
 DECL|enumerator|DRAW_NOTHING
 name|DRAW_NOTHING
@@ -596,30 +538,6 @@ name|MAX_POINTS
 value|2048
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|USE_LAPLACIAN
-end_ifdef
-
-begin_define
-DECL|macro|COST_WIDTH
-define|#
-directive|define
-name|COST_WIDTH
-value|3
-end_define
-
-begin_comment
-DECL|macro|COST_WIDTH
-comment|/* number of bytes for each pixel in cost map  */
-end_comment
-
-begin_else
-else|#
-directive|else
-end_else
-
 begin_define
 DECL|macro|COST_WIDTH
 define|#
@@ -632,11 +550,6 @@ begin_comment
 DECL|macro|COST_WIDTH
 comment|/* number of bytes for each pixel in cost map  */
 end_comment
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_define
 DECL|macro|BLOCK_WIDTH
@@ -671,43 +584,8 @@ value|(BLOCK_HEIGHT + 2)
 end_define
 
 begin_comment
-comment|/* weight to give between laplacian (_Z), gradient (_G) and direction (_D) */
+comment|/* weight to give between gradient (_G) and direction (_D) */
 end_comment
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|USE_LAPLACIAN
-end_ifdef
-
-begin_define
-DECL|macro|OMEGA_Z
-define|#
-directive|define
-name|OMEGA_Z
-value|0.16
-end_define
-
-begin_define
-DECL|macro|OMEGA_D
-define|#
-directive|define
-name|OMEGA_D
-value|0.42
-end_define
-
-begin_define
-DECL|macro|OMEGA_G
-define|#
-directive|define
-name|OMEGA_G
-value|0.42
-end_define
-
-begin_else
-else|#
-directive|else
-end_else
 
 begin_define
 DECL|macro|OMEGA_D
@@ -724,11 +602,6 @@ directive|define
 name|OMEGA_G
 value|0.8
 end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_comment
 comment|/* sentinel to mark seed point in ?cost? map */
@@ -869,18 +742,6 @@ begin_comment
 comment|/*  temporary convolution buffers --  */
 end_comment
 
-begin_macro
-name|D
-argument_list|(
-argument|static guint sent0 =
-literal|0xd0d0d0d0
-argument_list|)
-end_macro
-
-begin_empty_stmt
-empty_stmt|;
-end_empty_stmt
-
 begin_decl_stmt
 DECL|variable|maxgrad_conv0
 specifier|static
@@ -897,18 +758,6 @@ init|=
 literal|""
 decl_stmt|;
 end_decl_stmt
-
-begin_macro
-name|D
-argument_list|(
-argument|static guint sent1 =
-literal|0xd1d1d1d1
-argument_list|)
-end_macro
-
-begin_empty_stmt
-empty_stmt|;
-end_empty_stmt
 
 begin_decl_stmt
 DECL|variable|maxgrad_conv1
@@ -927,18 +776,6 @@ literal|""
 decl_stmt|;
 end_decl_stmt
 
-begin_macro
-name|D
-argument_list|(
-argument|static guint sent2 =
-literal|0xd2d2d2d2
-argument_list|)
-end_macro
-
-begin_empty_stmt
-empty_stmt|;
-end_empty_stmt
-
 begin_decl_stmt
 DECL|variable|maxgrad_conv2
 specifier|static
@@ -955,18 +792,6 @@ init|=
 literal|""
 decl_stmt|;
 end_decl_stmt
-
-begin_macro
-name|D
-argument_list|(
-argument|static guint sent3 =
-literal|0xd3d3d3d3
-argument_list|)
-end_macro
-
-begin_empty_stmt
-empty_stmt|;
-end_empty_stmt
 
 begin_decl_stmt
 DECL|variable|horz_deriv
@@ -1035,56 +860,6 @@ literal|1
 block|, }
 decl_stmt|;
 end_decl_stmt
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|USE_LAPLACIAN
-end_ifdef
-
-begin_decl_stmt
-DECL|variable|laplacian
-specifier|static
-name|gint
-name|laplacian
-index|[
-literal|9
-index|]
-init|=
-block|{
-operator|-
-literal|1
-block|,
-operator|-
-literal|1
-block|,
-operator|-
-literal|1
-block|,
-operator|-
-literal|1
-block|,
-literal|8
-block|,
-operator|-
-literal|1
-block|,
-operator|-
-literal|1
-block|,
-operator|-
-literal|1
-block|,
-operator|-
-literal|1
-block|, }
-decl_stmt|;
-end_decl_stmt
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_decl_stmt
 DECL|variable|blur_32
@@ -1875,15 +1650,6 @@ name|tool
 operator|->
 name|private
 expr_stmt|;
-name|TRC
-argument_list|(
-operator|(
-literal|"tools_free_iscissors\n"
-operator|)
-argument_list|)
-expr_stmt|;
-comment|/*  XXX? Undraw curve  */
-comment|/*iscissors->draw = DRAW_CURVE;*/
 if|if
 condition|(
 name|tool
@@ -2019,7 +1785,6 @@ operator|->
 name|gdisp
 condition|)
 block|{
-comment|/*iscissors->draw = DRAW_CURVE; XXX? */
 name|draw_core_stop
 argument_list|(
 name|iscissors
@@ -2057,13 +1822,6 @@ block|{
 case|case
 name|NO_ACTION
 case|:
-if|#
-directive|if
-literal|0
-comment|/* XXX what's this supposed to do? */
-block|if (! (bevent->state& GDK_SHIFT_MASK)&& 	  ! (bevent->state& GDK_CONTROL_MASK)) 	if (selection_point_inside (gdisp->select, gdisp, 				    bevent->x, bevent->y)) 	  { 	    init_edit_selection (tool, gdisp->select, gdisp, 				 bevent->x, bevent->y); 	    return; 	  }
-endif|#
-directive|endif
 name|iscissors
 operator|->
 name|state
@@ -2760,13 +2518,6 @@ name|tool
 operator|->
 name|private
 expr_stmt|;
-name|TRC
-argument_list|(
-operator|(
-literal|"iscissors_button_release\n"
-operator|)
-argument_list|)
-expr_stmt|;
 comment|/* Make sure X didn't skip the button release event -- as it's known    * to do */
 if|if
 condition|(
@@ -3049,13 +2800,6 @@ name|points
 operator|=
 name|NULL
 expr_stmt|;
-name|TRC
-argument_list|(
-operator|(
-literal|"create new curve segment\n"
-operator|)
-argument_list|)
-expr_stmt|;
 name|iscissors
 operator|->
 name|curves
@@ -3071,13 +2815,6 @@ name|void
 operator|*
 operator|)
 name|curve
-argument_list|)
-expr_stmt|;
-name|TRC
-argument_list|(
-operator|(
-literal|"calculate curve\n"
-operator|)
 argument_list|)
 expr_stmt|;
 name|calculate_curve
@@ -3183,13 +2920,6 @@ default|default:
 break|break;
 block|}
 block|}
-name|TRC
-argument_list|(
-operator|(
-literal|"button_release: draw core resume\n"
-operator|)
-argument_list|)
-expr_stmt|;
 comment|/*  Draw only the boundary  */
 name|iscissors
 operator|->
@@ -3623,13 +3353,6 @@ name|txn
 decl_stmt|,
 name|tyn
 decl_stmt|;
-name|TRC
-argument_list|(
-operator|(
-literal|"iscissors_draw\n"
-operator|)
-argument_list|)
-expr_stmt|;
 name|gdisp
 operator|=
 name|tool
@@ -3932,13 +3655,6 @@ name|points
 operator|=
 name|NULL
 expr_stmt|;
-name|TRC
-argument_list|(
-operator|(
-literal|"create new livewire segment\n"
-operator|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|iscissors
@@ -3954,14 +3670,6 @@ name|livewire
 operator|->
 name|points
 condition|)
-block|{
-name|TRC
-argument_list|(
-operator|(
-literal|"g_ptr_array_free (iscissors->livewire->points);\n"
-operator|)
-argument_list|)
-expr_stmt|;
 name|g_ptr_array_free
 argument_list|(
 name|iscissors
@@ -3971,14 +3679,6 @@ operator|->
 name|points
 argument_list|,
 name|TRUE
-argument_list|)
-expr_stmt|;
-block|}
-name|TRC
-argument_list|(
-operator|(
-literal|"g_free (iscissors->livewire);\n"
-operator|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -4000,13 +3700,6 @@ operator|->
 name|livewire
 operator|=
 name|curve
-expr_stmt|;
-name|TRC
-argument_list|(
-operator|(
-literal|"calculate curve\n"
-operator|)
-argument_list|)
 expr_stmt|;
 name|calculate_curve
 argument_list|(
@@ -4091,16 +3784,23 @@ literal|23040
 argument_list|)
 expr_stmt|;
 comment|/*  Go through the list of icurves, and render each one...  */
+for|for
+control|(
 name|list
 operator|=
 name|iscissors
 operator|->
 name|curves
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|list
-condition|)
+condition|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 block|{
 name|curve
 operator|=
@@ -4174,13 +3874,6 @@ argument_list|,
 literal|0
 argument_list|,
 literal|23040
-argument_list|)
-expr_stmt|;
-name|list
-operator|=
-name|g_slist_next
-argument_list|(
-name|list
 argument_list|)
 expr_stmt|;
 block|}
@@ -4398,6 +4091,8 @@ name|ty
 decl_stmt|;
 name|gint
 name|npts
+init|=
+literal|0
 decl_stmt|;
 name|guint32
 name|coords
@@ -4411,10 +4106,6 @@ operator|->
 name|points
 condition|)
 return|return;
-name|npts
-operator|=
-literal|0
-expr_stmt|;
 name|point
 operator|=
 name|curve
@@ -5280,13 +4971,6 @@ modifier|*
 name|iscissors
 parameter_list|)
 block|{
-name|TRC
-argument_list|(
-operator|(
-literal|"iscissors_reset\n"
-operator|)
-argument_list|)
-expr_stmt|;
 comment|/*  Free and reset the curve list  */
 if|if
 condition|(
@@ -5300,13 +4984,6 @@ argument_list|(
 name|iscissors
 operator|->
 name|curves
-argument_list|)
-expr_stmt|;
-name|TRC
-argument_list|(
-operator|(
-literal|"g_slist_free (iscissors->curves);\n"
-operator|)
 argument_list|)
 expr_stmt|;
 name|g_slist_free
@@ -5357,13 +5034,6 @@ condition|(
 name|cur_tile
 condition|)
 block|{
-name|TRC
-argument_list|(
-operator|(
-literal|"tile_release\n"
-operator|)
-argument_list|)
-expr_stmt|;
 name|tile_release
 argument_list|(
 name|cur_tile
@@ -5371,18 +5041,11 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-block|}
 name|cur_tile
 operator|=
 name|NULL
 expr_stmt|;
-name|TRC
-argument_list|(
-operator|(
-literal|"tile_manager_destroy (iscissors->gradient_map);\n"
-operator|)
-argument_list|)
-expr_stmt|;
+block|}
 name|tile_manager_destroy
 argument_list|(
 name|iscissors
@@ -5466,13 +5129,6 @@ name|ICurve
 modifier|*
 name|curve
 decl_stmt|;
-name|TRC
-argument_list|(
-operator|(
-literal|"iscissors_free_icurves\n"
-operator|)
-argument_list|)
-expr_stmt|;
 while|while
 condition|(
 name|list
@@ -5494,14 +5150,6 @@ name|curve
 operator|->
 name|points
 condition|)
-block|{
-name|TRC
-argument_list|(
-operator|(
-literal|"g_ptr_array_free (curve->points);\n"
-operator|)
-argument_list|)
-expr_stmt|;
 name|g_ptr_array_free
 argument_list|(
 name|curve
@@ -5509,14 +5157,6 @@ operator|->
 name|points
 argument_list|,
 name|TRUE
-argument_list|)
-expr_stmt|;
-block|}
-name|TRC
-argument_list|(
-operator|(
-literal|"g_free (curve);\n"
-operator|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -6275,47 +5915,6 @@ argument_list|)
 operator|*
 literal|2
 expr_stmt|;
-name|TRC
-argument_list|(
-operator|(
-literal|"i: %d, v0: %d, v1: %d, v2: %d, v3: %d\n"
-operator|,
-name|i
-operator|,
-name|direction_value
-index|[
-name|i
-index|]
-index|[
-literal|0
-index|]
-operator|,
-name|direction_value
-index|[
-name|i
-index|]
-index|[
-literal|1
-index|]
-operator|,
-name|direction_value
-index|[
-name|i
-index|]
-index|[
-literal|2
-index|]
-operator|,
-name|direction_value
-index|[
-name|i
-index|]
-index|[
-literal|3
-index|]
-operator|)
-argument_list|)
-expr_stmt|;
 block|}
 comment|/*  set the 256th index of the direction_values to the hightest cost  */
 name|direction_value
@@ -6419,17 +6018,6 @@ name|ewidth
 decl_stmt|,
 name|eheight
 decl_stmt|;
-name|TRC
-argument_list|(
-operator|(
-literal|"calculate_curve(%p, %p)\n"
-operator|,
-name|tool
-operator|,
-name|curve
-operator|)
-argument_list|)
-expr_stmt|;
 comment|/*  Calculate the lowest cost path from one vertex to the next as specified    *  by the parameter "curve".    *    Here are the steps:    *      1)  Calculate the appropriate working area for this operation    *      2)  Allocate a temp buf for the dynamic programming array    *      3)  Run the dynamic programming algorithm to find the optimal path    *      4)  Translate the optimal path into pixels in the icurve data    *            structure.    */
 name|gdisp
 operator|=
@@ -6668,13 +6256,6 @@ operator|->
 name|points
 condition|)
 block|{
-name|TRC
-argument_list|(
-operator|(
-literal|"1229: g_ptr_array_free (curve->points);\n"
-operator|)
-argument_list|)
-expr_stmt|;
 name|g_ptr_array_free
 argument_list|(
 name|curve
@@ -6742,13 +6323,6 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
-name|TRC
-argument_list|(
-operator|(
-literal|"dp buf resize\n"
-operator|)
-argument_list|)
-expr_stmt|;
 comment|/*  allocate the dynamic programming array  */
 name|iscissors
 operator|->
@@ -6769,13 +6343,6 @@ argument_list|,
 name|width
 argument_list|,
 name|height
-argument_list|)
-expr_stmt|;
-name|TRC
-argument_list|(
-operator|(
-literal|"find_optimal_path\n"
-operator|)
 argument_list|)
 expr_stmt|;
 comment|/*  find the optimal path of pixels from (x1, y1) to (x2, y2)  */
@@ -6803,13 +6370,6 @@ name|ys
 argument_list|)
 expr_stmt|;
 comment|/*  get a list of the pixels in the optimal path  */
-name|TRC
-argument_list|(
-operator|(
-literal|"plot_pixels\n"
-operator|)
-argument_list|)
-expr_stmt|;
 name|curve
 operator|->
 name|points
@@ -7609,29 +7169,6 @@ decl_stmt|,
 modifier|*
 name|d
 decl_stmt|;
-name|TRC
-argument_list|(
-operator|(
-literal|"find_optimal_path (%p, %p, [%d,%d-%d,%d] %d, %d)\n"
-operator|,
-name|gradient_map
-operator|,
-name|dp_buf
-operator|,
-name|x1
-operator|,
-name|y1
-operator|,
-name|x2
-operator|,
-name|y2
-operator|,
-name|xs
-operator|,
-name|ys
-operator|)
-argument_list|)
-expr_stmt|;
 comment|/*  initialize the dynamic programming buffer  */
 name|data
 operator|=
@@ -7639,48 +7176,11 @@ operator|(
 name|guint32
 operator|*
 operator|)
-name|temp_buf_data
+name|temp_buf_data_clear
 argument_list|(
 name|dp_buf
 argument_list|)
 expr_stmt|;
-for|for
-control|(
-name|i
-operator|=
-literal|0
-init|;
-name|i
-operator|<
-name|dp_buf
-operator|->
-name|height
-condition|;
-name|i
-operator|++
-control|)
-for|for
-control|(
-name|j
-operator|=
-literal|0
-init|;
-name|j
-operator|<
-name|dp_buf
-operator|->
-name|width
-condition|;
-name|j
-operator|++
-control|)
-operator|*
-name|data
-operator|++
-operator|=
-literal|0
-expr_stmt|;
-comment|/*  0 cumulative cost, 0 direction  */
 comment|/*  what directions are we filling the array in according to?  */
 name|dirx
 operator|=
@@ -7723,25 +7223,6 @@ expr_stmt|;
 name|y
 operator|=
 name|ys
-expr_stmt|;
-comment|/*  Start the data pointer at the correct location  */
-name|data
-operator|=
-operator|(
-name|guint32
-operator|*
-operator|)
-name|temp_buf_data
-argument_list|(
-name|dp_buf
-argument_list|)
-expr_stmt|;
-name|TRC
-argument_list|(
-operator|(
-literal|"find_optimal_path: mainloop\n"
-operator|)
-argument_list|)
 expr_stmt|;
 for|for
 control|(
@@ -8249,13 +7730,6 @@ operator|+=
 name|diry
 expr_stmt|;
 block|}
-name|TRC
-argument_list|(
-operator|(
-literal|"done: find_optimal_path\n"
-operator|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -8457,19 +7931,6 @@ argument_list|(
 name|tile
 argument_list|)
 expr_stmt|;
-name|TRC
-argument_list|(
-operator|(
-literal|"fill req for tile %p @ (%d, %d)\n"
-operator|,
-name|tile
-operator|,
-name|x
-operator|,
-name|y
-operator|)
-argument_list|)
-expr_stmt|;
 comment|/* get corresponding tile in the gimage */
 name|srctile
 operator|=
@@ -8494,14 +7955,7 @@ condition|(
 operator|!
 name|srctile
 condition|)
-block|{
-name|g_warning
-argument_list|(
-literal|"bad tile coords?"
-argument_list|)
-expr_stmt|;
 return|return;
-block|}
 name|sw
 operator|=
 name|tile_ewidth
@@ -8514,29 +7968,6 @@ operator|=
 name|tile_eheight
 argument_list|(
 name|srctile
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|dw
-operator|!=
-name|sw
-operator|||
-name|dh
-operator|!=
-name|sh
-condition|)
-name|g_warning
-argument_list|(
-literal|"dw:%d sw:%d  dh:%d sh:%d\n"
-argument_list|,
-name|dw
-argument_list|,
-name|sw
-argument_list|,
-name|dh
-argument_list|,
-name|sh
 argument_list|)
 expr_stmt|;
 name|srcPR
@@ -9023,61 +8454,6 @@ expr_stmt|;
 comment|/* reserved for weak gradient */
 name|contin
 label|:
-block|{
-ifdef|#
-directive|ifdef
-name|DEBUG
-name|int
-name|g
-init|=
-name|gradmap
-index|[
-name|j
-operator|*
-name|COST_WIDTH
-index|]
-decl_stmt|;
-name|int
-name|d
-init|=
-name|gradmap
-index|[
-name|j
-operator|*
-name|COST_WIDTH
-operator|+
-literal|1
-index|]
-decl_stmt|;
-name|TRC
-argument_list|(
-operator|(
-literal|"%c%c"
-operator|,
-literal|'a'
-operator|+
-operator|(
-name|g
-operator|*
-literal|25
-operator|/
-literal|255
-operator|)
-operator|,
-literal|'0'
-operator|+
-operator|(
-name|d
-operator|/
-literal|25
-operator|)
-operator|)
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* DEBUG */
-block|}
 name|datah
 operator|+=
 name|srcPR
@@ -9091,21 +8467,7 @@ operator|.
 name|bytes
 expr_stmt|;
 block|}
-name|TRC
-argument_list|(
-operator|(
-literal|"\n"
-operator|)
-argument_list|)
-expr_stmt|;
 block|}
-name|TRC
-argument_list|(
-operator|(
-literal|"\n"
-operator|)
-argument_list|)
-expr_stmt|;
 name|tile_release
 argument_list|(
 name|srctile
@@ -9242,19 +8604,6 @@ name|g
 decl_stmt|,
 name|max_gradient
 decl_stmt|;
-name|TRC
-argument_list|(
-operator|(
-literal|"find_max_gradient(%d, %d)\n"
-operator|,
-operator|*
-name|x
-operator|,
-operator|*
-name|y
-operator|)
-argument_list|)
-expr_stmt|;
 comment|/* Initialise the gradient map tile manager for this image if we    * don't already have one. */
 if|if
 condition|(
@@ -9567,19 +8916,6 @@ block|}
 block|}
 block|}
 block|}
-name|TRC
-argument_list|(
-operator|(
-literal|"done: find_max_gradient(%d, %d)\n"
-operator|,
-operator|*
-name|x
-operator|,
-operator|*
-name|y
-operator|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 

@@ -168,6 +168,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|guchar
+modifier|*
+name|temp_buf_data_clear
+parameter_list|(
+name|TempBuf
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/* The mask buffer functions  */
 end_comment
