@@ -81,18 +81,18 @@ comment|/*  transform directions  */
 end_comment
 
 begin_define
-DECL|macro|TRANSFORM_CORRECTIVE
-define|#
-directive|define
-name|TRANSFORM_CORRECTIVE
-value|0
-end_define
-
-begin_define
 DECL|macro|TRANSFORM_TRADITIONAL
 define|#
 directive|define
 name|TRANSFORM_TRADITIONAL
+value|0
+end_define
+
+begin_define
+DECL|macro|TRANSFORM_CORRECTIVE
+define|#
+directive|define
+name|TRANSFORM_CORRECTIVE
 value|1
 end_define
 
