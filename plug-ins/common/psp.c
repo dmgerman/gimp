@@ -109,6 +109,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/parasiteio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/stdplugins-intl.h>
 end_include
 
@@ -125,7 +131,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon298e672c0103
+DECL|enum|__anon2976b4e20103
 typedef|typedef
 enum|enum
 block|{
@@ -189,7 +195,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon298e672c0203
+DECL|enum|__anon2976b4e20203
 typedef|typedef
 enum|enum
 block|{
@@ -229,7 +235,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon298e672c0303
+DECL|enum|__anon2976b4e20303
 typedef|typedef
 enum|enum
 block|{
@@ -261,7 +267,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon298e672c0403
+DECL|enum|__anon2976b4e20403
 typedef|typedef
 enum|enum
 block|{
@@ -289,7 +295,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon298e672c0503
+DECL|enum|__anon2976b4e20503
 typedef|typedef
 enum|enum
 block|{
@@ -317,7 +323,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon298e672c0603
+DECL|enum|__anon2976b4e20603
 typedef|typedef
 enum|enum
 block|{
@@ -339,7 +345,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon298e672c0703
+DECL|enum|__anon2976b4e20703
 typedef|typedef
 enum|enum
 block|{
@@ -375,7 +381,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon298e672c0803
+DECL|enum|__anon2976b4e20803
 typedef|typedef
 enum|enum
 block|{
@@ -395,7 +401,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon298e672c0903
+DECL|enum|__anon2976b4e20903
 typedef|typedef
 enum|enum
 block|{
@@ -443,7 +449,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon298e672c0a03
+DECL|enum|__anon2976b4e20a03
 typedef|typedef
 enum|enum
 block|{
@@ -467,7 +473,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon298e672c0b03
+DECL|enum|__anon2976b4e20b03
 typedef|typedef
 enum|enum
 block|{
@@ -528,7 +534,7 @@ comment|/* The following have been reverse engineered.  * If a new version of th
 end_comment
 
 begin_typedef
-DECL|enum|__anon298e672c0c03
+DECL|enum|__anon2976b4e20c03
 typedef|typedef
 enum|enum
 block|{
@@ -601,7 +607,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298e672c0d08
+DECL|struct|__anon2976b4e20d08
 block|{
 DECL|member|width
 DECL|member|height
@@ -761,7 +767,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298e672c0e08
+DECL|struct|__anon2976b4e20e08
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -776,7 +782,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298e672c0f08
+DECL|struct|__anon2976b4e20f08
 block|{
 DECL|member|run
 name|gint
@@ -6369,6 +6375,9 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|PixPipeParams
+name|params
+decl_stmt|;
 name|Parasite
 modifier|*
 name|pipe_parasite
@@ -6377,6 +6386,12 @@ name|gchar
 modifier|*
 name|parasite_text
 decl_stmt|;
+name|pixpipeparams_init
+argument_list|(
+operator|&
+name|params
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|fread
@@ -6525,28 +6540,36 @@ argument_list|(
 name|version
 argument_list|)
 expr_stmt|;
-name|step_size
+name|params
+operator|.
+name|step
 operator|=
 name|GUINT32_FROM_LE
 argument_list|(
 name|step_size
 argument_list|)
 expr_stmt|;
-name|column_count
+name|params
+operator|.
+name|cols
 operator|=
 name|GUINT32_FROM_LE
 argument_list|(
 name|column_count
 argument_list|)
 expr_stmt|;
-name|row_count
+name|params
+operator|.
+name|rows
 operator|=
 name|GUINT32_FROM_LE
 argument_list|(
 name|row_count
 argument_list|)
 expr_stmt|;
-name|cell_count
+name|params
+operator|.
+name|ncells
 operator|=
 name|GUINT32_FROM_LE
 argument_list|(
@@ -6624,26 +6647,40 @@ name|row_count
 argument_list|)
 expr_stmt|;
 comment|/* We use a parasite to pass in the tube (pipe) parameters in    * case we will have any use of those, for instance in the gpb    * plug-in that saves a GIMP image pipe.    */
-name|parasite_text
+name|params
+operator|.
+name|dim
 operator|=
-name|g_strdup_printf
-argument_list|(
-literal|"ncells:%d step:%d dim:%d cols:%d rows:%d "
-literal|"rank0:%d "
-literal|"placement:%s sel0:%s"
-argument_list|,
-name|cell_count
-argument_list|,
-name|step_size
-argument_list|,
 literal|1
-argument_list|,
-name|column_count
-argument_list|,
-name|row_count
-argument_list|,
-name|cell_count
-argument_list|,
+expr_stmt|;
+name|params
+operator|.
+name|cellwidth
+operator|=
+name|ia
+operator|->
+name|width
+operator|/
+name|params
+operator|.
+name|cols
+expr_stmt|;
+name|params
+operator|.
+name|cellheight
+operator|=
+name|ia
+operator|->
+name|height
+operator|/
+name|params
+operator|.
+name|rows
+expr_stmt|;
+name|params
+operator|.
+name|placement
+operator|=
 operator|(
 name|placement_mode
 operator|==
@@ -6661,7 +6698,25 @@ else|:
 literal|"default"
 operator|)
 operator|)
-argument_list|,
+expr_stmt|;
+name|params
+operator|.
+name|rank
+index|[
+literal|0
+index|]
+operator|=
+name|params
+operator|.
+name|ncells
+expr_stmt|;
+name|params
+operator|.
+name|selection
+index|[
+literal|0
+index|]
+operator|=
 operator|(
 name|selection_mode
 operator|==
@@ -6703,6 +6758,24 @@ operator|)
 operator|)
 operator|)
 operator|)
+expr_stmt|;
+name|parasite_text
+operator|=
+name|pixpipeparams_build
+argument_list|(
+operator|&
+name|params
+argument_list|)
+expr_stmt|;
+name|IFDBG
+argument_list|(
+literal|2
+argument_list|)
+name|g_message
+argument_list|(
+literal|"parasite: %s"
+argument_list|,
+name|parasite_text
 argument_list|)
 expr_stmt|;
 name|pipe_parasite
