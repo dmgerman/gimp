@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a369300103
+DECL|enum|__anon279518720103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -3365,9 +3365,13 @@ begin_function
 specifier|static
 name|GtkCellRenderer
 modifier|*
-DECL|function|gimp_container_tree_view_find_click_cell (GList * cells,GtkTreeViewColumn * column,GdkRectangle * column_area,gint tree_x,gint tree_y)
+DECL|function|gimp_container_tree_view_find_click_cell (GtkWidget * widget,GList * cells,GtkTreeViewColumn * column,GdkRectangle * column_area,gint tree_x,gint tree_y)
 name|gimp_container_tree_view_find_click_cell
 parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
 name|GList
 modifier|*
 name|cells
@@ -3390,6 +3394,18 @@ block|{
 name|GList
 modifier|*
 name|list
+decl_stmt|;
+name|gboolean
+name|rtl
+init|=
+operator|(
+name|gtk_widget_get_direction
+argument_list|(
+name|widget
+argument_list|)
+operator|==
+name|GTK_TEXT_DIR_RTL
+operator|)
 decl_stmt|;
 for|for
 control|(
@@ -3443,13 +3459,34 @@ condition|)
 block|{
 name|gint
 name|x
-init|=
+decl_stmt|;
+if|if
+condition|(
+name|rtl
+condition|)
+name|x
+operator|=
+name|column_area
+operator|->
+name|x
+operator|+
+name|column_area
+operator|->
+name|width
+operator|-
+name|start
+operator|-
+name|width
+expr_stmt|;
+else|else
+name|x
+operator|=
 name|start
 operator|+
 name|column_area
 operator|->
 name|x
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 name|tree_x
@@ -3710,6 +3747,8 @@ operator|*
 operator|)
 name|gimp_container_tree_view_find_click_cell
 argument_list|(
+name|widget
+argument_list|,
 name|tree_view
 operator|->
 name|toggle_cells
@@ -3741,6 +3780,8 @@ operator|*
 operator|)
 name|gimp_container_tree_view_find_click_cell
 argument_list|(
+name|widget
+argument_list|,
 name|tree_view
 operator|->
 name|renderer_cells
@@ -3771,6 +3812,8 @@ name|edit_cell
 operator|=
 name|gimp_container_tree_view_find_click_cell
 argument_list|(
+name|widget
+argument_list|,
 name|tree_view
 operator|->
 name|editable_cells
