@@ -1307,7 +1307,7 @@ argument_list|(
 literal|"/View/Zoom/Zoom In"
 argument_list|)
 block|,
-literal|"equal"
+literal|"plus"
 block|,
 name|view_zoom_in_cmd_callback
 block|,
