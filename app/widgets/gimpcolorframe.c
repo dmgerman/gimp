@@ -698,7 +698,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_frame_set_invalid:  * @frame: The #GimpColorFrame.  *  * Tells the #GimpColorFrame that the current sample is invalid. All labels  * visible for the current color space will show "N/A" (not available).  *  * There is no special API for setting the frame to "valid" again because  * this happens automatically when calling gimp_color_frame_set_color().  **/
+comment|/**  * gimp_color_frame_set_invalid:  * @frame: The #GimpColorFrame.  *  * Tells the #GimpColorFrame that the current sample is invalid. All labels  * visible for the current color space will show "n/a" (not available).  *  * There is no special API for setting the frame to "valid" again because  * this happens automatically when calling gimp_color_frame_set_color().  **/
 end_comment
 
 begin_function
@@ -1531,7 +1531,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"N/A"
+literal|"n/a"
 argument_list|)
 argument_list|)
 expr_stmt|;
