@@ -3095,7 +3095,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Treshold:"
+literal|"Threshold:"
 argument_list|)
 argument_list|,
 literal|1.0
