@@ -64,7 +64,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b952e10108
+DECL|struct|__anon2981167a0108
 block|{
 DECL|member|compression
 name|gint
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b952e10208
+DECL|struct|__anon2981167a0208
 block|{
 DECL|member|ID
 name|gint32
@@ -629,7 +629,7 @@ literal|"1995-1996,1998-2003"
 argument_list|,
 name|N_
 argument_list|(
-literal|"TIFF images"
+literal|"TIFF image"
 argument_list|)
 argument_list|,
 name|NULL
