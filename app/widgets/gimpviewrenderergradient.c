@@ -611,6 +611,13 @@ name|a
 decl_stmt|;
 name|seg
 operator|=
+name|gimp_gradient_get_segment_at
+argument_list|(
+name|gradient
+argument_list|,
+name|cur_x
+argument_list|)
+expr_stmt|;
 name|gimp_gradient_get_color_at
 argument_list|(
 name|gradient
