@@ -371,6 +371,13 @@ end_decl_stmt
 begin_decl_stmt
 specifier|extern
 name|ProcRecord
+name|gimage_floating_sel_attached_to_proc
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|ProcRecord
 name|channel_ops_duplicate_proc
 decl_stmt|;
 end_decl_stmt

@@ -366,7 +366,7 @@ comment|/* grep -c procedural_db_register internal_procs.c */
 name|gfloat
 name|total_pcount
 init|=
-literal|256
+literal|257
 decl_stmt|;
 name|app_init_update_status
 argument_list|(
@@ -1176,6 +1176,15 @@ name|procedural_db_register
 argument_list|(
 operator|&
 name|gimage_floating_sel_proc
+argument_list|)
+expr_stmt|;
+name|pcount
+operator|++
+expr_stmt|;
+name|procedural_db_register
+argument_list|(
+operator|&
+name|gimage_floating_sel_attached_to_proc
 argument_list|)
 expr_stmt|;
 name|pcount
