@@ -3966,7 +3966,7 @@ name|output
 argument_list|(
 name|param
 argument_list|,
-literal|"<img src=\"%s\" width=%d height=%d border=0 "
+literal|"<img src=\"%s\" width=\"%d\" height=\"%d\" border=\"0\" "
 literal|"usemap=\"#%s\" />\n\n"
 argument_list|,
 name|_map_info

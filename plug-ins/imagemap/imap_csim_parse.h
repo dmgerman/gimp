@@ -2,14 +2,14 @@ begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|BISON_IMAP_CSIM_TAB_H
+name|BISON_IMAP_CSIM_PARSE_H
 end_ifndef
 
 begin_define
-DECL|macro|BISON_IMAP_CSIM_TAB_H
+DECL|macro|BISON_IMAP_CSIM_PARSE_H
 define|#
 directive|define
-name|BISON_IMAP_CSIM_TAB_H
+name|BISON_IMAP_CSIM_PARSE_H
 end_define
 
 begin_ifndef
@@ -19,7 +19,7 @@ name|YYSTYPE
 end_ifndef
 
 begin_typedef
-DECL|union|__anon290d84c9010a
+DECL|union|__anon2c35fe99010a
 typedef|typedef
 union|union
 block|{
@@ -286,7 +286,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* not BISON_IMAP_CSIM_TAB_H */
+comment|/* not BISON_IMAP_CSIM_PARSE_H */
 end_comment
 
 end_unit
