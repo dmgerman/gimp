@@ -293,7 +293,7 @@ argument_list|(
 literal|"_New Layer..."
 argument_list|)
 block|,
-literal|""
+literal|"<control><shift>N"
 block|,
 name|N_
 argument_list|(
@@ -342,6 +342,8 @@ name|N_
 argument_list|(
 literal|"D_uplicate Layer"
 argument_list|)
+block|,
+literal|"<control><shift>D"
 block|,
 name|NULL
 block|,

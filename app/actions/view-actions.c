@@ -367,7 +367,7 @@ argument_list|(
 literal|"Na_vigation Window"
 argument_list|)
 block|,
-literal|"<control><shift>N"
+name|NULL
 block|,
 name|NULL
 block|,
