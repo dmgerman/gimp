@@ -3844,6 +3844,12 @@ operator|->
 name|button
 operator|==
 literal|3
+operator|||
+name|bevent
+operator|->
+name|button
+operator|==
+literal|2
 condition|)
 block|{
 name|gtk_menu_popup
@@ -3863,7 +3869,9 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-literal|3
+name|bevent
+operator|->
+name|button
 argument_list|,
 name|bevent
 operator|->
