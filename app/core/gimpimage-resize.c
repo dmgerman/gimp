@@ -552,7 +552,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2ae4016c0103
+DECL|enum|__anon27afa1ac0103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -2413,6 +2413,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  Don't forget the selection mask!  */
+comment|/*  if (channel_is_empty(gimage->selection_mask))         channel_resize(gimage->selection_mask, new_width, new_height, 0, 0)       else   */
 name|channel_scale
 argument_list|(
 name|gimage
@@ -11132,6 +11133,10 @@ name|off_x
 decl_stmt|,
 name|off_y
 decl_stmt|;
+name|char
+modifier|*
+name|name
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -11526,6 +11531,19 @@ argument_list|,
 name|LAYER_MERGE_UNDO
 argument_list|)
 expr_stmt|;
+name|name
+operator|=
+name|g_strdup
+argument_list|(
+name|drawable_get_name
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|merge_type
@@ -11727,13 +11745,7 @@ name|layer
 argument_list|)
 argument_list|)
 argument_list|,
-name|drawable_get_name
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
-argument_list|)
+literal|"merged layer"
 argument_list|,
 name|OPAQUE_OPACITY
 argument_list|,
@@ -11860,6 +11872,34 @@ operator|=
 name|NORMAL_MODE
 expr_stmt|;
 block|}
+comment|/* Copy the tattoo and parasites of the bottom layer to the new layer */
+name|layer_set_tattoo
+argument_list|(
+name|merge_layer
+argument_list|,
+name|layer_get_tattoo
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|GIMP_DRAWABLE
+argument_list|(
+name|merge_layer
+argument_list|)
+operator|->
+name|parasites
+operator|=
+name|parasite_list_copy
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+operator|->
+name|parasites
+argument_list|)
+expr_stmt|;
 while|while
 condition|(
 name|reverse_list
@@ -12267,6 +12307,22 @@ operator|)
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* set the name after the original layers have been removed so we don't      end up with #2 appended to the name */
+name|drawable_set_name
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|merge_layer
+argument_list|)
+argument_list|,
+name|name
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|name
+argument_list|)
+expr_stmt|;
 comment|/*  End the merge undo group  */
 name|undo_push_group_end
 argument_list|(
