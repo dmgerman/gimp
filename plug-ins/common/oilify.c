@@ -97,7 +97,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be0914e0108
+DECL|struct|__anon2790d3340108
 block|{
 DECL|member|mask_size
 name|gdouble
@@ -116,7 +116,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be0914e0208
+DECL|struct|__anon2790d3340208
 block|{
 DECL|member|run
 name|gint
@@ -2124,7 +2124,7 @@ name|GtkWidget
 modifier|*
 name|toggle
 decl_stmt|;
-name|GtkWidget
+name|GtkObject
 modifier|*
 name|adj
 decl_stmt|;
