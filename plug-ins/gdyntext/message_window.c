@@ -6,12 +6,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -63,8 +57,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|message_window_get_type (void)
 name|guint
+DECL|function|message_window_get_type (void)
 name|message_window_get_type
 parameter_list|(
 name|void
@@ -149,9 +143,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|message_window_class_init (MessageWindowClass * klass)
 specifier|static
 name|void
+DECL|function|message_window_class_init (MessageWindowClass * klass)
 name|message_window_class_init
 parameter_list|(
 name|MessageWindowClass
@@ -183,9 +177,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|message_window_init (MessageWindow * mw)
 specifier|static
 name|void
+DECL|function|message_window_init (MessageWindow * mw)
 name|message_window_init
 parameter_list|(
 name|MessageWindow
@@ -509,9 +503,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|message_window_new (const gchar * title)
 name|GtkWidget
 modifier|*
+DECL|function|message_window_new (const gchar * title)
 name|message_window_new
 parameter_list|(
 specifier|const
@@ -540,6 +534,14 @@ name|mw
 argument_list|)
 argument_list|,
 name|title
+argument_list|)
+expr_stmt|;
+name|gimp_dialog_set_icon
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|mw
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_border_width
@@ -576,8 +578,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|message_window_append (MessageWindow * mw,const gchar * msg)
 name|void
+DECL|function|message_window_append (MessageWindow * mw,const gchar * msg)
 name|message_window_append
 parameter_list|(
 name|MessageWindow
@@ -665,7 +667,7 @@ name|contains_messages
 operator|=
 name|TRUE
 expr_stmt|;
-name|printf
+name|g_print
 argument_list|(
 literal|"* %s"
 argument_list|,
@@ -676,8 +678,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|message_window_clear (MessageWindow * mw)
 name|void
+DECL|function|message_window_clear (MessageWindow * mw)
 name|message_window_clear
 parameter_list|(
 name|MessageWindow
@@ -735,10 +737,6 @@ name|FALSE
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* vim: set ts=2 sw=2 tw=79 ai nowrap: */
-end_comment
 
 end_unit
 

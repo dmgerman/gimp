@@ -208,7 +208,7 @@ file|"graphics/layer_align_9.xpm"
 end_include
 
 begin_typedef
-DECL|struct|__anon2beb95f80108
+DECL|struct|__anon28eccfda0108
 typedef|typedef
 struct|struct
 block|{
@@ -959,6 +959,14 @@ argument_list|,
 name|GTK_WIN_POS_CENTER
 argument_list|)
 expr_stmt|;
+name|gimp_dialog_set_icon
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|window
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -1311,10 +1319,6 @@ name|GtkObject
 modifier|*
 name|line_spacing_adj
 decl_stmt|;
-name|GtkTooltips
-modifier|*
-name|tooltips
-decl_stmt|;
 name|GtkWidget
 modifier|*
 name|handlebox
@@ -1581,11 +1585,6 @@ name|ok_pressed
 operator|=
 name|FALSE
 expr_stmt|;
-name|tooltips
-operator|=
-name|gtk_tooltips_new
-argument_list|()
-expr_stmt|;
 name|mw
 operator|->
 name|window
@@ -1695,6 +1694,20 @@ name|mw
 operator|->
 name|window
 argument_list|)
+expr_stmt|;
+name|gimp_help_connect_help_accel
+argument_list|(
+name|mw
+operator|->
+name|window
+argument_list|,
+name|gimp_standard_help_func
+argument_list|,
+literal|"filters/gdyntext.html"
+argument_list|)
+expr_stmt|;
+name|gimp_help_init
+argument_list|()
 expr_stmt|;
 name|vbox
 operator|=
@@ -2824,10 +2837,8 @@ argument_list|(
 name|optmenu
 argument_list|)
 expr_stmt|;
-name|gtk_tooltips_set_tip
+name|gimp_help_set_help_data
 argument_list|(
-name|tooltips
-argument_list|,
 name|optmenu
 argument_list|,
 name|_
@@ -2835,7 +2846,7 @@ argument_list|(
 literal|"Set layer alignment"
 argument_list|)
 argument_list|,
-literal|""
+literal|"#layer_align"
 argument_list|)
 expr_stmt|;
 name|menu
@@ -3178,22 +3189,6 @@ operator|->
 name|line_spacing
 argument_list|)
 expr_stmt|;
-name|gtk_tooltips_set_tip
-argument_list|(
-name|tooltips
-argument_list|,
-name|mw
-operator|->
-name|line_spacing
-argument_list|,
-name|_
-argument_list|(
-literal|"Set line spacing"
-argument_list|)
-argument_list|,
-literal|""
-argument_list|)
-expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -3322,10 +3317,8 @@ operator|->
 name|rotation
 argument_list|)
 expr_stmt|;
-name|gtk_tooltips_set_tip
+name|gimp_help_set_help_data
 argument_list|(
-name|tooltips
-argument_list|,
 name|mw
 operator|->
 name|font_rotation
@@ -3335,7 +3328,7 @@ argument_list|(
 literal|"Set text rotation (degrees)"
 argument_list|)
 argument_list|,
-literal|""
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3569,10 +3562,8 @@ argument_list|,
 name|DEFAULT_FONT_PREVIEW_TEXT
 argument_list|)
 expr_stmt|;
-name|gtk_tooltips_set_tip
+name|gimp_help_set_help_data
 argument_list|(
-name|tooltips
-argument_list|,
 name|mw
 operator|->
 name|font_preview
@@ -4167,10 +4158,8 @@ argument_list|(
 name|button_ok
 argument_list|)
 expr_stmt|;
-name|gtk_tooltips_set_tip
+name|gimp_help_set_help_data
 argument_list|(
-name|tooltips
-argument_list|,
 name|button_ok
 argument_list|,
 name|_
@@ -4475,6 +4464,9 @@ name|message_window
 argument_list|)
 expr_stmt|;
 name|gtk_main
+argument_list|()
+expr_stmt|;
+name|gimp_help_free
 argument_list|()
 expr_stmt|;
 if|if
