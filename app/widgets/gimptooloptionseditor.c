@@ -1380,7 +1380,7 @@ name|action
 decl_stmt|;
 name|action
 operator|=
-name|gimp_ui_manager_get_action
+name|gimp_ui_manager_find_action
 argument_list|(
 name|GIMP_EDITOR
 argument_list|(

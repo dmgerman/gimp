@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279532f90103
+DECL|enum|__anon27584b350103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon279532f90203
+DECL|enum|__anon27584b350203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1608,8 +1608,8 @@ end_function
 begin_function
 name|GtkAction
 modifier|*
-DECL|function|gimp_ui_manager_get_action (GimpUIManager * manager,const gchar * group_name,const gchar * action_name)
-name|gimp_ui_manager_get_action
+DECL|function|gimp_ui_manager_find_action (GimpUIManager * manager,const gchar * group_name,const gchar * action_name)
+name|gimp_ui_manager_find_action
 parameter_list|(
 name|GimpUIManager
 modifier|*
@@ -2069,7 +2069,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279532f90308
+DECL|struct|__anon27584b350308
 block|{
 DECL|member|x
 name|guint

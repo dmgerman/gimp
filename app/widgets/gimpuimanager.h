@@ -269,7 +269,7 @@ end_function_decl
 begin_function_decl
 name|GtkAction
 modifier|*
-name|gimp_ui_manager_get_action
+name|gimp_ui_manager_find_action
 parameter_list|(
 name|GimpUIManager
 modifier|*

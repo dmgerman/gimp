@@ -187,7 +187,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2911be740103
+DECL|enum|__anon276099ec0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -3632,7 +3632,7 @@ name|action
 decl_stmt|;
 name|action
 operator|=
-name|gimp_ui_manager_get_action
+name|gimp_ui_manager_find_action
 argument_list|(
 name|GIMP_EDITOR
 argument_list|(

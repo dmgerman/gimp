@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2904b74d0103
+DECL|enum|__anon28ebbfab0103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -2767,7 +2767,7 @@ name|action
 decl_stmt|;
 name|action
 operator|=
-name|gimp_ui_manager_get_action
+name|gimp_ui_manager_find_action
 argument_list|(
 name|GIMP_EDITOR
 argument_list|(
@@ -3253,7 +3253,7 @@ name|action
 decl_stmt|;
 name|action
 operator|=
-name|gimp_ui_manager_get_action
+name|gimp_ui_manager_find_action
 argument_list|(
 name|GIMP_EDITOR
 argument_list|(
