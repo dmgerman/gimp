@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcolorselect.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcolorselection.h"
 end_include
 
@@ -67,6 +73,12 @@ begin_include
 include|#
 directive|include
 file|"gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpwidgets-private.h"
 end_include
 
 begin_include
@@ -92,7 +104,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c18cdb0103
+DECL|enum|__anon27b063870103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -122,7 +134,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c18cdb0203
+DECL|enum|__anon27b063870203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -581,6 +593,20 @@ operator|->
 name|left_vbox
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|_gimp_ensure_modules_func
+condition|)
+block|{
+name|g_type_class_ref
+argument_list|(
+name|GIMP_TYPE_COLOR_SELECT
+argument_list|)
+expr_stmt|;
+name|_gimp_ensure_modules_func
+argument_list|()
+expr_stmt|;
+block|}
 name|selection
 operator|->
 name|notebook
@@ -602,6 +628,18 @@ argument_list|,
 name|selection
 operator|->
 name|channel
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|_gimp_ensure_modules_func
+condition|)
+name|g_type_class_unref
+argument_list|(
+name|g_type_class_peek
+argument_list|(
+name|GIMP_TYPE_COLOR_SELECT
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_color_selector_set_toggles_visible

@@ -322,7 +322,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c840cc50103
+DECL|enum|__anon2795fb990103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3371,7 +3371,13 @@ name|GIMP_STOCK_RESET
 block|}
 block|}
 decl_stmt|;
-name|gtk_item_factory_create_items
+name|GtkItemFactory
+modifier|*
+name|item_factory
+decl_stmt|;
+name|item_factory
+operator|=
+name|GTK_ITEM_FACTORY
 argument_list|(
 name|GIMP_COLOR_BUTTON
 argument_list|(
@@ -3380,6 +3386,11 @@ operator|->
 name|padding_button
 argument_list|)
 operator|->
+name|popup_menu
+argument_list|)
+expr_stmt|;
+name|gtk_item_factory_create_items
+argument_list|(
 name|item_factory
 argument_list|,
 name|G_N_ELEMENTS

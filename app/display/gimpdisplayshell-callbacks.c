@@ -4740,6 +4740,10 @@ name|GimpColorButton
 modifier|*
 name|color_button
 decl_stmt|;
+name|GtkItemFactory
+modifier|*
+name|item_factory
+decl_stmt|;
 name|guchar
 name|r
 decl_stmt|,
@@ -4755,6 +4759,15 @@ operator|=
 name|GIMP_COLOR_BUTTON
 argument_list|(
 name|widget
+argument_list|)
+expr_stmt|;
+name|item_factory
+operator|=
+name|GTK_ITEM_FACTORY
+argument_list|(
+name|color_button
+operator|->
+name|popup_menu
 argument_list|)
 expr_stmt|;
 name|r
@@ -4824,8 +4837,6 @@ argument_list|)
 expr_stmt|;
 name|gimp_item_factory_set_color
 argument_list|(
-name|color_button
-operator|->
 name|item_factory
 argument_list|,
 literal|"/From Theme"
@@ -4861,8 +4872,6 @@ argument_list|)
 expr_stmt|;
 name|gimp_item_factory_set_color
 argument_list|(
-name|color_button
-operator|->
 name|item_factory
 argument_list|,
 literal|"/Light Check Color"
@@ -4898,8 +4907,6 @@ argument_list|)
 expr_stmt|;
 name|gimp_item_factory_set_color
 argument_list|(
-name|color_button
-operator|->
 name|item_factory
 argument_list|,
 literal|"/Dark Check Color"

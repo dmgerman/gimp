@@ -524,6 +524,10 @@ name|GimpColorPanel
 modifier|*
 name|color_panel
 decl_stmt|;
+name|GtkItemFactory
+modifier|*
+name|item_factory
+decl_stmt|;
 name|GimpRGB
 name|black
 decl_stmt|,
@@ -543,10 +547,17 @@ argument_list|(
 name|widget
 argument_list|)
 expr_stmt|;
-name|gimp_item_factory_set_visible
+name|item_factory
+operator|=
+name|GTK_ITEM_FACTORY
 argument_list|(
 name|color_button
 operator|->
+name|popup_menu
+argument_list|)
+expr_stmt|;
+name|gimp_item_factory_set_visible
+argument_list|(
 name|item_factory
 argument_list|,
 literal|"/Foreground Color"
@@ -560,8 +571,6 @@ argument_list|)
 expr_stmt|;
 name|gimp_item_factory_set_visible
 argument_list|(
-name|color_button
-operator|->
 name|item_factory
 argument_list|,
 literal|"/Background Color"
@@ -575,8 +584,6 @@ argument_list|)
 expr_stmt|;
 name|gimp_item_factory_set_visible
 argument_list|(
-name|color_button
-operator|->
 name|item_factory
 argument_list|,
 literal|"/fg-bg-separator"
@@ -622,8 +629,6 @@ argument_list|)
 expr_stmt|;
 name|gimp_item_factory_set_color
 argument_list|(
-name|color_button
-operator|->
 name|item_factory
 argument_list|,
 literal|"/Foreground Color"
@@ -636,8 +641,6 @@ argument_list|)
 expr_stmt|;
 name|gimp_item_factory_set_color
 argument_list|(
-name|color_button
-operator|->
 name|item_factory
 argument_list|,
 literal|"/Background Color"
@@ -679,8 +682,6 @@ argument_list|)
 expr_stmt|;
 name|gimp_item_factory_set_color
 argument_list|(
-name|color_button
-operator|->
 name|item_factory
 argument_list|,
 literal|"/Black"
@@ -693,8 +694,6 @@ argument_list|)
 expr_stmt|;
 name|gimp_item_factory_set_color
 argument_list|(
-name|color_button
-operator|->
 name|item_factory
 argument_list|,
 literal|"/White"

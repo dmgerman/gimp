@@ -89,9 +89,18 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|_gimp_ensure_modules_func
+name|GimpEnsureModulesFunc
+name|_gimp_ensure_modules_func
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 name|void
-DECL|function|gimp_widgets_init (GimpWidgetsVTable * vtable,GimpHelpFunc standard_help_func,GimpGetColorFunc get_foreground_func,GimpGetColorFunc get_background_func)
+DECL|function|gimp_widgets_init (GimpWidgetsVTable * vtable,GimpHelpFunc standard_help_func,GimpGetColorFunc get_foreground_func,GimpGetColorFunc get_background_func,GimpEnsureModulesFunc ensure_modules_func)
 name|gimp_widgets_init
 parameter_list|(
 name|GimpWidgetsVTable
@@ -106,6 +115,9 @@ name|get_foreground_func
 parameter_list|,
 name|GimpGetColorFunc
 name|get_background_func
+parameter_list|,
+name|GimpEnsureModulesFunc
+name|ensure_modules_func
 parameter_list|)
 block|{
 specifier|static
@@ -182,6 +194,10 @@ expr_stmt|;
 name|_gimp_get_background_func
 operator|=
 name|get_background_func
+expr_stmt|;
+name|_gimp_ensure_modules_func
+operator|=
+name|ensure_modules_func
 expr_stmt|;
 name|gimp_stock_init
 argument_list|()

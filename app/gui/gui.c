@@ -613,6 +613,8 @@ argument_list|,
 name|gui_get_foreground_func
 argument_list|,
 name|gui_get_background_func
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref

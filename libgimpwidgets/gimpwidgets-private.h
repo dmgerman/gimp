@@ -33,6 +33,20 @@ function_decl|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpEnsureModulesFunc
+typedef|typedef
+name|void
+function_decl|(
+modifier|*
+name|GimpEnsureModulesFunc
+function_decl|)
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpWidgetsVTable
 typedef|typedef
 name|struct
@@ -225,6 +239,13 @@ name|_gimp_get_background_func
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+specifier|extern
+name|GimpEnsureModulesFunc
+name|_gimp_ensure_modules_func
+decl_stmt|;
+end_decl_stmt
+
 begin_function_decl
 name|G_BEGIN_DECLS
 name|void
@@ -242,6 +263,9 @@ name|get_foreground_func
 parameter_list|,
 name|GimpGetColorFunc
 name|get_background_func
+parameter_list|,
+name|GimpEnsureModulesFunc
+name|ensure_modules_func
 parameter_list|)
 function_decl|;
 end_function_decl
