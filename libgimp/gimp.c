@@ -5796,8 +5796,14 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"%s:\nThe GIMP is using an older version of the "
-literal|"plug-in protocol than this plug-in."
+literal|"Could not execute Plug-In \"%s\"\n(%s)\n\n"
+literal|"The GIMP is using an older version of the "
+literal|"Plug-In protocol than this Plug-In."
+argument_list|,
+name|g_basename
+argument_list|(
+name|progname
+argument_list|)
 argument_list|,
 name|progname
 argument_list|)
@@ -5818,8 +5824,14 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"%s:\nThe GIMP is using a newer version of the "
-literal|"plug-in protocol than this plug-in."
+literal|"Could not execute Plug-In \"%s\"\n(%s)\n\n"
+literal|"The GIMP is using an older version of the "
+literal|"Plug-In protocol than this Plug-In."
+argument_list|,
+name|g_basename
+argument_list|(
+name|progname
+argument_list|)
 argument_list|,
 name|progname
 argument_list|)

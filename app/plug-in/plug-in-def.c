@@ -1190,7 +1190,7 @@ literal|1
 condition|)
 name|g_message
 argument_list|(
-literal|"shmget failed...disabling shared memory tile transport"
+literal|"shmget() failed: Disabling shared memory tile transport."
 argument_list|)
 expr_stmt|;
 else|else
@@ -1224,7 +1224,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"shmat failed...disabling shared memory tile transport"
+literal|"shmat() failed: Disabling shared memory tile transport."
 argument_list|)
 expr_stmt|;
 name|shmctl
@@ -1282,16 +1282,16 @@ argument_list|(
 name|G_WITH_CYGWIN
 argument_list|)
 comment|/* Use Win32 shared memory mechanisms for    * transfering tile data.    */
-name|int
+name|gint
 name|pid
 decl_stmt|;
-name|char
+name|gchar
 name|fileMapName
 index|[
 name|MAX_PATH
 index|]
 decl_stmt|;
-name|int
+name|gint
 name|tileByteSize
 init|=
 name|TILE_WIDTH
@@ -1410,10 +1410,10 @@ name|void
 parameter_list|)
 block|{
 specifier|extern
-name|int
+name|gboolean
 name|use_shm
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|filename
 decl_stmt|;
@@ -3061,10 +3061,6 @@ modifier|*
 name|plug_in_def
 parameter_list|)
 block|{
-name|GSList
-modifier|*
-name|tmp
-decl_stmt|;
 name|PlugInDef
 modifier|*
 name|tplug_in_def
@@ -3072,6 +3068,10 @@ decl_stmt|;
 name|PlugInProcDef
 modifier|*
 name|proc_def
+decl_stmt|;
+name|GSList
+modifier|*
+name|tmp
 decl_stmt|;
 name|gchar
 modifier|*
@@ -3523,7 +3523,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Unable to locate plug-in: \"%s\""
+literal|"Unable to locate Plug-In: \"%s\""
 argument_list|)
 argument_list|,
 name|name
@@ -4186,7 +4186,24 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"unable to open pipe"
+literal|"pipe() failed: Unable to start Plug-In \"%s\"\n(%s)"
+argument_list|,
+name|g_basename
+argument_list|(
+name|plug_in
+operator|->
+name|args
+index|[
+literal|0
+index|]
+argument_list|)
+argument_list|,
+name|plug_in
+operator|->
+name|args
+index|[
+literal|0
+index|]
 argument_list|)
 expr_stmt|;
 return|return
@@ -4702,7 +4719,17 @@ directive|endif
 block|{
 name|g_message
 argument_list|(
-literal|"unable to run plug-in: %s"
+literal|"fork() failed: Unable to run Plug-In: \"%s\"\n(%s)"
+argument_list|,
+name|g_basename
+argument_list|(
+name|plug_in
+operator|->
+name|args
+index|[
+literal|0
+index|]
+argument_list|)
 argument_list|,
 name|plug_in
 operator|->
@@ -4793,7 +4820,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"unable to read plug-ins's thread id"
+literal|"Unable to read Plug-In's thread id"
 argument_list|)
 expr_stmt|;
 name|plug_in_destroy
@@ -6203,6 +6230,27 @@ expr_stmt|;
 block|}
 block|}
 block|}
+if|if
+condition|(
+operator|!
+name|last_plug_in
+condition|)
+block|{
+name|menus_set_sensitive
+argument_list|(
+literal|"<Image>/Filters/Repeat Last"
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|menus_set_sensitive
+argument_list|(
+literal|"<Image>/Filters/Re-Show Last"
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -6359,7 +6407,10 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Plug-In crashed: %s\n(%s)"
+literal|"Plug-In crashed: \"%s\"\n(%s)\n\n"
+literal|"The dying Plug-In may have messed up GIMP's internal state.\n"
+literal|"You may want to save your images and restart GIMP\n"
+literal|"to be on the safe side."
 argument_list|)
 argument_list|,
 name|g_basename
@@ -6459,7 +6510,7 @@ name|GP_TILE_ACK
 case|:
 name|g_warning
 argument_list|(
-literal|"plug_in_handle_message(): received a config message (should not happen)"
+literal|"plug_in_handle_message(): received a tile ack message (should not happen)"
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -6475,7 +6526,7 @@ name|GP_TILE_DATA
 case|:
 name|g_warning
 argument_list|(
-literal|"plug_in_handle_message(): received a config message (should not happen)"
+literal|"plug_in_handle_message(): received a tile data message (should not happen)"
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -7796,8 +7847,19 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"plug-in \"%s\" attempted to install procedure \"%s\" which "
-literal|"does not take the standard plug-in args"
+literal|"Plug-In \"%s\"\n(%s)\n"
+literal|"attempted to install procedure \"%s\"\n"
+literal|"which does not take the standard Plug-In args."
+argument_list|,
+name|g_basename
+argument_list|(
+name|current_plug_in
+operator|->
+name|args
+index|[
+literal|0
+index|]
+argument_list|)
 argument_list|,
 name|current_plug_in
 operator|->
@@ -7883,8 +7945,19 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"plug-in \"%s\" attempted to install procedure \"%s\" which "
-literal|"does not take the standard plug-in args"
+literal|"Plug-In \"%s\"\n(%s)\n"
+literal|"attempted to install procedure \"%s\"\n"
+literal|"which does not take the standard Plug-In args."
+argument_list|,
+name|g_basename
+argument_list|(
+name|current_plug_in
+operator|->
+name|args
+index|[
+literal|0
+index|]
+argument_list|)
 argument_list|,
 name|current_plug_in
 operator|->
@@ -7970,8 +8043,19 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"plug-in \"%s\" attempted to install procedure \"%s\" which "
-literal|"does not take the standard plug-in args"
+literal|"Plug-In \"%s\"\n(%s)\n"
+literal|"attempted to install procedure \"%s\"\n"
+literal|"which does not take the standard Plug-In args."
+argument_list|,
+name|g_basename
+argument_list|(
+name|current_plug_in
+operator|->
+name|args
+index|[
+literal|0
+index|]
+argument_list|)
 argument_list|,
 name|current_plug_in
 operator|->
@@ -8083,8 +8167,19 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"plug-in \"%s\" attempted to install procedure \"%s\" which "
-literal|"does not take the standard plug-in args"
+literal|"Plug-In \"%s\"\n(%s)\n"
+literal|"attempted to install procedure \"%s\"\n"
+literal|"which does not take the standard Plug-In args."
+argument_list|,
+name|g_basename
+argument_list|(
+name|current_plug_in
+operator|->
+name|args
+index|[
+literal|0
+index|]
+argument_list|)
 argument_list|,
 name|current_plug_in
 operator|->
@@ -8105,9 +8200,21 @@ else|else
 block|{
 name|g_message
 argument_list|(
-literal|"plug-in \"%s\" attempted to install procedure \"%s\" in "
-literal|"an invalid menu location.  Use either \"<Toolbox>\", \"<Image>\", "
+literal|"Plug-In \"%s\"\n(%s)\n"
+literal|"attempted to install procedure \"%s\"\n"
+literal|"in an invalid menu location.\n"
+literal|"Use either \"<Toolbox>\", \"<Image>\", "
 literal|"\"<Load>\", or \"<Save>\"."
+argument_list|,
+name|g_basename
+argument_list|(
+name|current_plug_in
+operator|->
+name|args
+index|[
+literal|0
+index|]
+argument_list|)
 argument_list|,
 name|current_plug_in
 operator|->
@@ -8205,9 +8312,20 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"plug_in \"%s\" attempted to install procedure \"%s\" "
-literal|"which fails to comply with the array parameter "
+literal|"Plug-In \"%s\"\n(%s)\n"
+literal|"attempted to install procedure \"%s\"\n"
+literal|"which fails to comply with the array parameter\n"
 literal|"passing standard.  Argument %d is noncompliant."
+argument_list|,
+name|g_basename
+argument_list|(
+name|current_plug_in
+operator|->
+name|args
+index|[
+literal|0
+index|]
+argument_list|)
 argument_list|,
 name|current_plug_in
 operator|->
