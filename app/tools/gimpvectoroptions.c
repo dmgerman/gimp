@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon278223570103
+DECL|enum|__anon27799ff50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -673,7 +673,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Create Selection from Path"
+literal|"Create selection from path"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -737,7 +737,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Stroke Path"
+literal|"Stroke path"
 argument_list|)
 argument_list|)
 expr_stmt|;

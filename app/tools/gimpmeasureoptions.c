@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd4812d0103
+DECL|enum|__anon28ff4ecf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -498,7 +498,7 @@ literal|"use-info-window"
 argument_list|,
 name|_
 argument_list|(
-literal|"Use Info Window"
+literal|"Use info window"
 argument_list|)
 argument_list|)
 expr_stmt|;

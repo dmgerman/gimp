@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296890a30103
+DECL|enum|__anon2a1df8a00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1607,7 +1607,7 @@ literal|"feather"
 argument_list|,
 name|_
 argument_list|(
-literal|"Feather Edges"
+literal|"Feather edges"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1711,7 +1711,7 @@ literal|"interactive"
 argument_list|,
 name|_
 argument_list|(
-literal|"Show Interactive Boundary"
+literal|"Show interactive boundary"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1845,7 +1845,7 @@ literal|"select-transparent"
 argument_list|,
 name|_
 argument_list|(
-literal|"Select Transparent Areas"
+literal|"Select transparent areas"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1881,7 +1881,7 @@ literal|"sample-merged"
 argument_list|,
 name|_
 argument_list|(
-literal|"Sample Merged"
+literal|"Sample merged"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2103,7 +2103,7 @@ literal|"auto-shrink"
 argument_list|,
 name|_
 argument_list|(
-literal|"Auto Shrink Selection"
+literal|"Auto shrink selection"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2153,7 +2153,7 @@ literal|"shrink-merged"
 argument_list|,
 name|_
 argument_list|(
-literal|"Sample Merged"
+literal|"Sample merged"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -998,7 +998,7 @@ literal|"hard"
 argument_list|,
 name|_
 argument_list|(
-literal|"Hard Edge"
+literal|"Hard edge"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1242,7 +1242,7 @@ name|gtk_expander_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Pressure Sensitivity"
+literal|"Pressure sensitivity"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1718,7 +1718,7 @@ literal|"use-fade"
 argument_list|,
 name|_
 argument_list|(
-literal|"Fade Out"
+literal|"Fade out"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2020,7 +2020,7 @@ literal|"use-gradient"
 argument_list|,
 name|_
 argument_list|(
-literal|"Use Color from Gradient"
+literal|"Use color from gradient"
 argument_list|)
 argument_list|)
 expr_stmt|;

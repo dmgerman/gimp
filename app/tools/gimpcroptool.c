@@ -194,7 +194,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2adf07660103
+DECL|enum|__anon2bbf613a0103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -4884,7 +4884,7 @@ name|crop_info
 argument_list|,
 name|_
 argument_list|(
-literal|"Aspect Ratio:"
+literal|"Aspect ratio:"
 argument_list|)
 argument_list|,
 operator|&
@@ -4958,7 +4958,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"From Selection"
+literal|"From selection"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4997,7 +4997,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Auto Shrink"
+literal|"Auto shrink"
 argument_list|)
 argument_list|)
 expr_stmt|;

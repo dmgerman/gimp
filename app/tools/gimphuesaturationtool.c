@@ -646,7 +646,7 @@ name|shell_desc
 operator|=
 name|_
 argument_list|(
-literal|"Adjust Hue / Lightness / Saturation"
+literal|"Adjust hue / lightness / saturation"
 argument_list|)
 expr_stmt|;
 name|image_map_tool_class
@@ -974,7 +974,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon27d300910108
+DECL|struct|__anon2b160fe50108
 block|{
 DECL|member|label
 specifier|const
@@ -1993,7 +1993,7 @@ name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"R_eset Color"
+literal|"R_eset color"
 argument_list|)
 argument_list|)
 expr_stmt|;

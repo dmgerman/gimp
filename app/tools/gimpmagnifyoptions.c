@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a04841d0103
+DECL|enum|__anon27c435050103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -746,7 +746,7 @@ literal|"auto-resize"
 argument_list|,
 name|_
 argument_list|(
-literal|"Auto-Resize Window"
+literal|"Auto-resize window"
 argument_list|)
 argument_list|)
 expr_stmt|;

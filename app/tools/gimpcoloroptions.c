@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon293d7a800103
+DECL|enum|__anon2c0fa07e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -634,7 +634,7 @@ literal|"sample-average"
 argument_list|,
 name|_
 argument_list|(
-literal|"Sample Average"
+literal|"Sample average"
 argument_list|)
 argument_list|)
 expr_stmt|;

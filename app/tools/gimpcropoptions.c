@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290b4bc70103
+DECL|enum|__anon275d51710103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -691,7 +691,7 @@ literal|"layer-only"
 argument_list|,
 name|_
 argument_list|(
-literal|"Current Layer only"
+literal|"Current layer only"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -723,7 +723,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Allow Enlarging  %s"
+literal|"Allow enlarging  %s"
 argument_list|)
 argument_list|,
 name|gimp_get_mod_name_alt
@@ -774,7 +774,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Keep Aspect ratio  %s"
+literal|"Keep aspect ratio  %s"
 argument_list|)
 argument_list|,
 name|gimp_get_mod_name_shift

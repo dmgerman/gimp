@@ -1495,7 +1495,7 @@ name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"R_eset Range"
+literal|"R_eset range"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1542,7 +1542,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Preserve _Luminosity"
+literal|"Preserve _luminosity"
 argument_list|)
 argument_list|)
 expr_stmt|;

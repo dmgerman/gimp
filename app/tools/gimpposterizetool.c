@@ -811,7 +811,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Posterize _Levels:"
+literal|"Posterize _levels:"
 argument_list|)
 argument_list|,
 name|SLIDER_WIDTH

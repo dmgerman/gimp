@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b02ebb0103
+DECL|enum|__anon2951babf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -951,12 +951,12 @@ name|str
 argument_list|,
 name|_
 argument_list|(
-literal|"Fill Whole Selection"
+literal|"Fill whole selection"
 argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Fill Similar Colors"
+literal|"Fill similar colors"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1094,7 +1094,7 @@ literal|"fill-transparent"
 argument_list|,
 name|_
 argument_list|(
-literal|"Fill Transparent Areas"
+literal|"Fill transparent areas"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1130,7 +1130,7 @@ literal|"sample-merged"
 argument_list|,
 name|_
 argument_list|(
-literal|"Sample Merged"
+literal|"Sample merged"
 argument_list|)
 argument_list|)
 expr_stmt|;

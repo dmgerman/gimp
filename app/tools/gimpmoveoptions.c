@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27821e7b0103
+DECL|enum|__anon2b8b94120103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -565,14 +565,14 @@ name|false_label
 operator|=
 name|_
 argument_list|(
-literal|"Pick a Layer or Guide to Move"
+literal|"Pick a layer or guide to Move"
 argument_list|)
 expr_stmt|;
 name|true_label
 operator|=
 name|_
 argument_list|(
-literal|"Move the Current Layer"
+literal|"Move the current layer"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -583,14 +583,14 @@ name|false_label
 operator|=
 name|_
 argument_list|(
-literal|"Move Selection"
+literal|"Move selection"
 argument_list|)
 expr_stmt|;
 name|true_label
 operator|=
 name|_
 argument_list|(
-literal|"Move Selection"
+literal|"Move selection"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -601,14 +601,14 @@ name|false_label
 operator|=
 name|_
 argument_list|(
-literal|"Pick a Path to Move"
+literal|"Pick a path to move"
 argument_list|)
 expr_stmt|;
 name|true_label
 operator|=
 name|_
 argument_list|(
-literal|"Move the Current Path"
+literal|"Move the current path"
 argument_list|)
 expr_stmt|;
 break|break;

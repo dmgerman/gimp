@@ -7004,7 +7004,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Path to Selection"
+literal|"Path to selection"
 argument_list|)
 argument_list|,
 name|vector_tool

@@ -606,7 +606,7 @@ name|shell_desc
 operator|=
 name|_
 argument_list|(
-literal|"Scaling Information"
+literal|"Scaling information"
 argument_list|)
 expr_stmt|;
 name|tr_tool
@@ -674,7 +674,7 @@ name|info_dialog
 argument_list|,
 name|_
 argument_list|(
-literal|"Current Width:"
+literal|"Current width:"
 argument_list|)
 argument_list|,
 name|NULL
@@ -709,7 +709,7 @@ name|info_dialog
 argument_list|,
 name|_
 argument_list|(
-literal|"Current Height:"
+literal|"Current height:"
 argument_list|)
 argument_list|,
 name|size_vals
@@ -773,7 +773,7 @@ name|info_dialog
 argument_list|,
 name|_
 argument_list|(
-literal|"Scale Ratio X:"
+literal|"Scale ratio X:"
 argument_list|)
 argument_list|,
 name|x_ratio_buf
@@ -787,7 +787,7 @@ name|info_dialog
 argument_list|,
 name|_
 argument_list|(
-literal|"Scale Ratio Y:"
+literal|"Scale ratio Y:"
 argument_list|)
 argument_list|,
 name|y_ratio_buf

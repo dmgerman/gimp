@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a8011c0103
+DECL|enum|__anon29d478900103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1112,7 +1112,7 @@ literal|"supersample"
 argument_list|,
 name|_
 argument_list|(
-literal|"Adaptive Supersampling"
+literal|"Adaptive supersampling"
 argument_list|)
 argument_list|)
 expr_stmt|;

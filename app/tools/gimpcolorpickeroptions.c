@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7ad97e0103
+DECL|enum|__anon2aad17ee0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -521,7 +521,7 @@ literal|"sample-merged"
 argument_list|,
 name|_
 argument_list|(
-literal|"Sample Merged"
+literal|"Sample merged"
 argument_list|)
 argument_list|)
 expr_stmt|;

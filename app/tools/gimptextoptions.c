@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29317b0f0103
+DECL|enum|__anon27f76b140103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1844,7 +1844,7 @@ literal|"autohint"
 argument_list|,
 name|_
 argument_list|(
-literal|"Force Auto-Hinter"
+literal|"Force auto-hinter"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2158,7 +2158,7 @@ operator|++
 argument_list|,
 name|_
 argument_list|(
-literal|"Line\nSpacing:"
+literal|"Line\nspacing:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -2176,7 +2176,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Create Path from Text"
+literal|"Create path from text"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -51,7 +51,7 @@ name|GIMP_COLOR_PICK_MODE_NONE
 block|,
 name|N_
 argument_list|(
-literal|"Pick Only"
+literal|"Pick only"
 argument_list|)
 block|,
 literal|"none"
@@ -62,7 +62,7 @@ name|GIMP_COLOR_PICK_MODE_FOREGROUND
 block|,
 name|N_
 argument_list|(
-literal|"Set Foreground Color"
+literal|"Set foreground color"
 argument_list|)
 block|,
 literal|"foreground"
@@ -73,7 +73,7 @@ name|GIMP_COLOR_PICK_MODE_BACKGROUND
 block|,
 name|N_
 argument_list|(
-literal|"Set Background Color"
+literal|"Set background color"
 argument_list|)
 block|,
 literal|"background"
@@ -214,7 +214,7 @@ name|GIMP_RECT_SELECT_MODE_FREE
 block|,
 name|N_
 argument_list|(
-literal|"Free Select"
+literal|"Free select"
 argument_list|)
 block|,
 literal|"free"
@@ -225,7 +225,7 @@ name|GIMP_RECT_SELECT_MODE_FIXED_SIZE
 block|,
 name|N_
 argument_list|(
-literal|"Fixed Size"
+literal|"Fixed size"
 argument_list|)
 block|,
 literal|"fixed-size"
@@ -236,7 +236,7 @@ name|GIMP_RECT_SELECT_MODE_FIXED_RATIO
 block|,
 name|N_
 argument_list|(
-literal|"Fixed Aspect Ratio"
+literal|"Fixed aspect ratio"
 argument_list|)
 block|,
 literal|"fixed-ratio"
@@ -301,7 +301,7 @@ name|GIMP_TRANSFORM_TYPE_LAYER
 block|,
 name|N_
 argument_list|(
-literal|"Transform Layer"
+literal|"Transform layer"
 argument_list|)
 block|,
 literal|"layer"
@@ -312,7 +312,7 @@ name|GIMP_TRANSFORM_TYPE_SELECTION
 block|,
 name|N_
 argument_list|(
-literal|"Transform Selection"
+literal|"Transform selection"
 argument_list|)
 block|,
 literal|"selection"
@@ -323,7 +323,7 @@ name|GIMP_TRANSFORM_TYPE_PATH
 block|,
 name|N_
 argument_list|(
-literal|"Transform Path"
+literal|"Transform path"
 argument_list|)
 block|,
 literal|"path"
@@ -475,7 +475,7 @@ name|GIMP_TRANSFORM_GRID_TYPE_NONE
 block|,
 name|N_
 argument_list|(
-literal|"Don't Show Grid"
+literal|"Don't show grid"
 argument_list|)
 block|,
 literal|"none"
@@ -486,7 +486,7 @@ name|GIMP_TRANSFORM_GRID_TYPE_N_LINES
 block|,
 name|N_
 argument_list|(
-literal|"Number of Grid Lines"
+literal|"Number of grid lines"
 argument_list|)
 block|,
 literal|"n-lines"
@@ -497,7 +497,7 @@ name|GIMP_TRANSFORM_GRID_TYPE_SPACING
 block|,
 name|N_
 argument_list|(
-literal|"Grid Line Spacing"
+literal|"Grid line spacing"
 argument_list|)
 block|,
 literal|"spacing"

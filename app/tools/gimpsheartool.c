@@ -616,7 +616,7 @@ name|info_dialog
 argument_list|,
 name|_
 argument_list|(
-literal|"Shear Magnitude X:"
+literal|"Shear magnitude X:"
 argument_list|)
 argument_list|,
 operator|&
@@ -653,7 +653,7 @@ name|info_dialog
 argument_list|,
 name|_
 argument_list|(
-literal|"Shear Magnitude Y:"
+literal|"Shear magnitude Y:"
 argument_list|)
 argument_list|,
 operator|&

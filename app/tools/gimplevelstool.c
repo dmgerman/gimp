@@ -1510,7 +1510,7 @@ name|help
 operator|=
 name|_
 argument_list|(
-literal|"Pick Black Point"
+literal|"Pick black point"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1525,7 +1525,7 @@ name|help
 operator|=
 name|_
 argument_list|(
-literal|"Pick Gray Point"
+literal|"Pick gray point"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1540,7 +1540,7 @@ name|help
 operator|=
 name|_
 argument_list|(
-literal|"Pick White Point"
+literal|"Pick white point"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1836,7 +1836,7 @@ name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"R_eset Channel"
+literal|"R_eset channel"
 argument_list|)
 argument_list|)
 expr_stmt|;
