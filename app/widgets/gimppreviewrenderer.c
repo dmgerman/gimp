@@ -195,7 +195,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab03ac40103
+DECL|enum|__anon2b2ed1e20103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -1620,7 +1620,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|g_signal_handlers_disconnect_by_func
+name|g_object_remove_weak_pointer
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -1629,11 +1629,10 @@ operator|->
 name|viewable
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gtk_widget_destroyed
-argument_list|)
-argument_list|,
+operator|(
+name|gpointer
+operator|*
+operator|)
 operator|&
 name|preview
 operator|->
@@ -1737,7 +1736,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-name|g_object_weak_ref
+name|g_object_add_weak_pointer
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -1747,10 +1746,9 @@ name|viewable
 argument_list|)
 argument_list|,
 operator|(
-name|GWeakNotify
+name|gpointer
+operator|*
 operator|)
-name|gtk_widget_destroyed
-argument_list|,
 operator|&
 name|preview
 operator|->

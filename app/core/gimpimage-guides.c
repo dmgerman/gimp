@@ -787,7 +787,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b4bb130103
+DECL|enum|__anon29ac0c870103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -15103,6 +15103,14 @@ argument_list|,
 name|position
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/*  notify the layers dialog of the currently active layer  */
 name|gimp_image_set_active_layer
 argument_list|(
@@ -15948,6 +15956,14 @@ operator|->
 name|channels
 argument_list|,
 name|GIMP_OBJECT
+argument_list|(
+name|channel
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|G_OBJECT
 argument_list|(
 name|channel
 argument_list|)

@@ -391,7 +391,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fe74320108
+DECL|struct|__anon27ca4a050108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -2489,7 +2489,7 @@ operator|=
 name|paths_dialog_create
 argument_list|()
 expr_stmt|;
-name|g_object_weak_ref
+name|g_object_add_weak_pointer
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -2497,10 +2497,9 @@ name|view
 argument_list|)
 argument_list|,
 operator|(
-name|GDestroyNotify
+name|gpointer
+operator|*
 operator|)
-name|gtk_widget_destroyed
-argument_list|,
 operator|&
 name|view
 argument_list|)
@@ -2722,7 +2721,7 @@ operator|=
 name|error_console_create
 argument_list|()
 expr_stmt|;
-name|g_object_weak_ref
+name|g_object_add_weak_pointer
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -2730,10 +2729,9 @@ name|view
 argument_list|)
 argument_list|,
 operator|(
-name|GDestroyNotify
+name|gpointer
+operator|*
 operator|)
-name|gtk_widget_destroyed
-argument_list|,
 operator|&
 name|view
 argument_list|)

@@ -340,22 +340,6 @@ operator|=
 name|gimp_new
 argument_list|()
 expr_stmt|;
-name|gtk_object_ref
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|the_gimp
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_object_sink
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|the_gimp
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/*  Check if the user's gimp_directory exists    */
 name|gimp_dir
 operator|=

@@ -268,7 +268,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a08660f0108
+DECL|struct|__anon28e6e5560108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -304,7 +304,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a08660f0208
+DECL|struct|__anon28e6e5560208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -359,7 +359,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a08660f0308
+DECL|struct|__anon28e6e5560308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -525,7 +525,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a08660f0403
+DECL|enum|__anon28e6e5560403
 block|{
 DECL|enumerator|BEZIER_SELECT
 name|BEZIER_SELECT
@@ -4267,6 +4267,7 @@ name|bezier_sel
 operator|->
 name|mask
 condition|)
+block|{
 name|g_object_unref
 argument_list|(
 name|G_OBJECT
@@ -4277,6 +4278,13 @@ name|mask
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|bezier_sel
+operator|->
+name|mask
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 name|bezier_sel
 operator|->
 name|state
@@ -11280,26 +11288,6 @@ operator|->
 name|gimage
 operator|->
 name|height
-argument_list|)
-expr_stmt|;
-name|gtk_object_ref
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|bezier_sel
-operator|->
-name|mask
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_object_sink
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|bezier_sel
-operator|->
-name|mask
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* allocate room for the scanlines */

@@ -1055,25 +1055,9 @@ literal|3
 expr_stmt|;
 block|}
 comment|/*  set ref_count to 2 --> never swap the standard pattern  */
-name|gtk_object_ref
+name|g_object_ref
 argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|standard_pattern
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_object_ref
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|standard_pattern
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_object_sink
-argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|standard_pattern
 argument_list|)

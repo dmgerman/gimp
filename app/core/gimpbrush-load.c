@@ -180,7 +180,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d9903b0103
+DECL|enum|__anon2ba6fe7e0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -1297,22 +1297,6 @@ comment|/*  set ref_count to 2 --> never swap the standard brush  */
 name|g_object_ref
 argument_list|(
 name|G_OBJECT
-argument_list|(
-name|standard_brush
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_object_ref
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|standard_brush
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_object_sink
-argument_list|(
-name|GTK_OBJECT
 argument_list|(
 name|standard_brush
 argument_list|)

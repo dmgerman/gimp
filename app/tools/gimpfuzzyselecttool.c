@@ -2817,22 +2817,6 @@ name|fuzzy_mask
 operator|=
 name|new
 expr_stmt|;
-name|gtk_object_ref
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|fuzzy_mask
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_object_sink
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|fuzzy_mask
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/*  calculate and allocate a new XSegment array which represents the boundary    *  of the color-contiguous region    */
 name|pixel_region_init
 argument_list|(

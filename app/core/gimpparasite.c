@@ -115,26 +115,6 @@ operator|=
 name|gimp_parasite_list_new
 argument_list|()
 expr_stmt|;
-name|gtk_object_ref
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|gimp
-operator|->
-name|parasites
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_object_sink
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|gimp
-operator|->
-name|parasites
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
