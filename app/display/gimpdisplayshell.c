@@ -39,12 +39,6 @@ directive|include
 file|"tools/tools-types.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"widgets/widgets-types.h"
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -215,12 +209,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpviewabledialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpwidgets-utils.h"
 end_include
 
@@ -346,7 +334,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a32aad10103
+DECL|enum|__anon2c52cbe50103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
