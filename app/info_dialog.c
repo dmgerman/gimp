@@ -39,6 +39,12 @@ directive|include
 file|"interface.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"session.h"
+end_include
+
 begin_comment
 comment|/*  static functions  */
 end_comment
@@ -379,13 +385,14 @@ argument_list|,
 name|title
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_uposition
+name|session_set_window_geometry
 argument_list|(
 name|shell
 argument_list|,
-name|info_x
+operator|&
+name|info_dialog_geometry
 argument_list|,
-name|info_y
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -647,6 +654,16 @@ argument_list|(
 name|idialog
 operator|->
 name|field_list
+argument_list|)
+expr_stmt|;
+name|session_get_window_geometry
+argument_list|(
+name|idialog
+operator|->
+name|shell
+argument_list|,
+operator|&
+name|info_dialog_geometry
 argument_list|)
 expr_stmt|;
 comment|/*  Destroy the associated widgets  */

@@ -150,6 +150,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"session.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"undo.h"
 end_include
 
@@ -2195,15 +2201,6 @@ argument_list|,
 literal|"Layers& Channels"
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_uposition
-argument_list|(
-name|lc_shell
-argument_list|,
-name|lc_x
-argument_list|,
-name|lc_y
-argument_list|)
-expr_stmt|;
 name|gtk_window_set_wmclass
 argument_list|(
 name|GTK_WINDOW
@@ -2214,6 +2211,16 @@ argument_list|,
 literal|"layers_and_channels"
 argument_list|,
 literal|"Gimp"
+argument_list|)
+expr_stmt|;
+name|session_set_window_geometry
+argument_list|(
+name|lc_shell
+argument_list|,
+operator|&
+name|lc_dialog_geometry
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_container_border_width
@@ -2854,17 +2861,12 @@ operator|==
 name|NULL
 condition|)
 return|return;
-name|gdk_window_get_position
+name|session_get_window_geometry
 argument_list|(
 name|lc_shell
-operator|->
-name|window
 argument_list|,
 operator|&
-name|lc_x
-argument_list|,
-operator|&
-name|lc_y
+name|lc_dialog_geometry
 argument_list|)
 expr_stmt|;
 name|layers_dialog_free

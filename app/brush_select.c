@@ -75,6 +75,12 @@ directive|include
 file|"paint_funcs.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"session.h"
+end_include
+
 begin_define
 DECL|macro|STD_CELL_WIDTH
 define|#
@@ -943,6 +949,18 @@ name|shell
 argument_list|)
 argument_list|,
 literal|"Brush Selection"
+argument_list|)
+expr_stmt|;
+name|session_set_window_geometry
+argument_list|(
+name|bsp
+operator|->
+name|shell
+argument_list|,
+operator|&
+name|brush_select_geometry
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_policy
@@ -2030,6 +2048,16 @@ condition|(
 name|bsp
 condition|)
 block|{
+name|session_get_window_geometry
+argument_list|(
+name|bsp
+operator|->
+name|shell
+argument_list|,
+operator|&
+name|brush_select_geometry
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|bsp

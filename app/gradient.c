@@ -125,6 +125,12 @@ directive|include
 file|"palette.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"session.h"
+end_include
+
 begin_comment
 comment|/***** Magic numbers *****/
 end_comment
@@ -334,7 +340,7 @@ comment|/* Gradient segment type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28cc48c10103
+DECL|enum|__anon2ba565780103
 typedef|typedef
 enum|enum
 block|{
@@ -361,7 +367,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon28cc48c10203
+DECL|enum|__anon2ba565780203
 typedef|typedef
 enum|enum
 block|{
@@ -506,7 +512,7 @@ comment|/* Gradient editor type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28cc48c10303
+DECL|enum|__anon2ba565780303
 typedef|typedef
 enum|enum
 block|{
@@ -530,7 +536,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28cc48c10408
+DECL|struct|__anon2ba565780408
 typedef|typedef
 struct|struct
 block|{
@@ -810,7 +816,7 @@ name|int
 name|replicate_times
 decl_stmt|;
 comment|/* Saved colors */
-DECL|struct|__anon28cc48c10508
+DECL|struct|__anon2ba565780508
 struct|struct
 block|{
 DECL|member|r
@@ -4057,16 +4063,16 @@ argument_list|,
 literal|"Gradient Editor"
 argument_list|)
 expr_stmt|;
-name|gtk_window_position
-argument_list|(
-name|GTK_WINDOW
+name|session_set_window_geometry
 argument_list|(
 name|g_editor
 operator|->
 name|shell
-argument_list|)
 argument_list|,
-name|GTK_WIN_POS_CENTER
+operator|&
+name|gradient_editor_geometry
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/* handle window manager close signals */
@@ -5752,6 +5758,20 @@ name|void
 parameter_list|)
 block|{
 comment|/* FIXME */
+if|if
+condition|(
+name|g_editor
+condition|)
+name|session_get_window_geometry
+argument_list|(
+name|g_editor
+operator|->
+name|shell
+argument_list|,
+operator|&
+name|gradient_editor_geometry
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

@@ -222,6 +222,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"session.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"text_tool.h"
 end_include
 
@@ -1833,13 +1839,14 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_uposition
+name|session_set_window_geometry
 argument_list|(
 name|options_shell
 argument_list|,
-name|tool_options_x
+operator|&
+name|tool_options_geometry
 argument_list|,
-name|tool_options_y
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|options_vbox
@@ -1972,6 +1979,14 @@ DECL|function|tools_options_dialog_free ()
 name|tools_options_dialog_free
 parameter_list|()
 block|{
+name|session_get_window_geometry
+argument_list|(
+name|options_shell
+argument_list|,
+operator|&
+name|tool_options_geometry
+argument_list|)
+expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
 name|options_shell

@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"session.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools.h"
 end_include
 
@@ -2226,13 +2232,14 @@ argument_list|,
 literal|"The GIMP"
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_uposition
+name|session_set_window_geometry
 argument_list|(
 name|window
 argument_list|,
-name|toolbox_x
+operator|&
+name|toolbox_geometry
 argument_list|,
-name|toolbox_y
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -2536,17 +2543,12 @@ block|{
 name|int
 name|i
 decl_stmt|;
-name|gdk_window_get_position
+name|session_get_window_geometry
 argument_list|(
 name|toolbox_shell
-operator|->
-name|window
 argument_list|,
 operator|&
-name|toolbox_x
-argument_list|,
-operator|&
-name|toolbox_y
+name|toolbox_geometry
 argument_list|)
 expr_stmt|;
 name|gtk_widget_destroy
