@@ -83,6 +83,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpguiconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -328,7 +334,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c08a6d80103
+DECL|enum|__anon28ca82bc0103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -344,14 +350,6 @@ name|LAST_SIGNAL
 block|}
 enum|;
 end_enum
-
-begin_define
-DECL|macro|SNAP_WIDTH
-define|#
-directive|define
-name|SNAP_WIDTH
-value|8.0
-end_define
 
 begin_comment
 comment|/*  local function prototypes  */
@@ -4355,6 +4353,26 @@ name|tx
 decl_stmt|,
 name|ty
 decl_stmt|;
+name|gint
+name|snap_distance
+decl_stmt|;
+name|snap_distance
+operator|=
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|shell
+operator|->
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+operator|->
+name|snap_distance
+expr_stmt|;
 if|if
 condition|(
 name|snap_width
@@ -4414,14 +4432,14 @@ name|FUNSCALEX
 argument_list|(
 name|shell
 argument_list|,
-name|SNAP_WIDTH
+name|snap_distance
 argument_list|)
 argument_list|,
 name|FUNSCALEY
 argument_list|(
 name|shell
 argument_list|,
-name|SNAP_WIDTH
+name|snap_distance
 argument_list|)
 argument_list|,
 name|snap_to_guides
@@ -4464,14 +4482,14 @@ name|FUNSCALEX
 argument_list|(
 name|shell
 argument_list|,
-name|SNAP_WIDTH
+name|snap_distance
 argument_list|)
 argument_list|,
 name|FUNSCALEY
 argument_list|(
 name|shell
 argument_list|,
-name|SNAP_WIDTH
+name|snap_distance
 argument_list|)
 argument_list|,
 name|snap_to_guides

@@ -106,6 +106,10 @@ DECL|member|transparency_type
 name|GimpCheckType
 name|transparency_type
 decl_stmt|;
+DECL|member|snap_distance
+name|gint
+name|snap_distance
+decl_stmt|;
 DECL|member|default_threshold
 name|gint
 name|default_threshold

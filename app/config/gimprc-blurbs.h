@@ -164,6 +164,15 @@ value|"Specify a default palette.  The palette is searched for in the " \ "speci
 end_define
 
 begin_define
+DECL|macro|DEFAULT_SNAP_DISTANCE_BLURB
+define|#
+directive|define
+name|DEFAULT_SNAP_DISTANCE_BLURB
+define|\
+value|N_("This is the distance in pixels where Guide and Grid snapping " \    "activates.")
+end_define
+
+begin_define
 DECL|macro|DEFAULT_THRESHOLD_BLURB
 define|#
 directive|define
