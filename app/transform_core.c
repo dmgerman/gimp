@@ -7382,12 +7382,9 @@ operator|!
 name|layer
 condition|)
 block|{
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"transform_core_paste: layer_new_frome_tiles() failed"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

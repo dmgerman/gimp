@@ -5192,7 +5192,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e948180108
+DECL|struct|__anon28efab600108
 block|{
 DECL|member|bsp
 name|BrushSelect
@@ -9071,12 +9071,12 @@ expr_stmt|;
 block|}
 block|}
 else|else
+comment|/* this should never happen */
 name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"We are all fresh out of brush editors today,\n"
-literal|"please write your own or try back tomorrow\n"
+literal|"Sorry, this brush can't be edited."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -9171,11 +9171,12 @@ argument_list|()
 expr_stmt|;
 block|}
 else|else
+comment|/* this should never happen */
 name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Wilber says: \"I don\'t know how to delete that brush.\""
+literal|"Sorry, this brush can't be deleted."
 argument_list|)
 argument_list|)
 expr_stmt|;
