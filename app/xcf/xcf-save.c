@@ -2705,6 +2705,8 @@ operator|=
 literal|4
 operator|+
 name|ncolors
+operator|*
+literal|3
 expr_stmt|;
 name|xcf_write_prop_type_check_error
 argument_list|(
@@ -6465,7 +6467,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295901ca0108
+DECL|struct|__anon2be0dcfe0108
 block|{
 DECL|member|info
 name|XcfInfo
