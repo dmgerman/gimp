@@ -1723,6 +1723,19 @@ name|bg
 argument_list|)
 expr_stmt|;
 block|}
+comment|/*  pretend the gradient not being editable while the dialog is    *  insensitive. prevents the gradient from being modified while a    *  dialog is running. bug #161411 --mitch    */
+if|if
+condition|(
+operator|!
+name|GTK_WIDGET_SENSITIVE
+argument_list|(
+name|editor
+argument_list|)
+condition|)
+name|editable
+operator|=
+name|FALSE
+expr_stmt|;
 DECL|macro|SET_ACTIVE (action,condition)
 define|#
 directive|define
