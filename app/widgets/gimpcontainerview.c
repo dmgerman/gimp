@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6562670103
+DECL|enum|__anon2c09b6b80103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -2865,6 +2865,17 @@ name|gchar
 modifier|*
 name|prop_name
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|view
+operator|->
+name|container
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gtk_icon_size_lookup
 argument_list|(
 name|size
