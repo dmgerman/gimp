@@ -344,7 +344,7 @@ block|}
 block|,
 name|NULL
 block|,
-literal|"filters/sel2path.html"
+name|GIMP_HELP_SELECTION_TO_PATH
 block|,
 name|NULL
 block|}

@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tool-options-dialog.h"
 end_include
 
@@ -410,7 +416,7 @@ argument_list|(
 literal|"Reset to factory defaults"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_TOOL_OPTIONS_RESET
 argument_list|,
 name|G_CALLBACK
 argument_list|(

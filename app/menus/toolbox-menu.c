@@ -519,7 +519,7 @@ block|}
 block|,
 literal|"gimp-selection-editor"
 block|,
-name|GIMP_HELP_SELECT_DIALOG
+name|GIMP_HELP_SELECTION_DIALOG
 block|,
 name|NULL
 block|}
@@ -854,7 +854,7 @@ block|}
 block|,
 literal|"gimp-error-console"
 block|,
-name|GIMP_HELP_ERROR_DIALOG
+name|GIMP_HELP_ERRORS_DIALOG
 block|,
 name|NULL
 block|}

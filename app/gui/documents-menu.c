@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpitemfactory.h"
 end_include
 
@@ -102,7 +108,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_DOCUMENT_OPEN
 block|,
 name|NULL
 block|}
@@ -127,7 +133,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_DOCUMENT_OPEN
 block|,
 name|NULL
 block|}
@@ -152,7 +158,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_DOCUMENT_OPEN
 block|,
 name|NULL
 block|}
@@ -177,7 +183,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_DOCUMENT_REMOVE
 block|,
 name|NULL
 block|}
@@ -207,7 +213,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_DOCUMENT_REFRESH
 block|,
 name|NULL
 block|}
@@ -232,7 +238,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_DOCUMENT_REFRESH
 block|,
 name|NULL
 block|}
@@ -257,7 +263,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_DOCUMENT_REFRESH
 block|,
 name|NULL
 block|}

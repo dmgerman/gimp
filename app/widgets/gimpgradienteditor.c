@@ -110,6 +110,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpitemfactory.h"
 end_include
 
@@ -1490,7 +1496,7 @@ argument_list|(
 literal|"Zoom Out"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_GRADIENT_EDITOR_ZOOM_OUT
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1516,7 +1522,7 @@ argument_list|(
 literal|"Zoom In"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_GRADIENT_EDITOR_ZOOM_IN
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1542,7 +1548,7 @@ argument_list|(
 literal|"Zoom All"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_GRADIENT_EDITOR_ZOOM_ALL
 argument_list|,
 name|G_CALLBACK
 argument_list|(

@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpviewabledialog.h"
 end_include
 
@@ -1920,7 +1926,7 @@ name|desc
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/gradient_editor/replicate_segment.html"
+name|GIMP_HELP_GRADIENT_EDITOR_REPLICATE
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -2397,7 +2403,7 @@ name|desc
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/gradient_editor/split_segments_uniformly.html"
+name|GIMP_HELP_GRADIENT_EDITOR_SPLIT_UNIFORM
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

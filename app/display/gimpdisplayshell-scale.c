@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpviewabledialog.h"
 end_include
 
@@ -2017,7 +2023,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/display_scale.html"
+name|GIMP_HELP_VIEW_ZOOM_OTHER
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

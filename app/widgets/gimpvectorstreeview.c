@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpwidgets-utils.h"
 end_include
 
@@ -427,12 +433,24 @@ argument_list|)
 expr_stmt|;
 name|item_view_class
 operator|->
+name|new_help_id
+operator|=
+name|GIMP_HELP_PATH_NEW
+expr_stmt|;
+name|item_view_class
+operator|->
 name|duplicate_desc
 operator|=
 name|_
 argument_list|(
 literal|"Duplicate Path"
 argument_list|)
+expr_stmt|;
+name|item_view_class
+operator|->
+name|duplicate_help_id
+operator|=
+name|GIMP_HELP_PATH_DUPLICATE
 expr_stmt|;
 name|item_view_class
 operator|->
@@ -445,12 +463,24 @@ argument_list|)
 expr_stmt|;
 name|item_view_class
 operator|->
+name|edit_help_id
+operator|=
+name|GIMP_HELP_PATH_EDIT
+expr_stmt|;
+name|item_view_class
+operator|->
 name|delete_desc
 operator|=
 name|_
 argument_list|(
 literal|"Delete Path"
 argument_list|)
+expr_stmt|;
+name|item_view_class
+operator|->
+name|delete_help_id
+operator|=
+name|GIMP_HELP_PATH_DELETE
 expr_stmt|;
 name|item_view_class
 operator|->
@@ -463,12 +493,24 @@ argument_list|)
 expr_stmt|;
 name|item_view_class
 operator|->
+name|raise_help_id
+operator|=
+name|GIMP_HELP_PATH_RAISE
+expr_stmt|;
+name|item_view_class
+operator|->
 name|raise_to_top_desc
 operator|=
 name|_
 argument_list|(
 literal|"Raise Path to Top"
 argument_list|)
+expr_stmt|;
+name|item_view_class
+operator|->
+name|raise_to_top_help_id
+operator|=
+name|GIMP_HELP_PATH_RAISE_TO_TOP
 expr_stmt|;
 name|item_view_class
 operator|->
@@ -481,12 +523,24 @@ argument_list|)
 expr_stmt|;
 name|item_view_class
 operator|->
+name|lower_help_id
+operator|=
+name|GIMP_HELP_PATH_LOWER
+expr_stmt|;
+name|item_view_class
+operator|->
 name|lower_to_bottom_desc
 operator|=
 name|_
 argument_list|(
 literal|"Lower Path to Bottom"
 argument_list|)
+expr_stmt|;
+name|item_view_class
+operator|->
+name|lower_to_bottom_help_id
+operator|=
+name|GIMP_HELP_PATH_LOWER_TO_BOTTOM
 expr_stmt|;
 name|item_view_class
 operator|->
@@ -566,7 +620,7 @@ name|GIMP_STOCK_SELECTION_REPLACE
 argument_list|,
 name|str
 argument_list|,
-name|NULL
+name|GIMP_HELP_PATH_SELECTION_REPLACE
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -612,7 +666,7 @@ name|GIMP_STOCK_SELECTION_TO_PATH
 argument_list|,
 name|str
 argument_list|,
-name|NULL
+name|GIMP_HELP_SELECTION_TO_PATH
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -647,7 +701,7 @@ argument_list|(
 literal|"Stroke Path"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_PATH_STROKE
 argument_list|,
 name|G_CALLBACK
 argument_list|(

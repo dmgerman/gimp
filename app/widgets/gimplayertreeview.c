@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplayertreeview.h"
 end_include
 
@@ -864,12 +870,24 @@ argument_list|)
 expr_stmt|;
 name|item_view_class
 operator|->
+name|new_help_id
+operator|=
+name|GIMP_HELP_LAYER_NEW
+expr_stmt|;
+name|item_view_class
+operator|->
 name|duplicate_desc
 operator|=
 name|_
 argument_list|(
 literal|"Duplicate Layer"
 argument_list|)
+expr_stmt|;
+name|item_view_class
+operator|->
+name|duplicate_help_id
+operator|=
+name|GIMP_HELP_LAYER_DUPLICATE
 expr_stmt|;
 name|item_view_class
 operator|->
@@ -882,12 +900,24 @@ argument_list|)
 expr_stmt|;
 name|item_view_class
 operator|->
+name|edit_help_id
+operator|=
+name|GIMP_HELP_LAYER_EDIT
+expr_stmt|;
+name|item_view_class
+operator|->
 name|delete_desc
 operator|=
 name|_
 argument_list|(
 literal|"Delete Layer"
 argument_list|)
+expr_stmt|;
+name|item_view_class
+operator|->
+name|delete_help_id
+operator|=
+name|GIMP_HELP_LAYER_DELETE
 expr_stmt|;
 name|item_view_class
 operator|->
@@ -900,12 +930,24 @@ argument_list|)
 expr_stmt|;
 name|item_view_class
 operator|->
+name|raise_help_id
+operator|=
+name|GIMP_HELP_LAYER_RAISE
+expr_stmt|;
+name|item_view_class
+operator|->
 name|raise_to_top_desc
 operator|=
 name|_
 argument_list|(
 literal|"Raise Layer to Top"
 argument_list|)
+expr_stmt|;
+name|item_view_class
+operator|->
+name|raise_to_top_help_id
+operator|=
+name|GIMP_HELP_LAYER_RAISE_TO_TOP
 expr_stmt|;
 name|item_view_class
 operator|->
@@ -918,12 +960,24 @@ argument_list|)
 expr_stmt|;
 name|item_view_class
 operator|->
+name|lower_help_id
+operator|=
+name|GIMP_HELP_LAYER_LOWER
+expr_stmt|;
+name|item_view_class
+operator|->
 name|lower_to_bottom_desc
 operator|=
 name|_
 argument_list|(
 literal|"Lower Layer to Bottom"
 argument_list|)
+expr_stmt|;
+name|item_view_class
+operator|->
+name|lower_to_bottom_help_id
+operator|=
+name|GIMP_HELP_LAYER_LOWER_TO_BOTTOM
 expr_stmt|;
 name|item_view_class
 operator|->
@@ -1417,7 +1471,7 @@ argument_list|(
 literal|"Anchor Floating Layer"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_LAYER_ANCHOR
 argument_list|,
 name|G_CALLBACK
 argument_list|(

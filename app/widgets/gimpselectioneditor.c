@@ -149,6 +149,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppreview.h"
 end_include
 
@@ -684,7 +690,7 @@ argument_list|(
 literal|"Select All"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_SELECTION_ALL
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -714,7 +720,7 @@ argument_list|(
 literal|"Select None"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_SELECTION_NONE
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -744,7 +750,7 @@ argument_list|(
 literal|"Invert Selection"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_SELECTION_INVERT
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -774,7 +780,7 @@ argument_list|(
 literal|"Save Selection to Channel"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_SELECTION_TO_CHANNEL
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -815,7 +821,7 @@ name|GIMP_STOCK_SELECTION_TO_PATH
 argument_list|,
 name|str
 argument_list|,
-name|NULL
+name|GIMP_HELP_SELECTION_TO_PATH
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -853,7 +859,7 @@ argument_list|(
 literal|"Stroke Selection"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_SELECTION_STROKE
 argument_list|,
 name|G_CALLBACK
 argument_list|(

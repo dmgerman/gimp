@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -487,7 +493,7 @@ argument_list|(
 literal|"Paste"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_BUFFER_PASTE
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -519,7 +525,7 @@ argument_list|(
 literal|"Paste Into"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_BUFFER_PASTE_INTO
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -551,7 +557,7 @@ argument_list|(
 literal|"Paste as New"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_BUFFER_PASTE_AS_NEW
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -583,7 +589,7 @@ argument_list|(
 literal|"Delete"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_BUFFER_DELETE
 argument_list|,
 name|G_CALLBACK
 argument_list|(

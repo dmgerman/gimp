@@ -682,7 +682,7 @@ argument_list|(
 literal|"Clear Errors"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_ERRORS_CLEAR
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -723,7 +723,7 @@ name|GTK_STOCK_SAVE_AS
 argument_list|,
 name|str
 argument_list|,
-name|NULL
+name|GIMP_HELP_ERRORS_SAVE
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1529,7 +1529,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|GIMP_HELP_ERROR_DIALOG
+name|GIMP_HELP_ERRORS_DIALOG
 argument_list|,
 name|NULL
 argument_list|)

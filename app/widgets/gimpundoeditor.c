@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpundoeditor.h"
 end_include
 
@@ -416,7 +422,7 @@ argument_list|(
 literal|"Undo"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_EDIT_UNDO
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -446,7 +452,7 @@ argument_list|(
 literal|"Redo"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_EDIT_REDO
 argument_list|,
 name|G_CALLBACK
 argument_list|(

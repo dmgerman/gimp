@@ -1007,7 +1007,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_editor_add_button (GimpEditor * editor,const gchar * stock_id,const gchar * tooltip,const gchar * help_data,GCallback callback,GCallback extended_callback,gpointer callback_data)
+DECL|function|gimp_editor_add_button (GimpEditor * editor,const gchar * stock_id,const gchar * tooltip,const gchar * help_id,GCallback callback,GCallback extended_callback,gpointer callback_data)
 name|gimp_editor_add_button
 parameter_list|(
 name|GimpEditor
@@ -1027,7 +1027,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|help_data
+name|help_id
 parameter_list|,
 name|GCallback
 name|callback
@@ -1108,7 +1108,7 @@ if|if
 condition|(
 name|tooltip
 operator|||
-name|help_data
+name|help_id
 condition|)
 name|gimp_help_set_help_data
 argument_list|(
@@ -1116,7 +1116,7 @@ name|button
 argument_list|,
 name|tooltip
 argument_list|,
-name|help_data
+name|help_id
 argument_list|)
 expr_stmt|;
 if|if

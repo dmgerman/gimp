@@ -131,6 +131,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpwidgets-utils.h"
 end_include
 
@@ -615,7 +621,7 @@ name|GTK_STOCK_OPEN
 argument_list|,
 name|str
 argument_list|,
-name|NULL
+name|GIMP_HELP_DOCUMENT_OPEN
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -655,7 +661,7 @@ argument_list|(
 literal|"Remove selected entry"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_DOCUMENT_REMOVE
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -702,7 +708,7 @@ name|GTK_STOCK_REFRESH
 argument_list|,
 name|str
 argument_list|,
-name|NULL
+name|GIMP_HELP_DOCUMENT_REFRESH
 argument_list|,
 name|G_CALLBACK
 argument_list|(

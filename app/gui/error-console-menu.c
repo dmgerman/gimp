@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpitemfactory.h"
 end_include
 
@@ -84,7 +90,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_ERRORS_CLEAR
 block|,
 name|NULL
 block|}
@@ -131,7 +137,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_ERRORS_SAVE
 block|,
 name|NULL
 block|}
@@ -156,7 +162,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_ERRORS_SAVE
 block|,
 name|NULL
 block|}

@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpitemfactory.h"
 end_include
 
@@ -98,7 +104,7 @@ parameter_list|,
 name|magic
 parameter_list|)
 define|\
-value|{ { "/Load Left Color From/" num, NULL, \       gradient_editor_load_left_cmd_callback, (magic) }, NULL, NULL, NULL }
+value|{ { "/Load Left Color From/" num, NULL, \       gradient_editor_load_left_cmd_callback, (magic) }, \     NULL, GIMP_HELP_GRADIENT_EDITOR_LEFT_LOAD, NULL }
 end_define
 
 begin_define
@@ -112,7 +118,7 @@ parameter_list|,
 name|magic
 parameter_list|)
 define|\
-value|{ { "/Save Left Color To/" num, NULL, \       gradient_editor_save_left_cmd_callback, (magic) }, NULL, NULL, NULL }
+value|{ { "/Save Left Color To/" num, NULL, \       gradient_editor_save_left_cmd_callback, (magic) }, \     NULL, GIMP_HELP_GRADIENT_EDITOR_LEFT_SAVE, NULL }
 end_define
 
 begin_define
@@ -126,7 +132,7 @@ parameter_list|,
 name|magic
 parameter_list|)
 define|\
-value|{ { "/Load Right Color From/" num, NULL, \       gradient_editor_load_right_cmd_callback, (magic) }, NULL, NULL, NULL }
+value|{ { "/Load Right Color From/" num, NULL, \       gradient_editor_load_right_cmd_callback, (magic) }, \     NULL, GIMP_HELP_GRADIENT_EDITOR_RIGHT_LOAD, NULL }
 end_define
 
 begin_define
@@ -140,7 +146,7 @@ parameter_list|,
 name|magic
 parameter_list|)
 define|\
-value|{ { "/Save Right Color To/" num, NULL, \       gradient_editor_save_right_cmd_callback, (magic) }, NULL, NULL, NULL }
+value|{ { "/Save Right Color To/" num, NULL, \       gradient_editor_save_right_cmd_callback, (magic) }, \     NULL, GIMP_HELP_GRADIENT_EDITOR_RIGHT_SAVE, NULL }
 end_define
 
 begin_decl_stmt
@@ -166,7 +172,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_GRADIENT_EDITOR_LEFT_COLOR
 block|,
 name|NULL
 block|}
@@ -216,7 +222,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_GRADIENT_EDITOR_LEFT_LOAD
 block|,
 name|NULL
 block|}
@@ -237,7 +243,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_GRADIENT_EDITOR_LEFT_LOAD
 block|,
 name|NULL
 block|}
@@ -258,7 +264,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_GRADIENT_EDITOR_LEFT_LOAD
 block|,
 name|NULL
 block|}
@@ -437,7 +443,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_GRADIENT_EDITOR_RIGHT_COLOR
 block|,
 name|NULL
 block|}
@@ -466,7 +472,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_GRADIENT_EDITOR_RIGHT_LOAD
 block|,
 name|NULL
 block|}
@@ -487,7 +493,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_GRADIENT_EDITOR_RIGHT_LOAD
 block|,
 name|NULL
 block|}
@@ -508,7 +514,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_GRADIENT_EDITOR_RIGHT_LOAD
 block|,
 name|NULL
 block|}
@@ -529,7 +535,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_GRADIENT_EDITOR_RIGHT_LOAD
 block|,
 name|NULL
 block|}
@@ -710,7 +716,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_GRADIENT_EDITOR_BLENDING
 block|,
 name|NULL
 block|}
@@ -733,7 +739,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_GRADIENT_EDITOR_BLENDING
 block|,
 name|NULL
 block|}
@@ -756,7 +762,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_GRADIENT_EDITOR_BLENDING
 block|,
 name|NULL
 block|}
@@ -779,7 +785,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_GRADIENT_EDITOR_BLENDING
 block|,
 name|NULL
 block|}
@@ -802,7 +808,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_GRADIENT_EDITOR_BLENDING
 block|,
 name|NULL
 block|}
@@ -825,7 +831,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_GRADIENT_EDITOR_BLENDING
 block|,
 name|NULL
 block|}
@@ -848,7 +854,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_GRADIENT_EDITOR_COLORING
 block|,
 name|NULL
 block|}
@@ -871,7 +877,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_GRADIENT_EDITOR_COLORING
 block|,
 name|NULL
 block|}
@@ -894,7 +900,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_GRADIENT_EDITOR_COLORING
 block|,
 name|NULL
 block|}
@@ -917,7 +923,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_GRADIENT_EDITOR_COLORING
 block|,
 name|NULL
 block|}
@@ -940,7 +946,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_GRADIENT_EDITOR_FLIP
 block|,
 name|NULL
 block|}
@@ -958,7 +964,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_GRADIENT_EDITOR_FLIP
 block|,
 name|NULL
 block|}
@@ -976,7 +982,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_GRADIENT_EDITOR_SPLIT_MIDPOINT
 block|,
 name|NULL
 block|}
@@ -994,7 +1000,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_GRADIENT_EDITOR_SPLIT_MIDPOINT
 block|,
 name|NULL
 block|}
@@ -1012,7 +1018,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_GRADIENT_EDITOR_DELETE
 block|,
 name|NULL
 block|}
@@ -1030,7 +1036,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_GRADIENT_EDITOR_RECENTER
 block|,
 name|NULL
 block|}
@@ -1048,7 +1054,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_GRADIENT_EDITOR_REDISTRIBUTE
 block|,
 name|NULL
 block|}
@@ -1074,7 +1080,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_GRADIENT_EDITOR_BLEND_COLOR
 block|,
 name|NULL
 block|}
@@ -1095,7 +1101,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_GRADIENT_EDITOR_BLEND_OPACITY
 block|,
 name|NULL
 block|}

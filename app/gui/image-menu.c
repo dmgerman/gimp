@@ -1035,7 +1035,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_EDIT_STROKE_SELECTION
+name|GIMP_HELP_SELECTION_STROKE
 block|,
 name|NULL
 block|}
@@ -1060,7 +1060,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_EDIT_STROKE_PATH
+name|GIMP_HELP_PATH_STROKE
 block|,
 name|NULL
 block|}
@@ -1099,7 +1099,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_SELECT_ALL
+name|GIMP_HELP_SELECTION_ALL
 block|,
 name|NULL
 block|}
@@ -1124,7 +1124,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_SELECT_NONE
+name|GIMP_HELP_SELECTION_NONE
 block|,
 name|NULL
 block|}
@@ -1149,7 +1149,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_SELECT_INVERT
+name|GIMP_HELP_SELECTION_INVERT
 block|,
 name|NULL
 block|}
@@ -1170,7 +1170,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_SELECT_FLOAT
+name|GIMP_HELP_SELECTION_FLOAT
 block|,
 name|NULL
 block|}
@@ -1221,7 +1221,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_SELECT_FEATHER
+name|GIMP_HELP_SELECTION_FEATHER
 block|,
 name|NULL
 block|}
@@ -1242,7 +1242,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_SELECT_SHARPEN
+name|GIMP_HELP_SELECTION_SHARPEN
 block|,
 name|NULL
 block|}
@@ -1267,7 +1267,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_SELECT_SHRINK
+name|GIMP_HELP_SELECTION_SHRINK
 block|,
 name|NULL
 block|}
@@ -1292,7 +1292,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_SELECT_GROW
+name|GIMP_HELP_SELECTION_GROW
 block|,
 name|NULL
 block|}
@@ -1313,7 +1313,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_SELECT_BORDER
+name|GIMP_HELP_SELECTION_BORDER
 block|,
 name|NULL
 block|}
@@ -1368,7 +1368,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_SELECT_SAVE_TO_CHANNEL
+name|GIMP_HELP_SELECTION_TO_CHANNEL
 block|,
 name|NULL
 block|}
@@ -1459,7 +1459,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_VIEW_ZOOM
+name|GIMP_HELP_VIEW_ZOOM_OUT
 block|,
 name|NULL
 block|}
@@ -1484,7 +1484,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_VIEW_ZOOM
+name|GIMP_HELP_VIEW_ZOOM_IN
 block|,
 name|NULL
 block|}
@@ -1509,7 +1509,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_VIEW_ZOOM_TO_FIT
+name|GIMP_HELP_VIEW_ZOOM_FIT
 block|,
 name|NULL
 block|}
@@ -1537,7 +1537,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_VIEW_ZOOM
+name|GIMP_HELP_VIEW_ZOOM_IN
 block|,
 name|NULL
 block|}
@@ -1560,7 +1560,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_VIEW_ZOOM
+name|GIMP_HELP_VIEW_ZOOM_IN
 block|,
 name|NULL
 block|}
@@ -1583,7 +1583,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_VIEW_ZOOM
+name|GIMP_HELP_VIEW_ZOOM_IN
 block|,
 name|NULL
 block|}
@@ -1606,7 +1606,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_VIEW_ZOOM
+name|GIMP_HELP_VIEW_ZOOM_100
 block|,
 name|NULL
 block|}
@@ -1629,7 +1629,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_VIEW_ZOOM
+name|GIMP_HELP_VIEW_ZOOM_OUT
 block|,
 name|NULL
 block|}
@@ -1652,7 +1652,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_VIEW_ZOOM
+name|GIMP_HELP_VIEW_ZOOM_OUT
 block|,
 name|NULL
 block|}
@@ -1675,7 +1675,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_VIEW_ZOOM
+name|GIMP_HELP_VIEW_ZOOM_OUT
 block|,
 name|NULL
 block|}
@@ -1698,7 +1698,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_VIEW_ZOOM
+name|GIMP_HELP_VIEW_ZOOM_OUT
 block|,
 name|NULL
 block|}
@@ -1721,7 +1721,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_VIEW_ZOOM
+name|GIMP_HELP_VIEW_ZOOM_OUT
 block|,
 name|NULL
 block|}
@@ -1746,7 +1746,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_VIEW_ZOOM
+name|GIMP_HELP_VIEW_ZOOM_OTHER
 block|,
 name|NULL
 block|}
@@ -4190,7 +4190,7 @@ block|}
 block|,
 literal|"gimp-selection-editor"
 block|,
-name|GIMP_HELP_SELECT_DIALOG
+name|GIMP_HELP_SELECTION_DIALOG
 block|,
 name|NULL
 block|}
@@ -4525,7 +4525,7 @@ block|}
 block|,
 literal|"gimp-error-console"
 block|,
-name|GIMP_HELP_ERROR_DIALOG
+name|GIMP_HELP_ERRORS_DIALOG
 block|,
 name|NULL
 block|}

@@ -475,7 +475,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|GIMP_HELP_SELECT_FEATHER
+name|GIMP_HELP_SELECTION_FEATHER
 argument_list|,
 name|_
 argument_list|(
@@ -624,7 +624,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|GIMP_HELP_SELECT_SHRINK
+name|GIMP_HELP_SELECTION_SHRINK
 argument_list|,
 name|_
 argument_list|(
@@ -789,7 +789,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|GIMP_HELP_SELECT_GROW
+name|GIMP_HELP_SELECTION_GROW
 argument_list|,
 name|_
 argument_list|(
@@ -897,7 +897,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|GIMP_HELP_SELECT_BORDER
+name|GIMP_HELP_SELECTION_BORDER
 argument_list|,
 name|_
 argument_list|(

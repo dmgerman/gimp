@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplay.h"
 end_include
 
@@ -458,7 +464,7 @@ literal|"display_filters"
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/display_filters/display_filters.html"
+name|GIMP_HELP_DISPLAY_FILTER_DIALOG
 argument_list|,
 name|GTK_WIN_POS_NONE
 argument_list|,

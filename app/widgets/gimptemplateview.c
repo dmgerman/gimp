@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppreviewrenderer.h"
 end_include
 
@@ -621,7 +627,7 @@ argument_list|(
 literal|"Create a new template"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_TEMPLATE_NEW
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -653,7 +659,7 @@ argument_list|(
 literal|"Duplicate the selected template"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_TEMPLATE_DUPLICATE
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -685,7 +691,7 @@ argument_list|(
 literal|"Edit the selected template"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_TEMPLATE_EDIT
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -717,7 +723,7 @@ argument_list|(
 literal|"Create a new image from the selected template"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_TEMPLATE_IMAGE_NEW
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -749,7 +755,7 @@ argument_list|(
 literal|"Delete the selected template"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_TEMPLATE_DELETE
 argument_list|,
 name|G_CALLBACK
 argument_list|(

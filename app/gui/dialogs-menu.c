@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpimagedock.h"
 end_include
 
@@ -100,7 +106,7 @@ file|"gimp-intl.h"
 end_include
 
 begin_define
-DECL|macro|ADD_TAB (path,id,type,stock_id)
+DECL|macro|ADD_TAB (path,id,stock_id,help_id)
 define|#
 directive|define
 name|ADD_TAB
@@ -109,12 +115,12 @@ name|path
 parameter_list|,
 name|id
 parameter_list|,
-name|type
-parameter_list|,
 name|stock_id
+parameter_list|,
+name|help_id
 parameter_list|)
 define|\
-value|{ { (path), "foo", dialogs_add_tab_cmd_callback, 0, (type), (stock_id) }, \     (id), NULL, NULL }
+value|{ { (path), "", dialogs_add_tab_cmd_callback, 0, \       "<StockItem>", (stock_id) }, \     (id), (help_id), NULL }
 end_define
 
 begin_define
@@ -187,9 +193,9 @@ argument_list|)
 argument_list|,
 literal|"gimp-tool-options"
 argument_list|,
-literal|"<StockItem>"
-argument_list|,
 name|GIMP_STOCK_TOOL_OPTIONS
+argument_list|,
+name|GIMP_HELP_TOOL_OPTIONS_DIALOG
 argument_list|)
 block|,
 name|ADD_TAB
@@ -201,9 +207,9 @@ argument_list|)
 argument_list|,
 literal|"gimp-device-status"
 argument_list|,
-literal|"<StockItem>"
-argument_list|,
 name|GIMP_STOCK_DEVICE_STATUS
+argument_list|,
+name|GIMP_HELP_DEVICE_STATUS_DIALOG
 argument_list|)
 block|,
 name|MENU_SEPARATOR
@@ -220,9 +226,9 @@ argument_list|)
 argument_list|,
 literal|"gimp-layer-list"
 argument_list|,
-literal|"<StockItem>"
-argument_list|,
 name|GIMP_STOCK_LAYERS
+argument_list|,
+name|GIMP_HELP_LAYER_DIALOG
 argument_list|)
 block|,
 name|ADD_TAB
@@ -234,9 +240,9 @@ argument_list|)
 argument_list|,
 literal|"gimp-channel-list"
 argument_list|,
-literal|"<StockItem>"
-argument_list|,
 name|GIMP_STOCK_CHANNELS
+argument_list|,
+name|GIMP_HELP_CHANNEL_DIALOG
 argument_list|)
 block|,
 name|ADD_TAB
@@ -248,9 +254,9 @@ argument_list|)
 argument_list|,
 literal|"gimp-vectors-list"
 argument_list|,
-literal|"<StockItem>"
-argument_list|,
 name|GIMP_STOCK_PATHS
+argument_list|,
+name|GIMP_HELP_PATH_DIALOG
 argument_list|)
 block|,
 name|ADD_TAB
@@ -262,9 +268,9 @@ argument_list|)
 argument_list|,
 literal|"gimp-indexed-palette"
 argument_list|,
-literal|"<StockItem>"
-argument_list|,
 name|GIMP_STOCK_INDEXED_PALETTE
+argument_list|,
+name|GIMP_HELP_INDEXED_PALETTE_DIALOG
 argument_list|)
 block|,
 name|ADD_TAB
@@ -276,9 +282,9 @@ argument_list|)
 argument_list|,
 literal|"gimp-selection-editor"
 argument_list|,
-literal|"<StockItem>"
-argument_list|,
 name|GIMP_STOCK_TOOL_RECT_SELECT
+argument_list|,
+name|GIMP_HELP_SELECTION_DIALOG
 argument_list|)
 block|,
 name|ADD_TAB
@@ -290,9 +296,9 @@ argument_list|)
 argument_list|,
 literal|"gimp-navigation-view"
 argument_list|,
-literal|"<StockItem>"
-argument_list|,
 name|GIMP_STOCK_NAVIGATION
+argument_list|,
+name|GIMP_HELP_NAVIGATION_DIALOG
 argument_list|)
 block|,
 name|ADD_TAB
@@ -304,9 +310,9 @@ argument_list|)
 argument_list|,
 literal|"gimp-undo-history"
 argument_list|,
-literal|"<StockItem>"
-argument_list|,
 name|GIMP_STOCK_UNDO_HISTORY
+argument_list|,
+name|GIMP_HELP_UNDO_DIALOG
 argument_list|)
 block|,
 name|MENU_SEPARATOR
@@ -323,9 +329,9 @@ argument_list|)
 argument_list|,
 literal|"gimp-color-editor"
 argument_list|,
-literal|"<StockItem>"
-argument_list|,
 name|GIMP_STOCK_DEFAULT_COLORS
+argument_list|,
+name|GIMP_HELP_COLOR_DIALOG
 argument_list|)
 block|,
 name|ADD_TAB
@@ -337,9 +343,9 @@ argument_list|)
 argument_list|,
 literal|"gimp-brush-grid"
 argument_list|,
-literal|"<StockItem>"
-argument_list|,
 name|GIMP_STOCK_TOOL_PAINTBRUSH
+argument_list|,
+name|GIMP_HELP_BRUSH_DIALOG
 argument_list|)
 block|,
 name|ADD_TAB
@@ -351,9 +357,9 @@ argument_list|)
 argument_list|,
 literal|"gimp-pattern-grid"
 argument_list|,
-literal|"<StockItem>"
-argument_list|,
 name|GIMP_STOCK_TOOL_BUCKET_FILL
+argument_list|,
+name|GIMP_HELP_PATTERN_DIALOG
 argument_list|)
 block|,
 name|ADD_TAB
@@ -365,9 +371,9 @@ argument_list|)
 argument_list|,
 literal|"gimp-gradient-list"
 argument_list|,
-literal|"<StockItem>"
-argument_list|,
 name|GIMP_STOCK_TOOL_BLEND
+argument_list|,
+name|GIMP_HELP_GRADIENT_DIALOG
 argument_list|)
 block|,
 name|ADD_TAB
@@ -379,9 +385,9 @@ argument_list|)
 argument_list|,
 literal|"gimp-palette-list"
 argument_list|,
-literal|"<StockItem>"
-argument_list|,
 name|GTK_STOCK_SELECT_COLOR
+argument_list|,
+name|GIMP_HELP_PALETTE_DIALOG
 argument_list|)
 block|,
 name|ADD_TAB
@@ -393,9 +399,9 @@ argument_list|)
 argument_list|,
 literal|"gimp-font-list"
 argument_list|,
-literal|"<StockItem>"
-argument_list|,
 name|GTK_STOCK_SELECT_FONT
+argument_list|,
+name|GIMP_HELP_FONT_DIALOG
 argument_list|)
 block|,
 name|ADD_TAB
@@ -407,9 +413,9 @@ argument_list|)
 argument_list|,
 literal|"gimp-buffer-list"
 argument_list|,
-literal|"<StockItem>"
-argument_list|,
 name|GTK_STOCK_PASTE
+argument_list|,
+name|GIMP_HELP_BUFFER_DIALOG
 argument_list|)
 block|,
 name|MENU_SEPARATOR
@@ -426,9 +432,9 @@ argument_list|)
 argument_list|,
 literal|"gimp-image-list"
 argument_list|,
-literal|"<StockItem>"
-argument_list|,
 name|GIMP_STOCK_IMAGES
+argument_list|,
+name|GIMP_HELP_IMAGE_DIALOG
 argument_list|)
 block|,
 name|ADD_TAB
@@ -440,9 +446,9 @@ argument_list|)
 argument_list|,
 literal|"gimp-document-list"
 argument_list|,
-literal|"<StockItem>"
-argument_list|,
 name|GTK_STOCK_OPEN
+argument_list|,
+name|GIMP_HELP_DOCUMENT_DIALOG
 argument_list|)
 block|,
 name|ADD_TAB
@@ -454,9 +460,9 @@ argument_list|)
 argument_list|,
 literal|"gimp-template-list"
 argument_list|,
-literal|"<StockItem>"
-argument_list|,
 name|GIMP_STOCK_TEMPLATE
+argument_list|,
+name|GIMP_HELP_TEMPLATE_DIALOG
 argument_list|)
 block|,
 name|ADD_TAB
@@ -468,9 +474,9 @@ argument_list|)
 argument_list|,
 literal|"gimp-error-console"
 argument_list|,
-literal|"<StockItem>"
-argument_list|,
 name|GIMP_STOCK_WARNING
+argument_list|,
+name|GIMP_HELP_ERRORS_DIALOG
 argument_list|)
 block|,
 name|MENU_SEPARATOR
@@ -478,19 +484,26 @@ argument_list|(
 literal|"/Add Tab/---"
 argument_list|)
 block|,
-name|ADD_TAB
-argument_list|(
+block|{
+block|{
 name|N_
 argument_list|(
 literal|"/Add Tab/Tools..."
 argument_list|)
-argument_list|,
+block|,
+name|NULL
+block|,
+name|dialogs_add_tab_cmd_callback
+block|,
+literal|0
+block|}
+block|,
 literal|"gimp-tool-list"
-argument_list|,
+block|,
 name|NULL
-argument_list|,
+block|,
 name|NULL
-argument_list|)
+block|}
 block|,
 block|{
 block|{
