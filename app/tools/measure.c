@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -100,7 +106,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28cc808e0103
+DECL|enum|__anon28def0f30103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -1014,6 +1020,15 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
+name|undo_push_guide
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|,
+name|guide
+argument_list|)
+expr_stmt|;
 name|guide
 operator|->
 name|position
@@ -1078,6 +1093,15 @@ argument_list|(
 name|gdisp
 operator|->
 name|gimage
+argument_list|)
+expr_stmt|;
+name|undo_push_guide
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|,
+name|guide
 argument_list|)
 expr_stmt|;
 name|guide
