@@ -187,8 +187,11 @@ parameter_list|(
 name|x
 parameter_list|)
 value|_finite(x)
-empty|#elsifdef __EMX__
-DECL|macro|FINITE (x)
+else|#
+directive|else
+ifdef|#
+directive|ifdef
+name|__EMX__
 define|#
 directive|define
 name|FINITE
@@ -205,6 +208,8 @@ parameter_list|(
 name|x
 parameter_list|)
 value|finite(x)
+endif|#
+directive|endif
 endif|#
 directive|endif
 ifdef|#
