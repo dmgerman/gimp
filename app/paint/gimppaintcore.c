@@ -245,7 +245,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2adf11d70103
+DECL|enum|__anon27c8e5660103
 block|{
 DECL|enumerator|PAINT
 name|PAINT
@@ -6037,7 +6037,8 @@ if|if
 condition|(
 name|current_device
 operator|==
-name|gdk_core_pointer
+name|gdk_device_get_core_pointer
+argument_list|()
 condition|)
 block|{
 operator|*
@@ -7436,7 +7437,8 @@ if|if
 condition|(
 name|current_device
 operator|==
-name|gdk_core_pointer
+name|gdk_device_get_core_pointer
+argument_list|()
 condition|)
 name|mask
 operator|=

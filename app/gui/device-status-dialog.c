@@ -926,7 +926,8 @@ name|list
 decl_stmt|;
 name|current_device
 operator|=
-name|gdk_core_pointer
+name|gdk_device_get_core_pointer
+argument_list|()
 expr_stmt|;
 comment|/*  create device info structures for present devices */
 for|for
