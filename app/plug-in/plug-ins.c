@@ -270,21 +270,21 @@ end_comment
 
 begin_function
 name|void
-DECL|function|plug_ins_init (Gimp * gimp,GimpInitStatusFunc status_callback)
+DECL|function|plug_ins_init (Gimp * gimp,GimpContext * context,GimpInitStatusFunc status_callback)
 name|plug_ins_init
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|GimpInitStatusFunc
 name|status_callback
 parameter_list|)
 block|{
-name|GimpContext
-modifier|*
-name|context
-decl_stmt|;
 name|gchar
 modifier|*
 name|filename
@@ -332,19 +332,16 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|status_callback
-operator|!=
-name|NULL
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
 argument_list|)
 expr_stmt|;
-name|context
-operator|=
-name|gimp_context_new
+name|g_return_if_fail
 argument_list|(
-name|gimp
-argument_list|,
-literal|"temp"
-argument_list|,
+name|status_callback
+operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -1542,11 +1539,6 @@ operator|->
 name|plug_in_defs
 operator|=
 name|NULL
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|context
-argument_list|)
 expr_stmt|;
 block|}
 end_function
