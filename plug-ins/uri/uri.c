@@ -813,6 +813,11 @@ name|BUFSIZE
 index|]
 decl_stmt|;
 name|gboolean
+name|seen_resolve
+init|=
+name|FALSE
+decl_stmt|;
+name|gboolean
 name|connected
 init|=
 name|FALSE
@@ -975,6 +980,8 @@ name|TIMEOUT
 literal|" seconds)"
 argument_list|)
 expr_stmt|;
+name|read_connect
+label|:
 if|if
 condition|(
 name|fgets
@@ -1026,6 +1033,29 @@ name|connected
 operator|=
 name|TRUE
 expr_stmt|;
+block|}
+comment|/* newer wgets have a "Resolving foo" line, so eat it */
+elseif|else
+if|if
+condition|(
+operator|!
+name|seen_resolve
+operator|&&
+name|strstr
+argument_list|(
+name|buf
+argument_list|,
+literal|"Resolving"
+argument_list|)
+condition|)
+block|{
+name|seen_resolve
+operator|=
+name|TRUE
+expr_stmt|;
+goto|goto
+name|read_connect
+goto|;
 block|}
 name|DEBUG
 argument_list|(
@@ -1340,9 +1370,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|dot
-operator|==
-name|EOF
+name|feof
+argument_list|(
+name|input
+argument_list|)
 condition|)
 break|break;
 if|if
