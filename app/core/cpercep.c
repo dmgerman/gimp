@@ -71,7 +71,7 @@ comment|/* defines:     SANITY: emits warnings when passed non-sane colours (and
 end_comment
 
 begin_comment
-comment|/*#define SANITY*/
+comment|/* #define SANITY */
 end_comment
 
 begin_define
@@ -87,27 +87,6 @@ define|#
 directive|define
 name|SRGB
 end_define
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|SANITY
-end_ifdef
-
-begin_comment
-comment|/* for fprintf */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_include
 include|#
@@ -573,10 +552,9 @@ end_decl_stmt
 begin_function
 specifier|static
 name|int
-DECL|function|Minvert (const CMatrix src,CMatrix dest)
+DECL|function|Minvert (CMatrix src,CMatrix dest)
 name|Minvert
 parameter_list|(
-specifier|const
 name|CMatrix
 name|src
 parameter_list|,
@@ -1007,10 +985,8 @@ block|{
 ifdef|#
 directive|ifdef
 name|SANITY
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"\n\007 XXXX det: %f\n"
 argument_list|,
 name|det
@@ -2040,10 +2016,8 @@ operator|<
 literal|0.0F
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"<eek1>%f \007"
 argument_list|,
 operator|(
@@ -2060,10 +2034,8 @@ operator|>
 literal|100.0F
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"<eek2>%f \007"
 argument_list|,
 operator|(
@@ -2291,10 +2263,8 @@ operator|<
 operator|-
 literal|0.0001F
 condition|)
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"{badX %f {%f,%f,%f}}"
 argument_list|,
 name|X
@@ -2326,10 +2296,8 @@ operator|<
 operator|-
 literal|0.0001F
 condition|)
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"{badY %f}"
 argument_list|,
 name|Y
@@ -2355,10 +2323,8 @@ operator|<
 operator|-
 literal|0.1F
 condition|)
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"{badZ %f}"
 argument_list|,
 name|Z
@@ -2729,10 +2695,8 @@ operator|<
 literal|0.0F
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"%%"
 argument_list|)
 expr_stmt|;
@@ -2771,10 +2735,8 @@ operator|<
 literal|0.0F
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|" [BAD2 XYZ: %f,%f,%f]\007 "
 argument_list|,
 name|inr
@@ -2878,10 +2840,8 @@ operator|-
 literal|0.0F
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|" [BAD1 XYZ: %f,%f,%f]\007 "
 argument_list|,
 name|inr
@@ -3167,7 +3127,7 @@ name|SANITY
 end_ifdef
 
 begin_comment
-comment|/* fprintf(stderr, "\007OUCH. "); */
+comment|/* g_printerr ("\007OUCH. "); */
 end_comment
 
 begin_endif

@@ -399,7 +399,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon29f78e630103
+DECL|enum|__anon28f5518d0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1427,7 +1427,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f78e630208
+DECL|struct|__anon28f5518d0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1504,7 +1504,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f78e630308
+DECL|struct|__anon28f5518d0308
 block|{
 DECL|member|ncolors
 name|long
@@ -1664,7 +1664,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f78e630408
+DECL|struct|__anon28f5518d0408
 block|{
 DECL|member|used_count
 name|signed
@@ -15923,15 +15923,8 @@ block|}
 if|#
 directive|if
 literal|0
-block|hmm.
-comment|//	  r = range_limiter[src[red_pix] + error_limiter[*rpr]];
-comment|//	  g = range_limiter[src[green_pix] + error_limiter[*gpr]];
-comment|//	  b = range_limiter[src[blue_pix] + error_limiter[*bpr]];
-comment|////	  re = r>> R_SHIFT;
-comment|////	  ge = g>> G_SHIFT;
-comment|////	  be = b>> B_SHIFT;
-comment|//	  rgb_to_lin(r, g, b,
-comment|//&re,&ge,&be);
+comment|/* hmm. */
+block|r = range_limiter[src[red_pix] + error_limiter[*rpr]]; 	  g = range_limiter[src[green_pix] + error_limiter[*gpr]]; 	  b = range_limiter[src[blue_pix] + error_limiter[*bpr]];  	  re = r>> R_SHIFT; 	  ge = g>> G_SHIFT; 	  be = b>> B_SHIFT;  	  rgb_to_lin (r, g, b,&re,&ge,&be);
 endif|#
 directive|endif
 name|rgb_to_unshifted_lin

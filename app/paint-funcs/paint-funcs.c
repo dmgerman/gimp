@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0c5c1c0103
+DECL|enum|__anon27b47e890103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -5818,7 +5818,7 @@ name|guint
 name|bytes2
 parameter_list|)
 block|{
-comment|// FIXME: Is this supposed to be different than in the other functions?
+comment|/* FIXME: Is this supposed to be different than in the other functions? */
 specifier|const
 name|guint
 name|alpha
