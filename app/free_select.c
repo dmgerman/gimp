@@ -1445,7 +1445,7 @@ comment|/*************************************/
 end_comment
 
 begin_comment
-comment|/*  Polygonal selection apparatus  */
+comment|/*  Polygonal selection apparatus    */
 end_comment
 
 begin_function
@@ -1538,6 +1538,8 @@ name|gimage_get_mask
 argument_list|(
 name|gimage
 argument_list|)
+argument_list|,
+name|feather_radius
 argument_list|,
 name|feather_radius
 argument_list|,

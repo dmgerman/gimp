@@ -2250,6 +2250,8 @@ name|PixelRegion
 modifier|*
 parameter_list|,
 name|double
+parameter_list|,
+name|double
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2818,7 +2820,7 @@ comment|/*  Layer Modes  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29afb5c10103
+DECL|enum|__anon27cb2a660103
 typedef|typedef
 enum|enum
 block|{

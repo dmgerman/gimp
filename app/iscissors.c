@@ -3438,6 +3438,16 @@ operator|)
 operator|->
 name|feather_radius
 argument_list|,
+operator|(
+operator|(
+name|SelectionOptions
+operator|*
+operator|)
+name|iscissors_options
+operator|)
+operator|->
+name|feather_radius
+argument_list|,
 name|op
 argument_list|,
 literal|0

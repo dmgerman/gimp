@@ -5899,6 +5899,30 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+comment|/*  Pass the selected unit to the callback  */
+name|gtk_object_set_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|w
+argument_list|)
+argument_list|,
+literal|"size_query_unit"
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|gimp_size_entry_get_unit
+argument_list|(
+name|GIMP_SIZE_ENTRY
+argument_list|(
+name|query_box
+operator|->
+name|entry
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/*  Call the user defined callback  */
 call|(
 modifier|*

@@ -6023,7 +6023,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_feather (Channel * input,Channel * output,double radius,int op,int off_x,int off_y)
+DECL|function|channel_feather (Channel * input,Channel * output,double radius_x,double radius_y,int op,int off_x,int off_y)
 name|channel_feather
 parameter_list|(
 name|Channel
@@ -6035,7 +6035,10 @@ modifier|*
 name|output
 parameter_list|,
 name|double
-name|radius
+name|radius_x
+parameter_list|,
+name|double
+name|radius_y
 parameter_list|,
 name|int
 name|op
@@ -6181,7 +6184,9 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|radius
+name|radius_x
+argument_list|,
+name|radius_y
 argument_list|)
 expr_stmt|;
 if|if
@@ -6912,7 +6917,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_border (Channel * mask,int radius)
+DECL|function|channel_border (Channel * mask,int radius_x,int radius_y)
 name|channel_border
 parameter_list|(
 name|Channel
@@ -6920,7 +6925,10 @@ modifier|*
 name|mask
 parameter_list|,
 name|int
-name|radius
+name|radius_x
+parameter_list|,
+name|int
+name|radius_y
 parameter_list|)
 block|{
 name|PixelRegion
@@ -6937,7 +6945,11 @@ name|y2
 decl_stmt|;
 if|if
 condition|(
-name|radius
+name|radius_x
+operator|<
+literal|0
+operator|||
+name|radius_y
 operator|<
 literal|0
 condition|)
@@ -6965,9 +6977,17 @@ condition|)
 return|return;
 if|if
 condition|(
+name|channel_is_empty
+argument_list|(
+name|mask
+argument_list|)
+condition|)
+return|return;
+if|if
+condition|(
 name|x1
 operator|-
-name|radius
+name|radius_x
 operator|<
 literal|0
 condition|)
@@ -6978,13 +6998,13 @@ expr_stmt|;
 else|else
 name|x1
 operator|-=
-name|radius
+name|radius_x
 expr_stmt|;
 if|if
 condition|(
 name|x2
 operator|+
-name|radius
+name|radius_x
 operator|>
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7005,13 +7025,13 @@ expr_stmt|;
 else|else
 name|x2
 operator|+=
-name|radius
+name|radius_x
 expr_stmt|;
 if|if
 condition|(
 name|y1
 operator|-
-name|radius
+name|radius_y
 operator|<
 literal|0
 condition|)
@@ -7022,13 +7042,13 @@ expr_stmt|;
 else|else
 name|y1
 operator|-=
-name|radius
+name|radius_y
 expr_stmt|;
 if|if
 condition|(
 name|y2
 operator|+
-name|radius
+name|radius_y
 operator|>
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7049,7 +7069,7 @@ expr_stmt|;
 else|else
 name|y2
 operator|+=
-name|radius
+name|radius_y
 expr_stmt|;
 comment|/*  push the current channel onto the undo stack  */
 name|channel_push_undo
@@ -7093,9 +7113,9 @@ argument_list|(
 operator|&
 name|bPR
 argument_list|,
-name|radius
+name|radius_x
 argument_list|,
-name|radius
+name|radius_y
 argument_list|)
 expr_stmt|;
 name|mask
@@ -7109,7 +7129,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_grow (Channel * mask,int radius)
+DECL|function|channel_grow (Channel * mask,int radius_x,int radius_y)
 name|channel_grow
 parameter_list|(
 name|Channel
@@ -7117,7 +7137,10 @@ modifier|*
 name|mask
 parameter_list|,
 name|int
-name|radius
+name|radius_x
+parameter_list|,
+name|int
+name|radius_y
 parameter_list|)
 block|{
 name|PixelRegion
@@ -7134,8 +7157,23 @@ name|y2
 decl_stmt|;
 if|if
 condition|(
-name|radius
-operator|<
+name|radius_x
+operator|==
+literal|0
+operator|&&
+name|radius_y
+operator|==
+literal|0
+condition|)
+return|return;
+if|if
+condition|(
+name|radius_x
+operator|<=
+literal|0
+operator|&&
+name|radius_y
+operator|<=
 literal|0
 condition|)
 block|{
@@ -7144,11 +7182,27 @@ argument_list|(
 name|mask
 argument_list|,
 operator|-
-name|radius
+name|radius_x
+argument_list|,
+operator|-
+name|radius_y
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 return|return;
 block|}
+if|if
+condition|(
+name|radius_x
+operator|<
+literal|0
+operator|||
+name|radius_y
+operator|<
+literal|0
+condition|)
+return|return;
 if|if
 condition|(
 operator|!
@@ -7182,7 +7236,7 @@ if|if
 condition|(
 name|x1
 operator|-
-name|radius
+name|radius_x
 operator|>
 literal|0
 condition|)
@@ -7190,7 +7244,7 @@ name|x1
 operator|=
 name|x1
 operator|-
-name|radius
+name|radius_x
 expr_stmt|;
 else|else
 name|x1
@@ -7201,7 +7255,7 @@ if|if
 condition|(
 name|y1
 operator|-
-name|radius
+name|radius_y
 operator|>
 literal|0
 condition|)
@@ -7209,7 +7263,7 @@ name|y1
 operator|=
 name|y1
 operator|-
-name|radius
+name|radius_y
 expr_stmt|;
 else|else
 name|y1
@@ -7220,7 +7274,7 @@ if|if
 condition|(
 name|x2
 operator|+
-name|radius
+name|radius_x
 operator|<
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7233,7 +7287,7 @@ name|x2
 operator|=
 name|x2
 operator|+
-name|radius
+name|radius_x
 expr_stmt|;
 else|else
 name|x2
@@ -7249,7 +7303,7 @@ if|if
 condition|(
 name|y2
 operator|+
-name|radius
+name|radius_y
 operator|<
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7262,7 +7316,7 @@ name|y2
 operator|=
 name|y2
 operator|+
-name|radius
+name|radius_y
 expr_stmt|;
 else|else
 name|y2
@@ -7317,9 +7371,9 @@ argument_list|(
 operator|&
 name|bPR
 argument_list|,
-name|radius
+name|radius_x
 argument_list|,
-name|radius
+name|radius_y
 argument_list|)
 expr_stmt|;
 name|mask
@@ -7333,7 +7387,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_shrink (Channel * mask,int radius)
+DECL|function|channel_shrink (Channel * mask,int radius_x,int radius_y,int edge_lock)
 name|channel_shrink
 parameter_list|(
 name|Channel
@@ -7341,7 +7395,13 @@ modifier|*
 name|mask
 parameter_list|,
 name|int
-name|radius
+name|radius_x
+parameter_list|,
+name|int
+name|radius_y
+parameter_list|,
+name|int
+name|edge_lock
 parameter_list|)
 block|{
 name|PixelRegion
@@ -7358,21 +7418,50 @@ name|y2
 decl_stmt|;
 if|if
 condition|(
-name|radius
-operator|<
+name|radius_x
+operator|==
+literal|0
+operator|&&
+name|radius_y
+operator|==
+literal|0
+condition|)
+return|return;
+if|if
+condition|(
+name|radius_x
+operator|<=
+literal|0
+operator|&&
+name|radius_y
+operator|<=
 literal|0
 condition|)
 block|{
-name|channel_shrink
+name|channel_grow
 argument_list|(
 name|mask
 argument_list|,
 operator|-
-name|radius
+name|radius_x
+argument_list|,
+operator|-
+name|radius_y
 argument_list|)
 expr_stmt|;
 return|return;
 block|}
+if|if
+condition|(
+name|radius_x
+operator|<
+literal|0
+operator|||
+name|radius_y
+operator|<
+literal|0
+condition|)
+return|return;
 if|if
 condition|(
 operator|!
@@ -7402,12 +7491,6 @@ name|mask
 argument_list|)
 condition|)
 return|return;
-comment|/*  push the current channel onto the undo stack  */
-name|channel_push_undo
-argument_list|(
-name|mask
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|x1
@@ -7454,6 +7537,12 @@ condition|)
 name|y2
 operator|++
 expr_stmt|;
+comment|/*  push the current channel onto the undo stack  */
+name|channel_push_undo
+argument_list|(
+name|mask
+argument_list|)
+expr_stmt|;
 name|pixel_region_init
 argument_list|(
 operator|&
@@ -7490,11 +7579,11 @@ argument_list|(
 operator|&
 name|bPR
 argument_list|,
-name|radius
+name|radius_x
 argument_list|,
-name|radius
+name|radius_y
 argument_list|,
-literal|0
+name|edge_lock
 argument_list|)
 expr_stmt|;
 name|mask

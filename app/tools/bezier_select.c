@@ -294,7 +294,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon28e723f70108
+DECL|struct|__anon274907890108
 typedef|typedef
 struct|struct
 block|{
@@ -320,7 +320,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28e723f70208
+DECL|struct|__anon274907890208
 typedef|typedef
 struct|struct
 block|{
@@ -8100,6 +8100,10 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|)
+argument_list|,
+name|bezier_options
+operator|->
+name|feather_radius
 argument_list|,
 name|bezier_options
 operator|->

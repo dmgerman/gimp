@@ -2038,6 +2038,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|radius
+argument_list|,
+name|radius
 argument_list|)
 expr_stmt|;
 return|return
@@ -2193,6 +2195,8 @@ condition|)
 name|gimage_mask_border
 argument_list|(
 name|gimage
+argument_list|,
+name|radius
 argument_list|,
 name|radius
 argument_list|)
@@ -2352,6 +2356,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|steps
+argument_list|,
+name|steps
 argument_list|)
 expr_stmt|;
 return|return
@@ -2509,6 +2515,10 @@ argument_list|(
 name|gimage
 argument_list|,
 name|radius
+argument_list|,
+name|radius
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 return|return

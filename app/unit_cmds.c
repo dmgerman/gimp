@@ -2082,7 +2082,7 @@ literal|"gimp_unit_get_plural"
 block|,
 literal|"Returns the plural form of the unit."
 block|,
-literal|"This procedure returns the singular form of the unit."
+literal|"This procedure returns the plural form of the unit."
 block|,
 literal|"Michael Natterer"
 block|,

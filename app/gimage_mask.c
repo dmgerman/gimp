@@ -118,47 +118,12 @@ file|"drawable_pvt.h"
 end_include
 
 begin_comment
-comment|/*  feathering variables  */
+comment|/*  local variables  */
 end_comment
 
 begin_decl_stmt
-DECL|variable|gimage_mask_feather_radius
-name|double
-name|gimage_mask_feather_radius
-init|=
-literal|5.0
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|gimage_mask_border_radius
-name|int
-name|gimage_mask_border_radius
-init|=
-literal|5
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|gimage_mask_grow_pixels
-name|int
-name|gimage_mask_grow_pixels
-init|=
-literal|1
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|gimage_mask_shrink_pixels
-name|int
-name|gimage_mask_shrink_pixels
-init|=
-literal|1
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|gimage_mask_stroking
+specifier|static
 name|int
 name|gimage_mask_stroking
 init|=
@@ -1704,7 +1669,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_feather (GImage * gimage,double feather_radius)
+DECL|function|gimage_mask_feather (GImage * gimage,double feather_radius_x,double feather_radius_y)
 name|gimage_mask_feather
 parameter_list|(
 name|GImage
@@ -1712,13 +1677,12 @@ modifier|*
 name|gimage
 parameter_list|,
 name|double
-name|feather_radius
+name|feather_radius_x
+parameter_list|,
+name|double
+name|feather_radius_y
 parameter_list|)
 block|{
-name|gimage_mask_feather_radius
-operator|=
-name|feather_radius
-expr_stmt|;
 comment|/*  push the current mask onto the undo stack--need to do this here because    *  channel_feather doesn't do it    */
 name|channel_push_undo
 argument_list|(
@@ -1741,7 +1705,9 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
-name|gimage_mask_feather_radius
+name|feather_radius_x
+argument_list|,
+name|feather_radius_y
 argument_list|,
 name|REPLACE
 argument_list|,
@@ -1755,7 +1721,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_border (GImage * gimage,int border_radius)
+DECL|function|gimage_mask_border (GImage * gimage,int border_radius_x,int border_radius_y)
 name|gimage_mask_border
 parameter_list|(
 name|GImage
@@ -1763,13 +1729,12 @@ modifier|*
 name|gimage
 parameter_list|,
 name|int
-name|border_radius
+name|border_radius_x
+parameter_list|,
+name|int
+name|border_radius_y
 parameter_list|)
 block|{
-name|gimage_mask_border_radius
-operator|=
-name|border_radius
-expr_stmt|;
 comment|/*  feather the region  */
 name|channel_border
 argument_list|(
@@ -1778,7 +1743,9 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
-name|gimage_mask_border_radius
+name|border_radius_x
+argument_list|,
+name|border_radius_y
 argument_list|)
 expr_stmt|;
 block|}
@@ -1786,7 +1753,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_grow (GImage * gimage,int grow_pixels)
+DECL|function|gimage_mask_grow (GImage * gimage,int grow_pixels_x,int grow_pixels_y)
 name|gimage_mask_grow
 parameter_list|(
 name|GImage
@@ -1794,13 +1761,12 @@ modifier|*
 name|gimage
 parameter_list|,
 name|int
-name|grow_pixels
+name|grow_pixels_x
+parameter_list|,
+name|int
+name|grow_pixels_y
 parameter_list|)
 block|{
-name|gimage_mask_grow_pixels
-operator|=
-name|grow_pixels
-expr_stmt|;
 comment|/*  feather the region  */
 name|channel_grow
 argument_list|(
@@ -1809,7 +1775,9 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
-name|gimage_mask_grow_pixels
+name|grow_pixels_x
+argument_list|,
+name|grow_pixels_y
 argument_list|)
 expr_stmt|;
 block|}
@@ -1817,7 +1785,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_shrink (GImage * gimage,int shrink_pixels)
+DECL|function|gimage_mask_shrink (GImage * gimage,int shrink_pixels_x,int shrink_pixels_y,int edge_lock)
 name|gimage_mask_shrink
 parameter_list|(
 name|GImage
@@ -1825,13 +1793,15 @@ modifier|*
 name|gimage
 parameter_list|,
 name|int
-name|shrink_pixels
+name|shrink_pixels_x
+parameter_list|,
+name|int
+name|shrink_pixels_y
+parameter_list|,
+name|int
+name|edge_lock
 parameter_list|)
 block|{
-name|gimage_mask_shrink_pixels
-operator|=
-name|shrink_pixels
-expr_stmt|;
 comment|/*  feather the region  */
 name|channel_shrink
 argument_list|(
@@ -1840,7 +1810,11 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
-name|gimage_mask_shrink_pixels
+name|shrink_pixels_x
+argument_list|,
+name|shrink_pixels_y
+argument_list|,
+name|edge_lock
 argument_list|)
 expr_stmt|;
 block|}
