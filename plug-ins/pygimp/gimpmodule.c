@@ -264,9 +264,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|pygimp_run_proc (char * name,int nparams,GimpParam * params,int * nreturn_vals,GimpParam ** return_vals)
+DECL|function|pygimp_run_proc (const char * name,int nparams,const GimpParam * params,int * nreturn_vals,GimpParam ** return_vals)
 name|pygimp_run_proc
 parameter_list|(
+specifier|const
 name|char
 modifier|*
 name|name
@@ -274,6 +275,7 @@ parameter_list|,
 name|int
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|params

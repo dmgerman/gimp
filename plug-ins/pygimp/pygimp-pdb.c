@@ -60,7 +60,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2914dc8d0108
+DECL|struct|__anon27a2f1c60108
 typedef|typedef
 struct|struct
 block|{
@@ -80,7 +80,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2914dc8d0208
+DECL|struct|__anon27a2f1c60208
 typedef|typedef
 struct|struct
 block|{
@@ -431,12 +431,13 @@ end_endif
 begin_function
 name|PyObject
 modifier|*
-DECL|function|pygimp_param_to_tuple (int nparams,GimpParam * params)
+DECL|function|pygimp_param_to_tuple (int nparams,const GimpParam * params)
 name|pygimp_param_to_tuple
 parameter_list|(
 name|int
 name|nparams
 parameter_list|,
+specifier|const
 name|GimpParam
 modifier|*
 name|params
@@ -1611,13 +1612,14 @@ end_function
 begin_function
 name|GimpParam
 modifier|*
-DECL|function|pygimp_param_from_tuple (PyObject * args,GimpParamDef * ptype,int nparams)
+DECL|function|pygimp_param_from_tuple (PyObject * args,const GimpParamDef * ptype,int nparams)
 name|pygimp_param_from_tuple
 parameter_list|(
 name|PyObject
 modifier|*
 name|args
 parameter_list|,
+specifier|const
 name|GimpParamDef
 modifier|*
 name|ptype
