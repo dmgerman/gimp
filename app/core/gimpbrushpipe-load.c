@@ -1442,7 +1442,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Invalid UTF-8 string in GIMP brush file '%s'."
+literal|"Invalid UTF-8 string in brush file '%s'."
 argument_list|)
 argument_list|,
 name|filename

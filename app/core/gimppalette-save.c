@@ -1566,7 +1566,7 @@ argument_list|(
 name|_
 argument_list|(
 literal|"Loading palette '%s':\n"
-literal|"Invalid number or columns in line %d."
+literal|"Invalid number of columns in line %d."
 argument_list|)
 argument_list|,
 name|filename
