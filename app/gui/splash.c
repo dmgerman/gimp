@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<stdlib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -190,7 +196,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_signal_connect
+name|g_signal_connect_swapped
 argument_list|(
 name|win_initstatus
 argument_list|,
@@ -198,10 +204,13 @@ literal|"delete_event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gtk_true
+name|exit
 argument_list|)
 argument_list|,
-name|NULL
+name|GINT_TO_POINTER
+argument_list|(
+literal|0
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* we don't want the splash screen to send the startup notification */
