@@ -78,7 +78,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae979890108
+DECL|struct|__anon2c4b5a170108
 block|{
 DECL|member|code
 name|__u16
@@ -111,17 +111,6 @@ name|key_events
 index|[]
 init|=
 block|{
-block|{
-name|BTN_MISC
-block|,
-literal|"button-misc"
-block|,
-name|N_
-argument_list|(
-literal|"Button Misc"
-argument_list|)
-block|}
-block|,
 block|{
 name|BTN_0
 block|,
@@ -414,7 +403,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae979890203
+DECL|enum|__anon2c4b5a170203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
