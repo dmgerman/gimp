@@ -9978,7 +9978,7 @@ argument_list|(
 name|new_layer
 argument_list|)
 operator|->
-name|ID
+name|gimage_ID
 operator|=
 name|new_gimage
 operator|->
