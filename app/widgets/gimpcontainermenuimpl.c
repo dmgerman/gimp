@@ -63,6 +63,12 @@ directive|include
 file|"gimppreviewrenderer.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|void
@@ -519,7 +525,10 @@ name|empty_item
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
-literal|"(none)"
+name|_
+argument_list|(
+literal|"(None)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_size_request
