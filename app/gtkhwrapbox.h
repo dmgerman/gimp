@@ -103,6 +103,7 @@ DECL|member|parent_widget
 name|GtkWrapBox
 name|parent_widget
 decl_stmt|;
+comment|/*<h2v-off>*/
 DECL|member|max_child_width
 name|guint16
 name|max_child_width
@@ -111,6 +112,7 @@ DECL|member|max_child_height
 name|guint16
 name|max_child_height
 decl_stmt|;
+comment|/*<h2v-on>*/
 block|}
 struct|;
 DECL|struct|_GtkHWrapBoxClass

@@ -126,6 +126,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gtkvwrapbox.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"indicator_area.h"
 end_include
 
@@ -788,9 +794,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|toolbox_destroy ()
+DECL|function|toolbox_destroy (void)
 name|toolbox_destroy
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|app_exit_finish
 argument_list|()
@@ -1195,9 +1203,9 @@ argument_list|,
 name|GTK_SHADOW_OUT
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
+name|gtk_wrap_box_pack
 argument_list|(
-name|GTK_BOX
+name|GTK_WRAP_BOX
 argument_list|(
 name|parent
 argument_list|)
@@ -1206,9 +1214,11 @@ name|frame
 argument_list|,
 name|FALSE
 argument_list|,
+name|TRUE
+argument_list|,
 name|FALSE
 argument_list|,
-literal|0
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_realize
@@ -1369,9 +1379,9 @@ argument_list|,
 name|GTK_SHADOW_OUT
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
+name|gtk_wrap_box_pack
 argument_list|(
-name|GTK_BOX
+name|GTK_WRAP_BOX
 argument_list|(
 name|parent
 argument_list|)
@@ -1380,9 +1390,11 @@ name|frame
 argument_list|,
 name|FALSE
 argument_list|,
+name|TRUE
+argument_list|,
 name|FALSE
 argument_list|,
-literal|0
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_realize
@@ -1634,9 +1646,19 @@ argument_list|,
 literal|.36
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
+name|gtk_container_set_border_width
 argument_list|(
-name|GTK_BOX
+name|GTK_CONTAINER
+argument_list|(
+name|wbox
+argument_list|)
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_wrap_box_pack
+argument_list|(
+name|GTK_WRAP_BOX
 argument_list|(
 name|parent
 argument_list|)
@@ -1647,7 +1669,9 @@ name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,
-literal|0
+name|TRUE
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_realize
@@ -2506,9 +2530,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|create_toolbox ()
+DECL|function|create_toolbox (void)
 name|create_toolbox
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
@@ -2520,7 +2546,7 @@ name|main_vbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|vbox
+name|wbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -2824,13 +2850,31 @@ argument_list|,
 name|table
 argument_list|)
 expr_stmt|;
-name|vbox
+name|wbox
 operator|=
-name|gtk_vbox_new
+name|gtk_vwrap_box_new
 argument_list|(
 name|FALSE
+argument_list|)
+expr_stmt|;
+name|gtk_wrap_box_set_justify
+argument_list|(
+name|GTK_WRAP_BOX
+argument_list|(
+name|wbox
+argument_list|)
 argument_list|,
-literal|1
+name|GTK_JUSTIFY_FILL
+argument_list|)
+expr_stmt|;
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|wbox
+argument_list|)
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2840,40 +2884,30 @@ argument_list|(
 name|main_vbox
 argument_list|)
 argument_list|,
-name|vbox
+name|wbox
 argument_list|,
 name|TRUE
 argument_list|,
 name|TRUE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|vbox
-argument_list|)
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|vbox
+name|wbox
 argument_list|)
 expr_stmt|;
 name|create_tools
 argument_list|(
-name|vbox
+name|wbox
 argument_list|)
 expr_stmt|;
 comment|/*create_tool_label (vbox);*/
 comment|/*create_progress_area (vbox);*/
 name|create_color_area
 argument_list|(
-name|vbox
+name|wbox
 argument_list|)
 expr_stmt|;
 if|if
@@ -2887,7 +2921,7 @@ operator|)
 condition|)
 name|create_indicator_area
 argument_list|(
-name|vbox
+name|wbox
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2909,9 +2943,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|toolbox_free ()
+DECL|function|toolbox_free (void)
 name|toolbox_free
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|int
 name|i
