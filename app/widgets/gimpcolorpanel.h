@@ -153,6 +153,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_color_panel_set_context
+parameter_list|(
+name|GimpColorPanel
+modifier|*
+name|panel
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b6822620103
+DECL|enum|__anon2b2bcb020103
 block|{
 DECL|enumerator|GIMP_COLOR_BUTTON_COLOR_FG
 name|GIMP_COLOR_BUTTON_COLOR_FG
@@ -97,7 +97,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6822620203
+DECL|enum|__anon2b2bcb020203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -306,7 +306,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"/---"
+literal|"/fg-bg-separator"
 block|,
 name|NULL
 block|,

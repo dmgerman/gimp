@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpcolorpanel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdeviceinfo.h"
 end_include
 
@@ -5941,6 +5947,8 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|button
+operator|=
 name|prefs_color_button_add
 argument_list|(
 name|config
@@ -5963,6 +5971,19 @@ name|table
 argument_list|)
 argument_list|,
 literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_color_panel_set_context
+argument_list|(
+name|GIMP_COLOR_PANEL
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+name|gimp_get_user_context
+argument_list|(
+name|gimp
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Pointer Movement Feedback  */
@@ -6054,9 +6075,9 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/****************************************************/
-comment|/*  Interface / Image Windows / Image Title Format  */
-comment|/****************************************************/
+comment|/****************************************************************/
+comment|/*  Interface / Image Windows / Image Title& Statusbar Format  */
+comment|/****************************************************************/
 name|vbox
 operator|=
 name|prefs_notebook_append_page
@@ -6157,7 +6178,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon29c971810108
+DECL|struct|__anon2b82f1720108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -7768,7 +7789,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29c971810208
+DECL|struct|__anon2b82f1720208
 block|{
 DECL|member|label
 specifier|const
@@ -7927,7 +7948,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29c971810308
+DECL|struct|__anon2b82f1720308
 block|{
 DECL|member|tree_label
 specifier|const

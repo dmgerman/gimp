@@ -288,7 +288,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f5fd640103
+DECL|enum|__anon2a2b656b0103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2589,6 +2589,25 @@ argument_list|,
 name|GTK_CAN_FOCUS
 argument_list|)
 expr_stmt|;
+name|gimp_color_panel_set_context
+argument_list|(
+name|GIMP_COLOR_PANEL
+argument_list|(
+name|shell
+operator|->
+name|padding_button
+argument_list|)
+argument_list|,
+name|gimp_get_user_context
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_help_set_help_data
 argument_list|(
 name|shell
@@ -2717,7 +2736,9 @@ name|gimp_display_shell_color_button_menu_callback
 block|,
 name|GIMP_DISPLAY_PADDING_MODE_CUSTOM
 block|,
-name|NULL
+literal|"<StockItem>"
+block|,
+name|GTK_STOCK_SELECT_COLOR
 block|}
 block|,
 block|{
@@ -2732,7 +2753,9 @@ name|gimp_display_shell_color_button_menu_callback
 block|,
 literal|0xffff
 block|,
-name|NULL
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_RESET
 block|}
 block|}
 decl_stmt|;
