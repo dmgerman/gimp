@@ -4322,7 +4322,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_filename:  * @image_ID: The image.  * @filename: The new image filename.  *  * Sets the specified image's filename.  *  * This procedure sets the specified image's filename.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_set_filename:  * @image_ID: The image.  * @filename: The new image filename.  *  * Sets the specified image's filename.  *  * This procedure sets the specified image's filename. The filename  * should be in the filesystem encoding.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
