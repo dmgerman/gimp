@@ -48,12 +48,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpwidgets-private.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b542a3d0103
+DECL|enum|__anon28c2e4180103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -66,7 +72,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b542a3d0203
+DECL|enum|__anon28c2e4180203
 block|{
 DECL|enumerator|UNIT_COLUMN
 name|UNIT_COLUMN
@@ -512,7 +518,9 @@ operator|&&
 operator|(
 name|unit
 operator|<
-name|gimp_unit_get_number_of_units
+name|_gimp_eek
+operator|.
+name|unit_get_number_of_units
 argument_list|()
 operator|)
 operator|)
@@ -531,7 +539,9 @@ condition|(
 operator|(
 name|unit
 operator|>=
-name|gimp_unit_get_number_of_built_in_units
+name|_gimp_eek
+operator|.
+name|unit_get_number_of_built_in_units
 argument_list|()
 operator|)
 operator|&&
@@ -592,7 +602,9 @@ name|GIMP_UNIT_INCH
 init|;
 name|u
 operator|<
-name|gimp_unit_get_number_of_built_in_units
+name|_gimp_eek
+operator|.
+name|unit_get_number_of_built_in_units
 argument_list|()
 condition|;
 name|u
@@ -767,7 +779,9 @@ condition|(
 operator|(
 name|unit
 operator|>=
-name|gimp_unit_get_number_of_built_in_units
+name|_gimp_eek
+operator|.
+name|unit_get_number_of_built_in_units
 argument_list|()
 operator|)
 operator|&&
@@ -1112,7 +1126,9 @@ operator|&&
 operator|(
 name|unit
 operator|<
-name|gimp_unit_get_number_of_units
+name|_gimp_eek
+operator|.
+name|unit_get_number_of_units
 argument_list|()
 operator|)
 operator|)
@@ -1695,7 +1711,9 @@ name|i
 argument_list|,
 literal|"%f"
 argument_list|,
-name|gimp_unit_get_factor
+name|_gimp_eek
+operator|.
+name|unit_get_factor
 argument_list|(
 name|unit
 argument_list|)
@@ -1721,7 +1739,9 @@ name|i
 argument_list|,
 literal|"%s"
 argument_list|,
-name|gimp_unit_get_symbol
+name|_gimp_eek
+operator|.
+name|unit_get_symbol
 argument_list|(
 name|unit
 argument_list|)
@@ -1747,7 +1767,9 @@ name|i
 argument_list|,
 literal|"%s"
 argument_list|,
-name|gimp_unit_get_abbreviation
+name|_gimp_eek
+operator|.
+name|unit_get_abbreviation
 argument_list|(
 name|unit
 argument_list|)
@@ -1773,7 +1795,9 @@ name|i
 argument_list|,
 literal|"%s"
 argument_list|,
-name|gimp_unit_get_singular
+name|_gimp_eek
+operator|.
+name|unit_get_singular
 argument_list|(
 name|unit
 argument_list|)
@@ -1799,7 +1823,9 @@ name|i
 argument_list|,
 literal|"%s"
 argument_list|,
-name|gimp_unit_get_plural
+name|_gimp_eek
+operator|.
+name|unit_get_plural
 argument_list|(
 name|unit
 argument_list|)
@@ -2088,7 +2114,9 @@ argument_list|)
 argument_list|,
 literal|"unit_selection"
 argument_list|,
-name|gimp_standard_help_func
+name|_gimp_eek
+operator|.
+name|standard_help_func
 argument_list|,
 literal|"dialogs/unit_selection.html"
 argument_list|,
@@ -2361,7 +2389,9 @@ expr_stmt|;
 comment|/*  the unit lines  */
 name|num_units
 operator|=
-name|gimp_unit_get_number_of_units
+name|_gimp_eek
+operator|.
+name|unit_get_number_of_units
 argument_list|()
 expr_stmt|;
 for|for

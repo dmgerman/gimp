@@ -75,10 +75,16 @@ directive|include
 file|"gimphelpui.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpwidgets-private.h"
+end_include
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fb60df0103
+DECL|enum|__anon2b1f82470103
 block|{
 DECL|enumerator|GIMP_WIDGET_HELP_TYPE_HELP
 name|GIMP_WIDGET_HELP_TYPE_HELP
@@ -855,7 +861,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_standard_help_func
+name|_gimp_eek
+operator|.
+name|standard_help_func
 argument_list|(
 name|help_text
 argument_list|)
@@ -869,7 +877,9 @@ block|}
 block|}
 else|else
 block|{
-name|gimp_standard_help_func
+name|_gimp_eek
+operator|.
+name|standard_help_func
 argument_list|(
 name|help_data
 argument_list|)

@@ -157,19 +157,7 @@ end_include
 begin_function_decl
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
-name|void
-name|gimp_widgets_init
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/*  *  Widget Constructors  */
-end_comment
-
-begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_option_menu_new

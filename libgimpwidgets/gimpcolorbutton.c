@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimppalette_pdb.h"
+file|"gimpwidgets-private.h"
 end_include
 
 begin_include
@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bdf9b890103
+DECL|enum|__anon29a9387f0103
 block|{
 DECL|enumerator|GIMP_COLOR_BUTTON_COLOR_FG
 name|GIMP_COLOR_BUTTON_COLOR_FG
@@ -97,7 +97,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdf9b890203
+DECL|enum|__anon29a9387f0203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -1790,7 +1790,9 @@ block|{
 case|case
 name|GIMP_COLOR_BUTTON_COLOR_FG
 case|:
-name|gimp_palette_get_foreground
+name|_gimp_eek
+operator|.
+name|palette_get_foreground
 argument_list|(
 operator|&
 name|color
@@ -1800,7 +1802,9 @@ break|break;
 case|case
 name|GIMP_COLOR_BUTTON_COLOR_BG
 case|:
-name|gimp_palette_get_background
+name|_gimp_eek
+operator|.
+name|palette_get_background
 argument_list|(
 operator|&
 name|color
