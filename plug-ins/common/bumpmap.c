@@ -138,7 +138,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27df38aa0103
+DECL|enum|__anon2afba8c00103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -156,7 +156,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27df38aa0203
+DECL|enum|__anon2afba8c00203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -175,7 +175,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27df38aa0308
+DECL|struct|__anon2afba8c00308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -230,7 +230,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27df38aa0408
+DECL|struct|__anon2afba8c00408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -275,7 +275,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27df38aa0508
+DECL|struct|__anon2afba8c00508
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -460,13 +460,13 @@ name|guchar
 modifier|*
 name|dest_row
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|bpp
 parameter_list|,
-name|int
+name|gint
 name|has_alpha
 parameter_list|,
 name|guchar
@@ -481,10 +481,10 @@ name|guchar
 modifier|*
 name|bm_row3
 parameter_list|,
-name|int
+name|gint
 name|bm_width
 parameter_list|,
-name|int
+name|gint
 name|bm_xofs
 parameter_list|,
 name|bumpmap_params_t
@@ -503,13 +503,13 @@ name|guchar
 modifier|*
 name|row
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|bpp
 parameter_list|,
-name|int
+name|gint
 name|has_alpha
 parameter_list|,
 name|guchar
@@ -609,16 +609,16 @@ modifier|*
 modifier|*
 name|rows
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|)
 function_decl|;
@@ -629,13 +629,13 @@ specifier|static
 name|void
 name|dialog_fill_src_rows
 parameter_list|(
-name|int
+name|gint
 name|start
 parameter_list|,
-name|int
+name|gint
 name|how_many
 parameter_list|,
-name|int
+name|gint
 name|yofs
 parameter_list|)
 function_decl|;
@@ -646,13 +646,13 @@ specifier|static
 name|void
 name|dialog_fill_bumpmap_rows
 parameter_list|(
-name|int
+name|gint
 name|start
 parameter_list|,
-name|int
+name|gint
 name|how_many
 parameter_list|,
-name|int
+name|gint
 name|yofs
 parameter_list|)
 function_decl|;
@@ -809,15 +809,15 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -954,6 +954,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|drawable
+specifier|static
 name|GDrawable
 modifier|*
 name|drawable
@@ -967,6 +968,7 @@ DECL|variable|sel_x1
 DECL|variable|sel_y1
 DECL|variable|sel_x2
 DECL|variable|sel_y2
+specifier|static
 name|gint
 name|sel_x1
 decl_stmt|,
@@ -981,6 +983,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|sel_width
 DECL|variable|sel_height
+specifier|static
 name|gint
 name|sel_width
 decl_stmt|,
@@ -991,6 +994,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|img_bpp
 DECL|variable|img_has_alpha
+specifier|static
 name|gint
 name|img_bpp
 decl_stmt|,
@@ -1136,14 +1140,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
-name|GParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
-name|int
+name|gint
 name|nargs
 init|=
 sizeof|sizeof
@@ -1159,12 +1156,6 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-specifier|static
-name|int
-name|nreturn_vals
-init|=
-literal|0
-decl_stmt|;
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
@@ -1172,18 +1163,15 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-name|_
-argument_list|(
-literal|"Create an embossing effect using an image as a bump map"
-argument_list|)
+literal|"Create an embossing effect using an image as a "
+literal|"bump map"
 argument_list|,
-name|_
-argument_list|(
-literal|"This plug-in uses the algorithm described by John Schlag, "
-literal|"\"Fast Embossing Effects on Raster Image Data\" in Graphics GEMS IV "
-literal|"(ISBN 0-12-336155-9). It takes a grayscale image to be applied as "
-literal|"a bump map to another image and produces a nice embossing effect."
-argument_list|)
+literal|"This plug-in uses the algorithm described by John "
+literal|"Schlag, \"Fast Embossing Effects on Raster Image "
+literal|"Data\" in Graphics GEMS IV (ISBN 0-12-336155-9). "
+literal|"It takes a grayscale image to be applied as a bump "
+literal|"map to another image and produces a nice embossing "
+literal|"effect."
 argument_list|,
 literal|"Federico Mena Quintero& Jens Lautenbacher"
 argument_list|,
@@ -1202,11 +1190,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -1401,16 +1389,13 @@ name|nparams
 operator|!=
 literal|14
 condition|)
+block|{
 name|status
 operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
-if|if
-condition|(
-name|status
-operator|==
-name|STATUS_SUCCESS
-condition|)
+block|}
+else|else
 block|{
 name|bmvals
 operator|.
@@ -1716,7 +1701,7 @@ name|dest_rgn
 decl_stmt|,
 name|bm_rgn
 decl_stmt|;
-name|int
+name|gint
 name|bm_width
 decl_stmt|,
 name|bm_height
@@ -1725,7 +1710,7 @@ name|bm_bpp
 decl_stmt|,
 name|bm_has_alpha
 decl_stmt|;
-name|int
+name|gint
 name|yofs1
 decl_stmt|,
 name|yofs2
@@ -1752,10 +1737,10 @@ decl_stmt|,
 modifier|*
 name|dest_row
 decl_stmt|;
-name|int
+name|gint
 name|y
 decl_stmt|;
-name|int
+name|gint
 name|progress
 decl_stmt|;
 if|#
@@ -2320,21 +2305,21 @@ modifier|*
 name|params
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|azimuth
 decl_stmt|;
-name|double
+name|gdouble
 name|elevation
 decl_stmt|;
-name|int
+name|gint
 name|lz
 decl_stmt|,
 name|nz
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|double
+name|gdouble
 name|n
 decl_stmt|;
 comment|/* Convert to radians */
@@ -2594,7 +2579,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|bumpmap_row (guchar * src_row,guchar * dest_row,int width,int bpp,int has_alpha,guchar * bm_row1,guchar * bm_row2,guchar * bm_row3,int bm_width,int bm_xofs,bumpmap_params_t * params)
+DECL|function|bumpmap_row (guchar * src_row,guchar * dest_row,gint width,gint bpp,gint has_alpha,guchar * bm_row1,guchar * bm_row2,guchar * bm_row3,gint bm_width,gint bm_xofs,bumpmap_params_t * params)
 name|bumpmap_row
 parameter_list|(
 name|guchar
@@ -2605,13 +2590,13 @@ name|guchar
 modifier|*
 name|dest_row
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|bpp
 parameter_list|,
-name|int
+name|gint
 name|has_alpha
 parameter_list|,
 name|guchar
@@ -2626,10 +2611,10 @@ name|guchar
 modifier|*
 name|bm_row3
 parameter_list|,
-name|int
+name|gint
 name|bm_width
 parameter_list|,
-name|int
+name|gint
 name|bm_xofs
 parameter_list|,
 name|bumpmap_params_t
@@ -2644,33 +2629,33 @@ decl_stmt|,
 modifier|*
 name|dest
 decl_stmt|;
-name|int
+name|gint
 name|xofs1
 decl_stmt|,
 name|xofs2
 decl_stmt|,
 name|xofs3
 decl_stmt|;
-name|int
+name|gint
 name|shade
 decl_stmt|;
-name|int
+name|gint
 name|ndotl
 decl_stmt|;
-name|int
+name|gint
 name|nx
 decl_stmt|,
 name|ny
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|k
 decl_stmt|;
-name|int
+name|gint
 name|pbpp
 decl_stmt|;
-name|int
+name|gint
 name|result
 decl_stmt|;
 if|if
@@ -3056,20 +3041,20 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|bumpmap_convert_row (guchar * row,int width,int bpp,int has_alpha,guchar * lut)
+DECL|function|bumpmap_convert_row (guchar * row,gint width,gint bpp,gint has_alpha,guchar * lut)
 name|bumpmap_convert_row
 parameter_list|(
 name|guchar
 modifier|*
 name|row
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|bpp
 parameter_list|,
-name|int
+name|gint
 name|has_alpha
 parameter_list|,
 name|guchar
@@ -3318,10 +3303,6 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|right_vbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|label
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -3989,10 +3970,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|dialog_compensate_callback
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -4054,10 +4035,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|dialog_invert_callback
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -4740,7 +4721,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|int
+name|gint
 name|x
 decl_stmt|;
 comment|/* Create checkerboard rows */
@@ -5292,10 +5273,10 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|int
+name|gint
 name|yofs
 decl_stmt|;
 comment|/* Get drawable */
@@ -5598,10 +5579,10 @@ decl_stmt|;
 name|guchar
 name|check
 decl_stmt|;
-name|int
+name|gint
 name|xofs
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -5914,10 +5895,10 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|int
+name|gint
 name|yofs
 decl_stmt|;
-name|int
+name|gint
 name|y
 decl_stmt|,
 name|ofs
@@ -6152,10 +6133,10 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|int
+name|gint
 name|yofs
 decl_stmt|;
-name|int
+name|gint
 name|y
 decl_stmt|,
 name|ofs
@@ -6441,7 +6422,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|dialog_get_rows (GPixelRgn * pr,guchar ** rows,int x,int y,int width,int height)
+DECL|function|dialog_get_rows (GPixelRgn * pr,guchar ** rows,gint x,gint y,gint width,gint height)
 name|dialog_get_rows
 parameter_list|(
 name|GPixelRgn
@@ -6453,16 +6434,16 @@ modifier|*
 modifier|*
 name|rows
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|)
 block|{
@@ -6478,38 +6459,38 @@ decl_stmt|,
 modifier|*
 name|dest
 decl_stmt|;
-name|int
+name|gint
 name|xstart
 decl_stmt|,
 name|ystart
 decl_stmt|;
-name|int
+name|gint
 name|xend
 decl_stmt|,
 name|yend
 decl_stmt|;
-name|int
+name|gint
 name|xboundary
 decl_stmt|;
-name|int
+name|gint
 name|yboundary
 decl_stmt|;
-name|int
+name|gint
 name|xstep
 decl_stmt|,
 name|ystep
 decl_stmt|;
-name|int
+name|gint
 name|b
 decl_stmt|,
 name|bpp
 decl_stmt|;
-name|int
+name|gint
 name|tx
 decl_stmt|,
 name|ty
 decl_stmt|;
-name|int
+name|gint
 name|tile_width
 decl_stmt|,
 name|tile_height
@@ -6764,20 +6745,20 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|dialog_fill_src_rows (int start,int how_many,int yofs)
+DECL|function|dialog_fill_src_rows (gint start,gint how_many,gint yofs)
 name|dialog_fill_src_rows
 parameter_list|(
-name|int
+name|gint
 name|start
 parameter_list|,
-name|int
+name|gint
 name|how_many
 parameter_list|,
-name|int
+name|gint
 name|yofs
 parameter_list|)
 block|{
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -6958,26 +6939,26 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|dialog_fill_bumpmap_rows (int start,int how_many,int yofs)
+DECL|function|dialog_fill_bumpmap_rows (gint start,gint how_many,gint yofs)
 name|dialog_fill_bumpmap_rows
 parameter_list|(
-name|int
+name|gint
 name|start
 parameter_list|,
-name|int
+name|gint
 name|how_many
 parameter_list|,
-name|int
+name|gint
 name|yofs
 parameter_list|)
 block|{
-name|int
+name|gint
 name|buf_row_ofs
 decl_stmt|;
-name|int
+name|gint
 name|remaining
 decl_stmt|;
-name|int
+name|gint
 name|this_pass
 decl_stmt|;
 name|buf_row_ofs

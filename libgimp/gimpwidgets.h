@@ -241,6 +241,18 @@ parameter_list|,
 name|GimpSizeEntryUP
 name|update_policy
 parameter_list|,
+name|gboolean
+name|chainbutton_active
+parameter_list|,
+name|gboolean
+name|chain_constrains_ratio
+parameter_list|,
+comment|/* return value: */
+name|GtkWidget
+modifier|*
+modifier|*
+name|chainbutton
+parameter_list|,
 name|gchar
 modifier|*
 name|xlabel
@@ -251,12 +263,20 @@ parameter_list|,
 name|gdouble
 name|xres
 parameter_list|,
-name|gint
+name|gdouble
 name|lower_boundary_x
 parameter_list|,
-name|gint
+name|gdouble
 name|upper_boundary_x
 parameter_list|,
+name|gdouble
+name|xsize_0
+parameter_list|,
+comment|/* % */
+name|gdouble
+name|xsize_100
+parameter_list|,
+comment|/* % */
 name|gchar
 modifier|*
 name|ylabel
@@ -267,11 +287,19 @@ parameter_list|,
 name|gdouble
 name|yres
 parameter_list|,
-name|gint
+name|gdouble
 name|lower_boundary_y
 parameter_list|,
-name|gint
+name|gdouble
 name|upper_boundary_y
+parameter_list|,
+name|gdouble
+name|ysize_0
+parameter_list|,
+comment|/* % */
+name|gdouble
+name|ysize_100
+comment|/* % */
 parameter_list|)
 function_decl|;
 comment|/*  *  Standard Callbacks  */
