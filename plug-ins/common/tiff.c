@@ -57,7 +57,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2773225b0108
+DECL|struct|__anon2ac6b5140108
 block|{
 DECL|member|compression
 name|gint
@@ -76,7 +76,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2773225b0208
+DECL|struct|__anon2ac6b5140208
 block|{
 DECL|member|run
 name|gint
@@ -89,7 +89,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2773225b0308
+DECL|struct|__anon2ac6b5140308
 typedef|typedef
 struct|struct
 block|{
@@ -1048,7 +1048,7 @@ name|drawable
 operator|=
 name|param
 index|[
-literal|1
+literal|2
 index|]
 operator|.
 name|data
