@@ -197,7 +197,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b3ca0c0103
+DECL|enum|__anon2b70a0030103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -1365,12 +1365,9 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"Error: Levels of undo must be zero or greater."
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp
@@ -1394,12 +1391,9 @@ operator|<
 literal|50
 condition|)
 block|{
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"Error: Marching speed must be 50 or greater."
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimprc
@@ -1423,12 +1417,9 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"Error: Default width must be one or greater."
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp
@@ -1454,12 +1445,9 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"Error: Default height must be one or greater."
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp
@@ -1494,12 +1482,9 @@ name|gimp_unit_get_number_of_units
 argument_list|()
 condition|)
 block|{
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"Error: Default unit must be within unit range."
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp
@@ -1533,12 +1518,9 @@ operator|<
 name|GIMP_MIN_RESOLUTION
 condition|)
 block|{
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"Error: Default resolution must not be zero."
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp
@@ -1581,12 +1563,9 @@ name|gimp_unit_get_number_of_units
 argument_list|()
 condition|)
 block|{
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"Error: Default resolution unit must be within unit range."
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp
@@ -1616,12 +1595,9 @@ operator|<
 name|GIMP_MIN_RESOLUTION
 condition|)
 block|{
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"Error: Monitor resolution must not be zero."
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimprc
@@ -1649,12 +1625,9 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"Error: Image title format must not be NULL."
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimprc
@@ -1676,12 +1649,9 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"Error: Image status format must not be NULL."
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimprc
@@ -1709,12 +1679,9 @@ operator|>
 literal|30
 condition|)
 block|{
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"Error: Number of processors must be between 1 and 30."
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|base_config
@@ -9951,7 +9918,7 @@ name|prefs_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Dialog Behaviour"
+literal|"Dialog Behavior"
 argument_list|)
 argument_list|,
 name|GTK_CONTAINER
@@ -10062,7 +10029,7 @@ name|prefs_check_button_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Restore Saved Window Positions on Startup"
+literal|"Restore Saved Window Positions on Start-up"
 argument_list|)
 argument_list|,
 operator|&
@@ -13465,7 +13432,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"\"File> Save\" Saves the Image:"
+literal|"\"File -> Save\" Saves the Image:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -13606,7 +13573,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28b3ca0c0208
+DECL|struct|__anon2b70a0030208
 block|{
 DECL|member|label
 name|gchar
@@ -13786,7 +13753,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28b3ca0c0308
+DECL|struct|__anon2b70a0030308
 block|{
 DECL|member|tree_label
 name|gchar

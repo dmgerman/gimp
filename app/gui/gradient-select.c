@@ -824,8 +824,6 @@ operator|->
 name|callback_name
 operator|||
 name|busy
-operator|!=
-literal|0
 condition|)
 return|return;
 name|busy
@@ -1040,12 +1038,15 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Failed to run gradient callback function.\n"
+literal|"Unable to run gradient callback.\n"
 literal|"The corresponding plug-in may have crashed."
 argument_list|)
 argument_list|)
 expr_stmt|;
-else|else
+if|if
+condition|(
+name|return_vals
+condition|)
 name|procedural_db_destroy_args
 argument_list|(
 name|return_vals

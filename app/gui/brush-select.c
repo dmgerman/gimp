@@ -1669,6 +1669,10 @@ literal|"The corresponding plug-in may have crashed."
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|return_vals
+condition|)
 name|procedural_db_destroy_args
 argument_list|(
 name|return_vals
