@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b534250103
+DECL|enum|__anon27bc3a1d0103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -669,6 +669,8 @@ name|x1
 argument_list|,
 operator|-
 name|y1
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_offsets

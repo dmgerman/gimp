@@ -2149,7 +2149,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_mask_translate (GimpImage * gimage,gint off_x,gint off_y)
+DECL|function|gimp_image_mask_translate (GimpImage * gimage,gint off_x,gint off_y,gboolean push_undo)
 name|gimp_image_mask_translate
 parameter_list|(
 name|GimpImage
@@ -2161,6 +2161,9 @@ name|off_x
 parameter_list|,
 name|gint
 name|off_y
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -2171,6 +2174,10 @@ name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|push_undo
+condition|)
 name|gimp_image_mask_push_undo
 argument_list|(
 name|gimage
@@ -2179,6 +2186,12 @@ name|_
 argument_list|(
 literal|"Translate Selection"
 argument_list|)
+argument_list|)
+expr_stmt|;
+else|else
+name|gimp_image_mask_invalidate
+argument_list|(
+name|gimage
 argument_list|)
 expr_stmt|;
 name|gimp_channel_translate

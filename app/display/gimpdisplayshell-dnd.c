@@ -244,6 +244,8 @@ argument_list|,
 name|off_x
 argument_list|,
 name|off_y
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_image_add_layer

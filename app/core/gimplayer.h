@@ -131,7 +131,7 @@ decl_stmt|;
 comment|/*  possible layer mask        */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon2bc131fb0108
+DECL|struct|__anon2c1b70fb0108
 block|{
 DECL|member|backing_store
 name|TileManager
@@ -422,6 +422,9 @@ name|off_x
 parameter_list|,
 name|gint
 name|off_y
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon293e0b410103
+DECL|enum|__anon2783908d0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -3504,7 +3504,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_layer_translate (GimpLayer * layer,gint off_x,gint off_y)
+DECL|function|gimp_layer_translate (GimpLayer * layer,gint off_x,gint off_y,gboolean push_undo)
 name|gimp_layer_translate
 parameter_list|(
 name|GimpLayer
@@ -3516,6 +3516,9 @@ name|off_x
 parameter_list|,
 name|gint
 name|off_y
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -3526,7 +3529,10 @@ name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  the undo call goes here  */
+if|if
+condition|(
+name|push_undo
+condition|)
 name|gimp_image_undo_push_layer_displace
 argument_list|(
 name|gimp_item_get_image

@@ -2524,6 +2524,8 @@ argument_list|,
 name|offx
 argument_list|,
 name|offy
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -2992,6 +2994,8 @@ argument_list|)
 operator|->
 name|offset_y
 operator|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
