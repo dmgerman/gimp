@@ -377,7 +377,7 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"Error while parsing '%s': %s"
+literal|"Error while parsing '%s': %s\n"
 argument_list|,
 name|filename
 argument_list|,
