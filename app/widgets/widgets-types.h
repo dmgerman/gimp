@@ -129,11 +129,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpPreviewRendererTextLayer
+DECL|typedef|GimpPreviewRendererLayer
 typedef|typedef
 name|struct
-name|_GimpPreviewRendererTextLayer
-name|GimpPreviewRendererTextLayer
+name|_GimpPreviewRendererLayer
+name|GimpPreviewRendererLayer
 typedef|;
 end_typedef
 

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimppreviewrenderertextlayer.c  * Copyright (C) 2003 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimppreviewrendererlayer.c  * Copyright (C) 2003 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpmath/gimpmath.h"
+file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
 begin_include
@@ -30,21 +30,21 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpviewable.h"
+file|"text/gimptextlayer.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimppreviewrenderertextlayer.h"
+file|"gimppreviewrendererlayer.h"
 end_include
 
 begin_function_decl
 specifier|static
 name|void
-name|gimp_preview_renderer_text_layer_class_init
+name|gimp_preview_renderer_layer_class_init
 parameter_list|(
-name|GimpPreviewRendererTextLayerClass
+name|GimpPreviewRendererLayerClass
 modifier|*
 name|klass
 parameter_list|)
@@ -54,19 +54,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_preview_renderer_text_layer_init
-parameter_list|(
-name|GimpPreviewRendererTextLayer
-modifier|*
-name|renderer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_preview_renderer_text_layer_render
+name|gimp_preview_renderer_layer_render
 parameter_list|(
 name|GimpPreviewRenderer
 modifier|*
@@ -92,8 +80,8 @@ end_decl_stmt
 
 begin_function
 name|GType
-DECL|function|gimp_preview_renderer_text_layer_get_type (void)
-name|gimp_preview_renderer_text_layer_get_type
+DECL|function|gimp_preview_renderer_layer_get_type (void)
+name|gimp_preview_renderer_layer_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -118,7 +106,7 @@ init|=
 block|{
 sizeof|sizeof
 argument_list|(
-name|GimpPreviewRendererTextLayerClass
+name|GimpPreviewRendererLayerClass
 argument_list|)
 block|,
 name|NULL
@@ -130,7 +118,7 @@ comment|/* base_finalize */
 operator|(
 name|GClassInitFunc
 operator|)
-name|gimp_preview_renderer_text_layer_class_init
+name|gimp_preview_renderer_layer_class_init
 block|,
 name|NULL
 block|,
@@ -140,17 +128,16 @@ block|,
 comment|/* class_data */
 sizeof|sizeof
 argument_list|(
-name|GimpPreviewRendererTextLayer
+name|GimpPreviewRendererLayer
 argument_list|)
 block|,
 literal|0
 block|,
 comment|/* n_preallocs */
-operator|(
-name|GInstanceInitFunc
-operator|)
-name|gimp_preview_renderer_text_layer_init
-block|,       }
+name|NULL
+block|,
+comment|/* instance_init */
+block|}
 decl_stmt|;
 name|renderer_type
 operator|=
@@ -158,7 +145,7 @@ name|g_type_register_static
 argument_list|(
 name|GIMP_TYPE_PREVIEW_RENDERER_DRAWABLE
 argument_list|,
-literal|"GimpPreviewRendererTextLayer"
+literal|"GimpPreviewRendererLayer"
 argument_list|,
 operator|&
 name|renderer_info
@@ -176,10 +163,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_preview_renderer_text_layer_class_init (GimpPreviewRendererTextLayerClass * klass)
-name|gimp_preview_renderer_text_layer_class_init
+DECL|function|gimp_preview_renderer_layer_class_init (GimpPreviewRendererLayerClass * klass)
+name|gimp_preview_renderer_layer_class_init
 parameter_list|(
-name|GimpPreviewRendererTextLayerClass
+name|GimpPreviewRendererLayerClass
 modifier|*
 name|klass
 parameter_list|)
@@ -206,7 +193,7 @@ name|renderer_class
 operator|->
 name|render
 operator|=
-name|gimp_preview_renderer_text_layer_render
+name|gimp_preview_renderer_layer_render
 expr_stmt|;
 block|}
 end_function
@@ -214,21 +201,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_preview_renderer_text_layer_init (GimpPreviewRendererTextLayer * renderer)
-name|gimp_preview_renderer_text_layer_init
-parameter_list|(
-name|GimpPreviewRendererTextLayer
-modifier|*
-name|renderer
-parameter_list|)
-block|{ }
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_preview_renderer_text_layer_render (GimpPreviewRenderer * renderer,GtkWidget * widget)
-name|gimp_preview_renderer_text_layer_render
+DECL|function|gimp_preview_renderer_layer_render (GimpPreviewRenderer * renderer,GtkWidget * widget)
+name|gimp_preview_renderer_layer_render
 parameter_list|(
 name|GimpPreviewRenderer
 modifier|*
@@ -243,7 +217,38 @@ specifier|const
 name|gchar
 modifier|*
 name|stock_id
+init|=
+name|NULL
 decl_stmt|;
+if|if
+condition|(
+name|gimp_layer_is_floating_sel
+argument_list|(
+name|GIMP_LAYER
+argument_list|(
+name|renderer
+operator|->
+name|viewable
+argument_list|)
+argument_list|)
+condition|)
+block|{
+name|stock_id
+operator|=
+name|GIMP_STOCK_FLOATING_SELECTION
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|GIMP_IS_TEXT_LAYER
+argument_list|(
+name|renderer
+operator|->
+name|viewable
+argument_list|)
+condition|)
+block|{
 name|stock_id
 operator|=
 name|gimp_viewable_get_stock_id
@@ -253,6 +258,11 @@ operator|->
 name|viewable
 argument_list|)
 expr_stmt|;
+block|}
+if|if
+condition|(
+name|stock_id
+condition|)
 name|gimp_preview_renderer_default_render_stock
 argument_list|(
 name|renderer
@@ -260,6 +270,19 @@ argument_list|,
 name|widget
 argument_list|,
 name|stock_id
+argument_list|)
+expr_stmt|;
+else|else
+name|GIMP_PREVIEW_RENDERER_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|render
+argument_list|(
+name|renderer
+argument_list|,
+name|widget
 argument_list|)
 expr_stmt|;
 block|}
