@@ -210,61 +210,61 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/new.xpm"
+file|"pixmaps/new.xpm"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/duplicate.xpm"
+file|"pixmaps/duplicate.xpm"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/delete.xpm"
+file|"pixmaps/delete.xpm"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/pennorm.xpm"
+file|"pixmaps/pennorm.xpm"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/penadd.xpm"
+file|"pixmaps/penadd.xpm"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/pendel.xpm"
+file|"pixmaps/pendel.xpm"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/penedit.xpm"
+file|"pixmaps/penedit.xpm"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/penstroke.xpm"
+file|"pixmaps/penstroke.xpm"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/ptoselection.xpm"
+file|"pixmaps/ptoselection.xpm"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/path.xbm"
+file|"pixmaps/path.xbm"
 end_include
 
 begin_define
@@ -292,7 +292,7 @@ value|150
 end_define
 
 begin_typedef
-DECL|struct|__anon2b8534d10108
+DECL|struct|__anon29ec7c000108
 typedef|typedef
 struct|struct
 block|{
@@ -401,7 +401,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b8534d10208
+DECL|struct|__anon29ec7c000208
 typedef|typedef
 struct|struct
 block|{

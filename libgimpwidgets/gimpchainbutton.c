@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"chain.xpm"
+file|"pixmaps/chain.xpm"
 end_include
 
 begin_decl_stmt

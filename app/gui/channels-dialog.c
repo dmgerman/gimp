@@ -132,43 +132,43 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/eye.xbm"
+file|"pixmaps/eye.xbm"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/channel.xbm"
+file|"pixmaps/channel.xbm"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/new.xpm"
+file|"pixmaps/new.xpm"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/raise.xpm"
+file|"pixmaps/raise.xpm"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/lower.xpm"
+file|"pixmaps/lower.xpm"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/duplicate.xpm"
+file|"pixmaps/duplicate.xpm"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/delete.xpm"
+file|"pixmaps/delete.xpm"
 end_include
 
 begin_include

@@ -192,61 +192,61 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/eye.xbm"
+file|"pixmaps/eye.xbm"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/linked.xbm"
+file|"pixmaps/linked.xbm"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/layer.xbm"
+file|"pixmaps/layer.xbm"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/mask.xbm"
+file|"pixmaps/mask.xbm"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/new.xpm"
+file|"pixmaps/new.xpm"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/raise.xpm"
+file|"pixmaps/raise.xpm"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/lower.xpm"
+file|"pixmaps/lower.xpm"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/duplicate.xpm"
+file|"pixmaps/duplicate.xpm"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/delete.xpm"
+file|"pixmaps/delete.xpm"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/anchor.xpm"
+file|"pixmaps/anchor.xpm"
 end_include
 
 begin_include
@@ -4514,7 +4514,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2aea756f0108
+DECL|struct|__anon2c1f2c4d0108
 typedef|typedef
 struct|struct
 block|{

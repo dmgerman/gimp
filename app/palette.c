@@ -190,13 +190,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/zoom_in.xpm"
+file|"pixmaps/zoom_in.xpm"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/zoom_out.xpm"
+file|"pixmaps/zoom_out.xpm"
 end_include
 
 begin_include
@@ -300,7 +300,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28eaf1ed0103
+DECL|enum|__anon27aaa5790103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
