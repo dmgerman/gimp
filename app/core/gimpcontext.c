@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
+file|"context_manager.h"
 end_include
 
 begin_include
@@ -534,7 +534,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27bab3810103
+DECL|enum|__anon28fad3d30103
 block|{
 DECL|enumerator|ARG_0
 name|ARG_0
@@ -641,7 +641,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27bab3810203
+DECL|enum|__anon28fad3d30203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED

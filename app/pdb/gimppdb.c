@@ -42,13 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
+file|"app_procs.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
+file|"context_manager.h"
 end_include
 
 begin_include
@@ -1817,12 +1817,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|add_cb (GimpSet * set,GimpImage * gimage,gpointer data)
+DECL|function|add_cb (GimpContainer * container,GimpImage * gimage,gpointer data)
 name|add_cb
 parameter_list|(
-name|GimpSet
+name|GimpContainer
 modifier|*
-name|set
+name|container
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -1878,12 +1878,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|remove_cb (GimpSet * set,GimpImage * image,gpointer data)
+DECL|function|remove_cb (GimpContainer * container,GimpImage * image,gpointer data)
 name|remove_cb
 parameter_list|(
-name|GimpSet
+name|GimpContainer
 modifier|*
-name|set
+name|container
 parameter_list|,
 name|GimpImage
 modifier|*

@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimplut.h"
 end_include
 
@@ -949,7 +943,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6521f50108
+DECL|struct|__anon29ec2b020108
 block|{
 DECL|member|gamma
 name|double

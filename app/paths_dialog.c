@@ -114,12 +114,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpset.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"image_render.h"
 end_include
 

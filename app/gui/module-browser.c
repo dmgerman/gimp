@@ -107,7 +107,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpset.h"
+file|"gimpcontainer.h"
 end_include
 
 begin_include
@@ -145,7 +145,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a416a9c0103
+DECL|enum|__anon288a75920103
 block|{
 DECL|enumerator|ST_MODULE_ERROR
 name|ST_MODULE_ERROR
@@ -319,7 +319,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a416a9c0208
+DECL|struct|__anon288a75920208
 block|{
 DECL|member|parent_instance
 name|GtkObject
@@ -434,7 +434,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a416a9c0308
+DECL|struct|__anon288a75920308
 block|{
 DECL|member|table
 name|GtkWidget
@@ -487,17 +487,17 @@ end_comment
 begin_decl_stmt
 DECL|variable|modules
 specifier|static
-name|GimpSet
+name|GimpContainer
 modifier|*
 name|modules
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|modules_handler
+DECL|variable|modules_handler_id
 specifier|static
-name|GimpSetHandlerId
-name|modules_handler
+name|GQuark
+name|modules_handler_id
 decl_stmt|;
 end_decl_stmt
 
@@ -726,9 +726,9 @@ specifier|static
 name|void
 name|browser_info_add
 parameter_list|(
-name|GimpSet
+name|GimpContainer
 modifier|*
-name|set
+name|container
 parameter_list|,
 name|ModuleInfo
 modifier|*
@@ -746,9 +746,9 @@ specifier|static
 name|void
 name|browser_info_remove
 parameter_list|(
-name|GimpSet
+name|GimpContainer
 modifier|*
-name|set
+name|container
 parameter_list|,
 name|ModuleInfo
 modifier|*
@@ -902,11 +902,11 @@ expr_stmt|;
 comment|/* Load and initialize gimp modules */
 name|modules
 operator|=
-name|gimp_set_new
+name|gimp_container_new
 argument_list|(
 name|MODULE_INFO_TYPE
 argument_list|,
-name|FALSE
+name|GIMP_CONTAINER_POLICY_WEAK
 argument_list|)
 expr_stmt|;
 if|if
@@ -927,7 +927,7 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|DUMP_DB
-name|gimp_set_foreach
+name|gimp_container_foreach
 argument_list|(
 name|modules
 argument_list|,
@@ -1081,7 +1081,7 @@ argument_list|(
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_set_foreach
+name|gimp_container_foreach
 argument_list|(
 name|modules
 argument_list|,
@@ -1196,7 +1196,7 @@ name|FALSE
 expr_stmt|;
 block|}
 block|}
-name|gimp_set_foreach
+name|gimp_container_foreach
 argument_list|(
 name|modules
 argument_list|,
@@ -1414,7 +1414,7 @@ operator|->
 name|list
 argument_list|)
 expr_stmt|;
-name|gimp_set_foreach
+name|gimp_container_foreach
 argument_list|(
 name|modules
 argument_list|,
@@ -1672,10 +1672,10 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* hook the gimpset signals so we can refresh the display    * appropriately. */
-name|modules_handler
+comment|/* hook the GimpContainer signals so we can refresh the display    * appropriately.    */
+name|modules_handler_id
 operator|=
-name|gimp_set_add_handler
+name|gimp_container_add_handler
 argument_list|(
 name|modules
 argument_list|,
@@ -1744,7 +1744,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a416a9c0403
+DECL|enum|__anon288a75920403
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -2587,11 +2587,14 @@ operator|=
 name|ST_UNLOADED_OK
 expr_stmt|;
 block|}
-name|gimp_set_add
+name|gimp_container_add
 argument_list|(
 name|modules
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
 name|mod
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -3272,11 +3275,11 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|gimp_set_remove_handler
+name|gimp_container_remove_handler
 argument_list|(
 name|modules
 argument_list|,
-name|modules_handler
+name|modules_handler_id
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -4373,12 +4376,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|browser_info_add (GimpSet * set,ModuleInfo * mod,BrowserState * st)
+DECL|function|browser_info_add (GimpContainer * container,ModuleInfo * mod,BrowserState * st)
 name|browser_info_add
 parameter_list|(
-name|GimpSet
+name|GimpContainer
 modifier|*
-name|set
+name|container
 parameter_list|,
 name|ModuleInfo
 modifier|*
@@ -4402,12 +4405,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|browser_info_remove (GimpSet * set,ModuleInfo * mod,BrowserState * st)
+DECL|function|browser_info_remove (GimpContainer * container,ModuleInfo * mod,BrowserState * st)
 name|browser_info_remove
 parameter_list|(
-name|GimpSet
+name|GimpContainer
 modifier|*
-name|set
+name|container
 parameter_list|,
 name|ModuleInfo
 modifier|*
@@ -4421,7 +4424,8 @@ block|{
 name|GList
 modifier|*
 name|dlist
-decl_stmt|,
+decl_stmt|;
+name|GList
 modifier|*
 name|free_list
 decl_stmt|;
@@ -4661,11 +4665,14 @@ name|mod
 init|=
 name|data
 decl_stmt|;
-name|gimp_set_remove
+name|gimp_container_remove
 argument_list|(
 name|modules
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
 name|mod
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|module_info_free
@@ -4679,7 +4686,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a416a9c0508
+DECL|struct|__anon288a75920508
 block|{
 DECL|member|search_key
 specifier|const
@@ -4774,7 +4781,7 @@ name|search_key
 operator|=
 name|fullpath
 expr_stmt|;
-name|gimp_set_foreach
+name|gimp_container_foreach
 argument_list|(
 name|modules
 argument_list|,
@@ -4813,7 +4820,7 @@ init|=
 name|NULL
 decl_stmt|;
 comment|/* remove modules we don't have on disk anymore */
-name|gimp_set_foreach
+name|gimp_container_foreach
 argument_list|(
 name|modules
 argument_list|,

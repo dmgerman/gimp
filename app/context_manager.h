@@ -16,6 +16,18 @@ directive|define
 name|__CONTEXT_MANAGER_H__
 end_define
 
+begin_comment
+comment|/*  *  the list of all images  */
+end_comment
+
+begin_decl_stmt
+specifier|extern
+name|GimpContainer
+modifier|*
+name|image_context
+decl_stmt|;
+end_decl_stmt
+
 begin_function_decl
 name|void
 name|context_manager_init

@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c10f3600103
+DECL|enum|__anon274b62c60103
 block|{
 DECL|enumerator|GIMP_CONTAINER_POLICY_STRONG
 name|GIMP_CONTAINER_POLICY_STRONG
@@ -276,10 +276,12 @@ name|GList
 modifier|*
 name|gimp_container_lookup
 parameter_list|(
+specifier|const
 name|GimpContainer
 modifier|*
 name|container
 parameter_list|,
+specifier|const
 name|GimpObject
 modifier|*
 name|object

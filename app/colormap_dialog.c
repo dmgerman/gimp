@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdnd.h"
 end_include
 
@@ -115,12 +121,6 @@ begin_include
 include|#
 directive|include
 file|"gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpset.h"
 end_include
 
 begin_include
@@ -141,7 +141,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab509cd0103
+DECL|enum|__anon275f983d0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -499,11 +499,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|set_addrem_cb
+name|container_addrem_cb
 parameter_list|(
-name|GimpSet
+name|GimpContainer
 modifier|*
-name|set
+name|container
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -940,10 +940,10 @@ end_function
 begin_function
 name|GimpColormapDialog
 modifier|*
-DECL|function|gimp_colormap_dialog_create (GimpSet * context)
+DECL|function|gimp_colormap_dialog_create (GimpContainer * context)
 name|gimp_colormap_dialog_create
 parameter_list|(
-name|GimpSet
+name|GimpContainer
 modifier|*
 name|context
 parameter_list|)
@@ -999,7 +999,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_SET
+name|GIMP_IS_CONTAINER
 argument_list|(
 name|context
 argument_list|)
@@ -1058,7 +1058,7 @@ name|ipal
 operator|->
 name|cmap_changed_handler
 operator|=
-name|gimp_set_add_handler
+name|gimp_container_add_handler
 argument_list|(
 name|context
 argument_list|,
@@ -1073,7 +1073,7 @@ name|ipal
 operator|->
 name|rename_handler
 operator|=
-name|gimp_set_add_handler
+name|gimp_container_add_handler
 argument_list|(
 name|context
 argument_list|,
@@ -1813,7 +1813,7 @@ literal|"add"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|set_addrem_cb
+name|container_addrem_cb
 argument_list|)
 argument_list|,
 name|ipal
@@ -1830,7 +1830,7 @@ literal|"remove"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|set_addrem_cb
+name|container_addrem_cb
 argument_list|)
 argument_list|,
 name|ipal
@@ -4434,10 +4434,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|set_addrem_cb (GimpSet * set,GimpImage * image,GimpColormapDialog * ipal)
-name|set_addrem_cb
+DECL|function|container_addrem_cb (GimpContainer * set,GimpImage * image,GimpColormapDialog * ipal)
+name|container_addrem_cb
 parameter_list|(
-name|GimpSet
+name|GimpContainer
 modifier|*
 name|set
 parameter_list|,
@@ -4736,13 +4736,16 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|gimp_set_have
+name|gimp_container_lookup
 argument_list|(
 name|ipal
 operator|->
 name|context
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
 name|gimage
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5604,7 +5607,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab509cd0208
+DECL|struct|__anon275f983d0208
 block|{
 DECL|member|def
 name|GimpImage
@@ -5924,7 +5927,7 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
-name|gimp_set_foreach
+name|gimp_container_foreach
 argument_list|(
 name|ipal
 operator|->

@@ -10160,26 +10160,11 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|GSList
-modifier|*
-name|list
-decl_stmt|;
-comment|/*  traverse the linked list of displays  */
-for|for
-control|(
-name|list
-operator|=
+comment|/*  destroying the shell removes the GDisplay from the list, so    *  do a while loop "around" the first element to get them all    */
+while|while
+condition|(
 name|display_list
-init|;
-name|list
-condition|;
-name|list
-operator|=
-name|g_slist_next
-argument_list|(
-name|list
-argument_list|)
-control|)
+condition|)
 block|{
 name|gdisp
 operator|=
@@ -10187,7 +10172,7 @@ operator|(
 name|GDisplay
 operator|*
 operator|)
-name|list
+name|display_list
 operator|->
 name|data
 expr_stmt|;
@@ -10199,16 +10184,6 @@ name|shell
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  free up linked list data  */
-name|g_slist_free
-argument_list|(
-name|display_list
-argument_list|)
-expr_stmt|;
-name|display_list
-operator|=
-name|NULL
-expr_stmt|;
 block|}
 end_function
 

@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29660a390103
+DECL|enum|__anon2a180e650103
 block|{
 DECL|enumerator|MESSAGE_BOX
 name|MESSAGE_BOX
@@ -108,14 +108,6 @@ end_decl_stmt
 begin_comment
 comment|/* this is used in session_get_window_info() */
 end_comment
-
-begin_decl_stmt
-specifier|extern
-name|GimpSet
-modifier|*
-name|image_context
-decl_stmt|;
-end_decl_stmt
 
 begin_decl_stmt
 specifier|extern

@@ -402,7 +402,7 @@ expr_stmt|;
 name|bytes
 operator|=
 operator|(
-name|gimp_drawable_bytes
+name|gimp_drawable_type
 argument_list|(
 name|drawable
 argument_list|)

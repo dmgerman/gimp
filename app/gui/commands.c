@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"about_dialog.h"
 end_include
 
@@ -91,6 +85,12 @@ begin_include
 include|#
 directive|include
 file|"commands.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"context_manager.h"
 end_include
 
 begin_include

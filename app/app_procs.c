@@ -234,12 +234,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpset.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"global_edit.h"
 end_include
 
@@ -2429,16 +2423,6 @@ condition|)
 name|splash_text_draw
 argument_list|(
 name|logo_area
-argument_list|)
-expr_stmt|;
-comment|/* Create the context of all existing images */
-name|image_context
-operator|=
-name|gimp_set_new
-argument_list|(
-name|GIMP_TYPE_IMAGE
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  Initialize the context system before loading any data  */

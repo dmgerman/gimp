@@ -681,7 +681,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8018190103
+DECL|enum|__anon27b4e3530103
 block|{
 DECL|enumerator|CLEAN
 name|CLEAN
@@ -16065,7 +16065,7 @@ decl_stmt|;
 name|gint
 name|bytes
 decl_stmt|;
-name|gint
+name|gboolean
 name|construct_flag
 decl_stmt|;
 name|gint
@@ -16268,7 +16268,7 @@ block|}
 block|}
 name|construct_flag
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 while|while
 condition|(
@@ -16815,7 +16815,7 @@ break|break;
 block|}
 name|construct_flag
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 name|reverse_list
 operator|=

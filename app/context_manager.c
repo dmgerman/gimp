@@ -48,7 +48,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpimage.h"
 end_include
 
 begin_include
@@ -69,12 +81,28 @@ directive|include
 file|"tools/tools.h"
 end_include
 
+begin_comment
+comment|/*  *  the list of all images  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|image_context
+name|GimpContainer
+modifier|*
+name|image_context
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
 begin_decl_stmt
 DECL|variable|global_tool_context
 specifier|static
 name|GimpContext
 modifier|*
 name|global_tool_context
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -379,6 +407,16 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+comment|/* Create the context of all existing images */
+name|image_context
+operator|=
+name|gimp_container_new
+argument_list|(
+name|GIMP_TYPE_IMAGE
+argument_list|,
+name|GIMP_CONTAINER_POLICY_WEAK
+argument_list|)
+expr_stmt|;
 comment|/*  Implicitly create the standard context  */
 name|standard_context
 operator|=

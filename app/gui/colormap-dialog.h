@@ -140,7 +140,7 @@ modifier|*
 name|option_menu
 decl_stmt|;
 DECL|member|context
-name|GimpSet
+name|GimpContainer
 modifier|*
 name|context
 decl_stmt|;
@@ -236,7 +236,7 @@ name|GimpColormapDialog
 modifier|*
 name|gimp_colormap_dialog_create
 parameter_list|(
-name|GimpSet
+name|GimpContainer
 modifier|*
 name|context
 parameter_list|)

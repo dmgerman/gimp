@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"cursorutil.h"
 end_include
 
@@ -190,7 +184,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296589310103
+DECL|enum|__anon2ad5ca500103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO

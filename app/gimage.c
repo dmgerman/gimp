@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
+file|"context_manager.h"
 end_include
 
 begin_include
@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdrawable.h"
 end_include
 
@@ -61,12 +67,6 @@ begin_include
 include|#
 directive|include
 file|"gimplayer.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpset.h"
 end_include
 
 begin_include
@@ -353,11 +353,14 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_set_add
+name|gimp_container_add
 argument_list|(
 name|image_context
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
 name|gimage
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -435,7 +438,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|gimp_set_foreach
+name|gimp_container_foreach
 argument_list|(
 name|image_context
 argument_list|,
@@ -1079,7 +1082,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-name|gimp_set_foreach
+name|gimp_container_foreach
 argument_list|(
 name|image_context
 argument_list|,

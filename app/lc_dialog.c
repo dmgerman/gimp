@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
+file|"context_manager.h"
 end_include
 
 begin_include
@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontext.h"
 end_include
 
@@ -73,12 +79,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpset.h"
 end_include
 
 begin_include
@@ -203,9 +203,9 @@ specifier|static
 name|void
 name|lc_dialog_add_callback
 parameter_list|(
-name|GimpSet
+name|GimpContainer
 modifier|*
-name|set
+name|container
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -222,9 +222,9 @@ specifier|static
 name|void
 name|lc_dialog_remove_callback
 parameter_list|(
-name|GimpSet
+name|GimpContainer
 modifier|*
-name|set
+name|container
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -1496,6 +1496,17 @@ operator|&&
 name|gimage_to_update
 operator|==
 name|gimage
+operator|&&
+name|gimp_container_lookup
+argument_list|(
+name|image_context
+argument_list|,
+operator|(
+name|GimpObject
+operator|*
+operator|)
+name|gimage
+argument_list|)
 condition|)
 block|{
 comment|/* Must update the preview? */
@@ -1725,7 +1736,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b14c2c20108
+DECL|struct|__anon290ff3690108
 block|{
 DECL|member|def
 name|GImage
@@ -1790,6 +1801,8 @@ decl_stmt|;
 name|TempBuf
 modifier|*
 name|buf
+init|=
+name|NULL
 decl_stmt|;
 name|gint
 name|bpp
@@ -3106,12 +3119,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|lc_dialog_add_callback (GimpSet * set,GimpImage * gimage,gpointer data)
+DECL|function|lc_dialog_add_callback (GimpContainer * container,GimpImage * gimage,gpointer data)
 name|lc_dialog_add_callback
 parameter_list|(
-name|GimpSet
+name|GimpContainer
 modifier|*
-name|set
+name|container
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -3136,12 +3149,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|lc_dialog_remove_callback (GimpSet * set,GimpImage * gimage,gpointer data)
+DECL|function|lc_dialog_remove_callback (GimpContainer * container,GimpImage * gimage,gpointer data)
 name|lc_dialog_remove_callback
 parameter_list|(
-name|GimpSet
+name|GimpContainer
 modifier|*
-name|set
+name|container
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -3196,11 +3209,14 @@ if|if
 condition|(
 name|gimage
 operator|&&
-name|gimp_set_have
+name|gimp_container_lookup
 argument_list|(
 name|image_context
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
 name|gimage
+argument_list|)
 argument_list|)
 condition|)
 block|{

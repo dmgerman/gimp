@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
+file|"context_manager.h"
 end_include
 
 begin_include
@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontext.h"
 end_include
 
@@ -55,12 +61,6 @@ begin_include
 include|#
 directive|include
 file|"gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpset.h"
 end_include
 
 begin_include
@@ -1716,11 +1716,14 @@ if|if
 condition|(
 name|gimage
 operator|&&
-name|gimp_set_have
+name|gimp_container_lookup
 argument_list|(
 name|image_context
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
 name|gimage
+argument_list|)
 argument_list|)
 condition|)
 block|{

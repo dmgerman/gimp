@@ -42,13 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
+file|"boundary.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"boundary.h"
+file|"context_manager.h"
 end_include
 
 begin_include
@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdnd.h"
 end_include
 
@@ -97,12 +103,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpset.h"
 end_include
 
 begin_include
@@ -4942,13 +4942,16 @@ name|bcd
 operator|->
 name|gimage
 operator|&&
-name|gimp_set_have
+name|gimp_container_lookup
 argument_list|(
 name|image_context
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
 name|bcd
 operator|->
 name|gimage
+argument_list|)
 argument_list|)
 condition|)
 block|{
@@ -4960,13 +4963,13 @@ name|by_color_select
 operator|=
 name|FALSE
 expr_stmt|;
+block|}
 name|bcd
 operator|->
 name|gimage
 operator|=
 name|NULL
 expr_stmt|;
-block|}
 block|}
 end_function
 

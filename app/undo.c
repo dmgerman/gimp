@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"draw_core.h"
 end_include
 
@@ -233,7 +227,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d31d000103
+DECL|enum|__anon2c10fed30103
 block|{
 DECL|enumerator|UNDO
 name|UNDO

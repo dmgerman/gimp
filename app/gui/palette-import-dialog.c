@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
+file|"context_manager.h"
 end_include
 
 begin_include
@@ -148,7 +148,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c73306e0103
+DECL|enum|__anon27dedba40103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -1979,12 +1979,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|palette_import_image_new (GimpSet * set,GimpImage * gimage,gpointer data)
+DECL|function|palette_import_image_new (GimpContainer * container,GimpImage * gimage,gpointer data)
 name|palette_import_image_new
 parameter_list|(
-name|GimpSet
+name|GimpContainer
 modifier|*
-name|set
+name|container
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -2085,12 +2085,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|palette_import_image_destroyed (GimpSet * set,GimpImage * gimage,gpointer data)
+DECL|function|palette_import_image_destroyed (GimpContainer * container,GimpImage * gimage,gpointer data)
 name|palette_import_image_destroyed
 parameter_list|(
-name|GimpSet
+name|GimpContainer
 modifier|*
-name|set
+name|container
 parameter_list|,
 name|GimpImage
 modifier|*
