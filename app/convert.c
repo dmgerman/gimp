@@ -4,11 +4,11 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/*    * TODO for Convert:    *    *   Make GRAYSCALE->INDEXED sane again (done?)    *    *   Use palette of another open INDEXED image    *    * Post-1.0 TODO:    *    *   Different dither types    *    *   Alpha dithering    */
+comment|/*    * TODO for Convert:    *    *   Use palette of another open INDEXED image    *    *   Different dither types    *    *   Alpha dithering    */
 end_comment
 
 begin_comment
-comment|/*  * 97/11/14 - added a proper pdb interface and support for dithering  *  to custom palettes (based on a patch by Eric Hernes) [Yosh]  *  * 97/11/04 - fixed the accidental use of the colour-counting case  *  when palette_type is WEB or MONO. [Adam]  *  * 97/10/25 - colour-counting implemented (could use some hashing, but  *  performance actually seems okay) - now RGB->INDEXED conversion isn't  *  destructive if it doesn't have to be. [Adam]  *  * 97/10/14 - fixed divide-by-zero when converting a completely transparent  *  RGB image to indexed. [Adam]  *  * 97/07/01 - started todo/revision log.  Put code back in to  *  eliminate full-alpha pixels from RGB histogram.  *  [Adam D. Moss - adam@gimp.org]  */
+comment|/*  * 98/03/23 - fixed a longstanding fencepost - hopefully the *right*  *  way, *again*.  (anyone ELSE want a go?  okay, just kidding... :))  *  [Adam]  *  * 97/11/14 - added a proper pdb interface and support for dithering  *  to custom palettes (based on a patch by Eric Hernes) [Yosh]  *  * 97/11/04 - fixed the accidental use of the colour-counting case  *  when palette_type is WEB or MONO. [Adam]  *  * 97/10/25 - colour-counting implemented (could use some hashing, but  *  performance actually seems okay) - now RGB->INDEXED conversion isn't  *  destructive if it doesn't have to be. [Adam]  *  * 97/10/14 - fixed divide-by-zero when converting a completely transparent  *  RGB image to indexed. [Adam]  *  * 97/07/01 - started todo/revision log.  Put code back in to  *  eliminate full-alpha pixels from RGB histogram.  *  [Adam D. Moss - adam@gimp.org]  */
 end_comment
 
 begin_include
@@ -1816,7 +1816,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af8af260108
+DECL|struct|__anon2bb9d42e0108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1863,7 +1863,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af8af260208
+DECL|struct|__anon2bb9d42e0208
 block|{
 DECL|member|ncolors
 name|long
@@ -1882,7 +1882,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af8af260308
+DECL|struct|__anon2bb9d42e0308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -6425,7 +6425,9 @@ name|already_found
 goto|;
 block|}
 comment|/* Colour was not in the table of 		       * existing colours 		       */
-comment|/* Remember the new colour we just found. 		       */
+name|num_found_cols
+operator|++
+expr_stmt|;
 if|if
 condition|(
 name|num_found_cols
@@ -6440,16 +6442,21 @@ name|TRUE
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"max colours exceeded - needs quantize.\n"
+literal|"\nmax colours exceeded - needs quantize.\n"
 argument_list|)
 expr_stmt|;
 goto|goto
 name|already_found
 goto|;
 block|}
+else|else
+block|{
+comment|/* Remember the new colour we just found. 			   */
 name|found_cols
 index|[
 name|num_found_cols
+operator|-
+literal|1
 index|]
 index|[
 literal|0
@@ -6463,6 +6470,8 @@ expr_stmt|;
 name|found_cols
 index|[
 name|num_found_cols
+operator|-
+literal|1
 index|]
 index|[
 literal|1
@@ -6476,6 +6485,8 @@ expr_stmt|;
 name|found_cols
 index|[
 name|num_found_cols
+operator|-
+literal|1
 index|]
 index|[
 literal|2
@@ -6486,9 +6497,7 @@ index|[
 name|BLUE_PIX
 index|]
 expr_stmt|;
-name|num_found_cols
-operator|++
-expr_stmt|;
+block|}
 block|}
 block|}
 name|already_found
