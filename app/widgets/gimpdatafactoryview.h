@@ -22,26 +22,6 @@ directive|include
 file|"gimpcontainereditor.h"
 end_include
 
-begin_typedef
-DECL|typedef|GimpDataEditFunc
-typedef|typedef
-name|void
-function_decl|(
-modifier|*
-name|GimpDataEditFunc
-function_decl|)
-parameter_list|(
-name|GimpData
-modifier|*
-name|data
-parameter_list|,
-name|GtkWidget
-modifier|*
-name|parent
-parameter_list|)
-function_decl|;
-end_typedef
-
 begin_define
 DECL|macro|GIMP_TYPE_DATA_FACTORY_VIEW
 define|#
