@@ -29,8 +29,11 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289444540103
+DECL|enum|__anon2c6313a00103
 block|{
+DECL|enumerator|VECTORS_SELECT_VECTOR
+name|VECTORS_SELECT_VECTOR
+block|,
 DECL|enumerator|VECTORS_CREATE_VECTOR
 name|VECTORS_CREATE_VECTOR
 block|,
@@ -239,6 +242,11 @@ modifier|*
 name|sel_stroke
 decl_stmt|;
 comment|/*  selected stroke                   */
+DECL|member|select_vectors
+name|GimpVectors
+modifier|*
+name|select_vectors
+decl_stmt|;
 block|}
 struct|;
 end_struct

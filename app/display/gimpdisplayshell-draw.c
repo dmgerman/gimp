@@ -292,7 +292,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e91e520103
+DECL|enum|__anon27c980bc0103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -7040,6 +7040,8 @@ expr_stmt|;
 if|if
 condition|(
 name|coords
+operator|&&
+name|coords
 operator|->
 name|len
 condition|)
@@ -7168,6 +7170,10 @@ name|gdk_coords
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|coords
+condition|)
 name|g_array_free
 argument_list|(
 name|coords
