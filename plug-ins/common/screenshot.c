@@ -128,7 +128,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b64ce880108
+DECL|struct|__anon27c1cbeb0108
 block|{
 DECL|member|root
 name|gboolean
@@ -1072,7 +1072,7 @@ literal|0
 return|;
 endif|#
 directive|endif
-comment|/* G_OS_WIN32 */
+comment|/* GDK_WINDOWING_WIN32 */
 block|}
 end_function
 
