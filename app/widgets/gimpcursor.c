@@ -226,7 +226,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3e48e30108
+DECL|struct|__anon2c9b48790108
 block|{
 DECL|member|bits
 name|guchar
@@ -1053,6 +1053,15 @@ operator|=
 name|gdk_event_get
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|event
+condition|)
+block|{
+comment|/* Do nothing */
+block|}
+elseif|else
 if|if
 condition|(
 operator|(

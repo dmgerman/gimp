@@ -3006,6 +3006,9 @@ argument_list|()
 expr_stmt|;
 if|if
 condition|(
+operator|!
+name|event
+operator|||
 name|orig_widget
 operator|!=
 name|gtk_get_event_widget
@@ -3125,6 +3128,14 @@ operator|=
 literal|1
 expr_stmt|;
 block|}
+if|if
+condition|(
+operator|!
+name|event
+condition|)
+empty_stmt|;
+comment|/* Do nothing */
+elseif|else
 if|if
 condition|(
 operator|!

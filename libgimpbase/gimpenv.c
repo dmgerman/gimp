@@ -79,6 +79,31 @@ begin_comment
 comment|/* For GetModuleFileName */
 end_comment
 
+begin_include
+include|#
+directive|include
+file|<io.h>
+end_include
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|S_IWUSR
+end_ifndef
+
+begin_define
+DECL|macro|S_IWUSR
+define|#
+directive|define
+name|S_IWUSR
+value|_S_IWRITE
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -99,6 +124,41 @@ define|#
 directive|define
 name|S_IWOTH
 value|(_S_IWRITE>>6)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|S_ISDIR
+end_ifndef
+
+begin_define
+DECL|macro|__S_ISTYPE (mode,mask)
+define|#
+directive|define
+name|__S_ISTYPE
+parameter_list|(
+name|mode
+parameter_list|,
+name|mask
+parameter_list|)
+value|(((mode)& _S_IFMT) == (mask))
+end_define
+
+begin_define
+DECL|macro|S_ISDIR (mode)
+define|#
+directive|define
+name|S_ISDIR
+parameter_list|(
+name|mode
+parameter_list|)
+value|__S_ISTYPE((mode), _S_IFDIR)
 end_define
 
 begin_endif
