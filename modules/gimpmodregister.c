@@ -36,18 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/color_selector.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/color_display.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimpmodule.h>
 end_include
 

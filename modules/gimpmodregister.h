@@ -25,13 +25,13 @@ end_ifdef
 begin_include
 include|#
 directive|include
-file|<libgimp/color_display.h>
+file|<libgimp/gimpcolordisplay.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<libgimp/color_selector.h>
+file|<libgimp/gimpcolorselector.h>
 end_include
 
 begin_struct
