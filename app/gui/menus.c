@@ -246,12 +246,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimphelp.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
 end_include
 
@@ -8567,6 +8561,8 @@ name|toolbox_factory
 operator|=
 name|gimp_item_factory_new
 argument_list|(
+name|gimp
+argument_list|,
 name|GTK_TYPE_MENU_BAR
 argument_list|,
 literal|"<Toolbox>"
@@ -8603,6 +8599,8 @@ name|image_factory
 operator|=
 name|gimp_item_factory_new
 argument_list|(
+name|gimp
+argument_list|,
 name|GTK_TYPE_MENU
 argument_list|,
 literal|"<Image>"
@@ -8639,6 +8637,8 @@ name|ADD_FACTORY
 argument_list|(
 name|gimp_item_factory_new
 argument_list|(
+name|gimp
+argument_list|,
 name|GTK_TYPE_MENU
 argument_list|,
 literal|"<Load>"
@@ -8664,6 +8664,8 @@ name|ADD_FACTORY
 argument_list|(
 name|gimp_item_factory_new
 argument_list|(
+name|gimp
+argument_list|,
 name|GTK_TYPE_MENU
 argument_list|,
 literal|"<Save>"
@@ -8689,6 +8691,8 @@ name|ADD_FACTORY
 argument_list|(
 name|gimp_item_factory_new
 argument_list|(
+name|gimp
+argument_list|,
 name|GTK_TYPE_MENU
 argument_list|,
 literal|"<Layers>"
@@ -8714,6 +8718,8 @@ name|ADD_FACTORY
 argument_list|(
 name|gimp_item_factory_new
 argument_list|(
+name|gimp
+argument_list|,
 name|GTK_TYPE_MENU
 argument_list|,
 literal|"<Channels>"
@@ -8739,6 +8745,8 @@ name|ADD_FACTORY
 argument_list|(
 name|gimp_item_factory_new
 argument_list|(
+name|gimp
+argument_list|,
 name|GTK_TYPE_MENU
 argument_list|,
 literal|"<Vectors>"
@@ -8764,6 +8772,8 @@ name|ADD_FACTORY
 argument_list|(
 name|gimp_item_factory_new
 argument_list|(
+name|gimp
+argument_list|,
 name|GTK_TYPE_MENU
 argument_list|,
 literal|"<Paths>"
@@ -8789,6 +8799,8 @@ name|ADD_FACTORY
 argument_list|(
 name|gimp_item_factory_new
 argument_list|(
+name|gimp
+argument_list|,
 name|GTK_TYPE_MENU
 argument_list|,
 literal|"<Dialogs>"
@@ -8814,6 +8826,8 @@ name|ADD_FACTORY
 argument_list|(
 name|gimp_item_factory_new
 argument_list|(
+name|gimp
+argument_list|,
 name|GTK_TYPE_MENU
 argument_list|,
 literal|"<Brushes>"
@@ -8839,6 +8853,8 @@ name|ADD_FACTORY
 argument_list|(
 name|gimp_item_factory_new
 argument_list|(
+name|gimp
+argument_list|,
 name|GTK_TYPE_MENU
 argument_list|,
 literal|"<Patterns>"
@@ -8864,6 +8880,8 @@ name|ADD_FACTORY
 argument_list|(
 name|gimp_item_factory_new
 argument_list|(
+name|gimp
+argument_list|,
 name|GTK_TYPE_MENU
 argument_list|,
 literal|"<GradientEditor>"
@@ -8889,6 +8907,8 @@ name|ADD_FACTORY
 argument_list|(
 name|gimp_item_factory_new
 argument_list|(
+name|gimp
+argument_list|,
 name|GTK_TYPE_MENU
 argument_list|,
 literal|"<Gradients>"
@@ -8914,6 +8934,8 @@ name|ADD_FACTORY
 argument_list|(
 name|gimp_item_factory_new
 argument_list|(
+name|gimp
+argument_list|,
 name|GTK_TYPE_MENU
 argument_list|,
 literal|"<PaletteEditor>"
@@ -8939,6 +8961,8 @@ name|ADD_FACTORY
 argument_list|(
 name|gimp_item_factory_new
 argument_list|(
+name|gimp
+argument_list|,
 name|GTK_TYPE_MENU
 argument_list|,
 literal|"<Palettes>"
@@ -8964,6 +8988,8 @@ name|ADD_FACTORY
 argument_list|(
 name|gimp_item_factory_new
 argument_list|(
+name|gimp
+argument_list|,
 name|GTK_TYPE_MENU
 argument_list|,
 literal|"<Buffers>"
@@ -8989,6 +9015,8 @@ name|ADD_FACTORY
 argument_list|(
 name|gimp_item_factory_new
 argument_list|(
+name|gimp
+argument_list|,
 name|GTK_TYPE_MENU
 argument_list|,
 literal|"<Documents>"
@@ -9014,6 +9042,8 @@ name|ADD_FACTORY
 argument_list|(
 name|gimp_item_factory_new
 argument_list|(
+name|gimp
+argument_list|,
 name|GTK_TYPE_MENU
 argument_list|,
 literal|"<ColormapEditor>"
@@ -9039,6 +9069,8 @@ name|ADD_FACTORY
 argument_list|(
 name|gimp_item_factory_new
 argument_list|(
+name|gimp
+argument_list|,
 name|GTK_TYPE_MENU
 argument_list|,
 literal|"<QMask>"

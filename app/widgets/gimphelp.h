@@ -18,7 +18,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf74b1d0103
+DECL|enum|__anon294775490103
 block|{
 DECL|enumerator|HELP_BROWSER_GIMP
 name|HELP_BROWSER_GIMP
@@ -30,6 +30,26 @@ enum|;
 end_enum
 
 begin_comment
+comment|/*  The standard help function  */
+end_comment
+
+begin_function_decl
+name|void
+name|_gimp_standard_help_func
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|help_data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  the main help function  */
 end_comment
 
@@ -37,6 +57,10 @@ begin_function_decl
 name|void
 name|gimp_help
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*

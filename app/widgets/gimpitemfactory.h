@@ -160,6 +160,11 @@ DECL|member|parent_instance
 name|GtkItemFactory
 name|parent_instance
 decl_stmt|;
+DECL|member|gimp
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
 DECL|member|factory_path
 name|gchar
 modifier|*
@@ -206,6 +211,10 @@ name|GimpItemFactory
 modifier|*
 name|gimp_item_factory_new
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GType
 name|container_type
 parameter_list|,

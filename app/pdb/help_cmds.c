@@ -169,6 +169,8 @@ name|success
 condition|)
 name|gimp_help
 argument_list|(
+name|gimp
+argument_list|,
 name|plug_ins_help_path
 argument_list|(
 name|prog_name

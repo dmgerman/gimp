@@ -242,6 +242,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_standard_help_func
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|help_data
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

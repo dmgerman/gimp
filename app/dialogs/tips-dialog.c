@@ -482,17 +482,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* destroy the tips window if the mainlevel gtk_main() function is left */
-name|gtk_quit_add_destroy
-argument_list|(
-literal|1
-argument_list|,
-name|GTK_OBJECT
-argument_list|(
-name|tips_dialog
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|vbox
 operator|=
 name|gtk_vbox_new

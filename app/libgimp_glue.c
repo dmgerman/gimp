@@ -51,6 +51,12 @@ directive|include
 file|"app_procs.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimphelp.h"
+end_include
+
 begin_define
 DECL|macro|__LIBGIMP_GLUE_C__
 define|#
@@ -483,6 +489,27 @@ argument_list|,
 name|unit
 argument_list|)
 return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_standard_help_func (const gchar * help_data)
+name|gimp_standard_help_func
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|help_data
+parameter_list|)
+block|{
+name|_gimp_standard_help_func
+argument_list|(
+name|the_gimp
+argument_list|,
+name|help_data
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

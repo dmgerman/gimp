@@ -65,6 +65,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb/procedural_db.h"
 end_include
 
@@ -78,12 +84,6 @@ begin_include
 include|#
 directive|include
 file|"plug-in/plug-in.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"app_procs.h"
 end_include
 
 begin_include
@@ -136,6 +136,11 @@ DECL|struct|_GimpIdleHelp
 struct|struct
 name|_GimpIdleHelp
 block|{
+DECL|member|gimp
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
 DECL|member|help_path
 name|gchar
 modifier|*
@@ -170,6 +175,10 @@ specifier|static
 name|gboolean
 name|gimp_help_internal
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -193,6 +202,10 @@ specifier|static
 name|void
 name|gimp_help_netscape
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -221,17 +234,31 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_standard_help_func (const gchar * help_data)
-name|gimp_standard_help_func
+DECL|function|_gimp_standard_help_func (Gimp * gimp,const gchar * help_data)
+name|_gimp_standard_help_func
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
 name|help_data
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_help
 argument_list|(
+name|gimp
+argument_list|,
 name|NULL
 argument_list|,
 name|help_data
@@ -246,9 +273,13 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_help (const gchar * help_path,const gchar * help_data)
+DECL|function|gimp_help (Gimp * gimp,const gchar * help_path,const gchar * help_data)
 name|gimp_help
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -260,6 +291,14 @@ modifier|*
 name|help_data
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimprc
@@ -279,6 +318,12 @@ name|GimpIdleHelp
 argument_list|,
 literal|1
 argument_list|)
+expr_stmt|;
+name|idle_help
+operator|->
+name|gimp
+operator|=
+name|gimp
 expr_stmt|;
 if|if
 condition|(
@@ -452,6 +497,10 @@ name|gimp_help_internal
 argument_list|(
 name|idle_help
 operator|->
+name|gimp
+argument_list|,
+name|idle_help
+operator|->
 name|help_path
 argument_list|,
 name|current_locale
@@ -467,6 +516,10 @@ name|HELP_BROWSER_NETSCAPE
 case|:
 name|gimp_help_netscape
 argument_list|(
+name|idle_help
+operator|->
+name|gimp
+argument_list|,
 name|idle_help
 operator|->
 name|help_path
@@ -587,9 +640,13 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_help_internal (const gchar * help_path,const gchar * current_locale,const gchar * help_data)
+DECL|function|gimp_help_internal (Gimp * gimp,const gchar * help_path,const gchar * current_locale,const gchar * help_data)
 name|gimp_help_internal
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -615,7 +672,7 @@ name|proc_rec
 operator|=
 name|procedural_db_lookup
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|,
 literal|"extension_gimp_help_browser_temp"
 argument_list|)
@@ -637,7 +694,7 @@ name|proc_rec
 operator|=
 name|procedural_db_lookup
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|,
 literal|"extension_gimp_help_browser"
 argument_list|)
@@ -807,7 +864,7 @@ name|help_data
 expr_stmt|;
 name|plug_in_run
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|,
 name|proc_rec
 argument_list|,
@@ -841,7 +898,7 @@ name|return_vals
 operator|=
 name|procedural_db_run_proc
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|,
 literal|"extension_gimp_help_browser_temp"
 argument_list|,
@@ -880,9 +937,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_help_netscape (const gchar * help_path,const gchar * current_locale,const gchar * help_data)
+DECL|function|gimp_help_netscape (Gimp * gimp,const gchar * help_path,const gchar * current_locale,const gchar * help_data)
 name|gimp_help_netscape
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -989,7 +1050,7 @@ name|return_vals
 operator|=
 name|procedural_db_run_proc
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|,
 literal|"extension_web_browser"
 argument_list|,
