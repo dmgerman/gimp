@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"modregister.h"
+file|"gimpmodregister.h"
 end_include
 
 begin_decl_stmt
