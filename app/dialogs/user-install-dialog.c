@@ -197,7 +197,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2991b8980103
+DECL|enum|__anon293fd2f40103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -222,7 +222,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2991b8980203
+DECL|enum|__anon293fd2f40203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -434,7 +434,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2991b8980303
+DECL|enum|__anon293fd2f40303
 block|{
 DECL|enumerator|TREE_ITEM_DO_NOTHING
 name|TREE_ITEM_DO_NOTHING
@@ -456,7 +456,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2991b8980408
+DECL|struct|__anon293fd2f40408
 block|{
 DECL|member|directory
 name|gboolean
@@ -1197,6 +1197,11 @@ comment|/* else fallthrough */
 case|case
 name|TUNING_PAGE
 case|:
+if|if
+condition|(
+operator|!
+name|migrate
+condition|)
 name|gimp_rc_save
 argument_list|(
 name|gimprc
@@ -5299,10 +5304,6 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|log_view
-decl_stmt|;
-name|gchar
-modifier|*
-name|msg
 decl_stmt|;
 name|GError
 modifier|*
