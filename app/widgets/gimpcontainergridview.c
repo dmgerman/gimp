@@ -943,13 +943,9 @@ argument_list|)
 expr_stmt|;
 name|preview
 operator|=
-name|gimp_preview_new
+name|gimp_preview_new_full
 argument_list|(
 name|viewable
-argument_list|,
-name|NULL
-argument_list|,
-name|FALSE
 argument_list|,
 name|view
 operator|->
@@ -960,6 +956,8 @@ operator|->
 name|preview_height
 argument_list|,
 literal|1
+argument_list|,
+name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
