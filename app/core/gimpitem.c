@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc0694a0103
+DECL|enum|__anon292bfbbd0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -3582,15 +3582,6 @@ name|stroke_desc
 argument_list|)
 condition|)
 block|{
-name|GimpImage
-modifier|*
-name|gimage
-init|=
-name|gimp_item_get_image
-argument_list|(
-name|item
-argument_list|)
-decl_stmt|;
 name|GimpPaintInfo
 modifier|*
 name|paint_info
@@ -3613,13 +3604,7 @@ name|paint_options
 operator|=
 name|gimp_paint_options_new
 argument_list|(
-name|gimage
-operator|->
-name|gimp
-argument_list|,
 name|paint_info
-operator|->
-name|paint_options_type
 argument_list|)
 expr_stmt|;
 comment|/*  undefine the paint-relevant context properties and get them                *  from the passed context                */

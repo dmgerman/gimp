@@ -217,6 +217,11 @@ DECL|member|parent_instance
 name|GimpToolOptions
 name|parent_instance
 decl_stmt|;
+DECL|member|paint_info
+name|GimpPaintInfo
+modifier|*
+name|paint_info
+decl_stmt|;
 DECL|member|application_mode
 name|GimpPaintApplicationMode
 name|application_mode
@@ -276,12 +281,9 @@ name|GimpPaintOptions
 modifier|*
 name|gimp_paint_options_new
 parameter_list|(
-name|Gimp
+name|GimpPaintInfo
 modifier|*
-name|gimp
-parameter_list|,
-name|GType
-name|options_type
+name|paint_info
 parameter_list|)
 function_decl|;
 end_function_decl

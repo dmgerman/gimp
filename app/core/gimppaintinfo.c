@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint/gimppaintoptions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp.h"
 end_include
 
@@ -493,17 +499,9 @@ name|paint_info
 operator|->
 name|paint_options
 operator|=
-name|g_object_new
+name|gimp_paint_options_new
 argument_list|(
 name|paint_info
-operator|->
-name|paint_options_type
-argument_list|,
-literal|"gimp"
-argument_list|,
-name|gimp
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 return|return

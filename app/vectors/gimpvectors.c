@@ -90,18 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimptoolinfo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimptooloptions.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paint/gimppaintcore-stroke.h"
 end_include
 
@@ -143,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c9b5ec0103
+DECL|enum|__anon2756e4410103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -2511,12 +2499,7 @@ name|core
 operator|=
 name|g_object_new
 argument_list|(
-name|GIMP_TOOL_OPTIONS
-argument_list|(
 name|paint_options
-argument_list|)
-operator|->
-name|tool_info
 operator|->
 name|paint_info
 operator|->
