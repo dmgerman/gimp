@@ -768,18 +768,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_select_widget:  * @dname: Title of the dialog to use.  NULL means to use the default title.  * @igradient: Initial gradient name. NULL means to use current selection.   * @cback: a function to call when the selected gradient changes.  * @data: a pointer to arbitary data to be used in the call to @cback.  *  * Creates a new #GtkWidget that completely controls the selection of a   * gradient.  This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns:A #GtkWidget that you can use in your UI.  */
+comment|/**  * gimp_gradient_select_widget:  * @gname: Title of the dialog to use.  NULL means to use the default title.  * @igradient: Initial gradient name. NULL means to use current selection.   * @cback: a function to call when the selected gradient changes.  * @data: a pointer to arbitary data to be used in the call to @cback.  *  * Creates a new #GtkWidget that completely controls the selection of a   * gradient.  This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns:A #GtkWidget that you can use in your UI.  */
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_gradient_select_widget (gchar * dname,gchar * igradient,GimpRunGradientCallback cback,gpointer data)
+DECL|function|gimp_gradient_select_widget (gchar * gname,gchar * igradient,GimpRunGradientCallback cback,gpointer data)
 name|gimp_gradient_select_widget
 parameter_list|(
 name|gchar
 modifier|*
-name|dname
+name|gname
 parameter_list|,
 name|gchar
 modifier|*
@@ -937,7 +937,7 @@ name|gsel
 operator|->
 name|dname
 operator|=
-name|dname
+name|gname
 expr_stmt|;
 name|gsel
 operator|->
