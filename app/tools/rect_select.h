@@ -28,6 +28,12 @@ directive|include
 file|"tools.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpunit.h"
+end_include
+
 begin_typedef
 DECL|typedef|SelectionOptions
 typedef|typedef
@@ -73,6 +79,10 @@ decl_stmt|;
 DECL|member|fixed_height
 name|int
 name|fixed_height
+decl_stmt|;
+DECL|member|fixed_unit
+name|GUnit
+name|fixed_unit
 decl_stmt|;
 block|}
 struct|;
