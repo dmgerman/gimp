@@ -1,7 +1,13 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* scatter_hsv.c -- This is a plug-in for the GIMP (1.0's API)  * Author: Shuji Narazaki<narazaki@InetQ.or.jp>  * Time-stamp:<1997/10/22 01:04:54 narazaki@InetQ.or.jp>  * Version: 0.42  *  * Copyright (C) 1997 Shuji Narazaki<narazaki@InetQ.or.jp>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* scatter_hsv.c -- This is a plug-in for the GIMP (1.0's API)  * Author: Shuji Narazaki<narazaki@InetQ.or.jp>  * Time-stamp:<2000-01-08 02:49:39 yasuhiro>  * Version: 0.42  *  * Copyright (C) 1997 Shuji Narazaki<narazaki@InetQ.or.jp>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
+
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
 
 begin_include
 include|#
@@ -19,6 +25,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimpcolorspace.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_include
@@ -92,22 +104,6 @@ define|#
 directive|define
 name|SHORT_NAME
 value|"scatter_hsv"
-end_define
-
-begin_define
-DECL|macro|PROGRESS_NAME
-define|#
-directive|define
-name|PROGRESS_NAME
-value|"scatter_hsv: scattering..."
-end_define
-
-begin_define
-DECL|macro|MENU_POSITION
-define|#
-directive|define
-name|MENU_POSITION
-value|"<Image>/Filters/Noise/Scatter HSV..."
 end_define
 
 begin_define
@@ -601,7 +597,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2952578e0108
+DECL|struct|__anon2781a3020108
 block|{
 comment|/* gint, gdouble, and so on */
 DECL|member|holdness
@@ -647,7 +643,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2952578e0208
+DECL|struct|__anon2781a3020208
 block|{
 DECL|member|run
 name|gint
@@ -882,13 +878,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
+name|_
+argument_list|(
 literal|"Scattering pixel values in HSV space"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Scattering pixel values in HSV space"
+argument_list|)
 argument_list|,
 literal|"Shuji Narazaki (narazaki@InetQ.or.jp)"
 argument_list|,
@@ -896,7 +901,10 @@ literal|"Shuji Narazaki"
 argument_list|,
 literal|"1997"
 argument_list|,
-name|MENU_POSITION
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Noise/Scatter HSV..."
+argument_list|)
 argument_list|,
 literal|"RGB*"
 argument_list|,
@@ -1016,6 +1024,9 @@ block|{
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|gimp_get_data
 argument_list|(
 name|PLUG_IN_NAME
@@ -1057,6 +1068,9 @@ break|break;
 case|case
 name|RUN_NONINTERACTIVE
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|VALS
 operator|.
 name|holdness
@@ -1113,6 +1127,9 @@ break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_get_data
 argument_list|(
 name|PLUG_IN_NAME
@@ -1361,7 +1378,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_progress_init
 argument_list|(
-name|PROGRESS_NAME
+name|_
+argument_list|(
+literal|"scatter_hsv: scattering..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|srand
@@ -2236,7 +2256,10 @@ name|gtkW_frame_new
 argument_list|(
 name|vbox
 argument_list|,
+name|_
+argument_list|(
 literal|"Parameter Settings"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|table
@@ -2254,7 +2277,10 @@ name|gtkW_table_add_scale_entry
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Holdness"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -2294,7 +2320,10 @@ name|gtkW_table_add_scale_entry
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Hue"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -2334,7 +2363,10 @@ name|gtkW_table_add_scale_entry
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Saturation"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -2374,7 +2406,10 @@ name|gtkW_table_add_scale_entry
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Value"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -2423,7 +2458,10 @@ name|gtkW_frame_new
 argument_list|(
 name|vbox
 argument_list|,
+name|_
+argument_list|(
 literal|"Preview (1:4) - right click to jump"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* preparation for preview */
@@ -3730,7 +3768,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3792,7 +3833,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3920,7 +3964,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS

@@ -34,6 +34,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gtk/gtk.h"
 end_include
 
@@ -47,6 +53,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimpcolorspace.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
@@ -124,7 +136,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8131600108
+DECL|struct|__anon29ab2cfb0108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -187,7 +199,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8131600208
+DECL|struct|__anon29ab2cfb0208
 block|{
 DECL|member|run
 name|gint
@@ -759,11 +771,17 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_sparkle"
 argument_list|,
+name|_
+argument_list|(
 literal|"Simulates pixel bloom and diffraction effects"
+argument_list|)
 argument_list|,
 literal|"No help yet"
 argument_list|,
@@ -773,7 +791,10 @@ literal|"John Beale"
 argument_list|,
 literal|"Version 1.26, December 1998"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Light Effects/Sparkle..."
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -897,6 +918,9 @@ block|{
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
@@ -918,6 +942,9 @@ break|break;
 case|case
 name|RUN_NONINTERACTIVE
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/*  Make sure all the arguments are there!  */
 if|if
 condition|(
@@ -1357,6 +1384,9 @@ break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
@@ -1405,7 +1435,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Sparkling..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_tile_cache_ntiles
@@ -1698,7 +1731,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Sparkle"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -1880,7 +1916,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1939,14 +1978,20 @@ name|tips
 argument_list|,
 name|button
 argument_list|,
+name|_
+argument_list|(
 literal|"Accept settings and apply filter on image"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2003,7 +2048,10 @@ name|tips
 argument_list|,
 name|button
 argument_list|,
+name|_
+argument_list|(
 literal|"Reject any changes and close plug-in"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  parameter settings  */
@@ -2011,7 +2059,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Parameter Settings"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -2090,7 +2141,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Luminosity Threshold"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2261,14 +2315,20 @@ name|tips
 argument_list|,
 name|scale
 argument_list|,
+name|_
+argument_list|(
 literal|"Adjust the Luminosity Threshold"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Flare Intensity"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2439,14 +2499,20 @@ name|tips
 argument_list|,
 name|scale
 argument_list|,
+name|_
+argument_list|(
 literal|"Adjust the Flare Intensity"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Spike Length"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2617,14 +2683,20 @@ name|tips
 argument_list|,
 name|scale
 argument_list|,
+name|_
+argument_list|(
 literal|"Adjust the Spike Length"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Spike Points"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2795,14 +2867,20 @@ name|tips
 argument_list|,
 name|scale
 argument_list|,
+name|_
+argument_list|(
 literal|"Adjust the Number of Spike Points"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Spike Angle (-1: Random)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2974,15 +3052,21 @@ name|tips
 argument_list|,
 name|scale
 argument_list|,
+name|_
+argument_list|(
 literal|"Adjust the Spike Angle (-1 means a Random Angle is choosen)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|label
 operator|=
 name|gtk_label_new
+argument_list|(
+name|_
 argument_list|(
 literal|"Spike Density"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
 argument_list|(
@@ -3152,15 +3236,21 @@ name|tips
 argument_list|,
 name|scale
 argument_list|,
+name|_
+argument_list|(
 literal|"Adjust the Spike Density"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|label
 operator|=
 name|gtk_label_new
+argument_list|(
+name|_
 argument_list|(
 literal|"Opacity"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
 argument_list|(
@@ -3330,15 +3420,21 @@ name|tips
 argument_list|,
 name|scale
 argument_list|,
+name|_
+argument_list|(
 literal|"Adjust the Opacity of the Spikes"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|label
 operator|=
 name|gtk_label_new
+argument_list|(
+name|_
 argument_list|(
 literal|"Random Hue"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
 argument_list|(
@@ -3508,15 +3604,21 @@ name|tips
 argument_list|,
 name|scale
 argument_list|,
+name|_
+argument_list|(
 literal|"Adjust the Value how much the Hue should be changed randomly"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|label
 operator|=
 name|gtk_label_new
+argument_list|(
+name|_
 argument_list|(
 literal|"Random Saturation"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
 argument_list|(
@@ -3686,15 +3788,21 @@ name|tips
 argument_list|,
 name|scale
 argument_list|,
+name|_
+argument_list|(
 literal|"Adjust the Value how much the Saturation should be changed randomly"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|label
 operator|=
 name|gtk_label_new
+argument_list|(
+name|_
 argument_list|(
 literal|"Preserve Luminosity"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
 argument_list|(
@@ -3813,15 +3921,21 @@ name|tips
 argument_list|,
 name|toggle
 argument_list|,
+name|_
+argument_list|(
 literal|"Should the Luminosity be preserved?"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|label
 operator|=
 name|gtk_label_new
+argument_list|(
+name|_
 argument_list|(
 literal|"Invers"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
 argument_list|(
@@ -3940,14 +4054,20 @@ name|tips
 argument_list|,
 name|toggle
 argument_list|,
+name|_
+argument_list|(
 literal|"Should an Inverse Effect be done?"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Add Border"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -4067,7 +4187,10 @@ name|tips
 argument_list|,
 name|toggle
 argument_list|,
+name|_
+argument_list|(
 literal|"Draw a Border of Spikes around the Image"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  colortype  */
@@ -4075,7 +4198,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Natural Color"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -4203,15 +4329,21 @@ name|tips
 argument_list|,
 name|toggle
 argument_list|,
+name|_
+argument_list|(
 literal|"Use the Color of the Image"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|label
 operator|=
 name|gtk_label_new
+argument_list|(
+name|_
 argument_list|(
 literal|"Foreground Color"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
 argument_list|(
@@ -4338,14 +4470,20 @@ name|tips
 argument_list|,
 name|toggle
 argument_list|,
+name|_
+argument_list|(
 literal|"Use the Foreground Color"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Background Color"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -4473,7 +4611,10 @@ name|tips
 argument_list|,
 name|toggle
 argument_list|,
+name|_
+argument_list|(
 literal|"Use the Background Color"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

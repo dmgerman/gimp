@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
 end_include
 
@@ -37,6 +43,12 @@ begin_include
 include|#
 directive|include
 file|"gtk/gtk.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
@@ -241,11 +253,17 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_smooth_palette"
 argument_list|,
+name|_
+argument_list|(
 literal|"derive smooth palette from image"
+argument_list|)
 argument_list|,
 literal|"help!"
 argument_list|,
@@ -255,7 +273,10 @@ literal|"Scott Draves"
 argument_list|,
 literal|"1997"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Colors/Smooth Palette..."
+argument_list|)
 argument_list|,
 literal|"RGB*"
 argument_list|,
@@ -274,7 +295,7 @@ block|}
 end_function
 
 begin_struct
-DECL|struct|__anon2a247bac0108
+DECL|struct|__anon27c7770b0108
 specifier|static
 struct|struct
 block|{
@@ -429,6 +450,9 @@ block|{
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|gimp_get_data
 argument_list|(
 literal|"plug_in_smooth_palette"
@@ -448,6 +472,9 @@ break|break;
 case|case
 name|RUN_NONINTERACTIVE
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|nparams
@@ -562,6 +589,9 @@ break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
@@ -608,7 +638,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Deriving smooth palette..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_tile_cache_ntiles
@@ -964,7 +997,10 @@ name|gimp_layer_new
 argument_list|(
 name|new_image_id
 argument_list|,
+name|_
+argument_list|(
 literal|"Background"
+argument_list|)
 argument_list|,
 name|config
 operator|.
@@ -2147,7 +2183,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Smooth Palette"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -2253,7 +2292,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2310,7 +2352,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2433,7 +2478,10 @@ name|w
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Width:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2578,9 +2626,12 @@ block|{
 name|w
 operator|=
 name|gtk_label_new
+argument_list|(
+name|_
 argument_list|(
 literal|"Height:"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
 argument_list|(
@@ -2725,7 +2776,10 @@ name|w
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Search Time:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment

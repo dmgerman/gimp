@@ -26,7 +26,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
@@ -215,13 +227,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_semiflatten"
 argument_list|,
+name|_
+argument_list|(
 literal|"Flatten pixels in an RGBA image that aren't completely transparent against the current GIMP background colour"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"This plugin flattens pixels in an RGBA image that aren't completely transparent against the current GIMP background colour"
+argument_list|)
 argument_list|,
 literal|"Adam D. Moss (adam@foxbox.org)"
 argument_list|,
@@ -229,7 +250,10 @@ literal|"Adam D. Moss (adam@foxbox.org)"
 argument_list|,
 literal|"27th January 1998"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Colors/Semi-Flatten"
+argument_list|)
 argument_list|,
 literal|"RGBA"
 argument_list|,
@@ -323,6 +347,9 @@ name|d_status
 operator|=
 name|status
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/*  Get the specified drawable  */
 name|drawable
 operator|=
@@ -369,7 +396,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Semi-Flatten..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_tile_cache_ntiles
