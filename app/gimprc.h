@@ -426,13 +426,13 @@ end_comment
 
 begin_function_decl
 name|void
-name|init_parse_buffers
+name|parse_buffers_init
 parameter_list|()
 function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* this has to be called before any file 				* is parsed 				*/
+comment|/* this has to be called before any file 				   * is parsed 				   */
 end_comment
 
 begin_function_decl
@@ -445,7 +445,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|parse_gimprc_file
 parameter_list|(
 name|char

@@ -2319,7 +2319,7 @@ expr_stmt|;
 name|RESET_BAR
 argument_list|()
 expr_stmt|;
-name|init_parse_buffers
+name|parse_buffers_init
 argument_list|()
 expr_stmt|;
 name|parse_unitrc

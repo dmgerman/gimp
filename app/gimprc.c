@@ -206,7 +206,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon28e847610103
+DECL|enum|__anon2ad3c6fb0103
 typedef|typedef
 enum|enum
 block|{
@@ -2529,8 +2529,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|init_parse_buffers ()
-name|init_parse_buffers
+DECL|function|parse_buffers_init ()
+name|parse_buffers_init
 parameter_list|()
 block|{
 name|parse_info
@@ -2734,7 +2734,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|parse_gimprc_file (char * filename)
 name|parse_gimprc_file
 parameter_list|(
@@ -2800,7 +2800,9 @@ name|parse_info
 operator|.
 name|fp
 condition|)
-return|return;
+return|return
+name|FALSE
+return|;
 if|if
 condition|(
 operator|(
@@ -2932,7 +2934,13 @@ argument_list|,
 name|token_sym
 argument_list|)
 expr_stmt|;
+return|return
+name|FALSE
+return|;
 block|}
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
