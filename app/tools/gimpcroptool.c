@@ -159,7 +159,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd52ba00103
+DECL|enum|__anon2c5d105b0103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -4292,12 +4292,9 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Crop"
-argument_list|)
+name|GTK_STOCK_CLOSE
 argument_list|,
-name|crop_crop_callback
+name|crop_close_callback
 argument_list|,
 name|NULL
 argument_list|,
@@ -4305,7 +4302,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -4326,9 +4323,12 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-name|GTK_STOCK_CLOSE
+name|_
+argument_list|(
+literal|"Crop"
+argument_list|)
 argument_list|,
-name|crop_close_callback
+name|crop_crop_callback
 argument_list|,
 name|NULL
 argument_list|,
@@ -4336,7 +4336,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,

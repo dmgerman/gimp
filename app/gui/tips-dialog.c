@@ -577,7 +577,7 @@ argument_list|()
 argument_list|,
 literal|"images"
 argument_list|,
-literal|"tips_wilber.png"
+literal|"wilber-tips.png"
 argument_list|,
 name|NULL
 argument_list|)
