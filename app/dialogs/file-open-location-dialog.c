@@ -687,6 +687,14 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|name
+condition|)
+return|return
+name|FALSE
+return|;
 name|normalized
 operator|=
 name|g_utf8_normalize
