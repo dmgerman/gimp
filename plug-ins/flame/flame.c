@@ -524,7 +524,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon2b727c650108
+DECL|struct|__anon277a3e150108
 block|{
 DECL|member|randomize
 name|gint
@@ -6407,7 +6407,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"X:"
+literal|"Y:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH

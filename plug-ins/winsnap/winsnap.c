@@ -368,7 +368,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27e712c10108
+DECL|struct|__anon2c0a859b0108
 typedef|typedef
 struct|struct
 block|{
@@ -415,7 +415,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27e712c10208
+DECL|struct|__anon2c0a859b0208
 typedef|typedef
 struct|struct
 block|{
@@ -3958,9 +3958,6 @@ block|{
 name|OUT_ARGS
 block|}
 decl_stmt|;
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
 comment|/* the installation of the plugin */
 name|gimp_install_procedure
 argument_list|(
@@ -4098,6 +4095,9 @@ operator|.
 name|data
 operator|.
 name|d_int32
+expr_stmt|;
+name|INIT_I18N_UI
+argument_list|()
 expr_stmt|;
 comment|/* Set up the rest of the return parameters */
 name|values

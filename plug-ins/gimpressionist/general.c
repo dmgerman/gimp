@@ -1908,7 +1908,10 @@ argument_list|)
 argument_list|,
 name|tmpw
 argument_list|,
+name|_
+argument_list|(
 literal|"Selects if to place strokes all the way out to the edges of the image"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

@@ -191,7 +191,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon2b8a7ca20103
+DECL|enum|__anon2c098a4a0103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -211,7 +211,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8a7ca20208
+DECL|struct|__anon2c098a4a0208
 block|{
 DECL|member|x1
 name|gdouble
@@ -421,7 +421,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8a7ca20308
+DECL|struct|__anon2c098a4a0308
 block|{
 DECL|member|x1
 name|gint
@@ -464,7 +464,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8a7ca20408
+DECL|struct|__anon2c098a4a0408
 block|{
 DECL|member|width
 name|gint
@@ -1023,7 +1023,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8a7ca20508
+DECL|struct|__anon2c098a4a0508
 block|{
 DECL|member|r
 name|guchar
@@ -2824,7 +2824,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8a7ca20608
+DECL|struct|__anon2c098a4a0608
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -4430,7 +4430,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"X1:"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -4495,7 +4498,10 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
+name|_
+argument_list|(
 literal|"X2:"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -4560,7 +4566,10 @@ literal|0
 argument_list|,
 literal|2
 argument_list|,
+name|_
+argument_list|(
 literal|"Y1:"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -4625,7 +4634,10 @@ literal|0
 argument_list|,
 literal|3
 argument_list|,
+name|_
+argument_list|(
 literal|"Y2:"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -4690,7 +4702,10 @@ literal|0
 argument_list|,
 literal|4
 argument_list|,
+name|_
+argument_list|(
 literal|"Depth:"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,

@@ -182,7 +182,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6fb7ed0108
+DECL|struct|__anon29e121c20108
 block|{
 DECL|member|x
 DECL|member|y
@@ -200,7 +200,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6fb7ed0208
+DECL|struct|__anon29e121c20208
 block|{
 DECL|member|npts
 name|gint
@@ -222,7 +222,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6fb7ed0308
+DECL|struct|__anon29e121c20308
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -251,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6fb7ed0408
+DECL|struct|__anon29e121c20408
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -310,7 +310,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6fb7ed0508
+DECL|struct|__anon29e121c20508
 block|{
 DECL|member|run
 name|gint
@@ -2868,7 +2868,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type

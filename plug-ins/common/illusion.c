@@ -173,7 +173,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2a2c4d0108
+DECL|struct|__anon2bdf33900108
 block|{
 DECL|member|division
 name|gint32
@@ -3233,7 +3233,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Mode 1"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -3332,7 +3335,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Mode 2"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group

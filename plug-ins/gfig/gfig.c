@@ -1110,7 +1110,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4c29e00103
+DECL|enum|__anon27df458f0103
 block|{
 DECL|enumerator|LINE
 name|LINE
@@ -1162,7 +1162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4c29e00203
+DECL|enum|__anon27df458f0203
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -1183,7 +1183,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4c29e00303
+DECL|enum|__anon27df458f0303
 block|{
 DECL|enumerator|ORIGINAL_LAYER
 name|ORIGINAL_LAYER
@@ -1204,7 +1204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4c29e00403
+DECL|enum|__anon27df458f0403
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -1231,7 +1231,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4c29e00503
+DECL|enum|__anon27df458f0503
 block|{
 DECL|enumerator|PAINT_BRUSH_TYPE
 name|PAINT_BRUSH_TYPE
@@ -1252,7 +1252,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4c29e00603
+DECL|enum|__anon27df458f0603
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -1420,7 +1420,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4c29e00708
+DECL|struct|__anon27df458f0708
 block|{
 DECL|member|gridspacing
 name|gint
@@ -1459,7 +1459,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4c29e00808
+DECL|struct|__anon27df458f0808
 block|{
 DECL|member|gridspacing
 name|void
@@ -1508,7 +1508,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4c29e00908
+DECL|struct|__anon27df458f0908
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -1686,7 +1686,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4c29e00a03
+DECL|enum|__anon27df458f0a03
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1716,7 +1716,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4c29e00b03
+DECL|enum|__anon27df458f0b03
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -1732,7 +1732,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4c29e00c03
+DECL|enum|__anon27df458f0c03
 block|{
 DECL|enumerator|FILL_FOREGROUND
 name|FILL_FOREGROUND
@@ -1757,7 +1757,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4c29e00d03
+DECL|enum|__anon27df458f0d03
 block|{
 DECL|enumerator|FILL_EACH
 name|FILL_EACH
@@ -10296,7 +10296,10 @@ name|gimp_help_set_help_data
 argument_list|(
 name|button
 argument_list|,
+name|_
+argument_list|(
 literal|"Create star"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -14038,7 +14041,10 @@ argument_list|)
 decl_stmt|;
 name|gimp_interactive_selection_brush
 argument_list|(
+name|_
+argument_list|(
 literal|"Gfig brush selection"
+argument_list|)
 argument_list|,
 name|mygimp_brush_get
 argument_list|()
@@ -14857,7 +14863,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Set Brush..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_padding

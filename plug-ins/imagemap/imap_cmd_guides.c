@@ -58,7 +58,7 @@ file|"imap_table.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon27cb63620108
+DECL|struct|__anon2a075ac70108
 typedef|typedef
 struct|struct
 block|{
@@ -1381,7 +1381,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Base URL:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1596,7 +1599,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon27cb63620208
+DECL|struct|__anon2a075ac70208
 typedef|typedef
 struct|struct
 block|{

@@ -400,9 +400,10 @@ name|posterize_options
 operator|=
 name|tool_options_new
 argument_list|(
-operator|(
+name|_
+argument_list|(
 literal|"Posterize"
-operator|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|tools_register
