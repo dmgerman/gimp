@@ -499,6 +499,7 @@ begin_function_decl
 name|void
 name|gimp_container_foreach
 parameter_list|(
+specifier|const
 name|GimpContainer
 modifier|*
 name|container

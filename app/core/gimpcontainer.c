@@ -176,7 +176,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3d63560103
+DECL|enum|__anon27e70e820103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -201,7 +201,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3d63560203
+DECL|enum|__anon27e70e820203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1316,7 +1316,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3d63560308
+DECL|struct|__anon27e70e820308
 block|{
 DECL|member|writer
 name|GimpConfigWriter
@@ -2933,9 +2933,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_container_foreach (GimpContainer * container,GFunc func,gpointer user_data)
+DECL|function|gimp_container_foreach (const GimpContainer * container,GFunc func,gpointer user_data)
 name|gimp_container_foreach
 parameter_list|(
+specifier|const
 name|GimpContainer
 modifier|*
 name|container
@@ -3165,7 +3166,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_container_get_name_array_foreach_func (GimpObject * object,gchar *** names)
+DECL|function|gimp_container_get_name_array_foreach_func (GimpObject * object,gchar *** iter)
 name|gimp_container_get_name_array_foreach_func
 parameter_list|(
 name|GimpObject
@@ -3176,19 +3177,19 @@ name|gchar
 modifier|*
 modifier|*
 modifier|*
-name|names
+name|iter
 parameter_list|)
 block|{
 name|gchar
 modifier|*
 modifier|*
-name|name
+name|array
 init|=
 operator|*
-name|names
+name|iter
 decl_stmt|;
 operator|*
-name|name
+name|array
 operator|=
 name|g_strdup
 argument_list|(
@@ -3198,8 +3199,10 @@ name|object
 argument_list|)
 argument_list|)
 expr_stmt|;
+operator|(
 operator|*
-name|names
+name|iter
+operator|)
 operator|++
 expr_stmt|;
 block|}
@@ -3226,6 +3229,11 @@ name|gchar
 modifier|*
 modifier|*
 name|names
+decl_stmt|;
+name|gchar
+modifier|*
+modifier|*
+name|iter
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -3266,6 +3274,8 @@ name|NULL
 return|;
 name|names
 operator|=
+name|iter
+operator|=
 name|g_new
 argument_list|(
 name|gchar
@@ -3275,12 +3285,7 @@ operator|*
 name|length
 argument_list|)
 expr_stmt|;
-name|GIMP_CONTAINER_GET_CLASS
-argument_list|(
-name|container
-argument_list|)
-operator|->
-name|foreach
+name|gimp_container_foreach
 argument_list|(
 name|container
 argument_list|,
@@ -3290,7 +3295,7 @@ operator|)
 name|gimp_container_get_name_array_foreach_func
 argument_list|,
 operator|&
-name|names
+name|iter
 argument_list|)
 expr_stmt|;
 return|return
