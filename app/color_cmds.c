@@ -2718,7 +2718,7 @@ decl_stmt|;
 name|gint32
 name|num_bytes
 decl_stmt|;
-name|gint8
+name|guint8
 modifier|*
 name|curve
 decl_stmt|;
@@ -2817,7 +2817,7 @@ expr_stmt|;
 name|curve
 operator|=
 operator|(
-name|gint8
+name|guint8
 operator|*
 operator|)
 name|args
