@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be88be10108
+DECL|struct|__anon27b2d43e0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be88be10208
+DECL|struct|__anon27b2d43e0208
 block|{
 DECL|member|cinfo
 name|struct
@@ -1011,7 +1011,7 @@ name|gimp_register_magic_load_handler
 argument_list|(
 literal|"file_jpeg_load"
 argument_list|,
-literal|"jpg,jpeg"
+literal|"jpg,jpeg,jpe"
 argument_list|,
 literal|""
 argument_list|,
@@ -1022,7 +1022,7 @@ name|gimp_register_save_handler
 argument_list|(
 literal|"file_jpeg_save"
 argument_list|,
-literal|"jpg,jpeg"
+literal|"jpg,jpeg,jpe"
 argument_list|,
 literal|""
 argument_list|)
