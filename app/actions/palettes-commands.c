@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpcontainerview.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdatafactoryview.h"
 end_include
 

@@ -27,7 +27,7 @@ DECL|macro|GIMP_TYPE_CONTAINER_VIEW
 define|#
 directive|define
 name|GIMP_TYPE_CONTAINER_VIEW
-value|(gimp_container_view_get_type ())
+value|(gimp_container_view_interface_get_type ())
 end_define
 
 begin_define
@@ -42,17 +42,6 @@ value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_CONTAINER_VIEW, GimpContaine
 end_define
 
 begin_define
-DECL|macro|GIMP_CONTAINER_VIEW_CLASS (klass)
-define|#
-directive|define
-name|GIMP_CONTAINER_VIEW_CLASS
-parameter_list|(
-name|klass
-parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_CONTAINER_VIEW, GimpContainerViewClass))
-end_define
-
-begin_define
 DECL|macro|GIMP_IS_CONTAINER_VIEW (obj)
 define|#
 directive|define
@@ -64,25 +53,14 @@ value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_CONTAINER_VIEW))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_CONTAINER_VIEW_CLASS (klass)
+DECL|macro|GIMP_CONTAINER_VIEW_GET_INTERFACE (obj)
 define|#
 directive|define
-name|GIMP_IS_CONTAINER_VIEW_CLASS
-parameter_list|(
-name|klass
-parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CONTAINER_VIEW))
-end_define
-
-begin_define
-DECL|macro|GIMP_CONTAINER_VIEW_GET_CLASS (obj)
-define|#
-directive|define
-name|GIMP_CONTAINER_VIEW_GET_CLASS
+name|GIMP_CONTAINER_VIEW_GET_INTERFACE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_CONTAINER_VIEW, GimpContainerViewClass))
+value|(G_TYPE_INSTANCE_GET_INTERFACE ((obj), GIMP_TYPE_CONTAINER_VIEW, GimpContainerViewInterface))
 end_define
 
 begin_define
@@ -93,94 +71,26 @@ name|GIMP_CONTAINER_VIEW_GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
-value|(gimp_container_view_get_private ((GimpContainerView *) obj));
+value|(gimp_container_view_get_private ((GimpContainerView *) (obj)))
 end_define
 
 begin_typedef
-DECL|typedef|GimpContainerViewClass
+DECL|typedef|GimpContainerViewInterface
 typedef|typedef
 name|struct
-name|_GimpContainerViewClass
-name|GimpContainerViewClass
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpContainerViewPrivate
-typedef|typedef
-name|struct
-name|_GimpContainerViewPrivate
-name|GimpContainerViewPrivate
+name|_GimpContainerViewInterface
+name|GimpContainerViewInterface
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpContainerView
+DECL|struct|_GimpContainerViewInterface
 struct|struct
-name|_GimpContainerView
+name|_GimpContainerViewInterface
 block|{
-DECL|member|parent_instance
-name|GimpEditor
-name|parent_instance
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
-begin_struct
-DECL|struct|_GimpContainerViewPrivate
-struct|struct
-name|_GimpContainerViewPrivate
-block|{
-DECL|member|container
-name|GimpContainer
-modifier|*
-name|container
-decl_stmt|;
-DECL|member|context
-name|GimpContext
-modifier|*
-name|context
-decl_stmt|;
-DECL|member|hash_table
-name|GHashTable
-modifier|*
-name|hash_table
-decl_stmt|;
-DECL|member|preview_size
-name|gint
-name|preview_size
-decl_stmt|;
-DECL|member|preview_border_width
-name|gint
-name|preview_border_width
-decl_stmt|;
-DECL|member|reorderable
-name|gboolean
-name|reorderable
-decl_stmt|;
-comment|/*  initialized by subclass  */
-DECL|member|dnd_widget
-name|GtkWidget
-modifier|*
-name|dnd_widget
-decl_stmt|;
-DECL|member|name_changed_handler_id
-name|GQuark
-name|name_changed_handler_id
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
-begin_struct
-DECL|struct|_GimpContainerViewClass
-struct|struct
-name|_GimpContainerViewClass
-block|{
-DECL|member|parent_class
-name|GimpEditorClass
-name|parent_class
+DECL|member|base_iface
+name|GTypeInterface
+name|base_iface
 decl_stmt|;
 comment|/*  signals  */
 DECL|member|select_item
@@ -360,7 +270,7 @@ modifier|*
 name|view
 parameter_list|)
 function_decl|;
-comment|/*  the destroy notifier for view->hash_table's values  */
+comment|/*  the destroy notifier for private->hash_table's values  */
 DECL|member|insert_data_free
 name|GDestroyNotify
 name|insert_data_free
@@ -371,53 +281,13 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_container_view_get_type
+name|gimp_container_view_interface_get_type
 argument_list|(
 name|void
 argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
-
-begin_function_decl
-name|GimpContainerViewPrivate
-modifier|*
-name|gimp_container_view_get_private
-parameter_list|(
-name|GimpContainerView
-modifier|*
-name|view
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_container_view_construct
-parameter_list|(
-name|GimpContainerView
-modifier|*
-name|view
-parameter_list|,
-name|GimpContainer
-modifier|*
-name|container
-parameter_list|,
-name|GimpContext
-modifier|*
-name|context
-parameter_list|,
-name|gint
-name|preview_size
-parameter_list|,
-name|gint
-name|preview_border_width
-parameter_list|,
-name|gboolean
-name|reorderable
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 name|GimpContainer
@@ -506,6 +376,58 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_container_view_get_reorderable
+parameter_list|(
+name|GimpContainerView
+modifier|*
+name|view
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_container_view_set_reorderable
+parameter_list|(
+name|GimpContainerView
+modifier|*
+name|view
+parameter_list|,
+name|gboolean
+name|reorderable
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_container_view_get_dnd_widget
+parameter_list|(
+name|GimpContainerView
+modifier|*
+name|view
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_container_view_set_dnd_widget
+parameter_list|(
+name|GimpContainerView
+modifier|*
+name|view
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|dnd_widget
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_container_view_enable_dnd
 parameter_list|(
@@ -571,6 +493,21 @@ end_function_decl
 begin_comment
 comment|/*  protected  */
 end_comment
+
+begin_function_decl
+name|gpointer
+name|gimp_container_view_lookup
+parameter_list|(
+name|GimpContainerView
+modifier|*
+name|view
+parameter_list|,
+name|GimpViewable
+modifier|*
+name|viewable
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|gboolean

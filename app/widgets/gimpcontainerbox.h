@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpcontainerview.h"
+file|"gimpeditor.h"
 end_include
 
 begin_define
@@ -100,7 +100,7 @@ struct|struct
 name|_GimpContainerBox
 block|{
 DECL|member|parent_instance
-name|GimpContainerView
+name|GimpEditor
 name|parent_instance
 decl_stmt|;
 DECL|member|scrolled_win
@@ -118,7 +118,7 @@ struct|struct
 name|_GimpContainerBoxClass
 block|{
 DECL|member|parent_class
-name|GimpContainerViewClass
+name|GimpEditorClass
 name|parent_class
 decl_stmt|;
 block|}

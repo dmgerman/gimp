@@ -465,6 +465,11 @@ name|GimpContainerView
 typedef|;
 end_typedef
 
+begin_comment
+DECL|typedef|GimpContainerView
+comment|/* dummy typedef */
+end_comment
+
 begin_typedef
 DECL|typedef|GimpContainerBox
 typedef|typedef

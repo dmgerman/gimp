@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontainerview.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdocked.h"
 end_include
 
