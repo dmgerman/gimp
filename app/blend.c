@@ -210,7 +210,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2de7520103
+DECL|enum|__anon2bf6b0120103
 block|{
 DECL|enumerator|Linear
 name|Linear
@@ -247,7 +247,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2de7520203
+DECL|enum|__anon2bf6b0120203
 block|{
 DECL|enumerator|FG_BG_RGB_MODE
 name|FG_BG_RGB_MODE
@@ -269,7 +269,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2de7520303
+DECL|enum|__anon2bf6b0120303
 block|{
 DECL|enumerator|REPEAT_NONE
 name|REPEAT_NONE
@@ -413,7 +413,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2c2de7520408
+DECL|struct|__anon2bf6b0120408
 typedef|typedef
 struct|struct
 block|{
@@ -465,7 +465,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c2de7520508
+DECL|struct|__anon2bf6b0120508
 typedef|typedef
 struct|struct
 block|{
@@ -9345,7 +9345,7 @@ name|NORMAL_MODE
 operator|&&
 name|int_value
 operator|<=
-name|VALUE_MODE
+name|DIVIDE_MODE
 condition|)
 name|paint_mode
 operator|=
