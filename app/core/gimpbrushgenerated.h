@@ -130,11 +130,6 @@ name|gfloat
 name|aspect_ratio
 decl_stmt|;
 comment|/* y/x        */
-comment|/* private */
-DECL|member|freeze
-name|gint
-name|freeze
-decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -207,28 +202,6 @@ name|GError
 modifier|*
 modifier|*
 name|error
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_brush_generated_freeze
-parameter_list|(
-name|GimpBrushGenerated
-modifier|*
-name|brush
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_brush_generated_thaw
-parameter_list|(
-name|GimpBrushGenerated
-modifier|*
-name|brush
 parameter_list|)
 function_decl|;
 end_function_decl

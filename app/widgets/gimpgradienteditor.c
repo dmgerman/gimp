@@ -4329,9 +4329,12 @@ name|editor
 operator|->
 name|instant_update
 condition|)
-name|gimp_gradient_freeze
+name|gimp_data_freeze
+argument_list|(
+name|GIMP_DATA
 argument_list|(
 name|gradient
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -4484,9 +4487,12 @@ name|editor
 operator|->
 name|instant_update
 condition|)
-name|gimp_gradient_thaw
+name|gimp_data_thaw
+argument_list|(
+name|GIMP_DATA
 argument_list|(
 name|gradient
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func

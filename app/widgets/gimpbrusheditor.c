@@ -1101,9 +1101,12 @@ name|brush
 argument_list|)
 condition|)
 block|{
-name|gimp_brush_generated_freeze
+name|gimp_data_freeze
+argument_list|(
+name|GIMP_DATA
 argument_list|(
 name|brush
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_brush_generated_set_radius
@@ -1134,9 +1137,12 @@ argument_list|,
 name|angle
 argument_list|)
 expr_stmt|;
-name|gimp_brush_generated_thaw
+name|gimp_data_thaw
+argument_list|(
+name|GIMP_DATA
 argument_list|(
 name|brush
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
