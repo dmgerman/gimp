@@ -44,28 +44,13 @@ name|COLOR_UPDATE
 value|2
 end_define
 
-begin_function_decl
-name|void
-name|palettes_init
-parameter_list|(
-name|gboolean
-name|no_data
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_comment
+comment|/* EEK */
+end_comment
 
 begin_function_decl
 name|void
-name|palettes_free
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|palettes_list_insert
+name|palette_insert_all
 parameter_list|(
 name|GimpPalette
 modifier|*
@@ -113,9 +98,9 @@ end_function_decl
 
 begin_decl_stmt
 specifier|extern
-name|GSList
+name|GimpContainer
 modifier|*
-name|palettes_list
+name|global_palette_list
 decl_stmt|;
 end_decl_stmt
 

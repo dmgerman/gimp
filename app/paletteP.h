@@ -81,6 +81,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|palette_insert_all
+parameter_list|(
+name|GimpPalette
+modifier|*
+name|palette
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

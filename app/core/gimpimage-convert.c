@@ -110,6 +110,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimplist.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplayer.h"
 end_include
 
@@ -122,7 +128,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"palette.h"
+file|"palettes.h"
 end_include
 
 begin_include
@@ -34929,7 +34935,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292c83050108
+DECL|struct|__anon2b0aad0c0108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -35006,7 +35012,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292c83050208
+DECL|struct|__anon2b0aad0c0208
 block|{
 DECL|member|ncolors
 name|long
@@ -35025,7 +35031,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292c83050308
+DECL|struct|__anon2b0aad0c0308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -37523,7 +37529,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|GSList
+name|GList
 modifier|*
 name|list
 decl_stmt|;
@@ -37550,18 +37556,21 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|palettes_list
+name|global_palette_list
 condition|)
-block|{
 name|palettes_init
 argument_list|(
 name|FALSE
 argument_list|)
 expr_stmt|;
-block|}
 name|list
 operator|=
-name|palettes_list
+name|GIMP_LIST
+argument_list|(
+name|global_palette_list
+argument_list|)
+operator|->
+name|list
 expr_stmt|;
 if|if
 condition|(
@@ -37579,10 +37588,6 @@ name|i
 operator|=
 literal|0
 operator|,
-name|list
-operator|=
-name|palettes_list
-operator|,
 name|default_palette
 operator|=
 operator|-
@@ -37595,7 +37600,7 @@ operator|++
 operator|,
 name|list
 operator|=
-name|g_slist_next
+name|g_list_next
 argument_list|(
 name|list
 argument_list|)
@@ -37700,7 +37705,12 @@ literal|0
 operator|,
 name|list
 operator|=
-name|palettes_list
+name|GIMP_LIST
+argument_list|(
+name|global_palette_list
+argument_list|)
+operator|->
+name|list
 init|;
 name|list
 operator|&&
@@ -37714,7 +37724,7 @@ operator|++
 operator|,
 name|list
 operator|=
-name|g_slist_next
+name|g_list_next
 argument_list|(
 name|list
 argument_list|)
@@ -38378,7 +38388,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292c83050408
+DECL|struct|__anon2b0aad0c0408
 block|{
 DECL|member|used_count
 name|signed

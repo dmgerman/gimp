@@ -46,7 +46,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"palette.h"
+file|"palettes.h"
 end_include
 
 begin_include

@@ -16,10 +16,20 @@ directive|define
 name|__COLOR_NOTEBOOK_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|<stdio.h>
+end_include
+
+begin_comment
+comment|/* for FILE */
+end_comment
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e783920103
+DECL|enum|__anon2ac283580103
 block|{
 DECL|enumerator|COLOR_NOTEBOOK_OK
 name|COLOR_NOTEBOOK_OK

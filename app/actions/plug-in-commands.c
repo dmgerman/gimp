@@ -738,6 +738,9 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|gpointer
+name|loader_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1523,9 +1526,11 @@ name|datafiles_read_directories
 argument_list|(
 name|plug_in_path
 argument_list|,
+name|MODE_EXECUTABLE
+argument_list|,
 name|plug_in_init_file
 argument_list|,
-name|MODE_EXECUTABLE
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* read the pluginrc file for cached data */
@@ -10253,13 +10258,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|plug_in_init_file (const gchar * filename)
+DECL|function|plug_in_init_file (const gchar * filename,gpointer loader_data)
 name|plug_in_init_file
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|gpointer
+name|loader_data
 parameter_list|)
 block|{
 name|GSList

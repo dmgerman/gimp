@@ -23,6 +23,22 @@ file|"gimpdata.h"
 end_include
 
 begin_define
+DECL|macro|GIMP_BRUSH_FILE_EXTENSION
+define|#
+directive|define
+name|GIMP_BRUSH_FILE_EXTENSION
+value|".gbr"
+end_define
+
+begin_define
+DECL|macro|GIMP_BRUSH_PIXMAP_FILE_EXTENSION
+define|#
+directive|define
+name|GIMP_BRUSH_PIXMAP_FILE_EXTENSION
+value|".gpb"
+end_define
+
+begin_define
 DECL|macro|GIMP_TYPE_BRUSH
 define|#
 directive|define

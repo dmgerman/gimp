@@ -1144,6 +1144,8 @@ argument_list|(
 name|gradient
 argument_list|)
 argument_list|,
+name|g_strstrip
+argument_list|(
 operator|&
 name|line
 index|[
@@ -1152,6 +1154,7 @@ argument_list|(
 literal|"Name: "
 argument_list|)
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|fgets
@@ -1430,6 +1433,15 @@ name|fclose
 argument_list|(
 name|file
 argument_list|)
+expr_stmt|;
+name|GIMP_DATA
+argument_list|(
+name|gradient
+argument_list|)
+operator|->
+name|dirty
+operator|=
+name|FALSE
 expr_stmt|;
 return|return
 name|gradient

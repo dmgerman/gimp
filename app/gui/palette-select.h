@@ -90,6 +90,24 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|palette_select_freeze_all
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|palette_select_thaw_all
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|palette_select_clist_insert_all
 parameter_list|(
 name|GimpPalette

@@ -129,6 +129,27 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_data_list_save_and_clear
+parameter_list|(
+name|GimpDataList
+modifier|*
+name|data_liat
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|data_path
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|extension
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

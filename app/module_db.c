@@ -145,7 +145,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1a949a0103
+DECL|enum|__anon2883ee470103
 block|{
 DECL|enumerator|ST_MODULE_ERROR
 name|ST_MODULE_ERROR
@@ -319,7 +319,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1a949a0208
+DECL|struct|__anon2883ee470208
 block|{
 DECL|member|parent_instance
 name|GtkObject
@@ -434,7 +434,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1a949a0308
+DECL|struct|__anon2883ee470308
 block|{
 DECL|member|table
 name|GtkWidget
@@ -590,6 +590,9 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|gpointer
+name|loader_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -921,10 +924,12 @@ name|datafiles_read_directories
 argument_list|(
 name|module_path
 argument_list|,
-name|module_initialize
-argument_list|,
 literal|0
 comment|/* no flags */
+argument_list|,
+name|module_initialize
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 ifdef|#
@@ -1747,7 +1752,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1a949a0403
+DECL|enum|__anon2883ee470403
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -2430,13 +2435,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|module_initialize (const gchar * filename)
+DECL|function|module_initialize (const gchar * filename,gpointer loader_data)
 name|module_initialize
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|gpointer
+name|loader_data
 parameter_list|)
 block|{
 name|ModuleInfo
@@ -4689,7 +4697,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1a949a0508
+DECL|struct|__anon2883ee470508
 block|{
 DECL|member|search_key
 specifier|const
@@ -4856,10 +4864,12 @@ name|datafiles_read_directories
 argument_list|(
 name|module_path
 argument_list|,
-name|module_initialize
-argument_list|,
 literal|0
 comment|/* no flags */
+argument_list|,
+name|module_initialize
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
