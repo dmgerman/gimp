@@ -3522,7 +3522,7 @@ argument_list|)
 expr_stmt|;
 name|stripped
 operator|=
-name|gimp_menu_path_strip_uline
+name|gimp_strip_uline
 argument_list|(
 name|path
 argument_list|)

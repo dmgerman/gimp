@@ -80,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29423a1c0103
+DECL|enum|__anon2bf29d630103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -748,7 +748,7 @@ literal|"1997, 1998..."
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Animation/Animation _Playback..."
+literal|"<Image>/Filters/Animation/_Playback..."
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"

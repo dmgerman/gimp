@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291feda80103
+DECL|enum|__anon2af5078b0103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -85,7 +85,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291feda80203
+DECL|enum|__anon2af5078b0203
 block|{
 DECL|enumerator|OPOPTIMIZE
 name|OPOPTIMIZE
@@ -501,7 +501,7 @@ literal|"1997-2001"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Animation/Animation _Optimize"
+literal|"<Image>/Filters/Animation/_Optimize"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -543,7 +543,7 @@ literal|"1997-2001"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Animation/Animation _UnOptimize"
+literal|"<Image>/Filters/Animation/_UnOptimize"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -583,7 +583,7 @@ literal|"2001"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Animation/Animation: _Remove Backdrop"
+literal|"<Image>/Filters/Animation/_Remove Backdrop"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -624,7 +624,7 @@ literal|"2001"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Animation/Animation: _Find Backdrop"
+literal|"<Image>/Filters/Animation/_Find Backdrop"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"

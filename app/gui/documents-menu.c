@@ -86,7 +86,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Open Image"
+literal|"/_Open Image"
 argument_list|)
 block|,
 literal|""
@@ -111,7 +111,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Raise or Open Image"
+literal|"/_Raise or Open Image"
 argument_list|)
 block|,
 literal|""
@@ -136,7 +136,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File Open Dialog..."
+literal|"/File Open _Dialog..."
 argument_list|)
 block|,
 literal|""
@@ -161,7 +161,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Remove Entry"
+literal|"/Remove _Entry"
 argument_list|)
 block|,
 name|NULL
@@ -191,7 +191,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Recreate Preview"
+literal|"/Recreate _Preview"
 argument_list|)
 block|,
 name|NULL
@@ -216,7 +216,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Reload all Previews"
+literal|"/Reload _all Previews"
 argument_list|)
 block|,
 name|NULL
@@ -241,7 +241,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Remove Dangling Entries"
+literal|"/Remove Dangling E_ntries"
 argument_list|)
 block|,
 name|NULL

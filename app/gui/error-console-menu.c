@@ -68,7 +68,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Clear Errors"
+literal|"/_Clear Errors"
 argument_list|)
 block|,
 literal|""
@@ -115,7 +115,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Save all Errors to File..."
+literal|"/Save _All Errors to File..."
 argument_list|)
 block|,
 literal|""
@@ -140,7 +140,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Save Selection to File..."
+literal|"/Save _Selection to File..."
 argument_list|)
 block|,
 literal|""
@@ -228,14 +228,14 @@ define|\
 value|gimp_item_factory_set_sensitive (factory, menu, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Clear Console"
+literal|"/Clear Errors"
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Save all Errors to File..."
+literal|"/Save All Errors to File..."
 argument_list|,
 name|TRUE
 argument_list|)

@@ -98,7 +98,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/New Brush"
+literal|"/_New Brush"
 argument_list|)
 block|,
 name|NULL
@@ -123,7 +123,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Duplicate Brush"
+literal|"/D_uplicate Brush"
 argument_list|)
 block|,
 name|NULL
@@ -148,7 +148,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Edit Brush..."
+literal|"/_Edit Brush..."
 argument_list|)
 block|,
 name|NULL
@@ -173,7 +173,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Delete Brush..."
+literal|"/_Delete Brush..."
 argument_list|)
 block|,
 name|NULL
@@ -203,7 +203,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Refresh Brushes"
+literal|"/_Refresh Brushes"
 argument_list|)
 block|,
 name|NULL

@@ -86,7 +86,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/New Template..."
+literal|"/_New Template..."
 argument_list|)
 block|,
 literal|""
@@ -111,7 +111,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Duplicate Template..."
+literal|"/D_uplicate Template..."
 argument_list|)
 block|,
 literal|""
@@ -136,7 +136,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Edit Template..."
+literal|"/_Edit Template..."
 argument_list|)
 block|,
 literal|""
@@ -161,7 +161,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Create Image from Template..."
+literal|"/_Create Image from Template..."
 argument_list|)
 block|,
 literal|""
@@ -186,7 +186,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Delete Template..."
+literal|"/_Delete Template..."
 argument_list|)
 block|,
 literal|""

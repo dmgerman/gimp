@@ -92,7 +92,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/New Layer..."
+literal|"/_New Layer..."
 argument_list|)
 block|,
 literal|"<control>N"
@@ -117,7 +117,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Raise Layer"
+literal|"/_Raise Layer"
 argument_list|)
 block|,
 literal|"<control>F"
@@ -142,7 +142,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layer to Top"
+literal|"/Layer to _Top"
 argument_list|)
 block|,
 literal|"<control><shift>F"
@@ -167,7 +167,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Lower Layer"
+literal|"/_Lower Layer"
 argument_list|)
 block|,
 literal|"<control>B"
@@ -192,7 +192,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layer to Bottom"
+literal|"/Layer to _Bottom"
 argument_list|)
 block|,
 literal|"<control><shift>B"
@@ -217,7 +217,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Duplicate Layer"
+literal|"/D_uplicate Layer"
 argument_list|)
 block|,
 literal|"<control>C"
@@ -242,7 +242,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Anchor Layer"
+literal|"/_Anchor Layer"
 argument_list|)
 block|,
 literal|"<control>H"
@@ -267,7 +267,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Merge Down"
+literal|"/Merge Do_wn"
 argument_list|)
 block|,
 literal|"<control><shift>M"
@@ -292,7 +292,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Delete Layer"
+literal|"/_Delete Layer"
 argument_list|)
 block|,
 literal|"<control>X"
@@ -322,7 +322,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layer Boundary Size..."
+literal|"/Layer B_oundary Size..."
 argument_list|)
 block|,
 literal|"<control>R"
@@ -347,7 +347,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layer to Imagesize"
+literal|"/Layer to _Imagesize"
 argument_list|)
 block|,
 name|NULL
@@ -372,7 +372,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Scale Layer..."
+literal|"/_Scale Layer..."
 argument_list|)
 block|,
 literal|"<control>S"
@@ -402,7 +402,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Add Layer Mask..."
+literal|"/Add La_yer Mask..."
 argument_list|)
 block|,
 name|NULL
@@ -423,7 +423,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Apply Layer Mask"
+literal|"/Apply Layer _Mask"
 argument_list|)
 block|,
 name|NULL
@@ -444,7 +444,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Delete Layer Mask"
+literal|"/Delete Layer Mas_k"
 argument_list|)
 block|,
 name|NULL
@@ -469,7 +469,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Mask to Selection"
+literal|"/Mask to Sele_ction"
 argument_list|)
 block|,
 name|NULL
@@ -499,7 +499,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Add Alpha Channel"
+literal|"/Add Alpha C_hannel"
 argument_list|)
 block|,
 name|NULL
@@ -520,7 +520,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Alpha to Selection"
+literal|"/Al_pha to Selection"
 argument_list|)
 block|,
 name|NULL
@@ -550,7 +550,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Edit Layer Attributes..."
+literal|"/_Edit Layer Attributes..."
 argument_list|)
 block|,
 name|NULL

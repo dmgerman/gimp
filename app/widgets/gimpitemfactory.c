@@ -1111,7 +1111,7 @@ argument_list|)
 expr_stmt|;
 name|menu_path
 operator|=
-name|gimp_menu_path_strip_uline
+name|gimp_strip_uline
 argument_list|(
 operator|(
 operator|(

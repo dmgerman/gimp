@@ -156,7 +156,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Select Tab"
+literal|"/_Select Tab"
 argument_list|)
 block|,
 name|NULL
@@ -173,11 +173,16 @@ block|,
 name|NULL
 block|}
 block|,
+name|MENU_BRANCH
+argument_list|(
+literal|"/_Add Tab"
+argument_list|)
+block|,
 name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/Tool Options..."
+literal|"/Add Tab/Tool _Options..."
 argument_list|)
 argument_list|,
 literal|"gimp-tool-options"
@@ -191,7 +196,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/Device Status..."
+literal|"/Add Tab/_Device Status..."
 argument_list|)
 argument_list|,
 literal|"gimp-device-status"
@@ -210,7 +215,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/Layers..."
+literal|"/Add Tab/_Layers..."
 argument_list|)
 argument_list|,
 literal|"gimp-layer-list"
@@ -224,7 +229,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/Channels..."
+literal|"/Add Tab/_Channels..."
 argument_list|)
 argument_list|,
 literal|"gimp-channel-list"
@@ -238,7 +243,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/Paths..."
+literal|"/Add Tab/_Paths..."
 argument_list|)
 argument_list|,
 literal|"gimp-vectors-list"
@@ -252,7 +257,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/Indexed Palette..."
+literal|"/Add Tab/_Indexed Palette..."
 argument_list|)
 argument_list|,
 literal|"gimp-indexed-palette"
@@ -266,7 +271,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/Selection Editor..."
+literal|"/Add Tab/_Selection Editor..."
 argument_list|)
 argument_list|,
 literal|"gimp-selection-editor"
@@ -280,7 +285,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/Navigation..."
+literal|"/Add Tab/Na_vigation..."
 argument_list|)
 argument_list|,
 literal|"gimp-navigation-view"
@@ -294,7 +299,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/Undo History..."
+literal|"/Add Tab/_Undo History..."
 argument_list|)
 argument_list|,
 literal|"gimp-undo-history"
@@ -313,7 +318,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/Colors..."
+literal|"/Add Tab/Colo_rs..."
 argument_list|)
 argument_list|,
 literal|"gimp-color-editor"
@@ -327,7 +332,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/Brushes..."
+literal|"/Add Tab/Brus_hes..."
 argument_list|)
 argument_list|,
 literal|"gimp-brush-grid"
@@ -341,7 +346,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/Patterns..."
+literal|"/Add Tab/P_atterns..."
 argument_list|)
 argument_list|,
 literal|"gimp-pattern-grid"
@@ -355,7 +360,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/Gradients..."
+literal|"/Add Tab/_Gradients..."
 argument_list|)
 argument_list|,
 literal|"gimp-gradient-list"
@@ -369,7 +374,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/Palettes..."
+literal|"/Add Tab/Pal_ettes..."
 argument_list|)
 argument_list|,
 literal|"gimp-palette-list"
@@ -383,7 +388,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/Fonts..."
+literal|"/Add Tab/_Fonts..."
 argument_list|)
 argument_list|,
 literal|"gimp-font-list"
@@ -397,7 +402,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/Buffers..."
+literal|"/Add Tab/_Buffers..."
 argument_list|)
 argument_list|,
 literal|"gimp-buffer-list"
@@ -416,7 +421,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/Images..."
+literal|"/Add Tab/I_mages..."
 argument_list|)
 argument_list|,
 literal|"gimp-image-list"
@@ -430,7 +435,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/Document History..."
+literal|"/Add Tab/Document Histor_y..."
 argument_list|)
 argument_list|,
 literal|"gimp-document-list"
@@ -444,7 +449,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/Templates..."
+literal|"/Add Tab/_Templates..."
 argument_list|)
 argument_list|,
 literal|"gimp-template-list"
@@ -458,7 +463,7 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Add Tab/Error Console..."
+literal|"/Add Tab/Error Co_nsole..."
 argument_list|)
 argument_list|,
 literal|"gimp-error-console"
@@ -491,7 +496,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Remove Tab"
+literal|"/_Remove Tab"
 argument_list|)
 block|,
 name|NULL
@@ -519,14 +524,14 @@ argument_list|)
 block|,
 name|MENU_BRANCH
 argument_list|(
-literal|"/Preview Size"
+literal|"/Preview Si_ze"
 argument_list|)
 block|,
 block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Preview Size/Tiny"
+literal|"/Preview Size/_Tiny"
 argument_list|)
 block|,
 name|NULL
@@ -549,7 +554,7 @@ name|PREVIEW_SIZE
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Preview Size/Extra Small"
+literal|"/Preview Size/E_xtra Small"
 argument_list|)
 argument_list|,
 name|GIMP_PREVIEW_SIZE_EXTRA_SMALL
@@ -559,7 +564,7 @@ name|PREVIEW_SIZE
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Preview Size/Small"
+literal|"/Preview Size/_Small"
 argument_list|)
 argument_list|,
 name|GIMP_PREVIEW_SIZE_SMALL
@@ -569,7 +574,7 @@ name|PREVIEW_SIZE
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Preview Size/Medium"
+literal|"/Preview Size/_Medium"
 argument_list|)
 argument_list|,
 name|GIMP_PREVIEW_SIZE_MEDIUM
@@ -579,7 +584,7 @@ name|PREVIEW_SIZE
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Preview Size/Large"
+literal|"/Preview Size/_Large"
 argument_list|)
 argument_list|,
 name|GIMP_PREVIEW_SIZE_LARGE
@@ -589,7 +594,7 @@ name|PREVIEW_SIZE
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Preview Size/Extra Large"
+literal|"/Preview Size/Ex_tra Large"
 argument_list|)
 argument_list|,
 name|GIMP_PREVIEW_SIZE_EXTRA_LARGE
@@ -599,7 +604,7 @@ name|PREVIEW_SIZE
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Preview Size/Huge"
+literal|"/Preview Size/_Huge"
 argument_list|)
 argument_list|,
 name|GIMP_PREVIEW_SIZE_HUGE
@@ -609,7 +614,7 @@ name|PREVIEW_SIZE
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Preview Size/Enormous"
+literal|"/Preview Size/_Enormous"
 argument_list|)
 argument_list|,
 name|GIMP_PREVIEW_SIZE_ENORMOUS
@@ -619,7 +624,7 @@ name|PREVIEW_SIZE
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Preview Size/Gigantic"
+literal|"/Preview Size/_Gigantic"
 argument_list|)
 argument_list|,
 name|GIMP_PREVIEW_SIZE_GIGANTIC
@@ -627,14 +632,14 @@ argument_list|)
 block|,
 name|MENU_BRANCH
 argument_list|(
-literal|"/Tab Style"
+literal|"/_Tab Style"
 argument_list|)
 block|,
 block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Tab Style/Icon"
+literal|"/Tab Style/_Icon"
 argument_list|)
 block|,
 name|NULL
@@ -657,7 +662,7 @@ name|TAB_STYLE
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Tab Style/Text"
+literal|"/Tab Style/_Text"
 argument_list|)
 argument_list|,
 name|GIMP_TAB_STYLE_NAME
@@ -667,7 +672,7 @@ name|TAB_STYLE
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Tab Style/Icon& Text"
+literal|"/Tab Style/I_con& Text"
 argument_list|)
 argument_list|,
 name|GIMP_TAB_STYLE_ICON_NAME
@@ -677,7 +682,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/View as List"
+literal|"/View as _List"
 argument_list|)
 block|,
 name|NULL
@@ -700,7 +705,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/View as Grid"
+literal|"/View as _Grid"
 argument_list|)
 block|,
 name|NULL
@@ -728,7 +733,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Show Image Menu"
+literal|"/Show Image _Menu"
 argument_list|)
 block|,
 name|NULL
@@ -751,7 +756,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Auto Follow Active Image"
+literal|"/Auto Follow Active _Image"
 argument_list|)
 block|,
 name|NULL

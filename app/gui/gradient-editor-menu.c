@@ -154,7 +154,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Left Endpoint's Color..."
+literal|"/L_eft Endpoint's Color..."
 argument_list|)
 block|,
 name|NULL
@@ -171,11 +171,19 @@ block|,
 name|NULL
 block|}
 block|,
+name|MENU_BRANCH
+argument_list|(
+name|N_
+argument_list|(
+literal|"/_Load Left Color From"
+argument_list|)
+argument_list|)
+block|,
 block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Load Left Color From/Left Neighbor's Right Endpoint"
+literal|"/Load Left Color From/_Left Neighbor's Right Endpoint"
 argument_list|)
 block|,
 name|NULL
@@ -196,7 +204,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Load Left Color From/Right Endpoint"
+literal|"/Load Left Color From/_Right Endpoint"
 argument_list|)
 block|,
 name|NULL
@@ -217,7 +225,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Load Left Color From/FG Color"
+literal|"/Load Left Color From/_FG Color"
 argument_list|)
 block|,
 name|NULL
@@ -238,7 +246,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Load Left Color From/BG Color"
+literal|"/Load Left Color From/_BG Color"
 argument_list|)
 block|,
 name|NULL
@@ -334,7 +342,7 @@ name|MENU_BRANCH
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Save Left Color To"
+literal|"/_Save Left Color To"
 argument_list|)
 argument_list|)
 block|,
@@ -417,7 +425,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Right Endpoint's Color..."
+literal|"/R_ight Endpoint's Color..."
 argument_list|)
 block|,
 name|NULL
@@ -434,11 +442,19 @@ block|,
 name|NULL
 block|}
 block|,
+name|MENU_BRANCH
+argument_list|(
+name|N_
+argument_list|(
+literal|"/Load Right Color Fr_om"
+argument_list|)
+argument_list|)
+block|,
 block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Load Right Color From/Right Neighbor's Left Endpoint"
+literal|"/Load Right Color From/_Right Neighbor's Left Endpoint"
 argument_list|)
 block|,
 name|NULL
@@ -459,7 +475,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Load Right Color From/Left Endpoint"
+literal|"/Load Right Color From/_Left Endpoint"
 argument_list|)
 block|,
 name|NULL
@@ -480,7 +496,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Load Right Color From/FG Color"
+literal|"/Load Right Color From/_FG Color"
 argument_list|)
 block|,
 name|NULL
@@ -501,7 +517,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Load Right Color From/BG Color"
+literal|"/Load Right Color From/_BG Color"
 argument_list|)
 block|,
 name|NULL
@@ -597,7 +613,7 @@ name|MENU_BRANCH
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Save Right Color To"
+literal|"/Sa_ve Right Color To"
 argument_list|)
 argument_list|)
 block|,
@@ -680,7 +696,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/blendingfunction/Linear"
+literal|"/blendingfunction/_Linear"
 argument_list|)
 block|,
 name|NULL
@@ -703,7 +719,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/blendingfunction/Curved"
+literal|"/blendingfunction/_Curved"
 argument_list|)
 block|,
 name|NULL
@@ -726,7 +742,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/blendingfunction/Sinusodial"
+literal|"/blendingfunction/_Sinusodial"
 argument_list|)
 block|,
 name|NULL
@@ -749,7 +765,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/blendingfunction/Spherical (increasing)"
+literal|"/blendingfunction/Spherical (i_ncreasing)"
 argument_list|)
 block|,
 name|NULL
@@ -772,7 +788,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/blendingfunction/Spherical (decreasing)"
+literal|"/blendingfunction/Spherical (_decreasing)"
 argument_list|)
 block|,
 name|NULL
@@ -818,7 +834,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/coloringtype/RGB"
+literal|"/coloringtype/_RGB"
 argument_list|)
 block|,
 name|NULL
@@ -841,7 +857,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/coloringtype/HSV (counter-clockwise hue)"
+literal|"/coloringtype/HSV (_counter-clockwise hue)"
 argument_list|)
 block|,
 name|NULL
@@ -864,7 +880,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/coloringtype/HSV (clockwise hue)"
+literal|"/coloringtype/HSV (clockwise _hue)"
 argument_list|)
 block|,
 name|NULL
@@ -1046,7 +1062,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Blend Endpoints' Colors"
+literal|"/Ble_nd Endpoints' Colors"
 argument_list|)
 block|,
 literal|"B"
@@ -1067,7 +1083,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Blend Endpoints' Opacity"
+literal|"/Blend Endpoints' Opacit_y"
 argument_list|)
 block|,
 literal|"<control>B"
@@ -2160,7 +2176,7 @@ literal|"/blendingfunction"
 argument_list|,
 name|_
 argument_list|(
-literal|"Blending Function for Segment"
+literal|"_Blending Function for Segment"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2170,7 +2186,7 @@ literal|"/coloringtype"
 argument_list|,
 name|_
 argument_list|(
-literal|"Coloring Type for Segment"
+literal|"Coloring _Type for Segment"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2180,7 +2196,7 @@ literal|"/flip"
 argument_list|,
 name|_
 argument_list|(
-literal|"Flip Segment"
+literal|"_Flip Segment"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2190,7 +2206,7 @@ literal|"/replicate"
 argument_list|,
 name|_
 argument_list|(
-literal|"Replicate Segment..."
+literal|"_Replicate Segment..."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2200,7 +2216,7 @@ literal|"/splitmidpoint"
 argument_list|,
 name|_
 argument_list|(
-literal|"Split Segment at Midpoint"
+literal|"Split Segment at _Midpoint"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2210,7 +2226,7 @@ literal|"/splituniformly"
 argument_list|,
 name|_
 argument_list|(
-literal|"Split Segment Uniformly..."
+literal|"Split Segment _Uniformly..."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2220,7 +2236,7 @@ literal|"/delete"
 argument_list|,
 name|_
 argument_list|(
-literal|"Delete Segment"
+literal|"_Delete Segment"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2230,7 +2246,7 @@ literal|"/recenter"
 argument_list|,
 name|_
 argument_list|(
-literal|"Re-center Segment's Midpoint"
+literal|"Re-_center Segment's Midpoint"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2240,7 +2256,7 @@ literal|"/redistribute"
 argument_list|,
 name|_
 argument_list|(
-literal|"Re-distribute Handles in Segment"
+literal|"Re-distribute _Handles in Segment"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2253,7 +2269,7 @@ literal|"/blendingfunction"
 argument_list|,
 name|_
 argument_list|(
-literal|"Blending Function for Selection"
+literal|"_Blending Function for Selection"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2263,7 +2279,7 @@ literal|"/coloringtype"
 argument_list|,
 name|_
 argument_list|(
-literal|"Coloring Type for Selection"
+literal|"Coloring _Type for Selection"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2273,7 +2289,7 @@ literal|"/flip"
 argument_list|,
 name|_
 argument_list|(
-literal|"Flip Selection"
+literal|"_Flip Selection"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2283,7 +2299,7 @@ literal|"/replicate"
 argument_list|,
 name|_
 argument_list|(
-literal|"Replicate Selection..."
+literal|"_Replicate Selection..."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2293,7 +2309,7 @@ literal|"/splitmidpoint"
 argument_list|,
 name|_
 argument_list|(
-literal|"Split Segments at Midpoints"
+literal|"Split Segments at _Midpoints"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2303,7 +2319,7 @@ literal|"/splituniformly"
 argument_list|,
 name|_
 argument_list|(
-literal|"Split Segments Uniformly..."
+literal|"Split Segments _Uniformly..."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2313,7 +2329,7 @@ literal|"/delete"
 argument_list|,
 name|_
 argument_list|(
-literal|"Delete Selection"
+literal|"_Delete Selection"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2323,7 +2339,7 @@ literal|"/recenter"
 argument_list|,
 name|_
 argument_list|(
-literal|"Re-center Midpoints in Selection"
+literal|"Re-_center Midpoints in Selection"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2333,7 +2349,7 @@ literal|"/redistribute"
 argument_list|,
 name|_
 argument_list|(
-literal|"Re-distribute Handles in Selection"
+literal|"Re-distribute _Handles in Selection"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -2782,7 +2782,7 @@ name|menu_path
 decl_stmt|;
 name|menu_path
 operator|=
-name|gimp_menu_path_strip_uline
+name|gimp_strip_uline
 argument_list|(
 name|tool_info
 operator|->

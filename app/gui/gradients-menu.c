@@ -104,7 +104,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/New Gradient"
+literal|"/_New Gradient"
 argument_list|)
 block|,
 name|NULL
@@ -129,7 +129,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Duplicate Gradient"
+literal|"/D_uplicate Gradient"
 argument_list|)
 block|,
 name|NULL
@@ -154,7 +154,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Edit Gradient..."
+literal|"/_Edit Gradient..."
 argument_list|)
 block|,
 name|NULL
@@ -179,7 +179,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Delete Gradient..."
+literal|"/_Delete Gradient..."
 argument_list|)
 block|,
 name|NULL
@@ -209,7 +209,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Refresh Gradients"
+literal|"/_Refresh Gradients"
 argument_list|)
 block|,
 name|NULL
@@ -239,7 +239,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Save as POV-Ray..."
+literal|"/Save as _POV-Ray..."
 argument_list|)
 block|,
 name|NULL

@@ -204,19 +204,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|gchar
-modifier|*
-name|gimp_menu_path_strip_uline
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|menu_path
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif

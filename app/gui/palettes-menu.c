@@ -104,7 +104,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/New Palette"
+literal|"/_New Palette"
 argument_list|)
 block|,
 name|NULL
@@ -129,7 +129,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Duplicate Palette"
+literal|"/D_uplicate Palette"
 argument_list|)
 block|,
 name|NULL
@@ -154,7 +154,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Edit Palette..."
+literal|"/_Edit Palette..."
 argument_list|)
 block|,
 name|NULL
@@ -179,7 +179,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Delete Palette..."
+literal|"/_Delete Palette..."
 argument_list|)
 block|,
 name|NULL
@@ -209,7 +209,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Refresh Palettes"
+literal|"/_Refresh Palettes"
 argument_list|)
 block|,
 name|NULL
@@ -239,7 +239,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Import Palette..."
+literal|"/_Import Palette..."
 argument_list|)
 block|,
 name|NULL
@@ -264,7 +264,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Merge Palettes..."
+literal|"/_Merge Palettes..."
 argument_list|)
 block|,
 name|NULL

@@ -921,7 +921,7 @@ argument_list|)
 expr_stmt|;
 name|path
 operator|=
-name|gimp_menu_path_strip_uline
+name|gimp_strip_uline
 argument_list|(
 name|menu_path
 argument_list|)
@@ -1186,7 +1186,7 @@ name|menu_path
 decl_stmt|;
 name|menu_path
 operator|=
-name|gimp_menu_path_strip_uline
+name|gimp_strip_uline
 argument_list|(
 name|proc_def
 operator|->
@@ -1292,7 +1292,7 @@ argument_list|)
 expr_stmt|;
 name|stripped
 operator|=
-name|gimp_menu_path_strip_uline
+name|gimp_strip_uline
 argument_list|(
 name|path
 argument_list|)

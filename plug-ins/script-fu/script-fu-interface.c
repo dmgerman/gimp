@@ -152,7 +152,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b90c5840108
+DECL|struct|__anon2a9fc3110108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b90c5840208
+DECL|struct|__anon2a9fc3110208
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -217,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b90c5840308
+DECL|struct|__anon2a9fc3110308
 block|{
 DECL|member|name
 name|gchar
@@ -245,7 +245,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b90c5840408
+DECL|struct|__anon2a9fc3110408
 block|{
 DECL|member|list
 name|GSList
@@ -265,7 +265,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2b90c584050a
+DECL|union|__anon2a9fc311050a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -336,7 +336,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b90c5840608
+DECL|struct|__anon2a9fc3110608
 block|{
 DECL|member|script_name
 name|gchar
@@ -422,7 +422,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b90c5840708
+DECL|struct|__anon2a9fc3110708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -5335,6 +5335,10 @@ name|list
 decl_stmt|;
 name|gchar
 modifier|*
+name|title
+decl_stmt|;
+name|gchar
+modifier|*
 name|buf
 decl_stmt|;
 name|gint
@@ -5433,8 +5437,6 @@ if|if
 condition|(
 name|buf
 condition|)
-name|sf_interface
-operator|->
 name|title
 operator|=
 name|g_strdup
@@ -5451,8 +5453,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
-name|sf_interface
-operator|->
 name|title
 operator|=
 name|g_strdup
@@ -5463,6 +5463,21 @@ name|script
 operator|->
 name|description
 argument_list|)
+argument_list|)
+expr_stmt|;
+comment|/* strip mnemonics from the menupath */
+name|sf_interface
+operator|->
+name|title
+operator|=
+name|gimp_strip_uline
+argument_list|(
+name|title
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|title
 argument_list|)
 expr_stmt|;
 name|buf

@@ -86,7 +86,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/QMask Active"
+literal|"/_QMask Active"
 argument_list|)
 block|,
 name|NULL
@@ -114,7 +114,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Mask Selected Areas"
+literal|"/Mask _Selected Areas"
 argument_list|)
 block|,
 name|NULL
@@ -137,7 +137,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Mask Unselected Areas"
+literal|"/Mask _Unselected Areas"
 argument_list|)
 block|,
 name|NULL
@@ -165,7 +165,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Configure Color and Opacity..."
+literal|"/_Configure Color and Opacity..."
 argument_list|)
 block|,
 name|NULL

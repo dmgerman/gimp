@@ -376,7 +376,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Toolbox>/Xtns/Script-Fu/Console..."
+literal|"<Toolbox>/Xtns/Script-Fu/_Console..."
 argument_list|)
 argument_list|,
 name|NULL
@@ -446,7 +446,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Toolbox>/Xtns/Script-Fu/Server..."
+literal|"<Toolbox>/Xtns/Script-Fu/_Server..."
 argument_list|)
 argument_list|,
 name|NULL
@@ -811,7 +811,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Toolbox>/Xtns/Script-Fu/Refresh"
+literal|"<Toolbox>/Xtns/Script-Fu/_Refresh"
 argument_list|)
 argument_list|,
 name|NULL

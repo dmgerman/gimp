@@ -68,7 +68,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/New Color"
+literal|"/_New Color"
 argument_list|)
 block|,
 literal|""
@@ -93,7 +93,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Edit Color..."
+literal|"/_Edit Color..."
 argument_list|)
 block|,
 literal|""
@@ -118,7 +118,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Delete Color"
+literal|"/_Delete Color"
 argument_list|)
 block|,
 literal|""
@@ -165,7 +165,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Zoom Out"
+literal|"/Zoom _Out"
 argument_list|)
 block|,
 literal|""
@@ -190,7 +190,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Zoom In"
+literal|"/Zoom _In"
 argument_list|)
 block|,
 literal|""
@@ -215,7 +215,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Zoom All"
+literal|"/Zoom _All"
 argument_list|)
 block|,
 literal|""

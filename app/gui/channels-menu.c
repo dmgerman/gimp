@@ -92,7 +92,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/New Channel..."
+literal|"/_New Channel..."
 argument_list|)
 block|,
 literal|"<control>N"
@@ -117,7 +117,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Raise Channel"
+literal|"/_Raise Channel"
 argument_list|)
 block|,
 literal|"<control>F"
@@ -142,7 +142,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Lower Channel"
+literal|"/_Lower Channel"
 argument_list|)
 block|,
 literal|"<control>B"
@@ -167,7 +167,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Duplicate Channel"
+literal|"/D_uplicate Channel"
 argument_list|)
 block|,
 literal|"<control>C"
@@ -197,7 +197,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Channel to Selection"
+literal|"/Channel to Sele_ction"
 argument_list|)
 block|,
 literal|"<control>S"
@@ -222,7 +222,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Add to Selection"
+literal|"/_Add to Selection"
 argument_list|)
 block|,
 name|NULL
@@ -247,7 +247,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Subtract from Selection"
+literal|"/_Subtract from Selection"
 argument_list|)
 block|,
 name|NULL
@@ -272,7 +272,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Intersect with Selection"
+literal|"/_Intersect with Selection"
 argument_list|)
 block|,
 name|NULL
@@ -302,7 +302,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Delete Channel"
+literal|"/_Delete Channel"
 argument_list|)
 block|,
 literal|"<control>X"
@@ -332,7 +332,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Edit Channel Attributes..."
+literal|"/_Edit Channel Attributes..."
 argument_list|)
 block|,
 name|NULL

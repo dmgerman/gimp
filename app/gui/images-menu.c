@@ -86,7 +86,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Raise Displays"
+literal|"/_Raise Displays"
 argument_list|)
 block|,
 name|NULL
@@ -111,7 +111,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/New Display"
+literal|"/_New Display"
 argument_list|)
 block|,
 name|NULL
@@ -136,7 +136,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Delete Image"
+literal|"/_Delete Image"
 argument_list|)
 block|,
 name|NULL

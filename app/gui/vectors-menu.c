@@ -92,7 +92,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/New Path..."
+literal|"/_New Path..."
 argument_list|)
 block|,
 literal|"<control>N"
@@ -117,7 +117,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Raise Path"
+literal|"/_Raise Path"
 argument_list|)
 block|,
 literal|"<control>F"
@@ -142,7 +142,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Lower Path"
+literal|"/_Lower Path"
 argument_list|)
 block|,
 literal|"<control>B"
@@ -167,7 +167,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Duplicate Path"
+literal|"/D_uplicate Path"
 argument_list|)
 block|,
 literal|"<control>U"
@@ -197,7 +197,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Path to Selection"
+literal|"/Path to Sele_ction"
 argument_list|)
 block|,
 literal|"<control>S"
@@ -222,7 +222,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Add to Selection"
+literal|"/_Add to Selection"
 argument_list|)
 block|,
 name|NULL
@@ -247,7 +247,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Subtract from Selection"
+literal|"/_Subtract from Selection"
 argument_list|)
 block|,
 name|NULL
@@ -272,7 +272,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Intersect with Selection"
+literal|"/_Intersect with Selection"
 argument_list|)
 block|,
 name|NULL
@@ -297,7 +297,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Selection to Path"
+literal|"/Selecti_on to Path"
 argument_list|)
 block|,
 literal|"<control>P"
@@ -322,7 +322,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Stroke Path"
+literal|"/Stro_ke Path"
 argument_list|)
 block|,
 literal|"<control>T"
@@ -352,7 +352,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Copy Path"
+literal|"/Co_py Path"
 argument_list|)
 block|,
 literal|"<control>C"
@@ -377,7 +377,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Paste Path"
+literal|"/Paste Pat_h"
 argument_list|)
 block|,
 literal|"<control>V"
@@ -402,7 +402,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Import Path..."
+literal|"/I_mport Path..."
 argument_list|)
 block|,
 literal|"<control>I"
@@ -427,7 +427,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Export Path..."
+literal|"/E_xport Path..."
 argument_list|)
 block|,
 literal|"<control>E"
@@ -457,7 +457,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Delete Path"
+literal|"/_Delete Path"
 argument_list|)
 block|,
 literal|"<control>X"
@@ -487,7 +487,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Path Tool"
+literal|"/Path _Tool"
 argument_list|)
 block|,
 name|NULL
@@ -512,7 +512,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Edit Path Attributes..."
+literal|"/_Edit Path Attributes..."
 argument_list|)
 block|,
 name|NULL

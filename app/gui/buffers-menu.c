@@ -80,7 +80,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Paste Buffer"
+literal|"/_Paste Buffer"
 argument_list|)
 block|,
 name|NULL
@@ -105,7 +105,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Paste Buffer Into"
+literal|"/Paste Buffer _Into"
 argument_list|)
 block|,
 name|NULL
@@ -130,7 +130,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Paste Buffer as New"
+literal|"/Paste Buffer as _New"
 argument_list|)
 block|,
 name|NULL
@@ -155,7 +155,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Delete Buffer"
+literal|"/_Delete Buffer"
 argument_list|)
 block|,
 name|NULL

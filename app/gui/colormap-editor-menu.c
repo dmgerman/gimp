@@ -74,7 +74,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Add Color"
+literal|"/_Add Color"
 argument_list|)
 block|,
 name|NULL
@@ -99,7 +99,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Edit Color..."
+literal|"/_Edit Color..."
 argument_list|)
 block|,
 name|NULL
