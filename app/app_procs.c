@@ -192,37 +192,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/colormap-dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gui/brush-select.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gui/gui.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gui/gradient-select.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gui/palette-editor.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gui/pattern-select.h"
 end_include
 
 begin_include
@@ -276,19 +246,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"errorconsole.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"file-open.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"file-save.h"
 end_include
 
 begin_include
@@ -435,6 +393,16 @@ end_include
 begin_function_decl
 specifier|static
 name|void
+name|app_init
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
 name|toast_old_temp_files
 parameter_list|(
 name|void
@@ -447,15 +415,6 @@ DECL|variable|is_app_exit_finish_done
 specifier|static
 name|gboolean
 name|is_app_exit_finish_done
-init|=
-name|FALSE
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|we_are_exiting
-name|gboolean
-name|we_are_exiting
 init|=
 name|FALSE
 decl_stmt|;
@@ -581,6 +540,7 @@ parameter_list|()
 end_define
 
 begin_function
+specifier|static
 name|void
 DECL|function|app_init (void)
 name|app_init
@@ -768,16 +728,6 @@ block|}
 name|RESET_BAR
 argument_list|()
 expr_stmt|;
-name|file_open_pre_init
-argument_list|()
-expr_stmt|;
-comment|/*  pre-initialize the file types     */
-name|file_save_pre_init
-argument_list|()
-expr_stmt|;
-name|RESET_BAR
-argument_list|()
-expr_stmt|;
 name|xcf_init
 argument_list|()
 expr_stmt|;
@@ -899,13 +849,6 @@ argument_list|()
 expr_stmt|;
 comment|/*  load any modules we need           */
 name|RESET_BAR
-argument_list|()
-expr_stmt|;
-name|file_open_post_init
-argument_list|()
-expr_stmt|;
-comment|/*  post-initialize the file types     */
-name|file_save_post_init
 argument_list|()
 expr_stmt|;
 comment|/* Add the swap file  */
@@ -1054,10 +997,6 @@ name|message_handler
 operator|=
 name|CONSOLE
 expr_stmt|;
-name|we_are_exiting
-operator|=
-name|TRUE
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -1083,18 +1022,6 @@ expr_stmt|;
 name|swapping_free
 argument_list|()
 expr_stmt|;
-name|brush_dialog_free
-argument_list|()
-expr_stmt|;
-name|pattern_dialog_free
-argument_list|()
-expr_stmt|;
-name|palette_dialog_free
-argument_list|()
-expr_stmt|;
-name|gradient_dialog_free
-argument_list|()
-expr_stmt|;
 name|context_manager_free
 argument_list|()
 expr_stmt|;
@@ -1114,9 +1041,6 @@ name|plug_in_kill
 argument_list|()
 expr_stmt|;
 name|procedural_db_free
-argument_list|()
-expr_stmt|;
-name|error_console_free
 argument_list|()
 expr_stmt|;
 name|tile_swap_exit

@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a180e650103
+DECL|enum|__anon290763c40103
 block|{
 DECL|enumerator|MESSAGE_BOX
 name|MESSAGE_BOX
@@ -97,17 +97,6 @@ name|gboolean
 name|double_speed
 decl_stmt|;
 end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|gboolean
-name|we_are_exiting
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/* this is used in session_get_window_info() */
-end_comment
 
 begin_decl_stmt
 specifier|extern

@@ -26,16 +26,7 @@ end_decl_stmt
 
 begin_function_decl
 name|void
-name|file_open_pre_init
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|file_open_post_init
+name|file_open_menu_init
 parameter_list|(
 name|void
 parameter_list|)

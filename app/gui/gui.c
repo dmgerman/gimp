@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"brush-select.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"devices.h"
 end_include
 
@@ -66,7 +72,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"errorconsole.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gradient-select.h"
 end_include
 
 begin_include
@@ -102,6 +120,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"palette-editor.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pattern-select.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"session.h"
 end_include
 
@@ -115,6 +145,18 @@ begin_include
 include|#
 directive|include
 file|"app_procs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"file-open.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"file-save.h"
 end_include
 
 begin_include
@@ -153,6 +195,12 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+name|file_open_menu_init
+argument_list|()
+expr_stmt|;
+name|file_save_menu_init
+argument_list|()
+expr_stmt|;
 name|menus_reorder_plugins
 argument_list|()
 expr_stmt|;
@@ -322,6 +370,18 @@ expr_stmt|;
 name|device_status_free
 argument_list|()
 expr_stmt|;
+name|brush_dialog_free
+argument_list|()
+expr_stmt|;
+name|pattern_dialog_free
+argument_list|()
+expr_stmt|;
+name|palette_dialog_free
+argument_list|()
+expr_stmt|;
+name|gradient_dialog_free
+argument_list|()
+expr_stmt|;
 block|}
 end_function
 
@@ -350,6 +410,9 @@ name|lc_dialog_free
 argument_list|()
 expr_stmt|;
 name|document_index_free
+argument_list|()
+expr_stmt|;
+name|error_console_free
 argument_list|()
 expr_stmt|;
 name|tool_options_dialog_free

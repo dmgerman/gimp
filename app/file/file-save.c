@@ -546,18 +546,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|file_save_pre_init (void)
-name|file_save_pre_init
-parameter_list|(
-name|void
-parameter_list|)
-block|{ }
-end_function
-
-begin_function
-name|void
-DECL|function|file_save_post_init (void)
-name|file_save_post_init
+DECL|function|file_save_menu_init (void)
+name|file_save_menu_init
 parameter_list|(
 name|void
 parameter_list|)
