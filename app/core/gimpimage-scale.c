@@ -726,7 +726,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_scale_check:  * @gimage:     A #GimpImage.  * @new_width:  The new width.  * @new_height: The new height.  * Returns: #GimpImageScaleCheckType  *  * Inventory the layer list in gimage and check that it may be   * scaled to @new_height and @new_width without problems.  *  * Return value: #GIMP_SCALE_OK if scaling the image will shrink none   *               of its layers completely away, and the new image size   *               is smaller than the maximum specified in the   *               preferences.  *               #GIMP_SCALE_TOO_SMALL if scaling would remove some   *               existing layers.  *               #GIMP_SCALE_TOO_BIG if the new image size would   *               exceed the maximum specified in the preferences.  **/
+comment|/**  * gimp_image_scale_check:  * @gimage:     A #GimpImage.  * @new_width:  The new width.  * @new_height: The new height.  *  * Inventory the layer list in gimage and check that it may be  * scaled to @new_height and @new_width without problems.  *  * Return value: #GIMP_IMAGE_SCALE_OK if scaling the image will shrink none  *               of its layers completely away, and the new image size  *               is smaller than the maximum specified in the  *               preferences.  *               #GIMP_IMAGE_SCALE_TOO_SMALL if scaling would remove some  *               existing layers.  *               #GIMP_IMAGE_SCALE_TOO_BIG if the new image size would  *               exceed the maximum specified in the preferences.  **/
 end_comment
 
 begin_function
@@ -751,6 +751,9 @@ modifier|*
 name|list
 decl_stmt|;
 name|glong
+name|curr_size
+decl_stmt|;
+name|glong
 name|new_size
 decl_stmt|;
 name|g_return_val_if_fail
@@ -760,10 +763,10 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
-name|GIMP_SCALE_TOO_SMALL
+name|GIMP_IMAGE_SCALE_TOO_SMALL
 argument_list|)
 expr_stmt|;
-name|new_size
+name|curr_size
 operator|=
 name|gimp_object_get_memsize
 argument_list|(
@@ -774,7 +777,13 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
+expr_stmt|;
+name|new_size
+operator|=
+operator|(
+name|curr_size
 operator|*
+operator|(
 operator|(
 name|gdouble
 operator|)
@@ -784,7 +793,9 @@ name|gimp_image_get_width
 argument_list|(
 name|gimage
 argument_list|)
+operator|)
 operator|*
+operator|(
 operator|(
 name|gdouble
 operator|)
@@ -794,9 +805,15 @@ name|gimp_image_get_height
 argument_list|(
 name|gimage
 argument_list|)
+operator|)
+operator|)
 expr_stmt|;
 if|if
 condition|(
+name|new_size
+operator|>
+name|curr_size
+operator|&&
 name|new_size
 operator|>
 name|GIMP_GUI_CONFIG
@@ -811,7 +828,7 @@ operator|->
 name|max_new_image_size
 condition|)
 return|return
-name|GIMP_SCALE_TOO_BIG
+name|GIMP_IMAGE_SCALE_TOO_BIG
 return|;
 for|for
 control|(
@@ -857,11 +874,11 @@ name|new_height
 argument_list|)
 condition|)
 return|return
-name|GIMP_SCALE_TOO_SMALL
+name|GIMP_IMAGE_SCALE_TOO_SMALL
 return|;
 block|}
 return|return
-name|GIMP_SCALE_OK
+name|GIMP_IMAGE_SCALE_OK
 return|;
 block|}
 end_function
