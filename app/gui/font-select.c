@@ -456,7 +456,7 @@ operator|->
 name|view
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add

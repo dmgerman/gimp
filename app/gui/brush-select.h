@@ -91,6 +91,11 @@ name|gchar
 modifier|*
 name|initial_brush
 parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|callback_name
+parameter_list|,
 name|gdouble
 name|initial_opacity
 parameter_list|,
@@ -99,11 +104,6 @@ name|initial_mode
 parameter_list|,
 name|gint
 name|initial_spacing
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|callback_name
 parameter_list|)
 function_decl|;
 end_function_decl

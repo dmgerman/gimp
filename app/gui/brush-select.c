@@ -289,7 +289,7 @@ end_comment
 begin_function
 name|BrushSelect
 modifier|*
-DECL|function|brush_select_new (Gimp * gimp,GimpContext * context,const gchar * title,const gchar * initial_brush,gdouble initial_opacity,GimpLayerModeEffects initial_mode,gint initial_spacing,const gchar * callback_name)
+DECL|function|brush_select_new (Gimp * gimp,GimpContext * context,const gchar * title,const gchar * initial_brush,const gchar * callback_name,gdouble initial_opacity,GimpLayerModeEffects initial_mode,gint initial_spacing)
 name|brush_select_new
 parameter_list|(
 name|Gimp
@@ -310,6 +310,11 @@ name|gchar
 modifier|*
 name|initial_brush
 parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|callback_name
+parameter_list|,
 name|gdouble
 name|initial_opacity
 parameter_list|,
@@ -318,11 +323,6 @@ name|initial_mode
 parameter_list|,
 name|gint
 name|initial_spacing
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|callback_name
 parameter_list|)
 block|{
 name|BrushSelect

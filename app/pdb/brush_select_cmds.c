@@ -401,6 +401,8 @@ name|popup_title
 argument_list|,
 name|initial_brush
 argument_list|,
+name|brush_callback
+argument_list|,
 name|opacity
 operator|/
 literal|100.0
@@ -408,8 +410,6 @@ argument_list|,
 name|paint_mode
 argument_list|,
 name|spacing
-argument_list|,
-name|brush_callback
 argument_list|)
 expr_stmt|;
 block|}
