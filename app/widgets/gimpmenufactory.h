@@ -41,6 +41,11 @@ name|gchar
 modifier|*
 name|identifier
 decl_stmt|;
+DECL|member|title
+name|gchar
+modifier|*
+name|title
+decl_stmt|;
 DECL|member|help_id
 name|gchar
 modifier|*
@@ -213,6 +218,11 @@ specifier|const
 name|gchar
 modifier|*
 name|identifier
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|title
 parameter_list|,
 specifier|const
 name|gchar
