@@ -1076,6 +1076,7 @@ name|g
 operator|->
 name|guide_ID
 expr_stmt|;
+break|break;
 block|}
 block|}
 if|if
