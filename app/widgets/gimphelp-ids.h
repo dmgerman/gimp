@@ -49,6 +49,14 @@ value|"gimp-file-open"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_FILE_OPEN_AS_LAYER
+define|#
+directive|define
+name|GIMP_HELP_FILE_OPEN_AS_LAYER
+value|"gimp-file-open-as-layer"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_FILE_OPEN_LOCATION
 define|#
 directive|define

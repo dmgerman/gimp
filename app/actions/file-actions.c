@@ -217,7 +217,7 @@ argument_list|(
 literal|"_Open..."
 argument_list|)
 block|,
-literal|"<control>O"
+name|NULL
 block|,
 name|NULL
 block|,
@@ -249,6 +249,28 @@ name|file_open_from_image_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_FILE_OPEN
+block|}
+block|,
+block|{
+literal|"file-open-as-layer"
+block|,
+name|GIMP_STOCK_LAYER
+block|,
+name|N_
+argument_list|(
+literal|"Open as _Layer..."
+argument_list|)
+block|,
+literal|"<control><alt>O"
+block|,
+name|NULL
+block|,
+name|G_CALLBACK
+argument_list|(
+name|file_open_as_layer_cmd_callback
+argument_list|)
+block|,
+name|GIMP_HELP_FILE_OPEN_AS_LAYER
 block|}
 block|,
 block|{
@@ -841,6 +863,13 @@ name|condition
 parameter_list|)
 define|\
 value|gimp_action_group_set_action_sensitive (group, action, (condition) != 0)
+name|SET_SENSITIVE
+argument_list|(
+literal|"file-open-as-layer"
+argument_list|,
+name|gimage
+argument_list|)
+expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"file-save"
