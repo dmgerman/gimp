@@ -617,15 +617,6 @@ operator|=
 operator|*
 name|default_value
 expr_stmt|;
-name|G_PARAM_SPEC
-argument_list|(
-name|cspec
-argument_list|)
-operator|->
-name|value_type
-operator|=
-name|GIMP_TYPE_COLOR
-expr_stmt|;
 return|return
 name|G_PARAM_SPEC
 argument_list|(
