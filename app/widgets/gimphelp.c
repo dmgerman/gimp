@@ -1212,7 +1212,7 @@ block|{
 specifier|const
 name|gchar
 modifier|*
-name|lang
+name|language
 decl_stmt|;
 name|gchar
 modifier|*
@@ -1247,7 +1247,7 @@ literal|"LC_MESSAGES"
 argument_list|)
 expr_stmt|;
 comment|/*  Simulate the behaviour of GNU gettext() and look    *  at LANGUAGE if the locale is not the "C" locale.    */
-name|lang
+name|language
 operator|=
 name|g_getenv
 argument_list|(
@@ -1256,7 +1256,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|lang
+name|language
 operator|&&
 operator|(
 name|locale
@@ -1277,12 +1277,10 @@ argument_list|(
 name|locale
 argument_list|)
 expr_stmt|;
-return|return
-name|g_strdup
-argument_list|(
-name|lang
-argument_list|)
-return|;
+name|locale
+operator|=
+name|language
+expr_stmt|;
 block|}
 return|return
 name|g_strdup

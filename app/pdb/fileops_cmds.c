@@ -80,6 +80,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpthumb/gimpthumb.h"
 end_include
 
@@ -93,12 +99,6 @@ begin_include
 include|#
 directive|include
 file|"procedural_db.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"base/temp-buf.h"
 end_include
 
 begin_include
@@ -1185,7 +1185,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|GIMP_CHECK_SIZE_SMALL_CHECKS
+name|GIMP_CHECK_SIZE_SM
 argument_list|,
 literal|0x66666666
 argument_list|,
