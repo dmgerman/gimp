@@ -23,7 +23,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a23d2e60103
+DECL|enum|__anon2b3849f10103
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -46,7 +46,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a23d2e60203
+DECL|enum|__anon2b3849f10203
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -84,7 +84,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a23d2e60303
+DECL|enum|__anon2b3849f10303
 block|{
 DECL|enumerator|FOREGROUND_FILL
 name|FOREGROUND_FILL
@@ -118,7 +118,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a23d2e60403
+DECL|enum|__anon2b3849f10403
 block|{
 DECL|enumerator|NORMAL_MODE
 name|NORMAL_MODE
@@ -201,7 +201,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a23d2e60503
+DECL|enum|__anon2b3849f10503
 block|{
 DECL|enumerator|NORMAL_CONVOL
 name|NORMAL_CONVOL
@@ -227,7 +227,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a23d2e60603
+DECL|enum|__anon2b3849f10603
 block|{
 DECL|enumerator|HARD
 name|HARD
@@ -253,7 +253,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a23d2e60703
+DECL|enum|__anon2b3849f10703
 block|{
 DECL|enumerator|CONSTANT
 name|CONSTANT
@@ -272,7 +272,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a23d2e60803
+DECL|enum|__anon2b3849f10803
 block|{
 DECL|enumerator|APPLY
 name|APPLY
@@ -289,7 +289,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=ADD_>*/
-DECL|enum|__anon2a23d2e60903
+DECL|enum|__anon2b3849f10903
 block|{
 DECL|enumerator|ADD_WHITE_MASK
 name|ADD_WHITE_MASK
@@ -318,7 +318,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a23d2e60a03
+DECL|enum|__anon2b3849f10a03
 block|{
 DECL|enumerator|ONCE_FORWARD
 name|ONCE_FORWARD
@@ -345,14 +345,10 @@ name|GradientPaintMode
 typedef|;
 end_typedef
 
-begin_comment
-comment|/* gradient paint modes */
-end_comment
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a23d2e60b03
+DECL|enum|__anon2b3849f10b03
 block|{
 DECL|enumerator|LINEAR_INTERPOLATION
 name|LINEAR_INTERPOLATION
@@ -372,7 +368,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a23d2e60c03
+DECL|enum|__anon2b3849f10c03
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -391,7 +387,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a23d2e60d03
+DECL|enum|__anon2b3849f10d03
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -407,6 +403,23 @@ name|OrientationType
 typedef|;
 end_typedef
 
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< skip>*/
+DECL|enum|__anon2b3849f10e03
+block|{
+DECL|enumerator|GIMP_ZOOM_IN
+name|GIMP_ZOOM_IN
+block|,
+DECL|enumerator|GIMP_ZOOM_OUT
+name|GIMP_ZOOM_OUT
+DECL|typedef|GimpZoomType
+block|}
+name|GimpZoomType
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  Procedural database types  */
 end_comment
@@ -414,7 +427,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a23d2e60e03
+DECL|enum|__anon2b3849f10f03
 block|{
 DECL|enumerator|PDB_INT32
 name|PDB_INT32
@@ -497,7 +510,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a23d2e60f03
+DECL|enum|__anon2b3849f11003
 block|{
 DECL|enumerator|PDB_EXECUTION_ERROR
 name|PDB_EXECUTION_ERROR
@@ -527,7 +540,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=PDB_>*/
-DECL|enum|__anon2a23d2e61003
+DECL|enum|__anon2b3849f11103
 block|{
 DECL|enumerator|PDB_INTERNAL
 name|PDB_INTERNAL
@@ -554,7 +567,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=CHANNEL_OP_>*/
-DECL|enum|__anon2a23d2e61103
+DECL|enum|__anon2b3849f11203
 block|{
 DECL|enumerator|CHANNEL_OP_ADD
 name|CHANNEL_OP_ADD
@@ -577,7 +590,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a23d2e61203
+DECL|enum|__anon2b3849f11303
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -621,7 +634,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a23d2e61303
+DECL|enum|__anon2b3849f11403
 block|{
 DECL|enumerator|INACTIVE
 name|INACTIVE
@@ -645,7 +658,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a23d2e61403
+DECL|enum|__anon2b3849f11503
 block|{
 DECL|enumerator|PAUSE
 name|PAUSE
@@ -675,7 +688,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a23d2e61503
+DECL|enum|__anon2b3849f11603
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -708,7 +721,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a23d2e61603
+DECL|enum|__anon2b3849f11703
 block|{
 DECL|enumerator|TRANSFORM_INIT
 name|TRANSFORM_INIT
@@ -731,7 +744,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a23d2e61703
+DECL|enum|__anon2b3849f11803
 block|{
 DECL|enumerator|CURSOR_MODE_TOOL_ICON
 name|CURSOR_MODE_TOOL_ICON
@@ -751,7 +764,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a23d2e61803
+DECL|enum|__anon2b3849f11903
 block|{
 DECL|enumerator|GIMP_TOOL_CURSOR_NONE
 name|GIMP_TOOL_CURSOR_NONE
@@ -858,7 +871,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a23d2e61903
+DECL|enum|__anon2b3849f11a03
 block|{
 DECL|enumerator|GIMP_CURSOR_MODIFIER_NONE
 name|GIMP_CURSOR_MODIFIER_NONE

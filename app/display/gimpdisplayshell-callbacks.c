@@ -1320,7 +1320,7 @@ name|change_scale
 argument_list|(
 name|gdisp
 argument_list|,
-name|ZOOMIN
+name|GIMP_ZOOM_IN
 argument_list|)
 expr_stmt|;
 block|}
@@ -1407,7 +1407,7 @@ name|change_scale
 argument_list|(
 name|gdisp
 argument_list|,
-name|ZOOMOUT
+name|GIMP_ZOOM_OUT
 argument_list|)
 expr_stmt|;
 block|}

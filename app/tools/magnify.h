@@ -6,20 +6,142 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__MAGNIFY_H__
+name|__GIMP_MAGNIFY_TOOL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__MAGNIFY_H__
+DECL|macro|__GIMP_MAGNIFY_TOOL_H__
 define|#
 directive|define
-name|__MAGNIFY_H__
+name|__GIMP_MAGNIFY_TOOL_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"gimpdrawtool.h"
+end_include
+
+begin_define
+DECL|macro|GIMP_TYPE_MAGNIFY_TOOL
+define|#
+directive|define
+name|GIMP_TYPE_MAGNIFY_TOOL
+value|(gimp_magnify_tool_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_MAGNIFY_TOOL (obj)
+define|#
+directive|define
+name|GIMP_MAGNIFY_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_MAGNIFY_TOOL, GimpMagnifyTool))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_MAGNIFY_TOOL (obj)
+define|#
+directive|define
+name|GIMP_IS_MAGNIFY_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_MAGNIFY_TOOL))
+end_define
+
+begin_define
+DECL|macro|GIMP_MAGNIFY_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_MAGNIFY_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_MAGNIFY_TOOL, GimpMagnifyToolClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_MAGNIFY_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_MAGNIFY_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_MAGNIFY_TOOL))
+end_define
+
+begin_typedef
+DECL|typedef|GimpMagnifyTool
+typedef|typedef
+name|struct
+name|_GimpMagnifyTool
+name|GimpMagnifyTool
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpMagnifyToolClass
+typedef|typedef
+name|struct
+name|_GimpMagnifyToolClass
+name|GimpMagnifyToolClass
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpMagnifyTool
+struct|struct
+name|_GimpMagnifyTool
+block|{
+DECL|member|parent_instance
+name|GimpDrawTool
+name|parent_instance
+decl_stmt|;
+DECL|member|x
+DECL|member|y
+name|gint
+name|x
+decl_stmt|,
+name|y
+decl_stmt|;
+comment|/*  upper left hand coordinate  */
+DECL|member|w
+DECL|member|h
+name|gint
+name|w
+decl_stmt|,
+name|h
+decl_stmt|;
+comment|/*  width and height            */
+DECL|member|op
+name|GimpZoomType
+name|op
+decl_stmt|;
+comment|/*  magnify operation           */
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpMagnifyToolClass
+struct|struct
+name|_GimpMagnifyToolClass
+block|{
+DECL|member|parent_class
+name|GimpDrawToolClass
+name|parent_class
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
 begin_function_decl
-name|Tool
-modifier|*
-name|tools_new_magnify
+name|void
+name|gimp_magnify_tool_register
 parameter_list|(
 name|void
 parameter_list|)
@@ -27,23 +149,10 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|tools_free_magnify
+name|GtkType
+name|gimp_magnify_tool_get_type
 parameter_list|(
-name|Tool
-modifier|*
-name|tool
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
-name|magnify_draw
-parameter_list|(
-name|Tool
-modifier|*
-name|tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -54,7 +163,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __MAGNIFY_H__  */
+comment|/*  __GIMP_MAGNIFY_TOOL_H__  */
 end_comment
 
 end_unit

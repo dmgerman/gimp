@@ -138,6 +138,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"magnify.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"measure.h"
 end_include
 
@@ -219,6 +225,9 @@ name|gimp_bucket_fill_tool_register
 argument_list|()
 expr_stmt|;
 name|gimp_measure_tool_register
+argument_list|()
+expr_stmt|;
+name|gimp_magnify_tool_register
 argument_list|()
 expr_stmt|;
 name|gimp_crop_tool_register

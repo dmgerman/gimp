@@ -202,7 +202,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2b170e0103
+DECL|enum|__anon2bf21aa70103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -3993,7 +3993,7 @@ name|change_scale
 argument_list|(
 name|gdisp
 argument_list|,
-name|ZOOMIN
+name|GIMP_ZOOM_IN
 argument_list|)
 expr_stmt|;
 block|}
@@ -4076,7 +4076,7 @@ name|change_scale
 argument_list|(
 name|gdisp
 argument_list|,
-name|ZOOMOUT
+name|GIMP_ZOOM_OUT
 argument_list|)
 expr_stmt|;
 block|}
@@ -4348,7 +4348,7 @@ name|change_scale
 argument_list|(
 name|gdisp
 argument_list|,
-name|ZOOMIN
+name|GIMP_ZOOM_IN
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4359,7 +4359,7 @@ name|change_scale
 argument_list|(
 name|gdisp
 argument_list|,
-name|ZOOMOUT
+name|GIMP_ZOOM_OUT
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4842,7 +4842,7 @@ name|iwd
 operator|->
 name|gdisp
 argument_list|,
-name|ZOOMIN
+name|GIMP_ZOOM_IN
 argument_list|)
 expr_stmt|;
 block|}
@@ -4892,7 +4892,7 @@ name|iwd
 operator|->
 name|gdisp
 argument_list|,
-name|ZOOMOUT
+name|GIMP_ZOOM_OUT
 argument_list|)
 expr_stmt|;
 block|}

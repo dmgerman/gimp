@@ -16,22 +16,6 @@ directive|define
 name|__SCALE_H__
 end_define
 
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2959bee90103
-block|{
-DECL|enumerator|ZOOMIN
-name|ZOOMIN
-block|,
-DECL|enumerator|ZOOMOUT
-name|ZOOMOUT
-DECL|typedef|ZoomType
-block|}
-name|ZoomType
-typedef|;
-end_typedef
-
 begin_function_decl
 name|void
 name|change_scale
@@ -40,7 +24,7 @@ name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|ZoomType
+name|GimpZoomType
 name|zoom_type
 parameter_list|)
 function_decl|;

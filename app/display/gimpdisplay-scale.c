@@ -309,14 +309,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|change_scale (GDisplay * gdisp,ZoomType zoom_type)
+DECL|function|change_scale (GDisplay * gdisp,GimpZoomType zoom_type)
 name|change_scale
 parameter_list|(
 name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|ZoomType
+name|GimpZoomType
 name|zoom_type
 parameter_list|)
 block|{
@@ -412,7 +412,7 @@ name|zoom_type
 condition|)
 block|{
 case|case
-name|ZOOMIN
+name|GIMP_ZOOM_IN
 case|:
 if|if
 condition|(
@@ -437,7 +437,7 @@ else|else
 return|return;
 break|break;
 case|case
-name|ZOOMOUT
+name|GIMP_ZOOM_OUT
 case|:
 if|if
 condition|(
@@ -461,7 +461,7 @@ expr_stmt|;
 else|else
 return|return;
 break|break;
-default|default :
+default|default:
 name|scalesrc
 operator|=
 name|zoom_type
