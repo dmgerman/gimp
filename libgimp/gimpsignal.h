@@ -17,19 +17,7 @@ name|__GIMP_SIGNAL_H__
 end_define
 
 begin_comment
-comment|/* A gimp-level interface to a Posix.1-compliant signal package lives here */
-end_comment
-
-begin_comment
-comment|/* For 1.2, this gimp-level interface mostly passes through to posix calls */
-end_comment
-
-begin_comment
-comment|/* without modification. Certain calls manipulate struct sigaction in      */
-end_comment
-
-begin_comment
-comment|/* ways useful to Gimp.                                                    */
+comment|/* A gimp-level interface to a Posix.1-compliant signal package lives here  * For 1.2, this gimp-level interface mostly passes through to posix calls  * without modification. Certain calls manipulate struct sigaction in  * ways useful to Gimp.  */
 end_comment
 
 begin_include
@@ -86,15 +74,7 @@ function_decl|;
 end_typedef
 
 begin_comment
-comment|/* Internal implementation that can be */
-end_comment
-
-begin_comment
-comment|/* DEFINEd into various flavors of     */
-end_comment
-
-begin_comment
-comment|/* signal(2) lookalikes.               */
+comment|/* Internal implementation that can be DEFINEd into various flavors of  * signal(2) lookalikes.  */
 end_comment
 
 begin_function_decl
@@ -110,7 +90,7 @@ modifier|*
 name|gimp_sighandler
 function_decl|)
 parameter_list|(
-name|int
+name|gint
 parameter_list|)
 parameter_list|,
 name|gint
@@ -120,19 +100,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* the gimp_signal_syscallrestart()    */
-end_comment
-
-begin_comment
-comment|/* lookalike looks like signal(2) but  */
-end_comment
-
-begin_comment
-comment|/* quietly requests the restarting of  */
-end_comment
-
-begin_comment
-comment|/* system calls. Addresses #2742       */
+comment|/* the gimp_signal_syscallrestart() lookalike looks like signal(2) but  * quietly requests the restarting of system calls. Addresses #2742  */
 end_comment
 
 begin_define

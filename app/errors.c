@@ -273,6 +273,11 @@ argument_list|(
 name|args
 argument_list|)
 expr_stmt|;
+name|g_print
+argument_list|(
+literal|"g_on_error_query()\n"
+argument_list|)
+expr_stmt|;
 name|g_on_error_query
 argument_list|(
 name|prog_name
@@ -365,21 +370,16 @@ argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"%s terminated: "
+literal|"%s terminated: %s\n"
 argument_list|,
 name|prog_name
-argument_list|)
-expr_stmt|;
-name|vprintf
+argument_list|,
+name|g_strdup_vprintf
 argument_list|(
 name|fmt
 argument_list|,
 name|args
 argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"\n"
 argument_list|)
 expr_stmt|;
 name|va_end

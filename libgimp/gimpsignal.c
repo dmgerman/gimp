@@ -14,12 +14,12 @@ comment|/* Courtesy of Austin Donnelly 06-04-2000 to address bug #2742 */
 end_comment
 
 begin_comment
-comment|/**   * gimp_signal_private:   * @signum: selects signal to be handled see man 5 signal  * @gimp_sighandler:  handler that maps to signum. Invoked by O/S.   *                    handler gets signal that caused invocation.   * @sa_flags: preferences. OR'ed SA_<xxx>. See signal.h   *  * This function furnishes a workalike for signal(2) but  * which internally invokes sigaction(2) after certain  * sa_flags are set; these primarily to ensure restarting  * of interrupted system calls. See sigaction(2)  It is a   * aid to transition and not new development: that effort   * should employ sigaction directly. [gosgood 18.04.2000]   *  * Cause handler to be run when signum is delivered.  We  * use sigaction(2) rather than signal(2) so that we can control the  * signal hander's environment completely via sa_flags: some signal(2)  * implementations differ in their sematics, so we need to nail down  * exactly what we want. [austin 06.04.2000]  *  * Returns: a reference to a signal handling function  */
+comment|/**   * gimp_signal_private:   * @signum: Selects signal to be handled see man 5 signal  * @gimp_sighandler:  Handler that maps to signum. Invoked by O/S.   *                    Handler gets signal that caused invocation.   * @sa_flags: preferences. OR'ed SA_<xxx>. See signal.h   *  * This function furnishes a workalike for signal(2) but  * which internally invokes sigaction(2) after certain  * sa_flags are set; these primarily to ensure restarting  * of interrupted system calls. See sigaction(2)  It is a   * aid to transition and not new development: that effort   * should employ sigaction directly. [gosgood 18.04.2000]   *  * Cause handler to be run when signum is delivered.  We  * use sigaction(2) rather than signal(2) so that we can control the  * signal hander's environment completely via sa_flags: some signal(2)  * implementations differ in their sematics, so we need to nail down  * exactly what we want. [austin 06.04.2000]  *  * Returns: A reference to a signal handling function  */
 end_comment
 
 begin_function
 name|GimpRetSigType
-DECL|function|gimp_signal_private (gint signum,void (* gimp_sighandler)(int),gint sa_flags)
+DECL|function|gimp_signal_private (gint signum,void (* gimp_sighandler)(gint),gint sa_flags)
 name|gimp_signal_private
 parameter_list|(
 name|gint
@@ -31,14 +31,14 @@ modifier|*
 name|gimp_sighandler
 function_decl|)
 parameter_list|(
-name|int
+name|gint
 parameter_list|)
 parameter_list|,
 name|gint
 name|sa_flags
 parameter_list|)
 block|{
-name|int
+name|gint
 name|ret
 decl_stmt|;
 name|struct
@@ -49,22 +49,15 @@ name|struct
 name|sigaction
 name|osa
 decl_stmt|;
-comment|/* The sa_handler (mandated by POSIX.1) and sa_sigaction (a      */
-comment|/* common extension) are often implemented by the OS as members  */
-comment|/* of a union.  This means you CAN NOT set both, you set one or  */
-comment|/* the other.  Caveat programmer!                                */
-comment|/* Passing gimp_signal_private a gimp_sighandler of NULL is not  */
-comment|/* an error, and generally results in the action for that signal */
-comment|/* being set to SIG_DFL (default behavior).  Many OSes define    */
-comment|/* SIG_DFL as (void (*)()0, so setting sa_handler to NULL is     */
-comment|/* the same thing as passing SIG_DFL to it.                      */
+comment|/*  The sa_handler (mandated by POSIX.1) and sa_sigaction (a    *  common extension) are often implemented by the OS as members    *  of a union.  This means you CAN NOT set both, you set one or    *  the other.  Caveat programmer!    */
+comment|/*  Passing gimp_signal_private a gimp_sighandler of NULL is not    *  an error, and generally results in the action for that signal    *  being set to SIG_DFL (default behavior).  Many OSes define    *  SIG_DFL as (void (*)()0, so setting sa_handler to NULL is    *  the same thing as passing SIG_DFL to it.    */
 name|sa
 operator|.
 name|sa_handler
 operator|=
 name|gimp_sighandler
 expr_stmt|;
-comment|/* Mask all signals while handler runs to avoid re-entrancy    * problems. */
+comment|/*  Mask all signals while handler runs to avoid re-entrancy    *  problems.    */
 name|sigfillset
 argument_list|(
 operator|&
