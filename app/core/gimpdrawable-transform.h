@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae8ea3d0103
+DECL|enum|__anon2c3b40490103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -186,6 +186,10 @@ name|recursion_level
 parameter_list|,
 name|gboolean
 name|clip_result
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 function_decl|;
 end_function_decl

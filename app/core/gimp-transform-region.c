@@ -4300,7 +4300,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_transform_affine (GimpDrawable * drawable,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,gboolean clip_result)
+DECL|function|gimp_drawable_transform_affine (GimpDrawable * drawable,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,gboolean clip_result,GimpProgress * progress)
 name|gimp_drawable_transform_affine
 parameter_list|(
 name|GimpDrawable
@@ -4330,6 +4330,10 @@ name|recursion_level
 parameter_list|,
 name|gboolean
 name|clip_result
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 block|{
 name|GimpImage
@@ -4386,6 +4390,20 @@ argument_list|(
 name|matrix
 operator|!=
 name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|progress
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_PROGRESS
+argument_list|(
+name|progress
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
@@ -4477,7 +4495,7 @@ name|recursion_level
 argument_list|,
 name|FALSE
 argument_list|,
-name|NULL
+name|progress
 argument_list|)
 expr_stmt|;
 comment|/* Free the cut/copied buffer */
