@@ -142,7 +142,7 @@ directive|define
 name|gimp_pattern_select_widget_close_popup
 value|gimp_pattern_select_widget_close
 name|enum
-DECL|enum|__anon28b3eeb20103
+DECL|enum|__anon2b19a6400103
 type|{
 DECL|enumerator|GIMP_WHITE_MASK
 name|GIMP_WHITE_MASK
@@ -164,26 +164,17 @@ name|GIMP_SELECTION_MASK
 init|=
 name|GIMP_ADD_SELECTION_MASK
 decl_stmt|,
-DECL|enumerator|GIMP_INV_SELECTION_MASK
-name|GIMP_INV_SELECTION_MASK
-init|=
-name|GIMP_ADD_INVERSE_SELECTION_MASK
-decl_stmt|,
 DECL|enumerator|GIMP_COPY_MASK
 name|GIMP_COPY_MASK
 init|=
 name|GIMP_ADD_COPY_MASK
 decl_stmt|,
-DECL|enumerator|GIMP_INV_COPY_MASK
-name|GIMP_INV_COPY_MASK
-init|=
-name|GIMP_ADD_INVERSE_COPY_MASK
 end_decl_stmt
 
 begin_enum
 unit|};
 enum|enum
-DECL|enum|__anon28b3eeb20203
+DECL|enum|__anon2b19a6400203
 block|{
 DECL|enumerator|GIMP_ADD
 name|GIMP_ADD
@@ -210,7 +201,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b3eeb20303
+DECL|enum|__anon2b19a6400303
 block|{
 DECL|enumerator|GIMP_FG_BG_RGB
 name|GIMP_FG_BG_RGB
@@ -237,7 +228,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b3eeb20403
+DECL|enum|__anon2b19a6400403
 block|{
 DECL|enumerator|GIMP_FG_IMAGE_FILL
 name|GIMP_FG_IMAGE_FILL
@@ -269,7 +260,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b3eeb20503
+DECL|enum|__anon2b19a6400503
 block|{
 DECL|enumerator|GIMP_APPLY
 name|GIMP_APPLY
@@ -286,7 +277,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b3eeb20603
+DECL|enum|__anon2b19a6400603
 block|{
 DECL|enumerator|GIMP_HARD
 name|GIMP_HARD
@@ -303,7 +294,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b3eeb20703
+DECL|enum|__anon2b19a6400703
 block|{
 DECL|enumerator|GIMP_CONTINUOUS
 name|GIMP_CONTINUOUS
@@ -320,7 +311,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b3eeb20803
+DECL|enum|__anon2b19a6400803
 block|{
 DECL|enumerator|GIMP_HORIZONTAL
 name|GIMP_HORIZONTAL
