@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad631110103
+DECL|enum|__anon2a1050520103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -972,33 +972,6 @@ argument_list|)
 expr_stmt|;
 return|return
 name|FALSE
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|guint
-DECL|function|gimp_preview_area_get_check_size (GimpPreviewArea * area)
-name|gimp_preview_area_get_check_size
-parameter_list|(
-name|GimpPreviewArea
-modifier|*
-name|area
-parameter_list|)
-block|{
-return|return
-operator|(
-literal|1
-operator|<<
-operator|(
-literal|2
-operator|+
-name|area
-operator|->
-name|check_size
-operator|)
-operator|)
 return|;
 block|}
 end_function
