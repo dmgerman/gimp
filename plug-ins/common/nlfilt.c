@@ -154,7 +154,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a9e85d80103
+DECL|enum|__anon27bc51d80103
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -1059,7 +1059,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/* source buffer gives one pixel buffer around current row */
+comment|/* source buffer gives one pixel margin all around destination buffer */
 name|srcbuf
 operator|=
 name|g_new0
@@ -1139,6 +1139,7 @@ argument_list|,
 name|width
 argument_list|)
 expr_stmt|;
+comment|/* copy thisrow[0] to thisrow[-1], thisrow[width-1] to thisrow[width] */
 name|memcpy
 argument_list|(
 name|thisrow
@@ -1165,11 +1166,16 @@ argument_list|,
 name|Bpp
 argument_list|)
 expr_stmt|;
+comment|/* copy whole thisrow to lastrow */
 name|memcpy
 argument_list|(
 name|lastrow
+operator|-
+name|Bpp
 argument_list|,
 name|thisrow
+operator|-
+name|Bpp
 argument_list|,
 name|exrowsize
 argument_list|)
@@ -1286,6 +1292,7 @@ argument_list|,
 name|width
 argument_list|)
 expr_stmt|;
+comment|/* rotate row buffers */
 name|temprow
 operator|=
 name|lastrow
@@ -3425,6 +3432,10 @@ name|x
 parameter_list|)
 value|((x)>> SCALEB)
 end_define
+
+begin_comment
+comment|/* Note: modified by David Hodson, nlfiltRow now accesses  * srclast, srcthis, and srcnext from [-Bpp] to [width*Bpp-1].  * Beware if you use this code anywhere else!  */
+end_comment
 
 begin_function
 specifier|static
