@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpobject.h"
 end_include
 
@@ -1165,7 +1171,7 @@ condition|(
 name|new_gimage
 condition|)
 block|{
-name|undo_free
+name|gimp_image_undo_free
 argument_list|(
 name|new_gimage
 argument_list|)

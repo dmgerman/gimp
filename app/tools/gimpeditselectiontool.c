@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimplayer.h"
 end_include
 
@@ -1507,7 +1513,7 @@ condition|)
 comment|/* OPERATION CANCELLED */
 block|{
 comment|/* Operation cancelled - undo the undo-group! */
-name|undo_pop
+name|gimp_image_undo
 argument_list|(
 name|gdisp
 operator|->

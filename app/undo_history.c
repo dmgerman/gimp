@@ -93,6 +93,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -106,6 +112,18 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage-mask.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpundostack.h"
 end_include
 
 begin_include
@@ -129,12 +147,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"undo_types.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -153,7 +165,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b5becb0108
+DECL|struct|__anon2befaf630108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -204,7 +216,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b5becb0208
+DECL|struct|__anon2befaf630208
 block|{
 DECL|member|clist
 name|GtkCList
@@ -912,7 +924,7 @@ name|GdkPixmap
 modifier|*
 name|pixmap
 decl_stmt|;
-name|UndoType
+name|GimpUndoType
 name|utype
 decl_stmt|;
 name|MaskBuf
@@ -1129,12 +1141,16 @@ expr_stmt|;
 block|}
 name|utype
 operator|=
-name|undo_get_undo_top_type
+name|gimp_undo_stack_peek
 argument_list|(
 name|idle
 operator|->
 name|gimage
+operator|->
+name|undo_stack
 argument_list|)
+operator|->
+name|undo_type
 expr_stmt|;
 if|if
 condition|(
@@ -2121,7 +2137,7 @@ name|data
 decl_stmt|;
 if|if
 condition|(
-name|undo_pop
+name|gimp_image_undo
 argument_list|(
 name|st
 operator|->
@@ -2164,7 +2180,7 @@ name|data
 decl_stmt|;
 if|if
 condition|(
-name|undo_redo
+name|gimp_image_redo
 argument_list|(
 name|st
 operator|->
@@ -2451,11 +2467,19 @@ expr_stmt|;
 comment|/* find out what's new */
 name|name
 operator|=
-name|undo_get_undo_name
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|gimp_undo_stack_peek
 argument_list|(
 name|st
 operator|->
 name|gimage
+operator|->
+name|undo_stack
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|namelist
@@ -2897,7 +2921,7 @@ operator|->
 name|old_selection
 condition|)
 block|{
-name|undo_pop
+name|gimp_image_undo
 argument_list|(
 name|st
 operator|->
@@ -2919,7 +2943,7 @@ operator|->
 name|old_selection
 condition|)
 block|{
-name|undo_redo
+name|gimp_image_redo
 argument_list|(
 name|st
 operator|->
@@ -3112,17 +3136,14 @@ end_comment
 
 begin_function
 specifier|static
-name|gboolean
-DECL|function|undo_history_init_undo (const gchar * undoitemname,void * data)
+name|void
+DECL|function|undo_history_init_undo (gpointer undo,gpointer data)
 name|undo_history_init_undo
 parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|undoitemname
+name|gpointer
+name|undo
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|data
 parameter_list|)
 block|{
@@ -3165,7 +3186,13 @@ operator|(
 name|gchar
 operator|*
 operator|)
-name|undoitemname
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|undo
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|row
 operator|=
@@ -3199,29 +3226,19 @@ argument_list|,
 name|clear_mask
 argument_list|)
 expr_stmt|;
-return|return
-name|FALSE
-return|;
 block|}
 end_function
 
-begin_comment
-comment|/* Ditto */
-end_comment
-
 begin_function
 specifier|static
-name|gboolean
-DECL|function|undo_history_init_redo (const char * undoitemname,void * data)
+name|void
+DECL|function|undo_history_init_redo (gpointer undo,gpointer data)
 name|undo_history_init_redo
 parameter_list|(
-specifier|const
-name|char
-modifier|*
-name|undoitemname
+name|gpointer
+name|undo
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|data
 parameter_list|)
 block|{
@@ -3257,6 +3274,13 @@ name|NULL
 expr_stmt|;
 name|namelist
 index|[
+literal|1
+index|]
+operator|=
+name|NULL
+expr_stmt|;
+name|namelist
+index|[
 literal|2
 index|]
 operator|=
@@ -3264,7 +3288,13 @@ operator|(
 name|gchar
 operator|*
 operator|)
-name|undoitemname
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|undo
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|row
 operator|=
@@ -3298,9 +3328,6 @@ argument_list|,
 name|clear_mask
 argument_list|)
 expr_stmt|;
-return|return
-name|FALSE
-return|;
 block|}
 end_function
 
@@ -3738,11 +3765,18 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* work out the initial contents */
-name|undo_map_over_undo_stack
+name|gimp_container_foreach
+argument_list|(
+name|GIMP_CONTAINER
 argument_list|(
 name|st
 operator|->
 name|gimage
+operator|->
+name|undo_stack
+operator|->
+name|undos
+argument_list|)
 argument_list|,
 name|undo_history_init_undo
 argument_list|,
@@ -3774,11 +3808,18 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|undo_map_over_redo_stack
+name|gimp_container_foreach
+argument_list|(
+name|GIMP_CONTAINER
 argument_list|(
 name|st
 operator|->
 name|gimage
+operator|->
+name|redo_stack
+operator|->
+name|undos
+argument_list|)
 argument_list|,
 name|undo_history_init_redo
 argument_list|,

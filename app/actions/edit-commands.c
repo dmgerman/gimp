@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -103,12 +109,6 @@ begin_include
 include|#
 directive|include
 file|"edit-commands.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"undo.h"
 end_include
 
 begin_include
@@ -217,7 +217,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|undo_pop
+name|gimp_image_undo
 argument_list|(
 name|gimage
 argument_list|)
@@ -256,7 +256,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|undo_redo
+name|gimp_image_redo
 argument_list|(
 name|gimage
 argument_list|)

@@ -6156,7 +6156,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2a0b76cd0108
+DECL|struct|__anon29104a760108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -7524,7 +7524,7 @@ name|table
 operator|=
 name|prefs_table_new
 argument_list|(
-literal|3
+literal|4
 argument_list|,
 name|GTK_CONTAINER
 argument_list|(
@@ -7540,7 +7540,7 @@ name|table
 operator|=
 name|prefs_table_new
 argument_list|(
-literal|2
+literal|3
 argument_list|,
 name|GTK_CONTAINER
 argument_list|(
@@ -7582,6 +7582,25 @@ name|prefs_memsize_entry_add
 argument_list|(
 name|config
 argument_list|,
+literal|"undo-size"
+argument_list|,
+name|_
+argument_list|(
+literal|"Maximum Undo Memory:"
+argument_list|)
+argument_list|,
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+name|prefs_memsize_entry_add
+argument_list|(
+name|config
+argument_list|,
 literal|"tile-cache-size"
 argument_list|,
 name|_
@@ -7594,7 +7613,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|1
+literal|2
 argument_list|)
 expr_stmt|;
 ifdef|#
@@ -7622,7 +7641,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|3
 argument_list|)
 expr_stmt|;
 endif|#
@@ -7758,7 +7777,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a0b76cd0208
+DECL|struct|__anon29104a760208
 block|{
 DECL|member|label
 specifier|const
@@ -7917,7 +7936,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a0b76cd0308
+DECL|struct|__anon29104a760308
 block|{
 DECL|member|tree_label
 specifier|const

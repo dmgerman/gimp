@@ -708,6 +708,15 @@ value|N_("Sets the number of operations kept on the undo stack.")
 end_define
 
 begin_define
+DECL|macro|UNDO_SIZE_BLURB
+define|#
+directive|define
+name|UNDO_SIZE_BLURB
+define|\
+value|N_("Sets the maximum memory used by operations kept on the undo stack.")
+end_define
+
+begin_define
 DECL|macro|USE_HELP_BLURB
 define|#
 directive|define
