@@ -4,11 +4,11 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* XPM plugin version 1.2.2 */
+comment|/* XPM plugin version 1.2.3 */
 end_comment
 
 begin_comment
-comment|/* 1.2.2 fixes bug that generated bad digits on images with more than 20000 colors. (thanks, yanele) parses gtkrc (thanks, yosh) doesn't load parameter screen on images that don't have alpha  1.2.1 fixes some minor bugs -- spaces in #XXXXXX strings, small typos in code.  1.2 compute color indexes so that we don't have to use XpmSaveXImage*  Previous...Inherited code from Ray Lehtiniemi, who inherited it from S& P. */
+comment|/* 1.2.3 fixes bug when running in noninteractive mode changes alpha_threshold range from [0, 1] to [0,255] for consistency with the threshold_alpha plugin  1.2.2 fixes bug that generated bad digits on images with more than 20000 colors. (thanks, yanele) parses gtkrc (thanks, yosh) doesn't load parameter screen on images that don't have alpha  1.2.1 fixes some minor bugs -- spaces in #XXXXXX strings, small typos in code.  1.2 compute color indexes so that we don't have to use XpmSaveXImage*  Previous...Inherited code from Ray Lehtiniemi, who inherited it from S& P. */
 end_comment
 
 begin_include
@@ -98,10 +98,10 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275d69aa0108
+DECL|struct|__anon2b50a5ad0108
 block|{
 DECL|member|threshold
-name|gdouble
+name|gint
 name|threshold
 decl_stmt|;
 DECL|typedef|XpmSaveVals
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275d69aa0208
+DECL|struct|__anon2b50a5ad0208
 block|{
 DECL|member|run
 name|gint
@@ -128,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275d69aa0308
+DECL|struct|__anon2b50a5ad0308
 block|{
 DECL|member|r
 name|guchar
@@ -154,7 +154,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|color
-name|gint
+name|gboolean
 name|color
 decl_stmt|;
 end_decl_stmt
@@ -262,7 +262,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|save_image
 parameter_list|(
 name|gchar
@@ -342,7 +342,7 @@ name|XpmSaveVals
 name|xpmvals
 init|=
 block|{
-literal|0.50
+literal|127
 comment|/* alpha threshold */
 block|}
 decl_stmt|;
@@ -502,7 +502,15 @@ literal|"raw_filename"
 block|,
 literal|"The name of the file to save the image in"
 block|}
-block|,   }
+block|,
+block|{
+name|PARAM_INT32
+block|,
+literal|"threshold"
+block|,
+literal|"Alpha threshold (0-255)"
+block|}
+block|}
 decl_stmt|;
 specifier|static
 name|gint
@@ -914,7 +922,7 @@ if|if
 condition|(
 name|nparams
 operator|!=
-literal|4
+literal|6
 condition|)
 block|{
 name|status
@@ -930,12 +938,12 @@ name|threshold
 operator|=
 name|param
 index|[
-literal|4
+literal|5
 index|]
 operator|.
 name|data
 operator|.
-name|d_float
+name|d_int32
 expr_stmt|;
 if|if
 condition|(
@@ -943,13 +951,13 @@ name|xpmvals
 operator|.
 name|threshold
 operator|<
-literal|0.0
+literal|0
 operator|||
 name|xpmvals
 operator|.
 name|threshold
 operator|>
-literal|1.0
+literal|255
 condition|)
 name|status
 operator|=
@@ -1202,7 +1210,7 @@ decl_stmt|;
 name|Colormap
 name|colormap
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -1304,7 +1312,7 @@ name|i
 operator|++
 control|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|colorspec
 init|=
@@ -1499,13 +1507,13 @@ modifier|*
 name|cmap
 parameter_list|)
 block|{
-name|int
+name|gint
 name|tile_height
 decl_stmt|;
-name|int
+name|gint
 name|scanlines
 decl_stmt|;
-name|int
+name|gint
 name|val
 decl_stmt|;
 name|guchar
@@ -1516,8 +1524,7 @@ name|guchar
 modifier|*
 name|dest
 decl_stmt|;
-name|unsigned
-name|int
+name|guint
 modifier|*
 name|src
 decl_stmt|;
@@ -1531,7 +1538,7 @@ decl_stmt|;
 name|gint32
 name|layer_ID
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -1942,7 +1949,7 @@ name|p
 operator|=
 name|g_new
 argument_list|(
-name|char
+name|gchar
 argument_list|,
 name|cpp
 operator|+
@@ -2006,7 +2013,7 @@ name|p
 operator|=
 literal|'\0'
 expr_stmt|;
-comment|/* C and its stupid null-terminated strings...*/
+comment|/* C and its stupid null-terminated strings... */
 name|array
 index|[
 name|index
@@ -2163,7 +2170,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|save_image (gchar * filename,gint32 image_ID,gint32 drawable_ID)
 name|save_image
 parameter_list|(
@@ -2189,9 +2196,6 @@ name|gint
 name|height
 decl_stmt|;
 name|gint
-name|alpha
-decl_stmt|;
-name|gint
 name|ncolors
 init|=
 literal|1
@@ -2200,8 +2204,11 @@ name|gint
 modifier|*
 name|indexno
 decl_stmt|;
-name|gint
+name|gboolean
 name|indexed
+decl_stmt|;
+name|gboolean
+name|alpha
 decl_stmt|;
 name|XpmColor
 modifier|*
@@ -2245,13 +2252,11 @@ decl_stmt|;
 name|gint
 name|threshold
 init|=
-literal|255
-operator|*
 name|xpmvals
 operator|.
 name|threshold
 decl_stmt|;
-name|gint
+name|gboolean
 name|rc
 init|=
 name|FALSE
@@ -2276,7 +2281,7 @@ name|GRAYA_IMAGE
 case|:
 name|alpha
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 break|break;
 case|case
@@ -2290,7 +2295,7 @@ name|GRAY_IMAGE
 case|:
 name|alpha
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 break|break;
 default|default:
@@ -2314,7 +2319,7 @@ name|GRAY_IMAGE
 case|:
 name|color
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 break|break;
 case|case
@@ -2331,7 +2336,7 @@ name|INDEXEDA_IMAGE
 case|:
 name|color
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 break|break;
 default|default:
@@ -2361,7 +2366,7 @@ name|RGB_IMAGE
 case|:
 name|indexed
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 break|break;
 case|case
@@ -2372,7 +2377,7 @@ name|INDEXEDA_IMAGE
 case|:
 name|indexed
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 break|break;
 default|default:
@@ -2537,7 +2542,7 @@ name|gimp_tile_height
 argument_list|()
 control|)
 block|{
-name|int
+name|gint
 name|scanlines
 decl_stmt|;
 comment|/* read the next row of tiles */
@@ -2753,7 +2758,7 @@ name|indexno
 operator|=
 name|g_new
 argument_list|(
-name|int
+name|gint
 argument_list|,
 literal|1
 argument_list|)
@@ -2799,7 +2804,7 @@ comment|/* kick the progress bar */
 name|gimp_progress_update
 argument_list|(
 call|(
-name|double
+name|gdouble
 call|)
 argument_list|(
 name|i
@@ -2808,7 +2813,7 @@ name|j
 argument_list|)
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|height
 argument_list|)
@@ -2855,12 +2860,12 @@ expr_stmt|;
 name|cpp
 operator|=
 operator|(
-name|double
+name|gdouble
 operator|)
 literal|1.0
 operator|+
 operator|(
-name|double
+name|gdouble
 operator|)
 name|log
 argument_list|(
@@ -2905,7 +2910,7 @@ name|i
 operator|++
 control|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|string
 decl_stmt|;
@@ -2944,7 +2949,7 @@ name|string
 operator|=
 name|g_new
 argument_list|(
-name|char
+name|gchar
 argument_list|,
 literal|8
 argument_list|)
@@ -2998,12 +3003,12 @@ expr_stmt|;
 name|cpp
 operator|=
 operator|(
-name|double
+name|gdouble
 operator|)
 literal|1.0
 operator|+
 operator|(
-name|double
+name|gdouble
 operator|)
 name|log
 argument_list|(
@@ -3011,7 +3016,7 @@ name|ncolors
 argument_list|)
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|log
 argument_list|(
@@ -3424,15 +3429,15 @@ name|xpmvals
 operator|.
 name|threshold
 argument_list|,
-literal|0.0
+literal|0
 argument_list|,
-literal|1.0
+literal|255
 argument_list|,
-literal|0.01
+literal|1
 argument_list|,
-literal|0.1
+literal|8
 argument_list|,
-literal|2
+literal|0
 argument_list|,
 name|TRUE
 argument_list|,
@@ -3456,7 +3461,7 @@ literal|"value_changed"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|gimp_double_adjustment_update
+name|gimp_int_adjustment_update
 argument_list|)
 argument_list|,
 operator|&

@@ -119,7 +119,7 @@ begin_function_decl
 name|void
 name|prim
 parameter_list|(
-name|guint
+name|gint
 name|pos
 parameter_list|,
 name|gchar
@@ -1068,10 +1068,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|prim (guint pos,gchar * maz,guint x,guint y,gint rnd)
+DECL|function|prim (gint pos,gchar * maz,guint x,guint y,gint rnd)
 name|prim
 parameter_list|(
-name|guint
+name|gint
 name|pos
 parameter_list|,
 name|gchar
@@ -1199,10 +1199,10 @@ name|g_slist_append
 argument_list|(
 name|front_cells
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|up
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1215,7 +1215,7 @@ condition|)
 block|{
 name|maz
 index|[
-name|up
+name|down
 index|]
 operator|=
 name|FRONTIER
@@ -1226,11 +1226,11 @@ name|g_slist_append
 argument_list|(
 name|front_cells
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|down
 argument_list|)
+argument_list|)
 expr_stmt|;
 block|}
 if|if
@@ -1242,7 +1242,7 @@ condition|)
 block|{
 name|maz
 index|[
-name|up
+name|left
 index|]
 operator|=
 name|FRONTIER
@@ -1253,10 +1253,10 @@ name|g_slist_append
 argument_list|(
 name|front_cells
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|left
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1269,7 +1269,7 @@ condition|)
 block|{
 name|maz
 index|[
-name|up
+name|right
 index|]
 operator|=
 name|FRONTIER
@@ -1280,10 +1280,10 @@ name|g_slist_append
 argument_list|(
 name|front_cells
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|right
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1311,9 +1311,8 @@ argument_list|)
 expr_stmt|;
 name|pos
 operator|=
-operator|(
-name|guint
-operator|)
+name|GPOINTER_TO_INT
+argument_list|(
 name|g_slist_nth
 argument_list|(
 name|front_cells
@@ -1322,6 +1321,7 @@ name|current
 argument_list|)
 operator|->
 name|data
+argument_list|)
 expr_stmt|;
 name|front_cells
 operator|=
@@ -1329,10 +1329,10 @@ name|g_slist_remove
 argument_list|(
 name|front_cells
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|pos
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|maz
@@ -1406,10 +1406,10 @@ name|g_slist_prepend
 argument_list|(
 name|front_cells
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|up
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1456,10 +1456,10 @@ name|g_slist_prepend
 argument_list|(
 name|front_cells
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|down
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1508,10 +1508,10 @@ name|g_slist_prepend
 argument_list|(
 name|front_cells
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|left
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1560,10 +1560,10 @@ name|g_slist_prepend
 argument_list|(
 name|front_cells
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|right
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1690,7 +1690,7 @@ name|pos
 argument_list|)
 index|]
 operator|=
-literal|1
+name|IN
 expr_stmt|;
 break|break;
 case|case
@@ -1704,7 +1704,7 @@ name|pos
 argument_list|)
 index|]
 operator|=
-literal|1
+name|IN
 expr_stmt|;
 break|break;
 case|case
@@ -1718,7 +1718,7 @@ name|pos
 argument_list|)
 index|]
 operator|=
-literal|1
+name|IN
 expr_stmt|;
 break|break;
 case|case
@@ -1732,7 +1732,7 @@ name|pos
 argument_list|)
 index|]
 operator|=
-literal|1
+name|IN
 expr_stmt|;
 break|break;
 case|case
@@ -2383,7 +2383,7 @@ name|pos
 argument_list|)
 index|]
 operator|=
-literal|1
+name|IN
 expr_stmt|;
 break|break;
 case|case
@@ -2397,7 +2397,7 @@ name|pos
 argument_list|)
 index|]
 operator|=
-literal|1
+name|IN
 expr_stmt|;
 break|break;
 case|case
@@ -2411,7 +2411,7 @@ name|pos
 argument_list|)
 index|]
 operator|=
-literal|1
+name|IN
 expr_stmt|;
 break|break;
 case|case
@@ -2425,7 +2425,7 @@ name|pos
 argument_list|)
 index|]
 operator|=
-literal|1
+name|IN
 expr_stmt|;
 break|break;
 case|case
