@@ -483,7 +483,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GTK_STOCK_SELECT_COLOR
+name|GIMP_STOCK_INDEXED_PALETTE
 block|}
 block|,
 literal|"gimp-indexed-palette"
@@ -558,7 +558,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GTK_STOCK_UNDO
+name|GIMP_STOCK_UNDO_HISTORY
 block|}
 block|,
 literal|"gimp-undo-history"
