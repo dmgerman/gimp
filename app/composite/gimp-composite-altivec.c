@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/cpu-accel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-composite.h"
 end_include
 
@@ -82,6 +88,12 @@ block|{
 ifdef|#
 directive|ifdef
 name|ARCH_PPC
+name|guint32
+name|cpu
+init|=
+name|cpu_accel
+argument_list|()
+decl_stmt|;
 if|if
 condition|(
 name|cpu
