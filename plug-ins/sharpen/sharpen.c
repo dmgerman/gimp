@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   Sharpen filters for The GIMP -- an image manipulation program  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the filter...  *   sharpen()                   - Sharpen an image using a median filter.  *   sharpen_dialog()            - Popup a dialog window for the filter box size...  *   preview_init()              - Initialize the preview window...  *   preview_scroll_callback()   - Update the preview when a scrollbar is moved.  *   preview_update()            - Update the preview window.  *   preview_exit()              - Free all memory used by the preview window...  *   dialog_create_ivalue()      - Create an integer value control...  *   dialog_iscale_update()      - Update the value field using the scale.  *   dialog_ientry_update()      - Update the value field using the text entry.  *   dialog_ok_callback()        - Start the filter...  *   dialog_cancel_callback()    - Cancel the filter...  *   dialog_close_callback()     - Exit the filter dialog application.  *   gray_filter()               - Sharpen grayscale pixels.  *   graya_filter()              - Sharpen grayscale+alpha pixels.  *   rgb_filter()                - Sharpen RGB pixels.  *   rgba_filter()               - Sharpen RGBA pixels.  *  * Revision History:  *  *   $Log$  *   Revision 1.8  1999/03/15 22:38:36  raph  *   Improved the quality of the algorithm in the sharpen plugin.  *  *   Revision 1.7  1998/06/06 23:22:22  yosh  *   * adding Lighting plugin  *  *   * updated despeckle, png, sgi, and sharpen  *  *   -Yosh  *  *   Revision 1.14  1998/05/17 16:01:33  mike  *   Removed signal handler stuff used for debugging.  *   Added gtk_rc_parse().  *   Removed extra variables.  *  *   Revision 1.13  1998/04/27  15:55:38  mike  *   Sharpen would shift the image down one pixel; was using the wrong "source"  *   row...  *  *   Revision 1.12  1998/04/27  15:45:27  mike  *   OK, put the shadow buffer stuff back in - without shadowing the undo stuff  *   will *not* work...  sigh...  *   Doubled tile cache to avoid cache thrashing with shadow buffer.  *  *   Revision 1.11  1998/04/27  15:33:45  mike  *   Updated to use LUTs for coefficients.  *   Broke out filter code for GRAY, GRAYA, RGB, RGBA modes.  *   Fixed destination region code - was using a shadow buffer when it wasn't  *   needed.  *   Now add 1 to the number of tiles needed in the cache to avoid possible  *   rounding error and resulting cache thrashing.  *  *   Revision 1.10  1998/04/23  14:39:47  mike  *   Whoops - wasn't copying the preview image over for RGB mode...  *  *   Revision 1.9  1998/04/23  13:56:02  mike  *   Updated preview to do checkerboard pattern for transparency (thanks Yosh!)  *   Added gtk_window_set_wmclass() call to make sure this plug-in gets to use  *   the standard GIMP icon if none is otherwise created...  *  *   Revision 1.8  1998/04/22  16:25:45  mike  *   Fixed RGBA preview problems...  *  *   Revision 1.7  1998/03/12  18:48:52  mike  *   Fixed pixel errors around the edge of the bounding rectangle - the  *   original pixels weren't being written back to the image...  *  *   Revision 1.6  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *  *   Revision 1.5  1997/10/17  13:56:54  mike  *   Updated author/contact information.  *  *   Revision 1.4  1997/09/29  17:16:29  mike  *   To average 8 numbers you do *not* divide by 9!  This caused the brightening  *   problem when sharpening was "turned up".  *  *   Revision 1.2  1997/06/08  22:27:35  mike  *   Updated sharpen code for hard-coded 3x3 convolution matrix.  *  *   Revision 1.1  1997/06/08  16:46:07  mike  *   Initial revision  */
+comment|/*  * "$Id$"  *  *   Sharpen filters for The GIMP -- an image manipulation program  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the filter...  *   sharpen()                   - Sharpen an image using a median filter.  *   sharpen_dialog()            - Popup a dialog window for the filter box size...  *   preview_init()              - Initialize the preview window...  *   preview_scroll_callback()   - Update the preview when a scrollbar is moved.  *   preview_update()            - Update the preview window.  *   preview_exit()              - Free all memory used by the preview window...  *   dialog_create_ivalue()      - Create an integer value control...  *   dialog_iscale_update()      - Update the value field using the scale.  *   dialog_ientry_update()      - Update the value field using the text entry.  *   dialog_ok_callback()        - Start the filter...  *   dialog_cancel_callback()    - Cancel the filter...  *   dialog_close_callback()     - Exit the filter dialog application.  *   gray_filter()               - Sharpen grayscale pixels.  *   graya_filter()              - Sharpen grayscale+alpha pixels.  *   rgb_filter()                - Sharpen RGB pixels.  *   rgba_filter()               - Sharpen RGBA pixels.  *  * Revision History:  *  *   $Log$  *   Revision 1.9  1999/03/28 22:03:12  raph  *   Fixed a silly bug causing sharpen to not work in the non-rgb cases.  *  *   Revision 1.8  1999/03/15 22:38:36  raph  *   Improved the quality of the algorithm in the sharpen plugin.  *  *   Revision 1.7  1998/06/06 23:22:22  yosh  *   * adding Lighting plugin  *  *   * updated despeckle, png, sgi, and sharpen  *  *   -Yosh  *  *   Revision 1.14  1998/05/17 16:01:33  mike  *   Removed signal handler stuff used for debugging.  *   Added gtk_rc_parse().  *   Removed extra variables.  *  *   Revision 1.13  1998/04/27  15:55:38  mike  *   Sharpen would shift the image down one pixel; was using the wrong "source"  *   row...  *  *   Revision 1.12  1998/04/27  15:45:27  mike  *   OK, put the shadow buffer stuff back in - without shadowing the undo stuff  *   will *not* work...  sigh...  *   Doubled tile cache to avoid cache thrashing with shadow buffer.  *  *   Revision 1.11  1998/04/27  15:33:45  mike  *   Updated to use LUTs for coefficients.  *   Broke out filter code for GRAY, GRAYA, RGB, RGBA modes.  *   Fixed destination region code - was using a shadow buffer when it wasn't  *   needed.  *   Now add 1 to the number of tiles needed in the cache to avoid possible  *   rounding error and resulting cache thrashing.  *  *   Revision 1.10  1998/04/23  14:39:47  mike  *   Whoops - wasn't copying the preview image over for RGB mode...  *  *   Revision 1.9  1998/04/23  13:56:02  mike  *   Updated preview to do checkerboard pattern for transparency (thanks Yosh!)  *   Added gtk_window_set_wmclass() call to make sure this plug-in gets to use  *   the standard GIMP icon if none is otherwise created...  *  *   Revision 1.8  1998/04/22  16:25:45  mike  *   Fixed RGBA preview problems...  *  *   Revision 1.7  1998/03/12  18:48:52  mike  *   Fixed pixel errors around the edge of the bounding rectangle - the  *   original pixels weren't being written back to the image...  *  *   Revision 1.6  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *  *   Revision 1.5  1997/10/17  13:56:54  mike  *   Updated author/contact information.  *  *   Revision 1.4  1997/09/29  17:16:29  mike  *   To average 8 numbers you do *not* divide by 9!  This caused the brightening  *   problem when sharpening was "turned up".  *  *   Revision 1.2  1997/06/08  22:27:35  mike  *   Updated sharpen code for hard-coded 3x3 convolution matrix.  *  *   Revision 1.1  1997/06/08  16:46:07  mike  *   Initial revision  */
 end_comment
 
 begin_include
@@ -4544,6 +4544,16 @@ index|[
 literal|1
 index|]
 expr_stmt|;
+name|pixel
+operator|=
+operator|(
+name|pixel
+operator|+
+literal|4
+operator|)
+operator|>>
+literal|3
+expr_stmt|;
 if|if
 condition|(
 name|pixel
@@ -4723,6 +4733,16 @@ name|neg2
 index|[
 literal|2
 index|]
+expr_stmt|;
+name|pixel
+operator|=
+operator|(
+name|pixel
+operator|+
+literal|4
+operator|)
+operator|>>
+literal|3
 expr_stmt|;
 if|if
 condition|(
@@ -5344,6 +5364,16 @@ index|[
 literal|4
 index|]
 expr_stmt|;
+name|pixel
+operator|=
+operator|(
+name|pixel
+operator|+
+literal|4
+operator|)
+operator|>>
+literal|3
+expr_stmt|;
 if|if
 condition|(
 name|pixel
@@ -5428,6 +5458,16 @@ index|[
 literal|5
 index|]
 expr_stmt|;
+name|pixel
+operator|=
+operator|(
+name|pixel
+operator|+
+literal|4
+operator|)
+operator|>>
+literal|3
+expr_stmt|;
 if|if
 condition|(
 name|pixel
@@ -5511,6 +5551,16 @@ name|neg2
 index|[
 literal|6
 index|]
+expr_stmt|;
+name|pixel
+operator|=
+operator|(
+name|pixel
+operator|+
+literal|4
+operator|)
+operator|>>
+literal|3
 expr_stmt|;
 if|if
 condition|(
