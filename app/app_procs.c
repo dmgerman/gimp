@@ -475,33 +475,6 @@ block|, }
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  Warning: This is a hack.  This makes the files load _after_ the gtk_main     loop starts.  This means that if a file is on the command line, the     file handling plug-in's gtk_main won't cause any dialogs that have     set a gtk_quit_add_destroy (...) to die when the plug-in ends.     Thanks to Owen for this. */
-end_comment
-
-begin_function
-DECL|function|file_open_wrapper (char * name)
-name|gint
-name|file_open_wrapper
-parameter_list|(
-name|char
-modifier|*
-name|name
-parameter_list|)
-block|{
-name|file_open
-argument_list|(
-name|name
-argument_list|,
-name|name
-argument_list|)
-expr_stmt|;
-return|return
-name|FALSE
-return|;
-block|}
-end_function
-
 begin_function
 name|void
 DECL|function|gimp_init (int gimp_argc,char ** gimp_argv)
@@ -538,12 +511,10 @@ condition|(
 operator|*
 name|gimp_argv
 condition|)
-name|gtk_idle_add
+name|file_open
 argument_list|(
-operator|(
-name|GtkFunction
-operator|)
-name|file_open_wrapper
+operator|*
+name|gimp_argv
 argument_list|,
 operator|*
 name|gimp_argv
@@ -554,6 +525,17 @@ operator|++
 expr_stmt|;
 block|}
 name|batch_init
+argument_list|()
+expr_stmt|;
+comment|/* Handle showing dialogs with gdk_quit_adds here  */
+if|if
+condition|(
+operator|!
+name|no_interface
+operator|&&
+name|show_tips
+condition|)
+name|tips_dialog_create
 argument_list|()
 expr_stmt|;
 block|}
@@ -1157,7 +1139,10 @@ name|widget
 operator|->
 name|style
 operator|->
-name|black_gc
+name|fg_gc
+index|[
+name|GTK_STATE_NORMAL
+index|]
 argument_list|,
 operator|(
 operator|(
@@ -1202,7 +1187,10 @@ name|widget
 operator|->
 name|style
 operator|->
-name|black_gc
+name|fg_gc
+index|[
+name|GTK_STATE_NORMAL
+index|]
 argument_list|,
 operator|(
 operator|(
@@ -1240,7 +1228,10 @@ name|widget
 operator|->
 name|style
 operator|->
-name|black_gc
+name|fg_gc
+index|[
+name|GTK_STATE_NORMAL
+index|]
 argument_list|,
 operator|(
 operator|(
@@ -1278,7 +1269,10 @@ name|widget
 operator|->
 name|style
 operator|->
-name|black_gc
+name|fg_gc
+index|[
+name|GTK_STATE_NORMAL
+index|]
 argument_list|,
 operator|(
 operator|(
@@ -2060,9 +2054,11 @@ end_define
 
 begin_function
 name|void
-DECL|function|app_init ()
+DECL|function|app_init (void)
 name|app_init
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|char
 name|filename
@@ -2393,13 +2389,6 @@ argument_list|(
 name|RECT_SELECT
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|show_tips
-condition|)
-name|tips_dialog_create
-argument_list|()
-expr_stmt|;
 block|}
 name|color_transfer_init
 argument_list|()
@@ -2432,9 +2421,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|app_exit_finish ()
+DECL|function|app_exit_finish (void)
 name|app_exit_finish
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 if|if
 condition|(

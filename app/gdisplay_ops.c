@@ -255,6 +255,14 @@ argument_list|)
 expr_stmt|;
 name|new_gdisp
 operator|->
+name|scale
+operator|=
+name|gdisp
+operator|->
+name|scale
+expr_stmt|;
+name|new_gdisp
+operator|->
 name|offset_x
 operator|=
 name|gdisp
