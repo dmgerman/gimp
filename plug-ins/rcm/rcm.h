@@ -24,7 +24,7 @@ comment|/* Typedefs */
 end_comment
 
 begin_enum
-DECL|enum|__anon2739c6c60103
+DECL|enum|__anon297cc0fa0103
 DECL|enumerator|ENTIRE_IMAGE
 DECL|enumerator|SELECTION
 DECL|enumerator|SELECTION_IN_CONTEXT
@@ -43,7 +43,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2739c6c60203
+DECL|enum|__anon297cc0fa0203
 DECL|enumerator|EACH
 DECL|enumerator|BOTH
 DECL|enumerator|DEGREES
@@ -77,7 +77,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|enum|__anon2739c6c60303
+DECL|enum|__anon297cc0fa0303
 DECL|enumerator|VIRGIN
 DECL|enumerator|DRAG_START
 DECL|enumerator|DRAGING
@@ -101,18 +101,18 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2739c6c60408
+DECL|struct|__anon297cc0fa0408
 block|{
 DECL|member|alpha
-name|float
+name|gfloat
 name|alpha
 decl_stmt|;
 DECL|member|beta
-name|float
+name|gfloat
 name|beta
 decl_stmt|;
 DECL|member|cw_ccw
-name|int
+name|gint
 name|cw_ccw
 decl_stmt|;
 DECL|typedef|RcmAngle
@@ -124,7 +124,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2739c6c60508
+DECL|struct|__anon297cc0fa0508
 block|{
 DECL|member|width
 name|gint
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2739c6c60608
+DECL|struct|__anon297cc0fa0608
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -276,7 +276,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2739c6c60708
+DECL|struct|__anon297cc0fa0708
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -307,7 +307,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2739c6c60808
+DECL|struct|__anon297cc0fa0808
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -320,21 +320,16 @@ modifier|*
 name|frame
 decl_stmt|;
 DECL|member|gray_sat
-name|float
+name|gfloat
 name|gray_sat
 decl_stmt|;
 DECL|member|hue
-name|float
+name|gfloat
 name|hue
 decl_stmt|;
 DECL|member|satur
-name|float
+name|gfloat
 name|satur
-decl_stmt|;
-DECL|member|gray_sat_entry
-name|GtkWidget
-modifier|*
-name|gray_sat_entry
 decl_stmt|;
 DECL|member|hue_entry
 name|GtkWidget
@@ -364,7 +359,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2739c6c60908
+DECL|struct|__anon297cc0fa0908
 block|{
 DECL|member|Slctn
 name|gint

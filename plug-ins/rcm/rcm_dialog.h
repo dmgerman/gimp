@@ -24,7 +24,7 @@ comment|/* Procedures */
 end_comment
 
 begin_function_decl
-name|gint
+name|gboolean
 name|rcm_dialog
 parameter_list|(
 name|void
