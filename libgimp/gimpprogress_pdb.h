@@ -46,6 +46,15 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_progress_pulse
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|_gimp_progress_install
 parameter_list|(
 specifier|const
