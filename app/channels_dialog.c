@@ -8833,6 +8833,18 @@ argument_list|)
 operator|/
 literal|100
 expr_stmt|;
+if|if
+condition|(
+name|gimage_get_ID
+argument_list|(
+name|options
+operator|->
+name|channel_widget
+operator|->
+name|ID
+argument_list|)
+condition|)
+block|{
 comment|/*  Set the new channel name  */
 if|if
 condition|(
@@ -8999,6 +9011,7 @@ expr_stmt|;
 name|gdisplays_flush
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 name|color_panel_free
 argument_list|(
