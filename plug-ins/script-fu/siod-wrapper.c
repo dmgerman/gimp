@@ -2539,14 +2539,35 @@ operator|&
 name|return_vals
 argument_list|)
 condition|)
+block|{
+name|convert_string
+argument_list|(
+name|proc_name
+argument_list|)
+expr_stmt|;
+name|g_snprintf
+argument_list|(
+name|error_str
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|error_str
+argument_list|)
+argument_list|,
+literal|"Invalid procedure name %s specified"
+argument_list|,
+name|proc_name
+argument_list|)
+expr_stmt|;
 return|return
 name|my_err
 argument_list|(
-literal|"Invalid procedure name specified."
+name|error_str
 argument_list|,
 name|NIL
 argument_list|)
 return|;
+block|}
 comment|/* Free the name and the description which are of no use here.  */
 for|for
 control|(
@@ -2633,6 +2654,11 @@ operator|!=
 name|nparams
 condition|)
 block|{
+name|convert_string
+argument_list|(
+name|proc_name
+argument_list|)
+expr_stmt|;
 name|g_snprintf
 argument_list|(
 name|error_str
@@ -2642,7 +2668,8 @@ argument_list|(
 name|error_str
 argument_list|)
 argument_list|,
-literal|"Invalid arguments supplied to %s--(# args: %ld, expecting: %d)"
+literal|"Invalid arguments supplied to %s -- "
+literal|"(# args: %ld, expecting: %d)"
 argument_list|,
 name|proc_name
 argument_list|,
@@ -3311,14 +3338,47 @@ argument_list|)
 operator|!=
 name|num_strings
 condition|)
+block|{
+name|convert_string
+argument_list|(
+name|proc_name
+argument_list|)
+expr_stmt|;
+name|g_snprintf
+argument_list|(
+name|error_str
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|error_str
+argument_list|)
+argument_list|,
+literal|"String array (argument %d) for function %s has "
+literal|"incorrect length (got %ld, expected %d)"
+argument_list|,
+name|i
+operator|+
+literal|1
+argument_list|,
+name|proc_name
+argument_list|,
+name|nlength
+argument_list|(
+name|list
+argument_list|)
+argument_list|,
+name|num_strings
+argument_list|)
+expr_stmt|;
 return|return
 name|my_err
 argument_list|(
-literal|"String array argument has incorrectly specified length"
+name|error_str
 argument_list|,
 name|NIL
 argument_list|)
 return|;
+block|}
 name|array
 operator|=
 name|args
@@ -4112,15 +4172,44 @@ argument_list|)
 return|;
 break|break;
 default|default:
+name|convert_string
+argument_list|(
+name|proc_name
+argument_list|)
+expr_stmt|;
+name|g_snprintf
+argument_list|(
+name|error_str
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|error_str
+argument_list|)
+argument_list|,
+literal|"Argument %d for %s is an unknown type"
+argument_list|,
+name|i
+operator|+
+literal|1
+argument_list|,
+name|proc_name
+argument_list|)
+expr_stmt|;
 return|return
 name|my_err
 argument_list|(
-literal|"Unknown argument type"
+name|error_str
 argument_list|,
 name|NIL
 argument_list|)
 return|;
 block|}
+if|if
+condition|(
+operator|!
+name|success
+condition|)
+break|break;
 name|a
 operator|=
 name|cdr
@@ -4133,6 +4222,7 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 name|values
 operator|=
 name|gimp_run_procedure2
@@ -4147,15 +4237,36 @@ argument_list|,
 name|args
 argument_list|)
 expr_stmt|;
+block|}
 else|else
+block|{
+name|g_snprintf
+argument_list|(
+name|error_str
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|error_str
+argument_list|)
+argument_list|,
+literal|"Invalid type for argument %d to %s"
+argument_list|,
+name|i
+operator|+
+literal|1
+argument_list|,
+name|proc_name
+argument_list|)
+expr_stmt|;
 return|return
 name|my_err
 argument_list|(
-literal|"Invalid types specified for arguments"
+name|error_str
 argument_list|,
 name|NIL
 argument_list|)
 return|;
+block|}
 comment|/*  Check the return status  */
 if|if
 condition|(
