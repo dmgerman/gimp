@@ -96,7 +96,7 @@ value|10
 end_define
 
 begin_typedef
-DECL|enum|__anon2a9b9d920103
+DECL|enum|__anon2c85a7270103
 typedef|typedef
 enum|enum
 block|{
@@ -116,7 +116,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2a9b9d920203
+DECL|enum|__anon2c85a7270203
 typedef|typedef
 enum|enum
 block|{
@@ -134,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9b9d920308
+DECL|struct|__anon2c85a7270308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -155,7 +155,7 @@ DECL|member|type
 name|ValuePairType
 name|type
 decl_stmt|;
-DECL|union|__anon2a9b9d92040a
+DECL|union|__anon2c85a727040a
 union|union
 block|{
 DECL|member|d
@@ -185,7 +185,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9b9d920508
+DECL|struct|__anon2c85a7270508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -215,7 +215,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9b9d920608
+DECL|struct|__anon2c85a7270608
 block|{
 DECL|member|color
 name|IfsColor
@@ -264,7 +264,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9b9d920708
+DECL|struct|__anon2c85a7270708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -300,7 +300,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9b9d920808
+DECL|struct|__anon2c85a7270808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -367,7 +367,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9b9d920908
+DECL|struct|__anon2c85a7270908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -538,7 +538,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9b9d920a08
+DECL|struct|__anon2c85a7270a08
 block|{
 DECL|member|run
 name|gint
@@ -6829,6 +6829,28 @@ name|dialog
 argument_list|)
 argument_list|,
 name|GTK_WIN_POS_MOUSE
+argument_list|)
+expr_stmt|;
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|ifsOptD
+operator|->
+name|dialog
+argument_list|)
+argument_list|,
+literal|"delete_event"
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gtk_widget_hide_on_delete
+argument_list|)
+argument_list|,
+operator|&
+name|ifsOptD
+operator|->
+name|dialog
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
