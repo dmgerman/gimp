@@ -1415,11 +1415,14 @@ operator|->
 name|imagefile
 argument_list|)
 argument_list|,
+comment|/* add some padding here for the shadow frame */
 name|gimp
 operator|->
 name|config
 operator|->
 name|thumbnail_size
+operator|+
+literal|16
 argument_list|,
 literal|0
 argument_list|,
