@@ -44,12 +44,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"brushes.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"by_color_select.h"
 end_include
 
@@ -302,7 +296,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd4ecbd0108
+DECL|struct|__anon28def22d0108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -2746,7 +2740,7 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon2bd4ecbd0208
+DECL|struct|__anon28def22d0208
 struct|struct
 block|{
 DECL|member|label
@@ -2786,7 +2780,7 @@ operator|)
 block|}
 block|}
 struct|;
-DECL|struct|__anon2bd4ecbd0308
+DECL|struct|__anon28def22d0308
 struct|struct
 block|{
 DECL|member|label
@@ -2855,7 +2849,7 @@ name|edit_plug_in_path
 block|}
 block|}
 struct|;
-DECL|struct|__anon2bd4ecbd0408
+DECL|struct|__anon28def22d0408
 struct|struct
 block|{
 DECL|member|label

@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"brushes.h"
+file|"gimpbrushlist.h"
 end_include
 
 begin_include

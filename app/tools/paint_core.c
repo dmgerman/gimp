@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"brushes.h"
+file|"gimpbrushlist.h"
 end_include
 
 begin_include
@@ -2312,7 +2312,7 @@ decl_stmt|,
 name|y
 decl_stmt|;
 block|{
-name|GBrushP
+name|GimpBrushP
 name|brush
 decl_stmt|;
 name|paint_core
@@ -2417,7 +2417,7 @@ operator|(
 operator|(
 name|double
 operator|)
-name|get_brush_spacing
+name|gimp_brush_get_spacing
 argument_list|()
 operator|/
 literal|100.0
@@ -3949,6 +3949,62 @@ block|}
 end_function
 
 begin_comment
+comment|/* This is a hack to make sure we don't cache data for a brush that   * has changed.  Do it the right way when signals get put in.  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|last_brush
+specifier|static
+name|MaskBuf
+modifier|*
+name|last_brush
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|cache_invalid
+specifier|static
+name|int
+name|cache_invalid
+init|=
+literal|0
+decl_stmt|;
+end_decl_stmt
+
+begin_function
+DECL|function|paint_core_invalidate_cache (MaskBuf * buf)
+name|int
+name|paint_core_invalidate_cache
+parameter_list|(
+name|MaskBuf
+modifier|*
+name|buf
+parameter_list|)
+block|{
+if|if
+condition|(
+name|last_brush
+operator|==
+name|buf
+condition|)
+block|{
+name|cache_invalid
+operator|=
+literal|1
+expr_stmt|;
+return|return
+literal|1
+return|;
+block|}
+return|return
+literal|0
+return|;
+block|}
+end_function
+
+begin_comment
 comment|/************************************************************  *             LOCAL FUNCTION DEFINITIONS                   *  ************************************************************/
 end_comment
 
@@ -3975,13 +4031,7 @@ decl_stmt|,
 name|y
 decl_stmt|;
 block|{
-specifier|static
-name|MaskBuf
-modifier|*
-name|last_brush
-init|=
-name|NULL
-decl_stmt|;
+comment|/*  static MaskBuf *last_brush = NULL; */
 name|MaskBuf
 modifier|*
 name|dest
@@ -4120,6 +4170,9 @@ index|]
 index|[
 name|index1
 index|]
+operator|&&
+operator|!
+name|cache_invalid
 condition|)
 return|return
 name|kernel_brushes
@@ -4136,6 +4189,8 @@ condition|(
 name|mask
 operator|!=
 name|last_brush
+operator|||
+name|cache_invalid
 condition|)
 for|for
 control|(
@@ -4199,6 +4254,10 @@ block|}
 name|last_brush
 operator|=
 name|mask
+expr_stmt|;
+name|cache_invalid
+operator|=
+literal|0
 expr_stmt|;
 name|kernel_brushes
 index|[

@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__BRUSHES_H__
+name|__GIMPBRUSHELIST_H__
 end_ifndef
 
 begin_define
-DECL|macro|__BRUSHES_H__
+DECL|macro|__GIMPBRUSHELIST_H__
 define|#
 directive|define
-name|__BRUSHES_H__
+name|__GIMPBRUSHELIST_H__
 end_define
 
 begin_include
@@ -34,55 +34,162 @@ directive|include
 file|"temp_buf.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpbrush.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpset.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpsetP.h"
+end_include
+
 begin_typedef
-DECL|typedef|GBrush
-DECL|typedef|GBrushP
+DECL|typedef|GimpBrushList
+DECL|typedef|GimpBrushListP
 typedef|typedef
 name|struct
-name|_GBrush
-name|GBrush
+name|_GimpBrushList
+name|GimpBrushList
 typedef|,
 modifier|*
-name|GBrushP
+name|GimpBrushListP
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GBrush
+DECL|struct|_GimpBrushList
 struct|struct
-name|_GBrush
+name|_GimpBrushList
 block|{
-DECL|member|filename
-name|char
-modifier|*
-name|filename
+DECL|member|gimpset
+name|GimpSet
+name|gimpset
 decl_stmt|;
-comment|/*  actual filename--brush's location on disk  */
-DECL|member|name
-name|char
-modifier|*
-name|name
-decl_stmt|;
-comment|/*  brush's name--for brush selection dialog   */
-DECL|member|spacing
+DECL|member|num_brushes
 name|int
-name|spacing
+name|num_brushes
 decl_stmt|;
-comment|/*  brush's spacing                            */
-DECL|member|index
-name|int
-name|index
-decl_stmt|;
-comment|/*  brush's index...                           */
-DECL|member|mask
-name|TempBuf
-modifier|*
-name|mask
-decl_stmt|;
-comment|/*  the actual mask...                         */
 block|}
 struct|;
 end_struct
+
+begin_typedef
+DECL|typedef|GimpBrushListClass
+typedef|typedef
+name|struct
+name|_GimpBrushListClass
+name|GimpBrushListClass
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpBrushListClass
+struct|struct
+name|_GimpBrushListClass
+block|{
+DECL|member|parent_class
+name|GimpSetClass
+name|parent_class
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_define
+DECL|macro|BRUSH_LIST_CLASS (klass)
+define|#
+directive|define
+name|BRUSH_LIST_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+define|\
+value|GTK_CHECK_CLASS_CAST (klass, gimp_brush_list_get_type(), GimpBrushListClass)
+end_define
+
+begin_define
+DECL|macro|GIMP_TYPE_BRUSH_LIST
+define|#
+directive|define
+name|GIMP_TYPE_BRUSH_LIST
+value|(gimp_brush_list_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_BRUSH_LIST (obj)
+define|#
+directive|define
+name|GIMP_BRUSH_LIST
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GIMP_CHECK_CAST ((obj), GIMP_TYPE_BRUSH_LIST, GimpBrushList))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_BRUSH_LIST (obj)
+define|#
+directive|define
+name|GIMP_IS_BRUSH_LIST
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GIMP_CHECK_TYPE ((obj), GIMP_TYPE_BRUSH_LIST))
+end_define
+
+begin_function_decl
+name|GimpBrushListP
+name|gimp_brush_list_new
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GtkType
+name|gimp_brush_list_get_type
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_brush_list_add
+parameter_list|(
+name|GimpBrushListP
+name|list
+parameter_list|,
+name|GimpBrushP
+name|brush
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpBrushP
+name|gimp_brush_list_get_brush
+parameter_list|(
+name|GimpBrushListP
+name|list
+parameter_list|,
+name|char
+modifier|*
+name|name
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_comment
 comment|/*  global variables  */
@@ -90,16 +197,9 @@ end_comment
 
 begin_decl_stmt
 specifier|extern
-name|GSList
+name|GimpBrushList
 modifier|*
 name|brush_list
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|int
-name|num_brushes
 decl_stmt|;
 end_decl_stmt
 
@@ -139,13 +239,13 @@ begin_function_decl
 name|void
 name|select_brush
 parameter_list|(
-name|GBrushP
+name|GimpBrushP
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GBrushP
+name|GimpBrushP
 name|get_brush_by_index
 parameter_list|(
 name|int
@@ -154,13 +254,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GBrushP
+name|GimpBrushP
 name|get_active_brush
 parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/* TODO: {re}move these functions */
+end_comment
 
 begin_function_decl
 name|void
@@ -171,13 +275,30 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|brush_changed_notify
+parameter_list|(
+name|GimpBrushP
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  access functions  */
 end_comment
 
+begin_comment
+comment|/* TODO: move opacity and paint_mode into individual tools? */
+end_comment
+
+begin_comment
+comment|/* TODO: move spacing into gimpbrush */
+end_comment
+
 begin_function_decl
 name|double
-name|get_brush_opacity
+name|gimp_brush_get_opacity
 parameter_list|(
 name|void
 parameter_list|)
@@ -186,7 +307,7 @@ end_function_decl
 
 begin_function_decl
 name|int
-name|get_brush_spacing
+name|gimp_brush_get_spacing
 parameter_list|(
 name|void
 parameter_list|)
@@ -195,7 +316,7 @@ end_function_decl
 
 begin_function_decl
 name|int
-name|get_brush_paint_mode
+name|gimp_brush_get_paint_mode
 parameter_list|(
 name|void
 parameter_list|)
@@ -204,7 +325,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|set_brush_opacity
+name|gimp_brush_set_opacity
 parameter_list|(
 name|double
 parameter_list|)
@@ -213,7 +334,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|set_brush_spacing
+name|gimp_brush_set_spacing
 parameter_list|(
 name|int
 parameter_list|)
@@ -222,7 +343,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|set_brush_paint_mode
+name|gimp_brush_set_paint_mode
 parameter_list|(
 name|int
 parameter_list|)
@@ -232,20 +353,6 @@ end_function_decl
 begin_comment
 comment|/*  Brush procedures  */
 end_comment
-
-begin_decl_stmt
-specifier|extern
-name|ProcRecord
-name|brushes_get_brush_proc
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|ProcRecord
-name|brushes_set_brush_proc
-decl_stmt|;
-end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
@@ -292,6 +399,20 @@ end_decl_stmt
 begin_decl_stmt
 specifier|extern
 name|ProcRecord
+name|brushes_get_brush_proc
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|ProcRecord
+name|brushes_set_brush_proc
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|ProcRecord
 name|brushes_list_proc
 decl_stmt|;
 end_decl_stmt
@@ -309,7 +430,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __BRUSHES_H__  */
+comment|/*  __GIMPBRUSHELIST_H__  */
 end_comment
 
 end_unit

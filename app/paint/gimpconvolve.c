@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"brushes.h"
+file|"gimpbrushlist.h"
 end_include
 
 begin_include
@@ -84,7 +84,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon293e41020103
+DECL|enum|__anon28e831430103
 block|{
 DECL|enumerator|Blur
 name|Blur
@@ -1623,7 +1623,7 @@ call|(
 name|int
 call|)
 argument_list|(
-name|get_brush_opacity
+name|gimp_brush_get_opacity
 argument_list|()
 operator|*
 literal|255

@@ -63,6 +63,67 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/* hacks to fake a gimp object lib */
+end_comment
+
+begin_define
+DECL|macro|GIMP_CHECK_CAST
+define|#
+directive|define
+name|GIMP_CHECK_CAST
+value|GTK_CHECK_CAST
+end_define
+
+begin_define
+DECL|macro|GIMP_CHECK_TYPE
+define|#
+directive|define
+name|GIMP_CHECK_TYPE
+value|GTK_CHECK_TYPE
+end_define
+
+begin_define
+DECL|macro|gimp_type_new
+define|#
+directive|define
+name|gimp_type_new
+value|gtk_type_new
+end_define
+
+begin_define
+DECL|macro|gimp_object_destroy (obj)
+define|#
+directive|define
+name|gimp_object_destroy
+parameter_list|(
+name|obj
+parameter_list|)
+value|gtk_object_destroy(GTK_OBJECT(obj))
+end_define
+
+begin_define
+DECL|macro|gimp_object_ref (obj)
+define|#
+directive|define
+name|gimp_object_ref
+parameter_list|(
+name|obj
+parameter_list|)
+value|gtk_object_ref(GTK_OBJECT(obj))
+end_define
+
+begin_define
+DECL|macro|gimp_object_unref (obj)
+define|#
+directive|define
+name|gimp_object_unref
+parameter_list|(
+name|obj
+parameter_list|)
+value|gtk_object_unref(GTK_OBJECT(obj))
+end_define
+
 begin_endif
 endif|#
 directive|endif

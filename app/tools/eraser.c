@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"brushes.h"
+file|"gimpbrushlist.h"
 end_include
 
 begin_include
@@ -704,7 +704,7 @@ name|opacity
 operator|=
 literal|255
 operator|*
-name|get_brush_opacity
+name|gimp_brush_get_opacity
 argument_list|()
 operator|*
 operator|(
@@ -738,7 +738,7 @@ call|(
 name|int
 call|)
 argument_list|(
-name|get_brush_opacity
+name|gimp_brush_get_opacity
 argument_list|()
 operator|*
 literal|255

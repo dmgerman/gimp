@@ -22,6 +22,12 @@ directive|include
 file|"buildmenu.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpbrush.h"
+end_include
+
 begin_typedef
 DECL|typedef|_BrushSelect
 DECL|typedef|BrushSelectP
@@ -147,6 +153,19 @@ name|void
 name|brush_select_free
 parameter_list|(
 name|BrushSelectP
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|brush_select_brush_changed
+parameter_list|(
+name|BrushSelectP
+name|bsp
+parameter_list|,
+name|GimpBrushP
+name|brush
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"brushes.h"
+file|"gimpbrushlist.h"
 end_include
 
 begin_include
@@ -723,7 +723,7 @@ name|int
 name|state
 parameter_list|)
 block|{
-name|GBrushP
+name|GimpBrushP
 name|brush
 decl_stmt|;
 if|if
@@ -1137,13 +1137,13 @@ call|(
 name|int
 call|)
 argument_list|(
-name|get_brush_opacity
+name|gimp_brush_get_opacity
 argument_list|()
 operator|*
 literal|255
 argument_list|)
 argument_list|,
-name|get_brush_paint_mode
+name|gimp_brush_get_paint_mode
 argument_list|()
 argument_list|,
 name|SOFT

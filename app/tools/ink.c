@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"brushes.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"drawable.h"
 end_include
 
@@ -31,6 +25,12 @@ begin_include
 include|#
 directive|include
 file|"gimage_mask.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpbrushlist.h"
 end_include
 
 begin_include
@@ -3552,7 +3552,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2c73909e0103
+DECL|enum|__anon2b5423180103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
@@ -4661,13 +4661,13 @@ call|(
 name|int
 call|)
 argument_list|(
-name|get_brush_opacity
+name|gimp_brush_get_opacity
 argument_list|()
 operator|*
 literal|255
 argument_list|)
 argument_list|,
-name|get_brush_paint_mode
+name|gimp_brush_get_paint_mode
 argument_list|()
 argument_list|,
 name|undo_tiles
