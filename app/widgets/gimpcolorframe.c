@@ -402,7 +402,7 @@ name|i
 index|]
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|)
@@ -431,12 +431,8 @@ name|i
 operator|+
 literal|1
 argument_list|,
-name|GTK_SHRINK
-operator||
 name|GTK_FILL
 argument_list|,
-name|GTK_SHRINK
-operator||
 name|GTK_FILL
 argument_list|,
 literal|0
@@ -493,7 +489,7 @@ name|i
 index|]
 argument_list|)
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
 literal|0.5
 argument_list|)
@@ -522,12 +518,10 @@ name|i
 operator|+
 literal|1
 argument_list|,
-name|GTK_SHRINK
+name|GTK_EXPAND
 operator||
 name|GTK_FILL
 argument_list|,
-name|GTK_SHRINK
-operator||
 name|GTK_FILL
 argument_list|,
 literal|0
