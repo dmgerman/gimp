@@ -1202,21 +1202,7 @@ operator|&
 name|GDK_BUTTON2_MASK
 condition|)
 block|{
-name|GdkEvent
-name|tmp_event
-decl_stmt|;
-name|long
-name|x1
-decl_stmt|,
-name|y1
-decl_stmt|,
-name|x2
-decl_stmt|,
-name|y2
-decl_stmt|;
-name|int
-name|flush
-decl_stmt|;
+comment|/* int flush; */
 name|grab_and_scroll
 argument_list|(
 name|gdisp
@@ -1224,13 +1210,7 @@ argument_list|,
 name|mevent
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|flush
-condition|)
-name|gdisplays_flush
-argument_list|()
-expr_stmt|;
+comment|/* if (flush) 	    gdisplays_flush (); */
 block|}
 break|break;
 case|case

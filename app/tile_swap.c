@@ -351,13 +351,15 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_expr_stmt
+begin_decl_stmt
+DECL|variable|initialize
 specifier|static
+name|int
 name|initialize
-operator|=
+init|=
 name|TRUE
-expr_stmt|;
-end_expr_stmt
+decl_stmt|;
+end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|swap_files

@@ -295,19 +295,21 @@ begin_comment
 comment|/*  external functions  */
 end_comment
 
-begin_extern
-extern|extern layers_dialog_layer_merge_query (GImage *
-operator|,
-extern|int
-end_extern
-
-begin_empty_stmt
-unit|)
-empty_stmt|;
-end_empty_stmt
+begin_function_decl
+specifier|extern
+name|void
+name|layers_dialog_layer_merge_query
+parameter_list|(
+name|GImage
+modifier|*
+parameter_list|,
+name|int
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_typedef
-DECL|struct|__anon28c38d2a0108
+DECL|struct|__anon2c501d260108
 typedef|typedef
 struct|struct
 block|{
@@ -351,7 +353,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c38d2a0208
+DECL|struct|__anon2c501d260208
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -4507,7 +4509,7 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon28c38d2a0308
+DECL|struct|__anon2c501d260308
 struct|struct
 block|{
 DECL|member|label
@@ -4576,7 +4578,7 @@ name|edit_plug_in_path
 block|}
 block|}
 struct|;
-DECL|struct|__anon28c38d2a0408
+DECL|struct|__anon2c501d260408
 struct|struct
 block|{
 DECL|member|label

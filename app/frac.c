@@ -2079,7 +2079,13 @@ operator|->
 name|eheight
 argument_list|)
 expr_stmt|;
-comment|/*      compress_cleanup (tile->eheight); */
+name|compress_cleanup
+argument_list|(
+name|tile
+operator|->
+name|eheight
+argument_list|)
+expr_stmt|;
 block|}
 name|CloseOutputBitFile
 argument_list|(
@@ -3238,11 +3244,12 @@ index|]
 decl_stmt|;
 comment|/* sums for each quadrant */
 specifier|static
+name|gint
 name|delta
 index|[
 literal|3
 index|]
-operator|=
+init|=
 block|{
 literal|6
 block|,
@@ -3250,7 +3257,7 @@ literal|2
 block|,
 literal|1
 block|}
-expr_stmt|;
+decl_stmt|;
 comment|/* table used to compute the class number */
 name|gint
 name|size1

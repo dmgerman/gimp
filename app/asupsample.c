@@ -36,7 +36,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c9995590108
+DECL|struct|__anon28c2f99a0108
 typedef|typedef
 struct|struct
 block|{
@@ -191,8 +191,6 @@ decl_stmt|;
 comment|/* Counters, width of region */
 name|int
 name|xt
-decl_stmt|,
-name|xtt
 decl_stmt|,
 name|yt
 decl_stmt|;

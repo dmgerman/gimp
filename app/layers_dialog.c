@@ -8963,7 +8963,7 @@ argument_list|()
 expr_stmt|;
 name|gtk_widget_ref
 argument_list|(
-name|GTK_OBJECT
+name|GTK_WIDGET
 argument_list|(
 name|list_item
 argument_list|)

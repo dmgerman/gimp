@@ -6590,11 +6590,7 @@ name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|int
-name|x
-decl_stmt|,
-name|y
-decl_stmt|;
+comment|/* int x, y; */
 comment|/*  This function determines the kinkiness at each point in the    *  original free-hand curve by finding the dotproduct between    *  the two vectors formed at each point from that point to its    *  immediate neighbors.  A smoothing function is applied to    *  determine the vectors to ameliorate the otherwise excessive    *  jitter associated with original selection.    */
 name|gdisp
 operator|=
@@ -7390,11 +7386,7 @@ decl_stmt|,
 modifier|*
 name|k_right
 decl_stmt|;
-name|int
-name|x
-decl_stmt|,
-name|y
-decl_stmt|;
+comment|/* int x, y; */
 name|int
 name|i
 decl_stmt|;
