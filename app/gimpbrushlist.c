@@ -157,6 +157,12 @@ directive|include
 file|"general.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_comment
 comment|/*  global variables  */
 end_comment
@@ -546,6 +552,18 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|datafiles_read_directories
+argument_list|(
+name|brush_vbr_path
+argument_list|,
+operator|(
+name|datafile_loader_t
+operator|)
+name|brushes_brush_load
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 name|brush_select_thaw_all
 argument_list|()
 expr_stmt|;
@@ -594,7 +612,7 @@ argument_list|,
 literal|"Standard"
 argument_list|)
 expr_stmt|;
-comment|/*  set ref_cout to 2 --> never swap the standard brush  */
+comment|/*  set ref_count to 2 --> never swap the standard brush  */
 name|gtk_object_ref
 argument_list|(
 name|GTK_OBJECT
@@ -677,7 +695,10 @@ expr_stmt|;
 else|else
 name|g_message
 argument_list|(
-literal|"Warning: failed to load brush \"%s\""
+name|_
+argument_list|(
+literal|"Warning: Failed to load brush\n\"%s\""
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -735,7 +756,10 @@ expr_stmt|;
 else|else
 name|g_message
 argument_list|(
-literal|"Warning: failed to load brush \"%s\""
+name|_
+argument_list|(
+literal|"Warning: Failed to load brush\n\"%s\""
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -793,7 +817,10 @@ expr_stmt|;
 else|else
 name|g_message
 argument_list|(
-literal|"Warning: failed to load pixmap brush \"%s\""
+name|_
+argument_list|(
+literal|"Warning: Failed to load pixmap brush\n\"%s\""
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -851,7 +878,10 @@ expr_stmt|;
 else|else
 name|g_message
 argument_list|(
-literal|"Warning: failed to load pixmap pipe \"%s\""
+name|_
+argument_list|(
+literal|"Warning: Failed to load pixmap pipe\n\"%s\""
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -1109,7 +1139,7 @@ argument_list|)
 operator|)
 condition|)
 block|{
-comment|/* make sure we don't overite an existing brush */
+comment|/* make sure we don't overwrite an existing brush */
 name|fclose
 argument_list|(
 name|tmp_fp
