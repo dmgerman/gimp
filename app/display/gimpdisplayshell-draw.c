@@ -4608,12 +4608,17 @@ decl_stmt|;
 name|char
 modifier|*
 name|str
+decl_stmt|,
+modifier|*
+name|orig
 decl_stmt|;
 if|if
 condition|(
 name|message
 condition|)
 name|message
+operator|=
+name|orig
 operator|=
 name|g_strdup
 argument_list|(
@@ -4941,7 +4946,7 @@ expr_stmt|;
 block|}
 name|g_free
 argument_list|(
-name|message
+name|orig
 argument_list|)
 expr_stmt|;
 name|msg_box
