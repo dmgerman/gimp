@@ -317,7 +317,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2920159d0108
+DECL|struct|__anon2b4da5a10108
 block|{
 DECL|member|url
 name|char
@@ -1120,6 +1120,13 @@ name|_
 argument_list|(
 literal|"About"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|GTK_WIDGET_SET_FLAGS
+argument_list|(
+name|button
+argument_list|,
+name|GTK_CAN_DEFAULT
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect

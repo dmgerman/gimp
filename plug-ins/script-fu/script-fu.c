@@ -684,7 +684,7 @@ argument_list|(
 literal|"<Toolbox>/Xtns/Script-Fu/Console..."
 argument_list|)
 argument_list|,
-literal|""
+name|NULL
 argument_list|,
 name|PROC_EXTENSION
 argument_list|,
@@ -722,7 +722,7 @@ argument_list|(
 literal|"<Toolbox>/Xtns/Script-Fu/Server..."
 argument_list|)
 argument_list|,
-literal|""
+name|NULL
 argument_list|,
 name|PROC_EXTENSION
 argument_list|,

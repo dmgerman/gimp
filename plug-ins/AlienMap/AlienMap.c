@@ -142,7 +142,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon29f46a010108
+DECL|struct|__anon28d0243a0108
 typedef|typedef
 struct|struct
 block|{
@@ -177,7 +177,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29f46a010208
+DECL|struct|__anon28d0243a0208
 typedef|typedef
 struct|struct
 block|{
@@ -4823,6 +4823,13 @@ name|_
 argument_list|(
 literal|"About"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|GTK_WIDGET_SET_FLAGS
+argument_list|(
+name|button
+argument_list|,
+name|GTK_CAN_DEFAULT
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect

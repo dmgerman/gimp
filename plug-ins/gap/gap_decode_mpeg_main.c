@@ -509,7 +509,7 @@ argument_list|(
 literal|"<Image>/Video/Split Video to Frames/MPEG1"
 argument_list|)
 argument_list|,
-literal|"RGB*, INDEXED*, GRAY*"
+name|NULL
 argument_list|,
 name|PROC_PLUG_IN
 argument_list|,
@@ -547,7 +547,7 @@ argument_list|(
 literal|"<Toolbox>/Xtns/Split Video to Frames/MPEG1"
 argument_list|)
 argument_list|,
-literal|"RGB*, INDEXED*, GRAY*"
+name|NULL
 argument_list|,
 name|PROC_EXTENSION
 argument_list|,

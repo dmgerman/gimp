@@ -696,7 +696,7 @@ name|but_txt
 operator|=
 name|_
 argument_list|(
-literal|"CANCEL"
+literal|"Cancel"
 argument_list|)
 expr_stmt|;
 name|b_argv
@@ -1045,7 +1045,10 @@ index|]
 operator|.
 name|but_txt
 operator|=
+name|_
+argument_list|(
 literal|"Gen + Encode"
+argument_list|)
 expr_stmt|;
 name|b_argv
 index|[

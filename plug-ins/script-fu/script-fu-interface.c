@@ -342,7 +342,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b204fc00108
+DECL|struct|__anon28ef3b100108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -386,7 +386,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b204fc00208
+DECL|struct|__anon28ef3b100208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -412,7 +412,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b204fc00308
+DECL|struct|__anon28ef3b100308
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -433,7 +433,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b204fc00408
+DECL|struct|__anon28ef3b100408
 block|{
 DECL|member|name
 name|gchar
@@ -461,7 +461,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2b204fc0050a
+DECL|union|__anon28ef3b10050a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -530,7 +530,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b204fc00608
+DECL|struct|__anon28ef3b100608
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -616,7 +616,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b204fc00708
+DECL|struct|__anon28ef3b100708
 block|{
 DECL|member|status
 name|GtkWidget
@@ -7741,6 +7741,13 @@ name|_
 argument_list|(
 literal|"About"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|GTK_WIDGET_SET_FLAGS
+argument_list|(
+name|button
+argument_list|,
+name|GTK_CAN_DEFAULT
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
