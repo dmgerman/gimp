@@ -130,7 +130,7 @@ block|{
 block|{
 name|GIMP_NORMAL_MODE
 block|,
-name|NULL
+literal|"GIMP_NORMAL_MODE"
 block|,
 literal|"normal-mode"
 block|}
@@ -138,7 +138,7 @@ block|,
 block|{
 name|GIMP_DISSOLVE_MODE
 block|,
-name|NULL
+literal|"GIMP_DISSOLVE_MODE"
 block|,
 literal|"dissolve-mode"
 block|}
@@ -146,7 +146,7 @@ block|,
 block|{
 name|GIMP_BEHIND_MODE
 block|,
-name|NULL
+literal|"GIMP_BEHIND_MODE"
 block|,
 literal|"behind-mode"
 block|}
@@ -154,7 +154,7 @@ block|,
 block|{
 name|GIMP_MULTIPLY_MODE
 block|,
-name|NULL
+literal|"GIMP_MULTIPLY_MODE"
 block|,
 literal|"multiply-mode"
 block|}
@@ -162,7 +162,7 @@ block|,
 block|{
 name|GIMP_SCREEN_MODE
 block|,
-name|NULL
+literal|"GIMP_SCREEN_MODE"
 block|,
 literal|"screen-mode"
 block|}
@@ -170,7 +170,7 @@ block|,
 block|{
 name|GIMP_OVERLAY_MODE
 block|,
-name|NULL
+literal|"GIMP_OVERLAY_MODE"
 block|,
 literal|"overlay-mode"
 block|}
@@ -178,7 +178,7 @@ block|,
 block|{
 name|GIMP_DIFFERENCE_MODE
 block|,
-name|NULL
+literal|"GIMP_DIFFERENCE_MODE"
 block|,
 literal|"difference-mode"
 block|}
@@ -186,7 +186,7 @@ block|,
 block|{
 name|GIMP_ADDITION_MODE
 block|,
-name|NULL
+literal|"GIMP_ADDITION_MODE"
 block|,
 literal|"addition-mode"
 block|}
@@ -194,7 +194,7 @@ block|,
 block|{
 name|GIMP_SUBTRACT_MODE
 block|,
-name|NULL
+literal|"GIMP_SUBTRACT_MODE"
 block|,
 literal|"subtract-mode"
 block|}
@@ -202,7 +202,7 @@ block|,
 block|{
 name|GIMP_DARKEN_ONLY_MODE
 block|,
-name|NULL
+literal|"GIMP_DARKEN_ONLY_MODE"
 block|,
 literal|"darken-only-mode"
 block|}
@@ -210,7 +210,7 @@ block|,
 block|{
 name|GIMP_LIGHTEN_ONLY_MODE
 block|,
-name|NULL
+literal|"GIMP_LIGHTEN_ONLY_MODE"
 block|,
 literal|"lighten-only-mode"
 block|}
@@ -218,7 +218,7 @@ block|,
 block|{
 name|GIMP_HUE_MODE
 block|,
-name|NULL
+literal|"GIMP_HUE_MODE"
 block|,
 literal|"hue-mode"
 block|}
@@ -226,7 +226,7 @@ block|,
 block|{
 name|GIMP_SATURATION_MODE
 block|,
-name|NULL
+literal|"GIMP_SATURATION_MODE"
 block|,
 literal|"saturation-mode"
 block|}
@@ -234,7 +234,7 @@ block|,
 block|{
 name|GIMP_COLOR_MODE
 block|,
-name|NULL
+literal|"GIMP_COLOR_MODE"
 block|,
 literal|"color-mode"
 block|}
@@ -242,7 +242,7 @@ block|,
 block|{
 name|GIMP_VALUE_MODE
 block|,
-name|NULL
+literal|"GIMP_VALUE_MODE"
 block|,
 literal|"value-mode"
 block|}
@@ -250,7 +250,7 @@ block|,
 block|{
 name|GIMP_DIVIDE_MODE
 block|,
-name|NULL
+literal|"GIMP_DIVIDE_MODE"
 block|,
 literal|"divide-mode"
 block|}
@@ -258,7 +258,7 @@ block|,
 block|{
 name|GIMP_DODGE_MODE
 block|,
-name|NULL
+literal|"GIMP_DODGE_MODE"
 block|,
 literal|"dodge-mode"
 block|}
@@ -266,7 +266,7 @@ block|,
 block|{
 name|GIMP_BURN_MODE
 block|,
-name|NULL
+literal|"GIMP_BURN_MODE"
 block|,
 literal|"burn-mode"
 block|}
@@ -274,7 +274,7 @@ block|,
 block|{
 name|GIMP_HARDLIGHT_MODE
 block|,
-name|NULL
+literal|"GIMP_HARDLIGHT_MODE"
 block|,
 literal|"hardlight-mode"
 block|}
@@ -282,7 +282,7 @@ block|,
 block|{
 name|GIMP_COLOR_ERASE_MODE
 block|,
-name|NULL
+literal|"GIMP_COLOR_ERASE_MODE"
 block|,
 literal|"color-erase-mode"
 block|}
@@ -344,7 +344,10 @@ block|{
 block|{
 name|GIMP_SMALL_CHECKS
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Small"
+argument_list|)
 block|,
 literal|"small-checks"
 block|}
@@ -352,7 +355,10 @@ block|,
 block|{
 name|GIMP_MEDIUM_CHECKS
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Medium"
+argument_list|)
 block|,
 literal|"medium-checks"
 block|}
@@ -360,7 +366,10 @@ block|,
 block|{
 name|GIMP_LARGE_CHECKS
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Large"
+argument_list|)
 block|,
 literal|"large-checks"
 block|}
@@ -422,7 +431,10 @@ block|{
 block|{
 name|GIMP_LIGHT_CHECKS
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Light Checks"
+argument_list|)
 block|,
 literal|"light-checks"
 block|}
@@ -430,7 +442,10 @@ block|,
 block|{
 name|GIMP_GRAY_CHECKS
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Mid-Tone Checks"
+argument_list|)
 block|,
 literal|"gray-checks"
 block|}
@@ -438,7 +453,10 @@ block|,
 block|{
 name|GIMP_DARK_CHECKS
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Dark Checks"
+argument_list|)
 block|,
 literal|"dark-checks"
 block|}
@@ -446,7 +464,10 @@ block|,
 block|{
 name|GIMP_WHITE_ONLY
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"White Only"
+argument_list|)
 block|,
 literal|"white-only"
 block|}
@@ -454,7 +475,10 @@ block|,
 block|{
 name|GIMP_GRAY_ONLY
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Gray Only"
+argument_list|)
 block|,
 literal|"gray-only"
 block|}
@@ -462,7 +486,10 @@ block|,
 block|{
 name|GIMP_BLACK_ONLY
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Black Only"
+argument_list|)
 block|,
 literal|"black-only"
 block|}
@@ -524,7 +551,7 @@ block|{
 block|{
 name|GIMP_HISTOGRAM_VALUE
 block|,
-name|NULL
+literal|"GIMP_HISTOGRAM_VALUE"
 block|,
 literal|"value"
 block|}
@@ -532,7 +559,7 @@ block|,
 block|{
 name|GIMP_HISTOGRAM_RED
 block|,
-name|NULL
+literal|"GIMP_HISTOGRAM_RED"
 block|,
 literal|"red"
 block|}
@@ -540,7 +567,7 @@ block|,
 block|{
 name|GIMP_HISTOGRAM_GREEN
 block|,
-name|NULL
+literal|"GIMP_HISTOGRAM_GREEN"
 block|,
 literal|"green"
 block|}
@@ -548,7 +575,7 @@ block|,
 block|{
 name|GIMP_HISTOGRAM_BLUE
 block|,
-name|NULL
+literal|"GIMP_HISTOGRAM_BLUE"
 block|,
 literal|"blue"
 block|}
@@ -556,7 +583,7 @@ block|,
 block|{
 name|GIMP_HISTOGRAM_ALPHA
 block|,
-name|NULL
+literal|"GIMP_HISTOGRAM_ALPHA"
 block|,
 literal|"alpha"
 block|}

@@ -23,7 +23,7 @@ literal|0
 end_if
 
 begin_comment
-unit|This file is parsed by two scripts, enumgen.pl in tools/pdbgen    and glib-mkenums. All enums that are not marked with
+unit|This file is parsed by two scripts, enumgen.pl in tools/pdbgen    and gimp-mkenums. All enums that are not marked with
 comment|/*< pdb-skip>*/
 end_comment
 
@@ -79,7 +79,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b5b67490103
+DECL|enum|__anon2a302bc70103
 block|{
 DECL|enumerator|GIMP_INTERPOLATION_NONE
 name|GIMP_INTERPOLATION_NONE
@@ -119,7 +119,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5b67490203
+DECL|enum|__anon2a302bc70203
 block|{
 DECL|enumerator|GIMP_NORMAL_MODE
 name|GIMP_NORMAL_MODE
@@ -220,22 +220,25 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b5b67490303
+DECL|enum|__anon2a302bc70303
 block|{
 DECL|enumerator|GIMP_SMALL_CHECKS
 name|GIMP_SMALL_CHECKS
 init|=
 literal|0
 block|,
+comment|/*< desc="Small">*/
 DECL|enumerator|GIMP_MEDIUM_CHECKS
 name|GIMP_MEDIUM_CHECKS
 init|=
 literal|1
 block|,
+comment|/*< desc="Medium">*/
 DECL|enumerator|GIMP_LARGE_CHECKS
 name|GIMP_LARGE_CHECKS
 init|=
 literal|2
+comment|/*< desc="Large">*/
 DECL|typedef|GimpCheckSize
 block|}
 name|GimpCheckSize
@@ -264,37 +267,43 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b5b67490403
+DECL|enum|__anon2a302bc70403
 block|{
 DECL|enumerator|GIMP_LIGHT_CHECKS
 name|GIMP_LIGHT_CHECKS
 init|=
 literal|0
 block|,
+comment|/*< desc="Light Checks">*/
 DECL|enumerator|GIMP_GRAY_CHECKS
 name|GIMP_GRAY_CHECKS
 init|=
 literal|1
 block|,
+comment|/*< desc="Mid-Tone Checks">*/
 DECL|enumerator|GIMP_DARK_CHECKS
 name|GIMP_DARK_CHECKS
 init|=
 literal|2
 block|,
+comment|/*< desc="Dark Checks">*/
 DECL|enumerator|GIMP_WHITE_ONLY
 name|GIMP_WHITE_ONLY
 init|=
 literal|3
 block|,
+comment|/*< desc="White Only">*/
 DECL|enumerator|GIMP_GRAY_ONLY
 name|GIMP_GRAY_ONLY
 init|=
 literal|4
 block|,
+comment|/*< desc="Gray Only">*/
 DECL|enumerator|GIMP_BLACK_ONLY
 name|GIMP_BLACK_ONLY
 init|=
 literal|5
+comment|/*< desc="Black Only">*/
 DECL|typedef|GimpCheckType
 block|}
 name|GimpCheckType
@@ -309,7 +318,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b5b67490503
+DECL|enum|__anon2a302bc70503
 block|{
 DECL|enumerator|GIMP_NORMAL_CONVOL
 name|GIMP_NORMAL_CONVOL
@@ -332,7 +341,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b5b67490603
+DECL|enum|__anon2a302bc70603
 block|{
 DECL|enumerator|GIMP_VALUE_LUT
 name|GIMP_VALUE_LUT
@@ -365,7 +374,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2b5b67490703
+DECL|enum|__anon2a302bc70703
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE
