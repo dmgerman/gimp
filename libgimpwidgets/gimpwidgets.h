@@ -589,10 +589,10 @@ function_decl|;
 end_function_decl
 
 begin_define
-DECL|macro|GIMP_MEM_SIZE_ENTRY_SPINBUTTON (memsize)
+DECL|macro|GIMP_MEMSIZE_ENTRY_SPINBUTTON (memsize)
 define|#
 directive|define
-name|GIMP_MEM_SIZE_ENTRY_SPINBUTTON
+name|GIMP_MEMSIZE_ENTRY_SPINBUTTON
 parameter_list|(
 name|memsize
 parameter_list|)
@@ -601,10 +601,10 @@ value|(g_object_get_data (G_OBJECT (memsize), "spinbutton"))
 end_define
 
 begin_define
-DECL|macro|GIMP_MEM_SIZE_ENTRY_SPINBUTTON_ADJ (memsize)
+DECL|macro|GIMP_MEMSIZE_ENTRY_SPINBUTTON_ADJ (memsize)
 define|#
 directive|define
-name|GIMP_MEM_SIZE_ENTRY_SPINBUTTON_ADJ
+name|GIMP_MEMSIZE_ENTRY_SPINBUTTON_ADJ
 parameter_list|(
 name|memsize
 parameter_list|)
@@ -613,10 +613,10 @@ value|gtk_spin_button_get_adjustment \         (GTK_SPIN_BUTTON (g_object_get_da
 end_define
 
 begin_define
-DECL|macro|GIMP_MEM_SIZE_ENTRY_OPTIONMENU (memsize)
+DECL|macro|GIMP_MEMSIZE_ENTRY_OPTIONMENU (memsize)
 define|#
 directive|define
-name|GIMP_MEM_SIZE_ENTRY_OPTIONMENU
+name|GIMP_MEMSIZE_ENTRY_OPTIONMENU
 parameter_list|(
 name|memsize
 parameter_list|)
@@ -627,7 +627,7 @@ end_define
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_mem_size_entry_new
+name|gimp_memsize_entry_new
 parameter_list|(
 name|GtkAdjustment
 modifier|*

@@ -74,6 +74,22 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
+begin_function_decl
+name|gboolean
+name|gimp_memsize_set_from_string
+parameter_list|(
+name|GValue
+modifier|*
+name|value
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|string
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_define
 DECL|macro|GIMP_TYPE_PATH
 define|#
@@ -109,6 +125,17 @@ define|#
 directive|define
 name|GIMP_TYPE_UNIT
 value|(gimp_unit_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_VALUE_HOLDS_UNIT (value)
+define|#
+directive|define
+name|GIMP_VALUE_HOLDS_UNIT
+parameter_list|(
+name|value
+parameter_list|)
+value|(G_TYPE_CHECK_VALUE_TYPE ((value), GIMP_TYPE_UNIT))
 end_define
 
 begin_decl_stmt

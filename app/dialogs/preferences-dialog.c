@@ -197,7 +197,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c8aab2d0103
+DECL|enum|__anon2c6328930103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -9171,7 +9171,7 @@ argument_list|)
 expr_stmt|;
 name|hbox
 operator|=
-name|gimp_mem_size_entry_new
+name|gimp_memsize_entry_new
 argument_list|(
 name|GTK_ADJUSTMENT
 argument_list|(
@@ -12776,7 +12776,7 @@ argument_list|)
 expr_stmt|;
 name|hbox
 operator|=
-name|gimp_mem_size_entry_new
+name|gimp_memsize_entry_new
 argument_list|(
 name|GTK_ADJUSTMENT
 argument_list|(
@@ -13130,7 +13130,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c8aab2d0208
+DECL|struct|__anon2c6328930208
 block|{
 DECL|member|label
 name|gchar
@@ -13310,7 +13310,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c8aab2d0308
+DECL|struct|__anon2c6328930308
 block|{
 DECL|member|tree_label
 name|gchar

@@ -248,7 +248,7 @@ value|gtk_widget_modify_style (widget, title_style)
 end_define
 
 begin_enum
-DECL|enum|__anon2b26b9960103
+DECL|enum|__anon28dc73190103
 enum|enum
 block|{
 DECL|enumerator|DIRENT_COLUMN
@@ -509,7 +509,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b26b9960208
+DECL|struct|__anon28dc73190208
 block|{
 DECL|member|directory
 name|gboolean
@@ -4636,7 +4636,7 @@ argument_list|)
 expr_stmt|;
 name|memsize
 operator|=
-name|gimp_mem_size_entry_new
+name|gimp_memsize_entry_new
 argument_list|(
 name|GTK_ADJUSTMENT
 argument_list|(
