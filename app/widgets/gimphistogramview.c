@@ -103,7 +103,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a23e2850103
+DECL|enum|__anon27a8635e0103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -891,6 +891,8 @@ index|[
 name|RANGE_CHANGED
 index|]
 argument_list|,
+literal|0
+argument_list|,
 name|MIN
 argument_list|(
 name|histogram
@@ -1136,6 +1138,8 @@ index|[
 name|RANGE_CHANGED
 index|]
 argument_list|,
+literal|0
+argument_list|,
 name|MIN
 argument_list|(
 name|histogram_widget
@@ -1245,6 +1249,8 @@ name|histogram_widget_signals
 index|[
 name|RANGE_CHANGED
 index|]
+argument_list|,
+literal|0
 argument_list|,
 name|MIN
 argument_list|(
