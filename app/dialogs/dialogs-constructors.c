@@ -973,9 +973,7 @@ parameter_list|)
 block|{
 return|return
 name|gimp_cursor_view_new
-argument_list|(
-name|context
-argument_list|)
+argument_list|()
 return|;
 block|}
 end_function
