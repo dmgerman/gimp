@@ -368,9 +368,12 @@ name|tool_tips
 argument_list|,
 name|button
 argument_list|,
+name|gettext
+argument_list|(
 name|ops_button
 operator|->
 name|tooltip
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

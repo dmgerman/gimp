@@ -620,12 +620,12 @@ literal|2
 index|]
 init|=
 block|{
-name|_
+name|N_
 argument_list|(
 literal|"Blur"
 argument_list|)
 block|,
-name|_
+name|N_
 argument_list|(
 literal|"Sharpen"
 argument_list|)

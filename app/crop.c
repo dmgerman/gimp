@@ -145,14 +145,6 @@ name|CROPPING
 value|4
 end_define
 
-begin_define
-DECL|macro|REFRAMING
-define|#
-directive|define
-name|REFRAMING
-value|5
-end_define
-
 begin_comment
 comment|/*  speed of key movement  */
 end_comment
@@ -592,7 +584,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|crop_ok_callback
+name|crop_crop_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -633,7 +625,7 @@ comment|/* Crop area-select functions */
 end_comment
 
 begin_typedef
-DECL|enum|__anon278aea240103
+DECL|enum|__anon2b4498680103
 typedef|typedef
 enum|enum
 block|{
@@ -906,12 +898,12 @@ literal|2
 index|]
 init|=
 block|{
-name|_
+name|N_
 argument_list|(
 literal|"Crop"
 argument_list|)
 block|,
-name|_
+name|N_
 argument_list|(
 literal|"Resize"
 argument_list|)
@@ -988,7 +980,7 @@ name|options
 operator|->
 name|type_d
 operator|=
-name|CROP_CROP
+name|RESIZE_CROP
 expr_stmt|;
 comment|/*  the main vbox  */
 name|vbox
@@ -1544,29 +1536,12 @@ name|crop
 operator|->
 name|y2
 condition|)
-block|{
-if|if
-condition|(
-name|crop_options
-operator|->
-name|type
-operator|==
-name|CROP_CROP
-condition|)
 name|crop
 operator|->
 name|function
 operator|=
 name|CROPPING
 expr_stmt|;
-else|else
-name|crop
-operator|->
-name|function
-operator|=
-name|REFRAMING
-expr_stmt|;
-block|}
 comment|/*  otherwise, the new function will be creating, since we want to start anew  */
 else|else
 name|crop
@@ -1816,16 +1791,23 @@ name|GDK_BUTTON3_MASK
 operator|)
 condition|)
 block|{
-switch|switch
+if|if
 condition|(
 name|crop
 operator|->
 name|function
+operator|==
+name|CROPPING
 condition|)
 block|{
-case|case
-name|CROPPING
-case|:
+if|if
+condition|(
+name|crop_options
+operator|->
+name|type
+operator|==
+name|CROP_CROP
+condition|)
 name|crop_image
 argument_list|(
 name|gdisp
@@ -1855,10 +1837,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-break|break;
-case|case
-name|REFRAMING
-case|:
+else|else
 name|crop_image
 argument_list|(
 name|gdisp
@@ -1888,16 +1867,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-break|break;
-default|default:
-name|crop_info_update
-argument_list|(
-name|tool
-argument_list|)
-expr_stmt|;
-return|return;
-block|}
-block|}
 comment|/*  Finish the tool  */
 name|draw_core_stop
 argument_list|(
@@ -1919,6 +1888,14 @@ name|state
 operator|=
 name|INACTIVE
 expr_stmt|;
+block|}
+else|else
+name|crop_info_update
+argument_list|(
+name|tool
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -2200,12 +2177,6 @@ operator|->
 name|function
 operator|==
 name|CROPPING
-operator|||
-name|crop
-operator|->
-name|function
-operator|==
-name|REFRAMING
 condition|)
 return|return;
 name|gdisplay_untransform_coords
@@ -3754,33 +3725,6 @@ name|gpointer
 name|gdisp_ptr
 parameter_list|)
 block|{
-name|GDisplay
-modifier|*
-name|gdisp
-decl_stmt|;
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|gdisp_ptr
-expr_stmt|;
-if|if
-condition|(
-name|tool
-operator|->
-name|state
-operator|==
-name|ACTIVE
-operator|&&
-name|tool
-operator|->
-name|gdisp_ptr
-operator|==
-name|gdisp_ptr
-condition|)
-block|{
 switch|switch
 condition|(
 name|kevent
@@ -3863,7 +3807,6 @@ case|case
 name|GDK_Control_R
 case|:
 break|break;
-block|}
 block|}
 block|}
 end_function
@@ -5613,7 +5556,7 @@ specifier|static
 name|ActionAreaItem
 name|action_items
 index|[
-literal|4
+literal|3
 index|]
 init|=
 block|{
@@ -5623,7 +5566,7 @@ argument_list|(
 literal|"Crop"
 argument_list|)
 block|,
-name|crop_ok_callback
+name|crop_crop_callback
 block|,
 name|NULL
 block|,
@@ -5643,7 +5586,6 @@ block|,
 name|NULL
 block|}
 block|,
-comment|/*  { N_("Selection"), crop_selection_callback, NULL, NULL },  */
 block|{
 name|N_
 argument_list|(
@@ -6447,8 +6389,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|crop_ok_callback (GtkWidget * w,gpointer client_data)
-name|crop_ok_callback
+DECL|function|crop_crop_callback (GtkWidget * w,gpointer client_data)
+name|crop_crop_callback
 parameter_list|(
 name|GtkWidget
 modifier|*

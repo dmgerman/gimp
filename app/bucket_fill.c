@@ -519,17 +519,17 @@ literal|3
 index|]
 init|=
 block|{
-name|_
+name|N_
 argument_list|(
 literal|"FG Color Fill"
 argument_list|)
 block|,
-name|_
+name|N_
 argument_list|(
 literal|"BG Color Fill"
 argument_list|)
 block|,
-name|_
+name|N_
 argument_list|(
 literal|"Pattern Fill"
 argument_list|)
