@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Event history:  * V 1.00, PK, 05-May-97: Creation  * V 1.01, PK, 19-May-97: Problem with compilation on Irix fixed  * V 1.02, PK, 08-Jun-97: Bug with saving gray images fixed  * V 1.03, PK, 05-Oct-97: Parse rc-file  * V 1.04, PK, 12-Oct-97: No progress bars for non-interactive mode  */
+comment|/* Event history:  * V 1.00, PK, 05-May-97: Creation  * V 1.01, PK, 19-May-97: Problem with compilation on Irix fixed  * V 1.02, PK, 08-Jun-97: Bug with saving gray images fixed  * V 1.03, PK, 05-Oct-97: Parse rc-file  * V 1.04, PK, 12-Oct-97: No progress bars for non-interactive mode  * V 1.05, nn, 20-Dec-97: Initialize image_ID in run()  */
 end_comment
 
 begin_decl_stmt
@@ -14,7 +14,7 @@ name|char
 name|ident
 index|[]
 init|=
-literal|"@(#) GIMP FITS file-plugin v1.04  12-Oct-97"
+literal|"@(#) GIMP FITS file-plugin v1.05  20-Dec-97"
 decl_stmt|;
 end_decl_stmt
 
@@ -61,7 +61,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b302c8e0108
+DECL|struct|__anon2ac39bc60108
 block|{
 DECL|member|replace
 name|guint
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b302c8e0208
+DECL|struct|__anon2ac39bc60208
 block|{
 DECL|member|run
 name|gint
@@ -357,7 +357,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b302c8e0308
+DECL|struct|__anon2ac39bc60308
 block|{
 DECL|member|dialog
 name|GtkWidget

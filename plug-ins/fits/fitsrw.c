@@ -156,11 +156,11 @@ comment|/*  Date of Gen.  : 12-Apr-97                                           
 end_comment
 
 begin_comment
-comment|/*  Last modified : 17-May-97                                                 */
+comment|/*  Last modified : 20-Dec-97                                                 */
 end_comment
 
 begin_comment
-comment|/*  Version       : 0.10                                                      */
+comment|/*  Version       : 0.11                                                      */
 end_comment
 
 begin_comment
@@ -169,6 +169,10 @@ end_comment
 
 begin_comment
 comment|/*  Changes       :                                                           */
+end_comment
+
+begin_comment
+comment|/*  #MOD-0001, nn, 20-Dec-97, Initialize some variables                       */
 end_comment
 
 begin_comment
@@ -224,7 +228,7 @@ DECL|macro|VERSIO
 define|#
 directive|define
 name|VERSIO
-value|0.10
+value|0.11
 end_define
 
 begin_comment
@@ -238,7 +242,7 @@ name|char
 name|ident
 index|[]
 init|=
-literal|"@(#) libfits.c              0.10  17-May-97  (%I%)"
+literal|"@(#) libfits.c              0.11  20-Dec-97  (%I%)"
 decl_stmt|;
 end_decl_stmt
 

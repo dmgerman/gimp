@@ -28,13 +28,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gtk/gtk.h"
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_define
@@ -91,6 +91,26 @@ define|#
 directive|define
 name|N_FUNCTIONS
 value|8
+end_define
+
+begin_comment
+comment|/* I learned that in general PI is not defined in math.h */
+end_comment
+
+begin_comment
+comment|/* (Thanks to all who pointed this out.) Now this #define */
+end_comment
+
+begin_comment
+comment|/* solves the problem rather brutally but once and for all. */
+end_comment
+
+begin_define
+DECL|macro|TWIST_PI
+define|#
+directive|define
+name|TWIST_PI
+value|3.1415927
 end_define
 
 begin_comment
@@ -270,7 +290,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e7b4bb0108
+DECL|struct|__anon2ad2ded30108
 block|{
 DECL|member|object
 name|GtkWidget
@@ -295,7 +315,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e7b4bb0208
+DECL|struct|__anon2ad2ded30208
 block|{
 DECL|member|a1
 name|gfloat
@@ -418,7 +438,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e7b4bb0308
+DECL|struct|__anon2ad2ded30308
 block|{
 DECL|member|name_a1
 name|char
@@ -489,7 +509,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e7b4bb0408
+DECL|struct|__anon2ad2ded30408
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -534,7 +554,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e7b4bb0508
+DECL|struct|__anon2ad2ded30508
 block|{
 DECL|member|width
 name|gint
@@ -575,7 +595,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e7b4bb0608
+DECL|struct|__anon2ad2ded30608
 block|{
 DECL|member|slider01
 name|GtkWidget
@@ -1406,39 +1426,6 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|container
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|create_effects_panel
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|container
-parameter_list|,
-name|gchar
-modifier|*
-name|text1
-parameter_list|,
-name|gchar
-modifier|*
-name|text2
-parameter_list|,
-name|gchar
-modifier|*
-name|text3
-parameter_list|,
-name|GtkSignalFunc
-name|callback_func1
-parameter_list|,
-name|GtkSignalFunc
-name|callback_func2
-parameter_list|,
-name|GtkSignalFunc
-name|callback_func3
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2360,9 +2347,6 @@ name|GStatusType
 name|status
 init|=
 name|STATUS_SUCCESS
-decl_stmt|;
-name|gint
-name|i
 decl_stmt|;
 name|run_mode
 operator|=
@@ -6596,6 +6580,11 @@ decl_stmt|;
 name|gint
 name|dummy
 decl_stmt|;
+comment|/* current_item must be initialized in order to prevent warnings */
+name|current_item
+operator|=
+name|NULL
+expr_stmt|;
 name|menu_field
 operator|=
 name|gtk_hbox_new
@@ -9200,10 +9189,6 @@ name|parameter_box
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|effects_box
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|cutoff_box
 decl_stmt|;
 name|GtkWidget
@@ -9224,16 +9209,6 @@ name|functions_box
 decl_stmt|;
 name|ObjectAndLabel
 name|oal
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|toggle
-decl_stmt|;
-name|gchar
-name|buffer
-index|[
-literal|12
-index|]
 decl_stmt|;
 comment|/* Create a basic dialog window */
 name|create_base_dialog
@@ -15539,6 +15514,10 @@ operator|*
 name|y
 argument_list|)
 expr_stmt|;
+name|p
+operator|=
+literal|0.0
+expr_stmt|;
 comment|/* exceptions first .. */
 if|if
 condition|(
@@ -15582,7 +15561,7 @@ operator|)
 condition|)
 name|p
 operator|=
-name|M_PI
+name|TWIST_PI
 operator|/
 literal|2.0
 expr_stmt|;
@@ -15612,7 +15591,7 @@ name|p
 operator|=
 literal|3.0
 operator|*
-name|M_PI
+name|TWIST_PI
 operator|/
 literal|2.0
 expr_stmt|;
@@ -15666,7 +15645,7 @@ operator|)
 condition|)
 name|p
 operator|=
-name|M_PI
+name|TWIST_PI
 expr_stmt|;
 comment|/* simple cases in the four quadrants */
 elseif|else
@@ -15710,7 +15689,7 @@ operator|)
 condition|)
 name|p
 operator|=
-name|M_PI
+name|TWIST_PI
 operator|-
 name|atan
 argument_list|(
@@ -15737,7 +15716,7 @@ operator|)
 condition|)
 name|p
 operator|=
-name|M_PI
+name|TWIST_PI
 operator|+
 name|atan
 argument_list|(
@@ -15765,7 +15744,7 @@ name|p
 operator|=
 literal|2.0
 operator|*
-name|M_PI
+name|TWIST_PI
 operator|-
 name|atan
 argument_list|(
@@ -16456,31 +16435,6 @@ name|y0
 operator|)
 argument_list|)
 expr_stmt|;
-block|}
-end_function
-
-begin_function
-DECL|function|distortion_function09 (gfloat x1,gfloat x2,gfloat * delta_x1,gfloat * delta_x2)
-specifier|static
-name|void
-name|distortion_function09
-parameter_list|(
-name|gfloat
-name|x1
-parameter_list|,
-name|gfloat
-name|x2
-parameter_list|,
-name|gfloat
-modifier|*
-name|delta_x1
-parameter_list|,
-name|gfloat
-modifier|*
-name|delta_x2
-parameter_list|)
-block|{
-comment|/*  *delta_x1 = 0.1*parameter_values.a1*sin(5.0*parameter_values.a3*x1)*cos(5.0*parameter_values.a4*x1);  *delta_x2 = 0.1*parameter_values.a2*sin(5.0*parameter_values.a5*x2)*cos(5.0*parameter_values.a6*x2); */
 block|}
 end_function
 
@@ -17501,11 +17455,6 @@ name|ru
 decl_stmt|,
 name|rv
 decl_stmt|;
-name|gint
-name|u0
-decl_stmt|,
-name|v0
-decl_stmt|;
 name|gfloat
 name|w0
 decl_stmt|,
@@ -17576,7 +17525,7 @@ name|int
 operator|)
 name|v
 expr_stmt|;
-comment|// Calculate the area weights.
+comment|/* Calculate the area weights.  */
 name|w0
 operator|=
 operator|(
@@ -17617,7 +17566,7 @@ operator|)
 operator|*
 name|ru
 expr_stmt|;
-comment|// Get the four pixel colors depending on bpp.
+comment|/* Get the four pixel colors depending on bpp. */
 switch|switch
 condition|(
 name|bpp

@@ -8,7 +8,7 @@ comment|/* This program was written using pages 625-629 of the book  * "Encyclop
 end_comment
 
 begin_comment
-comment|/* Event history:  * V 1.00, PK, 25-Jul-96: First try  * V 1.90, PK, 15-Mar-97: Upgrade to work with GIMP V0.99  * V 1.91, PK, 05-Apr-97: Return all arguments, even in case of an error  * V 1.92, PK, 18-May-97: Ignore EOF-error on reading image data  * V 1.93, PK, 05-Oct-97: Parse rc file  * V 1.94, PK, 12-Oct-97: No progress bars for non-interactive mode  */
+comment|/* Event history:  * V 1.00, PK, 25-Jul-96: First try  * V 1.90, PK, 15-Mar-97: Upgrade to work with GIMP V0.99  * V 1.91, PK, 05-Apr-97: Return all arguments, even in case of an error  * V 1.92, PK, 18-May-97: Ignore EOF-error on reading image data  * V 1.93, PK, 05-Oct-97: Parse rc file  * V 1.94, PK, 12-Oct-97: No progress bars for non-interactive mode  * V 1.95, nn, 20-Dec-97: Initialize some variable  */
 end_comment
 
 begin_decl_stmt
@@ -18,7 +18,7 @@ name|char
 name|ident
 index|[]
 init|=
-literal|"@(#) GIMP SunRaster file-plugin v1.94  12-Oct-97"
+literal|"@(#) GIMP SunRaster file-plugin v1.95  20-Dec-97"
 decl_stmt|;
 end_decl_stmt
 
@@ -103,7 +103,7 @@ comment|/* Fileheader of SunRaster files */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27d233ba0108
+DECL|struct|__anon278ae21e0108
 typedef|typedef
 struct|struct
 block|{
@@ -192,7 +192,7 @@ comment|/* Runlength compression format */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27d233ba0208
+DECL|struct|__anon278ae21e0208
 typedef|typedef
 struct|struct
 block|{
@@ -810,7 +810,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d233ba0308
+DECL|struct|__anon278ae21e0308
 block|{
 DECL|member|rle
 name|gint
@@ -826,7 +826,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d233ba0408
+DECL|struct|__anon278ae21e0408
 block|{
 DECL|member|run
 name|gint

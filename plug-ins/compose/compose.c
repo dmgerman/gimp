@@ -8,7 +8,7 @@ comment|/*  * This plug-in composes RGB-images from several types of channels  *
 end_comment
 
 begin_comment
-comment|/* Event history:  * V 1.00, PK, 29-Jul-97, Creation  */
+comment|/* Event history:  * V 1.00, PK, 29-Jul-97, Creation  * V 1.01, nn, 20-Dec-97, Add default case in switch for hsv_to_rgb ()  */
 end_comment
 
 begin_decl_stmt
@@ -18,7 +18,7 @@ name|char
 name|ident
 index|[]
 init|=
-literal|"@(#) GIMP Compose plug-in v1.00 29-Jul-97"
+literal|"@(#) GIMP Compose plug-in v1.01 20-Dec-97"
 decl_stmt|;
 end_decl_stmt
 
@@ -418,7 +418,7 @@ comment|/* Description of a composition */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2adfaf8a0108
+DECL|struct|__anon2801e0750108
 typedef|typedef
 struct|struct
 block|{
@@ -601,7 +601,7 @@ value|(sizeof (compose_dsc) / sizeof (compose_dsc[0]))
 end_define
 
 begin_typedef
-DECL|struct|__anon2adfaf8a0208
+DECL|struct|__anon2801e0750208
 typedef|typedef
 struct|struct
 block|{
@@ -632,7 +632,7 @@ comment|/* Dialog structure */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2adfaf8a0308
+DECL|struct|__anon2801e0750308
 typedef|typedef
 struct|struct
 block|{

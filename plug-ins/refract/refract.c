@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* refract.c, version 0.1.0-alpha, 20 October 1997   * A plug-in for the GIMP 0.99.  * Uses a height field as a lens of specified refraction index.  *  * by Kevin Turner<kevint@poboxes.com>  * http://www.poboxes.com/kevint/gimp/refract.html  *  * Check that web page for a more complete description of what the  * plug-in does and does _not_ do. */
+comment|/* refract.c, version 0.1.1-alpha, 23 October 1997   * A plug-in for the GIMP 0.99.  * Uses a height field as a lens of specified refraction index.  *  * by Kevin Turner<kevint@poboxes.com>  * http://www.poboxes.com/kevint/gimp/refract.html  *  * Check that web page for a more complete description of what the  * plug-in does and does _not_ do. */
 end_comment
 
 begin_comment
@@ -8,7 +8,7 @@ comment|/* I require megawidgets to compile!  A copy was probably compiled in   
 end_comment
 
 begin_comment
-comment|/* THIS IS AN ALPHA RELEASE.     The code is ugly, and it the plug-in is NOT full featured and I    know I still have work left to do before it is.  Hopefully I'll    have much done by the end of October...  But I thought I'd go with    "release early, release often" in case anyone cares to improve an    alogrythm (or my spelling) or something...     But it's fun enough that I thought I'd let people play with it...      So enjoy, and keep on hackin'.  */
+comment|/* THIS IS AN ALPHA RELEASE.     The code is ugly, and the plug-in is NOT full featured and I know I    still have work left to do before it is.  Hopefully I'll have much    done by the end of October (well, that's what I thought)...  But I    thought I'd go with "release early, release often" in case anyone    cares to improve an alogrythm (or my spelling) or something...     But it's fun enough that I thought I'd let people play with it...      So enjoy, and keep on hackin'.  */
 end_comment
 
 begin_comment
@@ -16,23 +16,23 @@ comment|/*  * This program is free software; you can redistribute it and/or modi
 end_comment
 
 begin_comment
-comment|/* I'm not a very expirenced C programmer, so questions, comments, and  * reservations on code and style are more than welcome. */
+comment|/* I'm not a very expirenced C programmer, so questions, comments, and  * reservations on code and style are more than welcome.  This plug-in  * was developed on Linux and I will be the first to admit that I'm  * rather inexpirenced (okay, ignorant) with other operating systems.  * If I do wrong, educate me.  */
 end_comment
 
 begin_comment
-comment|/* Pixel fetcher routines are from Quartic's whirlpinch plug-in.    Thanks, Quartic! */
+comment|/* Pixel fetcher routines are from Quartic's whirlpinch plug-in.    Thanks, Quartic[1]! */
 end_comment
 
 begin_comment
-comment|/* TO DO:  * Preview  * ToolTips  * Variable IOR information in some [alpha?] channel.  * Reflections  * Dispersion or diffraction or whatever that thing that makes rainbows is called.  * Lighting  * */
+comment|/* 1: Quartic, AKA Federico Mena-Quintero    federico@nuclecu.unam.mx    http://www.nuclecu.unam.mx/~federico */
 end_comment
 
 begin_comment
-comment|/* Refresher course in optics:    Incident ray is the light ray hitting the surface.    Angles are measured from the perpendicular to the surface.    Angle of reflection is equal to angle of incidence.        Snell's law: index[a] * sin(a) = index[b] * sin(b)     If second index is smaller than first, light is bent toward normal.    Otherwise, away.    */
+comment|/* TO DO:  * UI:  *   megawidgets are insufficient.  (No way to integrate entry_scale  *   with tooltips or option_menu). Replace them.  * necessities:  *   Make the "new layer" option work correctly.  * necessary luxuries:  *   Make offsets work.  Add radio buttons for wrapping options.  * excess luxuries:  *   Variable IOR information in some [alpha?] channel.  * for version 1.1:  *   THIS PLUGIN NEEDS A PREVIEW THING!  *   Reflections  * for version> 1.1:  *   Diffraction or whatever that thing that makes rainbows is called.  *   Lighting */
 end_comment
 
 begin_comment
-comment|/* Common indexes of refraction:    (for yellow sodium light, 589 nm)     Air: 1.0003 (call it 1)           Ice: 1.309        Flourite: 1.434    Rock Salt: 1.544       Quartz: 1.544       Zircon: 1.923      Diamond: 2.417          Crown glass: 1.52                Water: 1.333    Ethyl alcohol: 1.36       Turpentine: 1.472        Glycerine: 1.473        */
+comment|/* Refresher course in optics:    Incident ray is the light ray hitting the surface.    Angles are measured from the perpendicular to the surface.    Angle of reflection is equal to angle of incidence.    Angle of refraction is determined by     Snell's law: index[a] * sin(a) = index[b] * sin(b)     If second index is smaller than first, light is bent toward normal.    Otherwise, away.    */
 end_comment
 
 begin_comment
@@ -118,7 +118,11 @@ comment|/* For entry/scale pairs. */
 end_comment
 
 begin_comment
-comment|/* changed by adrian likins to reflect the new location of megawidget */
+comment|/* PONDER: How does libgck compare to megawidget? */
+end_comment
+
+begin_comment
+comment|/* I need radio buttons and drop-down menus too... */
 end_comment
 
 begin_ifndef
@@ -132,7 +136,7 @@ DECL|macro|REFRACT_TITLE
 define|#
 directive|define
 name|REFRACT_TITLE
-value|"Refract 0.1.0-Alpha"
+value|"Refract 12/24/97-Alpha"
 end_define
 
 begin_else
@@ -145,7 +149,7 @@ DECL|macro|REFRACT_TITLE
 define|#
 directive|define
 name|REFRACT_TITLE
-value|"Refract 0.1.0-Alpha (debug)"
+value|"Refract 12/24/97 (debug)"
 end_define
 
 begin_endif
@@ -153,8 +157,20 @@ endif|#
 directive|endif
 end_endif
 
+begin_comment
+comment|/* Update the progress bar every this-many rows...  */
+end_comment
+
+begin_define
+DECL|macro|PROGRESS_ROWS
+define|#
+directive|define
+name|PROGRESS_ROWS
+value|8
+end_define
+
 begin_typedef
-DECL|struct|__anon2949d3ae0108
+DECL|struct|__anon2bfa712a0108
 typedef|typedef
 struct|struct
 block|{
@@ -210,7 +226,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2949d3ae0208
+DECL|struct|__anon2bfa712a0208
 typedef|typedef
 struct|struct
 block|{
@@ -229,7 +245,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2949d3ae0308
+DECL|struct|__anon2bfa712a0308
 typedef|typedef
 struct|struct
 block|{
@@ -244,7 +260,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2949d3ae0408
+DECL|struct|__anon2bfa712a0408
 typedef|typedef
 struct|struct
 block|{
@@ -345,6 +361,9 @@ parameter_list|(
 name|GDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|gint32
+name|image_id
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -395,6 +414,36 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
+name|newl_toggle_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|tooltips_toggle_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
 name|refract_close_callback
 parameter_list|(
 name|GtkWidget
@@ -431,6 +480,35 @@ name|gint32
 name|id
 parameter_list|,
 name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|GtkWidget
+modifier|*
+name|ior_menu_new
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|tieto
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|ior_menu_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gfloat
+modifier|*
 name|data
 parameter_list|)
 function_decl|;
@@ -566,10 +644,10 @@ operator|-
 literal|1
 block|,
 comment|/* Lens map ID */
-literal|20
+literal|32
 block|,
 comment|/* lens depth */
-literal|10
+literal|0
 block|,
 comment|/* distance */
 literal|1.0003
@@ -578,7 +656,7 @@ comment|/* index a */
 literal|1.333
 block|,
 comment|/* index b */
-literal|0
+literal|1
 block|,
 comment|/* 0 = wrap, 1 = transparent */
 name|FALSE
@@ -636,10 +714,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-DECL|variable|sel_x1
-DECL|variable|sel_x2
-DECL|variable|sel_y1
-DECL|variable|sel_y2
 comment|/* pixel_fetcher uses these as globals and I'm too lazy to make it do otherwise. */
 end_comment
 
@@ -1134,13 +1208,6 @@ name|drawable
 operator|->
 name|id
 argument_list|)
-operator|||
-name|gimp_drawable_indexed
-argument_list|(
-name|drawable
-operator|->
-name|id
-argument_list|)
 condition|)
 block|{
 name|gimp_progress_init
@@ -1148,6 +1215,7 @@ argument_list|(
 literal|"Doing optics homework..."
 argument_list|)
 expr_stmt|;
+comment|/* What's this do? */
 name|gimp_tile_cache_ntiles
 argument_list|(
 literal|2
@@ -1167,10 +1235,18 @@ name|gimp_tile_width
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|/* Maybe need this to not segsev?  What's it do? */
 name|refract
 argument_list|(
 name|drawable
+argument_list|,
+name|param
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_image
 argument_list|)
 expr_stmt|;
 if|if
@@ -1236,12 +1312,15 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|refract (GDrawable * drawable)
+DECL|function|refract (GDrawable * drawable,gint32 image_id)
 name|refract
 parameter_list|(
 name|GDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|gint32
+name|image_id
 parameter_list|)
 block|{
 name|GPixelRgn
@@ -1251,6 +1330,13 @@ name|dest_rgn
 decl_stmt|;
 name|GPixelRgn
 name|lens_rgn
+decl_stmt|;
+name|GDrawable
+modifier|*
+name|output_drawable
+decl_stmt|;
+name|gint32
+name|new_layer_id
 decl_stmt|;
 name|guchar
 modifier|*
@@ -1334,7 +1420,7 @@ init|=
 literal|1
 decl_stmt|;
 comment|/* The delta value for the slope interpolation equation. */
-comment|/* FIXME: Give option of changing h for large maps.  */
+comment|/* FIXME: Give option of changing h for large maps?  */
 name|gint
 name|img_width
 decl_stmt|,
@@ -1367,134 +1453,12 @@ index|]
 index|[
 literal|4
 index|]
-decl_stmt|;
-name|guchar
+decl_stmt|,
 name|values
 index|[
 literal|4
 index|]
 decl_stmt|;
-comment|/* Set up pixel fetcher...  */
-name|pf
-operator|=
-name|pixel_fetcher_new
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
-name|gimp_palette_get_background
-argument_list|(
-operator|&
-name|bg_color
-index|[
-literal|0
-index|]
-argument_list|,
-operator|&
-name|bg_color
-index|[
-literal|1
-index|]
-argument_list|,
-operator|&
-name|bg_color
-index|[
-literal|2
-index|]
-argument_list|)
-expr_stmt|;
-name|gimp_palette_get_foreground
-argument_list|(
-operator|&
-name|fg_color
-index|[
-literal|0
-index|]
-argument_list|,
-operator|&
-name|fg_color
-index|[
-literal|1
-index|]
-argument_list|,
-operator|&
-name|fg_color
-index|[
-literal|2
-index|]
-argument_list|)
-expr_stmt|;
-name|fg_color
-index|[
-literal|3
-index|]
-operator|=
-literal|255
-expr_stmt|;
-name|img_width
-operator|=
-name|gimp_drawable_width
-argument_list|(
-name|drawable
-operator|->
-name|id
-argument_list|)
-expr_stmt|;
-name|img_height
-operator|=
-name|gimp_drawable_height
-argument_list|(
-name|drawable
-operator|->
-name|id
-argument_list|)
-expr_stmt|;
-name|img_has_alpha
-operator|=
-name|gimp_drawable_has_alpha
-argument_list|(
-name|drawable
-operator|->
-name|id
-argument_list|)
-expr_stmt|;
-name|img_bpp
-operator|=
-name|gimp_drawable_bpp
-argument_list|(
-name|drawable
-operator|->
-name|id
-argument_list|)
-expr_stmt|;
-name|pixel_fetcher_set_bg_color
-argument_list|(
-name|pf
-argument_list|,
-name|bg_color
-index|[
-literal|0
-index|]
-argument_list|,
-name|bg_color
-index|[
-literal|1
-index|]
-argument_list|,
-name|bg_color
-index|[
-literal|2
-index|]
-argument_list|,
-operator|(
-name|img_has_alpha
-condition|?
-literal|0
-else|:
-literal|255
-operator|)
-argument_list|)
-expr_stmt|;
 name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
@@ -1559,13 +1523,83 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Initialize destion region: */
+name|img_width
+operator|=
+name|gimp_drawable_width
+argument_list|(
+name|drawable
+operator|->
+name|id
+argument_list|)
+expr_stmt|;
+name|img_height
+operator|=
+name|gimp_drawable_height
+argument_list|(
+name|drawable
+operator|->
+name|id
+argument_list|)
+expr_stmt|;
+comment|/* Destination region: */
+if|if
+condition|(
+name|refractvals
+operator|.
+name|newl
+condition|)
+block|{
+comment|/* FIXME(somewhere): New layer doesn't work right! */
+comment|/* FIXME: Make new layer no bigger than the selection. */
+name|new_layer_id
+operator|=
+name|gimp_layer_new
+argument_list|(
+name|image_id
+argument_list|,
+literal|"Refracted"
+argument_list|,
+name|img_width
+argument_list|,
+name|img_height
+argument_list|,
+name|RGBA_IMAGE
+argument_list|,
+comment|/* Should this ever be RGB_IMAGE? */
+literal|100.0
+argument_list|,
+name|NORMAL_MODE
+argument_list|)
+expr_stmt|;
+comment|/* or could be GRAY */
+name|gimp_image_add_layer
+argument_list|(
+name|image_id
+argument_list|,
+name|new_layer_id
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|output_drawable
+operator|=
+name|gimp_drawable_get
+argument_list|(
+name|new_layer_id
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+name|output_drawable
+operator|=
+name|drawable
+expr_stmt|;
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
 name|dest_rgn
 argument_list|,
-name|drawable
+name|output_drawable
 argument_list|,
 name|x1
 argument_list|,
@@ -1588,7 +1622,110 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/* FIXME: "drawable" should be a new layer if so desired. */
+comment|/* Set up pixel fetcher...  */
+name|pf
+operator|=
+name|pixel_fetcher_new
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
+name|gimp_palette_get_background
+argument_list|(
+operator|&
+name|bg_color
+index|[
+literal|0
+index|]
+argument_list|,
+operator|&
+name|bg_color
+index|[
+literal|1
+index|]
+argument_list|,
+operator|&
+name|bg_color
+index|[
+literal|2
+index|]
+argument_list|)
+expr_stmt|;
+name|gimp_palette_get_foreground
+argument_list|(
+operator|&
+name|fg_color
+index|[
+literal|0
+index|]
+argument_list|,
+operator|&
+name|fg_color
+index|[
+literal|1
+index|]
+argument_list|,
+operator|&
+name|fg_color
+index|[
+literal|2
+index|]
+argument_list|)
+expr_stmt|;
+name|fg_color
+index|[
+literal|3
+index|]
+operator|=
+literal|255
+expr_stmt|;
+comment|/* Which needs drawable and which needs output_drawable         is somewhat confused.  */
+name|img_has_alpha
+operator|=
+name|gimp_drawable_has_alpha
+argument_list|(
+name|output_drawable
+operator|->
+name|id
+argument_list|)
+expr_stmt|;
+name|img_bpp
+operator|=
+name|gimp_drawable_bpp
+argument_list|(
+name|output_drawable
+operator|->
+name|id
+argument_list|)
+expr_stmt|;
+name|pixel_fetcher_set_bg_color
+argument_list|(
+name|pf
+argument_list|,
+name|bg_color
+index|[
+literal|0
+index|]
+argument_list|,
+name|bg_color
+index|[
+literal|1
+index|]
+argument_list|,
+name|bg_color
+index|[
+literal|2
+index|]
+argument_list|,
+operator|(
+name|img_has_alpha
+condition|?
+literal|0
+else|:
+literal|255
+operator|)
+argument_list|)
+expr_stmt|;
 comment|/* Get the lens map... */
 name|lensmap
 operator|=
@@ -1673,7 +1810,6 @@ name|guchar
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* FIXME: X and Y offsets not yet used. */
 if|if
 condition|(
 operator|(
@@ -1694,13 +1830,11 @@ block|}
 elseif|else
 if|if
 condition|(
-operator|(
-name|x1
-operator|+
-name|lm_width
-operator|)
-operator|<
-name|x2
+name|refractvals
+operator|.
+name|xofs
+operator|==
+literal|0
 condition|)
 block|{
 comment|/* Image is smaller than lens map, and doesn't */
@@ -1714,12 +1848,16 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|puts
+comment|/* FIXME */
+name|g_warning
 argument_list|(
-literal|"refract: Please don't make life more complicated than it needs to be.\n"
+literal|"refract: X offset breaks oversized lensmaps.\n"
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* lm_rows could (should?) be handled by array, but isn't. */
+comment|/* FIXME: Increase robustness for lensmaps with rather small heights. */
+comment|/* FIXME: X offset not used.        That'll take a bit of tweaking...  */
 if|if
 condition|(
 name|lm_row_width
@@ -1797,34 +1935,25 @@ name|guchar
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|y
-operator|=
-operator|(
-operator|(
-name|y1
-operator|-
-literal|2
-operator|)
-operator|<
-literal|0
-operator|)
-condition|?
-operator|(
-name|lm_height
-operator|-
-literal|2
-operator|)
-else|:
-operator|(
-operator|(
-name|y1
-operator|-
-literal|2
-operator|)
-operator|%
-name|lm_height
-operator|)
-expr_stmt|;
+comment|/* FIXME: Provide an alternative to wrapping         for the top and bottom of the lens map... */
+DECL|macro|ABSMOD (A,B)
+define|#
+directive|define
+name|ABSMOD
+parameter_list|(
+name|A
+parameter_list|,
+name|B
+parameter_list|)
+value|( ((A)< 0) ? (B) + (A) % (B) : (A) % (B) )
+DECL|macro|Y (O)
+define|#
+directive|define
+name|Y
+parameter_list|(
+name|O
+parameter_list|)
+value|( ABSMOD((O)+refractvals.yofs,lm_height) )
 name|gimp_pixel_rgn_get_row
 argument_list|(
 operator|&
@@ -1834,38 +1963,15 @@ name|lm_rowm2
 argument_list|,
 literal|0
 argument_list|,
-name|y
+name|Y
+argument_list|(
+name|y1
+operator|-
+literal|2
+argument_list|)
 argument_list|,
 name|lm_row_width
 argument_list|)
-expr_stmt|;
-name|y
-operator|=
-operator|(
-operator|(
-name|y1
-operator|-
-literal|1
-operator|)
-operator|<
-literal|0
-operator|)
-condition|?
-operator|(
-name|lm_height
-operator|-
-literal|1
-operator|)
-else|:
-operator|(
-operator|(
-name|y1
-operator|-
-literal|1
-operator|)
-operator|%
-name|lm_height
-operator|)
 expr_stmt|;
 name|gimp_pixel_rgn_get_row
 argument_list|(
@@ -1876,7 +1982,12 @@ name|lm_rowm1
 argument_list|,
 literal|0
 argument_list|,
-name|y
+name|Y
+argument_list|(
+name|y1
+operator|-
+literal|1
+argument_list|)
 argument_list|,
 name|lm_row_width
 argument_list|)
@@ -1890,11 +2001,10 @@ name|lm_row0
 argument_list|,
 literal|0
 argument_list|,
-operator|(
+name|Y
+argument_list|(
 name|y1
-operator|%
-name|lm_height
-operator|)
+argument_list|)
 argument_list|,
 name|lm_row_width
 argument_list|)
@@ -1908,13 +2018,12 @@ name|lm_rowp1
 argument_list|,
 literal|0
 argument_list|,
-operator|(
+name|Y
+argument_list|(
 name|y1
 operator|+
 literal|1
-operator|)
-operator|%
-name|lm_height
+argument_list|)
 argument_list|,
 name|lm_row_width
 argument_list|)
@@ -1928,13 +2037,12 @@ name|lm_rowp2
 argument_list|,
 literal|0
 argument_list|,
-operator|(
+name|Y
+argument_list|(
 name|y1
 operator|+
 literal|2
-operator|)
-operator|%
-name|lm_height
+argument_list|)
 argument_list|,
 name|lm_row_width
 argument_list|)
@@ -1942,7 +2050,8 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|puts
+comment|/* FIXME */
+name|g_warning
 argument_list|(
 literal|"refract: Row buffers not initalized.\n"
 argument_list|)
@@ -2013,35 +2122,43 @@ operator|++
 control|)
 block|{
 comment|/* So on a scale of 1 to 100, how far below zero does this                rank for coding style?  */
+comment|/* FIXME: This may not produce the desired behaviour with  	       lm_row_width< lm_width and xofs != 0 */
+DECL|macro|X (O)
+define|#
+directive|define
+name|X
+parameter_list|(
+name|O
+parameter_list|)
+value|( ABSMOD((O)+refractvals.xofs,lm_row_width) )
 DECL|macro|ROWM2
 define|#
 directive|define
 name|ROWM2
-value|(lm_rowm2[ x % lm_width * lm_bpp ])
+value|(lm_rowm2[ X(x) * lm_bpp ])
 DECL|macro|ROWM1
 define|#
 directive|define
 name|ROWM1
-value|(lm_rowm1[ x % lm_width * lm_bpp ])
-DECL|macro|ROW0 (X)
+value|(lm_rowm1[ X(x) * lm_bpp ])
+DECL|macro|ROW0 (O)
 define|#
 directive|define
 name|ROW0
 parameter_list|(
-name|X
+name|O
 parameter_list|)
-value|(lm_row0[  (x + (X)) % lm_width * lm_bpp ])
-comment|/* FIXME: If x + X< 0  . . . */
+value|(lm_row0[ X(x+0) * lm_bpp ])
 DECL|macro|ROWP1
 define|#
 directive|define
 name|ROWP1
-value|(lm_rowp1[ x % lm_width * lm_bpp ])
+value|(lm_rowp1[ X(x) * lm_bpp ])
 DECL|macro|ROWP2
 define|#
 directive|define
 name|ROWP2
-value|(lm_rowp2[ x % lm_width * lm_bpp ])
+value|(lm_rowp2[ X(x) * lm_bpp ])
 DECL|macro|SLOPE_X
 define|#
 directive|define
@@ -2052,20 +2169,6 @@ define|#
 directive|define
 name|SLOPE_Y
 value|((gdouble) 1.0 / (12 * h) * ( ROWM2    - 8 * ROWM1    + 8 * ROWP1   - ROWP2   ) * depths )
-if|#
-directive|if
-literal|0
-comment|/* The old slope equations. */
-define|#
-directive|define
-name|SLOPE_X
-value|(gdouble) ((lm_row2[ ( (x+1) % lm_width) * lm_bpp ] - \                            lm_row2[ (((x-1)< 0) ? \ 				     lm_width : \ 				     ((x-1) % lm_width)) * lm_bpp ]) \ 	                   / 2.0) * depths
-define|#
-directive|define
-name|SLOPE_Y
-value|(gdouble) ((lm_row3[ (  x    % lm_width) * lm_bpp ] - \                             lm_row1[ (  x    % lm_width) * lm_bpp ]) \                            / 2.0) * depths
-endif|#
-directive|endif
 if|if
 condition|(
 name|delta
@@ -2108,29 +2211,31 @@ condition|)
 block|{
 name|xf
 operator|=
-operator|(
+name|ABSMOD
+argument_list|(
 name|x
 operator|+
 operator|(
 name|gint
 operator|)
 name|dx
-operator|)
-operator|%
+argument_list|,
 name|img_width
+argument_list|)
 expr_stmt|;
 name|yf
 operator|=
-operator|(
+name|ABSMOD
+argument_list|(
 name|y
 operator|+
 operator|(
 name|gint
 operator|)
 name|dy
-operator|)
-operator|%
+argument_list|,
 name|img_height
+argument_list|)
 expr_stmt|;
 block|}
 else|else
@@ -2350,16 +2455,16 @@ name|x1
 operator|)
 argument_list|)
 expr_stmt|;
+comment|/* On the theory that a % takes less time than an update, 	   we only need them done occasionally... */
 if|if
 condition|(
 operator|!
 operator|(
 name|y
 operator|%
-literal|16
+name|PROGRESS_ROWS
 operator|)
 condition|)
-comment|/* On the theory that a % takes less time than an update... */
 name|gimp_progress_update
 argument_list|(
 call|(
@@ -2414,21 +2519,20 @@ name|lm_rowp2
 argument_list|,
 name|x1
 argument_list|,
-operator|(
-operator|(
+name|Y
+argument_list|(
 name|y
 operator|+
 literal|3
-operator|)
-operator|%
-name|lm_height
-operator|)
+argument_list|)
 argument_list|,
 name|lm_row_width
 argument_list|)
 expr_stmt|;
 block|}
 comment|/* next y */
+comment|/* Cleanup */
+comment|/* FIXME: Make *certain* that anything we created (e.g. new layers) is cleaned        up when plug-in is cancelled! */
 name|pixel_fetcher_destroy
 argument_list|(
 name|pf
@@ -2466,12 +2570,12 @@ argument_list|)
 expr_stmt|;
 name|gimp_drawable_flush
 argument_list|(
-name|drawable
+name|output_drawable
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_merge_shadow
 argument_list|(
-name|drawable
+name|output_drawable
 operator|->
 name|id
 argument_list|,
@@ -2480,7 +2584,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_drawable_update
 argument_list|(
-name|drawable
+name|output_drawable
 operator|->
 name|id
 argument_list|,
@@ -2501,6 +2605,29 @@ name|y1
 operator|)
 argument_list|)
 expr_stmt|;
+name|gimp_drawable_detach
+argument_list|(
+name|output_drawable
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|refractvals
+operator|.
+name|newl
+condition|)
+block|{
+name|gimp_drawable_flush
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
+name|gimp_drawable_detach
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -2509,9 +2636,9 @@ comment|/* refract */
 end_comment
 
 begin_function
-DECL|function|delta (gdouble * offset,gdouble slope,gint height)
 specifier|static
 name|gint
+DECL|function|delta (gdouble * offset,gdouble slope,gint height)
 name|delta
 parameter_list|(
 name|gdouble
@@ -2553,6 +2680,16 @@ name|na
 argument_list|)
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|REFRACT_DEBUG
+name|puts
+argument_list|(
+literal|"!"
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 return|return
 name|FALSE
 return|;
@@ -2601,10 +2738,22 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/* Realistically, this number should be 1.0.  An index of refraction    of less than 1 means the speed of light in that substance is    *faster* than in a vacuum!  But hey, it's GIMP, when was the last    time we payed any attention to reality?  Go ahead...  Add    "subspace" to the list of materials... */
+end_comment
+
+begin_define
+DECL|macro|INDEX_SCALE_MIN
+define|#
+directive|define
+name|INDEX_SCALE_MIN
+value|0.0
+end_define
+
 begin_function
-DECL|function|refract_dialog ()
 specifier|static
 name|gint
+DECL|function|refract_dialog ()
 name|refract_dialog
 parameter_list|()
 block|{
@@ -2616,16 +2765,36 @@ modifier|*
 modifier|*
 name|argv
 decl_stmt|;
+name|GtkTooltips
+modifier|*
+name|tooltips
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|menu
 decl_stmt|,
 modifier|*
 name|option_menu
+decl_stmt|,
+modifier|*
+name|ior_a_menu
+decl_stmt|,
+modifier|*
+name|ior_b_menu
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|button
+name|ok_button
+decl_stmt|,
+modifier|*
+name|cancel_button
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|layercheck
+decl_stmt|,
+modifier|*
+name|toolcheck
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -2684,7 +2853,13 @@ operator|&
 name|argv
 argument_list|)
 expr_stmt|;
-comment|/* If you find that you *do* need this uncommented, please let me know:        gdk_set_use_xshm(gimp_use_xshm()); */
+name|gdk_set_use_xshm
+argument_list|(
+name|gimp_use_xshm
+argument_list|()
+argument_list|)
+expr_stmt|;
+comment|/* FIXME: Can we use the GIMP colormap when in 8-bit to reduce flashing? */
 comment|/* end standard GTK startup */
 comment|/* I guess we need a window... */
 name|dlg
@@ -2719,9 +2894,14 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|tooltips
+operator|=
+name|gtk_tooltips_new
+argument_list|()
+expr_stmt|;
 comment|/* Action area: */
 comment|/* OK */
-name|button
+name|ok_button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
@@ -2730,7 +2910,7 @@ argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
 argument_list|(
-name|button
+name|ok_button
 argument_list|,
 name|GTK_CAN_DEFAULT
 argument_list|)
@@ -2739,7 +2919,7 @@ name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|button
+name|ok_button
 argument_list|)
 argument_list|,
 literal|"clicked"
@@ -2754,7 +2934,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_grab_default
 argument_list|(
-name|button
+name|ok_button
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2769,7 +2949,7 @@ operator|->
 name|action_area
 argument_list|)
 argument_list|,
-name|button
+name|ok_button
 argument_list|,
 name|TRUE
 argument_list|,
@@ -2780,11 +2960,11 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|button
+name|ok_button
 argument_list|)
 expr_stmt|;
 comment|/* Cancel */
-name|button
+name|cancel_button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
@@ -2793,7 +2973,7 @@ argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
 argument_list|(
-name|button
+name|cancel_button
 argument_list|,
 name|GTK_CAN_DEFAULT
 argument_list|)
@@ -2802,7 +2982,7 @@ name|gtk_signal_connect_object
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|button
+name|cancel_button
 argument_list|)
 argument_list|,
 literal|"clicked"
@@ -2827,7 +3007,7 @@ operator|->
 name|action_area
 argument_list|)
 argument_list|,
-name|button
+name|cancel_button
 argument_list|,
 name|TRUE
 argument_list|,
@@ -2838,7 +3018,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|button
+name|cancel_button
 argument_list|)
 expr_stmt|;
 comment|/* Paramater settings: */
@@ -2912,6 +3092,15 @@ argument_list|,
 name|menu
 argument_list|)
 expr_stmt|;
+name|gtk_tooltips_set_tips
+argument_list|(
+name|tooltips
+argument_list|,
+name|option_menu
+argument_list|,
+literal|"The drawable to use as the lens."
+argument_list|)
+expr_stmt|;
 name|gtk_table_attach_defaults
 argument_list|(
 name|GTK_TABLE
@@ -2958,6 +3147,9 @@ argument_list|(
 name|option_menu
 argument_list|)
 expr_stmt|;
+comment|/* TODO? Add "Invert lens map"  Not anytime soon...  */
+comment|/* Would require adding all sorts of conditional subtracting stuff        in the main loop...  Let them invert it first! :) */
+comment|/* Eek.  Megawidgets don't return a value I can tie tooltips to.        Maybe I should look in to libgck. */
 comment|/* entry/scale for depth of lens */
 name|mw_iscale_entry_new
 argument_list|(
@@ -2965,8 +3157,7 @@ name|table
 argument_list|,
 literal|"Depth"
 argument_list|,
-operator|-
-literal|256
+literal|0
 argument_list|,
 literal|256
 argument_list|,
@@ -3022,14 +3213,14 @@ operator|.
 name|dist
 argument_list|)
 expr_stmt|;
-comment|/* a entry/scale/drop-box for each index */
+comment|/* a entry/scale/drop-menu for each index */
 name|mw_fscale_entry_new
 argument_list|(
 name|table
 argument_list|,
 literal|"Index A"
 argument_list|,
-literal|0.0
+name|INDEX_SCALE_MIN
 argument_list|,
 literal|5.0
 argument_list|,
@@ -3041,7 +3232,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-literal|2
+literal|1
 argument_list|,
 literal|3
 argument_list|,
@@ -3053,13 +3244,53 @@ operator|.
 name|na
 argument_list|)
 expr_stmt|;
+name|ior_a_menu
+operator|=
+name|ior_menu_new
+argument_list|(
+name|NULL
+comment|/*FIXME*/
+argument_list|)
+expr_stmt|;
+name|gtk_table_attach_defaults
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+name|ior_a_menu
+argument_list|,
+literal|2
+argument_list|,
+literal|3
+argument_list|,
+literal|3
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|ior_a_menu
+argument_list|)
+expr_stmt|;
+name|gtk_tooltips_set_tips
+argument_list|(
+name|tooltips
+argument_list|,
+name|ior_a_menu
+argument_list|,
+literal|"FIXME (No, it doesn't work.)"
+argument_list|)
+expr_stmt|;
 name|mw_fscale_entry_new
 argument_list|(
 name|table
 argument_list|,
 literal|"Index B"
 argument_list|,
-literal|0.0
+name|INDEX_SCALE_MIN
 argument_list|,
 literal|5.0
 argument_list|,
@@ -3071,7 +3302,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-literal|2
+literal|1
 argument_list|,
 literal|4
 argument_list|,
@@ -3083,7 +3314,46 @@ operator|.
 name|nb
 argument_list|)
 expr_stmt|;
-comment|/* FIXME: Add drop-boxes with common indicies of refraction. */
+name|ior_b_menu
+operator|=
+name|ior_menu_new
+argument_list|(
+name|NULL
+comment|/*FIXME*/
+argument_list|)
+expr_stmt|;
+name|gtk_table_attach_defaults
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+name|ior_b_menu
+argument_list|,
+literal|2
+argument_list|,
+literal|3
+argument_list|,
+literal|4
+argument_list|,
+literal|5
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|ior_b_menu
+argument_list|)
+expr_stmt|;
+name|gtk_tooltips_set_tips
+argument_list|(
+name|tooltips
+argument_list|,
+name|ior_b_menu
+argument_list|,
+literal|"FIXME (No, it doesn't work.)"
+argument_list|)
+expr_stmt|;
 comment|/* entry/scale pairs for x and y offsets */
 name|mw_iscale_entry_new
 argument_list|(
@@ -3148,7 +3418,145 @@ name|yofs
 argument_list|)
 expr_stmt|;
 comment|/* radio buttons for wrap/transparent (or bg, if image isn't layered) */
-comment|/*    button = gtk_check_button_new_with_label ("Wrap?");     toggle_button_callback (button, gpointer   data);     gtk_toggle_button_set_state (GtkToggleButton button, refractvals.wrap); */
+comment|/* button = gtk_check_button_new_with_label ("Wrap?");     toggle_button_callback (button, gpointer   data);     gtk_toggle_button_set_state (GtkToggleButton button, refractvals.wrap); */
+comment|/* Make new layer(s) or dirty the old? */
+name|layercheck
+operator|=
+name|gtk_check_button_new_with_label
+argument_list|(
+literal|"New layer?"
+argument_list|)
+expr_stmt|;
+name|gtk_container_add
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dlg
+argument_list|)
+operator|->
+name|vbox
+argument_list|)
+argument_list|,
+name|layercheck
+argument_list|)
+expr_stmt|;
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|layercheck
+argument_list|)
+argument_list|,
+literal|"clicked"
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|newl_toggle_callback
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_toggle_button_set_state
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|layercheck
+argument_list|)
+argument_list|,
+name|refractvals
+operator|.
+name|newl
+argument_list|)
+expr_stmt|;
+name|gtk_tooltips_set_tips
+argument_list|(
+name|tooltips
+argument_list|,
+name|layercheck
+argument_list|,
+literal|"Put the refracted image on a new layer or dirty this one?"
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|layercheck
+argument_list|)
+expr_stmt|;
+name|toolcheck
+operator|=
+name|gtk_check_button_new_with_label
+argument_list|(
+literal|"Tooltips?"
+argument_list|)
+expr_stmt|;
+name|gtk_container_add
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dlg
+argument_list|)
+operator|->
+name|vbox
+argument_list|)
+argument_list|,
+name|toolcheck
+argument_list|)
+expr_stmt|;
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|toolcheck
+argument_list|)
+argument_list|,
+literal|"clicked"
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|tooltips_toggle_callback
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|tooltips
+argument_list|)
+expr_stmt|;
+name|gtk_tooltips_set_tips
+argument_list|(
+name|tooltips
+argument_list|,
+name|toolcheck
+argument_list|,
+literal|"Turn off these dumb tooltips."
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|toolcheck
+argument_list|)
+expr_stmt|;
+comment|/* Tooltips OFF by default. */
+name|gtk_toggle_button_set_state
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|toolcheck
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|gtk_tooltips_disable
+argument_list|(
+name|tooltips
+argument_list|)
+expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|dlg
@@ -3171,6 +3579,251 @@ end_function
 begin_comment
 comment|/* refract_dialog */
 end_comment
+
+begin_function
+specifier|static
+name|GtkWidget
+modifier|*
+DECL|function|ior_menu_new (GtkWidget * tieto)
+name|ior_menu_new
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|tieto
+parameter_list|)
+block|{
+name|GtkWidget
+modifier|*
+name|chooser
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|menu
+decl_stmt|,
+modifier|*
+name|menuitem
+decl_stmt|;
+name|guint
+name|i
+decl_stmt|;
+DECL|struct|foo
+struct|struct
+name|foo
+block|{
+DECL|member|index
+specifier|const
+name|gfloat
+name|index
+decl_stmt|;
+DECL|member|name
+specifier|const
+name|gchar
+modifier|*
+name|name
+decl_stmt|;
+block|}
+struct|;
+comment|/* If you change stuff, don't forget to change this. */
+DECL|macro|NUMSTUFF
+define|#
+directive|define
+name|NUMSTUFF
+value|9
+specifier|static
+specifier|const
+name|struct
+name|foo
+name|material
+index|[
+name|NUMSTUFF
+index|]
+init|=
+block|{
+comment|/* Common indicies of refraction (for yellow sodium light, 589 nm) */
+comment|/* From my Sears, Zemansky, Young physics book. */
+comment|/* For more, check your copy of the CRC or your favorite pov-ray        include file.  */
+block|{
+literal|1.0003
+block|,
+literal|"Air"
+block|}
+block|,
+block|{
+literal|1.309
+block|,
+literal|"Ice"
+block|}
+block|,
+block|{
+literal|1.333
+block|,
+literal|"Water"
+block|}
+block|,
+block|{
+literal|1.36
+block|,
+literal|"Alcohol"
+block|}
+block|,
+block|{
+literal|1.473
+block|,
+literal|"Glycerine"
+block|}
+block|,
+block|{
+literal|1.52
+block|,
+literal|"Glass"
+block|}
+block|,
+block|{
+literal|1.544
+block|,
+literal|"Quartz"
+block|}
+block|,
+block|{
+literal|1.923
+block|,
+literal|"Zircon"
+block|}
+block|,
+block|{
+literal|2.417
+block|,
+literal|"Diamond"
+block|}
+block|,   }
+decl_stmt|;
+name|chooser
+operator|=
+name|gtk_option_menu_new
+argument_list|()
+expr_stmt|;
+name|menu
+operator|=
+name|gtk_menu_new
+argument_list|()
+expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|NUMSTUFF
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|menuitem
+operator|=
+name|gtk_menu_item_new_with_label
+argument_list|(
+name|material
+index|[
+name|i
+index|]
+operator|.
+name|name
+argument_list|)
+expr_stmt|;
+name|gtk_menu_append
+argument_list|(
+name|GTK_MENU
+argument_list|(
+name|menu
+argument_list|)
+argument_list|,
+name|menuitem
+argument_list|)
+expr_stmt|;
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|menuitem
+argument_list|)
+argument_list|,
+literal|"activate"
+argument_list|,
+operator|(
+name|GtkSignalFunc
+operator|)
+name|ior_menu_callback
+argument_list|,
+operator|(
+name|gfloat
+operator|*
+operator|)
+operator|&
+name|material
+index|[
+name|i
+index|]
+operator|.
+name|index
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|menuitem
+argument_list|)
+expr_stmt|;
+block|}
+empty_stmt|;
+comment|/* next i */
+name|gtk_option_menu_set_menu
+argument_list|(
+name|GTK_OPTION_MENU
+argument_list|(
+name|chooser
+argument_list|)
+argument_list|,
+name|menu
+argument_list|)
+expr_stmt|;
+return|return
+name|chooser
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|ior_menu_callback (GtkWidget * widget,gfloat * data)
+name|ior_menu_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gfloat
+modifier|*
+name|data
+parameter_list|)
+block|{
+ifdef|#
+directive|ifdef
+name|REFRACT_DEBUG
+name|printf
+argument_list|(
+literal|"%f\n"
+argument_list|,
+operator|*
+name|data
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
+block|}
+end_function
 
 begin_function
 specifier|static
@@ -3221,6 +3874,83 @@ end_comment
 begin_comment
 comment|/* Callbacks */
 end_comment
+
+begin_function
+specifier|static
+name|void
+DECL|function|newl_toggle_callback (GtkWidget * widget,gpointer data)
+name|newl_toggle_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|refractvals
+operator|.
+name|newl
+operator|=
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|widget
+argument_list|)
+operator|->
+name|active
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|tooltips_toggle_callback (GtkWidget * widget,gpointer data)
+name|tooltips_toggle_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|GtkTooltips
+modifier|*
+name|tooltips
+decl_stmt|;
+name|tooltips
+operator|=
+operator|(
+name|GtkTooltips
+operator|*
+operator|)
+name|data
+expr_stmt|;
+if|if
+condition|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|widget
+argument_list|)
+operator|->
+name|active
+condition|)
+name|gtk_tooltips_enable
+argument_list|(
+name|tooltips
+argument_list|)
+expr_stmt|;
+else|else
+name|gtk_tooltips_disable
+argument_list|(
+name|tooltips
+argument_list|)
+expr_stmt|;
+block|}
+end_function
 
 begin_function
 specifier|static
@@ -3437,7 +4167,7 @@ comment|/* bilinear */
 end_comment
 
 begin_comment
-comment|/************************************************************************  *  *   Fun pixel fetching stuff...  Quartic's code from whirlpinch.c  *  */
+comment|/************************************************************************  *  *   Fun pixel fetching stuff...  Quartic's code from whirlpinch.c  *   Uses the globals sel_x1,sel_x2,sel_y1,sel_y2.  */
 end_comment
 
 begin_function
