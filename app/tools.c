@@ -714,7 +714,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"/Tools/Magnify"
+literal|"/Tools/Transform Tools/Magnify"
 argument_list|)
 block|,
 literal|"<shift>M"
