@@ -109,7 +109,7 @@ comment|/* ======== */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c1230410103
+DECL|enum|__anon27b213390103
 typedef|typedef
 enum|enum
 block|{
@@ -128,7 +128,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2c1230410203
+DECL|enum|__anon27b213390203
 typedef|typedef
 enum|enum
 block|{
@@ -137,6 +137,9 @@ name|MAP_PLANE
 block|,
 DECL|enumerator|MAP_SPHERE
 name|MAP_SPHERE
+block|,
+DECL|enumerator|MAP_BOX
+name|MAP_BOX
 DECL|typedef|MapType
 block|}
 name|MapType
@@ -154,7 +157,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1230410308
+DECL|struct|__anon27b213390308
 block|{
 DECL|member|ambient_int
 name|gdouble
@@ -189,7 +192,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1230410408
+DECL|struct|__anon27b213390408
 block|{
 DECL|member|type
 name|LightType
@@ -218,7 +221,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c1230410508
+DECL|struct|__anon27b213390508
 typedef|typedef
 struct|struct
 block|{
@@ -227,6 +230,7 @@ DECL|member|firstaxis
 DECL|member|secondaxis
 DECL|member|normal
 DECL|member|position
+DECL|member|scale
 name|GckVector3
 name|viewpoint
 decl_stmt|,
@@ -237,6 +241,8 @@ decl_stmt|,
 name|normal
 decl_stmt|,
 name|position
+decl_stmt|,
+name|scale
 decl_stmt|;
 DECL|member|lightsource
 name|LightSettings
@@ -303,6 +309,13 @@ decl_stmt|;
 DECL|member|radius
 name|gdouble
 name|radius
+decl_stmt|;
+DECL|member|boxmap_id
+name|gint32
+name|boxmap_id
+index|[
+literal|6
+index|]
 decl_stmt|;
 DECL|typedef|MapObjectValues
 block|}

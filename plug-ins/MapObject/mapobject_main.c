@@ -4,7 +4,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_comment
-comment|/* MapObject 1.00 -- image filter plug-in for The Gimp program                   */
+comment|/* MapObject 1.10 -- image filter plug-in for The Gimp program                   */
 end_comment
 
 begin_comment
@@ -76,7 +76,7 @@ comment|/* this program (read the "COPYING" file); if not, write to the Free Sof
 end_comment
 
 begin_comment
-comment|/* Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.    */
+comment|/* Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.                     */
 end_comment
 
 begin_comment
@@ -166,6 +166,9 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+name|gint
+name|i
+decl_stmt|;
 name|gck_vector3_set
 argument_list|(
 operator|&
@@ -270,6 +273,20 @@ operator|-
 literal|1.0
 argument_list|,
 literal|1.0
+argument_list|)
+expr_stmt|;
+name|gck_vector3_set
+argument_list|(
+operator|&
+name|mapvals
+operator|.
+name|scale
+argument_list|,
+literal|0.5
+argument_list|,
+literal|0.5
+argument_list|,
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|mapvals
@@ -424,16 +441,162 @@ name|highlight
 operator|=
 literal|27.0
 expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+literal|6
+condition|;
+name|i
+operator|++
+control|)
+name|mapvals
+operator|.
+name|boxmap_id
+index|[
+name|i
+index|]
+operator|=
+operator|-
+literal|1
+expr_stmt|;
 block|}
 end_function
 
-begin_macro
-DECL|function|MAIN ()
+begin_function
+DECL|function|check_drawables (GDrawable * drawable)
+name|void
+name|check_drawables
+parameter_list|(
+name|GDrawable
+modifier|*
+name|drawable
+parameter_list|)
+block|{
+name|gint
+name|i
+decl_stmt|;
+comment|/* Check that boxmap images are valid */
+comment|/* ================================== */
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|mapvals
+operator|.
+name|boxmap_id
+index|[
+name|i
+index|]
+condition|;
+name|i
+operator|++
+control|)
+block|{
+if|if
+condition|(
+name|mapvals
+operator|.
+name|boxmap_id
+index|[
+name|i
+index|]
+operator|==
+operator|-
+literal|1
+condition|)
+name|mapvals
+operator|.
+name|boxmap_id
+index|[
+name|i
+index|]
+operator|=
+name|drawable
+operator|->
+name|id
+expr_stmt|;
+elseif|else
+if|if
+condition|(
+name|mapvals
+operator|.
+name|boxmap_id
+index|[
+name|i
+index|]
+operator|!=
+operator|-
+literal|1
+operator|&&
+name|gimp_drawable_image_id
+argument_list|(
+name|mapvals
+operator|.
+name|boxmap_id
+index|[
+name|i
+index|]
+argument_list|)
+operator|==
+operator|-
+literal|1
+condition|)
+name|mapvals
+operator|.
+name|boxmap_id
+index|[
+name|i
+index|]
+operator|=
+name|drawable
+operator|->
+name|id
+expr_stmt|;
+elseif|else
+if|if
+condition|(
+name|gimp_drawable_gray
+argument_list|(
+name|mapvals
+operator|.
+name|boxmap_id
+index|[
+name|i
+index|]
+argument_list|)
+condition|)
+name|mapvals
+operator|.
+name|boxmap_id
+index|[
+name|i
+index|]
+operator|=
+name|drawable
+operator|->
+name|id
+expr_stmt|;
+block|}
+block|}
+end_function
+
+begin_expr_stmt
 name|MAIN
 argument_list|()
-end_macro
+expr_stmt|;
+end_expr_stmt
 
 begin_function
+DECL|function|query (void)
 specifier|static
 name|void
 name|query
@@ -476,7 +639,7 @@ name|PARAM_INT32
 block|,
 literal|"maptype"
 block|,
-literal|"Type of mapping (0=plane,1=sphere)"
+literal|"Type of mapping (0=plane,1=sphere,2=box)"
 block|}
 block|,
 block|{
@@ -580,7 +743,7 @@ name|PARAM_FLOAT
 block|,
 literal|"rotationangle_x"
 block|,
-literal|"Axis rotation (xy,xz,yz) in degrees"
+literal|"Rotation about X axis in degrees"
 block|}
 block|,
 block|{
@@ -588,7 +751,7 @@ name|PARAM_FLOAT
 block|,
 literal|"rotationangle_y"
 block|,
-literal|"Axis rotation (xy,xz,yz) in degrees"
+literal|"Rotation about Y axis in degrees"
 block|}
 block|,
 block|{
@@ -596,7 +759,7 @@ name|PARAM_FLOAT
 block|,
 literal|"rotationangle_z"
 block|,
-literal|"Axis rotation (xy,xz,yz) in degrees"
+literal|"Rotation about Z axis in degrees"
 block|}
 block|,
 block|{
@@ -742,6 +905,78 @@ literal|"radius"
 block|,
 literal|"Sphere radius (only used when maptype=1)"
 block|}
+block|,
+block|{
+name|PARAM_FLOAT
+block|,
+literal|"x_scale"
+block|,
+literal|"Box x size (0..->)"
+block|}
+block|,
+block|{
+name|PARAM_FLOAT
+block|,
+literal|"y_scale"
+block|,
+literal|"Box y size (0..->)"
+block|}
+block|,
+block|{
+name|PARAM_FLOAT
+block|,
+literal|"z_scale"
+block|,
+literal|"Box z size (0..->)"
+block|}
+block|,
+block|{
+name|PARAM_DRAWABLE
+block|,
+literal|"front_drawable"
+block|,
+literal|"Box front face (set these to -1 if not used)"
+block|}
+block|,
+block|{
+name|PARAM_DRAWABLE
+block|,
+literal|"back_drawable"
+block|,
+literal|"Box back face"
+block|}
+block|,
+block|{
+name|PARAM_DRAWABLE
+block|,
+literal|"top_drawable"
+block|,
+literal|"Box top face"
+block|}
+block|,
+block|{
+name|PARAM_DRAWABLE
+block|,
+literal|"bottom_drawable"
+block|,
+literal|"Box bottom face"
+block|}
+block|,
+block|{
+name|PARAM_DRAWABLE
+block|,
+literal|"left_drawable"
+block|,
+literal|"Box left face"
+block|}
+block|,
+block|{
+name|PARAM_DRAWABLE
+block|,
+literal|"right_drawable"
+block|,
+literal|"Box right face"
+block|}
 block|}
 decl_stmt|;
 specifier|static
@@ -778,7 +1013,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_map_object"
 argument_list|,
-literal|"Maps a picture to a object (plane, sphere)"
+literal|"Maps a picture to a object (plane, sphere or box)"
 argument_list|,
 literal|"No help yet"
 argument_list|,
@@ -786,9 +1021,9 @@ literal|"Tom Bech& Federico Mena Quintero"
 argument_list|,
 literal|"Tom Bech& Federico Mena Quintero"
 argument_list|,
-literal|"Version 1.00, March 15 1998"
+literal|"Version 1.10, July 17 1998"
 argument_list|,
-literal|"<Image>/Filters/Map/Map Object"
+literal|"<Image>/Filters/Distorts/Map Object"
 argument_list|,
 literal|"RGB*"
 argument_list|,
@@ -851,6 +1086,9 @@ name|GStatusType
 name|status
 init|=
 name|STATUS_SUCCESS
+decl_stmt|;
+name|gint
+name|i
 decl_stmt|;
 name|run_mode
 operator|=
@@ -932,6 +1170,11 @@ operator|&
 name|mapvals
 argument_list|)
 expr_stmt|;
+name|check_drawables
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 name|mapobject_interactive
 argument_list|(
 name|drawable
@@ -962,6 +1205,11 @@ operator|&
 name|mapvals
 argument_list|)
 expr_stmt|;
+name|check_drawables
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 name|image_setup
 argument_list|(
 name|drawable
@@ -980,7 +1228,7 @@ if|if
 condition|(
 name|nparams
 operator|!=
-literal|37
+literal|46
 condition|)
 name|status
 operator|=
@@ -1558,6 +1806,92 @@ name|data
 operator|.
 name|d_float
 expr_stmt|;
+name|mapvals
+operator|.
+name|scale
+operator|.
+name|x
+operator|=
+name|param
+index|[
+literal|37
+index|]
+operator|.
+name|data
+operator|.
+name|d_float
+expr_stmt|;
+name|mapvals
+operator|.
+name|scale
+operator|.
+name|y
+operator|=
+name|param
+index|[
+literal|38
+index|]
+operator|.
+name|data
+operator|.
+name|d_float
+expr_stmt|;
+name|mapvals
+operator|.
+name|scale
+operator|.
+name|z
+operator|=
+name|param
+index|[
+literal|39
+index|]
+operator|.
+name|data
+operator|.
+name|d_float
+expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+literal|6
+condition|;
+name|i
+operator|++
+control|)
+name|mapvals
+operator|.
+name|boxmap_id
+index|[
+name|i
+index|]
+operator|=
+name|gimp_drawable_get
+argument_list|(
+name|param
+index|[
+literal|40
+operator|+
+name|i
+index|]
+operator|.
+name|data
+operator|.
+name|d_drawable
+argument_list|)
+operator|->
+name|id
+expr_stmt|;
+name|check_drawables
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 name|image_setup
 argument_list|(
 name|drawable
@@ -1571,15 +1905,6 @@ expr_stmt|;
 block|}
 break|break;
 block|}
-if|if
-condition|(
-name|run_mode
-operator|!=
-name|RUN_NONINTERACTIVE
-condition|)
-name|gimp_displays_flush
-argument_list|()
-expr_stmt|;
 name|values
 index|[
 literal|0
@@ -1590,6 +1915,15 @@ operator|.
 name|d_status
 operator|=
 name|status
+expr_stmt|;
+if|if
+condition|(
+name|run_mode
+operator|!=
+name|RUN_NONINTERACTIVE
+condition|)
+name|gimp_displays_flush
+argument_list|()
 expr_stmt|;
 name|gimp_drawable_detach
 argument_list|(
@@ -1676,12 +2010,6 @@ name|argc
 argument_list|,
 operator|&
 name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
 argument_list|)
 expr_stmt|;
 comment|/* Set up ArcBall stuff */
