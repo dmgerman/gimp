@@ -86,6 +86,14 @@ name|N_
 argument_list|(
 literal|"Indexed Palette Menu"
 argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_INDEXED_PALETTE_DIALOG
 block|}
 block|,
 block|{

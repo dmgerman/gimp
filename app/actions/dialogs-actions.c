@@ -106,7 +106,7 @@ argument_list|(
 name|dialogs_create_lc_cmd_callback
 argument_list|)
 block|,
-name|NULL
+name|GIMP_HELP_DOCK
 block|}
 block|,
 block|{
@@ -128,7 +128,7 @@ argument_list|(
 name|dialogs_create_data_cmd_callback
 argument_list|)
 block|,
-name|NULL
+name|GIMP_HELP_DOCK
 block|}
 block|,
 block|{
@@ -150,7 +150,7 @@ argument_list|(
 name|dialogs_create_stuff_cmd_callback
 argument_list|)
 block|,
-name|NULL
+name|GIMP_HELP_DOCK
 block|}
 block|,
 block|{

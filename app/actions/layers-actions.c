@@ -116,6 +116,14 @@ name|N_
 argument_list|(
 literal|"Layers Menu"
 argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_LAYER_DIALOG
 block|}
 block|,
 block|{

@@ -110,6 +110,14 @@ name|N_
 argument_list|(
 literal|"Gradient Editor Menu"
 argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_GRADIENT_EDITOR_DIALOG
 block|}
 block|,
 block|{

@@ -108,11 +108,6 @@ name|GimpDock
 modifier|*
 name|dock
 decl_stmt|;
-DECL|member|item_factory
-name|GimpItemFactory
-modifier|*
-name|item_factory
-decl_stmt|;
 DECL|member|ui_manager
 name|GimpUIManager
 modifier|*

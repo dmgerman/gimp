@@ -334,7 +334,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon277355fd0103
+DECL|enum|__anon295406dd0103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2454,16 +2454,6 @@ operator|->
 name|menubar_manager
 argument_list|,
 literal|"/image-menubar"
-argument_list|)
-expr_stmt|;
-name|gtk_ui_manager_ensure_update
-argument_list|(
-name|GTK_UI_MANAGER
-argument_list|(
-name|shell
-operator|->
-name|menubar_manager
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

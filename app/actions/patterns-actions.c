@@ -104,6 +104,14 @@ name|N_
 argument_list|(
 literal|"Patterns Menu"
 argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_PATTERN_DIALOG
 block|}
 block|,
 block|{

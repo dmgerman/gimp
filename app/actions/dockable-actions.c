@@ -128,6 +128,14 @@ name|N_
 argument_list|(
 literal|"Dialogs Menu"
 argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_DOCK
 block|}
 block|,
 block|{

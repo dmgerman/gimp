@@ -104,6 +104,14 @@ name|N_
 argument_list|(
 literal|"File Open Menu"
 argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_FILE_OPEN
 block|}
 block|,
 block|{

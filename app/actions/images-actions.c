@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"images-actions.h"
 end_include
 
@@ -92,6 +98,14 @@ name|N_
 argument_list|(
 literal|"Images Menu"
 argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_IMAGE_DIALOG
 block|}
 block|,
 block|{

@@ -98,6 +98,14 @@ name|N_
 argument_list|(
 literal|"Channels Menu"
 argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_CHANNEL_DIALOG
 block|}
 block|,
 block|{

@@ -104,6 +104,14 @@ name|N_
 argument_list|(
 literal|"File Save Menu"
 argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_FILE_SAVE
 block|}
 block|,
 block|{

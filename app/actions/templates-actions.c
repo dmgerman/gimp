@@ -92,6 +92,14 @@ name|N_
 argument_list|(
 literal|"Templates Menu"
 argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_TEMPLATE_DIALOG
 block|}
 block|,
 block|{

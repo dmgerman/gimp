@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpitemfactory.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpmenufactory.h"
 end_include
 

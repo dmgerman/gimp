@@ -80,6 +80,14 @@ name|N_
 argument_list|(
 literal|"Palette Editor Menu"
 argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_PALETTE_EDITOR_DIALOG
 block|}
 block|,
 block|{

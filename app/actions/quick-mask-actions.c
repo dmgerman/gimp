@@ -92,6 +92,14 @@ name|N_
 argument_list|(
 literal|"QMask Menu"
 argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_QMASK
 block|}
 block|,
 block|{

@@ -80,6 +80,14 @@ name|N_
 argument_list|(
 literal|"Error Console Menu"
 argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_ERRORS_DIALOG
 block|}
 block|,
 block|{

@@ -98,6 +98,14 @@ name|N_
 argument_list|(
 literal|"Fonts Menu"
 argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_FONT_DIALOG
 block|}
 block|,
 block|{

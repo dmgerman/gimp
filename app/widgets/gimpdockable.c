@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpitemfactory.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpuimanager.h"
 end_include
 

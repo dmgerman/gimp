@@ -2549,12 +2549,10 @@ modifier|*
 name|context
 parameter_list|)
 block|{
-if|#
-directive|if
-literal|0
-block|FIXME   GimpItemFactory *item_factory;
-endif|#
-directive|endif
+name|GimpUIManager
+modifier|*
+name|ui_manager
+decl_stmt|;
 name|GimpToolInfo
 modifier|*
 name|active_tool
@@ -2569,12 +2567,22 @@ name|group
 init|=
 name|NULL
 decl_stmt|;
-if|#
-directive|if
-literal|0
-block|item_factory = gimp_item_factory_from_path ("<Image>");
-endif|#
-directive|endif
+name|ui_manager
+operator|=
+name|gimp_ui_managers_from_name
+argument_list|(
+literal|"<Image>"
+argument_list|)
+operator|->
+name|data
+expr_stmt|;
+name|gimp_ui_manager_ui_get
+argument_list|(
+name|ui_manager
+argument_list|,
+literal|"/image-popup"
+argument_list|)
+expr_stmt|;
 name|active_tool
 operator|=
 name|gimp_context_get_tool
@@ -2814,7 +2822,22 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|if (item_factory)         {           GtkWidget *menu_item;           gchar     *menu_path;            menu_path = gimp_strip_uline (tool_info->menu_path);            menu_item =             gtk_item_factory_get_widget (GTK_ITEM_FACTORY (item_factory),                                          menu_path);            g_free (menu_path);            if (menu_item)             {               GList *accel_closures;                accel_closures = gtk_widget_list_accel_closures (menu_item);                if (g_list_length (accel_closures) != 1)                 {                   g_warning (G_STRLOC ": FIXME: g_list_length (accel_closures) != 1");                 }               else                 {                   GClosure      *accel_closure;                   GtkAccelGroup *accel_group;                    accel_closure = (GClosure *) accel_closures->data;                    g_object_set_data (G_OBJECT (button), "toolbox-accel-closure",                                      accel_closure);                    accel_group = gtk_accel_group_from_accel_closure (accel_closure);                    g_signal_connect (accel_group, "accel_changed",                                     G_CALLBACK (gimp_toolbox_button_accel_changed),                                     button);                    gimp_toolbox_button_accel_changed (accel_group,                                                      0, 0,                                                      accel_closure,                                                      button);                 }                g_list_free (accel_closures);             }         }
+block|if (ui_manager)         {           GimpActionGroup *group;           GtkAction       *action;           const gchar     *identifier;           gchar           *tmp;           gchar           *name;           GClosure        *accel_closure;           GtkAccelGroup   *accel_group;            identifier = gimp_object_get_name (GIMP_OBJECT (tool_info));            tmp = g_strndup (identifier + strlen ("gimp-"),                            strlen (identifier) - strlen ("gimp--tool"));           name = g_strdup_printf ("tools-%s", tmp);           g_free (tmp);            group = gimp_ui_manager_get_action_group (ui_manager, "tools");           action = gtk_action_group_get_action (GTK_ACTION_GROUP (group), name);            g_free (name);            accel_closure = gtk_action_get_accel_closure (action);            g_object_set_data (G_OBJECT (button), "toolbox-accel-closure",                              accel_closure);            accel_group =             gtk_accel_group_from_accel_closure (accel_closure);            g_signal_connect (accel_group, "accel_changed",                             G_CALLBACK (gimp_toolbox_button_accel_changed),                             button);            gimp_toolbox_button_accel_changed (accel_group,                                              0, 0,                                              accel_closure,                                              button);         }
+else|#
+directive|else
+name|gimp_help_set_help_data
+argument_list|(
+name|button
+argument_list|,
+name|tool_info
+operator|->
+name|help
+argument_list|,
+name|tool_info
+operator|->
+name|help_id
+argument_list|)
+expr_stmt|;
 endif|#
 directive|endif
 block|}
