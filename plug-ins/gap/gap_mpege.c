@@ -571,7 +571,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"    or 'Split Img to Frames' from the Video Menu)"
+literal|"    or 'Split Image to Frames' from the Video Menu)"
 argument_list|)
 expr_stmt|;
 name|l_idx
