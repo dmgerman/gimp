@@ -2701,6 +2701,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|gimp_vectors_export
 argument_list|(
 name|gimage
@@ -2713,14 +2714,6 @@ operator|&
 name|error
 argument_list|)
 condition|)
-block|{
-name|gimp_image_flush
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
-block|}
-else|else
 block|{
 name|g_message
 argument_list|(
