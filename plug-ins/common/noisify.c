@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29720d510108
+DECL|struct|__anon2c789f460108
 block|{
 DECL|member|independent
 name|gint
@@ -97,7 +97,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29720d510208
+DECL|struct|__anon2c789f460208
 block|{
 DECL|member|channels
 name|gint
@@ -889,6 +889,9 @@ operator|>
 literal|0.0
 condition|)
 block|{
+name|gint
+name|p
+decl_stmt|;
 if|if
 condition|(
 name|nvals
@@ -916,16 +919,15 @@ operator|*
 literal|127
 argument_list|)
 expr_stmt|;
-name|gint
 name|p
-init|=
+operator|=
 name|src
 index|[
 name|b
 index|]
 operator|+
 name|noise
-decl_stmt|;
+expr_stmt|;
 name|dest
 index|[
 name|b
@@ -938,6 +940,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|dest
 index|[
 name|b
@@ -948,6 +951,7 @@ index|[
 name|b
 index|]
 expr_stmt|;
+block|}
 block|}
 block|}
 end_function
