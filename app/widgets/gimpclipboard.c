@@ -641,12 +641,45 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
+name|GtkClipboard
+modifier|*
+name|clipboard
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_GIMP
 argument_list|(
 name|gimp
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|clipboard
+operator|=
+name|gtk_clipboard_get_for_display
+argument_list|(
+name|gdk_display_get_default
+argument_list|()
+argument_list|,
+name|GDK_SELECTION_CLIPBOARD
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|clipboard
+operator|&&
+name|gtk_clipboard_get_owner
+argument_list|(
+name|clipboard
+argument_list|)
+operator|==
+name|G_OBJECT
+argument_list|(
+name|gimp
+argument_list|)
+condition|)
+name|gtk_clipboard_store
+argument_list|(
+name|clipboard
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
@@ -1226,6 +1259,18 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/*  mark the first entry (PNG) as suitable for storing  */
+name|gtk_clipboard_set_can_store
+argument_list|(
+name|clipboard
+argument_list|,
+name|gimp_clip
+operator|->
+name|target_entries
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
 block|}
 elseif|else
 if|if
@@ -1350,7 +1395,7 @@ condition|;
 name|i
 operator|++
 control|)
-name|g_print
+name|g_printerr
 argument_list|(
 literal|"offered type: %s\n"
 argument_list|,
@@ -1363,7 +1408,7 @@ index|]
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_print
+name|g_printerr
 argument_list|(
 literal|"\n"
 argument_list|)
@@ -1465,7 +1510,7 @@ modifier|*
 modifier|*
 name|type
 decl_stmt|;
-name|g_print
+name|g_printerr
 argument_list|(
 literal|"checking pixbuf format '%s'\n"
 argument_list|,
@@ -1515,7 +1560,7 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|g_print
+name|g_printerr
 argument_list|(
 literal|" - checking mime type '%s'\n"
 argument_list|,
@@ -1676,7 +1721,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 decl_stmt|;
-name|g_print
+name|g_printerr
 argument_list|(
 literal|"sending pixbuf data as '%s' (%s)\n"
 argument_list|,
