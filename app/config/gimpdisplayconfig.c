@@ -146,7 +146,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28eb2cc00103
+DECL|enum|__anon2acf284f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -381,7 +381,7 @@ name|G_MAXINT
 argument_list|,
 literal|300
 argument_list|,
-name|GIMP_PARAM_RESTART
+literal|0
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN

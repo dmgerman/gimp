@@ -116,11 +116,6 @@ name|gboolean
 name|recalc
 decl_stmt|;
 comment|/*  flag to recalculate the selection */
-DECL|member|speed
-name|gint
-name|speed
-decl_stmt|;
-comment|/*  speed of marching ants            */
 DECL|member|hidden
 name|gboolean
 name|hidden
@@ -199,9 +194,6 @@ name|size
 parameter_list|,
 name|gint
 name|width
-parameter_list|,
-name|gint
-name|speed
 parameter_list|)
 function_decl|;
 end_function_decl

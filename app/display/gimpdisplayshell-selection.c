@@ -325,7 +325,7 @@ end_comment
 begin_function
 name|Selection
 modifier|*
-DECL|function|gimp_display_shell_selection_create (GdkWindow * win,GimpDisplayShell * shell,gint size,gint width,gint speed)
+DECL|function|gimp_display_shell_selection_create (GdkWindow * win,GimpDisplayShell * shell,gint size,gint width)
 name|gimp_display_shell_selection_create
 parameter_list|(
 name|GdkWindow
@@ -341,9 +341,6 @@ name|size
 parameter_list|,
 name|gint
 name|width
-parameter_list|,
-name|gint
-name|speed
 parameter_list|)
 block|{
 name|GdkColor
@@ -373,7 +370,7 @@ argument_list|)
 expr_stmt|;
 name|new
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|Selection
 argument_list|,
@@ -585,12 +582,6 @@ operator|->
 name|recalc
 operator|=
 name|TRUE
-expr_stmt|;
-name|new
-operator|->
-name|speed
-operator|=
-name|speed
 expr_stmt|;
 name|new
 operator|->
@@ -1013,9 +1004,7 @@ if|if
 condition|(
 name|select
 operator|->
-name|state
-operator|!=
-name|INVISIBLE
+name|timeout_id
 condition|)
 name|g_source_remove
 argument_list|(
@@ -1116,9 +1105,7 @@ if|if
 condition|(
 name|select
 operator|->
-name|state
-operator|!=
-name|INVISIBLE
+name|timeout_id
 condition|)
 block|{
 name|g_source_remove
@@ -1134,13 +1121,13 @@ name|timeout_id
 operator|=
 literal|0
 expr_stmt|;
+block|}
 name|select
 operator|->
 name|state
 operator|=
 name|INVISIBLE
 expr_stmt|;
-block|}
 name|select
 operator|->
 name|paused
@@ -1230,13 +1217,18 @@ operator|>
 literal|0
 condition|)
 return|return;
+name|select
+operator|->
+name|state
+operator|=
+name|INTRO
+expr_stmt|;
+comment|/*  The state before the first draw  */
 if|if
 condition|(
 name|select
 operator|->
-name|state
-operator|!=
-name|INVISIBLE
+name|timeout_id
 condition|)
 name|g_source_remove
 argument_list|(
@@ -1245,13 +1237,6 @@ operator|->
 name|timeout_id
 argument_list|)
 expr_stmt|;
-name|select
-operator|->
-name|state
-operator|=
-name|INTRO
-expr_stmt|;
-comment|/*  The state before the first draw  */
 name|select
 operator|->
 name|timeout_id
@@ -1291,9 +1276,7 @@ if|if
 condition|(
 name|select
 operator|->
-name|state
-operator|!=
-name|INVISIBLE
+name|timeout_id
 condition|)
 block|{
 name|g_source_remove
@@ -1309,13 +1292,13 @@ name|timeout_id
 operator|=
 literal|0
 expr_stmt|;
+block|}
 name|select
 operator|->
 name|state
 operator|=
 name|INVISIBLE
 expr_stmt|;
-block|}
 comment|/*  Find the bounds of the selection  */
 if|if
 condition|(
@@ -1410,9 +1393,7 @@ if|if
 condition|(
 name|select
 operator|->
-name|state
-operator|!=
-name|INVISIBLE
+name|timeout_id
 condition|)
 block|{
 name|g_source_remove
@@ -1428,13 +1409,13 @@ name|timeout_id
 operator|=
 literal|0
 expr_stmt|;
+block|}
 name|select
 operator|->
 name|state
 operator|=
 name|INVISIBLE
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|select
@@ -3515,6 +3496,10 @@ name|Selection
 modifier|*
 name|select
 decl_stmt|;
+name|GimpDisplayConfig
+modifier|*
+name|config
+decl_stmt|;
 name|select
 operator|=
 operator|(
@@ -3522,6 +3507,23 @@ name|Selection
 operator|*
 operator|)
 name|data
+expr_stmt|;
+name|config
+operator|=
+name|GIMP_DISPLAY_CONFIG
+argument_list|(
+name|select
+operator|->
+name|shell
+operator|->
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
 expr_stmt|;
 comment|/*  if the RECALC bit is set, reprocess the boundaries  */
 if|if
@@ -3645,9 +3647,9 @@ name|timeout_id
 operator|=
 name|g_timeout_add
 argument_list|(
-name|select
+name|config
 operator|->
-name|speed
+name|marching_ants_speed
 argument_list|,
 name|selection_march_ants
 argument_list|,

@@ -941,10 +941,6 @@ operator|->
 name|gimage
 operator|->
 name|width
-argument_list|,
-name|config
-operator|->
-name|marching_ants_speed
 argument_list|)
 expr_stmt|;
 name|shell
